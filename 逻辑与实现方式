@@ -25,8 +25,8 @@
       眩晕：hit/stun     ->stun - death (可对免疫动能的护甲产生伤害，带控制，可被免疫)
       电磁：hit/wound    ->none - death (不可被免疫)
       激光：hit/none     ->none - death (可被免疫)
-      爆炸：blast/death  ->none - death (可被免疫)
-      轰炸：blast/wound  ->none - death (可对免疫爆炸的护甲产生伤害，不可被免疫)
+      爆炸：blast/wound  ->none - death (可被免疫)
+      轰炸：blast/death  ->none - death (可对免疫爆炸的护甲产生伤害，不可被免疫)
       控场：blast/stun   ->stun - none  (不消化层数，不可被免疫) 静电力场
       激光：blast/none   ->none - death (可被免疫)
       激光类无视护甲，额定减层
@@ -37,8 +37,8 @@
       眩晕：hit/stun     ->stun - death (可对免疫动能的护甲产生伤害，带控制，可免疫)
       电磁：hit/wound    ->none - death (不可被免疫)
       激光：hit/none     ->none - death (不可被免疫)
-      爆炸：blast/death  ->none - wound - death (不可被免疫)
-      轰炸：blast/wound  ->none - death (可对免疫爆炸的护甲产生伤害，不可被免疫)
+      爆炸：blast/wound  ->none - wound - death (不可被免疫)
+      轰炸：blast/death  ->none - death (可对免疫爆炸的护甲产生伤害，不可被免疫)
       控场：blast/stun   ->stun - none  (不消化层数，可免疫) 静电力场
       激光：blast/none   ->none - death (可被免疫)
       激光类无视护甲，额定减层
