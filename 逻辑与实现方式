@@ -1,0 +1,44 @@
+空投舱逻辑：
+    ·文件均在vehicle中
+    ·从投掷物hd_hellpod.projectile出发，在投掷物位置y轴高处生成一个载具hd_hellpod_spawn.vehicle
+    ·该载具为间接载具，生成即消失，主要功能利用载具摧毁事件产生hd_hellpod.vehicle空投舱模型载具，hd_hellpod_dropping_sound.projectile空投舱落地音效弹头，hd_hellpod_dropping_damage.projectile空投舱落地范围伤害弹头（挂载烟雾特效）
+    ·hd_hellpod.vehicle载具上的空投舱模型由其上面的hd_hellpod.weapon武器模型提供（vehicle不支持xml的体素模型），消失时生成hd_hellpod_vanish.visual_item产生烟雾特效
+    
+报警增援逻辑：
+    ·武器或者投掷物使用类似cyborgs_squadleader_alert_spawn.projectile弹头触发
+    ·该弹头做特效承载，以及生成cyborgs_squadleader_alert_spawn.vehicle载具
+    ·该载具为间接载具，生成即消失，主要功能利用载具摧毁事件产生cyborgs_spawn_berserker_model.vehicle等ai空降模型载具，hd_hellpod_dropping_sound.projectile空投舱落地音效弹头
+    ·以_model结尾命名的空降模型载具利用其载具搭载的武器模型显示对应AI模型，利用载具的非正常姿态摧毁属性，调整合适参数使载具在坠落地面后固定会自毁，生成如cyborgs_spawn_berserker.projectile这样的ai生成弹头（挂载音效和特效）
+    ·ai生成弹头执行notify_script结果事件，将key键值发送到ai_spawn.as脚本中处理
+    ·脚本通过查询key键值和定位弹头坐标，在弹头消失处生成阵营固定的ai。生成的ai若非己方阵营,则默认生成己方default(玩家的group)的ai
+    
+报警开火前摇实现方式：
+    ·通过武器报警的：调整武器只能趴下开火，修改兵种文件->修改going prone（进入卧姿）的动画。这样在卧倒动画没有执行完成前，无法开火发出警报
+    ·通过投掷物的：扔出去的一刻弹头已经投出，无法打断。但可以修改弹头的伤害阈值使得其可以被blast类型的伤害摧毁，或者近战摧毁
+    
+伤害类型逻辑（todo）：
+    ·取消敌人的wound状态，替换为death效果
+    ·将stun状态修改为站立的眩晕状态，为眩晕雷/RX1等附带眩晕效果武器留，需要重置动作（全局）
+    ·对敌方（敌方护甲针对此伤害类型制作）
+      受伤害类型          角色状态
+      动能：hit/death    ->none - death (抗致死减伤，可被免疫)
+      眩晕：hit/stun     ->stun - death (可对免疫动能的护甲产生伤害，带控制，可被免疫)
+      电磁：hit/wound    ->none - death (不可被免疫)
+      激光：hit/none     ->none - death (可被免疫)
+      爆炸：blast/death  ->none - death (可被免疫)
+      轰炸：blast/wound  ->none - death (可对免疫爆炸的护甲产生伤害，不可被免疫)
+      控场：blast/stun   ->stun - none  (不消化层数，不可被免疫) 静电力场
+      激光：blast/none   ->none - death (可被免疫)
+      激光类无视护甲，额定减层
+    ·需要对应护甲配合使用
+    ·对玩家（玩家护甲针对此伤害类型制作）
+      受伤害类型          角色状态
+      动能：hit/death    ->none - death (抗致死减伤，不可被免疫)
+      眩晕：hit/stun     ->stun - death (可对免疫动能的护甲产生伤害，带控制，可免疫)
+      电磁：hit/wound    ->none - death (不可被免疫)
+      激光：hit/none     ->none - death (不可被免疫)
+      爆炸：blast/death  ->none - wound - death (不可被免疫)
+      轰炸：blast/wound  ->none - death (可对免疫爆炸的护甲产生伤害，不可被免疫)
+      控场：blast/stun   ->stun - none  (不消化层数，可免疫) 静电力场
+      激光：blast/none   ->none - death (可被免疫)
+      激光类无视护甲，额定减层
