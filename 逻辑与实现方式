@@ -33,7 +33,7 @@
     ·需要对应护甲配合使用
     ·对玩家（玩家护甲针对此伤害类型制作）
       受伤害类型          角色状态
-      动能：hit/death    ->none - death (抗致死减伤，不可被免疫)
+      动能：hit/death    ->none - wound - death (抗致死减伤，不可被免疫)
       眩晕：hit/stun     ->stun - death (可对免疫动能的护甲产生伤害，带控制，可免疫)
       电磁：hit/wound    ->none - death (不可被免疫)
       激光：hit/none     ->none - death (不可被免疫)
