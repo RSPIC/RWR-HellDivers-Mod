@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<visual_item key="hd_hellpod_vanish.visual_item" pulldown_in_air="0.1">
+
+    <model mesh_filename=".mesh" texture_filename="" />
+	<rotation class="motion" />
+    <effect ref="hellpod_dropping_ground_smoke_leave" lighting="0" />
+</visual_item>

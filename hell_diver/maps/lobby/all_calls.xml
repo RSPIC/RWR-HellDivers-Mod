@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<calls>
+	<call file="cover_drop.call" />
+	<call file="mortar1.call" />
+	<call file="paratroopers1_1st_time.call">
+		<capacity value="0" source="rank" source_value="0.0" />
+    		<capacity value="100" source="rank" source_value="0.1" />
+	</call>
+	<call file="paratroopers1.call">
+		<capacity value="0" source="rank" source_value="0.0" />
+    		<capacity value="100" source="rank" source_value="0.1" />
+	</call>
+</calls>
+
+

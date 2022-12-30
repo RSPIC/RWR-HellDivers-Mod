@@ -1,0 +1,886 @@
+author: RST
+2022.9.6
+未经授权不可复用、修改使用
+		<effect class="result" key="terrain" ref="401_thbow_tracking_thunder" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_tracking_line_inBox" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_spread_ring" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_impact" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_spray" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_impact_vertical" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_surrounding_thunder" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_surrounding_thunder_2" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_surrounding_thunder_3" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_surrounding_thunder_4" lighting="0"/>
+		<effect class="activated" ref="401_thbow_activated_trail"/>
+		<effect class="activated" ref="401_thbow_activated_thunder"/>
+		<trail probability="1" key="bow_thunder"/>
+		
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<effect class="muzzle" ref="401_thbow_muzzle_ring" lighting="0" />
+		<effect class="muzzle" ref="401_thbow_muzzle_smoke" lighting="0" />
+
+
+particle_system 401_thbow_muzzle_smoke
+{
+	quota 50
+	material point_hard_edge
+	particle_width 0.12
+	particle_height 0.12
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin bottom_center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 45
+		colour 0 0.5 1 1
+		direction 0 1 0
+		emission_rate 80
+		position 0 0 0
+		velocity_min -5
+		velocity_max -10
+		time_to_live_min 0.7
+		time_to_live_max 1
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-0
+		green2	-1.5
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 10
+		scope 100
+		keep_velocity false
+	}
+}
+
+particle_system 401_thbow_muzzle_ring
+{
+	quota 50
+	material semi_ring
+	particle_width 2
+	particle_height 2
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 5
+		colour 0 0.1 1 1
+		direction 0 1 0
+		emission_rate 5
+		position 0 0 0
+		velocity -5
+		time_to_live 0.6
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 10
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	1800
+		rotation_speed_range_end	1800
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-0
+		green2	-1
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+
+particle_system 401_thbow_activated_trail
+{
+	quota 300
+	material point_soft_edge_100
+	particle_width 0.7
+	particle_height 0.7
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	emitter Point
+	{
+		angle 0
+		colour 0 0.5 1 1
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.5
+		duration 1.5
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system 401_thbow_tracking_thunder
+{
+	quota 1000
+	emit_emitter_quota 1000
+	material point_hard_edge
+	particle_width 0.12
+	particle_height 0.12
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 90
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 30
+		position 0 0 0
+		velocity_min 20
+		velocity_max 30
+		time_to_live 0.6
+		duration 0.1
+		emit_emitter tag1
+	}
+	emitter Point
+	{
+		angle 90
+		colour 0 0.5 1 1
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity_min 5
+		velocity_max 10
+		time_to_live 0.2
+		duration 1
+		name tag1
+		emit_emitter tag2
+	}
+	emitter Point
+	{
+		angle 0
+		colour 0 0.5 1 1
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.2
+		duration 5
+		name tag2
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-5
+		green2	-5
+		blue2	-5
+		alpha2	-3
+		state_change 0.2
+	}
+	affector LinearForce{
+		force_vector 0 50 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 150
+		scope 10
+		keep_velocity false
+	}
+	affector DeflectorPlane 
+	{
+		plane_point 0 2 0
+		plane_normal 0 1 0 
+		bounce 2
+	}
+}
+
+particle_system 401_thbow_tracking_line_inBox
+{
+	quota 1000
+	emit_emitter_quota 1000
+	material point_hard_edge
+	particle_width 0.2
+	particle_height 0.2
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Box
+	{
+		angle 180
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 40
+		position 0 3 0
+		velocity_min 20
+		velocity_max 25
+		time_to_live_min 0.3
+		time_to_live_max 0.4
+		duration 0.1
+		width 5
+		height 5
+		depth 5
+		emit_emitter tag2
+	}
+	emitter Point
+	{
+		angle 0
+		colour 0 0.5 1 1
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.4
+		duration 5
+		name tag2
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-5
+		green2	-5
+		blue2	-5
+		alpha2	-3
+		state_change 0.2
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+	affector DeflectorPlane 
+	{
+		plane_point 0 2 0
+		plane_normal 0 1 0 
+		bounce 1
+	}
+}
+particle_system 401_thbow_surrounding_thunder
+{
+	quota 200
+	material bow_current_1
+	particle_width 2
+	particle_height 2
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 360
+		colour 0 0.5 1 1
+		direction 0 1 0
+		emission_rate 2
+		position 0 0 0
+		velocity 3
+		time_to_live_min 0.05
+		time_to_live_max 0.08
+		duration_min 0.5
+		duration_max 1.0
+		width 5
+		height 5
+		depth 5
+		inner_width 1
+		inner_height 1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 300
+		scope 100
+		keep_velocity false
+	}
+}
+particle_system 401_thbow_surrounding_thunder_2 : 401_thbow_surrounding_thunder
+{
+	material bow_current_2
+}
+particle_system 401_thbow_surrounding_thunder_3 : 401_thbow_surrounding_thunder
+{
+	material bow_current_3
+}
+particle_system 401_thbow_surrounding_thunder_4 : 401_thbow_surrounding_thunder
+{
+	material bow_current_4
+}
+
+particle_system 401_thbow_spread_ring
+{
+	quota 50
+	material thunder_ring
+	particle_width 0.5
+	particle_height 0.5
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0.5 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.3
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 50
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-5
+		green2	-2.5
+		blue2	-5
+		alpha2	-3
+		state_change 0.2
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system 401_thbow_impact
+{
+	quota 50
+	material bow_flare_pass
+	particle_width 0.5
+	particle_height 0.5
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0.5 1 1
+		direction 0 1 0
+		emission_rate 30
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.3
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 60
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-5
+		green2	-5
+		blue2	-5
+		alpha2	-3
+		state_change 0.2
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system 401_thbow_impact_vertical
+{
+	quota 50
+	material hit_ground_impact_01
+	particle_width 2
+	particle_height 2
+	renderer billboard
+	billboard_type oriented_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 30
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.3
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 60
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-10
+		green2	-7
+		blue2	-5
+		alpha2	-3
+		state_change 0.2
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system 401_thbow_spray
+{
+	quota 50
+	material point_hard_edge
+	particle_width 0.2
+	particle_height 2.4
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 180
+		colour 0.3 0.6 1 1
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity_min 20
+		velocity_max 40
+		time_to_live 0.4
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	-5
+		green1 	-5
+		blue1 	10
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+
+
+particle_system 401_thbow_activated_thunder
+{
+	quota 200
+	material bow_current_1
+	particle_width 2
+	particle_height 2
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0.5 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.6
+		duration 2
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.2
+		colour1 0 0 0 0
+		time2 0.3
+		colour2 0 0.5 1 1
+		time3 0.35
+		colour3 0 0.5 1 1
+		time4 0.4
+		colour4 0 0 0 0
+		time5 1
+		colour5 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material lighting_a1 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture lighting_a1.png 	
+}}}}
+material bow_current_1 : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            anim_texture muzzle_current.png 5 0.2
+}}}}
+material bow_current_2 : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            anim_texture muzzle_current.png 5 0.3
+}}}}
+material bow_current_3 : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            anim_texture muzzle_current.png 5 0.4
+}}}}
+material bow_current_4 : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            anim_texture muzzle_current.png 5 0.5
+}}}}
+material thunder_ring : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture thunder_ring.png 	
+}}}}
+material bow_flare_pass : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture bow_flare.png 	
+}}}}
+material hit_ground_effect_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture hit_ground_effect_01.png 	
+}}}}
+material hit_ground_impact_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture hit_ground_impact_01.png 	
+}}}}
+material semi_ring : add_base
+{   
+    technique{
+    pass{
+		cull_hardware none
+        texture_unit{
+            texture semi_ring.png 	
+}}}}
+material blast_texture_rumbler_add : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture blast_texture_rumbler_add.png 	
+}}}}
+material thbow_trail : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture thbow_trail.png 	
+}}}}

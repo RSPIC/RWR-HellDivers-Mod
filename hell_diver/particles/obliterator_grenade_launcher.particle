@@ -1,0 +1,248 @@
+author: RST
+2022.9.15
+未经授权不可复用、修改使用、仅用于helldiver mod
+
+particle_system obliterator_grenade_launcher_trail
+{
+	quota 300
+	material wand_smoke
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.6
+		duration 3
+	}
+	affector Scaler
+	{
+		rate 1
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	90
+		rotation_speed_range_end	-90
+		rotation_range_start	0
+		rotation_range_end	180
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.2 0.2 0.2 0.3
+		time1 0.2
+		colour1 0.5 0.5 0.5 0.4
+		time2 0.5
+		colour2 0.8 0.8 0.8 0.2
+		time3 1.0
+		colour3 0.6 0.6 0.6 0
+
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+	
+}
+
+particle_system obliterator_grenade_launcher_impact_smoke		//爆点烟雾
+{
+	quota 500
+	emit_emitter_quota 500
+	material obliterator_smoke
+	particle_width 1.5
+	particle_height 1.5
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	accurate_facing off
+	iteration_interval 0.01
+	emitter Point
+	{
+		angle 90
+		colour 1 0.3 0 1
+		direction 0 1 0
+		emission_rate 60
+		position 0 1 0
+		velocity_min 50
+		velocity_max 50
+		time_to_live_min 0.25
+		time_to_live_max 0.25
+		duration 0.1
+		emit_emitter tag1
+	}
+	emitter Point
+	{
+		angle 180
+		colour 1 0.3 0 1
+		direction 0 1 0
+		emission_rate 200
+		position 0 0 0
+		velocity_min 0.0001
+		velocity_max 0.0001
+		time_to_live_min 0.21
+		time_to_live_max 0.25
+		duration 5
+		repeat_delay 0
+		name tag1
+	}
+	affector Scaler
+	{
+		rate 0.5
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	180
+		rotation_speed_range_end	-180
+		rotation_range_start	0
+		rotation_range_end	180
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0 1
+		time1 0.3
+		colour1 0.9 0.95 1 0.2
+		time2 0.6
+		colour2 0.9 0.95 1 0.2
+		time3 1
+		colour3 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 -40 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity true
+	}
+}
+
+particle_system obliterator_grenade_launcher_spray
+{
+	quota 100
+	material point_hard_edge
+	particle_width 0.1
+	particle_height 1
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 90
+		colour 1 0.7 0 1
+		direction 0 1 0
+		emission_rate 500
+		position 0 0 0
+		velocity_min 60
+		velocity_max 80
+		time_to_live 0.15
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 10
+		scope 100
+		keep_velocity false
+	}
+}
+
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material obliterator_smoke : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture obliterator_smoke.png 	
+}}}}
+material point_hard_edge : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture point_hard_edge.png 	
+}}}}
+material wand_smoke : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture wand_smoke.png 	
+}}}}

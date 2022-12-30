@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<map_config>
+	<faction file="green.xml" />
+	<faction file="brown.xml" />
+
+	<weapon file="all_weapons.xml" />
+
+	<projectile file="all_throwables.xml" />
+	<carry_item file="all_carry_items.xml" />
+
+	<vehicle file="all_vehicles.xml" />
+
+	<call file="all_calls.xml" />
+
+	<!-- <achievement file="achievements.xml" /> -->
+</map_config>

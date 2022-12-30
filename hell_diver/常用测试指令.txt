@@ -1,0 +1,33 @@
+/_test				进入测试模式
+/0_win						己方胜利
+/1_win						敌方胜利
+/defend						AI进入防御状态（双方）
+/0_attack					AI进入进攻状态（双方）
+/whereami					报告自己的坐标
+/grp num					获得num数量的rp
+/gxp num					获得num数量的xp
+/god						发一个无敌甲（能被创死)
+/jeep 						叫一辆JEEP载具
+/squad						生成10个己方ai（default group)
+/esquad						生成10个敌方ai（default group)
+/wound						自己进入倒地状态
+/dead						自己死亡
+/aiwound					ai进入倒地状态
+/aidead						ai死亡
+/tag x y z					在坐标（X Y Z）处生成一个信标		
+/tag						在自己位置生成一个信标
+/mycid						查询自己游戏角色ID
+/mysid						查询自己游戏senderId
+/myname						查询自己游戏名
+/w key 						获得键值为key的武器
+/w key num					获得键值为key的武器，num数量
+/v key						在身边生成键值为KEY的载具
+/p key 						获得键值为key的弹头
+/p key num					获得键值为key的武器，num数量
+
+helldiver 列
+wsdaw						空投舱信标
+ddd							辩护者信标
+adsw						地雷信标
+adws						眩晕地雷信标
+

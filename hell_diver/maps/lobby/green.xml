@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<faction name="Greenbelts" color="0.0 0.5 0.1" firstnames_file="english_firstnames.txt" lastnames_file="english_lastnames.txt" chat_icon_filename="chat_icon_soldier_green.png" chat_icon_commander_filename="chat_icon_commander_green.png" campaign_completion_icon_filename="campaign_win_0.png">
+	<rank xp="0.0" name="Private">
+		<hud_icon filename="hud_rank0.png" />
+	</rank>
+	<rank xp="0.05" name="Private 1st Class">
+		<hud_icon filename="hud_rank1.png" />
+	</rank>
+	<rank xp="0.1" name="Corporal">
+		<hud_icon filename="hud_rank2.png" />
+	</rank>
+	<rank xp="0.2" name="Sergeant">
+		<hud_icon filename="hud_rank3.png" />
+	</rank>
+	<rank xp="0.3" name="Staff Sergeant">
+		<hud_icon filename="hud_rank4.png" />
+	</rank>
+	<rank xp="0.4" name="Staff Sergeant 1st Class">
+		<hud_icon filename="hud_rank5.png" />
+	</rank>
+	<rank xp="0.6" name="2nd Lieutenant">
+		<hud_icon filename="hud_rank6.png" />
+	</rank>
+	<rank xp="0.8" name="Lieutenant">
+		<hud_icon filename="hud_rank7.png" />
+	</rank>
+	<rank xp="1.0" name="Captain">
+		<hud_icon filename="hud_rank8.png" />
+	</rank>
+	<rank xp="1.2" name="Major">
+		<hud_icon filename="hud_rank9.png" />
+	</rank>
+	<rank xp="1.4" name="Lieutenant Colonel">
+		<hud_icon filename="hud_rank10.png" />
+	</rank>
+	<rank xp="2.0" name="Colonel">
+		<hud_icon filename="hud_rank11.png" />
+	</rank>
+	<rank xp="5.0" name="Brigadier General">
+		<hud_icon filename="hud_rank12.png" />
+	</rank>
+	<rank xp="10.0" name="Major General">
+		<hud_icon filename="hud_rank13.png" />
+	</rank>
+	<rank xp="20.0" name="Lieutenant General">
+		<hud_icon filename="hud_rank14.png" />
+	</rank>
+	<rank xp="50.0" name="General">
+		<hud_icon filename="hud_rank15.png" />
+	</rank>
+	<rank xp="100.0" name="General of the Army">
+		<hud_icon filename="hud_rank16.png" />
+	</rank>
+
+	<!-- -------------- -->
+	<!-- default group -->
+	<!-- -------------- -->
+	<soldier name="default" spawn_score="1.0">
+		<character filename="default.character" />
+		<ai filename="default.ai" />
+
+		<models filename="green_default_basic.models" />
+		<models filename="green_default.models" />
+
+		<resources file="common.resources" />
+		<resources file="green_primaries.resources" />
+		<resources file="green_secondaries.resources" />
+		<resources file="green_default.resources" />
+
+		<item_class_existence_config>
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="0.4" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="0.02" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="0.03" />
+		</item_class_existence_config>
+
+		<attribute_config class="rp">
+			<attribute weight="0.3" min="80.0" max="300.0" />
+			<attribute weight="0.7" min="0.0" max="0.0" />
+		</attribute_config>
+
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="0.0" max="0.05" />
+		</attribute_config>
+
+	</soldier>
+
+	<!-- -------------- -->
+	<!-- designated medic group -->
+	<!-- -------------- -->
+	<soldier name="medic" spawn_score="0.0" copy_from="default">
+		<resources file="common_medic.resources" />
+		<resources file="green_primaries.resources" />
+
+		<item_class_existence_config>
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="1.0" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="0.02" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="0.03" />
+		</item_class_existence_config>
+
+		<!-- low XP, likely to join player squad -->
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="0.0" max="0.05" />
+		</attribute_config>
+	</soldier>
+
+</faction>

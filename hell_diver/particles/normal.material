@@ -1,0 +1,47 @@
+author: RST
+2022.9.23
+未经授权不可复用、修改使用、仅用于helldiver mod
+
+存放一些常用的贴图材质
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+material trail_white : add_base
+{   
+    technique{
+    pass{
+		lighting on
+		emissive 1 1 1 1
+        texture_unit{
+            texture normal_trail.png 	
+}}}}
+material light_yellow_edge_trail : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture light_yellow_edge_trail.png 	
+}}}}
+
+

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapons>
+	<weapon file="apc_hmg.weapon" />
+	<weapon file="m24_a2.weapon" />
+	<weapon file="riot_shield.weapon"/>
+	<weapon file="m72_law.weapon">
+		<capacity value="0" source="rank" source_value="0.0" />
+    		<capacity value="1" source="rank" source_value="0.05" />
+    		<capacity value="2" source="rank" source_value="0.2" />
+	</weapon>
+	<weapon file="m240.weapon" />
+	<weapon file="mossberg.weapon" />
+	<weapon file="mp5sd.weapon" />
+	<weapon file="m16a4.weapon" />
+
+	<weapon file="f2000.weapon" />
+	<weapon file="benelli_m4.weapon" />
+	<weapon file="pepperdust.weapon" />
+
+	<weapon file="tank_cannon.weapon" />
+	<weapon file="tank_mg.weapon" />
+
+	<weapon file="aks74u.weapon" />
+	<weapon file="p90.weapon" />
+
+	<weapon file="medikit.weapon" />
+  
+	<weapon file="claymore_resource.weapon" />  
+
+	<weapon file="tow.weapon" />
+
+	<weapon file="vss_vintorez.weapon" />
+	<weapon file="ns2000.weapon" />
+
+	<weapon file="cover_resource.weapon" />
+  
+	<weapon file="humvee_mg.weapon" />
+
+	<weapon file="stoner_lmg.weapon" />
+
+	<weapon file="m79.weapon" />
+
+	<weapon file="mg_resource.weapon"/>  
+	<weapon file="deployable_mg.weapon" />
+
+ 	<weapon file="patrol_ship_mg.weapon" />
+	<weapon file="patrol_ship_cannon.weapon" />   
+	<weapon file="patrol_ship_mortar.weapon" />   
+
+    <weapon file="pb.weapon" />
+    <weapon file="glock17.weapon" />  
+	<weapon file="glock17_s.weapon" />
+	
+	<weapon file="beretta_m9.weapon" />   
+    <weapon file="beretta_m9_s.weapon" />           
+
+    <weapon file="desert_eagle.weapon" />
+    <weapon file="desert_eagle_gold.weapon" />
+    <weapon file="aa-12.weapon" />     
+    <weapon file="mgl_flasher.weapon" />
+  	<weapon file="barrett_m107.weapon" /> 
+    <weapon file="xm8.weapon" />              
+
+	<weapon file="apc_hmg_1.weapon" />
+	<weapon file="apc_hmg_2.weapon" /> 
+	<weapon file="tank_cannon_1.weapon" />
+	<weapon file="tank_cannon_2.weapon" />     
+  
+	<weapon file="tank_mg_1.weapon" />
+	<weapon file="tank_mg_2.weapon" />  
+          
+	<weapon file="bullseye.weapon" />
+  
+	<weapon file="mini_uzi.weapon" />
+  <weapon file="steyr_tmp.weapon" />  
+	<weapon file="aek_919k.weapon" />  
+	<weapon file="binoculars.weapon" />  
+
+	<weapon file="minig_resource.weapon"/>  
+	<weapon file="deployable_minig.weapon" />
+
+	<weapon file="gl_resource.weapon"/>  
+	<weapon file="deployable_gl.weapon" />
+  <weapon file="wrench_small.weapon" />
+  
+  <weapon file="mortar.weapon" />  
+  <weapon file="mortar_resource.weapon" />  
+  
+</weapons>

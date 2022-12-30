@@ -1,0 +1,57 @@
+<package 
+	name="HELL DIVER"
+	description="Helllllllllllllllllll Diver"
+	image="hd.png"
+	campaign_entry_script="start_campaign.as"
+	show_in_campaigns="1"
+    show_in_quick_match_mods="1">
+
+	<campaign_options 
+		faction="1" 
+		presets="1"
+		friendly_capacity="1"
+		enemy_capacity="1"
+		friendly_accuracy="1"
+		enemy_accuracy="1"
+		xp_multiplier="1"
+		rp_multiplier="1"
+		allow_activate_server="1">
+		
+		<preset text="simple" help="Help:Easy" id="easy"
+			friendly_capacity="1.22"
+			friendly_accuracy="1.0"
+			enemy_capacity="1.0"
+			enemy_accuracy="0.93"
+			xp_multiplier="1.0"
+			rp_multiplier="1.0"
+			player_damage_modifier="0.4"
+			/>
+		<preset text="common" help="Help:Hard" id="hard"
+			friendly_capacity="1.20"
+			friendly_accuracy="1.0"
+			enemy_capacity="1.3"
+			enemy_accuracy="0.94"
+			xp_multiplier="1.2"
+			rp_multiplier="1.4"
+			player_damage_modifier="0.2"
+			/>
+		<preset text="difficult" help="Help:Veteran" id="veteran"
+			friendly_capacity="1.20"
+			friendly_accuracy="1.0"
+			enemy_capacity="1.5"
+			enemy_accuracy="0.94"
+			xp_multiplier="1.4"
+			rp_multiplier="1.8"
+			player_damage_modifier="0.0"
+			/>
+		<preset text="DIY" help="Help:Presets:Custom" id="custom"
+			friendly_capacity="1.20"
+			friendly_accuracy="0.94"
+			enemy_capacity="1.0"
+			enemy_accuracy="0.94"
+			xp_multiplier="0.3"
+			rp_multiplier="1.0"
+			player_damage_modifier="0.0"
+			/>
+	</campaign_options>
+</package>

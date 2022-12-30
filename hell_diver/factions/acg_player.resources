@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources >
+<!--此处用于注册super_earth阵营军械库物品，需要确保物品代码中in_stock="1" -->
+<!-- 资源文件注册为KEY注册，不同于武器注册的file注册 -->
+
+<!--武器-->
+<weapon key="hd_ar19_liberator_full_upgrade.weapon" /><!--解放者突击步枪-->
+<weapon key="hd_ar22c_patriot_full_upgrade.weapon" /><!--爱国者突击步枪-->
+<weapon key="hd_ar20l_justice_full_upgrade.weapon" /><!--正义突击步枪-->
+<weapon key="hd_ar14d_paragon_full_upgrade.weapon" /><!--典范突击步枪-->
+<weapon key="hd_sg225_breaker_full_upgrade.weapon" /><!--破裂者霰弹-->
+<weapon key="hd_sg8_punisher_full_upgrade.weapon" /><!--制裁者霰弹-->
+<weapon key="hd_mp98_knight_smg_full_upgrade.weapon" /><!--骑士冲锋枪-->
+<weapon key="hd_smg45_defender_full_upgrade.weapon" /><!--防卫者冲锋枪-->
+
+<weapon key="ex_leviathan_breath.weapon" /> <!--利维坦之息弓-->
+<!-- <weapon key="ex_trinity_ghoul.weapon" />  -->
+
+<!--弹头-->
+<projectile key="at_mine_mk3.projectile" /><!--AT Mine MK3反载具地雷-->
+<projectile key="airdropped_stun_mine_mk3.projectile" /><!--Stun Mine MK3眩晕地雷-->
+<projectile key="hd_hellpod.projectile" /><!--空投舱-->
+
+<!--护甲-->
+<carry_item key="helldivers_vest.carry_item" />
+
+</resources>

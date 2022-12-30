@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<faction name="Neutral" color="1.0 1.0 0.95" map_view_color_intensity="-0.2" firstnames_file="russian_firstnames.txt" lastnames_file="russian_lastnames.txt" chat_icon_filename="chat_icon_soldier_gray.png" chat_icon_commander_filename="chat_icon_commander_gray.png">
+	<soldier>
+		<character filename="default.character" />
+		<model filename="soldier_c1.xml" />
+	</soldier>
+
+	<rank xp="0.0" name="Private">
+		<hud_icon filename="hud_rank0.png" />
+	</rank>  
+	<rank xp="0.05" name="Private 1st Class">
+		<hud_icon filename="hud_rank1.png" />    
+	</rank>
+	<rank xp="0.1" name="Corporal">
+		<hud_icon filename="hud_rank2.png" />
+	</rank>
+	<rank xp="0.2" name="Sergeant">
+		<hud_icon filename="hud_rank3.png" />
+	</rank>
+	<rank xp="0.3" name="Staff Sergeant">
+		<hud_icon filename="hud_rank4.png" />
+	</rank>
+	<rank xp="0.4" name="Staff Sergeant 1st Class">
+		<hud_icon filename="hud_rank5.png" />
+	</rank>
+	<rank xp="0.6" name="2nd Lieutenant">
+		<hud_icon filename="hud_rank6.png" />
+	</rank>
+	<rank xp="0.8" name="Lieutenant">
+		<hud_icon filename="hud_rank7.png" />
+	</rank>
+	<rank xp="1.0" name="Captain">
+		<hud_icon filename="hud_rank8.png" />
+	</rank>
+	<rank xp="1.2" name="Major">
+		<hud_icon filename="hud_rank9.png" />
+	</rank>
+	<rank xp="1.4" name="Lieutenant Colonel">
+		<hud_icon filename="hud_rank10.png" />
+	</rank>
+	<rank xp="2.0" name="Colonel">
+		<hud_icon filename="hud_rank11.png" />
+	</rank>
+	<rank xp="2.5" name="Brigadier General">
+		<hud_icon filename="hud_rank12.png" />
+	</rank>
+	<rank xp="3.0" name="Major General">
+		<hud_icon filename="hud_rank13.png" />
+	</rank>
+	<rank xp="4.0" name="Lieutenant General">
+		<hud_icon filename="hud_rank14.png" />
+	</rank>
+	<rank xp="6.0" name="General">
+		<hud_icon filename="hud_rank15.png" />
+	</rank>
+	<rank xp="10.0" name="General of the Army">
+		<hud_icon filename="hud_rank16.png" />
+	</rank>    
+
+
+	<resources clear_weapons="1">
+	</resources>
+  
+  <resources>
+	<!-- keep capacity increasing vehicles out from neutral faction -->
+	<!-- TODO: would be probably better to use clear_vehicles="1" and add decocars, dumpster, special crates etc via a neutral.resources file -->
+	<!-- that file could also be included by common.resources -->
+
+     <vehicle key="radio_jammer.vehicle" enabled="1" />
+     <vehicle key="prison_door.vehicle" enabled="0" /> 
+     <vehicle key="prison_bus.vehicle" enabled="0" />     
+     <vehicle key="radar_tower.vehicle" enabled="0" />        
+
+     <vehicle key="cargo_truck.vehicle" enabled="0" />        
+     <vehicle key="event_crate.vehicle" enabled="0" />        
+     <vehicle key="mobile_armory.vehicle" enabled="0" />        
+     <vehicle key="mortar_ammunition_crates.vehicle" enabled="0" />
+     <vehicle key="radar_truck.vehicle" enabled="0" />        
+     <vehicle key="water_tower.vehicle" enabled="0" />        
+
+     <vehicle key='aa_emplacement.vehicle' enabled="0" />
+     <vehicle key='heli_extraction.vehicle' enabled="0" />
+     <vehicle key='para_spawn.vehicle' enabled="0" />
+     <vehicle key='tank2.vehicle' enabled="0" />  
+     <vehicle key='mortar.vehicle' enabled="0" />
+     <vehicle key='deployable_mg.vehicle' enabled="0" />   
+     <vehicle key='deployable_minig.vehicle' enabled="0" />                       
+
+     <vehicle key='jeep.vehicle' enabled="0" />                       
+     <vehicle key='jeep_1.vehicle' enabled="0" />                       
+     <vehicle key='jeep_2.vehicle' enabled="0" />                       
+
+     <vehicle key='apc.vehicle' enabled="0" />                       
+     <vehicle key='apc_1.vehicle' enabled="0" />                       
+     <vehicle key='apc_2.vehicle' enabled="0" />                       
+
+     <vehicle key='tank.vehicle' enabled="0" />                       
+     <vehicle key='tank_1.vehicle' enabled="0" />                       
+     <vehicle key='tank_2.vehicle' enabled="0" />   
+     
+     <vehicle key="radio_jammer2.vehicle" enabled="0" />                         
+
+     
+  </resources>
+
+</faction>

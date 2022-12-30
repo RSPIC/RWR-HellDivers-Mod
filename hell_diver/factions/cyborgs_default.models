@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<models>
+	<!-- <model filename="hdivers_ceremonial.xml" /> -->
+	
+	<model filename="cyborgs_squadleader.xml">
+		<requirement class="weapon" slot="0" key="cyborgs_squadleader_main_alert.weapon"/>
+	</model>
+	<model filename="cyborgs_squadleader.xml">
+		<requirement class="weapon" slot="0" key="cyborgs_squadleader_main_gl.weapon"/>
+	</model>
+	<model filename="cyborgs_grotesque.xml">
+		<requirement class="weapon" slot="0" key="cyborgs_grotesque_main.weapon"/>
+	</model>
+	<model filename="cyborgs_berserker.xml">
+		<requirement class="weapon" slot="0" key="cyborgs_berserker_main.weapon"/>
+	</model>
+	<model filename="cyborgs_comrade.xml">
+		<requirement class="weapon" slot="0" key="cyborgs_comrade_main.weapon"/>
+	</model>
+	<model filename="cyborgs_immolator.xml">
+		<requirement class="weapon" slot="0" key="cyborgs_immolator_main.weapon"/>
+	</model>
+	<model filename="cyborgs_initiate.xml">
+		<requirement class="weapon" slot="0" key="cyborgs_initiate_main.weapon"/>
+	</model>
+	<model filename="cyborgs_hulk.xml">
+		<requirement class="weapon" slot="0" key="cyborgs_hulk_main.weapon"/>
+	</model>
+	<model filename="cyborgs_legionnaire.xml">
+		<requirement class="weapon" slot="0" key="cyborgs_legionnaire_main_gl.weapon"/>
+	</model>
+	<model filename="cyborgs_legionnaire.xml">
+		<requirement class="weapon" slot="0" key="cyborgs_legionnaire_main_alert.weapon"/>
+	</model>
+	
+</models>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectiles>
+	<!--武器弹头-->
+    <projectile file="hd_general_spawn.projectile" />
+    <projectile file="hd_general_gl_spawn.projectile" />
+    <projectile file="rx1_railgun_damage.projectile" />
+    <projectile file="mg94_damage.projectile" />
+    <projectile file="obliterator_grenade_launcher_damage.projectile" />
+    <projectile file="dbs2_damage.projectile" />
+    <projectile file="p2_peacemaker_damage.projectile" />
+    <projectile file="p6_gunslinger_damage.projectile" />
+    <projectile file="las12_tanto_damage.projectile" />
+    <projectile file="lho63_camper_damage.projectile" />
+    <projectile file="plas1_scorcher_damage.projectile" />
+	<!--辩护者俯冲轰炸-->
+    <projectile file="hd_vindicator_dive_bomb.projectile" />
+    <projectile file="hd_vindicator_missile.projectile" />
+    <projectile file="hd_vindicator_shrapnel.projectile" />
+	<!--地雷-->
+    <projectile file="at_mine_mk3_damage.projectile" />
+    <projectile file="at_mine_mk3_stay.projectile" />
+    <projectile file="at_mine_mk3_trigger.projectile" />
+    <projectile file="at_mine_mk3.projectile" />
+	<!--眩晕雷-->
+ 	<projectile file="airdropped_stun_mine_mk3.projectile" />	
+	<projectile file="airdropped_stun_mine_mk3_trigger.projectile" />	
+	<projectile file="airdropped_stun_mine_mk3_stun.projectile" />	
+	<!--空投舱-->
+	<projectile file="hd_hellpod.projectile" />	
+	<projectile file="hd_hellpod_dropping_sound.projectile" />	
+	<projectile file="hd_hellpod_dropping_damage.projectile" />	
+	
+
+
+</projectiles>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources clear_weapons="0" clear_vehicles="0" clear_calls="0">
+	<!--军械库注册所有生化人阵营武器-->
+
+	<!-- SquadLeader 基础兵种 -->
+	<weapon file="cyborgs_squadleader_main_alert.weapon" /><!--主武器-->
+	<weapon file="cyborgs_squadleader_main_gl.weapon" /><!--主武器-->
+	<weapon file="cyborgs_squadleader_secondary_alert.weapon" /><!--主武器-->
+	<!-- Grotesque 基础兵种 -->
+	<weapon file="cyborgs_grotesque_main.weapon" /><!--主武器-->
+	<!-- Berserker 基础兵种 -->
+	<weapon file="cyborgs_berserker_main.weapon" /><!--主武器-->
+	<!-- Comrade 基础兵种 -->
+	<weapon file="cyborgs_comrade_main.weapon" /><!--主武器-->
+	<!-- Immolator 基础兵种 -->
+	<weapon file="cyborgs_immolator_main.weapon" /><!--主武器-->
+	<!-- Initiate 基础兵种 -->
+	<weapon file="cyborgs_initiate_main.weapon" /><!--主武器-->
+	
+	<projectile file="cyborgs_squadleader_alert_spawn.projectile" /><!--手雷栏-->
+	
+	<!-- spawn类  -->
+	<projectile file="cyborgs_spawn_initiate.projectile" /><!--手雷栏-->
+	<projectile file="cyborgs_spawn_squadleader.projectile" /><!--手雷栏-->
+	<projectile file="cyborgs_spawn_berserker.projectile" /><!--手雷栏-->
+	<projectile file="cyborgs_spawn_comrade.projectile" /><!--手雷栏-->
+	<projectile file="cyborgs_spawn_grotesque.projectile" /><!--手雷栏-->
+	<projectile file="cyborgs_spawn_hound.projectile" /><!--手雷栏-->
+	<projectile file="cyborgs_spawn_butcher.projectile" /><!--手雷栏-->
+	<projectile file="cyborgs_spawn_legionnaire.projectile" /><!--手雷栏-->
+	<projectile file="cyborgs_spawn_immolator.projectile" /><!--手雷栏-->
+	<projectile file="cyborgs_spawn_hulk.projectile" /><!--手雷栏-->
+	<projectile file="cyborgs_spawn_warlord.projectile" /><!--手雷栏-->
+	
+	
+
+</resources>

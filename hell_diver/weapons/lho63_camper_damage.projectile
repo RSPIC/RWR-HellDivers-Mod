@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectile class="grenade" name="LHO-63 Camper" slot="1" pulldown_in_air="30.0" key="lho63_camper_damage.projectile">
+	<rotation class="motion" />
+
+	<trigger class="time" time_to_live="0.01"/>
+	<result class="blast" radius="1.8" damage="2" decal="0" push="0.15" character_state="death" />	
+
+	
+</projectile>
+

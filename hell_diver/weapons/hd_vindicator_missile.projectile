@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectile class="grenade" 
+name="Vindicator Dive Bomb Missile" 
+slot="1" 
+pulldown_in_air="80.0" 
+key="hd_vindicator_missile.projectile">
+
+    <result class="blast" radius="5" damage="15" decal="1" push="3" character_state="death" />
+    <trigger class="impact" />
+    <rotation class="motion" />	
+    <model mesh_filename="vindicator_bullet.xml" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	<effect class="result" key="terrain" ref="blast2_smoke_rumbler" lighting="0"/>
+	<effect class="result" key="terrain" ref="blast_smoke_Vindicator" lighting="0"/>
+	<!--
+	<effect class="result" key="terrain" ref="blast_smoke_02"/>
+	<effect class="result" key="terrain" ref="blast_smoke_cross"/>
+	-->
+	
+</projectile>

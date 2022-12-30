@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapon 
+drop_count_factor_on_death="1.0" 
+time_to_live_out_in_the_open="360"
+player_death_drop_owner_lock_time="330"
+key="ex_leviathan_breath.weapon" 
+on_ground_up="0 0 1" 
+> 
+    <specification 	
+    slot="0" 	
+    retrigger_time="0.1" 
+	last_burst_retrigger_time="3"
+    accuracy_factor="1.0" 
+	spread_range="1"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="10" 
+    sustained_fire_diminish_rate="0.4" 
+    magazine_size="-1" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="1"	
+    suppressed="0" 
+	class="4" 
+    name="Leviathan Breath" 
+	sight_range_modifier="2.2" 
+	sight_height_offset="1.0" 
+	burst_shots="1" 
+    projectiles_per_shot="1" 
+    projectile_speed="300.0"
+	barrel_offset="0.6" 
+	carry_in_two_hands="1" 
+	stab_enabled="0" 
+	stab_range="2" 
+	use_basic_muzzle_smoke_effect="0"
+	/> 
+	<!--0全自动 4半自动 2栓动 3特殊（需要额外动作）5近程特殊（如部署沙包）-->
+	
+    <next_in_chain key="ex_trinity_ghoul.weapon" share_ammo="0" /> 
+
+	<animation state_key="recoil" animation_key="recoil_standing_big_bow" />
+    <animation state_key="hold" animation_key="recover_recoil_standing_big_bow" />
+    <animation state_key="crouching" animation_key="crouch still, bow" />
+    <animation state_key="crouch_moving" animation_key="crouching forwards, bow" />
+    <animation state_key="crouch_moving_backwards" animation_key="crouching backwards, bow" />
+    <animation state_key="walking_backwards" animation_key="walking backwards, bow" />  
+    <animation state_key="reload" animation_key="reload, bow" volume="0.7" />
+    <animation state_key="hold_on_wall" animation_key="still, bow" />
+    <animation state_key="still_against_wall" animation_key="still, bow" />
+    <animation state_key="walking" animation_key="walking, bow" />
+    <animation state_key="running" animation_key="running, bow" />
+    <animation state_key="hold_casual" animation_key="casual, bow" />
+	<animation state_key="next_in_chain_in" animation_key="exchange_bow" />
+	<animation state_key="next_in_chain_out" animation_key="" />
+	
+    <sound key="effect" fileref="" pitch_variety="0.03" volume="1.0" /> 
+    <sound key="fire" fileref="vabow_fire.wav" pitch_variety="0.03" volume="0.3" />
+    <sound key="dry_fire" fileref="" pitch_variety="0.03" volume="1.0" />
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="0.5" />
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="0.9" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="0.8" />
+    <sound key="magazine_out" fileref="mg_clip_out.wav" />
+    <sound key="magazine_in" fileref="mg_clip_in.wav" />
+    <sound key="cycle" fileref="bow_reload.wav" />
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" />
+    <sound key="last_ammo" fileref="" />
+	<sound class="impact" fileref="rifle_drop.wav" />
+
+    <model filename="leviathan_breath.xml" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="leviathan_breath.png" /> 
+	
+	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="1" source="rank" source_value="0.0" />
+	
+    <commonness value="0" can_respawn_with="0" in_stock="1" /> 
+    <inventory encumbrance="7.5" price="314.0" /> 
+    <weak_hand_hold offset="0.3" /> 
+
+    <projectile file="vathbow_generate.projectile" pulldown_in_air="120" can_be_detected_by_footmen="1" 
+	time_to_live="1" can_be_detected_by_driver="1" can_be_disarmed="0"  > 
+
+		<result class="spawn" instance_class="projectile" instance_key="vabow_damage.projectile" 
+		min_amount="6" max_amount="6" offset="0 0 0" position_spread="1.2 0" direction_spread="0.10 0" />
+		<trigger class="impact" time_to_live="0" />
+		<rotation class="motion" />
+		
+		<sound class="result" key="terrain" fileref="vabow_hit1.wav" pitch_variety="0.03" volume="0.3" />
+		<sound class="result" key="terrain" fileref="vabow_hit2.wav" pitch_variety="0.03" volume="0.3" />
+		<sound class="result" key="terrain" fileref="vabow_hit3.wav" pitch_variety="0.03" volume="0.3" />
+		<sound class="result" key="terrain" fileref="vabow_hit4.wav" pitch_variety="0.03" volume="0.3" />
+		<sound class="result" key="other" copy="terrain" />
+		<sound class="result" key="static_object" copy="terrain" />
+		<sound class="result" key="vehicle" copy="terrain" />
+		<sound class="result" key="character" copy="terrain" />
+		<sound class="result" key="shield" copy="terrain" />
+		<effect class="activated" ref="401_vabow_activated_spot" />
+		<trail probability="1" key="bow_void"/>	
+		<effect class="result" key="terrain" ref="401_vabow_random_spot_01" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_vabow_random_spot_02" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_vabow_random_spot_03" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_vabow_random_spot_04" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_vabow_ring_spread_spot" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_vabow_hit_dark_tear" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_vabow_hit_dark_ball" lighting="0" post_processing="1"/>
+		<effect class="result" key="terrain" ref="401_vabow_hit_light_ball" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_vabow_hit_center_thudner" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_vabow_hit_center_shrink" lighting="0"/>
+		
+
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		<trail probability="1" key=""/>	
+    </projectile>
+		<effect class="muzzle" ref="401_vabow_muzzle_ring"/>
+		<effect class="muzzle" ref="401_vabow_muzzle_smoke"/>
+	    
+    <stance state_key="running" accuracy="1" /> 
+    <stance state_key="walking" accuracy="1" />
+	<stance state_key="standing" accuracy="1" />
+	<stance state_key="crouching" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1" />     
+     
+    <modifier class="speed" value="0.1" /> 
+    <modifier class="hit_success_probability" value="0.0" />
+    <modifier class="detectability" value="0.0" />
+
+
+</weapon>
+
+

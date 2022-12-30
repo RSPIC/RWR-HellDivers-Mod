@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectile class="grenade" 
+name="Spawn Butcher" 
+key="cyborgs_spawn_butcher.projectile" 
+slot="0" 
+radius="0.15" 
+time_to_live_out_in_the_open="0.0" 
+drop_count_factor_on_death="0.0"
+pulldown_in_air="4.0"
+>
+	<!--无论高度固定生成在弹头所在的地平面上-->
+	<result class="notify_script" key="Butcher" />
+    <trigger class="time" time_to_live="0.01"/>
+
+    <rotation class="random" />
+
+	<model mesh_filename="" />
+
+    <hud_icon filename="cyborgs_icon.png" />
+
+    <throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+
+    <!-- projectile slot 0 is used for hand grenade items currently -->
+    <!-- bound to change -->
+    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
+    <capacity value="0" source="rank" source_value="0.0" /> 
+    <capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+	
+</projectile>

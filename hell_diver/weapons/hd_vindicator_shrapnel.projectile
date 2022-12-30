@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectile class="grenade" 
+name="Vindicator Dive Bomb Shrapnel" 
+slot="1" 
+pulldown_in_air="80.0" 
+key="hd_vindicator_shrapnel.projectile">
+    
+	<result class="blast" radius="7.0" damage="1.5" decal="2" push="1" character_state="death" />
+    <trigger class="impact" />
+    <rotation class="motion" />	
+    <model mesh_filename="" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	<!--
+	<effect class="result" key="terrain" ref="blast_smoke_Vindicator"/>
+	-->
+	<effect class="result" key="terrain" ref="blast_smoke_02" lighting="0"/>
+	<effect class="result" key="terrain" ref="blast_smoke_cross" lighting="0"/>
+	
+	<effect class="result" type="splat_map" surface_tag="" size="5.0" atlas_index="0" layer="1" />
+    <effect class="result" type="splat_map" surface_tag="" size="6.5" atlas_index="4" layer="0" />
+    <effect class="result" type="splat_map" surface_tag="" size="8.0" atlas_index="0" layer="2" additive="0" />
+	
+</projectile>

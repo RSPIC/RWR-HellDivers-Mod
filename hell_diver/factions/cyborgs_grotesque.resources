@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources clear_weapons="0" clear_vehicles="0" clear_calls="0">
+	<!--此处用于注册畸形者基础AI携带物品，需要确保物品代码中in_stock="1" -->
+	
+	<!-- always load common first; it"s the one that clears the initial weapon resources -->
+	<weapon key="cyborgs_grotesque_main.weapon" />
+	
+
+</resources>

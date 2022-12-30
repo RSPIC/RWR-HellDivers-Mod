@@ -1,0 +1,16 @@
+<commands>
+  <command 
+	  class="start_game" 
+	  vehicles="1" 
+	  max_soldiers="30" 
+	  player_bot_compensation="0" 
+	  xp_multiplier="1.0"
+	  rp_multiplier="1.0"
+	  friendly_fire="0"
+	  base_capture_system="none"> 
+
+    <faction initial_over_capacity="0" ai_accuracy="0.98" />
+    <faction initial_over_capacity="0" ai_accuracy="0.98" />
+    <faction initial_over_capacity="0" ai_accuracy="0.98" capacity_multiplier="0.0" />
+  </command>
+</commands>

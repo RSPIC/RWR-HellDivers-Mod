@@ -1,0 +1,15 @@
+<vehicle name="" key="tut_sign.vehicle" map_view_atlas_index="15" respawn_time="180.0">
+	<tire_set offset="1.0 0.0 1.0" radius="0.65" />
+	<tire_set offset="1.0 0.0 -1.0" radius="0.65" />
+  
+	<control max_speed="20.0" acceleration="6.7" max_reverse_speed="6.0" max_rotation="0.8" max_water_depth="3" />
+                                                                                                                                                       
+	<physics max_health="1.0" mass="70.0" extent="0.8 0.0 1.4" offset="0 0.0 0" top_offset="0 0.5 0" collision_model_pos="0 0.2 0" collision_model_extent="0.6 1.5 1.2" visual_offset="0 0.0 0" /> 
+
+	<visual class="chassis" mesh_filename="tut_sign.mesh" texture_filename="tut_sign.png" />
+  
+
+	<effect event_key="destroy" key="other" ref="SmokeMinor" post_processing="1" />
+	<effect event_key="destroy" key="other" ref="ShadowSmokeMinor" shadow="1" />
+  <effect event_key="slide_hard" type="splat_map" surface_tag="road" size="2.0" atlas_index="5" layer="0" />   
+</vehicle>

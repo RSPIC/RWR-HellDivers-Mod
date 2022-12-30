@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<faction 
+	name="Illuminate" 
+	color="0 0.3 1" 
+	firstnames_file="illuminate_firstnames.txt" 
+	lastnames_file="illuminate_lastnames.txt" 
+	chat_icon_filename="illuminate_chat_icon.png" 
+	chat_icon_filename_supporter="illuminate_chat_icon.png" 
+	chat_icon_commander_filename="illuminate_chat_icon_commander.png" 
+	campaign_completion_icon_filename="campaign_win_2.png" 
+	radio_queue_size="3"
+	supporter_high_skinpack_xp="100.0">
+	
+	<rank xp="0.0" name="Private">
+		<hud_icon filename="hud_rank0.png" />
+	</rank>  
+	<rank xp="0.05" name="Private 1st Class">
+		<hud_icon filename="hud_rank1.png" />    
+	</rank>
+
+
+	<!-- player group -->
+	<soldier name="default" spawn_score="0.0">
+		<character filename="helldivers_default_chat.character">
+			<parameter class="default_squad_config_index" value="0" />
+		</character>
+		<ai filename="default.ai" />
+
+		<model file="hdivers_ceremonial.xml" />
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="common.resources" />
+		<resources file="hd_player.resources" clear_weapons="0" clear_vehicles="0" clear_carry_items="0" clear_calls="0" clear_grenades="0"/>
+		<resources file="hd_divers.resources" >
+			<weapon key="normal.weapon" />
+		</resources>
+		
+		
+		<item_class_existence_config>
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="1" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="1" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="1" />
+		</item_class_existence_config>
+
+		<attribute_config class="rp">
+			<attribute weight="0.3" min="80.0" max="300.0" />
+			<attribute weight="0.7" min="0.0" max="0.0" />
+		</attribute_config>
+
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="0.0" max="0.45" />
+		</attribute_config>
+	</soldier>
+	
+	<!-- default ai group -->
+	<soldier name="default_ai" spawn_score="1.0" copy_from="default">
+	</soldier>
+  
+	<!-- supply box group -->
+	<soldier name="supply" spawn_score="0.0">
+		<resources file="supply_common.resources" />
+		<resources file="supply_brown.resources" />
+
+		<!-- low XP, likely to join player squad -->
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="0.0" max="0.05" />
+		</attribute_config>
+	</soldier>  
+    
+    
+	<!-- icecream group -->
+	<soldier name="icecream" spawn_score="0.0">
+		<resources file="icecream.resources" />
+
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="0.0" max="0.05" />
+		</attribute_config>
+	</soldier>              
+
+</faction>

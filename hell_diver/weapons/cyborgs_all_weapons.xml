@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapons>
+	<!-- SquadLeader 基础兵种 -->
+	<weapon file="cyborgs_squadleader_main_alert.weapon" /><!--主武器-->
+	<weapon file="cyborgs_squadleader_main_gl.weapon" /><!--主武器-->
+	<weapon file="cyborgs_squadleader_secondary_alert.weapon" /><!--副武器-->
+	<!-- legionnaire 基础兵种 -->
+	<weapon file="cyborgs_legionnaire_main_alert.weapon" /><!--主武器-->
+	<weapon file="cyborgs_legionnaire_main_gl.weapon" /><!--主武器-->
+	<weapon file="cyborgs_legionnaire_secondary_alert.weapon" /><!--副武器-->
+	
+	
+	<!-- Grotesque 基础兵种 -->
+	<weapon file="cyborgs_grotesque_main.weapon" /><!--主武器-->
+	<!-- Berserker 基础兵种 -->
+	<weapon file="cyborgs_berserker_main.weapon" /><!--主武器-->
+	<!-- Comrade 基础兵种 -->
+	<weapon file="cyborgs_comrade_main.weapon" /><!--主武器-->
+	<!-- Immolator 基础兵种 -->
+	<weapon file="cyborgs_immolator_main.weapon" /><!--主武器-->
+	<!-- Initiate 基础兵种 -->
+	<weapon file="cyborgs_initiate_main.weapon" /><!--主武器-->
+	<!-- Hulk 基础兵种 -->
+	<weapon file="cyborgs_hulk_main.weapon" /><!--主武器-->
+	
+	<!-- 生成用模型载体 -->
+	<weapon file="cyborgs_spawn_berserker_model.weapon" />
+	<weapon file="cyborgs_spawn_grotesque_model.weapon" />
+	<weapon file="cyborgs_spawn_initiate_model.weapon" />
+	<weapon file="cyborgs_spawn_immolator_model.weapon" />
+	<weapon file="cyborgs_spawn_comrade_model.weapon" />
+	
+
+</weapons>

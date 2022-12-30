@@ -1,0 +1,241 @@
+author: RST
+2022.9.23
+未经授权不可复用、修改使用、仅用于helldiver mod
+
+particle_system stun_mine_mk3_ring
+{
+	quota 50
+	material lens_circle_03
+	particle_width 0.1
+	particle_height 0.1
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0.8 0.8 0.8 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.4
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 70
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+	
+}
+particle_system stun_mine_mk3_center : stun_mine_mk3_ring
+{
+	material pump_flare_03_01
+	emitter Point
+	{
+		angle 0
+		colour 0.8 0.8 0.8 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.4
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 50
+	}
+	
+}
+particle_system stun_mine_mk3_ray : stun_mine_mk3_ring
+{
+	particle_width 0.15
+	particle_height 20
+	material point_hard_edge
+	billboard_type oriented_self
+	emitter Point
+	{
+		angle 90
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 80
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.15
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	10
+		green1 	10
+		blue1 	10
+		alpha1 	0
+		red2 	-20
+		green2	-20
+		blue2	-20
+		alpha2	-3
+		state_change 0.05
+	}
+}
+
+particle_system stun_mine_mk3_ambient_white
+{
+	quota 50
+	material point_soft_edge_100
+	particle_width 15
+	particle_height 15
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0.3 0.3 0.3 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.5
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 10
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+
+
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material lens_circle_03 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture lens_circle_03.png 	
+}}}}
+material point_hard_edge : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture point_hard_edge.png 	
+}}}}
+material pump_flare_03_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture pump_flare_03_01.png 	
+}}}}
+material point_soft_edge_100 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture point_soft_edge_100.png 	
+}}}}
+

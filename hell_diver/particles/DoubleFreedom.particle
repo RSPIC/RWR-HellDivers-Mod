@@ -1,0 +1,194 @@
+author: RST
+2022.9.26
+未经授权不可复用、修改使用、仅用于helldiver mod
+
+particle_system DoubleFreedom_activated_01
+{
+	quota 1000
+	material point_soft_edge_100
+	particle_width 3
+	particle_height 3
+	renderer billboard	
+	billboard_origin center
+	billboard_type point
+	emitter Point{
+		angle 0
+        colour 0.5 0.075 0.025 1
+		direction 0 1 0
+		emission_rate 30
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.03
+		duration 3
+	}
+	affector ColourFader
+	{
+		red		0
+		green	0
+		blue	0
+		aplha	0
+	}
+}
+
+particle_system DoubleFreedom_activated_02 : DoubleFreedom_activated_01
+{
+	material point_soft_edge_100
+	particle_width 0.5
+	particle_height 0.5
+	emitter Point{
+        colour 0.5 0.5 0.5 1
+	}
+	affector ColourFader
+	{
+		red		0
+		green	0
+		blue	0
+		aplha	0
+	}
+}
+
+particle_system DoubleFreedom_muzzle
+{
+	quota 500
+	material point_hard_edge
+	particle_width 0.05
+	particle_height 0.25
+	renderer billboard	
+	billboard_origin bottom_center
+	billboard_type oriented_self
+	emitter Point{
+		angle 5
+        colour 1 0.3 0 1
+		direction 0 1 0
+		emission_rate 40
+		position 0 0 0
+		velocity_min 25
+		velocity_max 75
+		time_to_live_min 0.4
+		time_to_live_max 0.6
+		duration 0.1
+	}
+	affector ColourFader2
+	{
+		red1	10
+		green1	3
+		blue1	1
+		aplha1	50
+		red2   	-3
+		green2	-3
+		blue2	-3
+		aplha2	-4
+		state_change 0.3
+	}
+	affector DirectionRandomiser  
+	{
+		randomness 100
+		scope 75
+		keep_velocity true
+	}
+}
+
+particle_system DoubleFreedom_hit_ground_smoke
+{
+	quota 500
+	material wand_smoke
+	particle_width 1
+	particle_height 1
+	renderer billboard	
+	billboard_origin bottom_center
+	billboard_type point
+	emitter Point{
+		angle 0
+        colour 1 1 1 0.5
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.01
+		time_to_live_min 0.4
+		time_to_live_max 0.6
+		duration 0.1
+	}
+	affector ColourFader2
+	{
+		red1	0
+		green1	0
+		blue1	0
+		aplha1	0
+		red2   	-0
+		green2	-0
+		blue2	-0
+		aplha2	-2.5
+		state_change 0.4
+	}
+	affector Scaler{rate 0.5}
+	affector Rotator{
+		rotation_speed_range_start	360
+		rotation_speed_range_end	-360
+		rotation_range_start	0
+		rotation_range_end	90
+	}
+}
+
+------------------------------material----------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+material point_hard_edge : add_base{
+	technique{
+		pass{
+			texture_unit{
+			texture point_hard_edge.png
+		}
+	}
+}
+}
+material point_soft_edge_100 : add_base{
+	technique{
+		pass{
+			texture_unit{
+			texture point_soft_edge_100.png
+		}
+	}
+}
+}
+material double_freedom_trail : add_base
+{
+	technique{
+		pass{
+			texture_unit{
+			texture double_freedom_trail.png
+		}
+	}
+}
+}
+material wand_smoke : alpha_blend_base
+{
+	technique{
+		pass{
+			texture_unit{
+			texture wand_smoke.png
+			}
+		}
+	}
+}
+
+

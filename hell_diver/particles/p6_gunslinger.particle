@@ -1,0 +1,600 @@
+author: RST
+2022.7.23
+未经授权不可复用、修改使用、仅用于helldiver mod
+
+particle_system p6_gunslinger_hit_01
+{
+	quota 50
+	material diamond_fill_soft_02
+	particle_width 0.8
+	particle_height 2
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	
+	emitter Point
+	{
+		angle 45
+		colour 1 0.3 0 1
+		direction 0 1 0
+		emission_rate 300
+		position 0 0 0
+		velocity 100
+		time_to_live 0.012
+		duration 0.02
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	100
+		green1 	30
+		bule1 	0
+		alpha1 	100
+		red2 	10
+		green2	10
+		blue2	10
+		alpha2	10
+		state_change 0.0001
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system p6_gunslinger_hit_02
+{
+	quota 50
+	material diamond_fill_soft_02
+	particle_width 0.2
+	particle_height 1
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	
+	emitter Point
+	{
+		angle 30
+		colour 1 0.3 0 1
+		direction 0 1 0
+		emission_rate 30
+		position 0 0 0
+		velocity 30
+		time_to_live 0.13
+		duration 0.02
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	10
+		green1 	3
+		blue1 	0
+		alpha1 	10
+		red2 	10
+		green2	10
+		blue2	10
+		alpha2	10
+		state_change 0
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system p6_gunslinger_hit_03
+{
+	quota 50
+	material point_soft_edge_100_pass
+	particle_width 5
+	particle_height 5
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	accurate_facing on
+	emitter Point
+	{
+		angle 0
+		colour 0.1 0.1 0.1 0.5
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.2
+		duration 0.05
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		bule1 	0
+		alpha1 	100
+		red2 	-10
+		green2	-10
+		blue2	-10
+		alpha2	-10
+		state_change 0.1
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system p6_gunslinger_hit_04
+{
+	quota 50
+	material point_soft_edge_100_pass
+	particle_width 0.3
+	particle_height 0.3
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	accurate_facing on
+	emitter Point
+	{
+		angle 0
+		colour 1 0.3 0 1
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.5
+		duration 0.05
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	5
+		green1 	3
+		bule1 	0
+		alpha1 	100
+		red2 	-3.3
+		green2	-3.3
+		blue2	-3.3
+		alpha2	-10
+		state_change 0.3
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+
+
+particle_system p6_gunslinger_activated_ambient_light
+{
+	quota 30
+	material point_soft_edge_100_pass
+	particle_width 15
+	particle_height 15
+	renderer billboard
+	billboard_rotation_type vertex
+	iteration_interval 0.01
+	emitter Box
+	{
+		angle 360
+		colour 0.1 0.06 0.0 0.05
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity_min 0.1
+		velocity_max 0.3
+		time_to_live 0.05
+		duration 1
+		width 3
+		height 3
+		depth 1
+		
+	}
+	affector Scaler
+	{
+		rate 30
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	-180
+		rotation_speed_range_end	180
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		bule1 	0
+		alpha1 	0
+		red2 	-0.1
+		green2	-0.06
+		blue2	-0
+		alpha2	-0
+		state_change 1
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+}
+
+particle_system p6_gunslinger_laser
+{
+	quota 50
+	material linear_laser
+	particle_width 0.5
+	particle_height 200
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0.3 0 0 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.5
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-0.3
+		green2	-0
+		blue2	-0
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+
+particle_system p6_gunslinger_hit_light
+{
+	quota 50
+	material point_soft_edge_100_pass
+	particle_width 15
+	particle_height 15
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	accurate_facing on
+	emitter Point
+	{
+		angle 0
+		colour 0.1 0.05 0.0 0.5
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.2
+		duration 0.05
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		bule1 	0
+		alpha1 	100
+		red2 	-10
+		green2	-10
+		blue2	-10
+		alpha2	-10
+		state_change 0.1
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system p6_gunslinger_hit_leave
+{
+	quota 50
+	material point_soft_edge_100_pass
+	particle_width 0.6
+	particle_height 0.6
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	accurate_facing off
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	emitter Point
+	{
+		angle 0
+		colour 1 0.3 0 1
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.5
+		duration 0.05
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	5
+		green1 	3
+		bule1 	0
+		alpha1 	100
+		red2 	-3.3
+		green2	-3.3
+		blue2	-3.3
+		alpha2	-10
+		state_change 0.3
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system p6_gunslinger_hit_spark
+{
+	quota 50
+	material point_soft_edge_100
+	particle_width 0.3
+	particle_height 0.3
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	
+	emitter Point
+	{
+		angle 45
+		colour 1 0.3 0 1
+		direction 0 1 0
+		emission_rate 300
+		position 0 0 0
+		velocity_min 10
+		velocity_max 15
+		time_to_live 1.5
+		duration 0.02
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		bule1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	0
+		state_change 0.3
+	}
+	affector LinearForce{
+		force_vector 0 -30 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+		affector DeflectorPlane 
+	{
+		plane_point 0 4 0
+		plane_normal 0 1 0 
+		bounce 0.4
+	}
+}
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material p6_gunslinger_trail : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture rx1_trail.png 	
+}}}}
+material rx1_smoke 
+{     
+	receive_shadows off     
+	technique 
+	{
+		pass 
+		{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+			texture_unit 
+			{
+				texture rx1_smoke.png 	
+			}
+		}
+	}
+}
+material linear_laser : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture linear_laser.png 	
+}}}}
+material point_soft_edge_100 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture point_soft_edge_100.png 	
+}}}}
+material diamond_fill_soft_02 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture diamond_fill_soft_02.png 	
+}}}}
+material point_soft_edge_100_pass : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture point_soft_edge_100.png 	
+}}}}

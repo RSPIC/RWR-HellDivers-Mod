@@ -1,0 +1,549 @@
+author: RST
+2022.9.22
+未经授权不可复用、修改使用、仅用于helldiver mod
+
+particle_system hd_mg94_avtivated_bullet_light
+{
+	quota 100
+	material point_soft_edge_100
+	particle_width 15
+	particle_height 15
+	renderer billboard
+	billboard_rotation_type vertex
+	iteration_interval 0.01
+	emitter Box
+	{
+		angle 360
+		colour 0.03 0.03 0.03 0.05
+		direction 0 1 0
+		emission_rate 30
+		position 0 0 0
+		velocity_min 0.1
+		velocity_max 0.3
+		time_to_live 0.05
+		duration 1
+		width 3
+		height 3
+		depth 1
+		
+	}
+	affector Scaler
+	{
+		rate 30
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	-180
+		rotation_speed_range_end	180
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		bule1 	0
+		alpha1 	0
+		red2 	-0.01
+		green2	-0.01
+		blue2	-0.01
+		alpha2	-0
+		state_change 1
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+}
+particle_system hd_mg94_avtivated_bullet_light_center
+{
+	quota 100
+	material point_soft_edge_100_pass
+	particle_width 5
+	particle_height 5
+	renderer billboard
+	billboard_rotation_type vertex
+	iteration_interval 0.01
+	emitter Point
+	{
+		angle 360
+		colour 0.4 0.09 0.0 0.05
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity_min 0.1
+		velocity_max 0.3
+		time_to_live 0.05
+		duration 1
+		
+	}
+	affector Scaler
+	{
+		rate 30
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	-180
+		rotation_speed_range_end	180
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		bule1 	0
+		alpha1 	0
+		red2 	-0.1
+		green2	-0.09
+		blue2	-0
+		alpha2	-0
+		state_change 1
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+}
+particle_system hd_mg94_result_bullet_light_center : hd_mg94_avtivated_bullet_light_center
+{
+	particle_width 8
+	particle_height 8
+	emitter Point
+	{
+		colour 0.3 0.1 0.05 0.05
+		time_to_live 0.15
+		duration 0.1
+	}	
+	affector Scaler
+	{
+		rate 5
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	-180
+		rotation_speed_range_end	180
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		bule1 	0
+		alpha1 	0
+		red2 	-0.8
+		green2	-0.1
+		blue2	-0.1
+		alpha2	-0
+		state_change 1
+	}
+}
+particle_system hd_mg94_result_bullet_smoke : hd_mg94_result_bullet_light_center
+{	
+	particle_width 2
+	particle_height 2
+	material wand_smoke_pass
+	emitter Point
+	{
+		colour 0.8 0.8 0.8 0.5
+		time_to_live 0.5
+		velocity_min 0.5
+		velocity_max 1
+		emission_rate 5
+		duration 0.1
+	}	
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	-180
+		rotation_speed_range_end	180
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		bule1 	0
+		alpha1 	0
+		red2 	-0
+		green2	-0
+		blue2	-0
+		alpha2	-1
+		state_change 0.5
+	}
+}
+particle_system hd_mg94_hit_leave
+{
+	quota 50
+	material point_soft_edge_100_pass
+	particle_width 0.35
+	particle_height 0.35
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	accurate_facing off
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	emitter Point
+	{
+		angle 0
+		colour 1 0.3 0 1
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.5
+		duration 0.05
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	5
+		green1 	3
+		bule1 	0
+		alpha1 	100
+		red2 	-3.3
+		green2	-3.3
+		blue2	-3.3
+		alpha2	-10
+		state_change 0.3
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system hd_mg94_avtivated_bullet_light_center_yellow
+{
+	quota 100
+	material point_soft_edge_100_pass
+	particle_width 1.5
+	particle_height 1.5
+	renderer billboard
+	billboard_rotation_type vertex
+	iteration_interval 0.01
+	emitter Point
+	{
+		angle 360
+		colour 0.7 0.7 0.0 0.05
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity_min 0.1
+		velocity_max 0.3
+		time_to_live 0.05
+		duration 1
+		
+	}
+	affector Scaler
+	{
+		rate -30
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	-180
+		rotation_speed_range_end	180
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		bule1 	0
+		alpha1 	0
+		red2 	-0.1
+		green2	-0.06
+		blue2	-0
+		alpha2	-0
+		state_change 1
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+}
+particle_system hd_mg94_avtivated_bullet_ground_light
+{
+	quota 100
+	material point_soft_edge_100_pass
+	particle_width 10
+	particle_height 10
+	billboard_type perpendicular_common
+	renderer billboard
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	emitter Point
+	{
+		angle 360
+		colour 0.25 0.20 0.15 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 -5 0
+		velocity_min 0.1
+		velocity_max 0.3
+		time_to_live 0.05
+		duration 1
+		
+	}
+	affector Scaler
+	{
+		rate 30
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	-180
+		rotation_speed_range_end	180
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		bule1 	0
+		alpha1 	0
+		red2 	-0.1
+		green2	-0.06
+		blue2	-0
+		alpha2	-0
+		state_change 1
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+}
+
+particle_system hd_mg94_result_spray
+{
+	quota 50
+	material spray_hit_point
+	particle_width 0.5
+	particle_height 2
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	accurate_facing on
+	emitter Point
+	{
+		angle 90
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 4
+		position 0 0 0
+		velocity_min 50
+		velocity_max 80
+		time_to_live 1.5
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate -0.2
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 -30 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+	affector DeflectorPlane 
+	{
+		plane_point 0 4 0
+		plane_normal 0 1 0 
+		bounce 0.4
+	}
+}
+
+particle_system hd_mg94_laser
+{
+	quota 50
+	material linear_laser
+	particle_width 0.4
+	particle_height 200
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 0 0 1
+		direction 0 1 0
+		emission_rate 1
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.5
+		duration 0.05
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	10
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-0
+		blue2	-0
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material point_soft_edge_100_pass : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture point_soft_edge_100.png 	
+}}}}
+material point_soft_edge_100 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture point_soft_edge_100.png 	
+}}}}
+material spray_hit_point : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture spray_hit_point.png 	
+}}}}
+material hd_mg94_trail : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture hd_mg94_trail.png 	
+			wave_xform scroll_y sine 1.0 0.5 0.0 0.15
+			wave_xform rotate sine 1.0 0.4 0.3 0.2
+}}}}
+material wand_smoke_pass : alpha_blend_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture wand_smoke.png 	
+}}}}
+material hd_mg94_muzzle_pass : add_base
+{   
+    technique{
+    pass{
+		lighting on
+		emissive 1 1 1 1
+		depth_func always_pass
+        texture_unit{
+            texture hd_mg94_muzzle.png 	
+}}}}
+material linear_laser : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture linear_laser.png 	
+}}}}
