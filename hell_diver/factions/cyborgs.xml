@@ -22,8 +22,8 @@
 	<!-- player group 玩家属性-->
 	<soldier name="default" spawn_score="0.0">
 		<character filename="cyborgs_default_base.character">
-			<parameter class="walking_steer_amount" value="1.2" />	
-			<parameter class="running_steer_amount" value="1.2" />	
+			<!-- <parameter class="walking_steer_amount" value="1.2" />	 -->
+			<!-- <parameter class="running_steer_amount" value="1.2" />	 -->
 		</character>
 		<!-- <ai filename="default_cyborgs.ai" /> -->
 		<ai filename="squadleader.ai" />
