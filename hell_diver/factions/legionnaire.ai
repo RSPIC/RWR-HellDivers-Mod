@@ -2,7 +2,7 @@
 <ai filename="default_cyborgs.ai">
   <parameter class="accuracy_offset" value="0.03" /> 
   <parameter class="accuracy_offset_in_player_squad" value="0.01" />
-  <parameter class="willingness_to_charge" value="99" /> <!--总是冲锋-->
+  <parameter class="willingness_to_charge" value="1.0" /> <!--总是冲锋-->
 
 <!-- firemode switching -->
   <parameter class="throw_grenade_time_interval_max" value="120.0" />
