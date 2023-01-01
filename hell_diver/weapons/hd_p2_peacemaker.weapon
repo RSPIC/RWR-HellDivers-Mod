@@ -94,7 +94,7 @@ on_ground_up="0 0 1"
 		kill_decay_start_time="0.3" kill_decay_end_time="0.4" />
 		-->
 		<result class="spawn" instance_class="projectile" instance_key="p2_peacemaker_damage.projectile" 
-			min_amount="2" max_amount="3" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			min_amount="3" max_amount="4" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 			
 		<effect class="activated" ref="p2_peacemaker_activated_ambient_light" lighting="0"/>
 		<effect class="result" ref="p2_peacemaker_hit_leave" lighting="0"/>

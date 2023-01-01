@@ -46,8 +46,8 @@ on_ground_up="0 0 1"
     <animation state_key="reload" animation_key="reload, bow" volume="0.7" />
     <animation state_key="hold_on_wall" animation_key="still, bow" />
     <animation state_key="still_against_wall" animation_key="still, bow" />
-    <animation state_key="walking" animation_key="walking, bow" />
-    <animation state_key="running" animation_key="running, bow" />
+    <animation state_key="walking" animation_key="running, bow" />
+    <animation state_key="running" animation_key="walking, bow" />
     <animation state_key="hold_casual" animation_key="casual, bow" />
 	<animation state_key="next_in_chain_in" animation_key="exchange_bow" />
 	<animation state_key="next_in_chain_out" animation_key="" />

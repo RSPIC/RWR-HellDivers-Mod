@@ -48,7 +48,7 @@ key="hd_mg105_stalwart_full_upgrade.weapon"
 	<animation state_key="walking_backwards" animation_key="walking backwards, hip fire" />  
 	<animation state_key="hold_on_wall" animation_key="hold, hip fire" />
 	<animation state_key="still_against_wall" 	animation_key="hold, hip fire" />
-	<animation state_key="walking" animation_key="walking, hip fire" />
+	<animation state_key="walking" animation_key="" />
 	<animation state_key="running" animation_key="" />  
 
     <sound key="fire" fileref="mg105_fire.wav" pitch_variety="0.1" volume="0.45" />

@@ -38,8 +38,8 @@ on_ground_up="-1 1 0" >
     <animation state_key="crouching" animation_key="still_rumbler" />
 	<animation state_key="crouch_moving" animation_key="crouching_forwards_rumbler" />
 	<animation state_key="crouch_moving_backwards" animation_key="crouching_backwards_rumbler" />
-    <animation state_key="running" animation_key="running_rumbler" />
-	<animation state_key="walking" animation_key="walking_rumbler" />
+    <animation state_key="running" animation_key="running" />
+	<animation state_key="walking" animation_key="running_rumbler" />
 	<animation state_key="walking_backwards" animation_key="walking backwards, pistol" />
 
 

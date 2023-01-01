@@ -56,6 +56,7 @@
 	
 	<!-- default ai group -->
 	<soldier name="default_ai" spawn_score="1.0" copy_from="default">
+			<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 			<resources file="hd_divers.resources" />
 	</soldier>
   

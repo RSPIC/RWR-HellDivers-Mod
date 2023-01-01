@@ -69,7 +69,7 @@
   <parameter class="guard_steps" value="2" />
   <parameter class="wait_time" value="0.2" />
   <parameter class="wait_time_variance" value="0.2" />
-  <parameter class="burst_time" value="0.6" />
+  <parameter class="burst_time" value="2.5" />
   <parameter class="burst_time_variance" value="0.2" />
   <parameter class="in_vehicle_burst_time" value="1.0" />
   <parameter class="in_vehicle_burst_time_variance" value="0.3" />
@@ -84,11 +84,11 @@
   <parameter class="max_active_shields_per_fellows" value="99" /> 
   <parameter class="fighting_against_vehicle_separation" value="7.0" />
   <parameter class="fighting_against_vehicle_move_radius" value="30.0" />
-  <parameter class="day_reaction_time_to_fight_min" value="0.0" />
+  <parameter class="day_reaction_time_to_fight_min" value="0.1" />
   <parameter class="day_reaction_time_to_fight_max" value="0.3" />
   <parameter class="night_reaction_time_to_fight_min" value="0.8" />
   <parameter class="night_reaction_time_to_fight_max" value="1.1" />
-  <parameter class="willingness_to_guard" value="0" />
+  <parameter class="willingness_to_guard" value="0.1" />
   <parameter class="minimum_distance_to_consider_deploying_cover" value="18.0" />
   <parameter class="recheck_cover_over_shootability_time" value="3.0" />
   <parameter class="max_objects_per_sqm_to_consider_deployment" value="0.08" />
@@ -111,7 +111,7 @@
   <parameter class="using_cover_min_time" value="0.0" />	
   <parameter class="using_cover_max_time" value="0.0" />
 	<!-- 取消掩体使用 -->
-  <parameter class="fire_open_min_time" value="12.0" />
+  <parameter class="fire_open_min_time" value="3.0" />
   <parameter class="dive_from_grenade_probability" value="0" />
   <parameter class="celebrating_shoot_probability" value="0" /> 
   <parameter class="celebrating_comment_probability" value="0" /> 

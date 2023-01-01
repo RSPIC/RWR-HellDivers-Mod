@@ -3,8 +3,8 @@
 	<parameter class="moving_inputsteer_threshold" value="0.1" />
 	<parameter class="stopping_velocity_threshold" value="0.01" />
 
-	<parameter class="walking_steer_amount" value="0.5" />	<!--实际表现为跑姿，需要按shift，移动开火秉持该速度 default=0.5 -->
-	<parameter class="running_steer_amount" value="0.3" />	<!--实际表现为走姿-->
+	<parameter class="walking_steer_amount" value="0.45" />	<!--实际表现为跑姿，需要按shift，移动开火秉持该速度 default=0.5 -->
+	<parameter class="running_steer_amount" value="0.25" />	<!--实际表现为走姿-->
 	<parameter class="run_footstep_interval" value="0.5" />
 	<parameter class="walk_footstep_interval" value="0.7" />
 	<parameter class="crouch_walking_steer_amount" value="0.24" />
@@ -135,11 +135,11 @@
 	<!-- <animation key="still, instructor" target_key="chicken idle" /> -->
 	<!-- <animation key="still, instructor" target_key="chicken idle wind" add="1" /> -->
 	<!-- <animation key="still, instructor" target_key="chicken idle peck" add="1" /> -->
-	<!-- <animation key="walking" target_key="chicken walking" /> -->
-	<!-- <animation key="walking backwards" target_key="chicken walking" /> -->
-	<!-- <animation key="weaponless_walking" target_key="chicken walking" /> -->
-	<!-- <animation key="running" target_key="chicken running" /> -->
-	<!-- <animation key="running, no weapon, 60" target_key="chicken running" /> -->
+	<animation key="walking" target_key="running" />
+	<animation key="walking backwards" target_key="walking backwards" /><!--speed 1.0 -> 1.6-->
+	<animation key="weaponless_walking" target_key="running" />
+	<animation key="running" target_key="running_slower" />
+	<animation key="running, no weapon, 60" target_key="running, no weapon, 60" /><!--speed 1.6 -> 1.0-->
 	<!-- <animation key="crouch still" target_key="chicken crouch" /> -->
 	<!-- <animation key="crouch still, no weapon, 62" target_key="chicken crouch" /> -->
 	<!-- <animation key="crouching forwards" target_key="chicken walking" /> -->
