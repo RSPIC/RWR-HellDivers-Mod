@@ -35,8 +35,8 @@ key="hd_mg94.weapon"
 	/> 
 	<!--1020RPM 	150/250 magazine 	5s/5s Reload	30m range-->
 	
-	<animation state_key="recoil" animation_key="recoil, hip fire, 0.025" />
-	<animation state_key="recoil" stance_key="prone" ref="12" />
+	<animation key="recoil" animation_key="recoil, hip fire" />
+	<animation key="recoil" stance_key="prone" animation_key="recoil1" />
 	<animation state_key="hold" animation_key="hold, hip fire" />
 	<animation state_key="reload" animation_key="reloading_mg94"/>
 	<animation state_key="crouching" animation_key="crouch, hold, hip fire" />

@@ -252,12 +252,13 @@
    
 <!-- Tank -->
 	<!-- 巨型者 -->
+	<!-- 300层无抗甲 -->
 	<soldier name="Hulk" spawn_score="0.0" copy_from="default_ai">
 		<character filename="cyborgs_hulk_state.character">	<!-- cyborgs_hulk_state 引用 cyborgs_cyborgs_default_chat 引用 cyborgs_default_base-->
 			
 		</character>
-		
-		<resources file="cyborgs_common.resources" />
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="cyborgs_common.resources" clear_carry_items="1"  />
 		<resources file="cyborgs_hulk.resources" />
 
 		<ai filename="hulk.ai" /> <!-- hulk.ai 引用 default_cyborgs.ai -->
