@@ -33,8 +33,8 @@ key="hd_rx1_railgun.weapon"
     <hud_icon filename="hd_rx1_railgun.png" />
 	<weak_hand_hold offset="0" />
 	
-    <animation key="recoil" ref="27" />
-    <animation key="cycle" ref="30" />
+	<animation key="recoil" animation_key="recoil1, big" /> <!--后坐力动作，半身动作-->
+    <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
     <animation state_key="reload" animation_key="reloading, vss_vintorez" />
     <animation state_key="next_in_chain_in" animation_key="sheath bayonet part 2" />
     <animation state_key="next_in_chain_out" animation_key="mount bayonet part 1" />

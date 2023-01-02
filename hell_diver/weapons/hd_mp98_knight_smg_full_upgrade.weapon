@@ -48,7 +48,7 @@ on_ground_up="0 0 1"
 	
 	<!--武器动作，必须指定recoil和reload动作，部分动作留空会默认调用常规双手武器动作或者无动作-->
     <animation state_key="recoil" animation_key="recoil, pistol" /> <!--后坐力动作，半身动作-->
-    <animation key="cycle" ref="28" /> <!--拉栓动作，武器固定脱手-->
+    <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
     <animation state_key="reload" animation_key="T_reloading_1.0s" />	<!--换弹动作，半身动作-->
     <animation state_key="hold" animation_key="hold, pistol" /><!--站姿静止动作，全身动作-->
 	<animation state_key="hold_on_wall"  animation_key="hold, overwall pistol" /><!--架枪动作，全身动作-->

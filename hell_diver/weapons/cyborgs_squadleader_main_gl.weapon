@@ -63,7 +63,7 @@ radius="1"
 	
 	<!--武器动作，必须指定recoil和reload动作-->
     <animation key="recoil" animation_key="cyborgs_squadleader_recoil" /> <!--后坐力动作，半身动作-->
-    <animation key="cycle" ref="28" /> <!--拉栓动作，武器固定脱手-->
+    <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
     <animation key="reload" animation_key="cyborgs_squadleader_reload" />	<!--换弹动作，半身动作-->
     <animation key="reload" stance_key="crouching" animation_key="cyborgs_squadleader_reload" />	<!--不同姿态可以设置不同换弹动作-->
     <animation key="reload" stance_key="prone" animation_key="cyborgs_squadleader_reload" />

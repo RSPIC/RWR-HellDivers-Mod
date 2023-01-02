@@ -35,7 +35,7 @@ on_ground_up="0 0 1"
 	/> 
 	<!--504 RPM		2.5s reload		20m range		AP-->
 	
-    <animation key="cycle" ref="28" /> 
+    <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
     <animation state_key="recoil"   animation_key="recoil, pistol 2" />
 	<animation state_key="recoil" stance_key="prone"  animation_key="recoil, pistol 2" />
     <animation state_key="reload"   animation_key="p6_gunslinger_reloading" />

@@ -38,7 +38,6 @@ key="hd_mg105_stalwart_full_upgrade.weapon"
 	<!-- 12'/12' max spread 3'/1' min spread (Recoil Absorber upgrade C1) -->
 	<!-- -0.9'/-1.1' Spread Increase per Shot 负后坐力 ((Recoil Absorber upgrade C1)) -->
 	
-	<animation key="recoil" ref="12" /> <!--后坐力动作，半身动作-->
 	<animation state_key="recoil" animation_key="recoil, hip fire, 0.025" />
 	<animation state_key="recoil" stance_key="prone" ref="12" />
 	<animation state_key="hold" animation_key="hold, hip fire" />

@@ -37,7 +37,7 @@ on_ground_up="0 0 1"
 	<!--8/8 mag		120 rpm		2.15s/3s reload	-->
 
     <animation state_key="recoil" animation_key="recoil1, big" /> 
-    <animation key="cycle" ref="28" /> 
+    <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
     <animation key="reload" animation_key="reloading_obliterator_upgraded" />
     <animation state_key="hold" animation_key="" />
 	<animation state_key="hold_on_wall"  animation_key="" />
