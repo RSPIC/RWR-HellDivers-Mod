@@ -17,8 +17,12 @@
 	<!-- Initiate 基础兵种 -->
 	<weapon file="cyborgs_initiate_main.weapon" /><!--主武器-->
 	
+	<!-- 投掷物 -->
 	<projectile file="cyborgs_squadleader_alert_spawn.projectile" /><!--手雷栏-->
-	
+
+	<!-- 护甲 -->
+	<carry_item key="cyborgs_squadleader_vest.carry_item" />
+
 	<!-- spawn类  -->
 	<projectile file="cyborgs_spawn_initiate.projectile" /><!--手雷栏-->
 	<projectile file="cyborgs_spawn_squadleader.projectile" /><!--手雷栏-->
