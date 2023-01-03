@@ -3,5 +3,12 @@
 	<!-- always load common first; it"s the one that clears the initial weapon resources -->
 	<weapon key="cyborgs_comrade_main.weapon" />
 	
+	<!-- 25层 -->
+	<!-- 2-16层额外装甲 -->
+	<carry_item key="general_vest_275" />
+	<carry_item key="general_vest_271" />
+	<carry_item key="general_vest_267" />
+	<carry_item key="general_vest_263" />
+	<carry_item key="general_vest_259" />
 
 </resources>

@@ -3,6 +3,11 @@
 	<!-- always load common first; it"s the one that clears the initial weapon resources -->
 	<weapon key="cyborgs_hulk_main.weapon" />
 	
-	<carry_item key="general_vest.carry_item" />
+	<!-- 200层 -->
+	<!-- 20-60层额外装甲 -->
+	<carry_item key="general_vest_100" />
+	<carry_item key="general_vest_80" />
+	<carry_item key="general_vest_60" />
+	<carry_item key="general_vest_40" />
 
 </resources>

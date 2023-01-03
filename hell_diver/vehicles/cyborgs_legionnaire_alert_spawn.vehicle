@@ -52,27 +52,22 @@
 
 	<event>
 		<trigger class="destroy" />
-  	<result class="spawn" instance_class="vehicle" instance_key="cyborgs_spawn_berserker_model.vehicle" min_amount="1" max_amount="2" offset="0 0 0" position_spread="4 40" direction_spread="0 0" />
+  	<result class="spawn" instance_class="vehicle" instance_key="cyborgs_spawn_berserker_model.vehicle" min_amount="2" max_amount="2" offset="0 0 0" position_spread="8 40" direction_spread="0 1" />
 	</event>
 	
 	<event>
 		<trigger class="destroy" />
-  	<result class="spawn" instance_class="vehicle" instance_key="cyborgs_spawn_grotesque_model.vehicle" min_amount="1" max_amount="4" offset="0 0 0" position_spread="4 40" direction_spread="0 0" />
+  	<result class="spawn" instance_class="vehicle" instance_key="cyborgs_spawn_grotesque_model.vehicle" min_amount="4" max_amount="4" offset="0 0 0" position_spread="8 40" direction_spread="0 1" />
 	</event>
 	
 	<event>
 		<trigger class="destroy" />
-  	<result class="spawn" instance_class="vehicle" instance_key="cyborgs_spawn_initiate_model.vehicle" min_amount="2" max_amount="4" offset="0 0 0" position_spread="4 40" direction_spread="0 0" />
+  	<result class="spawn" instance_class="vehicle" instance_key="cyborgs_spawn_hulk_model.vehicle" min_amount="2" max_amount="4" offset="0 0 0" position_spread="8 40" direction_spread="0 1" />
 	</event>
 	
 	<event>
 		<trigger class="destroy" />
-  	<result class="spawn" instance_class="vehicle" instance_key="cyborgs_spawn_immolator_model.vehicle" min_amount="1" max_amount="3" offset="0 0 0" position_spread="4 40" direction_spread="0 0" />
-	</event>
-	
-	<event>
-		<trigger class="destroy" />
-  	<result class="spawn" instance_class="vehicle" instance_key="cyborgs_spawn_comrade_model.vehicle" min_amount="1" max_amount="3" offset="0 0 0" position_spread="4 40" direction_spread="0 0" />
+  	<result class="spawn" instance_class="vehicle" instance_key="cyborgs_spawn_comrade_model.vehicle" min_amount="1" max_amount="3" offset="0 0 0" position_spread="8 40" direction_spread="0 1" />
 	</event>
 	
 	
@@ -80,7 +75,7 @@
 	<!-- 音效 -->
 	<event>
 		<trigger class="destroy" />  	
-    <result class="spawn" instance_class="projectile" instance_key="hd_hellpod_dropping_sound.projectile" min_amount="1" max_amount="1" offset="0 -20 0" position_spread="0 0" direction_spread="0 0" />
+    <result class="spawn" instance_class="projectile" instance_key="hd_hellpod_dropping_sound.projectile" min_amount="1" max_amount="1" offset="0 -20 0" position_spread="0 0" direction_spread="0 1" />
 	</event>
 	 
 </vehicle>

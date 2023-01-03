@@ -3,5 +3,11 @@
 	<!-- always load common first; it"s the one that clears the initial weapon resources -->
 	<weapon key="medikit.weapon" />
 	
+	<!-- 20层 -->
+	<!-- 0-3层额外装甲 -->
+	<carry_item key="general_vest_280" />
+	<carry_item key="general_vest_279" />
+	<carry_item key="general_vest_278" />
+	<carry_item key="general_vest_277" />
 
 </resources>

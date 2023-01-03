@@ -3,5 +3,12 @@
 	<!-- always load common first; it"s the one that clears the initial weapon resources -->
 	<weapon key="cyborgs_initiate_main.weapon" />
 	
+	<!-- 七层护甲 -->
+	<!-- 0-5层额外装甲 -->
+	<carry_item key="general_vest_293" /> 
+	<carry_item key="general_vest_292" /> 
+	<carry_item key="general_vest_291" /> 
+	<carry_item key="general_vest_290" /> 
+	<carry_item key="general_vest_289" /> 
 
 </resources>

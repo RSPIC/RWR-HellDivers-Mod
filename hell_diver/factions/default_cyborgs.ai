@@ -107,7 +107,7 @@
 	<!-- 这个是警戒扩散会最多摇多少人打你 -->
   <parameter class="accuracy_offset" value="0.0" /> 
   <parameter class="accuracy_offset_in_player_squad" value="0.025" /> 
-  <parameter class="grenade_throw_hold_time" value="0.5" />
+  <parameter class="grenade_throw_hold_time" value="2" />
   <parameter class="using_cover_min_time" value="0.0" />	
   <parameter class="using_cover_max_time" value="0.0" />
 	<!-- 取消掩体使用 -->

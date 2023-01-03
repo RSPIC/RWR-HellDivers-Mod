@@ -3,5 +3,11 @@
 	<!-- always load common first; it"s the one that clears the initial weapon resources -->
 	<weapon key="cyborgs_berserker_main.weapon" />
 	
-
+	<!-- 30层 -->
+	<!-- 1-20层额外装甲 -->
+	<carry_item key="general_vest_270" />
+	<carry_item key="general_vest_265" />
+	<carry_item key="general_vest_260" />
+	<carry_item key="general_vest_255" />
+	<carry_item key="general_vest_250" />
 </resources>

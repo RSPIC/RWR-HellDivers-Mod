@@ -5,5 +5,13 @@
 	<!-- always load common first; it"s the one that clears the initial weapon resources -->
 	<weapon key="cyborgs_grotesque_main.weapon" />
 	
+	<!-- 45层 -->
+	<!-- 2-4层额外装甲 -->
+	<carry_item key="general_vest_255" />
+	<carry_item key="general_vest_254" />
+	<carry_item key="general_vest_253" />
+	<carry_item key="general_vest_252" />
+	<carry_item key="general_vest_251" />
+	<carry_item key="general_vest_250" />
 
 </resources>

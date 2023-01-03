@@ -38,7 +38,7 @@
 //#include "a10_gun_run.as"
 //#include "gunship_run.as"
 //#include "squad_equipment_kit.as"
-// #include "rangefinder.as"
+//#include "rangefinder.as"
 //#include "halloween.as"  // Halloween event only
 
 // --------------------------------------------
