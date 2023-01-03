@@ -17,28 +17,38 @@
     ·通过投掷物的：扔出去的一刻弹头已经投出，无法打断。但可以修改弹头的伤害阈值使得其可以被blast类型的伤害摧毁，或者近战摧毁
     
 伤害类型逻辑（todo）：
-    ·取消敌人的wound状态，替换为death效果
-    ·将stun状态修改为站立的眩晕状态，为眩晕雷/RX1等附带眩晕效果武器留，需要重置动作（全局）
-    ·对敌方（敌方护甲针对此伤害类型制作）
-      受伤害类型          角色状态
-      动能：hit/death    ->none - death (抗致死减伤，可被免疫)
-      眩晕：hit/stun     ->stun - death (可对免疫动能的护甲产生伤害，带控制，可被免疫)
-      电磁：hit/wound    ->none - death (不可被免疫)
-      激光：hit/none     ->none - death (可被免疫)
-      爆炸：blast/wound  ->none - death (可被免疫)
-      轰炸：blast/death  ->none - death (可对免疫爆炸的护甲产生伤害，不可被免疫)
-      控场：blast/stun   ->stun - none  (不消化层数，不可被免疫) 静电力场
-      激光：blast/none   ->none - death (可被免疫)
-      激光类无视护甲，额定减层
-    ·需要对应护甲配合使用
-    ·对玩家（玩家护甲针对此伤害类型制作）
-      受伤害类型          角色状态
-      动能：hit/death    ->none - wound - death (抗致死减伤，不可被免疫)
-      眩晕：hit/stun     ->stun - death (可对免疫动能的护甲产生伤害，带控制，可免疫)
-      电磁：hit/wound    ->none - death (不可被免疫)
-      激光：hit/none     ->none - death (不可被免疫)
-      爆炸：blast/wound  ->none - wound - death (不可被免疫)
-      轰炸：blast/death  ->none - death (可对免疫爆炸的护甲产生伤害，不可被免疫)
-      控场：blast/stun   ->stun - none  (不消化层数，可免疫) 静电力场
-      激光：blast/none   ->none - death (可被免疫)
-      激光类无视护甲，额定减层
+     取消敌人wound状态
+         全局修改stun状态为站立眩晕，而非倒地
+         对敌方（敌方护甲针对此伤害类型制作）
+            |受伤害类型 | 角色状态 | 备注 |
+            | -- | -- | -- |
+            |动能：hit/death    | ->none - death |(抗致死减伤，可被免疫)|
+            |眩晕：hit/stun     | ->stun - death |(可对免疫动能的护甲产生伤害，带控制，可被免疫)|
+            |中甲：hit/wound    | ->none - death |(可被免疫)|
+            |重穿：hit/none     | ->none - death |(不可被免疫)|
+            |爆炸：blast/death  | ->none - death |(可被免疫)|
+            |轰炸：blast/wound  | ->none - death |(可对免疫爆炸的护甲产生伤害，不可被免疫)|
+            |控场：blast/stun   | ->stun - none  |(不消化层数，不可被免疫) 静电力场|
+            |保留：blast/none   | ->death - death |(不可被免疫)|
+             激光类无视护甲，额定减层，需要高层数来保证激光武器伤害方式运行
+             需要对应护甲配合使用
+         对玩家（玩家护甲针对此伤害类型制作）
+            |受伤害类型 | 角色状态 | 备注 |
+            | -- | -- | -- |
+            |动能：hit/death    | ->none - wound - death| (抗致死减伤，不可被免疫)|
+            |眩晕：hit/stun     | ->stun - death |(可对免疫动能的护甲产生伤害，带控制，可免疫)|
+            |中甲：hit/wound    | ->none - death |(不可被免疫)|
+            |重穿：hit/none     | ->none - death |(不可被免疫)|
+            |爆炸：blast/death  | ->none - wound - death |(不可被免疫)|
+            |轰炸：blast/wound  | ->none - death |(可对免疫爆炸的护甲产生伤害，不可被免疫)|
+            |控场：blast/stun   | ->stun - none  |(不消化层数，可免疫) 静电力场|
+            |保留：blast/none   | ->death - death |(不可被免疫)|
+             玩家仅能免疫眩晕
+
+实机伤害方式：
+    所有武器以1.0致死为起始，即对无抗致死目标固定一层伤害
+    通过后效伤害的方式实现后续伤害
+    以默认载具-1.0blast伤害的方式为准
+    对于blast类型伤害，伤害值应该大于1.0，通过生成多弹头实现目标伤害
+    如生成1.6x50的blast弹头，对人伤害即2x50=100层，对载具（1.6-1）x50=30伤害
+    HD阵营玩家护甲额外携带0.5抗致死，可以有效减少友伤，对应的敌方武器均额外增加0.5抗致死以弥补
