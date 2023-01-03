@@ -91,57 +91,57 @@ class spawn_ai : Tracker {
 			}
 			case 1:{//生成 initiate 初始者
 				Vector3 PosSpawnProjectile = stringToVector3(event.getStringAttribute("position"));
-				SpawnSoldier(m_metagame,1,0,PosSpawnProjectile,"Initiate");
+				SpawnSoldier(m_metagame,1,1,PosSpawnProjectile,"Initiate");
 				break;
 			}
 			case 2:{//生成 squadleader 班长战士
 				Vector3 PosSpawnProjectile = stringToVector3(event.getStringAttribute("position"));
-				SpawnSoldier(m_metagame,1,0,PosSpawnProjectile,"Squadleader");
+				SpawnSoldier(m_metagame,1,1,PosSpawnProjectile,"Squadleader");
 				break;
 			}
 			case 3:{//生成 berserker 狂暴者
 				Vector3 PosSpawnProjectile = stringToVector3(event.getStringAttribute("position"));
-				SpawnSoldier(m_metagame,1,0,PosSpawnProjectile,"Berserker");
+				SpawnSoldier(m_metagame,1,1,PosSpawnProjectile,"Berserker");
 				break;
 			}
 			case 4:{//生成 comrade 复合人
 				Vector3 PosSpawnProjectile = stringToVector3(event.getStringAttribute("position"));
-				SpawnSoldier(m_metagame,1,0,PosSpawnProjectile,"Comrade");
+				SpawnSoldier(m_metagame,1,1,PosSpawnProjectile,"Comrade");
 				break;
 			}
 			case 5:{//生成 grotesque 畸形人
 				Vector3 PosSpawnProjectile = stringToVector3(event.getStringAttribute("position"));
-				SpawnSoldier(m_metagame,1,0,PosSpawnProjectile,"Grotesque");
+				SpawnSoldier(m_metagame,1,1,PosSpawnProjectile,"Grotesque");
 				break;
 			}
 			case 6:{//生成 hound 猎犬
 				Vector3 PosSpawnProjectile = stringToVector3(event.getStringAttribute("position"));
-				SpawnSoldier(m_metagame,1,0,PosSpawnProjectile,"Hound");
+				SpawnSoldier(m_metagame,1,1,PosSpawnProjectile,"Hound");
 				break;
 			}
 			case 7:{//生成 butcher 屠夫
 				Vector3 PosSpawnProjectile = stringToVector3(event.getStringAttribute("position"));
-				SpawnSoldier(m_metagame,1,0,PosSpawnProjectile,"Butcher");
+				SpawnSoldier(m_metagame,1,1,PosSpawnProjectile,"Butcher");
 				break;
 			}
 			case 8:{//生成 legionnaire 军团士兵
 				Vector3 PosSpawnProjectile = stringToVector3(event.getStringAttribute("position"));
-				SpawnSoldier(m_metagame,1,0,PosSpawnProjectile,"Legionnaire");
+				SpawnSoldier(m_metagame,1,1,PosSpawnProjectile,"Legionnaire");
 				break;
 			}
 			case 9:{//生成 immolator 生化兵
 				Vector3 PosSpawnProjectile = stringToVector3(event.getStringAttribute("position"));
-				SpawnSoldier(m_metagame,1,0,PosSpawnProjectile,"Immolator");
+				SpawnSoldier(m_metagame,1,1,PosSpawnProjectile,"Immolator");
 				break;
 			}
 			case 10:{//生成 hulk 巨型者
 				Vector3 PosSpawnProjectile = stringToVector3(event.getStringAttribute("position"));
-				SpawnSoldier(m_metagame,1,0,PosSpawnProjectile,"Hulk");
+				SpawnSoldier(m_metagame,1,1,PosSpawnProjectile,"Hulk");
 				break;
 			}
 			case 11:{//生成 warlord 首领
 				Vector3 PosSpawnProjectile = stringToVector3(event.getStringAttribute("position"));
-				SpawnSoldier(m_metagame,1,0,PosSpawnProjectile,"Warlord");
+				SpawnSoldier(m_metagame,1,1,PosSpawnProjectile,"Warlord");
 				break;
 			}
 			

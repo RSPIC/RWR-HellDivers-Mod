@@ -68,12 +68,12 @@ on_ground_up="-1 1 0" >
 
 		<trigger class="impact"/>
         <result class="spawn" instance_class="projectile" instance_key="hd_m25_rumbler_damage.projectile" 
-		min_amount="100" max_amount="100" offset="0 1 0" position_spread="1 0" direction_spread="0.1 0" />
+		min_amount="132" max_amount="132" offset="0 1 0" position_spread="1 0" direction_spread="0.1 0" />
 		
 		<!-- damage 350+1800=2150 轰炸伤 -->
         <!-- 100/s 毒伤 duration 5s -->
         <!-- 总伤2650 载具伤1800 -->
-        <!-- 265x1.679=265层 载具（1.679-1）x265=60伤 -->
+        <!-- 88x3.0=264层 载具（3.0-1.0）x88=176伤 -->
         <!-- range 待定 -->
 		<model mesh_filename="m25_rumbler_bullet.xml" />
 		<trail probability="1" key="trail_rumbler"/>

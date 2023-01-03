@@ -7,14 +7,14 @@
     sustained_fire_grow_step="1.2" 
     sustained_fire_diminish_rate="1.2" 
 	sight_range_modifier="1.0"
-    ai_sight_range_modifier="1.15"     
+    ai_sight_range_modifier="0.65"     
     magazine_size="180" 
     can_shoot_standing="0" 
     can_shoot_crouching="0" 
     suppressed="0" 
     name="M5 APC AutoCannon" 
     class="0" 
-    projectile_speed="200.0" 
+    projectile_speed="150.0" 
     slot="2" 
 	barrel_offset="0.5" 
     projectiles_per_shot="1" />
@@ -27,10 +27,12 @@
     <hud_icon filename="hd_m5_apc_autocannon.png" />
 	
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
-	time_to_live="0.6" can_be_detected_by_driver="1" can_be_disarmed="0"> 
+	time_to_live="0.4" can_be_detected_by_driver="1" can_be_disarmed="0"> 
 	
-        <result class="blast" radius="3.0" damage="4" push="0.2" decal="0" damage_origin_vehicle="0"/>
-				
+        <result class="blast" radius="2.5" damage="18" push="0.2" decal="0" damage_origin_vehicle="0" character_state="wound"/>
+        <!-- damage 18/25 blast -->
+        <!-- 轰炸伤害 -->
+
 		<effect class="result" key="terrain" ref="hd_m5_apc_result_smoke" lighting="0"/>
 		<effect class="result" key="terrain" ref="hd_m5_apc_result_spray" lighting="0"/>
 		<effect class="result" key="terrain" ref="general_weapon_result_gl_firesmoke_01" lighting="0"/>
