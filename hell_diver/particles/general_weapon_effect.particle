@@ -248,7 +248,7 @@ particle_system general_weapon_muzzle_laser_short
 	quota 100
 	material muzzle_laser
 	particle_width 0.3
-	particle_height 55
+	particle_height 60
 	renderer billboard
 	billboard_type oriented_self
 	billboard_origin center
@@ -305,7 +305,7 @@ particle_system general_weapon_muzzle_laser_short
 particle_system general_weapon_muzzle_laser_long : general_weapon_muzzle_laser_short
 {
 	particle_width 0.3
-	particle_height 110
+	particle_height 120
 	emitter Point
 	{
 		velocity 40
@@ -316,7 +316,7 @@ particle_system general_weapon_muzzle_laser_continuous
 	quota 100
 	material laser_las12_tanto
 	particle_width 0.1
-	particle_height 18
+	particle_height 18.5
 	renderer billboard
 	billboard_type oriented_self
 	billboard_origin top_center

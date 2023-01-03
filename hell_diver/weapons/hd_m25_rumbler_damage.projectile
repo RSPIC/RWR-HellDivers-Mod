@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectile class="grenade" name="M-25 Rumbler" slot="1" pulldown_in_air="30.0" key="hd_m25_rumbler_damage.projectile">
+	 
+	<collision class="sticky" />
+	<result class="blast" radius="6" damage="1.679" push="0.8" decal="0" character_state="wound"/>
+	<trigger class="time" time_to_live="0" />	
+    <rotation class="motion" />
+	<model mesh_filename="" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	
+</projectile>
+

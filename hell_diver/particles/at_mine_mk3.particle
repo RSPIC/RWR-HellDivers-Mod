@@ -52,7 +52,7 @@ particle_system at_mine_hit_firesmoke_01
 		state_change 0.3
 	}
 	affector LinearForce{
-		force_vector -2 -1 -2
+		force_vector -2 -40 -2
 		force_application add
 	}
 	affector DirectionRandomiser 

@@ -7,13 +7,13 @@ key="hd_m25_rumbler.weapon"
 on_ground_up="-1 1 0" > 
     <specification 
     slot="0" 
-    retrigger_time="0.1" 
-	last_burst_retrigger_time="1"
+    retrigger_time="0.12" 
+	last_burst_retrigger_time="1.5"
     accuracy_factor="1.0" 
     sustained_fire_grow_step="0.04" 
     sustained_fire_diminish_rate="0.08" 
     magazine_size="12" 
-    can_shoot_standing="1" 
+    can_shoot_standing="0" 
     can_shoot_crouching="1"
 	can_shoot_prone="0"
     carry_in_two_hands="1"
@@ -24,11 +24,12 @@ on_ground_up="-1 1 0" >
     reload_one_at_a_time="0" 
 	barrel_offset_3d="0 -0.2 2.5" 
     projectiles_per_shot="1" 
-	sight_range_modifier="1.2" 
-    sight_height_offset="2.0" 
+	sight_range_modifier="1.0" 
+    sight_height_offset="3.0" 
     projectile_speed="60.0" 
 	/> 
     <!--2x3/4x3 Mag		4.5s/4.5s reload	-->
+    <!-- 66RPM -->
     <animation key="recoil" animation_key="fire_rumbler" /> 
     <animation state_key="reload" animation_key="reloading_rumbler" />
     <animation state_key="hold" animation_key="still_rumbler" />
@@ -63,10 +64,17 @@ on_ground_up="-1 1 0" >
     <inventory encumbrance="10.0" price="0.0" /> 
     <weak_hand_hold offset="0.3" /> 
 	
-    <projectile file="m25_rumbler_damage.projectile"  pulldown_in_air="48.0" >  
+    <projectile file="hd_general_gl_spawn.projectile"  pulldown_in_air="48.0" name="M-25 Rumbler">  
+
 		<trigger class="impact"/>
-		<result class="blast" radius="8" damage="10" decal="0" push="1" character_state="death" />	
+        <result class="spawn" instance_class="projectile" instance_key="hd_m25_rumbler_damage.projectile" 
+		min_amount="100" max_amount="100" offset="0 1 0" position_spread="1 0" direction_spread="0.1 0" />
 		
+		<!-- damage 350+1800=2150 轰炸伤 -->
+        <!-- 100/s 毒伤 duration 5s -->
+        <!-- 总伤2650 载具伤1800 -->
+        <!-- 265x1.679=265层 载具（1.679-1）x265=60伤 -->
+        <!-- range 待定 -->
 		<model mesh_filename="m25_rumbler_bullet.xml" />
 		<trail probability="1" key="trail_rumbler"/>
 		<effect class="result" key="terrain" ref="blast_smoke_rumbler" />
@@ -102,7 +110,7 @@ on_ground_up="-1 1 0" >
     near_far_distance="0" 
     speed_estimation_near="0" 
     speed_estimation_far="58" 
-    max_speed="38" 
+    max_speed="30" 
     randomness="0" 
     tweak_factor="1.48" /> 
 
