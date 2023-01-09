@@ -2,8 +2,10 @@
  基于running with rifle（小兵步枪）游戏的，以Helldivers（地狱潜者）游戏内容为主的模组
  
  感谢以下朋友对我的帮助
+ + XEON
  + NetherCrowCSOLYOO 鸦鸦
  + BBBYJ 大黄酱
+ + Psyber_Demon
  + KEILSAMA 笨笨
  + ARST
  + YYSY
