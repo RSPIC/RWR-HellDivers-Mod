@@ -245,7 +245,7 @@
             <position x="3.417533" y="0.000000" z="10.050637" />
         </frame>
     </animation>
-    <animation loop="1" end="0.800000" speed="1.600000" comment="walking backwards"><!--orign speed 1.0-->
+    <animation loop="1" end="0.800000" speed="1.000000" comment="walking backwards"><!--orign speed 1.0-->
         <frame time="0.000000">
             <position x="0.504273" y="54.926662" z="3.581346" />
             <position x="0.472655" y="48.550381" z="0.693089" />
@@ -4915,7 +4915,7 @@
             <position x="4.597098" y="3.347090" z="-13.396088" />
         </frame>
     </animation>
-    <animation loop="1" end="0.900000" speed="1.000000" speed_spread="0.040000" comment="running, no weapon, 60"><!--orign speed 1.6-->
+    <animation loop="1" end="0.900000" speed="1.600000" speed_spread="0.040000" comment="running, no weapon, 60"><!--orign speed 1.6-->
         <frame time="0.000000">
             <position x="2.458455" y="53.377705" z="12.211919" />
             <position x="2.172254" y="47.146320" z="9.035769" />
@@ -5036,7 +5036,7 @@
             <position x="5.723689" y="18.933851" z="-25.097122" />
         </frame>
     </animation>
-    <animation loop="1" end="0.800000" speed="1.000000" comment="crouching forwards, no weapon, 61"><!--orign speed 1.2-->
+    <animation loop="1" end="0.800000" speed="1.200000" comment="crouching forwards, no weapon, 61"><!--orign speed 1.2-->
         <frame time="0.000000">
             <position x="0.487169" y="38.059040" z="20.350071" />
             <position x="-1.473838" y="32.020329" z="17.402454" />

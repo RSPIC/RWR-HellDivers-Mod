@@ -42,8 +42,8 @@ on_ground_up="0 0 1"
 	<animation state_key="hold" animation_key="still, pistol 2" />
     <animation state_key="hold_on_wall" animation_key="hold, overwall pistol" />
     <animation state_key="hold_casual" animation_key="hold_casual, pistol" />
-	<animation state_key="running"  animation_key="running_pistol_slower" />
-    <animation state_key="walking"  animation_key="running, pistol" />
+	<animation state_key="running"  animation_key="running, pistol" />
+    <animation state_key="walking"  animation_key="running_pistol_slower" />
     <animation state_key="walking_backwards" animation_key="walking backwards, pistol" />
     <animation state_key="crouching" animation_key="crouch, pistol" />
 	<animation state_key="crouch_moving" animation_key="" />
