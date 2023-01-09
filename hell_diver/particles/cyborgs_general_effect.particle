@@ -340,6 +340,71 @@ emitter Point
 	}
 }
 
+particle_system cyborgs_activated_flamethrower_01
+{
+	quota 3000
+	material flame_tex_bw_01
+	particle_width 2
+	particle_height 2
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 90
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live_min 0.2
+		time_to_live_max 0.4
+		duration 3
+		width 0.5
+		height 0.5
+		depth 0.5
+	}
+	affector Scaler
+	{
+		rate 2
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	90
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 0.4
+		time1 0.25
+		colour1 1 1 0.4 0.3
+		time2 0.5
+		colour2 1 0.5 0 0.1
+		time3 0.75
+		colour3 1 0.1 0 0.1
+		time4 1
+		colour4 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 4 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+
 --------------------------------------material-----------------------------------
 material alpha_blend_base{
 	receive_shadows off
@@ -378,4 +443,88 @@ material bow_flare : add_base
     pass{
         texture_unit{
             texture bow_flare.png 	
+}}}}
+material flame_tex_bw_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture flame_tex_bw_01.png 	
+}}}}
+material flame_tex_bw_02 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture flame_tex_bw_02.png 	
+}}}}
+material flame_tex_bw_03 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture flame_tex_bw_03.png 	
+}}}}
+material flame_tex_bw_04 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture flame_tex_bw_04.png 	
+}}}}
+material flame_tex_bw_05 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture flame_tex_bw_05.png 	
+}}}}
+material flame_tex_bw_06 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture flame_tex_bw_06.png 	
+}}}}
+material flame_tex_01 : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture flame_tex_01.png 	
+}}}}
+material flame_tex_02 : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture flame_tex_02.png 	
+}}}}
+material flame_tex_03 : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture flame_tex_03.png 	
+}}}}
+material flame_tex_04 : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture flame_tex_04.png 	
+}}}}
+material flame_tex_05 : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture flame_tex_05.png 	
+}}}}
+material flame_tex_06 : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture flame_tex_06.png 	
 }}}}

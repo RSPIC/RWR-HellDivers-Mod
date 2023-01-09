@@ -93,14 +93,14 @@ on_ground_up="0 0 1"
     
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
     <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="5" can_be_detected_by_footmen="1" 
-	time_to_live="0.2" can_be_detected_by_driver="1" can_be_disarmed="0" name="PLAS-1 Scorcher" radius="1.8"> 
+	time_to_live="0.2" can_be_detected_by_driver="1" can_be_disarmed="0" name="PLAS-1 Scorcher" radius="0.6"> 
 	
         <result class="spawn" instance_class="projectile" instance_key="hd_plas_scorcher_damage.projectile" 
-		min_amount="25" max_amount="25" offset="0 0.5 0" position_spread="0.5 0" direction_spread="0.1 0" />
+		min_amount="5" max_amount="5" offset="0 0.5 0" position_spread="0.8 0" direction_spread="0.1 0" />
 		<!-- damage 200/300 爆炸伤 -->
         <!-- 100/s 火伤 duration 2s -->
         <!-- 总伤500 载具伤500 -->
-        <!-- 25x2.0=50层 载具（2.0-1）x25=50伤 -->
+        <!-- 敲定： 5x10 = 50 可击穿轻甲载具，无法击穿中甲以上-->
         <!-- range 待定 -->
 		
 		<trigger class="time" time_to_live="0.11"  /><!--class为time时，ttl生效；遥控为remote_detonate-->

@@ -52006,7 +52006,7 @@
 	
 <!-- CYBORGS -->
 <!-- SquadLeader 兵种-->
-    <animation loop="1" end="1.250000" speed="1.9500000" comment="cyborgs_squadleader_walk" speed_spread="0.080000">
+    <animation loop="1" end="1.250000" speed="1.500000" comment="cyborgs_squadleader_walk" speed_spread="0.080000">
         <frame time="0.000000">
             <position x="-0.276875" y="54.914516" z="4.436827" />
             <position x="0.545183" y="48.435871" z="1.916635" />
@@ -52109,7 +52109,7 @@
             <position x="7.048470" y="2.286762" z="8.814200" />
         </frame>
     </animation>
-    <animation loop="1" end="1.250000" speed="1.9500000" comment="cyborgs_squadleader_walkback" speed_spread="0.080000">
+    <animation loop="1" end="1.250000" speed="1.500000" comment="cyborgs_squadleader_walkback" speed_spread="0.080000">
         <frame time="0.000000">
             <position x="-0.276875" y="54.914516" z="4.436827" />
             <position x="0.545183" y="48.435871" z="1.916635" />
@@ -52215,7 +52215,7 @@
             <position x="7.048470" y="2.286762" z="8.814200" />
         </frame>
     </animation>
-    <animation loop="1" end="1.250000" speed="1.500000" comment="cyborgs_squadleader_fast_walk" speed_spread="0.080000">
+    <animation loop="1" end="1.250000" speed="1.9500000" comment="cyborgs_squadleader_fast_walk" speed_spread="0.080000">
         <frame time="0.000000">
             <position x="-0.276875" y="54.914516" z="4.436827" />
             <position x="0.545183" y="48.435871" z="1.916635" />
@@ -52337,7 +52337,7 @@
             <position x="6.561552" y="-0.102955" z="8.065279" />
         </frame>
     </animation>
-    <animation loop="1" end="1.250000" speed="1.80000" comment="cyborgs_squadleader_crouch_forwards">
+    <animation loop="1" end="1.250000" speed="1.60000" comment="cyborgs_squadleader_crouch_forwards">
         <frame time="0.000000">
             <position x="0.336061" y="35.937832" z="10.650603" />
             <position x="0.373629" y="30.932917" z="5.756790" />
@@ -52441,7 +52441,7 @@
             <position x="6.561552" y="-0.102955" z="8.065279" />
         </frame>
     </animation>
-    <animation loop="1" end="1.250000" speed="1.80000" comment="cyborgs_squadleader_crouch_backwards">
+    <animation loop="1" end="1.250000" speed="1.60000" comment="cyborgs_squadleader_crouch_backwards">
         <frame time="0.000000">
             <position x="0.336061" y="35.937832" z="10.650603" />
             <position x="0.373629" y="30.932917" z="5.756790" />
@@ -53209,7 +53209,7 @@
             <position x="5.356495" y="-0.126267" z="3.783898" />
         </frame>
     </animation>
-    <animation loop="1" end="0.800000" speed="1.500000" comment="cyborgs_grotesque_walk" speed_spread="0.080000">
+    <animation loop="1" end="0.800000" speed="1.100000" comment="cyborgs_grotesque_walk" speed_spread="0.080000">
         <frame time="0.000000">
             <position x="3.239237" y="43.645725" z="11.538197" />
             <position x="-0.394223" y="38.577850" z="8.357850" />
@@ -53279,7 +53279,7 @@
             <position x="3.724754" y="-0.084444" z="-2.822041" />
         </frame>
     </animation>
-    <animation loop="1" end="0.800000" speed="1.100000" comment="cyborgs_grotesque_fast_walk" speed_spread="0.080000">
+    <animation loop="1" end="0.800000" speed="1.500000" comment="cyborgs_grotesque_fast_walk" speed_spread="0.080000">
         <frame time="0.000000">
             <position x="3.239237" y="43.645725" z="11.538197" />
             <position x="-0.394223" y="38.577850" z="8.357850" />
@@ -53349,7 +53349,7 @@
             <position x="3.724754" y="-0.084444" z="-2.822041" />
         </frame>
     </animation>
-    <animation loop="1" end="0.800000" speed="1.500000" comment="cyborgs_grotesque_walkback" speed_spread="0.080000">
+    <animation loop="1" end="0.800000" speed="1.100000" comment="cyborgs_grotesque_walkback" speed_spread="0.080000">
         <frame time="0.000000">
             <position x="3.239237" y="43.645725" z="11.538197" />
             <position x="-0.394223" y="38.577850" z="8.357850" />
@@ -54254,7 +54254,7 @@
             <position x="10.500000" y="0.500000" z="0.500000" />
         </frame>
     </animation>
-    <animation loop="1" end="1.000000" speed="1.500000" comment="cyborgs_berserker_walk" speed_spread="0.080000">
+    <animation loop="1" end="1.000000" speed="1.000000" comment="cyborgs_berserker_walk" speed_spread="0.080000">
         <frame time="0.000000">
             <position x="0.700718" y="59.211433" z="0.885544" />
             <position x="0.537612" y="51.481464" z="-1.399407" />
@@ -54426,7 +54426,7 @@
             <position x="10.497376" y="5.109649" z="21.051687" />
         </frame>
     </animation>
-	<animation loop="1" end="1.000000" speed="1.000000" comment="cyborgs_berserker_fast_walk" speed_spread="0.080000">
+	<animation loop="1" end="1.000000" speed="1.500000" comment="cyborgs_berserker_fast_walk" speed_spread="0.080000">
         <frame time="0.000000">
             <position x="0.700718" y="59.211433" z="0.885544" />
             <position x="0.537612" y="51.481464" z="-1.399407" />
@@ -54598,7 +54598,7 @@
             <position x="10.497376" y="5.109649" z="21.051687" />
         </frame>
     </animation>
-	<animation loop="1" end="1.000000" speed="1.500000" comment="cyborgs_berserker_walkback" speed_spread="0.080000">
+	<animation loop="1" end="1.000000" speed="1.000000" comment="cyborgs_berserker_walkback" speed_spread="0.080000">
         <frame time="0.000000">
             <position x="0.700718" y="59.211433" z="0.885544" />
             <position x="0.537612" y="51.481464" z="-1.399407" />
@@ -54711,7 +54711,7 @@
             <position x="5.888095" y="-0.114799" z="2.391753" />
         </frame>
     </animation>
-    <animation loop="1" end="1.000000" speed="1.950000" speed_spread="0.080000" comment="cyborgs_comrade_walk">
+    <animation loop="1" end="1.000000" speed="1.500000" speed_spread="0.080000" comment="cyborgs_comrade_walk">
         <frame time="0.000000">
             <position x="-0.170254" y="50.347523" z="6.907557" />
             <position x="0.095374" y="43.666904" z="4.834204" />
@@ -54798,7 +54798,7 @@
             <position x="7.233989" y="1.680013" z="12.223595" />
         </frame>
     </animation>
-    <animation loop="1" end="1.000000" speed="1.50000" speed_spread="0.080000" comment="cyborgs_comrade_fast_walk">
+    <animation loop="1" end="1.000000" speed="1.950000" speed_spread="0.080000" comment="cyborgs_comrade_fast_walk">
         <frame time="0.000000">
             <position x="-0.170254" y="50.347523" z="6.907557" />
             <position x="0.095374" y="43.666904" z="4.834204" />
@@ -54885,7 +54885,7 @@
             <position x="7.233989" y="1.680013" z="12.223595" />
         </frame>
     </animation>
-    <animation loop="1" end="1.000000" speed="1.950000" speed_spread="0.080000" comment="cyborgs_comrade_walkback">
+    <animation loop="1" end="1.000000" speed="1.500000" speed_spread="0.080000" comment="cyborgs_comrade_walkback">
         <frame time="0.000000">
             <position x="-0.170254" y="50.347523" z="6.907557" />
             <position x="0.095374" y="43.666904" z="4.834204" />
@@ -55289,7 +55289,7 @@
             <position x="7.235091" y="0.702272" z="0.185296" />
         </frame>
     </animation>
-    <animation loop="1" end="1.000000" speed="1.700000" speed_spread="0.080000" comment="cyborgs_immolator_walk">
+    <animation loop="1" end="1.000000" speed="1.000000" speed_spread="0.080000" comment="cyborgs_immolator_walk">
         <frame time="0.000000">
             <position x="3.799364" y="52.513462" z="3.368040" />
             <position x="3.674097" y="45.514584" z="3.369027" />
@@ -55376,7 +55376,7 @@
             <position x="8.040654" y="0.698347" z="14.452238" />
         </frame>
     </animation>
-    <animation loop="1" end="1.000000" speed="1.300000" speed_spread="0.080000" comment="cyborgs_immolator_fast_walk">
+    <animation loop="1" end="1.000000" speed="1.700000" speed_spread="0.080000" comment="cyborgs_immolator_fast_walk">
         <frame time="0.000000">
             <position x="3.799364" y="52.513462" z="3.368040" />
             <position x="3.674097" y="45.514584" z="3.369027" />
@@ -55463,7 +55463,7 @@
             <position x="8.040654" y="0.698347" z="14.452238" />
         </frame>
     </animation>
-    <animation loop="1" end="1.000000" speed="1.000000" speed_spread="0.080000" comment="cyborgs_immolator_walkback">
+    <animation loop="1" end="1.000000" speed="1.100000" speed_spread="0.080000" comment="cyborgs_immolator_walkback">
         <frame time="0.000000">
             <position x="3.799364" y="52.513462" z="3.368040" />
             <position x="3.674097" y="45.514584" z="3.369027" />
@@ -55637,6 +55637,59 @@
             <position x="7.235091" y="0.702272" z="0.185296" />
         </frame>
     </animation>
+	<animation loop="0" end="0.500000" speed="0.500000" comment="cyborgs_immolator_going_prone">
+        <frame time="0.000000">
+            <position x="0.085590" y="55.159061" z="3.197786" />
+            <position x="0.577431" y="48.520683" z="1.032139" />
+            <position x="-9.500000" y="45.500000" z="0.500000" />
+            <position x="7.500000" y="45.500000" z="-0.500000" />
+            <position x="-20.433884" y="33.357346" z="1.916379" />
+            <position x="12.927643" y="34.569637" z="-0.239571" />
+            <position x="-19.588568" y="33.850513" z="16.884420" />
+            <position x="15.387844" y="23.173010" z="0.013990" />
+            <position x="0.500000" y="35.500000" z="0.500000" />
+            <position x="-4.500000" y="28.500000" z="4.500000" />
+            <position x="5.500000" y="28.500000" z="0.500000" />
+            <position x="-6.500000" y="15.500000" z="3.500000" />
+            <position x="5.500000" y="15.500000" z="0.500000" />
+            <position x="-8.500000" y="0.500000" z="0.500000" />
+            <position x="5.500000" y="0.500000" z="0.500000" />
+        </frame>
+        <frame time="0.253521">
+            <position x="0.085590" y="55.159061" z="3.197786" />
+            <position x="0.577431" y="48.520683" z="1.032139" />
+            <position x="-9.500000" y="45.500000" z="0.500000" />
+            <position x="7.500000" y="45.500000" z="-0.500000" />
+            <position x="-12.024885" y="39.805180" z="15.672143" />
+            <position x="8.564467" y="41.900574" z="11.115158" />
+            <position x="-7.439979" y="47.374889" z="27.783218" />
+            <position x="0.980956" y="46.790604" z="18.502846" />
+            <position x="0.500000" y="35.500000" z="0.500000" />
+            <position x="-4.500000" y="28.500000" z="4.500000" />
+            <position x="5.500000" y="28.500000" z="0.500000" />
+            <position x="-6.500000" y="15.500000" z="3.500000" />
+            <position x="5.500000" y="15.500000" z="0.500000" />
+            <position x="-8.500000" y="0.500000" z="0.500000" />
+            <position x="5.500000" y="0.500000" z="0.500000" />
+        </frame>
+        <frame time="0.517606">
+            <position x="0.085590" y="55.159061" z="3.197786" />
+            <position x="0.577431" y="48.520683" z="1.032139" />
+            <position x="-9.500000" y="45.500000" z="0.500000" />
+            <position x="7.500000" y="45.500000" z="-0.500000" />
+            <position x="-20.174788" y="34.138157" z="5.594846" />
+            <position x="0.853227" y="43.119045" z="9.457482" />
+            <position x="-18.745708" y="35.029217" z="20.500004" />
+            <position x="-9.568887" y="40.347023" z="13.895436" />
+            <position x="0.500000" y="35.500000" z="0.500000" />
+            <position x="-5.425809" y="28.217770" z="1.861571" />
+            <position x="5.500000" y="28.500000" z="0.500000" />
+            <position x="-6.500000" y="15.500000" z="3.500000" />
+            <position x="5.500000" y="15.500000" z="0.500000" />
+            <position x="-8.500000" y="0.500000" z="0.500000" />
+            <position x="5.500000" y="0.500000" z="0.500000" />
+        </frame>
+    </animation>
 <!-- Initiate 兵种 -->
 	<animation loop="0" end="0.000000" speed="1.000000" comment="cyborgs_initiate_still">
         <frame time="0.000000">
@@ -55657,7 +55710,7 @@
             <position x="8.112265" y="3.022698" z="1.725743" />
         </frame>
     </animation>
-    <animation loop="1" end="0.800000" speed="1.700000" comment="cyborgs_initiate_walk">
+    <animation loop="1" end="0.800000" speed="1.300000" comment="cyborgs_initiate_walk">
         <frame time="0.000000">
             <position x="0.255666" y="46.416073" z="11.189363" />
             <position x="1.549080" y="39.775120" z="9.393584" />
@@ -55761,7 +55814,7 @@
             <position x="3.366129" y="11.265889" z="23.818314" />
         </frame>
     </animation>
-    <animation loop="1" end="0.800000" speed="1.300000" comment="cyborgs_initiate_fast_walk">
+    <animation loop="1" end="0.800000" speed="1.700000" comment="cyborgs_initiate_fast_walk">
         <frame time="0.000000">
             <position x="0.255666" y="46.416073" z="11.189363" />
             <position x="1.549080" y="39.775120" z="9.393584" />
@@ -55865,7 +55918,7 @@
             <position x="3.366129" y="11.265889" z="23.818314" />
         </frame>
     </animation>
-    <animation loop="1" end="0.800000" speed="1.700000" comment="cyborgs_initiate_walkback">
+    <animation loop="1" end="0.800000" speed="1.300000" comment="cyborgs_initiate_walkback">
         <frame time="0.000000">
             <position x="0.255666" y="46.416073" z="11.189363" />
             <position x="1.549080" y="39.775120" z="9.393584" />
@@ -56197,7 +56250,7 @@
         </frame>
         </animation>
 <!-- hulk 兵种 -->
-	<animation loop="1" end="1.000000" speed="1.600000" speed_spread="0.080000" comment="cyborgs_hulk_walk">
+	<animation loop="1" end="1.000000" speed="1.300000" speed_spread="0.080000" comment="cyborgs_hulk_walk">
         <frame time="0.000000">
             <position x="0.500466" y="68.492599" z="3.501343" />
             <position x="0.549814" y="64.384285" z="3.155913" />
@@ -56371,7 +56424,7 @@
             <position x="8.622799" y="2.428773" z="-11.127287" />
         </frame>
     </animation>
-    <animation loop="1" end="1.000000" speed="1.000000" speed_spread="0.080000" comment="cyborgs_hulk_fast_walk">
+    <animation loop="1" end="1.000000" speed="1.600000" speed_spread="0.080000" comment="cyborgs_hulk_fast_walk">
         <frame time="0.000000">
             <position x="0.500466" y="68.492599" z="3.501343" />
             <position x="0.549814" y="64.384285" z="3.155913" />

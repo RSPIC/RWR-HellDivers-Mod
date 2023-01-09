@@ -12,7 +12,7 @@ void main(dictionary@ inputData) {
 
         _setupLog("dev_verbose");
 
-        settings.m_factionChoice = 0;                  // 0 (helldivers), 1 (cyborgs), 2 (illuminate)
+        settings.m_factionChoice = 0;                  // 0 (helldivers), 1 (cyborgs), 2 (illuminate), 3(bugs), 4(acg)
         settings.m_playerAiCompensationFactor = 1.0;   // was 1.1  (1.75)
         settings.m_enemyAiAccuracyFactor = 0.95;
         settings.m_playerAiReduction = 0.0;            // didn't work before 1.76! (was 1.0)
@@ -37,6 +37,7 @@ void main(dictionary@ inputData) {
 	persistency='Come and Fight for LiberTea!'
 	max_players='12'>
 	<client_faction id='0' />
+	<client_faction id='4' />
 </command>
 """;
         settings.print();

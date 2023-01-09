@@ -2,7 +2,7 @@
 <ai filename="default_cyborgs.ai">
   <parameter class="accuracy_offset" value="0.03" /> 
   <parameter class="accuracy_offset_in_player_squad" value="0.01" />
-  <parameter class="willingness_to_charge" value="0.8" />
+  <parameter class="willingness_to_charge" value="0.5" />
 
 <!-- firemode switching -->
   <parameter class="throw_grenade_time_interval_max" value="30.0" />
@@ -11,6 +11,15 @@
   <parameter class="max_distance_to_throw_grenade" value="100.0" />
   <parameter class="grenade_throw_hold_time" value="0.5" />
   <parameter class="min_number_of_enemies_to_throw_grenade" value="1.0" />
+
+  <parameter class="fighting_melee_move_radius" value="3.0" />
+	<!-- 保持8m范围 -->
+  <parameter class="fighting_regular_move_radius" value="8.0" />  
+
+  <parameter class="burst_time" value="3.0" />
+  <parameter class="burst_time_variance" value="0.8" />
+  <parameter class="longer_burst_time" value="3.0" />
+  <parameter class="longer_burst_time_variance" value="0.8" />
 
 <!-- flare usage -->
   <parameter class="check_fellows_for_shield_use_range" value="100.0" />

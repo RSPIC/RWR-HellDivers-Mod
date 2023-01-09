@@ -22,8 +22,8 @@
 	<!-- player group 玩家属性-->
 	<soldier name="default" spawn_score="0.0">
 		<character filename="cyborgs_default_base.character"> <!-- cyborgs_default_chat 引用 cyborgs_default_base-->
-			<parameter class="walking_steer_amount" value="1.2" />	
-			<parameter class="running_steer_amount" value="1.2" />	
+			<!-- <parameter class="walking_steer_amount" value="1.2" />	
+			<parameter class="running_steer_amount" value="1.2" />	 -->
 		</character>
 		<!-- <ai filename="default_cyborgs.ai" /> -->
 		<ai filename="squadleader.ai" />
@@ -113,7 +113,9 @@
 
 		<!-- low XP, likely to join player squad -->
 		<attribute_config class="xp">
-			<attribute weight="2.0" min="1.0" max="2.0" />
+			<attribute weight="1.0" min="2.0" max="2.0" />
+			<attribute weight="1.0" min="1.0" max="1.0" />
+			<attribute weight="1.0" min="3.0" max="3.0" />
 		</attribute_config>
 	</soldier> 
 	<!-- 军团士兵 -->
@@ -130,7 +132,9 @@
 		<model filename="cyborgs_legionnaire.xml" />
 		
 		<attribute_config class="xp">
-			<attribute weight="1.0" min="0.0" max="0.05" />
+			<attribute weight="1.0" min="2.0" max="2.0" />
+			<attribute weight="1.0" min="1.0" max="1.0" />
+			<attribute weight="1.0" min="3.0" max="3.0" />
 		</attribute_config>
 	</soldier>  
 	
@@ -268,7 +272,9 @@
 		<model file="cyborgs_hulk.xml" />
 		
 		<attribute_config class="xp">
-			<attribute weight="1.0" min="0.0" max="0.05" />
+			<attribute weight="1.0" min="2.0" max="2.0" />
+			<attribute weight="1.0" min="1.0" max="1.0" />
+			<attribute weight="1.0" min="3.0" max="3.0" />
 		</attribute_config>
 	</soldier> 
    
@@ -279,7 +285,9 @@
 		<resources file="cyborgs_warlord.resources" />
 
 		<attribute_config class="xp">
-			<attribute weight="1.0" min="0.0" max="0.05" />
+			<attribute weight="1.0" min="2.0" max="2.0" />
+			<attribute weight="1.0" min="1.0" max="1.0" />
+			<attribute weight="1.0" min="3.0" max="3.0" />
 		</attribute_config>
 	</soldier> 
 </faction>

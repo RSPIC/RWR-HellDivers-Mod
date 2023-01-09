@@ -3,8 +3,8 @@
 	<parameter class="moving_inputsteer_threshold" value="0.1" />
 	<parameter class="stopping_velocity_threshold" value="0.01" />
 
-	<parameter class="walking_steer_amount" value="0.45" />	<!--实际表现为跑姿，需要按shift，移动开火秉持该速度 default=0.5 -->
-	<parameter class="running_steer_amount" value="0.25" />	<!--实际表现为走姿-->
+	<parameter class="walking_steer_amount" value="0.25" />	
+	<parameter class="running_steer_amount" value="0.35" />	
 	<parameter class="run_footstep_interval" value="0.5" />
 	<parameter class="walk_footstep_interval" value="0.7" />
 	<parameter class="crouch_walking_steer_amount" value="0.24" />
@@ -112,7 +112,7 @@
     <effect class="blood" ref="BloodSplat" />
     <effect class="blood" type="splat_map" size="2.0" atlas_index="3" layer="3" additive="1" apply_gore_factor="1" />
 	
-	<parameter class="taxi_request_time" value="20" />
+	<parameter class="taxi_request_time" value="999" />
 	<parameter class="can_use_inventory" value="1" />  
 	<parameter class="can_use_vehicles" value="0" /> 
 
@@ -135,11 +135,11 @@
 	<!-- <animation key="still, instructor" target_key="chicken idle" /> -->
 	<!-- <animation key="still, instructor" target_key="chicken idle wind" add="1" /> -->
 	<!-- <animation key="still, instructor" target_key="chicken idle peck" add="1" /> -->
-	<animation key="walking" target_key="running" />
-	<animation key="walking backwards" target_key="walking backwards" /><!--speed 1.0 -> 1.6-->
-	<animation key="weaponless_walking" target_key="running" />
-	<animation key="running" target_key="running_slower" />
-	<animation key="running, no weapon, 60" target_key="running, no weapon, 60" /><!--speed 1.6 -> 1.0-->
+	<animation key="walking" target_key="running_slower" />
+	<animation key="walking backwards" target_key="walking backwards" /><!--speed 1.0 -->
+	<animation key="weaponless_walking" target_key="weaponless_walking" />
+	<animation key="running" target_key="running" />
+	<animation key="running, no weapon, 60" target_key="running, no weapon, 60" /><!--speed 1.6-->
 	<!-- <animation key="crouch still" target_key="chicken crouch" /> -->
 	<!-- <animation key="crouch still, no weapon, 62" target_key="chicken crouch" /> -->
 	<!-- <animation key="crouching forwards" target_key="chicken walking" /> -->

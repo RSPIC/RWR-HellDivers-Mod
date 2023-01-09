@@ -68,12 +68,12 @@ on_ground_up="-1 1 0" >
 
 		<trigger class="impact"/>
         <result class="spawn" instance_class="projectile" instance_key="hd_m25_rumbler_damage.projectile" 
-		min_amount="132" max_amount="132" offset="0 1 0" position_spread="1 0" direction_spread="0.1 0" />
+		min_amount="6" max_amount="6" offset="0 1 0" position_spread="1 0" direction_spread="0.1 0" />
 		
 		<!-- damage 350+1800=2150 轰炸伤 -->
         <!-- 100/s 毒伤 duration 5s -->
         <!-- 总伤2650 载具伤1800 -->
-        <!-- 88x3.0=264层 载具（3.0-1.0）x88=176伤 -->
+        <!-- 定稿：单发6x30轰炸伤害 -->
         <!-- range 待定 -->
 		<model mesh_filename="m25_rumbler_bullet.xml" />
 		<trail probability="1" key="trail_rumbler"/>
@@ -87,7 +87,7 @@ on_ground_up="-1 1 0" >
 		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
 		<sound class="result" key="terrain" ref="m25_rumbler_blast2" pitch_variety="0.00"  volume="0.7"/>
 		<sound class="result" key="terrain" ref="m25_rumbler_blast1" pitch_variety="0.00"  volume="0.7"/>
-        
+
 		<sound class="result" key="terrain" copy="other" />
 		<sound class="result" key="static_object" copy="other" />
 		<sound class="result" key="vehicle" copy="other" />
