@@ -21,7 +21,7 @@
 
 	<!-- player group 玩家属性-->
 	<soldier name="default" spawn_score="0.0">
-		<character filename="cyborgs_default_base.character"> <!-- cyborgs_default_chat 引用 cyborgs_default_base-->
+		<character filename="cyborgs_hulk_state.character"> <!-- cyborgs_default_chat 引用 cyborgs_default_base-->
 			<!-- <parameter class="walking_steer_amount" value="1.2" />	
 			<parameter class="running_steer_amount" value="1.2" />	 -->
 		</character>
@@ -29,7 +29,8 @@
 		<ai filename="squadleader.ai" />
 		
 		<models file="cyborgs_default.models" />
-		<model file="hdivers_ceremonial.xml" />
+		<model file="cyborgs_warlord.xml" />
+		<!-- <model file="hdivers_ceremonial.xml" /> -->
 		
 		<resources file="common.resources" />
 		<resources file="cyborgs_common.resources" />
@@ -268,6 +269,7 @@
 		<resources file="cyborgs_hulk.resources" />
 
 		<ai filename="hulk.ai" /> <!-- hulk.ai 引用 default_cyborgs.ai -->
+		
 
 		<model file="cyborgs_hulk.xml" />
 		
@@ -281,9 +283,15 @@
 <!-- Elite -->
 	<!-- 首领 -->
 	<soldier name="Warlord" spawn_score="0.0" copy_from="default_ai">
+		<character filename="cyborgs_hulk_state.character">	<!-- cyborgs_hulk_state 引用 cyborgs_cyborgs_default_chat 引用 cyborgs_default_base-->
+			
+		</character>
+		
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="cyborgs_common.resources" clear_carry_items="1"/>
 		<resources file="cyborgs_warlord.resources" />
 
+		<ai filename="warlord.ai" /> <!-- warlord.ai 引用 default_cyborgs.ai -->
 		<attribute_config class="xp">
 			<attribute weight="1.0" min="2.0" max="2.0" />
 			<attribute weight="1.0" min="1.0" max="1.0" />

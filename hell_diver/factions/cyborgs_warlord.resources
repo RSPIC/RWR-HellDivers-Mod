@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources clear_weapons="0" clear_vehicles="0" clear_calls="0">
 	<!-- always load common first; it"s the one that clears the initial weapon resources -->
-	<weapon key="medikit.weapon" />
+	<weapon key="cyborgs_warlord_main.weapon" />
 	
 	<!-- 300层护甲 -->
 	<!-- 额外装甲30-60层 -->
 	<!-- 武器-0.2抗致死 等效360层甲 -->
-	<carry_item key="general_vest.carry_item" /> 
-	<carry_item key="general_vest_264" /> 
+	<carry_item key="anti_blast_vest.carry_item" /> 
+	<carry_item key="anti_blast_vest_36" /> 
 
 </resources>

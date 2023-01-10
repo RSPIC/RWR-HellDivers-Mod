@@ -32,5 +32,8 @@
 	<model filename="cyborgs_legionnaire.xml">
 		<requirement class="weapon" slot="0" key="cyborgs_legionnaire_main_alert.weapon"/>
 	</model>
+	<model filename="cyborgs_warlord.xml">
+		<requirement class="weapon" slot="0" key="cyborgs_warlord_main.weapon"/>
+	</model>
 	
 </models>

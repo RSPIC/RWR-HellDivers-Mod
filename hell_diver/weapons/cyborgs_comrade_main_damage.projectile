@@ -12,12 +12,13 @@ can_be_disarmed="0"
 can_be_detected_by_footmen="1"
 can_be_detected_by_driver="1"
 radius="0.3"
+blast_damage_threshold="30"
 time_to_live_out_in_the_open="150"
 player_death_drop_owner_lock_time="120"
 >
     <collision class="sticky" />
 	<result class="blast" radius="2.7" damage="2" push="0.15" decal="0" character_state="death"  />
-	<trigger class="time" time_to_live="0" />	
+	<trigger class="time" time_to_live="0.01" />	
     <rotation class="random" />
 	<model mesh_filename="" />
 	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>

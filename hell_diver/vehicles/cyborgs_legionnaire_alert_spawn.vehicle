@@ -70,6 +70,11 @@
   	<result class="spawn" instance_class="vehicle" instance_key="cyborgs_spawn_comrade_model.vehicle" min_amount="1" max_amount="3" offset="0 0 0" position_spread="8 40" direction_spread="0 1" />
 	</event>
 	
+	<event>
+		<trigger class="destroy" />
+  	<result class="spawn" instance_class="vehicle" instance_key="cyborgs_spawn_warlord_model.vehicle" min_amount="1" max_amount="2" offset="0 0 0" position_spread="8 40" direction_spread="0 1" />
+	</event>
+	
 	
 	
 	<!-- 音效 -->

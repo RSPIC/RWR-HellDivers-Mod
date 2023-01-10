@@ -22,6 +22,8 @@
 	<weapon file="cyborgs_initiate_main.weapon" /><!--主武器-->
 	<!-- Hulk 基础兵种 -->
 	<weapon file="cyborgs_hulk_main.weapon" /><!--主武器-->
+	<!-- Warlord 基础兵种 -->
+	<weapon file="cyborgs_warlord_main.weapon" /><!--主武器-->
 	
 	<!-- 生成用模型载体 -->
 	<weapon file="cyborgs_spawn_berserker_model.weapon" />
@@ -30,6 +32,7 @@
 	<weapon file="cyborgs_spawn_immolator_model.weapon" />
 	<weapon file="cyborgs_spawn_comrade_model.weapon" />
 	<weapon file="cyborgs_spawn_hulk_model.weapon" />
+	<weapon file="cyborgs_spawn_warlord_model.weapon" />
 	
 
 </weapons>
