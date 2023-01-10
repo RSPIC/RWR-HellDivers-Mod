@@ -50,24 +50,16 @@
 	<sound key="cleanup" filename="" />  
 
 
+
+
 	<event>
 		<trigger class="destroy" />
-  	<result class="spawn" instance_class="vehicle" instance_key="cyborgs_spawn_berserker_model.vehicle" min_amount="2" max_amount="2" offset="0 0 0" position_spread="8 40" direction_spread="0 1" />
+  	<result class="spawn" instance_class="vehicle" instance_key="cyborgs_spawn_hulk_model.vehicle" min_amount="1" max_amount="2" offset="0 0 0" position_spread="8 40" direction_spread="0 1" />
 	</event>
 	
 	<event>
 		<trigger class="destroy" />
-  	<result class="spawn" instance_class="vehicle" instance_key="cyborgs_spawn_grotesque_model.vehicle" min_amount="4" max_amount="6" offset="0 0 0" position_spread="8 40" direction_spread="0 1" />
-	</event>
-	
-	<event>
-		<trigger class="destroy" />
-  	<result class="spawn" instance_class="vehicle" instance_key="cyborgs_spawn_hulk_model.vehicle" min_amount="3" max_amount="5" offset="0 0 0" position_spread="8 40" direction_spread="0 1" />
-	</event>
-	
-	<event>
-		<trigger class="destroy" />
-  	<result class="spawn" instance_class="vehicle" instance_key="cyborgs_spawn_comrade_model.vehicle" min_amount="1" max_amount="3" offset="0 0 0" position_spread="8 40" direction_spread="0 1" />
+  	<result class="spawn" instance_class="vehicle" instance_key="cyborgs_spawn_comrade_model.vehicle" min_amount="1" max_amount="2" offset="0 0 0" position_spread="8 40" direction_spread="0 1" />
 	</event>
 	
 	<event>

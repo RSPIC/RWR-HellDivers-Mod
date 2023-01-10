@@ -99,7 +99,7 @@
 	<!-- supply box group -->
 <!-- Scout -->
 	<!-- “班长”战士 -->
-	<soldier name="Squadleader" spawn_score="4.0" copy_from="default_ai" >
+	<soldier name="Squadleader" spawn_score="1" copy_from="default_ai" >
 		<!--基础侦察兵 配置榴弹发射器 频次低 较少近战 发现敌人第一时间拉警报-->
 		<character filename="cyborgs_squadleader_state.character">	<!-- cyborgs_squadleader_state 引用 cyborgs_cyborgs_default_chat 引用 cyborgs_default_base-->
 			
@@ -120,7 +120,7 @@
 		</attribute_config>
 	</soldier> 
 	<!-- 军团士兵 -->
-	<soldier name="Legionnaire" spawn_score="1.0" copy_from="default_ai">
+	<soldier name="Legionnaire" spawn_score="0.1" copy_from="default_ai">
 		<character filename="cyborgs_legionnaire_state.character">	<!-- cyborgs_legionnaire_state 引用 cyborgs_cyborgs_default_chat 引用 cyborgs_default_base-->
 			
 		</character>
@@ -239,7 +239,7 @@
 		</attribute_config>
 	</soldier>  
 	<!-- 生化兵 -->
-	<soldier name="Immolator" spawn_score="0.0" copy_from="default_ai">
+	<soldier name="Immolator" spawn_score="1.0" copy_from="default_ai">
 		<character filename="cyborgs_immolator_state.character">	<!-- cyborgs_immolator_state 引用 cyborgs_cyborgs_default_chat 引用 cyborgs_default_base-->
 			
 		</character>
@@ -282,11 +282,11 @@
    
 <!-- Elite -->
 	<!-- 首领 -->
-	<soldier name="Warlord" spawn_score="0.0" copy_from="default_ai">
+	<soldier name="Warlord" spawn_score="0.01" copy_from="default_ai">
 		<character filename="cyborgs_hulk_state.character">	<!-- cyborgs_hulk_state 引用 cyborgs_cyborgs_default_chat 引用 cyborgs_default_base-->
 			
 		</character>
-		
+
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="cyborgs_common.resources" clear_carry_items="1"/>
 		<resources file="cyborgs_warlord.resources" />

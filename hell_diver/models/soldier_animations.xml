@@ -3907,7 +3907,7 @@
             <position x="6.702471" y="0.575158" z="0.994268" />
         </frame>
     </animation>
-    <animation loop="0" end="2.000000" speed="0.500000" comment="stunned">
+    <animation loop="0" end="2.000000" speed="0.750000" comment="stunned"><!--orign 0.5-->
         <frame time="0.000000">
             <position x="0.503854" y="54.817398" z="3.532193" />
             <position x="0.475347" y="48.167961" z="1.344918" />
@@ -52796,7 +52796,7 @@
 			
         </frame>
     </animation>
-	<animation loop="0" end="0.550000" speed="0.300000" comment="cyborgs_squadleader_alert">
+	<animation loop="0" end="0.550000" speed="0.200000" comment="cyborgs_squadleader_alert">
         <frame time="0.000000">
             <position x="-0.174630" y="54.746471" z="4.277771" />
             <position x="0.171812" y="47.921555" z="2.761039" />

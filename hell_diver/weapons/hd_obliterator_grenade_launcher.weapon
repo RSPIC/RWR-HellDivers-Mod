@@ -129,14 +129,13 @@ on_ground_up="0 0 1"
 		
     </projectile>
 	
-
 	!--
     <ballistics 
     curve_height="10" 
     near_far_distance="0" 
     speed_estimation_near="0.0" 
     speed_estimation_far="65" 
-    max_speed="20" 
+    max_speed="25" 
     randomness="0" 
     tweak_factor="1.86" />  
 	--

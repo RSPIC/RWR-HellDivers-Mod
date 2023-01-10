@@ -85,8 +85,8 @@ on_ground_up="-1 1 0" >
 		<effect class="result" key="terrain" ref="BurstShine" lighting="0" />
 		
 		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
-		<sound class="result" key="terrain" ref="m25_rumbler_blast2" pitch_variety="0.00"  volume="0.7"/>
-		<sound class="result" key="terrain" ref="m25_rumbler_blast1" pitch_variety="0.00"  volume="0.7"/>
+		<sound class="result" key="other" fileref="blast1_rumbler.wav" pitch_variety="0.00"  volume="0.7"/>
+		<sound class="result" key="other" fileref="blast2_rumbler.wav" pitch_variety="0.00"  volume="0.7"/>
 
 		<sound class="result" key="terrain" copy="other" />
 		<sound class="result" key="static_object" copy="other" />

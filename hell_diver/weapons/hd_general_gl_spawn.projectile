@@ -11,7 +11,7 @@ time_to_live="60"
 can_be_disarmed="0"
 can_be_detected_by_footmen="1"
 can_be_detected_by_driver="1"
-blast_damage_threshold="10"
+blast_damage_threshold="50"
 time_to_live_out_in_the_open="900"
 player_death_drop_owner_lock_time="900"
 >
@@ -26,5 +26,15 @@ player_death_drop_owner_lock_time="900"
 	<commonness value="0" can_respawn_with="0" in_stock="0" /> 
 	<inventory encumbrance="0" price="0.0"/>
 
-	
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />		
+
 </projectile>
