@@ -3,7 +3,7 @@
   <parameter class="vehicle_stuck_short_time" value="10.0" />
   <parameter class="in_trenches_fade_off_timer" value="4.0" />
   <parameter class="accuracy_penalty_wear_off_rate" value="0.333" /> 
-  <parameter class="check_vehicles_interval" value="2.0" />
+  <parameter class="check_vehicles_interval" value="60.0" />
   <parameter class="team_member_monitor_enemies_time" value="1.5" />
   <parameter class="monitor_enemies_time" value="0.8" />
   <parameter class="check_supplies_time" value="5.0" />
@@ -37,7 +37,7 @@
   <parameter class="choose_enemy_max_dot_range" value="1.9" />
   <parameter class="choose_enemy_min_dot_range_offset" value="1.125" />
 
-  <parameter class="sight_range_muzzle_factor" value="1.7" />
+  <parameter class="sight_range_muzzle_factor" value="1.0" />
   <parameter class="max_sight_range_with_muzzle" value="40.0" />
 	<!-- 开火的最大视距 -->
   <parameter class="active_guarding_probability" value="0.5" />
@@ -83,21 +83,21 @@
   <parameter class="check_need_for_help_range" value="0.0" /><!--No check-->
   <parameter class="check_fellows_for_shield_use_range" value="0" />
   <parameter class="max_active_shields_per_fellows" value="99" /> 
-  <parameter class="fighting_against_vehicle_separation" value="7.0" />
-  <parameter class="fighting_against_vehicle_move_radius" value="30.0" />
+  <parameter class="fighting_against_vehicle_separation" value="2.0" />
+  <parameter class="fighting_against_vehicle_move_radius" value="5.0" />
   <parameter class="day_reaction_time_to_fight_min" value="0.1" />
   <parameter class="day_reaction_time_to_fight_max" value="0.3" />
   <parameter class="night_reaction_time_to_fight_min" value="0.8" />
   <parameter class="night_reaction_time_to_fight_max" value="1.1" />
-  <parameter class="willingness_to_guard" value="0.1" />
+  <parameter class="willingness_to_guard" value="0.0" /><!--No guard-->
   <parameter class="minimum_distance_to_consider_deploying_cover" value="18.0" />
   <parameter class="recheck_cover_over_shootability_time" value="3.0" />
   <parameter class="max_objects_per_sqm_to_consider_deployment" value="0.08" />
-  <parameter class="shielding_min_distance_to_move" value="4.0" />
-  <parameter class="shielding_max_distance_to_move" value="7.0" />
+  <parameter class="shielding_min_distance_to_move" value="15.0" />
+  <parameter class="shielding_max_distance_to_move" value="25.0" />
   <parameter class="shielding_min_distance_to_sidestep" value="1.0" />
   <parameter class="shielding_max_distance_to_sidestep" value="6.0" />
-  <parameter class="shielding_min_distance_to_keep" value="8.0" />
+  <parameter class="shielding_min_distance_to_keep" value="3.0" />
   <parameter class="leaving_cover_separation" value="4.0" />
   <parameter class="guarding_comment_before_proceed_time" value="2.0" />
   <parameter class="choose_enemy_squad_target_score_range" value="10.0" />
@@ -108,7 +108,7 @@
 	<!-- 这个是警戒扩散会最多摇多少人打你 -->
   <parameter class="accuracy_offset" value="0.0" /> 
   <parameter class="accuracy_offset_in_player_squad" value="0.025" /> 
-  <parameter class="grenade_throw_hold_time" value="2" />
+  <parameter class="grenade_throw_hold_time" value="3" />
   <parameter class="using_cover_min_time" value="0.0" />	
   <parameter class="using_cover_max_time" value="0.0" />
 	<!-- 取消掩体使用 -->

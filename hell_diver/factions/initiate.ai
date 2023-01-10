@@ -15,4 +15,10 @@
 <!-- flare usage -->
   <parameter class="check_fellows_for_shield_use_range" value="100.0" />
   <parameter class="max_active_shields_per_fellows" value="100.0" />
+
+  <parameter class="uses_vehicles" value="1" />
+
+  <parameter class="fighting_melee_move_radius" value="3.0" />
+  <parameter class="fighting_regular_move_radius" value="0.0" />  
+  <parameter class="stab_range" value="3.5" />
 </ai>

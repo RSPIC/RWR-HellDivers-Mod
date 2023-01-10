@@ -2,7 +2,8 @@
 <ai filename="default_cyborgs.ai">
   <parameter class="accuracy_offset" value="0.03" /> 
   <parameter class="accuracy_offset_in_player_squad" value="0.01" />
-  <parameter class="willingness_to_charge" value="1" />
+  <parameter class="willingness_to_charge" value="0.8" />
+  <parameter class="uses_vehicles" value="1" />
 
 <!-- firemode switching -->
   <parameter class="throw_grenade_time_interval_max" value="30.0" />
@@ -15,4 +16,9 @@
 <!-- flare usage -->
   <parameter class="check_fellows_for_shield_use_range" value="100.0" />
   <parameter class="max_active_shields_per_fellows" value="100.0" />
+
+  <parameter class="fighting_melee_move_radius" value="3.0" />
+  <parameter class="fighting_regular_move_radius" value="8.0" />  
+  <parameter class="stab_range" value="3.5" />
+
 </ai>

@@ -405,6 +405,290 @@ particle_system cyborgs_activated_flamethrower_01
 	}
 }
 
+particle_system cyborgs_result_cannon_blast_AmbientLight
+{
+	quota 50
+	material point_soft_edge_100
+	particle_width 6
+	particle_height 6
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.10
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 30
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 0.7 1
+		time1 0.7
+		colour1 1 1 0.7 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system cyborgs_result_cannon_blast_smoke
+{
+	quota 50
+	material add_smoke_2
+	particle_width 3
+	particle_height 3
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 90
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.2
+		duration 0.1
+		width 1
+		height 1
+		depth 1
+	}
+	affector Scaler
+	{
+		rate -4
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	-45
+		rotation_speed_range_end	45
+		rotation_range_start	0
+		rotation_range_end	180
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.7
+		colour1 1 0.7 0.3 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+
+particle_system cyborgs_muzzle_cannon_fire_light
+{
+	quota 50
+	material add_smoke_1
+	particle_width 1.5
+	particle_height 1.5
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 30
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.25
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 5
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	90
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.3
+		colour1 1 1 0 1
+		time2 0.6
+		colour2 1 0.6 0 1
+		time3 1
+		colour3 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system cyborgs_muzzle_cannon_fire_smoke
+{
+	quota 50
+	material rx1_smoke
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 80
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 70
+		position 0 0 0
+		velocity_min 0.5
+		velocity_max 1
+		time_to_live_min 0.9
+		time_to_live_max 1.2
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0.6
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.7 0.7 0.7 1
+		time1 0.7
+		colour1 0.6 0.6 0.6 0.7
+		time2 1
+		colour2 0.5 0.5 0.5 0
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+
+particle_system cyborgs_activated_cannon_flysmoke
+{
+	quota 500
+	material rx1_smoke
+	particle_width 2
+	particle_height 2
+	renderer billboard
+	billboard_rotation_type vertex
+	iteration_interval 0.01
+	emitter Box
+	{
+		angle 360
+		colour 1 1 1 0.1
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity_min 0.1
+		velocity_max 0.3
+		time_to_live_min 0.4
+		time_to_live_max 0.7
+		duration 1.5
+		width 0.5
+		height 0.5
+		depth 0.5
+		
+	}
+	affector Scaler
+	{
+		rate 0.5
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	-90
+		rotation_speed_range_end	90
+		rotation_range_start	0
+		rotation_range_end	180
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 0.5
+		time1 0.7
+		colour1 0.7 0.7 0.7 0.5
+		time2 1
+		colour2 0.7 0.7 0.7 0
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+}
 --------------------------------------material-----------------------------------
 material alpha_blend_base{
 	receive_shadows off
@@ -527,4 +811,25 @@ material flame_tex_06 : alpha_blend_base
     pass{
         texture_unit{
             texture flame_tex_06.png 	
+}}}}
+material add_smoke_1 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture add_smoke_1.png 	
+}}}}
+material add_smoke_2 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture add_smoke_2.png 	
+}}}}
+material rx1_smoke : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture rx1_smoke.png 	
 }}}}
