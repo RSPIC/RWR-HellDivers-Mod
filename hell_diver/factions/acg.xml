@@ -22,9 +22,10 @@
 	<!-- player group -->
 	<soldier name="default" spawn_score="0.0">
 		<character filename="default_male.character">
-			<parameter class="default_squad_config_index" value="0" />
+
+
 		</character>
-		<ai filename="default.ai" />
+		<ai filename="default_acg.ai" />
 
 		<models file="acg_default.models" />
 
