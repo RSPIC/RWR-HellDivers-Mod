@@ -1,0 +1,414 @@
+
+author: RST
+2022.7.1
+未经授权不可复用、修改使用，禁止二售
+已授权401使用以及授权再复用
+
+particle_system 401_disaster_hit_spread_partcile
+{
+	quota 600
+	emit_emitter_quota 600
+	material square_soft_edge_401_disaster
+	particle_width 0.4
+	particle_height 1.2
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	accurate_facing on
+	emitter Point
+	{
+		angle 180
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 60
+		position 0 0 0
+		velocity 100
+		time_to_live 0.15
+		duration 0.1
+		emit_emitter tag1
+	}
+	emitter Point
+	{
+		name tag1
+		angle 30
+		colour 1 0.3 0 1
+		direction -1 1 -1
+		emission_rate 300
+		position 0 0 0
+		velocity_min 5
+		velocity_max 8
+		time_to_live_min 3.5
+		time_to_live_max 4.5
+		duration 2
+		repeat_delay 0.01
+	}
+	affector Scaler
+	{
+		rate -0.1
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		bule1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.01
+	}
+	affector LinearForce{
+		force_vector -2 -7 2
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 2
+		scope 0.5
+		keep_velocity false
+	}
+	affector DeflectorPlane 
+	{
+		plane_point 0 2 0
+		plane_normal 0 1 0 
+		bounce 0.4
+	}
+}
+
+particle_system 401_disaster_hit_center_light
+{
+	quota 50
+	material lens_light_explosive
+	particle_width 40
+	particle_height 40
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 0.4 0.4 1
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.5
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 100
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	1
+		green1 	0.5
+		bule1 	1
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+
+particle_system 401_disaster_hit_firesmoke_01
+{
+	quota 50
+	material disaster_fire_smoke_01
+	particle_width 7
+	particle_height 7
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 45
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity_min 3
+		velocity_max 5
+		time_to_live 1.5
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 2
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	90
+		rotation_speed_range_end	-90
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourFader2
+	{
+		red1 	1
+		green1 	1
+		bule1 	1
+		alpha1 	0
+		red2 	-2
+		green2	-2
+		blue2	-2
+		alpha2	-3
+		state_change 0.5
+	}
+	affector LinearForce{
+		force_vector -2 -1 -2
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system 401_disaster_hit_firesmoke_02 : 401_disaster_hit_firesmoke_01
+{
+	material disaster_fire_smoke_02
+}
+particle_system 401_disaster_hit_firesmoke_03 : 401_disaster_hit_firesmoke_01
+{
+	quota 50
+	material disaster_smoke
+	particle_width 14
+	particle_height 14
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		colour 0.5 0.5 0.5 0.4
+		direction 0 1 0
+		emission_rate 100
+		time_to_live 2
+		duration 0.2
+	}
+	affector Scaler
+	{
+		rate 2.5
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	90
+		rotation_speed_range_end	-90
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		bule1 	0
+		alpha1 	0
+		red2 	-0.4
+		green2	-0.4
+		blue2	-0.4
+		alpha2	-0.4
+		state_change 1
+	}
+	affector LinearForce{
+		force_vector -2 1 -2
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+	}
+}
+particle_system 401_disaster_activated_trail
+{
+	quota 100
+	material point_hard_edge
+	particle_width 0.22
+	particle_height 0.22
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	iteration_interval 0
+	emitter Point
+	{
+		angle 90
+		colour 0 0.3 1 1
+		direction 0 1 0
+		emission_rate 150
+		position 0 0 0
+		velocity_min 1
+		velocity_max 1.5
+		time_to_live 2
+		duration 2
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		bule1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 1
+		scope 0.5
+		keep_velocity false
+	}
+}
+
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+material point_hard_edge : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture point_hard_edge.png 	
+}}}}
+material point_soft_edge_100 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture point_soft_edge_100.png 	
+}}}}
+material square_soft_edge_401_disaster : add_base
+{   
+    technique{
+    pass{
+		cull_hardware none
+        texture_unit{
+            texture square_soft_edge.png 	
+}}
+	pass{
+		cull_hardware none
+		lighting on
+		fog_override true
+		depth_write off
+		scene_blend add
+		lighting on
+		emissive 0.5 0.15 0 1
+        texture_unit{
+            texture point_soft_edge_100.png 	
+}}
+}
+
+}
+material disaster_fire_smoke_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture disaster_fire_smoke_01.png 	
+}}}}
+material disaster_fire_smoke_02 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture disaster_fire_smoke_02.png 	
+}}}}
+material disaster_smoke : alpha_blend_base
+{   
+    technique{
+    pass{
+		depth_func less
+        texture_unit{
+            texture disaster_smoke.png 	
+}}}}
+material lens_light_explosive : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture lens_light_explosive.png 	
+}}}}
