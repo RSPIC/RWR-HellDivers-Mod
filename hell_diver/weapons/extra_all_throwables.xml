@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <projectiles>
-	<!--利维坦弓-->
-    <projectile file="vabow_damage.projectile" />
+	<!-- 伤害弹头 -->
+    <projectile file="vabow_damage.projectile" /><!--利维坦弓-->
     <projectile file="vathbow_generate.projectile" />
+    <projectile file="ex_disaster_railgun_damage.projectile" /><!-- 天灾电磁炮 -->
 
 
 </projectiles>
