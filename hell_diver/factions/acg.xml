@@ -32,6 +32,7 @@
 		<resources file="common.resources" clear_weapons="1" clear_vehicles="1" clear_carry_items="1" clear_calls="1" clear_grenades="1"/>
 		<!-- <resources file="acg_player.resources" /> -->
 		<resources file="hd_player.resources" />
+		<resources file="acg_player.resources" />
 		
 
 		<item_class_existence_config>
@@ -80,5 +81,10 @@
 			<attribute weight="1.0" min="0.0" max="0.05" />
 		</attribute_config>
 	</soldier>              
+
+	<soldier name="supply_ex_box" spawn_score="0.0" copy_from="default">
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="supply_ex_box.resources"/>
+	</soldier>  
 
 </faction>
