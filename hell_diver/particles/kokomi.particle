@@ -1,0 +1,1989 @@
+author: RST
+2022.10.9
+未经授权不可复用、修改使用
+
+abstract emitter delay_time
+{
+		name tag1
+		emission_rate 0.5
+		duration 2.0
+		emit_emitter tag2
+}
+
+particle_system kokomi_activated_bobble
+{
+	quota 200
+	material water_bobble
+	particle_width 1.2
+	particle_height 1.2
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 180
+		colour 0.7 0.9 1 0
+		direction 0 1 0
+		emission_rate 80
+		position 0 0 0
+		velocity_min 0.5
+		velocity_max 1.5
+		time_to_live 0.2
+		duration 2
+		width 0.9
+		height 0.9
+		depth 0.5
+	}
+	affector Scaler
+	{
+		rate -2
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.7 0.9 1 0
+		time1 0.5
+		colour1 0.7 0.9 1 0
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 -10 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system kokomi_activated_dropping_water
+{
+	quota 200
+	material point_soft_edge_100
+	particle_width 0.4
+	particle_height 0.4
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 180
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 2
+		time_to_live 0.6
+		duration 2
+	}
+	affector Scaler
+	{
+		rate -0.2
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.2
+		colour1 0 0 0 0
+		time2 0.3
+		colour2 0.4 0.6 1 0
+		time3 1
+		colour3 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 -45 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system kokomi_activated_light
+{
+	quota 200
+	material point_soft_edge_100
+	particle_width 3
+	particle_height 3
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Box
+	{
+		angle 0
+		colour 0.1 0.4 1 0
+		direction 0 1 0
+		emission_rate 60
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.01
+		duration 2
+		width 0.5
+		height 0.5
+		depth 0.01
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	0
+		green2	1
+		blue2	2
+		alpha2	0
+		state_change 0
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system kokomi_activated_light_2
+{
+	quota 200
+	material point_soft_edge_100
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 60
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.01
+		duration 2
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	100
+		green1 	100
+		blue1 	100
+		alpha1 	0
+		red2 	100
+		green2	100
+		blue2	100
+		alpha2	0
+		state_change 0
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+
+particle_system kokomi_result_ring
+{
+	quota 200
+	material muzzle_crossring_a_pass
+	particle_width 0.1
+	particle_height 0.1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0.8 0.95 1 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.4
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 15
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system kokomi_result_bobble
+{
+	quota 200
+	material water_bobble
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 180
+		colour 0.8 0.95 1 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity_min 4
+		velocity_max 6
+		time_to_live 0.55
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate -0.4
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system kokomi_result_light
+{
+	quota 200
+	material point_soft_edge_100_pass
+	particle_width 6
+	particle_height 6
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0.3 0.4 0.5 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.2
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 10
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-5
+		green2	-5
+		blue2	-5
+		alpha2	-3
+		state_change 0.2
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system kokomi_muzzle_bobble
+{
+	quota 50
+	material water_bobble_alpha
+	particle_width 0.1
+	particle_height 0.1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0.8 0.95 1 1
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.45
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 7
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	90
+		rotation_speed_range_end	-90
+		rotation_range_start	0
+		rotation_range_end	180
+	}
+	affector ColourFader2
+	{
+		red1 	8
+		green1 	9.5
+		blue1 	10
+		alpha1 	10
+		red2 	-0
+		green2	-0
+		blue2	-0
+		alpha2	-3
+		state_change 0.3
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system kokomi_muzzle_light
+{
+	quota 50
+	material point_soft_edge_100
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.3
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 6.5
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	80
+		green1 	95
+		blue1 	100
+		alpha1 	0
+		red2 	-4
+		green2	-4
+		blue2	-4
+		alpha2	-3
+		state_change 0.29
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system kokomi_muzzle_ring
+{
+	quota 50
+	material thunder_ring
+	particle_width 0
+	particle_height 0
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.3
+		duration 0.01
+	}
+	affector Scaler
+	{
+		rate 10
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	10
+		green1 	10
+		blue1 	10
+		alpha1 	0
+		red2 	-5
+		green2	-5
+		blue2	-5
+		alpha2	-3
+		state_change 0.2
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+
+particle_system kokomi_muzzle_concentrate_waterwave_01
+{
+	quota 500
+	material kokomi_concentrate_wave
+	particle_width 10
+	particle_height 10
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 200
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.5
+		duration 0.3
+		width 1
+		height 1
+		depth 1
+	}
+	affector Scaler
+	{
+		rate -20
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	-90
+		rotation_speed_range_end	-130
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourFader2
+	{
+		red1 	10
+		green1 	10
+		blue1 	10
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system kokomi_muzzle_concentrate_waterwave_02 : kokomi_muzzle_concentrate_waterwave_01
+{
+	material kokomi_concentrate_wave_fish
+	particle_width 6
+	particle_height 6
+	emitter Box
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 200
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.5
+		duration 0.9
+		width 1
+		height 1
+		depth 1
+	}
+	affector Scaler
+	{
+		rate -10
+	}
+	
+}
+particle_system kokomi_muzzle_concentrate_waterwave_03 : kokomi_muzzle_concentrate_waterwave_01
+{
+	particle_width 10
+	particle_height 10
+	emitter Box
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 150
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 1.2
+		duration 0.3
+		width 1
+		height 1
+		depth 0.5
+	}
+	affector Scaler
+	{
+		rate -6
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	-60
+		rotation_speed_range_end	-160
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+		affector ColourFader2
+	{
+		red1 	10
+		green1 	10
+		blue1 	10
+		alpha1 	0
+		red2 	-5
+		green2	-5
+		blue2	-5
+		alpha2	-3
+		state_change 0.2
+	}
+	
+}
+particle_system kokomi_muzzle_concentrate_waterwave_04
+{
+	quota 500
+	material water_wave_01
+	particle_width 10
+	particle_height 10
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 0
+		colour 0.1 0.2 0.4 1
+		direction 0 1 0
+		emission_rate 300
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 1.0
+		duration 0.1
+		width 1
+		height 1
+		depth 1
+	}
+	affector Scaler
+	{
+		rate -5
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	-90
+		rotation_speed_range_end	-130
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+
+particle_system kokomi_muzzle_expand_waterwave_01  		//气泡
+{
+	quota 300
+	emit_emitter_quota 300
+	material water_bobble_colored
+	particle_width 1.2
+	particle_height 1.2
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 240
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity_min 0.00001
+		velocity_max 0.0001
+		time_to_live 1
+		duration 0.1
+		emit_emitter tag1
+	}
+	emitter Point : delay_time
+	{
+		name tag1
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 1
+		
+		emit_emitter tag2
+	}
+	emitter Point
+	{
+		name tag2
+		angle 120
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 150
+		position 0 0 0
+		velocity_min 8
+		velocity_max 15
+		time_to_live 1
+		duration 0.2
+	}
+	affector Scaler
+	{
+		rate -1.2
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system kokomi_muzzle_expand_waterwave_02
+{
+	quota 300
+	emit_emitter_quota 300
+	material ink_splash_1
+	particle_width 1.5
+	particle_height 1.5
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity_min 0.00001
+		velocity_max 0.0001
+		time_to_live 1
+		duration 0.1
+		emit_emitter tag1
+	}
+	emitter Point : delay_time
+	{
+		name tag1
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		
+		position 0 -0 0
+		velocity 0.0001
+		time_to_live 1
+		
+		emit_emitter tag2
+	}
+	emitter Box
+	{
+		name tag2
+		angle 5
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 300
+		position 0 0 0
+		velocity_min 5
+		velocity_max 25
+		time_to_live 0.5
+		duration 0.1
+		width 2
+		height 2
+		depth 1
+	}
+	affector Scaler
+	{
+		rate -3
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	-0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	180
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.3
+	}
+	affector LinearForce{
+		force_vector 0 5 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system kokomi_muzzle_expand_particle_01
+{
+	quota 300
+	emit_emitter_quota 300
+	material point_soft_edge_100
+	particle_width 0.3
+	particle_height 0.6
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity_min 0.00001
+		velocity_max 0.0001
+		time_to_live 1
+		duration 0.1
+		emit_emitter tag1
+	}
+	emitter Point : delay_time
+	{
+		name tag1
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		
+		position 0 -0 0
+		velocity 0.0001
+		time_to_live 1
+		
+		emit_emitter tag2
+	}
+	emitter Box
+	{
+		name tag2
+		angle 240
+		colour 0.5 0.8 1 1
+		direction 0 1 0
+		emission_rate 1000
+		position 0 0 0
+		velocity_min 5
+		velocity_max 25
+		time_to_live 0.5
+		duration 0.1
+		width 1
+		height 1
+		depth 1
+	}
+	affector Scaler
+	{
+		rate -0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	-0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.3
+	}
+	affector LinearForce{
+		force_vector 0 -5 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system kokomi_muzzle_expand_star_01
+{
+	quota 300
+	emit_emitter_quota 300
+	material star_cross
+	particle_width 0.5
+	particle_height 0.5
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 -1 0
+		velocity -3
+		time_to_live 1
+		duration 0.1
+		emit_emitter tag1
+	}
+	emitter Point : delay_time
+	{
+		name tag1
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		
+		position 0 -0 0
+		velocity 0.0001
+		time_to_live 1
+		
+		emit_emitter tag2
+	}
+	emitter Box
+	{
+		name tag2
+		angle 180
+		colour 0.4 0.85 1 1
+		direction 0 1 0
+		emission_rate 300
+		position 0 -6 0
+		velocity_min 0.3
+		velocity_max 1.5
+		time_to_live 1.4
+		duration 0.1
+		width 2
+		height 2
+		depth 1
+	}
+	affector Scaler
+	{
+		rate -0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	-0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.3
+	}
+	affector LinearForce{
+		force_vector 0 -1 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system kokomi_muzzle_shrink_star_01
+{
+	quota 300
+	emit_emitter_quota 300
+	material kokomi_star_cross
+	particle_width 0.1
+	particle_height 0.1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 -0 0
+		velocity -0.001
+		time_to_live 1
+		duration 0.1
+		emit_emitter tag1
+	}
+	emitter Point : delay_time
+	{
+		name tag1
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		
+		position 0 -0 0
+		velocity 0.0001
+		time_to_live 1
+		
+		emit_emitter tag2
+	}
+	emitter Point
+	{
+		name tag2
+		angle 180
+		colour 0.7 1 1 1
+		direction 0 1 0
+		emission_rate 40
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.05
+		duration 0.05
+	}
+	affector Scaler
+	{
+		rate 300
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	-0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0
+	}
+	affector LinearForce{
+		force_vector 0 -1 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system kokomi_muzzle_shrink_star_02 : kokomi_muzzle_shrink_star_01
+{
+	material point_soft_edge_100
+	particle_width 0.1
+	particle_height 0.1
+	emitter Point
+	{
+		
+	}
+	emitter Point : delay_time
+	{
+
+	}
+	emitter Point
+	{
+		
+	}
+	affector Scaler
+	{
+		rate 300
+	}
+		affector Rotator
+	{
+		
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-10
+		green2	-10
+		blue2	-10
+		alpha2	-3
+		state_change 0.01
+	}
+}
+particle_system kokomi_muzzle_exposion_ambient
+{
+	quota 300
+	emit_emitter_quota 300
+	material point_soft_edge_100
+	particle_width 10
+	particle_height 10
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 -0 0
+		velocity -0.001
+		time_to_live 1
+		duration 0.1
+		emit_emitter tag1
+	}
+	emitter Point : delay_time
+	{
+		name tag1
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		
+		position 0 -0 0
+		velocity 0.0001
+		time_to_live 1
+		
+		emit_emitter tag2
+	}
+	emitter Point
+	{
+		name tag2
+		angle 180
+		colour 0.5 0.85 1 1
+		direction 0 1 0
+		emission_rate 40
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 1
+		duration 0.05
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	-0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-0.5
+		green2	-0.85
+		blue2	-1
+		alpha2	-3
+		state_change 1
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system kokomi_muzzle_exposion_splash
+{
+	quota 300
+	emit_emitter_quota 300
+	material kokomi_fish
+	particle_width 1.6
+	particle_height 1.6
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	accurate_facing on
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.001
+		time_to_live 1
+		duration 0.1
+		emit_emitter tag1
+	}
+	emitter Point : delay_time
+	{
+		name tag1
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		
+		position 0 -0 0
+		velocity 0.0001
+		time_to_live 1
+		
+		emit_emitter tag2
+	}
+	emitter Point
+	{
+		name tag2
+		angle 180
+		colour 0.4 0.5 0.6 1
+		direction 0 1 0
+		emission_rate 300
+		position 0 0 0
+		velocity_min 2
+		velocity_max 5
+		time_to_live 1
+		duration 0.2
+	}
+	affector Scaler
+	{
+		rate -1.6
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3.3
+		green2	-3.3
+		blue2	-3.3
+		alpha2	-3
+		state_change 0.3
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system kokomi_muzzle_exposion_splash_dropping
+{
+	quota 300
+	emit_emitter_quota 300
+	material point_hard_edge
+	particle_width 0.1
+	particle_height 0.1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	accurate_facing on
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 3 0
+		velocity 0.001
+		time_to_live 1
+		duration 0.1
+		emit_emitter tag1
+	}
+	emitter Point : delay_time
+	{
+		name tag1
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		
+		position 0 -0 0
+		velocity 0.0001
+		time_to_live 1
+		
+		emit_emitter tag2
+	}
+	emitter Point
+	{
+		name tag2
+		angle 90
+		colour 0.4 0.5 0.6 1
+		direction 0 1 0
+		emission_rate 300
+		position 0 0 0
+		velocity_min 1
+		velocity_max 5
+		time_to_live 1.6
+		duration 0.2
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3.3
+		green2	-3.3
+		blue2	-3.3
+		alpha2	-3
+		state_change 0.3
+	}
+	affector LinearForce{
+		force_vector 0 -10 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+	affector DeflectorPlane 
+	{
+		plane_point 0 3 0
+		plane_normal 0 1 0 
+		bounce 0.3
+	}
+}
+
+
+particle_system kokomi_result_splash_01
+{
+	quota 50
+	material water_splash
+	particle_width 0.1
+	particle_height 0.1
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0.8 0.9 1 1
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.3
+		duration 0.05
+	}
+	affector Scaler
+	{
+		rate 70
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-5.5
+		green2	-6
+		blue2	-6.6
+		alpha2	-3
+		state_change 0.15
+	}
+	affector LinearForce{
+		force_vector 0 -10 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system kokomi_result_splash_02
+{
+	quota 50
+	material thunder_circle
+	particle_width 0.1
+	particle_height 0.1
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.4
+		duration 0.05
+	}
+	affector Scaler
+	{
+		rate 55
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system kokomi_result_splash_03
+{
+	quota 50
+	material hollow_blast_smoke_01
+	particle_width 0.1
+	particle_height 0.1
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0.6 0.7 1 1
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.1
+		duration 0.05
+	}
+	affector Scaler
+	{
+		rate 150
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+
+
+particle_system kokomi_activated_shrink_wave	//冲锋枪用
+{
+	quota 300
+	material thunder_circle
+	particle_width 4
+	particle_height 4
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.001
+		time_to_live_min 0.05
+		time_to_live_max 0.05
+		duration 1
+	}
+	affector Scaler
+	{
+		rate -40
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	180
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.5
+		colour1 1 0 1 1
+		time2 1
+		colour2 0 1 1 1
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material water_bobble : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture water_bobble.png 	
+}}}}
+material water_bobble_alpha : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture water_bobble_alpha.png 	
+}}}}
+material point_soft_edge_100 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture point_soft_edge_100.png 	
+}}}}
+material point_soft_edge_100_pass : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture point_soft_edge_100.png 	
+}}}}
+
+material muzzle_crossring_a_pass : add_base
+{   
+    technique{
+    pass{
+		cull_hardware none
+		depth_func always_pass
+        texture_unit{
+            anim_texture muzzle_crossring_a.png 6 0.2
+			tex_address_mode border
+			tex_border_colour 0 0 0 0
+}}}}
+material splash_anim_a_pass : add_base
+{   
+    technique{
+    pass{
+		cull_hardware none
+		depth_func always_pass
+        texture_unit{
+            anim_texture splash_anim_a.png 8 1
+			tex_address_mode border
+			tex_border_colour 0 0 0 0
+}}}}
+material thunder_circle : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            anim_texture thunder_circle.png 4 0.2
+			tex_address_mode border
+			tex_border_colour 0 0 0 0
+}}}}
+
+material kokomi_concentrate_wave : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+           texture kokomi_concentrate_wave.png
+}}}}
+material kokomi_concentrate_wave_fish : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+           texture kokomi_concentrate_wave_fish.png
+}}}}
+
+material thunder_ring : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+           texture thunder_ring.png
+}}}}
+material hollow_blast_smoke_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+           texture hollow_blast_smoke_01.png
+}}}}
+
+material water_wave_01 : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+           texture water_wave_01.png
+}}}}
+material water_bobble_colored : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+           texture water_bobble_colored.png
+}}}}
+material water_splash_2 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+           texture water_splash_2.png
+}}}}
+material ink_splash_1 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+           texture ink_splash_1.png
+}}}}
+
+material star_cross : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+           texture star_cross.png
+}}}}
+material kokomi_fish : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+           texture kokomi_fish.png
+}}}}
+material kokomi_star_cross : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+           texture kokomi_star_cross.png
+}}}}
+material point_hard_edge : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+           texture point_hard_edge.png
+}}}}
+
+material water_splash : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+           texture water_splash.png
+}}}}
+material kokomi_trail : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+           texture kokomi_trail.png
+}}}}
+
+
+

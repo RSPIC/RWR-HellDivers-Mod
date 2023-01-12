@@ -39,7 +39,7 @@ key="ex_megumin_wand_summon.weapon"
     <animation state_key="crouch_moving" animation_key="wand_running" />
     <animation state_key="crouch_moving_backwards" animation_key="wand_running" />
     <animation state_key="running" animation_key="wand_running" />
-    <animation state_key="reload" animation_key="wand_reloading" />
+    <animation state_key="reload" animation_key="wand_summon_reload" />
     <animation state_key="hold_casual" animation_key="wand_still" />
     <animation state_key="still_against_wall" animation_key="wand_still" />
     <animation state_key="hold_on_wall" animation_key="wand_still" />
