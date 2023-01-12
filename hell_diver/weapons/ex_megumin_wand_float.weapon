@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon drop_count_factor_on_death="0" 
+drop_count_factor_on_player_death="1.0"
+time_to_live_out_in_the_open="300"
+player_death_drop_owner_lock_time="300" 
+on_ground_up="0 0 1" 
+ key="ex_megumin_wand_float.weapon"
+ >
+    <tag name="sniper" />
+    <specification 
+	retrigger_time="1"
+	accuracy_factor="1" 
+	sustained_fire_grow_step="0" 
+	sustained_fire_diminish_rate="3.0" 
+	magazine_size="5" 
+	can_shoot_standing="1" 
+	can_shoot_crouching="1"
+    can_shoot_prone="0" 
+	suppressed="0" 
+	name="Wand" 
+	class="4" 
+	reload_one_at_a_time="0" 
+	sight_range_modifier="2" 
+	projectile_speed="50.0" 
+	barrel_offset_3d="0 0 1.6"
+	projectiles_per_shot="4" 
+	burst_shots="1"
+    carry_in_two_hands="1"/>
+    <weak_hand_hold offset="0" />
+
+	<next_in_chain key="ex_megumin_wand_summon.weapon" share_ammo="0" />
+  
+    <animation key="recoil" animation_key="wand_still" />
+    <animation key="cycle" animation_key="wand_still" />
+    <animation state_key="hold" animation_key="wand_still" />
+    <animation state_key="walking" animation_key="wand_running" />
+    <animation state_key="walking_backwards" animation_key="wand_running" />
+    <animation state_key="crouching" animation_key="wand_still" />
+    <animation state_key="crouch_moving" animation_key="wand_running" />
+    <animation state_key="crouch_moving_backwards" animation_key="wand_running" />
+    <animation state_key="running" animation_key="wand_running" />
+    <animation state_key="reload" animation_key="wand_reloading" />
+    <animation state_key="hold_casual" animation_key="wand_still" />
+    <animation state_key="still_against_wall" animation_key="wand_still" />
+    <animation state_key="hold_on_wall" animation_key="wand_still" />
+
+    
+    <animation state_key="next_in_chain_in" animation_key="" />
+    <animation state_key="next_in_chain_out" animation_key="" />
+     
+    <sound key="fire" fileref="wand_float_fire.wav" pitch_variety="0.00"  volume="2" />
+
+    <sound key="cycle" fileref="potion_open.wav" pitch_variety="0.00"  volume="4"/>
+    <sound key="magazine_out" fileref="potion_open.wav" pitch_variety="0.00"  volume="4"/>
+    <sound key="magazine_in" fileref="sniper_clip_in_1.wav" />
+    <sound key="cycle_out" fileref="sniper_cycle_out_1.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in_1.wav" />
+    <sound key="effect" fileref="drink_potion.wav" pitch_variety="0.00"  volume="5"  />
+    <control key="effect" value="1" />
+
+    <sound class="impact" fileref="potion_drop.wav" pitch_variety="0.00"  volume="4" />
+
+    <model filename="potion_hh.xml" />
+    <addon_model filename="wand_hh_addons.xml" />
+
+    <ballistics 
+    curve_height="0.1" 
+    near_far_distance="1000" 
+    speed_estimation_near="450" 
+    speed_estimation_far="50" 
+    max_speed="450" 
+    randomness="0" 
+    tweak_factor="1" /> 
+
+    <hud_icon filename="wand_hh.png" />
+
+    <commonness value="0" can_respawn_with="0" in_stock="1"/>
+    <inventory encumbrance="4.0" price="999.0" />
+
+    <projectile file="wand_guiding_01.projectile" pulldown_in_air="0.1"> 
+        <trigger class="time" time_to_live="1.0" />
+        <collision class="sticky" />
+        <result class="blast" radius="5" damage="4" decal="0" push="0.5" character_state="death" faction_compare="not_equal"/>
+        <!-- 爆炸伤害 4x3=12 -->
+        <effect class="activated" ref="wand_activated_fire_smoke" />   
+        <effect class="result" key="terrain" ref="wand_result_fire_blast" /> 
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+    </projectile>
+    <effect class="muzzle" ref="wand_magic_circle_muzzle_float" />    
+    <effect class="muzzle" ref="wand_magic_circle_expand_muzzle_float" /> 
+    <effect class="muzzle" ref="wand_magic_circle_warmup_muzzle_float" /> 
+
+
+    <shield offset="-0.45 -0.15 -0.1" extent="2 0.1 0.1" />
+
+    <stance state_key="running" accuracy="1" />
+    <stance state_key="walking" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="standing" accuracy="1" />
+    <stance state_key="crouching" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1" />
+
+    <modifier class="speed" value="0.1" />    
+
+	
+</weapon>

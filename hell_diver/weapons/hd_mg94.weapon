@@ -94,7 +94,7 @@ key="hd_mg94.weapon"
 		<effect class="result" key="terrain" ref="hd_mg94_hit_leave" lighting="0" />
 		<effect class="activated" ref="hd_mg94_avtivated_bullet_light" lighting="0"/>
 		<effect class="activated" ref="hd_mg94_avtivated_bullet_light_center" lighting="0"/>
-		<effect class="activated" ref="hd_mg94_avtivated_bullet_ground_light" lighting="0"/>
+		<effect class="activated" ref="hd_mg94_avtivated_bullet_ground_light"/>
 		<effect class="activated" ref="hd_mg94_avtivated_bullet_light_center_yellow" lighting="0" post_processing="1"/>
 	
 		<sound class="result" key="terrain" copy="other" />

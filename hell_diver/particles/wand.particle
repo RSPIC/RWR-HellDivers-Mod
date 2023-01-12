@@ -1,0 +1,1650 @@
+By Rst for G41
+2022.5.10
+未经授权不可复用、修改使用
+------------------------------------------------聚光特效----------------------------------
+particle_system wand_gather_wave_01     //汇聚光效暗光		
+{
+	quota 60
+	material gather_wave_01
+	particle_width 30
+	particle_height 30
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_origin center
+	billboard_type oriented_common
+    common_direction 0 1 1
+	emitter Point{
+		angle 0
+        colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 40
+		position 0 0 0
+		velocity 0.001
+		time_to_live 1
+		duration 12
+	}
+	affector Scaler{
+		rate -30
+	}
+	affector Rotator{
+		rotation_speed_range_start	15
+		rotation_speed_range_end	18
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+    affector ColourFader2{
+        red1	0.8
+		green1  0.8
+		blue1	0.8
+		alpha1	1
+		red2	 -1
+		green2  -1
+		blue2	-1
+		alpha2	-1
+		state_change 0.3
+    }
+    
+}
+
+particle_system wand_gather_wave_01_01 : wand_gather_wave_01           //汇聚光效末端亮光
+{
+    material gather_wave_03
+    emitter Point{
+        position 0 0 0
+        colour 0 0 0 0
+        emission_rate 50
+	}
+    affector Scaler{}
+    affector Rotator{}
+    affector ColourFader2{
+        red1	0
+		green1  0
+		blue1	0
+		alpha1	0
+		red2	 3
+		green2  3
+		blue2	3
+		alpha2	3
+		state_change 0.3
+    }
+}
+
+particle_system wand_gather_wave_01_02 : wand_gather_wave_01           //汇聚光碎片光
+{
+    material gather_wave_04
+    emitter Box{
+        position 0 0 0
+        colour 0 0 0 0
+        emission_rate 5
+        depth 0.5
+        height 0.5
+        width 0.5
+	}
+    affector Scaler{}
+    affector Rotator{}
+    affector ColourFader2{
+        red1	10
+		green1  10
+		blue1	10
+		alpha1	10
+    }
+}
+
+particle_system wand_gather_wave_02 : wand_gather_wave_01{common_direction 1 1 1}
+particle_system wand_gather_wave_02_01 : wand_gather_wave_01_01{common_direction 1 1 1}
+
+particle_system wand_gather_wave_03 : wand_gather_wave_01{common_direction -0.5 0.3 -0.6}
+particle_system wand_gather_wave_03_01 : wand_gather_wave_01_01{common_direction -0.5 0.3 -0.6}
+particle_system wand_gather_wave_03_02 : wand_gather_wave_01_02{common_direction -0.5 0.3 -0.6}
+
+particle_system wand_gather_wave_04 : wand_gather_wave_01{common_direction -1 0.1 0.5}
+particle_system wand_gather_wave_04_01 : wand_gather_wave_01_01{common_direction -1 0.1 0.5}
+
+particle_system wand_gather_wave_05 : wand_gather_wave_01{common_direction 1 0 0}
+particle_system wand_gather_wave_05_01 : wand_gather_wave_01_01{common_direction 1 0 0}
+particle_system wand_gather_wave_05_02 : wand_gather_wave_01_02{common_direction 1 0 0}
+
+particle_system wand_gather_wave_06 : wand_gather_wave_01{common_direction 1 0.5 -1}
+particle_system wand_gather_wave_06_01 : wand_gather_wave_01_01{common_direction 1 0.5 -1}
+
+
+particle_system wand_gather_wave_center_light_01
+{
+    quota 40
+    material pump_flare_03_01
+    particle_width 1.5
+	particle_height 1.5
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_type point
+    emitter Point{
+        angle 0
+        colour 0.5 0.3 1 1
+		direction 0 1 0
+		emission_rate 5
+		position 0 0.3 0
+		velocity 0.001
+		time_to_live 1
+		duration 12
+    }
+    affector Scaler{rate 3}
+}
+---------------------------------------------------法阵特效----------------------------------------------------------
+时间节点 13S出现-22  14扩张-21   14.6扩张完毕-20.4 
+
+15s地面预热-20  15.5s地面扩张-19.5 16s扩张完毕-19
+
+21.5扩张两倍-13.5  22s稳定-13  34s预警光束-1  35s结束
+
+particle_system wand_magic_circle        // 主要光圈 3
+{
+    quota 20
+    material magic_explosion_ring_01
+    particle_width 4
+	particle_height 4
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_type perpendicular_self
+	common_direction 0 1 0
+    common_up_vector 0 0 1
+    emitter Point{
+        angle 0
+        colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 40
+		position 0 0 0
+		velocity_min 0.001
+        velocity_max 0.001
+		time_to_live 35
+		duration 0.1
+    }
+	affector Rotator{
+		rotation_speed_range_start	-30
+		rotation_speed_range_end	-60
+		rotation_range_start	0
+		rotation_range_end	45
+	}
+    affector ColourFader2{
+        red1	0
+		green1  0
+		blue1	0
+		alpha1	0
+		red2	 10
+		green2  10
+		blue2	10
+		alpha2	10
+		state_change 20.4
+    }
+}
+particle_system wand_magic_circle_expand : wand_magic_circle        // 扩张法阵 2
+{   
+    particle_width 93.324
+	particle_height 93.324
+    emitter Point{
+        time_to_live 14.6
+    }
+    affector Rotator{
+		rotation_speed_range_start	-600
+		rotation_speed_range_end	-720
+		rotation_range_start	0
+		rotation_range_end	90
+	}
+    affector ColourFader2{
+		state_change 0.6
+    }
+    affector Scaler{rate -6.666}
+}
+
+
+particle_system wand_magic_circle_warmup : wand_magic_circle //内圈预热光环 1
+{
+    material wand_lens_circle_06
+    particle_width 1
+	particle_height 1
+    emitter Point{}
+	affector Rotator{
+		rotation_speed_range_start	-35
+		rotation_speed_range_end	-35
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+    affector ColourFader2{
+		state_change 22
+    }
+
+}
+particle_system wand_magic_circle_on_ground_circle : wand_magic_circle //地面主要法阵 3
+{
+    particle_width 8
+	particle_height 8
+    billboard_type perpendicular_common
+    common_direction 0 1 0
+    common_up_vector 0 0 1
+    emitter Point{
+        emission_rate 30
+        velocity_min 0.001
+        position 0 -1.6 0
+        time_to_live 22.5
+    }
+    affector Rotator{
+	}
+    affector ColourFader2{
+		state_change 6.5
+    }
+}
+particle_system wand_magic_circle_on_ground_warmup : wand_magic_circle_on_ground_circle //地面预热光圈 1
+{
+    material wand_lens_circle_06
+    particle_width 2
+	particle_height 2
+    emitter Point{
+        time_to_live 35
+    }
+    affector Rotator{}
+    affector ColourFader2{
+		state_change 20
+    }
+}
+particle_system wand_magic_circle_on_ground_expand : wand_magic_circle_on_ground_circle //地面扩张法阵 2
+{
+    particle_width 248
+	particle_height 248
+    emitter Point{
+        emission_rate 50
+        time_to_live 16
+    }
+    affector Rotator{		
+        rotation_speed_range_start	-600
+		rotation_speed_range_end	-720
+		rotation_range_start	0
+		rotation_range_end	90
+    }
+    affector ColourFader2{
+		state_change 0.5
+    }
+    affector Scaler{rate -16}
+}
+
+particle_system wand_magic_circle_on_ground_expand_x2 : wand_magic_circle_on_ground_expand  //两倍 地面扩张
+{
+    particle_width 344
+	particle_height 344
+    emitter Point{
+        emission_rate 50
+        time_to_live 22.5
+    }
+    affector Rotator{
+        rotation_speed_range_start	-360
+		rotation_speed_range_end	-480
+		rotation_range_start	0
+		rotation_range_end	90
+    }
+    affector ColourFader2{}
+    affector Scaler{}
+}
+
+particle_system wand_magic_circle_on_ground_circle_x2 : wand_magic_circle_on_ground_circle  //两倍 地面主要法阵
+{
+    particle_width 16
+	particle_height 16
+    emitter Point{
+        time_to_live 35
+    }
+    affector Rotator{
+	}
+    affector ColourFader2{
+		state_change 12.8
+    }
+}
+
+particle_system wand_magic_center_preshoot_linear_light     //发射前指示光
+{
+    quota 10
+    material shrink_line
+    particle_width 40
+	particle_height 0.1
+    billboard_rotation_type vertex
+	billboard_origin center_right
+	billboard_type oriented_self
+    iteration_interval 0
+    emitter Point{
+        angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.001
+		time_to_live 35
+		duration 0.1
+    }
+    affector Rotator{
+        rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	90
+		rotation_range_end	90
+    }
+    affector ColourFader2{
+		red1	0
+		green1  0
+		blue1	0
+		alpha1	0
+		red2	 10
+		green2  10
+		blue2	10
+		alpha2	10
+		state_change 1.5
+	}
+
+}
+particle_system wand_magic_center_shoot_laser     //发射激光
+{
+    quota 10
+    material wand_laser
+    particle_width 5
+	particle_height 80
+    billboard_rotation_type vertex
+	billboard_origin bottom_center
+	billboard_type oriented_self
+    iteration_interval 0
+    emitter Point{
+        angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 30
+		position 0 0 0
+		velocity 0.01
+		time_to_live 35
+		duration 0.1
+    }
+    affector Rotator{
+        rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+    }
+    affector ColourFader2{
+		red1	0
+		green1  0
+		blue1	0
+		alpha1	0
+		red2	 10
+		green2  10
+		blue2	10
+		alpha2	10
+		state_change 0.5
+	}
+
+}
+particle_system wand_magic_center_preshoot_away_circle  // 发射前环形
+{
+    quota 40
+    material wand_lens_circle_06
+    particle_width 5
+	particle_height 5
+    billboard_rotation_type vertex
+	billboard_type perpendicular_self
+    common_up_vector 0 0 1
+    accurate_facing on
+    emitter Point{
+        angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.1
+		time_to_live 35
+		duration 1
+    }
+    affector ColourFader2{
+		red1	0
+		green1  0
+		blue1	0
+		alpha1	0
+		red2	 1
+		green2  1
+		blue2	1
+		alpha2	1
+		state_change 3
+	}
+    affector Scaler{rate 0}
+}
+particle_system wand_magic_area_smoke
+{
+    quota 320
+    material explosion_smoke_01_alpha
+    particle_width 7
+	particle_height 7
+    billboard_rotation_type vertex
+	billboard_type point
+    emitter Ring{
+        angle 0
+		colour_range_start 1 1 1 0.1
+        colour_range_end 1 1 1 0.2
+		direction 0 1 0
+		emission_rate 70
+		position 0 0 0
+		velocity_min -8
+        velocity_max -13
+		time_to_live_min 2
+        time_to_live_max 4
+		duration 15
+        depth 20
+        height 20
+        width 20
+    }
+    affector Scaler{rate -1}
+    affector ColourFader2{
+		red1	0
+		green1  0
+		blue1	0
+		alpha1	0
+		red2	 -1
+		green2  -1
+		blue2	-1
+		alpha2	-1
+		state_change 1
+	}
+	affector LinearForce{
+		force_vector 0 6 0
+		force_application add
+	}
+    affector Rotator{
+		rotation_speed_range_start	-45
+		rotation_speed_range_end	45
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+
+}
+particle_system wand_magic_area_spot : wand_magic_area_smoke
+{
+    material pump_flare_03_01
+    particle_width 0.15
+	particle_height 0.15
+    emitter Ring{
+    }
+    affector Scaler{rate 0}
+}
+-------------------------------------------------------------------------------------------------
+particle_system wand_hit_ground_center_light    //引导中心高亮黄光
+{
+    quota 20
+    material explosion_smoke_04
+    particle_width 10
+	particle_height 10
+    renderer billboard	
+	billboard_rotation_type vertex
+	billboard_type perpendicular_common
+    common_direction 0 1 0
+    common_up_vector 0 0 1
+    emitter Point{
+        angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 30
+		position 0 0 0
+		velocity 0.05
+		time_to_live 12
+		duration 0.1
+    }
+    affector Rotator{
+		rotation_speed_range_start	-45
+		rotation_speed_range_end	45
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+    affector ColourFader2{
+		red1	10
+		green1  10
+		blue1	10
+		alpha1	10
+		red2	 -0.6
+		green2  -0.6
+		blue2	-0.6
+		alpha2	-0.6
+		state_change 3
+	}
+}
+particle_system wand_hit_ground_center_light_up : wand_hit_ground_center_light      //引导中心高亮黄光，上升
+{
+    emitter Point{
+		velocity 3
+		position 0 2 0
+    }
+}
+particle_system wand_hit_ground_radiation : wand_hit_ground_center_light        //改为法阵
+{
+    quota 10
+    material magic_explosion_ring_02
+    particle_width 10
+	particle_height 10
+    renderer billboard	
+	billboard_rotation_type vertex
+	billboard_type perpendicular_common
+    common_direction 0 1 0
+    common_up_vector 0 0 1
+    emitter Point{
+        angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 2 0
+		velocity 3
+		duration 0.1
+    }
+    affector Rotator{
+        rotation_speed_range_start	30
+		rotation_speed_range_end	45
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+    affector ColourFader2{
+	}
+    affector Scaler{rate 0.5}
+}
+particle_system wand_hit_ground_rainbowewave    : wand_hit_ground_radiation     //地面彩虹波
+{
+    quota 10
+    material RainbowWave
+    particle_width 20
+	particle_height 20
+    renderer billboard	
+	billboard_rotation_type vertex
+	billboard_type perpendicular_common
+	common_direction 0 1 0
+    common_up_vector 0 0 1
+    emitter Point{
+        angle 0
+		colour 1 0.5 0.5 0.5
+		position 0 0 0 
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.05
+    }
+    affector Rotator{
+        rotation_speed_range_start	30
+		rotation_speed_range_end	30
+	}
+    affector ColourFader2{
+        red1	0
+		green1  0
+		blue1	0
+		alpha1	0
+		red2	 -5
+		green2  -5
+		blue2	-5
+		alpha2	-5
+		state_change 5
+	}
+    affector Scaler{rate 0}
+}
+particle_system wand_hit_ground_expand      //地面扩张圆
+{
+    quota 10
+    material lens_circle_07
+    particle_width 1
+	particle_height 1
+    renderer billboard	
+	billboard_rotation_type vertex
+	billboard_type perpendicular_common
+	common_direction 0 1 0
+    common_up_vector 0 0 1
+    emitter Point{
+        angle 0
+		colour 1 0 0 1
+		direction 0 1 0
+		emission_rate 30
+		position 0 0 0
+		velocity 0.05
+        duration 0.1
+        time_to_live 1.5
+    }
+    affector Scaler{rate  50}
+    affector ColourFader2{
+        red1	3
+		green1  1
+		blue1	0
+		alpha1	1
+		red2	 -1
+		green2  -2
+		blue2	-2
+		alpha2	-1
+		state_change 1
+	}
+}
+particle_system wand_hit_ground_surrounding_line_01 //环绕动态柱状粒子
+{
+    quota 400
+    material top_center_point_3
+    particle_width 2
+	particle_height 2
+    renderer billboard	
+	billboard_rotation_type vertex
+	billboard_type perpendicular_common
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+    emitter Point{
+        angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 10
+        duration 11
+        time_to_live 3
+    }
+    affector Rotator{
+		rotation_speed_range_start	1000
+		rotation_speed_range_end	1000
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+    affector Scaler{rate -2}
+    affector ColourImage{
+		image wand_color_line_01.png
+	}
+}
+particle_system wand_hit_ground_surrounding_line_02 : wand_hit_ground_surrounding_line_01       //环绕动态柱状粒子
+{
+    emitter Point{
+    }
+    affector Rotator{
+		rotation_speed_range_start	-1000
+		rotation_speed_range_end	-1000
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+}
+particle_system wand_hit_ground_vertical_center_light       //炸点中心垂直光照
+{
+    quota 10
+    material point_soft_edge_100_light_wand
+    particle_width 10
+	particle_height 40
+    renderer billboard	
+	billboard_rotation_type vertex
+    billboard_origin bottom_center
+	billboard_type oriented_common
+    common_direction 0 1 0
+    common_up_vector 0 0 1
+    emitter Point{
+        angle 0
+		colour 1 0.3 0 0.05
+		direction 0 1 0
+		emission_rate 10
+		position 0 -5 0
+		velocity 0.001
+        duration 0.1
+        time_to_live 11
+    }
+}
+
+particle_system wand_hit_ground_area_spot : wand_magic_area_spot        //地面环境点光
+{
+    quota 400
+    particle_width 0.2
+	particle_height 0.2
+    emitter Ring{
+        depth 50
+        height 50
+        width 50
+        velocity_min 2
+        velocity_max 10
+        inner_height 0.01
+        inner_width 0.01
+    }
+    affector ColourFader2{
+        red1	10
+		green1  0
+		blue1	0
+		alpha1	1
+		red2	 -1
+		green2  -1
+		blue2	-1
+		alpha2	-1
+		state_change 1
+	}
+    	affector DirectionRandomiser
+	{
+		randomness 20
+		scope 80
+		keep_velocity true
+	}
+}
+particle_system wand_hit_ground_area_stone_01 : wand_hit_ground_area_spot        //地面环境岩石
+{
+    material wand_stone_01
+    quota 100
+    particle_width 0.7
+	particle_height 0.7
+    emitter Ring{
+		colour 0.5 0.5 0.5 0.5
+		emission_rate 1
+		velocity_min 0.001
+        velocity_max 2
+		time_to_live_min 5
+        time_to_live_max 8
+		duration 15
+        depth 1
+        height 40
+        width 40
+        inner_height 0.6
+        inner_width 0.6
+    }
+    affector ColourFader2{
+        red1	0.1
+		green1  0.1
+		blue1	0.1
+		alpha1	0.1
+		red2	 -1
+		green2  -1
+		blue2	-1
+		alpha2	-1
+		state_change 1
+	}
+    	affector DirectionRandomiser
+	{
+		randomness 7
+		scope 100
+		keep_velocity true
+	}
+    affector LinearForce{
+		force_vector 0 1 0
+		force_application add
+	}
+    affector Rotator{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	15
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+}
+particle_system wand_hit_ground_area_stone_02 : wand_hit_ground_area_stone_01        //地面环境岩石
+{   material wand_stone_02}
+particle_system wand_hit_ground_area_stone_03 : wand_hit_ground_area_stone_01        //地面环境岩石
+{   material wand_stone_03}
+particle_system wand_hit_ground_area_stone_04 : wand_hit_ground_area_stone_01        //地面环境岩石
+{   material wand_stone_04}
+particle_system wand_hit_ground_area_stone_05 : wand_hit_ground_area_stone_01        //地面环境岩石
+{   material wand_stone_05}
+particle_system wand_hit_ground_area_stone_06 : wand_hit_ground_area_stone_01        //地面环境岩石
+{   material wand_stone_06}
+--------------------------------------------------------------------------------
+particle_system wand_hit_ground_magic_circle_01
+{
+    quota 10
+    material magic_explosion_ring_02
+    particle_width 20
+	particle_height 20
+    renderer billboard	
+	billboard_rotation_type vertex
+	billboard_type perpendicular_common
+    common_direction 0 1 0
+    common_up_vector 0 0 1
+    emitter Point{
+        angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 5 0
+		velocity 0.001
+		time_to_live 10
+		duration 0.1
+    }
+    affector ColourFader2{
+		red1	0
+		green1  0
+		blue1	0
+		alpha1	0
+		red2	 5
+		green2  5
+		blue2	5
+		alpha2	1
+		state_change 9
+	}
+    affector Rotator{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	45
+		rotation_range_start	0
+		rotation_range_end	60
+	}
+}
+particle_system wand_hit_ground_magic_circle_02 : wand_hit_ground_magic_circle_01{
+    particle_width 10
+	particle_height 10
+    emitter Point{position 0 8 0}
+    affector ColourFader2{state_change 8}
+    affector Rotator{
+	}
+}
+particle_system wand_hit_ground_magic_circle_03 : wand_hit_ground_magic_circle_01{
+    particle_width 25
+	particle_height 25
+    emitter Point{position 0 11 0}
+    affector ColourFader2{state_change 7}
+}
+particle_system wand_hit_ground_magic_circle_04 : wand_hit_ground_magic_circle_01{
+    particle_width 30
+	particle_height 30
+    emitter Point{position 0 14 0}
+    affector ColourFader2{state_change 6}
+}
+particle_system wand_hit_ground_magic_circle_05 : wand_hit_ground_magic_circle_01{
+    particle_width 24
+	particle_height 24
+    emitter Point{position 0 17 0}
+    affector ColourFader2{state_change 5}
+}
+particle_system wand_hit_ground_magic_circle_06 : wand_hit_ground_magic_circle_01{
+    particle_width 20
+	particle_height 20
+    emitter Point{position 0 20 0}
+    affector ColourFader2{state_change 4}
+}
+particle_system wand_hit_ground_magic_circle_07 : wand_hit_ground_magic_circle_01{
+    particle_width 15
+	particle_height 15
+    emitter Point{position 0 23 0}
+    affector ColourFader2{state_change 3}
+}
+particle_system wand_hit_ground_magic_circle_08 : wand_hit_ground_magic_circle_01{
+    particle_width 10
+	particle_height 10
+    emitter Point{position 0 26 0}
+    affector ColourFader2{state_change 2}
+}
+particle_system wand_hit_ground_magic_circle_09 : wand_hit_ground_magic_circle_01{
+    particle_width 40
+	particle_height 40
+    emitter Point{position 0 30 0}
+    affector ColourFader2{state_change 1}
+}
+--------------------------------------------------爆炸----------------------------------------------------
+particle_system wand_blast_center_laser     //中心爆炸激光
+{
+	quota 50
+	material wand_blast_laser
+	particle_width 20
+	particle_height 80
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_origin bottom_center
+	billboard_type oriented_common
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+    emitter Point{
+        angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 0.001
+		time_to_live 3
+		duration 0.2
+    }
+    affector Scaler{rate -10}
+    affector ColourFader2{
+		red1	0.3
+		green1  0.3
+		blue1	0.3
+		alpha1	0.3
+		red2	 0
+		green2  0
+		blue2	0
+		alpha2	0
+		state_change 2.5
+	}
+}
+particle_system wand_blast_center_laser_pre : wand_blast_center_laser     //冲击力修正
+{
+    particle_width 1
+    emitter Point{
+		emission_rate 30
+        colour 1 1 1 1
+		time_to_live 0.1
+		duration 0.2
+    }
+    affector Scaler{rate 190}
+    affector ColourFader2{
+		red1	10
+		green1  10
+		blue1	10
+		alpha1	10
+	}
+
+}
+particle_system wand_blast_center_shrink_light : wand_magic_center_preshoot_linear_light     //发射前指示光
+{
+    quota 10
+    material shrink_line
+    particle_width 40
+	particle_height 0.1
+    billboard_rotation_type vertex
+	billboard_origin center_right
+	billboard_type oriented_self
+    emitter Point{
+        angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.001
+		time_to_live 3
+		duration 0.1
+    }
+    affector Rotator{
+        rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	90
+		rotation_range_end	90
+    }
+    affector ColourFader2{
+		red1	0
+		green1  0
+		blue1	0
+		alpha1	0
+		red2	 10
+		green2  10
+		blue2	10
+		alpha2	10
+		state_change 1.5
+	}
+
+}
+particle_system wand_blast_center_lens_flare      //命中地面核心镜头光晕
+{
+    quota 100
+    material on_ground_light_01
+    particle_width 30
+	particle_height 30
+    renderer billboard	
+    billboard_rotation_type vertex
+    billboard_type oriented_self
+    billboard_origin bottom_center
+    emitter Point{
+        angle 45
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 200
+		position 0 0 0
+		velocity 0.001
+		time_to_live 0.2
+		duration 0.8
+    }
+    affector ColourFader{
+		red	10
+		green  10
+		blue 10
+		alpha	10
+	}
+    affector Scaler{rate -50}
+}
+particle_system wand_blast_area_smoke      //命中地面爆炸扬尘
+{
+    quota 240
+    material wand_smoke
+    particle_width 8
+	particle_height 8
+    renderer billboard	
+    billboard_rotation_type vertex
+    billboard_type point
+    emitter Point{
+        angle 90
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 300
+		position 0 0 0
+		velocity 12
+		time_to_live 4.6
+		duration 0.6
+    }
+    affector ColourFader2{
+		red1	0.4
+		green1  0.4
+		blue1	0.4
+		alpha1	0.15
+		red2	 -0
+		green2  -0
+		blue2	-0
+		alpha2	-0.5
+		state_change 1.5
+	}
+    affector Scaler{rate 0.8}
+	affector LinearForce{
+		force_vector 0 -5 0
+		force_application add
+	}
+	affector Rotator{
+		rotation_speed_range_start	-45
+		rotation_speed_range_end	45
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+}
+particle_system wand_blast_area_smoke_shadow  : wand_blast_area_smoke    //命中地面爆炸扬尘阴影
+{
+    material ShadowPlant		//专用材质
+}
+particle_system wand_blast_area_smoke_ring      //命中地面爆炸扬尘 环状扩散
+{
+    quota 300
+    material wand_smoke_ring
+    particle_width 20
+	particle_height 20
+    renderer billboard	
+    billboard_rotation_type vertex
+    billboard_type perpendicular_common
+	billboard_origin bottom_center
+	common_up_vector 0 0 1
+	common_direction 0 1 0
+    emitter Point{
+        angle 30
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 500
+		position 0 0 0
+		velocity 0.001
+		time_to_live 2
+		duration 0.5
+    }
+	affector ColourFader2{
+		red1	1.5
+		green1  1.5
+		blue1	1.5
+		alpha1	0.4
+		red2	 -0
+		green2  -0
+		blue2	-0
+		alpha2	-0.5
+		state_change 1
+	}
+    affector Scaler{rate 35}
+	affector LinearForce{
+		force_vector 0 1 0
+		force_application add
+	}
+	affector Rotator{
+		rotation_speed_range_start	-45
+		rotation_speed_range_end	45
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+}
+
+------------------------------------------------------------------------------------------------------------------
+particle_system wand_hit_ground_magic_circle_shrink_01 : wand_hit_ground_magic_circle_01	//垂直位 魔法圆 收缩
+{
+    particle_width 20
+	particle_height 20
+    emitter Point{
+        angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 2
+		position 0 5 0
+		velocity 0.001
+		time_to_live 0.2
+		duration 0.5
+    }
+    affector ColourFader2{		
+        red1	10
+		green1  10
+		blue1	10
+		alpha1	10
+		red2	 5
+		green2  5
+		blue2	5
+		alpha2	1
+		state_change 0
+        }
+    affector Rotator{
+		rotation_speed_range_start	180
+		rotation_speed_range_end	180
+		rotation_range_start	0
+		rotation_range_end	60
+	}
+    affector Scaler{rate -100}
+}
+particle_system wand_hit_ground_magic_circle_shrink_02 : wand_hit_ground_magic_circle_shrink_01
+{
+    particle_width 10
+	particle_height 10
+    emitter Point{position 0 8 0}
+    affector ColourFader2{}
+    affector Rotator{}
+    affector Scaler{rate -50}
+}
+particle_system wand_hit_ground_magic_circle_shrink_03 : wand_hit_ground_magic_circle_shrink_01
+{
+    particle_width 25
+	particle_height 25
+    emitter Point{position 0 11 0}
+    affector ColourFader2{}
+    affector Rotator{}
+    affector Scaler{rate -125}
+}
+particle_system wand_hit_ground_magic_circle_shrink_04 : wand_hit_ground_magic_circle_shrink_01
+{
+    particle_width 30
+	particle_height 30
+    emitter Point{position 0 14 0}
+    affector ColourFader2{}
+    affector Rotator{}
+    affector Scaler{rate -150}
+}
+particle_system wand_hit_ground_magic_circle_shrink_05 : wand_hit_ground_magic_circle_shrink_01
+{
+    particle_width 24
+	particle_height 24
+    emitter Point{position 0 17 0}
+    affector ColourFader2{}
+    affector Rotator{}
+    affector Scaler{rate -120}
+}
+particle_system wand_hit_ground_magic_circle_shrink_06 : wand_hit_ground_magic_circle_shrink_01
+{
+    particle_width 20
+	particle_height 20
+    emitter Point{position 0 20 0}
+    affector ColourFader2{}
+    affector Rotator{}
+    affector Scaler{rate -100}
+}
+particle_system wand_hit_ground_magic_circle_shrink_07 : wand_hit_ground_magic_circle_shrink_01
+{
+    particle_width 15
+	particle_height 15
+    emitter Point{position 0 23 0}
+    affector ColourFader2{}
+    affector Rotator{}
+    affector Scaler{rate -75}
+}
+particle_system wand_hit_ground_magic_circle_shrink_08 : wand_hit_ground_magic_circle_shrink_01
+{
+    particle_width 10
+	particle_height 10
+    emitter Point{position 0 26 0}
+    affector ColourFader2{}
+    affector Rotator{}
+    affector Scaler{rate -50}
+}
+particle_system wand_hit_ground_magic_circle_shrink_09 : wand_hit_ground_magic_circle_shrink_01
+{
+    particle_width 40
+	particle_height 40
+    emitter Point{position 0 29 0}
+    affector ColourFader2{}
+    affector Rotator{}
+    affector Scaler{rate -200}
+}
+--------------------------------------------------wand_fire_ball------------------------------------------------------------------------
+particle_system wand_activated_fire_smoke	
+{
+	quota 50
+	material explosion_smoke_04
+	particle_width 5
+	particle_height 5
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_type point
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	emitter Point{
+		angle 90
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.001
+		time_to_live 0.15
+		duration 5
+	}
+	affector Rotator{
+		rotation_speed_range_start	-180
+		rotation_speed_range_end	180
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector Scaler{rate -15}
+	affector ColourFader2{
+		red1	20
+		green1  20
+		blue1	20
+		alpha1	20
+		red2	 -20
+		green2  -20
+		blue2	-20
+		alpha2	-20
+		state_change 0.05
+	}
+}
+particle_system wand_magic_circle_muzzle_float : wand_magic_circle        // 主要光圈 3
+{
+    quota 20
+    material magic_explosion_ring_01
+    particle_width 4
+	particle_height 4
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_type perpendicular_self
+	common_direction 0 1 0
+    common_up_vector 0 0 1
+    emitter Point{
+		emission_rate 40
+		time_to_live 0.6
+		duration 0.1
+    }
+	affector Rotator{
+	}
+    affector ColourFader2{
+		state_change 0.6
+    }
+}
+particle_system wand_magic_circle_expand_muzzle_float : wand_magic_circle_muzzle_float        // 扩张法阵 2
+{   
+    particle_width 0.01
+	particle_height 0.01
+    emitter Point{
+        time_to_live 0.2
+    }
+    affector Rotator{
+		rotation_speed_range_start	-600
+		rotation_speed_range_end	-720
+		rotation_range_start	0
+		rotation_range_end	90
+	}
+    affector ColourFader2{
+		state_change 0.2
+    }
+    affector Scaler{rate 24.666}
+}
+particle_system wand_magic_circle_warmup_muzzle_float : wand_magic_circle_muzzle_float //内圈预热光环 1
+{
+    material wand_lens_circle_06
+    particle_width 1
+	particle_height 1
+    emitter Point{}
+	affector Rotator{
+		rotation_speed_range_start	-35
+		rotation_speed_range_end	-35
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+    affector ColourFader2{
+		state_change 2
+    }
+}
+particle_system wand_result_fire_blast
+{
+	quota 10
+	material wand_effect_hit_ball
+	particle_width 3
+	particle_height 3
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_type perpendicular_common
+	common_up_vector 0 0 1
+	common_direction 0 1 0
+	emitter Point{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.001
+		time_to_live 0.1
+		duration 0.1
+	}
+	affector Rotator{
+		rotation_speed_range_start	-90
+		rotation_speed_range_end	90
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector Scaler{rate 160}
+	affector ColourFader2{
+		red1	40
+		green1  40
+		blue1	40
+		alpha1	40
+		red2	 -3
+		green2  -3
+		blue2	-3
+		alpha2	-3
+		state_change 2
+	}
+}
+particle_system wand_result_fire_blast_ground : wand_result_fire_blast
+{
+	emitter Point{
+		position 0 -30 0
+	}
+}
+
+-----------------material----------------------------------------------------------------------------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material test : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture test_01.png 	
+            wave_xform rotate sine 1.0 0.05 0.1 0.05
+        }}
+}}
+
+material gather_wave_01 {
+	receive_shadows off
+	technique {
+        pass {
+            lighting off
+            depth_write off
+			fog_override true
+			scene_blend add		
+			texture_unit {
+				texture gather_wave_02.png
+            wave_xform rotate sine 1.0 0.1 0.2 0.1
+			}
+		} 
+		pass {
+			lighting off
+            depth_write off
+			fog_override true
+			scene_blend alpha_blend		
+			texture_unit {
+				texture gather_wave_01.png
+            wave_xform rotate sine 1.0 0.1 0.2 0.1
+			}
+		}
+	}
+}
+material gather_wave_03 {
+	receive_shadows off
+	technique {
+        pass {
+            lighting off
+            depth_write off
+			fog_override true
+			scene_blend add		
+			texture_unit {
+				texture gather_wave_03.png
+            wave_xform rotate sine 1.0 0.1 0.2 0.1
+			}
+		} 
+		}
+	}
+
+material pump_flare_03_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture pump_flare_03_01.png 	
+}}}}
+material gather_wave_04 : add_base
+{   
+    technique{
+    pass{
+        lighting on
+        emissive 0.4 0.4 1 1
+        ambient 0.4 0.4 1 1
+        texture_unit{
+            wave_xform rotate sine 1.0 0.1 0.2 0.1
+            texture gather_wave_04.png 	
+}}}}
+
+material magic_explosion_ring_01{   
+    receive_shadows off
+    technique{
+        pass{   
+            lighting off
+            depth_write off
+            fog_override true
+            scene_blend add
+            cull_hardware none
+            texture_unit{
+                texture magic_explosion_ring_01.png 	
+				tex_address_mode border
+				tex_border_colour 0 0 0 0
+                        }
+            }
+        pass{   
+            lighting off
+            depth_write off
+            fog_override true
+            scene_blend add
+            cull_hardware none
+            texture_unit{
+                texture magic_explosion_ring_alpha.png 	
+                        }
+            }
+    }
+}
+material magic_explosion_ring_02{   
+    receive_shadows off
+    technique{
+        pass{   
+            lighting off
+            depth_write off
+            fog_override true
+            scene_blend add
+            cull_hardware none
+            texture_unit{
+                texture magic_explosion_ring_02.png 	
+                        }
+            }
+        pass{   
+            lighting off
+            depth_write off
+            fog_override true
+            scene_blend add
+            cull_hardware none
+            texture_unit{
+                texture magic_explosion_ring_02_alpha.png 	
+                        }
+            }
+    }
+}
+material wand_lens_circle_06 : add_base
+{   
+    technique{
+    pass{
+        cull_hardware none
+        texture_unit{
+            texture wand_lens_circle_06.png 	
+}}}}
+
+material shrink_line : add_base
+{
+    technique{
+    pass{
+        lighting off
+        texture_unit{
+            texture shrink_line.png 	
+            wave_xform scroll_x sawtooth 1 0.42 0 1
+            tex_address_mode wrap}
+        }
+    pass{
+        lighting off
+        depth_write off
+        fog_override true
+        scene_blend add
+        texture_unit{
+            texture shrink_line.png 	
+            wave_xform scroll_x sawtooth 1 0.3 0 0.6
+            tex_address_mode wrap}
+        }
+}}
+material explosion_smoke_01_alpha : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture explosion_smoke_01_alpha.png 	
+}}}}
+material explosion_smoke_04 : add_base
+{   technique{pass{
+			texture_unit {
+				texture explosion_smoke_04.png 	
+}}}}
+material on_ground_light_01 : add_base
+{   technique{pass{
+			texture_unit {
+				texture on_ground_light_01.png 	
+				tex_address_mode border
+				tex_border_colour 0 0 0 0
+}}}}
+material lens_circle_07 : add_base
+{   technique{pass{
+			texture_unit {
+				texture lens_circle_07.png 	
+}}}}
+material radiation : add_base
+{   technique{pass{
+            cull_hardware none
+			texture_unit {
+				texture radiation.png 	
+}}}}
+material RainbowWave : add_base
+{   technique{pass{
+			texture_unit {
+				texture RainbowWave.png 	
+                wave_xform scale_x sine 1 0.1 0 0.15
+                wave_xform scale_y sine 1 0.1 0 0.15
+}}}}
+material wand_effect_hit_ball : add_base
+{   technique{pass{
+			cull_hardware none
+			texture_unit {
+				texture wand_effect_hit_ball.png 	
+}}}}
+material wand_hit_center_01 : alpha_blend_base
+{   technique{pass{
+			texture_unit {
+				texture wand_hit_center_01.png 	
+}}}}
+
+material alpha_blend_base_receive_shadow : alpha_blend_base
+{   receive_shadows on
+    technique{pass{
+            depth_write off
+            fog_override false
+			texture_unit {
+				texture wand_stone_01.png 	
+}}}}
+material wand_stone_01 : alpha_blend_base_receive_shadow
+{   technique{pass{
+			texture_unit {
+				texture wand_stone_01.png 	
+}}}}
+material wand_stone_02 : alpha_blend_base_receive_shadow
+{   technique{pass{
+			texture_unit {
+				texture wand_stone_02.png 	
+}}}}
+material wand_stone_03 : alpha_blend_base_receive_shadow
+{   technique{pass{
+			texture_unit {
+				texture wand_stone_03.png 	
+}}}}
+material wand_stone_04 : alpha_blend_base_receive_shadow
+{   technique{pass{
+			texture_unit {
+				texture wand_stone_04.png 	
+}}}}
+material wand_stone_05 : alpha_blend_base_receive_shadow
+{   technique{pass{
+			texture_unit {
+				texture wand_stone_05.png 	
+}}}}
+material wand_stone_06 : alpha_blend_base_receive_shadow
+{   technique{pass{
+			texture_unit {
+				texture wand_stone_06.png 	
+}}}}
+material top_center_point_3
+{   
+    receive_shadows off
+    technique{
+    pass{
+        lighting off
+        depth_write off
+        fog_override true
+        scene_blend add
+			texture_unit {
+				texture top_center_point_3.png 	
+                rotate_anim 0.5
+                tex_address_mode clamp
+}}
+}}
+material point_soft_edge_100_light_wand : add_base
+{   technique{pass{
+            lighting on
+            emissive 1 0.3 0 0.5
+			texture_unit {
+				texture point_soft_edge_100.png 	
+}}}}
+material wand_blast_laser
+{   receive_shadows off
+    technique{
+        pass{
+            lighting on
+            emissive 1 1 1 0.5
+            depth_write off
+            fog_override true
+            scene_blend add
+			texture_unit {
+				texture wand_blast_laser_alpha.png 	
+}}
+        pass{
+            lighting off
+            emissive 0.6 0.6 0.6 0.1
+            depth_write off
+            fog_override true
+            scene_blend add
+			texture_unit {
+				texture wand_blast_laser_add.png 	
+}}
+}}
+material wand_laser : alpha_blend_base
+{   technique{pass{
+			texture_unit {
+				texture wand_laser.png 	
+                wave_xform scroll_y sawtooth 1 2 0 2
+                wave_xform scale_x sawtooth 1 2 0 1
+                tex_address_mode wrap
+}}}}
+material wand_smoke : alpha_blend_base
+{   technique{pass{
+			texture_unit {
+				texture wand_smoke.png 	
+}}}}
+material wand_smoke_ring : alpha_blend_base
+{   technique{pass{
+			cull_hardware none
+			texture_unit {
+				texture wand_smoke_ring.png 	
+}}}}
