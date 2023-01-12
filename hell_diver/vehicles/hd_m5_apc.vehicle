@@ -70,13 +70,13 @@ ai_abandon_when_unsteerable="1"
 	<visual class="turret"  key="broken" turret_index="3" mesh_filename="m5apc_mg.mesh" texture_filename="m5apc.png" />
 
 	<character_slot type="driver" position="0 0.3 +3" rotation="0" exit_rotation="0" hiding="1" />
-	<character_slot type="gunner" position="0 0.3 -3" rotation="0" exit_rotation="-1.57" hiding="1" >
+	<character_slot type="gunner" position="0 0.3 -3.5" rotation="0" exit_rotation="-3.14" hiding="1" >
 		<turret index="0"/><turret index="1"/>
 	</character_slot>
-	<character_slot type="gunner" position="+1.7 0.3 0" rotation="0" exit_rotation="1.57" hiding="1" >
+	<character_slot type="gunner" position="+1.7 0.3 -0.5" rotation="0" exit_rotation="1.57" hiding="1" >
 		<turret index="2"/>
 	</character_slot>
-	<character_slot type="gunner" position="-1.7 0.3 0" rotation="0" exit_rotation="-1.57" hiding="1" >
+	<character_slot type="gunner" position="-1.7 0.3 -0.5" rotation="0" exit_rotation="-1.57" hiding="1" >
 		<turret index="3"/>
 	</character_slot>
 

@@ -67,7 +67,7 @@ on_ground_up="0 0 1"
 
 	<!--武器音频-->
     <sound key="effect" fileref="" pitch_variety="0" volume="1.0" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
-    <sound key="fire" fileref="hd_ar_fire_01.wav" pitch_variety="0.23" volume="0.2" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
+    <sound key="fire" fileref="hd_ar_fire_01.wav" pitch_variety="0.23" volume="0.1" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
     <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
 	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
 	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
