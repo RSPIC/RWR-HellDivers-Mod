@@ -307,7 +307,7 @@
             >+ SH-32 Directional Kinetic Shield
         + **Deploy:Secondary Weapons**
             >+ AC-22 Dum-Dum
-            >+ EAT-17
+            >+ √ **EAT-17**
             >+ FLAM-40 Incinerator 
             >+ √ **LAS-98 Laser Cannon**
             >+ √ **M-25 Rumbler**
@@ -316,7 +316,7 @@
             >+ MLS-4X Commando
             >+ √ **Obliterator Grenade Launcher**
             >+ REC-6 Demolisher
-            >+ RL-112 Recoilless Rifle
+            >+ √ **RL-112 Recoilless Rifle**
             >+ TOX-13 Avenger
         + Defensive
             >+ A/AC-6 Tesla Tower
