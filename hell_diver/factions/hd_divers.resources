@@ -4,7 +4,7 @@
 
 <!--武器-->
 <weapon key="hd_rx1_railgun.weapon" /><!--轨道炮-->
-<!-- <weapon key="hd_m25_rumbler.weapon" />雷鸣者 -->
+<weapon key="hd_m25_rumbler.weapon" /><!--雷鸣者-->
 <weapon key="hd_mg94_mk3.weapon" /><!--MG94机枪-->
 <weapon key="hd_mgx42_mk3.weapon" /><!--MGX42机枪-->
 <!-- <weapon key="hd_obliterator_grenade_launcher.weapon" />消灭者榴弹发射器 -->
@@ -28,11 +28,11 @@
 <weapon key="hd_mg105_stalwart_full_upgrade.weapon" /><!--盟友机枪-->
 <weapon key="hd_m2016_constitution_full_upgrade.weapon" /><!--构建步枪-->
 <weapon key="hd_lho63_camper_full_upgrade.weapon" /><!--野营者狙击步枪-->
-<!-- <weapon key="hd_plas1_scorcher_full_upgrade.weapon" />焦土直射榴弹 -->
+<weapon key="hd_plas1_scorcher_full_upgrade.weapon" /><!--焦土直射榴弹-->
 
 <!--弹头-->
 <projectile key="hd_grenade_molotov.projectile" /><!--燃烧瓶-->
-
+<projectile key="hd_grenade_standard.projectile" /><!--破片手雷-->
 <!--护甲-->
 <carry_item key="helldivers_vest.carry_item" />
 </resources>

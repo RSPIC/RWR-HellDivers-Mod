@@ -72,8 +72,6 @@
 
 		<models file="cyborgs_default.models" />		
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
-		<resources file="cyborgs_common.resources" clear_carry_items="1"/>
-		<resources file="cyborgs_all.resources" />
 	
 		<item_class_existence_config>
 			<!-- main -->
@@ -120,7 +118,7 @@
 		</attribute_config>
 	</soldier> 
 	<!-- 军团士兵 -->
-	<soldier name="Legionnaire" spawn_score="0.1" copy_from="default_ai">
+	<soldier name="Legionnaire" spawn_score="0.05" copy_from="default_ai">
 		<character filename="cyborgs_legionnaire_state.character">	<!-- cyborgs_legionnaire_state 引用 cyborgs_cyborgs_default_chat 引用 cyborgs_default_base-->
 			
 		</character>
