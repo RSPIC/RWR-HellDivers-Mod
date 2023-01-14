@@ -16,7 +16,7 @@ time_to_live_out_in_the_open="150"
 player_death_drop_owner_lock_time="150"
 >
     <collision class="sticky" />
-    <result class="spawn" instance_class="grenade" instance_key="hd_grenade_molotov_sub.projectile" min_amount="25" max_amount="35" offset="0 8.0 0" position_spread="2 -8" direction_spread="0.0 0.0" />   
+    <result class="spawn" instance_class="grenade" instance_key="hd_grenade_molotov_damage.projectile" min_amount="25" max_amount="35" offset="0 8.0 0" position_spread="2 -8" direction_spread="0.0 0.0" />   
 	<trigger class="impact" />	
 		<!--
 			offset"x y z 生成位置偏差"
