@@ -221,17 +221,17 @@
             >+ √ **P-2 Peacemaker**
             >+ √ **P-6 Gunslinger**
             >+ FLAM-24 Pyro
-            >+ PLAS-3 Singe
+            >+ √ **PLAS-3 Singe**
         + √ **Assault Rifles**
             >+ √ **AR-19 Liberator**
             >+ √ **AR-22C Patriot**
             >+ √ **AR-20L Justice**
             >+ √ **AR-14D Paragon**
-        + **LMGs**
+        + √ **LMGs**
             >+ √ **MG-105 Stalwart**
         + √ **Shotguns**
             >+ √ **SG-225 Breaker**
-            >+ √ *8SG-8 Punisher**
+            >+ √ **SG-8 Punisher**
             >+ √ **DBS-2 Double Freedom**
         + √ **SMGs**
             >+ √ **SMG-45 Defender**
@@ -241,7 +241,7 @@
             >+ √ **LHO-63 Camper**
             >+ √ **RX-1 Rail Gun**
             >+ √ **M2016 Constitution**
-        + **Explosive**
+        + √ **Explosive**
             >+ √ **CR-9 Suppressor**
             >+ √ **PLAS-1 Scorcher**
         + √ **Laser Tech**
@@ -296,7 +296,7 @@
             >+ MC-109 Hammer Motorcycle
     + **投掷物**
         + Deploy:Support
-            >+ Resupply
+            >+ √ **Resupply**
             >+ REP-80
         + Deploy:BackPacks
             >+	AD-289 Angel
@@ -308,11 +308,11 @@
         + **Deploy:Secondary Weapons**
             >+ AC-22 Dum-Dum
             >+ √ **EAT-17**
-            >+ FLAM-40 Incinerator 
+            >+ √ **FLAM-40 Incinerator**
             >+ √ **LAS-98 Laser Cannon**
             >+ √ **M-25 Rumbler**
             >+ √ **MG-94 Machine Gun**
-            >+ MGX-42 Machine Gun
+            >+ √ **MGX-42 Machine Gun**
             >+ MLS-4X Commando
             >+ √ **Obliterator Grenade Launcher**
             >+ REC-6 Demolisher
@@ -348,7 +348,7 @@
             >+ Emergency Beacon
             >+	ME-1 Sniffer Metal Detector
             >+	NUX-223 Hellbomb
-            >+ Reinforce
+            >+ √ **Reinforce**
     + 掉落物
         + 空
     + AI逻辑
@@ -357,7 +357,7 @@
         + helldivers_default_base.character 父级
             + helldivers_default_chat.character 子集
     + Call支援
-        + 空
+        + M99自动注射器
     + 翻译
 + Cyborgs
     + 武器
@@ -373,14 +373,14 @@
             >+ √	**Immolator**
             >+ √	**Comrade**
             >+ √	**Berserker**
-            >+ √	**Butcher**
+            >+	**Butcher**
             >+ √	**Hound**
             >+ √	**Grotesque**
         + Tank
             >+ √	**Hulk**
             >+ Infantry Fighting Vehicle
         + Elite
-            >+ Warlord
+            >+ √ **Warlord**
         + Master
             >+ Siege Mech
     + 载具
@@ -389,16 +389,16 @@
         + cyborgs_all_throwables.xml 附带注释
     + 掉落物
     + AI逻辑
-        + **squadleader.ai**
-        + **legionnaire.ai**
-        + **initiate.ai**
-        + **immolator.ai**
-        + **comrade.ai**
-        + **berserker.ai**
+        + √ **squadleader.ai**
+        + √ **legionnaire.ai**
+        + √ **initiate.ai**
+        + √ **immolator.ai**
+        + √ **comrade.ai**
+        + √ **berserker.ai**
         + **butcher.ai**
-        + **hound.ai**
-        + **grotesque.ai**
-        + **hulk.ai**
+        + √ **hound.ai**
+        + √ **grotesque.ai**
+        + √ **hulk.ai**
     + 角色属性
         + cyborgs_default_base.character 父级
             + cyborgs_default_chat.character 子集
