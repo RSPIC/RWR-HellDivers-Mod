@@ -14,15 +14,15 @@ author: Rst
 	
 abstract emitter molotov_base		//自定义燃烧持续时长 单位/秒
 {
-	duration 5
+	duration 0.5
 }
 
 particle_system molotov_fire_01 
 {
 	quota 50
 	material fire_01
-	particle_width 2
-	particle_height 2
+	particle_width 1
+	particle_height 1
 	renderer billboard	
 	billboard_rotation_type vertex
 	billboard_origin center
@@ -36,8 +36,8 @@ particle_system molotov_fire_01
 		position 0 3 0
 		velocity_min 3
 		velocity_max 5
-		time_to_live_min 0.4
-		time_to_live_max 0.6
+		time_to_live_min 0.3
+		time_to_live_max 0.5
 		width 5
 		depth 1
 		height 5
@@ -73,8 +73,8 @@ particle_system molotov_fire_01
 particle_system molotov_fire_02  : particle_system molotov_fire_01 
 {
 	material fire_02
-	particle_width 6
-	particle_height 1.5
+	particle_width 4
+	particle_height 1
 	billboard_type point
 	emitter Ring
 	{
@@ -83,13 +83,13 @@ particle_system molotov_fire_02  : particle_system molotov_fire_01
 		velocity_min 0.001
 		velocity_max 0.001
 		duration 0.3
-		time_to_live_min 0.5
-		time_to_live_max 0.7
+		time_to_live_min 0.2
+		time_to_live_max 0.5
 		width 5
 		depth 1
 		height 5
 	}
-	affector Scaler{rate 5}
+	affector Scaler{rate 10}
 	affector ColourFader2
 	{
 		red1 	0
@@ -109,8 +109,8 @@ particle_system molotov_smoke
 	renderer billboard	
 	billboard_rotation_type vertex
 	material pump_smoke_01
-	particle_width 3
-	particle_height 3
+	particle_width 2
+	particle_height 2
 	billboard_type point
 	emitter Ring : molotov_base
 	{
@@ -121,8 +121,8 @@ particle_system molotov_smoke
 		position 0 2 0
 		velocity_min 6
 		velocity_max 8
-		time_to_live_min 0.8
-		time_to_live_max 1.2
+		time_to_live_min 0.4
+		time_to_live_max 0.8
 		width 5
 		depth 1
 		height 5

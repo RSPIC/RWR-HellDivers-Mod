@@ -55,7 +55,7 @@ key="hd_rx1_railgun.weapon"
     <capacity value="1" source="rank" source_value="0.0" />
     
 
-    <projectile file="rx1_railgun_damage.projectile" pulldown_in_air="10" time_to_live="0.5" name="RX-1 Railgun">
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="10" time_to_live="0.5" name="RX-1 Railgun">
 
 		<result class="hit" kill_probability="2.0" 
 		kill_probability_offset_on_successful_hit="48"

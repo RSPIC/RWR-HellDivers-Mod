@@ -3,7 +3,7 @@
     <!-- 二十层甲，每层等效5滴血，30血以下强制击倒 击倒后被近战直接死亡 -->
     <!-- 轰炸伤害在半血前均能击倒 -->
     <!-- 0.5抗致死用于减少友伤 -->
-    <carry_item key="helldivers_vest.carry_item" name="HellDivers Vest 100%" slot="1" transform_on_consume="hd_v1" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
+    <carry_item key="helldivers_ai_vest.carry_item" name="HellDivers Ai Vest 100%" slot="1" transform_on_consume="hd_ai_v1" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
         <hud_icon filename="helldivers_vest_100.png" />
         <capacity value="0" source="rank" source_value="0.0" />
         <capacity value="1" source="rank" source_value="0.0" />
@@ -22,12 +22,12 @@
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
-         <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.75" />
+            <modifier class="speed" value="0" /> 
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
     </carry_item>
 	
-	<carry_item key="hd_v1" name="HellDivers Vest 95%" slot="1" transform_on_consume="hd_v2" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
+	<carry_item key="hd_ai_v1" name="HellDivers Ai Vest 95%" slot="1" transform_on_consume="hd_ai_v2" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
         <hud_icon filename="helldivers_vest_100.png" />
         <capacity value="0" source="rank" source_value="0.0" />
         <capacity value="1" source="rank" source_value="0.0" />
@@ -47,11 +47,11 @@
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.75" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
 	
-		<carry_item key="hd_v2" name="HellDivers Vest 90%" slot="1" transform_on_consume="hd_v3" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
+		<carry_item key="hd_ai_v2" name="HellDivers Ai Vest 90%" slot="1" transform_on_consume="hd_ai_v3" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
         <hud_icon filename="helldivers_vest_90.png" />
         <capacity value="0" source="rank" source_value="0.0" />
         <capacity value="1" source="rank" source_value="0.0" />
@@ -71,11 +71,11 @@
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.75" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
     </carry_item>
 	
-	<carry_item key="hd_v3" name="HellDivers Vest 85%" slot="1" transform_on_consume="hd_v4" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
+	<carry_item key="hd_ai_v3" name="HellDivers Ai Vest 85%" slot="1" transform_on_consume="hd_ai_v4" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
         <hud_icon filename="helldivers_vest_80.png" />
         <capacity value="0" source="rank" source_value="0.0" />
         <capacity value="1" source="rank" source_value="0.0" />
@@ -95,11 +95,11 @@
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.75" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
 
-	<carry_item key="hd_v4" name="HellDivers Vest 80%" slot="1" transform_on_consume="hd_v5" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
+	<carry_item key="hd_ai_v4" name="HellDivers Ai Vest 80%" slot="1" transform_on_consume="hd_ai_v5" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
         <hud_icon filename="helldivers_vest_80.png" />
         <capacity value="0" source="rank" source_value="0.0" />
         <capacity value="1" source="rank" source_value="0.0" />
@@ -119,11 +119,11 @@
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.75" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
 
-	<carry_item key="hd_v5" name="HellDivers Vest 75%" slot="1" transform_on_consume="hd_v6" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
+	<carry_item key="hd_ai_v5" name="HellDivers Ai Vest 75%" slot="1" transform_on_consume="hd_ai_v6" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
         <hud_icon filename="helldivers_vest_70.png" />
         <capacity value="0" source="rank" source_value="0.0" />
         <capacity value="1" source="rank" source_value="0.0" />
@@ -143,11 +143,11 @@
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.75" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
 
-	<carry_item key="hd_v6" name="HellDivers Vest 70%" slot="1" transform_on_consume="hd_v7" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
+	<carry_item key="hd_ai_v6" name="HellDivers Ai Vest 70%" slot="1" transform_on_consume="hd_ai_v7" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
         <hud_icon filename="helldivers_vest_70.png" />
         <capacity value="0" source="rank" source_value="0.0" />
         <capacity value="1" source="rank" source_value="0.0" />
@@ -167,10 +167,10 @@
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.75" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
-	<carry_item key="hd_v7" name="HellDivers Vest 65%" slot="1" transform_on_consume="hd_v8" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
+	<carry_item key="hd_ai_v7" name="HellDivers Ai Vest 65%" slot="1" transform_on_consume="hd_ai_v8" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
         <hud_icon filename="helldivers_vest_60.png" />
         <capacity value="0" source="rank" source_value="0.0" />
         <capacity value="1" source="rank" source_value="0.0" />
@@ -190,11 +190,11 @@
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.75" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
 	
-	<carry_item key="hd_v8" name="HellDivers Vest 60%" slot="1" transform_on_consume="hd_v9" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
+	<carry_item key="hd_ai_v8" name="HellDivers Ai Vest 60%" slot="1" transform_on_consume="hd_ai_v9" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
         <hud_icon filename="helldivers_vest_60.png" />
         <capacity value="0" source="rank" source_value="0.0" />
         <capacity value="1" source="rank" source_value="0.0" />
@@ -214,11 +214,11 @@
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.75" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
 	
-	<carry_item key="hd_v9" name="HellDivers Vest 55%" slot="1" transform_on_consume="hd_v10" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
+	<carry_item key="hd_ai_v9" name="HellDivers Ai Vest 55%" slot="1" transform_on_consume="hd_ai_v10" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
         <hud_icon filename="helldivers_vest_50.png" />
         <capacity value="0" source="rank" source_value="0.0" />
         <capacity value="1" source="rank" source_value="0.0" />
@@ -238,11 +238,11 @@
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.75" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
 <!-- 轰炸伤害在半血前均能击倒 -->
-	<carry_item key="hd_v10" name="HellDivers Vest 50%" slot="1" transform_on_consume="hd_v11" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
+	<carry_item key="hd_ai_v10" name="HellDivers Ai Vest 50%" slot="1" transform_on_consume="hd_ai_v11" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
         <hud_icon filename="helldivers_vest_50.png" />
         <capacity value="0" source="rank" source_value="0.0" />
         <capacity value="1" source="rank" source_value="0.0" />
@@ -262,10 +262,10 @@
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.75" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
-	<carry_item key="hd_v11" name="HellDivers Vest 45%" slot="1" transform_on_consume="hd_v12" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
+	<carry_item key="hd_ai_v11" name="HellDivers Ai Vest 45%" slot="1" transform_on_consume="hd_ai_v12" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
         <hud_icon filename="helldivers_vest_40.png" />
         <capacity value="0" source="rank" source_value="0.0" />
         <capacity value="1" source="rank" source_value="0.0" />
@@ -285,10 +285,10 @@
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.75" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
-	<carry_item key="hd_v12" name="HellDivers Vest 40%" slot="1" transform_on_consume="hd_v13" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
+	<carry_item key="hd_ai_v12" name="HellDivers Ai Vest 40%" slot="1" transform_on_consume="hd_ai_v13" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
         <hud_icon filename="helldivers_vest_40.png" />
         <capacity value="0" source="rank" source_value="0.0" />
         <capacity value="1" source="rank" source_value="0.0" />
@@ -308,10 +308,10 @@
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.75" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
-	<carry_item key="hd_v13" name="HellDivers Vest 35%" slot="1" transform_on_consume="hd_v14" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
+	<carry_item key="hd_ai_v13" name="HellDivers Ai Vest 35%" slot="1" transform_on_consume="hd_ai_v14" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
         <hud_icon filename="helldivers_vest_30.png" />
         <capacity value="0" source="rank" source_value="0.0" />
         <capacity value="1" source="rank" source_value="0.0" />
@@ -331,11 +331,11 @@
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.75" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
   <!-- 击倒层 -->
-	<carry_item key="hd_v14" name="HellDivers Vest 30%" slot="1" transform_on_consume="hd_v15" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
+	<carry_item key="hd_ai_v14" name="HellDivers Ai Vest 30%" slot="1" transform_on_consume="hd_ai_v15" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
         <hud_icon filename="helldivers_vest_30.png" />
         <capacity value="0" source="rank" source_value="0.0" />
         <capacity value="1" source="rank" source_value="0.0" />
@@ -355,10 +355,10 @@
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="wound" consumes_item="1"/><!--重穿-->
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.75" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
-	<carry_item key="hd_v15" name="HellDivers Vest 25%" slot="1" transform_on_consume="hd_v16" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
+	<carry_item key="hd_ai_v15" name="HellDivers Ai Vest 25%" slot="1" transform_on_consume="hd_ai_v16" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
         <hud_icon filename="helldivers_vest_20.png" />
         <capacity value="0" source="rank" source_value="0.0" />
         <capacity value="1" source="rank" source_value="0.0" />
@@ -378,10 +378,10 @@
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="wound" consumes_item="1"/><!--重穿-->
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.75" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
-	<carry_item key="hd_v16" name="HellDivers Vest 20%" slot="1" transform_on_consume="hd_v17" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
+	<carry_item key="hd_ai_v16" name="HellDivers Ai Vest 20%" slot="1" transform_on_consume="hd_ai_v17" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
         <hud_icon filename="helldivers_vest_20.png" />
         <capacity value="0" source="rank" source_value="0.0" />
         <capacity value="1" source="rank" source_value="0.0" />
@@ -401,10 +401,10 @@
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="wound" consumes_item="1"/><!--重穿-->
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.75" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
-	<carry_item key="hd_v17" name="HellDivers Vest 15%" slot="1" transform_on_consume="hd_v18" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
+	<carry_item key="hd_ai_v17" name="HellDivers Ai Vest 15%" slot="1" transform_on_consume="hd_ai_v18" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
         <hud_icon filename="helldivers_vest_10.png" />
         <capacity value="0" source="rank" source_value="0.0" />
         <capacity value="1" source="rank" source_value="0.0" />
@@ -424,10 +424,10 @@
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="wound" consumes_item="1"/><!--重穿-->
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.75" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
-	<carry_item key="hd_v18" name="HellDivers Vest 10%" slot="1" transform_on_consume="hd_v19" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
+	<carry_item key="hd_ai_v18" name="HellDivers Ai Vest 10%" slot="1" transform_on_consume="hd_ai_v19" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
         <hud_icon filename="helldivers_vest_10.png" />
         <capacity value="0" source="rank" source_value="0.0" />
         <capacity value="1" source="rank" source_value="0.0" />
@@ -447,10 +447,10 @@
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="wound" consumes_item="1"/><!--重穿-->
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.75" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
-	<carry_item key="hd_v19" name="HellDivers Vest 5%" slot="1" transform_on_consume="hd_v20" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
+	<carry_item key="hd_ai_v19" name="HellDivers Ai Vest 5%" slot="1" transform_on_consume="hd_ai_v20" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
         <hud_icon filename="helldivers_vest_broken.png" />
         <capacity value="0" source="rank" source_value="0.0" />
         <capacity value="1" source="rank" source_value="0.0" />
@@ -470,10 +470,10 @@
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="wound" consumes_item="1"/><!--重穿-->
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.75" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
-	<carry_item key="hd_v20" name="HellDivers Vest ！" slot="1"  time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
+	<carry_item key="hd_ai_v20" name="HellDivers Ai Vest ！" slot="1"  time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
         <hud_icon filename="helldivers_vest_broken.png" />
         <capacity value="0" source="rank" source_value="0.0" />
         <capacity value="1" source="rank" source_value="0.0" />
@@ -492,7 +492,7 @@
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="death" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/><!--重穿-->
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
-        <modifier class="hit_success_probability" value="-0.75" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
 	
