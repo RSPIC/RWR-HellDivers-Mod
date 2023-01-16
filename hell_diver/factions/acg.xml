@@ -11,11 +11,155 @@
 	radio_queue_size="3"
 	supporter_high_skinpack_xp="100.0">
 	
-	<rank xp="0.0" name="Private">
-		<hud_icon filename="hud_rank0.png" />
+	<rank xp="0.026" name="Private">	<!--以w计-->
+		<hud_icon filename="01_-_Private.png" />
 	</rank>  
-	<rank xp="0.05" name="Private 1st Class">
-		<hud_icon filename="hud_rank1.png" />    
+	<rank xp="0.168" name="1st Private">
+		<hud_icon filename="02_-_1st_Private.png" />    
+	</rank>
+	<rank xp="0.502" name="Corporal">
+		<hud_icon filename="03_-_Corporal.png" />    
+	</rank>
+	<rank xp="1.092" name="Specialist">
+		<hud_icon filename="04_-_Specialist.png" />    
+	</rank>
+	<rank xp="1.995" name="Warrant">
+		<hud_icon filename="05_-_Warrant.png" />    
+	</rank>
+	<rank xp="3.264" name="Staff Sergeant">
+		<hud_icon filename="06_-_Staff_Sergeant.png" />    
+	</rank>
+	<rank xp="4.949" name="Sergeant">
+		<hud_icon filename="07_-_Sergeant.png" />    
+	</rank>
+	<rank xp="7.098" name="Cadet">
+		<hud_icon filename="08_-_Cadet.png" />    
+	</rank>
+	<rank xp="9.755" name="Ensign">
+		<hud_icon filename="09_-_Ensign.png" />    
+	</rank>
+	<rank xp="12.965" name="2nd Lieutenant">
+		<hud_icon filename="10_-_2nd_Lieutenant.png" />    
+	</rank>
+	<rank xp="16.770" name="Lieutenant">
+		<hud_icon filename="11_-_Lieutenant.png" />    
+	</rank>
+	<rank xp="21.211" name="Commander">
+		<hud_icon filename="12_-_Commander.png" />    
+	</rank>
+	<rank xp="26.329" name="Captain">
+		<hud_icon filename="13_-_Captain.png" />    
+	</rank>
+	<rank xp="32.161" name="Major">
+		<hud_icon filename="14_-_Major.png" />    
+	</rank>
+	<rank xp="38.746" name="Colonel">
+		<hud_icon filename="15_-_Colonel.png" />    
+	</rank>
+	<rank xp="46.122" name="Colonel Commandant">
+		<hud_icon filename="16_-_Colonel_Commandant.png" />    
+	</rank>
+	<rank xp="54.324" name="Commodore">
+		<hud_icon filename="17_-_Commodore.png" />    
+	</rank>
+	<rank xp="63.389" name="Brigadier">
+		<hud_icon filename="18_-_Brigadier.png" />    
+	</rank>
+	<rank xp="73.353" name="General">
+		<hud_icon filename="19_-_General.png" />    
+	</rank>
+	<rank xp="84.248" name="Field General">
+		<hud_icon filename="20_-_Field_General.png" />    
+	</rank>
+	<rank xp="96.111" name="Marshal">
+		<hud_icon filename="21_-_Marshal.png" />    
+	</rank>
+	<rank xp="108.974" name="Field Marshal">
+		<hud_icon filename="22_-_Field_Marshal.png" />    
+	</rank>
+	<rank xp="122.870" name="Lord Marshal">
+		<hud_icon filename="23_-_Lord_Marshal.png" />    
+	</rank>
+	<rank xp="137.832" name="Lord">
+		<hud_icon filename="24_-_Lord.png" />    
+	</rank>
+	<rank xp="153.893" name="Grand Lord">
+		<hud_icon filename="25_-_Grand_Lord.png" />    
+	</rank>
+	<rank xp="171.084" name="Unknown Hero">
+		<hud_icon filename="26_-_Unknown_Hero.png" />    
+	</rank>
+	<rank xp="189.436" name="Local Hero">
+		<hud_icon filename="27_-_Local_Hero.png" />    
+	</rank>
+	<rank xp="208.981" name="Regional Hero">
+		<hud_icon filename="28_-_Regional_Hero.png" />    
+	</rank>
+	<rank xp="229.750" name="Warfront Hero">
+		<hud_icon filename="29_-_Warfront_Hero.png" />    
+	</rank>
+	<rank xp="251.773" name="Hero of the Sector">
+		<hud_icon filename="30_-_Hero_of_the_Sector.png" />    
+	</rank>
+	<rank xp="275.079" name="Tactical Specialist">
+		<hud_icon filename="31_-_Tactical_Specialist.png" />    
+	</rank>
+	<rank xp="299.699" name="Lieutenant Tactical Specialist">
+		<hud_icon filename="32_-_Lieutenant_Tactical_Specialist.png" />    
+	</rank>
+	<rank xp="325.663" name="Major Tactical Specialist">
+		<hud_icon filename="33_-_Major_Tactical_Specialist.png" />    
+	</rank>
+	<rank xp="352.999" name="Tactical Specialist Commander">
+		<hud_icon filename="34_-_Tactical_Specialist_Commander.png" />    
+	</rank>
+	<rank xp="381.737" name="Squad Specialist">
+		<hud_icon filename="35_-_Squad_Specialist.png" />    
+	</rank>
+	<rank xp="411.906" name="Lieutenant Squad Specialist">
+		<hud_icon filename="36_-_Lieutenant_Squad_Specialist.png" />    
+	</rank>
+	<rank xp="443.533" name="Major Squad Specialist">
+		<hud_icon filename="37_-_Major_Squad_Specialist.png" />    
+	</rank>
+	<rank xp="476.647" name="Squad Specialist Commander">
+		<hud_icon filename="38_-_Squad_Specialist_Commander.png" />    
+	</rank>
+	<rank xp="511.276" name="Platoon Specialist">
+		<hud_icon filename="39_-_Platoon_Specialist.png" />    
+	</rank>
+	<rank xp="547.448" name="Lieutenant Platoon Specialist">
+		<hud_icon filename="40_-_Lieutenant_Platoon_Specialist.png" />    
+	</rank>
+	<rank xp="585.191" name="Major Platoon Specialist">
+		<hud_icon filename="41_-_Major_Platoon_Specialist.png" />    
+	</rank>
+	<rank xp="624.531" name="Expert of Operations">
+		<hud_icon filename="42_-_Expert_of_Operations.png" />    
+	</rank>
+	<rank xp="665.497" name="Lieutenant Expert of Operations">
+		<hud_icon filename="43_-_Lieutenant_Expert_of_Operations.png" />    
+	</rank>
+	<rank xp="708.114" name="Major Expert of Operations">
+		<hud_icon filename="44_-_Major_Expert_of_Operations.png" />    
+	</rank>
+	<rank xp="752.410" name="Commanding Expert of Operations">
+		<hud_icon filename="45_-_Commanding_Expert_of_Operations.png" />    
+	</rank>
+	<rank xp="798.412" name="Rear Admiral">
+		<hud_icon filename="46_-_Rear_Admiral.png" />    
+	</rank>
+	<rank xp="846.146" name="Vice Admiral">
+		<hud_icon filename="47_-_Vice_Admiral.png" />    
+	</rank>
+	<rank xp="895.638" name="Admiral">
+		<hud_icon filename="48_-_Admiral.png" />    
+	</rank>
+	<rank xp="946.914" name="Fleet Admiral">
+		<hud_icon filename="49_-_Fleet_Admiral.png" />    
+	</rank>
+	<rank xp="1000.000" name="Admiral of Super Earth">
+		<hud_icon filename="50_-_Admiral_of_Super_Earth.png" />    
 	</rank>
 
 

@@ -38,7 +38,7 @@
   <parameter class="choose_enemy_min_dot_range_offset" value="1.125" />
 
   <parameter class="sight_range_muzzle_factor" value="1.0" />
-  <parameter class="max_sight_range_with_muzzle" value="40.0" />
+  <parameter class="max_sight_range_with_muzzle" value="25.0" />
 	<!-- 开火的最大视距 -->
   <parameter class="active_guarding_probability" value="0.5" />
   <parameter class="leading_inspect_alarm_spread_out_distance" value="30.0" />
@@ -68,12 +68,14 @@
   <parameter class="guard_wait_time_min" value="5.0" />
   <parameter class="guard_wait_time_max" value="15.0" />
   <parameter class="guard_steps" value="2" />
-  <parameter class="wait_time" value="0.2" />
+
+  <parameter class="wait_time" value="1" />
   <parameter class="wait_time_variance" value="0.2" />
   <parameter class="burst_time" value="2.5" />
   <parameter class="burst_time_variance" value="0.2" />
   <parameter class="in_vehicle_burst_time" value="1.0" />
   <parameter class="in_vehicle_burst_time_variance" value="0.3" />
+
   <parameter class="longer_burst_time" value="2.5" />
   <parameter class="longer_burst_time_variance" value="0.5" />
   <parameter class="accuracy_penalty_range" value="0.07" />
@@ -117,11 +119,11 @@
   <parameter class="celebrating_shoot_probability" value="0" /> 
   <parameter class="celebrating_comment_probability" value="0" /> 
   <parameter class="celebrating_stab_probability" value="0" /> 
-  <parameter class="willingness_to_charge" value="1.0" />
+  <parameter class="willingness_to_charge" value="0.9" />
   <parameter class="stab_range" value="3.5" />
   <parameter class="check_vehicles_while_fire_open_interval" value="10.0" />  
   
-  <parameter class="reaction_time_after_choosing_target" value="-1.0" />
+  <parameter class="reaction_time_after_choosing_target" value="1" />
   
 <!--      <parameter class="min_number_of_enemies_to_throw_grenade" value="1.0" />  -->
 	  

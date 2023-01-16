@@ -111,6 +111,7 @@ on_ground_up="0 0 1"
 		<effect class="activated" ref="general_weapon_avtivated_bullet_light" />
 		-->
 		<effect class="result" key="terrain" ref="general_weapon_result_hitspot" lighting="0"/>
+		<effect class="result" key="character" ref="general_result_smg_stun" lighting="0"/>
 		<effect class="activated" ref="general_weapon_avtivated_bullet_light" lighting="0"/>
 		<effect class="activated" ref="general_weapon_activated_rotating_circle" lighting="0"/>
 		<effect class="activated" ref="general_weapon_activated_bullet_centerlight" lighting="0"/>

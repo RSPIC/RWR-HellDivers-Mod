@@ -18,8 +18,8 @@ radius="1"
     sustained_fire_grow_step="0.0" 
     sustained_fire_diminish_rate="1.0" 
     magazine_size="-1" 
-    can_shoot_standing="1" 
-    can_shoot_crouching="1" 
+    can_shoot_standing="0" 
+    can_shoot_crouching="0" 
 	can_shoot_prone="0"	
     suppressed="0" 
 	class="0" 
@@ -118,7 +118,7 @@ radius="1"
     <inventory encumbrance="1.0" price="0.0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
     
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
-    <projectile file="bullet.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
 	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0"> 
 	
 		<!--

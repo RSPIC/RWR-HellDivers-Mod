@@ -124,9 +124,9 @@ key="hd_mgx42_mk3.weapon"
     <stance state_key="crouch_moving" accuracy="1" />
     <stance state_key="prone" accuracy="1.2" /> 
     <stance state_key="prone_moving" accuracy="1" />
-    <stance state_key="over_wall" accuracy="1" />     
+    <stance state_key="over_wall" accuracy="1.4" />     
      
-    <modifier class="speed" value="0" /> 
+    <modifier class="speed" value="-0.1" /> 
     <modifier class="hit_success_probability" value="0.0" />
     <modifier class="detectability" value="0.0" />
 

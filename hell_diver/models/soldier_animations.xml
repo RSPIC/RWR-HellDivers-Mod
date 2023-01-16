@@ -52617,7 +52617,7 @@
             <position x="7.051855" y="1.083428" z="-4.023757" />
         </frame>
     </animation>
-    <animation loop="0" end="0.350000" speed="0.700000" comment="cyborgs_squadleader_stab"><!--1层-->
+    <animation loop="0" end="0.350000" speed="0.700000" comment="cyborgs_squadleader_stab"><!--2层-->
         <frame time="0.000000">
             <position x="0.500000" y="55.500000" z="0.500000" />
             <position x="0.500000" y="48.500000" z="0.500000" />
@@ -52653,7 +52653,7 @@
             <position x="5.500000" y="0.500000" z="0.500000" />
             <control key="effect" value="1" />
         </frame>
-        <frame time="0.200704"><!--1层-->
+        <frame time="0.200704"><!--2层-->
             <position x="0.500000" y="55.500000" z="0.500000" />
             <position x="0.500000" y="48.500000" z="0.500000" />
             <position x="-9.026624" y="44.716564" z="2.482181" />
@@ -52669,6 +52669,7 @@
             <position x="5.877481" y="13.494010" z="0.385090" />
             <position x="-8.500000" y="0.500000" z="0.500000" />
             <position x="5.500000" y="0.500000" z="0.500000" />
+            <control key="action" value="1" />
             <control key="action" value="1" />
         </frame>
         <frame time="0.359155">
@@ -53419,7 +53420,7 @@
             <position x="3.724754" y="-0.084444" z="-2.822041" />
         </frame>
     </animation>
-    <animation loop="0" end="0.850000" speed="1.000000" comment="cyborgs_grotesque_stab" ><!--2层-->
+    <animation loop="0" end="0.850000" speed="1.000000" comment="cyborgs_grotesque_stab" ><!--4层-->
         <frame time="0.000000">
             <position x="3.251463" y="40.126583" z="16.405527" />
             <position x="2.573518" y="34.608509" z="12.152146" />
@@ -53489,7 +53490,7 @@
             <position x="5.356495" y="-0.126267" z="3.783898" />
 			<control key="effect" value="1"/>
         </frame>
-        <frame time="0.454225"><!--2层-->
+        <frame time="0.454225"><!--4层-->
             <position x="-7.462442" y="44.192005" z="4.944341" />
             <position x="-6.299723" y="37.289261" z="4.958060" />
             <position x="-3.444051" y="40.113266" z="-2.649980" />
@@ -53505,6 +53506,8 @@
             <position x="6.934673" y="10.767644" z="10.541723" />
             <position x="-8.364416" y="-0.127200" z="1.693005" />
             <position x="5.356495" y="-0.126267" z="3.783898" />
+			<control key="action" value="1"/>
+			<control key="action" value="1"/>
 			<control key="action" value="1"/>
 			<control key="action" value="1"/>
         </frame>
@@ -56991,7 +56994,7 @@
     </animation>
     
 <!-- hound 兵种 -->
-	<animation loop="0" end="0.600000" speed="1.200000" comment="dog stab"><!--5层-->
+	<animation loop="0" end="0.600000" speed="1.200000" comment="dog stab"><!--3层-->
         <frame time="0.000000">
             <position x="-0.454793" y="15.262453" z="10.214865" />
             <position x="-0.472029" y="12.190047" z="3.925188" />
@@ -57113,7 +57116,7 @@
             <position x="-5.029876" y="2.869144" z="-13.137346" />
             <position x="1.032644" y="2.749627" z="-13.046876" />
         </frame>
-        <frame time="0.450000"><!--5层-->
+        <frame time="0.450000"><!--3层-->
             <position x="-1.481028" y="34.139954" z="14.407708" />
             <position x="-1.918373" y="33.664509" z="7.437581" />
             <position x="-5.722846" y="32.939205" z="4.276211" />
@@ -57129,8 +57132,6 @@
             <position x="1.323078" y="8.546584" z="-9.133956" />
             <position x="-5.029876" y="2.869144" z="-13.137346" />
             <position x="1.032644" y="2.749627" z="-13.046876" />
-            <control key="action" value="1" />
-            <control key="action" value="1" />
             <control key="action" value="1" />
             <control key="action" value="1" />
             <control key="action" value="1" />
