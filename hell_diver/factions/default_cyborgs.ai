@@ -38,7 +38,7 @@
   <parameter class="choose_enemy_min_dot_range_offset" value="1.125" />
 
   <parameter class="sight_range_muzzle_factor" value="1.0" />
-  <parameter class="max_sight_range_with_muzzle" value="25.0" />
+  <parameter class="max_sight_range_with_muzzle" value="35.0" />
 	<!-- 开火的最大视距 -->
   <parameter class="active_guarding_probability" value="0.5" />
   <parameter class="leading_inspect_alarm_spread_out_distance" value="30.0" />
@@ -114,7 +114,7 @@
   <parameter class="using_cover_min_time" value="0.0" />	
   <parameter class="using_cover_max_time" value="0.0" />
 	<!-- 取消掩体使用 -->
-  <parameter class="fire_open_min_time" value="3.0" />
+  <parameter class="fire_open_min_time" value="5.0" />
   <parameter class="dive_from_grenade_probability" value="0" />
   <parameter class="celebrating_shoot_probability" value="0" /> 
   <parameter class="celebrating_comment_probability" value="0" /> 

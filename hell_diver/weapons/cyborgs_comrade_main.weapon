@@ -18,9 +18,9 @@ radius="1"
     sustained_fire_grow_step="0.0" 
     sustained_fire_diminish_rate="1.0" 
     magazine_size="1" 
-    can_shoot_standing="1" 
-    can_shoot_crouching="1" 
-	can_shoot_prone="0"	
+    can_shoot_standing="0" 
+    can_shoot_crouching="0" 
+	can_shoot_prone="1"	
     suppressed="0" 
 	class="4" 
     name="Comrade Melee" 
@@ -78,8 +78,8 @@ radius="1"
     <animation state_key="crouching" animation_key="cyborgs_comrade_still" /><!--蹲姿静止动作，全身动作-->
 	<animation state_key="crouch_moving" animation_key="cyborgs_comrade_walk" /><!--全身动作-->
 	<animation state_key="crouch_moving_backwards" animation_key="cyborgs_comrade_walkback" /><!--全身动作-->
-    <animation state_key="prone_still" animation_key="" /><!--全身动作-->
-	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="cyborgs_comrade_still" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="cyborgs_comrade_walk" /><!--全身动作-->
 	<animation state_key="stabbing" animation_key="cyborgs_comrade_stab" /><!--半身动作，武器可设置脱手-->
 
 	<!--切换模式，本模式的切出动作衔接下一模式的切入动作，置空为秒切-->
@@ -128,7 +128,7 @@ radius="1"
 		<trigger class="time" time_to_live="0.125"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
-		<!--伤害 4~6x2.0=8~12 -->
+		<!--伤害 4~6x1.0=4~6 -->
 
 		<!--命中音效-->
 		<sound class="result" key="other" fileref="rifle_drop.wav" pitch_variety="0.03" volume="1.0" />
