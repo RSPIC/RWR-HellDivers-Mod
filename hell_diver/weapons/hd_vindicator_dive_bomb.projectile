@@ -7,15 +7,18 @@ slot="0"
 pulldown_in_air="15.0"
 time_to_live="60"
 can_be_disarmed="0"
-time_to_live_out_in_the_open="150"
-player_death_drop_owner_lock_time="120"
+time_to_live_out_in_the_open="0"
+player_death_drop_owner_lock_time="0"
 >
+    <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_vindicator_dive_bomb.projectile" 
+	min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
+
 	<result class="spawn" instance_class="vehicle" instance_key="hd_vindicator_dive_bomb.vehicle" 
 	min_amount="1" max_amount="1" offset="0 50 0" position_spread="0 0" direction_spread="0.00 -0.1" />
 	<trigger class="time" time_to_live="3.0" />	
     <rotation class="random" />
 
-    <model mesh_filename="vindicator_beacon.xml" />
+    <model mesh_filename="vindicator_beacon_red.xml" />
     <hud_icon filename="vindicator_dive_bomb.png" />
 
     <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
@@ -44,4 +47,5 @@ player_death_drop_owner_lock_time="120"
     <effect class="result" key="vehicle" copy="terrain" />
     <effect class="result" key="character" copy="terrain" />
 
+    <effect class="activated" ref="alert_center_redlight" lighting="0" /><!--中心红光标识-->
 </projectile>

@@ -1,3 +1,4 @@
+
 author: RST
 2022.9.15
 未经授权不可复用、修改使用
@@ -7,6 +8,10 @@ author: RST
 		<effect class="activated" ref="alert_center_alerticon" lighting="0" /><!--低频率感叹号警告标识-->
 		<effect class="activated" ref="alert_center_alerticon_hight_frequncy" lighting="0" /><!--高频率感叹号警告标识-->
 		<effect class="activated" ref="alert_center_redlight" lighting="0" /><!--中心红光标识-->
+		<effect class="activated" ref="alert_center_yellowlight" lighting="0" /><!--中心黄光标识-->
+		<effect class="activated" ref="alert_center_greenlight" lighting="0" /><!--中心绿光标识-->
+		<effect class="activated" ref="alert_center_bluelight" lighting="0" /><!--中心蓝光标识-->
+		<effect class="activated" ref="alert_center_purplelight" lighting="0" /><!--中心紫光标识-->
 particle_system alert_expand_ring
 {
 	quota 50
@@ -252,58 +257,75 @@ particle_system alert_center_redlight
 {
 	quota 50
 	material point_soft_edge_100
-	particle_width 4.5
-	particle_height 4.5
+	particle_width 4
+	particle_height 4
 	renderer billboard
 	billboard_type point
 	billboard_origin center
 	billboard_rotation_type vertex
 	common_direction 0 1 0
 	common_up_vector 0 0 1
-	iteration_interval 0
+	iteration_interval 0.01
 	
 	emitter Point
 	{
 		angle 0
-		colour 1 0 0 1
+		colour 0 0 0 0
 		direction 0 1 0
-		emission_rate 20
+		emission_rate 40
 		position 0 0 0
 		velocity 0.0001
-		time_to_live 0.05
-		duration 4
-	}
-	affector Scaler
-	{
-		rate 0
-	}
-		affector Rotator
-	{
-		rotation_speed_range_start	0
-		rotation_speed_range_end	0
-		rotation_range_start	0
-		rotation_range_end	0
+		time_to_live 0.12
+		duration 8
 	}
 	affector ColourInterpolator
 	{
 		time0 0
-		colour0 1 0 0 1
-		time1 0.7
-		colour1 1 0 0 1
-		time2 1
-		colour2 0 0 0 0
-	}
-	affector LinearForce{
-		force_vector 0 0 0
-		force_application add
-	}
-	affector DirectionRandomiser 
-	{
-		randomness 0
-		scope 0
-		keep_velocity false
+		colour0 0.7 0 0 1
+		time1 1
+		colour1 0 0 0 0
 	}
 }
+particle_system alert_center_yellowlight : alert_center_redlight
+{
+	emitter Point{}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.4 0.4 0 1
+	}
+}
+particle_system alert_center_bluelight : alert_center_redlight
+{
+	emitter Point{}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0.3 1 1
+	}
+}
+particle_system alert_center_purplelight : alert_center_redlight
+{
+	emitter Point{}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.4 0 0.4 1
+
+	}
+}
+particle_system alert_center_greenlight : alert_center_redlight
+{
+	emitter Point{}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0.4 0 0 
+
+	}
+}
+
+
 --------------------------------------material-----------------------------------
 material alpha_blend_base{
 	receive_shadows off

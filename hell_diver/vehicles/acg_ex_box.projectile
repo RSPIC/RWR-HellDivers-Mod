@@ -8,15 +8,18 @@ pulldown_in_air="15.0"
 on_ground_up="0 1 0"
 time_to_live="60"
 can_be_disarmed="0"
-time_to_live_out_in_the_open="150"
-player_death_drop_owner_lock_time="120"
+time_to_live_out_in_the_open="0"
+player_death_drop_owner_lock_time="0"
 >
+    <drop_on_death_result class="spawn" instance_class="projectile" instance_key="acg_ex_box.projectile" 
+	min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
+
 	<result class="spawn" instance_class="vehicle" instance_key="acg_ex_box_spawn.vehicle" 
 			min_amount="1" max_amount="1" offset="0 50 0" position_spread="0 0" direction_spread="0 100" />	
 	<trigger class="time" time_to_live="3.5" />	
     <rotation class="random" />
 	
-    <model mesh_filename="vindicator_beacon.xml" />
+    <model mesh_filename="vindicator_beacon_purple.xml" />
     <hud_icon filename="stratagems_resupply_ex.png" />
 	
     <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
@@ -48,6 +51,6 @@ player_death_drop_owner_lock_time="120"
     <effect class="result" key="vehicle" copy="terrain" />
     <effect class="result" key="character" copy="terrain" />
 
-
+    <effect class="activated" ref="alert_center_purplelight" lighting="0" /><!--中心紫光标识-->
 	
 </projectile>
