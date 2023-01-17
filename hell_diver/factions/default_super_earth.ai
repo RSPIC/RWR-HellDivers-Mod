@@ -63,7 +63,7 @@
   <parameter class="guard_wait_time_min" value="5.0" />
   <parameter class="guard_wait_time_max" value="15.0" />
   <parameter class="guard_steps" value="2" />
-  <parameter class="wait_time" value="4.5" /><!--再次开火前的等待时间-->>
+  <parameter class="wait_time" value="3.0" /><!--再次开火前的等待时间-->>
   <parameter class="wait_time_variance" value="1.0" />
   <parameter class="burst_time" value="1.5" />
   <parameter class="burst_time_variance" value="1.0" />
@@ -112,12 +112,12 @@
   <parameter class="celebrating_shoot_probability" value="0.3" /> 
   <parameter class="celebrating_comment_probability" value="0.4" /> 
   <parameter class="celebrating_stab_probability" value="1.0" /> 
-  <parameter class="willingness_to_charge" value="0.2" />
-  <parameter class="willingness_to_guard" value="0.5" />
+  <parameter class="willingness_to_charge" value="0.6" />
+  <parameter class="willingness_to_guard" value="0.4" />
   <parameter class="stab_range" value="3.5" /><!--近战距离-->
   <parameter class="check_vehicles_while_fire_open_interval" value="10.0" />  
   
-  <parameter class="reaction_time_after_choosing_target" value="1.7" /><!--索敌后的反应时间-->
+  <parameter class="reaction_time_after_choosing_target" value="1.0" /><!--索敌后的反应时间-->
   
 <!--      <parameter class="min_number_of_enemies_to_throw_grenade" value="1.0" />  -->
 	  
