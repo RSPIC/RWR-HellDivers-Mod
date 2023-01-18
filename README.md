@@ -108,6 +108,7 @@
             + 笨重但强力：移速-0.1/架枪、卧姿精度高
             + 更慢的衰减
             + 30m全校射距 90m极限射距
+            + 仅趴射可获得0.25视距加成
         + √ **SG 霰弹枪系**
             + 保证近距离优势
             + 无衰减
@@ -231,7 +232,7 @@
         + **Sidearms**
             >+ √ **P-2 Peacemaker**
             >+ √ **P-6 Gunslinger**
-            >+ FLAM-24 Pyro
+            >+ √ **FLAM-24 Pyro**
             >+ √ **PLAS-3 Singe**
         + √ **Assault Rifles**
             >+ √ **AR-19 Liberator**
@@ -308,10 +309,10 @@
     + **投掷物**
         + Deploy:Support
             >+ √ **Resupply**
-            >+ REP-80
+            >+ √ **REP-80**
         + Deploy:BackPacks
-            >+	AD-289 Angel
-            >+	AD-334 Guard Dog
+            >+	√ **AD-289 Angel**
+            >+	√ **AD-334 Guard Dog**
             >+ LIFT-850 Jump Pack
             >+ Resupply Pack
             >+ SH-20 Shield Generator Pack
@@ -386,7 +387,7 @@
             >+ √	**Immolator**
             >+ √	**Comrade**
             >+ √	**Berserker**
-            >+	**Butcher**
+            >+	√ **Butcher**
             >+ √	**Hound**
             >+ √	**Grotesque**
         + Tank
@@ -408,7 +409,7 @@
         + √ **immolator.ai**
         + √ **comrade.ai**
         + √ **berserker.ai**
-        + **butcher.ai**
+        + √ **butcher.ai**
         + √ **hound.ai**
         + √ **grotesque.ai**
         + √ **hulk.ai**
