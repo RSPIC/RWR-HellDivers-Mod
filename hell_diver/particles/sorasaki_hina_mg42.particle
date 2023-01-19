@@ -1,0 +1,334 @@
+author: RST
+2022.10.10
+未经授权不可复用、修改使用
+
+particle_system sorasaki_hina_mg42_muzzle_01
+{
+	quota 50
+	material muzzle_crossfire_anim_a
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity_min 0.5
+		velocity_max -0.5
+		time_to_live 0.5
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 2
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.8
+		colour1 0.5 0 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system sorasaki_hina_mg42_muzzle_02 : sorasaki_hina_mg42_muzzle_01
+{
+	quota 50
+	material muzzle_crossring_a
+	particle_width 0.1
+	particle_height 0.1
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		time_to_live 0.4
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 10
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	180
+	}
+	affector ColourInterpolator
+	{
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system sorasaki_hina_mg42_muzzle_03
+{
+	quota 50
+	material thick_ring
+	particle_width 0.1
+	particle_height 0.1
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.1
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 30
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	20
+		green1 	20
+		blue1 	20
+		alpha1 	0
+		red2 	-0
+		green2	-20
+		blue2	-0
+		alpha2	-3
+		state_change 0.05
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+
+particle_system sorasaki_hina_mg42_muzzle_crossfire
+{
+	quota 50
+	material general_muzzle_bw_01
+	particle_width 8
+	particle_height 8
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.06
+		duration 0.01
+	}
+	affector Scaler
+	{
+		rate 50
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.5
+		colour1 0.5 0 1 0
+		time2 1
+		colour2 0.5 0 1 0
+	}
+}
+particle_system sorasaki_hina_mg42_activated_light
+{
+	quota 50
+	material point_soft_edge_100
+	particle_width 8
+	particle_height 8
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 0.05 0 0.1 0
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.1
+		duration 1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.25 0 0.5 0
+		time1 0.5
+		colour1 0 0 0 0
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+
+
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material sorasaki_hina_mg42_trail : alpha_blend_base
+{   
+    technique{
+    pass{
+		lighting on
+		emissive 1 1 1 1
+        texture_unit{
+            texture sorasaki_hina_mg42_trail.png 	
+}}}}
+material muzzle_crossfire_anim_a : add_base
+{   
+    technique{
+    pass{
+		cull_hardware none
+        texture_unit{
+            anim_texture muzzle_crossfire_anim_a.png 6 0.2
+			tex_address_mode border
+			tex_border_colour 0 0 0 0
+}}}}
+material muzzle_crossring_a : add_base
+{   
+    technique{
+    pass{
+		cull_hardware none
+        texture_unit{
+            anim_texture muzzle_crossring_a.png 6 0.2
+			tex_address_mode border
+			tex_border_colour 0 0 0 0
+}}}}
+material thick_ring : add_base
+{   
+    technique{
+    pass{
+		cull_hardware none
+        texture_unit{
+            texture thick_ring.png
+
+}}}}
+material general_muzzle_bw_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture general_muzzle_bw_01.png
+
+}}}}
+material point_soft_edge_100 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture point_soft_edge_100.png
+
+}}}}
+
+
+
+
+

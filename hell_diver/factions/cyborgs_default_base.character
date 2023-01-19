@@ -3,8 +3,8 @@
 	<parameter class="moving_inputsteer_threshold" value="0.1" />
 	<parameter class="stopping_velocity_threshold" value="0.01" />
 
-	<parameter class="walking_steer_amount" value="0.25" />	
-	<parameter class="running_steer_amount" value="0.35" />	
+	<parameter class="walking_steer_amount" value="0.22" />	
+	<parameter class="running_steer_amount" value="0.32" />	
 	<parameter class="run_footstep_interval" value="0.5" />
 	<parameter class="walk_footstep_interval" value="0.7" />
 	<parameter class="crouch_walking_steer_amount" value="0.24" />
@@ -114,12 +114,12 @@
 	
 	<parameter class="taxi_request_time" value="999" />
 	<parameter class="can_use_inventory" value="1" />  
-	<parameter class="can_use_vehicles" value="0" /> 
+	<parameter class="can_use_vehicles" value="1" /> 
 
 	<!-- <animation key="stabbing" target_key="chicken tpose" /> -->
 	<!-- <animation key="going prone" target_key="chicken tpose" /> -->
 	<!-- <animation key="dive" target_key="chicken tpose" /> -->
-	<!-- <animation key="stunned" target_key="chicken stun" /> -->
+	<animation key="stunned" target_key="cyborgs_comrade_still" />
 	<!-- <animation key="prone" target_key="chicken crouch" /> -->
 	<!-- <animation key="prone, without weapon, 63" target_key="chicken crouch" /> -->
 	<!-- <animation key="prone, moving forwards" target_key="chicken walking" /> -->

@@ -55,7 +55,7 @@ key="hd_rx1_railgun.weapon"
     <capacity value="1" source="rank" source_value="0.0" />
     
 
-    <projectile file="rx1_railgun_damage.projectile" pulldown_in_air="10" time_to_live="0.5" name="RX-1 Railgun">
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="10" time_to_live="0.5" name="RX-1 Railgun">
 
 		<result class="hit" kill_probability="2.0" 
 		kill_probability_offset_on_successful_hit="48"
@@ -137,5 +137,5 @@ key="hd_rx1_railgun.weapon"
     <modifier class="speed" value="0.0" /> 
     <modifier class="hit_success_probability" value="0.0" /><!--正值增加玩家抗致死率-->
     <modifier class="detectability" value="0.0" />	<!--正值增加玩家隐蔽-->
-	
+	<shield offset="0 0 0" extent="0 0 0" usable_for_cover="0"/>  
 </weapon>

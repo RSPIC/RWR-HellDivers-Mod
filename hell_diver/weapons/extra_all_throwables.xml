@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <projectiles>
-	<!--利维坦弓-->
-    <projectile file="vabow_damage.projectile" />
+	<!-- 伤害弹头 -->
+    <projectile file="vabow_damage.projectile" /><!--利维坦弓-->
     <projectile file="vathbow_generate.projectile" />
-
+    <projectile file="ex_disaster_railgun_damage.projectile" /><!-- 天灾电磁炮 -->
+    <projectile file="wand_damage_04.projectile" /><!--法杖-->
+    <projectile file="wand_waiting_03.projectile" />
+    <projectile file="wand_droping_02.projectile" />
+    <projectile file="wand_guiding_01.projectile" />
+    <projectile file="ex_kokomi_water_damage.projectile" /><!--心海-->
 
 </projectiles>

@@ -24,7 +24,7 @@ radius="1"
     suppressed="0" 
 	class="4" 
     name="WarLord Cannon" 
-	ai_sight_range_modifier="0.75"
+	ai_sight_range_modifier="0.70"
 	sight_range_modifier="1.0" 
 	burst_shots="6" 
     projectiles_per_shot="1" 
@@ -205,8 +205,8 @@ radius="1"
 	<modifier class="projectile_hit_result" input_character_state="stun" output_character_state="death" consumes_item="0" />
 	<!-- death and wound blast causes the item to be consumed, stun is ignored -->
 	<modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="0" />
-	<modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="0" />
-	<modifier class="projectile_blast_result" input_character_state="stun" output_character_state="none" consumes_item="0" />
+	<modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="0" />
+	<modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0" />
 </weapon>
 <!--尾迹文件编写参考，不可衔接于武器文件后
 <trail key="hd_mg94_trail" material="hd_mg94_trail"

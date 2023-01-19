@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectile class="grenade" name="" slot="0" pulldown_in_air="1" key="wand_waiting_03.projectile"
+on_ground_up="0 1 0" can_be_detected_by_footmen="0" can_be_disarmed="0" >
+	<rotation class="motion" />	
+    <trigger class="time" time_to_live="9.5" />
+	<collision class="sticky" />
+	<result class="spawn" instance_class="projectile" instance_key="wand_damage_04.projectile" 
+	min_amount="10" max_amount="10" offset="0 10 0" position_spread="5 0" direction_spread="0 0" />
+	<!-- 10x50 轰炸伤 -->
+
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+
+	<effect class="result" key="terrain" ref="wand_blast_center_laser"/>
+	<effect class="result" key="terrain" ref="wand_blast_center_laser_pre"/>
+	<effect class="result" key="terrain" ref="wand_blast_center_shrink_light"/>
+	<effect class="result" key="terrain" ref="wand_blast_center_lens_flare"/>
+	<effect class="result" key="terrain" ref="wand_blast_area_smoke" use_surface_color="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="wand_blast_area_smoke_shadow" shadow="1"/>
+	<effect class="result" key="terrain" ref="wand_blast_area_smoke_ring" use_surface_color="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_01"/>
+	<effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_02"/>
+	<effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_03"/>
+	<effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_04"/>
+	<effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_05"/>
+	<effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_06"/>
+	<effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_07"/>
+	<effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_08"/>
+	<effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_09"/>
+
+	<sound class="result" key="other" fileref="wand_after_blast_wind.wav" pitch_variety="0.00" volume="10" />
+    <sound class="result" key="terrain" copy="other" />
+    <sound class="result" key="static_object" copy="other" />
+    <sound class="result" key="vehicle" copy="other" />
+    <sound class="result" key="character" copy="other" />
+
+	<effect class="result" key="other" copy="terrain"/>
+    <effect class="result" key="static_object" copy="terrain" />
+    <effect class="result" key="character" copy="terrain" />
+    <effect class="result" key="vehicle" copy="terrain" />
+	
+
+    <model mesh_filename="" />
+	
+</projectile>

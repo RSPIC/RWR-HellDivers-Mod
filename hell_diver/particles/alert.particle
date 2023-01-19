@@ -1,0 +1,367 @@
+
+author: RST
+2022.9.15
+未经授权不可复用、修改使用
+警示用粒子效果
+		<effect class="activated" ref="alert_expand_ring" lighting="0" /> <!--大范围警示光，大于一个屏幕-->
+		<effect class="activated" ref="alert_expand_ring_smallarea" lighting="0" /><!--小范围警示光，10范围左右-->
+		<effect class="activated" ref="alert_center_alerticon" lighting="0" /><!--低频率感叹号警告标识-->
+		<effect class="activated" ref="alert_center_alerticon_hight_frequncy" lighting="0" /><!--高频率感叹号警告标识-->
+		<effect class="activated" ref="alert_center_redlight" lighting="0" /><!--中心红光标识-->
+		<effect class="activated" ref="alert_center_yellowlight" lighting="0" /><!--中心黄光标识-->
+		<effect class="activated" ref="alert_center_greenlight" lighting="0" /><!--中心绿光标识-->
+		<effect class="activated" ref="alert_center_bluelight" lighting="0" /><!--中心蓝光标识-->
+		<effect class="activated" ref="alert_center_purplelight" lighting="0" /><!--中心紫光标识-->
+particle_system alert_expand_ring
+{
+	quota 50
+	material lens_circle_07_pass
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0.4 0.1 0 1
+		direction 0 1 0
+		emission_rate 0.5
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 8
+		duration 15
+	}
+	affector Scaler
+	{
+		rate 30
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-0.05
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 8
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system alert_expand_ring_smallarea
+{
+	quota 50
+	material lens_circle_07_pass
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0.6 0 0 1
+		direction 0 1 0
+		emission_rate 1
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 1
+		duration 15
+	}
+	affector Scaler
+	{
+		rate 30
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-0.6
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 1
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system alert_center_alerticon_hight_frequncy
+{
+	quota 50
+	material alert_triangle_pass
+	particle_width 2.5
+	particle_height 2.5
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 0.7
+		direction 0 1 0
+		emission_rate 15
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.1
+		duration 15
+	}
+	affector Scaler
+	{
+		rate 15
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-0
+		green2	-0
+		blue2	-0
+		alpha2	-20
+		state_change 0.05
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system alert_center_alerticon_hight_frequncy_smaller : alert_center_alerticon_hight_frequncy
+{
+	particle_width 1.8
+	particle_height 1.8
+}
+particle_system alert_center_alerticon 
+{
+	quota 50
+	material alert_triangle_pass
+	particle_width 5
+	particle_height 5
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 0.5
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 1.5
+		duration 15
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system alert_center_redlight
+{
+	quota 50
+	material point_soft_edge_100
+	particle_width 4
+	particle_height 4
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 40
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.12
+		duration 8
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.7 0 0 1
+		time1 1
+		colour1 0 0 0 0
+	}
+}
+particle_system alert_center_yellowlight : alert_center_redlight
+{
+	emitter Point{}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.4 0.4 0 1
+	}
+}
+particle_system alert_center_bluelight : alert_center_redlight
+{
+	emitter Point{}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0.3 1 1
+	}
+}
+particle_system alert_center_purplelight : alert_center_redlight
+{
+	emitter Point{}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.4 0 0.4 1
+
+	}
+}
+particle_system alert_center_greenlight : alert_center_redlight
+{
+	emitter Point{}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0.4 0 0 
+
+	}
+}
+
+
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+material alert_triangle_pass : alpha_blend_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture alert_triangle.png 	
+}}}}
+material lens_circle_07_pass : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture lens_circle_07.png 	
+}}}}

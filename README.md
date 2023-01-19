@@ -9,7 +9,11 @@
  + KEILSAMA 笨笨
  + ARST
  + YYSY
+ + Tactical UMP-45
  
+ 交流QQ群：498520233【超级地球】
+ 
+ 制作群：923034295【超级地球R星研究仓】
 # 进度
 + 未完成（无标识）
 + √ **已完成**（√标记）
@@ -52,13 +56,15 @@
             |保留：blast/none   | ->none - none  |(不可被免疫)|
             + 玩家仅能免疫眩晕
     + 护甲类型
-        + 通用护甲（肉甲）
-        + 重型护甲（免疫爆炸）
+        + 通用护甲（肉甲/max 300层）
+        + 重型护甲（免疫爆炸/max 300层）
+        + 玩家护甲（40层/末十层倒地层/0.5抗致死）
+        + AI护甲（20层/末6层倒地层）
     + 友军伤害
-        + 仅有爆炸伤害触发友伤
-        + 载具比较容易创死队友
+        + √ **仅有爆炸伤害触发友伤**
+        + √ **载具比较容易创死队友**
     + 自动回血
-        + 暂否
+        + 自动回甲脚本：每隔一段时间回复一定数量护甲，指定护甲有效
 + **经济系统**
     + 战利品系统
         + 样本类战利品全局共享，但拾取者概率获得双倍
@@ -79,7 +85,7 @@
         + 固定改造分支，玩家沿固定升级改造路线升级枪械至满级
         + 该类枪械掉落消失，不可交易
     + 再补给系统
-        + 部分副手栏武器是有限子弹的，是否可以通过脚本补给
+        + **部分副手栏武器是有限子弹的，是否可以通过脚本补给**
     + 逆向工程系统
         + 任何稀有度的武器只要攒满7把，即可获得一把属性略有削弱的复活自带版本
         + 不会削弱其优势性属性
@@ -93,21 +99,28 @@
     + **功能分类和定位**
         + √ **AR 突击步枪系**
             + 泛用好
+            + AP子弹额外增加击穿：+0.2致死
+            + 30m全效射距 60m极限射距
         + √ **SMG 冲锋枪系**
             + 独享特殊的尾迹粒子
             + 眩晕弹/可击退
-            + 最高1.5倍射界（即末端弹头0.5致死）
+            + 无衰减
+            + 20m全效射距
         + √ **MG 机枪系**
-            + 笨重但强力
+            + 笨重但强力：移速-0.1/架枪、卧姿精度高
             + 更慢的衰减
+            + 30m全校射距 90m极限射距
+            + 仅趴射可获得0.25视距加成
         + √ **SG 霰弹枪系**
             + 保证近距离优势
             + 无衰减
+            + 低于25m的全效射距
         + √ **Precision 精确武器** 
             + 保证体验手感，高穿透高伤害
             + 更慢的衰减
-            + 抵抗护甲抗致死衰减影响
-            + 长视距
+            + 抵抗护甲抗致死衰减影响：2.0初始致死，免疫护甲抗致死对击穿影响
+            + 长视距：1.5倍以上视野
+            + 大于30m的全效射距 大于90m的极限射距
         + **Explosive 榴弹/爆炸类系**
             + 溅射系统，可以炸掩体后方
             + 5/15/25伤害阈值 -> 轻甲/中甲/重甲
@@ -133,6 +146,7 @@
         + Consume 消耗品系
             + 强力
             + 再补给有门槛
+            + 投掷物增加携带量
 + **养成系统**
     + **经验（军衔）系统**
         + 经验解锁/限制物品
@@ -220,18 +234,18 @@
         + **Sidearms**
             >+ √ **P-2 Peacemaker**
             >+ √ **P-6 Gunslinger**
-            >+ FLAM-24 Pyro
-            >+ PLAS-3 Singe
+            >+ √ **FLAM-24 Pyro**
+            >+ √ **PLAS-3 Singe**
         + √ **Assault Rifles**
             >+ √ **AR-19 Liberator**
             >+ √ **AR-22C Patriot**
             >+ √ **AR-20L Justice**
             >+ √ **AR-14D Paragon**
-        + **LMGs**
+        + √ **LMGs**
             >+ √ **MG-105 Stalwart**
         + √ **Shotguns**
             >+ √ **SG-225 Breaker**
-            >+ √ *8SG-8 Punisher**
+            >+ √ **SG-8 Punisher**
             >+ √ **DBS-2 Double Freedom**
         + √ **SMGs**
             >+ √ **SMG-45 Defender**
@@ -241,7 +255,7 @@
             >+ √ **LHO-63 Camper**
             >+ √ **RX-1 Rail Gun**
             >+ √ **M2016 Constitution**
-        + **Explosive**
+        + √ **Explosive**
             >+ √ **CR-9 Suppressor**
             >+ √ **PLAS-1 Scorcher**
         + √ **Laser Tech**
@@ -296,27 +310,27 @@
             >+ MC-109 Hammer Motorcycle
     + **投掷物**
         + Deploy:Support
-            >+ Resupply
-            >+ REP-80
+            >+ √ **Resupply**
+            >+ √ **REP-80**
         + Deploy:BackPacks
-            >+	AD-289 Angel
-            >+	AD-334 Guard Dog
+            >+	√ **AD-289 Angel**
+            >+	√ **AD-334 Guard Dog**
             >+ LIFT-850 Jump Pack
             >+ Resupply Pack
             >+ SH-20 Shield Generator Pack
             >+ SH-32 Directional Kinetic Shield
         + **Deploy:Secondary Weapons**
             >+ AC-22 Dum-Dum
-            >+ EAT-17
-            >+ FLAM-40 Incinerator 
+            >+ √ **EAT-17**
+            >+ √ **FLAM-40 Incinerator**
             >+ √ **LAS-98 Laser Cannon**
             >+ √ **M-25 Rumbler**
             >+ √ **MG-94 Machine Gun**
-            >+ MGX-42 Machine Gun
+            >+ √ **MGX-42 Machine Gun**
             >+ MLS-4X Commando
             >+ √ **Obliterator Grenade Launcher**
             >+ REC-6 Demolisher
-            >+ RL-112 Recoilless Rifle
+            >+ √ **RL-112 Recoilless Rifle**
             >+ TOX-13 Avenger
         + Defensive
             >+ A/AC-6 Tesla Tower
@@ -348,7 +362,7 @@
             >+ Emergency Beacon
             >+	ME-1 Sniffer Metal Detector
             >+	NUX-223 Hellbomb
-            >+ Reinforce
+            >+ √ **Reinforce**
     + 掉落物
         + 空
     + AI逻辑
@@ -356,8 +370,10 @@
     + **角色属性**
         + helldivers_default_base.character 父级
             + helldivers_default_chat.character 子集
+        + helldivers_default_base.character 父级
+            + helldivers_default_chat.character 子集
     + Call支援
-        + 空
+        + M99自动注射器
     + 翻译
 + Cyborgs
     + 武器
@@ -373,14 +389,14 @@
             >+ √	**Immolator**
             >+ √	**Comrade**
             >+ √	**Berserker**
-            >+ √	**Butcher**
+            >+	√ **Butcher**
             >+ √	**Hound**
             >+ √	**Grotesque**
         + Tank
             >+ √	**Hulk**
             >+ Infantry Fighting Vehicle
         + Elite
-            >+ Warlord
+            >+ √ **Warlord**
         + Master
             >+ Siege Mech
     + 载具
@@ -389,16 +405,16 @@
         + cyborgs_all_throwables.xml 附带注释
     + 掉落物
     + AI逻辑
-        + **squadleader.ai**
-        + **legionnaire.ai**
-        + **initiate.ai**
-        + **immolator.ai**
-        + **comrade.ai**
-        + **berserker.ai**
-        + **butcher.ai**
-        + **hound.ai**
-        + **grotesque.ai**
-        + **hulk.ai**
+        + √ **squadleader.ai**
+        + √ **legionnaire.ai**
+        + √ **initiate.ai**
+        + √ **immolator.ai**
+        + √ **comrade.ai**
+        + √ **berserker.ai**
+        + √ **butcher.ai**
+        + √ **hound.ai**
+        + √ **grotesque.ai**
+        + √ **hulk.ai**
     + 角色属性
         + cyborgs_default_base.character 父级
             + cyborgs_default_chat.character 子集

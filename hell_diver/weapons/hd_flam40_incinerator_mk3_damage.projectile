@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectile 
+class="grenade" 
+name="FLAM-40 Incinerator" 
+key="hd_flam40_incinerator_mk3_damage.projectile" 
+slot="0"
+pulldown_in_air="0.7"
+on_ground_up="0 1 0"
+use_time_to_live="1"
+time_to_live="60"
+can_be_disarmed="0"
+can_be_detected_by_footmen="0"
+can_be_detected_by_driver="0"
+radius="0.7"
+blast_damage_threshold="50"
+time_to_live_out_in_the_open="150"
+player_death_drop_owner_lock_time="120"
+>
+    <collision class="sticky" />
+    <trigger class="impact" />
+    <result class="blast" radius="2.5" damage="0.2" push="0.1" decal="1" character_state="wound" />
+    	
+    <effect class="result" type="splat_map" surface_tag="" size="3.0" atlas_index="0" layer="1" />
+    <effect class="result" type="splat_map" surface_tag="" size="4.0" atlas_index="4" layer="0" />
+    <effect class="result" type="splat_map" surface_tag="" size="5.0" atlas_index="0" layer="2" additive="0" />
+
+    <rotation class="random" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>		
+    <capacity value="0" source="rank" source_value="0" />
+
+    <inventory encumbrance="0.5" price="0.0" />
+
+	 <sound class="result" key="other" fileref="burn.wav" />   
+	
+    <sound class="result" key="terrain" copy="other" />
+    <sound class="result" key="static_object" copy="other" />
+    <sound class="result" key="vehicle" copy="other" />
+    <sound class="result" key="character" copy="other" />
+
+	<effect class="activated" ref="cyborgs_activated_flamethrower_01" />
+	<effect class="result" key="other" copy="terrain" />
+    <effect class="result" key="static_object" copy="terrain" />
+    <effect class="result" key="vehicle" copy="terrain" />
+    <effect class="result" key="character" copy="terrain" />
+
+
+
+	
+</projectile>

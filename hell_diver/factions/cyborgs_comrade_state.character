@@ -36,9 +36,9 @@
 	<!-- <animation key="crouching backwards" target_key="crouch walking, large mecha" /> -->
 	<!-- <animation key="prone" target_key="defence, large mecha" /> -->
 	<!-- <animation key="prone, moving forwards" target_key="crouch walking, large mecha" /> -->
-	<!-- <animation key="going prone" target_key="going defence, large mecha" /> -->
-	<!-- <animation key="leaving prone" target_key="defence walking, large mecha" /> -->
-	<!-- <animation key="dive" target_key="arrive_ground_big_unit" /> -->
+	<animation key="going prone" target_key="cyborgs_immolator_going_prone" />
+	<animation key="leaving prone" target_key="cyborgs_comrade_still" />
+	<animation key="dive" target_key="cyborgs_immolator_going_prone" />
 	<!-- <animation key="jumping" target_key="jumping, large mecha" /> -->
 	<!-- <animation key="lifting up" target_key="jumping, large mecha" /> -->
 	<!-- <animation key="throwing self over" target_key="jumping, large mecha" /> -->
@@ -50,7 +50,7 @@
 	<!-- <animation key="wounded, still, 66" target_key="wouded_big_unit" /> -->
 	<!-- <animation key="wounded, moving forwards, 67" target_key="wounded moving_big_unit" /> -->
 	<!-- <animation key="leaving_wounded" target_key="unwound_big_unit" /> -->
-	<!-- <animation key="stunned" target_key="stuned_big_unit" /> -->
+	<animation key="stunned" target_key="cyborgs_comrade_still" />
 	<!-- <animation key="surrender" target_key="stuned_big_unit" /> -->
 	<!-- <animation key="stabbing" target_key="hit ground_big_unit" /> -->
 	<!-- <animation key="throwing, upside" target_key="still_big_unit" /> -->

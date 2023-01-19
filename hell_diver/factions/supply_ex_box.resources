@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources clear_weapons="0" clear_vehicles="0" clear_calls="0">
+	<!-- always load common first; it"s the one that clears the initial weapon resources -->
+	<weapon key="ex_leviathan_breath.weapon" /> <!--利维坦之息弓-->
+	<weapon key="ex_disaster_railgun.weapon" /> <!--天灾电磁炮-->
+	<weapon key="ex_megumin_wand_float.weapon" /> <!--法杖-->
+	<weapon key="ex_kokomi_portia.weapon" /> <!--心海-->
+	<weapon key="ex_sorasaki_hina.weapon" /> <!--空崎阳奈-->
+
+	
+
+</resources>

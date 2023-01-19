@@ -5,7 +5,8 @@
 <!--武器-->
 <weapon key="hd_rx1_railgun.weapon" /><!--轨道炮-->
 <weapon key="hd_m25_rumbler.weapon" /><!--雷鸣者-->
-<weapon key="hd_mg94.weapon" /><!--MG94机枪-->
+<weapon key="hd_mg94_mk3.weapon" /><!--MG94机枪-->
+<weapon key="hd_mgx42_mk3.weapon" /><!--MGX42机枪-->
 <weapon key="hd_obliterator_grenade_launcher.weapon" /><!--消灭者榴弹发射器-->
 <weapon key="hd_double_freedom.weapon" /><!--双重解放霰弹-->
 <weapon key="hd_p2_peacemaker.weapon" /><!--和平使者手枪-->
@@ -27,17 +28,27 @@
 <weapon key="hd_mg105_stalwart_full_upgrade.weapon" /><!--盟友机枪-->
 <weapon key="hd_m2016_constitution_full_upgrade.weapon" /><!--构建步枪-->
 <weapon key="hd_lho63_camper_full_upgrade.weapon" /><!--野营者狙击步枪-->
-<weapon key="hd_plas_scorcher_full_upgrade.weapon" /><!--焦土直射榴弹-->
+<weapon key="hd_plas1_scorcher_full_upgrade.weapon" /><!--焦土直射榴弹-->
+<weapon key="hd_cr9_suppressor_full_upgrade.weapon" /><!--抑制者直射榴弹-->
 
-<weapon key="ex_leviathan_breath.weapon" /> <!--利维坦之息弓-->
-<!-- <weapon key="ex_trinity_ghoul.weapon" />  -->
-
+<!-- 副手 -->
+<weapon key="hd_rl112_recoilless_rifle_mk3.weapon" /><!--无后坐力步枪-->
+<weapon key="hd_eta17_mk3.weapon" /><!--抛弃式反战车火箭-->
+<weapon key="hd_plas3_singe.weapon" /><!--焦痕直射榴弹-->
+<weapon key="hd_flam40_incinerator_mk3.weapon" /><!--焚化炉火焰喷射器-->
+<weapon key="hd_flam24_pyro.weapon" /><!--烈焰火焰喷射器-->
+<weapon key="hd_ad334_guard_dog_mk3.weapon" /><!--护卫犬-->
+<weapon key="hd_ad289_angel_mk3.weapon" /><!--天使-->
+<weapon key="hd_rep80_mk3.weapon" /><!--维修工具枪-->
+<weapon key="hd_md98_injector.weapon" /><!--MD-98注射器-->
 
 <!--弹头-->
 <projectile key="at_mine_mk3.projectile" /><!--AT Mine MK3反载具地雷-->
 <projectile key="airdropped_stun_mine_mk3.projectile" /><!--Stun Mine MK3眩晕地雷-->
 <projectile key="hd_hellpod.projectile" /><!--空投舱-->
 <projectile key="hd_m5_apc_call.projectile" /><!--M5 ACP 载具-->
+<projectile key="hd_grenade_molotov.projectile" /><!--燃烧瓶-->
+<projectile key="hd_grenade_standard.projectile" /><!--破片手雷-->
 
 <!--护甲-->
 <carry_item key="helldivers_vest.carry_item" />

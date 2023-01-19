@@ -3,12 +3,17 @@
 	<weapon file="hd_hellpod.weapon" /><!--轨道发射仓-->
 	
 	<!-- LMGs -->
-	<weapon file="hd_mg94.weapon" /><!--MG94机枪-->
+	<weapon file="hd_mg94_mk3.weapon" /><!--MG94机枪-->
+	<weapon file="hd_mgx42_mk3.weapon" /><!--MGX42机枪-->
 	<weapon file="hd_mg105_stalwart_full_upgrade.weapon" /><!--MG105盟友机枪-->
 	<!-- Explosive -->
 	<weapon file="hd_obliterator_grenade_launcher.weapon" /><!--消灭者榴弹发射器-->
 	<weapon file="hd_m25_rumbler.weapon" /><!--雷鸣者-->
-	<weapon file="hd_plas_scorcher_full_upgrade.weapon" /><!--焦土直射榴弹-->
+	<weapon file="hd_cr9_suppressor_full_upgrade.weapon" /><!--抑制者直射榴弹-->
+	<weapon file="hd_plas1_scorcher_full_upgrade.weapon" /><!--焦土直射榴弹-->
+	<weapon file="hd_plas3_singe.weapon" /><!--焦痕副手直射榴弹-->
+	<weapon file="hd_rl112_recoilless_rifle_mk3.weapon" /><!--无后坐力步枪-->
+	<weapon file="hd_eta17_mk3.weapon" /><!--抛弃式反战车火箭-->
 	<!-- Sidearms -->
 	<weapon file="hd_p2_peacemaker.weapon" /><!--和平使者手枪-->
 	<weapon file="hd_p6_gunslinger.weapon" /><!--神枪手重装左轮手枪-->
@@ -35,7 +40,19 @@
 	<weapon file="hd_rx1_railgun.weapon" /><!--轨道炮-->
 	<weapon file="hd_m2016_constitution_full_upgrade.weapon" /><!--构建步枪-->
 	<weapon file="hd_lho63_camper_full_upgrade.weapon" /><!--野营者狙击步枪-->
+	<!-- Fire Tech -->
+	<weapon file="hd_flam40_incinerator_mk3.weapon" /><!--焚化炉火焰喷射器-->
+	<weapon file="hd_flam24_pyro.weapon" /><!--烈焰火焰喷射器 副手-->
+
+	<!-- Drone -->
+	<weapon file="hd_ad334_guard_dog_mk3.weapon" /><!--护卫犬-->
+	<weapon file="hd_ad334_guard_dog_load.weapon" /><!--护卫犬-->
+	<weapon file="hd_ad289_angel_mk3.weapon" /><!--护卫犬-->
 	
+	<!-- Support -->
+	<weapon file="hd_rep80_mk3.weapon" /><!--维修工具枪-->
+	<weapon file="hd_md98_injector.weapon" /><!--MD-98注射器-->
+
 	<!-- M5 APC 步兵载具 -->
 	<weapon file="hd_m5_apc_mg94.weapon" /><!--安定翼机枪-->
 	<weapon file="hd_m5_apc_autocannon.weapon" /><!--主炮-->

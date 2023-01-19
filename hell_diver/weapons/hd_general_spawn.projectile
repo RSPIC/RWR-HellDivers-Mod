@@ -26,15 +26,64 @@ player_death_drop_owner_lock_time="900"
 	<commonness value="0" can_respawn_with="0" in_stock="0" /> 
 	<inventory encumbrance="0" price="0.0"/>
 
-		<sound class="result" key="terrain" copy="other" />		
-		<sound class="result" key="static_object" copy="other" />
-		<sound class="result" key="vehicle" copy="other" />
-		<sound class="result" key="character" copy="other" />
-		<sound class="result" key="shield" copy="other" />
-		<effect class="result" key="other" copy="terrain"/>
-		<effect class="result" key="static_object" copy="terrain" />
-		<effect class="result" key="character" copy="terrain" />
-		<effect class="result" key="shield" copy="terrain" />			
-		<effect class="result" key="vehicle" copy="terrain" />			
+	<sound class="result" key="terrain" fileref="bullet_generic_1.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="terrain" fileref="bullet_generic_2.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="terrain" fileref="bullet_generic_3.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="terrain" fileref="bullet_generic_4.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="terrain" fileref="bullet_generic_5.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="terrain" fileref="bullet_generic_6.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="terrain" fileref="bullet_generic_7.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="terrain" fileref="bullet_generic_8.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="terrain" fileref="bullet_generic_9.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="terrain" fileref="bullet_generic_10.wav" pitch_variety="0.125" volume="1.0" />
+
+    <sound class="result" key="shield" fileref="bullet_shield_1.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="shield" fileref="bullet_shield_2.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="shield" fileref="bullet_shield_3.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="shield" fileref="bullet_shield_4.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="shield" fileref="bullet_shield_5.wav" pitch_variety="0.125" volume="1.0" />
+
+    <sound class="result" key="character" fileref="bullet_body_1.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="character" fileref="bullet_body_2.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="character" fileref="bullet_body_3.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="character" fileref="bullet_body_4.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="character" fileref="bullet_body_5.wav" pitch_variety="0.125" volume="1.0" />    
+    
+    <sound class="result" key="vehicle" copy="terrain" />
+
+    <sound class="result" key="vehicle" tag="metal_thin" file="bullet_vehicle_light_1.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="vehicle" tag="metal_thin" file="bullet_vehicle_light_2.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="vehicle" tag="metal_thin" file="bullet_vehicle_light_3.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="vehicle" tag="metal_thin" file="bullet_vehicle_light_4.wav" pitch_variety="0.125" volume="1.0" /> 
+    <sound class="result" key="vehicle" tag="metal_thin" file="bullet_vehicle_light_5.wav" pitch_variety="0.125" volume="1.0" /> 
+    
+    <sound class="result" key="vehicle" tag="deco_car" file="bullet_vehicle_light_1.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="vehicle" tag="deco_car" file="bullet_vehicle_light_2.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="vehicle" tag="deco_car" file="bullet_vehicle_light_3.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="vehicle" tag="deco_car" file="bullet_vehicle_light_4.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="vehicle" tag="deco_car" file="bullet_vehicle_light_5.wav" pitch_variety="0.125" volume="1.0" />
+
+
+    <sound class="result" key="vehicle" tag="metal_heavy" file="bullet_vehicle_heavy_1.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="vehicle" tag="metal_heavy" file="bullet_vehicle_heavy_2.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="vehicle" tag="metal_heavy" file="bullet_vehicle_heavy_3.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="vehicle" tag="metal_heavy" file="bullet_vehicle_heavy_4.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="vehicle" tag="metal_heavy" file="bullet_vehicle_heavy_5.wav" pitch_variety="0.125" volume="1.0" />
+	
+    <sound class="result" key="vehicle" tag="sandbag" file="bullet_sandbag_1.wav" pitch_variety="0.125" volume="1.0" />  
+    <sound class="result" key="vehicle" tag="sandbag" file="bullet_sandbag_2.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="vehicle" tag="sandbag" file="bullet_sandbag_3.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="vehicle" tag="sandbag" file="bullet_sandbag_4.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="vehicle" tag="sandbag" file="bullet_sandbag_5.wav" pitch_variety="0.125" volume="1.0" />
+    
+    <sound class="result" key="vehicle" tag="metal_dumpster" file="bullet_dumpster_1.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="vehicle" tag="metal_dumpster" file="bullet_dumpster_2.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="vehicle" tag="metal_dumpster" file="bullet_dumpster_3.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="vehicle" tag="metal_dumpster" file="bullet_dumpster_4.wav" pitch_variety="0.125" volume="1.0" />
+    <sound class="result" key="vehicle" tag="metal_dumpster" file="bullet_dumpster_5.wav" pitch_variety="0.125" volume="1.0" />
+
+    <sound class="result" key="static_object" copy="terrain" />
+	
+	
 	
 </projectile>

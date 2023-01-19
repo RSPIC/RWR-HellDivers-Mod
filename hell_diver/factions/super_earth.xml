@@ -168,9 +168,10 @@
 		<character filename="helldivers_default_chat.character">
 			<parameter class="default_squad_config_index" value="0" />
 		</character>
-		<ai filename="default.ai" />
+		<ai filename="default_super_earth.ai" />
 
 		<model file="hdivers_volcanic.xml" />
+		<models file="extra_weapons.models" />
 
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="common.resources" />
@@ -225,4 +226,8 @@
 		</attribute_config>
 	</soldier>              
 
+	<soldier name="supply_ex_box" spawn_score="0.0" copy_from="default">
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="supply_ex_box.resources"/>
+	</soldier> 
 </faction>
