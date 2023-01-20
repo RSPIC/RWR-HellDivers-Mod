@@ -13,8 +13,8 @@ can_be_detected_by_footmen="1"
 can_be_detected_by_driver="1"
 radius="0.3"
 blast_damage_threshold="10"
-time_to_live_out_in_the_open="150"
-player_death_drop_owner_lock_time="120"
+time_to_live_out_in_the_open="0"
+player_death_drop_owner_lock_time="0"
 >
 		<result class="blast" radius="3.0" damage="1.01" push="2" decal="0" character_state="death" faction_compare="not_equal"/>
 		<trigger class="time" time_to_live="0" />

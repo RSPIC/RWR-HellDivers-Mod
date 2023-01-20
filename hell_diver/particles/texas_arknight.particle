@@ -1,0 +1,669 @@
+author: RST
+2022.9.9
+未经授权不可复用、修改使用，禁止盈利
+	弹头
+		<effect class="result" key="terrain" ref="texas_polygon_expand" lighting="0" />
+		<effect class="result" key="terrain" ref="texas_polygon_fix" lighting="0" />
+		<effect class="result" key="terrain" ref="texas_center_crossline_1" lighting="0" />
+		<effect class="result" key="terrain" ref="texas_center_crossline_2" lighting="0" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+	子弹头
+		<effect class="result" key="terrain" ref="texas_tilt_dropping_sword_guiding" lighting="0" />
+		<effect class="result" key="terrain" ref="texas_tilt_dropping_sword" lighting="0" />
+		<effect class="result" key="terrain" ref="texas_tilt_dropping_ring" lighting="0" />
+		<effect class="result" key="terrain" ref="texas_tilt_dropping_triangle" lighting="0" />
+		<effect class="result" key="terrain" ref="texas_hit_diamond" lighting="0" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+particle_system texas_polygon_expand
+{
+	quota 50
+	emit_emitter_quota 50
+	material texas_polygon_1_pass
+	particle_width 2
+	particle_height 2
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 0.7 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 1.5
+		duration 0.1
+		emit_emitter tag1
+	}
+	emitter Point
+	{
+		angle 0
+		colour 1 0.7 0 1
+		direction 0 1 0
+		emission_rate 0.5
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 1.5
+		duration 2
+		name tag1
+	}
+	affector Scaler
+	{
+		rate 15
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-2.1
+		blue2	-0
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system texas_polygon_fix
+{
+	quota 50
+	material texas_polygon_2_pass
+	particle_width 24.5
+	particle_height 24.5
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 0.7 0 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 2.5
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-2.1
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system texas_center_crossline_1
+{
+	quota 50
+	material point_hard_edge
+	particle_width 0.05
+	particle_height 8
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	emitter Box
+	{
+		angle 0
+		colour 1 1 0 1
+		direction 0 1 0
+		emission_rate 5
+		position 0 0 0
+		velocity 0.0001
+		time_to_live_min 0.25
+		time_to_live_max 0.35
+		duration_min 1.5
+		duration_max 2
+		width 5
+		height 5
+		depth 0.1
+	}
+	affector Scaler
+	{
+		rate 0.3
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-5
+		green2	-5
+		blue2	-5
+		alpha2	-3
+		state_change 0.2
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system texas_center_crossline_2 : texas_center_crossline_1
+{
+	emitter Box
+	{
+		emission_rate 7
+	}
+	affector Scaler
+	{
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	90
+		rotation_range_end	90
+	}
+}
+particle_system texas_tilt_dropping_sword_guiding
+{
+	quota 500
+	emit_emitter_quota 400
+	material texas_sharpline
+	particle_width 10
+	particle_height 50
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction -1 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	local_space false
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 0 0
+		emission_rate 10
+		position 10 30 0
+		velocity 0.001
+		time_to_live 0.1
+		duration 0.1
+		emit_emitter tag1
+	}
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction -0.33 -1 0
+		emission_rate 30
+		position 0 0 0
+		velocity 160
+		time_to_live 1
+		duration 0.1
+		name tag1
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	180
+		rotation_range_end	180
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+}
+particle_system texas_tilt_dropping_sword : texas_tilt_dropping_sword_guiding
+{
+	material texas_sword
+	particle_width 3
+	particle_height 3
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0.3
+	common_up_vector 0 0 1
+
+	emitter Point
+	{
+		position 8 26 0
+	}
+	emitter Point
+	{
+	}
+}
+particle_system texas_tilt_dropping_ring
+{
+	quota 50
+	material lens_circle_03
+	particle_width 0.4
+	particle_height 5
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	emitter Point
+	{
+		angle 0
+		colour 1 0.7 0.3 1
+		direction 0 1 0
+		emission_rate 10
+		position 2 7 0
+		velocity 0.0001
+		time_to_live 0.7
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 1
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system texas_tilt_dropping_triangle 
+{
+	quota 200
+	emit_emitter_quota 200
+	material texas_triangle
+	particle_width 0.8
+	particle_height 0.8
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	accutare_facing on
+		emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 0 0
+		emission_rate 10
+		position 10 30 0
+		velocity 0.001
+		time_to_live 0.1
+		duration 0.1
+		emit_emitter tag1
+	}
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0
+		direction -0.33 -1 0
+		emission_rate 30
+		position 0 0 0
+		velocity 160
+		time_to_live 1
+		duration 0.1
+		name tag1
+		emit_emitter tag2
+	}
+	emitter Box
+	{
+		angle 360
+		colour 1 0.5 0 1
+		direction 0 1 0 
+		emission_rate 40
+		position 0 0 0
+		velocity_min -1
+		velocity_max 1
+		time_to_live_min 0.5
+		time_to_live_max 0.7
+		duration 1
+		name tag2
+		width 3
+		height 3
+		depth 3
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	-360
+		rotation_speed_range_end	360
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector Scaler
+	{
+		rate -0.8
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 5
+		scope 100
+		keep_velocity false
+	}
+}
+particle_system texas_hit_diamond
+{
+	quota 50
+	material texas_diamond
+	particle_width 0.1
+	particle_height 0.1
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.2
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 60
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-10
+		green2	-10
+		blue2	-10
+		alpha2	-3
+		state_change 0.1
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+
+particle_system texas_activated_center
+{
+	quota 50
+	material plasma_beam_hit_red
+	particle_width 3
+	particle_height 3
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 30
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.05
+		duration 5
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.7
+		colour1 1 1 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material lens_circle_03 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture lens_circle_03.png 	
+}}}}
+material texas_diamond : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture texas_diamond.png 	
+}}}}
+material texas_polygon_1_pass : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture texas_polygon_1.png 	
+}}}}
+material texas_polygon_2_pass : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture texas_polygon_2.png 	
+}}}}
+material texas_sharpline : add_base
+{   
+    technique{
+    pass{
+		cull_hardware none
+        texture_unit{
+            texture texas_sharpline.png 	
+}}}}
+material texas_triangle : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture texas_triangle.png 	
+}}}}
+material point_hard_edge : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture point_hard_edge.png 	
+}}}}
+
+material texas_sword : alpha_blend_base
+{   
+    technique{
+    pass{
+		cull_hardware none
+        texture_unit{
+            texture texas_sword.png 	
+}}}}
+material plasma_beam_hit_red : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture plasma_beam_hit_red.png 	
+}}}}
+

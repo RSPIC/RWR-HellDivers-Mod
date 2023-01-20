@@ -12,8 +12,8 @@ can_be_disarmed="0"
 can_be_detected_by_footmen="1"
 can_be_detected_by_driver="1"
 blast_damage_threshold="50"
-time_to_live_out_in_the_open="900"
-player_death_drop_owner_lock_time="900"
+time_to_live_out_in_the_open="0"
+player_death_drop_owner_lock_time="0"
 >
 	<!--
 			offset"x y z 生成位置偏差"
@@ -84,6 +84,7 @@ player_death_drop_owner_lock_time="900"
 
     <sound class="result" key="static_object" copy="terrain" />
 	
-	
+    <effect class="stab" key="character" ref="BloodSplat50Cal" lighting="1" />
+    <effect class="stab" key="character" ref="BurstShine50Cal" lighting="1" post_processing="0" />
 	
 </projectile>
