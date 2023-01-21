@@ -1,0 +1,479 @@
+author: RST
+2023.1.18
+仅用于helldiver mod
+ARC电弧系武器特效
+
+abstract emitter Position
+{
+		position 0 0.3 0
+}
+
+particle_system Arc_result_strike_thunder
+{
+	quota 50
+	material lightning_gun_bolt
+	particle_width 4.8
+	particle_height 0.8
+	renderer billboard
+	billboard_type oriented_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point : Position
+	{
+		angle 30
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		velocity 0.0001
+		time_to_live 0.12
+		duration 0.1
+
+	}
+	affector Scaler
+	{
+		rate 5
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	90
+		rotation_range_end	90
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.5 0.5 0.5 1
+		time1 0.7
+		colour1 0.5 0.5 0.5 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system Arc_result_strike_thunder_2
+{
+	quota 50
+	material lighting_a_47
+	particle_width 5
+	particle_height 5
+	renderer billboard
+	billboard_type oriented_common
+	billboard_origin center_left
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point : Position
+	{
+		angle 0
+		colour 0 0.5 1 1
+		direction 0 1 0
+		emission_rate 20
+		velocity 0.0001
+		time_to_live 0.15
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	-90
+		rotation_range_end	-90
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0.5 1 1
+		time1 0.7
+		colour1 0.3 0.5 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system Arc_activated_InArea_thunder 
+{
+	quota 50
+	material TEX_lightningwidth_01_u
+	particle_width 3
+	particle_height 1.5
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Box : Position
+	{
+		angle 180
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		velocity_min 15
+		velocity_max 25
+		time_to_live 0.08
+		duration 15
+		width 3
+		height 3
+		depth 3
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	90
+		rotation_range_end	90
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.5
+		colour1 0 0 1 1
+		time2 1
+		colour2 0 0.5 1 1
+	}
+}
+particle_system Arc_activated_InArea_thunder_2 : Arc_activated_InArea_thunder
+{
+	material TEX_lightningwidth_01_u
+	emitter Box : Position
+	{
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	-90
+		rotation_range_end	-90
+	}
+	
+}
+particle_system Arc_activated_center_light
+{
+	quota 2000
+	material point_soft_edge_100
+	particle_width 10
+	particle_height 10
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point : Position
+	{
+		angle 0
+		colour 0.0 0.07 0.21 0.2
+		direction 0 1 0
+		emission_rate 30
+		velocity 0.0001
+		time_to_live 0.1
+		duration 15
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.0 0.07 0.21 0.2
+		time1 0.7
+		colour1 0.0 0.07 0.21 0.2
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+
+
+particle_system Arc_activated_box_point
+{
+	quota 50
+	material point_soft_edge_100
+	particle_width 0.25
+	particle_height 0.25
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Box : Position
+	{
+		angle 0
+		colour 0 0.3 1 1
+		direction 0 1 0
+		emission_rate 50
+		velocity 0.0001
+		time_to_live_min 0.4
+		time_to_live_max 0.8
+		duration 15
+		width 6
+		height 6
+		depth 6
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0.3 1 1
+		time1 0.7
+		colour1 0 0.3 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 4 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 20
+		scope 50
+		keep_velocity false
+	}
+}
+particle_system Arc_result_box_point : Arc_activated_box_point
+{
+	emitter Box : Position
+	{
+		angle 0
+		colour 0 0.3 1 1
+		direction 0 1 0
+		emission_rate 200
+		velocity 0.0001
+		time_to_live_min 0.4
+		time_to_live_max 0.8
+		duration 0.1
+		width 6
+		height 6
+		depth 6
+	}
+}
+particle_system Arc_muzzle_thunder_01
+{
+	quota 50
+	material lightning_gun_bolt_7
+	particle_width 10
+	particle_height 1.5
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center_left
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.5
+		duration 0.1
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	-90
+		rotation_range_end	-90
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.5 0.5 0.5 0.5
+		time1 0.3
+		colour1 0.5 0.5 0.5 0.5
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system Arc_muzzle_thunder_02
+{
+	quota 50
+	material lightning_gun_bolt_7
+	particle_width 20
+	particle_height 1.5
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center_left
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.5
+		duration 0.1
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	-90
+		rotation_range_end	-90
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.5 0.5 0.5 0.5
+		time1 0.3
+		colour1 0.5 0.5 0.5 0.5
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material lightning_gun_bolt : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            anim_texture lightning_gun_bolt.png 8 0.425
+}}}}
+material point_soft_edge_100 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture point_soft_edge_100.png
+}}}}
+material muzzle_current_0 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture muzzle_current_0.png
+}}}}
+material muzzle_current_1 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture muzzle_current_1.png
+}}}}
+material muzzle_current_2 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture muzzle_current_2.png
+}}}}
+material muzzle_current_3 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture muzzle_current_3.png
+}}}}
+material muzzle_current_4 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture muzzle_current_4.png
+}}}}
+material lighting_a_47 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture lighting_a_47.png
+}}}}
+material lightning_gun_bolt_u : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture lightning_gun_bolt.png
+			scroll_anim 10 0
+}}}}
+material TEX_lightningwidth_01_u : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture TEX_lightningwidth_01.png
+			scroll_anim 10 0
+}}}}
+material lightning_gun_beam_u : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture lightning_gun_beam.png
+			scroll_anim 10 0
+}}}}
+material lightning_gun_bolt_7 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture lightning_gun_bolt_7.png
+}}}}

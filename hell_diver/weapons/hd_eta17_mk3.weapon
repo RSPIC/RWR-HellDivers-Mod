@@ -52,7 +52,7 @@ on_ground_up="0 0 1"
 	<animation state_key="hold_on_wall"  animation_key="still, with law" /><!--架枪动作，全身动作-->
     <animation state_key="still_against_wall" animation_key="" /><!--靠墙动作，全身动作-->
     <animation state_key="hold_casual" animation_key="" /><!--闲置动作，全身动作-->
-	<animation state_key="running" animation_key="walking, hip fire" /><!--全身动作-->
+	<animation state_key="running" animation_key="" /><!--全身动作-->
 	<animation state_key="walking" animation_key="walking, hip fire" /><!--按shift时候的静步前进动作，全身动作-->
     <animation state_key="walking_backwards" animation_key="walking backwards, hip fire" /><!--全身动作-->
     <animation state_key="crouching" animation_key="" /><!--蹲姿静止动作，全身动作-->
