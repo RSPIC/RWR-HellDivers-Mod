@@ -12,8 +12,8 @@ can_be_disarmed="0"
 can_be_detected_by_footmen="1"
 can_be_detected_by_driver="1"
 radius="0.3"
-time_to_live_out_in_the_open="150"
-player_death_drop_owner_lock_time="120"
+time_to_live_out_in_the_open="0"
+player_death_drop_owner_lock_time="0"
 >
 	<result class="blast" radius="4.8" damage="50.0" push="1.0" decal="1" character_state="wound"/>
 	<trigger class="time" time_to_live="0" />	

@@ -264,8 +264,8 @@
             >+ √ **LAS-12 Tanto**
             >+ √ **LAS-13 Trident**
         + Arc Tech
-            >+ AC-3 Arc Thrower
-            >+ AC-5 Arc Shotgun
+            >+ √ **AC-3 Arc Thrower**
+            >+ √ **AC-5 Arc Shotgun**
         + Melee
             >+ Saber
     + **护甲**
@@ -320,7 +320,7 @@
             >+ SH-20 Shield Generator Pack
             >+ SH-32 Directional Kinetic Shield
         + **Deploy:Secondary Weapons**
-            >+ AC-22 Dum-Dum
+            >+ √ **AC-22 Dum-Dum**
             >+ √ **EAT-17**
             >+ √ **FLAM-40 Incinerator**
             >+ √ **LAS-98 Laser Cannon**
