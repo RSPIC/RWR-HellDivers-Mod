@@ -355,6 +355,19 @@ class BasicCommandHandler : Tracker {
 			
 		} else if (checkCommand(message, "fill")) {
 			fillInventory(senderId);
+		} else if(checkCommand(message, "pa")) {
+			const XmlElement@ playerInfo = getPlayerInfo(m_metagame, senderId);
+			const XmlElement@ characterInfo = getCharacterInfo(m_metagame, playerInfo.getIntAttribute("character_id"));
+			Vector3 pos = stringToVector3(playerInfo.getStringAttribute("aim_target"));	
+			pos=pos.add(Vector3(0,1,0));
+			string c = 
+				"<command class='create_instance'" +
+				" faction_id='" + 0 + "'" +
+				" instance_class='grenade'" +
+				" instance_key='" + "test_particle.projectile" + "'" +
+				" position='" + pos.toString() + "'" +
+				" character_id='" + playerInfo.getIntAttribute("character_id") + "'/>";				
+			m_metagame.getComms().send(c);
 		}
 	}
 

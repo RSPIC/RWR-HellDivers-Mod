@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectile class="grenade" name="" key="test_particle.projectile" slot="2" radius="0.15">
+    <result class="blast" radius="3" damage="0.0" push="0.0" decal="1" character_state="death" faction_compare="not_equal" damage_origin_vehicle="0"/>
+    <trigger class="time" time_to_live="0.0"/>
+    <rotation class="motion" />
+    <model mesh_filename="" />
+    <hud_icon filename="" />
+    <commonness value="0" />
+    <inventory encumbrance="1.0" price="0.0" in_stock="0" />
+    <capacity value="1" source="rank" source_value="0.0" />
+
+
+		<effect class="result" key="terrain" ref="nova_s_result_impact_flame_1" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_impact_flame_2" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_impact_flame_3" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_impact_flame_4" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_blast_smoke_expanding" lighting="0" post_processing="1"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_blast_smoke" lighting="0" post_processing="1"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_impact_spark" lighting="0" post_processing="1"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_impact_spark_2" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_ambient" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_ambient_ground" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_blast_ring" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_blast_ring_2" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_blast_fire" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_s_gl_hit_smoke_02" lighting="0" post_processing="1"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_ground_smoke" lighting="0" post_processing="1"/>
+
+
+	<sound class="result" key="static_object" copy="terrain" />
+	<sound class="result" key="vehicle" copy="terrain" />
+	<sound class="result" key="character" copy="terrain" />
+	<sound class="result" key="shield" copy="terrain" />
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="shield" copy="terrain" />			
+	<effect class="result" key="vehicle" copy="terrain" />			
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+
+</projectile>

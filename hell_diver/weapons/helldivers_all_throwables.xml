@@ -12,6 +12,8 @@
     <projectile file="hd_cr9_suppressor_damage.projectile" />
     <projectile file="hd_ac5_arc_shotgun_damage.projectile" />
     <projectile file="hd_ac22_dum_dum_damage.projectile" />
+    <projectile file="hd_tox13_avenger_mk3_damage.projectile" />
+    <projectile file="hd_mls4x_commando_mk3_damage.projectile" />
 	<!--辩护者俯冲轰炸-->
     <projectile file="hd_vindicator_dive_bomb.projectile" />
     <projectile file="hd_vindicator_missile.projectile" />
@@ -32,7 +34,6 @@
 	<projectile file="hd_grenade_standard.projectile" />	
 	<projectile file="hd_grenade_standard_damage.projectile" />	
 
-	
 	<!--空投信标-->
 	<projectile file="hd_hellpod.projectile" />	<!--空投舱-->
 	<projectile file="hd_hellpod_dropping_sound.projectile" />	
@@ -42,6 +43,8 @@
 	<projectile file="hd_resupply_spawn.projectile" /><!--弹药补给间接弹头-->
 	<projectile file="hd_resupply.projectile" /><!--弹药补给-->
 	
+	<!-- Effect -->
+	<projectile file="hd_players_dead_effect.projectile" />
 
 
 </projectiles>
