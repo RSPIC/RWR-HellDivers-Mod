@@ -109,14 +109,14 @@
             - 抵抗护甲抗致死衰减影响：2.0 初始致死，免疫护甲抗致死对击穿影响
             - 长视距：1.5 倍以上视野
             - 大于 30m 的全效射距 大于 90m 的极限射距
-        - **Explosive 榴弹/爆炸类系**
+        - √ **Explosive 榴弹/爆炸类系**
             - 溅射系统，可以炸掩体后方
             - 5/15/25 伤害阈值 -> 轻甲/中甲/重甲
-        - Sidearms 副手系
+        - √ **Sidearms 副手系**
             - 功能性强
         - √ **Laser Tech 激光系**
             - 保证持续性火力突出
-        - Arc Tech 电弧系
+        - √ **Arc Tech 电弧系**
             - 近距离群攻优势大于 SG，Stun 伤害可控场
         - Melle 近战系
             - 特效和音效要好
@@ -218,12 +218,9 @@
             - Heavy Strafing Run 机枪支援呼叫权
 
 ## 按阵营内容
-
-<<<<<<< HEAD
-
 - **HellDivers**
     - **武器** [https://helldivers.fandom.com/wiki/Stratagems] [https://helldivers.fandom.com/wiki/Weapons]
-        - **Sidearms**
+        - √ **Sidearms**
             >
             > - √ **P-2 Peacemaker**
             > - √ **P-6 Gunslinger**
@@ -271,10 +268,10 @@
             > - √ **LAS-12 Tanto**
             > - √ **LAS-13 Trident**
             >
-        - Arc Tech
+        - √ **Arc Tech**
             >
-            > - AC-3 Arc Thrower
-            > - AC-5 Arc Shotgun
+            > - √ **AC-3 Arc Thrower**
+            > - √ **AC-5 Arc Shotgun**
             >
         - Melee
             >
@@ -323,7 +320,7 @@
             > - MC-109 Hammer Motorcycle
             >
     - **投掷物**
-        - Deploy:Support
+        - √ **Deploy:Support**
             >
             > - √ **Resupply**
             > - √ **REP-80**
@@ -339,18 +336,18 @@
             >
         - **Deploy:Secondary Weapons**
             >
-            > - AC-22 Dum-Dum
+            > - √ **AC-22 Dum-Dum**
             > - √ **EAT-17**
             > - √ **FLAM-40 Incinerator**
             > - √ **LAS-98 Laser Cannon**
             > - √ **M-25 Rumbler**
             > - √ **MG-94 Machine Gun**
             > - √ **MGX-42 Machine Gun**
-            > - MLS-4X Commando
+            > - √ **MLS-4X Commando**
             > - √ **Obliterator Grenade Launcher**
             > - REC-6 Demolisher
             > - √ **RL-112 Recoilless Rifle**
-            > - TOX-13 Avenger
+            > - √ **TOX-13 Avenger**
             >
         - Defensive
             >
@@ -406,13 +403,13 @@
         - cyborgs_all_weapons.xml 附带注释
     - 护甲
         - 空
-    - 模型 [https://helldivers.fandom.com/wiki/Cyborgs]
-        - Scout
+    -  **模型** [https://helldivers.fandom.com/wiki/Cyborgs]
+        - √ **Scout**
             >
             > - √ **'Squadleader' Soldier**
             > - √ **Legionnaire**
             >
-        - Infantry
+        - √ **Infantry**
             >
             > - √ **Initiate**
             > - √ **Immolator**
@@ -427,7 +424,7 @@
             > - √ **Hulk**
             > - Infantry Fighting Vehicle
             >
-        - Elite
+        - √ **Elite**
             >
             > - √ **Warlord**
             >
@@ -440,7 +437,7 @@
     - 投掷物
         - cyborgs_all_throwables.xml 附带注释
     - 掉落物
-    - AI 逻辑
+    - **AI 逻辑**
         - √ **squadleader.ai**
         - √ **legionnaire.ai**
         - √ **initiate.ai**
@@ -467,257 +464,6 @@
                 > - cyborgs_hulk_state
                 >
     - Call 支援
-    - 翻译
-- Illuminate
-- Bugs
-
-- **HellDivers**
-    - **武器** [https://helldivers.fandom.com/wiki/Stratagems] [https://helldivers.fandom.com/wiki/Weapons]
-        - **Sidearms**
-            >
-            >- √ **P-2 Peacemaker**
-            >- √ **P-6 Gunslinger**
-            >- √ **FLAM-24 Pyro**
-            >- √ **PLAS-3 Singe**
-            >
-        - √ **Assault Rifles**
-            >
-            >- √ **AR-19 Liberator**
-            >- √ **AR-22C Patriot**
-            >- √ **AR-20L Justice**
-            >- √ **AR-14D Paragon**
-            >
-        - √ **LMGs**
-            >
-            >- √ **MG-105 Stalwart**
-            >
-        - √ **Shotguns**
-            >
-            >- √ **SG-225 Breaker**
-            >- √ **SG-8 Punisher**
-            >- √ **DBS-2 Double Freedom**
-            >
-        - √ **SMGs**
-            >
-            >- √ **SMG-45 Defender**
-            >- √ **MP-98 Knight SMG**
-            >- √ **SMG-34 Ninja**
-            >
-        - √ **Precision**
-            >
-            >- √ **LHO-63 Camper**
-            >- √ **RX-1 Rail Gun**
-            >- √ **M2016 Constitution**
-            >
-        - √ **Explosive**
-            >
-            >- √ **CR-9 Suppressor**
-            >- √ **PLAS-1 Scorcher**
-            >
-        - √ **Laser Tech**
-            >
-            >- √ **LAS-5 Scythe**
-            >- √ **LAS-16 Sickle**
-            >- √ **LAS-12 Tanto**
-            >- √ **LAS-13 Trident**
-            >
-        - Arc Tech
-            >
-            >- √ **AC-3 Arc Thrower**
-            >- √ **AC-5 Arc Shotgun**
-            >
-        - Melee
-            >
-            >- Saber
-            >
-    - **护甲**
-        - **helldivers_vest** 通用护甲(待裁定伤害系统）
-    - **模型** [https://helldivers.fandom.com/wiki/Armor]
-        - Tactical
-        - Desert
-        - Woodland
-        - Arctic
-        - √ **Black Ops**
-        - Veteran
-        - √ **Volcanic**
-        - Heroic
-        - Admiral
-        - √ **Ceremonial**
-        - Faction-Specific Capes
-        - Assault
-        - Liberty Cape
-        - Next-Gen
-        - Proving Grounds Specific Capes
-        - Ranger
-        - Commando
-        - Defender
-        - Support
-        - Demolitionist
-        - Hazard Ops
-        - Pilot
-        - Specialist
-        - All-Terrain
-        - Precision Expert
-        - Community Cape
-        - Developer Cape
-        - Training Cape
-    - 载具
-        - Deploy:Vehicles
-            >
-            >- **EXO-44 Walker Exosuit**
-            >- **EXO-48 Obsidian Exosuit**
-            >- **EXO-51 Lumberer Exosuit**
-            >- √ **M5 APC**
-            >- M5-32 HAV
-            >- TD-110 Bastion
-            >- MC-109 Hammer Motorcycle
-            >
-    - **投掷物**
-        - Deploy:Support
-            >
-            >- √ **Resupply**
-            >- √ **REP-80**
-            >
-        - Deploy:BackPacks
-            >
-            >- √ **AD-289 Angel**
-            >- √ **AD-334 Guard Dog**
-            >- LIFT-850 Jump Pack
-            >- Resupply Pack
-            >- SH-20 Shield Generator Pack
-            >- SH-32 Directional Kinetic Shield
-            >
-        - **Deploy:Secondary Weapons**
-            >
-            >- √ **AC-22 Dum-Dum**
-            >- √ **EAT-17**
-            >- √ **FLAM-40 Incinerator**
-            >- √ **LAS-98 Laser Cannon**
-            >- √ **M-25 Rumbler**
-            >- √ **MG-94 Machine Gun**
-            >- √ **MGX-42 Machine Gun**
-            >- MLS-4X Commando
-            >- √ **Obliterator Grenade Launcher**
-            >- REC-6 Demolisher
-            >- √ **RL-112 Recoilless Rifle**
-            >- TOX-13 Avenger
-            >
-        - Defensive
-            >
-            >- A/AC-6 Tesla Tower
-            >- A/GL-8 Launcher Turret
-            >- A/MG-11 Minigun Turret
-            >- A/RX-34 Railcannon Turret
-            >- √ **Airdropped Anti-Personnel Mines**
-            >- √ **Airdropped Stun Mines**
-            >- Anti-Personnel Barrier
-            >- AT-47 Anti-Tank Emplacement
-            >- Distractor Beacon
-            >- Humblebee UAV drone
-            >- Thunderer Smoke Round
-            >
-        - **Offensive**
-            >
-            >- Airstrike
-            >- Close Air Support
-            >- Heavy Strafing Run
-            >- Incendiary Bombs
-            >- Missile Barrage
-            >- Orbital Laser Strike
-            >- Railcannon Strike
-            >- Shredder Missile Strike
-            >- Sledge Precision Artillery
-            >- Static Field Conductors
-            >- Strafing Run
-            >- Thunderer Barrage
-            >- √ **Vindicator Dive Bomb**
-            >
-        - Special
-            >
-            >- Emergency Beacon
-            >- ME-1 Sniffer Metal Detector
-            >- NUX-223 Hellbomb
-            >- √ **Reinforce**
-            >
-    - 掉落物
-        - 空
-    - AI逻辑
-        - 空
-    - **角色属性**
-        - helldivers_default_base.character 父级
-            - helldivers_default_chat.character 子集
-        - helldivers_default_base.character 父级
-            - helldivers_default_chat.character 子集
-    - Call支援
-        - M99自动注射器
-    - 翻译
-
-- Cyborgs
-    - 武器
-        - cyborgs_all_weapons.xml 附带注释
-    - 护甲
-        - 空
-    - 模型 [https://helldivers.fandom.com/wiki/Cyborgs]
-        - Scout
-            >
-            >- √ **'Squadleader' Soldier**
-            >- √ **Legionnaire**
-            >
-        - Infantry
-            >
-            >- √ **Initiate**
-            >- √ **Immolator**
-            >- √ **Comrade**
-            >- √ **Berserker**
-            >- √ **Butcher**
-            >- √ **Hound**
-            >- √ **Grotesque**
-            >
-        - Tank
-            >
-            >- √ **Hulk**
-            >- Infantry Fighting Vehicle
-            >
-        - Elite
-            >
-            >- √ **Warlord**
-            >
-        - Master
-            >
-            >- Siege Mech
-            >
-    - 载具
-        - Infantry Fighting Vehicle
-    - 投掷物
-        - cyborgs_all_throwables.xml 附带注释
-    - 掉落物
-    - AI逻辑
-        - √ **squadleader.ai**
-        - √ **legionnaire.ai**
-        - √ **initiate.ai**
-        - √ **immolator.ai**
-        - √ **comrade.ai**
-        - √ **berserker.ai**
-        - √ **butcher.ai**
-        - √ **hound.ai**
-        - √ **grotesque.ai**
-        - √ **hulk.ai**
-    - 角色属性
-        - cyborgs_default_base.character 父级
-            - cyborgs_default_chat.character 子集
-                >
-                >- cyborgs_squadleader_state
-                >- cyborgs_legionnaire_state
-                >- cyborgs_initiate_state
-                >- cyborgs_immolator_state
-                >- cyborgs_comrade_state
-                >- cyborgs_berserker_state
-                >- cyborgs_butcher_state
-                >- cyborgs_hound_state
-                >- cyborgs_grotesque_state
-                >- cyborgs_hulk_state
-                >
-    - Call支援
     - 翻译
 - Illuminate
 - Bugs
