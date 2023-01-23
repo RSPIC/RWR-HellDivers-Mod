@@ -12,6 +12,7 @@
 - ARST
 - YYSY
 - Tactical UMP-45
+- rainbowflesh
 
 交流 QQ 群：498520233【超级地球】
 
