@@ -38,11 +38,31 @@
         > - √ **取消敌人 wound 状态**
         > - **全局修改 stun 状态为站立眩晕，而非倒地**
         >
-        - **对敌方**（敌方护甲针对此伤害类型制作） |受伤害类型 | 角色状态 | 备注 | | -- | -- | -- | |动能：hit/death | ->none - death |(抗致死减伤，可被免疫)| |眩晕：hit/stun | ->stun - death |(可对免疫动能的护甲产生伤害，带控制，可被免疫)| |中甲：hit/wound | ->none - death |(可被免疫)| |重穿：hit/none | ->none - death |(不可被免疫)| |爆炸：blast/death | ->none - death |(可被免疫)| |轰炸：blast/wound | ->none - death |(可对免疫爆炸的护甲产生伤害，不可被免疫)| |控场：blast/stun | ->stun - none |(不消化层数，不可被免疫) 静电力场| |保留：blast/none | ->none - none |(不可被免疫)|
-            - 激光类无视护甲，额定减层，需要高层数来保证激光武器伤害方式运行
-            - 需要对应护甲配合使用
-        - **对玩家**（玩家护甲针对此伤害类型制作） |受伤害类型 | 角色状态 | 备注 | | -- | -- | -- | |动能：hit/death | ->none - wound - death| (抗致死减伤，不可被免疫)| |眩晕：hit/stun | ->stun - death |(可对免疫动能的护甲产生伤害，带控制，可免疫)| |中甲：hit/wound | ->none - death |(不可被免疫)| |重穿：hit/none | ->none - death |(不可被免疫)| |爆炸：blast/death | ->none - wound - death |(不可被免疫)| |轰炸：blast/wound | ->none - death |(可对免疫爆炸的护甲产生伤害，不可被免疫)| |控场：blast/stun | ->stun - none |(不消化层数，可免疫) 静电力场| |保留：blast/none | ->none - none |(不可被免疫)|
-            - 玩家仅能免疫眩晕
+        + **对敌方**（敌方护甲针对此伤害类型制作）
+            |受伤害类型 | 角色状态 | 备注 |
+            | -- | -- | -- |
+            |动能：hit/death    | ->none - death |(抗致死减伤，可被免疫)|
+            |眩晕：hit/stun     | ->stun - death |(可对免疫动能的护甲产生伤害，带控制，可被免疫)|
+            |中甲：hit/wound    | ->none - death |(可被免疫)|
+            |重穿：hit/none     | ->none - death |(不可被免疫)|
+            |爆炸：blast/death  | ->none - death |(可被免疫)|
+            |轰炸：blast/wound  | ->none - death |(可对免疫爆炸的护甲产生伤害，不可被免疫)|
+            |控场：blast/stun   | ->stun - none  |(不消化层数，不可被免疫) 静电力场|
+            |保留：blast/none   | ->none - none  |(不可被免疫)|
+            + 激光类无视护甲，额定减层，需要高层数来保证激光武器伤害方式运行
+            + 需要对应护甲配合使用
+        + **对玩家**（玩家护甲针对此伤害类型制作）
+            |受伤害类型 | 角色状态 | 备注 |
+            | -- | -- | -- |
+            |动能：hit/death    | ->none - wound - death| (抗致死减伤，不可被免疫)|
+            |眩晕：hit/stun     | ->stun - death |(可对免疫动能的护甲产生伤害，带控制，可免疫)|
+            |中甲：hit/wound    | ->none - death |(不可被免疫)|
+            |重穿：hit/none     | ->none - death |(不可被免疫)|
+            |爆炸：blast/death  | ->none - wound - death |(不可被免疫)|
+            |轰炸：blast/wound  | ->none - death |(可对免疫爆炸的护甲产生伤害，不可被免疫)|
+            |控场：blast/stun   | ->stun - none  |(不消化层数，可免疫) 静电力场|
+            |保留：blast/none   | ->none - none  |(不可被免疫)|
+            + 玩家仅能免疫眩晕
     - 护甲类型
         - 通用护甲（肉甲/max 300 层）
         - 重型护甲（免疫爆炸/max 300 层）
