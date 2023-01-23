@@ -4,13 +4,13 @@ drop_count_factor_on_death="0"
 drop_count_factor_on_player_death="1.0"
 time_to_live_out_in_the_open="300"
 player_death_drop_owner_lock_time="300"
-key="hd_rl112_recoilless_rifle_mk3.weapon" 
+key="hd_mls4x_commando_mk3.weapon" 
 on_ground_up="0 0 1" 
 > 
     <specification 	
     slot="1" 	
-    retrigger_time="1" 
-	last_burst_retrigger_time="1"
+    retrigger_time="0.363" 
+	last_burst_retrigger_time="0.363"
     accuracy_factor="1.0" 
 	spread_range="0.05"
 	stance_accuracy_rate="1.0"
@@ -23,7 +23,7 @@ on_ground_up="0 0 1"
     suppressed="0" 
 	class="3" 
 	comsune="1"
-    name="RL-112 Recoilless Rifle MK3" 
+    name="MLS-4X Commando MK3" 
 	sight_range_modifier="1.2" 
 	burst_shots="1" 
     projectiles_per_shot="1" 
@@ -34,15 +34,16 @@ on_ground_up="0 0 1"
 	stab_range="0" 
 	use_basic_muzzle_smoke_effect="0"
 	/> 
-	<!-- MK1 A laser sight has been added to assist with aiming. -->
-	<!-- MK2 	Upgraded ammunition with significantly improved anti-armor capabilities, allowing the weapon to damage any target, no matter the angle it hits at. -->
-
+	<!-- MK2 mag-4 up mag-8 -->
+	<!-- Mk3 Explosive to Anti-Tank -->
+	<!-- 165 rpm -->
+	
 	<!--武器模型和HUD-->
 	<weak_hand_hold offset="0.0" /> <!--模型X轴偏移-->
-	<model filename="hd_rl112_recoilless_rifle_full_upgrade.xml" /> 
+	<model filename="hd_mls4x_commando.xml" /> 
     <model mesh_filename="" texture_filename="" /> <!--调用mesh模型-->
     <addon_model filename="" /> <!--附加模型，固定绑骨到肩膀-->
-    <hud_icon filename="hd_rl112_recoilless_rifle_mk3.png" /> <!--武器为110x220像素，投掷物为110x110-->
+    <hud_icon filename="hd_mls4x_commando_mk3.png" /> <!--武器为110x220像素，投掷物为110x110-->
 	
 	<!--武器动作，必须指定recoil和reload动作，部分动作留空会默认调用常规双手武器动作或者无动作-->
     <animation key="recoil" animation_key="recoil, law" /> <!--后坐力动作，半身动作-->
@@ -61,7 +62,7 @@ on_ground_up="0 0 1"
     <animation state_key="prone_still" animation_key="" /><!--全身动作-->
 	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
 	<animation state_key="stabbing" animation_key="pistol whip 3" /><!--半身动作，武器可设置脱手-->
- 	<animation state_key="changing_weapon_in" animation_key="reloading_hvy_5s" /><!--半身动作，切换武器，本武器收回-->
+ 	<animation state_key="changing_weapon_in" animation_key="mls4x_commando_reload_still" /><!--半身动作，切换武器，本武器收回-->
 	<animation state_key="changing_weapon_out" animation_key="still, with law"/><!--半身动作，切换武器，本武器取出-->
 	<!--武器音频-->
     <sound key="effect" fileref="pf98_effect.wav" pitch_variety="0" volume="0.25" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
@@ -86,43 +87,37 @@ on_ground_up="0 0 1"
     <inventory encumbrance="3.0" price="0.0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
     
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
-    <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="5" can_be_detected_by_footmen="1" 
-	time_to_live="1" can_be_detected_by_driver="1" can_be_disarmed="0" name="RL-112 Recoilless Rifle" radius="0.6"> 
+    <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="48" can_be_detected_by_footmen="1" 
+	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0" name="MLS-4X Commando MK3" radius="0.6"> 
 	
-        <result class="spawn" instance_class="projectile" instance_key="hd_rl112_recoilless_rifle_mk3_damage.projectile" 
+        <result class="spawn" instance_class="projectile" instance_key="hd_mls4x_commando_mk3_damage.projectile" 
 		min_amount="5" max_amount="5" offset="0 0.5 0" position_spread="2 0" direction_spread="0.1 0" />
-		<!-- damage 300 轰炸伤-->
-       	<!-- 50x6 -->
-		
+		<!-- MK3 damage 17 轰炸伤-->
+   
 		<trigger class="impact" time_to_live="0.11"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 	
-		<!--命中音效-->
-		<sound class="result" key="other" fileref="at_hit_sfx_1.wav" pitch_variety="0.03" volume="1.0" />
+		<sound class="result" key="other" fileref="at_hit_sfx_2.wav" pitch_variety="0.03" volume="1.0" />
 	
-		<!--命中特效-->
-		<!--
-		<effect class="result" key="terrain" ref="" lighting="0"/>
-		<effect class="activated" ref="general_weapon_avtivated_bullet_light" />
-		-->
+
 		<trail probability="1" key="nova_trail"/>	
-		<model mesh_filename="APFSDS.xml" />
+		<model mesh_filename="hd_mls4x_commando_missile.xml" />
 		
-		<effect class="result" key="terrain" ref="nova_result_impact_flame_1" lighting="0" post_processing="0"/> 
-		<effect class="result" key="terrain" ref="nova_result_impact_flame_2" lighting="0" post_processing="0"/> 
-		<effect class="result" key="terrain" ref="nova_result_impact_flame_3" lighting="0" post_processing="0"/> 
-		<effect class="result" key="terrain" ref="nova_result_impact_flame_4" lighting="0" post_processing="0"/> 
-		<effect class="result" key="terrain" ref="nova_result_blast_smoke_expanding" lighting="0" post_processing="1"/> 
-		<effect class="result" key="terrain" ref="nova_result_blast_smoke" lighting="0" post_processing="1"/> 
-		<effect class="result" key="terrain" ref="nova_result_impact_spark" lighting="0" post_processing="1"/> 
-		<effect class="result" key="terrain" ref="nova_result_impact_spark_2" lighting="0" post_processing="0"/> 
-		<effect class="result" key="terrain" ref="nova_result_ambient" lighting="0" post_processing="0"/> 
-		<effect class="result" key="terrain" ref="nova_result_ambient_ground" lighting="0" post_processing="0"/> 
-		<effect class="result" key="terrain" ref="nova_result_blast_ring" lighting="0" post_processing="0"/> 
-		<effect class="result" key="terrain" ref="nova_result_blast_ring_2" lighting="0" post_processing="0"/> 
-		<effect class="result" key="terrain" ref="nova_result_blast_fire" lighting="0" post_processing="0"/> 
-		<effect class="result" key="terrain" ref="nova_gl_hit_smoke_02" lighting="0" post_processing="1"/> 
-		<effect class="result" key="terrain" ref="nova_result_ground_smoke" lighting="0" post_processing="1"/>
+		<effect class="result" key="terrain" ref="nova_s_result_impact_flame_1" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_impact_flame_2" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_impact_flame_3" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_impact_flame_4" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_blast_smoke_expanding" lighting="0" post_processing="1"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_blast_smoke" lighting="0" post_processing="1"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_impact_spark" lighting="0" post_processing="1"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_impact_spark_2" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_ambient" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_ambient_ground" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_blast_ring" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_blast_ring_2" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_blast_fire" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_s_gl_hit_smoke_02" lighting="0" post_processing="1"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_ground_smoke" lighting="0" post_processing="1"/>
 		
 		<effect class="activated" ref="general_activated_at_smoke_trail"/>
 
@@ -146,31 +141,30 @@ on_ground_up="0 0 1"
     </projectile>
 	
 	<!--枪口特效-->
-	<effect class="muzzle" ref="nova_muzzle_fire_smoke" post_processing="1"/>
-	<effect class="muzzle" ref="nova_muzzle_fire_smoke_2" post_processing="1"/>
-	<effect class="muzzle" ref="nova_muzzle_fireball" post_processing="1"/>
-	<effect class="muzzle" ref="nova_muzzle_fireball_side" />
-	<effect class="muzzle" ref="nova_muzzle_fireball_side_2" />
-	<effect class="muzzle" ref="nova_muzzle_fireball_side_3" post_processing="1"/>
-	<effect class="muzzle" ref="nova_muzzle_ambient"/>
-	<effect class="muzzle" ref="nova_muzzle_ambient_ground"/>
-	<effect class="muzzle" ref="nova_muzzle_spark"/>
+	<effect class="muzzle" ref="nova_s_muzzle_fire_smoke" post_processing="1"/>
+	<effect class="muzzle" ref="nova_s_muzzle_fire_smoke_2" post_processing="1"/>
+	<effect class="muzzle" ref="nova_s_muzzle_fireball" post_processing="1"/>
+	<effect class="muzzle" ref="nova_s_muzzle_fireball_side" />
+	<effect class="muzzle" ref="nova_s_muzzle_fireball_side_2" />
+	<effect class="muzzle" ref="nova_s_muzzle_fireball_side_3" post_processing="1"/>
+	<effect class="muzzle" ref="nova_s_muzzle_ambient"/>
+	<effect class="muzzle" ref="nova_s_muzzle_ambient_ground"/>
+	<effect class="muzzle" ref="nova_s_muzzle_spark"/>
 	
-	<!--雷鸣弹道
+
     <ballistics 
     curve_height="16" 
     near_far_distance="0" 
     speed_estimation_near="0" 
     speed_estimation_far="58" 
-    max_speed="58" 
+    max_speed="40" 
     randomness="0" 
     tweak_factor="1.48" /> 
-	该弹道适配弹头参数：pulldon_in_air="48"
-	-->
+	
 	
 	<!--姿态精度-->
-    <stance state_key="running" accuracy="0.5" /> 
-    <stance state_key="walking" accuracy="0.92" />
+    <stance state_key="running" accuracy="1" /> 
+    <stance state_key="walking" accuracy="1" />
 	<stance state_key="standing" accuracy="1" />
 	<stance state_key="crouching" accuracy="1" />
     <stance state_key="crouch_moving" accuracy="1" />
