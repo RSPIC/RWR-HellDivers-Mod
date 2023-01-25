@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<models>
+	<!-- <model filename="hdivers_ceremonial.xml" /> -->
+	
+	<model filename="exo44_walker.xml">
+		<requirement class="weapon" slot="0" key="hd_exo44_walker_mk3_mg.weapon"/>
+	</model>
+	
+	<model filename="exo44_walker.xml">
+		<requirement class="weapon" slot="1" key="hd_exo44_walker_mk3_missile.weapon"/>
+	</model>
+
+	
+</models>
