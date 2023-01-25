@@ -115,7 +115,7 @@
             - 无衰减
             - 20m 全效射距
         - √ **MG 机枪系**
-            - 笨重但强力：移速-0.1/架枪、卧姿精度高
+            - 笨重但强力：移速-0.3/架枪、卧姿精度高
             - 更慢的衰减
             - 30m 全校射距 90m 极限射距
             - 仅趴射可获得 0.25 视距加成
@@ -331,7 +331,7 @@
     - 载具
         - Deploy:Vehicles
             >
-            > - **EXO-44 Walker Exosuit**
+            > - √ **EXO-44 Walker Exosuit**
             > - **EXO-48 Obsidian Exosuit**
             > - **EXO-51 Lumberer Exosuit**
             > - √ **M5 APC**
