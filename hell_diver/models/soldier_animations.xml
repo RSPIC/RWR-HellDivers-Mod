@@ -57239,7 +57239,26 @@
 		<position x="15.0000" y="-1.5880" z="-3.2099" node_name="foot.L"/>
 	</frame>
 </animation>
-
+	<animation loop="0" end="0.000000" speed="1.000000" comment="exo48_recoil_lefthand">
+		<frame time="0.000000">
+			<position x="0.0000" y="75.0000" z="-0.0000" 		node_name="head"/>
+			<position x="0.0000" y="70.0000" z="-0.0000" 		node_name="neck"/>
+			<position x="-32.0000" y="70.0000" z="-0.0000"	 node_name="shoulder.R"/>
+			<position x="32.0000" y="70.0000" z="-0.0000" 	node_name="shoulder.L"/>
+			<position x="32.0000" y="60.0000" z="-0.0000"	 node_name="arm.R"/>
+			<position x="32.0000" y="60.0000" z="-0.0000"	 node_name="arm.L"/>
+			<position x="32.0000" y="50.0000" z="45.0000"	 node_name="hand.R"/>
+			<position x="32.0000" y="50.0000" z="45.0000"	 node_name="hand.L"/>
+			<position x="0.0000" y="53.0000" z="-0.0000" 	node_name="mindspine"/>
+			<position x="-15.0000" y="48.0000" z="-3.0000"	 node_name="hip.R"/>
+			<position x="15.0000" y="48.0000" z="-3.0000" 	node_name="hip.L"/>
+			<position x="-15.0000" y="30.0000" z="10.0000" 	node_name="leg.R"/>
+			<position x="15.0000" y="30.0000" z="10.0000" 	node_name="leg.L"/>
+			<position x="-15.0000" y="-0.0000" z="0.0000" 	node_name="foot.R"/>
+			<position x="15.0000" y="0.0000" z="0.0000" 	node_name="foot.L"/>
+        </frame>
+    </animation>
+ 
 
 <!-- CYBORGS -->
 <!-- SquadLeader 兵种-->
