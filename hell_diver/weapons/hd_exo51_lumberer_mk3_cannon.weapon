@@ -89,7 +89,7 @@ key="hd_exo51_lumberer_mk3_cannon.weapon"
     <inventory encumbrance="50.0" price="0.0" /> 
     <weak_hand_hold offset="0.3" /> 
 
-    <projectile file="hd_general_spawn.projectile" pulldown_in_air="5" can_be_detected_by_footmen="1" 
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="8" can_be_detected_by_footmen="1" 
 	time_to_live="1" can_be_detected_by_driver="1" can_be_disarmed="0" name="EXO-51 Lumberer MK3" radius="0.7"> 
 		
         <result class="spawn" instance_class="projectile" instance_key="hd_exo51_lumberer_mk3_cannon_damage.projectile" 

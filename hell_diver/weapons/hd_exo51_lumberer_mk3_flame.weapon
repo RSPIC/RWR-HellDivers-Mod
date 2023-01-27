@@ -11,9 +11,9 @@ key="hd_exo51_lumberer_mk3_flame.weapon"
     slot="0" 	
     retrigger_time="0.06" 
     accuracy_factor="0.985" 
-	spread_range="0.3"
+	spread_range="0.1"
 	stance_accuracy_rate="1.0"
-    sustained_fire_grow_step="-0.21" 
+    sustained_fire_grow_step="-0.22" 
     sustained_fire_diminish_rate="-1.8" 
     magazine_size="500" 
 	reload_one_at_a_time="1"
@@ -89,11 +89,11 @@ key="hd_exo51_lumberer_mk3_flame.weapon"
     <inventory encumbrance="50.0" price="0.0" /> 
     <weak_hand_hold offset="0.3" /> 
 
-    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="5" can_be_detected_by_footmen="1" 
 	time_to_live="0.9" can_be_detected_by_driver="1" can_be_disarmed="0" name="EXO-51 Lumberer MK3" radius="1.5"> 
 		
-		<result class="spawn" instance_class="grenade" instance_key="hd_flam40_incinerator_mk3_damage.projectile"
-		 min_amount="1" max_amount="2" offset="0 1.0 0" position_spread="1 0" direction_spread="0.0 0.0" />
+		<result class="spawn" instance_class="grenade" instance_key="hd_exo51_lumberer_mk3_flame_damage.projectile"
+		 min_amount="2" max_amount="2" offset="0 1.0 0" position_spread="1 0" direction_spread="0.0 0.0" />
 		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
@@ -122,7 +122,7 @@ key="hd_exo51_lumberer_mk3_flame.weapon"
     </projectile>
 
 
-    <stance state_key="running" accuracy="0.5" /> 
+    <stance state_key="running" accuracy="0.9" /> 
     <stance state_key="walking" accuracy="0.9" />
 	<stance state_key="standing" accuracy="0.955" />
 	<stance state_key="crouching" accuracy="0.99" />
