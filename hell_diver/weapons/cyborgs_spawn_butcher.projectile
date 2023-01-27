@@ -26,5 +26,24 @@ pulldown_in_air="4.0"
     <capacity value="0" source="rank" source_value="0.0" /> 
     <capacity value="9" source="rank" source_value="0.0" /> 
 	<inventory encumbrance="0.5" price="0.0" />
-	
+    
+	<effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_faster" lighting="0"/>
+	<effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_leave_faster" lighting="0"/>
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		
+		<sound class="result" key="other" fileref="cyborgs_dropping.wav" volume="1" />
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />	
 </projectile>
