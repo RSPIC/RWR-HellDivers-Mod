@@ -59,7 +59,7 @@ class squad_leader_call : Tracker {
                     int factionid = character.getIntAttribute("faction_id");
                     Vector3 pos_offset = Vector3(0,20,0); //这里修改高度偏移
                     pos=pos.add(pos_offset);
-                    Orientation m_rotate = Orientation(0,1,0,rand(0,3.14));
+                    Orientation m_rotate = Orientation(0,1,0,float(rand(0,3.14)));
                     spawnVehicle(m_metagame,1,factionid,getRandomOffsetVector(pos,2,2),m_rotate,"cyborgs_spawn_berserker_model.vehicle"); //生成载具 消耗1c资源
                     spawnVehicle(m_metagame,1,factionid,getRandomOffsetVector(pos,3),m_rotate,"cyborgs_spawn_berserker_model.vehicle"); //生成载具 消耗1c资源
 
@@ -81,7 +81,7 @@ class squad_leader_call : Tracker {
 
             case 1: {
                 int m_ownerid  = event.getIntAttribute("owner_id");
-                Vector3 m_pos = event.getStringAttribute("position");
+                Vector3 m_pos = stringToVector3(event.getStringAttribute("position"));
                 const XmlElement@ m_faction = getFactionInfo(m_metagame,m_ownerid);
                 if (m_faction !is null){
                     if (m_faction.getStringAttribute("name")=="Cyborgs") //验证阵营信息 消耗1q资源，这是保底，可以为了性能减少稳定性删除本if
