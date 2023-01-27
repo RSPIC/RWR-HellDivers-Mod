@@ -80,7 +80,7 @@ class squad_leader_call : Tracker {
             case 0: {break;}
 
             case 1: {
-                int m_ownerid  = event.getIntAttribute("faction_id");
+                int m_ownerid  = event.getIntAttribute("owner_id");
                 Vector3 m_pos = stringToVector3(event.getStringAttribute("position"));
                 const XmlElement@ m_faction = getFactionInfo(m_metagame,m_ownerid);
                 if (m_faction !is null){
