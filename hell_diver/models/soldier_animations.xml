@@ -52877,7 +52877,7 @@
         </frame>
     </animation>
 <!-- EXO机甲 -->
-    <animation loop="1" end="1.300000" speed="1.000000" comment="exo_running">
+    <animation loop="1" end="1.300000" speed="1.000000" comment="exo_running" speed_spread="0.080000">
         <frame time="0.000000">
             <position x="0.000000" y="75.000000" z="-0.000000" />
             <position x="0.000000" y="70.000000" z="-0.000000" />
@@ -53559,7 +53559,7 @@
             <position x="15.000000" y="-1.875700" z="-10.613400" />
         </frame>
     </animation>
-	<animation loop="1" end="1.300000" speed="0.700000" comment="exo_walking">
+	<animation loop="1" end="1.300000" speed="0.700000" comment="exo_walking" speed_spread="0.080000">
         <frame time="0.000000">
             <position x="0.000000" y="75.000000" z="-0.000000" />
             <position x="0.000000" y="70.000000" z="-0.000000" />
@@ -54241,7 +54241,7 @@
             <position x="15.000000" y="-1.875700" z="-10.613400" />
         </frame>
     </animation>
-	<animation loop="1" end="1.300000" speed="0.700000" comment="exo_walking_back">
+	<animation loop="1" end="1.300000" speed="0.700000" comment="exo_walking_back" speed_spread="0.080000">
 	<frame time="0.0000">
 		<position x="0.0000" y="75.0000" z="-0.0000" node_name="head"/>
 		<position x="0.0000" y="70.0000" z="-0.0000" node_name="neck"/>
@@ -54923,7 +54923,7 @@
 		<position x="15.0000" y="-1.5880" z="-3.2099" node_name="foot.L"/>
 	</frame>
 </animation>
-	<animation loop="0" end="0.03330" speed="0.500000" comment="exo_recoil_righthand">
+	<animation loop="0" end="0.03330" speed="0.500000" comment="exo_recoil_righthand" >
 	<frame time="0.0000">
 		<position x="0.0000" y="75.0000" z="-0.0000" 		node_name="head"/>
 		<position x="0.0000" y="70.0000" z="-0.0000" 		node_name="neck"/>
@@ -55193,7 +55193,7 @@
             <position x="15.000000" y="0.000000" z="0.000000" 	node_name="foot.L"/>
         </frame>
     </animation>
-	<animation loop="1" end="1.300000" speed="1.000000" comment="exo44_running_lefthand">
+	<animation loop="1" end="1.300000" speed="1.000000" comment="exo44_running_lefthand" speed_spread="0.080000">
 	<frame time="0.0000">
 		<position x="0.0000" y="75.0000" z="-0.0000" node_name="head"/>
 		<position x="0.0000" y="70.0000" z="-0.0000" node_name="neck"/>
@@ -55875,7 +55875,7 @@
 		<position x="15.0000" y="-1.8757" z="-10.6134" node_name="foot.L"/>
 	</frame>
 </animation>
-	<animation loop="1" end="1.300000" speed="0.700000" comment="exo44_walking_lefthand">
+	<animation loop="1" end="1.300000" speed="0.700000" comment="exo44_walking_lefthand" speed_spread="0.080000">
 	<frame time="0.0000">
 		<position x="0.0000" y="75.0000" z="-0.0000" node_name="head"/>
 		<position x="0.0000" y="70.0000" z="-0.0000" node_name="neck"/>
@@ -56557,7 +56557,7 @@
 		<position x="15.0000" y="-1.8757" z="-10.6134" node_name="foot.L"/>
 	</frame>
 </animation>
-	<animation loop="1" end="1.300000" speed="0.700000" comment="exo44_walking_back_lefthand">
+	<animation loop="1" end="1.300000" speed="0.700000" comment="exo44_walking_back_lefthand" speed_spread="0.080000">
 	<frame time="0.0000">
 		<position x="0.0000" y="75.0000" z="-0.0000" node_name="head"/>
 		<position x="0.0000" y="70.0000" z="-0.0000" node_name="neck"/>
@@ -57239,7 +57239,26 @@
 		<position x="15.0000" y="-1.5880" z="-3.2099" node_name="foot.L"/>
 	</frame>
 </animation>
-
+	<animation loop="0" end="0.000000" speed="1.000000" comment="exo48_recoil_lefthand">
+		<frame time="0.000000">
+			<position x="0.0000" y="75.0000" z="-0.0000" 		node_name="head"/>
+			<position x="0.0000" y="70.0000" z="-0.0000" 		node_name="neck"/>
+			<position x="-32.0000" y="70.0000" z="-0.0000"	 node_name="shoulder.R"/>
+			<position x="32.0000" y="70.0000" z="-0.0000" 	node_name="shoulder.L"/>
+			<position x="32.0000" y="60.0000" z="-0.0000"	 node_name="arm.R"/>
+			<position x="32.0000" y="60.0000" z="-0.0000"	 node_name="arm.L"/>
+			<position x="32.0000" y="50.0000" z="45.0000"	 node_name="hand.R"/>
+			<position x="32.0000" y="50.0000" z="45.0000"	 node_name="hand.L"/>
+			<position x="0.0000" y="53.0000" z="-0.0000" 	node_name="mindspine"/>
+			<position x="-15.0000" y="48.0000" z="-3.0000"	 node_name="hip.R"/>
+			<position x="15.0000" y="48.0000" z="-3.0000" 	node_name="hip.L"/>
+			<position x="-15.0000" y="30.0000" z="10.0000" 	node_name="leg.R"/>
+			<position x="15.0000" y="30.0000" z="10.0000" 	node_name="leg.L"/>
+			<position x="-15.0000" y="-0.0000" z="0.0000" 	node_name="foot.R"/>
+			<position x="15.0000" y="0.0000" z="0.0000" 	node_name="foot.L"/>
+        </frame>
+    </animation>
+ 
 
 <!-- CYBORGS -->
 <!-- SquadLeader 兵种-->

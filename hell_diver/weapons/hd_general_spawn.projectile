@@ -84,7 +84,10 @@ player_death_drop_owner_lock_time="0"
 
     <sound class="result" key="static_object" copy="terrain" />
 	
-    <effect class="stab" key="character" ref="BloodSplat50Cal" lighting="1" />
-    <effect class="stab" key="character" ref="BurstShine50Cal" lighting="1" post_processing="0" />
+    <effect class="result" key="character" ref="BloodSplat50Cal" lighting="1" />
+    <effect class="result" key="character" ref="BurstShine50Cal" lighting="1" post_processing="0" />
+
+    <effect class="result" key="character" ref="general_hit_character_cross_2"  />
+    <effect class="result" key="character" ref="general_hit_character_cross_1"  />
 	
 </projectile>

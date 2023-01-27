@@ -4,6 +4,7 @@
 #include "log.as"
 #include "query_helpers.as"
 #include "query_helpers2.as"
+#include "all_helper.as"
 
 //Author: RST
 //support by NetherCrow
@@ -51,21 +52,7 @@ dictionary SpawnAiIndex = {
 		{"Warlord",11}
 
 };
-	// --------------------------------------------
-void SpawnSoldier(Metagame@ metagame, uint count, uint factionId, Vector3 position, string instanceKey) {	//copy from GFLhelpers.as
-	for (uint i = 0; i < count; ++i) {
-		metagame.getComms().send(
-		"<command " +
-		" class='create_instance' " + 
-		" faction_id='" + factionId + "' " +
-		" position='" + position.toString() + "' " + 
-		" offset='0 0 0' " +
-		" instance_class='soldier' " + 
-		" instance_key='" + instanceKey + "'> " + 
-		"</command>");
-	}
-}
-	// --------------------------------------------
+
 class spawn_ai : Tracker {
 	protected Metagame@ m_metagame;
 

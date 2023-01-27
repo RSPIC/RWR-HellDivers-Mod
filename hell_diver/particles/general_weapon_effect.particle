@@ -2158,7 +2158,88 @@ particle_system general_helldiver_dead_2		//固定
 		force_application add
 	}
 }
-
+particle_system general_hit_character_cross_2		//收缩
+{
+	quota 50
+	material hd_hit_character_cross_2
+	particle_width 15
+	particle_height 15
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.005
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 0.00001
+		time_to_live 0.12
+		duration 0.01
+	}
+	affector Scaler
+	{
+		rate -120
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.5
+		colour1 0 0 0 0
+		time2 0.51
+		colour2 1 1 1 1
+		time3 1
+		colour3 1 1 1 1
+	}
+}
+particle_system general_hit_character_cross_1		//放大
+{
+	quota 50
+	material hd_hit_character_cross_1
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.005
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 0.00001
+		time_to_live 0.05
+		duration 0.01
+	}
+	affector Scaler
+	{
+		rate 220
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.8
+		colour1 1 1 1 1
+		time2 0.81
+		colour2 1 1 1 1
+		time3 1
+		colour3 1 1 1 1
+	}
+}
 
 --------------------------------------material-----------------------------------
 material alpha_blend_base{
@@ -2405,4 +2486,28 @@ material helldiver_dead : alpha_blend_base
 		depth_func always_pass
         texture_unit{
             texture helldiver_dead.png 	
+}}}}
+material helldiver_dead : alpha_blend_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture helldiver_dead.png 	
+}}}}
+material hd_hit_character_cross_2 : alpha_blend_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture hd_hit_character_cross_2.png 	
+}}}}
+material hd_hit_character_cross_1 : alpha_blend_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture hd_hit_character_cross_1.png 	
 }}}}

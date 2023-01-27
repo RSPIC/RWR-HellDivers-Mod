@@ -30,6 +30,8 @@
 #include "idler_kicker.as"
 #include "supporter_command_handler.as"
 #include "spawn_ai.as"
+#include "squad_leader_call.as"
+
 
 // community trackers
 //#include "gps_laptop.as"
@@ -330,6 +332,7 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 //		addTracker(RangeFinder(this)); 
 //		addTracker(Halloween(this));    // Halloween event only
 		addTracker(spawn_ai(this));   
+		addTracker(squad_leader_call(this));   
 	}
 
 	protected void setupDisableRadioAtMatchOver() {

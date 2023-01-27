@@ -5,9 +5,11 @@
 	<model filename="exo44_walker.xml">
 		<requirement class="weapon" slot="0" key="hd_exo44_walker_mk3_mg.weapon"/>
 	</model>
-	
 	<model filename="exo44_walker.xml">
 		<requirement class="weapon" slot="1" key="hd_exo44_walker_mk3_missile.weapon"/>
+	</model>
+	<model filename="exo48_obsidian.xml">
+		<requirement class="weapon" slot="1" key="hd_exo48_obsidian_mk3_cannon.weapon"/>
 	</model>
 
 	
