@@ -4,44 +4,39 @@ drop_count_factor_on_death="0"
 drop_count_factor_on_player_death="1"
 time_to_live_out_in_the_open="0"
 player_death_drop_owner_lock_time="0"
-key="hd_exo44_walker_mk3_missile.weapon" 
+key="hd_exo51_lumberer_mk3_cannon.weapon" 
 > 
 	<tag name="machine gun" />
     <specification 	
     slot="1" 	
-    retrigger_time="0.125" 
+    retrigger_time="2" 
     accuracy_factor="1" 
 	spread_range="0.3"
 	stance_accuracy_rate="1.0"
     sustained_fire_grow_step="0.125" 
     sustained_fire_diminish_rate="0.2" 
-    magazine_size="8" 
+    magazine_size="15" 
 	reload_one_at_a_time="1"
     can_shoot_standing="1" 
     can_shoot_crouching="1" 
 	can_shoot_prone="0"	
     suppressed="0" 
 	class="0" 
-    name="EXO-44 Stomper MK3 [Missile]" 
+    name="EXO-51 Lumberer MK3 [AT Canon]" 
 	sight_range_modifier="1.0" 
 	sight_height_offset="1.0" 
 	burst_shots="1" 
     projectiles_per_shot="1" 
-    projectile_speed="160.0"
+    projectile_speed="100.0"
 	barrel_offset="0.2" 
 	carry_in_two_hands="0" 
 	stab_enabled="1" 
 	stab_range="0" 
 	use_basic_muzzle_smoke_effect="0"
 	/> 
-	<!--480RPM 25m range-->
-	<!-- mk2 Increases the ammunition supply and stability of the minigun. -->
-	<!-- mk3 Upgrades the missiles to armor-piercing, anti-tank missiles. -->
-	<!-- Stratagem name changed to EXO-44 'Stomper' Exosuit. -->
-
-	<!--多模式-->
-    <!-- <next_in_chain key="hd_exo44_walker_mk3_mg.weapon" share_ammo="0" />  -->
-	<!-- 取消，因为从背包里刷新后，切模式会补满弹夹 -->
+	<!--30RPM 100m range 15mag-->
+	<!-- mk2 Increases the magazine size of the cannon from 10 to 15 rounds. -->
+	<!-- mk3 Increases the magazine size of the flamer from 200 to 300 units of fuel. -->
 
 	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_exo_dead_damage.projectile" 
 	min_amount="20" max_amount="20" offset="0 1 0" position_spread="2.0 1" direction_spread="0.005 0.0" />
@@ -68,7 +63,7 @@ key="hd_exo44_walker_mk3_missile.weapon"
     <animation state_key="changing_weapon_in" animation_key="exo_recoil_righthand" /><!--半身动作，切换武器，本武器收回-->
 	<animation state_key="changing_weapon_out" animation_key="exo_recoil_righthand"/><!--半身动作，切换武器，本武器取出-->
  
- 	<sound key="fire" fileref="hd_at_launch_1.wav" pitch_variety="0.08" volume="0.3" />
+ 	<sound key="fire" fileref="hd_at_turret_fire_1.wav" pitch_variety="0.08" volume="0.5" />
     <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />
     <sound key="dry_fire" fileref="hd_mg94_dryfire_02.wav" pitch_variety="0.03" volume="1.0" />
     <sound key="magazine_out" fileref="hd_mg94_mag_out.wav" />
@@ -85,7 +80,7 @@ key="hd_exo44_walker_mk3_missile.weapon"
     <model filename="" /> 
     <model mesh_filename="" texture_filename="" /> 
     <addon_model filename="" /> 
-    <hud_icon filename="exo_missile_launcher.png" /> 
+    <hud_icon filename="exo_90mm_cannon.png" /> 
 
   	<capacity value="0" source="rank" source_value="0.0" />
 	<capacity value="1" source="rank" source_value="0.0" />
@@ -94,21 +89,18 @@ key="hd_exo44_walker_mk3_missile.weapon"
     <inventory encumbrance="50.0" price="0.0" /> 
     <weak_hand_hold offset="0.3" /> 
 
-	<ballistics curve_height="1.0" near_far_distance="0.0" speed_estimation_near="150.0" 
-	speed_estimation_far="150.0" max_speed="150.0" randomness="0.0" tweak_factor="4.8"/> 
-
-    <projectile file="hd_general_spawn.projectile" pulldown_in_air="10" can_be_detected_by_footmen="1" 
-	time_to_live="0.5625" can_be_detected_by_driver="1" can_be_disarmed="0" name="EXO-44 Stomper MK3"> 
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="5" can_be_detected_by_footmen="1" 
+	time_to_live="1" can_be_detected_by_driver="1" can_be_disarmed="0" name="EXO-51 Lumberer MK3" radius="0.7"> 
 		
-        <result class="spawn" instance_class="projectile" instance_key="hd_exo44_walker_mk3_missile_damage.projectile" 
+        <result class="spawn" instance_class="projectile" instance_key="hd_exo51_lumberer_mk3_cannon_damage.projectile" 
 		min_amount="5" max_amount="5" offset="0 0.5 0" position_spread="1.5 0" direction_spread="0.1 0" />
 		<!-- damage 5x50=250 轰炸伤-->
        	<!-- 曲射 -->
 
 		<!--命中音效-->
-		<sound class="result" key="other" fileref="at_hit_sfx_1.wav" pitch_variety="0.03" volume="1.0" />
+		<sound class="result" key="other" fileref="at_hit_sfx_2.wav" pitch_variety="0.03" volume="1.0" />
 	
-		<trigger class="time" time_to_live="0.4"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<trigger class="impact" time_to_live="0.4"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 
 		<trail probability="1" key="nova_trail"/>	
