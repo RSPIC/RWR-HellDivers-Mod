@@ -23,7 +23,7 @@ dictionary squad_leader_call_vehicle_key = {
         // 空
         {"",0},
 
-        {"cyborgs_spawn_berserker_model.vehicle",1}, // 狂战士
+        {"cyborgs_spawn_berserker_model.vehicle",1}, // 狂暴者
 
         // 占位的
         {"666",-1}
@@ -63,7 +63,7 @@ class squad_leader_call : Tracker {
                     spawnVehicle(m_metagame,1,factionid,getRandomOffsetVector(pos,2,2),m_rotate,"cyborgs_spawn_berserker_model.vehicle"); //生成载具 消耗1c资源
                     spawnVehicle(m_metagame,1,factionid,getRandomOffsetVector(pos,3),m_rotate,"cyborgs_spawn_berserker_model.vehicle"); //生成载具 消耗1c资源
 
-                    spawnStaticProjectile(m_metagame,"hd_hellpod_dropping_sound.projectile",pos,characterId,factionid); 
+                    spawnStaticProjectile(m_metagame,"cyborgs_dropping_sound.projectile",pos,characterId,factionid); 
                     //生成音效弹头 1c
 
                     // playSoundAtLocation();
@@ -80,7 +80,7 @@ class squad_leader_call : Tracker {
             case 0: {break;}
 
             case 1: {
-                int m_ownerid  = event.getIntAttribute("owner_id");
+                int m_ownerid  = event.getIntAttribute("faction_id");
                 Vector3 m_pos = stringToVector3(event.getStringAttribute("position"));
                 const XmlElement@ m_faction = getFactionInfo(m_metagame,m_ownerid);
                 if (m_faction !is null){
