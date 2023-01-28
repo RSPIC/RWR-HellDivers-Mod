@@ -337,7 +337,7 @@
             > - √ **M5 APC**
             > - M5-32 HAV
             > - TD-110 Bastion
-            > - MC-109 Hammer Motorcycle
+            > - √ **MC-109 Hammer Motorcycle**
             >
     - **投掷物**
         - √ **Deploy:Support**
