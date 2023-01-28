@@ -332,8 +332,8 @@
         - Deploy:Vehicles
             >
             > - √ **EXO-44 Walker Exosuit**
-            > - **EXO-48 Obsidian Exosuit**
-            > - **EXO-51 Lumberer Exosuit**
+            > - √ **EXO-48 Obsidian Exosuit**
+            > - √ **EXO-51 Lumberer Exosuit**
             > - √ **M5 APC**
             > - M5-32 HAV
             > - TD-110 Bastion
