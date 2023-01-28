@@ -10,21 +10,9 @@
     <capacity value="1" source="rank" source_value="0.0" />
 
 
-		<effect class="result" key="terrain" ref="nova_s_result_impact_flame_1" lighting="0" post_processing="0"/> 
-		<effect class="result" key="terrain" ref="nova_s_result_impact_flame_2" lighting="0" post_processing="0"/> 
-		<effect class="result" key="terrain" ref="nova_s_result_impact_flame_3" lighting="0" post_processing="0"/> 
-		<effect class="result" key="terrain" ref="nova_s_result_impact_flame_4" lighting="0" post_processing="0"/> 
-		<effect class="result" key="terrain" ref="nova_s_result_blast_smoke_expanding" lighting="0" post_processing="1"/> 
-		<effect class="result" key="terrain" ref="nova_s_result_blast_smoke" lighting="0" post_processing="1"/> 
-		<effect class="result" key="terrain" ref="nova_s_result_impact_spark" lighting="0" post_processing="1"/> 
-		<effect class="result" key="terrain" ref="nova_s_result_impact_spark_2" lighting="0" post_processing="0"/> 
-		<effect class="result" key="terrain" ref="nova_s_result_ambient" lighting="0" post_processing="0"/> 
-		<effect class="result" key="terrain" ref="nova_s_result_ambient_ground" lighting="0" post_processing="0"/> 
-		<effect class="result" key="terrain" ref="nova_s_result_blast_ring" lighting="0" post_processing="0"/> 
-		<effect class="result" key="terrain" ref="nova_s_result_blast_ring_2" lighting="0" post_processing="0"/> 
-		<effect class="result" key="terrain" ref="nova_s_result_blast_fire" lighting="0" post_processing="0"/> 
-		<effect class="result" key="terrain" ref="nova_s_gl_hit_smoke_02" lighting="0" post_processing="1"/> 
-		<effect class="result" key="terrain" ref="nova_s_result_ground_smoke" lighting="0" post_processing="1"/>
+		<!-- <effect class="result" key="terrain" ref="car_slide_spary_spark" lighting="0" post_processing="0"/>  -->
+		<!-- <effect class="result" key="terrain" ref="car_slide_up_smoke" lighting="0" post_processing="0"/>  -->
+		<effect class="result" key="terrain" ref="car_health_front_light" lighting="0" post_processing="0"/> 
 
 
 	<sound class="result" key="static_object" copy="terrain" />

@@ -1,0 +1,197 @@
+author: RST
+2023.1.28
+未经授权不可复用、修改使用、仅用于helldiver mod
+车辆通用特效
+
+
+particle_system car_slide_spary_spark
+{
+	quota 500
+	material point_hard_edge
+	particle_width 0.1
+	particle_height 0.22
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 30
+		colour 1 0.3 0 0
+		direction 1 0 0
+		emission_rate 50
+		position 0 0 0
+		velocity_min 1
+		velocity_max 6
+		time_to_live 1
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate -0.05
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0 0
+		time1 0.7
+		colour1 1 0.3 0 0
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 -4 0
+		force_application add
+	}
+	affector DeflectorPlane 
+	{
+		plane_point 0 4 0
+		plane_normal 0 1 0 
+		bounce 0.4
+	}
+}
+particle_system car_slide_up_smoke
+{
+	quota 500
+	material rx1_smoke
+	particle_width 0.3
+	particle_height 0.3
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 50
+		colour 1 1 1 0
+		direction 1 0 0
+		emission_rate 10
+		position 0 0 0
+		velocity_min 0.1
+		velocity_max 1
+		time_to_live 3
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 2
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	-45
+		rotation_speed_range_end	45
+		rotation_range_start	-30
+		rotation_range_end	30
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.8 0.8 0.8 0.4
+		time1 0.7
+		colour1 0.8 0.8 0.8 0.05
+		time2 1
+		colour2 1 1 1 0
+	}
+	affector LinearForce{
+		force_vector 0 0.5 0
+		force_application add
+	}
+}
+
+particle_system car_health_front_light
+{
+	quota 1000
+	material point_soft_edge_100_pass
+	particle_width 20
+	particle_height 20
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.005
+	
+	emitter Point
+	{
+		angle 0
+		colour 0.1 0.1 0.09 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.1
+		duration 0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.1 0.1 0.09 0
+		time1 1
+		colour1 0.1 0.1 0.09 0
+	}
+}
+
+
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+material point_hard_edge : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture point_hard_edge.png 	
+}}}}
+material point_soft_edge_100 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture point_soft_edge_100.png 	
+}}}}
+material explosion_smoke_04_bw_pass : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture explosion_smoke_04_bw.png 	
+}}}}
+
+material rx1_smoke : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture rx1_smoke.png 	
+}}}}
