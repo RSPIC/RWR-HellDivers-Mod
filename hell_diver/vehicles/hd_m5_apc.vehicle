@@ -44,8 +44,8 @@ ai_abandon_when_unsteerable="1"
 	extent="4.0 -1 5.8" 
 	offset="0 0.0 0" 
 	top_offset="0 5 0" 
-	collision_model_pos="0 1.2 -0.3" 
-	collision_model_extent="3.6 2.4 6.0" 
+	collision_model_pos="0 1.0 -0.3" 
+	collision_model_extent="3.6 2.0 6.0" 
 	visual_offset="0 0.25 0" 
 	friction_offset="0.0" 
 	drag_offset="-0.05" 
@@ -56,21 +56,21 @@ ai_abandon_when_unsteerable="1"
 	<turret offset="0 2.48 -1.58" weapon_key="hd_m5_apc_autocannon.weapon" weapon_offset="-0.15 0.5 1.6" weapon_recoil="0.1" max_rotation_step="0.00005" />
 	<turret offset="+1.35 2.07 -0.35" weapon_key="hd_m5_apc_mg94.weapon" weapon_offset="0 0.1 0.6" weapon_recoil="0.01" max_rotation_step="0.0001" rotation="+1.57" rotation_range="2" />
 	<turret offset="-1.35 2.07 -0.35" weapon_key="hd_m5_apc_mg94.weapon" weapon_offset="0 0.1 0.6" weapon_recoil="0.01" max_rotation_step="0.0001" rotation="-1.57" rotation_range="2" />
-
+	<!-- 车体\炮台 -->
 	<visual class="chassis" mesh_filename="m5apc_b0.mesh" texture_filename="hd_m5_body.png" />
 	<visual class="turret" turret_index="0" mesh_filename="m5apc_t0.mesh" texture_filename="hd_m5_body.png" />
 	<visual class="turret" turret_index="1" mesh_filename="40mm.mesh"  />
 	<visual class="turret" turret_index="2" mesh_filename="m5apc_mg.mesh" texture_filename="hd_m5_body.png" />
 	<visual class="turret" turret_index="3" mesh_filename="m5apc_mg.mesh" texture_filename="hd_m5_body.png" />
-	
+	<!-- 轮子 -->
 	<visual class="tire" mesh_filename="apc_wheel.mesh" texture_filename="apc_wheel.png" />
-
+	<!-- 破损车体\炮台 -->
 	<visual class="chassis" key="broken"  mesh_filename="m5apc_b0.mesh" texture_filename="hd_m5_body_broken.png" />
 	<visual class="turret"  key="broken" turret_index="0" mesh_filename="m5apc_t0.mesh" texture_filename="hd_m5_body_broken.png" />
 	<visual class="turret"  key="broken" turret_index="1" mesh_filename="40mm.mesh"  />
-	<visual class="turret"  key="broken" turret_index="2" mesh_filename="m5apc_mg.mesh" texture_filename="hd_m5_body.png" />
-	<visual class="turret"  key="broken" turret_index="3" mesh_filename="m5apc_mg.mesh" texture_filename="hd_m5_body.png" />
-
+	<visual class="turret"  key="broken" turret_index="2" mesh_filename="m5apc_mg.mesh" texture_filename="hd_m5_body_broken.png" />
+	<visual class="turret"  key="broken" turret_index="3" mesh_filename="m5apc_mg.mesh" texture_filename="hd_m5_body_broken.png" />
+	<!-- 玩家 -->
 	<character_slot type="driver" position="0 0.3 +3" rotation="0" exit_rotation="0" hiding="1" />
 	<character_slot type="gunner" position="0 0.3 -3.5" rotation="0" exit_rotation="-3.14" hiding="1" >
 		<turret index="0"/><turret index="1"/>

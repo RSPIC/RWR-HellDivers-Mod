@@ -52,8 +52,8 @@ ai_abandon_when_unsteerable="1"
 	destroy_on_top_hit_time="10"
 	/> 
 
-	<turret offset="-0.8 1.1 0w" weapon_key="hd_m5_apc_mg94.weapon" 
-	weapon_offset="0 0 0.05" weapon_recoil="0.01" max_rotation_step="0.0003" 
+	<turret offset="-0.95 1.2 -0.6" weapon_key="hd_td110_bastion_mg94.weapon" 
+	weapon_offset="0 0 0.85" weapon_recoil="0.01" max_rotation_step="0.0006" 
 	rotation="-0.7" rotation_range="2" />
 
 	<visual class="chassis" mesh_filename="mc109_main.mesh" texture_filename="mc109_bake.png" />
@@ -63,7 +63,7 @@ ai_abandon_when_unsteerable="1"
 	<visual class="rear_tire" mesh_filename="" texture_filename="" />
 
 	<visual class="chassis" key="broken"  mesh_filename="mc109_main.mesh" texture_filename="mc109_bake.png" />
-	<visual class="turret" turret_index="0" mesh_filename="m5apc_mg.mesh" texture_filename="hd_m5_body.png" />
+	<visual class="turret" offset="0.4 -0.1 0.75" turret_index="0" mesh_filename="m5apc_mg.mesh" texture_filename="hd_m5_body.png" />
 
 	<character_slot type="driver" position="-0.2 0.71 -0.45" rotation="0" exit_rotation="1.57" hiding="0"  animation_key="driving atv"/>
 	<character_slot type="gunner" position="-0.75 0.8 -1.05" rotation="0" exit_rotation="-3.14" hiding="0" animation_key="passenger, boat" >

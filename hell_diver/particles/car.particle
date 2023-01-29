@@ -108,7 +108,7 @@ particle_system car_slide_up_smoke
 
 particle_system car_health_front_light
 {
-	quota 1000
+	quota 5000
 	material point_soft_edge_100_pass
 	particle_width 20
 	particle_height 20
@@ -118,25 +118,21 @@ particle_system car_health_front_light
 	billboard_rotation_type vertex
 	common_direction 0 1 0
 	common_up_vector 0 0 1
-	iteration_interval 0.005
+	iteration_interval 0.001
 	
-	emitter Point
+	emitter Box
 	{
-		angle 0
+		angle 180
 		colour 0.1 0.1 0.09 0
 		direction 0 1 0
 		emission_rate 20
-		position 0 0 0
+		position 0 -0.25 0
 		velocity 0.0001
-		time_to_live 0.1
+		time_to_live 0.2
 		duration 0
-	}
-	affector ColourInterpolator
-	{
-		time0 0
-		colour0 0.1 0.1 0.09 0
-		time1 1
-		colour1 0.1 0.1 0.09 0
+		width 0.15
+		height 0.15
+		depth 0.01
 	}
 }
 
@@ -176,6 +172,14 @@ material point_soft_edge_100 : add_base
 {   
     technique{
     pass{
+        texture_unit{
+            texture point_soft_edge_100.png 	
+}}}}
+material point_soft_edge_100_pass : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
         texture_unit{
             texture point_soft_edge_100.png 	
 }}}}

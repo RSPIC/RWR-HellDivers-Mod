@@ -6,9 +6,15 @@
 	<tire_set offset="0.68 0.0 1.19" radius="0.32" />
 	<tire_set offset="0.68 0.0 -1.19" radius="0.32" />
 
-	<control max_speed="23.0" acceleration="6.5" max_reverse_speed="7.0" min_health_to_steer="0.12" max_rotation="0.7" max_water_depth="1.0" steer_smoothening="0.8" />
+	<control max_speed="23.0" acceleration="6.5" max_reverse_speed="7.0" 
+	min_health_to_steer="0.12" max_rotation="0.7" max_water_depth="1.0" steer_smoothening="0.8" />
 	<control max_limiter_speed="7.0" />  
-	<physics max_health="10" mass="4.0" extent="1.44 0.0 3.04" offset="0 0.0 0" top_offset="0 3.2 0" collision_model_pos="0 0.4 -0.16" collision_model_extent="1.76 1.28 3.84" visual_offset="0 0.04 -0.0" preserve_motion_on_impact_factor="1.0" gravity="-40" friction_offset="0.0" drag_offset="-0.15" destroy_on_top_hit="1" destroy_on_top_hit_time="1.0" top_hit_tracking_time="0.6" /> 
+	<physics max_health="10" mass="4.0" extent="1.44 0.0 3.04" offset="0 0.0 0" 
+	top_offset="0 3.2 0" collision_model_pos="0 0.4 -0.16" 
+	collision_model_extent="1.76 1.28 3.84" visual_offset="0 0.04 -0.0" 
+	preserve_motion_on_impact_factor="1.0" gravity="-40" 
+	friction_offset="0.0" drag_offset="-0.15" destroy_on_top_hit="1"
+	 destroy_on_top_hit_time="1.0" top_hit_tracking_time="0.6" /> 
 
 	<visual class="chassis" mesh_filename="jeep_body.mesh" texture_filename="jeep_body.png" />
 	<visual class="chassis" key="broken" mesh_filename="jeep_body_broken.mesh" texture_filename="jeep_body_broken.png" />

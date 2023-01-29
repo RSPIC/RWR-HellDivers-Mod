@@ -12,8 +12,9 @@
 
 		<!-- <effect class="result" key="terrain" ref="car_slide_spary_spark" lighting="0" post_processing="0"/>  -->
 		<!-- <effect class="result" key="terrain" ref="car_slide_up_smoke" lighting="0" post_processing="0"/>  -->
-		<effect class="result" key="terrain" ref="car_health_front_light" lighting="0" post_processing="0"/> 
-
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_green_4s" lighting="0"/>
+	<effect class="result" key="terrain" ref="stratagems_liner_light_green_4s" lighting="0"/>
+	
 
 	<sound class="result" key="static_object" copy="terrain" />
 	<sound class="result" key="vehicle" copy="terrain" />

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>	
 <!-- credit: XEON  modifier: RST-->
 <vehicle  
-name="M5-32 HAV" 
-key="hd_m5_32_hav.vehicle" 
+name="TD-110 Bastion" 
+key="hd_td110_bastion.vehicle" 
 time_to_live_unsteerable="300" 
 map_view_atlas_index="-1" 
 minimum_fill_requirement="0.25"
@@ -18,65 +18,63 @@ ai_abandon_when_unsteerable="1"
 	<tag name="apc" />
 	<tag name="any_tank" />
 
-	<tire_set offset="1.55 0.0 1.87" radius="0.65" />
-	<tire_set offset="1.55 0.0 0.0" radius="0.65" />
-	<tire_set offset="1.55 0.0 -1.52" radius="0.65" />
+	<tire_set offset="1.8 0.0 +3.0" radius="0.4" />
+	<tire_set offset="1.8 0.0 -3.0" radius="0.4" />
 
 	<control 
-	max_speed="12.5" 
-	acceleration="8.0" 
-	max_reverse_speed="8.0" 
-	min_health_to_steer="0.36" 
-	max_rotation="0.65" 
-	max_water_depth="1.9" 
-	steer_smoothening="0.5" />
+	max_speed="10" 
+	acceleration="12.0" 
+	max_reverse_speed="15" 
+	min_health_to_steer="0.10" 
+	max_rotation="0.0" 
+	max_water_depth="2.0" 
+	steer_smoothening="0" 
+	tracked="1" gears="0"
+	/>
 
-	<modifier class="blast_range" value="0.0" />
-	<modifier class="blast_damage" value="-5.0" />
+	<modifier class="blast_range" value="-2.5" />
+	<modifier class="blast_damage" value="-25.0" />
 
 	<physics 
-	max_health="120" 
-	blast_damage_threshold="5" 
-	blast_push_threshold="4"
-	mass="100.0" 
-	broken_mass="30"
+	max_health="80" 
+	blast_damage_threshold="25" 
+	blast_push_threshold="10"
+	mass="200.0" 
+	broken_mass="20"
 	remove_collision_threshold="1.0"
-	extent="4.2 -1 4.8" 
-	offset="0 0.0 0" 
-	top_offset="0 5 0" 
-	collision_model_pos="0 0.6 0" 
-	collision_model_extent="3.8 2.4 6.8" 
-	visual_offset="0.085 0.65 -0.3" 
+	extent="6.0 -2 8" 
+	offset="0 0 0" 
+	top_offset="0 2 0" 
+	collision_model_pos="0 0.9 0.1" 
+	collision_model_extent="4.6 1.5 6.4" 
+	visual_offset="0 0.7 0" 
 	friction_offset="0.0" 
-	drag_offset="-0.05" 
+	drag_offset="-0.45" 
 	destroy_on_top_hit="1"
 	destroy_on_top_hit_time="5"/> 
 
-	<turret offset="0.085 0.1 -1.4" weapon_key="hd_m5_32_hav_at_mk3.weapon" weapon_offset="0.25 2.85 2.05" weapon_recoil="0.1" physics_recoil="0.6" max_rotation_step="0.00005" />
-	<turret offset="+1.35 1.5 0" weapon_key="hd_m5_apc_mg94.weapon" weapon_offset="0 0.8 0.7" weapon_recoil="0.01" max_rotation_step="0.0001" rotation="+1.57" rotation_range="2" />
-	<turret offset="-1.35 1.5 0" weapon_key="hd_m5_apc_mg94.weapon" weapon_offset="0 0.8 0.7" weapon_recoil="0.01" max_rotation_step="0.0001" rotation="-1.57" rotation_range="2" />
+	<turret offset="0.085 -0.1 -1.2" weapon_key="hd_td110_bastion_at_mk3.weapon" weapon_offset="0.25 2.55 6.5" weapon_recoil="2.5" physics_recoil="1.8" max_rotation_step="0.00005" rotation_range="0.3" />
+	<turret offset="0.2 1.5 2" weapon_key="hd_m5_apc_mg94.weapon" weapon_offset="0 0.2 0.7" weapon_recoil="0.01" max_rotation_step="0.00012"  rotation_range="0.38" />
 	<!-- 车体\炮台 -->
-	<visual class="chassis" mesh_filename="hd_m5_32_hav_body.mesh" texture_filename="hd_m5_body.png" />
-	<visual class="turret" offset="0 0 1.3" turret_index="0" mesh_filename="hd_m5_32_hav_at.mesh" texture_filename="hd_m5_32_hav_at.png" />
+	<visual class="chassis" mesh_filename="hd_td110_bastion.mesh" texture_filename="hd_td110_bastion_main.png" />
+	<visual class="turret" offset="0 0 1.0" turret_index="0" mesh_filename="hd_td110_bastion_at.mesh" texture_filename="hd_td110_bastion_at.png" />
 	<visual class="turret" turret_index="1" mesh_filename="m5apc_mg.mesh" texture_filename="hd_m5_body.png" />
-	<visual class="turret" turret_index="2" mesh_filename="m5apc_mg.mesh" texture_filename="hd_m5_body.png" />
-	<!-- 轮子 -->
-	<visual class="tire" mesh_filename="apc_wheel.mesh" texture_filename="apc_wheel.png" />
 	<!-- 破损车体\炮台 -->
-	<visual class="chassis" key="broken"  mesh_filename="hd_m5_32_hav_body.mesh" texture_filename="hd_m5_body_broken.png" />
-	<visual class="turret"  key="broken" turret_index="0" mesh_filename="hd_m5_32_hav_at.mesh" texture_filename="hd_m5_32_hav_at.png" />
+	<visual class="chassis" key="broken"  mesh_filename="hd_td110_bastion.mesh" texture_filename="hd_td110_bastion_main_broken.png" />
+	<visual class="turret"  key="broken" turret_index="0" mesh_filename="hd_td110_bastion_at.mesh" texture_filename="hd_td110_bastion_at.png" />
 	<visual class="turret"  key="broken" turret_index="1" mesh_filename="m5apc_mg.mesh" texture_filename="hd_m5_body_broken.png" />
-	<visual class="turret"  key="broken" turret_index="2" mesh_filename="m5apc_mg.mesh" texture_filename="hd_m5_body_broken.png" />
-	<!-- 玩家 -->
+	<!-- 轮子 -->
+	<visual class="track" mesh_filename="hd_td110_track.mesh" offset="-1.8 -0.35 -0.1" >
+		<part texture_filename="hd_td110_track.png" texture_animation="translate" tire_binding="0" />
+	</visual>
+
+	<visual class="track" mesh_filename="hd_td110_track.mesh" offset="+1.68 -0.35 -0.1" >
+		<part texture_filename="hd_td110_track.png" texture_animation="translate" tire_binding="1" />
+	</visual>
+
 	<character_slot type="driver" position="0 0.3 +3" rotation="0" exit_rotation="0" hiding="1" />
 	<character_slot type="gunner" position="0 0.3 -3.5" rotation="0" exit_rotation="-3.14" hiding="1" >
-		<turret index="0"/>
-	</character_slot>
-	<character_slot type="gunner" position="+1.7 0.3 -0.5" rotation="0" exit_rotation="1.57" hiding="1" >
-		<turret index="1"/>
-	</character_slot>
-	<character_slot type="gunner" position="-1.7 0.3 -0.5" rotation="0" exit_rotation="-1.57" hiding="1" >
-		<turret index="2"/>
+		<turret index="0"/>		<turret index="1"/>
 	</character_slot>
 
 
@@ -102,9 +100,11 @@ ai_abandon_when_unsteerable="1"
   
 	<effect event_key="slide" type="particle" key="terrain" surface_tag="road" ref="car_slide_up_smoke" use_surface_color="1" />
 	<effect event_key="slide_hard" type="particle" key="terrain" surface_tag="road" ref="car_slide_up_smoke" use_surface_color="1" />
-  
-	<effect event_key="drive_chassis" ref="car_health_front_light" offset="-3 0 10" />
-	<effect event_key="drive_chassis" ref="car_health_front_light" offset="3 0 10" />
+
+  	<effect event_key="drive" type="particle" key="terrain" ref="car_slide_up_smoke" use_surface_color="1" />
+ 
+	<effect event_key="drive_chassis" ref="car_health_front_light" offset="-3 0 15" />
+	<effect event_key="drive_chassis" ref="car_health_front_light" offset="3 0 15" />
 
 	<effect event_key="health" value="1.8" ref="SmallSmokeVehicle" offset="-0.0 2.3 -2.7" />
 	<effect event_key="health" value="0.36" ref="SmallSmokeVehicle" offset="-0.0 2.3 -2.7" />
