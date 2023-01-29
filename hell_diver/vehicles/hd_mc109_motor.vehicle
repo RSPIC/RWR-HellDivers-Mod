@@ -6,7 +6,7 @@ key="hd_mc109_motor.vehicle"
 time_to_live_unsteerable="300" 
 map_view_atlas_index="-1" 
 minimum_fill_requirement="0.25"
-max_character_collision_speed_on_normal="1"
+max_character_collision_speed_on_normal="5"
 simulated_damage="0.5"
 usable_for_cover="1"
 reserves_spawn_point="1"
@@ -18,7 +18,7 @@ ai_abandon_when_unsteerable="1"
 	<tag name="apc" />
 	<tag name="any_tank" />
 
-	<tire_set offset="0.01 -0.1 1.75" radius="0.5" />
+	<tire_set offset="0.01 -0.1 1.75" radius="0.6" />
 	<tire_set offset="0.8 0 -1.2" radius="0.8" />
 
 	<control 
@@ -49,7 +49,7 @@ ai_abandon_when_unsteerable="1"
 	friction_offset="-0.05" 
 	drag_offset="-0.1" 
 	destroy_on_top_hit="1"
-	destroy_on_top_hit_time="20"
+	destroy_on_top_hit_time="10"
 	/> 
 
 	<turret offset="-0.8 1.1 0w" weapon_key="hd_m5_apc_mg94.weapon" 
@@ -63,7 +63,7 @@ ai_abandon_when_unsteerable="1"
 	<visual class="rear_tire" mesh_filename="" texture_filename="" />
 
 	<visual class="chassis" key="broken"  mesh_filename="mc109_main.mesh" texture_filename="mc109_bake.png" />
-	<visual class="turret" turret_index="0" mesh_filename="m5apc_mg.mesh" texture_filename="m5apc.png" />
+	<visual class="turret" turret_index="0" mesh_filename="m5apc_mg.mesh" texture_filename="hd_m5_body.png" />
 
 	<character_slot type="driver" position="-0.2 0.71 -0.45" rotation="0" exit_rotation="1.57" hiding="0"  animation_key="driving atv"/>
 	<character_slot type="gunner" position="-0.75 0.8 -1.05" rotation="0" exit_rotation="-3.14" hiding="0" animation_key="passenger, boat" >

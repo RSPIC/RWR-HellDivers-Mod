@@ -7,7 +7,7 @@
 #include "gamemode.as"
 #include "all_helper.as"
 
-dictionary squad_leader_call_notify_key = {
+dictionary stratagems_call_notify_key = {
 
         // 空
         {"",0},
@@ -18,7 +18,7 @@ dictionary squad_leader_call_notify_key = {
         {"666",-1}
 };
 
-dictionary squad_leader_call_vehicle_key = {
+dictionary stratagems_call_vehicle_key = {
 
         // 空
         {"",0},
@@ -29,11 +29,11 @@ dictionary squad_leader_call_vehicle_key = {
         {"666",-1}
 };
 
-class squad_leader_call : Tracker {
+class stratagems_call : Tracker {
 	protected Metagame@ m_metagame;
 
 	// --------------------------------------------
-	squad_leader_call(Metagame@ metagame) {
+	stratagems_call(Metagame@ metagame) {
 		@m_metagame = @metagame;
 	}
 
@@ -47,7 +47,7 @@ class squad_leader_call : Tracker {
 
 	protected void handleResultEvent(const XmlElement@ event) {
 		string EventKeyGet = event.getStringAttribute("key");
-		switch(int(squad_leader_call_notify_key[EventKeyGet])) 
+		switch(int(stratagems_call_notify_key[EventKeyGet])) 
         {
             case 0: {break;}
 
@@ -75,7 +75,7 @@ class squad_leader_call : Tracker {
 
 	protected void handleVehicleDestroyEvent(const XmlElement@ event) {
 		string EventKeyGet = event.getStringAttribute("vehicle_key");
-		switch(int(squad_leader_call_vehicle_key[EventKeyGet])) 
+		switch(int(stratagems_call_vehicle_key[EventKeyGet])) 
         {
             case 0: {break;}
 
