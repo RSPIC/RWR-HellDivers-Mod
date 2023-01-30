@@ -36,7 +36,9 @@ key="hd_at47_mk3.weapon"
 	<!--30RPM 100m range 50mag-->
 	<!-- mk2 Increases the amount of ammunition to 35 rounds. -->
 	<!-- mk3 Adds a laser sight and improves turn speed. -->
-
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_vehicle_destroy_damage.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0.0 0.0" />
+	
  	<sound class="operation" key="fire" fileref="hd_at_turret_fire_1.wav" pitch_variety="0.05" volume="0.7"/>
 
     <model filename="" /> 

@@ -49,7 +49,23 @@ dictionary SpawnAiIndex = {
 		{"Hulk",10},
 		
 		// 生化人：warlord 首领
-		{"Warlord",11}
+		{"Warlord",11},
+		
+		// 自动炮台:A-MG-11-mk3 HD
+		{"amg_11_mk3_hd",12},
+		// 自动炮台:A-MG-11-mk3 ACG阵营
+		{"amg_11_mk3_acg",13},
+		// 自动炮台:A-MG-11-mk2 HD
+		{"amg_11_mk2_hd",14},
+		// 自动炮台:A-MG-11-mk2 ACG阵营
+		{"amg_11_mk2_acg",15},
+		// 自动炮台:A-MG-11-mk1 HD
+		{"amg_11_mk1_hd",16},
+		// 自动炮台:A-MG-11-mk1 ACG阵营
+		{"amg_11_mk1_acg",17}
+
+		
+		
 
 };
 
@@ -64,6 +80,7 @@ class spawn_ai : Tracker {
 	// --------------------------------------------
 	protected void handleResultEvent(const XmlElement@ event) {
 		_log("handleResultEvent");
+		Vector3 PosSpawnProjectile = stringToVector3(event.getStringAttribute("position"));
 		//checking if the event was triggered by a notify_script	
 		string EventKeyGet = event.getStringAttribute("key");		//读取事件关键字
 		// 调用方法 array<const XmlElement@>@ getFactions(const Metagame@ metagame) {
@@ -93,7 +110,7 @@ class spawn_ai : Tracker {
 			}
 		}
 		//_log("testing spawn ai");
-		Vector3 PosSpawnProjectile = stringToVector3(event.getStringAttribute("position"));
+		
 		switch(int(SpawnAiIndex[EventKeyGet]))
 		{
 			case 0:{//生成Helldivers
@@ -156,6 +173,37 @@ class spawn_ai : Tracker {
 				SpawnSoldier(m_metagame,1,CyborgsId,PosSpawnProjectile,"Warlord");
 				break;
 			}
+			case 12:{//自动炮台：A-MG-11-mk3
+				if(SuperEarthId == -1){break;}
+				SpawnSoldier(m_metagame,1,SuperEarthId,PosSpawnProjectile,"amg_11_mk3_hd");
+				break;
+			}
+			case 13:{//自动炮台：A-MG-11-mk3
+				if(ACGId == -1){break;}
+				SpawnSoldier(m_metagame,1,ACGId,PosSpawnProjectile,"amg_11_mk3_acg");
+				break;
+			}
+			case 14:{//自动炮台：A-MG-11-mk2
+				if(SuperEarthId == -1){break;}
+				SpawnSoldier(m_metagame,1,SuperEarthId,PosSpawnProjectile,"amg_11_mk2_hd");
+				break;
+			}
+			case 15:{//自动炮台：A-MG-11-mk2
+				if(ACGId == -1){break;}
+				SpawnSoldier(m_metagame,1,ACGId,PosSpawnProjectile,"amg_11_mk2_acg");
+				break;
+			}
+			case 16:{//自动炮台：A-MG-11-mk1
+				if(SuperEarthId == -1){break;}
+				SpawnSoldier(m_metagame,1,SuperEarthId,PosSpawnProjectile,"amg_11_mk1_hd");
+				break;
+			}
+			case 17:{//自动炮台：A-MG-11-mk1
+				if(ACGId == -1){break;}
+				SpawnSoldier(m_metagame,1,ACGId,PosSpawnProjectile,"amg_11_mk1_acg");
+				break;
+			}
+
 			
 			default:{
 				break;
