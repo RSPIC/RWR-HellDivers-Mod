@@ -48,6 +48,20 @@ void SpawnSoldier(Metagame@ metagame, uint count, uint factionId, Vector3 positi
 	}
 }
 
+void SpawnSoldier(Metagame@ metagame, uint count, uint factionId, Vector3 position, string instanceKey,Vector3 offset) {
+	for (uint i = 0; i < count; ++i) {
+		metagame.getComms().send(
+		"<command " +
+		" class='create_instance' " + 
+		" faction_id='" + factionId + "' " +
+		" position='" + position.toString() + "' " + 
+		" offset='" + offset.toString() + "' " + 
+		" instance_class='soldier' " + 
+		" instance_key='" + instanceKey + "'> " + 
+		"</command>");
+	}
+}
+
 Vector3 getRandomOffsetVector(Vector3 pos,float strike_rand){
 	float rand_x = rand(-strike_rand,strike_rand);
 	float rand_z = rand(-strike_rand,strike_rand);
