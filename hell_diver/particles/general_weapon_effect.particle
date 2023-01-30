@@ -2241,6 +2241,42 @@ particle_system general_hit_character_cross_1		//放大
 	}
 }
 
+
+particle_system hd_vehicle_weapon_laser
+{
+	quota 300
+	material linear_laser
+	particle_width 0.4
+	particle_height 200
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 5
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.6
+		duration 0.01
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0 0 1
+		time1 0.5
+		colour1 1 0 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
 --------------------------------------material-----------------------------------
 material alpha_blend_base{
 	receive_shadows off
