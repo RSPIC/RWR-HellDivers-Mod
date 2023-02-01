@@ -29,19 +29,16 @@
 #include "call_marker_tracker.as"
 #include "idler_kicker.as"
 #include "supporter_command_handler.as"
+
+
+
+// new trackers
+
 #include "spawn_ai.as"
 #include "stratagems_call.as"
+#include "player_list.as"
 
 
-// community trackers
-//#include "gps_laptop.as"
-//#include "emp_grenade.as"
-//#include "repair_crane.as"
-//#include "a10_gun_run.as"
-//#include "gunship_run.as"
-//#include "squad_equipment_kit.as"
-//#include "rangefinder.as"
-//#include "halloween.as"  // Halloween event only
 
 // --------------------------------------------
 class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
@@ -323,14 +320,7 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 
 	// --------------------------------------------
 	protected void setupExperimentalFeatures() {
-//		addTracker(GpsLaptop(this));
-//		addTracker(EmpGrenade(this));
-//		addTracker(RepairCrane(this));
-//		addTracker(A10GunRun(this));
-//		addTracker(AC130GunRun(this));        
-//		addTracker(SquadEquipmentKit(this)); 
-//		addTracker(RangeFinder(this)); 
-//		addTracker(Halloween(this));    // Halloween event only
+		// addTracker(playerList_System(this));   
 		addTracker(spawn_ai(this));   
 		addTracker(stratagems_call(this));   
 	}
