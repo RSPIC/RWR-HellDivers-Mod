@@ -23,6 +23,8 @@
     <projectile file="hd_td110_bastion_at_mk3_damage.projectile" />
     <projectile file="hd_at47_mk3_damage.projectile" />
     <projectile file="hd_vehicle_destroy_damage.projectile" />
+    <projectile file="hd_amg_11_mk3_damage.projectile" />
+    <projectile file="hd_arx_34_mk3_damage.projectile" />
 	<!--辩护者俯冲轰炸-->
     <projectile file="hd_vindicator_dive_bomb.projectile" />
     <projectile file="hd_vindicator_missile.projectile" />
@@ -59,10 +61,12 @@
 	<projectile file="hd_exo51_mk3.projectile" /><!--重步者-->
 	<projectile file="hd_at47_mk3_call.projectile" /><!--AT-47 反坦克平台-->
 	<projectile file="hd_amg_11_mk3_call.projectile" /><!--自动机枪炮台-->
+	<projectile file="hd_arx_34_mk3_call.projectile" /><!--自动轨道枪炮台-->
 	
 	<!-- Effect -->
 	<projectile file="hd_players_dead_effect.projectile" />
 
 	<!-- 间接生成弹头 -->
 	<projectile file="hd_amg_11_mk3_spawn.projectile" />
+	<projectile file="hd_arx_34_mk3_spawn.projectile" />
 </projectiles>

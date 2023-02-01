@@ -11,8 +11,8 @@ can_be_disarmed="0"
 time_to_live_out_in_the_open="0"
 player_death_drop_owner_lock_time="0"
 >
-    <!-- <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_amg_11_mk3_call.projectile" 
-	min_amount="0" max_amount="0" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" /> -->
+    <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_amg_11_mk3_call.projectile" 
+	min_amount="0" max_amount="0" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
 
 	<result class="spawn" instance_class="vehicle" instance_key="hd_amg_11_mk3_spawn.vehicle" 
 			min_amount="1" max_amount="1" offset="0 20 0" position_spread="0 0" direction_spread="0 0" />	
@@ -60,8 +60,8 @@ player_death_drop_owner_lock_time="0"
     <sound class="result" key="vehicle" copy="other" />
     <sound class="result" key="character" copy="other" />
 
-    <effect class="result" key="terrain" ref="stratagems_liner_light_green_3s" lighting="0"/>
-	<effect class="result" key="terrain" ref="stratagems_point_light_area_green_3s" lighting="0"/>
+    <effect class="result" key="terrain" ref="stratagems_liner_light_green_2s" lighting="0"/>
+	<effect class="result" key="terrain" ref="stratagems_point_light_area_green_2s" lighting="0"/>
 	
 	<effect class="result" key="other" copy="terrain" />
     <effect class="result" key="static_object" copy="terrain" />

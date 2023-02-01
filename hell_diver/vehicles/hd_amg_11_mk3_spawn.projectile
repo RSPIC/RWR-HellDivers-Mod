@@ -10,8 +10,7 @@ pulldown_in_air="4"
 >
 	<!--无论高度固定生成在弹头所在的地平面上-->
 	<result class="notify_script" key="amg_11_mk3_hd" />
-    <trigger class="time" time_to_live="0.3"/>
-	<collision class="sticky" />
+    <trigger class="time" time_to_live="0"/>
     <rotation class="random" />
 
 	<model mesh_filename="vindicator_beacon_green.xml" />

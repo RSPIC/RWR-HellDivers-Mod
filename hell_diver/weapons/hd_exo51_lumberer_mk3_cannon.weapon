@@ -38,8 +38,8 @@ key="hd_exo51_lumberer_mk3_cannon.weapon"
 	<!-- mk2 Increases the magazine size of the cannon from 10 to 15 rounds. -->
 	<!-- mk3 Increases the magazine size of the flamer from 200 to 300 units of fuel. -->
 
-	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_exo_dead_damage.projectile" 
-	min_amount="20" max_amount="20" offset="0 1 0" position_spread="2.0 1" direction_spread="0.005 0.0" />
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_vehicle_destroy_damage.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0.0 0.0" />
 	
 	<animation key="recoil" animation_key="exo44_recoil_lefthand" />
 	<animation state_key="reload" animation_key="exo_no_reload"/>

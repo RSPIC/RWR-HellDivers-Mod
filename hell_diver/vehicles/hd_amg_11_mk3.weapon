@@ -12,16 +12,17 @@ key="hd_amg_11_mk3.weapon"
     retrigger_time="0.04" 
 	last_burst_retrigger_time="0.04"
     accuracy_factor="0.985" 
-	spread_range="0.3"
+	spread_range="0.2"
 	stance_accuracy_rate="1.0"
-    sustained_fire_grow_step="-0.21" 
-    sustained_fire_diminish_rate="-1.8" 
+    sustained_fire_grow_step="0.17" 
+    sustained_fire_diminish_rate="1.8" 
     magazine_size="2000" 
     can_shoot_standing="0" 
     can_shoot_crouching="0" 
 	can_shoot_prone="1"	
     suppressed="0" 
 	class="3" 
+	consume="0"
     name="A/MG-11 Minigun Turret" 
 	sight_range_modifier="1.0" 
 	sight_height_offset="1.0" 
@@ -34,14 +35,6 @@ key="hd_amg_11_mk3.weapon"
 	stab_range="0" 
 	use_basic_muzzle_smoke_effect="0"
 	/> 
-	<!--1500RPM 25m range-->
-	<!-- mk2 Increases the ammunition supply and stability of the minigun. -->
-	<!-- mk3 Upgrades the missiles to armor-piercing, anti-tank missiles. -->
-	<!-- Stratagem name changed to EXO-44 'Stomper' Exosuit. -->
-
-	<!--多模式-->
-    <!-- <next_in_chain key="hd_exo44_walker_mk3_missile.weapon" share_ammo="0" />  -->
-	<!-- 取消，因为从背包里刷新后，切模式会补满弹夹 -->
 
 	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_vehicle_destroy_damage.projectile" 
 	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0.0 0.0" />
@@ -49,6 +42,7 @@ key="hd_amg_11_mk3.weapon"
 	<animation key="recoil" animation_key="amg11_still" />
 	<animation state_key="hold" animation_key="amg11_still" /><!--站姿静止动作，全身动作-->
 	<animation state_key="reload" animation_key="amg11_still" /><!--站姿静止动作，全身动作-->
+	<animation state_key="prone_still" animation_key="amg11_still" /><!--站姿静止动作，全身动作-->
     <sound key="fire" fileref="mg94_shot1.wav" pitch_variety="0.1" volume="0.8" />
     <sound key="fire" fileref="mg94_shot2.wav" pitch_variety="0.1" volume="0.8" />
     <sound key="fire" fileref="mg94_shot3.wav" pitch_variety="0.1" volume="0.8" />
@@ -84,12 +78,9 @@ key="hd_amg_11_mk3.weapon"
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
 	time_to_live="0.5625" can_be_detected_by_driver="1" can_be_disarmed="0" name="A/MG-11 Minigun Turret"> 
 		
-		<result class="hit" kill_probability="1.0" 
-		kill_probability_offset_on_successful_hit="10"
-		kill_decay_start_time="0.3750" kill_decay_end_time="0.5625" character_state="wound"/>
-		<!-- slower decay -->
-		<!-- 60m max damage range -->
-		<!-- damage 75/100hit  -->
+		<result class="spawn" instance_class="projectile" instance_key="hd_amg_11_mk3_damage.projectile" 
+		min_amount="10" max_amount="10" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+		<!-- 1x10=10伤 -->
 	
 		<effect class="result" key="terrain" ref="hd_mg94_result_spray" lighting="0" />
 		<effect class="result" key="terrain" ref="hd_mg94_result_bullet_light_center" lighting="0" />
@@ -121,20 +112,20 @@ key="hd_amg_11_mk3.weapon"
 	<stance state_key="standing" accuracy="0.955" />
 	<stance state_key="crouching" accuracy="0.99" />
     <stance state_key="crouch_moving" accuracy="1" />
-    <stance state_key="prone" accuracy="1.4" /> 
-    <stance state_key="prone_moving" accuracy="0.5" />
-    <stance state_key="over_wall" accuracy="1.8" />     
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1" />     
      
     <modifier class="speed" value="-0.5" /> 
-    <modifier class="hit_success_probability" value="-0.2" />
+    <modifier class="hit_success_probability" value="0.6" />
     <modifier class="detectability" value="0.0" />
 
     <shield offset="0.5 0 0" extent="1.4 1 1.4" usable_for_cover="0"/>  
 	<!-- x厚度，前后宽度,负向前；y高度，z宽度 -->
-	<modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="0" />
+	<modifier class="projectile_hit_result" input_character_state="death" output_character_state="death" consumes_item="0" />
 	<modifier class="projectile_hit_result" input_character_state="wound" output_character_state="wound" consumes_item="0" />
 	<modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="0" />
-	<!-- death and wound blast causes the item to be consumed, stun is ignored -->
+
 	<modifier class="projectile_blast_result" input_character_state="death" output_character_state="death" consumes_item="0" />
 	<modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="0" />
 	<modifier class="projectile_blast_result" input_character_state="stun" output_character_state="none" consumes_item="0" />

@@ -53,7 +53,7 @@
 	<event>
 		<trigger class="destroy" />
   	<result class="spawn" instance_class="vehicle" instance_key="hd_amg_11_mk3_dropping_pod.vehicle" min_amount="1" 
-	max_amount="1" offset="0 0 0" position_spread="0 40" direction_spread="0 0" />
+	max_amount="1" offset="0 20 0" position_spread="0 0" direction_spread="0 0" />
 	</event>
 
 	

@@ -2,7 +2,7 @@
 <ai>
   <parameter class="vehicle_stuck_short_time" value="10.0" />
   <parameter class="in_trenches_fade_off_timer" value="4.0" />
-  <parameter class="accuracy_penalty_wear_off_rate" value="0.333" /> 
+  <parameter class="accuracy_penalty_wear_off_rate" value="0" /> 
   <parameter class="check_vehicles_interval" value="2.0" />
   <parameter class="team_member_monitor_enemies_time" value="1.5" />
   <parameter class="monitor_enemies_time" value="0.8" />
@@ -37,7 +37,7 @@
   <parameter class="choose_enemy_min_dot_range_offset" value="1.125" />
 
   <parameter class="sight_range_muzzle_factor" value="2.0" />
-  <parameter class="max_sight_range_with_muzzle" value="50.0" />
+  <parameter class="max_sight_range_with_muzzle" value="80.0" />
 
   <parameter class="active_guarding_probability" value="1" />
   <parameter class="leading_inspect_alarm_spread_out_distance" value="30.0" />

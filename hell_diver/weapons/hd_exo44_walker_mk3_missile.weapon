@@ -43,8 +43,8 @@ key="hd_exo44_walker_mk3_missile.weapon"
     <!-- <next_in_chain key="hd_exo44_walker_mk3_mg.weapon" share_ammo="0" />  -->
 	<!-- 取消，因为从背包里刷新后，切模式会补满弹夹 -->
 
-	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_exo_dead_damage.projectile" 
-	min_amount="20" max_amount="20" offset="0 1 0" position_spread="2.0 1" direction_spread="0.005 0.0" />
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_vehicle_destroy_damage.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0.0 0.0" />
 	
 	<animation key="recoil" animation_key="exo44_recoil_lefthand" />
 	<animation state_key="reload" animation_key="exo_no_reload"/>

@@ -62,8 +62,21 @@ dictionary SpawnAiIndex = {
 		// 自动炮台:A-MG-11-mk1 HD
 		{"amg_11_mk1_hd",16},
 		// 自动炮台:A-MG-11-mk1 ACG阵营
-		{"amg_11_mk1_acg",17}
-
+		{"amg_11_mk1_acg",17},
+		
+		// 自动炮台:A-RX-34-mk3 HD
+		{"arx_34_mk3_hd",18},
+		// 自动炮台:A-RX-34-mk3 ACG阵营
+		{"arx_34_mk3_acg",19},
+		// 自动炮台:A-RX-34-mk2 HD
+		{"arx_34_mk2_hd",20},
+		// 自动炮台:A-RX-34-mk2 ACG阵营
+		{"arx_34_mk2_acg",21},
+		// 自动炮台:A-RX-34-mk1 HD
+		{"arx_34_mk1_hd",22},
+		// 自动炮台:A-RX-34-mk1 ACG阵营
+		{"arx_34_mk1_acg",23}
+		
 		
 		
 
@@ -83,6 +96,8 @@ class spawn_ai : Tracker {
 		Vector3 PosSpawnProjectile = stringToVector3(event.getStringAttribute("position"));
 		//checking if the event was triggered by a notify_script	
 		string EventKeyGet = event.getStringAttribute("key");		//读取事件关键字
+		
+
 		// 调用方法 array<const XmlElement@>@ getFactions(const Metagame@ metagame) {
 		// 调用方法 const XmlElement@ getFactionInfo(const Metagame@ metagame, int factionId)
 
@@ -118,7 +133,7 @@ class spawn_ai : Tracker {
 				SpawnSoldier(m_metagame,1,SuperEarthId,PosSpawnProjectile,"default_ai");
 				break;
 			}
-			case 1:{//生成 initiate 初始者
+			case 1:{//生成 initiate 初始者	------------------------------------------
 				if(CyborgsId == -1){break;}
 				SpawnSoldier(m_metagame,1,CyborgsId,PosSpawnProjectile,"Initiate");
 				break;
@@ -173,7 +188,7 @@ class spawn_ai : Tracker {
 				SpawnSoldier(m_metagame,1,CyborgsId,PosSpawnProjectile,"Warlord");
 				break;
 			}
-			case 12:{//自动炮台：A-MG-11-mk3
+			case 12:{//自动炮台：A-MG-11-mk3	------------------------------------------
 				if(SuperEarthId == -1){break;}
 				SpawnSoldier(m_metagame,1,SuperEarthId,PosSpawnProjectile,"amg_11_mk3_hd");
 				break;
@@ -201,6 +216,36 @@ class spawn_ai : Tracker {
 			case 17:{//自动炮台：A-MG-11-mk1
 				if(ACGId == -1){break;}
 				SpawnSoldier(m_metagame,1,ACGId,PosSpawnProjectile,"amg_11_mk1_acg");
+				break;
+			}
+			case 18:{//自动炮台：A-RX-34-mk3	------------------------------------------
+				if(SuperEarthId == -1){break;}
+				SpawnSoldier(m_metagame,1,SuperEarthId,PosSpawnProjectile,"arx_34_mk3_hd");
+				break;
+			}
+			case 19:{//自动炮台：A-RX-34-mk3
+				if(ACGId == -1){break;}
+				SpawnSoldier(m_metagame,1,ACGId,PosSpawnProjectile,"arx_34_mk3_acg");
+				break;
+			}
+			case 20:{//自动炮台：A-RX-34-mk2
+				if(SuperEarthId == -1){break;}
+				SpawnSoldier(m_metagame,1,SuperEarthId,PosSpawnProjectile,"arx_34_mk2_hd");
+				break;
+			}
+			case 21:{//自动炮台：A-RX-34-mk2
+				if(ACGId == -1){break;}
+				SpawnSoldier(m_metagame,1,ACGId,PosSpawnProjectile,"arx_34_mk2_acg");
+				break;
+			}
+			case 22:{//自动炮台：A-RX-34-mk1
+				if(SuperEarthId == -1){break;}
+				SpawnSoldier(m_metagame,1,SuperEarthId,PosSpawnProjectile,"arx_34_mk1_hd");
+				break;
+			}
+			case 23:{//自动炮台：A-RX-34-mk1
+				if(ACGId == -1){break;}
+				SpawnSoldier(m_metagame,1,ACGId,PosSpawnProjectile,"arx_34_mk1_acg");
 				break;
 			}
 

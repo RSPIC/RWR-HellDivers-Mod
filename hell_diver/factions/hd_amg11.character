@@ -120,8 +120,8 @@
 	<animation key="crouching backwards" target_key="amg11_still" />
 	<animation key="prone" target_key="amg11_still" />
 	<animation key="prone, moving forwards" target_key="amg11_still" />
-	<animation key="going prone" target_key="amg11_still" />
-	<animation key="leaving prone" target_key="amg11_still_back" />
+	<animation key="going prone" target_key="amg11_still_0.5s" />
+	<animation key="leaving prone" target_key="amg11_still_0.5s" />
 	<animation key="dive" target_key="amg11_still" />
 	<animation key="jumping" target_key="amg11_still" /> 
 	<animation key="lifting up" target_key="amg11_still" /> 

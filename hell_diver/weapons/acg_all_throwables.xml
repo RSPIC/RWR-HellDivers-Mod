@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <projectiles>
 	<!--武器弹头-->
-    <projectile file="acg_ex_box.projectile" /><!--补给箱呼叫信标-->>
-    <projectile file="acg_amg_11_mk3_call.projectile" /><!--机枪炮塔-->>
-
+    <projectile file="acg_ex_box.projectile" /><!--补给箱呼叫信标-->
 	
+    <!--空投信标-->
+	<projectile file="acg_amg_11_mk3_call.projectile" /><!--自动机枪炮台-->
+	<projectile file="acg_arx_34_mk3_call.projectile" /><!--自动轨道枪炮台-->
 
-
+	<!-- 间接生成弹头 -->
+	<projectile file="acg_amg_11_mk3_spawn.projectile" />
+	<projectile file="acg_arx_34_mk3_spawn.projectile" />
 </projectiles>

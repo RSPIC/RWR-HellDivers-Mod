@@ -40,8 +40,8 @@ key="hd_exo48_obsidian_mk3_cannon.weapon"
 	<!-- mk2 Allows the weapons to aim slightly without turning the torso.
 		 Note that the right arm is dominant when swiveling.. -->
 	<!-- mk3 Autocannons now fire heavy rounds for more damage. -->
-	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_exo_dead_damage.projectile" 
-	min_amount="20" max_amount="20" offset="0 1 0" position_spread="2.0 1" direction_spread="0.005 0.0" />
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_vehicle_destroy_damage.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0.0 0.0" />
 	
 
 	<animation key="recoil" animation_key="exo48_recoil_lefthand" />
