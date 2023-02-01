@@ -76,7 +76,7 @@ key="hd_amg_11_mk3.weapon"
     <weak_hand_hold offset="0.3" /> 
 
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
-	time_to_live="0.5625" can_be_detected_by_driver="1" can_be_disarmed="0" name="A/MG-11 Minigun Turret"> 
+	time_to_live="0.5625" can_be_detected_by_driver="1" can_be_disarmed="0" name="A/MG-11 Minigun Turret" radius="0.7"> 
 		
 		<result class="spawn" instance_class="projectile" instance_key="hd_amg_11_mk3_damage.projectile" 
 		min_amount="10" max_amount="10" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
@@ -93,7 +93,12 @@ key="hd_amg_11_mk3.weapon"
 		<effect class="result" key="terrain" ref="p2_peacemaker_hit_02" />
 		<effect class="result" key="terrain" ref="p2_peacemaker_hit_03" />
 		<effect class="result" key="terrain" ref="p2_peacemaker_hit_04" />
-		
+		<effect class="result" key="character" ref="BloodSplat50Cal" lighting="1" />
+		<effect class="result" key="character" ref="BurstShine50Cal" lighting="1" post_processing="0" />
+
+		<effect class="result" key="character" ref="general_hit_character_cross_2"  />
+		<effect class="result" key="character" ref="general_hit_character_cross_1"  />
+
 		<sound class="result" key="terrain" copy="other" />
 		<sound class="result" key="static_object" copy="other" />
 		<sound class="result" key="vehicle" copy="other" />
@@ -102,7 +107,7 @@ key="hd_amg_11_mk3.weapon"
 		<effect class="result" key="static_object" copy="terrain" />
 		<effect class="result" key="character" copy="terrain" />
 		<effect class="result" key="vehicle" copy="terrain" />
-		<trail probability="1" key="normal_trail_long" lighting="0"/>	
+		<trail probability="1" key="normal_trail_long_red" lighting="0"/>	
     </projectile>
 		<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
 		<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 	

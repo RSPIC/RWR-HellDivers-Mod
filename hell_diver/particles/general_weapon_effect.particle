@@ -2547,3 +2547,10 @@ material hd_hit_character_cross_1 : alpha_blend_base
         texture_unit{
             texture hd_hit_character_cross_1.png 	
 }}}}
+material red_trail : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture red_trail.png 	
+}}}}
