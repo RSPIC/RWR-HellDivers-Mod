@@ -44,8 +44,6 @@ allow_ai_to_use="0"
 
 	<rev_sound filename="" low_pitch="0.8" high_pitch="1.0" low_rev="0.0" high_rev="0.3" volume="0.8" />
 
-	<visual class="chassis" mesh_filename=".mesh" texture_filename="" />
-	
 	<!-- <character_slot type="driver" position="0 -1 0" enter_position="0 0 0"  rotation="0" exit_rotation="0" hiding="1" animation_key="lifting up" marker_offset="0 0 0"/> -->
 	
 	<!-- <spawn_point player_only="1" offset="0 0 0" /> -->
@@ -59,6 +57,8 @@ allow_ai_to_use="0"
 	<sound key="hit" filename="" />
 	<sound key="destroy" filename="" />  
 	<sound key="destroy" filename="" />  
+
+	<effect event_key="health" value="1000" ref="car_pod_impact_leave_dirt" offset="0.0 0 0" />
 
 	<event>
 		<trigger class="destroy" />

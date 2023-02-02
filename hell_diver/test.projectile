@@ -10,11 +10,11 @@
     <capacity value="1" source="rank" source_value="0.0" />
 
 
-		<!-- <effect class="result" key="terrain" ref="car_slide_spary_spark" lighting="0" post_processing="0"/>  -->
-		<!-- <effect class="result" key="terrain" ref="car_slide_up_smoke" lighting="0" post_processing="0"/>  -->
-	<effect class="activated" ref="alert_center_alerticon_hight_frequncy" lighting="0" /><!--高频率感叹号警告标识-->
-	<effect class="activated" ref="car_slide_up_smoke_area" lighting="0" /><!--拉烟-->
-	<effect class="activated" ref="cyborgs_activated_flamethrower_01" />
+	<!-- <effect class="result" key="terrain" ref="car_slide_spary_spark" lighting="0" post_processing="0"/>  -->
+	<effect class="result" key="terrain" ref="car_tesla_surrounding_thunder" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="car_pod_impact_leave_dirt" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="car_surrounding_ring_point" lighting="0" post_processing="0"/> 
+	<!-- <effect class="activated" ref="alert_center_alerticon_hight_frequncy" lighting="0" /><!--高频率感叹号警告标识--> -->
 
 	<sound class="result" key="static_object" copy="terrain" />
 	<sound class="result" key="vehicle" copy="terrain" />

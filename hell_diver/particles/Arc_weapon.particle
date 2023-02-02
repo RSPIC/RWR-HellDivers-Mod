@@ -365,6 +365,12 @@ particle_system Arc_muzzle_thunder_02
 		colour2 0 0 0 0
 	}
 }
+particle_system Tesla_muzzle_thunder_02 : Arc_muzzle_thunder_02
+{
+	material lightning_gun_bolt_7_pass
+	particle_width 24
+	particle_height 1.5
+}
 --------------------------------------material-----------------------------------
 material alpha_blend_base{
 	receive_shadows off
@@ -474,6 +480,14 @@ material lightning_gun_bolt_7 : add_base
 {   
     technique{
     pass{
+        texture_unit{
+            texture lightning_gun_bolt_7.png
+}}}}
+material lightning_gun_bolt_7_pass : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
         texture_unit{
             texture lightning_gun_bolt_7.png
 }}}}

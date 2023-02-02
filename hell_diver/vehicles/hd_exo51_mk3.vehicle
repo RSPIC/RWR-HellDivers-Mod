@@ -60,6 +60,7 @@ allow_ai_to_use="0"
 	<sound key="destroy" filename="" />  
 	<sound key="destroy" filename="" />  
 
+
 	<event>
 		<trigger class="destroy" />
   	<result class="spawn" instance_class="visual_item" instance_key="hd_hellpod_vanish.visual_item" min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0 0" /><!--消失的时候烟雾特效-->

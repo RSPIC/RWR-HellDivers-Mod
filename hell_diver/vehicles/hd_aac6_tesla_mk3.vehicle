@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<vehicle name="AT-47 Anti-Tank Emplacement" 
-key="hd_at47_mk3.vehicle" 
+<vehicle name="A/AC-6 Tesla Tower" 
+key="hd_aac6_tesla_mk3.vehicle" 
 map_view_atlas_index="-1" 
 time_to_live_unsteerable="180" 
 time_to_live="360" 
@@ -15,8 +15,8 @@ allow_ai_to_use="1"
 	<tire_set offset="1 0.0 1" radius="0.1" />
 	<tire_set offset="1 0.0 -1" radius="0.1" />
 
-	<modifier class="blast_range" value="-2.0" />
-	<modifier class="blast_damage" value="-1.0" />
+	<modifier class="blast_range" value="0.0" />
+	<modifier class="blast_damage" value="0.0" />
 
 	<control max_speed="1" acceleration="1" max_reverse_speed="1.0" max_rotation="1.0" max_water_depth="2" />
 
@@ -26,8 +26,8 @@ allow_ai_to_use="1"
 	extent="0.5 0.0 0.5" 
 	offset="0 0.0 0" 
 	top_offset="0 0.1 0" 
-	collision_model_pos="0 0.25 0" 
-	collision_model_extent="1.5 0.5 1.5" 
+	collision_model_pos="0 1.5 0" 
+	collision_model_extent="1.5 3 1.5" 
 	visual_offset="0 -1.4 0" 
 	collision_response_factor="0" 
 	blast_push_threshold="10.0" 
@@ -38,20 +38,18 @@ allow_ai_to_use="1"
 	/> 
 		<sky_diving chute_offset="0 0 0" trigger_height="20" gravity="-80" mesh_filename="" texture_filename="" />
 
-	<!-- 主炮加激光指示器 -->
-	<turret offset="0 1.7 0" weapon_key="hd_at47_mk3.weapon" weapon_offset="-0.25 0 1.7" weapon_recoil="0.001" 
-	 max_rotation_step="0.00015" />
-	<turret offset="0 0 0" weapon_key="hd_vehicle_weapon_laser.weapon" weapon_offset="-0.25 -0.3 0" 
-		weapon_recoil="0" max_rotation_step="0"  parent_turret_index="0" />
+	<!-- 主炮 -->
+	<turret offset="0 3.2 0" weapon_key="hd_aac6_tesla_mk3.weapon" weapon_offset="0 0.5 0" weapon_recoil="0.001" 
+	 max_rotation_step="0.00095" />
 	<!-- 车体 -->
 	<visual class="chassis" offset="0 -0.4 0" mesh_filename="hd_hellpod.mesh" texture_filename="hd_hellpod_main.png" />
 	<!-- 炮台 -->
-	<visual class="turret" offset="0 0.3 0" turret_index="0" mesh_filename="hd_at47.mesh" 
-		texture_filename="hd_at47_main.png" />
-	<visual class="turret" turret_index="1" mesh_filename="m5apc_mg.mesh" texture_filename="hd_m5_body.png" />
+	<visual class="turret" offset="0 0.3 0" turret_index="0" mesh_filename="hd_aac6_tesla.mesh" 
+		texture_filename="hd_aac6_tesla_main.png" />
 	<!-- 操控 -->
-	<character_slot type="gunner" attached_on_turret="0" seat_position="0.3 -1.6 -0.35" exit_rotation="1.57" hiding="0" animation_key="driving car" enter_position="1 0 0" >
-		<turret index="0"/><turret index="1"/>
+	<character_slot type="gunner" attached_on_turret="0" seat_position="0 -2 0" 
+	exit_rotation="1.57" hiding="1" animation_key="driving car" enter_position="-0.5 0 0" >
+		<turret index="0"/>
 	</character_slot>
 
 	<sound key="slide" filename="" />
@@ -64,6 +62,8 @@ allow_ai_to_use="1"
 	<sound key="destroy" filename="hellpod_close_01.wav" />  
 	<sound key="destroy" filename="hellpod_close_02.wav" />  
 
+	<effect event_key="health" value="1000" ref="car_tesla_surrounding_thunder" offset="0 0 0" />
+	<effect event_key="health" value="1000" ref="car_surrounding_ring_point" offset="0.0 0 0" />
 	<effect event_key="health" value="1000" ref="car_pod_impact_leave_dirt" offset="0.0 0 0" />
 
 	<event>
@@ -71,7 +71,7 @@ allow_ai_to_use="1"
   	<result class="spawn" instance_class="projectile" instance_key="hd_vehicle_destroy_damage.projectile" min_amount="1"
 	 max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" /><!--摧毁时的爆炸-->
 	</event>
-
+	
 	<event>
 		<trigger class="destroy" />
   	<result class="spawn" instance_class="visual_item" instance_key="hd_hellpod_vanish.visual_item" min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0 0" /><!--消失的时候烟雾特效-->

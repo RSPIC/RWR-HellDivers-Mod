@@ -192,6 +192,150 @@ particle_system car_slide_up_smoke_area
 	}
 }
 
+particle_system car_tesla_surrounding_thunder
+{
+	quota 200
+	material thunder_circle_tesla
+	particle_width 2
+	particle_height 2
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 3
+		position 0 5 0
+		velocity 0.0001
+		time_to_live 2.5
+		duration 0
+	}
+	affector Scaler
+	{
+		rate 2
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	45
+		rotation_speed_range_end	-45
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.7
+		colour1 1 1 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 -4 0
+		force_application add
+	}
+
+}
+particle_system car_pod_impact_leave_dirt
+{
+	quota 200
+	material Tex_0147_1
+	particle_width 3.75
+	particle_height 3.75
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 1
+		position 0 2 0
+		velocity 0.0001
+		time_to_live 1
+		duration 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+}
+particle_system car_pod_impact_leave_dirt2 : car_pod_impact_leave_dirt
+{
+	material Tex_0147_1
+	emitter Point
+	{
+		position 0 -0.9 0
+	}
+}
+
+particle_system car_surrounding_ring_point
+{
+	quota 200
+	material point_soft_edge_100
+	particle_width 0.25
+	particle_height 0.25
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Ring
+	{
+		angle 0
+		colour 0 0.3 1 1
+		direction 0 1 0
+		emission_rate 50
+		velocity 0.0001
+		position 0 2 0
+		time_to_live_min 0.4
+		time_to_live_max 0.8
+		duration 0
+		width 4
+		height 4
+		depth 4
+		inner_width 0.3
+		inner_height 0.3
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0.3 1 1
+		time1 0.7
+		colour1 0 0.3 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 4 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 20
+		scope 50
+		keep_velocity false
+	}
+}
 --------------------------------------material-----------------------------------
 material alpha_blend_base{
 	receive_shadows off
@@ -253,4 +397,28 @@ material rx1_smoke : alpha_blend_base
     pass{
         texture_unit{
             texture rx1_smoke.png 	
+}}}}
+material Tex_0147_1 : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture Tex_0147_1.png 	
+}}}}
+material Tex_0147_1_pass : alpha_blend_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture Tex_0147_1.png 	
+}}}}
+material thunder_circle_tesla : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            anim_texture thunder_circle.png 4 0.2 	
+			tex_address_mode border
+			tex_border_colour 0 0 0 0
 }}}}

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<vehicle name="acg_arx_34_mk3_dropping_pod" 
-key="acg_arx_34_mk3_dropping_pod.vehicle" 
+<vehicle name="hd_at47_mk3_dropping_pod" 
+key="hd_at47_mk3_dropping_pod.vehicle" 
 map_view_atlas_index="-1" 
 time_to_live="2.5" 
 should_be_destroyed="0" 
@@ -10,8 +10,7 @@ usable_for_cover="0"
 allow_ai_to_use="0"
 max_character_collision_speed="999"
 >
-	<!-- weapon用于调用兵种外观模型，摧毁event用于产生ai和落地音效弹头 -->
-	
+
 	<tag name="metal_thin" />
 
 	<tire_set offset="4.2 -1 +4.2" radius="1.1" />
@@ -43,8 +42,6 @@ max_character_collision_speed="999"
 	<sky_diving chute_offset="0 0 0" trigger_height="80" gravity="-80" mesh_filename="" texture_filename="" />
 
 	<rev_sound filename="" low_pitch="0.8" high_pitch="1.0" low_rev="0.0" high_rev="0.3" volume="0.8" />
-
-	
 	
 	<character_slot type="driver" position="0 -1 0" enter_position="0 0 0"  rotation="0" exit_rotation="0" hiding="1" animation_key="lifting up" marker_offset="0 0 0"/>
 	
@@ -63,10 +60,10 @@ max_character_collision_speed="999"
 	<visual class="chassis" offset="0 -0.4 0" mesh_filename="hd_hellpod.mesh" texture_filename="hd_hellpod_main.png" />
 
 
-	<event><!--走脚本,有延迟,音效特效整合在生成当中方便匹配--> 
+	<event>
 		<trigger class="destroy" />  	
-    <result class="spawn" instance_class="projectile" instance_key="acg_arx_34_mk3_spawn.projectile" min_amount="1" 
-	max_amount="1" offset="0 2 0" position_spread="0 0" direction_spread="0 0" />
+    <result class="spawn" instance_class="vehicle" instance_key="hd_at47_mk3.vehicle" min_amount="1" 
+	max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
 	</event>
 
 </vehicle>
