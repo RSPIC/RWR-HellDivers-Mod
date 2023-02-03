@@ -49,9 +49,24 @@ particle_system general_weapon_muzzle_crossfire_lightblue : general_weapon_muzzl
 	affector ColourInterpolator
 	{
 		time0 0
-		colour0 0.3 0.3 1 0.2
+		colour0 0 0.5 1 0.2
 		time1 0.5
-		colour1 0.3 0.3 1 0.15
+		colour1 0 0.5 1 0.15
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system general_weapon_muzzle_crossfire_lightpurple : general_weapon_muzzle_crossfire
+{
+	material general_muzzle_01_bw
+	emitter Point{}
+	affector Scaler{}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 1 0.2
+		time1 0.5
+		colour1 1 0.3 1 0.15
 		time2 1
 		colour2 0 0 0 0
 	}
