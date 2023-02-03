@@ -36,9 +36,9 @@
     - 伤害类型
         >
         > - √ **取消敌人 wound 状态**
-        > - **全局修改 stun 状态为站立眩晕，而非倒地**
+        > - √ **全局修改敌方 stun 状态为站立眩晕，而非倒地**
         >
-        + **对敌方**（敌方护甲针对此伤害类型制作）
+        + √ **对敌方**（敌方护甲针对此伤害类型制作）
             |受伤害类型 | 角色状态 | 备注 |
             | -- | -- | -- |
             |动能：hit/death    | ->none - death |(抗致死减伤，可被免疫)|
@@ -51,7 +51,7 @@
             |保留：blast/none   | ->none - none  |(不可被免疫)|
             + 激光类无视护甲，额定减层，需要高层数来保证激光武器伤害方式运行
             + 需要对应护甲配合使用
-        + **对玩家**（玩家护甲针对此伤害类型制作）
+        + √ **对玩家**（玩家护甲针对此伤害类型制作）
             |受伤害类型 | 角色状态 | 备注 |
             | -- | -- | -- |
             |动能：hit/death    | ->none - wound - death| (抗致死减伤，不可被免疫)|
@@ -66,11 +66,12 @@
     - 护甲类型
         - 通用护甲（肉甲/max 300 层）
         - 重型护甲（免疫爆炸/max 300 层）
+        - 中型护甲（免疫动能、中穿/max 300 层）
         - 玩家护甲（40 层/末十层倒地层/0.5 抗致死）
         - AI 护甲（20 层/末 6 层倒地层）
     - 友军伤害
         - √ **仅有爆炸伤害触发友伤**
-        - √ **载具比较容易创死队友**
+        - √ **载具比较容易撞死队友**
     - 自动回血
         - 自动回甲脚本：每隔一段时间回复一定数量护甲，指定护甲有效
 - **经济系统**
@@ -78,7 +79,6 @@
         - 样本类战利品全局共享，但拾取者概率获得双倍
     - 收益和损失
         - **合作收益**
-            - 所有武器带空盾块，近距离可以共享击杀收益，潜行可以独享收益
         - √ **击杀/摧毁收益**
             - 10rp 100xp
         - √ **占领收益**
@@ -329,14 +329,14 @@
         - Developer Cape
         - Training Cape
     - 载具
-        - Deploy:Vehicles
+        - √ **Deploy:Vehicles**
             >
             > - √ **EXO-44 Walker Exosuit**
             > - √ **EXO-48 Obsidian Exosuit**
             > - √ **EXO-51 Lumberer Exosuit**
             > - √ **M5 APC**
-            > - M5-32 HAV
-            > - TD-110 Bastion
+            > - √ **M5-32 HAV**
+            > - √ **TD-110 Bastion**
             > - √ **MC-109 Hammer Motorcycle**
             >
     - **投掷物**
@@ -371,14 +371,14 @@
             >
         - Defensive
             >
-            > - A/AC-6 Tesla Tower
-            > - A/GL-8 Launcher Turret
-            > - A/MG-11 Minigun Turret
-            > - A/RX-34 Railcannon Turret
+            > - √ **A/AC-6 Tesla Tower**
+            > - √ **A/GL-8 Launcher Turret**
+            > - √ **A/MG-11 Minigun Turret**
+            > - √ **A/RX-34 Railcannon Turret**
             > - √ **Airdropped Anti-Personnel Mines**
             > - √ **Airdropped Stun Mines**
-            > - Anti-Personnel Barrier
-            > - AT-47 Anti-Tank Emplacement
+            > - √ **Anti-Personnel Barrier**
+            > - √ **AT-47 Anti-Tank Emplacement**
             > - Distractor Beacon
             > - Humblebee UAV drone
             > - Thunderer Smoke Round
