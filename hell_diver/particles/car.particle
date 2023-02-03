@@ -268,13 +268,7 @@ particle_system car_pod_impact_leave_dirt
 		time_to_live 1
 		duration 0
 	}
-		affector Rotator
-	{
-		rotation_speed_range_start	0
-		rotation_speed_range_end	0
-		rotation_range_start	0
-		rotation_range_end	0
-	}
+
 }
 particle_system car_pod_impact_leave_dirt2 : car_pod_impact_leave_dirt
 {
@@ -282,6 +276,25 @@ particle_system car_pod_impact_leave_dirt2 : car_pod_impact_leave_dirt
 	emitter Point
 	{
 		position 0 -0.9 0
+	}
+}
+particle_system car_pod_impact_leave_dirt3 : car_pod_impact_leave_dirt
+{
+	material Tex_0147_1
+	emitter Point
+	{
+		position 0 0 0
+		time_to_live 4
+		duration 1
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.8
+		colour1 1 1 1 1
+		time2 1
+		colour2 0 0 0 0
 	}
 }
 

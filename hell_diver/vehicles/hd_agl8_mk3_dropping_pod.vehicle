@@ -63,7 +63,7 @@ max_character_collision_speed="999"
 	<event>
 		<trigger class="destroy" />  	
     <result class="spawn" instance_class="vehicle" instance_key="hd_agl8_mk3.vehicle" min_amount="1" 
-	max_amount="1" offset="0 -2 0" position_spread="0 0" direction_spread="0 0" />
+	max_amount="1" offset="0 -3 0" position_spread="0 0" direction_spread="0 0" />
 	</event>
 
 </vehicle>

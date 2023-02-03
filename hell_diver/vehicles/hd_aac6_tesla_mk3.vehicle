@@ -33,8 +33,6 @@ allow_ai_to_use="1"
 	blast_push_threshold="10.0" 
 	vehicle_collision_damage_factor="20"
 	gravity="-40"
-	friction_offset="1.0" 
-	drag_offset="1.0" 
 	/> 
 		<sky_diving chute_offset="0 0 0" trigger_height="20" gravity="-80" mesh_filename="" texture_filename="" />
 

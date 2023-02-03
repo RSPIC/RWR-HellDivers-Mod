@@ -68,7 +68,7 @@
 	<event>
 		<trigger class="destroy" />  	
     <result class="spawn" instance_class="projectile" instance_key="hd_hellpod_dropping_damage.projectile" min_amount="1" 
-	max_amount="1" offset="0 -20 0" position_spread="0 0" direction_spread="0 0" />
+	max_amount="1" offset="0 -25 0" position_spread="0 0" direction_spread="0 0" />
 	</event> 
 	 
 

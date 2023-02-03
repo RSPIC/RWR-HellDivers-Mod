@@ -1,0 +1,179 @@
+author: RST
+2023.2.2
+未经授权不可复用、修改使用、仅用于helldiver mod
+拟真系列粒子特效
+
+
+particle_system real_smoke_1
+{
+	quota 50
+	material Tex_Smoke17C_gray
+	particle_width 15
+	particle_height 15
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 30
+		position 0 5 0
+		velocity 0.0001
+		time_to_live 6
+		duration 0.1
+		width 5
+		height 5
+		depth 5
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	2
+		rotation_speed_range_end	-2
+		rotation_range_start	-45
+		rotation_range_end	45
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.8
+		colour1 0 0 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+
+
+
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+material explosion_smoke_05_bw : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture explosion_smoke_05_bw.png 	
+}}}}
+material TEX_boomachi_03 : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture TEX_boomachi_03.png 	
+}}}}
+material TEX_boomachi_02 : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture TEX_boomachi_02.png 	
+}}}}
+material Tex_0147_1 : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture Tex_0147_1.png 	
+}}}}
+material Tex_Smoke17C : alpha_blend_base
+{   
+    technique{
+    pass{
+		separate_scene_blend alpha_blend alpha_blend
+        texture_unit{
+            texture Tex_Smoke17C.png 	
+			colour_op_ex add src_manual src_texture 0 0 0
+			scroll_anim 0 -0.1
+			tex_address_mode wrap
+		}
+		texture_unit{
+            texture Tex_Smoke17C.png 
+			colour_op_ex add src_manual src_texture 0 0 0
+			colour_op_ex modulate src_texture src_current
+			alpha_op_ex modulate src_texture src_current
+			scroll_anim 0 -0.05
+			rotate 180
+			tex_address_mode wrap
+			tex_border_colour 0 0 0 0
+		}
+		texture_unit{	
+			texture Tex_Smoke09G.png
+			colour_op_ex source2 src_texture src_current
+			alpha_op_ex modulate src_texture src_current
+			tex_address_mode wrap
+		}
+	}
+}}
+material Tex_Smoke17C_gray : alpha_blend_base
+{   
+    technique{
+    pass{
+		separate_scene_blend alpha_blend alpha_blend
+        texture_unit{
+            texture Tex_Smoke17C.png 	
+			colour_op_ex add src_manual src_current 0.5 0.5 0.5
+			scroll_anim 0 -0.1
+			tex_address_mode wrap
+		}
+		texture_unit{
+            texture Tex_Smoke17C.png 
+			//colour_op_ex add src_manual src_texture 0.5 0.5 0.5
+			colour_op_ex modulate src_texture src_current
+			alpha_op_ex modulate src_texture src_current
+			scroll_anim 0 -0.05
+			rotate 180
+			tex_address_mode wrap
+			tex_border_colour 0 0 0 0
+		}
+		texture_unit{	
+			texture Tex_Smoke09G.png
+			colour_op_ex source2 src_texture src_current
+			alpha_op_ex modulate src_texture src_current
+			tex_address_mode wrap
+		}
+	}
+}}
+

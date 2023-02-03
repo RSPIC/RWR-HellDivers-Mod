@@ -2,7 +2,7 @@
 <projectile 
 class="grenade" 
 name="AT Mine MK3 Beacon" 
-key="at_mine_mk3.projectile" 
+key="hd_at_mine_mk3.projectile" 
 slot="0"
 pulldown_in_air="15.0"
 on_ground_up="0 1 0"
@@ -11,11 +11,11 @@ can_be_disarmed="0"
 time_to_live_out_in_the_open="0"
 player_death_drop_owner_lock_time="0"
 >
-	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="at_mine_mk3.projectile" min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_at_mine_mk3.projectile" min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
 
 
-	<result class="spawn" instance_class="projectile" instance_key="at_mine_mk3_trigger.projectile" 
-			min_amount="8" max_amount="10" offset="0 30 0" position_spread="3 0" direction_spread="0.1 0.1" />	
+	<result class="spawn" instance_class="projectile" instance_key="hd_at_mine_mk3_trigger.projectile" 
+			min_amount="30" max_amount="40" offset="0 30 0" position_spread="6 0" direction_spread="0.1 0.1" />	
 	<trigger class="time" time_to_live="3.5" />	
     <rotation class="random" />
 <!--逻辑：投出MK3落地在半空生成粘性trigger弹头落地，落地后生成非粘性stay弹头等待触发，最后生成粘性damage弹头-->
@@ -23,7 +23,7 @@ player_death_drop_owner_lock_time="0"
     <hud_icon filename="at_mine_mk3.png" />
 	
     <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
-	speed_estimation_far="70.0" max_speed="70.0" randomness="0.0" tweak_factor="1.0" />
+	speed_estimation_far="70.0" max_speed="21.0" randomness="0.0" tweak_factor="1.0" />
 
 	<commonness value="0.0" can_respawn_with="1" in_stock="1"/>
 

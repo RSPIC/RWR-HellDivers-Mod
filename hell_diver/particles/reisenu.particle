@@ -1,0 +1,1053 @@
+author: RST
+2022.9.2
+未经授权不可复用、修改使用，禁止盈利
+
+particle_system reisenu_fire_muzzle_i		//主模式枪口星光
+{
+	quota 50
+	material point_soft_edge_100
+	particle_width 0.1
+	particle_height 0.1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 120
+		colour 1 0 0 1
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity_min 5
+		velocity_max 12
+		time_to_live_min 0.6
+		time_to_live_max 0.9
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0.5
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	10
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system reisenu_bullet_muzzle_i		//主模式子弹
+{
+	quota 50
+	material reisenu_bullet
+	particle_width 1.3
+	particle_height 1.3
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center_left
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 75
+		time_to_live 0.4
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	-90
+		rotation_range_end	-90
+	}
+	affector ColourFader2
+	{
+		red1 	10
+		green1 	10
+		blue1 	10
+		alpha1 	10
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system reisenu_bullet_muzzle_ii : reisenu_bullet_muzzle_i		//主模式子弹
+{
+	material reisenu_bullet_ii
+	emitter Point
+	{
+		velocity 35
+		time_to_live 0.8
+	}
+}
+particle_system reisenu_fire_hit_i		//主模式命中特效 中心光
+{
+	quota 50
+	material reisenu_impact
+	particle_width 0.1
+	particle_height 0.1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0.9 1 1
+		direction 0 1 0
+		emission_rate 30
+		position 0 0 0
+		velocity 0.001
+		time_to_live 0.15
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 30
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-10
+		green2	-10
+		blue2	-10
+		alpha2	-10
+		state_change 0.1
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system reisenu_fire_hit_add_i : reisenu_fire_hit_i		//主模式命中特效 中心光 补充
+{
+	material point_soft_edge_100
+	emitter Point
+	{
+		colour 1 1 1 1
+	}
+}
+particle_system reisenu_fire_hit_laser_i	//主模式命中外射线
+{
+	quota 50
+	material point_hard_edge
+	particle_width 0.12
+	particle_height 3
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 180
+		colour 0 0.8 1 1
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity_min	20
+		velocity_max	40
+		time_to_live_min 0.2
+		time_to_live_max 0.6
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3.3
+		green2	-3.3
+		blue2	-3.3
+		alpha2	-3.3
+		state_change 0.3
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system reisenu_bullet_activated_ring_ii		//二模式尾迹光圈
+{
+	quota 50
+	material reisenu_ring_2
+	particle_width 1
+	particle_height 3
+	renderer billboard
+	billboard_type oriented_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	accurate_facing on
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 5
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.4
+		duration 3
+	}
+	affector Scaler
+	{
+		rate 40
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	10
+		green1 	10
+		blue1 	10
+		alpha1 	0
+		red2 	-3
+		green2	-4.5
+		blue2	-4.5
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system reisenu_bullet_activated_smoke_ii		//二模式尾迹烟
+{
+	quota 50
+	material add_smoke_2
+	particle_width 3
+	particle_height 3
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	accurate_facing on
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 30
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.6
+		duration 3
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	90
+		rotation_range_start	0
+		rotation_range_end	90
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-1.66
+		green2	-3
+		blue2	-3
+		alpha2	-8
+		state_change 0.6
+	}
+}
+particle_system reisenu_bullet_blase_type1_center_ii		//二模式一段弹头爆炸
+{
+	quota 50
+	material point_soft_edge_100
+	particle_width 3
+	particle_height 3
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.4
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate -30
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3.3
+		green2	-3.3
+		blue2	-3.3
+		alpha2	-3.3
+		state_change 0.3
+	}
+}
+particle_system reisenu_bullet_blase_type1_center_red_ii : reisenu_bullet_blase_type1_center_ii		//二模式一段弹头爆炸
+{
+	particle_width 6
+	particle_height 6
+	emitter Point
+	{
+		colour 1 0 0 1
+	}
+}
+particle_system reisenu_bullet_blase_type1_center_redring_ii : reisenu_bullet_blase_type1_center_ii		//二模式一段弹头爆炸
+{
+	material lens_circle_05
+	particle_width 0
+	particle_height 0
+	emitter Point
+	{
+		colour 1 0 0 1
+	}
+	affector Scaler
+	{
+		rate 30
+	}
+}
+particle_system reisenu_bullet_activated_bullet_type2_red_ii
+{
+	quota 50
+	material point_soft_edge_100
+	particle_width 1
+	particle_height 3
+	renderer billboard
+	billboard_type oriented_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	accurate_facing on
+	emitter Point
+	{
+		angle 0
+		colour 1 0 0 1
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.1
+		duration 3
+	}
+}
+particle_system reisenu_bullet_activated_bullet_type2_ii : reisenu_bullet_activated_bullet_type2_red_ii
+{
+	particle_width 0.4
+	particle_height 1.2
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.1
+		duration 3
+	}
+}
+particle_system reisenu_bullet_hit_type2_ii		//二模式落地弹命中中心
+{
+	quota 50
+	material point_soft_edge_100
+	particle_width 3
+	particle_height 3
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.4
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-7
+		blue2	-7
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system reisenu_card_starring_expand	//符卡
+{
+	quota 50
+	material reisenu_ring
+	particle_width 0.1
+	particle_height 0.1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 1 1 0.5
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.3
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 80
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	180
+		rotation_speed_range_end	180
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system reisenu_card_starring_rotate
+{
+	quota 50
+	material reisenu_ring
+	particle_width 24
+	particle_height 24
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.6
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	180
+		rotation_speed_range_end	180
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	0
+		green2	10
+		blue2	10
+		alpha2	5
+		state_change 0.5
+	}
+}
+particle_system reisenu_card_ring_expand	//符卡爆炸
+{
+	quota 50
+	material lens_circle_08_pass
+	particle_width 0.1
+	particle_height 0.1
+	renderer billboard
+	billboard_type oriented_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 1 0 1
+	common_up_vector 0 0 1
+	iteration_interval 0
+	accurate_facing on
+	emitter Point
+	{
+		angle 0
+		colour 1 0 0 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.4
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 60
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	10
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system reisenu_card_particle	//符卡碎片
+{
+	quota 50
+	material reisenu_diamond
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	accurate_facing on
+	emitter Box
+	{
+		angle 90
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity_min 3
+		velocity_max 10
+		time_to_live 0.8
+		duration 0.1
+		depth 5
+		height 5
+		width 5
+	}
+	affector Scaler
+	{
+		rate 1
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system reisenu_card_particle_2 : reisenu_card_particle	//符卡碎片
+{
+	quota 50
+	material reisenu_trapezoidal
+}
+particle_system reisenu_card_particle_3 : reisenu_card_particle	//符卡碎片
+{
+	quota 50
+	material reisenu_triangle
+}
+
+particle_system reisenu_card_word_shrink
+{
+	quota 50
+	material reisenu_word
+	particle_width 60
+	particle_height 60
+	renderer billboard
+	billboard_type point
+	billboard_origin center_left
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.3
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate -160
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system reisenu_card_word_stay
+{
+	quota 50
+	material reisenu_word
+	particle_width 12
+	particle_height 12
+	renderer billboard
+	billboard_type point
+	billboard_origin center_left
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 1
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.3
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material add_smoke_2 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture add_smoke_2.png 	
+}}}}
+material lens_circle_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture lens_circle_01.png 	
+}}}}
+material lens_circle_08 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture lens_circle_08.png 	
+}}}}
+material lens_circle_08_pass : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture lens_circle_08.png 	
+}}}}
+material point_hard_edge : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture point_hard_edge.png 	
+}}}}
+material point_soft_edge_100 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture point_soft_edge_100.png 	
+}}}}
+material pump_flare_03_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture pump_flare_03_01.png 	
+}}}}
+material reisenu_bullet : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture reisenu_bullet.png 	
+	}}
+	pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		texture_unit{
+            texture reisenu_bullet_add.png 	
+	}}
+}}
+material reisenu_bullet_ii : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture reisenu_bullet_ii.png 	
+}}}}
+material reisenu_diamond : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture reisenu_diamond.png 	
+}}}}
+material reisenu_impact : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture reisenu_impact.png 	
+}}}}
+material reisenu_ring : alpha_blend_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture reisenu_ring.png 	
+}}}}
+material reisenu_trapezoidal : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture reisenu_trapezoidal.png 	
+}}}}
+material reisenu_triangle : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture reisenu_triangle.png 	
+}}}}
+material reisenu_ring_2 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture reisenu_ring_2.png 
+			rotate_anim 1.5
+			tex_address_mode border
+			tex_border_colour 0 0 0 0
+}}}}
+material lens_circle_05 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture lens_circle_05.png 
+}}}}
+material reisenu_word : alpha_blend_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture reisenu_word.png 
+}}}}
+

@@ -19,8 +19,15 @@
 	<model filename="acg_bronya_ex_1.xml" /> <!--布洛妮娅常服-->
 	<model filename="acg_raiden_mei_ex_1.xml" /> <!--雷电芽衣常服-->
 <!-- 东方project -->
-	<model filename="acg_reisenu_ex.xml" /> <!--铃仙-->
-	<model filename="acg_reisenu.xml" /> <!--铃仙-->
+	<model filename="acg_reisenu.xml">
+		<requirement class="weapon" slot="0" key="acg_reisenu_a.weapon"/>
+	</model>
+	<model filename="acg_reisenu.xml">
+		<requirement class="weapon" slot="0" key="acg_reisenu_b.weapon"/>
+	</model>
+	<model filename="acg_reisenu_ex.xml">
+		<requirement class="weapon" slot="0" key="acg_reisenu_c.weapon"/>
+	</model>
 <!-- 舰队collection -->
 	<model filename="acg_yuudachi_halloween_ver.xml" /> <!--夕立万圣节装-->
 	<model filename="acg_shigure_summer_ver.xml" /> <!--时雨水着-->

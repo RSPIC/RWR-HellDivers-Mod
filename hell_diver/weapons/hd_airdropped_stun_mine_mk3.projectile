@@ -2,7 +2,7 @@
 <projectile 
 class="grenade" 
 name="AirDropped Stun Mine Mk3 Beacon" 
-key="airdropped_stun_mine_mk3.projectile" 
+key="hd_airdropped_stun_mine_mk3.projectile" 
 slot="0"
 pulldown_in_air="15.0"
 on_ground_up="0 1 0"
@@ -11,18 +11,18 @@ can_be_disarmed="0"
 time_to_live_out_in_the_open="0"
 player_death_drop_owner_lock_time="0"
 >
-	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="airdropped_stun_mine_mk3.projectile" min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_airdropped_stun_mine_mk3.projectile" min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
 
-	<result class="spawn" instance_class="projectile" instance_key="airdropped_stun_mine_mk3_trigger.projectile" 
-			min_amount="10" max_amount="8" offset="0 30 0" position_spread="2 0" direction_spread="0.05 0.1" />	
+	<result class="spawn" instance_class="projectile" instance_key="hd_airdropped_stun_mine_mk3_trigger.projectile" 
+			min_amount="30" max_amount="40" offset="0 30 0" position_spread="3.5 0" direction_spread="0.05 0.1" />	
 	<trigger class="time" time_to_live="3" />	
     <rotation class="random" />
 
     <model mesh_filename="vindicator_beacon_green.xml" />
     <hud_icon filename="airdropped_stun_mine_mk3.png" />
 
-     <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
-	speed_estimation_far="70.0" max_speed="70.0" randomness="0.0" tweak_factor="1.0" />
+    <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
+	speed_estimation_far="70.0" max_speed="21.0" randomness="0.0" tweak_factor="1.0" />
 
     <!-- projectile slot 0 is used for hand grenade items currently -->
     <!-- bound to change -->

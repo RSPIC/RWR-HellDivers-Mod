@@ -107,7 +107,7 @@ particle_system general_weapon_result_hitspot
 	particle_width 0.25
 	particle_height 0.25
 	renderer billboard
-	billboard_type point
+	billboard_type perpendicular_self
 	billboard_origin center
 	billboard_rotation_type vertex
 	accurate_facing on
@@ -2277,6 +2277,57 @@ particle_system hd_vehicle_weapon_laser
 		colour2 0 0 0 0
 	}
 }
+
+particle_system general_result_shield_hit_1
+{
+	quota 50
+	material shield_hit_1
+	particle_width 2
+	particle_height 2
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0.7 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.1
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.7 1 1 1
+		time1 1
+		colour1 0 0 0 0
+	}
+}
+particle_system general_result_shield_hit_2 : general_result_shield_hit_1
+{
+	material shield_hit_ring
+	emitter Point
+	{
+		time_to_live 0.15
+	}
+	affector Scaler
+	{
+		rate 40
+	}
+}
+
 --------------------------------------material-----------------------------------
 material alpha_blend_base{
 	receive_shadows off
@@ -2553,4 +2604,25 @@ material red_trail : add_base
     pass{
         texture_unit{
             texture red_trail.png 	
+}}}}
+material muzzle_crossfire_anim_a_4 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture muzzle_crossfire_anim_a_4.png 	
+}}}}
+material shield_hit_1 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture shield_hit_1.png 	
+}}}}
+material shield_hit_ring : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture shield_hit_ring.png 	
 }}}}

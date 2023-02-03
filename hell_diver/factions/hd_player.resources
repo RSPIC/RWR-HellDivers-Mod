@@ -47,9 +47,12 @@
 <weapon key="hd_md98_injector.weapon" /><!--MD-98注射器-->
 <weapon key="hd_mls4x_commando_mk3.weapon" /><!--突击队跟踪导弹-->
 
+<!-- 部署物 -->
+<weapon key="hd_apb_mk3.weapon" /><!--铁丝网-->
+
 <!--投掷物/信标-->
-<projectile key="at_mine_mk3.projectile" /><!--AT Mine MK3反载具地雷-->
-<projectile key="airdropped_stun_mine_mk3.projectile" /><!--Stun Mine MK3眩晕地雷-->
+<projectile key="hd_at_mine_mk3.projectile" /><!--AT Mine MK3反载具地雷-->
+<projectile key="hd_airdropped_stun_mine_mk3.projectile" /><!--Stun Mine MK3眩晕地雷-->
 <projectile key="hd_hellpod.projectile" /><!--空投舱-->
 <projectile key="hd_m5_apc_call.projectile" /><!--M5 ACP 载具-->
 <projectile key="hd_m5_32_hav_call.projectile" /><!--M5-32 反坦克步兵车-->
@@ -61,13 +64,14 @@
 <projectile key="hd_exo48_mk3.projectile" /><!--黑曜石-->
 <projectile key="hd_exo51_mk3.projectile" /><!--重步者-->
 <projectile key="hd_at47_mk3_call.projectile" /><!--AT-47 反坦克平台-->
-<projectile key="hd_amg_11_mk3_call.projectile" /><!--机枪炮台-->
-<projectile key="hd_arx_34_mk3_call.projectile" /><!--轨道炮炮台-->
+<projectile key="hd_amg_11_mk3_call.projectile" /><!--自动机枪炮台-->
+<projectile key="hd_arx_34_mk3_call.projectile" /><!--自动轨道炮炮台-->
 <projectile key="hd_aac6_tesla_mk3_call.projectile" /><!--特斯拉炮台-->
 <projectile key="hd_agl8_mk3_call.projectile" /><!--榴弹炮炮台-->
 
 <!--护甲-->
 <carry_item key="helldivers_vest.carry_item" />
+
 
 
 </resources>
