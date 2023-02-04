@@ -1,0 +1,183 @@
+material Crosshair {
+	receive_shadows off
+	technique {
+		pass {
+			lighting off
+			fog_override true none
+			scene_blend alpha_blend		
+			texture_unit {
+				texture crosshair.png
+			}
+		} 
+	}
+}
+  
+
+material CrosshairGood {
+	receive_shadows off
+	technique {
+		pass {
+			lighting off
+			fog_override true none
+			scene_blend add		
+			depth_func always_pass
+			texture_unit {
+				texture crosshair_good_center.png
+			}
+		}
+		pass {
+			lighting off
+			fog_override true none
+			scene_blend add		
+			texture_unit {
+				texture crosshair_good_outside.png
+				wave_xform rotate sine 0 0.5 0 -0.25
+				tex_address_mode border
+				tex_border_colour 0 0 0 0
+			}
+		}
+		pass {
+			lighting off
+			fog_override true none
+			scene_blend add		
+			texture_unit {
+				texture crosshair_good_outside.png
+				wave_xform rotate sine 0 0.5 0 0.25
+				tex_address_mode border
+				tex_border_colour 0 0 0 0
+			}
+		} 
+	}
+}
+
+material CrosshairPoor {
+	receive_shadows off
+	technique {
+		pass {
+			lighting off
+			fog_override true none
+			scene_blend add		
+			depth_func always_pass
+			texture_unit {
+				texture crosshair_poor_center.png
+			}
+		}
+		pass {
+			lighting off
+			fog_override true none
+			scene_blend add		
+			texture_unit {
+				texture crosshair_poor_outside.png
+				wave_xform rotate sine 0 0.5 0 -0.25
+				tex_address_mode border
+				tex_border_colour 0 0 0 0
+			}
+		}
+		pass {
+			lighting off
+			fog_override true none
+			scene_blend add		
+			texture_unit {
+				texture crosshair_poor_outside.png
+				wave_xform rotate sine 0 0.5 0 0.25
+				tex_address_mode border
+				tex_border_colour 0 0 0 0
+			}
+		} 
+	}
+}
+  
+material CrosshairTimer {
+	receive_shadows off
+	technique {
+		pass {
+			lighting off
+			fog_override true none
+			scene_blend alpha_blend		
+			texture_unit {
+				texture crosshair_timer.png
+			}
+		}
+		pass {
+			lighting off
+			fog_override true none
+			scene_blend alpha_blend		
+			texture_unit {
+				texture crosshair_timer_pointer.png
+				rotate_anim 1.0
+				tex_address_mode clamp
+			}
+		} 
+	}
+}
+
+
+material AimHelper {
+	receive_shadows off
+	technique {
+		pass {
+			lighting off
+			fog_override true none
+			scene_blend alpha_blend		
+			texture_unit {
+				texture aim_helper.png
+			}
+		} 
+	}
+}
+
+material DynamicCrosshair {
+	receive_shadows off
+	technique {
+		pass {
+			lighting on
+			emissive 1 1 1 1
+			fog_override true none
+			cull_software none
+			cull_hardware none
+			depth_check off
+
+			scene_blend add		
+			texture_unit {
+				texture crosshair_1.png
+				wave_xform scroll_x sine 0 0.5 0 -0.3
+				tex_address_mode wrap
+			}
+		} 
+		
+		pass {
+			lighting off
+			fog_override true none
+			cull_software none
+			cull_hardware none
+			depth_check off
+
+			scene_blend alpha_blend		
+			texture_unit {
+				texture crosshair_3.png
+			}
+		} 
+	}
+}
+
+material LineOfSight {
+	receive_shadows off
+		technique {
+			pass {
+				depth_write off
+				depth_check off
+
+				lighting off
+				ambient vertexcolour
+				diffuse vertexcolour
+				scene_blend alpha_blend
+
+				texture_unit {
+					texture los.png
+					tex_address_mode clamp
+				}
+			} 
+  
+		} 
+	}
+}

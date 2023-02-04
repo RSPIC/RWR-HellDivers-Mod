@@ -15,19 +15,31 @@
     <projectile file="hd_tox13_avenger_mk3_damage.projectile" />
     <projectile file="hd_mls4x_commando_mk3_damage.projectile" />
     <projectile file="hd_exo44_walker_mk3_missile_damage.projectile" />
+    <projectile file="hd_exo48_obsidian_mk3_cannon_damage.projectile" />
+    <projectile file="hd_exo_dead_damage.projectile" />
+    <projectile file="hd_exo51_lumberer_mk3_cannon_damage.projectile" />
+    <projectile file="hd_exo51_lumberer_mk3_flame_damage.projectile" />
+    <projectile file="hd_m5_32_hav_at_mk3_damage.projectile" />
+    <projectile file="hd_td110_bastion_at_mk3_damage.projectile" />
+    <projectile file="hd_at47_mk3_damage.projectile" />
+    <projectile file="hd_vehicle_destroy_damage.projectile" />
+    <projectile file="hd_amg_11_mk3_damage.projectile" />
+    <projectile file="hd_arx_34_mk3_damage.projectile" />
+    <projectile file="hd_aac6_tesla_mk3_damage.projectile" />
+    <projectile file="hd_agl8_mk3_damage.projectile" />
 	<!--辩护者俯冲轰炸-->
     <projectile file="hd_vindicator_dive_bomb.projectile" />
     <projectile file="hd_vindicator_missile.projectile" />
     <projectile file="hd_vindicator_shrapnel.projectile" />
 	<!--地雷-->
-    <projectile file="at_mine_mk3_damage.projectile" />
-    <projectile file="at_mine_mk3_stay.projectile" />
-    <projectile file="at_mine_mk3_trigger.projectile" />
-    <projectile file="at_mine_mk3.projectile" />
+    <projectile file="hd_at_mine_mk3_damage.projectile" />
+    <projectile file="hd_at_mine_mk3_stay.projectile" />
+    <projectile file="hd_at_mine_mk3_trigger.projectile" />
+    <projectile file="hd_at_mine_mk3.projectile" />
 	<!--眩晕雷-->
- 	<projectile file="airdropped_stun_mine_mk3.projectile" />	
-	<projectile file="airdropped_stun_mine_mk3_trigger.projectile" />	
-	<projectile file="airdropped_stun_mine_mk3_stun.projectile" />	
+ 	<projectile file="hd_airdropped_stun_mine_mk3.projectile" />	
+	<projectile file="hd_airdropped_stun_mine_mk3_trigger.projectile" />	
+	<projectile file="hd_airdropped_stun_mine_mk3_stun.projectile" />	
 	<!-- 燃烧瓶  -->
 	<projectile file="hd_grenade_molotov.projectile" />	
 	<projectile file="hd_grenade_molotov_damage.projectile" />	
@@ -41,12 +53,24 @@
 	<projectile file="hd_hellpod_dropping_damage.projectile" />	
 	<projectile file="hd_hellpod_dropping_spawn_ai.projectile" />	
 	<projectile file="hd_m5_apc_call.projectile" />	<!--M5 APC轻型载具-->
+	<projectile file="hd_m5_32_hav_call.projectile" /><!--M5-32 反坦克步兵车-->
+	<projectile file="hd_td110_bastion_call.projectile" /><!--堡垒 坦克-->
+	<projectile file="hd_mc109_motor_call.projectile" /><!--重锤摩托-->
 	<projectile file="hd_resupply_spawn.projectile" /><!--弹药补给间接弹头-->
 	<projectile file="hd_resupply.projectile" /><!--弹药补给-->
-	<projectile file="hd_exo44_mk3.projectile" /><!--重步者-->
+	<projectile file="hd_exo44_mk3.projectile" /><!--步行者-->
+	<projectile file="hd_exo48_mk3.projectile" /><!--黑曜石-->
+	<projectile file="hd_exo51_mk3.projectile" /><!--重步者-->
+	<projectile file="hd_at47_mk3_call.projectile" /><!--AT-47 反坦克平台-->
+	<projectile file="hd_amg_11_mk3_call.projectile" /><!--自动机枪炮台-->
+	<projectile file="hd_arx_34_mk3_call.projectile" /><!--自动轨道枪炮台-->
+	<projectile file="hd_agl8_mk3_call.projectile" /><!--榴弹炮炮台-->
+	<projectile file="hd_aac6_tesla_mk3_call.projectile" /><!--特斯拉炮台-->
 	
 	<!-- Effect -->
 	<projectile file="hd_players_dead_effect.projectile" />
 
-
+	<!-- 间接生成弹头 -->
+	<projectile file="hd_amg_11_mk3_spawn.projectile" />
+	<projectile file="hd_arx_34_mk3_spawn.projectile" />
 </projectiles>

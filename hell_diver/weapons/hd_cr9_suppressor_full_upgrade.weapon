@@ -78,7 +78,10 @@ radius="1"
     <sound key="cycle" fileref="rifle_chamber.wav" /><!--配合与cycle动作，固定播放-->
     <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
     <sound key="cycle_in" fileref="sniper_cycle_in.wav" /><!--动作中in的value为1-->
-    <sound key="last_ammo" fileref="" /><!--最后一发子弹射击的额外音效，不可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_01.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_02.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_03.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_04.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
 	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
 	<sound class="result" fileref="rifle_drop.wav" />
 	
@@ -170,7 +173,7 @@ radius="1"
     <modifier class="detectability" value="0.0" />	<!--正值增加玩家隐蔽-->
 	
 	<!--盾块，可设置多个，空盾块仍然生效击杀收益共享，需要删去该段代码-->
-    <shield offset="0 0 0" extent="0 0 0" usable_for_cover="0"/>  <!--护甲盾块-->
+     <!--护甲盾块-->
 	
 	<!-- x厚度，前后宽度；y高度，z宽度 -->
 

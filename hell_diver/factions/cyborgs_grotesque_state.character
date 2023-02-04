@@ -2,7 +2,6 @@
 <character filename="cyborgs_default_chat.character">
 
 	<sound key="footstep" fileref="" volume="1.2" />
-	<sound key="death" fileref="" volume="0.8" />
 
 	<parameter class="throwing_self_over_initial_bounce" value="0.07" /><!--翻越时初始弹起高度-->
 	<parameter class="throwing_self_over_steer_amount" value="0.30" /><!--翻越中向前位移速度-->

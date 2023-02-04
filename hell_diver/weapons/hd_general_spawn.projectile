@@ -14,6 +14,7 @@ can_be_detected_by_driver="1"
 blast_damage_threshold="50"
 time_to_live_out_in_the_open="0"
 player_death_drop_owner_lock_time="0"
+radius="0.5"
 >
 	<!--
 			offset"x y z 生成位置偏差"
@@ -84,7 +85,20 @@ player_death_drop_owner_lock_time="0"
 
     <sound class="result" key="static_object" copy="terrain" />
 	
-    <effect class="stab" key="character" ref="BloodSplat50Cal" lighting="1" />
-    <effect class="stab" key="character" ref="BurstShine50Cal" lighting="1" post_processing="0" />
-	
+    <effect class="result" key="character" ref="BloodSplat50Cal" lighting="1" />
+    <effect class="result" key="character" ref="BurstShine50Cal" lighting="1" post_processing="0" />
+
+    <effect class="result" key="character" ref="general_hit_character_cross_2"  />
+    <effect class="result" key="character" ref="general_hit_character_cross_1"  />
+
+    <effect class="result" key="shield" ref="general_result_shield_hit_1"  />
+    <effect class="result" key="shield" ref="general_result_shield_hit_2"  />
+
+    <effect class="result" key="vehicle" ref="p2_peacemaker_hit_01" />
+    <effect class="result" key="vehicle" ref="p2_peacemaker_hit_02" />
+    <effect class="result" key="vehicle" ref="p2_peacemaker_hit_03" />
+    <effect class="result" key="vehicle" ref="p2_peacemaker_hit_04" />
+    <effect class="result" key="vehicle" ref="p2_peacemaker_hit_leave" />
+
+ 
 </projectile>

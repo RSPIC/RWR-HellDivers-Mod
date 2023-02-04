@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <reward_config>
 	<!--这里是设置击杀和破坏等等的奖励 -->
-	<reward class="enemy_shot" 				base="+0.0333" 	bonus="0.00001"  type="xp" />  <!-- 100xp 三倍算法 -->
+	<reward class="enemy_shot" 				base="+0.0333" 	bonus="0.0000"  type="xp" />  <!-- 100xp 三倍算法 -->
 	<reward class="enemy_shot" 				base="10" 	 type="rp" />  <!-- bonus 同上	-->
 	<reward class="enemy_killed_in_explosion" 		base="+0.0111" 	bonus="0.0000"  type="xp" /> <!--33xp 三分之一-->
 	<reward class="enemy_killed_in_explosion" 		base="3" 	 type="rp" />

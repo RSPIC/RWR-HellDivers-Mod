@@ -66,10 +66,10 @@ max_character_collision_speed="999"
 		<!-- <trigger class="destroy" />  	 -->
     <!-- <result class="spawn" instance_class="projectile" instance_key="cyborgs_dropping_sound.projectile" min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" /> -->
 	<!-- </event> -->
-	
-  	<event><!--走脚本,有延迟,音效特效整合在生成当中方便匹配--> 
+	<!--走脚本,有延迟,音效特效整合在生成当中方便匹配--> 
+  	<!-- <event>
 		<trigger class="destroy" />  	
     <result class="spawn" instance_class="projectile" instance_key="cyborgs_spawn_berserker.projectile" min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
-	</event>
+	</event> -->
 
 </vehicle>

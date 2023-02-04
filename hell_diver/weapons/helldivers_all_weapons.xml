@@ -59,14 +59,34 @@
 	<weapon file="hd_md98_injector.weapon" /><!--MD-98注射器-->
 	
 	<!-- EXO 机甲 -->
-	<weapon file="hd_exo44_walker_mk3_mg.weapon" /><!--重步者-->
-	<weapon file="hd_exo44_walker_mk3_missile.weapon" /><!--重步者-->
+	<weapon file="hd_exo44_walker_mk3_mg.weapon" /><!--践踏者-->
+	<weapon file="hd_exo44_walker_mk3_missile.weapon" /><!--践踏者-->
+	<weapon file="hd_exo48_obsidian_mk3_cannon.weapon" /><!--黑曜石-->
+	<weapon file="hd_exo51_lumberer_mk3_cannon.weapon" /><!--重步者-->
+	<weapon file="hd_exo51_lumberer_mk3_flame.weapon" /><!--重步者-->
 	
-	<!-- M5 APC 步兵载具 -->
+	<!-- 载具武器 -->
 	<weapon file="hd_m5_apc_mg94.weapon" /><!--安定翼机枪-->
 	<weapon file="hd_m5_apc_autocannon.weapon" /><!--主炮-->
+	<weapon file="hd_m5_32_hav_at_mk3.weapon" /><!--主炮-->
+	<weapon file="hd_td110_bastion_at_mk3.weapon" /><!--主炮-->
+	<weapon file="hd_td110_bastion_mg94.weapon" /><!--车体同轴-->
+	<weapon file="hd_at47_mk3.weapon" /><!--主炮-->
+	<weapon file="hd_vehicle_weapon_laser.weapon" /><!--激光指导-->
+	
+	<!-- 架射炮塔 -->
+	<weapon file="hd_amg_11_mk3.weapon" /><!--机枪炮台-->
+	<weapon file="hd_arx_34_mk3.weapon" /><!--轨道炮炮台-->
+	<weapon file="hd_agl8_mk3.weapon" /><!--榴弹炮炮台-->
+	<weapon file="hd_aac6_tesla_mk3.weapon" /><!--特斯拉炮台-->
 
 	<!-- 模型武器 -->
 	<weapon file="hd_exo44_mk3_model.weapon" /><!--模型-->
+	<weapon file="hd_exo48_mk3_model.weapon" /><!--模型-->
+	<weapon file="hd_exo51_mk3_model.weapon" /><!--模型-->
+	<weapon file="hd_apb_mk3_shell.weapon" /><!--盾块-->
+
+	<!-- 部署物 -->
+	<weapon file="hd_apb_mk3.weapon" /><!--铁丝网-->
 
 </weapons>

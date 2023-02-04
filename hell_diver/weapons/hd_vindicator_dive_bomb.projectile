@@ -35,6 +35,17 @@ player_death_drop_owner_lock_time="0"
 	<sound class="result" key="other" fileref="vindicator_call_01.wav" pitch_variety="0.01" volume="1" />
 	<sound class="result" key="other" fileref="vindicator_call_02.wav" pitch_variety="0.01" volume="1"/>
 	<sound class="result" key="other" fileref="vindicator_call_03.wav" pitch_variety="0.01" volume="1"/>
+    <!-- Offensive -->
+	<sound class="result" key="other" fileref="hd_incoming_fire.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_incoming_fire1.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_incoming_fire2.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_incoming_fire3.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_engaging_target_area.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_engaging_target_area1.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_engaging_target_area2.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_engaging_target_area3.wav" pitch_variety="0.01" volume="1"/>
+
+
     <sound class="result" key="terrain" copy="other" />
     <sound class="result" key="static_object" copy="other" />
     <sound class="result" key="vehicle" copy="other" />

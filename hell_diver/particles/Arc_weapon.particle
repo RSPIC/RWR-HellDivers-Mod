@@ -21,7 +21,7 @@ particle_system Arc_result_strike_thunder
 	common_direction 0 1 0
 	common_up_vector 0 0 1
 	iteration_interval 0
-
+	
 	emitter Point : Position
 	{
 		angle 30
@@ -67,7 +67,7 @@ particle_system Arc_result_strike_thunder_2
 	common_direction 0 1 0
 	common_up_vector 0 0 1
 	iteration_interval 0
-
+	
 	emitter Point : Position
 	{
 		angle 0
@@ -102,14 +102,14 @@ particle_system Arc_result_strike_thunder_2
 		force_vector 0 0 0
 		force_application add
 	}
-	affector DirectionRandomiser
+	affector DirectionRandomiser 
 	{
 		randomness 0
 		scope 0
 		keep_velocity false
 	}
 }
-particle_system Arc_activated_InArea_thunder
+particle_system Arc_activated_InArea_thunder 
 {
 	quota 50
 	material TEX_lightningwidth_01_u
@@ -122,7 +122,7 @@ particle_system Arc_activated_InArea_thunder
 	common_direction 0 1 0
 	common_up_vector 0 0 1
 	iteration_interval 0.01
-
+	
 	emitter Box : Position
 	{
 		angle 180
@@ -167,7 +167,7 @@ particle_system Arc_activated_InArea_thunder_2 : Arc_activated_InArea_thunder
 		rotation_range_start	-90
 		rotation_range_end	-90
 	}
-
+	
 }
 particle_system Arc_activated_center_light
 {
@@ -182,7 +182,7 @@ particle_system Arc_activated_center_light
 	common_direction 0 1 0
 	common_up_vector 0 0 1
 	iteration_interval 0.01
-
+	
 	emitter Point : Position
 	{
 		angle 0
@@ -229,7 +229,7 @@ particle_system Arc_activated_box_point
 	common_direction 0 1 0
 	common_up_vector 0 0 1
 	iteration_interval 0
-
+	
 	emitter Box : Position
 	{
 		angle 0
@@ -257,7 +257,7 @@ particle_system Arc_activated_box_point
 		force_vector 0 4 0
 		force_application add
 	}
-	affector DirectionRandomiser
+	affector DirectionRandomiser 
 	{
 		randomness 20
 		scope 50
@@ -285,7 +285,7 @@ particle_system Arc_muzzle_thunder_01
 {
 	quota 50
 	material lightning_gun_bolt_7
-	particle_width 12
+	particle_width 10
 	particle_height 1.5
 	renderer billboard
 	billboard_type oriented_self
@@ -294,7 +294,7 @@ particle_system Arc_muzzle_thunder_01
 	common_direction 0 1 0
 	common_up_vector 0 0 1
 	iteration_interval 0.01
-
+	
 	emitter Point
 	{
 		angle 0
@@ -336,7 +336,7 @@ particle_system Arc_muzzle_thunder_02
 	common_direction 0 1 0
 	common_up_vector 0 0 1
 	iteration_interval 0.01
-
+	
 	emitter Point
 	{
 		angle 0
@@ -365,6 +365,12 @@ particle_system Arc_muzzle_thunder_02
 		colour2 0 0 0 0
 	}
 }
+particle_system Tesla_muzzle_thunder_02 : Arc_muzzle_thunder_02
+{
+	material lightning_gun_bolt_7_pass
+	particle_width 24
+	particle_height 1.5
+}
 --------------------------------------material-----------------------------------
 material alpha_blend_base{
 	receive_shadows off
@@ -391,63 +397,63 @@ material add_base{
 }
 
 material lightning_gun_bolt : add_base
-{
+{   
     technique{
     pass{
         texture_unit{
             anim_texture lightning_gun_bolt.png 8 0.425
 }}}}
 material point_soft_edge_100 : add_base
-{
+{   
     technique{
     pass{
         texture_unit{
             texture point_soft_edge_100.png
 }}}}
 material muzzle_current_0 : add_base
-{
+{   
     technique{
     pass{
         texture_unit{
             texture muzzle_current_0.png
 }}}}
 material muzzle_current_1 : add_base
-{
+{   
     technique{
     pass{
         texture_unit{
             texture muzzle_current_1.png
 }}}}
 material muzzle_current_2 : add_base
-{
+{   
     technique{
     pass{
         texture_unit{
             texture muzzle_current_2.png
 }}}}
 material muzzle_current_3 : add_base
-{
+{   
     technique{
     pass{
         texture_unit{
             texture muzzle_current_3.png
 }}}}
 material muzzle_current_4 : add_base
-{
+{   
     technique{
     pass{
         texture_unit{
             texture muzzle_current_4.png
 }}}}
 material lighting_a_47 : add_base
-{
+{   
     technique{
     pass{
         texture_unit{
             texture lighting_a_47.png
 }}}}
 material lightning_gun_bolt_u : add_base
-{
+{   
     technique{
     pass{
         texture_unit{
@@ -455,7 +461,7 @@ material lightning_gun_bolt_u : add_base
 			scroll_anim 10 0
 }}}}
 material TEX_lightningwidth_01_u : add_base
-{
+{   
     technique{
     pass{
         texture_unit{
@@ -463,7 +469,7 @@ material TEX_lightningwidth_01_u : add_base
 			scroll_anim 10 0
 }}}}
 material lightning_gun_beam_u : add_base
-{
+{   
     technique{
     pass{
         texture_unit{
@@ -471,9 +477,17 @@ material lightning_gun_beam_u : add_base
 			scroll_anim 10 0
 }}}}
 material lightning_gun_bolt_7 : add_base
-{
+{   
     technique{
     pass{
+        texture_unit{
+            texture lightning_gun_bolt_7.png
+}}}}
+material lightning_gun_bolt_7_pass : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
         texture_unit{
             texture lightning_gun_bolt_7.png
 }}}}
