@@ -4,11 +4,19 @@
 <!-- 资源文件注册为KEY注册，不同于武器注册的file注册 -->
 
 <!--武器-->
-<!-- <weapon key="ex_leviathan_breath.weapon" /> 利维坦之息弓 -->
+<weapon key="acg_reisenu_a.weapon" /> <!--铃仙-->
+<weapon key="acg_reisenu_b.weapon" /> <!--铃仙 instock=0-->
+<weapon key="acg_reisenu_c.weapon" /> <!--铃仙 instock=0-->
+<weapon key="acg_mg4a3td.weapon" /> <!--MG4-->
+<weapon key="acg_mg4a3td_sl.weapon" /> <!--MG4 instock=0-->
+<weapon key="acg_mg4td_ke.weapon" /> <!--MG4-->
+<weapon key="acg_mg4td_ap.weapon" /> <!--MG4 instock=0-->
 
-<!--弹头-->
+<!--投掷物/信标-->
 <projectile key="acg_ex_box.projectile" /><!--Ex 补给箱-->
-<projectile key="hd_grenade_molotov.projectile" /><!--燃烧瓶-->
+<projectile key="acg_amg_11_mk3_call.projectile" /><!--机枪炮塔-->
+<projectile key="acg_amg_11_mk3_call.projectile" /><!--机枪炮台-->
+<projectile key="acg_arx_34_mk3_call.projectile" /><!--轨道炮炮台-->
 
 <!--护甲-->
 <!-- <carry_item key="helldivers_vest.carry_item" /> -->

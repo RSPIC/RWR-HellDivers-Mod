@@ -24,8 +24,9 @@ player_death_drop_owner_lock_time="0"
 	drop_count_factor_on_death="0.0" 
 	drop_count_factor_on_player_death="0.0" 
 	-->
-    <result class="notify_script" key="squadleader_cyborg" />
-	
+    <!-- <result class="notify_script" key="squadleader_cyborg" /> -->
+	<result class="spawn" instance_class="vehicle" instance_key="cyborgs_squadleader_alert_spawn.vehicle" 
+			min_amount="1" max_amount="1" offset="0 20 0" position_spread="0 0" direction_spread="0 0" />	
 	<trigger class="time" time_to_live="5.5" >
 		<collider class="terrain" enabled="0" />
 		<collider class="static_object" enabled="0" />

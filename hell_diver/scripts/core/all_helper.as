@@ -48,6 +48,20 @@ void SpawnSoldier(Metagame@ metagame, uint count, uint factionId, Vector3 positi
 	}
 }
 
+void SpawnSoldier(Metagame@ metagame, uint count, uint factionId, Vector3 position, string instanceKey,Vector3 offset) {
+	for (uint i = 0; i < count; ++i) {
+		metagame.getComms().send(
+		"<command " +
+		" class='create_instance' " + 
+		" faction_id='" + factionId + "' " +
+		" position='" + position.toString() + "' " + 
+		" offset='" + offset.toString() + "' " + 
+		" instance_class='soldier' " + 
+		" instance_key='" + instanceKey + "'> " + 
+		"</command>");
+	}
+}
+
 Vector3 getRandomOffsetVector(Vector3 pos,float strike_rand){
 	float rand_x = rand(-strike_rand,strike_rand);
 	float rand_z = rand(-strike_rand,strike_rand);
@@ -110,4 +124,19 @@ void spawnStaticProjectile(Metagame@ metagame,string key,string pos,int characte
 	command.setStringAttribute("offset", "0 0 0");	
 	
 	metagame.getComms().send(command);
+}
+
+void healCharacter(Metagame@ metagame,int characterId,int healnum) {
+	XmlElement c ("command");
+	c.setStringAttribute("class", "update_inventory");
+	c.setIntAttribute("character_id", characterId); 
+	c.setIntAttribute("untransform_count", healnum);
+	metagame.getComms().send(c);
+}
+
+void healRangedCharacters(Metagame@ metagame,Vector3 pos,int faction_id,float range,int healnum) {
+	array<const XmlElement@>@ characters = getCharactersNearPosition(metagame, pos, faction_id, range);
+	for (uint i = 0; i < characters.length; i++) {
+		healCharacter(metagame,characters[i].getIntAttribute("id"),healnum);
+	}	
 }

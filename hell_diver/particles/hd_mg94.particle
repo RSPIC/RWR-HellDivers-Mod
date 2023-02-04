@@ -406,7 +406,7 @@ particle_system hd_mg94_result_spray
 particle_system hd_mg94_laser
 {
 	quota 50
-	material linear_laser
+	material linear_laser_pass
 	particle_width 0.4
 	particle_height 200
 	renderer billboard
@@ -536,11 +536,18 @@ material hd_mg94_muzzle_pass : add_base
         texture_unit{
             texture hd_mg94_muzzle.png 	
 }}}}
-material linear_laser : add_base
+material linear_laser_pass : add_base
 {   
     technique{
     pass{
 		depth_func always_pass
+        texture_unit{
+            texture linear_laser.png 	
+}}}}
+material linear_laser : add_base
+{   
+    technique{
+    pass{
         texture_unit{
             texture linear_laser.png 	
 }}}}
