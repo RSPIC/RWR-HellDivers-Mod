@@ -1,6 +1,6 @@
 author: RST
 2022.9.21
-这是可以公开使用的常用武器特效
+常用武器特效
 
 particle_system general_weapon_muzzle_crossfire
 {
@@ -49,9 +49,24 @@ particle_system general_weapon_muzzle_crossfire_lightblue : general_weapon_muzzl
 	affector ColourInterpolator
 	{
 		time0 0
-		colour0 0.3 0.3 1 0.2
+		colour0 0 0.5 1 0.2
 		time1 0.5
-		colour1 0.3 0.3 1 0.15
+		colour1 0 0.5 1 0.15
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system general_weapon_muzzle_crossfire_lightpurple : general_weapon_muzzle_crossfire
+{
+	material general_muzzle_01_bw
+	emitter Point{}
+	affector Scaler{}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 1 0.2
+		time1 0.5
+		colour1 1 0.3 1 0.15
 		time2 1
 		colour2 0 0 0 0
 	}
@@ -107,7 +122,7 @@ particle_system general_weapon_result_hitspot
 	particle_width 0.25
 	particle_height 0.25
 	renderer billboard
-	billboard_type point
+	billboard_type perpendicular_self
 	billboard_origin center
 	billboard_rotation_type vertex
 	accurate_facing on
@@ -2241,6 +2256,93 @@ particle_system general_hit_character_cross_1		//放大
 	}
 }
 
+
+particle_system hd_vehicle_weapon_laser
+{
+	quota 300
+	material linear_laser
+	particle_width 0.4
+	particle_height 200
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 5
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.6
+		duration 0.01
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0 0 1
+		time1 0.5
+		colour1 1 0 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+
+particle_system general_result_shield_hit_1
+{
+	quota 50
+	material shield_hit_1
+	particle_width 2
+	particle_height 2
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0.7 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.1
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.7 1 1 1
+		time1 1
+		colour1 0 0 0 0
+	}
+}
+particle_system general_result_shield_hit_2 : general_result_shield_hit_1
+{
+	material shield_hit_ring
+	emitter Point
+	{
+		time_to_live 0.15
+	}
+	affector Scaler
+	{
+		rate 40
+	}
+}
+
 --------------------------------------material-----------------------------------
 material alpha_blend_base{
 	receive_shadows off
@@ -2510,4 +2612,32 @@ material hd_hit_character_cross_1 : alpha_blend_base
 		depth_func always_pass
         texture_unit{
             texture hd_hit_character_cross_1.png 	
+}}}}
+material red_trail : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture red_trail.png 	
+}}}}
+material muzzle_crossfire_anim_a_4 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture muzzle_crossfire_anim_a_4.png 	
+}}}}
+material shield_hit_1 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture shield_hit_1.png 	
+}}}}
+material shield_hit_ring : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture shield_hit_ring.png 	
 }}}}

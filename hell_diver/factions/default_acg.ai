@@ -48,8 +48,9 @@
   <parameter class="call_reinforcements_max_distance" value="40.0" />
   <parameter class="fighting_approach_alarm_spread_max_range" value="30.0" />
 
-  <parameter class="default_fighting_separation" value="10.0" /><!--战斗间隔-->
-  <parameter class="boosted_fighting_separation" value="5.0" /><!--冲刺间隔-->
+  <parameter class="default_fighting_separation" value="7.0" /><!--战斗间隔-->
+  <parameter class="boosted_fighting_separation" value="3.0" /><!--冲刺间隔-->
+  <parameter class="following_separation_range" value="5.0" /><!--跟随间隔-->
 
   <parameter class="run_limit_margin" value="2.0" />
   <parameter class="run_limit" value="6.0" />

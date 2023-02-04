@@ -51,7 +51,8 @@
 
 	<event>
 		<trigger class="destroy" />
-  	<result class="spawn" instance_class="vehicle" instance_key="hd_hellpod.vehicle" min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
+  	<result class="spawn" instance_class="vehicle" instance_key="hd_hellpod_dropping_pod.vehicle" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
 	</event>
 	
 	<event>
@@ -66,7 +67,8 @@
   
   	<event>
 		<trigger class="destroy" />  	
-    <result class="spawn" instance_class="projectile" instance_key="hd_hellpod_dropping_spawn_ai.projectile" min_amount="1" max_amount="1" offset="0 -50 0" position_spread="0 0" direction_spread="0 0" />
+    <result class="spawn" instance_class="projectile" instance_key="hd_hellpod_dropping_spawn_ai.projectile"
+	 min_amount="1" max_amount="1" offset="0 -50 0" position_spread="0 0" direction_spread="0 0" />
 	</event>
   
 </vehicle>
