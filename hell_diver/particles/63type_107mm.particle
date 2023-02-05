@@ -110,11 +110,11 @@ particle_system rocket_launcher_muzzle_spread_smoke
     affector Scaler{
 		rate 0.4
 	}
-        affector ColourFader2{
+    affector ColourFader2{
 		red1	-0
 		green1  -0
 		blue1	-0
-		alpha1	0
+		alpha1	 0
 		red2	 0
 		green2  0
 		blue2	0
