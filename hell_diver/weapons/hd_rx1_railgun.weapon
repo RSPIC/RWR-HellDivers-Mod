@@ -42,7 +42,7 @@ key="hd_rx1_railgun.weapon"
 	
 	<sound key="fire" fileref="rx1_railgun_fire.wav" pitch_variety="0.00"  volume="0.3" />
     <sound key="cycle" fileref="rx1_railgun_reload.wav" pitch_variety="0.00"  volume="0.7"/>
-	<sound key="dry_fire" fileref="hd_p2_peacemaker_dryfire.wav" pitch_variety="0.03" volume="1.0" /><!--空弹射击扳机音效-->
+	<sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.03" volume="1.0" /><!--空弹射击扳机音效-->
     <sound key="magazine_out" fileref="sniper_clip_out_1.wav" />
     <sound key="magazine_in" fileref="sniper_clip_in_1.wav" />
     <sound key="cycle_out" fileref="sniper_cycle_out_1.wav" />

@@ -58,7 +58,7 @@ on_ground_up="0 0 1"
 
     <sound key="effect" fileref="hd_p6_gunslinger_cycle.wav" pitch_variety="0.03" volume="0.7" /> 
     <sound key="fire" fileref="hd_p6_gunslinger_fire.wav" pitch_variety="0.03" volume="0.7" />
-    <sound key="dry_fire" fileref="hd_p6_gunslinger_dryfire.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.03" volume="1.0" />
 	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="0.5" />
 	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="0.9" />
 	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="0.8" />
@@ -67,7 +67,7 @@ on_ground_up="0 0 1"
     <sound key="cycle" fileref="rifle_chamber.wav" />
     <sound key="cycle_out" fileref="sniper_cycle_out.wav" />
     <sound key="cycle_in" fileref="sniper_cycle_in.wav" />
-    <sound key="last_ammo" fileref="hd_p6_gunslinger_dryfire.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="last_ammo" fileref="hd_dryfire.wav" pitch_variety="0.03" volume="1.0" />
 	<sound class="impact" fileref="rifle_drop.wav" />
 
     <model filename="hd_p6_gunslinger.xml" /> 
