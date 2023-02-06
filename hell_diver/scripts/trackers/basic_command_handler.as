@@ -6,6 +6,7 @@
 #include "query_helpers.as"
 #include "generic_call_task.as"
 #include "task_sequencer.as"
+#include "all_task.as"
 
 // --------------------------------------------
 class BasicCommandHandler : Tracker {
@@ -368,7 +369,17 @@ class BasicCommandHandler : Tracker {
 				" position='" + pos.toString() + "'" +
 				" character_id='" + playerInfo.getIntAttribute("character_id") + "'/>";				
 			m_metagame.getComms().send(c);
-		}
+		
+		} else if(checkCommand(message, "spawncall")) {
+			const XmlElement@ playerInfo = getPlayerInfo(m_metagame, senderId);
+			const XmlElement@ characterInfo = getCharacterInfo(m_metagame, playerInfo.getIntAttribute("character_id"));
+			Vector3 pos1 = stringToVector3(characterInfo.getStringAttribute("position"));	
+			Vector3 pos2 = stringToVector3(playerInfo.getStringAttribute("aim_target"));	
+			pos2=pos2.add(Vector3(0,1,0));
+			Event_call_helldiver_superearth_airstrike@ new_task = Event_call_helldiver_superearth_airstrike(m_metagame,2.0,playerInfo.getIntAttribute("character_id"),playerInfo.getIntAttribute("faction_id"),pos1,pos2,"airstrike_mk1");
+			TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+			tasker.add(new_task);
+		}		
 	}
 
 	// --------------------------------------------

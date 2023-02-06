@@ -1,7 +1,7 @@
 #include "query_helpers2.as"
 #include "helpers.as"
 
-//Credit: NetherCrow & RW/Helldiver Staff
+//Credit: NetherCrow & Saiwa & RW/Helldiver Staff
 
 void spawnVehicle(Metagame@ metagame, uint count, uint factionId, Vector3 position, Orientation@ dir, string instanceKey) {
 	for (uint i = 0; i < count; ++i) {
@@ -139,4 +139,38 @@ void healRangedCharacters(Metagame@ metagame,Vector3 pos,int faction_id,float ra
 	for (uint i = 0; i < characters.length; i++) {
 		healCharacter(metagame,characters[i].getIntAttribute("id"),healnum);
 	}	
+}
+
+Vector3 getAimUnitVector(float scale, Vector3 s_pos, Vector3 e_pos) {
+	float dx = e_pos.m_values[0]-s_pos.m_values[0];
+	float dy = e_pos.m_values[2]-s_pos.m_values[2];
+    float ds = sqrt(dx*dx+dy*dy);
+    if(ds<=0.000005f) {ds=0.000005f;dx=0.000004f;dy=0.000003f;}
+	return Vector3(dx*scale/ds,0,dy*scale/ds);
+}
+
+Vector3 getMultiplicationVector(Vector3 s_pos, Vector3 scale) {
+	float x = s_pos.m_values[0]*scale.m_values[0];
+	float y = s_pos.m_values[1]*scale.m_values[1];
+	float z = s_pos.m_values[2]*scale.m_values[2];
+	return Vector3(x,y,z);
+}
+
+void CreateDirectProjectile(Metagame@ m_metagame,Vector3 startPos,Vector3 endPos,string key,int cId,int fId,float initspeed){
+	initspeed=initspeed/60;
+	startPos = startPos.add(Vector3(0,1,0));
+	Vector3 direction = endPos.subtract(startPos);
+	float Vmod = sqrt(pow(direction.get_opIndex(0),2)  + pow(direction.get_opIndex(1),2) + pow(direction.get_opIndex(2),2));
+	if (Vmod< 0.00001f) Vmod= 0.00001f;
+	direction.set(direction.get_opIndex(0)/Vmod,direction.get_opIndex(1)/Vmod,direction.get_opIndex(2)/Vmod);
+	direction = direction.scale(initspeed);
+	string c = 
+		"<command class='create_instance'" +
+		" faction_id='" + fId + "'" +
+		" instance_class='grenade'" +
+		" instance_key='" + key + "'" +
+		" position='" + startPos.toString() + "'" +
+		" character_id='" + cId + "'" +
+		" offset='" + direction.toString() + "' />";
+	m_metagame.getComms().send(c);
 }
