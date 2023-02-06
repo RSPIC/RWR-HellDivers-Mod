@@ -27,25 +27,25 @@
     <projectile file="hd_arx_34_mk3_damage.projectile" />
     <projectile file="hd_aac6_tesla_mk3_damage.projectile" />
     <projectile file="hd_agl8_mk3_damage.projectile" />
-	<!--辩护者俯冲轰炸-->
-    <projectile file="hd_vindicator_dive_bomb.projectile" />
-    <projectile file="hd_vindicator_missile.projectile" />
-    <projectile file="hd_vindicator_shrapnel.projectile" />
-	<!--地雷-->
-    <projectile file="hd_at_mine_mk3_damage.projectile" />
-    <projectile file="hd_at_mine_mk3_stay.projectile" />
-    <projectile file="hd_at_mine_mk3_trigger.projectile" />
-    <projectile file="hd_at_mine_mk3.projectile" />
-	<!--眩晕雷-->
- 	<projectile file="hd_airdropped_stun_mine_mk3.projectile" />	
-	<projectile file="hd_airdropped_stun_mine_mk3_trigger.projectile" />	
-	<projectile file="hd_airdropped_stun_mine_mk3_stun.projectile" />	
-	<!-- 燃烧瓶  -->
-	<projectile file="hd_grenade_molotov.projectile" />	
-	<projectile file="hd_grenade_molotov_damage.projectile" />	
-	<!-- 标准手雷 -->
-	<projectile file="hd_grenade_standard.projectile" />	
-	<projectile file="hd_grenade_standard_damage.projectile" />	
+    <projectile file="hd_offensive_airstrike_damage.projectile" />
+	<!--Offensive 攻击性支援-->
+    <projectile file="hd_vindicator_dive_bomb.projectile" />	<!--辩护者-->
+    <projectile file="hd_vindicator_missile.projectile" />		<!--辩护者-->
+    <projectile file="hd_vindicator_shrapnel.projectile" />		<!--辩护者-->
+	<projectile file="hd_offensive_airstrike.projectile" />	<!--空袭-->
+	<!-- defensive 防御性支援 -->
+    <projectile file="hd_at_mine_mk3_damage.projectile" />	<!--地雷-->
+    <projectile file="hd_at_mine_mk3_stay.projectile" />	<!--地雷-->
+    <projectile file="hd_at_mine_mk3_trigger.projectile" />	<!--地雷-->
+    <projectile file="hd_at_mine_mk3.projectile" />			<!--地雷-->
+ 	<projectile file="hd_airdropped_stun_mine_mk3.projectile" />		<!--眩晕雷-->
+	<projectile file="hd_airdropped_stun_mine_mk3_trigger.projectile" /><!--眩晕雷-->	
+	<projectile file="hd_airdropped_stun_mine_mk3_stun.projectile" />	<!--眩晕雷-->
+	<!-- 普通投掷物 -->
+	<projectile file="hd_grenade_molotov.projectile" />			<!-- 燃烧瓶  -->
+	<projectile file="hd_grenade_molotov_damage.projectile" />	<!-- 燃烧瓶  -->
+	<projectile file="hd_grenade_standard.projectile" />		<!-- 标准手雷 -->
+	<projectile file="hd_grenade_standard_damage.projectile" />	<!-- 标准手雷 -->	
 
 	<!--空投信标-->
 	<projectile file="hd_hellpod.projectile" />	<!--空投舱-->

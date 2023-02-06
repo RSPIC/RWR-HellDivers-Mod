@@ -123,6 +123,8 @@ on_ground_up="0 0 1"
 		<effect class="result" key="terrain" ref="real_up_dust_spread" lighting="1" post_processing="0"/>
 		<effect class="result" key="terrain" ref="real_up_dust_stone" lighting="1" post_processing="1"/>
 		<effect class="result" key="terrain" ref="real_up_smoke_1" lighting="1" post_processing="0"/>
+		<effect class="result" key="terrain" ref="shadow_real_up_smoke_leave" lighting="1" post_processing="1"/>
+		<effect class="result" key="terrain" ref="shadow_real_up_smoke_leave_2" lighting="1" post_processing="1"/>
 		<effect class="result" key="terrain" ref="real_up_smoke_beam" lighting="1" post_processing="0"/>
 		<effect class="result" key="terrain" ref="real_up_impact_spread" lighting="1" post_processing="0"/>
 		<effect class="result" key="terrain" ref="real_up_impact_spark" lighting="1" post_processing="0"/>

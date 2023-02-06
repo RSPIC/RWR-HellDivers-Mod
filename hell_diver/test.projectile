@@ -11,7 +11,7 @@
 
 
 	<!-- <effect class="result" key="terrain" ref="car_slide_spary_spark" lighting="0" post_processing="0"/>  -->
-	<effect class="result" key="terrain" ref="real_up_dust_beam" lighting="0" post_processing="0"/> 
+	<!-- <effect class="result" key="terrain" ref="ShadowTest" lighting="0" post_processing="0" shadow="1"/>  -->
 	<!-- <effect class="activated" ref="alert_center_alerticon_hight_frequncy" lighting="0" /><!--高频率感叹号警告标识--> -->
 
 	<sound class="result" key="static_object" copy="terrain" />

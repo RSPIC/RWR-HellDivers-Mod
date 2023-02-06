@@ -71,9 +71,9 @@ class BasicCommandHandler : Tracker {
 			const XmlElement@ info = getPlayerInfo(m_metagame, senderId);
 			int cid = info.getIntAttribute("character_id");
 			// 呼叫支援指令字典
-			array<string> fixcommand = {'adsw','adws','wsdaw','ddd','sswd'};
+			array<string> fixcommand = {'adsw','adws','wsdaw','ddd','sswd','dwsda'};
 			// 获取物品键值字典
-			array<string> itemkey = {'at_mine_mk3','airdropped_stun_mine_mk3','hd_hellpod','hd_vindicator_dive_bomb','hd_resupply'};
+			array<string> itemkey = {'at_mine_mk3','airdropped_stun_mine_mk3','hd_hellpod','hd_vindicator_dive_bomb','hd_resupply','hd_offensive_airstrike'};
 			// 直接替换手雷栏
 			for(uint a = 0; a != fixcommand.size(); a++){
 				if(message == fixcommand[a]){

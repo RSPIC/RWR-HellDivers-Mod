@@ -7,7 +7,7 @@ author: RST
 particle_system real_smoke_1
 {
 	quota 350
-	material Tex_Smoke17C
+	material Tex_Smoke17C_real
 	particle_width 7
 	particle_height 10
 	renderer billboard
@@ -103,8 +103,8 @@ particle_system real_firesmoke_2
 {
 	quota 350
 	material Tex_FireSmoke_real_02
-	particle_width 3
-	particle_height 4
+	particle_width 8
+	particle_height 9
 	renderer billboard
 	billboard_type point
 	billboard_origin center
@@ -119,29 +119,27 @@ particle_system real_firesmoke_2
 		colour 1 1 1 1
 		direction 0 1 0
 		emission_rate 10
-		position 0 4 0
+		position 0 2 0
 		velocity_min 0.001
 		velocity_max 0.1
-		time_to_live 0.2
+		time_to_live 1
 		duration 0.1
 	}
 	affector Scaler
 	{
-		rate 45
+		rate 0
 	}
 	affector ColourInterpolator
 	{
 		time0 0
-		colour0 1 1 1 1
-		time1 0.5
-		colour1 0.7 0.7 0.7 1
-		time2 1
-		colour2 0 0 0 0
+		colour0 0.7 0.7 0.7 1
+		time1 1
+		colour1 0 0 0 1
 	}
 }
 particle_system real_up_dust_beam
 {
-	quota 350
+	quota 100
 	material Tex_Spark06A
 	particle_width 5
 	particle_height 5
@@ -160,7 +158,7 @@ particle_system real_up_dust_beam
 		colour 1 1 1 1
 		direction 0 1 0
 		emission_rate 60
-		position 0 0 0
+		position 0 -3 0
 		velocity_min 5
 		velocity_max 10
 		time_to_live 1.2
@@ -186,7 +184,7 @@ particle_system real_up_dust_beam
 }
 particle_system real_up_dust_spread
 {
-	quota 350
+	quota 1000
 	material Tex_Glow16A_pass
 	particle_width 5
 	particle_height 5
@@ -244,7 +242,7 @@ particle_system real_up_dust_spread
 }
 particle_system real_up_impact_spread
 {
-	quota 350
+	quota 1000
 	material Tex_Diffusion01A_real
 	particle_width 3
 	particle_height 3
@@ -290,7 +288,7 @@ particle_system real_up_impact_spread
 }
 particle_system real_up_impact_spark		//火花
 {
-	quota 350
+	quota 1000
 	material Tex_Spark05A_pass
 	particle_width 3
 	particle_height 3
@@ -336,7 +334,7 @@ particle_system real_up_impact_spark		//火花
 }
 particle_system real_up_impact_spark_1
 {
-	quota 350
+	quota 1200
 	material Tex_Spark17A
 	particle_width 2
 	particle_height 3
@@ -376,7 +374,7 @@ particle_system real_up_impact_spark_2 : real_up_impact_spark_1
 }
 particle_system real_up_dust_stone
 {
-	quota 300
+	quota 1000
 	material wand_stone_06_pass
 	particle_width 0.6
 	particle_height 0.6
@@ -450,7 +448,7 @@ particle_system real_ground_crater
 	{
 		angle 40
 		colour 1 1 1 1
-		direction 0 1 0
+		direction 0 1 0300
 		emission_rate 10
 		position 0 0 0
 		velocity 0.0001
@@ -469,7 +467,7 @@ particle_system real_ground_crater
 }
 particle_system real_up_smoke_1
 {
-	quota 300
+	quota 1000
 	material Tex_Smoke09G_real
 	particle_width 8
 	particle_height 8
@@ -487,7 +485,7 @@ particle_system real_up_smoke_1
 		colour 1 1 1 1
 		direction 0 1 0
 		emission_rate 30
-		position 0 6 0
+		position 0 3 0
 		velocity_min 1
 		velocity_max 2
 		time_to_live 2
@@ -525,7 +523,7 @@ particle_system real_up_smoke_1
 }
 particle_system real_up_smoke_beam
 {
-	quota 300
+	quota 1000
 	material TEX_boomachi_02_real
 	particle_width 8
 	particle_height 10
@@ -568,7 +566,7 @@ particle_system real_up_smoke_beam
 }
 particle_system real_center_short_light
 {
-	quota 350
+	quota 500
 	material point_soft_edge_100_pass
 	particle_width 50
 	particle_height 50
@@ -608,7 +606,7 @@ particle_system real_center_short_light
 }
 particle_system real_center_ambient_light
 {
-	quota 350
+	quota 500
 	material point_soft_edge_100_pass
 	particle_width 20
 	particle_height 25
@@ -652,6 +650,7 @@ particle_system real_center_ambient_light
 --------------------------------------material-----------------------------------
 material alpha_blend_base_real{
 	receive_shadows off
+	transparency_casts_shadows on
 	technique{
 		pass{
 			lighting off
@@ -703,7 +702,7 @@ material Tex_0147_1 : alpha_blend_base_real
         texture_unit{
             texture Tex_0147_1.png 	
 }}}}
-material Tex_Smoke17C : alpha_blend_base_real
+material Tex_Smoke17C_real : alpha_blend_base_real
 {   
     technique{
     pass{
@@ -781,6 +780,13 @@ material Tex_Glow16A_pass : alpha_blend_base_real
 		depth_func always_pass
         texture_unit{
             texture Tex_Glow16A.png 	
+}}}}
+material Tex_Smoke09C : alpha_blend_base_real
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture Tex_Smoke09C.png 	
 }}}}
 material wand_stone_06_pass : alpha_blend_base_real
 {   
