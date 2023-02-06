@@ -107,10 +107,15 @@ on_ground_up="0 0 1"
 		
 		<sound class="result" key="other" fileref="obliterator_grenade_launcher_blast.wav" pitch_variety="0.03" volume="1.0" />
 
-		<effect class="result" key="terrain" ref="at_mine_hit_firesmoke_01" lighting="0" post_processing="1"/>
-		<effect class="result" key="terrain" ref="at_mine_hit_firesmoke_02" lighting="0" post_processing="1"/>
+		<effect class="result" key="terrain" ref="at_mine_hit_firesmoke_01" lighting="0" post_processing="0"/>
+		<effect class="result" key="terrain" ref="at_mine_hit_firesmoke_02" lighting="0" post_processing="0"/>
 		<effect class="result" key="terrain" ref="obliterator_grenade_launcher_impact_smoke" lighting="0" post_processing="0"/>
 		<effect class="result" key="terrain" ref="obliterator_grenade_launcher_spray" lighting="0" post_processing="0"/>
+		<effect class="result" key="terrain" ref="nova_s_gl_hit_smoke_02" lighting="0" post_processing="1"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_impact_spark" lighting="0" post_processing="1"/>
+		<!-- <effect class="result" key="terrain" ref="real_firesmoke_1" lighting="0" post_processing="1"/> -->
+		<effect class="result" key="terrain" ref="real_up_impact_spark_2" lighting="0" post_processing="1"/>
+		<effect class="result" key="terrain" ref="real_up_impact_spark_1" lighting="0" post_processing="1"/>
 		<effect class="activated" ref="obliterator_grenade_launcher_trail" lighting="0"/>
 		
 		<sound class="result" key="terrain" copy="other" />
