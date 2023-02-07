@@ -145,13 +145,13 @@ class Event_call_helldiver_superearth_airstrike : Task {
 		strike_vector = getAimUnitVector(1,c_pos,t_pos);
 		strike_vector = getRotatedVector(1.57,strike_vector);
 		strike_didis = 4;
-		m_pos1 = t_pos.add(getMultiplicationVector(strike_vector,Vector3(-20,0,-20)));
+		m_pos1 = t_pos.add(getMultiplicationVector(strike_vector,Vector3(-16,0,-16)));
 		m_pos2 = m_pos1;
 		m_pos1=m_pos1.add(Vector3(0,40,0));
 		if(m_mode == "airstrike_mk3")
 		{
-			m_excute_Limit = 6;
-			m_time_internal = 0.05;
+			m_excute_Limit = 8;
+			m_time_internal = 0.1;
 			m_airstrike_key = "hd_superearth_airstrike_mk3";
 		}
 	}

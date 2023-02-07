@@ -94,10 +94,13 @@ class spawn_ai : Tracker {
 	// --------------------------------------------
 	protected void handleResultEvent(const XmlElement@ event) {
 		_log("handleResultEvent");
-		Vector3 PosSpawnProjectile = stringToVector3(event.getStringAttribute("position"));
 		//checking if the event was triggered by a notify_script	
 		string EventKeyGet = event.getStringAttribute("key");		//读取事件关键字
-		
+		if (!(SpawnAiIndex.exists(EventKeyGet))){
+			return;        
+		}
+
+		Vector3 PosSpawnProjectile = stringToVector3(event.getStringAttribute("position"));
 
 		// 调用方法 array<const XmlElement@>@ getFactions(const Metagame@ metagame) {
 		// 调用方法 const XmlElement@ getFactionInfo(const Metagame@ metagame, int factionId)

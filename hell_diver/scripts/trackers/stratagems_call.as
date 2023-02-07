@@ -70,6 +70,9 @@ class stratagems_call : Tracker {
                     //随机生成池 先用rand写，后续再做模块化
                 }
             }
+
+            default:
+                break;            
         }
     }
 
@@ -90,6 +93,9 @@ class stratagems_call : Tracker {
                     }
                 }
             }
+
+            default:
+                break;            
         }
     }
     
