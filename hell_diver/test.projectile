@@ -12,15 +12,7 @@
 	<result class="notify_script" key="hd_superearth_airstrike_1" />
 
 	<!-- <effect class="result" key="terrain" ref="car_slide_spary_spark" lighting="0" post_processing="0"/>  -->
-	<effect class="result" key="terrain" ref="SMS_camera_light" lighting="0" /> 
-	<effect class="result" key="terrain" ref="SMS_camera_light_colour_render" lighting="0" post_processing="0"/> 
-	<effect class="result" key="terrain" ref="shadow_SMS_1" lighting="0" post_processing="1"/> 
-	<effect class="result" key="terrain" ref="shadow_SMS_2" lighting="0" post_processing="1"/> 
-	<effect class="result" key="terrain" ref="shadow_SMS_3" lighting="0" post_processing="1"/> 
-	<effect class="result" key="terrain" ref="SMS_vertical_smoke" lighting="0" post_processing="1"/> 
-	<effect class="result" key="terrain" ref="SMS_Ring_smoke" lighting="0" post_processing="1"/> 
-	<effect class="result" key="terrain" ref="SMS_up_spark" lighting="0" post_processing="1"/> 
-	<effect class="result" key="terrain" ref="SMS_impact_leave_dirt" lighting="0" post_processing="1"/> 
+	<effect class="result" key="terrain" ref="MG_hvy_hit_cross_blast" lighting="0" /> 
 
 	<!-- <effect class="activated" ref="alert_center_alerticon_hight_frequncy" lighting="0" /><!--高频率感叹号警告标识--> -->
 
