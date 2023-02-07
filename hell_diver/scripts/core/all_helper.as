@@ -174,3 +174,13 @@ void CreateDirectProjectile(Metagame@ m_metagame,Vector3 startPos,Vector3 endPos
 		" offset='" + direction.toString() + "' />";
 	m_metagame.getComms().send(c);
 }
+
+Vector3 getRotatedVector(float angle, Vector3 c_pos) {
+	float x0= c_pos.m_values[0];
+	float z0= c_pos.m_values[2];
+	float m_cosa = cos(angle);
+	float m_sina = sin(angle);
+	float ex = x0 * m_cosa + z0 * m_sina;
+	float ey = -x0 * m_sina + z0 * m_cosa;
+	return Vector3(ex,0,ey);
+}

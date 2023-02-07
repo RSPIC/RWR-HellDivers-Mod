@@ -38,6 +38,7 @@
 #include "stratagems_call.as"
 #include "player_list.as"
 #include "all_airstrike.as"
+#include "projectile_event.as"
 
 
 
@@ -324,7 +325,8 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		// addTracker(playerList_System(this));   
 		addTracker(spawn_ai(this));   
 		addTracker(stratagems_call(this));   
-		addTracker(AirstrikeSystem(this));   
+		addTracker(AirstrikeSystem(this));
+		addTracker(projectile_event(this));   
 	}
 
 	protected void setupDisableRadioAtMatchOver() {

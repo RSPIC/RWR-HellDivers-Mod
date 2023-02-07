@@ -14,8 +14,8 @@ dictionary airstrikeIndex = {
         // 空武器
         {"",-1},
 
-        // 绝地钱包 空袭
-        {"hd_superearth_airstrike",0},
+        // 绝地钱包 空袭mk1
+        {"hd_superearth_airstrike_1",0},
 
         // 下面这行是用来占位的，在这之上添加新的即可
         {"666",-1}
@@ -44,7 +44,7 @@ class AirstrikeSystem : Tracker {
 
                 switch(Airstrike_strafe[a].m_straferkey){
                     case 0:{//垂直弹头
-                        CreateDirectProjectile(m_metagame,start_pos,end_pos,"hd_general_gl_spawn.projectile",cid,fid,30);	
+                        CreateDirectProjectile(m_metagame,start_pos,end_pos,"hd_offensive_airstrike_mk3.projectile",cid,fid,40);	
                         Airstrike_strafe.removeAt(a);
                         break;                        
                     }
