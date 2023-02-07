@@ -147,12 +147,12 @@ class Event_call_helldiver_superearth_airstrike : Task {
 		strike_didis = 4;
 		m_pos1 = t_pos.add(getMultiplicationVector(strike_vector,Vector3(-20,0,-20)));
 		m_pos2 = m_pos1;
-		m_pos1=m_pos1.add(Vector3(0,60,0));
-		if(m_mode == "airstrike_mk1")
+		m_pos1=m_pos1.add(Vector3(0,40,0));
+		if(m_mode == "airstrike_mk3")
 		{
 			m_excute_Limit = 6;
 			m_time_internal = 0.05;
-			m_airstrike_key = "hd_superearth_airstrike_1";
+			m_airstrike_key = "hd_superearth_airstrike_mk3";
 		}
 	}
 

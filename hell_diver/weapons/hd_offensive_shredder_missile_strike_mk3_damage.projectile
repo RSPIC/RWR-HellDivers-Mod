@@ -4,7 +4,7 @@ class="grenade"
 name="Shredder Missile Strike" 
 key="hd_offensive_shredder_missile_strike_mk3_damage.projectile" 
 slot="0"
-pulldown_in_air="30.0"
+pulldown_in_air="0.1"
 on_ground_up="0 1 0"
 use_time_to_live="1"
 time_to_live="60"
@@ -16,41 +16,9 @@ time_to_live_out_in_the_open="0"
 player_death_drop_owner_lock_time="0"
 >
     <collision class="sticky" />
-	<result class="blast" radius="30" damage="500" push="3" decal="1" character_state="wound"/>
-	<trigger class="time" time_to_live="6" />	
+	<result class="blast" radius="33" damage="100" push="3" decal="1" character_state="wound"/>
+	<trigger class="time" time_to_live="0" />	
 	<rotation class="motion" />
-	<model mesh_filename="" />
 	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
 
-	<sound class="result" key="other" fileref="SMS_impact_1.wav" pitch_variety="0.05" volume="1.5" />
-	<sound class="result" key="other" fileref="SMS_impact_2.wav" pitch_variety="0.05" volume="1.5" />
-	<sound class="result" key="other" fileref="SMS_impact_3.wav" pitch_variety="0.05" volume="1.5" />
-	<sound class="result" key="other" fileref="SMS_impact_4.wav" pitch_variety="0.05" volume="1.5" />
-	<sound class="result" key="terrain" copy="other" />
-	<sound class="result" key="static_object" copy="other" />
-	<sound class="result" key="vehicle" copy="other" />
-	<sound class="result" key="character" copy="other" />
-	<sound class="result" key="shield" copy="other" />
-
-	<effect class="result" key="terrain" ref="SMS_camera_light" lighting="0" /> 
-	<effect class="result" key="terrain" ref="SMS_camera_light_colour_render" lighting="0" post_processing="0"/> 
-	<effect class="result" key="terrain" ref="shadow_SMS_1" lighting="0" post_processing="1"/> 
-	<effect class="result" key="terrain" ref="shadow_SMS_2" lighting="0" post_processing="1"/> 
-	<effect class="result" key="terrain" ref="shadow_SMS_3" lighting="0" post_processing="1"/> 
-	<effect class="result" key="terrain" ref="SMS_vertical_smoke" lighting="0" post_processing="1"/> 
-	<effect class="result" key="terrain" ref="SMS_Ring_smoke" lighting="0" post_processing="1"/> 
-	<effect class="result" key="terrain" ref="SMS_up_spark" lighting="0" post_processing="1"/> 
-	<effect class="result" key="terrain" ref="SMS_impact_leave_dirt" lighting="0" post_processing="1"/> 
-	<effect class="result" key="terrain" ref="SMS_impact_leave_smoke" lighting="0" post_processing="1"/> 
-
-	<effect class="result" key="other" copy="terrain"/>
-	<effect class="result" key="static_object" copy="terrain" />
-	<effect class="result" key="character" copy="terrain" />
-	<effect class="result" key="shield" copy="terrain" />			
-	<effect class="result" key="vehicle" copy="terrain" />			
-	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
-	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
-	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
-	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
-	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
 </projectile>

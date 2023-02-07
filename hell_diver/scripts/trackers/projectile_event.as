@@ -12,7 +12,7 @@ dictionary projectile_eventkey = {
         // 空
         {"",-1},
 
-        {"hd_superearth_airstrike_1",0},
+        {"hd_superearth_airstrike_mk3",0},
 
         // 占位的
         {"666",-1}
@@ -46,7 +46,7 @@ class projectile_event : Tracker {
                     Vector3 pos1 = stringToVector3(event.getStringAttribute("position"));
                     Vector3 pos2 = stringToVector3(character.getStringAttribute("position"));
                     int factionid = character.getIntAttribute("faction_id");
-                    Event_call_helldiver_superearth_airstrike@ new_task = Event_call_helldiver_superearth_airstrike(m_metagame,3.0,characterId,factionid,pos2,pos1,"airstrike_mk1");
+                    Event_call_helldiver_superearth_airstrike@ new_task = Event_call_helldiver_superearth_airstrike(m_metagame,0.5,characterId,factionid,pos2,pos1,"airstrike_mk3");
                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
                     tasker.add(new_task);
                 }

@@ -14,8 +14,8 @@ player_death_drop_owner_lock_time="0"
 	min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
 
 	<!-- <result class="notify_script" key="Butcher" /> -->
-    <result class="spawn" instance_class="projectile" instance_key="hd_offensive_shredder_missile_strike_mk3_damage.projectile" 
-		min_amount="1" max_amount="1" offset="0 20 0" position_spread="0 0" direction_spread="0 0" />	
+    <result class="spawn" instance_class="projectile" instance_key="hd_offensive_shredder_missile_strike_mk3_spawn.projectile" 
+		min_amount="1" max_amount="1" offset="0 300 0" position_spread="0 0" direction_spread="0 0" />	
 	
 	<trigger class="time" time_to_live="3.0" />	
     <rotation class="motion" />
@@ -24,7 +24,7 @@ player_death_drop_owner_lock_time="0"
     <hud_icon filename="hd_shredder_missile_strike_mk3.png" />
 
     <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
-	speed_estimation_far="70.0" max_speed="70.0" randomness="0.0" tweak_factor="1.0" />
+	speed_estimation_far="70.0" max_speed="21.0" randomness="0.0" tweak_factor="1.0" />
 
     <!-- projectile slot 0 is used for hand grenade items currently -->
     <!-- bound to change -->
