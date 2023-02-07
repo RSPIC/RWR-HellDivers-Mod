@@ -16,8 +16,8 @@ particle_system IB_fire
 {
 	quota 150
 	material IB_fire
-	particle_width 9
-	particle_height 12
+	particle_width 6
+	particle_height 9
 	renderer billboard
 	billboard_type point
 	billboard_origin center
@@ -26,7 +26,7 @@ particle_system IB_fire
 	common_up_vector 0 0 1
 	iteration_interval 0
 	
-	emitter Point : time
+	emitter Box : time
 	{
 		angle 0
 		colour 1 1 1 1
@@ -36,6 +36,9 @@ particle_system IB_fire
 		velocity_min 0.0001
 		velocity_max 0.3
         duration 0.1
+		depth 1
+		height 1
+		width 1
 	}
 	affector Rotator
 	{
@@ -47,7 +50,7 @@ particle_system IB_fire
 	affector ColourInterpolator
 	{
 		time0 0
-		colour0 0.7 0.7 0.7 1
+		colour0 0.3 0.3 0.3 0.5
 		time1 0.7
 		colour1 0.7 0.7 0.7 1
 		time2 1
@@ -211,8 +214,9 @@ material IB_fire : add_base
 		texture_unit{
             texture Tex_Smoke09A.png 
 			colour_op modulate
-			rotate_anim 0.1
+			rotate_anim 0.6
 			tex_address_mode wrap
+			scale 0.9 0.9
 	    }
 	}
 }}
