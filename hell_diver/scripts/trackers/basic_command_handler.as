@@ -73,7 +73,7 @@ class BasicCommandHandler : Tracker {
 			// 呼叫支援指令字典
 			array<string> fixcommand = {'adsw','adws','wsdaw','ddd','sswd','dwsda'};
 			// 获取物品键值字典
-			array<string> itemkey = {'at_mine_mk3','airdropped_stun_mine_mk3','hd_hellpod','hd_vindicator_dive_bomb','hd_resupply','hd_offensive_airstrike'};
+			array<string> itemkey = {'at_mine_mk3','airdropped_stun_mine_mk3','hd_hellpod','hd_vindicator_dive_bomb','hd_resupply','hd_offensive_airstrike_mk3'};
 			// 直接替换手雷栏
 			for(uint a = 0; a != fixcommand.size(); a++){
 				if(message == fixcommand[a]){
@@ -376,7 +376,7 @@ class BasicCommandHandler : Tracker {
 			Vector3 pos1 = stringToVector3(characterInfo.getStringAttribute("position"));	
 			Vector3 pos2 = stringToVector3(playerInfo.getStringAttribute("aim_target"));	
 			pos2=pos2.add(Vector3(0,1,0));
-			Event_call_helldiver_superearth_airstrike@ new_task = Event_call_helldiver_superearth_airstrike(m_metagame,2.0,playerInfo.getIntAttribute("character_id"),playerInfo.getIntAttribute("faction_id"),pos1,pos2,"airstrike_mk1");
+			Event_call_helldiver_superearth_airstrike@ new_task = Event_call_helldiver_superearth_airstrike(m_metagame,2.0,playerInfo.getIntAttribute("character_id"),playerInfo.getIntAttribute("faction_id"),pos1,pos2,"hd_superearth_airstrike_1");
 			TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
 			tasker.add(new_task);
 		}		
