@@ -15,6 +15,9 @@
 		//建立关键字与index联系
 dictionary SpawnAiIndex = {
 
+		// 空
+        {"",-1},
+
         // Helldivers
         {"Helldivers",0},
 		
@@ -76,8 +79,6 @@ dictionary SpawnAiIndex = {
 		{"arx_34_mk1_hd",22},
 		// 自动炮台:A-RX-34-mk1 ACG阵营
 		{"arx_34_mk1_acg",23}
-		
-		
 		
 
 };

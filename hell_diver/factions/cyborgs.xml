@@ -117,7 +117,7 @@
 		</attribute_config>
 	</soldier> 
 	<!-- 军团士兵 -->
-	<soldier name="Legionnaire" spawn_score="0.05" copy_from="default_ai">
+	<soldier name="Legionnaire" spawn_score="0.1" copy_from="default_ai">
 		<character filename="cyborgs_legionnaire_state.character">	<!-- cyborgs_legionnaire_state 引用 cyborgs_cyborgs_default_chat 引用 cyborgs_default_base-->
 			
 		</character>
@@ -286,7 +286,7 @@
    
 <!-- Elite -->
 	<!-- 首领 -->
-	<soldier name="Warlord" spawn_score="0.01" copy_from="default_ai">
+	<soldier name="Warlord" spawn_score="0.02" copy_from="default_ai">
 		<character filename="cyborgs_hulk_state.character">	<!-- cyborgs_hulk_state 引用 cyborgs_cyborgs_default_chat 引用 cyborgs_default_base-->
 			
 		</character>
