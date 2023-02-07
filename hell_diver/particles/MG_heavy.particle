@@ -4,6 +4,14 @@ author: RST
 重型机枪通用特效 支援特效
 
 
+		<effect class="result" key="terrain" ref="MG_hvy_hit_smoke" lighting="0"/>
+		<effect class="result" key="terrain" ref="MG_hvy_hit_leave" lighting="0" post_processing="1"/>
+		<effect class="result" key="terrain" ref="MG_heavy_up_dust_1" lighting="0"/>
+		<effect class="result" key="terrain" ref="MG_heavy_up_dust_2" lighting="0"/>
+		<effect class="result" key="terrain" ref="MG_heavy_up_dust_3" lighting="0"/>
+		<effect class="result" key="terrain" ref="MG_heavy_up_dust_4" lighting="0"/>
+		<effect class="result" key="terrain" ref="MG_hvy_spread_dust" lighting="0"/>
+		<effect class="result" key="terrain" ref="MG_hvy_hit_light" lighting="0" post_processing="1"/> -->
 
 particle_system MG_hvy_hit_smoke
 {
