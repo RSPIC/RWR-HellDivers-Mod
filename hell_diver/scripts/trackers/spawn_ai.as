@@ -15,11 +15,8 @@
 		//建立关键字与index联系
 dictionary SpawnAiIndex = {
 
-		// 空
-        {"",-1},
-
-        // Helldivers
-        {"Helldivers",0},
+        // 空
+        {"",0},
 		
 		// 生化人：initiate 初始者
 		{"Initiate",1},
@@ -78,7 +75,13 @@ dictionary SpawnAiIndex = {
 		// 自动炮台:A-RX-34-mk1 HD
 		{"arx_34_mk1_hd",22},
 		// 自动炮台:A-RX-34-mk1 ACG阵营
-		{"arx_34_mk1_acg",23}
+		{"arx_34_mk1_acg",23},
+
+		// 地狱潜兵
+		{"Helldivers",24},
+		
+		// 占位
+		{"None",999}
 		
 
 };
@@ -93,13 +96,14 @@ class spawn_ai : Tracker {
 
 	// --------------------------------------------
 	protected void handleResultEvent(const XmlElement@ event) {
-		_log("handleResultEvent");
 		//checking if the event was triggered by a notify_script	
 		string EventKeyGet = event.getStringAttribute("key");		//读取事件关键字
+		_log("Spawn Ai key=" +  EventKeyGet);
+		_log("Spawn Ai Index=" + int(SpawnAiIndex[EventKeyGet]));
+
 		if (!(SpawnAiIndex.exists(EventKeyGet))){
 			return;        
 		}
-
 		Vector3 PosSpawnProjectile = stringToVector3(event.getStringAttribute("position"));
 
 		// 调用方法 array<const XmlElement@>@ getFactions(const Metagame@ metagame) {
@@ -128,13 +132,10 @@ class spawn_ai : Tracker {
 				ACGId = faction_id;
 			}
 		}
-		//_log("testing spawn ai");
 		
 		switch(int(SpawnAiIndex[EventKeyGet]))
 		{
-			case 0:{//生成Helldivers
-				if(SuperEarthId == -1){break;}
-				SpawnSoldier(m_metagame,1,SuperEarthId,PosSpawnProjectile,"default_ai");
+			case 0:{//空
 				break;
 			}
 			case 1:{//生成 initiate 初始者	------------------------------------------
@@ -250,6 +251,11 @@ class spawn_ai : Tracker {
 			case 23:{//自动炮台：A-RX-34-mk1
 				if(ACGId == -1){break;}
 				SpawnSoldier(m_metagame,1,ACGId,PosSpawnProjectile,"arx_34_mk1_acg");
+				break;
+			}
+			case 24:{//地狱潜兵 修改为仅生成己方AI
+				//if(SuperEarthId == -1){break;}
+				SpawnSoldier(m_metagame,1,0,PosSpawnProjectile,"default_ai");
 				break;
 			}
 

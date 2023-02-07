@@ -47,6 +47,11 @@ class stratagems_call : Tracker {
 
 	protected void handleResultEvent(const XmlElement@ event) {
 		string EventKeyGet = event.getStringAttribute("key");
+
+        if (!(stratagems_call_notify_key.exists(EventKeyGet))){
+			return;        
+		}
+
 		switch(int(stratagems_call_notify_key[EventKeyGet])) 
         {
             case 0: {break;}
@@ -71,34 +76,10 @@ class stratagems_call : Tracker {
                 }
             }
 
-            default:
-                break;            
-        }
-    }
-
-	protected void handleVehicleDestroyEvent(const XmlElement@ event) {
-		string EventKeyGet = event.getStringAttribute("vehicle_key");
-		switch(int(stratagems_call_vehicle_key[EventKeyGet])) 
-        {
-            case 0: {break;}
-
-            case 1: {
-                int m_ownerid  = event.getIntAttribute("owner_id");
-                Vector3 m_pos = stringToVector3(event.getStringAttribute("position"));
-                const XmlElement@ m_faction = getFactionInfo(m_metagame,m_ownerid);
-                if (m_faction !is null){
-                    if (m_faction.getStringAttribute("name")=="Cyborgs") //验证阵营信息 消耗1q资源，这是保底，可以为了性能减少稳定性删除本if
-                    {
-                        SpawnSoldier(m_metagame,1,m_ownerid,m_pos,"Berserker"); //生成兵种 消耗1c资源
-                    }
-                }
+            default:{
+                break;
             }
-
-            default:
-                break;            
         }
     }
-    
-
 
 }

@@ -12,7 +12,7 @@ dictionary projectile_eventkey = {
         // 空
         {"",-1},
 
-        {"hd_superearth_airstrike_mk3",0},
+        {"hd_superearth_airstrike_mk3",1},
 
         // 占位的
         {"666",-1}
@@ -36,13 +36,21 @@ class projectile_event : Tracker {
 
 	protected void handleResultEvent(const XmlElement@ event) {
 		string EventKeyGet = event.getStringAttribute("key");
+        _log("projectile event key= " + EventKeyGet);
+        _log("projectile event key index= " + int(projectile_eventkey[EventKeyGet]));
+
+        if (!(projectile_eventkey.exists(EventKeyGet))){
+			return;        
+		}
+
 		switch(int(projectile_eventkey[EventKeyGet])) 
         {
-
-            case 0: {
+            case 0:{break;}
+            case 1: {
                 int characterId = event.getIntAttribute("character_id");
 				const XmlElement@ character = getCharacterInfo(m_metagame, characterId); // 1q
                 if (character !is null) {
+                    _log("execute projectile event");
                     Vector3 pos1 = stringToVector3(event.getStringAttribute("position"));
                     Vector3 pos2 = stringToVector3(character.getStringAttribute("position"));
                     int factionid = character.getIntAttribute("faction_id");

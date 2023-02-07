@@ -13,7 +13,7 @@ player_death_drop_owner_lock_time="0"
     <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_offensive_airstrike_mk3.projectile" 
 	min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
 
-	<result class="notify_script" key="hd_superearth_airstrike_1" />
+	<result class="notify_script" key="hd_superearth_airstrike_mk3" />
 
 	<trigger class="time" time_to_live="3.0" />	
     <rotation class="motion" />

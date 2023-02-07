@@ -15,7 +15,7 @@ dictionary airstrikeIndex = {
         {"",-1},
 
         // 绝地潜兵 空袭mk3
-        {"hd_superearth_airstrike_mk3",0},
+        {"hd_superearth_airstrike_mk3",1},
 
         // 下面这行是用来占位的，在这之上添加新的即可
         {"666",-1}
@@ -43,7 +43,8 @@ class AirstrikeSystem : Tracker {
                 string specialkey = Airstrike_strafe[a].m_specialkey;
 
                 switch(Airstrike_strafe[a].m_straferkey){
-                    case 0:{//垂直弹头
+                    case 0:{break;}
+                    case 1:{//垂直弹头
                         CreateDirectProjectile(m_metagame,start_pos,end_pos,"hd_offensive_airstrike_mk3_damage.projectile",cid,fid,40);	
                         Airstrike_strafe.removeAt(a);
                         break;                        
