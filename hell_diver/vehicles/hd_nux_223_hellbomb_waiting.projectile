@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectile  
+class="grenade" 
+name="NUX-223 Hellbomb" 
+key="hd_nux_223_hellbomb_waiting.projectile" 
+slot="0"
+pulldown_in_air="-0.0001"
+on_ground_up="0 1 0"
+use_time_to_live="1"
+time_to_live="60"
+can_be_disarmed="0"
+can_be_detected_by_footmen="0"
+can_be_detected_by_driver="0"
+radius="0.01"
+time_to_live_out_in_the_open="0"
+player_death_drop_owner_lock_time="0"
+>
+    <collision class="sticky" />
+	<result class="spawn" instance_class="vehicle" instance_key="hd_nux_223_hellbomb.vehicle" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
+	<trigger class="time" time_to_live="15" />	
+	<rotation class="motion" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+</projectile>

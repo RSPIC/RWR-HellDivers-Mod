@@ -12,7 +12,7 @@ time_to_live_out_in_the_open="0"
 player_death_drop_owner_lock_time="0"
 >
     <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_mc109_motor_call.projectile" 
-	min_amount="0" max_amount="0" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
+	min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
 
 	<result class="spawn" instance_class="vehicle" instance_key="hd_mc109_motor.vehicle" 
 			min_amount="1" max_amount="1" offset="0 30 0" position_spread="0 0" direction_spread="0 0" />	

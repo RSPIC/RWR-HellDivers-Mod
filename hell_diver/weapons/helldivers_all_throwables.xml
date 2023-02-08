@@ -32,6 +32,8 @@
     <projectile file="hd_offensive_shredder_missile_strike_mk3_damage.projectile" />
     <projectile file="hd_offensive_close_air_support_mk3_damage.projectile" />
     <projectile file="hd_offensive_close_air_support_mk3_mg_damage.projectile" />
+    <projectile file="hd_nux_223_hellbomb_damage.projectile" />
+    <projectile file="hd_nux_223_hellbomb_damage_destroy.projectile" />
 	<!--Offensive 攻击性支援-->
     <projectile file="hd_vindicator_dive_bomb.projectile" />	<!--辩护者-->
     <projectile file="hd_vindicator_missile.projectile" />		<!--辩护者-->
@@ -48,6 +50,12 @@
  	<projectile file="hd_airdropped_stun_mine_mk3.projectile" />		<!--眩晕雷-->
 	<projectile file="hd_airdropped_stun_mine_mk3_trigger.projectile" /><!--眩晕雷-->	
 	<projectile file="hd_airdropped_stun_mine_mk3_stun.projectile" />	<!--眩晕雷-->
+	<!-- special 特殊支援 -->
+	<projectile file="hd_nux_223_hellbomb.projectile" />	<!--地狱火-->
+	<projectile file="hd_hellpod.projectile" />	<!--空投舱-->
+	<projectile file="hd_hellpod_dropping_sound.projectile" />	
+	<projectile file="hd_hellpod_dropping_damage.projectile" />	
+	<projectile file="hd_hellpod_dropping_spawn_ai.projectile" />
 	<!-- 普通投掷物 -->
 	<projectile file="hd_grenade_molotov.projectile" />			<!-- 燃烧瓶  -->
 	<projectile file="hd_grenade_molotov_damage.projectile" />	<!-- 燃烧瓶  -->
@@ -55,10 +63,7 @@
 	<projectile file="hd_grenade_standard_damage.projectile" />	<!-- 标准手雷 -->	
 
 	<!--空投信标-->
-	<projectile file="hd_hellpod.projectile" />	<!--空投舱-->
-	<projectile file="hd_hellpod_dropping_sound.projectile" />	
-	<projectile file="hd_hellpod_dropping_damage.projectile" />	
-	<projectile file="hd_hellpod_dropping_spawn_ai.projectile" />	
+	
 	<projectile file="hd_m5_apc_call.projectile" />	<!--M5 APC轻型载具-->
 	<projectile file="hd_m5_32_hav_call.projectile" /><!--M5-32 反坦克步兵车-->
 	<projectile file="hd_td110_bastion_call.projectile" /><!--堡垒 坦克-->
@@ -81,4 +86,5 @@
 	<projectile file="hd_amg_11_mk3_spawn.projectile" />
 	<projectile file="hd_arx_34_mk3_spawn.projectile" />
 	<projectile file="hd_offensive_shredder_missile_strike_mk3_spawn.projectile" />
+	<projectile file="hd_nux_223_hellbomb_waiting.projectile" />
 </projectiles>
