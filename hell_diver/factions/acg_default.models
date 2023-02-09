@@ -17,8 +17,15 @@
 	</model>
 <!-- 明日方舟 -->
 	<model filename="acg_skyfire.xml" /> <!--天火-->
+	<model filename="acg_texas.xml"><!--德克萨斯--><requirement class="weapon" slot="0" key="acg_texas_skill.weapon"/>
+	</model>
+	<model filename="acg_texas.xml"><!--德克萨斯--><requirement class="weapon" slot="0" key="acg_texas_sword.weapon"/>
+	</model>
 <!-- 原神 -->
-	<model filename="acg_sangonomiya_kokomi.xml" /> <!--珊瑚宫心海-->
+	<model filename="acg_sangonomiya_kokomi.xml" > <!--珊瑚宫心海--><requirement class="weapon" slot="0" key="acg_kokomi_water_thrower.weapon"/>
+	</model>
+	<model filename="acg_sangonomiya_kokomi.xml" > <!--珊瑚宫心海--><requirement class="weapon" slot="0" key="acg_kokomi_portia.weapon"/>
+	</model>
 <!-- 崩坏 -->
 	<model filename="acg_bronya_ex_1.xml" /> <!--布洛妮娅常服-->
 	<model filename="acg_raiden_mei_ex_1.xml" /> <!--雷电芽衣常服-->
@@ -40,9 +47,17 @@
 	<model filename="acg_iruru.xml" /> <!--伊露露-->
 	<model filename="acg_kaname_madoka.xml" /> <!--魔法少女小圆-->
 	<model filename="acg_shokuhou_misaki.xml" /> <!--食蜂操祈-->
+	<model filename="acg_megumin.xml"><!--慧慧--><requirement class="weapon" slot="0" key="acg_megumin_wand_summon.weapon"/>
+	</model>
+	<model filename="acg_megumin.xml"><!--慧慧--><requirement class="weapon" slot="0" key="acg_megumin_wand_float.weapon"/>
+	</model>
 <!-- 碧蓝档案 -->
 	<model filename="acg_alice_tendou.xml" /> <!--天童爱丽丝-->
 	<model filename="acg_takanashi_hoshino.xml" /> <!--小鸟游星野-->
+	<model filename="acg_sorasaki_hina.xml"><!--Hina--><requirement class="weapon" slot="0" key="acg_sorasaki_hina_burst.weapon"/>
+	</model>
+	<model filename="acg_sorasaki_hina.xml"><!--Hina--><requirement class="weapon" slot="0" key="acg_sorasaki_hina.weapon"/>
+	</model>
 <!-- 少女前线 -->
 	<model filename="acg_mg4_703.xml"><!--MG4机枪--><requirement class="weapon" slot="0" key="acg_mg4td_ap.weapon"/>
 	</model>

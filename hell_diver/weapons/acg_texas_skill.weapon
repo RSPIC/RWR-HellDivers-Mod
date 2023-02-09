@@ -4,7 +4,7 @@ drop_count_factor_on_death="0"
 drop_count_factor_on_player_death="0"
 time_to_live_out_in_the_open="0"
 player_death_drop_owner_lock_time="0"
-key="ex_texas_skill.weapon" 
+key="acg_texas_skill.weapon" 
 on_ground_up="0 0 1" 
 radius="1"
 > 
@@ -29,7 +29,7 @@ radius="1"
 	burst_shots="1"
     stab_enabled="1"
 	stab_range="4"
-	carry_in_two_hands="1"
+	carry_in_two_hands="0"
 	use_basic_muzzle_smoke_effect="0"
 	/> 
 
@@ -50,7 +50,7 @@ radius="1"
 		spawn_instance_key=""
 	-->
 	<!--多模式-->
-    <next_in_chain key="ex_texas_sword.weapon" share_ammo="0" /> 
+    <next_in_chain key="acg_texas_sword.weapon" share_ammo="0" /> 
 
 	<!--武器模型和HUD-->
 	<weak_hand_hold offset="0" /> <!--模型X轴偏移-->
@@ -106,7 +106,7 @@ radius="1"
 	<!-- 双倍射速 加倍携弹量 -->
 
 	<!--军械库相关-->
-    <commonness value="0.00001" can_respawn_with="1" in_stock="1" /> 
+    <commonness value="1" can_respawn_with="1" in_stock="1" /> 
     <inventory encumbrance="10" price="0.0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
     <!-- 10clip=1hvy -->
 	<!-- 10clip = 1 mag -->
@@ -123,7 +123,7 @@ radius="1"
 			position_spread="水平面随机生成位置 竖直面随机生成位置" 
 			direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
 		-->
-		<result class="spawn" instance_class="grenade" instance_key="ex_texas_skill_damage.projectile" 
+		<result class="spawn" instance_class="grenade" instance_key="acg_texas_skill_damage.projectile" 
 		min_amount="8" max_amount="10" offset="0 0 0" position_spread="4 10" direction_spread="0.0 0.5" />
 		<trigger class="time" time_to_live="0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
