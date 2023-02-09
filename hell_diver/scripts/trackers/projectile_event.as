@@ -13,6 +13,12 @@ dictionary projectile_eventkey = {
         {"",-1},
 
         {"hd_superearth_airstrike_mk3",1},
+        {"hd_superearth_airstrike_mk2",2},
+        {"hd_superearth_airstrike_mk1",3},
+
+        {"hd_superearth_heavy_strafe_mk3",4},
+        {"hd_superearth_heavy_strafe_mk2",5},
+        {"hd_superearth_heavy_strafe_mk1",6},
 
         // 占位的
         {"666",-1}
@@ -48,9 +54,9 @@ class projectile_event : Tracker {
             case 0:{break;}
             case 1: {
                 int characterId = event.getIntAttribute("character_id");
-				const XmlElement@ character = getCharacterInfo(m_metagame, characterId); // 1q
+				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
                 if (character !is null) {
-                    _log("execute projectile event");
+                    // _log("execute projectile event");
                     Vector3 pos1 = stringToVector3(event.getStringAttribute("position"));
                     Vector3 pos2 = stringToVector3(character.getStringAttribute("position"));
                     int factionid = character.getIntAttribute("faction_id");
@@ -58,6 +64,22 @@ class projectile_event : Tracker {
                     TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
                     tasker.add(new_task);
                 }
+                break;
+            }
+
+            case 4: {
+                int characterId = event.getIntAttribute("character_id");
+				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                if (character !is null) {
+                    // _log("execute projectile event");
+                    Vector3 pos1 = stringToVector3(event.getStringAttribute("position"));
+                    Vector3 pos2 = stringToVector3(character.getStringAttribute("position"));
+                    int factionid = character.getIntAttribute("faction_id");
+                    Event_call_helldiver_superearth_heavystrafe@ new_task = Event_call_helldiver_superearth_heavystrafe(m_metagame,0.5,characterId,factionid,pos2,pos1,"heavymg_strafe_mk3");
+                    TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                    tasker.add(new_task);
+                }
+                break;
             }
 
             default:

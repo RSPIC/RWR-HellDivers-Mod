@@ -17,6 +17,10 @@ dictionary airstrikeIndex = {
         // 绝地潜兵 空袭mk3
         {"hd_superearth_airstrike_mk3",1},
 
+
+
+        {"hd_superearth_heavy_strafe_mk3",4},
+
         // 下面这行是用来占位的，在这之上添加新的即可
         {"666",-1}
 };
@@ -44,10 +48,25 @@ class AirstrikeSystem : Tracker {
 
                 switch(Airstrike_strafe[a].m_straferkey){
                     case 0:{break;}
-                    case 1:{//垂直弹头
+                    case 1:
+                    {//垂直弹头
                         CreateDirectProjectile(m_metagame,start_pos,end_pos,"hd_offensive_airstrike_mk3_damage.projectile",cid,fid,40);	
                         Airstrike_strafe.removeAt(a);
                         break;                        
+                    }
+
+                    case 4:
+                    {
+                        float strike_rand = 1.5;
+                        for(int j=1;j<=5;j++)
+                        {
+                            float rand_x = rand(-strike_rand,strike_rand);
+                            float rand_y = rand(-strike_rand,strike_rand);
+                            
+                            CreateDirectProjectile(m_metagame,start_pos,end_pos.add(Vector3(rand_x,0,rand_y)),"hd_offensive_close_air_support_mk3_mg_damage.projectile",cid,fid,80);
+                        }
+                        Airstrike_strafe.removeAt(a);
+                        break;
                     }
 
                     default:

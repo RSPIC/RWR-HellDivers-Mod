@@ -119,7 +119,8 @@ class AOEVestRecoverTask : Task {
 	}
 }
 
-class Event_call_helldiver_superearth_airstrike : Task {
+abstract class event_call_task : Task
+{
 	protected Metagame@ m_metagame;
 	protected float m_time; //延迟
 	protected float m_timeLeft; //延迟实例
@@ -138,12 +139,35 @@ class Event_call_helldiver_superearth_airstrike : Task {
 	protected bool m_end=false;
 	protected Vector3 strike_vector;
 	protected float strike_didis;
+
+	event_call_task(Metagame@ metagame, float time, int cId,int fId,Vector3 characterpos,Vector3 targetpos,string mode)
+	{
+		@m_metagame = @metagame;
+		m_time = time;
+		m_character_id = cId;
+		m_faction_id =fId;
+		c_pos=characterpos;
+		t_pos=targetpos;
+		m_mode=mode;
+	}
+
+	void start() {}
+	void update(float time) {}
+    bool hasEnded() const {
+		if (m_end) {
+			return true;
+		}
+		return false;
+	}	
+}
+
+class Event_call_helldiver_superearth_airstrike : event_call_task {
 	
 	void start() {
 		m_timeLeft=m_time;
 		m_timeLeft_internal = 0;
 		strike_vector = getAimUnitVector(1,c_pos,t_pos);
-		strike_vector = getRotatedVector(1.57,strike_vector);
+		strike_vector = getRotatedVector(getIntSymbol()*1.57,strike_vector);
 		strike_didis = 4;
 		m_pos1 = t_pos.add(getMultiplicationVector(strike_vector,Vector3(-16,0,-16)));
 		m_pos2 = m_pos1;
@@ -158,13 +182,7 @@ class Event_call_helldiver_superearth_airstrike : Task {
 
 	Event_call_helldiver_superearth_airstrike(Metagame@ metagame, float time, int cId,int fId,Vector3 characterpos,Vector3 targetpos,string mode)
 	{
-		@m_metagame = metagame;
-		m_time = time;
-		m_character_id = cId;
-		m_faction_id =fId;
-		c_pos=characterpos;
-		t_pos=targetpos;
-		m_mode=mode;
+		super(metagame, time, cId,fId,characterpos,targetpos,mode);
 	}
 
 	void update(float time) {
@@ -194,11 +212,56 @@ class Event_call_helldiver_superearth_airstrike : Task {
 			}
 		}
 	}
+}
 
-    bool hasEnded() const {
-		if (m_end) {
-			return true;
+class Event_call_helldiver_superearth_heavystrafe : event_call_task {
+	
+	void start() {
+		m_timeLeft=m_time;
+		m_timeLeft_internal = 0;
+		strike_vector = getAimUnitVector(1,c_pos,t_pos);
+		strike_vector = getRotatedVector(getIntSymbol()*1.57,strike_vector);
+		strike_didis = 5;
+		m_pos1 = t_pos.add(getMultiplicationVector(strike_vector,Vector3(-30,0,-30)));
+		m_pos1=m_pos1.add(Vector3(0,30,0));
+		m_pos2 = t_pos;
+		if(m_mode == "heavymg_strafe_mk3")
+		{
+			m_excute_Limit = 8;
+			m_time_internal = 0.3;
+			m_airstrike_key = "hd_superearth_heavy_strafe_mk3";
 		}
-		return false;
-	}	
+	}
+
+	Event_call_helldiver_superearth_heavystrafe(Metagame@ metagame, float time, int cId,int fId,Vector3 characterpos,Vector3 targetpos,string mode)
+	{
+		super(metagame, time, cId,fId,characterpos,targetpos,mode);
+	}
+
+	void update(float time) {
+		if(m_timeLeft >= 0)
+		{
+			m_timeLeft -= time;
+		}
+		if (m_timeLeft < 0) //开始执行
+		{
+
+			m_timeLeft_internal -= time;
+			if (m_timeLeft_internal < 0)
+			{
+				if (m_excute_time < m_excute_Limit)
+				{
+					m_excute_time++;
+					m_timeLeft_internal = m_time_internal;
+					insertCommonStrike(m_character_id,m_faction_id,m_airstrike_key,m_pos1,m_pos2);
+					m_pos1 = m_pos1.add(getMultiplicationVector(strike_vector,Vector3(strike_didis,0,strike_didis)));
+					m_pos2 = m_pos2.add(getMultiplicationVector(strike_vector,Vector3(strike_didis,0,strike_didis)));					
+				}
+				else
+				{
+					m_end = true;
+				}
+			}
+		}
+	}
 }

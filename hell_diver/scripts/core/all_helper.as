@@ -184,3 +184,12 @@ Vector3 getRotatedVector(float angle, Vector3 c_pos) {
 	float ey = -x0 * m_sina + z0 * m_cosa;
 	return Vector3(ex,0,ey);
 }
+
+int getIntSymbol()
+{
+	if(rand(0.0f,1.0f) <= 0.5f)
+	{
+		return 1;
+	}
+	return -1;
+}
