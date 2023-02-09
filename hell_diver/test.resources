@@ -5,16 +5,24 @@
 <!--武器-->
 <weapon key="ref.weapon" />
 <weapon key="normal.weapon" />
-<weapon key="acg_ruby_rose_scythe.weapon" />
 
 <!--弹头-->
 <projectile key="hd_hellpod.projectile" />		<!--空投舱-->
 <projectile key="hd_resupply.projectile" />		<!--弹药补给-->
+<!-- 进攻支援 -->
 <projectile key="hd_vindicator_shrapnel.projectile" />		<!--辩护者-->
 <projectile key="hd_offensive_airstrike_mk3.projectile" />	<!--空袭-->
 <projectile key="hd_offensive_laser_strike_mk3.projectile" />	<!--激光空袭-->
 <projectile key="hd_offensive_shredder_missile_strike_mk3.projectile" />	<!--撕裂者-->
 <projectile key="hd_offensive_close_air_support_mk3.projectile" />	<!--近空支援-->
+<projectile key="hd_offensive_thunderer_barrage_mk3.projectile" />	<!--三重轰炸-->
+<projectile key="hd_offensive_strafing_run_mk3.projectile" />	<!--空中扫射-->
+<projectile key="hd_offensive_static_field_conductors_mk3.projectile" />	<!--静电力场-->
+<projectile key="hd_offensive_sledge_precision_artillery_mk3.projectile" />	<!--大锤精确火炮-->
+<projectile key="hd_offensive_railcannon_strike_mk3.projectile" />	<!--轨道轰炸-->
+<projectile key="hd_offensive_missile_barrage_mk3.projectile" />	<!--导弹弹幕-->
+<projectile key="hd_offensive_incendiary_bombs_mk3.projectile" />	<!--燃烧炸弹-->
+<projectile key="hd_offensive_heavy_strafing_run_mk3.projectile" />	<!--重机枪扫射-->
+<!-- 特殊支援 -->
 <projectile key="hd_nux_223_hellbomb.projectile" />	<!--地狱火-->
-
 </resources>

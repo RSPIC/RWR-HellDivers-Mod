@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <projectile  
 class="grenade" 
-name="Close Air Support" 
-key="hd_offensive_close_air_support_mk3.projectile" 
+name="Missile Barrage" 
+key="hd_offensive_missile_barrage_mk3.projectile" 
 slot="0"
 pulldown_in_air="15.0"
 time_to_live="60"
@@ -10,7 +10,7 @@ can_be_disarmed="0"
 time_to_live_out_in_the_open="0"
 player_death_drop_owner_lock_time="0"
 >
-    <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_offensive_close_air_support_mk3.projectile" 
+    <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_offensive_missile_barrage_mk3.projectile" 
 	min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
 
 	<!-- <result class="notify_script" key="Butcher" /> -->
@@ -21,7 +21,7 @@ player_death_drop_owner_lock_time="0"
     <rotation class="motion" />
 
     <model mesh_filename="vindicator_beacon_red.xml" />
-    <hud_icon filename="hd_close_air_support_mk3.png" />
+    <hud_icon filename="hd_missile_barrage_mk3.png" />
 
     <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
 	speed_estimation_far="70.0" max_speed="21.0" randomness="0.0" tweak_factor="1.0" />
