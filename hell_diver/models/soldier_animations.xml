@@ -53160,6 +53160,27 @@
             <position x="5.154892" y="0.392032" z="4.682786" />
         </frame>
     </animation>
+<!-- REC6 -->
+    <animation loop="0" end="0.000000" speed="1.000000" comment="hold_rec6">
+        <frame time="0.000000">
+            <position x="-0.995668" y="55.551552" z="0.164213" />
+            <position x="-0.654966" y="48.573368" z="0.598787" />
+            <position x="-6.517905" y="45.624840" z="4.576976" />
+            <position x="5.190133" y="45.112663" z="-2.849375" />
+            <position x="-8.960081" y="38.289444" z="2.520820" />
+            <position x="8.693733" y="38.104336" z="-4.461673" />
+            <position x="-7.729670" y="36.714577" z="9.303583" />
+            <position x="9.725967" y="31.149961" z="-5.217430" />
+            <position x="-1.077580" y="35.322517" z="0.874707" />
+            <position x="-5.124651" y="28.351248" z="3.696151" />
+            <position x="3.416056" y="28.409811" z="-1.517928" />
+            <position x="-8.219771" y="13.917140" z="6.340977" />
+            <position x="5.728513" y="13.643060" z="-0.495910" />
+            <position x="-9.471902" y="1.083165" z="7.948585" />
+            <position x="6.962823" y="0.725944" z="-1.286222" />
+        </frame>
+    </animation>
+    
 <!-- EXO机甲 -->
     <animation loop="1" end="1.300000" speed="1.000000" comment="exo_running" speed_spread="0.080000">
         <frame time="0.000000">
@@ -55207,7 +55228,7 @@
 		<position x="15.0000" y="-1.5880" z="-3.2099" node_name="foot.L"/>
 	</frame>
     </animation>
-        <animation loop="0" end="0.03330" speed="0.500000" comment="exo_recoil_righthand" >
+    <animation loop="0" end="0.03330" speed="0.500000" comment="exo_recoil_righthand" >
         <frame time="0.0000">
             <position x="0.0000" y="75.0000" z="-0.0000" 		node_name="head"/>
             <position x="0.0000" y="70.0000" z="-0.0000" 		node_name="neck"/>
