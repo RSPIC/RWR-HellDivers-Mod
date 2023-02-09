@@ -37,10 +37,15 @@ player_death_drop_owner_lock_time="0"
 	<effect class="result" key="static_object" copy="terrain" />
 	<effect class="result" key="character" copy="terrain" />
 	<effect class="result" key="shield" copy="terrain" />			
-	<effect class="result" key="vehicle" copy="terrain" />			
+	<effect class="result" key="vehicle" copy="terrain" />
 	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
 	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
 	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
 	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
 	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+
+	<effect class="result" type="splat_map" surface_tag="" size="2.0" atlas_index="0" layer="1" />
+    <effect class="result" type="splat_map" surface_tag="" size="3.0" atlas_index="4" layer="0" />
+    <effect class="result" type="splat_map" surface_tag="" size="4.5" atlas_index="0" layer="2" additive="0" />
+
 </projectile>
