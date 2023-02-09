@@ -83,10 +83,14 @@ player_death_drop_owner_lock_time="0"
     <sound class="result" key="vehicle" tag="metal_dumpster" file="bullet_dumpster_5.wav" pitch_variety="0.125" volume="1.0" />
 
     <sound class="result" key="static_object" copy="terrain" />
-	
-	<effect class="result" key="character" ref="" />
-	<effect class="result" key="character" ref="" />
-	<effect class="result" key="character" ref="" />
+		
+    <effect class="result" key="character" ref="BloodSplat50Cal" lighting="1" />
+    <effect class="result" key="character" ref="BurstShine50Cal" lighting="1" post_processing="0" />
+    <effect class="result" key="character" ref="general_hit_character_cross_2"  />
+    <effect class="result" key="character" ref="general_hit_character_cross_1"  />
+
+
+
 	<effect class="result" key="terrain" ref="" use_surface_color="1" />
 	<effect class="result" key="vehicle" tag="sandbag" ref="" use_surface_color="1" />
 	<effect class="result" key="vehicle" tag="deco_car" ref="" use_surface_color="1" />
@@ -94,13 +98,7 @@ player_death_drop_owner_lock_time="0"
     <effect class="result" key="vehicle" tag="metal_heavy" ref="" use_surface_color="1" />
     <effect class="result" key="static_object" ref="" use_surface_color="1" />
 	<effect class="result" key="vehicle" tag="metal_dumpster" ref="" use_surface_color="1" />
-    <effect class="result" key="shield" ref="" />
-	<effect class="result" key="shield" ref="" />
-	
-    <effect class="result" key="character" ref="BloodSplat50Cal" lighting="1" />
-    <effect class="result" key="character" ref="BurstShine50Cal" lighting="1" post_processing="0" />
-
-    <effect class="result" key="character" ref="general_hit_character_cross_2"  />
-    <effect class="result" key="character" ref="general_hit_character_cross_1"  />
+    <effect class="result" key="shield" ref="general_result_shield_hit_1"  />
+    <effect class="result" key="shield" ref="general_result_shield_hit_2"  />
 
 </projectile>

@@ -21151,7 +21151,7 @@
             <position x="3.312034" y="0.732556" z="0.778092" />
         </frame>
     </animation>
-    <animation loop="1" end="0.400000" speed="1.100000" comment="melee, quick knife">
+    <animation loop="0" end="0.400000" speed="1.100000" comment="melee, quick knife">
         <frame time="0.000000">
             <position x="1.553612" y="55.665001" z="1.570316" />
             <position x="1.461781" y="48.712612" z="0.760448" />
@@ -65575,5 +65575,207 @@
             <position x="5.931732" y="1.680297" z="-10.947349" />
         </frame>
     </animation>
-
+<!-- 通用 -->
+    <animation loop="0" end="1.600000" speed="2.000000" comment="rwby_melee">
+        <frame time="0.000000">
+            <position x="1.732612" y="54.734852" z="-2.666971" />
+            <position x="1.856184" y="47.744255" z="-2.325904" />
+            <position x="-3.124257" y="44.641258" z="-7.180450" />
+            <position x="6.927322" y="44.502121" z="2.340155" />
+            <position x="-4.859248" y="37.072495" z="-9.104934" />
+            <position x="3.946377" y="37.124725" z="3.169606" />
+            <position x="-1.760035" y="37.997406" z="-2.816896" />
+            <position x="-1.066400" y="32.155941" z="3.597685" />
+            <position x="0.634530" y="34.656643" z="-1.118444" />
+            <position x="-1.904698" y="27.745743" z="-5.567238" />
+            <position x="3.274293" y="27.622849" z="3.071711" />
+            <position x="-2.236554" y="12.895216" z="-7.653316" />
+            <position x="5.143074" y="12.848835" z="3.738621" />
+            <position x="-2.678859" y="0.125093" z="-10.046709" />
+            <position x="6.813883" y="-0.029557" z="4.334791" />
+        </frame>
+        <frame time="0.143662">
+            <position x="1.810520" y="54.678452" z="-3.783826" />
+            <position x="2.177000" y="47.726742" z="-3.049368" />
+            <position x="-2.428649" y="44.302532" z="-8.136948" />
+            <position x="6.711802" y="44.678341" z="2.273649" />
+            <position x="-3.682583" y="37.054287" z="-4.953780" />
+            <position x="2.178942" y="38.305923" z="3.993602" />
+            <position x="-7.055885" y="41.107224" z="-0.628232" />
+            <position x="-3.740051" y="34.532684" z="3.282586" />
+            <position x="0.631745" y="34.642105" z="-1.140639" />
+            <position x="-2.467322" y="27.676247" z="-5.119226" />
+            <position x="3.274293" y="27.622849" z="3.071711" />
+            <position x="-2.236554" y="12.895216" z="-7.653316" />
+            <position x="5.143074" y="12.848835" z="3.738621" />
+            <position x="-2.678859" y="0.125093" z="-10.046709" />
+            <position x="6.813883" y="-0.029557" z="4.334791" />
+        </frame>
+        <frame time="0.600000">
+            <position x="2.955953" y="54.147720" z="-5.270561" />
+            <position x="1.675270" y="47.312309" z="-4.472453" />
+            <position x="-2.852001" y="43.308212" z="-9.136837" />
+            <position x="6.549882" y="45.230331" z="0.997582" />
+            <position x="-8.981655" y="38.800854" z="-6.646099" />
+            <position x="0.915521" y="39.818157" z="2.708683" />
+            <position x="-7.018187" y="43.657219" z="-1.896309" />
+            <position x="-5.228289" y="37.431469" z="0.147959" />
+            <position x="1.403610" y="34.522655" z="-1.698051" />
+            <position x="-2.502624" y="27.671886" z="-5.091115" />
+            <position x="3.274293" y="27.622849" z="3.071711" />
+            <position x="-2.236554" y="12.895216" z="-7.653316" />
+            <position x="5.143074" y="12.848835" z="3.738621" />
+            <position x="-2.678859" y="0.125093" z="-10.046709" />
+            <position x="6.813883" y="-0.029557" z="4.334791" />
+        </frame>
+        <frame time="0.605920">
+            <position x="1.732612" y="54.734852" z="-2.666971" />
+            <position x="1.856184" y="47.744255" z="-2.325904" />
+            <position x="-3.124257" y="44.641258" z="-7.180450" />
+            <position x="6.927322" y="44.502121" z="2.340155" />
+            <position x="-8.770460" y="38.991573" z="-6.733361" />
+            <position x="0.626945" y="39.591465" z="2.776863" />
+            <position x="-6.975725" y="43.770493" z="-1.840420" />
+            <position x="-5.488036" y="37.375988" z="0.002217" />
+            <position x="0.631885" y="34.641094" z="-1.142321" />
+            <position x="-2.502624" y="27.671886" z="-5.091115" />
+            <position x="3.274293" y="27.622849" z="3.071711" />
+            <position x="-2.236554" y="12.895216" z="-7.653316" />
+            <position x="5.143074" y="12.848835" z="3.738621" />
+            <position x="-2.678859" y="0.125093" z="-10.046709" />
+            <position x="6.813883" y="-0.029557" z="4.334791" />
+        </frame>
+        <frame time="0.752113">
+            <position x="1.324623" y="51.840275" z="10.682109" />
+            <position x="0.714035" y="46.516758" z="6.177960" />
+            <position x="-6.368346" y="44.010681" z="5.100581" />
+            <position x="6.991963" y="43.758053" z="2.864532" />
+            <position x="-5.080770" y="41.006992" z="12.398430" />
+            <position x="1.394718" y="41.617737" z="8.164522" />
+            <position x="-3.421056" y="38.221981" z="18.682463" />
+            <position x="-3.809587" y="40.085941" z="12.699807" />
+            <position x="-0.514412" y="34.637913" z="-0.214000" />
+            <position x="-2.502624" y="27.671886" z="-5.091115" />
+            <position x="3.274293" y="27.622849" z="3.071711" />
+            <position x="-2.236554" y="12.895216" z="-7.653316" />
+            <position x="5.143074" y="12.848835" z="3.738621" />
+            <position x="-2.678859" y="0.125093" z="-10.046709" />
+            <position x="6.813883" y="-0.029557" z="4.334791" />
+            <control key="strong_hand" value="0" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="swing" value="1" />
+            <control key="effect" value="1" />
+        </frame>
+        <frame time="0.80423">
+            <position x="1.974187" y="50.524403" z="11.191522" />
+            <position x="0.901459" y="45.143486" z="6.844687" />
+            <position x="-5.416037" y="41.414314" z="8.889809" />
+            <position x="6.742425" y="43.314770" z="2.312700" />
+            <position x="-1.602374" y="36.080544" z="13.473577" />
+            <position x="4.389707" y="37.715374" z="7.519571" />
+            <position x="3.983661" y="33.520561" z="16.972536" />
+            <position x="-1.714549" y="36.158897" z="10.731338" />
+            <position x="-1.098691" y="34.289307" z="-0.107926" />
+            <position x="-2.458829" y="27.677296" z="-5.125988" />
+            <position x="3.274293" y="27.622849" z="3.071711" />
+            <position x="-2.236554" y="12.895216" z="-7.653316" />
+            <position x="5.143074" y="12.848835" z="3.738621" />
+            <position x="-2.678859" y="0.125093" z="-10.046709" />
+            <position x="6.813883" y="-0.029557" z="4.334791" />
+            <control key="strong_hand" value="1" />
+        </frame>
+        <frame time="1.123944">
+            <position x="2.004123" y="54.458664" z="-0.272822" />
+            <position x="2.155353" y="47.513622" z="-0.936656" />
+            <position x="-4.520339" y="44.866756" z="-2.170129" />
+            <position x="8.536772" y="44.166016" z="-0.506121" />
+            <position x="-1.810877" y="37.944057" z="0.785382" />
+            <position x="6.367049" y="37.908653" z="3.981387" />
+            <position x="3.208047" y="33.573254" z="3.174203" />
+            <position x="-0.011835" y="39.159119" z="1.198194" />
+            <position x="1.214529" y="34.569149" z="-1.548741" />
+            <position x="-2.364982" y="27.688889" z="-5.200718" />
+            <position x="3.274293" y="27.622849" z="3.071711" />
+            <position x="-2.236554" y="12.895216" z="-7.653316" />
+            <position x="5.143074" y="12.848835" z="3.738621" />
+            <position x="-2.678859" y="0.125093" z="-10.046709" />
+            <position x="6.813883" y="-0.029557" z="4.334791" />
+            <control key="strong_hand" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="action" value="1" />
+            <control key="swing" value="1" />
+            <control key="effect" value="1" />
+        </frame>
+        <frame time="1.500000">
+            <position x="1.732612" y="54.734852" z="-2.666971" />
+            <position x="1.856184" y="47.744255" z="-2.325904" />
+            <position x="-3.124257" y="44.641258" z="-7.180450" />
+            <position x="6.927322" y="44.502121" z="2.340155" />
+            <position x="-4.859248" y="37.072495" z="-9.104934" />
+            <position x="3.946377" y="37.124725" z="3.169606" />
+            <position x="-1.760035" y="37.997406" z="-2.816896" />
+            <position x="-1.066400" y="32.155941" z="3.597685" />
+            <position x="0.634530" y="34.656643" z="-1.118444" />
+            <position x="-1.904698" y="27.745743" z="-5.567238" />
+            <position x="3.274293" y="27.622849" z="3.071711" />
+            <position x="-2.236554" y="12.895216" z="-7.653316" />
+            <position x="5.143074" y="12.848835" z="3.738621" />
+            <position x="-2.678859" y="0.125093" z="-10.046709" />
+            <position x="6.813883" y="-0.029557" z="4.334791" />
+        </frame>
+        <frame time="1.600000">
+            <position x="1.553612" y="55.665001" z="1.570316" />
+            <position x="1.461781" y="48.712612" z="0.760448" />
+            <position x="-4.137244" y="46.102814" z="-3.750293" />
+            <position x="7.079115" y="45.146175" z="4.476434" />
+            <position x="-11.075831" y="42.201931" z="-4.549741" />
+            <position x="2.660693" y="40.342693" z="9.103543" />
+            <position x="-6.114364" y="39.596409" z="-0.237538" />
+            <position x="-4.123881" y="39.737152" z="11.001668" />
+            <position x="0.714760" y="35.604362" z="0.317390" />
+            <position x="-3.840678" y="28.944790" z="-2.644089" />
+            <position x="4.664622" y="28.307108" z="2.576375" />
+            <position x="-4.552090" y="14.233736" z="-5.486410" />
+            <position x="4.883023" y="13.342298" z="3.579739" />
+            <position x="-5.341043" y="1.379136" z="-7.257515" />
+            <position x="5.154892" y="0.392032" z="4.682786" />
+        </frame>
+    </animation>
 </animations>

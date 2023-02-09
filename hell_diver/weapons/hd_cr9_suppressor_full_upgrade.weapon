@@ -107,7 +107,7 @@ radius="1"
 		<trigger class="impact" time_to_live="0.2"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
-		<!--伤害 1x7.0 轰炸伤(AP升级) -->
+		<!--伤害 1x8~9.0 轰炸伤(AP升级) -->
 
 		<!--命中音效-->
 		<sound class="result" key="other" fileref="rifle_drop.wav" pitch_variety="0.03" volume="0.0" />

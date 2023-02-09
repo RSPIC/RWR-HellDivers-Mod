@@ -11,6 +11,10 @@
 	<model filename="acg_fenrir_white.xml" /> <!--芬里尔 白-->
 	<model filename="acg_kemomimi.xml" /> <!--桃子酱（小狐狸）-->
 	<model filename="acg_natsuki_amagi.xml" /> <!--甘城なつき（猫）-->
+	<model filename="acg_rubyrose.xml"><!--RubyRose 新月玫瑰--><requirement class="weapon" slot="0" key="acg_ruby_rose_sniper.weapon"/>
+	</model>
+	<model filename="acg_rubyrose.xml"><!--RubyRose 新月玫瑰--><requirement class="weapon" slot="0" key="acg_ruby_rose_scythe.weapon"/>
+	</model>
 <!-- 明日方舟 -->
 	<model filename="acg_skyfire.xml" /> <!--天火-->
 <!-- 原神 -->
