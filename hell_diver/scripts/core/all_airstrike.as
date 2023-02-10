@@ -4,26 +4,11 @@
 #include "log.as"
 #include "query_helpers.as"
 #include "query_helpers2.as"
+#include "all_parameter.as"
 
 //Credit: NetherCrow & Saiwa & RW/Helldiver Staff
 
 array<Airstrike_strafer@> Airstrike_strafe;
-
-dictionary airstrikeIndex = {
-
-        // 空武器
-        {"",-1},
-
-        // 绝地潜兵 空袭mk3
-        {"hd_superearth_airstrike_mk3",1},
-
-
-
-        {"hd_superearth_heavy_strafe_mk3",4},
-
-        // 下面这行是用来占位的，在这之上添加新的即可
-        {"666",-1}
-};
 
 class AirstrikeSystem : Tracker {
 	protected GameMode@ m_metagame;
@@ -36,44 +21,52 @@ class AirstrikeSystem : Tracker {
 		@m_metagame = @metagame;
 	}
 
-	void update(float time) {
-        if(Airstrike_strafe.length()>0){
-            for (uint a=0;a<Airstrike_strafe.length();a++){
-                int cid = Airstrike_strafe[a].m_characterId;
-                int fid = Airstrike_strafe[a].m_factionid;
-                Vector3 start_pos = Airstrike_strafe[a].m_c_pos;
-                Vector3 end_pos = Airstrike_strafe[a].m_s_pos;        
-                int specialnum = Airstrike_strafe[a].m_specialnum;
-                string specialkey = Airstrike_strafe[a].m_specialkey;
+    int single_airstrike_update(Airstrike_strafer@ airstrike_single) {
+        int cid = airstrike_single.m_characterId;
+        int fid = airstrike_single.m_factionid;
+        Vector3 start_pos = airstrike_single.m_c_pos;
+        Vector3 end_pos = airstrike_single.m_s_pos;        
+        int specialnum = airstrike_single.m_specialnum;
+        string specialkey = airstrike_single.m_specialkey;
+        int remove_or_not = 0;
 
-                switch(Airstrike_strafe[a].m_straferkey){
-                    case 0:{break;}
-                    case 1:
-                    {//垂直弹头
-                        CreateDirectProjectile(m_metagame,start_pos,end_pos,"hd_offensive_airstrike_mk3_damage.projectile",cid,fid,40);	
-                        Airstrike_strafe.removeAt(a);
-                        break;                        
-                    }
-
-                    case 4:
-                    {
-                        float strike_rand = 2.5;
-                        for(int j=1;j<=5;j++)
-                        {
-                            float rand_x = rand(-strike_rand,strike_rand);
-                            float rand_y = rand(-strike_rand,strike_rand);
-                            
-                            CreateDirectProjectile(m_metagame,start_pos,end_pos.add(Vector3(rand_x,0,rand_y)),"hd_offensive_heavy_strafing_run_mk3_mg_damage.projectile",cid,fid,160);
-                        }
-                        Airstrike_strafe.removeAt(a);
-                        break;
-                    }
-
-                    default:
-                        break;
-                }
+        switch(airstrike_single.m_straferkey){
+            case 0:{break;}
+            case 1:
+            {//垂直弹头
+                CreateDirectProjectile(m_metagame,start_pos,end_pos,"hd_offensive_airstrike_mk3_damage.projectile",cid,fid,40);	
+                remove_or_not = 1;
+                break;                        
             }
-        }	
+
+            case 4:
+            {
+                float strike_rand = 2.5;
+                for(int j=1;j<=5;j++)
+                {
+                    float rand_x = rand(-strike_rand,strike_rand);
+                    float rand_y = rand(-strike_rand,strike_rand);
+                    
+                    CreateDirectProjectile(m_metagame,start_pos,end_pos.add(Vector3(rand_x,0,rand_y)),"hd_offensive_heavy_strafing_run_mk3_mg_damage.projectile",cid,fid,160);
+                }
+                remove_or_not = 1;
+                break;
+            }
+
+            default:
+                break;
+        } 
+
+        return remove_or_not;
+    }
+
+	void update(float time) {
+        if(Airstrike_strafe.length()<=0){return;}
+
+        for (uint a=0;a<Airstrike_strafe.length();a++){
+            if(single_airstrike_update(Airstrike_strafe[a])==1)
+                {Airstrike_strafe.removeAt(a);}
+        }
 	}
 
 
