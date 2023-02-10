@@ -222,13 +222,13 @@ class Event_call_helldiver_superearth_heavystrafe : event_call_task {
 		strike_vector = getAimUnitVector(1,c_pos,t_pos);
 		strike_vector = getRotatedVector(getIntSymbol()*1.57,strike_vector);
 		strike_didis = 5;
-		m_pos1 = t_pos.add(getMultiplicationVector(strike_vector,Vector3(-30,0,-30)));
-		m_pos1=m_pos1.add(Vector3(0,30,0));
+		m_pos1 = t_pos.add(getMultiplicationVector(strike_vector,Vector3(-80,0,-80)));
+		m_pos1=m_pos1.add(Vector3(0,60,0));
 		m_pos2 = t_pos;
 		if(m_mode == "heavymg_strafe_mk3")
 		{
 			m_excute_Limit = 8;
-			m_time_internal = 0.3;
+			m_time_internal = 0.05;
 			m_airstrike_key = "hd_superearth_heavy_strafe_mk3";
 		}
 	}
