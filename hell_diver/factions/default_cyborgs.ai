@@ -11,7 +11,7 @@
   <parameter class="team_check_time" value="3.0" />
   <parameter class="check_alert_time" value="1.5" /><!--检查警戒的间隔-->
   <parameter class="check_reinforcement_need_time" value="30.0" />
-  <parameter class="choose_enemy_time" value="1.0" />
+  <parameter class="choose_enemy_time" value="0.5" />
   <parameter class="check_need_help_time" value="1.0" />
   <parameter class="fighting_time_fire_not_open" value="2.0" />
   <parameter class="cover_status_recheck_time" value="1.5" />
@@ -31,25 +31,25 @@
   <parameter class="favor_staying_in_current_player_squad_value_increase" value="0.5" />
   <parameter class="authority_margin" value="0.07" /> 
   
-  <parameter class="monitor_enemies_max_dot_range" value="1.8" />
+  <parameter class="monitor_enemies_max_dot_range" value="3" />
   <parameter class="monitor_enemies_min_dot_range_offset" value="1.125" />
 
-  <parameter class="choose_enemy_max_dot_range" value="1.9" />
+  <parameter class="choose_enemy_max_dot_range" value="3" />
   <parameter class="choose_enemy_min_dot_range_offset" value="1.125" />
 
-  <parameter class="sight_range_muzzle_factor" value="1.0" />
-  <parameter class="max_sight_range_with_muzzle" value="50.0" />
+  <parameter class="sight_range_muzzle_factor" value="2.0" />
+  <parameter class="max_sight_range_with_muzzle" value="80.0" />
 	<!-- 开火的最大视距 -->
   <parameter class="active_guarding_probability" value="0.5" />
-  <parameter class="leading_inspect_alarm_spread_out_distance" value="30.0" />
+  <parameter class="leading_inspect_alarm_spread_out_distance" value="100.0" />
 	<!--一个AI陷入警戒的时候会扩散这个警戒状态到一个指定范围内,这个范围内的AI都会进入警戒-->
-  <parameter class="leading_inspect_alarm_min_distance" value="45.0" />
+  <parameter class="leading_inspect_alarm_min_distance" value="160.0" />
 	<!--? 推测为触发警戒的MAX范围-->
   <parameter class="maximum_distance_to_consider_for_heal" value="40.0" />
   <parameter class="consider_someone_already_healing_wounded_distance" value="10.0" />
   <parameter class="force_comparison_multiplier_to_call_reinforcements" value="1.1" />
   <parameter class="call_reinforcements_max_distance" value="40.0" />
-  <parameter class="fighting_approach_alarm_spread_max_range" value="30.0" />
+  <parameter class="fighting_approach_alarm_spread_max_range" value="50.0" />
 	<!--“AI过来打你的时候让路边的人一起警戒过来打你”的拉人距离-->
   <parameter class="default_fighting_separation" value="1.0" />
   <parameter class="boosted_fighting_separation" value="1.0" />
@@ -57,8 +57,8 @@
   <parameter class="run_limit_margin" value="2.0" />
   <parameter class="run_limit" value="6.0" />
 	<!-- 这是什么 -->
-  <parameter class="throw_grenade_time_interval_max" value="120.0" />
-  <parameter class="throw_grenade_time_interval_min" value="60.0" />
+  <parameter class="throw_grenade_time_interval_max" value="60.0" />
+  <parameter class="throw_grenade_time_interval_min" value="30.0" />
 	<!-- 再次投掷手雷的间隔时间 -->
   <parameter class="min_distance_to_throw_grenade" value="0.0" />
   <parameter class="max_distance_to_throw_grenade" value="20.0" />
@@ -69,8 +69,8 @@
   <parameter class="guard_wait_time_max" value="15.0" />
   <parameter class="guard_steps" value="2" />
 
-  <parameter class="wait_time" value="0" />
-  <parameter class="wait_time_variance" value="0.2" />
+  <parameter class="wait_time" value="0.6" />
+  <parameter class="wait_time_variance" value="0.3" />
   <parameter class="burst_time" value="2.5" />
   <parameter class="burst_time_variance" value="0.2" />
   <parameter class="in_vehicle_burst_time" value="1.0" />
@@ -90,15 +90,15 @@
   <parameter class="day_reaction_time_to_fight_min" value="0" />
   <parameter class="day_reaction_time_to_fight_max" value="0" />
   <parameter class="night_reaction_time_to_fight_min" value="0" />
-  <parameter class="night_reaction_time_to_fight_max" value="0.5" />
+  <parameter class="night_reaction_time_to_fight_max" value="0" />
   <parameter class="willingness_to_guard" value="0.0" /><!--No guard-->
   <parameter class="minimum_distance_to_consider_deploying_cover" value="18.0" />
   <parameter class="recheck_cover_over_shootability_time" value="3.0" />
   <parameter class="max_objects_per_sqm_to_consider_deployment" value="0.08" />
-  <parameter class="shielding_min_distance_to_move" value="15.0" />
-  <parameter class="shielding_max_distance_to_move" value="25.0" />
-  <parameter class="shielding_min_distance_to_sidestep" value="1.0" />
-  <parameter class="shielding_max_distance_to_sidestep" value="6.0" />
+  <parameter class="shielding_min_distance_to_move" value="30.0" />
+  <parameter class="shielding_max_distance_to_move" value="50.0" />
+  <parameter class="shielding_min_distance_to_sidestep" value="2.0" />
+  <parameter class="shielding_max_distance_to_sidestep" value="8.0" />
   <parameter class="shielding_min_distance_to_keep" value="3.0" />
   <parameter class="leaving_cover_separation" value="4.0" />
   <parameter class="guarding_comment_before_proceed_time" value="2.0" />
@@ -119,19 +119,19 @@
   <parameter class="celebrating_shoot_probability" value="0" /> 
   <parameter class="celebrating_comment_probability" value="0" /> 
   <parameter class="celebrating_stab_probability" value="0" /> 
-  <parameter class="willingness_to_charge" value="0.9" />
+  <parameter class="willingness_to_charge" value="0.75" />
   <parameter class="stab_range" value="3.5" />
   <parameter class="check_vehicles_while_fire_open_interval" value="10.0" />  
   
   <parameter class="reaction_time_after_choosing_target" value="-1" />
   
-<!--      <parameter class="min_number_of_enemies_to_throw_grenade" value="1.0" />  -->
+<!--<parameter class="min_number_of_enemies_to_throw_grenade" value="1.0" />-->
 	  
   <parameter class="grenade_throw_over_obstacle_offset_min" value="-0.5" />
   <parameter class="grenade_throw_over_obstacle_offset_max" value="3.5" />
   
-  <parameter class="fighting_melee_move_radius" value="4" />
+  <!-- <parameter class="fighting_melee_move_radius" value="4" /> -->
 	<!-- 采用近战的接触距离 -->
-  <parameter class="fighting_regular_move_radius" value="0.0" />
+  <!-- <parameter class="fighting_regular_move_radius" value="0.0" /> -->
 	<!-- 与敌人保持的交战距离 -->
 </ai>

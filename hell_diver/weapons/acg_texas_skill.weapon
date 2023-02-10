@@ -124,11 +124,11 @@ radius="1"
 			direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
 		-->
 		<result class="spawn" instance_class="grenade" instance_key="acg_texas_skill_damage.projectile" 
-		min_amount="8" max_amount="10" offset="0 0 0" position_spread="4 10" direction_spread="0.0 0.5" />
+		min_amount="15" max_amount="20" offset="0 0 0" position_spread="4 10" direction_spread="0.0 0.5" />
 		<trigger class="time" time_to_live="0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
-		<!-- 不受护甲抗致死衰减 -->
+		<!-- 10x15~20 -->
 
 		<!--命中音效-->
 		<sound class="result" key="other" fileref="texas_skill_hit.wav" pitch_variety="0.03" volume="0.7" />

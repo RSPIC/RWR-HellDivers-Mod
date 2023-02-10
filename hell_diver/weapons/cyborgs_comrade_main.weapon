@@ -24,7 +24,7 @@ radius="1"
     suppressed="0" 
 	class="4" 
     name="Comrade Melee" 
-	ai_sight_range_modifier="1"
+	ai_sight_range_modifier="1.2"
 	sight_range_modifier="1.0" 
 	burst_shots="1" 
     projectiles_per_shot="1" 
@@ -125,7 +125,7 @@ radius="1"
 		-->
 		<result class="spawn" instance_class="projectile" instance_key="cyborgs_comrade_main_damage.projectile" 
 		min_amount="4" max_amount="6" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
-		<trigger class="time" time_to_live="0.125"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<trigger class="time" time_to_live="0.375"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
 		<!--伤害 4~6x1.0=4~6 -->
