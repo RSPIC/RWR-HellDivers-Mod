@@ -32,15 +32,13 @@ class AirstrikeSystem : Tracker {
 
         switch(airstrike_single.m_straferkey){
             case 0:{break;}
-            case 1:
-            {//垂直弹头
+            case 1:{//垂直弹头
                 CreateDirectProjectile(m_metagame,start_pos,end_pos,"hd_offensive_airstrike_mk3_damage.projectile",cid,fid,40);	
                 remove_or_not = 1;
                 break;                        
             }
 
-            case 4:
-            {
+            case 4:{
                 float strike_rand = 2.5;
                 for(int j=1;j<=5;j++)
                 {
