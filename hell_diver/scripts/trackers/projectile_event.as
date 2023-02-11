@@ -67,6 +67,31 @@ class projectile_event : Tracker {
                 break;
             }
 
+            case 7: {
+                int characterId = event.getIntAttribute("character_id");
+				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                if (character !is null) {
+                    int playerId = character.getIntAttribute("player_id");
+                    const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
+                    if (player !is null) {
+                        if (player.hasAttribute("aim_target")) {
+                            Vector3 target = stringToVector3(player.getStringAttribute("aim_target"));
+                            Vector3 origin = stringToVector3(character.getStringAttribute("position"));
+                            string distance = getPositionDistance(target, origin);
+                            
+                            string intelKey = "rangefinder binoculars";
+                            string aim_x = player.getStringAttribute("aim_target");
+                            dictionary a = {
+                                {"%range", distance},{"%aim_target", aim_x}
+                            };
+                            
+                            sendFactionMessageKeySaidAsCharacter(m_metagame, 0, characterId, intelKey, a);
+                        }                        
+                    }
+                }
+                break;
+            }
+
             default:
                 break;            
         }

@@ -157,7 +157,7 @@ abstract class event_call_task : Task
 }
 
 class Event_call_helldiver_superearth_airstrike : event_call_task {
-	
+
 	void start() {
 		m_timeLeft=m_time;
 		m_timeLeft_internal = 0;

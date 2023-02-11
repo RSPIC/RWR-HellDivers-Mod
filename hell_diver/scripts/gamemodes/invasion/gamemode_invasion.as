@@ -30,7 +30,8 @@
 #include "idler_kicker.as"
 #include "supporter_command_handler.as"
 
-
+// community trackers
+#include "rangefinder.as"
 
 // new trackers
 
@@ -327,6 +328,7 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		addTracker(stratagems_call(this));   
 		addTracker(AirstrikeSystem(this));
 		addTracker(projectile_event(this));   
+		addTracker(RangeFinder(this));   
 	}
 
 	protected void setupDisableRadioAtMatchOver() {

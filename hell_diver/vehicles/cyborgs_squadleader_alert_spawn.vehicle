@@ -67,11 +67,11 @@
 	
 	<event>
 		<trigger class="destroy" />
-  	<result class="spawn" instance_class="vehicle" instance_key="cyborgs_spawn_immolator_model.vehicle" min_amount="0" max_amount="2" offset="0 0 0" position_spread="6 40" direction_spread="0 0" />
+  	<result class="spawn" instance_class="vehicle" instance_key="cyborgs_spawn_immolator_model.vehicle" min_amount="1" max_amount="3" offset="0 0 0" position_spread="6 40" direction_spread="0 0" />
 	</event>
 	<event>
 		<trigger class="destroy" />
-  	<result class="spawn" instance_class="vehicle" instance_key="cyborgs_spawn_hulk_model.vehicle" min_amount="0" max_amount="1" offset="0 0 0" position_spread="6 40" direction_spread="0 0" />
+  	<result class="spawn" instance_class="vehicle" instance_key="cyborgs_spawn_hulk_model.vehicle" min_amount="0" max_amount="2" offset="0 0 0" position_spread="6 40" direction_spread="0 0" />
 	</event>
 	
 	
