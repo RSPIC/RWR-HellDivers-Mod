@@ -30,6 +30,8 @@ dictionary projectile_eventkey = {
         {"hd_superearth_heavy_strafe_mk2",5},
         {"hd_superearth_heavy_strafe_mk1",6},
 
+        {"rangefinder",7},
+
         // 占位的
         {"666",-1}
 };
