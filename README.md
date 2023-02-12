@@ -13,6 +13,8 @@
 - YYSY
 - Tactical UMP-45
 - rainbowflesh
+- DILING
+- Kreedzt
 
 交流 QQ 群：498520233【超级地球】
 
@@ -354,7 +356,7 @@
             > - SH-20 Shield Generator Pack
             > - SH-32 Directional Kinetic Shield
             >
-        - **Deploy:Secondary Weapons**
+        - √ **Deploy:Secondary Weapons**
             >
             > - √ **AC-22 Dum-Dum**
             > - √ **EAT-17**
@@ -365,11 +367,11 @@
             > - √ **MGX-42 Machine Gun**
             > - √ **MLS-4X Commando**
             > - √ **Obliterator Grenade Launcher**
-            > - REC-6 Demolisher
+            > - √ **REC-6 Demolisher**
             > - √ **RL-112 Recoilless Rifle**
             > - √ **TOX-13 Avenger**
             >
-        - Defensive
+        - **Defensive**
             >
             > - √ **A/AC-6 Tesla Tower**
             > - √ **A/GL-8 Launcher Turret**
@@ -385,12 +387,12 @@
             >
         - **Offensive**
             >
-            > - Airstrike
+            > - √ **Airstrike**
             > - Close Air Support
-            > - Heavy Strafing Run
-            > - Incendiary Bombs
+            > - √ **Heavy Strafing Run**
+            > - **Incendiary Bombs**
             > - Missile Barrage
-            > - Orbital Laser Strike
+            > - **Orbital Laser Strike**
             > - Railcannon Strike
             > - Shredder Missile Strike
             > - Sledge Precision Artillery
@@ -399,11 +401,11 @@
             > - Thunderer Barrage
             > - √ **Vindicator Dive Bomb**
             >
-        - Special
+        - **Special**
             >
             > - Emergency Beacon
             > - ME-1 Sniffer Metal Detector
-            > - NUX-223 Hellbomb
+            > - √ **NUX-223 Hellbomb**
             > - √ **Reinforce**
             >
     - 掉落物
