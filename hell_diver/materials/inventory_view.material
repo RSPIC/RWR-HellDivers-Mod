@@ -1,0 +1,713 @@
+import MenuSystemControlBase_ForceDepth from "menusystem.material"
+
+material InventoryViewItemImage {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			lighting off
+			fog_override true none
+
+			texture_unit Image {
+				texture hud_badge_kill_combo1.png
+				tex_address_mode clamp
+				filtering trilinear
+			}
+			texture_unit Color {
+				colour_op_ex modulate src_manual src_current 1.0 1.0 1.0 1.0
+				alpha_op_ex modulate src_manual src_current 0.3
+			}
+			scene_blend alpha_blend
+		} 
+	}
+}
+
+
+
+
+material InventoryViewItemIndicator {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			lighting off
+			fog_override true none
+			texture_unit Image {
+				texture none.png
+				tex_address_mode clamp
+				filtering trilinear
+			}
+			scene_blend alpha_blend
+		} 
+	}
+}
+
+
+material InventoryViewItemIndicatorDenied : InventoryViewItemIndicator {
+	technique Basic {
+		pass Basic {
+			texture_unit Image {
+				texture inventoryview_item_denied.png
+			}
+		} 
+	}
+}
+
+material InventoryViewItemIndicatorAccepted : InventoryViewItemIndicator {
+	technique Basic {
+		pass Basic {
+			texture_unit Image {
+				texture none.png
+			}
+		} 
+	}
+}
+
+material InventoryViewItemIndicatorNotRespawnable : InventoryViewItemIndicator {
+	technique Basic {
+		pass Basic {
+			texture_unit Image {
+				texture inventoryview_item_not_respawnable.png
+			}
+		} 
+	}
+}
+
+
+material InventoryViewSectionBackground {
+	receive_shadows off
+	technique Basic {
+	/*
+		pass Basic {
+			lighting off
+			fog_override true none
+			scene_blend alpha_blend
+
+		        depth_write off
+         		depth_check on
+			// allow other background elements on top of these
+			// section backgrounds to make backgrounds skip rendering
+         		depth_func greater_equal
+
+			texture_unit Base {
+				texture inventoryview_section_background.png
+                                tex_address_mode clamp
+				filtering trilinear
+			}
+			texture_unit Common {
+				colour_op_ex modulate src_manual src_current 1.0 1.0 1.0 1.0
+				alpha_op_ex modulate src_manual src_current 0.0
+                                tex_address_mode clamp
+			}
+			texture_unit Frame {
+				texture inventoryview_section_frame.png
+				colour_op alpha_blend
+				alpha_op_ex add src_current src_texture
+
+                                tex_address_mode clamp
+				filtering trilinear
+			}
+		} 
+*/
+		pass Basic {
+			lighting off
+			fog_override true none
+			scene_blend alpha_blend
+
+		        depth_write off
+         		depth_check on
+			// allow other background elements on top of these
+			// section backgrounds to make backgrounds skip rendering
+         		depth_func greater_equal
+
+			texture_unit Frame {
+				texture inventoryview_section_frame.png
+				colour_op replace
+				alpha_op_ex source1 src_texture src_current
+				tex_address_mode clamp
+				filtering trilinear
+			}
+		} 
+
+		pass Highlight {
+			lighting off
+			fog_override true none
+			scene_blend alpha_blend
+
+		        depth_write off
+         		depth_check on
+			// allow other background elements on top of these
+			// section backgrounds to make backgrounds skip rendering
+         		depth_func greater_equal
+
+			texture_unit Mask {
+				colour_op_ex source1 src_manual src_current 0 0 0
+				alpha_op_ex source1 src_manual src_current 0.0
+				tex_address_mode clamp
+			}
+
+			texture_unit Basic {
+				texture inventoryview_section_background.png
+				tex_address_mode clamp
+				colour_op replace 
+				alpha_op_ex modulate src_texture src_current
+				filtering trilinear
+			}
+
+		} 
+	}
+}
+
+
+material InventoryViewWorldTag {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			lighting off
+			fog_override true none
+			scene_blend alpha_blend
+			texture_unit Tag {
+				texture inventoryview_world_tag.png
+                                tex_address_mode clamp
+				filtering trilinear
+			}
+		} 
+	}
+}
+
+
+
+material InventoryViewStashTag : InventoryViewWorldTag {
+	technique Basic {
+		pass Basic {
+			texture_unit Tag {
+				texture inventoryview_stash_tag.png
+			}
+		} 
+	}
+}
+
+material InventoryViewArmoryTag : InventoryViewWorldTag {
+	technique Basic {
+		pass Basic {
+			texture_unit Tag {
+				texture inventoryview_armory_tag.png
+			}
+		} 
+	}
+}
+
+
+material InventoryViewEquipTag {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			lighting off
+			fog_override true none
+			scene_blend alpha_blend
+			texture_unit Tag {
+				texture inventoryview_equip_tag.png
+                                tex_address_mode clamp
+				filtering trilinear
+			}
+		} 
+	}
+}
+
+
+
+material InventoryViewEquipBackground : InventoryViewSectionBackground {
+}
+
+material InventoryViewWorldBackground : InventoryViewSectionBackground {
+}
+
+material InventoryViewBackpackBackground : InventoryViewSectionBackground {
+}
+
+material InventoryViewCallsBackground : InventoryViewSectionBackground {
+}
+
+
+material InventoryViewSlot {
+	receive_shadows off
+	technique Basic {
+
+		pass Basic {
+			lighting off
+			fog_override true none
+			scene_blend alpha_blend
+			texture_unit Basic {
+				texture inventoryview_slot_frame.png
+				colour_op replace
+				alpha_op_ex source1 src_texture src_current
+                                tex_address_mode clamp
+				filtering trilinear
+			}
+
+			texture_unit Color {
+				colour_op_ex modulate src_manual src_current 1.0 1.0 1.0 1.0
+				alpha_op_ex modulate src_manual src_current 1.0
+			}
+			texture_unit {
+				texture inventoryview_pointer.png
+				tex_address_mode wrap
+				wave_xform scroll_y sine 0 0.2 0 0.38
+				colour_op_ex add src_texture src_current
+				alpha_op_ex add src_texture src_current
+			}
+			texture_unit {
+				texture inventoryview_waveline.png
+				tex_address_mode wrap
+				scroll_anim 0 0.2
+				colour_op_ex modulate src_texture src_current
+				alpha_op_ex source2 src_texture src_current
+			}
+
+			// allow slots carve through background
+       			depth_write on
+         		depth_check on
+         		depth_func always_pass
+	 		depth_bias -1
+		} 
+
+		pass Highlight {
+			lighting off
+			fog_override true none
+			scene_blend alpha_blend
+
+			texture_unit Mask {
+				colour_op_ex source1 src_manual src_current 0 0 0
+				alpha_op_ex source1 src_manual src_current 0.0
+                                tex_address_mode clamp
+			}
+
+			texture_unit Basic {
+				texture inventoryview_slot_highlight.png
+                                tex_address_mode clamp
+				colour_op replace 
+				alpha_op_ex modulate src_texture src_current
+				filtering trilinear
+			}
+
+			// allow slots carve through background
+       			depth_write on
+         		depth_check on
+         		depth_func always_pass
+	 		depth_bias -1
+
+		}
+	}
+}
+
+
+material InventoryViewSlotNotRespawnable : InventoryViewSlot {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			texture_unit Basic {
+				texture inventoryview_slot_frame_not_respawnable.png
+			}
+			texture_unit {
+				texture inventoryview_pointer.png
+				tex_address_mode wrap
+				wave_xform scroll_y sine 0 0.2 0 0.38
+				colour_op_ex add src_texture src_current
+				alpha_op_ex add src_texture src_current
+			}
+			texture_unit {
+				texture inventoryview_waveline.png
+				tex_address_mode wrap
+				scroll_anim 0 0.2
+				colour_op_ex modulate src_texture src_current
+				alpha_op_ex source2 src_texture src_current
+			}
+			
+		}
+
+	}
+}
+
+material InventoryViewSlotNotRespawnableNotAffordable : InventoryViewSlot {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			texture_unit Basic {
+				texture inventoryview_slot_frame_not_respawnable_not_affordable.png
+			}
+		}
+	}
+}
+
+material InventoryViewSlotNotAffordable : InventoryViewSlot {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			texture_unit Basic {
+				texture inventoryview_slot_frame_not_affordable.png
+			}
+		}
+	}
+}
+
+
+material InventoryViewEquipBackpackPlaceholder {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			lighting off
+			fog_override true none
+			scene_blend alpha_blend
+			texture_unit Tag {
+				texture inventoryview_backpack_tag.png
+                                tex_address_mode clamp
+				filtering trilinear
+			}
+			texture_unit Color {
+				colour_op_ex modulate src_manual src_current 1.0 1.0 1.0 1.0
+				alpha_op_ex modulate src_manual src_current 0.7
+			}
+		} 
+	}
+}
+
+material InventoryViewEquipRadioPlaceholder {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			lighting off
+			fog_override true none
+			scene_blend alpha_blend
+			texture_unit Tag {
+				texture inventoryview_calls_tag.png
+				tex_address_mode clamp
+				filtering trilinear
+			}
+		} 
+	}
+}
+
+
+
+
+material InventoryViewCursor {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			lighting off
+			fog_override true none
+			scene_blend alpha_blend		
+			texture_unit Image {
+				texture inventoryview_cursor.png
+                                tex_address_mode clamp
+				filtering trilinear
+			}
+		} 
+	}
+}
+
+material InventoryViewCursorDragging : InventoryViewCursor {
+	technique Basic {
+		pass Basic {
+			texture_unit Image {
+				texture inventoryview_cursor_dragging.png
+			}
+		} 
+	}
+}
+
+material InventoryViewCursorBusy : InventoryViewCursor {
+	technique Basic {
+		pass Basic {
+			texture_unit Image {
+				texture inventoryview_cursor_busy.png
+			}
+		} 
+	}
+}
+
+material InventoryViewCursorDraggable : InventoryViewCursor {
+	technique Basic {
+		pass Basic {
+			texture_unit Image {
+				texture inventoryview_cursor_draggable.png
+			}
+		} 
+	}
+}
+
+
+
+material InventoryViewCursorSingle : InventoryViewCursor {
+	technique Basic {
+		pass Basic {
+			texture_unit Image {
+				texture inventoryview_cursor_single.png
+			}
+		} 
+	}
+}
+
+material InventoryViewCursorDraggingSingle : InventoryViewCursor {
+	technique Basic {
+		pass Basic {
+			texture_unit Image {
+				texture inventoryview_cursor_dragging_single.png
+			}
+		} 
+	}
+}
+
+material InventoryViewCursorDraggableSingle : InventoryViewCursor {
+	technique Basic {
+		pass Basic {
+			texture_unit Image {
+				texture inventoryview_cursor_draggable_single.png
+			}
+		} 
+	}
+}
+
+
+
+material InventoryViewConnection {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			lighting off
+			fog_override true none
+			scene_blend alpha_blend		
+			texture_unit Image {
+				texture inventoryview_connection.png
+                                tex_address_mode clamp
+				filtering trilinear
+			}
+		} 
+	}
+}
+
+material InventoryViewConnectionReverse {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			lighting off
+			fog_override true none
+			scene_blend alpha_blend		
+			texture_unit Image {
+				texture inventoryview_connection_reverse.png
+                                tex_address_mode clamp
+				filtering trilinear
+			}
+		} 
+	}
+}
+
+material InventoryViewConnectionHorizontal {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			lighting off
+			fog_override true none
+			scene_blend alpha_blend		
+			texture_unit Image {
+				texture inventoryview_connection_horizontal.png
+                                tex_address_mode clamp
+				filtering trilinear
+			}
+		} 
+	}
+}
+
+
+
+
+material InventoryViewInspectorIcon {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			lighting off
+			fog_override true none
+			texture_unit Image {
+				texture none.png
+                                tex_address_mode clamp
+				filtering trilinear
+			}
+			scene_blend alpha_blend
+		} 
+	}
+}
+
+material InventoryViewInspectorIconSuppressed : InventoryViewInspectorIcon {
+	technique Basic {
+		pass Basic {
+			texture_unit Image {
+				texture inventoryview_item_suppressed.png
+                tex_address_mode clamp
+				filtering trilinear
+			}
+		} 
+	}
+}
+
+material InventoryViewEquippedIndicator {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			lighting off
+			fog_override true none
+			texture_unit Image {
+				texture hud_item_equipped.png
+                tex_address_mode clamp
+				filtering trilinear
+			}
+			scene_blend alpha_blend
+		} 
+	}
+}
+
+material InventoryViewScrollBar_ForceDepth {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			fog_override true
+			scene_blend alpha_blend
+			texture_unit Image {
+				texture inventoryview_scrollbar.png
+			}
+   			depth_write off
+     		depth_check on
+     		depth_func always_pass
+		} 
+	}
+}
+
+material InventoryViewScrollBarDimmed_ForceDepth : InventoryViewScrollBar_ForceDepth {
+	technique Basic {
+		pass Basic {
+			texture_unit Image {
+				texture inventoryview_scrollbar_dimmed.png
+			}
+		} 
+	}
+}
+
+
+material InventoryViewScrollSlider {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			fog_override true
+			scene_blend alpha_blend
+			texture_unit Image {
+				texture inventoryview_scroll_slider.png
+			}
+		} 
+	}
+}
+
+material InventoryViewScrollSliderDimmed : InventoryViewScrollSlider {
+	technique Basic {
+		pass Basic {
+			texture_unit Image {
+				texture inventoryview_scroll_slider_dimmed.png
+			}
+		} 
+	}
+}
+
+/*
+material InventoryViewSlot {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			lighting off
+			fog_override true none
+			scene_blend alpha_blend
+			texture_unit Basic {
+				texture inventoryview_slot_frame.png
+				colour_op replace
+				alpha_op_ex source1 src_texture src_current
+				tex_address_mode clamp
+				filtering trilinear
+			}
+
+			texture_unit Color {
+				colour_op_ex modulate src_manual src_current 1.0 1.0 1.0 1.0
+				alpha_op_ex modulate src_manual src_current 1.0
+			}
+
+			// allow slots carve through background
+			depth_write on
+			depth_check on
+			depth_func always_pass
+	 		depth_bias -1
+		} 
+	}
+}
+*/
+
+material InventoryViewSkinpackIcon {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			fog_override true
+			scene_blend alpha_blend
+			lighting off
+			texture_unit Image {
+				texture inventoryview_skinpack_frame.png
+				tex_address_mode clamp
+			}
+		} 
+	}
+}
+
+
+
+material InventoryViewSkinpackControlBase : MenuSystemControlBase_ForceDepth {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			texture_unit Frame {
+				texture inventoryview_skinpack_frame.png
+				tex_address_mode clamp
+				//colour_op replace 
+				//alpha_op_ex modulate src_texture src_current
+				//colour_op alpha_blend
+				//alpha_op_ex source1 src_current src_current
+				
+				colour_op_ex blend_texture_alpha src_texture src_current 
+				alpha_op_ex blend_texture_alpha src_texture src_current
+				
+			}
+		}
+	}
+}
+
+material InventoryViewSkinpackControlBackground : InventoryViewSkinpackControlBase {
+	technique Basic {
+		pass Basic {
+			texture_unit Content {
+				texture menusystem_control_background.png
+			}
+		}
+	}
+}
+
+material InventoryViewSkinpackFocusBackground : InventoryViewSkinpackControlBase {
+	technique Basic {
+		pass Basic {
+			texture_unit Content {
+				texture menusystem_control_focus_background.png
+			}
+		}
+	}
+}
+
+
+material InventoryViewSkinpackSelectedBackground : InventoryViewSkinpackControlBase {
+	technique Basic {
+		pass Basic {
+			texture_unit Content {
+				texture menusystem_control_selected_background.png
+			}
+		}
+	}
+}

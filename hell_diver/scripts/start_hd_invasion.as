@@ -12,7 +12,7 @@ void main(dictionary@ inputData) {
 
         _setupLog("dev_verbose");
 
-        settings.m_factionChoice = 0;                  // 0 (helldivers), 1 (cyborgs), 2 (illuminate), 3(bugs), 4(acg)
+        settings.m_factionChoice = 0;                  // 0(acg) 1(helldivers), 2(cyborgs), 3(illuminate), 4(bugs), 
         settings.m_playerAiCompensationFactor = 1.0;   // was 1.1  (1.75)
         settings.m_enemyAiAccuracyFactor = 0.94;
         settings.m_playerAiReduction = 0.0;            // didn't work before 1.76! (was 1.0)
