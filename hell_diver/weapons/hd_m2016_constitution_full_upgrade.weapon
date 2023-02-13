@@ -24,10 +24,10 @@ on_ground_up="0 0 1"
     suppressed="0" 
 	class="0" 
     name="M2016 Constitution" 
-	sight_range_modifier="1.5" 
+	sight_range_modifier="3.0" 
 	burst_shots="1" 
     projectiles_per_shot="1" 
-    projectile_speed="190.0"
+    projectile_speed="300.0"
 	barrel_offset="1.0" 
 	carry_in_two_hands="1" 
 	stab_enabled="1" 
@@ -89,7 +89,7 @@ on_ground_up="0 0 1"
     <inventory encumbrance="10.0" price="0.0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
     
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
-    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="6" can_be_detected_by_footmen="1" 
 	time_to_live="0.42" can_be_detected_by_driver="1" can_be_disarmed="0" name="M2016 Constitution"> 
 	
 		<!--
