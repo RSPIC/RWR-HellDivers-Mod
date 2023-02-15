@@ -16,7 +16,7 @@ key="hd_mgx42_mk3.weapon"
 	stance_accuracy_rate="1.0"
     sustained_fire_grow_step="0.1" 
     sustained_fire_diminish_rate="2.3" 
-    magazine_size="25" 
+    magazine_size="50" 
     can_shoot_standing="1" 
     can_shoot_crouching="1" 
 	can_shoot_prone="1"	
@@ -24,12 +24,12 @@ key="hd_mgx42_mk3.weapon"
 	class="3" 
 	comsune="1"
     name="MGX_42 MK3 Machine Gun[Single-Use]" 
-	sight_range_modifier="1.0" 
-	ai_sight_range_modifier="0.7" 
+	sight_range_modifier="2.0" 
+	ai_sight_range_modifier="1" 
 	sight_height_offset="1.0" 
 	burst_shots="1" 
     projectiles_per_shot="1" 
-    projectile_speed="175.0"
+    projectile_speed="200.0"
 	barrel_offset="1.2" 
 	carry_in_two_hands="1" 
 	stab_enabled="0" 
@@ -84,11 +84,11 @@ key="hd_mgx42_mk3.weapon"
     <weak_hand_hold offset="0.3" /> 
 
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
-	time_to_live="0.514" can_be_detected_by_driver="1" can_be_disarmed="0"> 
+	time_to_live="0.45" can_be_detected_by_driver="1" can_be_disarmed="0"> 
 		
 		<result class="hit" kill_probability="1.0" 
 		kill_probability_offset_on_successful_hit="10"
-		kill_decay_start_time="0.171" kill_decay_end_time="0.514" character_state="death"/>
+		kill_decay_start_time="0.15" kill_decay_end_time="0.55" character_state="death"/>
 		<!-- slower decay -->
 		<!-- 30m max damage range -->
 		<!-- damage 75/110hit  -->

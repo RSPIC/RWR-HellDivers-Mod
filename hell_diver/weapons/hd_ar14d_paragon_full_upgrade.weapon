@@ -24,6 +24,7 @@ on_ground_up="0 0 1"
 	class="4" 
     name="AR-14D Paragon" 
 	sight_range_modifier="1.0" 
+	ai_sight_range_modifier="0.85" 
 	burst_shots="3" 
     projectiles_per_shot="1" 
     projectile_speed="180.0"
@@ -106,9 +107,9 @@ on_ground_up="0 0 1"
 		kill_probability_offset_on_successful_hit="0"
 		kill_decay_start_time="0.48" kill_decay_end_time="0.70" />
 		-->
-		<result class="hit" kill_probability="1.2" 
+		<result class="hit" kill_probability="1.5" 
 		kill_probability_offset_on_successful_hit="14"
-		kill_decay_start_time="0.166" kill_decay_end_time="0.333" character_state="wound"/>
+		kill_decay_start_time="0.166" kill_decay_end_time="0.5" character_state="wound"/>
 		<!-- 30m max damage range -->
 		<!-- damage 120hit/150ap  15reduction -->
 		<!-- 额外0.2致死 配合穿甲 -->

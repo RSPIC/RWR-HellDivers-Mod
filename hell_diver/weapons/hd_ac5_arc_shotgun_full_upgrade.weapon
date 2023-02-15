@@ -11,8 +11,8 @@ radius="1"
     <specification 	
 	retrigger_time="1.2"
     last_burst_retrigger_time="1.2" 
-	accuracy_factor="1.0" 
-	spread_range="1.5"
+	accuracy_factor="0.7" 
+	spread_range="3.0"
 	sustained_fire_grow_step="-1.5" 
 	sustained_fire_diminish_rate="-5.0" 
 	magazine_size="-1" 
@@ -23,7 +23,7 @@ radius="1"
 	class="4" 
 	reload_one_at_a_time="0" 
 	sight_range_modifier="1" 
-	projectile_speed="100.0" 
+	projectile_speed="300.0" 
 	barrel_offset="1.0" 
 	projectiles_per_shot="16" 
 	burst_shots="1"
@@ -101,7 +101,7 @@ radius="1"
 	<!-- max 6 mag -->
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="25" can_be_detected_by_footmen="1" 
-	time_to_live="0.08" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.5" name="AC-5 Arc Shotgun"> 
+	time_to_live="0.1" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.5" name="AC-5 Arc Shotgun"> 
 	
 		<!--
 		<result class="blast" radius="6.8" damage="0.2" push="0" decal="0" character_state="death"  />
@@ -112,12 +112,12 @@ radius="1"
 			direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
 		-->
 		<result class="spawn" instance_class="grenade" instance_key="hd_ac5_arc_shotgun_damage.projectile" 
-		min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0.0 0.0" />
-		<trigger class="impact" time_to_live="0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		min_amount="7" max_amount="10" offset="0 0 0" position_spread="0 0" direction_spread="0.0 0.0" />
+		<trigger class="time" time_to_live="0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
 		<!-- 不受护甲抗致死衰减 -->
-
+		<!-- 16x2x(7~10) -->
 		<!--命中音效-->
 		<sound class="result" key="other" fileref="burn.wav" pitch_variety="0.03" volume="0.0" />
 		
