@@ -11,10 +11,12 @@
 	<model filename="acg_fenrir_white.xml" /> <!--芬里尔 白-->
 	<model filename="acg_kemomimi.xml" /> <!--桃子酱（小狐狸）-->
 	<model filename="acg_natsuki_amagi.xml" /> <!--甘城なつき（猫）-->
-	<model filename="acg_rubyrose.xml"><!--RubyRose 新月玫瑰--><requirement class="weapon" slot="0" key="acg_ruby_rose_sniper.weapon"/>
-	</model>
-	<model filename="acg_rubyrose.xml"><!--RubyRose 新月玫瑰--><requirement class="weapon" slot="0" key="acg_ruby_rose_scythe.weapon"/>
-	</model>
+	<model filename="acg_maido1.xml" /> <!--女仆 by DNTK-->
+	<model filename="acg_maido2.xml" /> <!--女仆 by DNTK-->
+	<model filename="acg_maido3.xml" /> <!--女仆 by DNTK-->
+	<model filename="acg_maido4.xml" /> <!--女仆 by DNTK-->
+	<model filename="acg_rkgk.xml" /> <!--女仆 by DNTK-->
+	
 <!-- 明日方舟 -->
 	<model filename="acg_skyfire.xml" /> <!--天火-->
 	<model filename="acg_texas.xml"><!--德克萨斯--><requirement class="weapon" slot="0" key="acg_texas_skill.weapon"/>
@@ -35,6 +37,10 @@
 	<model filename="acg_reisenu.xml"><!--铃仙--><requirement class="weapon" slot="0" key="acg_reisenu_b.weapon"/>
 	</model>
 	<model filename="acg_reisenu_ex.xml"><!--铃仙--><requirement class="weapon" slot="0" key="acg_reisenu_c.weapon"/>
+	</model>
+	<model filename="acg_rubyrose.xml"><!--RubyRose 新月玫瑰--><requirement class="weapon" slot="0" key="acg_ruby_rose_sniper.weapon"/>
+	</model>
+	<model filename="acg_rubyrose.xml"><!--RubyRose 新月玫瑰--><requirement class="weapon" slot="0" key="acg_ruby_rose_scythe.weapon"/>
 	</model>
 <!-- 舰队collection -->
 	<model filename="acg_yuudachi_halloween_ver.xml" /> <!--夕立万圣节装-->
