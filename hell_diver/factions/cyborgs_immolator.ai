@@ -14,14 +14,12 @@
 
   <parameter class="fighting_melee_move_radius" value="3.0" />
 	<!-- 保持8m范围 -->
-  <parameter class="fighting_regular_move_radius" value="8.0" />  
+  <!-- <parameter class="fighting_regular_move_radius" value="8.0" />   -->
 
   <parameter class="burst_time" value="3.0" />
   <parameter class="burst_time_variance" value="0.8" />
   <parameter class="longer_burst_time" value="3.0" />
   <parameter class="longer_burst_time_variance" value="0.8" />
 
-<!-- flare usage -->
-  <parameter class="check_fellows_for_shield_use_range" value="100.0" />
-  <parameter class="max_active_shields_per_fellows" value="100.0" />
+
 </ai>

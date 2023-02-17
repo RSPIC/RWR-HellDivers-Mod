@@ -24,8 +24,8 @@ radius="1"
     suppressed="0" 
 	class="0" 
     name="Immolator FlameThrower" 
-	ai_sight_range_modifier="0.7"
-	sight_range_modifier="1.0" 
+	ai_sight_range_modifier="1.3"
+	sight_range_modifier="1.3" 
 	burst_shots="1" 
     projectiles_per_shot="3" 
     projectile_speed="12.0"
@@ -115,7 +115,7 @@ radius="1"
     
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="1" can_be_detected_by_footmen="1" 
-	time_to_live="2.3" can_be_detected_by_driver="1" can_be_disarmed="0" radius="1.5"> 
+	time_to_live="3.0" can_be_detected_by_driver="1" can_be_disarmed="0" radius="1.5"> 
 	
 		<!--
 		<result class="blast" radius="6.8" damage="0.2" push="0" decal="0" character_state="death"  />
@@ -195,7 +195,7 @@ radius="1"
      
 	<!--附加属性-->
     <modifier class="speed" value="0.1" /> 
-    <modifier class="hit_success_probability" value="0.0" /><!--正值增加玩家抗致死率-->
+    <modifier class="hit_success_probability" value="-0.4" /><!--正值增加玩家抗致死率-->
     <modifier class="detectability" value="0.0" />	<!--正值增加玩家隐蔽-->
 	
 	<!--盾块，可设置多个，空盾块仍然生效击杀收益共享，需要删去该段代码-->

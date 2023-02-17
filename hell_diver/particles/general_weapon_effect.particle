@@ -2631,6 +2631,7 @@ material shield_hit_1 : add_base
 {   
     technique{
     pass{
+		cull_hardware none
         texture_unit{
             texture shield_hit_1.png 	
 }}}}
