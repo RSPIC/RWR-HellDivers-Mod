@@ -81,7 +81,10 @@
 	<model filename="acg_iws2000_sandcastle_terminator.xml" /> <!--iws2000沙堡终结者-->
 	<model filename="acg_iws2000_banisher.xml" /> <!--iws2000第七封印者-->
 	<model filename="acg_iws2000.xml" /> <!--iws2000原皮-->
-	<model filename="acg_hk416_starry_cocoon.xml" /> <!--HK416星之茧-->
+	<model filename="acg_hk416_starry_cocoon.xml" > <!--HK416星之茧--><requirement class="weapon" slot="0" key="acg_hk416_starry_cocoon.weapon"/>
+	</model>
+	<model filename="acg_hk416_starry_cocoon.xml" > <!--HK416星之茧--><requirement class="weapon" slot="0" key="acg_hk416_starry_cocoon_gl.weapon"/>
+	</model>
 <!-- 灰烬战线 -->
 	<model filename="acg_88mm_flak41.xml" /> <!--88炮-->
 	
