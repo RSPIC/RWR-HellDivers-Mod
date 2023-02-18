@@ -92,8 +92,8 @@ on_ground_up="0 0 1"
     <inventory encumbrance="10.0" price="0.0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
     
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
-    <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="5" can_be_detected_by_footmen="1" 
-	time_to_live="0.2" can_be_detected_by_driver="1" can_be_disarmed="0" name="PLAS-1 Scorcher" radius="0.6"> 
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.19" can_be_detected_by_driver="1" can_be_disarmed="0" name="PLAS-1 Scorcher" radius="0.6"> 
 	
         <result class="spawn" instance_class="projectile" instance_key="hd_plas1_scorcher_damage.projectile" 
 		min_amount="5" max_amount="5" offset="0 0.5 0" position_spread="0.8 0" direction_spread="0.1 0" />
@@ -103,7 +103,7 @@ on_ground_up="0 0 1"
         <!-- 敲定： 5x10 = 50 可击穿轻甲载具，无法击穿中甲以上-->
         <!-- range 待定 -->
 		
-		<trigger class="time" time_to_live="0.11"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<trigger class="impact" time_to_live="0.11"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 	
 		<!--命中音效-->

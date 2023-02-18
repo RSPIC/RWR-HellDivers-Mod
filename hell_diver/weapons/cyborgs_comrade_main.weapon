@@ -24,8 +24,8 @@ radius="1"
     suppressed="0" 
 	class="4" 
     name="Comrade Melee" 
-	ai_sight_range_modifier="1.2"
-	sight_range_modifier="1.0" 
+	ai_sight_range_modifier="1.8"
+	sight_range_modifier="1.8" 
 	burst_shots="1" 
     projectiles_per_shot="1" 
     projectile_speed="100.0"
@@ -125,7 +125,7 @@ radius="1"
 		-->
 		<result class="spawn" instance_class="projectile" instance_key="cyborgs_comrade_main_damage.projectile" 
 		min_amount="4" max_amount="6" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
-		<trigger class="time" time_to_live="0.375"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<trigger class="time" time_to_live="0.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
 		<!--伤害 4~6x1.0=4~6 -->
@@ -181,7 +181,7 @@ radius="1"
      
 	<!--附加属性-->
     <modifier class="speed" value="0.0" /> 
-    <modifier class="hit_success_probability" value="0.0" /><!--正值增加玩家抗致死率-->
+    <modifier class="hit_success_probability" value="-0.2" /><!--正值增加玩家抗致死率-->
     <modifier class="detectability" value="0.0" />	<!--正值增加玩家隐蔽-->
 	
 	<!--盾块，可设置多个，空盾块仍然生效击杀收益共享，需要删去该段代码-->

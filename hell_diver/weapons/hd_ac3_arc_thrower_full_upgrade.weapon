@@ -112,7 +112,7 @@ radius="1"
 			direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
 		-->
 		<result class="spawn" instance_class="grenade" instance_key="hd_ac5_arc_shotgun_damage.projectile" 
-		min_amount="4" max_amount="6" offset="0 0 0" position_spread="0 0" direction_spread="0.0 0.0" />
+		min_amount="30" max_amount="40" offset="0 0 0" position_spread="0 0" direction_spread="0.0 0.0" />
 		<trigger class="time" time_to_live="0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->

@@ -860,7 +860,7 @@ particle_system general_weapon_muzzle_bullet_triangle_headon
 		direction 0 1 0
 		emission_rate 10
 		position 0 0 0
-		velocity 180
+		velocity 260
 		time_to_live 0.4
 		duration 0.1
 	}
@@ -2631,6 +2631,7 @@ material shield_hit_1 : add_base
 {   
     technique{
     pass{
+		cull_hardware none
         texture_unit{
             texture shield_hit_1.png 	
 }}}}

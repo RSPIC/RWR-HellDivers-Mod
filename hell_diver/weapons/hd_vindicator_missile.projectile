@@ -5,7 +5,7 @@ slot="1"
 pulldown_in_air="80.0" 
 key="hd_vindicator_missile.projectile">
 
-    <result class="blast" radius="4.0" damage="100" decal="1" push="3" character_state="wound" />
+    <result class="blast" radius="5.5" damage="150" decal="1" push="3" character_state="wound" />
     <trigger class="impact" />
     <rotation class="motion" />	
     <model mesh_filename="vindicator_bullet.xml" />

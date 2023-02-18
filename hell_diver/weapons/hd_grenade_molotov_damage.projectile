@@ -40,7 +40,8 @@ player_death_drop_owner_lock_time="120"
 	<effect class="result" key="terrain" ref="molotov_fire_01"/>
     <effect class="result" key="terrain" ref="molotov_fire_02"/>
     <effect class="result" key="terrain" ref="molotov_smoke"/>
-		
+    <effect class="activated" ref="cyborgs_activated_flamethrower_01" />
+    
 	<effect class="result" key="other" copy="terrain" />
     <effect class="result" key="static_object" copy="terrain" />
     <effect class="result" key="vehicle" copy="terrain" />
