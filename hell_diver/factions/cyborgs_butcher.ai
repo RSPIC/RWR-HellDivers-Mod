@@ -12,8 +12,8 @@
   <parameter class="grenade_throw_hold_time" value="0.5" />
   <parameter class="min_number_of_enemies_to_throw_grenade" value="1.0" />
 
-  <parameter class="fighting_melee_move_radius" value="2.0" />
-  <!-- <parameter class="fighting_regular_move_radius" value="2.0" />   -->
-  <parameter class="stab_range" value="3.5" />
+  <parameter class="fighting_melee_move_radius" value="0.0" />
+  <parameter class="fighting_regular_move_radius" value="0.0" />  
+  <parameter class="stab_range" value="4.0" />
   <parameter class="melee_attack_wait_time" value="0.1" />
 </ai>

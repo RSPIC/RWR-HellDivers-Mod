@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <weapons>
 	<weapon file="hd_hellpod.weapon" /><!--轨道发射仓-->
-	
+	<!-- Assault Rifles 30m全效射距 60m极限射距 AP子弹额外增加击穿：+0.5 致死 半数衰减-->
+	<weapon file="hd_ar19_liberator_full_upgrade.weapon" /><!--解放者突击步枪-->
+	<weapon file="hd_ar22c_patriot_full_upgrade.weapon" /><!--爱国者突击步枪-->
+	<weapon file="hd_ar20l_justice_full_upgrade.weapon" /><!--正义突击步枪-->
+	<weapon file="hd_ar14d_paragon_full_upgrade.weapon" /><!--典范突击步枪-->
+	<!-- Shotguns 低于 25m 的全效射距 无衰减 爆发伤害高-->
+	<weapon file="hd_sg225_breaker_full_upgrade.weapon" /><!--破裂者霰弹-->
+	<weapon file="hd_sg8_punisher_full_upgrade.weapon" /><!--制裁者霰弹-->
+	<weapon file="hd_double_freedom.weapon" /><!--双重解放霰弹-->
+	<!-- SMGs 25m全效射距 无衰减 150弹速 +0.2移速-->
+	<weapon file="hd_mp98_knight_smg_full_upgrade.weapon" /><!--骑士冲锋枪-->
+	<weapon file="hd_smg45_defender_full_upgrade.weapon" /><!--防卫者冲锋枪-->
+	<weapon file="hd_smg34_ninja_full_upgrade.weapon" /><!--忍者冲锋枪-->
+	<!-- Precision 300弹速 60m全效射距 120m极限射距 3.0视距 2.0初始致死 半数衰减-->
+	<weapon file="hd_rx1_railgun.weapon" /><!--轨道炮-->
+	<weapon file="hd_m2016_constitution_full_upgrade.weapon" /><!--构建步枪-->
+	<weapon file="hd_lho63_camper_full_upgrade.weapon" /><!--野营者狙击步枪-->
 	<!-- LMGs 90M极限射程 30m全效射程 200弹速 2.0初始致死 半数衰减 2.0视距-->
 	<weapon file="hd_mg94_mk3.weapon" /><!--MG94机枪-->
 	<weapon file="hd_mgx42_mk3.weapon" /><!--MGX42机枪-->
@@ -26,23 +42,6 @@
 	<weapon file="hd_las16_sickle_full_upgrade.weapon" /><!--镰刀激光枪-->
 	<weapon file="hd_las5_scythe_full_upgrade.weapon" /><!--长柄镰激光枪-->
 	<weapon file="hd_las98_laser_cannon_mk3.weapon" /><!--激光大炮激光枪-->
-	<!-- Assault Rifles 30m全效射距 60m极限射距 AP子弹额外增加击穿：+0.5 致死 半数衰减-->
-	<weapon file="hd_ar19_liberator_full_upgrade.weapon" /><!--解放者突击步枪-->
-	<weapon file="hd_ar22c_patriot_full_upgrade.weapon" /><!--爱国者突击步枪-->
-	<weapon file="hd_ar20l_justice_full_upgrade.weapon" /><!--正义突击步枪-->
-	<weapon file="hd_ar14d_paragon_full_upgrade.weapon" /><!--典范突击步枪-->
-	<!-- Shotguns 低于 25m 的全效射距 无衰减 爆发伤害高-->
-	<weapon file="hd_sg225_breaker_full_upgrade.weapon" /><!--破裂者霰弹-->
-	<weapon file="hd_sg8_punisher_full_upgrade.weapon" /><!--制裁者霰弹-->
-	<weapon file="hd_double_freedom.weapon" /><!--双重解放霰弹-->
-	<!-- SMGs 25m全效射距 无衰减 150弹速 +0.2移速-->
-	<weapon file="hd_mp98_knight_smg_full_upgrade.weapon" /><!--骑士冲锋枪-->
-	<weapon file="hd_smg45_defender_full_upgrade.weapon" /><!--防卫者冲锋枪-->
-	<weapon file="hd_smg34_ninja_full_upgrade.weapon" /><!--忍者冲锋枪-->
-	<!-- Precision 300弹速 60m全效射距 120m极限射距 3.0视距 2.0初始致死 半数衰减-->
-	<weapon file="hd_rx1_railgun.weapon" /><!--轨道炮-->
-	<weapon file="hd_m2016_constitution_full_upgrade.weapon" /><!--构建步枪-->
-	<weapon file="hd_lho63_camper_full_upgrade.weapon" /><!--野营者狙击步枪-->
 	<!-- Fire Tech / Chemical Tech-->
 	<weapon file="hd_flam40_incinerator_mk3.weapon" /><!--焚化炉火焰喷射器-->
 	<weapon file="hd_flam24_pyro.weapon" /><!--烈焰火焰喷射器 副手-->

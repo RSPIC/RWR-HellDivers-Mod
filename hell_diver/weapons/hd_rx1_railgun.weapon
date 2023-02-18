@@ -52,7 +52,8 @@ key="hd_rx1_railgun.weapon"
     <commonness value="0.1" can_respawn_with="1" in_stock="1"/>
     <inventory encumbrance="10" price="0.0" />
 
-    <capacity value="1" source="rank" source_value="0.0" />
+    <capacity value="0" source="rank" source_value="0.0" />
+    <capacity value="1" source="rank" source_value="32.161" />
     
 
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="10" time_to_live="0.4" name="RX-1 Railgun">

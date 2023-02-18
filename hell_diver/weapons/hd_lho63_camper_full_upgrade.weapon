@@ -85,7 +85,7 @@ on_ground_up="0 0 1"
 
 	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
 	<capacity value="0" source="rank" source_value="0.0" />
-	<capacity value="1" source="rank" source_value="0.0" />
+	<capacity value="1" source="rank" source_value="84.248" />
 	
 	<!--军械库相关-->
     <commonness value="0.1" can_respawn_with="1" in_stock="1" /> 

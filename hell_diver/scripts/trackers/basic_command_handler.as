@@ -46,7 +46,8 @@ class BasicCommandHandler : Tracker {
 			m_metagame.getComms().send(command);	
 		}
 	}
-		
+
+	
 	// ----------------------------------------------------
 	protected void handleChatEvent(const XmlElement@ event) {
 		// player_id
@@ -225,6 +226,7 @@ class BasicCommandHandler : Tracker {
 			return;
 		}
 		// it's a silent server command, check which one
+				
 		if (checkCommand(message, "test")) {
 			dictionary dict = {{"TagName", "command"},{"class", "chat"},{"text", "testing yourself!"}};
 			m_metagame.getComms().send(XmlElement(dict));
