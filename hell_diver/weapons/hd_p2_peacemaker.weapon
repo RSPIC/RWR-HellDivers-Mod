@@ -78,7 +78,7 @@ on_ground_up="0 0 1"
     <commonness value="1" can_respawn_with="1" in_stock="1" /> 
     <inventory encumbrance="6.0" price="0.0" /> 
   	<capacity value="0" source="rank" source_value="0.0" />
-	<capacity value="1" source="rank" source_value="0.026" />
+	<capacity value="1" source="rank" source_value="0.0" />
     <weak_hand_hold offset="0.3" /> 
 
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
