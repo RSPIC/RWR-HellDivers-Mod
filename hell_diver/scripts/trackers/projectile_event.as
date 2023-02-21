@@ -6,25 +6,7 @@
 #include "query_helpers2.as"
 #include "gamemode.as"
 #include "all_helper.as"
-
-dictionary projectile_eventkey = {
-
-        // 空
-        {"",-1},
-
-        {"hd_superearth_airstrike_mk3",1},
-        {"hd_superearth_airstrike_mk2",2},
-        {"hd_superearth_airstrike_mk1",3},
-
-        {"hd_superearth_heavy_strafe_mk3",4},
-        {"hd_superearth_heavy_strafe_mk2",5},
-        {"hd_superearth_heavy_strafe_mk1",6},
-
-        {"rangefinder",7},
-
-        // 占位的
-        {"666",-1}
-};
+#include "all_parameter.as"
 
 class projectile_event : Tracker {
 	protected Metagame@ m_metagame;
@@ -47,40 +29,41 @@ class projectile_event : Tracker {
         _log("projectile event key= " + EventKeyGet);
         _log("projectile event key index= " + int(projectile_eventkey[EventKeyGet]));
 
-        if (!(projectile_eventkey.exists(EventKeyGet))){
-			return;        
-		}
+        if (!(projectile_eventkey.exists(EventKeyGet))){return;}
 
 		switch(int(projectile_eventkey[EventKeyGet])) 
         {
             case 0:{break;}
             case 1: {
+                // 查找并确认玩家存在
                 int characterId = event.getIntAttribute("character_id");
 				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
-                if (character !is null) {
-                    // _log("execute projectile event");
-                    Vector3 pos1 = stringToVector3(event.getStringAttribute("position"));
-                    Vector3 pos2 = stringToVector3(character.getStringAttribute("position"));
-                    int factionid = character.getIntAttribute("faction_id");
-                    Event_call_helldiver_superearth_airstrike@ new_task = Event_call_helldiver_superearth_airstrike(m_metagame,0.5,characterId,factionid,pos2,pos1,"airstrike_mk3");
-                    TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
-                    tasker.add(new_task);
-                }
+                if (character is null) {break;}
+                // 确定起始点与所属阵营
+                Vector3 pos1 = stringToVector3(event.getStringAttribute("position"));
+                Vector3 pos2 = stringToVector3(character.getStringAttribute("position"));
+                int factionid = character.getIntAttribute("faction_id");
+                // 创建空袭事件
+                Event_call_helldiver_superearth_airstrike@ new_task = Event_call_helldiver_superearth_airstrike(m_metagame,0.5,characterId,factionid,pos2,pos1,"airstrike_mk3");
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                tasker.add(new_task);
+                
                 break;
             }
 
             case 4: {
                 int characterId = event.getIntAttribute("character_id");
 				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
-                if (character !is null) {
-                    // _log("execute projectile event");
-                    Vector3 pos1 = stringToVector3(event.getStringAttribute("position"));
-                    Vector3 pos2 = stringToVector3(character.getStringAttribute("position"));
-                    int factionid = character.getIntAttribute("faction_id");
-                    Event_call_helldiver_superearth_heavystrafe@ new_task = Event_call_helldiver_superearth_heavystrafe(m_metagame,0.5,characterId,factionid,pos2,pos1,"heavymg_strafe_mk3");
-                    TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
-                    tasker.add(new_task);
-                }
+                if (character is null) {break;}
+                
+                Vector3 pos1 = stringToVector3(event.getStringAttribute("position"));
+                Vector3 pos2 = stringToVector3(character.getStringAttribute("position"));
+                int factionid = character.getIntAttribute("faction_id");
+
+                Event_call_helldiver_superearth_heavystrafe@ new_task = Event_call_helldiver_superearth_heavystrafe(m_metagame,0.5,characterId,factionid,pos2,pos1,"heavymg_strafe_mk3");
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                tasker.add(new_task);
+                
                 break;
             }
 

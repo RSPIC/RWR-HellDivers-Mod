@@ -74,31 +74,27 @@ class playerList_System : Tracker {
         }            
         
         array<const XmlElement@> nowPlayers = getPlayers(m_metagame);
-        if (nowPlayers !is null){
+        if (nowPlayers is null){return;}
 
-            // 彻底删除一次并全部重新更新
-            for(uint i=0;i<nowPlayers.length();i++){
+        // 彻底删除一次并全部重新更新
+        for(uint i=0;i<nowPlayers.length();i++){
 
-                int cid = nowPlayers[i].getIntAttribute("character_id");
-                int pid = nowPlayers[i].getIntAttribute("player_id");
-                const XmlElement@ targetCharacter = getCharacterInfo2(m_metagame,cid);
+            int cid = nowPlayers[i].getIntAttribute("character_id");
+            int pid = nowPlayers[i].getIntAttribute("player_id");
+            const XmlElement@ targetCharacter = getCharacterInfo2(m_metagame,cid);
+            if(targetCharacter is null){continue;}
 
-                if(targetCharacter !is null){
-                    string pos = targetCharacter.getStringAttribute("position");
-                    array<const XmlElement@>@ equipment = targetCharacter.getElementsByTagName("item");
-                    if(equipment !is null && equipment.length() >=5){
-                        {
-                            string w1 = equipment[0].getStringAttribute("key");
-                            string w2 = equipment[1].getStringAttribute("key");
-                            string w3 = equipment[2].getStringAttribute("key");
-                            string w4 = equipment[4].getStringAttribute("key");
-                            string w5 = equipment[3].getStringAttribute("key");
-                            PlayerList@ new_player = PlayerList(cid, pid, w1, w2, w3, w4, w5, 0,pos); 
-                            PlayerList_Array.insertLast(new_player);
-                        }
-                    }
-                }
-            }
+            string pos = targetCharacter.getStringAttribute("position");
+            array<const XmlElement@>@ equipment = targetCharacter.getElementsByTagName("item");
+
+            if(equipment is null){continue;}
+            string w1 = equipment[0].getStringAttribute("key");
+            string w2 = equipment[1].getStringAttribute("key");
+            string w3 = equipment[2].getStringAttribute("key");
+            string w4 = equipment[4].getStringAttribute("key");
+            string w5 = equipment[3].getStringAttribute("key");
+            PlayerList@ new_player = PlayerList(cid, pid, w1, w2, w3, w4, w5, 0,pos); 
+            PlayerList_Array.insertLast(new_player);
         }
     }
 
@@ -123,27 +119,26 @@ class playerList_System : Tracker {
 }
 
 int getPlayerCidFromList(int playerid) {
-    if(PlayerList_Array.length()>0){
-        for(uint i=0;i<PlayerList_Array.length();i++){
-            if(PlayerList_Array[i].m_playerid == playerid)
-                return PlayerList_Array[i].m_characterid;
+    if(PlayerList_Array.length()<=0){return -1;}
+    for(uint i=0;i<PlayerList_Array.length();i++){
+        if(PlayerList_Array[i].m_playerid == playerid){
+            return PlayerList_Array[i].m_characterid;
         }
     }
     return -1;
 }
 
 string getPlayerWeaponFromList(int playerid, int weaponnum) {
-    if(PlayerList_Array.length()>0){
-        for(uint i=0;i<PlayerList_Array.length();i++){
-            if(PlayerList_Array[i].m_playerid == playerid){
-                switch(weaponnum){
-                    case 0:{return PlayerList_Array[i].m_weapon1key;}
-                    case 1:{return PlayerList_Array[i].m_weapon2key;}
-                    case 2:{return PlayerList_Array[i].m_weapon3key;}
-                    case 3:{return PlayerList_Array[i].m_vestkey;}
-                    case 4:{return PlayerList_Array[i].m_itemkey;}
-                    default:{return "-nan-";}
-                }
+    if(PlayerList_Array.length()<=0){return "-nan-";}
+    for(uint i=0;i<PlayerList_Array.length();i++){
+        if(PlayerList_Array[i].m_playerid == playerid){
+            switch(weaponnum){
+                case 0:{return PlayerList_Array[i].m_weapon1key;}
+                case 1:{return PlayerList_Array[i].m_weapon2key;}
+                case 2:{return PlayerList_Array[i].m_weapon3key;}
+                case 3:{return PlayerList_Array[i].m_vestkey;}
+                case 4:{return PlayerList_Array[i].m_itemkey;}
+                default:{return "-nan-";}
             }
         }
     }
@@ -151,21 +146,21 @@ string getPlayerWeaponFromList(int playerid, int weaponnum) {
 }
 
 void givePlayerRPcount(int playerid,int rp_count){
-    if(PlayerList_Array.length()>0){
-        for(uint i=0;i<PlayerList_Array.length();i++){
-            if(PlayerList_Array[i].m_playerid == playerid){
-                PlayerList_Array[i].m_rp +=rp_count;
-            }
+    if(PlayerList_Array.length()<=0){return;}
+    for(uint i=0;i<PlayerList_Array.length();i++){
+        if(PlayerList_Array[i].m_playerid == playerid){
+            PlayerList_Array[i].m_rp += rp_count;
+            return;
         }
-    }    
+    }
 }
 
 void givePlayerXPcount(int playerid,float xp_count){
-    if(PlayerList_Array.length()>0){
-        for(uint i=0;i<PlayerList_Array.length();i++){
-            if(PlayerList_Array[i].m_playerid == playerid){
-                PlayerList_Array[i].m_xp +=xp_count;
-            }
+    if(PlayerList_Array.length()<=0){return;}
+    for(uint i=0;i<PlayerList_Array.length();i++){
+        if(PlayerList_Array[i].m_playerid == playerid){
+            PlayerList_Array[i].m_xp += xp_count;
+            return;
         }
-    }    
+    } 
 }

@@ -46,13 +46,11 @@ class VestRecoverTask : Task {
 
     void update(float time) {
 		m_timeLeft -= time;
-		if (m_timeLeft < 0)
-		{
-			healCharacter(m_metagame,m_character_id,m_heal_layer);
-			m_numLeft--;
-			m_timeLeft=m_time;
-		}
-
+		if (m_timeLeft>=0){return;}
+		
+		healCharacter(m_metagame,m_character_id,m_heal_layer);
+		m_numLeft--;
+		m_timeLeft=m_time;
 	}
 
     bool hasEnded() const {
@@ -96,19 +94,16 @@ class AOEVestRecoverTask : Task {
 
     void update(float time) {
 		m_timeLeft -= time;
-		if (m_timeLeft < 0)
-		{
-			array<const XmlElement@> affectedCharacter = getCharactersNearPosition(m_metagame,m_pos,m_faction_id,m_radius);
-			if (affectedCharacter !is null){
-                for(uint x=0;x<affectedCharacter.length();x++){
-					int soldierId = affectedCharacter[x].getIntAttribute("id");
-					healCharacter(m_metagame,soldierId,m_heal_layer);
-                }
-            }
-			m_numLeft--;
-			m_timeLeft=m_time;
-		}
+		if (m_timeLeft>0){return;}		
+		m_numLeft--;
+		m_timeLeft=m_time;
 
+		array<const XmlElement@> affectedCharacter = getCharactersNearPosition(m_metagame,m_pos,m_faction_id,m_radius);
+		if (affectedCharacter is null){return;}
+		for(uint x=0;x<affectedCharacter.length();x++){
+			int soldierId = affectedCharacter[x].getIntAttribute("id");
+			healCharacter(m_metagame,soldierId,m_heal_layer);
+		}
 	}
 
     bool hasEnded() const {
@@ -186,31 +181,16 @@ class Event_call_helldiver_superearth_airstrike : event_call_task {
 	}
 
 	void update(float time) {
-		if(m_timeLeft >= 0)
-		{
-			m_timeLeft -= time;
-		}
-		if (m_timeLeft < 0) //开始执行
-		{
+		if(m_timeLeft >= 0){m_timeLeft -= time;return;}
+		if (m_timeLeft_internal >= 0){m_timeLeft_internal -= time;return;}
+		if (m_excute_time >= m_excute_Limit){m_end = true;return;}
+		m_excute_time++;
+		m_timeLeft_internal = m_time_internal;
 
-			m_timeLeft_internal -= time;
-			if (m_timeLeft_internal < 0)
-			{
-				if (m_excute_time < m_excute_Limit)
-				{
-					m_excute_time++;
-					m_timeLeft_internal = m_time_internal;
-					insertCommonStrike(m_character_id,m_faction_id,m_airstrike_key,m_pos1,m_pos2);
-					// CreateDirectProjectile(m_metagame,m_pos1,m_pos2,"hd_general_gl_spawn.projectile",m_character_id,m_faction_id,30);
-					m_pos1 = m_pos1.add(getMultiplicationVector(strike_vector,Vector3(strike_didis,0,strike_didis)));
-					m_pos2 = m_pos2.add(getMultiplicationVector(strike_vector,Vector3(strike_didis,0,strike_didis)));					
-				}
-				else
-				{
-					m_end = true;
-				}
-			}
-		}
+		insertCommonStrike(m_character_id,m_faction_id,m_airstrike_key,m_pos1,m_pos2);
+		// CreateDirectProjectile(m_metagame,m_pos1,m_pos2,"hd_general_gl_spawn.projectile",m_character_id,m_faction_id,30);
+		m_pos1 = m_pos1.add(getMultiplicationVector(strike_vector,Vector3(strike_didis,0,strike_didis)));
+		m_pos2 = m_pos2.add(getMultiplicationVector(strike_vector,Vector3(strike_didis,0,strike_didis)));					
 	}
 }
 
@@ -239,29 +219,14 @@ class Event_call_helldiver_superearth_heavystrafe : event_call_task {
 	}
 
 	void update(float time) {
-		if(m_timeLeft >= 0)
-		{
-			m_timeLeft -= time;
-		}
-		if (m_timeLeft < 0) //开始执行
-		{
+		if(m_timeLeft >= 0){m_timeLeft -= time;return;}
+		if (m_timeLeft_internal >= 0){m_timeLeft_internal -= time;return;}
+		if (m_excute_time >= m_excute_Limit){m_end = true;return;}
+		m_excute_time++;
+		m_timeLeft_internal = m_time_internal;
 
-			m_timeLeft_internal -= time;
-			if (m_timeLeft_internal < 0)
-			{
-				if (m_excute_time < m_excute_Limit)
-				{
-					m_excute_time++;
-					m_timeLeft_internal = m_time_internal;
-					insertCommonStrike(m_character_id,m_faction_id,m_airstrike_key,m_pos1,m_pos2);
-					m_pos1 = m_pos1.add(getMultiplicationVector(strike_vector,Vector3(strike_didis,0,strike_didis)));
-					m_pos2 = m_pos2.add(getMultiplicationVector(strike_vector,Vector3(strike_didis,0,strike_didis)));					
-				}
-				else
-				{
-					m_end = true;
-				}
-			}
-		}
+		insertCommonStrike(m_character_id,m_faction_id,m_airstrike_key,m_pos1,m_pos2);
+		m_pos1 = m_pos1.add(getMultiplicationVector(strike_vector,Vector3(strike_didis,0,strike_didis)));
+		m_pos2 = m_pos2.add(getMultiplicationVector(strike_vector,Vector3(strike_didis,0,strike_didis)));					
 	}
 }
