@@ -430,9 +430,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 		stage.m_includeLayers.insertLast("layer1.invasion");        
 
 		stage.addTracker(Overtime(m_metagame, 0));
-//		stage.addTracker(Spawner(m_metagame, 1, Vector3(477,0,520)));
-//		stage.addTracker(Spawner(m_metagame, 1, Vector3(455,0,508)));
-//		stage.addTracker(Spawner(m_metagame, 1, Vector3(446,0,539)));
+
 
 		stage.m_maxSoldiers = 30 * 3;                                             // was 28*3 in 1.75
 		stage.m_playerAiCompensation = 4;                                         // was 5 (test4)
@@ -597,8 +595,6 @@ class StageConfiguratorInvasion : StageConfigurator {
 		stage.m_playerAiCompensation = 5;                                         // was 7 (test4)
         stage.m_playerAiReduction = 2;                                            // was 3 (test2)
     
-    stage.addTracker(Spawner(m_metagame, 1, Vector3(485,5,705), 10, "default_ai"));        // outpost filler (1.70)
-
 		stage.addTracker(PeacefulLastBase(m_metagame, 0));
 		stage.addTracker(CommsCapacityHandler(m_metagame));
 
@@ -648,8 +644,6 @@ class StageConfiguratorInvasion : StageConfigurator {
 		stage.m_includeLayers.insertLast("layer1.invasion"); 
 
 		stage.addTracker(Overtime(m_metagame, 0));
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(255,0,344),20, "default_ai"));          // added 15 in 1.65, less over_capacity to compensate
-
 
 		stage.m_maxSoldiers = 21 * 5;     // was 33 * 3 in 1.65
 		stage.m_playerAiCompensation = 4;                                         // was 4 (1.81) was 5 (1.86)
@@ -771,9 +765,6 @@ class StageConfiguratorInvasion : StageConfigurator {
 		stage.m_playerAiCompensation = 4;                                     // was 5 (test4)
     stage.m_playerAiReduction = 2;                                            // was 1.5 (test3)
 
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(309,15,524), 10, "default_ai"));        // 1st tow slot filler
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(658,10,374), 10, "default_ai"));        // vulcan slot filler
-
 		stage.addTracker(PeacefulLastBase(m_metagame, 0));
 		stage.addTracker(CommsCapacityHandler(m_metagame));
 
@@ -893,10 +884,6 @@ class StageConfiguratorInvasion : StageConfigurator {
     stage.m_playerAiReduction = 2.0;                                            // was 2.5 (test4)
   
 		stage.m_soldierCapacityVariance = 0.45;    // instead of 0.4 in 1.50  
-
-//		stage.addTracker(Spawner(m_metagame, 1, Vector3(309,15,524), 10));        // 1st tow slot filler
-//		stage.addTracker(Spawner(m_metagame, 1, Vector3(658,10,374), 10));        // vulcan slot filler
-
 		stage.addTracker(PeacefulLastBase(m_metagame, 0));    
 		stage.addTracker(CommsCapacityHandler(m_metagame));
 
@@ -1188,10 +1175,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 		stage.m_playerAiCompensation = 3;                                      // was 4 (1.86) 
         stage.m_playerAiReduction = 1.5;                                       // was 1.5 (test5)   // was 2 (1.86)     
 		stage.addTracker(PeacefulLastBase(m_metagame, 0));
-		stage.addTracker(CommsCapacityHandler(m_metagame));
-
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(146,10,173), 2, "miniboss"));           // Cargo helicopter filler 
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(146,10,173), 10, "default_ai"));        // Cargo helicopter filler                  
+		stage.addTracker(CommsCapacityHandler(m_metagame));                
 
     stage.m_minRandomCrates = 1; 
     stage.m_maxRandomCrates = 3;
@@ -1305,10 +1289,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 		stage.m_maxSoldiers = 10 * 20;                                             
 		stage.m_playerAiCompensation = 4;                                         
     stage.m_playerAiReduction = 2;                                              
-    stage.m_soldierCapacityModel = "constant";       
-
-	stage.addTracker(Spawner(m_metagame, 3, Vector3(506,0,465), 50, "default"));
-	
+    stage.m_soldierCapacityModel = "constant";       	
     
     stage.m_minRandomCrates = 0; 
     stage.m_maxRandomCrates = 1;
@@ -1405,18 +1386,11 @@ class StageConfiguratorInvasion : StageConfigurator {
 		
 		stage.m_includeLayers.insertLast("layer1.invasion");		
 
-//    stage.m_fogOffset = 20.0;    
-//    stage.m_fogRange = 50.0; 
-
 		stage.m_maxSoldiers = 16 * 15;
 		stage.m_playerAiCompensation = 4;                                       
         stage.m_playerAiReduction = 2.0;                                            
   
 		stage.m_soldierCapacityVariance = 0.4;   // was unset, hence 0.30 (1.91)
-
-//		stage.addTracker(Spawner(m_metagame, 1, Vector3(309,15,524), 10));        // 1st tow slot filler
-//		stage.addTracker(Spawner(m_metagame, 1, Vector3(658,10,374), 10));        // vulcan slot filler
-
 		stage.addTracker(PeacefulLastBase(m_metagame, 0));    
 		stage.addTracker(CommsCapacityHandler(m_metagame));
 
@@ -1491,40 +1465,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 		stage.m_hidden = true;
 
 		stage.addTracker(DestroyVehicleToCaptureBase(m_metagame, "radio_jammer.vehicle", 2));
-		stage.addTracker(DestroyVehicleToCaptureBase(m_metagame, "radar_tower.vehicle", 2));    
-
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(367,0,702), 5, "default_ai"));         // 1st tower
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(396,0,692), 5, "default_ai"));         
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(407,0,720), 5, "default_ai"));
-
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(422,0,539), 5, "default_ai"));         // 1st top tower
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(416,0,500), 5, "default_ai"));
-		
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(507,0,651), 5, "default_ai")); 
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(471,0,672), 5, "default_ai")); 
-
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(482,0,730), 5, "default_ai"));  
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(500,0,550), 5, "default_ai"));     
-		
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(612,0,519), 5, "default_ai"));    
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(641,0,527), 5, "default_ai"));    
-
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(544,0,476), 5, "default_ai")); 
-		
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(603,0,620), 5, "default_ai")); 
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(622,0,601), 5, "default_ai")); 
-		
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(707,0,569), 5, "default_ai")); 
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(705,0,595), 5, "default_ai")); 
-
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(720,0,477), 5, "default_ai"));    
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(688,0,463), 5, "default_ai"));    
-		
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(790,0,454), 5, "default_ai")); 
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(766,0,454), 5, "default_ai")); 
-		
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(541,0,608), 5, "default_ai"));     
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(527,0,581), 5, "default_ai"));     
+		stage.addTracker(DestroyVehicleToCaptureBase(m_metagame, "radar_tower.vehicle", 2));     
 		
 		// make neutral instantly not alive to avoid any possibility to gain capacity, like via not losing all bases first 
 		// and then gaining bases which have vehicles that give capacity offset..
