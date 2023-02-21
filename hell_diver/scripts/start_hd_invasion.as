@@ -19,7 +19,7 @@ void main(dictionary@ inputData) {
         settings.m_teamKillPenaltyEnabled = true;
         settings.m_completionVarianceEnabled = false;
         settings.m_journalEnabled = true;
-		settings.m_fellowDisableEnemySpawnpointsSoldierCountOffset = 1;
+        settings.m_fellowDisableEnemySpawnpointsSoldierCountOffset = 1;
 
         array<string> overlays = {
                 "media/packages/hell_diver"
@@ -30,11 +30,11 @@ void main(dictionary@ inputData) {
 <command class='start_server'
 	server_name='[HD] SuperEarth Server QQ：498520233'
 	server_port='1240'
-	comment='Coop campaign'
 	url=''
 	register_in_serverlist='1'
 	mode='COOP'
-	persistency='Come and Fight for LiberTea! QQ：498520233'
+        persistency='forever'
+	comment='Come and Fight for LiberTea! QQ：498520233'
 	max_players='16'>
 	<client_faction id='0' />
 </command>
