@@ -265,7 +265,7 @@ particle_system blast_smoke_02	//普通扩散烟雾
 
 particle_system spread_line	//点扩散冲击线性光
 {
-	quota 1000
+	quota 300
 	material spread_line
 	particle_width 0.15
 	particle_height 4
@@ -275,8 +275,8 @@ particle_system spread_line	//点扩散冲击线性光
 	
 	emitter Point
 	{
-		angle 50
-		colour 0.7 0.7 0 1
+		angle 35
+		colour 1 1 0 1
 		direction 0 -1 0
 		emission_rate 200
 		position 0 0 0
@@ -288,13 +288,14 @@ particle_system spread_line	//点扩散冲击线性光
 		time_to_live_max 0.5
 		duration 0.1
 	}
-	
-	affector ColourFader
+	affector ColourInterpolator
 	{
-		red	 0
-		green  0
-		blue	0
-		alpha	0
+		time0 0
+		colour0 1 1 0 1
+		time1 0.7
+		colour1 1 1 0 1
+		time2 1
+		colour2 0 0 0 0
 	}
 	affector LinearForce
 	{
@@ -432,7 +433,6 @@ material spread_line
         pass
         {
             lighting off
-			emissive 1 1 1 1
             scene_blend add
             depth_write off
 			fog_override true

@@ -17,13 +17,10 @@ player_death_drop_owner_lock_time="0"
 >
     <collision class="sticky" />
 	<trigger class="time" time_to_live="0.65" />	
-	<result class="blast" radius="10" damage="3" push="0" decal="0" character_state="death" faction_compare="not_equal" />
+	<result class="blast" radius="10" damage="30" push="0" decal="0" character_state="death" faction_compare="not_equal" />
 
 	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
 	
-    <capacity value="2" source="rank" source_value="0" />
-    <capacity value="3" source="rank" source_value="0" />
-	<capacity value="5" source="rank" source_value="0" />
     <inventory encumbrance="0.5" price="0.0" />
 
 	<sound class="result" key="other" fileref="reisenu_card_damage.wav" pitch_variety="0.01" volume="0.35" />

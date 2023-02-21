@@ -36,10 +36,10 @@
     <projectile file="hd_nux_223_hellbomb_damage_destroy.projectile" />
     <projectile file="hd_rec6_demolisher_mk3_damage.projectile" />
     <projectile file="hd_offensive_heavy_strafing_run_mk3_mg_damage.projectile" />
-	<!--Offensive 攻击性支援-->
-    <projectile file="hd_vindicator_dive_bomb.projectile" />	<!--辩护者-->
-    <projectile file="hd_vindicator_missile.projectile" />		<!--辩护者-->
+	<projectile file="hd_vindicator_missile.projectile" />		<!--辩护者-->
     <projectile file="hd_vindicator_shrapnel.projectile" />		<!--辩护者-->
+	<!--Offensive 攻击性支援-->
+    <projectile file="hd_offensive_vindicator_dive_bomb_mk3.projectile" />	<!--辩护者-->
 	<projectile file="hd_offensive_airstrike_mk3.projectile" />	<!--空袭-->
 	<projectile file="hd_offensive_laser_strike_mk3.projectile" />	<!--激光空袭-->
 	<projectile file="hd_offensive_shredder_missile_strike_mk3.projectile" />	<!--撕裂者-->
@@ -60,6 +60,11 @@
  	<projectile file="hd_airdropped_stun_mine_mk3.projectile" />		<!--眩晕雷-->
 	<projectile file="hd_airdropped_stun_mine_mk3_trigger.projectile" /><!--眩晕雷-->	
 	<projectile file="hd_airdropped_stun_mine_mk3_stun.projectile" />	<!--眩晕雷-->
+	<projectile file="hd_at47_mk3_call.projectile" /><!--AT-47 反坦克平台-->
+	<projectile file="hd_amg_11_mk3_call.projectile" /><!--自动机枪炮台-->
+	<projectile file="hd_arx_34_mk3_call.projectile" /><!--自动轨道枪炮台-->
+	<projectile file="hd_agl8_mk3_call.projectile" /><!--榴弹炮炮台-->
+	<projectile file="hd_aac6_tesla_mk3_call.projectile" /><!--特斯拉炮台-->
 	<!-- special 特殊支援 -->
 	<projectile file="hd_nux_223_hellbomb.projectile" />	<!--地狱火-->
 	<projectile file="hd_hellpod.projectile" />	<!--空投舱-->
@@ -83,14 +88,11 @@
 	<projectile file="hd_exo44_mk3.projectile" /><!--步行者-->
 	<projectile file="hd_exo48_mk3.projectile" /><!--黑曜石-->
 	<projectile file="hd_exo51_mk3.projectile" /><!--重步者-->
-	<projectile file="hd_at47_mk3_call.projectile" /><!--AT-47 反坦克平台-->
-	<projectile file="hd_amg_11_mk3_call.projectile" /><!--自动机枪炮台-->
-	<projectile file="hd_arx_34_mk3_call.projectile" /><!--自动轨道枪炮台-->
-	<projectile file="hd_agl8_mk3_call.projectile" /><!--榴弹炮炮台-->
-	<projectile file="hd_aac6_tesla_mk3_call.projectile" /><!--特斯拉炮台-->
+	
 	
 	<!-- Effect -->
 	<projectile file="hd_players_dead_effect.projectile" />
+	<projectile file="hd_vindicator_effect.projectile" />
 
 	<!-- 间接生成弹头 -->
 	<projectile file="hd_amg_11_mk3_spawn.projectile" />

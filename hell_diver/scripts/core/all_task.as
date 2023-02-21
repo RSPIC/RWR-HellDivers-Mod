@@ -133,7 +133,7 @@ abstract class event_call_task : Task
 	protected int m_excute_Limit; //执行次数上限
 	protected bool m_end=false;
 	protected Vector3 strike_vector;
-	protected float strike_didis;
+	protected float strike_didis;	//偏移
 
 	event_call_task(Metagame@ metagame, float time, int cId,int fId,Vector3 characterpos,Vector3 targetpos,string mode)
 	{
@@ -226,6 +226,46 @@ class Event_call_helldiver_superearth_heavystrafe : event_call_task {
 		m_timeLeft_internal = m_time_internal;
 
 		insertCommonStrike(m_character_id,m_faction_id,m_airstrike_key,m_pos1,m_pos2);
+		m_pos1 = m_pos1.add(getMultiplicationVector(strike_vector,Vector3(strike_didis,0,strike_didis)));
+		m_pos2 = m_pos2.add(getMultiplicationVector(strike_vector,Vector3(strike_didis,0,strike_didis)));					
+	}
+}
+
+class Event_call_helldiver_superearth_vindicator_dive_bomb : event_call_task {
+
+	void start() {
+		m_timeLeft=m_time;
+		m_timeLeft_internal = 0;
+		strike_vector = getAimUnitVector(1,c_pos,t_pos);
+		//strike_vector = getRotatedVector(getIntSymbol()*1.57,strike_vector);
+		strike_didis = 0;
+		m_pos1 = t_pos.add(getMultiplicationVector(strike_vector,Vector3(0,0,0)));
+		m_pos2 = m_pos1;
+		m_pos1=m_pos1.add(Vector3(0,20,0));
+		_log("receive task call, key =" + m_mode);
+		if(m_mode == "vindicator_dive_bomb_mk3")
+		{
+			m_excute_Limit = 1;
+			m_time_internal = 0.1;
+			m_airstrike_key = "hd_superearth_vindicator_dive_bomb_mk3";
+		}
+	}
+
+	Event_call_helldiver_superearth_vindicator_dive_bomb(Metagame@ metagame, float time, int cId,int fId,Vector3 characterpos,Vector3 targetpos,string mode)
+	{
+		_log("execution task Event_call_helldiver_superearth_vindicator_dive_bomb");
+		super(metagame, time, cId,fId,characterpos,targetpos,mode);
+	}
+
+	void update(float time) {
+		if(m_timeLeft >= 0){m_timeLeft -= time;return;}
+		if (m_timeLeft_internal >= 0){m_timeLeft_internal -= time;return;}
+		if (m_excute_time >= m_excute_Limit){m_end = true;return;}
+		m_excute_time++;
+		m_timeLeft_internal = m_time_internal;
+
+		insertCommonStrike(m_character_id,m_faction_id,m_airstrike_key,m_pos1,m_pos2);
+		// CreateDirectProjectile(m_metagame,m_pos1,m_pos2,"hd_general_gl_spawn.projectile",m_character_id,m_faction_id,30);
 		m_pos1 = m_pos1.add(getMultiplicationVector(strike_vector,Vector3(strike_didis,0,strike_didis)));
 		m_pos2 = m_pos2.add(getMultiplicationVector(strike_vector,Vector3(strike_didis,0,strike_didis)));					
 	}

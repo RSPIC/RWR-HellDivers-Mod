@@ -7,6 +7,7 @@
 #include "generic_call_task.as"
 #include "task_sequencer.as"
 #include "all_task.as"
+#include "all_parameter.as"
 
 // --------------------------------------------
 class BasicCommandHandler : Tracker {
@@ -69,28 +70,28 @@ class BasicCommandHandler : Tracker {
 		// 会剔除不是斜杠开头的字符串，同时检测是否符合helldiver呼叫代码
 		if (!startsWith(message, "/")) {
 			if ( ws == 1 ){
-			const XmlElement@ info = getPlayerInfo(m_metagame, senderId);
-			int cid = info.getIntAttribute("character_id");
-			// 呼叫支援指令字典
-			array<string> fixcommand = {'adsw','adws','wsdaw','ddd','sswd','dwsda','wadsws','dadassd','dwsda'};
-			// 获取物品键值字典
-			array<string> itemkey = {'at_mine_mk3','airdropped_stun_mine_mk3','hd_hellpod','hd_vindicator_dive_bomb','hd_resupply','hd_offensive_airstrike_mk3','hd_nux_223_hellbomb','hd_offensive_shredder_missile_strike_mk3','hd_offensive_airstrike_mk3'};
-			// 直接替换手雷栏
-			for(uint a = 0; a != fixcommand.size(); a++){
-				if(message == fixcommand[a]){
+				const XmlElement@ info = getPlayerInfo(m_metagame, senderId);
+				int cid = info.getIntAttribute("character_id");
+				// 呼叫支援指令字典
+				array<string> fixcommand = {'adsw','adws','wsdaw','ddd','sswd','dwsda','wadsws','dadassd','dwsda'};
+				// 获取物品键值字典
+				array<string> itemkey = {'at_mine_mk3','airdropped_stun_mine_mk3','hd_hellpod','hd_vindicator_dive_bomb','hd_resupply','hd_offensive_airstrike_mk3','hd_nux_223_hellbomb','hd_offensive_shredder_missile_strike_mk3','hd_offensive_airstrike_mk3'};
+				// 直接替换手雷栏
+				_log("stratagems call exists? :" + (offensive_stratagems.exists(message)));
+				_log("stratagems call message :" + message);
+				_log("stratagems call key :" + string(offensive_stratagems[message]));
+				if ((offensive_stratagems.exists(message))){
 					string c = 
 					"<command class='update_inventory' character_id='" + cid + "' container_type_id='4' add='1'>" + 
-						"<item class='" + "projectile" + "' key='" + itemkey[a] + ".projectile" +"' />" +
+						"<item class='" + "projectile" + "' key='" + string(offensive_stratagems[message]) + ".projectile" +"' />" +
 					"</command>";
 					m_metagame.getComms().send(c);
 
 					dictionary dict = {{"TagName", "command"},{"class", "chat"},{"text", "Call Receive!"}};
 					m_metagame.getComms().send(XmlElement(dict));
-					break;
-					}
-				} 
+				}
+				return;
 			}
-			return;
 		}
 		
 		// 任意数值rp xp获取
@@ -163,11 +164,13 @@ class BasicCommandHandler : Tracker {
 		}
 		// 生成各类物品
 		if (matchString(word[0], "v")) {
+			if (ws == 1){return;}
 			string key = word[1];
 			if (ws == 2){
 			spawnInstanceNearPlayer(senderId, key + ".vehicle", "vehicle");
 			} 
 		} else if (matchString(word[0], "w")) {
+			if (ws == 1){return;}
 			string key = word[1];
 			if (ws == 2){
 			spawnInstanceAtbackpack(senderId, key + ".weapon", "weapon");
@@ -175,6 +178,7 @@ class BasicCommandHandler : Tracker {
 			spawnInstanceAtbackpack(senderId, key + ".weapon", "weapon", word[2]);
 			}
 		}else if (matchString(word[0], "p")) {
+			if (ws == 1){return;}
 			string key = word[1];
 			if (ws == 2){
 			spawnInstanceAtbackpack(senderId, key + ".projectile", "projectile");

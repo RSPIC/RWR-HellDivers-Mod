@@ -2,7 +2,7 @@
 <projectile class="grenade" 
 name="Vindicator Dive Bomb Shrapnel" 
 slot="1" 
-pulldown_in_air="80.0" 
+pulldown_in_air="200.0" 
 key="hd_vindicator_shrapnel.projectile">
     
 	<result class="blast" radius="5.5" damage="5.0" decal="1" push="1" character_state="death" />

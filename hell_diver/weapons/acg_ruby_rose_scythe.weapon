@@ -88,7 +88,7 @@ on_ground_up="0 0 1"
 	time_to_live="0.6" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.7" name="Crescent Rose [Scythe]"> 
 
 		<result class="spawn" instance_class="projectile" instance_key="hd_cr9_suppressor_damage.projectile" 
-		min_amount="8" max_amount="9" offset="0 0.5 0" position_spread="0.5 0" direction_spread="0 0" />	
+		min_amount="11" max_amount="14" offset="0 0.5 0" position_spread="0.5 0" direction_spread="0 0" />	
 		<trigger class="impact" time_to_live="0.2"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->

@@ -67,7 +67,7 @@ class projectile_event : Tracker {
                 break;
             }
 
-            case 7: {
+            case 7: {   //望远镜
                 int characterId = event.getIntAttribute("character_id");
 				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
                 if (character !is null) {
@@ -90,6 +90,22 @@ class projectile_event : Tracker {
                     }
                 }
                 break;
+            }
+
+            case 8: {   //辩护者
+                // 查找并确认玩家存在
+                int characterId = event.getIntAttribute("character_id");
+				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                if (character is null) {break;}
+                // 确定起始点与所属阵营
+                Vector3 pos1 = stringToVector3(event.getStringAttribute("position"));
+                Vector3 pos2 = stringToVector3(character.getStringAttribute("position"));
+                int factionid = character.getIntAttribute("faction_id");
+                // 创建空袭事件
+                _log("execution vindicator bomb");
+                Event_call_helldiver_superearth_vindicator_dive_bomb@ new_task = Event_call_helldiver_superearth_vindicator_dive_bomb(m_metagame,0.5,characterId,factionid,pos2,pos1,"vindicator_dive_bomb_mk3");
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                tasker.add(new_task);
             }
 
             default:

@@ -51,6 +51,14 @@ class AirstrikeSystem : Tracker {
                 break;
             }
 
+            case 8:{ //辩护者
+                CreateDirectProjectile(m_metagame,start_pos,end_pos,"hd_vindicator_missile.projectile",cid,fid,60);
+                CreateDirectProjectile(m_metagame,start_pos,end_pos,"hd_vindicator_effect.projectile",cid,fid,60);
+                //effect 产生半空特效和若干子弹头
+                remove_or_not = 1;
+                break;
+            }
+
             default:
                 break;
         } 
