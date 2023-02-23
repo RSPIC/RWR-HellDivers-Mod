@@ -2,7 +2,7 @@ author: RST
 2022.9.22
 未经授权不可复用、修改使用、仅用于helldiver mod
 
-particle_system hd_mg94_avtivated_bullet_light
+particle_system hd_mg94_activated_bullet_light
 {
 	quota 100
 	material point_soft_edge_100
@@ -55,7 +55,7 @@ particle_system hd_mg94_avtivated_bullet_light
 		force_application add
 	}
 }
-particle_system hd_mg94_avtivated_bullet_light_center
+particle_system hd_mg94_activated_bullet_light_center
 {
 	quota 100
 	material point_soft_edge_100_pass
@@ -102,7 +102,7 @@ particle_system hd_mg94_avtivated_bullet_light_center
 		force_application add
 	}
 }
-particle_system hd_mg94_result_bullet_light_center : hd_mg94_avtivated_bullet_light_center
+particle_system hd_mg94_result_bullet_light_center : hd_mg94_activated_bullet_light_center
 {
 	particle_width 8
 	particle_height 8
@@ -232,7 +232,7 @@ particle_system hd_mg94_hit_leave
 		keep_velocity false
 	}
 }
-particle_system hd_mg94_avtivated_bullet_light_center_yellow
+particle_system hd_mg94_activated_bullet_light_center_yellow
 {
 	quota 100
 	material point_soft_edge_100_pass
@@ -282,7 +282,7 @@ particle_system hd_mg94_avtivated_bullet_light_center_yellow
 		force_application add
 	}
 }
-particle_system hd_mg94_avtivated_bullet_ground_light
+particle_system hd_mg94_activated_bullet_ground_light
 {
 	quota 100
 	material point_soft_edge_100_pass

@@ -606,7 +606,7 @@ particle_system general_weapon_result_smoke_shorttime
 		keep_velocity false
 	}
 }
-particle_system general_weapon_avtivated_bullet_light
+particle_system general_weapon_activated_bullet_light
 {
 	quota 100
 	material point_soft_edge_100
@@ -659,7 +659,7 @@ particle_system general_weapon_avtivated_bullet_light
 		force_application add
 	}
 }
-particle_system general_weapon_avtivated_bullet_light_smaller : general_weapon_avtivated_bullet_light
+particle_system general_weapon_activated_bullet_light_smaller : general_weapon_activated_bullet_light
 {
 	particle_width 10
 	particle_height 10

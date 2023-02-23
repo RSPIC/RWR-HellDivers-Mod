@@ -102,7 +102,7 @@ on_ground_up="0 0 1"
 		<!--命中特效-->
 		<!--
 		<effect class="result" key="terrain" ref="" lighting="0"/>
-		<effect class="activated" ref="general_weapon_avtivated_bullet_light" />
+		<effect class="activated" ref="general_weapon_activated_bullet_light" />
 		-->
 
 		<effect class="activated" ref="repair_activated_trail" />
@@ -150,6 +150,3 @@ on_ground_up="0 0 1"
     <modifier class="detectability" value="0.0" />	<!--正值增加玩家隐蔽-->
 	 	
 </weapon>
-
-
-

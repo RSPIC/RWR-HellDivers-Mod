@@ -70,7 +70,7 @@ key="hd_rx1_railgun.weapon"
 		<rotation class="motion" /><!--参数：motion、random-->
 
 		<model mesh_filename="rx1_bullet.xml" />
-		<effect class="activated" ref="general_weapon_avtivated_bullet_light" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_bullet_light" lighting="0"/>
 		<effect class="result" key="terrain" ref="p2_peacemaker_hit_01" />
 		<effect class="result" key="terrain" ref="p2_peacemaker_hit_02" />
 		<effect class="result" key="terrain" ref="p2_peacemaker_hit_03" />

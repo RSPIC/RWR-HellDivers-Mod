@@ -93,10 +93,10 @@ key="hd_mg94_mk3.weapon"
 		<effect class="result" key="terrain" ref="hd_mg94_result_bullet_light_center" lighting="0" />
 		<effect class="result" key="terrain" ref="hd_mg94_result_bullet_smoke" lighting="0" />
 		<effect class="result" key="terrain" ref="hd_mg94_hit_leave" lighting="0" />
-		<effect class="activated" ref="hd_mg94_avtivated_bullet_light" lighting="0"/>
-		<effect class="activated" ref="hd_mg94_avtivated_bullet_light_center" lighting="0"/>
-		<effect class="activated" ref="hd_mg94_avtivated_bullet_ground_light"/>
-		<effect class="activated" ref="hd_mg94_avtivated_bullet_light_center_yellow" lighting="0" post_processing="1"/>
+		<effect class="activated" ref="hd_mg94_activated_bullet_light" lighting="0"/>
+		<effect class="activated" ref="hd_mg94_activated_bullet_light_center" lighting="0"/>
+		<effect class="activated" ref="hd_mg94_activated_bullet_ground_light"/>
+		<effect class="activated" ref="hd_mg94_activated_bullet_light_center_yellow" lighting="0" post_processing="1"/>
 	
 		<sound class="result" key="terrain" copy="other" />
 		<sound class="result" key="static_object" copy="other" />
@@ -129,6 +129,3 @@ key="hd_mg94_mk3.weapon"
 
 
 </weapon>
-
-
-

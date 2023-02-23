@@ -115,7 +115,7 @@ on_ground_up="0 0 1"
 		<effect class="activated" ref="" />
 		-->
 		<effect class="result" key="terrain" ref="general_weapon_result_hitspot" lighting="0"/>
-		<effect class="activated" ref="general_weapon_avtivated_bullet_light_smaller" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_bullet_light_smaller" lighting="0"/>
 
 		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
 		<sound class="result" key="terrain" copy="other" />
@@ -170,6 +170,3 @@ on_ground_up="0 0 1"
     <modifier class="detectability" value="0.0" />	<!--正值增加玩家隐蔽-->
 	 
 </weapon>
-
-
-

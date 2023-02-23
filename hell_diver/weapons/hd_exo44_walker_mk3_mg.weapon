@@ -116,7 +116,7 @@ key="hd_exo44_walker_mk3_mg.weapon"
 		<effect class="result" key="terrain" ref="hd_mg94_result_bullet_light_center" lighting="0" />
 		<effect class="result" key="terrain" ref="hd_mg94_result_bullet_smoke" lighting="0" />
 		<effect class="result" key="terrain" ref="hd_mg94_hit_leave" lighting="0" />
-		<effect class="activated" ref="general_weapon_avtivated_bullet_light" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_bullet_light" lighting="0"/>
 		<effect class="activated" ref="general_weapon_activated_bullet_centerlight" lighting="0"/>
 
 		<effect class="result" key="terrain" ref="p2_peacemaker_hit_01" />
@@ -160,6 +160,3 @@ key="hd_exo44_walker_mk3_mg.weapon"
 	<modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="0" />
 	<modifier class="projectile_blast_result" input_character_state="stun" output_character_state="none" consumes_item="0" />
 </weapon>
-
-
-

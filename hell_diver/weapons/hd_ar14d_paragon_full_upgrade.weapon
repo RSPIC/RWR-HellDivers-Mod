@@ -121,10 +121,10 @@ ai_sight_range_modifier="0.9"
 		<!--命中特效-->
 		<!--
 		<effect class="result" key="terrain" ref="" lighting="0"/>
-		<effect class="activated" ref="general_weapon_avtivated_bullet_light" />
+		<effect class="activated" ref="general_weapon_activated_bullet_light" />
 		-->
 		<effect class="result" key="terrain" ref="general_weapon_result_hitspot" lighting="0"/>
-		<effect class="activated" ref="general_weapon_avtivated_bullet_light" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_bullet_light" lighting="0"/>
 		<effect class="activated" ref="general_weapon_activated_bullet_centerlight" lighting="0"/>
 	
 		<effect class="result" key="terrain" ref="p6_gunslinger_hit_01" lighting="0"/>
@@ -190,6 +190,3 @@ ai_sight_range_modifier="0.9"
     <modifier class="detectability" value="0.0" />	<!--正值增加玩家隐蔽-->
 	 
 </weapon>
-
-
-
