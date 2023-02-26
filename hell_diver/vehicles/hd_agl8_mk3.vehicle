@@ -37,7 +37,7 @@ allow_ai_to_use="1"
 		<sky_diving chute_offset="0 0 0" trigger_height="20" gravity="-80" mesh_filename="" texture_filename="" />
 
 	<!-- 主炮 -->
-	<turret offset="0 3 0" weapon_key="hd_agl8_mk3.weapon" weapon_offset="0 -2.7 0.6" weapon_recoil="0.001" 
+	<turret offset="0 3 0" weapon_key="hd_agl8_mk3.weapon" weapon_offset="0 -1.2 0.6" weapon_recoil="0.001" 
 	 max_rotation_step="0.00015" />
 	<!-- 车体 -->
 	<visual class="chassis" offset="0 -0.4 0" mesh_filename="hd_hellpod.mesh" texture_filename="hd_hellpod_main.png" />

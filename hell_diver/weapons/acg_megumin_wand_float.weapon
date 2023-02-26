@@ -23,7 +23,7 @@ on_ground_up="0 0 1"
 	sight_range_modifier="2" 
 	projectile_speed="50.0" 
 	barrel_offset_3d="0 0 1.6"
-	projectiles_per_shot="4" 
+	projectiles_per_shot="1" 
 	burst_shots="1"
     carry_in_two_hands="1"/>
     <weak_hand_hold offset="0" />
@@ -64,7 +64,7 @@ on_ground_up="0 0 1"
     <addon_model filename="wand_hh_addons.xml" />
 
     <ballistics 
-    curve_height="0.1" 
+    curve_height="0.3" 
     near_far_distance="1000" 
     speed_estimation_near="450" 
     speed_estimation_far="50" 
@@ -80,7 +80,7 @@ on_ground_up="0 0 1"
     <projectile file="wand_guiding_01.projectile" pulldown_in_air="0.1"> 
         <trigger class="time" time_to_live="1.0" />
         <collision class="sticky" />
-        <result class="blast" radius="5" damage="4" decal="0" push="0.5" character_state="death" faction_compare="not_equal"/>
+        <result class="blast" radius="5" damage="20" decal="0" push="0.5" character_state="wound" faction_compare="not_equal"/>
         <!-- 爆炸伤害 4x3=12 -->
         <effect class="activated" ref="wand_activated_fire_smoke" />   
         <effect class="result" key="terrain" ref="wand_result_fire_blast" /> 

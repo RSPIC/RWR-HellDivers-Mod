@@ -18,7 +18,9 @@
 	<sound key="footstep" fileref="static.wav" volume="0.0" />	
 	<sound key="footstep" fileref="static.wav" volume="0.0" />
 	<sound key="footstep" fileref="static.wav" volume="0.0" />
-	
+
+	<parameter class="being_stunned_steer_amount" value="0.25" />
+
 	<parameter class="throwing_self_over_initial_bounce" value="0.07" /><!--翻越时初始弹起高度-->
 	<parameter class="throwing_self_over_steer_amount" value="0.30" /><!--翻越中向前位移速度-->
 	<parameter class="throwing_self_over_lift_up" value="0.0" />
