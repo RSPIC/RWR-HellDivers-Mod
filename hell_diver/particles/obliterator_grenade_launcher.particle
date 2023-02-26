@@ -63,10 +63,10 @@ particle_system obliterator_grenade_launcher_trail
 	
 }
 
-particle_system obliterator_grenade_launcher_impact_smoke		//爆点烟雾
+particle_system obliterator_grenade_launcher_impact_smoke		//爆点烟雾 取消
 {
-	quota 500
-	emit_emitter_quota 500
+	quota 1000
+	emit_emitter_quota 1000
 	material obliterator_smoke
 	particle_width 1.5
 	particle_height 1.5
@@ -83,8 +83,8 @@ particle_system obliterator_grenade_launcher_impact_smoke		//爆点烟雾
 		direction 0 1 0
 		emission_rate 60
 		position 0 1 0
-		velocity_min 30
-		velocity_max 30
+		velocity_min 20
+		velocity_max 10
 		time_to_live_min 0.45
 		time_to_live_max 0.45
 		duration 0.1
@@ -93,7 +93,7 @@ particle_system obliterator_grenade_launcher_impact_smoke		//爆点烟雾
 	emitter Point
 	{
 		angle 180
-		colour 1 0.3 0 1
+		colour 1 0.73 0 1
 		direction 0 1 0
 		emission_rate 200
 		position 0 0 0
@@ -107,7 +107,7 @@ particle_system obliterator_grenade_launcher_impact_smoke		//爆点烟雾
 	}
 	affector Scaler
 	{
-		rate -0.5
+		rate 0.5
 	}
 		affector Rotator
 	{
@@ -119,14 +119,14 @@ particle_system obliterator_grenade_launcher_impact_smoke		//爆点烟雾
 	affector ColourInterpolator
 	{
 		time0 0
-		colour0 1 0.5 0 0.6
+		colour0 1 0.3 0 0.5
 		time1 0.6
-		colour1 0.9 0.95 1 0.2
+		colour1 0.9 0.7 0.3 0.1
 		time2 1
 		colour2 0 0 0 0
 	}
 	affector LinearForce{
-		force_vector 0 -20 0
+		force_vector 0 0 0
 		force_application add
 	}
 	affector DirectionRandomiser 
