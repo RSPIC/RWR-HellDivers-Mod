@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>	
-<!-- credit: XEON  modifier: RST-->
 <vehicle  
 name="MC-109 Hammer Motorcycle" 
 key="hd_mc109_motor.vehicle" 
@@ -18,17 +17,17 @@ ai_abandon_when_unsteerable="1"
 	<tag name="apc" />
 	<tag name="any_tank" />
 
-	<tire_set offset="0.01 0 1.75" radius="0.8" />
-	<tire_set offset="0.9 0 -1.2" radius="0.8" />
+	<tire_set offset="0.01 0 1.75" radius="1.0" />
+	<tire_set offset="0.9 0 -1.2" radius="1.0" />
 
 	<control 
 	max_speed="28.0" 
 	acceleration="20" 
-	max_reverse_speed="4.0" 
+	max_reverse_speed="10.0" 
 	min_health_to_steer="0.36" 
-	max_rotation="0.55" 
+	max_rotation="0.50" 
 	max_water_depth="1.9" 
-	steer_smoothening="0.55" />
+	steer_smoothening="0.2" />
 
 	<modifier class="blast_range" value="0.0" />
 	<modifier class="blast_damage" value="0.0" />
@@ -42,14 +41,14 @@ ai_abandon_when_unsteerable="1"
 	remove_collision_threshold="1.0"
 	extent="2.5 0 4.0" 
 	offset="-0.1 0 0" 
-	top_offset="-0.0 5.5 0" 
+	top_offset="-0.0 6.5 0" 
 	collision_model_pos="-0.18 0.4 0.1" 
 	collision_model_extent="2.6 0.3 3.4" 
 	visual_offset="0.1 0.7 -0.4" 
-	friction_offset="-0.05" 
+	friction_offset="0.05" 
 	drag_offset="-1" 
 	destroy_on_top_hit="1"
-	destroy_on_top_hit_time="10"
+	destroy_on_top_hit_time="4"
 	collision_response_factor="1.0" 
 	vehicle_collision_damage_factor="1"
 	/> 
@@ -58,7 +57,7 @@ ai_abandon_when_unsteerable="1"
 	weapon_offset="0 0 0.85" weapon_recoil="0.01" max_rotation_step="0.0006" 
 	rotation="-0.7" rotation_range="2" />
 
-	<sky_diving chute_offset="0 0 0" trigger_height="5" gravity="-10" mesh_filename="" texture_filename="" />
+	<sky_diving chute_offset="0 0 0" trigger_height="5" gravity="-80" mesh_filename="" texture_filename="" />
 
 	<visual class="chassis" mesh_filename="mc109_main.mesh" texture_filename="mc109_bake.png" />
 

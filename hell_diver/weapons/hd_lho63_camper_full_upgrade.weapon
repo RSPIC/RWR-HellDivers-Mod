@@ -113,7 +113,7 @@ on_ground_up="0 0 1"
 		<!-- slower decay -->
 		<!-- 抵抗护甲抗致死衰减影响 -->
 		<!-- damage 200hit/300hit 300/450center hit | use average 375-->
-		<!-- 10x4.0 -->
+		<!-- 10弹头x4.0 -->
 		
 		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->

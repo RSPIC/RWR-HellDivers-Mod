@@ -117,7 +117,7 @@ radius="1"
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
 		<!-- 不受护甲抗致死衰减 -->
-		<!-- 16x2x(7~10) -->
+		<!-- 16x2x(7~10)=224~320 轰炸伤 -->
 		<!--命中音效-->
 		<sound class="result" key="other" fileref="burn.wav" pitch_variety="0.03" volume="0.0" />
 		
