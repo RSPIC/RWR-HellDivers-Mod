@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<weapon key="hd_m5_apc_autocannon.weapon">
+<weapon key="hd_m5_apc_autocannon_2.weapon">
     <specification 
 	retrigger_time="0.2" 
     accuracy_factor="1.0" 
 	spread_range="0.2"
-    sustained_fire_grow_step="1.0" 
-    sustained_fire_diminish_rate="1.677" 
-    cooldown_start="0.35"
-    cooldown_end="0.3433"
+    sustained_fire_grow_step="0.6" 
+    sustained_fire_diminish_rate="1.01" 
+    cooldown_start="0.62"
+    cooldown_end="0.61"
 	sight_range_modifier="1.0"
     ai_sight_range_modifier="0.9"     
     magazine_size="180" 
