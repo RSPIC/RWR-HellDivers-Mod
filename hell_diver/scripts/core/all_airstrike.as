@@ -65,6 +65,19 @@ class AirstrikeSystem : Tracker {
                 break;
             }
 
+            case 14:{ //三重轰炸
+                float strike_rand = 8;
+                for(int j=1;j<=3;j++)
+                {
+                    float rand_x = rand(-strike_rand,strike_rand);
+                    float rand_y = rand(-strike_rand,strike_rand);
+                    float rand_z = rand(-7,7);
+                CreateDirectProjectile(m_metagame,start_pos.add(Vector3(rand_x,rand_z,rand_y)),end_pos.add(Vector3(rand_x,0,rand_y)),"hd_offensive_thunderer_barrage_mk3_damage.projectile",cid,fid,10);
+                remove_or_not = 1;
+                }
+                break;
+            }
+
             default:
                 break;
         } 

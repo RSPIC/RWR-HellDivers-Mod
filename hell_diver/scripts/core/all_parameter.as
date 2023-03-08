@@ -14,8 +14,10 @@ dictionary airstrikeIndex = {
         {"hd_superearth_heavy_strafe_mk3",4},
 
         {"hd_superearth_vindicator_dive_bomb_mk3",8},
-        
+
         {"hd_superearth_incendiary_bombs_mk3",11},
+
+        {"hd_superearth_thunderer_barrage_mk3",14},
 
         // 下面这行是用来占位的，在这之上添加新的即可
         {"666",-1}
@@ -40,6 +42,8 @@ dictionary projectile_eventkey = {
         {"hd_offensive_vindicator_dive_bomb_mk3",8},
 
         {"hd_offensive_incendiary_bombs_mk3",11},
+
+        {"hd_offensive_thunderer_barrage_mk3",14},
 
         // 占位的
         {"666",-1}
