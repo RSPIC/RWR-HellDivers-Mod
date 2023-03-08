@@ -14,8 +14,17 @@ void main(dictionary@ inputData) {
 
         settings.m_factionChoice = 0;                  // 0(acg) 1(helldivers), 2(cyborgs), 3(illuminate), 4(bugs), 
         settings.m_playerAiCompensationFactor = 1.0;   // was 1.1  (1.75)
+
+        settings.m_fellowCapacityFactor = 1.0;
+        settings.m_fellowAiAccuracyFactor = 0.98;
+        settings.m_enemyCapacityFactor = 2.0;
         settings.m_enemyAiAccuracyFactor = 0.94;
+
         settings.m_playerAiReduction = 0.0;            // didn't work before 1.76! (was 1.0)
+
+        settings.m_xpFactor = 1;
+        settings.m_rpFactor = 1.0;
+
         settings.m_teamKillPenaltyEnabled = true;
         settings.m_completionVarianceEnabled = false;
         settings.m_journalEnabled = true;
@@ -28,13 +37,13 @@ void main(dictionary@ inputData) {
 
         settings.m_startServerCommand = """
 <command class='start_server'
-	server_name='[HD] SuperEarth Server QQ：498520233'
+	server_name='[HD] QQ：498520233'
 	server_port='1240'
-	url=''
+	url='https://steamcommunity.com/sharedfiles/filedetails/?id=2910392031'
 	register_in_serverlist='1'
 	mode='COOP'
         persistency='forever'
-	comment='Come and Fight for LiberTea! QQ：498520233'
+	comment='Running with HellDivers Mod.  QQ：498520233'
 	max_players='16'>
 	<client_faction id='0' />
 </command>

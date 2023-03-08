@@ -101,10 +101,19 @@ ai_abandon_when_unsteerable="1"
 	<effect event_key="slide_hard" type="particle" key="terrain" surface_tag="road" ref="car_slide_up_smoke" use_surface_color="1" />
   
 	<effect event_key="drive_chassis" ref="car_health_front_light" offset="0 0 10" />
-	<effect event_key="health" value="1.8" ref="SmallSmokeVehicle" offset="0.0 0 0" />
-	<effect event_key="destroyed" ref="SmallSmokeVehicle" offset="-0.0 0.4 0.5" />
-	<effect event_key="destroyed" ref="MediumSmokeVehicle" offset="-0.0 0.4 -2.7" />  
-	<effect event_key="destroyed" ref="SmallFireRepeat" offset="0.0 0.4 0.5" />
+
+	<effect event_key="health" value="25" ref="car_broken_spary_spark" offset="0 0.4 -0.3" />
+	<effect event_key="health" value="15" ref="car_broken_spary_spark" offset="0 0.4 -0.3" />
+	<effect event_key="health" value="15" ref="car_destroyed_up_smoke" offset="0 0.4 -0.3" />
+	<effect event_key="health" value="10" ref="car_destroyed_fire" offset="0 0.4 -0.3" />
+	<effect event_key="health" value="10" ref="car_destroyed_up_smoke" offset="0 0.4 -0.3" />
+	<effect event_key="health" value="10" ref="car_broken_spary_spark" offset="0 0.4 -0.3" />
+
+	<effect event_key="destroyed" ref="car_destroyed_fire" post_processing="1" offset="0 0.4 -0.3" />
+	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="0" offset="0 0.4 -0.3" />  
+	<effect event_key="destroyed" ref="car_broken_spary_spark" post_processing="0" offset="0 0.4 -0.3" />  
+
+
     <effect event_key="destroy" key="other" ref="woosh" post_processing="0" shadow="0" />   
     <effect event_key="cleanup" key="other" ref="woosh" post_processing="0" shadow="0" /> 
   

@@ -30,16 +30,25 @@ respawn_time="180.0"
 	vehicle_collision_damage_factor="0" 
 	/> 
 
-	0<turret offset="0 0 0" weapon_key="63type_107mm_rocket_launcher.weapon" weapon_offset="0 0 0" 
-	weapon_recoil="1" physics_recoil="0"  max_rotation_step="0.00008" rotation="0" rotation_range="0.18" />
-	
+	0<turret offset="-0.5 0 0" weapon_key="63type_107mm_rocket_launcher_1.weapon" weapon_offset="0 0 0" 
+	weapon_recoil="0" physics_recoil="0"  max_rotation_step="0.00008" rotation="0" rotation_range="0.18" />
+	1<turret offset="-0.3 0 0" weapon_key="63type_107mm_rocket_launcher_2.weapon" weapon_offset="0 0 0" 
+	weapon_recoil="0" physics_recoil="0"  max_rotation_step="0.00008" rotation="0" rotation_range="0.18" />
+	2<turret offset="-0.1 0 0" weapon_key="63type_107mm_rocket_launcher_3.weapon" weapon_offset="0 0 0" 
+	weapon_recoil="0" physics_recoil="0"  max_rotation_step="0.00008" rotation="0" rotation_range="0.18" />
+	3<turret offset="0.1 0 0" weapon_key="63type_107mm_rocket_launcher_4.weapon" weapon_offset="0 0 0" 
+	weapon_recoil="0" physics_recoil="0"  max_rotation_step="0.00008" rotation="0" rotation_range="0.18" />
 
-	<character_slot type="gunner" seat_position="-0.6 0.1 -0.35" enter_position="-1.1 0 -0.6" 
+
+	<character_slot type="gunner" seat_position="-1.1 0.1 -0.35" enter_position="-1.1 0 -0.6" 
 	attached_on_turret="0" rotation="0" exit_rotation="-1.57" hiding="0" animation_key="63type_107mm_rotate_handle">  	
 		<turret index="0" />
+		<turret index="1" />
+		<turret index="2" />
+		<turret index="3" />
 	</character_slot>
 	
-	<character_slot type="driver" seat_position="0.6 0.1 -0.45" enter_position="1.7 0.1 -0.45" 
+	<character_slot type="driver" seat_position="0.1 0.1 -0.45" enter_position="1.7 0.1 -0.45" 
 	attached_on_turret="0" rotation="0" exit_rotation="-1.57" hiding="0" animation_key="still, binoculars">
 	</character_slot>
 	

@@ -2333,6 +2333,82 @@ particle_system general_result_shield_hit_2 : general_result_shield_hit_1
 	}
 }
 
+
+particle_system general_fire_aim_mark_1 	//瞄准地面框选特效
+{
+	quota 50
+	material Tex_UI_Mark10A_anim
+	particle_width 8
+	particle_height 8
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 100
+		position 0 -20 0
+		velocity 0.0001
+		time_to_live 1
+		duration 0.01
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0 1
+		time1 1
+		colour1 1 0.3 0 1
+	}
+}
+
+particle_system general_fire_aim_mark_2  //瞄准的空对地指示特效
+{
+	quota 50
+	material UITEX_DirectionHelp_anim
+	particle_width 1.5
+	particle_height 3
+	renderer billboard
+	billboard_type oriented_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	accurate_facing on
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 100
+		position 0 -17 0
+		velocity 0.0001
+		time_to_live 1
+		duration 0.01
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	180
+		rotation_range_end	180
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 1
+		colour1 1 1 1 1
+	}
+}
 --------------------------------------material-----------------------------------
 material alpha_blend_base{
 	receive_shadows off
@@ -2631,4 +2707,34 @@ material shield_hit_ring : add_base
     pass{
         texture_unit{
             texture shield_hit_ring.png 	
+}}}}
+material Tex_UI_Mark15 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture Tex_UI_Mark15.png 	
+}}}}
+material UITEX_DirectionHelp_anim : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture UITEX_DirectionHelp.png 
+			wave_xform scroll_y sine 0 2 0 -0.2
+			tex_address_mode border
+			tex_border_colour 0 0 0 0
+}}}}
+material Tex_UI_Mark10A_anim : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture Tex_UI_Mark10A.png 	
+			wave_xform scale_x sine 0.25 2 0 0.2
+			wave_xform scale_y sine 0.25 2 0 0.2
+			tex_address_mode border
+			tex_border_colour 0 0 0 0
 }}}}

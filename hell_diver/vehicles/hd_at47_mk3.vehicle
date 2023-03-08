@@ -39,6 +39,8 @@ allow_ai_to_use="1"
 	<!-- 主炮加激光指示器 -->
 	<turret offset="0 1.7 0" weapon_key="hd_at47_mk3.weapon" weapon_offset="-0.25 0 1.7" weapon_recoil="0.001" 
 	 max_rotation_step="0.00015" />
+	<turret offset="0 1.7 0" weapon_key="auxiliary_car_fire_aim.weapon" weapon_offset="-0.25 0 1.7" weapon_recoil="0" 
+	 max_rotation_step="0.00015" />
 	<turret offset="0 0 0" weapon_key="hd_vehicle_weapon_laser.weapon" weapon_offset="-0.25 -0.3 0" 
 		weapon_recoil="0" max_rotation_step="0"  parent_turret_index="0" />
 	<!-- 车体 -->
@@ -49,7 +51,7 @@ allow_ai_to_use="1"
 	<visual class="turret" turret_index="1" mesh_filename="m5apc_mg.mesh" texture_filename="hd_m5_body.png" />
 	<!-- 操控 -->
 	<character_slot type="gunner" attached_on_turret="0" seat_position="0.3 -1.6 -0.35" exit_rotation="1.57" hiding="0" animation_key="driving car" enter_position="1 0 0" >
-		<turret index="0"/><turret index="1"/>
+		<turret index="0"/><turret index="1"/><turret index="2"/>
 	</character_slot>
 
 	<sound key="slide" filename="" />
@@ -63,6 +65,14 @@ allow_ai_to_use="1"
 	<sound key="destroy" filename="hellpod_close_02.wav" />  
 
 	<effect event_key="health" value="1000" ref="car_pod_impact_leave_dirt" offset="0.0 0 0" />
+
+	<effect event_key="health" value="25" ref="car_broken_spary_spark" offset="0 1 0" />
+	<effect event_key="health" value="25" ref="car_slide_up_smoke" offset="0 1 0" />
+
+	<effect event_key="destroyed" ref="car_destroyed_fire" post_processing="0" offset="0 1 0" />
+	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="1" offset="0 1 0" />  
+	<effect event_key="destroyed" ref="car_broken_spary_spark" post_processing="1" offset="0 1 0" />  
+
 
 	<event>
 		<trigger class="destroy" />

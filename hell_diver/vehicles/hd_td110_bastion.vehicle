@@ -21,9 +21,9 @@ ai_abandon_when_unsteerable="1"
 	<tire_set offset="1.8 0.0 -3.0" radius="0.4" />
 
 	<control 
-	max_speed="10" 
+	max_speed="9" 
 	acceleration="12.0" 
-	max_reverse_speed="15" 
+	max_reverse_speed="11" 
 	min_health_to_steer="0.10" 
 	max_rotation="0.0" 
 	max_water_depth="2.0" 
@@ -52,8 +52,11 @@ ai_abandon_when_unsteerable="1"
 	destroy_on_top_hit="1"
 	destroy_on_top_hit_time="5"/> 
 
-	<turret offset="0.085 -0.1 -1.2" weapon_key="hd_td110_bastion_at_mk3.weapon" weapon_offset="0.25 2.55 6.5" weapon_recoil="2.5" physics_recoil="1.8" max_rotation_step="0.00005" rotation_range="0.3" />
-	<turret offset="0.2 1.5 2" weapon_key="hd_m5_apc_mg94.weapon" weapon_offset="0 0.2 0.7" weapon_recoil="0.01" max_rotation_step="0.00012"  rotation_range="0.38" />
+	0<turret offset="0.085 -0.1 -1.2" weapon_key="hd_td110_bastion_at_mk3.weapon" weapon_offset="0.25 2.55 6.5" 
+	weapon_recoil="2.5" physics_recoil="1.8" max_rotation_step="0.00005" rotation_range="0.3" />
+	1<turret offset="0.085 -0.1 -1.2" weapon_key="auxiliary_car_fire_aim.weapon" weapon_offset="0.25 2.55 6.5" 
+	weapon_recoil="0" physics_recoil="0" max_rotation_step="0.00005" rotation_range="0.3" />
+	2<turret offset="0.2 1.5 2" weapon_key="hd_m5_apc_mg94.weapon" weapon_offset="0 0.2 0.7" weapon_recoil="0.01" max_rotation_step="0.00012"  rotation_range="0.38" />
 	<!-- 车体\炮台 -->
 	<visual class="chassis" mesh_filename="hd_td110_bastion.mesh" texture_filename="hd_td110_bastion_main.png" />
 	<visual class="turret" offset="0 0 1.0" turret_index="0" mesh_filename="hd_td110_bastion_at.mesh" texture_filename="hd_td110_bastion_at.png" />
@@ -71,9 +74,9 @@ ai_abandon_when_unsteerable="1"
 		<part texture_filename="hd_td110_track.png" texture_animation="translate" tire_binding="1" />
 	</visual>
 
-	<character_slot type="driver" position="0 0.3 +3" rotation="0" exit_rotation="0" hiding="1" />
+	<character_slot type="driver" enter_position="0 0.3 3" seat_position="0 0.3 2"  rotation="0" exit_rotation="0" hiding="1" />
 	<character_slot type="gunner" position="0 0.3 -3.5" rotation="0" exit_rotation="-3.14" hiding="1" >
-		<turret index="0"/>		<turret index="1"/>
+		<turret index="0"/>	<turret index="1"/> <turret index="2"/>
 	</character_slot>
 
 
@@ -105,12 +108,24 @@ ai_abandon_when_unsteerable="1"
 	<effect event_key="drive_chassis" ref="car_health_front_light" offset="-3 0 15" />
 	<effect event_key="drive_chassis" ref="car_health_front_light" offset="3 0 15" />
 
-	<effect event_key="health" value="1.8" ref="SmallSmokeVehicle" offset="-0.0 2.3 -2.7" />
-	<effect event_key="health" value="0.36" ref="SmallSmokeVehicle" offset="-0.0 2.3 -2.7" />
-	<effect event_key="health" value="0.36" ref="BrokenSparkle" post_processing="0" offset="-0.0 1.8 -2.7" />
-	<effect event_key="destroyed" ref="SmallSmokeVehicle" offset="-0.0 3.2 0.5" />
-	<effect event_key="destroyed" ref="MediumSmokeVehicle" offset="-0.0 2.3 -2.7" />  
-	<effect event_key="destroyed" ref="SmallFireRepeat" offset="0.0 3.0 0.5" />
+	<effect event_key="health" value="60" ref="car_broken_spary_spark" offset="-0.0 2.3 -2.7" />
+	<effect event_key="health" value="40" ref="car_broken_spary_spark" offset="-0.0 2.3 -2.7" />
+	<effect event_key="health" value="40" ref="car_destroyed_up_smoke" offset="-0.0 2.3 -2.7" />
+	<effect event_key="health" value="20" ref="car_destroyed_fire" offset="-0.0 2.3 -2.7" />
+	<effect event_key="health" value="20" ref="car_destroyed_up_smoke" offset="-0.0 2.3 -2.7" />
+	<effect event_key="health" value="20" ref="car_broken_spary_spark" offset="-0.0 2.3 -2.7" />
+
+	<effect event_key="destroyed" ref="car_destroyed_fire" post_processing="0" offset="-0.5 2.5 -1.5" />
+	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="1" offset="-0.5 2.5 -1.5" />  
+	<effect event_key="destroyed" ref="car_broken_spary_spark" post_processing="1" offset="-0.5 2.5 -1.5" />  
+	<effect event_key="destroyed" ref="car_destroyed_fire" post_processing="0" offset="0.5 2 0.8" />
+	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="1" offset="0.5 2 0.8" />  
+	<effect event_key="destroyed" ref="car_broken_spary_spark" post_processing="1" offset="0.5 2 0.8" />  
+
+	<effect event_key="destroyed" ref="IB_fire" lighting="0" post_processing="1" offset="0 2 0"/> 
+	<effect event_key="destroyed" ref="IB_up_smoke" lighting="1" post_processing="1" offset="0 2 0"/> 
+	<effect event_key="destroyed" ref="IB_up_spark" lighting="1" post_processing="1" offset="0 2 0"/> 
+
     <effect event_key="destroy" key="other" ref="woosh" post_processing="0" shadow="0" />   
     <effect event_key="cleanup" key="other" ref="woosh" post_processing="0" shadow="0" /> 
   
