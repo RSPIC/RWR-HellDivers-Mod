@@ -59,6 +59,12 @@ class AirstrikeSystem : Tracker {
                 break;
             }
 
+            case 11:{ //燃烧炸弹
+                CreateDirectProjectile(m_metagame,start_pos,end_pos,"hd_offensive_incendiary_bombs_mk3_spawn.projectile",cid,fid,60);
+                remove_or_not = 1;
+                break;
+            }
+
             default:
                 break;
         } 

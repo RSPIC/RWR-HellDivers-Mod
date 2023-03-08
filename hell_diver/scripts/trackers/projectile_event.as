@@ -108,6 +108,22 @@ class projectile_event : Tracker {
                 tasker.add(new_task);
             }
 
+            case 11: {   //燃烧炸弹
+                // 查找并确认玩家存在
+                int characterId = event.getIntAttribute("character_id");
+				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                if (character is null) {break;}
+                // 确定起始点与所属阵营
+                Vector3 pos1 = stringToVector3(event.getStringAttribute("position"));
+                Vector3 pos2 = stringToVector3(character.getStringAttribute("position"));
+                int factionid = character.getIntAttribute("faction_id");
+                // 创建空袭事件
+                _log("execution Incendiary bomb");
+                Event_call_helldiver_superearth_incendiary_bombs@ new_task = Event_call_helldiver_superearth_incendiary_bombs(m_metagame,0.5,characterId,factionid,pos2,pos1,"incendiary_bombs_mk3");
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                tasker.add(new_task);
+            }
+
             default:
                 break;            
         }

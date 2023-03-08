@@ -72,10 +72,6 @@ class BasicCommandHandler : Tracker {
 			if ( ws == 1 ){
 				const XmlElement@ info = getPlayerInfo(m_metagame, senderId);
 				int cid = info.getIntAttribute("character_id");
-				// 呼叫支援指令字典
-				array<string> fixcommand = {'adsw','adws','wsdaw','ddd','sswd','dwsda','wadsws','dadassd','dwsda'};
-				// 获取物品键值字典
-				array<string> itemkey = {'at_mine_mk3','airdropped_stun_mine_mk3','hd_hellpod','hd_vindicator_dive_bomb','hd_resupply','hd_offensive_airstrike_mk3','hd_nux_223_hellbomb','hd_offensive_shredder_missile_strike_mk3','hd_offensive_airstrike_mk3'};
 				// 直接替换手雷栏
 				_log("stratagems call exists? :" + (offensive_stratagems.exists(message)));
 				_log("stratagems call message :" + message);
@@ -94,6 +90,53 @@ class BasicCommandHandler : Tracker {
 			}
 		}
 		
+		
+		
+		// admin and moderator only from here on
+		if (!m_metagame.getAdminManager().isAdmin(sender, senderId) && !m_metagame.getModeratorManager().isModerator(sender, senderId)) {
+			return;
+		}
+		
+
+		if (checkCommand(message, "modtest")) {
+			dictionary dict = {{"TagName", "command"},{"class", "chat"},{"text", "mod or admin"}};
+			m_metagame.getComms().send(XmlElement(dict));
+		} else if (checkCommand(message, "sidinfo")) {
+			handleSidInfo(message,senderId);
+		} else if (checkCommand(message, "kick_id")) {
+			handleKick(message, senderId, true);
+		} else if (checkCommand(message, "kick")) {
+			handleKick(message, senderId);
+		} else if (checkCommand(message, "0_win")) {
+			m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='1' />");
+			m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='2' />");
+			m_metagame.getComms().send("<command class='set_match_status' win='1' faction_id='0' />");
+		} else if (checkCommand(message, "1_win")) {
+			m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='0' />");
+			m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='2' />");
+			m_metagame.getComms().send("<command class='set_match_status' win='1' faction_id='1' />");
+		} else if (checkCommand(message, "1_lose")) {
+			m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='1' />");
+		} else if (checkCommand(message, "1_own")) {
+			int factionId = 1;
+			array<const XmlElement@> bases = getBases(m_metagame);
+			for (uint i = 0; i < bases.size(); ++i) {
+				const XmlElement@ base = bases[i];
+				if (base.getIntAttribute("owner_id") != factionId) {
+					XmlElement command("command");
+					command.setStringAttribute("class", "update_base");
+					command.setIntAttribute("base_id", base.getIntAttribute("id"));
+					command.setIntAttribute("owner_id", factionId);
+					m_metagame.getComms().send(command);
+				}
+			}
+		}
+		
+		// admin only from here on ------------------------------------------------------------------------
+		if (!m_metagame.getAdminManager().isAdmin(sender, senderId)) {
+			return;
+		}
+
 		// 任意数值rp xp获取
 		if (matchString(word[0], "grp")) {
 			const XmlElement@ info = getPlayerInfo(m_metagame, senderId);
@@ -186,51 +229,9 @@ class BasicCommandHandler : Tracker {
 			spawnInstanceAtbackpack(senderId, key + ".projectile", "projectile", word[2]);
 			}
 		}
+		// ---------------------------------------------------------------------------------------------------------------
 		
-		// admin and moderator only from here on
-		if (!m_metagame.getAdminManager().isAdmin(sender, senderId) && !m_metagame.getModeratorManager().isModerator(sender, senderId)) {
-			return;
-		}
-		if (checkCommand(message, "modtest")) {
-			dictionary dict = {{"TagName", "command"},{"class", "chat"},{"text", "mod or admin"}};
-			m_metagame.getComms().send(XmlElement(dict));
-		} else if (checkCommand(message, "sidinfo")) {
-			handleSidInfo(message,senderId);
-		} else if (checkCommand(message, "kick_id")) {
-			handleKick(message, senderId, true);
-		} else if (checkCommand(message, "kick")) {
-			handleKick(message, senderId);
-		} else if (checkCommand(message, "0_win")) {
-			m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='1' />");
-			m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='2' />");
-			m_metagame.getComms().send("<command class='set_match_status' win='1' faction_id='0' />");
-		} else if (checkCommand(message, "1_win")) {
-			m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='0' />");
-			m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='2' />");
-			m_metagame.getComms().send("<command class='set_match_status' win='1' faction_id='1' />");
-		} else if (checkCommand(message, "1_lose")) {
-			m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='1' />");
-		} else if (checkCommand(message, "1_own")) {
-			int factionId = 1;
-			array<const XmlElement@> bases = getBases(m_metagame);
-			for (uint i = 0; i < bases.size(); ++i) {
-				const XmlElement@ base = bases[i];
-				if (base.getIntAttribute("owner_id") != factionId) {
-					XmlElement command("command");
-					command.setStringAttribute("class", "update_base");
-					command.setIntAttribute("base_id", base.getIntAttribute("id"));
-					command.setIntAttribute("owner_id", factionId);
-					m_metagame.getComms().send(command);
-				}
-			}
-		}
-		
-		// admin only from here on
-		if (!m_metagame.getAdminManager().isAdmin(sender, senderId)) {
-			return;
-		}
 		// it's a silent server command, check which one
-				
 		if (checkCommand(message, "test")) {
 			dictionary dict = {{"TagName", "command"},{"class", "chat"},{"text", "testing yourself!"}};
 			m_metagame.getComms().send(XmlElement(dict));
