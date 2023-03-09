@@ -35,22 +35,9 @@ radius="1"
 	stab_range="4" 
 	use_basic_muzzle_smoke_effect="0"
 	/> 
-	<!--class 0全自动 4半自动 2栓动 3特殊（可做一次性武器）5近程特殊（如部署沙包）-->
-	<!--额外词条-->
-	<!--
-		cooldown_start="0.95"
-		cooldown_end="0.0"
-		affect_characters="1"
-		affect_vehicles="1"
-		ai_sight_range_modifier="1"
-		consume="0"
-		damage="0"
-		deployment="0"
-		leave_crouch_accuracy_penalty="0"
-		reload_one_at_a_time="0"
-		spawn_instance_class=""
-		spawn_instance_key=""
-	-->
+		<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_vehicle_destroy_damage.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0.0 0.0" />
+	
 	
 	<!--武器模型和HUD-->
 	<weak_hand_hold offset="0" /> <!--模型X轴偏移-->

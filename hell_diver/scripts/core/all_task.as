@@ -449,3 +449,51 @@ class Event_call_helldiver_superearth_strafing_run : event_call_task {
 		m_end2 = m_end2.add(getMultiplicationVector(strike_vector,Vector3(strike_didis,0,strike_didis)));					
 	}
 }
+class Event_call_helldiver_superearth_close_air_support : event_call_task {
+	
+	protected string m_airstrike_key_2; //二段空袭key
+	protected int key2_count=0; //用于计算二段空袭间隔
+	void start() {
+		m_timeLeft=m_time;
+		m_timeLeft_internal = 0;
+		strike_vector = getAimUnitVector(1,c_pos,t_pos);
+		strike_vector = getRotatedVector(getIntSymbol()*1.57,strike_vector);
+		strike_didis = 4;
+		m_pos1 = t_pos.add(getMultiplicationVector(strike_vector,Vector3(-32,0,-32)));
+		m_pos1 = m_pos1.add(Vector3(0,25,0));
+		m_pos2 = t_pos.add(getMultiplicationVector(strike_vector,Vector3(-16,0,-16)));
+		if(m_mode == "close_air_support_mk3")
+		{
+			m_excute_Limit = 8;
+			m_time_internal = 0.3;
+			m_airstrike_key = "hd_superearth_close_air_support_mg_mk3";
+			m_airstrike_key_2 = "hd_superearth_close_air_support_missile_mk3";
+		}
+	}
+
+	Event_call_helldiver_superearth_close_air_support(Metagame@ metagame, float time, int cId,int fId,Vector3 characterpos,Vector3 targetpos,string mode)
+	{
+		super(metagame, time, cId,fId,characterpos,targetpos,mode);
+	}
+
+	void update(float time) {
+		if(m_timeLeft >= 0){m_timeLeft -= time;return;}
+		if (m_timeLeft_internal >= 0){m_timeLeft_internal -= time;return;}
+		if (m_excute_time >= m_excute_Limit){m_end = true;return;}
+		m_excute_time++;
+		m_timeLeft_internal = m_time_internal;
+
+		insertCommonStrike(m_character_id,m_faction_id,m_airstrike_key,m_pos1,m_pos2);
+		key2_count++;
+		if(key2_count == 2){
+			Vector3 m2_pos1 = m_pos1.add(getMultiplicationVector(strike_vector,Vector3(0,0,0)));
+			m2_pos1 = m2_pos1;
+			Vector3 m2_pos2 = m_pos2.add(getMultiplicationVector(strike_vector,Vector3(8,40,8)));
+
+			insertCommonStrike(m_character_id,m_faction_id,m_airstrike_key_2,m2_pos1,m2_pos2);
+			key2_count = 0;
+		}
+		m_pos1 = m_pos1.add(getMultiplicationVector(strike_vector,Vector3(strike_didis,0,strike_didis)));
+		m_pos2 = m_pos2.add(getMultiplicationVector(strike_vector,Vector3(strike_didis,0,strike_didis)));					
+	}
+}

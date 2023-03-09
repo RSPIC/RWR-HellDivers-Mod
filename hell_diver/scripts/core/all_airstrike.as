@@ -40,12 +40,13 @@ class AirstrikeSystem : Tracker {
 
             case 4:{ //重机枪扫射
                 float strike_rand = 2.5;
-                for(int j=1;j<=5;j++)
+                for(int j=1;j<=8;j++)
                 {
                     float rand_x = rand(-strike_rand,strike_rand);
                     float rand_y = rand(-strike_rand,strike_rand);
-                    
-                    CreateDirectProjectile(m_metagame,start_pos.add(Vector3(rand_x,0,rand_y)),end_pos.add(Vector3(rand_x,0,rand_y)),"hd_offensive_heavy_strafing_run_mk3_mg_damage.projectile",cid,fid,160);
+                    float rand_z = rand(-2,2);
+                    float rand_speed = rand(130,160);
+                    CreateDirectProjectile(m_metagame,start_pos.add(Vector3(rand_x,rand_z,rand_y)),end_pos.add(Vector3(rand_x,0,rand_y)),"hd_offensive_heavy_strafing_run_mk3_mg_damage.projectile",cid,fid,rand_speed);
                 }
                 remove_or_not = 1;
                 break;
@@ -88,9 +89,27 @@ class AirstrikeSystem : Tracker {
                 {
                     float rand_x = rand(-strike_rand,strike_rand);
                     float rand_y = rand(-strike_rand,strike_rand);
-                    
-                    CreateDirectProjectile(m_metagame,start_pos.add(Vector3(rand_x,0,rand_y)),end_pos.add(Vector3(rand_x,0,rand_y)),"hd_offensive_strafing_run_mk3_mg_damage.projectile",cid,fid,160);
+                    float rand_z = rand(-10,10);
+                    CreateDirectProjectile(m_metagame,start_pos.add(Vector3(rand_x,rand_z,rand_y)),end_pos.add(Vector3(rand_x,0,rand_y)),"hd_offensive_strafing_run_mk3_mg_damage.projectile",cid,fid,160);
                 }
+                remove_or_not = 1;
+                break;
+            }
+          case 23:{   //近空支援 mg
+                float strike_rand = 1.5;
+                for(int j=1;j<=10;j++)
+                {
+                    float rand_x = rand(-strike_rand,strike_rand);
+                    float rand_y = rand(-strike_rand,strike_rand);
+                    float rand_z = rand(-1,1);
+                    float rand_speed = rand(30,50);
+                    CreateDirectProjectile(m_metagame,start_pos.add(Vector3(rand_x,rand_z,rand_y)),end_pos.add(Vector3(rand_x,0,rand_y)),"hd_offensive_close_air_support_mk3_mg_damage.projectile",cid,fid,rand_speed);
+                }
+                remove_or_not=1;
+                break;
+            }
+          case 24:{   //近空支援 missile
+                CreateDirectProjectile(m_metagame,start_pos,end_pos,"hd_offensive_close_air_support_mk3_damage.projectile",cid,fid,25);
                 remove_or_not = 1;
                 break;
             }

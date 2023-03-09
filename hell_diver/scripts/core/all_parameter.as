@@ -23,6 +23,9 @@ dictionary airstrikeIndex = {
 
         {"hd_superearth_strafing_run_mk3",20},
 
+        {"hd_superearth_close_air_support_mg_mk3",23},
+        {"hd_superearth_close_air_support_missile_mk3",24},
+
         // 下面这行是用来占位的，在这之上添加新的即可
         {"666",-1}
 };
@@ -52,6 +55,8 @@ dictionary projectile_eventkey = {
         {"hd_offensive_laser_strike_mk3",17},
 
         {"hd_offensive_strafing_run_mk3",20},
+
+        {"hd_offensive_close_air_support_mk3",23},
 
         // 占位的
         {"666",-1}

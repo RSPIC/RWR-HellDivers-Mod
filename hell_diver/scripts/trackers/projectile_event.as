@@ -176,6 +176,22 @@ class projectile_event : Tracker {
                 break;
             }
 
+            case 23: { //近空支援
+                int characterId = event.getIntAttribute("character_id");
+				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                if (character is null) {break;}
+
+                Vector3 pos1 = stringToVector3(event.getStringAttribute("position"));
+                Vector3 pos2 = stringToVector3(character.getStringAttribute("position"));
+                int factionid = character.getIntAttribute("faction_id");
+
+                Event_call_helldiver_superearth_close_air_support@ new_task = Event_call_helldiver_superearth_close_air_support(m_metagame,0.5,characterId,factionid,pos2,pos1,"close_air_support_mk3");
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                tasker.add(new_task);
+                
+                break;
+            }
+
             default:
                 break;            
         }
