@@ -166,7 +166,7 @@ class Event_call_helldiver_superearth_airstrike : event_call_task {
 		strike_didis = 4;
 		m_pos1 = t_pos.add(getMultiplicationVector(strike_vector,Vector3(-16,0,-16)));
 		m_pos2 = m_pos1;
-		m_pos1=m_pos1.add(Vector3(0,40,0));
+		m_pos1 = m_pos1.add(Vector3(0,40,0));
 		if(m_mode == "airstrike_mk3")
 		{
 			m_excute_Limit = 8;
@@ -394,7 +394,58 @@ class Event_call_helldiver_superearth_laser_strike : event_call_task {
 				}
 			}
 		}else{m_end = true;return;}		
+	}
+}
+class Event_call_helldiver_superearth_strafing_run : event_call_task {
+	
+	protected Vector3 m_start1;
+	protected Vector3 m_start2;
+	protected Vector3 m_end1;
+	protected Vector3 m_end2;
+
+	void start() {
+		m_timeLeft=m_time;
+		m_timeLeft_internal = 0;
+		Vector3 aim_unit_vector = getAimUnitVector(1,c_pos,t_pos);
+		strike_vector = getRotatedVector(getIntSymbol()*1.57,aim_unit_vector);
+		strike_didis = 5;
+		float separate_distance = 4 ;
 		
-			
+		m_start1 = t_pos.add(getMultiplicationVector(strike_vector,Vector3(-40,0,-40)));
+		m_start1 = m_start1.add(Vector3(0,30,0)).add(aim_unit_vector.scale(separate_distance));
+		m_end1 = t_pos.add(getMultiplicationVector(strike_vector,Vector3(-20,0,-20))).add(aim_unit_vector.scale(separate_distance));
+
+		m_start2 = t_pos.add(getMultiplicationVector(strike_vector,Vector3(-40,0,-40)));
+		m_start2 = m_start2.add(Vector3(0,30,0)).subtract(aim_unit_vector.scale(separate_distance));
+		m_end2 = t_pos.add(getMultiplicationVector(strike_vector,Vector3(-20,0,-20))).subtract(aim_unit_vector.scale(separate_distance));
+
+		if(m_mode == "strafing_run_mk3")
+		{
+			m_excute_Limit = 8;
+			m_time_internal = 0.05;
+			m_airstrike_key = "hd_superearth_strafing_run_mk3";
+		}
+	}
+
+	Event_call_helldiver_superearth_strafing_run(Metagame@ metagame, float time, int cId,int fId,Vector3 characterpos,Vector3 targetpos,string mode)
+	{
+		super(metagame, time, cId,fId,characterpos,targetpos,mode);
+	}
+
+	void update(float time) {
+		if(m_timeLeft >= 0){m_timeLeft -= time;return;}
+		if (m_timeLeft_internal >= 0){m_timeLeft_internal -= time;return;}
+		if (m_excute_time >= m_excute_Limit){m_end = true;return;}
+		m_excute_time++;
+		m_timeLeft_internal = m_time_internal;
+
+		insertCommonStrike(m_character_id,m_faction_id,m_airstrike_key,m_start1,m_end1);
+		insertCommonStrike(m_character_id,m_faction_id,m_airstrike_key,m_start2,m_end2);
+
+		m_start1 = m_start1.add(getMultiplicationVector(strike_vector,Vector3(strike_didis,0,strike_didis)));
+		m_end1 = m_end1.add(getMultiplicationVector(strike_vector,Vector3(strike_didis,0,strike_didis)));		
+
+		m_start2 = m_start2.add(getMultiplicationVector(strike_vector,Vector3(strike_didis,0,strike_didis)));
+		m_end2 = m_end2.add(getMultiplicationVector(strike_vector,Vector3(strike_didis,0,strike_didis)));					
 	}
 }

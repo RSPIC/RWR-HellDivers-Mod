@@ -27,19 +27,20 @@
     <projectile file="hd_arx_34_mk3_damage.projectile" />
     <projectile file="hd_aac6_tesla_mk3_damage.projectile" />
     <projectile file="hd_agl8_mk3_damage.projectile" />
-    <projectile file="hd_offensive_airstrike_mk3_damage.projectile" />
-    <projectile file="hd_offensive_laser_strike_mk3_damage.projectile" />
-    <projectile file="hd_offensive_shredder_missile_strike_mk3_damage.projectile" />
-    <projectile file="hd_offensive_close_air_support_mk3_damage.projectile" />
-    <projectile file="hd_offensive_close_air_support_mk3_mg_damage.projectile" />
+    <projectile file="hd_offensive_airstrike_mk3_damage.projectile" />	<!--空袭-->
+    <projectile file="hd_offensive_laser_strike_mk3_damage.projectile" />	<!--轨道激光-->
+    <projectile file="hd_offensive_shredder_missile_strike_mk3_damage.projectile" />	<!--撕裂者-->
+    <projectile file="hd_offensive_close_air_support_mk3_damage.projectile" />		<!--近空支援炸弹-->
+    <projectile file="hd_offensive_close_air_support_mk3_mg_damage.projectile" /> 	<!--近空支援机枪-->
     <projectile file="hd_nux_223_hellbomb_damage.projectile" />
     <projectile file="hd_nux_223_hellbomb_damage_destroy.projectile" />
-    <projectile file="hd_rec6_demolisher_mk3_damage.projectile" />
-    <projectile file="hd_offensive_heavy_strafing_run_mk3_mg_damage.projectile" />
+    <projectile file="hd_rec6_demolisher_mk3_damage.projectile" /> 
+    <projectile file="hd_offensive_heavy_strafing_run_mk3_mg_damage.projectile" />	<!--重机枪扫射-->
 	<projectile file="hd_vindicator_missile.projectile" />		<!--辩护者-->
     <projectile file="hd_vindicator_shrapnel.projectile" />		<!--辩护者-->
     <projectile file="hd_offensive_incendiary_bombs_mk3_damage.projectile" />		<!--燃烧炸弹-->
     <projectile file="hd_offensive_thunderer_barrage_mk3_damage.projectile" />		<!--三重轰炸-->
+    <projectile file="hd_offensive_strafing_run_mk3_mg_damage.projectile" />		<!--机枪扫射-->
 	<!--Offensive 攻击性支援-->
     <projectile file="hd_offensive_vindicator_dive_bomb_mk3.projectile" />	<!--辩护者-->
 	<projectile file="hd_offensive_airstrike_mk3.projectile" />	<!--空袭-->

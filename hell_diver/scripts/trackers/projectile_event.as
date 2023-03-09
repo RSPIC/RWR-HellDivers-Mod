@@ -34,7 +34,7 @@ class projectile_event : Tracker {
 		switch(int(projectile_eventkey[EventKeyGet])) 
         {
             case 0:{break;}
-            case 1: {
+            case 1: {   //空袭
                 // 查找并确认玩家存在
                 int characterId = event.getIntAttribute("character_id");
 				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
@@ -51,7 +51,7 @@ class projectile_event : Tracker {
                 break;
             }
 
-            case 4: {
+            case 4: { //重机枪扫射
                 int characterId = event.getIntAttribute("character_id");
 				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
                 if (character is null) {break;}
@@ -157,6 +157,22 @@ class projectile_event : Tracker {
                 Event_call_helldiver_superearth_laser_strike@ new_task = Event_call_helldiver_superearth_laser_strike(m_metagame,0.5,characterId,factionid,pos2,pos1,"laser_strike_mk3");
                 TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
                 tasker.add(new_task);
+                break;
+            }
+
+            case 20: { //机枪扫射
+                int characterId = event.getIntAttribute("character_id");
+				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                if (character is null) {break;}
+
+                Vector3 pos1 = stringToVector3(event.getStringAttribute("position"));
+                Vector3 pos2 = stringToVector3(character.getStringAttribute("position"));
+                int factionid = character.getIntAttribute("faction_id");
+
+                Event_call_helldiver_superearth_strafing_run@ new_task = Event_call_helldiver_superearth_strafing_run(m_metagame,0.5,characterId,factionid,pos2,pos1,"strafing_run_mk3");
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                tasker.add(new_task);
+                
                 break;
             }
 

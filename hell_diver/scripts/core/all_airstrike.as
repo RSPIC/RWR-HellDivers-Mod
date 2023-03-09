@@ -38,14 +38,14 @@ class AirstrikeSystem : Tracker {
                 break;                        
             }
 
-            case 4:{
+            case 4:{ //重机枪扫射
                 float strike_rand = 2.5;
                 for(int j=1;j<=5;j++)
                 {
                     float rand_x = rand(-strike_rand,strike_rand);
                     float rand_y = rand(-strike_rand,strike_rand);
                     
-                    CreateDirectProjectile(m_metagame,start_pos,end_pos.add(Vector3(rand_x,0,rand_y)),"hd_offensive_heavy_strafing_run_mk3_mg_damage.projectile",cid,fid,160);
+                    CreateDirectProjectile(m_metagame,start_pos.add(Vector3(rand_x,0,rand_y)),end_pos.add(Vector3(rand_x,0,rand_y)),"hd_offensive_heavy_strafing_run_mk3_mg_damage.projectile",cid,fid,160);
                 }
                 remove_or_not = 1;
                 break;
@@ -79,6 +79,18 @@ class AirstrikeSystem : Tracker {
             }
             case 17:{ //轨道激光轰炸
                 CreateDirectProjectile(m_metagame,start_pos,end_pos,"hd_offensive_laser_strike_mk3_damage.projectile",cid,fid,80);
+                remove_or_not = 1;
+                break;
+            }
+          case 20:{   //机枪扫射
+                float strike_rand = 1.5;
+                for(int j=1;j<=5;j++)
+                {
+                    float rand_x = rand(-strike_rand,strike_rand);
+                    float rand_y = rand(-strike_rand,strike_rand);
+                    
+                    CreateDirectProjectile(m_metagame,start_pos.add(Vector3(rand_x,0,rand_y)),end_pos.add(Vector3(rand_x,0,rand_y)),"hd_offensive_strafing_run_mk3_mg_damage.projectile",cid,fid,160);
+                }
                 remove_or_not = 1;
                 break;
             }
