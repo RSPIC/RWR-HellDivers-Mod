@@ -53,6 +53,10 @@ player_death_drop_owner_lock_time="0"
 	<effect class="result" key="terrain" ref="real_center_short_light" lighting="0" post_processing="0"/> 
 	<effect class="result" key="terrain" ref="real_center_ambient_light" lighting="0" post_processing="0"/> 
 	
+	<effect class="activated" ref="rocket_launcher_trial_smoke" post_processing="1"/>
+	<effect class="activated" ref="rocket_launcher_shell_light" />
+	<trail probability="1" key="trail_rocket"/>
+
 	<effect class="result" key="other" copy="terrain"/>
 	<effect class="result" key="static_object" copy="terrain" />
 	<effect class="result" key="character" copy="terrain" />

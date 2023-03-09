@@ -73,8 +73,13 @@ class AirstrikeSystem : Tracker {
                     float rand_y = rand(-strike_rand,strike_rand);
                     float rand_z = rand(-7,7);
                 CreateDirectProjectile(m_metagame,start_pos.add(Vector3(rand_x,rand_z,rand_y)),end_pos.add(Vector3(rand_x,0,rand_y)),"hd_offensive_thunderer_barrage_mk3_damage.projectile",cid,fid,10);
-                remove_or_not = 1;
                 }
+                remove_or_not = 1;
+                break;
+            }
+            case 17:{ //轨道激光轰炸
+                CreateDirectProjectile(m_metagame,start_pos,end_pos,"hd_offensive_laser_strike_mk3_damage.projectile",cid,fid,80);
+                remove_or_not = 1;
                 break;
             }
 
