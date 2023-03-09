@@ -113,6 +113,14 @@ class AirstrikeSystem : Tracker {
                 remove_or_not = 1;
                 break;
             }
+          case 29:{   //导弹弹幕 missile
+                 float strike_rand = 6;
+                    float rand_x = rand(-strike_rand,strike_rand);
+                    float rand_y = rand(-strike_rand,strike_rand);
+                CreateDirectProjectile(m_metagame,start_pos.add(Vector3(rand_x,0,rand_y)),end_pos.add(Vector3(rand_x,0,rand_y)),"hd_offensive_missile_barrage_mk3_damage.projectile",cid,fid,25);
+                remove_or_not = 1;
+                break;
+            }
 
             default:
                 break;

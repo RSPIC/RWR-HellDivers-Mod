@@ -486,13 +486,50 @@ class Event_call_helldiver_superearth_close_air_support : event_call_task {
 		insertCommonStrike(m_character_id,m_faction_id,m_airstrike_key,m_pos1,m_pos2);
 		key2_count++;
 		if(key2_count == 2){
-			Vector3 m2_pos1 = m_pos1.add(getMultiplicationVector(strike_vector,Vector3(0,0,0)));
+			Vector3 m2_pos1 = m_pos1;
 			m2_pos1 = m2_pos1;
 			Vector3 m2_pos2 = m_pos2.add(getMultiplicationVector(strike_vector,Vector3(8,40,8)));
 
 			insertCommonStrike(m_character_id,m_faction_id,m_airstrike_key_2,m2_pos1,m2_pos2);
 			key2_count = 0;
 		}
+		m_pos1 = m_pos1.add(getMultiplicationVector(strike_vector,Vector3(strike_didis,0,strike_didis)));
+		m_pos2 = m_pos2.add(getMultiplicationVector(strike_vector,Vector3(strike_didis,0,strike_didis)));					
+	}
+}
+class Event_call_helldiver_superearth_missile_barrage_mk3 : event_call_task {
+
+	void start() {
+		m_timeLeft=m_time;
+		m_timeLeft_internal = 0;
+		strike_vector = getAimUnitVector(1,c_pos,t_pos);
+		strike_vector = getRotatedVector(getIntSymbol()*1.57,strike_vector);
+		strike_didis = 1.5 ;
+		m_pos1 = t_pos.add(getMultiplicationVector(strike_vector,Vector3(-28,0,-28)));
+		m_pos1 = m_pos1.add(Vector3(0,20,0));
+		m_pos2 = t_pos;
+		m_pos2 = m_pos2.add(Vector3(0,20,0));
+		if(m_mode == "missile_barrage_mk3")
+		{
+			m_excute_Limit = 6;
+			m_time_internal = 0.45;
+			m_airstrike_key = "hd_superearth_missile_barrage_mk3";
+		}
+	}
+
+	Event_call_helldiver_superearth_missile_barrage_mk3(Metagame@ metagame, float time, int cId,int fId,Vector3 characterpos,Vector3 targetpos,string mode)
+	{
+		super(metagame, time, cId,fId,characterpos,targetpos,mode);
+	}
+
+	void update(float time) {
+		if(m_timeLeft >= 0){m_timeLeft -= time;return;}
+		if (m_timeLeft_internal >= 0){m_timeLeft_internal -= time;return;}
+		if (m_excute_time >= m_excute_Limit){m_end = true;return;}
+		m_excute_time++;
+		m_timeLeft_internal = m_time_internal;
+
+		insertCommonStrike(m_character_id,m_faction_id,m_airstrike_key,m_pos1,m_pos2);
 		m_pos1 = m_pos1.add(getMultiplicationVector(strike_vector,Vector3(strike_didis,0,strike_didis)));
 		m_pos2 = m_pos2.add(getMultiplicationVector(strike_vector,Vector3(strike_didis,0,strike_didis)));					
 	}
