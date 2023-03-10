@@ -83,7 +83,7 @@ class AirstrikeSystem : Tracker {
                 remove_or_not = 1;
                 break;
             }
-          case 20:{   //机枪扫射
+            case 20:{   //机枪扫射
                 float strike_rand = 1.5;
                 for(int j=1;j<=5;j++)
                 {
@@ -95,7 +95,7 @@ class AirstrikeSystem : Tracker {
                 remove_or_not = 1;
                 break;
             }
-          case 23:{   //近空支援 mg
+            case 23:{   //近空支援 mg
                 float strike_rand = 1.5;
                 for(int j=1;j<=10;j++)
                 {
@@ -108,16 +108,21 @@ class AirstrikeSystem : Tracker {
                 remove_or_not=1;
                 break;
             }
-          case 24:{   //近空支援 missile
+            case 24:{   //近空支援 missile
                 CreateDirectProjectile(m_metagame,start_pos,end_pos,"hd_offensive_close_air_support_mk3_damage.projectile",cid,fid,25);
                 remove_or_not = 1;
                 break;
             }
-          case 29:{   //导弹弹幕 missile
-                 float strike_rand = 6;
+            case 29:{   //导弹弹幕 missile
+                float strike_rand = 6;
                     float rand_x = rand(-strike_rand,strike_rand);
                     float rand_y = rand(-strike_rand,strike_rand);
                 CreateDirectProjectile(m_metagame,start_pos.add(Vector3(rand_x,0,rand_y)),end_pos.add(Vector3(rand_x,0,rand_y)),"hd_offensive_missile_barrage_mk3_damage.projectile",cid,fid,25);
+                remove_or_not = 1;
+                break;
+            }
+            case 32:{   //轨道炮轰炸
+                CreateDirectProjectile(m_metagame,start_pos.add(Vector3(0,50,0)),end_pos,"hd_offensive_railcannon_strike_mk3_damage.projectile",cid,fid,15);
                 remove_or_not = 1;
                 break;
             }

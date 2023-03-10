@@ -497,7 +497,7 @@ class Event_call_helldiver_superearth_close_air_support : event_call_task {
 		m_pos2 = m_pos2.add(getMultiplicationVector(strike_vector,Vector3(strike_didis,0,strike_didis)));					
 	}
 }
-class Event_call_helldiver_superearth_missile_barrage_mk3 : event_call_task {
+class Event_call_helldiver_superearth_missile_barrage : event_call_task {
 
 	void start() {
 		m_timeLeft=m_time;
@@ -517,7 +517,7 @@ class Event_call_helldiver_superearth_missile_barrage_mk3 : event_call_task {
 		}
 	}
 
-	Event_call_helldiver_superearth_missile_barrage_mk3(Metagame@ metagame, float time, int cId,int fId,Vector3 characterpos,Vector3 targetpos,string mode)
+	Event_call_helldiver_superearth_missile_barrage(Metagame@ metagame, float time, int cId,int fId,Vector3 characterpos,Vector3 targetpos,string mode)
 	{
 		super(metagame, time, cId,fId,characterpos,targetpos,mode);
 	}
@@ -532,5 +532,60 @@ class Event_call_helldiver_superearth_missile_barrage_mk3 : event_call_task {
 		insertCommonStrike(m_character_id,m_faction_id,m_airstrike_key,m_pos1,m_pos2);
 		m_pos1 = m_pos1.add(getMultiplicationVector(strike_vector,Vector3(strike_didis,0,strike_didis)));
 		m_pos2 = m_pos2.add(getMultiplicationVector(strike_vector,Vector3(strike_didis,0,strike_didis)));					
+	}
+}
+class Event_call_helldiver_superearth_railcannon_strike : event_call_task {
+
+	protected int count_time = 0;
+	void start() {
+		m_timeLeft=m_time;
+		m_timeLeft_internal = 0;
+		strike_vector = getAimUnitVector(1,c_pos,t_pos);
+		strike_vector = getRotatedVector(getIntSymbol()*1.57,strike_vector);
+		strike_didis = 1.5 ;
+		m_pos1 = t_pos.add(getMultiplicationVector(strike_vector,Vector3(-28,0,-28)));
+		m_pos1 = m_pos1.add(Vector3(0,20,0));
+		m_pos2 = t_pos;
+		m_pos2 = m_pos2.add(Vector3(0,20,0));
+		if(m_mode == "railcannon_strike_mk3")
+		{
+			m_excute_Limit = 5;
+			m_time_internal = 1;
+			m_airstrike_key = "hd_superearth_railcannon_strike_mk3";
+		}
+	}
+
+	Event_call_helldiver_superearth_railcannon_strike(Metagame@ metagame, float time, int cId,int fId,Vector3 characterpos,Vector3 targetpos,string mode)
+	{
+		super(metagame, time, cId,fId,characterpos,targetpos,mode);
+	}
+
+	void update(float time) {
+		if(m_timeLeft >= 0){m_timeLeft -= time;return;}
+		if (m_timeLeft_internal >= 0){m_timeLeft_internal -= time;return;}
+		if (m_excute_time >= m_excute_Limit){m_end = true;return;}
+		m_excute_time++;
+		m_timeLeft_internal = m_time_internal;
+
+		const XmlElement@ character = getCharacterInfo(m_metagame, m_character_id);
+		if (character !is null) {
+			int playerId = character.getIntAttribute("player_id");
+			const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
+			if (player !is null) {
+				if (player.hasAttribute("aim_target")) {
+					Vector3 aim_pos = stringToVector3(player.getStringAttribute("aim_target"));
+					CreateDirectProjectile(m_metagame,aim_pos,aim_pos,"hd_effect_radar_scan.projectile",m_character_id,m_faction_id,0);
+					count_time++;
+					if(count_time == 10)
+					{
+						CreateDirectProjectile(m_metagame,aim_pos,aim_pos,"hd_effect_target_aim.projectile",m_character_id,m_faction_id,0);
+						CreateDirectProjectile(m_metagame,aim_pos,aim_pos,"hd_effect_beacom_call.projectile",m_character_id,m_faction_id,0);
+						insertCommonStrike(m_character_id,m_faction_id,m_airstrike_key,aim_pos,aim_pos);
+					}	
+				}
+			}
+		}else{m_end = true;return;}		
+
+					
 	}
 }

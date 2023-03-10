@@ -13,9 +13,8 @@ player_death_drop_owner_lock_time="0"
     <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_offensive_static_field_conductors_mk3.projectile" 
 	min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
 
-	<!-- <result class="notify_script" key="Butcher" /> -->
-    <result class="spawn" instance_class="projectile" instance_key="hd_offensive_close_air_support_mk3_damage.projectile" 
-	min_amount="10" max_amount="10" offset="0 40 0" position_spread="10 10" direction_spread="0 0" />	
+    <result class="spawn" instance_class="projectile" instance_key="hd_offensive_static_field_conductors_mk3_damage.projectile" 
+	min_amount="10" max_amount="10" offset="0 2 0" position_spread="4 2" direction_spread="0 0" />	
 	
 	<trigger class="time" time_to_live="3.0" />	
     <rotation class="motion" />

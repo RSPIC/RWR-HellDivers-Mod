@@ -28,6 +28,8 @@ dictionary airstrikeIndex = {
 
         {"hd_superearth_missile_barrage_mk3",29},
 
+        {"hd_superearth_railcannon_strike_mk3",32},
+
         // 下面这行是用来占位的，在这之上添加新的即可
         {"666",-1}
 };
@@ -61,6 +63,8 @@ dictionary projectile_eventkey = {
         {"hd_offensive_close_air_support_mk3",23},
 
         {"hd_offensive_missile_barrage_mk3",29},
+
+        {"hd_offensive_railcannon_strike_mk3",32},
 
         // 占位的
         {"666",-1}
