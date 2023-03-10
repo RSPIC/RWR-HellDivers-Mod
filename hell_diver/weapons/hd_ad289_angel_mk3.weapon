@@ -92,18 +92,10 @@ on_ground_up="0 0 1"
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="0.1" can_be_detected_by_footmen="1" 
 	time_to_live="2" can_be_detected_by_driver="1" can_be_disarmed="0" name="AD-334 Guard Dog MK3"> 
 	
-		<result class="blast" radius="1.5" damage="0.1" push="0" decal="0" character_state="unwound"   />
+		<result class="notify_script" key="hd_ad289_angel_mk3" />
 
 		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
-	
-		<!--命中音效-->
-
-		<!--命中特效-->
-		<!--
-		<effect class="result" key="terrain" ref="" lighting="0"/>
-		<effect class="activated" ref="general_weapon_activated_bullet_light" />
-		-->
 
 		<effect class="activated" ref="repair_activated_trail" />
 		<effect class="result" key="terrain" ref="repair_result_feedback" lighting="0"/>

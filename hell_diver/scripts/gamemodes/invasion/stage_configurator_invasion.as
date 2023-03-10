@@ -223,6 +223,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 	addStage(setupFinalStage2());     // map12 #18
 	addStage(setupStage19());         // map18 #19
     addStage(setupStage11());         // map13 #20
+    addStage(setupStageCasake_Bay());         // Casake_Bay #21
 	}
 
 	// --------------------------------------------
@@ -1586,6 +1587,55 @@ class StageConfiguratorInvasion : StageConfigurator {
 
 		return stage;
 	}
+	// ----------------------------------------------------------------------------------------
+	protected Stage@ setupStageCasake_Bay() {
+		Stage@ stage = createStage();
+		stage.m_mapInfo.m_name = "Casake Bay";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/Casake_Bay";
+		stage.m_mapInfo.m_id = "Casake_Bay";
+
+		stage.m_maxSoldiers = 15 * 15;
+		stage.m_playerAiCompensation = 4;                                       // 
+    	stage.m_playerAiReduction = 2.0;                                        // 
+
+		stage.m_soldierCapacityVariance = 0.4; 
+
+		stage.addTracker(PeacefulLastBase(m_metagame, 0));
+		stage.addTracker(CommsCapacityHandler(m_metagame));
+
+    stage.m_minRandomCrates = 1; 
+    stage.m_maxRandomCrates = 2;
+
+		{
+			Faction f(getFactionConfigs()[0], createFellowCommanderAiCommand(0, 0.5, 0.2));
+			f.m_overCapacity = 0;                                              // was 20
+			f.m_bases = 1;
+			f.m_capacityMultiplier = 1.0; 
+			stage.m_factions.insertLast(f);
+		}
+		{
+			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1, 0.5, 0.2));
+			f.m_overCapacity = 40;                                              // was 20 (test3)
+            f.m_capacityOffset = 20;                                            // was 10 (test3)
+			f.m_capacityMultiplier = 1.0; 
+			stage.m_factions.insertLast(f);
+		}
+		{
+			XmlElement command("command");
+			command.setStringAttribute("class", "faction_resources");
+			command.setIntAttribute("faction_id", 1);
+			addFactionResourceElements(command, "vehicle", array<string> = {"aa_emplacement.vehicle"}, true);
+
+			stage.m_extraCommands.insertLast(command);
+		}
+
+		// metadata
+		stage.m_primaryObjective = "capture";
+
+		setDefaultAttackBreakTimes(stage);
+		return stage;
+	}
+
 
 	// --------------------------------------------
 	protected void setupWorld() {

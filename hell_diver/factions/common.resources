@@ -2,6 +2,8 @@
 <resources clear_weapons="0" clear_vehicles="0" clear_calls="0">
 	<!-- always load common first; it"s the one that clears the initial weapon resources -->
 	<weapon key="medikit.weapon" />
+
+	<vehicle key="radar_tower.vehicle" />
 	
 
 </resources>

@@ -576,7 +576,7 @@ class Event_call_helldiver_superearth_railcannon_strike : event_call_task {
 					Vector3 aim_pos = stringToVector3(player.getStringAttribute("aim_target"));
 					CreateDirectProjectile(m_metagame,aim_pos,aim_pos,"hd_effect_radar_scan.projectile",m_character_id,m_faction_id,0);
 					count_time++;
-					if(count_time == 10)
+					if(count_time == 5)
 					{
 						CreateDirectProjectile(m_metagame,aim_pos,aim_pos,"hd_effect_target_aim.projectile",m_character_id,m_faction_id,0);
 						CreateDirectProjectile(m_metagame,aim_pos,aim_pos,"hd_effect_beacom_call.projectile",m_character_id,m_faction_id,0);

@@ -11,6 +11,7 @@ usable_for_cover="1"
 allow_ai_to_use="1"
 >
 	<tag name="metal_thin" />
+	<tag name="hd_apb_mk3" />
 
 	<tire_set offset="1 0.0 1" radius="0.1" />
 	<tire_set offset="1 0.0 -1" radius="0.1" />
@@ -31,8 +32,11 @@ allow_ai_to_use="1"
 	visual_offset="0 0.4 0" 
 	collision_response_factor="0" 
 	blast_push_threshold="10.0" 
-	vehicle_collision_damage_factor="35"
+	vehicle_collision_damage_factor="0"
 	gravity="-40"
+	friction_offset="1"
+	destroy_on_top_hit="0"
+	destroy_on_top_hit_time="0"
 	/> 
 	<sky_diving chute_offset="0 0 0" trigger_height="20" gravity="-80" mesh_filename="" texture_filename="" />
 

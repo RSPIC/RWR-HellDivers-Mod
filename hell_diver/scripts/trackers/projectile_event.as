@@ -207,7 +207,7 @@ class projectile_event : Tracker {
                 
                 break;
             }
-            case 32: { //导弹弹幕
+            case 32: { //轨道炮轰炸
                 int characterId = event.getIntAttribute("character_id");
 				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
                 if (character is null) {break;}
@@ -222,6 +222,29 @@ class projectile_event : Tracker {
                 
                 break;
             }
+            case 35: { //rep80 维护枪
+                int characterId = event.getIntAttribute("character_id");
+				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                if (character is null) {break;}
+                healCharacter(m_metagame,characterId,10);
+
+                int factionId = character.getIntAttribute("faction_id");
+                Vector3 c_position = stringToVector3(character.getStringAttribute("position"));
+                spawnStaticProjectile(m_metagame,"hd_md99_autoinjector.projectile",c_position,characterId,factionId);
+                break;
+            }
+            case 38: { //ad289 angel 天使
+                int characterId = event.getIntAttribute("character_id");
+				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                if (character is null) {break;}
+                healCharacter(m_metagame,characterId,2);
+
+                int factionId = character.getIntAttribute("faction_id");
+                Vector3 c_position = stringToVector3(character.getStringAttribute("position"));
+                spawnStaticProjectile(m_metagame,"hd_md99_autoinjector.projectile",c_position,characterId,factionId);
+                break;
+            }
+
 
             default:
                 break;            

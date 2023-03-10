@@ -4,7 +4,7 @@ key="hd_hellpod.vehicle"
 map_view_atlas_index="-1" 
 time_to_live="12.0" 
 should_be_destroyed="0" 
-max_character_collision_speed_on_normal="40"
+max_character_collision_speed_on_normal="9999"
 simulated_damage="5"
 usable_for_cover="0"
 allow_ai_to_use="0"
@@ -13,6 +13,7 @@ allow_ai_to_use="0"
 
 	<tire_set offset="0.2 0 +0.2" radius="0.1" />
 	<tire_set offset="0.2 0 -0.2" radius="0.1" />
+	<modifier class="blast_damage" value="-900" />
 
 	<control max_speed="1.0" acceleration="1" max_reverse_speed="1.0" max_rotation="1.0" max_water_depth="4" />
 
@@ -28,9 +29,9 @@ allow_ai_to_use="0"
 	collision_response_factor="0"
 	visual_offset="0 0 0" 
 	remove_collision_threshold="10"
-	vehicle_collision_damage_factor="0"
+	vehicle_collision_damage_factor="1"
 	friction_offset="10"
-	gravity="-10"
+	gravity="-15"
 	destroy_on_top_hit="1"
 	destroy_on_top_hit_time="3"
 	top_hit_tracking_time="0"
@@ -56,7 +57,7 @@ allow_ai_to_use="0"
 	<sound key="destroy" filename="hellpod_close_01.wav" />  
 	<sound key="destroy" filename="hellpod_close_02.wav" />  
 
-	<effect event_key="health" value="1000" ref="car_pod_impact_leave_dirt2" offset="0 0 0" />
+	<effect event_key="health" value="199" ref="car_pod_impact_leave_dirt2" offset="0 0 0" />
 
 	<event>
 		<trigger class="destroy" />

@@ -3,4 +3,22 @@ author: RST
 未经授权不可复用、修改使用、仅用于helldiver mod
 信标范围警示特效
 
+import general_fire_aim_mark_1 from "general_weapon_effect.particle"
+import general_fire_aim_mark_2 from "general_weapon_effect.particle"
 
+particle_system stratagems_tag_call_mark_1 : general_fire_aim_mark_1 	//瞄准地面框选特效
+{
+	emitter Point
+	{
+		time_to_live 5
+		position 0 0 0
+	}
+}
+particle_system stratagems_tag_call_mark_2 : general_fire_aim_mark_2  //瞄准的空对地指示特效
+{
+	emitter Point
+	{
+		time_to_live 5
+		position 0 0 0
+	}
+}

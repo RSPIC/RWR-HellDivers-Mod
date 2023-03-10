@@ -193,3 +193,21 @@ int getIntSymbol()
 	}
 	return -1;
 }
+
+float getRotatedRad(Vector3 orig_pos, Vector3 comp_pos) {
+	float a_x = orig_pos.m_values[0];
+	float a_y = orig_pos.m_values[2];
+	float b_x = comp_pos.m_values[0];
+	float b_y = comp_pos.m_values[2];
+	float dot_prod = a_x * b_x + a_y * b_y;
+	float mag_a = sqrt(a_x * a_x + a_y * a_y);
+	float mag_b = sqrt(b_x * b_x + b_y * b_y);
+	
+	if(mag_a * mag_b == 0){return 0;}
+
+	float cos_theta = dot_prod / (mag_a * mag_b);
+	float sin_theta = (a_x * b_y - a_y * b_x) / (mag_a * mag_b);
+
+	float theta = atan2(sin_theta, cos_theta);
+	return theta;
+}

@@ -66,6 +66,11 @@ dictionary projectile_eventkey = {
 
         {"hd_offensive_railcannon_strike_mk3",32},
 
+        //功能型武器
+        {"hd_rep80_mk3",35},
+
+        {"hd_ad289_angel_mk3",38},
+
         // 占位的
         {"666",-1}
 };

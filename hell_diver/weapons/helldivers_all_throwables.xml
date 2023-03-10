@@ -45,6 +45,7 @@
     <projectile file="hd_offensive_railcannon_strike_mk3_damage.projectile" />		<!--轨道炮轰炸-->
     <projectile file="hd_offensive_sledge_precision_artillery_mk3_damage.projectile" />		<!--大锤精确火炮-->
     <projectile file="hd_offensive_static_field_conductors_mk3_damage.projectile" />		<!--静电力场-->
+    <projectile file="hd_md99_autoinjector.projectile" />		<!--急救针-->
 	<!--Offensive 攻击性支援-->
     <projectile file="hd_offensive_vindicator_dive_bomb_mk3.projectile" />	<!--辩护者-->
 	<projectile file="hd_offensive_airstrike_mk3.projectile" />	<!--空袭-->
@@ -103,6 +104,8 @@
 	<projectile file="hd_effect_radar_scan.projectile" />
 	<projectile file="hd_effect_target_aim.projectile" />
 	<projectile file="hd_effect_beacom_call.projectile" />
+	<projectile file="hd_sound_divers_coming.projectile" />
+	<projectile file="hd_sound_divers_coming_bgm.projectile" />
 
 	<!-- 间接生成弹头 -->
 	<projectile file="hd_amg_11_mk3_spawn.projectile" />
