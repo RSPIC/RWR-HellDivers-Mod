@@ -149,6 +149,20 @@ Vector3 getAimUnitVector(float scale, Vector3 s_pos, Vector3 e_pos) {
 	return Vector3(dx*scale/ds,0,dy*scale/ds);
 }
 
+float getAimUnitDistance(float scale, Vector3 s_pos, Vector3 e_pos) {
+	float dx = e_pos.m_values[0]-s_pos.m_values[0];
+	float dy = e_pos.m_values[2]-s_pos.m_values[2];
+    float ds = sqrt(dx*dx+dy*dy);
+	return scale*ds;
+}
+float get2DMinAxisDistance(float scale, Vector3 s_pos, Vector3 e_pos) {
+	float dx = abs(e_pos.m_values[0]-s_pos.m_values[0]);
+	float dy = abs(e_pos.m_values[2]-s_pos.m_values[2]);
+    if(dx >= dy){
+		return dy*scale;
+	}
+	return dx*scale;
+}
 Vector3 getMultiplicationVector(Vector3 s_pos, Vector3 scale) {
 	float x = s_pos.m_values[0]*scale.m_values[0];
 	float y = s_pos.m_values[1]*scale.m_values[1];
@@ -202,7 +216,7 @@ float getRotatedRad(Vector3 orig_pos, Vector3 comp_pos) {
 	float dot_prod = a_x * b_x + a_y * b_y;
 	float mag_a = sqrt(a_x * a_x + a_y * a_y);
 	float mag_b = sqrt(b_x * b_x + b_y * b_y);
-	
+
 	if(mag_a * mag_b == 0){return 0;}
 
 	float cos_theta = dot_prod / (mag_a * mag_b);
@@ -210,4 +224,10 @@ float getRotatedRad(Vector3 orig_pos, Vector3 comp_pos) {
 
 	float theta = atan2(sin_theta, cos_theta);
 	return theta;
+}
+void remove_vehicle(Metagame@ metagame,int vehicle_id){
+	XmlElement c ("command");
+	c.setStringAttribute("class", "remove_vehicle");
+	c.setIntAttribute("id", vehicle_id); 
+	metagame.getComms().send(c);
 }

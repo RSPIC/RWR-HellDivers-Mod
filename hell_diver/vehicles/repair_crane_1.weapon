@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <weapon key="repair_crane_1.weapon">
     <specification slot="2" 
-    retrigger_time="2.0" 
+    retrigger_time="3.0" 
     accuracy_factor="1.0" 
     sustained_fire_grow_step="1.0" 
     sustained_fire_diminish_rate="1.0"  
@@ -33,6 +33,17 @@
     <inventory encumbrance="10.0" price="2.0" />
 
     <weak_hand_hold offset="0.4" />
-    <projectile file="repair_crane.projectile" />
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="10" can_be_detected_by_footmen="1" 
+	time_to_live="2" can_be_detected_by_driver="1" can_be_disarmed="0"> 
+
+        <result class="notify_script" key="vehicle_recycle" />
+        <trigger class="impact" time_to_live="0"  />
+
+        <effect class="result" key="terrain" ref="reisenu_fire_hit_i" lighting="0"/>
+		<effect class="result" key="terrain" ref="reisenu_fire_hit_add_i" lighting="0"/>
+		<effect class="result" key="terrain" ref="reisenu_fire_hit_laser_i" lighting="0"/>
+		<effect class="result" key="terrain" ref="reisenu_fire_muzzle_i" lighting="0"/>
+        <trail probability="1" key="normal_trail_long_bold"/>	
+    </projectile>
     
 </weapon>

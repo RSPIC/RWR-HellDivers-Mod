@@ -3,6 +3,7 @@
 	<!--武器弹头-->
     <projectile file="hd_general_spawn.projectile" />
     <projectile file="hd_general_gl_spawn.projectile" />
+    <projectile file="hd_general_spawn_no_effect.projectile" />
     <projectile file="hd_obliterator_grenade_launcher_damage.projectile" />
     <projectile file="hd_plas1_scorcher_damage.projectile" />
     <projectile file="hd_m25_rumbler_damage.projectile" />
@@ -86,7 +87,6 @@
 	<projectile file="hd_grenade_standard_damage.projectile" />	<!-- 标准手雷 -->	
 
 	<!--空投信标-->
-	
 	<projectile file="hd_m5_apc_call.projectile" />	<!--M5 APC轻型载具-->
 	<projectile file="hd_m5_32_hav_call.projectile" /><!--M5-32 反坦克步兵车-->
 	<projectile file="hd_td110_bastion_call.projectile" /><!--堡垒 坦克-->
@@ -107,6 +107,15 @@
 	<projectile file="hd_effect_beacom_call.projectile" />
 	<projectile file="hd_sound_divers_coming.projectile" />
 	<projectile file="hd_sound_divers_coming_bgm.projectile" />
+	<projectile file="hd_effect_call_deny_right.projectile" />
+	<projectile file="hd_effect_call_deny_distance.projectile" />
+	<projectile file="hd_effect_call_deny_cooldown.projectile" />
+	<projectile file="hd_effect_call_deny_target.projectile" />
+	<!--载具回收-->
+	<projectile file="hd_vehicle_recycle_damage.projectile" />
+	<projectile file="hd_vehicle_recycle_deny.projectile" />
+	<projectile file="hd_vehicle_recycle_working.projectile" />
+	<projectile file="hd_vehicle_recycle_failed.projectile" />
 
 	<!-- 间接生成弹头 -->
 	<projectile file="hd_amg_11_mk3_spawn.projectile" />

@@ -48,6 +48,7 @@ class call_event : Tracker {
             int playerId = event.getIntAttribute("player_id");
 
             const XmlElement@ playerinfo = getPlayerInfo(m_metagame, playerId);
+            
             if (playerinfo is null) return;
             string playerName = playerinfo.getStringAttribute("name");
 
@@ -62,6 +63,13 @@ class call_event : Tracker {
                         if (character !is null) {
                             Vector3 t_pos = stringToVector3(position);
                             Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));
+                            Vector3 aim_pos = stringToVector3(playerinfo.getStringAttribute("aim_target"));
+
+                            float distance = getAimUnitDistance(1,c_pos,t_pos);
+                            if(distance >= 40){
+                                spawnStaticProjectile(m_metagame,"hd_effect_call_deny_distance.projectile",aim_pos,characterId,factionId);
+                                return;
+                            }
                             Vector3 aim_vector = getAimUnitVector(1,c_pos,t_pos);
 
                             Orientation offset_rotate = Orientation(0,1,0,-1*getRotatedRad(Vector3(0,0,1),aim_vector));

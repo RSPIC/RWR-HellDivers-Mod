@@ -71,6 +71,9 @@ dictionary projectile_eventkey = {
 
         {"hd_ad289_angel_mk3",38},
 
+        //特殊功能
+        {"vehicle_recycle",41},
+
         // 占位的
         {"666",-1}
 };
@@ -121,4 +124,23 @@ dictionary offensive_stratagems = {
 
         // 占位的
         {"666",-1}
+};
+
+//载具回收可用载具
+dictionary vehicle_recycle_key = {
+
+        // 空
+        {"",-1},
+
+        {"noxe.vehicle",1},
+        {"hd_td110_bastion.vehicle",2},
+        {"hd_mc109_motor.vehicle",3},
+        {"hd_m5_apc.vehicle",4},
+        {"ex_isu_152.vehicle",5},
+        {"hd_m5_32_hav.vehicle",6},
+        {"63type_107mm_rocket_launcher.vehicle",7},
+
+        // 占位的
+        {"666",-1}
+
 };

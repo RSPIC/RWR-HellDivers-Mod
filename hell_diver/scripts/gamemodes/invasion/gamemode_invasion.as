@@ -330,7 +330,7 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		addTracker(AirstrikeSystem(this));
 		addTracker(projectile_event(this));   
 		addTracker(RangeFinder(this));   
-		addTracker(call_event(this));   
+		addTracker(call_event(this));    
 	}
 
 	protected void setupDisableRadioAtMatchOver() {
