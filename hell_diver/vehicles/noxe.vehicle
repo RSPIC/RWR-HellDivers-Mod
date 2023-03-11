@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vehicle 
+name="NOXE Ghost" key="noxe.vehicle" 
+respawn_time="100" time_to_live_unsteerable="95" 
+map_view_atlas_index="43" minimum_fill_requirement="0.25" 
+existence="one_per_faction" character_leave_request_mode="friendly" 
+reserves_spawn_point="1">
+	<tag name="metal_thin" />
+
+	<tire_set offset="1.20 0.0 1.46" radius="0.68" />
+	<tire_set offset="1.28 0.0 -1.74" radius="0.68" />
+
+	<control 
+	max_speed="20.0" 
+	acceleration="9" 
+	max_reverse_speed="12.0" 
+	min_health_to_steer="0.36" 
+	max_rotation="0.85" 
+	max_water_depth="1.9" 
+	steer_smoothening="0.7" />
+
+	<physics 
+	max_health="75" 
+	blast_damage_threshold="0" 
+	TODO_blast_damage_threshold="0" 
+	mass="25.0"
+	broken_mass="20"
+    remove_collision_threshold="0.2"		
+	extent="3.0 0.0 4.0" 
+	offset="0 0.0 0" 
+	top_offset="0 7 0" 
+	collision_model_pos="0 0.8 0" 
+	collision_model_extent="3 3.0 5.6" 
+	visual_offset="0 0.25 0" 
+	friction_offset="0.0" 
+	drag_offset="-0.7" /> 
+
+	<sky_diving chute_offset="0 2.5 0.0" trigger_height="20.0" gravity="-10" mesh_filename="chute_large.mesh" texture_filename="chute.png" />
+
+	<turret offset="0 2.69 -1.55" weapon_key="noxe.weapon" weapon_offset="-0.6 0.5 0.5" weapon_recoil="0.1" max_rotation_step="0.0001" />
+	<turret offset="0 2.69 -1.55" weapon_key="noxe.weapon" weapon_offset="+0.6 0.5 0.5" weapon_recoil="0.1" max_rotation_step="0.0001" />
+	<turret offset="0 2.69 -1.55" weapon_key="auxiliary_car_fire_aim.weapon" weapon_offset="+0 0.5 0.5" weapon_recoil="0" max_rotation_step="0.0001" />
+
+	<visual class="chassis" mesh_filename="noxe_body.mesh" texture_filename="noxe.png" />
+	<visual class="chassis" key="broken" mesh_filename="noxe_body_broken.mesh" texture_filename="noxe_broken.png" />
+	<visual class="tire" mesh_filename="apc_wheel.mesh" texture_filename="apc_wheel.png" />
+	<visual class="turret" mesh_filename="noxe_turret.mesh" texture_filename="noxe.png" />
+	<visual class="turret" key="broken" mesh_filename="noxe_turret_broken.mesh" texture_filename="noxe_broken.png" />
+
+	<character_slot type="driver" position="0.7 0.3 1.3" rotation="0" exit_rotation="1.57" hiding="1" />
+	<character_slot type="gunner" position="0 0.3 -3" rotation="0" exit_rotation="3.14" hiding="1" >
+		<turret index="0" /><turret index="1" /><turret index="2" />
+	</character_slot>
+	<character_slot type="passenger" position="-0.7 0.3 1.3" rotation="0" exit_rotation="-1.57" seat_position="-0.55 1.4 1.68" hiding="0" animation_id="37" marker_offset="0 1.1 0"/>
+
+	<!-- sound handling -->
+	<rev_sound filename="truck_rev0.wav" low_pitch="0.95" high_pitch="1.05" low_rev="0.0" high_rev="0.2" volume="1.0" />
+	<rev_sound filename="truck_rev3.wav" low_pitch="0.7" high_pitch="1.0" low_rev="0.05" high_rev="0.7" volume="1.0" />
+	<rev_sound filename="truck_rev4.wav" low_pitch="0.8" high_pitch="1.0" low_rev="0.4" high_rev="1.0" volume="1.0" />
+
+	<sound key="slide" filename="slide_noise.wav" />
+	<sound key="squeal" filename="tire_squeal.wav" />
+	<sound key="ignition" filename="truck_ignition.wav" />
+	<sound key="turret_rotation" filename="turret_rotation1.wav" />
+	<sound key="hit" filename="car_hit1.wav" />
+	<sound key="hit" filename="car_hit2.wav" />
+	<sound key="destroy" filename="vehicle_explosion_1.wav" />  
+	<sound key="cleanup" filename="vehicle_explosion_1.wav" />
+
+	<effect event_key="slide" type="splat_map" surface_tag="road" size="1.0" atlas_index="5" layer="0" />
+	<effect event_key="slide_hard" type="splat_map" surface_tag="road" size="0.5" atlas_index="2" layer="0" />
+	<effect event_key="slide" type="splat_map" surface_tag="dirt" size="1.0" atlas_index="2" layer="1" />
+	<effect event_key="slide" type="particle" key="terrain" surface_tag="dirt" ref="car_slide_up_smoke" use_surface_color="1" />
+	<effect event_key="slide_hard" type="particle" key="terrain" surface_tag="dirt" ref="car_slide_up_smoke" use_surface_color="1" />
+  
+	<effect event_key="slide" type="particle" key="terrain" surface_tag="road" ref="car_slide_up_smoke" use_surface_color="1" />
+	<effect event_key="slide_hard" type="particle" key="terrain" surface_tag="road" ref="car_slide_up_smoke" use_surface_color="1" />
+  
+	<effect event_key="health" value="60" ref="car_broken_spary_spark" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="40" ref="car_broken_spary_spark" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="40" ref="car_destroyed_up_smoke" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="20" ref="car_destroyed_fire" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="20" ref="car_destroyed_up_smoke" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="20" ref="car_broken_spary_spark" offset="-0.0 2.2 -0.5" />
+
+	<effect event_key="destroyed" ref="car_destroyed_fire" post_processing="1" offset="-0.5 2.2 -1.5" />
+	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="0" offset="-0.5 2.2 -1.5" />  
+	<effect event_key="destroyed" ref="car_broken_spary_spark" post_processing="0" offset="-0.5 2.2 -1.5" />  
+	<effect event_key="destroyed" ref="car_destroyed_fire" post_processing="1" offset="-0.5 1.8 0.8" />
+	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="0" offset="-0.5 1.8 0.8" />  
+	<effect event_key="destroyed" ref="car_broken_spary_spark" post_processing="0" offset="-0.5 1.8 0.8" /> 
+
+	<effect event_key="destroyed" ref="IB_fire" lighting="0" post_processing="1" offset="0 2 0"/> 
+	<effect event_key="destroyed" ref="IB_up_smoke" lighting="1" post_processing="1" offset="0 2 0"/> 
+	<effect event_key="destroyed" ref="IB_up_spark" lighting="1" post_processing="1" offset="0 2 0"/> 
+
+	<event key="receive_damage_xp_reward">
+		<trigger class="receive_damage" />
+		<result class="reward" xp="0.0090" />
+	</event>
+  
+	<event key="spot_rp_reward">
+		<trigger class="spot" />
+		<result class="reward" rp="20.0" />
+	</event>
+
+	<event key="destroy_rp_reward">
+		<trigger class="destroy" />
+		<result class="reward" rp="20.0" />
+	</event>
+  
+	<event>
+		<trigger class="destroy" />
+  	<result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor1.visual_item" min_amount="1" max_amount="3" offset="0 2.5 0" position_spread="1.5 1.5" direction_spread="0.15 0.3" />
+	</event>
+	<event>
+		<trigger class="destroy" />  	
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor2.visual_item" min_amount="0" max_amount="1" offset="0 2.5 0" position_spread="1.5 1.5" direction_spread="0.10 0.25" />
+	</event>
+  <event>
+		<trigger class="destroy" />		
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor3.visual_item" min_amount="1" max_amount="2" offset="0 2.5 0" position_spread="1.5 1.5" direction_spread="0.12 0.20" />
+	</event>
+  <event>
+		<trigger class="destroy" />		
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor4.visual_item" min_amount="1" max_amount="2" offset="0 2.5 0" position_spread="1.5 1.5" direction_spread="0.2 0.25" />
+	</event>    
+
+  <event>
+		<trigger class="cleanup" />		
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_cleanup.visual_item" min_amount="20" max_amount="30" offset="0 2.0 0" position_spread="1.5 1.5" direction_spread="0.1 0.1" /> 
+  </event>    
+ 	<event>
+		<trigger class="cleanup" />
+    <result class="spawn" instance_class="projectile" instance_key="debri_stun" min_amount="1" max_amount="1" offset="0 3.0 0" position_spread="0.0 0.0" direction_spread="0.0 0.0" />
+  </event>   
+
+	<event>
+		<trigger class="destroy" />		
+    <result class="spawn" instance_class="projectile" instance_key="hd_vehicle_destroy_damage.projectile" min_amount="1" max_amount="1" offset="0 1.0 0" position_spread="0 0" direction_spread="0 0" />
+	</event>  
+
+</vehicle>

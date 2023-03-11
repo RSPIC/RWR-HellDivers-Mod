@@ -19,6 +19,9 @@
 #include "faction_config.as"
 #include "stage_configurator.as"
 
+#include "all_helper.as"
+#include "all_task.as"
+
 // --------------------------------------------
 class MapRotatorInvasion : MapRotator {
 	protected GameModeInvasion@ m_metagame;
@@ -184,6 +187,39 @@ class MapRotatorInvasion : MapRotator {
 	// --------------------------------------------
 	protected void resetStagesCompleted() {
 		m_stagesCompleted.clear();
+	}
+	// ----------------------------------------------------
+	protected void handlePlayerSpawnEvent(const XmlElement@ event) {
+		_log("MapRotatorCampaign::handlePlayerSpawnEvent", 1);
+		// don't care if already about to change map
+		_log("running handlePlayerSpawnEvent",1);
+		// if (isAboutToChangeMap()) {
+		// 	_log("skipping", 1);
+		// 	return;
+		// }
+
+		const XmlElement@ element = event.getFirstElementByTagName("player");
+		//_log("handlePlayerSpawnEvent:getname:" + element.getStringAttribute("character_id"));
+		//_log("handlePlayerSpawnEvent:getname:" + element.getStringAttribute("player_id"));
+		//_log("handlePlayerSpawnEvent:getname:" + element.getStringAttribute("faction_id"));
+		//_log("handlePlayerSpawnEvent:getname:" + element.getStringAttribute("name"));
+
+		int factionId = element.getIntAttribute("faction_id");
+		int characterId = element.getIntAttribute("character_id");
+		int playersId = element.getIntAttribute("player_id");
+		string name = element.getStringAttribute("name");
+
+		const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+		Vector3 c_position = stringToVector3(character.getStringAttribute("position"));
+		//_log("handlePlayerSpawnEvent:getname:" + character.getStringAttribute("position"));
+
+		spawnStaticProjectile(m_metagame,"hd_effect_target_aim.projectile",c_position,characterId,factionId);
+		spawnStaticProjectile(m_metagame,"hd_sound_divers_coming_bgm.projectile",c_position,characterId,factionId);
+		spawnStaticProjectile(m_metagame,"hd_sound_divers_coming.projectile",c_position,characterId,factionId);
+		spawnStaticProjectile(m_metagame,"hd_effect_hellpod_dropping_smoke.projectile",c_position,characterId,factionId);
+		
+		sendFactionMessage(m_metagame,factionId,"Divers "+name+" Now on ground.");
+
 	}
 
 	// --------------------------------------------
@@ -871,7 +907,7 @@ class MapRotatorInvasion : MapRotator {
 
 		for (uint i = 0; i < m_stages[index].m_trackers.size(); ++i) {
 			Tracker@ tracker = m_stages[index].m_trackers[i];
-			m_metagame.addTracker(tracker);
+			m_metagame.addTracker(tracker);  
 		}
 
 	}
@@ -894,9 +930,9 @@ class MapRotatorInvasion : MapRotator {
 		int senderId = event.getIntAttribute("player_id");
 		
 		// admins and mods allowed from here on
-		if (!m_metagame.getAdminManager().isAdmin(sender, senderId) && !m_metagame.getModeratorManager().isModerator(sender,senderId)) {
-			return;
-		}
+		// if (!m_metagame.getAdminManager().isAdmin(sender, senderId) && !m_metagame.getModeratorManager().isModerator(sender,senderId)) {
+		// 	return;
+		// }
 
 		if (checkCommand(message, "warp")) {
 			array<string> parameters = parseParameters(message, "warp");

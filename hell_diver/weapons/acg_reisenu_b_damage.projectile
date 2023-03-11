@@ -25,7 +25,7 @@ player_death_drop_owner_lock_time="120"
     <model mesh_filename="" />
 	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
 
-	<sound class="result" key="other" fileref="reisenu_fire_hit_ii.wav" pitch_variety="0.01" volume="0.35" />
+	<sound class="result" key="other" fileref="reisenu_fire_hit_ii.wav" pitch_variety="0.01" volume="0.30" />
 	
     <sound class="result" key="terrain" copy="other" />
     <sound class="result" key="static_object" copy="other" />

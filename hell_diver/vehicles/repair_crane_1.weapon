@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon key="repair_crane_1.weapon">
+    <specification slot="2" 
+    retrigger_time="2.0" 
+    accuracy_factor="1.0" 
+    sustained_fire_grow_step="1.0" 
+    sustained_fire_diminish_rate="1.0"  
+    sight_range_modifier="1.0"
+    ai_sight_range_modifier="0"
+    magazine_size="-1" 
+    can_shoot_standing="0" 
+    can_shoot_crouching="0" 
+    suppressed="0" 
+    name="Repair crane" 
+    class="0" 
+    barrel_offset="1.5" 
+    projectile_speed="0.0" />
+    <animation key="recoil" ref="12" />
+    <animation key="recoil" ref="13" />
+    <animation key="recoil" ref="14" />
+    <animation key="reload" ref="33" />
+    <animation key="hold" ref="32" />
+    <animation key="hold_on_wall" ref="1" />
+    <animation key="walking" ref="31" />
+    <sound key="fire" fileref="wrench_shot.wav" volume="1.0" />
+    <sound key="magazine_out" fileref="mg_clip_out.wav" />
+    <sound key="magazine_in" fileref="mg_clip_in.wav" />
+    <sound key="cycle" fileref="rifle_chamber.wav" />
+    <model mesh_filename="crane_hook.mesh" texture_filename="repair_crane.png" />
+
+    <hud_icon filename="hud_wrench.png" />
+    <commonness value="0.0" />
+    <inventory encumbrance="10.0" price="2.0" />
+
+    <weak_hand_hold offset="0.4" />
+    <projectile file="repair_crane.projectile" />
+    
+</weapon>

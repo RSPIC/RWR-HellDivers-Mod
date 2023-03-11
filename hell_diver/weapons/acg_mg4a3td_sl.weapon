@@ -56,10 +56,10 @@ key="acg_mg4a3td_sl.weapon"
    	 	<sound key="fire" fileref="acg_mg4td_ke_fire.wav" pitch_variety="0.1" volume="2.0" />
     <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />
     <sound key="dry_fire" fileref="hd_mg94_dryfire_02.wav" pitch_variety="0.03" volume="1.0" />
-    <sound key="magazine_out" fileref="hd_mg94_mag_out.wav" />
-    <sound key="magazine_out" fileref="hd_mg94_mag_out.wav" />
-    	<sound key="magazine_out" fileref="acg_mg4_reload.wav" volume="0.3"/>
-    <sound key="magazine_in" fileref="hd_mg94_mag_in.wav" />
+    <sound key="magazine_out" fileref="hd_mg94_mag_out.wav" pitch_variety="0.0"/>
+    <sound key="magazine_out" fileref="hd_mg94_mag_out.wav" pitch_variety="0.0"/>
+		<sound key="magazine_out" fileref="acg_mg4_reload.wav" pitch_variety="0.0" volume="0.3"/>
+    <sound key="magazine_in" fileref="hd_mg94_mag_in.wav" pitch_variety="0.0"/>
     <sound key="cycle" fileref="rifle_chamber.wav" />
     <sound key="cycle_out" fileref="sniper_cycle_out.wav" />
     <sound key="cycle_in" fileref="sniper_cycle_in.wav" />

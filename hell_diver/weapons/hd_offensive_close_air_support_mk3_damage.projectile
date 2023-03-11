@@ -43,7 +43,7 @@ player_death_drop_owner_lock_time="0"
 	<effect class="result" key="terrain" ref="nova_s_result_blast_smoke_expanding" lighting="0" post_processing="1"/> 
 	<effect class="result" key="terrain" ref="missile_result_expanding_fire" lighting="0" post_processing="1"/> 
 	
-	<!-- <effect class="activated" ref="missile_activated_cannon_flysmoke" lighting="0"/> -->
+	<effect class="activated" ref="missile_activated_cannon_flysmoke" lighting="0"/>
 	
 	<effect class="result" key="other" copy="terrain"/>
 	<effect class="result" key="static_object" copy="terrain" />

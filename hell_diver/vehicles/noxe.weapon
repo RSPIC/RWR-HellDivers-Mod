@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon key="noxe.weapon">
+    <specification retrigger_time="4.5" 
+    accuracy_factor="0.95" 
+    sustained_fire_grow_step="1.2" 
+    sustained_fire_diminish_rate="0.6" 
+    sight_range_modifier="3.0"
+    ai_sight_range_modifier="0.8" 
+    magazine_size="60" 
+    can_shoot_standing="0" 
+    can_shoot_crouching="0" 
+    suppressed="0" 
+    name="NOXE rocket" 
+    class="0" 
+    projectile_speed="100.0" 
+    slot="2" 
+    barrel_offset_3d="0 0 0"
+    projectiles_per_shot="1"
+    sight_height_offset="2.0" />
+    
+    <model mesh_filename="" texture_filename="" />
+    <hud_icon filename="hud_hornet.png" />
+    <commonness value="0.0" />
+
+    <ballistics curve_height="10" near_far_distance="0" speed_estimation_near="80.0" 
+    speed_estimation_far="80.0" max_speed="80.0" tweak_factor="1.8" randomness="0.0" />
+
+    <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="40.0" can_be_detected_by_footmen="1" 
+	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0" name="NOXE rocket"> 
+
+        <result class="blast" radius="6.2" damage="150" push="0.4" decal="0" character_state="wound" damage_origin_vehicle="0"/>
+
+        <model mesh_filename="APFSDS.xml" />
+		<trigger class="impact" />
+		<rotation class="motion" />
+		
+        <sound class="result" key="other" fileref="CAS_impact_1.wav" pitch_variety="0.01" volume="1" />
+        <sound class="result" key="other" fileref="CAS_impact_2.wav" pitch_variety="0.01" volume="1" />
+        <sound class="result" key="other" fileref="CAS_impact_3.wav" pitch_variety="0.01" volume="1" />
+        <sound class="result" key="other" fileref="CAS_impact_4.wav" pitch_variety="0.01" volume="1" />
+        <sound class="result" key="terrain" copy="other" />
+        <sound class="result" key="static_object" copy="other" />
+        <sound class="result" key="vehicle" copy="other" />
+        <sound class="result" key="character" copy="other" />
+        <sound class="result" key="shield" copy="other" />
+
+        <effect class="result" key="terrain" ref="missile_result_cannon_blast_fire" lighting="0"/>
+        <effect class="result" key="terrain" ref="missile_result_cannon_blast_AmbientLight" lighting="0"/>
+        <effect class="result" key="terrain" ref="nova_s_result_impact_flame_1" lighting="0"/>
+        <effect class="result" key="terrain" ref="nova_s_result_impact_flame_3" lighting="0"/>
+        <effect class="result" key="terrain" ref="nova_s_result_impact_spark" lighting="0" post_processing="1"/> 
+        <effect class="result" key="terrain" ref="nova_s_gl_hit_smoke_02" lighting="0" post_processing="1"/> 
+        <effect class="result" key="terrain" ref="nova_s_result_ground_smoke" lighting="0" post_processing="1"/>
+        <effect class="result" key="terrain" ref="nova_s_result_blast_smoke_expanding" lighting="0" post_processing="1"/> 
+        <effect class="result" key="terrain" ref="missile_result_expanding_fire" lighting="0" post_processing="1"/> 
+        
+        <effect class="activated" ref="missile_activated_cannon_flysmoke" lighting="0"/>
+        
+        <effect class="result" key="other" copy="terrain"/>
+        <effect class="result" key="static_object" copy="terrain" />
+        <effect class="result" key="character" copy="terrain" />
+        <effect class="result" key="shield" copy="terrain" />			
+        <effect class="result" key="vehicle" copy="terrain" />			
+        <effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+        <effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+        <effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+        <effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+        <effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+        <trail probability="1" key="trail_CAS"/>	
+		
+    </projectile>
+    
+	<!-- Scoring for target priority. Distance is between 0 and 1 based on range; direction is between 0 and 1 based on whether its near the barrel; squad_command is between 0 and on based on how close to the player's command order is, and base_score is a weight.. -->
+	<!-- These all add together and the highest 'score' is the new target, targets are rescanned every 2.5 seconds to see if a new higher-score target is in sight-range. -->
+	<!-- You must define a blank tag at the top of the list to handle all cases where the vehicle is fighting something "undefined", which is what common infantry might best fit under. -->
+    <target_factors tag="" distance="1.0" direction="0.0" squad_command="1.0" base_score="0.5" />
+    <target_factors tag="heavy_combat" distance="1.0" direction="0.0" squad_command="1.0" base_score="6.0" />	
+    <target_factors tag="apc" distance="1.0" direction="0.0" squad_command="1.0" base_score="5.0" />
+    <target_factors tag="light_combat" distance="1.0" direction="0.0" squad_command="1.0" base_score="8.0" />	
+    <target_factors tag="defensive_at" distance="1.0" direction="0.0" squad_command="1.0" base_score="7.0" />
+    <target_factors tag="tactical" distance="1.0" direction="0.0" squad_command="1.0" base_score="8.0" />  <!-- important non combat player-only vehicles -->  
+    <target_factors tag="bazooka" distance="1.0" direction="0.0" squad_command="1.0" base_score="10" />     
+
+    <effect class="muzzle" ref="LawMuzzle" />
+    <effect class="muzzle" ref="UpDust" />
+
+    <sound key="fire" fileref="noxe_shot.wav" volume="0.5" pitch_variety="0.0" />
+
+
+</weapon>

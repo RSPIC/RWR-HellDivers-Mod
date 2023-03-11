@@ -13,8 +13,12 @@
 
 	<!-- 载具武器 -->
 	<weapon file="ex_isu_152_gl.weapon" /> <!--152-->
+	<weapon file="repair_crane_0.weapon" /> <!--152-->
+	<weapon file="repair_crane_1.weapon" /> <!--152-->
 
 	<!-- 特殊功能 -->
 	<weapon file="auxiliary_car_fire_aim.weapon" /> <!--辅瞄设备-->
 	
+	<!-- 原版武器 -->
+	<weapon file="noxe.weapon" /> <!--NOXE-->
 </weapons>

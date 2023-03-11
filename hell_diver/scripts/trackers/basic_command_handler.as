@@ -93,9 +93,9 @@ class BasicCommandHandler : Tracker {
 		
 		
 		// admin and moderator only from here on
-		if (!m_metagame.getAdminManager().isAdmin(sender, senderId) && !m_metagame.getModeratorManager().isModerator(sender, senderId)) {
-			return;
-		}
+		// if (!m_metagame.getAdminManager().isAdmin(sender, senderId) && !m_metagame.getModeratorManager().isModerator(sender, senderId)) {
+		// 	return;
+		// }
 		
 
 		if (checkCommand(message, "modtest")) {
@@ -133,9 +133,9 @@ class BasicCommandHandler : Tracker {
 		}
 		
 		// admin only from here on ------------------------------------------------------------------------
-		if (!m_metagame.getAdminManager().isAdmin(sender, senderId)) {
-			return;
-		}
+		// if (!m_metagame.getAdminManager().isAdmin(sender, senderId)) {
+		// 	return;
+		// }
 
 		// 任意数值rp xp获取
 		if (matchString(word[0], "grp")) {

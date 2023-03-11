@@ -138,13 +138,17 @@ ai_abandon_when_unsteerable="1"
 		<trigger class="destroy" />  	
     <result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor2.visual_item" min_amount="0" max_amount="1" offset="0 2.5 0" position_spread="1.5 1.5" direction_spread="0.10 0.25" />
 	</event>
-  <event>
+ 	<event>
 		<trigger class="destroy" />		
     <result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor3.visual_item" min_amount="1" max_amount="2" offset="0 2.5 0" position_spread="1.5 1.5" direction_spread="0.12 0.20" />
 	</event>
-  <event>
+  	<event>
 		<trigger class="destroy" />		
     <result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor4.visual_item" min_amount="1" max_amount="2" offset="0 2.5 0" position_spread="1.5 1.5" direction_spread="0.2 0.25" />
+	</event>    
+  	<event>
+		<trigger class="destroy" />		
+    <result class="spawn" instance_class="projectile" instance_key="hd_vehicle_destroy_damage.projectile" min_amount="1" max_amount="1" offset="0 1.0 0" position_spread="0 0" direction_spread="0 0" />
 	</event>    
 
   <event>

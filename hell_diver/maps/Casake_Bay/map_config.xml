@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <map_config min_factions="2" max_factions="2">
 	<include_layer name="bases.default" />
+	<faction file="green.xml" />
+	<faction file="grey.xml" />
 	<weapon file="all_weapons.xml" />
 	<projectile file="all_throwables.xml" />
 	<call file="all_calls.xml" />
