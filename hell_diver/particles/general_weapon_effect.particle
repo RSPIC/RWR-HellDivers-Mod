@@ -2346,18 +2346,18 @@ particle_system general_fire_aim_mark_1 	//瞄准地面框选特效
 	billboard_rotation_type vertex
 	common_direction 0 1 0
 	common_up_vector 0 0 1
-	iteration_interval 0
+	iteration_interval 0.01
 	
 	emitter Point
 	{
 		angle 0
 		colour 1 1 1 1
 		direction 0 1 0
-		emission_rate 100
+		emission_rate 10
 		position 0 -20 0
 		velocity 0.0001
 		time_to_live 1
-		duration 0.01
+		duration 0.1
 	}
 	affector ColourInterpolator
 	{
@@ -2396,19 +2396,18 @@ particle_system general_fire_aim_mark_2  //瞄准的空对地指示特效
 	billboard_rotation_type vertex
 	common_direction 0 1 0
 	common_up_vector 0 0 1
-	iteration_interval 0
-	accurate_facing on
+	iteration_interval 0.01
 	
 	emitter Point
 	{
 		angle 0
 		colour 1 1 1 1
 		direction 0 1 0
-		emission_rate 100
+		emission_rate 10
 		position 0 -17 0
 		velocity 0.0001
 		time_to_live 1
-		duration 0.01
+		duration 0.1
 	}
 		affector Rotator
 	{
@@ -2442,6 +2441,53 @@ particle_system general_fire_aim_mark_2_long : general_fire_aim_mark_2  //瞄准
 		colour1 1 0.3 0 1
 		time1 2
 		colour2 0 0 0 0
+	}
+}
+particle_system position_measure_dot
+{
+	quota 50
+	material point_hard_edge
+	particle_width 0.1
+	particle_height 0.3
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 90
+		duration 0.1
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	45
+		rotation_speed_range_end  	45
+		rotation_range_start	0
+		rotation_range_end	180
+	}
+}
+particle_system position_measure_dotred : position_measure_dot
+{
+	emitter Point
+	{
+		colour 1 0 0 1
+	}
+}
+particle_system position_measure_dotyellow : position_measure_dot
+{
+	emitter Point
+	{
+		colour 1 0 0 1
 	}
 }
 --------------------------------------material-----------------------------------

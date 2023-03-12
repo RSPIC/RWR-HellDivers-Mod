@@ -14,7 +14,7 @@
     name="Repair crane" 
     class="0" 
     barrel_offset="1.5" 
-    projectile_speed="0.0" />
+    projectile_speed="100.0" />
     <animation key="recoil" ref="12" />
     <animation key="recoil" ref="13" />
     <animation key="recoil" ref="14" />
@@ -38,12 +38,8 @@
 
         <result class="notify_script" key="vehicle_recycle" />
         <trigger class="impact" time_to_live="0"  />
-
-        <effect class="result" key="terrain" ref="reisenu_fire_hit_i" lighting="0"/>
-		<effect class="result" key="terrain" ref="reisenu_fire_hit_add_i" lighting="0"/>
-		<effect class="result" key="terrain" ref="reisenu_fire_hit_laser_i" lighting="0"/>
-		<effect class="result" key="terrain" ref="reisenu_fire_muzzle_i" lighting="0"/>
         <trail probability="1" key="normal_trail_long_bold"/>	
+        
     </projectile>
     
 </weapon>

@@ -46,9 +46,9 @@ class call_event : Tracker {
             int characterId = event.getIntAttribute("character_id");
             int factionId = event.getIntAttribute("faction_id");
             int playerId = event.getIntAttribute("player_id");
-
+ 
             const XmlElement@ playerinfo = getPlayerInfo(m_metagame, playerId);
-            
+
             if (playerinfo is null) return;
             string playerName = playerinfo.getStringAttribute("name");
 
@@ -56,6 +56,16 @@ class call_event : Tracker {
                 switch(int(callLaunchIndex[callKey]))
                 {
                     case 1:{
+                        const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                        if (character !is null) {
+                            int is_wound = character.getIntAttribute("wounded");
+                            if(is_wound==1){
+                                Vector3 c_position = stringToVector3(character.getStringAttribute("position"));
+                                array<string> filenames = {"hd_syringe_plunger.wav","hd_syringe_plunger_back.wav"};
+                                //启动音效
+                                playRandomSoundArray(m_metagame,filenames,factionId,c_position);
+                            }
+                        }
                         break;
                     }
                     case 2:{
@@ -95,8 +105,17 @@ class call_event : Tracker {
                     case 1:{
                         const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
                         if (character !is null) {
-                            Vector3 c_position = stringToVector3(character.getStringAttribute("position"));
-                            spawnStaticProjectile(m_metagame,"hd_md99_autoinjector.projectile",c_position,-1,factionId);
+                            int is_wound = character.getIntAttribute("wounded");
+                            if(is_wound==1){
+                                Vector3 c_position = stringToVector3(character.getStringAttribute("position"));
+                                string filenames = "hd_syringe_squeeze_squirt.wav";
+                                //注射音效
+                                playSoundAtLocation(m_metagame,filenames,factionId,c_position);
+                                spawnStaticProjectile(m_metagame,"hd_md99_autoinjector.projectile",c_position,-1,factionId);
+                            }else{
+                                Vector3 c_position = stringToVector3(character.getStringAttribute("position"));
+                                spawnStaticProjectile(m_metagame,"hd_effect_call_deny_useless.projectile",c_position,characterId,factionId);
+                            }
                         }
                         break;
                     }

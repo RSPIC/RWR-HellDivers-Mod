@@ -2,14 +2,14 @@
 <vehicle  
 name="ISU-152" 
 key="ex_isu_152.vehicle" 
-time_to_live_unsteerable="300" 
+time_to_live_unsteerable="12" 
 map_view_atlas_index="-1" 
 minimum_fill_requirement="0.25"
 max_character_collision_speed_on_normal="5"
-simulated_damage="0.5"
+simulated_damage="100"
 usable_for_cover="1"
 reserves_spawn_point="1"
-allow_ai_to_use="1"
+allow_ai_to_use="0"
 ai_abandon_when_unsteerable="1"
 >
 

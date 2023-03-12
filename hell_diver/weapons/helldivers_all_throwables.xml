@@ -111,11 +111,17 @@
 	<projectile file="hd_effect_call_deny_distance.projectile" />
 	<projectile file="hd_effect_call_deny_cooldown.projectile" />
 	<projectile file="hd_effect_call_deny_target.projectile" />
+	<projectile file="hd_effect_call_deny_useless.projectile" />
+	<projectile file="hd_effect_precise_tag.projectile" />
+	<projectile file="hd_effect_precise_tagyellow.projectile" />
+	<projectile file="hd_effect_precise_tagred.projectile" />
 	<!--载具回收-->
 	<projectile file="hd_vehicle_recycle_damage.projectile" />
+	<projectile file="hd_vehicle_deny_distance.projectile" />
 	<projectile file="hd_vehicle_recycle_deny.projectile" />
 	<projectile file="hd_vehicle_recycle_working.projectile" />
 	<projectile file="hd_vehicle_recycle_failed.projectile" />
+	<projectile file="hd_vehicle_repair_deny.projectile" />
 
 	<!-- 间接生成弹头 -->
 	<projectile file="hd_amg_11_mk3_spawn.projectile" />

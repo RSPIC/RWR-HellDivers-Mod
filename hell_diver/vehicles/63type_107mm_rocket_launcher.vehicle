@@ -5,7 +5,9 @@ soldier_capacity_offset="1"
 allow_ai_to_use="0"
 allow_player_to_use="1"
 key="63type_107mm_rocket_launcher.vehicle"
-respawn_time="180.0"
+respawn_time="1.0"
+ai_pick_prevention_time="60"
+designated_squad_as_driver_only="1"
 >
 	<tag name="target" />
 	<tire_set offset="0.5 0.0 0.75" radius="0.4" />
@@ -28,6 +30,8 @@ respawn_time="180.0"
 	collision_response_factor="0.2" 
 	blast_push_threshold="10.0" 
 	vehicle_collision_damage_factor="0" 
+	destroy_on_top_hit="1"
+	destroy_on_top_hit_time="0"
 	/> 
 
 	0<turret offset="-0.5 0 0" weapon_key="63type_107mm_rocket_launcher_1.weapon" weapon_offset="0 0 0" 

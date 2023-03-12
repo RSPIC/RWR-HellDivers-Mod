@@ -87,7 +87,7 @@ on_ground_up="0 0 1"
     
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
     <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="30" can_be_detected_by_footmen="1" 
-	time_to_live="90" can_be_detected_by_driver="1" can_be_disarmed="0" name="REC-6 Demolisher MK3" radius="0.6"> 
+	time_to_live="90" can_be_detected_by_driver="1" can_be_disarmed="1" name="REC-6 Demolisher MK3" radius="0.6"> 
 	
         <result class="spawn" instance_class="projectile" instance_key="hd_rec6_demolisher_mk3_damage.projectile" 
 		min_amount="5" max_amount="5" offset="0 0.5 0" position_spread="0 0" direction_spread="0 0" />

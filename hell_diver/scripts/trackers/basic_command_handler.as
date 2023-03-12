@@ -76,7 +76,9 @@ class BasicCommandHandler : Tracker {
 				_log("stratagems call exists? :" + (offensive_stratagems.exists(message)));
 				_log("stratagems call message :" + message);
 				_log("stratagems call key :" + string(offensive_stratagems[message]));
-				if ((offensive_stratagems.exists(message))){
+				//_log("stratagems call length :" + string(offensive_stratagems[message]).length());
+				//exists方法有问题，有时候正确有时候错误,替换掉
+				if ((string(offensive_stratagems[message]).length()!=0)){
 					string c = 
 					"<command class='update_inventory' character_id='" + cid + "' container_type_id='4' add='1'>" + 
 						"<item class='" + "projectile" + "' key='" + string(offensive_stratagems[message]) + ".projectile" +"' />" +
@@ -165,6 +167,25 @@ class BasicCommandHandler : Tracker {
 					"</command>";
 				m_metagame.getComms().send(command);
 				}
+			}
+		}else if(matchString(word[0], "promote")){
+			const XmlElement@ info = getPlayerInfo(m_metagame, senderId);
+			if (info !is null) {
+				int id = info.getIntAttribute("character_id");
+				float xpnum = 1000;
+				float rpnum = 1000000;
+				string command =
+					"<command class='xp_reward'" +
+					"	character_id='" + id + "'" +
+					"	reward='"+ xpnum +"'>" + // multiplier affected..
+					"</command>";
+				m_metagame.getComms().send(command);
+				command =
+					"<command class='rp_reward'" +
+					"	character_id='" + id + "'" +
+					"	reward='"+ rpnum +"'>" + // multiplier affected..
+					"</command>";
+				m_metagame.getComms().send(command);
 			}
 		}
 		

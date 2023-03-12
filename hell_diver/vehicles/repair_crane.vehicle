@@ -22,8 +22,8 @@ allow_ai_to_use="0" reserves_spawn_point="1">
 	<!-- turret 0 is a dummy turret that prevents the gunner from rotating -->
 	<!-- turret 1 is the actual repairer -->
 	<turret offset="0 0.95 0" weapon_key="repair_crane_0.weapon" weapon_offset="0.0 3.79 2.5" weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.00000" />
-	<turret offset="0 0.95 0" weapon_key="repair_crane_1.weapon" weapon_offset="0.0 3.79 2.5" weapon_recoil="0.1" physics_recoil="0.0" max_rotation_step="0.000011" />
-	<turret offset="0 0.95 0" weapon_key="auxiliary_car_fire_aim.weapon" weapon_offset="0.0 3.79 2.5" weapon_recoil="0.1" physics_recoil="0.0" max_rotation_step="0.000011" />
+	<turret offset="0 0.95 0" weapon_key="repair_crane_1.weapon" weapon_offset="0.0 3.79 2.5" weapon_recoil="0.1" physics_recoil="0.0" max_rotation_step="0.00003" />
+	<turret offset="0 0.95 0" weapon_key="auxiliary_car_fire_aim.weapon" weapon_offset="0.0 3.79 2.5" weapon_recoil="0.1" physics_recoil="0.0" max_rotation_step="0.00003" />
 
 	<visual class="chassis" mesh_filename="crane_base2.mesh" texture_filename="repair_crane.png" />
 	<visual class="chassis" key="broken" mesh_filename="crane_base_broken.mesh" texture_filename="repair_crane_broken.png" />
@@ -55,6 +55,14 @@ allow_ai_to_use="0" reserves_spawn_point="1">
 	<effect event_key="destroyed" ref="car_destroyed_fire" post_processing="1" offset="-0.5 1.8 0.8" />
 	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="0" offset="-0.5 1.8 0.8" />  
 	<effect event_key="destroyed" ref="car_broken_spary_spark" post_processing="0" offset="-0.5 1.8 0.8" /> 
+	<effect event_key="idle_chassis" ref="marker_repair_area" post_processing="0" offset="-5 0 0" /> 
+	<effect event_key="idle_chassis" ref="marker_repair_name" post_processing="0" offset="-5 0 0" /> 
+	<effect event_key="idle_chassis" ref="marker_repair_decorate" post_processing="0" offset="-5 0 0" /> 
+	<effect event_key="idle_chassis" ref="marker_repair_decorate2" post_processing="0" offset="-5 0 0" /> 
+	<effect event_key="idle_chassis" ref="marker_recycle_area" post_processing="0" offset="5 0 1.5" /> 
+	<effect event_key="idle_chassis" ref="marker_recycle_name" post_processing="0" offset="5 0 1.5" /> 
+	<effect event_key="idle_chassis" ref="marker_recycle_decorate" post_processing="0" offset="5 0 1.5" /> 
+	<effect event_key="idle_chassis" ref="marker_recycle_decorate2" post_processing="0" offset="5 0 1.5" /> 
 
 	<event key="destroy_xp_reward">
 		<trigger class="destroy" />

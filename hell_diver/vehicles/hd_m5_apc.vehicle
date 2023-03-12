@@ -3,7 +3,7 @@
 <vehicle  
 name="M5 APC" 
 key="hd_m5_apc.vehicle" 
-time_to_live_unsteerable="300" 
+time_to_live_unsteerable="5" 
 map_view_atlas_index="-1" 
 minimum_fill_requirement="0.25"
 max_character_collision_speed_on_normal="5"
@@ -13,6 +13,7 @@ reserves_spawn_point="1"
 allow_ai_to_use="1"
 ai_abandon_when_unsteerable="1"
 respawn_time="15"
+ai_pick_prevention_time="60"
 >
 
 	<tag name="metal_heavy" />

@@ -163,6 +163,14 @@ float get2DMinAxisDistance(float scale, Vector3 s_pos, Vector3 e_pos) {
 	}
 	return dx*scale;
 }
+float get2DMAxAxisDistance(float scale, Vector3 s_pos, Vector3 e_pos) {
+	float dx = abs(e_pos.m_values[0]-s_pos.m_values[0]);
+	float dy = abs(e_pos.m_values[2]-s_pos.m_values[2]);
+    if(dx >= dy){
+		return dx*scale;
+	}
+	return dy*scale;
+}
 Vector3 getMultiplicationVector(Vector3 s_pos, Vector3 scale) {
 	float x = s_pos.m_values[0]*scale.m_values[0];
 	float y = s_pos.m_values[1]*scale.m_values[1];
@@ -230,4 +238,60 @@ void remove_vehicle(Metagame@ metagame,int vehicle_id){
 	c.setStringAttribute("class", "remove_vehicle");
 	c.setIntAttribute("id", vehicle_id); 
 	metagame.getComms().send(c);
+}
+void set_health_vehicle(Metagame@ metagame,int vehicle_id,float HealthNum){
+	XmlElement c ("command");
+	c.setStringAttribute("class", "update_vehicle");
+	c.setIntAttribute("id", vehicle_id); 
+	c.setIntAttribute("health", HealthNum); 
+	metagame.getComms().send(c);
+}
+//为输入区域定位
+void measure_square_area(Metagame@ metagame,Vector3 pos,Vector3 radius,string color = "white"){
+	Vector3 pos1 = pos.add(getMultiplicationVector(radius,Vector3(1,1,-1)));
+	Vector3 pos2 = pos.add(getMultiplicationVector(radius,Vector3(1,-1,1)));
+	Vector3 pos3 = pos.add(getMultiplicationVector(radius,Vector3(-1,1,1)));
+	Vector3 pos4 = pos.add(getMultiplicationVector(radius,Vector3(-1,-1,1)));
+	Vector3 pos5 = pos.add(getMultiplicationVector(radius,Vector3(-1,1,-1)));
+	Vector3 pos6 = pos.add(getMultiplicationVector(radius,Vector3(1,-1,-1)));
+	Vector3 pos7 = pos.add(getMultiplicationVector(radius,Vector3(-1,-1,-1)));
+	Vector3 pos8 = pos.add(getMultiplicationVector(radius,Vector3(1,1,1)));
+	string key;
+	if(color == "white"){key = "hd_effect_precise_tag.projectile";}
+	if(color == "red"){key = "hd_effect_precise_tagred.projectile";}
+	if(color == "yellow"){key = "hd_effect_precise_tagyellow.projectile";}
+	
+	spawnStaticProjectile(metagame,key,pos1,-1,0);
+	spawnStaticProjectile(metagame,key,pos2,-1,0);
+	spawnStaticProjectile(metagame,key,pos3,-1,0);
+	spawnStaticProjectile(metagame,key,pos4,-1,0);
+	spawnStaticProjectile(metagame,key,pos5,-1,0);
+	spawnStaticProjectile(metagame,key,pos6,-1,0);
+	spawnStaticProjectile(metagame,key,pos7,-1,0);
+	spawnStaticProjectile(metagame,key,pos8,-1,0);
+}
+void GiveRP(const Metagame@ metagame,int character_id,int rp){
+	string c = "<command class='rp_reward' character_id='" + character_id + "' reward='" + rp + "' />";
+    metagame.getComms().send(c);
+}
+
+void GiveXP(const Metagame@ metagame,int character_id,float xp){
+	string c = "<command class='xp_reward' character_id='" + character_id + "' reward='" + xp + "' />";
+    metagame.getComms().send(c);
+}
+
+void playAnimationKey(Metagame@ m_metagame,int characterId,string animekey,bool inter=false,bool hide=false){
+	XmlElement command("command");
+	command.setStringAttribute("class", "update_character");
+	command.setIntAttribute("id", characterId);
+	command.setStringAttribute("animate", animekey);
+	command.setBoolAttribute("interruptable", inter);
+	command.setBoolAttribute("hide_weapon", hide);
+	m_metagame.getComms().send(command);
+}
+
+void playRandomSoundArray(const Metagame@ metagame, array<string> arrays, int factionId, Vector3 position, float volume=1.0){
+	int soundrnd= rand(0,arrays.length-1);
+	string pos = position.toString();
+	playSoundAtLocation(metagame,arrays[soundrnd],factionId,pos,volume);
 }

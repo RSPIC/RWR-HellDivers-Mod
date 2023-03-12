@@ -15,12 +15,12 @@ player_death_drop_owner_lock_time="120"
 	<trigger class="time" time_to_live="0" />	
 	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
 
-    <sound class="result" key="other" fileref="hd_helldivers_coming.wav" pitch_variety="0" volume="1.5" />
-	<sound class="result" key="other" fileref="hd_helldivers_coming_1.wav" pitch_variety="0" volume="1.5" />
-	<sound class="result" key="other" fileref="hd_helldivers_coming_2.wav" pitch_variety="0" volume="1.5" />
-	<sound class="result" key="other" fileref="hd_helldivers_coming_3.wav" pitch_variety="0" volume="1.5" />
-	<sound class="result" key="other" fileref="hd_helldivers_coming_4.wav" pitch_variety="0" volume="1.5" />
-	<sound class="result" key="other" fileref="hd_helldivers_coming_5.wav" pitch_variety="0" volume="1.5" />
+    <sound class="result" key="other" fileref="hd_helldivers_coming.wav" pitch_variety="0" volume="1.0" />
+	<sound class="result" key="other" fileref="hd_helldivers_coming_1.wav" pitch_variety="0" volume="1.0" />
+	<sound class="result" key="other" fileref="hd_helldivers_coming_2.wav" pitch_variety="0" volume="1.0" />
+	<sound class="result" key="other" fileref="hd_helldivers_coming_3.wav" pitch_variety="0" volume="1.0" />
+	<sound class="result" key="other" fileref="hd_helldivers_coming_4.wav" pitch_variety="0" volume="1.0" />
+	<sound class="result" key="other" fileref="hd_helldivers_coming_5.wav" pitch_variety="0" volume="1.0" />
 
     <sound class="result" key="terrain" copy="other" />
     <sound class="result" key="static_object" copy="other" />

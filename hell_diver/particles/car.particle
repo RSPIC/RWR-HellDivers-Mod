@@ -548,33 +548,22 @@ particle_system car_recycle_working
 		colour2 0 0 0 0
 	}
 }
+particle_system car_deny_distance : car_recycle_working
+{
+	material vehicle_deny_distance
+}
 particle_system car_recycle_deny : car_recycle_working
 {
 	material vehicle_recycle_deny
+}
+particle_system car_repair_deny : car_recycle_working
+{
+	material vehicle_repair_deny
 }
 particle_system car_recycle_failed : car_recycle_working
 {
 	material vehicle_recycle_failed
 }
-
-
-particle_system call_deny_distance : car_recycle_working
-{
-	material call_deny_distance
-}
-particle_system call_deny_cooldown : car_recycle_working
-{
-	material call_deny_cooldown
-}
-particle_system call_deny_right : car_recycle_working
-{
-	material call_deny_right
-}
-particle_system call_deny_target : car_recycle_working
-{
-	material call_deny_target
-}
-
 
 
 --------------------------------------material-----------------------------------
@@ -663,13 +652,13 @@ material thunder_circle_tesla : add_base
 			tex_address_mode border
 			tex_border_colour 0 0 0 0
 }}}}
-material vehicle_recycle_deny : alpha_blend_base
+material vehicle_deny_distance : alpha_blend_base
 {   
     technique{
     pass{
 		depth_func always_pass
         texture_unit{
-            texture vehicle_recycle_deny.png 	
+            texture vehicle_deny_distance.png 	
 }}}}
 material vehicle_recycle_failed : alpha_blend_base
 {   
@@ -679,37 +668,21 @@ material vehicle_recycle_failed : alpha_blend_base
         texture_unit{
             texture vehicle_recycle_failed.png 	
 }}}}
-material call_deny_cooldown : alpha_blend_base
+material vehicle_recycle_deny : alpha_blend_base
 {   
     technique{
     pass{
 		depth_func always_pass
         texture_unit{
-            texture call_deny_cooldown.png 	
+            texture vehicle_recycle_deny.png 	
 }}}}
-material call_deny_right : alpha_blend_base
+material vehicle_repair_deny : alpha_blend_base
 {   
     technique{
     pass{
 		depth_func always_pass
         texture_unit{
-            texture call_deny_right.png 	
-}}}}
-material call_deny_distance : alpha_blend_base
-{   
-    technique{
-    pass{
-		depth_func always_pass
-        texture_unit{
-            texture call_deny_distance.png 	
-}}}}
-material call_deny_target : alpha_blend_base
-{   
-    technique{
-    pass{
-		depth_func always_pass
-        texture_unit{
-            texture call_deny_target.png 	
+            texture vehicle_repair_deny.png 	
 }}}}
 material vehicle_recycle_working : alpha_blend_base
 {   

@@ -132,13 +132,53 @@ dictionary vehicle_recycle_key = {
         // 空
         {"",-1},
 
-        {"noxe.vehicle",1},
-        {"hd_td110_bastion.vehicle",2},
-        {"hd_mc109_motor.vehicle",3},
-        {"hd_m5_apc.vehicle",4},
-        {"ex_isu_152.vehicle",5},
-        {"hd_m5_32_hav.vehicle",6},
-        {"63type_107mm_rocket_launcher.vehicle",7},
+        {"noxe.vehicle",1000},
+        {"hd_td110_bastion.vehicle",1500},
+        {"hd_mc109_motor.vehicle",100},
+        {"hd_m5_apc.vehicle",500},
+        {"ex_isu_152.vehicle",1500},
+        {"hd_m5_32_hav.vehicle",1000},
+        {"63type_107mm_rocket_launcher.vehicle",100},
+
+        // 占位的
+        {"666",-1}
+
+};
+//载具超额血量比例
+dictionary vehicle_overhealth_key = {
+
+        // 空
+        {"",-1},
+
+        {"noxe.vehicle",0.3},
+
+        // 占位的
+        {"666",-1}
+
+};
+//不可修复载具
+dictionary vehicle_repair_deny_key = {
+
+        // 空
+        {"",-1},
+
+        {"repair_crane.vehicle",1},
+
+        {"hd_apb_mk3.vehicle",1},
+
+        // 占位的
+        {"666",-1}
+
+};
+//修复工具修复量
+dictionary repairtool_key = {
+
+        // 空
+        {"",-1},
+
+        {"hd_rep80_mk3",0.2},
+
+        {"hd_rep80_mk2",0.1},
 
         // 占位的
         {"666",-1}

@@ -41,6 +41,7 @@
 #include "all_airstrike.as"
 #include "projectile_event.as"
 #include "call_event_handler.as"
+#include "repair_tools.as"
 
 
 
@@ -331,6 +332,7 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		addTracker(projectile_event(this));   
 		addTracker(RangeFinder(this));   
 		addTracker(call_event(this));    
+		addTracker(repair_tools(this));    
 	}
 
 	protected void setupDisableRadioAtMatchOver() {

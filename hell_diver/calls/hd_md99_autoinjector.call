@@ -12,18 +12,11 @@ radio_view_text="MD99 AutoInjector Medic"
       <round 
             launch_time="0.5"
             spawn_time="0.5">
-            <sound class="launch" fileref="hd_syringe_plunger.wav" volume="1.0" />
-            <sound class="launch" fileref="hd_syringe_plunger_back.wav" volume="1.0" />
       </round>
     
-      <round instances="1"
-            instance_class="grenade"
-            instance_key="hd_md99_autoinjector.projectile" 
-            instance_spread="0 0 0" 
-            common_spread="0 0 0" 
+      <round 
             launch_time="2"
             spawn_time="2">
-            <sound class="launch" fileref="hd_syringe_squeeze_squirt.wav" volume="1.0" />      
       </round>
 
     <hud_icon filename="hd_md99_autoinjector_call.png" />

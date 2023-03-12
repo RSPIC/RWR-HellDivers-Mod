@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <vehicle 
 name="NOXE Ghost" key="noxe.vehicle" 
-respawn_time="100" time_to_live_unsteerable="95" 
+respawn_time="100" time_to_live_unsteerable="12" 
 map_view_atlas_index="43" minimum_fill_requirement="0.25" 
 existence="one_per_faction" character_leave_request_mode="friendly" 
 reserves_spawn_point="1">
