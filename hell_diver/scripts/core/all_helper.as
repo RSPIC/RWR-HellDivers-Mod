@@ -295,3 +295,80 @@ void playRandomSoundArray(const Metagame@ metagame, array<string> arrays, int fa
 	string pos = position.toString();
 	playSoundAtLocation(metagame,arrays[soundrnd],factionId,pos,volume);
 }
+
+
+void deleteItemInBackpack(Metagame@ metagame, int characterId, string ItemType, string ItemKey){
+	XmlElement c ("command");
+	c.setStringAttribute("class", "update_inventory");
+	c.setStringAttribute("container_type_class", "backpack");
+	c.setIntAttribute("character_id", characterId); 
+	c.setIntAttribute("add",0);
+	XmlElement k("item");
+	k.setStringAttribute("class", ItemType);
+	k.setStringAttribute("key", ItemKey);
+	c.appendChild(k);
+	metagame.getComms().send(c);	
+}
+
+void deleteItemInStash(Metagame@ metagame, int characterId, string ItemType, string ItemKey){
+	XmlElement c ("command");
+	c.setStringAttribute("class", "update_inventory");
+	c.setStringAttribute("container_type_class", "stash");
+	c.setIntAttribute("character_id", characterId); 
+	c.setIntAttribute("add",0);
+	XmlElement k("item");
+	k.setStringAttribute("class", ItemType);
+	k.setStringAttribute("key", ItemKey);
+	c.appendChild(k);
+	metagame.getComms().send(c);	
+}
+
+void addItemInBackpack(Metagame@ metagame, int characterId, string ItemType, string ItemKey) {
+	string c = 
+		"<command class='update_inventory' character_id='" + characterId + "' container_type_class='backpack'>" + 
+			"<item class='" + ItemType + "' key='" + ItemKey + "' />" +
+		"</command>";
+	metagame.getComms().send(c);
+}
+
+void addItemInStash(Metagame@ metagame, int characterId, string ItemType, string ItemKey) {
+	string c = 
+		"<command class='update_inventory' character_id='" + characterId + "' container_type_class='stash'>" + 
+			"<item class='" + ItemType + "' key='" + ItemKey + "' />" +
+		"</command>";
+	metagame.getComms().send(c);
+}
+
+
+string getPlayerEquipmentKey(const Metagame@ metagame, int characterId, uint slot){
+	if (slot <0) return "";
+	if (slot >5) return "";
+	const XmlElement@ targetCharacter = getCharacterInfo2(metagame,characterId);
+	if (targetCharacter is null) return "";
+	array<const XmlElement@>@ equipment = targetCharacter.getElementsByTagName("item");
+	if (equipment.size() == 0) return "";
+	if (equipment[slot].getIntAttribute("amount") == 0) return "";
+	string ItemKey = equipment[slot].getStringAttribute("key");
+	return ItemKey;
+}
+
+string getDeadPlayerEquipmentKey(const Metagame@ metagame, int characterId, uint slot){
+	if (slot <0) return "";
+	if (slot >5) return "";
+	const XmlElement@ targetCharacter = getCharacterInfo2(metagame,characterId);
+	if (targetCharacter is null) return "";
+	array<const XmlElement@>@ equipment = targetCharacter.getElementsByTagName("item");
+	if (equipment.size() == 0) return "";
+	string ItemKey = equipment[slot].getStringAttribute("key");
+	return ItemKey;
+}
+int getPlayerEquipmentAmount(const Metagame@ metagame, int characterId, uint slot){
+	if (slot <0) return -1;
+	if (slot >5) return -1;
+	const XmlElement@ targetCharacter = getCharacterInfo2(metagame,characterId);
+	if (targetCharacter is null) return -1;
+	array<const XmlElement@>@ equipment = targetCharacter.getElementsByTagName("item");
+	if (equipment.size() == 0) return -1;
+	int amount = equipment[slot].getIntAttribute("amount");
+	return amount;
+}

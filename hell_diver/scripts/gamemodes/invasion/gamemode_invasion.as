@@ -42,6 +42,7 @@
 #include "projectile_event.as"
 #include "call_event_handler.as"
 #include "repair_tools.as"
+#include "resupply.as"
 
 
 
@@ -333,6 +334,7 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		addTracker(RangeFinder(this));   
 		addTracker(call_event(this));    
 		addTracker(repair_tools(this));    
+		addTracker(resupply(this));    
 	}
 
 	protected void setupDisableRadioAtMatchOver() {

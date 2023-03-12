@@ -9,21 +9,26 @@ radio_view_text="Call Resupply"
            match_skinpack="vanilla">
 
     <round instances="1"
-           instance_class="projectile"
-           instance_key="hd_resupply.projectile" 
+           instance_class="vehicle"
+           instance_tag="hd_resupply_spawn" 
            instance_spread="0 0 0" 
            common_spread="0 0 0" 
            launch_time="2"
            spawn_time="4.0"
            horizontal_offset_at_spawn="0.0"
-           vertical_offset_at_spawn="0.0"
+           vertical_offset_at_spawn="40.0"
            initial_speed_to_target="0.0"
 		   avoid_objects="0">
         <effect class="launch" ref="stratagems_tag_call_mark_1" />
         <effect class="launch" ref="stratagems_tag_call_mark_2" />
+        <effect class="launch" ref="stratagems_point_light_area_blue_2s" />
+        <effect class="launch" ref="stratagems_liner_light_blue_2s" />
+        <sound class="spawn" fileref="hd_supply_incoming.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="spawn" fileref="hd_supply_incoming1.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="spawn" fileref="hd_supply_incoming2.wav" pitch_variety="0.01" volume="1"/>
     </round>
     <!-- spawn_time要大于launch_time，launch_time决定round的启动时间，spawn_time决定生成时间，两个都是独立计时-->
-    <hud_icon filename="hd_mc109_motor_mk3.png" />
+    <hud_icon filename="stratagems_resupply.png" />
     <capacity value="0" source="rank" source_value="0.0" />
     <capacity value="1" source="rank" source_value="0.0" />
     <inventory encumbrance="0.0" price="100.0" />
