@@ -106,7 +106,7 @@ radius="1"
 	<!-- 双倍射速 加倍携弹量 -->
 
 	<!--军械库相关-->
-    <commonness value="1" can_respawn_with="1" in_stock="1" /> 
+    <commonness value="1" can_respawn_with="0" in_stock="1" /> 
     <inventory encumbrance="10" price="1000.0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
     <!-- 10clip=1hvy -->
 	<!-- 10clip = 1 mag -->

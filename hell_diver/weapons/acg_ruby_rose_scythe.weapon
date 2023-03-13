@@ -80,7 +80,7 @@ on_ground_up="0 0 1"
 	<capacity value="0" source="rank" source_value="0.0" />
 	<capacity value="1" source="rank" source_value="0.0" />
 	
-    <commonness value="1" can_respawn_with="1" in_stock="0" /> 
+    <commonness value="1" can_respawn_with="0" in_stock="0" /> 
     <inventory encumbrance="10.0" price="1000.0" /> 
     <weak_hand_hold offset="-1" /> 
 

@@ -63,7 +63,7 @@ key="acg_megumin_wand_summon.weapon"
 
     <hud_icon filename="wand_hh.png" />
 
-    <commonness value="1" can_respawn_with="1" in_stock="0"/>
+    <commonness value="1" can_respawn_with="0" in_stock="0"/>
     <inventory encumbrance="4.0" price="999.0" />
 
     <projectile file="wand_guiding_01.projectile">

@@ -43,7 +43,7 @@ key="acg_kokomi_portia.weapon"
     <sound key="last_ammo" fileref="hd_lastammo_03.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
     <sound key="last_ammo" fileref="hd_lastammo_04.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
 
-    <commonness value="1" can_respawn_with="1" in_stock="1" /> 
+    <commonness value="1" can_respawn_with="0" in_stock="1" /> 
     <model filename="acgw_kokomi_portia.xml"/>
     <hud_icon filename="acg_sangonomiya_kokomi_main.png"/>
     <inventory encumbrance="8.0" price="1000.0"/>
