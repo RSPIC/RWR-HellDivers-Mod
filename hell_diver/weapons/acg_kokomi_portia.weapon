@@ -46,7 +46,7 @@ key="acg_kokomi_portia.weapon"
     <commonness value="1" can_respawn_with="1" in_stock="1" /> 
     <model filename="acgw_kokomi_portia.xml"/>
     <hud_icon filename="acg_sangonomiya_kokomi_main.png"/>
-    <inventory encumbrance="8.0" price="300.0"/>
+    <inventory encumbrance="8.0" price="1000.0"/>
 
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
 	time_to_live="0.166" can_be_detected_by_driver="1" can_be_disarmed="0" name="Kokomi"> 

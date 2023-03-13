@@ -7,6 +7,8 @@ player_death_drop_owner_lock_time="300"
 key="hd_rl112_recoilless_rifle_mk3.weapon" 
 on_ground_up="0 0 1" 
 > 
+	<tag name="bazooka" />
+
     <specification 	
     slot="1" 	
     retrigger_time="1" 

@@ -241,7 +241,7 @@ class projectile_event : Tracker {
                             //_log("players name: "+player.getStringAttribute("name") );
                             //_log("target position: "+ event.getStringAttribute("position"));
                             //_log("player position: "+ character.getStringAttribute("position"));
-                            _log("distance axis min in target&vehicles: "+ distance);
+                            _log("distance axis min in target&players: "+ distance);
                             if(distance <= 3){
                                 int p_characterId = player.getIntAttribute("character_id");
                                 healCharacter(m_metagame,p_characterId,10);//此处修改回复层数
@@ -271,7 +271,7 @@ class projectile_event : Tracker {
                             //_log("players name: "+player.getStringAttribute("name") );
                             //_log("target position: "+ event.getStringAttribute("position"));
                             //_log("player position: "+ character.getStringAttribute("position"));
-                            _log("distance axis min in target&vehicles: "+ distance);
+                            _log("distance axis min in target&players: "+ distance);
                             if(distance <= 3){
                                 int p_characterId = player.getIntAttribute("character_id");
                                 healCharacter(m_metagame,p_characterId,2);//此处修改回复层数
@@ -407,6 +407,46 @@ class projectile_event : Tracker {
                             _log("handing projectile_event:recycle_deny_distance ");
                         }
                     }
+                break;
+            }
+            case 42: {   //升级
+                _log("projectile_event:case42 upgrade");
+                int characterId = event.getIntAttribute("character_id");
+                const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                if (character is null) {break;}
+                int playerId = character.getIntAttribute("player_id");
+                //int factionId = character.getIntAttribute("faction_id");
+                const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
+                if (player !is null) {
+                    _log("handing projectile_event:player exist");
+                    Vector3 aim_pos = stringToVector3(player.getStringAttribute("aim_target"));
+                    Vector3 c_position = stringToVector3(character.getStringAttribute("position"));
+                    Vector3 t_pos = stringToVector3(event.getStringAttribute("position"));
+                    array<const XmlElement@>@ players = getPlayers(m_metagame);
+                    //_log("players.size()= "+players.size());
+                    for (uint i = 0; i < players.size(); ++i) {
+                        const XmlElement@ player = players[i];
+                        _log("detected players in upgrade");
+                        if (player.hasAttribute("character_id")) {
+                            const XmlElement@ p_character = getCharacterInfo(m_metagame, player.getIntAttribute("character_id"));
+                            if (p_character !is null) {
+                                Vector3 p_position = stringToVector3(character.getStringAttribute("position"));
+                                float distance = get2DMAxAxisDistance(1,p_position,t_pos);
+                                _log("distance axis min in target&players: "+ distance);
+                                if(distance <= 3){
+                                    int rpnum = 20000;
+                                    int xpnum = 30;
+                                    int p_characterId = player.getIntAttribute("character_id");
+                                    GiveRP(m_metagame,p_characterId,rpnum);
+                                    GiveXP(m_metagame,p_characterId,xpnum);
+                                    string p_name = player.getStringAttribute("name");
+                                    string message = "Success upgrade player= "+p_name;
+                                    sendPrivateMessage(m_metagame,playerId,message);
+                                }
+                            }
+                        }
+                    }
+                }
                 break;
             }
 

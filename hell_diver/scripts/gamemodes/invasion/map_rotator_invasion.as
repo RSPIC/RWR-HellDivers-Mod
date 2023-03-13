@@ -930,9 +930,9 @@ class MapRotatorInvasion : MapRotator {
 		int senderId = event.getIntAttribute("player_id");
 		
 		// admins and mods allowed from here on
-		// if (!m_metagame.getAdminManager().isAdmin(sender, senderId) && !m_metagame.getModeratorManager().isModerator(sender,senderId)) {
-		// 	return;
-		// }
+		if (!m_metagame.getAdminManager().isAdmin(sender, senderId) && !m_metagame.getModeratorManager().isModerator(sender,senderId)) {
+			return;
+		}
 
 		if (checkCommand(message, "warp")) {
 			array<string> parameters = parseParameters(message, "warp");

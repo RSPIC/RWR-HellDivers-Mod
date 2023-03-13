@@ -109,12 +109,12 @@ radius="1"
 		kill_decay_start_time="0.1875" kill_decay_end_time="0.375" character_state="death"/> -->
 		
 
-		<result class="spawn" instance_class="projectile" instance_key="cyborgs_comrade_main_damage.projectile" 
-		min_amount="4" max_amount="6" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+		<result class="spawn" instance_class="projectile" instance_key="cyborgs_warlord_main_damage.projectile" 
+		min_amount="1" max_amount="2" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 		<trigger class="time" time_to_live="0.3"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
-		<!--伤害 4~6x2.0=8~12 -->
+		<!--伤害 1~2x15 -->
 		<!-- 六连发 -->
 
 		<!--命中音效-->

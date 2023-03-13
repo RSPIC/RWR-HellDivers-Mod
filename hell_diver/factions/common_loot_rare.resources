@@ -2,8 +2,10 @@
 <resources clear_weapons="0" clear_vehicles="0" clear_calls="0">
 	<!-- always load common first; it"s the one that clears the initial weapon resources -->
 
-	<vehicle key="radar_tower.vehicle" />
-	<vehicle key="jeep.vehicle" />
+	<carry_item key="collect_mc_diamond.carry_item" />
+	<carry_item key="collect_mc_gold.carry_item" />
+	<carry_item key="collect_mc_iron.carry_item" />
+
 	
 
 </resources>

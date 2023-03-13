@@ -73,6 +73,7 @@ dictionary projectile_eventkey = {
 
         //特殊功能
         {"vehicle_recycle",41},
+        {"upgrade",42},
 
         // 占位的
         {"666",-1}

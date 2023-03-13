@@ -57,7 +57,7 @@ key="acg_sorasaki_hina_burst.weapon"
     <hud_icon filename="acg_sorasaki_hina_burst.png" />
 
     <commonness value="1.0" can_respawn_with="1" in_stock="0"/>
-    <inventory encumbrance="12.0" price="0.0" />
+    <inventory encumbrance="12.0" price="1000.0" />
 
     <stance state_key="running" accuracy="0.6" />
     <stance state_key="walking" accuracy="0.9" />
