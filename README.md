@@ -95,7 +95,10 @@
         - 固定改造分支，玩家沿固定升级改造路线升级枪械至满级
         - 该类枪械掉落消失，不可交易
     - 再补给系统
-        - **部分副手栏武器是有限子弹的，是否可以通过脚本补给**
+        - √ **部分副手栏武器是有限子弹的，是否可以通过脚本补给**
+    - √ **维修/回收系统**
+        - √ **可以通过维修平台额外维修载具**
+        - √ **可以回收特定载具**
     - 逆向工程系统
         - 任何稀有度的武器只要攒满 7 把，即可获得一把属性略有削弱的复活自带版本
         - 不会削弱其优势性属性
@@ -166,7 +169,7 @@
         - Suppressed 消音系
             - 枪械附带隐蔽加成
             - 枪械附带抗致死减成
-        - Consume 消耗品系
+        - √ **Consume 消耗品系**
             - 强力
             - 再补给有门槛
             - 投掷物增加携带量
@@ -395,23 +398,23 @@
             > - √ **Anti-Personnel Barrier**
             > - √ **AT-47 Anti-Tank Emplacement**
             > - Distractor Beacon
-            > - Humblebee UAV drone
+            > - √ **Humblebee UAV drone**
             > - Thunderer Smoke Round
             >
-        - **Offensive**
+        - √ **Offensive**
             >
             > - √ **Airstrike**
-            > - Close Air Support
+            > - √ **Close Air Support**
             > - √ **Heavy Strafing Run**
-            > - **Incendiary Bombs**
-            > - Missile Barrage
-            > - **Orbital Laser Strike**
-            > - Railcannon Strike
-            > - Shredder Missile Strike
-            > - Sledge Precision Artillery
-            > - Static Field Conductors
-            > - Strafing Run
-            > - Thunderer Barrage
+            > - √ **Incendiary Bombs**
+            > - √ **Missile Barrage**
+            > - √ **Orbital Laser Strike**
+            > - √ **Railcannon Strike**
+            > - √ **Shredder Missile Strike**
+            > - √ **Sledge Precision Artillery**
+            > - √ **Static Field Conductors**
+            > - √ **Strafing Run**
+            > - √ **Thunderer Barrage**
             > - √ **Vindicator Dive Bomb**
             >
         - **Special**
@@ -431,7 +434,11 @@
         - helldivers_default_base.character 父级
             - helldivers_default_chat.character 子集
     - Call 支援
-        - M99 自动注射器
+        - √ **M99 自动注射器**
+        - √ **MC109摩托**
+        - √ **反人员铁丝网**
+        - √ **UAV小蜜蜂无人机**
+        - √ **子弹补给箱**
     - 翻译
 - Cyborgs
     - 武器
