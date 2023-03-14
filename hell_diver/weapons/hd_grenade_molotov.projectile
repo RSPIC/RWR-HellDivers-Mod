@@ -14,7 +14,8 @@ radius="0.3"
 blast_damage_threshold="0.3"
 time_to_live_out_in_the_open="150"
 player_death_drop_owner_lock_time="150"
-drop_count_factor_on_death="0"
+drop_count_factor_on_death="0" 
+drop_count_factor_on_player_death="0"
 >
     <collision class="sticky" />
     <result class="spawn" instance_class="grenade" instance_key="hd_grenade_molotov_damage.projectile" 

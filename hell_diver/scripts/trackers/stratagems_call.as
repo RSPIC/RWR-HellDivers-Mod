@@ -64,7 +64,7 @@ class stratagems_call : Tracker {
                     int factionid = character.getIntAttribute("faction_id");
                     Vector3 pos_offset = Vector3(0,20,0); //这里修改高度偏移
                     pos=pos.add(pos_offset);
-                    Orientation m_rotate = Orientation(0,1,0,float(rand(0,3.14)));
+                    Orientation m_rotate = Orientation(0,1,0,0);
                     spawnVehicle(m_metagame,1,factionid,getRandomOffsetVector(pos,2,2),m_rotate,"cyborgs_spawn_berserker_model.vehicle"); //生成载具 消耗1c资源
                     spawnVehicle(m_metagame,1,factionid,getRandomOffsetVector(pos,3),m_rotate,"cyborgs_spawn_berserker_model.vehicle"); //生成载具 消耗1c资源
 

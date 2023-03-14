@@ -6,11 +6,11 @@
 <weapon key="hd_rx1_railgun.weapon" /><!--轨道炮-->
 <weapon key="hd_m25_rumbler.weapon" /><!--雷鸣者-->
 <weapon key="hd_mg94_mk3.weapon" /><!--MG94机枪-->
-<weapon key="hd_mgx42_mk3.weapon" /><!--MGX42机枪-->
+<!-- <weapon key="hd_mgx42_mk3.weapon" />MGX42机枪 -->
 <!-- <weapon key="hd_obliterator_grenade_launcher.weapon" />消灭者榴弹发射器 -->
 <weapon key="hd_double_freedom.weapon" /><!--双重解放霰弹-->
-<weapon key="hd_p2_peacemaker.weapon" /><!--和平使者手枪-->
-<weapon key="hd_p6_gunslinger.weapon" /><!--神枪手重装左轮手枪-->
+<!-- <weapon key="hd_p2_peacemaker.weapon" />和平使者手枪 -->
+<!-- <weapon key="hd_p6_gunslinger.weapon" />神枪手重装左轮手枪 -->
 <!-- <weapon key="hd_las13_trident_full_upgrade.weapon" />三叉戟激光枪-->
 <!-- <weapon key="hd_las12_tanto_full_upgrade.weapon" />短刀激光枪 -->
 <!-- <weapon key="hd_las16_sickle_full_upgrade.weapon" />镰刀激光枪 -->
@@ -33,8 +33,10 @@
 
 <!-- 副手 -->
 <weapon key="hd_md98_injector.weapon" /><!--MD-98注射器-->
-<weapon key="hd_rl112_recoilless_rifle_mk3.weapon" /><!--无后坐力步枪-->
-<weapon key="hd_mls4x_commando_mk3.weapon" /><!--突击队跟踪导弹-->
+<weapon key="hd_rl112_recoilless_rifle_mk3_ai.weapon" /><!--无后坐力反坦克炮-->
+<weapon key="hd_mls4x_commando_mk3_ai.weapon" /><!--突击队跟踪导弹-->
+<weapon key="hd_eta17_mk3_ai.weapon" /><!--抛弃式反战车火箭-->
+
 
 <!--弹头-->
 <projectile key="hd_grenade_molotov.projectile" /><!--燃烧瓶-->

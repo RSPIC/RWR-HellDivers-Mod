@@ -1,0 +1,3 @@
+call process_map16.bat
+call process_post_map16.bat
+call process_map_view_map16.bat

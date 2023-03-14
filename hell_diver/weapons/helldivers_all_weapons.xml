@@ -22,7 +22,7 @@
 	<weapon file="hd_mg94_mk3.weapon" /><!--MG94机枪-->
 	<weapon file="hd_mgx42_mk3.weapon" /><!--MGX42机枪-->
 	<weapon file="hd_mg105_stalwart_full_upgrade.weapon" /><!--MG105盟友机枪-->
-	<!-- Explosive 5/15/25伤害阈值 -> 轻甲/中甲/重甲-->
+	<!-- Explosive 1/3/9伤害阈值 -> 轻甲/中甲/重甲-->
 	<weapon file="hd_obliterator_grenade_launcher.weapon" /><!--消灭者榴弹发射器-->
 	<weapon file="hd_m25_rumbler.weapon" /><!--雷鸣者-->
 	<weapon file="hd_cr9_suppressor_full_upgrade.weapon" /><!--抑制者直射榴弹-->
@@ -90,5 +90,10 @@
 
 	<!-- 部署物 -->
 	<weapon file="hd_apb_mk3.weapon" /><!--铁丝网-->
+	
 
+	<!-- ai专用 -->
+	<weapon file="hd_eta17_mk3_ai.weapon" /><!--反坦克-->
+	<weapon file="hd_mls4x_commando_mk3_ai.weapon" /><!--反坦克-->
+	<weapon file="hd_rl112_recoilless_rifle_mk3_ai.weapon" /><!--反坦克-->
 </weapons>

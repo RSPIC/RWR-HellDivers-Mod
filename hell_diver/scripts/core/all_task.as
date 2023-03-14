@@ -10,6 +10,7 @@
 #include "all_airstrike.as"
 
 //Author: NetherCrow
+//modifier: RST
 
 
 // 调用方法

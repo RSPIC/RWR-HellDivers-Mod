@@ -32,10 +32,10 @@ ai_abandon_when_unsteerable="1"
 	/>
 
 	<modifier class="blast_range" value="-2.5" />
-	<modifier class="blast_damage" value="-25.0" />
+	<modifier class="blast_damage" value="-9.0" />
 
 	<physics 
-	max_health="80" 
+	max_health="150" 
 	blast_damage_threshold="25" 
 	blast_push_threshold="10"
 	mass="200.0" 

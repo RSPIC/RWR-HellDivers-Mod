@@ -1,0 +1,12 @@
+<projectile>
+    <effect class="result" key="terrain" tag="ice" ref="IceCrackSmall" post_processing="0" /> 
+<!--    <effect class="result" key="terrain" tag="ice" ref="IceCrackRing" post_processing="0" />  -->
+   
+    <effect class="result" key="terrain" tag="ice" ref="IceBurstSmall" post_processing="1" />         
+    <effect class="result" key="terrain" tag="ice" ref="BigBurst" use_surface_color="1" />       
+    <effect class="result" key="terrain" tag="ice" ref="SmokeTop" post_processing="1" />
+    <effect class="result" key="terrain" tag="ice" ref="Smoke" post_processing="1" />
+    <effect class="result" key="terrain" tag="ice" ref="Shine" lighting="0" />
+    <effect class="result" key="terrain" tag="ice" ref="Godray" lighting="0" />
+    <effect class="result" key="terrain" tag="ice" ref="ShadowSmoke" shadow="1" />  
+</projectile>

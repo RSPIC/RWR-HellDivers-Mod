@@ -16,9 +16,9 @@ void main(dictionary@ inputData) {
         settings.m_playerAiCompensationFactor = 1.0;   // was 1.1  (1.75)
 
         settings.m_fellowCapacityFactor = 1.0;
-        settings.m_fellowAiAccuracyFactor = 0.98;
+        settings.m_fellowAiAccuracyFactor = 1.0;
         settings.m_enemyCapacityFactor = 2.0;
-        settings.m_enemyAiAccuracyFactor = 0.94;
+        settings.m_enemyAiAccuracyFactor = 1.0;
 
         settings.m_playerAiReduction = 0.0;            // didn't work before 1.76! (was 1.0)
 
@@ -33,11 +33,11 @@ void main(dictionary@ inputData) {
         array<string> overlays = {
                 "media/packages/hell_diver"
         };
-        // settings.m_overlayPaths = overlays;
+        settings.m_overlayPaths = overlays;
 
         settings.m_startServerCommand = """
 <command class='start_server'
-	server_name='[HD] QQ：498520233'
+	server_name='[Helldiver] testing QQ：498520233'
 	server_port='1240'
 	url='https://steamcommunity.com/sharedfiles/filedetails/?id=2910392031'
 	register_in_serverlist='1'

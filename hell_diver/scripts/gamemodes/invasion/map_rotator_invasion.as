@@ -199,20 +199,21 @@ class MapRotatorInvasion : MapRotator {
 		// }
 
 		const XmlElement@ element = event.getFirstElementByTagName("player");
-		//_log("handlePlayerSpawnEvent:getname:" + element.getStringAttribute("character_id"));
-		//_log("handlePlayerSpawnEvent:getname:" + element.getStringAttribute("player_id"));
-		//_log("handlePlayerSpawnEvent:getname:" + element.getStringAttribute("faction_id"));
-		//_log("handlePlayerSpawnEvent:getname:" + element.getStringAttribute("name"));
-
+		if(element is null){return;}
 		int factionId = element.getIntAttribute("faction_id");
 		int characterId = element.getIntAttribute("character_id");
 		int playersId = element.getIntAttribute("player_id");
 		string name = element.getStringAttribute("name");
+		_log("handlePlayerSpawnEvent:character_id:" + characterId);
+		_log("handlePlayerSpawnEvent:player_id:" + playersId);
+		_log("handlePlayerSpawnEvent:faction_id:" + factionId);
+		_log("handlePlayerSpawnEvent:name:" + name);
+
 
 		const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
-		Vector3 c_position = stringToVector3(character.getStringAttribute("position"));
-		//_log("handlePlayerSpawnEvent:getname:" + character.getStringAttribute("position"));
-
+		if(character is null){return;}
+		string c_position = character.getStringAttribute("position");
+		_log("handlePlayerSpawnEvent:getcharacterposition:" + c_position);
 		spawnStaticProjectile(m_metagame,"hd_effect_target_aim.projectile",c_position,characterId,factionId);
 		spawnStaticProjectile(m_metagame,"hd_sound_divers_coming_bgm.projectile",c_position,characterId,factionId);
 		spawnStaticProjectile(m_metagame,"hd_sound_divers_coming.projectile",c_position,characterId,factionId);
@@ -324,6 +325,11 @@ class MapRotatorInvasion : MapRotator {
 
 	// --------------------------------------------
 	protected string getMapName(int index) const override {
+		_log("m_stages.size()="+m_stages.size());
+		_log("m_stages.index="+index);
+		if(m_stages.size() < uint(index)){
+			_log("getMapName faild, Max index= "+m_stages.size()+" , Now index= "+index);
+			return "map1";}
 		return m_stages[index].m_mapInfo.m_name;
 	}
 

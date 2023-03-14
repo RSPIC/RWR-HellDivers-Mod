@@ -80,12 +80,12 @@
 			<!-- wearables -->
 			<item_class_existence class="carry_item" slot="1" probability="1" />
 			<!-- backpack -->
-			<item_class_existence class="carry_item" slot="0" probability="0.1" />
+			<item_class_existence class="carry_item" slot="0" probability="0.0" />
 		</item_class_existence_config>
 
 		<attribute_config class="rp">
-			<attribute weight="0.3" min="80.0" max="300.0" />
-			<attribute weight="0.7" min="0.0" max="0.0" />
+			<attribute weight="0.3" min="10000.0" max="10000.0" />
+			<attribute weight="0.7" min="10000.0" max="10000.0" />
 		</attribute_config>
 
 		<attribute_config class="xp">
@@ -301,7 +301,7 @@
 			<!-- wearables -->
 			<item_class_existence class="carry_item" slot="1" probability="1" />
 			<!-- backpack -->
-			<item_class_existence class="carry_item" slot="0" probability="0.7" />
+			<item_class_existence class="carry_item" slot="0" probability="1" />
 		</item_class_existence_config>
 	</soldier> 
    

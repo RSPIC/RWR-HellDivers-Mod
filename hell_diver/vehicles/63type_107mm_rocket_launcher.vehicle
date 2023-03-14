@@ -15,7 +15,7 @@ designated_squad_as_driver_only="1"
 
 	<modifier class="blast_range" value="-4.0" />
 
-	<control max_speed="2" acceleration="5" max_reverse_speed="2" 
+	<control max_speed="1" acceleration="1" max_reverse_speed="2" 
       tracked="1" gears="0"  max_rotation="0.1"  max_water_depth="1.0" />
 
 	<physics 
@@ -30,6 +30,7 @@ designated_squad_as_driver_only="1"
 	collision_response_factor="0.2" 
 	blast_push_threshold="10.0" 
 	vehicle_collision_damage_factor="0" 
+	drag_offset="-1"
 	destroy_on_top_hit="1"
 	destroy_on_top_hit_time="0"
 	/> 

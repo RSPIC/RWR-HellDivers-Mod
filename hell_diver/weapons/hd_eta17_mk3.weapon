@@ -11,7 +11,7 @@ on_ground_up="0 0 1"
 
     <specification 	
     slot="1" 	
-    retrigger_time="1" 
+    retrigger_time="-1" 
 	last_burst_retrigger_time="1"
     accuracy_factor="1.0" 
 	spread_range="0.05"
@@ -157,7 +157,7 @@ on_ground_up="0 0 1"
 	<effect class="muzzle" ref="nova_muzzle_ambient"/>
 	<effect class="muzzle" ref="nova_muzzle_ambient_ground"/>
 	<effect class="muzzle" ref="nova_muzzle_spark"/>
-	
+
 	<!--雷鸣弹道
     <ballistics 
     curve_height="16" 

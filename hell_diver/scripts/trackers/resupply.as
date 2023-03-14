@@ -135,12 +135,12 @@ class resupply : Tracker {
 								for(;resupplyNum>0;--resupplyNum){
 									if(int(resupply_cost[equipKey]) != 0){
 										const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
-										int playerId = character.getIntAttribute("player_id");
+										int t_playerId = character.getIntAttribute("player_id");
 										int rp = character.getIntAttribute("rp");
 										int cost = int(resupply_cost[equipKey]);
 										if(rp <= cost){
 											string message= "You don't have enough rp to resupply.";
-											sendPrivateMessage(m_metagame,playerId,message);
+											sendPrivateMessage(m_metagame,t_playerId,message);
 											break;
 										}
 										GiveRP(m_metagame,characterId,-1*cost);

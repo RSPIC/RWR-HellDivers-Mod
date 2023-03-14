@@ -140,6 +140,7 @@ dictionary vehicle_recycle_key = {
         {"ex_isu_152.vehicle",1500},
         {"hd_m5_32_hav.vehicle",1000},
         {"63type_107mm_rocket_launcher.vehicle",100},
+        {"jeep.vehicle",100},
 
         // 占位的
         {"666",-1}

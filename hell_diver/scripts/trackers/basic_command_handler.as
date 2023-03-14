@@ -71,6 +71,7 @@ class BasicCommandHandler : Tracker {
 		if (!startsWith(message, "/")) {
 			if ( ws == 1 ){
 				const XmlElement@ info = getPlayerInfo(m_metagame, senderId);
+				if(info is null){return;}
 				int cid = info.getIntAttribute("character_id");
 				// 直接替换手雷栏
 				_log("stratagems call exists? :" + (offensive_stratagems.exists(message)));

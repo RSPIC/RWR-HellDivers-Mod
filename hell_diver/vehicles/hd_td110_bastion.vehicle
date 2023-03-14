@@ -15,9 +15,9 @@ respawn_time="25"
 ai_pick_prevention_time="60"
 
 >
-
 	<tag name="metal_heavy" />
-	<tag name="apc" />
+	<tag name="tank" />
+	<tag name="heavy_combat" />
 	<tag name="any_tank" />
 
 	<tire_set offset="1.8 0.0 +3.0" radius="0.4" />
@@ -35,11 +35,11 @@ ai_pick_prevention_time="60"
 	/>
 
 	<modifier class="blast_range" value="-2.5" />
-	<modifier class="blast_damage" value="-25.0" />
+	<modifier class="blast_damage" value="-9.0" />
 
 	<physics 
-	max_health="80" 
-	blast_damage_threshold="25" 
+	max_health="150" 
+	blast_damage_threshold="0" 
 	blast_push_threshold="10"
 	mass="200.0" 
 	broken_mass="180"

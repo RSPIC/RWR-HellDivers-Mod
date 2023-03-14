@@ -30,7 +30,7 @@
 	  position="483.6 3 532.6"
 	  orientation="0 1 0 -0.5"
 	  instance_class="vehicle"
-	  instance_key="jeep.vehicle" />
+	  instance_key="bullseye1.vehicle" />
 
   <command
 	  class="create_instance"
@@ -38,7 +38,7 @@
 	  position="481.5 3 526.0"
 	  orientation="0 1 0 -0.5"
 	  instance_class="vehicle"
-	  instance_key="jeep.vehicle" />
+	  instance_key="bullseye2.vehicle" />
 <!--    
   <command
 	  class="create_instance"
@@ -46,7 +46,63 @@
 	  position="540 0 541"
 	  orientation="0 1 0 -0.5"
 	  instance_class="vehicle"
-	  instance_key="radio_jammer.vehicle" />         
+	  instance_key="radio_jammer.vehicle" /> 
+    
+  <command
+	  class="create_instance"
+	  faction_id="1"
+	  position="509 0 574"
+	  orientation="0 1 0 -0.5"
+	  instance_class="vehicle"
+	  instance_key="tut_sign_stab.vehicle" />  
+    
+  <command
+	  class="create_instance"
+	  faction_id="1"
+	  position="533 0 550"
+	  orientation="0 1 0 -1.5"
+	  instance_class="vehicle"
+	  instance_key="tut_sign_call.vehicle" />    
+    
+  <command
+	  class="create_instance"
+	  faction_id="1"
+	  position="520 0 563"
+	  orientation="0 1 0 -1.5"
+	  instance_class="vehicle"
+	  instance_key="tut_sign_map.vehicle" />             
+
+  <command
+	  class="create_instance"
+	  faction_id="1"
+	  position="498 0 546"
+	  orientation="0 1 0 -0.5"
+	  instance_class="vehicle"
+	  instance_key="tut_sign_accuracy.vehicle" /> 
+    
+  <command
+	  class="create_instance"
+	  faction_id="1"
+	  position="507 0 532"
+	  orientation="0 1 0 -1.5"
+	  instance_class="vehicle"
+	  instance_key="tut_sign_cover.vehicle" />  
+    
+  <command
+	  class="create_instance"
+	  faction_id="1"
+	  position="498 0 561"
+	  orientation="0 1 0 -0"
+	  instance_class="vehicle"
+	  instance_key="tut_sign_shooting.vehicle" />  
+    
+  <command
+	  class="create_instance"
+	  faction_id="1"
+	  position="529 0 567"
+	  orientation="0 1 0 -2.5"
+	  instance_class="vehicle"
+	  instance_key="tut_sign_control.vehicle" />              
 -->                    
 
 </commands>

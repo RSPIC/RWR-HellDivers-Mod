@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <vehicle name="Anti-Personnel Barrier" 
 key="hd_apb_mk3.vehicle" 
-map_view_atlas_index="51" 
+map_view_atlas_index="-1" 
 time_to_live_unsteerable="1" 
 time_to_live="360" 
 should_be_destroyed="0" 
@@ -22,7 +22,7 @@ allow_ai_to_use="0"
 	<control max_speed="1" acceleration="1" max_reverse_speed="1.0" max_rotation="1.0" max_water_depth="2" />
 
 	<physics 
-	max_health="50" 
+	max_health="300" 
 	mass="60" 
 	extent="4.5 0.0 0.5" 
 	offset="0 0.0 0" 

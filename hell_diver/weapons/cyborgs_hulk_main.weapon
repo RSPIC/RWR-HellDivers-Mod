@@ -135,7 +135,7 @@ radius="1"
 
 		<result class="blast" radius="1.0" damage="1.5" push="0.2" decal="0" character_state="death"  />
 		<!-- 40x0.07time -->
-		<!-- damage2vehical 0.5x40=20 -->
+		<!-- damage2vehical 1.5x40=60 -->
 
 		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->

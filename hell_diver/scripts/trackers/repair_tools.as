@@ -30,10 +30,10 @@ class repair_tools : Tracker {
 	// --------------------------------------------
 	protected void handleResultEvent(const XmlElement@ event) {
 		string EventKeyGet = event.getStringAttribute("key");
-        //_log("projectile event key= " + EventKeyGet);
-        //_log("projectile event key index= " + int(repairtool_key[EventKeyGet]));
-		//_log("repairtool_key.exists?: "+ (offensive_stratagems.exists(EventKeyGet)));
-		//_log("repairtool_key.float result?: "+float(repairtool_key[EventKeyGet]));
+        _log("projectile event key= " + EventKeyGet);
+        _log("projectile event key index= " + int(repairtool_key[EventKeyGet]));
+		_log("repairtool_key.exists?: "+ (offensive_stratagems.exists(EventKeyGet)));
+		_log("repairtool_key.float result?: "+float(repairtool_key[EventKeyGet]));
         if (float(repairtool_key[EventKeyGet])!=0){
 			_log("handing handleResultEvent:repair_tools");
 			int characterId = event.getIntAttribute("character_id");
@@ -58,8 +58,8 @@ class repair_tools : Tracker {
 						//获取载具位置并计算与落点的相对距离
 						Vector3 vehiclePos = stringToVector3(vehicles[i].getStringAttribute("position"));
 						float distance = get2DMAxAxisDistance(1,vehiclePos,t_pos);
-						//_log("target position: "+ event.getStringAttribute("position"));
-						//_log("vehicles position: "+ vehicles[i].getStringAttribute("position"));
+						_log("target position: "+ event.getStringAttribute("position"));
+						_log("vehicles position: "+ vehicles[i].getStringAttribute("position"));
 						_log("distance axis min in target&vehicles: "+ distance);
 						//measure_square_area(m_metagame,t_pos,Vector3(2.0,0,2.0),"red");
 						float radius = 3.0;
@@ -71,7 +71,7 @@ class repair_tools : Tracker {
 							float vehicleMaxHealth = vehicleInfo.getFloatAttribute("max_health");
 							string vehiclekey = vehicleInfo.getStringAttribute("key");
 							_log("handing projectile_recycle:vehiclekey: " + vehiclekey);
-							//_log("execute repair,is repairable?: "+ !(vehicle_repair_deny_key.exists(vehiclekey)));
+							_log("execute repair,is repairable?: "+ !(vehicle_repair_deny_key.exists(vehiclekey)));
 							if(!(vehicle_repair_deny_key.exists(vehiclekey))){
 								if(vehicleHealth <= 0){continue;}     //排除空节点载具
 								float rate = float(repairtool_key[EventKeyGet]);
@@ -87,6 +87,7 @@ class repair_tools : Tracker {
 								set_health_vehicle(m_metagame,vehicleId,float(health));
 								spawnStaticProjectile(m_metagame,"hd_vehicle_recycle_working.projectile",vehiclePos,characterId,factionId);
 								count_repair_time++;
+								if(count_repair_time==2){return;}//最多只修复两辆
 								continue;
 							}else{
 								//对象不可修复

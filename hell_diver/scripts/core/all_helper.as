@@ -243,7 +243,7 @@ void set_health_vehicle(Metagame@ metagame,int vehicle_id,float HealthNum){
 	XmlElement c ("command");
 	c.setStringAttribute("class", "update_vehicle");
 	c.setIntAttribute("id", vehicle_id); 
-	c.setIntAttribute("health", HealthNum); 
+	c.setIntAttribute("health", int(HealthNum)); 
 	metagame.getComms().send(c);
 }
 //为输入区域定位

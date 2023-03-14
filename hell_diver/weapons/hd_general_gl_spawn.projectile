@@ -3,7 +3,7 @@
 class="grenade" 
 name="General GL Spawn projectile" 
 key="hd_general_gl_spawn.projectile" 
-slot="0"
+slot="1"
 pulldown_in_air="6.0"
 on_ground_up="0 1 0"
 use_time_to_live="1"
@@ -15,6 +15,7 @@ blast_damage_threshold="50"
 time_to_live_out_in_the_open="0"
 player_death_drop_owner_lock_time="0"
 >
+    <tag name="rocket"/>
 	<!--
 			offset"x y z 生成位置偏差"
 				PS"水平面随机生成位置 竖直面随机生成位置"
