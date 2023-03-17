@@ -16,7 +16,7 @@ allow_ai_to_use="0"
 	<tire_set offset="0.2 0 -0.2" radius="0.1" />
 	<modifier class="blast_damage" value="-900" />
 
-	<control max_speed="1.0" acceleration="1" max_reverse_speed="1.0" max_rotation="1.0" max_water_depth="4" />
+	<control max_speed="1.0" acceleration="1" max_reverse_speed="1.0" max_rotation="1.0" max_water_depth="5" />
 
 	<physics max_health="100.0" 
 	mass="10000.0" 

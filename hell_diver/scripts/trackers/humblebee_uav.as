@@ -70,13 +70,14 @@ class UAVdrone : Tracker {
 					for (uint i = 0; i < UAVdroneTargets.length(); ++i){
 						array<const XmlElement@>@ vehicles = getVehicles(m_metagame, f, UAVdroneTargets[i].m_key);
 						for (uint j = 0; j < vehicles.length(); ++j){
-							const XmlElement@ vehicle = getVehicleInfo(m_metagame, vehicles[j].getIntAttribute("id"));
+							int vehicleId = vehicles[j].getIntAttribute("id");
+							const XmlElement@ vehicle = getVehicleInfo(m_metagame,vehicleId);
 							if (vehicle !is null) {
 								float health = vehicle.getFloatAttribute("health");
 								if (health > 0.0) {
 									int markerId = vehicles[j].getIntAttribute("id") + 7000;
 									string position = vehicles[j].getStringAttribute("position");
-									
+									//set_spotting(m_metagame,vehicleId,0);
 									//collecting marker ids for removal later
 									m_markers.insertLast(markerId);
 									

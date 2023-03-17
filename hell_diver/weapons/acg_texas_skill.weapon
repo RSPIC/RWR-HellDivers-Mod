@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>	
 <weapon 
 drop_count_factor_on_death="0" 
-drop_count_factor_on_player_death="0"
-time_to_live_out_in_the_open="0"
-player_death_drop_owner_lock_time="0"
+drop_count_factor_on_player_death="1.0"
+time_to_live_out_in_the_open="300"
+player_death_drop_owner_lock_time="300" 
 key="acg_texas_skill.weapon" 
 on_ground_up="0 0 1" 
 radius="1"
@@ -114,53 +114,7 @@ radius="1"
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="2" can_be_detected_by_footmen="1" 
 	time_to_live="1.5" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.5" name="Texas"> 
-	
-		<!--
-		<result class="blast" radius="6.8" damage="0.2" push="0" decal="0" character_state="death"  />
-		<result class="spawn" instance_class="projectile" instance_key="rx1_railgun_ap.projectile" 
-		min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
-			offset"x y z 生成位置偏差" 
-			position_spread="水平面随机生成位置 竖直面随机生成位置" 
-			direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
-		-->
-		<result class="spawn" instance_class="grenade" instance_key="acg_texas_skill_damage.projectile" 
-		min_amount="15" max_amount="20" offset="0 0 0" position_spread="4 10" direction_spread="0.0 0.5" />
-		<trigger class="time" time_to_live="0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
-		<rotation class="motion" /><!--参数：motion、random-->
-		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
-		<!-- 10x15~20 -->
-
-		<!--命中音效-->
-		<sound class="result" key="other" fileref="texas_skill_hit.wav" pitch_variety="0.03" volume="0.7" />
-
-
-		<effect class="result" key="terrain" ref="texas_polygon_expand" lighting="0" />
-  	  	<effect class="result" key="terrain" ref="texas_polygon_fix" lighting="0" />
-   	 	<effect class="result" key="terrain" ref="texas_center_crossline_1" lighting="0" />
-		<effect class="result" key="terrain" ref="texas_center_crossline_2" lighting="0" />
-		<effect class="activated" ref="texas_activated_center" lighting="0" />
-
-		<effect class="result" type="splat_map" surface_tag="" size="2.0" atlas_index="4" layer="0" />
-
-		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
-		<sound class="result" key="terrain" copy="other" />
-		<sound class="result" key="static_object" copy="other" />
-		<sound class="result" key="vehicle" copy="other" />
-		<sound class="result" key="character" copy="other" />
-		<sound class="result" key="shield" copy="other" />
-		<effect class="result" key="other" copy="terrain"/>
-		<effect class="result" key="static_object" copy="terrain" />
-		<effect class="result" key="character" copy="terrain" />
-		<effect class="result" key="shield" copy="terrain" />			
-		<effect class="result" key="vehicle" copy="terrain" />			
-		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
-		
-		<!--尾迹组-->
-		<trail probability="1" key=""/>	
+		<result class="notify_script" key="acg_texas_skill" />
     </projectile>
 	
 	<!--枪口特效-->

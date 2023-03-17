@@ -16,6 +16,9 @@ dictionary callLaunchIndex = {
     //反人员铁丝网
     {"spawn_hd_apb_mk3.call",2},
 
+    //四人空投
+    {"hd_sos_beacom.call",3},
+
     // 空空投
     {"",0}
 };
@@ -68,7 +71,7 @@ class call_event : Tracker {
                         }
                         break;
                     }
-                    case 2:{
+                    case 2:{//铁丝网
                         const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
                         if (character !is null) {
                             Vector3 t_pos = stringToVector3(position);
@@ -93,6 +96,36 @@ class call_event : Tracker {
 
                         }
                         break;
+                    }
+                    case 3:{//四人空投
+                        const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                        if (character !is null) {
+                            Vector3 t_pos = stringToVector3(position);
+                            Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));
+                            float distance = getAimUnitDistance(1,c_pos,t_pos);
+                            if(distance >= 40){
+                                spawnStaticProjectile(m_metagame,"hd_effect_call_deny_distance.projectile",t_pos,characterId,factionId);
+                                GiveRP(m_metagame,characterId,400);
+                                return;
+                            }
+                            float strike_rand = 8;
+                            for(int j=1;j<=4;j++)
+                            {
+                                float rand_x = rand(-strike_rand,strike_rand);
+                                float rand_y = rand(-strike_rand,strike_rand);
+                                float rand_z = rand(50,80);
+                                spawnStaticProjectile(m_metagame,"hd_hellpod_call.projectile",t_pos.add(Vector3(rand_x,rand_z,rand_y)),characterId,factionId);
+                            }
+                            array<string> sound_files = {
+                                "hd_helldivers_coming.wav",
+                                "hd_helldivers_coming_1.wav",
+                                "hd_helldivers_coming_2.wav",
+                                "hd_helldivers_coming_3.wav",
+                                "hd_helldivers_coming_4.wav",
+                                "hd_helldivers_coming_5.wav"
+                                };
+                            playRandomSoundArray(m_metagame,sound_files,factionId,c_pos);
+                        }
                     }
                         
                     default:

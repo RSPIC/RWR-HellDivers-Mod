@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<call 
+name="Emergency Beacon" 
+key="hd_sos_beacom.call"
+radio_view_text="Emergency Beacon[4 Divers Support]" 
+      initiation_comment1="Divers request for Reinforce!"
+      acknowledge_comment="Copy, 4 Divers is in the air."
+      acknowledge_time="3"
+      launch_comment="Divers on gound."
+	notify_metagame="1">
+     
+      <round 
+            launch_time="2"
+            spawn_time="4">
+      </round>
+
+    <hud_icon filename="hd_emergency_beacon.png" />
+    <inventory encumbrance="0.0" price="400.0" />
+
+</call>

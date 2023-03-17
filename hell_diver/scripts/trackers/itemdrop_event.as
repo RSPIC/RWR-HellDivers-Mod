@@ -9,7 +9,9 @@
 #include "all_parameter.as"
 
 //Author: RST 
-
+//弹药箱的补给脚本
+//部分补给会扣钱
+//禁用物品：指定物品无法装入背包
 	// --------------------------------------------
 //触发补给key
 dictionary resupply_key = {
@@ -71,13 +73,68 @@ dictionary resupply_cost = {
         // 占位的
         {"666",-1}
 };
+//禁止背包携带物品
+dictionary banned_backpack_item = {
+        // 空
+        {"",-1},
+
+        // Offensive 攻击性支援
+        {"hd_offensive_vindicator_dive_bomb_mk3.projectile","projectile"},
+        {"hd_offensive_airstrike_mk3.projectile","projectile"},
+        {"hd_offensive_laser_strike_mk3.projectile","projectile"},
+        {"hd_offensive_shredder_missile_strike_mk3.projectile","projectile"},
+        {"hd_offensive_close_air_support_mk3.projectile","projectile"},
+        {"hd_offensive_thunderer_barrage_mk3.projectile","projectile"},
+        {"hd_offensive_strafing_run_mk3.projectile","projectile"},
+        {"hd_offensive_static_field_conductors_mk3.projectile","projectile"},
+        {"hd_offensive_sledge_precision_artillery_mk3.projectile","projectile"},
+        {"hd_offensive_railcannon_strike_mk3.projectile","projectile"},
+        {"hd_offensive_missile_barrage_mk3.projectile","projectile"},
+        {"hd_offensive_incendiary_bombs_mk3.projectile","projectile"},
+        {"hd_offensive_heavy_strafing_run_mk3.projectile","projectile"},
+
+        // defensive 防御性支援
+        {"hd_at_mine_mk3.projectile","projectile"},
+        {"hd_airdropped_stun_mine_mk3.projectile","projectile"},
+        {"hd_at47_mk3_call.projectile","projectile"},
+        {"hd_amg_11_mk3_call.projectile","projectile"},
+        {"hd_arx_34_mk3_call.projectile","projectile"},
+        {"hd_agl8_mk3_call.projectile","projectile"},
+        {"hd_aac6_tesla_mk3_call.projectile","projectile"},
+
+        // special 特殊支援
+        {"hd_nux_223_hellbomb.projectile","projectile"},
+        {"hd_hellpod.projectile","projectile"},
+
+        // Supply 普通支援
+        {"hd_m5_apc_call.projectile","projectile"},
+        {"hd_m5_32_hav_call.projectile","projectile"},
+        {"hd_td110_bastion_call.projectile","projectile"},
+        {"hd_mc109_motor_call.projectile","projectile"},
+        {"hd_resupply.projectile","projectile"},
+        {"hd_exo44_mk3.projectile","projectile"},
+        {"hd_exo48_mk3.projectile","projectile"},
+        {"hd_exo51_mk3.projectile","projectile"},
+
+        {"hd_ammo_supply_box.projectile","projectile"},
+
+		//机甲
+        {"hd_exo44_walker_mk3_mg.weapon","weapon"},
+        {"hd_exo44_walker_mk3_missile.weapon","weapon"},
+        {"hd_exo48_obsidian_mk3_cannon.weapon","weapon"},
+        {"hd_exo51_lumberer_mk3_cannon.weapon","weapon"},
+        {"hd_exo51_lumberer_mk3_flame.weapon","weapon"},
+
+        // 占位的
+        {"666",-1}
+};
 
 
-class resupply : Tracker {
+class itemdrop_event : Tracker {
 	protected Metagame@ m_metagame;
 
 	// --------------------------------------------
-	resupply(Metagame@ metagame) {
+	itemdrop_event(Metagame@ metagame) {
 		@m_metagame = @metagame;
 	}
 
@@ -98,6 +155,9 @@ class resupply : Tracker {
 		int itemClass = event.getIntAttribute("item_class");
 		int playerId = event.getIntAttribute("player_id");
 		int containerId = event.getIntAttribute("target_container_type_id");
+		const XmlElement@ owner = getCharacterInfo(m_metagame, characterId);
+		if (owner is null) {return;}
+		int factionId = owner.getIntAttribute("faction_id");
 		//containerId = 0(地面) 1(军械库) 2（背包） 3（仓库）
 		//itemClass = 0(主、副武器) 1（投掷物） 3（护甲、战利品）
         _log("handleItemDropEvent:EventKeyGet= " + EventKeyGet);
@@ -108,6 +168,7 @@ class resupply : Tracker {
         _log("handleItemDropEvent:playerId= " + playerId);
         _log("handleItemDropEvent:containerId= " + containerId);
 
+		//再补给
 		if (int(resupply_key[itemKey])!=0){
 			switch(int(resupply_key[itemKey]))
 			{
@@ -119,6 +180,10 @@ class resupply : Tracker {
 						//if(equipKey != itemKey ){break;}//再次检查
 						deleteItemInBackpack(m_metagame,characterId,"projectile",itemKey);
 						_log("success delete supply item itemKey: "+ itemKey);
+						//恢复玩家护甲,播放拾取音效
+						healCharacter(m_metagame,characterId,20);
+						playSoundAtLocation(m_metagame,"hd_mg94_mag_out.wav",factionId,position);
+						
 						for(int i=1;i<=4;i++){
 							equipKey = getDeadPlayerEquipmentKey(m_metagame,characterId,i);
 							_log("ready to add item key= "+equipKey);
@@ -164,6 +229,28 @@ class resupply : Tracker {
 						}
 					}
 				}
+			}
+		}
+
+		//检测物品是否存起来了,删除
+		if(string(banned_backpack_item[itemKey]) == "" ){
+			_log("ban item key exist?:" + "false");
+		}
+		if(string(banned_backpack_item[itemKey]) != ""){
+			//管理可以存
+			string sender = event.getStringAttribute("player_name");
+			int senderId = event.getIntAttribute("player_id");
+			_log("sender"+sender);
+			_log("senderId"+senderId);
+			if (m_metagame.getAdminManager().isAdmin(sender, senderId)){
+				_log("Is admin, exit ban item");
+				return;}
+			if(containerId == 2 ){//装备进背包
+				_log("delete banned item in backpack");
+				string itemtype = string(banned_backpack_item[itemKey]);
+				_log("itemtype"+itemtype);
+				deleteItemInBackpack(m_metagame,characterId,itemtype,itemKey);
+				_log("success delete supply item itemKey: "+ itemKey);
 			}
 		}
     }

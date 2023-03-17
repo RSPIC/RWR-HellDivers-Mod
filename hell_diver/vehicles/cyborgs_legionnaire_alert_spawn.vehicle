@@ -65,12 +65,12 @@ time_to_live_unsteerable="3"
 	
 	<event>
 		<trigger class="destroy" />
-  	<result class="spawn" instance_class="vehicle" instance_key="cyborgs_spawn_warlord_model.vehicle" min_amount="0" max_amount="2" offset="0 0 0" position_spread="8 40" direction_spread="0 1" />
+  	<result class="spawn" instance_class="vehicle" instance_key="cyborgs_spawn_warlord_model.vehicle" min_amount="1" max_amount="2" offset="0 0 0" position_spread="8 40" direction_spread="0 1" />
 	</event>
 	
 	<event>
 		<trigger class="destroy" />
-  	<result class="spawn" instance_class="vehicle" instance_key="cyborgs_spawn_butcher_model.vehicle" min_amount="1" max_amount="2" offset="0 0 0" position_spread="8 40" direction_spread="0 1" />
+  	<result class="spawn" instance_class="vehicle" instance_key="cyborgs_spawn_butcher_model.vehicle" min_amount="1" max_amount="4" offset="0 0 0" position_spread="8 40" direction_spread="0 1" />
 	</event>
 	
 	

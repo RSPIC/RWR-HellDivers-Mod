@@ -21,7 +21,7 @@ void main(dictionary@ inputData) {
 	array<string> overlays = {
                 "media/packages/hell_diver"
         };
-        settings.m_overlayPaths = overlays;
+    //settings.m_overlayPaths = overlays;
 
 	MyGameMode metagame(settings);
 

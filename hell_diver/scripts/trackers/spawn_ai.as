@@ -133,6 +133,9 @@ class spawn_ai : Tracker {
 			}
 		}
 		
+		
+
+
 		switch(int(SpawnAiIndex[EventKeyGet]))
 		{
 			case 0:{//空

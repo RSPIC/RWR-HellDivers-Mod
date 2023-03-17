@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectile class="grenade" name="Magic" slot="0" pulldown_in_air="0.1" key="acg_megumin_wand_float_damage.projectile"
+can_be_detected_by_footmen="0" can_be_disarmed="0" >
+	<rotation class="motion" />	
+
+	<result class="blast" radius="6" damage="15" decal="0" push="0.5" character_state="wound" faction_compare="not_equal"/>
+    <trigger class="impact" time_to_live="0.05" />
+    <collision class="sticky" />
+
+    <commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+        <effect class="activated" ref="wand_activated_fire_smoke" />   
+        <effect class="result" key="terrain" ref="wand_result_fire_blast" /> 
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+
+        <sound class="result" key="other" fileref="wand_aa_hit.wav" pitch_variety="0.03" volume="1.0" />
+		
+        <sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+
+    <model mesh_filename="" />
+
+</projectile>

@@ -52,9 +52,6 @@
 <weapon key="hd_apb_mk3.weapon" /><!--铁丝网-->
 
 <!--投掷物/信标-->
-<projectile key="hd_at_mine_mk3.projectile" /><!--AT Mine MK3反载具地雷-->
-<projectile key="hd_airdropped_stun_mine_mk3.projectile" /><!--Stun Mine MK3眩晕地雷-->
-<projectile key="hd_hellpod.projectile" /><!--空投舱-->
 <projectile key="hd_m5_apc_call.projectile" /><!--M5 ACP 载具-->
 <projectile key="hd_m5_32_hav_call.projectile" /><!--M5-32 反坦克步兵车-->
 <projectile key="hd_td110_bastion_call.projectile" /><!--堡垒 坦克-->
@@ -81,5 +78,6 @@
 <call key="spawn_hd_apb_mk3.call" />
 <call key="spawn_hd_resupply.call" />
 <call key="humblebee_uav_drone.call" />
+<call key="hd_sos_beacom.call" />
 
 </resources>

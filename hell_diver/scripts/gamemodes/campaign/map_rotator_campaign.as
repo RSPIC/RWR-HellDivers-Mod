@@ -458,6 +458,7 @@ class MapRotatorCampaign : MapRotatorInvasion {
 			return;
 		}
 		const XmlElement@ element = event.getFirstElementByTagName("player");
+		if(element is null){return;}
 		//_log("handlePlayerSpawnEvent:getname:" + element.getStringAttribute("character_id"));
 		//_log("handlePlayerSpawnEvent:getname:" + element.getStringAttribute("player_id"));
 		//_log("handlePlayerSpawnEvent:getname:" + element.getStringAttribute("faction_id"));
@@ -469,12 +470,14 @@ class MapRotatorCampaign : MapRotatorInvasion {
 		string name = element.getStringAttribute("name");
 
 		const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+		if(character is null){return;}
 		Vector3 c_position = stringToVector3(character.getStringAttribute("position"));
 		//_log("handlePlayerSpawnEvent:getname:" + character.getStringAttribute("position"));
 
 		spawnStaticProjectile(m_metagame,"hd_effect_target_aim.projectile",c_position,characterId,factionId);
 		spawnStaticProjectile(m_metagame,"hd_sound_divers_coming_bgm.projectile",c_position,characterId,factionId);
 		spawnStaticProjectile(m_metagame,"hd_sound_divers_coming.projectile",c_position,characterId,factionId);
+		spawnStaticProjectile(m_metagame,"hd_effect_hellpod_dropping_smoke.projectile",c_position,characterId,factionId);
 		
 		sendFactionMessage(m_metagame,factionId,"Divers "+name+" Now on ground.");
 

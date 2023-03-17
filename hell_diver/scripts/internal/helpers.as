@@ -380,8 +380,13 @@ class Vector3 {
 
 // --------------------------------------------
 Vector3 stringToVector3(string s) {
+	_log("stringToVector3 length: "+ s.length());
 	Vector3 d;
 	array<string> strings = s.split(" ");
+	if(strings is null){
+		_log("string is null");
+		return Vector3(0,0,0);
+	}
 	for (int i = 0; i < 3; ++i) {
 		d.m_values[i] = parseFloat(strings[i]);
 	}

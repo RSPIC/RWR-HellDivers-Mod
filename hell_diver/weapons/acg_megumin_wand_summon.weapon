@@ -49,12 +49,15 @@ key="acg_megumin_wand_summon.weapon"
     <animation state_key="next_in_chain_out" animation_key="" />
      
     <sound key="fire" fileref="wand_hh_reload.wav" pitch_variety="0.00"  volume="2" />
+    <!-- <sound key="fire" fileref="" pitch_variety="0.00"  volume="0" /> -->
 
-    <sound key="cycle" fileref="sniper_clip_out_1.wav" pitch_variety="0.00"  volume="0.7"/>
-    <sound key="magazine_out" fileref="sniper_clip_out_1.wav" />
+    <sound key="cycle" fileref="potion_open.wav" pitch_variety="0.00"  volume="4"/>
+    <sound key="magazine_out" fileref="potion_open.wav" pitch_variety="0.00"  volume="4"/>
     <sound key="magazine_in" fileref="sniper_clip_in_1.wav" />
     <sound key="cycle_out" fileref="sniper_cycle_out_1.wav" />
     <sound key="cycle_in" fileref="sniper_cycle_in_1.wav" />
+    <sound key="effect" fileref="drink_potion.wav" pitch_variety="0.00"  volume="5"  />
+    <control key="effect" value="1" />
 
     <sound class="impact" fileref="rifle_drop.wav" />
 
@@ -117,6 +120,6 @@ key="acg_megumin_wand_summon.weapon"
     <stance state_key="over_wall" accuracy="1" />
 
     <modifier class="speed" value="-2" />    
-    <modifier class="detectability" value="-0.75" />
+    <modifier class="detectability" value="-1" />
 	 
 </weapon>

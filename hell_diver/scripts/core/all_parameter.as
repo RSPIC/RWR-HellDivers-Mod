@@ -75,6 +75,13 @@ dictionary projectile_eventkey = {
         {"vehicle_recycle",41},
         {"upgrade",42},
 
+        //技能
+        {"acg_texas_skill",43},
+
+        //爆裂魔法
+        {"wand_guiding_01",44},
+        {"acg_megumin_wand_float",45},
+
         // 占位的
         {"666",-1}
 };
@@ -115,7 +122,7 @@ dictionary offensive_stratagems = {
 
         // Supply 普通支援
         {"sdsaad","hd_m5_apc_call"},
-        {"sdsaws","hd_m5_32_hav_call"},
+        {"sdwaws","hd_m5_32_hav_call"},
         {"sdsawd","hd_td110_bastion_call"},
         {"sdsaaw","hd_mc109_motor_call"},
         {"sswd","hd_resupply"},

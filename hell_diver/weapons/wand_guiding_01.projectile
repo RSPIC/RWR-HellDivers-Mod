@@ -7,8 +7,10 @@ can_be_detected_by_driver="0"
 	<rotation class="motion" />	
     <trigger class="time" time_to_live="0.77" />
 	
-	<result class="spawn" instance_class="projectile" instance_key="wand_droping_02.projectile" 
-	min_amount="1" max_amount="1" offset="0 -35 0" position_spread="0 0" direction_spread="0 0" />
+	<!-- <result class="spawn" instance_class="projectile" instance_key="wand_droping_02.projectile" 
+	min_amount="0" max_amount="0" offset="0 -35 0" position_spread="0 0" direction_spread="0 0" /> -->
+
+    <result class="notify_script" key="wand_guiding_01" />
 
     <commonness value="0.0" can_respawn_with="0" in_stock="0"/>
     <sound class="result" key="terrain" copy="other" />
@@ -23,5 +25,5 @@ can_be_detected_by_driver="0"
 	
 
     <model mesh_filename="" />
-	
+		
 </projectile>

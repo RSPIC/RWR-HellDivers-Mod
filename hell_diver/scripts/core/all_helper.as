@@ -372,3 +372,39 @@ int getPlayerEquipmentAmount(const Metagame@ metagame, int characterId, uint slo
 	int amount = equipment[slot].getIntAttribute("amount");
 	return amount;
 }
+float getFlatPositionDistance(const Vector3@ pos1, const Vector3@ pos2) {
+	//_log("get_position_distance, pos1=" + $pos1[0] + ", " + $pos1[1] + ", " + $pos1[2] + ", pos2=" + $pos2[0] + ", " + $pos2[1] + ", " + $pos2[2]);
+	Vector3 d = pos1.subtract(pos2);
+
+	d.m_values[0] *= d.m_values[0];
+	d.m_values[2] *= d.m_values[2];
+
+	float result = sqrt(d.m_values[0] + d.m_values[2]);
+	return result;
+}
+
+void set_spotting(const Metagame@ metagame,int vehicleId,int factionId){
+	XmlElement command("command");
+	command.setStringAttribute("class", "set_spotting");
+	command.setIntAttribute("vehicle_id", vehicleId);
+	command.setIntAttribute("faction_id", factionId);
+	metagame.getComms().send(command);
+}
+
+void playSoundtrack(Metagame@ m_metagame,string filename) {
+	m_metagame.getComms().send(
+	"<command " +
+	" class='set_soundtrack' " + 
+	" enabled='1' " + 
+	" filename='" + filename + "'" + 
+	"</command>");
+}
+
+void stopSoundtrack(Metagame@ m_metagame,string filename) {
+	m_metagame.getComms().send(
+	"<command " +
+	" class='set_soundtrack' " + 
+	" enabled='0' " + 
+	" filename='" + filename + "'" + 
+	"</command>");
+}

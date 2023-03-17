@@ -55,7 +55,7 @@ class projectile_event : Tracker {
                 int characterId = event.getIntAttribute("character_id");
 				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
                 if (character is null) {break;}
-                
+                _log("execute hd_superearth_heavy_strafe_mk3");
                 Vector3 pos1 = stringToVector3(event.getStringAttribute("position"));
                 Vector3 pos2 = stringToVector3(character.getStringAttribute("position"));
                 int factionid = character.getIntAttribute("faction_id");
@@ -309,7 +309,7 @@ class projectile_event : Tracker {
                             int count_repair_time = 0; //计算成功维修次数
                             int count_repair_failed_time = 0; //计算失败维修次数
                             bool include_self = false;
-                            for(int fid = 0 ; fid <= AllFactions.size() ; fid++ ){
+                            for(uint fid = 0 ; fid <= AllFactions.size() ; fid++ ){
                                 array<const XmlElement@>@ vehicles = getAllVehicles(m_metagame, fid);
                                 if (vehicles is null) return;
                                 for (uint i = 0; i < vehicles.length(); ++i) {
@@ -449,6 +449,71 @@ class projectile_event : Tracker {
                                 }
                             }
                         }
+                    }
+                }
+                break;
+            }
+
+            case 43: { //德克萨斯
+                int characterId = event.getIntAttribute("character_id");
+                const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                if (character !is null) {
+                    Vector3 position = stringToVector3(character.getStringAttribute("position"));
+                    int factionId = character.getIntAttribute("faction_id");
+                    int playerId = character.getIntAttribute("player_id");
+                    const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
+                    if (player is null) {break;}
+                    Vector3 aimPosition = stringToVector3(player.getStringAttribute("aim_target"));
+                
+                    float distance = getFlatPositionDistance(position,aimPosition);
+                    if (distance > 45.0f) {
+                        spawnStaticProjectile(m_metagame,"hd_effect_call_deny_distance.projectile",aimPosition,characterId,factionId);
+                    }else{
+                        spawnStaticProjectile(m_metagame,"acg_texas_skill_spawn.projectile",aimPosition,characterId,factionId);
+                    }
+                }
+                break;
+            }
+
+            case 44: { //wand_guiding_01
+                int characterId = event.getIntAttribute("character_id");
+                const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                if (character !is null) {
+                    int is_dead = character.getIntAttribute("dead");
+                    if(is_dead == 1){break;}
+                    Vector3 position = stringToVector3(character.getStringAttribute("position"));
+                    int factionId = character.getIntAttribute("faction_id");
+                    int playerId = character.getIntAttribute("player_id");
+                    const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
+                    if (player is null) {break;}
+                    Vector3 aimPosition = stringToVector3(player.getStringAttribute("aim_target"));
+                    spawnStaticProjectile(m_metagame,"wand_droping_02.projectile",aimPosition,characterId,factionId);
+                }
+                break;
+            }
+            case 45: { //acg_megumin_wand_float
+                int CID = event.getIntAttribute("character_id");
+                const XmlElement@ character = getCharacterInfo(m_metagame, CID);
+                if (character !is null) {
+                    int is_dead = character.getIntAttribute("dead");
+                    if(is_dead == 1){break;}
+                    Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));
+                    int FID = character.getIntAttribute("faction_id");
+                    int playerId = character.getIntAttribute("player_id");
+                    const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
+                    if (player is null) {break;}
+                    Vector3 aim_pos = stringToVector3(player.getStringAttribute("aim_target"));
+                    string key = "acg_megumin_wand_float_damage.projectile";
+                    c_pos = c_pos.add(Vector3(0,30,0));
+                    float strike_rand = 2.5;
+                    float speed_internal = 3;
+                    for(int j=1;j<=5;j++)
+                    {
+                        float rand_x = rand(-strike_rand,strike_rand);
+                        float rand_y = rand(-strike_rand,strike_rand);
+                        c_pos = c_pos.add(Vector3(rand_x,0,rand_y));
+                        aim_pos = aim_pos.add(Vector3(rand_x,0,rand_y));
+                    CreateDirectProjectile(m_metagame,c_pos,aim_pos,key,CID,FID,20+j*speed_internal);
                     }
                 }
                 break;

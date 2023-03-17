@@ -42,8 +42,9 @@
 #include "projectile_event.as"
 #include "call_event_handler.as"
 #include "repair_tools.as"
-#include "resupply.as"
+#include "itemdrop_event.as"
 #include "humblebee_uav.as"
+#include "kill_reward.as"
 
 
 
@@ -335,8 +336,10 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		addTracker(RangeFinder(this));   
 		addTracker(call_event(this));    
 		addTracker(repair_tools(this));    
-		addTracker(resupply(this));    
+		addTracker(itemdrop_event(this));    
 		addTracker(UAVdrone(this));    
+		addTracker(kill_reward(this));    
+		//addTracker(scheduled_task(this));    
 	}
 
 	protected void setupDisableRadioAtMatchOver() {

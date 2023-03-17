@@ -167,6 +167,13 @@
 	<soldier name="default" spawn_score="0.0">
 		<character filename="helldivers_default_chat.character">
 
+			<parameter class="detectability_prone" value="0.4" />
+			<parameter class="detectability_wounded" value="0.4" />
+			<parameter class="detectability_crouching" value="0.6" />
+			<parameter class="detectability_crouch_moving" value="0.75" />
+			<parameter class="detectability_walking" value="0.95" />
+			<parameter class="detectability_still" value="0.90" />
+			<parameter class="detectability_running" value="1" />
 
 		</character>
 		<ai filename="default_acg.ai" />
@@ -285,7 +292,7 @@
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources>
 			<weapon key="hd_amg_11_mk3.weapon" /><!--机枪-->
-			<carry_item key="general_vest.carry_item" /><!--护甲-->
+			<carry_item key="anti_melee_vest.carry_item" /><!--护甲-->
 		</resources>
 		<ai filename="hd_amg11.ai" />
 		<character filename="hd_amg11.character"/>
@@ -312,7 +319,7 @@
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources>
 			<weapon key="hd_arx_34_mk3.weapon" /><!--轨道炮-->
-			<carry_item key="general_vest.carry_item" /><!--300层护甲-->
+			<carry_item key="anti_melee_vest.carry_item" /><!--300层护甲-->
 		</resources>
 		<ai filename="hd_amg11.ai" >
 			<parameter class="accuracy_offset" value="1.0" />

@@ -276,9 +276,7 @@
 			<weapon key="hd_mls4x_commando_mk3_ai.weapon" /><!--突击队跟踪导弹-->
 			<weapon key="hd_eta17_mk3_ai.weapon" /><!--抛弃式反战车火箭-->
 
-			<projectile key="hd_at_mine_mk3.projectile" /><!--AT Mine MK3反载具地雷-->
-			<projectile key="hd_amg_11_mk3_call.projectile" /><!--自动机枪炮台-->
-			<projectile key="hd_arx_34_mk3_call.projectile" /><!--自动轨道炮炮台-->
+			<projectile key="hd_airdropped_stun_mine_mk3.projectile" />	<!--眩晕雷-->
 		</resources>
 
 		<attribute_config class="xp">
@@ -307,7 +305,7 @@
 
 			<weapon key="hd_rl112_recoilless_rifle_mk3_ai.weapon" /><!--无后坐力反坦克炮-->
 
-			<projectile key="hd_airdropped_stun_mine_mk3_stun.projectile" />	<!--眩晕雷-->
+			<projectile key="hd_airdropped_stun_mine_mk3.projectile" />	<!--眩晕雷-->
 		</resources>
 
 		<attribute_config class="xp">
@@ -378,7 +376,7 @@
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources>
 			<weapon key="hd_amg_11_mk3.weapon" /><!--机枪-->
-			<carry_item key="general_vest.carry_item" /><!--护甲-->
+			<carry_item key="anti_melee_vest.carry_item" /><!--护甲-->
 		</resources>
 		<ai filename="hd_amg11.ai" />
 		<character filename="hd_amg11.character"/>
@@ -405,7 +403,7 @@
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources>
 			<weapon key="hd_arx_34_mk3.weapon" /><!--轨道炮-->
-			<carry_item key="general_vest.carry_item" /><!--300层护甲-->
+			<carry_item key="anti_melee_vest.carry_item" /><!--300层护甲-->
 		</resources>
 		<ai filename="hd_amg11.ai" >
 			<parameter class="accuracy_offset" value="1.0" />

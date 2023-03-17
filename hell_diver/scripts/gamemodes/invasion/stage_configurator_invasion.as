@@ -209,19 +209,19 @@ class StageConfiguratorInvasion : StageConfigurator {
     addStage(setupStage16());         // map8_2 #3
     addStage(setupStage4());          // map7 #4
 	addStage(setupStage15());         // map1_2 #5
-    addStage(setupStage12());         // map14 #6
+    //addStage(setupStage12());         // map14 #6 脚本不运行
     addStage(setupStage10());         // map10 #7
     addStage(setupStage17());         // map17  #8  
     addStage(setupStage18());         // map13_2 #9
     addStage(setupStage3());          // map3 #10
     addStage(setupStage13());         // map16  #11  
-	//addStage(setupFinalStage1());     // map11 #12
+	//addStage(setupFinalStage1());     // map11 #12 潜行
     addStage(setupStage8());          // map8 #13
  	addStage(setupStage14());         // map6_2 #14
     addStage(setupStage2());          // map4 #15
-    addStage(setupStage5());          // map1 #16
+    //addStage(setupStage5());          // map1 #16 信号塔问题
     addStage(setupStage6());          // map5 #17
-	addStage(setupFinalStage2());     // map12 #18
+	//addStage(setupFinalStage2());     // map12 #18 黑猫
 	addStage(setupStage19());         // map18 #19
     addStage(setupStage11());         // map13 #20
     //addStage(setupStageCasake_Bay());         // Casake_Bay #21
@@ -1759,11 +1759,11 @@ class StageConfiguratorInvasion : StageConfigurator {
 		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/Casake_Bay";
 		stage.m_mapInfo.m_id = "Casake_Bay";
 
-		stage.m_maxSoldiers = 15 * 15;
-		stage.m_playerAiCompensation = 4;                                       // 
-    	stage.m_playerAiReduction = 2.0;                                        // 
+		stage.m_maxSoldiers = 150;
+		stage.m_playerAiCompensation = 0;                                       // 
+    	stage.m_playerAiReduction = 0.0;                                        // 
 
-		stage.m_soldierCapacityVariance = 0.4; 
+		stage.m_soldierCapacityVariance = 1.0; 
 
 		stage.addTracker(PeacefulLastBase(m_metagame, 0));
 		stage.addTracker(CommsCapacityHandler(m_metagame));
@@ -1773,8 +1773,8 @@ class StageConfiguratorInvasion : StageConfigurator {
 
 		{
 			Faction f(getFactionConfigs()[0], createFellowCommanderAiCommand(0, 0.5, 0.2));
-			f.m_overCapacity = 0;                                              // was 20
-			f.m_bases = 1;
+			f.m_overCapacity = 10;                                              // was 20
+			f.m_bases = 2;
 			f.m_capacityMultiplier = 1.0; 
 			stage.m_factions.insertLast(f);
 		}
