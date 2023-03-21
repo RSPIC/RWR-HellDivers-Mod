@@ -99,7 +99,7 @@ class kill_reward : Tracker {
 		_log("execute kill_reward");
 		if (killer !is null && target !is null && killer_factionId != target_factionId) {
 			_log("kill key= "+ EventKey);
-			if(int(healable_weapon[EventKey]) != 0){//执行：可恢复护甲的击杀武器
+			if(int(healable_weapon[EventKey]) >= 0){//执行：可恢复护甲的击杀武器
 				_log("execute healable_weapon");
 				int healnum = int(healable_weapon[EventKey]);
 				_log("healnum= "+healnum);
@@ -107,7 +107,7 @@ class kill_reward : Tracker {
 					healCharacter(m_metagame,killer_characterId,healnum);
 				}
 			}
-			if(int(healable_killtarget_bonus[soldier_group_name]) != 0){//执行：可额外恢复护甲的击杀对象
+			if(int(healable_killtarget_bonus[soldier_group_name]) >= 0){//执行：可额外恢复护甲的击杀对象
 				_log("execute healable_killtarget_bonus");
 				int healnum = int(healable_killtarget_bonus[soldier_group_name]);
 				_log("healnum= "+healnum);
@@ -115,9 +115,12 @@ class kill_reward : Tracker {
 					healCharacter(m_metagame,killer_characterId,healnum);
 				}
 			}
-			if(int(recommend_kill_weapon_bonus[EventKey]) != 0){//执行：可获得经验加成的击杀武器
+			if(int(recommend_kill_weapon_bonus[EventKey]) >= 0){//执行：可获得经验加成的击杀武器
 				_log("execute recommend_kill_weapon_bonus");
 				float XpBonusFactor = float(recommend_kill_weapon_bonus[EventKey]);
+				if(XpBonusFactor <= 0){
+					XpBonusFactor = 0;
+				}
 				_log("XpBonusFactor= "+XpBonusFactor);
 				float BaseXp = 0.01; //基础经验100xp
 				if(killer_xp <= 250.0){ //250w区间

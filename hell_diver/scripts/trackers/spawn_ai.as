@@ -119,7 +119,6 @@ class spawn_ai : Tracker {
 		for (uint i = 0; i < AllFactions.size(); ++i) {
 			const XmlElement@ Faction = AllFactions[i];
 			uint faction_id = Faction.getIntAttribute("id");
-			
 			if (Faction.getStringAttribute("name")=="Cyborgs") {
 				CyborgsId = faction_id;
 			}else if(Faction.getStringAttribute("name")=="Super Earth"){

@@ -73,16 +73,29 @@ class BasicCommandHandler : Tracker {
 				const XmlElement@ info = getPlayerInfo(m_metagame, senderId);
 				if(info is null){return;}
 				int cid = info.getIntAttribute("character_id");
+				if(cid == -1){return;}
+				string stratagemsKey = string(offensive_stratagems[message]);
 				// 直接替换手雷栏
 				_log("stratagems call exists? :" + (offensive_stratagems.exists(message)));
 				_log("stratagems call message :" + message);
-				_log("stratagems call key :" + string(offensive_stratagems[message]));
+				_log("stratagems call key :" + stratagemsKey);
 				//_log("stratagems call length :" + string(offensive_stratagems[message]).length());
 				//exists方法有问题，有时候正确有时候错误,替换掉
 				if ((string(offensive_stratagems[message]).length()!=0)){
+					const XmlElement@ character = getCharacterInfo(m_metagame, cid);
+                	if (character is null) {return;}
+					int fid = character.getIntAttribute("faction_id");
+					const XmlElement@ factionInfo = getFactionInfo(m_metagame,fid);
+					string faction_name = factionInfo.getStringAttribute("name");
+					if(faction_name == "ACG" && stratagemsKey == "hd_amg_11_mk3_call"){
+						stratagemsKey = "acg_amg_11_mk3_call";
+					}
+					if(faction_name == "ACG" && stratagemsKey == "hd_arx_34_mk3_call"){
+						stratagemsKey = "acg_arx_34_mk3_call";
+					}
 					string c = 
 					"<command class='update_inventory' character_id='" + cid + "' container_type_id='4' add='1'>" + 
-						"<item class='" + "projectile" + "' key='" + string(offensive_stratagems[message]) + ".projectile" +"' />" +
+						"<item class='" + "projectile" + "' key='" + stratagemsKey + ".projectile" +"' />" +
 					"</command>";
 					m_metagame.getComms().send(c);
 

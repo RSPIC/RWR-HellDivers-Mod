@@ -39,6 +39,10 @@ class projectile_event : Tracker {
                 int characterId = event.getIntAttribute("character_id");
 				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
                 if (character is null) {break;}
+                if (characterId == -1) {
+                    _log("characterId = -1,null occur");
+                    break;
+                }
                 // 确定起始点与所属阵营
                 Vector3 pos1 = stringToVector3(event.getStringAttribute("position"));
                 Vector3 pos2 = stringToVector3(character.getStringAttribute("position"));
@@ -55,6 +59,10 @@ class projectile_event : Tracker {
                 int characterId = event.getIntAttribute("character_id");
 				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
                 if (character is null) {break;}
+                if (characterId == -1) {
+                    _log("characterId = -1,null occur");
+                    break;
+                }
                 _log("execute hd_superearth_heavy_strafe_mk3");
                 Vector3 pos1 = stringToVector3(event.getStringAttribute("position"));
                 Vector3 pos2 = stringToVector3(character.getStringAttribute("position"));
@@ -97,6 +105,10 @@ class projectile_event : Tracker {
                 int characterId = event.getIntAttribute("character_id");
 				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
                 if (character is null) {break;}
+                if (characterId == -1) {
+                    _log("characterId = -1,null occur");
+                    break;
+                }
                 // 确定起始点与所属阵营
                 Vector3 pos1 = stringToVector3(event.getStringAttribute("position"));
                 Vector3 pos2 = stringToVector3(character.getStringAttribute("position"));
@@ -114,6 +126,10 @@ class projectile_event : Tracker {
                 int characterId = event.getIntAttribute("character_id");
 				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
                 if (character is null) {break;}
+                if (characterId == -1) {
+                    _log("characterId = -1,null occur");
+                    break;
+                }
                 // 确定起始点与所属阵营
                 Vector3 pos1 = stringToVector3(event.getStringAttribute("position"));
                 Vector3 pos2 = stringToVector3(character.getStringAttribute("position"));
@@ -131,6 +147,10 @@ class projectile_event : Tracker {
                 int characterId = event.getIntAttribute("character_id");
 				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
                 if (character is null) {break;}
+                if (characterId == -1) {
+                    _log("characterId = -1,null occur");
+                    break;
+                }
                 // 确定起始点与所属阵营
                 Vector3 pos1 = stringToVector3(event.getStringAttribute("position"));
                 Vector3 pos2 = stringToVector3(character.getStringAttribute("position"));
@@ -148,6 +168,10 @@ class projectile_event : Tracker {
                 int characterId = event.getIntAttribute("character_id");
 				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
                 if (character is null) {break;}
+                if (characterId == -1) {
+                    _log("characterId = -1,null occur");
+                    break;
+                }
                 // 确定起始点与所属阵营
                 Vector3 pos1 = stringToVector3(event.getStringAttribute("position"));
                 Vector3 pos2 = stringToVector3(character.getStringAttribute("position"));
@@ -164,6 +188,10 @@ class projectile_event : Tracker {
                 int characterId = event.getIntAttribute("character_id");
 				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
                 if (character is null) {break;}
+                if (characterId == -1) {
+                    _log("characterId = -1,null occur");
+                    break;
+                }
 
                 Vector3 pos1 = stringToVector3(event.getStringAttribute("position"));
                 Vector3 pos2 = stringToVector3(character.getStringAttribute("position"));
@@ -180,6 +208,10 @@ class projectile_event : Tracker {
                 int characterId = event.getIntAttribute("character_id");
 				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
                 if (character is null) {break;}
+                if (characterId == -1) {
+                    _log("characterId = -1,null occur");
+                    break;
+                }
 
                 Vector3 pos1 = stringToVector3(event.getStringAttribute("position"));
                 Vector3 pos2 = stringToVector3(character.getStringAttribute("position"));
@@ -196,6 +228,10 @@ class projectile_event : Tracker {
                 int characterId = event.getIntAttribute("character_id");
 				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
                 if (character is null) {break;}
+                if (characterId == -1) {
+                    _log("characterId = -1,null occur");
+                    break;
+                }
 
                 Vector3 pos1 = stringToVector3(event.getStringAttribute("position"));
                 Vector3 pos2 = stringToVector3(character.getStringAttribute("position"));
@@ -211,6 +247,10 @@ class projectile_event : Tracker {
                 int characterId = event.getIntAttribute("character_id");
 				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
                 if (character is null) {break;}
+                if (characterId == -1) {
+                    _log("characterId = -1,null occur");
+                    break;
+                }
 
                 Vector3 pos1 = stringToVector3(event.getStringAttribute("position"));
                 Vector3 pos2 = stringToVector3(character.getStringAttribute("position"));
@@ -226,6 +266,10 @@ class projectile_event : Tracker {
                 int characterId = event.getIntAttribute("character_id");
 				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
                 if (character is null) {break;}
+                if (characterId == -1) {
+                    _log("characterId = -1,null occur");
+                    break;
+                }
                 int factionId = character.getIntAttribute("faction_id");
                 Vector3 t_pos = stringToVector3(event.getStringAttribute("position"));
                 array<const XmlElement@>@ players = getPlayers(m_metagame);
@@ -234,13 +278,16 @@ class projectile_event : Tracker {
 			        const XmlElement@ player = players[i];
                     _log("detected players in rep80");
                     if (player.hasAttribute("character_id")) {
-				        const XmlElement@ p_character = getCharacterInfo(m_metagame, player.getIntAttribute("character_id"));
+                        int p_character_id = player.getIntAttribute("character_id");
+                        if(p_character_id == characterId){break;}//取消自奶
+                        if(p_character_id == -1){break;}
+				        const XmlElement@ p_character = getCharacterInfo(m_metagame,p_character_id);
                         if (p_character !is null) {
-                            Vector3 p_position = stringToVector3(character.getStringAttribute("position"));
-                            float distance = get2DMAxAxisDistance(1,p_position,t_pos);
                             _log("players name: "+player.getStringAttribute("name") );
                             _log("target position: "+ event.getStringAttribute("position"));
                             _log("player position: "+ character.getStringAttribute("position"));
+                            Vector3 p_position = stringToVector3(character.getStringAttribute("position"));
+                            float distance = get2DMAxAxisDistance(1,p_position,t_pos);
                             _log("distance axis max in target&players: "+ distance);
                             if(distance <= 3){
                                 int p_characterId = player.getIntAttribute("character_id");
@@ -256,6 +303,10 @@ class projectile_event : Tracker {
                 int characterId = event.getIntAttribute("character_id");
 				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
                 if (character is null) {break;}
+                if (characterId == -1) {
+                    _log("characterId = -1,null occur");
+                    break;
+                }
                 int factionId = character.getIntAttribute("faction_id");
                 Vector3 t_pos = stringToVector3(event.getStringAttribute("position"));
                 array<const XmlElement@>@ players = getPlayers(m_metagame);
@@ -287,6 +338,10 @@ class projectile_event : Tracker {
                 int characterId = event.getIntAttribute("character_id");
 				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
                 if (character is null) {break;}
+                if (characterId == -1) {
+                    _log("characterId = -1,null occur");
+                    break;
+                }
                     int playerId = character.getIntAttribute("player_id");
                     int factionId = character.getIntAttribute("faction_id");
                     const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
@@ -418,6 +473,10 @@ class projectile_event : Tracker {
                 int characterId = event.getIntAttribute("character_id");
                 const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
                 if (character is null) {break;}
+                if (characterId == -1) {
+                    _log("characterId = -1,null occur");
+                    break;
+                }
                 int playerId = character.getIntAttribute("player_id");
                 //int factionId = character.getIntAttribute("faction_id");
                 const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
@@ -456,6 +515,7 @@ class projectile_event : Tracker {
 
             case 43: { //德克萨斯
                 int characterId = event.getIntAttribute("character_id");
+                if (characterId == -1) {break;}
                 const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
                 if (character !is null) {
                     Vector3 position = stringToVector3(character.getStringAttribute("position"));
@@ -477,6 +537,7 @@ class projectile_event : Tracker {
 
             case 44: { //wand_guiding_01
                 int characterId = event.getIntAttribute("character_id");
+                if (characterId == -1) {break;}
                 const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
                 if (character !is null) {
                     int is_dead = character.getIntAttribute("dead");
@@ -493,6 +554,7 @@ class projectile_event : Tracker {
             }
             case 45: { //acg_megumin_wand_float
                 int CID = event.getIntAttribute("character_id");
+                if (CID == -1) {break;}
                 const XmlElement@ character = getCharacterInfo(m_metagame, CID);
                 if (character !is null) {
                     int is_dead = character.getIntAttribute("dead");

@@ -12,7 +12,7 @@ on_ground_up="0 1 0"
     <hud_icon filename="mc_diamond.png" />
     <inventory encumbrance="0.5" price="1000.0" />
 
-    <model mesh_filename="collect_mc_diamond.xml" texture_filename="" />
+    <model mesh_filename="collect_mc_diamond.mesh" texture_filename="collect_mc_diamond.jpg" />
 
     <capacity value="100" source="rank" source_value="0.0" />
 
