@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>	
 <weapon 
-drop_count_factor_on_death="0" 
-drop_count_factor_on_player_death="1"
-time_to_live_out_in_the_open="0"
-player_death_drop_owner_lock_time="0"
+file="_hd_exo.base"
 key="hd_exo44_walker_mk3_missile.weapon" 
 > 
 	<tag name="machine gun" />
@@ -90,8 +87,8 @@ key="hd_exo44_walker_mk3_missile.weapon"
   	<capacity value="0" source="rank" source_value="0.0" />
 	<capacity value="1" source="rank" source_value="251.773" />
 	
-    <commonness value="1" can_respawn_with="1" in_stock="1" /> 
-    <inventory encumbrance="50.0" price="0.0" /> 
+    <!-- <commonness value="1" can_respawn_with="1" in_stock="1" /> 
+    <inventory encumbrance="50.0" price="0.0" />  -->
     <weak_hand_hold offset="0.3" /> 
 
 	<ballistics curve_height="1.0" near_far_distance="0.0" speed_estimation_near="150.0" 
@@ -155,29 +152,14 @@ key="hd_exo44_walker_mk3_missile.weapon"
 	<effect class="muzzle" ref="nova_muzzle_ambient_ground"/>
 	<effect class="muzzle" ref="nova_muzzle_spark"/>
 
-    <stance state_key="running" accuracy="0.5" /> 
+	<stance state_key="running" accuracy="0.9" /> 
     <stance state_key="walking" accuracy="0.9" />
 	<stance state_key="standing" accuracy="0.955" />
 	<stance state_key="crouching" accuracy="0.99" />
     <stance state_key="crouch_moving" accuracy="1" />
     <stance state_key="prone" accuracy="1.4" /> 
     <stance state_key="prone_moving" accuracy="0.5" />
-    <stance state_key="over_wall" accuracy="1.8" />     
-     
-    <modifier class="speed" value="-0.4" /> 
-    <modifier class="hit_success_probability" value="-1" />
-    <modifier class="detectability" value="0.0" />
-
-    <shield offset="1 0 0.9" extent="0.7 3 2.7" usable_for_cover="0"/>  
-	<!-- x厚度，前后宽度,负向前；y高度，z宽度 -->
-	<modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="0" />
-	<modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="0" />
-	<modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="0" />
-	<!-- death and wound blast causes the item to be consumed, stun is ignored -->
-	<modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="0" />
-	<modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="0" />
-	<modifier class="projectile_blast_result" input_character_state="stun" output_character_state="none" consumes_item="0" />
-	<modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="0"/>
+    <stance state_key="over_wall" accuracy="1.8" />  
 </weapon>
 
 

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapon 
+drop_count_factor_on_death="0" 
+drop_count_factor_on_player_death="1.0"
+time_to_live_out_in_the_open="300"
+player_death_drop_owner_lock_time="300"
+key="_hd_precision.base" 
+on_ground_up="0 0 1" 
+> 
+    <specification 
+	sight_range_modifier="3" 
+	ai_sight_range_modifier="0.4"
+	use_basic_muzzle_smoke_effect="0"
+	/> 
+	
+	<tag name="precision" />
+
+
+	<!--武器动作，必须指定recoil和reload动作，部分动作留空会默认调用常规双手武器动作或者无动作-->
+    <animation key="recoil" animation_key="recoil1, big" /> <!--后坐力动作，半身动作-->
+    <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
+	<animation state_key="reload" animation_key="T_reloading_1.25s" />	<!--换弹动作，半身动作-->
+    <animation state_key="hold" animation_key="" /><!--站姿静止动作，全身动作-->
+	<animation state_key="hold_on_wall"  animation_key="" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="" /><!--闲置动作，全身动作-->
+	<animation state_key="running" animation_key="" /><!--全身动作-->
+	<animation state_key="walking" animation_key="" /><!--按shift时候的静步前进动作，全身动作-->
+    <animation state_key="walking_backwards" animation_key="" /><!--全身动作-->
+    <animation state_key="crouching" animation_key="" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
+	<animation state_key="stabbing" animation_key="pistol whip 3" /><!--半身动作，武器可设置脱手-->
+
+
+
+	<!--军械库相关-->
+    <commonness value="1" can_respawn_with="1" in_stock="1" /> 
+    <inventory encumbrance="10.0" price="0.0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
+
+	<!--姿态精度-->
+    <stance state_key="running" accuracy="1" /> 
+    <stance state_key="walking" accuracy="1" />
+	<stance state_key="standing" accuracy="1" />
+	<stance state_key="crouching" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1" />     
+     
+	<!--附加属性-->
+    <modifier class="speed" value="0" /> 
+    <modifier class="hit_success_probability" value="0.0" /><!--正值增加玩家抗致死率-->
+    <modifier class="detectability" value="0.0" />	<!--正值增加玩家隐蔽-->
+	  
+</weapon>

@@ -8,6 +8,7 @@ key="hd_aac6_tesla_mk3.weapon"
 on_ground_up="0 0 1" 
 radius="1"
 > 
+	<tag name="defensive_equipment" />
     <specification 	
 	retrigger_time="0.1"
     last_burst_retrigger_time="0.1" 
