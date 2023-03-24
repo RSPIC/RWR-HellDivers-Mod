@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>	
 <weapon 
-drop_count_factor_on_death="0" 
-drop_count_factor_on_player_death="0"
-time_to_live_out_in_the_open="0"
-player_death_drop_owner_lock_time="0"
+file="_hd_vehicle_cannon.base"
 key="ex_isu_152_gl.weapon" 
 > 
     <specification 	
@@ -116,13 +113,6 @@ key="ex_isu_152_gl.weapon"
 	<effect class="muzzle" ref="nova_muzzle_ambient_ground"/>
 	<effect class="muzzle" ref="nova_muzzle_spark"/>
 
-    <target_factors tag="" distance="1.0" direction="0.0" squad_command="1.0" base_score="0.5" />
-    <target_factors tag="heavy_combat" distance="1.0" direction="0.0" squad_command="1.0" base_score="10.0" />
-    <target_factors tag="apc" distance="1.0" direction="0.0" squad_command="1.0" base_score="10.0" />
-    <target_factors tag="light_combat" distance="1.0" direction="0.0" squad_command="1.0" base_score="6.0" />   
-    <target_factors tag="defensive_at" distance="1.0" direction="0.0" squad_command="1.0" base_score="10.0" />
-    <target_factors tag="tactical" distance="1.0" direction="0.0" squad_command="1.0" base_score="8.0" />  <!-- important non combat player-only vehicles -->  
-    <target_factors tag="bazooka" distance="1.0" direction="0.0" squad_command="1.0" base_score="8.0" />
 
 </weapon>
 

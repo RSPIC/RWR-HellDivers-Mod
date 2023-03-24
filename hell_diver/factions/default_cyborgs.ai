@@ -5,7 +5,7 @@
   <parameter class="accuracy_penalty_wear_off_rate" value="0.333" /> 
   <parameter class="check_vehicles_interval" value="60.0" />
   <parameter class="team_member_monitor_enemies_time" value="1.5" />
-  <parameter class="monitor_enemies_time" value="0.8" />
+  <parameter class="monitor_enemies_time" value="3" />
   <parameter class="check_supplies_time" value="5.0" />
   <parameter class="check_wounded_time" value="3.0" />
   <parameter class="team_check_time" value="3.0" />
@@ -32,10 +32,10 @@
   <parameter class="authority_margin" value="0.07" /> 
   
   <parameter class="monitor_enemies_max_dot_range" value="3" />
-  <parameter class="monitor_enemies_min_dot_range_offset" value="1.125" />
+  <parameter class="monitor_enemies_min_dot_range_offset" value="1.525" />
 
   <parameter class="choose_enemy_max_dot_range" value="3" />
-  <parameter class="choose_enemy_min_dot_range_offset" value="1.125" />
+  <parameter class="choose_enemy_min_dot_range_offset" value="1.525" />
 
   <parameter class="sight_range_muzzle_factor" value="1.0" />
   <parameter class="max_sight_range_with_muzzle" value="30.0" />
@@ -62,7 +62,7 @@
 	<!-- 再次投掷手雷的间隔时间 -->
   <parameter class="min_distance_to_throw_grenade" value="0.0" />
   <parameter class="max_distance_to_throw_grenade" value="20.0" />
-  <parameter class="vehicle_target_aim_time" value="1.0" />
+  <parameter class="vehicle_target_aim_time" value="3.0" />
   <parameter class="guard_range_from_leader_margin" value="15.0" />
   <parameter class="guard_range_from_leader_step" value="30.0" />
   <parameter class="guard_wait_time_min" value="5.0" />

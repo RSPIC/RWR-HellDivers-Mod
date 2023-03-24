@@ -52,6 +52,7 @@
 	<model filename="acg_yukikaze.xml" /> <!--雪风-->
 <!-- 动漫 -->
 	<model filename="acg_iruru.xml" /> <!--伊露露-->
+	<model filename="acg_faputa.xml" /> <!--法仆塔-->
 	<model filename="acg_rem.xml" /> <!--雷姆-->
 	<model filename="acg_tachibana_kanade.xml" /> <!--立华奏-->
 	<model filename="acg_kaname_madoka.xml" /> <!--魔法少女小圆-->
@@ -92,4 +93,12 @@
 <!-- 灰烬战线 -->
 	<model filename="acg_88mm_flak41.xml" /> <!--88炮-->
 	
+
+<!-- 测试 -->
+<model filename="acg_faputa.xml" > 
+<requirement class="weapon" slot="0" key="normal.weapon"/>
+</model>
+<model filename="acg_faputa.xml" > 
+<requirement class="weapon" slot="0" key="ref.weapon"/>
+</model>
 </models>

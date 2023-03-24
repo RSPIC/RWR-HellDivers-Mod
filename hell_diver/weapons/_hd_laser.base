@@ -16,23 +16,6 @@ on_ground_up="0 0 1"
 	<tag name="laser" />
 
 
-    <animation state_key="recoil" animation_key="norecoil_two_hand" /> <!--后坐力动作，半身动作-->
-    <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
-    <animation key="reload" animation_key="reloading" />	<!--换弹动作，半身动作-->
-    <animation state_key="hold" animation_key="" /><!--站姿静止动作，全身动作-->
-	<animation state_key="hold_on_wall"  animation_key="" /><!--架枪动作，全身动作-->
-    <animation state_key="still_against_wall" animation_key="" /><!--靠墙动作，全身动作-->
-    <animation state_key="hold_casual" animation_key="" /><!--闲置动作，全身动作-->
-	<animation state_key="running" animation_key="" /><!--全身动作-->
-	<animation state_key="walking" animation_key="" /><!--按shift时候的静步前进动作，全身动作-->
-    <animation state_key="walking_backwards" animation_key="" /><!--全身动作-->
-    <animation state_key="crouching" animation_key="" /><!--蹲姿静止动作，全身动作-->
-	<animation state_key="crouch_moving" animation_key="" /><!--全身动作-->
-	<animation state_key="crouch_moving_backwards" animation_key="" /><!--全身动作-->
-    <animation state_key="prone_still" animation_key="" /><!--全身动作-->
-	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
-	<animation state_key="stabbing" animation_key="pistol whip 3" /><!--半身动作，武器可设置脱手-->
-
 	<!--军械库相关-->
     <commonness value="1" can_respawn_with="1" in_stock="1" /> 
     <inventory encumbrance="10.0" price="0.0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->

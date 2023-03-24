@@ -81,4 +81,8 @@
     <call key="humblebee_uav_drone.call" />
     <call key="hd_sos_beacom.call" />
 
+    <!-- 载具 -->
+	<vehicle key="hd_m5_apc.vehicle" />
+	<vehicle key="hd_mc109_motor.vehicle" />
+	<vehicle key="hd_td110_bastion.vehicle" />
 </resources>

@@ -17,7 +17,12 @@
   <parameter class="max_active_shields_per_fellows" value="100.0" />
 
   <parameter class="uses_vehicles" value="1" />
-
+  <parameter class="check_vehicles_interval" value="0.1" />
+  <parameter class="vehicle_stuck_short_time" value="10.0" />
+  <parameter class="vehicle_target_aim_time" value="3.0" />
+  <parameter class="shooting_against_vehicle_burst_time" value="0.5" />
+  <parameter class="check_vehicles_while_fire_open_interval" value="0.1" />  
+ 
   <parameter class="fighting_melee_move_radius" value="0.0" />
   <parameter class="fighting_regular_move_radius" value="0.0" />  
   <parameter class="stab_range" value="3.5" />

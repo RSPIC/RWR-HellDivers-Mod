@@ -4,7 +4,6 @@ drop_count_factor_on_death="0"
 drop_count_factor_on_player_death="1.0"
 time_to_live_out_in_the_open="300"
 player_death_drop_owner_lock_time="300"
-key="_hd_smg.base" 
 on_ground_up="0 0 1" 
 > 
     <specification 
@@ -15,8 +14,6 @@ on_ground_up="0 0 1"
 	
 	<tag name="smg" />
 
-
-    <!--武器动作，必须指定recoil和reload动作，部分动作留空会默认调用常规双手武器动作或者无动作-->
     <animation state_key="recoil" animation_key="recoil, pistol" /> <!--后坐力动作，半身动作-->
     <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
     <animation state_key="reload" animation_key="T_reloading_1.0s" />	<!--换弹动作，半身动作-->
@@ -33,8 +30,6 @@ on_ground_up="0 0 1"
     <animation state_key="prone_still" animation_key="prone_still, pistol" /><!--全身动作-->
 	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
 	<animation state_key="stabbing" animation_key="pistol whip 3" /><!--半身动作，武器可设置脱手-->
-
-
 
 	<!--军械库相关-->
     <commonness value="1" can_respawn_with="1" in_stock="1" /> 

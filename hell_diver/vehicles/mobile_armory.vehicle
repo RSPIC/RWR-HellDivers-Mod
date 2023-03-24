@@ -51,7 +51,7 @@ reserves_spawn_point="1" >
 	<character_slot type="passenger" position="-0.5 0.8 1.68" rotation="0" exit_rotation="-1.57" hiding="1" />
 
   	<item_container class="armory" offset="0 0.8 -4.8" />
-	<spawn_point player_only="0" offset="0 2 5" />
+	<spawn_point player_only="0" offset="0 2 6" />
 
 	<!-- sound handling -->
 	<rev_sound filename="truck_rev0.wav" low_pitch="0.95" high_pitch="1.05" low_rev="0.0" high_rev="0.2" volume="1.0" />
