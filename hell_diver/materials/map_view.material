@@ -1,0 +1,484 @@
+material MapViewBlockBase {
+	receive_shadows off
+	technique {
+		pass {	
+			fog_override true none
+			lighting off
+			//scene_blend alpha_blend
+        		scene_blend alpha_blend
+			depth_check off
+
+			texture_unit Map {
+				texture map.png
+				//alpha_op_ex source1 src_manual src_manual 0.9 0.9
+				colour_op_ex blend_diffuse_alpha src_diffuse src_texture
+				filtering trilinear
+			}
+
+			texture_unit Overlay {
+				texture none.png
+				colour_op_ex blend_texture_alpha src_texture src_current 
+				filtering trilinear
+			}
+
+			texture_unit Grid {
+				texture mapview_grid.png
+				// 21: scale 0.0476 0.0476
+				// 18
+				scale 0.0555 0.0555
+				scroll 0.5 0.5
+				// 15 scale 0.0666 0.0666
+				// 10 scale 0.1 0.1
+				colour_op modulate 
+				alpha_op_ex source1 src_texture src_texture
+				filtering trilinear
+			}
+		} 
+	}
+}
+
+material MapViewFront {
+	receive_shadows off
+	technique {
+		pass {	
+			fog_override true none
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit Decal {
+				texture mapview_frame.png
+				filtering trilinear
+			}
+		} 
+		pass {	
+			fog_override true none
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit Decal {
+				texture mapview_frame_add_triangle.png
+				scroll_anim 0 0.05
+				tex_address_mode warp
+				filtering trilinear
+			}
+			texture_unit Decal {
+				texture mapview_frame_add_triangle_mask.png
+				colour_op_ex source2 src_texture src_current
+				alpha_op_ex modulate src_texture src_current
+				filtering trilinear
+			}
+		} 
+		pass {	
+			fog_override true none
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit Decal {
+				anim_texture mapview_frame_add_code.png 4 40
+				scale 1 1
+				tex_address_mode warp
+				wave_xform scroll_y sine 0 0.01 0 0.2
+				filtering trilinear
+			}
+			texture_unit Decal {
+				texture mapview_frame_add_code_mask.png
+				colour_op_ex source2 src_texture src_current
+				alpha_op_ex modulate src_texture src_current
+				filtering trilinear
+			}
+		} 
+		pass {	
+			fog_override true none
+			lighting off
+			scene_blend alpha_blend
+			depth_check off
+
+			texture_unit Decal {
+				anim_texture mapview_frame_add_news.png 2 600
+				scale 1 1
+				scroll_anim 0 -0.005
+				tex_address_mode warp
+				filtering trilinear
+			}
+			texture_unit Decal {
+				texture mapview_frame_add_news_mask.png
+				colour_op_ex source2 src_texture src_current
+				alpha_op_ex modulate src_texture src_current
+				filtering trilinear
+			}
+		} 
+		pass {	
+			fog_override true none
+			lighting off
+			scene_blend add
+			depth_check off
+
+			texture_unit Decal {
+				texture mapview_frame_add_sacn.png
+				scroll_anim 0 0.08
+				tex_address_mode warp
+				filtering trilinear
+			}
+			texture_unit Decal {
+				texture mapview_frame_add_sacn_mask.png
+				alpha_op_ex modulate texture current
+				filtering trilinear
+			}
+		} 
+	}
+}
+
+
+material MapViewAlert
+{
+	receive_shadows off	
+	technique
+	{
+		pass
+		{
+			scene_blend alpha_blend
+			lighting off
+			fog_override true none
+			texture_unit {	
+				texture mapview_alert.png		
+	     			tex_address_mode clamp	
+			        wave_xform scale_x sine 0.4 0.8 0.0 0.5
+        			wave_xform scale_y sine 0.4 0.8 0.0 0.5
+		 	}
+		}
+	}
+}
+
+material MapViewAttackStart
+{
+	receive_shadows off	
+	technique
+	{
+		pass
+		{
+			scene_blend alpha_blend
+			lighting off
+			fog_override true none
+			texture_unit {	
+				texture mapview_attack_start.png
+	     			tex_address_mode clamp	
+			}
+		}
+	}
+}
+
+material MapViewAttackTarget
+{
+	receive_shadows off	
+	technique
+	{
+		pass
+		{
+			scene_blend alpha_blend
+			lighting off
+			fog_override true none
+			texture_unit {	
+				texture mapview_attack_target.png
+	     			tex_address_mode clamp	
+			}
+		}
+	}
+}
+
+material MapViewAttackTargetSecondary
+{
+	receive_shadows off	
+	technique
+	{
+		pass
+		{
+			scene_blend alpha_blend
+			lighting off
+			fog_override true none
+			texture_unit {	
+				texture mapview_attack_secondary.png
+	     			tex_address_mode clamp	
+			}
+		}
+	}
+}
+
+material MapViewAttackTargetDenied
+{
+	receive_shadows off	
+	technique
+	{
+		pass
+		{
+			scene_blend alpha_blend
+			lighting off
+			fog_override true none
+			texture_unit {	
+				texture none.png
+	     			tex_address_mode clamp	
+			}
+		}
+	}
+}
+
+material MapViewDefenseTarget
+{
+	receive_shadows off	
+	technique
+	{
+		pass
+		{
+			scene_blend alpha_blend
+			lighting off
+			fog_override true none
+			texture_unit {	
+				texture mapview_defense_target.png		
+				tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material MapViewBattleAlert
+{
+	receive_shadows off	
+	technique
+	{
+		pass
+		{
+			scene_blend alpha_blend
+			lighting off
+			fog_override true none
+			texture_unit {	
+				texture mapview_battle_alert.png		
+				tex_address_mode clamp
+			}
+		}
+	}
+}
+
+  
+  
+
+material MapViewBlackOutline {
+	receive_shadows off
+	technique Basic 
+	{
+		pass Basic
+		{
+			lighting off
+			fog_override true none
+			scene_blend alpha_blend
+			
+			texture_unit Decal
+			{
+				texture mapview_player.png
+				colour_op modulate
+				tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material MapViewWhiteOutline {
+	receive_shadows off
+	technique Basic 
+	{
+		pass Basic
+		{
+			lighting off
+			fog_override true none
+        		scene_blend alpha_blend
+        		texture_unit Decal
+			{
+          			texture mapview_vehicle.png
+				colour_op add
+				tex_address_mode clamp
+        		}
+      		}
+    	}
+}
+
+material MapViewPlayer : MapViewBlackOutline
+{
+	technique Basic
+	{
+		pass Basic
+		{
+        		texture_unit Decal
+			{
+          			texture mapview_player.png
+        		}
+      		}
+    	}
+}
+  
+material MapViewSpawnPoint : MapViewBlackOutline
+{
+	technique Basic
+	{
+		pass Basic
+		{
+        		texture_unit Decal
+			{
+          			texture mapview_spawnpoint.png
+        		}
+      		}
+    	}
+}
+
+material MapViewSquad : MapViewWhiteOutline
+{
+	technique Basic
+	{
+		pass Basic
+		{
+        		texture_unit Decal
+			{
+          			texture mapview_squad_debug.png
+        		}
+      		}
+    	}
+}
+
+
+material MapViewMobileSpawnPoint : MapViewBlackOutline
+{
+	technique Basic
+	{
+		pass Basic
+		{
+        		texture_unit Decal
+			{
+          			texture mapview_spawnpoint.png
+        		}
+      		}
+    	}
+}
+
+material MapViewVehicle : MapViewBlackOutline
+{
+	technique Basic
+	{
+		pass Basic
+		{
+        		texture_unit Decal
+			{
+          			texture mapview_vehicle.png
+        		}
+      		}
+    	}
+}
+
+material MapViewResource : MapViewBlackOutline
+{
+	technique Basic
+	{
+		pass Basic
+		{
+        		texture_unit Decal
+			{
+          			texture mapview_resource.png
+        		}
+      		}
+    	}
+}
+
+material MapViewCommsMarker : MapViewBlackOutline
+{
+	technique Basic
+	{
+		pass Basic
+		{
+        		texture_unit Decal
+			{
+          			texture mapview_comms_marker.png
+        		}
+      		}
+    	}
+}
+
+material MapViewPositioner : MapViewBlackOutline
+{
+	technique Basic
+	{
+		pass Basic
+		{
+        		texture_unit Decal
+			{
+          			texture mapview_positioner.png
+        		}
+      		}
+    	}
+}
+
+material MapViewSquadVehicleCommand : MapViewBlackOutline
+{
+	technique Basic
+	{
+		pass Basic
+		{
+        		texture_unit Decal
+			{
+          			texture mapview_vehicle.png
+        		}
+      		}
+    	}
+}
+
+
+// ---------------------------------------
+
+material WorldViewRegion : MapViewBlackOutline
+{
+	technique Basic
+	{
+		pass Basic
+		{
+        		texture_unit Decal
+			{
+          			texture worldview_atlas.png
+        		}
+      		}
+    	}
+}
+
+// ---------------------------------------
+material MapViewLegendRowImage {
+	receive_shadows off	
+	technique Basic {
+		pass Basic {
+			scene_blend add
+			lighting off
+			fog_override true none
+			texture_unit Content {	
+				colour_op_ex source1 src_manual src_current 0 0 0 0
+				alpha_op_ex source1 src_manual src_current 0 0 0 0
+				//texture mapview_attack_secondary.png
+	     			tex_address_mode clamp	
+				//colour_op_ex modulate src_texture src_manual 1.0 1.0 1.0 1.0
+			}
+		}
+	}
+}
+
+// ---------------------------------------
+material MapViewLegend {
+	receive_shadows off	
+	technique Basic {
+		pass Basic {
+			scene_blend add
+			lighting off
+			fog_override true none
+			texture_unit Content {	
+				colour_op_ex source1 src_manual src_current 0 0 0 0
+				alpha_op_ex source1 src_manual src_current 0 0 0 0
+				//texture mapview_attack_secondary.png
+	     			tex_address_mode clamp	
+			}
+		}
+	}
+}

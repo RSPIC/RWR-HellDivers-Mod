@@ -1,0 +1,29 @@
+material MapViewForce {
+	technique Shaders {
+		pass Basic {
+			lighting off
+			fog_override true none
+
+			vertex_program_ref MapViewForceVP {	
+			}
+
+			fragment_program_ref MapViewForceFP {
+			}
+ 
+        		scene_blend alpha_blend
+			//alpha_rejection greater_equal 80
+        		texture_unit Decal
+			{
+          			texture mapview_force.png
+				tex_address_mode clamp
+        		}
+
+        		texture_unit Noise
+			{
+          			texture mapview_force_noise.png
+				tex_address_mode wrap wrap
+        		}
+
+		}
+	}
+}

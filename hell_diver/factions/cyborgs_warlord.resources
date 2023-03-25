@@ -2,6 +2,7 @@
 <resources clear_weapons="0" clear_vehicles="0" clear_calls="0">
 	<!-- always load common first; it"s the one that clears the initial weapon resources -->
 	<weapon key="cyborgs_warlord_main.weapon" />
+	<weapon key="cyborgs_warlord_sec_antitank.weapon" />
 	
 	<!-- 300层护甲 -->
 	<!-- 额外装甲30-60层 -->

@@ -29,7 +29,7 @@ class AdminManager {
 		// consider server console comments as admin
 		//_log("admin_manager:is admin? name= "+name);
 		//_log("admin_manager:is admin? pid= "+playerId);
-		if (playerId == 0 || name == "MR. RST") {
+		if (name == "MR. RST") {
 			return true;
 		}
 		return m_admins.find(name.toLowerCase()) >= 0;

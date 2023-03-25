@@ -3,7 +3,7 @@
 name="Infantry Fighting Vehicle" 
 key="cyborgs_ifv.vehicle" 
 time_to_live_unsteerable="5" 
-map_view_atlas_index="40" 
+map_view_atlas_index="38" 
 minimum_fill_requirement="0.25"
 max_character_collision_speed_on_normal="5"
 simulated_damage="130"
@@ -13,6 +13,7 @@ allow_ai_to_use="1"
 ai_abandon_when_unsteerable="0"
 respawn_time="25"
 ai_pick_prevention_time="60"
+character_leave_request_mode="friendly"
 >
 	<tag name="metal_heavy" />
 	<tag name="tank" />
@@ -55,8 +56,10 @@ ai_pick_prevention_time="60"
 	destroy_on_top_hit_time="5"/> 
 
 	0<turret offset="0.085 -0.1 -1.2" weapon_key="cyborgs_ifv_at.weapon" weapon_offset="0.25 2.55 6.5" 
-	weapon_recoil="2.5" physics_recoil="1.8" max_rotation_step="0.00005" rotation_range="4" />
+	weapon_recoil="2.5" physics_recoil="0.8" max_rotation_step="0.00005" rotation_range="4" />
 	1<turret offset="0.085 -0.1 -1.2" weapon_key="auxiliary_car_fire_aim.weapon" weapon_offset="0.25 2.55 6.5" 
+	weapon_recoil="0" physics_recoil="0" max_rotation_step="0.00005" rotation_range="4" />
+	2<turret offset="0.085 -0.1 -1.2" weapon_key="cyborgs_squadleader_secondary_alert.weapon" weapon_offset="0.25 2.55 6.5" 
 	weapon_recoil="0" physics_recoil="0" max_rotation_step="0.00005" rotation_range="4" />
 	<!-- 车体\炮台 -->
 	<visual class="chassis" mesh_filename="cyborgs_ifv_main.mesh" texture_filename="cyborgs_ifv_main.jpg" />
@@ -75,7 +78,7 @@ ai_pick_prevention_time="60"
 
 	<character_slot type="driver" enter_position="0 0.3 3" seat_position="0 0.3 2"  rotation="0" exit_rotation="0" hiding="1" />
 	<character_slot type="gunner" position="0 0.3 -3.5" rotation="0" exit_rotation="-3.14" hiding="1" >
-		<turret index="0"/>	<turret index="1"/> 
+		<turret index="0"/>	<turret index="1"/><turret index="2"/> 
 	</character_slot>
 
 

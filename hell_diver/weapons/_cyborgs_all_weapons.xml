@@ -22,8 +22,10 @@
 	<weapon file="cyborgs_initiate_main.weapon" /><!--主武器-->
 	<!-- Hulk 基础兵种 -->
 	<weapon file="cyborgs_hulk_main.weapon" /><!--主武器-->
+	<weapon file="cyborgs_hulk_sec_antitank.weapon" /><!--反坦克-->
 	<!-- Warlord 基础兵种 -->
 	<weapon file="cyborgs_warlord_main.weapon" /><!--主武器-->
+	<weapon file="cyborgs_warlord_sec_antitank.weapon" /><!--反坦克-->
 	<!-- Butcher 基础兵种 -->
 	<weapon file="cyborgs_butcher_main.weapon" /><!--主武器-->
 	<!-- Hound 基础兵种 -->
@@ -38,6 +40,9 @@
 	<weapon file="cyborgs_spawn_hulk_model.weapon" />
 	<weapon file="cyborgs_spawn_warlord_model.weapon" />
 	<weapon file="cyborgs_spawn_butcher_model.weapon" />
+
+	<!-- 载具武器 -->
+	<weapon file="cyborgs_ifv_at.weapon" />
 	
 
 </weapons>

@@ -85,8 +85,8 @@
   <parameter class="check_need_for_help_range" value="0.0" /><!--No check-->
   <parameter class="check_fellows_for_shield_use_range" value="0" />
   <parameter class="max_active_shields_per_fellows" value="99" /> 
-  <parameter class="fighting_against_vehicle_separation" value="2.0" />
-  <parameter class="fighting_against_vehicle_move_radius" value="5.0" />
+  <parameter class="fighting_against_vehicle_separation" value="20.0" />
+  <parameter class="fighting_against_vehicle_move_radius" value="7.0" />
   <parameter class="day_reaction_time_to_fight_min" value="0" />
   <parameter class="day_reaction_time_to_fight_max" value="0" />
   <parameter class="night_reaction_time_to_fight_min" value="0" />

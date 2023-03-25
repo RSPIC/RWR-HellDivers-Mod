@@ -1,0 +1,15 @@
+import ChatBubbleBorder from "chat_bubble.material"
+
+material ChatBubbleBorderHighPriority : ChatBubbleBorder {
+	receive_shadows off
+	technique 0 {
+		pass 0 {
+			texture_unit 0 {
+				texture chatbubbleborder_high_priority.png
+			}
+		}
+	} 
+}
+  
+
+

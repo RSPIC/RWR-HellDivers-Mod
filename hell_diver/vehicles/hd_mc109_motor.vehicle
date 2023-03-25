@@ -13,11 +13,8 @@ allow_ai_to_use="1"
 ai_abandon_when_unsteerable="1"
 respawn_time="5"
 ai_pick_prevention_time="30"
+ai_handle_taxi_request_when_full="1"
 >
-
-	<tag name="metal_heavy" />
-	<tag name="apc" />
-	<tag name="any_tank" />
 	<tag name="hd_mc109_motor" />
 
 	<tire_set offset="0.01 0 1.75" radius="1.0" />

@@ -1,0 +1,62 @@
+material ChatBubbleBorderChannel {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			fog_override true
+			scene_blend alpha_blend
+			texture_unit ChannelTag {
+				texture chatbubblechannel.png
+				tex_address_mode clamp
+			}
+			texture_unit {
+				colour_op_ex modulate src_manual src_current 1.0 1.0 1.0
+				alpha_op_ex source1 src_current src_current
+			}
+			texture_unit {
+				texture chatbubbleborder.png
+				colour_op_ex blend_current_alpha src_current src_texture
+				alpha_op_ex add src_current src_texture
+				tex_address_mode clamp
+			}
+			// alpha control
+			texture_unit Alpha {
+				colour_op_ex source1 src_current src_current
+				alpha_op_ex modulate src_current src_manual 1.0
+			}
+		}
+	} 
+}
+  
+material ChatBubbleBorderChannelSquad : ChatBubbleBorderChannel {
+	technique Basic {
+		pass Basic {
+			texture_unit ChannelTag {
+				texture chatbubblechannel_squad.png
+				tex_address_mode clamp
+			}
+		}
+	} 
+}
+
+
+material ChatBubbleBorder {
+	receive_shadows off
+	technique {
+		pass {
+			fog_override true
+			scene_blend alpha_blend
+			texture_unit {
+				texture chatbubbleborder.png
+				tex_address_mode clamp
+			}
+			// alpha control
+			texture_unit Alpha {
+				colour_op_ex source1 src_current src_current
+				alpha_op_ex modulate src_current src_manual 1.0
+			}
+		}
+	} 
+}
+  
+
+
