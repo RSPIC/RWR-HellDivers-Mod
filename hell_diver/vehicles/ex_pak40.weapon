@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapon 
+drop_count_factor_on_death="0" 
+drop_count_factor_on_player_death="0"
+time_to_live_out_in_the_open="0"
+player_death_drop_owner_lock_time="0"
+key="ex_pak40.weapon" 
+> 
+	<tag name="defensive_equipment" />
+	<tag name="defensive_at" />
+	<tag name="anti_tank" />
+
+    <specification 	
+    slot="1" 	
+    retrigger_time="6" 
+    accuracy_factor="0.97" 
+	spread_range="0.6"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="1" 
+    sustained_fire_diminish_rate="0.15" 
+    magazine_size="-1" 
+	reload_one_at_a_time="1"
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="0"	
+    suppressed="0" 
+	class="0" 
+    name="Pak-40" 
+	sight_range_modifier="3.0" 
+	ai_sight_range_modifier="0.4" 
+	sight_height_offset="1.0" 
+	burst_shots="1" 
+    projectiles_per_shot="1" 
+    projectile_speed="50.0"
+	barrel_offset_3d="0 1.5 4.0" 
+	carry_in_two_hands="0" 
+	stab_enabled="1" 
+	stab_range="0" 
+	use_basic_muzzle_smoke_effect="0"
+	/> 
+	<!--30RPM 100m range 50mag-->
+	<!-- mk2 Increases the amount of ammunition to 35 rounds. -->
+	<!-- mk3 Adds a laser sight and improves turn speed. -->
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_vehicle_destroy_damage.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0.0 0.0" />
+
+ 	<sound class="operation" key="fire" fileref="ex_turret_fire.wav" pitch_variety="0.05" volume="0.7"/>
+
+    <model mesh_filename="ex_pak40_turrent.mesh" texture_filename="ex_pak40_turrent.jpg" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="hd_at47.png" /> 
+
+    <commonness value="0" can_respawn_with="0" in_stock="0" /> 
+    <inventory encumbrance="50.0" price="0.0" /> 
+    <weak_hand_hold offset="1" /> 
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="2" can_be_detected_by_footmen="1" 
+	time_to_live="4" can_be_detected_by_driver="1" can_be_disarmed="0" name="Pak-40" radius="0.7"> 
+		
+        <result class="spawn" instance_class="projectile" instance_key="ex_pak40_damage.projectile" 
+		min_amount="14" max_amount="14" offset="0 0.5 0" position_spread="1.5 0" direction_spread="0.1 0" />
+		<!-- damage 14x20=280 轰炸伤-->
+
+		<!--命中音效-->
+		<sound class="result" key="other" fileref="at_hit_sfx_2.wav" pitch_variety="0.03" volume="1.0" />
+	
+		<trigger class="impact" time_to_live="0.4"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+
+		<trail probability="1" key="nova_trail"/>	
+		<model mesh_filename="APFSDS.xml" />
+
+		<effect class="result" key="terrain" ref="real_up_dust_beam" lighting="1" post_processing="0"/>
+		<!-- <effect class="result" key="terrain" ref="real_up_dust_spread" lighting="1" post_processing="0"/> -->
+		<effect class="result" key="terrain" ref="real_up_dust_stone" lighting="1" post_processing="1"/>
+		<effect class="result" key="terrain" ref="real_up_smoke_1" lighting="1" post_processing="0"/>
+		<effect class="result" key="terrain" ref="real_up_smoke_beam" lighting="1" post_processing="0"/>
+		<effect class="result" key="terrain" ref="real_up_impact_spread" lighting="1" post_processing="0"/>
+		<effect class="result" key="terrain" ref="real_up_impact_spark" lighting="1" post_processing="0"/>
+		<!-- <effect class="result" key="terrain" ref="real_up_impact_spark_2" lighting="1" post_processing="0"/> -->
+		<effect class="result" key="terrain" ref="real_up_impact_spark_1" lighting="1" post_processing="0"/>
+		<effect class="result" key="terrain" ref="real_center_short_light" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="real_center_ambient_light" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_result_ground_smoke" lighting="0" post_processing="1"/>
+		<effect class="result" key="terrain" ref="nova_result_ambient" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_result_ambient_ground" lighting="0" post_processing="0"/> 
+
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<effect class="activated" ref="general_activated_at_smoke_trail"/>
+
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+
+    </projectile>
+	<!--枪口特效-->
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 		
+	<effect class="muzzle" ref="nova_muzzle_fire_smoke" post_processing="1"/>
+	<effect class="muzzle" ref="nova_muzzle_fire_smoke_2" post_processing="1"/>
+	<effect class="muzzle" ref="nova_muzzle_fireball" post_processing="1"/>
+	<effect class="muzzle" ref="nova_muzzle_fireball_side" />
+	<effect class="muzzle" ref="nova_muzzle_fireball_side_2" />
+	<effect class="muzzle" ref="nova_muzzle_fireball_side_3" post_processing="1"/>
+	<effect class="muzzle" ref="nova_muzzle_ambient"/>
+	<effect class="muzzle" ref="nova_muzzle_ambient_ground"/>
+	<effect class="muzzle" ref="nova_muzzle_spark"/>
+
+    <target_factors tag="" distance="1.0" direction="0.0" squad_command="1.0" base_score="0.5" />
+    <target_factors tag="heavy_combat" distance="1.0" direction="0.0" squad_command="1.0" base_score="10.0" />
+    <target_factors tag="apc" distance="1.0" direction="0.0" squad_command="1.0" base_score="10.0" />
+    <target_factors tag="light_combat" distance="1.0" direction="0.0" squad_command="1.0" base_score="6.0" />   
+    <target_factors tag="defensive_at" distance="1.0" direction="0.0" squad_command="1.0" base_score="10.0" />
+    <target_factors tag="tactical" distance="1.0" direction="0.0" squad_command="1.0" base_score="8.0" />  <!-- important non combat player-only vehicles -->  
+    <target_factors tag="bazooka" distance="1.0" direction="0.0" squad_command="1.0" base_score="8.0" />
+    <target_factors tag="anti_tank" distance="1.0" direction="0.0" squad_command="1.0" base_score="8.0" />
+
+</weapon>
+
+
+

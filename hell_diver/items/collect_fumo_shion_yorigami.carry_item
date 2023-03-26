@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carry_item 
+name="Shion Yorigami Fumo" 
+key="collect_fumo_shion_yorigami.carry_item"
+file="collect_rare.base"
+>
+
+    <hud_icon filename="collect_fumo_shion_yorigami.png" />
+    <inventory  price="250.0" />
+
+    <model mesh_filename="collect_fumo_shion_yorigami.mesh" texture_filename="collect_fumo_shion_yorigami.jpg" />
+
+
+    <commonness value="1"  />
+</carry_item>

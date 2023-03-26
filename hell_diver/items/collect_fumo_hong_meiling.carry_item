@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carry_item 
+name="Hong Meiling Fumo" 
+key="collect_fumo_hong_meiling.carry_item"
+file="collect_rare.base"
+>
+
+    <hud_icon filename="collect_fumo_hong_meiling.png" />
+    <inventory  price="250.0" />
+
+    <model mesh_filename="collect_fumo_hong_meiling.mesh" texture_filename="collect_fumo_hong_meiling.jpg" />
+
+
+    <commonness value="1"  />
+</carry_item>

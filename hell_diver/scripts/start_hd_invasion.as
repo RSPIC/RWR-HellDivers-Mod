@@ -37,14 +37,14 @@ void main(dictionary@ inputData) {
 
         settings.m_startServerCommand = """
 <command class='start_server'
-	server_name='[Helldiver] testing QQ：498520233'
+	server_name='[Helldiver] testing '
 	server_port='1240'
 	url='https://steamcommunity.com/sharedfiles/filedetails/?id=2910392031'
 	register_in_serverlist='1'
 	mode='COOP'
         persistency='forever'
 	comment='Running with HellDivers Mod.  QQ：498520233'
-	max_players='16'>
+	max_players='32'>
 	<client_faction id='0' />
 </command>
 """;

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carry_item 
+name="Mokou Fujiwara Fumo" 
+key="collect_fumo_mokou_fujiwara.carry_item"
+file="collect_rare.base"
+>
+
+    <hud_icon filename="collect_fumo_mokou_fujiwara.png" />
+    <inventory  price="250.0" />
+
+    <model mesh_filename="collect_fumo_mokou_fujiwara.mesh" texture_filename="collect_fumo_mokou_fujiwara.jpg" />
+
+
+    <commonness value="1"  />
+</carry_item>

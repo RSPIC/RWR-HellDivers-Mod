@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carry_item 
+name="Nitori Kawasiro Fumo" 
+key="collect_fumo_nitori_kawashiro.carry_item"
+file="collect_rare.base"
+>
+
+    <hud_icon filename="collect_fumo_nitori_kawashiro.png" />
+    <inventory  price="250.0" />
+
+    <model mesh_filename="collect_fumo_nitori_kawashiro.mesh" texture_filename="collect_fumo_nitori_kawashiro.jpg" />
+
+
+    <commonness value="1"  />
+</carry_item>

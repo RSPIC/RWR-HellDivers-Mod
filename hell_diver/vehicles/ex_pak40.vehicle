@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vehicle name="PAK-40 Anti Tank" map_view_atlas_index="7" 
+usable_for_cover="0" protectors="3" 
+soldier_capacity_offset="1"
+allow_ai_to_use="1"
+allow_player_to_use="1"
+key="ex_pak40.vehicle"
+respawn_time="300.0"
+ai_pick_prevention_time="60"
+designated_squad_as_driver_only="0"
+>
+	<tag name="anti_tank" />
+	<tag name="defensive_at" />
+	<tag name="target" />
+
+	<tire_set offset="1 0.0 1" radius="0.2" />
+	<tire_set offset="1 0.0 -1" radius="0.2" />
+
+	<modifier class="blast_range" value="-3.0" />
+
+	<control max_speed="1" acceleration="1" max_reverse_speed="2" 
+      tracked="1" gears="0"  max_rotation="0.1"  max_water_depth="1.0" />
+
+	<physics 
+	max_health="20" 
+	mass="64" 
+	extent="4 0 4" 
+	offset="0 0 0" 
+	top_offset="0 0.5 0" 
+	collision_model_pos="0 0 0" 
+	collision_model_extent="2 1 2" 
+	visual_offset="0 0 0" 
+	collision_response_factor="0.2" 
+	blast_push_threshold="10.0" 
+	vehicle_collision_damage_factor="3" 
+	drag_offset="-1"
+	destroy_on_top_hit="1"
+	destroy_on_top_hit_time="0"
+	/> 
+
+	0<turret offset="0 0 0" weapon_key="ex_pak40.weapon" weapon_offset="0 0.15 0" 
+	weapon_recoil="1.0" physics_recoil="0"  max_rotation_step="0.00008" rotation="0"  />
+	0<turret offset="0 0 0" weapon_key="auxiliary_car_fire_aim.weapon" weapon_offset="0 0.15 0" 
+	weapon_recoil="0.0" physics_recoil="0"  max_rotation_step="0.00008" rotation="0" />
+	<!-- x(负右) y(正上) z(负后) -->
+	<character_slot type="gunner" seat_position="-0.3 0.1 -1.3" enter_position="-0.3 0.1 -1.3" 
+	attached_on_turret="0" rotation="0" exit_rotation="1.57" hiding="0" animation_key="63type_107mm_rotate_handle">  	
+		<turret index="0" />
+		<turret index="1" />
+	</character_slot>
+	
+	<visual class="turret" offset="0 0.5 0" turret_index="0" mesh_filename="ex_pak40.mesh" texture_filename="ex_pak40.jpg" />
+	<visual class="turret" offset="0 0.5 0" turret_index="1" mesh_filename="ex_pak40_tire.mesh" texture_filename="ex_pak40_tire.jpg" />
+	<visual class="front_tire" offset="0 0 0" mesh_filename="" texture_filename="" />
+	<visual class="rear_tire" mesh_filename="" texture_filename="" />
+	
+
+	<rev_sound filename="jeep2_rev2.wav" low_pitch="0.4" high_pitch="1.5" low_rev="0.1" high_rev="0.7" volume="0.0" />
+	
+	<sound key="slide" filename="" />
+	<sound key="squeal" filename="" />
+	<sound key="ignition" filename="" />
+	<sound key="hit" filename="car_hit1.wav" />
+	<sound key="hit" filename="car_hit2.wav" />
+	<sound key="hit" filename="car_hit3.wav" />
+	
+	<event>
+		<trigger class="destroy" />
+	<result class="spawn" instance_class="projectile" instance_key="hd_vehicle_destroy_damage.projectile" min_amount="1"
+		max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" /><!--摧毁时的爆炸-->
+	</event>
+
+  <event>
+		<trigger class="destroy" />		
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_radartower.visual_item" min_amount="3" max_amount="3" offset="0 2.0 0" position_spread="1.5 1.5" direction_spread="0.05 0.2" /> 
+  </event>
+  <event>
+		<trigger class="destroy" />		
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor1.visual_item" min_amount="2" max_amount="3" offset="0 2.0 0" position_spread="1.5 1.5" direction_spread="0.1 0.2" /> 
+  </event>  
+  <event>
+		<trigger class="destroy" />		
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_truck1.visual_item" min_amount="1" max_amount="2" offset="0 2.0 0" position_spread="1.5 1.5" direction_spread="0.1 0.2" /> 
+  </event>   
+  <event>
+		<trigger class="destroy" />		
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_jeep2.visual_item" min_amount="1" max_amount="1" offset="0 2.0 0" position_spread="1.5 1.5" direction_spread="0.05 0.2" /> 
+  </event>  
+  
+</vehicle>

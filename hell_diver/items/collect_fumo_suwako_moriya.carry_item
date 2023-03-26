@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carry_item 
+name="Suwako Moriya Fumo" 
+key="collect_fumo_suwako_moriya.carry_item"
+file="collect_rare.base"
+>
+
+    <hud_icon filename="collect_fumo_suwako_moriya.png" />
+    <inventory  price="250.0" />
+
+    <model mesh_filename="collect_fumo_suwako_moriya.mesh" texture_filename="collect_fumo_suwako_moriya.jpg" />
+
+
+    <commonness value="1"  />
+</carry_item>

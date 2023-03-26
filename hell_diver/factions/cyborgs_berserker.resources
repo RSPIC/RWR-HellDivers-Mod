@@ -2,6 +2,7 @@
 <resources clear_weapons="0" clear_vehicles="0" clear_calls="0">
 	<!-- always load common first; it"s the one that clears the initial weapon resources -->
 	<weapon key="cyborgs_berserker_main.weapon" />
+	<weapon key="cyborgs_berserker_sec_antitank.weapon" />
 	
 	<!-- 30层 -->
 	<!-- 1-20层额外装甲 -->

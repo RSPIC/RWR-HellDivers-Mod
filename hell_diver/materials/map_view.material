@@ -47,7 +47,7 @@ material MapViewFront {
 			depth_check off
 
 			texture_unit Decal {
-				texture mapview_frame.png
+				texture mapview_frame_base.png
 				filtering trilinear
 			}
 		} 

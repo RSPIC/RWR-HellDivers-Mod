@@ -49,7 +49,7 @@ key="cyborgs_ifv_at.weapon"
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="8" can_be_detected_by_footmen="1" 
 	time_to_live="1" can_be_detected_by_driver="1" can_be_disarmed="0" name="TD-110 Bastion" radius="0.7"> 
 		
-        <result class="blast" radius="6.8" damage="39" push="0" decal="0" character_state="wound"  damage_origin_vehicle="0"  />
+        <result class="blast" radius="6.8" damage="80" push="0" decal="0" character_state="wound"  damage_origin_vehicle="0"  />
 
 		<!--命中音效-->
 		<sound class="result" key="other" fileref="at_hit_sfx_2.wav" pitch_variety="0.03" volume="1.0" />
