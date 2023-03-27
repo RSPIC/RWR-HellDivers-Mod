@@ -1,34 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>	
 <vehicle  
 file="_vehicle_hvy.base"
-name="Infantry Fighting Vehicle" 
-key="cyborgs_ifv.vehicle" 
-time_to_live_unsteerable="5" 
-map_view_atlas_index="38" 
+name="Sturm Tiger" 
+key="ex_sturmtiger_tank.vehicle" 
+time_to_live_unsteerable="12" 
+map_view_atlas_index="59" 
 minimum_fill_requirement="0.25"
 max_character_collision_speed_on_normal="5"
-simulated_damage="130"
+simulated_damage="100"
 usable_for_cover="1"
 reserves_spawn_point="1"
-allow_ai_to_use="1"
-ai_abandon_when_unsteerable="0"
-respawn_time="25"
-ai_pick_prevention_time="60"
+allow_ai_to_use="0"
+ai_abandon_when_unsteerable="1"
+ai_handle_taxi_request_when_full="1"
 character_leave_request_mode="friendly"
 >
-	<tag name="metal_heavy" />
 	<tag name="tank" />
-	<tag name="heavy_combat" />
 	<tag name="any_tank" />
 
-	<tire_set offset="1.8 0.0 +3.0" radius="0.4" />
-	<tire_set offset="1.8 0.0 -3.0" radius="0.4" />
+	<tire_set offset="1.8 0.0 +3.5" radius="0.4" />
+	<tire_set offset="1.8 0.0 -3.5" radius="0.4" />
 
 	<control 
-	max_speed="11" 
-	acceleration="12.0" 
-	max_reverse_speed="11" 
-	min_health_to_steer="40" 
+	max_speed="7" 
+	acceleration="10.0" 
+	max_reverse_speed="8" 
+	min_health_to_steer="0.10" 
 	max_rotation="0.0" 
 	max_water_depth="2.0" 
 	steer_smoothening="0" 
@@ -37,41 +34,41 @@ character_leave_request_mode="friendly"
 
 	<physics 
 	remove_collision_threshold="1.0"
-	extent="6.0 -2 8" 
+	extent="6.0 -2 12" 
 	offset="0 0 0" 
 	top_offset="0 2 0" 
-	collision_model_pos="0 0.9 0.1" 
-	collision_model_extent="4.6 1.5 6.4" 
+	collision_model_pos="0 1.4 -0.08" 
+	collision_model_extent="4.0 2.5 5.8" 
 	visual_offset="0 0.7 0" 
 	friction_offset="0.0" 
-	drag_offset="-0.45" 
+	drag_offset="-1" 
 	destroy_on_top_hit="1"
 	destroy_on_top_hit_time="5"/> 
 
-	0<turret offset="0.085 -0.1 -1.2" weapon_key="cyborgs_ifv_at.weapon" weapon_offset="0.25 2.55 6.5" 
-	weapon_recoil="2.5" physics_recoil="0.8" max_rotation_step="0.00005" rotation_range="4" />
-	1<turret offset="0.085 -0.1 -1.2" weapon_key="auxiliary_car_fire_aim.weapon" weapon_offset="0.25 2.55 6.5" 
-	weapon_recoil="0" physics_recoil="0" max_rotation_step="0.00005" rotation_range="4" />
-	2<turret offset="0.085 -0.1 -1.2" weapon_key="cyborgs_squadleader_secondary_alert.weapon" weapon_offset="0.25 2.55 6.5" 
-	weapon_recoil="0" physics_recoil="0" max_rotation_step="0.00005" rotation_range="4" />
+	0<turret offset="0 -0.1 -1.2" weapon_key="ex_sturmtiger_tank_gl.weapon" weapon_offset="-0.15 3 4.5" 
+	weapon_recoil="0" physics_recoil="1" max_rotation_step="0.00005" rotation_range="0.15" />
+	1<turret offset="-1.05 2.5 2.5" weapon_key="hd_m5_apc_mg94.weapon" weapon_offset="0 0 0" 
+	weapon_recoil="0.02" max_rotation_step="0.00012"  rotation_range="0.1" />
+	2<turret offset="0 -0.1 -1.2" weapon_key="auxiliary_car_fire_aim.weapon" weapon_offset="-0.15 3 4.5" 
+	weapon_recoil="0" physics_recoil="0" max_rotation_step="0.00005" rotation_range="0.15" />
 	<!-- 车体\炮台 -->
-	<visual class="chassis" mesh_filename="cyborgs_ifv_main.mesh" texture_filename="cyborgs_ifv_main.jpg" />
-	<visual class="turret" offset="-0.3 2 0" turret_index="0" mesh_filename="cyborgs_ifv_turrent.mesh" texture_filename="cyborgs_ifv_main.jpg" />
+	<visual class="chassis" mesh_filename="ex_sturmtiger_tank.mesh" texture_filename="ex_sturmtiger_tank.jpg" />
+	<visual class="turret" turret_index="0" mesh_filename=".mesh" texture_filename="" />
+	<visual class="turret" turret_index="1" mesh_filename=".mesh" texture_filename="" />
 	<!-- 破损车体\炮台 -->
-	<visual class="chassis" key="broken"  mesh_filename="cyborgs_ifv_main.mesh" texture_filename="cyborgs_ifv_main_broken.jpg" />
-	<visual class="turret"  key="broken" turret_index="0" mesh_filename="cyborgs_ifv_turrent.mesh" texture_filename="cyborgs_ifv_main_broken.jpg" />
+	<visual class="chassis" key="broken"  mesh_filename="ex_sturmtiger_tank.mesh" texture_filename="ex_sturmtiger_tank_broken.jpg" />
 	<!-- 轮子 -->
-	<visual class="track" mesh_filename="cyborgs_ifv_track_right.mesh" offset="-0.1 0 0" >
-		<part texture_filename="cyborgs_ifv_track.jpg" texture_animation="translate" tire_binding="0" />
+	<visual class="track" mesh_filename="ex_sturmtiger_tank_right.mesh" offset="-1.7 0 0" >
+		<part texture_filename="ex_sturmtiger_tank_track.jpg" texture_animation="translate" tire_binding="0" />
 	</visual>
 
-	<visual class="track" mesh_filename="cyborgs_ifv_track_left.mesh" offset="+0.1 0 0" >
-		<part texture_filename="cyborgs_ifv_track.jpg" texture_animation="translate" tire_binding="0" />
+	<visual class="track" mesh_filename="ex_sturmtiger_tank_left.mesh" offset="+1.7 0 0" >
+		<part texture_filename="ex_sturmtiger_tank_track.jpg" texture_animation="translate" tire_binding="0" />
 	</visual>
 
-	<character_slot type="driver" enter_position="0 0.3 3" seat_position="0 0.3 2"  rotation="0" exit_rotation="0" hiding="1" />
-	<character_slot type="gunner" position="0 0.3 -3.5" rotation="0" exit_rotation="-3.14" hiding="1" >
-		<turret index="0"/>	<turret index="1"/><turret index="2"/> 
+	<character_slot type="driver" position="1.5 0.3 +2" rotation="0" exit_rotation="1.57" hiding="1" />
+	<character_slot type="gunner" position="-1.5 0.3 +2" rotation="0" exit_rotation="-1.57" hiding="1" >
+		<turret index="0"/>	<turret index="1"/>  <turret index="2"/>
 	</character_slot>
 
 
@@ -110,12 +107,12 @@ character_leave_request_mode="friendly"
 	<effect event_key="health" value="20" ref="car_destroyed_up_smoke" offset="-0.0 2.3 -2.7" />
 	<effect event_key="health" value="20" ref="car_broken_spary_spark" offset="-0.0 2.3 -2.7" />
 
-	<effect event_key="destroyed" ref="car_destroyed_fire" post_processing="0" offset="-0.5 2.5 -1.5" />
-	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="1" offset="-0.5 2.5 -1.5" />  
-	<effect event_key="destroyed" ref="car_broken_spary_spark" post_processing="1" offset="-0.5 2.5 -1.5" />  
-	<effect event_key="destroyed" ref="car_destroyed_fire" post_processing="0" offset="0.5 2 0.8" />
-	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="1" offset="0.5 2 0.8" />  
-	<effect event_key="destroyed" ref="car_broken_spary_spark" post_processing="1" offset="0.5 2 0.8" />  
+	<effect event_key="destroyed" ref="car_destroyed_fire" post_processing="0" offset="-0.5 3.2 -1.5" />
+	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="1" offset="-0.5 3.2 -1.5" />  
+	<effect event_key="destroyed" ref="car_broken_spary_spark" post_processing="1" offset="-0.5 3.2 -1.5" />  
+	<effect event_key="destroyed" ref="car_destroyed_fire" post_processing="0" offset="0.5 3.2 0.8" />
+	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="1" offset="0.5 3.2 0.8" />  
+	<effect event_key="destroyed" ref="car_broken_spary_spark" post_processing="1" offset="0.5 3.2 0.8" />  
 
 	<effect event_key="destroyed" ref="IB_fire" lighting="0" post_processing="1" offset="0 2 0"/> 
 	<effect event_key="destroyed" ref="IB_up_smoke" lighting="1" post_processing="1" offset="0 2 0"/> 
@@ -133,18 +130,14 @@ character_leave_request_mode="friendly"
 		<trigger class="destroy" />  	
     <result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor2.visual_item" min_amount="0" max_amount="1" offset="0 2.5 0" position_spread="1.5 1.5" direction_spread="0.10 0.25" />
 	</event>
- 	<event>
+  <event>
 		<trigger class="destroy" />		
     <result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor3.visual_item" min_amount="1" max_amount="2" offset="0 2.5 0" position_spread="1.5 1.5" direction_spread="0.12 0.20" />
 	</event>
-  	<event>
+  <event>
 		<trigger class="destroy" />		
     <result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor4.visual_item" min_amount="1" max_amount="2" offset="0 2.5 0" position_spread="1.5 1.5" direction_spread="0.2 0.25" />
 	</event>    
-  	<!-- <event>
-		<trigger class="destroy" />		
-    <result class="spawn" instance_class="projectile" instance_key="hd_vehicle_destroy_damage.projectile" min_amount="1" max_amount="1" offset="0 1.0 0" position_spread="0 0" direction_spread="0 0" />
-	</event>     -->
 
   <event>
 		<trigger class="cleanup" />		

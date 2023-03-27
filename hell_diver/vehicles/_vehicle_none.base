@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<vehicle  
+character_leave_request_mode="friendly"
+>
+
+	<modifier class="blast_range" value="0.0" />
+	<modifier class="blast_damage" value="0.0" />
+
+	<physics 
+	max_health="50" 
+	blast_damage_threshold="0" 
+	TODO_blast_damage_threshold="0" 
+	blast_push_threshold="1"
+	mass="20.0" 
+	broken_mass="10"
+	/> 
+</vehicle>

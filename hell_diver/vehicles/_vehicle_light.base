@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<vehicle  
+character_leave_request_mode="friendly"
+>
+	<tag name="metal_heavy" />
+	<tag name="heavy_combat" />
+
+	<modifier class="blast_range" value="0.0" />
+	<modifier class="blast_damage" value="-1.0" />
+
+	<physics 
+	max_health="100" 
+	blast_damage_threshold="0" 
+	blast_push_threshold="1"
+	mass="60.0" 
+	broken_mass="20"
+	/> 
+</vehicle>

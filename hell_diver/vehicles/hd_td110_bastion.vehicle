@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>	
 <vehicle  
+file="_vehicle_hvy.base"
 name="TD-110 Bastion" 
 key="hd_td110_bastion.vehicle" 
 time_to_live_unsteerable="5" 
@@ -15,9 +16,7 @@ respawn_time="25"
 ai_pick_prevention_time="60"
 character_leave_request_mode="friendly" 
 >
-	<tag name="metal_heavy" />
 	<tag name="tank" />
-	<tag name="heavy_combat" />
 	<tag name="any_tank" />
 
 	<tire_set offset="1.8 0.0 +3.0" radius="0.4" />
@@ -34,15 +33,7 @@ character_leave_request_mode="friendly"
 	tracked="1" gears="0"
 	/>
 
-	<modifier class="blast_range" value="-2.5" />
-	<modifier class="blast_damage" value="-15.0" />
-
 	<physics 
-	max_health="150" 
-	blast_damage_threshold="0" 
-	blast_push_threshold="10"
-	mass="200.0" 
-	broken_mass="180"
 	remove_collision_threshold="1.0"
 	extent="6.0 -2 8" 
 	offset="0 0 0" 

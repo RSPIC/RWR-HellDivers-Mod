@@ -60,7 +60,8 @@ class UAVdrone : Tracker {
 					UAVdroneTarget("hd_agl8_mk3.vehicle", "A-GL8 GL Launcher"),
 					UAVdroneTarget("hd_aac6_tesla_mk3.vehicle", "A-AC6 Tesla"),
 					UAVdroneTarget("hd_apb_mk3.vehicle", "Anti Person Barrier"),
-					UAVdroneTarget("jeep.vehicle", "Jeep")
+					UAVdroneTarget("jeep.vehicle", "Jeep"),
+					UAVdroneTarget("cyborgs_ifv.vehicle", "Infantry Fighting Vehicle")
 				};
 				
 				//scanning all major enemy factions (neutral wasn't necessary this time)

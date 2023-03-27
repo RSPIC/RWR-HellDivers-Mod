@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>	
 <vehicle  
+file="_vehicle_hvy.base"
 name="ISU-152" 
 key="ex_isu_152.vehicle" 
 time_to_live_unsteerable="12" 
@@ -14,9 +15,7 @@ ai_abandon_when_unsteerable="1"
 ai_handle_taxi_request_when_full="1"
 character_leave_request_mode="friendly"
 >
-
-	<tag name="metal_heavy" />
-	<tag name="apc" />
+	<tag name="tank" />
 	<tag name="any_tank" />
 
 	<tire_set offset="1.8 0.0 +3.5" radius="0.4" />
@@ -33,15 +32,7 @@ character_leave_request_mode="friendly"
 	tracked="1" gears="0"
 	/>
 
-	<modifier class="blast_range" value="-2.5" />
-	<modifier class="blast_damage" value="-15.0" />
-
 	<physics 
-	max_health="150" 
-	blast_damage_threshold="25" 
-	blast_push_threshold="10"
-	mass="200.0" 
-	broken_mass="180"
 	remove_collision_threshold="1.0"
 	extent="6.0 -2 12" 
 	offset="0 0 0" 

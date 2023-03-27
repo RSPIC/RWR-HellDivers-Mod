@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<vehicle name="63type 107mm Rocket" map_view_atlas_index="13" 
+<vehicle 
+file="_vehicle_none.base"
+name="63type 107mm Rocket" map_view_atlas_index="13" 
 usable_for_cover="0" protectors="1" 
 soldier_capacity_offset="1"
 allow_ai_to_use="0"
@@ -19,7 +21,6 @@ designated_squad_as_driver_only="1"
       tracked="1" gears="0"  max_rotation="0.1"  max_water_depth="1.0" />
 
 	<physics 
-	max_health="20" 
 	mass="64" 
 	extent="1.6 0 2.4" 
 	offset="0 0 0" 

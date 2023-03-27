@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>	
 <!-- credit: XEON  modifier: RST-->
 <vehicle  
+file="_vehicle_light.base"
 name="M5 APC" 
 key="hd_m5_apc.vehicle" 
 time_to_live_unsteerable="5" 
@@ -18,7 +19,6 @@ ai_handle_taxi_request_when_full="1"
 character_leave_request_mode="friendly"
 >
 
-	<tag name="metal_heavy" />
 	<tag name="apc" />
 	<tag name="any_tank" />
 
@@ -35,15 +35,7 @@ character_leave_request_mode="friendly"
 	max_water_depth="1.9" 
 	steer_smoothening="0.5" />
 
-	<modifier class="blast_range" value="0.0" />
-	<modifier class="blast_damage" value="-1.0" />
-
 	<physics 
-	max_health="100" 
-	blast_damage_threshold="0.1" 
-	blast_push_threshold="1"
-	mass="60.0" 
-	broken_mass="20"
 	remove_collision_threshold="1.0"
 	extent="4.0 -1 5.8" 
 	offset="0 0.0 0" 

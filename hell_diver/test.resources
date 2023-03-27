@@ -6,10 +6,28 @@
 <weapon key="ref.weapon" />
 <weapon key="normal.weapon" />
 <weapon key="binoculars.weapon" />
+<!-- 特殊部署物 -->
+<weapon key="ex_gramophone_steeltorrent.weapon" /> <!--留声机 钢铁洪流进行曲-->
+<weapon key="ex_piano_uzuki.weapon" /> <!--卯月主题钢琴-->
 
-<!--弹头-->
+<!--部署-->
 <projectile key="hd_hellpod.projectile" />		<!--空投舱-->
 <projectile key="hd_resupply.projectile" />		<!--弹药补给-->
+<projectile key="acg_amg_11_mk3_call.projectile" /><!--自动机枪炮台-->
+<projectile key="acg_arx_34_mk3_call.projectile" /><!--自动轨道枪炮台-->
+<projectile key="ex_isu_152_call.projectile" /><!--152-->
+<projectile key="noxe_call.projectile" /><!--Noxe-->
+<projectile key="repair_crane_call.projectile" /><!--回收台-->
+<projectile key="ex_sturmtiger_tank_call.projectile" /><!--突击虎-->
+
+<projectile key="hd_at_mine_mk3.projectile" />			<!--地雷-->
+<projectile key="hd_airdropped_stun_mine_mk3.projectile" />		<!--眩晕雷-->
+<projectile key="hd_at47_mk3_call.projectile" /><!--AT-47 反坦克平台-->
+<projectile key="hd_amg_11_mk3_call.projectile" /><!--自动机枪炮台-->
+<projectile key="hd_arx_34_mk3_call.projectile" /><!--自动轨道枪炮台-->
+<projectile key="hd_agl8_mk3_call.projectile" /><!--榴弹炮炮台-->
+<projectile key="hd_aac6_tesla_mk3_call.projectile" /><!--特斯拉炮台-->
+
 <!-- 进攻支援 -->
 <projectile key="hd_offensive_vindicator_dive_bomb_mk3.projectile" />		<!--辩护者-->
 <projectile key="hd_offensive_airstrike_mk3.projectile" />	<!--空袭-->
@@ -26,6 +44,20 @@
 <projectile key="hd_offensive_heavy_strafing_run_mk3.projectile" />	<!--重机枪扫射-->
 <!-- 特殊支援 -->
 <projectile key="hd_nux_223_hellbomb.projectile" />	<!--地狱火-->
+<projectile key="hd_hellpod_call.projectile" />	<!--空投舱-->
 
+<!-- 普通投掷物 -->
+<projectile key="hd_grenade_molotov.projectile" />			<!-- 燃烧瓶  -->
+<projectile key="hd_grenade_standard.projectile" />		<!-- 标准手雷 -->
 
+<!--空投信标-->
+<projectile key="hd_m5_apc_call.projectile" />	<!--M5 APC轻型载具-->
+<projectile key="hd_m5_32_hav_call.projectile" /><!--M5-32 反坦克步兵车-->
+<projectile key="hd_td110_bastion_call.projectile" /><!--堡垒 坦克-->
+<projectile key="hd_mc109_motor_call.projectile" /><!--重锤摩托-->
+<projectile key="hd_resupply_spawn.projectile" /><!--弹药补给间接弹头-->
+<projectile key="hd_resupply.projectile" /><!--弹药补给-->
+<projectile key="hd_exo44_mk3.projectile" /><!--步行者-->
+<projectile key="hd_exo48_mk3.projectile" /><!--黑曜石-->
+<projectile key="hd_exo51_mk3.projectile" /><!--重步者-->
 </resources>

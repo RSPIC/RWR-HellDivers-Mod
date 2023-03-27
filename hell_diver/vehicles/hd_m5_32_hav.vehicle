@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>	
 <vehicle  
+file="_vehicle_hvy.base"
 name="M5-32 HAV" 
 key="hd_m5_32_hav.vehicle" 
 time_to_live_unsteerable="12" 
@@ -34,15 +35,7 @@ character_leave_request_mode="friendly"
 	max_water_depth="1.9" 
 	steer_smoothening="0.5" />
 
-	<modifier class="blast_range" value="0.0" />
-	<modifier class="blast_damage" value="-10.0" />
-
 	<physics 
-	max_health="120" 
-	blast_damage_threshold="5" 
-	blast_push_threshold="1.5"
-	mass="100.0" 
-	broken_mass="80"
 	remove_collision_threshold="1.0"
 	extent="4.2 -1 4.8" 
 	offset="0 0.0 0" 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>	
 <weapon 
 file="_hd_vehicle_cannon.base"
-key="ex_isu_152_gl.weapon" 
+key="ex_sturmtiger_tank_gl.weapon" 
 > 
     <specification 	
     slot="1" 	
@@ -18,14 +18,14 @@ key="ex_isu_152_gl.weapon"
 	can_shoot_prone="0"	
     suppressed="0" 
 	class="0" 
-    name="ISU-152" 
+    name="Sturm Tiger" 
 	sight_range_modifier="3" 
 	ai_sight_range_modifier="0.4" 
 	sight_height_offset="10" 
 	burst_shots="1" 
     projectiles_per_shot="1" 
     projectile_speed="50.0"
-	barrel_offset="0" 
+	barrel_offset="0.3" 
 	carry_in_two_hands="0" 
 	stab_enabled="0" 
 	stab_range="0" 
@@ -34,7 +34,7 @@ key="ex_isu_152_gl.weapon"
 
 	<sound class="operation" key="fire" fileref="hd_at_turret_fire_1.wav" pitch_variety="0.05" volume="0.7"/>
 
-    <model filename="" /> 
+	<model filename="" /> 
     <model mesh_filename="" texture_filename="" /> 
     <addon_model filename="" /> 
     <hud_icon filename="hd_m5_apc_autocannon.png" /> 
@@ -43,12 +43,20 @@ key="ex_isu_152_gl.weapon"
     <inventory encumbrance="50.0" price="0.0" /> 
     <weak_hand_hold offset="1" /> 
 
-    <projectile file="hd_general_spawn.projectile" pulldown_in_air="1.9" can_be_detected_by_footmen="1" 
-	time_to_live="4" can_be_detected_by_driver="1" can_be_disarmed="0" name="ISU-152" radius="0.7"> 
+	<ballistics curve_height="8.0" 
+	 near_far_distance="0.0" 
+	 speed_estimation_near="0.0" 
+	 speed_estimation_far="200.0" 
+	 max_speed="40.0" 
+	 randomness="0.0" 
+	 tweak_factor="0.9"/> 
+	 
+    <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="7.0" can_be_detected_by_footmen="1" 
+	time_to_live="8" can_be_detected_by_driver="1" can_be_disarmed="0" name="Sturm Tiger" radius="0.7"> 
 		
-        <result class="spawn" instance_class="projectile" instance_key="ex_isu_152_gl_damage.projectile" 
-		min_amount="8" max_amount="8" offset="0 0.5 0" position_spread="1.5 0" direction_spread="0.1 0" />
-		<!-- damage 8x50=400 轰炸伤-->
+        <result class="spawn" instance_class="projectile" instance_key="ex_sturmtiger_tank_gl_damage.projectile" 
+		min_amount="6" max_amount="6" offset="0 0.5 0" position_spread="1.5 0" direction_spread="0.1 0" />
+		<!-- damage 6x50=300 轰炸伤-->
 
 		<!--命中音效-->
 		<sound class="result" key="other" fileref="at_hit_sfx_2.wav" pitch_variety="0.03" volume="1.0" />
@@ -57,7 +65,7 @@ key="ex_isu_152_gl.weapon"
 		<rotation class="motion" /><!--参数：motion、random-->
 
 		<trail probability="1" key="nova_trail"/>	
-		<model mesh_filename="APFSDS.xml" />
+		<model mesh_filename="ex_sturmtiger_tank_shell.mesh" texture_filename="ex_sturmtiger_tank_shell.jpg" /> 
 
 		<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_1.wav" pitch_variety="0.01" volume="1" />
 		<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_2.wav" pitch_variety="0.01" volume="1" />
