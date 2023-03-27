@@ -9,7 +9,8 @@
 	<model filename="acg_api.xml" /> <!--API-->
 	<model filename="acg_fenrir_black.xml" /> <!--芬里尔 黑-->
 	<model filename="acg_fenrir_white.xml" /> <!--芬里尔 白-->
-	<model filename="acg_kemomimi.xml" /> <!--桃子酱（小狐狸）-->
+	<model filename="acg_kemomimi.xml"> <!--桃子酱（小狐狸）--><requirement class="weapon" slot="0" key="acg_kemomimi.weapon"/>
+	</model>
 	<model filename="acg_natsuki_amagi.xml" /> <!--甘城なつき（猫）-->
 	<model filename="acg_maido1.xml" /> <!--女仆 by DNTK-->
 	<model filename="acg_maido2.xml" /> <!--女仆 by DNTK-->

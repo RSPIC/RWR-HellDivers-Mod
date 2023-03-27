@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>	
 <weapon 
-drop_count_factor_on_death="0" 
-drop_count_factor_on_player_death="1.0"
-time_to_live_out_in_the_open="300"
-player_death_drop_owner_lock_time="300" 
+file="_rare_weapon.base"
 key="acg_reisenu_b.weapon" 
-on_ground_up="0 0 1" 
 > 
     <specification 	
     slot="0" 	
@@ -80,7 +76,7 @@ on_ground_up="0 0 1"
 	<capacity value="0" source="rank" source_value="0.0" />
 	<capacity value="1" source="rank" source_value="0.0" />
 	
-    <commonness value="1" can_respawn_with="0" in_stock="0" /> 
+
     <inventory encumbrance="10.0" price="1000.0" /> 
     <weak_hand_hold offset="0.3" /> 
 
