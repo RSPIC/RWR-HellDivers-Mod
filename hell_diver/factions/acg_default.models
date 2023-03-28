@@ -47,6 +47,10 @@
 	<model filename="acg_yuudachi_halloween_ver.xml" /> <!--夕立万圣节装-->
 	<model filename="acg_shigure_summer_ver.xml" /> <!--时雨水着-->
 	<model filename="acg_uzuki.xml" /> <!--卯月噗噗个噗-->
+	<model filename="acg_shigure_expanding.xml" > <!--时雨改二--><requirement class="weapon" slot="0" key="acg_shigure_127mm.weapon"/>
+	</model>
+	<model filename="acg_shigure.xml" > <!--时雨改二--><requirement class="weapon" slot="0" key="acg_shigure_610mm_torpedo.weapon"/>
+	</model>
 <!-- 碧蓝航线 -->
 	<model filename="acg_yuudachi_azurlane_origin.xml" /> <!--夕立碧蓝航线原皮-->
 	<model filename="acg_perseus.xml" /> <!--英仙座-->

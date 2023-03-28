@@ -29,7 +29,7 @@ radius="1"
 	sight_height_offset="1.0" 
 	burst_shots="1" 
     projectiles_per_shot="1" 
-    projectile_speed="120.0"
+    projectile_speed="40.0"
 	barrel_offset="1.0" 
 	carry_in_two_hands="1" 
 	stab_enabled="0" 
@@ -113,7 +113,7 @@ radius="1"
     <inventory encumbrance="1.0" price="0.0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
     
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
-    <projectile file="bullet.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+    <projectile file="bullet.projectile" pulldown_in_air="1" can_be_detected_by_footmen="1" 
 	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0"> 
 	
 		<!--
@@ -139,6 +139,10 @@ radius="1"
 		<effect class="result" key="terrain" ref="" lighting="0"/>
 		<effect class="activated" ref="" />
 		-->
+		<effect class="activated" ref="torpedo_tail_splash" />
+		<effect class="activated" ref="torpedo_tail_splash_2" />
+		<effect class="activated" ref="torpedo_tail_bobble" />
+
 		
 		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
 		<sound class="result" key="terrain" copy="other" />

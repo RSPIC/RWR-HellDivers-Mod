@@ -113,9 +113,7 @@ key="acg_reisenu_b.weapon"
     </projectile>
 	
 	    <effect class="muzzle" ref="reisenu_fire_muzzle_i"  /> 
-	
 
-	!--
     <ballistics 
     curve_height="12" 
     near_far_distance="0" 
@@ -124,7 +122,7 @@ key="acg_reisenu_b.weapon"
     max_speed="100" 
     randomness="0" 
     tweak_factor="2.1" /> 
-	-->
+
 	
     <stance state_key="running" accuracy="1" /> 
     <stance state_key="walking" accuracy="1" />

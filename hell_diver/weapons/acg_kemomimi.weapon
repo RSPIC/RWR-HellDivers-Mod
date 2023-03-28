@@ -83,13 +83,13 @@ key="acg_kemomimi.weapon"
 	<capacity value="1" source="rank" source_value="0.0" />
 	
 	<!--军械库相关-->
-    <inventory encumbrance="10.0" price="0.0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
+    <inventory encumbrance="10.0" price="1000.0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
     
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
     <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="30" can_be_detected_by_footmen="1" 
 	time_to_live="8" can_be_detected_by_driver="1" can_be_disarmed="0" name="Kemomimi's missile tails" > 
 	
-		<result class="blast" radius="4.5" damage="30" push="0.2" decal="0" character_state="wound"   />
+		<result class="blast" radius="4.5" damage="20" push="0.2" decal="0" character_state="wound"   />
 		<trigger class="impact" time_to_live="1"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		 <model mesh_filename="fox_tail.mesh" texture_filename="fox_tail.jpg" />
