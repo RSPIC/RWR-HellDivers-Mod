@@ -85,14 +85,14 @@ on_ground_up="0 0 1"
 	<capacity value="8" source="rank" source_value="229.750" />
 	
 	<!--军械库相关-->
-    <commonness value="0.5" can_respawn_with="0" in_stock="1" /> 
+    <commonness value="0.05" can_respawn_with="0" in_stock="1" /> 
     <inventory encumbrance="3.0" price="0.0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
     
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
     <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="48" can_be_detected_by_footmen="1" 
 	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0" name="MLS-4X Commando MK3" radius="0.6"> 
 	
-        <result class="blast" radius="4.4" damage="35.0" push="1.0" decal="1" character_state="wound"/>
+        <result class="blast" radius="4.4" damage="150.0" push="1.0" decal="1" character_state="wound"/>
 
 		<trigger class="impact" time_to_live="0.11"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->

@@ -56,7 +56,7 @@ key="ex_apocalypse_tank_gl.weapon"
 	time_to_live="4" can_be_detected_by_driver="1" can_be_disarmed="0" name="Apocalypse Tank" radius="0.7"> 
 		
         <result class="spawn" instance_class="projectile" instance_key="ex_apocalypse_tank_gl_damage.projectile" 
-		min_amount="4" max_amount="4" offset="0 0.5 0" position_spread="1.5 0" direction_spread="0.1 0" />
+		min_amount="10" max_amount="10" offset="0 0.5 0" position_spread="1.5 0" direction_spread="0.1 0" />
 		<!-- damage 4x20=80 轰炸伤-->
 
 		<!--命中音效-->

@@ -7,6 +7,8 @@ player_death_drop_owner_lock_time="0"
 key="cyborgs_hulk_sec_antitank.weapon" 
 on_ground_up="0 0 1" 
 radius="1"
+burst_time="4"
+ai_burst_time="4"
 > 
 	<tag name="bazooka" />
 	<tag name="anti_tank" />
@@ -122,7 +124,7 @@ radius="1"
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="30" can_be_detected_by_footmen="1" 
 	time_to_live="0.36" can_be_detected_by_driver="1" can_be_disarmed="0" name="Hulk"> 
 
-		<result class="blast" radius="1.0" damage="11" push="0.2" decal="0" character_state="death"  />
+		<result class="blast" radius="1.0" damage="10" push="0.2" decal="0" character_state="death"  />
 		<!-- 40x0.07time -->
 		<!-- damage2vehical 1.5x40=60 -->
 

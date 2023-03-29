@@ -112,12 +112,12 @@ radius="1"
 			direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
 		-->
 		<result class="spawn" instance_class="grenade" instance_key="hd_arc_ac5_shotgun_full_upgrade_damage.projectile" 
-		min_amount="7" max_amount="10" offset="0 0 0" position_spread="0 0" direction_spread="0.0 0.0" />
+		min_amount="9" max_amount="10" offset="0 0 0" position_spread="0 0" direction_spread="0.0 0.0" />
 		<trigger class="time" time_to_live="0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
 		<!-- 不受护甲抗致死衰减 -->
-		<!-- 16x2x(7~10)=224~320 轰炸伤 -->
+		<!-- 16x2x(9~10)=288~320 轰炸伤 -->
 		<!--命中音效-->
 		<sound class="result" key="other" fileref="burn.wav" pitch_variety="0.03" volume="0.0" />
 		

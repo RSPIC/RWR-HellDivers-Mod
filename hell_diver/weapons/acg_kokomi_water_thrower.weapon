@@ -53,7 +53,6 @@ key="acg_kokomi_water_thrower.weapon"
     <weak_hand_hold offset="0.005"/>
     <model filename="acgw_kokomi_water_thrower.xml"/>
     <hud_icon filename="acg_sangonomiya_kokomi_gl.png"/>
-    <inventory encumbrance="10.0" price="1000.0"/>
 
     <ballistics curve_height="14.4" near_far_distance="0.0" speed_estimation_near="60.0" 
     speed_estimation_far="150.0" max_speed="150.0" randomness="0.0" tweak_factor="1.95"/>
@@ -62,11 +61,17 @@ key="acg_kokomi_water_thrower.weapon"
 	time_to_live="2" can_be_detected_by_driver="1" can_be_disarmed="0" name="Kokomi"> 
 
         <result class="spawn" instance_class="projectile" instance_key="acg_kokomi_water_damage.projectile" 
-		min_amount="8" max_amount="12" offset="0 0 0" position_spread="2 1" direction_spread="0 0" />	
+		min_amount="20" max_amount="20" offset="0 0 0" position_spread="2 1" direction_spread="0 0" />	
 		<!-- 8~12x1 Stun伤害 -->
 			<!-- offset"x y z 生成位置偏差"  -->
 			<!-- position_spread="水平面随机生成位置 竖直面随机生成位置"  -->
 			<!-- direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感" -->
+        <sound class="result" key="other" fileref="kokomi_boom.wav" volume="3.0" />
+
+        <sound class="result" key="terrain" copy="other" />
+        <sound class="result" key="static_object" copy="other" />
+        <sound class="result" key="character" copy="other" />
+        <sound class="result" key="vehicle" copy="other" />
 
 		<effect class="activated" ref="kokomi_activated_bobble" />
 		<effect class="activated" ref="kokomi_activated_dropping_water" />

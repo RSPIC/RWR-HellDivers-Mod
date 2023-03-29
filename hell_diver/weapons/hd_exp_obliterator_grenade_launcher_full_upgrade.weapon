@@ -89,7 +89,7 @@ key="hd_exp_obliterator_grenade_launcher_full_upgrade.weapon"
 			<result class="blast" radius="6.8" damage="0.2" push="0" decal="0" character_state="death"  />
 		-->
 		<result class="spawn" instance_class="projectile" instance_key="hd_exp_obliterator_grenade_launcher_full_upgrade_damage.projectile" 
-		min_amount="50" max_amount="50" offset="0 1 0" position_spread="1 0" direction_spread="0.1 0" />
+		min_amount="20" max_amount="20" offset="0 1 0" position_spread="1 0" direction_spread="0.1 0" />
 			
 		<!-- damage 250+600=850 爆轰混伤 death -->
         <!-- 100/s 火伤 duration 2s -->

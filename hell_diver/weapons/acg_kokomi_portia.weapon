@@ -43,17 +43,14 @@ key="acg_kokomi_portia.weapon"
     
     <model filename="acgw_kokomi_portia.xml"/>
     <hud_icon filename="acg_sangonomiya_kokomi_main.png"/>
-    <inventory encumbrance="8.0" price="1000.0"/>
 
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
-	time_to_live="0.166" can_be_detected_by_driver="1" can_be_disarmed="0" name="Kokomi"> 
+	time_to_live="0.22" can_be_detected_by_driver="1" can_be_disarmed="0" name="Kokomi"> 
 	
 		<result class="hit" kill_probability="1.0" 
-		kill_probability_offset_on_successful_hit="12.5"
-		kill_decay_start_time="0.166" kill_decay_end_time="0.172" character_state="stun"/>
-		<!-- 13m max damage range / 最高1.5倍射界,且无衰减 -->
-		<!-- 0.3s stun time -->
-		<!-- damage 60hit/70ap stun  -->
+		kill_probability_offset_on_successful_hit="12"
+		kill_decay_start_time="0.22" kill_decay_end_time="0.22" character_state="stun"/>
+
         <effect class="result" key="terrain" ref="general_weapon_result_hitspot" lighting="0"/>
         <effect class="result" key="other" copy="terrain"/>
 		<effect class="result" key="static_object" copy="terrain" />
@@ -75,6 +72,6 @@ key="acg_kokomi_portia.weapon"
 	<stance state_key="crouching" accuracy="0.85"/>
 	<stance state_key="prone" accuracy="1.0"/>
 
-    <modifier class="speed" value="+0.2"/>
+    <modifier class="speed" value="0.3"/>
 
 </weapon>

@@ -113,7 +113,7 @@ radius="1"
 	time_to_live="0.6" can_be_detected_by_driver="1" can_be_disarmed="0" radius="1.5" name="FLAM-40 Incinerator"> 
 	
 		<result class="spawn" instance_class="grenade" instance_key="hd_pst_flam40_incinerator_mk3_damage.projectile" 
-		min_amount="2" max_amount="2" offset="0 0 0" position_spread="1 0" direction_spread="0.0 0.0" />
+		min_amount="3" max_amount="3" offset="0 0 0" position_spread="1 0" direction_spread="0.0 0.0" />
 		<trigger class="time" time_to_live="0.6"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->

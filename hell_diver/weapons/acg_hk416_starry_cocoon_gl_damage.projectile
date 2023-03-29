@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <projectile class="grenade" key="hk416_starry_cocoon_gl.projectile" name="Star GL" slot="1">
-		<result class="blast" radius="6" damage="10" push="0.4" decal="0" character_state="wound"  />
+		<result class="blast" radius="6" damage="6" push="0.4" decal="0" character_state="wound"  />
 		<trigger class="time" time_to_live="0"  />
 		<rotation class="motion" />
 		<model filename="rumbler_bullet.xml" />

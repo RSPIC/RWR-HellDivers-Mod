@@ -82,13 +82,12 @@ key="acg_shigure_610mm_torpedo.weapon"
 	<capacity value="0" source="rank" source_value="0.0" />
 	<capacity value="1" source="rank" source_value="0.0" />
 
-    <inventory encumbrance="10.0" price="10000.0" /> 
     <weak_hand_hold offset="0.3" /> 
 
     <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="0.5" can_be_detected_by_footmen="1" 
 	time_to_live="12" can_be_detected_by_driver="1" can_be_disarmed="0" name="4 x 610 mm quadruple torpedo tubes"> 
 		
-        <result class="blast" radius="8" damage="100" 
+        <result class="blast" radius="8" damage="150" 
 		push="0.5" decal="0" character_state="wound" faction_compare="not_equal" damage_origin_vehicle="0"/>
 
 		<trigger class="impact">

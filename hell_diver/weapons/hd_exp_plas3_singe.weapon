@@ -95,7 +95,7 @@ key="hd_exp_plas3_singe.weapon"
 	time_to_live="0.1" can_be_detected_by_driver="1" can_be_disarmed="0" name="PLAS-3 Singe" radius="0.6"> 
 	
         <result class="spawn" instance_class="projectile" instance_key="hd_exp_plas1_scorcher_full_upgrade_damage.projectile" 
-		min_amount="3" max_amount="3" offset="0 0.5 0" position_spread="0.8 0" direction_spread="0.1 0" />
+		min_amount="4" max_amount="4" offset="0 0.5 0" position_spread="0.8 0" direction_spread="0.1 0" />
 		<!-- damage 300 爆炸伤 -->
         <!-- 敲定： 3x10 = 30 可击穿轻甲载具，无法击穿中甲以上-->
         <!-- range 10m -->

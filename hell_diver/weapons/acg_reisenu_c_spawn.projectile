@@ -16,7 +16,7 @@ time_to_live_out_in_the_open="0"
 player_death_drop_owner_lock_time="0"
 >
     <result class="spawn" instance_class="projectile" instance_key="acg_reisenu_c_damage.projectile" 
-	min_amount="3" max_amount="3" offset="0 1 0" position_spread="0 0" direction_spread="0.00 0" />
+	min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.00 0" />
 	<trigger class="time" time_to_live="0.0" />	
 	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
 	

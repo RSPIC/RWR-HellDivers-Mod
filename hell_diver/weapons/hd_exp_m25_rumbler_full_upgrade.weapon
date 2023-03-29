@@ -65,7 +65,7 @@ on_ground_up="-1 1 0" >
 
 		<trigger class="impact"/>
         <result class="spawn" instance_class="projectile" instance_key="hd_exp_m25_rumbler_full_upgrade_damage.projectile" 
-		min_amount="6" max_amount="6" offset="0 1 0" position_spread="1 0" direction_spread="0.1 0" />
+		min_amount="7" max_amount="7" offset="0 1 0" position_spread="1 0" direction_spread="0.1 0" />
 		
 		<!-- damage 350+1800=2150 轰炸伤 -->
         <!-- 100/s 毒伤 duration 5s -->

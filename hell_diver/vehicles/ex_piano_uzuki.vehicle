@@ -9,20 +9,17 @@ max_character_collision_speed_on_normal="40"
 simulated_damage="0"
 usable_for_cover="0"
 allow_ai_to_use="0"
+file="_vehicle_none.base"
  >
 	<tag name="piano" />
 
 	<tire_set offset="1 0.0 1" radius="0.1" />
 	<tire_set offset="1 0.0 -1" radius="0.1" />
 
-	<modifier class="blast_range" value="0.0" />
-	<modifier class="blast_damage" value="0.0" />
 
 	<control max_speed="1" acceleration="0.01" max_reverse_speed="1.0" max_rotation="1.0" max_water_depth="4" />
 
 	<physics 
-	max_health="50" 
-	mass="30" 
 	extent="0.5 0.0 0.5" 
 	offset="0 0.0 0" 
 	top_offset="0 0.1 0" 

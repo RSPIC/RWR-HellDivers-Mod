@@ -19,7 +19,7 @@ player_death_drop_owner_lock_time="120"
     <collision class="sticky" />
 
 	<trigger class="impact" />	
-	<result class="blast" radius="3.2" damage="5" push="0.2" decal="0" character_state="death"  />
+	<result class="blast" radius="3.2" damage="2.3" push="0.2" decal="0" character_state="death" faction_compare="not_equal" />
 	
     <rotation class="random" />
     <model mesh_filename="" />

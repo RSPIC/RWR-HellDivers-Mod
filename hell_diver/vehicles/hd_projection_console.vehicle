@@ -19,7 +19,6 @@ allow_ai_to_use="0"
 	<control max_speed="1" acceleration="1" max_reverse_speed="1.0" max_rotation="1.0" max_water_depth="2" />
 
 	<physics 
-	max_health="200" 
 	mass="1000" 
 	extent="0.5 0.0 0.5" 
 	offset="0 0.0 0" 

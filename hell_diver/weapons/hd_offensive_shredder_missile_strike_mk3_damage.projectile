@@ -16,7 +16,7 @@ time_to_live_out_in_the_open="0"
 player_death_drop_owner_lock_time="0"
 >
     <collision class="sticky" />
-	<result class="blast" radius="33" damage="200" push="3" decal="1" character_state="wound"/>
+	<result class="blast" radius="33" damage="600" push="3" decal="1" character_state="wound"/>
 	<trigger class="time" time_to_live="0" />	
 	<rotation class="motion" />
 	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>

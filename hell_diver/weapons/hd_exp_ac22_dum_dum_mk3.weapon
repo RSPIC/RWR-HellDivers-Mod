@@ -89,9 +89,9 @@ key="hd_exp_ac22_dum_dum_mk3.weapon"
 		kill_probability_offset_on_successful_hit="1.5"
 		kill_decay_start_time="0.1875" kill_decay_end_time="0.375" character_state="death"/> -->
 		
-
+		<!-- 碎甲榴弹 -->
 		<result class="spawn" instance_class="projectile" instance_key="hd_exp_ac22_dum_dum_mk3_damage.projectile" 
-		min_amount="6" max_amount="7" offset="0 0.5 0" position_spread="0.5 0" direction_spread="0 0" />	
+		min_amount="4" max_amount="4" offset="0 0.5 0" position_spread="0.5 0" direction_spread="0 0" />	
 		<trigger class="impact" time_to_live="0.2"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->

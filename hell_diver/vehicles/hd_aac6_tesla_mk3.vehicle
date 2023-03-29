@@ -17,12 +17,12 @@ character_leave_request_mode="friendly"
 	<tire_set offset="1 0.0 -1" radius="0.1" />
 
 	<modifier class="blast_range" value="0.0" />
-	<modifier class="blast_damage" value="-5" />
+	<modifier class="blast_damage" value="-4" />
 
 	<control max_speed="1" acceleration="1" max_reverse_speed="1.0" max_rotation="1.0" max_water_depth="2" />
 
 	<physics 
-	max_health="100" 
+	max_health="200" 
 	mass="500" 
 	extent="0.5 0.0 0.5" 
 	offset="0 0.0 0" 

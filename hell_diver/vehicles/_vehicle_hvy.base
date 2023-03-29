@@ -5,11 +5,11 @@ character_leave_request_mode="friendly"
 	<tag name="metal_heavy" />
 	<tag name="heavy_combat" />
 
-	<modifier class="blast_range" value="-2.5" />
-	<modifier class="blast_damage" value="-15.0" />
+	<modifier class="blast_range" value="0" />
+	<modifier class="blast_damage" value="-8.0" />
 
 	<physics 
-	max_health="150" 
+	max_health="550" 
 	blast_damage_threshold="0" 
 	blast_push_threshold="10"
 	mass="200.0" 

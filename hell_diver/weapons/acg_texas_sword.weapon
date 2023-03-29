@@ -86,7 +86,6 @@ key="acg_texas_sword.weapon"
 	<!-- 双倍射速 加倍携弹量 -->
 
 	<!--军械库相关-->
-    <inventory encumbrance="10" price="1000.0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
 
     <effect class="stab" key="character" ref="BloodSplat50Cal" lighting="1" />
     <effect class="stab" key="character" ref="BurstShine50Cal" lighting="1" post_processing="0" />

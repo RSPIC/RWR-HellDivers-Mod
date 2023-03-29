@@ -17,7 +17,8 @@ allow_ai_to_use="0"
 
 	<control max_speed="1.0" acceleration="1" max_reverse_speed="1.0" max_rotation="1.0" max_water_depth="4" />
 
-	<physics max_health="200.0" 
+	<physics 
+	max_health="200.0" 
 	mass="10000.0" 
 	blast_push_threshold="1000"
 	blast_damage_threshold="10"

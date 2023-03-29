@@ -85,7 +85,7 @@ key="hd_exp_rec6_demolisher_mk3.weapon"
 	time_to_live="90" can_be_detected_by_driver="1" can_be_disarmed="1" name="REC-6 Demolisher MK3" radius="0.6"> 
 	
         <result class="spawn" instance_class="projectile" instance_key="hd_exp_rec6_demolisher_mk3_damage.projectile" 
-		min_amount="5" max_amount="5" offset="0 0.5 0" position_spread="0 0" direction_spread="0 0" />
+		min_amount="20" max_amount="20" offset="0 0.5 0" position_spread="0 0" direction_spread="0 0" />
 		<!-- 5x40轰炸伤 -->
 		
 		<trigger class="remote_detonate" /><!--class为time时，ttl生效；遥控为remote_detonate-->

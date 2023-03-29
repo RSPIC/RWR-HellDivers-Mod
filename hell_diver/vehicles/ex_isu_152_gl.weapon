@@ -47,7 +47,7 @@ key="ex_isu_152_gl.weapon"
 	time_to_live="4" can_be_detected_by_driver="1" can_be_disarmed="0" name="ISU-152" radius="0.7"> 
 		
         <result class="spawn" instance_class="projectile" instance_key="ex_isu_152_gl_damage.projectile" 
-		min_amount="8" max_amount="8" offset="0 0.5 0" position_spread="1.5 0" direction_spread="0.1 0" />
+		min_amount="25" max_amount="25" offset="0 0.5 0" position_spread="2.5 0" direction_spread="0.1 0" />
 		<!-- damage 8x50=400 轰炸伤-->
 
 		<!--命中音效-->

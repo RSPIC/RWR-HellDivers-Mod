@@ -5,7 +5,7 @@ slot="1"
 pulldown_in_air="200.0" 
 key="hd_vindicator_shrapnel.projectile">
     
-	<result class="blast" radius="5.5" damage="5.0" decal="1" push="1" character_state="death" />
+	<result class="blast" radius="5.5" damage="8.0" decal="1" push="1" character_state="death" />
     <trigger class="impact" />
     <rotation class="motion" />	
     <model mesh_filename="" />

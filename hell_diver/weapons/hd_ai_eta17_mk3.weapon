@@ -87,7 +87,7 @@ key="hd_ai_eta17_mk3.weapon"
     <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="1" can_be_detected_by_footmen="1" 
 	time_to_live="2" can_be_detected_by_driver="1" can_be_disarmed="0" name="EAT-17 MK3" radius="0.6"> 
 	
-        <result class="blast" radius="4.8" damage="30.0" push="0.8" decal="1" character_state="wound"/>
+        <result class="blast" radius="4.8" damage="50.0" push="0.8" decal="1" character_state="wound"/>
 		<!-- damage 280 轰炸伤-->
        	<!-- 40x7 -->
 		

@@ -87,7 +87,7 @@ key="hd_exp_mls4x_commando_mk3.weapon"
 	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0" name="MLS-4X Commando MK3" radius="0.6"> 
 	
         <result class="spawn" instance_class="projectile" instance_key="hd_exp_mls4x_commando_mk3_damage.projectile" 
-		min_amount="5" max_amount="5" offset="0 0.5 0" position_spread="2 0" direction_spread="0.1 0" />
+		min_amount="1" max_amount="1" offset="0 0.5 0" position_spread="2 0" direction_spread="0.1 0" />
 		<!-- MK3 damage 17 轰炸伤-->
    
 		<trigger class="impact" time_to_live="0.11"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
