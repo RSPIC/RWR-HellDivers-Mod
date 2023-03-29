@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<vehicle file="vehicle_base.vehicle" 
+<vehicle 
+file="vehicle_base.vehicle" 
 name="Armory truck" 
 key="mobile_armory.vehicle" 
 respawn_time="180" 
@@ -27,6 +28,7 @@ reserves_spawn_point="1" >
 	steer_smoothening="0.7" />
 
 	<physics 
+	health="200"
     remove_collision_threshold="0.2"		
 	extent="3.2 0.0 6.4" 
 	offset="0 0.0 0" 
@@ -74,12 +76,12 @@ reserves_spawn_point="1" >
 	<effect event_key="slide" type="particle" key="terrain" surface_tag="road" ref="car_slide_up_smoke" use_surface_color="1" />
 	<effect event_key="slide_hard" type="particle" key="terrain" surface_tag="road" ref="car_slide_up_smoke" use_surface_color="1" />
   
-	<effect event_key="health" value="40" ref="car_broken_spary_spark" offset="-0.0 2.2 -0.5" />
-	<effect event_key="health" value="30" ref="car_broken_spary_spark" offset="-0.0 2.2 -0.5" />
-	<effect event_key="health" value="30" ref="car_destroyed_up_smoke" offset="-0.0 2.2 -0.5" />
-	<effect event_key="health" value="20" ref="car_destroyed_fire" offset="-0.0 2.2 -0.5" />
-	<effect event_key="health" value="20" ref="car_destroyed_up_smoke" offset="-0.0 2.2 -0.5" />
-	<effect event_key="health" value="20" ref="car_broken_spary_spark" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="75" ref="car_broken_spary_spark" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="50" ref="car_broken_spary_spark" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="50" ref="car_destroyed_up_smoke" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="25" ref="car_destroyed_fire" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="25" ref="car_destroyed_up_smoke" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="25" ref="car_broken_spary_spark" offset="-0.0 2.2 -0.5" />
 
 	<effect event_key="destroyed" ref="car_destroyed_fire" post_processing="1" offset="-0.5 2.2 -1.5" />
 	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="0" offset="-0.5 2.2 -1.5" />  

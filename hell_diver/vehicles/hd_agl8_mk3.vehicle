@@ -65,12 +65,12 @@ character_leave_request_mode="friendly"
 
 	<effect event_key="health" value="1000" ref="car_pod_impact_leave_dirt" offset="0.0 0 0" />
 
-	<effect event_key="health" value="75" ref="car_broken_spary_spark" offset="0 0.8 0" />
-	<effect event_key="health" value="50" ref="car_broken_spary_spark" offset="0 0.8 0" />
+	<effect event_key="health" value="150" ref="car_broken_spary_spark" offset="0 0.8 0" />
+	<effect event_key="health" value="100" ref="car_broken_spary_spark" offset="0 0.8 0" />
+	<effect event_key="health" value="100" ref="car_destroyed_up_smoke" offset="0 0.8 0" />
+	<effect event_key="health" value="50" ref="car_destroyed_fire" offset="0 0.8 0" />
 	<effect event_key="health" value="50" ref="car_destroyed_up_smoke" offset="0 0.8 0" />
-	<effect event_key="health" value="25" ref="car_destroyed_fire" offset="0 0.8 0" />
-	<effect event_key="health" value="25" ref="car_destroyed_up_smoke" offset="0 0.8 0" />
-	<effect event_key="health" value="25" ref="car_broken_spary_spark" offset="0 0.8 0" />
+	<effect event_key="health" value="50" ref="car_broken_spary_spark" offset="0 0.8 0" />
 
 	<effect event_key="destroyed" ref="car_destroyed_fire" post_processing="1" offset="0 0.8 0" />
 	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="0" offset="0 0.8 0" />  

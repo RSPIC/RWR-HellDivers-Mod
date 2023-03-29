@@ -423,7 +423,7 @@ class projectile_event : Tracker {
                                         _log("execute repair,is repairable?: "+ !(vehicle_repair_deny_key.exists(vehiclekey)));
                                         if(!(vehicle_repair_deny_key.exists(vehiclekey))){
                                             if(vehicleHealth <= 0){continue;}     //排除空节点载具
-                                            float rate = 0.2;
+                                            float rate = 0.15;  //最大默认超修比例
                                             float health = vehicleHealth;
                                             _log("repair_recycle: health= "+health);
                                             _log("repair_recycle: vehicleMaxHealth= "+vehicleMaxHealth);

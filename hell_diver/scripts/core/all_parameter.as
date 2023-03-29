@@ -148,6 +148,7 @@ dictionary vehicle_recycle_key = {
         {"hd_m5_32_hav.vehicle",1000},
         {"63type_107mm_rocket_launcher.vehicle",100},
         {"jeep.vehicle",100},
+        {"cyborgs_ifv.vehicle",3000},
 
         // 占位的
         {"666",-1}
@@ -159,7 +160,7 @@ dictionary vehicle_overhealth_key = {
         // 空
         {"",-1},
 
-        {"noxe.vehicle",0.3},
+        {"noxe.vehicle",0.2},
 
         // 占位的
         {"666",-1}
@@ -179,17 +180,20 @@ dictionary vehicle_repair_deny_key = {
         {"666",-1}
 
 };
-//修复工具修复量
+//修复工具修复量(百分比/定值)
 dictionary repairtool_key = {
 
         // 空
         {"",-1},
 
-        {"hd_rep80_mk3",0.2},
+        {"hd_rep80_mk3",0.1},
 
-        {"hd_rep80_mk2",0.1},
+        {"hd_rep80_mk2",0.05},
+
+        {"hd_ad289_angel_mk3",3.0},
 
         // 占位的
         {"666",-1}
 
 };
+

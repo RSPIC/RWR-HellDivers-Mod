@@ -5,7 +5,7 @@ name="M5-32 HAV"
 key="hd_m5_32_hav.vehicle" 
 time_to_live_unsteerable="12" 
 map_view_atlas_index="57" 
-minimum_fill_requirement="0.25"
+minimum_fill_requirement="1"
 max_character_collision_speed_on_normal="5"
 simulated_damage="0.5"
 usable_for_cover="1"
@@ -105,12 +105,12 @@ character_leave_request_mode="friendly"
 	<effect event_key="drive_chassis" ref="car_health_front_light" offset="-3 0 10" />
 	<effect event_key="drive_chassis" ref="car_health_front_light" offset="3 0 10" />
 
-	<effect event_key="health" value="90" ref="car_broken_spary_spark" offset="-0.0 2.2 -0.5" />
-	<effect event_key="health" value="60" ref="car_broken_spary_spark" offset="-0.0 2.2 -0.5" />
-	<effect event_key="health" value="60" ref="car_destroyed_up_smoke" offset="-0.0 2.2 -0.5" />
-	<effect event_key="health" value="30" ref="car_destroyed_fire" offset="-0.0 2.2 -0.5" />
-	<effect event_key="health" value="30" ref="car_destroyed_up_smoke" offset="-0.0 2.2 -0.5" />
-	<effect event_key="health" value="30" ref="car_broken_spary_spark" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="300" ref="car_broken_spary_spark" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="200" ref="car_broken_spary_spark" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="200" ref="car_destroyed_up_smoke" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="100" ref="car_destroyed_fire" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="100" ref="car_destroyed_up_smoke" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="100" ref="car_broken_spary_spark" offset="-0.0 2.2 -0.5" />
 
 	<effect event_key="destroyed" ref="car_destroyed_fire" post_processing="0" offset="-0.5 2.2 -1.5" />
 	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="1" offset="-0.5 2.2 -1.5" />  

@@ -15,7 +15,7 @@ void main(dictionary@ inputData) {
         settings.m_factionChoice = 0;                  // 0(acg) 1(helldivers), 2(cyborgs), 3(illuminate), 4(bugs), 
         settings.m_playerAiCompensationFactor = 1.0;   // was 1.1  (1.75)
 
-        settings.m_fellowCapacityFactor = 1.0;
+        settings.m_fellowCapacityFactor = 2.0;
         settings.m_fellowAiAccuracyFactor = 1.0;
         settings.m_enemyCapacityFactor = 2.0;
         settings.m_enemyAiAccuracyFactor = 0.94;
@@ -37,7 +37,7 @@ void main(dictionary@ inputData) {
 
         settings.m_startServerCommand = """
 <command class='start_server'
-	server_name='[Helldiver] testing '
+	server_name='[地狱潜兵] HellDiver服 '
 	server_port='1240'
 	url='https://steamcommunity.com/sharedfiles/filedetails/?id=2910392031'
 	register_in_serverlist='1'

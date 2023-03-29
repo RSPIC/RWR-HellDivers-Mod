@@ -12,8 +12,8 @@
 	<reward class="self_suicide" 				base="-0.1" 	bonus="0.0" 	type="xp" />  <!-- -1000xp -->
 	<reward class="self_killed" 				base="-0.0" 	bonus="0.0" 	type="xp" />        
 
-	<reward class="fellow_killed_in_explosion" 		base="-0.1" 	bonus="0.0000" 	type="xp" /> <!-- -1000xp -->
-	<reward class="fellow_killed_in_explosion" 		base="-100" 			type="rp" /><!-- -100rp -->
+	<reward class="fellow_killed_in_explosion" 		base="-0.03" 	bonus="0.0000" 	type="xp" /> <!-- -300xp -->
+	<reward class="fellow_killed_in_explosion" 		base="+10" 			type="rp" /><!-- 10rp -->
 
 	<reward class="fellow_unwound" 				base="+0.0300" 	bonus="0.0" 	type="xp" /><!-- 300xp -->
 	<reward class="fellow_unwound" 				base="+30" 	bonus="0.0" 	type="rp" />  

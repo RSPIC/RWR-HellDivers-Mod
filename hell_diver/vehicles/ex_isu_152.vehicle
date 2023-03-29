@@ -98,12 +98,12 @@ character_leave_request_mode="friendly"
 	<effect event_key="drive_chassis" ref="car_health_front_light" offset="-3 0 15" />
 	<effect event_key="drive_chassis" ref="car_health_front_light" offset="3 0 15" />
 
-	<effect event_key="health" value="60" ref="car_broken_spary_spark" offset="-0.0 2.3 -2.7" />
-	<effect event_key="health" value="40" ref="car_broken_spary_spark" offset="-0.0 2.3 -2.7" />
-	<effect event_key="health" value="40" ref="car_destroyed_up_smoke" offset="-0.0 2.3 -2.7" />
-	<effect event_key="health" value="20" ref="car_destroyed_fire" offset="-0.0 2.3 -2.7" />
-	<effect event_key="health" value="20" ref="car_destroyed_up_smoke" offset="-0.0 2.3 -2.7" />
-	<effect event_key="health" value="20" ref="car_broken_spary_spark" offset="-0.0 2.3 -2.7" />
+	<effect event_key="health" value="300" ref="car_broken_spary_spark" offset="-0.0 2.3 -2.7" />
+	<effect event_key="health" value="200" ref="car_broken_spary_spark" offset="-0.0 2.3 -2.7" />
+	<effect event_key="health" value="200" ref="car_destroyed_up_smoke" offset="-0.0 2.3 -2.7" />
+	<effect event_key="health" value="100" ref="car_destroyed_fire" offset="-0.0 2.3 -2.7" />
+	<effect event_key="health" value="100" ref="car_destroyed_up_smoke" offset="-0.0 2.3 -2.7" />
+	<effect event_key="health" value="100" ref="car_broken_spary_spark" offset="-0.0 2.3 -2.7" />
 
 	<effect event_key="destroyed" ref="car_destroyed_fire" post_processing="0" offset="-0.5 3.2 -1.5" />
 	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="1" offset="-0.5 3.2 -1.5" />  

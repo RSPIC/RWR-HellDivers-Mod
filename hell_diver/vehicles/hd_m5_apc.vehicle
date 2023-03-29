@@ -6,7 +6,7 @@ name="M5 APC"
 key="hd_m5_apc.vehicle" 
 time_to_live_unsteerable="5" 
 map_view_atlas_index="58" 
-minimum_fill_requirement="0.25"
+minimum_fill_requirement="1"
 max_character_collision_speed_on_normal="5"
 simulated_damage="0.5"
 usable_for_cover="1"
@@ -32,7 +32,7 @@ character_leave_request_mode="friendly"
 	max_reverse_speed="6.0" 
 	min_health_to_steer="0.36" 
 	max_rotation="0.65" 
-	max_water_depth="1.9" 
+	max_water_depth="5" 
 	steer_smoothening="0.5" />
 
 	<physics 
@@ -107,12 +107,12 @@ character_leave_request_mode="friendly"
 	<effect event_key="drive_chassis" ref="car_health_front_light" offset="-3 0 10" />
 	<effect event_key="drive_chassis" ref="car_health_front_light" offset="3 0 10" />
 
-	<effect event_key="health" value="75" ref="car_broken_spary_spark" offset="-0.0 2.2 -0.5" />
-	<effect event_key="health" value="50" ref="car_broken_spary_spark" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="150" ref="car_broken_spary_spark" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="100" ref="car_broken_spary_spark" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="100" ref="car_destroyed_up_smoke" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="50" ref="car_destroyed_fire" offset="-0.0 2.2 -0.5" />
 	<effect event_key="health" value="50" ref="car_destroyed_up_smoke" offset="-0.0 2.2 -0.5" />
-	<effect event_key="health" value="25" ref="car_destroyed_fire" offset="-0.0 2.2 -0.5" />
-	<effect event_key="health" value="25" ref="car_destroyed_up_smoke" offset="-0.0 2.2 -0.5" />
-	<effect event_key="health" value="25" ref="car_broken_spary_spark" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="50" ref="car_broken_spary_spark" offset="-0.0 2.2 -0.5" />
 
 	<effect event_key="destroyed" ref="car_destroyed_fire" post_processing="1" offset="-0.5 2.2 -1.5" />
 	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="0" offset="-0.5 2.2 -1.5" />  

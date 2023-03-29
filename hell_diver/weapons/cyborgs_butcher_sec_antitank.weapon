@@ -24,7 +24,7 @@ radius="1"
     range="3.0"
     success_probability="1.0"
     stab_enabled="1"
-    stab_range="2"
+    stab_range="3"
 	character_state="wound" 
 	/> 
 	<!--class 0全自动 4半自动 2栓动 3特殊（可做一次性武器）5近程特殊（如部署沙包）-->
@@ -56,9 +56,9 @@ radius="1"
     <animation state_key="recoil" animation_key="cyborgs_berserker_stab_type2" /> <!--后坐力动作，半身动作-->
     <animation state_key="recoil" animation_key="cyborgs_berserker_stab_type3" /> <!--后坐力动作，半身动作-->
     <animation state_key="cycle" animation_key="28" /> <!--拉栓动作，武器固定脱手-->
-    <animation key="reload" animation_key="cyborgs_berserker_stab_type1" />	<!--换弹动作，半身动作-->
-    <animation key="reload" stance_key="crouching" animation_key="cyborgs_berserker_stab_type1" />	<!--不同姿态可以设置不同换弹动作-->
-    <animation key="reload" stance_key="prone" animation_key="cyborgs_berserker_stab_type1" />
+    <animation key="reload" animation_key="cyborgs_berserker_still" />	<!--换弹动作，半身动作-->
+    <animation key="reload" stance_key="crouching" animation_key="cyborgs_berserker_still" />	<!--不同姿态可以设置不同换弹动作-->
+    <animation key="reload" stance_key="prone" animation_key="cyborgs_berserker_still" />
 	<animation key="recoil" stance_key="over_wall" animation_key="cyborgs_berserker_stab_type1"/>	<!--不同姿态可以设置不同后坐力动作-->
 	<animation key="recoil" stance_key="crouching" animation_key="cyborgs_berserker_stab_type2"/>
 	<animation key="recoil" stance_key="prone" animation_key="cyborgs_berserker_stab_type3"/>
@@ -78,8 +78,8 @@ radius="1"
 	<animation state_key="stabbing" animation_key="cyborgs_berserker_stab_type2" /><!--半身动作，武器可设置脱手-->
 	<animation state_key="stabbing" animation_key="cyborgs_berserker_stab_type3" /><!--半身动作，武器可设置脱手-->
 	<!--切换模式，本模式的切出动作衔接下一模式的切入动作，置空为秒切-->
-	<animation state_key="next_in_chain_in" animation_key="sheath bayonet part 2" /><!--半身动作，切换模式，本模式切出-->
-	<animation state_key="next_in_chain_out" animation_key="mount bayonet part 1" /><!--半身动作，切换模式，本模式切入-->
+	<animation state_key="next_in_chain_in" animation_key="" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="" /><!--半身动作，切换模式，本模式切入-->
 	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
     <animation state_key="changing_weapon_in" animation_key="" /><!--半身动作，切换武器，本武器收回-->
 	<animation state_key="changing_weapon_out" animation_key=""/><!--半身动作，切换武器，本武器取出-->

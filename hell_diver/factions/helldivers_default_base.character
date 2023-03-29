@@ -3,8 +3,8 @@
 	<parameter class="moving_inputsteer_threshold" value="0.1" />
 	<parameter class="stopping_velocity_threshold" value="0.01" />
 
-	<parameter class="walking_steer_amount" value="0.35" />	
-	<parameter class="running_steer_amount" value="0.5" />	
+	<parameter class="walking_steer_amount" value="0.4" />	
+	<parameter class="running_steer_amount" value="0.55" />	
 	<parameter class="run_footstep_interval" value="0.5" />
 	<parameter class="walk_footstep_interval" value="1.0" />
 	<parameter class="crouch_walking_steer_amount" value="0.24" />
@@ -37,7 +37,7 @@
 
 	<parameter class="falling_steer_amount_heading" value="0.02" />
 
-	<parameter class="diving_steer_amount" value="0.8" />
+	<parameter class="diving_steer_amount" value="0.9" />
 	<parameter class="diving_steer_amount_sliding_with_friction" value="0.03" />
 	<parameter class="diving_steer_amount_push" value="0.05" />
 	<parameter class="diving_steer_amount_jump" value="0.05" />

@@ -76,10 +76,18 @@ class repair_tools : Tracker {
 								if(vehicleHealth <= 0){continue;}     //排除空节点载具
 								float rate = float(repairtool_key[EventKeyGet]);
 								float health = vehicleHealth;
-								_log("repair_tools: rate= "+rate);
-								_log("repair_tools: health= "+health);
-								_log("repair_tools: vehicleMaxHealth= "+vehicleMaxHealth);
-								health += rate*vehicleMaxHealth;
+								if(rate>=1){//定量维修
+									_log("repair_tools: heal= "+rate);
+									_log("repair_tools: now_health= "+health);
+									_log("repair_tools: vehicleMaxHealth= "+vehicleMaxHealth);
+									health += rate;
+
+								}else if(rate<1){//百分比维修
+									_log("repair_tools: rate= "+rate);
+									_log("repair_tools: health= "+health);
+									_log("repair_tools: vehicleMaxHealth= "+vehicleMaxHealth);
+									health += rate*vehicleMaxHealth;
+								}
 								if(health >= vehicleMaxHealth){
 									health = vehicleMaxHealth;
 								}

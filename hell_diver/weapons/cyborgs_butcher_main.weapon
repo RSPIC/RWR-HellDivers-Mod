@@ -86,8 +86,8 @@ radius="1"
 	<animation state_key="stabbing" animation_key="cyborgs_berserker_stab_type2" /><!--半身动作，武器可设置脱手-->
 	<animation state_key="stabbing" animation_key="cyborgs_berserker_stab_type3" /><!--半身动作，武器可设置脱手-->
 	<!--切换模式，本模式的切出动作衔接下一模式的切入动作，置空为秒切-->
-	<animation state_key="next_in_chain_in" animation_key="sheath bayonet part 2" /><!--半身动作，切换模式，本模式切出-->
-	<animation state_key="next_in_chain_out" animation_key="mount bayonet part 1" /><!--半身动作，切换模式，本模式切入-->
+	<animation state_key="next_in_chain_in" animation_key="" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="" /><!--半身动作，切换模式，本模式切入-->
 	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
     <animation state_key="changing_weapon_in" animation_key="" /><!--半身动作，切换武器，本武器收回-->
 	<animation state_key="changing_weapon_out" animation_key=""/><!--半身动作，切换武器，本武器取出-->

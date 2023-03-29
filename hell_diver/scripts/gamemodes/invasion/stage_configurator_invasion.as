@@ -202,7 +202,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 
 	// ------------------------------------------------------------------------------------------------
 	protected void setupNormalStages() {
-	addStage(setupStageCasake_Bay());         // Casake_Bay #21
+	//addStage(setupStageCasake_Bay());         // Casake_Bay #21
     addStage(setupStage7());          // map6 #0
 	addStage(setupStage1());          // map2 #1
     addStage(setupStage9());          // map9 #2
@@ -224,7 +224,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 	//addStage(setupFinalStage2());     // map12 #18 黑猫
 	addStage(setupStage19());         // map18 #19
     addStage(setupStage11());         // map13 #20
-    //addStage(setupStageCasake_Bay());         // Casake_Bay #21
+    addStage(setupStageCasake_Bay());         // Casake_Bay #21
 	}
 
 	// --------------------------------------------
