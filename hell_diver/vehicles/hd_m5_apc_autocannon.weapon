@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<weapon key="hd_m5_apc_autocannon.weapon">
+<weapon 
+file="_hd_vehicle_mg.base"
+key="hd_m5_apc_autocannon.weapon">
     <specification 
 	retrigger_time="0.2" 
     accuracy_factor="1.0" 
@@ -7,9 +9,7 @@
     sustained_fire_grow_step="1.0" 
     sustained_fire_diminish_rate="1.677" 
     cooldown_start="0.35"
-    cooldown_end="0.3433"
-	sight_range_modifier="1.0"
-    ai_sight_range_modifier="0.9"     
+    cooldown_end="0.3433"   
     magazine_size="-1" 
     can_shoot_standing="0" 
     can_shoot_crouching="0" 

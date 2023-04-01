@@ -58,7 +58,7 @@ allow_ai_to_use="0"
 	<sound key="destroy" filename="hellpod_close_01.wav" />  
 	<sound key="destroy" filename="hellpod_close_02.wav" />  
 
-	<effect event_key="health" value="199" ref="car_pod_impact_leave_dirt2" offset="0 0 0" />
+	<effect event_key="health" value="99" ref="car_pod_impact_leave_dirt2" offset="0 0 0" />
 
 	<event>
 		<trigger class="destroy" />

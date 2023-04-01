@@ -57,7 +57,7 @@ class BasicCommandHandler : Tracker {
 		// global
 
 		string message = event.getStringAttribute("message");
-		
+	
 		// 建立字符串索引
 		array<string> word = MassageBreakUp(message, " ", -1);
 		int ws = word.size();
@@ -67,53 +67,13 @@ class BasicCommandHandler : Tracker {
 		int senderId = event.getIntAttribute("player_id");
 	
 		// for the most part, chat events aren't commands, so check that first 
-		// 会剔除不是斜杠开头的字符串，同时检测是否符合helldiver呼叫代码
-		if (!startsWith(message, "/")) {
-			if ( ws == 1 ){
-				const XmlElement@ info = getPlayerInfo(m_metagame, senderId);
-				if(info is null){return;}
-				int cid = info.getIntAttribute("character_id");
-				if(cid == -1){return;}
-				string stratagemsKey = string(offensive_stratagems[message]);
-				// 直接替换手雷栏
-				_log("stratagems call exists? :" + (offensive_stratagems.exists(message)));
-				_log("stratagems call message :" + message);
-				_log("stratagems call key :" + stratagemsKey);
-				//_log("stratagems call length :" + string(offensive_stratagems[message]).length());
-				//exists方法有问题，有时候正确有时候错误,替换掉
-				if ((string(offensive_stratagems[message]).length()!=0)){
-					const XmlElement@ character = getCharacterInfo(m_metagame, cid);
-                	if (character is null) {return;}
-					int fid = character.getIntAttribute("faction_id");
-					const XmlElement@ factionInfo = getFactionInfo(m_metagame,fid);
-					string faction_name = factionInfo.getStringAttribute("name");
-					if(faction_name == "ACG" && stratagemsKey == "hd_amg_11_mk3_call"){
-						stratagemsKey = "acg_amg_11_mk3_call";
-					}
-					if(faction_name == "ACG" && stratagemsKey == "hd_arx_34_mk3_call"){
-						stratagemsKey = "acg_arx_34_mk3_call";
-					}
-					string c = 
-					"<command class='update_inventory' character_id='" + cid + "' container_type_id='4' add='1'>" + 
-						"<item class='" + "projectile" + "' key='" + stratagemsKey + ".projectile" +"' />" +
-					"</command>";
-					m_metagame.getComms().send(c);
-
-					dictionary dict = {{"TagName", "command"},{"class", "chat"},{"text", "Call Receive!"}};
-					m_metagame.getComms().send(XmlElement(dict));
-				}
-				return;
-			}
-		}
-		
-		
+	
 		
 		// admin and moderator only from here on
 		if (!m_metagame.getAdminManager().isAdmin(sender, senderId) && !m_metagame.getModeratorManager().isModerator(sender, senderId)) {
 			return;
 		}
 		
-
 		if (checkCommand(message, "modtest")) {
 			dictionary dict = {{"TagName", "command"},{"class", "chat"},{"text", "mod or admin"}};
 			m_metagame.getComms().send(XmlElement(dict));

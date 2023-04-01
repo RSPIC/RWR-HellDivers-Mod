@@ -21,6 +21,8 @@ dictionary resupply_key = {
 
         {"hd_ammo_supply_box.projectile",1},
 
+        {"hd_ammo_supply_box_ex_2.projectile",1},
+
         // 占位的
         {"666",-1}
 
@@ -30,15 +32,15 @@ dictionary resupply_getitem_key = {
         // 空
         {"",-1},
 
-        {"hd_md98_injector.weapon",8},
-        {"hd_tox13_avenger_mk3.weapon",10},
-        {"hd_flam40_incinerator_mk3.weapon",10},
-        {"hd_rec6_demolisher_mk3.weapon",10},
-        {"hd_mls4x_commando_mk3.weapon",8},
-        {"hd_eta17_mk3.weapon",4},
-        {"hd_rl112_recoilless_rifle_mk3.weapon",8},
+        {"hd_sup_md98_injector.weapon",8},
+        {"hd_pst_tox13_avenger_mk3.weapon",10},
+        {"hd_pst_flam40_incinerator_mk3.weapon",10},
+        {"hd_exp_rec6_demolisher_mk3.weapon",10},
+        {"hd_exp_mls4x_commando_mk3.weapon",8},
+        {"hd_exp_eta17_mk3.weapon",4},
+        {"hd_exp_rl112_recoilless_rifle_mk3.weapon",8},
         {"hd_mgx42_mk3.weapon",16},
-        {"hd_apb_mk3.weapon",2},
+        {"hd_lmg_mgx42_mk3.weapon",2},
 
         {"hd_at_mine_mk3.projectile",1},
         {"hd_airdropped_stun_mine_mk3.projectile",1},
@@ -54,15 +56,15 @@ dictionary resupply_cost = {
         // 空
         {"",-1},
 
-        {"hd_md98_injector.weapon",0},
-        {"hd_tox13_avenger_mk3.weapon",0},
-        {"hd_flam40_incinerator_mk3.weapon",0},
-        {"hd_rec6_demolisher_mk3.weapon",50},
-        {"hd_mls4x_commando_mk3.weapon",0},
-        {"hd_eta17_mk3.weapon",0},
-        {"hd_rl112_recoilless_rifle_mk3.weapon",0},
+        {"hd_sup_md98_injector.weapon",0},
+        {"hd_pst_tox13_avenger_mk3.weapon",0},
+        {"hd_pst_flam40_incinerator_mk3.weapon",0},
+        {"hd_exp_rec6_demolisher_mk3.weapon",0},
+        {"hd_exp_mls4x_commando_mk3.weapon",0},
+        {"hd_exp_eta17_mk3.weapon",0},
+        {"hd_exp_rl112_recoilless_rifle_mk3.weapon",0},
         {"hd_mgx42_mk3.weapon",0},
-        {"hd_apb_mk3.weapon",0},
+        {"hd_lmg_mgx42_mk3.weapon",0},
 
         {"hd_at_mine_mk3.projectile",0},
         {"hd_airdropped_stun_mine_mk3.projectile",0},
@@ -117,6 +119,7 @@ dictionary banned_backpack_item = {
         {"hd_exo51_mk3.projectile","projectile"},
 
         {"hd_ammo_supply_box.projectile","projectile"},
+        {"hd_ammo_supply_box_ex_2.projectile","projectile"},
 
 		//机甲
         {"hd_exo44_walker_mk3_mg.weapon","weapon"},
@@ -125,10 +128,40 @@ dictionary banned_backpack_item = {
         {"hd_exo51_lumberer_mk3_cannon.weapon","weapon"},
         {"hd_exo51_lumberer_mk3_flame.weapon","weapon"},
 
+		//战略设备
+        {"hd_lmg_mg94_mk3.projectile","projectile"},
+        {"hd_lmg_mgx42_mk3.projectile","projectile"},
+        {"hd_laser_las98_laser_cannon_mk3.projectile","projectile"},
+        {"hd_exp_ac22_dum_dum_mk3.projectile","projectile"},
+        {"hd_exp_obliterator_grenade_launcher_full_upgrade.projectile","projectile"},
+        {"hd_exp_m25_rumbler_full_upgrade.projectile","projectile"},
+        {"hd_pst_flam40_incinerator_mk3.projectile","projectile"},
+        {"hd_pst_tox13_avenger_mk3.projectile","projectile"},
+        {"hd_exp_rl112_recoilless_rifle_mk3.projectile","projectile"},
+        {"hd_exp_eta17_mk3.projectile","projectile"},
+        {"hd_exp_mls4x_commando_mk3.projectile","projectile"},
+        {"hd_drone_ad334_guard_dog_mk3.projectile","projectile"},
+        {"hd_drone_ad289_angel_mk3.projectile","projectile"},
+        {"hd_sup_rep80_mk3.projectile","projectile"},
+        {"hd_exp_rec6_demolisher_mk3.projectile","projectile"},
+        {"hd_resupply_pack_mk3.projectile","projectile"},
+
+		//背包
+		{"hd_resupply_pack_mk3.carry_item","carry_item"},
+
         // 占位的
         {"666",-1}
 };
+//禁止背包携带物品
+dictionary banned_special_item = {
+        // 空
+        {"",-1},
 
+        {"hd_ammo_supply_box_ex.projectile","projectile"},
+
+		// 占位的
+        {"666",-1}
+};
 
 class itemdrop_event : Tracker {
 	protected Metagame@ m_metagame;
@@ -156,8 +189,10 @@ class itemdrop_event : Tracker {
 		int playerId = event.getIntAttribute("player_id");
 		int containerId = event.getIntAttribute("target_container_type_id");
 		const XmlElement@ owner = getCharacterInfo(m_metagame, characterId);
-		if (owner is null) {return;}
-		int factionId = owner.getIntAttribute("faction_id");
+		int factionId = -1;
+		if(owner !is null){
+			factionId = owner.getIntAttribute("faction_id");
+		}
 		//containerId = 0(地面) 1(军械库) 2（背包） 3（仓库）
 		//itemClass = 0(主、副武器) 1（投掷物） 3（护甲、战利品）
         _log("handleItemDropEvent:EventKeyGet= " + EventKeyGet);
@@ -236,21 +271,41 @@ class itemdrop_event : Tracker {
 		if(string(banned_backpack_item[itemKey]) == "" ){
 			_log("ban item key exist?:" + "false");
 		}
-		if(string(banned_backpack_item[itemKey]) != ""){
+		if(string(banned_backpack_item[itemKey]) != "" || string(banned_special_item[itemKey]) != ""){
 			//管理可以存
 			string sender = event.getStringAttribute("player_name");
 			int senderId = event.getIntAttribute("player_id");
-			_log("sender"+sender);
-			_log("senderId"+senderId);
+			_log("sender ="+sender);
+			_log("senderId ="+senderId);
 			if (m_metagame.getAdminManager().isAdmin(sender, senderId)){
 				_log("Is admin, exit ban item");
 				return;}
+			if(itemKey == "hd_resupply_pack_mk3.carry_item"){//补给背包特殊机制
+				_log("hd_resupply_pack_mk3 detect");
+				string ExKey="hd_resupply_pack_mk3_ex.carry_item";
+				string itemtype = string(banned_backpack_item[itemKey]);
+				deleteItemInBackpack(m_metagame,characterId,itemtype,ExKey);
+				deleteItemInBackpack(m_metagame,characterId,itemtype,ExKey);
+				addItemInBackpack(m_metagame,characterId,itemtype,ExKey);
+			}
 			if(containerId == 2 ){//装备进背包
 				_log("delete banned item in backpack");
 				string itemtype = string(banned_backpack_item[itemKey]);
 				_log("itemtype"+itemtype);
 				deleteItemInBackpack(m_metagame,characterId,itemtype,itemKey);
 				_log("success delete supply item itemKey: "+ itemKey);
+				if(itemKey == "hd_ammo_supply_box.projectile"){//补给背包特殊机制
+					string ExKey="hd_ammo_supply_box_ex.projectile";
+					addItemInBackpack(m_metagame,characterId,itemtype,ExKey);
+				}
+			}
+			if(containerId == 0 ){//地面
+				_log("containerId = gound");
+				if(itemKey == "hd_ammo_supply_box_ex.projectile"){//补给背包特殊机制
+					string ExKey="hd_ammo_supply_box_ex_2.projectile";
+					Vector3 t_pos = stringToVector3(position);
+					spawnStaticItem(m_metagame,ExKey,t_pos,characterId,factionId,"projectile");
+				}
 			}
 		}
     }

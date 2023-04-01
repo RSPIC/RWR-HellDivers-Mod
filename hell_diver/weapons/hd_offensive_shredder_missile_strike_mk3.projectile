@@ -43,6 +43,7 @@ player_death_drop_owner_lock_time="0"
 
     <effect class="result" key="terrain" ref="stratagems_point_light_area_6s"/>
 	<effect class="result" key="terrain" ref="stratagems_liner_light_6s"/>
+	<effect class="result" key="terrain" ref="marker_bombing_circle_6s_sms"/>
 
 	<effect class="result" key="other" copy="terrain" />
     <effect class="result" key="static_object" copy="terrain" />

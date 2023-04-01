@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>	
 <weapon 
-drop_count_factor_on_death="0" 
-drop_count_factor_on_player_death="0"
-time_to_live_out_in_the_open="0"
-player_death_drop_owner_lock_time="0"
+file="_hd_defensive_equip.base"
 key="hd_at47_mk3.weapon" 
 > 
 	<tag name="defensive_equipment" />
@@ -24,8 +21,6 @@ key="hd_at47_mk3.weapon"
     suppressed="0" 
 	class="0" 
     name="AT-47 Anti-Tank Emplacement" 
-	sight_range_modifier="3.0" 
-	ai_sight_range_modifier="0.4" 
 	sight_height_offset="1.0" 
 	burst_shots="1" 
     projectiles_per_shot="1" 

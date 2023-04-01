@@ -19,8 +19,6 @@ key="ex_sturmtiger_tank_gl.weapon"
     suppressed="0" 
 	class="0" 
     name="Sturm Tiger" 
-	sight_range_modifier="3" 
-	ai_sight_range_modifier="0.4" 
 	sight_height_offset="10" 
 	burst_shots="1" 
     projectiles_per_shot="1" 
@@ -56,7 +54,7 @@ key="ex_sturmtiger_tank_gl.weapon"
 		
         <result class="spawn" instance_class="projectile" instance_key="ex_sturmtiger_tank_gl_damage.projectile" 
 		min_amount="25" max_amount="25" offset="0 0.5 0" position_spread="2.5 0" direction_spread="0.1 0" />
-		<!-- damage 6x50=300 轰炸伤-->
+
 
 		<!--命中音效-->
 		<sound class="result" key="other" fileref="at_hit_sfx_2.wav" pitch_variety="0.03" volume="1.0" />

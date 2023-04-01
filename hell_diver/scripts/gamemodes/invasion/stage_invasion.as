@@ -267,8 +267,8 @@ class Stage {
 		XmlElement camera("camera");
 		camera.setStringAttribute("direction", "-0.2 -1 0.4");
 		camera.setFloatAttribute("distance", 40.0);
-		camera.setFloatAttribute("far_clip", 200.0);
-		camera.setFloatAttribute("shadow_far_clip", 200.0);
+		camera.setFloatAttribute("far_clip", 300.0);
+		camera.setFloatAttribute("shadow_far_clip", 300.0);
 		camera.setFloatAttribute("fov", 0.7);
 		scene.appendChild(camera);
 	}

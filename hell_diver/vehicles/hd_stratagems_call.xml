@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectiles>
+    <projectile 
+        class="grenade" 
+        slot="0"
+        name="Resupply" 
+        pulldown_in_air="15.0"
+        time_to_live="60"
+        key="hd_lmg_mg94_mk3.projectile" 
+        time_to_live_out_in_the_open="0"
+        player_death_drop_owner_lock_time="0"
+    >
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_lmg_mg94_mk3.projectile" 
+        min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
+
+        <result class="notify_script" key="hd_lmg_mg94_mk3_call" />
+        <trigger class="time" time_to_live="3.5" />	
+        <model mesh_filename="vindicator_beacon_blue.xml" />
+        <hud_icon filename="hd_lmg_mg94_mk3.png" />
+
+        <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
+        speed_estimation_far="70.0" max_speed="21.0" randomness="0.0" tweak_factor="1.0" />
+        <commonness value="0.0" can_respawn_with="0" in_stock="1"/>
+        <capacity value="0" source="rank" source_value="0" />
+        <capacity value="1" source="rank" source_value="0" />
+        <inventory encumbrance="1" price="0.0" />
+        <!-- 补给 -->
+        <sound class="result" key="other" fileref="hd_supply_incoming.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming1.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming2.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="terrain" copy="other" />
+        <sound class="result" key="static_object" copy="other" />
+        <sound class="result" key="vehicle" copy="other" />
+        <sound class="result" key="character" copy="other" />
+        <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_2s" lighting="0"/>
+        <effect class="result" key="terrain" ref="stratagems_liner_light_blue_2s" lighting="0"/>
+        <effect class="result" key="other" copy="terrain" />
+        <effect class="result" key="static_object" copy="terrain" />
+        <effect class="result" key="vehicle" copy="terrain" />
+        <effect class="result" key="character" copy="terrain" />
+        <effect class="activated" ref="alert_center_bluelight" lighting="0" /><!--中心蓝光标识-->
+    </projectile>
+
+    <projectile 
+        class="grenade" 
+        slot="0"
+        name="Resupply" 
+        pulldown_in_air="15.0"
+        time_to_live="60"
+        key="hd_lmg_mgx42_mk3.projectile" 
+        time_to_live_out_in_the_open="0"
+        player_death_drop_owner_lock_time="0"
+    >
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_lmg_mgx42_mk3.projectile" 
+        min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
+
+        <result class="notify_script" key="hd_lmg_mgx42_mk3_call" />
+        <trigger class="time" time_to_live="3.5" />	
+        <model mesh_filename="vindicator_beacon_blue.xml" />
+        <hud_icon filename="hd_lmg_mgx42_mk3.png" />
+
+        <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
+        speed_estimation_far="70.0" max_speed="21.0" randomness="0.0" tweak_factor="1.0" />
+        <commonness value="0.0" can_respawn_with="0" in_stock="1"/>
+        <capacity value="0" source="rank" source_value="0" />
+        <capacity value="1" source="rank" source_value="0" />
+        <inventory encumbrance="1" price="0.0" />
+        <!-- 补给 -->
+        <sound class="result" key="other" fileref="hd_supply_incoming.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming1.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming2.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="terrain" copy="other" />
+        <sound class="result" key="static_object" copy="other" />
+        <sound class="result" key="vehicle" copy="other" />
+        <sound class="result" key="character" copy="other" />
+        <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_2s" lighting="0"/>
+        <effect class="result" key="terrain" ref="stratagems_liner_light_blue_2s" lighting="0"/>
+        <effect class="result" key="other" copy="terrain" />
+        <effect class="result" key="static_object" copy="terrain" />
+        <effect class="result" key="vehicle" copy="terrain" />
+        <effect class="result" key="character" copy="terrain" />
+        <effect class="activated" ref="alert_center_bluelight" lighting="0" /><!--中心蓝光标识-->
+    </projectile>
+
+    <projectile 
+        class="grenade" 
+        slot="0"
+        name="Resupply" 
+        pulldown_in_air="15.0"
+        time_to_live="60"
+        key="hd_laser_las98_laser_cannon_mk3.projectile" 
+        time_to_live_out_in_the_open="0"
+        player_death_drop_owner_lock_time="0"
+    >
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_laser_las98_laser_cannon_mk3.projectile" 
+        min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
+
+        <result class="notify_script" key="hd_laser_las98_laser_cannon_mk3_call" />
+        <trigger class="time" time_to_live="3.5" />	
+        <model mesh_filename="vindicator_beacon_blue.xml" />
+        <hud_icon filename="hd_laser_las98_laser_cannon_mk3.png" />
+
+        <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
+        speed_estimation_far="70.0" max_speed="21.0" randomness="0.0" tweak_factor="1.0" />
+        <commonness value="0.0" can_respawn_with="0" in_stock="1"/>
+        <capacity value="0" source="rank" source_value="0" />
+        <capacity value="1" source="rank" source_value="0" />
+        <inventory encumbrance="1" price="0.0" />
+        <!-- 补给 -->
+        <sound class="result" key="other" fileref="hd_supply_incoming.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming1.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming2.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="terrain" copy="other" />
+        <sound class="result" key="static_object" copy="other" />
+        <sound class="result" key="vehicle" copy="other" />
+        <sound class="result" key="character" copy="other" />
+        <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_2s" lighting="0"/>
+        <effect class="result" key="terrain" ref="stratagems_liner_light_blue_2s" lighting="0"/>
+        <effect class="result" key="other" copy="terrain" />
+        <effect class="result" key="static_object" copy="terrain" />
+        <effect class="result" key="vehicle" copy="terrain" />
+        <effect class="result" key="character" copy="terrain" />
+        <effect class="activated" ref="alert_center_bluelight" lighting="0" /><!--中心蓝光标识-->
+    </projectile>
+
+    <projectile 
+        class="grenade" 
+        slot="0"
+        name="Resupply" 
+        pulldown_in_air="15.0"
+        time_to_live="60"
+        key="hd_exp_ac22_dum_dum_mk3.projectile" 
+        time_to_live_out_in_the_open="0"
+        player_death_drop_owner_lock_time="0"
+    >
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_exp_ac22_dum_dum_mk3.projectile" 
+        min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
+
+        <result class="notify_script" key="hd_exp_ac22_dum_dum_mk3_call" />
+        <trigger class="time" time_to_live="3.5" />	
+        <model mesh_filename="vindicator_beacon_blue.xml" />
+        <hud_icon filename="hd_exp_ac22_dum_dum_mk3.png" />
+
+        <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
+        speed_estimation_far="70.0" max_speed="21.0" randomness="0.0" tweak_factor="1.0" />
+        <commonness value="0.0" can_respawn_with="0" in_stock="1"/>
+        <capacity value="0" source="rank" source_value="0" />
+        <capacity value="1" source="rank" source_value="0" />
+        <inventory encumbrance="1" price="0.0" />
+        <!-- 补给 -->
+        <sound class="result" key="other" fileref="hd_supply_incoming.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming1.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming2.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="terrain" copy="other" />
+        <sound class="result" key="static_object" copy="other" />
+        <sound class="result" key="vehicle" copy="other" />
+        <sound class="result" key="character" copy="other" />
+        <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_2s" lighting="0"/>
+        <effect class="result" key="terrain" ref="stratagems_liner_light_blue_2s" lighting="0"/>
+        <effect class="result" key="other" copy="terrain" />
+        <effect class="result" key="static_object" copy="terrain" />
+        <effect class="result" key="vehicle" copy="terrain" />
+        <effect class="result" key="character" copy="terrain" />
+        <effect class="activated" ref="alert_center_bluelight" lighting="0" /><!--中心蓝光标识-->
+    </projectile>
+
+    <projectile 
+        class="grenade" 
+        slot="0"
+        name="Resupply" 
+        pulldown_in_air="15.0"
+        time_to_live="60"
+        key="hd_exp_obliterator_grenade_launcher_full_upgrade.projectile" 
+        time_to_live_out_in_the_open="0"
+        player_death_drop_owner_lock_time="0"
+    >
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_exp_obliterator_grenade_launcher_full_upgrade.projectile" 
+        min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
+
+        <result class="notify_script" key="hd_exp_obliterator_grenade_launcher_full_upgrade_call" />
+        <trigger class="time" time_to_live="3.5" />	
+        <model mesh_filename="vindicator_beacon_blue.xml" />
+        <hud_icon filename="hd_exp_obliterator_grenade_launcher_mk3.png" />
+
+        <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
+        speed_estimation_far="70.0" max_speed="21.0" randomness="0.0" tweak_factor="1.0" />
+        <commonness value="0.0" can_respawn_with="0" in_stock="1"/>
+        <capacity value="0" source="rank" source_value="0" />
+        <capacity value="1" source="rank" source_value="0" />
+        <inventory encumbrance="1" price="0.0" />
+        <!-- 补给 -->
+        <sound class="result" key="other" fileref="hd_supply_incoming.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming1.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming2.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="terrain" copy="other" />
+        <sound class="result" key="static_object" copy="other" />
+        <sound class="result" key="vehicle" copy="other" />
+        <sound class="result" key="character" copy="other" />
+        <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_2s" lighting="0"/>
+        <effect class="result" key="terrain" ref="stratagems_liner_light_blue_2s" lighting="0"/>
+        <effect class="result" key="other" copy="terrain" />
+        <effect class="result" key="static_object" copy="terrain" />
+        <effect class="result" key="vehicle" copy="terrain" />
+        <effect class="result" key="character" copy="terrain" />
+        <effect class="activated" ref="alert_center_bluelight" lighting="0" /><!--中心蓝光标识-->
+    </projectile>
+
+    <projectile 
+        class="grenade" 
+        slot="0"
+        name="Resupply" 
+        pulldown_in_air="15.0"
+        time_to_live="60"
+        key="hd_exp_m25_rumbler_full_upgrade.projectile" 
+        time_to_live_out_in_the_open="0"
+        player_death_drop_owner_lock_time="0"
+    >
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_exp_m25_rumbler_full_upgrade.projectile" 
+        min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
+
+        <result class="notify_script" key="hd_exp_m25_rumbler_full_upgrade_call" />
+        <trigger class="time" time_to_live="3.5" />	
+        <model mesh_filename="vindicator_beacon_blue.xml" />
+        <hud_icon filename="hd_exp_m25_rumbler_mk3.png" />
+
+        <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
+        speed_estimation_far="70.0" max_speed="21.0" randomness="0.0" tweak_factor="1.0" />
+        <commonness value="0.0" can_respawn_with="0" in_stock="1"/>
+        <capacity value="0" source="rank" source_value="0" />
+        <capacity value="1" source="rank" source_value="0" />
+        <inventory encumbrance="1" price="0.0" />
+        <!-- 补给 -->
+        <sound class="result" key="other" fileref="hd_supply_incoming.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming1.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming2.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="terrain" copy="other" />
+        <sound class="result" key="static_object" copy="other" />
+        <sound class="result" key="vehicle" copy="other" />
+        <sound class="result" key="character" copy="other" />
+        <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_2s" lighting="0"/>
+        <effect class="result" key="terrain" ref="stratagems_liner_light_blue_2s" lighting="0"/>
+        <effect class="result" key="other" copy="terrain" />
+        <effect class="result" key="static_object" copy="terrain" />
+        <effect class="result" key="vehicle" copy="terrain" />
+        <effect class="result" key="character" copy="terrain" />
+        <effect class="activated" ref="alert_center_bluelight" lighting="0" /><!--中心蓝光标识-->
+    </projectile>
+
+    <projectile 
+        class="grenade" 
+        slot="0"
+        name="Resupply" 
+        pulldown_in_air="15.0"
+        time_to_live="60"
+        key="hd_pst_flam40_incinerator_mk3.projectile" 
+        time_to_live_out_in_the_open="0"
+        player_death_drop_owner_lock_time="0"
+    >
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_pst_flam40_incinerator_mk3.projectile" 
+        min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
+
+        <result class="notify_script" key="hd_pst_flam40_incinerator_mk3_call" />
+        <trigger class="time" time_to_live="3.5" />	
+        <model mesh_filename="vindicator_beacon_blue.xml" />
+        <hud_icon filename="hd_pst_flam40_incinerator_mk3.png" />
+
+        <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
+        speed_estimation_far="70.0" max_speed="21.0" randomness="0.0" tweak_factor="1.0" />
+        <commonness value="0.0" can_respawn_with="0" in_stock="1"/>
+        <capacity value="0" source="rank" source_value="0" />
+        <capacity value="1" source="rank" source_value="0" />
+        <inventory encumbrance="1" price="0.0" />
+        <!-- 补给 -->
+        <sound class="result" key="other" fileref="hd_supply_incoming.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming1.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming2.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="terrain" copy="other" />
+        <sound class="result" key="static_object" copy="other" />
+        <sound class="result" key="vehicle" copy="other" />
+        <sound class="result" key="character" copy="other" />
+        <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_2s" lighting="0"/>
+        <effect class="result" key="terrain" ref="stratagems_liner_light_blue_2s" lighting="0"/>
+        <effect class="result" key="other" copy="terrain" />
+        <effect class="result" key="static_object" copy="terrain" />
+        <effect class="result" key="vehicle" copy="terrain" />
+        <effect class="result" key="character" copy="terrain" />
+        <effect class="activated" ref="alert_center_bluelight" lighting="0" /><!--中心蓝光标识-->
+    </projectile>
+
+    <projectile 
+        class="grenade" 
+        slot="0"
+        name="Resupply" 
+        pulldown_in_air="15.0"
+        time_to_live="60"
+        key="hd_pst_tox13_avenger_mk3.projectile" 
+        time_to_live_out_in_the_open="0"
+        player_death_drop_owner_lock_time="0"
+    >
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_pst_tox13_avenger_mk3.projectile" 
+        min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
+
+        <result class="notify_script" key="hd_pst_tox13_avenger_mk3_call" />
+        <trigger class="time" time_to_live="3.5" />	
+        <model mesh_filename="vindicator_beacon_blue.xml" />
+        <hud_icon filename="hd_pst_tox13_avenger_mk3.png" />
+
+        <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
+        speed_estimation_far="70.0" max_speed="21.0" randomness="0.0" tweak_factor="1.0" />
+        <commonness value="0.0" can_respawn_with="0" in_stock="1"/>
+        <capacity value="0" source="rank" source_value="0" />
+        <capacity value="1" source="rank" source_value="0" />
+        <inventory encumbrance="1" price="0.0" />
+        <!-- 补给 -->
+        <sound class="result" key="other" fileref="hd_supply_incoming.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming1.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming2.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="terrain" copy="other" />
+        <sound class="result" key="static_object" copy="other" />
+        <sound class="result" key="vehicle" copy="other" />
+        <sound class="result" key="character" copy="other" />
+        <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_2s" lighting="0"/>
+        <effect class="result" key="terrain" ref="stratagems_liner_light_blue_2s" lighting="0"/>
+        <effect class="result" key="other" copy="terrain" />
+        <effect class="result" key="static_object" copy="terrain" />
+        <effect class="result" key="vehicle" copy="terrain" />
+        <effect class="result" key="character" copy="terrain" />
+        <effect class="activated" ref="alert_center_bluelight" lighting="0" /><!--中心蓝光标识-->
+    </projectile>
+
+    <projectile 
+        class="grenade" 
+        slot="0"
+        name="Resupply" 
+        pulldown_in_air="15.0"
+        time_to_live="60"
+        key="hd_exp_rl112_recoilless_rifle_mk3.projectile" 
+        time_to_live_out_in_the_open="0"
+        player_death_drop_owner_lock_time="0"
+    >
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_exp_rl112_recoilless_rifle_mk3.projectile" 
+        min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
+
+        <result class="notify_script" key="hd_exp_rl112_recoilless_rifle_mk3_call" />
+        <trigger class="time" time_to_live="3.5" />	
+        <model mesh_filename="vindicator_beacon_blue.xml" />
+        <hud_icon filename="hd_exp_rl112_recoilless_rifle_mk3.png" />
+
+        <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
+        speed_estimation_far="70.0" max_speed="21.0" randomness="0.0" tweak_factor="1.0" />
+        <commonness value="0.0" can_respawn_with="0" in_stock="1"/>
+        <capacity value="0" source="rank" source_value="0" />
+        <capacity value="1" source="rank" source_value="0" />
+        <inventory encumbrance="1" price="0.0" />
+        <!-- 补给 -->
+        <sound class="result" key="other" fileref="hd_supply_incoming.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming1.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming2.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="terrain" copy="other" />
+        <sound class="result" key="static_object" copy="other" />
+        <sound class="result" key="vehicle" copy="other" />
+        <sound class="result" key="character" copy="other" />
+        <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_2s" lighting="0"/>
+        <effect class="result" key="terrain" ref="stratagems_liner_light_blue_2s" lighting="0"/>
+        <effect class="result" key="other" copy="terrain" />
+        <effect class="result" key="static_object" copy="terrain" />
+        <effect class="result" key="vehicle" copy="terrain" />
+        <effect class="result" key="character" copy="terrain" />
+        <effect class="activated" ref="alert_center_bluelight" lighting="0" /><!--中心蓝光标识-->
+    </projectile>
+
+    <projectile 
+        class="grenade" 
+        slot="0"
+        name="Resupply" 
+        pulldown_in_air="15.0"
+        time_to_live="60"
+        key="hd_exp_eta17_mk3.projectile" 
+        time_to_live_out_in_the_open="0"
+        player_death_drop_owner_lock_time="0"
+    >
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_exp_eta17_mk3.projectile" 
+        min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
+
+        <result class="notify_script" key="hd_exp_eta17_mk3_call" />
+        <trigger class="time" time_to_live="3.5" />	
+        <model mesh_filename="vindicator_beacon_blue.xml" />
+        <hud_icon filename="hd_exp_eta17_mk3.png" />
+
+        <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
+        speed_estimation_far="70.0" max_speed="21.0" randomness="0.0" tweak_factor="1.0" />
+        <commonness value="0.0" can_respawn_with="0" in_stock="1"/>
+        <capacity value="0" source="rank" source_value="0" />
+        <capacity value="1" source="rank" source_value="0" />
+        <inventory encumbrance="1" price="0.0" />
+        <!-- 补给 -->
+        <sound class="result" key="other" fileref="hd_supply_incoming.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming1.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming2.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="terrain" copy="other" />
+        <sound class="result" key="static_object" copy="other" />
+        <sound class="result" key="vehicle" copy="other" />
+        <sound class="result" key="character" copy="other" />
+        <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_2s" lighting="0"/>
+        <effect class="result" key="terrain" ref="stratagems_liner_light_blue_2s" lighting="0"/>
+        <effect class="result" key="other" copy="terrain" />
+        <effect class="result" key="static_object" copy="terrain" />
+        <effect class="result" key="vehicle" copy="terrain" />
+        <effect class="result" key="character" copy="terrain" />
+        <effect class="activated" ref="alert_center_bluelight" lighting="0" /><!--中心蓝光标识-->
+    </projectile>
+
+    <projectile 
+        class="grenade" 
+        slot="0"
+        name="Resupply" 
+        pulldown_in_air="15.0"
+        time_to_live="60"
+        key="hd_exp_mls4x_commando_mk3.projectile" 
+        time_to_live_out_in_the_open="0"
+        player_death_drop_owner_lock_time="0"
+    >
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_exp_mls4x_commando_mk3.projectile" 
+        min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
+
+        <result class="notify_script" key="hd_exp_mls4x_commando_mk3_call" />
+        <trigger class="time" time_to_live="3.5" />	
+        <model mesh_filename="vindicator_beacon_blue.xml" />
+        <hud_icon filename="hd_exp_mls4x_commando_mk3.png" />
+
+        <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
+        speed_estimation_far="70.0" max_speed="21.0" randomness="0.0" tweak_factor="1.0" />
+        <commonness value="0.0" can_respawn_with="0" in_stock="1"/>
+        <capacity value="0" source="rank" source_value="0" />
+        <capacity value="1" source="rank" source_value="0" />
+        <inventory encumbrance="1" price="0.0" />
+        <!-- 补给 -->
+        <sound class="result" key="other" fileref="hd_supply_incoming.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming1.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming2.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="terrain" copy="other" />
+        <sound class="result" key="static_object" copy="other" />
+        <sound class="result" key="vehicle" copy="other" />
+        <sound class="result" key="character" copy="other" />
+        <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_2s" lighting="0"/>
+        <effect class="result" key="terrain" ref="stratagems_liner_light_blue_2s" lighting="0"/>
+        <effect class="result" key="other" copy="terrain" />
+        <effect class="result" key="static_object" copy="terrain" />
+        <effect class="result" key="vehicle" copy="terrain" />
+        <effect class="result" key="character" copy="terrain" />
+        <effect class="activated" ref="alert_center_bluelight" lighting="0" /><!--中心蓝光标识-->
+    </projectile>
+
+    <projectile 
+        class="grenade" 
+        slot="0"
+        name="Resupply" 
+        pulldown_in_air="15.0"
+        time_to_live="60"
+        key="hd_drone_ad334_guard_dog_mk3.projectile" 
+        time_to_live_out_in_the_open="0"
+        player_death_drop_owner_lock_time="0"
+    >
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_drone_ad334_guard_dog_mk3.projectile" 
+        min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
+
+        <result class="notify_script" key="hd_drone_ad334_guard_dog_mk3_call" />
+        <trigger class="time" time_to_live="3.5" />	
+        <model mesh_filename="vindicator_beacon_blue.xml" />
+        <hud_icon filename="hd_drone_ad334_guard_dog_mk3.png" />
+
+        <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
+        speed_estimation_far="70.0" max_speed="21.0" randomness="0.0" tweak_factor="1.0" />
+        <commonness value="0.0" can_respawn_with="0" in_stock="1"/>
+        <capacity value="0" source="rank" source_value="0" />
+        <capacity value="1" source="rank" source_value="0" />
+        <inventory encumbrance="1" price="0.0" />
+        <!-- 补给 -->
+        <sound class="result" key="other" fileref="hd_supply_incoming.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming1.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming2.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="terrain" copy="other" />
+        <sound class="result" key="static_object" copy="other" />
+        <sound class="result" key="vehicle" copy="other" />
+        <sound class="result" key="character" copy="other" />
+        <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_2s" lighting="0"/>
+        <effect class="result" key="terrain" ref="stratagems_liner_light_blue_2s" lighting="0"/>
+        <effect class="result" key="other" copy="terrain" />
+        <effect class="result" key="static_object" copy="terrain" />
+        <effect class="result" key="vehicle" copy="terrain" />
+        <effect class="result" key="character" copy="terrain" />
+        <effect class="activated" ref="alert_center_bluelight" lighting="0" /><!--中心蓝光标识-->
+    </projectile>
+
+    <projectile 
+        class="grenade" 
+        slot="0"
+        name="Resupply" 
+        pulldown_in_air="15.0"
+        time_to_live="60"
+        key="hd_drone_ad289_angel_mk3.projectile" 
+        time_to_live_out_in_the_open="0"
+        player_death_drop_owner_lock_time="0"
+    >
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_drone_ad289_angel_mk3.projectile" 
+        min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
+
+        <result class="notify_script" key="hd_drone_ad289_angel_mk3_call" />
+        <trigger class="time" time_to_live="3.5" />	
+        <model mesh_filename="vindicator_beacon_blue.xml" />
+        <hud_icon filename="hd_drone_ad289_angel_mk3.png" />
+
+        <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
+        speed_estimation_far="70.0" max_speed="21.0" randomness="0.0" tweak_factor="1.0" />
+        <commonness value="0.0" can_respawn_with="0" in_stock="1"/>
+        <capacity value="0" source="rank" source_value="0" />
+        <capacity value="1" source="rank" source_value="0" />
+        <inventory encumbrance="1" price="0.0" />
+        <!-- 补给 -->
+        <sound class="result" key="other" fileref="hd_supply_incoming.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming1.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming2.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="terrain" copy="other" />
+        <sound class="result" key="static_object" copy="other" />
+        <sound class="result" key="vehicle" copy="other" />
+        <sound class="result" key="character" copy="other" />
+        <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_2s" lighting="0"/>
+        <effect class="result" key="terrain" ref="stratagems_liner_light_blue_2s" lighting="0"/>
+        <effect class="result" key="other" copy="terrain" />
+        <effect class="result" key="static_object" copy="terrain" />
+        <effect class="result" key="vehicle" copy="terrain" />
+        <effect class="result" key="character" copy="terrain" />
+        <effect class="activated" ref="alert_center_bluelight" lighting="0" /><!--中心蓝光标识-->
+    </projectile>
+
+    <projectile 
+        class="grenade" 
+        slot="0"
+        name="Resupply" 
+        pulldown_in_air="15.0"
+        time_to_live="60"
+        key="hd_sup_rep80_mk3.projectile" 
+        time_to_live_out_in_the_open="0"
+        player_death_drop_owner_lock_time="0"
+    >
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_sup_rep80_mk3.projectile" 
+        min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
+
+        <result class="notify_script" key="hd_sup_rep80_mk3_call" />
+        <trigger class="time" time_to_live="3.5" />	
+        <model mesh_filename="vindicator_beacon_blue.xml" />
+        <hud_icon filename="hd_rep80_mk3.png" />
+
+        <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
+        speed_estimation_far="70.0" max_speed="21.0" randomness="0.0" tweak_factor="1.0" />
+        <commonness value="0.0" can_respawn_with="0" in_stock="1"/>
+        <capacity value="0" source="rank" source_value="0" />
+        <capacity value="1" source="rank" source_value="0" />
+        <inventory encumbrance="1" price="0.0" />
+        <!-- 补给 -->
+        <sound class="result" key="other" fileref="hd_supply_incoming.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming1.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming2.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="terrain" copy="other" />
+        <sound class="result" key="static_object" copy="other" />
+        <sound class="result" key="vehicle" copy="other" />
+        <sound class="result" key="character" copy="other" />
+        <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_2s" lighting="0"/>
+        <effect class="result" key="terrain" ref="stratagems_liner_light_blue_2s" lighting="0"/>
+        <effect class="result" key="other" copy="terrain" />
+        <effect class="result" key="static_object" copy="terrain" />
+        <effect class="result" key="vehicle" copy="terrain" />
+        <effect class="result" key="character" copy="terrain" />
+        <effect class="activated" ref="alert_center_bluelight" lighting="0" /><!--中心蓝光标识-->
+    </projectile>
+
+    <projectile 
+        class="grenade" 
+        slot="0"
+        name="Resupply" 
+        pulldown_in_air="15.0"
+        time_to_live="60"
+        key="hd_exp_rec6_demolisher_mk3.projectile" 
+        time_to_live_out_in_the_open="0"
+        player_death_drop_owner_lock_time="0"
+    >
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_exp_rec6_demolisher_mk3.projectile" 
+        min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
+
+        <result class="notify_script" key="hd_exp_rec6_demolisher_mk3_call" />
+        <trigger class="time" time_to_live="3.5" />	
+        <model mesh_filename="vindicator_beacon_blue.xml" />
+        <hud_icon filename="hd_rec6_demolisher_mk3.png" />
+
+        <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
+        speed_estimation_far="70.0" max_speed="21.0" randomness="0.0" tweak_factor="1.0" />
+        <commonness value="0.0" can_respawn_with="0" in_stock="1"/>
+        <capacity value="0" source="rank" source_value="0" />
+        <capacity value="1" source="rank" source_value="0" />
+        <inventory encumbrance="1" price="0.0" />
+        <!-- 补给 -->
+        <sound class="result" key="other" fileref="hd_supply_incoming.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming1.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming2.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="terrain" copy="other" />
+        <sound class="result" key="static_object" copy="other" />
+        <sound class="result" key="vehicle" copy="other" />
+        <sound class="result" key="character" copy="other" />
+        <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_2s" lighting="0"/>
+        <effect class="result" key="terrain" ref="stratagems_liner_light_blue_2s" lighting="0"/>
+        <effect class="result" key="other" copy="terrain" />
+        <effect class="result" key="static_object" copy="terrain" />
+        <effect class="result" key="vehicle" copy="terrain" />
+        <effect class="result" key="character" copy="terrain" />
+        <effect class="activated" ref="alert_center_bluelight" lighting="0" /><!--中心蓝光标识-->
+    </projectile>
+
+    <projectile 
+        class="grenade" 
+        slot="0"
+        name="Resupply" 
+        pulldown_in_air="15.0"
+        time_to_live="60"
+        key="hd_resupply_pack_mk3.projectile" 
+        time_to_live_out_in_the_open="0"
+        player_death_drop_owner_lock_time="0"
+    >
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_resupply_pack_mk3.projectile" 
+        min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
+
+        <result class="notify_script" key="hd_resupply_pack_mk3_call" />
+        <trigger class="time" time_to_live="3.5" />	
+        <model mesh_filename="vindicator_beacon_blue.xml" />
+        <hud_icon filename="hd_resupply_pack_mk3.png" />
+
+        <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
+        speed_estimation_far="70.0" max_speed="21.0" randomness="0.0" tweak_factor="1.0" />
+        <commonness value="0.0" can_respawn_with="0" in_stock="1"/>
+        <capacity value="0" source="rank" source_value="0" />
+        <capacity value="1" source="rank" source_value="0" />
+        <inventory encumbrance="1" price="0.0" />
+        <!-- 补给 -->
+        <sound class="result" key="other" fileref="hd_supply_incoming.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming1.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming2.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="terrain" copy="other" />
+        <sound class="result" key="static_object" copy="other" />
+        <sound class="result" key="vehicle" copy="other" />
+        <sound class="result" key="character" copy="other" />
+        <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_2s" lighting="0"/>
+        <effect class="result" key="terrain" ref="stratagems_liner_light_blue_2s" lighting="0"/>
+        <effect class="result" key="other" copy="terrain" />
+        <effect class="result" key="static_object" copy="terrain" />
+        <effect class="result" key="vehicle" copy="terrain" />
+        <effect class="result" key="character" copy="terrain" />
+        <effect class="activated" ref="alert_center_bluelight" lighting="0" /><!--中心蓝光标识-->
+    </projectile>
+
+    <projectile 
+        class="grenade" 
+        slot="0"
+        name="Resupply" 
+        pulldown_in_air="15.0"
+        time_to_live="60"
+        key="hd_sup_metal_detector.projectile" 
+        time_to_live_out_in_the_open="0"
+        player_death_drop_owner_lock_time="0"
+    >
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_sup_metal_detector.projectile" 
+        min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
+
+        <result class="notify_script" key="hd_sup_metal_detector_call" />
+        <trigger class="time" time_to_live="3.5" />	
+        <model mesh_filename="vindicator_beacon_blue.xml" />
+        <hud_icon filename="hd_mental_detector.png" />
+
+        <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
+        speed_estimation_far="70.0" max_speed="21.0" randomness="0.0" tweak_factor="1.0" />
+        <commonness value="0.0" can_respawn_with="0" in_stock="1"/>
+        <capacity value="0" source="rank" source_value="0" />
+        <capacity value="1" source="rank" source_value="0" />
+        <inventory encumbrance="1" price="0.0" />
+        <!-- 补给 -->
+        <sound class="result" key="other" fileref="hd_supply_incoming.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming1.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="other" fileref="hd_supply_incoming2.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="result" key="terrain" copy="other" />
+        <sound class="result" key="static_object" copy="other" />
+        <sound class="result" key="vehicle" copy="other" />
+        <sound class="result" key="character" copy="other" />
+        <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_2s" lighting="0"/>
+        <effect class="result" key="terrain" ref="stratagems_liner_light_blue_2s" lighting="0"/>
+        <effect class="result" key="other" copy="terrain" />
+        <effect class="result" key="static_object" copy="terrain" />
+        <effect class="result" key="vehicle" copy="terrain" />
+        <effect class="result" key="character" copy="terrain" />
+        <effect class="activated" ref="alert_center_bluelight" lighting="0" /><!--中心蓝光标识-->
+    </projectile>
+</projectiles>

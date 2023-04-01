@@ -128,7 +128,11 @@
 
 	<!-- 特殊 -->
 	<projectile file="hd_ammo_supply_box.projectile" /><!--弹药补给-->
-
+	<projectile file="hd_ammo_supply_box_ex.projectile" /><!--弹药补给-->
+	<projectile file="hd_ammo_supply_box_ex_2.projectile" /><!--弹药补给-->
+	<projectile file="hd_stratagems_spawn.xml" />
+	<projectile file="hd_stratagems_call.xml" />
+	<projectile file="hd_sup_metal_detector.projectile" /><!--扫雷弹头-->
 
 	<!-- 间接生成弹头 -->
 	<projectile file="hd_amg_11_mk3_spawn.projectile" />
@@ -136,4 +140,9 @@
 	<projectile file="hd_offensive_shredder_missile_strike_mk3_spawn.projectile" />
 	<projectile file="hd_nux_223_hellbomb_waiting.projectile" />
 	<projectile file="hd_offensive_incendiary_bombs_mk3_spawn.projectile" /><!--燃烧炸弹-->
+
+
+
+
+
 </projectiles>

@@ -408,3 +408,33 @@ void stopSoundtrack(Metagame@ m_metagame,string filename) {
 	" filename='" + filename + "'" + 
 	"</command>");
 }
+
+void spawnStaticItem(Metagame@ metagame,string key,Vector3 pos,int characterId,int factionId,string item_class)
+{
+	string m_pos = pos.toString();
+
+	XmlElement command("command");
+	command.setStringAttribute("class", "create_instance");
+	command.setIntAttribute("character_id", characterId);
+	command.setIntAttribute("faction_id", factionId);
+
+	command.setStringAttribute("instance_class", item_class);
+	command.setStringAttribute("instance_key", key);	
+	command.setStringAttribute("position", m_pos);	
+	command.setStringAttribute("offset", "0 0 0");	
+
+	metagame.getComms().send(command);
+}
+
+void deleteItemInGround(Metagame@ metagame, int characterId, string ItemType, string ItemKey){
+	XmlElement c ("command");
+	c.setStringAttribute("class", "update_inventory");
+	c.setIntAttribute("container_type_id", 0);
+	c.setIntAttribute("character_id", characterId); 
+	c.setIntAttribute("add",0);
+	XmlElement k("item");
+	k.setStringAttribute("class", ItemType);
+	k.setStringAttribute("key", ItemKey);
+	c.appendChild(k);
+	metagame.getComms().send(c);	
+}

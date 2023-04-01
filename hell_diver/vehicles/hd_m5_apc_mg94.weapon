@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<weapon key="hd_m5_apc_mg94.weapon">
+<weapon 
+file="_hd_vehicle_mg.base"
+key="hd_m5_apc_mg94.weapon">
     <specification  
     slot="2"    
     retrigger_time="0.04" 
@@ -16,8 +18,6 @@
     suppressed="0" 
     class="0" 
     name="MG-94 MK3 Machine Gun truck(Mounted)" 
-    sight_range_modifier="1.0" 
-    ai_sight_range_modifier="0.7" 
     sight_height_offset="1.0" 
     burst_shots="1" 
     projectiles_per_shot="1" 

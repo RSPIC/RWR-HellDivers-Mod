@@ -69,12 +69,12 @@
 
 	<parameter class="warn_about_overencumbered_time" value="4.0" />
 
-	<parameter class="detectability_prone" value="0.4" />
-	<parameter class="detectability_wounded" value="0.4" />
-	<parameter class="detectability_crouching" value="0.6" />
-	<parameter class="detectability_crouch_moving" value="0.8" />
+	<parameter class="detectability_prone" value="0.3" />
+	<parameter class="detectability_wounded" value="0.3" />
+	<parameter class="detectability_crouching" value="0.5" />
+	<parameter class="detectability_crouch_moving" value="0.55" />
 	<parameter class="detectability_walking" value="0.95" />
-	<parameter class="detectability_still" value="0.88" />
+	<parameter class="detectability_still" value="0.85" />
 	<parameter class="detectability_running" value="1.0" />
 
 <!-- <parameter class="default_squad_config_index" value="0" /> -->
@@ -173,7 +173,7 @@
 	<sound key="stab" fileref="hd_melee.wav" volume="0.35" />
 	<sound key="stab" fileref="hd_melee.wav" volume="0.35" />
 	<sound key="stab" fileref="hd_melee.wav" volume="0.35" />
-	<sound key="stab" fileref="hd_melee_hea_1.wav" volume="0.35" />
+	<!-- <sound key="stab" fileref="hd_melee_hea_1.wav" volume="0.35" /> -->
 	<!-- <sound key="stab" fileref="hd_melee_hea_2.wav" volume="1.0" /> -->
 	<!-- <sound key="stab" fileref="hd_melee_hea_3.wav" volume="1.0" /> -->
 	<!-- <sound key="stab" fileref="hd_melee_hea_4.wav" volume="1.0" /> -->

@@ -45,6 +45,7 @@
 #include "itemdrop_event.as"
 #include "humblebee_uav.as"
 #include "kill_reward.as"
+#include "dynamic_alert.as"
 
 
 
@@ -339,6 +340,7 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		addTracker(itemdrop_event(this));    
 		addTracker(UAVdrone(this));    
 		addTracker(kill_reward(this));    
+		addTracker(dynamic_alert(this));    
 		//addTracker(scheduled_task(this));    
 	}
 

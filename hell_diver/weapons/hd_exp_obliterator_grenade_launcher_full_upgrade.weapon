@@ -129,16 +129,16 @@ key="hd_exp_obliterator_grenade_launcher_full_upgrade.weapon"
 		
     </projectile>
 	
-	!--
+
     <ballistics 
     curve_height="10" 
     near_far_distance="0" 
     speed_estimation_near="0.0" 
     speed_estimation_far="65" 
-    max_speed="25" 
+    max_speed="32" 
     randomness="0" 
     tweak_factor="1.86" />  
-	--
+
 	
     <stance state_key="running" accuracy="1" /> 
     <stance state_key="walking" accuracy="1" />

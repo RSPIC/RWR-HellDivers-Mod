@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>	
 <weapon 
-drop_count_factor_on_death="0" 
-drop_count_factor_on_player_death="0"
-time_to_live_out_in_the_open="0"
-player_death_drop_owner_lock_time="0"
+file="_hd_vehicle_cannon.base"
 key="ex_apocalypse_tank_gl.weapon" 
 > 
 	<tag name="anti_tank" />
 
     <specification 	
     slot="1" 	
-    retrigger_time="4.5" 
-    accuracy_factor="0.97" 
+    retrigger_time="3" 
+    accuracy_factor="1" 
 	spread_range="0.6"
 	stance_accuracy_rate="1.0"
     sustained_fire_grow_step="1" 
-    sustained_fire_diminish_rate="0.2" 
+    sustained_fire_diminish_rate="0.32" 
     magazine_size="-1" 
 	reload_one_at_a_time="1"
     can_shoot_standing="1" 
@@ -24,8 +21,6 @@ key="ex_apocalypse_tank_gl.weapon"
     suppressed="0" 
 	class="0" 
     name="Apocalypse Tank" 
-	sight_range_modifier="3.0" 
-	ai_sight_range_modifier="0.4" 
 	sight_height_offset="1.0" 
 	burst_shots="1" 
     projectiles_per_shot="1" 

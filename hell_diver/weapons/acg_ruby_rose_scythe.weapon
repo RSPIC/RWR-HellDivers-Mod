@@ -81,7 +81,7 @@ key="acg_ruby_rose_scythe.weapon"
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
 	time_to_live="0.6" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.7" name="Crescent Rose [Scythe]"> 
 
-		<result class="spawn" instance_class="projectile" instance_key="hd_cr9_suppressor_damage.projectile" 
+		<result class="spawn" instance_class="projectile" instance_key="hd_exp_cr9_suppressor_full_upgrade_damage.projectile" 
 		min_amount="10" max_amount="10" offset="0 0.5 0" position_spread="0.5 0" direction_spread="0 0" />	
 		<trigger class="impact" time_to_live="0.2"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->

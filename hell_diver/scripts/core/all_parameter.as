@@ -87,7 +87,7 @@ dictionary projectile_eventkey = {
 };
 
 // 支援信标护甲代码
-dictionary offensive_stratagems = {
+dictionary code_stratagems = {
 
         // 空
         {"",-1},
@@ -119,16 +119,35 @@ dictionary offensive_stratagems = {
         // special 特殊支援
         {"wadsws","hd_nux_223_hellbomb"},
         {"wsdaw","hd_hellpod"},
+        {"ssdw","hd_sup_metal_detector"},
 
         // Supply 普通支援
         {"sdsaad","hd_m5_apc_call"},
         {"sdwaws","hd_m5_32_hav_call"},
         {"sdsawd","hd_td110_bastion_call"},
         {"sdsaaw","hd_mc109_motor_call"},
-        {"sswd","hd_resupply"},
         {"sdwass","hd_exo44_mk3"},
         {"sdwasa","hd_exo48_mk3"},
         {"sdwasd","hd_exo51_mk3"},
+
+        // weapons 武器支援
+        {"sswd","hd_resupply"}, 
+        {"saswd","hd_lmg_mg94_mk3"},
+        {"saswwa","hd_lmg_mgx42_mk3"},
+        {"saswa","hd_laser_las98_laser_cannon_mk3"},
+        {"saswwd","hd_exp_ac22_dum_dum_mk3"},
+        {"sawas","hd_exp_obliterator_grenade_launcher_full_upgrade"},
+        {"sawaa","hd_exp_m25_rumbler_full_upgrade"},
+        {"sasda","hd_pst_flam40_incinerator_mk3"},
+        {"sasdd","hd_pst_tox13_avenger_mk3"},
+        {"sadda","hd_exp_rl112_recoilless_rifle_mk3"},
+        {"sadws","hd_exp_eta17_mk3"},
+        {"sawsd","hd_exp_mls4x_commando_mk3"},
+        {"swawds","hd_drone_ad334_guard_dog_mk3"},
+        {"swaads","hd_drone_ad289_angel_mk3"},
+        {"ssads","hd_sup_rep80_mk3"},
+        {"sadww","hd_exp_rec6_demolisher_mk3"},
+        {"swssd","hd_resupply_pack_mk3"},
 
         // 占位的
         {"666",-1}

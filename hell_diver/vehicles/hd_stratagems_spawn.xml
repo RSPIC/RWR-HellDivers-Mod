@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectiles>
+	<projectile 
+	class="grenade" 
+	key="hd_lmg_mg94_mk3_spawn.projectile" 
+	slot="0"
+	pulldown_in_air="10.0"
+	time_to_live="60"
+	>
+		<result class="spawn" instance_class="weapon" instance_key="hd_lmg_mg94_mk3.weapon" 
+		min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0.00 0" />
+		<trigger class="time" time_to_live="1.1" />	
+		<collision class="sticky" />
+		<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	</projectile>
+
+	<projectile 
+	class="grenade" 
+	key="hd_lmg_mgx42_mk3_spawn.projectile" 
+	slot="0"
+	pulldown_in_air="10.0"
+	time_to_live="60"
+	>
+		<result class="spawn" instance_class="weapon" instance_key="hd_lmg_mgx42_mk3.weapon" 
+		min_amount="16" max_amount="16" offset="0 0 0" position_spread="0 0" direction_spread="0.00 0" />
+		<trigger class="time" time_to_live="1.1" />	
+		<collision class="sticky" />
+		<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	</projectile>
+
+	<projectile 
+	class="grenade" 
+	key="hd_laser_las98_laser_cannon_mk3_spawn.projectile" 
+	slot="0"
+	pulldown_in_air="10.0"
+	time_to_live="60"
+	>
+		<result class="spawn" instance_class="weapon" instance_key="hd_laser_las98_laser_cannon_mk3.weapon" 
+		min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0.00 0" />
+		<trigger class="time" time_to_live="1.1" />	
+		<collision class="sticky" />
+		<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	</projectile>
+
+	<projectile 
+	class="grenade" 
+	key="hd_exp_ac22_dum_dum_mk3_spawn.projectile" 
+	slot="0"
+	pulldown_in_air="10.0"
+	time_to_live="60"
+	>
+		<result class="spawn" instance_class="weapon" instance_key="hd_exp_ac22_dum_dum_mk3.weapon" 
+		min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0.00 0" />
+		<trigger class="time" time_to_live="1.1" />	
+		<collision class="sticky" />
+		<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	</projectile>
+
+	<projectile 
+	class="grenade" 
+	key="hd_exp_obliterator_grenade_launcher_spawn.projectile" 
+	slot="0"
+	pulldown_in_air="10.0"
+	time_to_live="60"
+	>
+		<result class="spawn" instance_class="weapon" instance_key="hd_exp_obliterator_grenade_launcher_full_upgrade.weapon" 
+		min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0.00 0" />
+		<trigger class="time" time_to_live="1.1" />	
+		<collision class="sticky" />
+		<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	</projectile>
+
+	<projectile 
+	class="grenade" 
+	key="hd_exp_m25_rumbler_full_upgrade_spawn.projectile" 
+	slot="0"
+	pulldown_in_air="10.0"
+	time_to_live="60"
+	>
+		<result class="spawn" instance_class="weapon" instance_key="hd_exp_m25_rumbler_full_upgrade.weapon" 
+		min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0.00 0" />
+		<trigger class="time" time_to_live="1.1" />	
+		<collision class="sticky" />
+		<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	</projectile>
+
+	<projectile 
+	class="grenade" 
+	key="hd_pst_flam40_incinerator_mk3_spawn.projectile" 
+	slot="0"
+	pulldown_in_air="10.0"
+	time_to_live="60"
+	>
+		<result class="spawn" instance_class="weapon" instance_key="hd_pst_flam40_incinerator_mk3.weapon" 
+		min_amount="10" max_amount="10" offset="0 0 0" position_spread="0 0" direction_spread="0.00 0" />
+		<trigger class="time" time_to_live="1.1" />	
+		<collision class="sticky" />
+		<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	</projectile>
+
+	<projectile 
+	class="grenade" 
+	key="hd_pst_tox13_avenger_mk3_spawn.projectile" 
+	slot="0"
+	pulldown_in_air="10.0"
+	time_to_live="60"
+	>
+		<result class="spawn" instance_class="weapon" instance_key="hd_pst_tox13_avenger_mk3.weapon" 
+		min_amount="10" max_amount="10" offset="0 0 0" position_spread="0 0" direction_spread="0.00 0" />
+		<trigger class="time" time_to_live="1.1" />	
+		<collision class="sticky" />
+		<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	</projectile>
+
+	<projectile 
+	class="grenade" 
+	key="hd_exp_rl112_recoilless_rifle_mk3_spawn.projectile" 
+	slot="0"
+	pulldown_in_air="10.0"
+	time_to_live="60"
+	>
+		<result class="spawn" instance_class="weapon" instance_key="hd_exp_rl112_recoilless_rifle_mk3.weapon" 
+		min_amount="8" max_amount="8" offset="0 0 0" position_spread="0 0" direction_spread="0.00 0" />
+		<trigger class="time" time_to_live="1.1" />	
+		<collision class="sticky" />
+		<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	</projectile>
+
+	<projectile 
+	class="grenade" 
+	key="hd_exp_eta17_mk3_spawn.projectile" 
+	slot="0"
+	pulldown_in_air="10.0"
+	time_to_live="60"
+	>
+		<result class="spawn" instance_class="weapon" instance_key="hd_exp_eta17_mk3.weapon" 
+		min_amount="6" max_amount="6" offset="0 0 0" position_spread="0 0" direction_spread="0.00 0" />
+		<trigger class="time" time_to_live="1.1" />	
+		<collision class="sticky" />
+		<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	</projectile>
+
+	<projectile 
+	class="grenade" 
+	key="hd_exp_mls4x_commando_mk3_spawn.projectile" 
+	slot="0"
+	pulldown_in_air="10.0"
+	time_to_live="60"
+	>
+		<result class="spawn" instance_class="weapon" instance_key="hd_exp_mls4x_commando_mk3.weapon" 
+		min_amount="8" max_amount="8" offset="0 0 0" position_spread="0 0" direction_spread="0.00 0" />
+		<trigger class="time" time_to_live="1.1" />	
+		<collision class="sticky" />
+		<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	</projectile>
+
+	<projectile 
+	class="grenade" 
+	key="hd_drone_ad334_guard_dog_mk3_spawn.projectile" 
+	slot="0"
+	pulldown_in_air="10.0"
+	time_to_live="60"
+	>
+		<result class="spawn" instance_class="weapon" instance_key="hd_drone_ad334_guard_dog_mk3.weapon" 
+		min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0.00 0" />
+		<trigger class="time" time_to_live="1.1" />	
+		<collision class="sticky" />
+		<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	</projectile>
+
+	<projectile 
+	class="grenade" 
+	key="hd_drone_ad289_angel_mk3_spawn.projectile" 
+	slot="0"
+	pulldown_in_air="10.0"
+	time_to_live="60"
+	>
+		<result class="spawn" instance_class="weapon" instance_key="hd_drone_ad289_angel_mk3.weapon" 
+		min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0.00 0" />
+		<trigger class="time" time_to_live="1.1" />	
+		<collision class="sticky" />
+		<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	</projectile>
+
+	<projectile 
+	class="grenade" 
+	key="hd_sup_rep80_mk3_spawn.projectile" 
+	slot="0"
+	pulldown_in_air="10.0"
+	time_to_live="60"
+	>
+		<result class="spawn" instance_class="weapon" instance_key="hd_sup_rep80_mk3.weapon" 
+		min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0.00 0" />
+		<trigger class="time" time_to_live="1.1" />	
+		<collision class="sticky" />
+		<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	</projectile>
+
+	<projectile 
+	class="grenade" 
+	key="hd_exp_rec6_demolisher_mk3_spawn.projectile" 
+	slot="0"
+	pulldown_in_air="10.0"
+	time_to_live="60"
+	>
+		<result class="spawn" instance_class="weapon" instance_key="hd_exp_rec6_demolisher_mk3.weapon" 
+		min_amount="10" max_amount="10" offset="0 0 0" position_spread="0 0" direction_spread="0.00 0" />
+		<trigger class="time" time_to_live="1.1" />	
+		<collision class="sticky" />
+		<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	</projectile>
+
+	<projectile 
+	class="grenade" 
+	key="hd_resupply_pack_mk3_spawn.projectile" 
+	slot="0"
+	pulldown_in_air="10.0"
+	time_to_live="60"
+	>
+		<result class="spawn" instance_class="carry_item" instance_key="hd_resupply_pack_mk3.carry_item" 
+		min_amount="2" max_amount="2" offset="0 0 0" position_spread="0 0" direction_spread="0.00 0" />
+		<trigger class="time" time_to_live="1.1" />	
+		<collision class="sticky" />
+		<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	</projectile>
+
+	<projectile 
+	class="grenade" 
+	key="hd_sup_metal_detector_spawn.projectile" 
+	slot="0"
+	pulldown_in_air="10.0"
+	time_to_live="60"
+	>
+		<result class="spawn" instance_class="weapon" instance_key="hd_sup_metal_detector.weapon" 
+		min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0.00 0" />
+		<trigger class="time" time_to_live="1.1" />	
+		<collision class="sticky" />
+		<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	</projectile>
+</projectiles>

@@ -35,6 +35,7 @@
 	<weapon key="hd_sup_md98_injector.weapon" /><!--MD-98注射器-->
 
     <!-- 副手 -->
+    <weapon key="hd_driver_binoculars.weapon" /><!--驾驶员望远镜-->
     <weapon key="hd_lmg_mgx42_mk3.weapon" /><!--MGX42机枪-->
     <weapon key="hd_drone_ad334_guard_dog_mk3.weapon" /><!--护卫犬-->
     <!-- <weapon key="hd_drone_ad334_guard_dog_load.weapon" />护卫犬 -->
@@ -74,12 +75,19 @@
     <carry_item key="helldivers_vest.carry_item" />
 
     <!-- 电台支援 -->
+    <!-- 特殊支援 -->
     <call key="hd_md99_autoinjector.call" />
-    <call key="spawn_hd_mc109_motor.call" />
-    <call key="spawn_hd_apb_mk3.call" />
-    <call key="spawn_hd_resupply.call" />
-    <call key="humblebee_uav_drone.call" />
     <call key="hd_sos_beacom.call" />
+    <call key="hd_nux223_hellbomb.call" />
+    <call key="hd_sup_metal_detector.call" />
+    <!-- 防御支援 -->
+    <call key="spawn_hd_apb_mk3.call" />
+    <call key="humblebee_uav_drone.call" />
+    <!-- 战略设备 -->
+    <call key="spawn_hd_mc109_motor.call" />
+    <call key="spawn_hd_resupply.call" />
+    <!-- 进攻支援 -->
+    <call key="spawn_hd_sms.call" />
 
     <!-- 载具 -->
 	<vehicle key="hd_m5_apc.vehicle" />

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapon 
+drop_count_factor_on_death="0" 
+drop_count_factor_on_player_death="1"
+time_to_live_out_in_the_open="300"
+player_death_drop_owner_lock_time="300"
+key="hd_sup_metal_detector.weapon" 
+> 
+    <specification 	
+	magazine_size="-1" 
+    can_shoot_prone="1" 
+    can_shoot_crouching="0" 
+    carry_in_two_hands="0" 
+    name="Mental Detector" 
+    class="5" 
+    consume="0" 
+    spawn_instance_class="projectile" 
+    spawn_instance_key="hd_sup_metal_detector.projectile" 
+    sight_range_modifier="1" 
+    slot="1" 
+    range="4"
+    success_probability="2.2"
+    stab_enabled="1"
+    stab_range="3.5"
+	character_state="none" 
+	/> 
+	<!--1020RPM 	150/250 magazine 	5s/5s Reload	30m range-->
+	
+	<animation state_key="stabbing"	animation_key="metal_detector" />
+	<animation state_key="stabbing"	animation_key="metal_detector" />
+	<animation state_key="stabbing"	animation_key="metal_detector" />
+	<animation state_key="recoil"	animation_key="deploy1" />
+	<animation state_key="recoil"	animation_key="deploy1" />
+	<animation state_key="recoil"	animation_key="deploy1" />
+	<animation state_key="hold" animation_key="hold, hip fire" />
+	<animation state_key="reload" animation_key="reloading_mg94"/>
+	<animation state_key="crouching" animation_key="crouch, hold, hip fire" />
+	<animation state_key="crouch_moving" animation_key="crouching forwards, hip fire" />
+	<animation state_key="walking_backwards" animation_key="walking backwards, hip fire" />  
+	<animation state_key="hold_on_wall" animation_key="hold, hip fire" />
+	<animation state_key="still_against_wall" 	animation_key="hold, hip fire" />
+	<animation state_key="walking" animation_key="running, bow" />
+	<animation state_key="running" animation_key="running, bow" />  
+
+    <sound key="fire" fileref="hd_mental_detector_scan.wav" pitch_variety="0.1" volume="0.8" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_02.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="magazine_out" fileref="hd_mg94_mag_out.wav" />
+    <sound key="magazine_in" fileref="hd_mg94_mag_in.wav" />
+    <sound key="cycle" fileref="rifle_chamber.wav" />
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" />
+    <sound key="stab" fileref="hd_mental_detector_scan.wav" />
+    <sound key="effect" fileref="hd_mental_detector_scan.wav" />
+	<sound class="impact" fileref="rifle_drop.wav" />
+
+    <model mesh_filename="hd_metal_detector.mesh" texture_filename="hd_metal_detector.jpg" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="hd_mental_detector.png" /> 
+
+  	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="1" source="rank" source_value="0" />
+	
+    <commonness value="1" can_respawn_with="0" in_stock="1" /> 
+    <inventory encumbrance="12.0" price="0.0" /> 
+    <weak_hand_hold offset="0.0" /> 
+
+    <stance state_key="running" accuracy="1" /> 
+    <stance state_key="walking" accuracy="1" />
+	<stance state_key="standing" accuracy="1" />
+	<stance state_key="crouching" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1.2" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1.4" />     
+     
+    <modifier class="speed" value="-0.1" /> 
+    <modifier class="hit_success_probability" value="0.0" />
+    <modifier class="detectability" value="0.0" />
+	 
+
+
+</weapon>
+
+
+

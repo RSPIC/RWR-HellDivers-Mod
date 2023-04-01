@@ -15,4 +15,20 @@ character_leave_request_mode="friendly"
 	mass="200.0" 
 	broken_mass="180"
 	/> 
+
+	<event key="receive_damage_xp_reward">
+		<trigger class="receive_damage" />
+		<result class="reward" xp="0.300" />
+	</event>
+
+	<event key="spot_rp_reward">
+		<trigger class="spot" />
+		<result class="reward" rp="200.0" />
+	</event>
+
+	<event key="destroy_rp_reward">
+		<trigger class="destroy" />
+		<result class="reward" rp="1000.0" />
+	</event>
+
 </vehicle>

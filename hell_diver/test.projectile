@@ -13,12 +13,13 @@
  	<throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
 	speed_estimation_far="70.0" max_speed="70.0" randomness="0.0" tweak_factor="1.0" />
 
-	<result class="notify_script" key="upgrade" />
+	<!-- <result class="notify_script" key="upgrade" /> -->
+	<result class="notify_script" key="squadleader_cyborg" />
 
 	<!-- <effect class="result" key="terrain" ref="car_slide_spary_spark" lighting="0" post_processing="0"/>  -->
 	<!-- <effect class="result" key="terrain" ref="MG_hvy_hit_cross_blast" lighting="0" />  -->
 	<!-- <effect class="result" key="terrain" ref="music_musical_note_1" lighting="0" post_processing="1"/> -->
-	<effect class="result" key="terrain" ref="general_item_drop_mark" lighting="0" post_processing="1"/>
+	<effect class="result" key="terrain" ref="marker_bombing_circle" lighting="0" post_processing="1"/>
 
 	<!-- <effect class="activated" ref="alert_center_alerticon_hight_frequncy" lighting="0" /> -->
 	<!--高频率感叹号警告标识-->

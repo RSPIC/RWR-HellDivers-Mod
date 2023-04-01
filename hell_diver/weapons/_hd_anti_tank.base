@@ -7,8 +7,8 @@ player_death_drop_owner_lock_time="300"
 on_ground_up="0 0 1" 
 > 
     <specification 
-	sight_range_modifier="1.0" 
-	ai_sight_range_modifier="0.55" 
+	sight_range_modifier="1.5" 
+	ai_sight_range_modifier="0.5" 
 	use_basic_muzzle_smoke_effect="0"
 	/> 
 	

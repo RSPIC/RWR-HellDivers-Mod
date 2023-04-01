@@ -17,11 +17,11 @@ dictionary healable_weapon = {
         // 空
         {"",-1},
 
-        {"hd_p2_peacemaker.weapon",1},
+        {"hd_side_p2_peacemaker_full_upgrade.weapon",1},
 
-        {"hd_p6_gunslinger.weapon",3},
+        {"hd_side_p6_gunslinger.weapon",3},
 
-        {"hd_flam24_pyro.weapon",2},
+        {"hd_pst_tox13_avenger_mk3.weapon",2},
 
         {"hd_exo44_walker_mk3_mg.weapon",2},
         {"hd_exo44_walker_mk3_missile.weapon",2},
@@ -60,9 +60,16 @@ dictionary recommend_kill_weapon_bonus = {
         {"",-1},
 
 		//数字为额外经验倍率
-        {"hd_ar19_liberator_full_upgrade.weapon",1.0},
+        {"hd_ar_ar19_liberator_full_upgrade.weapon",2.0},
+        {"hd_ar_ar22c_patriot_full_upgrade.weapon",2.0},
+        {"hd_ar_ar20l_justice_full_upgrade.weapon",2.0},
+        {"hd_ar_ar14d_paragon_full_upgrade.weapon",2.0},
 
-        {"hd_smg45_defender_full_upgrade.weapon",1.0},
+        {"hd_smg_smg45_defender_full_upgrade.weapon",2.0},
+        {"hd_smg_mp98_knight_smg_full_upgrade.weapon",2.0},
+        {"hd_smg_smg34_ninja_full_upgrade.weapon",2.0},
+		
+        {"hd_side_p2_peacemaker_full_upgrade.weapon",3.0},
 
         // 占位的
         {"666",-1}

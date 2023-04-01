@@ -50,8 +50,8 @@ radius="1"
 	
 	<!--武器模型和HUD-->
 	<weak_hand_hold offset="0" /> <!--模型X轴偏移-->
-	<model filename="ref_weapon_model.xml" /> 
-    <model mesh_filename="" texture_filename="" /> <!--调用mesh模型-->
+	<!-- <model filename="ref_weapon_model.xml" />  -->
+    <model mesh_filename="hd_metal_detector.mesh" texture_filename="hd_metal_detector.jpg" /> <!--调用mesh模型-->
     <addon_model filename="" /> <!--附加模型，固定绑骨到肩膀-->
     <hud_icon filename="ref_weapon_hud.png" /> <!--武器为100x200像素，投掷物为110x110-->
 	

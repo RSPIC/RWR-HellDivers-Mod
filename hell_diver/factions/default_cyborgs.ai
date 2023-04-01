@@ -62,7 +62,7 @@
 	<!-- 再次投掷手雷的间隔时间 -->
   <parameter class="min_distance_to_throw_grenade" value="0.0" />
   <parameter class="max_distance_to_throw_grenade" value="20.0" />
-  <parameter class="vehicle_target_aim_time" value="3.0" />
+  <parameter class="vehicle_target_aim_time" value="0.0" />
   <parameter class="guard_range_from_leader_margin" value="15.0" />
   <parameter class="guard_range_from_leader_step" value="30.0" />
   <parameter class="guard_wait_time_min" value="5.0" />

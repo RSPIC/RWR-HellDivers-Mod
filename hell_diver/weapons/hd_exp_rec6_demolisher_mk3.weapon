@@ -78,7 +78,7 @@ key="hd_exp_rec6_demolisher_mk3.weapon"
 	
 	<!--军械库相关-->
     <commonness value="1" can_respawn_with="0" in_stock="1" /> 
-    <inventory encumbrance="3.0" price="40.0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
+    <inventory encumbrance="3.0" price="0.0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
     
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
     <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="30" can_be_detected_by_footmen="1" 

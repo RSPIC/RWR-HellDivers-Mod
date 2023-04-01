@@ -15,5 +15,9 @@ character_leave_request_mode="friendly"
 	broken_mass="10"
 	/> 
 
-	
+	<event key="spot_rp_reward">
+		<trigger class="spot" />
+		<result class="reward" rp="100.0" />
+	</event>
+
 </vehicle>

@@ -32,7 +32,7 @@ class repair_tools : Tracker {
 		string EventKeyGet = event.getStringAttribute("key");
         _log("projectile event key= " + EventKeyGet);
         _log("projectile event key index= " + int(repairtool_key[EventKeyGet]));
-		_log("repairtool_key.exists?: "+ (offensive_stratagems.exists(EventKeyGet)));
+		_log("repairtool_key.exists?: "+ (repairtool_key.exists(EventKeyGet)));
 		_log("repairtool_key.float result?: "+float(repairtool_key[EventKeyGet]));
         if (float(repairtool_key[EventKeyGet])!=0){
 			_log("handing handleResultEvent:repair_tools");

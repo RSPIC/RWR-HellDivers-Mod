@@ -116,6 +116,7 @@ radius="1"
 		<effect class="result" key="terrain" ref="" lighting="0"/>
 		<effect class="activated" ref="" />
 		-->
+		<effect class="result" key="terrain" ref="marker_bombing_circle_9s_nux"/>
 		<effect class="result" type="splat_map" surface_tag="" size="2.0" atlas_index="4" layer="0" />
 
 		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
