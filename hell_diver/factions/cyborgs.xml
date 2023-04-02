@@ -229,6 +229,9 @@
 		<resources file="cyborgs_common.resources" clear_carry_items="1"/>
 		<resources file="cyborgs_butcher.resources" />
 		<resources file="common_loot_rare.resources" />
+		<resources>
+			<carry_item key="samples_cyborgs.carry_item" /><!--样本-->
+		</resources>
 		<model file="cyborgs_butcher.xml" />
 
 		<ai filename="cyborgs_butcher.ai" /> <!-- butcher.ai 引用 default_cyborgs.ai -->
@@ -279,7 +282,9 @@
 		<resources file="cyborgs_common.resources" clear_carry_items="1"  />
 		<resources file="cyborgs_hulk.resources" />
 		<resources file="common_loot_rare.resources" />
-
+		<resources>
+			<carry_item key="samples_cyborgs.carry_item" /><!--样本-->
+		</resources>
 		<ai filename="cyborgs_hulk.ai" /> <!-- hulk.ai 引用 default_cyborgs.ai -->
 		
 
@@ -314,6 +319,9 @@
 		<resources file="cyborgs_common.resources" clear_carry_items="1"/>
 		<resources file="cyborgs_warlord.resources" />
 		<resources file="common_loot_rare.resources" />
+		<resources>
+			<carry_item key="samples_cyborgs.carry_item" /><!--样本-->
+		</resources>
 		<ai filename="cyborgs_warlord.ai" /> <!-- warlord.ai 引用 default_cyborgs.ai -->
 		
 		<attribute_config class="xp">

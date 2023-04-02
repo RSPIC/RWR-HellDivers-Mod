@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carry_item 
+name="Samples" 
+key="samples_acg.carry_item"
+file="_samples.base"
+>
+
+    <hud_icon filename="samples_acg.png" />
+    <inventory  price="0.0" />
+
+    <model mesh_filename="samples_acg.mesh" texture_filename="hd_samples_acg.jpg" />
+
+
+    <commonness value="1"  />
+</carry_item>

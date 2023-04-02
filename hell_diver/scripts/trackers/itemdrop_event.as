@@ -12,6 +12,8 @@
 //弹药箱的补给脚本
 //部分补给会扣钱
 //禁用物品：指定物品无法装入背包
+//补给背包机制
+//高亮特殊掉落物
 	// --------------------------------------------
 //触发补给key
 dictionary resupply_key = {
@@ -41,9 +43,6 @@ dictionary resupply_getitem_key = {
         {"hd_exp_rl112_recoilless_rifle_mk3.weapon",8},
         {"hd_mgx42_mk3.weapon",16},
         {"hd_lmg_mgx42_mk3.weapon",2},
-
-        {"hd_at_mine_mk3.projectile",1},
-        {"hd_airdropped_stun_mine_mk3.projectile",1},
 
         {"hd_grenade_molotov.projectile",5},
         {"hd_grenade_standard.projectile",6},
@@ -162,6 +161,31 @@ dictionary banned_special_item = {
 		// 占位的
         {"666",-1}
 };
+//高亮提示特殊掉落物
+dictionary highlight_item_drop = {
+        // 空
+        {"",-1},
+
+        {"samples_acg.carry_item","carry_item"},
+        {"samples_bugs.carry_item","carry_item"},
+        {"samples_cyborgs.carry_item","carry_item"},
+        {"samples_illuminate.carry_item","carry_item"},
+
+		// 占位的
+        {"666",-1}
+};
+//无法交易物品，丢至地面会返还
+dictionary protected_trade = {
+        // 空
+        {"",-1},
+
+        {"samples_bugs_ex.carry_item","carry_item"},
+        {"samples_cyborgs_ex.carry_item","carry_item"},
+        {"samples_illuminate_ex.carry_item","carry_item"},
+
+		// 占位的
+        {"666",-1}
+};
 
 class itemdrop_event : Tracker {
 	protected Metagame@ m_metagame;
@@ -270,7 +294,7 @@ class itemdrop_event : Tracker {
 		//检测物品是否存起来了,删除
 		if(string(banned_backpack_item[itemKey]) == "" ){
 			_log("ban item key exist?:" + "false");
-		}
+		}//是否属于删除物品
 		if(string(banned_backpack_item[itemKey]) != "" || string(banned_special_item[itemKey]) != ""){
 			//管理可以存
 			string sender = event.getStringAttribute("player_name");
@@ -280,13 +304,19 @@ class itemdrop_event : Tracker {
 			if (m_metagame.getAdminManager().isAdmin(sender, senderId)){
 				_log("Is admin, exit ban item");
 				return;}
-			if(itemKey == "hd_resupply_pack_mk3.carry_item"){//补给背包特殊机制
+			if(itemKey == "hd_resupply_pack_mk3.carry_item"){//补给背包特殊机制 上限携带一个包，同时发4个子弹箱
 				_log("hd_resupply_pack_mk3 detect");
 				string ExKey="hd_resupply_pack_mk3_ex.carry_item";
 				string itemtype = string(banned_backpack_item[itemKey]);
 				deleteItemInBackpack(m_metagame,characterId,itemtype,ExKey);
 				deleteItemInBackpack(m_metagame,characterId,itemtype,ExKey);
 				addItemInBackpack(m_metagame,characterId,itemtype,ExKey);
+				ExKey="hd_ammo_supply_box_ex.projectile";
+				string ExType="projectile";
+				addItemInBackpack(m_metagame,characterId,ExType,ExKey);
+				addItemInBackpack(m_metagame,characterId,ExType,ExKey);
+				addItemInBackpack(m_metagame,characterId,ExType,ExKey);
+				addItemInBackpack(m_metagame,characterId,ExType,ExKey);
 			}
 			if(containerId == 2 ){//装备进背包
 				_log("delete banned item in backpack");
@@ -294,7 +324,7 @@ class itemdrop_event : Tracker {
 				_log("itemtype"+itemtype);
 				deleteItemInBackpack(m_metagame,characterId,itemtype,itemKey);
 				_log("success delete supply item itemKey: "+ itemKey);
-				if(itemKey == "hd_ammo_supply_box.projectile"){//补给背包特殊机制
+				if(itemKey == "hd_ammo_supply_box.projectile" && false){//留给补给兵的特殊机制
 					string ExKey="hd_ammo_supply_box_ex.projectile";
 					addItemInBackpack(m_metagame,characterId,itemtype,ExKey);
 				}
@@ -308,5 +338,22 @@ class itemdrop_event : Tracker {
 				}
 			}
 		}
+
+		if(string(highlight_item_drop[itemKey]) != ""){//高亮特殊掉落物
+			if( containerId == 0 ) {//地面
+				_log("special item drop, highliting");
+				spawnStaticProjectile(m_metagame,"hd_effect_target_aim.projectile",position,characterId,factionId);
+			}
+		}
+
+		if(string(protected_trade[itemKey]) != ""){//交易保护物品
+			if( containerId == 0 ) {//地面
+				_log("protected_trade item drop, protecte");
+				string itemtype = string(protected_trade[itemKey]);
+				addItemInBackpack(m_metagame,characterId,itemtype,itemKey);
+				spawnStaticProjectile(m_metagame,"hd_effect_samples_cant_drop.projectile",position,characterId,factionId);
+			}
+		}
+
     }
 }

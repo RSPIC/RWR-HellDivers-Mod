@@ -662,14 +662,14 @@
         name="Resupply" 
         pulldown_in_air="15.0"
         time_to_live="60"
-        key="hd_sup_metal_detector.projectile" 
+        key="hd_sup_mental_detector_call.projectile" 
         time_to_live_out_in_the_open="0"
         player_death_drop_owner_lock_time="0"
     >
-        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_sup_metal_detector.projectile" 
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_sup_mental_detector_call.projectile" 
         min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
 
-        <result class="notify_script" key="hd_sup_metal_detector_call" />
+        <result class="notify_script" key="hd_sup_mental_detector_call" />
         <trigger class="time" time_to_live="3.5" />	
         <model mesh_filename="vindicator_beacon_blue.xml" />
         <hud_icon filename="hd_mental_detector.png" />

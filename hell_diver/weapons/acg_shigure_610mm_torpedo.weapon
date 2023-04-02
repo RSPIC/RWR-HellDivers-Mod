@@ -18,7 +18,7 @@ key="acg_shigure_610mm_torpedo.weapon"
 	can_shoot_prone="0"	
     suppressed="0" 
 	class="4" 
-    name="4 x 610 mm quadruple torpedo tubes" 
+    name="4 x 610 mm Quadruple Torpedo Tubes [Shigure]" 
 	sight_range_modifier="1.0" 
 	sight_height_offset="1.0" 
 	burst_shots="4" 
@@ -64,15 +64,15 @@ key="acg_shigure_610mm_torpedo.weapon"
 	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="0.9" />
 	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="0.8" />
     <sound key="magazine_out" fileref="hd_p2_peacemaker_mag_out.wav" volume="0.0"/>
-    <sound key="magazine_in" fileref="acg_shigure_lineup.wav" pitch_variety="0.0" volume="1.2"/>
-    <sound key="magazine_in" fileref="acg_shigure_atk_1.wav" pitch_variety="0.0" volume="1.2"/>
-    <sound key="magazine_in" fileref="acg_shigure_atk_2.wav" pitch_variety="0.0" volume="1.2"/>
+    <sound key="magazine_in" fileref="acg_shigure_lineup.wav" pitch_variety="0.0" volume="2.2"/>
+    <sound key="magazine_in" fileref="acg_shigure_atk_1.wav" pitch_variety="0.0" volume="2.2"/>
+    <sound key="magazine_in" fileref="acg_shigure_atk_2.wav" pitch_variety="0.0" volume="2.2"/>
     <sound key="cycle" fileref="rifle_chamber.wav" />
     <sound key="cycle_out" fileref="sniper_cycle_out.wav" />
     <sound key="cycle_in" fileref="sniper_cycle_in.wav" />
-    <sound key="last_ammo" fileref="acg_shigure_atk_1.wav" pitch_variety="0.0" volume="1.2" />
-    <sound key="last_ammo" fileref="acg_shigure_atk_2.wav" pitch_variety="0.0" volume="1.2" />
-	<sound class="impact" fileref="acg_shigure_get.wav" pitch_variety="0.0" volume="1.0"/>
+    <sound key="last_ammo" fileref="acg_shigure_atk_1.wav" pitch_variety="0.0" volume="2.2" />
+    <sound key="last_ammo" fileref="acg_shigure_atk_2.wav" pitch_variety="0.0" volume="2.2" />
+	<sound class="impact" fileref="acg_shigure_get.wav" pitch_variety="0.0" volume="2.0"/>
 
     <model filename="" /> 
     <model mesh_filename="" texture_filename="" /> 

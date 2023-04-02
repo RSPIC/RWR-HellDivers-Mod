@@ -226,12 +226,12 @@
 
 	<projectile 
 	class="grenade" 
-	key="hd_sup_metal_detector_spawn.projectile" 
+	key="hd_sup_mental_detector_spawn.projectile" 
 	slot="0"
 	pulldown_in_air="10.0"
 	time_to_live="60"
 	>
-		<result class="spawn" instance_class="weapon" instance_key="hd_sup_metal_detector.weapon" 
+		<result class="spawn" instance_class="weapon" instance_key="hd_sup_mental_detector.weapon" 
 		min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0.00 0" />
 		<trigger class="time" time_to_live="1.1" />	
 		<collision class="sticky" />

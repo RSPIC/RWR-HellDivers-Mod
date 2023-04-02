@@ -61,19 +61,19 @@ character_leave_request_mode="friendly"
 	<sound key="destroy" filename="hellpod_close_01.wav" />  
 	<sound key="destroy" filename="hellpod_close_02.wav" />  
 
-	<effect event_key="health" value="1000" ref="car_tesla_surrounding_thunder" offset="0 0 0.8" />
+	<effect event_key="health" value="1000" ref="car_tesla_surrounding_thunder" offset="0 0 0" />
 	<effect event_key="health" value="1000" ref="car_surrounding_ring_point" offset="0.0 0 0" />
 	<effect event_key="health" value="1000" ref="car_pod_impact_leave_dirt" offset="0.0 0 0" />
 
-	<effect event_key="health" value="75" ref="car_tesla_surrounding_thunder" offset="0 0 0.8" />
+	<effect event_key="health" value="75" ref="car_tesla_surrounding_thunder" offset="0 0 0" />
 	<effect event_key="health" value="75" ref="car_surrounding_ring_point" offset="0.0 0 0" />
 	<effect event_key="health" value="75" ref="car_pod_impact_leave_dirt" offset="0.0 0 0" />
 
-	<effect event_key="health" value="50" ref="car_tesla_surrounding_thunder" offset="0 0 0.8" />
+	<effect event_key="health" value="50" ref="car_tesla_surrounding_thunder" offset="0 0 0" />
 	<effect event_key="health" value="50" ref="car_surrounding_ring_point" offset="0.0 0 0" />
 	<effect event_key="health" value="50" ref="car_pod_impact_leave_dirt" offset="0.0 0 0" />
 
-	<effect event_key="health" value="25" ref="car_tesla_surrounding_thunder" offset="0 0 0.8" />
+	<effect event_key="health" value="25" ref="car_tesla_surrounding_thunder" offset="0 0 0" />
 	<effect event_key="health" value="25" ref="car_surrounding_ring_point" offset="0.0 0 0" />
 	<effect event_key="health" value="25" ref="car_pod_impact_leave_dirt" offset="0.0 0 0" />
 

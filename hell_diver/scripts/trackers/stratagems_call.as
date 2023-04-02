@@ -47,7 +47,7 @@ dictionary stratagems_call_notify_key = {
 
 		{"hd_resupply_pack_mk3_call","hd_resupply_pack_mk3_spawn.projectile"},
 
-		{"hd_sup_metal_detector_call","hd_sup_metal_detector_spawn.projectile"},
+		{"hd_sup_mental_detector_call","hd_sup_mental_detector_spawn.projectile"},
 
 
         // 占位的

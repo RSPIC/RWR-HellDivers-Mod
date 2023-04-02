@@ -80,7 +80,7 @@ material MapViewFront {
 				anim_texture mapview_frame_add_code.png 4 40
 				scale 1 1
 				tex_address_mode warp
-				wave_xform scroll_y sine 0 0.01 0 0.2
+				//wave_xform scroll_y sine 0 0.01 0 0.2
 				filtering trilinear
 			}
 			texture_unit Decal {
