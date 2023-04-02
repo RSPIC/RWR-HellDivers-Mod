@@ -217,6 +217,7 @@ class itemdrop_event : Tracker {
 		if(owner !is null){
 			factionId = owner.getIntAttribute("faction_id");
 		}
+
 		//containerId = 0(地面) 1(军械库) 2（背包） 3（仓库）
 		//itemClass = 0(主、副武器) 1（投掷物） 3（护甲、战利品）
         _log("handleItemDropEvent:EventKeyGet= " + EventKeyGet);
@@ -229,6 +230,7 @@ class itemdrop_event : Tracker {
 
 		//再补给
 		if (int(resupply_key[itemKey])!=0){
+			if(playerId == -1){return;}//排除AI
 			switch(int(resupply_key[itemKey]))
 			{
 				case 0:{break;}
@@ -297,6 +299,7 @@ class itemdrop_event : Tracker {
 		}//是否属于删除物品
 		if(string(banned_backpack_item[itemKey]) != "" || string(banned_special_item[itemKey]) != ""){
 			//管理可以存
+			if(playerId == -1){return;}//排除AI
 			string sender = event.getStringAttribute("player_name");
 			int senderId = event.getIntAttribute("player_id");
 			_log("sender ="+sender);
@@ -347,6 +350,7 @@ class itemdrop_event : Tracker {
 		}
 
 		if(string(protected_trade[itemKey]) != ""){//交易保护物品
+			if(playerId == -1){return;}//排除AI
 			if( containerId == 0 ) {//地面
 				_log("protected_trade item drop, protecte");
 				string itemtype = string(protected_trade[itemKey]);

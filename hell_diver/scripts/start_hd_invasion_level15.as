@@ -15,14 +15,14 @@ void main(dictionary@ inputData) {
         settings.m_factionChoice = 0;                  // 0(acg) 1(helldivers), 2(cyborgs), 3(illuminate), 4(bugs), 
         settings.m_playerAiCompensationFactor = 1.0;   // was 1.1  (1.75)
 
-        settings.m_fellowCapacityFactor = 2.0;
+        settings.m_fellowCapacityFactor = 2.5;
         settings.m_fellowAiAccuracyFactor = 1.0;
-        settings.m_enemyCapacityFactor = 2.0;
+        settings.m_enemyCapacityFactor = 2.5;
         settings.m_enemyAiAccuracyFactor = 0.94;
 
         settings.m_playerAiReduction = 0.0;            // didn't work before 1.76! (was 1.0)
 
-        settings.m_xpFactor = 1;
+        settings.m_xpFactor = 1.8;
         settings.m_rpFactor = 1.0;
 
         settings.m_teamKillPenaltyEnabled = true;
@@ -30,7 +30,7 @@ void main(dictionary@ inputData) {
         settings.m_journalEnabled = true;
         settings.m_fellowDisableEnemySpawnpointsSoldierCountOffset = 1;
 
-        settings.m_server_difficulty_level = 9;
+        settings.m_server_difficulty_level = 15;
 
         array<string> overlays = {
                 "media/packages/hell_diver"
@@ -39,14 +39,14 @@ void main(dictionary@ inputData) {
 
         settings.m_startServerCommand = """
 <command class='start_server'
-	server_name='[地狱潜兵] HellDiver服 '
+	server_name='[地狱潜兵] LEVEL 15 '
 	server_port='1240'
 	url='https://steamcommunity.com/sharedfiles/filedetails/?id=2910392031'
 	register_in_serverlist='1'
 	mode='COOP'
         persistency='forever'
 	comment='Running with HellDivers Mod.  QQ：498520233'
-	max_players='32'>
+	max_players='8'>
 	<client_faction id='0' />
 </command>
 """;

@@ -71,11 +71,11 @@
 	<!-- <animation key="surrender" target_key="stuned_big_unit" /> -->
 	<!-- <animation key="stabbing" target_key="hit ground_big_unit" /> -->
 	<!-- <animation key="throwing, upside" target_key="still_big_unit" /> -->
-	<!-- <animation key="change weapon out" target_key="still_big_unit" /> -->
-	<!-- <animation key="change weapon in" target_key="still_big_unit" /> -->
-	<!-- <animation key="change weapon out, reversed" target_key="still_big_unit" /> -->
-	<!-- <animation key="change weapon in, reversed" target_key="still_big_unit" /> -->
-	<!-- <animation key="change weapon in, single hand carry" target_key="still_big_unit" /> -->
+	<animation key="change weapon out" target_key="cyborgs_hulk_still" />
+	<animation key="change weapon in" target_key="cyborgs_hulk_still" />
+	<animation key="change weapon out, reversed" target_key="cyborgs_hulk_still" />
+	<animation key="change weapon in, reversed" target_key="cyborgs_hulk_still" />
+	<animation key="change weapon in, single hand carry" target_key="cyborgs_hulk_still" />
 	<!-- <animation key="celebrating" target_key="jumping, large mecha" /> -->
 	<!-- <animation key="celebrating, shooting" target_key="jumping, large mecha" /> -->
 	<!-- <animation key="swimming still" target_key="swim still_big_unit" /> -->

@@ -69,6 +69,7 @@ class share_samples : Tracker {
 		if(owner !is null){
 			factionId = owner.getIntAttribute("faction_id");
 		}
+
 		//containerId = 0(地面) 1(军械库) 2（背包） 3（仓库）
 		//itemClass = 0(主、副武器) 1（投掷物） 3（护甲、战利品）
         _log("handle_share_samples:EventKeyGet= " + EventKeyGet);
@@ -103,6 +104,8 @@ class share_samples : Tracker {
 							if(p_character is null){return;}
 							Vector3 p_pos =stringToVector3(p_character.getStringAttribute("position"));
 							
+							if(playerId==0){return;}//测试
+
 							deleteItemInBackpack(m_metagame,cid,"carry_item",itemKey);
 							string target_key = string(sample_target_key[itemKey]);
 							addItemInBackpack(m_metagame,cid,"carry_item",target_key);

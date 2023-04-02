@@ -389,7 +389,17 @@ class BasicCommandHandler : Tracker {
 			Event_call_helldiver_superearth_airstrike@ new_task = Event_call_helldiver_superearth_airstrike(m_metagame,2.0,playerInfo.getIntAttribute("character_id"),playerInfo.getIntAttribute("faction_id"),pos1,pos2,"hd_superearth_airstrike_1");
 			TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
 			tasker.add(new_task);
-		}		
+		} else if (checkCommand(message, "cyborgs")) {
+			spawnInstanceNearPlayer(senderId, "Warlord", "soldier", 1);                               
+			spawnInstanceNearPlayer(senderId, "Hulk", "soldier", 1);                               
+			spawnInstanceNearPlayer(senderId, "Butcher", "soldier", 1);                               
+			spawnInstanceNearPlayer(senderId, "Warlord", "soldier", 1);                               
+			spawnInstanceNearPlayer(senderId, "Hulk", "soldier", 1);                               
+			spawnInstanceNearPlayer(senderId, "Butcher", "soldier", 1);                               
+			spawnInstanceNearPlayer(senderId, "Warlord", "soldier", 1);                               
+			spawnInstanceNearPlayer(senderId, "Hulk", "soldier", 1);                               
+			spawnInstanceNearPlayer(senderId, "Butcher", "soldier", 1);    
+		}
 	}
 
 	// --------------------------------------------
