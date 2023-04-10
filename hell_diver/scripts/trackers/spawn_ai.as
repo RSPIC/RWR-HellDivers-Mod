@@ -114,6 +114,7 @@ class spawn_ai : Tracker {
 		int BugsId = -1;
 		int IlluminateId = -1;
 		int ACGId = -1;
+		string name_of_fid0;
 		array<const XmlElement@> AllFactions = getFactions(m_metagame);	
 
 		for (uint i = 0; i < AllFactions.size(); ++i) {
@@ -129,6 +130,9 @@ class spawn_ai : Tracker {
 				IlluminateId = faction_id;
 			}else if(Faction.getStringAttribute("name")=="ACG"){
 				ACGId = faction_id;
+			}
+			if(faction_id == 0){
+				name_of_fid0 = Faction.getStringAttribute("name");
 			}
 		}
 		
@@ -256,8 +260,12 @@ class spawn_ai : Tracker {
 				break;
 			}
 			case 24:{//地狱潜兵 修改为仅生成己方AI
-				//if(SuperEarthId == -1){break;}
-				SpawnSoldier(m_metagame,1,0,PosSpawnProjectile,"default_ai");
+				if(name_of_fid0 == "ACG" || name_of_fid0 == "Super Earth"){
+					SpawnSoldier(m_metagame,1,0,PosSpawnProjectile,"HellDiver");
+				}else{
+					SpawnSoldier(m_metagame,1,0,PosSpawnProjectile,"default_ai");
+				}
+
 				break;
 			}
 

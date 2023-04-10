@@ -4,11 +4,11 @@ file="_hd_laser.base"
 key="hd_laser_las98_laser_cannon_mk3.weapon" 
 > 
     <specification 	
-    slot="0" 	
+    slot="1" 	
     retrigger_time="0.01" 
 	last_burst_retrigger_time="1"
     accuracy_factor="1" 
-	spread_range="0"
+	spread_range="0.01"
 	stance_accuracy_rate="1.0"
     sustained_fire_grow_step="0.0036" 
     sustained_fire_diminish_rate="0.1" 
@@ -80,13 +80,14 @@ key="hd_laser_las98_laser_cannon_mk3.weapon"
     <sound key="cycle_in" fileref="sniper_cycle_in.wav" /><!--动作中in的value为1-->
     <sound key="last_ammo" fileref="" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
 	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+	<sound key="cooldown" fileref="hd_las_cooldown.wav" pitch_variety="0" volume="1.0" />
 
 	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
 	<capacity value="0" source="rank" source_value="0.0" />
 	<capacity value="1" source="rank" source_value="12.965" />
 	
 	<!--军械库相关-->
-    <!-- <commonness value="1" can_respawn_with="1" in_stock="1" /> 
+    <!-- <commonness value="1" can_respawn_with="0" in_stock="1" /> 
     <inventory encumbrance="10.0" price="0.0" /> 武器重量和价格，实际负重为两倍encumbrance值 -->
     
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->

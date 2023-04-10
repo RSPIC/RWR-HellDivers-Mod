@@ -18,11 +18,11 @@
 	<weapon key="hd_psc_lho63_camper_full_upgrade.weapon" /><!--野营者狙击步枪-->
 	<weapon key="hd_lmg_mg94_mk3.weapon" /><!--MG94机枪-->
 	<weapon key="hd_lmg_mg105_stalwart_full_upgrade.weapon" /><!--MG105盟友机枪-->
-	<weapon key="hd_exp_obliterator_grenade_launcher_full_upgrade.weapon" /><!--消灭者榴弹发射器-->
-	<weapon key="hd_exp_m25_rumbler_full_upgrade.weapon" /><!--雷鸣者-->
-	<weapon key="hd_exp_cr9_suppressor_full_upgrade.weapon" /><!--抑制者直射榴弹-->
-	<weapon key="hd_exp_plas1_scorcher_full_upgrade.weapon" /><!--焦土直射榴弹-->
-	<!-- <weapon key="hd_exp_ac22_dum_dum_mk3.weapon" />达姆机炮 -->
+	<weapon key="hd_exp_obliterator_grenade_launcher_ai.weapon" /><!--消灭者榴弹发射器-->
+	<weapon key="hd_exp_m25_rumbler_ai.weapon" /><!--雷鸣者-->
+	<weapon key="hd_exp_cr9_suppressor_ai.weapon" /><!--抑制者直射榴弹-->
+	<weapon key="hd_exp_plas1_scorcher_ai.weapon" /><!--焦土直射榴弹-->
+	<weapon key="hd_exp_ac22_dum_dum_ai.weapon" /><!--达姆机炮-->
 	<!-- <weapon key="hd_laser_las13_trident_full_upgrade.weapon" />三叉戟激光枪 -->
 	<!-- <weapon key="hd_laser_las12_tanto_full_upgrade.weapon" />短刀激光枪 中穿 -->
 	<!-- <weapon key="hd_laser_las16_sickle_full_upgrade.weapon" />镰刀激光枪 -->
@@ -37,7 +37,7 @@
 	<weapon key="hd_ai_rl112_recoilless_rifle_mk3.weapon" /><!--反坦克-->
 
     <!--弹头-->
-    <projectile key="hd_grenade_molotov.projectile" /><!--燃烧瓶-->
+    <projectile key="hd_grenade_molotov_ai.projectile" /><!--燃烧瓶-->
     <projectile key="hd_grenade_standard.projectile" /><!--破片手雷-->
     <!--护甲-->
     <carry_item key="helldivers_ai_vest.carry_item" />

@@ -8,7 +8,7 @@ key="hd_laser_las5_scythe_full_upgrade.weapon"
     retrigger_time="0.05" 
 	last_burst_retrigger_time="1"
     accuracy_factor="1" 
-	spread_range="0"
+	spread_range="0.01"
 	stance_accuracy_rate="1.0"
     sustained_fire_grow_step="0.009" 
     sustained_fire_diminish_rate="0.1" 
@@ -79,6 +79,7 @@ key="hd_laser_las5_scythe_full_upgrade.weapon"
     <sound key="cycle_in" fileref="sniper_cycle_in.wav" /><!--动作中in的value为1-->
     <sound key="last_ammo" fileref="" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
 	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+	<sound key="cooldown" fileref="hd_las_cooldown.wav" pitch_variety="0" volume="1.0" />
 
 	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
 	<capacity value="0" source="rank" source_value="0.0" />

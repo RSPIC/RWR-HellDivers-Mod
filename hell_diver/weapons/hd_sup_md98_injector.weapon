@@ -19,7 +19,7 @@ radius="0.3">
     name="MD-98 Injector" 
     class="5" 
     character_state="unwound" 
-    consume="1" 
+    consume="0" 
     sight_range_modifier="1" 
     slot="1" />
 
@@ -42,7 +42,7 @@ radius="0.3">
 
     <model filename="morphine.xml" />
 
-    <capacity value="8" source="rank" source_value="0.0" />
+    <capacity value="1" source="rank" source_value="0.0" />
 
     <hud_icon filename="hd_md99_autoinjector.png" />
     

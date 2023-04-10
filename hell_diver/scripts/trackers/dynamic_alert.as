@@ -216,23 +216,24 @@ class dynamic_alert : Tracker {
 		}
         if(caller_faction == -1){return;}
         int my_faction_soldiers = NowSoldiers[caller_faction];//己方AI数量
-
         int now_max_soldiers = 0;   //当前场上最多阵营的AI人数
         for (uint i = 0; i < NowSoldiers.length(); i++) {
+            if(i == caller_faction){continue;}
             if (NowSoldiers[i] > now_max_soldiers && NowSoldiers[i] != 0 ) {
                 now_max_soldiers = NowSoldiers[i];
             }
         }
         int max_soldiers_cap = 0;
         for (uint i = 0; i < MaxSoldiers.length(); i++) {
+            if(i == caller_faction){continue;}
             if (MaxSoldiers[i] > max_soldiers_cap && MaxSoldiers[i] != 0 ) {
                 max_soldiers_cap = MaxSoldiers[i];
             }
         }
-        if( my_faction_soldiers >= 1.2*max_soldiers_cap){
+        if( my_faction_soldiers >= 2.0*max_soldiers_cap){
             _log("exceed max soldier_capacity");
             return;
-        }//超过场上最大阵营的最大AI容量 指定倍率 则返回
+        }//超过场上非己方阵营的最大AI容量指定倍率则返回
 
         float rate = float(my_faction_soldiers)/float(now_max_soldiers);
         _log("my_faction_soldiers = "+ my_faction_soldiers );

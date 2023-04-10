@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <reward_config>
 	<!--这里是设置击杀和破坏等等的奖励 -->
-	<reward class="enemy_shot" 				base="+0.0100" 	bonus="0.0000"  type="xp" />  <!-- 100xp  -->
+	<reward class="enemy_shot" 				base="+0.0100" 	bonus="0.0100"  type="xp" />  <!-- 100xp  -->
 	<reward class="enemy_shot" 				base="10" 	 type="rp" />  <!-- 10rp bonus 同上	-->
-	<reward class="enemy_killed_in_explosion" 		base="+0.003" 	bonus="0.0000"  type="xp" /> <!--30xp -->
+	<reward class="enemy_killed_in_explosion" 		base="+0.003" 	bonus="0.0030"  type="xp" /> <!--30xp -->
 	<reward class="enemy_killed_in_explosion" 		base="10" 	 type="rp" /><!-- 10rp -->
-	<reward class="enemy_stabbed" 				base="+0.03" 	bonus="0.000"  type="xp" /> <!-- 300xp -->
+	<reward class="enemy_stabbed" 				base="+0.03" 	bonus="-0.010"  type="xp" /> <!-- 300xp -->
 	<reward class="enemy_stabbed" 				base="100" 	  type="rp" /><!--100rp-->
 	<reward class="enemy_kill_combo" 			base="+0.0010" bonus="0.000"  type="xp" />
 
 	<reward class="self_suicide" 				base="-0.1" 	bonus="0.0" 	type="xp" />  <!-- -1000xp -->
 	<reward class="self_killed" 				base="-0.0" 	bonus="0.0" 	type="xp" />        
 
-	<reward class="fellow_killed_in_explosion" 		base="-0.03" 	bonus="0.0000" 	type="xp" /> <!-- -300xp -->
-	<reward class="fellow_killed_in_explosion" 		base="+10" 			type="rp" /><!-- 10rp -->
+	<reward class="fellow_killed_in_explosion" 		base="0" 	bonus="0.0000" 	type="xp" /> <!-- -300xp -->
+	<reward class="fellow_killed_in_explosion" 		base="+1" 			type="rp" /><!-- 10rp -->
 
 	<reward class="fellow_unwound" 				base="+0.0300" 	bonus="0.0" 	type="xp" /><!-- 300xp -->
 	<reward class="fellow_unwound" 				base="+30" 	bonus="0.0" 	type="rp" />  
 
-	<reward class="staying_alive" 				base="10" 			type="rp" /><!--10rp-->
-	<reward class="staying_alive" 				base="0.01" 			type="xp" /><!--100xp-->
+	<reward class="staying_alive" 				base="100" 			type="rp" /><!--100rp-->
+	<reward class="staying_alive" 				base="0.1" 			type="xp" /><!--1000xp-->
 
 	<reward class="base_capture" 				base="180" 			type="rp" />
-	<reward class="base_capture" 				base="+0.720" 			type="xp" /><!-- 720xp  -->
+	<reward class="base_capture" 				base="+0.540" 			type="xp" /><!-- 5400xp  -->
 
 	<reward class="side_base_capture" 			base="540" 			type="rp" />
-	<reward class="side_base_capture" 			base="+0.180" 			type="xp" /><!-- 180xp  -->
+	<reward class="side_base_capture" 			base="+0.180" 			type="xp" /><!-- 1800xp  -->
 
 	<reward class="spotting" 				base="250" 			type="rp" />
 	<reward class="promotion" 				base="1200" 			type="rp" />

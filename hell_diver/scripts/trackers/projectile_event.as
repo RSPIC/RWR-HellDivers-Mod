@@ -288,7 +288,7 @@ class projectile_event : Tracker {
                             _log("player position: "+ character.getStringAttribute("position"));
                             Vector3 p_position = stringToVector3(character.getStringAttribute("position"));
                             float distance = getFlatPositionDistance(p_position,t_pos);
-                            _log("distance axis max in target&players: "+ distance);
+                            _log("distance max in target&players: "+ distance);
                             if(distance <= 3){
                                 int p_characterId = player.getIntAttribute("character_id");
                                 healCharacter(m_metagame,p_characterId,20);//此处修改回复层数
@@ -322,7 +322,7 @@ class projectile_event : Tracker {
                             _log("players name: "+player.getStringAttribute("name") );
                             _log("target position: "+ event.getStringAttribute("position"));
                             _log("player position: "+ character.getStringAttribute("position"));
-                            _log("distance axis max in target&players: "+ distance);
+                            _log("distance max in target&players: "+ distance);
                             if(distance <= 4){
                                 int p_characterId = player.getIntAttribute("character_id");
                                 healCharacter(m_metagame,p_characterId,3);//此处修改回复层数

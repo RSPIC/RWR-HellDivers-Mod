@@ -146,10 +146,10 @@ class stratagems_call : Tracker {
 
                     string equipKey =  getPlayerEquipmentKey(m_metagame,cid,2);//检测是否发送
                     if(equipKey == stratagemsKey + ".projectile" ){
-					    dictionary dict = {{"TagName", "command"},{"class", "chat"},{"text", "Call Receive!"}};
+					    dictionary dict = {{"TagName", "command"},{"class", "chat"},{"text", "呼叫收到，部署信标已配置!"}};
 						m_metagame.getComms().send(XmlElement(dict));
                     }else{
-                        dictionary dict = {{"TagName", "command"},{"class", "chat"},{"text", "Call Deny! Xp limit"}};
+                        dictionary dict = {{"TagName", "command"},{"class", "chat"},{"text", "呼叫拒绝，经验不足"}};
 						m_metagame.getComms().send(XmlElement(dict));
                     }
 				}

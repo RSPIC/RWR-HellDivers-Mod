@@ -37,13 +37,13 @@ designated_squad_as_driver_only="1"
 	/> 
 
 	0<turret offset="-0.5 0 0" weapon_key="63type_107mm_rocket_launcher_1.weapon" weapon_offset="0 0 0" 
-	weapon_recoil="0" physics_recoil="0"  max_rotation_step="0.00008" rotation="0" rotation_range="4" />
+	weapon_recoil="0" physics_recoil="0"  max_rotation_step="0.00008" rotation="0"  />
 	1<turret offset="-0.3 0 0" weapon_key="63type_107mm_rocket_launcher_2.weapon" weapon_offset="0 0 0" 
-	weapon_recoil="0" physics_recoil="0"  max_rotation_step="0.00008" rotation="0" rotation_range="4" />
+	weapon_recoil="0" physics_recoil="0"  max_rotation_step="0.00008" rotation="0"  />
 	2<turret offset="-0.1 0 0" weapon_key="63type_107mm_rocket_launcher_3.weapon" weapon_offset="0 0 0" 
-	weapon_recoil="0" physics_recoil="0"  max_rotation_step="0.00008" rotation="0" rotation_range="4" />
+	weapon_recoil="0" physics_recoil="0"  max_rotation_step="0.00008" rotation="0"  />
 	3<turret offset="0.1 0 0" weapon_key="63type_107mm_rocket_launcher_4.weapon" weapon_offset="0 0 0" 
-	weapon_recoil="0" physics_recoil="0"  max_rotation_step="0.00008" rotation="0" rotation_range="4" />
+	weapon_recoil="0" physics_recoil="0"  max_rotation_step="0.00008" rotation="0"  />
 
 
 	<character_slot type="gunner" seat_position="-1.1 0.1 -0.35" enter_position="-1.1 0 -0.6" 

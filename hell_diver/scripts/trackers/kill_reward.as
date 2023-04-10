@@ -96,6 +96,10 @@ class kill_reward : Tracker {
 		if(killer is null){return;}
 		const XmlElement@ target = event.getFirstElementByTagName("target");
 		if(target is null){return;}
+		int k_pid = killer.getIntAttribute("player_id");
+		int t_pid = target.getIntAttribute("player_id");
+		if(k_pid == -1 && t_pid == -1){return;}//AI之间击杀，返回
+
 		string EventKey = event.getStringAttribute("key");//击杀武器关键字
 		string soldier_group_name = target.getStringAttribute("soldier_group_name");//击杀兵种
 		int target_factionId = target.getIntAttribute("faction_id");

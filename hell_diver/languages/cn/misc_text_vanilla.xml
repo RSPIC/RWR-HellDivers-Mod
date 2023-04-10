@@ -1,22 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <translation>
-	<text key="Private" text="列兵" />
-	<text key="Private 1st Class" text="上等兵" />
-	<text key="Corporal" text="下士" />
-	<text key="Sergeant" text="中士" />
-	<text key="Staff Sergeant" text="上士" />
-	<text key="Staff Sergeant 1st Class" text="一级上士" />
-	<text key="2nd Lieutenant" text="少尉" />
-	<text key="Lieutenant" text="中尉" />
-	<text key="Captain" text="上尉" />
-	<text key="Major" text="少校" />
-	<text key="Lieutenant Colonel" text="中校" />
-	<text key="Colonel" text="上校" />
-	<text key="Brigadier General" text="准将" />
-	<text key="Major General" text="少将" />
-	<text key="Lieutenant General" text="中将" />
-	<text key="General" text="上将" />
-	<text key="General of the Army" text="五星上将" />
 	<text key="APC HMG" text="步战车机枪" />
 	<text key="M24-A2" text="M24-A2狙击步枪" />
 	<text key="default" text="默认" />
@@ -742,6 +725,377 @@
     <text key="Psycho Butcher, wounded" text="杀人魔，已损坏" />
 	<text key="EOD armor, 50%" />
 	<text key="EOD armor, 55%" />
+
+<!--Helldivers-->
+	<text key="AR-19 Liberator" text="AR-19 解放者突击步枪" />
+	<text key="AR-20L Justice" text="AR-20L 正义突击步枪" />
+	<text key="AR-14D Paragon" text="AR-14D 典范突击步枪" />
+	<text key="AR-22C Patriot" text="AR-22C 爱国者突击步枪" />
+
+	<text key="SG-225 Breaker" text="SG-225 破裂者霰弹" />
+	<text key="SG-8 Punisher" text="SG-8 制裁者霰弹" />
+	<text key="DBS2-DoubleFreedom" text="DBS2 双重解放霰弹" />
+
+	<text key="MP-98 Knight SMG" text="MP-98 骑士冲锋枪" />
+	<text key="SMG-34 Ninja" text="SMG-34 忍者冲锋枪" />
+	<text key="SMG-45 Defender" text="SMG-45 防卫者冲锋枪" />
+
+	<text key="RX-1 Railgun" text="RX-1 轨道炮" />
+	<text key="M2016 Constitution" text="M2016 构建步枪" />
+	<text key="LHO-63 Camper" text="LHO-63 野营者狙击步枪" />
+
+	<text key="MG-94 Machine Gun" text="MG-94 机枪" />
+	<text key="MG-105 Stalwart Machine Gun" text="MG-105 盟友机枪" />
+	<text key="MGX-42 MK3 Machine Gun[Single-Use]" text="MGX-42 机枪[一次性]" />
+
+	<text key="Obliterator Grenade Launcher" text="消灭者破片榴弹发射器" />
+	<text key="M-25 Rumbler" text="M-25 雷鸣者穿甲榴弹抛射器" />
+	<text key="CR-9 Suppressor" text="CR-9 抑制者直射榴弹" />
+	<text key="PLAS-1 Scorcher" text="PLAS-1 焦土直射等离子榴弹" />
+	<text key="PLAS-3 Singe" text="PLAS-3 焦痕直射等离子榴弹" />
+	<text key="RL-112 Recoilless Rifle" text="RL-112 无后坐力重型反坦克火箭筒" />
+	<text key="EAT-17" text="EAT-17 抛弃式轻型反坦克火箭筒" />
+	<text key="AC-22 Dum Dum" text="AC-22 达姆肩扛式重型机炮" />
+	<text key="MLS-4X Commando" text="MLS-4X 突击队攻顶导弹" />
+	<text key="REC-6 Demolisher" text="REC-6 爆破手遥控炸弹" />
+
+	<text key="P-2 PeaceMaker" text="P-2 和平使者手枪" />
+	<text key="P-6 Gunslinger" text="P-6 神枪手重装左轮手枪" />
+
+	<text key="LAS-13 Trident" text="LAS-13 三叉戟激光霰弹枪" />
+	<text key="LAS-12 Tanto" text="LAS-12 短刀激光聚热枪" />
+	<text key="LAS-16 Sickle" text="LAS-16 镰刀激光枪" />
+	<text key="LAS-5 Scythe" text="LAS-5 长柄镰激光枪" />
+	<text key="LAS-98 Laser Cannon" text="LAS-98 激光大炮重型激光枪" />
+
+	<text key="FLAM-40 Incinerator" text="FLAM-40 焚化炉火焰喷射器" />
+	<text key="FLAM-24 Pyro" text="FLAM-24 烈焰火焰喷射器" />
+	<text key="TOX-13 Avenger" text="TOX-13 复仇者毒液喷射器" />
+
+	<text key="AD-334 Guard Dog [ON/Fire]" text="AD-334 护卫犬[飞行模式]" />
+	<text key="AD-334 Guard Dog [OFF/Reload]" text="AD-334 护卫犬[装载模式]" />
+	<text key="AD-289 Angle [ON/Fire]" text="AD-289 天使医疗无人机" />
+
+	<text key="AC-5 Arc Shotgun" text="AC-5 电弧霰弹枪" />
+	<text key="AC-3 Arc Thrower" text="AC-3 电弧发射器" />
+
+	<text key="REP-80" text="REP-80 维修工具枪" />
+	<text key="MD-98 Injector" text="MD-98 手动医疗注射器" />
+	<text key="ME-1 Mental Detector" text="ME-1 金属地雷探测排障仪" />
+
+	<text key="EXO-44 Stomper [MG]" text="EXO-44 践踏者[机枪]" />
+	<text key="EXO-44 Stomper [Missile]" text="EXO-44 践踏者[导弹]" />
+	<text key="EXO-48 Obsidian [AutoCannon]" text="EXO-48 黑曜石[自动机炮]" />
+	<text key="EXO-51 Lumberer [AT Canon]" text="EXO-51 重步者[反坦克炮]" />
+	<text key="EXO-51 Lumberer [FlameThrower]" text="EXO-51 重步者[火焰喷射器]" />
+	<text key="hd_exo44_mk3_spawn" text="EXO-44 践踏者" />
+	<text key="hd_exo44_mk3_model" text="EXO-44 践踏者机甲补给箱" />
+	<text key="hd_exo48_mk3_spawn" text="EXO-48 黑曜石" />
+	<text key="hd_exo48_mk3_model" text="EXO-48 黑曜石机甲补给箱" />
+	<text key="hd_exo51_mk3_spawn" text="EXO-51 重步者" />
+	<text key="hd_exo51_mk3_model" text="EXO-51 重步者机甲补给箱" />
+	<text key="hd_hellpod_dropping_spawn_ai" text="地狱潜兵空投舱" />
+
+	<text key="Vindicator Dive Bomb" text="辩护者 [→→→]" />
+	<text key="Airstrike" text="导弹空袭 [→↑↓→←]" />
+	<text key="Orbital Laser Strike" text="轨道激光空袭 [→↑←↑→←]" />
+	<text key="Shredder Missile Strike" text="撕裂者核弹 [→←→←↓↓→]" />
+	<text key="Close Air Support" text="近空支援 [→→↓←]" />
+	<text key="Thunderer Barrage" text="三重轰炸 [→↓↑↑←↓]" />
+	<text key="Strafing Run" text="空中扫射 [→→↑]" />
+	<text key="Static Field Conductors" text="静电力场 [→↑←↓]" />
+	<text key="Sledge Precision Artillery" text="大锤精确火炮 [→↑←↑↓→]" />
+	<text key="Railcannon Strike" text="轨道轰炸 [→↓↑↓←]" />
+	<text key="Missile Barrage" text="导弹弹幕 [→↓↓↓←↓]" />
+	<text key="Incendiary Bombs" text="燃烧炸弹 [→↑←→]" />
+	<text key="Heavy Strafing Run" text="重机枪扫射 [→→↓↑]" />
+
+	<text key="Molotov" text="燃烧手雷" />
+	<text key="Grenade" text="破片手雷" />
+
+	<text key="AT Mine MK3" text="反坦克地雷 MK3" />
+	<text key="AT Mine MK3 Beacon" text="空投反坦克地雷 MK3" />
+	<text key="AirDropped Stun Mine Mk3 Beacon" text="空投眩晕地雷 MK3" />
+	<text key="AirDropped Stun Mine Mk3" text="眩晕地雷 MK3" />
+	<text key="AT-47 Anti-Tank Emplacement Beacon" text="AT-47 反坦克平台信标" />
+	<text key="A/MG-11 Minigun Turret Beacon" text="A/MG-11 自动炮台信标" />
+	<text key="A/MG-11 Minigun Turret Beacon ACG" text="A/MG-11 自动炮台信标" />
+	<text key="A/RX-34 Railcannon Turret Beacon" text="A/RX-34 自动轨道炮台信标" />
+	<text key="A/RX-34 Railcannon Turret Beacon ACG" text="A/RX-34 自动轨道炮台信标" />
+	<text key="A/GL-8 Launcher Turret Beacon" text="A/GL-8 榴弹发射器信标" />
+	<text key="A/AC-6 Tesla Tower Beacon" text="A/AC-6 特斯拉信标" />
+	<text key="NUX-223 HellBomb Beacon" text="NUX-223 地狱火信标" />
+	<text key="hd_hellpod_dropping_pod" text="空投舱" />
+	<text key="hd_hellpod_dropping_pod" text="空投舱" />
+
+	<text key="Ammo Supply" text="弹药补给箱" />
+	<text key="Divers" text="潜兵" />
+	<text key="Divers " text="潜兵" />
+	<text key="HellDivers" text="地狱潜兵" />
+	<text key="Helldivers" text="地狱潜兵" />
+	<text key="Now on gound." text="已进入战场" />
+	<text key="Call Receive" text="呼叫收到，部署信标已配置" />
+	<text key="Call Deny! Xp limit" text="呼叫拒绝，经验不足" />
+
+	
+
+<!-- ACG武器 -->
+	<text key="Reisenu [ATK]" text="铃仙 [平A]" />
+	<text key="Udongein [Skill]" text="铃仙 [空地弹]" />
+	<text key="Inaba [Card]"  text="铃仙 [符卡]" />
+	<text key="MG-4[Tactical Defender]"  text="MG-4 [战术防御]" />
+	<text key="MG4A3[Tactical Defender]"  text="MG4A3 [战术防御]" />
+	<text key="Crescent Rose [Scythe]"  text="新月玫瑰 [镰刀]" />
+	<text key="Crescent Rose [Sniper]"  text="新月玫瑰 [狙击]" />
+	<text key="Everlasting Moonglow"  text="心海 [不灭月华]" />
+	<text key="Wand"  text="慧慧的法杖" />
+	<text key="Wand summom"  text="慧慧的爆裂魔法" />
+	<text key="Sorasaki Hina"  text="空崎阳奈的机枪" />
+	<text key="Sorasaki Hina [Burst]"  text="空崎阳奈 [爆发射击]" />
+	<text key="Texas Skill"  text="德克萨斯 [剑雨]" />
+	<text key="Texas Sword"  text="德克萨斯 [长剑]" />
+	<text key="HK416 Starry Cocoon"  text="HK416 [星之茧]" />
+	<text key="HK416 Starry Cocoon[GL]"  text="HK416 榴弹抛射器 [星之茧]" />
+	<text key="IWS2000[The Seventh Banisher]"  text="IWS2000 [第七封印者]" />
+	<text key="Kemomimi's missile tails"  text="桃子酱的狐尾导弹" />
+	<text key="12.7 cm Twin Gun Mount [Shigure]"  text="127mm连装炮 [时雨改二]" />
+	<text key="12.7 cm Twin Gun Mount [Shigure]"  text="127mm连装炮 [时雨改二]" />
+	<text key="4 x 610 mm Quadruple Torpedo Tubes [Shigure]"  text="610mm四联装鱼雷 [时雨改二]" />
+
+<!-- ex武器 -->
+	<text key="Leviathan Breath"  text="利维坦之息" />
+	<text key="Trinity Ghoul"  text="三体坐观者" />
+	<text key="Disaster Railgun"  text="天灾轨道炮" />
+	<text key="63type 107mm Rocket Launcher deploy"  text="63式107毫米牵引式火箭炮部署包" />
+	<text key="Noxe Beacon"  text="Noxe 轮式导弹发射车 部署信标" />
+	<text key="ISU-152 Beacon"  text="ISU-152 重型坦克 部署信标" />
+	<text key="Sturm Tiger Beacon"  text="突击虎 重型坦克 部署信标" />
+	<text key="Apocalypse Tank Beacon"  text="天启 重型坦克 部署信标" />
+
+<!-- 其他 EX 载具-->
+	<text key="Resupply Box"  text="补给箱" />
+	<text key="Ex Supply Box"  text="EX 特殊补给箱" />
+	<text key="Ex SupplyBox"  text="EX 特殊补给箱" />
+	<text key="63type 107mm Rocket Launcher"  text="63式107毫米牵引式火箭炮" />
+	<text key="63type 107mm Rocket"  text="63式107毫米牵引式火箭炮" />
+	<text key="ISU-152"  text="ISU-152 重型坦克" />
+	<text key="Sturm Tiger"  text="突击虎 重型坦克" />
+	<text key="Apocalypse Tank"  text="天启 重型坦克" />
+	<text key="Piano[Uzuki ver]"  text="卯月主题钢琴" />
+	<text key="Piano[Uzuki ver]"  text="卯月主题钢琴" />
+	<text key="Gramophone[March of Steel Torrent ver]"  text="钢铁洪流留声机" />
+	<text key="PAK-40 Anti Tank"  text="PAK-40 反坦克炮" />
+	<text key="Zis-3 Anti Tank"  text="Zis-3 反坦克炮" />
+	<text key="HellPod"  text="空投舱" />
+	<text key="NUX-223 Hellbomb"  text="NUX-223 地狱火炸弹 [F键进入并长按引爆]" />
+	<text key="EXO-44 Stomper MK3 Supply"  text="EXO-44 践踏者-MK3 补给商店" />
+	<text key="EXO-44 Stomper MK3 Beacon"  text="EXO-44 践踏者-MK3 呼叫信标" />
+	<text key="EXO-48 Obsidian MK3 Supply"  text="EXO-48 黑曜石-MK3 补给商店" />
+	<text key="EXO-48 Obsidian MK3 Beacon"  text="EXO-48 黑曜石-MK3 呼叫信标" />
+	<text key="EXO-51 Lumberer MK3 Supply"  text="EXO-51 重步者-MK3 补给商店" />
+	<text key="EXO-51 Lumberer MK3 Beacon"  text="EXO-51 重步者-MK3 呼叫信标" />
+	<text key="M5 APC"  text="M5 APC 轻型反步兵轮式载具" />
+	<text key="M5 APC Beacon"  text="M5 APC 轻型反步兵轮式载具信标" />
+	<text key="MC-109 Hammer Motorcycle"  text="MC-109 重锤摩托" />
+	<text key="MC-109 Hammer Motorcycle Beacon"  text="MC-109 重锤摩托信标" />
+	<text key="M5-32 HAV"  text="M5-32 中型反坦克轮式载具" />
+	<text key="M5-32 HAV Beacon"  text="M5-32 中型反坦克轮式载具信标" />
+	<text key="TD-110 Bastion"  text="TD-110 堡垒重型坦克" />
+	<text key="TD-110 Bastion Beacon"  text="TD-110 堡垒重型坦克信标" />
+	<text key="AT-47 Anti-Tank Emplacement"  text="AT-47 反坦克炮台" />
+	<text key="A/GL-8 Launcher Turret"  text="A/GL-8 破片榴弹发射器" />
+	<text key="A/AC-6 Tesla Tower"  text="A/AC-6 特斯拉电塔" />
+	<text key="A/MG-11 Minigun Turret"  text="A/MG-11 自动机枪炮台" />
+	<text key="A/RX-34 Railcannon Turret"  text="A/RX-34 自动轨道炮炮台" />
+	<text key="Anti-Personnel Barrier"  text="反人员铁丝网" />
+	<text key="Anti-Personnel Barrier MK3"  text="反人员铁丝网 MK3" />
+	<text key="Action Console"  text="任务台" />
+	<text key="Projection Console"  text="控制台" />
+
+	<text key="acg_amg_11_mk3_spawn" text="A/MG-11 自动机枪" />
+	<text key="hd_amg_11_mk3_spawn" text="A/MG-11 自动机枪" />
+	<text key="acg_arx_34_mk3_spawn" text="A/RX-34 自动轨道炮" />
+	<text key="hd_arx_34_mk3_spawn" text="A/RX-34 自动轨道炮" />
+	<text key="hd_aac6_tesla_mk3_spawn" text="A/AC-6 特斯拉电塔" />
+	<text key="hd_agl8_mk3_spawn" text="A/GL-8 破片榴弹发射器" />
+	<text key="hd_at47_mk3_spawn" text="AT-47 反坦克炮台" />
+
+	<text key="hd_resupply_spawn" text="补给箱空投仓" />
+	<text key="Resupply" text="补给箱" />
+	<text key="hd_resupply_spawn" text="补给箱" />
+	<text key="Stratagems Call" text="战略设备空投信标" />
+
+	<text key="hd_lmg_mg94_mk3" text="MG-94 空投信标" />
+	<text key="hd_lmg_mgx42_mk3" text="MGX-42 空投信标" />
+	<text key="hd_laser_las98_laser_cannon_mk3" text="MGX-42 空投信标" />
+	<text key="hd_exp_ac22_dum_dum_mk3" text="AC-22 达姆 空投信标" />
+	<text key="hd_exp_obliterator_grenade_launcher_full_upgrade" text="消灭者 空投信标" />
+	<text key="hd_exp_m25_rumbler_full_upgrade" text="M-25 雷鸣者 空投信标" />
+	<text key="hd_pst_flam40_incinerator_mk3" text="FLAM-40 焚化炉 空投信标" />
+	<text key="hd_pst_tox13_avenger_mk3" text="TOX-13 复仇者 空投信标" />
+	<text key="hd_exp_rl112_recoilless_rifle_mk3" text="RL-112 无后坐力重型反坦克火箭筒 空投信标" />
+	<text key="hd_exp_eta17_mk3" text="EAT-17 抛弃式轻型反坦克火箭筒 空投信标" />
+	<text key="hd_exp_mls4x_commando_mk3" text="MLS-4X 突击队 空投信标" />
+	<text key="hd_drone_ad334_guard_dog_mk3" text="AD-334 护卫犬 空投信标" />
+	<text key="hd_drone_ad289_angel_mk3" text="AD-289 天使 空投信标" />
+	<text key="hd_sup_rep80_mk3" text="REP-80 维修工具枪 空投信标" />
+	<text key="hd_exp_rec6_demolisher_mk3" text="REC-6 爆破手 空投信标" />
+	<text key="hd_resupply_pack_mk3" text="补给背包 空投信标" />
+	<text key="hd_sup_mental_detector_call" text="ME-1搜寻犬 空投信标" />
+	<text key="Repair Crane Beacon" text="维修站 空投信标" />
+	
+
+<!-- 生化人 -->
+	<text key="Infantry Fighting Vehicle"  text="步兵战车" />
+	<text key="Berserker Melee"  text="狂暴者" />
+	<text key="Berserker Anti Tank"  text="狂暴者 [反坦克模式]" />
+	<text key="Butcher Melee"  text="屠夫" />
+	<text key="Butcher Anti Tank"  text="屠夫 [反坦克模式]" />
+	<text key="Comrade Melee"  text="复合人 [直射榴弹]" />
+	<text key="Comrade Anti Tank"  text="复合人 [反坦克模式]" />
+	<text key="Grotesque Melee"  text="畸形人" />
+	<text key="Grotesque Anti Tank"  text="畸形人 [反坦克模式]" />
+	<text key="Grotesque Melee"  text="畸形人" />
+	<text key="Grotesque Anti Tank"  text="畸形人 [反坦克模式]" />
+	<text key="Hound Melee"  text="猎犬" />
+	<text key="Hulk Machine Gun"  text="巨型者 [机枪]" />
+	<text key="Hulk Machine Gun[Anti Tank]"  text="巨型者 [反坦克模式]" />
+	<text key="Immolator FlameThrower"  text="生化兵 [喷火器]" />
+	<text key="Initiate Melee"  text="初始者" />
+	<text key="Legionnaire Alert Grenade Launcher"  text="军团士兵 [警报器]" />
+	<text key="Legionnaire Grenade Launcher"  text="军团士兵 [榴弹发射器]" />
+	<text key="SquadLeader Alert Grenade Launcher"  text="班长战士 [警报器]" />
+	<text key="Squadleader Grenade"  text="班长战士 [榴弹发射器]" />
+	<text key="WarLord Cannon"  text="首领-精英 [重甲]" />
+	<text key="WarLord Cannon[Anti Tank]"  text="首领-精英 [重甲-反坦克]" />
+	<text key="Cyborgs"  text="生化人" />
+	<text key="cyborgs_legionnaire_alert_spawn"  text="军团士兵" />
+	<text key="cyborgs_squadleader_alert_spawn"  text="班长战士" />
+	<text key="cyborgs_spawn_berserker_model"  text="狂暴者" />
+	<text key="cyborgs_spawn_butcher_model"  text="屠夫" />
+	<text key="cyborgs_spawn_comrade_model"  text="复合人" />
+	<text key="cyborgs_spawn_grotesque_model"  text="畸形人" />
+	<text key="cyborgs_spawn_hulk_model"  text="巨型者" />
+	<text key="cyborgs_spawn_immolator_model"  text="生化兵" />
+	<text key="cyborgs_spawn_initiate_model"  text="初始者" />
+	<text key="cyborgs_spawn_warlord_model"  text="首领-精英" />
+
+<!-- 战利品 -->
+	<text key="Cirno Fumo"  text="琪露诺 Fumo [收藏品]" />
+	<text key="Flandre Scarlet Fumo"  text="芙兰朵露 Fumo [收藏品]" />
+	<text key="Hong Meiling Fumo"  text="红美铃 Fumo [收藏品]" />
+	<text key="Inu Sakuya Fumo"  text="十六夜 咲夜 Fumo [收藏品]" />
+	<text key="Koishi Komeiji Fumo"  text="古明地恋 Fumo [收藏品]" />
+	<text key="Mike Goutokuji Fumo"  text="豪德寺三毛 Fumo [收藏品]" />
+	<text key="Mokou Fujiwara Fumo"  text="藤原妹红 Fumo [收藏品]" />
+	<text key="Nitori Kawasiro Fumo"  text="河城荷取 Fumo [收藏品]" />
+	<text key="Reimu Fumo"  text="灵梦 Fumo [收藏品]" />
+	<text key="Rumia Fumo"  text="露米娅 Fumo [收藏品]" />
+	<text key="Sanae Kochiya Fumo"  text="东风谷早苗 Fumo [收藏品]" />
+	<text key="Shion Yorigami Fumo"  text="依神紫苑 Fumo [收藏品]" />
+	<text key="Suwako Moriya Fumo"  text="泄矢诹访子 Fumo [收藏品]" />
+	<text key="Yuyuko Fumo"  text="西行寺幽幽子 Fumo [收藏品]" />
+
+	<text key="Resource Point"  text="研究点 [功能性道具]" />
+	<text key="Samples Bugs"  text="虫族样本 [功能性物资]" />
+	<text key="Samples Cyborgs"  text="生化人样本 [功能性物资]" />
+	<text key="Samples Illuminate"  text="光能者样本 [功能性物资]" />
+
+	<text key="Diamond"  text="钻石 [战利品]" />
+	<text key="Emerald"  text="绿宝石 [战利品]" />
+	<text key="Gold"  text="金锭 [战利品]" />
+	<text key="Iron"  text="铁锭 [战利品]" />
+
+	<text key="Resupply Pack"  text="补给背包 [功能性道具-上限携带:1]" />
+
+<!-- 电台 -->
+	<text key="MD99 AutoInjector Medic"  text="使用 MD99自动注射器 [倒地自救]" />
+	<text key="Using self-rescue syringe, cover me!"  text="使用MD99自动注射器中，掩护我" />
+	<text key="Stay still"  text="注射中，请保持不动" />
+	<text key="AutoInjection Working now."  text="自动注射器工作完毕" />
+
+	<text key="NUX-223 Hellbomb Beacon"  text="呼叫部署 NUX-223地狱火炸弹" />
+	<text key="Divers request for NUX-223 Hellbomb!"  text="潜兵呼叫NUX-223地狱火炸弹" />
+	<text key="Copy, Hellbomb is in the air."  text="收到，地狱火在路上了" />
+	<text key="Hellbomb on gound."  text="地狱火炸弹已部署" />
+
+	<text key="Emergency Beacon[4 Divers Support]"  text="SOS救援请求信标 [四潜兵空投]" />
+	<text key="Divers request for Reinforce!"  text="潜兵请求四人空降仓支援" />
+	<text key="Copy, 4 Divers is in the air."  text="收到，地狱潜兵已就绪" />
+	<text key="Divers on gound."  text="地狱潜兵已入场" />
+
+	<text key="ME-1 Sniffer Metal Detector Beacon"  text="呼叫部署 ME-1搜寻犬 金属探测排雷器" />
+	<text key="Divers request for Mental Detector!"  text="潜兵请求金属探测排雷器空投支援" />
+	<text key="Copy, Stratagems is in the air."  text="收到，战略设备已在路上" />
+	<text key="Stratagems on gound."  text="战略设备已部署" />
+
+	<text key="Humblebee UAV drone"  text="小蜜蜂无人机侦查支援 [标记于地图]" />
+	<text key="Copy, UAV is in the air."  text="收到，已释放小蜜蜂" />
+	<text key="UAV is Launching."  text="小蜜蜂UAV侦测中，已标记敌方载具于地图上" />
+
+	<text key="Call Anti-Personnel Barrier"  text="呼叫部署 反人员铁丝网" />
+	<text key="Divers report, We need Anti-Personnel Barrier right there!"  text="潜兵报告，请求部署反人员铁丝网" />
+	<text key="Confirmed, Equipment is in the air."  text="许可，防御设备已在路上了" />
+	<text key="Airdropping Equipment now."  text="已空投设备" />
+
+	<text key="Call MC-109 Hammer Motorcycle"  text="呼叫部署 重锤摩托车" />
+	<text key="Divers report, We need MC109 Motor right there!"  text="潜兵报告，我们需要MC109重锤摩托" />
+
+	<text key="Call Resupply"  text="呼叫部署 子弹补给箱" />
+	<text key="Call Shredder Missile Strike"  text="呼叫部署 '撕裂者'核弹 战略支援" />
+
+<!-- 军衔 -->
+	<text key="Private" text="列兵" />
+	<text key="1st Private" text="上等兵" />
+	<text key="Corporal" text="下士" />
+	<text key="Specialist" text="专家" />
+	<text key="Warrant" text="准尉" />
+	<text key="Staff Sergeant" text="军士长" />
+	<text key="Sergeant" text="中士" />
+	<text key="Cadet" text="军校学员" />
+	<text key="Ensign" text="少尉" />
+	<text key="2nd Lieutenant" text="二级中尉" />
+	<text key="Lieutenant" text="中尉" />
+	<text key="Commander" text="上尉" />
+	<text key="Captain" text="上校" />
+	<text key="Major" text="少校" />
+	<text key="Colonel" text="上校" />
+	<text key="Colonel Commandant" text="上校司令" />
+	<text key="Commodore" text="准将" />
+	<text key="Brigadier" text="准将" />
+	<text key="General" text="将军" />
+	<text key="Field General" text="野战将军" />
+	<text key="Marshal" text="元帅" />
+	<text key="Field Marshal" text="野战元帅" />
+	<text key="Lord Marshal" text="领主元帅" />
+	<text key="Lord" text="领主" />
+	<text key="Grand Lord" text="大领主" />
+	<text key="Unknown Hero" text="未知英雄" />
+	<text key="Local Hero" text="地方英雄" />
+	<text key="Regional Hero" text="区域英雄" />
+	<text key="Warfront Hero" text="战线英雄" />
+	<text key="Hero of the Sector" text="领域英雄" />
+	<text key="Tactical Specialist" text="战术专家" />
+	<text key="Lieutenant Tactical Specialist" text="二级战术专家" />
+	<text key="Major Tactical Specialist" text="少校战术专家" />
+	<text key="Tactical Specialist Commander" text="战术专家指挥官" />
+	<text key="Squad Specialist" text="小队专家" />
+	<text key="Lieutenant Squad Specialist" text="二级小队专家" />
+	<text key="Major Squad Specialist" text="少校小队专家" />
+	<text key="Squad Specialist Commander" text="小队专家指挥官" />
+	<text key="Platoon Specialist" text="排专家" />
+	<text key="Lieutenant Platoon Specialist" text="二级排专家" />
+	<text key="Major Platoon Specialist" text="少校排专家" />
+	<text key="Expert of Operations" text="作战专家" />
+	<text key="Lieutenant Expert of Operations" text="二级作战专家" />
+	<text key="Major Expert of Operations" text="少校作战专家" />
+	<text key="Commanding Expert of Operations" text="作战专家指挥官" />
+	<text key="Rear Admiral" text="少将" />
+	<text key="Vice Admiral" text="中将" />
+	<text key="Admiral" text="上将" />
+	<text key="Fleet Admiral" text="舰队上将" />
+	<text key="Admiral of Super Earth" text="超级地球元帅" />
+
 
 </translation>
 

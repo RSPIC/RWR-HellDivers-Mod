@@ -41,11 +41,10 @@ dictionary resupply_getitem_key = {
         {"hd_exp_mls4x_commando_mk3.weapon",8},
         {"hd_exp_eta17_mk3.weapon",4},
         {"hd_exp_rl112_recoilless_rifle_mk3.weapon",8},
-        {"hd_mgx42_mk3.weapon",16},
-        {"hd_lmg_mgx42_mk3.weapon",2},
+        {"hd_lmg_mgx42_mk3.weapon",16},
 
-        {"hd_grenade_molotov.projectile",5},
-        {"hd_grenade_standard.projectile",6},
+        {"hd_grenade_molotov.projectile",8},
+        {"hd_grenade_standard.projectile",10},
 
         // 占位的
         {"666",-1}
@@ -102,6 +101,9 @@ dictionary banned_backpack_item = {
         {"hd_arx_34_mk3_call.projectile","projectile"},
         {"hd_agl8_mk3_call.projectile","projectile"},
         {"hd_aac6_tesla_mk3_call.projectile","projectile"},
+
+        {"acg_arx_34_mk3_call.projectile","projectile"},
+		{"acg_amg_11_mk3_call.projectile","projectile"},
 
         // special 特殊支援
         {"hd_nux_223_hellbomb.projectile","projectile"},
@@ -205,8 +207,9 @@ class itemdrop_event : Tracker {
 
 	// --------------------------------------------
 	protected void handleItemDropEvent(const XmlElement@ event) {
-		string EventKeyGet = event.getStringAttribute("key");
 		string itemKey = event.getStringAttribute("item_key");
+		//todo:在此处判断在字典里存在然后选择是否返回，减少下列查询消耗。
+
 		string position = event.getStringAttribute("position");
 		int characterId = event.getIntAttribute("character_id");
 		int itemClass = event.getIntAttribute("item_class");
@@ -220,7 +223,6 @@ class itemdrop_event : Tracker {
 
 		//containerId = 0(地面) 1(军械库) 2（背包） 3（仓库）
 		//itemClass = 0(主、副武器) 1（投掷物） 3（护甲、战利品）
-        _log("handleItemDropEvent:EventKeyGet= " + EventKeyGet);
         _log("handleItemDropEvent:itemKey= " + itemKey);
         _log("handleItemDropEvent:position= " + position);
         _log("handleItemDropEvent:characterId= " + characterId);
@@ -298,7 +300,6 @@ class itemdrop_event : Tracker {
 			_log("ban item key exist?:" + "false");
 		}//是否属于删除物品
 		if(string(banned_backpack_item[itemKey]) != "" || string(banned_special_item[itemKey]) != ""){
-			//管理可以存
 			if(playerId == -1){return;}//排除AI
 			string sender = event.getStringAttribute("player_name");
 			int senderId = event.getIntAttribute("player_id");
@@ -306,7 +307,9 @@ class itemdrop_event : Tracker {
 			_log("senderId ="+senderId);
 			if (m_metagame.getAdminManager().isAdmin(sender, senderId)){
 				_log("Is admin, exit ban item");
-				return;}
+				return;
+			}//管理可以存
+
 			if(itemKey == "hd_resupply_pack_mk3.carry_item"){//补给背包特殊机制 上限携带一个包，同时发4个子弹箱
 				_log("hd_resupply_pack_mk3 detect");
 				string ExKey="hd_resupply_pack_mk3_ex.carry_item";
@@ -324,7 +327,7 @@ class itemdrop_event : Tracker {
 			if(containerId == 2 ){//装备进背包
 				_log("delete banned item in backpack");
 				string itemtype = string(banned_backpack_item[itemKey]);
-				_log("itemtype"+itemtype);
+				_log("itemtype "+itemtype);
 				deleteItemInBackpack(m_metagame,characterId,itemtype,itemKey);
 				_log("success delete supply item itemKey: "+ itemKey);
 				if(itemKey == "hd_ammo_supply_box.projectile" && false){//留给补给兵的特殊机制

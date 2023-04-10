@@ -16,7 +16,7 @@
 	<weapon file="hd_smg_smg45_defender_full_upgrade.weapon" /><!--防卫者冲锋枪-->
 	<weapon file="hd_smg_smg34_ninja_full_upgrade.weapon" /><!--忍者冲锋枪-->
 	<!-- Precision 300弹速 60m全效射距 120m极限射距 3.0视距 2.0初始致死 半数衰减-->
-	<weapon file="hd_psc_rx1_railgun_full_upgrade.weapon" /><!--轨道炮-->
+	<weapon file="hd_psc_rx1_railgun_full_upgrade.weapon" /><!--RX-1轨道炮-->
 	<weapon file="hd_psc_m2016_constitution_full_upgrade.weapon" /><!--构建步枪-->
 	<weapon file="hd_psc_lho63_camper_full_upgrade.weapon" /><!--野营者狙击步枪-->
 	<!-- LMGs 90M极限射程 30m全效射程 200弹速 2.0初始致死 半数衰减 2.0视距 -0.3移速-->
@@ -46,11 +46,11 @@
 	<!-- Fire Tech / Chemical Tech-->
 	<weapon file="hd_pst_flam40_incinerator_mk3.weapon" /><!--焚化炉火焰喷射器-->
 	<weapon file="hd_pst_flam24_pyro.weapon" /><!--烈焰火焰喷射器 副手-->
-	<weapon file="hd_pst_tox13_avenger_mk3.weapon" /><!--复仇者生化喷射器-->
+	<weapon file="hd_pst_tox13_avenger_mk3.weapon" /><!--复仇者毒液喷射器-->
 	<!-- Drone 跨越射击-->
 	<weapon file="hd_drone_ad334_guard_dog_mk3.weapon" /><!--护卫犬-->
 	<weapon file="hd_drone_ad334_guard_dog_load.weapon" /><!--护卫犬-->
-	<weapon file="hd_drone_ad289_angel_mk3.weapon" /><!--护卫犬-->
+	<weapon file="hd_drone_ad289_angel_mk3.weapon" /><!--天使-->
 	<!-- Arc Tech 辅助-->
 	<weapon file="hd_arc_ac5_shotgun_full_upgrade.weapon" /><!--电弧霰弹枪-->
 	<weapon file="hd_arc_ac3_thrower_full_upgrade.weapon" /><!--电弧发射器-->
@@ -99,4 +99,5 @@
 	<weapon file="hd_ai_eta17_mk3.weapon" /><!--反坦克-->
 	<weapon file="hd_ai_mls4x_commando_mk3.weapon" /><!--反坦克-->
 	<weapon file="hd_ai_rl112_recoilless_rifle_mk3.weapon" /><!--反坦克-->
+	<weapon file="hd_ai_all_weapons.xml" /><!--集合-->
 </weapons>

@@ -13,14 +13,15 @@ key="hd_vindicator_missile.projectile">
 	<effect class="result" key="terrain" ref="blast2_smoke_rumbler" lighting="0"/>
 	<effect class="result" key="terrain" ref="blast_smoke_Vindicator" lighting="0"/>
 
-	<sound class="result" key="other" fileref="vindicator_boom1.wav" pitch_variety="0.01" volume="1" />
-	<sound class="result" key="other" fileref="vindicator_boom2.wav" pitch_variety="0.01" volume="1"/>
-	<sound class="result" key="other" fileref="vindicator_boom3.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="vindicator_boom1.wav" pitch_variety="0.01" volume="2" />
+	<sound class="result" key="other" fileref="vindicator_boom2.wav" pitch_variety="0.01" volume="2"/>
+	<sound class="result" key="other" fileref="vindicator_boom3.wav" pitch_variety="0.01" volume="2"/>
 		<sound class="result" key="terrain" copy="other" />
 		<sound class="result" key="static_object" copy="other" />
 		<sound class="result" key="vehicle" copy="other" />
 		<sound class="result" key="character" copy="other" />
 		<sound class="result" key="shield" copy="other" />
+
 		<effect class="result" key="other" copy="terrain"/>
 		<effect class="result" key="static_object" copy="terrain" />
 		<effect class="result" key="character" copy="terrain" />
