@@ -17,7 +17,7 @@ void main(dictionary@ inputData) {
 
         settings.m_fellowCapacityFactor = 0.5;
         settings.m_fellowAiAccuracyFactor = 1.0;
-        settings.m_enemyCapacityFactor = 0.5;
+        settings.m_enemyCapacityFactor = 1.0;
         settings.m_enemyAiAccuracyFactor = 0.94;
 
         settings.m_playerAiReduction = 0.0;            // didn't work before 1.76! (was 1.0)
@@ -45,7 +45,7 @@ void main(dictionary@ inputData) {
 	register_in_serverlist='1'
 	mode='COOP'
         persistency='forever'
-	comment='Running with HellDivers Mod.  QQ：498520233'
+	comment='Running with HellDivers Mod.  QQ：498520233 1倍xp'
 	max_players='8'>
 	<client_faction id='0' />
 </command>

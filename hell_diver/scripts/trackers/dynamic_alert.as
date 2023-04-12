@@ -218,14 +218,14 @@ class dynamic_alert : Tracker {
         int my_faction_soldiers = NowSoldiers[caller_faction];//己方AI数量
         int now_max_soldiers = 0;   //当前场上最多阵营的AI人数
         for (uint i = 0; i < NowSoldiers.length(); i++) {
-            if(i == caller_faction){continue;}
+            if(int(i) == caller_faction){continue;}
             if (NowSoldiers[i] > now_max_soldiers && NowSoldiers[i] != 0 ) {
                 now_max_soldiers = NowSoldiers[i];
             }
         }
         int max_soldiers_cap = 0;
         for (uint i = 0; i < MaxSoldiers.length(); i++) {
-            if(i == caller_faction){continue;}
+            if(int(i) == caller_faction){continue;}
             if (MaxSoldiers[i] > max_soldiers_cap && MaxSoldiers[i] != 0 ) {
                 max_soldiers_cap = MaxSoldiers[i];
             }

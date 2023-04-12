@@ -190,37 +190,13 @@ class MapRotatorInvasion : MapRotator {
 	}
 	// ----------------------------------------------------
 	protected void handlePlayerSpawnEvent(const XmlElement@ event) {
-		_log("MapRotatorCampaign::handlePlayerSpawnEvent", 1);
+		//_log("MapRotatorCampaign::handlePlayerSpawnEvent", 1);
 		// don't care if already about to change map
-		_log("running handlePlayerSpawnEvent",1);
+		//_log("running handlePlayerSpawnEvent",1);
 		// if (isAboutToChangeMap()) {
 		// 	_log("skipping", 1);
 		// 	return;
 		// }
-
-		const XmlElement@ element = event.getFirstElementByTagName("player");
-		if(element is null){return;}
-		int factionId = element.getIntAttribute("faction_id");
-		int characterId = element.getIntAttribute("character_id");
-		int playersId = element.getIntAttribute("player_id");
-		string name = element.getStringAttribute("name");
-		_log("handlePlayerSpawnEvent:character_id:" + characterId);
-		_log("handlePlayerSpawnEvent:player_id:" + playersId);
-		_log("handlePlayerSpawnEvent:faction_id:" + factionId);
-		_log("handlePlayerSpawnEvent:name:" + name);
-
-
-		const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
-		if(character is null){return;}
-		string c_position = character.getStringAttribute("position");
-		_log("handlePlayerSpawnEvent:getcharacterposition:" + c_position);
-		spawnStaticProjectile(m_metagame,"hd_effect_target_aim.projectile",c_position,characterId,factionId);
-		spawnStaticProjectile(m_metagame,"hd_sound_divers_coming_bgm.projectile",c_position,characterId,factionId);
-		spawnStaticProjectile(m_metagame,"hd_sound_divers_coming.projectile",c_position,characterId,factionId);
-		spawnStaticProjectile(m_metagame,"hd_effect_hellpod_dropping_smoke.projectile",c_position,characterId,factionId);
-		
-		sendFactionMessage(m_metagame,factionId,"潜兵 "+name+" 已部署战场");
-
 	}
 
 	// --------------------------------------------
@@ -422,25 +398,28 @@ class MapRotatorInvasion : MapRotator {
 
 					// commander says something
 					m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 2.0, 0, "map start with 1 base, part 1", a));
-					m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 4.0, 0, "map start with 1 base, part 2", a));
-					m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 5.0, 0, "map start with 1 base, part 3", a));
+					m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 3.0, 0, "map start with 1 base, part 2", a));
+					m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 3.0, 0, "map start with 1 base, part 3", a));
+					m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 5.0, 0, "map start with 1 base, part 4", a));
+					m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 5.0, 0, "map start with 1 base, part 5", a));
+					m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 5.0, 0, "map start with 1 base, part 6", a));
 
 					// capture map?
 					if (stage.isCapture()) {
-						m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 6.0, 0, "map start with 1 base, capture", a));
+						m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 2.0, 0, "map start with 1 base, capture", a));
 
 					} else if (stage.isKoth()) {
 						// koth map?
 						a["%target_base_name"] = stage.m_kothTargetBase;
-						m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 6.0, 0, "map start with 1 base, koth", a));
+						m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 2.0, 0, "map start with 1 base, koth", a));
 					}
 
 				} else {
 					// doing a resume
 
 					// commander says something
-					m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 5.0, 0, "map start with more bases, part 1", a));
-					m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 5.0, 0, "map start with more bases, part 2", a));
+					m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 3.0, 0, "map start with more bases, part 1", a));
+					m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 3.0, 0, "map start with more bases, part 2", a));
 				}
 
 				// side objectives?

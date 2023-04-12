@@ -3,7 +3,7 @@
     <!-- 40层甲，每层等效2.5滴血，30血以下强制击倒 击倒后被近战直接死亡 -->
     <!-- 轰炸伤害在半血前均能击倒 -->
     <!-- 0.5抗致死用于减少友伤 -->
-    <carry_item key="helldivers_vest.carry_item" name="40/40 HellDivers Vest " slot="1" transform_on_consume="hd_v1" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+    <carry_item key="helldivers_vest.carry_item" name="40/40 HellDivers Vest" slot="1" transform_on_consume="hd_v1" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
         <hud_icon filename="helldivers_vest_100.png" />
         <capacity value="0" source="rank" source_value="0.0" />
         <capacity value="1" source="rank" source_value="0.0" />

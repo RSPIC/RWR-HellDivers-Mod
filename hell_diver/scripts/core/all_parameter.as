@@ -119,7 +119,7 @@ dictionary code_stratagems = {
         // special 特殊支援
         {"wadsws","hd_nux_223_hellbomb"},
         {"wsdaw","hd_hellpod"},
-        {"ssdw","hd_sup_metal_detector"},
+        {"ssdw","hd_sup_mental_detector_call"},
 
         // Supply 普通支援
         {"sdsaad","hd_m5_apc_call"},

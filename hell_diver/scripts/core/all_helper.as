@@ -438,3 +438,15 @@ void deleteItemInGround(Metagame@ metagame, int characterId, string ItemType, st
 	c.appendChild(k);
 	metagame.getComms().send(c);	
 }
+void editPlayerVest(const Metagame@ metagame, int characterId, string Itemkey, uint numVests){
+	if (numVests < 1) return;
+	XmlElement c("command");
+		c.setStringAttribute("class", "update_inventory");
+		c.setIntAttribute("character_id", characterId);
+		c.setIntAttribute("container_type_id", numVests); 
+		XmlElement item("item");
+		item.setStringAttribute("class", "carry_item");
+		item.setStringAttribute("key", Itemkey);
+		c.appendChild(item);
+	metagame.getComms().send(c);
+}

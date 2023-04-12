@@ -47,6 +47,8 @@
 #include "kill_reward.as"
 #include "dynamic_alert.as"
 #include "share_samples.as"
+#include "scheduled_task.as"
+#include "player_spawn_event.as"
 
 
 
@@ -325,6 +327,8 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		setupSideBaseAttackHandler();
 		//setupIdlerKicker();
 
+		setupScheduledTask();
+
 		//addTracker(SupporterCommandHandler(this));
 	}
 
@@ -343,7 +347,7 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		addTracker(kill_reward(this));    
 		addTracker(dynamic_alert(this));    
 		addTracker(share_samples(this));    
-		//addTracker(scheduled_task(this));    
+		addTracker(player_spawn(this));    
 	}
 
 	protected void setupDisableRadioAtMatchOver() {
@@ -419,6 +423,10 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 	// --------------------------------------------
 	protected void setupIdlerKicker() {
 		addTracker(IdlerKicker(this));
+	}
+	// --------------------------------------------
+	protected void setupScheduledTask() {
+		addTracker(scheduled_task(this));    
 	}
 	
 	// --------------------------------------------

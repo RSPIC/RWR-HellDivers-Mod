@@ -279,7 +279,7 @@ class projectile_event : Tracker {
                     _log("detected players in rep80");
                     if (player.hasAttribute("character_id")) {
                         int p_character_id = player.getIntAttribute("character_id");
-                        if(p_character_id == characterId){break;}//取消自奶
+                        if(p_character_id == characterId){continue;}//取消自奶
                         if(p_character_id == -1){break;}
 				        const XmlElement@ p_character = getCharacterInfo(m_metagame,p_character_id);
                         if (p_character !is null) {
@@ -287,6 +287,7 @@ class projectile_event : Tracker {
                             _log("target position: "+ event.getStringAttribute("position"));
                             _log("player position: "+ character.getStringAttribute("position"));
                             Vector3 p_position = stringToVector3(character.getStringAttribute("position"));
+                            t_pos = t_pos.add(Vector3(0,-1,0));
                             float distance = getFlatPositionDistance(p_position,t_pos);
                             _log("distance max in target&players: "+ distance);
                             if(distance <= 3){
@@ -318,6 +319,7 @@ class projectile_event : Tracker {
 				        const XmlElement@ p_character = getCharacterInfo(m_metagame, player.getIntAttribute("character_id"));
                         if (p_character !is null) {
                             Vector3 p_position = stringToVector3(character.getStringAttribute("position"));
+                            t_pos = t_pos.add(Vector3(0,-1,0));
                             float distance = getFlatPositionDistance(p_position,t_pos);
                             _log("players name: "+player.getStringAttribute("name") );
                             _log("target position: "+ event.getStringAttribute("position"));

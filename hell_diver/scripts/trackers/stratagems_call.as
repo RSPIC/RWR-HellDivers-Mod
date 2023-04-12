@@ -118,6 +118,7 @@ class stratagems_call : Tracker {
 				const XmlElement@ info = getPlayerInfo(m_metagame, senderId);
 				if(info is null){return;}
 				int cid = info.getIntAttribute("character_id");
+				int pid = info.getIntAttribute("player_id");
 				if(cid == -1){return;}
 				string stratagemsKey = string(code_stratagems[message]);
 				// 直接替换手雷栏
@@ -146,11 +147,9 @@ class stratagems_call : Tracker {
 
                     string equipKey =  getPlayerEquipmentKey(m_metagame,cid,2);//检测是否发送
                     if(equipKey == stratagemsKey + ".projectile" ){
-					    dictionary dict = {{"TagName", "command"},{"class", "chat"},{"text", "呼叫收到，部署信标已配置!"}};
-						m_metagame.getComms().send(XmlElement(dict));
+					    notify(m_metagame, "呼叫收到，部署信标已配置!", dictionary(), "misc", pid, false, "", 1.0);
                     }else{
-                        dictionary dict = {{"TagName", "command"},{"class", "chat"},{"text", "呼叫拒绝，经验不足"}};
-						m_metagame.getComms().send(XmlElement(dict));
+						notify(m_metagame, "呼叫拒绝，经验不足!", dictionary(), "misc", pid, false, "", 1.0);
                     }
 				}
 				return;

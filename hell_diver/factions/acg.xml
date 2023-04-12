@@ -167,10 +167,10 @@
 	<soldier name="default" spawn_score="0.0">
 		<character filename="helldivers_default_chat.character">
 
-			<parameter class="detectability_prone" value="0.3" />
-			<parameter class="detectability_wounded" value="0.3" />
-			<parameter class="detectability_crouching" value="0.5" />
-			<parameter class="detectability_crouch_moving" value="0.55" />
+			<parameter class="detectability_prone" value="0.4" />
+			<parameter class="detectability_wounded" value="0.4" />
+			<parameter class="detectability_crouching" value="0.55" />
+			<parameter class="detectability_crouch_moving" value="0.6" />
 			<parameter class="detectability_walking" value="0.95" />
 			<parameter class="detectability_still" value="0.8" />
 			<parameter class="detectability_running" value="1" />
@@ -281,7 +281,7 @@
 			</resources>
 
 		<attribute_config class="rp">
-			<attribute weight="1" min="20000.0" max="21000.0" />
+			<attribute weight="1" min="1800.0" max="2100.0" />
 		</attribute_config>
 
 		<attribute_config class="xp">
