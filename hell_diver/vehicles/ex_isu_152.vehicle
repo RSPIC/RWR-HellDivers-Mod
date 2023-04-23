@@ -47,7 +47,9 @@ character_leave_request_mode="friendly"
 
 	0<turret offset="0.085 -0.1 -1.2" weapon_key="ex_isu_152_gl.weapon" weapon_offset="-0.25 2.55 9" 
 	weapon_recoil="3" physics_recoil="1" max_rotation_step="0.00005" rotation_range="0.1" />
-	1<turret offset="0.085 -0.1 -1.2" weapon_key="auxiliary_car_fire_aim.weapon" weapon_offset="-0.25 2.55 9" 
+	1<turret offset="1 2.8 2.5" weapon_key="hd_m5_apc_mg94.weapon" weapon_offset="0 0 0.5"
+	weapon_recoil="0" physics_recoil="0" max_rotation_step="0.0002" rotation_range="0.2" />
+	2<turret offset="0.085 -0.1 -1.2" weapon_key="auxiliary_car_fire_aim.weapon" weapon_offset="-0.25 2.55 9" 
 	weapon_recoil="0" physics_recoil="0" max_rotation_step="0.00005" rotation_range="0.1" />
 	<!-- 车体\炮台 -->
 	<visual class="chassis" mesh_filename="isu-152_d.mesh" texture_filename="isu-152_d.jpg" />
@@ -66,7 +68,7 @@ character_leave_request_mode="friendly"
 
 	<character_slot type="driver" position="1.5 0.3 +2" rotation="0" exit_rotation="1.57" hiding="1" />
 	<character_slot type="gunner" position="-1.5 0.3 +2" rotation="0" exit_rotation="-1.57" hiding="1" >
-		<turret index="0"/>		<turret index="1"/>
+		<turret index="0"/>	<turret index="1"/> <turret index="2"/>
 	</character_slot>
 
 

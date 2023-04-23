@@ -18,7 +18,7 @@ key="hd_ar_ar20l_justice_full_upgrade.weapon"
     name="AR-20L Justice" 
 	burst_shots="1" 
     projectiles_per_shot="1" 
-    projectile_speed="165.0"
+    projectile_speed="200.0"
 	barrel_offset="1.0" 
 	carry_in_two_hands="1" 
 	stab_enabled="1" 
@@ -84,7 +84,7 @@ key="hd_ar_ar20l_justice_full_upgrade.weapon"
     <inventory encumbrance="10.0" price="0.0" /> 武器重量和价格，实际负重为两倍encumbrance值 -->
     
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
-    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="3" can_be_detected_by_footmen="1" 
 	time_to_live="0.363" can_be_detected_by_driver="1" can_be_disarmed="0" name="AR-20L Justice"> 
 
 		<result class="hit" kill_probability="1.0" 

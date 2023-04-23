@@ -39,13 +39,13 @@ class repair_tools : Tracker {
 			int characterId = event.getIntAttribute("character_id");
 			const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
 			if (character is null) {return;}
-				int playerId = character.getIntAttribute("player_id");
+				//int playerId = character.getIntAttribute("player_id");
 				int factionId = character.getIntAttribute("faction_id");
-				const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
-				if (player !is null) {
+				//const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
+				//if (player !is null) {
 					_log("handing projectile_event:player exist");
-					Vector3 aim_pos = stringToVector3(player.getStringAttribute("aim_target"));
-					Vector3 c_position = stringToVector3(character.getStringAttribute("position"));
+					//Vector3 aim_pos = stringToVector3(player.getStringAttribute("aim_target"));
+					//Vector3 c_position = stringToVector3(character.getStringAttribute("position"));
 					Vector3 t_pos = stringToVector3(event.getStringAttribute("position"));
 					//生成医疗弹头
 					spawnStaticProjectile(m_metagame,"hd_md99_autoinjector.projectile",t_pos,characterId,factionId);
@@ -106,7 +106,7 @@ class repair_tools : Tracker {
 							}
 						}
 					}
-				}
+				//}
 		}
     }
 }

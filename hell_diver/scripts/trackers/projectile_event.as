@@ -279,20 +279,19 @@ class projectile_event : Tracker {
                     _log("detected players in rep80");
                     if (player.hasAttribute("character_id")) {
                         int p_character_id = player.getIntAttribute("character_id");
-                        if(p_character_id == characterId){continue;}//取消自奶
-                        if(p_character_id == -1){break;}
+                        //if(p_character_id == characterId){continue;}//取消自奶
+                        if(p_character_id == -1){continue;}
 				        const XmlElement@ p_character = getCharacterInfo(m_metagame,p_character_id);
                         if (p_character !is null) {
-                            _log("players name: "+player.getStringAttribute("name") );
-                            _log("target position: "+ event.getStringAttribute("position"));
-                            _log("player position: "+ character.getStringAttribute("position"));
+                            //_log("players name: "+player.getStringAttribute("name") );
+                            //_log("target position: "+ event.getStringAttribute("position"));
+                            //_log("player position: "+ character.getStringAttribute("position"));
                             Vector3 p_position = stringToVector3(character.getStringAttribute("position"));
                             t_pos = t_pos.add(Vector3(0,-1,0));
                             float distance = getFlatPositionDistance(p_position,t_pos);
-                            _log("distance max in target&players: "+ distance);
+                            //_log("distance max in target&players: "+ distance);
                             if(distance <= 3){
-                                int p_characterId = player.getIntAttribute("character_id");
-                                healCharacter(m_metagame,p_characterId,20);//此处修改回复层数
+                                healCharacter(m_metagame,p_character_id,20);//此处修改回复层数
                             }
                         }
                     }
@@ -316,18 +315,18 @@ class projectile_event : Tracker {
 			        const XmlElement@ player = players[i];
                     _log("detected players in ad289 angel");
                     if (player.hasAttribute("character_id")) {
-				        const XmlElement@ p_character = getCharacterInfo(m_metagame, player.getIntAttribute("character_id"));
+                        int p_character_id = player.getIntAttribute("character_id");
+				        const XmlElement@ p_character = getCharacterInfo(m_metagame, p_character_id);
                         if (p_character !is null) {
                             Vector3 p_position = stringToVector3(character.getStringAttribute("position"));
                             t_pos = t_pos.add(Vector3(0,-1,0));
                             float distance = getFlatPositionDistance(p_position,t_pos);
-                            _log("players name: "+player.getStringAttribute("name") );
-                            _log("target position: "+ event.getStringAttribute("position"));
-                            _log("player position: "+ character.getStringAttribute("position"));
-                            _log("distance max in target&players: "+ distance);
+                            //_log("players name: "+player.getStringAttribute("name") );
+                            //_log("target position: "+ event.getStringAttribute("position"));
+                            //_log("player position: "+ character.getStringAttribute("position"));
+                            //_log("distance max in target&players: "+ distance);
                             if(distance <= 4){
-                                int p_characterId = player.getIntAttribute("character_id");
-                                healCharacter(m_metagame,p_characterId,3);//此处修改回复层数
+                                healCharacter(m_metagame,p_character_id,3);//此处修改回复层数
                             }
                         }
                     }
@@ -425,7 +424,7 @@ class projectile_event : Tracker {
                                         _log("execute repair,is repairable?: "+ !(vehicle_repair_deny_key.exists(vehiclekey)));
                                         if(!(vehicle_repair_deny_key.exists(vehiclekey))){
                                             if(vehicleHealth <= 0){continue;}     //排除空节点载具
-                                            float rate = 0.15;  //最大默认超修比例
+                                            float rate = 0.5;  //最大默认超修比例
                                             float health = vehicleHealth;
                                             _log("repair_recycle: health= "+health);
                                             _log("repair_recycle: vehicleMaxHealth= "+vehicleMaxHealth);
@@ -537,7 +536,7 @@ class projectile_event : Tracker {
                 break;
             }
 
-            case 44: { //wand_guiding_01
+            case 44: { //wand_guiding_01 弃用
                 int characterId = event.getIntAttribute("character_id");
                 if (characterId == -1) {break;}
                 const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
@@ -582,6 +581,7 @@ class projectile_event : Tracker {
                 }
                 break;
             }
+
 
             default:
                 break;            

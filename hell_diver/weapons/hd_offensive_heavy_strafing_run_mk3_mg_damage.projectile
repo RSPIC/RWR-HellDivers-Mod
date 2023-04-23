@@ -29,7 +29,7 @@ player_death_drop_owner_lock_time="0"
 	<effect class="result" key="terrain" ref="MG_heavy_up_dust_3" lighting="0"/>
 	<effect class="result" key="terrain" ref="MG_heavy_up_dust_4" lighting="0"/>
 	<effect class="result" key="terrain" ref="MG_hvy_spread_dust" lighting="0"/>
-	<effect class="result" key="terrain" ref="MG_hvy_hit_light" lighting="0" post_processing="1"/> -->
+	<effect class="result" key="terrain" ref="MG_hvy_hit_light" lighting="0" post_processing="1"/> 
 	
 	<effect class="result" key="other" copy="terrain"/>
 	<effect class="result" key="static_object" copy="terrain" />

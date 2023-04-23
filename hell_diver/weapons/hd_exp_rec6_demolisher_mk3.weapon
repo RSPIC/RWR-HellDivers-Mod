@@ -46,7 +46,7 @@ key="hd_exp_rec6_demolisher_mk3.weapon"
     <animation state_key="hold_on_wall" 	animation_key="hold_rec6" />
     <animation state_key="hold_casual" 		animation_key="hold_rec6" />
     <animation state_key="still_against_wall" 	animation_key="hold_rec6" />
-	<animation state_key="crouching" 		animation_key="hold_rec6" />
+	<animation state_key="crouching" 		animation_key="crouch, pistol" />
     <animation state_key="running" 		animation_key="running, single hand carry" />
     <animation state_key="walking" 		animation_key="walking, single hand carry" />
     <animation state_key="walking_backwards" 	animation_key="walking backwards, single hand carry" />
@@ -82,10 +82,10 @@ key="hd_exp_rec6_demolisher_mk3.weapon"
     
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
     <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="30" can_be_detected_by_footmen="1" 
-	time_to_live="90" can_be_detected_by_driver="1" can_be_disarmed="1" name="REC-6 Demolisher MK3" radius="0.6"> 
+	time_to_live="90" can_be_detected_by_driver="1" can_be_disarmed="1" name="REC-6 Demolisher" radius="0.6"> 
 	
         <result class="spawn" instance_class="projectile" instance_key="hd_exp_rec6_demolisher_mk3_damage.projectile" 
-		min_amount="20" max_amount="20" offset="0 0 0" position_spread="1 1" direction_spread="-1 0" />
+		min_amount="20" max_amount="20" offset="1.5 1.5 1.5" position_spread="0 0" direction_spread="0 -1" />
 		<!-- 5x40轰炸伤 -->
 		
 		<trigger class="remote_detonate" /><!--class为time时，ttl生效；遥控为remote_detonate-->
@@ -93,7 +93,7 @@ key="hd_exp_rec6_demolisher_mk3.weapon"
 	
 		<sound class="result" key="other" fileref="at_hit_sfx_2.wav" pitch_variety="0.03" volume="1.0" />
 	
-		<trail probability="1" key=""/>	
+		<trail probability="1" key="normal_trail"/>	
 		<model mesh_filename="hd_rec6_demolisher.xml" />
 		
 		<effect class="result" key="terrain" ref="missile_result_cannon_blast_fire" lighting="0"/>

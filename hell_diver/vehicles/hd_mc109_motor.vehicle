@@ -23,6 +23,7 @@ character_leave_request_mode="friendly"
 	<tire_set offset="0.9 0 -1.2" radius="1.0" />
 
 	<control 
+	max_speed="25.0" 
 	acceleration="20" 
 	max_reverse_speed="10.0" 
 	min_health_to_steer="0.36" 

@@ -17,7 +17,7 @@ key="hd_laser_las98_laser_cannon_mk3.weapon"
     magazine_size="-1" 
     can_shoot_standing="1" 
     can_shoot_crouching="1" 
-	can_shoot_prone="1"	
+	can_shoot_prone="1"
     suppressed="0" 
 	class="0" 
     name="LAS-98 Laser Cannon" 
@@ -87,6 +87,7 @@ key="hd_laser_las98_laser_cannon_mk3.weapon"
 	<capacity value="1" source="rank" source_value="12.965" />
 	
 	<!--军械库相关-->
+    <commonness value="0.1" can_respawn_with="0" in_stock="1" /> 
     <!-- <commonness value="1" can_respawn_with="0" in_stock="1" /> 
     <inventory encumbrance="10.0" price="0.0" /> 武器重量和价格，实际负重为两倍encumbrance值 -->
     

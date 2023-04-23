@@ -17,7 +17,7 @@ file="_vehicle_none.base"
 	<tire_set offset="1 0.0 -1" radius="0.1" />
 
 
-	<control max_speed="1" acceleration="0.01" max_reverse_speed="1.0" max_rotation="1.0" max_water_depth="4" />
+	<control max_speed="3" acceleration="3" max_reverse_speed="1.0" max_rotation="1.0" max_water_depth="4" />
 
 	<physics 
 	extent="0.5 0.0 0.5" 

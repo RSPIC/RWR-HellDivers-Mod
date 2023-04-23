@@ -206,9 +206,9 @@ class StageConfiguratorInvasion : StageConfigurator {
     addStage(setupStage7());          // map6 #0
 	addStage(setupStage1());          // map2 #1
     addStage(setupStage9());          // map9 #2
-    addStage(setupStage16());         // map8_2 #3
+    //addStage(setupStage16());         // map8_2 #3
     addStage(setupStage4());          // map7 #4
-	addStage(setupStage15());         // map1_2 #5
+	//addStage(setupStage15());         // map1_2 #5
     //addStage(setupStage12());         // map14 #6 脚本不运行
     addStage(setupStage10());         // map10 #7
     addStage(setupStage17());         // map17  #8  
@@ -216,7 +216,7 @@ class StageConfiguratorInvasion : StageConfigurator {
     addStage(setupStage3());          // map3 #10
     addStage(setupStage13());         // map16  #11  
 	//addStage(setupFinalStage1());     // map11 #12 潜行
-    addStage(setupStage8());          // map8 #13
+    //addStage(setupStage8());          // map8 #13 crash
  	addStage(setupStage14());         // map6_2 #14
     addStage(setupStage2());          // map4 #15
     //addStage(setupStage5());          // map1 #16 信号塔问题
@@ -434,7 +434,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 		stage.addTracker(Overtime(m_metagame, 0));
 
 
-		stage.m_maxSoldiers = 30 * 3;                                             // was 28*3 in 1.75
+		stage.m_maxSoldiers = 80 * 3;                                             // was 28*3 in 1.75
 		stage.m_playerAiCompensation = 4;                                         // was 5 (test4)
     stage.m_playerAiReduction = 2;                                            // was 3 (test4)  
     stage.m_soldierCapacityModel = "constant";                                // was set to default in 1.65

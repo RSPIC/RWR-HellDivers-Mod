@@ -1,0 +1,415 @@
+
+particle_system fiammetta_hit_ground_anim_fire_01
+{
+	quota 300
+	material re_explosion_fire_type01
+	particle_width 2
+	particle_height 2
+	renderer billboard
+	billboard_type point
+	billboard_rotation_type vertex
+	emitter Ring{
+		angle 90
+		colour 0.1 0.3 0 1
+		direction 0 1 0
+		emission_rate 30
+		position 0 1 0
+		velocity_min 0.5
+		velocity_max 1
+		time_to_live 0.55
+		duration 0.3
+		width 6
+		height 6
+		depth 1
+		inner_width	0.6
+		inner_height 0.6
+	}
+	affector ColourFader2{
+		red1	0
+		green1  0
+		blue1	0
+		alpha1	0
+		red2	-2
+		green2  -2
+		blue2	-2
+		alpha2	-2
+		state_change 0.3
+	}
+		affector Rotator{
+		rotation_speed_range_start	90
+		rotation_speed_range_end	90
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+		affector DirectionRandomiser
+	{
+		randomness 5
+		scope 100
+		keep_velocity true
+	}
+}
+
+
+particle_system fiammetta_hit_ground_phoenix
+{
+	quota 300
+	material icon_phoenix_01
+	particle_width 7.5
+	particle_height 7.5
+	renderer billboard
+	billboard_type perpendicular_common
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	emitter Point{
+		angle 0
+		colour 1 0.7 0 0.6
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.45
+		duration 0.1
+	}
+	affector ColourFader2{
+		red1	12
+		green1  4.8
+		blue1	0
+		alpha1	0
+		red2	 -3
+		green2  -3
+		blue2	-3
+		alpha2	-3
+		state_change 0.2
+	}
+	affector Scaler{rate 3}
+}
+
+particle_system fiammetta_hit_ground_ring_01	: fiammetta_hit_ground_phoenix
+{
+	material lens_circle_03
+	particle_width 2
+	particle_height 2
+	emitter Point{
+		colour 1 0.5 0 1
+		time_to_live 0.22
+		duration 0.1
+	}
+	affector ColourFader2{
+		red1	5
+		green1  1
+		blue1	0
+		alpha1	0
+		red2	 -5
+		green2  -5
+		blue2	-5
+		alpha2	-5
+		state_change 0.2
+	}
+	affector Scaler{rate 50}
+}
+particle_system fiammetta_hit_ground_ring_02	: fiammetta_hit_ground_phoenix
+{
+	material lens_circle_03
+	particle_width 3
+	particle_height 3
+	emitter Point{
+		time_to_live 0.22
+		duration 0.1
+	}
+	affector ColourFader2{
+	}
+	affector Scaler{rate 80}
+}
+particle_system fiammetta_hit_ground_ring_03	: fiammetta_hit_ground_phoenix
+{
+	material hollow_blast_smoke_01
+	particle_width 1.5
+	particle_height 1.5
+	emitter Point{
+		time_to_live 0.25
+		duration 0.1
+	}
+	affector ColourFader2{
+		red1	6
+		green1  1.2
+		blue1	0
+		alpha1	0
+		red2	 -2
+		green2  -2
+		blue2	-2
+		alpha2	-2
+		state_change 0.3
+	}
+	affector Scaler{rate 80}
+}
+particle_system fiammetta_hit_ground_smoke_01
+{
+	quota 500
+	material pump_smoke_01
+	particle_width 2.5
+	particle_height 2.5
+	renderer billboard
+	billboard_type point
+	emitter Ring{
+		angle 90
+		colour 1 0.7 0 0.7
+		direction 0 1 0
+		emission_rate 300
+		position 0 1 0
+		velocity 0.5
+		time_to_live 0.8
+		duration 0.15
+		width 4
+		height 4
+		depth 2
+		inner_width	1.8
+		inner_height 1.8
+	}
+	affector ColourFader2{
+		red1	5
+		green1  2.5
+		blue1	-1
+		alpha1	-0.2
+		red2	-1.2
+		green2  -2.0
+		blue2	-2
+		alpha2	-1.6
+		state_change 0.6
+	}
+	affector Scaler{rate 3}
+}
+
+particle_system fiammetta_hit_ground_spread_linear_light_01 : fiammetta_hit_ground_anim_fire_01
+{
+	material point_soft_edge_100
+	particle_width 0.3
+	particle_height 5
+	billboard_type oriented_self
+	emitter Point{
+		colour 1 1 1 0.3
+		emission_rate 60
+		velocity 50
+		time_to_live 0.1
+		duration 0.1
+	}
+	affector ColourFader2{
+		red1 0.5
+		green1 0.5
+		blue1 0.5
+	}
+	affector Rotator{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector DirectionRandomiser
+	{
+		randomness 0
+		scope 0
+		keep_velocity true
+	}
+}
+particle_system fiammetta_hit_ground_spread_spot_light_01 : fiammetta_hit_ground_anim_fire_01
+{
+	material point_soft_edge_100
+	particle_width 0.3
+	particle_height 0.3
+	emitter Box{
+		colour 1 0.3 0 1
+		emission_rate 200
+		velocity 0.6
+		time_to_live 1.5
+		duration 0.1
+		width 8
+		height 8
+		depth 1
+	}
+	affector ColourFader2{
+	state_change 0.5
+	}
+	affector DirectionRandomiser
+	{
+		randomness 10
+		scope 100
+		keep_velocity true
+	}
+}
+
+-------------muzzle--------------------
+particle_system fiammetta_muzzle_ring 	: fiammetta_hit_ground_phoenix
+{
+	particle_width 2
+	particle_height 2
+	material lens_circle_03
+	billboard_type perpendicular_self
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	emitter Point{
+		velocity 0.01
+	}
+	affector ColourFader2{
+	}
+	affector Scaler{rate 1}
+}
+particle_system fiammetta_muzzle_anim_fire 	: fiammetta_hit_ground_anim_fire_01
+{
+	particle_width 1
+	particle_height 1
+	material re_explosion_fire_type01
+	emitter Point{
+		velocity 1
+		angle 30
+		colour 1 1 0 1
+		position 0 0 0
+		
+	}
+	affector ColourFader2{
+	}
+}
+-------------trail--------------
+particle_system fiammetta_activated_trail_01 	: fiammetta_hit_ground_anim_fire_01
+{
+	material re_point_soft_edge_100
+	particle_width 1.3
+	particle_height 1.3
+	iteration_interval 0.01
+	emitter Point{
+		colour 1 0 0 1
+		velocity 0.001
+		emission_rate 200
+		position 0 0 0
+		duration 10
+		time_to_live 0.2
+	}
+	affector ColourFader2{
+		red1	0
+		green1  -7
+		blue1	0
+		alpha1	0
+		red2	-2
+		green2  -2
+		blue2	-2
+		alpha2	-2
+		state_change 0.05
+	}
+	affector Scaler{rate -3}
+}
+
+
+
+----------------------material----------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material icon_phoenix_01	:	alpha_blend_base
+{
+	technique{
+		pass{
+			texture_unit 
+			{
+				rotate 180
+				texture icon_phoenix_01.png 
+			}
+		}
+	}
+}
+	
+material lens_circle_03	: add_base		//内光圈虚化
+{
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture lens_circle_03.png
+            }
+        }
+    }
+}
+material point_soft_edge_100	:	add_base
+{technique{
+		pass{
+			texture_unit{
+	  texture point_soft_edge_100.png 
+}}}}
+material re_explosion_fire_type01 : alpha_blend_base
+{	technique{
+		pass{
+			lighting on
+			ambient 1 1 1 1
+			emissive 1 1 1 1
+		texture_unit{
+		anim_texture exposion_fire_type01.png 6 0.5
+		tex_address_mode clamp
+		filtering biliner
+}}}}
+material pump_smoke_01 :	alpha_blend_base
+{
+	technique {
+		pass {
+			texture_unit {
+				texture pump_smoke_01.png 	
+			}
+		}
+	}
+}
+material hollow_blast_smoke_01 	//空心爆炸溅射烟雾
+{
+	receive_shadows off
+    technique
+    {
+        pass
+        {
+            lighting off
+            scene_blend add
+            depth_write off
+			fog_override true
+            texture_unit
+            {
+                texture hollow_blast_smoke_01.png
+            }
+        }
+    }
+}
+material re_point_soft_edge_100 
+{
+	receive_shadows off
+    technique
+    {
+        pass
+        {
+            lighting on
+			ambient 0.2 0.2 0.2 0.2
+			emissive 0.5 0.1 0 0.1
+            scene_blend add
+            depth_write off
+			fog_override true
+            texture_unit
+            {
+                texture point_soft_edge_100.png
+            }
+        }
+    }
+}

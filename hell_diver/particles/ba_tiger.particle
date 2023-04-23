@@ -1,0 +1,655 @@
+author: RST
+2022.9.23
+未经授权不可复用、修改使用、仅用于helldiver mod
+
+
+
+
+particle_system ba_tiger_muzzle_ring_center
+{
+	quota 50
+	material explosion_smoke_05_bw_cull
+	particle_width 5
+	particle_height 5
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity -6
+		time_to_live 0.08
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 60
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0.5 1
+		time1 0.7
+		colour1 1 0.3 0.5 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system ba_tiger_muzzle_light
+{
+	quota 50
+	material point_soft_edge_100_cull
+	particle_width 10
+	particle_height 10
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.1
+		duration 0.1
+	}
+    affector Scaler{
+        rate 30
+    }
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0.5 1
+		time1 0.7
+		colour1 1 0.3 0.5 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system ba_tiger_muzzle_spark
+{
+	quota 300
+	material point_soft_edge_100_cull
+	particle_width 0.2
+	particle_height 2
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 90
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 200
+		position 0 0 0
+		velocity_min -30
+		velocity_max -50
+		time_to_live_min 0.07
+		time_to_live_max 0.14
+		duration 0.1
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0.5 1
+		time1 0.7
+		colour1 1 0.3 0.5 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system ba_tiger_result_spark
+{
+	quota 300
+	material point_soft_edge_100_cull
+	particle_width 0.5
+	particle_height 3
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 90
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 200
+		position 0 0 0
+		velocity_min 50
+		velocity_max 80
+		time_to_live_min 0.07
+		time_to_live_max 0.14
+		duration 0.1
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0.5 1
+		time1 0.7
+		colour1 1 0.3 0.5 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system ba_tiger_muzzle_ring
+{
+	quota 50
+	material Particle_Circle_05_cull
+	particle_width 8
+	particle_height 8
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity -3
+		time_to_live 0.3
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 10
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.5
+		colour1 1 0.3 0.5 1
+		time2 0.51
+		colour2 1 0.3 0.5 1
+		time3 0.7
+		colour3 0 0 0 0
+		time4 1
+		colour4 0 0 0 0
+	}
+}
+particle_system ba_tiger_muzzle_ahead_smoke
+{
+	quota 50
+	material WFX_T_MF_A8
+	particle_width 6
+	particle_height 4
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center_left
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.5
+		time_to_live 0.15
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 2
+	}
+    affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	-90
+		rotation_range_end	-90
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0.5 1
+		time1 0.7
+		colour1 1 0.3 0.5 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system ba_tiger_muzzle_smoke
+{
+	quota 50
+	material Particle_Dissolve_Cloud_01
+	particle_width 3
+	particle_height 3
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin bottom_center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.1
+		time_to_live 0.7
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 2
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.4 0.4 0.4 1
+		time1 0.7
+		colour1 0.3 0.3 0.3 0.5
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system ba_tiger_result_ground_ring
+{
+	quota 50
+	material lens_circle_03
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.1
+		time_to_live 0.4
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 40
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0.5 1
+		time1 0.5
+		colour1 1 0.3 0.5 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system ba_tiger_result_ground_ring_light
+{
+	quota 50
+	material point_soft_edge_100_pass
+	particle_width 18
+	particle_height 18
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.001
+		time_to_live 0.8
+		duration 0.1
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0.5 1
+		time1 0.7
+		colour1 1 0.3 0.5 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system ba_tiger_result_impact
+{
+	quota 250
+	material Particle_Dissolve_Cloud_01
+	particle_width 4.5
+	particle_height 4.5
+	renderer billboard
+	billboard_type oriented_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction -0.5 1 -0.5
+	common_up_vector 0 0 1
+	iteration_interval 0
+    affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.2
+		colour1 1 0.3 0.5 1
+		time2 0.7s
+		colour2 0.3 0.3 0.3 1
+		time3 1
+		colour3 0 0 0 0
+	}
+	emitter Box
+	{
+		angle 5
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 150
+		position 0 0 0
+		velocity_min 0.1
+		velocity_max 0.5
+		time_to_live 1.0
+		duration 0.1
+        width 4
+		height 4
+		depth 0.1
+	}
+	affector Scaler
+	{
+		rate 1
+	}
+    affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	
+		rotation_range_start	15
+		rotation_range_end	-15
+	}
+    affector LinearForce{
+		force_vector 0 1 0
+		force_application add
+	}
+}
+particle_system ba_tiger_result_impact_light : ba_tiger_result_impact
+{
+    particle_width 10
+	particle_height 10
+    material point_soft_edge_100_pass
+    affector ColourInterpolator
+	{
+        time0 0
+		colour0 0.5 0.15 0.25 1
+		time1 0.5
+		colour1 0.5 0.15 0.25 1
+		time2 1
+		colour2 0 0 0 0
+    }
+    emitter Box
+	{
+        emission_rate 50
+        time_to_live 0.6
+    }
+}
+particle_system ba_tiger_result_impact_leave
+{
+	quota 200
+	material Tex_0147_1_pass
+	particle_width 10
+	particle_height 10
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 5
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 2
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.4 0.4 0.4 1
+		time1 0.7
+		colour1 0.3 0.3 0.3 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system ba_tiger_result_impact_side_ring_1
+{
+	quota 50
+	material Particle_Impact_Directional_01_pass
+	particle_width 15
+	particle_height 15
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0.3 0
+		velocity 0.0001
+		time_to_live 0.3
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 20
+	}
+    affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	15
+		rotation_range_end	15
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0.5 1
+		time1 0.7
+		colour1 1 0.3 0.5 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system ba_tiger_result_impact_side_ring_2 : ba_tiger_result_impact_side_ring_1
+{
+    emitter Point
+	{}
+    affector Scaler
+	{}
+    affector Rotator
+	{
+        rotation_range_start	-15
+		rotation_range_end	-15
+    }
+}
+
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material Particle_Circle_05_cull : add_base
+{   
+    technique{
+    pass{
+        cull_hardware none
+        texture_unit{
+            texture Particle_Circle_05.png 	
+}}}}
+material explosion_smoke_05_bw_cull : add_base
+{   
+    technique{
+    pass{
+        cull_hardware none
+        texture_unit{
+            texture explosion_smoke_05_bw.png 	
+}}}}
+material point_soft_edge_100_cull : add_base
+{   
+    technique{
+    pass{
+        cull_hardware none
+        texture_unit{
+            texture point_soft_edge_100.png 	
+}}}}
+material point_soft_edge_100_pass : add_base
+{   
+    technique{
+    pass{
+        depth_func always_pass
+        texture_unit{
+            texture point_soft_edge_100.png 	
+}}}}
+material Particle_Impact_Directional_01_pass : add_base
+{   
+    technique{
+    pass{
+        depth_func always_pass
+        texture_unit{
+            texture Particle_Impact_Directional_01.png 	
+}}}}
+material lens_circle_03 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture lens_circle_03.png 	
+}}}}
+material WFX_T_MF_A8 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture WFX_T_MF_A8.png 	
+}}}}
+material Particle_Dissolve_Cloud_01 : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture Particle_Dissolve_Cloud_01.png
+}}}}
+material Tex_0147_1_pass : alpha_blend_base
+{   
+    technique{
+    pass{
+        depth_func always_pass
+        texture_unit{
+            texture Tex_0147_1.png
+}}}}
+material ba_tiger_trail : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture ba_tiger_trail.png
+}}}}

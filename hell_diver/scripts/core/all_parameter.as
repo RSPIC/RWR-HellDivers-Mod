@@ -78,8 +78,8 @@ dictionary projectile_eventkey = {
         //技能
         {"acg_texas_skill",43},
 
-        //爆裂魔法
-        {"wand_guiding_01",44},
+        //爆裂魔法 
+        {"wand_guiding_01",44}, //弃用
         {"acg_megumin_wand_float",45},
 
         // 占位的
@@ -123,7 +123,7 @@ dictionary code_stratagems = {
 
         // Supply 普通支援
         {"sdsaad","hd_m5_apc_call"},
-        {"sdwaws","hd_m5_32_hav_call"},
+        {"sdsaws","hd_m5_32_hav_call"},
         {"sdsawd","hd_td110_bastion_call"},
         {"sdsaaw","hd_mc109_motor_call"},
         {"sdwass","hd_exo44_mk3"},
@@ -179,7 +179,8 @@ dictionary vehicle_overhealth_key = {
         // 空
         {"",-1},
 
-        {"noxe.vehicle",0.2},
+        {"noxe.vehicle",1.0},
+        {"hd_mc109_motor.vehicle",2.0},
 
         // 占位的
         {"666",-1}
@@ -210,6 +211,8 @@ dictionary repairtool_key = {
         {"hd_rep80_mk2",0.05},
 
         {"hd_ad289_angel_mk3",3.0},
+
+        {"hd_vehicle_wrench",0.2},
 
         // 占位的
         {"666",-1}

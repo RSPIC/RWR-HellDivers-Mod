@@ -10,6 +10,7 @@
 	<weapon file="63type_107mm_rocket_launcher_2.weapon" /> <!--63式火箭炮武器-->
 	<weapon file="63type_107mm_rocket_launcher_3.weapon" /> <!--63式火箭炮武器-->
 	<weapon file="63type_107mm_rocket_launcher_4.weapon" /> <!--63式火箭炮武器-->
+	<weapon file="ex_cl_banzai.weapon" /> <!--刺雷-->
 
 	<!-- 载具武器 -->
 	<weapon file="ex_isu_152_gl.weapon" /> <!--152-->
@@ -20,9 +21,15 @@
 	<weapon file="ex_sturmtiger_tank_gl.weapon" /> <!-- 突击虎 -->
 	<weapon file="ex_apocalypse_tank_gl.weapon" /> <!-- 天启 -->
 	<weapon file="ex_kv2_gup_gl.weapon" /> <!-- KV-2 [真理高中]-->
+	<weapon file="ex_sherman_cannon.weapon" /> <!-- 谢尔曼喷火坦克-->
+	<weapon file="ba_crusader_cannon.weapon" /> <!-- 十字军主炮-->
+	<weapon file="ex_m18_cannon.weapon" /> <!-- M18地狱猫主炮-->
+
 	<weapon file="hd_vehicle_lmg.weapon" /> <!-- 车载通用机枪-->
 	<weapon file="hd_vehicle_null.weapon" /> <!-- 车载空武器-->
 	<weapon file="hd_vehicle_flame.weapon" /> <!-- 车载喷火器-->
+	<weapon file="hd_vehicle_hmg.weapon" /> <!-- 车载重机枪-->
+	<weapon file="hd_vehicle_wrench.weapon" /> <!-- 车载维修-->
 
 	<!-- 特殊功能 -->
 	<weapon file="auxiliary_car_fire_aim.weapon" /> <!--辅瞄设备-->

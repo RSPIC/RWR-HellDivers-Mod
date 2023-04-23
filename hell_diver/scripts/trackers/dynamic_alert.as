@@ -8,6 +8,16 @@
 #include "gamemode_invasion.as"
 #include "all_helper.as"
 
+//Author:RST
+//动态警报脚本
+//警报方ai数量超过场上最低阵营人数2.0倍则警报不触发
+//警报时，超过玩家准星50m处警报不触发，20m外降低警报等级，20m内正常触发
+//高级巡逻兵警报等级会增加
+//每次有效警报间隔为10s
+//警报方ai人数在0.2~0.4倍率之间，会额外增加一轮随机增援，并减少再次警报cd
+//警报方ai人数在0.2倍率以内，会额外增加一轮全兵种增援，并减少再次警报cd
+//警报方ai人数在0.4~0.8倍率之间，减少再次警报cd
+
 dictionary dynamic_alert_notify_key = {
 
         // 空
@@ -146,13 +156,22 @@ void Alert_Spawn(Metagame@ metagame,uint factionId, Vector3 position, array<Spaw
 //----------------------------------
 class dynamic_alert : Tracker {
 	protected GameModeInvasion@ m_metagame;
-    protected int server_difficulty_level;
+    protected int server_difficulty_level = 0;
+    protected int m_server_difficulty_level = 0;
+    protected float m_cd_time;
+    protected float m_cd_timer;
+    protected bool m_alertFlag = false;
+
 	// --------------------------------------------
 	dynamic_alert(GameModeInvasion@ metagame) {
 		@m_metagame = @metagame;
         const UserSettings@ settings = m_metagame.getUserSettings();
         server_difficulty_level = settings.m_server_difficulty_level;
+        m_server_difficulty_level = settings.m_server_difficulty_level;
         _log("Server difficulty level = "+ server_difficulty_level);
+
+        m_cd_time = 10.0;
+        m_cd_timer = 10.0;
 	}
 
 	bool hasEnded() const {
@@ -163,7 +182,24 @@ class dynamic_alert : Tracker {
 		return true;
 	}
 
+    void update(float time){
+        if(m_alertFlag){
+            m_cd_timer -= time;
+            if(m_cd_timer <  0.0){
+                clearAlert();
+            }
+        }
+    }
+
+    void clearAlert(){
+        m_alertFlag = false;
+        m_cd_timer = m_cd_time;
+        m_cd_time = 10.0;
+    }
+
 	protected void handleResultEvent(const XmlElement@ event) {
+        if(m_alertFlag){return;}   //处于警报CD当中
+
 		string EventKeyGet = event.getStringAttribute("key");
         Vector3 position = stringToVector3(event.getStringAttribute("position"));
 
@@ -241,37 +277,60 @@ class dynamic_alert : Tracker {
         _log("now_max_soldier_capacity = "+ max_soldiers_cap );
         _log("rate = "+ rate );
 
-        int m_server_difficulty_level = server_difficulty_level;
-        if(EventKeyGet == "legionnaire_cyborg"){    //强警报
-            m_server_difficulty_level += 3 ;
+        array<const XmlElement@> players = getPlayers(m_metagame);
+        for (uint j = 0; j < players.size(); ++j) {
+			const XmlElement@ player = players[j];
+            Vector3 aim_pos = stringToVector3(player.getStringAttribute("aim_target"));    //省事直接用玩家指针位置
+            float distance = getFlatPositionDistance(aim_pos,position);
+        //notify(m_metagame, "Alert Distance = "+distance, dictionary(), "misc", 0, false, "", 1.0);
+            if(distance >= 20 && distance  < 50){        //超过玩家20m的警报降低
+                server_difficulty_level -= 3;
+                if(server_difficulty_level < 0){
+                    server_difficulty_level = 0;
+                }
+            }else if(distance >= 50){   //超过玩家50m的警报不触发
+                return;
+            }
         }
 
-        if(m_server_difficulty_level > 12){
+        if(EventKeyGet == "legionnaire_cyborg"){    //强警报
+            server_difficulty_level += 3 ;
+        }
+
+    //notify(m_metagame, "Alert Level = "+server_difficulty_level, dictionary(), "misc", 0, false, "", 1.0);
+        if(server_difficulty_level > 12){
             Alert_Spawn(m_metagame,caller_faction,position,level_15);
             _log("level 15"); 
-        }else if(m_server_difficulty_level > 9 ){
+        }else if(server_difficulty_level > 9 ){
             Alert_Spawn(m_metagame,caller_faction,position,level_12);
             _log("level 12"); 
-        }else if(m_server_difficulty_level > 6){
+        }else if(server_difficulty_level > 6){
             Alert_Spawn(m_metagame,caller_faction,position,level_9);
             _log("level 9"); 
-        }else if(m_server_difficulty_level > 3){
+        }else if(server_difficulty_level > 3){
             Alert_Spawn(m_metagame,caller_faction,position,level_6);
             _log("level 6"); 
-        }else if(m_server_difficulty_level >= 0){
+        }else if(server_difficulty_level >= 0){
             Alert_Spawn(m_metagame,caller_faction,position,level_3);
             _log("level 3"); 
         }
 
         if(rate <= 0.4 && rate >0.2){
             Alert_Spawn(m_metagame,caller_faction,position,level_random);
+            m_cd_time = 5.0;
+
             _log("level random"); 
         }else if(rate < 0.20){
             Alert_Spawn(m_metagame,caller_faction,position,level_all);
+            m_cd_time = 3.0;
+
             _log("level all"); 
+        }else if(rate > 0.4 && rate <= 0.8){
+            m_cd_time = 8.0;
         }
 
-        
+        server_difficulty_level = m_server_difficulty_level;
+        m_alertFlag = true;
         return;
     }
 }

@@ -34,7 +34,7 @@
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="common.resources" />
 		<resources file="cyborgs_common.resources" />
-		<resources file="cyborgs_all.resources" />	<!-- for test -->
+		<!-- <resources file="cyborgs_all.resources" />	for test -->
 		
 		
 		<item_class_existence_config>
@@ -228,10 +228,8 @@
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="cyborgs_common.resources" clear_carry_items="1"/>
 		<resources file="cyborgs_butcher.resources" />
-		<resources file="common_loot_rare.resources" />
-		<resources>
-			<carry_item key="samples_cyborgs.carry_item" /><!--样本-->
-		</resources>
+		
+		
 		<model file="cyborgs_butcher.xml" />
 
 		<ai filename="cyborgs_butcher.ai" /> <!-- butcher.ai 引用 default_cyborgs.ai -->
@@ -281,15 +279,10 @@
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="cyborgs_common.resources" clear_carry_items="1"  />
 		<resources file="cyborgs_hulk.resources" />
-		<resources file="common_loot_rare.resources" />
-		<resources>
-			<carry_item key="samples_cyborgs.carry_item" /><!--样本-->
-		</resources>
+		
 		<ai filename="cyborgs_hulk.ai" /> <!-- hulk.ai 引用 default_cyborgs.ai -->
 		
-
-		<model file="cyborgs_hulk.xml" /><!-- hulk.ai 引用 default_cyborgs.ai -->
-		
+		<model file="cyborgs_hulk.xml" />
 		<attribute_config class="xp">
 			<attribute weight="1.0" min="2.0" max="2.0" />
 			<attribute weight="1.0" min="1.0" max="1.0" />
@@ -318,12 +311,10 @@
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="cyborgs_common.resources" clear_carry_items="1"/>
 		<resources file="cyborgs_warlord.resources" />
-		<resources file="common_loot_rare.resources" />
-		<resources>
-			<carry_item key="samples_cyborgs.carry_item" /><!--样本-->
-		</resources>
-		<ai filename="cyborgs_warlord.ai" /> <!-- warlord.ai 引用 default_cyborgs.ai -->
 		
+		<ai filename="cyborgs_warlord.ai" /> <!-- warlord.ai 引用 default_cyborgs.ai -->
+		<model file="cyborgs_warlord.xml" />
+
 		<attribute_config class="xp">
 			<attribute weight="1.0" min="2.0" max="2.0" />
 			<attribute weight="1.0" min="1.0" max="1.0" />

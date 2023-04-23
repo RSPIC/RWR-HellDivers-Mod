@@ -17,9 +17,16 @@
 	<model filename="acg_maido3.xml" /> <!--女仆 by DNTK-->
 	<model filename="acg_maido4.xml" /> <!--女仆 by DNTK-->
 	<model filename="acg_rkgk.xml" /> <!--女仆 by DNTK-->
+	<model filename="acg_gawr_gura.xml" /> <!--噶呜·古拉 鲨鱼-->
+	<model filename="acg_kagamine_rin.xml" /> <!--镜音铃 by DNTK-->
+	<model filename="acg_heavy_equip_jk_ii.xml" /> <!--重装JK II by DNTK-->
 	
 <!-- 明日方舟 -->
 	<model filename="acg_skyfire.xml" /> <!--天火-->
+	<model filename="acg_fiammetta.xml"> <!--菲娅梅塔 by Gandaruvu807--><requirement class="weapon" slot="0" key="acg_fiammetta_skill.weapon"/>
+	</model>
+	<model filename="acg_fiammetta.xml"> <!--菲娅梅塔 by Gandaruvu807--><requirement class="weapon" slot="0" key="acg_fiammetta_gl.weapon"/>
+	</model>
 	<model filename="acg_texas.xml"><!--德克萨斯--><requirement class="weapon" slot="0" key="acg_texas_skill.weapon"/>
 	</model>
 	<model filename="acg_texas.xml"><!--德克萨斯--><requirement class="weapon" slot="0" key="acg_texas_sword.weapon"/>
@@ -57,9 +64,11 @@
 	<model filename="acg_yuudachi_azurlane_origin.xml" /> <!--夕立碧蓝航线原皮-->
 	<model filename="acg_perseus.xml" /> <!--英仙座-->
 	<model filename="acg_yukikaze.xml" /> <!--雪风-->
+	<model filename="acg_graf_spee_sweater_ver.xml" /> <!--斯佩伯爵 毛衣常服-->
 <!-- 动漫 -->
 	<model filename="acg_iruru.xml" /> <!--伊露露-->
 	<model filename="acg_faputa.xml" /> <!--法仆塔-->
+	<model filename="acg_nanachi.xml" /> <!--娜娜奇-->
 	<model filename="acg_rem.xml" /> <!--雷姆-->
 	<model filename="acg_tachibana_kanade.xml" /> <!--立华奏-->
 	<model filename="acg_kaname_madoka.xml" /> <!--魔法少女小圆-->

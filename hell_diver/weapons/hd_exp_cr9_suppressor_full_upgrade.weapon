@@ -109,7 +109,7 @@ key="hd_exp_cr9_suppressor_full_upgrade.weapon"
 	
 		<effect class="result" key="terrain" ref="cyborgs_result_cannon_blast_AmbientLight" lighting="0"/>
 		<effect class="result" key="terrain" ref="cyborgs_result_cannon_blast_smoke" lighting="0"/>
-		<effect class="activated" ref="cyborgs_activated_cannon_flysmoke" />
+		<!-- <effect class="activated" ref="cyborgs_activated_cannon_flysmoke" /> -->
 
 		
 		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->

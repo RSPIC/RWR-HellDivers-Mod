@@ -749,15 +749,15 @@
 	<text key="MGX-42 MK3 Machine Gun[Single-Use]" text="MGX-42 机枪[一次性]" />
 
 	<text key="Obliterator Grenade Launcher" text="消灭者破片榴弹发射器[反轻甲]" />
-	<text key="M-25 Rumbler" text="M-25 雷鸣者穿甲榴弹抛射器" />
+	<text key="M-25 Rumbler" text="M-25 雷鸣者穿甲榴弹抛射器 [反重甲]" />
 	<text key="CR-9 Suppressor" text="CR-9 抑制者直射榴弹[反重甲]" />
 	<text key="PLAS-1 Scorcher" text="PLAS-1 焦土直射等离子榴弹[反重甲]" />
 	<text key="PLAS-3 Singe" text="PLAS-3 焦痕直射等离子榴弹[反重甲]" />
-	<text key="RL-112 Recoilless Rifle" text="RL-112 无后坐力重型反坦克火箭筒" />
-	<text key="EAT-17" text="EAT-17 抛弃式轻型反坦克火箭筒" />
-	<text key="AC-22 Dum Dum" text="AC-22 达姆肩扛式重型机炮" />
-	<text key="MLS-4X Commando" text="MLS-4X 突击队攻顶导弹" />
-	<text key="REC-6 Demolisher" text="REC-6 爆破手遥控炸弹" />
+	<text key="RL-112 Recoilless Rifle" text="RL-112 无后坐力重型反坦克火箭筒 [反重甲]" />
+	<text key="EAT-17" text="EAT-17 抛弃式轻型反坦克火箭筒 [反重甲]" />
+	<text key="AC-22 Dum Dum" text="AC-22 达姆肩扛式重型机炮 [反重甲]" />
+	<text key="MLS-4X Commando" text="MLS-4X 突击队攻顶导弹 [反重甲]" />
+	<text key="REC-6 Demolisher" text="REC-6 爆破手遥控炸弹 [反重甲]" />
 
 	<text key="P-2 PeaceMaker" text="P-2 和平使者手枪[反中甲]" />
 	<text key="P-6 Gunslinger" text="P-6 神枪手重装左轮手枪[反重甲]" />
@@ -845,27 +845,29 @@
 	<text key="Inaba [Card]"  text="铃仙 [符卡]" />
 	<text key="MG-4[Tactical Defender]"  text="MG-4 [战术防御]" />
 	<text key="MG4A3[Tactical Defender]"  text="MG4A3 [战术防御]" />
-	<text key="Crescent Rose [Scythe]"  text="新月玫瑰 [镰刀]" />
-	<text key="Crescent Rose [Sniper]"  text="新月玫瑰 [狙击]" />
-	<text key="Everlasting Moonglow"  text="心海 [不灭月华]" />
+	<text key="Crescent Rose [Scythe]"  text="新月玫瑰 [镰刀-反重甲]" />
+	<text key="Crescent Rose [Sniper]"  text="新月玫瑰 [狙击-反重甲]" />
+	<text key="Everlasting Moonglow"  text="心海 [不灭月华-眩晕弹]" />
 	<text key="Wand"  text="慧慧的法杖" />
 	<text key="Wand summom"  text="慧慧的爆裂魔法" />
-	<text key="Sorasaki Hina"  text="空崎阳奈的机枪" />
-	<text key="Sorasaki Hina [Burst]"  text="空崎阳奈 [爆发射击]" />
-	<text key="Texas Skill"  text="德克萨斯 [剑雨]" />
+	<text key="Sorasaki Hina"  text="空崎阳奈的机枪 [反重甲]" />
+	<text key="Sorasaki Hina [Burst]"  text="空崎阳奈 [爆发射击-反重甲]" />
+	<text key="Texas Skill"  text="德克萨斯 [剑雨-反重甲]" />
 	<text key="Texas Sword"  text="德克萨斯 [长剑]" />
 	<text key="HK416 Starry Cocoon"  text="HK416 [星之茧]" />
-	<text key="HK416 Starry Cocoon[GL]"  text="HK416 榴弹抛射器 [星之茧]" />
-	<text key="IWS2000[The Seventh Banisher]"  text="IWS2000 [第七封印者]" />
-	<text key="Kemomimi's missile tails"  text="桃子酱的狐尾导弹" />
-	<text key="12.7 cm Twin Gun Mount [Shigure]"  text="127mm连装炮 [时雨改二]" />
-	<text key="12.7 cm Twin Gun Mount [Shigure]"  text="127mm连装炮 [时雨改二]" />
-	<text key="4 x 610 mm Quadruple Torpedo Tubes [Shigure]"  text="610mm四联装鱼雷 [时雨改二]" />
+	<text key="HK416 Starry Cocoon[GL]"  text="HK416 榴弹抛射器 [星之茧-反重甲]" />
+	<text key="IWS2000[The Seventh Banisher]"  text="IWS2000 [第七封印者-反重甲]" />
+	<text key="Kemomimi's missile tails"  text="桃子酱的狐尾导弹 [反重甲]" />
+	<text key="12.7 cm Twin Gun Mount [Shigure]"  text="127mm连装炮 [时雨改二][反重甲]" />
+	<text key="4 x 610 mm Quadruple Torpedo Tubes [Shigure]"  text="610mm四联装鱼雷 [时雨改二][反重甲]" />
+	<text key="Fiammetta Skill"  text="菲娅梅塔 '你须偿还' [技能-反重甲]" />
+	<text key="Fiammetta GL"  text="菲娅梅塔 [榴弹-反轻甲]" />
+	<text key="Fiammetta"  text="菲娅梅塔" />
 
 <!-- ex武器 -->
-	<text key="Leviathan Breath"  text="利维坦之息" />
-	<text key="Trinity Ghoul"  text="三体坐观者" />
-	<text key="Disaster Railgun"  text="天灾轨道炮" />
+	<text key="Leviathan Breath"  text="利维坦之息 [反重甲]" />
+	<text key="Trinity Ghoul"  text="三体坐观者 [反重甲]" />
+	<text key="Disaster Railgun"  text="天灾轨道炮 [反重甲]" />
 	<text key="63type 107mm Rocket Launcher deploy"  text="63式107毫米牵引式火箭炮部署包" />
 	<text key="Noxe Beacon"  text="Noxe 轮式导弹发射车 部署信标" />
 	<text key="ISU-152 Beacon"  text="ISU-152 重型坦克 部署信标" />
@@ -952,6 +954,20 @@
 
 	<text key="Sherman Tank [Modernization]" text="谢尔曼喷火坦克 [现代化] 中型坦克" />
 	<text key="Sherman Tank Beacon" text="谢尔曼喷火坦克 [现代化] 中型坦克 部署信标" />
+	<text key="Gun truck plus" text="运兵卡车-Plus" />
+	<text key="Gun truck plus Beacon" text="运兵卡车-Plus 部署信标" />
+	
+	<text key="Crusader chan[S.Hifumi]" text="十字军酱[泳装·日富美] 中型坦克" />
+	<text key="Crusader chan[S.Hifumi] Beacon" text="十字军酱[泳装·日富美] 中型坦克 部署信标" />
+
+	<text key="M18 Cannon [AT]" text="M18 地狱猫 主炮" />
+	<text key="M18 Hellcat" text="M18 地狱猫 轻型坦克" />
+	<text key="M18 Hellcat Beacon" text="M18 地狱猫 轻型坦克 部署信标" />
+
+	<text key="Kamikaze" text="民本超度" />
+	<text key="BanZai Armor onload" text="板载护甲已装配" />
+
+	<text key="Vehicle Wrench" text="车载维修工具" />
 	
 
 <!-- 生化人 -->
@@ -974,7 +990,7 @@
 	<text key="Legionnaire Alert Grenade Launcher"  text="军团士兵 [警报器]" />
 	<text key="Legionnaire Grenade Launcher"  text="军团士兵 [榴弹发射器]" />
 	<text key="SquadLeader Alert Grenade Launcher"  text="班长战士 [警报器]" />
-	<text key="Squadleader Grenade"  text="班长战士 [榴弹发射器]" />
+	<text key="SquadLeader Grenade Launcher"  text="班长战士 [榴弹发射器]" />
 	<text key="WarLord Cannon"  text="首领-精英 [重甲]" />
 	<text key="WarLord Cannon[Anti Tank]"  text="首领-精英 [重甲-反坦克]" />
 	<text key="Cyborgs"  text="生化人" />
@@ -1039,6 +1055,7 @@
 	<text key="Stratagems on gound."  text="战略设备已部署" />
 
 	<text key="Humblebee UAV drone"  text="小蜜蜂无人机侦查支援 [标记于地图]" />
+	<text key="Divers request for UAV support!"  text="潜兵请求'小蜜蜂'无人机侦查支援" />
 	<text key="Copy, UAV is in the air."  text="收到，已释放小蜜蜂" />
 	<text key="UAV is Launching."  text="小蜜蜂UAV侦测中，已标记敌方载具于地图上" />
 
@@ -1149,18 +1166,21 @@
 	
 	<text key="63Type 107mm Help" text="[107火箭炮教程] 首次部署" />
 	<text key="Help - 63Type 107mm" text="本火箭炮具有炮手和观察员两个位，观察员位用于触发密位特效。炮手开火瞄准密位内圈的任意位置，火箭炮将会打击到密位外圈的指定位置。" />
+	<text key="Banzai Help" text="[刺雷教程] 首次使用" />
+	<text key="Help - Banzai" text="本武器左键使用后会加速，2.5s后自动爆炸。期间再次点击鼠标按钮即可提前引爆s" />
 
 	<text key="EXO Warning" text="[警告]你搭配了错误的机甲武器" />
 	<text key="Warning - EXO" text="[警告]机甲武器不可以混搭，你将无法自动替换机甲护甲，以及一段时间后会过载死亡" />
+	<text key="Warning - EXO single" text="[警告]该机甲武器为单持，另一个武器槽不可携带武器" />
 
-	<text key="EXO Help" text="[教程]欢迎使用机甲武器" />
+	<text key="EXO-Help" text="[教程]欢迎使用机甲武器" />
 	<text key="Help - EXO-2" text="[教程]欢迎使用机甲武器，机甲武器强力但缓慢，穿上对应机甲武器后，护甲会自动替换为专属甲。" />
 	<text key="Help - EXO-3" text="注意：机甲子弹是有限的，同时切忌错误搭配！" />
 	<text key="EXO Armor onload" text="机甲护甲已装配" />
 	<text key="EXO Armor offload" text="机甲护甲已卸载" />
 
 	<text key="Stratagems Call" text="[教程]战略呼叫机制" />
-	<text key="Stratagems Useable" text="[Tips]常用呼叫指令,输入/call可再次查看 " />
+	<text key="Stratagems Useable" text="[Tips]常用呼叫指令,输入/call可再次查看本页。输入/call 1~4 查看不同类型支援代码" />
 	<text key="Stratagems - Vindicator Dive Bomb" text="辩护者 74wXp [→→→]" />
 	<text key="Stratagems - Airstrike" text="导弹空袭 10wXp [→↑↓→←]" />
 	<text key="Stratagems - Orbital Laser Strike" text="轨道激光空袭 39wXp [→↑←↑→←]" />
@@ -1170,20 +1190,19 @@
 	<text key="Stratagems - Strafing Run" text="空中扫射 0Xp [→→↑]" />
 	<text key="Stratagems - Static Field Conductors" text="静电力场 55wXp [→↑←↓]" />
 	<text key="Stratagems - Sledge Precision Artillery" text="大锤精确火炮 17wXp [→↑←↑↓→]" />
-	<text key="Stratagems - Railcannon Strike" text="轨道轰炸 39wXp [→↓↑↓←]" />
+	<text key="Stratagems - Railcannon Strike" text="轨道轰炸 97wXp [→↓↑↓←]" />
 	<text key="Stratagems - Missile Barrage" text="导弹弹幕 27wXp [→↓↓↓←↓]" />
 	<text key="Stratagems - Incendiary Bombs" text="燃烧炸弹 138wXp [→↑←→]" />
 	<text key="Stratagems - Heavy Strafing Run" text="重机枪扫射 2wXp [→→↓↑]" />
 	<text key="Stratagems - Ammo Supply" text="子弹补给箱 [↓↓↑→]" />
 	<text key="Stratagems - ETA-17" text="ETA17便携反坦克火箭筒 [↓←→↑↓]" />
-	<text key="Stratagems - REC-6 Demolisher" text="爆破手遥控炸弹 [↓←→↑↑]" />
+	<text key="Stratagems - REC-6 Demolisher" text="REC-6 爆破手遥控炸弹 [↓←→↑↑]" />
 	<text key="Stratagems - Rep-80" text="维修工具枪 [↓↓←→↓]" />
 
-<!-- 未验证 -->
 	<!-- 防御设备 -->
 	<text key="Defensive - AT Mine" text="反坦克地雷 [←→↓↑]" />
 	<text key="Defensive - Stun Mine" text="空投眩晕地雷 [←→↑↓]" />
-	<text key="Defensive - AT-47" text="AT-47 反坦克炮台 [←↓↑→↓]" />
+	<text key="Defensive - AT-47" text="AT-47 反坦克炮台 [←←↑↑→←]" />
 	<text key="Defensive - A/MG-11" text="A/MG-11 自动机枪 [←↓↑→←]" />
 	<text key="Defensive - A/RX-34" text="A/RX-34 自动轨道炮 [←↓↑←→]" />
 	<text key="Defensive - A/GL-8" text="A/GL-8 破片榴弹发射器 [←↓↑→→↓]" />
@@ -1191,23 +1210,33 @@
 	<!-- 特殊支援 -->
 	<text key="Special - NUX-223 Hellbomb" text="NUX-223 地狱火炸弹 [↑←→↓↑↓]" />
 	<text key="Special - Hellpod" text="空投仓 [↑↓→←↑]" />
-	<text key="Special - Mental Detector" text="ME-1搜寻犬 [↓↓↓↑]" />
+	<text key="Special - Mental Detector" text="ME-1搜寻犬 [↓↓→↑]" />
+	<text key="Special - SOS" text="SOS增援信标 [↑↓→↑]" />
 	<!-- 普通支援 -->
-	<text key="Supply - M5 APC" text="M5 轻型反步兵轮式载具 [↓↓↑←↓]" />
-	<text key="Supply - M5-32 HAV" text="M5-32 中型反坦克轮式载具信标 [↓↓↑←→]" />
-	<text key="Supply - TD-110 Bastion" text="TD-110 堡垒 重型坦克 [↓↓↑↑←]" />
-	<text key="Supply - MC-109 Motor" text="MC109 神锤摩托 [↓↓↑↑→]" />
-	<text key="Supply - EXO-44" text="EXO-44 践踏者 机甲 [↓↓→↓←]" />
-	<text key="Supply - EXO-48" text="EXO-48 黑曜石 机甲 [↓↓→↓→]" />
-	<text key="Supply - EXO-51" text="EXO-51 重步者 机甲 [↓↓→↑←]" />
+	<text key="Supply - M5 APC" text="M5 轻型反步兵轮式载具 [↓→↓←←→]" />
+	<text key="Supply - M5-32 HAV" text="M5-32 中型反坦克轮式载具信标 [↓→↓←↑↓]" />
+	<text key="Supply - TD-110 Bastion" text="TD-110 堡垒 重型坦克 [↓→↓←↑→]" />
+	<text key="Supply - MC-109 Motor" text="MC109 神锤摩托 [↓→↓←←↑]" />
+	<text key="Supply - EXO-44" text="EXO-44 践踏者 机甲 [↓→↑←↓↓]" />
+	<text key="Supply - EXO-48" text="EXO-48 黑曜石 机甲 [↓→↑←↓→]" />
+	<text key="Supply - EXO-51" text="EXO-51 重步者 机甲 [↓→↑←←↑]" />
+	<text key="Supply - Resupply Pack" text="补给背包 [↓↑↓↓→]" />
 	<!-- 武器支援 -->
-	<text key="Weapons - LAS-98 Laser Cannon" text="LAS-98 激光大炮重型激光枪 [↓←↓↑→]" />
-	<text key="Weapons - M-25 Rumbler" text="M-25 雷鸣者穿甲榴弹抛射器 [↓←↑↑↑]" />
-	<text key="Weapons - AC-22 Dum-Dum" text="AC-22 达姆肩扛式重型机炮 [↓←↑↑↓]" />
-	<text key="Weapons - MLS-4X Commando" text="MLS-4X 突击队攻顶导弹  [↓←↑↑→]" />
-	<text key="Weapons - TOX-13 Avenger" text="TOX-13 复仇者毒液喷射器  [↓←↑↓↓]" />
-	<text key="Weapons - MGX-42" text="MGX-42 机枪[一次性] [↓↓↓↑↓]" />
-	<text key="Weapons - REC-6 Demolisher" text="REC-6 爆破手遥控炸弹 [↓↓↓↑↑]" />
+	<text key="Weapons - MG-94 Machine Gun" text="MG-94 机枪 [[↓←↓↑→]" />
+	<text key="Weapons - MGX-42" text="MGX-42 机枪[一次性] [↓←↓↑↑←]" />
+	<text key="Weapons - LAS-98 Laser Cannon" text="LAS-98 激光大炮重型激光枪 [↓←↓↑←]" />
+	<text key="Weapons - AC-22 Dum-Dum" text="AC-22 达姆肩扛式重型机炮 [↓←↓↑↑→]" />
+	<text key="Weapons - Obliterator Grenade Launcher" text="消灭者破片榴弹发射器 [↓←↑←↓]" />
+	<text key="Weapons - M-25 Rumbler" text="M-25 雷鸣者穿甲榴弹抛射器 [↓←↑←←]" />
+	<text key="Weapons - FLAM-40 Incinerator" text="FLAM-40 焚化炉火焰喷射器 [↓←↓→←]" />
+	<text key="Weapons - TOX-13 Avenger" text="TOX-13 复仇者毒液喷射器 [↓←↓→→]" />
+	<text key="Weapons - RL-112 Recoilless Rifle" text="RL-112 无后坐力重型反坦克火箭筒 [↓←→→←]" />
+	<text key="Weapons - EAT-17" text="EAT-17 抛弃式轻型反坦克火箭筒 [↓←→↑↓]" />
+	<text key="Weapons - MLS-4X Commando" text="MLS-4X 突击队攻顶导弹 [↓←↑↓→]" />
+	<text key="Weapons - AD-334 Guard Dog" text="AD-334 护卫犬 [↓↑←↑→↓]" />
+	<text key="Weapons - AD-289 Angel" text="AD-289 天使 [↓↑←←→↓]" />
+	<text key="Weapons - Rep-80" text="维修工具枪 [↓↓←→↓]" />
+	<text key="Weapons - REC-6 Demolisher" text="REC-6 爆破手遥控炸弹 [↓←→↑↑]" />
 
 
 

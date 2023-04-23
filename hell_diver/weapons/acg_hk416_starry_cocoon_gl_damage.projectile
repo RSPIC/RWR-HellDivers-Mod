@@ -5,5 +5,5 @@
 		<trigger class="time" time_to_live="0"  />
 		<rotation class="motion" />
 		<model filename="rumbler_bullet.xml" />
-
+   		<commonness value="0" can_respawn_with="0" in_stock="0"/>	
 </projectile>

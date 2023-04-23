@@ -7,9 +7,14 @@
     <projectile file="ex_pak40_damage.projectile" /><!--pak40-->
     <projectile file="ex_sturmtiger_tank_gl_damage.projectile" /><!--突击虎-->
     <projectile file="ex_apocalypse_tank_gl_damage.projectile" /><!--天启-->
+    <projectile file="ex_sherman_cannon_damage.projectile" /><!--谢尔曼-->
+    <projectile file="ex_cl_banzai_damage.projectile" /><!--刺雷-->
+    <projectile file="ba_crusader_cannon_damage.projectile" /><!--十字军-->
+    <projectile file="ex_m18_cannon_damage.projectile" /><!--地狱猫-->
+
 
     <!-- 投掷物 -->
-    <projectile file="ex_call.xml" /><!--所有呼叫信标-->
+    <projectile file="_ex_call.xml" /><!--所有呼叫信标-->
 
 
 </projectiles>

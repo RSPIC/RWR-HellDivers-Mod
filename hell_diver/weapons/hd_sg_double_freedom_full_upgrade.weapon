@@ -6,10 +6,10 @@ key="hd_sg_double_freedom_full_upgrade.weapon"
     <specification 
 	retrigger_time="0.15"
     last_burst_retrigger_time="0.15" 
-	accuracy_factor="1.0" 
-	spread_range="1.3"
-	sustained_fire_grow_step="-1.5" 
-	sustained_fire_diminish_rate="-2.5" 
+	accuracy_factor="0.5" 
+	spread_range="1.2"
+	sustained_fire_grow_step="1" 
+	sustained_fire_diminish_rate="1" 
 	magazine_size="2" 
 	can_shoot_standing="1" 
 	can_shoot_crouching="1" 
@@ -87,14 +87,14 @@ key="hd_sg_double_freedom_full_upgrade.weapon"
 	
     <effect class="muzzle" ref="DoubleFreedom_muzzle"/>
 	
-    <!-- <stance state_key="running" accuracy="1" />
+    <stance state_key="running" accuracy="1.1" />
     <stance state_key="walking" accuracy="1" />
     <stance state_key="crouch_moving" accuracy="1" />
     <stance state_key="standing" accuracy="1" />
     <stance state_key="crouching" accuracy="1" />
     <stance state_key="prone" accuracy="1" /> 
     <stance state_key="prone_moving" accuracy="1" />
-    <stance state_key="over_wall" accuracy="1" /> -->
+    <stance state_key="over_wall" accuracy="1.2" />
 
 	<!--附加属性-->
     <modifier class="speed" value="0.2" /><!--单持加速-->

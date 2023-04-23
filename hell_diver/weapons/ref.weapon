@@ -166,8 +166,15 @@ radius="1"
     </projectile>
 	
 	<!--枪口特效-->
-	<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
-	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 
+	<!-- <effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/>  -->
+	<!-- <effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/>  -->
+	<effect class="muzzle" ref="ba_crusader_muzzle_ring_center" lighting="0"/> 
+	<effect class="muzzle" ref="ba_crusader_muzzle_light" lighting="0"/> 
+	<effect class="muzzle" ref="ba_crusader_muzzle_smoke" lighting="0" post_processing="1"/> 
+	<effect class="muzzle" ref="ba_crusader_muzzle_ahead_smoke" lighting="0" post_processing="0"/> 
+	<effect class="muzzle" ref="ba_crusader_muzzle_ring" lighting="0"/> 
+	<effect class="muzzle" ref="ba_crusader_muzzle_ring_center" lighting="0"/> 
+	<effect class="muzzle" ref="ba_crusader_muzzle_spark" lighting="0"/> 
 	
 	<!--雷鸣弹道
     <ballistics 

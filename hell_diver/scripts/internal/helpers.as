@@ -380,8 +380,8 @@ class Vector3 {
 
 // --------------------------------------------
 Vector3 stringToVector3(string s) {
-	_log("stringToVector3 length: "+ s.length());
-	_log("stringToVector3 string content: "+ s);
+	//_log("stringToVector3 length: "+ s.length());
+	//_log("stringToVector3 string content: "+ s);
 	Vector3 d;
 	array<string> strings = s.split(" ");
 	if(s.length() == 0){

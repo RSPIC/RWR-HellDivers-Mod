@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources clear_weapons="0" clear_vehicles="0" clear_calls="0">
+<resources >
 	<!-- always load common first; it"s the one that clears the initial weapon resources -->
 
 	<carry_item key="collect_mc_diamond.carry_item" />
@@ -24,6 +24,4 @@
 	<carry_item key="collect_fumo_suwako_moriya.carry_item" /><!--泄矢诹访子-->
 	<carry_item key="collect_fumo_youmu_konpaku.carry_item" /><!--魂魄妖梦-->
 	<carry_item key="collect_fumo_yuyuko.carry_item" /><!--西行寺幽幽子-->
-	
-
 </resources>

@@ -29,7 +29,7 @@ void main(dictionary@ inputData) {
         settings.m_journalEnabled = true;
         settings.m_fellowDisableEnemySpawnpointsSoldierCountOffset = 1;
 
-        settings.m_server_difficulty_level = 15;
+        settings.m_server_difficulty_level = 9;
 
         _setupLog("dev_verbose");
 

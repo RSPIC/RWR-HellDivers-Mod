@@ -170,7 +170,7 @@
 		</character>
 		<ai filename="default_super_earth.ai" />
 
-		<model file="hdivers_black_ops.xml" />
+		<model filename="hdivers_black_ops.xml" />
 		<models file="extra_weapons.models" />
 		<models file="hd_weapons.models" />
 
@@ -235,7 +235,7 @@
 
 	<!-- default ai group -->
 	<soldier name="default_ai" spawn_score="1.0" copy_from="base">
-		<model file="hdivers_black_ops.xml" />
+		<model filename="hdivers_black_ops.xml" />
 			<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 			<resources file="hd_divers.resources" />
 			<resources file="common_loot_rare.resources" />
@@ -263,7 +263,7 @@
 
 	<!-- 精英空投 -->
 	<soldier name="HellDiver" spawn_score="0.0" copy_from="base">
-		<model file="hdivers_ceremonial.xml" />
+		<model filename="hdivers_ceremonial.xml" />
 		<ai filename="default_super_earth_elite.ai" />
 			<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 			<resources file="hd_divers.resources" />
@@ -290,7 +290,7 @@
 
 	<!-- 地球元帅 -->
 	<soldier name="Ceremonial" spawn_score="0.01" copy_from="base">
-		<model file="hdivers_ceremonial.xml" />
+		<model filename="hdivers_ceremonial.xml" />
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources>
 			<weapon key="hd_smg_mp98_knight_smg_full_upgrade.weapon" /><!--骑士冲锋枪-->
@@ -321,7 +321,7 @@
 
 	<!-- 狙击手 -->
 	<soldier name="Volcanic" spawn_score="0.001" copy_from="base">
-		<model file="hdivers_volcanic.xml" />
+		<model filename="hdivers_volcanic.xml" />
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources>
 			<weapon key="hd_psc_m2016_constitution_full_upgrade.weapon" /><!--构建步枪-->
@@ -406,7 +406,7 @@
 		</resources>
 		<ai filename="hd_amg11.ai" />
 		<character filename="hd_amg11.character"/>
-		<model file="null_body.xml" />
+		<model filename="null_body.xml" />
 
 		<item_class_existence_config>
 			<!-- main -->
@@ -435,7 +435,7 @@
 			<parameter class="accuracy_offset" value="1.0" />
 		</ai>
 		<character filename="hd_amg11.character"/>
-		<model file="null_body.xml" />
+		<model filename="null_body.xml" />
 
 		<item_class_existence_config>
 			<!-- main -->

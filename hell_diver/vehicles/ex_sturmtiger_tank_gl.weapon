@@ -19,7 +19,7 @@ key="ex_sturmtiger_tank_gl.weapon"
     suppressed="0" 
 	class="0" 
     name="Sturm Tiger" 
-	sight_height_offset="10" 
+	sight_height_offset="3" 
 	burst_shots="1" 
     projectiles_per_shot="1" 
     projectile_speed="50.0"
@@ -89,7 +89,8 @@ key="ex_sturmtiger_tank_gl.weapon"
 		<effect class="result" key="terrain" ref="nova_s_result_blast_ring_2" lighting="0" post_processing="0"/> 
 		<effect class="result" key="terrain" ref="real_center_short_light" lighting="0" post_processing="0"/> 
 		<effect class="result" key="terrain" ref="real_center_ambient_light" lighting="0" post_processing="0"/> 
-	
+		<effect class="result" key="terrain" ref="hk416_sc_gl_hit_smoke_02" post_processing="0"/>
+		
 		<sound class="result" key="terrain" copy="other" />
 		<sound class="result" key="static_object" copy="other" />
 		<sound class="result" key="vehicle" copy="other" />

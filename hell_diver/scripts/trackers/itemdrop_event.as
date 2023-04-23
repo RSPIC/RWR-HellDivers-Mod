@@ -14,6 +14,7 @@
 //禁用物品：指定物品无法装入背包
 //补给背包机制
 //高亮特殊掉落物
+//替换对应阵营样本(游戏机制导致不能指定掉落物品)
 	// --------------------------------------------
 //触发补给key
 dictionary resupply_key = {
@@ -34,7 +35,6 @@ dictionary resupply_getitem_key = {
         // 空
         {"",-1},
 
-        {"hd_sup_md98_injector.weapon",8},
         {"hd_pst_tox13_avenger_mk3.weapon",10},
         {"hd_pst_flam40_incinerator_mk3.weapon",10},
         {"hd_exp_rec6_demolisher_mk3.weapon",10},
@@ -54,7 +54,6 @@ dictionary resupply_cost = {
         // 空
         {"",-1},
 
-        {"hd_sup_md98_injector.weapon",0},
         {"hd_pst_tox13_avenger_mk3.weapon",0},
         {"hd_pst_flam40_incinerator_mk3.weapon",0},
         {"hd_exp_rec6_demolisher_mk3.weapon",0},
@@ -108,6 +107,7 @@ dictionary banned_backpack_item = {
         // special 特殊支援
         {"hd_nux_223_hellbomb.projectile","projectile"},
         {"hd_hellpod.projectile","projectile"},
+        {"hd_sup_mental_detector_call.projectile","projectile"},
 
         // Supply 普通支援
         {"hd_m5_apc_call.projectile","projectile"},
@@ -188,6 +188,30 @@ dictionary protected_trade = {
 		// 占位的
         {"666",-1}
 };
+//替换对应阵营样本(游戏机制导致不能指定掉落物品)
+dictionary samples_drop = {
+        // 空
+        {"",-1},
+
+        {"samples_bugs_backpack.carry_item","Bugs"},
+        {"samples_cyborgs_backpack.carry_item","Cyborgs"},
+        {"samples_illuminate_backpack.carry_item","Illuminate"},
+
+		// 占位的
+        {"666",-1}
+};
+//掉落物品替换
+dictionary replace_drop = {
+        // 空
+        {"",-1},
+
+        {"Bugs","samples_bugs.carry_item"},
+        {"Cyborgs","samples_cyborgs.carry_item"},
+        {"Illuminate","samples_illuminate.carry_item"},
+
+		// 占位的
+        {"666",-1}
+};
 
 class itemdrop_event : Tracker {
 	protected Metagame@ m_metagame;
@@ -209,10 +233,20 @@ class itemdrop_event : Tracker {
 	protected void handleItemDropEvent(const XmlElement@ event) {
 		string itemKey = event.getStringAttribute("item_key");
 		//todo:在此处判断在字典里存在然后选择是否返回，减少下列查询消耗。
+		if(	string(resupply_key[itemKey]) == "" 			&&
+			string(resupply_getitem_key[itemKey]) == "" 	&&
+			string(resupply_cost[itemKey]) == "" 			&&
+			string(banned_backpack_item[itemKey]) == "" 	&&
+			string(banned_special_item[itemKey]) == "" 		&&
+			string(highlight_item_drop[itemKey]) == "" 		&&
+			string(protected_trade[itemKey]) == "" 			&&
+			string(samples_drop[itemKey]) == "" 			&&
+			string(replace_drop[itemKey]) == "" 			
+		){return;}
 
 		string position = event.getStringAttribute("position");
 		int characterId = event.getIntAttribute("character_id");
-		int itemClass = event.getIntAttribute("item_class");
+		//int itemClass = event.getIntAttribute("item_class");
 		int playerId = event.getIntAttribute("player_id");
 		int containerId = event.getIntAttribute("target_container_type_id");
 		const XmlElement@ owner = getCharacterInfo(m_metagame, characterId);
@@ -226,7 +260,7 @@ class itemdrop_event : Tracker {
         _log("handleItemDropEvent:itemKey= " + itemKey);
         _log("handleItemDropEvent:position= " + position);
         _log("handleItemDropEvent:characterId= " + characterId);
-        _log("handleItemDropEvent:itemClass= " + itemClass);
+        //_log("handleItemDropEvent:itemClass= " + itemClass);
         _log("handleItemDropEvent:playerId= " + playerId);
         _log("handleItemDropEvent:containerId= " + containerId);
 
@@ -305,10 +339,10 @@ class itemdrop_event : Tracker {
 			int senderId = event.getIntAttribute("player_id");
 			_log("sender ="+sender);
 			_log("senderId ="+senderId);
-			if (m_metagame.getAdminManager().isAdmin(sender, senderId)){
-				_log("Is admin, exit ban item");
-				return;
-			}//管理可以存
+			// if (m_metagame.getAdminManager().isAdmin(sender, senderId)){
+			// 	_log("Is admin, exit ban item");
+			// 	return;
+			// }//管理可以存
 
 			if(itemKey == "hd_resupply_pack_mk3.carry_item"){//补给背包特殊机制 上限携带一个包，同时发4个子弹箱
 				_log("hd_resupply_pack_mk3 detect");
@@ -317,7 +351,7 @@ class itemdrop_event : Tracker {
 				deleteItemInBackpack(m_metagame,characterId,itemtype,ExKey);
 				deleteItemInBackpack(m_metagame,characterId,itemtype,ExKey);
 				addItemInBackpack(m_metagame,characterId,itemtype,ExKey);
-				ExKey="hd_ammo_supply_box_ex.projectile";
+				ExKey="hd_ammo_supply_box_ex.projectile";//发4个特殊的子弹箱在背包(不会被检测删除)
 				string ExType="projectile";
 				addItemInBackpack(m_metagame,characterId,ExType,ExKey);
 				addItemInBackpack(m_metagame,characterId,ExType,ExKey);
@@ -330,7 +364,7 @@ class itemdrop_event : Tracker {
 				_log("itemtype "+itemtype);
 				deleteItemInBackpack(m_metagame,characterId,itemtype,itemKey);
 				_log("success delete supply item itemKey: "+ itemKey);
-				if(itemKey == "hd_ammo_supply_box.projectile" && false){//留给补给兵的特殊机制
+				if(itemKey == "hd_ammo_supply_box.projectile" && false){//留给补给兵的特殊机制(自补给+背包额外子弹箱)
 					string ExKey="hd_ammo_supply_box_ex.projectile";
 					addItemInBackpack(m_metagame,characterId,itemtype,ExKey);
 				}
@@ -338,7 +372,7 @@ class itemdrop_event : Tracker {
 			if(containerId == 0 ){//地面
 				_log("containerId = gound");
 				if(itemKey == "hd_ammo_supply_box_ex.projectile"){//补给背包特殊机制
-					string ExKey="hd_ammo_supply_box_ex_2.projectile";
+					string ExKey="hd_ammo_supply_box_ex_2.projectile";//替换为特殊子弹箱（拾取后会补给并被删除)
 					Vector3 t_pos = stringToVector3(position);
 					spawnStaticItem(m_metagame,ExKey,t_pos,characterId,factionId,"projectile");
 				}
@@ -362,5 +396,22 @@ class itemdrop_event : Tracker {
 			}
 		}
 
+		if(string(samples_drop[itemKey]) != ""){//替换阵营样本掉落
+			//if(playerId != -1){return;}//排除玩家
+			if( containerId == 0 ) {//掉落
+				_log("samples_drop item drop, replace sample");
+				string itemtype = "carry_item";
+				const XmlElement@ fact_info = getFactionInfo(m_metagame,factionId);
+				string fact_name = fact_info.getStringAttribute("name");
+				_log("FactioName = " + fact_name);
+				_log("TargetNmae = " + string(samples_drop[itemKey]));
+				if(fact_name != string(samples_drop[itemKey])){//确认是否为同阵营样本
+					string ExKey = string(replace_drop[fact_name]);
+					_log("ExKey = " + ExKey);
+					Vector3 t_pos = stringToVector3(position);
+					spawnStaticItem(m_metagame,ExKey,t_pos,characterId,factionId,itemtype);
+				}
+			}
+		}
     }
 }

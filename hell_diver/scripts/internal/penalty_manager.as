@@ -188,7 +188,7 @@ class PenaltyManager : Tracker {
 	protected float m_autosaveUpdateTimer = 0.0;
 
 	// --------------------------------------------
-	PenaltyManager(Metagame@ metagame, int teamKillsToStartPenalty = 3, float penaltyTime = 1800.0, float forgiveTeamKillTime = 900.0, float persistentPenaltyTime = 1209600.0f) {
+	PenaltyManager(Metagame@ metagame, int teamKillsToStartPenalty = 3, float penaltyTime = 1200.0, float forgiveTeamKillTime = 900.0, float persistentPenaltyTime = 1209600.0f) {
 		@m_metagame = @metagame;
 		m_teamKillsToStartPenalty = teamKillsToStartPenalty;
 		m_penaltyTime = penaltyTime;
@@ -199,7 +199,7 @@ class PenaltyManager : Tracker {
 		_log("persistent penalty time " + persistentPenaltyTime);
 		_log("persistent penalty time factor " + persistentPenaltyTimeFactor);
 
-		@m_trackedPlayers = PenalizedPlayerBucket(this, "tracked", 5.0);
+		@m_trackedPlayers = PenalizedPlayerBucket(this, "tracked", 8.0);
 		@m_persistentTrackedPlayers = PenalizedPlayerBucket(this, "persistent", 60, persistentPenaltyTimeFactor);
 
 		load();

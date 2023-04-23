@@ -46,9 +46,9 @@ character_leave_request_mode="friendly"
 	destroy_on_top_hit_time="5"/> 
 
 	0<turret offset="0 0 1" weapon_key="ex_apocalypse_tank_gl.weapon" weapon_offset="-0.3 2.0 5.5" 
-	weapon_recoil="0" physics_recoil="0.3" max_rotation_step="0.00005"  />
+	weapon_recoil="0" physics_recoil="0.1" max_rotation_step="0.0002"  />
 	1<turret offset="0 0 1" weapon_key="ex_apocalypse_tank_gl.weapon" weapon_offset="0.3 2.0 5.5" 
-	weapon_recoil="0" physics_recoil="0.3" max_rotation_step="0.00005"  />
+	weapon_recoil="0" physics_recoil="0.1" max_rotation_step="0.0002"  />
 	2<turret offset="0 0 0" weapon_key="auxiliary_car_fire_aim.weapon" weapon_offset="0 1.5 3" 
 	weapon_recoil="0" physics_recoil="0" max_rotation_step="0.00005"  />
 	<!-- 车体\炮台 -->

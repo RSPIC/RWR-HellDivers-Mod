@@ -1,0 +1,1087 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carry_items>
+    <!-- 40层甲，无击倒，加速，免疫普通子弹 -->
+    <carry_item key="hd_banzai_0" name="40/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_1" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+        <hud_icon filename="helldivers_vest_100.png" />
+        <capacity value="0" source="rank" source_value="0.0" />
+        <capacity value="1" source="rank" source_value="0.0" />
+        <inventory encumbrance="50" price="0" />
+
+        <model mesh_filename="camo_vest.xml" />
+
+        <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+        <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
+
+        <modifier class="speed" value="2" /> 
+        <modifier class="hit_success_probability" value="-1.0" /><!--首层保护-->
+        <modifier class="detectability" value="-0.15" />
+    </carry_item>
+	
+	<carry_item key="hd_banzai_1" name="39/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_2" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+        <hud_icon filename="helldivers_vest_100.png" />
+        <capacity value="0" source="rank" source_value="0.0" />
+        <capacity value="1" source="rank" source_value="0.0" />
+        <inventory encumbrance="50" price="0" />
+
+        <model mesh_filename="camo_vest.xml" />
+
+        <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+        <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
+         <modifier class="speed" value="2" /> 
+        <modifier class="hit_success_probability" value="-1.0" />
+        <modifier class="detectability" value="-0.1" />
+  </carry_item>
+	
+      <carry_item key="hd_banzai_2" name="38/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_3" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+        <hud_icon filename="helldivers_vest_90.png" />
+        <capacity value="0" source="rank" source_value="0.0" />
+        <capacity value="1" source="rank" source_value="0.0" />
+        <inventory encumbrance="50" price="0" />
+
+        <model mesh_filename="camo_vest.xml" />
+
+        <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+        <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
+         <modifier class="speed" value="2" /> 
+        <modifier class="hit_success_probability" value="-1.0" />
+        <modifier class="detectability" value="-0.1" />
+    </carry_item>
+	
+	<carry_item key="hd_banzai_3" name="37/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_4" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+        <hud_icon filename="helldivers_vest_80.png" />
+        <capacity value="0" source="rank" source_value="0.0" />
+        <capacity value="1" source="rank" source_value="0.0" />
+        <inventory encumbrance="50" price="0" />
+
+        <model mesh_filename="camo_vest.xml" />
+
+        <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+        <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
+         <modifier class="speed" value="2" /> 
+        <modifier class="hit_success_probability" value="-1.0" />
+        <modifier class="detectability" value="-0.1" />
+  </carry_item>
+
+	<carry_item key="hd_banzai_4" name="36/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_5" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+        <hud_icon filename="helldivers_vest_80.png" />
+        <capacity value="0" source="rank" source_value="0.0" />
+        <capacity value="1" source="rank" source_value="0.0" />
+        <inventory encumbrance="50" price="0" />
+
+        <model mesh_filename="camo_vest.xml" />
+
+        <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+        <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
+         <modifier class="speed" value="2" /> 
+        <modifier class="hit_success_probability" value="-1.0" />
+        <modifier class="detectability" value="-0.1" />
+  </carry_item>
+
+	<carry_item key="hd_banzai_5" name="35/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_6" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+        <hud_icon filename="helldivers_vest_70.png" />
+        <capacity value="0" source="rank" source_value="0.0" />
+        <capacity value="1" source="rank" source_value="0.0" />
+        <inventory encumbrance="50" price="0" />
+
+        <model mesh_filename="camo_vest.xml" />
+
+        <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+        <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
+         <modifier class="speed" value="2" /> 
+        <modifier class="hit_success_probability" value="-1.0" />
+        <modifier class="detectability" value="-0.1" />
+  </carry_item>
+
+	<carry_item key="hd_banzai_6" name="34/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_7" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+        <hud_icon filename="helldivers_vest_70.png" />
+        <capacity value="0" source="rank" source_value="0.0" />
+        <capacity value="1" source="rank" source_value="0.0" />
+        <inventory encumbrance="50" price="0" />
+
+        <model mesh_filename="camo_vest.xml" />
+
+        <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+        <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
+         <modifier class="speed" value="2" /> 
+        <modifier class="hit_success_probability" value="-1.0" />
+        <modifier class="detectability" value="-0.1" />
+  </carry_item>
+	<carry_item key="hd_banzai_7" name="33/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_8" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+        <hud_icon filename="helldivers_vest_60.png" />
+        <capacity value="0" source="rank" source_value="0.0" />
+        <capacity value="1" source="rank" source_value="0.0" />
+        <inventory encumbrance="50" price="0" />
+
+        <model mesh_filename="camo_vest.xml" />
+
+        <commonness value="0" in_stock="0" can_respawn_with="0" />
+	
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+        <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
+         <modifier class="speed" value="2" /> 
+        <modifier class="hit_success_probability" value="-1.0" />
+        <modifier class="detectability" value="-0.1" />
+  </carry_item>
+	
+	<carry_item key="hd_banzai_8" name="32/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_9" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+        <hud_icon filename="helldivers_vest_60.png" />
+        <capacity value="0" source="rank" source_value="0.0" />
+        <capacity value="1" source="rank" source_value="0.0" />
+        <inventory encumbrance="50" price="0" />
+
+        <model mesh_filename="camo_vest.xml" />
+
+        <commonness value="0" in_stock="0" can_respawn_with="0" />
+	
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+        <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
+         <modifier class="speed" value="2" /> 
+        <modifier class="hit_success_probability" value="-1.0" />
+        <modifier class="detectability" value="-0.1" />
+  </carry_item>
+	
+      <carry_item key="hd_banzai_9" name="31/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_10" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+            <hud_icon filename="helldivers_vest_50.png" />
+            <capacity value="0" source="rank" source_value="0.0" />
+            <capacity value="1" source="rank" source_value="0.0" />
+            <inventory encumbrance="50" price="0" />
+
+            <model mesh_filename="camo_vest.xml" />
+
+            <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+            <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+            <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+            <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
+            <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+            <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+            <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+            <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+            <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+            <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+                  min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+            <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
+            <modifier class="speed" value="2" /> 
+            <modifier class="hit_success_probability" value="-1.0" />
+            <modifier class="detectability" value="-0.1" />
+            </carry_item>
+      <carry_item key="hd_banzai_10" name="30/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_11" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+            <hud_icon filename="helldivers_vest_50.png" />
+            <capacity value="0" source="rank" source_value="0.0" />
+            <capacity value="1" source="rank" source_value="0.0" />
+            <inventory encumbrance="50" price="0" />
+
+            <model mesh_filename="camo_vest.xml" />
+
+            <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+            <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+            <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+            <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
+            <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+            <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+            <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+            <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+            <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+            <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+                  min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+            <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
+            <modifier class="speed" value="2" /> 
+            <modifier class="hit_success_probability" value="-1.0" />
+            <modifier class="detectability" value="-0.1" />
+            </carry_item>
+      <carry_item key="hd_banzai_11" name="29/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_12" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+            <hud_icon filename="helldivers_vest_50.png" />
+            <capacity value="0" source="rank" source_value="0.0" />
+            <capacity value="1" source="rank" source_value="0.0" />
+            <inventory encumbrance="50" price="0" />
+
+            <model mesh_filename="camo_vest.xml" />
+
+            <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+            <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+            <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+            <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
+            <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+            <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+            <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+            <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+            <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+            <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+                  min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+            <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
+            <modifier class="speed" value="2" /> 
+            <modifier class="hit_success_probability" value="-1.0" />
+            <modifier class="detectability" value="-0.1" />
+            </carry_item>
+      <carry_item key="hd_banzai_12" name="28/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_13" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+            <hud_icon filename="helldivers_vest_50.png" />
+            <capacity value="0" source="rank" source_value="0.0" />
+            <capacity value="1" source="rank" source_value="0.0" />
+            <inventory encumbrance="50" price="0" />
+
+            <model mesh_filename="camo_vest.xml" />
+
+            <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+            <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+            <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+            <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
+            <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+            <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+            <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+            <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+            <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+            <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+                  min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+            <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
+            <modifier class="speed" value="2" /> 
+            <modifier class="hit_success_probability" value="-1.0" />
+            <modifier class="detectability" value="-0.1" />
+            </carry_item>
+      <carry_item key="hd_banzai_13" name="27/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_14" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+            <hud_icon filename="helldivers_vest_50.png" />
+            <capacity value="0" source="rank" source_value="0.0" />
+            <capacity value="1" source="rank" source_value="0.0" />
+            <inventory encumbrance="50" price="0" />
+
+            <model mesh_filename="camo_vest.xml" />
+
+            <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+            <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+            <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+            <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
+            <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+            <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+            <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+            <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+            <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+            <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+                  min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+            <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
+            <modifier class="speed" value="2" /> 
+            <modifier class="hit_success_probability" value="-1.0" />
+            <modifier class="detectability" value="-0.1" />
+            </carry_item>
+      <carry_item key="hd_banzai_14" name="26/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_15" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+            <hud_icon filename="helldivers_vest_50.png" />
+            <capacity value="0" source="rank" source_value="0.0" />
+            <capacity value="1" source="rank" source_value="0.0" />
+            <inventory encumbrance="50" price="0" />
+
+            <model mesh_filename="camo_vest.xml" />
+
+            <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+            <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+            <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+            <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
+            <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+            <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+            <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+            <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+            <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+            <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+                  min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+            <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
+            <modifier class="speed" value="2" /> 
+            <modifier class="hit_success_probability" value="-1.0" />
+            <modifier class="detectability" value="-0.1" />
+            </carry_item>
+      <carry_item key="hd_banzai_15" name="25/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_16" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+            <hud_icon filename="helldivers_vest_50.png" />
+            <capacity value="0" source="rank" source_value="0.0" />
+            <capacity value="1" source="rank" source_value="0.0" />
+            <inventory encumbrance="50" price="0" />
+
+            <model mesh_filename="camo_vest.xml" />
+
+            <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+            <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+            <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+            <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
+            <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+            <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+            <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+            <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+            <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+            <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+                  min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+            <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
+            <modifier class="speed" value="2" /> 
+            <modifier class="hit_success_probability" value="-1.0" />
+            <modifier class="detectability" value="-0.1" />
+            </carry_item>
+      <carry_item key="hd_banzai_16" name="24/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_17" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+            <hud_icon filename="helldivers_vest_50.png" />
+            <capacity value="0" source="rank" source_value="0.0" />
+            <capacity value="1" source="rank" source_value="0.0" />
+            <inventory encumbrance="50" price="0" />
+
+            <model mesh_filename="camo_vest.xml" />
+
+            <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+            <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+            <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+            <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
+            <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+            <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+            <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+            <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+            <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+            <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+                  min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+            <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
+            <modifier class="speed" value="2" /> 
+            <modifier class="hit_success_probability" value="-1.0" />
+            <modifier class="detectability" value="-0.1" />
+            </carry_item>
+      <carry_item key="hd_banzai_17" name="23/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_18" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+            <hud_icon filename="helldivers_vest_50.png" />
+            <capacity value="0" source="rank" source_value="0.0" />
+            <capacity value="1" source="rank" source_value="0.0" />
+            <inventory encumbrance="50" price="0" />
+
+            <model mesh_filename="camo_vest.xml" />
+
+            <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+            <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+            <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+            <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
+            <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+            <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+            <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+            <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+            <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+            <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+                  min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+            <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
+            <modifier class="speed" value="2" /> 
+            <modifier class="hit_success_probability" value="-1.0" />
+            <modifier class="detectability" value="-0.1" />
+            </carry_item>
+      <carry_item key="hd_banzai_18" name="22/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_19" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+            <hud_icon filename="helldivers_vest_50.png" />
+            <capacity value="0" source="rank" source_value="0.0" />
+            <capacity value="1" source="rank" source_value="0.0" />
+            <inventory encumbrance="50" price="0" />
+
+            <model mesh_filename="camo_vest.xml" />
+
+            <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+            <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+            <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+            <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
+            <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+            <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+            <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+            <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+            <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+            <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+                  min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+            <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
+            <modifier class="speed" value="2" /> 
+            <modifier class="hit_success_probability" value="-1.0" />
+            <modifier class="detectability" value="-0.1" />
+            </carry_item>
+      <carry_item key="hd_banzai_19" name="21/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_20" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+            <hud_icon filename="helldivers_vest_50.png" />
+            <capacity value="0" source="rank" source_value="0.0" />
+            <capacity value="1" source="rank" source_value="0.0" />
+            <inventory encumbrance="50" price="0" />
+
+            <model mesh_filename="camo_vest.xml" />
+
+            <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+            <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+            <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+            <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
+            <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+            <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+            <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+            <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+            <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+            <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+                  min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+            <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
+            <modifier class="speed" value="2" /> 
+            <modifier class="hit_success_probability" value="-1.0" />
+            <modifier class="detectability" value="-0.1" />
+            </carry_item>
+
+
+<!-- ++++++++++++++++++++++++++++++++++++++轰炸伤害在半血前均能击倒++++++++++++++++++++++++++++++++++++++-->
+
+	<carry_item key="hd_banzai_20" name="20/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_21" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+        <hud_icon filename="helldivers_vest_50.png" />
+        <capacity value="0" source="rank" source_value="0.0" />
+        <capacity value="1" source="rank" source_value="0.0" />
+        <inventory encumbrance="50" price="0" />
+
+        <model mesh_filename="camo_vest.xml" />
+
+        <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+        <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
+         <modifier class="speed" value="2" /> 
+        <modifier class="hit_success_probability" value="-1.0" />
+        <modifier class="detectability" value="-0.1" />
+  </carry_item>
+	<carry_item key="hd_banzai_21" name="19/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_22" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+        <hud_icon filename="helldivers_vest_40.png" />
+        <capacity value="0" source="rank" source_value="0.0" />
+        <capacity value="1" source="rank" source_value="0.0" />
+        <inventory encumbrance="50" price="0" />
+
+        <model mesh_filename="camo_vest.xml" />
+
+        <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+        <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
+         <modifier class="speed" value="2" /> 
+        <modifier class="hit_success_probability" value="-1.0" />
+        <modifier class="detectability" value="-0.1" />
+  </carry_item>
+	<carry_item key="hd_banzai_22" name="18/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_23" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+        <hud_icon filename="helldivers_vest_40.png" />
+        <capacity value="0" source="rank" source_value="0.0" />
+        <capacity value="1" source="rank" source_value="0.0" />
+        <inventory encumbrance="50" price="0" />
+
+        <model mesh_filename="camo_vest.xml" />
+
+        <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+        <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
+         <modifier class="speed" value="2" /> 
+        <modifier class="hit_success_probability" value="-1.0" />
+        <modifier class="detectability" value="-0.1" />
+  </carry_item>
+	<carry_item key="hd_banzai_23" name="17/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_24" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+        <hud_icon filename="helldivers_vest_40.png" />
+        <capacity value="0" source="rank" source_value="0.0" />
+        <capacity value="1" source="rank" source_value="0.0" />
+        <inventory encumbrance="50" price="0" />
+
+        <model mesh_filename="camo_vest.xml" />
+
+        <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+        <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
+         <modifier class="speed" value="2" /> 
+        <modifier class="hit_success_probability" value="-1.0" />
+        <modifier class="detectability" value="-0.1" />
+  </carry_item>
+	<carry_item key="hd_banzai_24" name="16/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_25" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+        <hud_icon filename="helldivers_vest_30.png" />
+        <capacity value="0" source="rank" source_value="0.0" />
+        <capacity value="1" source="rank" source_value="0.0" />
+        <inventory encumbrance="50" price="0" />
+
+        <model mesh_filename="camo_vest.xml" />
+
+        <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+        <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
+         <modifier class="speed" value="2" /> 
+        <modifier class="hit_success_probability" value="-1.0" />
+        <modifier class="detectability" value="-0.1" />
+  </carry_item>
+	<carry_item key="hd_banzai_25" name="15/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_26" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+        <hud_icon filename="helldivers_vest_30.png" />
+        <capacity value="0" source="rank" source_value="0.0" />
+        <capacity value="1" source="rank" source_value="0.0" />
+        <inventory encumbrance="50" price="0" />
+
+        <model mesh_filename="camo_vest.xml" />
+
+        <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+        <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
+         <modifier class="speed" value="2" /> 
+        <modifier class="hit_success_probability" value="-1.0" />
+        <modifier class="detectability" value="-0.1" />
+  </carry_item>
+	<carry_item key="hd_banzai_26" name="14/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_27" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+        <hud_icon filename="helldivers_vest_30.png" />
+        <capacity value="0" source="rank" source_value="0.0" />
+        <capacity value="1" source="rank" source_value="0.0" />
+        <inventory encumbrance="50" price="0" />
+
+        <model mesh_filename="camo_vest.xml" />
+
+        <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+        <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
+         <modifier class="speed" value="2" /> 
+        <modifier class="hit_success_probability" value="-1.0" />
+        <modifier class="detectability" value="-0.1" />
+  </carry_item>
+	<carry_item key="hd_banzai_27" name="13/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_28" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+        <hud_icon filename="helldivers_vest_30.png" />
+        <capacity value="0" source="rank" source_value="0.0" />
+        <capacity value="1" source="rank" source_value="0.0" />
+        <inventory encumbrance="50" price="0" />
+
+        <model mesh_filename="camo_vest.xml" />
+
+        <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+        <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
+         <modifier class="speed" value="2" /> 
+        <modifier class="hit_success_probability" value="-1.0" />
+        <modifier class="detectability" value="-0.1" />
+  </carry_item>
+	<carry_item key="hd_banzai_28" name="12/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_29" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+        <hud_icon filename="helldivers_vest_30.png" />
+        <capacity value="0" source="rank" source_value="0.0" />
+        <capacity value="1" source="rank" source_value="0.0" />
+        <inventory encumbrance="50" price="0" />
+
+        <model mesh_filename="camo_vest.xml" />
+
+        <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+        <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
+         <modifier class="speed" value="2" /> 
+        <modifier class="hit_success_probability" value="-1.0" />
+        <modifier class="detectability" value="-0.1" />
+  </carry_item>
+	<carry_item key="hd_banzai_29" name="11/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_30" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+        <hud_icon filename="helldivers_vest_30.png" />
+        <capacity value="0" source="rank" source_value="0.0" />
+        <capacity value="1" source="rank" source_value="0.0" />
+        <inventory encumbrance="50" price="0" />
+
+        <model mesh_filename="camo_vest.xml" />
+
+        <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+        <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
+         <modifier class="speed" value="2" /> 
+        <modifier class="hit_success_probability" value="-1.0" />
+        <modifier class="detectability" value="-0.1" />
+  </carry_item>
+	<carry_item key="hd_banzai_30" name="10/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_31" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+        <hud_icon filename="helldivers_vest_30.png" />
+        <capacity value="0" source="rank" source_value="0.0" />
+        <capacity value="1" source="rank" source_value="0.0" />
+        <inventory encumbrance="50" price="0" />
+
+        <model mesh_filename="camo_vest.xml" />
+
+        <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+        <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
+         <modifier class="speed" value="2" /> 
+        <modifier class="hit_success_probability" value="-1.0" />
+        <modifier class="detectability" value="-0.1" />
+  </carry_item>
+
+  <!-- +++++++++++++++++++++++++++++++++击倒层+++++++++++++++++++++++++++++++++++++++++++++ -->
+	<carry_item key="hd_banzai_31" name="9/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_32" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+        <hud_icon filename="helldivers_vest_30.png" />
+        <capacity value="0" source="rank" source_value="0.0" />
+        <capacity value="1" source="rank" source_value="0.0" />
+        <inventory encumbrance="50" price="0" />
+
+        <model mesh_filename="camo_vest.xml" />
+
+        <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="none" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+        <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
+         <modifier class="speed" value="2" /> 
+        <modifier class="hit_success_probability" value="-1.0" />
+        <modifier class="detectability" value="-0.1" />
+  </carry_item>
+	<carry_item key="hd_banzai_32" name="8/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_33" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+        <hud_icon filename="helldivers_vest_20.png" />
+        <capacity value="0" source="rank" source_value="0.0" />
+        <capacity value="1" source="rank" source_value="0.0" />
+        <inventory encumbrance="50" price="0" />
+
+        <model mesh_filename="camo_vest.xml" />
+
+        <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="none" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+        <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
+         <modifier class="speed" value="2" /> 
+        <modifier class="hit_success_probability" value="-1.0" />
+        <modifier class="detectability" value="-0.1" />
+  </carry_item>
+	<carry_item key="hd_banzai_33" name="7/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_34" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+        <hud_icon filename="helldivers_vest_20.png" />
+        <capacity value="0" source="rank" source_value="0.0" />
+        <capacity value="1" source="rank" source_value="0.0" />
+        <inventory encumbrance="50" price="0" />
+
+        <model mesh_filename="camo_vest.xml" />
+
+        <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="none" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+        <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
+         <modifier class="speed" value="2" /> 
+        <modifier class="hit_success_probability" value="-1.0" />
+        <modifier class="detectability" value="-0.1" />
+  </carry_item>
+	<carry_item key="hd_banzai_34" name="6/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_35" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+        <hud_icon filename="helldivers_vest_10.png" />
+        <capacity value="0" source="rank" source_value="0.0" />
+        <capacity value="1" source="rank" source_value="0.0" />
+        <inventory encumbrance="50" price="0" />
+
+        <model mesh_filename="camo_vest.xml" />
+
+        <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="none" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+        <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
+         <modifier class="speed" value="2" /> 
+        <modifier class="hit_success_probability" value="-1.0" />
+        <modifier class="detectability" value="-0.1" />
+  </carry_item>
+	<carry_item key="hd_banzai_35" name="5/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_36" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+        <hud_icon filename="helldivers_vest_10.png" />
+        <capacity value="0" source="rank" source_value="0.0" />
+        <capacity value="1" source="rank" source_value="0.0" />
+        <inventory encumbrance="50" price="0" />
+
+        <model mesh_filename="camo_vest.xml" />
+
+        <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="none" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+        <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
+         <modifier class="speed" value="2" /> 
+        <modifier class="hit_success_probability" value="-1.0" />
+        <modifier class="detectability" value="-0.1" />
+  </carry_item>
+	<carry_item key="hd_banzai_36" name="4/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_37" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+        <hud_icon filename="helldivers_vest_broken.png" />
+        <capacity value="0" source="rank" source_value="0.0" />
+        <capacity value="1" source="rank" source_value="0.0" />
+        <inventory encumbrance="50" price="0" />
+
+        <model mesh_filename="camo_vest.xml" />
+
+        <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="none" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+        <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
+         <modifier class="speed" value="2" /> 
+        <modifier class="hit_success_probability" value="-1.0" />
+        <modifier class="detectability" value="-0.1" />
+  </carry_item>
+	<carry_item key="hd_banzai_37" name="3/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_38" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+        <hud_icon filename="helldivers_vest_broken.png" />
+        <capacity value="0" source="rank" source_value="0.0" />
+        <capacity value="1" source="rank" source_value="0.0" />
+        <inventory encumbrance="50" price="0" />
+
+        <model mesh_filename="camo_vest.xml" />
+
+        <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="none" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+        <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
+         <modifier class="speed" value="2" /> 
+        <modifier class="hit_success_probability" value="-1.0" />
+        <modifier class="detectability" value="-0.1" />
+  </carry_item>
+	<carry_item key="hd_banzai_38" name="2/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_39" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+        <hud_icon filename="helldivers_vest_broken.png" />
+        <capacity value="0" source="rank" source_value="0.0" />
+        <capacity value="1" source="rank" source_value="0.0" />
+        <inventory encumbrance="50" price="0" />
+
+        <model mesh_filename="camo_vest.xml" />
+
+        <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="none" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+        <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
+         <modifier class="speed" value="2" /> 
+        <modifier class="hit_success_probability" value="-1.0" />
+        <modifier class="detectability" value="-0.1" />
+  </carry_item>
+	<carry_item key="hd_banzai_39" name="1/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_40" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+        <hud_icon filename="helldivers_vest_broken.png" />
+        <capacity value="0" source="rank" source_value="0.0" />
+        <capacity value="1" source="rank" source_value="0.0" />
+        <inventory encumbrance="50" price="0" />
+
+        <model mesh_filename="camo_vest.xml" />
+
+        <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="none" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+        <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
+         <modifier class="speed" value="2" /> 
+        <modifier class="hit_success_probability" value="-1.0" />
+        <modifier class="detectability" value="-0.1" />
+  </carry_item>
+
+	<carry_item key="hd_banzai_40" name="0/40 Charge Vest" slot="1"  time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+        <hud_icon filename="helldivers_vest_broken.png" />
+        <capacity value="0" source="rank" source_value="0.0" />
+        <capacity value="1" source="rank" source_value="0.0" />
+        <inventory encumbrance="50" price="0" />
+
+        <model mesh_filename="camo_vest.xml" />
+
+        <commonness value="0" in_stock="0" can_respawn_with="0" />
+
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="death" consumes_item="0"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="death" consumes_item="0"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="death" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="death" consumes_item="0"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="death" consumes_item="0" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="death" consumes_item="0"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="0"/><!--重穿-->
+        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+        <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
+        <modifier class="hit_success_probability" value="-1.0" />
+        <modifier class="detectability" value="-0.1" />
+  </carry_item>
+	
+     
+</carry_items>

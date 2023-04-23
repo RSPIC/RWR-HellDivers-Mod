@@ -10,6 +10,7 @@
 
 //Author: RST 
 //共享样本和合成研究点
+//_ex后缀为玩家实际使用的物品
 	// --------------------------------------------
 dictionary sample_key = {
 
@@ -57,8 +58,9 @@ class share_samples : Tracker {
 
 	// --------------------------------------------
 	protected void handleItemDropEvent(const XmlElement@ event) {
-		string EventKeyGet = event.getStringAttribute("key");
 		string itemKey = event.getStringAttribute("item_key");
+		if(string(sample_key[itemKey]) == ""){return;}
+
 		string position = event.getStringAttribute("position");
 		int characterId = event.getIntAttribute("character_id");
 		int itemClass = event.getIntAttribute("item_class");
@@ -72,7 +74,6 @@ class share_samples : Tracker {
 
 		//containerId = 0(地面) 1(军械库) 2（背包） 3（仓库）
 		//itemClass = 0(主、副武器) 1（投掷物） 3（护甲、战利品）
-        _log("handle_share_samples:EventKeyGet= " + EventKeyGet);
         _log("handle_share_samples:itemKey= " + itemKey);
         _log("handle_share_samples:position= " + position);
         _log("handle_share_samples:characterId= " + characterId);

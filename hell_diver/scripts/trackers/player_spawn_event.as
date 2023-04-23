@@ -82,9 +82,27 @@ class player_spawn : Tracker {
 	}	
 	protected void handleChatEvent(const XmlElement@ event) {
 		string message = event.getStringAttribute("message");
-		if(message != "/call"){return;}
-		int pid = event.getIntAttribute("player_id");
-		callHelp(m_metagame,pid);
+		if(message == "/call"){
+			int pid = event.getIntAttribute("player_id");
+			callHelp(m_metagame,pid);
+		}
+		if(message == "/call 1"){
+			int pid = event.getIntAttribute("player_id");
+			defensiveHelp(m_metagame,pid);
+		}
+		if(message == "/call 2"){
+			int pid = event.getIntAttribute("player_id");
+			specialHelp(m_metagame,pid);
+		}
+		if(message == "/call 3"){
+			int pid = event.getIntAttribute("player_id");
+			supplyHelp(m_metagame,pid);
+		}
+		if(message == "/call 4"){
+			int pid = event.getIntAttribute("player_id");
+			weaponHelp(m_metagame,pid);
+		}
+		
 	}
 
 	protected void callHelp(Metagame@ m_metagame,int pid){
@@ -106,5 +124,51 @@ class player_spawn : Tracker {
 		notify(m_metagame, "Stratagems - ETA-17", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
 		notify(m_metagame, "Stratagems - REC-6 Demolisher", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
 		notify(m_metagame, "Stratagems - Rep-80", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+	}
+	protected void defensiveHelp(Metagame@ m_metagame,int pid){
+		notify(m_metagame, "Stratagems Useable", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Defensive - AT Mine", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Defensive - Stun Mine", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Defensive - AT-47", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Defensive - A/MG-11", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Defensive - A/RX-34", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Defensive - A/GL-8", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Defensive - A/AC-6 Tesla", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+	}
+	protected void specialHelp(Metagame@ m_metagame,int pid){
+		notify(m_metagame, "Stratagems Useable", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Special - NUX-223 Hellbomb", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Special - Hellpod", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Special - Mental Detector", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Special - SOS", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+	}
+	protected void weaponHelp(Metagame@ m_metagame,int pid){
+		notify(m_metagame, "Stratagems Useable", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Supply - M5 APC", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Supply - M5-32 HAV", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Supply - TD-110 Bastion", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Supply - MC-109 Motor", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Supply - EXO-44", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Supply - EXO-48", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Supply - EXO-51", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Supply - Resupply Pack", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+	}
+	protected void supplyHelp(Metagame@ m_metagame,int pid){
+		notify(m_metagame, "Stratagems Useable", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Weapons - MG-94 Machine Gun", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Weapons - MGX-42", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Weapons - LAS-98 Laser Cannon", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Weapons - AC-22 Dum-Dum", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Weapons - Obliterator Grenade Launcher", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Weapons - M-25 Rumbler", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Weapons - FLAM-40 Incinerator", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Weapons - TOX-13 Avenger", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Weapons - RL-112 Recoilless Rifle", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Weapons - EAT-17", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Weapons - MLS-4X Commando", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Weapons - AD-334 Guard Dog", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Weapons - AD-289 Angel", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Weapons - Rep-80", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		notify(m_metagame, "Weapons - REC-6 Demolisher", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
 	}
 }
