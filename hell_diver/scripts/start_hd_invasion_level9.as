@@ -15,7 +15,7 @@ void main(dictionary@ inputData) {
         settings.m_factionChoice = 0;                  // 0(acg) 1(helldivers), 2(cyborgs), 3(illuminate), 4(bugs), 
         settings.m_playerAiCompensationFactor = 1.0;   // was 1.1  (1.75)
 
-        settings.m_fellowCapacityFactor = 1.0;
+        settings.m_fellowCapacityFactor = 1.2;
         settings.m_fellowAiAccuracyFactor = 1.0;
         settings.m_enemyCapacityFactor = 1.5;
         settings.m_enemyAiAccuracyFactor = 0.94;
@@ -46,7 +46,7 @@ void main(dictionary@ inputData) {
 	mode='COOP'
         persistency='forever'
 	comment='Running with HellDivers Mod.  QQ：498520233 1.5倍xp'
-	max_players='8'>
+	max_players='16'>
 	<client_faction id='0' />
 </command>
 """;

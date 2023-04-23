@@ -46,7 +46,7 @@ void main(dictionary@ inputData) {
 	mode='COOP'
         persistency='forever'
 	comment='Running with HellDivers Mod.  QQ：498520233 1倍XP'
-	max_players='8'>
+	max_players='10'>
 	<client_faction id='0' />
 </command>
 """;

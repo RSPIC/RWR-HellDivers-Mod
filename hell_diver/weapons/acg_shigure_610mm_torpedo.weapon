@@ -19,6 +19,7 @@ key="acg_shigure_610mm_torpedo.weapon"
     can_shoot_crouching="1" 
 	can_shoot_prone="0"	
     suppressed="0" 
+	reload_one_at_a_time="1"
 	class="4" 
     name="4 x 610 mm Quadruple Torpedo Tubes [Shigure]" 
 	sight_range_modifier="2.0" 
@@ -41,7 +42,7 @@ key="acg_shigure_610mm_torpedo.weapon"
 	<animation key="cycle"  animation_key="kantai_aim" /> <!--拉栓动作，武器固定脱手-->
     <animation state_key="recoil"   animation_key="kantai_recoil" />
     <animation state_key="recoil" stance_key="over_wall" animation_key="kantai_recoil" />
-    <animation state_key="reload"   animation_key="p2_peacemaker_reloading_upgraded" />
+    <animation state_key="reload"   animation_key="T_reloading_tow_at_a_time_5s" />
     <animation state_key="hold" animation_key="hold_casual, pistol" />
 	<animation state_key="hold_on_wall"  animation_key="kantai_aim" />
     <animation state_key="still_against_wall" animation_key="kantai_aim" />
@@ -63,7 +64,7 @@ key="acg_shigure_610mm_torpedo.weapon"
 	<sound key="cooldown" fileref="acg_shigure_atk_1.wav" pitch_variety="0.0" volume="2.2"/>
 	<sound key="cooldown" fileref="acg_shigure_atk_1.wav" pitch_variety="0.0" volume="2.2"/>
 
-    <sound key="effect" fileref="" pitch_variety="0.03" volume="1.0" /> 
+    <sound key="effect" fileref="torpedo_onload.wav" pitch_variety="0.0" volume="2.0" /> 
     <sound key="fire" fileref="torpedo_launch.wav" pitch_variety="0.03" volume="2.5" />
     <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.0" volume="1.0" />
 	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="0.5" />

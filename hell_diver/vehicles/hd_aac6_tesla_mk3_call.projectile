@@ -29,7 +29,7 @@ player_death_drop_owner_lock_time="0"
 
 	<capacity value="0" source="rank" source_value="0" />
     <capacity value="1" source="rank" source_value="0" />
-    <inventory encumbrance="1" price="3000.0" />
+    <inventory encumbrance="1" buy_price="3000.0" sell_price="0" />
 
 
     <!-- 防御设备 -->
