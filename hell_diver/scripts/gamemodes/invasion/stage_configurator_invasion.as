@@ -207,7 +207,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 	addStage(setupStage1());          // map2 #1
     addStage(setupStage9());          // map9 #2
     //addStage(setupStage16());         // map8_2 #3
-    addStage(setupStage4());          // map7 #4
+    //addStage(setupStage4());          // map7 #4 g该图加载和退出有问题
 	//addStage(setupStage15());         // map1_2 #5
     //addStage(setupStage12());         // map14 #6 脚本不运行
     addStage(setupStage10());         // map10 #7

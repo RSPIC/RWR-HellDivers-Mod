@@ -140,7 +140,7 @@ funcdef void FUNC_PTR(string p_name);
 
 // --------------------------------------------
 class scheduled_task : Tracker {
-	protected GameMode@ m_metagame;
+	protected GameModeInvasion@ m_metagame;
 	protected float m_maxIdleTime;
 	protected float m_timer;
 	protected PlayerInfoBucket allplayers;
@@ -151,11 +151,17 @@ class scheduled_task : Tracker {
 	protected array<FUNC_PTR@> m_timer_list_func; //函数指针
 	protected array<int> m_counter; //计数器
 	protected array<int> m_counter_cd; //计数器
+	protected bool debug_mode;
 
 	// --------------------------------------------
-	scheduled_task(GameMode@ metagame, float time = 4.0) {
+	scheduled_task(GameModeInvasion@ metagame, float time = 4.0) {
 		@m_metagame = @metagame;
-
+		const UserSettings@ settings = m_metagame.getUserSettings();
+        debug_mode = settings.m_debug_mode;
+		if(debug_mode){
+			_log("debug_mode is on ");
+		}
+        
 		m_maxIdleTime = time;
 		m_timer = m_maxIdleTime;
 		m_counter.insertLast(0); //天使无人机mk3计数
@@ -390,6 +396,13 @@ class scheduled_task : Tracker {
 	}
 
 	// ----------------------------------------------------
+	protected void handleMatchEndEvent(const XmlElement@ event) {
+		const XmlElement@ winCondition = event.getFirstElementByTagName("win_condition");
+		if (winCondition !is null) {
+			//factionId = winCondition.getIntAttribute("faction_id");
+		}
+	}
+	// ----------------------------------------------------
 	protected void handlePlayerDisconnectEvent(const XmlElement@ event) {
 		const XmlElement@ player = event.getFirstElementByTagName("player");
 		if (player !is null) {
@@ -412,7 +425,9 @@ class scheduled_task : Tracker {
 				allplayers.addPlayer(name,player);
 			}
 			int pid = player.getIntAttribute("player_id");
-			gameHelp(m_metagame,pid);
+			if(!debug_mode){
+				gameHelp(m_metagame,pid);
+			}
 		}		
 	}
 	// ----------------------------------------------------

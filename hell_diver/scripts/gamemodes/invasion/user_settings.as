@@ -57,6 +57,7 @@ class UserSettings {
 	float m_spawnTimeAtMaxPlayers = 1.0;  // was 2.0 (1.82)
 
 	int m_server_difficulty_level = 0;	//max 15
+	bool m_debug_mode = false;
 	array<string> m_overlayPaths;
 
 	// --------------------------------------------
@@ -137,6 +138,10 @@ class UserSettings {
 			if(settings.hasAttribute("server_difficulty_level")){
 				m_server_difficulty_level = settings.getIntAttribute("server_difficulty_level");
 			}
+
+			if(settings.hasAttribute("debug_mode")){
+				m_debug_mode = settings.getBoolAttribute("debug_mode");
+			}
 		}
 	}
 
@@ -169,6 +174,7 @@ class UserSettings {
 		settings.setIntAttribute("continue_as_new_campaign", m_continueAsNewCampaign ? 1 : 0);
 
 		settings.setIntAttribute("server_difficulty_level", m_server_difficulty_level);
+		settings.setBoolAttribute("debug_mode", m_debug_mode);
 
 		return settings;
 	}

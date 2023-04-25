@@ -30,6 +30,7 @@ void main(dictionary@ inputData) {
         settings.m_fellowDisableEnemySpawnpointsSoldierCountOffset = 1;
 
         settings.m_server_difficulty_level = 9;
+        settings.m_debug_mode = true;
 
         _setupLog("dev_verbose");
 
