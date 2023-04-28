@@ -18,7 +18,11 @@
 	<sound key="footstep" fileref="static.wav" volume="0.0" />	
 	<sound key="footstep" fileref="static.wav" volume="0.0" />
 	<sound key="footstep" fileref="static.wav" volume="0.0" />
-	
+
+	<parameter class="being_stunned_steer_amount" value="0.25" />
+	<parameter class="walking_steer_amount" value="0.32" />	
+	<parameter class="running_steer_amount" value="0.32" />	
+
 	<parameter class="throwing_self_over_initial_bounce" value="0.07" /><!--翻越时初始弹起高度-->
 	<parameter class="throwing_self_over_steer_amount" value="0.30" /><!--翻越中向前位移速度-->
 	<parameter class="throwing_self_over_lift_up" value="0.0" />
@@ -26,7 +30,7 @@
 	<parameter class="jumping_up_bounce" value="0.05" />
 	<parameter class="use_walk_animation_instead_of_run_speed_threshold" value="0.6" />
 
-	<parameter class="can_use_vehicles" value="0" /> 
+	<parameter class="can_use_vehicles" value="1" /> 
 
 	<parameter class="ending_climbing_ladder_initial_bounce" value="0.05" />
 	<parameter class="ending_climbing_up_ladder_steer_amount" value="0.15" />
@@ -69,11 +73,11 @@
 	<!-- <animation key="surrender" target_key="stuned_big_unit" /> -->
 	<!-- <animation key="stabbing" target_key="hit ground_big_unit" /> -->
 	<!-- <animation key="throwing, upside" target_key="still_big_unit" /> -->
-	<!-- <animation key="change weapon out" target_key="still_big_unit" /> -->
-	<!-- <animation key="change weapon in" target_key="still_big_unit" /> -->
-	<!-- <animation key="change weapon out, reversed" target_key="still_big_unit" /> -->
-	<!-- <animation key="change weapon in, reversed" target_key="still_big_unit" /> -->
-	<!-- <animation key="change weapon in, single hand carry" target_key="still_big_unit" /> -->
+	<animation key="change weapon out" target_key="cyborgs_berserker_still" />
+	<animation key="change weapon in" target_key="cyborgs_berserker_still" />
+	<animation key="change weapon out, reversed" target_key="cyborgs_berserker_still" />
+	<animation key="change weapon in, reversed" target_key="cyborgs_berserker_still" />
+	<animation key="change weapon in, single hand carry" target_key="cyborgs_berserker_still" />
 	<!-- <animation key="celebrating" target_key="jumping, large mecha" /> -->
 	<!-- <animation key="celebrating, shooting" target_key="jumping, large mecha" /> -->
 	<!-- <animation key="swimming still" target_key="swim still_big_unit" /> -->

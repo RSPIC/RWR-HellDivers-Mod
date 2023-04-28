@@ -1,0 +1,212 @@
+author: RST
+2022.3.13
+未经授权不可复用、修改使用、仅用于helldiver mod
+音符特效
+
+particle_system music_musical_note_1
+{
+	quota 2000
+	emit_emitter_quota 2000
+	material musical_note_1
+	particle_width 2
+	particle_height 2
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+    accurate_facing on
+	emitter Box
+	{
+		angle 10
+		colour_range_start 1 1 1 1
+		colour_range_end 0 0 0 0
+		direction 0 1 0
+		emission_rate 3
+		position 0 2 0
+		velocity_min 3
+		velocity_max 4
+		time_to_live_min 0.5
+		time_to_live_max 1
+		duration 0
+        width 3
+		height 3
+		depth 2
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.7
+		colour1 1 1 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system music_musical_note_2 : music_musical_note_1
+{
+    material musical_note_2
+}
+particle_system music_musical_note_3 : music_musical_note_1
+{
+    material musical_note_3
+}
+particle_system music_musical_note_4 : music_musical_note_1
+{
+    material musical_note_4
+}
+particle_system music_musical_note_5 : music_musical_note_1
+{
+    material musical_note_5
+}
+particle_system music_musical_note_6 : music_musical_note_1
+{
+    material musical_note_6
+}
+particle_system music_musical_note_7 : music_musical_note_1
+{
+    material musical_note_7
+}
+particle_system music_musical_note_8 : music_musical_note_1
+{
+    material musical_note_8
+}
+particle_system music_musical_note_9 : music_musical_note_1
+{
+    material musical_note_9
+}
+particle_system music_musical_note_10 : music_musical_note_1
+{
+    material musical_note_10
+}
+particle_system music_musical_note_11 : music_musical_note_1
+{
+    material musical_note_11
+}
+
+particle_system music_musical_note_anim_1 : music_musical_note_1
+{
+    material musical_note_anim_1
+    emitter Box
+	{
+        emission_rate 3
+    }
+}
+
+
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material musical_note_1 : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture musical_note_1.png 	
+}}}}
+material musical_note_2 : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture musical_note_2.png 	
+}}}}
+material musical_note_3 : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture musical_note_3.png 	
+}}}}
+material musical_note_4 : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture musical_note_4.png 	
+}}}}
+material musical_note_5 : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture musical_note_5.png 	
+}}}}
+material musical_note_6 : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture musical_note_6.png 	
+}}}}
+material musical_note_7 : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture musical_note_7.png 	
+}}}}
+material musical_note_8 : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture musical_note_8.png 	
+}}}}
+material musical_note_9 : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture musical_note_9.png 	
+}}}}
+material musical_note_10 : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture musical_note_10.png 	
+}}}}
+material musical_note_11 : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture musical_note_11.png 	
+}}}}
+material musical_note_anim_1 : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            anim_texture musical_note.png 12 10
+}}}}

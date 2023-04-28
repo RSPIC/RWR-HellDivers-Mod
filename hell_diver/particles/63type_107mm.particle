@@ -15,24 +15,25 @@ particle_system rocket_launcher_mil
 	billboard_type perpendicular_common
 	common_direction 0 1 0
 	common_up_vector 0 0 1
+	iteration_interval 0.01
 	emitter Point{
 		angle 0
 		colour 0 0 0 0
 		direction 0 1 0
-		emission_rate 3
+		emission_rate 10
 		position 0 1 0
 		velocity 0.0001
-		time_to_live 1
+		time_to_live 0.2
 		duration 0
 	}
 	affector ColourInterpolator
 	{
 		time0 0
-		colour0 1 1 1 0.3
-		time1 0.7
-		colour1 1 1 1 0.3
+		colour0 1 1 1 0
+		time1 0.5
+		colour1 1 1 1 0.5
 		time2 1
-		colour2 0 0 0 0
+		colour2 1 1 1 0
 	}
 	affector Rotator{
 		rotation_speed_range_start	0
@@ -110,11 +111,11 @@ particle_system rocket_launcher_muzzle_spread_smoke
     affector Scaler{
 		rate 0.4
 	}
-        affector ColourFader2{
+    affector ColourFader2{
 		red1	-0
 		green1  -0
 		blue1	-0
-		alpha1	0
+		alpha1	 0
 		red2	 0
 		green2  0
 		blue2	0
@@ -173,7 +174,7 @@ particle_system rocket_launcher_trial_smoke
 		emission_rate 80
 		position 0 0 0
 		velocity 0.3
-		time_to_live 0.8
+		time_to_live 1.6
 		duration 4
 	}
 	affector ColourInterpolator

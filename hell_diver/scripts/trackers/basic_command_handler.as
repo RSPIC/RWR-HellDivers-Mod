@@ -6,6 +6,8 @@
 #include "query_helpers.as"
 #include "generic_call_task.as"
 #include "task_sequencer.as"
+#include "all_task.as"
+#include "all_parameter.as"
 
 // --------------------------------------------
 class BasicCommandHandler : Tracker {
@@ -45,7 +47,8 @@ class BasicCommandHandler : Tracker {
 			m_metagame.getComms().send(command);	
 		}
 	}
-		
+
+	
 	// ----------------------------------------------------
 	protected void handleChatEvent(const XmlElement@ event) {
 		// player_id
@@ -54,7 +57,7 @@ class BasicCommandHandler : Tracker {
 		// global
 
 		string message = event.getStringAttribute("message");
-		
+	
 		// 建立字符串索引
 		array<string> word = MassageBreakUp(message, " ", -1);
 		int ws = word.size();
@@ -64,33 +67,52 @@ class BasicCommandHandler : Tracker {
 		int senderId = event.getIntAttribute("player_id");
 	
 		// for the most part, chat events aren't commands, so check that first 
-		// 会剔除不是斜杠开头的字符串，同时检测是否符合helldiver呼叫代码
-		if (!startsWith(message, "/")) {
-			if ( ws == 1 ){
-			const XmlElement@ info = getPlayerInfo(m_metagame, senderId);
-			int cid = info.getIntAttribute("character_id");
-			// 呼叫支援指令字典
-			array<string> fixcommand = {'adsw','adws','wsdaw','ddd','sswd'};
-			// 获取物品键值字典
-			array<string> itemkey = {'at_mine_mk3','airdropped_stun_mine_mk3','hd_hellpod','hd_vindicator_dive_bomb','hd_resupply'};
-			// 直接替换手雷栏
-			for(uint a = 0; a != fixcommand.size(); a++){
-				if(message == fixcommand[a]){
-					string c = 
-					"<command class='update_inventory' character_id='" + cid + "' container_type_id='4' add='1'>" + 
-						"<item class='" + "projectile" + "' key='" + itemkey[a] + ".projectile" +"' />" +
-					"</command>";
-					m_metagame.getComms().send(c);
-
-					dictionary dict = {{"TagName", "command"},{"class", "chat"},{"text", "Call Receive!"}};
-					m_metagame.getComms().send(XmlElement(dict));
-					break;
-					}
-				} 
-			}
+	
+		
+		// admin and moderator only from here on
+		if (!m_metagame.getAdminManager().isAdmin(sender, senderId) && !m_metagame.getModeratorManager().isModerator(sender, senderId)) {
 			return;
 		}
 		
+		if (checkCommand(message, "modtest")) {
+			dictionary dict = {{"TagName", "command"},{"class", "chat"},{"text", "mod or admin"}};
+			m_metagame.getComms().send(XmlElement(dict));
+		} else if (checkCommand(message, "sidinfo")) {
+			handleSidInfo(message,senderId);
+		} else if (checkCommand(message, "kick_id")) {
+			handleKick(message, senderId, true);
+		} else if (checkCommand(message, "kick")) {
+			handleKick(message, senderId);
+		} else if (checkCommand(message, "0_win")) {
+			m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='1' />");
+			m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='2' />");
+			m_metagame.getComms().send("<command class='set_match_status' win='1' faction_id='0' />");
+		} else if (checkCommand(message, "1_win")) {
+			m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='0' />");
+			m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='2' />");
+			m_metagame.getComms().send("<command class='set_match_status' win='1' faction_id='1' />");
+		} else if (checkCommand(message, "1_lose")) {
+			m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='1' />");
+		} else if (checkCommand(message, "1_own")) {
+			int factionId = 1;
+			array<const XmlElement@> bases = getBases(m_metagame);
+			for (uint i = 0; i < bases.size(); ++i) {
+				const XmlElement@ base = bases[i];
+				if (base.getIntAttribute("owner_id") != factionId) {
+					XmlElement command("command");
+					command.setStringAttribute("class", "update_base");
+					command.setIntAttribute("base_id", base.getIntAttribute("id"));
+					command.setIntAttribute("owner_id", factionId);
+					m_metagame.getComms().send(command);
+				}
+			}
+		}
+		
+		// admin only from here on ------------------------------------------------------------------------
+		if (!m_metagame.getAdminManager().isAdmin(sender, senderId)) {
+			return;
+		}
+
 		// 任意数值rp xp获取
 		if (matchString(word[0], "grp")) {
 			const XmlElement@ info = getPlayerInfo(m_metagame, senderId);
@@ -119,6 +141,25 @@ class BasicCommandHandler : Tracker {
 					"</command>";
 				m_metagame.getComms().send(command);
 				}
+			}
+		}else if(matchString(word[0], "promote")){
+			const XmlElement@ info = getPlayerInfo(m_metagame, senderId);
+			if (info !is null) {
+				int id = info.getIntAttribute("character_id");
+				float xpnum = 1000;
+				float rpnum = 1000000;
+				string command =
+					"<command class='xp_reward'" +
+					"	character_id='" + id + "'" +
+					"	reward='"+ xpnum +"'>" + // multiplier affected..
+					"</command>";
+				m_metagame.getComms().send(command);
+				command =
+					"<command class='rp_reward'" +
+					"	character_id='" + id + "'" +
+					"	reward='"+ rpnum +"'>" + // multiplier affected..
+					"</command>";
+				m_metagame.getComms().send(command);
 			}
 		}
 		
@@ -161,11 +202,13 @@ class BasicCommandHandler : Tracker {
 		}
 		// 生成各类物品
 		if (matchString(word[0], "v")) {
+			if (ws == 1){return;}
 			string key = word[1];
 			if (ws == 2){
 			spawnInstanceNearPlayer(senderId, key + ".vehicle", "vehicle");
 			} 
 		} else if (matchString(word[0], "w")) {
+			if (ws == 1){return;}
 			string key = word[1];
 			if (ws == 2){
 			spawnInstanceAtbackpack(senderId, key + ".weapon", "weapon");
@@ -173,56 +216,24 @@ class BasicCommandHandler : Tracker {
 			spawnInstanceAtbackpack(senderId, key + ".weapon", "weapon", word[2]);
 			}
 		}else if (matchString(word[0], "p")) {
+			if (ws == 1){return;}
 			string key = word[1];
 			if (ws == 2){
 			spawnInstanceAtbackpack(senderId, key + ".projectile", "projectile");
 			} else if (ws == 3){
 			spawnInstanceAtbackpack(senderId, key + ".projectile", "projectile", word[2]);
 			}
-		}
-		
-		// admin and moderator only from here on
-		if (!m_metagame.getAdminManager().isAdmin(sender, senderId) && !m_metagame.getModeratorManager().isModerator(sender, senderId)) {
-			return;
-		}
-		if (checkCommand(message, "modtest")) {
-			dictionary dict = {{"TagName", "command"},{"class", "chat"},{"text", "mod or admin"}};
-			m_metagame.getComms().send(XmlElement(dict));
-		} else if (checkCommand(message, "sidinfo")) {
-			handleSidInfo(message,senderId);
-		} else if (checkCommand(message, "kick_id")) {
-			handleKick(message, senderId, true);
-		} else if (checkCommand(message, "kick")) {
-			handleKick(message, senderId);
-		} else if (checkCommand(message, "0_win")) {
-			m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='1' />");
-			m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='2' />");
-			m_metagame.getComms().send("<command class='set_match_status' win='1' faction_id='0' />");
-		} else if (checkCommand(message, "1_win")) {
-			m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='0' />");
-			m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='2' />");
-			m_metagame.getComms().send("<command class='set_match_status' win='1' faction_id='1' />");
-		} else if (checkCommand(message, "1_lose")) {
-			m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='1' />");
-		} else if (checkCommand(message, "1_own")) {
-			int factionId = 1;
-			array<const XmlElement@> bases = getBases(m_metagame);
-			for (uint i = 0; i < bases.size(); ++i) {
-				const XmlElement@ base = bases[i];
-				if (base.getIntAttribute("owner_id") != factionId) {
-					XmlElement command("command");
-					command.setStringAttribute("class", "update_base");
-					command.setIntAttribute("base_id", base.getIntAttribute("id"));
-					command.setIntAttribute("owner_id", factionId);
-					m_metagame.getComms().send(command);
-				}
+		}else if (matchString(word[0], "c")) {
+			if (ws == 1){return;}
+			string key = word[1];
+			if (ws == 2){
+			spawnInstanceAtbackpack(senderId, key + ".carry_item", "carry_item");
+			} else if (ws == 3){
+			spawnInstanceAtbackpack(senderId, key + ".carry_item", "carry_item", word[2]);
 			}
 		}
+		// ---------------------------------------------------------------------------------------------------------------
 		
-		// admin only from here on
-		if (!m_metagame.getAdminManager().isAdmin(sender, senderId)) {
-			return;
-		}
 		// it's a silent server command, check which one
 		if (checkCommand(message, "test")) {
 			dictionary dict = {{"TagName", "command"},{"class", "chat"},{"text", "testing yourself!"}};
@@ -368,6 +379,26 @@ class BasicCommandHandler : Tracker {
 				" position='" + pos.toString() + "'" +
 				" character_id='" + playerInfo.getIntAttribute("character_id") + "'/>";				
 			m_metagame.getComms().send(c);
+		
+		} else if(checkCommand(message, "spawncall")) {
+			const XmlElement@ playerInfo = getPlayerInfo(m_metagame, senderId);
+			const XmlElement@ characterInfo = getCharacterInfo(m_metagame, playerInfo.getIntAttribute("character_id"));
+			Vector3 pos1 = stringToVector3(characterInfo.getStringAttribute("position"));	
+			Vector3 pos2 = stringToVector3(playerInfo.getStringAttribute("aim_target"));	
+			pos2=pos2.add(Vector3(0,1,0));
+			Event_call_helldiver_superearth_airstrike@ new_task = Event_call_helldiver_superearth_airstrike(m_metagame,2.0,playerInfo.getIntAttribute("character_id"),playerInfo.getIntAttribute("faction_id"),pos1,pos2,"hd_superearth_airstrike_1");
+			TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+			tasker.add(new_task);
+		} else if (checkCommand(message, "cyborgs")) {
+			spawnInstanceNearPlayer(senderId, "Warlord", "soldier", 1);                               
+			spawnInstanceNearPlayer(senderId, "Hulk", "soldier", 1);                               
+			spawnInstanceNearPlayer(senderId, "Butcher", "soldier", 1);                               
+			spawnInstanceNearPlayer(senderId, "Warlord", "soldier", 1);                               
+			spawnInstanceNearPlayer(senderId, "Hulk", "soldier", 1);                               
+			spawnInstanceNearPlayer(senderId, "Butcher", "soldier", 1);                               
+			spawnInstanceNearPlayer(senderId, "Warlord", "soldier", 1);                               
+			spawnInstanceNearPlayer(senderId, "Hulk", "soldier", 1);                               
+			spawnInstanceNearPlayer(senderId, "Butcher", "soldier", 1);    
 		}
 	}
 

@@ -2,6 +2,7 @@
 <vehicle name="cyborgs_spawn_berserker_model" 
 key="cyborgs_spawn_berserker_model.vehicle" 
 map_view_atlas_index="-1" 
+time_to_live_unsteerable="3"
 time_to_live="2.5" 
 should_be_destroyed="0" 
 max_character_collision_speed_on_normal="40"
@@ -67,9 +68,9 @@ max_character_collision_speed="999"
     <!-- <result class="spawn" instance_class="projectile" instance_key="cyborgs_dropping_sound.projectile" min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" /> -->
 	<!-- </event> -->
 	<!--走脚本,有延迟,音效特效整合在生成当中方便匹配--> 
-  	<!-- <event>
+  	<event>
 		<trigger class="destroy" />  	
     <result class="spawn" instance_class="projectile" instance_key="cyborgs_spawn_berserker.projectile" min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
-	</event> -->
+	</event>
 
 </vehicle>

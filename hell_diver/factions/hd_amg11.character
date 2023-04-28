@@ -112,12 +112,12 @@
 	<animation state_key="hold_casual"  animation_key="amg11_still" />
 	<animation key="still against wall" target_key="amg11_still" />
 	<animation key="still, heavy weapon" target_key="amg11_still" />
-	<animation key="walking" target_key="amg11_still" />
-	<animation key="walking backwards" target_key="amg11_still" />
-	<animation key="running" target_key="amg11_still" />
+	<animation key="walking" target_key="amg11_still_loop" />
+	<animation key="walking backwards" target_key="amg11_still_loop" />
+	<animation key="running" target_key="amg11_still_loop" />
 	<animation key="crouch still" target_key="amg11_still" />
-	<animation key="crouching forwards" target_key="amg11_still" />
-	<animation key="crouching backwards" target_key="amg11_still" />
+	<animation key="crouching forwards" target_key="amg11_still_loop" />
+	<animation key="crouching backwards" target_key="amg11_still_loop" />
 	<animation key="prone" target_key="amg11_still" />
 	<animation key="prone, moving forwards" target_key="amg11_still" />
 	<animation key="going prone" target_key="amg11_still_0.5s" />

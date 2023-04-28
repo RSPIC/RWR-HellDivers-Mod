@@ -58,7 +58,7 @@ radius="1"
 	
 	<!--武器模型和HUD-->
 	<weak_hand_hold offset="0" /> <!--模型X轴偏移-->
-	<model filename="none_weapon.xml" /> 
+	<model filename="" /> 
     <model mesh_filename="" texture_filename="" /> <!--调用mesh模型-->
     <addon_model filename="" /> <!--附加模型，固定绑骨到肩膀-->
     <hud_icon filename="cyborgs_chat_icon.png" /> <!--临时贴图-->
@@ -126,18 +126,6 @@ radius="1"
 	<!--枪口特效-->
 	<effect class="muzzle" ref="" lighting="0"/> 
 	
-	<!--雷鸣弹道
-    <ballistics 
-    curve_height="16" 
-    near_far_distance="0" 
-    speed_estimation_near="0" 
-    speed_estimation_far="58" 
-    max_speed="58" 
-    randomness="0" 
-    tweak_factor="1.48" /> 
-	该弹道适配弹头参数：pulldon_in_air="48"
-	-->
-	
 	<!--姿态精度-->
     <stance state_key="running" accuracy="1" /> 
     <stance state_key="walking" accuracy="1" />
@@ -157,11 +145,5 @@ radius="1"
     <shield offset="0 0 0" extent="0 0 0" usable_for_cover="0"/>  
 	
 </weapon>
-<!--尾迹文件编写参考，不可衔接于武器文件后
-<trail key="hd_mg94_trail" material="hd_mg94_trail"
-trail_length="50"
-intensity_range="0.35 0.5"
-initial_width_range="0.2 0.3"
-width_change="1.5"/>
--->
+
 

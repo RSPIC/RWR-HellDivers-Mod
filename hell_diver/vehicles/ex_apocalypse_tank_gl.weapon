@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapon 
+file="_hd_vehicle_cannon.base"
+key="ex_apocalypse_tank_gl.weapon" 
+> 
+	<tag name="anti_tank" />
+
+    <specification 	
+    slot="1" 	
+    retrigger_time="3" 
+    accuracy_factor="1" 
+	spread_range="0.6"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="1" 
+    sustained_fire_diminish_rate="0.32" 
+    magazine_size="-1" 
+	reload_one_at_a_time="1"
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="0"	
+    suppressed="0" 
+	class="0" 
+    name="Apocalypse Tank" 
+	sight_height_offset="3.0" 
+	burst_shots="1" 
+    projectiles_per_shot="1" 
+    projectile_speed="50.0"
+	barrel_offset_3d="0 0 0" 
+	carry_in_two_hands="0" 
+	stab_enabled="1" 
+	stab_range="0" 
+	use_basic_muzzle_smoke_effect="0"
+	/> 
+	<!--30RPM 100m range 50mag-->
+	<!-- mk2 Increases the amount of ammunition to 35 rounds. -->
+	<!-- mk3 Adds a laser sight and improves turn speed. -->
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_vehicle_destroy_damage.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0.0 0.0" />
+
+ 	<sound class="operation" key="fire" fileref="ex_turret_fire.wav" pitch_variety="0.1" volume="0.7"/>
+
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="hd_m5_apc_autocannon.png" /> 
+
+    <commonness value="0" can_respawn_with="0" in_stock="0" /> 
+    <inventory encumbrance="50.0" price="0.0" /> 
+    <weak_hand_hold offset="1" /> 
+
+	<ballistics curve_height="1.0" near_far_distance="0.0" speed_estimation_near="150.0" 
+	speed_estimation_far="150.0" max_speed="150.0" randomness="0.0" tweak_factor="4.8"/> 
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="2" can_be_detected_by_footmen="1" 
+	time_to_live="4" can_be_detected_by_driver="1" can_be_disarmed="0" name="Apocalypse Tank" radius="0.7"> 
+		
+        <result class="spawn" instance_class="projectile" instance_key="ex_apocalypse_tank_gl_damage.projectile" 
+		min_amount="10" max_amount="10" offset="0 0.5 0" position_spread="1.5 0" direction_spread="0.1 0" />
+		<!-- damage 4x20=80 轰炸伤-->
+
+		<!--命中音效-->
+		<sound class="result" key="other" fileref="at_hit_sfx_2.wav" pitch_variety="0.03" volume="1.0" />
+	
+		<trigger class="time" time_to_live="0.4"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+
+		<trail probability="1" key="missile_blue"/>	
+		<model mesh_filename="APFSDS.xml" />
+
+		<effect class="result" key="terrain" ref="ring_spread_smoke_apocalypse_tank" />
+		<effect class="result" key="terrain" ref="vertical_smoke_apocalypse_tank" />
+		<effect class="result" key="terrain" ref="ring_spread_fog_apocalypse_tank" />
+		<effect class="result" key="terrain" ref="flat_spark_thunder_apocalypse_tank_01" />
+		<effect class="result" key="terrain" ref="flat_spark_thunder_apocalypse_tank_02" />
+		<effect class="result" key="terrain" ref="flat_spark_thunder_apocalypse_tank_03" />
+
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<effect class="activated" ref="general_activated_at_smoke_trail"/>
+
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+
+    </projectile>
+	<!--枪口特效-->
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 		
+	<effect class="muzzle" ref="nova_muzzle_fire_smoke" post_processing="1"/>
+	<effect class="muzzle" ref="nova_muzzle_fire_smoke_2" post_processing="1"/>
+	<effect class="muzzle" ref="nova_muzzle_fireball" post_processing="1"/>
+	<effect class="muzzle" ref="nova_muzzle_fireball_side" />
+	<effect class="muzzle" ref="nova_muzzle_fireball_side_2" />
+	<effect class="muzzle" ref="nova_muzzle_fireball_side_3" post_processing="1"/>
+	<effect class="muzzle" ref="nova_muzzle_ambient"/>
+	<effect class="muzzle" ref="nova_muzzle_ambient_ground"/>
+	<effect class="muzzle" ref="nova_muzzle_spark"/>
+
+    <target_factors tag="" distance="1.0" direction="0.0" squad_command="1.0" base_score="0.5" />
+    <target_factors tag="heavy_combat" distance="1.0" direction="0.0" squad_command="1.0" base_score="10.0" />
+    <target_factors tag="apc" distance="1.0" direction="0.0" squad_command="1.0" base_score="10.0" />
+    <target_factors tag="light_combat" distance="1.0" direction="0.0" squad_command="1.0" base_score="6.0" />   
+    <target_factors tag="defensive_at" distance="1.0" direction="0.0" squad_command="1.0" base_score="10.0" />
+    <target_factors tag="tactical" distance="1.0" direction="0.0" squad_command="1.0" base_score="8.0" />  <!-- important non combat player-only vehicles -->  
+    <target_factors tag="bazooka" distance="1.0" direction="0.0" squad_command="1.0" base_score="8.0" />
+    <target_factors tag="anti_tank" distance="1.0" direction="0.0" squad_command="1.0" base_score="8.0" />
+
+</weapon>
+
+
+

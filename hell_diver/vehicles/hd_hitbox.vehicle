@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vehicle name="Hitbox" 
+key="hd_hitbox.vehicle" 
+map_view_atlas_index="-1" 
+time_to_live="0.5" 
+should_be_destroyed="0" 
+max_character_collision_speed_on_normal="9999"
+simulated_damage="5"
+usable_for_cover="0"
+allow_ai_to_use="0"
+ >
+	<tag name="metal_thin" />
+
+	<tire_set offset="0.2 0 +0.2" radius="0.1" />
+	<tire_set offset="0.2 0 -0.2" radius="0.1" />
+	<modifier class="blast_damage" value="-900" />
+
+	<control max_speed="1.0" acceleration="1" max_reverse_speed="1.0" max_rotation="1.0" max_water_depth="4" />
+
+	<physics 
+	max_health="200.0" 
+	mass="10000.0" 
+	blast_push_threshold="1000"
+	blast_damage_threshold="10"
+	extent="10 0.0 10" 
+	offset="0 0 0" 
+	top_offset="0 2.0 0" 
+	collision_model_pos="0 -0.5 0" 
+	collision_model_extent="5.0 4.5 5.0" 
+	collision_response_factor="0"
+	visual_offset="0 0 0" 
+	remove_collision_threshold="10"
+	vehicle_collision_damage_factor="1"
+	friction_offset="10"
+	gravity="-15"
+	destroy_on_top_hit="1"
+	destroy_on_top_hit_time="3"
+	top_hit_tracking_time="0"
+	/> 
+	
+	<sky_diving chute_offset="0 0 0" trigger_height="20" gravity="-80" mesh_filename="" texture_filename="" />
+
+	<turret offset="0 0 0.0" weapon_key="hd_hellpod.weapon" weapon_offset="0.0 -3.55 0.0" weapon_recoil="0.02" physics_recoil="0.0"  max_rotation_step="0.00015" rotation="0" rotation_range="1.92" />
+
+	<rev_sound filename="" low_pitch="0.8" high_pitch="1.0" low_rev="0.0" high_rev="0.3" volume="0.8" />
+
+	<sound key="slide" filename="" />
+	<sound key="squeal" filename="" />
+	<sound key="ignition" filename="" />
+	<sound key="horn" filename="" />  
+	<sound key="hit" filename="" />
+	<sound key="hit" filename="" />
+	<sound key="hit" filename="" />
+	<sound key="destroy" filename="" />  
+	<sound key="destroy" filename="" />  
+
+
+
+</vehicle>

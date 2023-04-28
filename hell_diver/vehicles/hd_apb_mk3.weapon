@@ -8,7 +8,7 @@ key="hd_apb_mk3.weapon"
 on_ground_up="1 0 0" 
 radius="0.3"
 >
-    <tag name="medikit" />
+    <tag name="defensive_equipment" />
     <specification 
     accuracy_factor="1" 
 	spread_range="0.1"
@@ -58,6 +58,6 @@ radius="0.3"
      
     <commonness value="0" can_respawn_with="0" in_stock="1" /> 
     <inventory encumbrance="10" price="0.0" />
-    <modifier class="speed" value="-0.5" />    
+    <modifier class="speed" value="-0.4" />    
 	 
 </weapon>

@@ -25,11 +25,11 @@ radius="1"
     suppressed="0" 
 	class="0" 
     name="ref weapon for test" 
-	sight_range_modifier="2.0" 
+	sight_range_modifier="3.0" 
 	sight_height_offset="1.0" 
 	burst_shots="1" 
     projectiles_per_shot="1" 
-    projectile_speed="120.0"
+    projectile_speed="40.0"
 	barrel_offset="1.0" 
 	carry_in_two_hands="1" 
 	stab_enabled="0" 
@@ -50,8 +50,8 @@ radius="1"
 	
 	<!--武器模型和HUD-->
 	<weak_hand_hold offset="0" /> <!--模型X轴偏移-->
-	<model filename="ref_weapon_model.xml" /> 
-    <model mesh_filename="" texture_filename="" /> <!--调用mesh模型-->
+	<!-- <model filename="ref_weapon_model.xml" />  -->
+    <model mesh_filename="hd_metal_detector.mesh" texture_filename="hd_metal_detector.jpg" /> <!--调用mesh模型-->
     <addon_model filename="" /> <!--附加模型，固定绑骨到肩膀-->
     <hud_icon filename="ref_weapon_hud.png" /> <!--武器为100x200像素，投掷物为110x110-->
 	
@@ -113,7 +113,7 @@ radius="1"
     <inventory encumbrance="1.0" price="0.0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
     
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
-    <projectile file="bullet.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+    <projectile file="bullet.projectile" pulldown_in_air="1" can_be_detected_by_footmen="1" 
 	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0"> 
 	
 		<!--
@@ -139,6 +139,10 @@ radius="1"
 		<effect class="result" key="terrain" ref="" lighting="0"/>
 		<effect class="activated" ref="" />
 		-->
+		<effect class="activated" ref="torpedo_tail_splash" />
+		<effect class="activated" ref="torpedo_tail_splash_2" />
+		<effect class="activated" ref="torpedo_tail_bobble" />
+
 		
 		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
 		<sound class="result" key="terrain" copy="other" />
@@ -162,8 +166,15 @@ radius="1"
     </projectile>
 	
 	<!--枪口特效-->
-	<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
-	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 
+	<!-- <effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/>  -->
+	<!-- <effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/>  -->
+	<effect class="muzzle" ref="ba_crusader_muzzle_ring_center" lighting="0"/> 
+	<effect class="muzzle" ref="ba_crusader_muzzle_light" lighting="0"/> 
+	<effect class="muzzle" ref="ba_crusader_muzzle_smoke" lighting="0" post_processing="1"/> 
+	<effect class="muzzle" ref="ba_crusader_muzzle_ahead_smoke" lighting="0" post_processing="0"/> 
+	<effect class="muzzle" ref="ba_crusader_muzzle_ring" lighting="0"/> 
+	<effect class="muzzle" ref="ba_crusader_muzzle_ring_center" lighting="0"/> 
+	<effect class="muzzle" ref="ba_crusader_muzzle_spark" lighting="0"/> 
 	
 	<!--雷鸣弹道
     <ballistics 

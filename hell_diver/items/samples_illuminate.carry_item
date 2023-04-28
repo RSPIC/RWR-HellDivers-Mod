@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carry_item 
+name="Samples Illuminate" 
+key="samples_illuminate.carry_item"
+file="_samples.base"
+>
+
+    <hud_icon filename="samples_illuminate.png" />
+    <inventory  price="0.0" />
+
+    <model mesh_filename="samples_illuminate.mesh" texture_filename="hd_samples_base.jpg" />
+
+
+    <commonness value="0"  />
+</carry_item>

@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <projectile class="grenade" 
 name="Vindicator Dive Bomb Missile" 
-slot="1" 
+slot="0" 
 pulldown_in_air="80.0" 
 key="hd_vindicator_missile.projectile">
 
-    <result class="blast" radius="4.0" damage="100" decal="1" push="3" character_state="wound" />
+    <result class="blast" radius="5.5" damage="300" decal="1" push="2" character_state="wound" />
     <trigger class="impact" />
     <rotation class="motion" />	
     <model mesh_filename="vindicator_bullet.xml" />
 	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
-	<effect class="result" key="terrain" ref="blast2_smoke_rumbler" lighting="0"/>
+	<effect class="result" key="terrain" ref="hk416_sc_gl_hit_smoke_02" post_processing="0"/>
 	<effect class="result" key="terrain" ref="blast_smoke_Vindicator" lighting="0"/>
 
-	<sound class="result" key="other" fileref="vindicator_boom1.wav" pitch_variety="0.01" volume="1" />
-	<sound class="result" key="other" fileref="vindicator_boom2.wav" pitch_variety="0.01" volume="1"/>
-	<sound class="result" key="other" fileref="vindicator_boom3.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="vindicator_boom1.wav" pitch_variety="0.01" volume="2" />
+	<sound class="result" key="other" fileref="vindicator_boom2.wav" pitch_variety="0.01" volume="2"/>
+	<sound class="result" key="other" fileref="vindicator_boom3.wav" pitch_variety="0.01" volume="2"/>
 		<sound class="result" key="terrain" copy="other" />
 		<sound class="result" key="static_object" copy="other" />
 		<sound class="result" key="vehicle" copy="other" />
 		<sound class="result" key="character" copy="other" />
 		<sound class="result" key="shield" copy="other" />
+
 		<effect class="result" key="other" copy="terrain"/>
 		<effect class="result" key="static_object" copy="terrain" />
 		<effect class="result" key="character" copy="terrain" />

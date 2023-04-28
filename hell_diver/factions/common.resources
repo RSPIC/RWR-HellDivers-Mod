@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources clear_weapons="0" clear_vehicles="0" clear_calls="0">
 	<!-- always load common first; it"s the one that clears the initial weapon resources -->
-	<weapon key="medikit.weapon" />
+
+	<vehicle key="radar_tower.vehicle" />
+	<vehicle key="radio_jammer.vehicle" />
+	<vehicle key="mobile_armory.vehicle" />
+	<vehicle key="jeep.vehicle" />
+	<!-- 固定位反坦克 -->
+	<vehicle key="ex_pak40.vehicle" />
+	<vehicle key="tow.vehicle" />
+	<vehicle key="tow_2.vehicle" />
 	
 
 </resources>

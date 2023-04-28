@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carry_item 
+name="Flandre Scarlet Fumo" 
+key="collect_fumo_flandre_scarlet.carry_item"
+file="_collect_rare.base"
+>
+
+    <hud_icon filename="collect_fumo_flandre_scarlet.png" />
+    <inventory  price="250.0" />
+
+    <model mesh_filename="collect_fumo_flandre_scarlet.mesh" texture_filename="collect_fumo_flandre_scarlet.jpg" />
+
+
+    <commonness value="1"  />
+</carry_item>

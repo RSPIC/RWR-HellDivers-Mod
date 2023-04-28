@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<call 
+name="Humblebee UAV drone" 
+key="humblebee_uav_drone.call"
+radio_view_text="Humblebee UAV drone" 
+      initiation_comment1="Divers request for UAV support!"
+      acknowledge_comment="Copy, UAV is in the air."
+      acknowledge_time="3"
+      launch_comment="UAV is Launching."
+	notify_metagame="1">
+     
+      <round 
+            launch_time="1"
+            spawn_time="10">
+      </round>
+
+    <hud_icon filename="hd_humblebee_uav_drone_mk3.png" />
+    <inventory encumbrance="0.0" price="1000.0" />
+
+</call>

@@ -1,0 +1,48 @@
+particle_system DynFog
+{
+	quota	26
+	material	DynFog
+	particle_width	100
+	particle_height	60
+	cull_each	false
+	renderer	billboard
+	billboard_type	point
+
+	emitter Box
+	{
+		angle	0
+		colour	1 1 1 1
+		colour_range_start	1 1 1 0.2
+		colour_range_end	1 1 1 1
+		direction	1 0 0
+		emission_rate	5
+		position	-140 10 0
+		velocity	0
+		velocity_min	4.7
+		velocity_max	18.0
+		time_to_live	60
+//		time_to_live_min	60
+//		time_to_live_max	90
+		duration	35
+		duration_min	30
+		duration_max	60
+		repeat_delay	1
+		repeat_delay_min	1
+		repeat_delay_max	3
+		width	16
+		height 	200
+		depth	100
+	}
+
+	affector Scaler
+	{
+		rate	0.03
+	}
+
+	affector ColourFader
+	{
+		alpha	-0.01
+	}
+
+
+}

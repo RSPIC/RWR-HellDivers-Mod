@@ -202,27 +202,29 @@ class StageConfiguratorInvasion : StageConfigurator {
 
 	// ------------------------------------------------------------------------------------------------
 	protected void setupNormalStages() {
+	//addStage(setupStageCasake_Bay());         // Casake_Bay #21
     addStage(setupStage7());          // map6 #0
 	addStage(setupStage1());          // map2 #1
     addStage(setupStage9());          // map9 #2
-    addStage(setupStage16());         // map8_2 #3
-    addStage(setupStage4());          // map7 #4
-	addStage(setupStage15());         // map1_2 #5
-    addStage(setupStage12());         // map14 #6
+    //addStage(setupStage16());         // map8_2 #3
+    //addStage(setupStage4());          // map7 #4 g该图加载和退出有问题
+	//addStage(setupStage15());         // map1_2 #5
+    //addStage(setupStage12());         // map14 #6 脚本不运行
     addStage(setupStage10());         // map10 #7
     addStage(setupStage17());         // map17  #8  
     addStage(setupStage18());         // map13_2 #9
     addStage(setupStage3());          // map3 #10
     addStage(setupStage13());         // map16  #11  
-	addStage(setupFinalStage1());     // map11 #12
-    addStage(setupStage8());          // map8 #13
+	//addStage(setupFinalStage1());     // map11 #12 潜行
+    //addStage(setupStage8());          // map8 #13 crash
  	addStage(setupStage14());         // map6_2 #14
     addStage(setupStage2());          // map4 #15
-    addStage(setupStage5());          // map1 #16
+    //addStage(setupStage5());          // map1 #16 信号塔问题
     addStage(setupStage6());          // map5 #17
-	addStage(setupFinalStage2());     // map12 #18
+	//addStage(setupFinalStage2());     // map12 #18 黑猫
 	addStage(setupStage19());         // map18 #19
     addStage(setupStage11());         // map13 #20
+    addStage(setupStageCasake_Bay());         // Casake_Bay #21
 	}
 
 	// --------------------------------------------
@@ -274,7 +276,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 	protected Stage@ setupStage1() {
 		Stage@ stage = createStage();
 		stage.m_mapInfo.m_name = "Keepsake Bay";
-		stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map2";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map2";
 		stage.m_mapInfo.m_id = "map2";
 		
 		stage.m_includeLayers.insertLast("layer1.invasion"); 
@@ -326,7 +328,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 	protected Stage@ setupStage2() {
 		Stage@ stage = createStage();
 		stage.m_mapInfo.m_name = "Fridge Valley";
-		stage.m_mapInfo.m_path = "media/packages/vanilla.winter/maps/map4";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map4";
 		stage.m_mapInfo.m_id = "map4";
 		
 		stage.m_includeLayers.insertLast("layer1.invasion");		
@@ -373,7 +375,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 	protected Stage@ setupStage3() {
 		Stage@ stage = createStage();
 		stage.m_mapInfo.m_name = "Old Fort Creek";
-		stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map3";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map3";
 		stage.m_mapInfo.m_id = "map3";
 
 		stage.m_includeLayers.insertLast("layer1.invasion");
@@ -424,17 +426,15 @@ class StageConfiguratorInvasion : StageConfigurator {
 	protected Stage@ setupStage4() {
 		Stage@ stage = createStage();
 		stage.m_mapInfo.m_name = "Power Junction";
-		stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map7";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map7";
 		stage.m_mapInfo.m_id = "map7";
 
 		stage.m_includeLayers.insertLast("layer1.invasion");        
 
 		stage.addTracker(Overtime(m_metagame, 0));
-//		stage.addTracker(Spawner(m_metagame, 1, Vector3(477,0,520)));
-//		stage.addTracker(Spawner(m_metagame, 1, Vector3(455,0,508)));
-//		stage.addTracker(Spawner(m_metagame, 1, Vector3(446,0,539)));
 
-		stage.m_maxSoldiers = 30 * 3;                                             // was 28*3 in 1.75
+
+		stage.m_maxSoldiers = 80 * 3;                                             // was 28*3 in 1.75
 		stage.m_playerAiCompensation = 4;                                         // was 5 (test4)
     stage.m_playerAiReduction = 2;                                            // was 3 (test4)  
     stage.m_soldierCapacityModel = "constant";                                // was set to default in 1.65
@@ -488,7 +488,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 	protected Stage@ setupStage5() {
 		Stage@ stage = createStage();
 		stage.m_mapInfo.m_name = "Moorland Trenches";
-		stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map1";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map1";
 		stage.m_mapInfo.m_id = "map1";
 
 		stage.m_maxSoldiers = 18 * 14;
@@ -544,7 +544,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 	protected Stage@ setupStage6() {
 		Stage@ stage = createStage();
 		stage.m_mapInfo.m_name = "Bootleg Islands";
-		stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map5";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map5";
 		stage.m_mapInfo.m_id = "map5";
 
 		stage.m_maxSoldiers = 11 * 10;
@@ -590,15 +590,13 @@ class StageConfiguratorInvasion : StageConfigurator {
 	protected Stage@ setupStage7() {
 		Stage@ stage = createStage();
 		stage.m_mapInfo.m_name = "Rattlesnake Crescent";
-		stage.m_mapInfo.m_path = "media/packages/vanilla.desert/maps/map6";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map6";
 		stage.m_mapInfo.m_id = "map6";
 
 		stage.m_maxSoldiers = 15 * 9;                                             // was 17*7 in 1.65
 		stage.m_playerAiCompensation = 5;                                         // was 7 (test4)
         stage.m_playerAiReduction = 2;                                            // was 3 (test2)
     
-    stage.addTracker(Spawner(m_metagame, 1, Vector3(485,5,705), 10, "default_ai"));        // outpost filler (1.70)
-
 		stage.addTracker(PeacefulLastBase(m_metagame, 0));
 		stage.addTracker(CommsCapacityHandler(m_metagame));
 
@@ -642,14 +640,12 @@ class StageConfiguratorInvasion : StageConfigurator {
 	protected Stage@ setupStage8() {
 		Stage@ stage = createStage();
 		stage.m_mapInfo.m_name = "Vigil Island";
-		stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map8";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map8";
 		stage.m_mapInfo.m_id = "map8";
 
 		stage.m_includeLayers.insertLast("layer1.invasion"); 
 
 		stage.addTracker(Overtime(m_metagame, 0));
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(255,0,344),20, "default_ai"));          // added 15 in 1.65, less over_capacity to compensate
-
 
 		stage.m_maxSoldiers = 21 * 5;     // was 33 * 3 in 1.65
 		stage.m_playerAiCompensation = 4;                                         // was 4 (1.81) was 5 (1.86)
@@ -702,7 +698,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 	protected Stage@ setupStage9() {
 		Stage@ stage = createStage();
 		stage.m_mapInfo.m_name = "Black Gold Estuary";
-		stage.m_mapInfo.m_path = "media/packages/vanilla.desert/maps/map9";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map9";
 		stage.m_mapInfo.m_id = "map9";
 
 		stage.m_includeLayers.insertLast("layer1.invasion");
@@ -760,7 +756,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 	protected Stage@ setupStage10() {
 		Stage@ stage = createStage();
 		stage.m_mapInfo.m_name = "Railroad Gap";
-		stage.m_mapInfo.m_path = "media/packages/vanilla.desert/maps/map10";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map10";
 		stage.m_mapInfo.m_id = "map10";
 		
 		stage.m_includeLayers.insertLast("layer1.invasion");
@@ -770,9 +766,6 @@ class StageConfiguratorInvasion : StageConfigurator {
 		stage.m_soldierCapacityVariance = 0.45;                                   // 0.4 in 1.65
 		stage.m_playerAiCompensation = 4;                                     // was 5 (test4)
     stage.m_playerAiReduction = 2;                                            // was 1.5 (test3)
-
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(309,15,524), 10, "default_ai"));        // 1st tow slot filler
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(658,10,374), 10, "default_ai"));        // vulcan slot filler
 
 		stage.addTracker(PeacefulLastBase(m_metagame, 0));
 		stage.addTracker(CommsCapacityHandler(m_metagame));
@@ -817,7 +810,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 	protected Stage@ setupStage11() {
 		Stage@ stage = createStage();
 		stage.m_mapInfo.m_name = "Iron Enclave";
-		stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map13";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map13";
 		stage.m_mapInfo.m_id = "map13";
 
 		stage.m_maxSoldiers = 15 * 15;
@@ -880,7 +873,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 	protected Stage@ setupStage12() {
 		Stage@ stage = createStage();
 		stage.m_mapInfo.m_name = "Misty Heights";
-		stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map14";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map14";
 		stage.m_mapInfo.m_id = "map14";
 		
 		stage.m_includeLayers.insertLast("layer1.invasion");		
@@ -893,10 +886,6 @@ class StageConfiguratorInvasion : StageConfigurator {
     stage.m_playerAiReduction = 2.0;                                            // was 2.5 (test4)
   
 		stage.m_soldierCapacityVariance = 0.45;    // instead of 0.4 in 1.50  
-
-//		stage.addTracker(Spawner(m_metagame, 1, Vector3(309,15,524), 10));        // 1st tow slot filler
-//		stage.addTracker(Spawner(m_metagame, 1, Vector3(658,10,374), 10));        // vulcan slot filler
-
 		stage.addTracker(PeacefulLastBase(m_metagame, 0));    
 		stage.addTracker(CommsCapacityHandler(m_metagame));
 
@@ -949,7 +938,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 	protected Stage@ setupStage13() {
 		Stage@ stage = createStage();
 		stage.m_mapInfo.m_name = "Green Coast";
-		stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map16";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map16";
 		stage.m_mapInfo.m_id = "map16";
 		
 		stage.m_includeLayers.insertLast("layer1.invasion");        
@@ -1017,7 +1006,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 	protected Stage@ setupStage14() {
 		Stage@ stage = createStage();
 		stage.m_mapInfo.m_name = "Rattlesnake Crescent (alt)";
-		stage.m_mapInfo.m_path = "media/packages/vanilla.desert/maps/map6";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map6";
 		stage.m_mapInfo.m_id = "map6_2";
 
 		// we want to exclude some layers here, as the default ones are already used for the other map6
@@ -1088,7 +1077,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 	protected Stage@ setupStage15() {
 		Stage@ stage = createStage();
 		stage.m_mapInfo.m_name = "Moorland Apocalypse";
-		stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map1_2";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map1_2";
 		stage.m_mapInfo.m_id = "map1_2";
         
 		stage.m_includeLayers.insertLast("layer1.invasion");        
@@ -1175,7 +1164,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 	protected Stage@ setupStage16() {
 		Stage@ stage = createStage();
 		stage.m_mapInfo.m_name = "Tropical Blizzard";
-		stage.m_mapInfo.m_path = "media/packages/vanilla.winter/maps/map8_2";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map8_2";
 		stage.m_mapInfo.m_id = "map8_2";
 
     stage.m_fogOffset = 15.0;    
@@ -1188,10 +1177,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 		stage.m_playerAiCompensation = 3;                                      // was 4 (1.86) 
         stage.m_playerAiReduction = 1.5;                                       // was 1.5 (test5)   // was 2 (1.86)     
 		stage.addTracker(PeacefulLastBase(m_metagame, 0));
-		stage.addTracker(CommsCapacityHandler(m_metagame));
-
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(146,10,173), 2, "miniboss"));           // Cargo helicopter filler 
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(146,10,173), 10, "default_ai"));        // Cargo helicopter filler                  
+		stage.addTracker(CommsCapacityHandler(m_metagame));                
 
     stage.m_minRandomCrates = 1; 
     stage.m_maxRandomCrates = 3;
@@ -1239,7 +1225,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 	protected Stage@ setupStage17() {
 		Stage@ stage = createStage();
 		stage.m_mapInfo.m_name = "Gotcha Island";
-		stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map17";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map17";
 		stage.m_mapInfo.m_id = "map17";
 
 		stage.addTracker(PeacefulLastBase(m_metagame, 0));
@@ -1295,7 +1281,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 	protected Stage@ setupStage18() {
 		Stage@ stage = createStage();
 		stage.m_mapInfo.m_name = "Dry Enclave";
-		stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map13_2";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map13_2";
 		stage.m_mapInfo.m_id = "map13_2";
 
 		stage.m_includeLayers.insertLast("layer1.invasion");        
@@ -1305,10 +1291,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 		stage.m_maxSoldiers = 10 * 20;                                             
 		stage.m_playerAiCompensation = 4;                                         
     stage.m_playerAiReduction = 2;                                              
-    stage.m_soldierCapacityModel = "constant";       
-
-	stage.addTracker(Spawner(m_metagame, 3, Vector3(506,0,465), 50, "default"));
-	
+    stage.m_soldierCapacityModel = "constant";       	
     
     stage.m_minRandomCrates = 0; 
     stage.m_maxRandomCrates = 1;
@@ -1400,23 +1383,16 @@ class StageConfiguratorInvasion : StageConfigurator {
 	protected Stage@ setupStage19() {
 		Stage@ stage = createStage();
 		stage.m_mapInfo.m_name = "Warsalt Legacy";
-		stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map18";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map18";
 		stage.m_mapInfo.m_id = "map18";
 		
 		stage.m_includeLayers.insertLast("layer1.invasion");		
-
-//    stage.m_fogOffset = 20.0;    
-//    stage.m_fogRange = 50.0; 
 
 		stage.m_maxSoldiers = 16 * 15;
 		stage.m_playerAiCompensation = 4;                                       
         stage.m_playerAiReduction = 2.0;                                            
   
 		stage.m_soldierCapacityVariance = 0.4;   // was unset, hence 0.30 (1.91)
-
-//		stage.addTracker(Spawner(m_metagame, 1, Vector3(309,15,524), 10));        // 1st tow slot filler
-//		stage.addTracker(Spawner(m_metagame, 1, Vector3(658,10,374), 10));        // vulcan slot filler
-
 		stage.addTracker(PeacefulLastBase(m_metagame, 0));    
 		stage.addTracker(CommsCapacityHandler(m_metagame));
 
@@ -1474,7 +1450,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 	protected Stage@ setupFinalStage1() {
 		Stage@ stage = createStage();
 		stage.m_mapInfo.m_name = "Final mission I"; // warning, default.character has reference to this name, careful if it needs to be changed
-		stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map11";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map11";
 		stage.m_mapInfo.m_id = "map11";
         
 		stage.m_includeLayers.insertLast("layer1.invasion");        
@@ -1491,40 +1467,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 		stage.m_hidden = true;
 
 		stage.addTracker(DestroyVehicleToCaptureBase(m_metagame, "radio_jammer.vehicle", 2));
-		stage.addTracker(DestroyVehicleToCaptureBase(m_metagame, "radar_tower.vehicle", 2));    
-
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(367,0,702), 5, "default_ai"));         // 1st tower
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(396,0,692), 5, "default_ai"));         
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(407,0,720), 5, "default_ai"));
-
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(422,0,539), 5, "default_ai"));         // 1st top tower
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(416,0,500), 5, "default_ai"));
-		
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(507,0,651), 5, "default_ai")); 
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(471,0,672), 5, "default_ai")); 
-
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(482,0,730), 5, "default_ai"));  
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(500,0,550), 5, "default_ai"));     
-		
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(612,0,519), 5, "default_ai"));    
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(641,0,527), 5, "default_ai"));    
-
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(544,0,476), 5, "default_ai")); 
-		
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(603,0,620), 5, "default_ai")); 
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(622,0,601), 5, "default_ai")); 
-		
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(707,0,569), 5, "default_ai")); 
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(705,0,595), 5, "default_ai")); 
-
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(720,0,477), 5, "default_ai"));    
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(688,0,463), 5, "default_ai"));    
-		
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(790,0,454), 5, "default_ai")); 
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(766,0,454), 5, "default_ai")); 
-		
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(541,0,608), 5, "default_ai"));     
-		stage.addTracker(Spawner(m_metagame, 1, Vector3(527,0,581), 5, "default_ai"));     
+		stage.addTracker(DestroyVehicleToCaptureBase(m_metagame, "radar_tower.vehicle", 2));     
 		
 		// make neutral instantly not alive to avoid any possibility to gain capacity, like via not losing all bases first 
 		// and then gaining bases which have vehicles that give capacity offset..
@@ -1585,7 +1528,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 		PhasedStage@ stage = createPhasedStage();
 		stage.setPhaseController(PhaseControllerMap12(m_metagame));
 		stage.m_mapInfo.m_name = "Final mission II"; // warning, default.character has reference to this name, careful if it needs to be changed
-		stage.m_mapInfo.m_path = "media/packages/vanilla.winter/maps/map12";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map12";
 		stage.m_mapInfo.m_id = "map12";
 		
 	stage.m_includeLayers.insertLast("layer1.invasion");	
@@ -1645,6 +1588,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 
 		return stage;
 	}
+
 
 	// --------------------------------------------
 	protected void setupWorld() {
@@ -1809,4 +1753,51 @@ class StageConfiguratorInvasion : StageConfigurator {
 		return commands;
 	}
 
+	protected Stage@ setupStageCasake_Bay() {
+		Stage@ stage = createStage();
+		stage.m_mapInfo.m_name = "Casake Bay";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/Casake_Bay";
+		stage.m_mapInfo.m_id = "Casake_Bay";
+
+		stage.m_maxSoldiers = 150;
+		stage.m_playerAiCompensation = 0;                                       // 
+    	stage.m_playerAiReduction = 0.0;                                        // 
+
+		stage.m_soldierCapacityVariance = 1.0; 
+
+		stage.addTracker(PeacefulLastBase(m_metagame, 0));
+		stage.addTracker(CommsCapacityHandler(m_metagame));
+
+		stage.m_minRandomCrates = 1; 
+		stage.m_maxRandomCrates = 2;
+
+		{
+			Faction f(getFactionConfigs()[0], createFellowCommanderAiCommand(0, 0.5, 0.2));
+			f.m_overCapacity = 10;                                              // was 20
+			f.m_bases = 2;
+			f.m_capacityMultiplier = 1.0; 
+			stage.m_factions.insertLast(f);
+		}
+		{
+			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1, 0.5, 0.2));
+			f.m_overCapacity = 40;                                              // was 20 (test3)
+            f.m_capacityOffset = 20;                                            // was 10 (test3)
+			f.m_capacityMultiplier = 1.0; 
+			stage.m_factions.insertLast(f);
+		}
+		{
+			XmlElement command("command");
+			command.setStringAttribute("class", "faction_resources");
+			command.setIntAttribute("faction_id", 1);
+			addFactionResourceElements(command, "vehicle", array<string> = {"aa_emplacement.vehicle"}, true);
+
+			stage.m_extraCommands.insertLast(command);
+		}
+
+		// metadata
+		stage.m_primaryObjective = "capture";
+
+		setDefaultAttackBreakTimes(stage);
+		return stage;
+	}
 }

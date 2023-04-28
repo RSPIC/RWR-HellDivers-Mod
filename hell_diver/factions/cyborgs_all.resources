@@ -3,40 +3,50 @@
 	<!--军械库注册所有生化人阵营武器-->
 
 	<!-- SquadLeader 基础兵种 -->
-	<weapon file="cyborgs_squadleader_main_alert.weapon" /><!--主武器-->
-	<weapon file="cyborgs_squadleader_main_gl.weapon" /><!--主武器-->
-	<weapon file="cyborgs_squadleader_secondary_alert.weapon" /><!--主武器-->
+	<weapon key="cyborgs_squadleader_main_alert.weapon" /><!--主武器-->
+	<weapon key="cyborgs_squadleader_main_gl.weapon" /><!--主武器-->
+	<weapon key="cyborgs_squadleader_secondary_alert.weapon" /><!--主武器-->
 	<!-- Grotesque 基础兵种 -->
-	<weapon file="cyborgs_grotesque_main.weapon" /><!--主武器-->
+	<weapon key="cyborgs_grotesque_main.weapon" /><!--主武器-->
 	<!-- Berserker 基础兵种 -->
-	<weapon file="cyborgs_berserker_main.weapon" /><!--主武器-->
+	<weapon key="cyborgs_berserker_main.weapon" /><!--主武器-->
 	<!-- Comrade 基础兵种 -->
-	<weapon file="cyborgs_comrade_main.weapon" /><!--主武器-->
+	<weapon key="cyborgs_comrade_main.weapon" /><!--主武器-->
 	<!-- Immolator 基础兵种 -->
-	<weapon file="cyborgs_immolator_main.weapon" /><!--主武器-->
+	<weapon key="cyborgs_immolator_main.weapon" /><!--主武器-->
 	<!-- Initiate 基础兵种 -->
-	<weapon file="cyborgs_initiate_main.weapon" /><!--主武器-->
+	<weapon key="cyborgs_initiate_main.weapon" /><!--主武器-->
+	<!-- Warlord -->
+	<weapon key="cyborgs_warlord_main.weapon" /><!--主武器-->
+	<!-- legionnaire -->
+	<weapon key="cyborgs_legionnaire_main_gl.weapon" /><!--主武器-->
+	<!-- Hulk -->
+	<weapon key="cyborgs_hulk_main.weapon" /><!--主武器-->
+	<!-- Hound -->
+	<weapon key="cyborgs_hound_main.weapon" /><!--主武器-->
 	
 	<!-- 投掷物 -->
-	<projectile file="cyborgs_squadleader_alert_spawn.projectile" /><!--手雷栏-->
+	<projectile key="cyborgs_squadleader_alert_spawn.projectile" /><!--手雷栏-->
 
 	<!-- 护甲 -->
 	<carry_item key="cyborgs_squadleader_vest.carry_item" />
 	<carry_item key="general_vest.carry_item" />
 
 	<!-- spawn类  -->
-	<projectile file="cyborgs_spawn_initiate.projectile" /><!--手雷栏-->
-	<projectile file="cyborgs_spawn_squadleader.projectile" /><!--手雷栏-->
-	<projectile file="cyborgs_spawn_berserker.projectile" /><!--手雷栏-->
-	<projectile file="cyborgs_spawn_comrade.projectile" /><!--手雷栏-->
-	<projectile file="cyborgs_spawn_grotesque.projectile" /><!--手雷栏-->
-	<projectile file="cyborgs_spawn_hound.projectile" /><!--手雷栏-->
-	<projectile file="cyborgs_spawn_butcher.projectile" /><!--手雷栏-->
-	<projectile file="cyborgs_spawn_legionnaire.projectile" /><!--手雷栏-->
-	<projectile file="cyborgs_spawn_immolator.projectile" /><!--手雷栏-->
-	<projectile file="cyborgs_spawn_hulk.projectile" /><!--手雷栏-->
-	<projectile file="cyborgs_spawn_warlord.projectile" /><!--手雷栏-->
-	
+	<projectile key="cyborgs_spawn_initiate.projectile" /><!--手雷栏-->
+	<projectile key="cyborgs_spawn_squadleader.projectile" /><!--手雷栏-->
+	<projectile key="cyborgs_spawn_berserker.projectile" /><!--手雷栏-->
+	<projectile key="cyborgs_spawn_comrade.projectile" /><!--手雷栏-->
+	<projectile key="cyborgs_spawn_grotesque.projectile" /><!--手雷栏-->
+	<projectile key="cyborgs_spawn_hound.projectile" /><!--手雷栏-->
+	<projectile key="cyborgs_spawn_butcher.projectile" /><!--手雷栏-->
+	<projectile key="cyborgs_spawn_legionnaire.projectile" /><!--手雷栏-->
+	<projectile key="cyborgs_spawn_immolator.projectile" /><!--手雷栏-->
+	<projectile key="cyborgs_spawn_hulk.projectile" /><!--手雷栏-->
+	<projectile key="cyborgs_spawn_warlord.projectile" /><!--手雷栏-->
+
+	<vehicle key="cyborgs_ifv.vehicle" /><!--主战坦克-->
+
 	
 
 </resources>

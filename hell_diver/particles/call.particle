@@ -1,0 +1,96 @@
+author: RST
+2023.3.12
+未经授权不可复用、修改使用、仅用于helldiver mod
+电台呼叫特效
+
+import car_recycle_working from "car.particle"
+
+particle_system call_deny_distance : car_recycle_working
+{
+	material call_deny_distance
+}
+particle_system call_deny_cooldown : car_recycle_working
+{
+	material call_deny_cooldown
+}
+particle_system call_deny_right : car_recycle_working
+{
+	material call_deny_right
+}
+particle_system call_deny_target : car_recycle_working
+{
+	material call_deny_target
+}
+particle_system call_deny_useless : car_recycle_working
+{
+	material call_deny_useless
+}
+
+
+
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+material call_deny_cooldown : alpha_blend_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture call_deny_cooldown.png 	
+}}}}
+material call_deny_right : alpha_blend_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture call_deny_right.png 	
+}}}}
+material call_deny_distance : alpha_blend_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture call_deny_distance.png 	
+}}}}
+material call_deny_target : alpha_blend_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture call_deny_target.png 	
+}}}}
+material call_deny_useless : alpha_blend_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture call_deny_useless.png 	
+}}}}
+
+

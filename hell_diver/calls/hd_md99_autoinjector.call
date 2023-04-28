@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<call 
+name="MD99 AutoInjector Medic" 
+key="hd_md99_autoinjector.call"
+radio_view_text="MD99 AutoInjector Medic" 
+      initiation_comment1="Using self-rescue syringe, cover me!"
+      acknowledge_comment="Stay still"
+      acknowledge_time="0"
+      launch_comment="AutoInjection Working now."
+	notify_metagame="1">
+     
+      <round 
+            launch_time="0.5"
+            spawn_time="0.5">
+      </round>
+    
+      <round 
+            launch_time="2"
+            spawn_time="2">
+      </round>
+
+    <hud_icon filename="hd_md99_autoinjector_call.png" />
+    <inventory encumbrance="0.0" price="0.0" />
+
+</call>

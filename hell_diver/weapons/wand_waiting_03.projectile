@@ -6,7 +6,7 @@ on_ground_up="0 1 0" can_be_detected_by_footmen="0" can_be_disarmed="0" >
 	<collision class="sticky" />
 	<result class="spawn" instance_class="projectile" instance_key="wand_damage_04.projectile" 
 	min_amount="10" max_amount="10" offset="0 10 0" position_spread="5 0" direction_spread="0 0" />
-	<!-- 10x50 轰炸伤 -->
+	<!-- 10x100 轰炸伤 -->
 
 	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
 
@@ -40,5 +40,5 @@ on_ground_up="0 1 0" can_be_detected_by_footmen="0" can_be_disarmed="0" >
 	
 
     <model mesh_filename="" />
-	
+	<trail probability="1" key="normal_trail_long"/>
 </projectile>

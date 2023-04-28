@@ -19,6 +19,9 @@
 #include "faction_config.as"
 #include "stage_configurator.as"
 
+#include "all_helper.as"
+#include "all_task.as"
+
 // --------------------------------------------
 class MapRotatorInvasion : MapRotator {
 	protected GameModeInvasion@ m_metagame;
@@ -185,6 +188,16 @@ class MapRotatorInvasion : MapRotator {
 	protected void resetStagesCompleted() {
 		m_stagesCompleted.clear();
 	}
+	// ----------------------------------------------------
+	protected void handlePlayerSpawnEvent(const XmlElement@ event) {
+		//_log("MapRotatorCampaign::handlePlayerSpawnEvent", 1);
+		// don't care if already about to change map
+		//_log("running handlePlayerSpawnEvent",1);
+		// if (isAboutToChangeMap()) {
+		// 	_log("skipping", 1);
+		// 	return;
+		// }
+	}
 
 	// --------------------------------------------
 	protected void handleMatchEndEvent(const XmlElement@ event) {
@@ -288,6 +301,11 @@ class MapRotatorInvasion : MapRotator {
 
 	// --------------------------------------------
 	protected string getMapName(int index) const override {
+		_log("m_stages.size()="+m_stages.size());
+		_log("m_stages.index="+index);
+		if(m_stages.size() < uint(index)){
+			_log("getMapName faild, Max index= "+m_stages.size()+" , Now index= "+index);
+			return "map1";}
 		return m_stages[index].m_mapInfo.m_name;
 	}
 
@@ -380,25 +398,28 @@ class MapRotatorInvasion : MapRotator {
 
 					// commander says something
 					m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 2.0, 0, "map start with 1 base, part 1", a));
-					m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 4.0, 0, "map start with 1 base, part 2", a));
-					m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 5.0, 0, "map start with 1 base, part 3", a));
+					m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 3.0, 0, "map start with 1 base, part 2", a));
+					m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 3.0, 0, "map start with 1 base, part 3", a));
+					m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 5.0, 0, "map start with 1 base, part 4", a));
+					m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 5.0, 0, "map start with 1 base, part 5", a));
+					m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 5.0, 0, "map start with 1 base, part 6", a));
 
 					// capture map?
 					if (stage.isCapture()) {
-						m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 6.0, 0, "map start with 1 base, capture", a));
+						m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 2.0, 0, "map start with 1 base, capture", a));
 
 					} else if (stage.isKoth()) {
 						// koth map?
 						a["%target_base_name"] = stage.m_kothTargetBase;
-						m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 6.0, 0, "map start with 1 base, koth", a));
+						m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 2.0, 0, "map start with 1 base, koth", a));
 					}
 
 				} else {
 					// doing a resume
 
 					// commander says something
-					m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 5.0, 0, "map start with more bases, part 1", a));
-					m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 5.0, 0, "map start with more bases, part 2", a));
+					m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 3.0, 0, "map start with more bases, part 1", a));
+					m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 3.0, 0, "map start with more bases, part 2", a));
 				}
 
 				// side objectives?
@@ -871,7 +892,7 @@ class MapRotatorInvasion : MapRotator {
 
 		for (uint i = 0; i < m_stages[index].m_trackers.size(); ++i) {
 			Tracker@ tracker = m_stages[index].m_trackers[i];
-			m_metagame.addTracker(tracker);
+			m_metagame.addTracker(tracker);  
 		}
 
 	}

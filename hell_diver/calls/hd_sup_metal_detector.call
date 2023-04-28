@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<call 
+name="ME-1 Sniffer Metal Detector Beacon" 
+key="hd_sup_metal_detector.call"
+radio_view_text="ME-1 Sniffer Metal Detector Beacon" 
+      initiation_comment1="Divers request for Mental Detector!"
+      acknowledge_comment="Copy, Stratagems is in the air."
+      launch_comment="Stratagems on gound."
+	notify_metagame="0">
+     
+     <round instances="1"
+           instance_class="projectile"
+           instance_key="hd_sup_mental_detector_call.projectile" 
+           instance_spread="0 0 0" 
+           common_spread="0 0 0" 
+           launch_time="2"
+           spawn_time="2.0"
+           horizontal_offset_at_spawn="0.0"
+           vertical_offset_at_spawn="45.0"
+           initial_speed_to_target="0.0"
+		   avoid_objects="0">
+      <effect class="launch" ref="stratagems_tag_call_mark_1" />
+      <effect class="launch" ref="stratagems_tag_call_mark_2" />
+    </round>
+    
+    <hud_icon filename="hd_mental_detector.png" />
+    <inventory encumbrance="0.0" price="0.0" />
+    <capacity value="0" source="rank" source_value="0.0" />
+    <capacity value="1" source="rank" source_value="0.0" />
+
+</call>

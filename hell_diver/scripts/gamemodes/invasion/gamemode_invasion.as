@@ -30,13 +30,25 @@
 #include "idler_kicker.as"
 #include "supporter_command_handler.as"
 
-
+// community trackers
+#include "rangefinder.as"
 
 // new trackers
 
 #include "spawn_ai.as"
 #include "stratagems_call.as"
 #include "player_list.as"
+#include "all_airstrike.as"
+#include "projectile_event.as"
+#include "call_event_handler.as"
+#include "repair_tools.as"
+#include "itemdrop_event.as"
+#include "humblebee_uav.as"
+#include "kill_reward.as"
+#include "dynamic_alert.as"
+#include "share_samples.as"
+#include "scheduled_task.as"
+#include "player_spawn_event.as"
 
 
 
@@ -315,6 +327,8 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		setupSideBaseAttackHandler();
 		//setupIdlerKicker();
 
+		setupScheduledTask();
+
 		//addTracker(SupporterCommandHandler(this));
 	}
 
@@ -323,6 +337,17 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		// addTracker(playerList_System(this));   
 		addTracker(spawn_ai(this));   
 		addTracker(stratagems_call(this));   
+		addTracker(AirstrikeSystem(this));
+		addTracker(projectile_event(this));   
+		addTracker(RangeFinder(this));   
+		addTracker(call_event(this));    
+		addTracker(repair_tools(this));    
+		addTracker(itemdrop_event(this));    
+		addTracker(UAVdrone(this));    
+		addTracker(kill_reward(this));    
+		addTracker(dynamic_alert(this));    
+		addTracker(share_samples(this));    
+		addTracker(player_spawn(this));    
 	}
 
 	protected void setupDisableRadioAtMatchOver() {
@@ -376,7 +401,7 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 			if (faction.isNeutral()) continue;
 			
 			// interpolate players 1 -> 32, spawn time 3.0 -> 1.0
-			addTracker(SpawnTimeHandler(this, i, 1, 32, 3.0, getUserSettings().m_spawnTimeAtMaxPlayers));
+			addTracker(SpawnTimeHandler(this, i, 1, 16, 2.0, 0.5));
 		}
 	}
 	
@@ -398,6 +423,10 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 	// --------------------------------------------
 	protected void setupIdlerKicker() {
 		addTracker(IdlerKicker(this));
+	}
+	// --------------------------------------------
+	protected void setupScheduledTask() {
+		addTracker(scheduled_task(this));    
 	}
 	
 	// --------------------------------------------

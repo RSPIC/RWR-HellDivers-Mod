@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapon 
+drop_count_factor_on_death="0" 
+drop_count_factor_on_player_death="0"
+time_to_live_out_in_the_open="0"
+player_death_drop_owner_lock_time="0"
+key="cyborgs_hulk_sec_antitank.weapon" 
+on_ground_up="0 0 1" 
+radius="1"
+burst_time="8"
+ai_burst_time="8"
+> 
+	<tag name="bazooka" />
+	<tag name="anti_tank" />
+    <specification 	
+	slot="1" 	
+    retrigger_time="0.065" 
+	last_burst_retrigger_time="4"
+    accuracy_factor="1.0" 
+	spread_range="0.3"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="0.11" 
+    sustained_fire_diminish_rate="1.0" 
+    magazine_size="800" 
+    can_shoot_standing="0" 
+    can_shoot_crouching="0" 
+	can_shoot_prone="1"	
+    suppressed="0" 
+	class="4" 
+    name="Hulk Machine Gun[Anti Tank]" 
+	ai_sight_range_modifier="1.0"
+	sight_range_modifier="1.0" 
+	burst_shots="40" 
+    projectiles_per_shot="1" 
+    projectile_speed="120.0"
+	barrel_offset_3d="0 0 0.5" 
+	carry_in_two_hands="0" 
+	stab_enabled="1" 
+	stab_range="4" 
+	use_basic_muzzle_smoke_effect="0"
+	/> 
+	<!--class 0全自动 4半自动 2栓动 3特殊（可做一次性武器）5近程特殊（如部署沙包）-->
+	<!--额外词条-->
+	<!--
+		cooldown_start="0.95"
+		cooldown_end="0.0"
+		affect_characters="1"
+		affect_vehicles="1"
+		ai_sight_range_modifier="1"
+		consume="0"
+		damage="0"
+		deployment="0"
+		leave_crouch_accuracy_penalty="0"
+		reload_one_at_a_time="0"
+		spawn_instance_class=""
+		spawn_instance_key=""
+	-->
+	
+	<!--武器模型和HUD-->
+	<weak_hand_hold offset="0" /> <!--模型X轴偏移-->
+	<model filename="" /> 
+    <model mesh_filename="" texture_filename="" /> <!--调用mesh模型-->
+    <addon_model filename="" /> <!--附加模型，固定绑骨到肩膀-->
+    <hud_icon filename="cyborgs_chat_icon.png" /> <!--临时贴图-->
+	
+	<!--武器动作，必须指定recoil和reload动作-->
+    <animation state_key="recoil" animation_key="cyborgs_hulk_recoil" /> <!--后坐力动作，半身动作-->
+    <animation state_key="cycle" animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
+    <animation key="reload" animation_key="cyborgs_hulk_stab" />	<!--换弹动作，半身动作-->
+    <animation key="reload" stance_key="crouching" animation_key="cyborgs_hulk_stab" />	<!--不同姿态可以设置不同换弹动作-->
+    <animation key="reload" stance_key="prone" animation_key="cyborgs_hulk_stab" />
+	<animation key="recoil" stance_key="over_wall" animation_key="cyborgs_hulk_recoil"/>	<!--不同姿态可以设置不同后坐力动作-->
+	<animation key="recoil" stance_key="crouching" animation_key="cyborgs_hulk_recoil"/>
+	<animation key="recoil" stance_key="prone" animation_key="cyborgs_hulk_recoil"/>
+    <animation state_key="hold" animation_key="cyborgs_hulk_still" /><!--站姿静止动作，全身动作-->
+	<animation state_key="hold_on_wall"  animation_key="cyborgs_hulk_still" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="cyborgs_hulk_still" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="cyborgs_hulk_still" /><!--闲置动作，全身动作-->
+	<animation state_key="running" animation_key="cyborgs_hulk_fast_walk" /><!--全身动作-->
+	<animation state_key="walking" animation_key="cyborgs_hulk_walk" /><!--按shift时候的静步前进动作，全身动作-->
+    <animation state_key="walking_backwards" animation_key="cyborgs_hulk_walkback" /><!--全身动作-->
+    <animation state_key="crouching" animation_key="cyborgs_hulk_still" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="cyborgs_hulk_walk" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="cyborgs_hulk_walkback" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
+	<animation state_key="stabbing" animation_key="cyborgs_hulk_stab" /><!--半身动作，武器可设置脱手-->
+	<!--切换模式，本模式的切出动作衔接下一模式的切入动作，置空为秒切-->
+	<animation state_key="next_in_chain_in" animation_key="" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="" /><!--半身动作，切换模式，本模式切入-->
+	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
+    <animation state_key="changing_weapon_in" animation_key="cyborgs_hulk_still" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key="cyborgs_hulk_still"/><!--半身动作，切换武器，本武器取出-->
+
+	<!--武器音频-->
+    <sound key="effect" fileref="" pitch_variety="0" volume="1.0" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
+    <sound key="fire" fileref="hd_mg_fire_1.wav" pitch_variety="0.1" volume="0.3" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
+    <sound key="dry_fire" fileref="" pitch_variety="0.03" volume="1.0" /><!--空弹射击扳机音效-->
+	<sound key="stab" fileref="cyborgs_hammer_medium_hit_01.wav" pitch_variety="0.03" volume="1" />
+	<sound key="stab" fileref="cyborgs_hammer_medium_hit_02.wav" pitch_variety="0.03" volume="1" />
+	<sound key="stab_hit" fileref="cyborgs_hammer_medium_hit_01.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit" fileref="cyborgs_hammer_medium_hit_03.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="cyborgs_hammer_medium_hit_01.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="cyborgs_hammer_medium_hit_04.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="gl_open.wav" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="gl_insert.wav" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="rifle_chamber.wav" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" /><!--动作中in的value为1-->
+    <sound key="last_ammo" fileref="" /><!--最后一发子弹射击的额外音效，不可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+	<sound class="result" fileref="rifle_drop.wav" />
+    <sound class="operation" key="fire" fileref="hd_mg_fire_1.wav" volume="0.3" />  
+	
+	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
+	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="1" source="rank" source_value="0.0" />
+	
+	<!--军械库相关-->
+    <commonness value="0.00001" can_respawn_with="1" in_stock="1" /> 
+    <inventory encumbrance="1.0" price="0.0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
+    
+	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="30" can_be_detected_by_footmen="1" 
+	time_to_live="0.36" can_be_detected_by_driver="1" can_be_disarmed="0" name="Hulk"> 
+
+		<result class="blast" radius="1.0" damage="6.0" push="0.2" decal="0" character_state="death"  />
+		<!-- 40x0.07time -->
+		<!-- damage2vehical 1.5x40=60 -->
+
+		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
+		
+		<!--命中音效-->
+		<sound class="result" key="other" fileref="rifle_drop.wav" pitch_variety="0.03" volume="1.0" />
+		
+		<!--命中特效-->
+		<!--
+		<effect class="result" key="terrain" ref="" lighting="0"/>
+		
+		<effect class="activated" ref="" />
+		-->
+		
+		<effect class="result" key="terrain" ref="general_weapon_result_smoke_shorttime" lighting="0"/>
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_01" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_02" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_03" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_04" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_leave" lighting="0"/>
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_light" lighting="0"/>
+		
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<!--尾迹组-->
+		<trail probability="1" key="normal_trail"/>	
+    </projectile>
+	
+	<!--枪口特效-->
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 
+
+	
+	<!--姿态精度-->
+    <stance state_key="running" accuracy="1" /> 
+    <stance state_key="walking" accuracy="1" />
+	<stance state_key="standing" accuracy="1" />
+	<stance state_key="crouching" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1" />     
+     
+	<!--附加属性-->
+    <modifier class="speed" value="0.0" /> 
+    <modifier class="hit_success_probability" value="0.0" /><!--正值增加玩家抗致死率-->
+    <modifier class="detectability" value="0.0" />	<!--正值增加玩家隐蔽-->
+	
+	<!--盾块，可设置多个，空盾块仍然生效击杀收益共享，需要删去该段代码-->
+    <shield offset="1.0 0 1.8" extent="2.2 2.2 1.0" usable_for_cover="0"/>  <!--护甲盾块-->
+	
+	<!-- x厚度，前后宽度；y高度，z宽度 -->
+	
+		<!-- state modifiers for weapons are connected to shield impact events -->
+	<!-- deflects all bullets; death, stun, wound become none, doesn't consume -->
+	<modifier class="projectile_hit_result" input_character_state="death" output_character_state="death" consumes_item="0" />
+	<modifier class="projectile_hit_result" input_character_state="wound" output_character_state="death" consumes_item="0" />
+	<modifier class="projectile_hit_result" input_character_state="stun" output_character_state="death" consumes_item="0" />
+	<!-- death and wound blast causes the item to be consumed, stun is ignored -->
+	<modifier class="projectile_blast_result" input_character_state="death" output_character_state="death" consumes_item="0" />
+	<modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="0" />
+	<modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0" />
+</weapon>
+

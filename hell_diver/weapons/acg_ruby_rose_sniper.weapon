@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapon 
+file="_rare_weapon.base"
+key="acg_ruby_rose_sniper.weapon" 
+>
+    <specification 	
+    slot="0" 	
+    retrigger_time="1.0" 
+	last_burst_retrigger_time="1.0"
+    accuracy_factor="1" 
+	spread_range="0.1"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="0.5" 
+    sustained_fire_diminish_rate="2.0" 
+    magazine_size="-1" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="1"	
+    suppressed="0" 
+	class="4" 
+    name="Crescent Rose [Sniper]" 
+	sight_range_modifier="3.0" 
+	sight_height_offset="1.0" 
+	burst_shots="1" 
+    projectiles_per_shot="1" 
+    projectile_speed="300.0"
+	barrel_offset="1.2" 
+	carry_in_two_hands="1" 
+	stab_enabled="1" 
+	stab_range="3" 
+	/> 
+	<!--0全自动 4半自动 2栓动 3特殊（需要额外动作）5近程特殊（如部署沙包）-->
+	
+    <next_in_chain key="acg_ruby_rose_scythe.weapon" share_ammo="0" /> 
+
+	<animation key="recoil" animation_key="recoil1, big" /> <!--后坐力动作，半身动作-->
+    <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
+    <animation state_key="reload" animation_key="reloading_2.5s" />	<!--换弹动作，半身动作-->
+    <animation state_key="hold" animation_key="" /><!--站姿静止动作，全身动作-->
+	<animation state_key="hold_on_wall"  animation_key="" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="" /><!--闲置动作，全身动作-->
+	<animation state_key="running" animation_key="" /><!--全身动作-->
+	<animation state_key="walking" animation_key="" /><!--按shift时候的静步前进动作，全身动作-->
+    <animation state_key="walking_backwards" animation_key="" /><!--全身动作-->
+    <animation state_key="crouching" animation_key="" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
+	<animation state_key="stabbing" animation_key="melee, bayonet" /><!--半身动作，武器可设置脱手-->
+
+    <sound key="effect" fileref="" pitch_variety="0.03" volume="1.0" /> 
+    <sound key="fire" fileref="hd_cr9_suppressor_fire.wav" pitch_variety="0.03" volume="0.7" />
+    <sound key="dry_fire" fileref="" pitch_variety="0.03" volume="1.0" />
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="0.5" />
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="0.9" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="0.8" />
+    <sound key="magazine_out" fileref="mg_clip_out.wav" />
+    <sound key="magazine_in" fileref="mg_clip_in.wav" />
+    <sound key="cycle" fileref="rifle_chamber.wav" />
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" />
+    <sound key="last_ammo" fileref="" />
+	<sound class="impact" fileref="rifle_drop.wav" />
+
+    <model filename="acgw_crescent_rose_sniper.xml" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="acgw_crescent_rose_sniper.png" /> 
+	
+	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="1" source="rank" source_value="0.0" />
+	
+     
+    <weak_hand_hold offset="0.4" /> 
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="6" can_be_detected_by_footmen="1" 
+	time_to_live="0.63" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.7" name="Crescent Rose [Sniper]"> 
+
+		<result class="spawn" instance_class="projectile" instance_key="acg_ruby_rose_sniper_damage.projectile" 
+		min_amount="8" max_amount="8" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+		<!-- 4x7~8 轰炸伤 -->
+	
+		<trigger class="impact" time_to_live="1.5"  />
+		<rotation class="motion" />
+		<model mesh_filename="" />
+
+		<effect class="result" key="character" ref="BloodSplat50Cal" lighting="1" />
+		<effect class="result" key="character" ref="BurstShine50Cal" lighting="1" post_processing="0" />
+		<effect class="result" key="character" ref="general_hit_character_cross_2"  />
+		<effect class="result" key="character" ref="general_hit_character_cross_1"  />
+		<effect class="result" key="terrain" ref="rwby_flower"  />
+		<effect class="result" key="terrain" ref="rwby_impact"  />
+		<effect class="result" key="shield" ref="general_result_shield_hit_1"  />
+		<effect class="result" key="shield" ref="general_result_shield_hit_2"  />
+
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />		
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		<trail probability="1" key="normal_trail_long_bold"/>	
+    </projectile>
+
+	<!--枪口特效-->
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_trail_smoke" lighting="0"/> 
+	<effect class="muzzle" ref="rwby_muzzle_flower" lighting="0"/> 
+	
+	
+    <stance state_key="running" accuracy="1" /> 
+    <stance state_key="walking" accuracy="1" />
+	<stance state_key="standing" accuracy="1" />
+	<stance state_key="crouching" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1" />     
+     
+    <modifier class="speed" value="0.0" /> 
+    <modifier class="hit_success_probability" value="0.0" />
+    <modifier class="detectability" value="0.0" />
+
+
+
+
+</weapon>
+
+

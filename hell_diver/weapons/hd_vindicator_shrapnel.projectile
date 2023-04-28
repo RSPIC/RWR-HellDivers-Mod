@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <projectile class="grenade" 
 name="Vindicator Dive Bomb Shrapnel" 
-slot="1" 
-pulldown_in_air="80.0" 
+slot="0" 
+pulldown_in_air="200.0" 
 key="hd_vindicator_shrapnel.projectile">
     
-	<result class="blast" radius="5.5" damage="2.0" decal="2" push="1" character_state="death" />
+	<result class="blast" radius="5.5" damage="8.0" decal="1" push="1" character_state="death" />
     <trigger class="impact" />
     <rotation class="motion" />	
     <model mesh_filename="" />
@@ -19,9 +19,6 @@ key="hd_vindicator_shrapnel.projectile">
 	<effect class="result" type="splat_map" surface_tag="" size="5.0" atlas_index="0" layer="1" />
     <effect class="result" type="splat_map" surface_tag="" size="6.5" atlas_index="4" layer="0" />
     <effect class="result" type="splat_map" surface_tag="" size="8.0" atlas_index="0" layer="2" additive="0" />
-	<trail probability="1" key=""/>	
-
-
 		<sound class="result" key="terrain" copy="other" />
 		<sound class="result" key="static_object" copy="other" />
 		<sound class="result" key="vehicle" copy="other" />

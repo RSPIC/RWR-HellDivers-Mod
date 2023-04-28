@@ -13,6 +13,8 @@
 - YYSY
 - Tactical UMP-45
 - rainbowflesh
+- DILING
+- Kreedzt
 
 交流 QQ 群：498520233【超级地球】
 
@@ -93,7 +95,10 @@
         - 固定改造分支，玩家沿固定升级改造路线升级枪械至满级
         - 该类枪械掉落消失，不可交易
     - 再补给系统
-        - **部分副手栏武器是有限子弹的，是否可以通过脚本补给**
+        - √ **部分副手栏武器是有限子弹的，是否可以通过脚本补给**
+    - √ **维修/回收系统**
+        - √ **可以通过维修平台额外维修载具**
+        - √ **可以回收特定载具**
     - 逆向工程系统
         - 任何稀有度的武器只要攒满 7 把，即可获得一把属性略有削弱的复活自带版本
         - 不会削弱其优势性属性
@@ -107,35 +112,48 @@
     - **功能分类和定位**
         - √ **AR 突击步枪系**
             - 泛用好
-            - AP 子弹额外增加击穿：+0.2 致死
+            - AP 子弹改中穿 wound伤害
+            - AP 子弹额外增加击穿：+0.5 致死
+            - 半数衰减：末端致死0.5，以1.0初始致死计算，即弹头最远处位于衰减周期1/2处
             - 30m 全效射距 60m 极限射距
         - √ **SMG 冲锋枪系**
             - 独享特殊的尾迹粒子
+            - 加速：+0.2移速
             - 眩晕弹/可击退
+            - 中弹速：150弹速
             - 无衰减
-            - 20m 全效射距
+            - 25m 全效射距
         - √ **MG 机枪系**
             - 笨重但强力：移速-0.3/架枪、卧姿精度高
-            - 更慢的衰减
-            - 30m 全校射距 90m 极限射距
-            - 仅趴射可获得 0.25 视距加成
+            - 切枪缓慢
+            - 高弹速：200弹速
+            - 抵抗护甲抗致死衰减影响：2.0初始致死，免疫护甲抗致死对击穿影响
+            - 半数衰减：末端致死0.5，以2.0初始致死计算，即弹头最远处位于衰减周期3/4处
+            - 中视距：2.0视距73x52m
+            - 30m 全效射距 90m 极限射距
+            - 重机枪（仅趴射）：移速 -0.4/可采用爆炸子弹
         - √ **SG 霰弹枪系**
-            - 保证近距离优势
+            - 保证近距离优势：爆发伤害高
             - 无衰减
             - 低于 25m 的全效射距
         - √ **Precision 精确武器**
             - 保证体验手感，高穿透高伤害
-            - 更慢的衰减
-            - 抵抗护甲抗致死衰减影响：2.0 初始致死，免疫护甲抗致死对击穿影响
-            - 长视距：1.5 倍以上视野
-            - 大于 30m 的全效射距 大于 90m 的极限射距
+            - 高弹速：300弹速
+            - 抵抗护甲抗致死衰减影响：2.0初始致死，免疫护甲抗致死对击穿影响
+            - 半数衰减：末端致死0.5，以2.0初始致死计算，即弹头最远处位于衰减周期3/4处
+            - 长视距：3.0视距92x63m
+            - 60m全效射距 120m极限射距
         - √ **Explosive 榴弹/爆炸类系**
             - 溅射系统，可以炸掩体后方
             - 5/15/25 伤害阈值 -> 轻甲/中甲/重甲
         - √ **Sidearms 副手系**
             - 功能性强
+            - 顺切武器
         - √ **Laser Tech 激光系**
             - 保证持续性火力突出
+            - 低视距：1.0视距
+            - 无衰减
+            - 抵抗护甲抗致死衰减影响：2.0初始致死，免疫护甲抗致死对击穿影响
         - √ **Arc Tech 电弧系**
             - 近距离群攻优势大于 SG，Stun 伤害可控场
         - Melle 近战系
@@ -151,7 +169,7 @@
         - Suppressed 消音系
             - 枪械附带隐蔽加成
             - 枪械附带抗致死减成
-        - Consume 消耗品系
+        - √ **Consume 消耗品系**
             - 强力
             - 再补给有门槛
             - 投掷物增加携带量
@@ -354,7 +372,7 @@
             > - SH-20 Shield Generator Pack
             > - SH-32 Directional Kinetic Shield
             >
-        - **Deploy:Secondary Weapons**
+        - √ **Deploy:Secondary Weapons**
             >
             > - √ **AC-22 Dum-Dum**
             > - √ **EAT-17**
@@ -365,11 +383,11 @@
             > - √ **MGX-42 Machine Gun**
             > - √ **MLS-4X Commando**
             > - √ **Obliterator Grenade Launcher**
-            > - REC-6 Demolisher
+            > - √ **REC-6 Demolisher**
             > - √ **RL-112 Recoilless Rifle**
             > - √ **TOX-13 Avenger**
             >
-        - Defensive
+        - **Defensive**
             >
             > - √ **A/AC-6 Tesla Tower**
             > - √ **A/GL-8 Launcher Turret**
@@ -380,30 +398,30 @@
             > - √ **Anti-Personnel Barrier**
             > - √ **AT-47 Anti-Tank Emplacement**
             > - Distractor Beacon
-            > - Humblebee UAV drone
+            > - √ **Humblebee UAV drone**
             > - Thunderer Smoke Round
             >
-        - **Offensive**
+        - √ **Offensive**
             >
-            > - Airstrike
-            > - Close Air Support
-            > - Heavy Strafing Run
-            > - Incendiary Bombs
-            > - Missile Barrage
-            > - Orbital Laser Strike
-            > - Railcannon Strike
-            > - Shredder Missile Strike
-            > - Sledge Precision Artillery
-            > - Static Field Conductors
-            > - Strafing Run
-            > - Thunderer Barrage
+            > - √ **Airstrike**
+            > - √ **Close Air Support**
+            > - √ **Heavy Strafing Run**
+            > - √ **Incendiary Bombs**
+            > - √ **Missile Barrage**
+            > - √ **Orbital Laser Strike**
+            > - √ **Railcannon Strike**
+            > - √ **Shredder Missile Strike**
+            > - √ **Sledge Precision Artillery**
+            > - √ **Static Field Conductors**
+            > - √ **Strafing Run**
+            > - √ **Thunderer Barrage**
             > - √ **Vindicator Dive Bomb**
             >
-        - Special
+        - **Special**
             >
             > - Emergency Beacon
             > - ME-1 Sniffer Metal Detector
-            > - NUX-223 Hellbomb
+            > - √ **NUX-223 Hellbomb**
             > - √ **Reinforce**
             >
     - 掉落物
@@ -416,7 +434,11 @@
         - helldivers_default_base.character 父级
             - helldivers_default_chat.character 子集
     - Call 支援
-        - M99 自动注射器
+        - √ **M99 自动注射器**
+        - √ **MC109摩托**
+        - √ **反人员铁丝网**
+        - √ **UAV小蜜蜂无人机**
+        - √ **子弹补给箱**
     - 翻译
 - Cyborgs
     - 武器

@@ -5,8 +5,69 @@
 <!--武器-->
 <weapon key="ref.weapon" />
 <weapon key="normal.weapon" />
+<weapon key="binoculars.weapon" />
 
-<!--弹头-->
 
+
+<!-- 特殊部署物 -->
+<weapon key="ex_gramophone_steeltorrent.weapon" /> <!--留声机 钢铁洪流进行曲-->
+<weapon key="ex_piano_uzuki.weapon" /> <!--卯月主题钢琴-->
+
+<!--部署-->
+<projectile key="hd_hellpod.projectile" />		<!--空投舱-->
+<projectile key="hd_resupply.projectile" />		<!--弹药补给-->
+<projectile key="acg_amg_11_mk3_call.projectile" /><!--自动机枪炮台-->
+<projectile key="acg_arx_34_mk3_call.projectile" /><!--自动轨道枪炮台-->
+<projectile key="ex_isu_152_call.projectile" /><!--152-->
+<projectile key="noxe_call.projectile" /><!--Noxe-->
+<projectile key="repair_crane_call.projectile" /><!--回收台-->
+<projectile key="ex_sturmtiger_tank_call.projectile" /><!--突击虎-->
+<projectile key="ex_apocalypse_tank_call.projectile" /><!--天启-->
+
+<projectile key="hd_at_mine_mk3.projectile" />			<!--地雷-->
+<projectile key="hd_airdropped_stun_mine_mk3.projectile" />		<!--眩晕雷-->
+<projectile key="hd_at47_mk3_call.projectile" /><!--AT-47 反坦克平台-->
+<projectile key="hd_amg_11_mk3_call.projectile" /><!--自动机枪炮台-->
+<projectile key="hd_arx_34_mk3_call.projectile" /><!--自动轨道枪炮台-->
+<projectile key="hd_agl8_mk3_call.projectile" /><!--榴弹炮炮台-->
+<projectile key="hd_aac6_tesla_mk3_call.projectile" /><!--特斯拉炮台-->
+
+<!-- 进攻支援 -->
+<projectile key="hd_offensive_vindicator_dive_bomb_mk3.projectile" />		<!--辩护者-->
+<projectile key="hd_offensive_airstrike_mk3.projectile" />	<!--空袭-->
+<projectile key="hd_offensive_laser_strike_mk3.projectile" />	<!--激光空袭-->
+<projectile key="hd_offensive_shredder_missile_strike_mk3.projectile" />	<!--撕裂者-->
+<projectile key="hd_offensive_close_air_support_mk3.projectile" />	<!--近空支援-->
+<projectile key="hd_offensive_thunderer_barrage_mk3.projectile" />	<!--三重轰炸-->
+<projectile key="hd_offensive_strafing_run_mk3.projectile" />	<!--空中扫射-->
+<projectile key="hd_offensive_static_field_conductors_mk3.projectile" />	<!--静电力场-->
+<projectile key="hd_offensive_sledge_precision_artillery_mk3.projectile" />	<!--大锤精确火炮-->
+<projectile key="hd_offensive_railcannon_strike_mk3.projectile" />	<!--轨道轰炸-->
+<projectile key="hd_offensive_missile_barrage_mk3.projectile" />	<!--导弹弹幕-->
+<projectile key="hd_offensive_incendiary_bombs_mk3.projectile" />	<!--燃烧炸弹-->
+<projectile key="hd_offensive_heavy_strafing_run_mk3.projectile" />	<!--重机枪扫射-->
+<!-- 特殊支援 -->
+<projectile key="hd_nux_223_hellbomb.projectile" />	<!--地狱火-->
+<projectile key="hd_hellpod_call.projectile" />	<!--空投舱-->
+
+<!-- 普通投掷物 -->
+<projectile key="hd_grenade_molotov.projectile" />			<!-- 燃烧瓶  -->
+<projectile key="hd_grenade_standard.projectile" />		<!-- 标准手雷 -->
+
+<!--空投信标-->
+<projectile key="hd_m5_apc_call.projectile" />	<!--M5 APC轻型载具-->
+<projectile key="hd_m5_32_hav_call.projectile" /><!--M5-32 反坦克步兵车-->
+<projectile key="hd_td110_bastion_call.projectile" /><!--堡垒 坦克-->
+<projectile key="hd_mc109_motor_call.projectile" /><!--重锤摩托-->
+<projectile key="hd_resupply_spawn.projectile" /><!--弹药补给间接弹头-->
+<projectile key="hd_resupply.projectile" /><!--弹药补给-->
+<projectile key="hd_exo44_mk3.projectile" /><!--步行者-->
+<projectile key="hd_exo48_mk3.projectile" /><!--黑曜石-->
+<projectile key="hd_exo51_mk3.projectile" /><!--重步者-->
+
+<carry_item key="samples_acg.carry_item" />
+<carry_item key="samples_bugs.carry_item" />
+<carry_item key="samples_cyborgs.carry_item" />
+<carry_item key="samples_illuminate.carry_item" />
 
 </resources>

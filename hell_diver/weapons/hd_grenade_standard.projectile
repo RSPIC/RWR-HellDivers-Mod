@@ -15,9 +15,12 @@ blast_damage_threshold="0.3"
 time_to_live_out_in_the_open="150"
 player_death_drop_owner_lock_time="150"
 pulldown_in_air="20"
+drop_count_factor_on_death="0" 
+drop_count_factor_on_player_death="0"
 >
 
-    <result class="spawn" instance_class="grenade" instance_key="hd_grenade_standard_damage.projectile" min_amount="5" max_amount="5" offset="0 0.5 0" position_spread="0.2 0" direction_spread="0.0 0.0" />   
+    <result class="spawn" instance_class="grenade" instance_key="hd_grenade_standard_damage.projectile" 
+	min_amount="5" max_amount="5" offset="0 0.5 0" position_spread="0.2 0" direction_spread="0.0 0.0" />   
 	<trigger class="time" time_to_live="2.8" />	
 		<!--
 			offset"x y z 生成位置偏差"
@@ -49,7 +52,7 @@ pulldown_in_air="20"
 
 	<commonness value="1.0" can_respawn_with="1" in_stock="1"/>
 	
-    <capacity value="4" source="rank" source_value="0" />
+    <capacity value="10" source="rank" source_value="0" />
 
     <inventory encumbrance="2" price="0.0" />
 

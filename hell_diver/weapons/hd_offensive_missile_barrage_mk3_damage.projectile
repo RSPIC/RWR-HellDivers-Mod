@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectile  
+class="grenade" 
+name="Missile Barrage" 
+key="hd_offensive_missile_barrage_mk3_damage.projectile" 
+slot="0"
+pulldown_in_air="40.0"
+on_ground_up="0 1 0"
+use_time_to_live="1"
+time_to_live="60"
+can_be_disarmed="0"
+can_be_detected_by_footmen="1"
+can_be_detected_by_driver="1"
+radius="1.0"
+time_to_live_out_in_the_open="0"
+player_death_drop_owner_lock_time="0"
+>
+    <collision class="sticky" />
+	<result class="blast" radius="8" damage="300" push="2" decal="0" character_state="wound"/>
+	<trigger class="impact" time_to_live="0" />	
+  	<rotation class="motion" />
+	<model mesh_filename="" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+
+	<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_1.wav" pitch_variety="0.01" volume="1" />
+	<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_2.wav" pitch_variety="0.01" volume="1" />
+	<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_3.wav" pitch_variety="0.01" volume="1" />
+	<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_4.wav" pitch_variety="0.01" volume="1" />
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
+	<sound class="result" key="shield" copy="other" />
+
+	<effect class="result" key="terrain" ref="nova_result_impact_flame_1" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="nova_result_impact_flame_2" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="nova_result_impact_flame_3" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="nova_result_impact_flame_4" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="nova_result_blast_smoke_expanding" lighting="0" post_processing="1"/> 
+	<effect class="result" key="terrain" ref="nova_result_blast_smoke" lighting="0" post_processing="1"/> 
+	<effect class="result" key="terrain" ref="nova_result_impact_spark" lighting="0" post_processing="1"/> 
+	<effect class="result" key="terrain" ref="nova_result_impact_spark_2" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="nova_result_ambient" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="nova_result_ambient_ground" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="nova_result_blast_ring" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="nova_result_blast_ring_2" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="nova_result_blast_fire" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="nova_gl_hit_smoke_02" lighting="0" post_processing="1"/> 
+	<effect class="result" key="terrain" ref="nova_result_ground_smoke" lighting="0" post_processing="1"/>
+	
+	<effect class="activated" ref="rocket_launcher_trial_smoke" post_processing="1"/>
+	<effect class="activated" ref="rocket_launcher_shell_light" />
+	<trail probability="1" key="trail_rocket"/>
+
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="shield" copy="terrain" />			
+	<effect class="result" key="vehicle" copy="terrain" />			
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+</projectile>

@@ -1,8 +1,11 @@
+	<!-- campaign_entry_script="start_tester.as" -->
+	<!-- campaign_entry_script="start_campaign.as" -->
+	<!-- campaign_entry_script="start_hd_invasion_level9.as" -->
 <package 
 	name="HELL DIVER"
-	description="Helllllllllllllllllll Diver"
+	description="Hell Diver"
 	image="hd.png"
-	campaign_entry_script="start_campaign.as"
+	campaign_entry_script="start_tester.as"
 	show_in_campaigns="1"
     show_in_quick_match_mods="1">
 

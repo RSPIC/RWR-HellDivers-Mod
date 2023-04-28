@@ -2,7 +2,7 @@ author: RST
 2022.9.22
 未经授权不可复用、修改使用、仅用于helldiver mod
 
-particle_system hd_mg94_avtivated_bullet_light
+particle_system hd_mg94_activated_bullet_light
 {
 	quota 100
 	material point_soft_edge_100
@@ -55,7 +55,7 @@ particle_system hd_mg94_avtivated_bullet_light
 		force_application add
 	}
 }
-particle_system hd_mg94_avtivated_bullet_light_center
+particle_system hd_mg94_activated_bullet_light_center
 {
 	quota 100
 	material point_soft_edge_100_pass
@@ -102,14 +102,14 @@ particle_system hd_mg94_avtivated_bullet_light_center
 		force_application add
 	}
 }
-particle_system hd_mg94_result_bullet_light_center : hd_mg94_avtivated_bullet_light_center
+particle_system hd_mg94_result_bullet_light_center : hd_mg94_activated_bullet_light_center
 {
 	particle_width 8
 	particle_height 8
 	emitter Point
 	{
-		colour 0.3 0.1 0.05 0.05
-		time_to_live 0.15
+		colour 0.1 0.05 0.03 0.05
+		time_to_live 0.1
 		duration 0.1
 	}	
 	affector Scaler
@@ -129,12 +129,13 @@ particle_system hd_mg94_result_bullet_light_center : hd_mg94_avtivated_bullet_li
 		green1 	0
 		bule1 	0
 		alpha1 	0
-		red2 	-0.8
-		green2	-0.1
-		blue2	-0.1
+		red2 	-0.01
+		green2	-0.01
+		blue2	-0.01
 		alpha2	-0
 		state_change 1
 	}
+
 }
 particle_system hd_mg94_result_bullet_smoke : hd_mg94_result_bullet_light_center
 {	
@@ -232,7 +233,7 @@ particle_system hd_mg94_hit_leave
 		keep_velocity false
 	}
 }
-particle_system hd_mg94_avtivated_bullet_light_center_yellow
+particle_system hd_mg94_activated_bullet_light_center_yellow
 {
 	quota 100
 	material point_soft_edge_100_pass
@@ -282,7 +283,7 @@ particle_system hd_mg94_avtivated_bullet_light_center_yellow
 		force_application add
 	}
 }
-particle_system hd_mg94_avtivated_bullet_ground_light
+particle_system hd_mg94_activated_bullet_ground_light
 {
 	quota 100
 	material point_soft_edge_100_pass

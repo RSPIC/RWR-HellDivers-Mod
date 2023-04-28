@@ -10,6 +10,8 @@ time_to_live="60"
 can_be_disarmed="0"
 time_to_live_out_in_the_open="0"
 player_death_drop_owner_lock_time="0"
+drop_count_factor_on_death="0.1"
+drop_count_factor_on_player_death="1"
 >
 	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_airdropped_stun_mine_mk3.projectile" min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
 
@@ -26,10 +28,10 @@ player_death_drop_owner_lock_time="0"
 
     <!-- projectile slot 0 is used for hand grenade items currently -->
     <!-- bound to change -->
-	<commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+	<commonness value="0.2" can_respawn_with="1" in_stock="1"/>
 	
 	<capacity value="0" source="rank" source_value="0" />
-    <capacity value="1" source="rank" source_value="0" />
+    <capacity value="1" source="rank" source_value="21.211" />
     <inventory encumbrance="1" price="0.0" />
 
 	<sound class="result" key="other" fileref="at_mine_mk3_deploying_01.wav" pitch_variety="0.01" volume="1" />

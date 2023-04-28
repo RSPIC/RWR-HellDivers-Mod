@@ -11,10 +11,10 @@ author: RST
 		<effect class="activated" ref="alert_center_yellowlight" lighting="0" /><!--中心黄光标识-->
 		<effect class="activated" ref="alert_center_greenlight" lighting="0" /><!--中心绿光标识-->
 		<effect class="activated" ref="alert_center_bluelight" lighting="0" /><!--中心蓝光标识-->
-		<effect class="activated" ref="alert_center_purplelight" lighting="0" /><!--中心紫光标识-->
+		<effect class="activated" ref="alert_center_purplelight" lightingduration 0="0" /><!--中心紫光标识-->
 particle_system alert_expand_ring
 {
-	quota 50
+	quota 100
 	material lens_circle_07_pass
 	particle_width 1
 	particle_height 1
@@ -31,11 +31,11 @@ particle_system alert_expand_ring
 		angle 0
 		colour 0.4 0.1 0 1
 		direction 0 1 0
-		emission_rate 0.5
+		emission_rate 0.75
 		position 0 0 0
 		velocity 0.0001
 		time_to_live 8
-		duration 15
+		duration 0
 	}
 	affector Scaler
 	{
@@ -73,7 +73,7 @@ particle_system alert_expand_ring
 }
 particle_system alert_expand_ring_smallarea
 {
-	quota 50
+	quota 100
 	material lens_circle_07_pass
 	particle_width 1
 	particle_height 1
@@ -94,7 +94,7 @@ particle_system alert_expand_ring_smallarea
 		position 0 0 0
 		velocity 0.0001
 		time_to_live 1
-		duration 15
+		duration 0
 	}
 	affector Scaler
 	{
@@ -132,7 +132,7 @@ particle_system alert_expand_ring_smallarea
 }
 particle_system alert_center_alerticon_hight_frequncy
 {
-	quota 50
+	quota 100
 	material alert_triangle_pass
 	particle_width 2.5
 	particle_height 2.5
@@ -153,7 +153,7 @@ particle_system alert_center_alerticon_hight_frequncy
 		position 0 0 0
 		velocity 0.0001
 		time_to_live 0.1
-		duration 15
+		duration 0
 	}
 	affector Scaler
 	{
@@ -196,7 +196,7 @@ particle_system alert_center_alerticon_hight_frequncy_smaller : alert_center_ale
 }
 particle_system alert_center_alerticon 
 {
-	quota 50
+	quota 100
 	material alert_triangle_pass
 	particle_width 5
 	particle_height 5
@@ -217,7 +217,7 @@ particle_system alert_center_alerticon
 		position 0 0 0
 		velocity 0.0001
 		time_to_live 1.5
-		duration 15
+		duration 0
 	}
 	affector Scaler
 	{
@@ -255,7 +255,7 @@ particle_system alert_center_alerticon
 }
 particle_system alert_center_redlight
 {
-	quota 50
+	quota 100
 	material point_soft_edge_100
 	particle_width 4
 	particle_height 4
@@ -276,7 +276,7 @@ particle_system alert_center_redlight
 		position 0 0 0
 		velocity 0.0001
 		time_to_live 0.12
-		duration 8
+		duration 0
 	}
 	affector ColourInterpolator
 	{

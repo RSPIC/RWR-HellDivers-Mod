@@ -7,32 +7,93 @@
 	"visibility"		"0"
 	"title"				"Running with HellDivers [incomplete & keep updating]"
 	"description"		"
-	A mod based on Helldivers and now it has Helldivers and cyborgs factions.
+								A mod based on Helldivers and now it has Helldivers and cyborgs factions.
 Author is keeping updating while uploading this incomplete mod for feedback.
 You will be amazed by the models, sounds and particle effects, which is under a brand new game frame.
 Come and Fight for LiberTEA!
 
-RWR的地狱潜兵mod，现在完成了HELLDIVERS阵营和Cyborgs（生化人）的框架
-主要基本武器已完成，部分武器和部署类武器没有做
-暂时没有电台支援
-特效十分优秀
-将会通过聊天栏还原呼叫或许支援信标的功能
+This mod will give priority to optimizing the game and translation in Chinese mode, and the English guide and tutorial in the game will continue to be updated after the official version. The following are some tutorials in the game。
 
-目前提供：
-输入WSDAW即可获取空投舱信标
-输入DDD可以获取辩护者
-输入adsw/adws获取空投地雷
-/gxp num 或者/grp num 获取num数量的XP/RP
-/gxp 一次不要给太多，会崩自己（1.0=3000xp）
+[Help - Ammo Supply]
+Ammo Supply Mechanism: Ammo supply boxes can replenish consumable weapons and armor. Press V to break open the supply box and manually put it into your backpack.
 
-【交流QQ群：498520233】
+[Help - Stratagems]
+Stratagem Call Mechanism: Type stratagem commands like "ddw[→→↑]" or "wsdaw[↑↓→←↑]" in the chat and send to receive a deployment beacon in your grenade slot.
 
-See more details and updates：
-github:https://github.com/RSPIC/RWR-HellDivers-Mod
+[Help - Armor]
+Automatic Health Recovery Mechanism: When not in a downed or dead state, your armor will recover 4 layers every 4 seconds.
 
-感谢以下朋友对我的帮助：
+[Help - Samples]
+Sample Mechanism: (Under construction) In the future, samples will be used for weapon upgrades. Sample pickups will be shared among players.
+
+[Help - Alert]
+Alert Mechanism: Enemy factions have patrolling units. Prioritize killing them before they can trigger an alert.
+
+[Help - Repair]
+Repair Mechanism: Repair stations can perform over-repairs and recycle a portion of vehicles.
+
+[Help - EXO]
+EXO Suit Mechanism: After deploying an EXO suit, equip weapons directly from the suit inventory. Ammo is limited and cannot be stored. Press R to recover from a jam.
+
+[Help - Cyborgs]
+Cyborgs: Bosses and Elite units are heavily armored, immune to regular bullets. Try using explosive and incendiary weapons to defeat them.
+
+[Help - EX-1]
+Different strategems require different experience levels to use. All strategems can be unlocked after reaching Level 30 (2.5 million experience points).
+
+[Help - Reward]
+Reward Mechanism: Before reaching Level 30 (2.5 million experience points), using basic AR-SMG weapons and P2 sidearms will grant bonus experience multipliers.
+
+[Help - Reward-2]
+Reward Mechanism: Killing elite enemies, using EXO suit weapons, or killing with specific weapons like sidearm pistols will restore armor.
+
+[Help - Dynamic Alert]
+Dynamic Difficulty: Depending on the server difficulty, enemy alert reinforcements and units will vary. When the total number of enemies is more than double that of the players, reinforcements will not appear.
+
+Some Questions：
+1. Why this mod has a faction ACG that different from the Helldiver?
+    ACG is one of my like which contains lots of interesting weapons and vehicles. This faction will remove from the Campaign mode when the mod fully complete and will add to Invasion mode for online server.
+
+
+RWR的地狱潜兵mod，现在完成了HELLDIVERS阵营和Cyborgs（生化人）
+
+目前进入测试服阶段，可以在服务器列表中搜索到
+
+【交流QQ群：498520233】用于答疑和更新公告
+
+部分游戏机制如下：
+子弹补给机制: 子弹补给箱可以补给消耗品武器以及护甲，按V拆开补给并手动放入背包中
+战略呼叫机制: 在聊天栏输入ddw[→→↑]或者wsdaw[↑↓→←↑]等战略指令并发送，可在手雷栏获得部署信标
+自动回血机制: 非死亡和非倒地状态下，每4秒回复4层护甲
+样本机制: 未完成，样本用于以后升级武器，样本拾取会共享
+警报机制: 敌对阵营会有巡逻兵，在其触发警报前优先击杀它们
+维修机制: 维修台可以超额维修和回收部分载具
+机甲机制: 部署机甲后，在机甲库里直接装备武器，有子弹限制，不可存取。卡弹按R键恢复。
+生化人: 首领-精英 为重甲单位，免疫普通子弹，尝试用爆炸物和燃烧武器击杀它们
+不同战略设备需要不同经验值才许可使用，30级[250W]后可解锁所有战略设备
+奖励机制: 在 -领域英雄 V30- 级之前(250w),使用基础AR-SMG武器和P2副手会有经验倍率加成
+奖励机制: 击杀敌方精英、使用机甲武器或者副手手枪等特定武器击杀，会回复护甲
+动态难度: 根据服务器难度不同，敌方警报的增援量、增援单位不同。当敌方总数量超过己方两倍时，增援不会出现
+
+
+
+感谢以下朋友对我早期的帮助：
 XEON、NetherCrow冥府乌鸦、BBBYJ、Psyber_Demon、
 KEILSAMA、ARST、YYSY、Tactical UMP-45、rainbowflesh
+DILING
+
+主策划：RST
+美术：RST
+脚本：冥府乌鸦 RST
+动画：RST
+音效：RST
+地图：Diling 
+模型：RST
+粒子特效：RST
+载具模型：HELLDIVER
+
+
+
 "
 	"changenote"		"ver 1.0.0
 

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vehicle 
+file="_vehicle_none.base"
+name="Gramophone[March of Steel Torrent ver]" 
+key="ex_gramophone_steeltorrent.vehicle" 
+map_view_atlas_index="-1" 
+time_to_live_unsteerable="1" 
+time_to_live="360" 
+should_be_destroyed="0" 
+max_character_collision_speed_on_normal="40"
+simulated_damage="0"
+usable_for_cover="0"
+allow_ai_to_use="0"
+ >
+	<tag name="piano" />
+
+	<tire_set offset="1 0.0 1" radius="0.1" />
+	<tire_set offset="1 0.0 -1" radius="0.1" />
+
+	<control max_speed="1" acceleration="0.01" max_reverse_speed="1.0" max_rotation="1.0" max_water_depth="4" />
+
+	<physics 
+	mass="30" 
+	extent="0.5 0.0 0.5" 
+	offset="0 0.0 0" 
+	top_offset="0 0.1 0" 
+	collision_model_pos="0 0.5 0" 
+	collision_model_extent="1 1 1" 
+	visual_offset="0 1.2 0" 
+	collision_response_factor="0" 
+	blast_push_threshold="10.0" 
+	drag_offset="-1.0" 
+	vehicle_collision_damage_factor="20"
+	gravity="-40" 
+	/> 
+	<sky_diving chute_offset="0 0 0" trigger_height="20" gravity="-20" mesh_filename="" texture_filename="" />
+
+
+	<!-- 车体 -->
+	<!-- "Gramophone" (https://skfb.ly/6AADT) by Loïc is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/). -->
+	<visual class="chassis" mesh_filename="gramophone.mesh" texture_filename="gramophone_main.jpg" />
+
+	<!-- 操控 -->
+	<character_slot type="driver" position="0 0 0" rotation="3.14" 
+	exit_rotation="0" hiding="1" animation_key="Piano_Playing" marker_offset="0 0 0"/>
+	
+	<rev_sound filename="music_march_of_steel_torrent.wav" low_pitch="1" high_pitch="1.0" low_rev="1" high_rev="1" volume="10" />
+
+	<sound key="slide" filename="" />
+	<sound key="squeal" filename="" />
+	<sound key="ignition" filename="" />
+	<sound key="horn" filename="" />  
+	<sound key="hit" filename="" />
+	<sound key="hit" filename="" />
+	<sound key="turret_rotation" filename="" />
+	<sound key="destroy" filename="" />  
+
+	<effect event_key="drive_chassis" ref="music_musical_note_1" offset="0 0.5 0" />
+
+	<effect event_key="health" value="75" ref="car_broken_spary_spark" offset="0 0 0" />
+	<effect event_key="health" value="50" ref="car_broken_spary_spark" offset="0 0 0" />
+	<effect event_key="health" value="50" ref="car_slide_up_smoke" offset="0 0 0" />
+	<effect event_key="health" value="30" ref="car_broken_spary_spark" offset="0 0 0" />
+	<effect event_key="health" value="30" ref="car_slide_up_smoke" offset="0 0 0" />
+	<effect event_key="health" value="30" ref="car_destroyed_fire" offset="0 0 0" />
+
+	<effect event_key="destroyed" ref="car_destroyed_fire" post_processing="0" offset="0 0 0" />
+	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="1" offset="0 0 0" />  
+	<effect event_key="destroyed" ref="car_broken_spary_spark" post_processing="1" offset="0 0 0" />  
+
+
+	<event>
+		<trigger class="destroy" />
+  	<result class="spawn" instance_class="projectile" instance_key="hd_vehicle_destroy_damage.projectile" min_amount="1"
+	 max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" /><!--摧毁时的爆炸-->
+	</event>
+
+	<event>
+		<trigger class="destroy" />
+  	<result class="spawn" instance_class="visual_item" instance_key="hd_hellpod_vanish.visual_item" min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0 0" /><!--消失的时候烟雾特效-->
+	</event>
+		<event>
+		<trigger class="destroy" />
+  	<result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor1.visual_item" min_amount="1" max_amount="3" offset="0 2.5 0" position_spread="1.5 1.5" direction_spread="0.15 0.3" />
+	</event>
+	<event>
+		<trigger class="destroy" />  	
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor2.visual_item" min_amount="0" max_amount="1" offset="0 2.5 0" position_spread="1.5 1.5" direction_spread="0.10 0.25" />
+	</event>
+  <event>
+		<trigger class="destroy" />		
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor3.visual_item" min_amount="1" max_amount="2" offset="0 2.5 0" position_spread="1.5 1.5" direction_spread="0.12 0.20" />
+	</event>
+  <event>
+		<trigger class="destroy" />		
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor4.visual_item" min_amount="1" max_amount="2" offset="0 2.5 0" position_spread="1.5 1.5" direction_spread="0.2 0.25" />
+	</event>    
+
+  <event>
+		<trigger class="cleanup" />		
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_cleanup.visual_item" min_amount="20" max_amount="30" offset="0 2.0 0" position_spread="1.5 1.5" direction_spread="0.1 0.1" /> 
+  </event>    
+  
+</vehicle>

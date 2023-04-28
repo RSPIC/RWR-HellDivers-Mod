@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<map_config>
+	
+ 	<include_layer name="bases.default" />
+ 	<include_layer name="layer1.default" />  
+  
+  <dependency package="vanilla" comment="this doesn't really do anything yet" />
+	<faction file="green.xml" />
+	<faction file="brown_boss.xml" />
+	<faction file="neutral.xml" />
+
+	<weapon file="all_weapons.xml" />
+	<weapon file="tank2_cannon.weapon" />
+	<weapon file="tank2_mg.weapon" />  
+	<weapon file="tank2_missile_launcher.weapon" />        
+
+	<projectile file="all_throwables.xml" />
+	<call file="all_calls.xml" />
+	<carry_item file="all_carry_items.xml" />
+
+	<vehicle file="all_vehicles.xml" />
+	<vehicle file="tank2.vehicle" /> 
+	<vehicle file="aa_emplacement.vehicle" /> 
+
+</map_config>

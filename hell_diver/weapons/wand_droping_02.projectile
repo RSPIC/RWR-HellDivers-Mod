@@ -2,8 +2,10 @@
 <projectile class="grenade" name="" slot="0" pulldown_in_air="40" key="wand_droping_02.projectile"
 on_ground_up="0 1 0" can_be_detected_by_footmen="0" can_be_disarmed="0" >
 	<rotation class="motion" />	
+
 	<result class="spawn" instance_class="projectile" instance_key="wand_waiting_03.projectile" 
 	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
+
     <trigger class="time" time_to_live="24" />
     <collision class="sticky" />
 	

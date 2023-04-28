@@ -1,0 +1,122 @@
+author:RST
+2023.4.2
+样本用特效
+
+particle_system samples_pick
+{
+	quota 50
+	material sample_pick
+	particle_width 2.5
+	particle_height 2.5
+	renderer billboard
+	billboard_type point
+	billboard_origin bottom_center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 1 0
+		velocity 0.0001
+		time_to_live 1
+		duration 0.1
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.7
+		colour1 1 1 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 4 0
+		force_application add
+	}
+}
+particle_system samples_cant_drop
+{
+	quota 50
+	material cant_drop
+	particle_width 2.5
+	particle_height 2.5
+	renderer billboard
+	billboard_type point
+	billboard_origin bottom_center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 1 0
+		velocity 0.0001
+		time_to_live 1
+		duration 0.1
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.7
+		colour1 1 1 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 4 0
+		force_application add
+	}
+}
+
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material sample_pick : alpha_blend_base
+{   
+    technique{
+    pass{
+        depth_func always_pass
+        texture_unit{
+            texture sample_pick.png 	
+}}}}
+material cant_drop : alpha_blend_base
+{   
+    technique{
+    pass{
+        depth_func always_pass
+        texture_unit{
+            texture cant_drop.png 	
+}}}}

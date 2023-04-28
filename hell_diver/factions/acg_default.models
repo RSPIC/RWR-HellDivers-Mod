@@ -9,12 +9,35 @@
 	<model filename="acg_api.xml" /> <!--API-->
 	<model filename="acg_fenrir_black.xml" /> <!--芬里尔 黑-->
 	<model filename="acg_fenrir_white.xml" /> <!--芬里尔 白-->
-	<model filename="acg_kemomimi.xml" /> <!--桃子酱（小狐狸）-->
+	<model filename="acg_kemomimi.xml"> <!--桃子酱（小狐狸）--><requirement class="weapon" slot="0" key="acg_kemomimi.weapon"/>
+	</model>
 	<model filename="acg_natsuki_amagi.xml" /> <!--甘城なつき（猫）-->
+	<model filename="acg_maido1.xml" /> <!--女仆 by DNTK-->
+	<model filename="acg_maido2.xml" /> <!--女仆 by DNTK-->
+	<model filename="acg_maido3.xml" /> <!--女仆 by DNTK-->
+	<model filename="acg_maido4.xml" /> <!--女仆 by DNTK-->
+	<model filename="acg_rkgk.xml" /> <!--女仆 by DNTK-->
+	<model filename="acg_gawr_gura.xml" /> <!--噶呜·古拉 鲨鱼-->
+	<model filename="acg_kagamine_rin.xml" /> <!--镜音铃 by DNTK-->
+	<model filename="acg_heavy_equip_jk_ii.xml" /> <!--重装JK II by DNTK-->
+	
 <!-- 明日方舟 -->
 	<model filename="acg_skyfire.xml" /> <!--天火-->
+	<model filename="acg_fiammetta.xml"> <!--菲娅梅塔 by Gandaruvu807--><requirement class="weapon" slot="0" key="acg_fiammetta_skill.weapon"/>
+	</model>
+	<model filename="acg_fiammetta.xml"> <!--菲娅梅塔 by Gandaruvu807--><requirement class="weapon" slot="0" key="acg_fiammetta_gl.weapon"/>
+	</model>
+	<model filename="acg_texas.xml"><!--德克萨斯--><requirement class="weapon" slot="0" key="acg_texas_skill.weapon"/>
+	</model>
+	<model filename="acg_texas.xml"><!--德克萨斯--><requirement class="weapon" slot="0" key="acg_texas_sword.weapon"/>
+	</model>
+	<model filename="acg_texas.xml"><!--德克萨斯--><requirement class="weapon" slot="0" key="hd_vehicle_hmg.weapon"/>
+	</model>
 <!-- 原神 -->
-	<model filename="acg_sangonomiya_kokomi.xml" /> <!--珊瑚宫心海-->
+	<model filename="acg_sangonomiya_kokomi.xml" > <!--珊瑚宫心海--><requirement class="weapon" slot="0" key="acg_kokomi_water_thrower.weapon"/>
+	</model>
+	<model filename="acg_sangonomiya_kokomi.xml" > <!--珊瑚宫心海--><requirement class="weapon" slot="0" key="acg_kokomi_portia.weapon"/>
+	</model>
 <!-- 崩坏 -->
 	<model filename="acg_bronya_ex_1.xml" /> <!--布洛妮娅常服-->
 	<model filename="acg_raiden_mei_ex_1.xml" /> <!--雷电芽衣常服-->
@@ -25,20 +48,44 @@
 	</model>
 	<model filename="acg_reisenu_ex.xml"><!--铃仙--><requirement class="weapon" slot="0" key="acg_reisenu_c.weapon"/>
 	</model>
+	<model filename="acg_rubyrose.xml"><!--RubyRose 新月玫瑰--><requirement class="weapon" slot="0" key="acg_ruby_rose_sniper.weapon"/>
+	</model>
+	<model filename="acg_rubyrose.xml"><!--RubyRose 新月玫瑰--><requirement class="weapon" slot="0" key="acg_ruby_rose_scythe.weapon"/>
+	</model>
 <!-- 舰队collection -->
 	<model filename="acg_yuudachi_halloween_ver.xml" /> <!--夕立万圣节装-->
 	<model filename="acg_shigure_summer_ver.xml" /> <!--时雨水着-->
 	<model filename="acg_uzuki.xml" /> <!--卯月噗噗个噗-->
+	<model filename="acg_shigure_expanding.xml" > <!--时雨改二--><requirement class="weapon" slot="0" key="acg_shigure_127mm.weapon"/>
+	</model>
+	<model filename="acg_shigure.xml" > <!--时雨改二--><requirement class="weapon" slot="0" key="acg_shigure_610mm_torpedo.weapon"/>
+	</model>
+	<model filename="acg_hibiki.xml" /> <!--响 by MelonDove-->
+	<model filename="acg_amatsukaze.xml" /> <!--天津风 by MelonDove-->
 <!-- 碧蓝航线 -->
 	<model filename="acg_yuudachi_azurlane_origin.xml" /> <!--夕立碧蓝航线原皮-->
 	<model filename="acg_perseus.xml" /> <!--英仙座-->
+	<model filename="acg_yukikaze.xml" /> <!--雪风-->
+	<model filename="acg_graf_spee_sweater_ver.xml" /> <!--斯佩伯爵 毛衣常服-->
 <!-- 动漫 -->
 	<model filename="acg_iruru.xml" /> <!--伊露露-->
+	<model filename="acg_faputa.xml" /> <!--法仆塔-->
+	<model filename="acg_nanachi.xml" /> <!--娜娜奇-->
+	<model filename="acg_rem.xml" /> <!--雷姆-->
+	<model filename="acg_tachibana_kanade.xml" /> <!--立华奏-->
 	<model filename="acg_kaname_madoka.xml" /> <!--魔法少女小圆-->
 	<model filename="acg_shokuhou_misaki.xml" /> <!--食蜂操祈-->
+	<model filename="acg_megumin.xml"><!--慧慧--><requirement class="weapon" slot="0" key="acg_megumin_wand_summon.weapon"/>
+	</model>
+	<model filename="acg_megumin.xml"><!--慧慧--><requirement class="weapon" slot="0" key="acg_megumin_wand_float.weapon"/>
+	</model>
 <!-- 碧蓝档案 -->
 	<model filename="acg_alice_tendou.xml" /> <!--天童爱丽丝-->
 	<model filename="acg_takanashi_hoshino.xml" /> <!--小鸟游星野-->
+	<model filename="acg_sorasaki_hina.xml"><!--Hina--><requirement class="weapon" slot="0" key="acg_sorasaki_hina_burst.weapon"/>
+	</model>
+	<model filename="acg_sorasaki_hina.xml"><!--Hina--><requirement class="weapon" slot="0" key="acg_sorasaki_hina.weapon"/>
+	</model>
 <!-- 少女前线 -->
 	<model filename="acg_mg4_703.xml"><!--MG4机枪--><requirement class="weapon" slot="0" key="acg_mg4td_ap.weapon"/>
 	</model>
@@ -54,10 +101,22 @@
 	<model filename="acg_m37_summer_parader.xml" /> <!--M37盛夏巡礼者-->
 	<model filename="acg_tima.xml" /> <!--蒂玛-->
 	<model filename="acg_iws2000_sandcastle_terminator.xml" /> <!--iws2000沙堡终结者-->
-	<model filename="acg_iws2000_banisher.xml" /> <!--iws2000第七封印者-->
+	<model filename="acg_iws2000_banisher.xml" > <!--iws2000第七封印者--><requirement class="weapon" slot="0" key="acg_iws2000_banisher.weapon"/>
+	</model>
 	<model filename="acg_iws2000.xml" /> <!--iws2000原皮-->
-	<model filename="acg_hk416_starry_cocoon.xml" /> <!--HK416星之茧-->
+	<model filename="acg_hk416_starry_cocoon.xml" > <!--HK416星之茧--><requirement class="weapon" slot="0" key="acg_hk416_starry_cocoon.weapon"/>
+	</model>
+	<model filename="acg_hk416_starry_cocoon.xml" > <!--HK416星之茧--><requirement class="weapon" slot="0" key="acg_hk416_starry_cocoon_gl.weapon"/>
+	</model>
 <!-- 灰烬战线 -->
 	<model filename="acg_88mm_flak41.xml" /> <!--88炮-->
 	
+
+<!-- 测试 -->
+<model filename="acg_faputa.xml" > 
+<requirement class="weapon" slot="0" key="normal.weapon"/>
+</model>
+<model filename="acg_faputa.xml" > 
+<requirement class="weapon" slot="0" key="ref.weapon"/>
+</model>
 </models>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon key="auxiliary_car_fire_aim.weapon" on_ground_up="0 1 0">
+
+    <specification magazine_size="-1" 
+    retrigger_time="1" 
+    sustained_fire_grow_step="0" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+    can_shoot_prone="0" 
+    suppressed="1" 
+    name="Binoculars" 
+    class="0" 
+    sight_range_modifier="3.0" 
+    slot="0"
+    use_basic_muzzle_smoke_effect="0" />
+	
+    <animation key="hold" animation_key="still, binoculars" />
+    <animation key="hold_on_wall" animation_key="still, binoculars" />
+    <animation key="hold_casual" animation_key="still, binoculars" />
+    <animation key="still_against_wall" animation_key="still, binoculars" />
+    <animation key="recoil" animation_key="recoil, binoculars" />
+    <animation key="crouching" animation_key="crouching still, binoculars" />
+    <animation key="running" animation_key="running, binoculars" />
+    <animation key="walking" animation_key="walking, binoculars" />
+    <animation key="walking_backwards" animation_key="walking backwards, binoculars" />
+    <animation key="crouch_moving" animation_key="crouching forwards, binoculars" />
+    <animation key="changing_weapon_out" ref="57" />
+    <animation key="changing_weapon_in" ref="58" />
+    <animation key="reload" ref="35" />
+   
+
+    <model filename="" />
+    <hud_icon filename="hud_binoculars.png" />
+    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
+    <capacity value="1" source="rank" source_value="1.0" />
+    <inventory encumbrance="3.0" price="1.0" />
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="1" can_be_detected_by_footmen="0" 
+	time_to_live="10" can_be_detected_by_driver="0" can_be_disarmed="0" name="Fire Aim"> 
+
+        <result class="hit" kill_probability="0" 
+		kill_decay_start_time="0" kill_decay_end_time="0" />
+        <trigger class="time" time_to_live="0.05" />	
+        <rotation class="motion" />
+
+        <trail probability="1" key=""/>	
+		<model mesh_filename="" />
+
+        <effect class="result" key="terrain" ref="general_fire_aim_mark_1" lighting="0" post_processing="0"/> 
+        <effect class="result" key="terrain" ref="general_fire_aim_mark_2" lighting="0" post_processing="0"/> 
+
+        <effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+    </projectile>
+
+    <ballistics curve_height="10.0" near_far_distance="0.0" speed_estimation_near="1000.0" 
+	speed_estimation_far="1000.0" max_speed="2000.0" randomness="0.0" tweak_factor="30"/> 
+
+   <modifier class="speed" value="0.0" /> 
+    
+</weapon>

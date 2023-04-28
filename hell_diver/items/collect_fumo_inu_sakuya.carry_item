@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carry_item 
+name="Inu Sakuya Fumo" 
+key="collect_fumo_inu_sakuya.carry_item"
+file="_collect_rare.base"
+>
+
+    <hud_icon filename="collect_fumo_inu_sakuya.png" />
+    <inventory  price="250.0" />
+
+    <model mesh_filename="collect_fumo_inu_sakuya.mesh" texture_filename="collect_fumo_inu_sakuya.jpg" />
+
+
+    <commonness value="1"  />
+</carry_item>

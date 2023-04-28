@@ -342,7 +342,7 @@ emitter Point
 
 particle_system cyborgs_activated_flamethrower_01
 {
-	quota 3000
+	quota 9000
 	material flame_tex_bw_01
 	particle_width 2
 	particle_height 2
@@ -658,7 +658,7 @@ particle_system cyborgs_activated_cannon_flysmoke
 		velocity_max 0.3
 		time_to_live_min 0.4
 		time_to_live_max 0.7
-		duration 1.5
+		duration 0
 		width 0.5
 		height 0.5
 		depth 0.5

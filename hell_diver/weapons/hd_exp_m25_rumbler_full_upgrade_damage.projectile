@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectiles>
+<projectile class="grenade" name="M-25 Rumbler" 
+slot="1" pulldown_in_air="30.0" 
+key="hd_exp_m25_rumbler_full_upgrade_damage.projectile"
+blast_damage_threshold="50"
+>
+	 
+	<collision class="sticky" />
+	<result class="blast" radius="7.0" damage="15.0" push="1.2" decal="0" character_state="wound"/>
+	<trigger class="time" time_to_live="0" />	
+    <rotation class="motion" />
+	<model mesh_filename="" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	
+</projectile>
+<projectile class="grenade" name="M-25 Rumbler" 
+slot="1" pulldown_in_air="30.0" 
+key="hd_exp_m25_rumbler_ai_damage.projectile"
+blast_damage_threshold="50"
+>
+	 
+	<collision class="sticky" />
+	<result class="blast" radius="7.0" damage="15.0" push="1.2" decal="0" character_state="wound" faction_compare="not_equal" damage_origin_vehicle="0"/>
+	<trigger class="time" time_to_live="0" />	
+    <rotation class="motion" />
+	<model mesh_filename="" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	
+</projectile>
+</projectiles>

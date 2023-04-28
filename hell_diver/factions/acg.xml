@@ -165,8 +165,15 @@
 
 	<!-- player group -->
 	<soldier name="default" spawn_score="0.0">
-		<character filename="helldivers_default_base.character">
+		<character filename="helldivers_default_chat.character">
 
+			<parameter class="detectability_prone" value="0.4" />
+			<parameter class="detectability_wounded" value="0.4" />
+			<parameter class="detectability_crouching" value="0.55" />
+			<parameter class="detectability_crouch_moving" value="0.6" />
+			<parameter class="detectability_walking" value="0.95" />
+			<parameter class="detectability_still" value="0.8" />
+			<parameter class="detectability_running" value="1" />
 
 		</character>
 		<ai filename="default_acg.ai" />
@@ -175,9 +182,8 @@
 		<models file="extra_weapons.models" />
 		<models file="hd_weapons.models" />
 
-		<resources file="common.resources" clear_weapons="1" clear_vehicles="1" clear_carry_items="1" clear_calls="1" clear_grenades="1"/>
-		<!-- <resources file="acg_player.resources" /> -->
-		<resources file="hd_test.resources" />
+		<resources clear_weapons="1" clear_vehicles="1" clear_carry_items="1" clear_calls="1" clear_grenades="1"/>
+		<resources file="common.resources" />
 		<resources file="hd_player.resources" >
 			<projectile key="hd_amg_11_mk3_call.projectile" enabled="0" /><!--自动机枪炮台-->
 			<projectile key="hd_arx_34_mk3_call.projectile" enabled="0" /><!--自动轨道炮炮台-->
@@ -186,12 +192,14 @@
 		
 
 		<item_class_existence_config>
+			<!-- main -->
+			<item_class_existence class="weapon" slot="0" probability="1" />
 			<!-- secondaries -->
 			<item_class_existence class="weapon" slot="1" probability="1" />
 			<!-- wearables -->
 			<item_class_existence class="carry_item" slot="1" probability="1" />
 			<!-- backpack -->
-			<item_class_existence class="carry_item" slot="0" probability="0.03" />
+			<item_class_existence class="carry_item" slot="0" probability="0" />
 		</item_class_existence_config>
 
 		<attribute_config class="rp">
@@ -208,9 +216,90 @@
 	<soldier name="default_ai" spawn_score="1.0" copy_from="default">
 			<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 			<resources file="hd_divers.resources" />
-			
+			<resources file="common_loot_rare.resources" />
+		<attribute_config class="rp">
+			<attribute weight="1" min="100.0" max="200.0" />
+		</attribute_config>
+
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="200.0" max="255" />
+			<attribute weight="2.0" min="100.0" max="200" />
+			<attribute weight="3.0" min="0.0" max="100" />
+		</attribute_config>
+
+		<item_class_existence_config>
+			<!-- main -->
+			<item_class_existence class="weapon" slot="0" probability="1" />
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="1" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="1" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="0.1" />
+		</item_class_existence_config>
 	</soldier>
-  
+
+	<soldier name="base" spawn_score="0" >
+		<character filename="helldivers_default_chat.character">
+			<parameter class="default_squad_config_index" value="0" />
+		</character>
+		<ai filename="default_super_earth.ai" />
+
+		<models file="extra_weapons.models" />
+		<models file="hd_weapons.models" />
+
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+
+		<item_class_existence_config>
+			<!-- main -->
+			<item_class_existence class="weapon" slot="0" probability="1" />
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="1" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="1" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="0" />
+		</item_class_existence_config>
+
+		<attribute_config class="rp">
+			<attribute weight="1" min="1.0" max="1.0" />
+		</attribute_config>
+
+		<attribute_config class="xp">
+			<attribute weight="1" min="0.0" max="0.0" />
+		</attribute_config>
+	</soldier>
+
+	<!-- 精英空投 -->
+	<soldier name="HellDiver" spawn_score="0.0" copy_from="base">
+		<model filename="ex_sc_ghost.xml" />
+		<ai filename="default_super_earth_elite.ai" />
+			<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+			<resources file="hd_divers.resources" />
+			<resources>
+				<call key="spawn_hd_sms.call" /><!--撕裂者-->
+			</resources>
+
+		<attribute_config class="rp">
+			<attribute weight="1" min="1800.0" max="2100.0" />
+		</attribute_config>
+
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="300.0" max="1000" />
+		</attribute_config>
+
+		<item_class_existence_config>
+			<!-- main -->
+			<item_class_existence class="weapon" slot="0" probability="1" />
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="1" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="1" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="0.1" />
+		</item_class_existence_config>
+	</soldier>
+
 	<!-- supply box group -->
 	<soldier name="supply" spawn_score="0.0">
 		<resources file="supply_common.resources" />
@@ -264,12 +353,12 @@
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources>
 			<weapon key="hd_amg_11_mk3.weapon" /><!--机枪-->
-			<carry_item key="general_vest.carry_item" /><!--护甲-->
+			<carry_item key="anti_melee_vest.carry_item" /><!--护甲-->
 		</resources>
 		<ai filename="hd_amg11.ai" />
 		<character filename="hd_amg11.character"/>
 		
-		<model file="null_body.xml" />
+		<model filename="null_body.xml" />
 		
 		<item_class_existence_config>
 			<!-- main -->
@@ -291,13 +380,13 @@
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources>
 			<weapon key="hd_arx_34_mk3.weapon" /><!--轨道炮-->
-			<carry_item key="general_vest.carry_item" /><!--300层护甲-->
+			<carry_item key="anti_melee_vest.carry_item" /><!--300层护甲-->
 		</resources>
 		<ai filename="hd_amg11.ai" >
 			<parameter class="accuracy_offset" value="1.0" />
 		</ai>
 		<character filename="hd_amg11.character"/>
-		<model file="null_body.xml" />
+		<model filename="null_body.xml" />
 
 		<item_class_existence_config>
 			<!-- main -->
@@ -315,6 +404,12 @@
 
 		<attribute_config class="xp"><attribute weight="1.0" min="1" max="1" />
 		</attribute_config>
+	</soldier> 
+
+	<soldier name="test" spawn_score="0.0" copy_from="default">
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="test.resources" />
+		<resources file="common_loot_rare.resources" />
 	</soldier> 
 
 </faction>

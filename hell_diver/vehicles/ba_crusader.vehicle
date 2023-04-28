@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vehicle file="_vehicle_mid.base" 
+name="Crusader chan[S.Hifumi]" 
+key="ba_crusader.vehicle" 
+respawn_time="300"  
+map_view_atlas_index="5" 
+minimum_fill_requirement="1"
+allow_ai_to_use="0"
+max_character_collision_speed_on_normal="5"
+simulated_damage="100"
+time_to_live_unsteerable="12"
+character_leave_request_mode="friendly"
+ai_abandon_when_unsteerable="1"
+ai_handle_taxi_request_when_full="1"
+>
+	<tag name="tank" />
+	<tag name="any_tank" />
+
+	<tire_set offset="1.28 0.0 2.22" radius="0.80" />
+	<tire_set offset="1.28 0.0 -0.53" radius="0.80" />
+	<tire_set offset="1.28 0.0 -2.42" radius="0.80" />
+
+	<control max_speed="9.0" 
+	acceleration="15.0" 
+	max_reverse_speed="8.0" 
+	max_rotation="0.0" 
+	max_water_depth="3.0"  
+	steer_smoothening="0.98" 
+	tracked="1" gears="1" />
+
+	<physics 
+	extent="3.0 0.0 6" 
+	offset="0 0.0 0" 
+	top_offset="0 4 0" 
+	collision_model_pos="0 1.0 0.0" 
+	collision_model_extent="3.4 2.0 7" 
+	visual_offset="0 0.5 0.0" 
+	friction_offset="0.0" 
+	drag_offset="-1" 
+	destroy_on_top_hit="1"
+	destroy_on_top_hit_time="5"/> 
+
+	<modifier class="blast_damage" value="-0.9" />
+	
+	0<turret offset="0 0 0.0" 		weapon_key="ba_crusader_cannon.weapon" 	weapon_offset="0 2.5 2.8"	weapon_recoil="0.1" physics_recoil="0.3"	max_rotation_step="0.00005" />
+	1<turret offset="0.65 1.35 1.7" 	weapon_key="hd_vehicle_lmg.weapon" 	weapon_offset="0 0.7 1.25" weapon_recoil="0.0" physics_recoil="0.0" rotation="0" rotation_range="0.8" max_rotation_step="0.0003"/>
+	2<turret offset="0 0 0.0" 		weapon_key="hd_vehicle_null.weapon" 	parent_turret_index="0" />
+	3<turret offset="0.68 1.35 1.7" 	weapon_key="hd_vehicle_lmg.weapon" 	weapon_offset="0 0.7 1.25" weapon_recoil="0.0" physics_recoil="0.0" rotation="0" rotation_range="0.8" max_rotation_step="0.0003"/>
+	4<turret offset="0 0 0"	weapon_key="hd_vehicle_lmg.weapon" 		weapon_offset="-0.4 2.5 1.67"  rotation_range="0.1" parent_turret_index="0" />
+	
+	<visual class="chassis" mesh_filename="ba_crusader_body.mesh" texture_filename="ba_crusader.jpg" max_tilt="0.06" />
+	<visual class="turret" turret_index="0" mesh_filename="ba_crusader_cannon.mesh" 		texture_filename="ba_crusader.jpg" /> 
+	<visual class="turret" turret_index="1" mesh_filename="ba_crusader_turret2.mesh" 		texture_filename="ba_crusader.jpg" /> 
+	<visual class="turret" turret_index="2" mesh_filename="ba_crusader_turret.mesh" 		texture_filename="ba_crusader.jpg" />
+	<visual class="turret" turret_index="3" mesh_filename="" 		texture_filename="" /> 
+	<visual class="turret" turret_index="4" mesh_filename="" 		texture_filename="" /> 	
+	<!-- 破损车体\炮台 -->
+	<visual class="chassis" key="broken" mesh_filename="ba_crusader_body.mesh" texture_filename="ba_crusader_broken.jpg" />
+
+	<visual class="track" mesh_filename="ba_crusader_tracks_left.mesh" offset="0 0 0" >
+		<part texture_filename="ba_crusader_tracks.png" texture_animation="translate" tire_binding="1" />
+	</visual>	
+	<visual class="track" mesh_filename="ba_crusader_tracks_right.mesh" offset="0 0 0" >
+		<part texture_filename="ba_crusader_tracks.png" texture_animation="translate" tire_binding="0" />
+	</visual>
+
+	<visual class="track" mesh_filename="ba_crusader_wheels_left.mesh" offset="0 0 0" >
+		<part texture_filename="ba_crusader.jpg" />
+		<part texture_filename="ba_crusader_wheel1.png" texture_animation="rotate" tire_binding="0" />
+		<part texture_filename="ba_crusader_wheel2.png" texture_animation="rotate" tire_binding="0" />
+		<part texture_filename="ba_crusader_wheel3.png" texture_animation="rotate" tire_binding="0" />
+	</visual>	
+	<visual class="track" mesh_filename="ba_crusader_wheels_right.mesh" offset="0 0 0" >
+		<part texture_filename="ba_crusader.jpg" />
+		<part texture_filename="ba_crusader_wheel1.png" texture_animation="rotate" tire_binding="0" />
+		<part texture_filename="ba_crusader_wheel2.png" texture_animation="rotate" tire_binding="0" />
+		<part texture_filename="ba_crusader_wheel3.png" texture_animation="rotate" tire_binding="0" />
+	</visual>
+
+
+	<character_slot type="driver" position="1.7 0.3 0" rotation="0" exit_rotation="1.57" hiding="1" />
+	<character_slot type="gunner" position="-1.7 0.3 1.0" rotation="0" exit_rotation="-1.57" hiding="1" >
+     	<turret index="0" /><turret index="4" />
+	</character_slot> 
+	<character_slot type="gunner" position="1.7 0.3 2.0" rotation="0" exit_rotation="1.57" hiding="1" >
+     	<turret index="1" /><turret index="3" />
+	</character_slot>
+	
+	<character_slot type="passenger" attached_on_turret="0" enter_position="0 0 -3.8" seat_position="0 2.3 -1" 
+	 rotation="0" exit_rotation="-1.57" hiding="0" animation_key="still" />
+
+	<!-- sound handling -->
+	<!-- <rev_sound filename="t34_fast_pass_rev_1.wav" low_pitch="0.95" high_pitch="1.05" low_rev="0.0" high_rev="0.2" volume="5.0" />
+	<rev_sound filename="t34_fast_pass_rev_2.wav" low_pitch="0.8" high_pitch="1.0" low_rev="0.4" high_rev="1.0" volume="5.0" /> -->
+	<rev_sound filename="Colorful_Beach.wav" low_pitch="1" high_pitch="1.0" low_rev="1" high_rev="1" volume="2.5" />
+
+	<sound key="slide" filename="slide_noise.wav" />
+	<sound key="squeal" filename="tire_squeal.wav" />
+	<sound key="ignition" filename="" pitch_variety="0"/>
+	<sound key="turret_rotation" filename="turret_rotation1.wav" />
+	<sound key="hit" filename="car_hit2.wav" />
+	<sound key="hit" filename="car_hit1.wav" />
+	<sound key="destroy" filename="vehicle_explosion_1.wav" />  
+	<sound key="cleanup" filename="vehicle_explosion_1.wav" />
+
+	<effect event_key="slide" type="splat_map" surface_tag="road" size="1.0" atlas_index="5" layer="0" />
+	<effect event_key="slide_hard" type="splat_map" surface_tag="road" size="0.5" atlas_index="2" layer="0" />
+	<effect event_key="slide" type="splat_map" surface_tag="dirt" size="1.0" atlas_index="2" layer="1" />
+	<effect event_key="slide" type="particle" key="terrain" surface_tag="dirt" ref="car_slide_up_smoke" use_surface_color="1" />
+	<effect event_key="slide_hard" type="particle" key="terrain" surface_tag="dirt" ref="car_slide_up_smoke" use_surface_color="1" />
+  
+	<effect event_key="slide" type="particle" key="terrain" surface_tag="road" ref="car_slide_up_smoke" use_surface_color="1" />
+	<effect event_key="slide_hard" type="particle" key="terrain" surface_tag="road" ref="car_slide_up_smoke" use_surface_color="1" />
+  
+	<effect event_key="drive_chassis" ref="car_health_front_light" offset="-3 0 10" />
+	<effect event_key="drive_chassis" ref="car_health_front_light" offset="3 0 10" />
+
+	<effect event_key="health" value="300" ref="car_broken_spary_spark" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="200" ref="car_broken_spary_spark" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="200" ref="car_destroyed_up_smoke" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="100" ref="car_destroyed_fire" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="100" ref="car_destroyed_up_smoke" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="100" ref="car_broken_spary_spark" offset="-0.0 2.2 -0.5" />
+
+	<effect event_key="destroyed" ref="car_destroyed_fire" post_processing="0" offset="-0.5 2.2 -1.5" />
+	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="1" offset="-0.5 2.2 -1.5" />  
+	<effect event_key="destroyed" ref="car_broken_spary_spark" post_processing="1" offset="-0.5 2.2 -1.5" />  
+	<effect event_key="destroyed" ref="car_destroyed_fire" post_processing="0" offset="-0.5 1.8 0.8" />
+	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="1" offset="-0.5 1.8 0.8" />  
+	<effect event_key="destroyed" ref="car_broken_spary_spark" post_processing="1" offset="-0.5 1.8 0.8" />  
+
+	<effect event_key="destroyed" ref="IB_fire" lighting="0" post_processing="1" offset="0 2 0"/> 
+	<effect event_key="destroyed" ref="IB_up_smoke" lighting="1" post_processing="1" offset="0 2 0"/> 
+	<effect event_key="destroyed" ref="IB_up_spark" lighting="1" post_processing="1" offset="0 2 0"/> 
+
+    <effect event_key="destroy" key="other" ref="woosh" post_processing="0" shadow="0" />   
+    <effect event_key="cleanup" key="other" ref="woosh" post_processing="0" shadow="0" /> 
+  
+  	<event>
+		<trigger class="destroy" />
+      <result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor1.visual_item" min_amount="4" max_amount="6" offset="0 2.5 0" position_spread="1.5 1.5" direction_spread="0.15 0.3" />
+	</event>
+	<event>
+		<trigger class="destroy" />  	
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor2.visual_item" min_amount="3" max_amount="6" offset="0 2.5 0" position_spread="1.5 1.5" direction_spread="0.10 0.25" />
+	</event>
+  <event>
+		<trigger class="destroy" />		
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor3.visual_item" min_amount="3" max_amount="6" offset="0 2.5 0" position_spread="1.5 1.5" direction_spread="0.12 0.20" />
+	</event>
+  <event>
+		<trigger class="destroy" />		
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor4.visual_item" min_amount="3" max_amount="6" offset="0 2.5 0" position_spread="1.5 1.5" direction_spread="0.2 0.25" />
+	</event>    
+
+  <event>
+		<trigger class="cleanup" />		
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_cleanup.visual_item" min_amount="20" max_amount="30" offset="0 2.0 0" position_spread="1.5 1.5" direction_spread="0.1 0.1" /> 
+  </event>    
+ 	<event>
+		<trigger class="cleanup" />
+    <result class="spawn" instance_class="projectile" instance_key="debri_stun" min_amount="1" max_amount="1" offset="0 3.0 0" position_spread="0.0 0.0" direction_spread="0.0 0.0" />
+  </event>   
+</vehicle>
+
+

@@ -3,7 +3,7 @@
     <!-- 40层甲，每层等效2.5滴血，30血以下强制击倒 击倒后被近战直接死亡 -->
     <!-- 轰炸伤害在半血前均能击倒 -->
     <!-- 0.5抗致死用于减少友伤 -->
-    <carry_item key="helldivers_vest.carry_item" name="40/40 HellDivers Vest " slot="1" transform_on_consume="hd_v1" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+    <carry_item key="helldivers_vest.carry_item" name="40/40 HellDivers Vest" slot="1" transform_on_consume="hd_v1" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
         <hud_icon filename="helldivers_vest_100.png" />
         <capacity value="0" source="rank" source_value="0.0" />
         <capacity value="1" source="rank" source_value="0.0" />
@@ -22,13 +22,13 @@
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-			min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
 
-         <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.75" />
-        <modifier class="detectability" value="0" />
+        <modifier class="speed" value="0" /> 
+        <modifier class="hit_success_probability" value="-0.9" /><!--首层保护-->
+        <modifier class="detectability" value="-0.15" />
     </carry_item>
 	
 	<carry_item key="hd_v1" name="39/40 HellDivers Vest" slot="1" transform_on_consume="hd_v2" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
@@ -50,12 +50,12 @@
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-			min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
         <modifier class="hit_success_probability" value="-0.75" />
-        <modifier class="detectability" value="0" />
+        <modifier class="detectability" value="-0.1" />
   </carry_item>
 	
       <carry_item key="hd_v2" name="38/40 HellDivers Vest" slot="1" transform_on_consume="hd_v3" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
@@ -77,12 +77,12 @@
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-			min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
         <modifier class="hit_success_probability" value="-0.75" />
-        <modifier class="detectability" value="0" />
+        <modifier class="detectability" value="-0.1" />
     </carry_item>
 	
 	<carry_item key="hd_v3" name="37/40 HellDivers Vest" slot="1" transform_on_consume="hd_v4" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
@@ -104,12 +104,12 @@
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-			min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
         <modifier class="hit_success_probability" value="-0.75" />
-        <modifier class="detectability" value="0" />
+        <modifier class="detectability" value="-0.1" />
   </carry_item>
 
 	<carry_item key="hd_v4" name="36/40 HellDivers Vest" slot="1" transform_on_consume="hd_v5" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
@@ -131,12 +131,12 @@
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-			min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
         <modifier class="hit_success_probability" value="-0.75" />
-        <modifier class="detectability" value="0" />
+        <modifier class="detectability" value="-0.1" />
   </carry_item>
 
 	<carry_item key="hd_v5" name="35/40 HellDivers Vest" slot="1" transform_on_consume="hd_v6" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
@@ -158,12 +158,12 @@
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-			min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
         <modifier class="hit_success_probability" value="-0.75" />
-        <modifier class="detectability" value="0" />
+        <modifier class="detectability" value="-0.1" />
   </carry_item>
 
 	<carry_item key="hd_v6" name="34/40 HellDivers Vest" slot="1" transform_on_consume="hd_v7" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
@@ -185,12 +185,12 @@
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-			min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
         <modifier class="hit_success_probability" value="-0.75" />
-        <modifier class="detectability" value="0" />
+        <modifier class="detectability" value="-0.1" />
   </carry_item>
 	<carry_item key="hd_v7" name="33/40 HellDivers Vest" slot="1" transform_on_consume="hd_v8" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
         <hud_icon filename="helldivers_vest_60.png" />
@@ -211,12 +211,12 @@
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-			min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
         <modifier class="hit_success_probability" value="-0.75" />
-        <modifier class="detectability" value="0" />
+        <modifier class="detectability" value="-0.1" />
   </carry_item>
 	
 	<carry_item key="hd_v8" name="32/40 HellDivers Vest" slot="1" transform_on_consume="hd_v9" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
@@ -238,12 +238,12 @@
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-			min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
         <modifier class="hit_success_probability" value="-0.75" />
-        <modifier class="detectability" value="0" />
+        <modifier class="detectability" value="-0.1" />
   </carry_item>
 	
       <carry_item key="hd_v9" name="31/40 HellDivers Vest" slot="1" transform_on_consume="hd_v10" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
@@ -265,12 +265,12 @@
             <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
             <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
             <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-                  min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+                  min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
             <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
             <modifier class="speed" value="0" /> 
             <modifier class="hit_success_probability" value="-0.75" />
-            <modifier class="detectability" value="0" />
+            <modifier class="detectability" value="-0.1" />
             </carry_item>
       <carry_item key="hd_v10" name="30/40 HellDivers Vest" slot="1" transform_on_consume="hd_v11" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
             <hud_icon filename="helldivers_vest_50.png" />
@@ -291,12 +291,12 @@
             <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
             <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
             <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-                  min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+                  min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
             <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
             <modifier class="speed" value="0" /> 
             <modifier class="hit_success_probability" value="-0.75" />
-            <modifier class="detectability" value="0" />
+            <modifier class="detectability" value="-0.1" />
             </carry_item>
       <carry_item key="hd_v11" name="29/40 HellDivers Vest" slot="1" transform_on_consume="hd_v12" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
             <hud_icon filename="helldivers_vest_50.png" />
@@ -317,12 +317,12 @@
             <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
             <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
             <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-                  min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+                  min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
             <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
             <modifier class="speed" value="0" /> 
             <modifier class="hit_success_probability" value="-0.75" />
-            <modifier class="detectability" value="0" />
+            <modifier class="detectability" value="-0.1" />
             </carry_item>
       <carry_item key="hd_v12" name="28/40 HellDivers Vest" slot="1" transform_on_consume="hd_v13" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
             <hud_icon filename="helldivers_vest_50.png" />
@@ -343,12 +343,12 @@
             <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
             <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
             <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-                  min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+                  min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
             <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
             <modifier class="speed" value="0" /> 
             <modifier class="hit_success_probability" value="-0.75" />
-            <modifier class="detectability" value="0" />
+            <modifier class="detectability" value="-0.1" />
             </carry_item>
       <carry_item key="hd_v13" name="27/40 HellDivers Vest" slot="1" transform_on_consume="hd_v14" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
             <hud_icon filename="helldivers_vest_50.png" />
@@ -369,12 +369,12 @@
             <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
             <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
             <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-                  min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+                  min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
             <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
             <modifier class="speed" value="0" /> 
             <modifier class="hit_success_probability" value="-0.75" />
-            <modifier class="detectability" value="0" />
+            <modifier class="detectability" value="-0.1" />
             </carry_item>
       <carry_item key="hd_v14" name="26/40 HellDivers Vest" slot="1" transform_on_consume="hd_v15" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
             <hud_icon filename="helldivers_vest_50.png" />
@@ -395,12 +395,12 @@
             <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
             <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
             <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-                  min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+                  min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
             <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
             <modifier class="speed" value="0" /> 
             <modifier class="hit_success_probability" value="-0.75" />
-            <modifier class="detectability" value="0" />
+            <modifier class="detectability" value="-0.1" />
             </carry_item>
       <carry_item key="hd_v15" name="25/40 HellDivers Vest" slot="1" transform_on_consume="hd_v16" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
             <hud_icon filename="helldivers_vest_50.png" />
@@ -421,12 +421,12 @@
             <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
             <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
             <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-                  min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+                  min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
             <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
             <modifier class="speed" value="0" /> 
             <modifier class="hit_success_probability" value="-0.75" />
-            <modifier class="detectability" value="0" />
+            <modifier class="detectability" value="-0.1" />
             </carry_item>
       <carry_item key="hd_v16" name="24/40 HellDivers Vest" slot="1" transform_on_consume="hd_v17" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
             <hud_icon filename="helldivers_vest_50.png" />
@@ -447,12 +447,12 @@
             <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
             <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
             <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-                  min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+                  min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
             <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
             <modifier class="speed" value="0" /> 
             <modifier class="hit_success_probability" value="-0.75" />
-            <modifier class="detectability" value="0" />
+            <modifier class="detectability" value="-0.1" />
             </carry_item>
       <carry_item key="hd_v17" name="23/40 HellDivers Vest" slot="1" transform_on_consume="hd_v18" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
             <hud_icon filename="helldivers_vest_50.png" />
@@ -473,12 +473,12 @@
             <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
             <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
             <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-                  min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+                  min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
             <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
             <modifier class="speed" value="0" /> 
             <modifier class="hit_success_probability" value="-0.75" />
-            <modifier class="detectability" value="0" />
+            <modifier class="detectability" value="-0.1" />
             </carry_item>
       <carry_item key="hd_v18" name="22/40 HellDivers Vest" slot="1" transform_on_consume="hd_v19" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
             <hud_icon filename="helldivers_vest_50.png" />
@@ -499,12 +499,12 @@
             <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
             <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
             <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-                  min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+                  min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
             <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
             <modifier class="speed" value="0" /> 
             <modifier class="hit_success_probability" value="-0.75" />
-            <modifier class="detectability" value="0" />
+            <modifier class="detectability" value="-0.1" />
             </carry_item>
       <carry_item key="hd_v19" name="21/40 HellDivers Vest" slot="1" transform_on_consume="hd_v20" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
             <hud_icon filename="helldivers_vest_50.png" />
@@ -525,12 +525,12 @@
             <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
             <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
             <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-                  min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+                  min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
             <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
             <modifier class="speed" value="0" /> 
             <modifier class="hit_success_probability" value="-0.75" />
-            <modifier class="detectability" value="0" />
+            <modifier class="detectability" value="-0.1" />
             </carry_item>
 
 
@@ -555,12 +555,12 @@
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-			min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
         <modifier class="hit_success_probability" value="-0.75" />
-        <modifier class="detectability" value="0" />
+        <modifier class="detectability" value="-0.1" />
   </carry_item>
 	<carry_item key="hd_v21" name="19/40 HellDivers Vest" slot="1" transform_on_consume="hd_v22" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
         <hud_icon filename="helldivers_vest_40.png" />
@@ -581,12 +581,12 @@
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-			min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
         <modifier class="hit_success_probability" value="-0.75" />
-        <modifier class="detectability" value="0" />
+        <modifier class="detectability" value="-0.1" />
   </carry_item>
 	<carry_item key="hd_v22" name="18/40 HellDivers Vest" slot="1" transform_on_consume="hd_v23" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
         <hud_icon filename="helldivers_vest_40.png" />
@@ -607,12 +607,12 @@
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-			min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
         <modifier class="hit_success_probability" value="-0.75" />
-        <modifier class="detectability" value="0" />
+        <modifier class="detectability" value="-0.1" />
   </carry_item>
 	<carry_item key="hd_v23" name="17/40 HellDivers Vest" slot="1" transform_on_consume="hd_v24" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
         <hud_icon filename="helldivers_vest_40.png" />
@@ -633,12 +633,12 @@
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-			min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
         <modifier class="hit_success_probability" value="-0.75" />
-        <modifier class="detectability" value="0" />
+        <modifier class="detectability" value="-0.1" />
   </carry_item>
 	<carry_item key="hd_v24" name="16/40 HellDivers Vest" slot="1" transform_on_consume="hd_v25" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
         <hud_icon filename="helldivers_vest_30.png" />
@@ -659,12 +659,12 @@
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-			min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
         <modifier class="hit_success_probability" value="-0.75" />
-        <modifier class="detectability" value="0" />
+        <modifier class="detectability" value="-0.1" />
   </carry_item>
 	<carry_item key="hd_v25" name="15/40 HellDivers Vest" slot="1" transform_on_consume="hd_v26" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
         <hud_icon filename="helldivers_vest_30.png" />
@@ -685,12 +685,12 @@
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-			min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
         <modifier class="hit_success_probability" value="-0.75" />
-        <modifier class="detectability" value="0" />
+        <modifier class="detectability" value="-0.1" />
   </carry_item>
 	<carry_item key="hd_v26" name="14/40 HellDivers Vest" slot="1" transform_on_consume="hd_v27" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
         <hud_icon filename="helldivers_vest_30.png" />
@@ -711,12 +711,12 @@
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-			min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
         <modifier class="hit_success_probability" value="-0.75" />
-        <modifier class="detectability" value="0" />
+        <modifier class="detectability" value="-0.1" />
   </carry_item>
 	<carry_item key="hd_v27" name="13/40 HellDivers Vest" slot="1" transform_on_consume="hd_v28" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
         <hud_icon filename="helldivers_vest_30.png" />
@@ -737,12 +737,12 @@
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-			min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
         <modifier class="hit_success_probability" value="-0.75" />
-        <modifier class="detectability" value="0" />
+        <modifier class="detectability" value="-0.1" />
   </carry_item>
 	<carry_item key="hd_v28" name="12/40 HellDivers Vest" slot="1" transform_on_consume="hd_v29" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
         <hud_icon filename="helldivers_vest_30.png" />
@@ -763,12 +763,12 @@
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-			min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
         <modifier class="hit_success_probability" value="-0.75" />
-        <modifier class="detectability" value="0" />
+        <modifier class="detectability" value="-0.1" />
   </carry_item>
 	<carry_item key="hd_v29" name="11/40 HellDivers Vest" slot="1" transform_on_consume="hd_v30" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
         <hud_icon filename="helldivers_vest_30.png" />
@@ -789,12 +789,12 @@
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-			min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
         <modifier class="hit_success_probability" value="-0.75" />
-        <modifier class="detectability" value="0" />
+        <modifier class="detectability" value="-0.1" />
   </carry_item>
 	<carry_item key="hd_v30" name="10/40 HellDivers Vest" slot="1" transform_on_consume="hd_v31" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
         <hud_icon filename="helldivers_vest_30.png" />
@@ -815,12 +815,12 @@
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-			min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
         <modifier class="hit_success_probability" value="-0.75" />
-        <modifier class="detectability" value="0" />
+        <modifier class="detectability" value="-0.1" />
   </carry_item>
 
   <!-- +++++++++++++++++++++++++++++++++击倒层+++++++++++++++++++++++++++++++++++++++++++++ -->
@@ -843,12 +843,12 @@
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="wound" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="wound" consumes_item="1"/><!--重穿-->
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-			min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
          <modifier class="speed" value="0" /> 
         <modifier class="hit_success_probability" value="-0.75" />
-        <modifier class="detectability" value="0" />
+        <modifier class="detectability" value="-0.1" />
   </carry_item>
 	<carry_item key="hd_v32" name="8/40 HellDivers Vest" slot="1" transform_on_consume="hd_v33" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
         <hud_icon filename="helldivers_vest_20.png" />
@@ -869,12 +869,12 @@
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="wound" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="wound" consumes_item="1"/><!--重穿-->
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-			min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
          <modifier class="speed" value="0" /> 
         <modifier class="hit_success_probability" value="-0.75" />
-        <modifier class="detectability" value="0" />
+        <modifier class="detectability" value="-0.1" />
   </carry_item>
 	<carry_item key="hd_v33" name="7/40 HellDivers Vest" slot="1" transform_on_consume="hd_v34" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
         <hud_icon filename="helldivers_vest_20.png" />
@@ -895,12 +895,12 @@
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="wound" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="wound" consumes_item="1"/><!--重穿-->
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-			min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
          <modifier class="speed" value="0" /> 
         <modifier class="hit_success_probability" value="-0.75" />
-        <modifier class="detectability" value="0" />
+        <modifier class="detectability" value="-0.1" />
   </carry_item>
 	<carry_item key="hd_v34" name="6/40 HellDivers Vest" slot="1" transform_on_consume="hd_v35" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
         <hud_icon filename="helldivers_vest_10.png" />
@@ -921,12 +921,12 @@
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="wound" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="wound" consumes_item="1"/><!--重穿-->
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-			min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
          <modifier class="speed" value="0" /> 
         <modifier class="hit_success_probability" value="-0.75" />
-        <modifier class="detectability" value="0" />
+        <modifier class="detectability" value="-0.1" />
   </carry_item>
 	<carry_item key="hd_v35" name="5/40 HellDivers Vest" slot="1" transform_on_consume="hd_v36" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
         <hud_icon filename="helldivers_vest_10.png" />
@@ -947,12 +947,12 @@
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="wound" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="wound" consumes_item="1"/><!--重穿-->
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-			min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
          <modifier class="speed" value="0" /> 
         <modifier class="hit_success_probability" value="-0.75" />
-        <modifier class="detectability" value="0" />
+        <modifier class="detectability" value="-0.1" />
   </carry_item>
 	<carry_item key="hd_v36" name="4/40 HellDivers Vest" slot="1" transform_on_consume="hd_v37" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
         <hud_icon filename="helldivers_vest_broken.png" />
@@ -973,12 +973,12 @@
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="wound" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="wound" consumes_item="1"/><!--重穿-->
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-			min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
          <modifier class="speed" value="0" /> 
         <modifier class="hit_success_probability" value="-0.75" />
-        <modifier class="detectability" value="0" />
+        <modifier class="detectability" value="-0.1" />
   </carry_item>
 	<carry_item key="hd_v37" name="3/40 HellDivers Vest" slot="1" transform_on_consume="hd_v38" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
         <hud_icon filename="helldivers_vest_broken.png" />
@@ -999,12 +999,12 @@
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="wound" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="wound" consumes_item="1"/><!--重穿-->
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-			min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
          <modifier class="speed" value="0" /> 
         <modifier class="hit_success_probability" value="-0.75" />
-        <modifier class="detectability" value="0" />
+        <modifier class="detectability" value="-0.1" />
   </carry_item>
 	<carry_item key="hd_v38" name="2/40 HellDivers Vest" slot="1" transform_on_consume="hd_v39" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
         <hud_icon filename="helldivers_vest_broken.png" />
@@ -1025,12 +1025,12 @@
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="wound" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="wound" consumes_item="1"/><!--重穿-->
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-			min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
          <modifier class="speed" value="0" /> 
         <modifier class="hit_success_probability" value="-0.75" />
-        <modifier class="detectability" value="0" />
+        <modifier class="detectability" value="-0.1" />
   </carry_item>
 	<carry_item key="hd_v39" name="1/40 HellDivers Vest" slot="1" transform_on_consume="hd_v40" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
         <hud_icon filename="helldivers_vest_broken.png" />
@@ -1051,12 +1051,12 @@
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="wound" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="wound" consumes_item="1"/><!--重穿-->
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-			min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
          <modifier class="speed" value="0" /> 
         <modifier class="hit_success_probability" value="-0.75" />
-        <modifier class="detectability" value="0" />
+        <modifier class="detectability" value="-0.1" />
   </carry_item>
 
 	<carry_item key="hd_v40" name="0/40 HellDivers Vest" slot="1"  time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
@@ -1078,11 +1078,11 @@
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="death" consumes_item="0"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="0"/><!--重穿-->
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
-			min_amount="8" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
         <modifier class="hit_success_probability" value="-0.75" />
-        <modifier class="detectability" value="0" />
+        <modifier class="detectability" value="-0.1" />
   </carry_item>
 	
      

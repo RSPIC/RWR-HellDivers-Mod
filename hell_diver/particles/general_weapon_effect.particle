@@ -606,7 +606,7 @@ particle_system general_weapon_result_smoke_shorttime
 		keep_velocity false
 	}
 }
-particle_system general_weapon_avtivated_bullet_light
+particle_system general_weapon_activated_bullet_light
 {
 	quota 100
 	material point_soft_edge_100
@@ -620,7 +620,7 @@ particle_system general_weapon_avtivated_bullet_light
 		angle 360
 		colour 0.03 0.03 0.03 0.05
 		direction 0 1 0
-		emission_rate 30
+		emission_rate 10
 		position 0 0 0
 		velocity_min 0.1
 		velocity_max 0.3
@@ -659,7 +659,7 @@ particle_system general_weapon_avtivated_bullet_light
 		force_application add
 	}
 }
-particle_system general_weapon_avtivated_bullet_light_smaller : general_weapon_avtivated_bullet_light
+particle_system general_weapon_activated_bullet_light_smaller : general_weapon_activated_bullet_light
 {
 	particle_width 10
 	particle_height 10
@@ -800,7 +800,7 @@ particle_system general_weapon_activated_bullet_centerlight
 	emitter Point
 	{
 		angle 360
-		colour 0.1 0.015 0.0 0.03
+		colour 0.05 0.015 0.0 0.03
 		direction 0 1 0
 		emission_rate 10
 		position 0 0 0
@@ -821,18 +821,6 @@ particle_system general_weapon_activated_bullet_centerlight
 		rotation_range_start	0
 		rotation_range_end	360
 	}
-	affector ColourFader2
-	{
-		red1 	0
-		green1 	0
-		bule1 	0
-		alpha1 	0
-		red2 	-0.1
-		green2	-0.06
-		blue2	-0
-		alpha2	-0
-		state_change 1
-	}
 	affector LinearForce{
 		force_vector 0 0 0
 		force_application add
@@ -843,7 +831,7 @@ particle_system general_weapon_muzzle_bullet_triangle_headon
 {
 	quota 50
 	material triangle_head_on
-	particle_width 4
+	particle_width 2
 	particle_height 4
 	renderer billboard
 	billboard_type oriented_self
@@ -860,7 +848,7 @@ particle_system general_weapon_muzzle_bullet_triangle_headon
 		direction 0 1 0
 		emission_rate 10
 		position 0 0 0
-		velocity 180
+		velocity 260
 		time_to_live 0.4
 		duration 0.1
 	}
@@ -2150,7 +2138,7 @@ particle_system general_helldiver_dead_2		//固定
 		emission_rate 10
 		position 0 0.4 0
 		velocity 0.00001
-		time_to_live 5
+		time_to_live 10
 		duration 0.1
 	}
 	affector Scaler
@@ -2161,12 +2149,14 @@ particle_system general_helldiver_dead_2		//固定
 	{
 		time0 0
 		colour0 0 0 0 0
-		time1 0.035
+		time1 0.0175
 		colour1 0 0 0 0
 		time2 0.04
 		colour2 1 1 1 1.0
-		time3 1
-		colour3 0 0 0 0
+		time3 0.9
+		colour3 1 1 1 1.0
+		time4 1
+		colour4 0 0 0 0
 	}
 	affector LinearForce{
 		force_vector 0 0 0
@@ -2343,6 +2333,196 @@ particle_system general_result_shield_hit_2 : general_result_shield_hit_1
 	}
 }
 
+
+particle_system general_fire_aim_mark_1 	//瞄准地面框选特效
+{
+	quota 50
+	material Tex_UI_Mark10A_anim
+	particle_width 8
+	particle_height 8
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 -20 0
+		velocity 0.0001
+		time_to_live 1
+		duration 0.1
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0 1
+		time1 1
+		colour1 1 0.3 0 1
+	}
+}
+particle_system general_fire_aim_mark_1_long : general_fire_aim_mark_1 	//瞄准地面框选特效
+{
+	emitter Point
+	{
+		time_to_live 3
+		position 0 0 0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0 1
+		time1 0.7
+		colour1 1 0.3 0 1
+		time1 2
+		colour2 0 0 0 0
+	}
+}
+particle_system general_fire_aim_mark_2  //瞄准的空对地指示特效
+{
+	quota 50
+	material UITEX_DirectionHelp_anim
+	particle_width 1.5
+	particle_height 3
+	renderer billboard
+	billboard_type oriented_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 -17 0
+		velocity 0.0001
+		time_to_live 1
+		duration 0.1
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	180
+		rotation_range_end	180
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 1
+		colour1 1 1 1 1
+	}
+}
+particle_system general_fire_aim_mark_2_long : general_fire_aim_mark_2  //瞄准的空对地指示特效
+{
+	emitter Point
+	{
+		time_to_live 3
+		position 0 0 0
+	}
+	affector Rotator
+	{}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0 1
+		time1 0.7
+		colour1 1 0.3 0 1
+		time1 2
+		colour2 0 0 0 0
+	}
+}
+particle_system position_measure_dot
+{
+	quota 50
+	material point_hard_edge
+	particle_width 0.1
+	particle_height 0.3
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 90
+		duration 0.1
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	45
+		rotation_speed_range_end  	45
+		rotation_range_start	0
+		rotation_range_end	180
+	}
+}
+particle_system position_measure_dotred : position_measure_dot
+{
+	emitter Point
+	{
+		colour 1 0 0 1
+	}
+}
+particle_system position_measure_dotyellow : position_measure_dot
+{
+	emitter Point
+	{
+		colour 1 0 0 1
+	}
+}
+particle_system general_item_drop_mark
+{
+	quota 50
+	material Tex_UI_Mark15_pass
+	particle_width 2.5
+	particle_height 2.5
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0.2 0
+		velocity 0.0001
+		time_to_live 90
+		duration 0.1
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	-50
+		rotation_speed_range_end	-50
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+}
 --------------------------------------material-----------------------------------
 material alpha_blend_base{
 	receive_shadows off
@@ -2627,10 +2807,19 @@ material muzzle_crossfire_anim_a_4 : add_base
         texture_unit{
             texture muzzle_crossfire_anim_a_4.png 	
 }}}}
+material Tex_UI_Mark15_pass : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture Tex_UI_Mark15.png 	
+}}}}
 material shield_hit_1 : add_base
 {   
     technique{
     pass{
+		cull_hardware none
         texture_unit{
             texture shield_hit_1.png 	
 }}}}
@@ -2640,4 +2829,34 @@ material shield_hit_ring : add_base
     pass{
         texture_unit{
             texture shield_hit_ring.png 	
+}}}}
+material Tex_UI_Mark15 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture Tex_UI_Mark15.png 	
+}}}}
+material UITEX_DirectionHelp_anim : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture UITEX_DirectionHelp.png 
+			wave_xform scroll_y sine 0 2 0 -0.2
+			tex_address_mode border
+			tex_border_colour 0 0 0 0
+}}}}
+material Tex_UI_Mark10A_anim : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture Tex_UI_Mark10A.png 	
+			wave_xform scale_x sine 0.25 2 0 0.2
+			wave_xform scale_y sine 0.25 2 0 0.2
+			tex_address_mode border
+			tex_border_colour 0 0 0 0
 }}}}

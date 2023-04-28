@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<weapon key="hd_m5_apc_mg94.weapon">
+<weapon 
+file="_hd_vehicle_mg.base"
+key="hd_m5_apc_mg94.weapon">
     <specification  
     slot="2"    
     retrigger_time="0.04" 
@@ -9,15 +11,13 @@
     stance_accuracy_rate="1.0"
     sustained_fire_grow_step="0.5" 
     sustained_fire_diminish_rate="2.3" 
-    magazine_size="1000" 
+    magazine_size="-1" 
     can_shoot_standing="1" 
     can_shoot_crouching="1" 
     can_shoot_prone="1" 
     suppressed="0" 
     class="0" 
     name="MG-94 MK3 Machine Gun truck(Mounted)" 
-    sight_range_modifier="1.0" 
-    ai_sight_range_modifier="0.7" 
     sight_height_offset="1.0" 
     burst_shots="1" 
     projectiles_per_shot="1" 
@@ -68,10 +68,10 @@
         <effect class="result" key="terrain" ref="hd_mg94_result_bullet_light_center" lighting="0" />
         <effect class="result" key="terrain" ref="hd_mg94_result_bullet_smoke" lighting="0" />
         <effect class="result" key="terrain" ref="hd_mg94_hit_leave" lighting="0" />
-        <effect class="activated" ref="hd_mg94_avtivated_bullet_light" lighting="0"/>
-        <effect class="activated" ref="hd_mg94_avtivated_bullet_light_center" lighting="0"/>
-        <effect class="activated" ref="hd_mg94_avtivated_bullet_ground_light" lighting="0"/>
-        <effect class="activated" ref="hd_mg94_avtivated_bullet_light_center_yellow" lighting="0" post_processing="1"/>
+        <effect class="activated" ref="hd_mg94_activated_bullet_light" lighting="0"/>
+        <effect class="activated" ref="hd_mg94_activated_bullet_light_center" lighting="0"/>
+        <effect class="activated" ref="hd_mg94_activated_bullet_ground_light" lighting="0"/>
+        <effect class="activated" ref="hd_mg94_activated_bullet_light_center_yellow" lighting="0" post_processing="1"/>
     
         <sound class="result" key="terrain" copy="other" />
         <sound class="result" key="static_object" copy="other" />

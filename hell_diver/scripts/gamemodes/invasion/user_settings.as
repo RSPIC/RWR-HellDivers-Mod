@@ -56,6 +56,8 @@ class UserSettings {
 	float m_forgiveTeamKillTime = 900.0;
 	float m_spawnTimeAtMaxPlayers = 1.0;  // was 2.0 (1.82)
 
+	int m_server_difficulty_level = 0;	//max 15
+	bool m_debug_mode = false;
 	array<string> m_overlayPaths;
 
 	// --------------------------------------------
@@ -132,6 +134,14 @@ class UserSettings {
 				m_initialXp = 0.3;
 				m_initialRp = 500;
 			}
+
+			if(settings.hasAttribute("server_difficulty_level")){
+				m_server_difficulty_level = settings.getIntAttribute("server_difficulty_level");
+			}
+
+			if(settings.hasAttribute("debug_mode")){
+				m_debug_mode = settings.getBoolAttribute("debug_mode");
+			}
 		}
 	}
 
@@ -162,6 +172,9 @@ class UserSettings {
 		settings.setFloatAttribute("player_damage_modifier", m_playerDamageModifier);
 
 		settings.setIntAttribute("continue_as_new_campaign", m_continueAsNewCampaign ? 1 : 0);
+
+		settings.setIntAttribute("server_difficulty_level", m_server_difficulty_level);
+		settings.setBoolAttribute("debug_mode", m_debug_mode);
 
 		return settings;
 	}

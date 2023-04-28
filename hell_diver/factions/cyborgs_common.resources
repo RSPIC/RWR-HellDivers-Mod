@@ -2,7 +2,6 @@
 <resources clear_weapons="0" clear_vehicles="0" clear_calls="0">
 	<!-- always load common first; it"s the one that clears the initial weapon resources -->
 	
-	<!--护甲-->
-
+	<vehicle key="cyborgs_ifv.vehicle"/>
 
 </resources>

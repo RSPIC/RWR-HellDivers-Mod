@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>	
 <weapon 
-drop_count_factor_on_death="0" 
-drop_count_factor_on_player_death="0"
-time_to_live_out_in_the_open="0"
-player_death_drop_owner_lock_time="0"
+file="_hd_defensive_equip.base"
 key="hd_arx_34_mk3.weapon" 
 > 
-
+	<tag name="Auto gun" />
+	<tag name="precision" />
+	<tag name="defensive_equipment" />
     <specification 	
 	slot="0"
 	retrigger_time="3" 
@@ -16,7 +15,7 @@ key="hd_arx_34_mk3.weapon"
 	stance_accuracy_rate="1.0"
 	sustained_fire_grow_step="0" 
 	sustained_fire_diminish_rate="3" 
-	magazine_size="40" 
+	magazine_size="9999" 
     can_shoot_standing="1" 
     can_shoot_crouching="1" 
 	can_shoot_prone="1"	
@@ -24,8 +23,8 @@ key="hd_arx_34_mk3.weapon"
 	name="A/RX-34 Railcannon Turret" 
 	class="4" 
 	consume="0"
-	sight_range_modifier="1.05" 
-	ai_sight_range_modifier="1.05"
+	sight_range_modifier="2" 
+	ai_sight_range_modifier="1.0"
 	projectile_speed="300.0" 
 	barrel_offset="0.6" 
 	projectiles_per_shot="5" 
@@ -39,10 +38,30 @@ key="hd_arx_34_mk3.weapon"
 	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0.0 0.0" />
 	
 	<animation key="recoil" animation_key="amg11_still" />
-	<animation key="cycle" animation_key="amg11_still" />
 	<animation state_key="hold" animation_key="amg11_still" /><!--站姿静止动作，全身动作-->
 	<animation state_key="reload" animation_key="amg11_still" /><!--站姿静止动作，全身动作-->
 	<animation state_key="prone_still" animation_key="amg11_still" /><!--站姿静止动作，全身动作-->
+	<animation key="recoil" animation_key="amg11_still" /> <!--后坐力动作，半身动作-->
+    <animation key="cycle"  animation_key="amg11_still" /> <!--拉栓动作，武器固定脱手-->
+    <animation key="reload" animation_key="amg11_still" />	<!--换弹动作，半身动作-->
+    <animation key="reload" stance_key="crouching" animation_key="amg11_still" />	<!--不同姿态可以设置不同换弹动作-->
+    <animation key="reload" stance_key="prone" animation_key="amg11_still" />
+	<animation key="recoil" stance_key="over_wall" animation_key="amg11_still"/>	<!--不同姿态可以设置不同后坐力动作-->
+	<animation key="recoil" stance_key="crouching" animation_key="amg11_still"/>
+	<animation key="recoil" stance_key="prone" animation_key="amg11_still"/>
+    <animation state_key="hold" animation_key="amg11_still" /><!--站姿静止动作，全身动作-->
+	<animation state_key="hold_on_wall"  animation_key="amg11_still" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="amg11_still" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="amg11_still" /><!--闲置动作，全身动作-->
+	<animation state_key="running" animation_key="amg11_still_loop" /><!--全身动作-->
+	<animation state_key="walking" animation_key="amg11_still_loop" /><!--按shift时候的静步前进动作，全身动作-->
+    <animation state_key="walking_backwards" animation_key="amg11_still_loop" /><!--全身动作-->
+    <animation state_key="crouching" animation_key="amg11_still" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="amg11_still_loop" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="amg11_still_loop" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="amg11_still" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="amg11_still" /><!--全身动作-->
+	<animation state_key="stabbing" animation_key="amg11_still" /><!--半身动作，武器可设置脱手-->
    
     <sound key="fire" fileref="hd_at_launch_1.wav" pitch_variety="0.1" volume="0.65" />
     <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />
@@ -72,8 +91,8 @@ key="hd_arx_34_mk3.weapon"
 	time_to_live="0.5" radius="1" can_be_detected_by_driver="1" can_be_disarmed="0" name="A/RX-34 Railcannon Turret"> 
 		
 		<result class="spawn" instance_class="projectile" instance_key="hd_arx_34_mk3_damage.projectile" 
-		min_amount="3" max_amount="3" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
-		<!-- 8x5x3=120伤 -->
+		min_amount="2" max_amount="2" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+		<!-- 2x5x10=100伤 -->
 		<!-- 轰炸 必定击穿 -->
 		<!-- 150m max damage range -->
 		<!-- 三枪解决warload 单轮射击100伤以上  -->

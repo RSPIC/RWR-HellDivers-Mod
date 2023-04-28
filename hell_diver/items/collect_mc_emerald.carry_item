@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carry_item 
+name="Emerald" 
+key="collect_mc_emerald.carry_item"
+file="_collect_rare.base"
+>
+
+    <hud_icon filename="mc_emerald.png" />
+    <inventory  price="500.0" />
+
+    <model mesh_filename="collect_mc_emerald.mesh" texture_filename="collect_mc_emerald.jpg" />
+
+
+    <commonness value="0.1"  />
+</carry_item>

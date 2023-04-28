@@ -2,16 +2,18 @@
 <vehicle name="Anti-Personnel Barrier" 
 key="hd_apb_mk3.vehicle" 
 map_view_atlas_index="-1" 
-time_to_live_unsteerable="180" 
+time_to_live_unsteerable="1" 
 time_to_live="360" 
 should_be_destroyed="0" 
 max_character_collision_speed_on_normal="40"
 simulated_damage="0.5"
 usable_for_cover="1"
-allow_ai_to_use="1"
+allow_ai_to_use="0"
 >
 	<tag name="metal_thin" />
-
+	<tag name="hd_apb_mk3" />
+	<tag name="defensive_equipment" />
+	
 	<tire_set offset="1 0.0 1" radius="0.1" />
 	<tire_set offset="1 0.0 -1" radius="0.1" />
 
@@ -21,7 +23,7 @@ allow_ai_to_use="1"
 	<control max_speed="1" acceleration="1" max_reverse_speed="1.0" max_rotation="1.0" max_water_depth="2" />
 
 	<physics 
-	max_health="50" 
+	max_health="200" 
 	mass="60" 
 	extent="4.5 0.0 0.5" 
 	offset="0 0.0 0" 
@@ -31,8 +33,11 @@ allow_ai_to_use="1"
 	visual_offset="0 0.4 0" 
 	collision_response_factor="0" 
 	blast_push_threshold="10.0" 
-	vehicle_collision_damage_factor="35"
+	vehicle_collision_damage_factor="0"
 	gravity="-40"
+	friction_offset="1"
+	destroy_on_top_hit="0"
+	destroy_on_top_hit_time="0"
 	/> 
 	<sky_diving chute_offset="0 0 0" trigger_height="20" gravity="-80" mesh_filename="" texture_filename="" />
 

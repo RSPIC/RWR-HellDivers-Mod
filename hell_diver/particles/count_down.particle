@@ -1,0 +1,203 @@
+author: RST
+2023.3.10
+未经授权不可复用、修改使用、仅用于helldiver mod
+倒计时特效
+
+particle_system cd_1s_0 
+{
+	quota 50
+	material num_0
+	particle_width 1.7
+	particle_height 1.7
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 1
+		duration 0.1
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.5
+		colour1 1 1 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system cd_1s_1 : cd_1s_0 
+{
+	material num_1
+}
+particle_system cd_1s_2 : cd_1s_0 
+{
+	material num_2
+}
+particle_system cd_1s_3 : cd_1s_0 
+{
+	material num_3
+}
+particle_system cd_1s_4 : cd_1s_0 
+{
+	material num_4
+}
+particle_system cd_1s_5 : cd_1s_0 
+{
+	material num_5
+}
+particle_system cd_1s_6 : cd_1s_0 
+{
+	material num_6
+}
+particle_system cd_1s_7 : cd_1s_0 
+{
+	material num_7
+}
+particle_system cd_1s_8 : cd_1s_0 
+{
+	material num_8
+}
+particle_system cd_1s_9 : cd_1s_0 
+{
+	material num_9
+}
+
+
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material num_0 : add_base
+{   
+    technique{
+    pass{
+        depth_func always_pass
+        texture_unit{
+            texture num_0.png 	
+		}
+	}
+}}
+material num_1 : add_base
+{   
+    technique{
+    pass{
+        depth_func always_pass
+        texture_unit{
+            texture num_1.png 	
+		}
+	}
+}}
+material num_2 : add_base
+{   
+    technique{
+    pass{
+        depth_func always_pass
+        texture_unit{
+            texture num_2.png 	
+		}
+	}
+}}
+material num_3 : add_base
+{   
+    technique{
+    pass{
+        depth_func always_pass
+        texture_unit{
+            texture num_3.png 	
+		}
+	}
+}}
+material num_4 : add_base
+{   
+    technique{
+    pass{
+        depth_func always_pass
+        texture_unit{
+            texture num_4.png 	
+		}
+	}
+}}
+material num_5 : add_base
+{   
+    technique{
+    pass{
+        depth_func always_pass
+        texture_unit{
+            texture num_5.png 	
+		}
+	}
+}}
+material num_6 : add_base
+{   
+    technique{
+    pass{
+        depth_func always_pass
+        texture_unit{
+            texture num_6.png 	
+		}
+	}
+}}
+material num_7 : add_base
+{   
+    technique{
+    pass{
+        depth_func always_pass
+        texture_unit{
+            texture num_7.png 	
+		}
+	}
+}}
+material num_8 : add_base
+{   
+    technique{
+    pass{
+        depth_func always_pass
+        texture_unit{
+            texture num_8.png 	
+		}
+	}
+}}
+material num_9 : add_base
+{   
+    technique{
+    pass{
+        depth_func always_pass
+        texture_unit{
+            texture num_9.png 	
+		}
+	}
+}}

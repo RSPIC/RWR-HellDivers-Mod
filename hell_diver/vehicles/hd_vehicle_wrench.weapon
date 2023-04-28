@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapon 
+key="hd_vehicle_wrench.weapon" 
+> 
+    <specification 	
+    slot="1" 	
+    retrigger_time="6" 
+	last_burst_retrigger_time="0.6"
+    accuracy_factor="1" 
+	spread_range="0"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="0.12" 
+    sustained_fire_diminish_rate="1.5" 
+    magazine_size="-1" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="0"	
+    suppressed="0" 
+	class="0"
+    name="Vehicle Wrench" 
+	sight_range_modifier="1.0" 
+    projectiles_per_shot="1" 
+    projectile_speed="1.0"
+	barrel_offset="0" 
+	carry_in_two_hands="0" 
+	stab_enabled="0" 
+	stab_range="0" 
+	use_basic_muzzle_smoke_effect="0"
+	/> 
+	<!--780RPM 	3.5s/3s Reload(tactical)	30m range-->
+	<!-- 76/151 magazine (Extended Magazine upgrade C2) -->
+	<!-- 12'/12' max spread 3'/1' min spread (Recoil Absorber upgrade C1) -->
+	<!-- -0.9'/-1.1' Spread Increase per Shot 负后坐力 ((Recoil Absorber upgrade C1)) -->
+	
+ 	<animation state_key="recoil" animation_key="hold, pistol" /> <!--后坐力动作，半身动作-->
+    <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
+    <animation state_key="reload" animation_key="reloading_5s" />	<!--换弹动作，半身动作-->
+    <animation state_key="hold" animation_key="hold, pistol" /><!--站姿静止动作，全身动作-->
+	<animation state_key="hold_on_wall"  animation_key="hold, pistol" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="hold, pistol" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="hold_casual, pistol" /><!--闲置动作，全身动作-->
+	<animation state_key="running" animation_key="running_pistol_upbody_still" /><!--全身动作-->
+	<animation state_key="walking" animation_key="running_pistol_upbody_still_slower" /><!--按shift时候的静步前进动作，全身动作-->
+    <animation state_key="walking_backwards" animation_key="walking backwards, pistol" /><!--全身动作-->
+    <animation state_key="crouching" animation_key="hold, pistol" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="running_pistol_upbody_still_slower" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="walking backwards, pistol" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="prone_still, pistol" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
+	<animation state_key="stabbing" animation_key="pistol whip 3" /><!--半身动作，武器可设置脱手-->
+	<animation state_key="changing_weapon_in" animation_key="" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key=""/><!--半身动作，切换武器，本武器取出-->
+
+
+    <sound key="effect" fileref="wrench_shot.wav" pitch_variety="0.03" volume="1.2" />
+	<sound key="fire" fileref="wrench_shot.wav" volume="1.0" />
+    <sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.05" volume="1.0" />  
+    <sound key="stab_hit" fileref="wrench_body_hit.wav" pitch_variety="0.05" volume="1.0" />     
+	<sound key="magazine_out" fileref="mg_clip_out.wav" />
+    <sound key="magazine_in" fileref="mg_clip_in.wav" />
+    <sound key="cycle" fileref="rifle_chamber.wav" />
+
+	<sound class="impact" fileref="rifle_drop.wav" />
+
+    <model filename="" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="hud_wrench.png" /> 
+
+	<projectile file="hd_general_spawn.projectile" pulldown_in_air="10" can_be_detected_by_footmen="1" 
+		time_to_live="1" can_be_detected_by_driver="1" can_be_disarmed="0"> 
+
+        <trigger class="time" time_to_live="0.1"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+
+        <result class="notify_script" key="hd_vehicle_wrench" />
+
+        <!-- <effect class="result" key="terrain" ref="repair_result_feedback" lighting="0"/> -->
+        <effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+    </projectile>
+	
+</weapon>

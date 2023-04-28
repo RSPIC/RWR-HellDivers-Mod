@@ -1,0 +1,386 @@
+author: RST
+2023.2.6
+仅用于helldiver mod
+laser strike 支援特效
+
+
+particle_system laser_strike_activated_laser
+{
+	quota 600
+	material laser_beam
+	particle_width 3
+	particle_height 100
+	renderer billboard
+	billboard_type oriented_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.15
+		duration 10
+	}
+	affector Scaler
+	{
+		rate -20
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 0.8 1
+		time1 0.8
+		colour1 1 0.5 0.5 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system laser_strike_result_laser
+{
+	quota 600
+	material laser_beam
+	particle_width 3
+	particle_height 100
+	renderer billboard
+	billboard_type oriented_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.3
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate -5
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 0.8 1
+		time1 0.8
+		colour1 1 0.5 0.5 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system laser_strike_result_center
+{
+	quota 500
+	material explosion_smoke_04_bw_laser
+	particle_width 7
+	particle_height 7
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.5
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate -6
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 0.8 1
+		time1 0.8
+		colour1 1 0.5 0.5 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system laser_strike_result_smoke
+{
+	quota 1000
+	material wand_smoke
+	particle_width 2.5
+	particle_height 2.5
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Ring
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 70
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 2.5
+		duration 0.1
+        depth 0.1
+        height 5
+        width 5
+        inner_height 0.1
+        inner_width 0.1
+	}
+	affector Scaler
+	{
+		rate 1
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 0.1
+		time1 0.5
+		colour1 1 1 1 0.03
+		time2 1
+		colour2 0 0 0 0
+	}
+    affector LinearForce{
+		force_vector 0 4 0
+		force_application add
+	}
+}
+
+
+particle_system laser_strike_result_ground_leave
+{
+	quota 500
+	material Particle_AE_Shockwave_01
+	particle_width 4
+	particle_height 4
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 60
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 5
+		duration 0.1
+		depth 0.1
+		width 2
+		height 2
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.5 0.5 0.5 0.3
+		time1 0.7
+		colour1 0.3 0.3 0.3 0.3
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system laser_strike_result_ground_leave_light
+{
+	quota 500
+	material Particle_AE_Shockwave_12_bw
+	particle_width 3.5
+	particle_height 3.5
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 3.5
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate -0.2
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.7
+		colour1 1 0.1 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system laser_strike_result_ground_burn_spot
+{
+	quota 500
+	material point_soft_edge_100
+	particle_width 7
+	particle_height 7
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0.1 0
+		velocity 0.0001
+		time_to_live 1.0
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate -2
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0.3 1 1
+		time1 0.7
+		colour1 1 0.3 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+
+
+
+
+
+
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material laser_beam : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture laser_beam.png 	
+}}}}
+material explosion_smoke_04_bw_laser : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture explosion_smoke_04_bw.png 	
+            rotate_anim 0.1
+            tex_address_mode border
+            tex_border_colour 0 0 0 0
+}}}}
+material point_soft_edge_100 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture point_soft_edge_100.png 	
+}}}}
+material Particle_AE_Shockwave_01 : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture Particle_AE_Shockwave_01.png 	
+}}}}
+
+material Particle_AE_Shockwave_12_bw : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture Particle_AE_Shockwave_12_bw.png 	
+}}}}

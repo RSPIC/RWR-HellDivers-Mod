@@ -1,22 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources >
 <!--此处用于注册ACG玩家阵营军械库物品，需要确保物品代码中in_stock="1" -->
-<!-- 资源文件注册为KEY注册，不同于武器注册的file注册 -->
+<!-- 资源文件注册为KEY注册，不同于武器注册的key注册 -->
 
 <!--武器-->
-<weapon key="acg_reisenu_a.weapon" /> <!--铃仙-->
-<weapon key="acg_reisenu_b.weapon" /> <!--铃仙 instock=0-->
-<weapon key="acg_reisenu_c.weapon" /> <!--铃仙 instock=0-->
-<weapon key="acg_mg4a3td.weapon" /> <!--MG4-->
-<weapon key="acg_mg4a3td_sl.weapon" /> <!--MG4 instock=0-->
-<weapon key="acg_mg4td_ke.weapon" /> <!--MG4-->
-<weapon key="acg_mg4td_ap.weapon" /> <!--MG4 instock=0-->
+    <weapon key="acg_reisenu_a.weapon" /> <!--铃仙-->
+    <!-- <weapon key="acg_reisenu_b.weapon" /> 铃仙 instock=0 -->
+    <!-- <weapon key="acg_reisenu_c.weapon" /> 铃仙 instock=0 -->
+    <weapon key="acg_mg4a3td.weapon" /> <!--MG4-->
+    <!-- <weapon key="acg_mg4a3td_sl.weapon" /> MG4 instock=0 -->
+    <weapon key="acg_mg4td_ke.weapon" /> <!--MG4-->
+    <!-- <weapon key="acg_mg4td_ap.weapon" /> MG4 instock=0 -->
+    <weapon key="acg_ruby_rose_scythe.weapon" /> <!--新月玫瑰 -->
+    <!-- <weapon key="acg_ruby_rose_sniper.weapon" /> 新月玫瑰 instock=0 -->
+    <weapon key="acg_kokomi_portia.weapon" /><!--心海 冲锋枪-->
+    <!-- <weapon key="acg_kokomi_water_thrower.weapon" />心海 榴弹 instock=0 -->
+    <weapon key="acg_megumin_wand_float.weapon" /> <!--法杖-->
+    <!-- <weapon key="acg_megumin_wand_summon.weapon" /> 法杖 instock=0 -->
+    <weapon key="acg_sorasaki_hina.weapon" /> <!--空崎阳奈 机枪-->
+    <!-- <weapon key="acg_sorasaki_hina_burst.weapon" /> 空崎阳奈 机枪 instock=0 -->
+    <weapon key="acg_texas_skill.weapon" /> <!--德克萨斯-->
+    <!-- <weapon key="acg_texas_sword.weapon" /> 德克萨斯 instock=0 -->
+    <weapon key="acg_hk416_starry_cocoon.weapon" /> <!--HK416 -->
+    <!-- <weapon key="acg_hk416_starry_cocoon_gl.weapon" /> HK416 instock=0 -->
+    <weapon key="acg_iws2000_banisher.weapon" /> <!--IWS2000-->
+    <weapon key="acg_kemomimi.weapon" /><!--桃子酱（小狐狸）狐尾导弹-->
+    <weapon key="acg_shigure_127mm.weapon" /><!--时雨127mm双联主炮-->
+    <weapon key="acg_fiammetta_gl.weapon" /><!--菲娅梅塔 榴弹-->
+    <!-- <weapon key="acg_fiammetta_skill.weapon" />菲娅梅塔 -->
+
+<!-- 副手  -->
+    <weapon key="ex_cl_banzai.weapon" /><!--刺雷-->
 
 <!--投掷物/信标-->
-<projectile key="acg_ex_box.projectile" /><!--Ex 补给箱-->
-<projectile key="acg_amg_11_mk3_call.projectile" /><!--机枪炮塔-->
-<projectile key="acg_amg_11_mk3_call.projectile" /><!--机枪炮台-->
-<projectile key="acg_arx_34_mk3_call.projectile" /><!--轨道炮炮台-->
+    <projectile key="acg_ex_box.projectile" /><!--Ex 补给箱-->
+    <projectile key="acg_amg_11_mk3_call.projectile" /><!--机枪炮塔-->
+    <projectile key="acg_amg_11_mk3_call.projectile" /><!--机枪炮台-->
+    <projectile key="acg_arx_34_mk3_call.projectile" /><!--轨道炮炮台-->
 
 <!--护甲-->
 <!-- <carry_item key="helldivers_vest.carry_item" /> -->

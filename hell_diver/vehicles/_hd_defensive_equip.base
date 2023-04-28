@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapon 
+drop_count_factor_on_death="0" 
+drop_count_factor_on_player_death="0"
+time_to_live_out_in_the_open="0"
+player_death_drop_owner_lock_time="0"
+on_ground_up="0 0 1" 
+> 
+    <specification 
+	sight_range_modifier="3.0" 
+	ai_sight_range_modifier="0.4" 
+	use_basic_muzzle_smoke_effect="0"
+	/> 
+	
+	<tag name="anti_tank" />
+	<tag name="bazooka" />
+
+	<target_factors tag="" distance="1.0" direction="0.0" squad_command="1.0" base_score="0.5" />
+    <target_factors tag="heavy_combat" distance="1.0" direction="0.0" squad_command="1.0" base_score="10.0" />
+    <target_factors tag="apc" distance="1.0" direction="0.0" squad_command="1.0" base_score="10.0" />
+    <target_factors tag="light_combat" distance="1.0" direction="0.0" squad_command="1.0" base_score="6.0" />   
+    <target_factors tag="defensive_at" distance="1.0" direction="0.0" squad_command="1.0" base_score="10.0" />
+    <target_factors tag="tactical" distance="1.0" direction="0.0" squad_command="1.0" base_score="8.0" />  <!-- important non combat player-only vehicles -->  
+    <target_factors tag="bazooka" distance="1.0" direction="0.0" squad_command="1.0" base_score="8.0" />
+    <target_factors tag="anti_tank" distance="1.0" direction="0.0" squad_command="1.0" base_score="8.0" />
+	  
+</weapon>

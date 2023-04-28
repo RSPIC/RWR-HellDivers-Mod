@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectiles>
+	<!-- 伤害弹头 -->
+    <projectile file="ex_disaster_railgun_damage.projectile" /><!-- 天灾电磁炮 -->
+    <projectile file="63type_107mm_rocket_damage.projectile" /><!--63式火箭炮-->
+    <projectile file="ex_isu_152_gl_damage.projectile" /><!--152-->
+    <projectile file="ex_pak40_damage.projectile" /><!--pak40-->
+    <projectile file="ex_sturmtiger_tank_gl_damage.projectile" /><!--突击虎-->
+    <projectile file="ex_apocalypse_tank_gl_damage.projectile" /><!--天启-->
+    <projectile file="ex_sherman_cannon_damage.projectile" /><!--谢尔曼-->
+    <projectile file="ex_cl_banzai_damage.projectile" /><!--刺雷-->
+    <projectile file="ba_crusader_cannon_damage.projectile" /><!--十字军-->
+    <projectile file="ex_m18_cannon_damage.projectile" /><!--地狱猫-->
+    <projectile file="ba_torumaru_cannon_damage.projectile" /><!--虎丸[伊吕波]-->
+
+
+    <!-- 投掷物 -->
+    <projectile file="_ex_call.xml" /><!--所有呼叫信标-->
+
+
+</projectiles>

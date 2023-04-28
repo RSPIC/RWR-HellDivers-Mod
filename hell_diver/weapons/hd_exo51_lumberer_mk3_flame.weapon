@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>	
 <weapon 
-drop_count_factor_on_death="0" 
-drop_count_factor_on_player_death="1"
-time_to_live_out_in_the_open="0"
-player_death_drop_owner_lock_time="0"
+file="_hd_exo.base"
 key="hd_exo51_lumberer_mk3_flame.weapon" 
 > 
 	<tag name="machine gun" />
@@ -22,13 +19,13 @@ key="hd_exo51_lumberer_mk3_flame.weapon"
 	can_shoot_prone="0"	
     suppressed="0" 
 	class="0" 
-    name="EXO-51 Lumberer MK3 [FlameThrower]" 
-	sight_range_modifier="1.0" 
+    name="EXO-51 Lumberer [FlameThrower]" 
+	sight_range_modifier="1.5" 
 	sight_height_offset="1.0" 
 	burst_shots="1" 
     projectiles_per_shot="3" 
     projectile_speed="25.0"
-	barrel_offset="0.2" 
+	barrel_offset="1.0" 
 	carry_in_two_hands="0" 
 	stab_enabled="1" 
 	stab_range="0" 
@@ -83,17 +80,17 @@ key="hd_exo51_lumberer_mk3_flame.weapon"
     <hud_icon filename="exo_flamer.png" /> 
 
   	<capacity value="0" source="rank" source_value="0.0" />
-	<capacity value="1" source="rank" source_value="0.0" />
+	<capacity value="1" source="rank" source_value="137.832" />
 	
-    <commonness value="1" can_respawn_with="1" in_stock="1" /> 
-    <inventory encumbrance="50.0" price="0.0" /> 
+    <!-- <commonness value="1" can_respawn_with="1" in_stock="1" /> 
+    <inventory encumbrance="50.0" price="0.0" />  -->
     <weak_hand_hold offset="0.3" /> 
 
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="5" can_be_detected_by_footmen="1" 
 	time_to_live="0.9" can_be_detected_by_driver="1" can_be_disarmed="0" name="EXO-51 Lumberer MK3" radius="1.5"> 
 		
 		<result class="spawn" instance_class="grenade" instance_key="hd_exo51_lumberer_mk3_flame_damage.projectile"
-		 min_amount="2" max_amount="2" offset="0 1.0 0" position_spread="1 0" direction_spread="0.0 0.0" />
+		 min_amount="3" max_amount="3" offset="0 1.0 0" position_spread="1 0" direction_spread="0.0 0.0" />
 		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
@@ -131,19 +128,7 @@ key="hd_exo51_lumberer_mk3_flame.weapon"
     <stance state_key="prone_moving" accuracy="0.5" />
     <stance state_key="over_wall" accuracy="1.8" />     
      
-    <modifier class="speed" value="-0.5" /> 
-    <modifier class="hit_success_probability" value="-0.2" />
-    <modifier class="detectability" value="0.0" />
-
-    <shield offset="1 0 0.9" extent="1 3 2.7" usable_for_cover="0"/>  
-	<!-- x厚度，前后宽度,负向前；y高度，z宽度 -->
-	<modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="0" />
-	<modifier class="projectile_hit_result" input_character_state="wound" output_character_state="wound" consumes_item="0" />
-	<modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="0" />
-	<!-- death and wound blast causes the item to be consumed, stun is ignored -->
-	<modifier class="projectile_blast_result" input_character_state="death" output_character_state="death" consumes_item="0" />
-	<modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="0" />
-	<modifier class="projectile_blast_result" input_character_state="stun" output_character_state="none" consumes_item="0" />
+   
 </weapon>
 
 

@@ -12,7 +12,8 @@ radius="1"
 can_be_disarmed="1"
 can_be_detected_by_footmen="0"
 can_be_detected_by_driver="0"
-blast_damage_threshold="50.1"
+time_to_live_out_in_the_open="0"
+blast_damage_threshold="10"
 >
 
 <!--逻辑：投出MK3落地在半空生成粘性trigger弹头落地，落地后生成非粘性stay弹头等待触发，最后生成粘性damage弹头-->	

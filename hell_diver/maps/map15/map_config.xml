@@ -3,8 +3,9 @@
 	<include_layer name="bases.dominance" />
 	<include_layer name="layer1.dominance" />    
 
-	<faction file="green.xml" />
-	<faction file="brown.xml" />    
+	<faction file="grey.xml" />
+	<faction file="brown.xml" /> 
+	<faction file="neutral.xml" />    
 	<weapon file="all_weapons.xml" />
 	<projectile file="all_throwables.xml" />
 	<vehicle file="all_vehicles.xml" />

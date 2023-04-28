@@ -261,7 +261,7 @@ particle_system reisenu_fire_hit_laser_i	//主模式命中外射线
 }
 particle_system reisenu_bullet_activated_ring_ii		//二模式尾迹光圈
 {
-	quota 50
+	quota 100
 	material reisenu_ring_2
 	particle_width 1
 	particle_height 3
@@ -321,7 +321,7 @@ particle_system reisenu_bullet_activated_ring_ii		//二模式尾迹光圈
 }
 particle_system reisenu_bullet_activated_smoke_ii		//二模式尾迹烟
 {
-	quota 50
+	quota 100
 	material add_smoke_2
 	particle_width 3
 	particle_height 3
@@ -371,7 +371,7 @@ particle_system reisenu_bullet_activated_smoke_ii		//二模式尾迹烟
 }
 particle_system reisenu_bullet_blase_type1_center_ii		//二模式一段弹头爆炸
 {
-	quota 50
+	quota 500
 	material point_soft_edge_100
 	particle_width 3
 	particle_height 3
@@ -476,7 +476,7 @@ particle_system reisenu_bullet_activated_bullet_type2_ii : reisenu_bullet_activa
 }
 particle_system reisenu_bullet_hit_type2_ii		//二模式落地弹命中中心
 {
-	quota 50
+	quota 500
 	material point_soft_edge_100
 	particle_width 3
 	particle_height 3
@@ -535,7 +535,7 @@ particle_system reisenu_bullet_hit_type2_ii		//二模式落地弹命中中心
 }
 particle_system reisenu_card_starring_expand	//符卡
 {
-	quota 50
+	quota 150
 	material reisenu_ring
 	particle_width 0.1
 	particle_height 0.1

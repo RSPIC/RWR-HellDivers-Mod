@@ -24,11 +24,11 @@ radius="1"
     suppressed="0" 
 	class="4" 
     name="Comrade Melee" 
-	ai_sight_range_modifier="1"
-	sight_range_modifier="1.0" 
+	ai_sight_range_modifier="1.2"
+	sight_range_modifier="1.2" 
 	burst_shots="1" 
     projectiles_per_shot="1" 
-    projectile_speed="100.0"
+    projectile_speed="20.0"
 	barrel_offset="1.0" 
 	carry_in_two_hands="0" 
 	stab_enabled="1" 
@@ -83,17 +83,17 @@ radius="1"
 	<animation state_key="stabbing" animation_key="cyborgs_comrade_stab" /><!--半身动作，武器可设置脱手-->
 
 	<!--切换模式，本模式的切出动作衔接下一模式的切入动作，置空为秒切-->
-	<animation state_key="next_in_chain_in" animation_key="sheath bayonet part 2" /><!--半身动作，切换模式，本模式切出-->
-	<animation state_key="next_in_chain_out" animation_key="mount bayonet part 1" /><!--半身动作，切换模式，本模式切入-->
+	<animation state_key="next_in_chain_in" animation_key="" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="" /><!--半身动作，切换模式，本模式切入-->
 	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
-    <animation state_key="changing_weapon_in" animation_key="" /><!--半身动作，切换武器，本武器收回-->
-	<animation state_key="changing_weapon_out" animation_key=""/><!--半身动作，切换武器，本武器取出-->
+    <animation state_key="changing_weapon_in" animation_key="cyborgs_comrade_recoil" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key="cyborgs_comrade_recoil"/><!--半身动作，切换武器，本武器取出-->
 
 	<!--武器音频-->
     <sound key="effect" fileref="" pitch_variety="0" volume="1.0" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
     <sound key="fire" fileref="cyborgs_cannon_fire_1.wav" pitch_variety="0.05" volume="0.7" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
     <sound key="dry_fire" fileref="" pitch_variety="0.03" volume="1.0" /><!--空弹射击扳机音效-->
-	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="0.1" /><!--stab_enabled为1时生效该三个接口-->
 	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
 	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
     <sound key="magazine_out" fileref="gl_open.wav" /><!--动作中out的value为0-->
@@ -125,7 +125,7 @@ radius="1"
 		-->
 		<result class="spawn" instance_class="projectile" instance_key="cyborgs_comrade_main_damage.projectile" 
 		min_amount="4" max_amount="6" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
-		<trigger class="time" time_to_live="0.125"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<trigger class="time" time_to_live="0.8"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
 		<!--伤害 4~6x1.0=4~6 -->
@@ -165,10 +165,6 @@ radius="1"
 	<effect class="muzzle" ref="cyborgs_muzzle_cannon_fire_smoke" lighting="0"/> 
 	<effect class="muzzle" ref="cyborgs_muzzle_cannon_fire_light" lighting="0"/> 
 	
-
-
-	
-	
 	<!--姿态精度-->
     <stance state_key="running" accuracy="1" /> 
     <stance state_key="walking" accuracy="1" />
@@ -181,18 +177,11 @@ radius="1"
      
 	<!--附加属性-->
     <modifier class="speed" value="0.0" /> 
-    <modifier class="hit_success_probability" value="0.0" /><!--正值增加玩家抗致死率-->
+    <modifier class="hit_success_probability" value="-0.0" /><!--正值增加玩家抗致死率-->
     <modifier class="detectability" value="0.0" />	<!--正值增加玩家隐蔽-->
 	
 	<!--盾块，可设置多个，空盾块仍然生效击杀收益共享，需要删去该段代码-->
     <shield offset="0 0 0" extent="0 0 0" usable_for_cover="0"/>  
 	
 </weapon>
-<!--尾迹文件编写参考，不可衔接于武器文件后
-<trail key="hd_mg94_trail" material="hd_mg94_trail"
-trail_length="50"
-intensity_range="0.35 0.5"
-initial_width_range="0.2 0.3"
-width_change="1.5"/>
--->
 

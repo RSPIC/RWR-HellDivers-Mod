@@ -4,13 +4,15 @@ author: RST
 
 particle_system blast_smoke_rumbler
 {
-	quota 3000
+	quota 200
 	material blast_smoke_rumbler
-	particle_width 8
-	particle_height 8
+	particle_width 20
+	particle_height 25
 	cull_each false
 	renderer billboard
 	local_space false
+	billboard_type oriented_self
+	billboard_origin bottom_center
 
 	emitter Point
 	{
@@ -20,92 +22,29 @@ particle_system blast_smoke_rumbler
 		colour_range_end 1 1 1 1
 		direction 0 0 -1
 		emission_rate 5
-		position 0 1.6 -2
+		position 0 -5 0
 		velocity 1
-		time_to_live 1
+		time_to_live 2.5
 		duration 0.2
-		angle 15
 	}
 	affector Scaler
 	{
-		rate 4
-	}
-	affector ColourImage
-	{
-		image blast_smoke_rumbler.png
-	}
-	affector LinearForce
-	{
-		force_vector 0 0 0
-		force_application add
+		rate 2
 	}
 	affector ColourInterpolator
 	{
-		time0 0.5
-		colour0 1 1 1 1
-		time1 1
-		colour1 1 1 1 0
-	}
-	affector Rotator
-	{
-		rotation_speed_range_start	0
-		rotation_speed_range_end	0
-		rotation_range_start	-15
-		rotation_range_end	15
-	}
-	
-}
-
-particle_system blast2_smoke_rumbler
-{
-	quota 3000
-	material blast2_smoke_rumbler
-	particle_width 6
-	particle_height 6
-	cull_each false
-	renderer billboard
-	local_space false
-
-	emitter Point
-	{
-		colour 1 1 1 1
-		direction 0 0 0
-		emission_rate 8
-		position 0 0.2 0.1
-		velocity 0
-		time_to_live 0.5
-		duration 0.2
-		angle 30
-	}
-	affector Scaler
-	{
-		rate 10
-	}
-	affector Rotator
-	{
-		rotation_speed_range_start	5
-		rotation_speed_range_end	20
-		rotation_range_start	-90
-		rotation_range_end	90
-	}
-	affector ColourImage
-	{
-		image rumbler_smokecolor.png
-	}
-		affector ColourInterpolator
-	{
-		time0 0.3
-		colour0 1 1 1 1
-		time1 0.5
-		colour1 1 1 1 0
+		time0 0
+		colour0 0.3 0.3 0.3 1
+		time1 0.7
+		colour1 0.2 0.2 0.2 0.7
+		time2 1
+		colour2 0 0 0 0
 	}
 }
-
-
 
 particle_system spray_rumbler
 {
-	quota 1000
+	quota 400
 	material R_flame
 	particle_width 1.2
 	particle_height 1.2
@@ -119,7 +58,7 @@ particle_system spray_rumbler
 	
 	emitter Point
 	{
-		angle 45
+		angle 10
 		colour 1 1 1 1
 		colour_range_start 1 1 1 1
 		colour_range_end 1 1 1 1
@@ -137,7 +76,7 @@ particle_system spray_rumbler
 	}
 		affector Scaler
 	{
-		rate -1
+		rate -0.2
 	}
 
 	affector LinearForce
@@ -195,6 +134,7 @@ material blast_smoke_rumbler : alpha_blend_base
 {   
     technique{
     pass{
+		depth_func always_pass
         texture_unit{
             texture blast_texture_rumbler.png 	
 }}}}
@@ -202,6 +142,7 @@ material blast2_smoke_rumbler : alpha_blend_base
 {   
     technique{
     pass{
+		depth_func always_pass
         texture_unit{
             texture blast2_texture_rumbler.png 	
 }}}}

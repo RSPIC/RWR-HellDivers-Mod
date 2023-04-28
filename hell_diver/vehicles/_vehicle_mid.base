@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<vehicle  
+character_leave_request_mode="friendly"
+>
+	<tag name="metal_heavy" />
+	<tag name="heavy_combat" />
+
+	<modifier class="blast_range" value="-0" />
+	<modifier class="blast_damage" value="-4.0" />
+
+	<physics 
+	max_health="400" 
+	blast_damage_threshold="0" 
+	blast_push_threshold="10"
+	mass="100.0" 
+	broken_mass="80"
+	/> 
+
+	<event key="receive_damage_xp_reward">
+		<trigger class="receive_damage" />
+		<result class="reward" xp="0.200" />
+	</event>
+
+	<event key="spot_rp_reward">
+		<trigger class="spot" />
+		<result class="reward" rp="100.0" />
+	</event>
+
+	<event key="destroy_rp_reward">
+		<trigger class="destroy" />
+		<result class="reward" rp="600.0" />
+	</event>
+
+</vehicle>

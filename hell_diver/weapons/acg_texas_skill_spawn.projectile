@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectile 
+class="grenade" 
+name="Texas" 
+key="acg_texas_skill_spawn.projectile" 
+slot="0"
+pulldown_in_air="50"
+on_ground_up="0 0 0"
+use_time_to_live="1"
+time_to_live="15"
+can_be_disarmed="0"
+can_be_detected_by_footmen="0"
+can_be_detected_by_driver="0"
+radius="0.3"
+blast_damage_threshold="50"
+time_to_live_out_in_the_open="0"
+player_death_drop_owner_lock_time="0"
+>
+
+		<result class="spawn" instance_class="grenade" instance_key="acg_texas_skill_damage.projectile" 
+		min_amount="15" max_amount="20" offset="0 0 0" position_spread="4 10" direction_spread="0.0 0.5" />
+		<trigger class="time" time_to_live="0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
+		<!-- 10x15~20 -->
+
+		<!--命中音效-->
+		<sound class="result" key="other" fileref="texas_skill_hit.wav" pitch_variety="0.03" volume="0.7" />
+
+
+		<effect class="result" key="terrain" ref="texas_polygon_expand" lighting="0" />
+  	  	<effect class="result" key="terrain" ref="texas_polygon_fix" lighting="0" />
+   	 	<effect class="result" key="terrain" ref="texas_center_crossline_1" lighting="0" />
+		<effect class="result" key="terrain" ref="texas_center_crossline_2" lighting="0" />
+		<effect class="activated" ref="texas_activated_center" lighting="0" />
+
+		<effect class="result" type="splat_map" surface_tag="" size="2.0" atlas_index="4" layer="0" />
+
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<!--尾迹组-->
+		<trail probability="1" key=""/>	
+
+	
+</projectile>

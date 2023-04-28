@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon 
+file="_rare_weapon.base"
+key="acg_kokomi_portia.weapon" 
+>
+
+    <specification 
+     retrigger_time="0.05" 
+     accuracy_factor="1.0" 
+     spread_range="0.05"
+     sustained_fire_grow_step="0.20" 
+     sustained_fire_diminish_rate="3.0" 
+     magazine_size="51" 
+     can_shoot_standing="1" 
+     suppressed="0" 
+     name="Everlasting Moonglow" 
+     class="0" 
+     sight_range_modifier="1.0" 
+     projectile_speed="150.0"
+    use_basic_muzzle_smoke_effect="0"
+     />
+
+    <next_in_chain key="acg_kokomi_water_thrower.weapon" share_ammo="0" />
+
+    <animation key="recoil" animation_key="recoil1, big" /> <!--后坐力动作，半身动作-->
+    <animation state_key="reload" animation_key="T_reloading_1.25s"/>
+
+    <sound key="fire" fileref="kriss_vector_shot.wav" volume="1.0" pitch_variety="0.03"/>
+    <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="hd_mag_out.wav" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="hd_mg94_mag_in.wav" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="rifle_chamber.wav" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="hd_cycle_in_01.wav" /><!--动作中in的value为1-->
+    <sound key="last_ammo" fileref="hd_lastammo_01.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_02.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_03.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_04.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+
+    
+    <model filename="acgw_kokomi_portia.xml"/>
+    <hud_icon filename="acg_sangonomiya_kokomi_main.png"/>
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.22" can_be_detected_by_driver="1" can_be_disarmed="0" name="Kokomi"> 
+	
+		<result class="hit" kill_probability="1.0" 
+		kill_probability_offset_on_successful_hit="12"
+		kill_decay_start_time="0.22" kill_decay_end_time="0.22" character_state="stun"/>
+
+        <effect class="result" key="terrain" ref="general_weapon_result_hitspot" lighting="0"/>
+        <effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+
+        <effect class="activated" ref="kokomi_activated_shrink_wave" />
+
+		<trail probability="1" key="kokomi_trail"/>	
+    </projectile>
+    <effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 
+
+    <stance state_key="running" accuracy="0.67"/>
+	<stance state_key="walking" accuracy="0.875"/>
+	<stance state_key="crouch_moving" accuracy="0.5"/>
+	<stance state_key="prone_moving" accuracy="0.4"/>	
+	<stance state_key="standing" accuracy="0.7"/>
+	<stance state_key="crouching" accuracy="0.85"/>
+	<stance state_key="prone" accuracy="1.0"/>
+
+    <modifier class="speed" value="0.3"/>
+
+</weapon>

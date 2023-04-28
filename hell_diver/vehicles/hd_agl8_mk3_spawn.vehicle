@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <vehicle name="hd_agl8_mk3_spawn" key="hd_agl8_mk3_spawn.vehicle"
- map_view_atlas_index="-1" time_to_live="0" should_be_destroyed="0" max_character_collision_speed_on_normal="2.0" >
+ map_view_atlas_index="-1" time_to_live="0" 
+ should_be_destroyed="0" max_character_collision_speed_on_normal="2.0" >
 	<tag name="metal_thin" />
 
 	<tire_set offset="0.2 0 +0.2" radius="0.1" />
@@ -28,8 +29,6 @@
 	/> 
 	
 	<sky_diving chute_offset="0 0 0" trigger_height="20" gravity="-80" mesh_filename="" texture_filename="" />
-
-	<turret offset="0 0 0.0" weapon_key="hd_hellpod.weapon" weapon_offset="0.0 -3 0.0" weapon_recoil="0.02" physics_recoil="0.0"  max_rotation_step="0.00015" rotation="0" rotation_range="1.92" />
 
 	<rev_sound filename="" low_pitch="0.8" high_pitch="1.0" low_rev="0.0" high_rev="0.3" volume="0.8" />
 

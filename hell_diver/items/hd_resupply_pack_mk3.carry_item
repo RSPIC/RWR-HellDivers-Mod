@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carry_item 
+name="Resupply Pack" 
+key="hd_resupply_pack_mk3.carry_item"
+file="_usable_item.base"
+>
+
+    <hud_icon filename="hd_resupply_pack_mk3.png" />
+
+    <model mesh_filename="backpack.mesh" texture_filename="backpack.jpg" />
+    <inventory encumbrance="-10.0" price="0.0" />
+    <commonness value="0"  />
+</carry_item>

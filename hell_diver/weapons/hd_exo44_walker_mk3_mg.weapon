@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>	
 <weapon 
-drop_count_factor_on_death="0" 
-drop_count_factor_on_player_death="1"
-time_to_live_out_in_the_open="0"
-player_death_drop_owner_lock_time="0"
+file="_hd_exo.base"
 key="hd_exo44_walker_mk3_mg.weapon" 
 > 
 	<tag name="machine gun" />
@@ -22,8 +19,8 @@ key="hd_exo44_walker_mk3_mg.weapon"
 	can_shoot_prone="0"	
     suppressed="0" 
 	class="0" 
-    name="EXO-44 Stomper MK3 [MG]" 
-	sight_range_modifier="1.0" 
+    name="EXO-44 Stomper [MG]" 
+	sight_range_modifier="1.5" 
 	sight_height_offset="1.0" 
 	burst_shots="1" 
     projectiles_per_shot="1" 
@@ -32,7 +29,6 @@ key="hd_exo44_walker_mk3_mg.weapon"
 	carry_in_two_hands="0" 
 	stab_enabled="1" 
 	stab_range="0" 
-	use_basic_muzzle_smoke_effect="0"
 	/> 
 	<!--1500RPM 25m range-->
 	<!-- mk2 Increases the ammunition supply and stability of the minigun. -->
@@ -96,17 +92,17 @@ key="hd_exo44_walker_mk3_mg.weapon"
     <hud_icon filename="exo_mg11_minigun.png" /> 
 
   	<capacity value="0" source="rank" source_value="0.0" />
-	<capacity value="1" source="rank" source_value="0.0" />
+	<capacity value="1" source="rank" source_value="251.773" />
 	
-    <commonness value="1" can_respawn_with="1" in_stock="1" /> 
-    <inventory encumbrance="50.0" price="0.0" /> 
+    <!-- <commonness value="1" can_respawn_with="1" in_stock="1" /> 
+    <inventory encumbrance="50.0" price="0.0" />  -->
     <weak_hand_hold offset="0.3" /> 
 
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
 	time_to_live="0.5625" can_be_detected_by_driver="1" can_be_disarmed="0" name="EXO-44 Stomper MK3"> 
 		
-		<result class="hit" kill_probability="1.0" 
-		kill_probability_offset_on_successful_hit="10"
+		<result class="hit" kill_probability="1.5" 
+		kill_probability_offset_on_successful_hit="15"
 		kill_decay_start_time="0.3750" kill_decay_end_time="0.5625" character_state="wound"/>
 		<!-- slower decay -->
 		<!-- 60m max damage range -->
@@ -116,7 +112,7 @@ key="hd_exo44_walker_mk3_mg.weapon"
 		<effect class="result" key="terrain" ref="hd_mg94_result_bullet_light_center" lighting="0" />
 		<effect class="result" key="terrain" ref="hd_mg94_result_bullet_smoke" lighting="0" />
 		<effect class="result" key="terrain" ref="hd_mg94_hit_leave" lighting="0" />
-		<effect class="activated" ref="general_weapon_avtivated_bullet_light" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_bullet_light" lighting="0"/>
 		<effect class="activated" ref="general_weapon_activated_bullet_centerlight" lighting="0"/>
 
 		<effect class="result" key="terrain" ref="p2_peacemaker_hit_01" />
@@ -137,29 +133,13 @@ key="hd_exo44_walker_mk3_mg.weapon"
 		<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
 		<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 	
 	
-    <stance state_key="running" accuracy="0.5" /> 
+	  <!-- <stance state_key="running" accuracy="0.5" /> 
     <stance state_key="walking" accuracy="0.9" />
 	<stance state_key="standing" accuracy="0.955" />
 	<stance state_key="crouching" accuracy="0.99" />
     <stance state_key="crouch_moving" accuracy="1" />
     <stance state_key="prone" accuracy="1.4" /> 
     <stance state_key="prone_moving" accuracy="0.5" />
-    <stance state_key="over_wall" accuracy="1.8" />     
-     
-    <modifier class="speed" value="-0.5" /> 
-    <modifier class="hit_success_probability" value="-0.2" />
-    <modifier class="detectability" value="0.0" />
-
-    <shield offset="1 0 0.9" extent="1 3 2.7" usable_for_cover="0"/>  
-	<!-- x厚度，前后宽度,负向前；y高度，z宽度 -->
-	<modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="0" />
-	<modifier class="projectile_hit_result" input_character_state="wound" output_character_state="wound" consumes_item="0" />
-	<modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="0" />
-	<!-- death and wound blast causes the item to be consumed, stun is ignored -->
-	<modifier class="projectile_blast_result" input_character_state="death" output_character_state="death" consumes_item="0" />
-	<modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="0" />
-	<modifier class="projectile_blast_result" input_character_state="stun" output_character_state="none" consumes_item="0" />
+    <stance state_key="over_wall" accuracy="1.8" />      -->
+	
 </weapon>
-
-
-

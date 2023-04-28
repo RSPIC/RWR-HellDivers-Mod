@@ -3,7 +3,7 @@
 	<parameter class="moving_inputsteer_threshold" value="0.1" />
 	<parameter class="stopping_velocity_threshold" value="0.01" />
 
-	<parameter class="walking_steer_amount" value="0.2" />
+	<parameter class="walking_steer_amount" value="0.4" />
 	<parameter class="running_steer_amount" value="0.4" />
 	<parameter class="run_footstep_interval" value="1.5" />
 	<parameter class="walk_footstep_interval" value="10.0" />
@@ -69,11 +69,11 @@
 
 	<parameter class="detectability_prone" value="0.2" />
 	<parameter class="detectability_wounded" value="0.5" />
-	<parameter class="detectability_crouching" value="0.2" />
-	<parameter class="detectability_crouch_moving" value="0.2" />
-	<parameter class="detectability_walking" value="0.2" />
-	<parameter class="detectability_still" value="0.2" />
-	<parameter class="detectability_running" value="0.5" />
+	<parameter class="detectability_crouching" value="0.3" />
+	<parameter class="detectability_crouch_moving" value="0.4" />
+	<parameter class="detectability_walking" value="0.5" />
+	<parameter class="detectability_still" value="0.3" />
+	<parameter class="detectability_running" value="0.7" />
 
 	<parameter class="default_squad_config_index" value="0" />
 
@@ -102,7 +102,7 @@
     <effect class="blood" type="splat_map" size="2.0" atlas_index="3" layer="3" additive="1" apply_gore_factor="1" />
 	
   	<parameter class="can_use_inventory" value="0" />  
-	<parameter class="can_use_vehicles" value="0" /> 
+	<parameter class="can_use_vehicles" value="1" /> 
 	<parameter class="player_aim_to_crosshair" value="0" /> 
 	
 	<animation key="stabbing" target_key="dog stab" />

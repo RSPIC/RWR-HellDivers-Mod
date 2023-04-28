@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectiles>
+	<!--武器弹头-->
+    <projectile file="acg_ex_box.projectile" /><!--补给箱呼叫信标-->
+	
+    <!--空投信标-->
+	<projectile file="acg_amg_11_mk3_call.projectile" /><!--自动机枪炮台-->
+	<projectile file="acg_arx_34_mk3_call.projectile" /><!--自动轨道枪炮台-->
+
+	<!-- 间接生成弹头 -->
+	<projectile file="acg_amg_11_mk3_spawn.projectile" />
+	<projectile file="acg_arx_34_mk3_spawn.projectile" />
+	<projectile file="acg_reisenu_c_spawn.projectile" />
+	<projectile file="acg_texas_skill_spawn.projectile" />
+
+	<!-- 伤害弹头 -->
+	<projectile file="acg_reisenu_b_damage.projectile" /><!--铃仙-->
+	<projectile file="acg_reisenu_c_damage.projectile" /><!--铃仙-->
+	<projectile file="acg_ruby_rose_sniper_damage.projectile" /><!--RubyRose-->
+	<projectile file="acg_kokomi_water_damage.projectile" /><!--心海-->
+    <projectile file="acg_texas_skill_damage.projectile" /><!--德克萨斯-->
+	<projectile file="wand_damage_04.projectile" /><!--法杖-->
+    <projectile file="wand_waiting_03.projectile" />
+    <projectile file="wand_droping_02.projectile" />
+    <projectile file="wand_guiding_01.projectile" />
+    <projectile file="acg_hk416_starry_cocoon_gl_damage.projectile" />
+    <projectile file="acg_megumin_wand_float_damage.projectile" />
+    <projectile file="acg_iws2000_banisher_damage.projectile" />
+    <projectile file="acg_shigure_127mm_damage.projectile" />
+    <projectile file="acg_fiammeta_damage.projectile" />
+
+<!-- 功能弹头 -->
+    <projectile file="hd_drone_ad289_angel_heal.projectile" />
+
+</projectiles>
