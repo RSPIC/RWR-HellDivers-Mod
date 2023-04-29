@@ -11,12 +11,12 @@
 //Author:RST
 //动态警报脚本
 //警报方ai数量超过场上最低阵营人数2.0倍则警报不触发
-//警报时，超过玩家准星50m处警报不触发，20m外降低警报等级，20m内正常触发
+//警报时，超过玩家准星80m处警报不触发，40m外降低警报等级，40m内正常触发
 //高级巡逻兵警报等级会增加
 //每次有效警报间隔为10s
-//警报方ai人数在0.2~0.4倍率之间，会额外增加一轮随机增援，并减少再次警报cd
+//警报方ai人数在0.2~0.5倍率之间，会额外增加一轮随机增援，并减少再次警报cd
 //警报方ai人数在0.2倍率以内，会额外增加一轮全兵种增援，并减少再次警报cd
-//警报方ai人数在0.4~0.8倍率之间，减少再次警报cd
+//警报方ai人数在0.5~0.8倍率之间，减少再次警报cd
 
 dictionary dynamic_alert_notify_key = {
 
@@ -170,8 +170,8 @@ class dynamic_alert : Tracker {
         m_server_difficulty_level = settings.m_server_difficulty_level;
         _log("Server difficulty level = "+ server_difficulty_level);
 
-        m_cd_time = 10.0;
-        m_cd_timer = 10.0;
+        m_cd_time = 8.0;
+        m_cd_timer = m_cd_time;
 	}
 
 	bool hasEnded() const {
@@ -194,7 +194,7 @@ class dynamic_alert : Tracker {
     void clearAlert(){
         m_alertFlag = false;
         m_cd_timer = m_cd_time;
-        m_cd_time = 10.0;
+        
     }
 
 	protected void handleResultEvent(const XmlElement@ event) {
@@ -283,12 +283,12 @@ class dynamic_alert : Tracker {
             Vector3 aim_pos = stringToVector3(player.getStringAttribute("aim_target"));    //省事直接用玩家指针位置
             float distance = getFlatPositionDistance(aim_pos,position);
         //notify(m_metagame, "Alert Distance = "+distance, dictionary(), "misc", 0, false, "", 1.0);
-            if(distance >= 20 && distance  < 50){        //超过玩家20m的警报降低
+            if(distance >= 40 && distance  < 80){        //超过玩家40m的警报降低
                 server_difficulty_level -= 3;
                 if(server_difficulty_level < 0){
                     server_difficulty_level = 0;
                 }
-            }else if(distance >= 50){   //超过玩家50m的警报不触发
+            }else if(distance >= 80){   //超过玩家80m的警报不触发
                 return;
             }
         }
@@ -300,6 +300,7 @@ class dynamic_alert : Tracker {
     //notify(m_metagame, "Alert Level = "+server_difficulty_level, dictionary(), "misc", 0, false, "", 1.0);
         if(server_difficulty_level > 12){
             Alert_Spawn(m_metagame,caller_faction,position,level_15);
+            Alert_Spawn(m_metagame,caller_faction,position,level_3);
             _log("level 15"); 
         }else if(server_difficulty_level > 9 ){
             Alert_Spawn(m_metagame,caller_faction,position,level_12);
@@ -315,18 +316,18 @@ class dynamic_alert : Tracker {
             _log("level 3"); 
         }
 
-        if(rate <= 0.4 && rate >0.2){
+        if(rate <= 0.5 && rate >0.2){
             Alert_Spawn(m_metagame,caller_faction,position,level_random);
-            m_cd_time = 5.0;
+            m_cd_time = 4.0;
 
             _log("level random"); 
         }else if(rate < 0.20){
             Alert_Spawn(m_metagame,caller_faction,position,level_all);
-            m_cd_time = 3.0;
+            m_cd_time = 2.0;
 
             _log("level all"); 
-        }else if(rate > 0.4 && rate <= 0.8){
-            m_cd_time = 8.0;
+        }else if(rate > 0.5 && rate <= 0.8){
+            m_cd_time = 6.0;
         }
 
         server_difficulty_level = m_server_difficulty_level;

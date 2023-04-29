@@ -82,5 +82,12 @@
 	<!-- <animation key="celebrating, shooting" target_key="jumping, large mecha" /> -->
 	<!-- <animation key="swimming still" target_key="swim still_big_unit" /> -->
 	<!-- <animation key="swimming forwards" target_key="swimming_big_unit" /> -->
-
+	<sound key="footstep" fileref="cyborgs_voice_berserker_1.wav" volume="0.5" />
+	<sound key="footstep" fileref="cyborgs_voice_berserker_2.wav" volume="0.5" />
+	<sound key="footstep" fileref="cyborgs_voice_berserker_3.wav" volume="0.5" />
+	<sound key="footstep" fileref="cyborgs_voice_berserker_4.wav" volume="0.5" />
+	<sound key="body_fall" fileref="cyborgs_voice_berserker_1.wav" volume="0.5" />
+	<sound key="body_fall" fileref="cyborgs_voice_berserker_2.wav" volume="0.5" />
+	<sound key="body_fall" fileref="cyborgs_voice_berserker_3.wav" volume="0.5" />
+	<sound key="body_fall" fileref="cyborgs_voice_berserker_4.wav" volume="0.5" />
 </character>

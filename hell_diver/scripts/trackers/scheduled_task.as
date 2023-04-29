@@ -113,12 +113,14 @@ class PlayerInfoBucket {
     }
 
     void addPlayer(string name, const XmlElement@ player, float cd_time = 5.0f) {
+		if(player is null){return;}
         if (findPlayerByName(name) is null) {
             PlayerInfo@ newPlayer = PlayerInfo(name, player, cd_time);
             m_allPlayers.insertLast(newPlayer);
         }
     }
     void updatePlayer(string name, const XmlElement@ player) {
+		if(player is null){return;}
 		for (uint i = 0; i < m_allPlayers.length(); ++i) {
 			if (m_allPlayers[i].getName() == name) {
 				m_allPlayers[i].updatePlayer(player);
@@ -131,10 +133,18 @@ class PlayerInfoBucket {
         for (uint i = 0; i < m_allPlayers.length(); ++i) {
             if (m_allPlayers[i].getName() == name) {
                 m_allPlayers.removeAt(i);
+				i--;
                 break;
             }
         }
     }
+
+	void outputTest(){
+		for (uint i = 0; i < m_allPlayers.length(); ++i) {
+        	string name = m_allPlayers[i].getName();
+            _log("outputTest, list: "+i+" name= "+name);
+        }
+	}
 }
 funcdef void FUNC_PTR(string p_name);
 
@@ -152,6 +162,7 @@ class scheduled_task : Tracker {
 	protected array<int> m_counter; //计数器
 	protected array<int> m_counter_cd; //计数器
 	protected bool debug_mode;
+	protected bool first_bgm;
 
 	// --------------------------------------------
 	scheduled_task(GameModeInvasion@ metagame, float time = 4.0) {
@@ -166,6 +177,8 @@ class scheduled_task : Tracker {
 		m_timer = m_maxIdleTime;
 		m_counter.insertLast(0); //天使无人机mk3计数
 		m_counter_cd.insertLast(0); //天使无人机mk3计数
+
+		first_bgm=false;	//进入游戏加载BGM
 	}
 	
 	// --------------------------------------------
@@ -213,7 +226,7 @@ class scheduled_task : Tracker {
 		array<const XmlElement@> players = getPlayers(m_metagame);
 		for (uint j = 0; j < players.size(); ++j) {
 			const XmlElement@ player = players[j];
-			
+			if(player is null){continue;}
 			// ignore admins and mods
 			// string name = player.getStringAttribute("name");
 			// if (m_metagame.getAdminManager().isAdmin(name) || 
@@ -273,6 +286,7 @@ class scheduled_task : Tracker {
 	}
 	// ----------------------------------------------------
 	protected void checkBanzai(Metagame@ m_metagame,const XmlElement@&in player){
+		if(player is null){return;}
 		int cid = player.getIntAttribute("character_id");
 		string p_name = player.getStringAttribute("name");
 		
@@ -284,12 +298,14 @@ class scheduled_task : Tracker {
 					int pid = player.getIntAttribute("player_id");
 					notify(m_metagame, "Help - Banzai", dictionary(), "misc", pid, true, "Banzai Help", 1.0);
 					m_playerinfo.noFirst(2);
+					editPlayerVest(m_metagame,cid,"helldivers_vest.carry_item",4);//替换为默认甲，此处为防止过图卡脚本执行bug
 				}
 			}
 		}
 	}
 	// ----------------------------------------------------
 	protected void Tutor_63type_107mm(Metagame@ m_metagame,const XmlElement@&in player){
+		if(player is null){return;}
 		int cid = player.getIntAttribute("character_id");
 		string p_name = player.getStringAttribute("name");
 		
@@ -308,6 +324,7 @@ class scheduled_task : Tracker {
 	}
 	// ----------------------------------------------------
 	protected void AutoHeal(Metagame@ m_metagame,const XmlElement@&in player){
+		if(player is null){return;}
 		//自动回甲
 		int cid = player.getIntAttribute("character_id");
 		const XmlElement@ character = getCharacterInfo(m_metagame,cid);
@@ -328,6 +345,7 @@ class scheduled_task : Tracker {
 	}
 	// ----------------------------------------------------
 	protected void EXOArmorChange(Metagame@ m_metagame,const XmlElement@&in player){
+		if(player is null){return;}
 		//机甲检测
 		int pid = player.getIntAttribute("player_id");
 		int cid = player.getIntAttribute("character_id");
@@ -399,6 +417,10 @@ class scheduled_task : Tracker {
 	protected void handleMatchEndEvent(const XmlElement@ event) {
 		const XmlElement@ winCondition = event.getFirstElementByTagName("win_condition");
 		if (winCondition !is null) {
+			if(debug_mode){
+				allplayers.outputTest();
+			}
+
 			//factionId = winCondition.getIntAttribute("faction_id");
 		}
 	}
@@ -415,7 +437,25 @@ class scheduled_task : Tracker {
 	}	
 	// ----------------------------------------------------
 	protected void handlePlayerConnectEvent(const XmlElement@ event) {
+		if(!first_bgm){
+			array<string> bgmList = {
+				"cyborgs_fighting_bgm_1.wav",
+				"cyborgs_fighting_bgm_2.wav",
+				"cyborgs_fighting_bgm_3.wav",
+				"cyborgs_fighting_bgm_4.wav",
+				"cyborgs_fighting_bgm_5.wav",
+				"cyborgs_fighting_bgm_6.wav",
+				"cyborgs_fighting_bgm_7.wav",
+				"cyborgs_searching_bgm_1.wav",
+				"cyborgs_searching_bgm_2.wav"
+			};
+			int soundrnd= rand(0,bgmList.length-1);
+			playSoundtrack(m_metagame,bgmList[soundrnd]);
+			first_bgm = true;
+		}
+
 		const XmlElement@ playerinfo = event.getFirstElementByTagName("player");
+		if(playerinfo is null){return;}
 		int p_id = playerinfo.getIntAttribute("player_id");
 		const XmlElement@ player = getPlayerInfo(m_metagame,p_id);
 		if (player !is null) {
@@ -423,6 +463,8 @@ class scheduled_task : Tracker {
 			_log("player connect, name = "+ name);
 			if(!allplayers.exists(name)){
 				allplayers.addPlayer(name,player);
+			}else if(allplayers.exists(name)){
+				allplayers.updatePlayer(name,player);
 			}
 			int pid = player.getIntAttribute("player_id");
 			if(!debug_mode){
@@ -433,6 +475,7 @@ class scheduled_task : Tracker {
 	// ----------------------------------------------------
 	protected void handlePlayerSpawnEvent(const XmlElement@ event) {
 		const XmlElement@ playerinfo = event.getFirstElementByTagName("player");
+		if(playerinfo is null){return;}
 		int pid = playerinfo.getIntAttribute("player_id");
 		const XmlElement@ player = getPlayerInfo(m_metagame,pid);
 		if (player !is null) {
@@ -478,9 +521,11 @@ class scheduled_task : Tracker {
 				case 1:{//刺雷
 					int characterId = event.getIntAttribute("character_id");
 					const XmlElement@ character = getCharacterInfo(m_metagame, characterId);	
+					if(character is null){return;}
 					int pid = character.getIntAttribute("player_id");
 					if(pid == -1){return;}
 					const XmlElement@ playerinfo  = getPlayerInfo(m_metagame,pid);
+					if(playerinfo is null){return;}
 					string p_name = playerinfo.getStringAttribute("name");
 
 					//-----------------------------------------
@@ -530,6 +575,7 @@ class scheduled_task : Tracker {
 			//_log("player "+p_name+" exists");
 			PlayerInfo@ playerinfo = allplayers.findPlayerByName(p_name);
 			const XmlElement@ player = playerinfo.getPlayer();
+			if(player is null){return;}
 			int cid = player.getIntAttribute("character_id");
 			int fid = player.getIntAttribute("faction_id");
 			const XmlElement@ character = getCharacterInfo(m_metagame,cid);

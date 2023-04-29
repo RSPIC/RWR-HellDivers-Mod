@@ -1,60 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <vehicle file="_vehicle_none.base" 
-name="Mi-24" 
+name="Mi-24 Helicopter" 
 key="mi_24.vehicle" 
 respawn_time="300" 
 time_to_live_unsteerable="95" 
-map_view_atlas_index="5" 
+map_view_atlas_index="35" 
 minimum_fill_requirement="1.0" 
 max_character_collision_speed_on_normal="8.0"
 allow_ai_to_use="0"
 >
 
-	<tire_set offset="20 0.0 +20.0" radius="0.45" />
-	<tire_set offset="40 0.0 0.0" radius="0.45" />
-	<tire_set offset="1 0.0 -20.0" radius="0.45" />
+	<!-- <tire_set offset="0.01 0.0 +20.0" radius="0.5" />
+	<tire_set offset="40 0.0 0.0" radius="0.5" />
+	<tire_set offset="20 0.0 -20.0" radius="0.5" /> -->
+	<tire_set offset="10 0.0 +15" radius="0.45" />
+	<tire_set offset="35 0.0 0" radius="0.45" />
+	<tire_set offset="20 0.0 -10" radius="0.45" />
 
 	<control 
 	max_speed="35" 
-	acceleration="18.0" 
+	acceleration="30.0" 
 	max_reverse_speed="10" 
 	min_health_to_steer="0.10" 
-	max_rotation="1.0" 
-	max_water_depth="5.0" 
-	steer_smoothening="0.2" 
+	max_rotation="10" 
+	max_water_depth="4.0" 
+	steer_smoothening="0" 
 	tracked="1" gears="0"
 	/>
 
 	<physics 
 	remove_collision_threshold="1.0"
-	extent="100 0 100" 
-	offset="0 0 0" 
+	extent="100 -4 100" 
+	offset="0 -4 0" 
 	top_offset="0 0 0" 
-	collision_model_pos="0 50 0" 
+	collision_model_pos="0 20 0" 
 	collision_model_extent="0 0 0" 
-	visual_offset="0 20 0" 
-	friction_offset="0" 
+	visual_offset="0 0 0" 
+	friction_offset="-0.1" 
 	drag_offset="-1" 
 	mass="200"
 	gravity="-2000"
+	gravity_in_water="-20"
+	destroy_on_top_hit="0"
 	/> 
 
-	<sky_diving chute_offset="0 2.5 0.0" trigger_height="20.0" gravity="-10" 
+	<sky_diving chute_offset="0 2.5 0.0" trigger_height="200.0" gravity="-10" 
 	mesh_filename="" texture_filename="" />
 
-	<turret offset="0 1 5.3" weapon_key="hd_vehicle_hmg.weapon" weapon_offset="0 18 1.2" weapon_recoil="0.1" max_rotation_step="0.0001" rotation_range="0.9" />
+	0<turret offset="0 20 0" weapon_key="mi_24_driver.weapon" weapon_offset="0 0 0" weapon_recoil="0" max_rotation_step="0.00002" rotation_range="1"/>
+	1<turret offset="0 1 0" weapon_key="mi_24_model_dir.weapon" weapon_offset="0 0 0" weapon_recoil="0" max_rotation_step="0.00002" rotation_range="0"/>
+	2<turret offset="0 0 0" parent_turret_index="0" weapon_key="mi_24_model_wing1.weapon" weapon_offset="0 0 0" weapon_recoil="0" max_rotation_step="0.01" />
+	3<turret offset="0 0 0" parent_turret_index="0" weapon_key="mi_24_model_wing2.weapon" weapon_offset="0 0 0" weapon_recoil="0" max_rotation_step="0.00002" rotation_range="0"/>
+	4<turret offset="3 0 0" parent_turret_index="0" weapon_key="mi_24_Missile.weapon" weapon_offset="0 0 0" weapon_recoil="0" max_rotation_step="0.00002" rotation_range="0.5"/>
+	5<turret offset="-3 0 0" parent_turret_index="0" weapon_key="mi_24_Missile.weapon" weapon_offset="0 0 0" weapon_recoil="0" max_rotation_step="0.00002" rotation_range="0.5"/>
 	
-	<visual class="chassis" mesh_filename="mi_24_body.mesh" texture_filename="mi_24.png"  max_tilt="0"/>
+	<visual class="chassis" mesh_filename=".mesh" texture_filename="" />
 
-	<visual class="turret" turret_index="0" mesh_filename="40mm.mesh" texture_filename="40mm.png"/>
+	<visual class="turret" turret_index="0" mesh_filename=".mesh" texture_filename="mi_24.png"/>
+	<visual class="turret" turret_index="1" mesh_filename=".mesh" texture_filename="balloon.png"/>
+	<visual class="turret" turret_index="2" mesh_filename=".mesh" texture_filename="mi_24.png"/>
+	<visual class="turret" turret_index="3" mesh_filename=".mesh" texture_filename="mi_24.png"/>
 	<!-- <visual class="turret" turret_index="1" mesh_filename="mi_24_wing1.mesh" texture_filename="mi_24.png" /> -->
 	<!-- <visual class="turret" turret_index="2" mesh_filename="mi_24_wing2.mesh" texture_filename="mi_24.png" /> -->
 
 
-	<character_slot type="driver" enter_position="2 0.5 0" seat_position="0 40.000 0" 
-	rotation="0" exit_rotation="+1.57" hiding="1" />
+	<character_slot type="driver" attached_on_turret="0" enter_position="2 0.5 0" seat_position="0.5 0.800 0" 
+	rotation="0" exit_rotation="+1.57" hiding="1" animation_id="36">
+	</character_slot>
+	<character_slot type="gunner" attached_on_turret="0" enter_position="-2 0.5 0" seat_position="-0.5 0.800 0" 
+	rotation="0" exit_rotation="-1.57" hiding="0" animation_id="36">
+		<turret index="0" /><turret index="1" /><turret index="4" /><turret index="5" />
+	</character_slot>
+	<character_slot type="gunner" attached_on_turret="0" enter_position="0 0.5 2" seat_position="0 0.800 2" 
+	rotation="0" exit_rotation="0" hiding="1" animation_id="36">
+		<turret index="2" />
+	</character_slot>
+	<character_slot type="gunner" attached_on_turret="0" enter_position="0 0.5 -2" seat_position="0 0.800 -2" 
+	rotation="0" exit_rotation="3.14" hiding="0" animation_id="36">
+		<turret index="4" /><turret index="5" />
+	</character_slot>
 	
-
 
 	<rev_sound filename="helicopter_01.wav" low_rev="0.0" high_rev="1.0" />
 	
@@ -65,12 +90,10 @@ allow_ai_to_use="0"
 	<sound key="destroy" filename="explosion4.wav" />  
 	<sound key="cleanup" filename="explosion3.wav" />
   	
-
-	<effect event_key="drive_chassis" ref="propeller_rotate_drive_chassis" offset="0 0 -1.5"/>         
-	<effect event_key="drive_chassis" ref="propeller_rotate_drive_chassis" offset="0 0 +1.5"/>         
-	<effect event_key="drive_chassis" ref="propeller_rotate_drive_chassis" offset="-1.5 0 0"/>         
-	<effect event_key="drive_chassis" ref="propeller_rotate_drive_chassis" offset="1.5 0 0"/>         
-	<effect event_key="idle_chassis" ref="propeller_rotate_idle_chassis" offset="0 0 -1.5"/> 	
+	<!-- <effect event_key="drive_chassis"  ref="propeller_rotate_drive_chassis" offset="0 44 0"/>         
+	<effect event_key="idle_chassis" ref="propeller_rotate_idle_chassis" offset="0 44 0"/> 	 -->
+	<!-- <effect event_key="drive" type="particle" key="terrain" ref="propeller_rotate_drive_chassis" offset="0 44 0" /> -->
+ 
 
 
 	<event>

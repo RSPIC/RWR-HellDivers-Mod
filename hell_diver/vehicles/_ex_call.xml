@@ -11,9 +11,261 @@
 	ba_crusader_call BA 十字军
 	ex_m18_call M18 地狱猫 
 	ba_torumaru_tiger_call 虎丸 [伊吕波]
+	mi_24_call MI-24 直升机
+	bell_360_call 贝尔360 直升机
+	mh_60s MH-60S 直升机
+	is2_m1895 IS2 M1895 重型坦克
 -->
 
 <projectiles>
+
+<projectile 
+class="grenade" 
+name="IS-2 M[1895] Beacon" 
+key="is2_m1895_call.projectile" 
+slot="0"
+pulldown_in_air="15.0"
+on_ground_up="0 1 0"
+time_to_live="60"
+can_be_disarmed="0"
+time_to_live_out_in_the_open="0"
+player_death_drop_owner_lock_time="0"
+>
+    <drop_on_death_result class="spawn" instance_class="projectile" instance_key="is2_m1895_call.projectile" 
+	min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
+
+	<result class="spawn" instance_class="vehicle" instance_key="is2_m1895.vehicle" 
+			min_amount="1" max_amount="1" offset="0 30 0" position_spread="0 0" direction_spread="0 0" />	
+	<trigger class="time" time_to_live="3.5" />	
+    <rotation class="random" />
+	
+    <model mesh_filename="vindicator_beacon_blue.xml" />
+    <hud_icon filename="mh_60s_call.png" />
+	
+    <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
+	speed_estimation_far="70.0" max_speed="21.0" randomness="0.0" tweak_factor="1.0" />
+
+	<commonness value="0.0" can_respawn_with="0" in_stock="1"/>
+
+	<capacity value="0" source="rank" source_value="0" />
+    <capacity value="1" source="rank" source_value="0" />
+    <inventory encumbrance="1" price="3000.0" />
+
+
+    <!-- 设备 -->
+	<sound class="result" key="other" fileref="hd_equip_on_the_way.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_equip_on_the_way_1.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_equip_on_the_way_2.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_equip_on_the_way_3.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_equip_on_the_way_4.wav" pitch_variety="0.01" volume="1"/>
+    <!-- 通用确认 -->
+	<sound class="result" key="other" fileref="hd_request_confirm.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_1.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_2.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_3.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_4.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_5.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_6.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_7.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_8.wav" pitch_variety="0.01" volume="1"/>
+    <sound class="result" key="terrain" copy="other" />
+    <sound class="result" key="static_object" copy="other" />
+    <sound class="result" key="vehicle" copy="other" />
+    <sound class="result" key="character" copy="other" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_blue_3s" lighting="0"/>
+	<effect class="result" key="terrain" ref="stratagems_point_light_area_blue_3s" lighting="0"/>
+	<effect class="result" key="other" copy="terrain" />
+    <effect class="result" key="static_object" copy="terrain" />
+    <effect class="result" key="vehicle" copy="terrain" />
+    <effect class="result" key="character" copy="terrain" />
+    <effect class="activated" ref="alert_center_bluelight" lighting="0" /><!--中心蓝光标识-->
+</projectile>
+
+<projectile 
+class="grenade" 
+name="MH-60S Helicopter Beacon" 
+key="mh_60s_call.projectile" 
+slot="0"
+pulldown_in_air="15.0"
+on_ground_up="0 1 0"
+time_to_live="60"
+can_be_disarmed="0"
+time_to_live_out_in_the_open="0"
+player_death_drop_owner_lock_time="0"
+>
+    <drop_on_death_result class="spawn" instance_class="projectile" instance_key="mh_60s_call.projectile" 
+	min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
+
+	<result class="spawn" instance_class="vehicle" instance_key="mh_60s.vehicle" 
+			min_amount="1" max_amount="1" offset="0 30 0" position_spread="0 0" direction_spread="0 0" />	
+	<trigger class="time" time_to_live="3.5" />	
+    <rotation class="random" />
+	
+    <model mesh_filename="vindicator_beacon_blue.xml" />
+    <hud_icon filename="mh_60s_call.png" />
+	
+    <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
+	speed_estimation_far="70.0" max_speed="21.0" randomness="0.0" tweak_factor="1.0" />
+
+	<commonness value="0.0" can_respawn_with="0" in_stock="1"/>
+
+	<capacity value="0" source="rank" source_value="0" />
+    <capacity value="1" source="rank" source_value="0" />
+    <inventory encumbrance="1" price="10000.0" />
+
+
+    <!-- 设备 -->
+	<sound class="result" key="other" fileref="hd_equip_on_the_way.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_equip_on_the_way_1.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_equip_on_the_way_2.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_equip_on_the_way_3.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_equip_on_the_way_4.wav" pitch_variety="0.01" volume="1"/>
+    <!-- 通用确认 -->
+	<sound class="result" key="other" fileref="hd_request_confirm.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_1.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_2.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_3.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_4.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_5.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_6.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_7.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_8.wav" pitch_variety="0.01" volume="1"/>
+    <sound class="result" key="terrain" copy="other" />
+    <sound class="result" key="static_object" copy="other" />
+    <sound class="result" key="vehicle" copy="other" />
+    <sound class="result" key="character" copy="other" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_blue_3s" lighting="0"/>
+	<effect class="result" key="terrain" ref="stratagems_point_light_area_blue_3s" lighting="0"/>
+	<effect class="result" key="other" copy="terrain" />
+    <effect class="result" key="static_object" copy="terrain" />
+    <effect class="result" key="vehicle" copy="terrain" />
+    <effect class="result" key="character" copy="terrain" />
+    <effect class="activated" ref="alert_center_bluelight" lighting="0" /><!--中心蓝光标识-->
+</projectile>
+
+<projectile 
+class="grenade" 
+name="Bell 360 Helicopter Beacon" 
+key="bell_360_call.projectile" 
+slot="0"
+pulldown_in_air="15.0"
+on_ground_up="0 1 0"
+time_to_live="60"
+can_be_disarmed="0"
+time_to_live_out_in_the_open="0"
+player_death_drop_owner_lock_time="0"
+>
+    <drop_on_death_result class="spawn" instance_class="projectile" instance_key="bell_360_call.projectile" 
+	min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
+
+	<result class="spawn" instance_class="vehicle" instance_key="bell_360.vehicle" 
+			min_amount="1" max_amount="1" offset="0 30 0" position_spread="0 0" direction_spread="0 0" />	
+	<trigger class="time" time_to_live="3.5" />	
+    <rotation class="random" />
+	
+    <model mesh_filename="vindicator_beacon_blue.xml" />
+    <hud_icon filename="bell_360_call.png" />
+	
+    <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
+	speed_estimation_far="70.0" max_speed="21.0" randomness="0.0" tweak_factor="1.0" />
+
+	<commonness value="0.0" can_respawn_with="0" in_stock="1"/>
+
+	<capacity value="0" source="rank" source_value="0" />
+    <capacity value="1" source="rank" source_value="0" />
+    <inventory encumbrance="1" price="10000.0" />
+
+
+    <!-- 设备 -->
+	<sound class="result" key="other" fileref="hd_equip_on_the_way.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_equip_on_the_way_1.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_equip_on_the_way_2.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_equip_on_the_way_3.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_equip_on_the_way_4.wav" pitch_variety="0.01" volume="1"/>
+    <!-- 通用确认 -->
+	<sound class="result" key="other" fileref="hd_request_confirm.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_1.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_2.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_3.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_4.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_5.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_6.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_7.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_8.wav" pitch_variety="0.01" volume="1"/>
+    <sound class="result" key="terrain" copy="other" />
+    <sound class="result" key="static_object" copy="other" />
+    <sound class="result" key="vehicle" copy="other" />
+    <sound class="result" key="character" copy="other" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_blue_3s" lighting="0"/>
+	<effect class="result" key="terrain" ref="stratagems_point_light_area_blue_3s" lighting="0"/>
+	<effect class="result" key="other" copy="terrain" />
+    <effect class="result" key="static_object" copy="terrain" />
+    <effect class="result" key="vehicle" copy="terrain" />
+    <effect class="result" key="character" copy="terrain" />
+    <effect class="activated" ref="alert_center_bluelight" lighting="0" /><!--中心蓝光标识-->
+</projectile>
+
+<projectile 
+class="grenade" 
+name="Mi-24 Helicopter Beacon" 
+key="mi_24_call.projectile" 
+slot="0"
+pulldown_in_air="15.0"
+on_ground_up="0 1 0"
+time_to_live="60"
+can_be_disarmed="0"
+time_to_live_out_in_the_open="0"
+player_death_drop_owner_lock_time="0"
+>
+    <drop_on_death_result class="spawn" instance_class="projectile" instance_key="mi_24_call.projectile" 
+	min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
+
+	<result class="spawn" instance_class="vehicle" instance_key="mi_24.vehicle" 
+			min_amount="1" max_amount="1" offset="0 30 0" position_spread="0 0" direction_spread="0 0" />	
+	<trigger class="time" time_to_live="3.5" />	
+    <rotation class="random" />
+	
+    <model mesh_filename="vindicator_beacon_blue.xml" />
+    <hud_icon filename="mi_24_call.png" />
+	
+    <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
+	speed_estimation_far="70.0" max_speed="21.0" randomness="0.0" tweak_factor="1.0" />
+
+	<commonness value="0.0" can_respawn_with="0" in_stock="1"/>
+
+	<capacity value="0" source="rank" source_value="0" />
+    <capacity value="1" source="rank" source_value="0" />
+    <inventory encumbrance="1" price="10000.0" />
+
+
+    <!-- 设备 -->
+	<sound class="result" key="other" fileref="hd_equip_on_the_way.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_equip_on_the_way_1.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_equip_on_the_way_2.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_equip_on_the_way_3.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_equip_on_the_way_4.wav" pitch_variety="0.01" volume="1"/>
+    <!-- 通用确认 -->
+	<sound class="result" key="other" fileref="hd_request_confirm.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_1.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_2.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_3.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_4.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_5.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_6.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_7.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_8.wav" pitch_variety="0.01" volume="1"/>
+    <sound class="result" key="terrain" copy="other" />
+    <sound class="result" key="static_object" copy="other" />
+    <sound class="result" key="vehicle" copy="other" />
+    <sound class="result" key="character" copy="other" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_blue_3s" lighting="0"/>
+	<effect class="result" key="terrain" ref="stratagems_point_light_area_blue_3s" lighting="0"/>
+	<effect class="result" key="other" copy="terrain" />
+    <effect class="result" key="static_object" copy="terrain" />
+    <effect class="result" key="vehicle" copy="terrain" />
+    <effect class="result" key="character" copy="terrain" />
+    <effect class="activated" ref="alert_center_bluelight" lighting="0" /><!--中心蓝光标识-->
+</projectile>
 
 <projectile 
 class="grenade" 
@@ -36,7 +288,7 @@ player_death_drop_owner_lock_time="0"
     <rotation class="random" />
 	
     <model mesh_filename="vindicator_beacon_blue.xml" />
-    <hud_icon filename="ex_m18_call.png" />
+    <hud_icon filename="ba_torumaru_tiger.png" />
 	
     <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
 	speed_estimation_far="70.0" max_speed="21.0" randomness="0.0" tweak_factor="1.0" />
@@ -45,7 +297,7 @@ player_death_drop_owner_lock_time="0"
 
 	<capacity value="0" source="rank" source_value="0" />
     <capacity value="1" source="rank" source_value="0" />
-    <inventory encumbrance="1" price="1000.0" />
+    <inventory encumbrance="1" price="3000.0" />
 
 
     <!-- 设备 -->
@@ -107,7 +359,7 @@ player_death_drop_owner_lock_time="0"
 
 	<capacity value="0" source="rank" source_value="0" />
     <capacity value="1" source="rank" source_value="0" />
-    <inventory encumbrance="1" price="1000.0" />
+    <inventory encumbrance="1" price="1500.0" />
 
 
     <!-- 设备 -->
@@ -169,7 +421,7 @@ player_death_drop_owner_lock_time="0"
 
 	<capacity value="0" source="rank" source_value="0" />
     <capacity value="1" source="rank" source_value="0" />
-    <inventory encumbrance="1" price="1000.0" />
+    <inventory encumbrance="1" price="3000.0" />
 
 
     <!-- 设备 -->
@@ -284,7 +536,7 @@ player_death_drop_owner_lock_time="0"
     <rotation class="random" />
 	
     <model mesh_filename="vindicator_beacon_blue.xml" />
-    <hud_icon filename="ex_isu_152.png" />
+    <hud_icon filename="ex_sherman_call.png" />
 	
     <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
 	speed_estimation_far="70.0" max_speed="21.0" randomness="0.0" tweak_factor="1.0" />
@@ -346,7 +598,7 @@ player_death_drop_owner_lock_time="0"
     <rotation class="random" />
 	
     <model mesh_filename="vindicator_beacon_blue.xml" />
-    <hud_icon filename="ex_isu_152.png" />
+    <hud_icon filename="ex_kv2_gup_call.png" />
 	
     <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
 	speed_estimation_far="70.0" max_speed="21.0" randomness="0.0" tweak_factor="1.0" />
@@ -610,7 +862,7 @@ player_death_drop_owner_lock_time="0"
     <rotation class="random" />
 	
     <model mesh_filename="vindicator_beacon_blue.xml" />
-    <hud_icon filename="ex_isu_152.png" />
+    <hud_icon filename="ex_sturmtiger_tank_call.png" />
 	
     <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
 	speed_estimation_far="70.0" max_speed="21.0" randomness="0.0" tweak_factor="1.0" />
@@ -677,7 +929,7 @@ player_death_drop_owner_lock_time="0"
     <rotation class="random" />
 	
     <model mesh_filename="vindicator_beacon_blue.xml" />
-    <hud_icon filename="ex_isu_152.png" />
+    <hud_icon filename="ex_apocalypse_tank_call.png" />
 	
     <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
 	speed_estimation_far="70.0" max_speed="21.0" randomness="0.0" tweak_factor="1.0" />

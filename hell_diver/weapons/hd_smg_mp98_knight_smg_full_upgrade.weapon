@@ -89,7 +89,7 @@ key="hd_smg_mp98_knight_smg_full_upgrade.weapon"
 	time_to_live="0.22" can_be_detected_by_driver="1" can_be_disarmed="0" name="MP-98 Knight"> 
 	
 		<result class="hit" kill_probability="1.0" 
-		kill_probability_offset_on_successful_hit="12"
+		kill_probability_offset_on_successful_hit="7"
 		kill_decay_start_time="0.22" kill_decay_end_time="0.22" character_state="stun"/>
 		<!-- 25m max damage range / 最高1.5倍射界,且无衰减 -->
 		<!-- 0.3s stun time -->

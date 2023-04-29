@@ -5,8 +5,8 @@
 
 	<parameter class="walking_steer_amount" value="0.22" />	
 	<parameter class="running_steer_amount" value="0.28" />	
-	<parameter class="run_footstep_interval" value="0.5" />
-	<parameter class="walk_footstep_interval" value="0.7" />
+	<parameter class="run_footstep_interval" value="20" />
+	<parameter class="walk_footstep_interval" value="15" />
 	<parameter class="crouch_walking_steer_amount" value="0.24" />
 	<parameter class="crouch_walking_doing_something_steer_amount" value="0.156" />
 	<parameter class="leaving_vehicle_jump_steer_amount" value="0.4" />
@@ -165,26 +165,47 @@
 	<!-- <animation key="throwing, upside" target_key="chicken egg" /> -->
 	<!-- <animation key="surrender" target_key="chicken crouch" /> -->
 
-	<sound key="body_fall" fileref="cyborgs_dropping.wav" volume="0.0" />
-  
+
+
 	<sound key="stab" fileref="whoosh_melee_large_01.wav" volume="0.3" />
 	<sound key="stab" fileref="whoosh_melee_large_02.wav" volume="0.3" />
 	<sound key="stab" fileref="whoosh_melee_large_03.wav" volume="0.3" />
 	<sound key="stab_hit_any" fileref="whip_hit.wav" volume="0.3" />
 	<sound key="death" fileref="bf1_kill.wav" volume="1" />
 	<sound key="death" fileref="bf1_kill.wav" volume="1" />
-	<sound key="footstep" fileref="walkstep1.wav" volume="0.5" />
-	<sound key="footstep" fileref="walkstep2.wav" volume="0.5" />
-	<sound key="footstep" fileref="walkstep3.wav" volume="0.5" />
-	<sound key="footstep" fileref="walkstep4.wav" volume="0.5" />
-	<sound key="footstep" fileref="walkstep5.wav" volume="0.5" />
-	<sound key="footstep" fileref="walkstep6.wav" volume="0.5" />
-	<sound key="footstep" fileref="walkstep7.wav" volume="0.5" />
-	<sound key="footstep" fileref="walkstep8.wav" volume="0.5" />
-	<sound key="footstep" fileref="walkstep9.wav" volume="0.5" />
-	<sound key="footstep" fileref="walkstep10.wav" volume="0.5" />
-	<sound key="footstep" fileref="walkstep11.wav" volume="0.5" />
-	<sound key="footstep" fileref="walkstep12.wav" volume="0.5" />
-
+	<sound key="footstep" fileref="cyborgs_voice_normal_1.wav" volume="0" />
+	<sound key="footstep" fileref="cyborgs_voice_normal_2.wav" volume="0" />
+	<sound key="footstep" fileref="cyborgs_voice_normal_3.wav" volume="0" />
+	<sound key="footstep" fileref="cyborgs_voice_normal_4.wav" volume="0" />
+	<sound key="footstep" fileref="cyborgs_voice_normal_5.wav" volume="0" />
+	<sound key="footstep" fileref="cyborgs_voice_normal_6.wav" volume="0" />
+	<sound key="footstep" fileref="cyborgs_voice_normal_7.wav" volume="0" />
+	<sound key="footstep" fileref="cyborgs_voice_normal_8.wav" volume="0" />
+	<sound key="footstep" fileref="cyborgs_voice_normal_9.wav" volume="0" />
+	<sound key="footstep" fileref="cyborgs_voice_normal_10.wav" volume="0" />
+	<sound key="footstep" fileref="cyborgs_voice_normal_11.wav" volume="0" />
+	<sound key="footstep" fileref="cyborgs_voice_normal_12.wav" volume="0" />
+	<sound key="footstep" fileref="cyborgs_voice_normal_13.wav" volume="0" />
+	<sound key="footstep" fileref="cyborgs_voice_normal_14.wav" volume="0" />
+	<sound key="footstep" fileref="cyborgs_voice_normal_15.wav" volume="0" />
+	<sound key="footstep" fileref="cyborgs_voice_normal_16.wav" volume="0" />
+	<sound key="footstep" fileref="cyborgs_voice_normal_17.wav" volume="0" />
+	<sound key="body_fall" fileref="cyborgs_voice_normal_1.wav" volume="0" />
+	<sound key="body_fall" fileref="cyborgs_voice_normal_2.wav" volume="0" />
+	<sound key="body_fall" fileref="cyborgs_voice_normal_3.wav" volume="0" />
+	<sound key="body_fall" fileref="cyborgs_voice_normal_4.wav" volume="0" />
+	<sound key="body_fall" fileref="cyborgs_voice_normal_5.wav" volume="0" />
+	<sound key="body_fall" fileref="cyborgs_voice_normal_6.wav" volume="0" />
+	<sound key="body_fall" fileref="cyborgs_voice_normal_7.wav" volume="0" />
+	<sound key="body_fall" fileref="cyborgs_voice_normal_8.wav" volume="0" />
+	<sound key="body_fall" fileref="cyborgs_voice_normal_9.wav" volume="0" />
+	<sound key="body_fall" fileref="cyborgs_voice_normal_10.wav" volume="0" />
+	<sound key="body_fall" fileref="cyborgs_voice_normal_11.wav" volume="0" />
+	<sound key="body_fall" fileref="cyborgs_voice_normal_12.wav" volume="0" />
+	<sound key="body_fall" fileref="cyborgs_voice_normal_13.wav" volume="0" />
+	<sound key="body_fall" fileref="cyborgs_voice_normal_14.wav" volume="0" />
+	<sound key="body_fall" fileref="cyborgs_voice_normal_15.wav" volume="0" />
+	<sound key="body_fall" fileref="cyborgs_voice_normal_16.wav" volume="0" />
+	<sound key="body_fall" fileref="cyborgs_voice_normal_17.wav" volume="0" />
 	
 </character>

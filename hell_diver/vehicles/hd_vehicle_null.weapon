@@ -3,7 +3,6 @@
 file="_hd_lmg.base"
 key="hd_vehicle_null.weapon" 
 > 
-	<tag name="machine gun" />
     <specification 	
     slot="0" 	
     retrigger_time="60" 
@@ -17,7 +16,7 @@ key="hd_vehicle_null.weapon"
     can_shoot_crouching="0" 
 	can_shoot_prone="0"	
     suppressed="0" 
-	class="5" 
+	class="0" 
     name="Null" 
 	sight_height_offset="1.0" 
 	burst_shots="1" 
@@ -27,6 +26,7 @@ key="hd_vehicle_null.weapon"
 	carry_in_two_hands="1" 
 	stab_enabled="0" 
 	stab_range="0" 
+	use_basic_muzzle_smoke_effect="0"
 	/> 
 
 	<animation key="recoil" animation_key="recoil, hip fire" />

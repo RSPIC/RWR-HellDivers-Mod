@@ -2,8 +2,8 @@ particle_system propeller_rotate_drive_chassis		//修改particle_width和particl
 {
 	quota 50
 	material propeller_rotate
-	particle_width 10
-	particle_height 10
+	particle_width 20
+	particle_height 20
 	renderer billboard
 	billboard_type perpendicular_common
 	billboard_origin center
@@ -18,7 +18,7 @@ particle_system propeller_rotate_drive_chassis		//修改particle_width和particl
 		colour 10 10 10 10
 		direction 0 1 0
 		emission_rate 200
-		position 0 5 5
+		position 0 0 0
 		velocity 0.0001
 		time_to_live 0.001
 		duration 0
@@ -27,6 +27,51 @@ particle_system propeller_rotate_drive_chassis		//修改particle_width和particl
 particle_system propeller_rotate_idle_chassis : propeller_rotate_drive_chassis		//Rotator参数可以指定静止时的桨叶转角，两个参数填一样的数值
 {
 	material propeller_idle
+	emitter Point{}
+	affector Rotator
+	{
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+}
+particle_system propeller_rotate_result_io : propeller_rotate_drive_chassis		//Rotator参数可以指定静止时的桨叶转角，两个参数填一样的数值
+{
+	quota 100
+	particle_width 21
+	particle_height 21
+	material mi_24_propeller
+	emitter Point{
+		emission_rate 100
+		duration 0.01
+		time_to_live 0.01
+		position 0 4 0
+	}
+}
+particle_system propeller_rotate_result_io_mh60s : propeller_rotate_drive_chassis		//Rotator参数可以指定静止时的桨叶转角，两个参数填一样的数值
+{
+	quota 100
+	particle_width 21
+	particle_height 21
+	material mh60s_propeller_rotate
+	emitter Point{
+		emission_rate 100
+		duration 0.01
+		time_to_live 0.01
+		position 0 4 0
+	}
+}
+particle_system propeller_rotate_result_io_bell_360 : propeller_rotate_drive_chassis		//Rotator参数可以指定静止时的桨叶转角，两个参数填一样的数值
+{
+	quota 100
+	particle_width 17
+	particle_height 17
+	material bell_360_propeller_rotate
+	emitter Point{
+	}
+}
+particle_system propeller_rotate_idle_chassis_bell_360 : propeller_rotate_result_io_bell_360		//Rotator参数可以指定静止时的桨叶转角，两个参数填一样的数值
+{
+	material bell_360_propeller_idle
 	emitter Point{}
 	affector Rotator
 	{
@@ -60,7 +105,18 @@ material propeller_rotate : alpha_blend_base
 			rotate_anim 10
 			tex_address_mode clamp
 }}}}
-
+material mi_24_propeller : alpha_blend_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+		lighting on
+		emissive 1 1 1 1
+        texture_unit{
+            texture mi_24_propeller.png 	
+			rotate_anim 10
+			tex_address_mode clamp
+}}}}
 material propeller_idle : alpha_blend_base
 {   
     technique{
@@ -70,4 +126,49 @@ material propeller_idle : alpha_blend_base
 		emissive 1 1 1 1
         texture_unit{
             texture propeller.png 	
+}}}}
+
+material bell_360_propeller_rotate : alpha_blend_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+		lighting on
+		emissive 1 1 1 1
+        texture_unit{
+            texture bell_360_propeller.png 	
+			rotate_anim 10
+			tex_address_mode clamp
+}}}}
+material bell_360_propeller_idle : alpha_blend_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+		lighting on
+		emissive 1 1 1 1
+        texture_unit{
+            texture bell_360_propeller.png 	
+}}}}
+material mh60s_propeller_rotate : alpha_blend_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+		lighting on
+		emissive 1 1 1 1
+        texture_unit{
+            texture mh60s_propeller.png 	
+			rotate_anim 10
+			tex_address_mode clamp
+}}}}
+material mh60s_propeller_idle : alpha_blend_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+		lighting on
+		emissive 1 1 1 1
+        texture_unit{
+            texture mh60s_propeller.png 	
 }}}}

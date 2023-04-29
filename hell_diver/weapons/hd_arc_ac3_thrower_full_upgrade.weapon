@@ -9,8 +9,8 @@ on_ground_up="0 0 1"
 radius="1"
 > 
     <specification 	
-	retrigger_time="1.5"
-    last_burst_retrigger_time="1.5" 
+	retrigger_time="0.1"
+    last_burst_retrigger_time="0.1" 
 	accuracy_factor="1.0" 
 	spread_range="0.3"
 	sustained_fire_grow_step="1.5" 

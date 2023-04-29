@@ -7,17 +7,18 @@
 	<sound key="stab" fileref="grenade_throw1.wav" volume="0.5" />
 	<sound key="stab_receive" fileref="stab_hit.wav" volume="0.7" />  
 	<sound key="death" fileref="bf1_kill.wav" volume="1" />
-	<sound key="footstep" fileref="static.wav" volume="0.0" />
-	<sound key="footstep" fileref="static.wav" volume="0.0" />
-	<sound key="footstep" fileref="static.wav" volume="0.0" />
-	<sound key="footstep" fileref="static.wav" volume="0.0" />
-	<sound key="footstep" fileref="static.wav" volume="0.0" />
-	<sound key="footstep" fileref="static.wav" volume="0.0" />
-	<sound key="footstep" fileref="static.wav" volume="0.0" />
-	<sound key="footstep" fileref="static.wav" volume="0.0" />
-	<sound key="footstep" fileref="static.wav" volume="0.0" />	
-	<sound key="footstep" fileref="static.wav" volume="0.0" />
-	<sound key="footstep" fileref="static.wav" volume="0.0" />
+	<sound key="footstep" fileref="cyborgs_voice_warlord_1.wav" volume="0.5" />
+	<sound key="footstep" fileref="cyborgs_voice_warlord_2.wav" volume="0.5" />
+	<sound key="footstep" fileref="cyborgs_voice_warlord_3.wav" volume="0.5" />
+	<sound key="footstep" fileref="cyborgs_voice_warlord_4.wav" volume="0.5" />
+	<sound key="footstep" fileref="cyborgs_voice_warlord_5.wav" volume="0.5" />
+	<sound key="footstep" fileref="cyborgs_voice_warlord_6.wav" volume="0.5" />
+	<sound key="footstep" fileref="cyborgs_voice_warlord_7.wav" volume="0.5" />
+	<sound key="footstep" fileref="cyborgs_voice_warlord_8.wav" volume="0.5" />
+	<sound key="footstep" fileref="cyborgs_voice_warlord_9.wav" volume="0.5" />
+	<sound key="footstep" fileref="cyborgs_voice_warlord_10.wav" volume="0.5" />
+	<sound key="footstep" fileref="cyborgs_voice_warlord_11.wav" volume="0.5" />
+	<sound key="footstep" fileref="cyborgs_voice_warlord_12.wav" volume="0.5" />
 
 	<parameter class="being_stunned_steer_amount" value="0.2" />
 
@@ -80,5 +81,28 @@
 	<!-- <animation key="celebrating, shooting" target_key="jumping, large mecha" /> -->
 	<!-- <animation key="swimming still" target_key="swim still_big_unit" /> -->
 	<!-- <animation key="swimming forwards" target_key="swimming_big_unit" /> -->
-
+	<sound key="footstep" fileref="cyborgs_voice_warlord_1.wav" volume="0.5" />
+	<sound key="footstep" fileref="cyborgs_voice_warlord_2.wav" volume="0.5" />
+	<sound key="footstep" fileref="cyborgs_voice_warlord_3.wav" volume="0.5" />
+	<sound key="footstep" fileref="cyborgs_voice_warlord_4.wav" volume="0.5" />
+	<sound key="footstep" fileref="cyborgs_voice_warlord_5.wav" volume="0.5" />
+	<sound key="footstep" fileref="cyborgs_voice_warlord_6.wav" volume="0.5" />
+	<sound key="footstep" fileref="cyborgs_voice_warlord_7.wav" volume="0.5" />
+	<sound key="footstep" fileref="cyborgs_voice_warlord_8.wav" volume="0.5" />
+	<sound key="footstep" fileref="cyborgs_voice_warlord_9.wav" volume="0.5" />
+	<sound key="footstep" fileref="cyborgs_voice_warlord_10.wav" volume="0.5" />
+	<sound key="footstep" fileref="cyborgs_voice_warlord_11.wav" volume="0.5" />
+	<sound key="footstep" fileref="cyborgs_voice_warlord_12.wav" volume="0.5" />
+	<sound key="body_fall" fileref="cyborgs_voice_warlord_1.wav" volume="0.5" />
+	<sound key="body_fall" fileref="cyborgs_voice_warlord_2.wav" volume="0.5" />
+	<sound key="body_fall" fileref="cyborgs_voice_warlord_3.wav" volume="0.5" />
+	<sound key="body_fall" fileref="cyborgs_voice_warlord_4.wav" volume="0.5" />
+	<sound key="body_fall" fileref="cyborgs_voice_warlord_5.wav" volume="0.5" />
+	<sound key="body_fall" fileref="cyborgs_voice_warlord_6.wav" volume="0.5" />
+	<sound key="body_fall" fileref="cyborgs_voice_warlord_7.wav" volume="0.5" />
+	<sound key="body_fall" fileref="cyborgs_voice_warlord_8.wav" volume="0.5" />
+	<sound key="body_fall" fileref="cyborgs_voice_warlord_9.wav" volume="0.5" />
+	<sound key="body_fall" fileref="cyborgs_voice_warlord_10.wav" volume="0.5" />
+	<sound key="body_fall" fileref="cyborgs_voice_warlord_11.wav" volume="0.5" />
+	<sound key="body_fall" fileref="cyborgs_voice_warlord_12.wav" volume="0.5" />
 </character>

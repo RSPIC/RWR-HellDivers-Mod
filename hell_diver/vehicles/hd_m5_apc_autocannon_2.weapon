@@ -30,7 +30,7 @@ key="hd_m5_apc_autocannon_2.weapon">
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
 	time_to_live="0.4" can_be_detected_by_driver="1" can_be_disarmed="0"> 
 	
-        <result class="blast" radius="2.5" damage="18" push="0.2" decal="0" damage_origin_vehicle="0" character_state="wound"/>
+        <result class="blast" radius="2.5" damage="12" push="0.2" decal="0" damage_origin_vehicle="0" character_state="wound"/>
         <!-- damage 18/25 blast -->
         <!-- 轰炸伤害 -->
 

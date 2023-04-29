@@ -22,7 +22,7 @@ character_leave_request_mode="friendly"
 	<tire_set offset="1.85 0.0 -3" radius="0.4" />
 
 	<control 
-	max_speed="7" 
+	max_speed="8.0" 
 	acceleration="10.0" 
 	max_reverse_speed="8" 
 	min_health_to_steer="0.10" 
@@ -49,7 +49,9 @@ character_leave_request_mode="friendly"
 	weapon_recoil="0" physics_recoil="0.1" max_rotation_step="0.0002"  />
 	1<turret offset="0 0 1" weapon_key="ex_apocalypse_tank_gl.weapon" weapon_offset="0.3 2.0 5.5" 
 	weapon_recoil="0" physics_recoil="0.1" max_rotation_step="0.0002"  />
-	2<turret offset="0 0 0" weapon_key="auxiliary_car_fire_aim.weapon" weapon_offset="0 1.5 3" 
+	2<turret offset="0 0 1" weapon_key="ex_apocalypse_tank_sound.weapon" weapon_offset="0 2.0 5.5" 
+	weapon_recoil="0" physics_recoil="0" max_rotation_step="0.0002"  />
+	3<turret offset="0 0 0" weapon_key="auxiliary_car_fire_aim.weapon" weapon_offset="0 1.5 3" 
 	weapon_recoil="0" physics_recoil="0" max_rotation_step="0.00005"  />
 	<!-- 车体\炮台 -->
 	<visual class="chassis" mesh_filename="ex_apocalypse_tank.mesh" texture_filename="ex_apocalypse_tank.jpg" />
@@ -72,7 +74,7 @@ character_leave_request_mode="friendly"
 
 	<character_slot type="driver" position="1.5 0.3 +2" rotation="0" exit_rotation="1.57" hiding="1" />
 	<character_slot type="gunner" position="-1.5 0.3 +2" rotation="0" exit_rotation="-1.57" hiding="1" >
-		<turret index="0"/>	<turret index="1"/>  <turret index="2"/>
+		<turret index="0"/>	<turret index="1"/>  <turret index="2"/> <turret index="3"/>
 	</character_slot>
 
 
@@ -83,13 +85,17 @@ character_leave_request_mode="friendly"
 
 	<sound key="slide" filename="slide_noise.wav" />
 	<sound key="squeal" filename="tire_squeal.wav" />
-	<sound key="ignition" filename="ex_apocalypse_tank_say_1.wav" pitch_variety="0"/>
-	<sound key="horn" filename="ex_apocalypse_tank_say_2.wav" pitch_variety="0"/>
-	<sound key="turret_rotation" filename="turret_rotation1.wav" />
+	<sound key="ignition" filename="ex_apocalypse_tank_say_1.wav" pitch_variety="0"  volume="5.0"/>
+	<sound key="horn" filename="ex_apocalypse_tank_say_2.wav" pitch_variety="0"  volume="5.0"/>
+	<sound key="turret_rotation" filename="turret_rotation1.wav" pitch_variety="0"/>
 	<sound key="hit" filename="car_hit1.wav" />
 	<sound key="hit" filename="car_hit2.wav" />
-	<sound key="destroy" filename="vehicle_explosion_1.wav" />  
-	<sound key="cleanup" filename="vehicle_explosion_1.wav" />
+	<sound key="destroy" filename="ex_apocalypse_tank_say_3.wav" />  
+	<sound key="destroy" filename="ex_apocalypse_tank_say_4.wav" />  
+	<sound key="destroy" filename="ex_apocalypse_tank_say_5.wav" />  
+	<sound key="cleanup" filename="ex_apocalypse_tank_say_3.wav" />
+	<sound key="cleanup" filename="ex_apocalypse_tank_say_4.wav" />
+	<sound key="cleanup" filename="ex_apocalypse_tank_say_5.wav" />
 
 	<effect event_key="slide" type="splat_map" surface_tag="road" size="1.0" atlas_index="5" layer="0" />
 	<effect event_key="slide_hard" type="splat_map" surface_tag="road" size="0.5" atlas_index="2" layer="0" />

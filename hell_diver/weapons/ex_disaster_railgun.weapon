@@ -13,7 +13,7 @@ key="ex_disaster_railgun.weapon"
     can_shoot_standing="1" 
     can_shoot_crouching="1" 
 	can_shoot_prone="1"	
-    suppressed="0" 
+    suppressed="1" 
 	class="4" 
     name="Disaster Railgun" 
 	sight_range_modifier="1.5" 
@@ -21,7 +21,7 @@ key="ex_disaster_railgun.weapon"
 	burst_shots="1" 
     projectiles_per_shot="1" 
     projectile_speed="120.0"
-	barrel_offset_3d="0 0.6 1.5" 
+	barrel_offset="2.0" 
 	carry_in_two_hands="1" 
 	stab_enabled="0" 
 	stab_range="0" 
@@ -55,7 +55,7 @@ key="ex_disaster_railgun.weapon"
 	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0" name="Disaster Railgun" radius="0.5"> 
         <!-- 碎甲榴弹 -->
         <result class="spawn" instance_class="projectile" instance_key="ex_disaster_railgun_damage.projectile" 
-		min_amount="4" max_amount="4" offset="0 0 0" position_spread="1.5 0" direction_spread="0 0" />	
+		min_amount="5" max_amount="6" offset="0 0 0" position_spread="1.5 0" direction_spread="0 0" />	
 
 		<!-- <result class="blast" radius="7.0" damage="20" push="0.5" decal="0" character_state="wound"/> -->
         <!-- 轰炸伤害 穿透中甲 -->

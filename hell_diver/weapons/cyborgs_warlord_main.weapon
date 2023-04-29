@@ -17,7 +17,7 @@ radius="1"
 	stance_accuracy_rate="1.0"
     sustained_fire_grow_step="0.3" 
     sustained_fire_diminish_rate="0.3" 
-    magazine_size="300" 
+    magazine_size="12" 
     can_shoot_standing="0" 
     can_shoot_crouching="0" 
 	can_shoot_prone="1"	
@@ -90,8 +90,8 @@ radius="1"
     <sound key="cycle" fileref="rifle_chamber.wav" /><!--配合与cycle动作，固定播放-->
     <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
     <sound key="cycle_in" fileref="sniper_cycle_in.wav" /><!--动作中in的value为1-->
-    <sound key="last_ammo" fileref="" /><!--最后一发子弹射击的额外音效，不可多个混合随机播放-->
-	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+    <sound key="last_ammo" fileref="cyborgs_voice_warlord_9.wav" pitch_variety="0.00" volume="1"/><!--最后一发子弹射击的额外音效，不可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" pitch_variety="0.00" volume="1"/><!--武器落地音效-->
 	<sound class="result" fileref="rifle_drop.wav" />
     <sound class="operation" key="fire" fileref="cyborgs_cannon_fire_2.wav" volume="0.7" />  
 	
@@ -155,18 +155,7 @@ radius="1"
 	<effect class="muzzle" ref="cyborgs_muzzle_cannon_fire_smoke" lighting="0"/> 
 	<effect class="muzzle" ref="cyborgs_muzzle_cannon_fire_light" lighting="0"/> 
 	
-	
-	<!--雷鸣弹道
-    <ballistics 
-    curve_height="16" 
-    near_far_distance="0" 
-    speed_estimation_near="0" 
-    speed_estimation_far="58" 
-    max_speed="58" 
-    randomness="0" 
-    tweak_factor="1.48" /> 
-	该弹道适配弹头参数：pulldon_in_air="48"
-	-->
+
 	
 	<!--姿态精度-->
     <stance state_key="running" accuracy="1" /> 
