@@ -38,7 +38,7 @@ material ChatBubbleBorderChannel {
 			texture_unit {
 				texture chatbubbleborder_add_2.png
 				wave_xform scroll_x sine 0 0.5 0 1
-				tex_address_mode warp
+				tex_address_mode wrap
 			}
 		}
 	} 

@@ -51,7 +51,6 @@ class PlayerInfo {
     protected float m_cd_time;
     protected float m_count_time;
     protected array<bool> m_first_time;
-	// 0_检测首次机甲使用
 
     PlayerInfo(string name, const XmlElement@ player, float cd_time) {
         m_name = name;
@@ -265,7 +264,7 @@ class scheduled_task : Tracker {
 						if(m_counter[0] >= 0 ){
 							if(m_counter[0] == 0){
 								m_counter[0]=3;		//3x4s
-								m_counter_cd[0]=4;	//4x4s
+								m_counter_cd[0]=3;	//3x4s
 								return;
 							}
 							Vector3 t_pos = stringToVector3(character.getStringAttribute("position"));

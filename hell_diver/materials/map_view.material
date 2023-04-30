@@ -60,7 +60,7 @@ material MapViewFront {
 			texture_unit Decal {
 				texture mapview_frame_add_triangle.png
 				scroll_anim 0 0.05
-				tex_address_mode warp
+				tex_address_mode wrap
 				filtering trilinear
 			}
 			texture_unit Decal {
@@ -79,7 +79,7 @@ material MapViewFront {
 			texture_unit Decal {
 				anim_texture mapview_frame_add_code.png 4 40
 				scale 1 1
-				tex_address_mode warp
+				tex_address_mode wrap
 				//wave_xform scroll_y sine 0 0.01 0 0.2
 				filtering trilinear
 			}
@@ -100,7 +100,7 @@ material MapViewFront {
 				anim_texture mapview_frame_add_news.png 2 600
 				scale 1 1
 				scroll_anim 0 -0.005
-				tex_address_mode warp
+				tex_address_mode wrap
 				filtering trilinear
 			}
 			texture_unit Decal {
@@ -119,12 +119,12 @@ material MapViewFront {
 			texture_unit Decal {
 				texture mapview_frame_add_sacn.png
 				scroll_anim 0 0.08
-				tex_address_mode warp
+				tex_address_mode wrap
 				filtering trilinear
 			}
 			texture_unit Decal {
 				texture mapview_frame_add_sacn_mask.png
-				alpha_op_ex modulate texture current
+				alpha_op_ex modulate src_texture src_current
 				filtering trilinear
 			}
 		} 

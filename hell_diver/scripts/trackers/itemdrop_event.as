@@ -246,14 +246,26 @@ class itemdrop_event : Tracker {
 
 		string position = event.getStringAttribute("position");
 		int characterId = event.getIntAttribute("character_id");
+		if(characterId == -1){
+			_log("itemdrop cid = -1,return");
+			return;
+		}
 		//int itemClass = event.getIntAttribute("item_class");
 		int playerId = event.getIntAttribute("player_id");
 		int containerId = event.getIntAttribute("target_container_type_id");
 		const XmlElement@ owner = getCharacterInfo(m_metagame, characterId);
+		_log("query owner info(itemdrop)");
 		int factionId = -1;
 		if(owner !is null){
-			factionId = owner.getIntAttribute("faction_id");
-		}
+			if(owner.hasAttribute("faction_id")){
+				factionId = owner.getIntAttribute("faction_id");
+				_log("owner fid = " + factionId);
+			}
+			if(factionId == -1){
+				_log("owner fid = -1,return");
+				return;
+			}
+		}else{return;}
 
 		//containerId = 0(地面) 1(军械库) 2（背包） 3（仓库）
 		//itemClass = 0(主、副武器) 1（投掷物） 3（护甲、战利品）
@@ -297,6 +309,7 @@ class itemdrop_event : Tracker {
 								for(;resupplyNum>0;--resupplyNum){
 									if(int(resupply_cost[equipKey]) != 0){
 										const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+										if(character is null){return;}
 										int t_playerId = character.getIntAttribute("player_id");
 										int rp = character.getIntAttribute("rp");
 										int cost = int(resupply_cost[equipKey]);
@@ -402,6 +415,7 @@ class itemdrop_event : Tracker {
 				_log("samples_drop item drop, replace sample");
 				string itemtype = "carry_item";
 				const XmlElement@ fact_info = getFactionInfo(m_metagame,factionId);
+				if(fact_info is null){return;}
 				string fact_name = fact_info.getStringAttribute("name");
 				_log("FactioName = " + fact_name);
 				_log("TargetNmae = " + string(samples_drop[itemKey]));

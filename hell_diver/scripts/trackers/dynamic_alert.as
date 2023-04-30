@@ -132,6 +132,16 @@ const array<SpawnInfo> level_littlefish = {
     SpawnInfo("cyborgs_spawn_initiate_model.vehicle",3),
     SpawnInfo("cyborgs_spawn_warlord_model.vehicle",0)
 };
+const array<SpawnInfo> debug = {
+    SpawnInfo("cyborgs_spawn_berserker_model.vehicle",10),
+    SpawnInfo("cyborgs_spawn_butcher_model.vehicle",10),
+    SpawnInfo("cyborgs_spawn_comrade_model.vehicle",10),
+    SpawnInfo("cyborgs_spawn_grotesque_model.vehicle",10),
+    SpawnInfo("cyborgs_spawn_hulk_model.vehicle",10),
+    SpawnInfo("cyborgs_spawn_immolator_model.vehicle",10),
+    SpawnInfo("cyborgs_spawn_initiate_model.vehicle",10),
+    SpawnInfo("cyborgs_spawn_warlord_model.vehicle",10)
+};
 
 //-----------------------------------------
 void Alert_Spawn(Metagame@ metagame,uint factionId, Vector3 position, array<SpawnInfo> spawn_list) {
@@ -161,6 +171,7 @@ class dynamic_alert : Tracker {
     protected float m_cd_time;
     protected float m_cd_timer;
     protected bool m_alertFlag = false;
+    protected bool debug_mode;
 
 	// --------------------------------------------
 	dynamic_alert(GameModeInvasion@ metagame) {
@@ -168,6 +179,7 @@ class dynamic_alert : Tracker {
         const UserSettings@ settings = m_metagame.getUserSettings();
         server_difficulty_level = settings.m_server_difficulty_level;
         m_server_difficulty_level = settings.m_server_difficulty_level;
+        debug_mode = settings.m_debug_mode;
         _log("Server difficulty level = "+ server_difficulty_level);
 
         m_cd_time = 8.0;
@@ -250,6 +262,14 @@ class dynamic_alert : Tracker {
                 _log("faction now soldier= "+ NowSoldiers[faction_id]);
             }
 		}
+
+        if(debug_mode){
+            if(caller_faction == 0){
+                Alert_Spawn(m_metagame,CyborgsId,position,debug);
+                _log("debug_mode spawn ai"); 
+            }
+        }
+
         if(caller_faction == -1){return;}
         int my_faction_soldiers = NowSoldiers[caller_faction];//己方AI数量
         int now_max_soldiers = 0;   //当前场上最多阵营的AI人数
@@ -315,6 +335,7 @@ class dynamic_alert : Tracker {
             Alert_Spawn(m_metagame,caller_faction,position,level_3);
             _log("level 3"); 
         }
+
 
         if(rate <= 0.5 && rate >0.2){
             Alert_Spawn(m_metagame,caller_faction,position,level_random);

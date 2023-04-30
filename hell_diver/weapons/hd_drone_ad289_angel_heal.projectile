@@ -15,7 +15,7 @@ radius="0.3"
 time_to_live_out_in_the_open="0"
 player_death_drop_owner_lock_time="0"
 >
-		<result class="notify_script" key="hd_ad289_angel_mk3" />
+		<result class="notify_script" key="hd_ad289_angel_auto" />
 
 		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->

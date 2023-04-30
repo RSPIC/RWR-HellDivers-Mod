@@ -70,6 +70,7 @@ dictionary projectile_eventkey = {
         {"hd_rep80_mk3",35},
 
         {"hd_ad289_angel_mk3",38},
+        {"hd_ad289_angel_auto",38},
 
         //特殊功能
         {"vehicle_recycle",41},

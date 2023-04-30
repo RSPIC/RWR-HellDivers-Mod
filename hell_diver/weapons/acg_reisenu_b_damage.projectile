@@ -31,7 +31,10 @@ player_death_drop_owner_lock_time="120"
     <sound class="result" key="static_object" copy="other" />
     <sound class="result" key="vehicle" copy="other" />
     <sound class="result" key="character" copy="other" />
-
+    
+	<effect class="activated" ref="reisenu_bullet_activated_bullet_type2_red_ii" lighting="0" />
+	<effect class="activated" ref="reisenu_bullet_activated_bullet_type2_ii" lighting="0" />
+    
     <effect class="result" key="terrain" ref="reisenu_bullet_hit_type2_ii" lighting="0"/>
 	<effect class="result" key="terrain" ref="reisenu_bullet_blase_type1_center_redring_ii" lighting="0"/>
 
@@ -39,7 +42,5 @@ player_death_drop_owner_lock_time="120"
     <effect class="result" key="static_object" copy="terrain" />
     <effect class="result" key="vehicle" copy="terrain" />
     <effect class="result" key="character" copy="terrain" />
-	<effect class="activated" ref="reisenu_bullet_activated_bullet_type2_red_ii" lighting="0" />
-	<effect class="activated" ref="reisenu_bullet_activated_bullet_type2_ii" lighting="0" />
 	
 </projectile>
