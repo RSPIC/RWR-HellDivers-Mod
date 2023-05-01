@@ -209,7 +209,7 @@ class Event_call_helldiver_superearth_heavystrafe : event_call_task {
 		if(m_mode == "heavymg_strafe_mk3")
 		{
 			m_excute_Limit = 8;
-			m_time_internal = 0.05;
+			m_time_internal = 0.15;
 			m_airstrike_key = "hd_superearth_heavy_strafe_mk3";
 		}
 	}
@@ -286,7 +286,7 @@ class Event_call_helldiver_superearth_incendiary_bombs : event_call_task {
 		if(m_mode == "incendiary_bombs_mk3")
 		{
 			m_excute_Limit = 5;
-			m_time_internal = 0;
+			m_time_internal = 0.1;
 			m_airstrike_key = "hd_superearth_incendiary_bombs_mk3";
 		}
 	}
@@ -339,7 +339,11 @@ class Event_call_helldiver_superearth_thunderer_barrage : event_call_task {
 		if (m_excute_time >= m_excute_Limit){m_end = true;return;}
 		m_excute_time++;
 		m_timeLeft_internal = m_time_internal;
-
+		const XmlElement@ character = getCharacterInfo(m_metagame, m_character_id);
+		if (character !is null) {
+			int dead = character.getIntAttribute("dead");
+			if(dead == 1){m_end = true;return;}
+		}
 		insertCommonStrike(m_character_id,m_faction_id,m_airstrike_key,m_pos1,m_pos2);
 		m_pos1 = m_pos1.add(getMultiplicationVector(strike_vector,Vector3(strike_didis,0,strike_didis)));
 		m_pos2 = m_pos2.add(getMultiplicationVector(strike_vector,Vector3(strike_didis,0,strike_didis)));					
@@ -358,8 +362,8 @@ class Event_call_helldiver_superearth_laser_strike : event_call_task {
 		m_pos1=m_pos1.add(Vector3(0,20,0));
 		if(m_mode == "laser_strike_mk3")
 		{
-			m_excute_Limit = 180;
-			m_time_internal = 0.1;
+			m_excute_Limit = 60;
+			m_time_internal = 0.25;
 			m_airstrike_key = "hd_superearth_laser_strike_mk3";
 		}
 	}
@@ -380,6 +384,8 @@ class Event_call_helldiver_superearth_laser_strike : event_call_task {
 
 		const XmlElement@ character = getCharacterInfo(m_metagame, m_character_id);
 		if (character !is null) {
+			int dead = character.getIntAttribute("dead");
+			if(dead == 1){m_end = true;return;}
 			int playerId = character.getIntAttribute("player_id");
 			const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
 			if (player !is null) {
@@ -389,7 +395,7 @@ class Event_call_helldiver_superearth_laser_strike : event_call_task {
 					Vector3 aim_pos = stringToVector3(player.getStringAttribute("aim_target"));
 					Vector3 distance = aim_pos.subtract(m_pos2);
 					//distance = getMultiplicationVector(distance,Vector3(1,0,1));
-					Vector3 offset = distance.scale(1.0/10.0);
+					Vector3 offset = distance.scale(1.0/5.0);
 					m_pos2 = m_pos2.add(offset);
 					m_pos1 = m_pos2.add(Vector3(0,40,0));
 				}
@@ -423,7 +429,7 @@ class Event_call_helldiver_superearth_strafing_run : event_call_task {
 		if(m_mode == "strafing_run_mk3")
 		{
 			m_excute_Limit = 8;
-			m_time_internal = 0.05;
+			m_time_internal = 0.1;
 			m_airstrike_key = "hd_superearth_strafing_run_mk3";
 		}
 	}
@@ -570,6 +576,8 @@ class Event_call_helldiver_superearth_railcannon_strike : event_call_task {
 
 		const XmlElement@ character = getCharacterInfo(m_metagame, m_character_id);
 		if (character !is null) {
+			int dead = character.getIntAttribute("dead");
+			if(dead == 1){m_end = true;return;}
 			int playerId = character.getIntAttribute("player_id");
 			const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
 			if (player !is null) {

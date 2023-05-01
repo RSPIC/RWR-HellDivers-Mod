@@ -348,14 +348,16 @@ class itemdrop_event : Tracker {
 		}//是否属于删除物品
 		if(string(banned_backpack_item[itemKey]) != "" || string(banned_special_item[itemKey]) != ""){
 			if(playerId == -1){return;}//排除AI
-			string sender = event.getStringAttribute("player_name");
 			int senderId = event.getIntAttribute("player_id");
+			const XmlElement@ playerinfo = getPlayerInfo(m_metagame,senderId);
+			if(playerinfo is null){return;}
+			string sender = playerinfo.getStringAttribute("name");
 			_log("sender ="+sender);
 			_log("senderId ="+senderId);
-			// if (m_metagame.getAdminManager().isAdmin(sender, senderId)){
-			// 	_log("Is admin, exit ban item");
-			// 	return;
-			// }//管理可以存
+			if (m_metagame.getAdminManager().isAdmin(sender, senderId)){
+				_log("Is admin, exit ban item");
+				return;
+			}//管理可以存
 
 			if(itemKey == "hd_resupply_pack_mk3.carry_item"){//补给背包特殊机制 上限携带一个包，同时发4个子弹箱
 				_log("hd_resupply_pack_mk3 detect");

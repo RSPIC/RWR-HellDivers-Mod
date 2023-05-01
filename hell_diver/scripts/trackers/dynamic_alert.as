@@ -17,6 +17,7 @@
 //警报方ai人数在0.2~0.5倍率之间，会额外增加一轮随机增援，并减少再次警报cd
 //警报方ai人数在0.2倍率以内，会额外增加一轮全兵种增援，并减少再次警报cd
 //警报方ai人数在0.5~0.8倍率之间，减少再次警报cd
+//每一个玩家会减少0.2s警报CD
 
 dictionary dynamic_alert_notify_key = {
 
@@ -349,6 +350,13 @@ class dynamic_alert : Tracker {
             _log("level all"); 
         }else if(rate > 0.5 && rate <= 0.8){
             m_cd_time = 6.0;
+        }
+
+        array<const XmlElement@> allplayers = getPlayers(m_metagame);
+        int player_num = allplayers.size();
+        m_cd_time = m_cd_time - 0.2*player_num;
+        if(m_cd_time <= 0){
+            m_cd_time = 0;
         }
 
         server_difficulty_level = m_server_difficulty_level;

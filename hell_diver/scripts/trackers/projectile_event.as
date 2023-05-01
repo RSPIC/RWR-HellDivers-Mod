@@ -495,17 +495,18 @@ class projectile_event : Tracker {
                             const XmlElement@ p_character = getCharacterInfo(m_metagame, t_player.getIntAttribute("character_id"));
                             if (p_character !is null) {
                                 Vector3 p_position = stringToVector3(character.getStringAttribute("position"));
-                                float distance = get2DMAxAxisDistance(1,p_position,t_pos);
+                                float distance = getFlatPositionDistance(p_position,t_pos);
                                 _log("distance axis min in target&players: "+ distance);
                                 if(distance <= 3){
                                     int rpnum = 20000;
-                                    int xpnum = 30;
+                                    int xpnum = 100;
                                     int p_characterId = t_player.getIntAttribute("character_id");
                                     GiveRP(m_metagame,p_characterId,rpnum);
                                     GiveXP(m_metagame,p_characterId,xpnum);
                                     string p_name = t_player.getStringAttribute("name");
                                     string message = "Success upgrade player= "+p_name;
                                     sendPrivateMessage(m_metagame,playerId,message);
+                                    break;
                                 }
                             }
                         }

@@ -1,0 +1,33 @@
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+material test_trail : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture test_trail.png 	
+			wave_xform scroll_y sine 0 1 0 0.2
+}}}}
+
+

@@ -29,7 +29,7 @@ radius="1"
 	sight_height_offset="1.0" 
 	burst_shots="1" 
     projectiles_per_shot="1" 
-    projectile_speed="40.0"
+    projectile_speed="200.0"
 	barrel_offset="1.0" 
 	carry_in_two_hands="1" 
 	stab_enabled="0" 
@@ -162,7 +162,7 @@ radius="1"
 		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
 		
 		<!--尾迹组-->
-		<trail probability="1" key="normal_trail"/>	
+		<trail probability="1" key="test_trail"/>	
     </projectile>
 	
 	<!--枪口特效-->

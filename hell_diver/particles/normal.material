@@ -43,5 +43,12 @@ material light_yellow_edge_trail : add_base
         texture_unit{
             texture light_yellow_edge_trail.png 	
 }}}}
-
+material hmg_trail : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture hmg_trail.png 	
+			wave_xform scroll_y sine 0 2 0 0.2
+}}}}
 

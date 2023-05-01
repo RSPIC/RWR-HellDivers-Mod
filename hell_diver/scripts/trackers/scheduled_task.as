@@ -162,6 +162,7 @@ class scheduled_task : Tracker {
 	protected array<int> m_counter_cd; //计数器
 	protected bool debug_mode;
 	protected bool first_bgm;
+	protected bool m_ended;
 
 	// --------------------------------------------
 	scheduled_task(GameModeInvasion@ metagame, float time = 4.0) {
@@ -178,6 +179,7 @@ class scheduled_task : Tracker {
 		m_counter_cd.insertLast(0); //天使无人机mk3计数
 
 		first_bgm=false;	//进入游戏加载BGM
+		m_ended = false;	//是否结束
 	}
 	
 	// --------------------------------------------
@@ -344,6 +346,7 @@ class scheduled_task : Tracker {
 	}
 	// ----------------------------------------------------
 	protected void EXOArmorChange(Metagame@ m_metagame,const XmlElement@&in player){
+		if(m_ended){return;}
 		if(player is null){return;}
 		//机甲检测
 		int pid = player.getIntAttribute("player_id");
@@ -414,6 +417,7 @@ class scheduled_task : Tracker {
 
 	// ----------------------------------------------------
 	protected void handleMatchEndEvent(const XmlElement@ event) {
+		m_ended = true;
 		const XmlElement@ winCondition = event.getFirstElementByTagName("win_condition");
 		if (winCondition !is null) {
 			if(debug_mode){
@@ -446,9 +450,11 @@ class scheduled_task : Tracker {
 				"cyborgs_fighting_bgm_6.wav",
 				"cyborgs_fighting_bgm_7.wav",
 				"cyborgs_searching_bgm_1.wav",
+				"cyborgs_searching_bgm_1.wav",
+				"cyborgs_searching_bgm_2.wav",
 				"cyborgs_searching_bgm_2.wav"
 			};
-			int soundrnd= rand(0,bgmList.length-1);
+			int soundrnd= rand(0,bgmList.length() - 1);
 			playSoundtrack(m_metagame,bgmList[soundrnd]);
 			first_bgm = true;
 		}
@@ -518,6 +524,8 @@ class scheduled_task : Tracker {
 		//_log("swtiching");
 			switch (int(timer_task[EventKeyGet])){
 				case 1:{//刺雷
+					if(m_ended){return;}
+
 					int characterId = event.getIntAttribute("character_id");
 					const XmlElement@ character = getCharacterInfo(m_metagame, characterId);	
 					if(character is null){return;}
@@ -569,6 +577,7 @@ class scheduled_task : Tracker {
 		}
 	}
 	protected void banzai(string p_name){
+		if(m_ended){return;}
 		//_log("exe banzai");
 		if(allplayers.exists(p_name)){
 			//_log("player "+p_name+" exists");
