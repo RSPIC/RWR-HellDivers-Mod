@@ -33,12 +33,19 @@ class MapRotatorInvasion : MapRotator {
 	protected World@ m_world;
 	protected array<FactionConfig@> m_factionConfigs;
 	protected StageConfigurator@ m_configurator;
+	protected bool m_server_test_mode;
 
 	// --------------------------------------------
 	MapRotatorInvasion(GameModeInvasion@ metagame) {
 		super();
 
 		@m_metagame = metagame;
+
+		const UserSettings@ settings = m_metagame.getUserSettings();
+        m_server_test_mode = settings.m_server_test_mode;
+		if(m_server_test_mode){
+			_log("m_server_test_mode is on ");
+		}
 
 		m_currentStageIndex = 0;
 		m_nextStageIndex = 0;
@@ -915,8 +922,10 @@ class MapRotatorInvasion : MapRotator {
 		int senderId = event.getIntAttribute("player_id");
 		
 		// admins and mods allowed from here on
-		if (!m_metagame.getAdminManager().isAdmin(sender, senderId) && !m_metagame.getModeratorManager().isModerator(sender,senderId)) {
-			return;
+		if(!m_server_test_mode){
+			if (!m_metagame.getAdminManager().isAdmin(sender, senderId) && !m_metagame.getModeratorManager().isModerator(sender,senderId)) {
+				return;
+			}
 		}
 
 		if (checkCommand(message, "warp")) {
@@ -930,8 +939,10 @@ class MapRotatorInvasion : MapRotator {
 		}
 		
 		// only admins allowed from here on
-		if (!m_metagame.getAdminManager().isAdmin(sender, senderId)) {
-			return;
+		if(!m_server_test_mode){
+			if (!m_metagame.getAdminManager().isAdmin(sender, senderId)) {
+				return;
+			}
 		}
 
 		if (checkCommand(message, "restart")) {

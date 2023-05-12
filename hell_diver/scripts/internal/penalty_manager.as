@@ -47,6 +47,7 @@ class PenalizedPlayerBucket {
 		m_updateTimer = 0.0f;
 		m_updateTime = updateTime;
 		m_timeFactor = timeFactor;
+
 	}
 
 	// --------------------------------------------
@@ -168,7 +169,7 @@ class PenalizedPlayerBucket {
 
 // --------------------------------------------
 class PenaltyManager : Tracker {
-	protected Metagame@ m_metagame;
+	protected GameModeInvasion@ m_metagame;
 
 	protected float AUTOSAVE_TIME = 180.0;
 	protected string FILENAME = "penalized_players.xml"; 
@@ -186,10 +187,17 @@ class PenaltyManager : Tracker {
 	protected PenalizedPlayerBucket@ m_persistentTrackedPlayers;
 
 	protected float m_autosaveUpdateTimer = 0.0;
+	protected bool m_server_test_mode;
 
 	// --------------------------------------------
-	PenaltyManager(Metagame@ metagame, int teamKillsToStartPenalty = 3, float penaltyTime = 1200.0, float forgiveTeamKillTime = 900.0, float persistentPenaltyTime = 1209600.0f) {
+	PenaltyManager(GameModeInvasion@ metagame, int teamKillsToStartPenalty = 3, float penaltyTime = 1200.0, float forgiveTeamKillTime = 900.0, float persistentPenaltyTime = 1209600.0f) {
 		@m_metagame = @metagame;
+		const UserSettings@ settings = m_metagame.getUserSettings();
+        m_server_test_mode = settings.m_server_test_mode;
+		if(m_server_test_mode){
+			_log("m_server_test_mode is on ");
+		}
+		
 		m_teamKillsToStartPenalty = teamKillsToStartPenalty;
 		m_penaltyTime = penaltyTime;
 		m_forgiveTeamKillTime = forgiveTeamKillTime;
@@ -351,7 +359,8 @@ class PenaltyManager : Tracker {
 				string name = candidate.getStringAttribute("name");
 				int id = candidate.getIntAttribute("player_id");
 				if (m_metagame.getAdminManager().isAdmin(name, id) ||
-				    m_metagame.getModeratorManager().isModerator(name, id)) {
+				    m_metagame.getModeratorManager().isModerator(name, id) ||
+					m_server_test_mode) {
 					report(player, id);
 				}
 			}
@@ -491,8 +500,10 @@ class PenaltyManager : Tracker {
 		int senderId = event.getIntAttribute("player_id");
 		
 		// admin and moderator only from here on
-		if (!m_metagame.getAdminManager().isAdmin(sender, senderId) && !m_metagame.getModeratorManager().isModerator(sender, senderId)) {
-			return;
+		if(!m_server_test_mode){
+			if (!m_metagame.getAdminManager().isAdmin(sender, senderId) && !m_metagame.getModeratorManager().isModerator(sender, senderId)) {
+				return;
+			}
 		}
 		if (checkCommand(message, "penalize_id")) {
 			handlePenalize(message,senderId,true);

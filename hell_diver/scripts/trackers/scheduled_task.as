@@ -161,6 +161,7 @@ class scheduled_task : Tracker {
 	protected array<int> m_counter; //计数器
 	protected array<int> m_counter_cd; //计数器
 	protected bool debug_mode;
+	protected bool m_server_test_mode;
 	protected bool first_bgm;
 	protected bool m_ended;
 
@@ -169,8 +170,12 @@ class scheduled_task : Tracker {
 		@m_metagame = @metagame;
 		const UserSettings@ settings = m_metagame.getUserSettings();
         debug_mode = settings.m_debug_mode;
+		m_server_test_mode = settings.m_server_test_mode;
 		if(debug_mode){
 			_log("debug_mode is on ");
+		}
+		if(m_server_test_mode){
+			_log("m_server_test_mode is on ");
 		}
         
 		m_maxIdleTime = time;
@@ -420,7 +425,7 @@ class scheduled_task : Tracker {
 		m_ended = true;
 		const XmlElement@ winCondition = event.getFirstElementByTagName("win_condition");
 		if (winCondition !is null) {
-			if(debug_mode){
+			if(debug_mode || m_server_test_mode){
 				allplayers.outputTest();
 			}
 
@@ -472,8 +477,11 @@ class scheduled_task : Tracker {
 				allplayers.updatePlayer(name,player);
 			}
 			int pid = player.getIntAttribute("player_id");
-			if(!debug_mode){
+			if(!debug_mode && !m_server_test_mode){
 				gameHelp(m_metagame,pid);
+			}
+			if(m_server_test_mode){
+				testHelp(m_metagame,pid);
 			}
 		}		
 	}
@@ -514,6 +522,9 @@ class scheduled_task : Tracker {
 		notify(m_metagame, "Help - Reward", dictionary(), "misc", pid, true, "Reward Help", 1.0);
 		notify(m_metagame, "Help - Reward-2", dictionary(), "misc", pid, true, "Reward Help", 1.0);
 		notify(m_metagame, "Help - Dynamic Alert", dictionary(), "misc", pid, true, "Dynamic Alert Help", 1.0);
+	}
+	protected void testHelp(Metagame@ m_metagame,int pid){
+		notify(m_metagame, "Help - TestServer", dictionary(), "misc", pid, true, "Testing Help", 1.0);
 	}
 
 	protected void handleResultEvent(const XmlElement@ event) {

@@ -33,7 +33,7 @@ key="ba_crusader_cannon.weapon"
 	sponson machine guns from 750 to 1000), adds a laser sight to the main gun. -->
 	<!-- mk3 Improved front armor to better handle hostile anti-tank fire. -->
 
- 	<sound class="operation" key="fire" fileref="ex_lighttank_fire.wav" pitch_variety="0.05" volume="1"/>
+ 	<sound class="operation" key="fire" fileref="ex_lighttank_fire.wav" pitch_variety="0.05" volume="0.6"/>
 
     <model filename="" /> 
     <model mesh_filename="" texture_filename="" /> 
@@ -52,10 +52,10 @@ key="ba_crusader_cannon.weapon"
 		<!-- damage 10x15=150 轰炸伤-->
 
 		<!--命中音效-->
-		<sound class="result" key="other" fileref="at_hit_UFCM_1.wav" pitch_variety="0.01" volume="10" />
-		<sound class="result" key="other" fileref="at_hit_UFCM_2.wav" pitch_variety="0.01" volume="10" />
-		<sound class="result" key="other" fileref="at_hit_UFCM_3.wav" pitch_variety="0.01" volume="10" />
-		<sound class="result" key="other" fileref="at_hit_UFCM_4.wav" pitch_variety="0.01" volume="10" />
+		<sound class="result" key="other" fileref="at_hit_UFCM_1.wav" pitch_variety="0.01" volume="5" />
+		<sound class="result" key="other" fileref="at_hit_UFCM_2.wav" pitch_variety="0.01" volume="5" />
+		<sound class="result" key="other" fileref="at_hit_UFCM_3.wav" pitch_variety="0.01" volume="5" />
+		<sound class="result" key="other" fileref="at_hit_UFCM_4.wav" pitch_variety="0.01" volume="5" />
 
 		<trigger class="impact" time_to_live="0.4"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->

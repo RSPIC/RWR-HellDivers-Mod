@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <weapon 
-file="_rare_weapon.base"
+file="_ex_smg.base"
 key="acg_kokomi_portia.weapon" 
 >
 
@@ -15,9 +15,8 @@ key="acg_kokomi_portia.weapon"
      suppressed="0" 
      name="Everlasting Moonglow" 
      class="0" 
-     sight_range_modifier="1.0" 
      projectile_speed="150.0"
-    use_basic_muzzle_smoke_effect="0"
+     use_basic_muzzle_smoke_effect="0"
      />
 
     <next_in_chain key="acg_kokomi_water_thrower.weapon" share_ammo="0" />
@@ -72,6 +71,5 @@ key="acg_kokomi_portia.weapon"
 	<stance state_key="crouching" accuracy="0.85"/>
 	<stance state_key="prone" accuracy="1.0"/>
 
-    <modifier class="speed" value="0.3"/>
 
 </weapon>

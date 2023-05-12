@@ -12,12 +12,18 @@
 //复活特效
 //死亡提示
 class player_spawn : Tracker {
-	protected Metagame@ m_metagame;
+	protected GameModeInvasion@ m_metagame;
     protected dictionary playersInfo;
+	protected bool m_server_test_mode;
 
 	// --------------------------------------------
-	player_spawn(Metagame@ metagame) {
+	player_spawn(GameModeInvasion@ metagame) {
 		@m_metagame = @metagame;
+		const UserSettings@ settings = m_metagame.getUserSettings();
+        m_server_test_mode = settings.m_server_test_mode;
+		if(m_server_test_mode){
+			_log("m_server_test_mode is on ");
+		}
 	}
 
 	bool hasEnded() const {

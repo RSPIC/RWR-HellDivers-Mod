@@ -11,11 +11,17 @@
 
 // --------------------------------------------
 class BasicCommandHandler : Tracker {
-	protected Metagame@ m_metagame;
+	protected GameModeInvasion@ m_metagame;
+	protected bool m_server_test_mode;
 
 	// --------------------------------------------
-	BasicCommandHandler(Metagame@ metagame) {
+	BasicCommandHandler(GameModeInvasion@ metagame) {
 		@m_metagame = @metagame;
+		const UserSettings@ settings = m_metagame.getUserSettings();
+        m_server_test_mode = settings.m_server_test_mode;
+		if(m_server_test_mode){
+			_log("m_server_test_mode is on ");
+		}
 	}
 	// --------------------------------------------
 		// .substr 字符截取函数 substr(string string（文本), int a(截取起始位置), int b(截取长度))
@@ -70,9 +76,12 @@ class BasicCommandHandler : Tracker {
 	
 		
 		// admin and moderator only from here on
-		if (!m_metagame.getAdminManager().isAdmin(sender, senderId) && !m_metagame.getModeratorManager().isModerator(sender, senderId)) {
+		if(!m_server_test_mode){
+			if (!m_metagame.getAdminManager().isAdmin(sender, senderId) && !m_metagame.getModeratorManager().isModerator(sender, senderId)) {
 			return;
+			}
 		}
+		
 		
 		if (checkCommand(message, "modtest")) {
 			dictionary dict = {{"TagName", "command"},{"class", "chat"},{"text", "mod or admin"}};
@@ -109,8 +118,10 @@ class BasicCommandHandler : Tracker {
 		}
 		
 		// admin only from here on ------------------------------------------------------------------------
-		if (!m_metagame.getAdminManager().isAdmin(sender, senderId)) {
-			return;
+		if(!m_server_test_mode){
+			if (!m_metagame.getAdminManager().isAdmin(sender, senderId)) {
+				return;
+			}
 		}
 
 		// 任意数值rp xp获取

@@ -69,11 +69,13 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 	string m_gameMapPath = "";
 
 	protected UserSettings@ m_userSettings;
+	protected bool m_server_test_mode;
 
 	// --------------------------------------------
 	GameModeInvasion(UserSettings@ settings) {
 		super(settings.m_startServerCommand);
 
+        m_server_test_mode = settings.m_server_test_mode;
 		@m_userSettings = @settings;
 	}
 
@@ -327,7 +329,7 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		setupSideBaseAttackHandler();
 		//setupIdlerKicker();
 
-		setupScheduledTask();
+		// setupScheduledTask();
 
 		//addTracker(SupporterCommandHandler(this));
 	}
@@ -335,19 +337,22 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 	// --------------------------------------------
 	protected void setupExperimentalFeatures() {
 		// addTracker(playerList_System(this));   
-		addTracker(spawn_ai(this));   
-		addTracker(stratagems_call(this));   
-		addTracker(AirstrikeSystem(this));
-		addTracker(projectile_event(this));   
+		if(!m_server_test_mode){
+			addTracker(AirstrikeSystem(this));
+			addTracker(projectile_event(this));   
+			addTracker(itemdrop_event(this));    
+			addTracker(UAVdrone(this));    
+			addTracker(kill_reward(this));    
+			addTracker(share_samples(this));    
+			addTracker(stratagems_call(this)); 
+		}    
+		addTracker(spawn_ai(this));  
+		addTracker(repair_tools(this));  
 		addTracker(RangeFinder(this));   
 		addTracker(call_event(this));    
-		addTracker(repair_tools(this));    
-		addTracker(itemdrop_event(this));    
-		addTracker(UAVdrone(this));    
-		addTracker(kill_reward(this));    
-		addTracker(dynamic_alert(this));    
-		addTracker(share_samples(this));    
-		addTracker(player_spawn(this));    
+		addTracker(player_spawn(this));
+		addTracker(dynamic_alert(this));   
+		addTracker(scheduled_task(this));  
 	}
 
 	protected void setupDisableRadioAtMatchOver() {
@@ -425,9 +430,9 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		addTracker(IdlerKicker(this));
 	}
 	// --------------------------------------------
-	protected void setupScheduledTask() {
-		addTracker(scheduled_task(this));    
-	}
+	// protected void setupScheduledTask() {
+	// 	addTracker(scheduled_task(this));    
+	// }
 	
 	// --------------------------------------------
 	protected void setupIcecreamReport() {

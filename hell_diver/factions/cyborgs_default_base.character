@@ -5,8 +5,8 @@
 
 	<parameter class="walking_steer_amount" value="0.22" />	
 	<parameter class="running_steer_amount" value="0.28" />	
-	<parameter class="run_footstep_interval" value="20" />
-	<parameter class="walk_footstep_interval" value="15" />
+	<parameter class="run_footstep_interval" value="15" />
+	<parameter class="walk_footstep_interval" value="10" />
 	<parameter class="crouch_walking_steer_amount" value="0.24" />
 	<parameter class="crouch_walking_doing_something_steer_amount" value="0.156" />
 	<parameter class="leaving_vehicle_jump_steer_amount" value="0.4" />

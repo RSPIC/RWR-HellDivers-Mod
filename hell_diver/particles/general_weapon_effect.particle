@@ -1244,6 +1244,66 @@ particle_system general_weapon_activated_rotating_circle		//冲锋枪用
 		keep_velocity false
 	}
 }
+particle_system general_weapon_activated_tri_point	//冲锋枪用
+{
+	quota 300
+	material top_center_point_3_normal
+	particle_width 0.8
+	particle_height 0.8
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 0.3 0 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.001
+		time_to_live_min 0.1
+		time_to_live_max 0.1
+		duration 1
+	}
+	affector Scaler
+	{
+		rate 20
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
 particle_system general_weapon_activated_shrink_triangle		//冲锋枪用
 {
 	quota 300
@@ -2859,4 +2919,11 @@ material Tex_UI_Mark10A_anim : add_base
 			wave_xform scale_y sine 0.25 2 0 0.2
 			tex_address_mode border
 			tex_border_colour 0 0 0 0
+}}}}
+material top_center_point_3_normal : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture top_center_point_3.png 	
 }}}}

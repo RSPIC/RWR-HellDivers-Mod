@@ -797,7 +797,7 @@
 	<text key="hd_hellpod_dropping_spawn_ai" text="地狱潜兵空投舱" />
 
 	<text key="Vindicator Dive Bomb" text="辩护者 [→→→]" />
-	<text key="Airstrike" text="导弹空袭 [→↑↓→←]" />
+	<text key="Airstrike" text="密集轰炸 [→↑↓→←]" />
 	<text key="Orbital Laser Strike" text="轨道激光空袭 [→↑←↑→←]" />
 	<text key="Shredder Missile Strike" text="撕裂者导弹 [→←→←↓↓→]" />
 	<text key="Close Air Support" text="近空支援 [→→↓←]" />
@@ -1200,7 +1200,7 @@
 	<text key="Stratagems Call" text="[教程]战略呼叫机制" />
 	<text key="Stratagems Useable" text="[Tips]常用呼叫指令,输入/call可再次查看本页。输入/call 1~4 查看不同类型支援代码" />
 	<text key="Stratagems - Vindicator Dive Bomb" text="辩护者 74wXp [→→→]" />
-	<text key="Stratagems - Airstrike" text="导弹空袭 10wXp [→↑↓→←]" />
+	<text key="Stratagems - Airstrike" text="密集轰炸 10wXp [→↑↓→←]" />
 	<text key="Stratagems - Orbital Laser Strike" text="轨道激光空袭 39wXp [→↑←↑→←]" />
 	<text key="Stratagems - Shredder Missile Strike" text="撕裂者导弹 252wXp [→←→←↓↓→]" />
 	<text key="Stratagems - Close Air Support" text="近空支援 5wXp [→→↓←]" />
@@ -1256,7 +1256,23 @@
 	<text key="Weapons - Rep-80" text="维修工具枪 [↓↓←→↓]" />
 	<text key="Weapons - REC-6 Demolisher" text="REC-6 爆破手遥控炸弹 [↓←→↑↑]" />
 
-
+	<text key="Testing Help" text="[测试服教程]]" />
+	<text key="Help - TestServer" text="/v test： 召唤出测试箱子
+/warp 数字：跳图（不超过13，否则会溢出报错）
+/0_win： 我方阵营胜利
+/grp 数字： 获取指定数量的rp
+/gxp 数字：获取指定数量的xp
+/p 键值 [数量]：获取指定键值的弹头，[数量]为可选参数
+/w 键值 [数量]：获取指定键值的武器，[数量]为可选参数
+/c 键值 [数量]：获取指定键值的掉落物，[数量]为可选参数
+/v 键值 ：在旁边生成指定键值载具，如/v noxe
+/god：在旁边生成一个上帝甲
+/promote：直接升至地球元帅并获得大量RP
+/cyborgs：[敌方阵营有生化人才可使用，否则报错]，在周围刷新生化人士兵
+/squad：刷10个己方默认ai
+/esquad：刷10个敌方默认ai
+/dead：使自己死亡
+/wound：使自己进入倒地状态" />
 
 
 
