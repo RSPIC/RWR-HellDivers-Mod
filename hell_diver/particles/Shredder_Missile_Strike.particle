@@ -396,7 +396,13 @@ particle_system SMS_impact_leave_smoke
 		colour2 0 0 0 0
 	}
 }
-
+particle_system SMS_impact_leave_smoke_shorttime : SMS_impact_leave_smoke
+{
+	emitter Point
+	{
+		time_to_live 5
+	}
+}
 
 
 

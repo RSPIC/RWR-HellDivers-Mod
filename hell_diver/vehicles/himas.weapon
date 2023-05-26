@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapons>
+
+<weapon 
+file="_hd_vehicle_cannon.base"
+key="himas_missile.weapon">
+    <specification retrigger_time="0.2" 
+    accuracy_factor="0.95" 
+    sustained_fire_grow_step="0.1833" 
+    sustained_fire_diminish_rate="0.1" 
+    cooldown_start="0.99"
+    cooldown_end="0.0"
+    sight_range_modifier="3.0"
+    ai_sight_range_modifier="0.7" 
+    magazine_size="-1" 
+    can_shoot_standing="0" 
+    can_shoot_crouching="0" 
+    suppressed="0" 
+    name="Himas Rocket" 
+    class="0" 
+    projectile_speed="100.0" 
+    slot="0" 
+    barrel_offset_3d="0 2 -1"
+    projectiles_per_shot="1"
+    sight_height_offset="2.0" />
+    
+    <model mesh_filename="" texture_filename="" />
+    <hud_icon filename="hud_hornet.png" />
+    <commonness value="0.0" />
+
+    <!-- <ballistics curve_height="25" near_far_distance="0" speed_estimation_near="40.0" 
+    speed_estimation_far="40.0" max_speed="80.0" tweak_factor="1.0" randomness="0.0" /> pulldown_in_air="41.0"-->
+
+    <ballistics curve_height="100" near_far_distance="0" speed_estimation_near="100.0" 
+    speed_estimation_far="100.0" max_speed="80.0" tweak_factor="1.3" randomness="0.0" />
+
+    <projectile file="hd_general_gl_spawn.projectile" 
+    pulldown_in_air="42.0" can_be_detected_by_footmen="1" 
+	time_to_live="10" can_be_detected_by_driver="1" can_be_disarmed="0" name="Himas Rocket"> 
+
+        <result class="spawn" instance_class="projectile" instance_key="himas_damage.projectile" 
+		min_amount="20" max_amount="20" offset="0 1 0" position_spread="1 0" direction_spread="0.1 0" />
+        
+        <model mesh_filename="SMS_missile.mesh" texture_filename="SMS_missile.png" />
+        <effect class="activated" ref="missile_activated_cannon_flysmoke_larger" lighting="0"/>
+
+        <!-- <sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_1.wav" pitch_variety="0.01" volume="1" />
+        <sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_2.wav" pitch_variety="0.01" volume="1" />
+        <sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_3.wav" pitch_variety="0.01" volume="1" />
+        <sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_4.wav" pitch_variety="0.01" volume="1" /> -->
+        <sound class="result" key="other" fileref="at_hit_sfx_12.wav" pitch_variety="0.01" volume="10" />
+        <sound class="result" key="other" fileref="at_hit_sfx_11.wav" pitch_variety="0.01" volume="10" />
+        <sound class="result" key="terrain" copy="other" />
+        <sound class="result" key="static_object" copy="other" />
+        <sound class="result" key="vehicle" copy="other" />
+        <sound class="result" key="character" copy="other" />
+        <sound class="result" key="shield" copy="other" />
+
+       <effect class="result" key="terrain" ref="real_ground_crater" lighting="1" post_processing="1"/>
+        <effect class="result" key="terrain" ref="real_up_dust_beam" lighting="1" post_processing="0"/>
+        <effect class="result" key="terrain" ref="real_up_dust_spread" lighting="1" post_processing="0"/>
+        <effect class="result" key="terrain" ref="real_up_dust_stone" lighting="1" post_processing="1"/>
+        <effect class="result" key="terrain" ref="real_up_smoke_1" lighting="1" post_processing="0"/>
+        <effect class="result" key="terrain" ref="shadow_real_up_smoke_leave" lighting="1" post_processing="1"/>
+        <effect class="result" key="terrain" ref="shadow_real_up_smoke_leave_2" lighting="1" post_processing="1"/>
+        <effect class="result" key="terrain" ref="real_up_smoke_beam" lighting="1" post_processing="0"/>
+        <effect class="result" key="terrain" ref="real_up_impact_spread" lighting="1" post_processing="0"/>
+        <effect class="result" key="terrain" ref="real_up_impact_spark" lighting="1" post_processing="0"/>
+        <effect class="result" key="terrain" ref="real_up_impact_spark_2" lighting="1" post_processing="0"/>
+        <effect class="result" key="terrain" ref="real_up_impact_spark_1" lighting="1" post_processing="0"/>
+        <effect class="result" key="terrain" ref="real_smoke_1" lighting="1" post_processing="1"/>
+        <effect class="result" key="terrain" ref="real_firesmoke_1" lighting="0" post_processing="0"/>
+        <effect class="result" key="terrain" ref="real_firesmoke_2" lighting="0" post_processing="0"/>
+        <effect class="result" key="terrain" ref="nova_s_result_blast_ring" lighting="0" post_processing="0"/> 
+        <effect class="result" key="terrain" ref="nova_s_result_blast_ring_2" lighting="0" post_processing="0"/> 
+        <effect class="result" key="terrain" ref="real_center_short_light" lighting="0" post_processing="0"/> 
+        <effect class="result" key="terrain" ref="real_center_ambient_light" lighting="0" post_processing="0"/> 
+        <effect class="result" key="terrain" ref="SMS_impact_leave_smoke_shorttime" lighting="0" post_processing="1"/> 
+
+        <effect class="result" key="other" copy="terrain"/>
+        <effect class="result" key="static_object" copy="terrain" />
+        <effect class="result" key="character" copy="terrain" />
+        <effect class="result" key="shield" copy="terrain" />			
+        <effect class="result" key="vehicle" copy="terrain" />			
+        <effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+        <effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+        <effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+        <effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+        <effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+    </projectile>
+    <effect class="muzzle" ref="nova_muzzle_fire_smoke_backward" lighting="0"/> 
+
+    <sound key="fire" fileref="himas_missile_launch.wav" volume="4" pitch_variety="0.0" />
+
+
+</weapon>
+
+</weapons>

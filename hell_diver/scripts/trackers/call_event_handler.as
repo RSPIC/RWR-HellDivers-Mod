@@ -31,10 +31,10 @@ dictionary callLaunchIndex = {
 class call_event : Tracker {
 	protected Metagame@ m_metagame;
     protected int m_DummyCallID=0;
-    protected array<Call_Cooldown@> m_cooldown;
 
 	call_event(Metagame@ metagame) {
 		@m_metagame = @metagame;
+        _log("call_event initiate");
 	}
 
 	protected void handleCallEvent(const XmlElement@ event) {
@@ -49,7 +49,9 @@ class call_event : Tracker {
             int characterId = event.getIntAttribute("character_id");
             int factionId = event.getIntAttribute("faction_id");
             int playerId = event.getIntAttribute("player_id");
- 
+
+            _log("Player Call key = "+callKey);
+
             const XmlElement@ playerinfo = getPlayerInfo(m_metagame, playerId);
 
             if (playerinfo is null) return;
@@ -173,34 +175,6 @@ class call_event : Tracker {
 		return true;
 	}
 
-    void update(float time) {
-        if(m_cooldown.length()>0){
-            for(uint a=0;a<m_cooldown.length();a++){
-                m_cooldown[a].m_time-=time;
-                if(m_cooldown[a].m_time<0){
-                    m_cooldown.removeAt(a);
-                }
-            }
-        }
-    }
-
-    bool findCooldown(string pName,string type){
-        for(uint i=0;i<m_cooldown.size();i++){
-            if(m_cooldown[i].m_playerName==pName && m_cooldown[i].m_type==type){
-                return true;
-            }
-        }
-        return false;
-    }
-
-    float getCooldown(string pName,string type){
-        for(uint i=0;i<m_cooldown.size();i++){
-            if(m_cooldown[i].m_playerName==pName && m_cooldown[i].m_type==type){
-                return m_cooldown[i].m_time;
-            }
-        }
-        return 0;
-    }
 
 }
 

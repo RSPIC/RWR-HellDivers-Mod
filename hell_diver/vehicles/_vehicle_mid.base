@@ -14,6 +14,7 @@ character_leave_request_mode="friendly"
 	blast_push_threshold="10"
 	mass="100.0" 
 	broken_mass="80"
+	gravity="-200"
 	/> 
 
 	<event key="receive_damage_xp_reward">

@@ -338,14 +338,15 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 	protected void setupExperimentalFeatures() {
 		// addTracker(playerList_System(this));   
 		if(!m_server_test_mode){
-			addTracker(AirstrikeSystem(this));
-			addTracker(projectile_event(this));   
-			addTracker(itemdrop_event(this));    
-			addTracker(UAVdrone(this));    
-			addTracker(kill_reward(this));    
-			addTracker(share_samples(this));    
-			addTracker(stratagems_call(this)); 
+			
 		}    
+		addTracker(AirstrikeSystem(this));
+		addTracker(projectile_event(this));   
+		addTracker(itemdrop_event(this));    
+		addTracker(UAVdrone(this));    
+		addTracker(kill_reward(this));    
+		addTracker(share_samples(this));    
+		addTracker(stratagems_call(this)); 
 		addTracker(spawn_ai(this));  
 		addTracker(repair_tools(this));  
 		addTracker(RangeFinder(this));   

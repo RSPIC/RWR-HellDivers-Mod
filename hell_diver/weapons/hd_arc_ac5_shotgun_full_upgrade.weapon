@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>	
 <weapon 
-drop_count_factor_on_death="0" 
-drop_count_factor_on_player_death="0"
-time_to_live_out_in_the_open="0"
-player_death_drop_owner_lock_time="0"
+file="_hd_exp.base"
 key="hd_arc_ac5_shotgun_full_upgrade.weapon" 
-on_ground_up="0 0 1" 
-radius="1"
 > 
     <specification 	
 	retrigger_time="1.2"
@@ -112,7 +107,7 @@ radius="1"
 			direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
 		-->
 		<result class="spawn" instance_class="grenade" instance_key="hd_arc_ac5_shotgun_full_upgrade_damage.projectile" 
-		min_amount="9" max_amount="10" offset="0 0 0" position_spread="0 0" direction_spread="0.0 0.0" />
+		min_amount="300" max_amount="300" offset="0 0 0" position_spread="0 0" direction_spread="0.0 0.0" />
 		<trigger class="time" time_to_live="0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->

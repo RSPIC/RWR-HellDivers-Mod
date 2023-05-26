@@ -14,6 +14,7 @@ class projectile_event : Tracker {
 	// --------------------------------------------
 	projectile_event(Metagame@ metagame) {
 		@m_metagame = @metagame;
+        _log("projectile_event initiate.");
 	}
 
 	bool hasEnded() const {

@@ -185,6 +185,7 @@ class dynamic_alert : Tracker {
 
         m_cd_time = 8.0;
         m_cd_timer = m_cd_time;
+        _log("dynamic_alert initiate.");
 	}
 
 	bool hasEnded() const {
@@ -233,7 +234,7 @@ class dynamic_alert : Tracker {
             NowSoldiers[i] = 0;
         }
 		array<const XmlElement@> AllFactions = getFactions(m_metagame);	
-
+        _log("now faction number = "+AllFactions.size());
 		for (uint i = 0; i < AllFactions.size(); ++i) {
 			const XmlElement@ Faction = AllFactions[i];
 			uint faction_id = Faction.getIntAttribute("id");
@@ -256,6 +257,7 @@ class dynamic_alert : Tracker {
 				ACGId = faction_id;
 			}
             if(faction_id >=0 && faction_id <5){
+                _log("faction id = "+faction_id);
                 _log("faction name= "+ faction_name);
                 MaxSoldiers[faction_id] = Faction.getIntAttribute("soldier_capacity");
                 NowSoldiers[faction_id] = Faction.getIntAttribute("soldiers");
@@ -299,26 +301,44 @@ class dynamic_alert : Tracker {
         _log("rate = "+ rate );
 
         array<const XmlElement@> players = getPlayers(m_metagame);
+        if(players is null){return;}
+        float alert_distance;
+        float min_distance = 80;
         for (uint j = 0; j < players.size(); ++j) {
 			const XmlElement@ player = players[j];
             Vector3 aim_pos = stringToVector3(player.getStringAttribute("aim_target"));    //省事直接用玩家指针位置
-            float distance = getFlatPositionDistance(aim_pos,position);
-        //notify(m_metagame, "Alert Distance = "+distance, dictionary(), "misc", 0, false, "", 1.0);
-            if(distance >= 40 && distance  < 80){        //超过玩家40m的警报降低
-                server_difficulty_level -= 3;
-                if(server_difficulty_level < 0){
-                    server_difficulty_level = 0;
-                }
-            }else if(distance >= 80){   //超过玩家80m的警报不触发
-                return;
+            alert_distance = getFlatPositionDistance(aim_pos,position);
+            if(debug_mode){
+                int pid = player.getIntAttribute("player_id");
+                notify(m_metagame, "Alert Distance = "+alert_distance, dictionary(), "misc", pid, false, "", 1.0);
+            }
+            if(alert_distance < min_distance){
+                min_distance = alert_distance;
             }
         }
-
+        
+        if(min_distance >= 40 && min_distance  < 80){        //超过玩家40m的警报降低
+            server_difficulty_level -= 3;
+            if(server_difficulty_level < 0){
+                server_difficulty_level = 0;
+            }
+        }else if(min_distance >= 80){   //超过玩家80m的警报不触发
+            return;
+        }
         if(EventKeyGet == "legionnaire_cyborg"){    //强警报
             server_difficulty_level += 3 ;
         }
+        
+        if(debug_mode){
+            for (uint j = 0; j < players.size(); ++j) {
+                const XmlElement@ player = players[j];
+                int pid = player.getIntAttribute("player_id");
+                notify(m_metagame, "Alert Min Distance = "+min_distance, dictionary(), "misc", pid, false, "", 1.0);
+                notify(m_metagame, "Alert Level = "+server_difficulty_level, dictionary(), "misc", pid, false, "", 1.0);
+            }
+        }
 
-    //notify(m_metagame, "Alert Level = "+server_difficulty_level, dictionary(), "misc", 0, false, "", 1.0);
+
         if(server_difficulty_level > 12){
             Alert_Spawn(m_metagame,caller_faction,position,level_15);
             Alert_Spawn(m_metagame,caller_faction,position,level_3);

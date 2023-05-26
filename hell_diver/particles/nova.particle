@@ -286,7 +286,7 @@ particle_system nova_muzzle_fire_smoke
 
 particle_system nova_muzzle_fire_smoke_2		//向前
 {
-	quota 50
+	quota 100
 	material 22missile_smoke_2
 	particle_width 3.5
 	particle_height 3.5
@@ -350,7 +350,28 @@ particle_system nova_muzzle_fire_smoke_2		//向前
 		keep_velocity false
 	}
 }
-
+particle_system nova_muzzle_fire_smoke_backward : nova_muzzle_fire_smoke_2		//向后
+{
+	quota 300
+	emitter Ring
+	{
+		angle 5
+		colour 0.7 0.7 0.7 0.85
+		direction 0 1 0
+		emission_rate 300
+		position 0 0 0
+		velocity_min -3.5
+		velocity_max -5.5
+		time_to_live_min 1.5
+		time_to_live_max 2.5
+		duration 0.2
+		width 8
+		height 8
+		depth 1
+		inner_width 0.1
+		inner_height 0.1
+	}
+}
 particle_system nova_muzzle_ambient
 {
 	quota 50

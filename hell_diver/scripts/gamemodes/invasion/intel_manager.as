@@ -52,6 +52,7 @@ class IntelManager : Tracker {
 	
 	// ----------------------------------------------------
 	protected void setBaseMarker(const XmlElement@ base, string style, string text = "") {
+		if(base is null){return;}
 		int baseId = base.getIntAttribute("id");
 		string position = base.getStringAttribute("position");
 	

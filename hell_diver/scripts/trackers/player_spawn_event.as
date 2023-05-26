@@ -22,7 +22,8 @@ class player_spawn : Tracker {
 		const UserSettings@ settings = m_metagame.getUserSettings();
         m_server_test_mode = settings.m_server_test_mode;
 		if(m_server_test_mode){
-			_log("m_server_test_mode is on ");
+			_log("m_server_test_mode is on player_spawn");
+			_log("player_spawn initiate.");
 		}
 	}
 
@@ -58,6 +59,7 @@ class player_spawn : Tracker {
 		spawnStaticProjectile(m_metagame,"hd_effect_hellpod_dropping_smoke.projectile",c_position,cid,fid);
 		sendFactionMessage(m_metagame,fid,"潜兵 "+name+" 已部署战场");
 
+		//首次连接不会提示，二次复活才提示
         string value; //临时变量
         if(playersInfo.get(name,value)){
             callHelp(m_metagame,pid);

@@ -32,7 +32,7 @@ dictionary EXO_Armor = {
         {"666",-1}
 
 };
-//计时任务
+//计时任务 ID
 dictionary timer_task = {
 
         // 空
@@ -147,19 +147,39 @@ class PlayerInfoBucket {
 }
 funcdef void FUNC_PTR(string p_name);
 
+class TimerTask {
+	float timer; //延时时间
+    bool flag; //启动flag
+    string key; //存储使用对象或者key
+    string name; //存储列表名用于查询和二次修改
+    FUNC_PTR@ func; //函数指针
+
+	TimerTask(float in_timer,bool in_flag,string in_key,string in_name,FUNC_PTR@ in_func){
+		timer = in_timer;
+		flag = in_flag;
+		key = in_key;
+		name = in_name;
+		@func = @in_func;
+	}
+}
+
 // --------------------------------------------
 class scheduled_task : Tracker {
 	protected GameModeInvasion@ m_metagame;
-	protected float m_maxIdleTime;
+	protected float m_maxIdleTime;	//周期时间
 	protected float m_timer;
 	protected PlayerInfoBucket allplayers;
-	protected array<float> m_timer_list;	//延时时间
-	protected array<bool> m_timer_list_flag;	//启动flag
-	protected array<string> m_timer_list_key;	//存储使用对象或者key
-	protected array<string> m_timer_list_name;	//存储列表名用于查询和二次修改
-	protected array<FUNC_PTR@> m_timer_list_func; //函数指针
+
+	protected array<TimerTask@> m_timer_list;
+	// protected array<float> m_timer_list;	//延时时间
+	// protected array<bool> m_timer_list_flag;	//启动flag
+	// protected array<string> m_timer_list_key;	//存储使用对象或者key
+	// protected array<string> m_timer_list_name;	//存储列表名用于查询和二次修改
+	// protected array<FUNC_PTR@> m_timer_list_func; //函数指针
+
 	protected array<int> m_counter; //计数器
 	protected array<int> m_counter_cd; //计数器
+
 	protected bool debug_mode;
 	protected bool m_server_test_mode;
 	protected bool first_bgm;
@@ -185,6 +205,8 @@ class scheduled_task : Tracker {
 
 		first_bgm=false;	//进入游戏加载BGM
 		m_ended = false;	//是否结束
+
+		_log("scheduled_task initiate.");
 	}
 	
 	// --------------------------------------------
@@ -192,25 +214,37 @@ class scheduled_task : Tracker {
 		m_timer -= time;
 		if (m_timer < 0.0) {
 			refresh();
-			//_log("scheduled task refresh");
+			_log("scheduled task refresh");
 			m_timer = m_maxIdleTime;
 		}
-		for(uint p=0 ; p<m_timer_list_func.length() ; p++){
-			if(p >= m_timer_list_flag.length()){continue;}
-			if(m_timer_list_flag[p]){
-				if(p >= m_timer_list.length()){continue;}
-				m_timer_list[p] -= time;
-				if(m_timer_list[p] <= 0.0){
-					m_timer_list_func[p](m_timer_list_key[p]);
-					m_timer_list_func.removeAt(p);
-					m_timer_list_flag.removeAt(p);
-					m_timer_list_key.removeAt(p);
-					m_timer_list_name.removeAt(p);
+		// for(uint p=0 ; p<m_timer_list_func.length() ; p++){
+		// 	if(p >= m_timer_list_flag.length()){continue;}
+		// 	if(m_timer_list_flag[p]){
+		// 		if(p >= m_timer_list.length()){continue;}
+		// 		m_timer_list[p] -= time;
+		// 		if(m_timer_list[p] <= 0.0){
+		// 			m_timer_list_func[p](m_timer_list_key[p]);
+		// 			m_timer_list_func.removeAt(p);
+		// 			m_timer_list_flag.removeAt(p);
+		// 			m_timer_list_key.removeAt(p);
+		// 			m_timer_list_name.removeAt(p);
+		// 			m_timer_list.removeAt(p);
+		// 			p--;
+		// 		}
+		// 	}
+		// }
+		for(int p=int(m_timer_list.length())-1 ; p>=0 ; p--){
+        	TimerTask@ task = m_timer_list[p];
+			if(task.flag){
+				task.timer -= time;
+				if(task.timer <= 0.0){
+					_log("ready to executie task "+task.key+" and remove it");
+					task.func(task.key);
 					m_timer_list.removeAt(p);
-					p--;
+					
 				}
 			}
-		}
+    	}
 
 	}
 
@@ -232,7 +266,7 @@ class scheduled_task : Tracker {
 		array<const XmlElement@> players = getPlayers(m_metagame);
 		for (uint j = 0; j < players.size(); ++j) {
 			const XmlElement@ player = players[j];
-			if(player is null){continue;}
+			if(player is null){return;}
 			// ignore admins and mods
 			// string name = player.getStringAttribute("name");
 			// if (m_metagame.getAdminManager().isAdmin(name) || 
@@ -427,6 +461,7 @@ class scheduled_task : Tracker {
 		if (winCondition !is null) {
 			if(debug_mode || m_server_test_mode){
 				allplayers.outputTest();
+				_log("gameEnd, playerinfo output");
 			}
 
 			//factionId = winCondition.getIntAttribute("faction_id");
@@ -493,11 +528,13 @@ class scheduled_task : Tracker {
 		const XmlElement@ player = getPlayerInfo(m_metagame,pid);
 		if (player !is null) {
 			string name = player.getStringAttribute("name");
-			_log("player connect, name = "+ name);
+			_log("player spawn, name = "+ name);
 			if(!allplayers.exists(name)){
 				allplayers.addPlayer(name,player);
+				_log("playerinfo added.");
 			}else if(allplayers.exists(name)){
 				allplayers.updatePlayer(name,player);
+				_log("playerinfo updated.");
 			}
 		}		
 	}
@@ -547,28 +584,26 @@ class scheduled_task : Tracker {
 					string p_name = playerinfo.getStringAttribute("name");
 
 					//-----------------------------------------
-					for(uint p=0 ; p<m_timer_list_func.length() ; p++){	//判断是否二次触发,直接执行自爆
-						if(p >= m_timer_list_flag.length()){continue;}
-						if(m_timer_list_key[p] == p_name){
-							if(m_timer_list_name[p] == "banzai"){
-								m_timer_list_func[p](m_timer_list_key[p]);
-								m_timer_list_func.removeAt(p);
-								m_timer_list_flag.removeAt(p);
-								m_timer_list_key.removeAt(p);
-								m_timer_list_name.removeAt(p);
+					for(int p=int(m_timer_list.length())-1 ; p>=0 ; p--){
+						TimerTask@ task = m_timer_list[p];
+						if(task.key == p_name){
+							if(task.name == "banzai"){
+								task.func(task.key);
 								m_timer_list.removeAt(p);
-								p--;
 								return;
 							}
 						}
 					}
+					//-----------------------------------------
+					TimerTask@ task = TimerTask(2.5,true,p_name,"banzai",FUNC_PTR(banzai));
+					m_timer_list.insertLast(task);
 
-					m_timer_list_flag.insertLast(true);	//启动
-					m_timer_list_key.insertLast(p_name);//key,玩家名
-					m_timer_list.insertLast(2.5);	//延时时间
-					FUNC_PTR@ callback = FUNC_PTR(banzai);	//目标函数
-					m_timer_list_func.insertLast(callback);
-					m_timer_list_name.insertLast("banzai"); //列表名
+					// m_timer_list_flag.insertLast(true);	//启动
+					// m_timer_list_key.insertLast(p_name);//key,玩家名
+					// m_timer_list.insertLast(2.5);	//延时时间
+					// FUNC_PTR@ callback = FUNC_PTR(banzai);	//目标函数
+					// m_timer_list_func.insertLast(callback);
+					// m_timer_list_name.insertLast("banzai"); //列表名
 					//-----------------------------------------
 
 				//_log("sending delay task case 1");
@@ -603,7 +638,9 @@ class scheduled_task : Tracker {
 				int dead = character.getIntAttribute("dead");
 				if(dead !=1 && wounded != 1){
 					string c_position = character.getStringAttribute("position");
+					editPlayerVest(m_metagame,cid,"helldivers_vest.carry_item",4);
 					spawnStaticProjectile(m_metagame,"ex_cl_banzai_damage.projectile",c_position,cid,fid);
+					setDeadCharacter(m_metagame,cid);
 				}
 			}
 		}

@@ -22,8 +22,8 @@ void main(dictionary@ inputData) {
 
         settings.m_playerAiReduction = 0.0;            // didn't work before 1.76! (was 1.0)
 
-        settings.m_xpFactor = 10.0;
-        settings.m_rpFactor = 10.0;
+        settings.m_xpFactor = 1.0;
+        settings.m_rpFactor = 1.0;
 
         settings.m_teamKillPenaltyEnabled = true;
         settings.m_completionVarianceEnabled = false;
@@ -32,7 +32,7 @@ void main(dictionary@ inputData) {
 
         settings.m_server_difficulty_level = 15;
         
-        settings.m_debug_mode = false;
+        settings.m_debug_mode = true;
         settings.m_server_test_mode = true;
 
 

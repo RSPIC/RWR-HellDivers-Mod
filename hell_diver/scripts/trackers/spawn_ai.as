@@ -81,7 +81,7 @@ dictionary SpawnAiIndex = {
 		{"Helldivers",24},
 		
 		// 占位
-		{"None",999}
+		{"None",0}
 		
 
 };
@@ -92,11 +92,11 @@ class spawn_ai : Tracker {
 	// --------------------------------------------
 	spawn_ai(Metagame@ metagame) {
 		@m_metagame = @metagame;
+		_log("spawn_ai initiate.");
 	}
 
 	// --------------------------------------------
 	protected void handleResultEvent(const XmlElement@ event) {
-		//checking if the event was triggered by a notify_script	
 		string EventKeyGet = event.getStringAttribute("key");		//读取事件关键字
 		_log("Spawn Ai key=" +  EventKeyGet);
 		_log("Spawn Ai Index=" + int(SpawnAiIndex[EventKeyGet]));
@@ -105,7 +105,8 @@ class spawn_ai : Tracker {
 			return;        
 		}
 		Vector3 PosSpawnProjectile = stringToVector3(event.getStringAttribute("position"));
-
+		_log("spawn ai position = "+event.getStringAttribute("position"));
+		
 		// 调用方法 array<const XmlElement@>@ getFactions(const Metagame@ metagame) {
 		// 调用方法 const XmlElement@ getFactionInfo(const Metagame@ metagame, int factionId)
 
@@ -133,7 +134,10 @@ class spawn_ai : Tracker {
 			}
 			if(faction_id == 0){
 				name_of_fid0 = Faction.getStringAttribute("name");
+				_log("name_of_fid0 = "+name_of_fid0);
 			}
+			_log("faction_id = "+faction_id);
+			_log("faction_name = "+Faction.getStringAttribute("name"));
 		}
 		
 		

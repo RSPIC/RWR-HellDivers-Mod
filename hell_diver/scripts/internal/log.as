@@ -10,7 +10,8 @@ class Log {
 
 		// by default, still going verbose;
 		// - see log_setup.php for how to control the log level via command line
-		m_logLevel = 1;
+		m_logLevel = 2;
+		// m_logLevel = 1;
 	}
 };
 
@@ -43,7 +44,8 @@ void _setupLog(string logLevel) {
 
 // --------------------------------------------
 void _setupLog(const XmlElement@ settings, string key = "log_level") {
-	string logLevel = "normal";
+	string logLevel = "dev_verbose";
+	// string logLevel = "normal";
 	if (settings.hasAttribute(key)) {
 		logLevel = settings.getStringAttribute(key);
 	}

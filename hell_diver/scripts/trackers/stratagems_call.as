@@ -409,6 +409,7 @@ class stratagems_call : Tracker {
 		m_ended = false;
 		m_time = 4.0;
 		m_timer = m_time;
+		_log("stratagems_call initiate.");
 	}
 
 	bool hasEnded() const {

@@ -219,6 +219,7 @@ class itemdrop_event : Tracker {
 	// --------------------------------------------
 	itemdrop_event(Metagame@ metagame) {
 		@m_metagame = @metagame;
+		_log("itemdrop_event initiate.");
 	}
 
 	bool hasEnded() const {
@@ -336,6 +337,19 @@ class itemdrop_event : Tracker {
 								}
 								continue;
 							}
+							if(i==2){//补给信物(投掷物栏)
+								string tokenkey = "token_";
+								string newequipKey = equipKey.substr(0,tokenkey.length());
+								if(newequipKey == tokenkey){
+									int ownnum = getPlayerEquipmentAmount(m_metagame,characterId,i);
+									int maxnum = int(resupply_getitem_key[equipKey]);
+									int resupplyNum = maxnum - ownnum;
+									for(;resupplyNum>0;--resupplyNum){
+										addItemInBackpack(m_metagame,characterId,"projectile",equipKey);
+									}
+									_log("success add token key= "+tokenkey);
+								}
+							}
 						}
 					}
 				}
@@ -430,4 +444,5 @@ class itemdrop_event : Tracker {
 			}
 		}
     }
+
 }

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <models>
 <!-- 同人 -->
-	<model filename="acg_asakaze.xml" /> <!--朝风-->
+	<model filename="acg_asakaze.xml"> <!--朝风--><requirement class="projectile" slot="0" key="token_asakaze.projectile"/>
+	</model>
 	<model filename="acg_lulu.xml" /> <!--璐璐-->
 	<model filename="acg_longdan.xml" /> <!--龙胆-->
 	<model filename="acg_scented.xml" /> <!--Scented-->

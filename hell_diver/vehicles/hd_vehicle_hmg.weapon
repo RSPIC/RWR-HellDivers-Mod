@@ -86,7 +86,7 @@ key="hd_vehicle_hmg.weapon"
 		<effect class="result" key="terrain" ref="hd_mg94_hit_leave" lighting="0" />
 		<effect class="activated" ref="general_weapon_activated_bullet_light" lighting="0"/>
 		<effect class="activated" ref="general_weapon_activated_bullet_centerlight" lighting="0"/>
-			<effect class="result" key="terrain" ref="MG_hvy_hit_smoke" lighting="0"/>
+			<!-- <effect class="result" key="terrain" ref="MG_hvy_hit_smoke" lighting="0"/> -->
 			<effect class="result" key="terrain" ref="MG_hvy_hit_leave" lighting="0" post_processing="1"/>
 			<effect class="result" key="terrain" ref="MG_heavy_up_dust_1" lighting="0"/>
 			<effect class="result" key="terrain" ref="MG_heavy_up_dust_2" lighting="0"/>

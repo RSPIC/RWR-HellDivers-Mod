@@ -17,6 +17,7 @@ class repair_tools : Tracker {
 	// --------------------------------------------
 	repair_tools(Metagame@ metagame) {
 		@m_metagame = @metagame;
+		_log("repair_tools initiate.");
 	}
 
 	bool hasEnded() const {

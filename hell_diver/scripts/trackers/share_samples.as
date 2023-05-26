@@ -46,6 +46,7 @@ class share_samples : Tracker {
 	// --------------------------------------------
 	share_samples(Metagame@ metagame) {
 		@m_metagame = @metagame;
+		_log("share_samples initiate.");
 	}
 
 	bool hasEnded() const {

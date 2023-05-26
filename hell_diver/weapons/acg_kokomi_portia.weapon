@@ -17,12 +17,28 @@ key="acg_kokomi_portia.weapon"
      class="0" 
      projectile_speed="150.0"
      use_basic_muzzle_smoke_effect="0"
+     carry_in_two_hands="0" 
      />
 
     <next_in_chain key="acg_kokomi_water_thrower.weapon" share_ammo="0" />
 
-    <animation key="recoil" animation_key="recoil1, big" /> <!--后坐力动作，半身动作-->
     <animation state_key="reload" animation_key="T_reloading_1.25s"/>
+	<!--武器动作，必须指定recoil和reload动作，部分动作留空会默认调用常规双手武器动作或者无动作-->
+    <animation state_key="recoil" animation_key="recoil, pistol" /> <!--后坐力动作，半身动作-->
+    <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
+    <animation state_key="hold" animation_key="hold, pistol" /><!--站姿静止动作，全身动作-->
+	<animation state_key="hold_on_wall"  animation_key="hold, overwall pistol" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="hold, pistol" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="hold_casual, pistol" /><!--闲置动作，全身动作-->
+	<animation state_key="running" animation_key="running, pistol" /><!--全身动作-->
+	<animation state_key="walking" animation_key="running_pistol_slower" /><!--按shift时候的静步前进动作，全身动作-->
+    <animation state_key="walking_backwards" animation_key="walking backwards, pistol" /><!--全身动作-->
+    <animation state_key="crouching" animation_key="crouch, pistol" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="crouching, pistol 2" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="crouching backwards, hip fire" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="prone_still, pistol" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
+	<animation state_key="stabbing" animation_key="pistol whip 3" /><!--半身动作，武器可设置脱手-->
 
     <sound key="fire" fileref="kriss_vector_shot.wav" volume="1.0" pitch_variety="0.03"/>
     <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->

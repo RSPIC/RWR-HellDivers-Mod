@@ -64,14 +64,14 @@ allow_ai_to_use="0"
 	<!-- <visual class="turret" turret_index="2" mesh_filename="mi_24_wing2.mesh" texture_filename="mi_24.png" /> -->
 
 
-	<character_slot type="driver" attached_on_turret="0" enter_position="2 0.5 0" seat_position="0.5 0.800 0" 
+	<character_slot type="driver" attached_on_turret="0" enter_position="0 0.5 3.5" seat_position="0.5 0.800 0" 
 	rotation="0" exit_rotation="+1.57" hiding="1" animation_id="36">
 	</character_slot>
 	<character_slot type="gunner" attached_on_turret="0" enter_position="-2 0.5 0" seat_position="-0.5 0.800 0" 
 	rotation="0" exit_rotation="-1.57" hiding="0" animation_id="36">
 		<turret index="0" /><turret index="1" /><turret index="4" /><turret index="5" />
 	</character_slot>
-	<character_slot type="gunner" attached_on_turret="0" enter_position="0 0.5 2" seat_position="0 0.800 2" 
+	<character_slot type="gunner" attached_on_turret="0" enter_position="2 0.5 0" seat_position="0 0.800 2" 
 	rotation="0" exit_rotation="0" hiding="1" animation_id="36">
 		<turret index="2" />
 	</character_slot>

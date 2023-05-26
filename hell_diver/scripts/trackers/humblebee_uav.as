@@ -26,7 +26,7 @@ class UAVdrone : Tracker {
 	// --------------------------------------------
 	UAVdrone(Metagame@ metagame) {
 		@m_metagame = @metagame;
-		//_log("UAVdrone");
+		_log("UAVdrone initiate");
 	}
 
 	// --------------------------------------------

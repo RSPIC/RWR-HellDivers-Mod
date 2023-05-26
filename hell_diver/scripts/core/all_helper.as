@@ -450,3 +450,12 @@ void editPlayerVest(const Metagame@ metagame, int characterId, string Itemkey, u
 		c.appendChild(item);
 	metagame.getComms().send(c);
 }
+
+void setDeadCharacter(const Metagame@ m_metagame,int characterId){
+	string command =
+		"<command class='update_character'" +
+		"	id='" + characterId + "'" +
+		"	dead='1'>" + 
+		"</command>";
+	m_metagame.getComms().send(command);
+}
