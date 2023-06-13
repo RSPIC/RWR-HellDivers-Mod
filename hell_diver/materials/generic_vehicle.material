@@ -1,0 +1,74 @@
+import NormalAndDepth from "normal_and_depth.material"
+
+material GenericVehicle : NormalAndDepth {
+
+	technique Ghost {
+		scheme ghost
+
+		pass Ghost {
+			lighting off
+			fog_override true none
+			alpha_rejection greater 128
+
+ 			depth_write off
+			depth_check on
+			depth_func greater
+			cull_hardware none
+			cull_software none
+
+			vertex_program_ref MeshGhostVP {	
+				// team color
+				param_named_auto teamColor custom 0
+			}
+
+			fragment_program_ref PassThruFP {
+			}
+		} 
+	}
+
+	technique ShadersShadows {
+		pass Color {
+			lighting off
+			fog_override true none
+			cull_hardware none
+			cull_software none       
+			alpha_rejection greater 96
+
+			vertex_program_ref DecalTextureShadowsVP {	
+				param_named_auto textureMatrix1 texture_matrix 1
+			}
+
+			fragment_program_ref DecalTextureShadowsFP {
+			}
+ 
+			texture_unit {
+				content_type shadow
+				tex_address_mode clamp
+				filtering none
+			}	
+
+			texture_unit Decal {
+				//tex_address_mode clamp
+				tex_address_mode wrap
+				texture signs.png				
+			}	
+		}
+	}
+
+	technique NoShaders {	
+		pass Color {	
+			lighting on
+		        ambient 0.5 0.5 0.5 1.0 
+		        diffuse 0.5 0.5 0.5 1.0 
+				
+			alpha_rejection greater 128	
+			texture_unit Decal {
+				//tex_address_mode clamp
+				tex_address_mode wrap
+				texture signs.png		
+			}	
+		}
+
+	}
+
+}

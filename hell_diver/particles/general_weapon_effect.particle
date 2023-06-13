@@ -2427,6 +2427,14 @@ particle_system general_fire_aim_mark_1 	//瞄准地面框选特效
 		colour1 1 0.3 0 1
 	}
 }
+particle_system general_fire_aim_mark_1B : general_fire_aim_mark_1	//瞄准地面框选特效 曲线
+{
+	emitter Point
+	{
+		position 0 0 0
+		time_to_live 4
+	}
+}
 particle_system general_fire_aim_mark_1_long : general_fire_aim_mark_1 	//瞄准地面框选特效
 {
 	emitter Point
@@ -2482,6 +2490,14 @@ particle_system general_fire_aim_mark_2  //瞄准的空对地指示特效
 		colour0 1 1 1 1
 		time1 1
 		colour1 1 1 1 1
+	}
+}
+particle_system general_fire_aim_mark_2B : general_fire_aim_mark_2  //瞄准的空对地指示特效
+{
+	emitter Point
+	{
+		position 0 3 0
+		time_to_live 4
 	}
 }
 particle_system general_fire_aim_mark_2_long : general_fire_aim_mark_2  //瞄准的空对地指示特效

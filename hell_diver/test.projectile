@@ -1,33 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <projectile class="grenade" name="" key="test_particle.projectile" slot="0" radius="0.15" pulldown_in_air="15.0">
     <!-- <result class="blast" radius="3" damage="0.0" push="0.0" decal="1" character_state="death" faction_compare="not_equal" damage_origin_vehicle="0"/> -->
-    <trigger class="time" time_to_live="0.5"/>
+    <trigger class="impact" time_to_live="0.5"/>
     <rotation class="motion" />
     <model mesh_filename="" />
-
     <hud_icon filename="call_deny_right.png" />
     <commonness value="0" />
     <inventory encumbrance="1.0" price="300000.0" in_stock="0" />
     <capacity value="1" source="rank" source_value="0.0" />
-
  	<throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
 	speed_estimation_far="70.0" max_speed="70.0" randomness="0.0" tweak_factor="1.0" />
+	<!-- <result class="notify_script" key="upgrade" /> -->
+	<result class="blast" radius="5" damage="0" push="0.5" decal="0" character_state="none" faction_compare="not_equal" />
 
-	<result class="notify_script" key="upgrade" />
-	<!-- <result class="notify_script" key="ex_cl_banzai" /> -->
+	<!-- <effect class="result" key="terrain" ref="bugs_spawn_at_ground_smoke" lighting="1"/>
+	<effect class="result" key="terrain" ref="bugs_spawn_at_ground_smoke_leave" lighting="1"/>
+	<effect class="result" key="terrain" ref="bugs_spawn_at_ground_dust" lighting="1"/>
+	<effect class="result" key="terrain" ref="bugs_spawn_at_ground_up_dust_1" lighting="1"/>
+	<effect class="result" key="terrain" ref="bugs_spawn_at_ground_up_dust_2" lighting="1"/>
+	<effect class="result" key="terrain" ref="bugs_spawn_at_ground_up_dust_3" lighting="1"/> -->
+	<!-- <effect class="result" key="terrain" ref="bugs_spitter_splash_single_damage" lighting="0"/> 
+	<effect class="result" key="terrain" ref="bugs_spitter_splash_single_damage2" lighting="0"/> 
+	<effect class="result" key="terrain" ref="bugs_spitter_splash" lighting="0"/> 
+	<effect class="result" key="terrain" ref="bugs_spitter_splash_expand" lighting="0"/>  -->
+	<!-- <effect class="result" key="terrain" ref="bugs_impaler_result_sharp_rock_up" lighting="0"/>  
+	<effect class="result" key="terrain" ref="bugs_impaler_result_sharp_rock_still" lighting="0"/>  
+	<effect class="result" key="terrain" ref="bugs_spawn_at_ground_dust" lighting="1"/>
+	<effect class="result" key="terrain" ref="bugs_spawn_at_ground_up_dust_1" lighting="1"/>
+	<effect class="result" key="terrain" ref="bugs_spawn_at_ground_up_dust_2" lighting="1"/>
+	<effect class="result" key="terrain" ref="bugs_spawn_at_ground_up_dust_3" lighting="1"/>
+	<effect class="result" key="terrain" ref="bugs_impaler_result_side_dust" lighting="1"/>
+	<effect class="result" key="terrain" ref="bugs_behemoth_result_impact_cracks_small" lighting="1"/>
+	<effect class="result" key="terrain" ref="bugs_behemoth_result_ambient_smoke_small" lighting="1"/> -->
+	
+	<effect class="result" key="terrain" ref="22missile_hit_smoke_ambient" lighting="1"/> 
+	<effect class="result" key="terrain" ref="22missile_hit_smoke_fire_smoke" lighting="1" post_processing="1"/> 
 
-	<!-- <effect class="result" key="terrain" ref="car_slide_spary_spark" lighting="0" post_processing="0"/>  -->
-	<!-- <effect class="result" key="terrain" ref="MG_hvy_hit_cross_blast" lighting="0" />  -->
-	<!-- <effect class="result" key="terrain" ref="music_musical_note_1" lighting="0" post_processing="1"/> -->
-	<!-- <effect class="result" key="terrain" ref="samples_pick" lighting="0" post_processing="1"/> -->
-	<effect class="result" key="terrain" ref="ba_crusader_result_impact_leave" lighting="0" post_processing="1"/>
-	<effect class="result" key="terrain" ref="ba_crusader_result_impact" lighting="0" post_processing="0"/>
-	<effect class="result" key="terrain" ref="ba_crusader_result_impact_light" lighting="0" post_processing="0"/>
-	<effect class="result" key="terrain" ref="ba_crusader_result_ground_ring" lighting="0" post_processing="0"/>
-	<effect class="result" key="terrain" ref="ba_crusader_result_ground_ring_light" lighting="0" post_processing="0"/>
-	<effect class="result" key="terrain" ref="ba_crusader_result_impact_side_ring_2" lighting="0" post_processing="1"/>
-	<effect class="result" key="terrain" ref="ba_crusader_result_impact_side_ring_1" lighting="0" post_processing="1"/>
-	<effect class="result" key="terrain" ref="ba_crusader_result_spark" lighting="0" post_processing="1"/>
 
 	<!-- <effect class="activated" ref="alert_center_alerticon_hight_frequncy" lighting="0" /> -->
 	<!--高频率感叹号警告标识-->

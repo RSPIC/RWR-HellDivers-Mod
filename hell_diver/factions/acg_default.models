@@ -21,6 +21,7 @@
 	<model filename="acg_gawr_gura.xml" /> <!--噶呜·古拉 鲨鱼-->
 	<model filename="acg_kagamine_rin.xml" /> <!--镜音铃 by DNTK-->
 	<model filename="acg_heavy_equip_jk_ii.xml" /> <!--重装JK II by DNTK-->
+	<model filename="acg_incomparable.xml" /> <!--无比 by yaba-->
 	
 <!-- 明日方舟 -->
 	<model filename="acg_skyfire.xml" /> <!--天火-->
@@ -114,10 +115,12 @@
 	
 
 <!-- 测试 -->
-<model filename="acg_faputa.xml" > 
+<model filename="bugs_scout.xml" > 
 <requirement class="weapon" slot="0" key="normal.weapon"/>
 </model>
 <model filename="acg_faputa.xml" > 
 <requirement class="weapon" slot="0" key="ref.weapon"/>
 </model>
+
+
 </models>

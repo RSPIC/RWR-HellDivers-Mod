@@ -110,10 +110,10 @@ dictionary banned_backpack_item = {
         {"hd_sup_mental_detector_call.projectile","projectile"},
 
         // Supply 普通支援
-        {"hd_m5_apc_call.projectile","projectile"},
-        {"hd_m5_32_hav_call.projectile","projectile"},
-        {"hd_td110_bastion_call.projectile","projectile"},
-        {"hd_mc109_motor_call.projectile","projectile"},
+        // {"hd_m5_apc_call.projectile","projectile"},
+        // {"hd_m5_32_hav_call.projectile","projectile"},
+        // {"hd_td110_bastion_call.projectile","projectile"},
+        // {"hd_mc109_motor_call.projectile","projectile"},
         {"hd_resupply.projectile","projectile"},
         {"hd_exo44_mk3.projectile","projectile"},
         {"hd_exo48_mk3.projectile","projectile"},
@@ -247,11 +247,7 @@ class itemdrop_event : Tracker {
 
 		string position = event.getStringAttribute("position");
 		int characterId = event.getIntAttribute("character_id");
-		if(characterId == -1){
-			_log("itemdrop cid = -1,return");
-			return;
-		}
-		//int itemClass = event.getIntAttribute("item_class");
+		if(characterId == -1){return;}
 		int playerId = event.getIntAttribute("player_id");
 		int containerId = event.getIntAttribute("target_container_type_id");
 		const XmlElement@ owner = getCharacterInfo(m_metagame, characterId);
@@ -273,7 +269,6 @@ class itemdrop_event : Tracker {
         _log("handleItemDropEvent:itemKey= " + itemKey);
         _log("handleItemDropEvent:position= " + position);
         _log("handleItemDropEvent:characterId= " + characterId);
-        //_log("handleItemDropEvent:itemClass= " + itemClass);
         _log("handleItemDropEvent:playerId= " + playerId);
         _log("handleItemDropEvent:containerId= " + containerId);
 
@@ -350,16 +345,24 @@ class itemdrop_event : Tracker {
 									_log("success add token key= "+tokenkey);
 								}
 							}
+							if(i==2){//补给手雷
+								int ownnum = getPlayerEquipmentAmount(m_metagame,characterId,i);
+								if(ownnum == 0){
+									string key = "hd_grenade_standard.projectile";
+									int maxnum = int(resupply_getitem_key[key]);
+									int resupplyNum = maxnum;
+									for(;resupplyNum>0;--resupplyNum){
+										addItemInBackpack(m_metagame,characterId,"projectile",key);
+									}
+								}
+							}
 						}
 					}
 				}
 			}
 		}
 
-		//检测物品是否存起来了,删除
-		if(string(banned_backpack_item[itemKey]) == "" ){
-			_log("ban item key exist?:" + "false");
-		}//是否属于删除物品
+		//是否属于删除物品
 		if(string(banned_backpack_item[itemKey]) != "" || string(banned_special_item[itemKey]) != ""){
 			if(playerId == -1){return;}//排除AI
 			int senderId = event.getIntAttribute("player_id");
@@ -368,10 +371,10 @@ class itemdrop_event : Tracker {
 			string sender = playerinfo.getStringAttribute("name");
 			_log("sender ="+sender);
 			_log("senderId ="+senderId);
-			if (m_metagame.getAdminManager().isAdmin(sender, senderId)){
-				_log("Is admin, exit ban item");
-				return;
-			}//管理可以存
+			// if (m_metagame.getAdminManager().isAdmin(sender, senderId)){
+			// 	_log("Is admin, exit ban item");
+			// 	return;
+			// }//管理可以存
 
 			if(itemKey == "hd_resupply_pack_mk3.carry_item"){//补给背包特殊机制 上限携带一个包，同时发4个子弹箱
 				_log("hd_resupply_pack_mk3 detect");

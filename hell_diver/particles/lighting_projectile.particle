@@ -1,9 +1,9 @@
 author：RST
 
 	<effect class="activated" ref="LightShell_activated_01" />
-	<effect class="activated" ref="LightShell_activated_02" />//中心光
-	<effect class="activated" ref="LightShell_activated_03" />//放射光
-	<effect class="activated" ref="LightShell_activated_04" />//镜头光晕
+	<effect class="activated" ref="LightShell_activated_02" />
+	<effect class="activated" ref="LightShell_activated_03" />
+	<effect class="activated" ref="LightShell_activated_04" />
 	<effect class="activated" ref="LightShell_activated_smoke" />
 	
 
@@ -28,7 +28,7 @@ particle_system LightShell_activated_01
 		position 0 0 0
 		velocity 0.0001
 		time_to_live 0.1
-		duration 20
+		duration 10
 	}
 	affector Scaler
 	{
@@ -83,7 +83,7 @@ particle_system LightShell_activated_02
 		position 0 0 0
 		velocity 0.0001
 		time_to_live 0.3
-		duration 20
+		duration 10
 	}
 	affector Scaler
 	{
@@ -137,7 +137,7 @@ particle_system LightShell_activated_03	//放射光
 		position 0 0 0
 		velocity 0.0001
 		time_to_live 0.3
-		duration 20
+		duration 10
 	}
 	affector Scaler
 	{
@@ -191,7 +191,7 @@ particle_system LightShell_activated_04 	//镜头光晕
 		position 0 0 0
 		velocity 0.0001
 		time_to_live 0.3
-		duration 20
+		duration 10
 	}
 	affector Scaler
 	{
@@ -247,7 +247,7 @@ particle_system LightShell_activated_smoke
 		velocity_min 2
 		velocity_max 3
 		time_to_live 1.2
-		duration 20
+		duration 10
 	}
 	affector Scaler
 	{

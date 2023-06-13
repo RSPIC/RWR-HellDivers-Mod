@@ -6,13 +6,15 @@
 #include "query_helpers2.as"
 #include "all_helper.as"
 
+#include "debug_reporter.as"
+#include "INFO.as"
+
 //Author: RST
 //support by NetherCrow
 //感谢鸦鸦的代码支持
 
 
-	// --------------------------------------------
-		//建立关键字与index联系
+//实际代码中没用上，但是保留不删，万一要用
 dictionary SpawnAiIndex = {
 
         // 空
@@ -86,197 +88,45 @@ dictionary SpawnAiIndex = {
 
 };
 
+
 class spawn_ai : Tracker {
-	protected Metagame@ m_metagame;
+	protected GameModeInvasion@ m_metagame;
+	protected bool m_ended;
+	protected bool isStarted;
+	protected Timer@ m_Timer = Timer();
 
 	// --------------------------------------------
-	spawn_ai(Metagame@ metagame) {
+	spawn_ai(GameModeInvasion@ metagame) {
 		@m_metagame = @metagame;
 		_log("spawn_ai initiate.");
 	}
-
 	// --------------------------------------------
+	bool hasEnded() const {
+		// always on
+		return false;
+	}
+	// --------------------------------------------
+	bool hasStarted() const {
+		// always on
+		return true;
+	}
+	void start(){
+        m_ended = false;
+		isStarted =false;
+	}
+	void update(float time){
+		m_Timer.update(time);
+	}
+
 	protected void handleResultEvent(const XmlElement@ event) {
-		string EventKeyGet = event.getStringAttribute("key");		//读取事件关键字
-		_log("Spawn Ai key=" +  EventKeyGet);
-		_log("Spawn Ai Index=" + int(SpawnAiIndex[EventKeyGet]));
-
-		if (!(SpawnAiIndex.exists(EventKeyGet))){
-			return;        
-		}
+		// 空对象呼叫，无CID FID
+		string EventKeyGet = event.getStringAttribute("key");	
 		Vector3 PosSpawnProjectile = stringToVector3(event.getStringAttribute("position"));
-		_log("spawn ai position = "+event.getStringAttribute("position"));
-		
-		// 调用方法 array<const XmlElement@>@ getFactions(const Metagame@ metagame) {
-		// 调用方法 const XmlElement@ getFactionInfo(const Metagame@ metagame, int factionId)
-
-		int CyborgsId = -1;
-		int SuperEarthId = -1;
-		int BugsId = -1;
-		int IlluminateId = -1;
-		int ACGId = -1;
-		string name_of_fid0;
-		array<const XmlElement@> AllFactions = getFactions(m_metagame);	
-
-		for (uint i = 0; i < AllFactions.size(); ++i) {
-			const XmlElement@ Faction = AllFactions[i];
-			uint faction_id = Faction.getIntAttribute("id");
-			if (Faction.getStringAttribute("name")=="Cyborgs") {
-				CyborgsId = faction_id;
-			}else if(Faction.getStringAttribute("name")=="Super Earth"){
-				SuperEarthId = faction_id;
-			}else if(Faction.getStringAttribute("name")=="Bugs"){
-				BugsId = faction_id;
-			}else if(Faction.getStringAttribute("name")=="Illuminate"){
-				IlluminateId = faction_id;
-			}else if(Faction.getStringAttribute("name")=="ACG"){
-				ACGId = faction_id;
-			}
-			if(faction_id == 0){
-				name_of_fid0 = Faction.getStringAttribute("name");
-				_log("name_of_fid0 = "+name_of_fid0);
-			}
-			_log("faction_id = "+faction_id);
-			_log("faction_name = "+Faction.getStringAttribute("name"));
-		}
-		
-		
-
-
-		switch(int(SpawnAiIndex[EventKeyGet]))
-		{
-			case 0:{//空
-				break;
-			}
-			case 1:{//生成 initiate 初始者	------------------------------------------
-				if(CyborgsId == -1){break;}
-				SpawnSoldier(m_metagame,1,CyborgsId,PosSpawnProjectile,"Initiate");
-				break;
-			}
-			case 2:{//生成 squadleader 班长战士
-				if(CyborgsId == -1){break;}
-				SpawnSoldier(m_metagame,1,CyborgsId,PosSpawnProjectile,"Squadleader");
-				break;
-			}
-			case 3:{//生成 berserker 狂暴者
-				if(CyborgsId == -1){break;}
-				SpawnSoldier(m_metagame,1,CyborgsId,PosSpawnProjectile,"Berserker");
-				break;
-			}
-			case 4:{//生成 comrade 复合人
-				if(CyborgsId == -1){break;}
-				SpawnSoldier(m_metagame,1,CyborgsId,PosSpawnProjectile,"Comrade");
-				break;
-			}
-			case 5:{//生成 grotesque 畸形人
-				if(CyborgsId == -1){break;}
-				SpawnSoldier(m_metagame,1,CyborgsId,PosSpawnProjectile,"Grotesque");
-				break;
-			}
-			case 6:{//生成 hound 猎犬
-				if(CyborgsId == -1){break;}
-				SpawnSoldier(m_metagame,1,CyborgsId,PosSpawnProjectile,"Hound");
-				break;
-			}
-			case 7:{//生成 butcher 屠夫
-				if(CyborgsId == -1){break;}
-				SpawnSoldier(m_metagame,1,CyborgsId,PosSpawnProjectile,"Butcher");
-				break;
-			}
-			case 8:{//生成 legionnaire 军团士兵
-				if(CyborgsId == -1){break;}
-				SpawnSoldier(m_metagame,1,CyborgsId,PosSpawnProjectile,"Legionnaire");
-				break;
-			}
-			case 9:{//生成 immolator 生化兵
-				if(CyborgsId == -1){break;}
-				SpawnSoldier(m_metagame,1,CyborgsId,PosSpawnProjectile,"Immolator");
-				break;
-			}
-			case 10:{//生成 hulk 巨型者
-				if(CyborgsId == -1){break;}
-				SpawnSoldier(m_metagame,1,CyborgsId,PosSpawnProjectile,"Hulk");
-				break;
-			}
-			case 11:{//生成 warlord 首领
-				if(CyborgsId == -1){break;}
-				SpawnSoldier(m_metagame,1,CyborgsId,PosSpawnProjectile,"Warlord");
-				break;
-			}
-			case 12:{//自动炮台：A-MG-11-mk3	------------------------------------------
-				if(SuperEarthId == -1){break;}
-				SpawnSoldier(m_metagame,1,SuperEarthId,PosSpawnProjectile,"amg_11_mk3_hd");
-				break;
-			}
-			case 13:{//自动炮台：A-MG-11-mk3
-				if(ACGId == -1){break;}
-				SpawnSoldier(m_metagame,1,ACGId,PosSpawnProjectile,"amg_11_mk3_acg");
-				break;
-			}
-			case 14:{//自动炮台：A-MG-11-mk2
-				if(SuperEarthId == -1){break;}
-				SpawnSoldier(m_metagame,1,SuperEarthId,PosSpawnProjectile,"amg_11_mk2_hd");
-				break;
-			}
-			case 15:{//自动炮台：A-MG-11-mk2
-				if(ACGId == -1){break;}
-				SpawnSoldier(m_metagame,1,ACGId,PosSpawnProjectile,"amg_11_mk2_acg");
-				break;
-			}
-			case 16:{//自动炮台：A-MG-11-mk1
-				if(SuperEarthId == -1){break;}
-				SpawnSoldier(m_metagame,1,SuperEarthId,PosSpawnProjectile,"amg_11_mk1_hd");
-				break;
-			}
-			case 17:{//自动炮台：A-MG-11-mk1
-				if(ACGId == -1){break;}
-				SpawnSoldier(m_metagame,1,ACGId,PosSpawnProjectile,"amg_11_mk1_acg");
-				break;
-			}
-			case 18:{//自动炮台：A-RX-34-mk3	------------------------------------------
-				if(SuperEarthId == -1){break;}
-				SpawnSoldier(m_metagame,1,SuperEarthId,PosSpawnProjectile,"arx_34_mk3_hd");
-				break;
-			}
-			case 19:{//自动炮台：A-RX-34-mk3
-				if(ACGId == -1){break;}
-				SpawnSoldier(m_metagame,1,ACGId,PosSpawnProjectile,"arx_34_mk3_acg");
-				break;
-			}
-			case 20:{//自动炮台：A-RX-34-mk2
-				if(SuperEarthId == -1){break;}
-				SpawnSoldier(m_metagame,1,SuperEarthId,PosSpawnProjectile,"arx_34_mk2_hd");
-				break;
-			}
-			case 21:{//自动炮台：A-RX-34-mk2
-				if(ACGId == -1){break;}
-				SpawnSoldier(m_metagame,1,ACGId,PosSpawnProjectile,"arx_34_mk2_acg");
-				break;
-			}
-			case 22:{//自动炮台：A-RX-34-mk1
-				if(SuperEarthId == -1){break;}
-				SpawnSoldier(m_metagame,1,SuperEarthId,PosSpawnProjectile,"arx_34_mk1_hd");
-				break;
-			}
-			case 23:{//自动炮台：A-RX-34-mk1
-				if(ACGId == -1){break;}
-				SpawnSoldier(m_metagame,1,ACGId,PosSpawnProjectile,"arx_34_mk1_acg");
-				break;
-			}
-			case 24:{//地狱潜兵 修改为仅生成己方AI
-				if(name_of_fid0 == "ACG" || name_of_fid0 == "Super Earth"){
-					SpawnSoldier(m_metagame,1,0,PosSpawnProjectile,"HellDiver");
-				}else{
-					SpawnSoldier(m_metagame,1,0,PosSpawnProjectile,"default_ai");
-				}
-
-				break;
-			}
-
-			
-			default:{
-				break;
-			}
+		string Pos= event.getStringAttribute("position");
+		if(g_factionInfoBuck.get(EventKeyGet)){
+			int fid = g_factionInfoBuck.getFidByGroupName(EventKeyGet);
+			SpawnSoldier(m_metagame,1,fid,PosSpawnProjectile,EventKeyGet);
+			//_report(m_metagame,"DTIME="+m_Timer.endT());
 		}
 	}
 }

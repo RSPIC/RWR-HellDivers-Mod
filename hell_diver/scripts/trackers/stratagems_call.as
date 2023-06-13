@@ -7,6 +7,9 @@
 #include "gamemode.as"
 #include "all_helper.as"
 #include "all_parameter.as"
+
+#include "debug_reporter.as"
+
 //Author: RST
 
 // 支援信标护甲代码
@@ -125,8 +128,62 @@ dictionary stratagems_CD = {
 	 // 空
 	{"",0},
 
-	{"hd_offensive_vindicator_dive_bomb_mk3",4},
+	// Offensive 攻击性支援
+	{"hd_offensive_vindicator_dive_bomb_mk3",3},
+	{"hd_offensive_airstrike_mk3",30},
+	{"hd_offensive_laser_strike_mk3",60},
+	{"hd_offensive_shredder_missile_strike_mk3",70},
+	{"hd_offensive_close_air_support_mk3",25},
+	{"hd_offensive_thunderer_barrage_mk3",60},
+	{"hd_offensive_strafing_run_mk3",3},
+	{"hd_offensive_static_field_conductors_mk3",15},
+	{"hd_offensive_sledge_precision_artillery_mk3",40},
+	{"hd_offensive_railcannon_strike_mk3",20},
+	{"hd_offensive_missile_barrage_mk3",60},
+	{"hd_offensive_incendiary_bombs_mk3",15},
+	{"hd_offensive_heavy_strafing_run_mk3",10},
 
+	// defensive 防御性支援
+	{"hd_at_mine_mk3",15},
+	{"hd_airdropped_stun_mine_mk3",10},
+	{"hd_at47_mk3_call",60},
+	{"hd_amg_11_mk3_call",60},
+	{"hd_arx_34_mk3_call",40},
+	{"hd_agl8_mk3_call",40},
+	{"hd_aac6_tesla_mk3_call",60},
+
+	// special 特殊支援
+	{"hd_nux_223_hellbomb",10},
+	{"hd_hellpod",3},
+	{"hd_sup_mental_detector_call",10},
+
+	// Supply 普通支援
+	{"hd_m5_apc_call",120},
+	{"hd_m5_32_hav_call",240},
+	{"hd_td110_bastion_call",360},
+	{"hd_mc109_motor_call",30},
+	{"hd_exo44_mk3",15},
+	{"hd_exo48_mk3",15},
+	{"hd_exo51_mk3",15},
+
+	// weapons 武器支援
+	{"hd_resupply",20}, 
+	{"hd_lmg_mg94_mk3",60},
+	{"hd_lmg_mgx42_mk3",60},
+	{"hd_laser_las98_laser_cannon_mk3",120},
+	{"hd_exp_ac22_dum_dum_mk3",120},
+	{"hd_exp_obliterator_grenade_launcher_full_upgrade",120},
+	{"hd_exp_m25_rumbler_full_upgrade",120},
+	{"hd_pst_flam40_incinerator_mk3",60},
+	{"hd_pst_tox13_avenger_mk3",120},
+	{"hd_exp_rl112_recoilless_rifle_mk3",30},
+	{"hd_exp_eta17_mk3",15},
+	{"hd_exp_mls4x_commando_mk3",60},
+	{"hd_drone_ad334_guard_dog_mk3",60},
+	{"hd_drone_ad289_angel_mk3",60},
+	{"hd_sup_rep80_mk3",60},
+	{"hd_exp_rec6_demolisher_mk3",30},
+	{"hd_resupply_pack_mk3",60},
 	// 占位的
 	{"666",-1}
 };

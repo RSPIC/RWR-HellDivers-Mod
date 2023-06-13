@@ -21,27 +21,29 @@
 
 	<!-- player group -->
 	<soldier name="default" spawn_score="0.0">
-		<character filename="helldivers_default_chat.character">
-			<parameter class="default_squad_config_index" value="0" />
+		<character filename="bugs_behemoth_state.character">
 		</character>
-		<ai filename="default.ai" />
+		<ai filename="bugs_scout.ai" />
 
-		<model filename="hdivers_black_ops.xml" />
+		<model filename="bugs_behemoth.xml" />
+		<models filename="bugs_default.models" />
+
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
-		<resources file="common.resources" />
-		<resources file="hd_player.resources" clear_weapons="0" clear_vehicles="0" clear_carry_items="0" clear_calls="0" clear_grenades="0"/>
-		<resources file="hd_divers.resources" >
-			<weapon key="normal.weapon" />
+		<resources file="bugs_all.resources" />
+		<resources file="bugs_common.resources">
+			<carry_item key="general_vest_1000" />
+			<carry_item key="stun_vest_300" />
 		</resources>
 		
-		
 		<item_class_existence_config>
+			<!-- main -->
+			<item_class_existence class="weapon" slot="0" probability="1" />
 			<!-- secondaries -->
 			<item_class_existence class="weapon" slot="1" probability="1" />
 			<!-- wearables -->
 			<item_class_existence class="carry_item" slot="1" probability="1" />
 			<!-- backpack -->
-			<item_class_existence class="carry_item" slot="0" probability="1" />
+			<item_class_existence class="carry_item" slot="0" probability="0" />
 		</item_class_existence_config>
 
 		<attribute_config class="rp">
@@ -55,11 +57,324 @@
 	</soldier>
 	
 	<!-- default ai group -->
-	<soldier name="default_ai" spawn_score="1.0" copy_from="default">
-			<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
-			<resources file="hd_divers.resources" />
+	<soldier name="default_ai" spawn_score="0.0" >
+		<character filename="bugs_scout_state.character"> 
+		</character>
+		<ai filename="bugs_scout.ai" />
+
+		<model file="bugs_scout.xml" />		
+		<models filename="bugs_default.models" />
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="bugs_common.resources" />
+		<resources>
+			<weapon key="bugs_scout_main.weapon" />
+			<carry_item key="general_vest_5" />
+			<carry_item key="general_vest_6" />
+			<carry_item key="general_vest_7" />
+		</resources>
+
+		<item_class_existence_config>
+			<!-- main -->
+			<item_class_existence class="weapon" slot="0" probability="1" />
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="1" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="0.32" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="0.075" />
+		</item_class_existence_config>
+
+		<attribute_config class="rp">
+			<attribute weight="0.3" min="10000.0" max="10000.0" />
+			<attribute weight="0.7" min="10000.0" max="10000.0" />
+		</attribute_config>
+
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="0.0" max="0.45" />
+		</attribute_config>
 	</soldier>
-  
+
+	<soldier name="base" spawn_score="0" >
+		<character filename="bugs_default_chat.character">
+		</character>
+		<ai filename="bugs_scout.ai" />	
+		<models filename="bugs_default.models" />
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+
+		<item_class_existence_config>
+			<!-- main -->
+			<item_class_existence class="weapon" slot="0" probability="1" />
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="1" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="1" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="0.125" />
+		</item_class_existence_config>
+
+		<attribute_config class="rp">
+			<attribute weight="1" min="1.0" max="1.0" />
+		</attribute_config>
+
+		<attribute_config class="xp">
+			<attribute weight="1" min="0.0" max="0.0" />
+		</attribute_config>
+	</soldier>
+
+<!-- Scout -->
+	<!-- 侦查虫 -->
+	<soldier name="Scout" spawn_score="1.5" copy_from="base" >
+		<character filename="bugs_scout_state.character">	
+			
+		</character>
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="bugs_common.resources" />
+		<resources>
+			<weapon key="bugs_scout_main.weapon" />
+			<!-- <projectile key="bugs_scout_alert_spawn.projectile" /> -->
+			<carry_item key="general_vest_5" />
+			<carry_item key="general_vest_6" />
+			<carry_item key="general_vest_7" />
+		</resources>
+		
+		<ai filename="bugs_scout.ai" /> 
+		
+		<model filename="bugs_scout.xml" />
+
+		<!-- low XP, likely to join player squad -->
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="2.0" max="2.0" />
+			<attribute weight="1.0" min="1.0" max="1.0" />
+			<attribute weight="1.0" min="3.0" max="3.0" />
+		</attribute_config>
+	</soldier> 
+	<!-- Vanguard -->
+	<soldier name="Vanguard" spawn_score="0.8" copy_from="base" >
+		<character filename="bugs_scout_state.character">	
+		</character>
+		<ai filename="bugs_scout.ai" /> 
+		<model filename="bugs_vanguard.xml" />
+
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="bugs_common.resources" />
+		<resources  >
+			<weapon key="bugs_vanguard_main.weapon" />
+			<projectile key="bugs_vanguard_alert_spawn.projectile" />
+			<projectile key="bugs_scout_alert_spawn.projectile" />
+			<carry_item key="general_vest_6" />
+			<carry_item key="general_vest_7" />
+			<carry_item key="general_vest_8" />
+		</resources>
+		
+
+
+		<!-- low XP, likely to join player squad -->
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="2.0" max="2.0" />
+			<attribute weight="1.0" min="1.0" max="1.0" />
+			<attribute weight="1.0" min="3.0" max="3.0" />
+		</attribute_config>
+	</soldier> 
+	<!-- Shadow -->
+	<soldier name="Shadow" spawn_score="0.2" copy_from="base" >
+		<character filename="bugs_stalker_state.character">	
+		</character>
+		<ai filename="bugs_stalker.ai" />
+		<model filename="bugs_shadow.xml" />
+
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="bugs_common.resources">
+			<weapon key="bugs_shadow_main.weapon" />
+			
+			<projectile key="bugs_shadow_grenade.projectile" />
+			<projectile key="bugs_shadow_alert_spawn.projectile" />
+
+			<carry_item key="stun_vest_40" />
+			<carry_item key="stun_vest_50" />
+			<carry_item key="stun_vest_60" />
+			<carry_item key="stun_vest_70" />
+			<carry_item key="stun_vest_80" />
+		</resources>
+
+		<!-- low XP, likely to join player squad -->
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="2.0" max="2.0" />
+			<attribute weight="1.0" min="1.0" max="1.0" />
+			<attribute weight="1.0" min="3.0" max="3.0" />
+		</attribute_config>
+	</soldier> 
+<!-- Infantry -->
+	<!-- Warrior -->
+	<soldier name="Warrior" spawn_score="2.0" copy_from="base" >
+		<character filename="bugs_warrior_state.character">	
+		</character>
+		<ai filename="bugs_scout.ai" />
+		<model filename="bugs_warrior.xml" />
+
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="bugs_common.resources">
+			<weapon key="bugs_warrior_main.weapon" />
+
+			<carry_item key="general_vest_30" />
+			<carry_item key="general_vest_35" />
+			<carry_item key="general_vest_40" />
+			<carry_item key="general_vest_45" />
+			<carry_item key="general_vest_50" />
+			<carry_item key="general_vest_55" />
+			<carry_item key="general_vest_60" />
+		</resources>
+
+
+		<!-- low XP, likely to join player squad -->
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="2.0" max="2.0" />
+			<attribute weight="1.0" min="1.0" max="1.0" />
+			<attribute weight="1.0" min="3.0" max="3.0" />
+		</attribute_config>
+	</soldier> 
+	<!-- Elite -->
+	<soldier name="Elite" spawn_score="0.25" copy_from="base" >
+		<character filename="bugs_warrior_state.character">	
+		</character>
+		<ai filename="bugs_scout.ai" />
+		<model filename="bugs_elite.xml" />
+
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="bugs_common.resources">
+			<weapon key="bugs_elite_main.weapon" />
+
+			<carry_item key="general_vest_40" />
+			<carry_item key="general_vest_45" />
+			<carry_item key="general_vest_50" />
+			<carry_item key="general_vest_55" />
+			<carry_item key="general_vest_60" />
+			<carry_item key="general_vest_65" />
+			<carry_item key="general_vest_70" />
+			<carry_item key="general_vest_75" />
+			<carry_item key="general_vest_80" />
+		</resources>
+
+
+		<!-- low XP, likely to join player squad -->
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="2.0" max="2.0" />
+			<attribute weight="1.0" min="1.0" max="1.0" />
+			<attribute weight="1.0" min="3.0" max="3.0" />
+		</attribute_config>
+	</soldier> 
+	<!-- Stalker -->
+	<soldier name="Stalker" spawn_score="1" copy_from="base" >
+		<character filename="bugs_stalker_state.character">	
+		</character>
+		<ai filename="bugs_stalker.ai" />
+		<model filename="bugs_stalker.xml" />
+
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="bugs_common.resources">
+			<weapon key="bugs_stalker_main.weapon" />
+			<projectile key="bugs_stalker_grenade.projectile" />
+
+			<carry_item key="stun_vest_30" />
+			<carry_item key="stun_vest_40" />
+			<carry_item key="stun_vest_50" />
+			<carry_item key="stun_vest_60" />
+			<carry_item key="stun_vest_70" />
+		</resources>
+
+		<!-- low XP, likely to join player squad -->
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="2.0" max="2.0" />
+			<attribute weight="1.0" min="1.0" max="1.0" />
+			<attribute weight="1.0" min="3.0" max="3.0" />
+		</attribute_config>
+	</soldier> 
+<!-- Elite -->
+	<!-- Brood Commander -->
+	<soldier name="BroodCommander" spawn_score="0.02" copy_from="base" >
+		<character filename="bugs_warrior_state.character">	
+		</character>
+		<ai filename="bugs_scout.ai" /> 
+		<model filename="bugs_brood_commander.xml" />
+
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="bugs_common.resources">
+			<weapon key="bugs_brood_commander_main.weapon" />
+			<carry_item key="general_vest_230" />
+		</resources>
+
+
+		<!-- low XP, likely to join player squad -->
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="2.0" max="2.0" />
+			<attribute weight="1.0" min="1.0" max="1.0" />
+			<attribute weight="1.0" min="3.0" max="3.0" />
+		</attribute_config>
+	</soldier> 
+
+<!-- Tank -->
+	<!-- Behemoth -->
+	<soldier name="Behemoth" spawn_score="0.02" copy_from="base" >
+		<character filename="bugs_behemoth_state.character">	
+		</character>
+		<ai filename="bugs_behemoth.ai" /> 
+		<model filename="bugs_behemoth.xml" />
+
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="bugs_common.resources">
+			<weapon key="bugs_behemoth_main.weapon" />
+			<carry_item key="general_vest_420" />
+		</resources>
+
+
+		<!-- low XP, likely to join player squad -->
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="10.0" max="10.0" />
+
+		</attribute_config>
+	</soldier> 
+	<!-- Tank -->
+	<soldier name="Tank" spawn_score="0.1" copy_from="base" >
+		<character filename="bugs_behemoth_state.character">	
+		</character>
+		<ai filename="bugs_behemoth.ai" /> 
+		<model filename="bugs_tank.xml" />
+
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="bugs_common.resources">
+			<weapon key="bugs_tank_main.weapon" />
+			<carry_item key="general_vest_280" />
+		</resources>
+
+
+		<!-- low XP, likely to join player squad -->
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="10.0" max="10.0" />
+
+		</attribute_config>
+	</soldier> 
+	<!-- Impaler -->
+	<soldier name="Impaler" spawn_score="0.05" copy_from="base" >
+		<character filename="bugs_behemoth_state.character">	
+		</character>
+		<ai filename="bugs_behemoth.ai" /> 
+		<model filename="bugs_impaler.xml" />
+
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="bugs_common.resources">
+			<weapon key="bugs_impaler_main.weapon" />
+			<carry_item key="general_vest_350" />
+		</resources>
+
+
+		<!-- low XP, likely to join player squad -->
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="10.0" max="10.0" />
+
+		</attribute_config>
+	</soldier> 
+
+
+
 	<!-- supply box group -->
 	<soldier name="supply" spawn_score="0.0">
 		<resources file="supply_common.resources" />

@@ -40,7 +40,7 @@ key="ex_apocalypse_tank_gl.weapon"
 	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_vehicle_destroy_damage.projectile" 
 	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0.0 0.0" />
 
- 	<sound class="operation" key="fire" fileref="ex_turret_fire.wav" pitch_variety="0.1" volume="0.7"/>
+ 	<sound class="operation" key="fire" fileref="ex_turret_fire.wav" pitch_variety="0.1" volume="0.6"/>
 
     <model mesh_filename="" texture_filename="" /> 
     <addon_model filename="" /> 
@@ -61,7 +61,7 @@ key="ex_apocalypse_tank_gl.weapon"
 		<!-- damage 4x20=80 轰炸伤-->
 
 		<!--命中音效-->
-		<sound class="result" key="other" fileref="at_hit_sfx_2.wav" pitch_variety="0.03" volume="1.0" />
+		<sound class="result" key="other" fileref="at_hit_sfx_2.wav" pitch_variety="0.03" volume="0.75" />
 	
 		<trigger class="time" time_to_live="0.4"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->

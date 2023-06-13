@@ -33,8 +33,6 @@ void main(dictionary@ inputData) {
         settings.m_debug_mode = true;
 
         _setupLog("dev_verbose");
-
-        settings.m_factionChoice = 0;
         array<string> overlays = {
                 "media/packages/hell_diver"
         };

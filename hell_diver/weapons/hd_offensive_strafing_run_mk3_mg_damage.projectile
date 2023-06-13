@@ -120,7 +120,7 @@ player_death_drop_owner_lock_time="0"
 >
     <collision class="sticky" />
 	<result class="spawn" instance_class="projectile" instance_key="hd_offensive_strafing_run_mk3_mg_damage.projectile" 
-	min_amount="8" max_amount="10" offset="0 0 0" position_spread="5 0" direction_spread="0 0" />	
+	min_amount="12" max_amount="15" offset="0 0 0" position_spread="5 0" direction_spread="0 0" />	
 	<trigger class="impact" time_to_live="0" />	
   	<rotation class="motion" />
 	<model mesh_filename="" />

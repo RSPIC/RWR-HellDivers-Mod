@@ -238,9 +238,9 @@ class BasicCommandHandler : Tracker {
 			if (ws == 1){return;}
 			string key = word[1];
 			if (ws == 2){
-			spawnInstanceAtbackpack(senderId, key + ".carry_item", "carry_item");
+			spawnInstanceAtbackpack(senderId, key , "carry_item");
 			} else if (ws == 3){
-			spawnInstanceAtbackpack(senderId, key + ".carry_item", "carry_item", word[2]);
+			spawnInstanceAtbackpack(senderId, key , "carry_item", word[2]);
 			}
 		}
 		// ---------------------------------------------------------------------------------------------------------------

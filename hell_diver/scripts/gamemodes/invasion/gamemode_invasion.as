@@ -47,8 +47,13 @@
 #include "kill_reward.as"
 #include "dynamic_alert.as"
 #include "share_samples.as"
-#include "scheduled_task.as"
 #include "player_spawn_event.as"
+#include "schedule_Manager.as"
+#include "schedule_Check.as"
+#include "bgm_control.as"
+#include "INFO.as"
+#include "IO_data.as"
+
 
 
 
@@ -329,8 +334,6 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		setupSideBaseAttackHandler();
 		//setupIdlerKicker();
 
-		// setupScheduledTask();
-
 		//addTracker(SupporterCommandHandler(this));
 	}
 
@@ -353,7 +356,11 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		addTracker(call_event(this));    
 		addTracker(player_spawn(this));
 		addTracker(dynamic_alert(this));   
-		addTracker(scheduled_task(this));  
+		addTracker(schedule_Manager(this));  
+		addTracker(schedule_Check(this));  
+		addTracker(bgm_control(this));  
+		addTracker(Initiate(this));  
+		addTracker(IO_data(this));  
 	}
 
 	protected void setupDisableRadioAtMatchOver() {
@@ -430,11 +437,7 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 	protected void setupIdlerKicker() {
 		addTracker(IdlerKicker(this));
 	}
-	// --------------------------------------------
-	// protected void setupScheduledTask() {
-	// 	addTracker(scheduled_task(this));    
-	// }
-	
+
 	// --------------------------------------------
 	protected void setupIcecreamReport() {
 		VehicleHintConfig hintConfig("icecream.vehicle", "icecream truck exists", "", 0, "region", false, 300.0, 600.0);

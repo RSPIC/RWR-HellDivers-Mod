@@ -166,16 +166,25 @@
 	<!-- player group -->
 	<soldier name="default" spawn_score="0.0">
 		<character filename="helldivers_default_chat.character">
-			<parameter class="default_squad_config_index" value="0" />
+
+			<parameter class="detectability_prone" value="0.4" />
+			<parameter class="detectability_wounded" value="0.4" />
+			<parameter class="detectability_crouching" value="0.55" />
+			<parameter class="detectability_crouch_moving" value="0.6" />
+			<parameter class="detectability_walking" value="0.95" />
+			<parameter class="detectability_still" value="0.8" />
+			<parameter class="detectability_running" value="1" />
+
 		</character>
 		<ai filename="default_super_earth.ai" />
 
-		<model filename="hdivers_black_ops.xml" />
 		<models file="extra_weapons.models" />
 		<models file="hd_weapons.models" />
+		<models file="hd_rare.models" />
 
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="common.resources" />
+		<resources file="hd_ex_armory.resources" />
 		<resources file="hd_player.resources" >
 			<projectile key="acg_amg_11_mk3_call.projectile" enabled="0" /><!--自动机枪炮台-->
 			<projectile key="acg_arx_34_mk3_call.projectile" enabled="0" /><!--自动轨道炮炮台-->
@@ -210,6 +219,7 @@
 
 		<models file="extra_weapons.models" />
 		<models file="hd_weapons.models" />
+		<models file="hd_base.models" />
 
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 
@@ -234,7 +244,7 @@
 	</soldier>
 
 	<!-- default ai group -->
-	<soldier name="default_ai" spawn_score="1.0" copy_from="base">
+	<soldier name="default_ai" spawn_score="3.0" copy_from="base">
 		<model filename="hdivers_black_ops.xml" />
 			<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 			<resources file="hd_divers.resources" />
@@ -257,7 +267,7 @@
 			<!-- wearables -->
 			<item_class_existence class="carry_item" slot="1" probability="1" />
 			<!-- backpack -->
-			<item_class_existence class="carry_item" slot="0" probability="0.1" />
+			<item_class_existence class="carry_item" slot="0" probability="0.35" />
 		</item_class_existence_config>
 	</soldier>
 
@@ -289,7 +299,7 @@
   
 
 	<!-- 地球元帅 -->
-	<soldier name="Ceremonial" spawn_score="0.01" copy_from="base">
+	<soldier name="Ceremonial" spawn_score="0.1" copy_from="base">
 		<model filename="hdivers_ceremonial.xml" />
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources>
@@ -320,7 +330,7 @@
 	</soldier> 
 
 	<!-- 狙击手 -->
-	<soldier name="Volcanic" spawn_score="0.001" copy_from="base">
+	<soldier name="Volcanic" spawn_score="0.1" copy_from="base">
 		<model filename="hdivers_volcanic.xml" />
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources>
@@ -369,10 +379,14 @@
 			<attribute weight="1.0" min="0.0" max="0.05" />
 		</attribute_config>
 	</soldier>              
-
+	<!-- EX补给箱 -->
 	<soldier name="supply_ex_box" spawn_score="0.0" copy_from="default_ai">
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="supply_ex_box.resources"/>
+		<resources file="acg_player.resources" >
+			<projectile key="acg_amg_11_mk3_call.projectile" enabled="0" /><!--自动机枪炮台-->
+			<projectile key="acg_arx_34_mk3_call.projectile" enabled="0" /><!--自动轨道炮炮台-->
+		</resources>
 	</soldier> 
 	<!-- 机甲补给箱 -->
 	<soldier name="exo44_mk3" spawn_score="0.0" copy_from="default_ai">
@@ -402,10 +416,11 @@
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources>
 			<weapon key="hd_amg_11_mk3.weapon" /><!--机枪-->
-			<carry_item key="anti_melee_vest.carry_item" /><!--护甲-->
+			<carry_item key="anti_melee_vest_300" /><!--护甲-->
 		</resources>
 		<ai filename="hd_amg11.ai" />
-		<character filename="hd_amg11.character"/>
+		<!-- <character filename="hd_amg11.character"/> -->
+		<character filename="helldivers_default_chat.character"/>
 		<model filename="null_body.xml" />
 
 		<item_class_existence_config>
@@ -429,12 +444,13 @@
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources>
 			<weapon key="hd_arx_34_mk3.weapon" /><!--轨道炮-->
-			<carry_item key="anti_melee_vest.carry_item" /><!--300层护甲-->
+			<carry_item key="anti_melee_vest_300" /><!--300层护甲-->
 		</resources>
 		<ai filename="hd_amg11.ai" >
 			<parameter class="accuracy_offset" value="1.0" />
 		</ai>
-		<character filename="hd_amg11.character"/>
+		<!-- <character filename="hd_amg11.character"/> -->
+		<character filename="helldivers_default_chat.character"/>
 		<model filename="null_body.xml" />
 
 		<item_class_existence_config>
@@ -455,9 +471,17 @@
 		</attribute_config>
 	</soldier> 
 
-	<soldier name="test" spawn_score="0.0" copy_from="default">
+	<soldier name="test" spawn_score="0.0" copy_from="base">
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="test.resources" />
+	</soldier> 
+
+	<soldier name="acg_weapon" spawn_score="0.0" copy_from="base">
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="acg_player.resources" >
+			<projectile key="acg_amg_11_mk3_call.projectile" enabled="0" /><!--自动机枪炮台-->
+			<projectile key="acg_arx_34_mk3_call.projectile" enabled="0" /><!--自动轨道炮炮台-->
+		</resources>
 	</soldier> 
 
 </faction>

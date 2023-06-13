@@ -1,0 +1,310 @@
+author: RST
+2022.7.29
+
+particle_system 22missile_trail
+{
+	quota 400
+	material 22missile_smoke_1
+	particle_width 3
+	particle_height 3
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.8
+		duration 5
+	}
+	affector Scaler
+	{
+		rate 6
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	-90
+		rotation_speed_range_end	90
+		rotation_range_start	0
+		rotation_range_end	180
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 0.45 1
+		time1 0.28
+		colour1 1 0.8 0.2 0.6
+		time2 0.3
+		colour2 1 0.8 0.5 0.5
+		time3 0.45
+		colour3 1 1 1 0.25
+		time4 1
+		colour4 0.6 0.6 0.6 0
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system 22missile_hit_smoke_ambient		//环境烟雾
+{
+	quota 300
+	material 22missile_smoke_2_pass
+	particle_width 20
+	particle_height 20
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	accurate_facing on
+	emitter Ring
+	{
+		angle 0
+		colour 0.8 0.8 0.8 0.18
+		direction 0 1 0
+		emission_rate 500
+		position 0 2 0
+		velocity_min 0.001
+		velocity_max 0.001
+		time_to_live_min 2
+		time_to_live_max 3
+		duration 0.1
+		width 40
+		height 40
+		depth 4
+		inner_width 0.3
+		inner_height 0.3
+	}
+	affector Scaler
+	{
+		rate 1
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	30
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	180
+	}
+	affector ColourFader2
+	{
+		red1 	0.0
+		green1 	0.0
+		blue1 	0.0
+		alpha1 	0
+		red2 	-0
+		green2	-0
+		blue2	-0
+		alpha2	-0.18
+		state_change 1
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+
+particle_system 22missile_hit_smoke_fire_smoke //爆炸火焰
+{
+	quota 200
+	material explosion_fog_01_pass
+	particle_width 20
+	particle_height 20
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	accurate_facing off
+	iteration_interval 0.01
+	emitter Point
+	{
+		angle 45
+		colour 1 0.3 0 1
+		direction 0 1 0
+		emission_rate 150
+		position 0 0 0
+		velocity_min 10
+		velocity_max 15
+		time_to_live_min 1
+		time_to_live_max 1
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 1
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	180
+		rotation_speed_range_end	-180
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	10
+		green1 	0
+		blue1 	0
+		alpha1 	10
+		red2 	-2
+		green2	-1
+		blue2	-0
+		alpha2	-2
+		state_change 0.5
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity true
+	}
+}
+particle_system CIWS_updust
+{
+	quota 200
+	material 22missile_smoke_2
+	particle_width 4
+	particle_height 4
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0.5 0.5 0.5 0.2
+		direction 0 1 0
+		emission_rate 40
+		position 0 0 0
+		velocity_min 5
+		velocity_max 6
+		time_to_live_min 0.7
+		time_to_live_max 1.2
+		duration 0.3
+	}
+	affector Scaler
+	{
+		rate 6
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	90
+		rotation_speed_range_end	-90
+		rotation_range_start	0
+		rotation_range_end	180
+	}
+	affector ColourFader2
+	{
+		red1 	0.5
+		green1 	0.5
+		blue1 	0.5
+		alpha1 	0
+		red2 	0
+		green2	0
+		blue2	0
+		alpha2	-0.6
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 5 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material 22missile_smoke_1 : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture 22missile_smoke_1.png 	
+}}}}
+material explosion_fog_01_pass : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture explosion_fog_01.png 	
+}}}}
+material 22missile_smoke_2_pass : alpha_blend_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture 22missile_smoke_2.png 	
+}}}}
+material 22missile_smoke_2 : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture 22missile_smoke_2.png 	
+}}}}
+material 22missile_trail : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture 22missile_trail.png 	
+}}}}
+

@@ -19,6 +19,10 @@
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
 			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -47,6 +51,10 @@
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
 			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -74,6 +82,10 @@
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
 			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -101,6 +113,10 @@
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
 			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -128,6 +144,10 @@
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
 			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -155,6 +175,10 @@
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
 			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -182,6 +206,10 @@
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
 			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -208,6 +236,10 @@
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
 			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -235,6 +267,10 @@
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
 			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -262,6 +298,10 @@
             <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
             <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
             <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
             <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
                   min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -288,6 +328,10 @@
             <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
             <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
             <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
             <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
                   min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -314,6 +358,10 @@
             <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
             <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
             <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
             <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
                   min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -340,6 +388,10 @@
             <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
             <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
             <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
             <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
                   min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -366,6 +418,10 @@
             <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
             <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
             <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
             <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
                   min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -392,6 +448,10 @@
             <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
             <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
             <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
             <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
                   min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -418,6 +478,10 @@
             <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
             <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
             <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
             <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
                   min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -444,6 +508,10 @@
             <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
             <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
             <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
             <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
                   min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -470,6 +538,10 @@
             <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
             <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
             <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
             <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
                   min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -496,6 +568,10 @@
             <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
             <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
             <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
             <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
                   min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -522,6 +598,10 @@
             <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
             <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
             <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
             <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
                   min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -552,6 +632,10 @@
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
 			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -578,6 +662,10 @@
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
 			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -604,6 +692,10 @@
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
 			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -630,6 +722,10 @@
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
 			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -656,6 +752,10 @@
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
 			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -682,6 +782,10 @@
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
 			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -708,6 +812,10 @@
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
 			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -734,6 +842,10 @@
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
 			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -760,6 +872,10 @@
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
 			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -786,6 +902,10 @@
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
 			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -812,6 +932,10 @@
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
 			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -840,6 +964,10 @@
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
 			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -866,6 +994,10 @@
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
 			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -892,6 +1024,10 @@
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
 			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -918,6 +1054,10 @@
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
 			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -944,6 +1084,10 @@
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
 			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -970,6 +1114,10 @@
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
 			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
@@ -996,11 +1144,15 @@
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
 			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
-         <modifier class="speed" value="2" /> 
+         <modifier class="speed" value="0" /> 
         <modifier class="hit_success_probability" value="-1.0" />
         <modifier class="detectability" value="-0.1" />
   </carry_item>
@@ -1022,11 +1174,15 @@
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
 			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
-         <modifier class="speed" value="2" /> 
+         <modifier class="speed" value="0" /> 
         <modifier class="hit_success_probability" value="-1.0" />
         <modifier class="detectability" value="-0.1" />
   </carry_item>
@@ -1048,11 +1204,15 @@
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
 			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
-         <modifier class="speed" value="2" /> 
+         <modifier class="speed" value="0" /> 
         <modifier class="hit_success_probability" value="-1.0" />
         <modifier class="detectability" value="-0.1" />
   </carry_item>
@@ -1075,6 +1235,10 @@
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="death" consumes_item="0" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="death" consumes_item="0"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="0"/><!--重穿-->
+      <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" consumes_item="0"/>
+      <modifier class="melee_hit_result" input_character_state="wound" output_character_state="death" consumes_item="0"/>
+      <modifier class="melee_hit_result" input_character_state="stun" output_character_state="death" consumes_item="0"/>
+      <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="0"/>
         <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_players_dead_effect.projectile" 
 			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 

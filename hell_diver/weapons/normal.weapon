@@ -28,8 +28,8 @@ on_ground_up="0 0 1"
     projectiles_per_shot="1" 
     projectile_speed="10.0"
 	barrel_offset_3d="0 0 0.5" 
-	carry_in_two_hands="1" 
-	stab_enabled="0" 
+	carry_in_two_hands="0" 
+	stab_enabled="1" 
 	stab_range="0" 
 	use_basic_muzzle_smoke_effect="0"
 	/> 
@@ -61,7 +61,7 @@ on_ground_up="0 0 1"
 	<animation state_key="crouch_moving_backwards" animation_key="" /><!--全身动作-->
     <animation state_key="prone_still" animation_key="" /><!--全身动作-->
 	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
-	<animation state_key="stabbing" animation_key="pistol whip 3" /><!--半身动作，武器可设置脱手-->
+	<animation state_key="stabbing" animation_key="Scout_stab" /><!--半身动作，武器可设置脱手-->
 
 	<!--武器音频-->
     <sound key="effect" fileref="" pitch_variety="0" volume="0.0" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
@@ -120,7 +120,7 @@ on_ground_up="0 0 1"
 		<effect class="activated" ref="LightShell_activated_smoke" /> -->
 
 		<!-- <effect class="result" key="terrain" ref="general_weapon_result_hitspot" lighting="0"/> -->
-		<effect class="result" key="terrain" ref="missile_result_cannon_blast_fire" lighting="0"/>
+		<!-- <effect class="result" key="terrain" ref="missile_result_cannon_blast_fire" lighting="0"/>
 		<effect class="result" key="terrain" ref="missile_result_cannon_blast_AmbientLight" lighting="0"/>
 		<effect class="result" key="terrain" ref="nova_s_result_impact_flame_1" lighting="0"/>
 		<effect class="result" key="terrain" ref="nova_s_result_impact_flame_3" lighting="0"/>
@@ -128,9 +128,10 @@ on_ground_up="0 0 1"
 		<effect class="result" key="terrain" ref="nova_s_gl_hit_smoke_02" lighting="0" post_processing="1"/> 
 		<effect class="result" key="terrain" ref="nova_s_result_ground_smoke" lighting="0" post_processing="1"/>
 		<effect class="result" key="terrain" ref="nova_s_result_blast_smoke_expanding" lighting="0" post_processing="1"/> 
-		<effect class="result" key="terrain" ref="missile_result_expanding_fire" lighting="0" post_processing="1"/> 
+		<effect class="result" key="terrain" ref="missile_result_expanding_fire" lighting="0" post_processing="1"/>  -->
 		
-		<effect class="activated" ref="missile_activated_cannon_flysmoke" lighting="0"/>
+		<effect class="activated" ref="bugs_spitter_splash_single_activated" lighting="0"/>
+		<effect class="activated" ref="bugs_spitter_splash_single_activated2" lighting="0"/>
 		<!-- <effect class="activated" ref="general_weapon_activated_bullet_light" lighting="0"/> -->
 	
 

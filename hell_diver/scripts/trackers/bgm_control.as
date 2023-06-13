@@ -7,19 +7,20 @@
 #include "query_helpers2.as"
 #include "gamemode.as"
 #include "gamemode_invasion.as"
-#include "all_helper.as"
-#include "all_parameter.as"
+
+#include "dynamic_alert.as"
+#include "debug_reporter.as"
+#include "INFO.as"
+
 //Author： rst
 //控制游戏进程中bgm的改变
 
 //BGM list
-dictionary cyborgs_bgm = {
+dictionary bgm_time = {
 
         // 空
         {"",-1},
 
-        {"cyborgs_fighting_bgm_1.wav",476},
-        {"cyborgs_fighting_bgm_2.wav",448},
         {"cyborgs_fighting_bgm_3.wav",448},
         {"cyborgs_fighting_bgm_4.wav",290},
         {"cyborgs_fighting_bgm_5.wav",290},
@@ -28,82 +29,188 @@ dictionary cyborgs_bgm = {
         {"cyborgs_searching_bgm_1.wav",196},
         {"cyborgs_searching_bgm_2.wav",196},
         {"cyborgs_searching_bgm_3.wav",14},
+        {"cyborgs_searching_bgm_5.wav",476},
+        {"cyborgs_searching_bgm_4.wav",448},
+
+        {"bugs_fighting_bgm_1.wav",252},
+        {"bugs_fighting_bgm_2.wav",221},
+        {"bugs_fighting_bgm_3.wav",196},
+        {"bugs_fighting_bgm_4.wav",252},
+        {"bugs_fighting_bgm_5.wav",196},
+        {"bugs_searching_bgm_1.wav",140},
+        {"bugs_searching_bgm_2.wav",252},
+        {"bugs_searching_bgm_3.wav",196},
+        {"bugs_searching_bgm_4.wav",140},
 
         // 占位的
         {"666",-1}
 
 };
-funcdef void FUNC_PTR(string p_name);
 
-class bgmControl : Tracker{
+
+class bgm_control : Tracker{
     protected GameModeInvasion@ m_metagame;
-    protected bool debug_mode;
     protected float m_cdTime;
 	protected float m_timer;
-    protected array<float> m_timer_list;	//延时时间
-	protected array<bool> m_timer_list_flag;	//启动flag
-	protected array<string> m_timer_list_key;	//存储使用对象或者key
-	protected array<string> m_timer_list_name;	//存储列表名用于查询和二次修改
-	protected array<FUNC_PTR@> m_timer_list_func; //函数指针
-	protected array<int> m_counter; //计数器
-	protected array<int> m_counter_cd; //计数器
-    protected array<bool> m_first_time;
+	protected float m_bgm_timer;
+	protected float m_debug_timer;
+    protected bool m_ended;
+    protected bool isFirst;
+    protected bool isFighting;
+    protected bool debug_mode;
 
     //--------------------------------------------
-    bgmControl(GameModeInvasion@ metagame,float time = 300.0){
+    bgm_control(GameModeInvasion@ metagame,float time = 60.0){
         @m_metagame = @metagame;
         const UserSettings@ settings = m_metagame.getUserSettings();
         debug_mode = settings.m_debug_mode;
-
+        m_bgm_timer = 3;
         m_cdTime = time;
 		m_timer = m_cdTime;
-
-        m_first_time.insertLast(false); //id：0 检测每局地图首次有玩家进入
-
+        m_debug_timer = 5.0;
     }
+    // --------------------------------------------
     void update(float time) {
-        m_timer -= time;
+        m_timer -= time;    //记录警报CD
+        m_bgm_timer -= time;    //记录歌曲时长
+        
 		if (m_timer < 0.0) {
-			refresh();
-			m_timer = m_cdTime;
+            if(isFighting){
+                isFighting = false;
+                m_timer = m_cdTime;
+                PlayBgm();
+            }
 		}
-        for(uint p=0 ; p<m_timer_list_func.length() ; p++){
-			if(p >= m_timer_list_flag.length()){continue;}
-			if(m_timer_list_flag[p]){
-				if(p >= m_timer_list.length()){continue;}
-				m_timer_list[p] -= time;
-				if(m_timer_list[p] <= 0.0){
-					m_timer_list_func[p](m_timer_list_key[p]);
-					m_timer_list_func.removeAt(p);
-					m_timer_list_flag.removeAt(p);
-					m_timer_list_key.removeAt(p);
-					m_timer_list_name.removeAt(p);
-					m_timer_list.removeAt(p);
-					p--;
-				}
-			}
-		}
-    }
-
-    //---------------------------------------------------------
-    protected void refresh() {
-
-    }
-    protected void handlePlayerConnectEvent(const XmlElement@ event){
-        if(!m_first_time[0]){
-            m_first_time = true;
-            string key = "_BGM";
-            m_timer_list_flag.insertLast(true);	//启动
-            m_timer_list_key.insertLast(key);//key,玩家名
-            m_timer_list.insertLast(2.5);	//延时时间
-            FUNC_PTR@ callback = FUNC_PTR(changeBgm);	//目标函数
-            m_timer_list_func.insertLast(callback);
-            m_timer_list_name.insertLast("changeBgm"); //列表名
+        if(m_bgm_timer < 0.0){
+            PlayBgm();
         }
+        if(debug_mode){
+            m_debug_timer -= time;
+            if(m_debug_timer < 0.0){
+                m_debug_timer +=5.0;
+                //_report(m_metagame,"BGM剩余时间:"+m_bgm_timer);
+                //_report(m_metagame,"警报CD剩余时间:"+m_timer);
+            }
+        }
+        debug_mode = g_debugMode;
+    }
+    // --------------------------------------------
+    void start(){
+        m_ended = false;
+        isFirst = true;
+        isFighting = false;
+        if(debug_mode){
+            m_cdTime = 10;
+            m_timer = 10;
+        }
+        PlayBgm();
+    }
+    // --------------------------------------------
+	bool hasEnded() const {
+		return m_ended;
+	}
+	// --------------------------------------------
+	bool hasStarted() const {
+		return true;
+	}
+    //---------------------------------------------------------
+    protected void PlayBgm(){
+        array<string> cyborgs_bgmList_fight = {
+            "cyborgs_fighting_bgm_3.wav",
+            "cyborgs_fighting_bgm_4.wav",
+            "cyborgs_fighting_bgm_5.wav",
+            "cyborgs_fighting_bgm_6.wav",
+            "cyborgs_fighting_bgm_7.wav"
+        };
+        array<string> cyborgs_bgmList_searching = {
+            "cyborgs_searching_bgm_1.wav",
+            "cyborgs_searching_bgm_2.wav",
+            "cyborgs_searching_bgm_4.wav",
+            "cyborgs_searching_bgm_5.wav"
+        };
+        array<string> cyborgs_bgmList_boss = {
+            "cyborgs_boss_bgm.wav"
+        };
+        array<string> bugs_bgmList_fight = {
+            "bugs_fighting_bgm_1.wav",
+            "bugs_fighting_bgm_2.wav",
+            "bugs_fighting_bgm_3.wav",
+            "bugs_fighting_bgm_4.wav",
+            "bugs_fighting_bgm_5.wav"
+        };
+        array<string> bugs_bgmList_searching = {
+            "bugs_searching_bgm_1.wav",
+            "bugs_searching_bgm_2.wav",
+            "bugs_searching_bgm_3.wav",
+            "bugs_searching_bgm_4.wav"
+        };
+        array<string> bugs_bgmList_boss = {
+            "bugs_boss_bgm_1.wav",
+            "bugs_boss_bgm_2.wav"
+        };
+
+        array<string> @bgmList_searching = cyborgs_bgmList_searching;
+        array<string> @bgmList_fight = cyborgs_bgmList_fight;
+
+        string f_name = g_factionInfoBuck.getNameByFid(1);
+        if(f_name == "Bugs"){
+            if(debug_mode){
+                _report(m_metagame,"Faction Bugs BGM");
+            }
+            bgmList_searching = bugs_bgmList_searching;
+            bgmList_fight = bugs_bgmList_fight;
+        }
+
+        string bgmName;
+        if(isFirst || !isFighting){
+            int soundrnd= rand(0,bgmList_searching.length() - 1);
+            playSoundtrack(m_metagame,bgmList_searching[soundrnd]);
+            bgmName = bgmList_searching[soundrnd];
+            if(debug_mode){
+                _report(m_metagame,"Serching BGM,id="+soundrnd);
+            }
+        }else if(isFighting){
+            int soundrnd= rand(0,bgmList_fight.length() - 1);
+            playSoundtrack(m_metagame,bgmList_fight[soundrnd]);
+            bgmName = bgmList_fight[soundrnd];
+            if(debug_mode){
+                _report(m_metagame,"Fighting BGM,id="+soundrnd);
+            }
+        }
+        if(!bgm_time.get(bgmName,m_bgm_timer)){//记录bgm时间到计时器
+            _report(m_metagame,"BGM Error,Report this question");
+            m_bgm_timer = 120;
+        }
+        if(debug_mode){
+            _report(m_metagame,"Playing BGM="+bgmName+" Time="+m_bgm_timer);
+        }
+        
     }
 
-    protected void changeBgm(){
-
+    // ----------------------------------------------------
+	protected void handleMatchEndEvent(const XmlElement@ event) {
+		m_ended = true;
+	}
+    // ----------------------------------------------------
+    protected void handleResultEvent(const XmlElement@ event) {
+        string EventKeyGet = event.getStringAttribute("key");
+        if (!(dynamic_alert_notify_key.exists(EventKeyGet))){
+			return;        
+		}
+        if(!isFighting){    //如果从非警报状态转为警报，则切换音乐。否则，重新刷新计时器
+            isFighting = true;
+            PlayBgm();
+        }
+        m_timer = m_cdTime;
     }
+    // ------------------------------------------------------
+    protected void handleChatEvent(const XmlElement@ event) {
+		string message = event.getStringAttribute("message");
+		if(message != "/bgm"){return;}
+        if(debug_mode){
+            PlayBgm();
+        }
+	}
+
 
 }

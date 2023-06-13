@@ -982,7 +982,7 @@
 	<text key="IS-2 M[1895] Beacon" text="IS-2 M[1895] 重型坦克 部署信标" />
 	<text key='IS-2 M[1895]"Babushka"' text="IS-2 M[1895] '巴巴季娜' 重型坦克" />
 
-	<text key="Himas Beacon" text="海马斯 火箭车 部署信标" />
+	<text key="Himars Beacon" text="海马斯 火箭车 部署信标" />
 
 	<text key='MT-LB 2b9-Vasilek"' text="矢车菊 自动迫击炮 轻型载具" />
 	<text key='MT-LB 2b9-Vasilek Beacon"' text="矢车菊 自动迫击炮 轻型载具 部署信标" />
@@ -1027,6 +1027,19 @@
 	<text key="cyborgs_spawn_immolator_model"  text="生化兵" />
 	<text key="cyborgs_spawn_initiate_model"  text="初始者" />
 	<text key="cyborgs_spawn_warlord_model"  text="首领-精英" />
+
+<!-- 虫族 -->
+	<text key="Bugs"  text="虫族" />
+	<text key="Warrior Melee"  text="武斗虫" />
+	<text key="Vanguard Melee"  text="先驱虫" />
+	<text key="Tank Melee"  text="坦克虫" />
+	<text key="Stalker Melee"  text="追踪虫" />
+	<text key="Shadow Melee"  text="黑暗影者" />
+	<text key="Scout Melee"  text="侦查虫" />
+	<text key="Impaler Melee"  text="刺钉虫" />
+	<text key="Elite Melee"  text="精英部队" />
+	<text key="Brood Commander Melee"  text="虫族指挥官" />
+	<text key="Behemoth Melee"  text="巨兽[中甲]" />
 
 <!-- 战利品 -->
 	<text key="Cirno Fumo"  text="琪露诺 Fumo [收藏品]" />
@@ -1154,6 +1167,8 @@
 	<text key="Fleet Admiral" text="舰队上将 V49" />
 	<text key="Admiral of Super Earth" text="超级地球元帅 V50" />
 
+	<text key="SuperEarth" text="超级地球" />
+
 <!-- 教程 -->
 	<text key="Tutor Help" text="[教程]如何游玩本MOD" />
 	<text key="Ammo Supply Help" text="[教程]子弹补给机制" />
@@ -1190,7 +1205,7 @@
 	<text key="63Type 107mm Help" text="[107火箭炮教程] 首次部署" />
 	<text key="Help - 63Type 107mm" text="本火箭炮具有炮手和观察员两个位，观察员位用于触发密位特效。炮手开火瞄准密位内圈的任意位置，火箭炮将会打击到密位外圈的指定位置。" />
 	<text key="Banzai Help" text="[刺雷教程] 首次使用" />
-	<text key="Help - Banzai" text="本武器左键使用后会加速，2.5s后自动爆炸。期间再次点击鼠标按钮即可提前引爆s" />
+	<text key="Help - Banzai" text="本武器左键使用后会加速，5s后自动爆炸。期间再次点击鼠标按钮即可提前引爆s" />
 
 	<text key="EXO Warning" text="[警告]你搭配了错误的机甲武器" />
 	<text key="Warning - EXO" text="[警告]机甲武器不可以混搭，你将无法自动替换机甲护甲，以及一段时间后会过载死亡" />

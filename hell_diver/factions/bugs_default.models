@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<models>
+	<!-- <model filename="hdivers_ceremonial.xml" /> -->
+	
+	<model filename="bugs_scout.xml">
+		<requirement class="weapon" slot="0" key="bugs_scout_main.weapon"/>
+	</model>
+	<model filename="bugs_vanguard.xml">
+		<requirement class="weapon" slot="0" key="bugs_vanguard_main.weapon"/>
+	</model>
+	<model filename="bugs_warrior.xml">
+		<requirement class="weapon" slot="0" key="bugs_warrior_main.weapon"/>
+	</model>
+	<model filename="bugs_elite.xml">
+		<requirement class="weapon" slot="0" key="bugs_elite_main.weapon"/>
+	</model>
+	<model filename="bugs_stalker.xml">
+		<requirement class="weapon" slot="0" key="bugs_stalker_main.weapon"/>
+	</model>
+	<model filename="bugs_shadow.xml">
+		<requirement class="weapon" slot="0" key="bugs_shadow_main.weapon"/>
+	</model>
+	<model filename="bugs_behemoth.xml">
+		<requirement class="weapon" slot="0" key="bugs_behemoth_main.weapon"/>
+	</model>
+	<model filename="bugs_brood_commander.xml">
+		<requirement class="weapon" slot="0" key="bugs_brood_commander_main.weapon"/>
+	</model>
+	<model filename="bugs_impaler.xml">
+		<requirement class="weapon" slot="0" key="bugs_impaler_main.weapon"/>
+	</model>
+	<model filename="bugs_tank.xml">
+		<requirement class="weapon" slot="0" key="bugs_tank_main.weapon"/>
+	</model>
+
+</models>

@@ -11,6 +11,8 @@
 //Author: RST 
 //复活特效
 //死亡提示
+//受伤心跳
+
 class player_spawn : Tracker {
 	protected GameModeInvasion@ m_metagame;
     protected dictionary playersInfo;
@@ -87,6 +89,12 @@ class player_spawn : Tracker {
 				playersInfo.erase(name);
 			}
 		}		
+	}	
+    // ----------------------------------------------------
+	protected void handlePlayerWoundEvent(const XmlElement@ event) {
+		string aim_pos = event.getStringAttribute("aim_target");
+		int fid = event.getIntAttribute("faction_id");
+		playSoundAtLocation(m_metagame,"hd_wound_heartbeat.wav",fid,aim_pos,1.0);
 	}	
 	protected void handleChatEvent(const XmlElement@ event) {
 		string message = event.getStringAttribute("message");

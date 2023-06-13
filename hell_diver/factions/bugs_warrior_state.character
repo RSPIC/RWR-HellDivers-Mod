@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<character filename="bugs_default_chat.character">
+
+	<sound key="footstep" fileref="" volume="1.2" />
+	<sound key="death" fileref="bf1_kill.wav" volume="1" />
+
+	<parameter class="walking_steer_amount" value="0.65" />	
+	<parameter class="running_steer_amount" value="0.45" />	
+
+	<parameter class="use_walk_animation_instead_of_run_speed_threshold" value="0.6" />
+	<parameter class="can_use_vehicles" value="1" /> 
+	<parameter class="throwing_self_over_initial_bounce" value="0.07" /><!--翻越时初始弹起高度-->
+	<parameter class="throwing_self_over_steer_amount" value="0.30" /><!--翻越中向前位移速度-->
+	<parameter class="throwing_self_over_lift_up" value="0.0" />
+	<parameter class="lifting_up_initial_bounce" value="0.07" />
+	<parameter class="jumping_up_bounce" value="0.05" />
+
+	<parameter class="climbing_ladder_stopping_oppositesteer_amount" value="30.0" />
+	<parameter class="ending_climbing_ladder_initial_bounce" value="0.03" />
+	<parameter class="ending_climbing_up_ladder_steer_amount" value="0.15" />
+	<parameter class="climbing_switch_initial_bounce" value="0.03" />
+
+	<parameter class="climbing_up_ladder" value="0.3" />
+	<parameter class="climbing_down_ladder" value="0.3" />
+	<parameter class="climbing_switch_steer" value="0.2" />
+
+	<parameter class="diving_steer_amount" value="0.6" />
+	<parameter class="diving_steer_amount_sliding_with_friction" value="0.05" />
+	<parameter class="diving_steer_amount_push" value="0.1" />
+	<parameter class="diving_steer_amount_jump" value="0.0" />
+
+	<parameter class="prone_moving_steer_amount" value="0.55" />
+	<parameter class="prone_moving_steer_amount_stroke" value="2.0" />
+	<parameter class="prone_moving_max_dot_to_move" value="0.3" />
+
+	<parameter class="swimming_character_y_position_at_water_height" value="1.45" />
+	<parameter class="swimming_y_handling_factor" value="0.01" />
+	<parameter class="swimming_steer_amount" value="0.15" />
+	<parameter class="swimming_steer_amount_stroke" value="1.3" />
+
+	<animation state_key="hold"  animation_key="Warrior_still" />
+	<animation state_key="hold_on_wall"  animation_key="Warrior_still" />
+	<animation state_key="hold_casual"  animation_key="Warrior_still" />
+	<animation key="still against wall" target_key="Warrior_still" />
+	<animation key="stabbing" target_key="Warrior_stab_1" />
+	<animation key="stabbing" target_key="Warrior_stab_2" add="1"/>
+	<animation key="going prone" target_key="Warrior_stab_2" />
+	<animation key="dive" target_key="Warrior_stab_2" />
+	<animation key="stunned" target_key="Warrior_stunned" />
+	<animation key="prone" target_key="Warrior_still" />
+	<animation key="prone, without weapon, 63" target_key="Warrior_still" />
+	<animation key="prone, moving forwards" target_key="Warrior_walking" />
+	<animation key="leaving prone" target_key="Warrior_still" />
+	<animation key="still" target_key="Warrior_still" />
+	<animation key="still, heavy weapon" target_key="Warrior_still" />
+	<animation key="still, instructor" target_key="Warrior_still" />
+	<animation key="walking" target_key="Warrior_walking" />
+	<animation key="walking backwards" target_key="Warrior_moving_back" />
+	<animation key="weaponless_walking" target_key="Warrior_walking" />
+	<animation key="running" target_key="Warrior_moving" />
+	<animation key="running, no weapon, 60" target_key="Warrior_moving" />
+	<animation key="crouch still" target_key="Warrior_still" />
+	<animation key="crouch still, no weapon, 62" target_key="Warrior_still" />
+	<animation key="crouching forwards" target_key="Warrior_moving" />
+	<animation key="crouching backwards" target_key="Warrior_moving_back" />
+	<animation key="crouching backwards, single hand carry" target_key="Warrior_moving_back" />
+	<animation key="crouching forwards, no weapon, 61" target_key="Warrior_moving" />
+	<animation key="throwing self over" target_key="Warrior_over_wall" />
+	<animation key="falling" target_key="Warrior_falling" />
+	<animation key="arriving ground" target_key="Warrior_on_ground" />
+	<animation key="jumping" target_key="Warrior_still" />
+	<animation key="lifting up" target_key="Warrior_lifting_up" />
+	<animation key="climbing ladder" target_key="Warrior_up_ladder" />
+	<animation key="climbing ladder, still" target_key="Warrior_up_ladder_still" />
+	<animation key="climbing ladder ending" target_key="Warrior_up_ladder_end" />
+	<animation key="weaponless_ending_climbing_up_ladder" target_key="Warrior_up_ladder_end" />
+	<animation key="wounded, still, 66" target_key="Warrior_still" />
+	<animation key="wounded, moving forwards, 67" target_key="Warrior_moving" />
+	<animation key="leaving_wounded" target_key="Warrior_stab_1" />
+	<animation key="swimming still" target_key="Warrior_still" />
+	<animation key="swimming forwards" target_key="Warrior_moving" />
+	<animation key="celebrating" target_key="Warrior_still" />
+	<animation key="celebrating, shooting" target_key="Warrior_still" />
+	<animation key="throwing, upside" target_key="Warrior_stab_1" />
+	<animation key="surrender" target_key="Warrior_stab_1" />
+	<animation key="change weapon out" target_key="Warrior_still" />
+	<animation key="change weapon in" target_key="Warrior_still" />
+	<animation key="change weapon out, reversed" target_key="Warrior_still" />
+	<animation key="change weapon in, reversed" target_key="Warrior_still" />
+	<animation key="change weapon in, single hand carry" target_key="Warrior_still" />
+	
+	<sound key="footstep" fileref="bugs_voice_warrior_1.wav" volume="0.5" />
+	<sound key="footstep" fileref="bugs_voice_warrior_2.wav" volume="0.5" />
+	<sound key="footstep" fileref="bugs_voice_warrior_3.wav" volume="0.5" />
+	<sound key="footstep" fileref="bugs_voice_warrior_4.wav" volume="0.5" />
+	<sound key="footstep" fileref="bugs_voice_warrior_5.wav" volume="0.5" />
+	<sound key="footstep" fileref="bugs_voice_warrior_6.wav" volume="0.5" />
+	<sound key="footstep" fileref="bugs_voice_warrior_7.wav" volume="0.5" />
+	<sound key="footstep" fileref="bugs_voice_warrior_8.wav" volume="0.5" />
+	<sound key="footstep" fileref="bugs_voice_warrior_9.wav" volume="0.5" />
+	<sound key="footstep" fileref="bugs_voice_warrior_10.wav" volume="0.5" />
+	<sound key="footstep" fileref="bugs_voice_warrior_11.wav" volume="0.5" />
+	<sound key="footstep" fileref="bugs_voice_warrior_12.wav" volume="0.5" />
+	<sound key="body_fall" fileref="bugs_voice_warrior_1.wav" volume="0.5" />
+	<sound key="body_fall" fileref="bugs_voice_warrior_2.wav" volume="0.5" />
+	<sound key="body_fall" fileref="bugs_voice_warrior_3.wav" volume="0.5" />
+	<sound key="body_fall" fileref="bugs_voice_warrior_4.wav" volume="0.5" />
+	<sound key="body_fall" fileref="bugs_voice_warrior_5.wav" volume="0.5" />
+	<sound key="body_fall" fileref="bugs_voice_warrior_6.wav" volume="0.5" />
+	<sound key="body_fall" fileref="bugs_voice_warrior_7.wav" volume="0.5" />
+	<sound key="body_fall" fileref="bugs_voice_warrior_8.wav" volume="0.5" />
+	<sound key="body_fall" fileref="bugs_voice_warrior_9.wav" volume="0.5" />
+	<sound key="body_fall" fileref="bugs_voice_warrior_10.wav" volume="0.5" />
+	<sound key="body_fall" fileref="bugs_voice_warrior_11.wav" volume="0.5" />
+	<sound key="body_fall" fileref="bugs_voice_warrior_12.wav" volume="0.5" />
+</character>

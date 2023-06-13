@@ -13,9 +13,9 @@ key="hd_vindicator_missile.projectile">
 	<effect class="result" key="terrain" ref="hk416_sc_gl_hit_smoke_02" post_processing="0"/>
 	<effect class="result" key="terrain" ref="blast_smoke_Vindicator" lighting="0"/>
 
-	<sound class="result" key="other" fileref="vindicator_boom1.wav" pitch_variety="0.01" volume="2" />
-	<sound class="result" key="other" fileref="vindicator_boom2.wav" pitch_variety="0.01" volume="2"/>
-	<sound class="result" key="other" fileref="vindicator_boom3.wav" pitch_variety="0.01" volume="2"/>
+	<sound class="result" key="other" fileref="vindicator_boom1.wav" pitch_variety="0.01" volume="5" />
+	<sound class="result" key="other" fileref="vindicator_boom2.wav" pitch_variety="0.01" volume="5"/>
+	<sound class="result" key="other" fileref="vindicator_boom3.wav" pitch_variety="0.01" volume="5"/>
 		<sound class="result" key="terrain" copy="other" />
 		<sound class="result" key="static_object" copy="other" />
 		<sound class="result" key="vehicle" copy="other" />

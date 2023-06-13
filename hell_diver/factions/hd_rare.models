@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<models>
+	<model filename="hdivers_volcanic.xml" >
+		<requirement class="rank" range="0 1000"/>
+	</model>
+	<model filename="hdivers_desert.xml" >
+		<requirement class="rank" range="1000 1000" />
+	</model>
+	<model filename="hdivers_ceremonial.xml" >
+		<requirement class="rank" range="1000 10000" />
+	</model>
+
+
+</models>

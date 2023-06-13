@@ -14,7 +14,7 @@ void main(dictionary@ inputData) {
 	settings.fromXmlElement(inputSettings);
 	_setupLog(inputSettings);
 	settings.print();
-	settings.m_debug_mode = true;
+	settings.m_debug_mode = false;
 	// --------------------------------------------
 	// TODO: replace with your package's folder here
 	// --------------------------------------------

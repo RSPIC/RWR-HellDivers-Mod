@@ -192,7 +192,7 @@ particle_system rocket_launcher_trial_smoke
 		rotation_range_start	0
 		rotation_range_end	360
 	}
-	affector Scaler{rate -2.5}
+	affector Scaler{rate -1}
 }
 
 particle_system rocket_launcher_blast_smoke_01

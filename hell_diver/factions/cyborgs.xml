@@ -61,14 +61,14 @@
 	<!-- default ai group 基础AI组-->
 	<soldier name="default_ai" spawn_score="0.0" >
 		<character filename="cyborgs_default_chat.character"> <!-- cyborgs_default_chat 引用 cyborgs_default_base-->
-			
 		</character>
 		<ai filename="default_cyborgs.ai" />
 
 		<models file="cyborgs_default.models" />		
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="cyborgs_common.resources" clear_carry_items="1"/>
-		<resources file="cyborgs_initiate.resources" />
+		<resources>
+		</resources>
 
 		<item_class_existence_config>
 			<!-- main -->
@@ -78,7 +78,7 @@
 			<!-- wearables -->
 			<item_class_existence class="carry_item" slot="1" probability="1" />
 			<!-- backpack -->
-			<item_class_existence class="carry_item" slot="0" probability="0.05" />
+			<item_class_existence class="carry_item" slot="0" probability="0.20" />
 		</item_class_existence_config>
 
 		<attribute_config class="rp">
@@ -101,7 +101,16 @@
 		</character>
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="cyborgs_common.resources" clear_carry_items="1" />
-		<resources file="cyborgs_squadleader.resources" />
+		<resources>
+			<weapon key="cyborgs_squadleader_main_alert.weapon" />
+			<weapon key="cyborgs_squadleader_main_gl.weapon" />
+			<weapon key="cyborgs_squadleader_secondary_alert.weapon" />
+			
+			<projectile key="cyborgs_squadleader_alert_spawn.projectile"/>
+
+			<carry_item key="general_vest_25" /> 
+			<carry_item key="general_vest_30" /> 
+		</resources>
 		
 		<ai filename="cyborgs_squadleader.ai" /> <!-- squadleader.ai 引用 default_cyborgs.ai -->
 		
@@ -121,7 +130,22 @@
 		</character>
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="cyborgs_common.resources" clear_carry_items="1"/>
-		<resources file="cyborgs_legionnaire.resources" />
+		<resources>
+			<weapon key="cyborgs_legionnaire_main_alert.weapon" />
+			<weapon key="cyborgs_legionnaire_main_gl.weapon" />
+			<weapon key="cyborgs_legionnaire_secondary_alert.weapon" />
+			
+			<projectile key="cyborgs_legionnaire_alert_spawn.projectile"/>
+
+			<!-- 35层护甲 -->
+			<!-- 2~5层额外装甲 -->
+			<carry_item key="general_vest_35" /> 
+			<carry_item key="general_vest_36" /> 
+			<carry_item key="general_vest_37" /> 
+			<carry_item key="general_vest_38" /> 
+			<carry_item key="general_vest_39" /> 
+			<carry_item key="general_vest_40" /> 
+		</resources>
 		
 		<ai filename="cyborgs_legionnaire.ai" /> <!-- legionnaire.ai 引用 default_cyborgs.ai -->
 		
@@ -142,7 +166,17 @@
 		</character>
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="cyborgs_common.resources" clear_carry_items="1"/>
-		<resources file="cyborgs_initiate.resources" />
+		<resources>
+			<weapon key="cyborgs_initiate_main.weapon" />
+			
+			<!-- 七层护甲 -->
+			<!-- 0-5层额外装甲 -->
+			<carry_item key="general_vest_7" /> 
+			<carry_item key="general_vest_8" /> 
+			<carry_item key="general_vest_9" /> 
+			<carry_item key="general_vest_10" /> 
+			<carry_item key="general_vest_11" /> 
+		</resources>
 		
 		<ai filename="cyborgs_initiate.ai" /> <!-- initiate.ai 引用 default_cyborgs.ai -->
 
@@ -160,7 +194,18 @@
 		</character>
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="cyborgs_common.resources" clear_carry_items="1" />
-		<resources file="cyborgs_berserker.resources" />
+		<resources>
+			<weapon key="cyborgs_berserker_main.weapon" />
+			<weapon key="cyborgs_berserker_sec_antitank.weapon" />
+			
+			<!-- 30层 -->
+			<!-- 1-20层额外装甲 -->
+			<carry_item key="general_vest_30" />
+			<carry_item key="general_vest_35" />
+			<carry_item key="general_vest_40" />
+			<carry_item key="general_vest_45" />
+			<carry_item key="general_vest_50" />
+		</resources>
 
 		<ai filename="cyborgs_berserker.ai" /> <!-- berserker.ai 引用 default_cyborgs.ai -->
 
@@ -177,7 +222,18 @@
 		</character>
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="cyborgs_common.resources" clear_carry_items="1" />
-		<resources file="cyborgs_comrade.resources" />
+		<resources>
+				<weapon key="cyborgs_comrade_main.weapon" />
+				<weapon key="cyborgs_comrade_sec_antitank.weapon" />
+		
+				<!-- 25层 -->
+				<!-- 2-16层额外装甲 -->
+				<carry_item key="general_vest_25" />
+				<carry_item key="general_vest_29" />
+				<carry_item key="general_vest_33" />
+				<carry_item key="general_vest_37" />
+				<carry_item key="general_vest_41" /> 
+		</resources>
 
 		<ai filename="cyborgs_comrade.ai" /> <!-- berserker.ai 引用 default_cyborgs.ai -->
 		
@@ -194,7 +250,19 @@
 		</character>
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="cyborgs_common.resources" clear_carry_items="1" />
-		<resources file="cyborgs_grotesque.resources" />
+		<resources>
+			<weapon key="cyborgs_grotesque_main.weapon" />
+			<weapon key="cyborgs_grotesque_sec_antitank.weapon" />
+			
+			<!-- 45层 -->
+			<!-- 2-4层额外装甲 -->
+			<carry_item key="general_vest_45" />
+			<carry_item key="general_vest_46" />
+			<carry_item key="general_vest_47" />
+			<carry_item key="general_vest_48" />
+			<carry_item key="general_vest_49" />
+			<carry_item key="general_vest_50" />
+		</resources>
 
 		<ai filename="cyborgs_grotesque.ai" /> <!-- grotesque.ai 引用 default_cyborgs.ai -->
 		
@@ -210,7 +278,16 @@
 		</character>
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="cyborgs_common.resources" clear_carry_items="1"/>
-		<resources file="cyborgs_hound.resources" />
+		<resources>
+			<weapon key="cyborgs_hound_main.weapon" />
+			
+			<!-- 7层 -->
+			<!-- 0-3层额外装甲 -->
+			<carry_item key="general_vest_7" />
+			<carry_item key="general_vest_8" />
+			<carry_item key="general_vest_9" />
+			<carry_item key="general_vest_10" />
+		</resources>
 		
 		<ai filename="cyborgs_hound.ai" /> <!-- hound.ai 独立 -->
 
@@ -227,7 +304,12 @@
 		</character>
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="cyborgs_common.resources" clear_carry_items="1"/>
-		<resources file="cyborgs_butcher.resources" />
+		<resources>
+			<weapon key="cyborgs_butcher_main.weapon" />
+			
+			<!-- 300层 -->
+			<carry_item key="general_vest_300" />
+		</resources>
 		
 		
 		<model file="cyborgs_butcher.xml" />
@@ -246,7 +328,7 @@
 			<!-- wearables -->
 			<item_class_existence class="carry_item" slot="1" probability="1" />
 			<!-- backpack -->
-			<item_class_existence class="carry_item" slot="0" probability="0.25" />
+			<item_class_existence class="carry_item" slot="0" probability="0.85" />
 		</item_class_existence_config>
 
 	</soldier>  
@@ -257,7 +339,29 @@
 		</character>
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="cyborgs_common.resources" clear_carry_items="1" />
-		<resources file="cyborgs_immolator.resources" />
+		<resources>
+			<weapon key="cyborgs_immolator_main.weapon" />
+			
+			<!-- 25层护甲 -->
+			<!-- 0-15层额外装甲 -->
+			<carry_item key="general_vest_25" /> 
+			<carry_item key="general_vest_25" /> 
+			<carry_item key="general_vest_26" /> 
+			<carry_item key="general_vest_27" /> 
+			<carry_item key="general_vest_28" /> 
+			<carry_item key="general_vest_29" /> 
+			<carry_item key="general_vest_30" /> 
+			<carry_item key="general_vest_31" /> 
+			<carry_item key="general_vest_32" /> 
+			<carry_item key="general_vest_33" /> 
+			<carry_item key="general_vest_34" /> 
+			<carry_item key="general_vest_35" /> 
+			<carry_item key="general_vest_36" /> 
+			<carry_item key="general_vest_37" /> 
+			<carry_item key="general_vest_38" /> 
+			<carry_item key="general_vest_39" /> 
+			<carry_item key="general_vest_40" /> 
+		</resources>
 
 		<ai filename="cyborgs_immolator.ai" /> <!-- immolator.ai 引用 default_cyborgs.ai -->
 
@@ -278,7 +382,17 @@
 		</character>
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="cyborgs_common.resources" clear_carry_items="1"  />
-		<resources file="cyborgs_hulk.resources" />
+		<resources>
+			<weapon key="cyborgs_hulk_main.weapon" />
+			<weapon key="cyborgs_hulk_sec_antitank.weapon" />
+			
+			<!-- 200层 -->
+			<!-- 20-60层额外装甲 -->
+			<carry_item key="general_vest_200" />
+			<carry_item key="general_vest_220" />
+			<carry_item key="general_vest_240" />
+			<carry_item key="general_vest_260" />
+		</resources>
 		
 		<ai filename="cyborgs_hulk.ai" /> <!-- hulk.ai 引用 default_cyborgs.ai -->
 		
@@ -310,7 +424,16 @@
 
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="cyborgs_common.resources" clear_carry_items="1"/>
-		<resources file="cyborgs_warlord.resources" />
+		<resources>
+			<weapon key="cyborgs_warlord_main.weapon" />
+			<weapon key="cyborgs_warlord_sec_antitank.weapon" />
+			
+			<!-- 300层护甲 -->
+			<!-- 额外装甲30-60层 -->
+			<!-- 武器-0.2抗致死 -->
+			<carry_item key="anti_blast_vest_300" /> 
+			<carry_item key="anti_blast_vest_264" /> 
+		</resources>
 		
 		<ai filename="cyborgs_warlord.ai" /> <!-- warlord.ai 引用 default_cyborgs.ai -->
 		<model file="cyborgs_warlord.xml" />

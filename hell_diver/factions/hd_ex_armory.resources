@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources >
+<!--此处用于注册HD军械库额外物品，需要确保物品代码中in_stock="1" -->
+<!-- 资源文件注册为KEY注册，不同于武器注册的key注册 -->
+
+<!--武器-->
+
+<!-- 副手  -->
+    <weapon key="ex_cl_banzai.weapon" /><!--刺雷-->
+
+<!--投掷物/信标-->
+    <projectile key="acg_ex_box.projectile" /><!--Ex 补给箱-->
+ 
+</resources>

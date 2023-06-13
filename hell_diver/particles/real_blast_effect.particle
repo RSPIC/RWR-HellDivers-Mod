@@ -184,7 +184,7 @@ particle_system real_up_dust_beam
 }
 particle_system real_up_dust_spread
 {
-	quota 1000
+	quota 500
 	material Tex_Glow16A_pass
 	particle_width 5
 	particle_height 5

@@ -353,7 +353,7 @@
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources>
 			<weapon key="hd_amg_11_mk3.weapon" /><!--机枪-->
-			<carry_item key="anti_melee_vest.carry_item" /><!--护甲-->
+			<carry_item key="anti_melee_vest_300" /><!--护甲-->
 		</resources>
 		<ai filename="hd_amg11.ai" />
 		<character filename="hd_amg11.character"/>
@@ -380,7 +380,7 @@
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources>
 			<weapon key="hd_arx_34_mk3.weapon" /><!--轨道炮-->
-			<carry_item key="anti_melee_vest.carry_item" /><!--300层护甲-->
+			<carry_item key="anti_melee_vest_300" /><!--300层护甲-->
 		</resources>
 		<ai filename="hd_amg11.ai" >
 			<parameter class="accuracy_offset" value="1.0" />
