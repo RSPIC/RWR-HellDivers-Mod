@@ -10,6 +10,7 @@
 #include "task_sequencer.as"
 
 #include "debug_reporter.as"
+#include "INFO.as"
 
 //author：rst
 //自动回甲执行脚本
@@ -20,12 +21,14 @@ class schedule_AutoHeal : Task {
     protected float m_time;
     protected float m_timer;
     protected bool m_ended;
+    protected bool debug_mode;
 
     schedule_AutoHeal(Metagame@ metagame,const XmlElement@ player,float time = 0){
         @m_player = @player;
         @m_metagame = @metagame;
         m_time = time;
         m_timer = m_time;
+        debug_mode = g_debugMode;
         _log("auto_heal executing");
     }
 
@@ -35,6 +38,7 @@ class schedule_AutoHeal : Task {
     
     void update(float time){
         m_timer -= time;
+        debug_mode = g_debugMode;
         if(m_timer >0){return;}
 
         AutoHeal_Task(m_metagame,m_player);
@@ -60,7 +64,9 @@ class schedule_AutoHeal : Task {
                     equipKey = equipKey.substr(0,key[i].length());//截取指定前缀并比对
                     if(equipKey == key[i]){    
                         healCharacter(metagame,cid,4);
-                        _report(m_metagame,"schedule_AutoHeal is Run");
+                        if(debug_mode){
+                            _report(m_metagame,"schedule_AutoHeal is Run");
+                        }
                         return;
                     }
                 }

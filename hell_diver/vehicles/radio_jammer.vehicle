@@ -4,7 +4,6 @@ map_view_atlas_index="9" jams_enemy_radio="1" reserves_spawn_point="1"
 protectors="5"  soldier_capacity_offset="5" respawn_time="180.0"
 character_leave_request_mode="friendly" 
 owner="faction"
-existence="one_per_faction"
 allow_owner_to_use_only="1"
 >
 	<tag name="target" />

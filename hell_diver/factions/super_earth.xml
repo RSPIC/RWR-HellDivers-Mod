@@ -181,6 +181,7 @@
 		<models file="extra_weapons.models" />
 		<models file="hd_weapons.models" />
 		<models file="hd_rare.models" />
+		<models file="acg_token.models" />
 
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="common.resources" />
@@ -219,7 +220,7 @@
 
 		<models file="extra_weapons.models" />
 		<models file="hd_weapons.models" />
-		<models file="hd_base.models" />
+		<!-- <models file="hd_base.models" /> -->
 
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 
@@ -246,6 +247,7 @@
 	<!-- default ai group -->
 	<soldier name="default_ai" spawn_score="3.0" copy_from="base">
 		<model filename="hdivers_black_ops.xml" />
+		<models file="hd_base.models" />
 			<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 			<resources file="hd_divers.resources" />
 			<resources file="common_loot_rare.resources" />
@@ -273,7 +275,7 @@
 
 	<!-- 精英空投 -->
 	<soldier name="HellDiver" spawn_score="0.0" copy_from="base">
-		<model filename="hdivers_ceremonial.xml" />
+		<model filename="ex_sc_ghost.xml" />
 		<ai filename="default_super_earth_elite.ai" />
 			<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 			<resources file="hd_divers.resources" />
@@ -482,6 +484,10 @@
 			<projectile key="acg_amg_11_mk3_call.projectile" enabled="0" /><!--自动机枪炮台-->
 			<projectile key="acg_arx_34_mk3_call.projectile" enabled="0" /><!--自动轨道炮炮台-->
 		</resources>
+	</soldier> 
+	<soldier name="token" spawn_score="0.0" copy_from="base">
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="_token.resources" />
 	</soldier> 
 
 </faction>

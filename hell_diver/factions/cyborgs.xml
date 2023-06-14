@@ -67,8 +67,7 @@
 		<models file="cyborgs_default.models" />		
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="cyborgs_common.resources" clear_carry_items="1"/>
-		<resources>
-		</resources>
+		<resources file="common.resources" />
 
 		<item_class_existence_config>
 			<!-- main -->

@@ -8,6 +8,9 @@
 #include "all_helper.as"
 #include "all_parameter.as"
 
+#include "debug_reporter.as"
+#include "INFO.as"
+
 //Author: RST 
 //弹药箱的补给脚本
 //部分补给会扣钱
@@ -215,10 +218,12 @@ dictionary replace_drop = {
 
 class itemdrop_event : Tracker {
 	protected Metagame@ m_metagame;
+	protected bool debug_mode;
 
 	// --------------------------------------------
 	itemdrop_event(Metagame@ metagame) {
 		@m_metagame = @metagame;
+		debug_mode = g_debugMode;
 		_log("itemdrop_event initiate.");
 	}
 
@@ -228,6 +233,9 @@ class itemdrop_event : Tracker {
 
 	bool hasStarted() const {
 		return true;
+	}
+	void update(float time){
+		debug_mode = g_debugMode;
 	}
 
 	// --------------------------------------------
@@ -266,11 +274,6 @@ class itemdrop_event : Tracker {
 
 		//containerId = 0(地面) 1(军械库) 2（背包） 3（仓库）
 		//itemClass = 0(主、副武器) 1（投掷物） 3（护甲、战利品）
-        _log("handleItemDropEvent:itemKey= " + itemKey);
-        _log("handleItemDropEvent:position= " + position);
-        _log("handleItemDropEvent:characterId= " + characterId);
-        _log("handleItemDropEvent:playerId= " + playerId);
-        _log("handleItemDropEvent:containerId= " + containerId);
 
 		//再补给
 		if (int(resupply_key[itemKey])!=0){
@@ -282,26 +285,23 @@ class itemdrop_event : Tracker {
 					if(containerId == 2 ){//装备进背包
 						string equipKey =  getPlayerEquipmentKey(m_metagame,characterId,2);
 						_log("equipKey: "+ equipKey);
-						//if(equipKey != itemKey ){break;}//再次检查
 						deleteItemInBackpack(m_metagame,characterId,"projectile",itemKey);
 						_log("success delete supply item itemKey: "+ itemKey);
-						//恢复玩家护甲,播放拾取音效
 						healCharacter(m_metagame,characterId,20);
 						playSoundAtLocation(m_metagame,"hd_mg94_mag_out.wav",factionId,position);
 						
 						for(int i=1;i<=4;i++){
+							if(i == 3){continue;}
 							equipKey = getDeadPlayerEquipmentKey(m_metagame,characterId,i);
-							_log("ready to add item key= "+equipKey);
-							_log("item slot= "+i);
+							if(debug_mode){
+								_report(m_metagame,"Get Player EquipKey ="+equipKey);
+								_report(m_metagame,"Item slot ="+i);
+							}
 							//slot: 0主手 1副手 2投掷物 4护甲
 							if(int(resupply_getitem_key[equipKey])!=0){//为可补给物品
-								_log("item resupplyable key= "+equipKey);
 								int ownnum = getPlayerEquipmentAmount(m_metagame,characterId,i);
 								int maxnum = int(resupply_getitem_key[equipKey]);
 								int resupplyNum = maxnum - ownnum;
-								_log("item ownnum= "+ownnum);
-								_log("item maxnum= "+maxnum);
-								_log("item resupplyNum= "+resupplyNum);
 								for(;resupplyNum>0;--resupplyNum){
 									if(int(resupply_cost[equipKey]) != 0){
 										const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
@@ -318,17 +318,13 @@ class itemdrop_event : Tracker {
 									}
 									if(i==1){//副武器
 										addItemInBackpack(m_metagame,characterId,"weapon",equipKey);
-										_log("success add weapon key= "+equipKey);
 									}
 									if(i==2){//投掷物
 										addItemInBackpack(m_metagame,characterId,"projectile",equipKey);
-										_log("success add projectile key= "+equipKey);
 									}
 									if(i==4){//护甲
 										addItemInBackpack(m_metagame,characterId,"carry_item",equipKey);
-										_log("success add carry_item key= "+equipKey);
 									}
-									_log("failed add item key= "+equipKey);
 								}
 								continue;
 							}
@@ -337,12 +333,15 @@ class itemdrop_event : Tracker {
 								string newequipKey = equipKey.substr(0,tokenkey.length());
 								if(newequipKey == tokenkey){
 									int ownnum = getPlayerEquipmentAmount(m_metagame,characterId,i);
-									int maxnum = int(resupply_getitem_key[equipKey]);
+									int maxnum = 6;
 									int resupplyNum = maxnum - ownnum;
 									for(;resupplyNum>0;--resupplyNum){
 										addItemInBackpack(m_metagame,characterId,"projectile",equipKey);
 									}
-									_log("success add token key= "+tokenkey);
+									if(debug_mode){
+										_report(m_metagame,"Success resupply Token");
+									}
+									return;
 								}
 							}
 							if(i==2){//补给手雷

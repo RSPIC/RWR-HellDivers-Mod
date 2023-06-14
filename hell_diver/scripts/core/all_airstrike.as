@@ -105,7 +105,6 @@ class AirstrikeSystem : Tracker {
                 remove_or_not = 1;
                 break;
             }
-
             default:
                 break;
         } 

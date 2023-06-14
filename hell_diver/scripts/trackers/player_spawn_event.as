@@ -8,6 +8,9 @@
 #include "all_helper.as"
 #include "all_parameter.as"
 
+#include "INFO.as"
+#include "debug_reporter.as"
+
 //Author: RST 
 //复活特效
 //死亡提示
@@ -17,12 +20,14 @@ class player_spawn : Tracker {
 	protected GameModeInvasion@ m_metagame;
     protected dictionary playersInfo;
 	protected bool m_server_test_mode;
+	protected bool debug_mode;
 
 	// --------------------------------------------
 	player_spawn(GameModeInvasion@ metagame) {
 		@m_metagame = @metagame;
 		const UserSettings@ settings = m_metagame.getUserSettings();
         m_server_test_mode = settings.m_server_test_mode;
+		debug_mode = g_debugMode;
 		if(m_server_test_mode){
 			_log("m_server_test_mode is on player_spawn");
 			_log("player_spawn initiate.");
@@ -37,6 +42,9 @@ class player_spawn : Tracker {
 		return true;
 	}
 
+	void update(float time){
+		debug_mode = g_debugMode;
+	}
 	// --------------------------------------------
 	protected void handlePlayerSpawnEvent(const XmlElement@ event) {
         _log("handlePlayerSpawnEvent");
@@ -89,12 +97,6 @@ class player_spawn : Tracker {
 				playersInfo.erase(name);
 			}
 		}		
-	}	
-    // ----------------------------------------------------
-	protected void handlePlayerWoundEvent(const XmlElement@ event) {
-		string aim_pos = event.getStringAttribute("aim_target");
-		int fid = event.getIntAttribute("faction_id");
-		playSoundAtLocation(m_metagame,"hd_wound_heartbeat.wav",fid,aim_pos,1.0);
 	}	
 	protected void handleChatEvent(const XmlElement@ event) {
 		string message = event.getStringAttribute("message");

@@ -1,0 +1,3 @@
+call process_island6.bat
+call process_post_island6.bat
+call process_map_view_island6.bat

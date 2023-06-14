@@ -202,25 +202,27 @@ class StageConfiguratorInvasion : StageConfigurator {
 
 	// ------------------------------------------------------------------------------------------------
 	protected void setupNormalStages() {
-	//addStage(setupStageCasake_Bay());         // Casake_Bay #21
+	addStage(setupStage21());         // map20 #7 4
     addStage(setupStage7());          // map6 #0
 	addStage(setupStage1());          // map2 #1
     addStage(setupStage9());          // map9 #2
-    //addStage(setupStage16());         // map8_2 #3
-    //addStage(setupStage4());          // map7 #4 g该图加载和退出有问题
-	//addStage(setupStage15());         // map1_2 #5
-    //addStage(setupStage12());         // map14 #6 脚本不运行
-    addStage(setupStage10());         // map10 #7
-    addStage(setupStage17());         // map17  #8  
-    addStage(setupStage18());         // map13_2 #9
-    addStage(setupStage3());          // map3 #10
-    addStage(setupStage13());         // map16  #11  
-	//addStage(setupFinalStage1());     // map11 #12 潜行
-    //addStage(setupStage8());          // map8 #13 crash
- 	addStage(setupStage14());         // map6_2 #14
-    addStage(setupStage2());          // map4 #15
-    //addStage(setupStage5());          // map1 #16 信号塔问题
-    addStage(setupStage6());          // map5 #17
+    //addStage(setupStage16());         // map8_2 #3 雪地威克岛
+    addStage(setupStage4());          // map7 #4 3
+	//addStage(setupStage15());         // map1_2 #5 太大
+    //addStage(setupStage12());         // map14 #6 脚本不运行s
+
+    addStage(setupStage10());         // map10 #7 5
+    addStage(setupStage17());         // map17  #8 6 
+    addStage(setupStage18());         // map13_2 #9 7
+    addStage(setupStage3());          // map3 #10 8
+    addStage(setupStage13());         // map16  #11  9
+	addStage(setupFinalStage1());     // map11 #12 潜行10
+    addStage(setupStage8());          // map8 #13 11
+ 	addStage(setupStage14());         // map6_2 #14 12
+    addStage(setupStage2());          // map4 #15 13
+	addStage(setupStage20());         // map19 #17	14
+    addStage(setupStage5());          // map1 #16 15
+    addStage(setupStage6());          // map5 #17 16
 	//addStage(setupFinalStage2());     // map12 #18 黑猫
 	addStage(setupStage19());         // map18 #19
     addStage(setupStage11());         // map13 #20
@@ -1439,7 +1441,136 @@ class StageConfiguratorInvasion : StageConfigurator {
 		setDefaultAttackBreakTimes(stage);
 		return stage;
 	}  
- 
+
+	// ------------------------------------------------------------------------------------------------
+
+	protected Stage@ setupStage20() {
+		Stage@ stage = createStage();
+		stage.m_mapInfo.m_name = "Swan River";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map19";
+		stage.m_mapInfo.m_id = "map19";
+		
+		stage.m_includeLayers.insertLast("layer1.invasion");		
+
+    stage.m_fogOffset = 24.0;    
+    stage.m_fogRange = 50.0; 
+
+		stage.m_maxSoldiers = 19 * 15;
+		stage.m_playerAiCompensation = 4;                                       
+        stage.m_playerAiReduction = 2.0;                                            
+  
+		stage.m_soldierCapacityVariance = 0.6;   
+
+		stage.addTracker(PeacefulLastBase(m_metagame, 0));    
+		stage.addTracker(CommsCapacityHandler(m_metagame));
+
+    stage.m_minRandomCrates = 1; 
+    stage.m_maxRandomCrates = 4;  
+
+		{ 				
+			Faction f(getFactionConfigs()[0], createFellowCommanderAiCommand(0, 0.5, 0.1));   
+			f.m_overCapacity = 0;
+			f.m_capacityOffset = 15;     // was 10 (1.95)                                        
+			f.m_capacityMultiplier = 1;                                               
+			f.m_bases = 1;
+			stage.m_factions.insertLast(f);
+		}
+		{
+			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1, 0.60, 0.15));  // was 0.62 0.15  
+			f.m_overCapacity = 120;                                          
+			f.m_capacityOffset = 10;      // was 0
+			stage.m_factions.insertLast(f);
+		}
+
+		// metadata
+		stage.m_primaryObjective = "capture";
+		stage.m_radioObjectivePresent = false;
+
+		{
+			XmlElement command("command");
+			command.setStringAttribute("class", "faction_resources");
+			command.setIntAttribute("faction_id", 1);
+			addFactionResourceElements(command, "vehicle", array<string> = {"aa_emplacement.vehicle"}, true);
+
+			stage.m_extraCommands.insertLast(command);
+		}
+		{
+			XmlElement command("command");
+			command.setStringAttribute("class", "faction_resources");
+			command.setIntAttribute("faction_id", 0);
+			addFactionResourceElements(command, "vehicle", array<string> = {"radio_jammer.vehicle", "radio_jammer2.vehicle", "radar_tower.vehicle", "legion.vehicle", "apc.vehicle", "apc_1.vehicles", "apc_2.vehicle", "flamer_tank.vehicle", "missile_launcher.vehicle"}, false);
+
+			stage.m_extraCommands.insertLast(command);
+		}
+
+
+		setDefaultAttackBreakTimes(stage);
+		return stage;
+	} 
+
+	// ------------------------------------------------------------------------------------------------
+
+	protected Stage@ setupStage21() {
+		Stage@ stage = createStage();
+		stage.m_mapInfo.m_name = "Elk Island";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map20";
+		stage.m_mapInfo.m_id = "map20";
+		
+		stage.m_includeLayers.insertLast("layer1.invasion");		
+
+
+		stage.m_maxSoldiers = 12 * 17;     // 194 units
+		stage.m_playerAiCompensation = 4;                                       
+        stage.m_playerAiReduction = 2.0;                                            
+  
+		stage.m_soldierCapacityVariance = 0.6;    
+
+		stage.addTracker(PeacefulLastBase(m_metagame, 0));    
+		stage.addTracker(CommsCapacityHandler(m_metagame));
+
+    stage.m_minRandomCrates = 1; 
+    stage.m_maxRandomCrates = 3;  
+
+		{ 				
+			Faction f(getFactionConfigs()[0], createFellowCommanderAiCommand(0, 0.5, 0.1));   
+			f.m_overCapacity = 5;  
+			f.m_capacityOffset = 0;                                           
+			f.m_capacityMultiplier = 1;                                               
+			f.m_bases = 1;
+			stage.m_factions.insertLast(f);
+		}
+		{
+			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1, 0.54, 0.15));    
+			f.m_overCapacity = 80;                                          
+			f.m_capacityOffset = 0;   // was 5
+			stage.m_factions.insertLast(f);
+		}
+
+		// metadata
+		stage.m_primaryObjective = "capture";
+		stage.m_radioObjectivePresent = false;
+
+		{
+			XmlElement command("command");
+			command.setStringAttribute("class", "faction_resources");
+			command.setIntAttribute("faction_id", 1);
+			addFactionResourceElements(command, "vehicle", array<string> = {"aa_emplacement.vehicle"}, true);
+
+			stage.m_extraCommands.insertLast(command);
+		}
+		{
+			XmlElement command("command");
+			command.setStringAttribute("class", "faction_resources");
+			command.setIntAttribute("faction_id", 0);
+			addFactionResourceElements(command, "vehicle", array<string> = {"radio_jammer.vehicle", "radio_jammer2.vehicle", "radar_tower.vehicle", "legion.vehicle", "lai-109.vehicle", "wiesel_tow.vehicle"}, false);
+
+			stage.m_extraCommands.insertLast(command);
+		}
+
+
+		setDefaultAttackBreakTimes(stage);
+		return stage;
+	} 
 
 	// ------------------------------------------------------------------------------------------------
 	// ------------------------------------------------------------------------------------------------
@@ -1455,7 +1586,7 @@ class StageConfiguratorInvasion : StageConfigurator {
         
 		stage.m_includeLayers.insertLast("layer1.invasion");        
 
-		stage.m_maxSoldiers = 110;   // 100 in 0.99.4
+		stage.m_maxSoldiers = 80;   // 100 in 0.99.4
 
 		stage.m_playerAiCompensation = 5;                                       // was 3 (test2)
     stage.m_playerAiReduction = 0;                                              

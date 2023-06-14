@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <models>
 <!-- 同人 -->
-	<model filename="acg_asakaze.xml"> <!--朝风--><requirement class="projectile" slot="0" key="token_asakaze.projectile"/>
-	</model>
+	<model filename="acg_asakaze.xml"/> <!--朝风-->
 	<model filename="acg_lulu.xml" /> <!--璐璐-->
 	<model filename="acg_longdan.xml" /> <!--龙胆-->
 	<model filename="acg_scented.xml" /> <!--Scented-->
@@ -32,8 +31,6 @@
 	<model filename="acg_texas.xml"><!--德克萨斯--><requirement class="weapon" slot="0" key="acg_texas_skill.weapon"/>
 	</model>
 	<model filename="acg_texas.xml"><!--德克萨斯--><requirement class="weapon" slot="0" key="acg_texas_sword.weapon"/>
-	</model>
-	<model filename="acg_texas.xml"><!--德克萨斯--><requirement class="weapon" slot="0" key="hd_vehicle_hmg.weapon"/>
 	</model>
 <!-- 原神 -->
 	<model filename="acg_sangonomiya_kokomi.xml" > <!--珊瑚宫心海--><requirement class="weapon" slot="0" key="acg_kokomi_water_thrower.weapon"/>

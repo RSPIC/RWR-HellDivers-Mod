@@ -269,7 +269,7 @@ class dynamic_alert : Tracker {
 
     protected float alert_distance_normal = 40; //超过此距离警报等级降低
     protected float alert_distance_max = 80;    //超过此距离警报不触发
-    protected float alert_distance = alert_distance_max;    // 触发警报时的最近距离
+    protected float alert_distance;    // 触发警报时的最近距离
 
 	// --------------------------------------------
 	dynamic_alert(GameModeInvasion@ metagame) {
@@ -364,7 +364,7 @@ class dynamic_alert : Tracker {
         
         array<const XmlElement@> players = getPlayers(m_metagame);
         if(players is null){return;}
-        alert_distance = alert_distance_max;
+        alert_distance = 3*alert_distance_max;
         for (uint j = 0; j < players.size(); ++j) {
 			const XmlElement@ player = players[j];
             Vector3 aim_pos = stringToVector3(player.getStringAttribute("aim_target"));    //省事直接用玩家指针位置,获取玩家位置需要获取到character数据，增加不少查询

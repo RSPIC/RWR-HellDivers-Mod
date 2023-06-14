@@ -48,6 +48,8 @@
 #include "dynamic_alert.as"
 #include "share_samples.as"
 #include "player_spawn_event.as"
+#include "player_wound_event.as"
+#include "match_end_event.as"
 #include "schedule_Manager.as"
 #include "schedule_Check.as"
 #include "bgm_control.as"
@@ -361,6 +363,8 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		addTracker(bgm_control(this));  
 		addTracker(Initiate(this));  
 		addTracker(IO_data(this));  
+		addTracker(player_wound(this));  
+		addTracker(match_end(this));  
 	}
 
 	protected void setupDisableRadioAtMatchOver() {

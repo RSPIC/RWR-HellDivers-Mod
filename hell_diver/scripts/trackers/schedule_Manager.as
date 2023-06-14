@@ -35,12 +35,14 @@ class schedule_Manager : Tracker {
     protected float m_timer;
     protected array<const XmlElement@> m_players;
     protected bool m_ended;
+    protected bool debug_mode;
 
     schedule_Manager(GameModeInvasion@ metagame,float time = 5.0){
         @m_metagame = @metagame;
         m_time = time;   //4s一周期进行检测
         m_timer = m_time;
         m_players = getPlayers(m_metagame);
+        debug_mode = g_debugMode;
         _log("schedule_Manager initiate");
     }
 
@@ -60,7 +62,7 @@ class schedule_Manager : Tracker {
 
     void update(float time) {
         m_timer -= time;
-        //_log("m_timer= "+m_timer);
+        debug_mode = g_debugMode;
         if(m_timer <= 0.0){
             refresh();
             m_timer = m_time;
@@ -136,17 +138,22 @@ class schedule_Manager : Tracker {
                     @info = @character;
                 }
                 if(info is null){return;}
-
-                _report(m_metagame,"g_IRQ dict="+g_IRQ._test(),"全局字典",false);
+                if(debug_mode){
+                    _report(m_metagame,"g_IRQ dict="+g_IRQ._test(),"全局字典",false);
+                }
 
                 string key = cid + name + EventKeyGet; //传参格式为 cid+玩家名+键值 
                 // cid 追踪角色信息； 玩家名用于持续追踪（能够在死亡后持续记录）；键值用于确定执行函数对象
                 if(g_IRQ.isExist(key)){
                     g_IRQ.set(key,true);
-                    _report(m_metagame,"IRQ "+key+" Set True","中断符号置真",false);
+                    if(debug_mode){
+                        _report(m_metagame,"IRQ "+key+" Set True","中断符号置真",false);
+                    }
                     return;
                 }
-                _report(m_metagame,"IRQ key="+key,"中断信号键值",false);
+                if(debug_mode){
+                    _report(m_metagame,"IRQ key="+key,"中断信号键值",false);
+                }
 
                 schedule_Interruptible_task@ new_task = schedule_Interruptible_task(m_metagame,info,5,key,cid);
                 TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();

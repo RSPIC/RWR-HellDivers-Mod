@@ -1,11 +1,311 @@
 <!-- hd_hellpod_call.projectile -->
+<!-- 此处注册后，需要在_token.resources里注册，需要在acg_token.models里注册 -->
 <?xml version="1.0" encoding="utf-8"?>
 <projectiles>
-    <projectile file="hd_hellpod_call.projectile" name="朝风 [信物]" key="token_asakaze.projectile" >
+    <projectile file="hd_hellpod_call.projectile" name="Asakaze [Skin]" key="token_asakaze.projectile" >
         <hud_icon filename="token_asakaze.png" />
         <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
         <capacity value="12" source="rank" source_value="0" />
-        <drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_hellpod.projectile" min_amount="0" max_amount="0" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Flak41 88 [Skin]" key="token_88mm_flak41.projectile" >
+        <hud_icon filename="token_88mm_flak41.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Alice Tendou [Skin]" key="token_alice_tendou.projectile" >
+        <hud_icon filename="token_alice_tendou.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Amatsukaze [Skin]" key="token_amatsukaze.projectile" >
+        <hud_icon filename="token_amatsukaze.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="API [Skin]" key="token_api.projectile" >
+        <hud_icon filename="token_api.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Bronya [EX 1] [Skin]" key="token_bronya_ex_1.projectile" >
+        <hud_icon filename="token_bronya_ex_1.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="CZ75 [Skin]" key="token_cz75.projectile" >
+        <hud_icon filename="token_cz75.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Faputa [Skin]" key="token_faputa.projectile" >
+        <hud_icon filename="token_faputa.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Fenrir Black [Skin]" key="token_fenrir_black.projectile" >
+        <hud_icon filename="token_fenrir_black.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Fenrir White [Skin]" key="token_fenrir_white.projectile" >
+        <hud_icon filename="token_fenrir_white.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Fiammetta [Skin]" key="token_fiammetta.projectile" >
+        <hud_icon filename="token_fiammetta.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="G41 2064 [Skin]" key="token_g41_2064.projectile" >
+        <hud_icon filename="token_g41_2064.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Gawr Gura [Skin]" key="token_gawr_gura.projectile" >
+        <hud_icon filename="token_gawr_gura.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Graf Spee [Sweater Ver.] [Skin]" key="token_graf_spee_sweater_ver.projectile" >
+        <hud_icon filename="token_graf_spee_sweater_ver.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Heavy Equip JK II [Skin]" key="token_heavy_equip_jk_ii.projectile" >
+        <hud_icon filename="token_heavy_equip_jk_ii.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Hibiki [Skin]" key="token_hibiki.projectile" >
+        <hud_icon filename="token_hibiki.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="HK416 [Starry Cocoon] [Skin]" key="token_hk416_starry_cocoon.projectile" >
+        <hud_icon filename="token_hk416_starry_cocoon.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Incomparable [Skin]" key="token_incomparable.projectile" >
+        <hud_icon filename="token_incomparable.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Iruru [Skin]" key="token_iruru.projectile" >
+        <hud_icon filename="token_iruru.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="IWS2000 [Banisher ver.] [Skin]" key="token_iws2000_banisher.projectile" >
+        <hud_icon filename="token_iws2000_banisher.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="IWS2000 [SandCastle Terminator ver.] [Skin]" key="token_iws2000_sandcastle_terminator.projectile" >
+        <hud_icon filename="token_iws2000_sandcastle_terminator.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Kagamine Rin [Skin]" key="token_kagamine_rin.projectile" >
+        <hud_icon filename="token_kagamine_rin.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Kaname Madoka [Skin]" key="token_kaname_madoka.projectile" >
+        <hud_icon filename="token_kaname_madoka.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Kemomimi [Skin]" key="token_kemomimi.projectile" >
+        <hud_icon filename="token_kemomimi.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Long Dan [Skin]" key="token_longdan.projectile" >
+        <hud_icon filename="token_longdan.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Lulu [Skin]" key="token_lulu.projectile" >
+        <hud_icon filename="token_lulu.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="M37 [Summer Parader Ver.] [Skin]" key="token_m37_summer_parader.projectile" >
+        <hud_icon filename="token_m37_summer_parader.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Maido I [Skin]" key="token_maido1.projectile" >
+        <hud_icon filename="token_maido1.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Maido II [Skin]" key="token_maido2.projectile" >
+        <hud_icon filename="token_maido2.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Maido III [Skin]" key="token_maido3.projectile" >
+        <hud_icon filename="token_maido3.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Maido IV [Skin]" key="token_maido4.projectile" >
+        <hud_icon filename="token_maido4.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Megumin [Skin]" key="token_megumin.projectile" >
+        <hud_icon filename="token_megumin.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="MG4 [Skin]" key="token_mg4.projectile" >
+        <hud_icon filename="token_mg4.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="MG4 703 [Skin]" key="token_mg4_703.projectile" >
+        <hud_icon filename="token_mg4_703.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Nanachi [Skin]" key="token_nanachi.projectile" >
+        <hud_icon filename="token_nanachi.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Natsuki Amagi [Skin]" key="token_natsuki_amagi.projectile" >
+        <hud_icon filename="token_natsuki_amagi.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Neco [Skin]" key="token_neco.projectile" >
+        <hud_icon filename="token_neco.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Perseus [Skin]" key="token_perseus.projectile" >
+        <hud_icon filename="token_perseus.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Raiden Mei [EX 1] [Skin]" key="token_raiden_mei_ex_1.projectile" >
+        <hud_icon filename="token_raiden_mei_ex_1.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Reisenu [Skin]" key="token_reisenu.projectile" >
+        <hud_icon filename="token_reisenu.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="REM [Neco Ver.] [Skin]" key="token_rem.projectile" >
+        <hud_icon filename="token_rem.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="RKGK [Skin]" key="token_rkgk.projectile" >
+        <hud_icon filename="token_rkgk.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="RubyRose [Skin]" key="token_rubyrose.projectile" >
+        <hud_icon filename="token_rubyrose.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Sangonomiya Kokomi [Skin]" key="token_sangonomiya_kokomi.projectile" >
+        <hud_icon filename="token_sangonomiya_kokomi.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Scented [Skin]" key="token_scented.projectile" >
+        <hud_icon filename="token_scented.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Shigure [Skin]" key="token_shigure.projectile" >
+        <hud_icon filename="token_shigure.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Shigure [Summer Ver.] [Skin]" key="token_shigure_summer_ver.projectile" >
+        <hud_icon filename="token_shigure_summer_ver.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Shokuhou Misaki [Skin]" key="token_shokuhou_misaki.projectile" >
+        <hud_icon filename="token_shokuhou_misaki.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="SkyFire [Skin]" key="token_skyfire.projectile" >
+        <hud_icon filename="token_skyfire.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Sorasaki Hina [Skin]" key="token_sorasaki_hina.projectile" >
+        <hud_icon filename="token_sorasaki_hina.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Strelka [Skin]" key="token_strelka.projectile" >
+        <hud_icon filename="token_strelka.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Tachibana Kanade [Skin]" key="token_tachibana_kanade.projectile" >
+        <hud_icon filename="token_tachibana_kanade.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Takanashi Hoshino [Skin]" key="token_takanashi_hoshino.projectile" >
+        <hud_icon filename="token_takanashi_hoshino.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Texas [Skin]" key="token_texas.projectile" >
+        <hud_icon filename="token_texas.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Tima [Skin]" key="token_tima.projectile" >
+        <hud_icon filename="token_tima.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Uzuki [Skin]" key="token_uzuki.projectile" >
+        <hud_icon filename="token_uzuki.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Yukikaze [Skin]" key="token_yukikaze.projectile" >
+        <hud_icon filename="token_yukikaze.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Yuudachi [AZUR Ver.] [Skin]" key="token_yuudachi_azurlane_origin.projectile" >
+        <hud_icon filename="token_yuudachi_azurlane_origin.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Yuudachi [Halloween Ver.] [Skin]" key="token_yuudachi_halloween_ver.projectile" >
+        <hud_icon filename="token_yuudachi_halloween_ver.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Tashkent [Skin]" key="token_tashkent_equipment.projectile" >
+        <hud_icon filename="token_tashkent_equipment.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Alibina [Skin]" key="token_alibina.projectile" >
+        <hud_icon filename="token_alibina.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+        <capacity value="12" source="rank" source_value="0" />
     </projectile>
 
 </projectiles>

@@ -29,6 +29,7 @@
 		<models filename="bugs_default.models" />
 
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="common.resources" />
 		<resources file="bugs_all.resources" />
 		<resources file="bugs_common.resources">
 			<carry_item key="general_vest_1000" />
@@ -65,6 +66,7 @@
 		<model file="bugs_scout.xml" />		
 		<models filename="bugs_default.models" />
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="common.resources" />
 		<resources file="bugs_common.resources" />
 		<resources>
 			<weapon key="bugs_scout_main.weapon" />
@@ -100,7 +102,7 @@
 		<ai filename="bugs_scout.ai" />	
 		<models filename="bugs_default.models" />
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
-
+		<resources file="common.resources" />
 		<item_class_existence_config>
 			<!-- main -->
 			<item_class_existence class="weapon" slot="0" probability="1" />
