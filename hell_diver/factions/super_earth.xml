@@ -182,7 +182,7 @@
 		<models file="hd_weapons.models" />
 		<models file="hd_rare.models" />
 		<models file="acg_token.models" />
-
+		
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="common.resources" />
 		<resources file="hd_ex_armory.resources" />
@@ -422,7 +422,7 @@
 		</resources>
 		<ai filename="hd_amg11.ai" />
 		<!-- <character filename="hd_amg11.character"/> -->
-		<character filename="helldivers_default_chat.character"/>
+		<character filename="hd_amg11.character"/>
 		<model filename="null_body.xml" />
 
 		<item_class_existence_config>
@@ -452,7 +452,7 @@
 			<parameter class="accuracy_offset" value="1.0" />
 		</ai>
 		<!-- <character filename="hd_amg11.character"/> -->
-		<character filename="helldivers_default_chat.character"/>
+		<character filename="hd_amg11.character"/>
 		<model filename="null_body.xml" />
 
 		<item_class_existence_config>
@@ -476,6 +476,7 @@
 	<soldier name="test" spawn_score="0.0" copy_from="base">
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="test.resources" />
+		<resources file="common_loot_rare.resources" />
 	</soldier> 
 
 	<soldier name="acg_weapon" spawn_score="0.0" copy_from="base">

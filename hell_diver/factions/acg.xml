@@ -411,5 +411,9 @@
 		<resources file="test.resources" />
 		<resources file="common_loot_rare.resources" />
 	</soldier> 
+	<soldier name="token" spawn_score="0.0" copy_from="base">
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="_token.resources" />
+	</soldier> 
 
 </faction>

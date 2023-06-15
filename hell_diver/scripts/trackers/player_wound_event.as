@@ -97,7 +97,7 @@ class player_wound_task : Task{
 		string aim_pos = m_player.getStringAttribute("aim_target");
 		playSoundAtLocation(m_metagame,"hd_wound_heartbeat.wav",fid,aim_pos,3.0);
 
-		string woundVoice = "hd_wound_male_" + int(rand(0,25)) + ".wav";
+		string woundVoice = "hd_wound_male_" + int(rand(1,25)) + ".wav";
 		playSoundAtLocation(m_metagame,woundVoice,fid,aim_pos,3.0);
 
 	}

@@ -262,7 +262,7 @@ class dynamic_alert : Tracker {
 	protected GameModeInvasion@ m_metagame;
     protected int server_difficulty_level = 0;
     protected int m_server_difficulty_level = 0;
-    protected float m_cd_time;
+    protected float m_cd_time = 24;
     protected float m_cd_timer;
     protected bool m_alertFlag = false;
     protected bool debug_mode;
@@ -280,7 +280,6 @@ class dynamic_alert : Tracker {
         debug_mode = settings.m_debug_mode;
         _log("Server difficulty level = "+ server_difficulty_level);
 
-        m_cd_time = 8.0;
         m_cd_timer = m_cd_time;
         _log("dynamic_alert initiate.");
 	}
@@ -332,26 +331,30 @@ class dynamic_alert : Tracker {
             _report(m_metagame,"Alert key="+EventKeyGet);
         }
 
-        array<int> MaxSoldiers;
-        array<int> NowSoldiers;
-        for (uint i = 0; i < g_factionInfoBuck.size(); ++i) {
+        dictionary MaxSoldiers;
+        dictionary NowSoldiers;
+        for (uint i = 0 ; i < g_factionInfoBuck.size() ; ++i) {
             const XmlElement@ faction = getFactionInfo(m_metagame,i);
             int max = faction.getIntAttribute("soldier_capacity");
             int min = faction.getIntAttribute("soldiers");
-            MaxSoldiers.insertLast(max);
-            NowSoldiers.insertLast(min);
+            MaxSoldiers[""+i] = max;
+            NowSoldiers[""+i] = min;
         }
-        if(MaxSoldiers.size()==0 || NowSoldiers.size()==0){_log("Size=0");return;}
-        int my_faction_soldiers = NowSoldiers[m_fid];
+
+        int my_faction_soldiers;
+        if( !NowSoldiers.get(""+m_fid,my_faction_soldiers) ){return;}
         int now_max_soldiers = 0;  
         int max_soldiers_cap = 0;
-        for (uint i = 0; i < NowSoldiers.length(); i++) {
+        for (uint i = 0 ; i < g_factionInfoBuck.size() ; i++) {
             if(int(i) == m_fid){continue;}
-            if (NowSoldiers[i] >= now_max_soldiers ) {
-                now_max_soldiers = NowSoldiers[i];
+            int value;
+            if(!NowSoldiers.get(""+i,value)){continue;}
+            if (value >= now_max_soldiers ) {
+                now_max_soldiers = value;
             }
-            if (MaxSoldiers[i] >= max_soldiers_cap ) {
-                max_soldiers_cap = MaxSoldiers[i];
+            if(!MaxSoldiers.get(""+i,value)){continue;}
+            if (value >= max_soldiers_cap ) {
+                max_soldiers_cap = value;
             }
         }
         if( my_faction_soldiers >= 2.0*max_soldiers_cap && g_factionInfoBuck.getNameByFid(m_fid) != "Bugs"){
@@ -414,16 +417,18 @@ class dynamic_alert : Tracker {
 
         if(rate <= 0.5 && rate >0.2){
             Alert_Spawn(m_metagame,m_fid,position,level_random);
-            m_cd_time = 4.0;
+            m_cd_time = 12.0;
         }else if(rate < 0.20){
             Alert_Spawn(m_metagame,m_fid,position,level_all);
-            m_cd_time = 2.0;
-        }else if(rate > 0.5 && rate <= 0.8){
             m_cd_time = 6.0;
+        }else if(rate > 0.5 && rate <= 0.8){
+            m_cd_time = 18.0;
         }
 
         int player_num = players.size();
         m_cd_time = m_cd_time - 0.2*player_num;
+
+        m_cd_time = m_cd_time - m_server_difficulty_level + 9;
         if(m_cd_time <= 0){
             m_cd_time = 0;
         }
