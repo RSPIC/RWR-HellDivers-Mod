@@ -86,7 +86,7 @@ key="hd_exo51_lumberer_mk3_flame.weapon"
     <inventory encumbrance="50.0" price="0.0" />  -->
     <weak_hand_hold offset="0.3" /> 
 
-    <projectile file="hd_general_spawn.projectile" pulldown_in_air="5" can_be_detected_by_footmen="1" 
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="30" can_be_detected_by_footmen="1" 
 	time_to_live="0.9" can_be_detected_by_driver="1" can_be_disarmed="0" name="EXO-51 Lumberer MK3" radius="1.5"> 
 		
 		<result class="spawn" instance_class="grenade" instance_key="hd_exo51_lumberer_mk3_flame_damage.projectile"
@@ -118,6 +118,13 @@ key="hd_exo51_lumberer_mk3_flame.weapon"
 		<trail probability="1" key="" lighting="0"/>	
     </projectile>
 
+	<ballistics curve_height="3.0" 
+	near_far_distance="0.0" 
+	speed_estimation_near="30.0" 
+	speed_estimation_far="60.0" 
+	max_speed="45.0" 
+	randomness="0.05" 
+	tweak_factor="2.75"/> 
 
     <stance state_key="running" accuracy="0.9" /> 
     <stance state_key="walking" accuracy="0.9" />

@@ -87,7 +87,7 @@ character_leave_request_mode="friendly"
 	<sound key="slide" filename="slide_noise.wav" />
 	<sound key="squeal" filename="tire_squeal.wav" />
 	<sound key="ignition" filename="truck_ignition.wav" />
-	<sound key="horn" filename="hd_gogogo_men_01.wav" />
+	<sound key="horn" filename="hd_gogogo_men_01.wav" volume="5" />
 	<sound key="turret_rotation" filename="turret_rotation1.wav" />
 	<sound key="hit" filename="car_hit1.wav" />
 	<sound key="hit" filename="car_hit2.wav" />

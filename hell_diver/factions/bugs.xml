@@ -163,6 +163,7 @@
 			<weapon key="bugs_vanguard_main.weapon" />
 			<projectile key="bugs_vanguard_alert_spawn.projectile" />
 			<projectile key="bugs_scout_alert_spawn.projectile" />
+			<projectile key="bugs_shadow_grenade.projectile" />
 			<carry_item key="general_vest_6" />
 			<carry_item key="general_vest_7" />
 			<carry_item key="general_vest_8" />
@@ -191,11 +192,8 @@
 			<projectile key="bugs_shadow_grenade.projectile" />
 			<projectile key="bugs_shadow_alert_spawn.projectile" />
 
-			<carry_item key="stun_vest_40" />
-			<carry_item key="stun_vest_50" />
-			<carry_item key="stun_vest_60" />
-			<carry_item key="stun_vest_70" />
-			<carry_item key="stun_vest_80" />
+			<carry_item key="stun_vest_20" />
+			<carry_item key="stun_vest_30" />
 		</resources>
 
 		<!-- low XP, likely to join player squad -->
@@ -221,9 +219,6 @@
 			<carry_item key="general_vest_35" />
 			<carry_item key="general_vest_40" />
 			<carry_item key="general_vest_45" />
-			<carry_item key="general_vest_50" />
-			<carry_item key="general_vest_55" />
-			<carry_item key="general_vest_60" />
 		</resources>
 
 
@@ -276,11 +271,8 @@
 			<weapon key="bugs_stalker_main.weapon" />
 			<projectile key="bugs_stalker_grenade.projectile" />
 
-			<carry_item key="stun_vest_30" />
 			<carry_item key="stun_vest_40" />
 			<carry_item key="stun_vest_50" />
-			<carry_item key="stun_vest_60" />
-			<carry_item key="stun_vest_70" />
 		</resources>
 
 		<!-- low XP, likely to join player squad -->
@@ -301,6 +293,7 @@
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="bugs_common.resources">
 			<weapon key="bugs_brood_commander_main.weapon" />
+			<projectile key="bugs_stalker_grenade.projectile" />
 			<carry_item key="general_vest_230" />
 		</resources>
 

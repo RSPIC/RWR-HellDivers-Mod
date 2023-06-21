@@ -4,8 +4,8 @@ file="_hd_exp.base"
 key="hd_arc_ac3_thrower_full_upgrade.weapon" 
 > 
     <specification 	
-	retrigger_time="0.1"
-    last_burst_retrigger_time="0.1" 
+	retrigger_time="0.05"
+    last_burst_retrigger_time="0.05" 
 	accuracy_factor="1.0" 
 	spread_range="0.3"
 	sustained_fire_grow_step="1.5" 
@@ -90,7 +90,7 @@ key="hd_arc_ac3_thrower_full_upgrade.weapon"
 
 	<!--军械库相关-->
     <commonness value="0.00001" can_respawn_with="1" in_stock="1" /> 
-    <inventory encumbrance="0.05" price="0.0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
+    <inventory encumbrance="10" price="0.0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
     <!-- 10clip=1hvy -->
 	<!-- 10clip = 1 mag -->
 	<!-- max 6 mag -->
@@ -107,7 +107,7 @@ key="hd_arc_ac3_thrower_full_upgrade.weapon"
 			direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
 		-->
 		<result class="spawn" instance_class="grenade" instance_key="hd_arc_ac3_thrower_full_upgrade_damage.projectile" 
-		min_amount="30" max_amount="40" offset="0 0 0" position_spread="0 0" direction_spread="0.0 0.0" />
+		min_amount="10" max_amount="14" offset="0 0 0" position_spread="0 0" direction_spread="0.0 0.0" />
 		<trigger class="time" time_to_live="0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->

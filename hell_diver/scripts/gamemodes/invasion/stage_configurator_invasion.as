@@ -202,7 +202,6 @@ class StageConfiguratorInvasion : StageConfigurator {
 
 	// ------------------------------------------------------------------------------------------------
 	protected void setupNormalStages() {
-	addStage(setupStage21());         // map20 #7 4
     addStage(setupStage7());          // map6 #0
 	addStage(setupStage1());          // map2 #1
     addStage(setupStage9());          // map9 #2
@@ -210,20 +209,20 @@ class StageConfiguratorInvasion : StageConfigurator {
     addStage(setupStage4());          // map7 #4 3
 	//addStage(setupStage15());         // map1_2 #5 太大
     //addStage(setupStage12());         // map14 #6 脚本不运行s
-
-    addStage(setupStage10());         // map10 #7 5
-    addStage(setupStage17());         // map17  #8 6 
-    addStage(setupStage18());         // map13_2 #9 7
-    addStage(setupStage3());          // map3 #10 8
-    addStage(setupStage13());         // map16  #11  9
-	addStage(setupFinalStage1());     // map11 #12 潜行10
-    addStage(setupStage8());          // map8 #13 11
- 	addStage(setupStage14());         // map6_2 #14 12
-    addStage(setupStage2());          // map4 #15 13
-	addStage(setupStage20());         // map19 #17	14
-    addStage(setupStage5());          // map1 #16 15
-    addStage(setupStage6());          // map5 #17 16
+    addStage(setupStage10());         // map10 #7 4
+    addStage(setupStage17());         // map17  #8 5
+    addStage(setupStage18());         // map13_2 #9 6
+    addStage(setupStage3());          // map3 #10 7
+    addStage(setupStage13());         // map16  #11  8
+	addStage(setupFinalStage1());     // map11 #12 潜行9
+    addStage(setupStage8());          // map8 #13 10 本地加载崩溃
+ 	addStage(setupStage14());         // map6_2 #14 11
+    addStage(setupStage2());          // map4 #15 12
+	addStage(setupStage20());         // map19 #17	13 鹅城
+    addStage(setupStage5());          // map1 #16 14
+    addStage(setupStage6());          // map5 #17 15
 	//addStage(setupFinalStage2());     // map12 #18 黑猫
+	addStage(setupStage21());         // map20 #7 16 战壕小岛
 	addStage(setupStage19());         // map18 #19
     addStage(setupStage11());         // map13 #20
     addStage(setupStageCasake_Bay());         // Casake_Bay #21

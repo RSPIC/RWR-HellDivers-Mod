@@ -68,6 +68,10 @@ allow_ai_to_use="0"
 	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="1" offset="0 0 0" />  
 	<effect event_key="destroyed" ref="car_broken_spary_spark" post_processing="1" offset="0 0 0" />  
 
+	<event>
+		<trigger class="destroy" />
+  		<result class="notify_script" key="music_march_of_steel_torrent.wav" />
+	</event>
 
 	<event>
 		<trigger class="destroy" />

@@ -82,6 +82,7 @@ class Comms {
 		int queueSize = m_receivedMessages.size();
 		if (queueSize > 0) {
 			_log("  queue size " + queueSize, 2);
+			
 
 			const XmlElement@ event = m_receivedMessages[0];
 			m_receivedMessages.removeAt(0);
@@ -172,7 +173,7 @@ class Comms {
 			} else {
 				// TODO: consider improving this:
 				// sleep and recheck the data channel
-				const float MINIMUM_SLEEP_TIME = 0.010f;
+				const float MINIMUM_SLEEP_TIME = 0.005f;
 				sleep(MINIMUM_SLEEP_TIME);
 			}
 		}

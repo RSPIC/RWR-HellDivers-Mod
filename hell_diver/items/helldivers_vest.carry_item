@@ -657,7 +657,7 @@
         <commonness value="0" in_stock="0" can_respawn_with="0" />
 
         <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
-        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
         <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
         <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
         <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
@@ -687,7 +687,7 @@
         <commonness value="0" in_stock="0" can_respawn_with="0" />
 
         <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
-        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
         <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
         <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
         <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
@@ -717,7 +717,7 @@
         <commonness value="0" in_stock="0" can_respawn_with="0" />
 
         <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
-        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
         <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
         <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
         <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
@@ -747,7 +747,7 @@
         <commonness value="0" in_stock="0" can_respawn_with="0" />
 
         <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
-        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
         <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
         <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
         <modifier class="projectile_hit_result" input_character_state="death" output_character_state="wound" consumes_item="1"/><!--动能-->
@@ -777,10 +777,10 @@
         <commonness value="0" in_stock="0" can_respawn_with="0" />
 
         <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
-        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
         <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
         <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
-        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="wound" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
@@ -807,10 +807,10 @@
         <commonness value="0" in_stock="0" can_respawn_with="0" />
 
         <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
-        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
         <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
         <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
-        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="wound" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
@@ -837,10 +837,10 @@
         <commonness value="0" in_stock="0" can_respawn_with="0" />
 
         <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
-        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
         <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
         <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
-        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="wound" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
@@ -867,10 +867,10 @@
         <commonness value="0" in_stock="0" can_respawn_with="0" />
 
         <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
-        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
         <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
         <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
-        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="wound" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
@@ -897,10 +897,10 @@
         <commonness value="0" in_stock="0" can_respawn_with="0" />
 
         <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
-        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
         <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
         <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
-        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="wound" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
@@ -927,10 +927,10 @@
         <commonness value="0" in_stock="0" can_respawn_with="0" />
 
         <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
-        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
         <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
         <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
-        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="wound" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
         <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
         <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
         <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
@@ -988,14 +988,14 @@
 
         <commonness value="0" in_stock="0" can_respawn_with="0" />
 
-        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="wound" consumes_item="1"/><!--爆炸伤-->
-        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="1"/><!--轰炸伤-->
-        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="wound" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
         <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
-        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="wound" consumes_item="1"/><!--动能-->
-        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="wound" consumes_item="1" /><!--中穿-->
-        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="wound" consumes_item="1"/><!--眩晕-->
-        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="wound" consumes_item="1"/><!--重穿-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1018,14 +1018,14 @@
 
         <commonness value="0" in_stock="0" can_respawn_with="0" />
 
-        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="wound" consumes_item="1"/><!--爆炸伤-->
-        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="1"/><!--轰炸伤-->
-        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="wound" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
         <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
-        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="wound" consumes_item="1"/><!--动能-->
-        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="wound" consumes_item="1" /><!--中穿-->
-        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="wound" consumes_item="1"/><!--眩晕-->
-        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="wound" consumes_item="1"/><!--重穿-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1048,14 +1048,14 @@
 
         <commonness value="0" in_stock="0" can_respawn_with="0" />
 
-        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="wound" consumes_item="1"/><!--爆炸伤-->
-        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="1"/><!--轰炸伤-->
-        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="wound" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
         <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
-        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="wound" consumes_item="1"/><!--动能-->
-        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="wound" consumes_item="1" /><!--中穿-->
-        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="wound" consumes_item="1"/><!--眩晕-->
-        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="wound" consumes_item="1"/><!--重穿-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1078,14 +1078,14 @@
 
         <commonness value="0" in_stock="0" can_respawn_with="0" />
 
-        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="wound" consumes_item="1"/><!--爆炸伤-->
-        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="1"/><!--轰炸伤-->
-        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="wound" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
         <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
-        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="wound" consumes_item="1"/><!--动能-->
-        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="wound" consumes_item="1" /><!--中穿-->
-        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="wound" consumes_item="1"/><!--眩晕-->
-        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="wound" consumes_item="1"/><!--重穿-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1108,14 +1108,14 @@
 
         <commonness value="0" in_stock="0" can_respawn_with="0" />
 
-        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="wound" consumes_item="1"/><!--爆炸伤-->
-        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="1"/><!--轰炸伤-->
-        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="wound" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
         <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
-        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="wound" consumes_item="1"/><!--动能-->
-        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="wound" consumes_item="1" /><!--中穿-->
-        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="wound" consumes_item="1"/><!--眩晕-->
-        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="wound" consumes_item="1"/><!--重穿-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1138,14 +1138,14 @@
 
         <commonness value="0" in_stock="0" can_respawn_with="0" />
 
-        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="wound" consumes_item="1"/><!--爆炸伤-->
-        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="1"/><!--轰炸伤-->
-        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="wound" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
         <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
-        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="wound" consumes_item="1"/><!--动能-->
-        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="wound" consumes_item="1" /><!--中穿-->
-        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="wound" consumes_item="1"/><!--眩晕-->
-        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="wound" consumes_item="1"/><!--重穿-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1168,14 +1168,14 @@
 
         <commonness value="0" in_stock="0" can_respawn_with="0" />
 
-        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="wound" consumes_item="1"/><!--爆炸伤-->
-        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="1"/><!--轰炸伤-->
-        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="wound" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
         <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
-        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="wound" consumes_item="1"/><!--动能-->
-        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="wound" consumes_item="1" /><!--中穿-->
-        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="wound" consumes_item="1"/><!--眩晕-->
-        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="wound" consumes_item="1"/><!--重穿-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1198,14 +1198,14 @@
 
         <commonness value="0" in_stock="0" can_respawn_with="0" />
 
-        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="wound" consumes_item="1"/><!--爆炸伤-->
-        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="1"/><!--轰炸伤-->
-        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="wound" consumes_item="0"/> <!--静电力场-->
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--爆炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/><!--轰炸伤-->
+        <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/> <!--静电力场-->
         <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/><!--保留-->
-        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="wound" consumes_item="1"/><!--动能-->
-        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="wound" consumes_item="1" /><!--中穿-->
-        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="wound" consumes_item="1"/><!--眩晕-->
-        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="wound" consumes_item="1"/><!--重穿-->
+        <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/><!--动能-->
+        <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1" /><!--中穿-->
+        <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/><!--眩晕-->
+        <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/><!--重穿-->
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>

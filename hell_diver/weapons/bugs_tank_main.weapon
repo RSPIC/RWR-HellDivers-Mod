@@ -10,6 +10,8 @@ radius="1"
 force_as_shoots_blast_projectiles="0"
 > 
     <!-- 80层伤害 -->
+	<tag name="bazooka" />
+	<tag name="anti_tank" />
     <specification	
     name="Tank Melee" 
     slot="0" 	
@@ -30,11 +32,11 @@ force_as_shoots_blast_projectiles="0"
 	sight_range_modifier="1.0" 
 	burst_shots="1" 
     projectiles_per_shot="1" 
-    projectile_speed="100.0"
+    projectile_speed="400.0"
 	barrel_offset="-1.5" 
 	carry_in_two_hands="0" 
 	stab_enabled="1" 
-	stab_range="6" 
+	stab_range="3" 
 	use_basic_muzzle_smoke_effect="0"
 	/> 
 	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="bugs_tank_dead_damage.projectile" 
@@ -99,22 +101,20 @@ force_as_shoots_blast_projectiles="0"
     
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
     <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="2"  > 
-        <trigger class="time" time_to_live="0.1" />
-        <result class="blast" radius="6.5" damage="40" push="0.5" decal="0" character_state="wound" 
-        make_vehicle_hit_sound="0" faction_compare="not_equal"/>
-
+        <trigger class="time" time_to_live="0" />
+        <!-- <result class="blast" radius="6.5" damage="40" push="0.5" decal="0" character_state="wound" 
+        make_vehicle_hit_sound="0" faction_compare="not_equal"/> -->
+		<result class="spawn" instance_class="projectile" instance_key="bugs_tank_main_damage.projectile" 
+		min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
         <!--命中音效-->
-		<sound class="result" key="other" fileref="bugs_atk_behemoth.wav" pitch_variety="0.03" volume="2.0" />
+		<sound class="result" key="other" fileref="bugs_atk_impaler_fire.wav" pitch_variety="0.03" volume="2.0" />
 		
 		<!--命中特效-->
+		<effect class="result" key="terrain" ref="bugs_spawn_at_ground_dust" lighting="0"/>
+		<effect class="result" key="terrain" ref="bugs_spawn_at_ground_up_dust_1" lighting="0"/>
+		<effect class="result" key="terrain" ref="bugs_spawn_at_ground_up_dust_2" lighting="0"/>
+		<effect class="result" key="terrain" ref="bugs_spawn_at_ground_up_dust_3" lighting="0"/>
 		
-		<effect class="result" key="terrain" ref="bugs_behemoth_result_impact_cracks" lighting="0" post_processing="0"/>
-		<effect class="result" key="terrain" ref="bugs_behemoth_result_up_dust1" lighting="0" post_processing="0"/>
-		<effect class="result" key="terrain" ref="bugs_behemoth_result_up_dust2" lighting="0" post_processing="0"/>
-		<effect class="result" key="terrain" ref="bugs_behemoth_result_up_dust3" lighting="0" post_processing="0"/>
-		<effect class="result" key="terrain" ref="bugs_behemoth_result_up_dust4" lighting="0" post_processing="0"/>
-		<effect class="result" key="terrain" ref="bugs_behemoth_result_ambient_smoke" lighting="0" post_processing="0"/>
-		<effect class="activated" ref="" />
 		
 		
 		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->

@@ -20,7 +20,7 @@ key="hd_sg_double_freedom_full_upgrade.weapon"
 	ai_sight_range_modifier="0.5" 
 	projectile_speed="150.0" 
 	barrel_offset="1.2" 
-	projectiles_per_shot="16" 
+	projectiles_per_shot="20" 
 	burst_shots="1"
     stab_enabled="0"
 	carry_in_two_hands="0"
@@ -68,11 +68,12 @@ key="hd_sg_double_freedom_full_upgrade.weapon"
     <weak_hand_hold offset="0" />
 
     <projectile file="hd_general_spawn.projectile" time_to_live="0.086" 
-    pulldown_in_air="30" name="DBS2-DoubleFreedom" radius="1.0">
-	
-        <result class="hit" kill_probability="1.0"
+    pulldown_in_air="30" name="DBS2-DoubleFreedom" radius="1.2">
+        <result class="spawn" instance_class="projectile" instance_key="hd_sg_double_freedom_full_upgrade_damage.projectile" 
+		min_amount="10" max_amount="20" offset="0 0 0" position_spread="1 1" direction_spread="0 0" />	
+        <!-- <result class="hit" kill_probability="1.0"
             kill_probability_offset_on_successful_hit="20"
-            kill_decay_start_time="0.086" kill_decay_end_time="0.086" character_state="death"/>
+            kill_decay_start_time="0.086" kill_decay_end_time="0.086" character_state="death"/> -->
             <!-- damage 85hit/per -->
             <!-- Fire Damage/sec 100/s 2s/duration -->
             <!-- 13m max range | no decay-->

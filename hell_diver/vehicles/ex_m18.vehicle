@@ -44,8 +44,7 @@ ai_handle_taxi_request_when_full="1"
 	drag_offset="-1" 
 	destroy_on_top_hit="1"
 	destroy_on_top_hit_time="5"/> 
-	
-	<modifier class="blast_damage" value="-0.3" />
+
 
 	0<turret offset="0 0 -0.2" weapon_key="ex_m18_cannon.weapon" weapon_offset="0 0 0" weapon_recoil="0.2" physics_recoil="0.2"  max_rotation_step="0.00002" />
 	1<turret offset="0.8 0 -0.1" weapon_key="hd_vehicle_hmg.weapon" parent_turret_index="0" weapon_offset="0 3.8 1.2" weapon_recoil="0" max_rotation_step="0.0001" rotation="0" rotation_range="0.35"/>

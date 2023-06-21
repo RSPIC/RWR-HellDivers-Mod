@@ -6,7 +6,7 @@ file="_usable_item.base"
 >
 
     <hud_icon filename="hd_resupply_pack_mk3.png" />
-
+    <capacity value="1" source="rank" source_value="0.0" />
     <model mesh_filename="backpack.mesh" texture_filename="backpack.jpg" />
     <inventory encumbrance="-10.0" price="0.0" />
     <commonness value="0"  />

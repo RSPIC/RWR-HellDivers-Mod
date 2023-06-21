@@ -41,13 +41,9 @@ dictionary healable_killtarget_bonus = {
         // 空
         {"",-1},
 
-        {"Hound",1},
-
-        {"Volcanic",1},
-
-        {"Ceremonial",1},
-
         {"Warlord",5},
+
+        {"Behemoth",5},
 
         // 占位的
         {"666",-1}
@@ -100,43 +96,30 @@ class kill_reward : Tracker {
 		int t_pid = target.getIntAttribute("player_id");
 		if(k_pid == -1 && t_pid == -1){return;}//AI之间击杀，返回
 
-		string EventKey = event.getStringAttribute("key");//击杀武器关键字
+		string weaponKey = event.getStringAttribute("key");//击杀武器关键字
 		string soldier_group_name = target.getStringAttribute("soldier_group_name");//击杀兵种
-		int target_factionId = target.getIntAttribute("faction_id");
+		int target_fid = target.getIntAttribute("faction_id");
 		int killer_xp = killer.getIntAttribute("xp");
-		int killer_characterId = killer.getIntAttribute("id");
-		int killer_factionId = killer.getIntAttribute("faction_id");
-		
+		int killer_cid = killer.getIntAttribute("id");
+		int killer_fid = killer.getIntAttribute("faction_id");
+
 		_log("execute kill_reward");
-		if (killer !is null && target !is null && killer_factionId != target_factionId) {
-			_log("kill key= "+ EventKey);
-			if(int(healable_weapon[EventKey]) >= 0){//执行：可恢复护甲的击杀武器
-				_log("execute healable_weapon");
-				int healnum = int(healable_weapon[EventKey]);
-				_log("healnum= "+healnum);
-				if (killer_characterId >= 0) {
-					healCharacter(m_metagame,killer_characterId,healnum);
-				}
+		if (killer !is null && target !is null && killer_fid != target_fid) {
+			int healnum = 0;
+			if(healable_weapon.get(weaponKey,healnum)){//执行：可恢复护甲的击杀武器
+				healCharacter(m_metagame,killer_cid,healnum);
 			}
-			if(int(healable_killtarget_bonus[soldier_group_name]) >= 0){//执行：可额外恢复护甲的击杀对象
-				_log("execute healable_killtarget_bonus");
-				int healnum = int(healable_killtarget_bonus[soldier_group_name]);
-				_log("healnum= "+healnum);
-				if (killer_characterId >= 0) {
-					healCharacter(m_metagame,killer_characterId,healnum);
-				}
+			if(healable_killtarget_bonus.get(soldier_group_name,healnum)){//执行：可额外恢复护甲的击杀对象
+				healCharacter(m_metagame,killer_cid,healnum);
 			}
-			if(int(recommend_kill_weapon_bonus[EventKey]) >= 0){//执行：可获得经验加成的击杀武器
-				_log("execute recommend_kill_weapon_bonus");
-				float XpBonusFactor = float(recommend_kill_weapon_bonus[EventKey]);
+			float XpBonusFactor = 0;
+			if(recommend_kill_weapon_bonus.get(weaponKey,XpBonusFactor)){//执行：可获得经验加成的击杀武器
 				if(XpBonusFactor <= 0){
 					XpBonusFactor = 0;
 				}
-				_log("XpBonusFactor= "+XpBonusFactor);
 				float BaseXp = 0.01; //基础经验100xp
 				if(killer_xp <= 250.0){ //250w区间
-					GiveXP(m_metagame,killer_characterId,XpBonusFactor*BaseXp);
-					_log("recommend_kill_weapon_bonus send: "+ XpBonusFactor*BaseXp);
+					GiveXP(m_metagame,killer_cid,XpBonusFactor*BaseXp);
 				}
 			}
 		}

@@ -14,6 +14,7 @@
 
 //Author: RST 
 //受伤心跳和叫声
+//该接口每层护甲的wound输出都会生效，放在游戏里就是一次倒地，20多次生效
 
 class player_wound : Tracker {
 	protected GameModeInvasion@ m_metagame;

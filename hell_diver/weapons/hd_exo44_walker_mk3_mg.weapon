@@ -102,7 +102,7 @@ key="hd_exo44_walker_mk3_mg.weapon"
 	time_to_live="0.5625" can_be_detected_by_driver="1" can_be_disarmed="0" name="EXO-44 Stomper MK3"> 
 		
 		<result class="hit" kill_probability="1.5" 
-		kill_probability_offset_on_successful_hit="15"
+		kill_probability_offset_on_successful_hit="20"
 		kill_decay_start_time="0.3750" kill_decay_end_time="0.5625" character_state="wound"/>
 		<!-- slower decay -->
 		<!-- 60m max damage range -->

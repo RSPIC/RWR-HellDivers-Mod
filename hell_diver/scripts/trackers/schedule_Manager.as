@@ -47,13 +47,33 @@ class schedule_Manager : Tracker {
     }
 
     protected void handlePlayerDisconnectEvent(const XmlElement@ event) {
-        m_players = getPlayers(m_metagame);
+        //m_players = getPlayers(m_metagame);
     }
     protected void handlePlayerConnectEvent(const XmlElement@ event) {
-        m_players = getPlayers(m_metagame);
+        //m_players = getPlayers(m_metagame);
     }
     protected void handlePlayerSpawnEvent(const XmlElement@ event) {
-        m_players = getPlayers(m_metagame);
+        const XmlElement@ player = event.getFirstElementByTagName("player");
+        update_info(player);
+        if(debug_mode){
+            _report(m_metagame,"Update PlayerInfo");
+        }
+    }
+    protected void handlePlayerDieEvent(const XmlElement@ event) {
+        _log("handlePlayerDieEvent");
+        const XmlElement@ element = event.getFirstElementByTagName("target");
+		if(element is null){return;}
+        int cid = element.getIntAttribute("character_id");
+        if(g_IRQ.cidValid(cid)){    //用于判断玩家的角色是否有效（如死亡）
+            g_IRQ.set(cid,false);
+        }
+        string name = element.getStringAttribute("name");
+        if(g_playerInfoBuck.exists(name)){
+            g_playerInfoBuck.removeByName(name);
+            if(debug_mode){
+                _report(m_metagame,"remove PlayerInfo");
+            }
+        }
     }
 
     void start(){
@@ -76,8 +96,27 @@ class schedule_Manager : Tracker {
         for (uint j = 0; j < m_players.size(); ++j) {
 			const XmlElement@ player = m_players[j];
 			if(player is null){return;}
-
+            
+            update_info(player);
             auto_heal(player);
+        }
+    }
+
+    void update_info(const XmlElement@ player){
+        string name = player.getStringAttribute("name");
+        int pid = player.getIntAttribute("player_id");
+        int cid = player.getIntAttribute("character_id");
+        int fid = player.getIntAttribute("faction_id");
+        const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+        int wound = character.getIntAttribute("wounded");
+        int dead = character.getIntAttribute("dead");
+        string group = character.getStringAttribute("soldier_group_name");
+        float xp = character.getFloatAttribute("xp");
+        float rp = character.getFloatAttribute("rp");
+        if(g_playerInfoBuck.exists(name)){
+            g_playerInfoBuck.update(name,pid,cid,fid,dead,wound,xp,rp,group);
+        }else{
+            g_playerInfoBuck.addNewInfo(name,pid,cid,fid,dead,wound,xp,rp,group);
         }
     }
 
@@ -103,17 +142,7 @@ class schedule_Manager : Tracker {
         g_IRQ.clearAll();
 		m_ended = true;
 	}
-    // ----------------------------------------------------
-    protected void handlePlayerDieEvent(const XmlElement@ event) {
-        _log("handlePlayerDieEvent");
-        const XmlElement@ element = event.getFirstElementByTagName("target");
-		if(element is null){return;}
-        int cid = element.getIntAttribute("character_id");
-        if(g_IRQ.cidValid(cid)){
-            g_IRQ.set(cid,false);
-        }
-        
-    }
+
     // --------------------------------------------
     protected void handleResultEvent(const XmlElement@ event) {
         string EventKeyGet = event.getStringAttribute("key");

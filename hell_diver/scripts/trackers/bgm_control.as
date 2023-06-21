@@ -47,6 +47,17 @@ dictionary bgm_time = {
 
 };
 
+//其他能临时改变游戏BGM的触发
+dictionary ex_bgm = {
+    // 空
+        {"",-1},
+
+        {"music_march_of_steel_torrent.wav",186},
+ 
+        // 占位的
+        {"666",-1}
+};
+
 
 class bgm_control : Tracker{
     protected GameModeInvasion@ m_metagame;
@@ -184,7 +195,6 @@ class bgm_control : Tracker{
         if(debug_mode){
             _report(m_metagame,"Playing BGM="+bgmName+" Time="+m_bgm_timer);
         }
-        
     }
 
     // ----------------------------------------------------
@@ -194,6 +204,9 @@ class bgm_control : Tracker{
     // ----------------------------------------------------
     protected void handleResultEvent(const XmlElement@ event) {
         string EventKeyGet = event.getStringAttribute("key");
+        if(ex_bgm.get(EventKeyGet,m_timer)){
+            playSoundtrack(m_metagame,EventKeyGet);
+        }
         if (!(dynamic_alert_notify_key.exists(EventKeyGet))){
 			return;        
 		}

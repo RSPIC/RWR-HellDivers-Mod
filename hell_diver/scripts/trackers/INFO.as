@@ -4,6 +4,10 @@
 #include "tracker.as"
 #include "debug_reporter.as"
 
+//author:RST
+//阵营信息
+//玩家基本信息
+
 class factionInfo {
 	protected int m_fid;
 	protected string m_name;
@@ -92,6 +96,8 @@ class factionInfo {
 class factionInfoBuck {
 	protected array<factionInfo@> m_factionInfo;	
 
+	factionInfoBuck(){}
+
 	uint size(){
 		return m_factionInfo.size();
 	}
@@ -165,7 +171,188 @@ class factionInfoBuck {
 	}
 }
 //----------------------------------------------------------
-factionInfoBuck g_factionInfoBuck;	
+class playerInfo {
+	protected string m_name;
+	protected string m_group;
+	protected int m_pid;
+	protected int m_cid;
+	protected int m_fid;
+	protected int m_dead;
+	protected int m_wound;
+	protected float m_xp;
+	protected float m_rp;
+
+	playerInfo(const string&in name,const int&in pid,const int&in cid,const int&in fid,const int&in dead,const int&in wound,const float&in xp,const float&in rp,string group = "default"){
+		m_name = name;
+		m_group = group;
+		m_pid = pid;
+		m_cid = cid;
+		m_fid = fid;
+		m_dead = dead;
+		m_wound = wound;
+		m_xp = xp;
+		m_rp = rp;
+	}
+
+	void update(const string&in name,const int&in pid,const int&in cid,const int&in fid,const int&in dead,const int&in wound,const float&in xp,const float&in rp,string group = "default"){
+		m_name = name;
+		m_group = group;
+		m_pid = pid;
+		m_cid = cid;
+		m_fid = fid;
+		m_dead = dead;
+		m_wound = wound;
+		m_xp = xp;
+		m_rp = rp;
+	}
+
+	string getName(){return m_name;}
+	string getGroup(){return m_group;}
+	int getPid(){return m_pid;}
+	int getCid(){return m_cid;}
+	int getFid(){return m_fid;}
+	int getWound(){return m_wound;}
+	int getDead(){return m_dead;}
+	float getXp(){return m_xp;}
+	float getRp(){return m_rp;}
+
+	void updateWound(int wound){m_wound = wound;}
+
+	int getCidByPid(const int&in pid){
+		if(m_pid == pid){
+			return m_cid;
+		}
+		return -1;
+	}
+	int getFidByPid(const int&in pid){
+		if(m_pid == pid){
+			return m_fid;
+		}
+		return -1;
+	}
+	int getPidByCid(const int&in cid){
+		if(m_cid == cid){
+			return m_pid;
+		}
+		return -1;
+	}
+	string getNameByCid(const int&in cid){
+		if(m_cid == cid){
+			return m_name;
+		}
+		return "";
+	}
+
+}
+
+class playerInfoBuck{
+	protected array<playerInfo@> m_playerInfo;
+
+	playerInfoBuck(){}
+
+	uint size(){return m_playerInfo.size();}
+
+	void addNewInfo(const string&in name,const int&in pid,const int&in cid,const int&in fid,const int&in dead,const int&in wound,const float&in xp,const float&in rp,string group = "default"){
+		playerInfo@ newInfo = playerInfo(name,pid,cid,fid,dead,wound,xp,rp,group);
+		m_playerInfo.insertLast(newInfo);
+	}
+
+	void update(const string&in name,const int&in pid,const int&in cid,const int&in fid,const int&in dead,const int&in wound,const float&in xp,const float&in rp,string group = "default"){
+		for(uint i=0; i<size();++i){
+			if(name == m_playerInfo[i].getName()){
+				m_playerInfo[i].update(name,pid,cid,fid,dead,wound,xp,rp,group);
+			}
+		}
+	}
+
+	bool exists(string name){
+		for(uint i=0; i<size();++i){
+			if(name == m_playerInfo[i].getName()){
+				return true;
+			}
+		}
+		return false;
+	}
+
+	int getCidByPid(const int&in pid){
+		for(uint i=0; i<size();++i){
+			int cid = m_playerInfo[i].getCidByPid(pid);
+			if(cid != -1){
+				return cid;
+			}
+		}
+		return -1;
+	}
+	int getFidByPid(const int&in pid){
+		for(uint i=0; i<size();++i){
+			int fid = m_playerInfo[i].getFidByPid(pid);
+			if(fid != -1){
+				return fid;
+			}
+		}
+		return -1;
+	}
+	int getPidByCid(const int&in cid){
+		for(uint i=0; i<size();++i){
+			int pid = m_playerInfo[i].getPidByCid(cid);
+			if(pid != -1){
+				return pid;
+			}
+		}
+		return -1;
+	}
+	string getNameByCid(const int&in cid){
+		for(uint i=0; i<size();++i){
+			string name = m_playerInfo[i].getNameByCid(cid);
+			if(name != ""){
+				return name;
+			}
+		}
+		return "";
+	}
+
+	void removeByName(string name){
+		for(uint i=0; i<size();++i){
+			string p_name = m_playerInfo[i].getName();
+			if(name == p_name){
+				m_playerInfo.removeAt(i);
+				--i;
+			}
+		}
+	}
+
+	int getWoundByName(string name){
+		for(uint i=0; i<size();++i){
+			if(name == m_playerInfo[i].getName()){
+				return m_playerInfo[i].getWound();
+			}
+		}
+		return -1;
+	}
+	int getDeadByName(string name){
+		for(uint i=0; i<size();++i){
+			if(name == m_playerInfo[i].getName()){
+				return m_playerInfo[i].getDead();
+			}
+		}
+		return -1;
+	}
+
+	void updateWound(string name,int wound){
+		for(uint i=0; i<size();++i){
+			if(name == m_playerInfo[i].getName()){
+				m_playerInfo[i].updateWound(wound);
+			}
+		}
+	}
+
+	void clearAll(){
+		m_playerInfo.resize(0);
+	}
+}
+//----------------------------------------------------------
+factionInfoBuck@ g_factionInfoBuck = factionInfoBuck();	
+playerInfoBuck@ g_playerInfoBuck = playerInfoBuck();	
 bool g_online_TestMode = false;
 bool g_debugMode = false;
 

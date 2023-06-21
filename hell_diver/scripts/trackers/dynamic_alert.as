@@ -127,7 +127,7 @@ const array<SpawnInfo> level_12 = {
 
     SpawnInfo("bugs_Impaler",int(rand(0,1))),
     SpawnInfo("bugs_Tank",int(rand(0,1))),
-    SpawnInfo("bugs_Behemoth",int(rand(0,1))),
+    SpawnInfo("bugs_Behemoth",int(rand(-2,1))),
     SpawnInfo("bugs_BroodCommander",int(rand(1,3))),
     SpawnInfo("bugs_Elite",0),
     SpawnInfo("bugs_Warrior",0),
@@ -143,9 +143,9 @@ const array<SpawnInfo> level_15 = {
     SpawnInfo("cyborgs_spawn_initiate_model.vehicle",0),
     SpawnInfo("cyborgs_spawn_warlord_model.vehicle",int(rand(1,4))),
 
-    SpawnInfo("bugs_Impaler",int(rand(0,2))),
-    SpawnInfo("bugs_Tank",int(rand(0,2))),
-    SpawnInfo("bugs_Behemoth",int(rand(1,2))),
+    SpawnInfo("bugs_Impaler",int(rand(0,1))),
+    SpawnInfo("bugs_Tank",int(rand(0,1))),
+    SpawnInfo("bugs_Behemoth",int(rand(1,1))),
     SpawnInfo("bugs_BroodCommander",int(rand(0,3))),
     SpawnInfo("bugs_Elite",0),
     SpawnInfo("bugs_Warrior",0),
@@ -262,7 +262,7 @@ class dynamic_alert : Tracker {
 	protected GameModeInvasion@ m_metagame;
     protected int server_difficulty_level = 0;
     protected int m_server_difficulty_level = 0;
-    protected float m_cd_time = 24;
+    protected float m_cd_time = 30;
     protected float m_cd_timer;
     protected bool m_alertFlag = false;
     protected bool debug_mode;
@@ -297,6 +297,9 @@ class dynamic_alert : Tracker {
             m_cd_timer -= time;
             if(m_cd_timer <  0.0){
                 clearAlert();
+                if(debug_mode){
+                    _report(m_metagame,"Alert CD OK=");
+                }
             }
         }
         debug_mode = g_debugMode;
@@ -310,11 +313,6 @@ class dynamic_alert : Tracker {
 
 	protected void handleResultEvent(const XmlElement@ event) {
         if(m_alertFlag){return;}
-        else{
-            if(debug_mode){
-                _report(m_metagame,"Alert CD OK=");
-            }
-        }
 		string EventKeyGet = event.getStringAttribute("key");
         string dict_value;
         if (!(dynamic_alert_notify_key.get(EventKeyGet, dict_value))){return;}
@@ -417,16 +415,18 @@ class dynamic_alert : Tracker {
 
         if(rate <= 0.5 && rate >0.2){
             Alert_Spawn(m_metagame,m_fid,position,level_random);
-            m_cd_time = 12.0;
+            m_cd_time = 20.0;
         }else if(rate < 0.20){
             Alert_Spawn(m_metagame,m_fid,position,level_all);
-            m_cd_time = 6.0;
+            m_cd_time = 15.0;
         }else if(rate > 0.5 && rate <= 0.8){
-            m_cd_time = 18.0;
+            m_cd_time = 25.0;
+        }else{
+            m_cd_time = 30;
         }
 
         int player_num = players.size();
-        m_cd_time = m_cd_time - 0.2*player_num;
+        m_cd_time = m_cd_time - 0.5*player_num;
 
         m_cd_time = m_cd_time - m_server_difficulty_level + 9;
         if(m_cd_time <= 0){

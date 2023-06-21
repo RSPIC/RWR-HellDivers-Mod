@@ -20,7 +20,7 @@
 //首次进入服务器的教程提示(包括测试服)
 //检测刺雷护甲的防止存放
 
-//机甲武器替换护甲
+//机甲武器替换护甲(左副手右主手)
 dictionary EXO_Armor = {
 
         // 空
@@ -28,7 +28,7 @@ dictionary EXO_Armor = {
 
         {"hd_exo44_walker_mk3_mg.weapon","hd_exo44_walker_mk3_missile.weapon"},
         {"hd_exo44_walker_mk3_missile.weapon","hd_exo44_walker_mk3_mg.weapon"},
-        {"hd_exo48_obsidian_mk3_cannon.weapon","null"},
+        {"hd_exo48_obsidian_mk3_cannon.weapon","hd_exo48_obsidian_mk3_cannon_main.weapon"},
         {"hd_exo51_lumberer_mk3_cannon.weapon","hd_exo51_lumberer_mk3_flame.weapon"},
         {"hd_exo51_lumberer_mk3_flame.weapon","hd_exo51_lumberer_mk3_cannon.weapon"},
 

@@ -127,7 +127,7 @@ radius="1"
 		<result class="hit" kill_probability="0.88" 
 		kill_probability_offset_on_successful_hit="0"
 		kill_decay_start_time="0.48" kill_decay_end_time="0.70" />
-		<trigger class="time" time_to_live="15"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<trigger class="impact" time_to_live="15"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
 		
@@ -139,10 +139,9 @@ radius="1"
 		<effect class="result" key="terrain" ref="" lighting="0"/>
 		<effect class="activated" ref="" />
 		-->
-		<effect class="activated" ref="torpedo_tail_splash" />
-		<effect class="activated" ref="torpedo_tail_splash_2" />
-		<effect class="activated" ref="torpedo_tail_bobble" />
-
+		<effect class="result" key="terrain" ref="ba_alice_result_light" lighting="0" post_processing="1"/>
+		<effect class="result" key="terrain" ref="ba_alice_result_impact" lighting="0" post_processing="1"/>
+		<effect class="result" key="terrain" ref="ba_alice_result_smoke" lighting="0" post_processing="0"/>
 		
 		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
 		<sound class="result" key="terrain" copy="other" />
@@ -162,19 +161,15 @@ radius="1"
 		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
 		
 		<!--尾迹组-->
-		<trail probability="1" key="test_trail"/>	
+		<trail probability="1" key="alice.trail"/>	
     </projectile>
 	
 	<!--枪口特效-->
 	<!-- <effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/>  -->
 	<!-- <effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/>  -->
-	<effect class="muzzle" ref="ba_crusader_muzzle_ring_center" lighting="0"/> 
-	<effect class="muzzle" ref="ba_crusader_muzzle_light" lighting="0"/> 
-	<effect class="muzzle" ref="ba_crusader_muzzle_smoke" lighting="0" post_processing="1"/> 
-	<effect class="muzzle" ref="ba_crusader_muzzle_ahead_smoke" lighting="0" post_processing="0"/> 
-	<effect class="muzzle" ref="ba_crusader_muzzle_ring" lighting="0"/> 
-	<effect class="muzzle" ref="ba_crusader_muzzle_ring_center" lighting="0"/> 
-	<effect class="muzzle" ref="ba_crusader_muzzle_spark" lighting="0"/> 
+	<effect class="muzzle" ref="ba_alice_muzzle_fire" lighting="0"/> 
+	<effect class="muzzle" ref="ba_alice_muzzle_smoke" lighting="0"/> 
+
 	
 	<!--雷鸣弹道
     <ballistics 

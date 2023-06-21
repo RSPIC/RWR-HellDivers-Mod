@@ -1,0 +1,332 @@
+author: RST
+2023.6.21
+未经授权不可复用、修改使用、仅用于helldiver mod
+
+		<effect class="result" key="terrain" ref="ba_alice_result_light" lighting="0" post_processing="1"/>
+		<effect class="result" key="terrain" ref="ba_alice_result_impact" lighting="0" post_processing="1"/>
+		<effect class="result" key="terrain" ref="ba_alice_result_smoke" lighting="0" post_processing="0"/>
+		<trail probability="1" key="alice.trail"/>	
+		
+		<effect class="muzzle" ref="ba_alice_muzzle_fire" lighting="0"/> 
+		<effect class="muzzle" ref="ba_alice_muzzle_smoke" lighting="0"/> 	
+		
+
+particle_system ba_alice_muzzle_fire
+{
+	quota 50
+	material WFX_T_MF_A8
+	particle_width 4
+	particle_height 2.5
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center_left
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.1
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 1
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	-90
+		rotation_range_end	-90
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 0 1
+		time1 0.7
+		colour1 1 0.5 0.5 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system ba_alice_muzzle_smoke
+{
+	quota 50
+	material Particle_Dissolve_Cloud_01_pass
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.7
+		duration 0.1
+		depth 1
+		height 1
+		width 1
+	}
+	affector Scaler
+	{
+		rate 2
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.2 0.2 0.2 0
+		time1 0.1
+		colour1 0.2 0.2 0.2 0
+		time2 0.4
+		colour2 0.35 0.35 0.35 0.75
+		time3 0.8
+		colour3 0.1 0.1 0.1 0.4
+		time4 1
+		colour4 0 0 0 0
+	}
+}
+particle_system ba_alice_result_light
+{
+	quota 50
+	material add_smoke_2_pass
+	particle_width 2.5
+	particle_height 2.5
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.5
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 2
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	180
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.5
+		colour1 0.5 0 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system ba_alice_result_impact
+{
+	quota 50
+	material explosion_smoke_05_bw_pass
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.1
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 70
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	180
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.7
+		colour1 1 0 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system ba_alice_result_smoke
+{
+	quota 50
+	material Particle_Dissolve_Cloud_01_pass
+	particle_width 1.5
+	particle_height 1.5
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Ring
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.6
+		duration 0.1
+		depth 1.3
+		height 1.3
+		width 1.3
+		inner_width 1
+		inner_height 1
+	}
+	affector Scaler
+	{
+		rate 2
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	180
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.2 0.2 0.2 0
+		time1 0.3
+		colour1 0.2 0.2 0.2 0
+		time2 0.4
+		colour2 0.15 0.15 0.15 0.75
+		time3 0.8
+		colour3 0.1 0.1 0.1 0.4
+		time4 1
+		colour4 0 0 0 0
+	}
+}
+
+
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material WFX_T_MF_A8 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture WFX_T_MF_A8.png 	
+}}}}
+
+material alice_railgun_trail : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture alice_railgun_trail.png 	
+}}}}
+material Tex_Smoke09C : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture Tex_Smoke09C.png 	
+}}}}
+material Particle_Dissolve_Cloud_01_pass : alpha_blend_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture Particle_Dissolve_Cloud_01.png 	
+}}}}
+material add_smoke_2_pass : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture add_smoke_2.png 	
+}}}}
+material explosion_smoke_05_bw_pass : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture explosion_smoke_05_bw.png 	
+}}}}

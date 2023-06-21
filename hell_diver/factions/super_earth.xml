@@ -182,6 +182,7 @@
 		<models file="hd_weapons.models" />
 		<models file="hd_rare.models" />
 		<models file="acg_token.models" />
+		<models file="acg_weapon.models" />
 		
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="common.resources" />
@@ -403,6 +404,7 @@
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources>
 			<weapon key="hd_exo48_obsidian_mk3_cannon.weapon" /><!--黑曜石-->
+			<weapon key="hd_exo48_obsidian_mk3_cannon_main.weapon" /><!--黑曜石-->
 		</resources>
 	</soldier> 
 

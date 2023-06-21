@@ -144,8 +144,6 @@ dictionary repairtool_key = {
 
         {"hd_rep80_mk2",0.05},
 
-        {"hd_ad289_angel_mk3",3.0},
-
         {"hd_vehicle_wrench",0.2},
 
         // 占位的

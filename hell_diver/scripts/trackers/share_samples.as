@@ -9,7 +9,7 @@
 #include "all_parameter.as"
 
 #include "debug_reporter.as"
-#include "Info.as"
+#include "INFO.as"
 
 //Author: RST 
 //共享样本和合成研究点
@@ -75,16 +75,11 @@ class share_samples : Tracker {
 		int itemClass = event.getIntAttribute("item_class");
 		int playerId = event.getIntAttribute("player_id");
 		int containerId = event.getIntAttribute("target_container_type_id");
-		const XmlElement@ owner = getCharacterInfo(m_metagame, characterId);
-		int factionId = -1;
-		if(owner !is null){
-			factionId = owner.getIntAttribute("faction_id");
-		}
+
 		//containerId = 0(地面) 1(军械库) 2（背包） 3（仓库）
 		//itemClass = 0(主、副武器) 1（投掷物） 3（护甲、战利品）
 
-		if(keyValue=="general")
-		{
+		if(keyValue=="general"){
 			if(containerId == 2 ){//拾取进背包
 				string equipKey =  getPlayerEquipmentKey(m_metagame,characterId,2);
 				array<const XmlElement@>@ allPlayer = getPlayers(m_metagame);
