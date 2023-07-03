@@ -59,4 +59,12 @@ material normal_trail_red : add_base
             texture normal_trail.png 	
 			colour_op_ex modulate src_manual src_texture 1 0 0 1
 }}}}
+material normal_trail_lightblue : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture normal_trail.png 	
+			colour_op_ex modulate src_manual src_texture 0 0.3 1 1
+}}}}
 

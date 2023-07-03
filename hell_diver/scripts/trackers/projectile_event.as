@@ -8,6 +8,11 @@
 #include "all_helper.as"
 #include "all_parameter.as"
 
+//串行空袭列表
+//0：机枪扫射、重机枪扫射、近空扫射、燃烧炸弹
+//1：轨道激光空袭
+//2；密集轰炸
+//3：导弹弹幕
 class projectile_event : Tracker {
 	protected Metagame@ m_metagame;
 
@@ -35,7 +40,7 @@ class projectile_event : Tracker {
 		switch(int(projectile_eventkey[EventKeyGet])) 
         {
             case 0:{break;}
-            case 1: {   //空袭
+            case 1: {   //密集轰炸
                 // 查找并确认玩家存在
                 int characterId = event.getIntAttribute("character_id");
 				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
@@ -50,7 +55,9 @@ class projectile_event : Tracker {
                 int factionid = character.getIntAttribute("faction_id");
                 // 创建空袭事件
                 Event_call_helldiver_superearth_airstrike@ new_task = Event_call_helldiver_superearth_airstrike(m_metagame,0,characterId,factionid,pos2,pos1,"airstrike_mk3");
-                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                //TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                TaskSequencer@ tasker = m_metagame.getHdTaskSequncerIndex(2);
+                if(tasker is null){break;}
                 tasker.add(new_task);
                 
                 break;
@@ -70,7 +77,9 @@ class projectile_event : Tracker {
                 int factionid = character.getIntAttribute("faction_id");
 
                 Event_call_helldiver_superearth_heavystrafe@ new_task = Event_call_helldiver_superearth_heavystrafe(m_metagame,0,characterId,factionid,pos2,pos1,"heavymg_strafe_mk3");
-                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                //TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                TaskSequencer@ tasker = m_metagame.getHdTaskSequncerIndex(0);
+                if(tasker is null){break;}
                 tasker.add(new_task);
                 
                 break;
@@ -138,7 +147,9 @@ class projectile_event : Tracker {
                 // 创建空袭事件
                 _log("execution Incendiary bomb");
                 Event_call_helldiver_superearth_incendiary_bombs@ new_task = Event_call_helldiver_superearth_incendiary_bombs(m_metagame,0,characterId,factionid,pos2,pos1,"incendiary_bombs_mk3");
-                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                //TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                TaskSequencer@ tasker = m_metagame.getHdTaskSequncerIndex(0);
+                if(tasker is null){break;}
                 tasker.add(new_task);
                 break;
             }
@@ -180,7 +191,9 @@ class projectile_event : Tracker {
                 // 创建空袭事件
                 _log("execution Laser Strike");
                 Event_call_helldiver_superearth_laser_strike@ new_task = Event_call_helldiver_superearth_laser_strike(m_metagame,0,characterId,factionid,pos2,pos1,"laser_strike_mk3");
-                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                //TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                TaskSequencer@ tasker = m_metagame.getHdTaskSequncerIndex(1);
+                if(tasker is null){break;}
                 tasker.add(new_task);
                 break;
             }
@@ -199,7 +212,9 @@ class projectile_event : Tracker {
                 int factionid = character.getIntAttribute("faction_id");
 
                 Event_call_helldiver_superearth_strafing_run@ new_task = Event_call_helldiver_superearth_strafing_run(m_metagame,0,characterId,factionid,pos2,pos1,"strafing_run_mk3");
-                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                //TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                TaskSequencer@ tasker = m_metagame.getHdTaskSequncerIndex(0);
+                if(tasker is null){break;}
                 tasker.add(new_task);
                 
                 break;
@@ -219,7 +234,9 @@ class projectile_event : Tracker {
                 int factionid = character.getIntAttribute("faction_id");
 
                 Event_call_helldiver_superearth_close_air_support@ new_task = Event_call_helldiver_superearth_close_air_support(m_metagame,0,characterId,factionid,pos2,pos1,"close_air_support_mk3");
-                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                //TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                TaskSequencer@ tasker = m_metagame.getHdTaskSequncerIndex(0);
+                if(tasker is null){break;}
                 tasker.add(new_task);
                 
                 break;
@@ -239,7 +256,9 @@ class projectile_event : Tracker {
                 int factionid = character.getIntAttribute("faction_id");
 
                 Event_call_helldiver_superearth_missile_barrage@ new_task = Event_call_helldiver_superearth_missile_barrage(m_metagame,0,characterId,factionid,pos2,pos1,"missile_barrage_mk3");
-                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                //TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                TaskSequencer@ tasker = m_metagame.getHdTaskSequncerIndex(3);
+                if(tasker is null){break;}
                 tasker.add(new_task);
                 
                 break;
@@ -582,6 +601,42 @@ class projectile_event : Tracker {
                     }
                 }
                 break;
+            }
+            case 46:{//acg_patricia_fataldrive
+                int cid = event.getIntAttribute("character_id");
+                int pid = g_playerInfoBuck.getPidByCid(cid);
+                if(pid == -1){return;}
+                //先过主手武器检测
+                string equipKey_main = getPlayerEquipmentKey(m_metagame,cid,0);//主武器
+                string matchKey = "acg_patricia_";
+                if(matchKey != equipKey_main.substr(0,matchKey.length())){
+                    setWoundCharacter(m_metagame,cid);
+                    notify(m_metagame, "你的主武器未为对应武器", dictionary(), "misc", pid, true, "倒地惩罚", 1.0);
+                    deleteItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
+                    deleteItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
+                    deleteItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
+                    deleteItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
+                    deleteItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
+                    return;
+                }
+                
+                const XmlElement@ player = getPlayerInfo(m_metagame,pid);
+                int fid = 0;
+                Vector3 ePos = stringToVector3(player.getStringAttribute("aim_target"));
+                Vector3 sPos = ePos;
+                string key = "acg_patricia_FatalDrive_damage.projectile";
+                float speed = 1;
+                float delaytime = 0;
+                CreateDirectProjectile(m_metagame,sPos,ePos,"acg_patricia_FatalDrive_spawn.projectile",cid,fid,1);
+                CreateProjectile@ first_task = CreateProjectile(m_metagame,sPos,ePos,key,cid,fid,speed,delaytime);
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                tasker.add(first_task);
+                for(uint i=7;i>0;--i){
+                    CreateProjectile@ task = CreateProjectile(m_metagame,sPos,ePos,key,cid,fid,speed,0.5);
+                    tasker.add(task);
+                }
+                ;
+
             }
 
 

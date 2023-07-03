@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources clear_weapons="0" clear_vehicles="0" clear_calls="0">
 	<!-- always load common first; it"s the one that clears the initial weapon resources -->
-	<weapon key="ex_leviathan_breath.weapon" /> <!--利维坦之息弓-->
-	<weapon key="ex_disaster_railgun.weapon" /> <!--天灾电磁炮-->
+	<!-- <weapon key="ex_leviathan_breath.weapon" /> 利维坦之息弓 -->
+	<!-- <weapon key="ex_disaster_railgun.weapon" /> 天灾电磁炮 -->
 
 	<weapon key="63type_107mm_rocket_launcher_resource.weapon" /> <!--63式火箭炮-->
 
-	<weapon key="ex_piano_uzuki.weapon" /> <!--卯月主题钢琴-->
-	<weapon key="ex_gramophone_steeltorrent.weapon" /> <!--留声机 钢铁洪流进行曲-->
+	<!-- <weapon key="ex_piano_uzuki.weapon" />  -->
+	<!--卯月主题钢琴-->
+	<!-- <weapon key="ex_gramophone_steeltorrent.weapon" />  -->
+	<!--留声机 钢铁洪流进行曲-->
 
 	<projectile key="ex_isu_152_call.projectile" /> <!--152-->
 	<projectile key="noxe_call.projectile" /> <!--noxe-->

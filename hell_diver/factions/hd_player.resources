@@ -2,6 +2,7 @@
 <resources >
 <!--此处用于注册super_earth阵营军械库物品，需要确保物品代码中in_stock="1" -->
 
+
 	<weapon key="hd_ar_ar19_liberator_full_upgrade.weapon" /><!--解放者突击步枪-->
 	<weapon key="hd_ar_ar22c_patriot_full_upgrade.weapon" /><!--爱国者突击步枪-->
 	<weapon key="hd_ar_ar20l_justice_full_upgrade.weapon" /><!--正义突击步枪-->
@@ -29,33 +30,30 @@
 	<weapon key="hd_laser_las98_laser_cannon_mk3.weapon" /><!--激光大炮激光枪 重穿 重型武器-->
 	<weapon key="hd_arc_ac5_shotgun_full_upgrade.weapon" /><!--电弧霰弹枪-->
 	<weapon key="hd_arc_ac3_thrower_full_upgrade.weapon" /><!--电弧发射器-->
-	
-	<!-- Support -->
-	<weapon key="hd_sup_rep80_mk3.weapon" /><!--维修工具枪-->
-	<weapon key="hd_sup_md98_injector.weapon" /><!--MD-98注射器-->
-
-    <!-- 副手 -->
-    <weapon key="hd_driver_binoculars.weapon" /><!--驾驶员望远镜-->
-    <weapon key="hd_lmg_mgx42_mk3.weapon" /><!--MGX42机枪-->
-    <weapon key="hd_drone_ad334_guard_dog_mk3.weapon" /><!--护卫犬-->
-    <!-- <weapon key="hd_drone_ad334_guard_dog_load.weapon" />护卫犬 -->
-    <weapon key="hd_drone_ad289_angel_mk3.weapon" /><!--护卫犬-->
-    <weapon key="hd_exp_mls4x_commando_mk3.weapon" /><!--突击队跟踪导弹-->
-    <weapon key="hd_exp_rec6_demolisher_mk3.weapon" /><!--爆破手-->
-    <weapon key="hd_side_p2_peacemaker_full_upgrade.weapon" /><!--和平使者手枪 中穿-->
-    <weapon key="hd_side_p6_gunslinger.weapon" /><!--神枪手重装左轮手枪 重穿-->
-    <weapon key="hd_exp_plas3_singe.weapon" /><!--焦痕副手直射榴弹-->
-    <weapon key="hd_exp_rl112_recoilless_rifle_mk3.weapon" /><!--无后坐力步枪-->
-    <weapon key="hd_exp_eta17_mk3.weapon" /><!--抛弃式反战车火箭-->
-    <weapon key="hd_pst_flam40_incinerator_mk3.weapon" /><!--焚化炉火焰喷射器-->
-    <weapon key="hd_pst_flam24_pyro.weapon" /><!--烈焰火焰喷射器 副手-->
-    <weapon key="hd_pst_tox13_avenger_mk3.weapon" /><!--复仇者生化喷射器-->
-
-    <!-- 部署物 -->
-    <weapon key="hd_apb_mk3.weapon" /><!--铁丝网-->\
 
     <!-- 民本 -->
     <weapon key="ex_cl_banzai.weapon" /><!--刺雷-->
+    <!-- 副手 -->
+    <weapon key="hd_sup_md98_injector.weapon" /><!--MD-98注射器-->
+    <weapon key="hd_driver_binoculars.weapon" /><!--驾驶员望远镜-->
+    <weapon key="hd_side_p2_peacemaker_full_upgrade.weapon" /><!--和平使者手枪 中穿-->
+    <weapon key="hd_side_p6_gunslinger.weapon" /><!--神枪手重装左轮手枪 重穿-->
+    <weapon key="hd_side_laser_sword.weapon" /><!--光剑-->
+    <weapon key="hd_exp_rec6_demolisher_mk3.weapon" /><!--爆破手-->
+    <weapon key="hd_exp_eta17_mk3.weapon" /><!--抛弃式反战车火箭-->
+    <weapon key="hd_pst_flam24_pyro.weapon" /><!--烈焰火焰喷射器 副手-->
+    <weapon key="hd_exp_plas3_singe.weapon" /><!--焦痕副手直射榴弹-->
+    <weapon key="hd_drone_ad289_angel_mk3.weapon" /><!--天使-->
+    <weapon key="hd_drone_ad334_guard_dog_mk3.weapon" /><!--护卫犬-->
+    <weapon key="hd_sup_rep80_mk3.weapon" /><!--维修工具枪-->
+    <weapon key="hd_lmg_mgx42_mk3.weapon" /><!--MGX42机枪-->
+    <weapon key="hd_exp_mls4x_commando_mk3.weapon" /><!--突击队跟踪导弹-->
+    <weapon key="hd_exp_rl112_recoilless_rifle_mk3.weapon" /><!--无后坐力步枪-->
+    <weapon key="hd_pst_flam40_incinerator_mk3.weapon" /><!--焚化炉火焰喷射器-->
+    <weapon key="hd_pst_tox13_avenger_mk3.weapon" /><!--复仇者生化喷射器-->
+
+    <!-- 部署物 -->
+    <weapon key="hd_apb_mk3.weapon" /><!--铁丝网-->
 
     <!--投掷物/信标-->
     <projectile key="hd_m5_apc_call.projectile" /><!--M5 ACP 载具-->

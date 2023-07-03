@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectiles>
+<projectile 
+class="grenade" 
+name="Magic" slot="0" pulldown_in_air="0.1" 
+key="acg_patricia_FatalDrive_spawn.projectile"
+can_be_detected_by_footmen="0" can_be_disarmed="0" 
+>
+	<rotation class="motion" />	
+
+	<result class="blast" radius="5" damage="500" push="0" decal="0" character_state="death"  />
+	<trigger class="time" time_to_live="0" />
+    <collision class="sticky" />
+
+    <commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+
+	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_circle" lighting="0"/> 
+	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_circle2" lighting="0"/> 
+	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_circle3" lighting="0"/> 
+	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_lens" lighting="0"/> 
+	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_spray" lighting="0"/> 
+	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_shrink_flare" lighting="0"/> 
+	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_shrink_line" lighting="0"/> 
+	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_springFire" lighting="0"/> 
+	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_flower" lighting="0"/> 
+	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_ambient" lighting="0"/>
+
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="vehicle" copy="terrain" />
+
+	<sound class="result" key="other" fileref="acg_patricia_FatalDrive.wav" pitch_variety="0.03" volume="1.0" />
+	
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
+
+    <model mesh_filename="" />
+
+</projectile>
+<projectile 
+class="grenade" 
+name="Magic" slot="0" 
+pulldown_in_air="0.7" 
+radius="0.3"
+key="acg_patricia_FatalDrive_damage.projectile"
+can_be_detected_by_footmen="0" can_be_disarmed="0" 
+>
+	<rotation class="motion" />	
+
+	<result class="blast" radius="20.0" damage="100" push="0.3" decal="1" character_state="wound" faction_compare="not_equal" />
+	<trigger class="time" time_to_live="0.05" />
+    <collision class="sticky" />
+
+    <commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="vehicle" copy="terrain" />
+
+	<!-- <sound class="result" key="other" fileref="wand_aa_hit.wav" pitch_variety="0.03" volume="1.0" /> -->
+	
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
+
+    <model mesh_filename="" />
+
+</projectile>
+<projectile 
+class="grenade" 
+name="PhantomFang" 
+slot="0" 
+pulldown_in_air="8" 
+radius="0.3"
+key="acg_patricia_phantomfang_damage.projectile"
+can_be_detected_by_footmen="0" can_be_disarmed="0" 
+>
+	<rotation class="motion" />	
+
+	<result class="blast" radius="6.0" damage="30" push="0.3" decal="1" character_state="wound" faction_compare="not_equal" />
+	<trigger class="impact" time_to_live="0.05" />
+    <collision class="sticky" />
+
+    <commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+
+	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_crescent" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_crescent2" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_lens" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_star" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_flower" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_centerlight" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_spray" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_spray2" lighting="0"/> 
+
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="vehicle" copy="terrain" />
+
+	<sound class="result" key="other" fileref="MAFDS_ZAP_Micro_Lumos_01.wav" pitch_variety="0.03" volume="1.0" />
+	<sound class="result" key="other" fileref="MAFDS_ZAP_Micro_Lumos_02.wav" pitch_variety="0.03" volume="1.0" />
+	<sound class="result" key="other" fileref="MAFDS_ZAP_Micro_Lumos_03.wav" pitch_variety="0.03" volume="1.0" />
+	<sound class="result" key="other" fileref="MAFDS_ZAP_Micro_Lumos_04.wav" pitch_variety="0.03" volume="1.0" />
+	
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
+
+    <model mesh_filename="" />
+
+</projectile>
+<projectile 
+class="grenade" 
+name="JihadSlash" 
+slot="0" 
+pulldown_in_air="4" 
+radius="0.3"
+key="acg_patricia_jihadslash_spawn.projectile"
+can_be_detected_by_footmen="0" can_be_disarmed="0" 
+>
+	<rotation class="motion" />	
+
+	<result class="spawn" instance_class="projectile" instance_key="acg_patricia_jihadslash_damage.projectile" 
+		min_amount="30" max_amount="30" offset="0 0 0" position_spread="2 2" direction_spread="0 0" />	
+	<trigger class="time" time_to_live="0.9" />
+    <collision class="sticky" />
+
+    <commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_crossline" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_star" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_spray" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_radiation" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_pre_flare" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_pre_ringwave2" lighting="0"/>
+
+	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_pre_lens" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_pre_ringwave" lighting="0"/>
+		
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="vehicle" copy="terrain" />
+
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
+
+    <model mesh_filename="" />
+	<trail probability="1.0" key="" lighting="0"/>	
+
+</projectile>
+<projectile 
+class="grenade" 
+name="JihadSlash" 
+slot="0" 
+pulldown_in_air="0.5" 
+radius="0.3"
+key="acg_patricia_jihadslash_damage.projectile"
+can_be_detected_by_footmen="0" can_be_disarmed="0" 
+>
+	<rotation class="motion" />	
+
+	<result class="blast" radius="6.0" damage="20" push="0.1" decal="1" character_state="wound" faction_compare="not_equal" />
+	<trigger class="time" time_to_live="0" />
+    <collision class="sticky" />
+
+    <commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="vehicle" copy="terrain" />
+
+	<sound class="result" key="other" fileref="MAFDS_ZAP_Micro_Lumos_01.wav" pitch_variety="0.03" volume="1.0" />
+	<sound class="result" key="other" fileref="MAFDS_ZAP_Micro_Lumos_02.wav" pitch_variety="0.03" volume="1.0" />
+	<sound class="result" key="other" fileref="MAFDS_ZAP_Micro_Lumos_03.wav" pitch_variety="0.03" volume="1.0" />
+	<sound class="result" key="other" fileref="MAFDS_ZAP_Micro_Lumos_04.wav" pitch_variety="0.03" volume="1.0" />
+	
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
+
+    <model mesh_filename="" />
+	<trail probability="1.0" key="laser_purple_tighten" lighting="0"/>	
+
+</projectile>
+
+</projectiles>

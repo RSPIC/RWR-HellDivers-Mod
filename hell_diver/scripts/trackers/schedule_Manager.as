@@ -39,7 +39,7 @@ class schedule_Manager : Tracker {
 
     schedule_Manager(GameModeInvasion@ metagame,float time = 5.0){
         @m_metagame = @metagame;
-        m_time = time;   //4s一周期进行检测
+        m_time = time;   //5s一周期进行检测
         m_timer = m_time;
         m_players = getPlayers(m_metagame);
         debug_mode = g_debugMode;
@@ -58,6 +58,7 @@ class schedule_Manager : Tracker {
         if(debug_mode){
             _report(m_metagame,"Update PlayerInfo");
         }
+
     }
     protected void handlePlayerDieEvent(const XmlElement@ event) {
         _log("handlePlayerDieEvent");
@@ -78,6 +79,7 @@ class schedule_Manager : Tracker {
 
     void start(){
         m_ended = false;
+        
     }
 
     void update(float time) {

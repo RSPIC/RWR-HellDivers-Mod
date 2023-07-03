@@ -3,6 +3,7 @@
 #include "admin_manager.as"
 #include "tracker.as"
 #include "debug_reporter.as"
+#include "schedule_IRQ.as"
 
 //author:RST
 //阵营信息
@@ -242,6 +243,12 @@ class playerInfo {
 		}
 		return "";
 	}
+	string getNameByPid(const int&in pid){
+		if(m_pid == pid){
+			return m_name;
+		}
+		return "";
+	}
 
 }
 
@@ -304,6 +311,15 @@ class playerInfoBuck{
 	string getNameByCid(const int&in cid){
 		for(uint i=0; i<size();++i){
 			string name = m_playerInfo[i].getNameByCid(cid);
+			if(name != ""){
+				return name;
+			}
+		}
+		return "";
+	}
+	string getNameByPid(const int&in pid){
+		for(uint i=0; i<size();++i){
+			string name = m_playerInfo[i].getNameByPid(pid);
 			if(name != ""){
 				return name;
 			}
@@ -383,6 +399,9 @@ class Initiate : Tracker {
 	void start(){
         m_ended = false;
 		isStarted =false;
+		@g_factionInfoBuck = factionInfoBuck();	
+ 		@g_playerInfoBuck = playerInfoBuck();
+		@g_IRQ = _IRQ("",false);
 	}
 	void update(float time){
 	}

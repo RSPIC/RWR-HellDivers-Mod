@@ -75,8 +75,8 @@ key="ex_trinity_ghoul.weapon"
 
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="46" can_be_detected_by_footmen="1" 
 	time_to_live="3.5" can_be_detected_by_driver="1" can_be_disarmed="0" class="grenade"> 
-		<!-- 3x4x10 -->
-		<result class="blast" radius="3.5" damage="10" push="0.2" decal="0" character_state="death"  faction_compare="not_equal"/>
+		<!-- 3x4x30 -->
+		<result class="blast" radius="5.5" damage="30" push="0.4" decal="0" character_state="death"  faction_compare="not_equal"/>
 		<trigger class="impact"  />
 		<rotation class="motion" />
 		<collision class="sticky" />
@@ -103,6 +103,7 @@ key="ex_trinity_ghoul.weapon"
 		<sound class="result" key="static_object" copy="terrain" />
 		<sound class="result" key="vehicle" copy="terrain" />
 		<sound class="result" key="character" copy="terrain" />
+		<sound class="result" key="shield" copy="terrain" />
 		<effect class="result" key="other" copy="terrain"/>
 		<effect class="result" key="static_object" copy="terrain" />
 		<effect class="result" key="character" copy="terrain" />

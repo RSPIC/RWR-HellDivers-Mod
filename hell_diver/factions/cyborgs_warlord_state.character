@@ -20,7 +20,7 @@
 	<sound key="footstep" fileref="cyborgs_voice_warlord_11.wav" volume="0.5" />
 	<sound key="footstep" fileref="cyborgs_voice_warlord_12.wav" volume="0.5" />
 
-	<parameter class="being_stunned_steer_amount" value="0.2" />
+	<parameter class="being_stunned_steer_amount" value="0.1" />
 
 	<parameter class="throwing_self_over_initial_bounce" value="0.07" /><!--翻越时初始弹起高度-->
 	<parameter class="throwing_self_over_steer_amount" value="0.30" /><!--翻越中向前位移速度-->

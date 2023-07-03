@@ -862,6 +862,10 @@
 	<text key="Fiammetta Skill"  text="菲娅梅塔 '你须偿还' [技能-反重甲]" />
 	<text key="Fiammetta GL"  text="菲娅梅塔 [榴弹-反轻甲]" />
 	<text key="Fiammetta"  text="菲娅梅塔" />
+	<text key="Patricia Abelheim [FatalDrive]"  text="帕蒂 [致命驱动]" />
+	<text key="Patricia Abelheim [CumForce]"  text="帕蒂 [累计武力]" />
+	<text key="Patricia Abelheim [PhantomFang]"  text="帕蒂 [幻影獠牙]" />
+	<text key="Patricia Abelheim [JihadSlash]"  text="帕蒂 [圣域斩击]" />
 
 <!-- 信物 -->
 	<text key="Asakaze [Skin]"  text="朝风 [信物]" />
@@ -924,10 +928,12 @@
 	<text key="Yuudachi [Halloween Ver.] [Skin]"  text="夕立 [万圣节 Ver.] [信物]" />
 	<text key="Tashkent [Skin]"  text="塔什干 [信物]" />
 	<text key="Alibina [Skin]"  text="阿莉比娜 [信物]" />
+	<text key="Amamia Kokoro [Skin]"  text="阿喵喵 [信物]" />
+	<text key="Patricia Abelheim [Skin]"  text="帕特莉夏·阿贝尔海姆 [信物]" />
 
 <!-- ex武器 -->
 	<text key="Leviathan Breath"  text="利维坦之息 [反重甲]" />
-	<text key="Trinity Ghoul"  text="三体坐观者 [反重甲]" />
+	<text key="Trinity Ghoul"  text="三体坐观者 [反中甲]" />
 	<text key="Disaster Railgun"  text="天灾轨道炮 [反重甲]" />
 	<text key="63type 107mm Rocket Launcher deploy"  text="63式107毫米牵引式火箭炮部署包" />
 	<text key="Noxe Beacon"  text="Noxe 轮式导弹发射车 部署信标" />
@@ -1010,8 +1016,6 @@
 	<text key="152mm GL" text="152毫米榴弹" />
 	<text key="KV-2 Gup" text="KV-2 [真理高中] 重型坦克" />
 	<text key="KV-2 Gup Beacon" text="KV-2 [真理高中] 重型坦克 部署信标" />
-
-	<text key="FLAM-40 Incinerator" text="燃烧弹" />
 
 	<text key="Sherman Tank [Modernization]" text="谢尔曼喷火坦克 [现代化] 中型坦克" />
 	<text key="Sherman Tank Beacon" text="谢尔曼喷火坦克 [现代化] 中型坦克 部署信标" />
@@ -1271,7 +1275,7 @@
 	<text key="63Type 107mm Help" text="[107火箭炮教程] 首次部署" />
 	<text key="Help - 63Type 107mm" text="本火箭炮具有炮手和观察员两个位，观察员位用于触发密位特效。炮手开火瞄准密位内圈的任意位置，火箭炮将会打击到密位外圈的指定位置。" />
 	<text key="Banzai Help" text="[刺雷教程] 首次使用" />
-	<text key="Help - Banzai" text="本武器左键使用后会加速，5s后自动爆炸。期间再次点击鼠标按钮即可提前引爆s" />
+	<text key="Help - Banzai" text="本武器左键使用后会加速，5s后自动爆炸。期间再次点击鼠标按钮即可提前引爆" />
 
 	<text key="EXO Warning" text="[警告]你搭配了错误的机甲武器" />
 	<text key="Warning - EXO" text="[警告]机甲武器不可以混搭，你将无法自动替换机甲护甲，以及一段时间后会过载死亡" />
@@ -1282,6 +1286,10 @@
 	<text key="Help - EXO-3" text="注意：机甲子弹是有限的，同时切忌错误搭配！" />
 	<text key="EXO Armor onload" text="机甲护甲已装配" />
 	<text key="EXO Armor offload" text="机甲护甲已卸载" />
+
+	<text key="Help - Patricia" text="本武器开火具有前摇，前摇状态无法移动并且隐形状态仍能够被攻击。每局首次持有本武器会发放致命驱动技能武器，使用次数为5次。
+	【注意】使用副手技能时必须保证主手武器为 帕特莉夏·阿贝尔海姆 的武器，否则会直接倒地" />
+	<text key="Patricia Help" text="[帕特莉夏·阿贝尔海姆 特殊武器介绍]" />
 
 	<text key="Stratagems Call" text="[教程]战略呼叫机制" />
 	<text key="Stratagems Useable" text="[Tips]常用呼叫指令,输入/call可再次查看本页。输入/call 1~4 查看不同类型支援代码" />

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carry_item file="base_valuable.carry_item" name="Lottery ticket" key="lottery.carry_item">
+    <hud_icon filename="hud_lottery.png" />
+    <inventory encumbrance="1.0" buy_price="1500.0" sell_price="0.0" />
+
+    <model mesh_filename="lottery.mesh" texture_filename="lottery.png" />
+
+    <commonness value="0.0001" in_stock="1" />
+</carry_item>

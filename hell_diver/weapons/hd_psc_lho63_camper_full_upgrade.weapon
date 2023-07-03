@@ -86,7 +86,7 @@ key="hd_psc_lho63_camper_full_upgrade.weapon"
     <commonness value="0.1"/>
 
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
-    <projectile file="hd_general_spawn.projectile" pulldown_in_air="6" can_be_detected_by_footmen="1" 
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="7" can_be_detected_by_footmen="1" 
 	time_to_live="0.48" can_be_detected_by_driver="1" can_be_disarmed="0" name="LHO-63 Camper" radius="1.0"> 
 	
 		<result class="hit" kill_probability="2.0"
@@ -144,6 +144,7 @@ key="hd_psc_lho63_camper_full_upgrade.weapon"
 	<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
 	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 
 	<effect class="muzzle" ref="general_weapon_muzzle_bullet_triangle_headon" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_trail_smoke_long" lighting="0"/> 
 
 	<!--姿态精度-->
     <!-- <stance state_key="running" accuracy="1" /> 

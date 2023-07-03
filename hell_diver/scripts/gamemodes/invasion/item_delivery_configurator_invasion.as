@@ -317,28 +317,32 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 	// ----------------------------------------------------
 	protected void setupCommunity1() {
 		_log("adding community box 1 config", 1);
+		//收藏品箱子
 		array<Resource@> deliveryList = {
 			 Resource("gift_box_community_1.carry_item", "carry_item")
 		};
 
 		array<array<ScoredResource@>> rewardPasses = {
 			{
-		ScoredResource("gold_bar.carry_item", "carry_item", 22.0f),
-        ScoredResource("costume_lizard.carry_item", "carry_item", 20.0f),
-        ScoredResource("tracer_dart.weapon", "weapon", 40.0f, 5),
-		ScoredResource("gift_box_community_2.carry_item", "carry_item", 7.0f),   
-		ScoredResource("g3_1x.weapon", "weapon", 3.0f),
-        ScoredResource("flamethrower.weapon", "weapon", 15.0f),
-        ScoredResource("javelin_ap.weapon", "weapon", 3.0f)         
+			ScoredResource("collect_fumo_cirno.carry_item", "carry_item", 1.0f),
+			ScoredResource("collect_fumo_flandre_scarlet.carry_item", "carry_item", 1.0f),
+			ScoredResource("collect_fumo_hong_meiling.carry_item", "carry_item", 1.0f),
+			ScoredResource("collect_fumo_inu_sakuya.carry_item", "carry_item", 1.0f),
+			ScoredResource("collect_fumo_junko.carry_item", "carry_item", 1.0f),
+			ScoredResource("collect_fumo_koishi_komeiji.carry_item", "carry_item", 1.0f),
+			ScoredResource("collect_fumo_mike_goutokuji.carry_item", "carry_item", 1.0f),
+			ScoredResource("collect_fumo_mokou_fujiwara.carry_item", "carry_item", 1.0f),
+			ScoredResource("collect_fumo_nitori_kawashiro.carry_item", "carry_item", 1.0f),
+			ScoredResource("collect_fumo_reimu.carry_item", "carry_item", 1.0f),
+			ScoredResource("collect_fumo_rumia.carry_item", "carry_item", 1.0f),
+			ScoredResource("collect_fumo_sanae_kochiya.carry_item", "carry_item", 1.0f),
+			ScoredResource("collect_fumo_shion_yorigami.carry_item", "carry_item", 1.0f),
+			ScoredResource("collect_fumo_suwako_moriya.carry_item", "carry_item", 1.0f),
+			ScoredResource("collect_fumo_youmu_konpaku.carry_item", "carry_item", 1.0f),
+			ScoredResource("collect_fumo_yuyuko.carry_item", "carry_item", 1.0f)
 			},
 			{
-         ScoredResource("banana_car_flare.projectile", "projectile", 20.0f, 2),
-         ScoredResource("costume_underpants.carry_item", "carry_item", 20.0f),
-         ScoredResource("taser.weapon", "weapon", 20.0f),
-         ScoredResource("aa12_frag.weapon", "weapon", 15.0f),
-         ScoredResource("wiesel_flare.projectile", "projectile", 20.0f, 2),
-         ScoredResource("camo_vest.carry_item", "carry_item", 20.0f),
-		 ScoredResource("gift_box_community_5.carry_item", "carry_item", 5.0f)                  
+			ScoredResource("lottery.carry_item", "carry_item", 1.0f)
 			}
 		};   
 			
@@ -354,27 +358,77 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 	// ----------------------------------------------------
 	protected void setupCommunity2() {
 		_log("adding community box 2 config", 1);
+		//信物箱子
 		array<Resource@> deliveryList = {
 			 Resource("gift_box_community_2.carry_item", "carry_item")
 		};
 
 		array<array<ScoredResource@>> rewardPasses = {
 			{
-		ScoredResource("golden_knife.weapon", "weapon", 15.0f),
-		ScoredResource("gift_box_community_1.carry_item", "carry_item", 5.0f),
-		ScoredResource("shock_paddle.weapon" , "weapon", 5.0f),
-        ScoredResource("m16a4_support.weapon", "weapon", 20.0f),        
-        ScoredResource("dooms_hammer.projectile", "projectile", 35.0f, 5),
-        ScoredResource("banana_peel.projectile", "projectile", 15.0f, 20),
-        ScoredResource("javelin_ap.weapon", "weapon", 5.0f)         
+			ScoredResource("token_asakaze.projectile","projectile",1.0f,4),
+			ScoredResource("token_acg_88mm_flak41.projectile","projectile",1.0f,4),
+			ScoredResource("token_alice_tendou.projectile","projectile",1.0f,4),
+			ScoredResource("token_amatsukaze.projectile","projectile",1.0f,4),
+			ScoredResource("token_api.projectile","projectile",1.0f,4),
+			ScoredResource("token_bronya_ex_1.projectile","projectile",1.0f,4),
+			ScoredResource("token_cz75.projectile","projectile",1.0f,4),
+			ScoredResource("token_fenrir_black.projectile","projectile",1.0f,4),
+			ScoredResource("token_fenrir_white.projectile","projectile",1.0f,4),
+			ScoredResource("token_fiammetta.projectile","projectile",1.0f,4),
+			ScoredResource("token_g41_2064.projectile","projectile",1.0f,4),
+			ScoredResource("token_gawr_gura.projectile","projectile",1.0f,4),
+			ScoredResource("token_graf_spee_sweater_ver.projectile","projectile",1.0f,4),
+			ScoredResource("token_heavy_equip_jk_ii.projectile","projectile",1.0f,4),
+			ScoredResource("token_hibiki.projectile","projectile",1.0f,4),
+			ScoredResource("token_hk416_starry_cocoon.projectile","projectile",1.0f,4),
+			ScoredResource("token_incomparable.projectile","projectile",1.0f,4),
+			ScoredResource("token_iruru.projectile","projectile",1.0f,4),
+			ScoredResource("token_iws2000_banisher.projectile","projectile",1.0f,4),
+			ScoredResource("token_iws2000_sandcastle_terminator.projectile","projectile",1.0f,4),
+			ScoredResource("token_kagamine_rin.projectile","projectile",1.0f,4),
+			ScoredResource("token_kaname_madoka.projectile","projectile",1.0f,4),
+			ScoredResource("token_kemomimi.projectile","projectile",1.0f,4),
+			ScoredResource("token_longdan.projectile","projectile",1.0f,4),
+			ScoredResource("token_lulu.projectile","projectile",1.0f,4),
+			ScoredResource("token_m37_summer_parader.projectile","projectile",1.0f,4),
+			ScoredResource("token_maido1.projectile","projectile",1.0f,4),
+			ScoredResource("token_maido2.projectile","projectile",1.0f,4),
+			ScoredResource("token_maido3.projectile","projectile",1.0f,4),
+			ScoredResource("token_maido4.projectile","projectile",1.0f,4),
+			ScoredResource("token_megumin.projectile","projectile",1.0f,4),
+			ScoredResource("token_mg4.projectile","projectile",1.0f,4),
+			ScoredResource("token_mg4_703.projectile","projectile",1.0f,4),
+			ScoredResource("token_nanachi.projectile","projectile",1.0f,4),
+			ScoredResource("token_natsuki_amagi.projectile","projectile",1.0f,4),
+			ScoredResource("token_neco.projectile","projectile",1.0f,4),
+			ScoredResource("token_perseus.projectile","projectile",1.0f,4),
+			ScoredResource("token_raiden_mei_ex_1.projectile","projectile",1.0f,4),
+			ScoredResource("token_reisenu.projectile","projectile",1.0f,4),
+			ScoredResource("token_rem.projectile","projectile",1.0f,4),
+			ScoredResource("token_rkgk.projectile","projectile",1.0f,4),
+			ScoredResource("token_rubyrose.projectile","projectile",1.0f,4),
+			ScoredResource("token_sangonomiya_kokomi.projectile","projectile",1.0f,4),
+			ScoredResource("token_scented.projectile","projectile",1.0f,4),
+			ScoredResource("token_shigure.projectile","projectile",1.0f,4),
+			ScoredResource("token_shigure_summer_ver.projectile","projectile",1.0f,4),
+			ScoredResource("token_shokuhou_misaki.projectile","projectile",1.0f,4),
+			ScoredResource("token_skyfire.projectile","projectile",1.0f,4),
+			ScoredResource("token_sorasaki_hina.projectile","projectile",1.0f,4),
+			ScoredResource("token_strelka.projectile","projectile",1.0f,4),
+			ScoredResource("token_tachibana_kanade.projectile","projectile",1.0f,4),
+			ScoredResource("token_takanashi_hoshino.projectile","projectile",1.0f,4),
+			ScoredResource("token_texas.projectile","projectile",1.0f,4),
+			ScoredResource("token_tima.projectile","projectile",1.0f,4),
+			ScoredResource("token_uzuki.projectile","projectile",1.0f,4),
+			ScoredResource("token_yukikaze.projectile","projectile",1.0f,4),
+			ScoredResource("token_yuudachi_azurlane_origin.projectile","projectile",1.0f,4),
+			ScoredResource("token_yuudachi_halloween_ver.projectile","projectile",1.0f,4),
+			ScoredResource("token_tashkent_equipment.projectile","projectile",1.0f,4),
+			ScoredResource("token_alibina.projectile","projectile",1.0f,4),
+			ScoredResource("token_amamiya_kokoro.projectile","projectile",1.0f,4)
 			},
 			{
-         ScoredResource("costume_banana.carry_item", "carry_item", 25.0f),
-         ScoredResource("fal_bayonet.weapon", "weapon", 20.0f),
-         ScoredResource("dartgun.weapon", "weapon", 10.0f),
-         ScoredResource("l30p.weapon", "weapon", 10.0f),
-         ScoredResource("tti.weapon", "weapon", 15.0f),         
-         ScoredResource("aav7_flare.projectile", "projectile", 20.0f, 2)
+			ScoredResource("lottery.carry_item", "carry_item", 1.0f)
 			}
 		};   
 			
@@ -390,33 +444,19 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 	// ----------------------------------------------------
 	protected void setupCommunity3() {
 		_log("adding community box 3 config", 1);
+		//音乐箱子
 		array<Resource@> deliveryList = {
 			 Resource("gift_box_community_3.carry_item", "carry_item")
 		};
 
 		array<array<ScoredResource@>> rewardPasses = {
 			{
-		 ScoredResource("ump40.weapon", "weapon", 10.0f), 
-         ScoredResource("mx4_storm.weapon", "weapon", 10.0f),
-         ScoredResource("bizon.weapon", "weapon", 10.0f),
-		 ScoredResource("dragons_breath.weapon", "weapon", 8.0f), 
-         ScoredResource("enforcer.weapon", "weapon", 8.0f),
-         ScoredResource("squall.weapon", "weapon", 8.0f),
-         ScoredResource("chainsaw.weapon", "weapon", 10.0f),
-		 ScoredResource("qbz95.weapon", "weapon", 5.0f),
-         ScoredResource("emp_grenade.projectile", "projectile", 16.0f, 10),
-         ScoredResource("kunai.projectile", "projectile", 15.0f, 20)
+		 ScoredResource("ex_piano_uzuki.weapon", "weapon", 1.0f,2), 
+         ScoredResource("ex_gramophone_steeltorrent.weapon", "weapon", 1.0f,2)
 			},
-            {
-         ScoredResource("gps_laptop.weapon", "weapon", 17.0f, 5),
-	     ScoredResource("hornet_resource.weapon", "weapon", 15.0f, 2), 
-         ScoredResource("repair_crane_resource.weapon", "weapon", 15.0f, 2),
-         ScoredResource("squall.weapon", "weapon", 8.0f),
-         ScoredResource("costume_butcher.carry_item", "carry_item", 12.0f),        
-         ScoredResource("vest_repair.weapon", "weapon", 15.0f, 10), 
-         ScoredResource("guntruck_flare.projectile", "projectile", 10.0f, 2),
-         ScoredResource("vulcan_acav_flare.projectile", "projectile", 8.0f, 2)
-			} 
+			{
+			ScoredResource("lottery.carry_item", "carry_item", 1.0f)
+			}
 		};   
 
 		processRewardPasses(rewardPasses);
@@ -431,33 +471,35 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 	// ----------------------------------------------------
 	protected void setupCommunity4() {
 		_log("adding community box 4 config", 1);
+		//载具箱子
 		array<Resource@> deliveryList = {
 			 Resource("gift_box_community_4.carry_item", "carry_item")
 		};
 
 		array<array<ScoredResource@>> rewardPasses = {
 			{
-         ScoredResource("lottery.carry_item", "carry_item", 25.0f), 
-         ScoredResource("tkb059.weapon", "weapon", 5.0f),
-         ScoredResource("compound_bow.weapon", "weapon", 10.0f),
-         ScoredResource("blowgun.weapon", "weapon", 12.0f),
-         ScoredResource("g11.weapon", "weapon", 20.0f),
-         ScoredResource("pf98.weapon", "weapon", 8.0f),                  
-         ScoredResource("icecream.projectile", "projectile", 20.0f, 1)
+			ScoredResource("ex_isu_152_call.projectile", "projectile", 1.0f),
+			ScoredResource("noxe_call.projectile", "projectile", 1.0f),
+			ScoredResource("ex_sturmtiger_tank_call.projectile", "projectile", 1.0f),
+			ScoredResource("ex_apocalypse_tank_call.projectile", "projectile", 1.0f),
+			ScoredResource("ex_kv2_gup_call.projectile", "projectile", 1.0f),
+			ScoredResource("ex_sherman_call.projectile", "projectile", 1.0f),
+			ScoredResource("ex_guntruck_plus_call.projectile", "projectile", 1.0f),
+			ScoredResource("ba_crusader_call.projectile", "projectile", 1.0f),
+			ScoredResource("ex_m18_call.projectile", "projectile", 1.0f),
+			ScoredResource("ba_torumaru_tiger_call.projectile", "projectile", 1.0f),
+			ScoredResource("mi_24_call.projectile", "projectile", 1.0f),
+			ScoredResource("bell_360_call.projectile", "projectile", 1.0f),
+			ScoredResource("mh_60s_call.projectile", "projectile", 1.0f),
+			ScoredResource("is2_m1895_call.projectile", "projectile", 1.0f),
+			ScoredResource("himars_call.projectile", "projectile", 1.0f),
+			ScoredResource("mtlb_2b9_call.projectile", "projectile", 1.0f),
+			ScoredResource("m61a5_call.projectile", "projectile", 1.0f),
+			ScoredResource("borsig_call.projectile", "projectile", 1.0f)
 			},
-            {
-         ScoredResource("gepard_m6_lynx.weapon", "weapon", 8.0f),
-		 ScoredResource("fd338.weapon", "weapon", 5.0f),
-	     ScoredResource("golden_ak47.weapon", "weapon", 8.0f), 
-         ScoredResource("zjx19_flare.projectile", "projectile", 15.0f, 2),
-	     ScoredResource("portable_mortar.weapon", "weapon", 10.0f),
-	     ScoredResource("rgm40.weapon", "weapon", 18.0f), 
-	     ScoredResource("gl06.weapon", "weapon", 18.0f),
-		 ScoredResource("gift_box_community_3.carry_item", "carry_item", 6.0f),
-		 ScoredResource("gift_box_community_1.carry_item", "carry_item", 6.0f),
-         ScoredResource("gift_box_community_2.carry_item", "carry_item", 6.0f),
-		 ScoredResource("gift_box_community_5.carry_item", "carry_item", 6.0f)                                            
-			} 
+			{
+			ScoredResource("lottery.carry_item", "carry_item", 1.0f)
+			}
 		};   
 
 		processRewardPasses(rewardPasses);
@@ -472,34 +514,37 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 	// ----------------------------------------------------
 	protected void setupCommunity5() {
 		_log("adding community box 5 config", 1);
+		//武器箱子
 		array<Resource@> deliveryList = {
 			 Resource("gift_box_community_5.carry_item", "carry_item")
 		};
 
 		array<array<ScoredResource@>> rewardPasses = {
 			{
-         ScoredResource("balloon.carry_item", "carry_item", 20.0f, 10),
-         ScoredResource("vest_exo.carry_item", "carry_item", 25.0f, 5),          
-         ScoredResource("suomi.weapon", "weapon", 10.0f),
-         ScoredResource("ninjato.weapon", "weapon", 20.0f),
-         ScoredResource("noxe_flare.projectile", "projectile", 15.0f, 2),
-         ScoredResource("m528_flare.projectile", "projectile", 15.0f, 2),         
-         ScoredResource("m320.weapon", "weapon", 15.0f),
-         ScoredResource("p416.weapon", "weapon", 10.0f)            
+         	ScoredResource("ex_leviathan_breath.weapon", "weapon", 1.0f),         
+         	ScoredResource("ex_disaster_railgun.weapon", "weapon", 1.0f),         
+         	ScoredResource("acg_reisenu_a.weapon", "weapon", 1.0f),         
+         	ScoredResource("acg_mg4a3td.weapon", "weapon", 1.0f),         
+         	ScoredResource("acg_mg4td_ke.weapon", "weapon", 1.0f),         
+         	ScoredResource("acg_ruby_rose_scythe.weapon", "weapon", 1.0f),         
+         	ScoredResource("acg_kokomi_portia.weapon", "weapon", 1.0f),         
+         	ScoredResource("acg_megumin_wand_float.weapon", "weapon", 1.0f),         
+         	ScoredResource("acg_sorasaki_hina.weapon", "weapon", 1.0f),         
+         	ScoredResource("acg_texas_skill.weapon", "weapon", 1.0f),         
+         	ScoredResource("acg_hk416_starry_cocoon.weapon", "weapon", 1.0f),         
+         	ScoredResource("acg_iws2000_banisher.weapon", "weapon", 1.0f),         
+         	ScoredResource("acg_kemomimi.weapon", "weapon", 1.0f),         
+         	ScoredResource("acg_shigure_127mm.weapon", "weapon", 1.0f),         
+         	ScoredResource("acg_fiammetta_gl.weapon", "weapon", 1.0f),         
+         	ScoredResource("acg_smg_strelka.weapon", "weapon", 1.0f),         
+         	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f),
+         	ScoredResource("acg_sinteria_bow.weapon", "weapon", 1.0f),
 
+         	ScoredResource("acg_patricia_cumforce.weapon", "weapon", 1.0f)
 			},
-            {
-	     ScoredResource("stim.projectile", "projectile", 25.0f, 10), 
-         ScoredResource("flamer_tank_flare.projectile", "projectile", 15.0f, 2),
-         ScoredResource("sev90_flare.projectile", "projectile", 15.0f, 2),                           
-	     ScoredResource("chicken_carrier.weapon", "weapon", 10.0f, 5),
-         ScoredResource("squad_equipment_kit.weapon", "weapon", 15.0f, 10),  
-		 ScoredResource("m14k.weapon", "weapon", 4.0f),
-		 ScoredResource("gift_box_community_4.carry_item", "carry_item", 4.0f),         
-		 ScoredResource("gift_box_community_3.carry_item", "carry_item", 4.0f),
-		 ScoredResource("gift_box_community_1.carry_item", "carry_item", 4.0f),
-         ScoredResource("gift_box_community_2.carry_item", "carry_item", 4.0f)                                   
-			} 
+			{
+			ScoredResource("lottery.carry_item", "carry_item", 1.0f)
+			}
 		};   
 
 		processRewardPasses(rewardPasses);
@@ -531,17 +576,9 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		 ScoredResource("torch.weapon", "weapon", 4.0f, 2)
 
 			},
-            {
-         ScoredResource("ultimax.weapon", "weapon", 10.0f),
-         ScoredResource("zweihander.weapon", "weapon", 20.0f), 
-         ScoredResource("sabre.weapon", "weapon", 20.0f),
-         ScoredResource("doublebarrel.weapon", "weapon", 20.0f),
-         ScoredResource("golden_mp5sd.weapon", "weapon", 12.0f),		 
-		 ScoredResource("gift_box_community_4.carry_item", "carry_item", 3.0f),         
-		 ScoredResource("gift_box_community_3.carry_item", "carry_item", 4.0f),
-		 ScoredResource("gift_box_community_5.carry_item", "carry_item", 6.0f),
-         ScoredResource("gift_box_community_2.carry_item", "carry_item", 5.0f)                                   
-			} 
+			{
+			ScoredResource("lottery.carry_item", "carry_item", 1.0f)
+			}
 		};   
 
 		processRewardPasses(rewardPasses);
@@ -560,146 +597,25 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			 Resource("lottery.carry_item", "carry_item")
 		};
 
-		array<array<ScoredResource@>> rewardPasses = {
-			{
-
-        ScoredResource("icecream.projectile", "projectile", 1.0f, 1)
-   
-			},  		
+		array<array<ScoredResource@>> rewardPasses = {		
         	{
 
-		ScoredResource("cigarettes.carry_item", "carry_item", 30.0f),
-        ScoredResource("playing_cards.carry_item", "carry_item", 29.0f),
-        ScoredResource("cigars.carry_item", "carry_item", 28.0f),
-		ScoredResource("dollars.carry_item", "carry_item", 27.0f),
-		ScoredResource("teddy.carry_item", "carry_item", 26.0f),        
-		ScoredResource("dollars_300.carry_item", "carry_item", 25.0f),
-        ScoredResource("gem.carry_item", "carry_item", 24.0f),
-		ScoredResource("laptop.carry_item", "carry_item", 23.0f),
-		ScoredResource("suitcase.carry_item", "carry_item", 22.0f), 
-   		ScoredResource("painting.carry_item", "carry_item", 21.0f),
-		ScoredResource("gold_bar.carry_item", "carry_item", 20.0f),
-		ScoredResource("cd.carry_item", "carry_item", 19.0f),        
+		ScoredResource("collect_mc_iron.carry_item", "carry_item", 100.0f),     
+		ScoredResource("collect_mc_gold.carry_item", "carry_item", 50.0f),     
+		ScoredResource("collect_mc_diamond.carry_item", "carry_item", 25.0f),     
+		ScoredResource("collect_mc_emerald.carry_item", "carry_item", 10.0f),     
                     
-		ScoredResource("gift_box_1.carry_item", "carry_item", 38.0f),
-		ScoredResource("gift_box_2.carry_item", "carry_item", 19.0f),
-		ScoredResource("gift_box_3.carry_item", "carry_item", 10.0f),
-		ScoredResource("gift_box_community_1.carry_item", "carry_item", 12.0f),
-		ScoredResource("gift_box_community_2.carry_item", "carry_item", 12.0f),
-		ScoredResource("gift_box_community_3.carry_item", "carry_item", 12.0f), 
-		ScoredResource("gift_box_community_4.carry_item", "carry_item", 12.0f),                       
-		ScoredResource("gift_box_community_5.carry_item", "carry_item", 12.0f),         
-		ScoredResource("gift_box_community_6.carry_item", "carry_item", 12.0f),         
+		ScoredResource("gift_box_community_1.carry_item", "carry_item", 1.0f),
+		ScoredResource("gift_box_community_2.carry_item", "carry_item", 1.0f),
+		ScoredResource("gift_box_community_3.carry_item", "carry_item", 1.0f), 
+		ScoredResource("gift_box_community_4.carry_item", "carry_item", 1.0f),                       
+		ScoredResource("gift_box_community_5.carry_item", "carry_item", 1.0f)
 
-        		
-		ScoredResource("underpants.carry_item", "carry_item", 50.0f, 2),
-		ScoredResource("costume_clown.carry_item", "carry_item", 30.0f, 2),
-        ScoredResource("costume_banana.carry_item", "carry_item", 25.0f, 2),
-        ScoredResource("costume_lizard.carry_item", "carry_item", 20.0f, 2),                
-		ScoredResource("costume_werewolf.carry_item", "carry_item", 15.0f, 2),        
-		ScoredResource("vest2.carry_item", "carry_item", 28.0f, 5),
-		ScoredResource("vest_blackops.carry_item", "carry_item", 25.0f, 5),
-        ScoredResource("costume_butcher.carry_item", "carry_item", 20.0f, 2),
-        ScoredResource("camo_vest.carry_item", "carry_item", 30.0f, 4),                
-		ScoredResource("vest3.carry_item", "carry_item", 20.0f, 5),
-        
-        ScoredResource("banana_peel.projectile", "projectile", 50.0f, 2),
-		ScoredResource("mk23.weapon", "weapon", 40.0f),
-		ScoredResource("gps_laptop.weapon", "weapon", 40.0f, 5),
-        ScoredResource("shuriken.projectile", "projectile", 39.0f, 20), 
-        ScoredResource("kunai.projectile", "projectile", 39.0f, 20),        
-        ScoredResource("emp_grenade.projectile", "projectile", 40.0f, 5),                
-		ScoredResource("desert_eagle_gold.weapon", "weapon", 38.0f),
-        ScoredResource("taser.weapon", "weapon", 37.0f),    
-        ScoredResource("dooms_hammer.projectile", "projectile", 36.0f, 5),         
-     	ScoredResource("ump40.weapon", "weapon", 35.0f),
-        ScoredResource("emp_grenade.projectile", "projectile", 34.0f, 10),       
-        ScoredResource("mx4_storm.weapon", "weapon", 33.0f),
-        ScoredResource("bizon.weapon", "weapon", 32.0f),
-        ScoredResource("m202_flash.weapon", "weapon", 31.0f, 4),
-        ScoredResource("steyr_aug.weapon", "weapon", 30.0f),
-        ScoredResource("vest_repair.weapon", "weapon", 30.0f, 5),           
-        ScoredResource("jackhammer.weapon", "weapon", 28.0f),                       
-		ScoredResource("xm25.weapon", "weapon", 20.0f),
-        ScoredResource("sawnoff.weapon", "weapon", 26.0f),
-        ScoredResource("l30p.weapon", "weapon", 25.0f),     
-        ScoredResource("chain_saw.weapon", "weapon", 24.0f),
-        ScoredResource("vss_vintorez.weapon", "weapon", 24.0f),
-        ScoredResource("ns2000.weapon", "weapon", 24.0f),              
-        ScoredResource("pecheneg_bullpup.weapon", "weapon", 23.0f),        
-        ScoredResource("aa12_frag.weapon", "weapon", 22.0f),        
-		ScoredResource("mp7.weapon", "weapon", 21.0f),
-        ScoredResource("tti.weapon", "weapon", 20.0f), 
-        ScoredResource("musket.weapon", "weapon", 19.0f), 
-        ScoredResource("barrett_m107.weapon", "weapon", 18.0f),        
-        ScoredResource("m16a4_support.weapon", "weapon", 17.0f),
-        ScoredResource("tracer_dart.weapon", "weapon", 16.0f, 5), 
-        ScoredResource("kriss_vector.weapon", "weapon", 15.0f),                                
-        ScoredResource("ares_shrike.weapon", "weapon", 14.0f),
-        ScoredResource("vest_repair.weapon", "weapon", 13.0f, 10),        
-        ScoredResource("scarssr.weapon", "weapon", 12.0f),
-        ScoredResource("paw20.weapon", "weapon", 11.0f),
-		ScoredResource("golden_knife.weapon", "weapon", 10.0f),        
-        ScoredResource("chainsaw.weapon", "weapon", 10.0f),       
-        ScoredResource("fal_bayonet.weapon", "weapon", 10.0f), 
-        ScoredResource("microgun.weapon", "weapon", 10.0f),
-        ScoredResource("stoner62.weapon", "weapon", 10.0f),        
-        ScoredResource("squall.weapon", "weapon", 8.0f),               
-        ScoredResource("enforcer.weapon", "weapon", 8.0f),
-		ScoredResource("dragons_breath.weapon", "weapon", 7.0f),        
-        ScoredResource("flamethrower.weapon", "weapon", 7.0f), 
-        ScoredResource("dartgun.weapon", "weapon", 7.0f),                       
-        ScoredResource("javelin_ap.weapon", "weapon", 6.0f),
-		ScoredResource("honey_badger.weapon", "weapon", 5.0f),
-        ScoredResource("milkor_mgl.weapon", "weapon", 5.0f),
-		ScoredResource("m60e4.weapon", "weapon", 4.0f),
-        ScoredResource("lahti_l39.weapon", "weapon", 4.0f),
-        ScoredResource("mg42.weapon", "weapon", 4.0f),
-        ScoredResource("tkb059.weapon", "weapon", 4.0f),
-        ScoredResource("compound_bow.weapon", "weapon", 10.0f),
-        ScoredResource("blowgun.weapon", "weapon", 12.0f),
-        ScoredResource("g11.weapon", "weapon", 8.0f),
-        ScoredResource("pf98.weapon", "weapon", 8.0f),                  
-        ScoredResource("gepard_m6_lynx.weapon", "weapon", 7.0f),
-        ScoredResource("golden_ak47.weapon", "weapon", 5.0f), 
-        ScoredResource("zjx19_flare.projectile", "projectile", 8.0f, 2),
-        ScoredResource("portable_mortar.weapon", "weapon", 6.0f),
-        ScoredResource("rgm40.weapon", "weapon", 25.0f), 
-        ScoredResource("gl06.weapon", "weapon", 25.0f),                     
- 
-        ScoredResource("banana_car_flare.projectile", "projectile", 40.0f, 2),
-	    ScoredResource("hornet_resource.weapon", "weapon", 50.0f, 2),        
-        ScoredResource("repair_crane_resource.weapon", "weapon", 40.0f, 2),        
-        ScoredResource("guntruck_flare.projectile", "projectile", 35.0f, 2),
-        ScoredResource("aav7_flare.projectile", "projectile", 20.0f, 2),
-        ScoredResource("wiesel_flare.projectile", "projectile", 15.0f, 2),                
-        ScoredResource("vulcan_acav_flare.projectile", "projectile", 10.0f, 2),
-        ScoredResource("stim.projectile", "projectile", 40.0f, 10),
-        ScoredResource("balloon.carry_item", "carry_item", 20.0f, 10),
-        ScoredResource("vest_exo.carry_item", "carry_item", 20.0f, 5),
-        ScoredResource("squad_equipment_kit.weapon", "weapon", 20.0f, 10),
-	    ScoredResource("chicken_carrier.weapon", "weapon", 10.0f, 5),
-        ScoredResource("noxe_flare.projectile", "projectile", 10.0f, 2),                
-        ScoredResource("m528_flare.projectile", "projectile", 10.0f, 2),                
-        ScoredResource("flamer_tank_flare.projectile", "projectile", 10.0f, 2),                
-        ScoredResource("sev90_flare.projectile", "projectile", 10.0f, 2),                
-        ScoredResource("suomi.weapon", "weapon", 4.0f),
-        ScoredResource("p416.weapon", "weapon", 4.0f), 
-        ScoredResource("m320.weapon", "weapon", 7.0f),                     
-        ScoredResource("ninjato.weapon", "weapon", 7.0f),
-         ScoredResource("ak47_w_gp25.weapon", "weapon", 8.0f),
-         ScoredResource("g36_w_ag36.weapon", "weapon", 8.0f),
-         ScoredResource("m16a4_w_m203.weapon", "weapon", 8.0f),
-         ScoredResource("kulakov.weapon", "weapon", 5.0f),
-         ScoredResource("rpd.weapon", "weapon", 7.0f),
-         ScoredResource("mac10.weapon", "weapon", 12.0f),
-         ScoredResource("ash12.weapon", "weapon", 6.0f),            
-         ScoredResource("ultimax.weapon", "weapon", 6.0f),
-         ScoredResource("zweihander.weapon", "weapon", 10.0f), 
-         ScoredResource("sabre.weapon", "weapon", 12.0f),
-         ScoredResource("doublebarrel.weapon", "weapon", 10.0f),
-         ScoredResource("golden_mp5sd.weapon", "weapon", 7.0f)		 
-			} 
+
+			},
+			{
+			ScoredResource("balloon.carry_item", "carry_item", 1.0f)
+			}
 		};   
     
 		processRewardPasses(rewardPasses);

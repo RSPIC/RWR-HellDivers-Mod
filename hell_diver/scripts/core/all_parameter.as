@@ -83,6 +83,8 @@ dictionary projectile_eventkey = {
         {"wand_guiding_01",44}, //弃用
         {"acg_megumin_wand_float",45},
 
+        {"acg_patricia_fataldrive",46},
+
         // 占位的
         {"666",-1}
 };

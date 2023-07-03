@@ -15,6 +15,8 @@ class Metagame {
 	protected Comms@ m_comms;
 	// basic task sequencer meant for sequencing major events and major commander dialogue, map rotation and extraction, etc
 	protected TaskSequencer@ m_taskSequencer;
+	// use for helldivers airstrike
+	protected array<TaskSequencer@> m_hd_taskSequencerArray;
 	// manager for temporary parallel task sequencers, used for e.g. handling gift item delivery timing so that several can be ongoing simultaneously
 	protected TaskManager@ m_taskManager;
 	protected MapInfo m_mapInfo;
@@ -56,6 +58,10 @@ class Metagame {
 
 		@m_taskSequencer = TaskSequencer();
 		@m_taskManager = TaskManager();
+		for(uint i=5;i>0;--i){
+			m_hd_taskSequencerArray.insertLast(TaskSequencer());
+		}
+		
 		resetTimer();
 	}
 
@@ -72,6 +78,13 @@ class Metagame {
 	// --------------------------------------------
 	TaskManager@ getTaskManager() const {
 		return m_taskManager;
+	}
+	// --------------------------------------------
+	TaskSequencer@ getHdTaskSequncerIndex(uint i) const {
+		if(i >= m_hd_taskSequencerArray.size()){
+			return null;
+		}
+		return m_hd_taskSequencerArray[i];
 	}
 
 	// --------------------------------------------
@@ -145,6 +158,9 @@ class Metagame {
 	void preBeginMatch() {		
 		m_taskSequencer.clear();
 		m_taskManager.clear();
+		for(uint i=0; i<m_hd_taskSequencerArray.size(); ++i){
+			m_hd_taskSequencerArray[i].clear();
+		}
 		clearTrackers();
 		m_gamePaused = false;
 
@@ -201,7 +217,9 @@ class Metagame {
 	protected void update(float time) {
 		m_taskSequencer.update(time);
 		m_taskManager.update(time);
-
+		for(uint i=0; i<m_hd_taskSequencerArray.size(); ++i){
+			m_hd_taskSequencerArray[i].update(time);
+		}
 		// maintain trackers
 		for (uint i = 0; i < m_trackers.size(); ++i) {
 			Tracker@ tracker = m_trackers[i];

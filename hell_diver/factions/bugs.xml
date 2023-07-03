@@ -83,7 +83,7 @@
 			<!-- wearables -->
 			<item_class_existence class="carry_item" slot="1" probability="0.32" />
 			<!-- backpack -->
-			<item_class_existence class="carry_item" slot="0" probability="0.075" />
+			<item_class_existence class="carry_item" slot="0" probability="0.05" />
 		</item_class_existence_config>
 
 		<attribute_config class="rp">
@@ -111,7 +111,7 @@
 			<!-- wearables -->
 			<item_class_existence class="carry_item" slot="1" probability="1" />
 			<!-- backpack -->
-			<item_class_existence class="carry_item" slot="0" probability="0.125" />
+			<item_class_existence class="carry_item" slot="0" probability="0.05" />
 		</item_class_existence_config>
 
 		<attribute_config class="rp">
@@ -311,13 +311,13 @@
 	<soldier name="Behemoth" spawn_score="0.02" copy_from="base" >
 		<character filename="bugs_behemoth_state.character">	
 		</character>
-		<ai filename="bugs_behemoth.ai" /> 
+		<ai filename="bugs_scout.ai" /> 
 		<model filename="bugs_behemoth.xml" />
 
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="bugs_common.resources">
 			<weapon key="bugs_behemoth_main.weapon" />
-			<carry_item key="general_vest_420" />
+			<carry_item key="anti_light_hit_vest_420" />
 		</resources>
 
 
@@ -351,7 +351,7 @@
 	<soldier name="Impaler" spawn_score="0.05" copy_from="base" >
 		<character filename="bugs_behemoth_state.character">	
 		</character>
-		<ai filename="bugs_behemoth.ai" /> 
+		<ai filename="bugs_scout.ai" /> 
 		<model filename="bugs_impaler.xml" />
 
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />

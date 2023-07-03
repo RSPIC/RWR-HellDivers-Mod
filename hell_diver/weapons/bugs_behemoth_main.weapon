@@ -7,7 +7,6 @@ player_death_drop_owner_lock_time="0"
 key="bugs_behemoth_main.weapon" 
 on_ground_up="0 0 1" 
 radius="1"
-force_as_shoots_blast_projectiles="0"
 > 
     <!-- 80层伤害 -->
 	<tag name="bazooka" />
@@ -27,7 +26,7 @@ force_as_shoots_blast_projectiles="0"
     can_shoot_crouching="0" 
 	can_shoot_prone="1"	
     suppressed="0" 
-	class="4" 
+	class="0" 
 	ai_sight_range_modifier="2.0"
 	sight_range_modifier="1.0" 
 	burst_shots="1" 
@@ -156,7 +155,7 @@ force_as_shoots_blast_projectiles="0"
 	<!--附加属性-->
     <modifier class="speed" value="0" /> 
     <modifier class="hit_success_probability" value="-0.70" />
-    <modifier class="detectability" value="0" />	<!--正值增加玩家隐蔽-->
+    <modifier class="detectability" value="0" />	<!--正值减少玩家隐蔽-->
 	
 	<!--盾块，可设置多个，空盾块仍然生效击杀收益共享，需要删去该段代码-->
 	<shield offset="-0.3 0 2" extent="4 4 4" usable_for_cover="0"/>  

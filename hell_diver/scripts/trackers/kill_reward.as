@@ -7,9 +7,12 @@
 #include "gamemode.as"
 #include "all_helper.as"
 #include "all_parameter.as"
+#include "debug_reporter.as"
+#include "INFO.as"
 //Author:RST
 //特殊武器可以击杀回甲，同时队友伤害会扣甲
 //能够指定一定经验区间使用某种武器击杀特定对象获得额外收益
+//TK反伤功能：一次倒地，倒地状态tk直接死亡
 // --------------------------------------------
 //可恢复护甲的击杀武器，数字为回复甲层数
 dictionary healable_weapon = {
@@ -121,6 +124,31 @@ class kill_reward : Tracker {
 				if(killer_xp <= 250.0){ //250w区间
 					GiveXP(m_metagame,killer_cid,XpBonusFactor*BaseXp);
 				}
+			}
+		}
+		if(k_pid != -1 && t_pid != -1){//玩家TK
+			const XmlElement@ k_character = getCharacterInfo(m_metagame,killer_cid);
+			int wound = k_character.getIntAttribute("wounded");
+			string k_name = g_playerInfoBuck.getNameByCid(killer_cid);
+			string t_name = g_playerInfoBuck.getNameByPid(t_pid);
+			if(wound == 0){
+				string command =
+					"<command class='update_character'" +
+					"	id='" + killer_cid + "'" +	
+					"   wounded='1'>" + 
+					"</command>";
+				m_metagame.getComms().send(command);
+				notify(m_metagame, "你因为击杀友军而被惩罚，倒地状态再次击杀将会死亡", dictionary(), "misc", k_pid, false, "TK惩罚", 1.0);
+				notify(m_metagame, "伤害你的玩家"+k_name+"已被惩罚", dictionary(), "misc", t_pid, false, "TK惩罚", 1.0);
+			}else if(wound == 1){
+				string command =
+					"<command class='update_character'" +
+					"	id='" + killer_cid + "'" +	
+					"   dead='1'>" + 
+					"</command>";
+				m_metagame.getComms().send(command);
+				_report(m_metagame,"玩家"+k_name+"因为TK"+t_name+"而受到了惩罚");
+				notify(m_metagame, "伤害你的玩家"+k_name+"已受到死亡惩罚", dictionary(), "misc", t_pid, false, "TK惩罚", 1.0);
 			}
 		}
 	}

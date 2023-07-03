@@ -181,8 +181,8 @@ on_ground_up="0 0 1"
      
 	<!--附加属性-->
     <modifier class="speed" value="0.0" /> 
-    <modifier class="hit_success_probability" value="0.0" /><!--正值增加玩家抗致死率-->
-    <modifier class="detectability" value="0.0" />	<!--正值增加玩家隐蔽-->
+    <modifier class="hit_success_probability" value="0.0" /><!--正值减少玩家抗致死率-->
+    <modifier class="detectability" value="0.0" />	<!--正值减少玩家隐蔽-->
 	 
 </weapon>
 

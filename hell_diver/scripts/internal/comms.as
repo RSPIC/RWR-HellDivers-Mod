@@ -62,14 +62,14 @@ class Comms {
 
 	// --------------------------------------------
 	void send(const XmlElement@ message) {
-		_log("  sending: " + message.toStringWithFloats(), 1);
+_log("  sending: " + message.toStringWithFloats(), 1);
 
 		commsWrite(message.toDictionary());
 	}
 
 	// --------------------------------------------
 	void send(string message) {
-		_log("  sending: " + message, 1);
+_log("  sending: " + message, 1);
 		commsWriteString(message);
 	}
 
@@ -104,7 +104,7 @@ class Comms {
 		commsRead(data);
 		XmlElement event(data);
 		if (!data.isEmpty() && (event.getName() != "dummy_event")) {
-			_log("  received: " + event.toString());
+_log("  received: " + event.toString());
 		}
 		return event;
 	}

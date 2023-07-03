@@ -1,0 +1,2788 @@
+author: RST
+2022.5.16
+
+累计武力
+	枪口：
+	<effect class="muzzle" ref="patricia_muzzle_flower" lighting="0"/> 
+	<effect class="muzzle" ref="patricia_muzzle_flower_smaller" lighting="0"/>
+	<effect class="muzzle" ref="patricia_CumForce_muzzle_knife_light_1" lighting="0"/> 
+	<effect class="muzzle" ref="patricia_CumForce_muzzle_knife_light_2" lighting="0"/> 
+	<effect class="muzzle" ref="patricia_CumForce_muzzle_knife_light_2_ex" lighting="0"/> 
+	<effect class="muzzle" ref="patricia_CumForce_muzzle_knife_light_2_ex2" lighting="0"/> 
+	<effect class="muzzle" ref="patricia_CumForce_muzzle_knife_light_ahead" lighting="0"/> 
+	<effect class="muzzle" ref="patricia_CumForce_muzzle_light" lighting="0"/> 
+	<effect class="muzzle" ref="patricia_CumForce_muzzle_delay_impact" lighting="0"/> 
+	<effect class="muzzle" ref="patricia_CumForce_muzzle_spray" lighting="0"/> 
+
+	子弹头：
+	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_crescent" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_crescent2" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_lens" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_star" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_flower" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_centerlight" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_spray" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_spray2" lighting="0"/>
+
+幻影獠牙：
+	枪口：
+	<effect class="muzzle" ref="patricia_PhantomFang_muzzle_flower" lighting="0"/>  
+	<effect class="muzzle" ref="patricia_PhantomFang_muzzle_impact" lighting="0"/>  
+	<effect class="muzzle" ref="patricia_PhantomFang_muzzle_flowerring" lighting="0"/>
+
+	父弹头：
+	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_crescent" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_crescent2" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_lens" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_star" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_flower" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_centerlight" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_spray" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_spray2" lighting="0"/>
+
+圣战斩击：
+	枪口：	
+	<effect class="muzzle" ref="patricia_JihadSlash_muzzle_star" lighting="0"/>  
+	<effect class="muzzle" ref="patricia_JihadSlash_muzzle_linearlight" lighting="0"/>  
+	<effect class="muzzle" ref="patricia_JihadSlash_muzzle_ringbow" lighting="0"/>  
+	<effect class="muzzle" ref="patricia_JihadSlash_muzzle_shockwave" lighting="0"/>
+
+	父弹头：
+	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_crossline" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_star" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_spray" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_radiation" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_pre_flare" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_pre_ringwave2" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_pre_lens" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_pre_ringwave" lighting="0"/>
+
+致命驱动：
+	枪口：	
+	<effect class="muzzle" ref="patricia_FatalDrive_muzzle_fireSpark_small" lighting="0"/>  
+	<effect class="muzzle" ref="patricia_FatalDrive_muzzle_fireSpark" lighting="0"/>  
+	<effect class="muzzle" ref="patricia_FatalDrive_muzzle_firelight" lighting="0"/>  
+	<effect class="muzzle" ref="patricia_FatalDrive_muzzle_fireRing2" lighting="0"/>  
+	<effect class="muzzle" ref="patricia_FatalDrive_muzzle_fireRing" lighting="0"/>  
+	<effect class="muzzle" ref="patricia_FatalDrive_muzzle_fireSpark2" lighting="0"/>  
+	<effect class="muzzle" ref="patricia_FatalDrive_muzzle_fireRing3" lighting="0"/>  
+	<effect class="muzzle" ref="patricia_FatalDrive_muzzle_fireRing4" lighting="0"/>  
+
+	父弹头(延时爆炸)：
+	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_circle" lighting="0"/> 
+	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_circle2" lighting="0"/> 
+	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_circle3" lighting="0"/> 
+	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_lens" lighting="0"/> 
+	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_spray" lighting="0"/> 
+	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_shrink_flare" lighting="0"/> 
+	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_shrink_line" lighting="0"/> 
+	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_springFire" lighting="0"/> 
+	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_flower" lighting="0"/> 
+	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_ambient" lighting="0"/>
+
+
+particle_system patricia_muzzle_flower
+{
+	quota 4000
+    emit_emitter_quota 3500
+	material flower_purple
+	particle_width 1.0
+	particle_height 0.85
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+    emitter Point
+    {
+        angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 1 0
+		velocity 0.0001
+		time_to_live 1
+		duration 0.1
+        emit_emitter tag1
+    }
+	emitter Ring   
+	{
+        name tag1
+		angle 180
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 2000
+		position 0 0 0
+		velocity_min 0.1
+		velocity_max 0.5
+		time_to_live 2
+		duration 0.5
+        width 10
+		height 10
+		depth 1
+		inner_width 1
+		inner_height 1
+        inner_depth 1
+	}
+	affector Scaler
+	{
+		rate -0.3
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	-40
+		rotation_speed_range_end	40
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.4 1 1
+		time1 0.7
+		colour1 1 0.4 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 0.5 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 5
+		scope 5
+		keep_velocity false
+	}
+}
+particle_system patricia_muzzle_flower_smaller : patricia_muzzle_flower
+{
+    emitter Point
+    {
+		position 0 0 0
+    }
+	emitter Ring   
+	{
+        width 5
+		height 5
+		depth 1
+	}
+}
+particle_system patricia_CumForce_muzzle_knife_light_1
+{
+	quota 50
+	material lens_flare_02
+	particle_width 40
+	particle_height 20
+	renderer billboard
+	billboard_type oriented_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 3 0
+		velocity 0.8
+		time_to_live 0.9
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	-25
+		rotation_range_end	-25
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.4 1 1
+		time1 0.7
+		colour1 1 0.4 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+
+}
+particle_system patricia_CumForce_muzzle_knife_light_2 : patricia_CumForce_muzzle_knife_light_1
+{
+	emitter Point
+	{
+        time_to_live 0.9
+	}
+	affector Scaler
+	{
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	65
+		rotation_range_end	65
+	}
+	affector ColourInterpolator
+	{
+        time0 0
+		colour0 0 0 0 0
+		time1 0.2
+		colour1 0 0 0 0
+		time2 0.21
+		colour2 1 0.4 1 1
+		time3 0.7
+		colour3 1 0.4 1 1
+		time4 1
+		colour4 0 0 0 0
+	}
+    affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+
+}
+particle_system patricia_CumForce_muzzle_knife_light_2_ex : patricia_CumForce_muzzle_knife_light_2
+{
+    particle_width 2.0
+	particle_height 20
+    material SF4_dds_0305_anim_pass
+	emitter Point
+	{
+	}
+	affector Scaler
+	{
+	}
+	affector Rotator
+	{
+        rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+        time0 0
+		colour0 0 0 0 0
+		time1 0.2
+		colour1 0 0 0 0
+		time2 0.21
+		colour2 1 0 0 1
+		time3 0.7
+		colour3 1 0.1 0 1
+		time4 1
+		colour4 0 0 0 0
+	}
+    affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+
+}
+particle_system patricia_CumForce_muzzle_knife_light_2_ex2 : patricia_CumForce_muzzle_knife_light_2
+{
+    particle_width 3
+	particle_height 23
+    material SF4_dds_0216_anim_pass
+
+	emitter Point
+	{
+	}
+	affector Scaler
+	{
+	}
+	affector Rotator
+	{
+        rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+        time0 0
+		colour0 0 0 0 0
+		time1 0.2
+		colour1 0 0 0 0
+		time2 0.21
+		colour2 1 0.4 1 1
+		time3 0.7
+		colour3 1 0.4 1 1
+		time4 1
+		colour4 0 0 0 0
+	}
+
+}
+particle_system patricia_CumForce_muzzle_knife_light_ahead : patricia_CumForce_muzzle_knife_light_2
+{
+    particle_width 2
+	particle_height 23
+    material SF4_dds_0216_anim_pass
+
+	emitter Point
+	{
+	}
+	affector Scaler
+	{
+	}
+	affector Rotator
+	{
+        rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+        time0 0
+		colour0 0 0 0 0
+		time1 0.4
+		colour1 0 0 0 0
+		time2 0.41
+		colour2 1 0.4 1 1
+		time3 0.7
+		colour3 1 0.4 1 1
+		time4 1
+		colour4 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+}
+
+
+
+particle_system patricia_CumForce_muzzle_light
+{
+	quota 50
+	material point_soft_edge_100
+	particle_width 30
+	particle_height 30
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.6
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate -100
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.05
+		colour1 0 0 0 0
+		time2 0.3
+		colour2 1 0.4 1 1
+		time3 0.5
+		colour3 1 0.4 1 1
+		time4 1
+		colour4 0 0 0 0
+	}
+}
+
+particle_system patricia_CumForce_muzzle_delay_impact
+{
+	quota 100
+    emit_emitter_quota 100
+	material Tex_Diffusion01A_add
+	particle_width 40
+	particle_height 40
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	emitter Point
+	{
+        name tag2
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.4
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate -200
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.5
+		colour1 0 0 0 0
+		time2 0.51
+		colour2 1 0.4 1 1
+		time3 0.75
+		colour3 1 0.4 1 1
+		time4 1
+		colour4 0 0 0 0
+	}
+}
+
+particle_system patricia_CumForce_muzzle_spray
+{
+	quota 500
+	emit_emitter_quota 500
+	material point_soft_edge_100
+	particle_width 0.75
+	particle_height 2
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.002
+
+	emitter Point		
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity_min 0.00001
+		velocity_max 0.0001
+		time_to_live 0.8
+		duration 0.1
+		emit_emitter tag1
+	}
+	emitter Point		
+	{
+		name tag1
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 1.25
+		position 0 10 0
+		velocity 10.0001
+		time_to_live 0.01
+		duration 0.8
+		emit_emitter tag2
+	}
+	emitter Point
+	{
+		name tag2
+		angle 90
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 5000
+		position 0 0 0
+		velocity_min 30
+		velocity_max 50
+		time_to_live_min 0.1
+		time_to_live_max 0.3
+		duration 0.01
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.0 0 1
+		time1 0.7
+		colour1 1 0.1 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 -15 0
+		force_application add
+	}
+}
+
+-------------------------------------------------------------------------------
+particle_system patricia_PhantomFang_result_crescent
+{
+	quota 200
+	material Particle_ShockwaveKunju02_p_cull
+	particle_width 8
+	particle_height 8
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 180
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 6
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.15
+		duration 0.5
+		width 5
+		height 5
+		depth 1
+	}
+	affector Scaler
+	{
+		rate 10
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	2400
+		rotation_speed_range_end	2400
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.4 1 1
+		time1 0.6
+		colour1 1 0.4 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system patricia_PhantomFang_result_crescent2 : patricia_PhantomFang_result_crescent
+{
+	material Particle_Slash_08
+}
+particle_system patricia_PhantomFang_result_lens
+{
+	quota 100
+	material lens_flare_03
+	particle_width 40
+	particle_height 15
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.15
+		duration 0.01
+	}
+	affector Scaler
+	{
+		rate -200
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.4 1 1
+		time1 0.7
+		colour1 1 0.4 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system patricia_PhantomFang_result_star
+{
+	quota 300
+	material eye_fxl_ptc_0012_p
+	particle_width 3
+	particle_height 3
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 180
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 60
+		position 0 0 0
+		velocity_min 2
+		velocity_max 4
+		time_to_live_min 1
+		time_to_live_max 1.5
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate -3
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.4 1 1
+		time1 0.7
+		colour1 1 0.4 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system patricia_PhantomFang_result_flower
+{
+	quota 500
+	material flower_purple
+	particle_width 1.2
+	particle_height 0.9
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 360
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 120
+		position 0 0 0
+		velocity_min 4
+		velocity_max 5
+		time_to_live_min 1.5
+		time_to_live_max 2
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate -0.25
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	90
+		rotation_speed_range_end	-90
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.4 1 1
+		time1 0.7
+		colour1 1 0.4 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 -4 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system patricia_PhantomFang_result_centerlight
+{
+	quota 100
+	material Tex_Flare20
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.15
+		duration 0.01
+	}
+	affector Scaler
+	{
+		rate 120
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.4 1 1
+		time1 0.8
+		colour1 1 0.4 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system patricia_PhantomFang_result_spray
+{
+	quota 500
+	material SF4_dds_0359
+	particle_width 0.56
+	particle_height 2
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 360
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 60
+		position 0 0 0
+		velocity_min 30
+		velocity_max 50
+		time_to_live 0.2
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate -2.5
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.4 1 1
+		time1 0.7
+		colour1 1 0.4 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system patricia_PhantomFang_result_spray2 : patricia_PhantomFang_result_spray
+{
+	material SF4_dds_0305_1
+}
+
+particle_system patricia_PhantomFang_muzzle_flower
+{
+	quota 500
+	material flower_purple
+	particle_width 1.5
+	particle_height 1.5
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin bottom_right
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 80
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.15
+		duration 0.2
+	}
+	affector Scaler
+	{
+		rate 4.5
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	1440
+		rotation_speed_range_end	1440
+		rotation_range_start	90
+		rotation_range_end	-90
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.4 1 1
+		time1 0.7
+		colour1 1 0.4 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system patricia_PhantomFang_muzzle_impact
+{
+	quota 500
+	material Tex_C_Swirl_02
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.2
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 75
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	-600
+		rotation_speed_range_end	-900
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.4 1 1
+		time1 0.7
+		colour1 1 0.4 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system patricia_PhantomFang_muzzle_flowerring
+{
+	quota 4000
+    emit_emitter_quota 3500
+	material flower_purple
+	particle_width 1.0
+	particle_height 0.85
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+    emitter Point
+    {
+        angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 2 0
+		velocity 0.0001
+		time_to_live 0.01
+		duration 0.01
+        emit_emitter tag1
+    }
+	emitter Ring   
+	{
+        name tag1
+		angle 10
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10000
+		position 0 0 0
+		velocity_min -20
+		velocity_max -40
+		time_to_live 2.5
+		duration 0.5
+        width 7
+		height 7
+		depth 1
+		inner_width 1
+		inner_height 1
+        inner_depth 1
+	}
+	affector Scaler
+	{
+		rate -0.3
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	-40
+		rotation_speed_range_end	40
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.4 1 1
+		time1 0.7
+		colour1 1 0.4 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 -4 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+	affector DeflectorPlane 
+	{
+		plane_point 0 4 0
+		plane_normal 0 1 0 
+		bounce 0.1
+	}
+}
+---------------------------------------------------------------------------------
+particle_system patricia_JihadSlash_muzzle_ringbow
+{
+	quota 50
+	material RainbowWave
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.15
+		duration 0.01
+	}
+	affector Scaler
+	{
+		rate 100
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.7
+		colour1 1 1 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system patricia_JihadSlash_muzzle_linearlight
+{
+	quota 50
+	material point_soft_edge_100
+	particle_width 0.2
+	particle_height 4
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 180
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity_min 10
+		velocity_max 20
+		time_to_live 0.1
+		duration 1
+	}
+	affector Scaler
+	{
+		rate -15
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.4 1 1
+		time1 0.7
+		colour1 1 0.4 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system patricia_JihadSlash_muzzle_star
+{
+	quota 50
+	material eye_fxl_ptc_0012_p
+	particle_width 1.5
+	particle_height 1.5
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.000001
+		time_to_live 0.5
+		duration 0.1
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.4 1 1
+		time1 0.7
+		colour1 1 0.4 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	360
+		rotation_speed_range_end	360
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+}
+particle_system patricia_JihadSlash_muzzle_shockwave
+{
+	quota 50
+	material Tex_C_Swirl_02_cull
+	particle_width 4
+	particle_height 4
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 40
+		position 0 0 0
+		velocity 30
+		time_to_live 0.3
+		duration 0.2
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.5 0.2 0.5 1
+		time1 0.7
+		colour1 0.25 0.1 0.25 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	-720
+		rotation_speed_range_end	-720
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector Scaler
+	{
+		rate 10
+	}
+}
+
+particle_system patricia_JihadSlash_result_crossline
+{
+	quota 50
+	material point_hard_edge
+	particle_width 0.2
+	particle_height 10
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin top_center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 360
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 45
+		position 0 0 0
+		velocity_min 40
+		velocity_max 50
+		time_to_live 0.15
+		duration 0.5
+		width 5
+		height 5
+		depth 5
+	}
+	affector Scaler
+	{
+		rate -1
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.4 1 1
+		time1 0.7
+		colour1 1 0.4 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system patricia_JihadSlash_result_star
+{
+	quota 300
+	material eye_fxl_ptc_0012_p
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 180
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 24
+		position 0 0 0
+		velocity_min 5
+		velocity_max 8
+		time_to_live_min 0.5
+		time_to_live_max 1
+		duration 0.5
+		depth 3
+		height 3
+		width 3
+	}
+	affector Scaler
+	{
+		rate 0.5
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	180
+		rotation_speed_range_end	-180
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.4 1 1
+		time1 0.7
+		colour1 1 0.4 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system patricia_JihadSlash_result_spray
+{
+	quota 300
+	material point_hard_edge
+	particle_width 0.2
+	particle_height 4
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 180
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 80
+		position 0 0 0
+		velocity_min 20
+		velocity_max 30
+		time_to_live_min 0.2
+		time_to_live_max 0.4
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate -1
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.4 1 1
+		time1 0.7
+		colour1 1 0.4 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system patricia_JihadSlash_result_radiation
+{
+	quota 300
+	material radiation
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 4
+		position 0 0 0
+		velocity 0.0001
+		time_to_live_min 0.2
+		time_to_live_max 0.3
+		duration 0.5
+		depth 5
+		height 5
+		width 5
+	}
+	affector Scaler
+	{
+		rate 50
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.4 1 1
+		time1 0.7
+		colour1 1 0.4 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+
+particle_system patricia_JihadSlash_result_pre_lens
+{
+	quota 100
+	emit_emitter_quota 100
+	material lens_flare_03_pass
+	particle_width 30
+	particle_height 20
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center_left
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity_min 0.0001
+		velocity_max 0.0001
+		time_to_live 0.5
+		duration 0.01
+		emit_emitter tag1
+	}
+	emitter Point
+	{
+		name tag1
+		angle 30
+		colour 1 0.4 1 0
+		direction 1 -0.5 0
+		emission_rate 2
+		position 0 0 0
+		velocity_min -200
+		velocity_max 200
+		time_to_live 0.1
+		duration 2
+	}
+	affector Scaler
+	{
+		rate -150
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	90
+		rotation_range_end	90
+	}
+}
+particle_system patricia_JihadSlash_result_pre_flare
+{
+	quota 100
+	material Tex_Flare20
+	particle_width 30
+	particle_height 30
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	emitter Point
+	{
+		name tag1
+		angle 30
+		colour 1 0.4 1 0
+		direction 0 1 0
+		emission_rate 4
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.2
+		duration 0.5
+	}
+	affector Scaler
+	{
+		rate -150
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	90
+		rotation_range_end	90
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.4 0.5 1
+		time1 0.2
+		colour1 0.5 0.2 0.5 1
+		time2 0.7
+		colour2 0.25 0.1 0.25 1
+		time3 1
+		colour3 0 0 0 0
+	}
+}
+
+particle_system patricia_JihadSlash_result_pre_ringwave
+{
+	quota 200
+	material Particle_ShockwaveKunju02_p_cull
+	particle_width 8
+	particle_height 8
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 180
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 6
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.15
+		duration 0.5
+		width 5
+		height 5
+		depth 1
+	}
+	affector Scaler
+	{
+		rate 10
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	2400
+		rotation_speed_range_end	2400
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.4 1 1
+		time1 0.6
+		colour1 1 0.4 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system patricia_JihadSlash_result_pre_ringwave2 : patricia_JihadSlash_result_pre_ringwave
+{
+	material semi_ring
+	particle_width 12
+	particle_height 12
+}
+
+--------------------------------------------------------------------------------
+
+particle_system patricia_FatalDrive_muzzle_fireRing
+{
+	quota 300
+	material Particle_ShockwaveSlow
+	particle_width 8
+	particle_height 8
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.3
+		duration 0.2
+	}
+	affector Scaler
+	{
+		rate 18
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	-2040
+		rotation_speed_range_end	-2040
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.6 0 1
+		time1 0.7
+		colour1 1 0 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system patricia_FatalDrive_muzzle_fireRing2 : patricia_FatalDrive_muzzle_fireRing
+{
+	material lens_flare_02_alt
+	particle_width 4
+	particle_height 4
+	billboard_origin bottom_center
+	emitter Point
+	{
+		emission_rate 150
+	}
+	affector Scaler
+	{
+		rate 10
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	-720
+		rotation_speed_range_end	-720
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0 1
+		time1 0.7
+		colour1 1 0.1 0.1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+
+particle_system patricia_FatalDrive_muzzle_fireRing3 //outside
+{
+	quota 150
+	material TEX_circlewind_01_anim
+	particle_width 5
+	particle_height 5
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 2
+		time_to_live 0.5
+		duration 0.2
+	}
+	affector Scaler
+	{
+		rate 30
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	-90
+		rotation_speed_range_end	-90
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.1 0 1
+		time1 0.7
+		colour1 1 0.1 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+
+particle_system patricia_FatalDrive_muzzle_fireRing4 //inside
+{
+	quota 150
+	material Particle_Impact07_alt
+	particle_width 6
+	particle_height 6
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 30
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.5
+		duration 0.2
+	}
+	affector Scaler
+	{
+		rate 5
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start  -740
+		rotation_speed_range_end	-740
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.1 0 1
+		time1 0.7
+		colour1 1 0.1 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system patricia_FatalDrive_muzzle_firelight
+{
+	quota 150
+	material fireball_10
+	particle_width 7
+	particle_height 7
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 90
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity_min 3
+		velocity_max 4
+		time_to_live 0.19
+		duration 0.1
+		depth 3
+		width 3
+		height 3
+	}
+	affector Scaler
+	{
+		rate 30
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.5 0.15 0 1
+		time1 0.7
+		colour1 0.5 0.15 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 4 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 10
+		scope 10
+		keep_velocity false
+	}
+}
+particle_system patricia_FatalDrive_muzzle_fireSpark
+{
+	quota 800
+	emit_emitter_quota 600
+	material flame_tex_bw_01
+	particle_width 2
+	particle_height 2
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	emitter Point
+    {
+        angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 1 0
+		velocity 0.0001
+		time_to_live 0.1
+		duration 0.1
+        emit_emitter tag1
+    }
+	emitter Ring
+	{
+		name tag1
+		angle 90
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 300
+		position 0 0 0
+		velocity 2
+		time_to_live_min 0.2
+		time_to_live_max 0.4
+		duration 0.3
+		width 8
+		height 8
+		depth 1
+		inner_width 1
+		inner_height 1
+	}
+	affector Scaler
+	{
+		rate 2
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	-45
+		rotation_speed_range_end	45
+		rotation_range_start	0
+		rotation_range_end	90
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 0.4
+		time1 0.25
+		colour1 1 1 0.4 0.3
+		time2 0.5
+		colour2 1 0.5 0 0.1
+		time3 0.75
+		colour3 1 0.1 0 0.1
+		time4 1
+		colour4 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 20 0
+		force_application add
+	}
+}
+particle_system patricia_FatalDrive_muzzle_fireSpark2 : patricia_FatalDrive_muzzle_fireSpark
+{
+	material flame_tex_bw_03
+}
+particle_system patricia_FatalDrive_muzzle_fireSpark_small
+{
+	quota 800
+	emit_emitter_quota 600
+	material bow_flare
+	particle_width 0.7
+	particle_height 0.7
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	emitter Point
+    {
+        angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 1 0
+		velocity 0.0001
+		time_to_live 0.1
+		duration 0.1
+        emit_emitter tag1
+    }
+	emitter Ring
+	{
+		name tag1
+		angle 90
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 300
+		position 0 0 0
+		velocity 2
+		time_to_live_min 0.6
+		time_to_live_max 0.8
+		duration 0.3
+		width 8
+		height 8
+		depth 1
+	}
+	affector Scaler
+	{
+		rate -0.2
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	-180
+		rotation_speed_range_end	180
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.1 0 0
+		time1 0.7
+		colour1 1 0.1 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 2 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 10
+		scope 10
+		keep_velocity false
+	}
+}
+
+particle_system patricia_FatalDrive_result_circle
+{
+	quota 150
+	material lens_circle_09_pass
+	particle_width 50
+	particle_height 50
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 60
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 4
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.2
+		duration 4.5
+		depth 8
+		height 8
+		width 8
+	}
+	affector Scaler
+	{
+		rate 20
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	1440
+		rotation_speed_range_end	1440
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.7
+		colour1 1 1 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system patricia_FatalDrive_result_circle2
+{
+	quota 150
+	material Particle_ShockwaveSlow_alpha_pass
+	particle_width 45
+	particle_height 45
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 60
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 16
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.15
+		duration 4.5
+		depth 8
+		height 8
+		width 8
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	1440
+		rotation_speed_range_end	1440
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0 0 1
+		time1 0.7
+		colour1 1 0 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system patricia_FatalDrive_result_circle3
+{
+	quota 150
+	material Particle_Slash_09
+	particle_width 50
+	particle_height 50
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 60
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 8
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.1
+		duration 4.5
+		depth 8
+		height 8
+		width 8
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	2440
+		rotation_speed_range_end	2440
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0 0 1
+		time1 0.7
+		colour1 1 0 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+
+particle_system patricia_FatalDrive_result_lens
+{
+	quota 150
+	material lens_flare_04_pass
+	particle_width 30
+	particle_height 20
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center_left
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 360
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 8
+		position 0 0 0
+		velocity 150
+		time_to_live 0.2
+		duration 4.5
+	}
+	affector Scaler
+	{
+		rate -10
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	90
+		rotation_range_end	90
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.7
+		colour1 1 1 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+
+particle_system patricia_FatalDrive_result_spray
+{
+	quota 450
+	material point_hard_edge
+	particle_width 0.3
+	particle_height 0.7s
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 360
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 300
+		position 0 0 0
+		velocity_min 70
+		velocity_max 80
+		time_to_live_min 0.4
+		time_to_live_max 0.7
+		duration 4.5
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.1 0 1
+		time1 0.7
+		colour1 1 0.1 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+
+particle_system patricia_FatalDrive_result_shrink_flare
+{
+	quota 100
+	material Tex_Flare20_pass
+	particle_width 150
+	particle_height 150
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 4
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.2
+		duration 4.5
+		depth 1
+		height 7
+		width 7
+	}
+	affector Scaler
+	{
+		rate -250
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.7
+		colour1 1 0.6 0 1 
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system patricia_FatalDrive_result_shrink_line
+{
+	quota 150
+	material Particle_Impact_Line_03
+	particle_width 30
+	particle_height 10
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center_left
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 360
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 200
+		position 0 0 0
+		velocity_min -0.0001
+		velocity_max 0.0001
+		time_to_live 0.2
+		duration 4.5
+	}
+	affector Scaler
+	{
+		rate -75
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	90
+		rotation_range_end	90
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.9
+		colour1 1 1 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+
+particle_system patricia_FatalDrive_result_springFire
+{
+	quota 2000
+	emit_emitter_quota 1500
+	material flame_tex_bw_01
+	particle_width 2.2
+	particle_height 2.2
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 180
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 70
+		position 0 0 0
+		velocity 60
+		time_to_live 0.2
+		duration 4.5
+		depth 8
+		height 32
+		width 32
+		emit_emitter tag1
+	}
+	emitter Point
+	{
+		name tag1
+		angle 90
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 200
+		position 0 0 0
+		velocity 2
+		time_to_live 0.6
+		duration 4.5
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	-45
+		rotation_speed_range_end	45
+		rotation_range_start	0
+		rotation_range_end	90
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 0.4
+		time1 0.25
+		colour1 1 1 0.4 0.3
+		time2 0.5
+		colour2 1 0.5 0 0.1
+		time3 0.75
+		colour3 1 0.1 0 0.1
+		time4 1
+		colour4 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 -4 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+
+particle_system patricia_FatalDrive_result_flower
+{
+	quota 500
+	material shuiniao_flower_02
+	particle_width 2.5
+	particle_height 1.2
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Ring 
+	{
+		angle 360
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 300
+		position 0 5 0
+		velocity_min 1
+		velocity_max 2
+		time_to_live 1.5
+		duration 4.5
+		width 40
+		height 40
+		depth 5
+		inner_width 0
+		inner_height 0
+	}
+	affector Scaler
+	{
+		rate -0.7
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	90
+		rotation_speed_range_end	180
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.4
+		colour1 1 1 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 -4 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 10
+		scope 10
+		keep_velocity false
+	}
+}
+particle_system patricia_FatalDrive_result_ambient
+{
+	quota 50
+	material Tex_Pattern60_anim_pass
+	particle_width 90
+	particle_height 90
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point 
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 3
+		position 0 0 0
+		velocity 0.00001
+		time_to_live 1.5
+		duration 3
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0 0 1
+		time1 0.7
+		colour1 1 0 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material eye_lwy_t_win_08_single : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture eye_lwy_t_win_08_single.png 	
+}}}}
+material flower_purple : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture flower_purple.png 	
+}}}}
+material lens_flare_02 : add_base
+{   
+    technique{
+    pass{
+        cull_hardware none
+        texture_unit{
+            texture lens_flare_02.png 	
+}}}}
+material Particle_Impact_Line_03 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture Particle_Impact_Line_03.png 	
+}}}}
+material point_hard_edge : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture point_hard_edge.png 	
+}}}}
+material point_soft_edge_100 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture point_soft_edge_100.png 	
+}}}}
+material Tex_Diffusion01A_add : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture Tex_Diffusion01A_add.png 	
+}}}}
+material SF4_dds_0216_anim_pass : add_base
+{   
+    technique{
+    pass{
+        cull_hardware none
+		depth_func always_pass
+        texture_unit{
+            anim_texture SF4_dds_0216.png 4 0.3
+            tex_address_mode border
+            tex_border_colour 0 0 0 0	
+}}}}
+material SF4_dds_0305_anim_pass : add_base
+{   
+    technique{
+    pass{
+        cull_hardware none
+		depth_func always_pass
+        texture_unit{
+            anim_texture SF4_dds_0305.png 2 0.3
+            scroll_anim 0 1
+            tex_address_mode warp
+}}}}
+material Particle_ShockwaveKunju02_p_cull : add_base
+{   
+    technique{
+    pass{
+		cull_hardware none
+        texture_unit{
+			texture Particle_ShockwaveKunju02_p.png
+}}}}
+material lens_flare_03 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+			texture lens_flare_03.png
+}}}}
+material lens_flare_03_pass : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+			texture lens_flare_03.png
+}}}}
+material eye_fxl_ptc_0012_p : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+			texture eye_fxl_ptc_0012_p.png
+}}}}
+material Tex_Flare20 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+			texture Tex_Flare20.png
+}}}}
+material Tex_Flare20_pass : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+			texture Tex_Flare20.png
+}}}}
+material SF4_dds_0359 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+			texture SF4_dds_0359.png
+}}}}
+material SF4_dds_0305_1 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+			texture SF4_dds_0305_1.png
+}}}}
+material Particle_Slash_08 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+			texture Particle_Slash_08.png
+}}}}
+material Tex_C_Swirl_02 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+			texture Tex_C_Swirl_02.png
+}}}}
+material Tex_C_Swirl_02_cull : add_base
+{   
+    technique{
+    pass{
+		cull_hardware none
+        texture_unit{
+			texture Tex_C_Swirl_02.png
+}}}}
+material RainbowWave : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+			texture RainbowWave.png
+}}}}
+material radiation : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+			texture radiation.png
+}}}}
+material semi_ring : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+			texture semi_ring.png
+}}}}
+material Particle_ShockwaveSlow : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+			texture Particle_ShockwaveSlow.png
+}}}}
+material fireball_10 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+			texture fireball_10.png
+}}}}
+material flame_tex_bw_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+			texture flame_tex_bw_01.png
+}}}}
+material bow_flare : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+			texture bow_flare.png
+}}}}
+material lens_flare_02_alt : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+			texture lens_flare_02_alt.png
+}}}}
+material impact_flame_2 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+			texture impact_flame_2.png
+}}}}
+material flame_tex_bw_03 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+			texture flame_tex_bw_03.png
+}}}}
+material TEX_circlewind_01_anim : add_base
+{   
+    technique{
+    pass{
+		scene_blend add
+        texture_unit{
+            texture Tex_Pattern60.png 	
+			rotate_anim 1
+			tex_address_mode wrap
+		}
+		texture_unit{
+			texture qiliu_circle.png
+			colour_op modulate 
+			rotate_anim -0.5
+			tex_address_mode border
+			tex_border_colour 0 0 0 0
+		}
+	}
+}}
+material Particle_Impact07 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+			texture Particle_Impact07.png
+}}}}
+material Particle_Impact07_alt : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+			texture Particle_Impact07_alt.png
+}}}}
+material lens_flare_04_pass : alpha_blend_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+			texture lens_flare_04.png
+}}}}
+material lens_circle_09_pass : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+			texture lens_circle_09.png
+}}}}
+material Particle_Slash_09 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+			texture Particle_Slash_09.png
+}}}}
+material Particle_ShockwaveSlow_alpha_pass: alpha_blend_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+			texture Particle_ShockwaveSlow_alpha.png
+}}}}
+material shuiniao_flower_02: add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+			texture shuiniao_flower_02.png
+}}}}
+material Tex_Pattern60_anim_pass : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+		scene_blend add
+        texture_unit{
+            texture Tex_Pattern60.png 	
+			rotate_anim 0.3
+			scroll_anim 0.1 0.1
+			tex_address_mode wrap
+		}
+		texture_unit{
+			texture point_soft_edge_100.png
+			colour_op modulate 
+			tex_address_mode border
+			tex_border_colour 0 0 0 0
+		}
+	}
+}}

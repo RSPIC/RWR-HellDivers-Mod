@@ -73,10 +73,10 @@ key="ex_leviathan_breath.weapon"
 	
     <weak_hand_hold offset="0.3" /> 
 
-    <projectile file="hd_general_spawn.projectile" pulldown_in_air="6" can_be_detected_by_footmen="1" 
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="9" can_be_detected_by_footmen="1" 
 	time_to_live="1" can_be_detected_by_driver="1" can_be_disarmed="0"  > 
 
-		<result class="blast" radius="1.5" damage="100" push="0.2" decal="0" character_state="wound"  faction_compare="not_equal"/>
+		<result class="blast" radius="3.0" damage="300" push="0.8" decal="0" character_state="wound"  faction_compare="not_equal"/>
 		<trigger class="impact" time_to_live="0" />
 		<rotation class="motion" />
 		

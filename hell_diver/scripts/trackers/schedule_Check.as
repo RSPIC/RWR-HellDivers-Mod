@@ -19,6 +19,7 @@
 //复活时板载护甲的检测
 //首次进入服务器的教程提示(包括测试服)
 //检测刺雷护甲的防止存放
+//帕蒂武器充能检查和教程
 
 //机甲武器替换护甲(左副手右主手)
 dictionary EXO_Armor = {
@@ -92,6 +93,7 @@ class schedule_Check : Tracker {
 
     void start(){
         m_ended = false;
+        
     }
     
     void update(float time){
@@ -121,6 +123,7 @@ class schedule_Check : Tracker {
                 Tutor_63type_107mm(m_metagame,player);
                 EXOArmorChange(m_metagame,player);
                 checkBanzai(m_metagame,player);
+                checkPatricia(m_metagame,player);
             }
         }
     }
@@ -190,7 +193,27 @@ class schedule_Check : Tracker {
                     //不在这里检测了，防止以后有其他护甲然后在这里被替换掉
                 }
             }
-
+        }
+	}
+    // ----------------------------------------------------
+	protected void checkPatricia(Metagame@ metagame,const XmlElement@&in player){
+		if(player is null){return;}
+        string key = "acg_patricia_";
+        string p_name = player.getStringAttribute("name");
+        for(uint i=0; i<first_use_list.size(); ++i){
+            int cid = player.getIntAttribute("character_id");
+            string equipKey_main = getPlayerEquipmentKey(metagame,cid,0);//主武器
+            if(key == equipKey_main.substr(0,key.length()) ){
+                if(first_use_list[i].isFirst(p_name,key)){
+                    int pid = player.getIntAttribute("player_id");
+                    notify(metagame, "Help - Patricia", dictionary(), "misc", pid, true, "Patricia Help", 1.0);
+                    addItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
+                    addItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
+                    addItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
+                    addItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
+                    addItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
+                }
+            }
         }
 	}
     // ----------------------------------------------------

@@ -70,7 +70,7 @@ key="ex_disaster_railgun.weapon"
 		<effect class="result" key="terrain" ref="401_disaster_hit_firesmoke_03" post_processing="1"/>
 		<effect class="activated" ref="401_disaster_activated_trail" />
 	
-        <sound class="result" key="other" fileref="at_hit_sfx_3.wav" pitch_variety="0.01" volume="1" />
+        <sound class="result" key="other" fileref="at_hit_sfx_3.wav" pitch_variety="0.01" volume="5" />
 		<sound class="result" key="terrain" copy="other" />
 		<sound class="result" key="static_object" copy="other" />
 		<sound class="result" key="vehicle" copy="other" />

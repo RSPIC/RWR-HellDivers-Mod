@@ -2,6 +2,7 @@
 <resources >
 <!--此处用于注册ACG玩家阵营军械库物品，需要确保物品代码中in_stock="1" -->
 <!-- 资源文件注册为KEY注册，不同于武器注册的key注册 -->
+<!-- 注册到CB5 -->
 
 <!--武器-->
     <weapon key="acg_reisenu_a.weapon" /> <!--铃仙-->
@@ -19,13 +20,14 @@
     <weapon key="acg_fiammetta_gl.weapon" /><!--菲娅梅塔 榴弹-->
     <weapon key="acg_smg_strelka.weapon" /><!--冲锋枪 by kurumi-->
     <weapon key="acg_ka_ar8.weapon" /><!--突击步枪 by kurumi-->
+    <weapon key="acg_amamiya_kokoro.weapon" /><!--双持冲锋枪 by keilsama-->
 
 <!-- 副手  -->
     <weapon key="ex_cl_banzai.weapon" /><!--刺雷-->
 
 <!--投掷物/信标-->
     <projectile key="acg_ex_box.projectile" /><!--Ex 补给箱-->
-    <projectile key="acg_token_box.projectile" /><!--Token 补给箱-->
+    <!-- <projectile key="acg_token_box.projectile" />Token 补给箱 -->
     <projectile key="acg_amg_11_mk3_call.projectile" /><!--机枪炮台-->
     <projectile key="acg_arx_34_mk3_call.projectile" /><!--轨道炮炮台-->
 

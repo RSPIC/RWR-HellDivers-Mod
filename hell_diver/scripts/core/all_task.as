@@ -598,3 +598,51 @@ class Event_call_helldiver_superearth_railcannon_strike : event_call_task {
 					
 	}
 }
+
+class CreateProjectile : Task{
+	protected Metagame@ m_metagame;
+	protected float m_time;
+    protected int m_num;
+    protected Vector3 m_startPos;
+    protected Vector3 m_endPos;
+    protected string m_key;
+    protected int m_cid;
+    protected int m_fid;
+    protected float m_speed;
+
+	CreateProjectile(Metagame@ metagame,Vector3 sPos,Vector3 ePos,string key,int cid,int fid,float speed,float time,int num = 1){
+		@m_metagame = @metagame;
+		m_time = time;
+		m_num = num;
+		m_startPos = sPos;
+		m_endPos = ePos;
+		m_key = key;
+		m_cid = cid;
+		m_fid = fid;
+		m_speed = speed; 	
+	}
+
+	void start(){
+	}
+
+	void update(float time){
+		m_time -= time;
+		if(m_time < 0 ){
+			create();
+		}
+	}
+
+	protected void create(){
+		for(;m_num>0;--m_num){
+			CreateDirectProjectile(m_metagame,m_startPos,m_endPos,m_key,m_cid,m_fid,m_speed);
+		}
+	}
+
+	bool hasEnded() const {
+		if(m_time < 0 ){
+			return true;
+		}
+		return false;
+	}
+}
+

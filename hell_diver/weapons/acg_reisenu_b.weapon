@@ -6,7 +6,7 @@ key="acg_reisenu_b.weapon"
     <specification 	
     slot="0" 	
     retrigger_time="0.1" 
-	last_burst_retrigger_time="6"
+	last_burst_retrigger_time="3"
     accuracy_factor="1.0" 
 	spread_range="0"
 	stance_accuracy_rate="1.0"
@@ -83,7 +83,7 @@ key="acg_reisenu_b.weapon"
 	can_be_detected_by_driver="1" can_be_disarmed="0" name="Reisenu [Skill]"> 
 		
         <result class="spawn" instance_class="projectile" instance_key="acg_reisenu_b_damage.projectile" 
-			min_amount="100" max_amount="100" offset="0 0 0" position_spread="0 1" direction_spread="0.05 0" />	
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 	    <trigger class="time" time_to_live="0.9"  />
 		<rotation class="motion" />
 	    <sound class="result" key="other" fileref="reisenu_fire_hit_ii.wav" pitch_variety="0.01" volume="0.35" />

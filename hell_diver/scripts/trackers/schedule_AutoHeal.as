@@ -87,7 +87,7 @@ class schedule_AutoHeal : Task {
                 if(weapon2Key == key2[i]){
                     string pos = character.getStringAttribute("position");
                     spawnStaticProjectile(m_metagame,"hd_md99_autoinjector.projectile",pos,-1,-1);
-                    _report(m_metagame,"heal");
+                    //_report(m_metagame,"heal");
                     return;
                 }
             }

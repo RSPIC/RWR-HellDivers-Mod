@@ -459,4 +459,12 @@ void setDeadCharacter(const Metagame@ m_metagame,int characterId){
 		"</command>";
 	m_metagame.getComms().send(command);
 }
+void setWoundCharacter(const Metagame@ m_metagame,int characterId){
+	string command =
+		"<command class='update_character'" +
+		"	id='" + characterId + "'" +
+		"	wouned='1'>" + 
+		"</command>";
+	m_metagame.getComms().send(command);
+}
 

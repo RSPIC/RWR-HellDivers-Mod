@@ -156,7 +156,7 @@ dictionary banned_backpack_item = {
         // 占位的
         {"666",-1}
 };
-//禁止背包携带物品
+//禁止背包携带物品 忘记什么用了
 dictionary banned_special_item = {
         // 空
         {"",-1},
@@ -363,6 +363,7 @@ class itemdrop_event : Tracker {
 
 		//是否属于删除物品
 		if(string(banned_backpack_item[itemKey]) != "" || string(banned_special_item[itemKey]) != ""){
+			if(debug_mode){return;}
 			if(playerId == -1){return;}//排除AI
 			int senderId = event.getIntAttribute("player_id");
 			const XmlElement@ playerinfo = getPlayerInfo(m_metagame,senderId);

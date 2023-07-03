@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <weapons>
 	<weapon file="hd_hellpod.weapon" /><!--轨道发射仓-->
-
+	<!-- Sidearms -->
+	<weapon file="hd_side_p2_peacemaker_full_upgrade.weapon" /><!--和平使者手枪 中穿-->
+	<weapon file="hd_side_p6_gunslinger.weapon" /><!--神枪手重装左轮手枪 重穿-->
+	<weapon file="hd_side_laser_sword.weapon" /><!--光剑-->
+	<!-- Support -->
+	<weapon file="hd_sup_rep80_mk3.weapon" /><!--维修工具枪-->
+	<weapon file="hd_sup_md98_injector.weapon" /><!--MD-98注射器-->
+	<weapon file="hd_sup_mental_detector.weapon" /><!--金属探测仪-->
 	<!-- Assault Rifles 30m全效射距 60m极限射距 AP子弹额外增加击穿：+0.5 致死 半数衰减-->
 	<weapon file="hd_ar_ar19_liberator_full_upgrade.weapon" /><!--解放者突击步枪-->
 	<weapon file="hd_ar_ar22c_patriot_full_upgrade.weapon" /><!--爱国者突击步枪-->
@@ -19,24 +26,22 @@
 	<weapon file="hd_psc_rx1_railgun_full_upgrade.weapon" /><!--RX-1轨道炮-->
 	<weapon file="hd_psc_m2016_constitution_full_upgrade.weapon" /><!--构建步枪-->
 	<weapon file="hd_psc_lho63_camper_full_upgrade.weapon" /><!--野营者狙击步枪-->
-	<!-- LMGs 90M极限射程 30m全效射程 200弹速 2.0初始致死 半数衰减 2.0视距 -0.3移速-->
-	<weapon file="hd_lmg_mg94_mk3.weapon" /><!--MG94机枪-->
-	<weapon file="hd_lmg_mgx42_mk3.weapon" /><!--MGX42机枪-->
-	<weapon file="hd_lmg_mg105_stalwart_full_upgrade.weapon" /><!--MG105盟友机枪-->
 	<!-- Explosive 5/10/15伤害阈值 -> 轻甲/中甲/重甲-->
+	<weapon file="hd_exp_rec6_demolisher_mk3.weapon" /><!--爆破手-->
+	<weapon file="hd_exp_eta17_mk3.weapon" /><!--抛弃式反战车火箭-->
+	<weapon file="hd_exp_plas3_singe.weapon" /><!--焦痕副手直射榴弹-->
 	<weapon file="hd_exp_obliterator_grenade_launcher_full_upgrade.weapon" /><!--消灭者榴弹发射器-->
 	<weapon file="hd_exp_m25_rumbler_full_upgrade.weapon" /><!--雷鸣者-->
 	<weapon file="hd_exp_cr9_suppressor_full_upgrade.weapon" /><!--抑制者直射榴弹-->
 	<weapon file="hd_exp_plas1_scorcher_full_upgrade.weapon" /><!--焦土直射榴弹-->
-	<weapon file="hd_exp_plas3_singe.weapon" /><!--焦痕副手直射榴弹-->
 	<weapon file="hd_exp_rl112_recoilless_rifle_mk3.weapon" /><!--无后坐力步枪-->
-	<weapon file="hd_exp_eta17_mk3.weapon" /><!--抛弃式反战车火箭-->
 	<weapon file="hd_exp_ac22_dum_dum_mk3.weapon" /><!--达姆机炮-->
 	<weapon file="hd_exp_mls4x_commando_mk3.weapon" /><!--突击队跟踪导弹-->
-	<weapon file="hd_exp_rec6_demolisher_mk3.weapon" /><!--爆破手-->
-	<!-- Sidearms 顺切-->
-	<weapon file="hd_side_p2_peacemaker_full_upgrade.weapon" /><!--和平使者手枪 中穿-->
-	<weapon file="hd_side_p6_gunslinger.weapon" /><!--神枪手重装左轮手枪 重穿-->
+	<!-- LMGs 90M极限射程 30m全效射程 200弹速 2.0初始致死 半数衰减 2.0视距 -0.3移速-->
+	<weapon file="hd_lmg_mg94_mk3.weapon" /><!--MG94机枪-->
+	<weapon file="hd_lmg_mgx42_mk3.weapon" /><!--MGX42机枪-->
+	<weapon file="hd_lmg_mg105_stalwart_full_upgrade.weapon" /><!--MG105盟友机枪-->
+
 	<!-- Laser Tech 1.0视距 无衰减 2.0初始致死-->
 	<weapon file="hd_laser_las13_trident_full_upgrade.weapon" /><!--三叉戟激光枪-->
 	<weapon file="hd_laser_las12_tanto_full_upgrade.weapon" /><!--短刀激光枪 中穿-->
@@ -55,10 +60,7 @@
 	<weapon file="hd_arc_ac5_shotgun_full_upgrade.weapon" /><!--电弧霰弹枪-->
 	<weapon file="hd_arc_ac3_thrower_full_upgrade.weapon" /><!--电弧发射器-->
 	
-	<!-- Support -->
-	<weapon file="hd_sup_rep80_mk3.weapon" /><!--维修工具枪-->
-	<weapon file="hd_sup_md98_injector.weapon" /><!--MD-98注射器-->
-	<weapon file="hd_sup_mental_detector.weapon" /><!--金属探测仪-->
+
 	
 	<!-- EXO 机甲 -->
 	<weapon file="hd_exo44_walker_mk3_mg.weapon" /><!--践踏者-->

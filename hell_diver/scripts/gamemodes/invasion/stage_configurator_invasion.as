@@ -219,7 +219,7 @@ class StageConfiguratorInvasion : StageConfigurator {
  	addStage(setupStage14());         // map6_2 #14 11
     addStage(setupStage2());          // map4 #15 12
 	addStage(setupStage20());         // map19 #17	13 鹅城
-    addStage(setupStage5());          // map1 #16 14
+    addStage(setupStage5());          // map1 #16 14 报一次bad allocation
     addStage(setupStage6());          // map5 #17 15
 	//addStage(setupFinalStage2());     // map12 #18 黑猫
 	addStage(setupStage21());         // map20 #7 16 战壕小岛

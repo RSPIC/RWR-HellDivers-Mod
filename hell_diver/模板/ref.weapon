@@ -188,8 +188,8 @@ radius="1"
      
 	<!--附加属性-->
     <modifier class="speed" value="0.0" /> 
-    <modifier class="hit_success_probability" value="0.0" /><!--正值增加玩家抗致死率-->
-    <modifier class="detectability" value="0.0" />	<!--正值增加玩家隐蔽-->
+    <modifier class="hit_success_probability" value="0.0" /><!--正值减少玩家抗致死率-->
+    <modifier class="detectability" value="0.0" />	<!--正值减少玩家隐蔽-->
 	
 	<!--盾块，可设置多个，空盾块仍然生效击杀收益共享，需要删去该段代码-->
     <shield offset="0 0 0" extent="0 0 0" usable_for_cover="0"/>  

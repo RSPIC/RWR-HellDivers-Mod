@@ -51,7 +51,7 @@ ai_handle_taxi_request_when_full="1"
 	<visual class="turret" 						turret_index="0" mesh_filename="borsig_turret.mesh" texture_filename="borsig_turret.jpg" />
 	<visual class="turret" 						turret_index="1" mesh_filename="borsig_mg34.mesh" texture_filename="borsig_mg34.jpg" />
 	<visual class="turret" 						turret_index="2" mesh_filename="40mm.mesh" texture_filename="borsig_body.jpg" />
-	<visual class="turret" 						turret_index="3" mesh_filename=".mesh" texture_filename="" />
+	<visual class="turret" 						turret_index="3" mesh_filename="borsig_leaf.mesh" texture_filename="borsig_leaf.png" />
 
 	<visual class="chassis"	key="broken"		mesh_filename="borsig_body.mesh" texture_filename="borsig_body.jpg" />
 	<visual class="turret" 	key="broken"		turret_index="0" mesh_filename="borsig_turret.mesh" texture_filename="borsig_turret.jpg" />

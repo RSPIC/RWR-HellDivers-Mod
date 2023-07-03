@@ -732,8 +732,8 @@ particle_system general_weapon_muzzle_trail_smoke_red
 {
 	quota 50
 	material muzzle_trail_smoke
-	particle_width 2
-	particle_height 5
+	particle_width 1.8
+	particle_height 15
 	renderer billboard
 	billboard_type oriented_self
 	billboard_origin bottom_center
@@ -759,7 +759,7 @@ particle_system general_weapon_muzzle_trail_smoke_red
 	}
 	affector Scaler
 	{
-		rate 12
+		rate 6
 	}
 		affector Rotator
 	{
@@ -776,6 +776,67 @@ particle_system general_weapon_muzzle_trail_smoke_red
 		colour1 1 0.6 0.2 0.2
 		time2 1
 		colour2 1 1 1 0
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+
+particle_system general_weapon_muzzle_trail_smoke_long
+{
+	quota 50
+	material muzzle_trail_smoke
+	particle_width 1.5
+	particle_height 100
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin bottom_center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 0
+		colour 1 1 1 0.5
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity_min 0.1
+		velocity_max 0.2
+		time_to_live 1.0
+		duration 0.1
+		width 0.1
+		height 0.1
+		depth 3
+	}
+	affector Scaler
+	{
+		rate 1
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 0.1
+		time1 0.6
+		colour1 0.5 0.5 0.5 0.1
+		time2 1
+		colour2 0.4 0.4 0.4 0
 	}
 	affector LinearForce{
 		force_vector 0 0 0
@@ -1140,6 +1201,67 @@ particle_system general_weapon_activated_flying_mars		//冲锋枪用
 	{
 		angle 0
 		colour 1 0.3 0 1
+		direction 0 1 0
+		emission_rate 150
+		position 0 0 0
+		velocity_min 1
+		velocity_max 3
+		time_to_live_min 0.3
+		time_to_live_max 0.6
+		duration 1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 4 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 50
+		scope 50
+		keep_velocity false
+	}
+}
+particle_system general_weapon_activated_flying_mars_lightblue		//冲锋枪用
+{
+	quota 300
+	material point_soft_edge_100
+	particle_width 0.3
+	particle_height 0.3
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0.3 1 1
 		direction 0 1 0
 		emission_rate 150
 		position 0 0 0
