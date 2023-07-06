@@ -75,8 +75,84 @@ dictionary recommend_kill_weapon_bonus = {
 
 };
 // --------------------------------------------
+class tk_info{
+    protected Metagame@ m_metagame;
+    protected string name;
+    protected dictionary kill_target_count;
+	protected bool m_banned = false;
+	protected bool m_deadth = false;
+
+    tk_info(string InName,Metagame@ metagame){
+        name = InName;
+		@m_metagame = @metagame;
+    }
+
+    string getName(){
+        return name;
+    }
+
+    bool isUpToTkLimit(string killerName,string TargetName){
+        if(name != killerName){return false;}
+        uint killTimes;
+        uint AllkillTimes = 0;
+		if(kill_target_count.get(TargetName,killTimes)){
+			_report(m_metagame,"getKill times="+TargetName+" "+killTimes);
+			killTimes += 1;
+			kill_target_count.set(TargetName,killTimes);
+			if(killTimes >= 5){
+				m_deadth = true;
+			}
+			if(killTimes >= 8){
+				m_banned = true;
+			}
+			if(killTimes >= 3){
+				return true;
+			}
+		}else{
+			kill_target_count.set(TargetName,1);
+			_report(m_metagame,"create tkinfo for="+killerName+" "+TargetName);
+		}
+
+		array<string> keys = kill_target_count.getKeys();
+		for (uint i = 0; i < keys.length(); i++)
+		{
+			string key = keys[i];
+			if(kill_target_count.get(key,killTimes)){
+				AllkillTimes += killTimes;
+				_report(m_metagame,"getAll Kill times="+key+" "+killTimes);
+			}
+			if(AllkillTimes >= 12){
+				m_deadth = true;
+			}
+			if(AllkillTimes >= 20){
+				m_banned = true;
+			}
+			if(AllkillTimes >= 8){
+				return true;
+			}
+		}
+		return false;
+    }
+
+	bool isTodeadth(string killerName){
+		if(killerName == name){
+			return m_deadth;
+		}
+		return false;
+	}
+
+	bool isToBanned(string killerName){
+		if(killerName == name){
+			return m_banned;
+		}
+		return false;
+	}
+}
+// --------------------------------------------
 class kill_reward : Tracker {
 	protected Metagame@ m_metagame;
+	protected array<tk_info@> m_tkInfo;
+	protected bool m_ended;
 
 	// --------------------------------------------
 	kill_reward(Metagame@ metagame) {
@@ -84,6 +160,27 @@ class kill_reward : Tracker {
 
 		m_metagame.getComms().send("<command class='set_metagame_event' name='character_kill' enabled='1' />");
 	}
+	// --------------------------------------------
+    bool hasEnded() const{
+		return m_ended;
+    }
+	// --------------------------------------------
+	bool hasStarted() const {
+		// always on
+		return true;
+	}
+	// --------------------------------------------
+	void start(){
+        m_ended = false;
+    }
+	// --------------------------------------------
+	protected void handlePlayerConnectEvent(const XmlElement@ event) {
+        const XmlElement@ player = event.getFirstElementByTagName("player");
+        if(player is null){return;}
+        string name = player.getStringAttribute("name");
+        tk_info@ newinfo = tk_info(name,m_metagame);
+        m_tkInfo.insertLast(newinfo);
+    }
 	//SCRIPT:  received: TagName=character_kill key=hd_ar19_liberator_full_upgrade.weapon method_hint=hit     
 	//TagName=killer block=8 19 dead=0 faction_id=0 id=183 leader=1 name=Drumstick Dyuke player_id=0 
 	//position=282.881 3.46913 676.183 rp=0 soldier_group_name=default squad_size=0 wounded=0 xp=0     
@@ -126,30 +223,29 @@ class kill_reward : Tracker {
 				}
 			}
 		}
-		if(k_pid != -1 && t_pid != -1){//玩家TK
+		if(k_pid != -1 && t_pid != -1 && k_pid != t_pid){//玩家TK
 			const XmlElement@ k_character = getCharacterInfo(m_metagame,killer_cid);
 			int wound = k_character.getIntAttribute("wounded");
 			string k_name = g_playerInfoBuck.getNameByCid(killer_cid);
 			string t_name = g_playerInfoBuck.getNameByPid(t_pid);
-			if(wound == 0){
-				string command =
-					"<command class='update_character'" +
-					"	id='" + killer_cid + "'" +	
-					"   wounded='1'>" + 
-					"</command>";
-				m_metagame.getComms().send(command);
-				notify(m_metagame, "你因为击杀友军而被惩罚，倒地状态再次击杀将会死亡", dictionary(), "misc", k_pid, false, "TK惩罚", 1.0);
-				notify(m_metagame, "伤害你的玩家"+k_name+"已被惩罚", dictionary(), "misc", t_pid, false, "TK惩罚", 1.0);
-			}else if(wound == 1){
-				string command =
-					"<command class='update_character'" +
-					"	id='" + killer_cid + "'" +	
-					"   dead='1'>" + 
-					"</command>";
-				m_metagame.getComms().send(command);
-				_report(m_metagame,"玩家"+k_name+"因为TK"+t_name+"而受到了惩罚");
-				notify(m_metagame, "伤害你的玩家"+k_name+"已受到死亡惩罚", dictionary(), "misc", t_pid, false, "TK惩罚", 1.0);
+			for(uint i = 0 ; i < m_tkInfo.size() ; ++i){
+				if(m_tkInfo[i].isUpToTkLimit(k_name,t_name)){
+					if(wound == 0 && !m_tkInfo[i].isTodeadth(k_name)){
+						setWoundCharacter(m_metagame,killer_cid);
+						notify(m_metagame, "你因为击杀友军而被惩罚，倒地状态再次击杀将会死亡", dictionary(), "misc", k_pid, false, "TK惩罚", 1.0);
+						notify(m_metagame, "伤害你的玩家"+k_name+"已被惩罚", dictionary(), "misc", t_pid, false, "TK惩罚", 1.0);
+					}else if(wound == 1 || m_tkInfo[i].isTodeadth(k_name)){
+						setDeadCharacter(m_metagame,killer_cid);
+						_report(m_metagame,"玩家"+k_name+"因为TK玩家"+t_name+"而受到了惩罚");
+						notify(m_metagame, "伤害你的玩家"+k_name+"已受到死亡惩罚", dictionary(), "misc", t_pid, false, "TK惩罚", 1.0);
+					}
+					if(m_tkInfo[i].isToBanned(k_name)){
+						kickPlayer(m_metagame,k_pid);
+						_report(m_metagame,"玩家"+k_name+"因为TK过多而被临时踢出游戏");
+					}
+				}
 			}
+			
 		}
 	}
 }

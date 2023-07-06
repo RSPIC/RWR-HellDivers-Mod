@@ -18,17 +18,17 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		@m_itemDeliveryOrganizer = @organizer;
 
 		setupBriefcaseUnlocks();
-		setupGift1();
-		setupGift2();
-		setupGift3();
-		setupCommunity1();    
-		setupCommunity2(); 
-		setupCommunity3(); 
-        setupCommunity4();  
-        setupCommunity5();
+		//setupGift1();
+		//setupGift2();
+		//setupGift3();
+		setupCollection();    
+		setupSkin(); 
+		setupMusic(); 
+        setupVehicle();  
+        setupWeapon1();
         setupCommunity6(); 
-		setupHalloween1();
-		setupXmasBox();
+		//setupHalloween1();
+		//setupXmasBox();
 		setupIcecream();
 		setupEnemyWeaponUnlocks();
 		setupLaptopUnlocks();
@@ -99,227 +99,12 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		// campaign can use this to cleanup unavailable experimental resources in passes 
 	}
 
-	// --------------------------------------------
-	protected void setupGift1() {
-		_log("adding gift1 config", 1);
-		array<Resource@> deliveryList = {
-			 Resource("gift_box_1.carry_item", "carry_item")
-		};
-
-		array<array<ScoredResource@>> rewardPasses = {
-			{
-		ScoredResource("dollars.carry_item", "carry_item", 30.0f),
-		ScoredResource("dollars_300.carry_item", "carry_item", 15.0f),
-		ScoredResource("cigarettes.carry_item", "carry_item", 30.0f),
-		ScoredResource("gem.carry_item", "carry_item", 12.0f),
-		ScoredResource("gold_bar.carry_item", "carry_item", 6.0f),
-		ScoredResource("sawnoff.weapon", "weapon", 4.0f)      
-			},
-			{
-		ScoredResource("playing_cards.carry_item", "carry_item", 44.0f),
-		ScoredResource("underpants.carry_item", "carry_item", 20.0f),
-		ScoredResource("vest2.carry_item", "carry_item", 18.0f),
-		ScoredResource("vest3.carry_item", "carry_item", 9.0f),
-		ScoredResource("laptop.carry_item", "carry_item", 4.0f),
-		ScoredResource("xm25.weapon", "weapon", 4.0f),
-        ScoredResource("ares_shrike.weapon", "weapon", 2.0f)
-			}
-		};
-		
-		processRewardPasses(rewardPasses);
-		
-		GiftItemDeliveryRandomRewarder@ rewarder = GiftItemDeliveryRandomRewarder(m_metagame, rewardPasses);
-
-		m_itemDeliveryOrganizer.addObjective(
-			ItemDeliveryObjective(m_metagame, 0, deliveryList, m_itemDeliveryOrganizer, null, "", "", "", -1 /* loop */, rewarder)
-			);
-	}
-	// --------------------------------------------
-	protected void setupGift2() {
-		_log("adding gift2 config", 1);
-		array<Resource@> deliveryList = {
-			 Resource("gift_box_2.carry_item", "carry_item")
-		};
-
-		array<array<ScoredResource@>> rewardPasses = {
-			{	
-		ScoredResource("dollars_300.carry_item", "carry_item", 22.0f),
-		ScoredResource("dollars.carry_item", "carry_item", 8.0f),
-		ScoredResource("gem.carry_item", "carry_item", 38.0f),
-		ScoredResource("costume_clown.carry_item", "carry_item", 11.0f),
-		ScoredResource("gold_bar.carry_item", "carry_item", 8.0f),
-		ScoredResource("laptop.carry_item", "carry_item", 6.0f),
-		ScoredResource("suitcase.carry_item", "carry_item", 4.0f),
-        ScoredResource("ares_shrike.weapon", "weapon", 4.0f)
-			},
-			{ 
-		ScoredResource("underpants.carry_item", "carry_item", 25.0f),
-		ScoredResource("vest3.carry_item", "carry_item", 16.0f),
-		ScoredResource("teddy.carry_item", "carry_item", 15.0f), 
-		ScoredResource("cigars.carry_item", "carry_item", 25.0f),
-		ScoredResource("mk23.weapon", "weapon", 7.0f),
-		ScoredResource("honey_badger.weapon", "weapon", 2.0f),
-		ScoredResource("m60e4.weapon", "weapon", 2.0f),
-		ScoredResource("gift_box_3.carry_item", "carry_item", 8.0f)         
-			}
-		};
-
-		processRewardPasses(rewardPasses);
-
-		GiftItemDeliveryRandomRewarder@ rewarder = GiftItemDeliveryRandomRewarder(m_metagame, rewardPasses);
-
-		m_itemDeliveryOrganizer.addObjective(
-			ItemDeliveryObjective(m_metagame, 0, deliveryList, m_itemDeliveryOrganizer, null, "", "", "", -1 /* loop */, rewarder)
-			);
-	}
-
 	// ----------------------------------------------------
-	protected void setupGift3() {
-		_log("adding gift3 config", 1);
-		array<Resource@> deliveryList = {
-			 Resource("gift_box_3.carry_item", "carry_item")
-		};
-
-		array<array<ScoredResource@>> rewardPasses = {
-			{
-		ScoredResource("dollars_300.carry_item", "carry_item", 8.0f),
-		ScoredResource("gold_bar.carry_item", "carry_item", 36.0f),
-		ScoredResource("gem.carry_item", "carry_item", 15.0f),
-		ScoredResource("desert_eagle_gold.weapon", "weapon", 8.0f),
-		ScoredResource("mp7.weapon", "weapon", 4.0f),
-		ScoredResource("painting.carry_item", "carry_item", 16.0f),
-        ScoredResource("ares_shrike.weapon", "weapon", 7.0f),
-        ScoredResource("gift_box_community_1.carry_item", "carry_item", 4.0f),
-        ScoredResource("golden_dragunov_svd.weapon", "weapon", 2.0f)		
-			},
-			{
-		ScoredResource("vest_blackops.carry_item", "carry_item", 25.0f),
-		ScoredResource("suitcase.carry_item", "carry_item", 20.0f),
-		ScoredResource("laptop.carry_item", "carry_item", 17.0f),
-		ScoredResource("costume_werewolf.carry_item", "carry_item", 15.0f),
-		ScoredResource("cd.carry_item", "carry_item", 10.0f),
-		ScoredResource("honey_badger.weapon", "weapon", 3.0f),
-		ScoredResource("m60e4.weapon", "weapon", 3.0f),
-        ScoredResource("paw20.weapon", "weapon", 2.0f),
-		ScoredResource("gift_box_community_2.carry_item", "carry_item", 5.0f),
-		ScoredResource("gift_box_community_5.carry_item", "carry_item", 5.0f)                
-			}
-		};   
-			
-		processRewardPasses(rewardPasses);
-
-		GiftItemDeliveryRandomRewarder@ rewarder = GiftItemDeliveryRandomRewarder(m_metagame, rewardPasses);
-
-		m_itemDeliveryOrganizer.addObjective(
-			ItemDeliveryObjective(m_metagame, 0, deliveryList, m_itemDeliveryOrganizer, null, "", "", "", -1 /* loop */, rewarder)
-			);
-	}
-	
-	// ----------------------------------------------------
-	protected void setupHalloween1() {
-		_log("adding halloween box 1 config", 1);
-		array<Resource@> deliveryList = {
-			 Resource("halloween_box_1.carry_item", "carry_item")
-		};
-
-		array<array<ScoredResource@>> rewardPasses = {
-			{
-		ScoredResource("costume_chicken.carry_item", "carry_item", 5.0f, 2),
-		ScoredResource("costume_bat.carry_item" , "carry_item", 14.0f, 2),
-		ScoredResource("costume_butcher.carry_item" , "carry_item", 6.0f, 1),
-		ScoredResource("costume_lizard.carry_item" , "carry_item", 5.0f, 1),
-		ScoredResource("costume_clown.carry_item" , "carry_item", 5.0f, 1),
-		ScoredResource("banner_rwr.weapon" , "weapon", 5.0f),
-		ScoredResource("banner_ee.weapon", "weapon", 8.0f),
-		ScoredResource("banner_voting_0.weapon", "weapon", 8.0f),
-		ScoredResource("banner_smile.weapon", "weapon", 7.0f),
-		ScoredResource("scythe.weapon", "weapon", 18.0f),
-        ScoredResource("banner_president.weapon", "weapon", 5.0f),
-		ScoredResource("chainsaw.weapon", "weapon", 10.0f)	
-			},
-			{
-		ScoredResource("shock_paddle.weapon" , "weapon", 6.0f),
-		ScoredResource("g3_1x.weapon", "weapon", 5.0f),
-		ScoredResource("golden_dragunov_svd.weapon", "weapon", 4.0f),
-		ScoredResource("dp28.weapon", "weapon", 5.0f),
-		ScoredResource("m14k.weapon", "weapon", 4.0f),
-		ScoredResource("qbz95.weapon", "weapon", 5.0f),
-		ScoredResource("fd338.weapon", "weapon", 4.0f),
-		ScoredResource("torch.weapon", "weapon", 9.0f, 2),
-		ScoredResource("vampire.projectile", "projectile", 8.0f, 10),
-		ScoredResource("werewolf.projectile", "projectile", 8.0f, 10),
-		ScoredResource("fancy_sunglasses.carry_item" , "carry_item", 5.0f, 1),	
-		ScoredResource("costume_underpants.carry_item" , "carry_item", 6.0f, 1),
-		ScoredResource("costume_werewolf.carry_item" , "carry_item", 14.0f, 2),
-		ScoredResource("costume_scream.carry_item" , "carry_item", 14.0f, 2),
-		ScoredResource("costume_banana.carry_item" , "carry_item", 3.0f, 1)
-			}
-		};   
-			
-		processRewardPasses(rewardPasses);
-
-		GiftItemDeliveryRandomRewarder@ rewarder = GiftItemDeliveryRandomRewarder(m_metagame, rewardPasses);
-
-		m_itemDeliveryOrganizer.addObjective(
-			ItemDeliveryObjective(m_metagame, 0, deliveryList, m_itemDeliveryOrganizer, null, "", "", "", -1 /* loop */, rewarder)
-			);
-	}
-
-
-	// ----------------------------------------------------
-	protected void setupXmasBox() {
-		_log("adding xmas box config", 1);
-		array<Resource@> deliveryList = {
-			 Resource("xmas_box.carry_item", "carry_item")
-		};
-
-		array<array<ScoredResource@>> rewardPasses = {
-			{
-		ScoredResource("banner_santa.weapon" , "weapon", 12.0f),
-		ScoredResource("banner_gingerbread.weapon" , "weapon", 20.0f),
-		ScoredResource("banner_rwr.weapon" , "weapon", 4.0f),
-		ScoredResource("xmas_tree_resource.weapon" , "weapon", 20.0f, 5),
-		ScoredResource("gift_box_1.carry_item", "carry_item", 10.0f, 1),
-		ScoredResource("gift_box_2.carry_item", "carry_item", 8.0f, 1),
-		ScoredResource("gift_box_3.carry_item", "carry_item", 5.0f, 1),
-        ScoredResource("gift_box_community_1.carry_item", "carry_item", 3.0f, 1),
-        ScoredResource("gift_box_community_2.carry_item", "carry_item", 3.0f, 1),
-        ScoredResource("gift_box_community_3.carry_item", "carry_item", 3.0f, 1),
-        ScoredResource("gift_box_community_4.carry_item", "carry_item", 3.0f, 1),
-        ScoredResource("gift_box_community_5.carry_item", "carry_item", 3.0f, 1),
-        ScoredResource("gift_box_community_6.carry_item", "carry_item", 3.0f, 1),
-		ScoredResource("balloon.carry_item", "carry_item", 8.0f, 5)
-			},
-			{
-		ScoredResource("costume_santa.carry_item", "carry_item", 20.0f, 2),
-		ScoredResource("lottery.carry_item", "carry_item", 5.0f, 2),
-		ScoredResource("xmas_candycane.carry_item", "carry_item", 15.0f, 3),
-		ScoredResource("xmas_bell.carry_item", "carry_item", 10.0f, 3),
-		ScoredResource("xmas_biscuit.carry_item", "carry_item", 15.0f, 3),
-		ScoredResource("xmas_stocking.carry_item", "carry_item", 15.0f, 3),
-		ScoredResource("jeep_xmas_flare.projectile", "projectile", 15.0f, 3),
-		ScoredResource("chocolate.carry_item", "carry_item", 7.0f, 1),
-		ScoredResource("teddy.carry_item", "carry_item", 7.0f, 1),
-		ScoredResource("gamingdevice.carry_item", "carry_item", 6.0f, 1)
-
-			}
-		};
-
-		processRewardPasses(rewardPasses);
-
-		GiftItemDeliveryRandomRewarder@ rewarder = GiftItemDeliveryRandomRewarder(m_metagame, rewardPasses);
-
-		m_itemDeliveryOrganizer.addObjective(
-			ItemDeliveryObjective(m_metagame, 0, deliveryList, m_itemDeliveryOrganizer, null, "", "", "", -1 /* loop */, rewarder)
-			);
-	}
-
-	// ----------------------------------------------------
-	protected void setupCommunity1() {
-		_log("adding community box 1 config", 1);
+	protected void setupCollection() {
+		_log("adding reward_box_collection config", 1);
 		//收藏品箱子
 		array<Resource@> deliveryList = {
-			 Resource("gift_box_community_1.carry_item", "carry_item")
+			 Resource("reward_box_collection.carry_item", "carry_item")
 		};
 
 		array<array<ScoredResource@>> rewardPasses = {
@@ -356,11 +141,11 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 	}
 
 	// ----------------------------------------------------
-	protected void setupCommunity2() {
-		_log("adding community box 2 config", 1);
+	protected void setupSkin() {
+		_log("adding reward_box_skin config", 1);
 		//信物箱子
 		array<Resource@> deliveryList = {
-			 Resource("gift_box_community_2.carry_item", "carry_item")
+			 Resource("reward_box_skin.carry_item", "carry_item")
 		};
 
 		array<array<ScoredResource@>> rewardPasses = {
@@ -425,6 +210,9 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			ScoredResource("token_yuudachi_halloween_ver.projectile","projectile",1.0f,4),
 			ScoredResource("token_tashkent_equipment.projectile","projectile",1.0f,4),
 			ScoredResource("token_alibina.projectile","projectile",1.0f,4),
+			ScoredResource("token_g41_schoolsuit.projectile","projectile",1.0f,4),
+			ScoredResource("token_patricia_abelheim.projectile","projectile",1.0f,4),
+
 			ScoredResource("token_amamiya_kokoro.projectile","projectile",1.0f,4)
 			},
 			{
@@ -442,11 +230,11 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 	}
 
 	// ----------------------------------------------------
-	protected void setupCommunity3() {
-		_log("adding community box 3 config", 1);
+	protected void setupMusic() {
+		_log("adding reward_box_music config", 1);
 		//音乐箱子
 		array<Resource@> deliveryList = {
-			 Resource("gift_box_community_3.carry_item", "carry_item")
+			 Resource("reward_box_music.carry_item", "carry_item")
 		};
 
 		array<array<ScoredResource@>> rewardPasses = {
@@ -469,11 +257,11 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 	}
 
 	// ----------------------------------------------------
-	protected void setupCommunity4() {
-		_log("adding community box 4 config", 1);
+	protected void setupVehicle() {
+		_log("adding reward_box_vehicle config", 1);
 		//载具箱子
 		array<Resource@> deliveryList = {
-			 Resource("gift_box_community_4.carry_item", "carry_item")
+			 Resource("reward_box_vehicle.carry_item", "carry_item")
 		};
 
 		array<array<ScoredResource@>> rewardPasses = {
@@ -512,11 +300,11 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 	}
 
 	// ----------------------------------------------------
-	protected void setupCommunity5() {
-		_log("adding community box 5 config", 1);
+	protected void setupWeapon1() {
+		_log("adding reward_box_weapon_1 config", 1);
 		//武器箱子
 		array<Resource@> deliveryList = {
-			 Resource("gift_box_community_5.carry_item", "carry_item")
+			 Resource("reward_box_weapon_1.carry_item", "carry_item")
 		};
 
 		array<array<ScoredResource@>> rewardPasses = {
@@ -539,6 +327,10 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
          	ScoredResource("acg_smg_strelka.weapon", "weapon", 1.0f),         
          	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f),
          	ScoredResource("acg_sinteria_bow.weapon", "weapon", 1.0f),
+         	ScoredResource("acg_g41_lasercanno_diffusion.weapon", "weapon", 1.0f),
+         	ScoredResource("acg_g41_bp2077.weapon", "weapon", 1.0f),
+         	ScoredResource("acg_bronya.weapon", "weapon", 1.0f),
+         	ScoredResource("acg_shuiniao.weapon", "weapon", 1.0f),
 
          	ScoredResource("acg_patricia_cumforce.weapon", "weapon", 1.0f)
 			},
@@ -605,12 +397,12 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		ScoredResource("collect_mc_diamond.carry_item", "carry_item", 25.0f),     
 		ScoredResource("collect_mc_emerald.carry_item", "carry_item", 10.0f),     
                     
-		ScoredResource("gift_box_community_1.carry_item", "carry_item", 1.0f),
-		ScoredResource("gift_box_community_2.carry_item", "carry_item", 1.0f),
-		ScoredResource("gift_box_community_3.carry_item", "carry_item", 1.0f), 
-		ScoredResource("gift_box_community_4.carry_item", "carry_item", 1.0f),                       
-		ScoredResource("gift_box_community_5.carry_item", "carry_item", 1.0f)
-
+		ScoredResource("reward_box_collection.carry_item", "carry_item", 10.0f),
+		ScoredResource("reward_box_skin.carry_item", "carry_item", 10.0f),
+		ScoredResource("reward_box_music.carry_item", "carry_item", 10.0f), 
+		ScoredResource("reward_box_vehicle.carry_item", "carry_item", 10.0f),                       
+		ScoredResource("reward_box_weapon_1.carry_item", "carry_item", 1.0f)
+		//期望＞15w
 
 			},
 			{

@@ -98,7 +98,6 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		setupPenaltyManager();
 		setupLocalBanManager();
 		setupTestingToolsTracker();
-		setupLocalBanManager();
 
 		if (m_userSettings.m_continue) {
 			_log("* restoring old game");

@@ -4,11 +4,14 @@
 <!-- 资源文件注册为KEY注册，不同于武器注册的key注册 -->
 
 <!--武器-->
+    <weapon key="hd_lava17_roger_full_upgrage.weapon" /><!--游骑兵 充能激光-->
 
 <!-- 副手  -->
     <weapon key="ex_cl_banzai.weapon" /><!--刺雷-->
 
 <!--投掷物/信标-->
     <projectile key="acg_ex_box.projectile" /><!-- Ex 补给箱 -->
+
+    <carry_item key="lottery.carry_item" /><!--彩票 -->
  
 </resources>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <weapons>
 <weapon 
-file="_rare_weapon.base"
+file="_rare_weapon_mk4.base"
 key="acg_sinteria_bow.weapon"
 >
 
@@ -59,7 +59,7 @@ key="acg_sinteria_bow.weapon"
     <projectile file="hd_general_spawn_no_effect.projectile" pulldown_in_air="4" >
 	 
 		<result class="spawn" instance_class="projectile" instance_key="acg_sinteria_bow_damage.projectile" 
-		min_amount="20" max_amount="20" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+		min_amount="20" max_amount="20" offset="0 0 0" position_spread="1 1" direction_spread="0 0" />	
 
 
 		<sound class="result" key="other" fileref="MAFDS_ZAP_Leviactus_01.wav" pitch_variety="0.03" volume="1.0" />
@@ -109,7 +109,7 @@ key="acg_sinteria_bow.weapon"
 </weapon>
 
 <weapon 
-file="_rare_weapon.base"
+file="_rare_weapon_mk4.base"
 key="acg_sinteria_at.weapon"
 >
 

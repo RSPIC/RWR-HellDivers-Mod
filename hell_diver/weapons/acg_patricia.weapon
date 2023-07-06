@@ -2,7 +2,7 @@
 
 <weapons> 
 <weapon 
-file="_rare_weapon.base" 
+file="_rare_weapon_mk5.base" 
 key="acg_patricia_fataldrive.weapon" 
 drop_count_factor_on_player_death="0"
 time_to_live_out_in_the_open="0"
@@ -156,7 +156,7 @@ time_to_live_out_in_the_open="0"
 </weapon>
 
 <weapon 
-file="_rare_weapon.base" 
+file="_rare_weapon_mk5.base" 
 key="acg_patricia_cumforce.weapon" 
 > 
     <specification 	
@@ -246,7 +246,7 @@ key="acg_patricia_cumforce.weapon"
 			direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
 		<result class="notify_script" key="vehicle_recycle" />
 		-->
-		<result class="blast" radius="8.5" damage="1000" push="0.7" decal="0" character_state="wound" faction_compare="not_equal"  />
+		<result class="blast" radius="9.0" damage="1000" push="0.7" decal="0" character_state="wound" faction_compare="not_equal"  />
 		<trigger class="time" time_to_live="0.9"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
@@ -310,7 +310,7 @@ key="acg_patricia_cumforce.weapon"
 </weapon>
 
 <weapon 
-file="_rare_weapon.base" 
+file="_rare_weapon_mk5.base" 
 key="acg_patricia_phantomfang.weapon" 
 > 
     <specification 	
@@ -461,7 +461,7 @@ key="acg_patricia_phantomfang.weapon"
 </weapon>
 
 <weapon 
-file="_rare_weapon.base" 
+file="_rare_weapon_mk5.base" 
 key="acg_patricia_jihadslash.weapon" 
 > 
     <specification 	

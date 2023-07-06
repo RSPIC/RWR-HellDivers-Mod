@@ -1,0 +1,466 @@
+particle_system g41_gl_thunder_01	
+{
+	quota 1000
+	material g41_gl_thunder_01
+	particle_width 4
+	particle_height 4
+	renderer billboard
+	billboard_rotation_type vertex
+	billboard_origin bottom_center
+	billboard_type oriented_self
+	common_direction 0 1 0
+	emitter Point{
+		angle 15
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 30
+		position 0 0 0
+		velocity 0.01
+		time_to_live 0.25
+		duration 0.3
+	}
+	affector ColourFader2{
+		red1	10
+		green1  10
+		blue1	10
+		alpha1	10
+		red2	 -5
+		green2  -5
+		blue2	-5
+		alpha2	-5
+		state_change 0.05
+	}
+	affector Scaler{
+		rate 0.5
+	}
+}
+
+particle_system g41_gl_rising_flame_01
+{
+	quota 1000
+	material g41_point_soft_edge_100
+	particle_width 0.1
+	particle_height 4
+	renderer billboard
+	billboard_rotation_type vertex
+	billboard_type oriented_self
+	common_direction 0 1 0
+	emitter Box{
+		angle 0
+		colour 1 0.3 0 0.3
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity 4
+		time_to_live 0.6
+		duration 0.3
+		width 0.5
+		height 0.5
+		depth 4.6
+	}
+	affector ColourFader2{
+		red1	1
+		green1  0.3
+		blue1	0
+		alpha1	2
+		red2	 -2
+		green2  -2
+		blue2	-2
+		alpha2	-2
+		state_change 0.2
+	}
+	affector Scaler{
+		rate 0
+	}
+}
+particle_system g41_gl_rising_flame_02
+{
+	quota 1000
+	material g41_point_soft_edge_100
+	particle_width 1.6
+	particle_height 18
+	renderer billboard
+	billboard_rotation_type vertex
+	billboard_type oriented_self
+	common_direction 0 1 0
+	emitter Point{
+		angle 0
+		colour 1 0.3 0 0.1
+		direction 0 1 0
+		emission_rate 15
+		position 0 0 0
+		velocity 3
+		time_to_live 0.6
+		duration 0.2
+	}
+	affector ColourFader2{
+		red1	0.5
+		green1  0.3
+		blue1	0
+		alpha1	0
+		red2	 -2
+		green2  -2
+		blue2	-2
+		alpha2	-2
+		state_change 0.2
+	}
+}
+particle_system g41_gl_rising_particle_01
+{
+	quota 1000
+	emit_emitter_quota 5000
+	material g41_point_soft_edge_100
+	particle_width 0.1
+	particle_height 0.1
+	renderer billboard
+	billboard_rotation_type vertex
+	billboard_type point
+	emitter Box{
+		angle 35
+		colour 1 0.3 0 1
+		direction 0 1 0
+		emission_rate 250
+		position 0 0 0
+		velocity_min 1
+		velocity_max 3
+		time_to_live_min 0.45
+		time_to_live_max 1
+		duration 0.3
+		emit_emitter tag1
+		width 0.7
+		height 0.7
+		depth 8
+	}
+	affector ColourFader2{
+		red1	1
+		green1  0.3
+		blue1	0
+		alpha1	0
+		red2	 -3
+		green2  -3
+		blue2	-3
+		alpha2	-3
+		state_change 0.3
+	}
+	emitter Point{
+		name tag1
+		angle 0
+		colour 1 0.3 0 1
+		direction 0 1 0
+		emission_rate 200
+		position 0 0 0
+		velocity 0.01
+		time_to_live 0.2
+		duration 1
+	}
+
+	affector Scaler{
+		rate -0.5
+	}
+		affector DirectionRandomiser
+	{
+		randomness 10
+		scope 100
+		keep_velocity true
+	}
+		affector LinearForce{
+		force_vector 0 5 0
+		force_application add
+	}
+}
+particle_system g41_gl_shining_particle_01
+{
+	quota 1000
+	material g41_explosion_smoke_01
+	particle_width 3
+	particle_height 3
+	renderer billboard
+	billboard_rotation_type vertex
+	billboard_origin bottom_center
+	billboard_type oriented_self
+	emitter Point{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 50
+		position 0 -1.5 0
+		velocity 0.01
+		time_to_live 0.15
+		duration 0.1
+	}
+	affector ColourFader2{
+		red1	10
+		green1  10
+		blue1	10
+		alpha1	10
+		red2	 -0
+		green2  -3
+		blue2	-0
+		alpha2	-1
+		state_change 0.05
+	}
+	affector Rotator{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end 	0
+	}
+	affector Scaler{
+		rate 30
+	}
+}
+particle_system g41_gl_hit_ground_light_01
+{
+	quota 1000
+	material g41_pump_flare_03
+	particle_width 2
+	particle_height 2
+	renderer billboard
+	billboard_rotation_type vertex
+	billboard_type perpendicular_common
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	emitter Point{
+		angle 90
+		colour 1 1 1 0.7
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.01
+		time_to_live 0.15
+		duration 0.2
+	}
+	affector ColourFader2{
+		red1	0
+		green1  0
+		blue1	0
+		alpha1	0
+		red2	 -20
+		green2  -20
+		blue2	-20
+		alpha2	-20
+		state_change 0.05
+	}
+	affector Scaler{
+		rate 12
+	}
+}
+particle_system g41_gl_area_light_01
+{
+	quota 1000
+	material g41_pump_flare_03
+	particle_width 2
+	particle_height 2
+	renderer billboard
+	billboard_rotation_type vertex
+	billboard_type perpendicular_common
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	emitter Point{
+		angle 90
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.01
+		time_to_live 0.2
+		duration 0.2
+	}
+	affector ColourFader2{
+		red1	0
+		green1  0
+		blue1	0
+		alpha1	0
+		red2	 -2
+		green2  -2
+		blue2	-2
+		alpha2	-2
+		state_change 0.1
+	}
+	affector Scaler{
+		rate 12
+	}
+}
+particle_system g41_gl_impact_1
+{
+	quota 2000
+	emit_emitter_quota 10000
+	material g41_Flare2_3
+	particle_width 4
+	particle_height 4
+	renderer billboard
+	accurate_facing on
+	billboard_type oriented_self
+	common_direction 0 1 0
+	emitter Point
+	{
+		angle 45
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 30
+		time_to_live 0.25
+		duration 0.10
+		emit_emitter tag1
+	}
+	emitter Point
+	{
+		angle 45
+		colour 1 0.3 0 1
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity_max 3
+		velocity_min 1
+		time_to_live_min 0.7
+		time_to_live_max 1.2
+		repeat_delay 0.01
+		duration 3
+		name tag1
+	}
+	affector DirectionRandomiser
+	{
+		randomness 0
+		scope 1
+		keep_velocity false
+	}
+		affector Scaler
+	{
+		rate -0.8
+	}
+	
+	affector ColourFader2
+	{
+		red1	10
+		green1	0.1
+		blue1	0
+		alpha1	0
+		red2	-5
+		green2	-5
+		blue2	-5
+		alpha2	-5
+		state_change   0.2
+	}
+	affector LinearForce
+	{
+		force_vector 0 3 0
+		force_application add
+	}
+}
+particle_system g41_gl_spray_impact
+{
+	quota 1000
+	material g41_flame
+	particle_width 1.2
+	particle_height 1.2
+	cull_each false
+	renderer billboard
+	billboard_type oriented_self
+	emitter Point
+	{
+		angle 45
+		colour 1 0.3 0 1
+		direction 0 1 0
+		emission_rate 60
+		position 0 0 0
+		velocity 14
+		velocity_min 8
+		velocity_max 14
+		time_to_live 3
+		time_to_live_min 2
+		time_to_live_max 3
+		duration 0.2
+	}
+		affector Scaler
+	{
+		rate -0.1
+	}
+		affector LinearForce
+	{
+		force_vector 0 -8 0
+		force_application add
+	}
+	affector ColourFader2
+	{
+		red1	3
+		green1	0.15
+		blue1	0
+		alpha1	0
+		red2	-5
+		green2	-5
+		blue2	-5
+		alpha2	-5
+		state_change   0.2
+	}
+}
+
+--------------------material-------------------
+
+material alpha_blend_base
+{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+material add_base
+{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material g41_gl_thunder_01	: alpha_blend_base 
+{	technique{pass{texture_unit{
+		texture pump_lightning_01_g41.png 	
+}}}}
+
+material g41_point_soft_edge_100 : alpha_blend_base
+{	technique{pass{texture_unit{
+		texture R_point_01.png 	
+}}}}
+
+material g41_pump_flare_03 : add_base
+{	technique{pass{texture_unit{
+		texture pump_flare_03_01.png 	
+}}}}
+material g41_explosion_smoke_01 : alpha_blend_base
+{	technique{pass{texture_unit{
+		texture blast_texture_rumbler.png 	
+}}}}
+material g41_Flare2_3  : add_base
+{
+	receive_shadows off
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture flaretrail_02.png
+			}
+		}
+	}
+}
+material g41_flame 	: add_base
+{
+	technique {
+		pass {
+			texture_unit {
+				texture flaretrail_01.png
+			}
+		}
+	}
+}

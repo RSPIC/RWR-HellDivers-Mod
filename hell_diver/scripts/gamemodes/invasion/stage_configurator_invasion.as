@@ -155,8 +155,8 @@ class StageConfiguratorInvasion : StageConfigurator {
 		array<ScoredResource@> resources = {
 			// for testing: 0 score no spawn -> 100% chance for icecream
 			//ScoredResource("", "", 0.0f),          
-			ScoredResource("", "", 85.0f),
-			ScoredResource("icecream.vehicle", "vehicle", 15.0f)
+			ScoredResource("", "", 0.0f),
+			ScoredResource("icecream.vehicle", "vehicle", 100.0f)
 		};
 		stage.addTracker(SpawnAtNode(m_metagame, resources, "icecream", 1, 1));
 	}

@@ -746,6 +746,11 @@
 	<text key="MG-94 Machine Gun" text="MG-94 机枪" />
 	<text key="MG-105 Stalwart Machine Gun" text="MG-105 盟友机枪" />
 	<text key="MGX-42 MK3 Machine Gun[Single-Use]" text="MGX-42 机枪[一次性]" />
+	
+	<text key="Lava-17 Roger" text="Lava-17 游骑兵 充能激光 [反重甲]" />
+	<text key="Lava" text="熔岩" />
+
+	<text key="Laser Sword" text="光剑" />
 
 	<text key="Obliterator Grenade Launcher" text="消灭者破片榴弹发射器[反轻甲]" />
 	<text key="M-25 Rumbler" text="M-25 雷鸣者穿甲榴弹抛射器 [反重甲]" />
@@ -866,6 +871,9 @@
 	<text key="Patricia Abelheim [CumForce]"  text="帕蒂 [累计武力]" />
 	<text key="Patricia Abelheim [PhantomFang]"  text="帕蒂 [幻影獠牙]" />
 	<text key="Patricia Abelheim [JihadSlash]"  text="帕蒂 [圣域斩击]" />
+	<text key="HongXue [Skill]"  text="鸿雪 [技能-反中甲]" />
+	<text key="HongXue"  text="鸿雪 [反重甲]" />
+	<text key="shuiniao"  text="水鸟 [反重甲]" />
 
 <!-- 信物 -->
 	<text key="Asakaze [Skin]"  text="朝风 [信物]" />
@@ -930,6 +938,7 @@
 	<text key="Alibina [Skin]"  text="阿莉比娜 [信物]" />
 	<text key="Amamia Kokoro [Skin]"  text="阿喵喵 [信物]" />
 	<text key="Patricia Abelheim [Skin]"  text="帕特莉夏·阿贝尔海姆 [信物]" />
+	<text key="G41 [SchoolSuit Ver.][Skin]"  text="G41 [校服 Ver.] [信物]" />
 
 <!-- ex武器 -->
 	<text key="Leviathan Breath"  text="利维坦之息 [反重甲]" />
@@ -1368,6 +1377,13 @@
 /dead：使自己死亡
 /wound：使自己进入倒地状态" />
 
+<!-- 奖励箱子 -->
+	<text key="Reward Box [Collection]" text="奖励箱子 [收藏品]" />
+	<text key="Reward Box [Skin]" text="奖励箱子 [皮肤]" />
+	<text key="Reward Box [Music]" text="奖励箱子 [音乐盒]" />
+	<text key="Reward Box [Vehicle]" text="奖励箱子 [载具]" />
+	<text key="Reward Box [Weapon I]" text="奖励箱子 [武器 I]" />
+	<text key="Reward Box [Weapon II]" text="奖励箱子 [武器 II]" />
 
 
 </translation>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>	
 <weapon 
-file="_hd_ar.base"
+file="_rare_weapon_mk1.base"
 key="acg_ka_ar8.weapon" 
 > 
     <specification 	
@@ -27,8 +27,6 @@ key="acg_ka_ar8.weapon"
 	stab_range="2.5" 
 	use_basic_muzzle_smoke_effect="0"
 	/> 
-	<inventory encumbrance="10.0" price="10000.0" /> 
-	<commonness value="1" can_respawn_with="0" in_stock="1" /> 
 
 	<!--武器模型和HUD-->
 	<weak_hand_hold offset="0.0" /> <!--模型X轴偏移-->

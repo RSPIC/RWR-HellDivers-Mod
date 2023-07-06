@@ -326,6 +326,17 @@ particle_system general_weapon_muzzle_laser_long : general_weapon_muzzle_laser_s
 		velocity 40
 	}
 }
+particle_system general_weapon_muzzle_lava_long : general_weapon_muzzle_laser_short
+{
+	material muzzle_lava
+	billboard_origin bottom_center
+	particle_width 6
+	particle_height 35
+	emitter Point
+	{
+		velocity 20
+	}
+}
 particle_system general_weapon_muzzle_laser_continuous
 {
 	quota 100
@@ -2721,6 +2732,64 @@ particle_system general_item_drop_mark
 		rotation_range_end	0
 	}
 }
+
+
+particle_system general_muzzle_lava
+{
+	quota 400
+	material lava_anim
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 180
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity_min 0.1
+		velocity_max 0.9
+		time_to_live_min 0.5
+		time_to_live_max 1
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.5
+		colour1 1 1 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 -4 0
+		force_application add
+	}
+}
+
+
+
+
 --------------------------------------material-----------------------------------
 material alpha_blend_base{
 	receive_shadows off
@@ -2802,6 +2871,22 @@ material muzzle_laser : add_base
         texture_unit{
             texture muzzle_laser.png 	
 }}}}
+material muzzle_lava : alpha_blend_base
+{   
+    technique{
+    pass{
+		texture_unit{
+            texture inkeffectlava.jpg
+			scroll_anim -0.3 0
+			tex_address_mode wrap
+		}
+        texture_unit{
+            texture muzzle_laser_alpha.png 	
+			colour_op modulate
+			scroll_anim 0 0
+			tex_address_mode wrap
+		}
+}}}
 material laser_las12_tanto : add_base
 {   
     technique{
@@ -3065,3 +3150,19 @@ material top_center_point_3_normal : add_base
         texture_unit{
             texture top_center_point_3.png 	
 }}}}
+material lava_anim : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture inkeffectlava.jpg
+			scroll_anim 0 -0.1
+			tex_address_mode wrap
+		}
+		texture_unit{
+            texture lava_2.png 
+			alpha_op_ex modulate texture current
+			scroll_anim 0 0
+			tex_address_mode wrap
+		}
+}}}

@@ -1,0 +1,807 @@
+author：rst
+2022.6.27
+未经授权禁止复用和二改
+
+		<effect class="result" key="terrain" ref="bronya_01" lighting="0" />
+		<effect class="result" key="terrain" ref="bronya_02" lighting="0" />
+		<effect class="result" key="terrain" ref="bronya_center_emissive" lighting="0" />
+		<effect class="result" key="terrain" ref="bronya_surrounding_word_01" lighting="0" />
+		<effect class="result" key="terrain" ref="bronya_surrounding_word_02" lighting="0" />
+		<effect class="result" key="terrain" ref="bronya_surrounding_word_03" lighting="0" />
+		<effect class="result" key="terrain" ref="bronya_surrounding_word_04" lighting="0" />
+		<effect class="result" key="terrain" ref="bronya_ambient_decoration_01" lighting="0" />
+		<effect class="result" key="terrain" ref="bronya_ambient_decoration_02" lighting="0" />
+		<effect class="result" key="terrain" ref="bronya_linear_light" lighting="0" />
+		<effect class="result" key="terrain" ref="bronya_impact_circle" lighting="0" />
+		<effect class="activated" ref="bronya_activated_trail" lighting="0" />
+		<effect class="activated" ref="bronya_activated_longtrail" lighting="0" />
+		<effect class="activated" ref="bronya_activated_center" lighting="0" />
+		<effect class="activated" ref="bronya_activated_trailstar" lighting="0" />
+		
+particle_system bronya_01 //命中底部法阵
+{
+	quota 50
+	material bronya_fazhen
+	particle_width 11
+	particle_height 11
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 1.2
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 1.2
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	-180
+		rotation_speed_range_end	180
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		bule1 	0
+		alpha1 	0.1
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+
+particle_system bronya_02 : bronya_01 //命中镜头光晕
+{
+	material muzzle_lens_01
+	particle_width 35
+	particle_height 15
+	billboard_type point
+	emitter Point
+	{
+		time_to_live 0.1
+		position 0 1 0
+		colour 0 0 1 1
+	}
+	affector Scaler
+	{
+		rate 10
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	6
+		bule1 	20
+		alpha1 	20
+		red2 	-20
+		green2	-20
+		blue2	-20
+		alpha2	-20
+		state_change 0.05
+	}
+}
+
+particle_system bronya_center_emissive : bronya_01 //中心自发光
+{
+	material point_soft_edge_100
+	particle_width 11
+	particle_height 11
+	billboard_type point
+	emitter Point
+	{
+		colour 0 0.3 1 1
+		position 0 2 0
+		emission_rate 10
+		time_to_live 1.2
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		bule1 	0
+		alpha1 	5
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+}
+
+particle_system bronya_surrounding_word_01 : bronya_01 //环绕字符
+{
+	material bronya_word_circle_01
+	particle_width 9
+	particle_height 9
+	billboard_type perpendicular_common
+	common_direction 0.3 1 0
+	common_up_vector 0 0 1
+	emitter Point
+	{
+		position 0 2 0
+		colour 0 0.3 1 1
+		emission_rate 10
+		time_to_live 1.2
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	90
+		rotation_speed_range_end	90
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0.3
+		bule1 	1
+		alpha1 	5
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+}
+
+particle_system bronya_surrounding_word_02 : bronya_surrounding_word_01 //环绕字符
+{
+	material bronya_word_circle_02
+	billboard_type perpendicular_common
+	common_direction -0.3 1 0
+	common_up_vector 0 0 1
+	emitter Point
+	{
+	}
+	affector Scaler
+	{
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	-90
+		rotation_speed_range_end	-90
+	}
+	affector ColourFader2
+	{
+	}
+}
+particle_system bronya_surrounding_word_03 : bronya_surrounding_word_01 //环绕字符
+{
+	material bronya_word_circle_03
+	particle_width 7
+	particle_height 7
+	billboard_type perpendicular_common
+	common_direction -0.3 1 0
+	common_up_vector 0 0 1
+	emitter Point
+	{
+		position 0 4 0
+	}
+	affector Scaler
+	{
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	45
+		rotation_speed_range_end	45
+	}
+	affector ColourFader2
+	{
+	}
+}
+particle_system bronya_surrounding_word_04 : bronya_surrounding_word_03 //环绕字符
+{
+	material bronya_word_circle_04
+	billboard_type perpendicular_common
+	common_direction 0.3 1 0
+	common_up_vector 0 0 1
+	emitter Point
+	{
+	}
+	affector Scaler
+	{
+	}
+	affector Rotator
+	{
+	}
+	affector ColourFader2
+	{
+	}
+}
+particle_system bronya_ambient_decoration_01 
+{
+	quota 50
+	material diamond_fill_normal_01
+	particle_width 2.5
+	particle_height 3
+	billboard_rotation_type vertex
+	renderer billboard
+	accurate_facing on
+	billboard_type oriented_self
+	emitter Ring
+	{
+		angle 0
+		colour 1 1 1 1
+		direction -1 0 0
+		emission_rate 30
+		position 0 0 0
+		velocity_min 3
+		velocity_max 4
+		time_to_live_min 0.7
+		time_to_live_max 0.9
+		duration 0.1
+		width 8
+		height 8
+		depth 13
+		inner_width 0.5
+		inner_height 0.5
+	}
+	affector Scaler
+	{
+		rate -1
+	}
+	affector Rotator
+	{
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		bule1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+}
+
+particle_system bronya_ambient_decoration_02 : bronya_ambient_decoration_01
+{
+	material diamond_hollow_normal_01
+}
+
+
+particle_system bronya_linear_light 
+{
+	quota 50
+	material point_soft_edge_100
+	particle_width 0.1
+	particle_height 15
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	emitter Point
+	{
+		angle 90
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 40
+		time_to_live 0.2
+		duration 0.05
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	5
+		green1 	5
+		bule1 	5
+		alpha1 	5
+		red2 	-20
+		green2	-20
+		blue2	-20
+		alpha2	-20
+		state_change 0.05
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+
+particle_system bronya_impact_circle
+{
+	quota 50
+	material bronya_magic_circle_02
+	billboard_rotation_type vertex
+	particle_width 0.1
+	particle_height 0.1
+	billboard_type perpendicular_common
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+    emitter Point
+    {
+        angle 0
+        colour 1 0.3 0 1
+		direction 1 0 0
+		emission_rate 20
+		position 0 0 0
+		velocity_min 1
+        velocity_max 2
+		time_to_live 0.3
+		duration 0.1
+    }
+    affector Scaler
+	{
+		rate 80
+	}
+    affector ColourFader2{
+        red1	0
+		green1  3
+		blue1	10
+		alpha1	10
+		red2	 -5
+		green2  -5
+		blue2	-5
+		alpha2	-5
+		state_change 0.2
+    }
+}
+particle_system bronya_activated_trail
+{
+	quota 100
+	material lens_circle_01
+	billboard_rotation_type vertex
+	particle_width 3
+	particle_height 3
+	billboard_type point
+    emitter Point
+    {
+        angle 0
+        colour 0 0 0 0
+		direction 1 0 0
+		emission_rate 18
+		position 0 0 0
+		velocity_min 1
+        velocity_max 2
+		time_to_live 0.3
+		duration 3
+    }
+    affector Scaler
+	{
+		rate -12
+	}
+    affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.1
+		colour1 0 0 0 0
+		time2 0.2
+		colour2 0 0.3 1 1
+		time3 0.9
+		colour3 0 0.3 1 1	
+		time4 1
+		colour4 0 0 0 0
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	360
+		rotation_speed_range_end	360
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+}
+particle_system bronya_muzzle_blue
+{
+	quota 50
+	material muzzle_blue
+	particle_width 2
+	particle_height 2
+	renderer billboard
+	billboard_origin center
+	billboard_type oriented_self
+	billboard_rotation_type vertex
+    emitter Point
+    {
+        angle 0
+        colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.001
+		time_to_live 0.1
+		duration 0.1
+    }
+    affector Scaler
+	{
+		rate 0
+	}
+    affector ColourFader2{
+        red1	10
+		green1  10
+		blue1	10
+		alpha1	10
+		red2	 -0
+		green2  -0
+		blue2	-0
+		alpha2	-0
+		state_change 0.01
+    }
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+}
+
+particle_system bronya_activated_center
+{
+	quota 50
+	material point_soft_edge_100
+	particle_width 2
+	particle_height 2
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 0.5 0.8 1 1
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.3
+		duration 3
+	}
+	affector Scaler
+	{
+		rate -5
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	1
+		alpha1 	0
+		red2 	-10
+		green2	-10
+		blue2	3
+		alpha2	-3
+		state_change 0.33
+	}
+}
+particle_system bronya_activated_longtrail
+{
+	quota 100
+	material point_soft_edge_100
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0.5 1 1
+		direction 0 1 0
+		emission_rate 40
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.5
+		duration 3
+	}
+	affector Scaler
+	{
+		rate -0.7
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+}
+particle_system bronya_activated_trailstar
+{
+	quota 100
+	material point_soft_edge_100
+	particle_width 0.2
+	particle_height 0.2
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 0
+		colour 0 0.5 1 1
+		direction 0 1 0
+		emission_rate 40
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 1
+		duration 3
+		width 1
+		height 1
+		depth 1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 5
+		scope 100
+		keep_velocity false
+	}
+}
+particle_system bronya_muzzle_trail
+{
+	quota 100
+	material bronya_muzzle_trail
+	particle_width 60
+	particle_height 0.2
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center_left
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0.5 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 1
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-0.0
+		green2	-0.5
+		blue2	-1
+		alpha2	-1
+		state_change 1
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	-90
+		rotation_range_end	-90
+	}
+}
+
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material bronya_fazhen : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture bronya_fazhen.png 	
+}}}}
+material muzzle_lens_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture muzzle_lens_01.png 	
+}}}}
+material bronya_word_circle_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture bronya_word_circle_01.png 	
+}}}}
+material bronya_word_circle_02 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture bronya_word_circle_02.png 	
+}}}}
+material bronya_word_circle_03 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture bronya_word_circle_04.png 	
+}}}}
+material bronya_word_circle_04 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture bronya_word_circle_04.png 	
+}}}}
+material point_soft_edge_100 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture point_soft_edge_100.png 	
+}}}}
+material diamond_fill_normal_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture diamond_fill_normal_01.png 	
+}}}}
+material diamond_hollow_normal_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture diamond_hollow_normal_01.png 	
+}}}}
+material blast_smoke_cross : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture blast_smoke_cross.png 	
+}}}}
+material bronya_magic_circle_02 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture bronya_magic_circle_02.png 	
+}}}}
+material lens_circle_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture lens_circle_01.png 	
+}}}}
+material muzzle_blue : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture muzzle_blue.png 	
+}}}}
+material bronya_muzzle_trail : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture muzzle_trail.png 	
+}}}}

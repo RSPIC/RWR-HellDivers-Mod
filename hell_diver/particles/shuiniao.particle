@@ -1,0 +1,833 @@
+
+author: RST
+2022.6.29
+未经授权不可复用、修改使用
+
+火蝴蝶：
+		<effect class="result"  key="terrain" ref="shuiniao_anim_butterfly"/>
+		<effect class="result"  key="terrain" ref="shuiniao_anim_butterfly_02"/>
+		<effect class="result"  key="terrain" ref="shuiniao_anim_butterfly_03"/>
+		<effect class="result"  key="terrain" ref="shuiniao_anim_butterfly_04"/>
+		<effect class="result"  key="terrain" ref="shuiniao_anim_butterfly_05"/>
+		<effect class="result"  key="terrain" ref="shuiniao_cyclone_01"/>
+		<effect class="result"  key="terrain" ref="shuiniao_cyclone_02"/>
+		<effect class="result"  key="terrain" ref="shuiniao_cyclone_03"/>
+		<effect class="result"  key="terrain" ref="shuiniao_cyclone_04"/>
+	
+花：
+	分两段弹头
+		第一段弹头
+		<effect class="result"  key="terrain" ref="shuiniao_center_flower"/>
+		<effect class="result"  key="terrain" ref="shuiniao_center_ambient"/>
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+		
+		第二段弹头延迟引爆，time_to_live=“1.5”
+		<effect class="result"  key="terrain" ref="shuiniao_center_flower_r"/>
+		<effect class="result"  key="terrain" ref="shuiniao_center_flower_l"/>
+		<effect class="result"  key="terrain" ref="shuiniao_spread_petals_01"/>
+		<effect class="result"  key="terrain" ref="shuiniao_spread_petals_02"/>
+		<effect class="result"  key="terrain" ref="shuiniao_spread_petals_03"/>
+		<effect class="result"  key="terrain" ref="shuiniao_ambient_light"/>
+		<effect class="result"  key="terrain" ref="shuiniao_impact_circle"/>
+		<effect class="result"  key="terrain" ref="shuiniao_center_ambient"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+		<effect class="result" key="other" copy="terrain" />
+
+particle_system shuiniao_anim_butterfly     //动态蝴蝶
+{
+	quota 50
+	material butterfly_01_ms2333_colored_01
+	particle_width 0.8
+	particle_height 0.8
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_origin center
+	billboard_type oriented_self
+	accurate_facing on
+    emitter Ring
+    {
+        angle 90
+        colour 1 0.8 0.5 1
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity_min 8
+        velocity_max 12
+		time_to_live_min 2
+		time_to_live_max 3
+		duration 0.1
+		depth 1
+		width 5
+		height 5
+		inner_width 0.5
+		inner_height 0.5
+    }
+    affector DirectionRandomiser
+	{
+		randomness 40
+		scope 100
+		keep_velocity false
+	}
+    affector LinearForce{
+		force_vector 0 10 0
+		force_application add
+	}
+
+
+}
+
+particle_system shuiniao_anim_butterfly_02  :  shuiniao_anim_butterfly  //动态蝴蝶
+{
+	quota 50
+	particle_width 0.7
+	particle_height 0.7
+	material butterfly_02_ms2333_colored_01
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_origin center
+	billboard_type oriented_self
+	emitter Ring{
+		velocity_min 2
+        velocity_max 4
+		time_to_live_min 2.5
+		time_to_live_max 3.5
+		duration 0.1
+	}
+	    affector DirectionRandomiser
+	{
+		randomness 40
+		scope 100
+		keep_velocity true
+	}
+}
+particle_system shuiniao_anim_butterfly_03 : shuiniao_anim_butterfly_02 
+{
+	material butterfly_02_ms2333_colored_02
+	emitter Ring
+    	{
+		}
+
+}
+particle_system shuiniao_anim_butterfly_04 : shuiniao_anim_butterfly_02 
+{
+	material butterfly_02_ms2333_colored_03
+	emitter Ring
+    	{
+		}
+
+}
+particle_system shuiniao_anim_butterfly_05 : shuiniao_anim_butterfly_02 
+{
+	material butterfly_01_ms2333_colored_02
+	emitter Ring
+    	{
+		}
+
+}
+ 
+particle_system shuiniao_cyclone_01     //动态
+{
+	quota 50
+	material ring_cyclone_hollow_01
+	particle_width 2
+	particle_height 2
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_origin center
+	billboard_type perpendicular_common
+    common_up_vector 0 0 1
+	common_direction 0 1 0
+
+    emitter Point
+    {
+        angle 0
+        colour 1 0.3 0 1
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity_min 4
+        velocity_max 6
+		time_to_live 0.5
+		duration 0.4
+    }
+    affector Scaler
+	{
+		rate 5
+	}
+    affector LinearForce{
+		force_vector 0 10 0
+		force_application add
+	}
+    affector Rotator{
+		rotation_speed_range_start	180
+		rotation_speed_range_end	180
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+    affector ColourFader2{
+        red1	4
+		green1  2
+		blue1	0
+		alpha1	1
+		red2	 -4
+		green2  -3
+		blue2	-3
+		alpha2	-4
+		state_change 0.3
+    }
+}
+particle_system shuiniao_cyclone_03 : shuiniao_cyclone_01
+{
+	particle_height 5 
+	particle_width 5 
+	emitter Point{
+	velocity_min 8
+	velocity_max 12
+	time_to_live 0.4
+	duration 0.4
+	}
+}
+particle_system shuiniao_cyclone_02   //动态
+{
+	quota 50
+	material ring_cyclone_02
+	billboard_rotation_type vertex
+	particle_width 5
+	particle_height 5
+	billboard_type perpendicular_common
+    common_up_vector 0 0 1
+	common_direction 0 1 0
+    emitter Point
+    {
+        angle 30
+        colour 1 0.6 0.3 1
+		direction 1 0 0
+		emission_rate 30
+		position 0 0 0
+		velocity_min 1
+        velocity_max 2
+		time_to_live 0.4
+		duration 0.3
+    }
+    affector Scaler
+	{
+		rate 15
+	}
+    affector LinearForce{
+		force_vector 0 3 0
+		force_application add
+	}
+    affector Rotator{
+		rotation_speed_range_start	180
+		rotation_speed_range_end	180
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+    affector ColourFader2{
+        red1	3
+		green1  3
+		blue1	3
+		alpha1	3
+		red2	 -3
+		green2  -3
+		blue2	-3
+		alpha2	-4
+		state_change 0.3
+    }
+}
+particle_system shuiniao_cyclone_04 ：shuiniao_cyclone_01    //动态
+{
+	quota 50
+	material lens_circle_06
+	billboard_rotation_type vertex
+	particle_width 0.1
+	particle_height 0.1
+	billboard_type perpendicular_common
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+    emitter Point
+    {
+        angle 0
+        colour 1 0.3 0 1
+		direction 1 0 0
+		emission_rate 50
+		position 0 0 0
+		velocity_min 1
+        velocity_max 2
+		time_to_live 0.3
+		duration 0.1
+    }
+    affector Scaler
+	{
+		rate 80
+	}
+    affector ColourFader2{
+        red1	10
+		green1  6
+		blue1	3
+		alpha1	10
+		red2	 -5
+		green2  -5
+		blue2	-5
+		alpha2	-5
+		state_change 0.2
+    }
+}
+-----------------------------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+material butterfly_01_ms2333_colored_01 : add_base
+{   
+    technique{
+    pass{
+		lighting on
+		emissive 1 0.6 0.3 1
+		ambient 0.1 0.1 0.1 1
+        texture_unit{
+            texture butterfly_01.png 	
+            wave_xform scale_x sine 0.2 4 0 0.3
+            tex_address_mode border
+            tex_border_colour 0 0 0 0
+}}}}
+material butterfly_01_ms2333_colored_02 : add_base
+{   
+    technique{
+    pass{
+		lighting on
+		emissive 0.8 0.4 0.1  1
+		ambient 0.5 0.5 0 1
+        texture_unit{
+            texture butterfly_01.png 	
+            wave_xform scale_x sine 0.25 3 0.1 0.4
+            tex_address_mode border
+            tex_border_colour 0 0 0 0
+}}}}
+
+material butterfly_02_ms2333_colored_01 : add_base
+{   
+    technique{
+    pass{
+		lighting on
+		emissive 1 0.7 0.3 1
+		ambient 0.1 0.1 0.1 1
+        texture_unit{
+            texture butterfly_02.png 	
+            wave_xform scale_x sine 0.5 3 0.2 0.25
+            tex_address_mode border
+            tex_border_colour 0 0 0 0
+}}}}
+material butterfly_02_ms2333_colored_02 : add_base
+{   
+    technique{
+    pass{
+		lighting on
+		emissive 1 0.4 0.2 1
+		ambient 0.1 0.1 0.1 1
+        texture_unit{
+            texture butterfly_02.png 	
+            wave_xform scale_x sine 0.4 3.5 0.4 0.3
+            tex_address_mode border
+            tex_border_colour 0 0 0 0
+}}}}
+material butterfly_02_ms2333_colored_03 : add_base
+{   
+    technique{
+    pass{
+		lighting on
+		emissive 1 0.1 0 1
+		ambient 0.1 0.1 0.1 1
+        texture_unit{
+            texture butterfly_02.png 	
+            wave_xform scale_x sine 0.5 2.5 0.0 0.5
+            tex_address_mode border
+            tex_border_colour 0 0 0 0
+}}}}
+
+
+
+
+material ring_cyclone_hollow_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture ring_cyclone_hollow_01.png 	
+}}}}
+material ring_cyclone_02 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture ring_cyclone_02.png 	
+}}}}
+material lens_circle_06 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture lens_circle_06.png 	
+}}}}
+-------------------------二段---------------------
+material shuiniao_flower : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture shuiniao_flower.png 	
+}}}}
+material shuiniao_flower_left : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture shuiniao_flower_left.png 	
+}}}}
+material shuiniao_flower_right : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture shuiniao_flower_right.png 	
+}}}}
+material shuiniao_flower_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture shuiniao_flower_01.png 	
+			wave_xform scale_x sine 1 0.6 0 0.7
+			tex_address_mode border
+			tex_border_colour 0 0 0 0
+}}}}
+material shuiniao_flower_02 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture shuiniao_flower_02.png 	
+			wave_xform scale_y sine 1 0.2 0 0.7
+			tex_address_mode border
+			tex_border_colour 0 0 0 0
+}}}}
+material shuiniao_flower_03 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture shuiniao_flower_03.png 	
+			wave_xform scale_y sine 1 0.5 0 0.7
+			tex_address_mode border
+			tex_border_colour 0 0 0 0
+}}}}
+material point_soft_edge_100 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture point_soft_edge_100.png 	
+}}}}
+material lens_circle_07_pass : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture lens_circle_07.png 	
+}}}}
+
+particle_system shuiniao_center_flower
+{
+	quota 200
+	emit_emitter_quota 200
+	material shuiniao_flower
+	particle_width 10
+	particle_height 10
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin bottom_center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+
+	emitter Point		
+	{
+		angle 180
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity_min 0.00001
+		velocity_max 0.0001
+		time_to_live 0.1
+		duration 0.1
+		emit_emitter tag1
+	}
+	emitter Point
+	{
+		name tag1
+		angle 30
+		colour 0.9 0.05 0.05 0.3
+		direction 0 1 0
+		emission_rate 200
+		position 0 0.5 0
+		velocity 0.1
+		time_to_live 1.8
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	8
+		rotation_speed_range_end	-8
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0.1
+		green1 	0.1
+		bule1 	0.1
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-0.5
+		state_change 0.3
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0.08
+		scope 0.1
+		keep_velocity false
+	}
+}
+
+particle_system shuiniao_center_flower_r
+{
+	quota 50
+	material shuiniao_flower_right
+	particle_width 10
+	particle_height 10
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin bottom_center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	emitter Point
+	{
+		angle 40
+		colour 1 0.3 0.3 0.3
+		direction 0 0 1
+		emission_rate 200
+		position 0 0.5 0
+		velocity 0.1
+		time_to_live 2.5
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 2
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	30
+		rotation_speed_range_end	35
+		rotation_range_start	20
+		rotation_range_end	20
+	}
+	affector ColourFader2
+	{
+		red1 	0.1
+		green1 	0.1
+		bule1 	0.1
+		alpha1 	0
+		red2 	-1
+		green2	-0.5
+		blue2	-0.5
+		alpha2	-0.5
+		state_change 1
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0.1
+		keep_velocity false
+	}
+}
+particle_system shuiniao_center_flower_l : shuiniao_center_flower_r
+{
+	material shuiniao_flower_left
+	emitter Point
+	{
+	}
+	affector Scaler
+	{
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	-30
+		rotation_speed_range_end	-35
+		rotation_range_start	-20
+		rotation_range_end	-20
+	}
+}
+
+particle_system shuiniao_spread_petals_01
+{
+	quota 50
+	material shuiniao_flower_01
+	particle_width 2
+	particle_height 1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	emitter Ring
+	{
+		name tag1
+		angle 90
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 100
+		position 0 1 0
+		velocity_min 4
+		velocity_max 6
+		time_to_live_min 2
+		time_to_live_max 3
+		duration 0.1
+		width 15
+		height 15
+		depth 1
+		inner_width 0.3
+		inner_height 0.3
+	}
+	affector Scaler
+	{
+		rate -0.1
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	90
+		rotation_speed_range_end	180
+		rotation_range_start	0
+		rotation_range_end	180
+	}
+	affector ColourFader2
+	{
+		red1 	1
+		green1 	1
+		bule1 	1
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 15
+		scope 0.5
+		keep_velocity false
+	}
+}
+particle_system shuiniao_spread_petals_02 : shuiniao_spread_petals_01
+{
+	material shuiniao_flower_02
+}
+particle_system shuiniao_spread_petals_03 : shuiniao_spread_petals_01
+{
+	material shuiniao_flower_02
+}
+
+particle_system shuiniao_ambient_light
+{
+	quota 50
+	material point_soft_edge_100
+	particle_width 1.5
+	particle_height 10
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin bottom_center
+	billboard_rotation_type vertex
+	accurate_facing on
+	emitter Point
+	{
+		angle 90
+		colour 0.5 0.15 0 0.1
+		direction 0 1 0
+		emission_rate 200
+		position 0 0 0
+		velocity 3
+		time_to_live_min 1.2
+		time_to_live_max 1.8
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	-10
+		rotation_speed_range_end	10
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0.5
+		green1 	0.15
+		bule1 	0
+		alpha1 	0
+		red2 	-1
+		green2	-0.6
+		blue2	-0.6
+		alpha2	-0
+		state_change 0.5
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system shuiniao_impact_circle
+{
+	quota 50
+	material lens_circle_07_pass
+	particle_width 0.1
+	particle_height 0.1
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 90
+		colour 1 0.3 0 1
+		direction 0 1 0
+		emission_rate 40
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.8
+		duration 0.05
+	}
+	affector Scaler
+	{
+		rate 75
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	10
+		green1 	0.08
+		bule1 	0
+		alpha1 	0
+		red2 	-5
+		green2	-5
+		blue2	-5
+		alpha2	-3
+		state_change 0.2
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system shuiniao_center_ambient
+{
+	quota 10
+	material point_soft_edge_100
+	particle_width 25
+	particle_height 25
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	emitter Point
+	{
+		angle 90
+		colour 1 0.3 0 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 1 0
+		velocity 0.0001
+		time_to_live 2
+		duration 0.1
+	}
+	affector ColourFader2
+	{
+		red1 	0.5
+		green1 	0.1
+		bule1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.3
+	}
+}

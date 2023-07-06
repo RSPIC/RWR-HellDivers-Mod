@@ -239,6 +239,10 @@ class itemdrop_event : Tracker {
 	}
 
 	// --------------------------------------------
+	//received: TagName=item_drop_event character_id=293 
+	//item_class=0 item_key=hd_ar_ar19_liberator_full_upgrade.weapon item_type_id=10 
+	//player_id=0 position=295.294 8.50038 518.709 target_container_type_id=2 
+
 	protected void handleItemDropEvent(const XmlElement@ event) {
 		string itemKey = event.getStringAttribute("item_key");
 		//todo:在此处判断在字典里存在然后选择是否返回，减少下列查询消耗。

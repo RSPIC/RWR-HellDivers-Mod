@@ -1,5 +1,6 @@
 #include "item_delivery_objective.as"
 #include "query_helpers.as"
+//Adapted and optimizated by NetherCrow
 
 // ------------------------------------------------------------------------------------------------
 class GiftItemDeliveryRewarder : ItemDeliveryRewarder {
@@ -13,7 +14,7 @@ class GiftItemDeliveryRewarder : ItemDeliveryRewarder {
 	}
 
 	// ------------------------------------------------------------------------------------------------
-	void rewardCompletion(int playerId, int characterId, const Resource@ targetItem) {
+	void rewardCompletion(int playerId, int characterId, const Resource@ targetItem,uint acceptednum=1) {
 		for (uint i = 0; i < m_rewardItems.size(); ++i) {
 			Resource@ r = m_rewardItems[i];
 			addItemInBackpack(m_metagame, characterId, r);
@@ -85,7 +86,7 @@ class GiftItemDeliveryRandomRewarder : ItemDeliveryRewarder {
 	}
 
 	// ------------------------------------------------------------------------------------------------
-	void rewardCompletion(int playerId, int characterId, const Resource@ targetItem) {
+	void rewardCompletion(int playerId, int characterId, const Resource@ targetItem,uint acceptednum=1) {
 		if (playerId >= 0) {
 			string playerName = "";
 			const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
@@ -95,45 +96,80 @@ class GiftItemDeliveryRandomRewarder : ItemDeliveryRewarder {
 				dictionary a;
 				a["%player_name"] = playerName;
 				a["%delivered_item_name"] = getResourceName(m_metagame, targetItem.m_key, targetItem.m_type);
-
-				//sendFactionMessageKey(m_metagame, 0, "gift box delivered", a);
 				sendPrivateMessageKey(m_metagame, playerId, "gift box delivered", a);
+
+				XmlElement command("command");
+				command.setStringAttribute("class", "update_inventory");
+				command.setIntAttribute("character_id", characterId);
+				command.setStringAttribute("container_type_class", "backpack");
+
+				int max_message_num = 10;
+				int massage_num = 0;
+				bool last_message = false;
+
+				for (uint j =0;j<acceptednum;j++){
+					for (uint i = 0; i < m_rewardItemPasses.size(); ++i) {
+						array<ScoredResource@>@ rewardItems = @m_rewardItemPasses[i];
+
+						ScoredResource@ r = getRandomScoredResource(rewardItems);
+						XmlElement k("item");
+						k.setStringAttribute("class", r.m_type);
+						k.setStringAttribute("key", r.m_key);
+						for(int i1=0;i1<r.m_amount;i1++){
+							command.appendChild(k);
+						}
+						string name = getResourceName(m_metagame, r.m_key, r.m_type);
+						a["%item_name" + formatInt(i+1)] = name;
+					}
+					if (massage_num < 10)
+					{
+						sendPrivateMessageKey(m_metagame, playerId, "gift box delivery, reward", a);
+						massage_num++;
+					}
+					else if (!last_message)
+					{
+						sendPrivateMessageKey(m_metagame, playerId, "gift box delivery, max", a);
+						last_message = true;
+					}
+				}
+				m_metagame.getComms().send(command);
 			}
 		}
-
-		TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer(); 
-		tasker.add(DelayedCallTask(CallIntInt(CALL_INT_INT(this.doDelayedReward), playerId, characterId), 3.0));
+		// 我不知道为什么这里要写的这么卡，占用大量。
+		// TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer(); 
+		// tasker.add(DelayedCallTask(CallIntInt(CALL_INT_INT(this.doDelayedReward), playerId, characterId), 0.1));
 	}
 
 	// ------------------------------------------------------------------------------------------------
-	void doDelayedReward(int playerId, int characterId) {
+	// void doDelayedReward(int playerId, int characterId) {
 
-		if (playerId >= 0) {
-			const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
-			if (player !is null) {
-				dictionary a;
-				a["%player_name"] = player.getStringAttribute("name");
+	// 	if (playerId >= 0) {
+	// 		const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
+	// 		if (player !is null) {
+	// 			dictionary a;
+	// 			a["%player_name"] = player.getStringAttribute("name");
 
-				for (uint i = 0; i < m_rewardItemPasses.size(); ++i) {
-					array<ScoredResource@>@ rewardItems = @m_rewardItemPasses[i];
+	// 			for (uint i = 0; i < m_rewardItemPasses.size(); ++i) {
+	// 				array<ScoredResource@>@ rewardItems = @m_rewardItemPasses[i];
 
-					ScoredResource@ r = getRandomScoredResource(rewardItems);
-					for (int k = 0; k < r.m_amount; ++k) {
-						addItemInBackpack(m_metagame, characterId, r);
-					}
+	// 				ScoredResource@ r = getRandomScoredResource(rewardItems);
+	// 				// for (int k = 0; k < r.m_amount; ++k) {
+	// 				// 	addItemInBackpack(m_metagame, characterId, r);
+	// 				// }
+	// 				addMutilItemInBackpack(m_metagame,characterId,r,r.m_amount);
 
-					string name = getResourceName(m_metagame, r.m_key, r.m_type);
-					a["%item_name" + formatInt(i+1)] = name;
-				}
+	// 				string name = getResourceName(m_metagame, r.m_key, r.m_type);
+	// 				a["%item_name" + formatInt(i+1)] = name;
+	// 			}
 
-				//sendFactionMessageKey(m_metagame, 0, "gift box delivery, reward", a);
-				sendPrivateMessageKey(m_metagame, playerId, "gift box delivery, reward", a);
-			} else {
-				// no such player, break
-				return;
-			}
-		}
-	}
+	// 			//sendFactionMessageKey(m_metagame, 0, "gift box delivery, reward", a);
+	// 			sendPrivateMessageKey(m_metagame, playerId, "gift box delivery, reward", a);
+	// 		} else {
+	// 			// no such player, break
+	// 			return;
+	// 		}
+	// 	}
+	// }
 
 	// ------------------------------------------------------------------------------------------------
 	void rewardPiece(int playerId, int characterId, int acceptedAmount, const Resource@ targetItem) {

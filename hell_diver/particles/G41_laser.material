@@ -1,0 +1,136 @@
+
+material g41_alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+material g41_add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material g41_laser_01 : g41_add_base			//红色中心预瞄线
+{
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture laser_soft_edge_01.png
+            }
+        }
+    }
+}
+
+material g41_lens_circle_05	: g41_add_base 		//光圈虚化,细
+{
+
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture lens_circle_05.png
+            }
+        }
+    }
+}
+
+material g41_lens_circle_01	: g41_add_base 		//光圈虚化
+{
+
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture lens_circle_01.png
+            }
+        }
+    }
+}
+
+material g41_hollow_blast_smoke_01	:	g41_add_base 	//空心爆炸溅射烟雾
+{
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture hollow_blast_smoke_01.png
+            }
+        }
+    }
+}
+
+material g41_point_soft_edge_100	:	g41_add_base	//100透明度柔边圆
+{
+
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture point_soft_edge_100.png
+            }
+        }
+    }
+}
+material g41_square_hard_edge	: g41_add_base		//硬边矩形
+{
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture square_hard_edge.png
+            }
+        }
+    }
+}
+material g41_lens_flare_01 : g41_add_base	//镜头光晕
+{
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture lens_flare_01.png
+            }
+        }
+    }
+}
+
+material g41_laser_trail 	: g41_alpha_blend_base
+{
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture g41_laser_trail.png
+            }
+        }
+    }
+}

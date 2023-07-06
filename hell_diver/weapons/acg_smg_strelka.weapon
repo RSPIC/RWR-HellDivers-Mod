@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>	
 <weapon 
-file="_ex_smg.base"
+file="_rare_weapon_mk1.base"
 key="acg_smg_strelka.weapon" 
 > 
     <specification 	
@@ -26,6 +26,9 @@ key="acg_smg_strelka.weapon"
 	carry_in_two_hands="0" 
 	stab_enabled="0" 
 	stab_range="0" 
+	sight_range_modifier="1.0" 
+	ai_sight_range_modifier="0.8" 
+	use_basic_muzzle_smoke_effect="0"
 	/> 
 	<!--51/51 mag -->
 	<!--504/504 RPM 	1.5/1.0s reload		13M range-->
@@ -131,13 +134,16 @@ key="acg_smg_strelka.weapon"
 
 
 	<!--姿态精度-->
-    <!-- <stance state_key="running" accuracy="1" /> 
+    <stance state_key="running" accuracy="1" /> 
     <stance state_key="walking" accuracy="1" />
 	<stance state_key="standing" accuracy="1" />
 	<stance state_key="crouching" accuracy="1" />
     <stance state_key="crouch_moving" accuracy="1" />
     <stance state_key="prone" accuracy="1" /> 
     <stance state_key="prone_moving" accuracy="1" />
-    <stance state_key="over_wall" accuracy="1" />      -->
-      
+    <stance state_key="over_wall" accuracy="1" />     
+	<!--附加属性-->
+    <modifier class="speed" value="0.25" /> 
+    <modifier class="hit_success_probability" value="0.0" /><!--正值减少玩家抗致死率-->
+    <modifier class="detectability" value="0.0" />	<!--正值减少玩家隐蔽-->
 </weapon>

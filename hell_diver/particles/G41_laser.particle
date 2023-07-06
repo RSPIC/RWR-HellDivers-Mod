@@ -1,0 +1,357 @@
+------------------------------------------g41_laser_muzzle-------------------------
+particle_system g41_muzzle_pre_red_laser		//预警告红线
+{
+	quota 1000
+	material g41_laser_01
+	particle_width 0.2
+	particle_height 250
+	renderer billboard
+	billboard_type oriented_self
+	emitter Point
+	{
+		angle 0
+		colour 1 0 0 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.001
+		time_to_live 0.5
+		duration 0.2
+	}
+	affector ColourFader2
+	{
+		red1	0
+		green1  0
+		blue1	0
+		alpha1	0
+		red2	 -5
+		green2  -5
+		blue2	-5
+		alpha2	-5
+		state_change 0.4
+	}
+
+}
+particle_system g41_muzzle_environment_light		//环境光
+{
+	quota 1000
+	material g41_laser_01
+	particle_width  2
+	particle_height 250
+	renderer billboard
+	billboard_type oriented_self
+	emitter Point
+	{
+		angle 0
+		colour 0.01 0.03 0.2 0.1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.001
+		time_to_live 0.5
+		duration 0.2
+	}
+	affector ColourFader2
+	{
+		red1	-0.3
+		green1  -0.3
+		blue1	-0.3
+		alpha1	-0.3
+		red2	 -1
+		green2  -1
+		blue2	-1
+		alpha2	-1
+		state_change 0.3
+	}
+	affector Scaler
+	{
+		rate 1
+	}
+}
+particle_system g41_muzzle_ring_01	//光环
+{
+	quota 1000
+	material g41_lens_circle_05
+	particle_width 3
+	particle_height 3
+	renderer billboard
+	billboard_rotation_type vertex
+	billboard_type perpendicular_self
+	common_direction 1 0 1
+	common_up_vector 0 0 1
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0.2 0.1
+		direction 0 1 
+		emission_rate 200
+		position 0 0 0
+		velocity 3
+		time_to_live 0.5
+		duration 0.05
+	}
+	affector ColourFader2
+	{
+		red1	0
+		green1  0
+		blue1	10
+		alpha1	10
+		red2	 -5
+		green2  -5
+		blue2	-5
+		alpha2	-5
+		state_change 0.2
+	}
+	affector Scaler
+	{
+		rate 2
+	}
+}
+particle_system g41_muzzle_ring_02	//光环
+{
+	quota 1000
+	material g41_lens_circle_05
+	particle_width 4
+	particle_height 4
+	renderer billboard
+	billboard_rotation_type vertex
+	billboard_type perpendicular_self
+	common_direction 0 0 1
+	common_up_vector 0 1 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0.1 0.1
+		direction 0 1 
+		emission_rate 20
+		position 0 0 0
+		velocity 0.1
+		time_to_live 0.5
+		duration 0.05
+	}
+	affector ColourFader2
+	{
+		red1	0
+		green1  0
+		blue1	10
+		alpha1	10
+		red2	 -5
+		green2  -5
+		blue2	-5
+		alpha2	-5
+		state_change 0.2
+	}
+	affector Scaler
+	{
+		rate 3
+	}
+}
+------------------------------------g41_gun_muzzle-------------------------
+particle_system g41_muzzle_ring_03	//光环
+{
+	quota 1000
+	material g41_lens_circle_01
+	particle_width 1.5
+	particle_height 1.5
+	renderer billboard
+	billboard_rotation_type vertex
+	billboard_type perpendicular_self
+	common_direction 0 0 1
+	common_up_vector 0 1 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0.2 0.2 0.2 0.2
+		direction 0 1 
+		emission_rate 15
+		position 0 0 0
+		velocity 0.1
+		time_to_live 0.15
+		duration 0.05
+	}
+	affector ColourFader2
+	{
+		red1	0
+		green1  0
+		blue1	1
+		alpha1	1
+		red2	 -5
+		green2  -5
+		blue2	-5
+		alpha2	-5
+		state_change 0.05
+	}
+	affector Scaler
+	{
+		rate 10
+	}
+}
+particle_system g41_muzzle_ring_04	//裂纹
+{
+	quota 1000
+	material g41_hollow_blast_smoke_01
+	particle_width 2
+	particle_height 2
+	renderer billboard
+	billboard_rotation_type vertex
+	billboard_type perpendicular_self
+	common_direction 0 0 1
+	common_up_vector 0 1 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 
+		emission_rate 20
+		position 0 0 0
+		velocity 0.1
+		time_to_live 0.15
+		duration 0.05
+	}
+	affector ColourFader2
+	{
+		red1	0
+		green1  0
+		blue1	10
+		alpha1	10
+		red2	 -5
+		green2  -5
+		blue2	-5
+		alpha2	-5
+		state_change 0.1
+	}
+	affector Scaler
+	{
+		rate 40
+	}
+}
+particle_system g41_muzzle_ring_05	//中心圆
+{
+	quota 1000
+	material g41_point_soft_edge_100
+	particle_width 0.5
+	particle_height 0.5
+	renderer billboard
+	billboard_rotation_type vertex
+	billboard_type perpendicular_self
+	common_direction 0 0 1
+	common_up_vector 0 1 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0.5 1 1
+		direction 0 1 
+		emission_rate 20
+		position 0 0 0
+		velocity 0.1
+		time_to_live 0.5
+		duration 0.05
+	}
+	affector ColourFader2
+	{
+		red1	0
+		green1  0
+		blue1	0
+		alpha1	0
+		red2	 1
+		green2  -2
+		blue2	-2
+		alpha2	-1
+		state_change 0.2
+	}
+	affector Scaler
+	{
+		rate 5
+	}
+}
+particle_system g41_muzzle_square		//点扩散飞溅方块特效
+{
+	quota 1000
+	emit_emitter_quota 1000
+	material g41_square_hard_edge
+	particle_width 0.3
+	particle_height 0.3
+	renderer billboard
+	billboard_rotation_type vertex
+	billboard_type point
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+
+	emitter Point
+	{
+		angle 70
+		colour 0.5 0.5 0.5 0.5
+		direction 0 1 0
+		emission_rate 40
+		position 0 0 0
+		velocity 3
+		velocity_min 6
+		velocity_max 9
+		time_to_live 1.5
+		time_to_live_min 0.5
+		time_to_live_max 1
+		duration 0.15
+	}
+	
+	affector ColourFader2
+	{
+		red1	 1
+		green1  1
+		blue1	1
+		alpha1	0
+		red2	 -5
+		green2  -5
+		blue2	-5
+		alpha2	-5
+		state_change 0.6
+	}
+	affector Scaler
+	{
+		rate 0.5
+	}
+}
+particle_system g41_muzzle_yellow_light		//激光中心黄色线光
+{
+	quota 10000
+	emit_emitter_quota 10000
+	material g41_lens_flare_01
+	particle_width 3
+	particle_height 3
+	renderer billboard
+	billboard_type oriented_self
+
+	emitter Point
+	{
+		name tag1
+		angle 1.2
+		colour 0.5 0.5 0 0.5
+		direction 0 1 0
+		direction_position_reference -1 0 0 1
+		emission_rate 15
+		position 0 0 0
+		velocity 3
+		velocity_min 90
+		velocity_max 180
+		time_to_live 0.3
+		time_to_live_min 0.2
+		time_to_live_max 0.35
+		duration 0.1
+	}
+	
+	affector ColourFader2
+	{
+		red1	 1
+		green1  1
+		blue1	0
+		alpha1	1
+		red2	 -5
+		green2  -5
+		blue2	-5
+		alpha2	-5
+		state_change 0.05
+	}
+}

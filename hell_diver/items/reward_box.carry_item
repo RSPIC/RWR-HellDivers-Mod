@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carry_items>
+<carry_item 
+name="Reward Box [Collection]" 
+key="reward_box_collection.carry_item"
+file="_collect_rare.base"
+>
+    <hud_icon filename="hud_reward_box_collection.png" />
+    <inventory  price="648" />
+    <model mesh_filename="mc_box.mesh" texture_filename="mc_box.png" />
+</carry_item>
+<carry_item 
+name="Reward Box [Skin]" 
+key="reward_box_skin.carry_item"
+file="_collect_rare.base"
+>
+    <hud_icon filename="hud_reward_box_skin.png" />
+    <inventory  price="648" />
+    <model mesh_filename="mc_box.mesh" texture_filename="mc_box.png" />
+</carry_item>
+<carry_item 
+name="Reward Box [Music]" 
+key="reward_box_music.carry_item"
+file="_collect_rare.base"
+>
+    <hud_icon filename="hud_reward_box_music.png" />
+    <inventory  price="648" />
+    <model mesh_filename="mc_box.mesh" texture_filename="mc_box.png" />
+</carry_item>
+<carry_item 
+name="Reward Box [Vehicle]" 
+key="reward_box_vehicle.carry_item"
+file="_collect_rare.base"
+>
+    <hud_icon filename="hud_reward_box_vehicle.png" />
+    <inventory  price="648" />
+    <model mesh_filename="mc_box.mesh" texture_filename="mc_box.png" />
+</carry_item>
+<carry_item 
+name="Reward Box [Weapon I]" 
+key="reward_box_weapon_1.carry_item"
+file="_collect_rare.base"
+>
+    <hud_icon filename="hud_reward_box_weapon_1.png" />
+    <inventory  price="648" />
+    <model mesh_filename="mc_box.mesh" texture_filename="mc_box.png" />
+</carry_item>
+<carry_item 
+name="Reward Box [Weapon II]" 
+key="reward_box_weapon_2.carry_item"
+file="_collect_rare.base"
+>
+    <hud_icon filename="hud_reward_box_weapon_2.png" />
+    <inventory  price="648" />
+    <model mesh_filename="mc_box.mesh" texture_filename="mc_box.png" />
+</carry_item>
+
+</carry_items>

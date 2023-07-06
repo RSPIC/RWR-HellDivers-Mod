@@ -463,7 +463,7 @@ void setWoundCharacter(const Metagame@ m_metagame,int characterId){
 	string command =
 		"<command class='update_character'" +
 		"	id='" + characterId + "'" +
-		"	wouned='1'>" + 
+		"	wounded='1'>" + 
 		"</command>";
 	m_metagame.getComms().send(command);
 }

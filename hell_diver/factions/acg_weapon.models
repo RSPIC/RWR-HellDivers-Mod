@@ -26,12 +26,18 @@
 	</model>
 	<model filename="acg_texas.xml"><!--德克萨斯--><requirement class="weapon" slot="0" key="acg_texas_sword.weapon"/>
 	</model>
+	<model filename="acg_hongxue.xml"><!--鸿雪--><requirement class="weapon" slot="0" key="acg_hongxue.weapon"/>
+	</model>
+	<model filename="acg_hongxue.xml"><!--鸿雪--><requirement class="weapon" slot="0" key="acg_hongxue_skill.weapon"/>
+	</model>
 <!-- 原神 -->
 	<model filename="acg_sangonomiya_kokomi.xml" > <!--珊瑚宫心海--><requirement class="weapon" slot="0" key="acg_kokomi_water_thrower.weapon"/>
 	</model>
 	<model filename="acg_sangonomiya_kokomi.xml" > <!--珊瑚宫心海--><requirement class="weapon" slot="0" key="acg_kokomi_portia.weapon"/>
 	</model>
 <!-- 崩坏 -->
+	<model filename="acg_bronya_ex_1.xml" > <!--布洛妮娅--><requirement class="weapon" slot="0" key="acg_bronya.weapon"/>
+	</model>
 <!-- 东方project -->
 	<model filename="acg_reisenu.xml"><!--铃仙--><requirement class="weapon" slot="0" key="acg_reisenu_a.weapon"/>
 	</model>
@@ -73,6 +79,12 @@
 	<model filename="acg_hk416_starry_cocoon.xml" > <!--HK416星之茧--><requirement class="weapon" slot="0" key="acg_hk416_starry_cocoon.weapon"/>
 	</model>
 	<model filename="acg_hk416_starry_cocoon.xml" > <!--HK416星之茧--><requirement class="weapon" slot="0" key="acg_hk416_starry_cocoon_gl.weapon"/>
+	</model>
+	<model filename="acg_g41_2064.xml" > <!--G41 沙滩朋克--><requirement class="weapon" slot="0" key="acg_g41_bp2077.weapon"/>
+	</model>
+	<model filename="acg_g41_schoolsuit.xml" > <!--G41 校服--><requirement class="weapon" slot="0" key="acg_g41_lasercanno_at.weapon"/>
+	</model>
+	<model filename="acg_g41_schoolsuit.xml" > <!--G41 校服--><requirement class="weapon" slot="0" key="acg_g41_lasercanno_diffusion.weapon"/>
 	</model>
 <!-- 灰烬战线 -->
 	

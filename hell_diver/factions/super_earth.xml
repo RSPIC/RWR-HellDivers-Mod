@@ -379,6 +379,7 @@
 	<!-- icecream group -->
 	<soldier name="icecream" spawn_score="0.0">
 		<resources file="icecream.resources" />
+		<resources file="acg_player.resources" />
 
 		<attribute_config class="xp">
 			<attribute weight="1.0" min="0.0" max="0.05" />

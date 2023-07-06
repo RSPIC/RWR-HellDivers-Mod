@@ -111,7 +111,7 @@
 			<!-- wearables -->
 			<item_class_existence class="carry_item" slot="1" probability="1" />
 			<!-- backpack -->
-			<item_class_existence class="carry_item" slot="0" probability="0.05" />
+			<item_class_existence class="carry_item" slot="0" probability="0.1" />
 		</item_class_existence_config>
 
 		<attribute_config class="rp">
@@ -297,6 +297,10 @@
 			<carry_item key="general_vest_230" />
 		</resources>
 
+		<item_class_existence_config>
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="0.3" />
+		</item_class_existence_config>
 
 		<!-- low XP, likely to join player squad -->
 		<attribute_config class="xp">
@@ -320,6 +324,10 @@
 			<carry_item key="anti_light_hit_vest_420" />
 		</resources>
 
+		<item_class_existence_config>
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="1" />
+		</item_class_existence_config>
 
 		<!-- low XP, likely to join player squad -->
 		<attribute_config class="xp">
@@ -340,6 +348,10 @@
 			<carry_item key="general_vest_280" />
 		</resources>
 
+		<item_class_existence_config>
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="1" />
+		</item_class_existence_config>
 
 		<!-- low XP, likely to join player squad -->
 		<attribute_config class="xp">
@@ -360,6 +372,10 @@
 			<carry_item key="general_vest_350" />
 		</resources>
 
+		<item_class_existence_config>
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="1" />
+		</item_class_existence_config>
 
 		<!-- low XP, likely to join player squad -->
 		<attribute_config class="xp">

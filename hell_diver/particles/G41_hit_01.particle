@@ -1,0 +1,412 @@
+-------------------------------扩散弹爆炸特效-----------------------
+particle_system g41_transparent_center_point_light		//深蓝中心环境&范围光
+{
+	quota 1000
+	material g41_normal_point
+	particle_width 4.5
+	particle_height 4.5
+	renderer billboard
+	billboard_rotation_type vertex
+	billboard_type perpendicular_self
+	
+	emitter Point
+	{
+		angle 360
+		colour 0 0.5 0.8 0.2
+		direction 0 1 0
+		emission_rate 300
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 1.2
+		duration 0.3
+	}
+	affector ColourFader2
+	{
+		red1	0
+		green1  0
+		blue1	0
+		alpha1	0
+		red2	 -1
+		green2  -1
+		blue2	-1
+		alpha2	-1
+		state_change 0.8
+	}
+}
+particle_system g41_spray_square_01		//散射蓝色方块特效
+{
+	quota 1000
+	material g41_square_hard_edge
+	particle_width 0.4
+	particle_height 0.4
+	renderer billboard
+	billboard_type point
+	emitter Point
+	{
+		angle 180
+		colour 0 0.5 1 1
+		direction 0 1 0
+		emission_rate 200
+		position 0 0 0
+		velocity_min 6
+		velocity_max 10
+		time_to_live 1
+		duration 0.1
+	}
+	affector ColourFader2
+	{
+		red1	0
+		green1  0
+		blue1	0
+		alpha1	0
+		red2	 -5
+		green2  -5
+		blue2	-5
+		alpha2	-5
+		state_change 0.7
+	}
+	affector LinearForce
+	{
+		force_vector 0 -30 0
+		force_application add
+	}
+}
+particle_system g41_spray_square_02		//散射蓝色方块特效
+{
+	quota 1000
+	material g41_square_hard_edge
+	particle_width 0.2
+	particle_height 0.2
+	renderer billboard
+	billboard_type point
+	emitter Point
+	{
+		angle 180
+		colour 0 0.5 1 1
+		direction 0 1 0
+		emission_rate 200
+		position 0 0 0
+		velocity_min 6
+		velocity_max 10
+		time_to_live 1
+		duration 0.1
+	}
+	affector ColourFader2
+	{
+		red1	0
+		green1  0
+		blue1	0
+		alpha1	0
+		red2	 -5
+		green2  -5
+		blue2	-5
+		alpha2	-5
+		state_change 0.7
+	}
+	affector LinearForce
+	{
+		force_vector 0 -30 0
+		force_application add
+	}
+}
+particle_system g41_spray_square_03		//散射蓝色方块特效
+{
+	quota 1000
+	material g41_square_hard_edge
+	particle_width 0.8
+	particle_height 0.8
+	renderer billboard
+	billboard_type point
+	emitter Point
+	{
+		angle 180
+		colour 0 0.5 1 1
+		direction 0 0 0
+		emission_rate 50
+		position 0 0 0
+		velocity_min 1.5
+		velocity_max 2.8
+		time_to_live 0.8
+		duration 0.2
+	}
+	affector ColourFader2
+	{
+		red1	1
+		green1  1
+		blue1	1
+		alpha1	1
+		red2	 -5
+		green2  -5
+		blue2	-5
+		alpha2	-5
+		state_change 0.4
+	}
+	affector LinearForce
+	{
+		force_vector 0 -5 0
+		force_application add
+	}
+	affector Scaler
+	{
+		rate -0.5
+	}
+}
+particle_system g41_spray_square_04		//散射蓝色方块特效
+{
+	quota 1000
+	material g41_square_hard_edge
+	particle_width 0.7
+	particle_height 0.7
+	renderer billboard
+	billboard_type point
+	emitter Point
+	{
+		angle 180
+		colour 0 0.5 1 1
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity_min 5
+		velocity_max 8
+		time_to_live 1
+		duration 0.1
+	}
+	affector ColourFader2
+	{
+		red1	1
+		green1  1
+		blue1	1
+		alpha1	1
+		red2	 -5
+		green2  -5
+		blue2	-5
+		alpha2	-5
+		state_change 0.6
+	}
+	affector LinearForce
+	{
+		force_vector 0 -10 0
+		force_application add
+	}
+	affector Scaler
+	{
+		rate -1.1
+	}
+}
+particle_system g41_center_circle_01		//中心光圈,放大
+{
+	quota 1000
+	material g41_lens_circle_03
+	particle_width 1.5
+	particle_height 1.5
+	renderer billboard
+	billboard_type point
+	emitter Point
+	{
+		angle 90
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.5
+		duration 0.1
+	}
+	affector ColourFader2
+	{
+		red1	0
+		green1  0
+		blue1	0
+		alpha1	0
+		red2	 -5
+		green2  -5
+		blue2	-5
+		alpha2	-5
+		state_change 0.1
+	}
+	affector Scaler
+	{
+		rate 1.5
+	}
+}
+particle_system g41_center_circle_02		//中心光圈，固定
+{
+	quota 1000
+	material g41_lens_circle_02
+	particle_width 2
+	particle_height 2
+	renderer billboard
+	billboard_type point
+	emitter Point
+	{
+		angle 90
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 40
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.7
+		duration 0.1
+	}
+	affector ColourInterpolator 
+	{
+		time0 0.5
+		colour0 0 0 0 0
+		time1 0.8
+		colour1 0 0.5 1 1 
+		time2 1
+		colour2 0 0 0 0 
+	}
+}
+particle_system g41_center_circle_03		//中心光圈，实心，放大
+{
+	quota 1000
+	material g41_point_hard_edge
+	particle_width 0.3
+	particle_height 0.3
+	renderer billboard
+	billboard_type point
+	emitter Point
+	{
+		angle 90
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.3
+		duration 0.1
+	}
+	affector ColourFader2
+	{
+		red1	1
+		green1  1
+		blue1	1
+		alpha1	-1
+		red2	 -5
+		green2  -5
+		blue2	-5
+		alpha2	-5
+		state_change 0.1
+	}
+	affector Scaler
+	{
+		rate 4
+	}
+}
+particle_system g41_center_circle_04		//中心中空光圈，实心，放大
+{
+	quota 1000
+	material g41_lens_circle_03
+	particle_width 0.2
+	particle_height 0.2
+	renderer billboard
+	billboard_type point
+	emitter Point
+	{
+		angle 90
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 40
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.3
+		duration 0.1
+	}
+	affector ColourFader2
+	{
+		red1	-1
+		green1  -0.5
+		blue1	0
+		alpha1	-1
+		red2	 -5
+		green2  -5
+		blue2	-5
+		alpha2	-5
+		state_change 0.1
+	}
+	affector Scaler
+	{
+		rate 7
+	}
+}
+particle_system g41_linear_rectangle_01		//线性排列，长方形
+{
+	quota 1000
+	material g41_square_hard_edge
+	particle_width 0.22
+	particle_height 1.2
+	renderer billboard
+	billboard_type oriented_self
+	common_direction 0 1 0
+	emitter Box
+	{
+		angle 0
+		colour 0 0.5 1 1
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity_min -1
+		velocity_max -2.5
+		time_to_live 0.3
+		duration 0.4
+		width 1.5
+		height 1.5
+		depth 3.5
+	}
+	affector ColourFader2
+	{
+		red1	0
+		green1  0
+		blue1	0
+		alpha1	0
+		red2	 -5
+		green2  -5
+		blue2	-5
+		alpha2	-5
+		state_change 0.04
+	}
+
+}
+particle_system g41_linear_rectangle_02		//线性排列，长方形
+{
+	quota 1000
+	material g41_square_hard_edge
+	particle_width 0.06
+	particle_height 0.4
+	renderer billboard
+	billboard_type oriented_self
+	common_direction 0 1 0
+	emitter Box
+	{
+		angle 0
+		colour 0 0.5 1 1
+		direction 0 1 0
+		emission_rate 80
+		position 0 0 0
+		velocity_min -1
+		velocity_max -2.5
+		time_to_live 0.3
+		duration 0.4
+		width 2
+		height 2
+		depth 3.5
+	}
+	affector LinearForce
+	{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector ColourFader2
+	{
+		red1	0
+		green1  0
+		blue1	0
+		alpha1	0
+		red2	 -5
+		green2  -5
+		blue2	-5
+		alpha2	-5
+		state_change 0.05
+	}
+}

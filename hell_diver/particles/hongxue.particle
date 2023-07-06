@@ -1,0 +1,770 @@
+author: RST
+2022.9.4
+未经授权不可复用、修改使用，禁止盈利
+
+particle_system hongxue_muzzle_ring
+{
+	quota 50
+	material crescent_02
+	particle_width 0.1
+	particle_height 0.1
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity -3
+		time_to_live 0.4
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 20
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	1800
+		rotation_speed_range_end	1800
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	10
+		green1 	10
+		blue1 	10
+		alpha1 	0
+		red2 	0
+		green2	-4
+		blue2	-4
+		alpha2	-3
+		state_change 0.25
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system hongxue_hit_ring_01	: hongxue_muzzle_ring
+{
+	material crescent_01_pass
+	billboard_type oriented_common
+	common_direction 0 0 1	
+	emitter Point
+	{
+		velocity 0.1
+		time_to_live 0.3
+	}
+	affector Scaler
+	{
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	800
+		rotation_speed_range_end	1800
+		rotation_range_start	0
+		rotation_range_end	180
+	}
+}
+particle_system hongxue_hit_ring_mod2_01 : hongxue_hit_ring_01
+{
+	particle_width 4
+	particle_height 4
+	emitter Point
+	{
+	}
+	affector Scaler
+	{
+	}
+}
+particle_system hongxue_hit_ring_02	: hongxue_muzzle_ring
+{
+	material crescent_01_pass
+	billboard_type oriented_common
+	common_direction 1 0 1
+	emitter Point
+	{
+		velocity 0.1
+		time_to_live 0.3
+	}
+		affector Scaler
+	{
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	800
+		rotation_speed_range_end	1800
+		rotation_range_start	0
+		rotation_range_end	180
+	}
+}
+particle_system hongxue_hit_ring_mod2_02 : hongxue_hit_ring_02
+{
+	particle_width 4
+	particle_height 4
+	emitter Point
+	{
+	}
+	affector Scaler
+	{
+	}
+}
+particle_system hongxue_muzzle_center
+{
+	quota 50
+	material star_cross
+	particle_width 3
+	particle_height 3
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.3
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate -10
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	10
+		green1 	10
+		blue1 	10
+		alpha1 	0
+		red2 	-4
+		green2	-4
+		blue2	-4
+		alpha2	-3
+		state_change 0.25
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system hongxue_hit_center : hongxue_muzzle_center
+{
+	particle_width 5
+	particle_height 5
+	emitter Point
+	{
+		time_to_live 0.55
+	}
+	affector Scaler
+	{
+		rate -9
+	}
+}
+particle_system hongxue_hit_center_mod2 : hongxue_hit_center
+{
+	particle_width 10
+	particle_height 10
+	emitter Point
+	{
+		time_to_live 0.55
+	}
+	affector Scaler
+	{
+		rate -18
+	}
+}
+particle_system hongxue_muzzle_center_red : hongxue_muzzle_center
+{
+	material point_soft_edge_100
+	particle_width 4
+	particle_height 4
+	emitter Point
+	{
+		colour 0.5 0 0 1
+	}
+	affector Scaler
+	{
+		rate -12
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	10
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.25
+	}
+}
+particle_system hongxue_hit_center_red : hongxue_muzzle_center_red
+{
+	particle_width 5
+	particle_height 5
+	emitter Point
+	{
+		time_to_live 0.6
+	}
+	affector Scaler
+	{
+		rate -0
+	}
+	affector Rotator
+	{
+	}
+	affector ColourFader2
+	{
+		red1 	1
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-2.5
+		green2	-2.5
+		blue2	-2.5
+		alpha2	-3
+		state_change 0.4
+	}
+}
+particle_system hongxue_hit_center_red_mod2 : hongxue_hit_center_red
+{
+	particle_width 10
+	particle_height 10
+	emitter Point
+	{
+		time_to_live 0.6
+	}
+	affector Scaler
+	{
+		rate -0
+	}
+	affector Rotator
+	{
+	}
+	affector ColourFader2
+	{
+		red1 	1
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-2.5
+		green2	-2.5
+		blue2	-2.5
+		alpha2	-3
+		state_change 0.4
+	}
+}
+particle_system hongxue_muzzle_impact_01
+{
+	quota 50
+	material hongxue_muzzle_01
+	particle_width 2
+	particle_height 4
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	emitter Point
+	{
+		angle 0
+		colour 1 0 0 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.35
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 40
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	180
+		rotation_range_end	180
+	}
+	affector ColourFader2
+	{
+		red1 	10
+		green1 	10
+		blue1 	10
+		alpha1 	0
+		red2 	-3.3
+		green2	-4
+		blue2	-4
+		alpha2	-3
+		state_change 0.3
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system hongxue_muzzle_impact_02 
+{
+	quota 50
+	material hongxue_muzzle_02
+	particle_width 8
+	particle_height 15
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	emitter Point
+	{
+		angle 0
+		colour 1 0 0 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.45
+		duration 0.1
+	}
+		affector Scaler
+	{
+		rate 0
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	180
+		rotation_range_end	180
+	}
+	affector ColourFader2
+	{
+		red1 	10
+		green1 	10
+		blue1 	10
+		alpha1 	0
+		red2 	-2.5
+		green2	-4
+		blue2	-4
+		alpha2	0
+		state_change 0.4
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system hongxue_muzzle_flower_01
+{
+	quota 50
+	material shuiniao_flower_01
+	particle_width 0.6
+	particle_height 0.6
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 45
+		colour 1 0 0 1
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity_min -8
+		velocity_max -16
+		time_to_live_min 0.4
+		time_to_live_max 0.6
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0.5
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	45
+		rotation_range_start	0
+		rotation_range_end	90
+	}
+	affector ColourFader2
+	{
+		red1 	5
+		green1 	2.5
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 2 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 50
+		scope 50
+		keep_velocity false
+	}
+}
+particle_system hongxue_muzzle_flower_02 : hongxue_muzzle_flower_01
+{
+	quota 50
+	material shuiniao_flower_02
+	particle_width 0.9
+	particle_height 0.9
+}
+particle_system hongxue_muzzle_flower_03 : hongxue_muzzle_flower_01
+{
+	quota 50
+	material shuiniao_flower_03
+	particle_width 1.1
+	particle_height 1.1
+}
+
+particle_system hongxue_hit_blast
+{
+	quota 50
+	material hollow_blast_smoke_01_pass
+	particle_width 0.1
+	particle_height 0.1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.36
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 15
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	90
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	90
+	}
+	affector ColourFader2
+	{
+		red1 	100
+		green1 	100
+		blue1 	100
+		alpha1 	0
+		red2 	-3.5
+		green2	-4
+		blue2	-4
+		alpha2	-3
+		state_change 0.3
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system hongxue_hit_blast_mod2 : hongxue_hit_blast
+{
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.36
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 30
+	}
+}
+particle_system hongxue_hit_blast_cross
+{
+	quota 50
+	material star_cross
+	particle_width 0.5
+	particle_height 0.5
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 180
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 30
+		position 0 0 0
+		velocity_min 2
+		velocity_max 5
+		time_to_live 0.8
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0.5
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 50
+		scope 50
+		keep_velocity false
+	}
+}
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material crescent_01_pass : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture crescent_01.png 	
+}}}}
+material crescent_02 : add_base
+{   
+    technique{
+    pass{
+		cull_hardware none
+        texture_unit{
+            texture crescent_02.png 	
+}}}}
+material hollow_blast_smoke_01_pass : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture hollow_blast_smoke_01.png 	
+}}}}
+material hongxue_muzzle_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture hongxue_muzzle_01.png 	
+}}}}
+material hongxue_muzzle_02 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture hongxue_muzzle_02.png 	
+}}}}
+material lens_circle_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture lens_circle_01.png 	
+}}}}
+material lens_circle_04 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture lens_circle_04.png 	
+}}}}
+material lens_circle_05 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture lens_circle_05.png 	
+}}}}
+material point_hard_edge : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture point_hard_edge.png 	
+}}}}
+material point_soft_edge_100 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture point_soft_edge_100.png 	
+}}}}
+material shuiniao_flower_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture shuiniao_flower_01.png 	
+}}}}
+material shuiniao_flower_02 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture shuiniao_flower_02.png 	
+}}}}
+material shuiniao_flower_03 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture shuiniao_flower_03.png 	
+}}}}
+material star_cross : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture star_cross.png 	
+}}}}
+material hongxue_trail : add_base
+{   
+    technique{
+    pass{	
+		lighting on
+		emissive 1 0 0 1
+        texture_unit{
+            texture hongxue_trail.png 	
+}}}}
+material hongxue_trail_2 : add_base
+{   
+    technique{
+    pass{	
+		lighting on
+		emissive 1 0 0 1
+        texture_unit{
+            texture hongxue_trail_2.png 	
+}}}}

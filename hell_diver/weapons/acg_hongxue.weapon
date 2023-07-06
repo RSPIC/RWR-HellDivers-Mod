@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<weapons>
+<weapon 
+file="_rare_weapon_mk3.base"
+key="acg_hongxue.weapon" 
+>
+<tag name="sniper" />
+<specification 
+retrigger_time="1.5" 
+accuracy_factor="1.0" 
+sustained_fire_grow_step="3.0" 
+sustained_fire_diminish_rate="1.0" 
+magazine_size="-1" 
+can_shoot_standing="0" 
+can_shoot_crouching="1" 
+suppressed="0" 
+name="HongXue" 
+class="4" 
+reload_one_at_a_time="0" 
+sight_range_modifier="2.0" 
+projectile_speed="200.0" 
+barrel_offset="0.65" 
+projectiles_per_shot="1" 
+burst_shots="1"
+/>
+
+  <next_in_chain key="acg_hongxue_skill.weapon" share_ammo="0" />
+  <model filename="acgw_hongxue.xml" /> 
+
+  <animation state_key="recoil" animation_key="recoil_standing_big_bow" />
+  <animation state_key="hold" animation_key="recover_recoil_standing_big_bow" />
+  <animation state_key="crouching" animation_key="crouch still, bow" />
+  <animation state_key="crouch_moving" animation_key="crouching forwards, bow" />
+  <animation state_key="crouch_moving_backwards" animation_key="crouching backwards, bow" />
+  <animation state_key="walking_backwards" animation_key="walking backwards, bow" />  
+  <animation state_key="reload" animation_key="reload, bow" volume="0.7" />
+  <animation state_key="hold_on_wall" animation_key="still, bow" />
+  <animation state_key="still_against_wall" animation_key="still, bow" />
+  <animation state_key="walking" animation_key="walking, bow" />
+  <animation state_key="running" animation_key="running, bow" />
+  <animation state_key="hold_casual" animation_key="casual, bow" />
+  <animation state_key="next_in_chain_in" animation_key="exchange_bow" />
+  <animation state_key="next_in_chain_out" animation_key="" />
+    
+  <sound key="fire" fileref="hongxue_shot_1.wav" pitch_variety="0.05" volume="0.7" /> 
+  <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
+  <sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+  <sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+  <sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+  <sound key="magazine_out" fileref="hd_mag_out.wav" /><!--动作中out的value为0-->
+  <sound key="magazine_in" fileref="hd_mg94_mag_in.wav" /><!--动作中in的value为1-->
+  <sound key="cycle" fileref="rifle_chamber.wav" /><!--配合与cycle动作，固定播放-->
+  <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+  <sound key="cycle_in" fileref="hd_cycle_in_01.wav" /><!--动作中in的value为1-->
+  <sound key="last_ammo" fileref="hd_lastammo_01.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+  <sound key="last_ammo" fileref="hd_lastammo_02.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+  <sound key="last_ammo" fileref="hd_lastammo_03.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+  <sound key="last_ammo" fileref="hd_lastammo_04.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+  <sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+
+  <hud_icon filename="acg_hongxue.png" />
+
+  <weak_hand_hold offset="0.3" />
+
+  <!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
+  <projectile file="hd_general_spawn_no_effect.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.375" can_be_detected_by_driver="1" can_be_disarmed="0" name="AR-22C Patriot"> 
+	
+		<result class="hit" kill_probability="2.0" 
+		kill_probability_offset_on_successful_hit="200"
+		kill_decay_start_time="0.2" kill_decay_end_time="0.4" character_state="none"/>		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+    <!-- <model mesh_filename="hongxue_arrow.xml" /> -->
+
+    <sound class="result" key="other" fileref="MAFDS_ZAP_Leviactus_01.wav" pitch_variety="0.03" volume="1.0" />
+		<sound class="result" key="other" fileref="MAFDS_ZAP_Leviactus_02.wav" pitch_variety="0.03" volume="1.0" />
+		<sound class="result" key="other" fileref="MAFDS_ZAP_Leviactus_03.wav" pitch_variety="0.03" volume="1.0" />
+		<sound class="result" key="other" fileref="MAFDS_ZAP_Leviactus_04.wav" pitch_variety="0.03" volume="1.0" />
+
+		<effect class="result" key="terrain" ref="hongxue_hit_ring_01" />
+		<effect class="result" key="terrain" ref="hongxue_hit_ring_02" />
+		<effect class="result" key="terrain" ref="hongxue_hit_center" />
+		<effect class="result" key="terrain" ref="hongxue_hit_center_red" />
+		<effect class="result" key="terrain" ref="hongxue_hit_blast" />
+		<effect class="result" key="terrain" ref="hongxue_hit_blast_cross" />
+		
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+    <effect class="result" key="shield" ref="general_result_shield_hit_1"  />
+    <effect class="result" key="shield" ref="general_result_shield_hit_2"  />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<!--尾迹组-->
+		<trail probability="1.0" key="hongxue_trail"/>
+  </projectile>
+
+  <effect class="muzzle" ref="hongxue_muzzle_ring" lighting="0"/> 
+  <effect class="muzzle" ref="hongxue_muzzle_center" lighting="0"/> 
+  <effect class="muzzle" ref="hongxue_muzzle_center_red" lighting="0"/> 
+  <effect class="muzzle" ref="hongxue_muzzle_impact_01" lighting="0"/> 
+  <effect class="muzzle" ref="hongxue_muzzle_flower_01" lighting="0"/> 
+  <effect class="muzzle" ref="hongxue_muzzle_flower_02" lighting="0"/> 
+  <effect class="muzzle" ref="hongxue_muzzle_flower_03" lighting="0"/> 
+  <effect class="muzzle" ref="hongxue_muzzle_impact_02" lighting="0"/> 
+
+    <stance state_key="running" accuracy="1.0" />
+    <stance state_key="walking" accuracy="1.0" />
+    <stance state_key="crouch_moving" accuracy="1.0" />
+    <stance state_key="standing" accuracy="1.0" />
+    <stance state_key="crouching" accuracy="1.0" />
+    <stance state_key="prone" accuracy="1.0" /> 
+    <stance state_key="prone_moving" accuracy="1.0" />
+    <stance state_key="over_wall" accuracy="1.0" />
+
+</weapon>
+<weapon 
+file="_rare_weapon_mk3.base"
+key="acg_hongxue_skill.weapon" 
+>
+<tag name="sniper" />
+<specification 
+  retrigger_time="1.8" 
+  accuracy_factor="0.9" 
+  spread_range="0.2"
+  sustained_fire_grow_step="2.3" 
+  sustained_fire_diminish_rate="0.9" 
+  magazine_size="1" 
+  can_shoot_standing="1" 
+  suppressed="0" 
+  name="HongXue [Skill]" 
+  class="4" 
+  reload_one_at_a_time="0" 
+  sight_range_modifier="2"  
+  projectile_speed="60.0"
+  projectiles_per_shot="3"  
+  barrel_offset="0.3" 
+/>
+
+  <next_in_chain key="acg_hongxue.weapon" share_ammo="0" />
+  <model filename="acgw_hongxue.xml" /> 
+
+  <animation state_key="recoil" animation_key="recoil_standing_big_bow" />
+  <animation state_key="hold" animation_key="recover_recoil_standing_big_bow" />
+  <animation state_key="crouching" animation_key="crouch still, bow" />
+  <animation state_key="crouch_moving" animation_key="crouching forwards, bow" />
+  <animation state_key="crouch_moving_backwards" animation_key="crouching backwards, bow" />
+  <animation state_key="walking_backwards" animation_key="walking backwards, bow" />  
+  <animation state_key="reload" animation_key="reload, bow" volume="0.7" />
+  <animation state_key="hold_on_wall" animation_key="still, bow" />
+  <animation state_key="still_against_wall" animation_key="still, bow" />
+  <animation state_key="walking" animation_key="walking, bow" />
+  <animation state_key="running" animation_key="running, bow" />
+  <animation state_key="hold_casual" animation_key="casual, bow" />
+  <animation state_key="next_in_chain_in" animation_key="exchange_bow" />
+  <animation state_key="next_in_chain_out" animation_key="" />
+    
+  <sound key="fire" fileref="hongxue_shot_2.wav" pitch_variety="0.05" volume="0.7" /> 
+  <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
+  <sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+  <sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+  <sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+  <sound key="cycle" fileref="bow_reload.wav" /><!--配合与cycle动作，固定播放-->
+  <sound key="last_ammo" fileref="hd_lastammo_04.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+  <sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+
+  <hud_icon filename="acg_hongxue_skill.png" />
+
+  <weak_hand_hold offset="0.3" />
+
+  <ballistics curve_height="3.0" near_far_distance="0.0" speed_estimation_near="150.0" speed_estimation_far="150.0" max_speed="150.0" randomness="0.0" tweak_factor="1.92"/> 
+
+  <!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
+  <projectile file="hd_general_spawn_no_effect.projectile" pulldown_in_air="10" can_be_detected_by_footmen="1" 
+	time_to_live="0.375" can_be_detected_by_driver="1" can_be_disarmed="0" name="AR-22C Patriot"> 
+	
+    <result class="blast" radius="5.5" damage="20" push="0.3" decal="0" faction_compare="not_equal" />
+		<trigger class="time" time_to_live="1.0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+    <model mesh_filename="hongxue_arrow.xml" />
+
+    <sound class="result" key="other" fileref="MAFDS_ZAP_Moonlight_Rush_01.wav" pitch_variety="0.03" volume="1.0" />
+    <sound class="result" key="other" fileref="MAFDS_ZAP_Moonlight_Rush_02.wav" pitch_variety="0.03" volume="1.0" />
+    <sound class="result" key="other" fileref="MAFDS_ZAP_Moonlight_Rush_03.wav" pitch_variety="0.03" volume="1.0" />
+    <sound class="result" key="other" fileref="MAFDS_ZAP_Moonlight_Rush_04.wav" pitch_variety="0.03" volume="1.0" />
+
+    
+		<effect class="result" key="terrain" ref="hongxue_hit_ring_mod2_01" />
+		<effect class="result" key="terrain" ref="hongxue_hit_ring_mod2_02" />
+		<effect class="result" key="terrain" ref="hongxue_hit_center_mod2" />
+		<effect class="result" key="terrain" ref="hongxue_hit_center_red_mod2" />
+		<effect class="result" key="terrain" ref="hongxue_hit_blast_mod2" />
+		<effect class="result" key="terrain" ref="hongxue_hit_blast_cross" />
+		
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+    <sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<!--尾迹组-->
+		<trail probability="1.0" key="hongxue_trail_2"/>
+  </projectile>
+
+	 <effect class="muzzle" ref="hongxue_muzzle_ring" lighting="0"/> 
+	 <effect class="muzzle" ref="hongxue_muzzle_center" lighting="0"/> 
+	 <effect class="muzzle" ref="hongxue_muzzle_center_red" lighting="0"/> 
+	 <effect class="muzzle" ref="hongxue_muzzle_impact_01" lighting="0"/> 
+	 <effect class="muzzle" ref="hongxue_muzzle_flower_01" lighting="0"/> 
+	 <effect class="muzzle" ref="hongxue_muzzle_flower_02" lighting="0"/> 
+	 <effect class="muzzle" ref="hongxue_muzzle_flower_03" lighting="0"/> 
+	 <effect class="muzzle" ref="hongxue_muzzle_impact_02" lighting="0"/> 
+
+    <stance state_key="running" accuracy="1.0" />
+    <stance state_key="walking" accuracy="1.0" />
+    <stance state_key="crouch_moving" accuracy="1.0" />
+    <stance state_key="standing" accuracy="1.0" />
+    <stance state_key="crouching" accuracy="1.0" />
+    <stance state_key="prone" accuracy="1.0" /> 
+    <stance state_key="prone_moving" accuracy="1.0" />
+    <stance state_key="over_wall" accuracy="1.0" />
+
+</weapon>
+
+
+</weapons>

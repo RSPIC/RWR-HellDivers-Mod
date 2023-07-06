@@ -1,0 +1,93 @@
+material g41_alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+material g41_add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material g41_normal_point	: g41_alpha_blend_base
+{
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture R_point_01.png
+            }
+        }
+    }
+}
+material g41_square_hard_edge	: g41_add_base		//硬边矩形
+{
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture square_hard_edge.png
+            }
+        }
+    }
+}
+
+material g41_lens_circle_03	: g41_add_base 		//光圈虚化,细
+{
+
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture lens_circle_03.png
+            }
+        }
+    }
+}
+material g41_lens_circle_02	: g41_add_base 		//光圈虚化,细
+{
+
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture lens_circle_02.png
+            }
+        }
+    }
+}
+material g41_point_hard_edge	: g41_add_base 		//光圈虚化,细
+{
+
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture point_hard_edge.png
+            }
+        }
+    }
+}
+
