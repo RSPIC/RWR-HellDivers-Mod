@@ -18,17 +18,12 @@
 //过图时发医疗自起
 
 class match_end : Tracker {
-	protected GameModeInvasion@ m_metagame;
+	protected Metagame@ m_metagame;
     protected dictionary playersInfo;
-	protected bool m_server_test_mode;
-	protected bool debug_mode;
 
 	// --------------------------------------------
-	match_end(GameModeInvasion@ metagame) {
+	match_end(Metagame@ metagame) {
 		@m_metagame = @metagame;
-		const UserSettings@ settings = m_metagame.getUserSettings();
-        m_server_test_mode = settings.m_server_test_mode;
-		debug_mode = g_debugMode;
 	}
 
 	bool hasEnded() const {
@@ -40,7 +35,6 @@ class match_end : Tracker {
 	}
 
 	void update(float time){
-		debug_mode = g_debugMode;
 	}
     // ----------------------------------------------------
 	protected void handleMatchEndEvent(const XmlElement@ event) {
@@ -64,6 +58,7 @@ class match_end : Tracker {
 
     protected void HealAll(){
         array<const XmlElement@> players = getPlayers(m_metagame);
+        if(players is null){return;}
         for(uint i = 0 ; i < players.size() ; ++i ){
             const XmlElement@ player = players[i];
             int cid = player.getIntAttribute("character_id");

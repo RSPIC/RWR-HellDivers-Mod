@@ -11,6 +11,7 @@
 #include "task_sequencer.as"
 
 #include "debug_reporter.as"
+#include "INFO.as"
 
 //author: rst
 //各种检测工作脚本
@@ -72,20 +73,14 @@ class first_use_info{
 }
 
 class schedule_Check : Tracker {
-    protected GameModeInvasion@ m_metagame;
+    protected Metagame@ m_metagame;
     protected float m_time;
     protected float m_timer;
     protected bool m_ended;
-    protected bool debug_mode;
-	protected bool m_server_test_mode;
     protected array<first_use_info@> first_use_list;
 
-    schedule_Check(GameModeInvasion@ metagame,float time = 4){
+    schedule_Check(Metagame@ metagame,float time = 4){
         @m_metagame = @metagame;
-        const UserSettings@ settings = m_metagame.getUserSettings();
-        debug_mode = settings.m_debug_mode;
-		m_server_test_mode = settings.m_server_test_mode;
-
         m_time = time;
         m_timer = m_time;
         _log("schedule_Check executing");
@@ -101,7 +96,6 @@ class schedule_Check : Tracker {
         if(m_timer >0){return;}
         refresh();
         m_timer = m_time;
-        debug_mode = g_debugMode;
     }
 
     // --------------------------------------------
@@ -169,10 +163,10 @@ class schedule_Check : Tracker {
         //注册首次使用列表
 
         int pid = player.getIntAttribute("player_id");
-        if(!debug_mode && !m_server_test_mode){
+        if(!g_debugMode && !g_online_TestMode){
 			gameHelp(m_metagame,pid);
         }
-        if(m_server_test_mode){
+        if(g_online_TestMode){
             testHelp(m_metagame,pid);
         }
     }
@@ -331,7 +325,7 @@ class schedule_Check : Tracker {
     protected void handleItemDropEvent(const XmlElement@ event){
         string itemKey = event.getStringAttribute("item_key");
         int containerId = event.getIntAttribute("target_container_type_id");
-        if(debug_mode){
+        if(g_debugMode){
             _report(m_metagame,"物品"+itemKey+"进入了"+containerId+"容器");
         }
         if(containerId == 3 || containerId == 2){//仓库或者背包
@@ -340,13 +334,13 @@ class schedule_Check : Tracker {
 				array<string> vest_key = {"hd_banzai_"}; //指定护甲
 				for(uint i=0; i<vest_key.length; i++){
 					string targetKey = itemKey.substr(0,vest_key[i].length());//截取指定前缀并比对
-                    if(debug_mode){
+                    if(g_debugMode){
                         _report(m_metagame,"截取的key: "+targetKey);
                     }
 					if(targetKey == vest_key[i]){  
 				        deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
 						deleteItemInStash(m_metagame,characterId,"carry_item",itemKey);
-                        if(debug_mode){
+                        if(g_debugMode){
                             _report(m_metagame,"执行删除");
                         }
                         return;

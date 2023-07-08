@@ -17,21 +17,13 @@
 //受伤心跳
 
 class player_spawn : Tracker {
-	protected GameModeInvasion@ m_metagame;
+	protected Metagame@ m_metagame;
     protected dictionary playersInfo;
-	protected bool m_server_test_mode;
-	protected bool debug_mode;
 
 	// --------------------------------------------
-	player_spawn(GameModeInvasion@ metagame) {
+	player_spawn(Metagame@ metagame) {
 		@m_metagame = @metagame;
-		const UserSettings@ settings = m_metagame.getUserSettings();
-        m_server_test_mode = settings.m_server_test_mode;
-		debug_mode = g_debugMode;
-		if(m_server_test_mode){
-			_log("m_server_test_mode is on player_spawn");
-			_log("player_spawn initiate.");
-		}
+		_log("player_spawn initiate.");
 	}
 
 	bool hasEnded() const {
@@ -43,7 +35,6 @@ class player_spawn : Tracker {
 	}
 
 	void update(float time){
-		debug_mode = g_debugMode;
 	}
 	// --------------------------------------------
 	protected void handlePlayerSpawnEvent(const XmlElement@ event) {

@@ -12,6 +12,7 @@
 #include "schedule_AutoHeal.as"
 #include "schedule_Interruptible_task.as"
 #include "schedule_IRQ.as"
+#include "INFO.as"
 
 //Author： rst
 //定时任务的管理脚本
@@ -30,19 +31,17 @@ dictionary INT_task = {
 };
 
 class schedule_Manager : Tracker {
-    protected GameModeInvasion@ m_metagame;
+    protected Metagame@ m_metagame;
     protected float m_time;
     protected float m_timer;
     protected array<const XmlElement@> m_players;
     protected bool m_ended;
-    protected bool debug_mode;
 
-    schedule_Manager(GameModeInvasion@ metagame,float time = 5.0){
+    schedule_Manager(Metagame@ metagame,float time = 5.0){
         @m_metagame = @metagame;
         m_time = time;   //5s一周期进行检测
         m_timer = m_time;
         m_players = getPlayers(m_metagame);
-        debug_mode = g_debugMode;
         _log("schedule_Manager initiate");
     }
 
@@ -55,7 +54,7 @@ class schedule_Manager : Tracker {
     protected void handlePlayerSpawnEvent(const XmlElement@ event) {
         const XmlElement@ player = event.getFirstElementByTagName("player");
         update_info(player);
-        if(debug_mode){
+        if(g_debugMode){
             _report(m_metagame,"Update PlayerInfo");
         }
 
@@ -71,7 +70,7 @@ class schedule_Manager : Tracker {
         string name = element.getStringAttribute("name");
         if(g_playerInfoBuck.exists(name)){
             g_playerInfoBuck.removeByName(name);
-            if(debug_mode){
+            if(g_debugMode){
                 _report(m_metagame,"remove PlayerInfo");
             }
         }
@@ -84,7 +83,6 @@ class schedule_Manager : Tracker {
 
     void update(float time) {
         m_timer -= time;
-        debug_mode = g_debugMode;
         if(m_timer <= 0.0){
             refresh();
             m_timer = m_time;
@@ -105,16 +103,19 @@ class schedule_Manager : Tracker {
     }
 
     void update_info(const XmlElement@ player){
+        if(player is null){return;}
         string name = player.getStringAttribute("name");
         int pid = player.getIntAttribute("player_id");
         int cid = player.getIntAttribute("character_id");
         int fid = player.getIntAttribute("faction_id");
         const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+        if(character is null){return;}
         int wound = character.getIntAttribute("wounded");
         int dead = character.getIntAttribute("dead");
         string group = character.getStringAttribute("soldier_group_name");
         float xp = character.getFloatAttribute("xp");
         float rp = character.getFloatAttribute("rp");
+        if(g_playerInfoBuck is null){return;}
         if(g_playerInfoBuck.exists(name)){
             g_playerInfoBuck.update(name,pid,cid,fid,dead,wound,xp,rp,group);
         }else{
@@ -169,7 +170,7 @@ class schedule_Manager : Tracker {
                     @info = @character;
                 }
                 if(info is null){return;}
-                if(debug_mode){
+                if(g_debugMode){
                     _report(m_metagame,"g_IRQ dict="+g_IRQ._test(),"全局字典",false);
                 }
 
@@ -177,12 +178,12 @@ class schedule_Manager : Tracker {
                 // cid 追踪角色信息； 玩家名用于持续追踪（能够在死亡后持续记录）；键值用于确定执行函数对象
                 if(g_IRQ.isExist(key)){
                     g_IRQ.set(key,true);
-                    if(debug_mode){
+                    if(g_debugMode){
                         _report(m_metagame,"IRQ "+key+" Set True","中断符号置真",false);
                     }
                     return;
                 }
-                if(debug_mode){
+                if(g_debugMode){
                     _report(m_metagame,"IRQ key="+key,"中断信号键值",false);
                 }
 

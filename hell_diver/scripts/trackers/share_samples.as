@@ -44,13 +44,11 @@ dictionary sample_target_key = {
 };
 
 class share_samples : Tracker {
-	protected GameModeInvasion@ m_metagame;
-	protected bool debug_mode;
+	protected Metagame@ m_metagame;
 
 	// --------------------------------------------
-	share_samples(GameModeInvasion@ metagame) {
+	share_samples(Metagame@ metagame) {
 		@m_metagame = @metagame;
-        debug_mode = g_debugMode;
 	}
 
 	bool hasEnded() const {
@@ -62,7 +60,6 @@ class share_samples : Tracker {
 	}
 
 	void update(float time){
-		debug_mode = g_debugMode;
 	}
 	// --------------------------------------------
 	protected void handleItemDropEvent(const XmlElement@ event) {
@@ -84,7 +81,7 @@ class share_samples : Tracker {
 				string equipKey =  getPlayerEquipmentKey(m_metagame,characterId,2);
 				array<const XmlElement@>@ allPlayer = getPlayers(m_metagame);
 				if(allPlayer is null || allPlayer.size() == 0){return;}
-				if(debug_mode){
+				if(g_debugMode){
 					_report(m_metagame,"Players num ="+allPlayer.size()+"; Sharing Sample key="+keyValue );
 				}
 				string targetKey;
@@ -100,7 +97,7 @@ class share_samples : Tracker {
 					
 					deleteItemInBackpack(m_metagame,cid,"carry_item",itemKey);
 					addItemInBackpack(m_metagame,cid,"carry_item",targetKey);
-					if(debug_mode){
+					if(g_debugMode){
 						_report(m_metagame,"Delete = "+itemKey);
 						_report(m_metagame,"Add = "+targetKey);
 					}

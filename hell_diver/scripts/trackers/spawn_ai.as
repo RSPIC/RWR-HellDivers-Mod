@@ -12,13 +12,13 @@
 //Author: RST
 
 class spawn_ai : Tracker {
-	protected GameModeInvasion@ m_metagame;
+	protected Metagame@ m_metagame;
 	protected bool m_ended;
 	protected bool isStarted;
 	protected Timer@ m_Timer = Timer();
 
 	// --------------------------------------------
-	spawn_ai(GameModeInvasion@ metagame) {
+	spawn_ai(Metagame@ metagame) {
 		@m_metagame = @metagame;
 		_log("spawn_ai initiate.");
 	}

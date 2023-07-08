@@ -45,7 +45,6 @@ class schedule_Interruptible_task : Task{
     protected float m_timer;
     protected float m_timer_ex;
     protected string m_key;     //记录格式为 cid+玩家名+键值
-    protected bool debug_mode;
     protected bool m_ended;
     protected bool isShutDown;
     protected bool isStart;
@@ -63,7 +62,6 @@ class schedule_Interruptible_task : Task{
         g_IRQ.set(m_key,false); //添加至中断请求存储区
         g_IRQ.set(m_cid,true);  //添加至中断请求存储区
         isPlayer = true;
-        debug_mode = g_debugMode;
         _log("schedule_Interruptible_task executing");
     }
 
@@ -80,7 +78,6 @@ class schedule_Interruptible_task : Task{
     void update(float time){
         INT();  //检测中断状态
         m_timer -= time;
-        debug_mode = g_debugMode;
         if(m_timer >0){return;}
         if(!isShutDown){
             MyTask();
@@ -109,7 +106,7 @@ class schedule_Interruptible_task : Task{
         string p_name = m_player.getStringAttribute("name");
         uint start = formatInt(m_cid).length() + p_name.length();
         string target_key = m_key.substr(start);
-        if(debug_mode){
+        if(g_debugMode){
             _report(m_metagame,"ISR cut key="+target_key,"中断服务接受键值",false);
         }
         if(target_key == "ex_cl_banzai"){

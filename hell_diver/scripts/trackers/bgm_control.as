@@ -60,7 +60,7 @@ dictionary ex_bgm = {
 
 
 class bgm_control : Tracker{
-    protected GameModeInvasion@ m_metagame;
+    protected Metagame@ m_metagame;
     protected float m_cdTime;
 	protected float m_timer;
 	protected float m_bgm_timer;
@@ -68,13 +68,10 @@ class bgm_control : Tracker{
     protected bool m_ended;
     protected bool isFirst;
     protected bool isFighting;
-    protected bool debug_mode;
 
     //--------------------------------------------
-    bgm_control(GameModeInvasion@ metagame,float time = 60.0){
+    bgm_control(Metagame@ metagame,float time = 60.0){
         @m_metagame = @metagame;
-        const UserSettings@ settings = m_metagame.getUserSettings();
-        debug_mode = settings.m_debug_mode;
         m_bgm_timer = 3;
         m_cdTime = time;
 		m_timer = m_cdTime;
@@ -95,7 +92,7 @@ class bgm_control : Tracker{
         if(m_bgm_timer < 0.0){
             PlayBgm();
         }
-        if(debug_mode){
+        if(g_debugMode){
             m_debug_timer -= time;
             if(m_debug_timer < 0.0){
                 m_debug_timer +=5.0;
@@ -103,14 +100,13 @@ class bgm_control : Tracker{
                 //_report(m_metagame,"警报CD剩余时间:"+m_timer);
             }
         }
-        debug_mode = g_debugMode;
     }
     // --------------------------------------------
     void start(){
         m_ended = false;
         isFirst = true;
         isFighting = false;
-        if(debug_mode){
+        if(g_debugMode){
             m_cdTime = 10;
             m_timer = 10;
         }
@@ -165,7 +161,7 @@ class bgm_control : Tracker{
 
         string f_name = g_factionInfoBuck.getNameByFid(1);
         if(f_name == "Bugs"){
-            if(debug_mode){
+            if(g_debugMode){
                 _report(m_metagame,"Faction Bugs BGM");
             }
             bgmList_searching = bugs_bgmList_searching;
@@ -177,14 +173,14 @@ class bgm_control : Tracker{
             int soundrnd= rand(0,bgmList_searching.length() - 1);
             playSoundtrack(m_metagame,bgmList_searching[soundrnd]);
             bgmName = bgmList_searching[soundrnd];
-            if(debug_mode){
+            if(g_debugMode){
                 _report(m_metagame,"Serching BGM,id="+soundrnd);
             }
         }else if(isFighting){
             int soundrnd= rand(0,bgmList_fight.length() - 1);
             playSoundtrack(m_metagame,bgmList_fight[soundrnd]);
             bgmName = bgmList_fight[soundrnd];
-            if(debug_mode){
+            if(g_debugMode){
                 _report(m_metagame,"Fighting BGM,id="+soundrnd);
             }
         }
@@ -192,7 +188,7 @@ class bgm_control : Tracker{
             _report(m_metagame,"BGM Error,Report this question");
             m_bgm_timer = 120;
         }
-        if(debug_mode){
+        if(g_debugMode){
             _report(m_metagame,"Playing BGM="+bgmName+" Time="+m_bgm_timer);
         }
     }
@@ -220,7 +216,7 @@ class bgm_control : Tracker{
     protected void handleChatEvent(const XmlElement@ event) {
 		string message = event.getStringAttribute("message");
 		if(message != "/bgm"){return;}
-        if(debug_mode){
+        if(g_debugMode){
             PlayBgm();
         }
 	}

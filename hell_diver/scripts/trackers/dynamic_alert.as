@@ -265,7 +265,6 @@ class dynamic_alert : Tracker {
     protected float m_cd_time = 30;
     protected float m_cd_timer;
     protected bool m_alertFlag = false;
-    protected bool debug_mode;
 
     protected float alert_distance_normal = 40; //超过此距离警报等级降低
     protected float alert_distance_max = 80;    //超过此距离警报不触发
@@ -277,7 +276,6 @@ class dynamic_alert : Tracker {
         const UserSettings@ settings = m_metagame.getUserSettings();
         server_difficulty_level = settings.m_server_difficulty_level;
         m_server_difficulty_level = settings.m_server_difficulty_level;
-        debug_mode = settings.m_debug_mode;
         _log("Server difficulty level = "+ server_difficulty_level);
 
         m_cd_timer = m_cd_time;
@@ -297,12 +295,11 @@ class dynamic_alert : Tracker {
             m_cd_timer -= time;
             if(m_cd_timer <  0.0){
                 clearAlert();
-                if(debug_mode){
+                if(g_debugMode){
                     _report(m_metagame,"Alert CD OK=");
                 }
             }
         }
-        debug_mode = g_debugMode;
     }
 
     void clearAlert(){
@@ -325,7 +322,7 @@ class dynamic_alert : Tracker {
         if(m_fid == -1){return;}
         //string m_position = character.getStringAttribute("position");
 
-        if(debug_mode){
+        if(g_debugMode){
             _report(m_metagame,"Alert key="+EventKeyGet);
         }
 
@@ -356,7 +353,7 @@ class dynamic_alert : Tracker {
             }
         }
         if( my_faction_soldiers >= 2.0*max_soldiers_cap && g_factionInfoBuck.getNameByFid(m_fid) != "Bugs"){
-            if(debug_mode){
+            if(g_debugMode){
                 _report(m_metagame,"敌方AI上限="+max_soldiers_cap+" 己方AI="+my_faction_soldiers+ " 本次警报失效");
             }
             return;
@@ -370,7 +367,7 @@ class dynamic_alert : Tracker {
 			const XmlElement@ player = players[j];
             Vector3 aim_pos = stringToVector3(player.getStringAttribute("aim_target"));    //省事直接用玩家指针位置,获取玩家位置需要获取到character数据，增加不少查询
             float alert_distance_now = getFlatPositionDistance(aim_pos,position);
-            if(debug_mode){
+            if(g_debugMode){
                 int pid = player.getIntAttribute("player_id");
                 notify(m_metagame, "Alert Distance = "+alert_distance_now, dictionary(), "misc", pid, false, "", 1.0);
             }
@@ -385,7 +382,7 @@ class dynamic_alert : Tracker {
                 server_difficulty_level = 0;
             }
         }else if(alert_distance > alert_distance_max){
-            if(debug_mode){
+            if(g_debugMode){
                 _report(m_metagame,"Alert failed for MAX alert range limit");
             }  
             return;
@@ -394,7 +391,7 @@ class dynamic_alert : Tracker {
             server_difficulty_level += 3 ;
         }
         
-        if(debug_mode){
+        if(g_debugMode){
             _report(m_metagame,"Alert Min Distance = "+alert_distance);
             _report(m_metagame,"Alert Level = "+server_difficulty_level);
         }
@@ -445,7 +442,7 @@ class dynamic_alert : Tracker {
     }
     protected void handleChatEvent(const XmlElement@ event){
         string sender = event.getStringAttribute("player_name");
-        if(debug_mode || m_metagame.getAdminManager().isAdmin(sender)){
+        if(g_debugMode || m_metagame.getAdminManager().isAdmin(sender)){
             string message = event.getStringAttribute("message");
             array<string> word = MassageBreakUp(message, " ", -1);
             int ws = word.size();

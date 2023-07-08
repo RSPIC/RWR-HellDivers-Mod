@@ -11,17 +11,13 @@
 
 // --------------------------------------------
 class BasicCommandHandler : Tracker {
-	protected GameModeInvasion@ m_metagame;
-	protected bool m_server_test_mode;
+	protected Metagame@ m_metagame;
+	protected bool g_online_TestMode;
 
 	// --------------------------------------------
-	BasicCommandHandler(GameModeInvasion@ metagame) {
+	BasicCommandHandler(Metagame@ metagame) {
 		@m_metagame = @metagame;
-		const UserSettings@ settings = m_metagame.getUserSettings();
-        m_server_test_mode = settings.m_server_test_mode;
-		if(m_server_test_mode){
-			_log("m_server_test_mode is on ");
-		}
+
 	}
 	// --------------------------------------------
 		// .substr 字符截取函数 substr(string string（文本), int a(截取起始位置), int b(截取长度))
@@ -76,7 +72,7 @@ class BasicCommandHandler : Tracker {
 	
 		
 		// admin and moderator only from here on
-		if(!m_server_test_mode){
+		if(!g_online_TestMode){
 			if (!m_metagame.getAdminManager().isAdmin(sender, senderId) && !m_metagame.getModeratorManager().isModerator(sender, senderId)) {
 			return;
 			}
@@ -118,7 +114,7 @@ class BasicCommandHandler : Tracker {
 		}
 		
 		// admin only from here on ------------------------------------------------------------------------
-		if(!m_server_test_mode){
+		if(!g_online_TestMode){
 			if (!m_metagame.getAdminManager().isAdmin(sender, senderId)) {
 				return;
 			}

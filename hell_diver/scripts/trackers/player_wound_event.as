@@ -17,17 +17,12 @@
 //该接口每层护甲的wound输出都会生效，放在游戏里就是一次倒地，20多次生效
 
 class player_wound : Tracker {
-	protected GameModeInvasion@ m_metagame;
+	protected Metagame@ m_metagame;
     protected dictionary playersInfo;
-	protected bool m_server_test_mode;
-	protected bool debug_mode;
 
 	// --------------------------------------------
-	player_wound(GameModeInvasion@ metagame) {
+	player_wound(Metagame@ metagame) {
 		@m_metagame = @metagame;
-		const UserSettings@ settings = m_metagame.getUserSettings();
-        m_server_test_mode = settings.m_server_test_mode;
-		debug_mode = g_debugMode;
 	}
 
 	bool hasEnded() const {
@@ -39,7 +34,6 @@ class player_wound : Tracker {
 	}
 
 	void update(float time){
-		debug_mode = g_debugMode;
 	}
     // ----------------------------------------------------
 	protected void handlePlayerWoundEvent(const XmlElement@ event) {
@@ -59,7 +53,6 @@ class player_wound : Tracker {
 class player_wound_task : Task{
 	protected Metagame@ m_metagame;
 	protected const XmlElement@ m_player;
-	protected bool debug_mode;
 	protected bool m_ended;
 	protected float m_time;
     protected float m_timer;
@@ -70,7 +63,6 @@ class player_wound_task : Task{
 		@m_player = @player;
 		m_time = time;
         m_timer = m_time;
-		debug_mode = g_debugMode;
 		m_woundKey = woundKey;
 		g_IRQ.set(m_woundKey,true);  //添加至中断请求存储区
 	}
@@ -86,7 +78,6 @@ class player_wound_task : Task{
 
 	void update(float time){
 		m_timer -= time;
-        debug_mode = g_debugMode;
 		if(m_timer >0){return;}
 		g_IRQ.remove(m_woundKey);     //清除字典内容
         m_ended = true;

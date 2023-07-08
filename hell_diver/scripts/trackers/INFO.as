@@ -385,6 +385,7 @@ class Initiate : Tracker {
 		const UserSettings@ settings = m_metagame.getUserSettings();
 		m_debug_mode = settings.m_debug_mode;
 		g_debugMode = m_debug_mode;
+		g_online_TestMode = settings.m_server_test_mode;
 	}
 	// --------------------------------------------
 	bool hasEnded() const {
@@ -398,26 +399,34 @@ class Initiate : Tracker {
 	}
 	void start(){
         m_ended = false;
-		isStarted =false;
+		isStarted = false;
 		@g_factionInfoBuck = factionInfoBuck();	
  		@g_playerInfoBuck = playerInfoBuck();
 		@g_IRQ = _IRQ("",false);
+		initiateInfo();
 	}
 	void update(float time){
 	}
-	protected void handlePlayerSpawnEvent(const XmlElement@ event){
-		if(!isStarted || g_factionInfoBuck.size() == 0 ){
-            g_factionInfoBuck.clearAll();
+	protected void initiateInfo(){
+		if(g_factionInfoBuck !is null){
+			g_factionInfoBuck.clearAll();
 			array<const XmlElement@> AllFactions = getFactions(m_metagame);	
-			for (uint i = 0; i < AllFactions.size(); ++i) {
-				const XmlElement@ Faction = AllFactions[i];
-				int fid = Faction.getIntAttribute("id");
-				string name = Faction.getStringAttribute("name");
-				array<const XmlElement@>@ SoldierGroups = getSoldierGroups(m_metagame,fid);
-				g_factionInfoBuck.addNewInfo(fid,name,SoldierGroups);
+			if(AllFactions !is null){
+				for (uint i = 0; i < AllFactions.size(); ++i) {
+					const XmlElement@ Faction = AllFactions[i];
+					int fid = Faction.getIntAttribute("id");
+					string name = Faction.getStringAttribute("name");
+					array<const XmlElement@>@ SoldierGroups = getSoldierGroups(m_metagame,fid);
+					g_factionInfoBuck.addNewInfo(fid,name,SoldierGroups);
+				}
+				isStarted = true;  
+			}else{
+				_log("AllFactions is null");
 			}
-			isStarted = true;    
+		}else{
+			_log("g_factionInfoBuck is null in INFO.as");
 		}
+		  
 	}
 
 	protected void handleChatEvent(const XmlElement@ event){

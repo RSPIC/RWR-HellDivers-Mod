@@ -30,7 +30,6 @@ void writeXML(const Metagame@ metagame, string filename, XmlElement@ xml, string
 
 class IO_data : Tracker {
     protected Metagame@ m_metagame;
-    protected bool debug_mode;
     protected bool save_data;
     protected float m_time;
     protected float m_timer;
@@ -38,7 +37,6 @@ class IO_data : Tracker {
 
     IO_data(Metagame@ metagame){
         @m_metagame = @metagame;
-        debug_mode = g_debugMode;
         m_time = 1.0;
         m_timer = m_time;
         save_data = false;

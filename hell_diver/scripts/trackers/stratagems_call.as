@@ -533,7 +533,6 @@ class stratagems_call : Tracker {
 	protected Metagame@ m_metagame;
 	protected player_cd_bucket@ p_cd_lists;
 	protected bool m_ended;
-	protected bool debug_mode;
 	protected float m_timer;
 	protected float m_time;
 
@@ -542,7 +541,6 @@ class stratagems_call : Tracker {
 		@m_metagame = @metagame;
 		@p_cd_lists = player_cd_bucket();
 		m_ended = false;
-		debug_mode = g_debugMode;
 		m_time = 3.0;
 		m_timer = m_time;
 		_log("stratagems_call initiate.");

@@ -218,12 +218,10 @@ dictionary replace_drop = {
 
 class itemdrop_event : Tracker {
 	protected Metagame@ m_metagame;
-	protected bool debug_mode;
 
 	// --------------------------------------------
 	itemdrop_event(Metagame@ metagame) {
 		@m_metagame = @metagame;
-		debug_mode = g_debugMode;
 		_log("itemdrop_event initiate.");
 	}
 
@@ -235,7 +233,6 @@ class itemdrop_event : Tracker {
 		return true;
 	}
 	void update(float time){
-		debug_mode = g_debugMode;
 	}
 
 	// --------------------------------------------
@@ -297,7 +294,7 @@ class itemdrop_event : Tracker {
 						for(int i=1;i<=4;i++){
 							if(i == 3){continue;}
 							equipKey = getDeadPlayerEquipmentKey(m_metagame,characterId,i);
-							if(debug_mode){
+							if(g_debugMode){
 								_report(m_metagame,"Get Player EquipKey ="+equipKey);
 								_report(m_metagame,"Item slot ="+i);
 							}
@@ -342,7 +339,7 @@ class itemdrop_event : Tracker {
 									for(;resupplyNum>0;--resupplyNum){
 										addItemInBackpack(m_metagame,characterId,"projectile",equipKey);
 									}
-									if(debug_mode){
+									if(g_debugMode){
 										_report(m_metagame,"Success resupply Token");
 									}
 									return;
@@ -367,7 +364,7 @@ class itemdrop_event : Tracker {
 
 		//是否属于删除物品
 		if(string(banned_backpack_item[itemKey]) != "" || string(banned_special_item[itemKey]) != ""){
-			if(debug_mode){return;}
+			if(g_debugMode){return;}
 			if(playerId == -1){return;}//排除AI
 			int senderId = event.getIntAttribute("player_id");
 			const XmlElement@ playerinfo = getPlayerInfo(m_metagame,senderId);
