@@ -9,6 +9,23 @@
 		<!-- 道具 -->
 	<carry_item file="hd_resupply_pack_mk3.carry_item" />
 	<carry_item file="hd_resupply_pack_mk3_ex.carry_item" />
+
+	<!-- 钱 -->
+	<carry_item file="hd_money.carry_item" />
+	<!-- 功能性物品 -->
+	<carry_item file="hd_upgrage.carry_item" />
+
+	<!-- 护甲升级 -->
+	<carry_item file="hd_v_upgrage.carry_item" />
+	<carry_item file="helldivers_vest_armor+.carry_item" />
+	<carry_item file="helldivers_vest_armor++.carry_item" />
+	<carry_item file="helldivers_vest_armor+++.carry_item" />
+	<carry_item file="helldivers_vest_speed+.carry_item" />
+	<carry_item file="helldivers_vest_speed++.carry_item" />
+	<carry_item file="helldivers_vest_speed+++.carry_item" />
+	<carry_item file="helldivers_vest_armor+speed+.carry_item" />
+	<carry_item file="helldivers_vest_armor++speed+.carry_item" />
+	<carry_item file="helldivers_vest_armor+speed++.carry_item" />
 	
 	<!-- 通用 -->
 	<carry_item file="general_vest_1000.carry_item" /><!--无抵抗1000层甲-->
@@ -21,27 +38,11 @@
 	<carry_item file="stun_vest.carry_item" /><!--眩晕甲 无抵抗100层-->
 
 	<!-- 战利品-收藏-MC -->
-	<carry_item file="collect_mc_diamond.carry_item" /><!--钻石-->
-	<carry_item file="collect_mc_emerald.carry_item" /><!--绿宝石-->
-	<carry_item file="collect_mc_gold.carry_item" /><!--金锭-->
-	<carry_item file="collect_mc_iron.carry_item" /><!--铁锭-->
+	<carry_item file="collect_mc.carry_item" />
 	<!-- 战利品-收藏-Fumo -->
-	<carry_item file="collect_fumo_cirno.carry_item" /><!--琪露诺-->
-	<carry_item file="collect_fumo_flandre_scarlet.carry_item" /><!--芙兰朵露-->
-	<carry_item file="collect_fumo_hong_meiling.carry_item" /><!--红美铃-->
-	<carry_item file="collect_fumo_inu_sakuya.carry_item" /><!--十六夜 咲夜-->
-	<carry_item file="collect_fumo_junko.carry_item" /><!--纯狐-->
-	<carry_item file="collect_fumo_koishi_komeiji.carry_item" /><!--古明地恋-->
-	<carry_item file="collect_fumo_mike_goutokuji.carry_item" /><!--豪德寺三毛-->
-	<carry_item file="collect_fumo_mokou_fujiwara.carry_item" /><!--藤原妹红-->
-	<carry_item file="collect_fumo_nitori_kawashiro.carry_item" /><!--河城荷取-->
-	<carry_item file="collect_fumo_reimu.carry_item" /><!--灵梦-->
-	<carry_item file="collect_fumo_rumia.carry_item" /><!--露米娅-->
-	<carry_item file="collect_fumo_sanae_kochiya.carry_item" /><!--东风谷早苗-->
-	<carry_item file="collect_fumo_shion_yorigami.carry_item" /><!--依神紫苑-->
-	<carry_item file="collect_fumo_suwako_moriya.carry_item" /><!--泄矢诹访子-->
-	<carry_item file="collect_fumo_youmu_konpaku.carry_item" /><!--魂魄妖梦-->
-	<carry_item file="collect_fumo_yuyuko.carry_item" /><!--西行寺幽幽子-->
+	<carry_item file="collect_fumo.carry_item" />
+	<!-- 特殊战利品 -->
+	<carry_item file="ex_loot.carry_item" />
 
 	<!-- 样本 -->
 	<carry_item file="samples_acg.carry_item" />
@@ -55,7 +56,7 @@
 	<!-- 奖励箱子 -->
 	<carry_item file="reward_box.carry_item" />
 
-	<!-- 原版 -->
+	<!-- 原版 正式版取消注册 -->
 	<carry_item file="dollars.carry_item" />
 	<carry_item file="painting.carry_item" />
 	<carry_item file="steroids.carry_item" />  
@@ -70,7 +71,6 @@
 	<carry_item file="ipoo_player_green.carry_item" />
 	<carry_item file="ipoo_player_pink.carry_item" />   
 	<carry_item file="playing_cards.carry_item" />
-    <carry_item file="kamasutra.carry_item" /> 
     <carry_item file="cd.carry_item" /> 
 	<carry_item file="pickashoe.carry_item" /> 
 

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 命名必须确保特征符号数量只有两个，即字符串长度一致 -->
+<!-- 后续的数字会被脚本截取并转换，如果前缀字符长度改变会引起报错 -->
+<carry_items>
+<carry_item file="_usable_item.base" 
+name="Bonus card" 
+key="hd_bonusfactor_al_10"
+>
+    <hud_icon filename="hud_bonusfactor_10.png" />
+    <inventory encumbrance="1.0" buy_price="0.0" sell_price="0.0" />
+    <model mesh_filename="sprite_exp_card_stack_t4.mesh" texture_filename="hud_bonusfactor.png" />
+    <commonness value="0" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="Bonus card" 
+key="hd_bonusfactor_al_20"
+>
+    <hud_icon filename="hud_bonusfactor_20.png" />
+    <inventory encumbrance="1.0" buy_price="0.0" sell_price="0.0" />
+    <model mesh_filename="sprite_exp_card_stack_t4.mesh" texture_filename="hud_bonusfactor.png" />
+    <commonness value="0" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="Bonus card" 
+key="hd_bonusfactor_al_45"
+>
+    <hud_icon filename="hud_bonusfactor_45.png" />
+    <inventory encumbrance="1.0" buy_price="0.0" sell_price="0.0" />
+    <model mesh_filename="sprite_exp_card_stack_t4.mesh" texture_filename="hud_bonusfactor.png" />
+    <commonness value="0" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="Bonus card" 
+key="hd_bonusfactor_al_75"
+>
+    <hud_icon filename="hud_bonusfactor_75.png" />
+    <inventory encumbrance="1.0" buy_price="0.0" sell_price="0.0" />
+    <model mesh_filename="sprite_exp_card_stack_t4.mesh" texture_filename="hud_bonusfactor.png" />
+    <commonness value="0" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="Bonus card" 
+key="hd_bonusfactor_al_125"
+>
+    <hud_icon filename="hud_bonusfactor_125.png" />
+    <inventory encumbrance="1.0" buy_price="0.0" sell_price="0.0" />
+    <model mesh_filename="sprite_exp_card_stack_t4.mesh" texture_filename="hud_bonusfactor.png" />
+    <commonness value="0" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="Bonus card" 
+key="hd_bonusfactor_al_240"
+>
+    <hud_icon filename="hud_bonusfactor_240.png" />
+    <inventory encumbrance="1.0" buy_price="0.0" sell_price="0.0" />
+    <model mesh_filename="sprite_exp_card_stack_t4.mesh" texture_filename="hud_bonusfactor.png" />
+    <commonness value="0" in_stock="1" />
+</carry_item>
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<carry_item file="_usable_item.base" 
+name="Bonus card [XP]" 
+key="hd_bonusfactor_xp_10"
+>
+    <hud_icon filename="hud_bonusfactor_10.png" />
+    <inventory encumbrance="1.0" buy_price="0.0" sell_price="0.0" />
+    <model mesh_filename="sprite_exp_card_stack_t4.mesh" texture_filename="hud_bonusfactor.png" />
+    <commonness vxpue="0" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="Bonus card [XP]" 
+key="hd_bonusfactor_xp_20"
+>
+    <hud_icon filename="hud_bonusfactor_20.png" />
+    <inventory encumbrance="1.0" buy_price="0.0" sell_price="0.0" />
+    <model mesh_filename="sprite_exp_card_stack_t4.mesh" texture_filename="hud_bonusfactor.png" />
+    <commonness vxpue="0" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="Bonus card [XP]" 
+key="hd_bonusfactor_xp_45"
+>
+    <hud_icon filename="hud_bonusfactor_45.png" />
+    <inventory encumbrance="1.0" buy_price="0.0" sell_price="0.0" />
+    <model mesh_filename="sprite_exp_card_stack_t4.mesh" texture_filename="hud_bonusfactor.png" />
+    <commonness vxpue="0" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="Bonus card [XP]" 
+key="hd_bonusfactor_xp_75"
+>
+    <hud_icon filename="hud_bonusfactor_75.png" />
+    <inventory encumbrance="1.0" buy_price="0.0" sell_price="0.0" />
+    <model mesh_filename="sprite_exp_card_stack_t4.mesh" texture_filename="hud_bonusfactor.png" />
+    <commonness vxpue="0" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="Bonus card [XP]" 
+key="hd_bonusfactor_xp_125"
+>
+    <hud_icon filename="hud_bonusfactor_125.png" />
+    <inventory encumbrance="1.0" buy_price="0.0" sell_price="0.0" />
+    <model mesh_filename="sprite_exp_card_stack_t4.mesh" texture_filename="hud_bonusfactor.png" />
+    <commonness vxpue="0" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="Bonus card [XP]" 
+key="hd_bonusfactor_xp_240"
+>
+    <hud_icon filename="hud_bonusfactor_240.png" />
+    <inventory encumbrance="1.0" buy_price="0.0" sell_price="0.0" />
+    <model mesh_filename="sprite_exp_card_stack_t4.mesh" texture_filename="hud_bonusfactor.png" />
+    <commonness vxpue="0" in_stock="1" />
+</carry_item>
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<carry_item file="_usable_item.base" 
+name="Bonus card [RP]" 
+key="hd_bonusfactor_rp_10"
+>
+    <hud_icon filename="hud_bonusfactor_10.png" />
+    <inventory encumbrance="1.0" buy_price="0.0" sell_price="0.0" />
+    <model mesh_filename="sprite_exp_card_stack_t4.mesh" texture_filename="hud_bonusfactor.png" />
+    <commonness vrpue="0" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="Bonus card [RP]" 
+key="hd_bonusfactor_rp_20"
+>
+    <hud_icon filename="hud_bonusfactor_20.png" />
+    <inventory encumbrance="1.0" buy_price="0.0" sell_price="0.0" />
+    <model mesh_filename="sprite_exp_card_stack_t4.mesh" texture_filename="hud_bonusfactor.png" />
+    <commonness vrpue="0" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="Bonus card [RP]" 
+key="hd_bonusfactor_rp_45"
+>
+    <hud_icon filename="hud_bonusfactor_45.png" />
+    <inventory encumbrance="1.0" buy_price="0.0" sell_price="0.0" />
+    <model mesh_filename="sprite_exp_card_stack_t4.mesh" texture_filename="hud_bonusfactor.png" />
+    <commonness vrpue="0" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="Bonus card [RP]" 
+key="hd_bonusfactor_rp_75"
+>
+    <hud_icon filename="hud_bonusfactor_75.png" />
+    <inventory encumbrance="1.0" buy_price="0.0" sell_price="0.0" />
+    <model mesh_filename="sprite_exp_card_stack_t4.mesh" texture_filename="hud_bonusfactor.png" />
+    <commonness vrpue="0" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="Bonus card [RP]" 
+key="hd_bonusfactor_rp_125"
+>
+    <hud_icon filename="hud_bonusfactor_125.png" />
+    <inventory encumbrance="1.0" buy_price="0.0" sell_price="0.0" />
+    <model mesh_filename="sprite_exp_card_stack_t4.mesh" texture_filename="hud_bonusfactor.png" />
+    <commonness vrpue="0" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="Bonus card [RP]" 
+key="hd_bonusfactor_rp_240"
+>
+    <hud_icon filename="hud_bonusfactor_240.png" />
+    <inventory encumbrance="1.0" buy_price="0.0" sell_price="0.0" />
+    <model mesh_filename="sprite_exp_card_stack_t4.mesh" texture_filename="hud_bonusfactor.png" />
+    <commonness vrpue="0" in_stock="1" />
+</carry_item>
+
+
+</carry_items>

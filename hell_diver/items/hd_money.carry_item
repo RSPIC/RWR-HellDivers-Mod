@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carry_items>
+<carry_item file="_usable_item.base" 
+name="Money [10W]" 
+key="hd_money_10w"
+>
+    <hud_icon filename="hd_money_10w.png" />
+    <inventory encumbrance="0" price="100000.0" />
+    <model mesh_filename="sprite_exp_card_stack_t4.mesh" texture_filename="sprite_exp_card_stack_t4.png" />
+    <commonness value="0" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="Money [1W]" 
+key="hd_money_1w"
+>
+    <hud_icon filename="hd_money_1w.png" />
+    <inventory encumbrance="0" price="10000.0" />
+    <model mesh_filename="sprite_exp_card_stack_t4.mesh" texture_filename="sprite_exp_card_stack_t3.png" />
+    <commonness value="0" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="Money [1k]" 
+key="hd_money_1k"
+>
+    <hud_icon filename="hd_money_1k.png" />
+    <inventory encumbrance="0" price="1000.0" />
+    <model mesh_filename="sprite_exp_card_stack_t4.mesh" texture_filename="sprite_exp_card_stack_t2.png" />
+    <commonness value="0" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="Money [100]" 
+key="hd_money_100"
+>
+    <hud_icon filename="hd_money_100.png" />
+    <inventory encumbrance="0" price="100.0" />
+    <model mesh_filename="sprite_exp_card_stack_t4.mesh" texture_filename="sprite_exp_card_stack_t1.png" />
+    <commonness value="0" in_stock="1" />
+</carry_item>
+
+</carry_items>

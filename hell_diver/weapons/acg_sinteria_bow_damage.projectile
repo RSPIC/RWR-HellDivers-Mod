@@ -18,7 +18,7 @@ player_death_drop_owner_lock_time="0"
 >
     <collision class="sticky" />
 	<trigger class="time" time_to_live="0" />	
-	<result class="blast" radius="3" damage="1.01" push="0.2" decal="0" character_state="wound" faction_compare="not_equal" damage_origin_vehicle="0" />
+	<result class="blast" radius="3" damage="1.01" push="0.2" decal="0" character_state="death" faction_compare="not_equal" damage_origin_vehicle="0" />
 
 	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
 	

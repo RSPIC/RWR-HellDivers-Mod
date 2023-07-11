@@ -63,7 +63,7 @@ key="hd_arx_34_mk3.weapon"
 	<animation state_key="prone_moving" animation_key="amg11_still" /><!--全身动作-->
 	<animation state_key="stabbing" animation_key="amg11_still" /><!--半身动作，武器可设置脱手-->
    
-    <sound key="fire" fileref="hd_at_launch_1.wav" pitch_variety="0.1" volume="0.45" />
+    <sound key="fire" fileref="hd_at_launch_1.wav" pitch_variety="0.1" volume="0.27" />
     <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />
     <sound key="dry_fire" fileref="hd_mg94_dryfire_02.wav" pitch_variety="0.03" volume="1.0" />
     <sound key="magazine_out" fileref="hd_mg94_mag_out.wav" />

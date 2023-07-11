@@ -39,38 +39,6 @@ dictionary EXO_Armor = {
 
 };
 
-class first_use_info{
-    protected string name;
-    protected array<string> first_use_tag;
-
-    first_use_info(string InName){
-        name = InName;
-    }
-
-    string getName(){
-        return name;
-    }
-
-    bool isFirst(string InName,string key){
-        if(name != InName){return false;}
-        for (uint i = 0; i < first_use_tag.length(); i++) {
-            if (first_use_tag[i] == key) {
-                return false;
-            }
-        }
-        first_use_tag.insertLast(key);
-        return true;
-    }
-
-    array<string> _test(){
-        array<string> list;
-        list.insertLast(name);
-        for(uint i=0; i<first_use_tag.size(); ++i){
-            list.insertLast(first_use_tag[i]+" ");
-        }
-        return list;
-    }
-}
 
 class schedule_Check : Tracker {
     protected Metagame@ m_metagame;
@@ -131,14 +99,22 @@ class schedule_Check : Tracker {
 		if(player is null){return;}
 		//int pid = player.getIntAttribute("player_id");
         int cid = player.getIntAttribute("character_id");
+        string name = player.getStringAttribute("name");
         string equipKey = getPlayerEquipmentKey(m_metagame,cid,4);//护甲
-        array<string> key = {"hd_banzai_"}; //指定护甲会被检测并卸下
-        for(uint i=0;i<key.length;i++){
-            equipKey = equipKey.substr(0,key[i].length());//截取指定前缀并比对
-            if(equipKey == key[i]){    
+        array<string> banKey = {"hd_banzai_"}; //指定护甲会被检测并卸下
+        string targetVestKey = g_vestInfoBuck.getVestKey(name);
+        for(uint i=0;i<banKey.length;i++){
+            equipKey = equipKey.substr(0,banKey[i].length());//截取指定前缀并比对
+            if(equipKey == banKey[i]){    
                 editPlayerVest(m_metagame,cid,"helldivers_vest.carry_item",4);//替换为默认甲
-                return;
             }
+        }
+        if(targetVestKey != equipKey){
+            editPlayerVest(m_metagame,cid,targetVestKey,4);//替换为对应护甲
+        }
+        // 开局首次复活会记录玩家护甲信息，因此这里读取不到玩家的对应护甲
+        if(targetVestKey == ""){    
+            editPlayerVest(m_metagame,cid,"helldivers_vest.carry_item",4);//替换为默认甲
         }
 	}
     // ----------------------------------------------------

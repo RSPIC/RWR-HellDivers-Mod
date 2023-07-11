@@ -50,6 +50,7 @@ class schedule_AutoHeal : Task {
 		if(player is null){return;}
 		//自动回甲
 		int cid = player.getIntAttribute("character_id");
+		string name = player.getStringAttribute("name");
         const XmlElement@ character = getCharacterInfo(m_metagame,cid);
         if(character is null){return;}
         int wounded = character.getIntAttribute("wounded");
@@ -58,13 +59,13 @@ class schedule_AutoHeal : Task {
         array<string> key2 = {"hd_drone_ad289_angel"};
         if(dead !=1 && wounded != 1){
             string equipKey = getPlayerEquipmentKey(metagame,cid,4);//护甲
-            string weapon2Key = getPlayerEquipmentKey(metagame,cid,1);//副手
             for(uint i=0; i<key.length(); ++i){
                 equipKey = equipKey.substr(0,key[i].length());//截取指定前缀并比对
+                string weapon2Key = getPlayerEquipmentKey(metagame,cid,1);//副手
                 for(uint j=0; j<key2.length(); ++j){
                     weapon2Key = weapon2Key.substr(0,key2[j].length());
                     if(equipKey == key[i]){    
-                        if(weapon2Key == key2[j]){
+                        if(weapon2Key == key2[j] || g_vestInfoBuck.getAutoHeal(name)){
                             healCharacter(metagame,cid,8);
                         }else{
                             healCharacter(metagame,cid,4);
@@ -81,10 +82,9 @@ class schedule_AutoHeal : Task {
             string weapon2Key = getPlayerEquipmentKey(metagame,cid,1);//副手
             for(uint i=0; i<key2.length(); ++i){
                 weapon2Key = weapon2Key.substr(0,key2[i].length());
-                if(weapon2Key == key2[i]){
+                if(weapon2Key == key2[i] || g_vestInfoBuck.getAutoRecover(name)){
                     string pos = character.getStringAttribute("position");
                     spawnStaticProjectile(m_metagame,"hd_md99_autoinjector.projectile",pos,-1,-1);
-                    //_report(m_metagame,"heal");
                     return;
                 }
             }

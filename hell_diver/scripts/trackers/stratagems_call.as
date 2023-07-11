@@ -574,6 +574,7 @@ class stratagems_call : Tracker {
 				if(!p_cd_lists.exists(p_name,stratagemsKey) ){
 					float cd = 12;
 					stratagems_CD.get(stratagemsKey,cd);
+					cd = cd*(1-0.1*g_vestInfoBuck.getStratagemsFirst(p_name));
 					p_cd_lists.addNew(p_name,pid,stratagemsKey,cd);
 					//_report(m_metagame,"add new cdList="+stratagemsKey);
 					const XmlElement@ player = getPlayerInfo(m_metagame,pid);

@@ -55,6 +55,8 @@
 #include "bgm_control.as"
 #include "INFO.as"
 #include "IO_data.as"
+#include "vest_upgrade_manager.as"
+#include "lottery_manager.as"
 
 
 
@@ -364,6 +366,8 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		addTracker(IO_data(this));  
 		addTracker(player_wound(this));  
 		addTracker(match_end(this));  
+		addTracker(vest_upgrade_manager(this));  
+		addTracker(lottery_manager(this));  
 	}
 
 	protected void setupDisableRadioAtMatchOver() {

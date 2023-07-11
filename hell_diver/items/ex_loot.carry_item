@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carry_items>
+<carry_item file="_usable_item.base" 
+name="MTL_GOLD1" 
+key="MTL_GOLD1"
+>
+    <hud_icon filename="MTL_GOLD1.png" />
+    <inventory encumbrance="1.0" price="100.0" />
+    <model mesh_filename="MTL_GOLD1.mesh" texture_filename="MTL_GOLD1.png" />
+    <commonness value="1" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_GOLD2" 
+key="MTL_GOLD2"
+>
+    <hud_icon filename="MTL_GOLD2.png" />
+    <inventory encumbrance="1.0" price="300.0" />
+    <model mesh_filename="MTL_GOLD2.mesh" texture_filename="MTL_GOLD2.png" />
+    <commonness value="0.3" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_GOLD3" 
+key="MTL_GOLD3"
+>
+    <hud_icon filename="MTL_GOLD3.png" />
+    <inventory encumbrance="1.0" price="1000.0" />
+    <model mesh_filename="MTL_GOLD3.mesh" texture_filename="MTL_GOLD3.png" />
+    <commonness value="0.1" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_BASE_SL1" 
+key="MTL_BASE_SL1"
+>
+    <hud_icon filename="MTL_BASE_SL1.png" />
+    <inventory encumbrance="1.0" price="100.0" />
+    <model mesh_filename="MTL_BASE_SL1.mesh" texture_filename="MTL_BASE_SL1.png" />
+    <commonness value="1" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_BASE_SL2" 
+key="MTL_BASE_SL2"
+>
+    <hud_icon filename="MTL_BASE_SL2.png" />
+    <inventory encumbrance="1.0" price="300.0" />
+    <model mesh_filename="MTL_BASE_SL2.mesh" texture_filename="MTL_BASE_SL2.png" />
+    <commonness value="0.3" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_BASE_SL3" 
+key="MTL_BASE_SL3"
+>
+    <hud_icon filename="MTL_BASE_SL3.png" />
+    <inventory encumbrance="1.0" price="1000.0" />
+    <model mesh_filename="MTL_BASE_SL3.mesh" texture_filename="MTL_BASE_SL3.png" />
+    <commonness value="0.1" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_BASE_SYNTH1" 
+key="MTL_BASE_SYNTH1"
+>
+    <hud_icon filename="MTL_BASE_SYNTH1.png" />
+    <inventory encumbrance="1.0" price="100.0" />
+    <model mesh_filename="MTL_BASE_SYNTH1.mesh" texture_filename="MTL_BASE_SYNTH1.png" />
+    <commonness value="1.0" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_BASE_SYNTH2" 
+key="MTL_BASE_SYNTH2"
+>
+    <hud_icon filename="MTL_BASE_SYNTH2.png" />
+    <inventory encumbrance="1.0" price="300.0" />
+    <model mesh_filename="MTL_BASE_SYNTH2.mesh" texture_filename="MTL_BASE_SYNTH2.png" />
+    <commonness value="0.3" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_BASE_SYNTH3" 
+key="MTL_BASE_SYNTH3"
+>
+    <hud_icon filename="MTL_BASE_SYNTH3.png" />
+    <inventory encumbrance="1.0" price="1000.0" />
+    <model mesh_filename="MTL_BASE_SYNTH3.mesh" texture_filename="MTL_BASE_SYNTH3.png" />
+    <commonness value="0.1" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_SL_ALCOHOL1" 
+key="MTL_SL_ALCOHOL1"
+>
+    <hud_icon filename="MTL_SL_ALCOHOL1.png" />
+    <inventory encumbrance="1.0" price="100.0" />
+    <model mesh_filename="MTL_SL_ALCOHOL1.mesh" texture_filename="MTL_SL_ALCOHOL1.png" />
+    <commonness value="1.0" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_SL_ALCOHOL2" 
+key="MTL_SL_ALCOHOL2"
+>
+    <hud_icon filename="MTL_SL_ALCOHOL2.png" />
+    <inventory encumbrance="1.0" price="500.0" />
+    <model mesh_filename="MTL_SL_ALCOHOL2.mesh" texture_filename="MTL_SL_ALCOHOL2.png" />
+    <commonness value="0.2" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_SL_BOSS1" 
+key="MTL_SL_BOSS1"
+>
+    <hud_icon filename="MTL_SL_BOSS1.png" />
+    <inventory encumbrance="1.0" price="100.0" />
+    <model mesh_filename="MTL_SL_BOSS1.mesh" texture_filename="MTL_SL_BOSS1.png" />
+    <commonness value="1.0" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_SL_BOSS2" 
+key="MTL_SL_BOSS2"
+>
+    <hud_icon filename="MTL_SL_BOSS2.png" />
+    <inventory encumbrance="1.0" price="300.0" />
+    <model mesh_filename="MTL_SL_BOSS2.mesh" texture_filename="MTL_SL_BOSS2.png" />
+    <commonness value="0.3" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_SL_BOSS3" 
+key="MTL_SL_BOSS3"
+>
+    <hud_icon filename="MTL_SL_BOSS3.png" />
+    <inventory encumbrance="1.0" price="1000.0" />
+    <model mesh_filename="MTL_SL_BOSS3.mesh" texture_filename="MTL_SL_BOSS3.png" />
+    <commonness value="0.1" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_SL_BOSS4" 
+key="MTL_SL_BOSS4"
+>
+    <hud_icon filename="MTL_SL_BOSS4.png" />
+    <inventory encumbrance="1.0" price="3000.0" />
+    <model mesh_filename="MTL_SL_BOSS4.mesh" texture_filename="MTL_SL_BOSS4.png" />
+    <commonness value="0.03" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_SL_G1" 
+key="MTL_SL_G1"
+>
+    <hud_icon filename="MTL_SL_G1.png" />
+    <inventory encumbrance="1.0" price="100.0" />
+    <model mesh_filename="MTL_SL_G1.mesh" texture_filename="MTL_SL_G1.png" />
+    <commonness value="1.0" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_SL_G2" 
+key="MTL_SL_G2"
+>
+    <hud_icon filename="MTL_SL_G2.png" />
+    <inventory encumbrance="1.0" price="300.0" />
+    <model mesh_filename="MTL_SL_G2.mesh" texture_filename="MTL_SL_G2.png" />
+    <commonness value="0.3" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_SL_G3" 
+key="MTL_SL_G3"
+>
+    <hud_icon filename="MTL_SL_G3.png" />
+    <inventory encumbrance="1.0" price="1000.0" />
+    <model mesh_filename="MTL_SL_G3.mesh" texture_filename="MTL_SL_G3.png" />
+    <commonness value="0.1" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_SL_G4" 
+key="MTL_SL_G4"
+>
+    <hud_icon filename="MTL_SL_G4.png" />
+    <inventory encumbrance="1.0" price="3000.0" />
+    <model mesh_filename="MTL_SL_G4.mesh" texture_filename="MTL_SL_G4.png" />
+    <commonness value="0.03" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_SL_IRON1" 
+key="MTL_SL_IRON1"
+>
+    <hud_icon filename="MTL_SL_IRON1.png" />
+    <inventory encumbrance="1.0" price="100.0" />
+    <model mesh_filename="MTL_SL_IRON1.mesh" texture_filename="MTL_SL_IRON1.png" />
+    <commonness value="1" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_SL_IRON2" 
+key="MTL_SL_IRON2"
+>
+    <hud_icon filename="MTL_SL_IRON2.png" />
+    <inventory encumbrance="1.0" price="300.0" />
+    <model mesh_filename="MTL_SL_IRON2.mesh" texture_filename="MTL_SL_IRON2.png" />
+    <commonness value="0.3" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_SL_IRON3" 
+key="MTL_SL_IRON3"
+>
+    <hud_icon filename="MTL_SL_IRON3.png" />
+    <inventory encumbrance="1.0" price="1000.0" />
+    <model mesh_filename="MTL_SL_IRON3.mesh" texture_filename="MTL_SL_IRON3.png" />
+    <commonness value="0.1" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_SL_IRON4" 
+key="MTL_SL_IRON4"
+>
+    <hud_icon filename="MTL_SL_IRON4.png" />
+    <inventory encumbrance="1.0" price="3000.0" />
+    <model mesh_filename="MTL_SL_IRON4.mesh" texture_filename="MTL_SL_IRON4.png" />
+    <commonness value="0.03" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_SL_MANGANESE1" 
+key="MTL_SL_MANGANESE1"
+>
+    <hud_icon filename="MTL_SL_MANGANESE1.png" />
+    <inventory encumbrance="1.0" price="500.0" />
+    <model mesh_filename="MTL_SL_MANGANESE1.mesh" texture_filename="MTL_SL_MANGANESE1.png" />
+    <commonness value="0.2" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_SL_MANGANESE2" 
+key="MTL_SL_MANGANESE2"
+>
+    <hud_icon filename="MTL_SL_MANGANESE2.png" />
+    <inventory encumbrance="1.0" price="2500.0" />
+    <model mesh_filename="MTL_SL_MANGANESE2.mesh" texture_filename="MTL_SL_MANGANESE2.png" />
+    <commonness value="0.04" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_SL_PG1" 
+key="MTL_SL_PG1"
+>
+    <hud_icon filename="MTL_SL_PG1.png" />
+    <inventory encumbrance="1.0" price="500.0" />
+    <model mesh_filename="MTL_SL_PG1.mesh" texture_filename="MTL_SL_PG1.png" />
+    <commonness value="0.2" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_SL_PG2" 
+key="MTL_SL_PG2"
+>
+    <hud_icon filename="MTL_SL_PG2.png" />
+    <inventory encumbrance="1.0" price="2000.0" />
+    <model mesh_filename="MTL_SL_PG2.mesh" texture_filename="MTL_SL_PG2.png" />
+    <commonness value="0.04" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_SL_RMA7012" 
+key="MTL_SL_RMA7012"
+>
+    <hud_icon filename="MTL_SL_RMA7012.png" />
+    <inventory encumbrance="1.0" price="1000.0" />
+    <model mesh_filename="MTL_SL_RMA7012.mesh" texture_filename="MTL_SL_RMA7012.png" />
+    <commonness value="0.1" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_SL_RMA7024" 
+key="MTL_SL_RMA7024"
+>
+    <hud_icon filename="MTL_SL_RMA7024.png" />
+    <inventory encumbrance="1.0" price="3000.0" />
+    <model mesh_filename="MTL_SL_RMA7024.mesh" texture_filename="MTL_SL_RMA7024.png" />
+    <commonness value="0.03" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_SL_RUSH1" 
+key="MTL_SL_RUSH1"
+>
+    <hud_icon filename="MTL_SL_RUSH1.png" />
+    <inventory encumbrance="1.0" price="100.0" />
+    <model mesh_filename="MTL_SL_RUSH1.mesh" texture_filename="MTL_SL_RUSH1.png" />
+    <commonness value="1.0" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_SL_RUSH2" 
+key="MTL_SL_RUSH2"
+>
+    <hud_icon filename="MTL_SL_RUSH2.png" />
+    <inventory encumbrance="1.0" price="300.0" />
+    <model mesh_filename="MTL_SL_RUSH2.mesh" texture_filename="MTL_SL_RUSH2.png" />
+    <commonness value="0.3" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_SL_RUSH3" 
+key="MTL_SL_RUSH3"
+>
+    <hud_icon filename="MTL_SL_RUSH3.png" />
+    <inventory encumbrance="1.0" price="1000.0" />
+    <model mesh_filename="MTL_SL_RUSH3.mesh" texture_filename="MTL_SL_RUSH3.png" />
+    <commonness value="0.1" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_SL_RUSH4" 
+key="MTL_SL_RUSH4"
+>
+    <hud_icon filename="MTL_SL_RUSH4.png" />
+    <inventory encumbrance="1.0" price="3000.0" />
+    <model mesh_filename="MTL_SL_RUSH4.mesh" texture_filename="MTL_SL_RUSH4.png" />
+    <commonness value="0.03" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_SL_STRG1" 
+key="MTL_SL_STRG1"
+>
+    <hud_icon filename="MTL_SL_STRG1.png" />
+    <inventory encumbrance="1.0" price="100.0" />
+    <model mesh_filename="MTL_SL_STRG1.mesh" texture_filename="MTL_SL_STRG1.png" />
+    <commonness value="1.0" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_SL_STRG2" 
+key="MTL_SL_STRG2"
+>
+    <hud_icon filename="MTL_SL_STRG2.png" />
+    <inventory encumbrance="1.0" price="300.0" />
+    <model mesh_filename="MTL_SL_STRG2.mesh" texture_filename="MTL_SL_STRG2.png" />
+    <commonness value="0.3" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_SL_STRG3" 
+key="MTL_SL_STRG3"
+>
+    <hud_icon filename="MTL_SL_STRG3.png" />
+    <inventory encumbrance="1.0" price="1000.0" />
+    <model mesh_filename="MTL_SL_STRG3.mesh" texture_filename="MTL_SL_STRG3.png" />
+    <commonness value="0.1" in_stock="1" />
+</carry_item>
+<carry_item file="_usable_item.base" 
+name="MTL_SL_STRG4" 
+key="MTL_SL_STRG4"
+>
+    <hud_icon filename="MTL_SL_STRG4.png" />
+    <inventory encumbrance="1.0" price="3000.0" />
+    <model mesh_filename="MTL_SL_STRG4.mesh" texture_filename="MTL_SL_STRG4.png" />
+    <commonness value="0.03" in_stock="1" />
+</carry_item>
+
+</carry_items>

@@ -44,43 +44,11 @@ class schedule_Manager : Tracker {
         m_players = getPlayers(m_metagame);
         _log("schedule_Manager initiate");
     }
-
-    protected void handlePlayerDisconnectEvent(const XmlElement@ event) {
-        //m_players = getPlayers(m_metagame);
-    }
-    protected void handlePlayerConnectEvent(const XmlElement@ event) {
-        //m_players = getPlayers(m_metagame);
-    }
-    protected void handlePlayerSpawnEvent(const XmlElement@ event) {
-        const XmlElement@ player = event.getFirstElementByTagName("player");
-        update_info(player);
-        if(g_debugMode){
-            _report(m_metagame,"Update PlayerInfo");
-        }
-
-    }
-    protected void handlePlayerDieEvent(const XmlElement@ event) {
-        _log("handlePlayerDieEvent");
-        const XmlElement@ element = event.getFirstElementByTagName("target");
-		if(element is null){return;}
-        int cid = element.getIntAttribute("character_id");
-        if(g_IRQ.cidValid(cid)){    //用于判断玩家的角色是否有效（如死亡）
-            g_IRQ.set(cid,false);
-        }
-        string name = element.getStringAttribute("name");
-        if(g_playerInfoBuck.exists(name)){
-            g_playerInfoBuck.removeByName(name);
-            if(g_debugMode){
-                _report(m_metagame,"remove PlayerInfo");
-            }
-        }
-    }
-
+    
     void start(){
         m_ended = false;
-        
     }
-
+    // --------------------------------------------
     void update(float time) {
         m_timer -= time;
         if(m_timer <= 0.0){
@@ -88,7 +56,17 @@ class schedule_Manager : Tracker {
             m_timer = m_time;
         }
     }
-
+    // --------------------------------------------
+	bool hasEnded() const {
+		// always on
+		return false;
+	}
+	// --------------------------------------------
+	bool hasStarted() const {
+		// always on
+		return true;
+	}
+    // --------------------------------------------
     void refresh(){
         _log("S_Manager refresh");
         m_players = getPlayers(m_metagame);
@@ -101,7 +79,48 @@ class schedule_Manager : Tracker {
             auto_heal(player);
         }
     }
+    // --------------------------------------------
+    protected void handlePlayerDisconnectEvent(const XmlElement@ event) {
+        const XmlElement@ player = event.getFirstElementByTagName("player");
+       string name = player.getStringAttribute("name");
+        if(g_playerInfoBuck.exists(name)){
+            g_playerInfoBuck.removeByName(name);
+            if(g_debugMode){
+                _report(m_metagame,"remove PlayerInfo for "+name);
+            }
+        }
+    }
+    // --------------------------------------------
+    protected void handlePlayerConnectEvent(const XmlElement@ event) {
+        //m_players = getPlayers(m_metagame);
+    }
+    // --------------------------------------------
+    protected void handlePlayerSpawnEvent(const XmlElement@ event) {
+        const XmlElement@ player = event.getFirstElementByTagName("player");
+        update_info(player);
+        if(g_debugMode){
+            _report(m_metagame,"Update PlayerInfo");
+        }
 
+    }
+    // --------------------------------------------
+    protected void handlePlayerDieEvent(const XmlElement@ event) {
+        _log("handlePlayerDieEvent");
+        const XmlElement@ element = event.getFirstElementByTagName("target");
+		if(element is null){return;}
+        int cid = element.getIntAttribute("character_id");
+        if(g_IRQ.cidValid(cid)){    //用于判断玩家的角色是否有效（如死亡）
+            g_IRQ.set(cid,false);
+        }
+        string name = element.getStringAttribute("name");
+        if(g_playerInfoBuck.exists(name)){
+            g_playerInfoBuck.removeByName(name);
+            if(g_debugMode){
+                _report(m_metagame,"remove PlayerInfo for "+name);
+            }
+        }
+    }
+    // --------------------------------------------
     void update_info(const XmlElement@ player){
         if(player is null){return;}
         string name = player.getStringAttribute("name");
@@ -122,24 +141,13 @@ class schedule_Manager : Tracker {
             g_playerInfoBuck.addNewInfo(name,pid,cid,fid,dead,wound,xp,rp,group);
         }
     }
-
+    // --------------------------------------------
     void auto_heal(const XmlElement@ player){
         _log("S_Manager auto_heal");
         schedule_AutoHeal@ new_task = schedule_AutoHeal(m_metagame,player);
         TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
         tasker.add(new_task);
     }
-
-    // --------------------------------------------
-	bool hasEnded() const {
-		// always on
-		return false;
-	}
-	// --------------------------------------------
-	bool hasStarted() const {
-		// always on
-		return true;
-	}
     // ----------------------------------------------------
 	protected void handleMatchEndEvent(const XmlElement@ event) {
         g_IRQ.clearAll();
@@ -148,6 +156,13 @@ class schedule_Manager : Tracker {
 
     // --------------------------------------------
     protected void handleResultEvent(const XmlElement@ event) {
+        handleInterruptibleEvent(event);
+    }
+    // --------------------------------------------
+    protected void handleItemDropEvent(const XmlElement@ event) {
+    }
+    // --------------------------------------------
+    protected void handleInterruptibleEvent(const XmlElement@ event) {
         string EventKeyGet = event.getStringAttribute("key");
         _log("schedule_Manager event key= " + EventKeyGet);
         bool flag;
@@ -192,7 +207,7 @@ class schedule_Manager : Tracker {
                 tasker.add(new_task);
             }
         }
-
     }
+
 }
 

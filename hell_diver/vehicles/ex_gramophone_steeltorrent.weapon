@@ -57,7 +57,7 @@ radius="0.3"
     <stance state_key="over_wall" accuracy="1" />     
      
     <commonness value="0" can_respawn_with="0" in_stock="1" /> 
-    <inventory encumbrance="10" price="3000.0" />
+    <inventory encumbrance="10" sell_price="0" buy_price="3000.0" />
     <modifier class="speed" value="-0.5" />    
 	 
 </weapon>

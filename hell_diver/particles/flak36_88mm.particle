@@ -1,0 +1,413 @@
+particle_system flak36_muzzle_behind_smoke		
+{
+	quota 500
+    emit_emitter_quota 500
+	material crescent_smoke_alpha
+	particle_width 0.5
+	particle_height 0.5
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_type oriented_self
+	emitter Point{
+		angle 20
+		colour 0.5 0.5 0.5 0.3
+		direction 0 1 0
+		emission_rate 1000
+		position 0 -0.2 0
+		velocity_min -1
+        velocity_max -4.1
+		time_to_live_min 0.6
+        time_to_live_max 0.8
+		duration 0.1
+	}
+    affector ColourFader2{
+		red1	-0.2
+		green1  -0.2
+		blue1	-0.2
+		alpha1	0
+		red2	 0
+		green2  0
+		blue2	0
+		alpha2	-0.5
+		state_change 0.3
+	}
+    affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+    affector Scaler{
+		rate 2
+	}
+}
+
+particle_system flak36_muzzle_spread_smoke		
+{
+	quota 500
+	material explosion_smoke_01_alpha
+	particle_width 0.7
+	particle_height 0.7
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_type point
+	emitter Ring{
+		angle 45
+		colour 0.7 0.7 0.7 0.15
+		direction 0 -10 0
+		emission_rate 1000
+		position 0 0 0
+		velocity -0.8
+        velocity_max -2.4
+		time_to_live 1.5
+		duration 0.3
+        depth 0.1
+        width 1.
+        height 1.
+	}
+    affector Scaler{
+		rate 0.4
+	}
+        affector ColourFader2{
+		red1	-0
+		green1  -0
+		blue1	-0
+		alpha1	0
+		red2	 0
+		green2  0
+		blue2	0
+		alpha2	-0.05
+		state_change 1.5
+	}
+}
+
+particle_system flak36_muzzle_front_smoke		
+{
+	quota 500
+	material explosion_smoke_01_alpha
+	particle_width 1
+	particle_height 1
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_type point
+	emitter Point{
+		angle 0
+		colour 0.5 0.5 0.5 0.5
+		direction 0 1 0
+		emission_rate 800
+		position 0 0 0
+		velocity_min 0
+        velocity_max 6
+		time_to_live 2
+		duration 0.15
+	}	
+    affector Rotator{
+		rotation_speed_range_start	-180
+		rotation_speed_range_end	180
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+    affector ColourFader2{
+		red1	0.1
+		green1  0.1
+		blue1	0.1
+		alpha1	0
+		red2	 0
+		green2  0
+		blue2	0
+		alpha2	-0.5
+		state_change 2
+	}
+    affector DirectionRandomiser
+	{
+		randomness 8
+		scope 50
+		keep_velocity true
+	}
+    affector Scaler{
+		rate 0.5
+	}
+}
+particle_system flak36_muzzle_fire_light_01		
+{
+	quota 500
+	material impact_through_effect_01
+	particle_width 5
+	particle_height 5
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_type oriented_self
+	emitter Point{
+		angle 0
+		colour 1 0.3 0 1
+		direction 0 1 0
+		emission_rate 200
+		position 0 0 0
+		velocity 0.01
+		time_to_live 0.05
+		duration 0.05
+	}	
+}
+particle_system flak36_muzzle_fire_light_02 : flak36_muzzle_fire_light_01		
+{
+    particle_width 0.9
+	particle_height 0.9
+	material muzzleflash_01
+    emitter Point{
+        angle 80
+        velocity_min 8
+        velocity_max 12
+        emission_rate 300
+        position 0 0 0
+        time_to_live 0.2
+    }
+    affector ColourFader2{
+		red1	10
+		green1  3
+		blue1	0.1
+		alpha1	0
+		red2	 0
+		green2  0
+		blue2	0
+		alpha2	0
+		state_change 0.2
+	}
+}
+
+
+particle_system flak36_hit_smoke_dark_smoke		
+{
+	quota 500
+	material explosion_smoke_01_alpha
+	particle_width 1
+	particle_height 1
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_type point
+	emitter Ring{
+		angle 0
+		colour 0.5 0.5 0.5 0.2
+		direction 0 1 0
+		emission_rate 500
+		position 0 0 0
+		velocity 0.2
+		time_to_live 0.7
+		duration 0.2
+        depth 2
+        height 5
+        width 5
+        inner_height 0.2
+        inner_wideh 0.2
+	}
+    affector Rotator{
+		rotation_speed_range_start	-180
+		rotation_speed_range_end	180
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+    affector Scaler{rate 1.5}
+}
+particle_system flak36_hit_smoke_explosion_smoke		
+{
+	quota 500
+	material blast2_texture_rumbler
+	particle_width 8
+	particle_height 8
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_type point
+	emitter Point{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity 0.1
+		time_to_live 0.2
+		duration 0.1
+	}
+    affector Scaler{rate -10}
+}
+particle_system flak36_hit_linear_light
+{
+	quota 500
+	material point_hard_edge
+	particle_width 0.1
+	particle_height 2
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_type oriented_self
+	emitter Point{
+		angle 180
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 200
+		position 0 0 0
+		velocity 30
+		time_to_live 0.1
+		duration 0.1
+	}
+    affector ColourFader2{
+		red1	10
+		green1  -10
+		blue1	-10
+		alpha1	-0
+		red2	 0
+		green2  0
+		blue2	0
+		alpha2	0
+		state_change 0
+	}
+}
+particle_system flak36_hit_cross_blast
+{
+	quota 500
+    emit_emitter_quota 500
+	material blast_smoke_cross_alpha
+	particle_width 1
+	particle_height 1
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_type oriented_self
+    accurate_facing on
+	emitter Ring{
+		angle 0
+		colour 1 1 0 1
+		direction 1 0 0
+		emission_rate 100
+		position 0 0 0
+		velocity 0.1
+		time_to_live 0.1
+		duration 0.1
+        depth 4
+        width 6
+        height 6
+        emit_emitter tag1
+	}
+    emitter Point{
+        name tag1
+		angle 180
+		colour 0.7 0.7 0.7 0.5
+		direction 0 0 1
+		emission_rate 200
+		position 0 0 0
+		velocity 1
+		time_to_live 0.6
+		duration 0.1
+    }
+        affector ColourFader2{
+		red1	-0.3
+		green1  -0.3
+		blue1	-0.3
+		alpha1	-0.3
+		red2	 0
+		green2  0
+		blue2	0
+		alpha2	0
+		state_change 0
+	}
+}
+particle_system flak36_activated_trail_smoke
+{
+	quota 500
+	material trail_smoke
+	particle_width 0.5
+	particle_height 0.5
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_type point
+    accurate_facing on
+    iteration_interval 0.01
+	emitter Point{
+		angle 0
+		colour 0.7 0.7 0.7 1
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 0.01
+		time_to_live 0.2
+		duration 2
+	}
+    affector Scaler{rate 1}
+    affector ColourFader2{
+        red1	1
+		green1  1
+		blue1	1
+		alpha1	1
+        red2	 -1.2
+		green2  -1.2
+		blue2	-1.2
+		alpha2	-2
+		state_change 0.3
+    }
+}
+------------------material------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material crescent_smoke_alpha : alpha_blend_base
+{   technique{pass{texture_unit{
+				texture crescent_smoke_alpha.png 	
+}}}}
+
+material explosion_smoke_01_alpha : alpha_blend_base
+{   technique{pass{texture_unit{
+				texture explosion_smoke_01_alpha.png 	
+}}}}
+
+material blast_smoke_cross_alpha : alpha_blend_base
+{   technique{pass{texture_unit{
+				texture blast_smoke_cross_alpha.png 	
+}}}}
+
+material blast2_texture_rumbler : alpha_blend_base
+{   technique{pass{
+    lighting on
+    emissive 1 1 1 1
+    texture_unit{
+				texture blast2_texture_rumbler.png 	
+}}}}
+
+material trail_smoke : alpha_blend_base
+{   technique{pass{texture_unit{
+				texture rx1_smoke.png 	
+}}}}
+
+
+material muzzleflash_01 : add_base
+{   technique{pass{texture_unit{
+				texture muzzleflash_01.png 	
+}}}}
+
+material flame_trail {
+	receive_shadows off
+	technique {
+		pass {
+			lighting off
+			fog_override false
+			depth_write off
+			scene_blend alpha_blend
+			texture_unit {
+				texture flamestrail.png 	
+			}
+		}
+	}
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carry_items>
+<carry_item 
+name="Iron" 
+key="collect_mc_iron.carry_item"
+file="_loot_normal.base"
+>
+    <hud_icon filename="mc_iron.png" />
+    <inventory  price="50.0" />
+    <model mesh_filename="collect_mc_iron.mesh" texture_filename="collect_mc_iron.jpg" />
+</carry_item>
+<carry_item 
+name="Gold" 
+key="collect_mc_gold.carry_item"
+file="_loot_normal.base"
+>
+    <hud_icon filename="mc_gold.png" />
+    <inventory  price="100.0" />
+    <model mesh_filename="collect_mc_gold.mesh" texture_filename="collect_mc_gold.jpg" />
+</carry_item>
+<carry_item 
+name="Emerald" 
+key="collect_mc_emerald.carry_item"
+file="_loot_normal.base"
+>
+    <hud_icon filename="mc_emerald.png" />
+    <inventory  price="500.0" />
+    <model mesh_filename="collect_mc_emerald.mesh" texture_filename="collect_mc_emerald.jpg" />
+</carry_item>
+<carry_item 
+name="Diamond" 
+key="collect_mc_diamond.carry_item"
+file="_loot_normal.base"
+>
+    <hud_icon filename="mc_diamond.png" />
+    <inventory  price="250.0" />
+    <model mesh_filename="collect_mc_diamond.mesh" texture_filename="collect_mc_diamond.jpg" />
+</carry_item>
+</carry_items>

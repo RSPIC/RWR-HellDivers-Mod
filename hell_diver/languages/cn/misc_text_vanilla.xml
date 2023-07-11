@@ -874,6 +874,13 @@
 	<text key="HongXue [Skill]"  text="鸿雪 [技能-反中甲]" />
 	<text key="HongXue"  text="鸿雪 [反重甲]" />
 	<text key="shuiniao"  text="水鸟 [反重甲]" />
+	<text key="sinteria"  text="白金 [反中甲]" />
+	<text key="sinteria [Skill]"  text="白金 [技能-反重甲]" />
+	<text key="G41[Beach Punk 2077]"  text="G41 [沙滩朋克-2077][反中甲]" />
+	<text key="G41[Miko's Cannon][Diffusion]"  text="G41 [巫女炮-散射][反重甲]" />
+	<text key="G41[Miko's Cannon][Railgun]"  text="G41 [巫女炮-激光][反重甲]" />
+	<text key="Bronya [Skill]"  text="布洛妮娅 [技能][反重甲]" />
+	<text key="Bronya [Skill]"  text="布洛妮娅 [技能][反重甲]" />
 
 <!-- 信物 -->
 	<text key="Asakaze [Skin]"  text="朝风 [信物]" />
@@ -939,6 +946,7 @@
 	<text key="Amamia Kokoro [Skin]"  text="阿喵喵 [信物]" />
 	<text key="Patricia Abelheim [Skin]"  text="帕特莉夏·阿贝尔海姆 [信物]" />
 	<text key="G41 [SchoolSuit Ver.][Skin]"  text="G41 [校服 Ver.] [信物]" />
+	<text key="Lappland [Refined Horrormare Ver.][Skin]"  text="拉普兰德 [典雅噩兆 Ver.] [信物]" />
 
 <!-- ex武器 -->
 	<text key="Leviathan Breath"  text="利维坦之息 [反重甲]" />
@@ -1109,6 +1117,7 @@
 	<text key="Tank Melee"  text="坦克虫" />
 	<text key="Stalker Melee"  text="追踪虫" />
 	<text key="Shadow Melee"  text="黑暗影者" />
+	<text key="Shadow Alert"  text="黑暗影者" />
 	<text key="Scout Melee"  text="侦查虫" />
 	<text key="Impaler Melee"  text="刺钉虫" />
 	<text key="Elite Melee"  text="精英部队" />
@@ -1244,6 +1253,7 @@
 	<text key="Admiral of Super Earth" text="超级地球元帅 V50" />
 
 	<text key="SuperEarth" text="超级地球" />
+	<text key="Super Earth" text="超级地球" />
 
 <!-- 教程 -->
 	<text key="Tutor Help" text="[教程]如何游玩本MOD" />
@@ -1384,7 +1394,114 @@
 	<text key="Reward Box [Vehicle]" text="奖励箱子 [载具]" />
 	<text key="Reward Box [Weapon I]" text="奖励箱子 [武器 I]" />
 	<text key="Reward Box [Weapon II]" text="奖励箱子 [武器 II]" />
+<!-- 结算 -->
+	<text key="Battle End Reward XP" text="战役结算-经验奖励" />
+	<text key="Battle End Reward RP" text="战役结算-货币奖励" />
+	<text key="BattleEndRewardRP" text="战役结算：
+击杀数量 = &#37;kc （+&#37;kx rp）
+最大连杀 = &#37;oc （+&#37;ox rp）
+支线任务 = &#37;mc （+&#37;mx rp） 
+游玩时长 = &#37;pt （+&#37;px rp） 
+误伤玩家 = &#37;tc （-&#37;tx rp） 
+倍率因子 = &#37;bf （X&#37;bf 倍）
+总计收益 = &#37;rp
+" />
+	<text key="BattleEndRewardXP" text="战役结算：
+击杀数量 = &#37;kc （+&#37;kx xp）
+最大连杀 = &#37;oc （+&#37;ox xp）
+支线任务 = &#37;mc （+&#37;mx xp） 
+游玩时长 = &#37;pt （+&#37;px xp） 
+误伤玩家 = &#37;tc （-&#37;tx xp） 
+阵亡次数 = &#37;dc （-&#37;dx xp） 
+倍率因子 = &#37;bf （X&#37;bf 倍） 
+总计收益 = &#37;xp
+" />
+	<text key="Game OverTime,Force to Win" text="战役超时(2小时)，自动结算" />
 
+<!-- 升级护甲 -->
+	<text key="AutoHeal Remove" text="自动回血 移除" />
+	<text key="AutoHeal Set" text="自动回血 启用" />
+	<text key="StratagemsPriority Upgrade to MAX" text="战略呼叫优先权 已达满级" />
+	<text key="StratagemsPriority Upgrade 1" text="战略呼叫优先权 已升级 I" />
+	<text key="StratagemsPriority Upgrade 2" text="战略呼叫优先权 已升级 II" />
+	<text key="StratagemsPriority Upgrade 3" text="战略呼叫优先权 已升级 III" />
+	<text key="StratagemsPriority Upgrade 4" text="战略呼叫优先权 已升级 IV" />
+	<text key="StratagemsPriority Upgrade 5" text="战略呼叫优先权 已升级 V" />
+	<text key="AutoRecover Remove" text="倒地自起 移除" />
+	<text key="AutoRecover Set" text="倒地自起 启用" />
+
+	<text key="Vest OnLoad" text="护甲已装载" />
+	<text key="Up to Upgrade Limit" text="已达升级上限" />
+
+	<text key="Vest Speed Upgrade" text="护甲速度升级[本局有效][1w/3W/7W]" />
+	<text key="Vest Armor Upgrade" text="护甲层数升级[本局有效][1W/3W/7W]" />
+	<text key="Vest Auto Recover Upgrade" text="护甲倒地自起 开/关[1w Rp]" />
+	<text key="Vest Stratagems Priority Upgrade" text="战略呼叫优先权升级[本局有效][每级 -10%冷却][5k rp]" />
+	<text key="Vest Auto Heal Upgrade" text="护甲回血增强 开/关[3w Rp]" />
+	<text key="Vest Clear Upgrade" text="清空护甲增益" />
+	<text key="Vest Upgeade Clear" text="护甲增益已清除" />
+
+	<text key="Insufficient Rp" text="RP 不足" />
+	<text key="Insufficient RP" text="RP 需要保证3倍以上的金额才可购买" />
+	<text key="Insufficient Xp" text="XP 不足" />
+	<text key="Insufficient XP" text="XP 需要保证3倍以上的金额才可购买" />
+
+	<text key="Battle Over" text="战役已结束，操作无效" />
+
+<!-- 钱 -->
+	<text key="Money [10W]" text="交易用钞票 [十万]" />
+	<text key="Money [1W]" text="交易用钞票 [一万]" />
+	<text key="Money [1k]" text="交易用钞票 [一千]" />
+	<text key="Money [100]" text="交易用钞票 [一百]" />
+<!-- 加成道具 -->
+	<text key="Bonus card" text="全局加成卡" />
+	<text key="Bonus card [XP]" text="经验加成卡" />
+	<text key="Bonus card [RP]" text="资源加成卡" />
+
+	<text key="The bonus has taken effect" text="加成已生效" />
+	<text key="The bonus can only be applied once" text="加成只能生效一次" />
+
+<!-- 方舟战利品 -->
+	<text key="MTL_GOLD1" text="赤金碎片" />
+	<text key="MTL_GOLD2" text="赤金矿" />
+	<text key="MTL_GOLD3" text="赤金" />
+	<text key="MTL_BASE_SL1" text="碳" />
+	<text key="MTL_BASE_SL2" text="碳素" />
+	<text key="MTL_BASE_SL3" text="碳素组" />
+	<text key="MTL_BASE_SYNTH1" text="基础加固建材" />
+	<text key="MTL_BASE_SYNTH2" text="进阶加固建材" />
+	<text key="MTL_BASE_SYNTH3" text="高级加固建材" />
+	<text key="MTL_SL_ALCOHOL1" text="扭转醇" />
+	<text key="MTL_SL_ALCOHOL2" text="白马醇" />
+	<text key="MTL_SL_BOSS1" text="破损装置" />
+	<text key="MTL_SL_BOSS2" text="装置" />
+	<text key="MTL_SL_BOSS3" text="全新装置" />
+	<text key="MTL_SL_BOSS4" text="改良装置" />
+	<text key="MTL_SL_G1" text="源岩" />
+	<text key="MTL_SL_G2" text="固源岩" />
+	<text key="MTL_SL_G3" text="固源岩组" />
+	<text key="MTL_SL_G4" text="提纯源岩" />
+	<text key="MTL_SL_IRON1" text="异铁碎片" />
+	<text key="MTL_SL_IRON2" text="异铁" />
+	<text key="MTL_SL_IRON3" text="异铁组" />
+	<text key="MTL_SL_IRON4" text="异铁块" />
+	<text key="MTL_SL_MANGANESE1" text="轻锰矿" />
+	<text key="MTL_SL_MANGANESE2" text="三水锰矿" />
+	<text key="MTL_SL_PG1" text="研磨石" />
+	<text key="MTL_SL_PG2" text="五水研磨石" />
+	<text key="MTL_SL_RMA7012" text="RMA70-12" />
+	<text key="MTL_SL_RMA7024" text="RMA70-24" />
+	<text key="MTL_SL_RUSH1" text="酯原料" />
+	<text key="MTL_SL_RUSH2" text="聚酸酯" />
+	<text key="MTL_SL_RUSH3" text="聚酸酯组" />
+	<text key="MTL_SL_RUSH4" text="聚酸酯块" />
+	<text key="MTL_SL_STRG1" text="代糖" />
+	<text key="MTL_SL_STRG2" text="糖" />
+	<text key="MTL_SL_STRG3" text="糖组" />
+	<text key="MTL_SL_STRG4" text="糖聚块" />
+
+<!-- 彩票 -->
+	<text key="Fate Coin" text="命运硬币" />
 
 </translation>
 

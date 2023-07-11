@@ -242,6 +242,7 @@ class itemdrop_event : Tracker {
 
 	protected void handleItemDropEvent(const XmlElement@ event) {
 		string itemKey = event.getStringAttribute("item_key");
+		banVest(event);
 		//todo:在此处判断在字典里存在然后选择是否返回，减少下列查询消耗。
 		if(	string(resupply_key[itemKey]) == "" 			&&
 			string(resupply_getitem_key[itemKey]) == "" 	&&
@@ -448,5 +449,18 @@ class itemdrop_event : Tracker {
 			}
 		}
     }
+	//-------------------------------------------------------
+	protected void banVest(const XmlElement@ event){
+		string itemKey = event.getStringAttribute("item_key");
+		string targetVestKey = "hd_v";
+		string tempKey = itemKey.substr(0,targetVestKey.size());
+		int characterId = event.getIntAttribute("character_id");
+		if(characterId == -1){return;}
+		if(tempKey == targetVestKey){
+			deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
+			deleteItemInStash(m_metagame,characterId,"carry_item",itemKey);
+		}
+	}
+	
 
 }

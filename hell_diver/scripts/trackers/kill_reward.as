@@ -12,7 +12,7 @@
 //Author:RST
 //特殊武器可以击杀回甲，同时队友伤害会扣甲
 //能够指定一定经验区间使用某种武器击杀特定对象获得额外收益
-//TK反伤功能：一次倒地，倒地状态tk直接死亡
+//TK反伤功能
 // --------------------------------------------
 //可恢复护甲的击杀武器，数字为回复甲层数
 dictionary healable_weapon = {
@@ -96,7 +96,9 @@ class tk_info{
         uint killTimes;
         uint AllkillTimes = 0;
 		if(kill_target_count.get(TargetName,killTimes)){
-			_report(m_metagame,"getKill times="+TargetName+" "+killTimes);
+			if(g_debugMode){
+				_report(m_metagame,"getKill times="+TargetName+" "+killTimes);
+			}
 			killTimes += 1;
 			kill_target_count.set(TargetName,killTimes);
 			if(killTimes >= 5){
@@ -110,7 +112,9 @@ class tk_info{
 			}
 		}else{
 			kill_target_count.set(TargetName,1);
-			_report(m_metagame,"create tkinfo for="+killerName+" "+TargetName);
+			if(g_debugMode){
+				_report(m_metagame,"create tkinfo for="+killerName+" "+TargetName);
+			}
 		}
 
 		array<string> keys = kill_target_count.getKeys();
@@ -119,7 +123,9 @@ class tk_info{
 			string key = keys[i];
 			if(kill_target_count.get(key,killTimes)){
 				AllkillTimes += killTimes;
-				_report(m_metagame,"getAll Kill times="+key+" "+killTimes);
+				if(g_debugMode){
+					_report(m_metagame,"getAll Kill times="+key+" "+killTimes);
+				}
 			}
 			if(AllkillTimes >= 12){
 				m_deadth = true;
@@ -202,9 +208,11 @@ class kill_reward : Tracker {
 		int killer_xp = killer.getIntAttribute("xp");
 		int killer_cid = killer.getIntAttribute("id");
 		int killer_fid = killer.getIntAttribute("faction_id");
-
+		string k_name = g_playerInfoBuck.getNameByCid(killer_cid);
+		string t_name = g_playerInfoBuck.getNameByPid(t_pid);
 		_log("execute kill_reward");
 		if (killer !is null && target !is null && killer_fid != target_fid) {
+			g_battleInfoBuck.addKill(k_name);
 			int healnum = 0;
 			if(healable_weapon.get(weaponKey,healnum)){//执行：可恢复护甲的击杀武器
 				healCharacter(m_metagame,killer_cid,healnum);
@@ -224,10 +232,9 @@ class kill_reward : Tracker {
 			}
 		}
 		if(k_pid != -1 && t_pid != -1 && k_pid != t_pid){//玩家TK
+			g_battleInfoBuck.addTk(k_name);
 			const XmlElement@ k_character = getCharacterInfo(m_metagame,killer_cid);
 			int wound = k_character.getIntAttribute("wounded");
-			string k_name = g_playerInfoBuck.getNameByCid(killer_cid);
-			string t_name = g_playerInfoBuck.getNameByPid(t_pid);
 			for(uint i = 0 ; i < m_tkInfo.size() ; ++i){
 				if(m_tkInfo[i].isUpToTkLimit(k_name,t_name)){
 					if(wound == 0 && !m_tkInfo[i].isTodeadth(k_name)){
@@ -249,3 +256,5 @@ class kill_reward : Tracker {
 		}
 	}
 }
+
+

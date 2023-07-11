@@ -391,22 +391,75 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 
 		array<array<ScoredResource@>> rewardPasses = {		
         	{
+		ScoredResource("MTL_GOLD1", "carry_item", 10.0f),     
+		ScoredResource("MTL_GOLD2", "carry_item", 3.0f),     
+		ScoredResource("MTL_GOLD3", "carry_item", 1.0f),     
+		ScoredResource("MTL_BASE_SL1", "carry_item", 10.0f),     
+		ScoredResource("MTL_BASE_SL2", "carry_item", 3.0f),     
+		ScoredResource("MTL_BASE_SL3", "carry_item", 1.0f),     
+		ScoredResource("MTL_BASE_SYNTH1", "carry_item", 10.0f),     
+		ScoredResource("MTL_BASE_SYNTH2", "carry_item", 3.0f),     
+		ScoredResource("MTL_BASE_SYNTH3", "carry_item", 1.0f),     
+		ScoredResource("MTL_SL_ALCOHOL1", "carry_item", 10.0f),     
+		ScoredResource("MTL_SL_ALCOHOL2", "carry_item", 2.0f),     
+		ScoredResource("MTL_SL_BOSS1", "carry_item", 10.0f),     
+		ScoredResource("MTL_SL_BOSS2", "carry_item", 3.0f),     
+		ScoredResource("MTL_SL_BOSS3", "carry_item", 1.0f),     
+		ScoredResource("MTL_SL_BOSS4", "carry_item", 0.3f),     
+		ScoredResource("MTL_SL_G1", "carry_item", 10.0f),     
+		ScoredResource("MTL_SL_G2", "carry_item", 3.0f),     
+		ScoredResource("MTL_SL_G3", "carry_item", 1.0f),     
+		ScoredResource("MTL_SL_G4", "carry_item", 0.3f),     
+		ScoredResource("MTL_SL_IRON1", "carry_item", 10.0f),     
+		ScoredResource("MTL_SL_IRON2", "carry_item", 3.0f),     
+		ScoredResource("MTL_SL_IRON3", "carry_item", 1.0f),     
+		ScoredResource("MTL_SL_IRON4", "carry_item", 0.3f),     
+		ScoredResource("MTL_SL_MANGANESE1", "carry_item", 2.0f),     
+		ScoredResource("MTL_SL_MANGANESE2", "carry_item", 0.4f),     
+		ScoredResource("MTL_SL_PG1", "carry_item", 2.0f),     
+		ScoredResource("MTL_SL_PG2", "carry_item", 0.5f),     
+		ScoredResource("MTL_SL_RMA7012", "carry_item", 1.0f),     
+		ScoredResource("MTL_SL_RMA7024", "carry_item", 0.3f),     
+		ScoredResource("MTL_SL_RUSH1", "carry_item", 10.0f),     
+		ScoredResource("MTL_SL_RUSH2", "carry_item", 3.0f),     
+		ScoredResource("MTL_SL_RUSH3", "carry_item", 1.0f),     
+		ScoredResource("MTL_SL_RUSH4", "carry_item", 0.3f),     
+		ScoredResource("MTL_SL_STRG1", "carry_item", 10.0f),     
+		ScoredResource("MTL_SL_STRG2", "carry_item", 3.0f),     
+		ScoredResource("MTL_SL_STRG3", "carry_item", 1.0f),     
+		ScoredResource("MTL_SL_STRG4", "carry_item", 0.3f),     
 
-		ScoredResource("collect_mc_iron.carry_item", "carry_item", 100.0f),     
-		ScoredResource("collect_mc_gold.carry_item", "carry_item", 50.0f),     
-		ScoredResource("collect_mc_diamond.carry_item", "carry_item", 25.0f),     
-		ScoredResource("collect_mc_emerald.carry_item", "carry_item", 10.0f),     
-                    
-		ScoredResource("reward_box_collection.carry_item", "carry_item", 10.0f),
-		ScoredResource("reward_box_skin.carry_item", "carry_item", 10.0f),
-		ScoredResource("reward_box_music.carry_item", "carry_item", 10.0f), 
-		ScoredResource("reward_box_vehicle.carry_item", "carry_item", 10.0f),                       
-		ScoredResource("reward_box_weapon_1.carry_item", "carry_item", 1.0f)
-		//期望＞15w
+		ScoredResource("reward_box_collection.carry_item", "carry_item", 6.0f),
+		ScoredResource("reward_box_skin.carry_item", "carry_item", 30.0f),
+		ScoredResource("reward_box_music.carry_item", "carry_item", 15.0f), 
+		ScoredResource("reward_box_vehicle.carry_item", "carry_item", 24.0f),                       
+		ScoredResource("reward_box_weapon_1.carry_item", "carry_item", 3.0f)
+		//期望＞32w
 
 			},
 			{
-			ScoredResource("balloon.carry_item", "carry_item", 1.0f)
+			ScoredResource("balloon.carry_item", "carry_item", 100.0f),
+
+			ScoredResource("hd_bonusfactor_al_10", "carry_item", 1.0f),
+			ScoredResource("hd_bonusfactor_al_20", "carry_item", 0.6f),
+			ScoredResource("hd_bonusfactor_al_45", "carry_item", 0.2f),
+			ScoredResource("hd_bonusfactor_al_75", "carry_item", 0.1f),
+			ScoredResource("hd_bonusfactor_al_125", "carry_item", 0.05f),
+			ScoredResource("hd_bonusfactor_al_240", "carry_item", 0.01f),
+
+			ScoredResource("hd_bonusfactor_xp_10", "carry_item", 1.0f),
+			ScoredResource("hd_bonusfactor_xp_20", "carry_item", 0.6f),
+			ScoredResource("hd_bonusfactor_xp_45", "carry_item", 0.2f),
+			ScoredResource("hd_bonusfactor_xp_75", "carry_item", 0.1f),
+			ScoredResource("hd_bonusfactor_xp_125", "carry_item", 0.05f),
+			ScoredResource("hd_bonusfactor_xp_240", "carry_item", 0.01f),
+
+			ScoredResource("hd_bonusfactor_rp_10", "carry_item", 1.0f),
+			ScoredResource("hd_bonusfactor_rp_20", "carry_item", 0.6f),
+			ScoredResource("hd_bonusfactor_rp_45", "carry_item", 0.2f),
+			ScoredResource("hd_bonusfactor_rp_75", "carry_item", 0.1f),
+			ScoredResource("hd_bonusfactor_rp_125", "carry_item", 0.05f),
+			ScoredResource("hd_bonusfactor_rp_240", "carry_item", 0.01f)
 			}
 		};   
     

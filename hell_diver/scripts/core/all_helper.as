@@ -467,4 +467,3 @@ void setWoundCharacter(const Metagame@ m_metagame,int characterId){
 		"</command>";
 	m_metagame.getComms().send(command);
 }
-
