@@ -43,7 +43,7 @@ class schedule_Interruptible_task : Task{
     protected Metagame@ m_metagame;
     protected float m_time;
     protected float m_timer;
-    protected float m_timer_ex;
+    protected float m_timer_ex; //预留
     protected string m_key;     //记录格式为 cid+玩家名+键值
     protected bool m_ended;
     protected bool isShutDown;
@@ -69,6 +69,7 @@ class schedule_Interruptible_task : Task{
         m_ended = false;
         isStart = true;
         isShutDown = false;
+        if(m_player is null){return;}
         if(!m_player.hasAttribute("profile_hash")){
             isPlayer = false;
         }
@@ -103,6 +104,7 @@ class schedule_Interruptible_task : Task{
     }
 
     protected void MyTask(){
+        if(m_player is null){return;}
         string p_name = m_player.getStringAttribute("name");
         uint start = formatInt(m_cid).length() + p_name.length();
         string target_key = m_key.substr(start);

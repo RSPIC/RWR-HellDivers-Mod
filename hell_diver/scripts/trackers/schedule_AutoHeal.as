@@ -48,9 +48,12 @@ class schedule_AutoHeal : Task {
 
     protected void AutoHeal_Task(Metagame@ metagame,const XmlElement@&in player){
 		if(player is null){return;}
+		if(g_vestInfoBuck is null){return;}
 		//自动回甲
 		int cid = player.getIntAttribute("character_id");
 		string name = player.getStringAttribute("name");
+        _log("autoheal cid="+cid);
+        _log("autoheal name="+name);
         const XmlElement@ character = getCharacterInfo(m_metagame,cid);
         if(character is null){return;}
         int wounded = character.getIntAttribute("wounded");
@@ -66,9 +69,9 @@ class schedule_AutoHeal : Task {
                     weapon2Key = weapon2Key.substr(0,key2[j].length());
                     if(equipKey == key[i]){    
                         if(weapon2Key == key2[j] || g_vestInfoBuck.getAutoHeal(name)){
-                            healCharacter(metagame,cid,8);
+                            healCharacter(metagame,cid,20);
                         }else{
-                            healCharacter(metagame,cid,4);
+                            healCharacter(metagame,cid,10);
                         }
                         if(g_debugMode){
                             _report(m_metagame,"schedule_AutoHeal is Run");

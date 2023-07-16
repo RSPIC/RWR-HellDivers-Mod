@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<weapons>
+<weapon 
+file="_rare_weapon_mk4.base" 
+key="acg_ba_alice_railgun_ex.weapon"
+>
+    <tag name="sniper" />
+    <specification 
+	retrigger_time="2.2" 
+	accuracy_factor="1" 
+	sustained_fire_grow_step="2.0" 
+	sustained_fire_diminish_rate="2.0" 
+	magazine_size="3" 
+	can_shoot_standing="1" 
+	can_shoot_crouching="1" 
+	suppressed="0" 
+	name="Alice [Railgun EX]" 
+	class="0" 
+	reload_one_at_a_time="0" 
+	sight_range_modifier="2.0" 
+	projectile_speed="200.0" 
+	barrel_offset="1.55" 
+	projectiles_per_shot="7" 
+	burst_shots="1"
+	cooldown_start="0.1"
+	cooldown_end="0"
+	/>
+  
+	<next_in_chain key="acg_ba_alice_railgun.weapon" share_ammo="0" />
+  
+    <animation state_key="recoil"  animation_key="hd_heavy_recoil" />
+    <animation key="cycle" ref="30" />
+    <animation state_key="reload" animation_key="hd_heavy_reload_2.5s" />
+	<animation state_key="next_in_chain_in" animation_key="hd_heavy_chain_in" />
+	<animation state_key="hold" animation_key="hd_heavy_still" />
+    <animation state_key="hold_casual"  animation_key="hd_heavy_still" />
+    <animation state_key="hold_on_wall" animation_key="hd_heavy_still" />
+    <animation state_key="still_against_wall"   animation_key="hd_heavy_still" />
+    <animation state_key="crouching"    animation_key="hd_heavy_crouching" />
+    <animation state_key="crouch_moving"    animation_key="hd_heavy_crouch_moving" />
+    <animation state_key="crouch_moving_backwards"  animation_key="hd_heavy_crouch_moving_backwards" />
+    <animation state_key="running" animation_key="hd_heavy_running" />
+    <animation state_key="walking"  animation_key="hd_heavy_walking" />
+    <animation state_key="walking_backwards" animation_key="hd_heavy_walking_backwards" />
+
+     
+    <sound key="fire" fileref="ba_alice_fire.wav" pitch_variety="0.00"  volume="1" />
+	<sound key="cooldown" fileref="ba_alice_reload.wav" pitch_variety="0.00"  volume="1" />
+    <sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="ba_alice_charge_ex.wav" volume="1"/><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="pf98_cycle_in.wav" volume="0.3"/><!--动作中in的value为1-->
+    <sound key="cycle" fileref="m79_cycle.wav" volume="0.3"/><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="hd_cycle_in_01.wav" /><!--动作中in的value为1-->
+    
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+
+    <model filename="acgw_aris_railgun_ex.xml" />
+    <hud_icon filename="acg_aris_railgun_ex.png" />
+
+    <weak_hand_hold offset="0.3" />
+    <!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
+    <projectile file="hd_general_spawn_no_effect.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0" name="Alice LaserCannon" radius="1.0"> 
+	
+        <result class="blast" radius="4.0" damage="45" push="0.9" decal="0" character_state="wound" faction_compare="not_equal"/>
+   
+		<trigger class="impact" time_to_live="1.22"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+	
+		<sound class="result" key="other" fileref="ba_alice_hit.wav" pitch_variety="0.03" volume="1.0" />
+
+		<trail probability="1" key="alice_laser"/>
+
+		 <effect class="activated" ref="ba_alice_result_smoke2"/>
+		 <effect class="activated" ref="ba_alice_result_impact2"/>
+		 <effect class="activated" ref="ba_alice_result_light2"/>
+
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+    </projectile>
+	
+    <effect class="muzzle" ref="ba_alice_muzzle_pre_red_laser"/>
+    <effect class="muzzle" ref="ba_alice_muzzle_environment_light"/>
+    <effect class="muzzle" ref="ba_alice_muzzle_ring_01"/>
+    <effect class="muzzle" ref="ba_alice_muzzle_ring_02"/>
+    <effect class="muzzle" ref="ba_alice_muzzle_ring_03"/>
+    <effect class="muzzle" ref="ba_alice_muzzle_ring_04"/>
+    <effect class="muzzle" ref="ba_alice_muzzle_ring_05"/>
+    <effect class="muzzle" ref="ba_alice_muzzle_fire_anim"/>
+    <effect class="muzzle" ref="ba_alice_muzzle_yellow_light"/>
+</weapon>
+<weapon 
+file="_rare_weapon_mk4.base" 
+key="acg_ba_alice_railgun.weapon"
+>
+    <tag name="sniper" />
+    <specification 
+    accuracy_factor="1" 
+	retrigger_time="0.3" 
+	spread_range="0"
+    magazine_size="12" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+    carry_in_two_hands="1" 
+	sustained_fire_grow_step="1" 
+    sustained_fire_diminish_rate="1" 
+    name="Alice [Railgun]" 
+    class="0" 
+    consume="0" 
+    sight_range_modifier="2" 
+    slot="0" 
+	burst_shots="1"
+	barrel_offset="1.0"
+	use_basic_muzzle_smoke_effect="0"
+	projectile_speed="200.0"
+	/>
+  
+	<next_in_chain key="acg_ba_alice_railgun_ex.weapon" share_ammo="0" />
+  
+    <animation state_key="recoil"  animation_key="hd_heavy_recoil" />
+    <animation key="cycle" ref="30" />
+    <animation state_key="reload" animation_key="hd_heavy_reload_2.5s" />
+	<animation state_key="next_in_chain_in" animation_key="hd_heavy_chain_in" />
+	<animation state_key="hold" animation_key="hd_heavy_still" />
+    <animation state_key="hold_casual"  animation_key="hd_heavy_still" />
+    <animation state_key="hold_on_wall" animation_key="hd_heavy_still" />
+    <animation state_key="still_against_wall"   animation_key="hd_heavy_still" />
+    <animation state_key="crouching"    animation_key="hd_heavy_crouching" />
+    <animation state_key="crouch_moving"    animation_key="hd_heavy_crouch_moving" />
+    <animation state_key="crouch_moving_backwards"  animation_key="hd_heavy_crouch_moving_backwards" />
+    <animation state_key="running" animation_key="hd_heavy_running" />
+    <animation state_key="walking"  animation_key="hd_heavy_walking" />
+    <animation state_key="walking_backwards" animation_key="hd_heavy_walking_backwards" />
+     
+    <sound key="fire" fileref="ba_alice_fire.wav" pitch_variety="0.00"  volume="1" />
+    <sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="ba_alice_charge.wav" volume="1"/><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="pf98_cycle_in.wav" volume="0.3"/><!--动作中in的value为1-->
+    <sound key="cycle" fileref="m79_cycle.wav" volume="0.3"/><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="hd_cycle_in_01.wav" /><!--动作中in的value为1-->
+    
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+
+    <model filename="acgw_aris_railgun.xml" />
+    <hud_icon filename="acg_aris_railgun.png" />
+
+    <weak_hand_hold offset="0.3" />
+    <!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
+    <projectile file="hd_general_spawn_no_effect.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0" name="Alice LaserCannon" radius="0.6"> 
+	
+
+		<result class="spawn" instance_class="grenade" instance_key="acg_ba_alice_railgun_damage.projectile" 
+		min_amount="5" max_amount="7" offset="0 0 0" position_spread="1 1" direction_spread="0.0 0.0" />
+
+		<trigger class="impact" time_to_live="1.22"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+	
+		<sound class="result" key="other" fileref="ba_alice_hit.wav" pitch_variety="0.03" volume="1.0" />
+
+		<effect class="result" key="terrain" ref="ba_alice_result_light" lighting="0" post_processing="1"/>
+		<effect class="result" key="terrain" ref="ba_alice_result_impact" lighting="0" post_processing="1"/>
+		<effect class="result" key="terrain" ref="ba_alice_result_smoke" lighting="0" post_processing="0"/>
+		<effect class="activated" ref="ba_alice_activated_light" />
+		<trail probability="1" key="alice.trail"/>	
+
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+    </projectile>
+	
+	<effect class="muzzle" ref="ba_alice_muzzle_fire" lighting="0"/> 
+	<effect class="muzzle" ref="ba_alice_muzzle_smoke" lighting="0"/> 	
+
+</weapon>
+
+
+</weapons>

@@ -34,18 +34,17 @@ class schedule_Manager : Tracker {
     protected Metagame@ m_metagame;
     protected float m_time;
     protected float m_timer;
-    protected array<const XmlElement@> m_players;
     protected bool m_ended;
 
-    schedule_Manager(Metagame@ metagame,float time = 5.0){
+    schedule_Manager(Metagame@ metagame,float time = 10.0){
         @m_metagame = @metagame;
         m_time = time;   //5s一周期进行检测
         m_timer = m_time;
-        m_players = getPlayers(m_metagame);
         _log("schedule_Manager initiate");
     }
     
     void start(){
+        @g_IRQ = @_IRQ("",false); 
         m_ended = false;
     }
     // --------------------------------------------
@@ -54,7 +53,12 @@ class schedule_Manager : Tracker {
         if(m_timer <= 0.0){
             refresh();
             m_timer = m_time;
+            test();
         }
+    }
+    // --------------------------------------------
+    void test(){
+
     }
     // --------------------------------------------
 	bool hasEnded() const {
@@ -69,20 +73,22 @@ class schedule_Manager : Tracker {
     // --------------------------------------------
     void refresh(){
         _log("S_Manager refresh");
-        m_players = getPlayers(m_metagame);
+        array<const XmlElement@> m_players = getPlayers(m_metagame);
         if(m_players is null){return;}
         for (uint j = 0; j < m_players.size(); ++j) {
 			const XmlElement@ player = m_players[j];
 			if(player is null){return;}
             
-            update_info(player);
+            //update_info(player);
             auto_heal(player);
         }
     }
     // --------------------------------------------
     protected void handlePlayerDisconnectEvent(const XmlElement@ event) {
         const XmlElement@ player = event.getFirstElementByTagName("player");
-       string name = player.getStringAttribute("name");
+        if(player is null){return;}
+        if(g_playerInfoBuck is null){return;}
+        string name = player.getStringAttribute("name");
         if(g_playerInfoBuck.exists(name)){
             g_playerInfoBuck.removeByName(name);
             if(g_debugMode){
@@ -97,6 +103,7 @@ class schedule_Manager : Tracker {
     // --------------------------------------------
     protected void handlePlayerSpawnEvent(const XmlElement@ event) {
         const XmlElement@ player = event.getFirstElementByTagName("player");
+         if(player is null){return;}
         update_info(player);
         if(g_debugMode){
             _report(m_metagame,"Update PlayerInfo");
@@ -105,7 +112,9 @@ class schedule_Manager : Tracker {
     }
     // --------------------------------------------
     protected void handlePlayerDieEvent(const XmlElement@ event) {
-        _log("handlePlayerDieEvent");
+        if(g_IRQ is null){return;}
+        if(g_playerInfoBuck is null){return;}
+
         const XmlElement@ element = event.getFirstElementByTagName("target");
 		if(element is null){return;}
         int cid = element.getIntAttribute("character_id");

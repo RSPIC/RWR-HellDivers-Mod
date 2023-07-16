@@ -9,17 +9,7 @@
     <projectile file="cyborgs_warlord_main_damage.projectile" />
 	
 	<!-- 生成类弹头 -->
-    <projectile file="cyborgs_spawn_initiate.projectile" /><!--生成初始者-->
-    <projectile file="cyborgs_spawn_squadleader.projectile" /><!--生成“班长”战士-->
-    <projectile file="cyborgs_spawn_berserker.projectile" /><!--生成狂暴者-->
-    <projectile file="cyborgs_spawn_comrade.projectile" /><!--生成复合人-->
-    <projectile file="cyborgs_spawn_grotesque.projectile" /><!--生成畸形人-->
-    <projectile file="cyborgs_spawn_hound.projectile" /><!--生成猎犬-->
-    <projectile file="cyborgs_spawn_butcher.projectile" /><!--生成屠夫-->
-    <projectile file="cyborgs_spawn_legionnaire.projectile" /><!--生成军团士兵-->
-    <projectile file="cyborgs_spawn_immolator.projectile" /><!--生成生化兵-->
-    <projectile file="cyborgs_spawn_hulk.projectile" /><!--生成巨型者-->
-    <projectile file="cyborgs_spawn_warlord.projectile" /><!--生成首领-->
+    <projectile file="cyborgs_spawn.projectile" />
 
 	<!-- 辅助生成用弹头 -->
 	<projectile file="cyborgs_dropping_sound.projectile" />

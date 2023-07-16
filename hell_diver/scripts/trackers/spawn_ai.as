@@ -42,9 +42,12 @@ class spawn_ai : Tracker {
 
 	protected void handleResultEvent(const XmlElement@ event) {
 		// 空对象呼叫，无CID FID
+		if(g_factionInfoBuck is null){return;}
+
 		string EventKeyGet = event.getStringAttribute("key");	
 		Vector3 PosSpawnProjectile = stringToVector3(event.getStringAttribute("position"));
 		string Pos= event.getStringAttribute("position");
+		if(!isVectorInMap(stringToVector3(Pos))){return;}
 		if(g_factionInfoBuck.get(EventKeyGet)){
 			int fid = g_factionInfoBuck.getFidByGroupName(EventKeyGet);
 			SpawnSoldier(m_metagame,1,fid,PosSpawnProjectile,EventKeyGet);

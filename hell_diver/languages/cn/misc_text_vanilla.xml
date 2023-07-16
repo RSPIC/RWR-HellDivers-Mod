@@ -867,20 +867,22 @@
 	<text key="Fiammetta Skill"  text="菲娅梅塔 '你须偿还' [技能-反重甲]" />
 	<text key="Fiammetta GL"  text="菲娅梅塔 [榴弹-反轻甲]" />
 	<text key="Fiammetta"  text="菲娅梅塔" />
-	<text key="Patricia Abelheim [FatalDrive]"  text="帕蒂 [致命驱动]" />
-	<text key="Patricia Abelheim [CumForce]"  text="帕蒂 [累计武力]" />
-	<text key="Patricia Abelheim [PhantomFang]"  text="帕蒂 [幻影獠牙]" />
-	<text key="Patricia Abelheim [JihadSlash]"  text="帕蒂 [圣域斩击]" />
+	<text key="Patricia Abelheim [FatalDrive]"  text="帕蒂 [致命驱动][反重甲]" />
+	<text key="Patricia Abelheim [CumForce]"  text="帕蒂 [累计武力][反重甲]" />
+	<text key="Patricia Abelheim [PhantomFang]"  text="帕蒂 [幻影獠牙][反重甲]" />
+	<text key="Patricia Abelheim [JihadSlash]"  text="帕蒂 [圣域斩击][反重甲]" />
 	<text key="HongXue [Skill]"  text="鸿雪 [技能-反中甲]" />
 	<text key="HongXue"  text="鸿雪 [反重甲]" />
 	<text key="shuiniao"  text="水鸟 [反重甲]" />
 	<text key="sinteria"  text="白金 [反中甲]" />
 	<text key="sinteria [Skill]"  text="白金 [技能-反重甲]" />
 	<text key="G41[Beach Punk 2077]"  text="G41 [沙滩朋克-2077][反中甲]" />
-	<text key="G41[Miko's Cannon][Diffusion]"  text="G41 [巫女炮-散射][反重甲]" />
+	<text key="G41[Miko's Cannon][Diffusion]"  text="G41 [巫女炮-散射][反中甲]" />
 	<text key="G41[Miko's Cannon][Railgun]"  text="G41 [巫女炮-激光][反重甲]" />
 	<text key="Bronya [Skill]"  text="布洛妮娅 [技能][反重甲]" />
 	<text key="Bronya [Skill]"  text="布洛妮娅 [技能][反重甲]" />
+	<text key="Alice [Railgun EX]"  text="天童爱丽丝 [光之剑：超新星EX][反重甲]" />
+	<text key="Alice [Railgun]"  text="天童爱丽丝 [光之剑：超新星][反中甲]" />
 
 <!-- 信物 -->
 	<text key="Asakaze [Skin]"  text="朝风 [信物]" />
@@ -1307,7 +1309,7 @@
 	<text key="EXO Armor offload" text="机甲护甲已卸载" />
 
 	<text key="Help - Patricia" text="本武器开火具有前摇，前摇状态无法移动并且隐形状态仍能够被攻击。每局首次持有本武器会发放致命驱动技能武器，使用次数为5次。
-	【注意】使用副手技能时必须保证主手武器为 帕特莉夏·阿贝尔海姆 的武器，否则会直接倒地" />
+	【注意】使用副手技能时必须保证主手武器为[帕特莉夏·阿贝尔海姆]的武器，否则会直接倒地" />
 	<text key="Patricia Help" text="[帕特莉夏·阿贝尔海姆 特殊武器介绍]" />
 
 	<text key="Stratagems Call" text="[教程]战略呼叫机制" />
@@ -1501,7 +1503,15 @@
 	<text key="MTL_SL_STRG4" text="糖聚块" />
 
 <!-- 彩票 -->
-	<text key="Fate Coin" text="命运硬币" />
+	<text key="Fate Coin" text="命运硬币 [40%返一倍 10%返三倍 1%返十倍]" />
+	<text key="FateCoin Result" text="命运硬币结果= &#37;rp Rp" />
+	<text key="Processing" text="处理中，稍后再试" />
+	<text key="Lottery Guaranteed Reward [10]" text="十连保底奖励已发放" />
+	<text key="Lottery Guaranteed Reward [300]" text="三百连保底奖励已发放" />
+	<text key="Lottery ticket [Cash]" text="刮刮乐[三百万大奖]" />
+	<text key="GuaGuaLe" text="刮刮乐：您的号码[&#37;mynum] 中奖号码[&#37;tgnum]" />
+	<text key="GuaGuaLeReward" text="玩家[&#37;player]抽取到号码[&#37;tgnum]，获得了百万大奖！" />
+	<text key="GuaGuaLeRewardTitle" text="刮刮乐百万大奖揭晓" />
 
 </translation>
 

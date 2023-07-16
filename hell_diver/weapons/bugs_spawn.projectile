@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectiles>
+<projectile
+class="grenade" 
+name="Spawn Impaler" 
+key="bugs_spawn_Impaler.projectile" 
+slot="0" 
+radius="0.15" 
+time_to_live_out_in_the_open="0.0" 
+drop_count_factor_on_death="0.0"
+pulldown_in_air="40.0"
+>
+	<result class="notify_script" key="Impaler" />
+    <trigger class="impact" time_to_live="0.0"/>
+    <rotation class="random" />
+	<model mesh_filename="" />
+    <hud_icon filename="bugs_icon.png" />
+    <throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
+    <capacity value="0" source="rank" source_value="0.0" /> 
+    <capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+</projectile>
+<projectile
+class="grenade" 
+name="Spawn Tank" 
+key="bugs_spawn_Tank.projectile" 
+slot="0" 
+radius="0.15" 
+time_to_live_out_in_the_open="0.0" 
+drop_count_factor_on_death="0.0"
+pulldown_in_air="40.0"
+>
+	<result class="notify_script" key="Tank" />
+    <trigger class="impact" time_to_live="0.0"/>
+    <rotation class="random" />
+	<model mesh_filename="" />
+    <hud_icon filename="bugs_icon.png" />
+    <throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
+    <capacity value="0" source="rank" source_value="0.0" /> 
+    <capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+</projectile>
+<projectile
+class="grenade" 
+name="Spawn Behemoth" 
+key="bugs_spawn_Behemoth.projectile" 
+slot="0" 
+radius="0.15" 
+time_to_live_out_in_the_open="0.0" 
+drop_count_factor_on_death="0.0"
+pulldown_in_air="40.0"
+>
+	<result class="notify_script" key="Behemoth" />
+    <trigger class="impact" time_to_live="0.0"/>
+    <rotation class="random" />
+	<model mesh_filename="" />
+    <hud_icon filename="bugs_icon.png" />
+    <throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
+    <capacity value="0" source="rank" source_value="0.0" /> 
+    <capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+</projectile>
+<projectile
+class="grenade" 
+name="Spawn BroodCommander" 
+key="bugs_spawn_BroodCommander.projectile" 
+slot="0" 
+radius="0.15" 
+time_to_live_out_in_the_open="0.0" 
+drop_count_factor_on_death="0.0"
+pulldown_in_air="40.0"
+>
+	<result class="notify_script" key="BroodCommander" />
+    <trigger class="impact" time_to_live="0.0"/>
+    <rotation class="random" />
+	<model mesh_filename="" />
+    <hud_icon filename="bugs_icon.png" />
+    <throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
+    <capacity value="0" source="rank" source_value="0.0" /> 
+    <capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+</projectile>
+<projectile
+class="grenade" 
+name="Spawn Elite" 
+key="bugs_spawn_Elite.projectile" 
+slot="0" 
+radius="0.15" 
+time_to_live_out_in_the_open="0.0" 
+drop_count_factor_on_death="0.0"
+pulldown_in_air="40.0"
+>
+	<result class="notify_script" key="Elite" />
+    <trigger class="impact" time_to_live="0.0"/>
+    <rotation class="random" />
+	<model mesh_filename="" />
+    <hud_icon filename="bugs_icon.png" />
+    <throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
+    <capacity value="0" source="rank" source_value="0.0" /> 
+    <capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+</projectile>
+<projectile
+class="grenade" 
+name="Spawn Warrior" 
+key="bugs_spawn_Warrior.projectile" 
+slot="0" 
+radius="0.15" 
+time_to_live_out_in_the_open="0.0" 
+drop_count_factor_on_death="0.0"
+pulldown_in_air="40.0"
+>
+	<result class="notify_script" key="Warrior" />
+    <trigger class="impact" time_to_live="0.0"/>
+    <rotation class="random" />
+	<model mesh_filename="" />
+    <hud_icon filename="bugs_icon.png" />
+    <throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
+    <capacity value="0" source="rank" source_value="0.0" /> 
+    <capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+</projectile>
+<projectile
+class="grenade" 
+name="Spawn Stalker" 
+key="bugs_spawn_Stalker.projectile" 
+slot="0" 
+radius="0.15" 
+time_to_live_out_in_the_open="0.0" 
+drop_count_factor_on_death="0.0"
+pulldown_in_air="40.0"
+>
+	<result class="notify_script" key="Stalker" />
+    <trigger class="impact" time_to_live="0.0"/>
+    <rotation class="random" />
+	<model mesh_filename="" />
+    <hud_icon filename="bugs_icon.png" />
+    <throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
+    <capacity value="0" source="rank" source_value="0.0" /> 
+    <capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+</projectile>
+<projectile
+class="grenade" 
+name="Spawn Shadow" 
+key="bugs_spawn_Shadow.projectile" 
+slot="0" 
+radius="0.15" 
+time_to_live_out_in_the_open="0.0" 
+drop_count_factor_on_death="0.0"
+pulldown_in_air="40.0"
+>
+	<result class="notify_script" key="Shadow" />
+    <trigger class="impact" time_to_live="0.0"/>
+    <rotation class="random" />
+	<model mesh_filename="" />
+    <hud_icon filename="bugs_icon.png" />
+    <throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
+    <capacity value="0" source="rank" source_value="0.0" /> 
+    <capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+</projectile>
+<projectile
+class="grenade" 
+name="Spawn Vanguard" 
+key="bugs_spawn_Vanguard.projectile" 
+slot="0" 
+radius="0.15" 
+time_to_live_out_in_the_open="0.0" 
+drop_count_factor_on_death="0.0"
+pulldown_in_air="40.0"
+>
+	<result class="notify_script" key="Vanguard" />
+    <trigger class="impact" time_to_live="0.0"/>
+    <rotation class="random" />
+	<model mesh_filename="" />
+    <hud_icon filename="bugs_icon.png" />
+    <throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
+    <capacity value="0" source="rank" source_value="0.0" /> 
+    <capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+</projectile>
+<projectile
+class="grenade" 
+name="Spawn Scout" 
+key="bugs_spawn_Scout.projectile" 
+slot="0" 
+radius="0.15" 
+time_to_live_out_in_the_open="0.0" 
+drop_count_factor_on_death="0.0"
+pulldown_in_air="40.0"
+>
+	<result class="notify_script" key="Scout" />
+    <trigger class="impact" time_to_live="0.0"/>
+    <rotation class="random" />
+	<model mesh_filename="" />
+    <hud_icon filename="bugs_icon.png" />
+    <throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
+    <capacity value="0" source="rank" source_value="0.0" /> 
+    <capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+</projectile>
+
+</projectiles>

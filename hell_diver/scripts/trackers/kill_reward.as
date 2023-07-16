@@ -101,13 +101,13 @@ class tk_info{
 			}
 			killTimes += 1;
 			kill_target_count.set(TargetName,killTimes);
-			if(killTimes >= 5){
+			if(killTimes >= 4){
 				m_deadth = true;
 			}
-			if(killTimes >= 8){
+			if(killTimes >= 6){
 				m_banned = true;
 			}
-			if(killTimes >= 3){
+			if(killTimes >= 2){
 				return true;
 			}
 		}else{
@@ -127,13 +127,13 @@ class tk_info{
 					_report(m_metagame,"getAll Kill times="+key+" "+killTimes);
 				}
 			}
-			if(AllkillTimes >= 12){
+			if(AllkillTimes >= 10){
 				m_deadth = true;
 			}
 			if(AllkillTimes >= 20){
 				m_banned = true;
 			}
-			if(AllkillTimes >= 8){
+			if(AllkillTimes >= 5){
 				return true;
 			}
 		}
@@ -208,6 +208,8 @@ class kill_reward : Tracker {
 		int killer_xp = killer.getIntAttribute("xp");
 		int killer_cid = killer.getIntAttribute("id");
 		int killer_fid = killer.getIntAttribute("faction_id");
+		if(g_playerInfoBuck is null){return;}
+		if(g_battleInfoBuck is null){return;}
 		string k_name = g_playerInfoBuck.getNameByCid(killer_cid);
 		string t_name = g_playerInfoBuck.getNameByPid(t_pid);
 		_log("execute kill_reward");
@@ -234,6 +236,7 @@ class kill_reward : Tracker {
 		if(k_pid != -1 && t_pid != -1 && k_pid != t_pid){//玩家TK
 			g_battleInfoBuck.addTk(k_name);
 			const XmlElement@ k_character = getCharacterInfo(m_metagame,killer_cid);
+			if(k_character is null){return;}
 			int wound = k_character.getIntAttribute("wounded");
 			for(uint i = 0 ; i < m_tkInfo.size() ; ++i){
 				if(m_tkInfo[i].isUpToTkLimit(k_name,t_name)){

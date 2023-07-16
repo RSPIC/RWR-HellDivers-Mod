@@ -541,7 +541,7 @@ class stratagems_call : Tracker {
 		@m_metagame = @metagame;
 		@p_cd_lists = player_cd_bucket();
 		m_ended = false;
-		m_time = 3.0;
+		m_time = 1.0;
 		m_timer = m_time;
 		_log("stratagems_call initiate.");
 	}
@@ -559,6 +559,7 @@ class stratagems_call : Tracker {
 			_report(m_metagame,"战役结束，部署信标平台已撤离");
 			return;
 		}
+		if(p_cd_lists is null){return;}
         string message = event.getStringAttribute("message");
 		array<string> word = splitString(message," ");
 		int word_size = word.size();
@@ -574,10 +575,13 @@ class stratagems_call : Tracker {
 				if(!p_cd_lists.exists(p_name,stratagemsKey) ){
 					float cd = 12;
 					stratagems_CD.get(stratagemsKey,cd);
-					cd = cd*(1-0.1*g_vestInfoBuck.getStratagemsFirst(p_name));
+					if(g_vestInfoBuck !is null){
+						cd = cd*(1-0.1*g_vestInfoBuck.getStratagemsFirst(p_name));
+					}
 					p_cd_lists.addNew(p_name,pid,stratagemsKey,cd);
 					//_report(m_metagame,"add new cdList="+stratagemsKey);
 					const XmlElement@ player = getPlayerInfo(m_metagame,pid);
+					if(player is null){return;}
 					int cid = player.getIntAttribute("character_id");
 					string c = 
 					"<command class='update_inventory' character_id='" + cid + "' container_type_id='4' add='1'>" + 
@@ -606,6 +610,10 @@ class stratagems_call : Tracker {
 
         if(stratagems_call_notify_key.get(EventKeyGet,spawnkey)){
 			int characterId = event.getIntAttribute("character_id");
+			int fid = 0;
+			if(g_playerInfoBuck !is null){
+				fid = g_playerInfoBuck.getFidByCid(characterId);
+			}
 			//const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
 			//int factionid = character.getIntAttribute("faction_id");
 			//默认己方阵营,减小一次query查询
@@ -613,9 +621,9 @@ class stratagems_call : Tracker {
 			Orientation m_rotate = Orientation(0,1,0,0);
 			spawnVehicle(m_metagame,1,0,t_position.add(Vector3(0,50,0)),m_rotate,"hd_pod.vehicle");
 
-			spawnStaticProjectile(m_metagame,spawnkey,t_position,characterId,0);
-			spawnStaticProjectile(m_metagame,"hd_hellpod_dropping_damage.projectile",t_position,characterId,0);
-			spawnStaticProjectile(m_metagame,"hd_hellpod_dropping_sound.projectile",t_position,characterId,0);
+			spawnStaticProjectile(m_metagame,spawnkey,t_position,characterId,fid);
+			spawnStaticProjectile(m_metagame,"hd_hellpod_dropping_damage.projectile",t_position,characterId,fid);
+			spawnStaticProjectile(m_metagame,"hd_hellpod_dropping_sound.projectile",t_position,characterId,fid);
 		}
 	}
 
@@ -627,12 +635,13 @@ class stratagems_call : Tracker {
 
 	// --------------------------------------------
 	void update(float time) {
-		if(p_cd_lists !is null){
-			p_cd_lists.update(time,m_metagame);
-		}
 		m_timer -= time;
 		if(m_timer <= 0){
 			m_timer = m_time;
+			//每秒更新一次
+			if(p_cd_lists !is null){
+				p_cd_lists.update(m_time,m_metagame);
+			}
 		}
 	}
 

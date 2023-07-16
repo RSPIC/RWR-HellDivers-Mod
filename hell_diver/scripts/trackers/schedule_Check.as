@@ -45,9 +45,8 @@ class schedule_Check : Tracker {
     protected float m_time;
     protected float m_timer;
     protected bool m_ended;
-    protected array<first_use_info@> first_use_list;
 
-    schedule_Check(Metagame@ metagame,float time = 4){
+    schedule_Check(Metagame@ metagame,float time = 5){
         @m_metagame = @metagame;
         m_time = time;
         m_timer = m_time;
@@ -56,7 +55,6 @@ class schedule_Check : Tracker {
 
     void start(){
         m_ended = false;
-        
     }
     
     void update(float time){
@@ -78,14 +76,25 @@ class schedule_Check : Tracker {
 
     void refresh(){
         array<const XmlElement@> players = getPlayers(m_metagame);
+        if(players is null){return;}
 		for (uint j = 0; j < players.size(); ++j) {
 			const XmlElement@ player = players[j];
 			if(player is null){return;}
             if (player.hasAttribute("character_id")) {
-                Tutor_63type_107mm(m_metagame,player);
-                EXOArmorChange(m_metagame,player);
-                checkBanzai(m_metagame,player);
-                checkPatricia(m_metagame,player);
+                dictionary equipList;
+                int cid = player.getIntAttribute("character_id");
+                int fid = player.getIntAttribute("faction_id");
+                int pid = player.getIntAttribute("player_id");
+                string name = player.getStringAttribute("name");
+
+                if(!getPlayerEquipmentInfoArray(m_metagame,cid,equipList)){
+                    return;
+                }
+
+                Tutor_63type_107mm(m_metagame,name,pid,equipList);
+                EXOArmorChange(m_metagame,name,pid,cid,equipList);
+                checkBanzai(m_metagame,name,pid,equipList);
+                checkPatricia(m_metagame,name,pid,cid,equipList);
             }
         }
     }
@@ -112,32 +121,18 @@ class schedule_Check : Tracker {
         if(targetVestKey != equipKey){
             editPlayerVest(m_metagame,cid,targetVestKey,4);//替换为对应护甲
         }
-        // 开局首次复活会记录玩家护甲信息，因此这里读取不到玩家的对应护甲
+        // 开局首次复活会记录玩家护甲信息,因此这里读取不到玩家的对应护甲,需要再次替换
         if(targetVestKey == ""){    
             editPlayerVest(m_metagame,cid,"helldivers_vest.carry_item",4);//替换为默认甲
         }
 	}
     // ----------------------------------------------------
     protected void handlePlayerDisconnectEvent(const XmlElement@ event) {
-        const XmlElement@ player = event.getFirstElementByTagName("player");
-        if(player is null){return;}
-        string name = player.getStringAttribute("name");
-        for(uint i=0; i<first_use_list.size(); ++i){
-            if(first_use_list[i].getName() == name){
-                first_use_list.removeAt(i);
-                --i;
-            }
-        }
     }
     // ----------------------------------------------------
     protected void handlePlayerConnectEvent(const XmlElement@ event) {
         const XmlElement@ player = event.getFirstElementByTagName("player");
         if(player is null){return;}
-        string name = player.getStringAttribute("name");
-        first_use_info@ newinfo = first_use_info(name);
-        first_use_list.insertLast(newinfo);
-        //注册首次使用列表
-
         int pid = player.getIntAttribute("player_id");
         if(!g_debugMode && !g_online_TestMode){
 			gameHelp(m_metagame,pid);
@@ -147,36 +142,35 @@ class schedule_Check : Tracker {
         }
     }
     // ----------------------------------------------------
-	protected void checkBanzai(Metagame@ metagame,const XmlElement@&in player){
-		if(player is null){return;}
-        string key = "ex_cl_banzai.weapon";
-        string p_name = player.getStringAttribute("name");
-        for(uint i=0; i<first_use_list.size(); ++i){
-
-            int cid = player.getIntAttribute("character_id");
-            string equipKey_sec = getPlayerEquipmentKey(metagame,cid,1);//副手武器
-            if(equipKey_sec == "ex_cl_banzai.weapon" ){
-                if(first_use_list[i].isFirst(p_name,key)){
-                    int pid = player.getIntAttribute("player_id");
+	protected void checkBanzai(Metagame@ metagame,string&in name,int&in pid,dictionary&in equipList){
+		string equipKey;
+        if(equipList.get("1",equipKey)){//副手武器
+            if(equipKey == "ex_cl_banzai.weapon" ){
+                if(g_firstUseInfoBuck.isFirst(name,equipKey)){
                     notify(metagame, "Help - Banzai", dictionary(), "misc", pid, true, "Banzai Help", 1.0);
-                    //editPlayerVest(metagame,cid,"helldivers_vest.carry_item",4);//替换为默认甲，此处为防止过图卡脚本执行bug
-                    //不在这里检测了，防止以后有其他护甲然后在这里被替换掉
                 }
             }
         }
 	}
     // ----------------------------------------------------
-	protected void checkPatricia(Metagame@ metagame,const XmlElement@&in player){
-		if(player is null){return;}
-        string key = "acg_patricia_";
-        string p_name = player.getStringAttribute("name");
-        for(uint i=0; i<first_use_list.size(); ++i){
-            int cid = player.getIntAttribute("character_id");
-            string equipKey_main = getPlayerEquipmentKey(metagame,cid,0);//主武器
-            if(key == equipKey_main.substr(0,key.length()) ){
-                if(first_use_list[i].isFirst(p_name,key)){
-                    int pid = player.getIntAttribute("player_id");
+	protected void checkPatricia(Metagame@ metagame,string&in name,int&in pid,int&in cid,dictionary&in equipList){
+        string equipKey;
+        if(equipList.get("0",equipKey)){//主武器
+            string targetKey = "acg_patricia_";
+            equipKey = equipKey.substr(0,targetKey.length());
+            if(equipKey == targetKey){
+                if(g_firstUseInfoBuck.isFirst(name,equipKey)){
                     notify(metagame, "Help - Patricia", dictionary(), "misc", pid, true, "Patricia Help", 1.0);
+                    deleteItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
+                    deleteItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
+                    deleteItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
+                    deleteItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
+                    deleteItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
+                    deleteItemInStash(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
+                    deleteItemInStash(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
+                    deleteItemInStash(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
+                    deleteItemInStash(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
+                    deleteItemInStash(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
                     addItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
                     addItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
                     addItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
@@ -187,73 +181,55 @@ class schedule_Check : Tracker {
         }
 	}
     // ----------------------------------------------------
-	protected void Tutor_63type_107mm(Metagame@ metagame,const XmlElement@&in player){
-		if(player is null){return;}
-        string key = "63type_107mm_rocket_launcher_resource.weapon";
-        string p_name = player.getStringAttribute("name");
-        for(uint i=0; i<first_use_list.size(); ++i){
-            int cid = player.getIntAttribute("character_id");
-            string equipKey_sec = getPlayerEquipmentKey(metagame,cid,1);//副手武器
-            if(equipKey_sec == "63type_107mm_rocket_launcher_resource.weapon" ){
-                if(first_use_list[i].isFirst(p_name,key)){
-                int pid = player.getIntAttribute("player_id");
-                notify(metagame, "Help - 63Type 107mm", dictionary(), "misc", pid, true, "63Type 107mm Help", 1.0);
+	protected void Tutor_63type_107mm(Metagame@ metagame,string&in name,int&in pid,dictionary&in equipList){
+		string equipKey;
+        if(equipList.get("1",equipKey)){//副手武器
+            if(equipKey == "63type_107mm_rocket_launcher_resource.weapon" ){
+                if(g_firstUseInfoBuck.isFirst(name,equipKey)){
+                    notify(metagame, "Help - 63Type 107mm", dictionary(), "misc", pid, true, "63Type 107mm Help", 1.0);
                 }
             }
         }
 	}
     // ----------------------------------------------------
-	protected void EXOArmorChange(Metagame@ metagame,const XmlElement@&in player){
-		if(m_ended){return;}
-		if(player is null){return;}
+	protected void EXOArmorChange(Metagame@ metagame,string&in name,int&in pid,int&in cid,dictionary&in equipList){
 		//机甲检测
-		int pid = player.getIntAttribute("player_id");
-		int cid = player.getIntAttribute("character_id");
+        if(m_ended){return;}
+        string equipKey;    
+        uint amount;
 
-		string equipKey_main = getPlayerEquipmentKey(metagame,cid,0);//主手武器
-		int equipKey_main_amount = getPlayerEquipmentAmount(metagame,cid,0);//主手武器数量
-		string equipKey_sec = getPlayerEquipmentKey(metagame,cid,1);//副手武器
-		int equipKey_sec_amount = getPlayerEquipmentAmount(metagame,cid,1);//副手武器数量 
+		string equipKey_main = "";
+        equipList.get("0",equipKey_main);//主手武器
+        if(!equipList.get(equipKey_main,amount) || amount == 0){
+            equipKey_main = "";
+        }
+
+		string equipKey_sec = "";
+        equipList.get("1",equipKey_sec);//副手武器
+        if(!equipList.get(equipKey_sec,amount) || amount == 0){
+            equipKey_sec = "";
+        }
+       
+        string equipKey_vest = "";
+        equipList.get("4",equipKey_vest);//护甲
+
 		//slot: 0主手 1副手 2投掷物 4护甲
-		if(string(EXO_Armor[equipKey_sec]) != "" || string(EXO_Armor[equipKey_main]) != ""){
-            string first_key = "63type_107mm_rocket_launcher_resource.weapon";
-            string p_name = player.getStringAttribute("name");
-            for(uint i=0; i<first_use_list.size(); ++i){
-                if(first_use_list[i].isFirst(p_name,first_key)){
-                    notify(metagame, "Help - EXO-2", dictionary(), "misc", pid, true, "EXO-Help", 1.0);
-                    notify(metagame, "Help - EXO-3", dictionary(), "misc", pid, false, "EXO-Help", 1.0);
-                }
-            }
-			
+        string targetKey_main;
+        string targetKey_sec;
+        //主副手其中之一是否为机甲武器
+		if(EXO_Armor.get(equipKey_sec,targetKey_main) || EXO_Armor.get(equipKey_main,targetKey_sec)){
+            
 			//检查是否为配套武器（主手对应副手、副手对应主手)
-			if( equipKey_main == string(EXO_Armor[equipKey_sec]) ||  equipKey_sec == string(EXO_Armor[equipKey_main]) ||
-				string(EXO_Armor[equipKey_sec]) == "null" 		 ||  string(EXO_Armor[equipKey_main]) == "null"		
-			){
-				if(string(EXO_Armor[equipKey_sec]) == "null" ){
-					if(equipKey_main_amount != 0){
-						//非正常配装，发送警告
-						notify(metagame, "Warning - EXO single", dictionary(), "misc", pid, false, "EXO Warning", 1.0);
-						editPlayerVest(metagame,cid,"hd_v40",4);//替换为0层甲
-						return;
-					}
-				}
-				if(string(EXO_Armor[equipKey_main]) == "null" ){
-					if(equipKey_sec_amount != 0){
-						//非正常配装，发送警告
-						notify(metagame, "Warning - EXO single", dictionary(), "misc", pid, false, "EXO Warning", 1.0);
-						editPlayerVest(metagame,cid,"hd_v40",4);//替换为0层甲
-						return;
-					}
-				}
-				string equipKey_vest = getPlayerEquipmentKey(metagame,cid,4);//检查护甲
+            //交叉检测，这样设计武器时不用考虑在主手还是在副手的问题
+			if( equipKey_main == targetKey_main ||  equipKey_sec == targetKey_sec){
+                //装载机甲护甲
 				string key = "EXO_vest_";
-				equipKey_vest = equipKey_vest.substr(0,key.length());
-				if(equipKey_vest != key){
+				string tempKey = equipKey_vest.substr(0,key.length());
+				if(tempKey != key){
 					notify(metagame, "EXO Armor onload", dictionary(), "misc", pid, false, "", 1.0);
 					editPlayerVest(metagame,cid,"EXO_vest_300",4);
 					return;
 				}
-				
 			}else{
 				//非正常配装，发送警告
 				notify(metagame, "Warning - EXO", dictionary(), "misc", pid, false, "EXO Warning", 1.0);
@@ -261,10 +237,9 @@ class schedule_Check : Tracker {
 				return;
 			}
 		}else{ //卸下机甲
-			string equipKey_vest = getPlayerEquipmentKey(metagame,cid,4);//检查护甲
 			string key = "EXO_vest_";
-			equipKey_vest = equipKey_vest.substr(0,key.length());
-			if(equipKey_vest == key){
+			string tempKey = equipKey_vest.substr(0,key.length());
+			if(tempKey == key){
 				editPlayerVest(metagame,cid,"helldivers_vest.carry_item",4);
 				notify(metagame, "EXO Armor offload", dictionary(), "misc", pid, false, "", 1.0);
 				return;
@@ -307,7 +282,7 @@ class schedule_Check : Tracker {
         if(containerId == 3 || containerId == 2){//仓库或者背包
 				//1、防止利用刺雷护甲脚本BUG存放冲锋护甲
 		        int characterId = event.getIntAttribute("character_id");
-				array<string> vest_key = {"hd_banzai_"}; //指定护甲
+				array<string> vest_key = {"hd_banzai_","hd_v"}; //指定护甲
 				for(uint i=0; i<vest_key.length; i++){
 					string targetKey = itemKey.substr(0,vest_key[i].length());//截取指定前缀并比对
                     if(g_debugMode){

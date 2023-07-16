@@ -1,7 +1,7 @@
 #include "query_helpers2.as"
 #include "helpers.as"
 
-//Credit: NetherCrow & Saiwa & RW/Helldiver Staff
+//Credit: NetherCrow & Saiwa & RW/Helldiver Staff & Rst
 
 void spawnVehicle(Metagame@ metagame, uint count, uint factionId, Vector3 position, Orientation@ dir, string instanceKey) {
 	for (uint i = 0; i < count; ++i) {
@@ -295,6 +295,10 @@ void playRandomSoundArray(const Metagame@ metagame, array<string> arrays, int fa
 	string pos = position.toString();
 	playSoundAtLocation(metagame,arrays[soundrnd],factionId,pos,volume);
 }
+void playRandomSoundArray(const Metagame@ metagame, array<string> arrays, int factionId, string&in position, float volume=1.0){
+	int soundrnd= rand(0,arrays.length-1);
+	playSoundAtLocation(metagame,arrays[soundrnd],factionId,position,volume);
+}
 
 
 void deleteItemInBackpack(Metagame@ metagame, int characterId, string ItemType, string ItemKey){
@@ -351,7 +355,19 @@ string getPlayerEquipmentKey(const Metagame@ metagame, int characterId, uint slo
 	string ItemKey = equipment[slot].getStringAttribute("key");
 	return ItemKey;
 }
-
+bool getPlayerEquipmentInfoArray(const Metagame@ metagame, int&in characterId, dictionary&out list){
+	const XmlElement@ targetCharacter = getCharacterInfo2(metagame,characterId);
+	if (targetCharacter is null) return false;
+	array<const XmlElement@>@ equipment = targetCharacter.getElementsByTagName("item");
+	if (equipment.size() == 0) return false;
+	for(uint i = 0; i < 5; ++i){
+		string ItemKey = equipment[i].getStringAttribute("key");
+		uint amount = equipment[i].getIntAttribute("amount");
+		list.set(""+i,ItemKey);
+		list.set(ItemKey,amount);
+	}
+	return true;
+}
 string getDeadPlayerEquipmentKey(const Metagame@ metagame, int characterId, uint slot){
 	if (slot <0) return "";
 	if (slot >5) return "";
@@ -466,4 +482,17 @@ void setWoundCharacter(const Metagame@ m_metagame,int characterId){
 		"	wounded='1'>" + 
 		"</command>";
 	m_metagame.getComms().send(command);
+}
+
+bool isVectorInMap(Vector3&in position,int range = 32){
+	if(position.m_values[0] < range || position.m_values[0] > (1024-range) ){
+		return false;
+	}
+	if(position.m_values[1] < 0  ){
+		return false;
+	}
+	if(position.m_values[2] < range || position.m_values[2] > (1024-range) ){
+		return false;
+	}
+	return true;
 }

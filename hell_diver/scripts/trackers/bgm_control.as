@@ -158,14 +158,15 @@ class bgm_control : Tracker{
 
         array<string> @bgmList_searching = cyborgs_bgmList_searching;
         array<string> @bgmList_fight = cyborgs_bgmList_fight;
-
-        string f_name = g_factionInfoBuck.getNameByFid(1);
-        if(f_name == "Bugs"){
-            if(g_debugMode){
-                _report(m_metagame,"Faction Bugs BGM");
+        if(g_factionInfoBuck !is null){
+            string f_name = g_factionInfoBuck.getNameByFid(1);
+            if(f_name == "Bugs"){
+                if(g_debugMode){
+                    _report(m_metagame,"Faction Bugs BGM");
+                }
+                bgmList_searching = bugs_bgmList_searching;
+                bgmList_fight = bugs_bgmList_fight;
             }
-            bgmList_searching = bugs_bgmList_searching;
-            bgmList_fight = bugs_bgmList_fight;
         }
 
         string bgmName;

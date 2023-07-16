@@ -23,7 +23,7 @@ void main(dictionary@ inputData) {
         settings.m_playerAiReduction = 0.0;            // didn't work before 1.76! (was 1.0)
 
         settings.m_xpFactor = 2.0;
-        settings.m_rpFactor = 1.5;
+        settings.m_rpFactor = 1.0;
 
         settings.m_teamKillPenaltyEnabled = true;
         settings.m_completionVarianceEnabled = false;

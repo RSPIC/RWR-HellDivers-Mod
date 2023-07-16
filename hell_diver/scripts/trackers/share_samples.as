@@ -88,6 +88,7 @@ class share_samples : Tracker {
 				if(!sample_target_key.get(itemKey,targetKey)){return;}
 				for(uint i = 0; i < allPlayer.length(); i++){
 					const XmlElement@ player = allPlayer[i];
+					if(player is null){return;}
 					int cid = player.getIntAttribute("character_id");
 					int pid = player.getIntAttribute("player_id");
 					int fid = player.getIntAttribute("faction_id");

@@ -116,7 +116,7 @@ particle_system bugs_spawn_at_ground_smoke_leave : bugs_spawn_at_ground_smoke
 }
 particle_system bugs_spawn_at_ground_dust
 {
-	quota 200
+	quota 400
 	material Tex_Glow16A_pass
 	particle_width 4
 	particle_height 4
@@ -175,7 +175,7 @@ particle_system bugs_spawn_at_ground_dust
 
 particle_system bugs_spawn_at_ground_up_dust_1
 {
-	quota 150
+	quota 350
 	material Tex_Spark17A
 	particle_width 4
 	particle_height 4
@@ -229,7 +229,7 @@ particle_system bugs_spawn_at_ground_up_dust_3 : bugs_spawn_at_ground_up_dust_1
 
 particle_system bugs_spitter_splash 
 {
-	quota 200
+	quota 400
 	material Particle_Splash02
 	particle_width 10
 	particle_height 10
@@ -453,7 +453,7 @@ particle_system bugs_spitter_splash_single_activated2 : bugs_spitter_splash_sing
 
 particle_system bugs_behemoth_muzzle_side_dust
 {
-	quota 200
+	quota 400
 	material rush_dust_cull
 	particle_width 10
 	particle_height 10
@@ -652,7 +652,7 @@ particle_system bugs_behemoth_result_impact_cracks_small : bugs_behemoth_result_
 }
 particle_system bugs_behemoth_result_up_dust1
 {
-	quota 150
+	quota 350
 	material Tex_Spark17A
 	particle_width 7
 	particle_height 7
@@ -728,7 +728,7 @@ particle_system bugs_behemoth_result_up_dust4 : bugs_behemoth_result_up_dust1
 }
 particle_system bugs_behemoth_result_ambient_smoke		//环境烟雾
 {
-	quota 100
+	quota 300
 	material wand_smoke
 	particle_width 15
 	particle_height 15
@@ -786,7 +786,7 @@ particle_system bugs_behemoth_result_ambient_smoke_small : bugs_behemoth_result_
 }
 particle_system bugs_impaler_result_sharp_rock_still
 {
-	quota 200
+	quota 400
 	material Scifi_Sharp_Rock
 	particle_width 10
 	particle_height 20
@@ -835,7 +835,7 @@ particle_system bugs_impaler_result_sharp_rock_still
 }
 particle_system bugs_impaler_result_sharp_rock_up : bugs_impaler_result_sharp_rock_still
 {
-	quota 200
+	quota 400
 	material Scifi_Sharp_Rock_pass
 	emitter Ring
 	{
@@ -853,7 +853,7 @@ particle_system bugs_impaler_result_sharp_rock_up : bugs_impaler_result_sharp_ro
 }
 particle_system bugs_impaler_result_side_dust
 {
-	quota 200
+	quota 400
 	material rush_dust_cull
 	particle_width 7
 	particle_height 7

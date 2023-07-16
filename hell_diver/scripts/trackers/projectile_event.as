@@ -621,6 +621,7 @@ class projectile_event : Tracker {
                 }
                 
                 const XmlElement@ player = getPlayerInfo(m_metagame,pid);
+                if(player is null){return;}
                 int fid = 0;
                 Vector3 ePos = stringToVector3(player.getStringAttribute("aim_target"));
                 Vector3 sPos = ePos;
@@ -638,7 +639,6 @@ class projectile_event : Tracker {
                 ;
 
             }
-
 
             default:
                 break;            

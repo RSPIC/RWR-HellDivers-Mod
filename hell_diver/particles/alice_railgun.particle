@@ -5,12 +5,49 @@ author: RST
 		<effect class="result" key="terrain" ref="ba_alice_result_light" lighting="0" post_processing="1"/>
 		<effect class="result" key="terrain" ref="ba_alice_result_impact" lighting="0" post_processing="1"/>
 		<effect class="result" key="terrain" ref="ba_alice_result_smoke" lighting="0" post_processing="0"/>
+		<effect class="activated" ref="ba_alice_activated_light" />
 		<trail probability="1" key="alice.trail"/>	
 		
 		<effect class="muzzle" ref="ba_alice_muzzle_fire" lighting="0"/> 
 		<effect class="muzzle" ref="ba_alice_muzzle_smoke" lighting="0"/> 	
 		
+		
 
+particle_system ba_alice_activated_light
+{
+	quota 200
+	material point_soft_edge_100
+	particle_width 3
+	particle_height 3
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 80
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.01
+		duration 0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.3 0.3 1 1
+		time1 0.5
+		colour1 0.3 0.3 1 1
+		time2 1
+		colour2 0.3 0.3 1 1
+	}
+}
 particle_system ba_alice_muzzle_fire
 {
 	quota 50
@@ -112,7 +149,7 @@ particle_system ba_alice_muzzle_smoke
 }
 particle_system ba_alice_result_light
 {
-	quota 50
+	quota 250
 	material add_smoke_2_pass
 	particle_width 2.5
 	particle_height 2.5
@@ -156,9 +193,19 @@ particle_system ba_alice_result_light
 		colour2 0 0 0 0
 	}
 }
+particle_system ba_alice_result_light2 : ba_alice_result_light
+{
+	material point_soft_edge_100
+	emitter Point
+	{
+		emission_rate 20
+		duration 0
+		time_to_live 0.5
+	}
+}
 particle_system ba_alice_result_impact
 {
-	quota 50
+	quota 250
 	material explosion_smoke_05_bw_pass
 	particle_width 1
 	particle_height 1
@@ -202,9 +249,17 @@ particle_system ba_alice_result_impact
 		colour2 0 0 0 0
 	}
 }
+particle_system ba_alice_result_impact2 : ba_alice_result_impact
+{
+	emitter Point
+	{
+		emission_rate 20
+		duration 0
+	}
+}
 particle_system ba_alice_result_smoke
 {
-	quota 50
+	quota 250
 	material Particle_Dissolve_Cloud_01_pass
 	particle_width 1.5
 	particle_height 1.5
@@ -257,6 +312,383 @@ particle_system ba_alice_result_smoke
 		colour4 0 0 0 0
 	}
 }
+particle_system ba_alice_result_smoke2 : ba_alice_result_smoke
+{
+	particle_width 2
+	particle_height 2
+	emitter Ring
+	{
+		emission_rate 20
+		duration 0
+	}
+}
+------------------------------------------alice_laser_muzzle-------------------------
+particle_system ba_alice_muzzle_pre_red_laser		//预警告红线
+{
+	quota 300
+	material laser_soft_edge_01
+	particle_width 0.2
+	particle_height 250
+	renderer billboard
+	billboard_type oriented_self
+	emitter Point
+	{
+		angle 0
+		colour 1 0 0 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.001
+		time_to_live 0.5
+		duration 0.2
+	}
+	affector ColourFader2
+	{
+		red1	0
+		green1  0
+		blue1	0
+		alpha1	0
+		red2	 -5
+		green2  -5
+		blue2	-5
+		alpha2	-5
+		state_change 0.4
+	}
+
+}
+particle_system ba_alice_muzzle_environment_light		//环境光
+{
+	quota 300
+	material laser_soft_edge_01
+	particle_width  2
+	particle_height 250
+	renderer billboard
+	billboard_type oriented_self
+	emitter Point
+	{
+		angle 0
+		colour 0.01 0.03 0.2 0.1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.001
+		time_to_live 0.5
+		duration 0.2
+	}
+	affector ColourFader2
+	{
+		red1	-0.3
+		green1  -0.3
+		blue1	-0.3
+		alpha1	-0.3
+		red2	 -1
+		green2  -1
+		blue2	-1
+		alpha2	-1
+		state_change 0.3
+	}
+	affector Scaler
+	{
+		rate 1
+	}
+}
+particle_system ba_alice_muzzle_ring_01	//光环
+{
+	quota 1000
+	material quan_7_20_cull
+	particle_width 3
+	particle_height 3
+	renderer billboard
+	billboard_rotation_type vertex
+	billboard_type perpendicular_self
+	common_direction 1 0 1
+	common_up_vector 0 0 1
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0.2 0.1
+		direction 0 1 
+		emission_rate 200
+		position 0 0 0
+		velocity 10
+		time_to_live 0.5
+		duration 0.05
+	}
+	affector ColourFader2
+	{
+		red1	0
+		green1  0
+		blue1	10
+		alpha1	10
+		red2	 -5
+		green2  -5
+		blue2	-5
+		alpha2	-5
+		state_change 0.2
+	}
+	affector Scaler
+	{
+		rate 2
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	900
+		rotation_speed_range_end	900
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+}
+particle_system ba_alice_muzzle_ring_02	//光环
+{
+	quota 1000
+	material quan_7_20_cull
+	particle_width 4
+	particle_height 4
+	renderer billboard
+	billboard_rotation_type vertex
+	billboard_type perpendicular_self
+	common_direction 0 0 1
+	common_up_vector 0 1 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0.1 0.1
+		direction 0 1 
+		emission_rate 20
+		position 0 0 0
+		velocity 3
+		time_to_live 0.5
+		duration 0.05
+	}
+	affector ColourFader2
+	{
+		red1	0
+		green1  0
+		blue1	10
+		alpha1	10
+		red2	 -5
+		green2  -5
+		blue2	-5
+		alpha2	-5
+		state_change 0.2
+	}
+	affector Scaler
+	{
+		rate 3
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	900
+		rotation_speed_range_end	900
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+}
+------------------------------------ba_alice_gun_muzzle-------------------------
+particle_system ba_alice_muzzle_ring_03	//光环
+{
+	quota 1000
+	material lens_circle_01_cull
+	particle_width 1.5
+	particle_height 1.5
+	renderer billboard
+	billboard_rotation_type vertex
+	billboard_type perpendicular_self
+	common_direction 0 0 1
+	common_up_vector 0 1 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0.2 0.2 0.2 0.2
+		direction 0 1 
+		emission_rate 15
+		position 0 0 0
+		velocity 0.1
+		time_to_live 0.15
+		duration 0.05
+	}
+	affector ColourFader2
+	{
+		red1	0
+		green1  0
+		blue1	1
+		alpha1	1
+		red2	 -5
+		green2  -5
+		blue2	-5
+		alpha2	-5
+		state_change 0.05
+	}
+	affector Scaler
+	{
+		rate 10
+	}
+}
+particle_system ba_alice_muzzle_ring_04	//裂纹
+{
+	quota 1000
+	material hollow_blast_smoke_01
+	particle_width 2
+	particle_height 2
+	renderer billboard
+	billboard_rotation_type vertex
+	billboard_type perpendicular_self
+	common_direction 0 0 1
+	common_up_vector 0 1 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 
+		emission_rate 20
+		position 0 0 0
+		velocity 0.1
+		time_to_live 0.15
+		duration 0.05
+	}
+	affector ColourFader2
+	{
+		red1	0
+		green1  0
+		blue1	10
+		alpha1	10
+		red2	 -5
+		green2  -5
+		blue2	-5
+		alpha2	-5
+		state_change 0.1
+	}
+	affector Scaler
+	{
+		rate 40
+	}
+}
+particle_system ba_alice_muzzle_ring_05	//中心圆
+{
+	quota 1000
+	material point_soft_edge_100
+	particle_width 0.5
+	particle_height 0.5
+	renderer billboard
+	billboard_rotation_type vertex
+	billboard_type perpendicular_self
+	common_direction 0 0 1
+	common_up_vector 0 1 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0.5 1 1
+		direction 0 1 
+		emission_rate 20
+		position 0 0 0
+		velocity 0.1
+		time_to_live 0.5
+		duration 0.05
+	}
+	affector ColourFader2
+	{
+		red1	0
+		green1  0
+		blue1	0
+		alpha1	0
+		red2	 1
+		green2  -2
+		blue2	-2
+		alpha2	-1
+		state_change 0.2
+	}
+	affector Scaler
+	{
+		rate 5
+	}
+}
+particle_system ba_alice_muzzle_fire_anim		
+{
+	quota 1000
+	material star_cross
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_rotation_type vertex
+	billboard_type point
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+
+	emitter Point
+	{
+		angle 70
+		colour 0.5 0.5 0.5 0.5
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 3
+		velocity_min 2
+		velocity_max 4
+		time_to_live 1.5
+		time_to_live_min 0.5
+		time_to_live_max 1
+		duration 0.15
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0 1
+		time1 0.7
+		colour1 1 0.3 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector Scaler
+	{
+		rate 0.5
+	}
+}
+particle_system ba_alice_muzzle_yellow_light		//激光中心黄色线光
+{
+	quota 1000
+	emit_emitter_quota 1000
+	material lens_flare_01
+	particle_width 3
+	particle_height 3
+	renderer billboard
+	billboard_type oriented_self
+
+	emitter Point
+	{
+		name tag1
+		angle 1.2
+		colour 0.5 0.5 0 0.5
+		direction 0 1 0
+		direction_position_reference -1 0 0 1
+		emission_rate 15
+		position 0 0 0
+		velocity 3
+		velocity_min 90
+		velocity_max 180
+		time_to_live 0.3
+		time_to_live_min 0.2
+		time_to_live_max 0.35
+		duration 0.1
+	}
+	
+	affector ColourFader2
+	{
+		red1	 1
+		green1  1
+		blue1	0
+		alpha1	1
+		red2	 -5
+		green2  -5
+		blue2	-5
+		alpha2	-5
+		state_change 0.05
+	}
+}
+
 
 
 --------------------------------------material-----------------------------------
@@ -292,12 +724,12 @@ material WFX_T_MF_A8 : add_base
             texture WFX_T_MF_A8.png 	
 }}}}
 
-material alice_railgun_trail : alpha_blend_base
+material alice_laser_trail : alpha_blend_base
 {   
     technique{
     pass{
         texture_unit{
-            texture alice_railgun_trail.png 	
+            texture alice_laser_trail.png 	
 }}}}
 material Tex_Smoke09C : alpha_blend_base
 {   
@@ -329,4 +761,77 @@ material explosion_smoke_05_bw_pass : add_base
 		depth_func always_pass
         texture_unit{
             texture explosion_smoke_05_bw.png 	
+}}}}
+material lens_circle_01_cull : add_base
+{   
+    technique{
+    pass{
+		cull_hardware none
+        texture_unit{
+            texture lens_circle_01.png 	
+}}}}
+material lens_circle_05_cull : add_base
+{   
+    technique{
+    pass{
+		cull_hardware none
+        texture_unit{
+            texture lens_circle_05.png 	
+}}}}
+material laser_soft_edge_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture laser_soft_edge_01.png 	
+}}}}
+material hollow_blast_smoke_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture hollow_blast_smoke_01.png 	
+}}}}
+material point_soft_edge_100 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture point_soft_edge_100.png 	
+}}}}
+material square_hard_edge : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture square_hard_edge.png 	
+}}}}
+material lens_flare_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture lens_flare_01.png 	
+}}}}
+material star_cross : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture star_cross.png 	
+}}}}
+material quan_7_20_cull : alpha_blend_base
+{   
+    technique{
+    pass{
+		cull_hardware none
+        texture_unit{
+            texture quan_7_20.png 	
+}}}}
+material alice_railgun_trail : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture alice_railgun_trail.png 	
 }}}}

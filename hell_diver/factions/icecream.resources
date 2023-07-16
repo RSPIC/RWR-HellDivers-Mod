@@ -3,5 +3,7 @@
 	<!-- always load common first; it's the one that clears the initial weapon resources -->
 
 	<carry_item key="lottery.carry_item" enabled="1" />
+	<carry_item key="fate_coin.carry_item" enabled="1" />
+	<carry_item key="lottery_cash.carry_item" enabled="1" />
 
 </resources>

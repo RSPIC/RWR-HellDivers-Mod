@@ -44,6 +44,7 @@ file="_collect_rare.base"
     <hud_icon filename="hud_reward_box_weapon_1.png" />
     <inventory  price="648" />
     <model mesh_filename="mc_box.mesh" texture_filename="mc_box.png" />
+    <commonness value="0.0"/>
 </carry_item>
 <carry_item 
 name="Reward Box [Weapon II]" 
@@ -53,6 +54,7 @@ file="_collect_rare.base"
     <hud_icon filename="hud_reward_box_weapon_2.png" />
     <inventory  price="648" />
     <model mesh_filename="mc_box.mesh" texture_filename="mc_box.png" />
+    <commonness value="0.0"/>
 </carry_item>
 
 </carry_items>

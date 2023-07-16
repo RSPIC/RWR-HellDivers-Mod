@@ -54,7 +54,10 @@ dictionary strong_alert_key ={
 class SpawnInfo{
     string spawnkey;
     int spawnnum;
-    SpawnInfo(){}
+    SpawnInfo(){
+        spawnkey = "null";
+        spawnnum = 0;
+    }
     SpawnInfo(string in_key,int num){
         spawnkey=in_key;
         spawnnum=num;
@@ -239,6 +242,7 @@ void Alert_Spawn(Metagame@ metagame,int factionId, Vector3 position, array<Spawn
                 float rand_x = rand(-range,range);
                 float rand_y = rand(-range,range);
                 position = position.add(Vector3(0,uprate,0));
+                if(!isVectorInMap(position)){continue;}
                 spawnVehicle(metagame,1,factionId,position.add(Vector3(rand_x,0,rand_y)),m_rotate,spawnkey);
             }
         }else if(caller_faction_name == "bugs" && g_factionInfoBuck.getFidByName("Bugs") == factionId){
@@ -248,9 +252,9 @@ void Alert_Spawn(Metagame@ metagame,int factionId, Vector3 position, array<Spawn
                 float rand_x = rand(-range,range);
                 float rand_y = rand(-range,range);
                 position = position.add(Vector3(rand_x,0,rand_y));
-                CreateDirectProjectile(metagame,position.add(Vector3(0,10,0)),position,"hd_effect_bugs_spawn_smoke.projectile",-1,factionId,100);
-                SpawnSoldier(metagame,1,factionId,position.add(Vector3(0,-40,0)),groups_name);
-                
+                if(!isVectorInMap(position)){continue;}
+                CreateDirectProjectile(metagame,position.add(Vector3(0,10,0)),position,"hd_effect_bugs_spawn_smoke.projectile",-1,factionId,10);
+                CreateDirectProjectile(metagame,position.add(Vector3(0,10,0)),position,"bugs_spawn_"+groups_name+".projectile",-1,factionId,10);
             }
         }
   
@@ -320,7 +324,6 @@ class dynamic_alert : Tracker {
         if(character is null){return;}
         int m_fid = character.getIntAttribute("faction_id");
         if(m_fid == -1){return;}
-        //string m_position = character.getStringAttribute("position");
 
         if(g_debugMode){
             _report(m_metagame,"Alert key="+EventKeyGet);
@@ -332,15 +335,15 @@ class dynamic_alert : Tracker {
             const XmlElement@ faction = getFactionInfo(m_metagame,i);
             int max = faction.getIntAttribute("soldier_capacity");
             int min = faction.getIntAttribute("soldiers");
-            MaxSoldiers[""+i] = max;
-            NowSoldiers[""+i] = min;
+            MaxSoldiers.set(""+i,max);
+            NowSoldiers.set(""+i,min);
         }
 
         int my_faction_soldiers;
         if( !NowSoldiers.get(""+m_fid,my_faction_soldiers) ){return;}
         int now_max_soldiers = 0;  
         int max_soldiers_cap = 0;
-        for (uint i = 0 ; i < g_factionInfoBuck.size() ; i++) {
+        for (uint i = 0 ; i < g_factionInfoBuck.size() ; ++i) {
             if(int(i) == m_fid){continue;}
             int value;
             if(!NowSoldiers.get(""+i,value)){continue;}
@@ -352,7 +355,7 @@ class dynamic_alert : Tracker {
                 max_soldiers_cap = value;
             }
         }
-        if( my_faction_soldiers >= 2.0*max_soldiers_cap && g_factionInfoBuck.getNameByFid(m_fid) != "Bugs"){
+        if( my_faction_soldiers >= 2.0*max_soldiers_cap ){
             if(g_debugMode){
                 _report(m_metagame,"敌方AI上限="+max_soldiers_cap+" 己方AI="+my_faction_soldiers+ " 本次警报失效");
             }
@@ -365,6 +368,7 @@ class dynamic_alert : Tracker {
         alert_distance = 3*alert_distance_max;
         for (uint j = 0; j < players.size(); ++j) {
 			const XmlElement@ player = players[j];
+            if(player is null){continue;}
             Vector3 aim_pos = stringToVector3(player.getStringAttribute("aim_target"));    //省事直接用玩家指针位置,获取玩家位置需要获取到character数据，增加不少查询
             float alert_distance_now = getFlatPositionDistance(aim_pos,position);
             if(g_debugMode){
@@ -442,7 +446,9 @@ class dynamic_alert : Tracker {
     }
     protected void handleChatEvent(const XmlElement@ event){
         string sender = event.getStringAttribute("player_name");
-        if(g_debugMode || m_metagame.getAdminManager().isAdmin(sender)){
+        int senderId = event.getIntAttribute("player_id");
+
+        if(g_debugMode || m_metagame.getAdminManager().isAdmin(sender,senderId) ){
             string message = event.getStringAttribute("message");
             array<string> word = MassageBreakUp(message, " ", -1);
             int ws = word.size();

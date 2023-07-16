@@ -38,11 +38,13 @@ class player_wound : Tracker {
     // ----------------------------------------------------
 	protected void handlePlayerWoundEvent(const XmlElement@ event) {
 		const XmlElement@ target = event.getFirstElementByTagName("target");
+		if(target is null){return;}
 		string p_name = target.getIntAttribute("name");
 		string INT_key = p_name +"wound";
 		if(!g_IRQ.isExist(INT_key)){
 			int pid = target.getIntAttribute("player_id");
 			const XmlElement@ info = getPlayerInfo(m_metagame,pid);
+			if(info is null){return;}
 			player_wound_task@ new_task = player_wound_task(m_metagame,info,5,INT_key);
 			TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
 			tasker.add(new_task);
@@ -91,6 +93,5 @@ class player_wound_task : Task{
 
 		string woundVoice = "hd_wound_male_" + int(rand(1,25)) + ".wav";
 		playSoundAtLocation(m_metagame,woundVoice,fid,aim_pos,3.0);
-
 	}
 }

@@ -232,6 +232,12 @@ class playerInfo {
 		}
 		return -1;
 	}
+	int getFidByCid(const int&in cid){
+		if(m_cid == cid){
+			return m_fid;
+		}
+		return -1;
+	}
 	int getPidByCid(const int&in cid){
 		if(m_cid == cid){
 			return m_pid;
@@ -294,6 +300,15 @@ class playerInfoBuck{
 	int getFidByPid(const int&in pid){
 		for(uint i=0; i<size();++i){
 			int fid = m_playerInfo[i].getFidByPid(pid);
+			if(fid != -1){
+				return fid;
+			}
+		}
+		return -1;
+	}
+	int getFidByCid(const int&in cid){
+		for(uint i=0; i<size();++i){
+			int fid = m_playerInfo[i].getFidByCid(cid);
 			if(fid != -1){
 				return fid;
 			}
@@ -905,7 +920,7 @@ class first_use_info{
 
     bool isFirst(string&in InName,string&in key){
         if(name != InName){return false;}
-        for (uint i = 0; i < first_use_tag.length(); i++) {
+        for (uint i = 0; i < first_use_tag.length(); ++i) {
             if (first_use_tag[i] == key) {
                 return false;
             }
@@ -947,11 +962,121 @@ class firstUseInfoBuck {
 	}
 }
 //----------------------------------------------------------
+class userCountInfo{
+    protected string m_name;
+    protected dictionary countList;
+
+    userCountInfo(string name){
+        m_name = name;
+    }
+
+    string getName(){
+        return m_name;
+    }
+
+    bool getCount(string&in name,string&in key,int&out count){
+		if(m_name == name){
+			if(countList.get(key,count)){
+				return true;
+			}else{
+				countList.set(key,0);
+				count = 0;
+				return true;
+			}
+		}
+		return false;
+    }
+    bool addCount(string&in name,string&in key,int&in count){
+		if(m_name == name){
+			int value;
+			if(countList.get(key,value)){
+				value += count;
+				countList.set(key,value);
+				return true;
+			}else{
+				countList.set(key,count);
+				return true;
+			}
+		}
+		return false;
+    }
+    bool clearCount(string&in name,string&in key){
+		if(m_name == name){
+			int value;
+			if(countList.get(key,value)){
+				countList.set(key,0);
+				return true;
+			}else{
+				countList.set(key,0);
+				return true;
+			}
+		}
+		return false;
+    }
+}
+
+class userCountInfoBuck {
+	protected array<userCountInfo@> m_userCountInfos;
+
+	userCountInfoBuck(){
+		userCountInfo@ newinfo = userCountInfo("");
+		m_userCountInfos.insertLast(newinfo);
+	}
+
+	void addInfo(string&in name){
+		userCountInfo@ newinfo = userCountInfo(name);
+		m_userCountInfos.insertLast(newinfo);
+	}
+
+	bool getCount(string&in name,string&in key,int&out count){
+		for(uint i = 0 ; i < m_userCountInfos.size() ; ++i){
+			if(m_userCountInfos[i].getCount(name,key,count)){
+				return true;
+			}else{
+				continue;
+			}
+		}
+		return false;
+    }
+	bool addCount(string&in name,string&in key,int&in count = 1){
+		for(uint i = 0 ; i < m_userCountInfos.size() ; ++i){
+			if(m_userCountInfos[i].addCount(name,key,count)){
+				return true;
+			}else{
+				continue;
+			}
+		}
+		return false;
+    }
+	bool clearCount(string&in name,string&in key){
+		for(uint i = 0 ; i < m_userCountInfos.size() ; ++i){
+			if(m_userCountInfos[i].clearCount(name,key)){
+				return true;
+			}else{
+				continue;
+			}
+		}
+		return false;
+    }
+	void removeInfo(string&in name){
+		for(uint i=0; i<m_userCountInfos.size(); ++i){
+            if(m_userCountInfos[i].getName() == name){
+                m_userCountInfos.removeAt(i);
+                --i;
+            }
+        }
+	}
+	void clearAll(){
+		m_userCountInfos.resize(0);
+	}
+}
+//----------------------------------------------------------
 factionInfoBuck@ g_factionInfoBuck = factionInfoBuck();	
 playerInfoBuck@ g_playerInfoBuck = playerInfoBuck();	
 battleInfoBuck@ g_battleInfoBuck = battleInfoBuck();
 vestInfoBuck@ g_vestInfoBuck = vestInfoBuck();
 firstUseInfoBuck@ g_firstUseInfoBuck = firstUseInfoBuck();
+userCountInfoBuck@ g_userCountInfoBuck = userCountInfoBuck();
 bool g_online_TestMode = false;
 bool g_debugMode = false;
 
@@ -1008,13 +1133,15 @@ class Initiate : Tracker {
         if(player is null){return;}
         string name = player.getStringAttribute("name");
 		g_firstUseInfoBuck.addInfo(name);
+		g_userCountInfoBuck.addInfo(name);
 	}
 	// ----------------------------------------------------
     protected void handlePlayerDisconnectEvent(const XmlElement@ event) {
         const XmlElement@ player = event.getFirstElementByTagName("player");
         if(player is null){return;}
         string name = player.getStringAttribute("name");
-		g_firstUseInfoBuck.removeInfo("name");
+		g_firstUseInfoBuck.removeInfo(name);
+		g_userCountInfoBuck.removeInfo(name);
     }
 	// ----------------------------------------------------
 	protected void handleMatchEndEvent(const XmlElement@ event) {

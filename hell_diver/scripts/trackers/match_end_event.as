@@ -56,6 +56,7 @@ class match_end : Tracker {
     // ----------------------------------------------------
 	protected void handleMatchEndEvent(const XmlElement@ event) {
         const XmlElement@ info = event.getFirstElementByTagName("win_condition");
+        if(info is null){return;}
         int win_fid = info.getIntAttribute("faction_id");
         PlayEndSound();
         HealAll();
@@ -89,6 +90,7 @@ class match_end : Tracker {
         if(players is null){return;}
         for(uint i = 0 ; i < players.size() ; ++i ){
             const XmlElement@ player = players[i];
+            if(player is null){return;}
             int cid = player.getIntAttribute("character_id");
             const XmlElement@ character = getCharacterInfo(m_metagame,cid);
             if(character is null){return;}
@@ -102,6 +104,7 @@ class match_end : Tracker {
         if(players is null){return;}
         for(uint i = 0 ; i < players.size() ; ++i ){
             const XmlElement@ player = players[i];
+            if(player is null){return;}
             int cid = player.getIntAttribute("character_id");
             if(g_battleInfoBuck is null){return;}
             if(fid != 0){

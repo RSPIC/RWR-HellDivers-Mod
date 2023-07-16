@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectiles>
+<projectile 
+class="grenade" 
+name="Alice Laser Cannon" 
+key="acg_ba_alice_railgun_damage.projectile" 
+slot="0"
+pulldown_in_air="10"
+on_ground_up="0 1 0"
+use_time_to_live="1"
+time_to_live="60"
+can_be_disarmed="0"
+can_be_detected_by_footmen="0"
+can_be_detected_by_driver="0"
+radius="1.0"
+>
+    <collision class="sticky" />
+    <trigger class="impact" time_to_live="0" />
+
+    <result class="blast" radius="3.0" damage="10" push="0.5" decal="0" character_state="death"
+    faction_compare="not_equal" damage_origin_vehicle="0"/> 
+    
+    <rotation class="motion" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>		
+    <capacity value="0" source="rank" source_value="0" />
+
+</projectile>
+
+</projectiles>

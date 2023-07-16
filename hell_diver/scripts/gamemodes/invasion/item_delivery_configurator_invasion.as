@@ -26,7 +26,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		setupMusic(); 
         setupVehicle();  
         setupWeapon1();
-        setupCommunity6(); 
+        setupWeapon2(); 
 		//setupHalloween1();
 		//setupXmasBox();
 		setupIcecream();
@@ -212,11 +212,13 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			ScoredResource("token_alibina.projectile","projectile",1.0f,4),
 			ScoredResource("token_g41_schoolsuit.projectile","projectile",1.0f,4),
 			ScoredResource("token_patricia_abelheim.projectile","projectile",1.0f,4),
+			ScoredResource("token_patricia_abelheim.projectile","projectile",1.0f,4),
+			ScoredResource("token_lappland_refined_horrormare.projectile","projectile",1.0f,4),
 
 			ScoredResource("token_amamiya_kokoro.projectile","projectile",1.0f,4)
 			},
 			{
-			ScoredResource("lottery.carry_item", "carry_item", 1.0f)
+			ScoredResource("balloon.carry_item", "carry_item", 1.0f)
 			}
 		};   
 			
@@ -331,6 +333,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
          	ScoredResource("acg_g41_bp2077.weapon", "weapon", 1.0f),
          	ScoredResource("acg_bronya.weapon", "weapon", 1.0f),
          	ScoredResource("acg_shuiniao.weapon", "weapon", 1.0f),
+         	ScoredResource("acg_ba_alice_railgun_ex.weapon", "weapon", 1.0f),
 
          	ScoredResource("acg_patricia_cumforce.weapon", "weapon", 1.0f)
 			},
@@ -349,27 +352,34 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 	}
 
 	// ----------------------------------------------------
-	protected void setupCommunity6() {
-		_log("adding community box 6 config", 1);
+	protected void setupWeapon2() {
+		_log("adding reward_box_weapon_2 config", 1);
 		array<Resource@> deliveryList = {
-			 Resource("gift_box_community_6.carry_item", "carry_item")
+			 Resource("reward_box_weapon_2.carry_item", "carry_item")
 		};
-
+		// MK1~MK3系列武器
 		array<array<ScoredResource@>> rewardPasses = {
 			{
-         
-         ScoredResource("kulakov.weapon", "weapon", 10.0f),
-         ScoredResource("rpd.weapon", "weapon", 15.0f),
-         ScoredResource("ak47_w_gp25.weapon", "weapon", 14.0f),
-         ScoredResource("g36_w_ag36.weapon", "weapon", 14.0f),
-         ScoredResource("m16a4_w_m203.weapon", "weapon", 14.0f),			 
-         ScoredResource("mac10.weapon", "weapon", 20.0f),
-         ScoredResource("ash12.weapon", "weapon", 9.0f),
-		 ScoredResource("torch.weapon", "weapon", 4.0f, 2)
+        	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_smg_strelka.weapon", "weapon", 1.0f),
+
+        	ScoredResource("acg_mg4td_ke.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_mg4a3td.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_ruby_rose_scythe.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_reisenu_a.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_kemomimi.weapon", "weapon", 1.0f),
+
+        	ScoredResource("acg_amamiya_kokoro.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_hongxue.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_g41_bp2077.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_iws2000_banisher.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_hk416_starry_cocoon.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_sorasaki_hina.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_fiammetta_gl.weapon", "weapon", 1.0f)
 
 			},
 			{
-			ScoredResource("lottery.carry_item", "carry_item", 1.0f)
+			ScoredResource("hd_bonusfactor_al_10", "carry_item", 1.0f)
 			}
 		};   
 
@@ -428,17 +438,19 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		ScoredResource("MTL_SL_STRG2", "carry_item", 3.0f),     
 		ScoredResource("MTL_SL_STRG3", "carry_item", 1.0f),     
 		ScoredResource("MTL_SL_STRG4", "carry_item", 0.3f),     
+		//total f = 130 左右
 
 		ScoredResource("reward_box_collection.carry_item", "carry_item", 6.0f),
-		ScoredResource("reward_box_skin.carry_item", "carry_item", 30.0f),
-		ScoredResource("reward_box_music.carry_item", "carry_item", 15.0f), 
-		ScoredResource("reward_box_vehicle.carry_item", "carry_item", 24.0f),                       
-		ScoredResource("reward_box_weapon_1.carry_item", "carry_item", 3.0f)
+		ScoredResource("reward_box_skin.carry_item", "carry_item", 15.0f),
+		ScoredResource("reward_box_music.carry_item", "carry_item", 3.0f), 
+		ScoredResource("reward_box_vehicle.carry_item", "carry_item", 12.0f),                       
+		ScoredResource("reward_box_weapon_1.carry_item", "carry_item", 1.0f),
+		ScoredResource("reward_box_weapon_2.carry_item", "carry_item", 2.0f)
 		//期望＞32w
 
 			},
 			{
-			ScoredResource("balloon.carry_item", "carry_item", 100.0f),
+			ScoredResource("balloon.carry_item", "carry_item", 300.0f),
 
 			ScoredResource("hd_bonusfactor_al_10", "carry_item", 1.0f),
 			ScoredResource("hd_bonusfactor_al_20", "carry_item", 0.6f),

@@ -52,16 +52,10 @@ class vest_upgrade_manager : Tracker {
     // --------------------------------------------
     protected void handleVestUpgradeEvent(const XmlElement@ event) {
         int pid = event.getIntAttribute("player_id");
-        if(m_ended){
-            notify(m_metagame,"Battle Over", dictionary(), "misc", pid, false,"", 1.0);
-            return;
-        }
         string itemKey = event.getStringAttribute("item_key");
         int characterId = event.getIntAttribute("character_id");
 		if(characterId == -1){return;}
-        const XmlElement@ character = getCharacterInfo(m_metagame,characterId);
-        if(character is null){return;}
-        int rp = character.getIntAttribute("rp");
+        if(g_vestInfoBuck is null){return;}
         if(g_playerInfoBuck is null){return;}
         string name = g_playerInfoBuck.getNameByCid(characterId);
         int containerId = event.getIntAttribute("target_container_type_id");
@@ -95,6 +89,13 @@ class vest_upgrade_manager : Tracker {
         };
         for(uint i=0; i<targetKey.length(); ++i){
             if(itemKey == targetKey[i]){
+                if(m_ended){
+                    notify(m_metagame,"Battle Over", dictionary(), "misc", pid, false,"", 1.0);
+                    return;
+                }
+                const XmlElement@ character = getCharacterInfo(m_metagame,characterId);
+                if(character is null){return;}
+                int rp = character.getIntAttribute("rp");
                 uint upgradeTime = g_vestInfoBuck.upgradeTime(name);
                 if(upgradeTime >= 3){
                     notify(m_metagame,"Up to Upgrade Limit", dictionary(), "misc", pid, false,"", 1.0);
