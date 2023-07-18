@@ -142,6 +142,7 @@ class lottery_manager : Tracker {
         handleFateCoinEvent(event);
         handleGuaranteedLottery(event);
         handleGuaGuaLeLottery(event);
+        handleGuaGuaLeIILottery(event);
     }
 
     // --------------------------------------------
@@ -158,19 +159,34 @@ class lottery_manager : Tracker {
         array<string> targetKey = {"hd_bonusfactor_al_","hd_bonusfactor_xp_","hd_bonusfactor_rp_"};
         for(uint i = 0 ; i < targetKey.size() ; ++i){
             string tempKey = itemKey.substr(0,targetKey[i].length());
+            //比对通过
             if(tempKey == targetKey[i]){
                 string num = itemKey.substr(targetKey[i].size());
                 if(isNumeric(num)){
+                    //开局超时5分钟禁止使用加成卡
+                    uint playingTime = g_battleInfoBuck.playingTime(name);
+                    if(playingTime >= 5){
+                        notify(m_metagame,"OverTime,You can only use this in first 5 min", dictionary(), "misc", pid, false, "", 1.0);
+                        addItemInBackpack(m_metagame,cid,"carry_item",itemKey);
+                        return;
+                    }
                     float bonusFactor = 0.01*parseFloat(num);
+                    bool isSet = false;
                     if(i == 0){
                         g_battleInfoBuck.addBonusFactor(name,bonusFactor);
+                        isSet = true;
                     }else if(i == 1){
                         g_battleInfoBuck.addBonusFactorXp(name,bonusFactor);
+                        isSet = true;
                     }else if(i == 2){
                         g_battleInfoBuck.addBonusFactorRp(name,bonusFactor);
+                        isSet = true;
                     }
-                    if(g_firstUseInfoBuck.isFirst(name,"hd_bonusfactor")){
+                    if(g_firstUseInfoBuck.isFirst(name,"hd_bonusfactor") && isSet == true){
                         notify(m_metagame,"The bonus has taken effect", dictionary(), "misc", pid, false, "", 1.0);
+                        dictionary a;
+                        a["%bf"] = ""+bonusFactor;
+                        notify(m_metagame,"Now Factor", a, "misc", pid, false, "", 1.0);
                     }else{
                         notify(m_metagame,"The bonus can only be applied once", dictionary(), "misc", pid, false, "", 1.0);
                         addItemInBackpack(m_metagame,cid,"carry_item",itemKey);
@@ -250,6 +266,44 @@ class lottery_manager : Tracker {
             playSoundAtLocation(m_metagame,"cash_in.wav",-1,pos,1.0);
             playSoundAtLocation(m_metagame,"human_male_yee_01.wav",-1,pos,1.0);
             GiveRP(m_metagame,cid,3000000);
+        }
+    }
+    // --------------------------------------------
+    protected void handleGuaGuaLeIILottery(const XmlElement@ event) {
+        string itemKey = event.getStringAttribute("item_key");
+        if(itemKey != "lottery_cash_II.carry_item"){return;}
+        int containerId = event.getIntAttribute("target_container_type_id");
+        if(containerId != 1){return;}// 1(军械库)
+        int pid = event.getIntAttribute("player_id");
+        int cid = event.getIntAttribute("character_id");
+        string pos = event.getStringAttribute("position");
+        string pick_num = "" + int(rand(1000,9999));
+        string guaguale_num = "" + int(rand(1000,9999));
+        uint samenum = 0;
+        for(uint i = 0; i < pick_num.length(); i++){
+            string str_m = pick_num.substr(i,1);
+            string str_t = guaguale_num.substr(i,1);
+            if(str_t == str_m){
+                samenum++;
+            }
+        }   
+        int rp = 600*samenum*samenum;
+        if(samenum == 0){
+            dictionary a;
+            a["%mynum"] = pick_num;
+            a["%tgnum"] = guaguale_num;
+            a["%samenum"] = ""+samenum;
+            a["%rp"] = ""+rp;
+            notify(m_metagame,"GuaGuaLeII", a, "misc", pid, false, "", 1.0);
+        }else{
+            dictionary a;
+            a["%mynum"] = pick_num;
+            a["%tgnum"] = guaguale_num;
+            a["%samenum"] = ""+samenum;
+            a["%rp"] = ""+rp;
+            notify(m_metagame,"GuaGuaLeII", a, "misc", pid, false, "", 1.0);
+            playSoundAtLocation(m_metagame,"cash_in.wav",-1,pos,1.0);
+            GiveRP(m_metagame,cid,rp);
         }
     }
 }

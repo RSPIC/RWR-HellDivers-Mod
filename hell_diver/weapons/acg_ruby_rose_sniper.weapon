@@ -49,6 +49,8 @@ key="acg_ruby_rose_sniper.weapon"
     <animation state_key="prone_still" animation_key="" /><!--全身动作-->
 	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
 	<animation state_key="stabbing" animation_key="melee, bayonet" /><!--半身动作，武器可设置脱手-->
+	<animation state_key="next_in_chain_in" animation_key="sheath bayonet part 2" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="mount bayonet part 1" /><!--半身动作，切换模式，本模式切入-->
 
     <sound key="effect" fileref="" pitch_variety="0.03" volume="1.0" /> 
     <sound key="fire" fileref="hd_cr9_suppressor_fire.wav" pitch_variety="0.03" volume="0.7" />

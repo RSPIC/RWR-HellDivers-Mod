@@ -8,7 +8,7 @@ key="acg_kokomi_water_thrower.weapon"
     accuracy_factor="1.0"
     sustained_fire_grow_step="0.95"
     sustained_fire_diminish_rate="2.5"
-    magazine_size="8"
+    magazine_size="5"
     can_shoot_standing="1" 
     can_shoot_crouching="1" 
     can_shoot_prone="0"
@@ -61,12 +61,9 @@ key="acg_kokomi_water_thrower.weapon"
 	time_to_live="2" can_be_detected_by_driver="1" can_be_disarmed="0" name="Kokomi"> 
 
         <result class="spawn" instance_class="projectile" instance_key="acg_kokomi_water_damage.projectile" 
-		min_amount="20" max_amount="20" offset="0 0 0" position_spread="2 1" direction_spread="0 0" />	
-		<!-- 8~12x1 Stun伤害 -->
-			<!-- offset"x y z 生成位置偏差"  -->
-			<!-- position_spread="水平面随机生成位置 竖直面随机生成位置"  -->
-			<!-- direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感" -->
-        <sound class="result" key="other" fileref="kokomi_boom.wav" volume="3.0" />
+		min_amount="4" max_amount="4" offset="0 0 0" position_spread="1 1" direction_spread="0 0" />	
+
+        <sound class="result" key="other" fileref="MAFDS_PROJECTILE_WATER_IMPACT_Devotion_To_Blue_01.wav" volume="1.0" />
 
         <sound class="result" key="terrain" copy="other" />
         <sound class="result" key="static_object" copy="other" />
@@ -119,7 +116,7 @@ key="acg_kokomi_water_thrower.weapon"
     <stance state_key="prone" accuracy="1.0"/>
     <stance state_key="over_wall" accuracy="1.0"/> 
     
-    <modifier class="speed" value="-0.12"/>    
+    <modifier class="speed" value="0.25"/>    
 
 	 
 </weapon>

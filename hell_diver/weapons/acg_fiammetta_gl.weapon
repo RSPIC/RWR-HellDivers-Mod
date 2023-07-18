@@ -49,8 +49,8 @@ key="acg_fiammetta_gl.weapon"
     <animation state_key="prone_still" animation_key="" />
 	<animation state_key="prone_moving" animation_key="" />
 	<animation state_key="stabbing" animation_key="pistol whip 3" />
-	<animation state_key="next_in_chain_in" animation_key="" />
-	<animation state_key="next_in_chain_out" animation_key="" />
+	<animation state_key="next_in_chain_in" animation_key="sheath bayonet part 2" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="mount bayonet part 1" /><!--半身动作，切换模式，本模式切入-->
     <animation state_key="changing_weapon_in" animation_key="" />
 	<animation state_key="changing_weapon_out" animation_key=""/>
 
@@ -83,7 +83,7 @@ key="acg_fiammetta_gl.weapon"
 	can_be_detected_by_driver="1" can_be_disarmed="0" name="Fiammetta GL"> 
 		
         <result class="spawn" instance_class="projectile" instance_key="acg_fiammetta_gl_damage.projectile" 
-			min_amount="20" max_amount="20" offset="0 0 0" position_spread="0 1" direction_spread="0.05 0" />	
+			min_amount="10" max_amount="10" offset="0 0 0" position_spread="0 1" direction_spread="0.05 0" />	
 	    <trigger class="time" time_to_live="0.9"  />
 		<rotation class="motion" />
 	    <sound class="result" key="other" fileref="grenade_blast.wav" pitch_variety="0.01" volume="2.5" />

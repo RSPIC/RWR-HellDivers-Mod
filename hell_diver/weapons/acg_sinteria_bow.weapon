@@ -6,7 +6,7 @@ key="acg_sinteria_bow.weapon"
 >
 
     <specification 
-    retrigger_time="1.0" 
+    retrigger_time="0.9" 
     accuracy_factor="1.0" 
     sight_range_modifier="2"
     sustained_fire_grow_step="2" 
@@ -17,7 +17,7 @@ key="acg_sinteria_bow.weapon"
     can_shoot_prone="0"
     suppressed="1" 
     name="sinteria" 
-    class="4" 
+    class="0" 
     projectile_speed="200" 
     projectiles_per_shot="1"
     burst_shots="1"

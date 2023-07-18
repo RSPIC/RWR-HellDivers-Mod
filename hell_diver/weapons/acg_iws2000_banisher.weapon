@@ -6,7 +6,7 @@ key="acg_iws2000_banisher.weapon"
     <specification 	
     slot="0" 	
     retrigger_time="2.0" 
-	last_burst_retrigger_time="1.0"
+	last_burst_retrigger_time="2.0"
     accuracy_factor="1" 
 	spread_range="0.1"
 	stance_accuracy_rate="1.0"
@@ -22,7 +22,7 @@ key="acg_iws2000_banisher.weapon"
 	sight_range_modifier="3.0" 
 	sight_height_offset="1.0" 
 	burst_shots="1" 
-    projectiles_per_shot="1" 
+    projectiles_per_shot="5" 
     projectile_speed="300.0"
 	barrel_offset="1.2" 
 	carry_in_two_hands="1" 
@@ -80,7 +80,7 @@ key="acg_iws2000_banisher.weapon"
 	time_to_live="0.63" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.7" name="IWS2000[The Seventh Banisher]"> 
 
 		<result class="spawn" instance_class="projectile" instance_key="acg_iws2000_banisher_damage.projectile" 
-		min_amount="25" max_amount="25" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+		min_amount="5" max_amount="5" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 		<trigger class="impact" />
 		<rotation class="motion" />
 

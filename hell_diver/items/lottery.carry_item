@@ -36,5 +36,17 @@ time_to_live_out_in_the_open="360.0"
     <model mesh_filename="lottery_cash.mesh" texture_filename="lottery_cash.png" />
     <commonness value="0.0" in_stock="1" />
 </carry_item>
+<carry_item 
+file="_usable_item.base" 
+name="Lottery ticket [Cash II]" 
+key="lottery_cash_II.carry_item"
+time_to_live_out_in_the_open="360.0" 
+>
+
+    <hud_icon filename="lottery_cash.png" />
+    <inventory encumbrance="0.0" buy_price="648.0" sell_price="0.0" />
+    <model mesh_filename="lottery_cash.mesh" texture_filename="lottery_cash.png" />
+    <commonness value="0.0" in_stock="1" />
+</carry_item>
 
 </carry_items>

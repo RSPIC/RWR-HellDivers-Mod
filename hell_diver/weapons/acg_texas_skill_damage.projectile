@@ -19,7 +19,7 @@ player_death_drop_owner_lock_time="0"
     <collision class="sticky" />
     <trigger class="impact" time_to_live="0">
     </trigger> 
-    <result class="blast" radius="3.5" damage="10" push="0.2" decal="1" character_state="wound"  />
+    <result class="blast" radius="3.5" damage="15" push="0.4" decal="1" character_state="wound" faction_compare="not_equal" />
     	
     <effect class="result" type="splat_map" surface_tag="" size="3.0" atlas_index="0" layer="1" />
     <effect class="result" type="splat_map" surface_tag="" size="4.0" atlas_index="4" layer="0" />

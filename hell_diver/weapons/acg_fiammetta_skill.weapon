@@ -49,8 +49,8 @@ key="acg_fiammetta_skill.weapon"
     <animation state_key="prone_still" animation_key="" />
 	<animation state_key="prone_moving" animation_key="" />
 	<animation state_key="stabbing" animation_key="pistol whip 3" />
-	<animation state_key="next_in_chain_in" animation_key="" />
-	<animation state_key="next_in_chain_out" animation_key="" />
+	<animation state_key="next_in_chain_in" animation_key="sheath bayonet part 2" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="mount bayonet part 1" /><!--半身动作，切换模式，本模式切入-->
     <animation state_key="changing_weapon_in" animation_key="" />
 	<animation state_key="changing_weapon_out" animation_key=""/>
 

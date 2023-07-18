@@ -42,8 +42,8 @@ key="hd_exp_rl112_recoilless_rifle_mk3.weapon"
 	
 	<!--武器动作，必须指定recoil和reload动作，部分动作留空会默认调用常规双手武器动作或者无动作-->
     <animation key="recoil" animation_key="recoil, law" /> <!--后坐力动作，半身动作-->
-    <animation key="cycle"  animation_key="reloading_hvy_5s" /> <!--拉栓动作，武器固定脱手-->
-    <animation state_key="reload" animation_key="reloading_hvy_5s" />	<!--换弹动作，半身动作-->
+    <animation key="cycle"  animation_key="reloading_hvy_3s" /> <!--拉栓动作，武器固定脱手-->
+    <animation state_key="reload" animation_key="reloading_hvy_3s" />	<!--换弹动作，半身动作-->
     <animation state_key="hold" animation_key="still, with law" /><!--站姿静止动作，全身动作-->
 	<animation state_key="hold_on_wall"  animation_key="still, with law" /><!--架枪动作，全身动作-->
     <animation state_key="still_against_wall" animation_key="" /><!--靠墙动作，全身动作-->
@@ -57,7 +57,7 @@ key="hd_exp_rl112_recoilless_rifle_mk3.weapon"
     <animation state_key="prone_still" animation_key="" /><!--全身动作-->
 	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
 	<animation state_key="stabbing" animation_key="pistol whip 3" /><!--半身动作，武器可设置脱手-->
- 	<animation state_key="changing_weapon_in" animation_key="reloading_hvy_5s" /><!--半身动作，切换武器，本武器收回-->
+ 	<animation state_key="changing_weapon_in" animation_key="reloading_hvy_3s" /><!--半身动作，切换武器，本武器收回-->
 	<animation state_key="changing_weapon_out" animation_key="still, with law"/><!--半身动作，切换武器，本武器取出-->
 	<!--武器音频-->
     <sound key="effect" fileref="pf98_effect.wav" pitch_variety="0" volume="0.25" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
@@ -88,7 +88,7 @@ key="hd_exp_rl112_recoilless_rifle_mk3.weapon"
         <result class="spawn" instance_class="projectile" instance_key="hd_exp_rl112_recoilless_rifle_mk3_damage.projectile" 
 		min_amount="20" max_amount="20" offset="0 0.5 0" position_spread="2 0" direction_spread="0.1 0" />
 		<!-- damage 300 轰炸伤-->
-       	<!-- 50x6 -->
+       	<!-- 20x25 -->
 		
 		<trigger class="impact" time_to_live="0.11"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->

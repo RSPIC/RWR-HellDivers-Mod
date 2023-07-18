@@ -3,8 +3,8 @@
 pulldown_in_air="4" key="acg_kokomi_water_damage.projectile">
     <tag name="grenade"/>
 
-    <result class="blast" radius="4.5" damage="10.0" push="0.1" decal="1" 
-    character_state="stun" faction_compare="not_equal" damage_origin_vehicle="0" />
+    <result class="blast" radius="5.5" damage="10.0" push="0.4" decal="1" 
+    character_state="death" faction_compare="not_equal" damage_origin_vehicle="0" />
     <trigger class="time" time_to_live="0"/>
     <rotation class="motion" />
     <model mesh_filename="" />

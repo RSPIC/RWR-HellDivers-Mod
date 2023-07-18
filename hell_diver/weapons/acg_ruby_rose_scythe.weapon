@@ -47,6 +47,9 @@ key="acg_ruby_rose_scythe.weapon"
 	<animation state_key="still_against_wall" 	animation_key="hold, hip fire" />
 	<animation state_key="walking" animation_key="" />
 	<animation state_key="running" animation_key="" />  
+	<animation state_key="next_in_chain_in" animation_key="sheath bayonet part 2" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="mount bayonet part 1" /><!--半身动作，切换模式，本模式切入-->
+
 
     <sound key="effect" fileref="" pitch_variety="0.03" volume="1.0" /> 
     <sound key="fire" fileref="hd_cr9_suppressor_fire.wav" pitch_variety="0.03" volume="0.7" />
@@ -81,7 +84,7 @@ key="acg_ruby_rose_scythe.weapon"
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
 	time_to_live="0.6" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.7" name="Crescent Rose [Scythe]"> 
 
-		<result class="spawn" instance_class="projectile" instance_key="hd_exp_cr9_suppressor_full_upgrade_damage.projectile" 
+		<result class="spawn" instance_class="projectile" instance_key="acg_ruby_rose_scythe_damage.projectile" 
 		min_amount="10" max_amount="10" offset="0 0.5 0" position_spread="0.5 0" direction_spread="0 0" />	
 		<trigger class="impact" time_to_live="0.2"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->

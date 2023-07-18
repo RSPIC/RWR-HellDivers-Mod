@@ -970,7 +970,7 @@
 	<text key="Sturm Tiger"  text="突击虎 重型坦克" />
 	<text key="Apocalypse Tank"  text="天启 重型坦克" />
 	<text key="Piano[Uzuki ver]"  text="卯月主题钢琴" />
-	<text key="Piano[Uzuki ver]"  text="卯月主题钢琴" />
+	<text key="Piano[Poi ver]"  text="夕立主题钢琴" />
 	<text key="Gramophone[March of Steel Torrent ver]"  text="钢铁洪流留声机" />
 	<text key="PAK-40 Anti Tank"  text="PAK-40 反坦克炮" />
 	<text key="Zis-3 Anti Tank"  text="Zis-3 反坦克炮" />
@@ -1461,7 +1461,10 @@
 	<text key="Bonus card [RP]" text="资源加成卡" />
 
 	<text key="The bonus has taken effect" text="加成已生效" />
+	<text key="Now Factor" text="当前倍率:&#37;bf" />
 	<text key="The bonus can only be applied once" text="加成只能生效一次" />
+	<text key="Battle Time Too Long,BonusFacto Decrease" text="战斗时间过长,倍率因子将随时间下降" />
+	<text key="OverTime,You can only use this in first 5 min" text="使用失败,只能在加入战斗前五分钟内使用" />
 
 <!-- 方舟战利品 -->
 	<text key="MTL_GOLD1" text="赤金碎片" />
@@ -1509,9 +1512,22 @@
 	<text key="Lottery Guaranteed Reward [10]" text="十连保底奖励已发放" />
 	<text key="Lottery Guaranteed Reward [300]" text="三百连保底奖励已发放" />
 	<text key="Lottery ticket [Cash]" text="刮刮乐[三百万大奖]" />
+	<text key="Lottery ticket [Cash II]" text="刮刮乐[相同数字中奖]" />
 	<text key="GuaGuaLe" text="刮刮乐：您的号码[&#37;mynum] 中奖号码[&#37;tgnum]" />
+	<text key="GuaGuaLeII" text="刮刮乐：您的号码[&#37;mynum] 中奖号码[&#37;tgnum] 相同数字[&#37;samenum] 奖金[&#37;rp]" />
 	<text key="GuaGuaLeReward" text="玩家[&#37;player]抽取到号码[&#37;tgnum]，获得了百万大奖！" />
 	<text key="GuaGuaLeRewardTitle" text="刮刮乐百万大奖揭晓" />
 
+<!-- 密钥 -->
+	<text key="Key Invalid" text="密钥不正确" />
+	<text key="Key Valid" text="密钥正确" />
+	<text key="Key had been used" text="该密钥已经被使用过了！" />
+	<text key="You didnt reach the required Rank!" text="你并未达到指定等级！" />
+	<text key="Not meet the condition" text="密钥兑换失败：不满足密钥兑换的要求" />
+	<text key="Successful exchange" text="密钥兑换成功" />
+	<text key="Your Reward has sended" text="你的奖励是[&#37;reward]" />
+<!-- 自动改造 -->
+	<text key="Change Target Valid" text="改造兵种[&#37;target]存在" />
+	<text key="Change Target InValid" text="改造兵种[&#37;target]不存在" />
 </translation>
 

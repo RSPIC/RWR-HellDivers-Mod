@@ -230,7 +230,7 @@
 		</attribute_config>
 	</soldier> 
 	<!-- Elite -->
-	<soldier name="Elite" spawn_score="0.25" copy_from="base" >
+	<soldier name="Elite" spawn_score="0.75" copy_from="base" >
 		<character filename="bugs_warrior_state.character">	
 		</character>
 		<ai filename="bugs_scout.ai" />
@@ -284,7 +284,7 @@
 	</soldier> 
 <!-- Elite -->
 	<!-- Brood Commander -->
-	<soldier name="BroodCommander" spawn_score="0.02" copy_from="base" >
+	<soldier name="BroodCommander" spawn_score="0.1" copy_from="base" >
 		<character filename="bugs_warrior_state.character">	
 		</character>
 		<ai filename="bugs_scout.ai" /> 
@@ -312,7 +312,7 @@
 
 <!-- Tank -->
 	<!-- Behemoth -->
-	<soldier name="Behemoth" spawn_score="0.02" copy_from="base" >
+	<soldier name="Behemoth" spawn_score="0.03" copy_from="base" >
 		<character filename="bugs_behemoth_state.character">	
 		</character>
 		<ai filename="bugs_scout.ai" /> 
@@ -360,7 +360,7 @@
 		</attribute_config>
 	</soldier> 
 	<!-- Impaler -->
-	<soldier name="Impaler" spawn_score="0.05" copy_from="base" >
+	<soldier name="Impaler" spawn_score="0.08" copy_from="base" >
 		<character filename="bugs_behemoth_state.character">	
 		</character>
 		<ai filename="bugs_scout.ai" /> 

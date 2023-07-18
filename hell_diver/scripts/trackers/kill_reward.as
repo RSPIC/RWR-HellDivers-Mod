@@ -127,13 +127,13 @@ class tk_info{
 					_report(m_metagame,"getAll Kill times="+key+" "+killTimes);
 				}
 			}
-			if(AllkillTimes >= 10){
+			if(AllkillTimes >= 6){
 				m_deadth = true;
 			}
-			if(AllkillTimes >= 20){
+			if(AllkillTimes >= 8){
 				m_banned = true;
 			}
-			if(AllkillTimes >= 5){
+			if(AllkillTimes >= 4){
 				return true;
 			}
 		}

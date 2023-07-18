@@ -127,7 +127,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			ScoredResource("collect_fumo_yuyuko.carry_item", "carry_item", 1.0f)
 			},
 			{
-			ScoredResource("lottery.carry_item", "carry_item", 1.0f)
+			ScoredResource("lottery_cash.carry_item", "carry_item", 1.0f)
 			}
 		};   
 			
@@ -218,7 +218,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			ScoredResource("token_amamiya_kokoro.projectile","projectile",1.0f,4)
 			},
 			{
-			ScoredResource("balloon.carry_item", "carry_item", 1.0f)
+			ScoredResource("lottery_cash.carry_item", "carry_item", 1.0f)
 			}
 		};   
 			
@@ -242,10 +242,11 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		array<array<ScoredResource@>> rewardPasses = {
 			{
 		 ScoredResource("ex_piano_uzuki.weapon", "weapon", 1.0f,2), 
+		 ScoredResource("ex_piano_yuudachi.weapon", "weapon", 1.0f,2), 
          ScoredResource("ex_gramophone_steeltorrent.weapon", "weapon", 1.0f,2)
 			},
 			{
-			ScoredResource("lottery.carry_item", "carry_item", 1.0f)
+			ScoredResource("lottery_cash.carry_item", "carry_item", 1.0f)
 			}
 		};   
 
@@ -288,7 +289,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			ScoredResource("borsig_call.projectile", "projectile", 1.0f)
 			},
 			{
-			ScoredResource("lottery.carry_item", "carry_item", 1.0f)
+			ScoredResource("lottery_cash.carry_item", "carry_item", 1.0f)
 			}
 		};   
 
@@ -338,7 +339,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
          	ScoredResource("acg_patricia_cumforce.weapon", "weapon", 1.0f)
 			},
 			{
-			ScoredResource("lottery.carry_item", "carry_item", 1.0f)
+			ScoredResource("lottery_cash.carry_item", "carry_item", 1.0f)
 			}
 		};   
 
@@ -379,7 +380,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 
 			},
 			{
-			ScoredResource("hd_bonusfactor_al_10", "carry_item", 1.0f)
+			ScoredResource("lottery_cash.carry_itemx", "carry_item", 1.0f)
 			}
 		};   
 

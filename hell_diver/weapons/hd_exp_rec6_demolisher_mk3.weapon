@@ -86,7 +86,7 @@ key="hd_exp_rec6_demolisher_mk3.weapon"
 	
         <result class="spawn" instance_class="projectile" instance_key="hd_exp_rec6_demolisher_mk3_damage.projectile" 
 		min_amount="20" max_amount="20" offset="1.5 1.5 1.5" position_spread="0 0" direction_spread="0 -1" />
-		<!-- 5x40轰炸伤 -->
+		<!-- 20x18轰炸伤 -->
 		
 		<trigger class="remote_detonate" /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->

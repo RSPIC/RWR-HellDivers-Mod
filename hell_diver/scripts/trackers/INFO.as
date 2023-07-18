@@ -12,7 +12,7 @@
 
 class factionInfo {
 	protected int m_fid;
-	protected string m_name;
+	protected string m_name;	//faction_name
 	protected dictionary m_soldier_groups;	//with spawn_score
 
 	factionInfo(int fid,string name,array<const XmlElement@> groups){
@@ -183,6 +183,7 @@ class playerInfo {
 	protected int m_wound;
 	protected float m_xp;
 	protected float m_rp;
+	protected string m_hash;
 
 	playerInfo(const string&in name,const int&in pid,const int&in cid,const int&in fid,const int&in dead,const int&in wound,const float&in xp,const float&in rp,string group = "default"){
 		m_name = name;
@@ -210,6 +211,7 @@ class playerInfo {
 
 	string getName(){return m_name;}
 	string getGroup(){return m_group;}
+	string getHash(){return m_hash;}
 	int getPid(){return m_pid;}
 	int getCid(){return m_cid;}
 	int getFid(){return m_fid;}
@@ -219,6 +221,7 @@ class playerInfo {
 	float getRp(){return m_rp;}
 
 	void updateWound(int wound){m_wound = wound;}
+	void setHash(string&in hash){m_hash = hash;}
 
 	int getCidByPid(const int&in pid){
 		if(m_pid == pid){
@@ -240,6 +243,12 @@ class playerInfo {
 	}
 	int getPidByCid(const int&in cid){
 		if(m_cid == cid){
+			return m_pid;
+		}
+		return -1;
+	}
+	int getPidByName(const string&in name){
+		if(m_name == name){
 			return m_pid;
 		}
 		return -1;
@@ -324,6 +333,15 @@ class playerInfoBuck{
 		}
 		return -1;
 	}
+	int getPidByName(const string&in name){
+		for(uint i=0; i<size();++i){
+			int pid = m_playerInfo[i].getPidByName(name);
+			if(pid != -1){
+				return pid;
+			}
+		}
+		return -1;
+	}
 	string getNameByCid(const int&in cid){
 		for(uint i=0; i<size();++i){
 			string name = m_playerInfo[i].getNameByCid(cid);
@@ -377,11 +395,42 @@ class playerInfoBuck{
 		}
 		return -1;
 	}
+	string getHashByName(string&in name){
+		for(uint i=0; i<size();++i){
+			if(name == m_playerInfo[i].getName()){
+				return m_playerInfo[i].getHash();
+			}
+		}
+		return "";
+	}
+	float getXpByName(string&in name){
+		for(uint i=0; i<size();++i){
+			if(name == m_playerInfo[i].getName()){
+				return m_playerInfo[i].getXp();
+			}
+		}
+		return -1;
+	}
+	string getGroupByName(string&in name){
+		for(uint i=0; i<size();++i){
+			if(name == m_playerInfo[i].getName()){
+				return m_playerInfo[i].getGroup();
+			}
+		}
+		return "";
+	}
 
-	void updateWound(string name,int wound){
+	void updateWound(string&in name,int&in wound){
 		for(uint i=0; i<size();++i){
 			if(name == m_playerInfo[i].getName()){
 				m_playerInfo[i].updateWound(wound);
+			}
+		}
+	}
+	void setHash(string&in name,string&in hash){
+		for(uint i=0; i<size();++i){
+			if(name == m_playerInfo[i].getName()){
+				m_playerInfo[i].setHash(hash);
 			}
 		}
 	}
@@ -485,6 +534,15 @@ class battleInfoBuck{
 	battleInfoBuck(){
 		battleInfo@ newInfo = battleInfo("",0);
 		m_battleInfos.insertLast(newInfo);
+	}
+	uint playingTime(string&in name){
+		for(uint i=0;i<m_battleInfos.size();++i){
+			string m_name = m_battleInfos[i].name();
+			if(name == m_name){
+				return m_battleInfos[i].playingTime();
+			}
+		}
+		return 0;
 	}
 
 	void addInfo(string&in name,int&in level){
@@ -594,15 +652,19 @@ class battleInfoBuck{
 				uint pt = m_battleInfos[i].playingTime();
 				uint tc = m_battleInfos[i].tkCount();
 				uint dc = m_battleInfos[i].deadCount();
-				float bf = m_battleInfos[i].bonusFactorXp();
+				float bf = m_battleInfos[i].bonusFactor()*m_battleInfos[i].bonusFactorXp();
+				if(pt >= 30){
+					bf -= (pt-30.0)/100.0;
+					notify(m_metagame,"Battle Time Too Long,BonusFacto Decrease", dictionary(), "misc", pid, false, "", 1.0);
+				}
 				xp = 
 				  kc * 0.01 
-				+ oc * 0.02*NormalizedConcaveCurve(0.01*oc,0.5) 
+				+ oc * 0.02*NormalizedConcaveCurve(0.003*oc,0.5) 
 				+ mc * 0.5
 				+ pt * 0.03
-				- tc * 0.05
+				- tc * 0.15
 				- dc * 0.03;
-				xp = xp*m_battleInfos[i].bonusFactorXp();
+				xp = xp*bf;
 				if(xp<=0){xp=0;}
 				dictionary a;
 				a["%kx"] = formatInt(int(kc*0.01*10000));
@@ -638,14 +700,18 @@ class battleInfoBuck{
 				uint pt = m_battleInfos[i].playingTime();
 				uint tc = m_battleInfos[i].tkCount();
 				uint dc = m_battleInfos[i].deadCount();
-				float bf = m_battleInfos[i].bonusFactorRp();
+				float bf = m_battleInfos[i].bonusFactor()*m_battleInfos[i].bonusFactorRp();
+				if(pt >= 30){
+					bf -= (pt-30.0)/100.0;
+					notify(m_metagame,"Battle Time Too Long,BonusFacto Decrease", dictionary(), "misc", pid, false, "", 1.0);
+				}
 				rp = 
 				  kc * 75
-				+ oc * 100*NormalizedConcaveCurve(0.01*oc,0.5)
+				+ oc * 100*NormalizedConcaveCurve(0.003*oc,0.5)
 				+ mc * 3000
 				+ pt * 300
-				- tc * 500;
-				rp = rp*m_battleInfos[i].bonusFactorRp();
+				- tc * 700;
+				rp = rp*bf;
 				if(rp<=0){rp=0;}
 				dictionary a;
 				a["%kx"] = formatInt(int(kc*75));

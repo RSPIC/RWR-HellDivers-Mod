@@ -79,7 +79,7 @@ key="acg_mg4a3td_sl.weapon"
 	time_to_live="0.45" can_be_detected_by_driver="1" can_be_disarmed="0"> 
 		
 		<result class="hit" kill_probability="2.0" 
-		kill_probability_offset_on_successful_hit="9"
+		kill_probability_offset_on_successful_hit="15"
 		kill_decay_start_time="0.15" kill_decay_end_time="0.55" character_state="death"/>
 		<!-- slower decay -->
 		<!-- 30m max damage range -->
