@@ -171,18 +171,8 @@ class lottery_manager : Tracker {
                         return;
                     }
                     float bonusFactor = 0.01*parseFloat(num);
-                    bool isSet = false;
-                    if(i == 0){
-                        g_battleInfoBuck.addBonusFactor(name,bonusFactor);
-                        isSet = true;
-                    }else if(i == 1){
-                        g_battleInfoBuck.addBonusFactorXp(name,bonusFactor);
-                        isSet = true;
-                    }else if(i == 2){
-                        g_battleInfoBuck.addBonusFactorRp(name,bonusFactor);
-                        isSet = true;
-                    }
-                    if(g_firstUseInfoBuck.isFirst(name,"hd_bonusfactor") && isSet == true){
+                    //先过判断
+                    if(g_firstUseInfoBuck.isFirst(name,"hd_bonusfactor")){
                         notify(m_metagame,"The bonus has taken effect", dictionary(), "misc", pid, false, "", 1.0);
                         dictionary a;
                         a["%bf"] = ""+bonusFactor;
@@ -190,7 +180,17 @@ class lottery_manager : Tracker {
                     }else{
                         notify(m_metagame,"The bonus can only be applied once", dictionary(), "misc", pid, false, "", 1.0);
                         addItemInBackpack(m_metagame,cid,"carry_item",itemKey);
+                        return;
                     }
+                    //再过加成
+                    if(i == 0){
+                        g_battleInfoBuck.addBonusFactor(name,bonusFactor);
+                    }else if(i == 1){
+                        g_battleInfoBuck.addBonusFactorXp(name,bonusFactor);
+                    }else if(i == 2){
+                        g_battleInfoBuck.addBonusFactorRp(name,bonusFactor);
+                    }
+                    
                 }
             }
         }
@@ -237,7 +237,7 @@ class lottery_manager : Tracker {
             g_userCountInfoBuck.clearCount(name,itemKey+"10");
         }
         if(g_userCountInfoBuck.getCount(name,itemKey+"300",value) && value == 300){    //300吃井
-            addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_1.carry_item");
+            addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_lamda.carry_item");
             notify(m_metagame,"Lottery Guaranteed Reward [300]", dictionary(), "misc", pid, false, "", 1.0);
             g_userCountInfoBuck.clearCount(name,itemKey+"300");
         }
@@ -265,7 +265,7 @@ class lottery_manager : Tracker {
             _report(m_metagame,"GuaGuaLeReward",a,"GuaGuaLeRewardTitle",true);
             playSoundAtLocation(m_metagame,"cash_in.wav",-1,pos,1.0);
             playSoundAtLocation(m_metagame,"human_male_yee_01.wav",-1,pos,1.0);
-            GiveRP(m_metagame,cid,3000000);
+            GiveRP(m_metagame,cid,7000000);
         }
     }
     // --------------------------------------------

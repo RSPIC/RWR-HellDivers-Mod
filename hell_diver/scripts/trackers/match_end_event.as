@@ -22,8 +22,10 @@ class match_end : Tracker {
     protected dictionary playersInfo;
     protected float m_time;
     protected float m_timer;
+    protected float m_end_timer;
     protected uint m_time_min;
     protected bool m_ended;
+    protected bool m_ended_report;
 	// --------------------------------------------
 	match_end(Metagame@ metagame) {
 		@m_metagame = @metagame;
@@ -31,6 +33,8 @@ class match_end : Tracker {
         m_timer = m_time;
         m_time_min = 0;
         m_ended = false;
+        m_ended_report = false;
+        m_end_timer = 30;
 	}
 
 	bool hasEnded() const {
@@ -52,9 +56,17 @@ class match_end : Tracker {
             declareWinner();
             m_ended = true;
         }
+        if(m_ended){
+            m_end_timer -= time;
+            if(m_end_timer <= 15 && !m_ended_report){
+                _report(m_metagame,"Now Tk is Forbidden");
+                m_ended_report = true;
+            }
+        }
 	}
     // ----------------------------------------------------
 	protected void handleMatchEndEvent(const XmlElement@ event) {
+        m_ended = true;
         const XmlElement@ info = event.getFirstElementByTagName("win_condition");
         if(info is null){return;}
         int win_fid = info.getIntAttribute("faction_id");
@@ -100,6 +112,9 @@ class match_end : Tracker {
     }
     // ----------------------------------------------------
     protected void BattleReword(int fid){
+        if(!g_firstUseInfoBuck.isFirst("admin","VoteToChangeMap")){
+            return;
+        }
         array<const XmlElement@> players = getPlayers(m_metagame);
         if(players is null){return;}
         for(uint i = 0 ; i < players.size() ; ++i ){
@@ -129,6 +144,28 @@ class match_end : Tracker {
         m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='2' />");
         m_metagame.getComms().send("<command class='set_match_status' win='1' faction_id='0' />");
     }
+    // 战役结束后禁止TK玩家 --------------------------------------------
+	protected void handleCharacterKillEvent(const XmlElement@ event) {
+        if(m_ended && m_end_timer <= 15){
+            const XmlElement@ killer = event.getFirstElementByTagName("killer");
+            if(killer is null){return;}
+            const XmlElement@ target = event.getFirstElementByTagName("target");
+            if(target is null){return;}
+            int k_pid = killer.getIntAttribute("player_id");
+            int t_pid = target.getIntAttribute("player_id");
+            if(k_pid == -1 && t_pid == -1){return;}//AI之间击杀，返回
+
+            int killer_cid = killer.getIntAttribute("id");
+            _log("execute kill_reward");
+            if(k_pid != -1 && t_pid != -1 && k_pid != t_pid){//玩家TK
+                GiveRP(m_metagame,killer_cid,-100000);
+                GiveXP(m_metagame,killer_cid,-10);
+                notify(m_metagame, "TK during the battle end", dictionary(), "misc", k_pid, true, "Kicked from server", 1.0);
+                notify(m_metagame, "rules text", dictionary(), "misc", k_pid, true, "Rules", 1.0, 700.0);
+                kickPlayer(m_metagame, k_pid);
+            }
+        }
+	}
 }
 
 class sound_track : Task {

@@ -6,29 +6,30 @@
 
 <!--武器-->
 
-    <!-- MK5 32W-->
-    <weapon key="acg_patricia_cumforce.weapon" /> <!--帕蒂 致命驱动等-->
-    <weapon key="acg_megumin_wand_float.weapon" /> <!--法杖-->
-    <weapon key="ex_trinity_ghoul.weapon" /> <!--三体坐观者弓-->
-    <!-- MK4 16W-->
-    <weapon key="acg_shigure_127mm.weapon" /><!--时雨127mm双联主炮-->
-    <weapon key="acg_bronya.weapon" /> <!--布洛妮娅 狙-->
-    <weapon key="acg_g41_lasercanno_diffusion.weapon" /> <!--G41 激光炮-->
-    <weapon key="acg_shuiniao.weapon" /> <!--水鸟 刀-->
-    <weapon key="acg_kokomi_portia.weapon" /><!--心海 冲锋枪-->
+    <!-- MK6 Unavailable -->
+    <weapon key="acg_shigure_127mm.weapon" enabled="0"/><!--时雨127mm双联主炮-->
+    <!-- MK5 Unsold-->
+    <weapon key="acg_patricia_cumforce.weapon" enabled="0"/> <!--帕蒂 致命驱动等-->
+    <weapon key="acg_megumin_wand_float.weapon" enabled="0"/> <!--法杖-->
+    <weapon key="ex_trinity_ghoul.weapon" enabled="0"/> <!--三体坐观者弓-->
+    <!-- MK4 Unsold-->
+    <weapon key="acg_bronya.weapon" enabled="0"/> <!--布洛妮娅 狙-->
+    <weapon key="acg_g41_lasercanno_diffusion.weapon" enabled="0"/> <!--G41 激光炮-->
+    <weapon key="acg_shuiniao.weapon" enabled="0"/> <!--水鸟 刀-->
+    <weapon key="acg_fiammetta_gl.weapon" enabled="0"/><!--菲娅梅塔 榴弹-->
+    <weapon key="ex_disaster_railgun.weapon" enabled="0"/> <!--天灾电磁炮 反坦克-->
+    <weapon key="acg_texas_skill.weapon" enabled="0"/> <!--德克萨斯-->
+    <weapon key="acg_ba_alice_railgun_ex.weapon" enabled="0"/> <!--天童爱丽丝 激光炮-->
+    <!-- MK3 Unsold-->
     <weapon key="acg_sinteria_bow.weapon" /> <!--白金 弓-->
-    <weapon key="ex_disaster_railgun.weapon" /> <!--天灾电磁炮 反坦克-->
-    <weapon key="acg_texas_skill.weapon" /> <!--德克萨斯-->
-    <weapon key="acg_ba_alice_railgun_ex.weapon" /> <!--天童爱丽丝 激光炮-->
-    <!-- MK3 8W-->
-    <weapon key="acg_fiammetta_gl.weapon" /><!--菲娅梅塔 榴弹-->
+    <weapon key="acg_kokomi_portia.weapon" /><!--心海 冲锋枪-->
     <weapon key="acg_sorasaki_hina.weapon" /> <!--空崎阳奈 机枪-->
     <weapon key="acg_hk416_starry_cocoon.weapon" /> <!--HK416 -->
     <weapon key="acg_iws2000_banisher.weapon" /> <!--IWS2000-->
     <weapon key="acg_g41_bp2077.weapon" /> <!--G41 2077 沙滩朋克-->
     <weapon key="acg_hongxue.weapon" /> <!--鸿雪 弩-->
     <weapon key="acg_amamiya_kokoro.weapon" /><!--双持冲锋枪 by keilsama-->
-    <!-- MK2 4W-->
+    <!-- MK2 5W-->
     <weapon key="acg_kemomimi.weapon" /><!--桃子酱（小狐狸）狐尾导弹-->
     <weapon key="acg_reisenu_a.weapon" /> <!--铃仙-->
     <weapon key="acg_ruby_rose_scythe.weapon" /> <!--新月玫瑰 -->

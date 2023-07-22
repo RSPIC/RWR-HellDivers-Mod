@@ -10,7 +10,7 @@ on_ground_up="0 0 1"
 
 	<!--军械库相关-->
     <commonness value="1" can_respawn_with="0" in_stock="1" /> 
-    <inventory encumbrance="10.0" buy_price="160000.0" sell_price="0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
+    <inventory encumbrance="10.0" buy_price="640000.0" sell_price="0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
     
     <stance state_key="running" accuracy="1" /> 
     <stance state_key="walking" accuracy="1" />

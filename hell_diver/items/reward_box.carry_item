@@ -35,6 +35,7 @@ file="_collect_rare.base"
     <hud_icon filename="hud_reward_box_vehicle.png" />
     <inventory  price="648" />
     <model mesh_filename="mc_box.mesh" texture_filename="mc_box.png" />
+    <commonness value="0.1"/>
 </carry_item>
 <carry_item 
 name="Reward Box [Weapon I]" 
@@ -54,6 +55,136 @@ file="_collect_rare.base"
     <hud_icon filename="hud_reward_box_weapon_2.png" />
     <inventory  price="648" />
     <model mesh_filename="mc_box.mesh" texture_filename="mc_box.png" />
+    <commonness value="0.0"/>
+</carry_item>
+<carry_item 
+name="Reward Box [Weapon α]" 
+key="reward_box_weapon_alpha.carry_item"
+file="_collect_rare.base"
+>
+    <hud_icon filename="hud_reward_box_weapon_alpha.png" />
+    <inventory  price="648" />
+    <model mesh_filename="hd_case.mesh" texture_filename="hud_reward_box_weapon_alpha.jpg" />
+    <commonness value="0.0"/>
+</carry_item>
+<carry_item 
+name="Reward Box [Weapon ?]" 
+key="reward_box_weapon_unknown.carry_item"
+file="_collect_rare.base"
+>
+    <hud_icon filename="hud_reward_box_weapon_unknown.png" />
+    <inventory  price="648" />
+    <model mesh_filename="hd_case.mesh" texture_filename="hud_reward_box_weapon_unknown.jpg" />
+    <commonness value="0.0"/>
+</carry_item>
+<carry_item 
+name="Reward Box [Weapon V]" 
+key="reward_box_weapon_v.carry_item"
+file="_collect_rare.base"
+>
+    <hud_icon filename="hud_reward_box_weapon_v.png" />
+    <inventory  price="648" />
+    <model mesh_filename="hd_case.mesh" texture_filename="hud_reward_box_weapon_v.jpg" />
+    <commonness value="0.0"/>
+</carry_item>
+<carry_item 
+name="Reward Box [Weapon X]" 
+key="reward_box_weapon_x.carry_item"
+file="_collect_rare.base"
+>
+    <hud_icon filename="hud_reward_box_weapon_x.png" />
+    <inventory  price="648" />
+    <model mesh_filename="hd_case.mesh" texture_filename="hud_reward_box_weapon_x.jpg" />
+    <commonness value="0.0"/>
+</carry_item>
+<carry_item 
+name="Reward Box [Weapon β]" 
+key="reward_box_weapon_beta.carry_item"
+file="_collect_rare.base"
+>
+    <hud_icon filename="hud_reward_box_weapon_beta.png" />
+    <inventory  price="648" />
+    <model mesh_filename="hd_case.mesh" texture_filename="hud_reward_box_weapon_beta.jpg" />
+    <commonness value="0.0"/>
+</carry_item>
+<carry_item 
+name="Reward Box [Weapon γ]" 
+key="reward_box_weapon_gama.carry_item"
+file="_collect_rare.base"
+>
+    <hud_icon filename="hud_reward_box_weapon_gama.png" />
+    <inventory  price="648" />
+    <model mesh_filename="hd_case.mesh" texture_filename="hud_reward_box_weapon_gama.jpg" />
+    <commonness value="0.0"/>
+</carry_item>
+<carry_item 
+name="Reward Box [Weapon Δ]" 
+key="reward_box_weapon_delta.carry_item"
+file="_collect_rare.base"
+>
+    <hud_icon filename="hud_reward_box_weapon_delta.png" />
+    <inventory  price="648" />
+    <model mesh_filename="hd_case.mesh" texture_filename="hud_reward_box_weapon_delta.jpg" />
+    <commonness value="0.0"/>
+</carry_item>
+<carry_item 
+name="Reward Box [Weapon θ]" 
+key="reward_box_weapon_theta.carry_item"
+file="_collect_rare.base"
+>
+    <hud_icon filename="hud_reward_box_weapon_theta.png" />
+    <inventory  price="648" />
+    <model mesh_filename="hd_case.mesh" texture_filename="hud_reward_box_weapon_theta.jpg" />
+    <commonness value="0.0"/>
+</carry_item>
+<carry_item 
+name="Reward Box [Weapon λ]" 
+key="reward_box_weapon_lamda.carry_item"
+file="_collect_rare.base"
+>
+    <hud_icon filename="hud_reward_box_weapon_lamda.png" />
+    <inventory  price="648" />
+    <model mesh_filename="hd_case.mesh" texture_filename="hud_reward_box_weapon_lamda.jpg" />
+    <commonness value="0.0"/>
+</carry_item>
+<carry_item 
+name="Reward Box [Weapon μ]" 
+key="reward_box_weapon_miu.carry_item"
+file="_collect_rare.base"
+>
+    <hud_icon filename="hud_reward_box_weapon_miu.png" />
+    <inventory  price="648" />
+    <model mesh_filename="hd_case.mesh" texture_filename="hud_reward_box_weapon_miu.jpg" />
+    <commonness value="0.0"/>
+</carry_item>
+<carry_item 
+name="Reward Box [Weapon π]" 
+key="reward_box_weapon_pi.carry_item"
+file="_collect_rare.base"
+>
+    <hud_icon filename="hud_reward_box_weapon_pi.png" />
+    <inventory  price="648" />
+    <model mesh_filename="hd_case.mesh" texture_filename="hud_reward_box_weapon_pi.jpg" />
+    <commonness value="0.0"/>
+</carry_item>
+<carry_item 
+name="Reward Box [Weapon φ]" 
+key="reward_box_weapon_phi.carry_item"
+file="_collect_rare.base"
+>
+    <hud_icon filename="hud_reward_box_weapon_phi.png" />
+    <inventory  price="648" />
+    <model mesh_filename="hd_case.mesh" texture_filename="hud_reward_box_weapon_phi.jpg" />
+    <commonness value="0.0"/>
+</carry_item>
+<carry_item 
+name="Reward Box [Weapon Ω]" 
+key="reward_box_weapon_omega.carry_item"
+file="_collect_rare.base"
+>
+    <hud_icon filename="hud_reward_box_weapon_omega.png" />
+    <inventory  price="648" />
+    <model mesh_filename="hd_case.mesh" texture_filename="hud_reward_box_weapon_omega.jpg" />
     <commonness value="0.0"/>
 </carry_item>
 

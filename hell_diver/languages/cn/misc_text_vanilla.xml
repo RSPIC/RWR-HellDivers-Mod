@@ -460,6 +460,9 @@
     <text key="Online terminated"  text="连接中断"/>   
     <text key="Server created"  text="服务器已创建"/>
     <text key="Server restarted" text="服务器已重启" /> 
+
+    <text key="TK during the battle end" text="你因为在结算后TK玩家而被惩罚" /> 
+    <text key="Now Tk is Forbidden" text="[警告] 过图最后阶段，现在开始严禁TK，否则会受到严厉惩罚" /> 
     
     <text key="community box 3" text="社群箱子 Ⅲ" />     
     <text key="gun truck drop" text="武装卡车空投信标"/>  
@@ -533,22 +536,11 @@
 
 	<text key="Teamkill penalty" text="剩余时间: &#37;penalty_time 分钟.&#37;PS你最近TK了很多玩家而受到了TK惩罚。 在惩罚期间，你被禁止使用无线电/手雷/爆炸弹头武器/所有载具。" />
 	
-<text key="rules" text="官方服务器规则" />
+<text key="rules" text="地狱潜兵服务器规则" />
 
 <text key="rules text" text="#1 - 禁止出现辱骂性质的语言/行为。&#37;PS
-#2 - 禁止使用带有冒犯性质的ID，此类ID多半会不对玩家警告而直接删除。&#37;PS
-#3 - 禁止任何主观性的TK（Teamkill，击杀己方玩家）行为 - 包括但并不仅限于TK保枪/把玩家炸倒地让他因为失血过多而死亡。&#37;PS
-#4 - 禁止在聊天框内恶意刷屏。&#37;PS
-#5 - 禁止任何形式的种族歧视。&#37;PS
-#6 - 禁止诅咒/语言骚扰/辱骂玩家。吵架的双方可能都会受到同样的处罚。&#37;PS
-#7 - 当玩家阵亡时，所掉落的所有装备“原则上”不再属于那个已经阵亡的玩家，将属于第一个捡起这些装备的人。&#37;PS
-#8 - 默许静态刷AI人头行为。特例：不允许利用AI寻路机制阻碍AI行进路线或阻挡梯子，不允许故意阻碍其他玩家正常过图。同时不推荐在玩家阵营前线吃紧时进行相关刷AI行为。&#37;PS
-#9 - 炸己方信号塔/送己方军械车&amp;重生车等此类严重阻碍玩家的行为，视为违反规则。&#37;PS
-#10 - 通过向其他玩家扔闪光弹的阻碍行为，也视为违反规则。&#37;PS
-#11 - 禁止利用BUG为自己牟利，一旦发现BUG立即向制作组报告。如发现上述利用行为可能会招致玩家ID的禁用/删除。&#37;PS
-#12 - 创建小号并没有问题，但小号数量不应该多于4。创建小号数量过多可能会导致玩家ID禁用。&#37;PS
-#13 - 故意过多的占用游戏内无线电支援序列会导致玩家会从服务器内踢出/ID禁用。&#37;PS
-#14 - 官服与其他玩家进行游戏内物品交易时务必谨慎！任何交易时的损失都由交易双方承担，原则上管理员不处理对相关追责问题。" />  
+#2 - 禁止过图最后15秒前以任何形式TK玩家&#37;PS
+#3 - 禁止任何主观性的TK（Teamkill，击杀己方玩家）行为 - 包括但并不仅限于TK保枪/把玩家炸倒地让他因为失血过多而死亡。&#37;PS" />  
 
     <text key="Requesting close air support" text="正在请求近距离空中支援"/>
     <text key="Cluster bombing" text="集束炸弹轰炸"/>
@@ -1270,6 +1262,10 @@
 	<text key="Bugs Help" text="[教程]虫族阵营" />
 	<text key="Reward Help" text="[教程]奖励机制" />
 	<text key="Dynamic Alert Help" text="[教程]动态难度" />
+	<text key="Invite Friend Help" text="[教程]邀请码功能" />
+	<text key="Vote Help" text="[教程]投票系统" />
+	<text key="TK Help" text="[教程]TK惩罚系统" />
+	<text key="BattleReward Help" text="[教程]战役结算奖励系统" />
 
 	<text key="Help - Content" text="#加入QQ群了解更多：498520233
 	#本提示将会每次连接入服务器以及进入新图时显示
@@ -1281,9 +1277,9 @@
 	" />
 	<text key="Help - Ammo Supply" text="[子弹补给机制] 子弹补给箱可以补给消耗品武器以及护甲，按V拆开补给并手动放入背包中" />
 	<text key="Help - Stratagems" text="[战略呼叫机制] 在聊天栏输入ddw[→→↑]或者wsdaw[↑↓→←↑]等战略指令并发送，可在手雷栏获得部署信标" />
-	<text key="Help - Armor" text="[自动回血机制] 非死亡和非倒地状态下，每5秒回复5层护甲" />
+	<text key="Help - Armor" text="[自动回血机制] 非死亡和非倒地状态下，每10秒回复10层护甲" />
 	<text key="Help - Samples" text="[样本机制] 未完成，样本用于以后升级武器，样本拾取会共享" />
-	<text key="Help - Alert" text="[警报机制] 敌对阵营会有巡逻兵，在其触发警报前优先击杀它们" />
+	<text key="Help - Alert" text="[警报机f制] 敌对阵营会有巡逻兵，在其触发警报前优先击杀它们" />
 	<text key="Help - Repair" text="[维修机制] 维修台可以超额维修和回收部分载具" />
 	<text key="Help - EXO" text="[机甲机制] 部署机甲后，在机甲库里直接装备武器，有子弹限制，不可存取。卡弹按R键恢复。" />
 	<text key="Help - Cyborgs" text="[生化人] 首领-精英 为重甲单位，免疫普通子弹，尝试用爆炸物和燃烧武器击杀它们" />
@@ -1292,7 +1288,17 @@
 	<text key="Help - Reward" text="[奖励机制]在 -领域英雄 V30- 级之前(250w),使用基础AR-SMG武器和P2副手会有经验倍率加成" />
 	<text key="Help - Reward-2" text="[奖励机制]击杀敌方精英、使用机甲武器或者副手手枪等特定武器击杀，会回复护甲" />
 	<text key="Help - Dynamic Alert" text="[动态难度]根据服务器难度不同，敌方警报的增援量、增援单位不同。当敌方总数量超过己方两倍时，增援不会出现" />
-	
+	<text key="Help - Invite Friend" text="[邀请功能]输入/mykey 即可获取自己的邀请码，输入/inviter 好友的邀请码 双方均可获得游戏奖励！" />
+	<text key="Help - Vote" text="[投票功能]输入/vote 进入投票选择阶段，根据右上角提示输入/vote 数字 进行选择。 
+投票阶段输入/yes 或者/no 来赞成/反对。
+注意：他人在使用投票系统时，无法进行新一轮的投票。" />
+	<text key="Help - TK" text="[TK惩罚]连续TK他人若干次后会进入TK反伤状态。若在过图阶段TK他人，将会被自动踢出游戏并扣除RP和XP" />
+	<text key="Help - BattleReward" text="[战役结算]每当本局的战役胜利，将会获得一次额外结算奖励。
+结算奖励的倍率因子将会随时间增长而开始下降，因此挂机刷AI并不是好的选择。
+玩家可以使用道具-加成卡来提高倍率因子。
+TK其他玩家同样会造成倍率因子的下降" />
+
+
 	<text key="63Type 107mm Help" text="[107火箭炮教程] 首次部署" />
 	<text key="Help - 63Type 107mm" text="本火箭炮具有炮手和观察员两个位，观察员位用于触发密位特效。炮手开火瞄准密位内圈的任意位置，火箭炮将会打击到密位外圈的指定位置。" />
 	<text key="Banzai Help" text="[刺雷教程] 首次使用" />
@@ -1396,6 +1402,19 @@
 	<text key="Reward Box [Vehicle]" text="奖励箱子 [载具]" />
 	<text key="Reward Box [Weapon I]" text="奖励箱子 [武器 I]" />
 	<text key="Reward Box [Weapon II]" text="奖励箱子 [武器 II]" />
+	<text key="Reward Box [Weapon α]" text="奖励箱子 [武器 Alpha]" />
+	<text key="Reward Box [Weapon ?]" text="奖励箱子 [武器 未知]" />
+	<text key="Reward Box [Weapon V]" text="奖励箱子 [武器 V]" />
+	<text key="Reward Box [Weapon X]" text="奖励箱子 [武器 X]" />
+	<text key="Reward Box [Weapon β]" text="奖励箱子 [武器 Beta]" />
+	<text key="Reward Box [Weapon γ]" text="奖励箱子 [武器 Gama]" />
+	<text key="Reward Box [Weapon Δ]" text="奖励箱子 [武器 Delta]" />
+	<text key="Reward Box [Weapon θ]" text="奖励箱子 [武器 Theta]" />
+	<text key="Reward Box [Weapon λ]" text="奖励箱子 [武器 Lamda]" />
+	<text key="Reward Box [Weapon μ]" text="奖励箱子 [武器 Miu]" />
+	<text key="Reward Box [Weapon π]" text="奖励箱子 [武器 Pi]" />
+	<text key="Reward Box [Weapon φ]" text="奖励箱子 [武器 Phi]" />
+	<text key="Reward Box [Weapon Ω]" text="奖励箱子 [武器 Omega]" />
 <!-- 结算 -->
 	<text key="Battle End Reward XP" text="战役结算-经验奖励" />
 	<text key="Battle End Reward RP" text="战役结算-货币奖励" />
@@ -1511,7 +1530,7 @@
 	<text key="Processing" text="处理中，稍后再试" />
 	<text key="Lottery Guaranteed Reward [10]" text="十连保底奖励已发放" />
 	<text key="Lottery Guaranteed Reward [300]" text="三百连保底奖励已发放" />
-	<text key="Lottery ticket [Cash]" text="刮刮乐[三百万大奖]" />
+	<text key="Lottery ticket [Cash]" text="刮刮乐[七百万大奖]" />
 	<text key="Lottery ticket [Cash II]" text="刮刮乐[相同数字中奖]" />
 	<text key="GuaGuaLe" text="刮刮乐：您的号码[&#37;mynum] 中奖号码[&#37;tgnum]" />
 	<text key="GuaGuaLeII" text="刮刮乐：您的号码[&#37;mynum] 中奖号码[&#37;tgnum] 相同数字[&#37;samenum] 奖金[&#37;rp]" />
@@ -1529,5 +1548,35 @@
 <!-- 自动改造 -->
 	<text key="Change Target Valid" text="改造兵种[&#37;target]存在" />
 	<text key="Change Target InValid" text="改造兵种[&#37;target]不存在" />
+<!-- 邀请码系统 -->
+	<text key="InviteKey" text="您的邀请码[输入/inviter IDXXXX 以生效]" />
+	<text key="You didnt reach the Level 30" text="您的等级未满30级，无法邀请他人" />
+	<text key="You over reach the Level 30" text="您的等级已超过30级，无法被邀请" />
+	<text key="Inviter is not in the same Server" text="邀请者不在线，邀请失败" />
+	<text key="You had been invited!" text="您已经被邀请过了！" />
+	<text key="You are not steam User" text="您的账户非steam账户，无法验证" />
+<!-- 投票系统 -->
+	<text key="Now has a vote under selecting" text="当前已有一个投票正在进行" />
+	<text key="VoteMenu" text="投票菜单[输入/vote 数字 以选择]" />
+	<text key="VoteMenu All" text="由玩家[&#37;name]
+发起的[&#37;target]投票
+原因[&#37;reason]
+输入/yes 或者/no 来进行投票" />
+	<text key="VoteTargetInvalid" text="选择对象无效，重新选择" />
+	<text key="VoteMenu - content" text="#1 - 投票踢出玩家
+#2 - 投票跳过当前地图（无结算收益）
+#3 - 赞赏玩家
+" />
+	<text key="ShowNowPlayers" text="当前玩家和序号" />
+	<text key="You have voted" text="您已经投票过了" />
+	<text key="You are Appreciated and rewarded" text="您被玩家[&#37;name]赞赏了并获得了奖励！原因是[&#37;reason]" />
+	<text key="You are Appreciated, but no reward for second times" text="您被玩家[&#37;name]赞赏了！
+原因是[&#37;reason]" />
+	<text key="OverTime,Vote End" text="投票超时，本次投票结束" />
+	<text key="Only One Player,faild to Vote" text="只有一名玩家，无法投票" />
+	<text key="Vote left time: 60s" text="投票剩余时间：60s" />
+	<text key="Vote successd" text="本次投票结束" />
+	<text key="You are kicked form server after vote" text="本次投票结束" />
+
 </translation>
 

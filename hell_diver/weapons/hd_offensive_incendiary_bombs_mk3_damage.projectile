@@ -7,7 +7,7 @@ slot="0"
 pulldown_in_air="0.7"
 on_ground_up="0 1 0"
 use_time_to_live="1"
-time_to_live="60"
+time_to_live="12"
 can_be_disarmed="0"
 can_be_detected_by_footmen="0"
 can_be_detected_by_driver="0"
@@ -17,7 +17,12 @@ time_to_live_out_in_the_open="0"
 player_death_drop_owner_lock_time="0"
 >
     <collision class="sticky" />
-    <trigger class="impact" />
+     <trigger class="impact">
+     <collider class="terrain" enabled="0" />     
+     <collider class="static_object" enabled="0" /> 
+     <collider class="vehicle" enabled="1" /> 
+     <collider class="character" enabled="1" />
+    </trigger> 
     <result class="blast" radius="5.0" damage="2" push="0.1" decal="1" character_state="wound" />
     	
     <effect class="result" type="splat_map" surface_tag="" size="3.0" atlas_index="0" layer="1" />

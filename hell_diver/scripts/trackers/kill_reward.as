@@ -101,10 +101,10 @@ class tk_info{
 			}
 			killTimes += 1;
 			kill_target_count.set(TargetName,killTimes);
-			if(killTimes >= 4){
+			if(killTimes >= 3){
 				m_deadth = true;
 			}
-			if(killTimes >= 6){
+			if(killTimes >= 4){
 				m_banned = true;
 			}
 			if(killTimes >= 2){
@@ -127,13 +127,13 @@ class tk_info{
 					_report(m_metagame,"getAll Kill times="+key+" "+killTimes);
 				}
 			}
-			if(AllkillTimes >= 6){
+			if(AllkillTimes >= 4){
 				m_deadth = true;
 			}
-			if(AllkillTimes >= 8){
+			if(AllkillTimes >= 5){
 				m_banned = true;
 			}
-			if(AllkillTimes >= 4){
+			if(AllkillTimes >= 3){
 				return true;
 			}
 		}

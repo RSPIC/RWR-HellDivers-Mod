@@ -5,9 +5,48 @@
 	"contentfolder"		"W:\Software\SteamSDK\sdk\hd_mod\hell_diver"
 	"previewfile"		"W:\Software\SteamSDK\sdk\hd_mod\HD_Preview.png"
 	"visibility"		"0"
-	"title"				"Running with HellDivers [incomplete & keep updating]"
+	"title"				"Running with HellDivers [keep updating]"
 	"description"		"
-								A mod based on Helldivers and now it has Helldivers and cyborgs factions.
+RWR的地狱潜兵mod，现在完成了超级地球、Cyborgs（生化人）、Bus（虫族）三个阵营
+
+目前进入正式服阶段，可以在服务器列表中搜索到
+【交流QQ群：498520233】用于答疑和更新公告
+
+如何游玩本模组？
+正常像原版一样玩，挑选军械库枪去对敌作战即可。你会在游戏内置教程和对战中了解到敌人的特点和对抗措施，了解到部分特殊游戏脚本的使用方法。
+
+部分游戏机制如下：
+子弹补给机制: 子弹补给箱可以补给消耗品武器以及护甲，按V拆开补给并手动放入背包中
+战略呼叫机制: 在聊天栏输入ddw[→→↑]或者wsdaw[↑↓→←↑]等战略指令并发送，可在手雷栏获得部署信标
+自动回血机制: 非死亡和非倒地状态下，每10秒回复10层护甲
+样本机制: 未完成，样本用于以后升级武器，样本拾取会共享
+警报机制: 敌对阵营会有巡逻兵，在其触发警报前优先击杀它们
+维修机制: 维修台可以超额维修和回收部分载具
+机甲机制: 部署机甲后，在机甲库里直接装备武器，有子弹限制，不可存取。卡弹按R键恢复。
+生化人: 首领-精英 为重甲单位，免疫普通子弹，尝试用爆炸物和燃烧武器击杀它们
+虫族：虫族精英坦克在死亡时会爆炸，刺钉虫的正面和坦克虫的尾部均有弱点可以击穿
+动态难度: 根据服务器难度不同，敌方警报的增援量、增援单位不同。当敌方总数量超过己方两倍时，增援不会出现
+邀请功能：输入/mykey 即可获取自己的邀请码，输入/inviter 好友的邀请码 双方均可获得游戏奖励！
+投票功能：输入/vote 进入投票选择阶段，根据右上角提示输入/vote 数字 进行选择。 投票阶段输入/yes 或者/no 来赞成/反对。注意：他人在使用投票系统时，无法进行新一轮的投票。
+TK惩罚：连续TK他人若干次后会进入TK反伤状态。若在过图阶段TK他人，将会被自动踢出游戏并扣除RP和XP
+战役结算：每当本局的战役胜利，将会获得一次额外结算奖励。结算奖励的倍率因子将会随时间增长而开始下降，因此挂机刷AI并不是好的选择。玩家可以使用道具-加成卡来提高倍率因子。TK其他玩家同样会造成倍率因子的下降
+
+感谢以下朋友对我早期的帮助：
+XEON、NetherCrow冥府乌鸦、BBBYJ、Psyber_Demon、
+KEILSAMA、ARST、YYSY、Tactical UMP-45、rainbowflesh
+DILING
+
+主策划：RST
+美术：RST
+脚本：RST 冥府乌鸦 
+动画：RST
+音效：RST
+地图：Diling 
+模型：RST
+粒子特效：RST
+载具：RST wangshan
+
+A mod based on Helldivers and now it has Helldivers 、Cyborgs and Bugs factions.
 Author is keeping updating while uploading this incomplete mod for feedback.
 You will be amazed by the models, sounds and particle effects, which is under a brand new game frame.
 Come and Fight for LiberTEA!
@@ -41,56 +80,13 @@ Cyborgs: Bosses and Elite units are heavily armored, immune to regular bullets. 
 [Help - EX-1]
 Different strategems require different experience levels to use. All strategems can be unlocked after reaching Level 30 (2.5 million experience points).
 
-[Help - Reward]
-Reward Mechanism: Before reaching Level 30 (2.5 million experience points), using basic AR-SMG weapons and P2 sidearms will grant bonus experience multipliers.
-
-[Help - Reward-2]
-Reward Mechanism: Killing elite enemies, using EXO suit weapons, or killing with specific weapons like sidearm pistols will restore armor.
-
 [Help - Dynamic Alert]
 Dynamic Difficulty: Depending on the server difficulty, enemy alert reinforcements and units will vary. When the total number of enemies is more than double that of the players, reinforcements will not appear.
 
-Some Questions：
-1. Why this mod has a faction ACG that different from the Helldiver?
-    ACG is one of my like which contains lots of interesting weapons and vehicles. This faction will remove from the Campaign mode when the mod fully complete and will add to Invasion mode for online server.
-
-
-RWR的地狱潜兵mod，现在完成了HELLDIVERS阵营和Cyborgs（生化人）
-
-目前进入测试服阶段，可以在服务器列表中搜索到
-
-【交流QQ群：498520233】用于答疑和更新公告
-
-部分游戏机制如下：
-子弹补给机制: 子弹补给箱可以补给消耗品武器以及护甲，按V拆开补给并手动放入背包中
-战略呼叫机制: 在聊天栏输入ddw[→→↑]或者wsdaw[↑↓→←↑]等战略指令并发送，可在手雷栏获得部署信标
-自动回血机制: 非死亡和非倒地状态下，每4秒回复4层护甲
-样本机制: 未完成，样本用于以后升级武器，样本拾取会共享
-警报机制: 敌对阵营会有巡逻兵，在其触发警报前优先击杀它们
-维修机制: 维修台可以超额维修和回收部分载具
-机甲机制: 部署机甲后，在机甲库里直接装备武器，有子弹限制，不可存取。卡弹按R键恢复。
-生化人: 首领-精英 为重甲单位，免疫普通子弹，尝试用爆炸物和燃烧武器击杀它们
-不同战略设备需要不同经验值才许可使用，30级[250W]后可解锁所有战略设备
-奖励机制: 在 -领域英雄 V30- 级之前(250w),使用基础AR-SMG武器和P2副手会有经验倍率加成
-奖励机制: 击杀敌方精英、使用机甲武器或者副手手枪等特定武器击杀，会回复护甲
-动态难度: 根据服务器难度不同，敌方警报的增援量、增援单位不同。当敌方总数量超过己方两倍时，增援不会出现
 
 
 
-感谢以下朋友对我早期的帮助：
-XEON、NetherCrow冥府乌鸦、BBBYJ、Psyber_Demon、
-KEILSAMA、ARST、YYSY、Tactical UMP-45、rainbowflesh
-DILING
 
-主策划：RST
-美术：RST
-脚本：冥府乌鸦 RST
-动画：RST
-音效：RST
-地图：Diling 
-模型：RST
-粒子特效：RST
-载具模型：HELLDIVER
 
 
 

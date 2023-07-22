@@ -94,10 +94,8 @@ key="acg_smg_strelka.weapon"
 	time_to_live="0.22" can_be_detected_by_driver="1" can_be_disarmed="0" name="Kasm-23"> 
 	
 		<result class="spawn" instance_class="projectile" instance_key="acg_smg_strelka_damage.projectile" 
-		min_amount="4" max_amount="4" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
-		<!-- 25m max damage range / 最高1.5倍射界,且无衰减 -->
-		<!-- 0.3s stun time -->
-		<!-- damage 60hit/70ap stun  -->
+		min_amount="8" max_amount="8" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
 		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 

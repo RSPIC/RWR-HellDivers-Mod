@@ -18,17 +18,26 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		@m_itemDeliveryOrganizer = @organizer;
 
 		setupBriefcaseUnlocks();
-		//setupGift1();
-		//setupGift2();
-		//setupGift3();
 		setupCollection();    
 		setupSkin(); 
 		setupMusic(); 
         setupVehicle();  
-        setupWeapon1();
-        setupWeapon2(); 
-		//setupHalloween1();
-		//setupXmasBox();
+        setupWeapon1();	//mk1
+        setupWeapon2(); //mk2
+		setupWeaponLamda(); // mk3
+		setupWeaponDelta(); // mk4
+		setupWeaponV(); // mk5
+        setupWeaponUnknown(); // mk6
+        setupWeaponAlpha(); // vanilla
+        setupWeaponX(); // 复活自带系列
+        setupWeaponBeta(); //mk1~mk5 系列数量限制 5/4/3/2/1
+        setupWeaponGama(); //mk1~mk5 系列数量限制 5/4/3/2/1
+		setupWeaponTheta(); //mk1~mk5 系列数量限制 5/4/3/2/1
+		setupWeaponMiu(); //mk1~mk5 系列数量限制 5/4/3/2/1
+        setupWeaponPi(); //mk1~mk5 系列数量限制 5/4/3/2/1
+        setupWeaponPhi(); //当季限定，轮换
+        setupWeaponOmega(); // mk1~mk3
+
 		setupIcecream();
 		setupEnemyWeaponUnlocks();
 		setupLaptopUnlocks();
@@ -305,38 +314,15 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 	// ----------------------------------------------------
 	protected void setupWeapon1() {
 		_log("adding reward_box_weapon_1 config", 1);
-		//武器箱子
+		// MK1系列武器
 		array<Resource@> deliveryList = {
 			 Resource("reward_box_weapon_1.carry_item", "carry_item")
 		};
 
 		array<array<ScoredResource@>> rewardPasses = {
 			{
-         	ScoredResource("ex_leviathan_breath.weapon", "weapon", 1.0f),         
-         	ScoredResource("ex_disaster_railgun.weapon", "weapon", 1.0f),         
-         	ScoredResource("acg_reisenu_a.weapon", "weapon", 1.0f),         
-         	ScoredResource("acg_mg4a3td.weapon", "weapon", 1.0f),         
-         	ScoredResource("acg_mg4td_ke.weapon", "weapon", 1.0f),         
-         	ScoredResource("acg_ruby_rose_scythe.weapon", "weapon", 1.0f),         
-         	ScoredResource("acg_kokomi_portia.weapon", "weapon", 1.0f),         
-         	ScoredResource("acg_megumin_wand_float.weapon", "weapon", 1.0f),         
-         	ScoredResource("acg_sorasaki_hina.weapon", "weapon", 1.0f),         
-         	ScoredResource("acg_texas_skill.weapon", "weapon", 1.0f),         
-         	ScoredResource("acg_hk416_starry_cocoon.weapon", "weapon", 1.0f),         
-         	ScoredResource("acg_iws2000_banisher.weapon", "weapon", 1.0f),         
-         	ScoredResource("acg_kemomimi.weapon", "weapon", 1.0f),         
-         	ScoredResource("acg_shigure_127mm.weapon", "weapon", 1.0f),         
-         	ScoredResource("acg_fiammetta_gl.weapon", "weapon", 1.0f),         
          	ScoredResource("acg_smg_strelka.weapon", "weapon", 1.0f),         
-         	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f),
-         	ScoredResource("acg_sinteria_bow.weapon", "weapon", 1.0f),
-         	ScoredResource("acg_g41_lasercanno_diffusion.weapon", "weapon", 1.0f),
-         	ScoredResource("acg_g41_bp2077.weapon", "weapon", 1.0f),
-         	ScoredResource("acg_bronya.weapon", "weapon", 1.0f),
-         	ScoredResource("acg_shuiniao.weapon", "weapon", 1.0f),
-         	ScoredResource("acg_ba_alice_railgun_ex.weapon", "weapon", 1.0f),
-
-         	ScoredResource("acg_patricia_cumforce.weapon", "weapon", 1.0f)
+         	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f)
 			},
 			{
 			ScoredResource("lottery_cash.carry_item", "carry_item", 1.0f)
@@ -358,29 +344,17 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		array<Resource@> deliveryList = {
 			 Resource("reward_box_weapon_2.carry_item", "carry_item")
 		};
-		// MK1~MK3系列武器
+		// MK2系列武器
 		array<array<ScoredResource@>> rewardPasses = {
 			{
-        	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f),
-        	ScoredResource("acg_smg_strelka.weapon", "weapon", 1.0f),
-
         	ScoredResource("acg_mg4td_ke.weapon", "weapon", 1.0f),
         	ScoredResource("acg_mg4a3td.weapon", "weapon", 1.0f),
         	ScoredResource("acg_ruby_rose_scythe.weapon", "weapon", 1.0f),
         	ScoredResource("acg_reisenu_a.weapon", "weapon", 1.0f),
-        	ScoredResource("acg_kemomimi.weapon", "weapon", 1.0f),
-
-        	ScoredResource("acg_amamiya_kokoro.weapon", "weapon", 1.0f),
-        	ScoredResource("acg_hongxue.weapon", "weapon", 1.0f),
-        	ScoredResource("acg_g41_bp2077.weapon", "weapon", 1.0f),
-        	ScoredResource("acg_iws2000_banisher.weapon", "weapon", 1.0f),
-        	ScoredResource("acg_hk416_starry_cocoon.weapon", "weapon", 1.0f),
-        	ScoredResource("acg_sorasaki_hina.weapon", "weapon", 1.0f),
-        	ScoredResource("acg_fiammetta_gl.weapon", "weapon", 1.0f)
-
+        	ScoredResource("acg_kemomimi.weapon", "weapon", 1.0f)
 			},
 			{
-			ScoredResource("lottery_cash.carry_itemx", "carry_item", 1.0f)
+			ScoredResource("lottery_cash.carry_item", "carry_item", 1.0f)
 			}
 		};   
 
@@ -388,6 +362,384 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
     
 		GiftItemDeliveryRandomRewarder@ rewarder = GiftItemDeliveryRandomRewarder(m_metagame, rewardPasses);
 
+		m_itemDeliveryOrganizer.addObjective(
+			ItemDeliveryObjective(m_metagame, 0, deliveryList, m_itemDeliveryOrganizer, null, "", "", "", -1 /* loop */, rewarder)
+			);
+	}	
+	// ----------------------------------------------------
+	protected void setupWeaponAlpha() {
+		_log("adding setupWeaponAlpha config", 1);
+		array<Resource@> deliveryList = {
+			 Resource("reward_box_weapon_alpha.carry_item", "carry_item")
+		};
+		array<array<ScoredResource@>> rewardPasses = {
+			{
+        	ScoredResource("ex_piano_uzuki.weapon", "weapon", 1.0f),
+
+        	ScoredResource("ex_piano_uzuki.weapon", "weapon", 1.0f)
+			},
+			{
+			ScoredResource("lottery_cash.carry_item", "carry_item", 1.0f)
+			}
+		};   
+		processRewardPasses(rewardPasses);
+		GiftItemDeliveryRandomRewarder@ rewarder = GiftItemDeliveryRandomRewarder(m_metagame, rewardPasses);
+		m_itemDeliveryOrganizer.addObjective(
+			ItemDeliveryObjective(m_metagame, 0, deliveryList, m_itemDeliveryOrganizer, null, "", "", "", -1 /* loop */, rewarder)
+			);
+	}	
+	// ----------------------------------------------------
+	protected void setupWeaponUnknown() {
+		_log("adding setupWeaponUnknown config", 1);
+		// MK6系列武器
+		array<Resource@> deliveryList = {
+			 Resource("reward_box_weapon_unknown.carry_item", "carry_item")
+		};
+		array<array<ScoredResource@>> rewardPasses = {
+			{
+        	ScoredResource("acg_shigure_127mm.weapon", "weapon", 1.0f)
+			},
+			{
+			ScoredResource("lottery_cash.carry_item", "carry_item", 1.0f)
+			}
+		};   
+		processRewardPasses(rewardPasses);
+		GiftItemDeliveryRandomRewarder@ rewarder = GiftItemDeliveryRandomRewarder(m_metagame, rewardPasses);
+		m_itemDeliveryOrganizer.addObjective(
+			ItemDeliveryObjective(m_metagame, 0, deliveryList, m_itemDeliveryOrganizer, null, "", "", "", -1 /* loop */, rewarder)
+			);
+	}	
+	// ----------------------------------------------------
+	protected void setupWeaponV() {
+		_log("adding setupWeaponV config", 1);
+		// MK5系列武器
+		array<Resource@> deliveryList = {
+			 Resource("reward_box_weapon_v.carry_item", "carry_item")
+		};
+		array<array<ScoredResource@>> rewardPasses = {
+			{
+        	ScoredResource("acg_patricia_cumforce.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_megumin_wand_float.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_trinity_ghoul.weapon", "weapon", 1.0f)
+			},
+			{
+			ScoredResource("lottery_cash.carry_item", "carry_item", 1.0f)
+			}
+		};   
+		processRewardPasses(rewardPasses);
+		GiftItemDeliveryRandomRewarder@ rewarder = GiftItemDeliveryRandomRewarder(m_metagame, rewardPasses);
+		m_itemDeliveryOrganizer.addObjective(
+			ItemDeliveryObjective(m_metagame, 0, deliveryList, m_itemDeliveryOrganizer, null, "", "", "", -1 /* loop */, rewarder)
+			);
+	}	
+	// ----------------------------------------------------
+	protected void setupWeaponX() {
+		_log("adding setupWeaponX config", 1);
+		// 复活自带系列
+		array<Resource@> deliveryList = {
+			 Resource("reward_box_weapon_x.carry_item", "carry_item")
+		};
+		array<array<ScoredResource@>> rewardPasses = {
+			{
+        	ScoredResource("ex_piano_uzuki.weapon", "weapon", 1.0f),
+
+        	ScoredResource("ex_piano_uzuki.weapon", "weapon", 1.0f)
+			},
+			{
+			ScoredResource("lottery_cash.carry_item", "carry_item", 1.0f)
+			}
+		};   
+		processRewardPasses(rewardPasses);
+		GiftItemDeliveryRandomRewarder@ rewarder = GiftItemDeliveryRandomRewarder(m_metagame, rewardPasses);
+		m_itemDeliveryOrganizer.addObjective(
+			ItemDeliveryObjective(m_metagame, 0, deliveryList, m_itemDeliveryOrganizer, null, "", "", "", -1 /* loop */, rewarder)
+			);
+	}	
+	// ----------------------------------------------------
+	protected void setupWeaponBeta() {
+		_log("adding setupWeaponBeta config", 1);
+		//mk1~mk5 系列数量限制 5/4/3/2/1
+		array<Resource@> deliveryList = {
+			 Resource("reward_box_weapon_beta.carry_item", "carry_item")
+		};
+		array<array<ScoredResource@>> rewardPasses = {
+			{
+        	ScoredResource("acg_patricia_cumforce.weapon", "weapon", 1.0f),
+
+        	ScoredResource("acg_bronya.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_g41_lasercanno_diffusion.weapon", "weapon", 1.0f),
+
+        	ScoredResource("acg_sinteria_bow.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_kokomi_portia.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_sorasaki_hina.weapon", "weapon", 1.0f),
+
+        	ScoredResource("acg_kemomimi.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_reisenu_a.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_mg4a3td.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_mg4td_ke.weapon", "weapon", 1.0f),
+
+        	ScoredResource("acg_smg_strelka.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f)
+			},
+			{
+			ScoredResource("lottery_cash.carry_item", "carry_item", 1.0f)
+			}
+		};   
+		processRewardPasses(rewardPasses);
+		GiftItemDeliveryRandomRewarder@ rewarder = GiftItemDeliveryRandomRewarder(m_metagame, rewardPasses);
+		m_itemDeliveryOrganizer.addObjective(
+			ItemDeliveryObjective(m_metagame, 0, deliveryList, m_itemDeliveryOrganizer, null, "", "", "", -1 /* loop */, rewarder)
+			);
+	}	
+	// ----------------------------------------------------
+	protected void setupWeaponGama() {
+		_log("adding setupWeaponGama config", 1);
+		array<Resource@> deliveryList = {
+			 Resource("reward_box_weapon_gama.carry_item", "carry_item")
+		};
+		array<array<ScoredResource@>> rewardPasses = {
+			{
+        	ScoredResource("acg_megumin_wand_float.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_trinity_ghoul.weapon", "weapon", 1.0f),
+
+        	ScoredResource("acg_shuiniao.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_fiammetta_gl.weapon", "weapon", 1.0f),
+
+        	ScoredResource("acg_hk416_starry_cocoon.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_iws2000_banisher.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_g41_bp2077.weapon", "weapon", 1.0f),
+
+        	ScoredResource("acg_kemomimi.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_reisenu_a.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_mg4a3td.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_mg4td_ke.weapon", "weapon", 1.0f),
+
+        	ScoredResource("acg_smg_strelka.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f)
+			},
+			{
+			ScoredResource("lottery_cash.carry_item", "carry_item", 1.0f)
+			}
+		};   
+		processRewardPasses(rewardPasses);
+		GiftItemDeliveryRandomRewarder@ rewarder = GiftItemDeliveryRandomRewarder(m_metagame, rewardPasses);
+		m_itemDeliveryOrganizer.addObjective(
+			ItemDeliveryObjective(m_metagame, 0, deliveryList, m_itemDeliveryOrganizer, null, "", "", "", -1 /* loop */, rewarder)
+			);
+	}	
+	// ----------------------------------------------------
+	protected void setupWeaponDelta() {
+		_log("adding setupWeaponDelta config", 1);
+		// MK4 系列物品
+		array<Resource@> deliveryList = {
+			 Resource("reward_box_weapon_delta.carry_item", "carry_item")
+		};
+		array<array<ScoredResource@>> rewardPasses = {
+			{
+        	ScoredResource("acg_bronya.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_g41_lasercanno_diffusion.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_shuiniao.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_fiammetta_gl.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_disaster_railgun.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_texas_skill.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_ba_alice_railgun_ex.weapon", "weapon", 1.0f)
+			},
+			{
+			ScoredResource("lottery_cash.carry_item", "carry_item", 1.0f)
+			}
+		};   
+		processRewardPasses(rewardPasses);
+		GiftItemDeliveryRandomRewarder@ rewarder = GiftItemDeliveryRandomRewarder(m_metagame, rewardPasses);
+		m_itemDeliveryOrganizer.addObjective(
+			ItemDeliveryObjective(m_metagame, 0, deliveryList, m_itemDeliveryOrganizer, null, "", "", "", -1 /* loop */, rewarder)
+			);
+	}	
+	// ----------------------------------------------------
+	protected void setupWeaponTheta() {
+		_log("adding setupWeaponTheta config", 1);
+		array<Resource@> deliveryList = {
+			 Resource("reward_box_weapon_theta.carry_item", "carry_item")
+		};
+		array<array<ScoredResource@>> rewardPasses = {
+			{
+        	ScoredResource("ex_trinity_ghoul.weapon", "weapon", 1.0f),
+
+        	ScoredResource("ex_disaster_railgun.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_texas_skill.weapon", "weapon", 1.0f),
+
+        	ScoredResource("acg_sinteria_bow.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_hongxue.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_amamiya_kokoro.weapon", "weapon", 1.0f),
+
+        	ScoredResource("acg_kemomimi.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_reisenu_a.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_mg4a3td.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_mg4td_ke.weapon", "weapon", 1.0f),
+
+        	ScoredResource("acg_smg_strelka.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f)
+			},
+			{
+			ScoredResource("lottery_cash.carry_item", "carry_item", 1.0f)
+			}
+		};   
+		processRewardPasses(rewardPasses);
+		GiftItemDeliveryRandomRewarder@ rewarder = GiftItemDeliveryRandomRewarder(m_metagame, rewardPasses);
+		m_itemDeliveryOrganizer.addObjective(
+			ItemDeliveryObjective(m_metagame, 0, deliveryList, m_itemDeliveryOrganizer, null, "", "", "", -1 /* loop */, rewarder)
+			);
+	}	
+	// ----------------------------------------------------
+	protected void setupWeaponLamda() {
+		_log("adding setupWeaponLamda config", 1);
+		// MK3系列武器
+		array<Resource@> deliveryList = {
+			 Resource("reward_box_weapon_lamda.carry_item", "carry_item")
+		};
+		array<array<ScoredResource@>> rewardPasses = {
+			{
+        	ScoredResource("acg_sinteria_bow.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_sorasaki_hina.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_hk416_starry_cocoon.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_iws2000_banisher.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_g41_bp2077.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_hongxue.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_amamiya_kokoro.weapon", "weapon", 1.0f)
+			},
+			{
+			ScoredResource("lottery_cash.carry_item", "carry_item", 1.0f)
+			}
+		};   
+		processRewardPasses(rewardPasses);
+		GiftItemDeliveryRandomRewarder@ rewarder = GiftItemDeliveryRandomRewarder(m_metagame, rewardPasses);
+		m_itemDeliveryOrganizer.addObjective(
+			ItemDeliveryObjective(m_metagame, 0, deliveryList, m_itemDeliveryOrganizer, null, "", "", "", -1 /* loop */, rewarder)
+			);
+	}	
+	// ----------------------------------------------------
+	protected void setupWeaponMiu() {
+		_log("adding setupWeaponMiu config", 1);
+		array<Resource@> deliveryList = {
+			 Resource("reward_box_weapon_miu.carry_item", "carry_item")
+		};
+		array<array<ScoredResource@>> rewardPasses = {
+			{
+        	ScoredResource("ex_trinity_ghoul.weapon", "weapon", 1.0f),
+
+        	ScoredResource("acg_bronya.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_ba_alice_railgun_ex.weapon", "weapon", 1.0f),
+
+        	ScoredResource("acg_hk416_starry_cocoon.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_g41_bp2077.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_amamiya_kokoro.weapon", "weapon", 1.0f),
+
+        	ScoredResource("acg_kemomimi.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_reisenu_a.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_mg4a3td.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_mg4td_ke.weapon", "weapon", 1.0f),
+
+        	ScoredResource("acg_smg_strelka.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f)
+			},
+			{
+			ScoredResource("lottery_cash.carry_item", "carry_item", 1.0f)
+			}
+		};   
+		processRewardPasses(rewardPasses);
+		GiftItemDeliveryRandomRewarder@ rewarder = GiftItemDeliveryRandomRewarder(m_metagame, rewardPasses);
+		m_itemDeliveryOrganizer.addObjective(
+			ItemDeliveryObjective(m_metagame, 0, deliveryList, m_itemDeliveryOrganizer, null, "", "", "", -1 /* loop */, rewarder)
+			);
+	}	
+	// ----------------------------------------------------
+	protected void setupWeaponPi() {
+		_log("adding setupWeaponPi config", 1);
+		array<Resource@> deliveryList = {
+			 Resource("reward_box_weapon_pi.carry_item", "carry_item")
+		};
+		array<array<ScoredResource@>> rewardPasses = {
+			{
+        	ScoredResource("acg_megumin_wand_float.weapon", "weapon", 1.0f),
+
+        	ScoredResource("acg_shuiniao.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_texas_skill.weapon", "weapon", 1.0f),
+
+        	ScoredResource("acg_sorasaki_hina.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_iws2000_banisher.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_amamiya_kokoro.weapon", "weapon", 1.0f),
+
+        	ScoredResource("acg_kemomimi.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_reisenu_a.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_mg4a3td.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_mg4td_ke.weapon", "weapon", 1.0f),
+
+        	ScoredResource("acg_smg_strelka.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f)
+			},
+			{
+			ScoredResource("lottery_cash.carry_item", "carry_item", 1.0f)
+			}
+		};   
+		processRewardPasses(rewardPasses);
+		GiftItemDeliveryRandomRewarder@ rewarder = GiftItemDeliveryRandomRewarder(m_metagame, rewardPasses);
+		m_itemDeliveryOrganizer.addObjective(
+			ItemDeliveryObjective(m_metagame, 0, deliveryList, m_itemDeliveryOrganizer, null, "", "", "", -1 /* loop */, rewarder)
+			);
+	}	
+	// ----------------------------------------------------
+	protected void setupWeaponPhi() {
+		_log("adding setupWeaponPhi config", 1);
+		array<Resource@> deliveryList = {
+			 Resource("reward_box_weapon_phi.carry_item", "carry_item")
+		};
+		array<array<ScoredResource@>> rewardPasses = {
+			{
+        	ScoredResource("ex_piano_uzuki.weapon", "weapon", 1.0f),
+
+        	ScoredResource("ex_piano_uzuki.weapon", "weapon", 1.0f)
+			},
+			{
+			ScoredResource("lottery_cash.carry_item", "carry_item", 1.0f)
+			}
+		};   
+		processRewardPasses(rewardPasses);
+		GiftItemDeliveryRandomRewarder@ rewarder = GiftItemDeliveryRandomRewarder(m_metagame, rewardPasses);
+		m_itemDeliveryOrganizer.addObjective(
+			ItemDeliveryObjective(m_metagame, 0, deliveryList, m_itemDeliveryOrganizer, null, "", "", "", -1 /* loop */, rewarder)
+			);
+	}	
+	// ----------------------------------------------------
+	protected void setupWeaponOmega() {
+		_log("adding setupWeaponOmega config", 1);
+		// MK1~MK3
+		array<Resource@> deliveryList = {
+			 Resource("reward_box_weapon_omega.carry_item", "carry_item")
+		};
+		array<array<ScoredResource@>> rewardPasses = {
+			{
+        	ScoredResource("acg_sinteria_bow.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_kokomi_portia.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_sorasaki_hina.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_hk416_starry_cocoon.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_iws2000_banisher.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_g41_bp2077.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_hongxue.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_amamiya_kokoro.weapon", "weapon", 1.0f),
+
+        	ScoredResource("acg_kemomimi.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_reisenu_a.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_mg4a3td.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_mg4td_ke.weapon", "weapon", 1.0f),
+
+        	ScoredResource("acg_smg_strelka.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f)
+			},
+			{
+			ScoredResource("lottery_cash.carry_item", "carry_item", 1.0f)
+			}
+		};   
+		processRewardPasses(rewardPasses);
+		GiftItemDeliveryRandomRewarder@ rewarder = GiftItemDeliveryRandomRewarder(m_metagame, rewardPasses);
 		m_itemDeliveryOrganizer.addObjective(
 			ItemDeliveryObjective(m_metagame, 0, deliveryList, m_itemDeliveryOrganizer, null, "", "", "", -1 /* loop */, rewarder)
 			);
@@ -439,40 +791,57 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		ScoredResource("MTL_SL_STRG2", "carry_item", 3.0f),     
 		ScoredResource("MTL_SL_STRG3", "carry_item", 1.0f),     
 		ScoredResource("MTL_SL_STRG4", "carry_item", 0.3f),     
-		//total f = 130 左右
+		//total f = 130 左右 3280一张
 
-		ScoredResource("reward_box_collection.carry_item", "carry_item", 6.0f),
+		ScoredResource("reward_box_collection.carry_item", "carry_item", 0.1f),
 		ScoredResource("reward_box_skin.carry_item", "carry_item", 15.0f),
-		ScoredResource("reward_box_music.carry_item", "carry_item", 3.0f), 
-		ScoredResource("reward_box_vehicle.carry_item", "carry_item", 12.0f),                       
-		ScoredResource("reward_box_weapon_1.carry_item", "carry_item", 1.0f),
-		ScoredResource("reward_box_weapon_2.carry_item", "carry_item", 2.0f)
-		//期望＞32w
+		ScoredResource("reward_box_music.carry_item", "carry_item", 1.0f), 
+		ScoredResource("reward_box_vehicle.carry_item", "carry_item", 15.0f), 
+		// mk1 2w标价 期望＞6w
+		ScoredResource("reward_box_weapon_1.carry_item", "carry_item", 7.1f),
+		// mk2 5w 期望＞(2+7)*3=27w
+		ScoredResource("reward_box_weapon_2.carry_item", "carry_item", 1.6f),
+		// mk3 12w标价 期望＞(12+5+2)*3=57w
+		ScoredResource("reward_box_weapon_lamda.carry_item", "carry_item", 0.75f),
+		// mk4 非卖 预期24w 期望＞(24+12+5+2)*3=129w
+		ScoredResource("reward_box_weapon_delta.carry_item", "carry_item", 0.33f),
+		// mk5 非卖 预期48w 期望＞(48+24+12+5+2)*3=273w
+		ScoredResource("reward_box_weapon_v.carry_item", "carry_item", 0.15f),
+		// MK1~MK5 混合箱，少量出
+		ScoredResource("reward_box_weapon_beta.carry_item", "carry_item", 0.05f),
+		ScoredResource("reward_box_weapon_gama.carry_item", "carry_item", 0.05f),
+		ScoredResource("reward_box_weapon_theta.carry_item", "carry_item", 0.05f),
+		ScoredResource("reward_box_weapon_miu.carry_item", "carry_item", 0.05f),
+		ScoredResource("reward_box_weapon_pi.carry_item", "carry_item", 0.05f),
+
+		// mk1~mk3 非卖 期望＞30w
+		ScoredResource("reward_box_weapon_omega.carry_item", "carry_item", 0.1f)
+
 
 			},
 			{
-			ScoredResource("balloon.carry_item", "carry_item", 300.0f),
+			ScoredResource("balloon.carry_item", "carry_item", 120.0f),
 
-			ScoredResource("hd_bonusfactor_al_10", "carry_item", 1.0f),
-			ScoredResource("hd_bonusfactor_al_20", "carry_item", 0.6f),
-			ScoredResource("hd_bonusfactor_al_45", "carry_item", 0.2f),
-			ScoredResource("hd_bonusfactor_al_75", "carry_item", 0.1f),
-			ScoredResource("hd_bonusfactor_al_125", "carry_item", 0.05f),
-			ScoredResource("hd_bonusfactor_al_240", "carry_item", 0.01f),
+			ScoredResource("hd_bonusfactor_al_10", "carry_item", 1.5f),
+			ScoredResource("hd_bonusfactor_al_20", "carry_item", 0.5f),
+			ScoredResource("hd_bonusfactor_al_45", "carry_item", 0.1f),
+			ScoredResource("hd_bonusfactor_al_75", "carry_item", 0.04f),
+			ScoredResource("hd_bonusfactor_al_125", "carry_item", 0.01f),
+			ScoredResource("hd_bonusfactor_al_240", "carry_item", 0.001f),
 
-			ScoredResource("hd_bonusfactor_xp_10", "carry_item", 1.0f),
-			ScoredResource("hd_bonusfactor_xp_20", "carry_item", 0.6f),
-			ScoredResource("hd_bonusfactor_xp_45", "carry_item", 0.2f),
-			ScoredResource("hd_bonusfactor_xp_75", "carry_item", 0.1f),
-			ScoredResource("hd_bonusfactor_xp_125", "carry_item", 0.05f),
-			ScoredResource("hd_bonusfactor_xp_240", "carry_item", 0.01f),
+			ScoredResource("hd_bonusfactor_xp_10", "carry_item", 1.5f),
+			ScoredResource("hd_bonusfactor_xp_20", "carry_item", 0.5f),
+			ScoredResource("hd_bonusfactor_xp_45", "carry_item", 0.1f),
+			ScoredResource("hd_bonusfactor_xp_75", "carry_item", 0.04f),
+			ScoredResource("hd_bonusfactor_xp_125", "carry_item", 0.01f),
+			ScoredResource("hd_bonusfactor_xp_240", "carry_item", 0.001f),
 
-			ScoredResource("hd_bonusfactor_rp_10", "carry_item", 1.0f),
-			ScoredResource("hd_bonusfactor_rp_20", "carry_item", 0.6f),
-			ScoredResource("hd_bonusfactor_rp_45", "carry_item", 0.2f),
-			ScoredResource("hd_bonusfactor_rp_75", "carry_item", 0.1f),
-			ScoredResource("hd_bonusfactor_rp_125", "carry_item", 0.05f),
-			ScoredResource("hd_bonusfactor_rp_240", "carry_item", 0.01f)
+			ScoredResource("hd_bonusfactor_rp_10", "carry_item", 1.5f),
+			ScoredResource("hd_bonusfactor_rp_20", "carry_item", 0.5f),
+			ScoredResource("hd_bonusfactor_rp_45", "carry_item", 0.1f),
+			ScoredResource("hd_bonusfactor_rp_75", "carry_item", 0.041f),
+			ScoredResource("hd_bonusfactor_rp_125", "carry_item", 0.01f),
+			ScoredResource("hd_bonusfactor_rp_240", "carry_item", 0.001f)
 			}
 		};   
     

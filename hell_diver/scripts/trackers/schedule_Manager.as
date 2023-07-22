@@ -134,7 +134,8 @@ class schedule_Manager : Tracker {
         if(player is null){return;}
         string name = player.getStringAttribute("name");
         // profile_hash不唯一,替换为sid,但保留代码名字和格式不变
-        string profile_hash = player.getStringAttribute("sid");
+        string profile_hash = player.getStringAttribute("profile_hash");
+        string sid = player.getStringAttribute("sid");
         int pid = player.getIntAttribute("player_id");
         int cid = player.getIntAttribute("character_id");
         int fid = player.getIntAttribute("faction_id");
@@ -149,9 +150,11 @@ class schedule_Manager : Tracker {
         if(g_playerInfoBuck.exists(name)){
             g_playerInfoBuck.update(name,pid,cid,fid,dead,wound,xp,rp,group);
             g_playerInfoBuck.setHash(name,profile_hash);
+            g_playerInfoBuck.setSid(name,sid);
         }else{
             g_playerInfoBuck.addNewInfo(name,pid,cid,fid,dead,wound,xp,rp,group);
             g_playerInfoBuck.setHash(name,profile_hash);
+            g_playerInfoBuck.setSid(name,sid);
         }
     }
     // --------------------------------------------

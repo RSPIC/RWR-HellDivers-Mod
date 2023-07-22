@@ -9,10 +9,12 @@
 #include "all_task.as"
 #include "all_parameter.as"
 
+#include "INFO.as"
+#include "debug_reporter.as"
+
 // --------------------------------------------
 class BasicCommandHandler : Tracker {
 	protected Metagame@ m_metagame;
-	protected bool g_online_TestMode;
 
 	// --------------------------------------------
 	BasicCommandHandler(Metagame@ metagame) {
