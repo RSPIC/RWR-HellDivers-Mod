@@ -178,6 +178,10 @@ class VoteManager : Tracker {
         string num = voteTypeMessage.substr(6);
         if(isNumeric(num)){
             m_voteTypeIndex = parseInt(num)-1;
+            if(m_voteTypeIndex == -1){
+                resetVote();
+                return;
+            }
         }
         if(!isNumeric(num) || m_voteTypeIndex < 0 || m_voteTypeIndex >= int(m_voteList.size())){
             //玩家输入错误,重新发送菜单
@@ -234,6 +238,10 @@ class VoteManager : Tracker {
         string num = targetMessage.substr(6);
         if(isNumeric(num)){
             m_targetIndex = parseInt(num)-1;
+            if(m_targetIndex == -1){
+                resetVote();
+                return;
+            }
         }
         if(!isNumeric(num) || m_targetIndex < 0 || m_targetIndex >= int(m_nameList.size())){
             //玩家输入错误,重新发送菜单
@@ -261,6 +269,10 @@ class VoteManager : Tracker {
         string num = targetMessage.substr(6);
         if(isNumeric(num)){
             m_reasonIndex = parseInt(num) -1;
+            if(m_reasonIndex == -1){
+                resetVote();
+                return;
+            }
         }
         if(!isNumeric(num) || m_reasonIndex < 0 || m_reasonIndex >= int(m_reasonList[m_voteTypeIndex].size())){
             //玩家输入错误,重新发送菜单
@@ -317,7 +329,7 @@ class VoteManager : Tracker {
             bool isHandled = false;
             if(voteTypeIndex == 0){//踢出玩家需要过半数
                 _report(m_metagame,"赞成["+yesNum+"]"+"反对["+noNum+"]"+"总数["+m_nameList.size()+"]");
-                if(yesNum > noNum && int(yesNum+noNum) >= int(m_nameList.size()/2) || int(yesNum) >= 5){
+                if(yesNum > noNum && int(yesNum+noNum) >= int(m_nameList.size()/2)+1 || int(yesNum) >= 5){
                     handlePlayerKick(m_targetIndex);
                     isHandled = true;
                 }

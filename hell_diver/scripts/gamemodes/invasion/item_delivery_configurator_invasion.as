@@ -500,7 +500,6 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		array<array<ScoredResource@>> rewardPasses = {
 			{
         	ScoredResource("acg_megumin_wand_float.weapon", "weapon", 1.0f),
-        	ScoredResource("ex_trinity_ghoul.weapon", "weapon", 1.0f),
 
         	ScoredResource("acg_shuiniao.weapon", "weapon", 1.0f),
         	ScoredResource("acg_fiammetta_gl.weapon", "weapon", 1.0f),
@@ -820,7 +819,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 
 			},
 			{
-			ScoredResource("balloon.carry_item", "carry_item", 120.0f),
+			ScoredResource("balloon.carry_item", "carry_item", 150.0f),
 
 			ScoredResource("hd_bonusfactor_al_10", "carry_item", 1.5f),
 			ScoredResource("hd_bonusfactor_al_20", "carry_item", 0.5f),

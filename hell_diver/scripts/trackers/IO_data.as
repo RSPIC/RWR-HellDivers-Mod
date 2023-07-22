@@ -837,6 +837,9 @@ class IO_data : Tracker {
                 addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_2.carry_item");
             }
             for(uint i=0;i<3;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_delta.carry_item");
+            }
+            for(uint i=0;i<3;++i){
                 addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_240");
             }
             for(uint i=0;i<5;++i){
@@ -850,7 +853,67 @@ class IO_data : Tracker {
             notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
             return true;
         }
+        if(access_tag == "MainServer"){//MainServer 开服奖励
+            
+            for(uint i=0;i<30;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_skin.carry_item");
+            }
+            for(uint i=0;i<10;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_vehicle.carry_item");
+            }
+            for(uint i=0;i<3;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_music.carry_item");
+            }
+            for(uint i=0;i<1;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_1.carry_item");
+            }
+            for(uint i=0;i<1;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_2.carry_item");
+            }
+            for(uint i=0;i<1;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_lamda.carry_item");
+            }
+            for(uint i=0;i<1;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_delta.carry_item");
+            }
+            for(uint i=0;i<1;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_gama.carry_item");
+            }
+            for(uint i=0;i<1;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_240");
+            }
+            for(uint i=0;i<3;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_xp_125");
+            }
+            for(uint i=0;i<5;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_rp_45");
+            }
+            dictionary a;
+            a["%reward"] = "已送至背包";
+            notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+            return true;
+        }
         if(access_tag == "sponsor_mk1"){//赞助者
+            for(uint i=0;i<1;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_rp_240");
+            }
+            for(uint i=0;i<15;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_20");
+            }
+            for(uint i=0;i<10;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_skin.carry_item");
+            }
+
+            GiveRP(m_metagame,cid,50000);
+            dictionary a;
+            a["%reward"] = "RP: 5w 和加成卡";
+            notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+            return true;
+        }
+        if(access_tag == "sponsor_mk2"){//赞助者
+            for(uint i=0;i<1;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_240");
+            }
             for(uint i=0;i<3;++i){
                 addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_75");
             }
@@ -860,6 +923,9 @@ class IO_data : Tracker {
             for(uint i=0;i<10;++i){
                 addItemInBackpack(m_metagame,cid,"carry_item","reward_box_skin.carry_item");
             }
+            for(uint i=0;i<1;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_delta.carry_item");
+            }
 
             GiveRP(m_metagame,cid,100000);
             dictionary a;
@@ -867,10 +933,10 @@ class IO_data : Tracker {
             notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
             return true;
         }
-        if(access_tag == "sponsor_mk2"){//赞助者
+        if(access_tag == "sponsor_mk3"){//赞助者
 
             for(uint i=0;i<5;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_125");
+                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_240");
             }
             for(uint i=0;i<15;++i){
                 addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_45");
@@ -879,79 +945,28 @@ class IO_data : Tracker {
                 addItemInBackpack(m_metagame,cid,"carry_item","reward_box_skin.carry_item");
             }
             for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_1.carry_item");
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_v.carry_item");
             }
 
             GiveRP(m_metagame,cid,300000);
             dictionary a;
-            a["%reward"] = "RP: 30w 和加成卡";
+            a["%reward"] = "RP: 30w 、加成卡和战利品箱子";
             notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
             return true;
         }
-        if(access_tag == "sponsor_mk3"){//赞助者
+        if(access_tag == "sponsor_mk4"){//赞助者
 
-            for(uint i=0;i<5;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_125");
-            }
-            for(uint i=0;i<15;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_45");
-            }
             for(uint i=0;i<10;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_skin.carry_item");
-            }
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_1.carry_item");
-            }
-
-            GiveRP(m_metagame,cid,1000000);
-            dictionary a;
-            a["%reward"] = "RP: 100w 和加成卡";
-            notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
-            return true;
-        }
-        if(access_tag == "Gift_alpha_1"){//小礼品
-
-            for(uint i=0;i<5;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_75");
-            }
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_1.carry_item");
-            }
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_2.carry_item");
-            }
-            for(uint i=0;i<10;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_skin.carry_item");
-            }
-            for(uint i=0;i<3;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_vehicle.carry_item");
-            }
-
-            GiveRP(m_metagame,cid,100000);
-            dictionary a;
-            a["%reward"] = "RP: 10w 、加成卡和战利品箱子";
-            notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
-            return true;
-        }
-        if(access_tag == "ESC"){//ESC小队成员
-
-            for(uint i=0;i<8;++i){
                 addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_240");
             }
             for(uint i=0;i<15;++i){
                 addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_125");
             }
-            for(uint i=0;i<20;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_75");
-            }
-            for(uint i=0;i<3;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_1.carry_item");
-            }
-            for(uint i=0;i<15;++i){
+            for(uint i=0;i<10;++i){
                 addItemInBackpack(m_metagame,cid,"carry_item","reward_box_skin.carry_item");
             }
-            for(uint i=0;i<15;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_vehicle.carry_item");
+            for(uint i=0;i<3;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_v.carry_item");
             }
 
             GiveRP(m_metagame,cid,1000000);
@@ -960,12 +975,250 @@ class IO_data : Tracker {
             notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
             return true;
         }
+        if(access_tag == "Gift_alpha_1"){//小礼品 alpha 系列 钱和加成卡
+
+            for(uint i=0;i<1;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_75");
+            }
+            GiveRP(m_metagame,cid,10000);
+            dictionary a;
+            a["%reward"] = "RP: 1w 、加成卡";
+            notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+            return true;
+        }
+        if(access_tag == "Gift_alpha_2"){//小礼品 alpha 系列 钱和加成卡
+
+            for(uint i=0;i<5;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_20");
+            }
+            for(uint i=0;i<1;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_xp_45");
+            }
+            for(uint i=0;i<1;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_rp_45");
+            }
+            GiveRP(m_metagame,cid,10000);
+            dictionary a;
+            a["%reward"] = "RP: 1w 、加成卡";
+            notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+            return true;
+        }
+        if(access_tag == "Gift_alpha_3"){//小礼品 alpha 系列 钱和加成卡
+
+            for(uint i=0;i<2;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_125");
+            }
+            for(uint i=0;i<1;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_xp_45");
+            }
+            for(uint i=0;i<1;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_rp_45");
+            }
+            GiveRP(m_metagame,cid,10000);
+            dictionary a;
+            a["%reward"] = "RP: 1w 、加成卡";
+            notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+            return true;
+        }
+        if(access_tag == "Gift_alpha_4"){//小礼品 alpha 系列 钱和加成卡
+
+            for(uint i=0;i<1;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_xp_240");
+            }
+            for(uint i=0;i<1;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_xp_45");
+            }
+            for(uint i=0;i<1;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_rp_45");
+            }
+            GiveRP(m_metagame,cid,10000);
+            dictionary a;
+            a["%reward"] = "RP: 1w 、加成卡";
+            notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+            return true;
+        }
+        if(access_tag == "Gift_alpha_5"){//小礼品 alpha 系列 钱和加成卡
+
+            for(uint i=0;i<1;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_rp_240");
+            }
+            for(uint i=0;i<1;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_xp_45");
+            }
+            for(uint i=0;i<1;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_rp_45");
+            }
+            GiveRP(m_metagame,cid,10000);
+            dictionary a;
+            a["%reward"] = "RP: 1w 、加成卡";
+            notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+            return true;
+        }
+        if(access_tag == "Gift_beta_1"){//小礼品 beta 系列 非武器类箱子
+
+            for(uint i=0;i<5;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_skin.carry_item");
+            }
+            GiveRP(m_metagame,cid,10000);
+            dictionary a;
+            a["%reward"] = "RP: 1w 和战利品箱子";
+            notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+            return true;
+        }
+        if(access_tag == "Gift_beta_2"){//小礼品 beta 系列 非武器类箱子
+
+            for(uint i=0;i<5;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_vehicle.carry_item");
+            }
+            GiveRP(m_metagame,cid,10000);
+            dictionary a;
+            a["%reward"] = "RP: 1w 和战利品箱子";
+            notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+            return true;
+        }
+        if(access_tag == "Gift_beta_3"){//小礼品 beta 系列 非武器类箱子
+
+            for(uint i=0;i<5;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_music.carry_item");
+            }
+            GiveRP(m_metagame,cid,10000);
+            dictionary a;
+            a["%reward"] = "RP: 1w 和战利品箱子";
+            notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+            return true;
+        }
+        if(access_tag == "Gift_beta_4"){//小礼品 beta 系列 非武器类箱子
+
+            for(uint i=0;i<1;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_collection.carry_item");
+            }
+            GiveRP(m_metagame,cid,10000);
+            dictionary a;
+            a["%reward"] = "RP: 1w 和战利品箱子";
+            notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+            return true;
+        }
+        if(access_tag == "Gift_beta_5"){//小礼品 beta 系列 非武器类箱子
+
+            for(uint i=0;i<1;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_collection.carry_item");
+            }
+            for(uint i=0;i<5;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_skin.carry_item");
+            }
+            for(uint i=0;i<3;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_music.carry_item");
+            }
+            for(uint i=0;i<5;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_vehicle.carry_item");
+            }
+            GiveRP(m_metagame,cid,10000);
+            dictionary a;
+            a["%reward"] = "RP: 1w 和战利品箱子";
+            notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+            return true;
+        }
+        if(access_tag == "Gift_gama_1"){//小礼品 gama 系列 武器类箱子
+
+            for(uint i=0;i<1;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_1.carry_item");
+            }
+            GiveRP(m_metagame,cid,10000);
+            dictionary a;
+            a["%reward"] = "RP: 1w 和战利品箱子";
+            notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+            return true;
+        }
+        if(access_tag == "Gift_gama_2"){//小礼品 gama 系列 武器类箱子
+
+            for(uint i=0;i<1;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_2.carry_item");
+            }
+            GiveRP(m_metagame,cid,10000);
+            dictionary a;
+            a["%reward"] = "RP: 1w 和战利品箱子";
+            notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+            return true;
+        }
+        if(access_tag == "Gift_gama_3"){//小礼品 gama 系列 武器类箱子
+
+            for(uint i=0;i<1;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_beta.carry_item");
+            }
+            GiveRP(m_metagame,cid,10000);
+            dictionary a;
+            a["%reward"] = "RP: 1w 和战利品箱子";
+            notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+            return true;
+        }
+        if(access_tag == "Gift_gama_4"){//小礼品 gama 系列 武器类箱子
+
+            for(uint i=0;i<1;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_miu.carry_item");
+            }
+            GiveRP(m_metagame,cid,10000);
+            dictionary a;
+            a["%reward"] = "RP: 1w 和战利品箱子";
+            notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+            return true;
+        }
+        if(access_tag == "Gift_gama_5"){//小礼品 gama 系列 武器类箱子
+
+            for(uint i=0;i<1;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_pi.carry_item");
+            }
+            GiveRP(m_metagame,cid,10000);
+            dictionary a;
+            a["%reward"] = "RP: 1w 和战利品箱子";
+            notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+            return true;
+        }
+        if(access_tag == "ESC"){//ESC小队成员
+
+            for(uint i=0;i<5;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_240");
+            }
+            for(uint i=0;i<5;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_125");
+            }
+            for(uint i=0;i<5;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_75");
+            }
+            for(uint i=0;i<1;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_delta.carry_item");
+            }
+            for(uint i=0;i<1;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_lamda.carry_item");
+            }
+            for(uint i=0;i<1;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_2.carry_item");
+            }
+            for(uint i=0;i<1;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_1.carry_item");
+            }
+            for(uint i=0;i<15;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_skin.carry_item");
+            }
+            for(uint i=0;i<15;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_vehicle.carry_item");
+            }
+
+            GiveRP(m_metagame,cid,500000);
+            dictionary a;
+            a["%reward"] = "RP: 50w 、加成卡和战利品箱子";
+            notify(m_metagame, "[欢迎加入ESC！]", a, "misc", pid, false, "", 1.0);
+            notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+            return true;
+        }
         if(access_tag == "inviter_reward"){//邀请者奖励
             for(uint i=0;i<1;++i){
                 addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_240");
             }
+            for(uint i=0;i<2;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_rp_75");
+            }
             for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_1.carry_item");
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_lamda.carry_item");
             }
             for(uint i=0;i<10;++i){
                 addItemInBackpack(m_metagame,cid,"carry_item","reward_box_skin.carry_item");
@@ -982,7 +1235,10 @@ class IO_data : Tracker {
                 addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_75");
             }
             for(uint i=0;i<2;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_2.carry_item");
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_omega.carry_item");
+            }
+            for(uint i=0;i<1;++i){
+                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_gama.carry_item");
             }
             for(uint i=0;i<10;++i){
                 addItemInBackpack(m_metagame,cid,"carry_item","reward_box_skin.carry_item");

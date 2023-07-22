@@ -43,7 +43,7 @@ void main(dictionary@ inputData) {
 	server_port='1242'
 	url='https://steamcommunity.com/sharedfiles/filedetails/?id=2910392031'
 	register_in_serverlist='1'
-	mode='COOP'
+	mode='HD'
         persistency='forever'
 	comment='Running with HellDivers Mod.  QQ：498520233 1.5倍xp'
 	max_players='16'>
