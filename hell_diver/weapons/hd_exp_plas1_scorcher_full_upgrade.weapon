@@ -7,7 +7,7 @@ key="hd_exp_plas1_scorcher_full_upgrade.weapon"
     <specification 	
     slot="0" 	
     retrigger_time="0.208" 
-	last_burst_retrigger_time="1"
+	last_burst_retrigger_time="0.208"
     accuracy_factor="1.0" 
 	spread_range="0.12"
 	stance_accuracy_rate="1.0"
@@ -45,7 +45,7 @@ key="hd_exp_plas1_scorcher_full_upgrade.weapon"
 	<!--武器动作，必须指定recoil和reload动作，部分动作留空会默认调用常规双手武器动作或者无动作-->
     <animation key="recoil" animation_key="recoil1, big" /> <!--后坐力动作，半身动作-->
     <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
-    <animation state_key="reload" animation_key="T_reloading_1.25s" />	<!--换弹动作，半身动作-->
+    <animation state_key="reload" animation_key="reloading_3.5s" />	<!--换弹动作，半身动作-->
     <animation state_key="hold" animation_key="" /><!--站姿静止动作，全身动作-->
 	<animation state_key="hold_on_wall"  animation_key="" /><!--架枪动作，全身动作-->
     <animation state_key="still_against_wall" animation_key="" /><!--靠墙动作，全身动作-->
@@ -93,11 +93,7 @@ key="hd_exp_plas1_scorcher_full_upgrade.weapon"
 	
         <result class="spawn" instance_class="projectile" instance_key="hd_exp_plas1_scorcher_full_upgrade_damage.projectile" 
 		min_amount="4" max_amount="4" offset="0 0.5 0" position_spread="0.8 0" direction_spread="0.1 0" />
-		<!-- damage 200/300 爆炸伤 -->
-        <!-- 100/s 火伤 duration 2s -->
-        <!-- 总伤500 载具伤500 -->
-        <!-- 敲定： 5x10 = 50 可击穿轻甲载具，无法击穿中甲以上-->
-        <!-- range 待定 -->
+		<!-- damage 4x1 = 44-->
 		
 		<trigger class="impact" time_to_live="0.11"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->

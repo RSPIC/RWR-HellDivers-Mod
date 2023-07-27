@@ -103,7 +103,7 @@ key="hd_laser_las16_sickle_full_upgrade.weapon"
 			direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
 		-->
 		<result class="hit" kill_probability="1.0" 
-		kill_probability_offset_on_successful_hit="15.5"
+		kill_probability_offset_on_successful_hit="22"
 		kill_decay_start_time="0.0" kill_decay_end_time="0.24" character_state="death"/>
 		<!-- damage 50/60  120/170center-->
 		<!-- use average 85/115 -->

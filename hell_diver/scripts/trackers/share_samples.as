@@ -81,9 +81,6 @@ class share_samples : Tracker {
 				string equipKey =  getPlayerEquipmentKey(m_metagame,characterId,2);
 				array<const XmlElement@>@ allPlayer = getPlayers(m_metagame);
 				if(allPlayer is null || allPlayer.size() == 0){return;}
-				if(g_debugMode){
-					_report(m_metagame,"Players num ="+allPlayer.size()+"; Sharing Sample key="+keyValue );
-				}
 				string targetKey;
 				if(!sample_target_key.get(itemKey,targetKey)){return;}
 				for(uint i = 0; i < allPlayer.length(); i++){
@@ -98,10 +95,6 @@ class share_samples : Tracker {
 					
 					deleteItemInBackpack(m_metagame,cid,"carry_item",itemKey);
 					addItemInBackpack(m_metagame,cid,"carry_item",targetKey);
-					if(g_debugMode){
-						_report(m_metagame,"Delete = "+itemKey);
-						_report(m_metagame,"Add = "+targetKey);
-					}
 					spawnStaticProjectile(m_metagame,"hd_effect_samples_pick.projectile",p_pos,cid,fid);
 				}
 			}

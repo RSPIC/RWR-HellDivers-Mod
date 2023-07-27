@@ -327,6 +327,65 @@ void deleteItemInStash(Metagame@ metagame, int characterId, string ItemType, str
 	metagame.getComms().send(c);	
 }
 
+
+
+void addListItemInStash(Metagame@ metagame, int characterId, array<Resource@>@ resources){
+	XmlElement c ("command");
+	c.setStringAttribute("class", "update_inventory");
+	c.setStringAttribute("container_type_class", "stash");
+	c.setIntAttribute("character_id", characterId); 
+	c.setIntAttribute("add",1);
+	for(uint i=0;i<resources.size();i++){
+		XmlElement k("item");
+		k.setStringAttribute("class", resources[i].m_type);
+		k.setStringAttribute("key", resources[i].m_key);
+		c.appendChild(k);
+	}
+	metagame.getComms().send(c);	
+}
+void addListItemInBackpack(Metagame@ metagame, int characterId, array<Resource@>@ resources){
+	XmlElement c ("command");
+	c.setStringAttribute("class", "update_inventory");
+	c.setStringAttribute("container_type_class", "backpack");
+	c.setIntAttribute("character_id", characterId); 
+	c.setIntAttribute("add",1);
+	for(uint i=0;i<resources.size();i++){
+		XmlElement k("item");
+		k.setStringAttribute("class", resources[i].m_type);
+		k.setStringAttribute("key", resources[i].m_key);
+		c.appendChild(k);
+	}
+	metagame.getComms().send(c);	
+}
+void deleteListItemInStash(Metagame@ metagame, int characterId, array<Resource@>@ resources){
+	XmlElement c ("command");
+	c.setStringAttribute("class", "update_inventory");
+	c.setStringAttribute("container_type_class", "stash");
+	c.setIntAttribute("character_id", characterId); 
+	c.setIntAttribute("add",0);
+	for(uint i=0;i<resources.size();i++){
+		XmlElement k("item");
+		k.setStringAttribute("class", resources[i].m_type);
+		k.setStringAttribute("key", resources[i].m_key);
+		c.appendChild(k);
+	}
+	metagame.getComms().send(c);	
+}
+void deleteListItemInBackpack(Metagame@ metagame, int characterId, array<Resource@>@ resources){
+	XmlElement c ("command");
+	c.setStringAttribute("class", "update_inventory");
+	c.setStringAttribute("container_type_class", "backpack");
+	c.setIntAttribute("character_id", characterId); 
+	c.setIntAttribute("add",0);
+	for(uint i=0;i<resources.size();i++){
+		XmlElement k("item");
+		k.setStringAttribute("class", resources[i].m_type);
+		k.setStringAttribute("key", resources[i].m_key);
+		c.appendChild(k);
+	}
+	metagame.getComms().send(c);	
+}
+
 void addItemInBackpack(Metagame@ metagame, int characterId, string ItemType, string ItemKey) {
 	string c = 
 		"<command class='update_inventory' character_id='" + characterId + "' container_type_class='backpack'>" + 
@@ -442,18 +501,6 @@ void spawnStaticItem(Metagame@ metagame,string key,Vector3 pos,int characterId,i
 	metagame.getComms().send(command);
 }
 
-void deleteItemInGround(Metagame@ metagame, int characterId, string ItemType, string ItemKey){
-	XmlElement c ("command");
-	c.setStringAttribute("class", "update_inventory");
-	c.setIntAttribute("container_type_id", 0);
-	c.setIntAttribute("character_id", characterId); 
-	c.setIntAttribute("add",0);
-	XmlElement k("item");
-	k.setStringAttribute("class", ItemType);
-	k.setStringAttribute("key", ItemKey);
-	c.appendChild(k);
-	metagame.getComms().send(c);	
-}
 void editPlayerVest(const Metagame@ metagame, int characterId, string Itemkey, uint numVests){
 	if (numVests < 1) return;
 	XmlElement c("command");

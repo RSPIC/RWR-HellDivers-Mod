@@ -22,9 +22,6 @@
 //触发补给key
 dictionary resupply_key = {
 
-        // 空
-        {"",-1},
-
         {"hd_ammo_supply_box.projectile",1},
 
         {"hd_ammo_supply_box_ex_2.projectile",1},
@@ -35,8 +32,6 @@ dictionary resupply_key = {
 };
 //可补给key
 dictionary resupply_getitem_key = {
-        // 空
-        {"",-1},
 
         {"hd_pst_tox13_avenger_mk3.weapon",10},
         {"hd_pst_flam40_incinerator_mk3.weapon",10},
@@ -52,33 +47,9 @@ dictionary resupply_getitem_key = {
         // 占位的
         {"666",-1}
 };
-//再补给价格
-dictionary resupply_cost = {
-        // 空
-        {"",-1},
 
-        {"hd_pst_tox13_avenger_mk3.weapon",0},
-        {"hd_pst_flam40_incinerator_mk3.weapon",0},
-        {"hd_exp_rec6_demolisher_mk3.weapon",0},
-        {"hd_exp_mls4x_commando_mk3.weapon",0},
-        {"hd_exp_eta17_mk3.weapon",0},
-        {"hd_exp_rl112_recoilless_rifle_mk3.weapon",0},
-        {"hd_mgx42_mk3.weapon",0},
-        {"hd_lmg_mgx42_mk3.weapon",0},
-
-        {"hd_at_mine_mk3.projectile",0},
-        {"hd_airdropped_stun_mine_mk3.projectile",0},
-
-        {"hd_grenade_molotov.projectile",0},
-        {"hd_grenade_standard.projectile",0},
-
-        // 占位的
-        {"666",-1}
-};
 //禁止背包携带物品
 dictionary banned_backpack_item = {
-        // 空
-        {"",-1},
 
         // Offensive 攻击性支援
         {"hd_offensive_vindicator_dive_bomb_mk3.projectile","projectile"},
@@ -158,8 +129,6 @@ dictionary banned_backpack_item = {
 };
 //禁止背包携带物品 忘记什么用了
 dictionary banned_special_item = {
-        // 空
-        {"",-1},
 
         {"hd_ammo_supply_box_ex.projectile","projectile"},
 
@@ -168,8 +137,6 @@ dictionary banned_special_item = {
 };
 //高亮提示特殊掉落物
 dictionary highlight_item_drop = {
-        // 空
-        {"",-1},
 
         {"samples_acg.carry_item","carry_item"},
         {"samples_bugs.carry_item","carry_item"},
@@ -181,8 +148,6 @@ dictionary highlight_item_drop = {
 };
 //无法交易物品，丢至地面会返还
 dictionary protected_trade = {
-        // 空
-        {"",-1},
 
         {"samples_bugs_ex.carry_item","carry_item"},
         {"samples_cyborgs_ex.carry_item","carry_item"},
@@ -193,8 +158,6 @@ dictionary protected_trade = {
 };
 //替换对应阵营样本(游戏机制导致不能指定掉落物品)
 dictionary samples_drop = {
-        // 空
-        {"",-1},
 
         {"samples_bugs_backpack.carry_item","Bugs"},
         {"samples_cyborgs_backpack.carry_item","Cyborgs"},
@@ -205,8 +168,6 @@ dictionary samples_drop = {
 };
 //掉落物品替换
 dictionary replace_drop = {
-        // 空
-        {"",-1},
 
         {"Bugs","samples_bugs.carry_item"},
         {"Cyborgs","samples_cyborgs.carry_item"},
@@ -246,7 +207,6 @@ class itemdrop_event : Tracker {
 		//todo:在此处判断在字典里存在然后选择是否返回，减少下列查询消耗。
 		if(	string(resupply_key[itemKey]) == "" 			&&
 			string(resupply_getitem_key[itemKey]) == "" 	&&
-			string(resupply_cost[itemKey]) == "" 			&&
 			string(banned_backpack_item[itemKey]) == "" 	&&
 			string(banned_special_item[itemKey]) == "" 		&&
 			string(highlight_item_drop[itemKey]) == "" 		&&
@@ -260,19 +220,8 @@ class itemdrop_event : Tracker {
 		if(characterId == -1){return;}
 		int playerId = event.getIntAttribute("player_id");
 		int containerId = event.getIntAttribute("target_container_type_id");
-		const XmlElement@ owner = getCharacterInfo(m_metagame, characterId);
-		_log("query owner info(itemdrop)");
+		//const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
 		int factionId = -1;
-		if(owner !is null){
-			if(owner.hasAttribute("faction_id")){
-				factionId = owner.getIntAttribute("faction_id");
-				_log("owner fid = " + factionId);
-			}
-			if(factionId == -1){
-				_log("owner fid = -1,return");
-				return;
-			}
-		}else{return;}
 
 		//containerId = 0(地面) 1(军械库) 2（背包） 3（仓库）
 		//itemClass = 0(主、副武器) 1（投掷物） 3（护甲、战利品）
@@ -285,79 +234,69 @@ class itemdrop_event : Tracker {
 				case 0:{break;}
 				case 1:{ //通用补给箱
 					if(containerId == 2 ){//装备进背包
-						string equipKey =  getPlayerEquipmentKey(m_metagame,characterId,2);
-						_log("equipKey: "+ equipKey);
+						dictionary equipList;
+						if(!getPlayerEquipmentInfoArray(m_metagame,characterId,equipList)) return;
 						deleteItemInBackpack(m_metagame,characterId,"projectile",itemKey);
-						_log("success delete supply item itemKey: "+ itemKey);
 						healCharacter(m_metagame,characterId,20);
 						playSoundAtLocation(m_metagame,"hd_mg94_mag_out.wav",factionId,position);
-						
-						for(int i=1;i<=4;i++){
-							if(i == 3){continue;}
-							equipKey = getDeadPlayerEquipmentKey(m_metagame,characterId,i);
+
+						array<Resource@> resources = array<Resource@>();
+						Resource@ res;
+						for(int i=1;i<=2;i++){
+							string equipKey = "";
+							equipList.get(""+i,equipKey);
 							if(g_debugMode){
 								_report(m_metagame,"Get Player EquipKey ="+equipKey);
 								_report(m_metagame,"Item slot ="+i);
 							}
 							//slot: 0主手 1副手 2投掷物 4护甲
-							if(int(resupply_getitem_key[equipKey])!=0){//为可补给物品
-								int ownnum = getPlayerEquipmentAmount(m_metagame,characterId,i);
-								int maxnum = int(resupply_getitem_key[equipKey]);
+							int maxnum;
+							bool noGrenade = false;
+							if(int(resupply_getitem_key[equipKey]) != 0){//为可补给物品
+								int ownnum = 0;
+								equipList.get(equipKey,ownnum);
+								maxnum = int(resupply_getitem_key[equipKey]);
 								int resupplyNum = maxnum - ownnum;
-								for(;resupplyNum>0;--resupplyNum){
-									if(int(resupply_cost[equipKey]) != 0){
-										const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
-										if(character is null){return;}
-										int t_playerId = character.getIntAttribute("player_id");
-										int rp = character.getIntAttribute("rp");
-										int cost = int(resupply_cost[equipKey]);
-										if(rp <= cost){
-											string message= "You don't have enough rp to resupply.";
-											sendPrivateMessage(m_metagame,t_playerId,message);
-											break;
-										}
-										GiveRP(m_metagame,characterId,-1*cost);
-									}
-									if(i==1){//副武器
-										addItemInBackpack(m_metagame,characterId,"weapon",equipKey);
-									}
-									if(i==2){//投掷物
-										addItemInBackpack(m_metagame,characterId,"projectile",equipKey);
-									}
-									if(i==4){//护甲
-										addItemInBackpack(m_metagame,characterId,"carry_item",equipKey);
-									}
+								if(i==1){//副武器
+									@res = Resource(equipKey,"weapon");
+                					res.addToResources(resources,resupplyNum);
 								}
-								continue;
+								if(i==2){//投掷物
+									@res = Resource(equipKey,"projectile");
+									res.addToResources(resources,resupplyNum);
+									noGrenade = true;
+								}
 							}
 							if(i==2){//补给信物(投掷物栏)
 								string tokenkey = "token_";
 								string newequipKey = equipKey.substr(0,tokenkey.length());
 								if(newequipKey == tokenkey){
-									int ownnum = getPlayerEquipmentAmount(m_metagame,characterId,i);
-									int maxnum = 6;
+									int ownnum = 0;
+									equipList.get(equipKey,ownnum);
+									maxnum = 6;
 									int resupplyNum = maxnum - ownnum;
-									for(;resupplyNum>0;--resupplyNum){
-										addItemInBackpack(m_metagame,characterId,"projectile",equipKey);
-									}
+									@res = Resource(equipKey,"projectile");
+									res.addToResources(resources,resupplyNum);
 									if(g_debugMode){
 										_report(m_metagame,"Success resupply Token");
 									}
+									addListItemInBackpack(m_metagame,characterId,resources);
 									return;
 								}
 							}
-							if(i==2){//补给手雷
-								int ownnum = getPlayerEquipmentAmount(m_metagame,characterId,i);
+							if(i==2 && !noGrenade){//补给手雷
+								int ownnum = 0;
+								equipList.get(equipKey,ownnum);
 								if(ownnum == 0){
 									string key = "hd_grenade_standard.projectile";
 									int maxnum = int(resupply_getitem_key[key]);
 									int resupplyNum = maxnum;
-									for(;resupplyNum>0;--resupplyNum){
-										addItemInBackpack(m_metagame,characterId,"projectile",key);
-									}
+									@res = Resource(key,"projectile");
+									res.addToResources(resources,resupplyNum);
 								}
 							}
 						}
+						addListItemInBackpack(m_metagame,characterId,resources);
 					}
 				}
 			}
@@ -365,19 +304,10 @@ class itemdrop_event : Tracker {
 
 		//是否属于删除物品
 		if(string(banned_backpack_item[itemKey]) != "" || string(banned_special_item[itemKey]) != ""){
-			if(g_debugMode){return;}
+			//if(g_debugMode){return;}
 			if(playerId == -1){return;}//排除AI
-			int senderId = event.getIntAttribute("player_id");
-			const XmlElement@ playerinfo = getPlayerInfo(m_metagame,senderId);
-			if(playerinfo is null){return;}
-			string sender = playerinfo.getStringAttribute("name");
-			_log("sender ="+sender);
-			_log("senderId ="+senderId);
-			// if (m_metagame.getAdminManager().isAdmin(sender, senderId)){
-			// 	_log("Is admin, exit ban item");
-			// 	return;
-			// }//管理可以存
-
+			array<Resource@> resources = array<Resource@>();
+			Resource@ res;
 			if(itemKey == "hd_resupply_pack_mk3.carry_item"){//补给背包特殊机制 上限携带一个包，同时发4个子弹箱
 				_log("hd_resupply_pack_mk3 detect");
 				string ExKey="hd_resupply_pack_mk3_ex.carry_item";
@@ -387,10 +317,9 @@ class itemdrop_event : Tracker {
 				addItemInBackpack(m_metagame,characterId,itemtype,ExKey);
 				ExKey="hd_ammo_supply_box_ex.projectile";//发4个特殊的子弹箱在背包(不会被检测删除)
 				string ExType="projectile";
-				addItemInBackpack(m_metagame,characterId,ExType,ExKey);
-				addItemInBackpack(m_metagame,characterId,ExType,ExKey);
-				addItemInBackpack(m_metagame,characterId,ExType,ExKey);
-				addItemInBackpack(m_metagame,characterId,ExType,ExKey);
+				@res = Resource(ExKey,ExType);
+				res.addToResources(resources,4);
+				addListItemInBackpack(m_metagame,characterId,resources);
 			}
 			if(containerId == 2 ){//装备进背包
 				_log("delete banned item in backpack");
@@ -451,6 +380,7 @@ class itemdrop_event : Tracker {
     }
 	//-------------------------------------------------------
 	protected void banVest(const XmlElement@ event){
+		// 防止升级的护甲被存起来。
 		string itemKey = event.getStringAttribute("item_key");
 		string targetVestKey = "hd_v";
 		string tempKey = itemKey.substr(0,targetVestKey.size());

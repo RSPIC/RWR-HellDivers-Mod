@@ -70,8 +70,8 @@ key="acg_texas_sword.weapon"
     <animation state_key="prone_still" animation_key="prone still, ninjato" />
     <animation state_key="prone_moving" animation_key="prone moving, ninjato" />
 	<animation state_key="walking_backwards" animation_key="walking backwards, ninjato" />
-
-
+	<animation state_key="next_in_chain_in" animation_key="reloading, ninjato" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="reloading, ninjato" /><!--半身动作，切换模式，本模式切入-->
 	<!--武器音频-->
 	<sound key="effect" fileref="texas_stab.wav" pitch_variety="0.05" volume="0.7" />
 	<sound key="effect" fileref="texas_stab.wav" pitch_variety="0.05" volume="0.7" />	

@@ -216,21 +216,32 @@ class XmlElement {
 
 	}
 	// --------------------------------------------
-	array<const XmlElement@> getLowerChilds(string tagName,int index) {
+	array<const XmlElement@> getLowerChilds(int index) {
 		array<const XmlElement@> elements;
 		array<dictionary>@ childrenData = null;
 		if (m_data.exists("Children") && m_data.get("Children", @childrenData)) {
 			if(index >= int(childrenData.size()) || index < 0 || childrenData is null){return elements;}
 			dictionary child_dic = childrenData[index];
 			const XmlElement child(child_dic);
-			if(tagName == child.getName()){
-				if (child_dic.exists("Children") && child_dic.get("Children", @childrenData)) {
-					for(uint i=0;i<childrenData.size();++i){
-						const XmlElement child_sub(childrenData[i]);
-						elements.insertLast(child_sub);
-					}
+			if (child_dic.exists("Children") && child_dic.get("Children", @childrenData)) {
+				for(uint i=0;i<childrenData.size();++i){
+					const XmlElement child_sub(childrenData[i]);
+					elements.insertLast(child_sub);
 				}
-			}	
+			}
+		}
+		return elements;
+	}
+	// --------------------------------------------
+	array<const XmlElement@> getChilds() const{
+		array<const XmlElement@> elements;
+		array<dictionary>@ childrenData = null;
+		if (m_data.exists("Children") && m_data.get("Children", @childrenData)) {
+			if(childrenData is null){return elements;}
+			for(uint index=0;index<childrenData.size();++index){
+				const XmlElement child_dic(childrenData[index]);
+				elements.insertLast(child_dic);
+			}
 		}
 		return elements;
 	}
@@ -279,6 +290,7 @@ class XmlElement {
 
 		return result;
 	}
+
 
 	// --------------------------------------------
 	string toStringWithFloats() const {

@@ -6,6 +6,8 @@
 #include "generic_call_task.as"
 #include "task_sequencer.as"
 
+#include "schedule_IRQ.as"
+
 // --------------------------------------------
 class LocalBanManager : Tracker {
 	protected Metagame@ m_metagame;
@@ -92,6 +94,9 @@ class LocalBanManager : Tracker {
 		if (player !is null) {
 			string playerName = player.getStringAttribute("name");
 			string name = playerName.toLowerCase();
+			if(g_IRQ.get("tempban"+playerName)){
+				addBannedPlayer(playerName,300);
+			}
 			if (isBanned(name)){
 				float banTime = 0.0;
 				m_bannedPlayers.get(name, banTime);
@@ -166,5 +171,4 @@ class LocalBanManager : Tracker {
 		}
 	}
 	
-	
-};
+}

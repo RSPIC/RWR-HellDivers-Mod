@@ -37,7 +37,6 @@
 
 #include "spawn_ai.as"
 #include "stratagems_call.as"
-#include "player_list.as"
 #include "all_airstrike.as"
 #include "projectile_event.as"
 #include "call_event_handler.as"

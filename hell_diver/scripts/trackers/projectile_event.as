@@ -284,13 +284,11 @@ class projectile_event : Tracker {
             }
             case 35: { //rep80 维护枪
                 int characterId = event.getIntAttribute("character_id");
-				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
-                if (character is null) {break;}
                 if (characterId == -1) {
                     _log("characterId = -1,null occur");
                     break;
                 }
-                int factionId = character.getIntAttribute("faction_id");
+                int factionId = g_playerInfoBuck.getFidByCid(characterId);
                 Vector3 t_pos = stringToVector3(event.getStringAttribute("position"));
                 array<const XmlElement@>@ players = getPlayers(m_metagame);
                 _log("players.size()= "+players.size());
@@ -299,17 +297,13 @@ class projectile_event : Tracker {
                     _log("detected players in rep80");
                     if (player.hasAttribute("character_id")) {
                         int p_character_id = player.getIntAttribute("character_id");
-                        //if(p_character_id == characterId){continue;}//取消自奶
+                        if(p_character_id == characterId){continue;}//取消自奶
                         if(p_character_id == -1){continue;}
 				        const XmlElement@ p_character = getCharacterInfo(m_metagame,p_character_id);
                         if (p_character !is null) {
-                            //_log("players name: "+player.getStringAttribute("name") );
-                            //_log("target position: "+ event.getStringAttribute("position"));
-                            //_log("player position: "+ character.getStringAttribute("position"));
-                            Vector3 p_position = stringToVector3(character.getStringAttribute("position"));
+                            Vector3 p_position = stringToVector3(p_character.getStringAttribute("position"));
                             t_pos = t_pos.add(Vector3(0,-1,0));
                             float distance = getFlatPositionDistance(p_position,t_pos);
-                            //_log("distance max in target&players: "+ distance);
                             if(distance <= 3){
                                 healCharacter(m_metagame,p_character_id,20);//此处修改回复层数
                             }
@@ -321,13 +315,11 @@ class projectile_event : Tracker {
             }
             case 38: { //ad289 angel 天使
                 int characterId = event.getIntAttribute("character_id");
-				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
-                if (character is null) {break;}
                 if (characterId == -1) {
                     _log("characterId = -1,null occur");
                     break;
                 }
-                int factionId = character.getIntAttribute("faction_id");
+                int factionId = g_playerInfoBuck.getFidByCid(characterId);
                 Vector3 t_pos = stringToVector3(event.getStringAttribute("position"));
                 array<const XmlElement@>@ players = getPlayers(m_metagame);
                 _log("players.size()= "+players.size());
@@ -338,13 +330,9 @@ class projectile_event : Tracker {
                         int p_character_id = player.getIntAttribute("character_id");
 				        const XmlElement@ p_character = getCharacterInfo(m_metagame, p_character_id);
                         if (p_character !is null) {
-                            Vector3 p_position = stringToVector3(character.getStringAttribute("position"));
+                            Vector3 p_position = stringToVector3(p_character.getStringAttribute("position"));
                             t_pos = t_pos.add(Vector3(0,-1,0));
                             float distance = getFlatPositionDistance(p_position,t_pos);
-                            //_log("players name: "+player.getStringAttribute("name") );
-                            //_log("target position: "+ event.getStringAttribute("position"));
-                            //_log("player position: "+ character.getStringAttribute("position"));
-                            //_log("distance max in target&players: "+ distance);
                             if(distance <= 4){
                                 healCharacter(m_metagame,p_character_id,3);//此处修改回复层数
                             }
@@ -373,9 +361,6 @@ class projectile_event : Tracker {
                         Vector3 t_pos = stringToVector3(event.getStringAttribute("position"));
                         //计算落点和玩家的相对距离
                         float distance = get2DMAxAxisDistance(1,t_pos,c_position);
-                        _log("target position: "+ event.getStringAttribute("position"));
-                        _log("chatacter position: "+ character.getStringAttribute("position"));
-                        _log("distance axis min in target&character: "+ distance);
                         //measure_square_area(m_metagame,t_pos,Vector3(8,0,8),"white");
                         if(distance <= 8){
                             //拉取所有载具信息
@@ -392,9 +377,6 @@ class projectile_event : Tracker {
                                     //获取载具位置并计算与落点的相对距离
                                     Vector3 vehiclePos = stringToVector3(vehicles[i].getStringAttribute("position"));
                                     distance = get2DMAxAxisDistance(1,vehiclePos,t_pos);
-                                    _log("target position: "+ event.getStringAttribute("position"));
-                                    _log("vehicles position: "+ vehicles[i].getStringAttribute("position"));
-                                    _log("distance axis min in target&vehicles: "+ distance);
                                     //measure_square_area(m_metagame,t_pos,Vector3(2.0,0,2.0),"red");
                                     if(distance <= 2.0){
                                         //捕获附近存在载具，获取载具信息
@@ -514,12 +496,12 @@ class projectile_event : Tracker {
                         if (t_player.hasAttribute("character_id")) {
                             const XmlElement@ p_character = getCharacterInfo(m_metagame, t_player.getIntAttribute("character_id"));
                             if (p_character !is null) {
-                                Vector3 p_position = stringToVector3(character.getStringAttribute("position"));
+                                Vector3 p_position = stringToVector3(p_character.getStringAttribute("position"));
                                 float distance = getFlatPositionDistance(p_position,t_pos);
                                 _log("distance axis min in target&players: "+ distance);
                                 if(distance <= 3){
                                     int rpnum = 20000;
-                                    int xpnum = 100;
+                                    int xpnum = 50;
                                     int p_characterId = t_player.getIntAttribute("character_id");
                                     GiveRP(m_metagame,p_characterId,rpnum);
                                     GiveXP(m_metagame,p_characterId,xpnum);
@@ -612,11 +594,6 @@ class projectile_event : Tracker {
                 if(matchKey != equipKey_main.substr(0,matchKey.length())){
                     setWoundCharacter(m_metagame,cid);
                     notify(m_metagame, "你的主武器未为对应武器", dictionary(), "misc", pid, true, "倒地惩罚", 1.0);
-                    deleteItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
-                    deleteItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
-                    deleteItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
-                    deleteItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
-                    deleteItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
                     return;
                 }
                 
@@ -636,8 +613,6 @@ class projectile_event : Tracker {
                     CreateProjectile@ task = CreateProjectile(m_metagame,sPos,ePos,key,cid,fid,speed,0.5);
                     tasker.add(task);
                 }
-                ;
-
             }
 
             default:

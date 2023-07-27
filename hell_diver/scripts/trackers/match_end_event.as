@@ -11,6 +11,7 @@
 #include "INFO.as"
 #include "debug_reporter.as"
 #include "schedule_IRQ.as"
+#include "vote_Manager.as"
 
 //Author: RST 
 //过图音效
@@ -112,9 +113,6 @@ class match_end : Tracker {
     }
     // ----------------------------------------------------
     protected void BattleReword(int fid){
-        if(!g_firstUseInfoBuck.isFirst("admin","VoteToChangeMap")){
-            return;
-        }
         array<const XmlElement@> players = getPlayers(m_metagame);
         if(players is null){return;}
         for(uint i = 0 ; i < players.size() ; ++i ){
@@ -181,6 +179,10 @@ class sound_track : Task {
         m_delay_time = delay_time;
         m_timer = time + m_delay_time;
         m_filename = filename;
+    }
+
+    bool hasStarted() const{
+        return true;
     }
 
     bool hasEnded() const{

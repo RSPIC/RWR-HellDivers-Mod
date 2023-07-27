@@ -149,7 +149,7 @@ const array<SpawnInfo> level_15 = {
     SpawnInfo("bugs_Impaler",int(rand(0,1))),
     SpawnInfo("bugs_Tank",int(rand(0,1))),
     SpawnInfo("bugs_Behemoth",int(rand(1,1))),
-    SpawnInfo("bugs_BroodCommander",int(rand(0,3))),
+    SpawnInfo("bugs_BroodCommander",int(rand(1,5))),
     SpawnInfo("bugs_Elite",0),
     SpawnInfo("bugs_Warrior",0),
     SpawnInfo("bugs_Stalker",0)
@@ -427,7 +427,7 @@ class dynamic_alert : Tracker {
         }
 
         int player_num = players.size();
-        m_cd_time = m_cd_time - 0.5*player_num;
+        m_cd_time = m_cd_time - 1*player_num;
 
         m_cd_time = m_cd_time - m_server_difficulty_level + 9;
         if(m_cd_time <= 0){

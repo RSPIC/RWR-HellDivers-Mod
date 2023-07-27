@@ -38,7 +38,7 @@ class schedule_Manager : Tracker {
 
     schedule_Manager(Metagame@ metagame,float time = 10.0){
         @m_metagame = @metagame;
-        m_time = time;   //5s一周期进行检测
+        m_time = time;   //周期进行检测
         m_timer = m_time;
         _log("schedule_Manager initiate");
     }
@@ -53,7 +53,7 @@ class schedule_Manager : Tracker {
         if(m_timer <= 0.0){
             refresh();
             m_timer = m_time;
-            test();
+            //test();
         }
     }
     // --------------------------------------------
@@ -78,8 +78,6 @@ class schedule_Manager : Tracker {
         for (uint j = 0; j < m_players.size(); ++j) {
 			const XmlElement@ player = m_players[j];
 			if(player is null){return;}
-            
-            //update_info(player);
             auto_heal(player);
         }
     }
@@ -103,7 +101,7 @@ class schedule_Manager : Tracker {
     // --------------------------------------------
     protected void handlePlayerSpawnEvent(const XmlElement@ event) {
         const XmlElement@ player = event.getFirstElementByTagName("player");
-         if(player is null){return;}
+        if(player is null){return;}
         update_info(player);
         if(g_debugMode){
             _report(m_metagame,"Update PlayerInfo");
@@ -133,7 +131,6 @@ class schedule_Manager : Tracker {
     void update_info(const XmlElement@ player){
         if(player is null){return;}
         string name = player.getStringAttribute("name");
-        // profile_hash不唯一,替换为sid,但保留代码名字和格式不变
         string profile_hash = player.getStringAttribute("profile_hash");
         string sid = player.getStringAttribute("sid");
         int pid = player.getIntAttribute("player_id");
@@ -184,27 +181,16 @@ class schedule_Manager : Tracker {
         bool flag;
         if(INT_task.get(EventKeyGet,flag)){
             if(flag){
+                if(g_playerInfoBuck is null){return;}
                 int cid = event.getIntAttribute("character_id");
-                const XmlElement@ character = getCharacterInfo(m_metagame, cid);
-                const XmlElement@ info;
-                string name;
-                if(character is null){return;}
-                int pid = character.getIntAttribute("player_id");
+                string name = g_playerInfoBuck.getNameByCid(cid);
+                int pid = g_playerInfoBuck.getPidByName(name);
                 if(pid == -1){return;}
                 const XmlElement@ player  = getPlayerInfo(m_metagame,pid);
                 if(player is null){return;}
-                if(player.hasAttribute("profile_hash")){ //玩家信息 记录名字和xml信息
-                    name = player.getStringAttribute("name");
-                    @info = @player;
-                }else{  //AI信息 记录名字和xml信息
-                    name = character.getStringAttribute("soldier_group_name");
-                    @info = @character;
-                }
-                if(info is null){return;}
                 if(g_debugMode){
                     _report(m_metagame,"g_IRQ dict="+g_IRQ._test(),"全局字典",false);
                 }
-
                 string key = cid + name + EventKeyGet; //传参格式为 cid+玩家名+键值 
                 // cid 追踪角色信息； 玩家名用于持续追踪（能够在死亡后持续记录）；键值用于确定执行函数对象
                 if(g_IRQ.isExist(key)){
@@ -217,8 +203,7 @@ class schedule_Manager : Tracker {
                 if(g_debugMode){
                     _report(m_metagame,"IRQ key="+key,"中断信号键值",false);
                 }
-
-                schedule_Interruptible_task@ new_task = schedule_Interruptible_task(m_metagame,info,5,key,cid);
+                schedule_Interruptible_task@ new_task = schedule_Interruptible_task(m_metagame,player,5,key,cid);
                 TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
                 tasker.add(new_task);
             }

@@ -10,6 +10,26 @@ class Resource {
 		m_key = key;
 		m_type = type;
 	}
+
+    Resource(const Resource &in other) {
+        m_key = other.m_key;
+        m_type = other.m_type;
+    }
+	array<Resource@>@ multi(uint num){
+        array<Resource@>@ resources = array<Resource@>();
+        for(;num>0;num--){
+            Resource@ resource = Resource(this);
+            resources.insertLast(resource);
+        }
+        return resources;
+    }
+
+	void addToResources(array<Resource@>@ outRes,uint num){
+        array<Resource@>@ inRes = multi(num);
+        for(uint i=0;i<inRes.length();i++){
+            outRes.insertLast(inRes[i]);
+        }
+    }
 }
 
 // --------------------------------------------

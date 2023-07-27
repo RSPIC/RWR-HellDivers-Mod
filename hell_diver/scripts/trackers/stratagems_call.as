@@ -566,12 +566,10 @@ class stratagems_call : Tracker {
 		if (word_size == 0){return;}
 		string p_name = event.getStringAttribute("player_name");
 		int pid = event.getIntAttribute("player_id");
-		//_report(m_metagame,"message="+message);
 		if (!startsWith(message, "/")) {
 			if ( word_size == 1 ){
 				string stratagemsKey;
 				if(!code_stratagems.get(message,stratagemsKey)){return;}
-				//_report(m_metagame,"get code_stratagems="+stratagemsKey);
 				if(!p_cd_lists.exists(p_name,stratagemsKey) ){
 					float cd = 12;
 					stratagems_CD.get(stratagemsKey,cd);
@@ -579,10 +577,7 @@ class stratagems_call : Tracker {
 						cd = cd*(1-0.1*g_vestInfoBuck.getStratagemsFirst(p_name));
 					}
 					p_cd_lists.addNew(p_name,pid,stratagemsKey,cd);
-					//_report(m_metagame,"add new cdList="+stratagemsKey);
-					const XmlElement@ player = getPlayerInfo(m_metagame,pid);
-					if(player is null){return;}
-					int cid = player.getIntAttribute("character_id");
+					int cid = g_playerInfoBuck.getCidByPid(pid);
 					string c = 
 					"<command class='update_inventory' character_id='" + cid + "' container_type_id='4' add='1'>" + 
 						"<item class='" + "projectile" + "' key='" + stratagemsKey + ".projectile" +"' />" +

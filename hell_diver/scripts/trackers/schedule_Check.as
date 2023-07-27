@@ -45,11 +45,13 @@ class schedule_Check : Tracker {
     protected float m_time;
     protected float m_timer;
     protected bool m_ended;
+    protected firstUseInfoBuck@ m_firstUseInfoBuck;
 
-    schedule_Check(Metagame@ metagame,float time = 5){
+    schedule_Check(Metagame@ metagame,float time = 7){
         @m_metagame = @metagame;
         m_time = time;
         m_timer = m_time;
+        @m_firstUseInfoBuck = firstUseInfoBuck();
         _log("schedule_Check executing");
     }
 
@@ -128,25 +130,31 @@ class schedule_Check : Tracker {
 	}
     // ----------------------------------------------------
     protected void handlePlayerDisconnectEvent(const XmlElement@ event) {
+        const XmlElement@ player = event.getFirstElementByTagName("player");
+        if(player is null){return;}
+        string name = player.getStringAttribute("name");
+		m_firstUseInfoBuck.removeInfo(name);
     }
     // ----------------------------------------------------
     protected void handlePlayerConnectEvent(const XmlElement@ event) {
         const XmlElement@ player = event.getFirstElementByTagName("player");
         if(player is null){return;}
         int pid = player.getIntAttribute("player_id");
+        string name = player.getStringAttribute("name");
         if(!g_debugMode && !g_online_TestMode){
 			gameHelp(m_metagame,pid);
         }
         if(g_online_TestMode){
             testHelp(m_metagame,pid);
         }
+        m_firstUseInfoBuck.addInfo(name);
     }
     // ----------------------------------------------------
 	protected void checkBanzai(Metagame@ metagame,string&in name,int&in pid,dictionary&in equipList){
 		string equipKey;
         if(equipList.get("1",equipKey)){//副手武器
             if(equipKey == "ex_cl_banzai.weapon" ){
-                if(g_firstUseInfoBuck.isFirst(name,equipKey)){
+                if(m_firstUseInfoBuck.isFirst(name,equipKey)){
                     notify(metagame, "Help - Banzai", dictionary(), "misc", pid, true, "Banzai Help", 1.0);
                 }
             }
@@ -159,23 +167,16 @@ class schedule_Check : Tracker {
             string targetKey = "acg_patricia_";
             equipKey = equipKey.substr(0,targetKey.length());
             if(equipKey == targetKey){
-                if(g_firstUseInfoBuck.isFirst(name,equipKey)){
+                if(m_firstUseInfoBuck.isFirst(name,equipKey)){
                     notify(metagame, "Help - Patricia", dictionary(), "misc", pid, true, "Patricia Help", 1.0);
-                    deleteItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
-                    deleteItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
-                    deleteItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
-                    deleteItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
-                    deleteItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
-                    deleteItemInStash(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
-                    deleteItemInStash(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
-                    deleteItemInStash(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
-                    deleteItemInStash(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
-                    deleteItemInStash(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
-                    addItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
-                    addItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
-                    addItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
-                    addItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
-                    addItemInBackpack(m_metagame,cid,"weapon","acg_patricia_fataldrive.weapon");
+                    array<Resource@> resources = array<Resource@>();
+                    Resource@ res;
+                    @res = Resource("acg_patricia_fataldrive.weapon","weapon");
+                    res.addToResources(resources,5);
+                    deleteListItemInBackpack(m_metagame,cid,resources);
+                    deleteListItemInStash(m_metagame,cid,resources);
+                    addListItemInBackpack(m_metagame,cid,resources);
+
                 }
             }
         }
@@ -185,7 +186,7 @@ class schedule_Check : Tracker {
 		string equipKey;
         if(equipList.get("1",equipKey)){//副手武器
             if(equipKey == "63type_107mm_rocket_launcher_resource.weapon" ){
-                if(g_firstUseInfoBuck.isFirst(name,equipKey)){
+                if(m_firstUseInfoBuck.isFirst(name,equipKey)){
                     notify(metagame, "Help - 63Type 107mm", dictionary(), "misc", pid, true, "63Type 107mm Help", 1.0);
                 }
             }
@@ -283,24 +284,22 @@ class schedule_Check : Tracker {
         if(g_debugMode){
             _report(m_metagame,"物品"+itemKey+"进入了"+containerId+"容器");
         }
-        if(containerId == 3 || containerId == 2){//仓库或者背包
-				//1、防止利用刺雷护甲脚本BUG存放冲锋护甲
-		        int characterId = event.getIntAttribute("character_id");
-				array<string> vest_key = {"hd_banzai_","hd_v"}; //指定护甲
-				for(uint i=0; i<vest_key.length; i++){
-					string targetKey = itemKey.substr(0,vest_key[i].length());//截取指定前缀并比对
-                    if(g_debugMode){
-                        _report(m_metagame,"截取的key: "+targetKey);
-                    }
-					if(targetKey == vest_key[i]){  
-				        deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
-						deleteItemInStash(m_metagame,characterId,"carry_item",itemKey);
-                        if(g_debugMode){
-                            _report(m_metagame,"执行删除");
-                        }
-                        return;
-					}
-        		}
-			}
+        // 已经不需要此处了，每次复活会替换玩家护甲
+        // if(containerId == 3 || containerId == 2){//仓库或者背包
+        //     //1、防止利用刺雷护甲脚本BUG存放冲锋护甲
+        //     array<string> vest_key = {"hd_banzai_","hd_v"}; //指定护甲
+        //     for(uint i=0; i<vest_key.length; i++){
+        //         string targetKey = itemKey.substr(0,vest_key[i].length());//截取指定前缀并比对
+        //         if(targetKey == vest_key[i]){  
+        //             int characterId = event.getIntAttribute("character_id");
+        //             deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
+        //             deleteItemInStash(m_metagame,characterId,"carry_item",itemKey);
+        //             if(g_debugMode){
+        //                 _report(m_metagame,"执行删除");
+        //             }
+        //             return;
+        //         }
+        //     }
+        // }
     }
 }

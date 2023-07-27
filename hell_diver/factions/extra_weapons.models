@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <models>
 	<!-- <model filename="hdivers_ceremonial.xml" /> -->
-
+	<model filename="acg_kal_tsit_m3.xml">
+		<requirement class="weapon" slot="0" key="normal.weapon"/>
+	</model>
 
 
 	

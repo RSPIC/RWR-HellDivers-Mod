@@ -327,5 +327,20 @@
         <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
         <capacity value="12" source="rank" source_value="0" />
     </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="M14 [Skin]" key="token_m14.projectile" >
+        <hud_icon filename="token_m14.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="kal_tsit [Skin]" key="token_kal_tsit.projectile" >
+        <hud_icon filename="token_kal_tsit.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="kal_tsit [M3] [Skin]" key="token_kal_tsit_m3.projectile" >
+        <hud_icon filename="token_kal_tsit_m3.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
 
 </projectiles>

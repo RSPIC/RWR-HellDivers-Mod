@@ -372,7 +372,9 @@ class VoteManager : Tracker {
             _report(m_metagame,"index overflowr in handlePlayerKick");
             return;
         }
+        
         string name = m_nameList[index];
+        g_IRQ.set("tempban"+name,true);
         int pid = g_playerInfoBuck.getPidByName(name);
         g_battleInfoBuck.removeInfo(name);
         notify(m_metagame,"You are kicked form server after vote", dictionary(), "misc", pid, false, "", 1.0);
@@ -381,7 +383,7 @@ class VoteManager : Tracker {
         
     }
     void handleMapChange(){
-        g_firstUseInfoBuck.isFirst("admin","VoteToChangeMap");
+        g_battleInfoBuck.clearAll();
         m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='1' />");
         m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='2' />");
         m_metagame.getComms().send("<command class='set_match_status' win='1' faction_id='0' />");
@@ -415,3 +417,4 @@ class VoteManager : Tracker {
     }
 
 }
+

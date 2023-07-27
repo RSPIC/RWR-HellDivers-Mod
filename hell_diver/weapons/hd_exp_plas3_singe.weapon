@@ -6,7 +6,7 @@ key="hd_exp_plas3_singe.weapon"
     <specification 	
     slot="1" 	
     retrigger_time="0.147" 
-	last_burst_retrigger_time="0.8"
+	last_burst_retrigger_time="0.147"
     accuracy_factor="1.0" 
 	spread_range="0.12"
 	stance_accuracy_rate="1.0"
@@ -96,8 +96,7 @@ key="hd_exp_plas3_singe.weapon"
 	
         <result class="spawn" instance_class="projectile" instance_key="hd_exp_plas1_scorcher_full_upgrade_damage.projectile" 
 		min_amount="4" max_amount="4" offset="0 0.5 0" position_spread="0.8 0" direction_spread="0.1 0" />
-		<!-- damage 300 爆炸伤 -->
-        <!-- 敲定： 4x17 = 68 可击穿轻甲载具，无法击穿中甲以上-->
+        <!-- 敲定： 4x11 = 44 -->
         <!-- range 10m -->
 		
 		<trigger class="time" time_to_live="0.1"  /><!--class为time时，ttl生效；遥控为remote_detonate-->

@@ -45,15 +45,10 @@ class player_spawn : Tracker {
 		int cid = element.getIntAttribute("character_id");
 		int pid = element.getIntAttribute("player_id");
 		string name = element.getStringAttribute("name");
-		_log("handlePlayerSpawnEvent:character_id:" + cid);
-		_log("handlePlayerSpawnEvent:player_id:" + pid);
-		_log("handlePlayerSpawnEvent:faction_id:" + fid);
-		_log("handlePlayerSpawnEvent:name:" + name);
 
 		const XmlElement@ character = getCharacterInfo(m_metagame, cid);
 		if(character is null){return;}
 		string c_position = character.getStringAttribute("position");
-		_log("handlePlayerSpawnEvent:getcharacterposition:" + c_position);
 		spawnStaticProjectile(m_metagame,"hd_effect_target_aim.projectile",c_position,cid,fid);
 		spawnStaticProjectile(m_metagame,"hd_sound_divers_coming_bgm.projectile",c_position,cid,fid);
 		spawnStaticProjectile(m_metagame,"hd_sound_divers_coming.projectile",c_position,cid,fid);
@@ -72,11 +67,7 @@ class player_spawn : Tracker {
     }
     // ----------------------------------------------------
     protected void handlePlayerDieEvent(const XmlElement@ event) {
-        _log("handlePlayerDieEvent");
-        const XmlElement@ element = event.getFirstElementByTagName("target");
-		if(element is null){return;}
-        int pid = element.getIntAttribute("player_id");
-        
+       
     }
     // ----------------------------------------------------
 	protected void handlePlayerDisconnectEvent(const XmlElement@ event) {

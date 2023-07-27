@@ -17,8 +17,13 @@ class _IRQ {
     }
 
     bool get(string key){
-        bool flag;
-        if (!key_list.get(key, flag) || !flag) {
+        bool flag = false;
+        // 如没找到键值或者找到了但是值为假，返回假
+        if(!key_list.get(key, flag)){
+            flag = false;
+            return false;
+        }
+        if(!flag){
             return false;
         }
         key_list.delete(key);

@@ -32,7 +32,7 @@
     <inventory encumbrance="80.0" price="800.0" />    
 
     <projectile file="63type_107mm_rocket_damage.projectile" time_to_live="8">
-	    <result class="blast" radius="7" damage="40" decal="0" push="1.0" character_state="wound" />	
+	   
 	    <effect class="activated" ref="rocket_launcher_trial_smoke" post_processing="1"/>
 	    <effect class="activated" ref="rocket_launcher_shell_light" />
 		<trail probability="1" key="trail_rocket"/>

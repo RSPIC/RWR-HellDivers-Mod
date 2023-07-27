@@ -406,6 +406,22 @@ class playerInfoBuck{
 		}
 		return "";
 	}
+	string getHashBySid(string&in sid){
+		for(uint i=0; i<size();++i){
+			if(sid == m_playerInfo[i].getSid()){
+				return m_playerInfo[i].getHash();
+			}
+		}
+		return "";
+	}
+	string getSidByHash(string&in hash){
+		for(uint i=0; i<size();++i){
+			if(hash == m_playerInfo[i].getHash()){
+				return m_playerInfo[i].getSid();
+			}
+		}
+		return "";
+	}
 	string getSidByName(string&in name){
 		for(uint i=0; i<size();++i){
 			if(name == m_playerInfo[i].getName()){
@@ -687,9 +703,12 @@ class battleInfoBuck{
 					bf -= (pt-30.0)/100.0;
 					notify(m_metagame,"Battle Time Too Long,BonusFacto Decrease", dictionary(), "misc", pid, false, "", 1.0);
 				}
+				if(bf > 3.4){
+					bf = 3.4;
+				}
 				xp = 
 				  kc * 0.01 
-				+ oc * 0.02*NormalizedConcaveCurve(0.003*oc,0.5) 
+				+ oc * 0.02*NormalizedConcaveCurve(0.002*oc,0.5) 
 				+ mc * 0.5
 				+ pt * 0.03
 				- tc * 0.15
@@ -698,7 +717,7 @@ class battleInfoBuck{
 				if(xp<=0){xp=0;}
 				dictionary a;
 				a["%kx"] = formatInt(int(kc*0.01*10000));
-				a["%ox"] = formatInt(int(oc*0.02*NormalizedConcaveCurve(0.01*oc,0.5)*10000));
+				a["%ox"] = formatInt(int(oc*0.02*NormalizedConcaveCurve(0.002*oc,0.5)*10000));
 				a["%mx"] = formatInt(int(mc*0.5*10000));
 				a["%px"] = formatInt(int(pt*0.03*10000));
 				a["%tx"] = formatInt(int(tc*0.05*10000));
@@ -735,9 +754,12 @@ class battleInfoBuck{
 					bf -= (pt-30.0)/100.0;
 					notify(m_metagame,"Battle Time Too Long,BonusFacto Decrease", dictionary(), "misc", pid, false, "", 1.0);
 				}
+				if(bf > 3.4){
+					bf = 3.4;
+				}
 				rp = 
 				  kc * 40
-				+ oc * 100*NormalizedConcaveCurve(0.003*oc,0.5)
+				+ oc * 100*NormalizedConcaveCurve(0.002*oc,0.5)
 				+ mc * 3000
 				+ pt * 300
 				- tc * 700;
@@ -745,7 +767,7 @@ class battleInfoBuck{
 				if(rp<=0){rp=0;}
 				dictionary a;
 				a["%kx"] = formatInt(int(kc*75));
-				a["%ox"] = formatInt(int(oc*100*NormalizedConcaveCurve(0.01*oc,0.5)));
+				a["%ox"] = formatInt(int(oc*100*NormalizedConcaveCurve(0.002*oc,0.5)));
 				a["%mx"] = formatInt(int(mc*3000));
 				a["%px"] = formatInt(int(pt*300));
 				a["%tx"] = formatInt(int(tc*500));
@@ -1030,7 +1052,7 @@ class firstUseInfoBuck {
 	protected array<first_use_info@> m_firstUseInfos;
 
 	firstUseInfoBuck(){
-		first_use_info@ newinfo = first_use_info("admin");
+		first_use_info@ newinfo = first_use_info("");
         m_firstUseInfos.insertLast(newinfo);
 	}
 
@@ -1211,6 +1233,8 @@ class Initiate : Tracker {
  		@g_battleInfoBuck = battleInfoBuck();
  		@g_vestInfoBuck = vestInfoBuck();
 		@g_IRQ = _IRQ("",false);
+		@g_firstUseInfoBuck = firstUseInfoBuck();
+		g_firstUseInfoBuck.addInfo("admin");
 	}
 	void update(float time){
 	}

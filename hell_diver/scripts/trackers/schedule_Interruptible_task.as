@@ -43,12 +43,11 @@ class schedule_Interruptible_task : Task{
     protected Metagame@ m_metagame;
     protected float m_time;
     protected float m_timer;
-    protected float m_timer_ex; //预留
+    protected float m_timer_ex_timer;
     protected string m_key;     //记录格式为 cid+玩家名+键值
     protected bool m_ended;
     protected bool isShutDown;
     protected bool isStart;
-    protected bool isPlayer;    //ai使用时，m_player里没有aim_target、character_id、profile_hash参数
     protected int m_cid;
 
     schedule_Interruptible_task(Metagame@ metagame,const XmlElement@ player,float time,string key,int cid){
@@ -56,12 +55,11 @@ class schedule_Interruptible_task : Task{
         @m_metagame = @metagame;
         m_time = time;
         m_timer = m_time;
-        m_timer_ex = 1.0;
+        m_timer_ex_timer = 0.2;
         m_key = key ;
         m_cid = cid;
         g_IRQ.set(m_key,false); //添加至中断请求存储区
         g_IRQ.set(m_cid,true);  //添加至中断请求存储区
-        isPlayer = true;
         _log("schedule_Interruptible_task executing");
     }
 
@@ -69,16 +67,16 @@ class schedule_Interruptible_task : Task{
         m_ended = false;
         isStart = true;
         isShutDown = false;
-        if(m_player is null){return;}
-        if(!m_player.hasAttribute("profile_hash")){
-            isPlayer = false;
-        }
         MyTask();
     }
     
     void update(float time){
-        INT();  //检测中断状态
         m_timer -= time;
+        m_timer_ex_timer -= time;
+        if(m_timer_ex_timer < 0){
+            INT();  //检测中断状态
+            m_timer_ex_timer = 0.2;
+        }
         if(m_timer >0){return;}
         if(!isShutDown){
             MyTask();
@@ -120,30 +118,27 @@ class schedule_Interruptible_task : Task{
     protected void banzai(){
 		if(m_ended){return;}
         const XmlElement@ player = @m_player;
-        if(player is null){return;}
-        if(player.hasAttribute("character_id")){
-            int cid = player.getIntAttribute("character_id");
-            if(m_cid != cid){return;}   //玩家启动时死亡，新角色CID会变
-            int fid = player.getIntAttribute("faction_id");
-            const XmlElement@ character = getCharacterInfo(m_metagame,cid);
-            if(character !is null){
-                int wounded = character.getIntAttribute("wounded");
-                int dead = character.getIntAttribute("dead");
-                int pid = character.getIntAttribute("player_id");
-                if(dead !=1 && wounded != 1){
-                    if(isStart){    //启动时发护甲，结束时替换护甲+爆炸+死亡
-                        string equipKey = getPlayerEquipmentKey(m_metagame,cid,4);//护甲
-                        notify(m_metagame, "BanZai Armor onload", dictionary(), "misc", pid, false, "", 1.0);
-                        editPlayerVest(m_metagame,cid,"hd_banzai_0",4);
-                        isStart = false;
-                    }else{
-                        string c_position = character.getStringAttribute("position");
-                        editPlayerVest(m_metagame,cid,"helldivers_vest.carry_item",4);
-                        spawnStaticProjectile(m_metagame,"ex_cl_banzai_damage.projectile",c_position,cid,fid);
-                        setDeadCharacter(m_metagame,cid);
-                    }
+        int cid = player.getIntAttribute("character_id");
+        if(m_cid != cid){return;}   //玩家启动时死亡，新角色CID会变
+        int fid = player.getIntAttribute("faction_id");
+        const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+        if(character !is null){
+            int wounded = character.getIntAttribute("wounded");
+            int dead = character.getIntAttribute("dead");
+            int pid = character.getIntAttribute("player_id");
+            if(dead !=1 && wounded != 1){
+                if(isStart){    //启动时发护甲，结束时替换护甲+爆炸+死亡
+                    notify(m_metagame, "BanZai Armor onload", dictionary(), "misc", pid, false, "", 1.0);
+                    editPlayerVest(m_metagame,cid,"hd_banzai_0",4);
+                    isStart = false;
+                }else{
+                    string c_position = character.getStringAttribute("position");
+                    editPlayerVest(m_metagame,cid,"helldivers_vest.carry_item",4);
+                    spawnStaticProjectile(m_metagame,"ex_cl_banzai_damage.projectile",c_position,cid,fid);
+                    setDeadCharacter(m_metagame,cid);
                 }
             }
         }
+        
 	}
 }

@@ -25,15 +25,12 @@
 const XmlElement@ readXML(const Metagame@ metagame, string filename){
 	XmlElement@ query = XmlElement(
 		makeQuery(metagame, array<dictionary> = {
-			dictionary = { {"TagName", "data"}, {"class", "saved_data"}, {"filename", filename}, {"location", "app_data"} } }));
+			dictionary = { {"TagName", "data"}, {"class", "saved_data"}, {"filename", filename}, {"location", "savegame"} } }));
 	const XmlElement@ xml = metagame.getComms().query(query);
-    if(xml is null){
-        writeXML(metagame,filename,XmlElement("filename"));
-    }
 	return xml;
 }
 
-void writeXML(const Metagame@ metagame, string filename, XmlElement@ xml, string location = "app_data" ){
+void writeXML(const Metagame@ metagame, string filename, XmlElement@ xml, string location = "savegame" ){
 	XmlElement command("command");
 		command.setStringAttribute("class", "save_data");
 		command.setStringAttribute("filename", filename);
@@ -113,6 +110,7 @@ class IO_data : Tracker {
             }
 
             array<const XmlElement@> infos = allInfo.getElementsByTagName("reward_key");
+            if(int(infos.size()) == 0){ _report(m_metagame,"密钥列表为空"); return;}
             bool isValid = false;
             string access_tag = "";
             int pid = g_playerInfoBuck.getPidByName(p_name);
@@ -122,8 +120,8 @@ class IO_data : Tracker {
             uint index;
             for(uint i=0;i<infos.size();++i){
                 XmlElement@ info = XmlElement(infos[i]);
-                if(info.hasAttribute("_key")){
-                    string targetKey = info.getStringAttribute("_key");
+                if(info.hasAttribute("A_key")){
+                    string targetKey = info.getStringAttribute("A_key");
                     string player_name = info.getStringAttribute("player_name");
                     //正确
                     if("/key " + targetKey == message){
@@ -138,7 +136,6 @@ class IO_data : Tracker {
                                 if(g_debugMode){
                                     _report(m_metagame,"isUsed,my sid="+m_sid);
                                 }
-                                
                                 double_use = true;
                             }
                         }
@@ -170,11 +167,12 @@ class IO_data : Tracker {
                                     }
                                     used++;
                                     info.setIntAttribute("used",used);
-                                    info.setBoolAttribute("sid",true);
+                                    //info.setBoolAttribute(m_sid,true);
                                     isValid = true;
                                 }
                             }
                             //多次使用密钥,有max_use标签,记录各个使用者的sid
+                            //不记录sid了，直接存入玩家存档系统，方便同步
                             if(info.hasAttribute("max_use")){
                                 int times = info.getIntAttribute("max_use");
                                 if(times != 0){
@@ -183,7 +181,7 @@ class IO_data : Tracker {
                                     }
                                     times--;
                                     info.setIntAttribute("max_use",times);
-                                    info.setBoolAttribute("sid",true);
+                                    //info.setBoolAttribute(m_sid,true);
                                     isValid = true;
                                 }else{
                                     if(g_debugMode){
@@ -217,13 +215,18 @@ class IO_data : Tracker {
                     allInfo.removeChild("reward_key",index);
                     allInfo.appendChild(targetInfo);
                     writeXML(m_metagame,m_reward_keys_FILENAME,allInfo);
+
+                    array<const XmlElement@> xmls;
+                    xmls.insertLast(targetInfo);
+                    addToPlayersInfo(xmls,m_sid);
+
                     notify(m_metagame, "Successful exchange", dictionary(), "misc", pid, true, "", 1.0);
                 }else{
                     notify(m_metagame, "Not meet the condition", dictionary(), "misc", pid, true, "", 1.0);
                 }
                 
             }else{
-                notify(m_metagame, "Key Invalid", dictionary(), "misc", pid, false, "", 1.0);
+                notify(m_metagame, "密钥不正确或已被使用完，注意大小写", dictionary(), "misc", pid, false, "", 1.0);
             }
         }
     }
@@ -235,8 +238,9 @@ class IO_data : Tracker {
             int pid = g_playerInfoBuck.getPidByName(p_name);
             int cid = g_playerInfoBuck.getCidByPid(pid);
             int fid = g_playerInfoBuck.getFidByCid(cid);
+            string sid = g_playerInfoBuck.getSidByName(p_name);
 
-            XmlElement@ allInfo = XmlElement(readFile(m_reward_keys_FILENAME));
+            XmlElement@ allInfo = XmlElement(readPlayerInfo(sid));
             if(allInfo is null){
                 _log("allInfo is null, in handleRewardKeys");
                 _report(m_metagame,"handleRewardKeys Failed, please report this bug");
@@ -271,7 +275,9 @@ class IO_data : Tracker {
     // -------------------------------------------
     protected void setMainAccount(string&in message,string&in p_name){
         if(startsWith(message,"/register")){
-            XmlElement@ allInfo = XmlElement(readFile(m_playerInfo_FILENAME));
+            string m_sid = g_playerInfoBuck.getSidByName(p_name);
+
+            XmlElement@ allInfo = XmlElement(readPlayerInfo(m_sid));
             if(allInfo is null){
                 _log("allInfo is null, in setMainAccount");
                 return;
@@ -308,7 +314,7 @@ class IO_data : Tracker {
                             }
                             //覆写所有同SID存档
                             if(new_sid == sid){
-                                array<const XmlElement@> childs = allInfo.getLowerChilds("player",j);
+                                array<const XmlElement@> childs = allInfo.getLowerChilds(j);
                                 allInfo.removeChild("player",j);
                                 info.removeAllChild();
                                 info.setBoolAttribute("is_main_account",is_main_account);
@@ -328,10 +334,10 @@ class IO_data : Tracker {
             }
             int pid = g_playerInfoBuck.getPidByName(p_name);
             if(isValid){
-                writeXML(m_metagame,m_playerInfo_FILENAME,allInfo);
-                notify(m_metagame, "Key Valid", dictionary(), "misc", pid, false, "", 1.0);
+                savePlayerInfo(m_metagame,m_sid,allInfo);
+                notify(m_metagame, "你已成功绑定主账号", dictionary(), "misc", pid, false, "", 1.0);
             }else{
-                notify(m_metagame, "Key Invalid", dictionary(), "misc", pid, false, "", 1.0);
+                notify(m_metagame, "绑定主账号失败", dictionary(), "misc", pid, false, "", 1.0);
             }
         }
     }
@@ -343,18 +349,20 @@ class IO_data : Tracker {
         //因此用户的任意账号可以多次邀请不同用户，而只能被邀请一次
 
         if(startsWith(message,"/mykey")){
-            XmlElement@ allInfo = XmlElement(readFile(m_playerInfo_FILENAME));
-            if(allInfo is null){
-                _log("allInfo is null, in handleMyInviteKey");
-                return;
-            }
-            if(allInfo is null){return;}
-
-            array<const XmlElement@> infos = allInfo.getElementsByTagName("player");
+            
             string m_sid = g_playerInfoBuck.getSidByName(p_name);
             string m_hash = g_playerInfoBuck.getHashByName(p_name);
             int pid = g_playerInfoBuck.getPidByName(p_name);
             float xp = g_playerInfoBuck.getXpByName(p_name);
+
+            XmlElement@ allInfo = XmlElement(readPlayerInfo(m_sid));
+            if(allInfo is null){
+                _log("allInfo is null, in handleMyInviteKey");
+                _report(m_metagame,"未读取到你自己的信息");
+                return;
+            }
+            array<const XmlElement@> infos = allInfo.getElementsByTagName("player");
+
             //盗版小号
             if(m_sid == "ID0"){
                 notify(m_metagame, "You are not steam User", dictionary(), "misc", pid, false, "", 1.0);
@@ -372,8 +380,8 @@ class IO_data : Tracker {
                     bool isEmpty = true;
                     //检测是否已经创建过邀请码
                     for(uint j = 0; j<access_tags.size(); ++j){
-                        if(access_tags[j].hasAttribute("__tag")){
-                            if(access_tags[j].getStringAttribute("__tag") == "InviteKey"){
+                        if(access_tags[j].hasAttribute("AA_tag")){
+                            if(access_tags[j].getStringAttribute("AA_tag") == "InviteKey"){
                                 //检测曾经是否是被邀请者
                                 if(access_tags[j].hasAttribute("invited") && !access_tags[j].hasAttribute("inviter")){
                                     isEmpty = true;
@@ -399,30 +407,43 @@ class IO_data : Tracker {
                         newXml.setBoolAttribute("invited",true);//创建的账号不能受邀请
                         array<const XmlElement@> xmls;
                         xmls.insertLast(newXml);
-                        addToPlayersInfo(xmls);
+                        addToPlayersInfo(xmls,m_sid);
                     }
                     notify(m_metagame, m_hash, dictionary(), "misc", pid, true, "InviteKey", 1.0);
                     return;
                 }
             }
-
         }
         if(startsWith(message,"/inviter")){
-            XmlElement@ allInfo = XmlElement(readFile(m_playerInfo_FILENAME));
-            if(allInfo is null){
-                _log("allInfo is null, in handleMyInviteKey");
-                return;
-            }
-            if(allInfo is null){return;}
+            string m_sid = g_playerInfoBuck.getSidByName(p_name);
+
             string a = "/inviter ";
             string t_hash = message.substr(a.length());
-
-            array<const XmlElement@> infos = allInfo.getElementsByTagName("player");
-            string m_sid = g_playerInfoBuck.getSidByName(p_name);
-            
+            string tg_sid = g_playerInfoBuck.getSidByHash(t_hash);
             string m_hash = g_playerInfoBuck.getHashByName(p_name);
             int pid = g_playerInfoBuck.getPidByName(p_name);
             float xp = g_playerInfoBuck.getXpByName(p_name);
+
+            if(tg_sid == ""){
+                notify(m_metagame, "您输入的账户不存在，请重新输入。注意大小写，对方的密钥需要以ID开头", dictionary(), "misc", pid, false, "", 1.0);
+                return;
+            }
+            if(m_sid == ""){
+                notify(m_metagame, "未查询到自己账户SID", dictionary(), "misc", pid, false, "", 1.0);
+                return;
+            }
+            XmlElement@ allInfo = XmlElement(readPlayerInfo(m_sid));
+            XmlElement@ t_allInfo = XmlElement(readPlayerInfo(tg_sid));
+            if(allInfo is null || t_allInfo is null ){
+                _log("allInfo is null, in handleMyInviteKey");
+                return;
+            }
+            array<const XmlElement@> infos = allInfo.getElementsByTagName("player");
+            array<const XmlElement@> t_infos = t_allInfo.getElementsByTagName("player");
+            for(uint b=0; b<t_infos.size(); ++b){
+                infos.insertLast(t_infos[b]);
+            }
+
             //盗版小号
             if(m_sid == "ID0"){
                 notify(m_metagame, "You are not steam User", dictionary(), "misc", pid, false, "", 1.0);
@@ -446,42 +467,34 @@ class IO_data : Tracker {
                 bool is_online = info.getBoolAttribute("is_online");
 
                 array<const XmlElement@> access_tags = info.getElementsByTagName("access_tag");
-                //对象时否为自己已有的账号（SID相同），旗下所有号是否有被邀请记录
+                //对象是否为自己已有的账号（SID相同），旗下所有号是否有被邀请记录
                 if(m_sid == t_sid){
-                    for(uint j = 0; j<access_tags.size(); ++j){
-                        XmlElement@ access_tag = XmlElement(access_tags[j]);
-                        if(access_tag.hasAttribute("__tag")){
-                            if(access_tag.getStringAttribute("__tag") == "InviteKey"){
-                                if(access_tag.hasAttribute("invited")){
-                                    invited = access_tag.getBoolAttribute("invited");
-                                    if(invited){//任意账号已经被邀请过，返回
-                    notify(m_metagame, "You had been invited!", dictionary(), "misc", pid, false, "", 1.0);
-                                        return;
-                                    }
-                                }
-                            }
-                        }
+                    XmlElement xml1("root");
+                        XmlElement xml2("InviteKey");
+                            XmlElement xml3("invited");
+                            xml3.setStringAttribute("value","1");
+                        xml2.appendChild(xml3);
+                    xml1.appendChild(xml2);
+
+                    if(checkTagsInPlayerInfo(m_sid,xml1)){//任意账号已经被邀请过，返回
+                        notify(m_metagame, "You had been invited!", dictionary(), "misc", pid, false, "", 1.0);
+                        return;
                     }
                 }
-
                 //对象是邀请者，且在线（profile_hash相同）
                 if(t_hash == t_profile_hash){
                     if(!is_online){
                         notify(m_metagame, "Inviter is not in the same Server", dictionary(), "misc", pid, false, "", 1.0);
                         return;
                     }
-                    //是否在同一个服务器内
-                    // if(!g_playerInfoBuck.exists(p_name)){
-                    //     notify(m_metagame, "Inviter is not in the same Server", dictionary(), "misc", pid, false, "", 1.0);
-                    //     return;
-                    // }
-                    // 对象是否有邀请条件
+
                     for(uint j = 0; j<access_tags.size(); ++j){
                         XmlElement@ access_tag = XmlElement(access_tags[j]);
-                        if(access_tag.hasAttribute("__tag")){
-                            if(access_tag.getStringAttribute("__tag") == "InviteKey"){
+                        if(access_tag.hasAttribute("AA_tag")){
+                            if(access_tag.getStringAttribute("AA_tag") == "InviteKey"){
                                 if(access_tag.hasAttribute("inviter")){
                                     if(access_tag.getBoolAttribute("inviter") == true){
+                                        if(g_debugMode) _report(m_metagame,"邀请条件满足");
                                         // 邀请条件满足
                                         int invite_time = access_tag.getIntAttribute("invite_time");
                                         invite_time++;
@@ -501,12 +514,14 @@ class IO_data : Tracker {
             }
             //自己所有账户没有邀请记录且密钥正确，邀请者有邀请资格
             if(valid && !invited){
+                if(g_debugMode) _report(m_metagame,"通过，更新玩家存档");
                 // 更新邀请者和被邀请者玩家存档
                 XmlElement aa("InviteKey");
                 aa.setStringAttribute("player_name",p_name);
                 aa.setBoolAttribute("invited",true);
                 xmls.insertLast(aa);
-                addToPlayersInfo(xmls);
+                addToPlayersInfo(xmls,m_sid);
+                addToPlayersInfo(xmls,tg_sid);
 
                 handleReward(p_name,"invited_reward");
                 handleReward(t_name,"inviter_reward");
@@ -523,12 +538,18 @@ class IO_data : Tracker {
 			if(message == "/updatePlayers"){
 				updatePlayers();
 			}
-			if(message == "/addToPlayersInfo"){
-                // XmlElement@ root = XmlElement(readXML(m_metagame,"reward_keys.xml"));
-                // array<const XmlElement@> infos = root.getLowerChilds("reward_keys",0);
-                const XmlElement@ allInfo = readFile("reward_keys.xml");
-                array<const XmlElement@> infos = allInfo.getElementsByTagName("reward_key");
-				addToPlayersInfo(infos);
+			if(message == "/readfile"){
+                string sid = g_playerInfoBuck.getSidByName(p_name);
+				const XmlElement@ root = readPlayerInfo(sid);
+                if(root is null) _report(m_metagame,"player sid="+sid+"is null");
+                _report(m_metagame,"成功读取："+sid);
+			}
+			if(startsWith(message,"/read")){
+                string key = "/read ";
+                string sid = message.substr(key.length());
+				const XmlElement@ root = readPlayerInfo(sid);
+                if(root is null) _report(m_metagame,"player sid="+sid+"is null");
+                 _report(m_metagame,"成功读取："+sid);
 			}
 			if(message == "/playerin"){
                 array<const XmlElement@> players = getPlayers(m_metagame);
@@ -560,11 +581,155 @@ class IO_data : Tracker {
                 }
                 updatePlayers(player,false);
 			}
+            if(startsWith(message,"/checkmyinfo")){
+                string m_sid = g_playerInfoBuck.getSidByName(p_name);
+                XmlElement root("base");
+                    XmlElement main("InviteKey");
+                        XmlElement sub("invite_time");
+                            sub.setStringAttribute("value","1");
+                        XmlElement sub2("inviter");
+                    main.appendChild(sub);
+                    main.appendChild(sub2);
+                root.appendChild(main);
+                if(checkTagsInPlayerInfo(m_sid,root)){
+                    _report(m_metagame,"最终：查到玩家信息匹配");
+                }
+            }
+            if(startsWith(message,"/checkmyinfo2")){
+                string m_sid = g_playerInfoBuck.getSidByName(p_name);
+                XmlElement root("base");
+                    XmlElement main("InviteKey");
+                    main.setStringAttribute("player_name",p_name);
+                        XmlElement sub("invite_time");
+                            sub.setStringAttribute("value","1");
+                        XmlElement sub2("inviter");
+                    main.appendChild(sub);
+                    main.appendChild(sub2);
+                root.appendChild(main);
+                if(checkTagsInPlayerInfo(m_sid,root)){
+                    _report(m_metagame,"最终：查到玩家信息匹配");
+                }
+            }
+            if(startsWith(message,"/reward")){
+                string key = "/reward ";
+                string access_tag = message.substr(key.length());
+                handleReward(p_name,access_tag);
+            }
 		}
     }
     // -------------------------------------------
-    protected void addToPlayersInfo(array<const XmlElement@> xmls){
-        XmlElement@ allInfo = XmlElement(readPlayerInfo());
+    // target_tags 传入格式如下：
+    // <root>
+    //     <target_tag (可选)player_name="">
+    //         <access_tag  value="1"/>
+    //         <access_tag2 />
+    //     </target_tag>
+    // </root>
+    protected bool checkTagsInPlayerInfo(string sid, const XmlElement@ root_target_tags){
+        XmlElement@ allInfo = XmlElement(readPlayerInfo(sid));
+        if(allInfo is null){
+            _log("allInfo is null, in addToPlayersInfo");
+            return false;
+        }
+        array<const XmlElement@> target_tags = root_target_tags.getChilds();
+        if(g_debugMode) _report(m_metagame,"要查询的对象的数组大小为="+target_tags.size());
+        array<const XmlElement@> m_players = allInfo.getElementsByTagName("player");
+        
+        bool isAllPlayerValid = true;
+        dictionary pass_list;
+        for(uint n = 0; n < target_tags.size(); ++n){
+            const XmlElement@ target_tag = target_tags[n];
+            string target_TagName = target_tag.getName();
+            pass_list.set(target_TagName,false);
+            if(g_debugMode) _report(m_metagame,"正在检查目标标签:"+target_TagName);
+
+            string target_player_name = "";
+            string target_sid = "";
+            if(target_tag.hasAttribute("player_name")){
+                target_player_name = target_tag.getStringAttribute("player_name");
+            }
+            if(target_tag.hasAttribute("sid")){
+                target_sid = target_tag.getStringAttribute("sid");
+            }
+
+            if(g_debugMode) _report(m_metagame,"比对对象的字典输出："+target_tag.toString());
+
+            for(uint i=0; i<m_players.size(); ++i){
+                const XmlElement@ m_player = m_players[i];
+                string m_player_name = m_player.getStringAttribute("player_name");
+                string m_sid = m_player.getStringAttribute("sid");
+                if(g_debugMode) _report(m_metagame,"正在检查玩家:"+m_player_name);
+
+                if(target_player_name != "" && target_player_name != m_player_name){ 
+                    if(g_debugMode) _report(m_metagame,"目标玩家名:"+target_player_name+"实际玩家名"+m_player_name+"。跳过");
+                    continue;
+                }
+                if(target_sid != "" && target_sid != m_sid) continue;
+
+                bool isThisPlayerFind = false;
+                array<const XmlElement@> m_access_tags = m_player.getChilds();
+                for(uint j=0; j<m_access_tags.size(); ++j){
+                    const XmlElement@ m_access_tag = m_access_tags[j];
+                    string m_TagName = m_access_tag.getStringAttribute("AA_tag");
+                    if(g_debugMode) _report(m_metagame,"正在比对标签:"+m_TagName);
+
+                    if(g_debugMode) _report(m_metagame,"玩家存档的字典输出："+m_access_tag.toString());
+
+                    // 与玩家列表的access_tag字典进行匹配，若get不到或value错误，则跳出。否则全部通过
+                    bool isFindTargetAccessTags = true;
+                    if(m_TagName == target_TagName){
+                        array<const XmlElement@> sub_tags = target_tag.getChilds();
+                        for(uint k=0;k<sub_tags.size();++k){
+                            const XmlElement@ sub_tag = sub_tags[k];
+                            string sub_TagName = sub_tag.getName();
+                            string sub_value = "";
+                            if(sub_tag.hasAttribute("value")){
+                                sub_value = sub_tag.getStringAttribute("value");
+                            }
+                            if(g_debugMode) _report(m_metagame,"检查的子标签"+sub_TagName+"值:"+sub_value);
+                            if(m_access_tag.hasAttribute(sub_TagName)){
+                                string m_access_value = m_access_tag.getStringAttribute(sub_TagName);
+                                if(sub_value == "" || sub_value == m_access_value){
+                                    isFindTargetAccessTags = true;
+                                    if(g_debugMode) _report(m_metagame,"找到匹配的标签"+sub_TagName+"值:"+sub_value);
+                                    continue;
+                                }else{
+                                    // 有任意一次匹配不上，则退出
+                                    isFindTargetAccessTags = false;
+                                    break;
+                                }
+                            }
+                        }
+                        //全部通过
+                        if(isFindTargetAccessTags){
+                            isThisPlayerFind = true;
+                            if(g_debugMode) _report(m_metagame,"找到匹配的标签:"+m_TagName);
+                            break;
+                        }
+                    }
+                }
+                if(isThisPlayerFind){
+                    pass_list.set(target_TagName,true);
+                    break;
+                }
+            }
+            bool isValid;
+            if(pass_list.get(target_TagName,isValid)){
+                if(!isValid){
+                    isAllPlayerValid = false;
+                    if(g_debugMode) _report(m_metagame,"检查 "+target_TagName+" 失败，将isAllPlayerValid设置为false");
+                    break;
+                }
+            }
+        }
+
+        if(g_debugMode && !isAllPlayerValid) _report(m_metagame,"比对不通过，目标玩家存档未能找到对应键值");
+        if(g_debugMode && isAllPlayerValid) _report(m_metagame,"比对通过，目标玩家存档能找到对应键值");
+        return isAllPlayerValid;
+    }
+    // -------------------------------------------
+    protected void addToPlayersInfo(array<const XmlElement@> xmls, string sid){
+        XmlElement@ allInfo = XmlElement(readPlayerInfo(sid));
         if(allInfo is null){
             _log("allInfo is null, in addToPlayersInfo");
             return;
@@ -605,7 +770,7 @@ class IO_data : Tracker {
                         TagName = xml.getName();
                     }
                     xml.setStringAttribute("TagName","access_tag");
-                    xml.setStringAttribute("__tag",TagName);
+                    xml.setStringAttribute("AA_tag",TagName);
 
                     //是否有同类项，有则覆写
                     bool isExist = false;
@@ -620,7 +785,7 @@ class IO_data : Tracker {
                     if(access_tags.size() != 0){
                         for(int j = 0 ; j < int(access_tags.size()) ; ++j){
                             const XmlElement@ access_tag = access_tags[j];
-                            string m_TagName = access_tag.getStringAttribute("__tag");
+                            string m_TagName = access_tag.getStringAttribute("AA_tag");
 
                             //排除onRemove对象
                             if(access_tag.hasAttribute("onRemove")){
@@ -651,7 +816,7 @@ class IO_data : Tracker {
                 allInfo.removeChild("player",i);
             }
         }
-        writeXML(m_metagame,m_playerInfo_FILENAME,allInfo);
+        savePlayerInfo(m_metagame,sid,allInfo);
         if(g_debugMode){
             _report(m_metagame,"addToPlayersInfo");
         }
@@ -665,12 +830,12 @@ class IO_data : Tracker {
             players.insertLast(newplayer);
         }
         
-        //读取存档玩家信息
-        XmlElement@ allInfo = XmlElement(readPlayerInfo());
-        if(allInfo is null){
-            _log("allInfo is null, in updatePlayers");
-            return;
-        }
+        // 读取存档玩家信息
+        // XmlElement@ allInfo = XmlElement(readPlayerInfo());
+        // if(allInfo is null){
+        //     _log("allInfo is null, in updatePlayers");
+        //     return;
+        // }
         //获取在线玩家信息
         for(uint i=0;i<players.size();++i){
             XmlElement@ player = XmlElement(players[i]);
@@ -680,8 +845,16 @@ class IO_data : Tracker {
             string player_name = player.getStringAttribute("name");
             string profile_hash = player.getStringAttribute("profile_hash");
             string sid = player.getStringAttribute("sid");
-            //读取存档玩家信息
+            
+            // 读取存档玩家信息
+            XmlElement@ allInfo = XmlElement(readPlayerInfo(sid));
+            if(allInfo is null){
+                _log("allInfo is null, in updatePlayers");
+                return;
+            }
+            // 读取存档玩家账号信息
             array<const XmlElement@> m_players = allInfo.getElementsByTagName("player");
+
             allInfo.removeAllChild();
             //解决空子项问题
             XmlElement a("player");
@@ -726,8 +899,9 @@ class IO_data : Tracker {
                 allInfo.appendChild(playerinfo);
             }
             allInfo.removeChild("player",0);
+            savePlayerInfo(m_metagame,sid,allInfo);
         }
-        writeXML(m_metagame,m_playerInfo_FILENAME,allInfo);
+        // writeXML(m_metagame,m_playerInfo_FILENAME,allInfo);
         if(g_debugMode){
             _report(m_metagame,"savePlayers");
         }
@@ -736,20 +910,26 @@ class IO_data : Tracker {
     protected const XmlElement@ readFile(string filename){
         const XmlElement@ root = readXML(m_metagame,filename).getFirstChild();
         if(root is null){
-            _log("readFile is null,create");
+            _log("readFile is null,create"+filename+"是NULL，重新创建");
+            _report(m_metagame,"文件名="+filename);
             writeXML(m_metagame,filename,XmlElement(filename));
             @root = readXML(m_metagame,filename).getFirstChild();
         }
         return root;
     }
-    protected const XmlElement@ readPlayerInfo(){
-        const XmlElement@ root = readXML(m_metagame,m_playerInfo_FILENAME).getFirstChild();
+    protected const XmlElement@ readPlayerInfo(string sid){
+        sid = sid+".xml";
+        const XmlElement@ root = readXML(m_metagame,sid).getFirstChild();
         if(root is null){
-            _log("readPlayerInfo is null,create");
-            writeXML(m_metagame,m_playerInfo_FILENAME,XmlElement("players"));
-            @root = readXML(m_metagame,m_playerInfo_FILENAME).getFirstChild();
+            _log("readPlayerInfo for sid="+sid+" is null,create");
+            writeXML(m_metagame,sid,XmlElement("players"));
+            @root = readXML(m_metagame,sid).getFirstChild();
         }
         return root;
+    }
+    protected void savePlayerInfo(Metagame@ m_metagame, string sid, XmlElement@ allInfo){
+        sid = sid+".xml";
+        writeXML(m_metagame,sid,allInfo);
     }
 
     protected bool handleReward(string&in p_name,string&in access_tag){
@@ -757,12 +937,15 @@ class IO_data : Tracker {
         int cid = g_playerInfoBuck.getCidByPid(pid);
         int fid = g_playerInfoBuck.getFidByCid(cid);
         float xp = g_playerInfoBuck.getXpByName(p_name);
-
+        // todo：检测id是否有效
+        array<Resource@> resources = array<Resource@>();
+        Resource@ res;
         if(access_tag == "green_hand_level_10"){//十级新手礼包
             if(xp >= 12.965){
-                for(uint i=0;i<3;++i){
-                    addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_75");
-                }
+                @res = Resource("hd_bonusfactor_al_75","carry_item");
+                res.addToResources(resources,3);
+                addListItemInBackpack(m_metagame,cid,resources);
+
                 GiveRP(m_metagame,cid,120000);
                 dictionary a;
                 a["%reward"] = "RP: 12w";
@@ -775,9 +958,10 @@ class IO_data : Tracker {
         }
         if(access_tag == "green_hand_level_20"){//二十级新手礼包
             if(xp >= 84.248){
-                for(uint i=0;i<5;++i){
-                    addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_75");
-                }
+                @res = Resource("hd_bonusfactor_al_75","carry_item");
+                res.addToResources(resources,5);
+                addListItemInBackpack(m_metagame,cid,resources);
+
                 GiveRP(m_metagame,cid,240000);
                 dictionary a;
                 a["%reward"] = "RP: 24w";
@@ -791,9 +975,10 @@ class IO_data : Tracker {
         if(access_tag == "green_hand_level_30"){//三十级新手礼包
             
             if(xp >= 251.773){
-                for(uint i=0;i<7;++i){
-                    addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_75");
-                }
+                @res = Resource("hd_bonusfactor_al_75","carry_item");
+                res.addToResources(resources,7);
+                addListItemInBackpack(m_metagame,cid,resources);
+
                 GiveRP(m_metagame,cid,480000);
                 dictionary a;
                 a["%reward"] = "RP: 48w";
@@ -806,9 +991,10 @@ class IO_data : Tracker {
         }
         if(access_tag == "green_hand_level_50"){//五十级礼包
             if(xp >= 1000){
-                for(uint i=0;i<5;++i){
-                    addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_240");
-                }
+                @res = Resource("hd_bonusfactor_al_240","carry_item");
+                res.addToResources(resources,5);
+                addListItemInBackpack(m_metagame,cid,resources);
+
                 GiveRP(m_metagame,cid,600000);
                 dictionary a;
                 a["%reward"] = "RP: 60w";
@@ -820,90 +1006,71 @@ class IO_data : Tracker {
             }
         }
         if(access_tag == "tester_player"){//参与测试服的玩家
-            
-            for(uint i=0;i<30;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_skin.carry_item");
-            }
-            for(uint i=0;i<10;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_vehicle.carry_item");
-            }
-            for(uint i=0;i<3;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_music.carry_item");
-            }
-            for(uint i=0;i<3;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_1.carry_item");
-            }
-            for(uint i=0;i<3;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_2.carry_item");
-            }
-            for(uint i=0;i<3;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_delta.carry_item");
-            }
-            for(uint i=0;i<3;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_240");
-            }
-            for(uint i=0;i<5;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_125");
-            }
-            for(uint i=0;i<15;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_45");
-            }
+            @res = Resource("reward_box_skin.carry_item","carry_item");
+            res.addToResources(resources,30);
+            @res = Resource("reward_box_vehicle.carry_item","carry_item");
+            res.addToResources(resources,10);
+            @res = Resource("reward_box_music.carry_item","carry_item");
+            res.addToResources(resources,3);
+            @res = Resource("reward_box_weapon_1.carry_item","carry_item");
+            res.addToResources(resources,3);
+            @res = Resource("reward_box_weapon_2.carry_item","carry_item");
+            res.addToResources(resources,3);
+            @res = Resource("reward_box_weapon_delta.carry_item","carry_item");
+            res.addToResources(resources,3);
+            @res = Resource("hd_bonusfactor_al_240","carry_item");
+            res.addToResources(resources,3);
+            @res = Resource("hd_bonusfactor_al_125","carry_item");
+            res.addToResources(resources,5);
+            @res = Resource("hd_bonusfactor_al_45","carry_item");
+            res.addToResources(resources,15);
+
+            addListItemInBackpack(m_metagame,cid,resources);
+                
             dictionary a;
             a["%reward"] = "已送至背包";
             notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
             return true;
         }
         if(access_tag == "MainServer"){//MainServer 开服奖励
-            
-            for(uint i=0;i<30;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_skin.carry_item");
-            }
-            for(uint i=0;i<10;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_vehicle.carry_item");
-            }
-            for(uint i=0;i<3;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_music.carry_item");
-            }
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_1.carry_item");
-            }
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_2.carry_item");
-            }
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_lamda.carry_item");
-            }
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_delta.carry_item");
-            }
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_gama.carry_item");
-            }
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_240");
-            }
-            for(uint i=0;i<3;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_xp_125");
-            }
-            for(uint i=0;i<5;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_rp_45");
-            }
+            @res = Resource("reward_box_skin.carry_item","carry_item");
+            res.addToResources(resources,30);
+            @res = Resource("reward_box_vehicle.carry_item","carry_item");
+            res.addToResources(resources,10);
+            @res = Resource("reward_box_music.carry_item","carry_item");
+            res.addToResources(resources,3);
+            @res = Resource("reward_box_weapon_1.carry_item","carry_item");
+            res.addToResources(resources,1);
+            @res = Resource("reward_box_weapon_2.carry_item","carry_item");
+            res.addToResources(resources,1);
+            @res = Resource("reward_box_weapon_lamda.carry_item","carry_item");
+            res.addToResources(resources,1);
+            @res = Resource("reward_box_weapon_delta.carry_item","carry_item");
+            res.addToResources(resources,1);
+            @res = Resource("reward_box_weapon_gama.carry_item","carry_item");
+            res.addToResources(resources,1);
+            @res = Resource("hd_bonusfactor_al_240","carry_item");
+            res.addToResources(resources,1);
+            @res = Resource("hd_bonusfactor_xp_125","carry_item");
+            res.addToResources(resources,3);
+            @res = Resource("hd_bonusfactor_rp_45","carry_item");
+            res.addToResources(resources,5);
+
+            addListItemInBackpack(m_metagame,cid,resources);
             dictionary a;
             a["%reward"] = "已送至背包";
             notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
             return true;
         }
         if(access_tag == "sponsor_mk1"){//赞助者
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_rp_240");
-            }
-            for(uint i=0;i<15;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_20");
-            }
-            for(uint i=0;i<10;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_skin.carry_item");
-            }
+            @res = Resource("hd_bonusfactor_rp_240","carry_item");
+            res.addToResources(resources,1);
+            @res = Resource("hd_bonusfactor_al_20","carry_item");
+            res.addToResources(resources,15);
+            @res = Resource("reward_box_skin.carry_item","carry_item");
+            res.addToResources(resources,10);
 
+            addListItemInBackpack(m_metagame,cid,resources);
             GiveRP(m_metagame,cid,50000);
             dictionary a;
             a["%reward"] = "RP: 5w 和加成卡";
@@ -911,21 +1078,18 @@ class IO_data : Tracker {
             return true;
         }
         if(access_tag == "sponsor_mk2"){//赞助者
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_240");
-            }
-            for(uint i=0;i<3;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_75");
-            }
-            for(uint i=0;i<15;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_20");
-            }
-            for(uint i=0;i<10;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_skin.carry_item");
-            }
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_delta.carry_item");
-            }
+            @res = Resource("hd_bonusfactor_al_240","carry_item");
+            res.addToResources(resources,1);
+            @res = Resource("hd_bonusfactor_al_75","carry_item");
+            res.addToResources(resources,3);
+            @res = Resource("hd_bonusfactor_al_20","carry_item");
+            res.addToResources(resources,15);
+            @res = Resource("reward_box_skin.carry_item","carry_item");
+            res.addToResources(resources,10);
+            @res = Resource("reward_box_weapon_delta.carry_item","carry_item");
+            res.addToResources(resources,1);
+
+            addListItemInBackpack(m_metagame,cid,resources);
 
             GiveRP(m_metagame,cid,100000);
             dictionary a;
@@ -934,19 +1098,16 @@ class IO_data : Tracker {
             return true;
         }
         if(access_tag == "sponsor_mk3"){//赞助者
+            @res = Resource("hd_bonusfactor_al_240","carry_item");
+            res.addToResources(resources,5);
+            @res = Resource("hd_bonusfactor_al_45","carry_item");
+            res.addToResources(resources,15);
+            @res = Resource("reward_box_skin.carry_item","carry_item");
+            res.addToResources(resources,10);
+            @res = Resource("reward_box_weapon_v.carry_item","carry_item");
+            res.addToResources(resources,1);
 
-            for(uint i=0;i<5;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_240");
-            }
-            for(uint i=0;i<15;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_45");
-            }
-            for(uint i=0;i<10;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_skin.carry_item");
-            }
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_v.carry_item");
-            }
+            addListItemInBackpack(m_metagame,cid,resources);
 
             GiveRP(m_metagame,cid,300000);
             dictionary a;
@@ -955,20 +1116,16 @@ class IO_data : Tracker {
             return true;
         }
         if(access_tag == "sponsor_mk4"){//赞助者
+            @res = Resource("hd_bonusfactor_al_240","carry_item");
+            res.addToResources(resources,10);
+            @res = Resource("hd_bonusfactor_al_125","carry_item");
+            res.addToResources(resources,15);
+            @res = Resource("reward_box_skin.carry_item","carry_item");
+            res.addToResources(resources,10);
+            @res = Resource("reward_box_weapon_v.carry_item","carry_item");
+            res.addToResources(resources,3);
 
-            for(uint i=0;i<10;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_240");
-            }
-            for(uint i=0;i<15;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_125");
-            }
-            for(uint i=0;i<10;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_skin.carry_item");
-            }
-            for(uint i=0;i<3;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_v.carry_item");
-            }
-
+            addListItemInBackpack(m_metagame,cid,resources);
             GiveRP(m_metagame,cid,1000000);
             dictionary a;
             a["%reward"] = "RP: 100w 、加成卡和战利品箱子";
@@ -976,10 +1133,11 @@ class IO_data : Tracker {
             return true;
         }
         if(access_tag == "Gift_alpha_1"){//小礼品 alpha 系列 钱和加成卡
+            @res = Resource("hd_bonusfactor_al_75","carry_item");
+            res.addToResources(resources,1);
 
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_75");
-            }
+            addListItemInBackpack(m_metagame,cid,resources);
+
             GiveRP(m_metagame,cid,10000);
             dictionary a;
             a["%reward"] = "RP: 1w 、加成卡";
@@ -988,15 +1146,15 @@ class IO_data : Tracker {
         }
         if(access_tag == "Gift_alpha_2"){//小礼品 alpha 系列 钱和加成卡
 
-            for(uint i=0;i<5;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_20");
-            }
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_xp_45");
-            }
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_rp_45");
-            }
+            @res = Resource("hd_bonusfactor_al_20","carry_item");
+            res.addToResources(resources,5);
+            @res = Resource("hd_bonusfactor_xp_45","carry_item");
+            res.addToResources(resources,1);
+            @res = Resource("hd_bonusfactor_rp_45","carry_item");
+            res.addToResources(resources,1);
+
+            addListItemInBackpack(m_metagame,cid,resources);
+
             GiveRP(m_metagame,cid,10000);
             dictionary a;
             a["%reward"] = "RP: 1w 、加成卡";
@@ -1004,16 +1162,15 @@ class IO_data : Tracker {
             return true;
         }
         if(access_tag == "Gift_alpha_3"){//小礼品 alpha 系列 钱和加成卡
+            @res = Resource("hd_bonusfactor_al_125","carry_item");
+            res.addToResources(resources,2);
+            @res = Resource("hd_bonusfactor_xp_45","carry_item");
+            res.addToResources(resources,1);
+            @res = Resource("hd_bonusfactor_rp_45","carry_item");
+            res.addToResources(resources,1);
 
-            for(uint i=0;i<2;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_125");
-            }
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_xp_45");
-            }
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_rp_45");
-            }
+            addListItemInBackpack(m_metagame,cid,resources);
+
             GiveRP(m_metagame,cid,10000);
             dictionary a;
             a["%reward"] = "RP: 1w 、加成卡";
@@ -1021,16 +1178,14 @@ class IO_data : Tracker {
             return true;
         }
         if(access_tag == "Gift_alpha_4"){//小礼品 alpha 系列 钱和加成卡
+            @res = Resource("hd_bonusfactor_xp_240","carry_item");
+            res.addToResources(resources,1);
+            @res = Resource("hd_bonusfactor_xp_45","carry_item");
+            res.addToResources(resources,1);
+            @res = Resource("hd_bonusfactor_rp_45","carry_item");
+            res.addToResources(resources,1);
+            addListItemInBackpack(m_metagame,cid,resources);
 
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_xp_240");
-            }
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_xp_45");
-            }
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_rp_45");
-            }
             GiveRP(m_metagame,cid,10000);
             dictionary a;
             a["%reward"] = "RP: 1w 、加成卡";
@@ -1038,16 +1193,14 @@ class IO_data : Tracker {
             return true;
         }
         if(access_tag == "Gift_alpha_5"){//小礼品 alpha 系列 钱和加成卡
+            @res = Resource("hd_bonusfactor_rp_240","carry_item");
+            res.addToResources(resources,1);
+            @res = Resource("hd_bonusfactor_xp_45","carry_item");
+            res.addToResources(resources,1);
+            @res = Resource("hd_bonusfactor_rp_45","carry_item");
+            res.addToResources(resources,1);
+            addListItemInBackpack(m_metagame,cid,resources);
 
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_rp_240");
-            }
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_xp_45");
-            }
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_rp_45");
-            }
             GiveRP(m_metagame,cid,10000);
             dictionary a;
             a["%reward"] = "RP: 1w 、加成卡";
@@ -1055,10 +1208,10 @@ class IO_data : Tracker {
             return true;
         }
         if(access_tag == "Gift_beta_1"){//小礼品 beta 系列 非武器类箱子
+            @res = Resource("reward_box_skin.carry_item","carry_item");
+            res.addToResources(resources,5);
+            addListItemInBackpack(m_metagame,cid,resources);
 
-            for(uint i=0;i<5;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_skin.carry_item");
-            }
             GiveRP(m_metagame,cid,10000);
             dictionary a;
             a["%reward"] = "RP: 1w 和战利品箱子";
@@ -1066,10 +1219,10 @@ class IO_data : Tracker {
             return true;
         }
         if(access_tag == "Gift_beta_2"){//小礼品 beta 系列 非武器类箱子
+            @res = Resource("reward_box_vehicle.carry_item","carry_item");
+            res.addToResources(resources,5);
+            addListItemInBackpack(m_metagame,cid,resources);
 
-            for(uint i=0;i<5;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_vehicle.carry_item");
-            }
             GiveRP(m_metagame,cid,10000);
             dictionary a;
             a["%reward"] = "RP: 1w 和战利品箱子";
@@ -1077,10 +1230,10 @@ class IO_data : Tracker {
             return true;
         }
         if(access_tag == "Gift_beta_3"){//小礼品 beta 系列 非武器类箱子
+            @res = Resource("reward_box_music.carry_item","carry_item");
+            res.addToResources(resources,5);
+            addListItemInBackpack(m_metagame,cid,resources);
 
-            for(uint i=0;i<5;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_music.carry_item");
-            }
             GiveRP(m_metagame,cid,10000);
             dictionary a;
             a["%reward"] = "RP: 1w 和战利品箱子";
@@ -1088,10 +1241,10 @@ class IO_data : Tracker {
             return true;
         }
         if(access_tag == "Gift_beta_4"){//小礼品 beta 系列 非武器类箱子
+            @res = Resource("reward_box_collection.carry_item","carry_item");
+            res.addToResources(resources,1);
+            addListItemInBackpack(m_metagame,cid,resources);
 
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_collection.carry_item");
-            }
             GiveRP(m_metagame,cid,10000);
             dictionary a;
             a["%reward"] = "RP: 1w 和战利品箱子";
@@ -1099,19 +1252,16 @@ class IO_data : Tracker {
             return true;
         }
         if(access_tag == "Gift_beta_5"){//小礼品 beta 系列 非武器类箱子
+            @res = Resource("reward_box_collection.carry_item","carry_item");
+            res.addToResources(resources,1);
+            @res = Resource("reward_box_skin.carry_item","carry_item");
+            res.addToResources(resources,5);
+            @res = Resource("reward_box_music.carry_item","carry_item");
+            res.addToResources(resources,3);
+            @res = Resource("reward_box_vehicle.carry_item","carry_item");
+            res.addToResources(resources,5);
+            addListItemInBackpack(m_metagame,cid,resources);
 
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_collection.carry_item");
-            }
-            for(uint i=0;i<5;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_skin.carry_item");
-            }
-            for(uint i=0;i<3;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_music.carry_item");
-            }
-            for(uint i=0;i<5;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_vehicle.carry_item");
-            }
             GiveRP(m_metagame,cid,10000);
             dictionary a;
             a["%reward"] = "RP: 1w 和战利品箱子";
@@ -1119,10 +1269,10 @@ class IO_data : Tracker {
             return true;
         }
         if(access_tag == "Gift_gama_1"){//小礼品 gama 系列 武器类箱子
+            @res = Resource("reward_box_weapon_1.carry_item","carry_item");
+            res.addToResources(resources,1);
+            addListItemInBackpack(m_metagame,cid,resources);
 
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_1.carry_item");
-            }
             GiveRP(m_metagame,cid,10000);
             dictionary a;
             a["%reward"] = "RP: 1w 和战利品箱子";
@@ -1130,10 +1280,10 @@ class IO_data : Tracker {
             return true;
         }
         if(access_tag == "Gift_gama_2"){//小礼品 gama 系列 武器类箱子
+            @res = Resource("reward_box_weapon_2.carry_item","carry_item");
+            res.addToResources(resources,1);
+            addListItemInBackpack(m_metagame,cid,resources);
 
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_2.carry_item");
-            }
             GiveRP(m_metagame,cid,10000);
             dictionary a;
             a["%reward"] = "RP: 1w 和战利品箱子";
@@ -1141,10 +1291,9 @@ class IO_data : Tracker {
             return true;
         }
         if(access_tag == "Gift_gama_3"){//小礼品 gama 系列 武器类箱子
-
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_beta.carry_item");
-            }
+            @res = Resource("reward_box_weapon_beta.carry_item","carry_item");
+            res.addToResources(resources,1);
+            addListItemInBackpack(m_metagame,cid,resources);
             GiveRP(m_metagame,cid,10000);
             dictionary a;
             a["%reward"] = "RP: 1w 和战利品箱子";
@@ -1152,10 +1301,9 @@ class IO_data : Tracker {
             return true;
         }
         if(access_tag == "Gift_gama_4"){//小礼品 gama 系列 武器类箱子
-
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_miu.carry_item");
-            }
+            @res = Resource("reward_box_weapon_miu.carry_item","carry_item");
+            res.addToResources(resources,1);
+            addListItemInBackpack(m_metagame,cid,resources);
             GiveRP(m_metagame,cid,10000);
             dictionary a;
             a["%reward"] = "RP: 1w 和战利品箱子";
@@ -1163,10 +1311,9 @@ class IO_data : Tracker {
             return true;
         }
         if(access_tag == "Gift_gama_5"){//小礼品 gama 系列 武器类箱子
-
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_pi.carry_item");
-            }
+            @res = Resource("reward_box_weapon_pi.carry_item","carry_item");
+            res.addToResources(resources,1);
+            addListItemInBackpack(m_metagame,cid,resources);
             GiveRP(m_metagame,cid,10000);
             dictionary a;
             a["%reward"] = "RP: 1w 和战利品箱子";
@@ -1174,34 +1321,25 @@ class IO_data : Tracker {
             return true;
         }
         if(access_tag == "ESC"){//ESC小队成员
-
-            for(uint i=0;i<5;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_240");
-            }
-            for(uint i=0;i<5;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_125");
-            }
-            for(uint i=0;i<5;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_75");
-            }
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_delta.carry_item");
-            }
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_lamda.carry_item");
-            }
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_2.carry_item");
-            }
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_1.carry_item");
-            }
-            for(uint i=0;i<15;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_skin.carry_item");
-            }
-            for(uint i=0;i<15;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_vehicle.carry_item");
-            }
+            @res = Resource("hd_bonusfactor_al_240","carry_item");
+            res.addToResources(resources,5);
+            @res = Resource("hd_bonusfactor_al_125","carry_item");
+            res.addToResources(resources,5);
+            @res = Resource("hd_bonusfactor_al_75","carry_item");
+            res.addToResources(resources,5);
+            @res = Resource("reward_box_weapon_delta.carry_item","carry_item");
+            res.addToResources(resources,1);
+            @res = Resource("reward_box_weapon_lamda.carry_item","carry_item");
+            res.addToResources(resources,1);
+            @res = Resource("reward_box_weapon_2.carry_item","carry_item");
+            res.addToResources(resources,1);
+            @res = Resource("reward_box_weapon_1.carry_item","carry_item");
+            res.addToResources(resources,1);
+            @res = Resource("reward_box_skin.carry_item","carry_item");
+            res.addToResources(resources,15);
+            @res = Resource("reward_box_vehicle.carry_item","carry_item");
+            res.addToResources(resources,15);
+            addListItemInBackpack(m_metagame,cid,resources);
 
             GiveRP(m_metagame,cid,500000);
             dictionary a;
@@ -1211,18 +1349,15 @@ class IO_data : Tracker {
             return true;
         }
         if(access_tag == "inviter_reward"){//邀请者奖励
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_240");
-            }
-            for(uint i=0;i<2;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_rp_75");
-            }
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_lamda.carry_item");
-            }
-            for(uint i=0;i<10;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_skin.carry_item");
-            }
+            @res = Resource("hd_bonusfactor_al_240","carry_item");
+            res.addToResources(resources,1);
+            @res = Resource("hd_bonusfactor_rp_75","carry_item");
+            res.addToResources(resources,2);
+            @res = Resource("reward_box_weapon_lamda.carry_item","carry_item");
+            res.addToResources(resources,1);
+            @res = Resource("reward_box_skin.carry_item","carry_item");
+            res.addToResources(resources,10);
+            addListItemInBackpack(m_metagame,cid,resources);
 
             GiveRP(m_metagame,cid,100000);
             dictionary a;
@@ -1231,22 +1366,15 @@ class IO_data : Tracker {
             return true;
         }
         if(access_tag == "invited_reward"){//被邀请者奖励
-            for(uint i=0;i<10;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","hd_bonusfactor_al_75");
-            }
-            for(uint i=0;i<2;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_omega.carry_item");
-            }
-            for(uint i=0;i<1;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_gama.carry_item");
-            }
-            for(uint i=0;i<10;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_skin.carry_item");
-            }
-            for(uint i=0;i<5;++i){
-                addItemInBackpack(m_metagame,cid,"carry_item","reward_box_vehicle.carry_item");
-            }
-
+            @res = Resource("hd_bonusfactor_al_75","carry_item");
+            res.addToResources(resources,10);
+            @res = Resource("reward_box_weapon_omega.carry_item","carry_item");
+            res.addToResources(resources,2);
+            @res = Resource("reward_box_skin.carry_item","carry_item");
+            res.addToResources(resources,10);
+            @res = Resource("reward_box_vehicle.carry_item","carry_item");
+            res.addToResources(resources,5);
+            addListItemInBackpack(m_metagame,cid,resources);
             GiveRP(m_metagame,cid,300000);
             dictionary a;
             a["%reward"] = "RP: 30w 、加成卡和战利品箱子";
@@ -1260,10 +1388,18 @@ class IO_data : Tracker {
 			string key = word[1];
             bool isSend = false;
             if (ws == 2){
-			    spawnInstanceAtbackpack(pid, key + ".weapon", "weapon");
+                @res = Resource(key + ".weapon","weapon");
+                res.addToResources(resources,1);
+                addListItemInBackpack(m_metagame,cid,resources);
                 isSend = true;
             } else if (ws == 3){
-			    spawnInstanceAtbackpack(pid, key + ".weapon", "weapon", word[2]);
+                int num = 1;
+                if(isNumeric(word[2])){
+                    num = parseInt(word[2]);
+                }
+                @res = Resource(key + ".weapon","weapon");
+                res.addToResources(resources,num);
+                addListItemInBackpack(m_metagame,cid,resources);
                 isSend = true;
             }
             if(isSend){
@@ -1278,10 +1414,18 @@ class IO_data : Tracker {
 			string key = word[1];
             bool isSend = false;
 			if (ws == 2){
-			    spawnInstanceAtbackpack(pid, key, "carry_item");
+                @res = Resource(key,"carry_item");
+                res.addToResources(resources,1);
+                addListItemInBackpack(m_metagame,cid,resources);
                 isSend = true;
 			} else if (ws == 3){
-			    spawnInstanceAtbackpack(pid, key, "carry_item", word[2]);
+                int num = 1;
+                if(isNumeric(word[2])){
+                    num = parseInt(word[2]);
+                }
+                @res = Resource(key,"carry_item");
+                res.addToResources(resources,num);
+                addListItemInBackpack(m_metagame,cid,resources);
                 isSend = true;
             }
             if(isSend){
@@ -1296,10 +1440,18 @@ class IO_data : Tracker {
 			string key = word[1];
             bool isSend = false;
 			if (ws == 2){
-			    spawnInstanceAtbackpack(pid, key + ".projectile", "projectile");
+                @res = Resource(key + ".projectile","projectile");
+                res.addToResources(resources,1);
+                addListItemInBackpack(m_metagame,cid,resources);
                 isSend = true;
 			} else if (ws == 3){
-			    spawnInstanceAtbackpack(pid, key + ".projectile", "projectile", word[2]);
+                int num = 1;
+                if(isNumeric(word[2])){
+                    num = parseInt(word[2]);
+                }
+                @res = Resource(key + ".projectile","projectile");
+                res.addToResources(resources,num);
+                addListItemInBackpack(m_metagame,cid,resources);
                 isSend = true;
             }
             if(isSend){
@@ -1326,30 +1478,12 @@ class IO_data : Tracker {
         }
         return false;
     }
-    array<string> MassageBreakUp(string message, string command, int preNumber) 
-    {
+    array<string> MassageBreakUp(string message, string command, int preNumber)  {
         string s = message.trim().substr(command.length() + preNumber + 1);
         array<string> a = s.split(" ");
         return a;
     }
-    // ------------------------------------------------------
-	protected void spawnInstanceAtbackpack(int senderId, string key, string type, string num = "1"){
-		const XmlElement@ playerInfo = getPlayerInfo(m_metagame, senderId);
-		int cid = playerInfo.getIntAttribute("character_id");
-		if(type == "vehicle"){
-			dictionary dict = {{"TagName", "command"},{"class", "chat"},{"text", "can't spawn vehicle"}};
-			m_metagame.getComms().send(XmlElement(dict));
-			return;
-		}
-		float number = parseFloat(num);
-		for(float a = 1; a <= number ; a++){
-			string command = 
-				"<command class='update_inventory' character_id='" + cid + "' container_type_class='backpack'>" + 
-					"<item class='" + type + "' key='" + key + "' />" +
-				"</command>";
-			m_metagame.getComms().send(command);	
-		}
-	}
+
     // ----------------------------------------------------
 	protected void spawnInstanceNearPlayer(int senderId, string key, string type, int factionId = 0, bool skydive = false) {
 		const XmlElement@ playerInfo = getPlayerInfo(m_metagame, senderId);

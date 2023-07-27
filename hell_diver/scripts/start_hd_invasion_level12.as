@@ -31,8 +31,7 @@ void main(dictionary@ inputData) {
         settings.m_fellowDisableEnemySpawnpointsSoldierCountOffset = 1;
 
         settings.m_server_difficulty_level = 12;
-        settings.m_fov = true;
-        
+
         array<string> overlays = {
                 "media/packages/hell_diver"
         };
@@ -40,7 +39,7 @@ void main(dictionary@ inputData) {
 
         settings.m_startServerCommand = """
 <command class='start_server'
-	server_name='[地狱潜兵] LEVEL 12 [FOV]'
+	server_name='[地狱潜兵] LEVEL 12 '
 	server_port='1241'
 	url='https://steamcommunity.com/sharedfiles/filedetails/?id=2910392031'
 	register_in_serverlist='1'
