@@ -342,5 +342,41 @@
         <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
         <capacity value="12" source="rank" source_value="0" />
     </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Miyu [Skin]" key="token_miyu.projectile" >
+        <hud_icon filename="token_miyu.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Felix Schultz [Skin]" key="token_felix_schultz.projectile" >
+        <hud_icon filename="token_felix_schultz.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+        <sound class="result" key="other" fileref="token_felix_schultz.wav" pitch_variety="0" volume="4.0"/>
+    </projectile>
+
+
+
+
+    <!-- HDicker -->
+    <projectile file="hd_hellpod_call.projectile" name="Dicker Tactical Combat [Skin]" key="token_hdicker_tactical_combat.projectile" >
+        <hud_icon filename="hdicker_tactical_combat.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Dicker Tactical [Skin]" key="token_hdicker_tactical.projectile" >
+        <hud_icon filename="hdicker_tactical.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Dicker Para [Skin]" key="token_hdicker_para.projectile" >
+        <hud_icon filename="hdicker_para.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Dicker Marker [Skin]" key="token_hdicker_marker.projectile" >
+        <hud_icon filename="hdicker_marker.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
 
 </projectiles>

@@ -98,10 +98,13 @@ force_as_shoots_blast_projectiles="0"
 	<!--军械库相关-->
     <commonness value="0.00001" can_respawn_with="1" in_stock="1" /> 
     <inventory encumbrance="1.0" price="0.0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
-    
+	<ballistics curve_height="1.0" near_far_distance="0.0" 
+	speed_estimation_near="40.0" speed_estimation_far="40.0" 
+	max_speed="60.0" randomness="0.0" tweak_factor="1.94" /> 
+
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
-    <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="2"  > 
-        <trigger class="time" time_to_live="0" />
+    <projectile file="hd_general_spawn_no_effect.projectile" pulldown_in_air="8"  > 
+        <trigger class="time" time_to_live="1" />
         <!-- <result class="blast" radius="6.5" damage="40" push="0.5" decal="0" character_state="wound" 
         make_vehicle_hit_sound="0" faction_compare="not_equal"/> -->
 		<result class="spawn" instance_class="projectile" instance_key="bugs_tank_main_damage.projectile" 
@@ -114,7 +117,8 @@ force_as_shoots_blast_projectiles="0"
 		<effect class="result" key="terrain" ref="bugs_spawn_at_ground_up_dust_1" lighting="0"/>
 		<effect class="result" key="terrain" ref="bugs_spawn_at_ground_up_dust_2" lighting="0"/>
 		<effect class="result" key="terrain" ref="bugs_spawn_at_ground_up_dust_3" lighting="0"/>
-		
+		<effect class="activated" ref="bugs_behemoth_activated_forward_updust" />
+
 		
 		
 		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
@@ -138,7 +142,7 @@ force_as_shoots_blast_projectiles="0"
 	<!--枪口特效-->
 	<effect class="muzzle" ref="bugs_behemoth_muzzle_side_dust" lighting="0"/> 
 	<effect class="muzzle" ref="bugs_behemoth_muzzle_side_dust2" lighting="0"/> 
-	<effect class="muzzle" ref="bugs_behemoth_muzzle_forward_updust" lighting="0"/> 
+	<!-- <effect class="muzzle" ref="bugs_behemoth_muzzle_forward_updust" lighting="0"/>  -->
 
 	
 	<!--姿态精度-->

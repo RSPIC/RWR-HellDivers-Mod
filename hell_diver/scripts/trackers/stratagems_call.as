@@ -578,6 +578,8 @@ class stratagems_call : Tracker {
 					}
 					p_cd_lists.addNew(p_name,pid,stratagemsKey,cd);
 					int cid = g_playerInfoBuck.getCidByPid(pid);
+	const XmlElement@ m_player = getPlayerInfo(m_metagame,pid);
+	cid = m_player.getIntAttribute("character_id");
 					string c = 
 					"<command class='update_inventory' character_id='" + cid + "' container_type_id='4' add='1'>" + 
 						"<item class='" + "projectile" + "' key='" + stratagemsKey + ".projectile" +"' />" +

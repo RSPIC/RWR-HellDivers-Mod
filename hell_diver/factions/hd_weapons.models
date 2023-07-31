@@ -37,5 +37,17 @@
 		<requirement class="weapon" slot="1" key="hd_exo44_walker_mk3_missile.weapon"/>
 	</model>
 
-	
+	<!-- 其他 -->
+	<model filename="hdicker_marker.xml">
+		<requirement class="weapon" slot="0" key="hd_psc_atx25_revelator_dicker.weapon"/>
+	</model>
+	<model filename="hdicker_tactical_combat.xml">
+		<requirement class="weapon" slot="0" key="hd_lava17_roger_dicker.weapon"/>
+	</model>
+	<model filename="hdicker_tactical.xml">
+		<requirement class="weapon" slot="0" key="hd_ar_ar77d_spade_dicker.weapon"/>
+	</model>
+	<model filename="hdicker_para.xml">
+		<requirement class="weapon" slot="0" key="hd_smg_tc171_cyclone_dicker.weapon"/>
+	</model>
 </models>

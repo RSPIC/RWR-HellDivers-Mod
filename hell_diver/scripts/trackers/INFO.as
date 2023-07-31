@@ -226,43 +226,49 @@ class playerInfo {
 	void setHash(string&in hash){m_hash = hash;}
 	void setSid(string&in sid){m_sid = sid;}
 
-	int getCidByPid(const int&in pid){
+	int getCidByPid(int&in pid){
 		if(m_pid == pid){
 			return m_cid;
 		}
 		return -1;
 	}
-	int getFidByPid(const int&in pid){
+	int getCidByName(string&in name){
+		if(m_name == name){
+			return m_cid;
+		}
+		return -1;
+	}
+	int getFidByPid(int&in pid){
 		if(m_pid == pid){
 			return m_fid;
 		}
 		return -1;
 	}
-	int getFidByCid(const int&in cid){
+	int getFidByCid(int&in cid){
 		if(m_cid == cid){
 			return m_fid;
 		}
 		return -1;
 	}
-	int getPidByCid(const int&in cid){
+	int getPidByCid(int&in cid){
 		if(m_cid == cid){
 			return m_pid;
 		}
 		return -1;
 	}
-	int getPidByName(const string&in name){
+	int getPidByName(string&in name){
 		if(m_name == name){
 			return m_pid;
 		}
 		return -1;
 	}
-	string getNameByCid(const int&in cid){
+	string getNameByCid(int&in cid){
 		if(m_cid == cid){
 			return m_name;
 		}
 		return "";
 	}
-	string getNameByPid(const int&in pid){
+	string getNameByPid(int&in pid){
 		if(m_pid == pid){
 			return m_name;
 		}
@@ -278,12 +284,15 @@ class playerInfoBuck{
 
 	uint size(){return m_playerInfo.size();}
 
-	void addNewInfo(const string&in name,const int&in pid,const int&in cid,const int&in fid,const int&in dead,const int&in wound,const float&in xp,const float&in rp,string group = "default"){
+	void addNewInfo(string&in name,int&in pid,int&in cid,int&in fid,int&in dead,int&in wound,float&in xp,float&in rp,string group = "default"){
+		if(m_playerInfo !is null){
+			update(name,pid,cid,fid,dead,wound,xp,rp,group);
+		}
 		playerInfo@ newInfo = playerInfo(name,pid,cid,fid,dead,wound,xp,rp,group);
 		m_playerInfo.insertLast(newInfo);
 	}
 
-	void update(const string&in name,const int&in pid,const int&in cid,const int&in fid,const int&in dead,const int&in wound,const float&in xp,const float&in rp,string group = "default"){
+	void update(string&in name,int&in pid,int&in cid,int&in fid,int&in dead,int&in wound,float&in xp,float&in rp,string group = "default"){
 		for(uint i=0; i<size();++i){
 			if(name == m_playerInfo[i].getName()){
 				m_playerInfo[i].update(name,pid,cid,fid,dead,wound,xp,rp,group);
@@ -300,7 +309,15 @@ class playerInfoBuck{
 		return false;
 	}
 
-	int getCidByPid(const int&in pid){
+	void outPutTest(Metagame@ m_metagame){
+		for(uint i=0; i<size();++i){
+			string name = m_playerInfo[i].getName();
+			int cid = m_playerInfo[i].getCid();
+			_report(m_metagame,"玩家名="+name+"。CID为="+cid);
+		}
+	}
+
+	int getCidByPid(int&in pid){
 		for(uint i=0; i<size();++i){
 			int cid = m_playerInfo[i].getCidByPid(pid);
 			if(cid != -1){
@@ -309,7 +326,16 @@ class playerInfoBuck{
 		}
 		return -1;
 	}
-	int getFidByPid(const int&in pid){
+	int getCidByName(string&in name){
+		for(uint i=0; i<size();++i){
+			int cid = m_playerInfo[i].getCidByName(name);
+			if(cid != -1){
+				return cid;
+			}
+		}
+		return -1;
+	}
+	int getFidByPid(int&in pid){
 		for(uint i=0; i<size();++i){
 			int fid = m_playerInfo[i].getFidByPid(pid);
 			if(fid != -1){
@@ -318,7 +344,7 @@ class playerInfoBuck{
 		}
 		return -1;
 	}
-	int getFidByCid(const int&in cid){
+	int getFidByCid(int&in cid){
 		for(uint i=0; i<size();++i){
 			int fid = m_playerInfo[i].getFidByCid(cid);
 			if(fid != -1){
@@ -327,7 +353,7 @@ class playerInfoBuck{
 		}
 		return -1;
 	}
-	int getPidByCid(const int&in cid){
+	int getPidByCid(int&in cid){
 		for(uint i=0; i<size();++i){
 			int pid = m_playerInfo[i].getPidByCid(cid);
 			if(pid != -1){
@@ -336,7 +362,7 @@ class playerInfoBuck{
 		}
 		return -1;
 	}
-	int getPidByName(const string&in name){
+	int getPidByName(string&in name){
 		for(uint i=0; i<size();++i){
 			int pid = m_playerInfo[i].getPidByName(name);
 			if(pid != -1){
@@ -345,7 +371,7 @@ class playerInfoBuck{
 		}
 		return -1;
 	}
-	string getNameByCid(const int&in cid){
+	string getNameByCid(int&in cid){
 		for(uint i=0; i<size();++i){
 			string name = m_playerInfo[i].getNameByCid(cid);
 			if(name != ""){
@@ -354,7 +380,7 @@ class playerInfoBuck{
 		}
 		return "";
 	}
-	string getNameByPid(const int&in pid){
+	string getNameByPid(int&in pid){
 		for(uint i=0; i<size();++i){
 			string name = m_playerInfo[i].getNameByPid(pid);
 			if(name != ""){
@@ -579,6 +605,33 @@ class battleInfoBuck{
 		}
 		return 0;
 	}
+	float bonusFactor(string&in name){
+		for(uint i=0;i<m_battleInfos.size();++i){
+			string m_name = m_battleInfos[i].name();
+			if(name == m_name){
+				return m_battleInfos[i].bonusFactor();
+			}
+		}
+		return -1;
+	}
+	float bonusFactorXp(string&in name){
+		for(uint i=0;i<m_battleInfos.size();++i){
+			string m_name = m_battleInfos[i].name();
+			if(name == m_name){
+				return m_battleInfos[i].bonusFactorXp();
+			}
+		}
+		return -1;
+	}
+	float bonusFactorRp(string&in name){
+		for(uint i=0;i<m_battleInfos.size();++i){
+			string m_name = m_battleInfos[i].name();
+			if(name == m_name){
+				return m_battleInfos[i].bonusFactorRp();
+			}
+		}
+		return -1;
+	}
 
 	void addInfo(string&in name,int&in level){
 		if(m_battleInfos is null){_log("m_battleInfos is null");return;}
@@ -700,7 +753,7 @@ class battleInfoBuck{
 				uint dc = m_battleInfos[i].deadCount();
 				float bf = m_battleInfos[i].bonusFactor()*m_battleInfos[i].bonusFactorXp() - tc*0.02;
 				if(pt >= 30){
-					bf -= (pt-30.0)/100.0;
+					bf = bf*(1-(pt-30.0)/90.0);
 					notify(m_metagame,"Battle Time Too Long,BonusFacto Decrease", dictionary(), "misc", pid, false, "", 1.0);
 				}
 				if(bf > 3.4){
@@ -708,7 +761,7 @@ class battleInfoBuck{
 				}
 				xp = 
 				  kc * 0.01 
-				+ oc * 0.02*NormalizedConcaveCurve(0.002*oc,0.5) 
+				+ oc * 0.015*NormalizedConcaveCurve(0.002*oc,0.5) 
 				+ mc * 0.5
 				+ pt * 0.03
 				- tc * 0.15
@@ -717,7 +770,7 @@ class battleInfoBuck{
 				if(xp<=0){xp=0;}
 				dictionary a;
 				a["%kx"] = formatInt(int(kc*0.01*10000));
-				a["%ox"] = formatInt(int(oc*0.02*NormalizedConcaveCurve(0.002*oc,0.5)*10000));
+				a["%ox"] = formatInt(int(oc*0.015*NormalizedConcaveCurve(0.002*oc,0.5)*10000));
 				a["%mx"] = formatInt(int(mc*0.5*10000));
 				a["%px"] = formatInt(int(pt*0.03*10000));
 				a["%tx"] = formatInt(int(tc*0.05*10000));
@@ -751,23 +804,23 @@ class battleInfoBuck{
 				uint dc = m_battleInfos[i].deadCount();
 				float bf = m_battleInfos[i].bonusFactor()*m_battleInfos[i].bonusFactorRp() - tc*0.02;
 				if(pt >= 30){
-					bf -= (pt-30.0)/100.0;
+					bf = bf*(1-(pt-30.0)/90.0);
 					notify(m_metagame,"Battle Time Too Long,BonusFacto Decrease", dictionary(), "misc", pid, false, "", 1.0);
 				}
 				if(bf > 3.4){
 					bf = 3.4;
 				}
 				rp = 
-				  kc * 40
-				+ oc * 100*NormalizedConcaveCurve(0.002*oc,0.5)
+				  kc * 30
+				+ oc * 70*NormalizedConcaveCurve(0.002*oc,0.5)
 				+ mc * 3000
 				+ pt * 300
 				- tc * 700;
 				rp = rp*bf;
 				if(rp<=0){rp=0;}
 				dictionary a;
-				a["%kx"] = formatInt(int(kc*75));
-				a["%ox"] = formatInt(int(oc*100*NormalizedConcaveCurve(0.002*oc,0.5)));
+				a["%kx"] = formatInt(int(kc*30));
+				a["%ox"] = formatInt(int(oc*70*NormalizedConcaveCurve(0.002*oc,0.5)));
 				a["%mx"] = formatInt(int(mc*3000));
 				a["%px"] = formatInt(int(pt*300));
 				a["%tx"] = formatInt(int(tc*500));
@@ -1046,6 +1099,16 @@ class first_use_info{
         first_use_tag.insertLast(key);
         return true;
     }
+    bool removeFirst(string&in InName,string&in key){
+        if(name != InName){return false;}
+        for (uint i = 0; i < first_use_tag.length(); ++i) {
+            if (first_use_tag[i] == key) {
+                first_use_tag.removeAt(i);
+				i--;
+            }
+        }
+        return true;
+    }
 }
 
 class firstUseInfoBuck {
@@ -1073,6 +1136,14 @@ class firstUseInfoBuck {
 	bool isFirst(string&in name,string&in key){
 		for(uint i=0; i<m_firstUseInfos.size(); ++i){
             if(m_firstUseInfos[i].isFirst(name,key)){
+				return true;
+			}
+        }
+		return false;
+	}
+	bool removeFirst(string&in name,string&in key){
+		for(uint i=0; i<m_firstUseInfos.size(); ++i){
+            if(m_firstUseInfos[i].removeFirst(name,key)){
 				return true;
 			}
         }

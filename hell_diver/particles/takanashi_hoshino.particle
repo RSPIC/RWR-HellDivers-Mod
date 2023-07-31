@@ -1,0 +1,309 @@
+author: RST
+2023.7.28
+未经授权不可复用、修改使用、仅用于helldiver mod
+
+import Particle_Dissolve_Cloud_01_pass from "alice_railgun.particle"
+
+particle_system hoshino_muzzle_shock_ring_1
+{
+	quota 150
+	material Particle_Shockwave_01_cull
+	particle_width 0.1
+	particle_height 0.1
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.1 
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 40
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.3 0.3 0.3 1
+		time1 0.5
+		colour1 0.3 0.3 0.3 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+
+particle_system hoshino_muzzle_shock_ring_2
+{
+	quota 150
+	material Tex_Ring08A_cull
+	particle_width 4
+	particle_height 4
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.3
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 2
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	90
+		rotation_speed_range_end	180
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.3 0.3 0.3 0
+		time1 0.5
+		colour1 0.3 0.3 0.3 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system hoshino_muzzle_shock_smoke_1
+{
+	quota 400
+    emit_emitter_quota 400
+	material Particle_Dissolve_Cloud_01_pass
+	particle_width 4
+	particle_height 4
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point		
+	{
+		angle 0
+		colour 0.3 0.3 0.3 0
+		direction 0 1 0
+		emission_rate 10 
+		position 0 0 0
+		velocity_min 100
+		velocity_max 100
+		time_to_live 0.15
+		duration 0.1
+		emit_emitter tag1
+	}
+	emitter Point
+	{
+        name tag1
+		angle 60
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 80
+		position 0 0 0
+		velocity_min 0.1
+		velocity_max 0.8
+		time_to_live 0.3
+		duration 0.4
+	}
+	affector Scaler
+	{
+		rate 2
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	40
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.1 0.1 0.1 0.7
+		time1 0.4
+		colour1 0.3 0.3 0.3 0.7
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system hoshino_muzzle_shock_firelight
+{
+	quota 200
+    emit_emitter_quota 200
+	material Tex_Smoke09A
+	particle_width 3
+	particle_height 3
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point		
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10 
+		position 0 0 0
+		velocity_min 100
+		velocity_max 100
+		time_to_live 0.15
+		duration 0.1
+		emit_emitter tag1
+	}
+	emitter Point
+	{
+        name tag1
+		angle 60
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 30
+		position 0 0 0
+		velocity_min 0.1
+		velocity_max 0.8
+		time_to_live 0.05
+		duration 0.4
+	}
+	affector Scaler
+	{
+		rate 10
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	40
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0 1
+		time1 0.8
+		colour1 1 0.3 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system hoshino_muzzle_spark
+{
+	quota 500
+	material point_hard_edge
+	particle_width 0.1
+	particle_height 0.5
+	renderer billboard	
+	billboard_origin bottom_center
+	billboard_type oriented_self
+	emitter Point{
+		angle 5
+        colour 1 0.3 0 1
+		direction 0 1 0
+		emission_rate 40
+		position 0 0 0
+		velocity_min 25
+		velocity_max 75
+		time_to_live_min 0.2
+		time_to_live_max 0.3
+		duration 0.1
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0 1
+		time1 0.4
+		colour1 1 0.6 0 1
+		time2 1
+		colour2 1 0 0 0
+	}
+	affector DirectionRandomiser  
+	{
+		randomness 100
+		scope 75
+		keep_velocity true
+	}
+}
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material Particle_Shockwave_01_cull : alpha_blend_base
+{   
+    technique{
+    pass{
+        cull_hardware none
+        texture_unit{
+            texture Particle_Shockwave_01.png 	
+}}}}
+
+material Tex_Ring08A_cull : alpha_blend_base
+{   
+    technique{
+    pass{
+        cull_hardware none
+        texture_unit{
+            texture Tex_Ring08A.png 	
+}}}}
+material Tex_Smoke09A : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture Tex_Smoke09A.png 	
+}}}}

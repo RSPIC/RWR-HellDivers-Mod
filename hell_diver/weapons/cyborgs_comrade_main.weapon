@@ -116,7 +116,7 @@ radius="1"
     
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="0.1" can_be_detected_by_footmen="1" 
-	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0"> 
+	time_to_live="0.8" can_be_detected_by_driver="1" can_be_disarmed="0"> 
 	
 		<!--
 			offset"x y z 生成位置偏差" 
@@ -124,7 +124,7 @@ radius="1"
 			direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
 		-->
 		<result class="spawn" instance_class="projectile" instance_key="cyborgs_comrade_main_damage.projectile" 
-		min_amount="4" max_amount="6" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+		min_amount="10" max_amount="15" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 		<trigger class="time" time_to_live="0.8"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->

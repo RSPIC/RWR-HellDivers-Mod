@@ -155,7 +155,11 @@ class lottery_manager : Tracker {
         if(containerId != 1){return;}// 1(军械库)
         if(g_playerInfoBuck is null){return;}
         string name = g_playerInfoBuck.getNameByPid(pid);
-        if(name == ""){return;}
+        if(name == ""){
+            const XmlElement@ player = getPlayerInfo(m_metagame,pid);
+            name = player.getStringAttribute("name");
+            notify(m_metagame, "未能获取到你的name，已通过其他方法获取。请汇报此情况", dictionary(), "misc", pid, false, "", 1.0);
+        }
         array<string> targetKey = {"hd_bonusfactor_al_","hd_bonusfactor_xp_","hd_bonusfactor_rp_"};
         for(uint i = 0 ; i < targetKey.size() ; ++i){
             string tempKey = itemKey.substr(0,targetKey[i].length());
@@ -183,12 +187,23 @@ class lottery_manager : Tracker {
                         return;
                     }
                     //再过加成
+                    float m_factor = 0;
                     if(i == 0){
                         g_battleInfoBuck.addBonusFactor(name,bonusFactor);
+                        m_factor = g_battleInfoBuck.bonusFactor(name);
                     }else if(i == 1){
                         g_battleInfoBuck.addBonusFactorXp(name,bonusFactor);
+                        m_factor = g_battleInfoBuck.bonusFactorXp(name);
                     }else if(i == 2){
                         g_battleInfoBuck.addBonusFactorRp(name,bonusFactor);
+                        m_factor = g_battleInfoBuck.bonusFactorRp(name);
+                    }
+
+                    if(m_factor != bonusFactor){
+                        notify(m_metagame,"加成卡使用失败，请汇报此情况", dictionary(), "misc", pid, false, "", 1.0);
+                        addItemInBackpack(m_metagame,cid,"carry_item",itemKey);
+                        g_battleInfoBuck.setBonusFactor(name,1.0);
+                        g_firstUseInfoBuck.removeFirst(name,"hd_bonusfactor");
                     }
                     
                 }

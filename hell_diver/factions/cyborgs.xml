@@ -136,14 +136,11 @@
 			
 			<projectile key="cyborgs_legionnaire_alert_spawn.projectile"/>
 
-			<!-- 35层护甲 -->
+			<!-- 50~70层护甲 -->
 			<!-- 2~5层额外装甲 -->
-			<carry_item key="general_vest_35" /> 
-			<carry_item key="general_vest_36" /> 
-			<carry_item key="general_vest_37" /> 
-			<carry_item key="general_vest_38" /> 
-			<carry_item key="general_vest_39" /> 
-			<carry_item key="general_vest_40" /> 
+			<carry_item key="general_vest_50" /> 
+			<carry_item key="general_vest_60" /> 
+			<carry_item key="general_vest_70" /> 
 		</resources>
 		
 		<ai filename="cyborgs_legionnaire.ai" /> <!-- legionnaire.ai 引用 default_cyborgs.ai -->
@@ -177,7 +174,7 @@
 			<carry_item key="general_vest_11" /> 
 		</resources>
 		
-		<ai filename="cyborgs_initiate.ai" /> <!-- initiate.ai 引用 default_cyborgs.ai -->
+		<ai filename="cyborgs_hulk.ai" /> <!-- initiate.ai 引用 default_cyborgs.ai -->
 
 		<model file="cyborgs_initiate.xml" />
 		
@@ -197,13 +194,10 @@
 			<weapon key="cyborgs_berserker_main.weapon" />
 			<!-- <weapon key="cyborgs_berserker_sec_antitank.weapon" /> -->
 			
-			<!-- 30层 -->
-			<!-- 1-20层额外装甲 -->
-			<carry_item key="general_vest_30" />
-			<carry_item key="general_vest_35" />
-			<carry_item key="general_vest_40" />
-			<carry_item key="general_vest_45" />
-			<carry_item key="general_vest_50" />
+			<carry_item key="general_vest_70" />
+			<carry_item key="general_vest_80" />
+			<carry_item key="general_vest_90" />
+			<carry_item key="general_vest_100" />
 		</resources>
 
 		<ai filename="cyborgs_berserker.ai" /> <!-- berserker.ai 引用 default_cyborgs.ai -->
@@ -225,10 +219,6 @@
 				<weapon key="cyborgs_comrade_main.weapon" />
 				<weapon key="cyborgs_comrade_sec_antitank.weapon" />
 		
-				<!-- 25层 -->
-				<!-- 2-16层额外装甲 -->
-				<carry_item key="general_vest_25" />
-				<carry_item key="general_vest_29" />
 				<carry_item key="general_vest_33" />
 				<carry_item key="general_vest_37" />
 				<carry_item key="general_vest_41" /> 
@@ -253,14 +243,10 @@
 			<weapon key="cyborgs_grotesque_main.weapon" />
 			<!-- <weapon key="cyborgs_grotesque_sec_antitank.weapon" /> -->
 			
-			<!-- 45层 -->
-			<!-- 2-4层额外装甲 -->
-			<carry_item key="general_vest_45" />
-			<carry_item key="general_vest_46" />
-			<carry_item key="general_vest_47" />
-			<carry_item key="general_vest_48" />
-			<carry_item key="general_vest_49" />
-			<carry_item key="general_vest_50" />
+			<carry_item key="general_vest_100" />
+			<carry_item key="general_vest_120" />
+			<carry_item key="general_vest_140" />
+			<carry_item key="general_vest_160" />
 		</resources>
 
 		<ai filename="cyborgs_grotesque.ai" /> <!-- grotesque.ai 引用 default_cyborgs.ai -->
@@ -344,7 +330,6 @@
 			<!-- 25层护甲 -->
 			<!-- 0-15层额外装甲 -->
 			<carry_item key="general_vest_25" /> 
-			<carry_item key="general_vest_25" /> 
 			<carry_item key="general_vest_26" /> 
 			<carry_item key="general_vest_27" /> 
 			<carry_item key="general_vest_28" /> 
@@ -385,10 +370,6 @@
 			<weapon key="cyborgs_hulk_main.weapon" />
 			<weapon key="cyborgs_hulk_sec_antitank.weapon" />
 			
-			<!-- 200层 -->
-			<!-- 20-60层额外装甲 -->
-			<carry_item key="general_vest_200" />
-			<carry_item key="general_vest_220" />
 			<carry_item key="general_vest_240" />
 			<carry_item key="general_vest_260" />
 		</resources>
@@ -426,12 +407,8 @@
 		<resources>
 			<weapon key="cyborgs_warlord_main.weapon" />
 			<weapon key="cyborgs_warlord_sec_antitank.weapon" />
-			
-			<!-- 300层护甲 -->
-			<!-- 额外装甲30-60层 -->
-			<!-- 武器-0.2抗致死 -->
+
 			<carry_item key="anti_blast_vest_300" /> 
-			<carry_item key="anti_blast_vest_264" /> 
 		</resources>
 		
 		<ai filename="cyborgs_warlord.ai" /> <!-- warlord.ai 引用 default_cyborgs.ai -->

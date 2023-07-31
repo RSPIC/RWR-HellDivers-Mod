@@ -289,7 +289,7 @@ class itemdrop_event : Tracker {
 								equipList.get(equipKey,ownnum);
 								if(ownnum == 0){
 									string key = "hd_grenade_standard.projectile";
-									int maxnum = int(resupply_getitem_key[key]);
+									maxnum = int(resupply_getitem_key[key]);
 									int resupplyNum = maxnum;
 									@res = Resource(key,"projectile");
 									res.addToResources(resources,resupplyNum);

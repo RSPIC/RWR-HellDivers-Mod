@@ -35,6 +35,9 @@ class schedule_Manager : Tracker {
     protected float m_time;
     protected float m_timer;
     protected bool m_ended;
+    protected bool m_laterCheck;
+    protected float m_laterCheck_timer;
+    protected const XmlElement@ m_player;
 
     schedule_Manager(Metagame@ metagame,float time = 10.0){
         @m_metagame = @metagame;
@@ -46,6 +49,8 @@ class schedule_Manager : Tracker {
     void start(){
         @g_IRQ = @_IRQ("",false); 
         m_ended = false;
+        m_laterCheck = false;
+        @m_player = null;
     }
     // --------------------------------------------
     void update(float time) {
@@ -54,6 +59,17 @@ class schedule_Manager : Tracker {
             refresh();
             m_timer = m_time;
             //test();
+        }
+        if(m_laterCheck){
+            m_laterCheck_timer -= time;
+            if(m_laterCheck_timer <= 0){
+                update_info(m_player);
+                m_laterCheck_timer = 10;
+                m_laterCheck = false;
+                if(g_debugMode){
+                    _report(m_metagame,"再次更新玩家信息成功");
+                }
+            }
         }
     }
     // --------------------------------------------
@@ -103,6 +119,8 @@ class schedule_Manager : Tracker {
         const XmlElement@ player = event.getFirstElementByTagName("player");
         if(player is null){return;}
         update_info(player);
+        @m_player = player;
+        //m_laterCheck = true;
         if(g_debugMode){
             _report(m_metagame,"Update PlayerInfo");
         }
@@ -130,11 +148,14 @@ class schedule_Manager : Tracker {
     // --------------------------------------------
     void update_info(const XmlElement@ player){
         if(player is null){return;}
+        int pid = player.getIntAttribute("player_id");
+        if(g_debugMode) _report(m_metagame,"更新玩家PID为="+pid);
+        @player = getPlayerInfo(m_metagame,pid);
         string name = player.getStringAttribute("name");
         string profile_hash = player.getStringAttribute("profile_hash");
         string sid = player.getStringAttribute("sid");
-        int pid = player.getIntAttribute("player_id");
         int cid = player.getIntAttribute("character_id");
+        if(g_debugMode) _report(m_metagame,"更新玩家CID，玩家名为="+name+",CID为="+cid);
         int fid = player.getIntAttribute("faction_id");
         const XmlElement@ character = getCharacterInfo(m_metagame,cid);
         if(character is null){return;}
@@ -145,6 +166,7 @@ class schedule_Manager : Tracker {
         float rp = character.getFloatAttribute("rp");
         if(g_playerInfoBuck is null){return;}
         if(g_playerInfoBuck.exists(name)){
+            if(g_debugMode) _report(m_metagame,"已有玩家信息，更新");
             g_playerInfoBuck.update(name,pid,cid,fid,dead,wound,xp,rp,group);
             g_playerInfoBuck.setHash(name,profile_hash);
             g_playerInfoBuck.setSid(name,sid);
@@ -174,6 +196,54 @@ class schedule_Manager : Tracker {
     // --------------------------------------------
     protected void handleItemDropEvent(const XmlElement@ event) {
     }
+    // -------------------------------------------
+    protected void handleChatEvent(const XmlElement@ event){
+		string message = event.getStringAttribute("message");
+		int pid = event.getIntAttribute("player_id");
+        if(message == "/myinfo"){
+            checkMyInfo(message,pid);
+        }
+        if(message == "/allinfo"){
+            g_playerInfoBuck.outPutTest(m_metagame);
+        }
+        if(message == "/update"){
+            const XmlElement@ player = getPlayerInfo(m_metagame,pid);
+            update_info(player);
+            notify(m_metagame, "已手动更新你的信息", dictionary(), "misc", pid, false, "", 1.0);
+        }
+	}
+    // -------------------------------------------
+    protected void checkMyInfo(string message,int pid){
+        const XmlElement@ player = getPlayerInfo(m_metagame,pid);
+        if(player is null){return;}
+        string name = player.getStringAttribute("name");
+        string profile_hash = player.getStringAttribute("profile_hash");
+        string sid = player.getStringAttribute("sid");
+        int cid = player.getIntAttribute("character_id");
+        int fid = player.getIntAttribute("faction_id");
+        const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+        if(character is null){return;}
+        int wound = character.getIntAttribute("wounded");
+        int dead = character.getIntAttribute("dead");
+        string group = character.getStringAttribute("soldier_group_name");
+        float xp = character.getFloatAttribute("xp");
+        float rp = character.getFloatAttribute("rp");
+        if(g_playerInfoBuck is null){return;}
+        int m_pid = g_playerInfoBuck.getPidByName(name);
+        int m_cid = g_playerInfoBuck.getCidByPid(pid);
+        string m_profile_hash = g_playerInfoBuck.getHashByName(name);
+        string m_sid = g_playerInfoBuck.getSidByName(name);
+        notify(m_metagame, "测试：正在核对玩家信息", dictionary(), "misc", pid, false, "", 1.0);
+        notify(m_metagame, "你的PID="+m_pid+"实际PID="+pid, dictionary(), "misc", pid, false, "", 1.0);
+        notify(m_metagame, "你的CID="+m_cid+"实际CID="+cid, dictionary(), "misc", pid, false, "", 1.0);
+        notify(m_metagame, "你的HASH="+m_profile_hash+"实际HASH="+profile_hash, dictionary(), "misc", pid, false, "", 1.0);
+        notify(m_metagame, "你的SID="+m_sid+"实际SID="+sid, dictionary(), "misc", pid, false, "", 1.0);
+        if(m_pid != pid || m_cid != cid || m_profile_hash != profile_hash || m_sid != sid){
+            notify(m_metagame, "结论：你的玩家信息匹配不上，汇报此问题", dictionary(), "misc", pid, false, "", 1.0);
+        }else{
+            notify(m_metagame, "结论：你的玩家信息匹配正确", dictionary(), "misc", pid, false, "", 1.0);
+        }
+	}
     // --------------------------------------------
     protected void handleInterruptibleEvent(const XmlElement@ event) {
         string EventKeyGet = event.getStringAttribute("key");

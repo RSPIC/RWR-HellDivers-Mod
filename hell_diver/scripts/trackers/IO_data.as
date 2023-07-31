@@ -27,6 +27,9 @@ const XmlElement@ readXML(const Metagame@ metagame, string filename){
 		makeQuery(metagame, array<dictionary> = {
 			dictionary = { {"TagName", "data"}, {"class", "saved_data"}, {"filename", filename}, {"location", "savegame"} } }));
 	const XmlElement@ xml = metagame.getComms().query(query);
+    if(xml is null){
+        writeXML(metagame,filename,XmlElement(filename));
+    }
 	return xml;
 }
 
@@ -114,7 +117,7 @@ class IO_data : Tracker {
             bool isValid = false;
             string access_tag = "";
             int pid = g_playerInfoBuck.getPidByName(p_name);
-            string m_sid = g_playerInfoBuck.getSidByName(p_name);
+            string m_sid = g_playerInfoBuck.getSidByName(p_name);   
             //遍历密钥列表
             XmlElement@ targetInfo;
             uint index;
@@ -130,8 +133,8 @@ class IO_data : Tracker {
 
                         //检测是否为重复使用
                         bool double_use = false;
-                        if(info.hasAttribute("sid")){
-                            bool isUsed = info.getBoolAttribute("sid");
+                        if(info.hasAttribute(m_sid)){
+                            bool isUsed = info.getBoolAttribute(m_sid);
                             if(isUsed){
                                 if(g_debugMode){
                                     _report(m_metagame,"isUsed,my sid="+m_sid);
@@ -167,7 +170,7 @@ class IO_data : Tracker {
                                     }
                                     used++;
                                     info.setIntAttribute("used",used);
-                                    //info.setBoolAttribute(m_sid,true);
+                                    info.setBoolAttribute(m_sid,true);
                                     isValid = true;
                                 }
                             }
@@ -181,7 +184,7 @@ class IO_data : Tracker {
                                     }
                                     times--;
                                     info.setIntAttribute("max_use",times);
-                                    //info.setBoolAttribute(m_sid,true);
+                                    info.setBoolAttribute(m_sid,true);
                                     isValid = true;
                                 }else{
                                     if(g_debugMode){
@@ -198,8 +201,6 @@ class IO_data : Tracker {
                         }
 
                         info.setStringAttribute("player_name",p_name);
-                        // allInfo.appendChild(info);
-                        // allInfo.removeChild("reward_key",i);
                         @targetInfo = info;
                         index = i;
                         break;
@@ -934,10 +935,13 @@ class IO_data : Tracker {
 
     protected bool handleReward(string&in p_name,string&in access_tag){
         int pid = g_playerInfoBuck.getPidByName(p_name);
-        int cid = g_playerInfoBuck.getCidByPid(pid);
-        int fid = g_playerInfoBuck.getFidByCid(cid);
+        const XmlElement@ player = getPlayerInfo(m_metagame,pid);
+        int cid = player.getIntAttribute("character_id");
+        //int cid = g_playerInfoBuck.getCidByPid(pid);
+        int fid = g_playerInfoBuck.getCidByName(p_name);
         float xp = g_playerInfoBuck.getXpByName(p_name);
         // todo：检测id是否有效
+
         array<Resource@> resources = array<Resource@>();
         Resource@ res;
         if(access_tag == "green_hand_level_10"){//十级新手礼包
@@ -1005,33 +1009,6 @@ class IO_data : Tracker {
                 return false;
             }
         }
-        if(access_tag == "tester_player"){//参与测试服的玩家
-            @res = Resource("reward_box_skin.carry_item","carry_item");
-            res.addToResources(resources,30);
-            @res = Resource("reward_box_vehicle.carry_item","carry_item");
-            res.addToResources(resources,10);
-            @res = Resource("reward_box_music.carry_item","carry_item");
-            res.addToResources(resources,3);
-            @res = Resource("reward_box_weapon_1.carry_item","carry_item");
-            res.addToResources(resources,3);
-            @res = Resource("reward_box_weapon_2.carry_item","carry_item");
-            res.addToResources(resources,3);
-            @res = Resource("reward_box_weapon_delta.carry_item","carry_item");
-            res.addToResources(resources,3);
-            @res = Resource("hd_bonusfactor_al_240","carry_item");
-            res.addToResources(resources,3);
-            @res = Resource("hd_bonusfactor_al_125","carry_item");
-            res.addToResources(resources,5);
-            @res = Resource("hd_bonusfactor_al_45","carry_item");
-            res.addToResources(resources,15);
-
-            addListItemInBackpack(m_metagame,cid,resources);
-                
-            dictionary a;
-            a["%reward"] = "已送至背包";
-            notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
-            return true;
-        }
         if(access_tag == "MainServer"){//MainServer 开服奖励
             @res = Resource("reward_box_skin.carry_item","carry_item");
             res.addToResources(resources,30);
@@ -1062,73 +1039,75 @@ class IO_data : Tracker {
             notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
             return true;
         }
-        if(access_tag == "sponsor_mk1"){//赞助者
+        if(access_tag == "sponsor_mk1"){//赞助者 6
             @res = Resource("hd_bonusfactor_rp_240","carry_item");
             res.addToResources(resources,1);
             @res = Resource("hd_bonusfactor_al_20","carry_item");
-            res.addToResources(resources,15);
+            res.addToResources(resources,10);
             @res = Resource("reward_box_skin.carry_item","carry_item");
             res.addToResources(resources,10);
 
             addListItemInBackpack(m_metagame,cid,resources);
-            GiveRP(m_metagame,cid,50000);
+            GiveRP(m_metagame,cid,120000);
             dictionary a;
-            a["%reward"] = "RP: 5w 和加成卡";
+            a["%reward"] = "RP: 12w 和加成卡";
             notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
             return true;
         }
-        if(access_tag == "sponsor_mk2"){//赞助者
+        if(access_tag == "sponsor_mk2"){//赞助者 30
             @res = Resource("hd_bonusfactor_al_240","carry_item");
             res.addToResources(resources,1);
             @res = Resource("hd_bonusfactor_al_75","carry_item");
             res.addToResources(resources,3);
             @res = Resource("hd_bonusfactor_al_20","carry_item");
-            res.addToResources(resources,15);
+            res.addToResources(resources,10);
             @res = Resource("reward_box_skin.carry_item","carry_item");
             res.addToResources(resources,10);
-            @res = Resource("reward_box_weapon_delta.carry_item","carry_item");
-            res.addToResources(resources,1);
-
-            addListItemInBackpack(m_metagame,cid,resources);
-
-            GiveRP(m_metagame,cid,100000);
-            dictionary a;
-            a["%reward"] = "RP: 10w 和加成卡";
-            notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
-            return true;
-        }
-        if(access_tag == "sponsor_mk3"){//赞助者
-            @res = Resource("hd_bonusfactor_al_240","carry_item");
-            res.addToResources(resources,5);
-            @res = Resource("hd_bonusfactor_al_45","carry_item");
-            res.addToResources(resources,15);
-            @res = Resource("reward_box_skin.carry_item","carry_item");
-            res.addToResources(resources,10);
-            @res = Resource("reward_box_weapon_v.carry_item","carry_item");
+            @res = Resource("reward_box_weapon_delta.carry_item","carry_item");//MK4
             res.addToResources(resources,1);
 
             addListItemInBackpack(m_metagame,cid,resources);
 
             GiveRP(m_metagame,cid,300000);
             dictionary a;
-            a["%reward"] = "RP: 30w 、加成卡和战利品箱子";
+            a["%reward"] = "RP: 30w 和加成卡";
             notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
             return true;
         }
-        if(access_tag == "sponsor_mk4"){//赞助者
+        if(access_tag == "sponsor_mk3"){//赞助者 68
             @res = Resource("hd_bonusfactor_al_240","carry_item");
-            res.addToResources(resources,10);
-            @res = Resource("hd_bonusfactor_al_125","carry_item");
-            res.addToResources(resources,15);
+            res.addToResources(resources,2);
+            @res = Resource("hd_bonusfactor_al_45","carry_item");
+            res.addToResources(resources,8);
             @res = Resource("reward_box_skin.carry_item","carry_item");
             res.addToResources(resources,10);
-            @res = Resource("reward_box_weapon_v.carry_item","carry_item");
-            res.addToResources(resources,3);
+            @res = Resource("reward_box_weapon_v.carry_item","carry_item");//MK5
+            res.addToResources(resources,1);
 
             addListItemInBackpack(m_metagame,cid,resources);
-            GiveRP(m_metagame,cid,1000000);
+
+            GiveRP(m_metagame,cid,680000);
             dictionary a;
-            a["%reward"] = "RP: 100w 、加成卡和战利品箱子";
+            a["%reward"] = "RP: 68w 、加成卡和战利品箱子";
+            notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+            return true;
+        }
+        if(access_tag == "sponsor_mk4"){//赞助者 200
+            @res = Resource("hd_bonusfactor_al_240","carry_item");
+            res.addToResources(resources,5);
+            @res = Resource("hd_bonusfactor_al_125","carry_item");
+            res.addToResources(resources,8);
+            @res = Resource("reward_box_skin.carry_item","carry_item");
+            res.addToResources(resources,10);
+            @res = Resource("reward_box_weapon_v.carry_item","carry_item");//MK5
+            res.addToResources(resources,1);
+            @res = Resource("reward_box_weapon_delta.carry_item","carry_item");//MK4
+            res.addToResources(resources,2);
+
+            addListItemInBackpack(m_metagame,cid,resources);
+            GiveRP(m_metagame,cid,1200000);
+            dictionary a;
+            a["%reward"] = "RP: 120w 、加成卡和战利品箱子";
             notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
             return true;
         }
@@ -1147,7 +1126,7 @@ class IO_data : Tracker {
         if(access_tag == "Gift_alpha_2"){//小礼品 alpha 系列 钱和加成卡
 
             @res = Resource("hd_bonusfactor_al_20","carry_item");
-            res.addToResources(resources,5);
+            res.addToResources(resources,3);
             @res = Resource("hd_bonusfactor_xp_45","carry_item");
             res.addToResources(resources,1);
             @res = Resource("hd_bonusfactor_rp_45","carry_item");
@@ -1291,7 +1270,7 @@ class IO_data : Tracker {
             return true;
         }
         if(access_tag == "Gift_gama_3"){//小礼品 gama 系列 武器类箱子
-            @res = Resource("reward_box_weapon_beta.carry_item","carry_item");
+            @res = Resource("reward_box_weapon_lamda.carry_item","carry_item");
             res.addToResources(resources,1);
             addListItemInBackpack(m_metagame,cid,resources);
             GiveRP(m_metagame,cid,10000);
@@ -1301,7 +1280,7 @@ class IO_data : Tracker {
             return true;
         }
         if(access_tag == "Gift_gama_4"){//小礼品 gama 系列 武器类箱子
-            @res = Resource("reward_box_weapon_miu.carry_item","carry_item");
+            @res = Resource("reward_box_weapon_delta.carry_item","carry_item");
             res.addToResources(resources,1);
             addListItemInBackpack(m_metagame,cid,resources);
             GiveRP(m_metagame,cid,10000);
@@ -1311,7 +1290,7 @@ class IO_data : Tracker {
             return true;
         }
         if(access_tag == "Gift_gama_5"){//小礼品 gama 系列 武器类箱子
-            @res = Resource("reward_box_weapon_pi.carry_item","carry_item");
+            @res = Resource("reward_box_weapon_v.carry_item","carry_item");
             res.addToResources(resources,1);
             addListItemInBackpack(m_metagame,cid,resources);
             GiveRP(m_metagame,cid,10000);
@@ -1353,7 +1332,7 @@ class IO_data : Tracker {
             res.addToResources(resources,1);
             @res = Resource("hd_bonusfactor_rp_75","carry_item");
             res.addToResources(resources,2);
-            @res = Resource("reward_box_weapon_lamda.carry_item","carry_item");
+            @res = Resource("reward_box_weapon_lamda.carry_item","carry_item");//MK3
             res.addToResources(resources,1);
             @res = Resource("reward_box_skin.carry_item","carry_item");
             res.addToResources(resources,10);
@@ -1368,16 +1347,18 @@ class IO_data : Tracker {
         if(access_tag == "invited_reward"){//被邀请者奖励
             @res = Resource("hd_bonusfactor_al_75","carry_item");
             res.addToResources(resources,10);
-            @res = Resource("reward_box_weapon_omega.carry_item","carry_item");
-            res.addToResources(resources,2);
+            @res = Resource("reward_box_weapon_omega.carry_item","carry_item");//MK1~MK3
+            res.addToResources(resources,3);
+            @res = Resource("reward_box_weapon_delta.carry_item","carry_item");//MK4
+            res.addToResources(resources,1);
             @res = Resource("reward_box_skin.carry_item","carry_item");
             res.addToResources(resources,10);
             @res = Resource("reward_box_vehicle.carry_item","carry_item");
             res.addToResources(resources,5);
             addListItemInBackpack(m_metagame,cid,resources);
-            GiveRP(m_metagame,cid,300000);
+            GiveRP(m_metagame,cid,500000);
             dictionary a;
-            a["%reward"] = "RP: 30w 、加成卡和战利品箱子";
+            a["%reward"] = "RP: 50w 、加成卡和战利品箱子";
             notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
             return true;
         }

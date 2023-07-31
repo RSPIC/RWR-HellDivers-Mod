@@ -6,8 +6,8 @@ particle_system general_weapon_muzzle_crossfire
 {
 	quota 200
 	material general_muzzle_01
-	particle_width 5
-	particle_height 5
+	particle_width 4.5
+	particle_height 4.5
 	renderer billboard
 	billboard_type oriented_self
 	billboard_origin center
@@ -40,6 +40,65 @@ particle_system general_weapon_muzzle_crossfire
 		time2 1
 		colour2 0 0 0 0
 	}
+}
+particle_system general_weapon_muzzle_crossfire_base
+{
+	quota 200
+	material general_muzzle_01
+	particle_width 4.5
+	particle_height 4.5
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 200
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.06
+		duration 0.01
+	}
+	affector Scaler
+	{
+		rate 100
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0 0.5
+		time1 0.5
+		colour1 1 0.3 0 0.5
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system general_weapon_muzzle_crossfire_2 : general_weapon_muzzle_crossfire_base
+{
+	material general_muzzle_03
+}
+particle_system general_weapon_muzzle_crossfire_4 : general_weapon_muzzle_crossfire_base
+{
+	material general_muzzle_04
+}
+particle_system general_weapon_muzzle_crossfire_5 : general_weapon_muzzle_crossfire_base
+{
+	material general_muzzle_05
+}
+particle_system general_weapon_muzzle_crossfire_6 : general_weapon_muzzle_crossfire_base
+{
+	material general_muzzle_06
+}
+particle_system general_weapon_muzzle_crossfire_7 : general_weapon_muzzle_crossfire_base
+{
+	material general_muzzle_07
 }
 particle_system general_weapon_muzzle_crossfire_lightblue : general_weapon_muzzle_crossfire
 {
@@ -1497,6 +1556,56 @@ particle_system general_weapon_activated_shrink_triangle		//冲锋枪用
 		keep_velocity false
 	}
 }
+particle_system general_weapon_activated_ring_cyclone		//冲锋枪用
+{
+	quota 300
+	material ring_cyclone_02
+	particle_width 2
+	particle_height 2
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 0.3 0 1
+		direction 0 1 0
+		emission_rate 40
+		position 0 0 0
+		velocity 0.001
+		time_to_live_min 0.1
+		time_to_live_max 0.1
+		duration 1
+	}
+	affector Scaler
+	{
+		rate -20
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	450
+		rotation_speed_range_end	900
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+}
 
 
 
@@ -2829,6 +2938,41 @@ material general_muzzle_01 : add_base
         texture_unit{
             texture general_muzzle_01.png 	
 }}}}
+material general_muzzle_03 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture general_muzzle_03.png 	
+}}}}
+material general_muzzle_04 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture general_muzzle_04.png 	
+}}}}
+material general_muzzle_05 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture general_muzzle_05.png 	
+}}}}
+material general_muzzle_06 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture general_muzzle_06.png 	
+}}}}
+material general_muzzle_07 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture general_muzzle_07.png 	
+}}}}
 material general_muzzle_01_bw : add_base
 {   
     technique{
@@ -3082,6 +3226,13 @@ material red_trail : add_base
     pass{
         texture_unit{
             texture red_trail.png 	
+}}}}
+material ring_cyclone_02 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture ring_cyclone_02.png 	
 }}}}
 material muzzle_crossfire_anim_a_4 : add_base
 {   

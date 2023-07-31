@@ -86,7 +86,7 @@ key="hd_smg_mp98_knight_smg_full_upgrade.weapon"
     
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
-	time_to_live="0.22" can_be_detected_by_driver="1" can_be_disarmed="0" name="MP-98 Knight"> 
+	time_to_live="0.20" can_be_detected_by_driver="1" can_be_disarmed="0" name="MP-98 Knight"> 
 	
 		<result class="hit" kill_probability="1.0" 
 		kill_probability_offset_on_successful_hit="7"

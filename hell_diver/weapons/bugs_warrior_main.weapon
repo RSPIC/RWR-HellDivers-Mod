@@ -9,7 +9,7 @@ on_ground_up="0 0 1"
 radius="1"
 > 
 <!-- 八层伤害 -->
-    <specification 	
+    <!-- <specification 	
     magazine_size="999" 
     can_shoot_prone="1" 
     can_shoot_crouching="1" 
@@ -27,8 +27,34 @@ radius="1"
     stab_enabled="1"
     stab_range="4.5"
 	character_state="wound" 
-	/> 
-
+	/>  -->
+    <specification 
+    slot="0" 	
+    retrigger_time="-1" 
+	last_burst_retrigger_time="1"
+    accuracy_factor="1.0" 
+	spread_range="0"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="0.0" 
+    sustained_fire_diminish_rate="1.0" 
+    magazine_size="-1" 
+    can_shoot_standing="0" 
+    can_shoot_crouching="0" 
+	can_shoot_prone="0"	
+    suppressed="0" 
+	class="0" 
+    name="Warrior Melee" 
+	ai_sight_range_modifier="2.0"
+	sight_range_modifier="1.0" 
+	burst_shots="1" 
+    projectiles_per_shot="1" 
+    projectile_speed="0.0"
+	barrel_offset="1.0" 
+	carry_in_two_hands="0" 
+	stab_enabled="1" 
+	stab_range="3.0" 
+	use_basic_muzzle_smoke_effect="0"
+    /> 
 	
 	<!--武器模型和HUD-->
 	<weak_hand_hold offset="0" /> <!--模型X轴偏移-->

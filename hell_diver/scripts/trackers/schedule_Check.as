@@ -21,6 +21,7 @@
 //首次进入服务器的教程提示(包括测试服)
 //检测刺雷护甲的防止存放
 //帕蒂武器充能检查和教程
+//信物自动补给
 
 //机甲武器替换护甲(左副手右主手)
 dictionary EXO_Armor = {
@@ -46,6 +47,7 @@ class schedule_Check : Tracker {
     protected float m_timer;
     protected bool m_ended;
     protected firstUseInfoBuck@ m_firstUseInfoBuck;
+    protected dictionary m_skin_info;
 
     schedule_Check(Metagame@ metagame,float time = 7){
         @m_metagame = @metagame;
@@ -97,6 +99,7 @@ class schedule_Check : Tracker {
                 EXOArmorChange(m_metagame,name,pid,cid,equipList);
                 checkBanzai(m_metagame,name,pid,equipList);
                 checkPatricia(m_metagame,name,pid,cid,equipList);
+                checkSkin(m_metagame,name,pid,cid,equipList);
             }
         }
     }
@@ -177,6 +180,47 @@ class schedule_Check : Tracker {
                     deleteListItemInStash(m_metagame,cid,resources);
                     addListItemInBackpack(m_metagame,cid,resources);
 
+                }
+            }
+        }
+	}
+    // ----------------------------------------------------
+	protected void checkSkin(Metagame@ metagame,string&in name,int&in pid,int&in cid,dictionary&in equipList){
+        string equipKey;
+        if(equipList.get("2",equipKey)){//投掷物
+            string targetKey = "token_";
+            string target_equipKey = equipKey.substr(0,targetKey.length());
+            //如果是信物
+            string skin_key;
+            if(target_equipKey == targetKey){
+                // 之前有注册
+                if(m_skin_info.get(name,skin_key)){
+                    //如果是新信物，更换注册
+                    if(skin_key != equipKey){
+                        m_skin_info.set(name,equipKey);
+                        notify(metagame, "已绑定该信物", dictionary(), "misc", pid, false, "", 1.0);
+                        return;
+                    }
+                }else{
+                    //首次注册
+                    m_skin_info.set(name,equipKey);
+                    notify(metagame, "已绑定该信物", dictionary(), "misc", pid, false, "", 1.0);
+                }
+            }
+            // 不是信物检查是否有注册
+            if(m_skin_info.get(name,skin_key)){
+                int num;
+                if(equipList.get(equipKey,num)){
+                    //当前投掷物栏数量为0
+                    if(num == 0){
+                        string c = 
+                        "<command class='update_inventory' character_id='" + cid + "' container_type_id='4' add='1'>" + 
+                            "<item class='" + "projectile" + "' key='" + skin_key +"' />" +
+                        "</command>";
+                        m_metagame.getComms().send(c);
+                        GiveRP(m_metagame,cid,-300);
+                        notify(metagame, "信物已重新补给", dictionary(), "misc", pid, false, "", 1.0);
+                    }
                 }
             }
         }

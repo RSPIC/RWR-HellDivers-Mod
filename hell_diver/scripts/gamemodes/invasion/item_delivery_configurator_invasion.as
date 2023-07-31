@@ -37,6 +37,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         setupWeaponPi(); //mk1~mk5 系列数量限制 5/4/3/2/1
         setupWeaponPhi(); //当季限定，轮换
         setupWeaponOmega(); // mk1~mk3
+        setupHDicker(); // mk1~mk3
 
 		setupIcecream();
 		setupEnemyWeaponUnlocks();
@@ -225,6 +226,8 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			ScoredResource("token_m14.projectile","projectile",1.0f,4),
 			ScoredResource("token_kal_tsit_m3.projectile","projectile",1.0f,4),
 			ScoredResource("token_kal_tsit.projectile","projectile",1.0f,4),
+			ScoredResource("token_miyu.projectile","projectile",1.0f,4),
+			ScoredResource("token_felix_schultz.projectile","projectile",1.0f,4),
 
 			ScoredResource("token_amamiya_kokoro.projectile","projectile",1.0f,4)
 			},
@@ -290,13 +293,14 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			ScoredResource("ba_crusader_call.projectile", "projectile", 1.0f),
 			ScoredResource("ex_m18_call.projectile", "projectile", 1.0f),
 			ScoredResource("ba_torumaru_tiger_call.projectile", "projectile", 1.0f),
-			ScoredResource("mi_24_call.projectile", "projectile", 1.0f),
-			ScoredResource("bell_360_call.projectile", "projectile", 1.0f),
-			ScoredResource("mh_60s_call.projectile", "projectile", 1.0f),
+			ScoredResource("mi_24_call.projectile", "projectile", 0.5f),
+			ScoredResource("bell_360_call.projectile", "projectile", 0.5f),
+			ScoredResource("mh_60s_call.projectile", "projectile", 0.5f),
 			ScoredResource("is2_m1895_call.projectile", "projectile", 1.0f),
-			ScoredResource("himars_call.projectile", "projectile", 1.0f),
+			ScoredResource("himars_call.projectile", "projectile", 0.5f),
 			ScoredResource("mtlb_2b9_call.projectile", "projectile", 1.0f),
 			ScoredResource("m61a5_call.projectile", "projectile", 1.0f),
+			ScoredResource("uragan_call.projectile", "projectile", 0.5f),
 			ScoredResource("borsig_call.projectile", "projectile", 1.0f)
 			},
 			{
@@ -351,6 +355,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		array<array<ScoredResource@>> rewardPasses = {
 			{
         	ScoredResource("acg_mg4td_ke.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_lancer_mk3.weapon", "weapon", 1.0f),
         	ScoredResource("acg_mg4a3td.weapon", "weapon", 1.0f),
         	ScoredResource("acg_ruby_rose_scythe.weapon", "weapon", 1.0f),
         	ScoredResource("acg_reisenu_a.weapon", "weapon", 1.0f),
@@ -476,10 +481,10 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_kokomi_portia.weapon", "weapon", 1.0f),
         	ScoredResource("acg_sorasaki_hina.weapon", "weapon", 1.0f),
 
-        	ScoredResource("acg_kemomimi.weapon", "weapon", 1.0f),
         	ScoredResource("acg_reisenu_a.weapon", "weapon", 1.0f),
         	ScoredResource("acg_mg4a3td.weapon", "weapon", 1.0f),
         	ScoredResource("acg_mg4td_ke.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_lancer_mk3.weapon", "weapon", 1.0f),
 
         	ScoredResource("acg_smg_strelka.weapon", "weapon", 1.0f),
         	ScoredResource("acg_m14.weapon", "weapon", 1.0f),
@@ -498,6 +503,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 	// ----------------------------------------------------
 	protected void setupWeaponGama() {
 		_log("adding setupWeaponGama config", 1);
+		//mk1~mk5 系列数量限制 5/4/3/2/1
 		array<Resource@> deliveryList = {
 			 Resource("reward_box_weapon_gama.carry_item", "carry_item")
 		};
@@ -513,9 +519,9 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_g41_bp2077.weapon", "weapon", 1.0f),
 
         	ScoredResource("acg_kemomimi.weapon", "weapon", 1.0f),
-        	ScoredResource("acg_reisenu_a.weapon", "weapon", 1.0f),
         	ScoredResource("acg_mg4a3td.weapon", "weapon", 1.0f),
         	ScoredResource("acg_mg4td_ke.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_lancer_mk3.weapon", "weapon", 1.0f),
 
         	ScoredResource("acg_smg_strelka.weapon", "weapon", 1.0f),
         	ScoredResource("acg_m14.weapon", "weapon", 1.0f),
@@ -561,6 +567,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 	// ----------------------------------------------------
 	protected void setupWeaponTheta() {
 		_log("adding setupWeaponTheta config", 1);
+		//mk1~mk5 系列数量限制 5/4/3/2/1
 		array<Resource@> deliveryList = {
 			 Resource("reward_box_weapon_theta.carry_item", "carry_item")
 		};
@@ -577,8 +584,8 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 
         	ScoredResource("acg_kemomimi.weapon", "weapon", 1.0f),
         	ScoredResource("acg_reisenu_a.weapon", "weapon", 1.0f),
-        	ScoredResource("acg_mg4a3td.weapon", "weapon", 1.0f),
         	ScoredResource("acg_mg4td_ke.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_lancer_mk3.weapon", "weapon", 1.0f),
 
         	ScoredResource("acg_smg_strelka.weapon", "weapon", 1.0f),
         	ScoredResource("acg_m14.weapon", "weapon", 1.0f),
@@ -604,6 +611,8 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		array<array<ScoredResource@>> rewardPasses = {
 			{
         	ScoredResource("acg_sinteria_bow.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_takanashi_hoshino.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_miyu.weapon", "weapon", 1.0f),
         	ScoredResource("acg_sorasaki_hina.weapon", "weapon", 1.0f),
         	ScoredResource("acg_hk416_starry_cocoon.weapon", "weapon", 1.0f),
         	ScoredResource("acg_iws2000_banisher.weapon", "weapon", 1.0f),
@@ -624,6 +633,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 	// ----------------------------------------------------
 	protected void setupWeaponMiu() {
 		_log("adding setupWeaponMiu config", 1);
+		//mk1~mk5 系列数量限制 5/4/3/2/1
 		array<Resource@> deliveryList = {
 			 Resource("reward_box_weapon_miu.carry_item", "carry_item")
 		};
@@ -641,7 +651,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_kemomimi.weapon", "weapon", 1.0f),
         	ScoredResource("acg_reisenu_a.weapon", "weapon", 1.0f),
         	ScoredResource("acg_mg4a3td.weapon", "weapon", 1.0f),
-        	ScoredResource("acg_mg4td_ke.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_lancer_mk3.weapon", "weapon", 1.0f),
 
         	ScoredResource("acg_smg_strelka.weapon", "weapon", 1.0f),
         	ScoredResource("acg_m14.weapon", "weapon", 1.0f),
@@ -660,6 +670,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 	// ----------------------------------------------------
 	protected void setupWeaponPi() {
 		_log("adding setupWeaponPi config", 1);
+		//mk1~mk5 系列数量限制 5/4/3/2/1
 		array<Resource@> deliveryList = {
 			 Resource("reward_box_weapon_pi.carry_item", "carry_item")
 		};
@@ -716,6 +727,32 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			);
 	}	
 	// ----------------------------------------------------
+	protected void setupHDicker() {
+		_log("adding setupHDicker config", 1);
+		array<Resource@> deliveryList = {
+			 Resource("reward_box_hdicker.carry_item", "carry_item")
+		};
+		array<array<ScoredResource@>> rewardPasses = {
+			{
+        	ScoredResource("token_hdicker_tactical_combat.projectile", "projectile", 1.0f),
+        	ScoredResource("token_hdicker_para.projectile", "projectile", 1.0f),
+        	ScoredResource("token_hdicker_marker.projectile", "projectile", 1.0f),
+        	ScoredResource("token_hdicker_tactical.projectile", "projectile", 1.0f)
+			},
+			{
+			ScoredResource("hd_psc_atx25_revelator_dicker.weapon", "weapon", 1.0f),
+			ScoredResource("hd_ar_ar77d_spade_dicker.weapon", "weapon", 1.0f),
+			ScoredResource("hd_lava17_roger_dicker.weapon", "weapon", 1.0f),
+			ScoredResource("hd_smg_tc171_cyclone_dicker.weapon", "weapon", 1.0f)
+			}
+		};   
+		processRewardPasses(rewardPasses);
+		GiftItemDeliveryRandomRewarder@ rewarder = GiftItemDeliveryRandomRewarder(m_metagame, rewardPasses);
+		m_itemDeliveryOrganizer.addObjective(
+			ItemDeliveryObjective(m_metagame, 0, deliveryList, m_itemDeliveryOrganizer, null, "", "", "", -1 /* loop */, rewarder)
+			);
+	}	
+	// ----------------------------------------------------
 	protected void setupWeaponOmega() {
 		_log("adding setupWeaponOmega config", 1);
 		// MK1~MK3
@@ -737,6 +774,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_reisenu_a.weapon", "weapon", 1.0f),
         	ScoredResource("acg_mg4a3td.weapon", "weapon", 1.0f),
         	ScoredResource("acg_mg4td_ke.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_lancer_mk3.weapon", "weapon", 1.0f),
 
         	ScoredResource("acg_smg_strelka.weapon", "weapon", 1.0f),
         	ScoredResource("acg_m14.weapon", "weapon", 1.0f),
@@ -801,10 +839,10 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		ScoredResource("MTL_SL_STRG4", "carry_item", 0.3f),     
 		//total f = 130 左右 3280一张
 
-		ScoredResource("reward_box_collection.carry_item", "carry_item", 0.1f),
-		ScoredResource("reward_box_skin.carry_item", "carry_item", 15.0f),
+		ScoredResource("reward_box_collection.carry_item", "carry_item", 0.01f),
+		ScoredResource("reward_box_skin.carry_item", "carry_item", 25.0f),
 		ScoredResource("reward_box_music.carry_item", "carry_item", 1.0f), 
-		ScoredResource("reward_box_vehicle.carry_item", "carry_item", 15.0f), 
+		ScoredResource("reward_box_vehicle.carry_item", "carry_item", 4.0f), 
 		// mk1 2w标价 期望＞6w
 		ScoredResource("reward_box_weapon_1.carry_item", "carry_item", 7.1f),
 		// mk2 5w 期望＞(2+7)*3=27w
@@ -823,8 +861,9 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		ScoredResource("reward_box_weapon_pi.carry_item", "carry_item", 0.01f),
 
 		// mk1~mk3 非卖 期望＞30w
-		ScoredResource("reward_box_weapon_omega.carry_item", "carry_item", 0.1f)
+		ScoredResource("reward_box_weapon_omega.carry_item", "carry_item", 0.1f),
 
+		ScoredResource("reward_box_hdicker.carry_item", "carry_item", 0.2f)
 
 			},
 			{

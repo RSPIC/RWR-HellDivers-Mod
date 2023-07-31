@@ -587,7 +587,11 @@ class projectile_event : Tracker {
             case 46:{//acg_patricia_fataldrive
                 int cid = event.getIntAttribute("character_id");
                 int pid = g_playerInfoBuck.getPidByCid(cid);
-                if(pid == -1){return;}
+                if(pid == -1){
+                    const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                    pid = character.getIntAttribute("player_id");
+                    notify(m_metagame, "未能获取到你的PID，已通过其他方法获取。请汇报此情况", dictionary(), "misc", pid, false, "", 1.0);
+                }
                 //先过主手武器检测
                 string equipKey_main = getPlayerEquipmentKey(m_metagame,cid,0);//主武器
                 string matchKey = "acg_patricia_";

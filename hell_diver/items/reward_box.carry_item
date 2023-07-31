@@ -188,4 +188,15 @@ file="_collect_rare.base"
     <commonness value="0.0"/>
 </carry_item>
 
+<carry_item 
+name="Reward Box [Hdicker]" 
+key="reward_box_hdicker.carry_item"
+file="_collect_rare.base"
+>
+    <hud_icon filename="hdicker_box.png" />
+    <inventory  price="648" />
+    <model mesh_filename="helldickers_drop.xml" />
+    <commonness value="0.0"/>
+</carry_item>
+
 </carry_items>

@@ -12,7 +12,7 @@ usable_for_cover="1"
 reserves_spawn_point="1"
 allow_ai_to_use="1"
 ai_abandon_when_unsteerable="0"
-respawn_time="180"
+respawn_time="30"
 ai_pick_prevention_time="60"
 character_leave_request_mode="friendly"
 >
@@ -21,6 +21,7 @@ character_leave_request_mode="friendly"
 	<tag name="heavy_combat" />
 	<tag name="any_tank" />
 	<tag name="apc" />
+	<tag name="jeep" />
 
 	<tire_set offset="1.8 0.0 +3.0" radius="0.4" />
 	<tire_set offset="1.8 0.0 -3.0" radius="0.4" />

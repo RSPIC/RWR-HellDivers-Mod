@@ -120,7 +120,7 @@ radius="1"
 	time_to_live="2.5" can_be_detected_by_driver="1" can_be_disarmed="0" name="Squadleader GL" radius="0.3" class="grenade" > 
 
 		<result class="spawn" instance_class="projectile" instance_key="cyborgs_squadleader_gl_damage.projectile" 
-		min_amount="1" max_amount="1" offset="0 0 0" position_spread="2 1" direction_spread="0 0" />	
+		min_amount="1" max_amount="2" offset="0 0 0" position_spread="2 1" direction_spread="0 0" />	
 		<!-- damage 100blast -->
 		<!-- 10~15x1 | >14层击倒 -->
 			<!-- offset"x y z 生成位置偏差"  -->

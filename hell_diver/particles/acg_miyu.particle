@@ -1,0 +1,84 @@
+author: RST
+2022.9.23
+未经授权不可复用、修改使用、仅用于helldiver mod
+
+particle_system miyu_hit
+{
+	quota 50
+	material muzzle_crossfire_anim_a_1
+	particle_width 0.1
+	particle_height 0.1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.07
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 70
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0 1
+		time1 0.7
+		colour1 1 0.3 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+
+
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material muzzle_crossfire_anim_a_1 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture muzzle_crossfire_anim_a_1.png 	
+}}}}

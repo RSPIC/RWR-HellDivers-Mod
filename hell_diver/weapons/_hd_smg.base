@@ -13,10 +13,8 @@ on_ground_up="0 0 1"
 	/> 
 	
 	<tag name="smg" />
-
     <animation state_key="recoil" animation_key="recoil, pistol" /> <!--后坐力动作，半身动作-->
     <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
-    <animation state_key="reload" animation_key="T_reloading_1.0s" />	<!--换弹动作，半身动作-->
     <animation state_key="hold" animation_key="hold, pistol" /><!--站姿静止动作，全身动作-->
 	<animation state_key="hold_on_wall"  animation_key="hold, overwall pistol" /><!--架枪动作，全身动作-->
     <animation state_key="still_against_wall" animation_key="hold, pistol" /><!--靠墙动作，全身动作-->

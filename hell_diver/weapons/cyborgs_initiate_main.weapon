@@ -10,29 +10,29 @@ radius="1"
 > 
     <specification 	
     slot="0" 	
-    retrigger_time="-1" 
-	last_burst_retrigger_time="1"
+    retrigger_time="0.1" 
+	last_burst_retrigger_time="3"
     accuracy_factor="1.0" 
-	spread_range="0"
+	spread_range="0.3"
 	stance_accuracy_rate="1.0"
-    sustained_fire_grow_step="0.0" 
+    sustained_fire_grow_step="0.11" 
     sustained_fire_diminish_rate="1.0" 
-    magazine_size="-1" 
-    can_shoot_standing="0" 
-    can_shoot_crouching="0" 
+    magazine_size="800" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
 	can_shoot_prone="0"	
     suppressed="0" 
-	class="0" 
+	class="4" 
     name="Initiate Melee" 
-	ai_sight_range_modifier="2.0"
+	ai_sight_range_modifier="1.0"
 	sight_range_modifier="1.0" 
-	burst_shots="1" 
+	burst_shots="7" 
     projectiles_per_shot="1" 
-    projectile_speed="0.0"
-	barrel_offset="1.0" 
+    projectile_speed="120.0"
+	barrel_offset_3d="0 0 0.5" 
 	carry_in_two_hands="0" 
 	stab_enabled="1" 
-	stab_range="2" 
+	stab_range="4" 
 	use_basic_muzzle_smoke_effect="0"
 	/> 
 	<!--class 0全自动 4半自动 2栓动 3特殊（可做一次性武器）5近程特殊（如部署沙包）-->
@@ -60,9 +60,7 @@ radius="1"
     <hud_icon filename="cyborgs_chat_icon.png" /> <!--临时贴图-->
 	
 	<!--武器动作，必须指定recoil和reload动作-->
-    <animation state_key="recoil" animation_key="cyborgs_initiate_stab" /> <!--后坐力动作，半身动作-->
-    <animation state_key="recoil" animation_key="cyborgs_initiate_stab" /> <!--后坐力动作，半身动作-->
-    <animation state_key="recoil" animation_key="cyborgs_initiate_stab" /> <!--后坐力动作，半身动作-->
+    <animation state_key="recoil" animation_key="cyborgs_initiate_still" /> <!--后坐力动作，半身动作-->
 	<animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
     <animation key="reload" animation_key="cyborgs_initiate_stab" />	<!--换弹动作，半身动作-->
     <animation key="reload" stance_key="crouching" animation_key="cyborgs_initiate_stab" />	<!--不同姿态可以设置不同换弹动作-->
@@ -118,31 +116,23 @@ radius="1"
     
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
-	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0"> 
-	
-		<!--
-		<result class="blast" radius="6.8" damage="0.2" push="0" decal="0" character_state="death"  />
-		<result class="spawn" instance_class="projectile" instance_key="rx1_railgun_ap.projectile" 
-		min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
-			offset"x y z 生成位置偏差" 
-			position_spread="水平面随机生成位置 竖直面随机生成位置" 
-			direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
-		-->
-		<result class="hit" kill_probability="0.88" 
-		kill_probability_offset_on_successful_hit="0"
-		kill_decay_start_time="0.48" kill_decay_end_time="0.70" />
+	time_to_live="0.25" can_be_detected_by_driver="1" can_be_disarmed="0"> 
+
+		<result class="hit" kill_probability="1" 
+		kill_probability_offset_on_successful_hit="0.5"
+		kill_decay_start_time="3" kill_decay_end_time="3" character_state="death"/>
 		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
 		
-		<!--命中音效-->
-		<sound class="result" key="other" fileref="rifle_drop.wav" pitch_variety="0.03" volume="1.0" />
 		
-		<!--命中特效-->
-		<!--
-		<effect class="result" key="terrain" ref="" lighting="0"/>
-		<effect class="activated" ref="" />
-		-->
+		<effect class="result" key="terrain" ref="general_weapon_result_smoke_shorttime" lighting="0"/>
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_01" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_02" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_03" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_04" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_leave" lighting="0"/>
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_light" lighting="0"/>
 		
 		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
 		<sound class="result" key="terrain" copy="other" />
@@ -162,24 +152,13 @@ radius="1"
 		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
 		
 		<!--尾迹组-->
-		<trail probability="1" key=""/>	
+		<trail probability="1" key="normal_trail"/>	
     </projectile>
-	
 	<!--枪口特效-->
-	<effect class="muzzle" ref="" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 
 	
-	<!--雷鸣弹道
-    <ballistics 
-    curve_height="16" 
-    near_far_distance="0" 
-    speed_estimation_near="0" 
-    speed_estimation_far="58" 
-    max_speed="58" 
-    randomness="0" 
-    tweak_factor="1.48" /> 
-	该弹道适配弹头参数：pulldon_in_air="48"
-	-->
-	
+
 	<!--姿态精度-->
     <stance state_key="running" accuracy="1" /> 
     <stance state_key="walking" accuracy="1" />

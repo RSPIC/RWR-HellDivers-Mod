@@ -7,7 +7,7 @@ player_death_drop_owner_lock_time="600"
 on_ground_up="0 0 1" 
 > 
 	<tag name="rare" />
-
+    <animation key="recoil" stance_key="prone" animation_key="recoil1, prone" /> <!--后坐力动作，半身动作-->
 	<!--军械库相关-->
     <commonness value="1" can_respawn_with="0" in_stock="1" /> 
     <inventory encumbrance="10.0" buy_price="20000.0" sell_price="0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->

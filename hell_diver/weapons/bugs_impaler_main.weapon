@@ -7,7 +7,6 @@ player_death_drop_owner_lock_time="0"
 key="bugs_impaler_main.weapon" 
 on_ground_up="0 0 1" 
 radius="1"
-force_as_shoots_blast_projectiles="0"
 > 
     <!-- 80层伤害 -->
 	<tag name="bazooka" />
@@ -30,7 +29,7 @@ force_as_shoots_blast_projectiles="0"
 	class="4" 
 	ai_sight_range_modifier="2.0"
 	sight_range_modifier="1.0" 
-	burst_shots="1" 
+	burst_shots="3" 
     projectiles_per_shot="1" 
     projectile_speed="10.0"
 	barrel_offset_3d="0 1 -1" 
@@ -98,12 +97,15 @@ force_as_shoots_blast_projectiles="0"
 	<!--军械库相关-->
     <commonness value="0.00001" can_respawn_with="1" in_stock="1" /> 
     <inventory encumbrance="1.0" price="0.0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
-    
+	<ballistics curve_height="1.0" near_far_distance="0.0" 
+	speed_estimation_near="40.0" speed_estimation_far="40.0" 
+	max_speed="60.0" randomness="0.0" tweak_factor="1.94" /> 
+
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
-    <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="0.2" time_to_live="6" > 
+    <projectile file="hd_general_spawn_no_effect.projectile" pulldown_in_air="8" time_to_live="6" > 
 		<result class="spawn" instance_class="projectile" instance_key="bugs_impaler_main_damage.projectile" 
 		min_amount="3" max_amount="3" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
-        <trigger class="impact" time_to_live="0.1" />
+        <trigger class="time" time_to_live="1.0"/>
 
         <!--命中音效-->
 		<sound class="result" key="other" fileref="bugs_atk_impaler_fire.wav" pitch_variety="0.03" volume="2.5" />

@@ -208,7 +208,7 @@
 	<soldier name="Warrior" spawn_score="2.0" copy_from="base" >
 		<character filename="bugs_warrior_state.character">	
 		</character>
-		<ai filename="bugs_scout.ai" />
+		<ai filename="bugs_warrior.ai" />
 		<model filename="bugs_warrior.xml" />
 
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
@@ -216,9 +216,11 @@
 			<weapon key="bugs_warrior_main.weapon" />
 
 			<carry_item key="general_vest_30" />
-			<carry_item key="general_vest_35" />
 			<carry_item key="general_vest_40" />
-			<carry_item key="general_vest_45" />
+			<carry_item key="general_vest_50" />
+			<carry_item key="general_vest_60" />
+			<carry_item key="general_vest_70" />
+			<carry_item key="general_vest_80" />
 		</resources>
 
 
@@ -240,15 +242,11 @@
 		<resources file="bugs_common.resources">
 			<weapon key="bugs_elite_main.weapon" />
 
-			<carry_item key="general_vest_40" />
-			<carry_item key="general_vest_45" />
-			<carry_item key="general_vest_50" />
-			<carry_item key="general_vest_55" />
 			<carry_item key="general_vest_60" />
-			<carry_item key="general_vest_65" />
-			<carry_item key="general_vest_70" />
-			<carry_item key="general_vest_75" />
 			<carry_item key="general_vest_80" />
+			<carry_item key="general_vest_100" />
+			<carry_item key="general_vest_120" />
+			<carry_item key="general_vest_140" />
 		</resources>
 
 
@@ -284,7 +282,7 @@
 	</soldier> 
 <!-- Elite -->
 	<!-- Brood Commander -->
-	<soldier name="BroodCommander" spawn_score="0.1" copy_from="base" >
+	<soldier name="BroodCommander" spawn_score="0.3" copy_from="base" >
 		<character filename="bugs_warrior_state.character">	
 		</character>
 		<ai filename="bugs_scout.ai" /> 
@@ -295,6 +293,9 @@
 			<weapon key="bugs_brood_commander_main.weapon" />
 			<projectile key="bugs_stalker_grenade.projectile" />
 			<carry_item key="general_vest_230" />
+			<carry_item key="general_vest_250" />
+			<carry_item key="general_vest_270" />
+			<carry_item key="general_vest_290" />
 		</resources>
 
 		<item_class_existence_config>
@@ -315,13 +316,14 @@
 	<soldier name="Behemoth" spawn_score="0.03" copy_from="base" >
 		<character filename="bugs_behemoth_state.character">	
 		</character>
-		<ai filename="bugs_scout.ai" /> 
+		<ai filename="cyborgs_hulk.ai" /> 
 		<model filename="bugs_behemoth.xml" />
 
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="bugs_common.resources">
 			<weapon key="bugs_behemoth_main.weapon" />
 			<carry_item key="anti_light_hit_vest_420" />
+			<carry_item key="anti_light_hit_vest_450" />
 		</resources>
 
 		<item_class_existence_config>
@@ -339,13 +341,14 @@
 	<soldier name="Tank" spawn_score="0.1" copy_from="base" >
 		<character filename="bugs_behemoth_state.character">	
 		</character>
-		<ai filename="bugs_behemoth.ai" /> 
+		<ai filename="cyborgs_hulk.ai" /> 
 		<model filename="bugs_tank.xml" />
 
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="bugs_common.resources">
 			<weapon key="bugs_tank_main.weapon" />
 			<carry_item key="general_vest_280" />
+			<carry_item key="general_vest_320" />
 		</resources>
 
 		<item_class_existence_config>
@@ -363,13 +366,14 @@
 	<soldier name="Impaler" spawn_score="0.08" copy_from="base" >
 		<character filename="bugs_behemoth_state.character">	
 		</character>
-		<ai filename="bugs_scout.ai" /> 
+		<ai filename="cyborgs_hulk.ai" /> 
 		<model filename="bugs_impaler.xml" />
 
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="bugs_common.resources">
 			<weapon key="bugs_impaler_main.weapon" />
 			<carry_item key="general_vest_350" />
+			<carry_item key="general_vest_380" />
 		</resources>
 
 		<item_class_existence_config>
