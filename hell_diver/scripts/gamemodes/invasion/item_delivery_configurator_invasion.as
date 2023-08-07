@@ -228,6 +228,8 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			ScoredResource("token_kal_tsit.projectile","projectile",1.0f,4),
 			ScoredResource("token_miyu.projectile","projectile",1.0f,4),
 			ScoredResource("token_felix_schultz.projectile","projectile",1.0f,4),
+			ScoredResource("token_takanashi_hoshino_swim_ver.projectile","projectile",1.0f,4),
+			ScoredResource("token_mari_lochi_gymsuit_ver.projectile","projectile",1.0f,4),
 
 			ScoredResource("token_amamiya_kokoro.projectile","projectile",1.0f,4)
 			},
@@ -842,7 +844,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		ScoredResource("reward_box_collection.carry_item", "carry_item", 0.001f),
 		ScoredResource("reward_box_skin.carry_item", "carry_item", 20.0f),
 		ScoredResource("reward_box_music.carry_item", "carry_item", 1.0f), 
-		ScoredResource("reward_box_vehicle.carry_item", "carry_item", 5.0f), 
+		ScoredResource("reward_box_vehicle.carry_item", "carry_item", 7.5f), 
 		// mk1 2w标价 期望＞6w
 		ScoredResource("reward_box_weapon_1.carry_item", "carry_item", 7.1f),
 		// mk2 5w 期望＞(2+7)*3=27w

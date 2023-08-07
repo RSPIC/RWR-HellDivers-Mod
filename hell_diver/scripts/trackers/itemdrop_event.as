@@ -339,7 +339,9 @@ class itemdrop_event : Tracker {
 				if(itemKey == "hd_ammo_supply_box_ex.projectile"){//补给背包特殊机制
 					string ExKey="hd_ammo_supply_box_ex_2.projectile";//替换为特殊子弹箱（拾取后会补给并被删除)
 					Vector3 t_pos = stringToVector3(position);
-					spawnStaticItem(m_metagame,ExKey,t_pos,characterId,factionId,"projectile");
+					if(isVectorInMap(t_pos)){
+						spawnStaticItem(m_metagame,ExKey,t_pos,characterId,factionId,"projectile");
+					}
 				}
 			}
 		}

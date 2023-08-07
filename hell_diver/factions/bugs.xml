@@ -316,7 +316,7 @@
 	<soldier name="Behemoth" spawn_score="0.03" copy_from="base" >
 		<character filename="bugs_behemoth_state.character">	
 		</character>
-		<ai filename="cyborgs_hulk.ai" /> 
+		<ai filename="bugs_tank.ai" /> 
 		<model filename="bugs_behemoth.xml" />
 
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
@@ -341,7 +341,7 @@
 	<soldier name="Tank" spawn_score="0.1" copy_from="base" >
 		<character filename="bugs_behemoth_state.character">	
 		</character>
-		<ai filename="cyborgs_hulk.ai" /> 
+		<ai filename="bugs_tank.ai" /> 
 		<model filename="bugs_tank.xml" />
 
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
@@ -366,7 +366,7 @@
 	<soldier name="Impaler" spawn_score="0.08" copy_from="base" >
 		<character filename="bugs_behemoth_state.character">	
 		</character>
-		<ai filename="cyborgs_hulk.ai" /> 
+		<ai filename="bugs_tank.ai" /> 
 		<model filename="bugs_impaler.xml" />
 
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />

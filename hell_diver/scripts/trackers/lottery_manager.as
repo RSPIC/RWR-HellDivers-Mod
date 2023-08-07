@@ -258,10 +258,10 @@ class lottery_manager : Tracker {
             notify(m_metagame,"Lottery Guaranteed Reward [10]", dictionary(), "misc", pid, false, "", 1.0);
             g_userCountInfoBuck.clearCount(name,itemKey+"10");
         }
-        if(g_userCountInfoBuck.getCount(name,itemKey+"50",value) && value == 10){    //50次保底
+        if(g_userCountInfoBuck.getCount(name,itemKey+"50",value) && value == 50){    //50次保底
             addItemInBackpack(m_metagame,cid,"carry_item","reward_box_vehicle.carry_item");
             notify(m_metagame,"五十抽保底已发放[载具箱]", dictionary(), "misc", pid, false, "", 1.0);
-            g_userCountInfoBuck.clearCount(name,itemKey+"10");
+            g_userCountInfoBuck.clearCount(name,itemKey+"50");
         }
         if(g_userCountInfoBuck.getCount(name,itemKey+"300",value) && value == 300){    //300吃井
             addItemInBackpack(m_metagame,cid,"carry_item","reward_box_weapon_lamda.carry_item");

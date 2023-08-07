@@ -1,0 +1,309 @@
+material HudPanel {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			fog_override true
+			scene_blend alpha_blend
+			texture_unit Content {
+				texture hud_grenade.png 2d 0
+				tex_address_mode clamp
+				filtering trilinear
+			}
+			texture_unit Color {
+				colour_op_ex modulate src_manual src_current 1.0 1.0 1.0 1.0
+				alpha_op_ex modulate src_manual src_current 0.7
+			}
+		} 
+	}
+}
+
+
+material HudFader : HudPanel {
+	receive_shadows off	
+	technique Basic {
+		pass Basic {
+			texture_unit Content {
+				texture black.png 2d 0
+			}
+		} 
+	}
+}
+
+
+material HudGrenade : HudPanel {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			texture_unit Content {
+				texture hud_grenade.png 2d 0
+			}
+		} 
+	}
+}
+
+material HudTeamMember : HudPanel {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			texture_unit Content {
+				texture hud_squad0.png 2d 0
+			}
+		} 
+	}
+}
+
+material HudWeapon : HudPanel {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			texture_unit Content {
+				texture hud_ak47.png 2d 0
+			}
+		} 
+	}
+}
+
+material HudWeaponChained : HudPanel {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			texture_unit Content {
+				texture hud_ak47.png 2d 0
+			}
+			texture_unit Color {
+				colour_op_ex modulate src_manual src_current 1.0 1.0 1.0 1.0
+				alpha_op_ex modulate src_manual src_current 0.7
+			}
+			texture_unit Chain {
+				texture hud_chain_1_of_2.png 2d 0
+				tex_address_mode clamp
+				filtering trilinear
+
+				colour_op_ex blend_texture_alpha src_texture src_current 
+				alpha_op_ex blend_texture_alpha src_texture src_current
+			}
+		} 
+	}
+}
+
+
+material HudMortar : HudPanel {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			texture_unit Content {
+				texture hud_mortar.png 2d 0
+			}
+		} 
+	}
+}
+
+material HudCarryItem : HudPanel {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			texture_unit Content {
+				texture hud_mortar.png 2d 0
+			}
+		} 
+	}
+}
+
+material HudRank : HudPanel {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			texture_unit Content {
+				texture hud_rank0.png
+			}
+			texture_unit Color {
+				colour_op_ex modulate src_manual src_current 1.0 1.0 1.0 1.0
+			}
+		} 
+	}
+}
+
+material HudBadge : HudPanel {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			texture_unit Content {
+				texture hud_badge_dogtag.png
+			}
+			texture_unit Color {
+				colour_op_ex modulate src_manual src_current 1.0 1.0 1.0 1.0
+			}
+			texture_unit Text {
+				texture none.png
+                tex_address_mode clamp
+				filtering trilinear
+
+				colour_op_ex blend_texture_alpha src_texture src_current 
+				alpha_op_ex blend_texture_alpha src_texture src_current
+			}
+		} 
+	}
+}
+
+material HudEnd {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			fog_override true
+			scene_blend alpha_blend
+			texture_unit Content {
+				texture hud_victory.png 2d 0
+                                tex_address_mode clamp
+				filtering trilinear
+			}
+			texture_unit Color {
+				colour_op_ex modulate src_manual src_current 0.0 1.0 0.0 1.0
+				alpha_op_ex modulate src_manual src_current 1.0
+			}
+/*
+			texture_unit ContentStar {
+				texture hud_star_gold.png 2d 0
+                                tex_address_mode clamp
+				filtering trilinear
+
+				colour_op_ex blend_texture_alpha src_texture src_current 
+				alpha_op_ex blend_texture_alpha src_texture src_current
+			}
+			texture_unit ContentText {
+				texture hud_victory_text.png 2d 0
+                                tex_address_mode clamp
+				filtering trilinear
+
+				colour_op_ex blend_texture_alpha src_texture src_current 
+				alpha_op_ex blend_texture_alpha src_texture src_current
+			}
+*/
+		} 
+	}
+}
+
+
+
+material HudMeter : HudPanel {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			texture_unit Content {
+				texture hud_meter.png 2d 0
+			}
+			texture_unit Color {
+				colour_op_ex modulate src_texture src_current
+				alpha_op_ex modulate src_manual src_current 0.6
+				tex_address_mode clamp
+				filtering none
+			}
+		} 
+	}
+}
+
+material HudMeterCursor : HudPanel {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			texture_unit Content {
+				texture hud_meter_cursor.png 2d 0
+			}
+		} 
+	}
+}
+
+material HudMeterCursorCaptureAreaEnemy : HudMeterCursor {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			texture_unit Content {
+				texture hud_meter_cursor_capture_area_enemy.png 2d 0
+			}
+		} 
+	}
+}
+
+material HudMeterCursorCaptureAreaFriendly : HudMeterCursor {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			texture_unit Content {
+				texture hud_meter_cursor_capture_area_friendly.png 2d 0
+			}
+		} 
+	}
+}
+
+material HudSquadMedicCapability : HudPanel {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			texture_unit Content {
+				texture hud_medic.png 2d 0
+			}
+		} 
+	}
+}
+
+material ChatLogChannel {
+	receive_shadows off
+	technique {
+		pass {
+			fog_override true
+			scene_blend alpha_blend
+			texture_unit {
+				texture chatlog_channel.png
+				tex_address_mode clamp
+			}
+			texture_unit {
+				colour_op_ex modulate src_manual src_current 1.0 1.0 1.0
+				alpha_op_ex source1 src_current src_current
+			}
+		}
+	} 
+}
+
+material HudChatIcon {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			fog_override true
+			scene_blend alpha_blend
+			texture_unit Content {
+				texture chat_icon_default.png
+				tex_address_mode clamp
+			}
+		}
+	} 
+}
+
+
+material StatsViewTagSet {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			fog_override true
+			scene_blend alpha_blend
+			texture_unit Content {
+				texture statsview_tag_set.png
+				tex_address_mode clamp
+			}
+		}
+	} 
+}
+
+
+material StatsViewTagNotSet {
+	receive_shadows off
+	technique Basic {
+		pass Basic {
+			fog_override true
+			scene_blend alpha_blend
+			texture_unit Content {
+				texture statsview_tag_not_set.png
+				tex_address_mode clamp
+			}
+		}
+	} 
+}
+

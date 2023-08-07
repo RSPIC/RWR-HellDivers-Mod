@@ -53,7 +53,7 @@ dictionary healable_killtarget_bonus = {
 dictionary recommend_kill_weapon_bonus = {
 
 		//数字为额外经验倍率
-        {"hd_ar_ar19_liberator_full_upgrade.weapon",2.0},
+        {"hd_ar_ar19_liberator_full_upgrade.weapon",5.0},
         {"hd_ar_ar22c_patriot_full_upgrade.weapon",2.0},
         {"hd_ar_ar20l_justice_full_upgrade.weapon",2.0},
         {"hd_ar_ar14d_paragon_full_upgrade.weapon",2.0},

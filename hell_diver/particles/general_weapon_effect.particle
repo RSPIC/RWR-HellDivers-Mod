@@ -213,6 +213,41 @@ particle_system general_weapon_result_hitspot
 		colour4 0 0 0 0
 	}
 }
+particle_system general_weapon_result_cartoon_spark
+{
+	quota 200
+	material explosion_smoke_04
+	particle_width 0.25
+	particle_height 0.25
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	emitter Point
+	{
+		angle 0
+		colour 1 1 0 1
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.1
+		duration 0.05
+	}
+	affector Scaler{
+		rate 50
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0 1
+		time1 0.5
+		colour1 1 0.3 0 1
+		time2 1
+		colour2 0 0 0 0 
+
+	}
+}
 particle_system general_weapon_result_laser_burn
 {
 	quota 200

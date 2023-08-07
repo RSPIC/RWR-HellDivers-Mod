@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>	
 <weapons>
 <weapon 
-file="_hd_smg.base"
+file="_hd_ar.base"
 key="hd_smg_tc171_cyclone_mk3.weapon" 
 > 
     <specification 	
@@ -24,7 +24,7 @@ key="hd_smg_tc171_cyclone_mk3.weapon"
     projectiles_per_shot="1" 
     projectile_speed="170.0"
 	barrel_offset="1.0" 
-	carry_in_two_hands="0" 
+	carry_in_two_hands="1" 
 	stab_enabled="0" 
 	stab_range="0" 
 	use_basic_muzzle_smoke_effect="0"
@@ -39,22 +39,22 @@ key="hd_smg_tc171_cyclone_mk3.weapon"
     <hud_icon filename="hd_smg_tc171_mk3.png" /> <!--武器为110x220像素，投掷物为110x110-->
 	
 	<!--武器动作，必须指定recoil和reload动作，部分动作留空会默认调用常规双手武器动作或者无动作-->
-    <animation state_key="recoil" animation_key="recoil, pistol" /> <!--后坐力动作，半身动作-->
+    <animation key="recoil" animation_key="recoil1" /> <!--后坐力动作，半身动作-->
     <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
     <animation state_key="reload" animation_key="reloading_2.5s" />	<!--换弹动作，半身动作-->
-    <animation state_key="hold" animation_key="hold, pistol" /><!--站姿静止动作，全身动作-->
-	<animation state_key="hold_on_wall"  animation_key="hold, overwall pistol" /><!--架枪动作，全身动作-->
-    <animation state_key="still_against_wall" animation_key="hold, pistol" /><!--靠墙动作，全身动作-->
-    <animation state_key="hold_casual" animation_key="hold_casual, pistol" /><!--闲置动作，全身动作-->
-	<animation state_key="running" animation_key="running, pistol" /><!--全身动作-->
-	<animation state_key="walking" animation_key="running_pistol_slower" /><!--按shift时候的静步前进动作，全身动作-->
-    <animation state_key="walking_backwards" animation_key="walking backwards, pistol" /><!--全身动作-->
-    <animation state_key="crouching" animation_key="crouch, pistol" /><!--蹲姿静止动作，全身动作-->
-	<animation state_key="crouch_moving" animation_key="crouching, pistol 2" /><!--全身动作-->
-	<animation state_key="crouch_moving_backwards" animation_key="crouching backwards, hip fire" /><!--全身动作-->
-    <animation state_key="prone_still" animation_key="prone_still, pistol" /><!--全身动作-->
+    <animation state_key="hold" animation_key="" /><!--站姿静止动作，全身动作-->
+	<animation state_key="hold_on_wall"  animation_key="" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="" /><!--闲置动作，全身动作-->
+	<animation state_key="running" animation_key="" /><!--全身动作-->
+	<animation state_key="walking" animation_key="" /><!--按shift时候的静步前进动作，全身动作-->
+    <animation state_key="walking_backwards" animation_key="" /><!--全身动作-->
+    <animation state_key="crouching" animation_key="" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="" /><!--全身动作-->
 	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
-	<animation state_key="stabbing" animation_key="pistol whip 3" /><!--半身动作，武器可设置脱手-->
+	<animation state_key="stabbing" animation_key="melee, bayonet" /><!--半身动作，武器可设置脱手-->
 
 	<!--武器音频-->
     <sound key="effect" fileref="" pitch_variety="0" volume="1.0" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->

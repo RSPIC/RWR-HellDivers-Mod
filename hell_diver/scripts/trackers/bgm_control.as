@@ -53,6 +53,7 @@ dictionary ex_bgm = {
         {"",-1},
 
         {"music_march_of_steel_torrent.wav",186},
+        {"music_space_elevator.wav",124},
  
         // 占位的
         {"666",-1}

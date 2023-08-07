@@ -211,6 +211,15 @@ class schedule_Check : Tracker {
             if(m_skin_info.get(name,skin_key)){
                 int num;
                 if(equipList.get(equipKey,num)){
+                    if(skin_key == "null"){
+                        return;
+                    }
+                    //手雷取消绑定
+                    if(equipKey == "hd_grenade_standard.projectile"){
+                        m_skin_info.set(name,"null");
+                        notify(metagame, "已取消绑定", dictionary(), "misc", pid, false, "", 1.0);
+                        return;
+                    }
                     //当前投掷物栏数量为0
                     if(num == 0){
                         string c = 
@@ -218,7 +227,7 @@ class schedule_Check : Tracker {
                             "<item class='" + "projectile" + "' key='" + skin_key +"' />" +
                         "</command>";
                         m_metagame.getComms().send(c);
-                        GiveRP(m_metagame,cid,-300);
+                        GiveRP(m_metagame,cid,-200);
                         notify(metagame, "信物已重新补给", dictionary(), "misc", pid, false, "", 1.0);
                     }
                 }

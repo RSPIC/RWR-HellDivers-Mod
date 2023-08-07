@@ -190,7 +190,7 @@ class PenaltyManager : Tracker {
 	protected bool m_server_test_mode;
 
 	// --------------------------------------------
-	PenaltyManager(GameModeInvasion@ metagame, int teamKillsToStartPenalty = 20, float penaltyTime = 1200.0, float forgiveTeamKillTime = 600.0, float persistentPenaltyTime = 1209600.0f) {
+	PenaltyManager(GameModeInvasion@ metagame, int teamKillsToStartPenalty = 20, float penaltyTime = 600.0, float forgiveTeamKillTime = 200.0, float persistentPenaltyTime = 1209600.0f) {
 		@m_metagame = @metagame;
 		const UserSettings@ settings = m_metagame.getUserSettings();
         m_server_test_mode = settings.m_server_test_mode;

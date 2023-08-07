@@ -267,6 +267,11 @@
         <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
         <capacity value="12" source="rank" source_value="0" />
     </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Takanashi Hoshino [Swimming Ver.] [Skin]" key="token_takanashi_hoshino_swim_ver.projectile" >
+        <hud_icon filename="token_takanashi_hoshino_swim_ver.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
     <projectile file="hd_hellpod_call.projectile" name="Texas [Skin]" key="token_texas.projectile" >
         <hud_icon filename="token_texas.png" />
         <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
@@ -349,6 +354,12 @@
     </projectile>
     <projectile file="hd_hellpod_call.projectile" name="Felix Schultz [Skin]" key="token_felix_schultz.projectile" >
         <hud_icon filename="token_felix_schultz.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+        <sound class="result" key="other" fileref="token_felix_schultz.wav" pitch_variety="0" volume="4.0"/>
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Mari Lochi [Gymsuit Ver.] [Skin]" key="token_mari_lochi_gymsuit_ver.projectile" >
+        <hud_icon filename="token_mari_lochi_gymsuit_ver.png" />
         <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
         <capacity value="12" source="rank" source_value="0" />
         <sound class="result" key="other" fileref="token_felix_schultz.wav" pitch_variety="0" volume="4.0"/>

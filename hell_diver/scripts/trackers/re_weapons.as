@@ -74,6 +74,10 @@ class re_weapons : Tracker {
                         g_userCountInfoBuck.clearCount(name,itemKey+"re");
                         notify(m_metagame, "已成功合成", dictionary(), "misc", pid, false, "", 1.0);
                     }
+                }else{
+                    notify(m_metagame, "风险操作：已退还你的武器。若要合成武器，请在武器栏装备同样模式的武器。如果需要出售武器，请保持武器栏为空", dictionary(), "misc", pid, false, "", 1.0);
+                    addItemInBackpack(m_metagame,cid,"weapon",itemKey);
+                    return;
                 }
             }
             if(equipList.get("1",equipKey) && equipList.get(equipKey,equipNum) && equipNum != 0){//主武器
@@ -83,7 +87,7 @@ class re_weapons : Tracker {
                         addItemInBackpack(m_metagame,cid,"weapon",itemKey);
                         return;
                     }
-                    if(g_debugMode) notify(m_metagame, "计数+1", dictionary(), "misc", pid, false, "", 1.0);
+                    notify(m_metagame, "计数+1", dictionary(), "misc", pid, false, "", 1.0);
                     g_userCountInfoBuck.addCount(name,itemKey+"re");
                     int value;
                     if(g_userCountInfoBuck.getCount(name,itemKey+"re",value) && value == 10){
@@ -92,6 +96,10 @@ class re_weapons : Tracker {
                         notify(m_metagame, "已成功合成", dictionary(), "misc", pid, false, "", 1.0);
                     }
                 }
+            }else{
+                notify(m_metagame, "风险操作：已退还你的武器。若要合成武器，请在武器栏装备同样模式的武器。如果需要出售武器，请保持武器栏为空", dictionary(), "misc", pid, false, "", 1.0);
+                addItemInBackpack(m_metagame,cid,"weapon",itemKey);
+                return;
             }
         }
     }

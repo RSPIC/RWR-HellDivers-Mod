@@ -58,6 +58,7 @@
 
     <weapon key="acg_miyu.weapon" enabled="0"/> <!--霞泽美游-->
     <weapon key="re_acg_miyu.weapon" /> <!--霞泽美游-->
+
     <!-- MK3 12w-->
     <weapon key="acg_sinteria_bow.weapon" enabled="0"/> <!--白金 弓-->
     <weapon key="re_acg_sinteria_bow.weapon" /> <!--白金 弓-->
@@ -108,6 +109,10 @@
     <weapon key="ex_lancer_mk3.weapon" enabled="0"/> <!--Lancer 骑兵链锯-->
     <weapon key="re_ex_lancer_mk3_chainsaw.weapon" /> <!--Lancer 骑兵链锯-->
     <weapon key="re_ex_lancer_mk3.weapon" /> <!--Lancer 骑兵链锯-->
+
+    <weapon key="ex_soma_prime.weapon" /><!--月神-->
+    <weapon key="re_ex_soma_prime.weapon" /><!--月神-->
+    <weapon key="re_ex_soma_prime_sword.weapon" /><!--月神-->
     <!-- MK1 2W-->
     <weapon key="acg_smg_strelka.weapon" enabled="0"/><!--冲锋枪 by kurumi-->
     <weapon key="re_acg_smg_strelka.weapon" /><!--冲锋枪 by kurumi-->
@@ -118,4 +123,7 @@
     <weapon key="acg_m14.weapon" enabled="0"/><!--M14-->
     <weapon key="re_acg_m14.weapon" /><!--M14-->
 	
+    <weapon key="acg_mari_sports_ver.weapon" /><!--玛丽 体操服-->
+    <weapon key="re_acg_mari_sports_ver.weapon" /><!--玛丽 体操服-->
+
 </resources>
