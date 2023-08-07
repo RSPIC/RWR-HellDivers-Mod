@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>	
+<weapons> 
 <weapon 
 file="_rare_weapon_mk3.base"
 key="acg_iws2000_banisher.weapon"
@@ -136,5 +137,143 @@ key="acg_iws2000_banisher.weapon"
 
 
 </weapon>
+<weapon 
+file="_rare_weapon_mk3_re.base"
+key="re_acg_iws2000_banisher.weapon"
+>
+    <specification 	
+    slot="0" 	
+    retrigger_time="2.0" 
+	last_burst_retrigger_time="2.0"
+    accuracy_factor="1" 
+	spread_range="0.1"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="4.0" 
+    sustained_fire_diminish_rate="0.5" 
+    magazine_size="7" 
+    can_shoot_standing="0" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="1"	
+    suppressed="0" 
+	class="4" 
+    name="IWS2000[The Seventh Banisher]" 
+	sight_range_modifier="3.0" 
+	sight_height_offset="1.0" 
+	burst_shots="1" 
+    projectiles_per_shot="5" 
+    projectile_speed="300.0"
+	barrel_offset="1.2" 
+	carry_in_two_hands="1" 
+	stab_enabled="0" 
+	stab_range="0" 
+	/> 
+	<!--0全自动 4半自动 2栓动 3特殊（需要额外动作）5近程特殊（如部署沙包）-->
+	
+
+	<animation key="recoil" animation_key="recoil1, big" /> <!--后坐力动作，半身动作-->
+    <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
+    <animation state_key="reload" animation_key="reloading_2.5s" />	<!--换弹动作，半身动作-->
+    <animation state_key="hold" animation_key="" /><!--站姿静止动作，全身动作-->
+	<animation state_key="hold_on_wall"  animation_key="" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="" /><!--闲置动作，全身动作-->
+	<animation state_key="running" animation_key="" /><!--全身动作-->
+	<animation state_key="walking" animation_key="" /><!--按shift时候的静步前进动作，全身动作-->
+    <animation state_key="walking_backwards" animation_key="" /><!--全身动作-->
+    <animation state_key="crouching" animation_key="IWS2000_sit_shoot" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
+	<animation state_key="stabbing" animation_key="melee, bayonet" /><!--半身动作，武器可设置脱手-->
+
+    <sound key="effect" fileref="" pitch_variety="0.03" volume="1.0" /> 
+    <sound key="fire" fileref="acg_iws2000_fire.wav" pitch_variety="0.03" volume="1.2" />
+    <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="hd_mag_out.wav" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="hd_mg94_mag_in.wav" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="rifle_chamber.wav" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="hd_cycle_in_01.wav" /><!--动作中in的value为1-->
+    <sound key="last_ammo" fileref="hd_lastammo_01.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_02.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_03.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_04.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+
+    <model filename="acgw_iws2000_banisher.xml" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="acg_iws2000_banisher.png" /> 
+	
+	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="1" source="rank" source_value="0.0" />
+	
+    <weak_hand_hold offset="0.4" /> 
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="9" can_be_detected_by_footmen="1" 
+	time_to_live="0.63" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.7" name="IWS2000[The Seventh Banisher]"> 
+
+		<result class="spawn" instance_class="projectile" instance_key="acg_iws2000_banisher_damage.projectile" 
+		min_amount="5" max_amount="5" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+		<trigger class="impact" />
+		<rotation class="motion" />
+
+		<sound class="result" key="other" fileref="acg_iws2000_hit.wav" volume="1.0" />
+	
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		
+		<effect class="result" key="character" ref="center_area_lighting" />  
+		<effect class="result" key="character" ref="lens_circle_enlarge" />  
+		<effect class="result" key="character" ref="v_type_impact_flare" />  
+		<effect class="result" key="character" ref="anti_U_type_point_penetrate_particle_iws2000" />  
+		<effect class="result" key="character" ref="point_penetrate_linear_light_iws2000" />  
+		<effect class="result" key="character" ref="square_fill_20" />  
+		<effect class="result" key="character" ref="lens_flare_01" />  
+		<effect class="result" key="character" ref="lens_circle" />  
+
+		<effect class="result" type="splat_map" surface_tag="" size="2.0" atlas_index="0" layer="1" />
+		<effect class="result" type="splat_map" surface_tag="" size="4.0" atlas_index="4" layer="0" />
+		<effect class="result" type="splat_map" surface_tag="" size="5.0" atlas_index="0" layer="2" additive="0" /> <!-- remove top snow everywhere -->
+
+		<effect class="result" key="vehicle" copy="character" />
+		<effect class="result" key="static_object" copy="character" />
+		<effect class="result" key="terrain" copy="character" />  
+		<effect class="result" key="other" copy="character"/>
+		<trail probability="1" key="normal_trail_long_bold"/>	
+    </projectile>
+
+	<!--枪口特效-->
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_trail_smoke" lighting="0"/> 
+	<effect class="muzzle" ref="iws2000_recoil_smoke" />
+	<effect class="muzzle" ref="crescent_smoke_impact" />
+	
+	
+    <stance state_key="running" accuracy="0.5" /> 
+    <stance state_key="walking" accuracy="0.7" />
+	<stance state_key="standing" accuracy="0.9" />
+	<stance state_key="crouching" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1.2" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1.2" />     
+     
+    <modifier class="speed" value="-0.15" /> <!--反器材狙-->
+    <modifier class="hit_success_probability" value="0.0" />
+    <modifier class="detectability" value="0.0" />
+
+
+
+
+</weapon>
+</weapons>
 
 

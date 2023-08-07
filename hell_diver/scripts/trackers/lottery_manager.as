@@ -199,10 +199,16 @@ class lottery_manager : Tracker {
                         m_factor = g_battleInfoBuck.bonusFactorRp(name);
                     }
 
-                    if(m_factor != bonusFactor){
-                        notify(m_metagame,"加成卡使用失败，请汇报此情况", dictionary(), "misc", pid, false, "", 1.0);
+                    if(m_factor <= 1){
+                        notify(m_metagame,"加成卡使用失败，请尝试重新使用", dictionary(), "misc", pid, false, "", 1.0);
                         addItemInBackpack(m_metagame,cid,"carry_item",itemKey);
+                        float bf = g_battleInfoBuck.bonusFactor(name);
+                        float bfx = g_battleInfoBuck.bonusFactorXp(name);
+                        float bfr = g_battleInfoBuck.bonusFactorRp(name);
+                        notify(m_metagame,"测试输出：全局倍率="+bf+"，xp倍率="+bfx+"，rp倍率="+bfr, dictionary(), "misc", pid, false, "", 1.0);
                         g_battleInfoBuck.setBonusFactor(name,1.0);
+                        g_battleInfoBuck.setBonusFactorXp(name,1.0);
+                        g_battleInfoBuck.setBonusFactorRp(name,1.0);
                         g_firstUseInfoBuck.removeFirst(name,"hd_bonusfactor");
                     }
                     
@@ -244,11 +250,17 @@ class lottery_manager : Tracker {
         int cid = event.getIntAttribute("character_id");
         string name = g_playerInfoBuck.getNameByPid(pid);
         g_userCountInfoBuck.addCount(name,itemKey+"10");
+        g_userCountInfoBuck.addCount(name,itemKey+"50");
         g_userCountInfoBuck.addCount(name,itemKey+"300");
         int value;
         if(g_userCountInfoBuck.getCount(name,itemKey+"10",value) && value == 10){    //十次保底
             addItemInBackpack(m_metagame,cid,"carry_item","reward_box_skin.carry_item");
             notify(m_metagame,"Lottery Guaranteed Reward [10]", dictionary(), "misc", pid, false, "", 1.0);
+            g_userCountInfoBuck.clearCount(name,itemKey+"10");
+        }
+        if(g_userCountInfoBuck.getCount(name,itemKey+"50",value) && value == 10){    //50次保底
+            addItemInBackpack(m_metagame,cid,"carry_item","reward_box_vehicle.carry_item");
+            notify(m_metagame,"五十抽保底已发放[载具箱]", dictionary(), "misc", pid, false, "", 1.0);
             g_userCountInfoBuck.clearCount(name,itemKey+"10");
         }
         if(g_userCountInfoBuck.getCount(name,itemKey+"300",value) && value == 300){    //300吃井

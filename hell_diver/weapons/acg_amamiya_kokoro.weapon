@@ -1,7 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
+<weapons> 
 <weapon 
 file="_rare_weapon_mk3.base" 
 key="acg_amamiya_kokoro.weapon">
+
+    <specification 
+    retrigger_time="0.04" 
+    accuracy_factor="1.0" 
+    sustained_fire_grow_step="0.32" 
+    sustained_fire_diminish_rate="2.2" 
+    magazine_size="122" 
+    can_shoot_standing="1" 
+    carry_in_two_hands="0" 
+    suppressed="0" 
+    name="Amamiya Kokoro" 
+    class="0"
+	reload_one_at_a_time="0"
+	sight_range_modifier="1.0"
+	projectile_speed="150.0"
+	projectiles_per_shot="2"
+	barrel_offset="0.6"
+    burst_shots="1" 
+    stab_enabled="0"
+    use_basic_muzzle_smoke_effect="0"
+    slot="0" 
+    />
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_effect_drop_target.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
+    
+    <animation state_key="recoil"  animation_key="recoil, pistol dual 1" />
+    <animation state_key="recoil"   animation_key="recoil, pistol dual 2" />
+    <animation state_key="recoil" stance_key="over_wall" animation_key="recoil, overwall dual" />
+    <animation state_key="reload"   animation_key="reloading, pistol dual" />
+    <animation state_key="hold" animation_key="still, pistol dual" />
+    <animation state_key="hold_casual"  animation_key="hold_casual, pistol dual" />
+    <animation state_key="hold_on_wall" animation_key="hold, overwall dual" />
+    <animation state_key="still_against_wall"   animation_key="hold_casual, pistol dual" />
+    <animation state_key="crouching"    animation_key="crouch, pistol dual" />
+    <animation state_key="crouch_moving"    animation_key="crouching, pistol 2" />
+    <animation state_key="crouch_moving_backwards"  animation_key="crouching backwards, pistol 2" />
+    <animation state_key="running" animation_key="running, no weapon, 60" />
+    <animation state_key="walking"  animation_key="walking, pistol dual" />
+    <animation state_key="walking_backwards" animation_key="walking backwards, pistol dual" />
+    <animation state_key="changing_weapon_in"   animation_key="change weapon in, single hand carry" />
+    <animation state_key="prone_still" animation_key="prone_still, pistol dual" />
+    <animation state_key="stabbing" animation_key="pistol whip" />
+    <animation state_key="stabbing" animation_key="pistol whip 2" />
+    <animation state_key="stabbing" animation_key="pistol whip 3" />
+    <animation state_key="next_in_chain_in" animation_key="change weapon in" />
+    <animation state_key="next_in_chain_out" animation_key="change weapon out" />    
+
+    <sound key="fire" fileref="kriss_fire.wav" volume="1.0" pitch_variety="0.05"/>
+    <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="hd_mag_out.wav" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="hd_mg94_mag_in.wav" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="rifle_chamber.wav" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="hd_cycle_in_01.wav" /><!--动作中in的value为1-->
+    <sound key="last_ammo" fileref="hd_lastammo_01.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_02.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_03.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_04.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+
+    <model filename="" />
+    <hud_icon filename="acg_amamiya_kokoro.png" />
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.2" can_be_detected_by_driver="1" can_be_disarmed="0" name="Amamiya Kokoro"> 
+	
+		<result class="hit" kill_probability="1.2" 
+		kill_probability_offset_on_successful_hit="4.5"
+		kill_decay_start_time="0.22" kill_decay_end_time="0.22" character_state="death"/>
+		<!-- 25m max damage range / 最高1.5倍射界,且无衰减 -->
+		<!-- 0.3s stun time -->
+		<!-- damage 60hit/70ap stun  -->
+		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+	
+		<!--命中音效-->
+
+		<!--命中特效-->
+		<!--
+		<effect class="result" key="terrain" ref="" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_bullet_light" />
+		-->
+		<effect class="result" key="terrain" ref="general_weapon_result_hitspot" lighting="0"/>
+		<effect class="result" key="character" ref="general_result_smg_stun" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_bullet_light" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_flying_mars_lightblue" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_bullet_centerlight" lighting="0"/>
+		
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<!--尾迹组-->
+		<trail probability="1" key="normal_trail_short_lightblue"/>	
+    </projectile>
+	
+	<!--枪口特效-->
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_lightblue" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0" post_processing="1"/> 
+    
+    <modifier class="speed" value="0.25" /> 
+</weapon>
+<weapon 
+file="_rare_weapon_mk3_re.base" 
+key="re_acg_amamiya_kokoro.weapon">
 
     <specification 
     retrigger_time="0.04" 
@@ -118,3 +240,4 @@ key="acg_amamiya_kokoro.weapon">
     
     <modifier class="speed" value="0.25" /> 
 </weapon>
+</weapons>

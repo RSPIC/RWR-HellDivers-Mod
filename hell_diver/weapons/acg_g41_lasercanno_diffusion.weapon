@@ -192,4 +192,196 @@ key="acg_g41_lasercanno_at.weapon"
     <effect class="muzzle" ref="g41_muzzle_square"/>
 
 </weapon>
+<weapon 
+file="_rare_weapon_mk4_re.base" 
+key="re_acg_g41_lasercanno_diffusion.weapon"
+>
+
+    <specification retrigger_time="1.0" 
+    accuracy_factor="1.0" 
+    sustained_fire_grow_step="0.4" 
+    sustained_fire_diminish_rate="1.0" 
+    magazine_size="3" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+    suppressed="0" 
+    name="G41[Miko's Cannon][Diffusion]" 
+    class="0" 
+    reload_one_at_a_time="0" 
+    sight_range_modifier="1.5" 
+    projectile_speed="100.0" 
+    slot="0" 
+    barrel_offset="1.55" 
+    projectiles_per_shot="1"
+    />
+
+    <next_in_chain key="re_acg_g41_lasercanno_at.weapon" share_ammo="0" />
+
+    <animation key="recoil" ref="40"/>
+    <animation state_key="reload" animation_key="reloading_2.5s" />
+    <animation key="hold" ref="39"/>
+    <animation key="hold_on_wall" ref="39"/>
+    <animation state_key="next_in_chain_in" animation_key="reloading_1.5s" /><!--半身动作，切换模式，本模式切出-->
+
+    <sound key="fire" fileref="lazerfire.wav" volume="1.0"/>
+    <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="pf98_cycle_out.wav" volume="0.3"/><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="pf98_cycle_in.wav" volume="0.3"/><!--动作中in的value为1-->
+    <sound key="cycle" fileref="m79_cycle.wav" volume="0.3"/><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="hd_cycle_in_01.wav" /><!--动作中in的value为1-->
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+
+    <model filename="g41_lasercanno.xml"/>
+
+    <ballistics 
+    curve_height="16" 
+    near_far_distance="0" 
+    speed_estimation_near="0" 
+    speed_estimation_far="58" 
+    max_speed="58" 
+    randomness="0" 
+    tweak_factor="1.48" /> 
+ 
+
+	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="48" can_be_detected_by_footmen="1" 
+	time_to_live="4" can_be_detected_by_driver="1" can_be_disarmed="0" name="G41 LaserCannon"> 
+
+		<result class="spawn" instance_class="grenade" instance_key="acg_g41_lasercanno_diffusion_damage.projectile" 
+		min_amount="10" max_amount="10" offset="0 1 0" position_spread="4 0" direction_spread="0.0 0.0" />
+		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+        <model mesh_filename="javmissile_ap.xml" />
+
+        <effect class="activated" ref="general_activated_at_smoke_trail"/>
+
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<!--尾迹组-->
+		<trail probability="1" key="nova_trail"/>	
+    </projectile>
+
+    <weak_hand_hold offset="-0.35"/>
+       
+    <hud_icon filename="g41_lazer_orange.png"/>
+
+    <effect class="muzzle" ref="g41_muzzle_ring_01"/>
+    <effect class="muzzle" ref="g41_muzzle_ring_02"/>
+    <effect class="muzzle" ref="g41_muzzle_ring_03"/>
+    <effect class="muzzle" ref="g41_muzzle_ring_04"/>
+    <effect class="muzzle" ref="g41_muzzle_ring_05"/>
+    <effect class="muzzle" ref="g41_muzzle_square"/>
+    <effect class="muzzle" ref="g41_muzzle_environment_light"/>
+</weapon>
+
+<weapon 
+file="_rare_weapon_mk4_re.base" 
+key="re_acg_g41_lasercanno_at.weapon"
+>
+    <tag name="sniper" />
+    <specification 
+	retrigger_time="1.4" 
+	accuracy_factor="1" 
+	sustained_fire_grow_step="2.0" 
+	sustained_fire_diminish_rate="2.0" 
+	magazine_size="3" 
+	can_shoot_standing="1" 
+	can_shoot_crouching="1" 
+	suppressed="0" 
+	name="G41[Miko's Cannon][Railgun]" 
+	class="0" 
+	reload_one_at_a_time="0" 
+	sight_range_modifier="2.0" 
+	projectile_speed="200.0" 
+	barrel_offset="1.55" 
+	projectiles_per_shot="7" 
+	burst_shots="1"/>
+  
+	<next_in_chain key="re_acg_g41_lasercanno_diffusion.weapon" share_ammo="0" />
+  
+    <animation key="recoil" ref="27" />
+    <animation key="cycle" ref="30" />
+    <animation state_key="reload" animation_key="reloading_2.5s" />
+
+     
+    <sound key="fire" fileref="SCIWeap_SHOT_Large_Laser_Astral_Disintegrator_B00M_CWDS_01.wav" pitch_variety="0.00"  volume="0.2" />
+    <sound key="fire" fileref="SCIWeap_SHOT_Large_Laser_Astral_Disintegrator_B00M_CWDS_02.wav" pitch_variety="0.00"  volume="0.2" />
+    <sound key="fire" fileref="SCIWeap_SHOT_Large_Laser_Astral_Disintegrator_B00M_CWDS_03.wav" pitch_variety="0.00"  volume="0.2" />
+    <sound key="fire" fileref="SCIWeap_SHOT_Large_Laser_Astral_Disintegrator_B00M_CWDS_04.wav" pitch_variety="0.00"  volume="0.2" />
+    <sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="pf98_cycle_out.wav" volume="0.3"/><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="pf98_cycle_in.wav" volume="0.3"/><!--动作中in的value为1-->
+    <sound key="cycle" fileref="m79_cycle.wav" volume="0.3"/><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="hd_cycle_in_01.wav" /><!--动作中in的value为1-->
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+
+    <model filename="g41_lasercanno_blue.xml" />
+    <hud_icon filename="g41_lazer_blue.png" />
+
+    <weak_hand_hold offset="0.3" />
+    <!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
+    <projectile file="hd_general_spawn_no_effect.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0" name="G41 LaserCannon" radius="0.6"> 
+	
+        <result class="blast" radius="3.5" damage="40" push="0.9" decal="0" character_state="wound" faction_compare="not_equal"/>
+   
+		<trigger class="impact" time_to_live="1.22"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+	
+		<sound class="result" key="other" fileref="g41_lasercannon_hit.wav" pitch_variety="0.03" volume="3.0" />
+
+		<trail probability="1" key="g41_laser"/>
+		
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+    </projectile>
+	
+    <effect class="muzzle" ref="g41_muzzle_pre_red_laser"/>
+    <effect class="muzzle" ref="g41_muzzle_yellow_light"/>
+    <effect class="muzzle" ref="g41_muzzle_ring_01"/>
+    <effect class="muzzle" ref="g41_muzzle_ring_02"/>
+    <effect class="muzzle" ref="g41_muzzle_environment_light"/>	
+    <effect class="muzzle" ref="g41_muzzle_ring_03"/>
+    <effect class="muzzle" ref="g41_muzzle_ring_04"/>
+    <effect class="muzzle" ref="g41_muzzle_ring_05"/>
+    <effect class="muzzle" ref="g41_muzzle_square"/>
+
+</weapon>
 </weapons>

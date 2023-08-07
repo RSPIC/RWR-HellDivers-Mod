@@ -10,7 +10,7 @@ radio_view_text="Call Shredder Missile Strike"
 
     <round instances="1"
            instance_class="projectile"
-           instance_key="hd_offensive_shredder_missile_strike_mk3.projectile" 
+           instance_key="hd_offensive_shredder_missile_strike_mk3_call.projectile" 
            instance_spread="0 0 0" 
            common_spread="0 0 0" 
            launch_time="2"
@@ -28,6 +28,6 @@ radio_view_text="Call Shredder Missile Strike"
     <hud_icon filename="hd_shredder_missile_strike_mk3.png" />
     <capacity value="0" source="rank" source_value="0.0" />
     <capacity value="1" source="rank" source_value="0.0" />
-    <inventory encumbrance="0.0" price="1500.0" />
+    <inventory encumbrance="0.0" price="1200.0" />
 
 </call>

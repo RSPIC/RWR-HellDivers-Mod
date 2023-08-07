@@ -1,96 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <models>
 <!-- 同人 -->
-	<model filename="acg_asakaze.xml"> <!--朝风--><requirement class="projectile" slot="2" key="token_asakaze.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_lulu.xml" > <!--璐璐--><requirement class="projectile" slot="0" key="token_lulu.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_longdan.xml" > <!--龙胆--><requirement class="projectile" slot="0" key="token_longdan.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_scented.xml"  > <!--Scented--><requirement class="projectile" slot="0" key="token_scented.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_neco.xml"  > <!--Neco--><requirement class="projectile" slot="0" key="token_neco.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_api.xml"  > <!--API--><requirement class="projectile" slot="0" key="token_api.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_fenrir_black.xml"  > <!--芬里尔 黑--><requirement class="projectile" slot="0" key="token_fenrir_black.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_fenrir_white.xml"  > <!--芬里尔 白--><requirement class="projectile" slot="0" key="token_fenrir_white.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_kemomimi.xml"> <!--桃子酱（小狐狸）--><requirement class="projectile" slot="0" key="token_kemomimi.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_natsuki_amagi.xml"  > <!--甘城なつき（猫）--><requirement class="projectile" slot="0" key="token_natsuki_amagi.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_maido1.xml"  > <!--女仆 by DNTK--><requirement class="projectile" slot="0" key="token_maido1.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_maido2.xml"  > <!--女仆 by DNTK--><requirement class="projectile" slot="0" key="token_maido2.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_maido3.xml"  > <!--女仆 by DNTK--><requirement class="projectile" slot="0" key="token_maido3.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_maido4.xml"  > <!--女仆 by DNTK--><requirement class="projectile" slot="0" key="token_maido4.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_rkgk.xml"  > <!--女仆 by DNTK--><requirement class="projectile" slot="0" key="token_rkgk.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_gawr_gura.xml"  > <!--噶呜·古拉 鲨鱼--><requirement class="projectile" slot="0" key="token_gawr_gura.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_kagamine_rin.xml"  > <!--镜音铃 by DNTK--><requirement class="projectile" slot="0" key="token_kagamine_rin.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_heavy_equip_jk_ii.xml"  > <!--重装JK II by DNTK--><requirement class="projectile" slot="0" key="token_heavy_equip_jk_ii.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_incomparable.xml"  > <!--无比 by yaba--><requirement class="projectile" slot="0" key="token_incomparable.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_alibina.xml"  > <!--阿莉比娜  by Kurumi--><requirement class="projectile" slot="0" key="token_alibina.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_strelka.xml"  > <!--by Kurumi--><requirement class="projectile" slot="0" key="token_strelka.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_amamiya_kokoro.xml"  > <!--阿喵喵 by Keilsama--><requirement class="projectile" slot="0" key="token_amamiya_kokoro.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_patricia_abelheim.xml"  > <!--帕特莉夏·阿贝尔海姆--><requirement class="projectile" slot="0" key="token_patricia_abelheim.projectile"/><requirement class="rank" range="0 90000"/></model>
+	<model filename="acg_asakaze.xml"> <!--朝风--><requirement class="projectile" slot="2" key="token_asakaze.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_lulu.xml" > <!--璐璐--><requirement class="projectile" slot="0" key="token_lulu.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_longdan.xml" > <!--龙胆--><requirement class="projectile" slot="0" key="token_longdan.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_scented.xml"  > <!--Scented--><requirement class="projectile" slot="0" key="token_scented.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_neco.xml"  > <!--Neco--><requirement class="projectile" slot="0" key="token_neco.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_api.xml"  > <!--API--><requirement class="projectile" slot="0" key="token_api.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_fenrir_black.xml"  > <!--芬里尔 黑--><requirement class="projectile" slot="0" key="token_fenrir_black.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_fenrir_white.xml"  > <!--芬里尔 白--><requirement class="projectile" slot="0" key="token_fenrir_white.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_kemomimi.xml"> <!--桃子酱（小狐狸）--><requirement class="projectile" slot="0" key="token_kemomimi.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_natsuki_amagi.xml"  > <!--甘城なつき（猫）--><requirement class="projectile" slot="0" key="token_natsuki_amagi.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_maido1.xml"  > <!--女仆 by DNTK--><requirement class="projectile" slot="0" key="token_maido1.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_maido2.xml"  > <!--女仆 by DNTK--><requirement class="projectile" slot="0" key="token_maido2.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_maido3.xml"  > <!--女仆 by DNTK--><requirement class="projectile" slot="0" key="token_maido3.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_maido4.xml"  > <!--女仆 by DNTK--><requirement class="projectile" slot="0" key="token_maido4.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_rkgk.xml"  > <!--女仆 by DNTK--><requirement class="projectile" slot="0" key="token_rkgk.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_gawr_gura.xml"  > <!--噶呜·古拉 鲨鱼--><requirement class="projectile" slot="0" key="token_gawr_gura.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_kagamine_rin.xml"  > <!--镜音铃 by DNTK--><requirement class="projectile" slot="0" key="token_kagamine_rin.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_heavy_equip_jk_ii.xml"  > <!--重装JK II by DNTK--><requirement class="projectile" slot="0" key="token_heavy_equip_jk_ii.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_incomparable.xml"  > <!--无比 by yaba--><requirement class="projectile" slot="0" key="token_incomparable.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_alibina.xml"  > <!--阿莉比娜  by Kurumi--><requirement class="projectile" slot="0" key="token_alibina.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_strelka.xml"  > <!--by Kurumi--><requirement class="projectile" slot="0" key="token_strelka.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_amamiya_kokoro.xml"  > <!--阿喵喵 by Keilsama--><requirement class="projectile" slot="0" key="token_amamiya_kokoro.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_patricia_abelheim.xml"  > <!--帕特莉夏·阿贝尔海姆--><requirement class="projectile" slot="0" key="token_patricia_abelheim.projectile"/><requirement class="rank" range="0 999999"/></model>
 	
 <!-- 明日方舟 -->
-	<model filename="acg_skyfire.xml"  > <!--天火--><requirement class="projectile" slot="0" key="token_skyfire.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_fiammetta.xml"> <!--菲娅梅塔 by Gandaruvu807--><requirement class="projectile" slot="0" key="token_fiammetta.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_texas.xml"><!--德克萨斯--><requirement class="projectile" slot="0" key="token_texas.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_lappland_refined_horrormare.xml"><!--德克萨斯--><requirement class="projectile" slot="0" key="token_lappland_refined_horrormare.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_kal_tsit_m3.xml"><!--凯尔希--><requirement class="projectile" slot="0" key="token_kal_tsit_m3.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_kal_tsit.xml"><!--凯尔希--><requirement class="projectile" slot="0" key="token_kal_tsit.projectile"/><requirement class="rank" range="0 90000"/></model>
+	<model filename="acg_skyfire.xml"  > <!--天火--><requirement class="projectile" slot="0" key="token_skyfire.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_fiammetta.xml"> <!--菲娅梅塔 by Gandaruvu807--><requirement class="projectile" slot="0" key="token_fiammetta.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_texas.xml"><!--德克萨斯--><requirement class="projectile" slot="0" key="token_texas.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_lappland_refined_horrormare.xml"><!--德克萨斯--><requirement class="projectile" slot="0" key="token_lappland_refined_horrormare.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_kal_tsit_m3.xml"><!--凯尔希--><requirement class="projectile" slot="0" key="token_kal_tsit_m3.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_kal_tsit.xml"><!--凯尔希--><requirement class="projectile" slot="0" key="token_kal_tsit.projectile"/><requirement class="rank" range="0 999999"/></model>
 
 <!-- 原神 -->
-	<model filename="acg_sangonomiya_kokomi.xml" > <!--珊瑚宫心海--><requirement class="projectile" slot="0" key="token_sangonomiya_kokomi.projectile"/><requirement class="rank" range="0 90000"/></model>
+	<model filename="acg_sangonomiya_kokomi.xml" > <!--珊瑚宫心海--><requirement class="projectile" slot="0" key="token_sangonomiya_kokomi.projectile"/><requirement class="rank" range="0 999999"/></model>
 <!-- 崩坏 -->
-	<model filename="acg_bronya_ex_1.xml" > <!--布洛妮娅常服--><requirement class="projectile" slot="0" key="token_bronya_ex_1.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_raiden_mei_ex_1.xml"  > <!--雷电芽衣常服--><requirement class="projectile" slot="0" key="token_raiden_mei_ex_1.projectile"/><requirement class="rank" range="0 90000"/></model>
+	<model filename="acg_bronya_ex_1.xml" > <!--布洛妮娅常服--><requirement class="projectile" slot="0" key="token_bronya_ex_1.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_raiden_mei_ex_1.xml"  > <!--雷电芽衣常服--><requirement class="projectile" slot="0" key="token_raiden_mei_ex_1.projectile"/><requirement class="rank" range="0 999999"/></model>
 <!-- 东方project -->
-	<model filename="acg_reisenu.xml"><!--铃仙--><requirement class="projectile" slot="0" key="token_reisenu.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_reisenu_ex.xml"><!--铃仙--><requirement class="projectile" slot="0" key="token_reisenu_ex.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_rubyrose.xml"><!--RubyRose 新月玫瑰--><requirement class="projectile" slot="0" key="token_rubyrose.projectile"/><requirement class="rank" range="0 90000"/></model>
+	<model filename="acg_reisenu.xml"><!--铃仙--><requirement class="projectile" slot="0" key="token_reisenu.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_reisenu_ex.xml"><!--铃仙--><requirement class="projectile" slot="0" key="token_reisenu_ex.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_rubyrose.xml"><!--RubyRose 新月玫瑰--><requirement class="projectile" slot="0" key="token_rubyrose.projectile"/><requirement class="rank" range="0 999999"/></model>
 <!-- 舰队collection -->
-	<model filename="acg_yuudachi_halloween_ver.xml"  > <!--夕立万圣节装--><requirement class="projectile" slot="0" key="token_yuudachi_halloween_ver.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_shigure_summer_ver.xml"  > <!--时雨水着--><requirement class="projectile" slot="0" key="token_shigure_summer_ver.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_uzuki.xml"  > <!--卯月噗噗个噗--><requirement class="projectile" slot="0" key="token_uzuki.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_shigure.xml" > <!--时雨改二--><requirement class="projectile" slot="0" key="token_shigure.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_hibiki.xml"  > <!--响 by MelonDove--><requirement class="projectile" slot="0" key="token_hibiki.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_amatsukaze.xml"  > <!--天津风 by MelonDove--><requirement class="projectile" slot="0" key="token_amatsukaze.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_tashkent_equipment.xml"  > <!--塔什干 by yaba--><requirement class="projectile" slot="0" key="token_tashkent_equipment.projectile"/><requirement class="rank" range="0 90000"/></model>
+	<model filename="acg_yuudachi_halloween_ver.xml"  > <!--夕立万圣节装--><requirement class="projectile" slot="0" key="token_yuudachi_halloween_ver.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_shigure_summer_ver.xml"  > <!--时雨水着--><requirement class="projectile" slot="0" key="token_shigure_summer_ver.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_uzuki.xml"  > <!--卯月噗噗个噗--><requirement class="projectile" slot="0" key="token_uzuki.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_shigure.xml" > <!--时雨改二--><requirement class="projectile" slot="0" key="token_shigure.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_hibiki.xml"  > <!--响 by MelonDove--><requirement class="projectile" slot="0" key="token_hibiki.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_amatsukaze.xml"  > <!--天津风 by MelonDove--><requirement class="projectile" slot="0" key="token_amatsukaze.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_tashkent_equipment.xml"  > <!--塔什干 by yaba--><requirement class="projectile" slot="0" key="token_tashkent_equipment.projectile"/><requirement class="rank" range="0 999999"/></model>
 <!-- 碧蓝航线 -->
-	<model filename="acg_yuudachi_azurlane_origin.xml" > <!--夕立碧蓝航线原皮--><requirement class="projectile" slot="0" key="token_yuudachi_azurlane_origin.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_perseus.xml"  > <!--英仙座--><requirement class="projectile" slot="0" key="token_perseus.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_yukikaze.xml"  > <!--雪风--><requirement class="projectile" slot="0" key="token_yukikaze.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_graf_spee_sweater_ver.xml"  > <!--斯佩伯爵 毛衣常服[平和的一天]--><requirement class="projectile" slot="0" key="token_graf_spee_sweater_ver.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_felix_schultz.xml"  > <!--菲利克斯舒尔茨--><requirement class="projectile" slot="0" key="token_felix_schultz.projectile"/><requirement class="rank" range="0 90000"/></model>
+	<model filename="acg_yuudachi_azurlane_origin.xml" > <!--夕立碧蓝航线原皮--><requirement class="projectile" slot="0" key="token_yuudachi_azurlane_origin.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_perseus.xml"  > <!--英仙座--><requirement class="projectile" slot="0" key="token_perseus.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_yukikaze.xml"  > <!--雪风--><requirement class="projectile" slot="0" key="token_yukikaze.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_graf_spee_sweater_ver.xml"  > <!--斯佩伯爵 毛衣常服[平和的一天]--><requirement class="projectile" slot="0" key="token_graf_spee_sweater_ver.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_felix_schultz.xml"  > <!--菲利克斯舒尔茨--><requirement class="projectile" slot="0" key="token_felix_schultz.projectile"/><requirement class="rank" range="0 999999"/></model>
 <!-- 动漫 -->
-	<model filename="acg_iruru.xml"  > <!--伊露露--><requirement class="projectile" slot="0" key="token_iruru.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_faputa.xml"  > <!--法仆塔--><requirement class="projectile" slot="0" key="token_faputa.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_nanachi.xml" > <!--娜娜奇--><requirement class="projectile" slot="0" key="token_nanachi.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_rem.xml"  > <!--雷姆--><requirement class="projectile" slot="0" key="token_rem.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_tachibana_kanade.xml"  > <!--立华奏--><requirement class="projectile" slot="0" key="token_tachibana_kanade.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_kaname_madoka.xml"  > <!--魔法少女小圆--><requirement class="projectile" slot="0" key="token_kaname_madoka.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_shokuhou_misaki.xml"  > <!--食蜂操祈--><requirement class="projectile" slot="0" key="token_shokuhou_misaki.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_megumin.xml" ><!--慧慧--><requirement class="projectile" slot="0" key="token_megumin.projectile"/><requirement class="rank" range="0 90000"/></model>
+	<model filename="acg_iruru.xml"  > <!--伊露露--><requirement class="projectile" slot="0" key="token_iruru.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_faputa.xml"  > <!--法仆塔--><requirement class="projectile" slot="0" key="token_faputa.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_nanachi.xml" > <!--娜娜奇--><requirement class="projectile" slot="0" key="token_nanachi.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_rem.xml"  > <!--雷姆--><requirement class="projectile" slot="0" key="token_rem.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_tachibana_kanade.xml"  > <!--立华奏--><requirement class="projectile" slot="0" key="token_tachibana_kanade.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_kaname_madoka.xml"  > <!--魔法少女小圆--><requirement class="projectile" slot="0" key="token_kaname_madoka.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_shokuhou_misaki.xml"  > <!--食蜂操祈--><requirement class="projectile" slot="0" key="token_shokuhou_misaki.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_megumin.xml" ><!--慧慧--><requirement class="projectile" slot="0" key="token_megumin.projectile"/><requirement class="rank" range="0 999999"/></model>
 <!-- 碧蓝档案 -->
-	<model filename="acg_alice_tendou.xml"  > <!--天童爱丽丝--><requirement class="projectile" slot="0" key="token_alice_tendou.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_takanashi_hoshino.xml" > <!--小鸟游星野--><requirement class="projectile" slot="0" key="token_takanashi_hoshino.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_sorasaki_hina.xml" ><!--空崎阳奈--><requirement class="projectile" slot="0" key="token_sorasaki_hina.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_miyu.xml" ><!--空崎阳奈--><requirement class="projectile" slot="0" key="token_miyu.projectile"/><requirement class="rank" range="0 90000"/></model>
+	<model filename="acg_alice_tendou.xml"  > <!--天童爱丽丝--><requirement class="projectile" slot="0" key="token_alice_tendou.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_takanashi_hoshino.xml" > <!--小鸟游星野--><requirement class="projectile" slot="0" key="token_takanashi_hoshino.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_sorasaki_hina.xml" ><!--空崎阳奈--><requirement class="projectile" slot="0" key="token_sorasaki_hina.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_miyu.xml" ><!--空崎阳奈--><requirement class="projectile" slot="0" key="token_miyu.projectile"/><requirement class="rank" range="0 999999"/></model>
 <!-- 少女前线 -->
-	<model filename="acg_mg4_703.xml" ><!--MG4机枪--><requirement class="projectile" slot="0" key="token_mg4_703.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_mg4.xml" ><!--MG4机枪--><requirement class="projectile" slot="0" key="token_mg4.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_cz75.xml"  > <!--cz75手枪--><requirement class="projectile" slot="0" key="token_cz75.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_g41_2064.xml"  > <!--G41突击步枪--><requirement class="projectile" slot="0" key="token_g41_2064.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_g41_schoolsuit.xml"  > <!--G41 校服--><requirement class="projectile" slot="0" key="token_g41_schoolsuit.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_angelia.xml" > <!--安洁莉娅--><requirement class="projectile" slot="0" key="token_angelia.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_m37_summer_parader.xml" > <!--M37盛夏巡礼者--><requirement class="projectile" slot="0" key="token_m37_summer_parader.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_tima.xml"  > <!--蒂玛--><requirement class="projectile" slot="0" key="token_tima.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_iws2000_sandcastle_terminator.xml"  > <!--iws2000沙堡终结者--><requirement class="projectile" slot="0" key="token_iws2000_sandcastle_terminator.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_iws2000_banisher.xml" > <!--iws2000第七封印者--><requirement class="projectile" slot="0" key="token_iws2000_banisher.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_iws2000.xml"  > <!--iws2000原皮--><requirement class="projectile" slot="0" key="token_iws2000.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_hk416_starry_cocoon.xml" > <!--HK416星之茧--><requirement class="projectile" slot="0" key="token_hk416_starry_cocoon.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="acg_m14.xml" > <!--M14--><requirement class="projectile" slot="0" key="token_m14.projectile"/><requirement class="rank" range="0 90000"/></model>
+	<model filename="acg_mg4_703.xml" ><!--MG4机枪--><requirement class="projectile" slot="0" key="token_mg4_703.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_mg4.xml" ><!--MG4机枪--><requirement class="projectile" slot="0" key="token_mg4.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_cz75.xml"  > <!--cz75手枪--><requirement class="projectile" slot="0" key="token_cz75.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_g41_2064.xml"  > <!--G41突击步枪--><requirement class="projectile" slot="0" key="token_g41_2064.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_g41_schoolsuit.xml"  > <!--G41 校服--><requirement class="projectile" slot="0" key="token_g41_schoolsuit.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_angelia.xml" > <!--安洁莉娅--><requirement class="projectile" slot="0" key="token_angelia.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_m37_summer_parader.xml" > <!--M37盛夏巡礼者--><requirement class="projectile" slot="0" key="token_m37_summer_parader.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_tima.xml"  > <!--蒂玛--><requirement class="projectile" slot="0" key="token_tima.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_iws2000_sandcastle_terminator.xml"  > <!--iws2000沙堡终结者--><requirement class="projectile" slot="0" key="token_iws2000_sandcastle_terminator.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_iws2000_banisher.xml" > <!--iws2000第七封印者--><requirement class="projectile" slot="0" key="token_iws2000_banisher.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_iws2000.xml"  > <!--iws2000原皮--><requirement class="projectile" slot="0" key="token_iws2000.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_hk416_starry_cocoon.xml" > <!--HK416星之茧--><requirement class="projectile" slot="0" key="token_hk416_starry_cocoon.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_m14.xml" > <!--M14--><requirement class="projectile" slot="0" key="token_m14.projectile"/><requirement class="rank" range="0 999999"/></model>
 <!-- 灰烬战线 -->
-	<model filename="acg_88mm_flak41.xml"  > <!--88炮--><requirement class="projectile" slot="0" key="token_88mm_flak41.projectile"/><requirement class="rank" range="0 90000"/></model>
+	<model filename="acg_88mm_flak41.xml"  > <!--88炮--><requirement class="projectile" slot="0" key="token_88mm_flak41.projectile"/><requirement class="rank" range="0 999999"/></model>
 
 <!-- 其他 -->
-	<model filename="hdicker_tactical_combat.xml"  > <!--HDicker--><requirement class="projectile" slot="0" key="token_hdicker_tactical_combat.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="hdicker_tactical.xml"  > <!--HDicker--><requirement class="projectile" slot="0" key="token_hdicker_tactical.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="hdicker_para.xml"  > <!--HDicker--><requirement class="projectile" slot="0" key="token_hdicker_para.projectile"/><requirement class="rank" range="0 90000"/></model>
-	<model filename="hdicker_marker.xml"  > <!--HDicker--><requirement class="projectile" slot="0" key="token_hdicker_marker.projectile"/><requirement class="rank" range="0 90000"/></model>
+	<model filename="hdicker_tactical_combat.xml"  > <!--HDicker--><requirement class="projectile" slot="0" key="token_hdicker_tactical_combat.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="hdicker_tactical.xml"  > <!--HDicker--><requirement class="projectile" slot="0" key="token_hdicker_tactical.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="hdicker_para.xml"  > <!--HDicker--><requirement class="projectile" slot="0" key="token_hdicker_para.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="hdicker_marker.xml"  > <!--HDicker--><requirement class="projectile" slot="0" key="token_hdicker_marker.projectile"/><requirement class="rank" range="0 999999"/></model>
 
 </models>

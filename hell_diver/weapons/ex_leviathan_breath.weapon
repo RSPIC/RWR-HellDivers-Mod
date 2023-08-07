@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>	
+<weapons> 
 <weapon 
 file="_rare_weapon_mk5.base"
 key="ex_leviathan_breath.weapon" 
@@ -132,5 +133,425 @@ key="ex_leviathan_breath.weapon"
 
 	 
 </weapon>
+<weapon 
+file="_rare_weapon_mk5.base"
+key="ex_trinity_ghoul.weapon" 
+> 
+    <specification 	
+    slot="0" 	
+    retrigger_time="0.1" 
+	last_burst_retrigger_time="3"
+    accuracy_factor="0.94" 
+	spread_range="1"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="10" 
+    sustained_fire_diminish_rate="10" 
+    magazine_size="-1" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="0"	
+    suppressed="0" 
+	class="4" 
+    name="Trinity Ghoul" 
+	sight_range_modifier="2.2" 
+	sight_height_offset="1.0" 
+	burst_shots="3" 
+    projectiles_per_shot="4" 
+    projectile_speed="300.0"
+	barrel_offset="1.3" 
+	carry_in_two_hands="1" 
+	stab_enabled="0" 
+	stab_range="2" 
+	use_basic_muzzle_smoke_effect="0"
+	/> 
+	<!--0全自动 4半自动 2栓动 3特殊（需要额外动作）5近程特殊（如部署沙包）-->
+	
+    <next_in_chain key="ex_leviathan_breath.weapon" share_ammo="0" /> 
+
+	<animation state_key="recoil" animation_key="recoil_crouch_bow" />
+    <animation state_key="hold" animation_key="change_crouch_bow" />
+    <animation state_key="crouching" animation_key="change_crouch_bow" />
+    <animation state_key="crouch_moving" animation_key="crouching forwards, bow" />
+    <animation state_key="crouch_moving_backwards" animation_key="crouching backwards, bow" />
+    <animation state_key="walking_backwards" animation_key="walking backwards, bow" />  
+    <animation state_key="reload" animation_key="reload, bow" volume="0.7" />
+    <animation state_key="hold_on_wall" animation_key="still, bow" />
+    <animation state_key="still_against_wall" animation_key="still, bow" />
+    <animation state_key="walking" animation_key="walking, bow" />
+    <animation state_key="running" animation_key="running, bow" />
+    <animation state_key="hold_casual" animation_key="casual, bow" />
+	<animation state_key="next_in_chain_in" animation_key="exchange_bow" />
+	<animation state_key="next_in_chain_out" animation_key="" />
+	
+    <sound key="effect" fileref="" pitch_variety="0.03" volume="1.0" /> 
+    <sound key="fire" fileref="thbow_fire.wav" pitch_variety="0.03" volume="0.3" />
+    <sound key="dry_fire" fileref="" pitch_variety="0.03" volume="1.0" />
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="0.5" />
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="0.9" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="0.8" />
+    <sound key="magazine_out" fileref="mg_clip_out.wav" />
+    <sound key="magazine_in" fileref="mg_clip_in.wav" />
+    <sound key="cycle" fileref="bow_reload.wav" />
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" />
+    <sound key="last_ammo" fileref="" />
+	<sound class="impact" fileref="rifle_drop.wav" />
+
+    <model filename="trinity_ghoul.xml" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="trinity_ghoul.png" /> 
+	
+	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="1" source="rank" source_value="0.0" />
+	
+    <weak_hand_hold offset="0.3" /> 
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="46" can_be_detected_by_footmen="1" 
+	time_to_live="3.5" can_be_detected_by_driver="1" can_be_disarmed="0" class="grenade"> 
+		<!-- 3x4x30 -->
+		<result class="blast" radius="5.5" damage="30" push="0.4" decal="0" character_state="death"  faction_compare="not_equal"/>
+		<trigger class="impact"  />
+		<rotation class="motion" />
+		<collision class="sticky" />
+		
+		<sound class="result" key="terrain" fileref="thbow_hit.wav" pitch_variety="0.03" volume="0.3" />
+		<sound class="result" key="terrain" fileref="thbow_hit2.wav" pitch_variety="0.03" volume="0.3" />
+		<sound class="result" key="terrain" fileref="thbow_hit.wav" pitch_variety="0.03" volume="0.3" />
+		
+		<effect class="result" key="terrain" ref="401_thbow_tracking_thunder" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_tracking_line_inBox" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_spread_ring" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_impact" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_spray" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_impact_vertical" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_surrounding_thunder" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_surrounding_thunder_2" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_surrounding_thunder_3" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_surrounding_thunder_4" lighting="0"/>
+		<effect class="activated" ref="401_thbow_activated_trail"/>
+		<effect class="activated" ref="401_thbow_activated_thunder"/>
+		<trail probability="1" key="bow_thunder"/>
+		
+		<sound class="result" key="other" copy="terrain" />
+		<sound class="result" key="static_object" copy="terrain" />
+		<sound class="result" key="vehicle" copy="terrain" />
+		<sound class="result" key="character" copy="terrain" />
+		<sound class="result" key="shield" copy="terrain" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		<trail probability="1" key=""/>	
+    </projectile>
+		<effect class="muzzle" ref="401_thbow_muzzle_ring" lighting="0" />
+		<effect class="muzzle" ref="401_thbow_muzzle_smoke" lighting="0" />
+		
+	<ballistics 
+    curve_height="16" 
+    near_far_distance="0" 
+    speed_estimation_near="0" 
+    speed_estimation_far="75" 
+    max_speed="65" 
+    randomness="0" 
+    tweak_factor="1.52" /> 
+	
+    <stance state_key="running" accuracy="1.02" /> 
+    <stance state_key="walking" accuracy="1.02" />
+	<stance state_key="standing" accuracy="1.02" />
+	<stance state_key="crouching" accuracy="1.05" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1.02" />     
+     
+    <modifier class="speed" value="0.1" /> 
+    <modifier class="hit_success_probability" value="0.0" />
+    <modifier class="detectability" value="0.0" />
+
+
+</weapon>
+<weapon 
+file="_rare_weapon_mk5_re.base"
+key="re_ex_leviathan_breath.weapon" 
+> 
+    <specification 	
+    slot="0" 	
+    retrigger_time="0.1" 
+	last_burst_retrigger_time="3"
+    accuracy_factor="1.0" 
+	spread_range="1"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="10" 
+    sustained_fire_diminish_rate="0.4" 
+    magazine_size="-1" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="1"	
+    suppressed="0" 
+	class="4" 
+    name="Leviathan Breath" 
+	sight_range_modifier="2.2" 
+	sight_height_offset="1.0" 
+	burst_shots="1" 
+    projectiles_per_shot="1" 
+    projectile_speed="300.0"
+	barrel_offset="0.6" 
+	carry_in_two_hands="1" 
+	stab_enabled="0" 
+	stab_range="2" 
+	use_basic_muzzle_smoke_effect="0"
+	/> 
+	<!--0全自动 4半自动 2栓动 3特殊（需要额外动作）5近程特殊（如部署沙包）-->
+	
+    <next_in_chain key="re_ex_trinity_ghoul.weapon" share_ammo="0" /> 
+
+	<animation state_key="recoil" animation_key="recoil_standing_big_bow" />
+    <animation state_key="hold" animation_key="recover_recoil_standing_big_bow" />
+    <animation state_key="crouching" animation_key="crouch still, bow" />
+    <animation state_key="crouch_moving" animation_key="crouching forwards, bow" />
+    <animation state_key="crouch_moving_backwards" animation_key="crouching backwards, bow" />
+    <animation state_key="walking_backwards" animation_key="walking backwards, bow" />  
+    <animation state_key="reload" animation_key="reload, bow" volume="0.7" />
+    <animation state_key="hold_on_wall" animation_key="still, bow" />
+    <animation state_key="still_against_wall" animation_key="still, bow" />
+    <animation state_key="walking" animation_key="walking, bow" />
+    <animation state_key="running" animation_key="running, bow" />
+    <animation state_key="hold_casual" animation_key="casual, bow" />
+	<animation state_key="next_in_chain_in" animation_key="exchange_bow" />
+	<animation state_key="next_in_chain_out" animation_key="" />
+	
+    <sound key="effect" fileref="" pitch_variety="0.03" volume="1.0" /> 
+    <sound key="fire" fileref="vabow_fire.wav" pitch_variety="0.03" volume="0.3" />
+    <sound key="dry_fire" fileref="" pitch_variety="0.03" volume="1.0" />
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="0.5" />
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="0.9" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="0.8" />
+    <sound key="magazine_out" fileref="mg_clip_out.wav" />
+    <sound key="magazine_in" fileref="mg_clip_in.wav" />
+    <sound key="cycle" fileref="bow_reload.wav" />
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" />
+    <sound key="last_ammo" fileref="" />
+	<sound class="impact" fileref="rifle_drop.wav" />
+
+    <model filename="leviathan_breath.xml" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="leviathan_breath.png" /> 
+	
+	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="1" source="rank" source_value="0.0" />
+	
+    <weak_hand_hold offset="0.3" /> 
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="9" can_be_detected_by_footmen="1" 
+	time_to_live="1" can_be_detected_by_driver="1" can_be_disarmed="0"  > 
+
+		<result class="blast" radius="3.0" damage="300" push="0.8" decal="0" character_state="wound"  faction_compare="not_equal"/>
+		<trigger class="impact" time_to_live="0" />
+		<rotation class="motion" />
+		
+		<sound class="result" key="terrain" fileref="vabow_hit1.wav" pitch_variety="0.03" volume="0.3" />
+		<sound class="result" key="terrain" fileref="vabow_hit2.wav" pitch_variety="0.03" volume="0.3" />
+		<sound class="result" key="terrain" fileref="vabow_hit3.wav" pitch_variety="0.03" volume="0.3" />
+		<sound class="result" key="terrain" fileref="vabow_hit4.wav" pitch_variety="0.03" volume="0.3" />
+		<sound class="result" key="other" copy="terrain" />
+		<sound class="result" key="static_object" copy="terrain" />
+		<sound class="result" key="vehicle" copy="terrain" />
+		<sound class="result" key="character" copy="terrain" />
+		<sound class="result" key="shield" copy="terrain" />
+		<effect class="activated" ref="401_vabow_activated_spot" />
+		<trail probability="1" key="bow_void"/>	
+		<effect class="result" key="terrain" ref="401_vabow_random_spot_01" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_vabow_random_spot_02" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_vabow_random_spot_03" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_vabow_random_spot_04" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_vabow_ring_spread_spot" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_vabow_hit_dark_tear" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_vabow_hit_dark_ball" lighting="0" post_processing="1"/>
+		<effect class="result" key="terrain" ref="401_vabow_hit_light_ball" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_vabow_hit_center_thudner" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_vabow_hit_center_shrink" lighting="0"/>
+		
+
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		<trail probability="1" key=""/>	
+    </projectile>
+		<effect class="muzzle" ref="401_vabow_muzzle_ring"/>
+		<effect class="muzzle" ref="401_vabow_muzzle_smoke"/>
+	    
+    <stance state_key="running" accuracy="1" /> 
+    <stance state_key="walking" accuracy="1" />
+	<stance state_key="standing" accuracy="1" />
+	<stance state_key="crouching" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1" />     
+     
+    <modifier class="speed" value="0.1" /> 
+    <modifier class="hit_success_probability" value="0.0" />
+    <modifier class="detectability" value="0.0" />
+
+	 
+</weapon>
+<weapon 
+file="_rare_weapon_mk5_re.base"
+key="re_ex_trinity_ghoul.weapon" 
+> 
+    <specification 	
+    slot="0" 	
+    retrigger_time="0.1" 
+	last_burst_retrigger_time="3"
+    accuracy_factor="0.94" 
+	spread_range="1"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="10" 
+    sustained_fire_diminish_rate="10" 
+    magazine_size="-1" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="0"	
+    suppressed="0" 
+	class="4" 
+    name="Trinity Ghoul" 
+	sight_range_modifier="2.2" 
+	sight_height_offset="1.0" 
+	burst_shots="3" 
+    projectiles_per_shot="4" 
+    projectile_speed="300.0"
+	barrel_offset="1.3" 
+	carry_in_two_hands="1" 
+	stab_enabled="0" 
+	stab_range="2" 
+	use_basic_muzzle_smoke_effect="0"
+	/> 
+	<!--0全自动 4半自动 2栓动 3特殊（需要额外动作）5近程特殊（如部署沙包）-->
+	
+    <next_in_chain key="re_ex_leviathan_breath.weapon" share_ammo="0" /> 
+
+	<animation state_key="recoil" animation_key="recoil_crouch_bow" />
+    <animation state_key="hold" animation_key="change_crouch_bow" />
+    <animation state_key="crouching" animation_key="change_crouch_bow" />
+    <animation state_key="crouch_moving" animation_key="crouching forwards, bow" />
+    <animation state_key="crouch_moving_backwards" animation_key="crouching backwards, bow" />
+    <animation state_key="walking_backwards" animation_key="walking backwards, bow" />  
+    <animation state_key="reload" animation_key="reload, bow" volume="0.7" />
+    <animation state_key="hold_on_wall" animation_key="still, bow" />
+    <animation state_key="still_against_wall" animation_key="still, bow" />
+    <animation state_key="walking" animation_key="walking, bow" />
+    <animation state_key="running" animation_key="running, bow" />
+    <animation state_key="hold_casual" animation_key="casual, bow" />
+	<animation state_key="next_in_chain_in" animation_key="exchange_bow" />
+	<animation state_key="next_in_chain_out" animation_key="" />
+	
+    <sound key="effect" fileref="" pitch_variety="0.03" volume="1.0" /> 
+    <sound key="fire" fileref="thbow_fire.wav" pitch_variety="0.03" volume="0.3" />
+    <sound key="dry_fire" fileref="" pitch_variety="0.03" volume="1.0" />
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="0.5" />
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="0.9" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="0.8" />
+    <sound key="magazine_out" fileref="mg_clip_out.wav" />
+    <sound key="magazine_in" fileref="mg_clip_in.wav" />
+    <sound key="cycle" fileref="bow_reload.wav" />
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" />
+    <sound key="last_ammo" fileref="" />
+	<sound class="impact" fileref="rifle_drop.wav" />
+
+    <model filename="trinity_ghoul.xml" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="trinity_ghoul.png" /> 
+	
+	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="1" source="rank" source_value="0.0" />
+	
+    <weak_hand_hold offset="0.3" /> 
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="46" can_be_detected_by_footmen="1" 
+	time_to_live="3.5" can_be_detected_by_driver="1" can_be_disarmed="0" class="grenade"> 
+		<!-- 3x4x30 -->
+		<result class="blast" radius="5.5" damage="30" push="0.4" decal="0" character_state="death"  faction_compare="not_equal"/>
+		<trigger class="impact"  />
+		<rotation class="motion" />
+		<collision class="sticky" />
+		
+		<sound class="result" key="terrain" fileref="thbow_hit.wav" pitch_variety="0.03" volume="0.3" />
+		<sound class="result" key="terrain" fileref="thbow_hit2.wav" pitch_variety="0.03" volume="0.3" />
+		<sound class="result" key="terrain" fileref="thbow_hit.wav" pitch_variety="0.03" volume="0.3" />
+		
+		<effect class="result" key="terrain" ref="401_thbow_tracking_thunder" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_tracking_line_inBox" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_spread_ring" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_impact" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_spray" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_impact_vertical" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_surrounding_thunder" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_surrounding_thunder_2" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_surrounding_thunder_3" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_surrounding_thunder_4" lighting="0"/>
+		<effect class="activated" ref="401_thbow_activated_trail"/>
+		<effect class="activated" ref="401_thbow_activated_thunder"/>
+		<trail probability="1" key="bow_thunder"/>
+		
+		<sound class="result" key="other" copy="terrain" />
+		<sound class="result" key="static_object" copy="terrain" />
+		<sound class="result" key="vehicle" copy="terrain" />
+		<sound class="result" key="character" copy="terrain" />
+		<sound class="result" key="shield" copy="terrain" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		<trail probability="1" key=""/>	
+    </projectile>
+		<effect class="muzzle" ref="401_thbow_muzzle_ring" lighting="0" />
+		<effect class="muzzle" ref="401_thbow_muzzle_smoke" lighting="0" />
+		
+	<ballistics 
+    curve_height="16" 
+    near_far_distance="0" 
+    speed_estimation_near="0" 
+    speed_estimation_far="75" 
+    max_speed="65" 
+    randomness="0" 
+    tweak_factor="1.52" /> 
+	
+    <stance state_key="running" accuracy="1.02" /> 
+    <stance state_key="walking" accuracy="1.02" />
+	<stance state_key="standing" accuracy="1.02" />
+	<stance state_key="crouching" accuracy="1.05" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1.02" />     
+     
+    <modifier class="speed" value="0.1" /> 
+    <modifier class="hit_success_probability" value="0.0" />
+    <modifier class="detectability" value="0.0" />
+
+
+</weapon>
+</weapons>
 
 

@@ -427,7 +427,7 @@ class dynamic_alert : Tracker {
         }
 
         int player_num = players.size();
-        m_cd_time = m_cd_time - 1*player_num;
+        m_cd_time = m_cd_time - 0.6*player_num;
 
         m_cd_time = m_cd_time - m_server_difficulty_level + 9;
         if(m_cd_time <= 0){

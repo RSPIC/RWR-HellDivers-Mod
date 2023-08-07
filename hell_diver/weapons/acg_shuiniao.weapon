@@ -159,7 +159,7 @@ key="acg_shuiniao_ii.weapon"
 > 
     <specification 	
     accuracy_factor="1" 
-	retrigger_time="4a" 
+	retrigger_time="4" 
 	spread_range="0"
     magazine_size="-1" 
     can_shoot_standing="0" 
@@ -181,6 +181,311 @@ key="acg_shuiniao_ii.weapon"
 	/> 
 	<!--多模式-->
     <next_in_chain key="acg_shuiniao.weapon" share_ammo="0" /> 
+
+	<!--武器模型和HUD-->
+	<weak_hand_hold offset="0" /> <!--模型X轴偏移-->
+	<model filename="acgw_shuiniao.xml" /> 
+    <hud_icon filename="acg_shuiniao.png" /> 
+
+
+	<!--武器动作，必须指定recoil和reload动作-->
+	<animation state_key="stabbing"	animation_key="melee, ninjato whip" />
+	<animation state_key="stabbing"	animation_key="melee, ninjato slap" />
+	<animation state_key="stabbing"	animation_key="melee, ninjato slash" />
+	<animation state_key="recoil"	animation_key="CumForce_recoil" />
+    <animation state_key="reload"	animation_key="reloading, ninjato" />
+	<animation state_key="hold"	animation_key="still, ninjato" />
+	<animation state_key="hold_on_wall"	animation_key="still overwall, ninjato" />
+	<animation state_key="still_against_wall"	animation_key="still against wall, ninjato" />
+	<animation state_key="hold_casual"	animation_key="relaxed, ninjato" />
+	<animation state_key="running"	animation_key="running, ninjato" />
+	<animation state_key="walking"	animation_key="walking, ninjato" />
+	<animation state_key="crouching"	animation_key="crouch, ninjato" />
+	<animation state_key="crouch_moving"	animation_key="crouching forwards, ninjato" />
+	<animation state_key="crouch_moving_backwards"	animation_key="crouching backwards, ninjato" />
+	<animation state_key="changing_weapon_in"	animation_key="change weapon in, ninjato" />
+	<animation state_key="changing_weapon_out"	animation_key="change weapon out, ninjato" />
+    <animation state_key="prone_still" animation_key="prone still, ninjato" />
+    <animation state_key="prone_moving" animation_key="prone moving, ninjato" />
+	<animation state_key="walking_backwards" animation_key="walking backwards, ninjato" />
+	<!--武器音频-->
+    <sound key="effect" fileref="" pitch_variety="0" volume="1.0" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
+    <sound key="fire" fileref="shuiniao_fire.wav" pitch_variety="0.00" volume="1.0" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
+    <sound key="dry_fire" fileref="" pitch_variety="0.03" volume="1.0" /><!--空弹射击扳机音效-->
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="" /><!--动作中in的value为1-->
+    <sound key="last_ammo" fileref="" /><!--最后一发子弹射击的额外音效，不可多个混合随机播放-->
+	<sound key="cooldown" fileref="" pitch_variety="0.0" volume="1" />
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+
+	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
+	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="1" source="rank" source_value="0.0" />
+	
+	<!--军械库相关-->
+
+
+	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
+    <projectile file="hd_general_spawn_no_effect.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0"> 
+	
+		<!--
+		<result class="blast" radius="6.8" damage="0.2" push="0" decal="0" character_state="death"  />
+		<result class="spawn" instance_class="projectile" instance_key="rx1_railgun_ap.projectile" 
+		min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			offset"x y z 生成位置偏差" 
+			position_spread="水平面随机生成位置 竖直面随机生成位置" 
+			direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
+		<result class="notify_script" key="vehicle_recycle" />
+		-->
+		<result class="blast" radius="12.0" damage="1000" push="0.7" decal="0" character_state="wound" faction_compare="not_equal"  />
+		<trigger class="time" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
+		
+		<!--命中音效-->
+		<sound class="result" key="other" fileref="MAFDS_PROJECTILE_FIRE_IMPACT_Fire_Without_Smoke_01.wav" pitch_variety="0.03" volume="1.0" />
+		<sound class="result" key="other" fileref="MAFDS_PROJECTILE_FIRE_IMPACT_Fire_Without_Smoke_02.wav" pitch_variety="0.03" volume="1.0" />
+		<sound class="result" key="other" fileref="MAFDS_PROJECTILE_FIRE_IMPACT_Fire_Without_Smoke_03.wav" pitch_variety="0.03" volume="1.0" />
+		
+		<!--命中特效-->
+		<!--
+		<effect class="result" key="terrain" ref="" lighting="0" post_processing="0"/>
+		<effect class="activated" ref="" />
+		-->
+		<effect class="result"  key="terrain" ref="shuiniao_center_flower_r"/>
+		<effect class="result"  key="terrain" ref="shuiniao_center_flower_l"/>
+		<effect class="result"  key="terrain" ref="shuiniao_spread_petals_01"/>
+		<effect class="result"  key="terrain" ref="shuiniao_spread_petals_02"/>
+		<effect class="result"  key="terrain" ref="shuiniao_spread_petals_03"/>
+		<effect class="result"  key="terrain" ref="shuiniao_ambient_light"/>
+		<effect class="result"  key="terrain" ref="shuiniao_impact_circle"/>
+		<effect class="result"  key="terrain" ref="shuiniao_center_ambient"/>
+
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<!--尾迹组-->
+		<trail probability="1" key=""/>	
+    </projectile>		
+
+	<effect class="muzzle"  ref="shuiniao_center_flower"/>
+	<effect class="muzzle"  ref="shuiniao_center_ambient"/>
+	
+	<!--姿态精度-->
+    <stance state_key="running" accuracy="1" /> 
+    <stance state_key="walking" accuracy="1" />
+	<stance state_key="standing" accuracy="1" />
+	<stance state_key="crouching" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1" />     
+     
+	<!--附加属性-->
+    <modifier class="speed" value="0.1" /> 
+    <modifier class="hit_success_probability" value="0.0" /><!--负值减少玩家抗致死率-->
+    <modifier class="detectability" value="-0.3" />	<!--正值减少玩家隐蔽-->
+</weapon>
+<weapon 
+file="_rare_weapon_mk4_re.base" 
+key="re_acg_shuiniao.weapon" 
+> 
+    <tag name="cqb" />
+    <specification 	
+    accuracy_factor="1" 
+	retrigger_time="2" 
+	spread_range="0"
+    magazine_size="-1" 
+    can_shoot_standing="0" 
+    can_shoot_crouching="1" 
+    carry_in_two_hands="0" 
+	sustained_fire_grow_step="1" 
+    sustained_fire_diminish_rate="1" 
+    name="Shuiniao" 
+    class="3" 
+    consume="0" 
+    sight_range_modifier="2" 
+    slot="0" 
+	stab_enabled="1"
+    stab_range="3.0"
+	use_basic_muzzle_smoke_effect="0"
+	projectile_speed="0.0"
+	cooldown_start="0.1"
+	cooldown_end="0.0"
+	/> 
+	<!--多模式-->
+    <next_in_chain key="re_acg_shuiniao_ii.weapon" share_ammo="0" /> 
+
+	<!--武器模型和HUD-->
+	<weak_hand_hold offset="0" /> <!--模型X轴偏移-->
+	<model filename="acgw_shuiniao.xml" /> 
+    <hud_icon filename="acg_shuiniao.png" /> 
+
+
+	<!--武器动作，必须指定recoil和reload动作-->
+	<animation state_key="stabbing"	animation_key="melee, ninjato whip" />
+	<animation state_key="stabbing"	animation_key="melee, ninjato slap" />
+	<animation state_key="stabbing"	animation_key="melee, ninjato slash" />
+	<animation state_key="recoil"	animation_key="CumForce_recoil" />
+    <animation state_key="reload"	animation_key="reloading, ninjato" />
+	<animation state_key="hold"	animation_key="still, ninjato" />
+	<animation state_key="hold_on_wall"	animation_key="still overwall, ninjato" />
+	<animation state_key="still_against_wall"	animation_key="still against wall, ninjato" />
+	<animation state_key="hold_casual"	animation_key="relaxed, ninjato" />
+	<animation state_key="running"	animation_key="running, ninjato" />
+	<animation state_key="walking"	animation_key="walking, ninjato" />
+	<animation state_key="crouching"	animation_key="CumForce_crouching" />
+	<animation state_key="crouch_moving"	animation_key="crouching forwards, ninjato" />
+	<animation state_key="crouch_moving_backwards"	animation_key="crouching backwards, ninjato" />
+	<animation state_key="changing_weapon_in"	animation_key="change weapon in, ninjato" />
+	<animation state_key="changing_weapon_out"	animation_key="change weapon out, ninjato" />
+    <animation state_key="prone_still" animation_key="prone still, ninjato" />
+    <animation state_key="prone_moving" animation_key="prone moving, ninjato" />
+	<animation state_key="walking_backwards" animation_key="walking backwards, ninjato" />
+	<!--武器音频-->
+    <sound key="effect" fileref="" pitch_variety="0" volume="1.0" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
+    <sound key="fire" fileref="MAFDS_PROJECTILE_FIRE_IMPACT_Fire_Without_Smoke_01.wav" pitch_variety="0.00" volume="1.0" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
+    <sound key="fire" fileref="MAFDS_PROJECTILE_FIRE_IMPACT_Fire_Without_Smoke_02.wav" pitch_variety="0.00" volume="1.0" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
+    <sound key="fire" fileref="MAFDS_PROJECTILE_FIRE_IMPACT_Fire_Without_Smoke_03.wav" pitch_variety="0.00" volume="1.0" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
+    <sound key="dry_fire" fileref="" pitch_variety="0.03" volume="1.0" /><!--空弹射击扳机音效-->
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="" /><!--动作中in的value为1-->
+    <sound key="last_ammo" fileref="" /><!--最后一发子弹射击的额外音效，不可多个混合随机播放-->
+	<sound key="cooldown" fileref="" pitch_variety="0.0" volume="1" />
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+
+	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
+	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="1" source="rank" source_value="0.0" />
+	
+	<!--军械库相关-->
+
+
+	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
+    <projectile file="hd_general_spawn_no_effect.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0"> 
+	
+		<!--
+		<result class="blast" radius="6.8" damage="0.2" push="0" decal="0" character_state="death"  />
+		<result class="spawn" instance_class="projectile" instance_key="rx1_railgun_ap.projectile" 
+		min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			offset"x y z 生成位置偏差" 
+			position_spread="水平面随机生成位置 竖直面随机生成位置" 
+			direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
+		<result class="notify_script" key="vehicle_recycle" />
+		-->
+		<result class="blast" radius="10.0" damage="300" push="0.7" decal="0" character_state="wound" faction_compare="not_equal"  />
+		<trigger class="time" time_to_live="0.0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
+		
+		<!--命中音效-->
+		<sound class="result" key="other" fileref="rifle_drop.wav" pitch_variety="0.03" volume="0.0" />
+		
+		<!--命中特效-->
+		<!--
+		<effect class="result" key="terrain" ref="" lighting="0" post_processing="0"/>
+		<effect class="activated" ref="" />
+		-->
+		<effect class="result"  key="terrain" ref="shuiniao_anim_butterfly"/>
+		<effect class="result"  key="terrain" ref="shuiniao_anim_butterfly_02"/>
+		<effect class="result"  key="terrain" ref="shuiniao_anim_butterfly_03"/>
+		<effect class="result"  key="terrain" ref="shuiniao_anim_butterfly_04"/>
+		<effect class="result"  key="terrain" ref="shuiniao_anim_butterfly_05"/>
+		<effect class="result"  key="terrain" ref="shuiniao_cyclone_01"/>
+		<effect class="result"  key="terrain" ref="shuiniao_cyclone_02"/>
+		<effect class="result"  key="terrain" ref="shuiniao_cyclone_03"/>
+		<effect class="result"  key="terrain" ref="shuiniao_cyclone_04"/>		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<!--尾迹组-->
+		<trail probability="1" key=""/>	
+    </projectile>
+
+	<!--姿态精度-->
+    <stance state_key="running" accuracy="1" /> 
+    <stance state_key="walking" accuracy="1" />
+	<stance state_key="standing" accuracy="1" />
+	<stance state_key="crouching" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1" />     
+     
+	<!--附加属性-->
+    <modifier class="speed" value="0.1" /> 
+    <modifier class="hit_success_probability" value="0.0" /><!--负值减少玩家抗致死率-->
+    <modifier class="detectability" value="-0.3" />	<!--正值减少玩家隐蔽-->
+</weapon>
+<weapon 
+file="_rare_weapon_mk4_re.base" 
+key="re_acg_shuiniao_ii.weapon" 
+> 
+    <specification 	
+    accuracy_factor="1" 
+	retrigger_time="4" 
+	spread_range="0"
+    magazine_size="-1" 
+    can_shoot_standing="0" 
+    can_shoot_crouching="1" 
+    carry_in_two_hands="0" 
+	sustained_fire_grow_step="1" 
+    sustained_fire_diminish_rate="1" 
+    name="Shuiniao" 
+    class="3" 
+    consume="0" 
+    sight_range_modifier="2" 
+    slot="0" 
+	stab_enabled="1"
+    stab_range="3.0"
+	use_basic_muzzle_smoke_effect="0"
+	projectile_speed="0.0"
+	cooldown_start="0.1"
+	cooldown_end="0.0"
+	/> 
+	<!--多模式-->
+    <next_in_chain key="re_acg_shuiniao.weapon" share_ammo="0" /> 
 
 	<!--武器模型和HUD-->
 	<weak_hand_hold offset="0" /> <!--模型X轴偏移-->

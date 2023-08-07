@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<weapon file="_rare_weapon_mk5.base"
+<weapons> 
+<weapon 
+file="_rare_weapon_mk5.base"
 key="acg_megumin_wand_summon.weapon"
 >
     <tag name="sniper" />
@@ -119,3 +121,323 @@ key="acg_megumin_wand_summon.weapon"
     <modifier class="detectability" value="-1" />
 	 
 </weapon>
+<weapon 
+file="_rare_weapon_mk5.base"
+key="acg_megumin_wand_float.weapon"
+ >
+    <tag name="sniper" />
+    <specification 
+	retrigger_time="3"
+	accuracy_factor="1" 
+	sustained_fire_grow_step="0" 
+	sustained_fire_diminish_rate="3.0" 
+	magazine_size="1" 
+	can_shoot_standing="1" 
+	can_shoot_crouching="1"
+    can_shoot_prone="0" 
+	suppressed="0" 
+	name="Wand" 
+	class="4" 
+	reload_one_at_a_time="0" 
+	sight_range_modifier="2" 
+	projectile_speed="50.0" 
+	barrel_offset_3d="0 0 1.6"
+	projectiles_per_shot="1" 
+	burst_shots="1"
+    carry_in_two_hands="1"/>
+    <weak_hand_hold offset="0" />
+
+	<next_in_chain key="acg_megumin_wand_summon.weapon" share_ammo="0" />
+  
+    <animation key="recoil" animation_key="wand_still" />
+    <animation key="cycle" animation_key="wand_still" />
+    <animation state_key="hold" animation_key="wand_still" />
+    <animation state_key="walking" animation_key="wand_running" />
+    <animation state_key="walking_backwards" animation_key="wand_running" />
+    <animation state_key="crouching" animation_key="wand_still" />
+    <animation state_key="crouch_moving" animation_key="wand_running" />
+    <animation state_key="crouch_moving_backwards" animation_key="wand_running" />
+    <animation state_key="running" animation_key="wand_running" />
+    <animation state_key="reload" animation_key="wand_reloading" />
+    <animation state_key="hold_casual" animation_key="wand_still" />
+    <animation state_key="still_against_wall" animation_key="wand_still" />
+    <animation state_key="hold_on_wall" animation_key="wand_still" />
+
+    
+    <animation state_key="next_in_chain_in" animation_key="" />
+    <animation state_key="next_in_chain_out" animation_key="" />
+     
+    <sound key="fire" fileref="wand_aa_fire.wav" pitch_variety="0.00"  volume="2" />
+
+    <sound key="cycle" fileref="potion_open.wav" pitch_variety="0.00"  volume="4"/>
+    <sound key="magazine_out" fileref="potion_open.wav" pitch_variety="0.00"  volume="4"/>
+    <sound key="magazine_in" fileref="sniper_clip_in_1.wav" />
+    <sound key="cycle_out" fileref="sniper_cycle_out_1.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in_1.wav" />
+    <sound key="effect" fileref="drink_potion.wav" pitch_variety="0.00"  volume="5"  />
+    <control key="effect" value="1" />
+
+    <sound class="impact" fileref="potion_drop.wav" pitch_variety="0.00"  volume="4" />
+
+    <model filename="potion_hh.xml" />
+    <addon_model filename="wand_hh_addons.xml" />
+
+    <ballistics 
+    curve_height="0.3" 
+    near_far_distance="1000" 
+    speed_estimation_near="450" 
+    speed_estimation_far="50" 
+    max_speed="450" 
+    randomness="0" 
+    tweak_factor="1" /> 
+
+    <hud_icon filename="wand_hh.png" />
+
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="0.1"> 
+        <!-- <result class="blast" radius="6" damage="20" decal="0" push="0.5" character_state="wound" faction_compare="not_equal"/> -->
+        <result class="notify_script" key="acg_megumin_wand_float" />
+        <trigger class="time" time_to_live="0.0" />
+        <!-- 爆炸伤害 4x3=12 -->
+    </projectile>
+    <effect class="muzzle" ref="wand_magic_circle_muzzle_float" />    
+    <effect class="muzzle" ref="wand_magic_circle_expand_muzzle_float" /> 
+    <effect class="muzzle" ref="wand_magic_circle_warmup_muzzle_float" /> 
+
+
+    <shield offset="-0.45 -0.15 -0.1" extent="2 0.1 0.1" />
+
+    <stance state_key="running" accuracy="1" />
+    <stance state_key="walking" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="standing" accuracy="1" />
+    <stance state_key="crouching" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1" />
+
+    <modifier class="speed" value="0.1" />    
+
+	 
+</weapon>
+<weapon 
+file="_rare_weapon_mk5_re.base"
+key="re_acg_megumin_wand_summon.weapon"
+>
+    <tag name="sniper" />
+    <specification 
+	retrigger_time="-1"
+    last_burst_retrigger_time="35"
+	accuracy_factor="1" 
+	sustained_fire_grow_step="20" 
+	sustained_fire_diminish_rate="0.5" 
+	magazine_size="1" 
+	can_shoot_standing="0" 
+	can_shoot_crouching="1" 
+	can_shoot_prone="0" 
+	suppressed="1" 
+	name="Wand summom" 
+	class="2" 
+	reload_one_at_a_time="0" 
+	sight_range_modifier="3" 
+	projectile_speed="40.0" 
+	barrel_offset_3d="0 1 2.4"
+	projectiles_per_shot="1" 
+	burst_shots="1"/>
+    <weak_hand_hold offset="1" />
+
+	<next_in_chain key="re_acg_megumin_wand_float.weapon" share_ammo="0" />
+
+	<animation key="recoil" ref="12" /> 
+   	<animation state_key="cycle" animation_key="wand_summon_reload" />
+    <animation state_key="hold" animation_key="wand_still" />
+    <animation state_key="walking" animation_key="wand_running" />
+    <animation state_key="walking_backwards" animation_key="wand_running" />
+    <animation state_key="crouching" animation_key="wand_still" />
+    <animation state_key="crouch_moving" animation_key="wand_running" />
+    <animation state_key="crouch_moving_backwards" animation_key="wand_running" />
+    <animation state_key="running" animation_key="wand_running" />
+    <animation state_key="reload" animation_key="wand_reloading" />
+    <animation state_key="hold_casual" animation_key="wand_still" />
+    <animation state_key="still_against_wall" animation_key="wand_still" />
+    <animation state_key="hold_on_wall" animation_key="wand_still" />
+	<animation state_key="changing_weapon_in" animation_key="" />
+	<animation state_key="changing_weapon_out" animation_key="" />
+    <animation state_key="next_in_chain_in" animation_key="" />
+    <animation state_key="next_in_chain_out" animation_key="" />
+     
+    <sound key="fire" fileref="wand_hh_reload.wav" pitch_variety="0.00"  volume="2" />
+    <!-- <sound key="fire" fileref="" pitch_variety="0.00"  volume="0" /> -->
+
+    <sound key="cycle" fileref="potion_open.wav" pitch_variety="0.00"  volume="4"/>
+    <sound key="magazine_out" fileref="potion_open.wav" pitch_variety="0.00"  volume="4"/>
+    <sound key="magazine_in" fileref="sniper_clip_in_1.wav" />
+    <sound key="cycle_out" fileref="sniper_cycle_out_1.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in_1.wav" />
+    <sound key="effect" fileref="drink_potion.wav" pitch_variety="0.00"  volume="5"  />
+    <control key="effect" value="1" />
+
+    <sound class="impact" fileref="rifle_drop.wav" />
+
+    <model filename="potion_hh.xml" />
+    <addon_model filename="wand_hh_addons.xml" />
+
+    <hud_icon filename="wand_hh.png" />
+
+    
+
+    <projectile file="wand_guiding_01.projectile">
+    	<!-- 10x100 轰炸伤 -->
+        
+    </projectile>
+
+    <ballistics curve_height="30.0" near_far_distance="0.0" 
+    speed_estimation_near="0" speed_estimation_far="300"
+     max_speed="300.0" randomness="0.0" tweak_factor="2.5" /> 
+
+    <shield offset="-0.45 0 0" extent="2 0.1 0.1" />
+
+    <effect class="muzzle" ref="wand_gather_wave_01" />     
+    <effect class="muzzle" ref="wand_gather_wave_01_01"/>
+    <effect class="muzzle" ref="wand_gather_wave_01_02"/>
+    <effect class="muzzle" ref="wand_gather_wave_02" />     
+    <effect class="muzzle" ref="wand_gather_wave_02_01"/>
+    <effect class="muzzle" ref="wand_gather_wave_03" />     
+    <effect class="muzzle" ref="wand_gather_wave_03_01"/>
+    <effect class="muzzle" ref="wand_gather_wave_03_02"/>
+    <effect class="muzzle" ref="wand_gather_wave_04" />     
+    <effect class="muzzle" ref="wand_gather_wave_04_01"/>
+    <effect class="muzzle" ref="wand_gather_wave_05" />     
+    <effect class="muzzle" ref="wand_gather_wave_05_01"/>
+    <effect class="muzzle" ref="wand_gather_wave_05_02"/>
+    <effect class="muzzle" ref="wand_gather_wave_06" />     
+    <effect class="muzzle" ref="wand_gather_wave_06_01"/>
+    <effect class="muzzle" ref="wand_gather_wave_center_light_01"/>
+
+    <effect class="muzzle" ref="wand_magic_circle"/>    <!--主要3-->
+    <effect class="muzzle" ref="wand_magic_circle_expand"/><!--扩张2-->
+    <effect class="muzzle" ref="wand_magic_circle_warmup" /><!--内预热圆1-->
+    <effect class="muzzle" ref="wand_magic_circle_on_ground_expand"/>2
+    <effect class="muzzle" ref="wand_magic_circle_on_ground_warmup"/>1
+    <effect class="muzzle" ref="wand_magic_circle_on_ground_circle"/>3
+    <effect class="muzzle" ref="wand_magic_circle_on_ground_circle_x2"/>5
+    <effect class="muzzle" ref="wand_magic_circle_on_ground_expand_x2"/>4
+    <effect class="muzzle" ref="wand_magic_center_preshoot_linear_light"/>6
+    <effect class="muzzle" ref="wand_magic_center_shoot_laser"/>7
+    <effect class="muzzle" ref="wand_magic_center_preshoot_away_circle"/>7
+    <effect class="muzzle" ref="wand_magic_area_smoke"/>
+    <effect class="muzzle" ref="wand_magic_area_spot"/>
+
+    <stance state_key="running" accuracy="1" />
+    <stance state_key="walking" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="standing" accuracy="1" />
+    <stance state_key="crouching" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1" />
+
+    <modifier class="speed" value="-2" />    
+    <modifier class="detectability" value="-1" />
+	 
+</weapon>
+<weapon 
+file="_rare_weapon_mk5_re.base"
+key="re_acg_megumin_wand_float.weapon"
+ >
+    <tag name="sniper" />
+    <specification 
+	retrigger_time="3"
+	accuracy_factor="1" 
+	sustained_fire_grow_step="0" 
+	sustained_fire_diminish_rate="3.0" 
+	magazine_size="1" 
+	can_shoot_standing="1" 
+	can_shoot_crouching="1"
+    can_shoot_prone="0" 
+	suppressed="0" 
+	name="Wand" 
+	class="4" 
+	reload_one_at_a_time="0" 
+	sight_range_modifier="2" 
+	projectile_speed="50.0" 
+	barrel_offset_3d="0 0 1.6"
+	projectiles_per_shot="1" 
+	burst_shots="1"
+    carry_in_two_hands="1"/>
+    <weak_hand_hold offset="0" />
+
+	<next_in_chain key="re_acg_megumin_wand_summon.weapon" share_ammo="0" />
+  
+    <animation key="recoil" animation_key="wand_still" />
+    <animation key="cycle" animation_key="wand_still" />
+    <animation state_key="hold" animation_key="wand_still" />
+    <animation state_key="walking" animation_key="wand_running" />
+    <animation state_key="walking_backwards" animation_key="wand_running" />
+    <animation state_key="crouching" animation_key="wand_still" />
+    <animation state_key="crouch_moving" animation_key="wand_running" />
+    <animation state_key="crouch_moving_backwards" animation_key="wand_running" />
+    <animation state_key="running" animation_key="wand_running" />
+    <animation state_key="reload" animation_key="wand_reloading" />
+    <animation state_key="hold_casual" animation_key="wand_still" />
+    <animation state_key="still_against_wall" animation_key="wand_still" />
+    <animation state_key="hold_on_wall" animation_key="wand_still" />
+
+    
+    <animation state_key="next_in_chain_in" animation_key="" />
+    <animation state_key="next_in_chain_out" animation_key="" />
+     
+    <sound key="fire" fileref="wand_aa_fire.wav" pitch_variety="0.00"  volume="2" />
+
+    <sound key="cycle" fileref="potion_open.wav" pitch_variety="0.00"  volume="4"/>
+    <sound key="magazine_out" fileref="potion_open.wav" pitch_variety="0.00"  volume="4"/>
+    <sound key="magazine_in" fileref="sniper_clip_in_1.wav" />
+    <sound key="cycle_out" fileref="sniper_cycle_out_1.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in_1.wav" />
+    <sound key="effect" fileref="drink_potion.wav" pitch_variety="0.00"  volume="5"  />
+    <control key="effect" value="1" />
+
+    <sound class="impact" fileref="potion_drop.wav" pitch_variety="0.00"  volume="4" />
+
+    <model filename="potion_hh.xml" />
+    <addon_model filename="wand_hh_addons.xml" />
+
+    <ballistics 
+    curve_height="0.3" 
+    near_far_distance="1000" 
+    speed_estimation_near="450" 
+    speed_estimation_far="50" 
+    max_speed="450" 
+    randomness="0" 
+    tweak_factor="1" /> 
+
+    <hud_icon filename="wand_hh.png" />
+
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="0.1"> 
+        <!-- <result class="blast" radius="6" damage="20" decal="0" push="0.5" character_state="wound" faction_compare="not_equal"/> -->
+        <result class="notify_script" key="acg_megumin_wand_float" />
+        <trigger class="time" time_to_live="0.0" />
+        <!-- 爆炸伤害 4x3=12 -->
+    </projectile>
+    <effect class="muzzle" ref="wand_magic_circle_muzzle_float" />    
+    <effect class="muzzle" ref="wand_magic_circle_expand_muzzle_float" /> 
+    <effect class="muzzle" ref="wand_magic_circle_warmup_muzzle_float" /> 
+
+
+    <shield offset="-0.45 -0.15 -0.1" extent="2 0.1 0.1" />
+
+    <stance state_key="running" accuracy="1" />
+    <stance state_key="walking" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="standing" accuracy="1" />
+    <stance state_key="crouching" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1" />
+
+    <modifier class="speed" value="0.1" />    
+
+	 
+</weapon>
+</weapons>

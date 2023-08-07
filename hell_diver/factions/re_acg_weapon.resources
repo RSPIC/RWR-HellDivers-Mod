@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources >
+<!--此处用于注册ACG玩家阵营军械库物品，需要确保物品代码中in_stock="1" -->
+<!-- 资源文件注册为KEY注册，不同于武器注册的key注册 -->
+<!-- 注册到CB5 -->
+
+<!--武器-->
+
+    <!-- MK6 Unavailable -->
+    <weapon key="acg_shigure_127mm.weapon" enabled="0"/><!--时雨127mm双联主炮-->
+    <weapon key="re_acg_shigure_127mm.weapon" /><!--时雨127mm双联主炮-->
+    <weapon key="re_acg_shigure_610mm_torpedo.weapon" /><!--时雨127mm双联主炮-->
+    <!-- MK5 Unsold-->
+    <weapon key="acg_patricia_cumforce.weapon" enabled="0"/> <!--帕蒂 致命驱动等-->
+    <weapon key="re_acg_patricia_jihadslash.weapon" /> <!--帕蒂 致命驱动等-->
+    <weapon key="re_acg_patricia_phantomfang.weapon" /> <!--帕蒂 致命驱动等-->
+    <weapon key="re_acg_patricia_cumforce.weapon" /> <!--帕蒂 致命驱动等-->
+
+    <weapon key="acg_megumin_wand_float.weapon" enabled="0"/> <!--法杖-->
+    <weapon key="re_acg_megumin_wand_float.weapon" /> <!--法杖-->
+    <weapon key="re_acg_megumin_wand_summon.weapon" /> <!--法杖-->
+
+    <weapon key="ex_trinity_ghoul.weapon" enabled="0"/> <!--三体坐观者弓-->
+    <weapon key="re_ex_trinity_ghoul.weapon" /> <!--三体坐观者弓-->
+    <weapon key="re_ex_leviathan_breath.weapon" /> <!--三体坐观者弓-->
+    <!-- MK4 Unsold-->
+    <weapon key="acg_bronya.weapon" enabled="0"/> <!--布洛妮娅 狙-->
+    <weapon key="re_acg_bronya.weapon" /> <!--布洛妮娅 狙-->
+
+    <weapon key="acg_g41_lasercanno_diffusion.weapon" enabled="0"/> <!--G41 激光炮-->
+    <weapon key="re_acg_g41_lasercanno_at.weapon" /> <!--G41 激光炮-->
+    <weapon key="re_acg_g41_lasercanno_diffusion.weapon" /> <!--G41 激光炮-->
+
+    <weapon key="acg_shuiniao.weapon" enabled="0"/> <!--水鸟 刀-->
+    <weapon key="re_acg_shuiniao.weapon" /> <!--水鸟 刀-->
+    <weapon key="re_acg_shuiniao_ii.weapon" /> <!--水鸟 刀-->
+
+    <weapon key="acg_fiammetta_gl.weapon" enabled="0"/><!--菲娅梅塔 榴弹-->
+    <weapon key="re_acg_fiammetta_gl.weapon" /><!--菲娅梅塔 榴弹-->
+    <weapon key="re_acg_fiammetta_skill.weapon" /><!--菲娅梅塔 榴弹-->
+
+    <weapon key="ex_disaster_railgun.weapon" enabled="0"/> <!--天灾电磁炮 反坦克-->
+    <weapon key="re_ex_disaster_railgun.weapon" /> <!--天灾电磁炮 反坦克-->
+
+    <weapon key="acg_texas_skill.weapon" enabled="0"/> <!--德克萨斯-->
+    <weapon key="re_acg_texas_sword.weapon" /> <!--德克萨斯-->
+    <weapon key="re_acg_texas_skill.weapon" /> <!--德克萨斯-->
+
+    <weapon key="acg_ba_alice_railgun_ex.weapon" enabled="0"/> <!--天童爱丽丝 激光炮-->
+    <weapon key="re_acg_ba_alice_railgun.weapon" /> <!--天童爱丽丝 激光炮-->
+    <weapon key="re_acg_ba_alice_railgun_ex.weapon" /> <!--天童爱丽丝 激光炮-->
+    <!-- MK3 Unsold-->
+    <weapon key="acg_takanashi_hoshino.weapon" enabled="0"/> <!--小鸟游星野-->
+    <weapon key="re_acg_takanashi_hoshino.weapon" /> <!--小鸟游星野-->
+    
+    <weapon key="acg_g41_bp2077.weapon" enabled="0"/> <!--G41 2077 沙滩朋克-->
+    <weapon key="re_acg_g41_bp2077.weapon" /> <!--G41 2077 沙滩朋克-->
+
+    <weapon key="acg_miyu.weapon" enabled="0"/> <!--霞泽美游-->
+    <weapon key="re_acg_miyu.weapon" /> <!--霞泽美游-->
+    <!-- MK3 12w-->
+    <weapon key="acg_sinteria_bow.weapon" enabled="0"/> <!--白金 弓-->
+    <weapon key="re_acg_sinteria_bow.weapon" /> <!--白金 弓-->
+    <weapon key="re_acg_sinteria_at.weapon" /> <!--白金 弓-->
+
+    <weapon key="acg_kokomi_portia.weapon" enabled="0"/><!--心海 冲锋枪-->
+    <weapon key="re_acg_kokomi_water_thrower.weapon" /><!--心海 冲锋枪-->
+    <weapon key="re_acg_kokomi_portia.weapon" /><!--心海 冲锋枪-->
+
+    <weapon key="acg_sorasaki_hina.weapon" enabled="0"/> <!--空崎阳奈 机枪-->
+    <weapon key="re_acg_sorasaki_hina.weapon" /> <!--空崎阳奈 机枪-->
+    <weapon key="re_acg_sorasaki_hina_burst.weapon" /> <!--空崎阳奈 机枪-->
+
+    <weapon key="acg_hk416_starry_cocoon.weapon" enabled="0"/> <!--HK416 -->
+    <weapon key="re_acg_hk416_starry_cocoon_gl.weapon" /> <!--HK416 -->
+    <weapon key="re_acg_hk416_starry_cocoon.weapon" /> <!--HK416 -->
+
+    <weapon key="acg_iws2000_banisher.weapon" enabled="0"/> <!--IWS2000-->
+    <weapon key="re_acg_iws2000_banisher.weapon" /> <!--IWS2000-->
+
+    <weapon key="acg_hongxue.weapon" enabled="0"/> <!--鸿雪 弩-->
+    <weapon key="re_acg_hongxue.weapon" /> <!--鸿雪 弩-->
+    <weapon key="re_acg_hongxue_skill.weapon" /> <!--鸿雪 弩-->
+
+    <weapon key="acg_amamiya_kokoro.weapon" enabled="0"/><!--双持冲锋枪 by keilsama-->
+    <weapon key="re_acg_amamiya_kokoro.weapon" /><!--双持冲锋枪 by keilsama-->
+    <!-- MK2 5W-->
+    <weapon key="acg_kemomimi.weapon" enabled="0"/><!--桃子酱（小狐狸）狐尾导弹-->
+    <weapon key="re_acg_kemomimi.weapon" /><!--桃子酱（小狐狸）狐尾导弹-->
+
+    <weapon key="acg_reisenu_a.weapon" enabled="0"/> <!--铃仙-->
+    <weapon key="re_acg_reisenu_a.weapon" /> <!--铃仙-->
+    <weapon key="re_acg_reisenu_b.weapon" /> <!--铃仙-->
+    <weapon key="re_acg_reisenu_c.weapon" /> <!--铃仙-->
+
+    <weapon key="acg_ruby_rose_scythe.weapon" enabled="0"/> <!--新月玫瑰 -->
+    <weapon key="re_acg_ruby_rose_scythe.weapon" /> <!--新月玫瑰 -->
+    <weapon key="re_acg_ruby_rose_sniper.weapon" /> <!--新月玫瑰 -->
+
+    <weapon key="acg_mg4a3td.weapon" enabled="0"/> <!--MG4-->
+    <weapon key="re_acg_mg4a3td_sl.weapon" /> <!--MG4-->
+    <weapon key="re_acg_mg4a3td.weapon" /> <!--MG4-->
+
+    <weapon key="acg_mg4td_ke.weapon" enabled="0"/> <!--MG4-->
+    <weapon key="re_acg_mg4td_ke.weapon" /> <!--MG4-->
+    <weapon key="re_acg_mg4td_ap.weapon" /> <!--MG4-->
+
+    <weapon key="ex_lancer_mk3.weapon" enabled="0"/> <!--Lancer 骑兵链锯-->
+    <weapon key="re_ex_lancer_mk3_chainsaw.weapon" /> <!--Lancer 骑兵链锯-->
+    <weapon key="re_ex_lancer_mk3.weapon" /> <!--Lancer 骑兵链锯-->
+    <!-- MK1 2W-->
+    <weapon key="acg_smg_strelka.weapon" enabled="0"/><!--冲锋枪 by kurumi-->
+    <weapon key="re_acg_smg_strelka.weapon" /><!--冲锋枪 by kurumi-->
+
+    <weapon key="acg_ka_ar8.weapon" enabled="0"/><!--突击步枪 by kurumi-->
+    <weapon key="re_acg_ka_ar8.weapon" /><!--突击步枪 by kurumi-->
+
+    <weapon key="acg_m14.weapon" enabled="0"/><!--M14-->
+    <weapon key="re_acg_m14.weapon" /><!--M14-->
+	
+</resources>

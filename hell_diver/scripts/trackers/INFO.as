@@ -596,6 +596,10 @@ class battleInfoBuck{
 		m_battleInfos.insertLast(newInfo);
 	}
 
+	uint size(){
+		return m_battleInfos.size();
+	}
+
 	uint playingTime(string&in name){
 		for(uint i=0;i<m_battleInfos.size();++i){
 			string m_name = m_battleInfos[i].name();
@@ -651,9 +655,17 @@ class battleInfoBuck{
 			if(name == m_name){
 				m_battleInfos.removeAt(i);
 				i--;
-				return;
 			}
 		}
+	}
+	bool exist(string&in name){
+		for(uint i=0;i<m_battleInfos.size();++i){
+			string m_name = m_battleInfos[i].name();
+			if(name == m_name){
+				return true;
+			}
+		}
+		return false;
 	}
 
 	void addKill(string&in name){
@@ -962,6 +974,16 @@ class vestInfoBuck {
 		m_vestInfos.insertLast(newinfo);
 	}
 
+	void removeInfo(string&in name){
+		for(uint i=0;i<m_vestInfos.size();++i){
+			string m_name = m_vestInfos[i].name();
+			if(name == m_name){
+				m_vestInfos.removeAt(i);
+				--i;
+			}
+		}
+	}
+
 	string getVestKey(string&in name){
 		for(uint i = 0 ; i < m_vestInfos.size() ; ++i){
 			if(m_vestInfos[i].name() == name){
@@ -1119,6 +1141,10 @@ class firstUseInfoBuck {
         m_firstUseInfos.insertLast(newinfo);
 	}
 
+	uint size(){
+		return m_firstUseInfos.size();
+	}
+
 	void addInfo(string&in name){
 		first_use_info@ newinfo = first_use_info(name);
         m_firstUseInfos.insertLast(newinfo);
@@ -1148,6 +1174,10 @@ class firstUseInfoBuck {
 			}
         }
 		return false;
+	}
+
+	void clearAll(){
+		m_firstUseInfos.resize(0);
 	}
 }
 //----------------------------------------------------------
@@ -1213,6 +1243,13 @@ class userCountInfoBuck {
 	}
 
 	void addInfo(string&in name){
+		if(m_userCountInfos !is null){
+			for(uint i = 0 ; i < m_userCountInfos.size() ; ++i){
+				if(m_userCountInfos[i].getName() == name){
+					return;
+            	}
+			}
+		}
 		userCountInfo@ newinfo = userCountInfo(name);
 		m_userCountInfos.insertLast(newinfo);
 	}
@@ -1306,6 +1343,15 @@ class Initiate : Tracker {
 		@g_IRQ = _IRQ("",false);
 		@g_firstUseInfoBuck = firstUseInfoBuck();
 		g_firstUseInfoBuck.addInfo("admin");
+
+		_log("g_battleInfoBuck.size()="+g_battleInfoBuck.size());
+		g_battleInfoBuck.clearAll();
+		_log("g_firstUseInfoBuck.size()="+g_firstUseInfoBuck.size());
+		g_firstUseInfoBuck.clearAll();
+		_log("g_vestInfoBuck.clearAll();");
+		g_vestInfoBuck.clearAll();
+		_log("g_playerInfoBuck.size()="+g_playerInfoBuck.size());
+		g_playerInfoBuck.clearAll();
 	}
 	void update(float time){
 	}
@@ -1331,23 +1377,32 @@ class Initiate : Tracker {
         const XmlElement@ player = event.getFirstElementByTagName("player");
         if(player is null){return;}
         string name = player.getStringAttribute("name");
-		g_firstUseInfoBuck.removeInfo(name);
+		//g_firstUseInfoBuck.removeInfo(name);
 		g_userCountInfoBuck.removeInfo(name);
     }
 	// ----------------------------------------------------
 	protected void handleMatchEndEvent(const XmlElement@ event) {
+		g_firstUseInfoBuck.clearAll();
 		m_ended = true;
 	}
 	// ----------------------------------------------------
 	protected void initiateBattleInfo(const XmlElement@ event){
 		const XmlElement@ player = event.getFirstElementByTagName("player");
 		string name = player.getStringAttribute("name");
+		if(g_firstUseInfoBuck.isFirst(name,"initiateBattleInfo")){
+			_log("player first connect server,remove battleinfo");
+			g_battleInfoBuck.removeInfo(name);
+		}
 		g_battleInfoBuck.addInfo(name,m_server_difficulty_level);
 	}
 	// ----------------------------------------------------
 	protected void initiateVestInfo(const XmlElement@ event){
 		const XmlElement@ player = event.getFirstElementByTagName("player");
 		string name = player.getStringAttribute("name");
+		if(g_firstUseInfoBuck.isFirst(name,"initiateVestInfo")){
+			_log("player first connect server,remove vestinfo");
+			g_vestInfoBuck.removeInfo(name);
+		}
 		g_vestInfoBuck.addInfo(name);
 		if(g_debugMode){
 			_report(m_metagame,"add initiateVestInfo");
@@ -1377,6 +1432,7 @@ class Initiate : Tracker {
 	protected void handleChatEvent(const XmlElement@ event){
 		string message = event.getStringAttribute("message");
 		string p_name = event.getStringAttribute("player_name");
+		int pid = event.getIntAttribute("player_id");
 		if(m_metagame.getAdminManager().isAdmin(p_name)){
 			if(message == "/debug"){
 				g_debugMode = !g_debugMode;
@@ -1386,6 +1442,12 @@ class Initiate : Tracker {
 					_report(m_metagame,"Debug Mode is Off");
 				}
 			}
+		}
+		if(message == "/myfact"){
+			float bf = g_battleInfoBuck.bonusFactor(p_name);
+			float bfx = g_battleInfoBuck.bonusFactorXp(p_name);
+			float bfr = g_battleInfoBuck.bonusFactorRp(p_name);
+			notify(m_metagame,"你的全局倍率="+bf+"，xp倍率="+bfx+"，rp倍率="+bfr, dictionary(), "misc", pid, false, "", 1.0);
 		}
 	}
 }

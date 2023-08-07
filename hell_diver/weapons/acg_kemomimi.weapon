@@ -1,7 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>	
+<weapons>
 <weapon 
 file="_rare_weapon_mk2.base"
 key="acg_kemomimi.weapon" 
+> 
+    <specification 	
+    slot="0" 	
+    retrigger_time="0.02" 
+	last_burst_retrigger_time="3"
+    accuracy_factor="0.95" 
+	spread_range="0"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="0" 
+    sustained_fire_diminish_rate="1" 
+    magazine_size="9" 
+    can_shoot_standing="0" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="1"	
+	reload_one_at_a_time="1"
+    suppressed="0" 
+	class="4" 
+    name="Kemomimi's missile tails" 
+	sight_range_modifier="1.5" 
+	burst_shots="9"
+    projectiles_per_shot="1" 
+    projectile_speed="10.0"
+	barrel_offset_3d="0 0 -1.5" 
+	carry_in_two_hands="0" 
+	stab_enabled="0" 
+	stab_range="0" 
+	use_basic_muzzle_smoke_effect="0"
+	/> 
+	<!--class 0全自动 4半自动 2栓动 3特殊（可做一次性武器）5近程特殊（如部署沙包）-->
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_effect_drop_target.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
+
+	<!--武器模型和HUD-->
+	<weak_hand_hold offset="0.0" /> <!--模型X轴偏移-->
+	<model filename="" /> 
+    <model mesh_filename="" texture_filename="" /> <!--调用mesh模型-->
+    <addon_model filename="" /> <!--附加模型，固定绑骨到肩膀-->
+    <hud_icon filename="acg_kemomimi.png" /> <!--武器为100x200像素，投掷物为110x110-->
+	
+    <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
+    <animation state_key="recoil"   animation_key="recoil, pistol 2" />
+	<animation state_key="recoil" stance_key="prone"  animation_key="recoil, pistol 2" />
+    <animation state_key="reload"   animation_key="fox_shake" />
+	<animation state_key="hold" animation_key="still, pistol 2" />
+    <animation state_key="hold_on_wall" animation_key="hold, overwall pistol" />
+    <animation state_key="hold_casual" animation_key="fox_shake" />
+	<animation state_key="running"  animation_key="running, pistol" />
+    <animation state_key="walking"  animation_key="running_pistol_slower" />
+    <animation state_key="walking_backwards" animation_key="walking backwards, pistol" />
+    <animation state_key="crouching" animation_key="crouch, pistol" />
+	<animation state_key="crouch_moving" animation_key="" />
+	<animation state_key="crouch_moving_backwards" animation_key="crouching backwards, hip fire" />
+    <animation state_key="prone_still" animation_key="prone_still, pistol" />
+	<animation state_key="prone_moving" animation_key="" />
+	<animation state_key="stabbing" animation_key="pistol whip 3" />
+	<animation state_key="next_in_chain_in" animation_key="" />
+	<animation state_key="next_in_chain_out" animation_key="" />
+    <animation state_key="changing_weapon_in" animation_key="" />
+	<animation state_key="changing_weapon_out" animation_key=""/>
+
+	<!--武器音频-->
+    <sound key="effect" fileref="acg_kemomimi_effect.wav" pitch_variety="0" volume="1.0" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
+    <sound key="fire" fileref="BT_PLOP_Bottle_1.wav" pitch_variety="0.03" volume="1" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
+    <sound key="fire" fileref="BT_PLOP_Bottle_2.wav" pitch_variety="0.03" volume="1" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
+    <sound key="fire" fileref="BT_PLOP_Bottle_3.wav" pitch_variety="0.03" volume="1" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
+    <sound key="fire" fileref="BT_PLOP_Bottle_4.wav" pitch_variety="0.03" volume="1" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
+    <sound key="fire" fileref="BT_PLOP_Bottle_5.wav" pitch_variety="0.03" volume="1" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
+    <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="hd_mag_out.wav" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="hd_mg94_mag_in.wav" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="rifle_chamber.wav" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" /><!--动作中in的value为1-->
+	<sound class="impact" fileref="acg_kemomimi_drop.wav" pitch_variety="0" volume="1" /><!--武器落地音效-->
+
+	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
+	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="1" source="rank" source_value="0.0" />
+	
+ 
+	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
+    <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="30" can_be_detected_by_footmen="1" 
+	time_to_live="8" can_be_detected_by_driver="1" can_be_disarmed="0" name="Kemomimi's missile tails" > 
+	
+		<result class="blast" radius="5.8" damage="35" push="0.2" decal="0" character_state="wound" 
+		damage_origin_vehicle="0"  faction_compare="not_equal" />
+
+		<trigger class="impact" time_to_live="1"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+		 <model mesh_filename="fox_tail.mesh" texture_filename="fox_tail.jpg" />
+		<!--命中音效-->
+		<sound class="result" key="other" fileref="ueds_urban_fast_crisp_small_1.wav" pitch_variety="0.03" volume="1.0" />
+		<sound class="result" key="other" fileref="ueds_urban_fast_crisp_small_2.wav" pitch_variety="0.03" volume="1.0" />
+		<sound class="result" key="other" fileref="ueds_urban_fast_crisp_small_3.wav" pitch_variety="0.03" volume="1.0" />
+		<sound class="result" key="other" fileref="ueds_urban_fast_crisp_small_4.wav" pitch_variety="0.03" volume="1.0" />
+		
+		<!--命中特效-->
+
+		<!-- <effect class="result" key="terrain" ref="general_weapon_result_hitspot" lighting="0"/> -->
+		<effect class="result" key="terrain" ref="missile_result_cannon_blast_fire" lighting="0"/>
+		<effect class="result" key="terrain" ref="missile_result_cannon_blast_AmbientLight" lighting="0"/>
+		<effect class="result" key="terrain" ref="nova_s_result_impact_flame_1" lighting="0"/>
+		<effect class="result" key="terrain" ref="nova_s_result_impact_flame_3" lighting="0"/>
+		<effect class="result" key="terrain" ref="nova_s_result_impact_spark" lighting="0" post_processing="1"/> 
+		<effect class="result" key="terrain" ref="nova_s_gl_hit_smoke_02" lighting="0" post_processing="1"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_ground_smoke" lighting="0" post_processing="1"/>
+		<effect class="result" key="terrain" ref="nova_s_result_blast_smoke_expanding" lighting="0" post_processing="1"/> 
+		<effect class="result" key="terrain" ref="missile_result_expanding_fire" lighting="0" post_processing="1"/> 
+		
+		<effect class="activated" ref="missile_activated_cannon_flysmoke" lighting="0"/>
+		<!-- <effect class="activated" ref="general_weapon_activated_bullet_light" lighting="0"/> -->
+	
+
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<!--尾迹组-->
+		<trail probability="1" key="fox_trail"/>	
+    </projectile>
+	
+	<!--枪口特效-->
+	<!-- <effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/>  -->
+	<!-- <effect class="muzzle" ref="repair_muzzle_trail_1" lighting="0"/>  -->
+	
+    <ballistics 
+    curve_height="30" 
+    near_far_distance="0" 
+    speed_estimation_near="0" 
+    speed_estimation_far="100" 
+    max_speed="58" 
+    randomness="3.0" 
+    tweak_factor="0.95" /> 
+	
+	<!--姿态精度-->
+    <stance state_key="running" accuracy="1" /> 
+    <stance state_key="walking" accuracy="1" />
+	<stance state_key="standing" accuracy="1" />
+	<stance state_key="crouching" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1" />     
+     	
+</weapon>
+<weapon 
+file="_rare_weapon_mk2_re.base"
+key="re_acg_kemomimi.weapon" 
 > 
     <specification 	
     slot="0" 	
@@ -162,3 +328,4 @@ key="acg_kemomimi.weapon"
     <stance state_key="over_wall" accuracy="1" />     
      	
 </weapon>
+</weapons>

@@ -41,9 +41,6 @@ dictionary healable_weapon = {
 //可额外恢复护甲的击杀对象(soldier_group_name)
 dictionary healable_killtarget_bonus = {
 
-        // 空
-        {"",-1},
-
         {"Warlord",5},
 
         {"Behemoth",5},
@@ -54,9 +51,6 @@ dictionary healable_killtarget_bonus = {
 };
 //可获得经验加成的击杀武器
 dictionary recommend_kill_weapon_bonus = {
-
-        // 空
-        {"",-1},
 
 		//数字为额外经验倍率
         {"hd_ar_ar19_liberator_full_upgrade.weapon",2.0},
@@ -72,6 +66,15 @@ dictionary recommend_kill_weapon_bonus = {
 
         // 占位的
         {"666",-1}
+
+};
+//不计入结算击杀的伤害
+dictionary exclude_kill_target = {
+
+
+        {"hd_offensive_shredder_missile_strike_mk3_damage_2.projectile",true},
+
+        {"",-1}
 
 };
 // --------------------------------------------
@@ -214,7 +217,10 @@ class kill_reward : Tracker {
 		string t_name = g_playerInfoBuck.getNameByPid(t_pid);
 		_log("execute kill_reward");
 		if (killer !is null && target !is null && killer_fid != target_fid) {
-			g_battleInfoBuck.addKill(k_name);
+			bool value;
+			if(!exclude_kill_target.get(weaponKey,value)){
+				g_battleInfoBuck.addKill(k_name);
+			}
 			int healnum = 0;
 			if(healable_weapon.get(weaponKey,healnum)){//执行：可恢复护甲的击杀武器
 				healCharacter(m_metagame,killer_cid,healnum);

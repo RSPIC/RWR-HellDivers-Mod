@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>	
+<weapons>
 <weapon 
 file="_rare_weapon_mk4.base"
 key="ex_disaster_railgun.weapon" 
@@ -108,5 +109,115 @@ key="ex_disaster_railgun.weapon"
 
 
 </weapon>
+<weapon 
+file="_rare_weapon_mk4_re.base"
+key="re_ex_disaster_railgun.weapon" 
+> 
+    <specification 	
+    slot="1" 	
+    retrigger_time="1" 
+    accuracy_factor="1.0" 
+    sustained_fire_grow_step="0.6" 
+    sustained_fire_diminish_rate="1.3" 
+    magazine_size="8" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="1"	
+    suppressed="1" 
+	class="4" 
+    name="Disaster Railgun" 
+	sight_range_modifier="1.5" 
+	sight_height_offset="1.0" 
+	burst_shots="1" 
+    projectiles_per_shot="1" 
+    projectile_speed="120.0"
+	barrel_offset="2.0" 
+	carry_in_two_hands="1" 
+	stab_enabled="0" 
+	stab_range="0" 
+	/> 
+	<!--0全自动 4半自动 2栓动 3特殊（需要额外动作）5近程特殊（如部署沙包）-->
+	<animation key="recoil" animation_key="recoil1, big" /> <!--后坐力动作，半身动作-->
+    <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
+    <animation state_key="reload" animation_key="disaster_railgun_reloading" />
+
+    <sound key="effect" fileref="reloading_disaster_railgun.wav" pitch_variety="0.03" volume="3.0" /> 
+    <sound key="fire" fileref="fire_disaster_railgun.wav" pitch_variety="0.03" volume="2" />
+    <sound key="dry_fire" fileref="" pitch_variety="0.03" volume="1.0" />
+	<sound key="stab" fileref="" pitch_variety="0.03" volume="1.0"/>
+	<sound key="stab_hit" fileref="" pitch_variety="0.03" volume="1.0"/>
+    <sound key="magazine_out" fileref="magzine_out_disaster_railgun.wav" pitch_variety="0.02"  volume="3"/>
+    <sound key="magazine_in" fileref="magzine_in_disaster_railgun.wav" pitch_variety="0.02"  volume="3"/>
+    <sound key="cycle" fileref="" />
+    <sound key="cycle_out" fileref="" />
+    <sound key="cycle_in" fileref="" />
+    <sound key="last_ammo" fileref="" />
+	<sound class="impact" fileref="rifle_drop.wav" />
+
+    <model filename="ex_disaster_railgun.xml" /> 
+    <hud_icon filename="ex_disaster_railgun.png" /> 
+	
+    <capacity value="0"  source="rank" source_value="0.0" />
+    <capacity value="1"  source="rank" source_value="0.0" />
+    <weak_hand_hold offset="0.3" /> 
+
+    <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="9" can_be_detected_by_footmen="1" 
+	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0" name="Disaster Railgun" radius="0.5"> 
+        <!-- 碎甲榴弹 -->
+        <result class="spawn" instance_class="projectile" instance_key="ex_disaster_railgun_damage.projectile" 
+		min_amount="10" max_amount="10" offset="0 0 0" position_spread="1.5 0" direction_spread="0 0" />	
+
+		<trigger class="impact" time_to_live="1.5"  />
+		<rotation class="motion" />
+		
+		<effect class="result" key="terrain" ref="401_disaster_hit_spread_partcile" />
+		<effect class="result" key="terrain" ref="401_disaster_hit_center_light" />
+		<effect class="result" key="terrain" ref="401_disaster_hit_firesmoke_01" post_processing="0"/>
+		<effect class="result" key="terrain" ref="401_disaster_hit_firesmoke_02" post_processing="0"/>
+		<effect class="result" key="terrain" ref="401_disaster_hit_firesmoke_03" post_processing="1"/>
+		<effect class="activated" ref="401_disaster_activated_trail" />
+	
+        <sound class="result" key="other" fileref="at_hit_sfx_3.wav" pitch_variety="0.01" volume="5" />
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+		
+    </projectile>
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 
+	<!--
+    <ballistics 
+	curve_height="3.0"  
+    near_far_distance="10.0"  
+    speed_estimation_near="55.0" 
+    speed_estimation_far="35.0" 
+    max_speed="37.0" 
+    randomness="0.0" 
+    tweak_factor="2.2" />  
+	-->
+	
+    <stance state_key="running" accuracy="1" /> 
+    <stance state_key="walking" accuracy="1" />
+	<stance state_key="standing" accuracy="1" />
+	<stance state_key="crouching" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1" />     
+     
+    <modifier class="speed" value="0.0" /> 
+    <modifier class="hit_success_probability" value="0.0" />
+    <modifier class="detectability" value="0.0" />
+
+ 
+
+
+</weapon>
+</weapons>
 
 

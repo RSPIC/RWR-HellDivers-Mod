@@ -395,6 +395,7 @@ class VoteManager : Tracker {
         }
         string name = m_nameList[index];
         int pid = g_playerInfoBuck.getPidByName(name);
+        notify(m_metagame, "你成功赞赏了"+name, dictionary(), "misc", m_pid, false, "", 1.0);
         if(pid == m_pid){//不能赞赏自己
             _report(m_metagame,"玩家："+m_voterName+" 称赞了他自己");
             return;

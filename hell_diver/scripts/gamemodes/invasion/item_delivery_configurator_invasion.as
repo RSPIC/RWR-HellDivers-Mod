@@ -839,20 +839,20 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		ScoredResource("MTL_SL_STRG4", "carry_item", 0.3f),     
 		//total f = 130 左右 3280一张
 
-		ScoredResource("reward_box_collection.carry_item", "carry_item", 0.01f),
-		ScoredResource("reward_box_skin.carry_item", "carry_item", 25.0f),
+		ScoredResource("reward_box_collection.carry_item", "carry_item", 0.001f),
+		ScoredResource("reward_box_skin.carry_item", "carry_item", 20.0f),
 		ScoredResource("reward_box_music.carry_item", "carry_item", 1.0f), 
-		ScoredResource("reward_box_vehicle.carry_item", "carry_item", 4.0f), 
+		ScoredResource("reward_box_vehicle.carry_item", "carry_item", 5.0f), 
 		// mk1 2w标价 期望＞6w
 		ScoredResource("reward_box_weapon_1.carry_item", "carry_item", 7.1f),
 		// mk2 5w 期望＞(2+7)*3=27w
-		ScoredResource("reward_box_weapon_2.carry_item", "carry_item", 1.6f),
+		ScoredResource("reward_box_weapon_2.carry_item", "carry_item", 1.8f),
 		// mk3 12w标价 期望＞(12+5+2)*3=57w
-		ScoredResource("reward_box_weapon_lamda.carry_item", "carry_item", 0.75f),
+		ScoredResource("reward_box_weapon_lamda.carry_item", "carry_item", 0.72f),
 		// mk4 非卖 预期24w 期望＞(24+12+5+2)*3=129w
-		ScoredResource("reward_box_weapon_delta.carry_item", "carry_item", 0.33f),
+		ScoredResource("reward_box_weapon_delta.carry_item", "carry_item", 0.30f),
 		// mk5 非卖 预期48w 期望＞(48+24+12+5+2)*3=273w
-		ScoredResource("reward_box_weapon_v.carry_item", "carry_item", 0.15f),
+		ScoredResource("reward_box_weapon_v.carry_item", "carry_item", 0.11f),
 		// MK1~MK5 混合箱，少量出
 		ScoredResource("reward_box_weapon_beta.carry_item", "carry_item", 0.01f),
 		ScoredResource("reward_box_weapon_gama.carry_item", "carry_item", 0.01f),

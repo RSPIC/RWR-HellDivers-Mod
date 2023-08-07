@@ -100,6 +100,7 @@ dictionary banned_backpack_item = {
         {"hd_exo44_walker_mk3_mg.weapon","weapon"},
         {"hd_exo44_walker_mk3_missile.weapon","weapon"},
         {"hd_exo48_obsidian_mk3_cannon.weapon","weapon"},
+        {"hd_exo48_obsidian_mk3_cannon_main.weapon","weapon"},
         {"hd_exo51_lumberer_mk3_cannon.weapon","weapon"},
         {"hd_exo51_lumberer_mk3_flame.weapon","weapon"},
 
@@ -321,11 +322,12 @@ class itemdrop_event : Tracker {
 				res.addToResources(resources,4);
 				addListItemInBackpack(m_metagame,characterId,resources);
 			}
-			if(containerId == 2 ){//装备进背包
+			if(containerId == 2 || containerId == 3){//装备进背包或者仓库
 				_log("delete banned item in backpack");
 				string itemtype = string(banned_backpack_item[itemKey]);
 				_log("itemtype "+itemtype);
 				deleteItemInBackpack(m_metagame,characterId,itemtype,itemKey);
+				deleteItemInStash(m_metagame,characterId,itemtype,itemKey);
 				_log("success delete supply item itemKey: "+ itemKey);
 				if(itemKey == "hd_ammo_supply_box.projectile" && false){//留给补给兵的特殊机制(自补给+背包额外子弹箱)
 					string ExKey="hd_ammo_supply_box_ex.projectile";
