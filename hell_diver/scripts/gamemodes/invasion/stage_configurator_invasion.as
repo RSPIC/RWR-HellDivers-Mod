@@ -650,8 +650,8 @@ class StageConfiguratorInvasion : StageConfigurator {
 		stage.addTracker(Overtime(m_metagame, 0));
 
 		stage.m_maxSoldiers = 60 * 5;     // was 33 * 3 in 1.65
-		stage.m_playerAiCompensation = 4;                                         // was 4 (1.81) was 5 (1.86)
-    stage.m_playerAiReduction = 2;                                            // was 2 (1.81) was 2.5 (1.86)  
+		stage.m_playerAiCompensation = 0;                                         // was 4 (1.81) was 5 (1.86)
+    stage.m_playerAiReduction = 0;                                            // was 2 (1.81) was 2.5 (1.86)  
 		stage.m_soldierCapacityModel = "constant";
 
     stage.m_minRandomCrates = 1; 
@@ -667,9 +667,9 @@ class StageConfiguratorInvasion : StageConfigurator {
 		}
 		{
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1, 0.25, 0.05));             // was 0.2 0.1 in 1.65
-			f.m_overCapacity = 60;
+			f.m_overCapacity = 180;
 			f.m_capacityMultiplier = 0.0001;                                                      // was 1.32 in 1.65, now working with offset only
-			f.m_capacityOffset = 60;
+			f.m_capacityOffset = 180;
 			stage.m_factions.insertLast(f);
 		}
 		{

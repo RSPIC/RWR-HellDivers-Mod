@@ -594,13 +594,14 @@ class projectile_event : Tracker {
                 }
                 //先过主手武器检测
                 string equipKey_main = getPlayerEquipmentKey(m_metagame,cid,0);//主武器
-                string matchKey = "acg_patricia_";
-                if(matchKey != equipKey_main.substr(0,matchKey.length())){
+                string targetKey = "acg_patricia";
+                string targetKey2 = "re_acg_patricia";
+
+                if(!startsWith(equipKey_main,targetKey) && !startsWith(equipKey_main,targetKey2)){
                     setWoundCharacter(m_metagame,cid);
                     notify(m_metagame, "你的主武器未为对应武器", dictionary(), "misc", pid, true, "倒地惩罚", 1.0);
                     return;
                 }
-                
                 const XmlElement@ player = getPlayerInfo(m_metagame,pid);
                 if(player is null){return;}
                 int fid = 0;
@@ -617,6 +618,46 @@ class projectile_event : Tracker {
                     CreateProjectile@ task = CreateProjectile(m_metagame,sPos,ePos,key,cid,fid,speed,0.5);
                     tasker.add(task);
                 }
+                break;
+            }
+            case 47:{//hyper_mega_bazooka_launcher_skill
+                int cid = event.getIntAttribute("character_id");
+                int pid = g_playerInfoBuck.getPidByCid(cid);
+                if(pid == -1){
+                    const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                    pid = character.getIntAttribute("player_id");
+                    notify(m_metagame, "未能获取到你的PID，已通过其他方法获取。请汇报此情况", dictionary(), "misc", pid, false, "", 1.0);
+                }
+                //先过主手武器检测
+                string equipKey_main = getPlayerEquipmentKey(m_metagame,cid,0);//主武器
+                string targetKey = "ex_hyper_mega_bazooka";
+                string targetKey2 = "re_ex_hyper_mega_bazooka";
+                if(!startsWith(equipKey_main,targetKey) && !startsWith(equipKey_main,targetKey2)){
+                    setWoundCharacter(m_metagame,cid);
+                    notify(m_metagame, "你的主武器未为对应武器", dictionary(), "misc", pid, true, "倒地惩罚", 1.0);
+                    return;
+                }
+                
+                const XmlElement@ player = getPlayerInfo(m_metagame,pid);
+                const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                if(player is null){return;}
+                int fid = 0;
+                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+                Vector3 sPos = stringToVector3(character.getStringAttribute("position"));
+                Vector3 aim_unit_vector = getAimUnitVector(1,sPos,ePos);
+                ePos = ePos.add(aim_unit_vector.scale(200));
+
+                string key = "ex_hyper_mega_bazooka_launcher_skill_damage.projectile";
+                float speed = 1;
+                float delaytime = 0.2;
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                CreateProjectile@ task1 = CreateProjectile(m_metagame,sPos,ePos,key,cid,fid,speed,2.2,10);
+                CreateProjectile@ task2 = CreateProjectile(m_metagame,sPos,ePos,key,cid,fid,speed,1.5,10);
+                CreateProjectile@ task3 = CreateProjectile(m_metagame,sPos,ePos,key,cid,fid,speed,1.5,10);
+                tasker.add(task1);
+                tasker.add(task2);
+                tasker.add(task3);
+                break;
             }
 
             default:

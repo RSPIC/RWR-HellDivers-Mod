@@ -185,6 +185,7 @@ class Event_call_helldiver_superearth_airstrike : event_call_task {
 		if(m_timeLeft >= 0){m_timeLeft -= time;return;}
 		if (m_timeLeft_internal >= 0){m_timeLeft_internal -= time;return;}
 		if (m_excute_time >= m_excute_Limit){m_end = true;return;}
+		
 		m_excute_time++;
 		m_timeLeft_internal = m_time_internal;
 
@@ -288,6 +289,11 @@ class Event_call_helldiver_superearth_incendiary_bombs : event_call_task {
 			m_excute_Limit = 5;
 			m_time_internal = 0.1;
 			m_airstrike_key = "hd_superearth_incendiary_bombs_mk3";
+		}
+		const XmlElement@ character = getCharacterInfo(m_metagame, m_character_id);
+		if (character !is null) {
+			int dead = character.getIntAttribute("dead");
+			if(dead == 1){m_end = true;return;}
 		}
 	}
 
@@ -609,6 +615,8 @@ class CreateProjectile : Task{
     protected int m_cid;
     protected int m_fid;
     protected float m_speed;
+	protected Vector3 aim_unit_vector;
+	protected float m_distance;
 
 	CreateProjectile(Metagame@ metagame,Vector3 sPos,Vector3 ePos,string key,int cid,int fid,float speed,float time,int num = 1){
 		@m_metagame = @metagame;
@@ -620,6 +628,8 @@ class CreateProjectile : Task{
 		m_cid = cid;
 		m_fid = fid;
 		m_speed = speed; 	
+		aim_unit_vector = getAimUnitVector(1,sPos,ePos);
+		m_distance = getAimUnitDistance(1,sPos,ePos);
 	}
 
 	void start(){
@@ -633,7 +643,9 @@ class CreateProjectile : Task{
 	}
 
 	protected void create(){
-		for(;m_num>0;--m_num){
+		
+		for(int i = m_num ; i>0 ; --i){
+			m_startPos = m_endPos.subtract(aim_unit_vector.scale((m_distance*i)/m_num));
 			CreateDirectProjectile(m_metagame,m_startPos,m_endPos,m_key,m_cid,m_fid,m_speed);
 		}
 	}

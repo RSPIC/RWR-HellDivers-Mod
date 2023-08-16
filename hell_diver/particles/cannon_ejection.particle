@@ -1,0 +1,60 @@
+-------------------------------华约 2a46 125mm-------------------------------
+particle_system					cannon_shell_125mm
+{
+	quota						100
+	material					cannon_shell_125mm
+	particle_width				0.4
+	particle_height				0.4
+	cull_each					false
+	renderer					billboard
+	billboard_type				point
+
+	// Emitter Type.
+	emitter						Point
+	{
+		colour					1.0 0.75 0 1
+		angle					10
+		emission_rate			18
+		position				0 0.0 0
+		velocity				-6.0
+		time_to_live			1.5
+		duration				0.05
+	}
+
+
+	// Casing Rotation.
+	affector							Rotator
+	{
+		rotation_speed_range_start		0
+		rotation_speed_range_end		1620
+		rotation_range_start			0
+		rotation_range_end				360
+	}
+
+	// Gravity.
+    affector					LinearForce
+    {
+        force_vector			0 -1.0 0
+        force_application		add
+    }
+}
+
+material cannon_shell_125mm{
+	receive_shadows off
+	technique {
+		pass {
+			cull_hardware none
+			cull_software none
+			ambient 1.266667 1.266667 1.266667 1.000000
+			diffuse 0.266667 0.266667 0.266667 1.000000
+			specular 0.333333 0.333333 0.333333 1.000000
+			emissive 1.000000 1.000000 1.000000 1.000000
+			scene_blend alpha_blend
+
+			texture_unit {
+				texture cannon_shell_125mm.png
+			}
+		}
+	}
+}
+-------------------------------    -------------------------------

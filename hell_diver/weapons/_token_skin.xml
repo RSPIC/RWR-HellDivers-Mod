@@ -362,12 +362,26 @@
         <hud_icon filename="token_mari_lochi_gymsuit_ver.png" />
         <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
         <capacity value="12" source="rank" source_value="0" />
-        <sound class="result" key="other" fileref="token_felix_schultz.wav" pitch_variety="0" volume="4.0"/>
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Shirasu Azusa [Skin]" key="token_shirasu_azusa.projectile" >
+        <hud_icon filename="token_shirasu_azusa.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Reisalin Stout [Skin]" key="token_laisha.projectile" >
+        <hud_icon filename="token_laisha.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
     </projectile>
 
 
-
-
+    <!-- 其他 -->
+    <projectile file="hd_hellpod_call.projectile" name="Dark Excalibur [Skin]" key="token_dark_excalibur.projectile" >
+        <hud_icon filename="token_dark_excalibur.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+        <sound class="result" key="other" fileref="token_felix_schultz.wav" pitch_variety="0" volume="4.0"/>
+    </projectile>
     <!-- HDicker -->
     <projectile file="hd_hellpod_call.projectile" name="Dicker Tactical Combat [Skin]" key="token_hdicker_tactical_combat.projectile" >
         <hud_icon filename="hdicker_tactical_combat.png" />

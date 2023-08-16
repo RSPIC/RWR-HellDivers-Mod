@@ -823,7 +823,7 @@ class battleInfoBuck{
 					bf = 3.4;
 				}
 				rp = 
-				  kc * 30
+				  kc * 50
 				+ oc * 70*NormalizedConcaveCurve(0.002*oc,0.5)
 				+ mc * 3000
 				+ pt * 300
@@ -831,7 +831,7 @@ class battleInfoBuck{
 				rp = rp*bf;
 				if(rp<=0){rp=0;}
 				dictionary a;
-				a["%kx"] = formatInt(int(kc*30));
+				a["%kx"] = formatInt(int(kc*50));
 				a["%ox"] = formatInt(int(oc*70*NormalizedConcaveCurve(0.002*oc,0.5)));
 				a["%mx"] = formatInt(int(mc*3000));
 				a["%px"] = formatInt(int(pt*300));
@@ -1146,6 +1146,11 @@ class firstUseInfoBuck {
 	}
 
 	void addInfo(string&in name){
+		for(uint i=0; i<m_firstUseInfos.size(); ++i){
+            if(m_firstUseInfos[i].getName() == name){
+                return;
+            }
+        }
 		first_use_info@ newinfo = first_use_info(name);
         m_firstUseInfos.insertLast(newinfo);
 	}
@@ -1305,13 +1310,14 @@ firstUseInfoBuck@ g_firstUseInfoBuck = firstUseInfoBuck();
 userCountInfoBuck@ g_userCountInfoBuck = userCountInfoBuck();
 bool g_online_TestMode = false;
 bool g_debugMode = false;
-
+int g_server_difficulty_level = 0;
 //----------------------------------------------------------
 //初始化用Tracker
 class Initiate : Tracker {
 	protected GameModeInvasion@ m_metagame;
 	protected bool m_ended;
 	protected bool isStarted;
+	protected bool isStarted2;
 	protected bool m_debug_mode;
     protected int m_server_difficulty_level;
 
@@ -1322,6 +1328,18 @@ class Initiate : Tracker {
 		g_debugMode = m_debug_mode;
 		g_online_TestMode = settings.m_server_test_mode;
 		m_server_difficulty_level = settings.m_server_difficulty_level;
+		g_server_difficulty_level = m_server_difficulty_level;
+
+		m_ended = false;
+		isStarted = false;
+		isStarted2 = false;
+		@g_factionInfoBuck = factionInfoBuck();	
+ 		@g_playerInfoBuck = playerInfoBuck();
+ 		@g_battleInfoBuck = battleInfoBuck();
+ 		@g_vestInfoBuck = vestInfoBuck();
+		@g_IRQ = _IRQ("",false);
+		@g_firstUseInfoBuck = firstUseInfoBuck();
+		g_firstUseInfoBuck.addInfo("admin");
 	}
 	// --------------------------------------------
 	bool hasEnded() const {
@@ -1334,24 +1352,6 @@ class Initiate : Tracker {
 		return true;
 	}
 	void start(){
-        m_ended = false;
-		isStarted = false;
-		@g_factionInfoBuck = factionInfoBuck();	
- 		@g_playerInfoBuck = playerInfoBuck();
- 		@g_battleInfoBuck = battleInfoBuck();
- 		@g_vestInfoBuck = vestInfoBuck();
-		@g_IRQ = _IRQ("",false);
-		@g_firstUseInfoBuck = firstUseInfoBuck();
-		g_firstUseInfoBuck.addInfo("admin");
-
-		_log("g_battleInfoBuck.size()="+g_battleInfoBuck.size());
-		g_battleInfoBuck.clearAll();
-		_log("g_firstUseInfoBuck.size()="+g_firstUseInfoBuck.size());
-		g_firstUseInfoBuck.clearAll();
-		_log("g_vestInfoBuck.clearAll();");
-		g_vestInfoBuck.clearAll();
-		_log("g_playerInfoBuck.size()="+g_playerInfoBuck.size());
-		g_playerInfoBuck.clearAll();
 	}
 	void update(float time){
 	}
@@ -1359,6 +1359,9 @@ class Initiate : Tracker {
 	protected void handlePlayerSpawnEvent(const XmlElement@ event) {
 		if(!isStarted){
 			initiateFactionInfo();
+			
+			g_battleInfoBuck.clearAll();
+			g_vestInfoBuck.clearAll();
 			isStarted = true;
 		}
 		initiateBattleInfo(event);
@@ -1366,6 +1369,12 @@ class Initiate : Tracker {
 	}
 	// ----------------------------------------------------
 	protected void handlePlayerConnectEvent(const XmlElement@ event) {
+		if(!isStarted2){
+			g_firstUseInfoBuck.clearAll();
+			g_userCountInfoBuck.clearAll();
+			//removeAllGlobalPlayerInfo(m_metagame);
+			isStarted2 = true;
+		}
 		const XmlElement@ player = event.getFirstElementByTagName("player");
         if(player is null){return;}
         string name = player.getStringAttribute("name");
@@ -1377,12 +1386,10 @@ class Initiate : Tracker {
         const XmlElement@ player = event.getFirstElementByTagName("player");
         if(player is null){return;}
         string name = player.getStringAttribute("name");
-		//g_firstUseInfoBuck.removeInfo(name);
 		g_userCountInfoBuck.removeInfo(name);
     }
 	// ----------------------------------------------------
 	protected void handleMatchEndEvent(const XmlElement@ event) {
-		g_firstUseInfoBuck.clearAll();
 		m_ended = true;
 	}
 	// ----------------------------------------------------

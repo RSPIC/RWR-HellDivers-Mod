@@ -35,10 +35,10 @@
   <comment key="Squad, change position" text="队员们，冲啊" />
   <comment key="Driver, take us there" text="司机，带我们去那" />
   <comment key="Driver, over there" text="司机，那里" />
-  <comment key="Gunner, there" text="枪手，那里" />
+  <comment key="Gunner, there" text="炮手，那里" />
   <comment key="Gunner, there" text="注意那里" />
-  <comment key="Gunner, there" text="枪手，瞄准那里" />
-  <comment key="Gunner, there" text="枪手，朝目标开火" />
+  <comment key="Gunner, there" text="炮手，瞄准那里" />
+  <comment key="Gunner, there" text="炮手，朝目标开火" />
   <comment key="We surrender!" text="我们投降！" />
   <comment key="We surrender!" text="别开枪！" />
   <comment key="We surrender!" text="" />
@@ -54,7 +54,7 @@
   <comment key="cancel radio call" text="结束通话" />
   <comment key="initiate radio call" text="洞幺洞幺，听到请回答，听到请回答" />
   <comment key="commander radio response" text="我是洞幺，请指示" />
-  <comment key="commander radio full" text="这里是作战指挥中心. 我们收到了太多的作战支援请求, 请稍等片刻后再呼叫支援"/>  
+  <comment key="commander radio full" text="这里是太空战略指挥中心. 我们收到了太多的作战支援请求, 请稍等片刻后再呼叫支援"/>  
   <comment key="no radio equipment" text="目前我还没有电台" />
   <comment key="no radio equipment" text="&#37;rank_name还没有权限使用电台" />
   <comment key="no radio equipment" text="我好像把电台忘在另一条裤子里了" />
@@ -68,7 +68,7 @@
   <comment key="Buzz off" text="一边儿去" />
   <comment key="Step out, kid" text="快走，孩子们" />
   <comment key="hostile vehicle takeover" text="！？" />
-  <comment key="hostile vehicle takeover" text="我去？" />
+  <comment key="hostile vehicle takeover" text="这车门没锁 ？" />
   <comment key="hostile vehicle takeover" text="嗯？" />
   <comment key="Can't respawn - the last base is under attack" text="无法重生 - 最后的基地正在被攻击" />
   <comment key="Can't respawn - spawning is locked" text="无法重生 - 重生锁定" />
@@ -107,10 +107,8 @@
   <comment key="enemy seen" text="在那" />
   <comment key="enemy seen" text="警报！" />
   <comment key="enemy seen" text="遇敌" />
-  <comment key="enemy seen, vehicle tag = any_tank" text="前进！" />
   <comment key="enemy seen, vehicle tag = any_tank" text="我们需要反坦克火箭筒！" />
   <comment key="enemy seen, vehicle tag = any_tank" text="坦..坦克！" />
-  <comment key="enemy seen, vehicle tag = any_tank" text="我天，好大的家伙！" />
   <comment key="enemy seen, vehicle tag = any_tank" text="发现敌军装甲车！" />
   <comment key="enemy seen, vehicle tag = any_tank" text="发现敌军坦克！" />
   <comment key="enemy seen, vehicle tag = any_tank" text="大家伙来了！" />
@@ -137,16 +135,16 @@
   <comment key="Move out" text="出发" />
   <comment key="Move out" text="我们走" />
   <comment key="Move out" text="跟我来" />
-  <comment key="Move out" text="让我们动起来" />
+  <comment key="Move out" text="gogogo！" />
   <comment key="All quiet here" text="这里静悄悄的" />
   <comment key="All quiet here" text="这里一切正常" />
   <comment key="All quiet here" text="*打哈欠*" />
-  <comment key="All quiet here" text="那里没有人" />
+  <comment key="All quiet here" text="那里没有生化人" />
   <comment key="All quiet here" text="*吹口哨*" />
   <comment key="All quiet here" text="暴风雨前的宁静？" />
-  <comment key="All quiet here" text="没有他们的踪迹" />
+  <comment key="All quiet here" text="没有它们的踪迹" />
   <comment key="All quiet here" text="再有两个星期..." />
-  <comment key="Yes sir" text="是的长官" />
+  <comment key="Yes sir" text="是的队长" />
   <comment key="Yes sir" text="已上路" />
   <comment key="Yes sir" text="OK" />
   <comment key="Yes sir" text="马上就到" />
@@ -154,13 +152,12 @@
   <comment key="Yes sir" text="收到" />
   <comment key="Yes sir" text="了解" />
   <comment key="Uh, I can't drive this thing" text="额，我驾驭不了这个玩意" />
-  <comment key="Uh, I can't drive this thing" text="回驾校再学学，嗯？" />
   <comment key="Uh, I can't drive this thing" text="艾玛！" />
   <comment key="Uh, I can't drive this thing" text="见鬼！" />
-  <comment key="Uh, I can't drive this thing" text="我打赌机轴坏了" />
+  <comment key="Uh, I can't drive this thing" text="我打赌燃油加错了" />
   <comment key="Uh, I can't drive this thing" text="我敢肯定汽化器坏了" />
   <comment key="Uh, I can't drive this thing" text="我确信这个方向盘不能用了" />
-  <comment key="Uh, I can't drive this thing" text="啊，原来这就是离合器啊！" />
+  <comment key="Uh, I can't drive this thing" text="啊，原来刹车在右边！" />
   <comment key="Uh, I can't drive this thing" text="真希望我不用开车" />
   <comment key="Uh, I can't drive this thing" text="哎哟！" />
   <comment key="Uh, I can't drive this thing" text="哎哟，再来一遍！" />
@@ -176,7 +173,7 @@
   <comment key="overencumbered" text="该死的背包！" />
   <comment key="overencumbered" text="不能背着这么重的东西准确射击" />
   <comment key="overencumbered" text="我应该减轻背包的重量" />
-  <comment key="Where to, chief?" text="去哪，头儿？" />
+  <comment key="Where to, chief?" text="去哪，队长？" />
   <comment key="Where to, chief?" text="有想去的地方吗？" />
   <comment key="Where to, chief?" text="听候吩咐" />
   <comment key="Where to, chief?" text="等待命令" />
@@ -211,23 +208,25 @@
   <comment key="enemy comms have been destroyed, by us" text="做得好，敌军&#37;enemy_name的通讯被破坏！" />
   <dialogue key="wander dialogue 2 men">
     <comment text="瞧瞧这里" />
-    <comment text="太幽静了" />
+    <comment text="太安静了" />
     <comment text="我都想住这了" />
   </dialogue>
   <dialogue key="wander dialogue 2 men">
     <comment text="好像我以前来过这里" />
   </dialogue>
   <dialogue key="wander dialogue 2 men">
-    <comment text="我们需要在这采取一些行动" />
+    <comment text="小心周围有没有生化斯坦派过来的间谍" />
   </dialogue>
   <dialogue key="wander dialogue 2 men">
     <comment text="我感觉今天战无不胜" />
   </dialogue>
   <dialogue key="wander dialogue 2 men">
-    <comment text="他..他们说参..参军，很..很有趣..趣" />
+    <comment text="我想锻炼肌肉" />
+	<comment text="哑铃可是违禁品，小子" />
   </dialogue>
   <dialogue key="wander dialogue 2 men">
     <comment text="要是知道我会走这么远的路，我宁愿加入海军" />
+	<comment text="我们没有海军，孩子" />
   </dialogue>
   <dialogue key="defense dialogue 2 men">
     <comment text="你快升官了吗？" />
@@ -235,41 +234,13 @@
   </dialogue>
   <dialogue key="wander dialogue 2 men">
     <comment text="想看看很酷东西吗?" />
-    <comment text="别闹了，我不会再上当了" />
-  </dialogue>
-  <dialogue key="defense dialogue 2 men">
-    <comment text="你懂的，我们曾经深入敌后，只有军士长和我" />
-    <comment text="所以你加入了一个潜行小队?" />
-    <comment text="那是，还发现了一辆运货卡车" />
-    <comment text="喔，兄弟你太牛了" />
-    <comment text="侦察敌方领土肯定比在这里浪费时间好" />
-    <comment text="至少在这我们活得更长，嗯" />
-    <comment text="好像是这么回事" />
+    <comment text="去你妈的，我不会再上当了" />
   </dialogue>
   <dialogue key="defense dialogue 2 men">
     <comment text="不要跟我妈说我参军了" />
     <comment text="为什么这么说？" />
     <comment text="她以为我还在妓院弹钢琴" />
     <comment text="哦哦好..." />
-  </dialogue>
-  <dialogue key="defense dialogue 2 men">
-    <comment text="这场战争对我来说就像做梦" />
-    <comment text="嗯？" />
-    <comment text="一个月前我还在玩Running with Rifles" />
-    <comment text="是啊，现在你是这个游戏的一部分了" />
-    <comment text="没错" />
-    <comment text="那我要是玩了《花花公子拉瑞》这个游戏？" />
-    <comment text="呵呵" />
-  </dialogue>
-  <dialogue key="defense dialogue 2 men">
-    <comment text="所以你被派去巡逻？" />
-    <comment text="是啊，真见鬼，我搞砸了" />
-    <comment text="你当时做了什么？" />
-    <comment text="别跟别人说我把运货卡车开爆了..." />
-    <comment text="怎么会？我亲眼看你把它从敌军领地开回来" />
-    <comment text="那不是敌军的卡车..." />
-    <comment text="我天，够惨" />
-    <comment text="是呢" />
   </dialogue>
   <dialogue key="defense dialogue 2 men">
     <comment text="有烟吗?" />
@@ -285,27 +256,13 @@
     <comment text="你说的有点道理" />
   </dialogue>
   <dialogue key="defense dialogue 2 men">
-    <comment text="有任何通讯车的迹象没？" />
-    <comment text="没有，但是我确定它不在这里" />
-  </dialogue>
-  <dialogue key="defense dialogue 2 men">
-    <comment text="你知道吗？我发现了几瓶威士忌并藏了起来" />
+    <comment text="你知道吗？我发现了几瓶私酿并藏了起来" />
     <comment text="嘘，小点声，你不应该留着它" />
   </dialogue>
   <dialogue key="defense dialogue 2 men">
     <comment text="我一直在想..." />
     <comment text="想什么？" />
     <comment text="额，突然忘了" />
-  </dialogue>
-  <dialogue key="defense dialogue 2 men">
-    <comment text="这场仗打的太扯了" />
-    <comment text="此话怎讲？" />
-    <comment text="好吧，你告诉我为什么我们在这里" />
-    <comment text="呃，他们不会告诉我们的" />
-    <comment text="你可以说我疯了，但这真的很可疑" />
-    <comment text="我认为我们正在从一个暴君手里，解放这个贫穷的国家和善良的人民" />
-    <comment text="在我看来，我们正在不顾当地的民众的死活，侵略他们的土地" />
-    <comment text="你最好别这样想，否则你会被举报的！" />
   </dialogue>
   <dialogue key="defense dialogue 2 men">
     <comment text="长官？为什么我们什么事都不做？" />
@@ -331,21 +288,6 @@
     <comment text="是啊，我们可能还没准备好应对他们的偷袭" />
   </dialogue>
   <dialogue key="defense dialogue 2 men">
-    <comment text="'Osumia Games'... 谁想出的名字？" />
-    <comment text="等等，嗯..你刚说啥？" />
-    <comment text="我也不知道" />
-  </dialogue>
-  <dialogue key="defense dialogue 2 men">
-    <comment text="我最近在游戏里碰到了游戏开发者" />
-    <comment text="你是说Pasik和JackMayol么？" />
-    <comment text="是的，Pasik的瞄准就跟个老太太似的，但是JackMayol还不如他！" />
-  </dialogue>
-  <dialogue key="defense dialogue 2 men">
-    <comment text="我最近在游戏里碰到了魔法师" />
-    <comment text="魔法师是谁？" />
-    <comment text="就是汉化游戏的那个人，Steam里叫Candymew" />
-  </dialogue>
-  <dialogue key="defense dialogue 2 men">
     <comment text="有时候我真的感觉我们只是带着枪跑来跑去" />
     <comment text="被你发现了" />
   </dialogue>
@@ -353,12 +295,7 @@
     <comment text="哎哟，你轧我脚了！" />
     <comment text="应该轧你嘴！" />
   </dialogue>
-<dialogue key="vehicle dialogue 2 men">
-    <comment text="这个游戏发售了吗？" />
-    <comment text="是的，在Steam平台发售了！" />
-    <comment text="太棒了" />
-  </dialogue>
-  <dialogue key="vehicle dialogue 2 men tag=truck">
+  <dialogue key="vehicle dialogue 2 men tag=any_tank">
     <comment text="哥们儿，你放屁了？" />
     <comment text="可能吧" />
     <comment text="靠！快把窗户开开！" />
@@ -367,15 +304,15 @@
     <comment text="你知道吗？" />
     <comment text="嗯？" />
     <comment text="我感觉爱上你了" />
-    <comment text="滚犊子..." />
+    <comment text="爬！" />
   </dialogue>
   <dialogue key="vehicle dialogue 2 men">
     <comment text="你在哪拿的驾照？" />
     <comment text="你妈给我的" />
   </dialogue>
   <dialogue key="vehicle dialogue 2 men">
-    <comment text="Hit me baby one more tiiiime~~（歌词）" />
-    <comment text="好嘞！*啪*" />
+    <comment text="Never gonna give you up~" />
+    <comment text="你从哪学来的？" />
   </dialogue>
   <dialogue key="vehicle dialogue 2 men">
     <comment text="我觉得在这里不安全" />
@@ -398,29 +335,8 @@
     <comment text="失败总是发生在指挥官注意你的时候" />
   </dialogue>
   <dialogue key="vehicle dialogue 2 men">
-    <comment text="注意点触发式手榴弹" />
-    <comment text="是啊，它们造成的伤害比破片手榴弹要大得多" />
-    <comment text="幸好它们的爆炸范围很小" />
-  </dialogue>
-  <dialogue key="vehicle dialogue 2 men">
-    <comment text="震撼弹并不像你想的一样毫无用处" />
-    <comment text="是的，他们能使敌人眩晕一段时间" />
-    <comment text="它还有很大的作用半径呢！" />
-  </dialogue>
-  <dialogue key="vehicle dialogue 2 men">
     <comment text="" />
     <comment text="" />
-  </dialogue>
-  <dialogue key="vehicle dialogue 2 men">
-    <comment text="在家里我们可能会冻成狗" />
-    <comment text="喝点啤酒呗" />
-    <comment text="玩一下RUNNING WITH RIFLES" />
-    <comment text="不不不，我们还得为国效力呢" />
-  </dialogue>
-  <dialogue key="vehicle dialogue 2 men">
-    <comment text="我可能得回一趟军械库" />
-    <comment text="为什么？" />
-    <comment text="我忘穿防弹背心了" />
   </dialogue>
   <dialogue key="vehicle dialogue 2 men">
     <comment text="军队中要是有些妹子就好了" />
@@ -442,12 +358,6 @@
     <comment text="是的，那样我们就不用整天听你唱歌了" />
   </dialogue>
   <dialogue key="vehicle dialogue 2 men">
-    <comment text="他们给你新装备了吗？" />
-    <comment text="给了" />
-    <comment text="啊啊啊！不公平！" />
-    <comment text="兄弟你生气了？" />
-  </dialogue>
-  <dialogue key="vehicle dialogue 2 men">
     <comment text="你可以往那边挪挪吗？" />
     <comment text="不可以" />
     <comment text="谢谢" />
@@ -467,21 +377,12 @@
     <comment text="那不是电话，是我的电子宠物" />
   </dialogue>
   <dialogue key="vehicle dialogue 2 men">
-    <comment text="我希望更多的人能去玩pvp模式" />
-    <comment text="为什么？" />
-    <comment text="这样他们就能让咱这俩个AI活下来了..." />
-  </dialogue>
-  <dialogue key="vehicle dialogue 2 men">
     <comment text="遇到麻烦时要倾泻出弹匣里的子弹" />
     <comment text="是的，长官！" />
   </dialogue>
   <dialogue key="vehicle dialogue 2 men">
     <comment text="我有个主意" />
     <comment text="打住，你出的都是馊主意" />
-  </dialogue>
-  <dialogue key="vehicle dialogue 2 men">
-    <comment text="伙计们这仗打的爽么？" />
-    <comment text="长官，是的长官！" />
   </dialogue>
   <dialogue key="vehicle dialogue 2 men">
     <comment text="别忘了我今天早上跟你讲的" />
@@ -494,7 +395,7 @@
   </dialogue>
   <dialogue key="vehicle dialogue 2 men">
     <comment text="如果一败涂地了我们该怎么办？" />
-    <comment text="那我们就呼叫火炮支援吧" />
+    <comment text="那我们就呼叫撕裂者导弹支援吧" />
   </dialogue>
   <dialogue key="vehicle dialogue 2 men">
     <comment text="所以你最后一次开车是什么时候？" />
@@ -514,11 +415,6 @@
     <comment text="第2条：如果指挥官不对，遵守第1条
 	" />
   </dialogue>
-  <dialogue key="vehicle dialogue 2 men tag=campfire">
-    <comment text="我的脚着火了" />
-    <comment text="动一下" />
-    <comment text="我做不到" />
-  </dialogue>
   <dialogue key="vehicle dialogue 2 men tag=any_tank">
     <comment text="我太爱这辆坦克了" />
     <comment text="闭嘴吧你" />
@@ -532,13 +428,6 @@
   <dialogue key="vehicle dialogue 2 men tag=any_tank">
     <comment text="对装甲车最好的防护是呆在敌军炮火射程之外" />
     <comment text="你真特么机智" />
-  </dialogue>
-  <dialogue key="vehicle dialogue 2 men tag=any_tank">
-    <comment text="这就是斯巴达~！" />
-    <comment text="..." />
-  </dialogue>
-  <dialogue key="vehicle dialogue 2 men tag=any_tank">
-    <comment text="吃我一炮！" />
   </dialogue>
   <dialogue key="vehicle dialogue 2 men tag=any_tank">
     <comment text="最适合坦克的地形就是没有反坦克武器的地方" />
@@ -555,10 +444,10 @@
     <comment text="不知道，为什么？" />
     <comment text="因为我们从他们身上辗过去时会发出这样的声音" />
   </dialogue>
-  <dialogue key="vehicle dialogue 2 men tag=truck">
+  <dialogue key="vehicle dialogue 2 men tag=any_tank">
     <comment text="哎呦喂" />
   </dialogue>
-  <dialogue key="vehicle dialogue 2 men tag=truck">
+  <dialogue key="vehicle dialogue 2 men tag=any_tank">
     <comment text="我想吐..." />
   </dialogue>
   <dialogue key="vehicle dialogue 2 men tag=truck">
@@ -593,43 +482,31 @@
   <dialogue key="vehicle dialogue 2 men tag=truck">
     <comment text="我开始觉得不呆在这个棺材里更安全了" />
   </dialogue>
-  <dialogue key="vehicle dialogue 2 men tag=truck">
+  <dialogue key="vehicle dialogue 2 men tag=any_tank">
     <comment text="想想有张美味的披萨摆在眼前" />
     <comment text="或者冰淇淋" />
     <comment text="或者烤鸡" />
     <comment text="或者豆腐沙拉" />
     <comment text="什么沙拉？！" />
   </dialogue>
-  <dialogue key="vehicle dialogue 2 men tag=truck">
+  <dialogue key="vehicle dialogue 2 men tag=any_tank">
     <comment text="哦孩子，今天早上你你去啃墓地了吗？" />
     <comment text="不好意思兄弟，我上周弄丢了我的牙刷" />
   </dialogue>
-  <dialogue key="vehicle dialogue 2 men tag=truck">
+  <dialogue key="vehicle dialogue 2 men tag=any_tank">
     <comment text="额，这个绿色的小玩意是干什么用的？" />
     <comment text="额... 没什么..." />
   </dialogue>
-  <dialogue key="vehicle dialogue 2 men tag=truck">
-    <comment text="嘿，就是你，你可以重新开始游戏吗?" />
-    <comment text="怎么了？" />
-    <comment text="我好像卡bug了" />
-  </dialogue>
-  <dialogue key="vehicle dialogue 2 men tag=truck">
+  <dialogue key="vehicle dialogue 2 men tag=any_tank">
     <comment text="你最好带上你的头盔而不是这条红色头巾" />
     <comment text="你或许是对的，但是那样像个二逼一样" />
     <comment text="子弹打过来你就不这么说了" />
   </dialogue>
-  <dialogue key="vehicle dialogue 2 men tag=truck">
+  <dialogue key="vehicle dialogue 2 men tag=any_tank">
     <comment text="车里闻起来就像臭脚丫子一样" />
   </dialogue>
-  <dialogue key="vehicle dialogue 2 men tag=truck">
-    <comment text="你想来片口香糖吗？" />
-    <comment text="不，谢了" />
-    <comment text="我们都认为你需要" />
-    <comment text="额，你意思是...？" />
-    <comment text="你猜对了，伙计！" />
-  </dialogue>
-  <dialogue key="vehicle dialogue 2 men tag=truck">
-    <comment text="你还记得有部电影里的卡车司机在最后逆转了战局吗？" />
+  <dialogue key="vehicle dialogue 2 men tag=any_tank">
+    <comment text="你还记得有部电影里的坦克车长在最后逆转了战局吗？" />
     <comment text="不记得" />
     <comment text="耶，我也不记得。反正我们要死了。" />
   </dialogue>
@@ -688,23 +565,7 @@
     <comment text="写上“和去年的表现一样”" />
   </dialogue>
   <dialogue key="defense dialogue 2 men">
-    <comment text="我在想念我的智能手机" />
-    <comment text="是的，没有微信，没有微博，好无聊" />
-    <comment text="我最想念1024" />
-    <comment text="嗯...我啥都不知道" />
-    <comment text="当然啦~" />
-    <comment text="lol" />
-  </dialogue>
-  <dialogue key="defense dialogue 2 men">
-    <comment text="我很高兴开发者没有制作空中载具" />
-    <comment text="恩对，少了一点担忧" />
-    <comment text="是啊，不用担心上面掉下来的什么" />
-    <comment text="除了火炮和迫击炮和...啊啊啊啊啊！" />
-    <comment text="哈哈哈，还有鸽子屎！" />
-    <comment text="该死！" />
-  </dialogue>
-  <dialogue key="defense dialogue 2 men">
-    <comment text="职业军人是有预判意识的" />
+    <comment text="职业潜兵是有预判意识的" />
     <comment text="但这个世界遍布着危险的菜鸟" />
   </dialogue>
   <dialogue key="defense dialogue 2 men">
@@ -712,13 +573,6 @@
     <comment text="有什么问题吗？" />
     <comment text="军事情报里说的好矛盾啊" />
     <comment text="呸，管好你自己就好了！" />
-  </dialogue>
-  <dialogue key="defense dialogue 2 men">
-    <comment text="我真希望能和这个为所欲为的玩家看得一样远" />
-    <comment text="玩家？" />
-    <comment text="是的，就是正躲在屏幕另一边盯着我们看的那货" />
-    <comment text="事实上，这是一种欺骗" />
-    <comment text="而且我不能忍受他愚蠢的笑容！" />
   </dialogue>
   <dialogue key="defense dialogue 2 men">
     <comment text="如果你和你的上级发生了人格冲突" />
@@ -750,13 +604,8 @@
     <comment text="这事谁看见了会说出来？" />
   </dialogue>
   <dialogue key="defense dialogue 2 men">
-    <comment text="为什么我们的炸弹越来越昂贵？" />
-    <comment text="你猜" />
-    <comment text="这些年被我们轰炸过的人里就没有一个嫌贵的吗？" />
-  </dialogue>
-  <dialogue key="defense dialogue 2 men">
     <comment text="为什么这几天我们的人在撤退？" />
-    <comment text="他们没有撤退，他们只是朝相反的方向前进" />
+    <comment text="他们没有撤退，他们只是战术转进" />
     <comment text="好吧好吧" />
   </dialogue>
   <dialogue key="defense dialogue 2 men">
@@ -771,18 +620,6 @@
   <dialogue key="defense dialogue 2 men">
     <comment text="当敌人犯错误时千万别打断他" />
     <comment text="有道理" />
-  </dialogue>
-  <dialogue key="defense dialogue 2 men">
-    <comment text="战场上有很多值钱的宝贝" />
-    <comment text="很多士兵都不在意" />
-    <comment text="然而把它们卖到军械库很赚的" />
-  </dialogue>
-  <dialogue key="defense dialogue 2 men">
-    <comment text="我今天需要高度集中" />
-    <comment text="有什么特别的吗？" />
-    <comment text="今天可能会有个游戏主播在这录视频" />
-    <comment text="然后你想给他们捣乱？" />
-    <comment text="对，我就是这么想的" />
   </dialogue>
   <dialogue key="defense dialogue 2 men">
     <comment text="嘿，我一直在想" />
@@ -843,7 +680,7 @@
   <comment key="map start with 1 base, part 3" text="太空战略设备运输船已抵达目标上空，潜兵可以自由呼叫战略设备" />
   <comment key="map start with 1 base, part 4" text="在聊天栏输入wsdaw[↑↓→←↑]等战略呼叫指令以获得潜兵增援" />
   <comment key="map start with 1 base, part 5" text="子弹补给箱可以补给消耗品武器以及护甲，按V拆开补给并手动放入背包中" />
-  <comment key="map start with 1 base, part 6" text="本MOD还处于半测试阶段，加入QQ：498520233 了解更多机制" />
+  <comment key="map start with 1 base, part 6" text="加入QQ：498520233 领取邀请码和奖励，了解更多机制" />
 
   <comment key="map start with 1 base, capture" text="现在增援部队已抵达，目标是完全控制&#37;map_name" />
   <comment key="map start with 1 base, koth" text="主要任务是控制&#37;target_base_name并做好防御" />
@@ -851,7 +688,7 @@
   <comment key="loot objective" text="聊天栏输入ddw等战略呼叫指令可以获得部署信标" />
   <comment key="radio tower or truck objective" text="盯紧敌方战线后面的无线电塔或雷达车" />
   <comment key="aa objective" text="敌方的防空武器会阻碍该地区的空降支援：定位并摧毁他们" />
-  <comment key="map start, ending" text="上帝保佑你们，士兵们" />
+  <comment key="map start, ending" text="民本保佑你们，潜兵们" />
   <comment key="map start, ending" text="祝你们好运" />
   <comment key="map start with more bases, part 1" text="你加入我们真好，很高兴这里有了援兵" />
   <comment key="map start with more bases, part 2" text="我们已经设法守住了我们的阵地，还在控制着&#37;number_of_bases个基地" />

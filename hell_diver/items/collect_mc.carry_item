@@ -26,6 +26,7 @@ file="_loot_normal.base"
     <hud_icon filename="mc_emerald.png" />
     <inventory  price="500.0" />
     <model mesh_filename="collect_mc_emerald.mesh" texture_filename="collect_mc_emerald.jpg" />
+    <commonness value="3" in_stock="1" can_respawn_with="0" />
 </carry_item>
 <carry_item 
 name="Diamond" 

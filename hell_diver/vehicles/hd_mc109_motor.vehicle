@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>	
+<vehicles>  
 <vehicle  
 file="_vehicle_none.base"
 name="MC-109 Hammer Motorcycle" 
@@ -6,7 +7,7 @@ key="hd_mc109_motor.vehicle"
 time_to_live_unsteerable="5" 
 map_view_atlas_index="55" 
 minimum_fill_requirement="0.25"
-max_character_collision_speed_on_normal="5"
+max_character_collision_speed_on_normal="999"
 simulated_damage="1"
 usable_for_cover="1"
 reserves_spawn_point="1"
@@ -137,3 +138,142 @@ character_leave_request_mode="friendly"
   
   
 </vehicle>
+<vehicle  
+file="_vehicle_none.base"
+name="MC-109 Hammer Motorcycle" 
+key="hd_mc109_motor_ex.vehicle" 
+time_to_live_unsteerable="5" 
+map_view_atlas_index="55" 
+minimum_fill_requirement="0.25"
+max_character_collision_speed_on_normal="5"
+simulated_damage="1"
+usable_for_cover="1"
+reserves_spawn_point="1"
+allow_ai_to_use="0"
+ai_abandon_when_unsteerable="1"
+respawn_time="5"
+ai_pick_prevention_time="30"
+ai_handle_taxi_request_when_full="1"
+character_leave_request_mode="friendly" 
+>
+	<tag name="hd_mc109_motor" />
+
+	<tire_set offset="0.01 0 1.75" radius="1.0" />
+	<tire_set offset="0.9 0 -1.2" radius="1.0" />
+
+	<control 
+	max_speed="25.0" 
+	acceleration="20" 
+	max_reverse_speed="10.0" 
+	min_health_to_steer="0.36" 
+	max_rotation="0.50" 
+	max_water_depth="1.9" 
+	steer_smoothening="0.2" />
+
+	<physics 
+	remove_collision_threshold="1.0"
+	extent="2.5 0 4.0" 
+	offset="-0.1 0 0" 
+	top_offset="0.0 3.5 0" 
+	collision_model_pos="-0.18 0.4 0.1" 
+	collision_model_extent="2.6 0.3 3.4" 
+	visual_offset="0.1 0.7 -0.4" 
+	friction_offset="0.05" 
+	drag_offset="-1" 
+	destroy_on_top_hit="1"
+	destroy_on_top_hit_time="7"
+	collision_response_factor="1.0" 
+	vehicle_collision_damage_factor="1"
+	/> 
+
+	<turret offset="-0.95 1.2 -0.6" weapon_key="hd_td110_bastion_mg94.weapon" 
+	weapon_offset="0 0 0.85" weapon_recoil="0.01" max_rotation_step="0.0006" 
+	rotation="-0.7" rotation_range="2" />
+
+	<sky_diving chute_offset="0 0 0" trigger_height="5" gravity="-80" mesh_filename="" texture_filename="" />
+
+	<visual class="chassis" mesh_filename="mc109_main.mesh" texture_filename="mc109_bake.png" />
+
+	<visual class="front_tire" mesh_filename="mc109_tire.mesh" texture_filename="motor_tire.png" />
+	<!-- <visual class="rear_tire" mesh_filename="apc_wheel.mesh" texture_filename="apc_wheel.png" /> -->
+	<visual class="rear_tire" mesh_filename="" texture_filename="" />
+
+	<visual class="chassis" key="broken"  mesh_filename="mc109_main.mesh" texture_filename="mc109_bake.png" />
+	<visual class="turret" offset="0.4 -0.1 0.75" turret_index="0" mesh_filename="m5apc_mg.mesh" texture_filename="hd_m5_body.png" />
+
+	<character_slot type="driver" position="-0.2 0.71 -0.45" rotation="0" exit_rotation="1.57" hiding="0"  animation_key="driving atv"/>
+	<character_slot type="gunner" position="-0.75 0.8 -1.05" rotation="0" exit_rotation="-3.14" hiding="0" animation_key="passenger, boat" >
+		<turret index="0"/>
+	</character_slot>
+
+	<!-- sound handling -->
+	<rev_sound filename="motor_rev0.wav" low_pitch="0.95" high_pitch="1.05" low_rev="0.0" high_rev="0.2" volume="1.0" />
+	<rev_sound filename="motor_rev1.wav" low_pitch="0.7" high_pitch="1.0" low_rev="0.05" high_rev="0.7" volume="1.0" />
+	
+	<sound key="slide" filename="slide_noise.wav" />
+	<sound key="squeal" filename="tire_squeal.wav" />
+	<sound key="ignition" filename="motor_start.wav" />
+	<sound key="ignition" filename="motor_start1.wav" />
+	<sound key="ignition" filename="motor_start2.wav" />
+	<sound key="horn" filename="hd_gogogo_men_01.wav" volume="5"/>
+	<sound key="turret_rotation" filename="turret_rotation1.wav" />
+	<sound key="hit" filename="car_hit1.wav" />
+	<sound key="hit" filename="car_hit2.wav" />
+	<sound key="destroy" filename="vehicle_explosion_1.wav" />  
+	<sound key="cleanup" filename="vehicle_explosion_1.wav" />
+
+	<effect event_key="slide" type="splat_map" surface_tag="road" size="1.0" atlas_index="5" layer="0" />
+	<effect event_key="slide_hard" type="splat_map" surface_tag="road" size="0.5" atlas_index="2" layer="0" />
+	<effect event_key="slide" type="splat_map" surface_tag="dirt" size="1.0" atlas_index="2" layer="1" />
+	<effect event_key="slide" type="particle" key="terrain" surface_tag="dirt" ref="car_slide_spary_spark" use_surface_color="0" />
+	<effect event_key="slide" type="particle" key="terrain" surface_tag="dirt" ref="car_slide_up_smoke" use_surface_color="1" />
+	<effect event_key="slide_hard" type="particle" key="terrain" surface_tag="dirt" ref="car_slide_spary_spark" use_surface_color="0" />
+	<effect event_key="slide_hard" type="particle" key="terrain" surface_tag="dirt" ref="car_slide_up_smoke" use_surface_color="1" />
+	<effect event_key="slide" type="particle" key="terrain" surface_tag="road" ref="car_slide_spary_spark" use_surface_color="0" />
+	<effect event_key="slide" type="particle" key="terrain" surface_tag="road" ref="car_slide_up_smoke" use_surface_color="1" />
+	<effect event_key="slide_hard" type="particle" key="terrain" surface_tag="road" ref="car_slide_spary_spark" use_surface_color="0" />
+	<effect event_key="slide_hard" type="particle" key="terrain" surface_tag="road" ref="car_slide_up_smoke" use_surface_color="1" />
+  
+	<effect event_key="drive_chassis" ref="car_health_front_light" offset="0 0 10" />
+
+	<effect event_key="health" value="75" ref="car_broken_spary_spark" offset="0 0.4 -0.3" />
+	<effect event_key="health" value="50" ref="car_broken_spary_spark" offset="0 0.4 -0.3" />
+	<effect event_key="health" value="50" ref="car_destroyed_up_smoke" offset="0 0.4 -0.3" />
+	<effect event_key="health" value="25" ref="car_destroyed_fire" offset="0 0.4 -0.3" />
+	<effect event_key="health" value="25" ref="car_destroyed_up_smoke" offset="0 0.4 -0.3" />
+	<effect event_key="health" value="25" ref="car_broken_spary_spark" offset="0 0.4 -0.3" />
+
+	<effect event_key="destroyed" ref="car_destroyed_fire" post_processing="1" offset="0 0.4 -0.3" />
+	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="0" offset="0 0.4 -0.3" />  
+	<effect event_key="destroyed" ref="car_broken_spary_spark" post_processing="0" offset="0 0.4 -0.3" />  
+
+
+    <effect event_key="destroy" key="other" ref="woosh" post_processing="0" shadow="0" />   
+    <effect event_key="cleanup" key="other" ref="woosh" post_processing="0" shadow="0" /> 
+  
+	
+	<event>
+		<trigger class="destroy" />
+  	<result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor1.visual_item" min_amount="1" max_amount="3" offset="0 2.5 0" position_spread="1.5 1.5" direction_spread="0.15 0.3" />
+	</event>
+	<event>
+		<trigger class="destroy" />  	
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor2.visual_item" min_amount="0" max_amount="1" offset="0 2.5 0" position_spread="1.5 1.5" direction_spread="0.10 0.25" />
+	</event>
+  <event>
+		<trigger class="destroy" />		
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor3.visual_item" min_amount="1" max_amount="2" offset="0 2.5 0" position_spread="1.5 1.5" direction_spread="0.12 0.20" />
+	</event>
+  <event>
+		<trigger class="destroy" />		
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor4.visual_item" min_amount="1" max_amount="2" offset="0 2.5 0" position_spread="1.5 1.5" direction_spread="0.2 0.25" />
+	</event>    
+
+  <event>
+		<trigger class="cleanup" />		
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_cleanup.visual_item" min_amount="20" max_amount="30" offset="0 2.0 0" position_spread="1.5 1.5" direction_spread="0.1 0.1" /> 
+  </event>    
+  
+  
+</vehicle>
+</vehicles>

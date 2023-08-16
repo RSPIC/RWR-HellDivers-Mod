@@ -951,6 +951,11 @@
 	<text key="kal_tsit [M3] [Skin]"  text="凯尔希 [M3] [信物]" />
 	<text key="Miyu [Skin]"  text="霞泽美游 [信物]" />
 	<text key="Felix Schultz [Skin]"  text="菲利克斯舒尔茨 [信物]" />
+	<text key="Dark Excalibur [Skin]"  text="暗影圣装圣剑 [信物]" />
+	<text key="Mari Lochi [Gymsuit Ver.] [Skin]"  text="伊洛玛丽 [运动服 Ver.] [信物]" />
+	<text key="Takanashi Hoshino [Swimming Ver.] [Skin]"  text="小鸟游星野 [水着 Ver.] [信物]" />
+	<text key="Shirasu Azusa [Skin]"  text="白洲梓 [信物]" />
+	<text key="Reisalin Stout [Skin]"  text="莱莎琳·斯托特 [信物]" />
 
 <!-- ex武器 -->
 	<text key="Leviathan Breath"  text="利维坦之息 [反重甲]" />
@@ -963,6 +968,13 @@
 	<text key="Apocalypse Tank Beacon"  text="天启 重型坦克 部署信标" />
 	<text key="Lancer MK3"  text="骑兵 突击步枪 MK3 " />
 	<text key="Lancer MK3 ChainSaw"  text="骑兵 突击步枪 [链锯]" />
+	<text key="Eminent sword"  text="显赫刀剑 [反重甲]" />
+	<text key="Soma Prime"  text="月神 Prime" />
+	<text key="Hyper MEGA Bazooka Launcher [EX]"  text="超绝米加粒子炮（Hi-v） EX [反重甲]" />
+	<text key="Hyper MEGA Bazooka Launcher"  text="超绝米加粒子炮（Hi-v） [反重甲]" />
+	<text key="Hyper MEGA Bazooka Launcher [Skill]"  text="超绝米加粒子炮（Hi-v） [充能炮]" />
+	<text key="Izanagi's Burden"  text="伊邪那岐的重担 [反中甲]" />
+	<text key="Izanagi's Burden [Honed Edge]"  text="伊邪那岐的重担 [聚合] [反重甲]" />
 
 <!-- 其他 EX 载具-->
 	<text key="Resupply Box"  text="补给箱" />
@@ -1077,6 +1089,9 @@
 
 	<text key='MT-LB 2b9-Vasilek"' text="矢车菊 自动迫击炮 轻型载具" />
 	<text key='MT-LB 2b9-Vasilek Beacon"' text="矢车菊 自动迫击炮 轻型载具 部署信标" />
+
+	<text key='T90M3"' text="T90M 突破3 重型坦克 " />
+	<text key='T90M3 Beacon"' text="T90M 突破3 重型坦克 部署信标" />
 
 	<text key="Kamikaze" text="民本超度" />
 	<text key="BanZai Armor onload" text="板载护甲已装配" />
@@ -1295,7 +1310,7 @@
 	<text key="Help - Stratagems" text="[战略呼叫机制] 在聊天栏输入ddw[→→↑]或者wsdaw[↑↓→←↑]等战略指令并发送，可在手雷栏获得部署信标" />
 	<text key="Help - Armor" text="[自动回血机制] 非死亡和非倒地状态下，每10秒回复10层护甲" />
 	<text key="Help - Samples" text="[样本机制] 未完成，样本用于以后升级武器，样本拾取会共享" />
-	<text key="Help - Alert" text="[警报机f制] 敌对阵营会有巡逻兵，在其触发警报前优先击杀它们" />
+	<text key="Help - Alert" text="[警报机制] 敌对阵营会有巡逻兵，在其触发警报前优先击杀它们" />
 	<text key="Help - Repair" text="[维修机制] 维修台可以超额维修和回收部分载具 [yv39mydfsd]" />
 	<text key="Help - EXO" text="[机甲机制] 部署机甲后，在机甲库里直接装备武器，有子弹限制，不可存取。卡弹按R键恢复。" />
 	<text key="Help - Cyborgs" text="[生化人] 首领-精英 为重甲单位，免疫普通子弹，尝试用爆炸物和燃烧武器击杀它们" />
@@ -1331,8 +1346,11 @@ TK其他玩家同样会造成倍率因子的下降" />
 	<text key="EXO Armor offload" text="机甲护甲已卸载" />
 
 	<text key="Help - Patricia" text="本武器开火具有前摇，前摇状态无法移动并且隐形状态仍能够被攻击。每局首次持有本武器会发放致命驱动技能武器，使用次数为5次。
-	【注意】使用副手技能时必须保证主手武器为[帕特莉夏·阿贝尔海姆]的武器，否则会直接倒地" />
+【注意】使用副手技能时必须保证主手武器为[帕特莉夏·阿贝尔海姆]的武器，否则会直接倒地" />
 	<text key="Patricia Help" text="[帕特莉夏·阿贝尔海姆 特殊武器介绍]" />
+	<text key="Help - Hyper Mega" text="每局首次持有本武器会发放特定技能武器，使用次数为5次。
+【注意】使用副手技能时必须保证主手武器为[超绝米加粒子炮（Hi-v）]的武器，否则会直接倒地" />
+	<text key="Hyper Mega Help" text="[超绝米加粒子炮（Hi-v） 特殊武器介绍]" />
 
 	<text key="Stratagems Call" text="[教程]战略呼叫机制" />
 	<text key="Stratagems Useable" text="[Tips]常用呼叫指令,输入/call可再次查看本页。输入/call 1~4 查看不同类型支援代码" />
@@ -1567,7 +1585,7 @@ TK其他玩家同样会造成倍率因子的下降" />
 <!-- 邀请码系统 -->
 	<text key="InviteKey" text="您的邀请码[输入/inviter IDXXXX 以生效]" />
 	<text key="You didnt reach the Level 30" text="您的等级未满30级，无法邀请他人" />
-	<text key="You over reach the Level 30" text="您的等级已超过30级，无法被邀请" />
+	<text key="You didnt reach the Level 20" text="您的等级需要大于20级才能被邀请" />
 	<text key="Inviter is not in the same Server" text="邀请者不在线，邀请失败" />
 	<text key="You had been invited!" text="您已经被邀请过了！" />
 	<text key="You are not steam User" text="您的账户非steam账户，无法验证" />

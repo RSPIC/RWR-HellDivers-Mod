@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapons>
+<weapon 
+file="_rare_weapon_mk1.base"
+key="ex_izanagis_burden.weapon" 
+> 
+    <specification 	
+    slot="0" 	
+    retrigger_time="0.666" 
+	last_burst_retrigger_time="0.7"
+    accuracy_factor="1" 
+	spread_range="0.1"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="0.25" 
+    sustained_fire_diminish_rate="1.5" 
+    magazine_size="8" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="1"	
+    suppressed="0" 
+	class="4" 
+    name="Izanagi's Burden" 
+	burst_shots="1" 
+	sight_range_modifier="3.0"
+    projectiles_per_shot="1" 
+    projectile_speed="250.0"
+	barrel_offset="1.0" 
+	carry_in_two_hands="1" 
+	stab_enabled="0" 
+	stab_range="2.5" 
+	/> 
+	<!--多模式-->
+    <next_in_chain key="ex_izanagis_burden_skill.weapon" share_ammo="0" /> 
+
+	<!--武器模型和HUD-->
+	<weak_hand_hold offset="0.0" /> <!--模型X轴偏移-->
+	<model filename="exw_izanagis_burden.xml" /> 
+    <model mesh_filename="" texture_filename="" /> <!--调用mesh模型-->
+    <addon_model filename="" /> <!--附加模型，固定绑骨到肩膀-->
+    <hud_icon filename="exw_izanagis_burden.png" /> <!--武器为110x220像素，投掷物为110x110-->
+	
+	<!--武器动作，必须指定recoil和reload动作，部分动作留空会默认调用常规双手武器动作或者无动作-->
+	<animation key="recoil" animation_key="recoil1" /> <!--后坐力动作，半身动作-->
+    <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
+	<animation state_key="reload" animation_key="reloading_2.5s" />	<!--换弹动作，半身动作-->
+    <animation state_key="hold" animation_key="" /><!--站姿静止动作，全身动作-->
+	<animation state_key="hold_on_wall"  animation_key="" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="" /><!--闲置动作，全身动作-->
+	<animation state_key="running" animation_key="" /><!--全身动作-->
+	<animation state_key="walking" animation_key="" /><!--按shift时候的静步前进动作，全身动作-->
+    <animation state_key="walking_backwards" animation_key="" /><!--全身动作-->
+    <animation state_key="crouching" animation_key="" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
+	<animation state_key="stabbing" animation_key="melee, bayonet" /><!--半身动作，武器可设置脱手-->
+
+	<!--武器音频-->
+    <sound key="effect" fileref="" pitch_variety="0" volume="1.0" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
+    <sound key="fire" fileref="ex_izanagis_burden_fire.wav" pitch_variety="0.3" volume="3.5" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
+    <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="ex_izanagis_burden_reload.wav" volume="2" /><!--动作中out的value为0-->
+    <sound key="magazine_out" fileref="ex_izanagis_burden_reload2.wav" volume="2" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="rifle_chamber.wav" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="hd_cycle_in_01.wav" /><!--动作中in的value为1-->
+	<sound key="reload_one" fileref="hd_cycle_in_01.wav" volume="0.45"/>
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+
+	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
+	
+	<!--军械库相关-->
+
+	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="6" can_be_detected_by_footmen="1" 
+	time_to_live="0.4" can_be_detected_by_driver="1" can_be_disarmed="0" name="Izanagi's Burden"> 
+
+		<result class="hit" kill_probability="2.0" 
+		kill_probability_offset_on_successful_hit="125"
+		kill_decay_start_time="0.2" kill_decay_end_time="0.467" character_state="wound"/>
+		<!-- slower decay -->
+		<!-- 40m max damage range -->
+		<!-- 抵抗护甲抗致死衰减影响 -->
+		<!-- damage 300ap/400ap  15reduction -->
+		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+	
+		<!--命中音效-->
+
+		<!--命中特效-->
+		<!--
+		<effect class="result" key="terrain" ref="" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_bullet_light" />
+		-->
+		<effect class="result" key="terrain" ref="general_weapon_result_hitspot" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_bullet_light" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_bullet_centerlight" lighting="0"/>
+		
+		
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<!--尾迹组-->
+		<trail probability="1" key="normal_trail_long"/>	
+    </projectile>
+	
+	<!--枪口特效-->
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_trail_smoke" lighting="0"/> 
+	
+	
+	<!--姿态精度-->
+    <stance state_key="running" accuracy="1" /> 
+    <stance state_key="walking" accuracy="1" />
+	<stance state_key="standing" accuracy="1" />
+	<stance state_key="crouching" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1" />     
+</weapon>
+<weapon 
+file="_rare_weapon_mk1.base"
+key="ex_izanagis_burden_skill.weapon" 
+> 
+    <specification 	
+    slot="0" 	
+    retrigger_time="0.1" 
+	last_burst_retrigger_time="0.5"
+    accuracy_factor="1" 
+	spread_range="0.1"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="0.5" 
+    sustained_fire_diminish_rate="1.5" 
+    magazine_size="2" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="1"	
+    suppressed="0" 
+	class="4" 
+    name="Izanagi's Burden [Honed Edge]" 
+	burst_shots="1" 
+	sight_range_modifier="3.0"
+    projectiles_per_shot="4" 
+    projectile_speed="300.0"
+	barrel_offset="1.0" 
+	carry_in_two_hands="1" 
+	stab_enabled="0" 
+	stab_range="2.5" 
+	/> 
+	<!--多模式-->
+    <next_in_chain key="ex_izanagis_burden.weapon" share_ammo="0" /> 
+
+	<!--武器模型和HUD-->
+	<weak_hand_hold offset="0.0" /> <!--模型X轴偏移-->
+	<model filename="exw_izanagis_burden.xml" /> 
+    <model mesh_filename="" texture_filename="" /> <!--调用mesh模型-->
+    <addon_model filename="" /> <!--附加模型，固定绑骨到肩膀-->
+    <hud_icon filename="exw_izanagis_burden.png" /> <!--武器为110x220像素，投掷物为110x110-->
+	
+	<!--武器动作，必须指定recoil和reload动作，部分动作留空会默认调用常规双手武器动作或者无动作-->
+	<animation key="recoil" animation_key="recoil1" /> <!--后坐力动作，半身动作-->
+    <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
+	<animation state_key="reload" animation_key="reloading_2.5s" />	<!--换弹动作，半身动作-->
+    <animation state_key="hold" animation_key="" /><!--站姿静止动作，全身动作-->
+	<animation state_key="hold_on_wall"  animation_key="" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="" /><!--闲置动作，全身动作-->
+	<animation state_key="running" animation_key="" /><!--全身动作-->
+	<animation state_key="walking" animation_key="" /><!--按shift时候的静步前进动作，全身动作-->
+    <animation state_key="walking_backwards" animation_key="" /><!--全身动作-->
+    <animation state_key="crouching" animation_key="" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
+	<animation state_key="stabbing" animation_key="melee, bayonet" /><!--半身动作，武器可设置脱手-->
+	<animation state_key="next_in_chain_in" animation_key="sheath bayonet part 2" />
+
+	<!--武器音频-->
+    <sound key="effect" fileref="" pitch_variety="0" volume="1.0" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
+    <sound key="fire" fileref="ex_izanagis_burden_fire.wav" pitch_variety="0.3" volume="3.5" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
+    <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="ex_izanagis_burden_reload.wav" volume="2"/><!--动作中out的value为0-->
+    <sound key="magazine_out" fileref="ex_izanagis_burden_reload2.wav" volume="2" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="rifle_chamber.wav" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="hd_cycle_in_01.wav" /><!--动作中in的value为1-->
+	<sound key="reload_one" fileref="hd_cycle_in_01.wav" volume="0.45"/>
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+
+	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
+	
+	<!--军械库相关-->
+
+	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="6" can_be_detected_by_footmen="1" 
+	time_to_live="0.4" can_be_detected_by_driver="1" can_be_disarmed="0" name="Izanagi's Burden"> 
+
+		<result class="hit" kill_probability="2.0" 
+		kill_probability_offset_on_successful_hit="150"
+		kill_decay_start_time="0.2" kill_decay_end_time="0.467" character_state="none"/>
+
+		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+	
+		<!--命中音效-->
+
+		<!--命中特效-->
+		<!--
+		<effect class="result" key="terrain" ref="" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_bullet_light" />
+		-->
+		<effect class="result" key="terrain" ref="general_weapon_result_hitspot" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_bullet_light" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_bullet_centerlight" lighting="0"/>
+		
+		
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<!--尾迹组-->
+		<trail probability="1" key="normal_trail_long"/>	
+    </projectile>
+	
+	<!--枪口特效-->
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_trail_smoke" lighting="0"/> 
+	
+	
+	<!--姿态精度-->
+    <stance state_key="running" accuracy="1" /> 
+    <stance state_key="walking" accuracy="1" />
+	<stance state_key="standing" accuracy="1" />
+	<stance state_key="crouching" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1" />     
+</weapon>
+<weapon 
+file="_rare_weapon_mk1_re.base"
+key="re_ex_izanagis_burden.weapon" 
+> 
+    <specification 	
+    slot="0" 	
+    retrigger_time="0.666" 
+	last_burst_retrigger_time="0.7"
+    accuracy_factor="1" 
+	spread_range="0.1"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="0.25" 
+    sustained_fire_diminish_rate="1.5" 
+    magazine_size="8" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="1"	
+    suppressed="0" 
+	class="4" 
+    name="Izanagi's Burden" 
+	burst_shots="1" 
+	sight_range_modifier="3.0"
+    projectiles_per_shot="1" 
+    projectile_speed="250.0"
+	barrel_offset="1.0" 
+	carry_in_two_hands="1" 
+	stab_enabled="0" 
+	stab_range="2.5" 
+	/> 
+	<!--多模式-->
+    <next_in_chain key="re_ex_izanagis_burden_skill.weapon" share_ammo="0" /> 
+
+	<!--武器模型和HUD-->
+	<weak_hand_hold offset="0.0" /> <!--模型X轴偏移-->
+	<model filename="exw_izanagis_burden.xml" /> 
+    <model mesh_filename="" texture_filename="" /> <!--调用mesh模型-->
+    <addon_model filename="" /> <!--附加模型，固定绑骨到肩膀-->
+    <hud_icon filename="exw_izanagis_burden.png" /> <!--武器为110x220像素，投掷物为110x110-->
+	
+	<!--武器动作，必须指定recoil和reload动作，部分动作留空会默认调用常规双手武器动作或者无动作-->
+	<animation key="recoil" animation_key="recoil1" /> <!--后坐力动作，半身动作-->
+    <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
+	<animation state_key="reload" animation_key="reloading_2.5s" />	<!--换弹动作，半身动作-->
+    <animation state_key="hold" animation_key="" /><!--站姿静止动作，全身动作-->
+	<animation state_key="hold_on_wall"  animation_key="" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="" /><!--闲置动作，全身动作-->
+	<animation state_key="running" animation_key="" /><!--全身动作-->
+	<animation state_key="walking" animation_key="" /><!--按shift时候的静步前进动作，全身动作-->
+    <animation state_key="walking_backwards" animation_key="" /><!--全身动作-->
+    <animation state_key="crouching" animation_key="" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
+	<animation state_key="stabbing" animation_key="melee, bayonet" /><!--半身动作，武器可设置脱手-->
+
+	<!--武器音频-->
+    <sound key="effect" fileref="" pitch_variety="0" volume="1.0" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
+    <sound key="fire" fileref="ex_izanagis_burden_fire.wav" pitch_variety="0.3" volume="3.5" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
+    <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="ex_izanagis_burden_reload.wav" volume="2" /><!--动作中out的value为0-->
+    <sound key="magazine_out" fileref="ex_izanagis_burden_reload2.wav" volume="2" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="rifle_chamber.wav" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="hd_cycle_in_01.wav" /><!--动作中in的value为1-->
+	<sound key="reload_one" fileref="hd_cycle_in_01.wav" volume="0.45"/>
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+
+	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
+	
+	<!--军械库相关-->
+
+	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="6" can_be_detected_by_footmen="1" 
+	time_to_live="0.4" can_be_detected_by_driver="1" can_be_disarmed="0" name="Izanagi's Burden"> 
+
+		<result class="hit" kill_probability="2.0" 
+		kill_probability_offset_on_successful_hit="125"
+		kill_decay_start_time="0.2" kill_decay_end_time="0.467" character_state="wound"/>
+		<!-- slower decay -->
+		<!-- 40m max damage range -->
+		<!-- 抵抗护甲抗致死衰减影响 -->
+		<!-- damage 300ap/400ap  15reduction -->
+		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+	
+		<!--命中音效-->
+
+		<!--命中特效-->
+		<!--
+		<effect class="result" key="terrain" ref="" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_bullet_light" />
+		-->
+		<effect class="result" key="terrain" ref="general_weapon_result_hitspot" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_bullet_light" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_bullet_centerlight" lighting="0"/>
+		
+		
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<!--尾迹组-->
+		<trail probability="1" key="normal_trail_long"/>	
+    </projectile>
+	
+	<!--枪口特效-->
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_trail_smoke" lighting="0"/> 
+	
+	
+	<!--姿态精度-->
+    <stance state_key="running" accuracy="1" /> 
+    <stance state_key="walking" accuracy="1" />
+	<stance state_key="standing" accuracy="1" />
+	<stance state_key="crouching" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1" />     
+</weapon>
+<weapon 
+file="_rare_weapon_mk1_re.base"
+key="re_ex_izanagis_burden_skill.weapon" 
+> 
+    <specification 	
+    slot="0" 	
+    retrigger_time="0.1" 
+	last_burst_retrigger_time="0.5"
+    accuracy_factor="1" 
+	spread_range="0.1"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="0.5" 
+    sustained_fire_diminish_rate="1.5" 
+    magazine_size="2" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="1"	
+    suppressed="0" 
+	class="4" 
+    name="Izanagi's Burden [Honed Edge]" 
+	burst_shots="1" 
+	sight_range_modifier="3.0"
+    projectiles_per_shot="4" 
+    projectile_speed="300.0"
+	barrel_offset="1.0" 
+	carry_in_two_hands="1" 
+	stab_enabled="0" 
+	stab_range="2.5" 
+	/> 
+	<!--多模式-->
+    <next_in_chain key="re_ex_izanagis_burden.weapon" share_ammo="0" /> 
+
+	<!--武器模型和HUD-->
+	<weak_hand_hold offset="0.0" /> <!--模型X轴偏移-->
+	<model filename="exw_izanagis_burden.xml" /> 
+    <model mesh_filename="" texture_filename="" /> <!--调用mesh模型-->
+    <addon_model filename="" /> <!--附加模型，固定绑骨到肩膀-->
+    <hud_icon filename="exw_izanagis_burden.png" /> <!--武器为110x220像素，投掷物为110x110-->
+	
+	<!--武器动作，必须指定recoil和reload动作，部分动作留空会默认调用常规双手武器动作或者无动作-->
+	<animation key="recoil" animation_key="recoil1" /> <!--后坐力动作，半身动作-->
+    <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
+	<animation state_key="reload" animation_key="reloading_2.5s" />	<!--换弹动作，半身动作-->
+    <animation state_key="hold" animation_key="" /><!--站姿静止动作，全身动作-->
+	<animation state_key="hold_on_wall"  animation_key="" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="" /><!--闲置动作，全身动作-->
+	<animation state_key="running" animation_key="" /><!--全身动作-->
+	<animation state_key="walking" animation_key="" /><!--按shift时候的静步前进动作，全身动作-->
+    <animation state_key="walking_backwards" animation_key="" /><!--全身动作-->
+    <animation state_key="crouching" animation_key="" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
+	<animation state_key="stabbing" animation_key="melee, bayonet" /><!--半身动作，武器可设置脱手-->
+	<animation state_key="next_in_chain_in" animation_key="sheath bayonet part 2" />
+
+	<!--武器音频-->
+    <sound key="effect" fileref="" pitch_variety="0" volume="1.0" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
+    <sound key="fire" fileref="ex_izanagis_burden_fire.wav" pitch_variety="0.3" volume="3.5" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
+    <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="ex_izanagis_burden_reload.wav" volume="2"/><!--动作中out的value为0-->
+    <sound key="magazine_out" fileref="ex_izanagis_burden_reload2.wav" volume="2" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="rifle_chamber.wav" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="hd_cycle_in_01.wav" /><!--动作中in的value为1-->
+	<sound key="reload_one" fileref="hd_cycle_in_01.wav" volume="0.45"/>
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+
+	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
+	
+	<!--军械库相关-->
+
+	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="6" can_be_detected_by_footmen="1" 
+	time_to_live="0.4" can_be_detected_by_driver="1" can_be_disarmed="0" name="Izanagi's Burden"> 
+
+		<result class="hit" kill_probability="2.0" 
+		kill_probability_offset_on_successful_hit="150"
+		kill_decay_start_time="0.2" kill_decay_end_time="0.467" character_state="none"/>
+
+		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+	
+		<!--命中音效-->
+
+		<!--命中特效-->
+		<!--
+		<effect class="result" key="terrain" ref="" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_bullet_light" />
+		-->
+		<effect class="result" key="terrain" ref="general_weapon_result_hitspot" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_bullet_light" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_bullet_centerlight" lighting="0"/>
+		
+		
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<!--尾迹组-->
+		<trail probability="1" key="normal_trail_long"/>	
+    </projectile>
+	
+	<!--枪口特效-->
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_trail_smoke" lighting="0"/> 
+	
+	
+	<!--姿态精度-->
+    <stance state_key="running" accuracy="1" /> 
+    <stance state_key="walking" accuracy="1" />
+	<stance state_key="standing" accuracy="1" />
+	<stance state_key="crouching" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1" />     
+</weapon>
+
+</weapons>

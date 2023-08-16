@@ -129,7 +129,6 @@ class match_end : Tracker {
             GiveXP(m_metagame,cid,xp);
         }
         g_battleInfoBuck.clearAll();
-        g_vestInfoBuck.clearAll();
     }
     // ----------------------------------------------------
     protected void gBattleInfoAddTime(){

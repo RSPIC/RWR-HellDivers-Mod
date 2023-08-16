@@ -99,6 +99,7 @@ class schedule_Check : Tracker {
                 EXOArmorChange(m_metagame,name,pid,cid,equipList);
                 checkBanzai(m_metagame,name,pid,equipList);
                 checkPatricia(m_metagame,name,pid,cid,equipList);
+                checkHyperMega(m_metagame,name,pid,cid,equipList);
                 checkSkin(m_metagame,name,pid,cid,equipList);
             }
         }
@@ -135,8 +136,8 @@ class schedule_Check : Tracker {
     protected void handlePlayerDisconnectEvent(const XmlElement@ event) {
         const XmlElement@ player = event.getFirstElementByTagName("player");
         if(player is null){return;}
-        string name = player.getStringAttribute("name");
-		m_firstUseInfoBuck.removeInfo(name);
+        //string name = player.getStringAttribute("name");
+		//m_firstUseInfoBuck.removeInfo(name);
     }
     // ----------------------------------------------------
     protected void handlePlayerConnectEvent(const XmlElement@ event) {
@@ -167,10 +168,11 @@ class schedule_Check : Tracker {
 	protected void checkPatricia(Metagame@ metagame,string&in name,int&in pid,int&in cid,dictionary&in equipList){
         string equipKey;
         if(equipList.get("0",equipKey)){//主武器
+        _log("now equipKey="+equipKey);
             string targetKey = "acg_patricia_";
-            equipKey = equipKey.substr(0,targetKey.length());
-            if(equipKey == targetKey){
-                if(m_firstUseInfoBuck.isFirst(name,equipKey)){
+            string targetKey2 = "re_acg_patricia_";
+            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+                if(m_firstUseInfoBuck.isFirst(name,targetKey)){
                     notify(metagame, "Help - Patricia", dictionary(), "misc", pid, true, "Patricia Help", 1.0);
                     array<Resource@> resources = array<Resource@>();
                     Resource@ res;
@@ -179,7 +181,27 @@ class schedule_Check : Tracker {
                     deleteListItemInBackpack(m_metagame,cid,resources);
                     deleteListItemInStash(m_metagame,cid,resources);
                     addListItemInBackpack(m_metagame,cid,resources);
-
+                }
+            }
+        }
+	}
+    // ----------------------------------------------------
+	protected void checkHyperMega(Metagame@ metagame,string&in name,int&in pid,int&in cid,dictionary&in equipList){
+        string equipKey;
+        if(equipList.get("0",equipKey)){//主武器
+        _log("now equipKey="+equipKey);
+            string targetKey = "ex_hyper_mega_bazooka";
+            string targetKey2 = "re_ex_hyper_mega_bazooka";
+            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+                if(m_firstUseInfoBuck.isFirst(name,targetKey)){
+                    notify(metagame, "Help - Hyper Mega", dictionary(), "misc", pid, true, "Hyper Mega Help", 1.0);
+                    array<Resource@> resources = array<Resource@>();
+                    Resource@ res;
+                    @res = Resource("ex_hyper_mega_bazooka_launcher_skill.weapon","weapon");
+                    res.addToResources(resources,5);
+                    deleteListItemInBackpack(m_metagame,cid,resources);
+                    deleteListItemInStash(m_metagame,cid,resources);
+                    addListItemInBackpack(m_metagame,cid,resources);
                 }
             }
         }

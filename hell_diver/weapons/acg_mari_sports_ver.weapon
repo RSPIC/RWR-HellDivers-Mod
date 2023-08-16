@@ -2,7 +2,7 @@
 <weapons> 
 <weapon 
 file="_rare_weapon_mk1.base"
-key="fffffff.weapon" 
+key="acg_mari_sports_ver.weapon" 
 > 
     <specification 	
     slot="1" 	
@@ -79,8 +79,6 @@ key="fffffff.weapon"
     <model mesh_filename="" texture_filename="" /> 
     <addon_model filename="" /> 
     <hud_icon filename="acg_mari_piety.png" /> 
-	
-    <inventory encumbrance="6.0" /> 
 
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
 	time_to_live="0.2" can_be_detected_by_driver="1" can_be_disarmed="0"> 

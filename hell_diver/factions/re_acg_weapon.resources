@@ -20,6 +20,10 @@
     <weapon key="re_acg_megumin_wand_float.weapon" /> <!--法杖-->
     <weapon key="re_acg_megumin_wand_summon.weapon" /> <!--法杖-->
 
+    <weapon key="ex_hyper_mega_bazooka_launcher_ex.weapon" enabled="0"/> <!--超绝米加粒子炮（Hi-v）-->
+    <weapon key="re_ex_hyper_mega_bazooka_launcher_ex.weapon" /> <!--超绝米加粒子炮（Hi-v）-->
+    <weapon key="re_ex_hyper_mega_bazooka_launcher.weapon" /> <!--超绝米加粒子炮（Hi-v）-->
+
     <weapon key="ex_trinity_ghoul.weapon" enabled="0"/> <!--三体坐观者弓-->
     <weapon key="re_ex_trinity_ghoul.weapon" /> <!--三体坐观者弓-->
     <weapon key="re_ex_leviathan_breath.weapon" /> <!--三体坐观者弓-->
@@ -110,7 +114,7 @@
     <weapon key="re_ex_lancer_mk3_chainsaw.weapon" /> <!--Lancer 骑兵链锯-->
     <weapon key="re_ex_lancer_mk3.weapon" /> <!--Lancer 骑兵链锯-->
 
-    <weapon key="ex_soma_prime.weapon" /><!--月神-->
+    <weapon key="ex_soma_prime.weapon" enabled="0"/><!--月神-->
     <weapon key="re_ex_soma_prime.weapon" /><!--月神-->
     <weapon key="re_ex_soma_prime_sword.weapon" /><!--月神-->
     <!-- MK1 2W-->
@@ -123,7 +127,11 @@
     <weapon key="acg_m14.weapon" enabled="0"/><!--M14-->
     <weapon key="re_acg_m14.weapon" /><!--M14-->
 	
-    <weapon key="acg_mari_sports_ver.weapon" /><!--玛丽 体操服-->
+    <weapon key="acg_mari_sports_ver.weapon" enabled="0"/><!--玛丽 体操服-->
     <weapon key="re_acg_mari_sports_ver.weapon" /><!--玛丽 体操服-->
+
+    <weapon key="ex_izanagis_burden.weapon" enabled="0"/><!--伊邪那岐的重担-->
+    <weapon key="re_ex_izanagis_burden.weapon" /><!--伊邪那岐的重担-->
+    <weapon key="re_ex_izanagis_burden_skill.weapon" /><!--伊邪那岐的重担-->
 
 </resources>

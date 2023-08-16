@@ -230,6 +230,9 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			ScoredResource("token_felix_schultz.projectile","projectile",1.0f,4),
 			ScoredResource("token_takanashi_hoshino_swim_ver.projectile","projectile",1.0f,4),
 			ScoredResource("token_mari_lochi_gymsuit_ver.projectile","projectile",1.0f,4),
+			ScoredResource("token_dark_excalibur.projectile","projectile",1.0f,4),
+			ScoredResource("token_shirasu_azusa.projectile","projectile",1.0f,4),
+			ScoredResource("token_laisha.projectile","projectile",1.0f,4),
 
 			ScoredResource("token_amamiya_kokoro.projectile","projectile",1.0f,4)
 			},
@@ -259,7 +262,10 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			{
 		 ScoredResource("ex_piano_uzuki.weapon", "weapon", 1.0f,2), 
 		 ScoredResource("ex_piano_yuudachi.weapon", "weapon", 1.0f,2), 
-         ScoredResource("ex_gramophone_steeltorrent.weapon", "weapon", 1.0f,2)
+		 ScoredResource("ex_piano_unwelcome_school.weapon", "weapon", 1.0f,2), 
+		 ScoredResource("ex_piano_cradle_of_eternity.weapon", "weapon", 1.0f,2), 
+         ScoredResource("ex_gramophone_steeltorrent.weapon", "weapon", 1.0f,2),
+         ScoredResource("ex_gramophone_space_elevator.weapon", "weapon", 1.0f,2)
 			},
 			{
 			ScoredResource("lottery_cash.carry_item", "carry_item", 1.0f)
@@ -303,7 +309,8 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			ScoredResource("mtlb_2b9_call.projectile", "projectile", 1.0f),
 			ScoredResource("m61a5_call.projectile", "projectile", 1.0f),
 			ScoredResource("uragan_call.projectile", "projectile", 0.5f),
-			ScoredResource("borsig_call.projectile", "projectile", 1.0f)
+			ScoredResource("borsig_call.projectile", "projectile", 1.0f),
+			ScoredResource("t90m3_call.projectile", "projectile", 1.0f)
 			},
 			{
 			ScoredResource("lottery_cash.carry_item", "carry_item", 1.0f)
@@ -330,8 +337,10 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		array<array<ScoredResource@>> rewardPasses = {
 			{
          	ScoredResource("acg_smg_strelka.weapon", "weapon", 1.0f),
-        	ScoredResource("acg_m14.weapon", "weapon", 1.0f),         
-         	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f)
+        	ScoredResource("acg_m14.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_mari_sports_ver.weapon", "weapon", 1.0f),         
+         	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f),
+         	ScoredResource("ex_izanagis_burden.weapon", "weapon", 1.0f)
 			},
 			{
 			ScoredResource("lottery_cash.carry_item", "carry_item", 1.0f)
@@ -358,6 +367,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			{
         	ScoredResource("acg_mg4td_ke.weapon", "weapon", 1.0f),
         	ScoredResource("ex_lancer_mk3.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_soma_prime.weapon", "weapon", 1.0f),
         	ScoredResource("acg_mg4a3td.weapon", "weapon", 1.0f),
         	ScoredResource("acg_ruby_rose_scythe.weapon", "weapon", 1.0f),
         	ScoredResource("acg_reisenu_a.weapon", "weapon", 1.0f),
@@ -428,6 +438,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		};
 		array<array<ScoredResource@>> rewardPasses = {
 			{
+        	ScoredResource("ex_hyper_mega_bazooka_launcher.weapon", "weapon", 1.0f),
         	ScoredResource("acg_patricia_cumforce.weapon", "weapon", 1.0f),
         	ScoredResource("acg_megumin_wand_float.weapon", "weapon", 1.0f),
         	ScoredResource("ex_trinity_ghoul.weapon", "weapon", 1.0f)
@@ -487,10 +498,13 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_mg4a3td.weapon", "weapon", 1.0f),
         	ScoredResource("acg_mg4td_ke.weapon", "weapon", 1.0f),
         	ScoredResource("ex_lancer_mk3.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_soma_prime.weapon", "weapon", 1.0f),
 
         	ScoredResource("acg_smg_strelka.weapon", "weapon", 1.0f),
         	ScoredResource("acg_m14.weapon", "weapon", 1.0f),
-        	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f)
+        	ScoredResource("acg_mari_sports_ver.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_izanagis_burden.weapon", "weapon", 1.0f)
 			},
 			{
 			ScoredResource("lottery_cash.carry_item", "carry_item", 1.0f)
@@ -524,10 +538,13 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_mg4a3td.weapon", "weapon", 1.0f),
         	ScoredResource("acg_mg4td_ke.weapon", "weapon", 1.0f),
         	ScoredResource("ex_lancer_mk3.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_soma_prime.weapon", "weapon", 1.0f),
 
         	ScoredResource("acg_smg_strelka.weapon", "weapon", 1.0f),
         	ScoredResource("acg_m14.weapon", "weapon", 1.0f),
-        	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f)
+        	ScoredResource("acg_mari_sports_ver.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_izanagis_burden.weapon", "weapon", 1.0f)
 			},
 			{
 			ScoredResource("lottery_cash.carry_item", "carry_item", 1.0f)
@@ -588,10 +605,13 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_reisenu_a.weapon", "weapon", 1.0f),
         	ScoredResource("acg_mg4td_ke.weapon", "weapon", 1.0f),
         	ScoredResource("ex_lancer_mk3.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_soma_prime.weapon", "weapon", 1.0f),
 
         	ScoredResource("acg_smg_strelka.weapon", "weapon", 1.0f),
         	ScoredResource("acg_m14.weapon", "weapon", 1.0f),
-        	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f)
+        	ScoredResource("acg_mari_sports_ver.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_izanagis_burden.weapon", "weapon", 1.0f)
 			},
 			{
 			ScoredResource("lottery_cash.carry_item", "carry_item", 1.0f)
@@ -641,7 +661,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		};
 		array<array<ScoredResource@>> rewardPasses = {
 			{
-        	ScoredResource("ex_trinity_ghoul.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_hyper_mega_bazooka_launcher.weapon", "weapon", 1.0f),
 
         	ScoredResource("acg_bronya.weapon", "weapon", 1.0f),
         	ScoredResource("acg_ba_alice_railgun_ex.weapon", "weapon", 1.0f),
@@ -654,10 +674,13 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_reisenu_a.weapon", "weapon", 1.0f),
         	ScoredResource("acg_mg4a3td.weapon", "weapon", 1.0f),
         	ScoredResource("ex_lancer_mk3.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_soma_prime.weapon", "weapon", 1.0f),
 
         	ScoredResource("acg_smg_strelka.weapon", "weapon", 1.0f),
         	ScoredResource("acg_m14.weapon", "weapon", 1.0f),
-        	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f)
+        	ScoredResource("acg_mari_sports_ver.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_izanagis_burden.weapon", "weapon", 1.0f)
 			},
 			{
 			ScoredResource("lottery_cash.carry_item", "carry_item", 1.0f)
@@ -694,7 +717,9 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 
         	ScoredResource("acg_smg_strelka.weapon", "weapon", 1.0f),
         	ScoredResource("acg_m14.weapon", "weapon", 1.0f),
-        	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f)
+        	ScoredResource("acg_mari_sports_ver.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_izanagis_burden.weapon", "weapon", 1.0f)
 			},
 			{
 			ScoredResource("lottery_cash.carry_item", "carry_item", 1.0f)
@@ -777,10 +802,13 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_mg4a3td.weapon", "weapon", 1.0f),
         	ScoredResource("acg_mg4td_ke.weapon", "weapon", 1.0f),
         	ScoredResource("ex_lancer_mk3.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_soma_prime.weapon", "weapon", 1.0f),
 
         	ScoredResource("acg_smg_strelka.weapon", "weapon", 1.0f),
         	ScoredResource("acg_m14.weapon", "weapon", 1.0f),
-        	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f)
+        	ScoredResource("acg_mari_sports_ver.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_izanagis_burden.weapon", "weapon", 1.0f)
 			},
 			{
 			ScoredResource("lottery_cash.carry_item", "carry_item", 1.0f)

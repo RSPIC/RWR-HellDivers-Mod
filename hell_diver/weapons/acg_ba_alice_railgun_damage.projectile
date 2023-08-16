@@ -15,7 +15,7 @@ can_be_detected_by_driver="0"
 radius="1.0"
 >
     <collision class="sticky" />
-    <trigger class="impact" time_to_live="0" />
+    <trigger class="time" time_to_live="0" />
 
     <result class="blast" radius="3.0" damage="10" push="0.5" decal="0" character_state="death"
     faction_compare="not_equal" damage_origin_vehicle="0"/> 

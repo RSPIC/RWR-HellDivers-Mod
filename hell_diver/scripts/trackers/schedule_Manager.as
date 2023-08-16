@@ -35,22 +35,21 @@ class schedule_Manager : Tracker {
     protected float m_time;
     protected float m_timer;
     protected bool m_ended;
-    protected bool m_laterCheck;
-    protected float m_laterCheck_timer;
+    protected bool m_isStart;
     protected const XmlElement@ m_player;
 
     schedule_Manager(Metagame@ metagame,float time = 10.0){
         @m_metagame = @metagame;
         m_time = time;   //周期进行检测
         m_timer = m_time;
+        m_ended = false;
+        m_isStart = false;
+        @g_IRQ = @_IRQ("",false); 
+        @m_player = null;
         _log("schedule_Manager initiate");
     }
     
     void start(){
-        @g_IRQ = @_IRQ("",false); 
-        m_ended = false;
-        m_laterCheck = false;
-        @m_player = null;
     }
     // --------------------------------------------
     void update(float time) {
@@ -59,17 +58,6 @@ class schedule_Manager : Tracker {
             refresh();
             m_timer = m_time;
             //test();
-        }
-        if(m_laterCheck){
-            m_laterCheck_timer -= time;
-            if(m_laterCheck_timer <= 0){
-                update_info(m_player);
-                m_laterCheck_timer = 10;
-                m_laterCheck = false;
-                if(g_debugMode){
-                    _report(m_metagame,"再次更新玩家信息成功");
-                }
-            }
         }
     }
     // --------------------------------------------
@@ -105,6 +93,7 @@ class schedule_Manager : Tracker {
         string name = player.getStringAttribute("name");
         if(g_playerInfoBuck.exists(name)){
             g_playerInfoBuck.removeByName(name);
+            removeGlobalPlayerInfo(m_metagame,name);
             if(g_debugMode){
                 _report(m_metagame,"remove PlayerInfo for "+name);
             }
@@ -112,7 +101,12 @@ class schedule_Manager : Tracker {
     }
     // --------------------------------------------
     protected void handlePlayerConnectEvent(const XmlElement@ event) {
-        //m_players = getPlayers(m_metagame);
+        if(!m_isStart){
+            g_IRQ.clearAll();
+            g_playerInfoBuck.clearAll();
+            removeAllGlobalPlayerInfo(m_metagame);
+            m_isStart = true;
+        }
     }
     // --------------------------------------------
     protected void handlePlayerSpawnEvent(const XmlElement@ event) {
@@ -151,6 +145,8 @@ class schedule_Manager : Tracker {
         int pid = player.getIntAttribute("player_id");
         if(g_debugMode) _report(m_metagame,"更新玩家PID为="+pid);
         @player = getPlayerInfo(m_metagame,pid);
+        updateGlobalPlayerInfo(m_metagame,player);
+
         string name = player.getStringAttribute("name");
         string profile_hash = player.getStringAttribute("profile_hash");
         string sid = player.getStringAttribute("sid");
@@ -211,10 +207,15 @@ class schedule_Manager : Tracker {
             update_info(player);
             notify(m_metagame, "已手动更新你的信息", dictionary(), "misc", pid, false, "", 1.0);
         }
+        if(message == "/removemyinfo"){
+            string name = event.getStringAttribute("player_name");
+            removeGlobalPlayerInfo(m_metagame,name);
+        }
 	}
     // -------------------------------------------
     protected void checkMyInfo(string message,int pid){
         const XmlElement@ player = getPlayerInfo(m_metagame,pid);
+        //const XmlElement@ player = readGlobalPlayerInfo(m_metagame,"player_id",""+pid);
         if(player is null){return;}
         string name = player.getStringAttribute("name");
         string profile_hash = player.getStringAttribute("profile_hash");

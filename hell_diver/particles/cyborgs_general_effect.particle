@@ -450,16 +450,6 @@ particle_system cyborgs_result_cannon_blast_AmbientLight
 		time2 1
 		colour2 0 0 0 0
 	}
-	affector LinearForce{
-		force_vector 0 0 0
-		force_application add
-	}
-	affector DirectionRandomiser 
-	{
-		randomness 0
-		scope 0
-		keep_velocity false
-	}
 }
 particle_system cyborgs_result_cannon_blast_smoke
 {
@@ -508,16 +498,6 @@ particle_system cyborgs_result_cannon_blast_smoke
 		colour1 1 0.7 0.3 1
 		time2 1
 		colour2 0 0 0 0
-	}
-	affector LinearForce{
-		force_vector 0 0 0
-		force_application add
-	}
-	affector DirectionRandomiser 
-	{
-		randomness 0
-		scope 0
-		keep_velocity false
 	}
 }
 

@@ -239,13 +239,20 @@ class itemdrop_event : Tracker {
 						if(!getPlayerEquipmentInfoArray(m_metagame,characterId,equipList)) return;
 						deleteItemInBackpack(m_metagame,characterId,"projectile",itemKey);
 						healCharacter(m_metagame,characterId,20);
+			//有bug,暂时取消后面的任务
+			//return;
+						if(isVectorInMap(stringToVector3(position))){
+							_log("position is in map");
+						}
 						playSoundAtLocation(m_metagame,"hd_mg94_mag_out.wav",factionId,position);
-
+						_log("played sound");
 						array<Resource@> resources = array<Resource@>();
 						Resource@ res;
+						_log("pointer initiate");
 						for(int i=1;i<=2;i++){
-							string equipKey = "";
+							string equipKey = "null";
 							equipList.get(""+i,equipKey);
+							_log("get equipKey = "+equipKey);
 							if(g_debugMode){
 								_report(m_metagame,"Get Player EquipKey ="+equipKey);
 								_report(m_metagame,"Item slot ="+i);
@@ -296,6 +303,11 @@ class itemdrop_event : Tracker {
 									res.addToResources(resources,resupplyNum);
 								}
 							}
+						}
+						_log("ready to addInBackPack cid= "+characterId);
+						if(resources is null){
+							_log("resources is null");
+							return;
 						}
 						addListItemInBackpack(m_metagame,characterId,resources);
 					}

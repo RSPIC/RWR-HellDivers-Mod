@@ -85,6 +85,8 @@ dictionary projectile_eventkey = {
 
         {"acg_patricia_fataldrive",46},
 
+        {"hyper_mega_bazooka_launcher_skill",47},
+
         // 占位的
         {"666",-1}
 };
@@ -95,15 +97,31 @@ dictionary vehicle_recycle_key = {
         // 空
         {"",-1},
 
-        {"noxe.vehicle",1000},
-        {"hd_td110_bastion.vehicle",1500},
+        {"noxe.vehicle",500},
+        {"hd_td110_bastion.vehicle",500},
         {"hd_mc109_motor.vehicle",100},
-        {"hd_m5_apc.vehicle",500},
-        {"ex_isu_152.vehicle",1500},
-        {"hd_m5_32_hav.vehicle",1000},
+        {"hd_m5_apc.vehicle",300},
+        {"ex_isu_152.vehicle",800},
+        {"hd_m5_32_hav.vehicle",300},
         {"63type_107mm_rocket_launcher.vehicle",100},
         {"jeep.vehicle",100},
         {"cyborgs_ifv.vehicle",3000},
+        {"ex_sturmtiger_tank.vehicle",1000},
+        {"ex_apocalypse_tank.vehicle",1000},
+        {"ex_kv2_gup.vehicle",1000},
+        {"ex_sherman.vehicle",1000},
+        {"ba_crusader.vehicle",1000},
+        {"ex_m18.vehicle",500},
+        {"ba_torumaru_tiger.vehicle",1000},
+        {"is2_m1895.vehicle",1000},
+        {"himars.vehicle",1000},
+        {"mtlb_2b9.vehicle",1000},
+        {"m61a5.vehicle",1000},
+        {"borsig.vehicle",1000},
+        {"uragan.vehicle",1000},
+        {"mi_24.vehicle",1000},
+        {"bell_360.vehicle",1000},
+        {"mh_60s.vehicle",1000},
 
         // 占位的
         {"666",-1}

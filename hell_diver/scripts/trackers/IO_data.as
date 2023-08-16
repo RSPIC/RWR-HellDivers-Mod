@@ -16,19 +16,19 @@
 //需要按一定格式存写
 
 //子项中带有onRemove="1"标签的将会被排除
-//子项中的"_"用于标签排序
+//子项中的"A_"用于标签排序
 //基于player_name标签来实现数据融并，融并时会自动简并子项中的player_name属性
-//子项的TagName将会变为主数据access_tag标签中的_tag属性
+//子项的TagName将会变为主数据access_tag标签中的A_tag属性
 
 //密钥兑换系统
 
-const XmlElement@ readXML(const Metagame@ metagame, string filename){
+const XmlElement@ readXML(const Metagame@ metagame, string filename, string location = "savegame" ){
 	XmlElement@ query = XmlElement(
 		makeQuery(metagame, array<dictionary> = {
-			dictionary = { {"TagName", "data"}, {"class", "saved_data"}, {"filename", filename}, {"location", "savegame"} } }));
+			dictionary = { {"TagName", "data"}, {"class", "saved_data"}, {"filename", filename}, {"location", location} } }));
 	const XmlElement@ xml = metagame.getComms().query(query);
     if(xml is null){
-        writeXML(metagame,filename,XmlElement(filename));
+        writeXML(metagame,filename,XmlElement(filename),location);
     }
 	return xml;
 }
@@ -131,23 +131,46 @@ class IO_data : Tracker {
                         notify(m_metagame, "Key Valid", dictionary(), "misc", pid, false, "", 1.0);
                         access_tag = info.getStringAttribute("access_tag");
 
-                        //检测是否为重复使用
+                       
                         bool double_use = false;
-                        if(info.hasAttribute(m_sid)){
-                            bool isUsed = info.getBoolAttribute(m_sid);
-                            if(isUsed){
-                                if(g_debugMode){
-                                    _report(m_metagame,"isUsed,my sid="+m_sid);
-                                }
-                                double_use = true;
-                            }
+                        //检测是否为重复使用
+                        XmlElement checkXml("root");
+
+                            XmlElement xml2(access_tag);
+                                XmlElement xml2_1("A_key");
+                                xml2_1.setStringAttribute("value",targetKey);
+                            xml2.appendChild(xml2_1);
+
+                            XmlElement xml3(access_tag);
+                                XmlElement xml3_1("only_one");
+                                xml3_1.setStringAttribute("value","1");
+                            xml3.appendChild(xml3_1);
+
+                        checkXml.appendChild(xml2);
+                        checkXml.appendChild(xml3);
+
+                        if(checkTagsInPlayerInfo(m_sid,checkXml)){
+                            notify(m_metagame, "不能重复领取该密钥", dictionary(), "misc", pid, true, "", 1.0);
+                            double_use = true;
                         }
+
+                        // if(info.hasAttribute(m_sid)){
+                        //     bool isUsed = info.getBoolAttribute(m_sid);
+                        //     if(isUsed){
+                        //         if(g_debugMode){
+                        //             _report(m_metagame,"isUsed,my sid="+m_sid);
+                        //         }
+                        //         double_use = true;
+                        //     }
+                        // }
+
                         if(player_name == p_name){
                             if(g_debugMode){
                                 _report(m_metagame,"player_name = p_name, Key double used");
                             }
                             double_use = true;
                         }
+
                         //若密钥为指定对象才能使用
                         if(info.hasAttribute("bond_target")){
                             string compare_key = info.getStringAttribute("bond_target");
@@ -155,6 +178,7 @@ class IO_data : Tracker {
                                 double_use = true;
                             }
                         }
+
                         if(!double_use){
                             //单次使用密钥,无max_use标签
                             if(info.hasAttribute("used")){
@@ -170,7 +194,7 @@ class IO_data : Tracker {
                                     }
                                     used++;
                                     info.setIntAttribute("used",used);
-                                    info.setBoolAttribute(m_sid,true);
+                                    //info.setBoolAttribute(m_sid,true);
                                     isValid = true;
                                 }
                             }
@@ -184,7 +208,7 @@ class IO_data : Tracker {
                                     }
                                     times--;
                                     info.setIntAttribute("max_use",times);
-                                    info.setBoolAttribute(m_sid,true);
+                                    //info.setBoolAttribute(m_sid,true);
                                     isValid = true;
                                 }else{
                                     if(g_debugMode){
@@ -201,6 +225,7 @@ class IO_data : Tracker {
                         }
 
                         info.setStringAttribute("player_name",p_name);
+                        info.setStringAttribute("override","0");
                         @targetInfo = info;
                         index = i;
                         break;
@@ -370,7 +395,7 @@ class IO_data : Tracker {
                 return;
             }
             //满30级才能邀请他人
-            if(xp < 251.773 ){
+            if(xp < 251.773){
                 notify(m_metagame, "You didnt reach the Level 30", dictionary(), "misc", pid, false, "", 1.0);
                 return;
             }
@@ -451,8 +476,8 @@ class IO_data : Tracker {
                 return;
             }
             //大于三十级玩家不能被邀请
-            if(xp >= 251.773 ){
-                notify(m_metagame, "You over reach the Level 30", dictionary(), "misc", pid, false, "", 1.0);
+            if(xp < 84.248){
+                notify(m_metagame, "You didnt reach the Level 20", dictionary(), "misc", pid, false, "", 1.0);
                 return;
             }
             bool invited = false;
@@ -696,9 +721,14 @@ class IO_data : Tracker {
                                     continue;
                                 }else{
                                     // 有任意一次匹配不上，则退出
+                                    if(g_debugMode) _report(m_metagame,"未找到匹配的标签"+sub_TagName+"值:"+sub_value);
                                     isFindTargetAccessTags = false;
-                                    break;
+                                    continue;
                                 }
+                            }else{
+                                if(g_debugMode) _report(m_metagame,"该标签不存在"+sub_TagName+"值:"+sub_value);
+                                isFindTargetAccessTags = false;
+                                continue;
                             }
                         }
                         //全部通过
@@ -719,8 +749,12 @@ class IO_data : Tracker {
                 if(!isValid){
                     isAllPlayerValid = false;
                     if(g_debugMode) _report(m_metagame,"检查 "+target_TagName+" 失败，将isAllPlayerValid设置为false");
+                    continue;
+                }else{
+                    isAllPlayerValid = true;
                     break;
                 }
+
             }
         }
 
@@ -795,11 +829,18 @@ class IO_data : Tracker {
                                     continue;
                                 }
                             }
-                            //保存或替换原对象
-                            if(TagName == m_TagName){
+                            
+                            if(TagName == m_TagName){//覆写原对象
+                                if(xml.hasAttribute("override")){
+                                    string isoverride = xml.getStringAttribute("override");
+                                    if(isoverride == "0"){
+                                        m_player.appendChild(access_tag);
+                                        continue;
+                                    }
+                                }
                                 m_player.appendChild(xml);
                                 isExist = true;
-                            }else{
+                            }else{//保留原对象
                                 m_player.appendChild(access_tag);
                             }
                         }
@@ -936,6 +977,10 @@ class IO_data : Tracker {
     protected bool handleReward(string&in p_name,string&in access_tag){
         int pid = g_playerInfoBuck.getPidByName(p_name);
         const XmlElement@ player = getPlayerInfo(m_metagame,pid);
+        if(player is null){
+            _log("handleReward player is null");
+            return false;
+        }
         int cid = player.getIntAttribute("character_id");
         //int cid = g_playerInfoBuck.getCidByPid(pid);
         int fid = g_playerInfoBuck.getCidByName(p_name);
@@ -1048,19 +1093,19 @@ class IO_data : Tracker {
             res.addToResources(resources,10);
 
             addListItemInBackpack(m_metagame,cid,resources);
-            GiveRP(m_metagame,cid,120000);
+            GiveRP(m_metagame,cid,180000);
             dictionary a;
-            a["%reward"] = "RP: 12w 和加成卡";
+            a["%reward"] = "RP: 18w 和加成卡";
             notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
             return true;
         }
         if(access_tag == "sponsor_mk2"){//赞助者 30
             @res = Resource("hd_bonusfactor_al_240","carry_item");
-            res.addToResources(resources,1);
+            res.addToResources(resources,2);
             @res = Resource("hd_bonusfactor_al_75","carry_item");
-            res.addToResources(resources,3);
+            res.addToResources(resources,5);
             @res = Resource("hd_bonusfactor_al_20","carry_item");
-            res.addToResources(resources,10);
+            res.addToResources(resources,5);
             @res = Resource("reward_box_skin.carry_item","carry_item");
             res.addToResources(resources,10);
             @res = Resource("reward_box_weapon_delta.carry_item","carry_item");//MK4
@@ -1068,17 +1113,17 @@ class IO_data : Tracker {
 
             addListItemInBackpack(m_metagame,cid,resources);
 
-            GiveRP(m_metagame,cid,300000);
+            GiveRP(m_metagame,cid,600000);
             dictionary a;
-            a["%reward"] = "RP: 30w 和加成卡";
+            a["%reward"] = "RP: 60w 和加成卡";
             notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
             return true;
         }
         if(access_tag == "sponsor_mk3"){//赞助者 68
             @res = Resource("hd_bonusfactor_al_240","carry_item");
-            res.addToResources(resources,2);
+            res.addToResources(resources,3);
             @res = Resource("hd_bonusfactor_al_45","carry_item");
-            res.addToResources(resources,8);
+            res.addToResources(resources,10);
             @res = Resource("reward_box_skin.carry_item","carry_item");
             res.addToResources(resources,10);
             @res = Resource("reward_box_weapon_v.carry_item","carry_item");//MK5
@@ -1086,17 +1131,17 @@ class IO_data : Tracker {
 
             addListItemInBackpack(m_metagame,cid,resources);
 
-            GiveRP(m_metagame,cid,680000);
+            GiveRP(m_metagame,cid,120000);
             dictionary a;
-            a["%reward"] = "RP: 68w 、加成卡和战利品箱子";
+            a["%reward"] = "RP: 120w 、加成卡和战利品箱子";
             notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
             return true;
         }
         if(access_tag == "sponsor_mk4"){//赞助者 200
             @res = Resource("hd_bonusfactor_al_240","carry_item");
-            res.addToResources(resources,5);
+            res.addToResources(resources,4);
             @res = Resource("hd_bonusfactor_al_125","carry_item");
-            res.addToResources(resources,8);
+            res.addToResources(resources,5);
             @res = Resource("reward_box_skin.carry_item","carry_item");
             res.addToResources(resources,10);
             @res = Resource("reward_box_weapon_v.carry_item","carry_item");//MK5
@@ -1105,9 +1150,9 @@ class IO_data : Tracker {
             res.addToResources(resources,2);
 
             addListItemInBackpack(m_metagame,cid,resources);
-            GiveRP(m_metagame,cid,1200000);
+            GiveRP(m_metagame,cid,2000000);
             dictionary a;
-            a["%reward"] = "RP: 120w 、加成卡和战利品箱子";
+            a["%reward"] = "RP: 200w 、加成卡和战利品箱子";
             notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
             return true;
         }
@@ -1362,6 +1407,22 @@ class IO_data : Tracker {
             notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
             return true;
         }
+        if(access_tag == "update"){//更新奖励
+            @res = Resource("hd_bonusfactor_al_240","carry_item");
+            res.addToResources(resources,1);
+            @res = Resource("reward_box_weapon_delta.carry_item","carry_item");//MK4
+            res.addToResources(resources,1);
+            @res = Resource("reward_box_skin.carry_item","carry_item");
+            res.addToResources(resources,3);
+            @res = Resource("reward_box_vehicle.carry_item","carry_item");
+            res.addToResources(resources,3);
+            addListItemInBackpack(m_metagame,cid,resources);
+
+            dictionary a;
+            a["%reward"] = "更新奖励已发送至背包";
+            notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+            return true;
+        }
         array<string> word = MassageBreakUp(access_tag, " ", -1);
         int ws = word.size();
         if(startsWith(access_tag,"w")){// 获取指定武器
@@ -1481,4 +1542,183 @@ class IO_data : Tracker {
 			}
 		}
 	}
+}
+
+
+const XmlElement@ readFile(Metagame@ m_metagame, string filename,string location = "savegame"){
+    const XmlElement@ root = readXML(m_metagame,filename,location).getFirstChild();
+    if(root is null){
+        _log("readFile is null,create"+filename+"是NULL，重新创建");
+        _report(m_metagame,"文件名="+filename);
+        writeXML(m_metagame,filename,XmlElement(filename),location);
+        @root = readXML(m_metagame,filename,location).getFirstChild();
+    }
+    return root;
+}
+
+// -------------------------------------------
+void updateGlobalPlayerInfo(Metagame@ m_metagame, const XmlElement@ newplayer = null,bool&in isOnline = true){
+    array<const XmlElement@> players;
+    if(newplayer is null){
+        players = getPlayers(m_metagame);
+    }else{
+        players.insertLast(newplayer);
+    }
+    //获取在线玩家信息
+    for(uint i=0;i<players.size();++i){
+        XmlElement@ player = XmlElement(players[i]);
+        if(player is null){continue;}
+        bool is_online = isOnline;
+        string player_name = player.getStringAttribute("name");
+        string profile_hash = player.getStringAttribute("profile_hash");
+        string sid = player.getStringAttribute("sid");
+        int pid = player.getIntAttribute("player_id");
+        int cid = player.getIntAttribute("character_id");
+        int fid = player.getIntAttribute("faction_id");
+        
+        // 读取存档玩家信息
+        XmlElement@ allInfo = XmlElement(readFile(m_metagame,"_globalPlayerInfo_"+g_server_difficulty_level+".xml","app_data"));
+        if(allInfo is null){
+            _log("allInfo is null, in updateGlobalPlayerInfo");
+            return;
+        }
+        // 读取存档玩家账号信息
+        array<const XmlElement@> m_players = allInfo.getElementsByTagName("player");
+
+        allInfo.removeAllChild();
+        //解决空子项问题
+        XmlElement a("player");
+        a.setBoolAttribute("onRemove",true);
+        allInfo.appendChild(a);
+
+        bool isExist = false;
+        for(int j = 0 ; j < int(m_players.size()) ; ++j){
+            XmlElement@ m_player = XmlElement(m_players[j]);
+            string m_name = m_player.getStringAttribute("player_name");
+            //排除onRemove对象
+            if(m_player.hasAttribute("onRemove")){
+                bool isToRemove = m_player.getBoolAttribute("onRemove");
+                if(isToRemove){
+                    continue;
+                }
+            }
+            //玩家信息存在，则删除重写覆盖
+            if(m_name == player_name){
+                array<const XmlElement@> childs = m_player.getElementsByTagName("access_tag");
+                m_player.removeAllChild();
+
+                m_player.setBoolAttribute("is_online",is_online);
+
+                m_player.setStringAttribute("profile_hash",profile_hash);
+                m_player.setStringAttribute("sid",sid);
+
+                m_player.setIntAttribute("faction_id",fid);
+                m_player.setIntAttribute("character_id",cid);
+                m_player.setIntAttribute("player_id",pid);
+
+                m_player.appendChilds(childs);
+                allInfo.appendChild(m_player);
+
+                isExist = true;
+            }else{//其他玩家信息不修改存回去
+                allInfo.appendChild(m_player);
+            }
+        }
+        //不存在，新建信息
+        if(!isExist){
+            XmlElement playerinfo("player");
+            playerinfo.setBoolAttribute("is_online",is_online);
+            playerinfo.setStringAttribute("player_name",player_name);
+            playerinfo.setStringAttribute("profile_hash",profile_hash);
+            playerinfo.setStringAttribute("sid",sid);
+            playerinfo.setIntAttribute("faction_id",fid);
+            playerinfo.setIntAttribute("character_id",cid);
+            playerinfo.setIntAttribute("player_id",pid);
+
+            allInfo.appendChild(playerinfo);
+        }
+        allInfo.removeChild("player",0);
+        writeXML(m_metagame,"_globalPlayerInfo_"+g_server_difficulty_level+".xml",allInfo,"app_data");
+        
+    }
+    // writeXML(m_metagame,m_playerInfo_FILENAME,allInfo);
+    if(g_debugMode){
+        _report(m_metagame,"saveGlobalPlayerInfo");
+    }
+}
+
+void removeGlobalPlayerInfo(Metagame@ m_metagame,string player_name){
+    // 读取存档玩家信息
+    XmlElement@ allInfo = XmlElement(readFile(m_metagame,"_globalPlayerInfo_"+g_server_difficulty_level+".xml","app_data"));
+    if(allInfo is null){
+        _log("allInfo is null, in updateGlobalPlayerInfo");
+        return;
+    }
+    // 读取存档玩家账号信息
+    array<const XmlElement@> m_players = allInfo.getElementsByTagName("player");
+
+    allInfo.removeAllChild();
+    //解决空子项问题
+    XmlElement a("player");
+    a.setBoolAttribute("onRemove",true);
+    allInfo.appendChild(a);
+
+    for(int j = 0 ; j < int(m_players.size()) ; ++j){
+        XmlElement@ m_player = XmlElement(m_players[j]);
+        string m_name = m_player.getStringAttribute("player_name");
+        //排除onRemove对象
+        if(m_player.hasAttribute("onRemove")){
+            bool isToRemove = m_player.getBoolAttribute("onRemove");
+            if(isToRemove){
+                continue;
+            }
+        }
+        //玩家信息存在，则删除
+        if(m_name == player_name){
+            continue;
+        }else{//其他玩家信息不修改存回去
+            allInfo.appendChild(m_player);
+        }
+    }
+    allInfo.removeChild("player",0);
+    writeXML(m_metagame,"_globalPlayerInfo_"+g_server_difficulty_level+".xml",allInfo,"app_data");
+}
+
+void removeAllGlobalPlayerInfo(Metagame@ m_metagame){
+    XmlElement@ allInfo = XmlElement("_globalPlayerInfo_"+g_server_difficulty_level+".xml");
+    writeXML(m_metagame,"_globalPlayerInfo_"+g_server_difficulty_level+".xml",allInfo,"app_data");
+}
+
+const XmlElement@ readGlobalPlayerInfo(Metagame@ m_metagame,string method, string methodValue){
+    // 读取存档玩家信息
+    XmlElement@ allInfo = XmlElement(readFile(m_metagame,"_globalPlayerInfo_"+g_server_difficulty_level+".xml","app_data"));
+    if(allInfo is null){
+        _log("allInfo is null, in readGlobalPlayerInfo");
+        return null;
+    }
+    array<const XmlElement@> m_players = allInfo.getElementsByTagName("player");
+    for(uint i=0; i<m_players.size(); ++i){
+        const XmlElement@ m_player = m_players[i];
+        if(m_player.hasAttribute(method)){
+            string m_value = m_player.getStringAttribute(method);
+            if(m_value == methodValue){
+                return m_player;
+            }
+        }
+    }
+    //没有查到
+    return null;
+}
+
+bool reUpdateGlobalPlayerInfo(Metagame@ m_metagame,int pid,const XmlElement@ &out playerInfo){
+    notify(m_metagame,"你的玩家信息丢失，正尝试重新创建", dictionary(), "misc", pid, false, "", 1.0);
+    updateGlobalPlayerInfo(m_metagame);
+    @playerInfo = readGlobalPlayerInfo(m_metagame,"player_id",""+pid);
+    if(playerInfo is null){
+        notify(m_metagame,"重新创建失败", dictionary(), "misc", pid, false, "", 1.0);
+        return false;
+    }else{
+        notify(m_metagame,"重新创建成功", dictionary(), "misc", pid, false, "", 1.0);
+        return true;
+    }
 }

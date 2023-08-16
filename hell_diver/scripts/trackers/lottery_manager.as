@@ -109,10 +109,12 @@ class lottery_manager : Tracker {
     protected Metagame@ m_metagame;
     protected lotteryInfoBuck@ m_lotteryInfoBuck;
     protected string m_guaguale_num;
+    protected firstUseInfoBuck@ m_firstUseInfoBuck;
 
     lottery_manager(Metagame@ metagame){    
         @m_metagame = @metagame;
         @m_lotteryInfoBuck = lotteryInfoBuck();
+        @m_firstUseInfoBuck = firstUseInfoBuck();
         m_guaguale_num = "" + int(rand(10000,99999));
     }
 
@@ -155,11 +157,14 @@ class lottery_manager : Tracker {
         if(containerId != 1){return;}// 1(军械库)
         if(g_playerInfoBuck is null){return;}
         string name = g_playerInfoBuck.getNameByPid(pid);
-        if(name == ""){
-            const XmlElement@ player = getPlayerInfo(m_metagame,pid);
-            name = player.getStringAttribute("name");
-            notify(m_metagame, "未能获取到你的name，已通过其他方法获取。请汇报此情况", dictionary(), "misc", pid, false, "", 1.0);
-        }
+        // const XmlElement@ playerInfo = readGlobalPlayerInfo(m_metagame,"player_id",""+pid);
+        // if(playerInfo is null){
+        //     if(!reUpdateGlobalPlayerInfo(m_metagame,pid,playerInfo)){
+        //         return;
+        //     }
+        // }
+        // string name = playerInfo.getStringAttribute("player_name");
+
         array<string> targetKey = {"hd_bonusfactor_al_","hd_bonusfactor_xp_","hd_bonusfactor_rp_"};
         for(uint i = 0 ; i < targetKey.size() ; ++i){
             string tempKey = itemKey.substr(0,targetKey[i].length());
@@ -176,7 +181,8 @@ class lottery_manager : Tracker {
                     }
                     float bonusFactor = 0.01*parseFloat(num);
                     //先过判断
-                    if(g_firstUseInfoBuck.isFirst(name,"hd_bonusfactor")){
+                    m_firstUseInfoBuck.addInfo(name);
+                    if(m_firstUseInfoBuck.isFirst(name,"hd_bonusfactor")){
                         notify(m_metagame,"The bonus has taken effect", dictionary(), "misc", pid, false, "", 1.0);
                         dictionary a;
                         a["%bf"] = ""+bonusFactor;
@@ -209,7 +215,7 @@ class lottery_manager : Tracker {
                         g_battleInfoBuck.setBonusFactor(name,1.0);
                         g_battleInfoBuck.setBonusFactorXp(name,1.0);
                         g_battleInfoBuck.setBonusFactorRp(name,1.0);
-                        g_firstUseInfoBuck.removeFirst(name,"hd_bonusfactor");
+                        m_firstUseInfoBuck.removeFirst(name,"hd_bonusfactor");
                     }
                     
                 }

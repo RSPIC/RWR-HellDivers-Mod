@@ -40,6 +40,9 @@ class re_weapons : Tracker {
 
 	protected void handleItemDropEvent(const XmlElement@ event){
         string itemKey = event.getStringAttribute("item_key");
+        if(itemKey == "acg_mari_sports_ver.weapon"){
+            return;
+        }
         if(!startsWith(itemKey,"acg_") && !startsWith(itemKey,"ex_")){
             return;
         }
@@ -74,8 +77,9 @@ class re_weapons : Tracker {
                         g_userCountInfoBuck.clearCount(name,itemKey+"re");
                         notify(m_metagame, "已成功合成", dictionary(), "misc", pid, false, "", 1.0);
                     }
+                    return;
                 }else{
-                    notify(m_metagame, "风险操作：已退还你的武器。若要合成武器，请在武器栏装备同样模式的武器。如果需要出售武器，请保持武器栏为空", dictionary(), "misc", pid, false, "", 1.0);
+                    notify(m_metagame, "风险操作：已退还你的武器。若要合成武器，请在武器栏装备同样模式的武器。", dictionary(), "misc", pid, false, "", 1.0);
                     addItemInBackpack(m_metagame,cid,"weapon",itemKey);
                     return;
                 }
@@ -95,11 +99,12 @@ class re_weapons : Tracker {
                         g_userCountInfoBuck.clearCount(name,itemKey+"re");
                         notify(m_metagame, "已成功合成", dictionary(), "misc", pid, false, "", 1.0);
                     }
+                    return;
+                }else{
+                    notify(m_metagame, "风险操作：已退还你的武器。若要合成武器，请在武器栏装备同样模式的武器。如果需要出售武器，请保持武器栏为空", dictionary(), "misc", pid, false, "", 1.0);
+                    addItemInBackpack(m_metagame,cid,"weapon",itemKey);
+                    return;
                 }
-            }else{
-                notify(m_metagame, "风险操作：已退还你的武器。若要合成武器，请在武器栏装备同样模式的武器。如果需要出售武器，请保持武器栏为空", dictionary(), "misc", pid, false, "", 1.0);
-                addItemInBackpack(m_metagame,cid,"weapon",itemKey);
-                return;
             }
         }
     }

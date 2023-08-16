@@ -49,20 +49,48 @@ dictionary healable_killtarget_bonus = {
         {"666",-1}
 
 };
-//可获得经验加成的击杀武器
+//可获得经验/RP加成的击杀武器
 dictionary recommend_kill_weapon_bonus = {
 
 		//数字为额外经验倍率
-        {"hd_ar_ar19_liberator_full_upgrade.weapon",5.0},
+        {"hd_ar_ar19_liberator_full_upgrade.weapon",3.0},
         {"hd_ar_ar22c_patriot_full_upgrade.weapon",2.0},
-        {"hd_ar_ar20l_justice_full_upgrade.weapon",2.0},
-        {"hd_ar_ar14d_paragon_full_upgrade.weapon",2.0},
+        {"hd_ar_ar20l_justice_full_upgrade.weapon",1.0},
+        {"hd_ar_ar14d_paragon_full_upgrade.weapon",1.0},
+        {"hd_ar_ar77d_spade_mk3.weapon",1.0},
+
+        {"hd_sg_sg225_breaker_full_upgrade.weapon",0.5},
+        {"hd_sg_sg8_punisher_full_upgrade.weapon",1.0},
+        {"hd_sg_double_freedom_full_upgrade.weapon",1.0},
 
         {"hd_smg_smg45_defender_full_upgrade.weapon",2.0},
-        {"hd_smg_mp98_knight_smg_full_upgrade.weapon",2.0},
+        {"hd_smg_mp98_knight_smg_full_upgrade.weapon",0.5},
         {"hd_smg_smg34_ninja_full_upgrade.weapon",2.0},
+        {"hd_smg_tc171_cyclone_mk3.weapon",1.0},
+
+        {"hd_psc_rx1_railgun_full_upgrade.weapon",2.0},
+        {"hd_psc_m2016_constitution_full_upgrade.weapon",5.0},
+        {"hd_psc_lho63_camper_full_upgrade.weapon",2.0},
+        {"hd_psc_atx25_revelator_mk3.weapon",1.0},
+
+        {"hd_lmg_mg94_mk3.weapon",1.0},
+        {"hd_lmg_mg105_stalwart_full_upgrade.weapon",1.0},
+
+        {"hd_exp_cr9_suppressor_full_upgrade.weapon",0.5},
+        {"hd_exp_plas1_scorcher_full_upgrade.weapon",0.5},
+
+        {"hd_laser_las13_trident_full_upgrade.weapon",2.0},
+        {"hd_laser_las12_tanto_full_upgrade.weapon",2.0},
+        {"hd_laser_las16_sickle_full_upgrade.weapon",3.0},
+        {"hd_laser_las5_scythe_full_upgrade.weapon",2.0},
+
+        {"hd_arc_ac5_shotgun_full_upgrade.weapon",2.0},
+        {"hd_arc_ac3_thrower_full_upgrade.weapon",2.0},
+
+        {"ex_cl_banzai.weapon",3.0},
 		
-        {"hd_side_p2_peacemaker_full_upgrade.weapon",3.0},
+        {"hd_side_p2_peacemaker_full_upgrade.weapon",2.0},
+        {"hd_side_p6_gunslinger.weapon",3.0},
 
         // 占位的
         {"666",-1}
@@ -229,13 +257,17 @@ class kill_reward : Tracker {
 				healCharacter(m_metagame,killer_cid,healnum);
 			}
 			float XpBonusFactor = 0;
-			if(recommend_kill_weapon_bonus.get(weaponKey,XpBonusFactor)){//执行：可获得经验加成的击杀武器
+			if(recommend_kill_weapon_bonus.get(weaponKey,XpBonusFactor)){//执行：可获得经验/RP加成的击杀武器
 				if(XpBonusFactor <= 0){
 					XpBonusFactor = 0;
 				}
 				float BaseXp = 0.01; //基础经验100xp
+				int BaseRp = 20; //基础资源 20rp
 				if(killer_xp <= 250.0){ //250w区间
 					GiveXP(m_metagame,killer_cid,XpBonusFactor*BaseXp);
+				}
+				if(killer_xp <= 1000.0){ //1000w区间
+					GiveRP(m_metagame,killer_cid,int(XpBonusFactor*BaseRp));
 				}
 			}
 		}

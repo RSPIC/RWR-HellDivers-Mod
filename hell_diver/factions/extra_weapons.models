@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <models>
 	<!-- <model filename="hdivers_ceremonial.xml" /> -->
-	<model filename="acg_kal_tsit_m3.xml">
-		<requirement class="weapon" slot="0" key="normal.weapon"/>
-	</model>
+
 	<model filename="ex_marcus_fenix.xml">
 		<requirement class="weapon" slot="0" key="ex_lancer_mk3.weapon"/>
 	</model>
@@ -27,6 +25,12 @@
 	</model>
 	<model filename="ex_dark_excalibur.xml">
 		<requirement class="weapon" slot="0" key="re_ex_soma_prime_sword.weapon"/>
+	</model>
+	<model filename="ex_izanagis_burden.xml">
+		<requirement class="weapon" slot="0" key="ex_izanagis_burden.weapon"/>
+	</model>
+	<model filename="ex_izanagis_burden.xml">
+		<requirement class="weapon" slot="0" key="ex_izanagis_burden_skill.weapon"/>
 	</model>
 
 

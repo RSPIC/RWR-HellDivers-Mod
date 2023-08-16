@@ -7,7 +7,7 @@ key="MTL_GOLD1"
     <hud_icon filename="MTL_GOLD1.png" />
     <inventory encumbrance="0.5" price="100.0" />
     <model mesh_filename="MTL_GOLD1.mesh" texture_filename="MTL_GOLD1.jpg" />
-    <commonness value="1" in_stock="1" />
+    <commonness value="1.5" in_stock="1" />
 </carry_item>
 <carry_item file="_usable_item.base" 
 name="MTL_GOLD2" 
@@ -34,7 +34,7 @@ key="MTL_BASE_SL1"
     <hud_icon filename="MTL_BASE_SL1.png" />
     <inventory encumbrance="0.5" price="100.0" />
     <model mesh_filename="MTL_BASE_SL1.mesh" texture_filename="MTL_BASE_SL1.jpg" />
-    <commonness value="1" in_stock="1" />
+    <commonness value="1.5" in_stock="1" />
 </carry_item>
 <carry_item file="_usable_item.base" 
 name="MTL_BASE_SL2" 
@@ -178,7 +178,7 @@ key="MTL_SL_IRON1"
     <hud_icon filename="MTL_SL_IRON1.png" />
     <inventory encumbrance="0.5" price="100.0" />
     <model mesh_filename="MTL_SL_IRON1.mesh" texture_filename="MTL_SL_IRON1.jpg" />
-    <commonness value="1" in_stock="1" />
+    <commonness value="1.5" in_stock="1" />
 </carry_item>
 <carry_item file="_usable_item.base" 
 name="MTL_SL_IRON2" 
