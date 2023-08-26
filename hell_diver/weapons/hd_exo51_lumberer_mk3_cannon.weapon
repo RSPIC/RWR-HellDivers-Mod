@@ -12,7 +12,7 @@ key="hd_exo51_lumberer_mk3_cannon.weapon"
 	stance_accuracy_rate="1.0"
     sustained_fire_grow_step="0.125" 
     sustained_fire_diminish_rate="0.2" 
-    magazine_size="15" 
+    magazine_size="10" 
 	reload_one_at_a_time="1"
     can_shoot_standing="1" 
     can_shoot_crouching="1" 
@@ -90,7 +90,7 @@ key="hd_exo51_lumberer_mk3_cannon.weapon"
 	time_to_live="1" can_be_detected_by_driver="1" can_be_disarmed="0" name="EXO-51 Lumberer MK3" radius="0.7"> 
 		
         <result class="spawn" instance_class="projectile" instance_key="hd_exo51_lumberer_mk3_cannon_damage.projectile" 
-		min_amount="20" max_amount="20" offset="0 0.5 0" position_spread="1.5 0" direction_spread="0.1 0" />
+		min_amount="30" max_amount="30" offset="0 0.5 0" position_spread="1.5 0" direction_spread="0.1 0" />
 		<!-- damage 5x50=250 轰炸伤-->
        	<!-- 曲射 -->
 

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>	
+<weapons> 
 <weapon 
 file="_hd_lmg.base"
 key="hd_vehicle_lmg.weapon" 
@@ -72,7 +73,7 @@ key="hd_vehicle_lmg.weapon"
 		
 		<result class="hit" kill_probability="1.0" 
 		kill_probability_offset_on_successful_hit="15"
-		kill_decay_start_time="0.25" kill_decay_end_time="0.55" character_state="death"/>
+		kill_decay_start_time="0.25" kill_decay_end_time="0.55" character_state="wound"/>
 	
 		<effect class="result" key="terrain" ref="hd_mg94_result_spray" lighting="0" />
 		<effect class="result" key="terrain" ref="hd_mg94_result_bullet_light_center" lighting="0" />
@@ -96,6 +97,7 @@ key="hd_vehicle_lmg.weapon"
 		<effect class="result" key="vehicle" copy="terrain" />
 		<trail probability="1" key="normal_trail_long" lighting="0"/>	
     </projectile>
+
 		<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
 		<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 	
 	
@@ -107,8 +109,85 @@ key="hd_vehicle_lmg.weapon"
     <stance state_key="prone" accuracy="1.4" /> 
     <stance state_key="prone_moving" accuracy="0.5" />
     <stance state_key="over_wall" accuracy="1.8" />     
-     
-	 
-
-
 </weapon>
+
+<weapon key="hd_vehicle_vmg.30.weapon">
+    <specification slot="2" 
+    retrigger_time="0.1" 
+	spread_range="0.1"
+    accuracy_factor="0.63" 
+    sustained_fire_grow_step="0.8" 
+    sustained_fire_diminish_rate="1.2"  
+    sight_range_modifier="1.1"
+    ai_sight_range_modifier="1.0"
+    magazine_size="-1" 
+    can_shoot_standing="0" 
+    can_shoot_crouching="0" 
+    suppressed="0" 
+    name=".30" 
+    class="0" 
+    projectile_speed="200.0" />
+    <animation key="recoil" ref="12" />
+    <animation key="recoil" ref="13" />
+    <animation key="recoil" ref="14" />
+    <animation key="reload" ref="33" />
+    <animation key="hold" ref="32" />
+    <animation key="hold_on_wall" ref="1" />
+    <animation key="walking" ref="31" />
+    <sound key="fire" fileref=".30mg_shot.wav" volume="0.5" />
+    <sound key="magazine_out" fileref="mg_clip_out.wav" />
+    <sound key="magazine_in" fileref="mg_clip_in.wav" />
+    <sound key="cycle" fileref="rifle_chamber.wav" />
+    <model filename="" />
+
+    <hud_icon filename="hd_m5_apc_mg94.png" />
+    <commonness value="0.05" />
+    <inventory encumbrance="10.0" price="0.0" />
+
+    <weak_hand_hold offset="0.4" />
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.45" can_be_detected_by_driver="1" can_be_disarmed="0" name="VMG.30"> 
+		
+		<result class="hit" kill_probability="1.0" 
+		kill_probability_offset_on_successful_hit="20"
+		kill_decay_start_time="0.25" kill_decay_end_time="0.55" character_state="wound"/>
+	
+		<effect class="result" key="terrain" ref="hd_mg94_result_spray" lighting="0" />
+		<effect class="result" key="terrain" ref="hd_mg94_result_bullet_light_center" lighting="0" />
+		<effect class="result" key="terrain" ref="hd_mg94_result_bullet_smoke" lighting="0" />
+		<effect class="result" key="terrain" ref="hd_mg94_hit_leave" lighting="0" />
+		<effect class="activated" ref="general_weapon_activated_bullet_light" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_bullet_centerlight" lighting="0"/>
+
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_01" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_02" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_03" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_04" />
+		
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+		<trail probability="1" key="normal_trail_long" lighting="0"/>	
+    </projectile>
+
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 	
+
+
+    <target_factors tag=""              distance="1.0" direction="0.0" squad_command="1.0" base_score="0.5" />
+    <target_factors tag="heavy_combat"  distance="1.0" direction="0.0" squad_command="1.0" base_score="0.01" />
+    <target_factors tag="apc"           distance="1.0" direction="0.0" squad_command="1.0" base_score="0.01" />
+    <target_factors tag="light_combat"  distance="1.0" direction="0.0" squad_command="1.0" base_score="0.01" />   
+    <target_factors tag="defensive_at"  distance="1.0" direction="0.0" squad_command="1.0" base_score="0.01" />
+    <target_factors tag="tactical"      distance="1.0" direction="0.0" squad_command="1.0" base_score="8.0" /> 
+    <target_factors tag="bazooka"       distance="1.0" direction="0.0" squad_command="1.0" base_score="9.9" />
+    <target_factors tag="gl"       distance="1.0" direction="0.0" squad_command="1.0" base_score="9.9" />
+    <target_factors tag="machine gun"       distance="1.0" direction="0.0" squad_command="1.0" base_score="9.9" /> 
+    
+</weapon>
+</weapons>

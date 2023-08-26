@@ -37,17 +37,34 @@
 		<requirement class="weapon" slot="1" key="hd_exo44_walker_mk3_missile.weapon"/>
 	</model>
 
-	<!-- 其他 -->
-	<model filename="hdicker_marker.xml">
-		<requirement class="weapon" slot="0" key="hd_psc_atx25_revelator_dicker.weapon"/>
+	<!-- Dicker -->
+	<model filename="hdicker_marker.xml"><requirement class="weapon" slot="0" key="hd_psc_atx25_revelator_dicker.weapon"/>
 	</model>
-	<model filename="hdicker_tactical_combat.xml">
-		<requirement class="weapon" slot="0" key="hd_lava17_roger_dicker.weapon"/>
+	<model filename="hdicker_tactical_combat.xml"><requirement class="weapon" slot="0" key="hd_lava17_roger_dicker.weapon"/>
 	</model>
-	<model filename="hdicker_tactical.xml">
-		<requirement class="weapon" slot="0" key="hd_ar_ar77d_spade_dicker.weapon"/>
+	<model filename="hdicker_tactical.xml"><requirement class="weapon" slot="0" key="hd_ar_ar77d_spade_dicker.weapon"/>
 	</model>
-	<model filename="hdicker_para.xml">
-		<requirement class="weapon" slot="0" key="hd_smg_tc171_cyclone_dicker.weapon"/>
+	<model filename="hdicker_driver.xml"><requirement class="weapon" slot="0" key="hd_smg_tc171_cyclone_dicker.weapon"/>
 	</model>
+	<model filename="hdicker_electric.xml"><requirement class="weapon" slot="0" key="hd_arc_as7_semiconductor_dicker.weapon"/>
+	</model>
+	<model filename="hdicker_electric.xml"><requirement class="weapon" slot="0" key="hd_arc_as7_semiconductor_dicker.weapon"/>
+	</model>
+	<model filename="hdicker_supporter_weaponMaster.xml"><requirement class="weapon" slot="0" key="hd_hmg_mg255_melt_dicker.weapon"/>
+	</model>
+	<model filename="hdicker_supporter_weaponMaster.xml"><requirement class="weapon" slot="0" key="hd_arc_mgc_capacitor_dicker.weapon"/>
+	</model>
+	<model filename="hdicker_shadow.xml"><requirement class="weapon" slot="0" key="hd_psc_hho874_fraternity_dicker.weapon"/>
+	</model>
+	<model filename="hdicker_eod.xml"><requirement class="weapon" slot="1" key="hd_side_digger_drill_dicker.weapon"/>
+	</model>
+	<model filename="hdicker_eod.xml"><requirement class="weapon" slot="0" key="hd_arc_as5_resistance_dicker.weapon"/>
+	</model>
+	<model filename="hdicker_medick.xml"><requirement class="weapon" slot="0" key="hd_pst_tox17_sourhound_dicker.weapon"/>
+	</model>
+	<model filename="hdicker_medick_noback.xml"><requirement class="weapon" slot="0" key="hd_pst_tox17_sourhound_dicker.weapon"/>
+	</model>
+	<model filename="hdicker_para.xml"><requirement class="weapon" slot="1" key="hd_side_hg871_woodpecker_dicker.weapon"/>
+	</model>
+
 </models>

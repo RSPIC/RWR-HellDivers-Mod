@@ -146,7 +146,7 @@ class schedule_Check : Tracker {
         int pid = player.getIntAttribute("player_id");
         string name = player.getStringAttribute("name");
         if(!g_debugMode && !g_online_TestMode){
-			gameHelp(m_metagame,pid);
+			gameHelpSimple(m_metagame,pid);
         }
         if(g_online_TestMode){
             testHelp(m_metagame,pid);
@@ -198,7 +198,7 @@ class schedule_Check : Tracker {
                     array<Resource@> resources = array<Resource@>();
                     Resource@ res;
                     @res = Resource("ex_hyper_mega_bazooka_launcher_skill.weapon","weapon");
-                    res.addToResources(resources,5);
+                    res.addToResources(resources,3);
                     deleteListItemInBackpack(m_metagame,cid,resources);
                     deleteListItemInStash(m_metagame,cid,resources);
                     addListItemInBackpack(m_metagame,cid,resources);
@@ -348,6 +348,9 @@ class schedule_Check : Tracker {
 		notify(m_metagame, "Help - Vote", dictionary(), "misc", pid, true, "Vote Help", 1.0);
 		notify(m_metagame, "Help - TK", dictionary(), "misc", pid, true, "TK Help", 1.0);
 		notify(m_metagame, "Help - BattleReward", dictionary(), "misc", pid, true, "BattleReward Help", 1.0);
+	}
+    protected void gameHelpSimple(Metagame@ m_metagame,int pid){
+		notify(m_metagame, "Help - Content", dictionary(), "misc", pid, true, "Tutor Help", 1.0);
 	}
 	protected void testHelp(Metagame@ m_metagame,int pid){
 		notify(m_metagame, "Help - TestServer", dictionary(), "misc", pid, true, "Testing Help", 1.0);

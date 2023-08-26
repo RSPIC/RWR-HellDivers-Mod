@@ -233,6 +233,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			ScoredResource("token_dark_excalibur.projectile","projectile",1.0f,4),
 			ScoredResource("token_shirasu_azusa.projectile","projectile",1.0f,4),
 			ScoredResource("token_laisha.projectile","projectile",1.0f,4),
+			ScoredResource("token_ba_iroha.projectile","projectile",1.0f,4),
 
 			ScoredResource("token_amamiya_kokoro.projectile","projectile",1.0f,4)
 			},
@@ -310,7 +311,10 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			ScoredResource("m61a5_call.projectile", "projectile", 1.0f),
 			ScoredResource("uragan_call.projectile", "projectile", 0.5f),
 			ScoredResource("borsig_call.projectile", "projectile", 1.0f),
+			// 3倍up 1.5.7Ver
+			ScoredResource("zbd09_call.projectile", "projectile", 3.0f),
 			ScoredResource("t90m3_call.projectile", "projectile", 1.0f)
+			
 			},
 			{
 			ScoredResource("lottery_cash.carry_item", "carry_item", 1.0f)
@@ -764,13 +768,27 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("token_hdicker_tactical_combat.projectile", "projectile", 1.0f),
         	ScoredResource("token_hdicker_para.projectile", "projectile", 1.0f),
         	ScoredResource("token_hdicker_marker.projectile", "projectile", 1.0f),
-        	ScoredResource("token_hdicker_tactical.projectile", "projectile", 1.0f)
+        	ScoredResource("token_hdicker_tactical.projectile", "projectile", 1.0f),
+        	ScoredResource("token_hdicker_driver.projectile", "projectile", 1.0f),
+        	ScoredResource("token_hdicker_electric.projectile", "projectile", 1.0f),
+        	ScoredResource("token_hdicker_eod.projectile", "projectile", 1.0f),
+        	ScoredResource("token_hdicker_medick.projectile", "projectile", 1.0f),
+        	ScoredResource("token_hdicker_shadow.projectile", "projectile", 1.0f),
+        	ScoredResource("token_hdicker_supporter_weaponMaster.projectile", "projectile", 1.0f)
 			},
 			{
 			ScoredResource("hd_psc_atx25_revelator_dicker.weapon", "weapon", 1.0f),
 			ScoredResource("hd_ar_ar77d_spade_dicker.weapon", "weapon", 1.0f),
 			ScoredResource("hd_lava17_roger_dicker.weapon", "weapon", 1.0f),
-			ScoredResource("hd_smg_tc171_cyclone_dicker.weapon", "weapon", 1.0f)
+			ScoredResource("hd_smg_tc171_cyclone_dicker.weapon", "weapon", 1.0f),
+			ScoredResource("hd_arc_as5_resistance_dicker.weapon", "weapon", 1.0f),
+			ScoredResource("hd_arc_as7_semiconductor_dicker.weapon", "weapon", 1.0f),
+			ScoredResource("hd_arc_mgc_capacitor_dicker.weapon", "weapon", 1.0f),
+			ScoredResource("hd_side_digger_drill_dicker.weapon", "weapon", 1.0f),
+			ScoredResource("hd_side_hg871_woodpecker_dicker.weapon", "weapon", 1.0f),
+			ScoredResource("hd_hmg_mg255_melt_dicker.weapon", "weapon", 1.0f),
+			ScoredResource("hd_pst_tox17_sourhound_dicker.weapon", "weapon", 1.0f),
+			ScoredResource("hd_psc_hho874_fraternity_dicker.weapon", "weapon", 1.0f)
 			}
 		};   
 		processRewardPasses(rewardPasses);
@@ -882,7 +900,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		// mk4 非卖 预期24w 期望＞(24+12+5+2)*3=129w
 		ScoredResource("reward_box_weapon_delta.carry_item", "carry_item", 0.30f),
 		// mk5 非卖 预期48w 期望＞(48+24+12+5+2)*3=273w
-		ScoredResource("reward_box_weapon_v.carry_item", "carry_item", 0.11f),
+		ScoredResource("reward_box_weapon_v.carry_item", "carry_item", 0.10f),
 		// MK1~MK5 混合箱，少量出
 		ScoredResource("reward_box_weapon_beta.carry_item", "carry_item", 0.01f),
 		ScoredResource("reward_box_weapon_gama.carry_item", "carry_item", 0.01f),

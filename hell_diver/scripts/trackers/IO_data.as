@@ -223,9 +223,11 @@ class IO_data : Tracker {
                             notify(m_metagame,"Key had been used", dictionary(), "misc", pid, false, "", 1.0);
                             return;
                         }
-
+                        // 默认情况下会被override覆盖，这个标签是为了录入时不被覆写而设置的
                         info.setStringAttribute("player_name",p_name);
-                        info.setStringAttribute("override","0");
+                        if(!info.hasAttribute("override")){
+                            info.setStringAttribute("override","0");
+                        }
                         @targetInfo = info;
                         index = i;
                         break;

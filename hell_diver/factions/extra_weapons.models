@@ -2,35 +2,32 @@
 <models>
 	<!-- <model filename="hdivers_ceremonial.xml" /> -->
 
-	<model filename="ex_marcus_fenix.xml">
-		<requirement class="weapon" slot="0" key="ex_lancer_mk3.weapon"/>
+	<model filename="ex_marcus_fenix.xml"><requirement class="weapon" slot="0" key="ex_lancer_mk3.weapon"/>
 	</model>
-	<model filename="ex_marcus_fenix.xml">
-		<requirement class="weapon" slot="0" key="ex_lancer_mk3_chainsaw.weapon"/>
+	<model filename="ex_marcus_fenix.xml"><requirement class="weapon" slot="0" key="ex_lancer_mk3_chainsaw.weapon"/>
 	</model>
-	<model filename="ex_marcus_fenix.xml">
-		<requirement class="weapon" slot="0" key="re_ex_lancer_mk3.weapon"/>
+	<model filename="ex_marcus_fenix.xml"><requirement class="weapon" slot="0" key="re_ex_lancer_mk3.weapon"/>
 	</model>
-	<model filename="ex_marcus_fenix.xml">
-		<requirement class="weapon" slot="0" key="re_ex_lancer_mk3_chainsaw.weapon"/>
+	<model filename="ex_marcus_fenix.xml"><requirement class="weapon" slot="0" key="re_ex_lancer_mk3_chainsaw.weapon"/>
 	</model>
-	<model filename="ex_dark_excalibur.xml">
-		<requirement class="weapon" slot="0" key="ex_soma_prime.weapon"/>
+	<!-- Mega炮 -->
+	<model filename="ex_dark_excalibur.xml"><requirement class="weapon" slot="0" key="ex_soma_prime.weapon"/>
 	</model>
-	<model filename="ex_dark_excalibur.xml">
-		<requirement class="weapon" slot="0" key="ex_soma_prime_sword.weapon"/>
+	<model filename="ex_dark_excalibur.xml"><requirement class="weapon" slot="0" key="ex_soma_prime_sword.weapon"/>
 	</model>
-	<model filename="ex_dark_excalibur.xml">
-		<requirement class="weapon" slot="0" key="re_ex_soma_prime.weapon"/>
+	<model filename="ex_dark_excalibur.xml"><requirement class="weapon" slot="0" key="re_ex_soma_prime.weapon"/>
 	</model>
-	<model filename="ex_dark_excalibur.xml">
-		<requirement class="weapon" slot="0" key="re_ex_soma_prime_sword.weapon"/>
+	<model filename="ex_dark_excalibur.xml"><requirement class="weapon" slot="0" key="re_ex_soma_prime_sword.weapon"/>
 	</model>
-	<model filename="ex_izanagis_burden.xml">
-		<requirement class="weapon" slot="0" key="ex_izanagis_burden.weapon"/>
+	<!-- 剑狙 -->
+	<model filename="ex_izanagis_burden.xml"><requirement class="weapon" slot="0" key="ex_izanagis_burden.weapon"/>
 	</model>
-	<model filename="ex_izanagis_burden.xml">
-		<requirement class="weapon" slot="0" key="ex_izanagis_burden_skill.weapon"/>
+	<model filename="ex_izanagis_burden.xml"><requirement class="weapon" slot="0" key="ex_izanagis_burden_skill.weapon"/>
+	</model>
+	<!-- 漏斗网 -->
+	<model filename="ex_funnelnet.xml"><requirement class="weapon" slot="1" key="ex_funnelnet.weapon"/>
+	</model>
+	<model filename="ex_funnelnet.xml"><requirement class="weapon" slot="1" key="re_ex_funnelnet.weapon"/>
 	</model>
 
 

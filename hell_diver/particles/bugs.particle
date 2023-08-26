@@ -276,6 +276,56 @@ particle_system bugs_spitter_splash
 		force_application add
 	}
 }
+particle_system bugs_spitter_splash_tox
+{
+	quota 400
+	material Particle_Splash02_pass
+	particle_width 8
+	particle_height 8
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point : spitter_duration
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.5
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0.5
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0.7 0 1
+		time1 0.8
+		colour1 0 0.7 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+}
 particle_system bugs_spitter_splash_expand : bugs_spitter_splash
 {
     material Particle_Splash02_explode
@@ -358,6 +408,33 @@ particle_system bugs_spitter_splash_single_damage2 : bugs_spitter_splash_single_
 	particle_height 0.5
     emitter Ring
 	{
+    }
+    affector Scaler
+	{
+		rate 6.5
+	}
+    affector Rotator
+	{
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0.7 0 0.65
+		time1 0.7
+		colour1 0 0.4 0 0.2
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system bugs_spitter_splash_single_damage3 : bugs_spitter_splash_single_damage
+{
+    material Tex_Water16
+    particle_width 0.5
+	particle_height 0.5
+    emitter Ring
+	{
+		time_to_live 0.5
+		duration 0.3
     }
     affector Scaler
 	{

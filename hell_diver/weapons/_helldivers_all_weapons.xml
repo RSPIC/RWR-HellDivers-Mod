@@ -5,6 +5,8 @@
 	<weapon file="hd_side_p2_peacemaker_full_upgrade.weapon" /><!--和平使者手枪 中穿-->
 	<weapon file="hd_side_p6_gunslinger.weapon" /><!--神枪手重装左轮手枪 重穿-->
 	<weapon file="hd_side_laser_sword.weapon" /><!--光剑-->
+	<weapon file="hd_side_digger_drill.weapon" /><!--掘进者电钻-->
+	<weapon file="hd_side_hg871_woodpecker.weapon" /><!--啄木鸟霰弹-->
 	<!-- Support -->
 	<weapon file="hd_sup_rep80_mk3.weapon" /><!--维修工具枪-->
 	<weapon file="hd_sup_md98_injector.weapon" /><!--MD-98注射器-->
@@ -29,6 +31,7 @@
 	<weapon file="hd_psc_m2016_constitution_full_upgrade.weapon" /><!--构建步枪-->
 	<weapon file="hd_psc_lho63_camper_full_upgrade.weapon" /><!--野营者狙击步枪-->
 	<weapon file="hd_psc_atx25_revelator_mk3.weapon" /><!--启示者反器材狙击步枪-->
+	<weapon file="hd_psc_hho874_fraternity_mk3.weapon" /><!--博爱连狙-->
 	<!-- Explosive 5/10/15伤害阈值 -> 轻甲/中甲/重甲-->
 	<weapon file="hd_exp_rec6_demolisher_mk3.weapon" /><!--爆破手-->
 	<weapon file="hd_exp_eta17_mk3.weapon" /><!--抛弃式反战车火箭-->
@@ -44,18 +47,22 @@
 	<weapon file="hd_lmg_mg94_mk3.weapon" /><!--MG94机枪-->
 	<weapon file="hd_lmg_mgx42_mk3.weapon" /><!--MGX42机枪-->
 	<weapon file="hd_lmg_mg105_stalwart_full_upgrade.weapon" /><!--MG105盟友机枪-->
-	<!-- Lava Tech-->
-	<weapon file="hd_lava17_roger_full_upgrage.weapon" /><!--LAVA-17 游骑兵 充能枪-->
+	<!-- HMG  -->
+	<weapon file="hd_hmg_mg255_melt_mk3.weapon" /><!--MG255熔点重机枪-->
 	<!-- Laser Tech 1.0视距 无衰减 2.0初始致死-->
 	<weapon file="hd_laser_las13_trident_full_upgrade.weapon" /><!--三叉戟激光枪-->
 	<weapon file="hd_laser_las12_tanto_full_upgrade.weapon" /><!--短刀激光枪 中穿-->
 	<weapon file="hd_laser_las16_sickle_full_upgrade.weapon" /><!--镰刀激光枪-->
 	<weapon file="hd_laser_las5_scythe_full_upgrade.weapon" /><!--长柄镰激光枪-->
 	<weapon file="hd_laser_las98_laser_cannon_mk3.weapon" /><!--激光大炮激光枪 重穿 重型武器-->
-	<!-- Fire Tech / Chemical Tech-->
+	<!-- Fire Tech / -->
 	<weapon file="hd_pst_flam40_incinerator_mk3.weapon" /><!--焚化炉火焰喷射器-->
 	<weapon file="hd_pst_flam24_pyro.weapon" /><!--烈焰火焰喷射器 副手-->
+	<!-- Chemical Tech -->
 	<weapon file="hd_pst_tox13_avenger_mk3.weapon" /><!--复仇者毒液喷射器-->
+	<weapon file="hd_pst_tox17_sourhound_mk3.weapon" /><!--酸液犬毒液喷射器-->
+	<!-- Lava Tech-->
+	<weapon file="hd_lava17_roger_full_upgrage.weapon" /><!--LAVA-17 游骑兵 充能枪-->
 	<!-- Drone 跨越射击-->
 	<weapon file="hd_drone_ad334_guard_dog_mk3.weapon" /><!--护卫犬-->
 	<weapon file="hd_drone_ad334_guard_dog_load.weapon" /><!--护卫犬-->
@@ -63,7 +70,10 @@
 	<!-- Arc Tech 辅助-->
 	<weapon file="hd_arc_ac5_shotgun_full_upgrade.weapon" /><!--电弧霰弹枪-->
 	<weapon file="hd_arc_ac3_thrower_full_upgrade.weapon" /><!--电弧发射器-->
-	
+	<weapon file="hd_arc_as7_semiconductor_mk3.weapon" /><!--半导体-->
+	<weapon file="hd_arc_as5_resistance_mk3.weapon" /><!--电阻-->
+	<weapon file="hd_arc_mgc_capacitor_mk3.weapon" /><!--MGC电容重机枪-->
+
 
 	
 	<!-- EXO 机甲 -->

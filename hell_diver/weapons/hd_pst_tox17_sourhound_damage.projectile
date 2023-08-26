@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectiles>
+<projectile class="grenade" name="M-25 Rumbler" 
+slot="1" pulldown_in_air="30.0" 
+key="hd_pst_tox17_sourhound_damage.projectile"
+blast_damage_threshold="50"
+>
+	 
+	<collision class="sticky" />
+	<result class="blast" radius="4.6" damage="1.01" push="0.6" decal="0" character_state="death"/>
+	<trigger class="time" time_to_live="0" />	
+    <rotation class="motion" />
+	<model mesh_filename="" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	
+</projectile>
+
+</projectiles>

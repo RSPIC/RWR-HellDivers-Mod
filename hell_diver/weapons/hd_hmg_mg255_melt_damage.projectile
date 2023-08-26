@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectile 
+class="grenade" 
+name="MG255 Melt" 
+key="hd_hmg_mg255_melt_damage.projectile" 
+slot="0"
+pulldown_in_air="50"
+on_ground_up="0 0 0"
+use_time_to_live="1"
+time_to_live="15"
+can_be_disarmed="0"
+can_be_detected_by_footmen="0"
+can_be_detected_by_driver="0"
+radius="0.3"
+blast_damage_threshold="50"
+time_to_live_out_in_the_open="0"
+player_death_drop_owner_lock_time="0"
+>
+    <collision class="sticky" />
+    <trigger class="time" time_to_live="0">
+    </trigger> 
+    <result class="blast" radius="2.75" damage="8" push="0.2" decal="0" character_state="wound"  
+    faction_compare="not_equal" damage_origin_vehicle="0"/>
+
+</projectile>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectiles>
+<projectile 
+class="grenade" name="Laisha" slot="0" 
+pulldown_in_air="0.1" key="acg_laisha_heliotrope_spawn.projectile">
+
+    <result class="spawn" instance_class="projectile" instance_key="acg_laisha_heliotrope_damage.projectile" 
+    min_amount="50" max_amount="70" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
+
+    <trigger class="time" time_to_live="0.2"/>
+    <rotation class="motion" />
+    <model mesh_filename="" />
+
+		<effect class="result" key="terrain" ref="laisha_HGY_result_blast_firesmoke" lighting="0"/>
+		<effect class="result" key="terrain" ref="laisha_HGY_result_blast_AmbientLight" lighting="0"/>
+		<effect class="result" key="terrain" ref="laisha_HGY_result_blast_impact_center_light" lighting="0"/>
+		<effect class="result" key="terrain" ref="laisha_HGY_result_blast_impact_ring" lighting="0"/>
+		<effect class="result" key="terrain" ref="laisha_HGY_result_blast_impact_ring_2" lighting="0"/>
+		<effect class="result" key="terrain" ref="laisha_HGY_result_blast_impact_spark" lighting="0"/>
+		<effect class="result" key="terrain" ref="laisha_HGY_result_blast_impact_spark_2" lighting="0"/>
+
+
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+		<effect class="result" key="other" copy="terrain" />
+
+
+    <commonness value="0" can_respawn_with="0" in_stock="0"/>	
+</projectile>
+<projectile 
+class="grenade" name="Laisha" slot="0" 
+pulldown_in_air="0.1" key="acg_laisha_heliotrope_damage.projectile">
+
+    <result class="blast" radius="8" damage="7.0" push="0.8" decal="1" 
+    character_state="death" faction_compare="not_equal" damage_origin_vehicle="0" />
+
+    <trigger class="time" time_to_live="0"/>
+    <rotation class="motion" />
+    <model mesh_filename="" />
+
+    <commonness value="0" can_respawn_with="0" in_stock="0"/>	
+</projectile>
+
+<projectile 
+class="grenade" 
+name="Laisha" 
+slot="0" 
+pulldown_in_air="10" 
+key="acg_laisha_southern_cross_spawn.projectile">
+    <tag name="grenade"/>
+
+    <result class="spawn" instance_class="projectile" instance_key="acg_laisha_southern_cross_effect.projectile" 
+    min_amount="12" max_amount="12" offset="0 0 0" position_spread="5 5" direction_spread="-0.1 0" />	
+
+    <trigger class="impact" time_to_live="0.2"/>
+    <rotation class="motion" />
+    <model mesh_filename="" />
+    <commonness value="0" can_respawn_with="0" in_stock="0"/>	
+
+</projectile>
+<projectile 
+class="grenade" 
+name="Laisha" 
+slot="0" 
+pulldown_in_air="10" 
+key="acg_laisha_southern_cross_effect.projectile">
+    <tag name="grenade"/>
+
+    <result class="spawn" instance_class="projectile" instance_key="acg_laisha_southern_cross_damage.projectile" 
+    min_amount="4" max_amount="5" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+
+    <!--命中音效-->
+    <sound class="result" key="other" fileref="acg_laisha_southern_cross_sound.wav" pitch_variety="0.03" volume="2.0" />
+
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+
+    <trigger class="impact" time_to_live="0.2"/>
+    <rotation class="motion" />
+    <model mesh_filename="" />
+
+		<effect class="result" key="terrain" ref="laisha_SouthernCross_result_ring_01" lighting="0"/>
+		<effect class="result" key="terrain" ref="laisha_SouthernCross_result_impact_01" lighting="0"/>
+		<effect class="result" key="terrain" ref="laisha_SouthernCross_result_vertical_impact_1" lighting="0"/>
+		<effect class="result" key="terrain" ref="laisha_SouthernCross_result_vertical_impact_2" lighting="0" post_processing="1"/>
+		<effect class="result" key="terrain" ref="laisha_SouthernCross_result_center_light" lighting="0"/>
+		<effect class="result" key="terrain" ref="laisha_SouthernCross_result_center_ambient_light" lighting="0"/>
+
+
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+		<effect class="result" key="other" copy="terrain" />
+
+
+    <commonness value="0" can_respawn_with="0" in_stock="0"/>	
+</projectile>
+<projectile 
+class="grenade" 
+name="Laisha" 
+slot="0" 
+pulldown_in_air="10" 
+key="acg_laisha_southern_cross_damage.projectile">
+    <tag name="grenade"/>
+
+    <result class="blast" radius="5.5" damage="5.0" push="0.6" decal="1" 
+    character_state="death" faction_compare="not_equal" damage_origin_vehicle="0" />
+
+    <trigger class="time" time_to_live="0"/>
+    <rotation class="motion" />
+    <model mesh_filename="" />
+
+    <commonness value="0" can_respawn_with="0" in_stock="0"/>	
+</projectile>
+</projectiles>

@@ -40,9 +40,6 @@ class re_weapons : Tracker {
 
 	protected void handleItemDropEvent(const XmlElement@ event){
         string itemKey = event.getStringAttribute("item_key");
-        if(itemKey == "acg_mari_sports_ver.weapon"){
-            return;
-        }
         if(!startsWith(itemKey,"acg_") && !startsWith(itemKey,"ex_")){
             return;
         }
@@ -62,7 +59,15 @@ class re_weapons : Tracker {
             }
             string equipKey = "";
             int equipNum = 0;
-            if(equipList.get("0",equipKey) && equipList.get(equipKey,equipNum) && equipNum != 0){//主武器
+            if(equipList.get("0",equipKey) && equipList.get(equipKey,equipNum)){//主武器
+                if(equipNum == 0){// 主手为空 副手卖不掉情况
+                    string equipKey2;
+                    equipList.get("1",equipKey2);
+                    if(itemKey != equipKey2){
+                        return;
+                    }
+                }
+
                 if(itemKey == equipKey){
                     if(g_firstUseInfoBuck.isFirst(name,itemKey+"re")){
                         notify(m_metagame, "已进入武器合成阶段，现在开始持续出售十件同类型武器即可获得复活自带版本", dictionary(), "misc", pid, false, "", 1.0);
@@ -74,17 +79,26 @@ class re_weapons : Tracker {
                     int value;
                     if(g_userCountInfoBuck.getCount(name,itemKey+"re",value) && value == 10){
                         addItemInBackpack(m_metagame,cid,"weapon","re_"+itemKey);
+                        addItemInBackpack(m_metagame,cid,"weapon","re_"+itemKey);
                         g_userCountInfoBuck.clearCount(name,itemKey+"re");
                         notify(m_metagame, "已成功合成", dictionary(), "misc", pid, false, "", 1.0);
                     }
                     return;
                 }else{
-                    notify(m_metagame, "风险操作：已退还你的武器。若要合成武器，请在武器栏装备同样模式的武器。", dictionary(), "misc", pid, false, "", 1.0);
-                    addItemInBackpack(m_metagame,cid,"weapon",itemKey);
-                    return;
+                    if(equipNum != 0){
+                        string equipKey2;
+                        equipList.get("1",equipKey2);
+                        if(itemKey != equipKey2){// 主手为空 副手无法合成情况
+                            notify(m_metagame, "风险操作：已退还你的武器。若要合成武器，请在武器栏装备同样模式的武器。如果需要出售武器，请保持武器栏为空", dictionary(), "misc", pid, false, "", 1.0);
+                            addItemInBackpack(m_metagame,cid,"weapon",itemKey);
+                            return;
+                        }
+                    }
                 }
             }
-            if(equipList.get("1",equipKey) && equipList.get(equipKey,equipNum) && equipNum != 0){//主武器
+            if(equipList.get("1",equipKey) && equipList.get(equipKey,equipNum)){//副武器
+                if(equipNum == 0){return;}
+
                 if(itemKey == equipKey){
                     if(g_firstUseInfoBuck.isFirst(name,itemKey+"re")){
                         notify(m_metagame, "已进入武器合成阶段，现在开始持续出售十件同类型武器即可获得复活自带版本", dictionary(), "misc", pid, false, "", 1.0);
@@ -95,6 +109,7 @@ class re_weapons : Tracker {
                     g_userCountInfoBuck.addCount(name,itemKey+"re");
                     int value;
                     if(g_userCountInfoBuck.getCount(name,itemKey+"re",value) && value == 10){
+                        addItemInBackpack(m_metagame,cid,"weapon","re_"+itemKey);
                         addItemInBackpack(m_metagame,cid,"weapon","re_"+itemKey);
                         g_userCountInfoBuck.clearCount(name,itemKey+"re");
                         notify(m_metagame, "已成功合成", dictionary(), "misc", pid, false, "", 1.0);

@@ -1,0 +1,199 @@
+
+2023.8.25
+author:RST
+
+particle_system funnelnet_muzzle_01
+{
+	quota 50
+	material Tex_Spark20
+	particle_width 1.8
+	particle_height 1.8
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.15
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 3
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0w
+		colour0 1 0 1 1
+		time1 0.7
+		colour1 0 0 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 -20 0
+		force_application add
+	}
+
+}
+particle_system funnelnet_muzzle_02 : funnelnet_muzzle_01
+{
+	particle_width 1
+	particle_height 1
+    material Particle_Splash_Directional_01
+}
+particle_system funnelnet_muzzle_smoke
+{
+	quota 50
+	material 22missile_smoke_1
+	particle_width 1.5
+	particle_height 1.5
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.35
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 2
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	30
+		rotation_speed_range_end	-30
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.3 1 0.3 0.2
+		time1 0.7
+		colour1 0.3 1 0.3 0.2
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system funnelnet_muzzle_fire
+{
+	quota 50
+	material general_muzzle_04
+	particle_width 1.5
+	particle_height 1.5
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.1
+		duration 0.01
+	}
+	affector Scaler
+	{
+		rate 20
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.7
+		colour1 1 1 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material Tex_Spark20 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture Tex_Spark20.png 	
+}}}}
+material Particle_Splash_Directional_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture Particle_Splash_Directional_01.png 	
+}}}}
+material general_muzzle_04 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture general_muzzle_04.png 	
+}}}}
+material 22missile_smoke_1 : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture 22missile_smoke_1.png 	
+}}}}

@@ -74,6 +74,7 @@
 	<model filename="acg_miyu.xml" ><!--空崎阳奈--><requirement class="projectile" slot="0" key="token_miyu.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_mari_lochi_gymsuit_ver.xml" ><!--玛丽 体操服Ver--><requirement class="projectile" slot="0" key="token_mari_lochi_gymsuit_ver.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_shirasu_azusa.xml" ><!--白洲梓 by Ena--><requirement class="projectile" slot="0" key="token_shirasu_azusa.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_ba_iroha.xml" ><!--伊吕波--><requirement class="projectile" slot="0" key="token_ba_iroha.projectile"/><requirement class="rank" range="0 999999"/></model>
 <!-- 少女前线 -->
 	<model filename="acg_mg4_703.xml" ><!--MG4机枪--><requirement class="projectile" slot="0" key="token_mg4_703.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_mg4.xml" ><!--MG4机枪--><requirement class="projectile" slot="0" key="token_mg4.projectile"/><requirement class="rank" range="0 999999"/></model>
@@ -91,11 +92,19 @@
 <!-- 灰烬战线 -->
 	<model filename="acg_88mm_flak41.xml"  > <!--88炮--><requirement class="projectile" slot="0" key="token_88mm_flak41.projectile"/><requirement class="rank" range="0 999999"/></model>
 
-<!-- 其他 -->
+<!-- Dicker -->
 	<model filename="hdicker_tactical_combat.xml"  > <!--HDicker--><requirement class="projectile" slot="0" key="token_hdicker_tactical_combat.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="hdicker_tactical.xml"  > <!--HDicker--><requirement class="projectile" slot="0" key="token_hdicker_tactical.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="hdicker_para.xml"  > <!--HDicker--><requirement class="projectile" slot="0" key="token_hdicker_para.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="hdicker_marker.xml"  > <!--HDicker--><requirement class="projectile" slot="0" key="token_hdicker_marker.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="hdicker_driver.xml"  > <!--HDicker--><requirement class="projectile" slot="0" key="token_hdicker_driver.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="hdicker_electric.xml"  > <!--HDicker--><requirement class="projectile" slot="0" key="token_hdicker_electric.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="hdicker_eod.xml"  > <!--HDicker--><requirement class="projectile" slot="0" key="token_hdicker_eod.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="hdicker_medick.xml"  > <!--HDicker--><requirement class="projectile" slot="0" key="token_hdicker_medick.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="hdicker_shadow.xml"  > <!--HDicker--><requirement class="projectile" slot="0" key="token_hdicker_shadow.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="hdicker_supporter_weaponMaster.xml"  > <!--HDicker--><requirement class="projectile" slot="0" key="token_hdicker_supporter_weaponMaster.projectile"/><requirement class="rank" range="0 999999"/></model>
+
+<!-- 其他 -->
 	<model filename="ex_dark_excalibur.xml"  > <!--暗影圣装圣剑--><requirement class="projectile" slot="0" key="token_dark_excalibur.projectile"/><requirement class="rank" range="0 999999"/></model>
 
 </models>

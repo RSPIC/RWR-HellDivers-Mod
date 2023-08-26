@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapons> 
+<weapon 
+file="_hd_hmg.base"
+key="hd_arc_mgc_capacitor_mk3.weapon" 
+> 
+	<tag name="machine gun" />
+    <specification 	
+    slot="0" 	
+    retrigger_time="0.0769" 
+    accuracy_factor="0.985" 
+	spread_range="0.2"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="0.5" 
+    sustained_fire_diminish_rate="2.3" 
+    magazine_size="251" 
+    can_shoot_standing="0" 
+    can_shoot_crouching="0" 
+	can_shoot_prone="1"	
+    suppressed="0" 
+	class="0" 
+    name="MG-C Capacitor" 
+	sight_height_offset="1.0" 
+	burst_shots="1" 
+    projectiles_per_shot="1" 
+    projectile_speed="200.0"
+	barrel_offset="1.2" 
+	carry_in_two_hands="1" 
+	stab_enabled="0" 
+	stab_range="0" 
+	/> 
+	
+	<animation key="recoil" animation_key="recoil, hip fire" />
+	<animation state_key="hold" animation_key="hold, hip fire" />
+	<animation state_key="reload" animation_key="T_reloading_mg105"/>
+	<animation state_key="crouching" animation_key="crouch, hold, hip fire" />
+	<animation state_key="crouch_moving" animation_key="crouching forwards, hip fire" />
+	<animation state_key="walking_backwards" animation_key="walking backwards, hip fire" />  
+	<animation state_key="hold_on_wall" animation_key="hold, hip fire" />
+	<animation state_key="still_against_wall" 	animation_key="hold, hip fire" />
+	<animation state_key="walking" animation_key="walking, carrying load" />
+	<animation state_key="running" animation_key="running, carrying load" />  
+
+    <sound key="fire" fileref="hd_arc_mgc_capacitor_fire_01.wav" pitch_variety="0.1" volume="1" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_02.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="magazine_out" fileref="hd_arc_mgc_capacitor_reload.wav" volume="2"/>
+    <sound key="last_ammo" fileref="" />
+	<sound class="impact" fileref="rifle_drop.wav" />
+
+    <model filename="hdw_mgc_capacitor.xml" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="hdw_mgc_capacitor.png" /> 
+
+  	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="1" source="rank" source_value="38.746" />
+	
+    <!-- <commonness value="1" can_respawn_with="1" in_stock="1" /> 
+    <inventory encumbrance="12.0" price="0.0" />  -->
+    <weak_hand_hold offset="0.3" /> 
+
+	<ballistics 
+    curve_height="0.001" 
+    near_far_distance="0" 
+    speed_estimation_near="0.0" 
+    speed_estimation_far="1000" 
+    max_speed="1000" 
+    randomness="0" 
+    tweak_factor="20" />  
+
+    <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="5.5" can_be_detected_by_footmen="0" 
+	time_to_live="0.45" radius="0.3" can_be_detected_by_driver="0" can_be_disarmed="0" name="MG-C Capacitor"> 
+		
+		<result class="hit" kill_probability="2.0" 
+		kill_probability_offset_on_successful_hit="40"
+		kill_decay_start_time="0.15" kill_decay_end_time="0.55" character_state="none"/>
+		<!-- slower decay -->
+		<!-- 30m max damage range -->
+		<!-- damage 75/100hit  -->
+	
+		<effect class="result" key="terrain" ref="general_weapon_result_hitspot" lighting="0"/>
+		<effect class="result" key="terrain" ref="Arc_ar_result_hit" lighting="0"/>
+		<effect class="result" key="terrain" ref="Arc_ar_result_box_point" lighting="0"/>
+		<effect class="activated" ref="Arc_ar_activated_thunder" />
+		
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+		<trail probability="1" key="normal_trail_as7_lightblue" lighting="0"/>	
+    </projectile>
+		<effect class="muzzle" ref="general_weapon_muzzle_crossfire_lightblue" lighting="0"/> 
+		<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 	
+	
+    <stance state_key="running" accuracy="0.5" /> 
+    <stance state_key="walking" accuracy="0.9" />
+	<stance state_key="standing" accuracy="0.955" />
+	<stance state_key="crouching" accuracy="0.99" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1.1" /> 
+    <stance state_key="prone_moving" accuracy="0.5" />
+    <stance state_key="over_wall" accuracy="1.1" />     
+     
+	 
+
+
+</weapon>
+<weapon 
+file="_hd_hmg.base"
+key="hd_arc_mgc_capacitor_dicker.weapon" 
+> 
+	<tag name="machine gun" />
+    <specification 	
+    slot="0" 	
+    retrigger_time="0.0769" 
+    accuracy_factor="0.985" 
+	spread_range="0.2"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="0.5" 
+    sustained_fire_diminish_rate="2.3" 
+    magazine_size="251" 
+    can_shoot_standing="0" 
+    can_shoot_crouching="0" 
+	can_shoot_prone="1"	
+    suppressed="0" 
+	class="0" 
+    name="MG-C Capacitor" 
+	sight_height_offset="1.0" 
+	burst_shots="1" 
+    projectiles_per_shot="1" 
+    projectile_speed="200.0"
+	barrel_offset="1.2" 
+	carry_in_two_hands="1" 
+	stab_enabled="0" 
+	stab_range="0" 
+	/> 
+	
+	<animation key="recoil" animation_key="recoil, hip fire" />
+	<animation state_key="hold" animation_key="hold, hip fire" />
+	<animation state_key="reload" animation_key="T_reloading_mg105"/>
+	<animation state_key="crouching" animation_key="crouch, hold, hip fire" />
+	<animation state_key="crouch_moving" animation_key="crouching forwards, hip fire" />
+	<animation state_key="walking_backwards" animation_key="walking backwards, hip fire" />  
+	<animation state_key="hold_on_wall" animation_key="hold, hip fire" />
+	<animation state_key="still_against_wall" 	animation_key="hold, hip fire" />
+	<animation state_key="walking" animation_key="walking, carrying load" />
+	<animation state_key="running" animation_key="running, carrying load" />  
+
+    <sound key="fire" fileref="hd_arc_mgc_capacitor_fire_01.wav" pitch_variety="0.1" volume="1" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_02.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="magazine_out" fileref="hd_arc_mgc_capacitor_reload.wav" volume="2"/>
+    <sound key="last_ammo" fileref="" />
+	<sound class="impact" fileref="rifle_drop.wav" />
+
+    <model filename="hdw_mgc_capacitor.xml" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="hdw_mgc_capacitor.png" /> 
+
+  	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="1" source="rank" source_value="38.746" />
+	
+	<commonness value="0" can_respawn_with="1" in_stock="0" /> 
+    <inventory encumbrance="12.0" price="0.0" />
+    <weak_hand_hold offset="0.3" /> 
+
+	<ballistics 
+    curve_height="0.001" 
+    near_far_distance="0" 
+    speed_estimation_near="0.0" 
+    speed_estimation_far="1000" 
+    max_speed="1000" 
+    randomness="0" 
+    tweak_factor="20" />  
+
+    <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="5.5" can_be_detected_by_footmen="0" 
+	time_to_live="0.45" radius="0.3" can_be_detected_by_driver="0" can_be_disarmed="0" name="MG-C Capacitor"> 
+		
+		<result class="hit" kill_probability="2.0" 
+		kill_probability_offset_on_successful_hit="40"
+		kill_decay_start_time="0.15" kill_decay_end_time="0.55" character_state="none"/>
+		<!-- slower decay -->
+		<!-- 30m max damage range -->
+		<!-- damage 75/100hit  -->
+	
+		<effect class="result" key="terrain" ref="general_weapon_result_hitspot" lighting="0"/>
+		<effect class="result" key="terrain" ref="Arc_ar_result_hit" lighting="0"/>
+		<effect class="result" key="terrain" ref="Arc_ar_result_box_point" lighting="0"/>
+		<effect class="activated" ref="Arc_ar_activated_thunder" />
+		
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+		<trail probability="1" key="normal_trail_as7_lightblue" lighting="0"/>	
+    </projectile>
+		<effect class="muzzle" ref="general_weapon_muzzle_crossfire_lightblue" lighting="0"/> 
+		<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 	
+	
+    <stance state_key="running" accuracy="0.5" /> 
+    <stance state_key="walking" accuracy="0.9" />
+	<stance state_key="standing" accuracy="0.955" />
+	<stance state_key="crouching" accuracy="0.99" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1.1" /> 
+    <stance state_key="prone_moving" accuracy="0.5" />
+    <stance state_key="over_wall" accuracy="1.1" />     
+     
+	 
+
+
+</weapon>
+</weapons>

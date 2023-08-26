@@ -87,6 +87,8 @@ dictionary projectile_eventkey = {
 
         {"hyper_mega_bazooka_launcher_skill",47},
 
+        {"acg_laisha_southern_cross",48},
+
         // 占位的
         {"666",-1}
 };
@@ -122,6 +124,7 @@ dictionary vehicle_recycle_key = {
         {"mi_24.vehicle",1000},
         {"bell_360.vehicle",1000},
         {"mh_60s.vehicle",1000},
+        {"zbd09.vehicle",800},
 
         // 占位的
         {"666",-1}

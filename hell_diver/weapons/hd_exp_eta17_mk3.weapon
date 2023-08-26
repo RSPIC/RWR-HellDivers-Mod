@@ -75,14 +75,17 @@ key="hd_exp_eta17_mk3.weapon"
 
 	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
 	<capacity value="0" source="rank" source_value="0.0" />
-	<capacity value="6" source="rank" source_value="3.264" />
+	<capacity value="8" source="rank" source_value="3.264" />
 	
 	<!--军械库相关-->
     <commonness value="1" can_respawn_with="0" in_stock="1" /> 
     <inventory encumbrance="2.0" price="0.0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
     
+	<ballistics curve_height="1.0" near_far_distance="0.0" speed_estimation_near="150.0" 
+	speed_estimation_far="150.0" max_speed="150.0" randomness="0.0" tweak_factor="4.8"/> 
+
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
-    <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="5" can_be_detected_by_footmen="1" 
+    <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="10" can_be_detected_by_footmen="1" 
 	time_to_live="1" can_be_detected_by_driver="1" can_be_disarmed="0" name="EAT-17 MK3" radius="0.6"> 
 	
         <result class="spawn" instance_class="projectile" instance_key="hd_exp_eta17_mk3_damage.projectile" 
@@ -90,7 +93,7 @@ key="hd_exp_eta17_mk3.weapon"
 		<!-- damage 280 轰炸伤-->
        	<!-- 40x7 -->
 		
-		<trigger class="impact" time_to_live="0.11"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<trigger class="time" time_to_live="0.4"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 	
 		<!--命中音效-->

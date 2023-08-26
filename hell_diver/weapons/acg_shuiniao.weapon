@@ -9,13 +9,13 @@ key="acg_shuiniao.weapon"
     <specification 	
     accuracy_factor="1" 
 	retrigger_time="2" 
-	spread_range="0"
+	spread_range="0.01"
     magazine_size="-1" 
-    can_shoot_standing="0" 
+    can_shoot_standing="1" 
     can_shoot_crouching="1" 
     carry_in_two_hands="0" 
 	sustained_fire_grow_step="1" 
-    sustained_fire_diminish_rate="1" 
+    sustained_fire_diminish_rate="0.4" 
     name="Shuiniao" 
     class="3" 
     consume="0" 
@@ -24,7 +24,7 @@ key="acg_shuiniao.weapon"
 	stab_enabled="1"
     stab_range="3.0"
 	use_basic_muzzle_smoke_effect="0"
-	projectile_speed="0.0"
+	projectile_speed="1"
 	cooldown_start="0.1"
 	cooldown_end="0.0"
 	/> 
@@ -41,7 +41,7 @@ key="acg_shuiniao.weapon"
 	<animation state_key="stabbing"	animation_key="melee, ninjato whip" />
 	<animation state_key="stabbing"	animation_key="melee, ninjato slap" />
 	<animation state_key="stabbing"	animation_key="melee, ninjato slash" />
-	<animation state_key="recoil"	animation_key="CumForce_recoil" />
+	<animation state_key="recoil"	animation_key="acg_laisha_Heliotrope_recoil" />
     <animation state_key="reload"	animation_key="reloading, ninjato" />
 	<animation state_key="hold"	animation_key="still, ninjato" />
 	<animation state_key="hold_on_wall"	animation_key="still overwall, ninjato" />
@@ -49,7 +49,7 @@ key="acg_shuiniao.weapon"
 	<animation state_key="hold_casual"	animation_key="relaxed, ninjato" />
 	<animation state_key="running"	animation_key="running, ninjato" />
 	<animation state_key="walking"	animation_key="walking, ninjato" />
-	<animation state_key="crouching"	animation_key="CumForce_crouching" />
+	<animation state_key="crouching"	animation_key="acg_laisha_Heliotrope_recoil" />
 	<animation state_key="crouch_moving"	animation_key="crouching forwards, ninjato" />
 	<animation state_key="crouch_moving_backwards"	animation_key="crouching backwards, ninjato" />
 	<animation state_key="changing_weapon_in"	animation_key="change weapon in, ninjato" />
@@ -160,13 +160,13 @@ key="acg_shuiniao_ii.weapon"
     <specification 	
     accuracy_factor="1" 
 	retrigger_time="4" 
-	spread_range="0"
+	spread_range="0.01"
     magazine_size="-1" 
     can_shoot_standing="0" 
     can_shoot_crouching="1" 
     carry_in_two_hands="0" 
 	sustained_fire_grow_step="1" 
-    sustained_fire_diminish_rate="1" 
+    sustained_fire_diminish_rate="0.25" 
     name="Shuiniao" 
     class="3" 
     consume="0" 
@@ -175,7 +175,7 @@ key="acg_shuiniao_ii.weapon"
 	stab_enabled="1"
     stab_range="3.0"
 	use_basic_muzzle_smoke_effect="0"
-	projectile_speed="0.0"
+	projectile_speed="1.0"
 	cooldown_start="0.1"
 	cooldown_end="0.0"
 	/> 
@@ -244,7 +244,7 @@ key="acg_shuiniao_ii.weapon"
 			direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
 		<result class="notify_script" key="vehicle_recycle" />
 		-->
-		<result class="blast" radius="12.0" damage="1000" push="0.7" decal="0" character_state="wound" faction_compare="not_equal"  />
+		<result class="blast" radius="16.0" damage="1000" push="0.7" decal="0" character_state="wound" faction_compare="not_equal"  />
 		<trigger class="time" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
@@ -314,13 +314,13 @@ key="re_acg_shuiniao.weapon"
     <specification 	
     accuracy_factor="1" 
 	retrigger_time="2" 
-	spread_range="0"
+	spread_range="0.01"
     magazine_size="-1" 
     can_shoot_standing="0" 
     can_shoot_crouching="1" 
     carry_in_two_hands="0" 
 	sustained_fire_grow_step="1" 
-    sustained_fire_diminish_rate="1" 
+    sustained_fire_diminish_rate="0.4" 
     name="Shuiniao" 
     class="3" 
     consume="0" 
@@ -329,7 +329,7 @@ key="re_acg_shuiniao.weapon"
 	stab_enabled="1"
     stab_range="3.0"
 	use_basic_muzzle_smoke_effect="0"
-	projectile_speed="0.0"
+	projectile_speed="1.0"
 	cooldown_start="0.1"
 	cooldown_end="0.0"
 	/> 
@@ -465,13 +465,13 @@ key="re_acg_shuiniao_ii.weapon"
     <specification 	
     accuracy_factor="1" 
 	retrigger_time="4" 
-	spread_range="0"
+	spread_range="0.01"
     magazine_size="-1" 
     can_shoot_standing="0" 
     can_shoot_crouching="1" 
     carry_in_two_hands="0" 
 	sustained_fire_grow_step="1" 
-    sustained_fire_diminish_rate="1" 
+    sustained_fire_diminish_rate="0.25" 
     name="Shuiniao" 
     class="3" 
     consume="0" 
@@ -480,7 +480,7 @@ key="re_acg_shuiniao_ii.weapon"
 	stab_enabled="1"
     stab_range="3.0"
 	use_basic_muzzle_smoke_effect="0"
-	projectile_speed="0.0"
+	projectile_speed="1.0"
 	cooldown_start="0.1"
 	cooldown_end="0.0"
 	/> 
@@ -549,7 +549,7 @@ key="re_acg_shuiniao_ii.weapon"
 			direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
 		<result class="notify_script" key="vehicle_recycle" />
 		-->
-		<result class="blast" radius="12.0" damage="1000" push="0.7" decal="0" character_state="wound" faction_compare="not_equal"  />
+		<result class="blast" radius="16.0" damage="1000" push="0.7" decal="0" character_state="wound" faction_compare="not_equal"  />
 		<trigger class="time" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->

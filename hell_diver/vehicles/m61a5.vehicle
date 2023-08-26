@@ -91,7 +91,7 @@ coax
 	<character_slot type="gunner" position="-1.5 0.5 1.5" rotation="0" exit_rotation="-1.57" hiding="1" animation_id="37">
 		<turret index="1" /><turret index="0" /><turret index="2"/><turret index="5"/><turret index="6"/>
 	</character_slot>
-	<character_slot type="gunner" attached_on_turret="3" enter_position="-1.5 0.5 -0.5" seat_position="0 2.7 -1"rotation="0" exit_rotation="-1.57" hiding="0"animation_key="tank mg still" marker_offset="0 1.0 0">
+	<character_slot type="gunner" attached_on_turret="3" enter_position="-1.5 0.5 -0.5" seat_position="0 2.7 -1" rotation="0" exit_rotation="-1.57" hiding="0" animation_key="tank mg still" marker_offset="0 1.0 0">
 		<turret index="3" />
 	</character_slot>
 	<character_slot type="gunner" attached_on_turret="4" enter_position="-1.5 0.5 -1" seat_position="0 -0.9 0" rotation="0" exit_rotation="-1.57" hiding="0" animation_key="hold, lmg" marker_offset="0 1.0 0">

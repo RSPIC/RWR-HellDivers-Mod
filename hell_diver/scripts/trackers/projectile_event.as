@@ -659,6 +659,27 @@ class projectile_event : Tracker {
                 tasker.add(task3);
                 break;
             }
+            case 48:{//acg_laisha_southern_cross
+                int characterId = event.getIntAttribute("character_id");
+                if (characterId == -1) {break;}
+                const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                if (character !is null) {
+                    Vector3 position = stringToVector3(character.getStringAttribute("position"));
+                    int factionId = character.getIntAttribute("faction_id");
+                    int playerId = character.getIntAttribute("player_id");
+                    const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
+                    if (player is null) {break;}
+                    Vector3 aimPosition = stringToVector3(player.getStringAttribute("aim_target"));
+                
+                    float distance = getFlatPositionDistance(position,aimPosition);
+                    if (distance > 60.0f) {
+                        spawnStaticProjectile(m_metagame,"hd_effect_call_deny_distance.projectile",aimPosition,characterId,factionId);
+                    }else{
+                        spawnStaticProjectile(m_metagame,"acg_laisha_southern_cross_spawn.projectile",aimPosition,characterId,factionId);
+                    }
+                }
+                break;
+            }
 
             default:
                 break;            

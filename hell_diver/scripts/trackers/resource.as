@@ -15,7 +15,7 @@ class Resource {
         m_key = other.m_key;
         m_type = other.m_type;
     }
-	array<Resource@>@ multi(uint num){
+	array<Resource@>@ multi(int num){
         array<Resource@>@ resources = array<Resource@>();
         for(;num>0;num--){
             Resource@ resource = Resource(this);
@@ -24,7 +24,7 @@ class Resource {
         return resources;
     }
 
-	void addToResources(array<Resource@>@ outRes,uint num){
+	void addToResources(array<Resource@>@ outRes,int num){
         array<Resource@>@ inRes = multi(num);
         for(uint i=0;i<inRes.length();i++){
             outRes.insertLast(inRes[i]);

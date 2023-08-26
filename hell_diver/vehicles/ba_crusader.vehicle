@@ -39,8 +39,6 @@ ai_handle_taxi_request_when_full="1"
 	drag_offset="-1" 
 	destroy_on_top_hit="1"
 	destroy_on_top_hit_time="5"/> 
-
-	<modifier class="blast_damage" value="-0.9" />
 	
 	0<turret offset="0 0 0.0" 		weapon_key="ba_crusader_cannon.weapon" 	weapon_offset="0 2.5 2.8"	weapon_recoil="0.1" physics_recoil="0.3"	max_rotation_step="0.00005" />
 	1<turret offset="0.65 1.35 1.7" 	weapon_key="hd_vehicle_lmg.weapon" 	weapon_offset="0 0.7 1.25" weapon_recoil="0.0" physics_recoil="0.0" rotation="0" rotation_range="0.8" max_rotation_step="0.0003"/>

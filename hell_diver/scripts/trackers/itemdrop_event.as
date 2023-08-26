@@ -37,7 +37,7 @@ dictionary resupply_getitem_key = {
         {"hd_pst_flam40_incinerator_mk3.weapon",10},
         {"hd_exp_rec6_demolisher_mk3.weapon",10},
         {"hd_exp_mls4x_commando_mk3.weapon",8},
-        {"hd_exp_eta17_mk3.weapon",4},
+        {"hd_exp_eta17_mk3.weapon",8},
         {"hd_exp_rl112_recoilless_rifle_mk3.weapon",8},
         {"hd_lmg_mgx42_mk3.weapon",16},
 
@@ -128,6 +128,15 @@ dictionary banned_backpack_item = {
         // 占位的
         {"666",-1}
 };
+//禁止仓库携带物品
+dictionary banned_stash_item = {
+
+		{"acg_patricia_fataldrive.weapon","weapon"},
+		{"ex_hyper_mega_bazooka_launcher_skill.weapon","weapon"},
+
+        // 占位的
+        {"666",-1}
+};
 //禁止背包携带物品 忘记什么用了
 dictionary banned_special_item = {
 
@@ -213,6 +222,7 @@ class itemdrop_event : Tracker {
 			string(highlight_item_drop[itemKey]) == "" 		&&
 			string(protected_trade[itemKey]) == "" 			&&
 			string(samples_drop[itemKey]) == "" 			&&
+			string(banned_stash_item[itemKey]) == "" 		&&
 			string(replace_drop[itemKey]) == "" 			
 		){return;}
 
@@ -260,47 +270,65 @@ class itemdrop_event : Tracker {
 							//slot: 0主手 1副手 2投掷物 4护甲
 							int maxnum;
 							bool noGrenade = false;
+							_log("initiate value1");
 							if(int(resupply_getitem_key[equipKey]) != 0){//为可补给物品
+								_log("initiate value2");
 								int ownnum = 0;
 								equipList.get(equipKey,ownnum);
 								maxnum = int(resupply_getitem_key[equipKey]);
 								int resupplyNum = maxnum - ownnum;
+								_log("initiate value3");
 								if(i==1){//副武器
 									@res = Resource(equipKey,"weapon");
                 					res.addToResources(resources,resupplyNum);
+									_log("add weapon = "+equipKey+" num="+resupplyNum);
 								}
 								if(i==2){//投掷物
 									@res = Resource(equipKey,"projectile");
 									res.addToResources(resources,resupplyNum);
+									_log("add projectile = "+equipKey+" num="+resupplyNum);
 									noGrenade = true;
 								}
 							}
+							_log("initiate value4");
 							if(i==2){//补给信物(投掷物栏)
 								string tokenkey = "token_";
 								string newequipKey = equipKey.substr(0,tokenkey.length());
+								_log("initiate value5");
 								if(newequipKey == tokenkey){
+									_log("initiate value6");
 									int ownnum = 0;
 									equipList.get(equipKey,ownnum);
 									maxnum = 6;
 									int resupplyNum = maxnum - ownnum;
 									@res = Resource(equipKey,"projectile");
+									_log("initiate value7");
+									if(resupplyNum <= 0){
+										resupplyNum = 0;
+									}
 									res.addToResources(resources,resupplyNum);
 									if(g_debugMode){
 										_report(m_metagame,"Success resupply Token");
 									}
+									_log("add token = "+tokenkey+" num="+resupplyNum);
 									addListItemInBackpack(m_metagame,characterId,resources);
 									return;
 								}
 							}
+							_log("initiate value8");
 							if(i==2 && !noGrenade){//补给手雷
+								_log("initiate value9");
 								int ownnum = 0;
+								_log("initiate value10");
 								equipList.get(equipKey,ownnum);
 								if(ownnum == 0){
 									string key = "hd_grenade_standard.projectile";
 									maxnum = int(resupply_getitem_key[key]);
 									int resupplyNum = maxnum;
+									_log("initiate value11");
 									@res = Resource(key,"projectile");
 									res.addToResources(resources,resupplyNum);
+									_log("add Grenade");
 								}
 							}
 						}
@@ -316,7 +344,7 @@ class itemdrop_event : Tracker {
 		}
 
 		//是否属于删除物品
-		if(string(banned_backpack_item[itemKey]) != "" || string(banned_special_item[itemKey]) != ""){
+		if(string(banned_backpack_item[itemKey]) != "" || string(banned_special_item[itemKey]) != "" || string(banned_stash_item[itemKey]) != ""){
 			//if(g_debugMode){return;}
 			if(playerId == -1){return;}//排除AI
 			array<Resource@> resources = array<Resource@>();
@@ -338,12 +366,24 @@ class itemdrop_event : Tracker {
 				_log("delete banned item in backpack");
 				string itemtype = string(banned_backpack_item[itemKey]);
 				_log("itemtype "+itemtype);
-				deleteItemInBackpack(m_metagame,characterId,itemtype,itemKey);
-				deleteItemInStash(m_metagame,characterId,itemtype,itemKey);
-				_log("success delete supply item itemKey: "+ itemKey);
-				if(itemKey == "hd_ammo_supply_box.projectile" && false){//留给补给兵的特殊机制(自补给+背包额外子弹箱)
-					string ExKey="hd_ammo_supply_box_ex.projectile";
-					addItemInBackpack(m_metagame,characterId,itemtype,ExKey);
+				if(itemtype != ""){
+					deleteItemInBackpack(m_metagame,characterId,itemtype,itemKey);
+					deleteItemInStash(m_metagame,characterId,itemtype,itemKey);
+					_log("success delete supply item itemKey: "+ itemKey);
+					if(itemKey == "hd_ammo_supply_box.projectile" && false){//留给补给兵的特殊机制(自补给+背包额外子弹箱)
+						string ExKey="hd_ammo_supply_box_ex.projectile";
+						addItemInBackpack(m_metagame,characterId,itemtype,ExKey);
+					}
+				}
+			}
+			if(containerId == 3){//装备进仓库
+				_log("delete banned item in stash");
+				string itemtype = "";
+				banned_stash_item.get(itemKey,itemtype);
+				_log("itemtype "+itemtype);
+				if(itemtype != ""){
+					deleteItemInStash(m_metagame,characterId,itemtype,itemKey);
+					_log("success delete supply item itemKey: "+ itemKey);
 				}
 			}
 			if(containerId == 0 ){//地面

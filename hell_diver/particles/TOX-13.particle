@@ -4,7 +4,7 @@ author: RST
 
 particle_system tox_13_muzzle_splash
 {
-	quota 500
+	quota 2000
 	material Particle_Splash02
 	particle_width 1
 	particle_height 1
@@ -18,18 +18,18 @@ particle_system tox_13_muzzle_splash
 	
 	emitter Point
 	{
-		angle 0
+		angle 360
 		colour 0 0 0 0
 		direction 0 1 0
 		emission_rate 30
 		position 0 0 0
-		velocity 25
+		velocity 0.5
 		time_to_live 0.7
-		duration 0.1
+		duration 0
 	}
 	affector Scaler
 	{
-		rate 1.8
+		rate 1.0
 	}
 		affector Rotator
 	{

@@ -103,7 +103,7 @@ key="hd_laser_las5_scythe_full_upgrade.weapon"
 		-->
 		<result class="hit" kill_probability="1.0" 
 		kill_probability_offset_on_successful_hit="6.0"
-		kill_decay_start_time="0" kill_decay_end_time="0.16" character_state="death"/>
+		kill_decay_start_time="0" kill_decay_end_time="0.16" character_state="wound"/>
 		<!-- damage 200|450center 250/275|500center /s-->
 		<!-- 100m max range, use 50m / 600speed-->
 		<!-- 0.05 RT time | 20 projectile/per s -->

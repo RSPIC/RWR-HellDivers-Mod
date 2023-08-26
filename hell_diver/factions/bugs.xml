@@ -125,7 +125,7 @@
 
 <!-- Scout -->
 	<!-- 侦查虫 -->
-	<soldier name="Scout" spawn_score="1.5" copy_from="base" >
+	<soldier name="Scout" spawn_score="1.0" copy_from="base" >
 		<character filename="bugs_scout_state.character">	
 			
 		</character>
@@ -151,7 +151,7 @@
 		</attribute_config>
 	</soldier> 
 	<!-- Vanguard -->
-	<soldier name="Vanguard" spawn_score="0.8" copy_from="base" >
+	<soldier name="Vanguard" spawn_score="0.3" copy_from="base" >
 		<character filename="bugs_scout_state.character">	
 		</character>
 		<ai filename="bugs_scout.ai" /> 
@@ -205,7 +205,7 @@
 	</soldier> 
 <!-- Infantry -->
 	<!-- Warrior -->
-	<soldier name="Warrior" spawn_score="2.0" copy_from="base" >
+	<soldier name="Warrior" spawn_score="3.0" copy_from="base" >
 		<character filename="bugs_warrior_state.character">	
 		</character>
 		<ai filename="bugs_warrior.ai" />
@@ -219,8 +219,6 @@
 			<carry_item key="general_vest_40" />
 			<carry_item key="general_vest_50" />
 			<carry_item key="general_vest_60" />
-			<carry_item key="general_vest_70" />
-			<carry_item key="general_vest_80" />
 		</resources>
 
 
@@ -245,8 +243,6 @@
 			<carry_item key="general_vest_60" />
 			<carry_item key="general_vest_80" />
 			<carry_item key="general_vest_100" />
-			<carry_item key="general_vest_120" />
-			<carry_item key="general_vest_140" />
 		</resources>
 
 
@@ -258,7 +254,7 @@
 		</attribute_config>
 	</soldier> 
 	<!-- Stalker -->
-	<soldier name="Stalker" spawn_score="1" copy_from="base" >
+	<soldier name="Stalker" spawn_score="1.5" copy_from="base" >
 		<character filename="bugs_stalker_state.character">	
 		</character>
 		<ai filename="bugs_stalker.ai" />
@@ -313,7 +309,7 @@
 
 <!-- Tank -->
 	<!-- Behemoth -->
-	<soldier name="Behemoth" spawn_score="0.03" copy_from="base" >
+	<soldier name="Behemoth" spawn_score="0.01" copy_from="base" >
 		<character filename="bugs_behemoth_state.character">	
 		</character>
 		<ai filename="bugs_tank.ai" /> 

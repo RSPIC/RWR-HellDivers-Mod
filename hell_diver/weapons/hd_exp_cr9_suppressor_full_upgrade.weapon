@@ -97,7 +97,12 @@ key="hd_exp_cr9_suppressor_full_upgrade.weapon"
 
 		<result class="spawn" instance_class="projectile" instance_key="hd_exp_cr9_suppressor_full_upgrade_damage.projectile" 
 		min_amount="12" max_amount="12" offset="0 0.5 0" position_spread="0.5 0" direction_spread="0 0" />	
-		<trigger class="impact" time_to_live="0.2"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<trigger class="impact">
+			<collider class="terrain" enabled="1" />     
+			<collider class="static_object" enabled="1" /> 
+			<collider class="vehicle" enabled="1" /> 
+			<collider class="character" enabled="1" faction_compare="not_equal"/>
+		</trigger> 
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
 		<!--伤害 2.5x12=30 轰炸伤(AP升级) -->
@@ -268,7 +273,12 @@ key="hd_exp_cr9_suppressor_ai.weapon"
 
 		<result class="spawn" instance_class="projectile" instance_key="hd_exp_cr9_suppressor_ai_damage.projectile" 
 		min_amount="12" max_amount="12" offset="0 0.5 0" position_spread="0.5 0" direction_spread="0 0" />	
-		<trigger class="impact" time_to_live="0.2"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<trigger class="impact">
+			<collider class="terrain" enabled="1" />     
+			<collider class="static_object" enabled="1" /> 
+			<collider class="vehicle" enabled="1" /> 
+			<collider class="character" enabled="1" faction_compare="not_equal"/>
+		</trigger> 
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
 		<!--伤害 2.5 x 12 = 30 轰炸伤(AP升级) -->

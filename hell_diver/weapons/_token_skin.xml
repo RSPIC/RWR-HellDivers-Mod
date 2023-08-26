@@ -373,6 +373,11 @@
         <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
         <capacity value="12" source="rank" source_value="0" />
     </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="NATSUME IROHA [Skin]" key="token_ba_iroha.projectile" >
+        <hud_icon filename="token_ba_iroha.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
 
 
     <!-- 其他 -->
@@ -400,6 +405,36 @@
     </projectile>
     <projectile file="hd_hellpod_call.projectile" name="Dicker Marker [Skin]" key="token_hdicker_marker.projectile" >
         <hud_icon filename="hdicker_marker.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Dicker Driver [Skin]" key="token_hdicker_driver.projectile" >
+        <hud_icon filename="hdicker_driver.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Dicker Electric [Skin]" key="token_hdicker_electric.projectile" >
+        <hud_icon filename="hdicker_electric.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Dicker Eod [Skin]" key="token_hdicker_eod.projectile" >
+        <hud_icon filename="hdicker_eod.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Dicker Medick [Skin]" key="token_hdicker_medick.projectile" >
+        <hud_icon filename="hdicker_medick.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Dicker Shadow [Skin]" key="token_hdicker_shadow.projectile" >
+        <hud_icon filename="hdicker_shadow.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Dicker WeaponMaster [Skin]" key="token_hdicker_supporter_weaponMaster.projectile" >
+        <hud_icon filename="hdicker_supporter_weaponMaster.png" />
         <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
         <capacity value="12" source="rank" source_value="0" />
     </projectile>

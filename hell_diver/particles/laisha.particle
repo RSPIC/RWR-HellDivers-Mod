@@ -489,6 +489,823 @@ particle_system laisha_HGY_result_blast_impact_spark_2
 		keep_velocity false
 	}
 }
+---------------------------------------------------------------------------------
+particle_system laisha_MoomPulsar_result_ring
+{
+	quota 150
+	material laisha_ring_pass
+	particle_width 15
+	particle_height 15
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+
+	affector Rotator
+	{
+		rotation_speed_range_start	-2000
+		rotation_speed_range_end	-2000
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector LinearForce{
+		force_vector 0 -200 0
+		force_application add
+	}
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 5 0
+		velocity_min 0.001
+		time_to_live 0.4
+		duration 0.1
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.5 0 1
+		time1 0.7
+		colour1 1 0.5 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+
+	
+}
+particle_system laisha_MoomPulsar_result_ring_2 : laisha_MoomPulsar_result_ring
+{
+	particle_width 20
+	particle_height 20
+	material Particle_ShockwaveSlow_pass
+	affector Rotator
+	{
+		rotation_speed_range_start	-1000
+		rotation_speed_range_end	-1000
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector LinearForce{
+		force_vector 0 -300 0
+		force_application add
+	}
+	emitter Point
+	{
+		position 0 5 0
+		time_to_live 0.6
+	}
+	affector ColourInterpolator
+	{
+	}
+	affector Scaler{
+		rate 40
+	}
+
+}
+particle_system laisha_MoomPulsar_result_ring_line
+{
+	quota 150
+	material Particle_Impact_Circle_01_bw
+	particle_width 5
+	particle_height 5
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 30
+		position 0 5 0
+		velocity_min 0.001
+		time_to_live 0.4
+		duration 0.15
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.7 0.3 1
+		time1 0.7
+		colour1 1 0.7 0.3 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 -200 0
+		force_application add
+	}
+	affector Scaler{
+		rate 5
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	-2000
+		rotation_speed_range_end	-2000
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+}
+particle_system laisha_MoomPulsar_result_spark
+{
+	quota 250
+	material point_soft_edge_100
+	particle_width 0.3
+	particle_height 0.3
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Ring
+	{
+		angle 180
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 600
+		position 0 0 0
+		velocity_min 1
+		velocity_max 2
+		time_to_live_min 2
+		time_to_live_max 3
+		duration 0.1
+        width 12
+		height 12
+		depth 12
+		inner_width 0
+		inner_height 0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.5 0 1
+		time1 0.7
+		colour1 1 0.5 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+    affector DirectionRandomiser 
+	{
+		randomness 1
+		scope 10
+		keep_velocity false
+	}
+}
+particle_system laisha_MoomPulsar_result_cross_blast
+{
+	quota 1000
+    emit_emitter_quota 1000
+	material Particle_Impact07
+	particle_width 2.5
+	particle_height 2.5
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_type oriented_self
+    accurate_facing on
+	emitter Ring{
+		angle 360
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 5 0
+		velocity 0.01
+		time_to_live 0.1
+		duration 0.4
+        depth 0.1
+        width 16
+        height 16
+		inner_height 1
+		inner_wideh 1
+		inner_depth 1
+        emit_emitter tag1
+	}
+    emitter Point{
+        name tag1
+		angle 180
+		colour 1 0.5 0 1
+		direction 0 1 0
+		emission_rate 300
+		position 0 0 0
+		velocity_min 5
+		velocity_max 10
+		time_to_live 0.3
+		duration 0.1
+    }
+	affector ColourFader2{
+		red1	-3.3
+		green1  -1.67
+		blue1	-0
+		alpha1	-0
+		red2	 0
+		green2  0
+		blue2	0
+		alpha2	0
+		state_change 0
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	45
+		rotation_range_end	45
+	}
+}
+particle_system laisha_MoomPulsar_result_AmbientLight
+{
+	quota 50
+	material point_soft_edge_100
+	particle_width 18
+	particle_height 18
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.5
+		duration 0.01
+	}
+	affector Scaler
+	{
+		rate 5
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.5 0.5 0.35 1
+		time1 0.6
+		colour1 0.5 0.5 0.35 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+---------------------------------------------------------------------------------
+particle_system laisha_SouthernCross_result_ring_01
+{
+	quota 150
+	material lens_circle_07
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.3
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 30
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.5 0 1
+		time1 0.7
+		colour1 1 0.5 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system laisha_SouthernCross_result_impact_01
+{
+	quota 150
+	material Particle_Impact07
+	particle_width 1.7
+	particle_height 2.5
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 360
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.1
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 100
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.5 0.3 1
+		time1 0.7
+		colour1 1 0.5 0.3 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system laisha_SouthernCross_result_vertical_impact_1
+{
+	quota 150
+	material SF4_dds_0359
+	particle_width 1
+	particle_height 20
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 15 0
+		velocity -100
+		time_to_live 0.15
+		duration 0.1
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.8 0.3 1
+		time1 0.7
+		colour1 1 0.8 0.3 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system laisha_SouthernCross_result_vertical_impact_2 : laisha_SouthernCross_result_vertical_impact_1
+{
+	material eye_lwy_t_win_08_single
+	particle_width 4
+	particle_height 30
+
+	emitter Point
+	{
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.1 0.1 0.1 0.5
+		time1 0.7
+		colour1 0.1 0.1 0.1 0.5
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system laisha_SouthernCross_result_center_light
+{
+	quota 150
+	material explosion_smoke_04_bw
+	particle_width 10
+	particle_height 10
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.1
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate -100
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.5 0.5 1
+		time1 0.7
+		colour1 1 0.5 0.5 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system laisha_SouthernCross_result_center_ambient_light
+{
+	quota 150
+	material point_soft_edge_100
+	particle_width 4
+	particle_height 50
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 10 0
+		velocity -1
+		time_to_live 1
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate -1
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.1
+		colour1 1 0.5 0.1 1
+		time2 0.7
+		colour2 0 0 0 0
+		time3 1
+		colour3 0 0 0 0
+	}
+}
+----------------------------------------------------------------------------------
+
+particle_system laisha_MilkyWay_muzzle_impact
+{
+	quota 100
+	material radiation_ray
+	particle_width 5
+	particle_height 10
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin bottom_center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 15
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity -0.0001
+		time_to_live 0.3
+		duration 0.5
+	}
+	affector Scaler
+	{
+		rate 5
+	}
+
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.7 1 1 1
+		time1 0.7
+		colour1 0 0.3 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system laisha_MilkyWay_muzzle_impact_2
+{
+	quota 200
+	material point_hard_edge
+	particle_width 0.05
+	particle_height 9
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin bottom_center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 30
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 80
+		position 0 0 0
+		velocity_min -10
+		velocity_max -20
+		time_to_live 0.1
+		duration 0.5
+	}
+	affector Scaler
+	{
+		rate 1
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.7 1 1 1
+		time1 0.7
+		colour1 0 0.3 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system laisha_MilkyWay_result_smoke	//环境烟雾
+{
+	quota 100
+	material wand_smoke
+	particle_width 15
+	particle_height 15
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	accurate_facing off
+	emitter Ring
+	{
+		angle 0
+		colour 0.8 0.85 1 0.09
+		direction 0 1 0
+		emission_rate 300
+		position 0 2 0
+		velocity_min 0.001
+		velocity_max 0.001
+		time_to_live_min 2
+		time_to_live_max 3
+		duration 0.1
+		width 25
+		height 25
+		depth 4
+		inner_width 0.2
+		inner_height 0.2
+	}
+	affector Scaler
+	{
+		rate 3
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	10
+		rotation_speed_range_end	-10
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourFader2
+	{
+		red1 	-0.3
+		green1 	-0.15
+		blue1 	0.0
+		alpha1 	0
+		red2 	-0.2
+		green2	-0.1
+		blue2	-0
+		alpha2	-0.08
+		state_change 1
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+particle_system laisha_MilkyWay_result_blast_impact_spark
+{
+	quota 250
+	material point_hard_edge
+	particle_width 0.2
+	particle_height 2
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 180
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 600
+		position 0 0 0
+		velocity_min 50
+		velocity_max 80
+		time_to_live_min 0.2
+		time_to_live_max 0.25
+		duration 0.2
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0.3 1 1
+		time1 0.7
+		colour1 0 0.3 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system laisha_MilkyWay_result_blast_impact_spark_2
+{
+	quota 500
+	material point_soft_edge_100
+	particle_width 0.3
+	particle_height 0.3
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Ring
+	{
+		angle 180
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 900
+		position 0 0 0
+		velocity_min 1
+		velocity_max 3
+		time_to_live_min 1.5
+		time_to_live_max 2.5
+		duration 0.1
+        width 32
+		height 32
+		depth 8
+		inner_width 0
+		inner_height 0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0.3 1 1
+		time1 0.7
+		colour1 0 0.3 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+    affector DirectionRandomiser 
+	{
+		randomness 1
+		scope 10
+		keep_velocity false
+	}
+	affector Scaler{
+		rate -0.1
+	}
+}
+particle_system laisha_MilkyWay_result_blast_impact_spark_3 : laisha_MilkyWay_result_blast_impact_spark_2
+{
+	particle_width 1
+	particle_height 1
+	material bow_flare
+}
+particle_system laisha_MilkyWay_result_impact_01
+{
+	quota 150
+	material lens_circle_06
+	particle_width 2.5
+	particle_height 2.5
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 360
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 30
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.1
+		duration 0.2
+	}
+	affector Scaler
+	{
+		rate 300
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.1 0.3 1 0
+		time1 0.7
+		colour1 0.1 0.3 1 0
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system laisha_MilkyWay_result_impact_02
+{
+	quota 150
+	material Tex_Flare20
+	particle_width 7
+	particle_height 7
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 180
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.2
+		duration 0.2
+	}
+	affector Scaler
+	{
+		rate 100
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.1 0.3 1 0
+		time1 0.7
+		colour1 0.1 0.3 1 0
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	10
+		rotation_speed_range_end	-10
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+}
 --------------------------------------material-----------------------------------
 material alpha_blend_base{
 	receive_shadows off
@@ -611,4 +1428,56 @@ material Particle_Slash_11 : alpha_blend_base
     pass{
         texture_unit{
             texture Particle_Slash_11.png	
+}}}}
+material laisha_ring_pass : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture laisha_ring.png	
+}}}}
+material top_center_point_pass : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture top_center_point.png	
+}}}}
+material Particle_ShockwaveSlow_pass : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture Particle_ShockwaveSlow.png	
+}}}}
+material Particle_Impact07 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture Particle_Impact07.png	
+}}}}
+material SF4_dds_0359 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture SF4_dds_0359.png	
+}}}}
+material eye_lwy_t_win_08_single : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture eye_lwy_t_win_08_single.png	
+}}}}
+material radiation_ray : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture radiation_ray.png	
 }}}}

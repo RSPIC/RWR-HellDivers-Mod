@@ -281,6 +281,23 @@ particle_system Arc_result_box_point : Arc_activated_box_point
 		depth 6
 	}
 }
+particle_system Arc_ar_result_box_point : Arc_activated_box_point
+{
+	emitter Box : Position
+	{
+		angle 0
+		colour 0 0.3 1 1
+		direction 0 1 0
+		emission_rate 100
+		velocity 0.0001
+		time_to_live_min 0.4
+		time_to_live_max 0.8
+		duration 0.1
+		width 2
+		height 2
+		depth 2
+	}
+}
 particle_system Arc_muzzle_thunder_01
 {
 	quota 50
@@ -370,6 +387,99 @@ particle_system Tesla_muzzle_thunder_02 : Arc_muzzle_thunder_02
 	material lightning_gun_bolt_7_pass
 	particle_width 24
 	particle_height 1.5
+}
+
+particle_system Arc_ar_activated_thunder
+{
+	quota 300
+	material muzzle_current_3
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 360
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity 2
+		time_to_live 0.05
+		duration 0
+	}
+	affector Scaler
+	{
+		rate 10
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0.3 1 0
+		time1 0.7
+		colour1 0 0.3 1 0
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system Arc_ar_result_hit
+{
+	quota 300
+	material lightning_gun_flare_003
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 10
+		time_to_live 0.1
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 30
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0.3 1 0
+		time1 0.7
+		colour1 0 0.3 1 0
+		time2 1
+		colour2 0 0 0 0
+	}
 }
 --------------------------------------material-----------------------------------
 material alpha_blend_base{
@@ -490,4 +600,18 @@ material lightning_gun_bolt_7_pass : add_base
 		depth_func always_pass
         texture_unit{
             texture lightning_gun_bolt_7.png
+}}}}
+material muzzle_current_3 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture muzzle_current_3.png
+}}}}
+material lightning_gun_flare_003 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture lightning_gun_flare_003.png
 }}}}
