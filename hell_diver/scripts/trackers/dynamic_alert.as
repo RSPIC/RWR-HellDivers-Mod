@@ -119,40 +119,40 @@ const array<SpawnInfo> level_9 = {
     SpawnInfo("bugs_Stalker",0)
 };
 const array<SpawnInfo> level_12 = {
-    SpawnInfo("cyborgs_spawn_berserker_model.vehicle",0),
+    SpawnInfo("cyborgs_spawn_berserker_model.vehicle",1),
     SpawnInfo("cyborgs_spawn_butcher_model.vehicle",int(rand(1,2))),
-    SpawnInfo("cyborgs_spawn_comrade_model.vehicle",0),
-    SpawnInfo("cyborgs_spawn_grotesque_model.vehicle",0),
+    SpawnInfo("cyborgs_spawn_comrade_model.vehicle",1),
+    SpawnInfo("cyborgs_spawn_grotesque_model.vehicle",1),
     SpawnInfo("cyborgs_spawn_hulk_model.vehicle",int(rand(2,3))),
     SpawnInfo("cyborgs_spawn_immolator_model.vehicle",int(rand(1,2))),
-    SpawnInfo("cyborgs_spawn_initiate_model.vehicle",0),
+    SpawnInfo("cyborgs_spawn_initiate_model.vehicle",1),
     SpawnInfo("cyborgs_spawn_warlord_model.vehicle",int(rand(0,1))),
 
     SpawnInfo("bugs_Impaler",int(rand(0,1))),
     SpawnInfo("bugs_Tank",int(rand(0,1))),
     SpawnInfo("bugs_Behemoth",int(rand(-2,1))),
     SpawnInfo("bugs_BroodCommander",int(rand(1,3))),
-    SpawnInfo("bugs_Elite",0),
-    SpawnInfo("bugs_Warrior",0),
-    SpawnInfo("bugs_Stalker",0)
+    SpawnInfo("bugs_Elite",1),
+    SpawnInfo("bugs_Warrior",1),
+    SpawnInfo("bugs_Stalker",1)
 };
 const array<SpawnInfo> level_15 = {
-    SpawnInfo("cyborgs_spawn_berserker_model.vehicle",0),
-    SpawnInfo("cyborgs_spawn_butcher_model.vehicle",0),
-    SpawnInfo("cyborgs_spawn_comrade_model.vehicle",0),
+    SpawnInfo("cyborgs_spawn_berserker_model.vehicle",1),
+    SpawnInfo("cyborgs_spawn_butcher_model.vehicle",1),
+    SpawnInfo("cyborgs_spawn_comrade_model.vehicle",1),
     SpawnInfo("cyborgs_spawn_grotesque_model.vehicle",int(rand(2,3))),
     SpawnInfo("cyborgs_spawn_hulk_model.vehicle",int(rand(1,3))),
-    SpawnInfo("cyborgs_spawn_immolator_model.vehicle",0),
-    SpawnInfo("cyborgs_spawn_initiate_model.vehicle",0),
+    SpawnInfo("cyborgs_spawn_immolator_model.vehicle",1),
+    SpawnInfo("cyborgs_spawn_initiate_model.vehicle",1),
     SpawnInfo("cyborgs_spawn_warlord_model.vehicle",int(rand(1,4))),
 
     SpawnInfo("bugs_Impaler",int(rand(0,1))),
     SpawnInfo("bugs_Tank",int(rand(0,1))),
     SpawnInfo("bugs_Behemoth",int(rand(1,1))),
     SpawnInfo("bugs_BroodCommander",int(rand(1,5))),
-    SpawnInfo("bugs_Elite",0),
-    SpawnInfo("bugs_Warrior",0),
-    SpawnInfo("bugs_Stalker",0)
+    SpawnInfo("bugs_Elite",1),
+    SpawnInfo("bugs_Warrior",1),
+    SpawnInfo("bugs_Stalker",1)
 };
 const array<SpawnInfo> level_random = {
     SpawnInfo("cyborgs_spawn_berserker_model.vehicle",int(rand(-2,2))),
@@ -427,7 +427,7 @@ class dynamic_alert : Tracker {
         }
 
         int player_num = players.size();
-        m_cd_time = m_cd_time - 0.6*player_num;
+        m_cd_time = m_cd_time - 0.8*player_num;
 
         m_cd_time = m_cd_time - m_server_difficulty_level + 9;
         if(m_cd_time <= 0){

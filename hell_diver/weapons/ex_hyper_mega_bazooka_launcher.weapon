@@ -44,14 +44,14 @@ key="ex_hyper_mega_bazooka_launcher_ex.weapon"
     <animation state_key="walking_backwards" animation_key="hd_heavy_walking_backwards" />
 
      
-    <sound key="fire" fileref="SCIWeap_SHOT_Large_Laser_Ion_Fusion_B00M_CWDS_01.wav" pitch_variety="0.00"  volume="1.6" />
-	<sound key="cooldown" fileref="hyper_mega_ex_voice_clip_01.wav" pitch_variety="0.00"  volume="4" />
+    <sound key="fire" fileref="SCIWeap_SHOT_Large_Laser_Ion_Fusion_B00M_CWDS_01.wav" pitch_variety="0.00"  volume="1.3" />
+	<sound key="cooldown" fileref="hyper_mega_ex_voice_clip_01.wav" pitch_variety="0.00"  volume="3.2" />
     	<sound key="cooldown" fileref="" pitch_variety="0.00"  volume="0" />
-	<sound key="cooldown" fileref="hyper_mega_ex_voice_clip_02.wav" pitch_variety="0.00"  volume="4" />
+	<sound key="cooldown" fileref="hyper_mega_ex_voice_clip_02.wav" pitch_variety="0.00"  volume="3.2" />
     	<sound key="cooldown" fileref="" pitch_variety="0.00"  volume="0" />
-	<sound key="cooldown" fileref="hyper_mega_ex_voice_clip_03.wav" pitch_variety="0.00"  volume="4" />
+	<sound key="cooldown" fileref="hyper_mega_ex_voice_clip_03.wav" pitch_variety="0.00"  volume="3.2" />
     	<sound key="cooldown" fileref="" pitch_variety="0.00"  volume="0" />
-	<sound key="cooldown" fileref="hyper_mega_ex_voice_clip_04.wav" pitch_variety="0.00"  volume="4" />
+	<sound key="cooldown" fileref="hyper_mega_ex_voice_clip_04.wav" pitch_variety="0.00"  volume="3.2" />
 	    <sound key="cooldown" fileref="" pitch_variety="0.00"  volume="0" />
     <sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
 	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
@@ -78,7 +78,7 @@ key="ex_hyper_mega_bazooka_launcher_ex.weapon"
 	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0" name="Alice LaserCannon" radius="1.0"> 
 	
 		<result class="spawn" instance_class="grenade" instance_key="ex_hyper_mega_bazooka_launcher_ex_damage.projectile" 
-		min_amount="30" max_amount="30" offset="0 0 0" position_spread="1 1" direction_spread="0.0 0.0" />
+		min_amount="20" max_amount="30" offset="0 0 0" position_spread="1 1" direction_spread="0.0 0.0" />
    
 		<trigger class="time" time_to_live="0.14"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
@@ -166,19 +166,19 @@ key="ex_hyper_mega_bazooka_launcher.weapon"
     <sound key="cycle" fileref="m79_cycle.wav" volume="0.3"/><!--配合与cycle动作，固定播放-->
     <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
     <sound key="cycle_in" fileref="hd_cycle_in_01.wav" /><!--动作中in的value为1-->
-    <sound key="last_ammo" fileref="hyper_mega_voice_clip_01.wav" pitch_variety="0" volume="4"/>
+    <sound key="last_ammo" fileref="hyper_mega_voice_clip_01.wav" pitch_variety="0" volume="3.2"/>
     <sound key="last_ammo" fileref="" pitch_variety="0" volume="0"/>
-    <sound key="last_ammo" fileref="hyper_mega_voice_clip_02.wav" pitch_variety="0" volume="4"/>
+    <sound key="last_ammo" fileref="hyper_mega_voice_clip_02.wav" pitch_variety="0" volume="3.2"/>
     <sound key="last_ammo" fileref="" pitch_variety="0" volume="0"/>
-    <sound key="last_ammo" fileref="hyper_mega_voice_clip_03.wav" pitch_variety="0" volume="4"/>
+    <sound key="last_ammo" fileref="hyper_mega_voice_clip_03.wav" pitch_variety="0" volume="3.2"/>
     <sound key="last_ammo" fileref="" pitch_variety="0" volume="0"/>
-    <sound key="last_ammo" fileref="hyper_mega_voice_clip_04.wav" pitch_variety="0" volume="4"/>
+    <sound key="last_ammo" fileref="hyper_mega_voice_clip_04.wav" pitch_variety="0" volume="3.2"/>
     <sound key="last_ammo" fileref="" pitch_variety="0" volume="0"/>
-    <sound key="last_ammo" fileref="hyper_mega_voice_clip_05.wav" pitch_variety="0" volume="4"/>
+    <sound key="last_ammo" fileref="hyper_mega_voice_clip_05.wav" pitch_variety="0" volume="3.2"/>
     <sound key="last_ammo" fileref="" pitch_variety="0" volume="0"/>
-    <sound key="last_ammo" fileref="hyper_mega_voice_clip_06.wav" pitch_variety="0" volume="4"/>
+    <sound key="last_ammo" fileref="hyper_mega_voice_clip_06.wav" pitch_variety="0" volume="3.2"/>
     <sound key="last_ammo" fileref="" pitch_variety="0" volume="0"/>
-    <sound key="last_ammo" fileref="hyper_mega_voice_clip_07.wav" pitch_variety="0" volume="4"/>
+    <sound key="last_ammo" fileref="hyper_mega_voice_clip_07.wav" pitch_variety="0" volume="3.2"/>
     
 	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
 
@@ -278,7 +278,7 @@ key="ex_hyper_mega_bazooka_launcher_skill.weapon"
     <animation state_key="walking"  animation_key="hd_heavy_walking" />
     <animation state_key="walking_backwards" animation_key="hd_heavy_walking_backwards" />
      
-    <sound key="fire" fileref="hyper_mega_skill_fire2.wav" pitch_variety="0.00"  volume="4" />
+    <sound key="fire" fileref="hyper_mega_skill_fire2.wav" pitch_variety="0.00"  volume="3.2" />
     <sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
 	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
 	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
@@ -395,14 +395,14 @@ key="re_ex_hyper_mega_bazooka_launcher_ex.weapon"
     <animation state_key="walking_backwards" animation_key="hd_heavy_walking_backwards" />
 
      
-    <sound key="fire" fileref="SCIWeap_SHOT_Large_Laser_Ion_Fusion_B00M_CWDS_01.wav" pitch_variety="0.00"  volume="1.6" />
-	<sound key="cooldown" fileref="hyper_mega_ex_voice_clip_01.wav" pitch_variety="0.00"  volume="4" />
+    <sound key="fire" fileref="SCIWeap_SHOT_Large_Laser_Ion_Fusion_B00M_CWDS_01.wav" pitch_variety="0.00"  volume="1.3" />
+	<sound key="cooldown" fileref="hyper_mega_ex_voice_clip_01.wav" pitch_variety="0.00"  volume="3.2" />
     	<sound key="cooldown" fileref="" pitch_variety="0.00"  volume="0" />
-	<sound key="cooldown" fileref="hyper_mega_ex_voice_clip_02.wav" pitch_variety="0.00"  volume="4" />
+	<sound key="cooldown" fileref="hyper_mega_ex_voice_clip_02.wav" pitch_variety="0.00"  volume="3.2" />
     	<sound key="cooldown" fileref="" pitch_variety="0.00"  volume="0" />
-	<sound key="cooldown" fileref="hyper_mega_ex_voice_clip_03.wav" pitch_variety="0.00"  volume="4" />
+	<sound key="cooldown" fileref="hyper_mega_ex_voice_clip_03.wav" pitch_variety="0.00"  volume="3.2" />
     	<sound key="cooldown" fileref="" pitch_variety="0.00"  volume="0" />
-	<sound key="cooldown" fileref="hyper_mega_ex_voice_clip_04.wav" pitch_variety="0.00"  volume="4" />
+	<sound key="cooldown" fileref="hyper_mega_ex_voice_clip_04.wav" pitch_variety="0.00"  volume="3.2" />
 	    <sound key="cooldown" fileref="" pitch_variety="0.00"  volume="0" />
     <sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
 	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
@@ -517,19 +517,19 @@ key="re_ex_hyper_mega_bazooka_launcher.weapon"
     <sound key="cycle" fileref="m79_cycle.wav" volume="0.3"/><!--配合与cycle动作，固定播放-->
     <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
     <sound key="cycle_in" fileref="hd_cycle_in_01.wav" /><!--动作中in的value为1-->
-    <sound key="last_ammo" fileref="hyper_mega_voice_clip_01.wav" pitch_variety="0" volume="4"/>
+    <sound key="last_ammo" fileref="hyper_mega_voice_clip_01.wav" pitch_variety="0" volume="3.2"/>
     <sound key="last_ammo" fileref="" pitch_variety="0" volume="0"/>
-    <sound key="last_ammo" fileref="hyper_mega_voice_clip_02.wav" pitch_variety="0" volume="4"/>
+    <sound key="last_ammo" fileref="hyper_mega_voice_clip_02.wav" pitch_variety="0" volume="3.2"/>
     <sound key="last_ammo" fileref="" pitch_variety="0" volume="0"/>
-    <sound key="last_ammo" fileref="hyper_mega_voice_clip_03.wav" pitch_variety="0" volume="4"/>
+    <sound key="last_ammo" fileref="hyper_mega_voice_clip_03.wav" pitch_variety="0" volume="3.2"/>
     <sound key="last_ammo" fileref="" pitch_variety="0" volume="0"/>
-    <sound key="last_ammo" fileref="hyper_mega_voice_clip_04.wav" pitch_variety="0" volume="4"/>
+    <sound key="last_ammo" fileref="hyper_mega_voice_clip_04.wav" pitch_variety="0" volume="3.2"/>
     <sound key="last_ammo" fileref="" pitch_variety="0" volume="0"/>
-    <sound key="last_ammo" fileref="hyper_mega_voice_clip_05.wav" pitch_variety="0" volume="4"/>
+    <sound key="last_ammo" fileref="hyper_mega_voice_clip_05.wav" pitch_variety="0" volume="3.2"/>
     <sound key="last_ammo" fileref="" pitch_variety="0" volume="0"/>
-    <sound key="last_ammo" fileref="hyper_mega_voice_clip_06.wav" pitch_variety="0" volume="4"/>
+    <sound key="last_ammo" fileref="hyper_mega_voice_clip_06.wav" pitch_variety="0" volume="3.2"/>
     <sound key="last_ammo" fileref="" pitch_variety="0" volume="0"/>
-    <sound key="last_ammo" fileref="hyper_mega_voice_clip_07.wav" pitch_variety="0" volume="4"/>
+    <sound key="last_ammo" fileref="hyper_mega_voice_clip_07.wav" pitch_variety="0" volume="3.2"/>
     
 	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
 

@@ -338,12 +338,13 @@
 	</soldier> 
 
 	<!-- 机枪手 -->
-	<soldier name="Volcanic" spawn_score="0.05" copy_from="base">
+	<soldier name="Volcanic" spawn_score="0.01" copy_from="base">
 		<model filename="hdivers_volcanic.xml" />
 		<ai filename="default_super_earth_elite.ai" />
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources>
 			<weapon key="hd_hmg_mg255_melt_mk3.weapon" /><!--MG255熔点重机枪-->
+			<weapon key="hd_arc_mgc_capacitor_mk3.weapon" /><!--MGC 电容重机枪-->
 
 			<weapon key="hd_ai_rl112_recoilless_rifle_mk3.weapon" /><!--无后坐力反坦克炮-->
 

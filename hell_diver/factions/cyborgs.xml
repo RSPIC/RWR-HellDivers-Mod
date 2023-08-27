@@ -123,7 +123,7 @@
 		</attribute_config>
 	</soldier> 
 	<!-- 军团士兵 -->
-	<soldier name="Legionnaire" spawn_score="0.4" copy_from="default_ai">
+	<soldier name="Legionnaire" spawn_score="0.8" copy_from="default_ai">
 		<character filename="cyborgs_legionnaire_state.character">	<!-- cyborgs_legionnaire_state 引用 cyborgs_cyborgs_default_chat 引用 cyborgs_default_base-->
 			
 		</character>

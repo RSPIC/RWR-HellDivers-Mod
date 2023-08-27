@@ -120,6 +120,9 @@ class match_end : Tracker {
             if(player is null){return;}
             int cid = player.getIntAttribute("character_id");
             if(g_battleInfoBuck is null){return;}
+            if(g_server_difficulty_level <= 9){
+                g_battleInfoBuck.setServerBonusFactor(0.25);
+            }
             if(fid != 0){
                 g_battleInfoBuck.setLoseBonusFactor();
             }

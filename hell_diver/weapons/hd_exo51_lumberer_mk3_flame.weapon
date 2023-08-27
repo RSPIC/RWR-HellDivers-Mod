@@ -87,7 +87,7 @@ key="hd_exo51_lumberer_mk3_flame.weapon"
     <weak_hand_hold offset="0.3" /> 
 
     <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="30" can_be_detected_by_footmen="1" 
-	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0" name="EXO-51 Lumberer MK3" radius="1.5"> 
+	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0" name="EXO-51 Lumberer MK3" radius="0.3"> 
 		
 		<result class="spawn" instance_class="grenade" instance_key="hd_exo51_lumberer_mk3_flame_damage.projectile"
 		 min_amount="10" max_amount="10" offset="0 0 0" position_spread="1 0" direction_spread="0.0 0.0" />

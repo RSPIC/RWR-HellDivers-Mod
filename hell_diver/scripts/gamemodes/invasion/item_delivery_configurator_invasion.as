@@ -344,6 +344,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_m14.weapon", "weapon", 1.0f),
         	ScoredResource("acg_mari_sports_ver.weapon", "weapon", 1.0f),         
          	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f),
+         	ScoredResource("ex_funnelnet.weapon", "weapon", 1.0f),
          	ScoredResource("ex_izanagis_burden.weapon", "weapon", 1.0f)
 			},
 			{
@@ -445,6 +446,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("ex_hyper_mega_bazooka_launcher.weapon", "weapon", 1.0f),
         	ScoredResource("acg_patricia_cumforce.weapon", "weapon", 1.0f),
         	ScoredResource("acg_megumin_wand_float.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_laisha_heliotrope.weapon", "weapon", 1.0f),
         	ScoredResource("ex_trinity_ghoul.weapon", "weapon", 1.0f)
 			},
 			{
@@ -508,6 +510,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_m14.weapon", "weapon", 1.0f),
         	ScoredResource("acg_mari_sports_ver.weapon", "weapon", 1.0f),
         	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f),
+         	ScoredResource("ex_funnelnet.weapon", "weapon", 1.0f),
         	ScoredResource("ex_izanagis_burden.weapon", "weapon", 1.0f)
 			},
 			{
@@ -548,6 +551,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_m14.weapon", "weapon", 1.0f),
         	ScoredResource("acg_mari_sports_ver.weapon", "weapon", 1.0f),
         	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f),
+         	ScoredResource("ex_funnelnet.weapon", "weapon", 1.0f),
         	ScoredResource("ex_izanagis_burden.weapon", "weapon", 1.0f)
 			},
 			{
@@ -615,6 +619,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_m14.weapon", "weapon", 1.0f),
         	ScoredResource("acg_mari_sports_ver.weapon", "weapon", 1.0f),
         	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f),
+         	ScoredResource("ex_funnelnet.weapon", "weapon", 1.0f),
         	ScoredResource("ex_izanagis_burden.weapon", "weapon", 1.0f)
 			},
 			{
@@ -684,6 +689,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_m14.weapon", "weapon", 1.0f),
         	ScoredResource("acg_mari_sports_ver.weapon", "weapon", 1.0f),
         	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f),
+         	ScoredResource("ex_funnelnet.weapon", "weapon", 1.0f),
         	ScoredResource("ex_izanagis_burden.weapon", "weapon", 1.0f)
 			},
 			{
@@ -723,6 +729,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_m14.weapon", "weapon", 1.0f),
         	ScoredResource("acg_mari_sports_ver.weapon", "weapon", 1.0f),
         	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f),
+         	ScoredResource("ex_funnelnet.weapon", "weapon", 1.0f),
         	ScoredResource("ex_izanagis_burden.weapon", "weapon", 1.0f)
 			},
 			{
@@ -826,6 +833,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_m14.weapon", "weapon", 1.0f),
         	ScoredResource("acg_mari_sports_ver.weapon", "weapon", 1.0f),
         	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f),
+         	ScoredResource("ex_funnelnet.weapon", "weapon", 1.0f),
         	ScoredResource("ex_izanagis_burden.weapon", "weapon", 1.0f)
 			},
 			{

@@ -25,7 +25,7 @@ key="hd_pst_tox13_avenger_mk3.weapon"
 	burst_shots="1" 
     projectiles_per_shot="3" 
     projectile_speed="25.0"
-	barrel_offset="0.8" 
+	barrel_offset="1.5" 
 	carry_in_two_hands="1" 
 	stab_enabled="0" 
 	stab_range="2" 
@@ -98,7 +98,7 @@ key="hd_pst_tox13_avenger_mk3.weapon"
 
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
     <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="30" can_be_detected_by_footmen="1" 
-	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0" radius="1.5" name="TOX-13 Avenger"> 
+	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.3" name="TOX-13 Avenger"> 
 	
 		<!--
 		<result class="blast" radius="6.8" damage="0.2" push="0" decal="0" character_state="death"  />

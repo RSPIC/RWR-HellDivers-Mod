@@ -351,6 +351,21 @@ class schedule_Check : Tracker {
 	}
     protected void gameHelpSimple(Metagame@ m_metagame,int pid){
 		notify(m_metagame, "Help - Content", dictionary(), "misc", pid, true, "Tutor Help", 1.0);
+        if(g_server_difficulty_level == 3){
+            notify(m_metagame, "Help - Server3", dictionary(), "misc", pid, true, "ServerInfo", 1.0);
+        }
+        if(g_server_difficulty_level == 6){
+            notify(m_metagame, "Help - Server6", dictionary(), "misc", pid, true, "ServerInfo", 1.0);
+        }
+        if(g_server_difficulty_level == 9){
+            notify(m_metagame, "Help - Server9", dictionary(), "misc", pid, true, "ServerInfo", 1.0);
+        }
+        if(g_server_difficulty_level == 12){
+            notify(m_metagame, "Help - Server12", dictionary(), "misc", pid, true, "ServerInfo", 1.0);
+        }
+        if(g_server_difficulty_level == 15){
+            notify(m_metagame, "Help - Server15", dictionary(), "misc", pid, true, "ServerInfo", 1.0);
+        }
 	}
 	protected void testHelp(Metagame@ m_metagame,int pid){
 		notify(m_metagame, "Help - TestServer", dictionary(), "misc", pid, true, "Testing Help", 1.0);

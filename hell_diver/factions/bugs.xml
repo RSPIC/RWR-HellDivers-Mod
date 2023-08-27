@@ -151,7 +151,7 @@
 		</attribute_config>
 	</soldier> 
 	<!-- Vanguard -->
-	<soldier name="Vanguard" spawn_score="0.3" copy_from="base" >
+	<soldier name="Vanguard" spawn_score="1.2" copy_from="base" >
 		<character filename="bugs_scout_state.character">	
 		</character>
 		<ai filename="bugs_scout.ai" /> 
@@ -179,7 +179,7 @@
 		</attribute_config>
 	</soldier> 
 	<!-- Shadow -->
-	<soldier name="Shadow" spawn_score="0.2" copy_from="base" >
+	<soldier name="Shadow" spawn_score="1.2" copy_from="base" >
 		<character filename="bugs_stalker_state.character">	
 		</character>
 		<ai filename="bugs_stalker.ai" />
@@ -205,7 +205,7 @@
 	</soldier> 
 <!-- Infantry -->
 	<!-- Warrior -->
-	<soldier name="Warrior" spawn_score="3.0" copy_from="base" >
+	<soldier name="Warrior" spawn_score="2.0" copy_from="base" >
 		<character filename="bugs_warrior_state.character">	
 		</character>
 		<ai filename="bugs_warrior.ai" />

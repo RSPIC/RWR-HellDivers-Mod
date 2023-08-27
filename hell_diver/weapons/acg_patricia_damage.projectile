@@ -2,13 +2,13 @@
 <projectiles>
 <projectile 
 class="grenade" 
-name="Magic" slot="0" pulldown_in_air="0.1" 
+name="Patricia FatalDrive" slot="0" pulldown_in_air="0.1" 
 key="acg_patricia_FatalDrive_spawn.projectile"
 can_be_detected_by_footmen="0" can_be_disarmed="0" 
 >
 	<rotation class="motion" />	
 
-	<result class="blast" radius="5" damage="500" push="0" decal="0" character_state="death"  />
+	<result class="blast" radius="5" damage="500" push="0" decal="0" character_state="death" faction_compare="not_equal"  />
 	<trigger class="time" time_to_live="0" />
     <collision class="sticky" />
 

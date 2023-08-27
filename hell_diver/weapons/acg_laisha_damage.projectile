@@ -5,7 +5,7 @@ class="grenade" name="Laisha" slot="0"
 pulldown_in_air="0.1" key="acg_laisha_heliotrope_spawn.projectile">
 
     <result class="spawn" instance_class="projectile" instance_key="acg_laisha_heliotrope_damage.projectile" 
-    min_amount="50" max_amount="70" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
+    min_amount="30" max_amount="50" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
 
     <trigger class="time" time_to_live="0.2"/>
     <rotation class="motion" />
@@ -68,7 +68,7 @@ key="acg_laisha_southern_cross_effect.projectile">
     <tag name="grenade"/>
 
     <result class="spawn" instance_class="projectile" instance_key="acg_laisha_southern_cross_damage.projectile" 
-    min_amount="4" max_amount="5" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+    min_amount="3" max_amount="4" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
     <!--命中音效-->
     <sound class="result" key="other" fileref="acg_laisha_southern_cross_sound.wav" pitch_variety="0.03" volume="2.0" />

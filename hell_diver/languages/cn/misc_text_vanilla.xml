@@ -1080,7 +1080,7 @@
 	<text key="VBL Fast Transit Vehicle" text="'破天'快速转运车辆" />
 
 	<text key="Mi-24 Helicopter Beacon" text="米-24 武装直升机 部署信标" />
-	<text key="Mi-24 Helicopter" text="'米-24 武装直升机" />
+	<text key="Mi-24 Helicopter" text="米-24 武装直升机" />
 
 	<text key="Bell 360 Helicopter Beacon" text="贝尔-360 运输直升机 部署信标" />
 	<text key="Bell 360 Helicopter" text="贝尔-360 运输直升机" />
@@ -1096,11 +1096,14 @@
 	<text key="BM-27 Uragan Beacon" text="BM-27 Uragan 火箭车 部署信标" />
 	<text key="BM-27 Uragan" text="BM-27 Uragan 火箭车 轻型载具" />
 
-	<text key='MT-LB 2b9-Vasilek"' text="矢车菊 自动迫击炮 轻型载具" />
-	<text key='MT-LB 2b9-Vasilek Beacon"' text="矢车菊 自动迫击炮 轻型载具 部署信标" />
+	<text key='MT-LB 2b9-Vasilek' text="矢车菊 自动迫击炮 轻型载具" />
+	<text key='MT-LB 2b9-Vasilek Beacon' text="矢车菊 自动迫击炮 轻型载具 部署信标" />
 
-	<text key='T90M3"' text="T90M 突破3 重型坦克 " />
-	<text key='T90M3 Beacon"' text="T90M 突破3 重型坦克 部署信标" />
+	<text key='T90M3' text="T90M 突破3 重型坦克 " />
+	<text key='T90M3 Beacon' text="T90M 突破3 重型坦克 部署信标" />
+
+	<text key='ZBD-09' text="ZBD-09 轻型载具" />
+	<text key='ZBD09 Beacon' text="ZBD-09 轻型载具 部署信标" />
 
 	<text key="Kamikaze" text="民本超度" />
 	<text key="BanZai Armor onload" text="板载护甲已装配" />
@@ -1308,12 +1311,46 @@
 
 	<text key="Help - Content" text="#欢迎游玩-地狱潜兵-模组
 #加入QQ群：498520233。您了解新手奖励的获取方式。
-#欢迎反馈BUG和疑惑，将方便本MOD优化内置教程
-#聊天栏输入/help 可以浏览更多详细教程
-#输入/call 可查看常用战略设备指令
-#每次更新后，本提示都会有些许不同，甚至会隐藏兑换密钥在这里面，注意哦~
+#聊天栏输入/help可以浏览更多详细教程
 #打开游戏背景音乐以获得最佳体验
 	" />
+	<text key="ServerInfo" text="点我查看当前服务器信息" />
+	<text key="Help - Server3" text="#当前服务器难度 Level-3 适合新手游玩
+#服务器增益：25%战役结算加成
+#己方Ai倍率：1.0 / 敌方Ai倍率：1.0
+#基础警报CD：36s
+#每增加一名玩家减少0.8s警报CD；敌方数量越少，CD越短
+#不同难度敌方增援兵种难度和数量均不等
+" />
+	<text key="Help - Server6" text="#当前服务器难度 Level-6 适合新手游玩
+#服务器增益：1.2倍率经验加成 25%战役结算加成
+#己方Ai倍率：1.0 / 敌方Ai倍率：1.5
+#基础警报CD：33s
+#每增加一名玩家减少0.8s警报CD；敌方数量越少，CD越短
+#不同难度敌方增援兵种难度和数量均不等
+" />
+	<text key="Help - Server9" text="#当前服务器难度 Level-9 适合新手游玩
+#服务器增益：1.5倍率经验加成 25%战役结算加成
+#己方Ai倍率：1.5 / 敌方Ai倍率：2.0
+#基础警报CD：30s
+#每增加一名玩家减少0.8s警报CD；敌方数量越少，CD越短
+#不同难度敌方增援兵种难度和数量均不等
+" />
+	<text key="Help - Server12" text="#当前服务器难度 Level-12 适合熟练玩家
+#服务器增益：1.2倍率经验加成
+#己方Ai倍率：2.0 / 敌方Ai倍率：3.0
+#基础警报CD：27s
+#每增加一名玩家减少0.8s警报CD；敌方数量越少，CD越短
+#不同难度敌方增援兵种难度和数量均不等
+" />
+	<text key="Help - Server15" text="#当前服务器难度 Level-15 适合压力玩家
+#服务器增益：无
+#己方Ai倍率：2.0 / 敌方Ai倍率：4.0
+#基础警报CD：24s
+#每增加一名玩家减少0.8s警报CD；敌方数量越少，CD越短
+#不同难度敌方增援兵种难度和数量均不等
+" />
+	
 	<text key="Help - Ammo Supply" text="[子弹补给机制] 子弹补给箱可以补给消耗品武器以及护甲，按V拆开补给并手动放入背包中" />
 	<text key="Help - Stratagems" text="[战略呼叫机制] 在聊天栏输入ddw[→→↑]或者wsdaw[↑↓→←↑]等战略指令并发送，可在手雷栏获得部署信标" />
 	<text key="Help - Armor" text="[自动回血机制] 非死亡和非倒地状态下，每10秒回复10层护甲" />

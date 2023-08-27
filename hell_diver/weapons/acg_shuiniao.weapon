@@ -57,6 +57,8 @@ key="acg_shuiniao.weapon"
     <animation state_key="prone_still" animation_key="prone still, ninjato" />
     <animation state_key="prone_moving" animation_key="prone moving, ninjato" />
 	<animation state_key="walking_backwards" animation_key="walking backwards, ninjato" />
+	<animation state_key="next_in_chain_in" animation_key="" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="reloading, ninjato" /><!--半身动作，切换模式，本模式切入-->
 	<!--武器音频-->
     <sound key="effect" fileref="" pitch_variety="0" volume="1.0" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
     <sound key="fire" fileref="MAFDS_PROJECTILE_FIRE_IMPACT_Fire_Without_Smoke_01.wav" pitch_variety="0.00" volume="1.0" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
@@ -95,7 +97,7 @@ key="acg_shuiniao.weapon"
 			direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
 		<result class="notify_script" key="vehicle_recycle" />
 		-->
-		<result class="blast" radius="10.0" damage="300" push="0.7" decal="0" character_state="wound" faction_compare="not_equal"  />
+		<result class="blast" radius="8.5" damage="300" push="0.7" decal="0" character_state="wound" faction_compare="not_equal"  />
 		<trigger class="time" time_to_live="0.0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->

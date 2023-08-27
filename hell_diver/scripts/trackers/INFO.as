@@ -745,6 +745,12 @@ class battleInfoBuck{
 			m_battleInfos[i].setBonusFactor(m_battleInfos[i].name(),m_battleInfos[i].bonusFactor()*0.5);
 		}
 	}
+	void setServerBonusFactor(float factor){
+		if(m_battleInfos is null){return;}
+		for(uint i = 0 ; i < m_battleInfos.size() ; ++i){
+			m_battleInfos[i].setBonusFactor(m_battleInfos[i].name(),m_battleInfos[i].bonusFactor()+factor);
+		}
+	}
 	void clearAll(){
 		if(m_battleInfos is null){return;}
 		m_battleInfos.resize(0);
