@@ -29,7 +29,8 @@
 	</model>
 	<model filename="ex_funnelnet.xml"><requirement class="weapon" slot="1" key="re_ex_funnelnet.weapon"/>
 	</model>
-
-
+	<!-- 维吉尔 -->
+	<model filename="ex_vergil.xml"><requirement class="weapon" slot="0" key="ex_vergil_judgment_cut.weapon"/>
+	</model>
 	
 </models>

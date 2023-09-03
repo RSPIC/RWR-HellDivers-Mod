@@ -783,7 +783,7 @@
 	<text key="AC-5 Arc Shotgun" text="AC-5 电弧霰弹枪[反重甲/无视护盾]" />
 	<text key="AC-3 Arc Thrower" text="AC-3 电弧发射器[反中甲/无视护盾]" />
 	<text key="AS-7 Semiconductor" text="AS-7 半导体突击步枪[反重甲/无视护盾]" />
-	<text key="AS-5 Resistance" text="AS-5 电阻霰弹枪[反重甲/无视护盾]" />
+	<text key="AS-5 Resistance" text="AS-5 电阻霰弹枪[反重甲]" />
 	<text key="MG-C Capacitor" text="MG-C 电容重机枪[反重甲/无视护盾]" />
 
 	<text key="REP-80" text="REP-80 维修工具枪[治疗/修车/回甲]" />
@@ -888,6 +888,7 @@
 	<text key="Alice [Railgun EX]"  text="天童爱丽丝 [光之剑：超新星EX][反重甲]" />
 	<text key="Alice [Railgun]"  text="天童爱丽丝 [光之剑：超新星][反中甲]" />
 	<text key="Eye of Horus"  text="荷鲁斯之眼 [反重甲]" />
+	<text key="G41 [Universal Express]"  text="G41 [太空漫步][反重甲]" />
 
 <!-- 信物 -->
 	<text key="Asakaze [Skin]"  text="朝风 [信物]" />
@@ -1456,23 +1457,19 @@ TK其他玩家同样会造成倍率因子的下降" />
 	<text key="Weapons - Rep-80" text="维修工具枪 [↓↓←→↓]" />
 	<text key="Weapons - REC-6 Demolisher" text="REC-6 爆破手遥控炸弹 [↓←→↑↑]" />
 
-	<text key="Testing Help" text="[测试服教程]]" />
+	<text key="Testing Help" text="[作弊教程]]" />
 	<text key="Help - TestServer" text="/v test： 召唤出测试箱子
 /warp 数字：跳图（不超过13，否则会溢出报错）
-/0_win： 我方阵营胜利
-/grp 数字： 获取指定数量的rp
+/0_win：我方阵营胜利
+/grp 数字：获取指定数量的rp
 /gxp 数字：获取指定数量的xp
-/p 键值 [数量]：获取指定键值的弹头，[数量]为可选参数
-/w 键值 [数量]：获取指定键值的武器，[数量]为可选参数
-/c 键值 [数量]：获取指定键值的掉落物，[数量]为可选参数
-/v 键值 ：在旁边生成指定键值载具，如/v noxe
+/v icecream：刷出冰淇淋车
+/v mh_60s:刷出直升机
 /god：在旁边生成一个上帝甲
 /promote：直接升至地球元帅并获得大量RP
-/cyborgs：[敌方阵营有生化人才可使用，否则报错]，在周围刷新生化人士兵
 /squad：刷10个己方默认ai
-/esquad：刷10个敌方默认ai
 /dead：使自己死亡
-/wound：使自己进入倒地状态" />
+"/>
 
 <!-- 奖励箱子 -->
 	<text key="Reward Box [Collection]" text="奖励箱子 [收藏品]" />

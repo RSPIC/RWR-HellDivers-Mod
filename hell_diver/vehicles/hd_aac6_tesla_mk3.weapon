@@ -103,7 +103,7 @@ radius="1"
 	time_to_live="0.052" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.5" name="A/AC-6 Tesla Tower"> 
 	
 		<result class="spawn" instance_class="grenade" instance_key="hd_aac6_tesla_mk3_damage.projectile" 
-		min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0.0 0.0" />
+		min_amount="1" max_amount="2" offset="0 0 0" position_spread="0 0" direction_spread="0.0 0.0" />
 		<trigger class="time" time_to_live="0.052"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<!-- 2.5伤 每秒30层 25载具伤-->

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapons>
+<weapon 
+file="_hd_vehicle_mg.base"
+key="hd_vehicle_30mm_eject.weapon">
+    <specification
+	retrigger_time="0.2" 
+    accuracy_factor="0.95" 
+    sustained_fire_grow_step="0.1" 
+    sustained_fire_diminish_rate="1.0" 
+    sight_range_modifier="1.0"
+    ai_sight_range_modifier="1" 
+    magazine_size="-1" 
+    class="0"
+    slot="0" 
+	projectile_speed="-8" 
+    projectiles_per_shot="1" 
+    sight_height_offset="1.0" 
+    suppressed="1"
+    />
+
+    <!-- <ballistics curve_height="10" near_far_distance="0" speed_estimation_near="-16.0" 
+    speed_estimation_far="-16.0" max_speed="-16.0" tweak_factor="1.0" randomness="0.0" /> -->
+
+    <projectile file="hd_general_spawn_no_effect.projectile" pulldown_in_air="10" >
+     	<result class="spawn" activated="1" instance_class="projectile" instance_key="hd_vehicle_30mm_eject.projectile" 
+		min_amount="1" max_amount="1" offset="0 0.1 0" position_spread="0 0" direction_spread="0.1 0.03" />	
+		<trigger class="impact" time_to_live="30"/>
+        <rotation class="random" />
+		<model mesh_filename="30mm_bullet.mesh" texture_filename="30mm_bullet.jpg" />
+
+        <sound class="result" key="other" fileref="hd_bulletdrop_1.wav" pitch_variety="0.01" volume="0.35"/>
+        <sound class="result" key="other" fileref="hd_bulletdrop_2.wav" pitch_variety="0.01" volume="0.35"/>
+        <sound class="result" key="other" fileref="hd_bulletdrop_5.wav" pitch_variety="0.01" volume="0.35"/>
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+
+    </projectile>
+
+	<!--武器动作，必须指定recoil和reload动作-->
+    <animation key="recoil" animation_key="recoil1, big" /> <!--后坐力动作，半身动作-->
+    <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
+    <animation key="reload" animation_key="reloading" />	<!--换弹动作，半身动作-->
+    <animation key="reload" stance_key="crouching" animation_key="reloading" />	<!--不同姿态可以设置不同换弹动作-->
+    <animation key="reload" stance_key="prone" animation_key="reloading" />
+	<animation key="recoil" stance_key="over_wall" animation_key="recoil, pistol"/>	<!--不同姿态可以设置不同后坐力动作-->
+	<animation key="recoil" stance_key="crouching" animation_key="recoil1"/>
+	<animation key="recoil" stance_key="prone" animation_key="recoil1"/>
+    <animation state_key="hold" animation_key="" /><!--站姿静止动作，全身动作-->
+	<animation state_key="hold_on_wall"  animation_key="" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="hold, pistol" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="hold_casual, pistol" /><!--闲置动作，全身动作-->
+	<animation state_key="running" animation_key="running, pistol" /><!--全身动作-->
+	<animation state_key="walking" animation_key="" /><!--按shift时候的静步前进动作，全身动作-->
+    <animation state_key="walking_backwards" animation_key="walking backwards, pistol" /><!--全身动作-->
+    <animation state_key="crouching" animation_key="crouch, pistol" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="crouching backwards, hip fire" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="prone_still, pistol" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
+	<animation state_key="stabbing" animation_key="pistol whip 3" /><!--半身动作，武器可设置脱手-->
+	<!--切换模式，本模式的切出动作衔接下一模式的切入动作，置空为秒切-->
+	<animation state_key="next_in_chain_in" animation_key="sheath bayonet part 2" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="mount bayonet part 1" /><!--半身动作，切换模式，本模式切入-->
+	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
+    <animation state_key="changing_weapon_in" animation_key="" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key=""/><!--半身动作，切换武器，本武器取出-->
+
+</weapon>
+<weapon 
+file="_hd_vehicle_mg.base"
+key="hd_vehicle_152mm_eject_m5_32.weapon">
+    <specification
+	retrigger_time="3" 
+    accuracy_factor="0.95" 
+    sustained_fire_grow_step="0.1" 
+    sustained_fire_diminish_rate="1.0" 
+    sight_range_modifier="1.0"
+    ai_sight_range_modifier="1" 
+    magazine_size="-1" 
+    class="0"
+    slot="0" 
+	projectile_speed="-16" 
+    projectiles_per_shot="1" 
+    sight_height_offset="1.0" 
+    suppressed="1"
+    />
+
+    <!-- <ballistics curve_height="10" near_far_distance="0" speed_estimation_near="-16.0" 
+    speed_estimation_far="-16.0" max_speed="-16.0" tweak_factor="1.0" randomness="0.0" /> -->
+
+    <projectile file="hd_general_spawn_no_effect.projectile" pulldown_in_air="40" >
+     	<result class="spawn" activated="1" instance_class="projectile" instance_key="hd_vehicle_152mm_eject.projectile" 
+		min_amount="1" max_amount="1" offset="0 0.1 0" position_spread="0 0" direction_spread="0.1 0.03" />	
+		<trigger class="impact" time_to_live="30"/>
+        <rotation class="random" />
+		<model mesh_filename="152mm_shell.mesh" texture_filename="152mm_shell.jpg" />
+
+        <sound class="result" key="other" fileref="hd_bulletdrop_1.wav" pitch_variety="0.01" volume="0.35"/>
+        <sound class="result" key="other" fileref="hd_bulletdrop_2.wav" pitch_variety="0.01" volume="0.35"/>
+        <sound class="result" key="other" fileref="hd_bulletdrop_5.wav" pitch_variety="0.01" volume="0.35"/>
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+
+    </projectile>
+
+	<!--武器动作，必须指定recoil和reload动作-->
+    <animation key="recoil" animation_key="recoil1, big" /> <!--后坐力动作，半身动作-->
+    <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
+    <animation key="reload" animation_key="reloading" />	<!--换弹动作，半身动作-->
+    <animation key="reload" stance_key="crouching" animation_key="reloading" />	<!--不同姿态可以设置不同换弹动作-->
+    <animation key="reload" stance_key="prone" animation_key="reloading" />
+	<animation key="recoil" stance_key="over_wall" animation_key="recoil, pistol"/>	<!--不同姿态可以设置不同后坐力动作-->
+	<animation key="recoil" stance_key="crouching" animation_key="recoil1"/>
+	<animation key="recoil" stance_key="prone" animation_key="recoil1"/>
+    <animation state_key="hold" animation_key="" /><!--站姿静止动作，全身动作-->
+	<animation state_key="hold_on_wall"  animation_key="" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="hold, pistol" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="hold_casual, pistol" /><!--闲置动作，全身动作-->
+	<animation state_key="running" animation_key="running, pistol" /><!--全身动作-->
+	<animation state_key="walking" animation_key="" /><!--按shift时候的静步前进动作，全身动作-->
+    <animation state_key="walking_backwards" animation_key="walking backwards, pistol" /><!--全身动作-->
+    <animation state_key="crouching" animation_key="crouch, pistol" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="crouching backwards, hip fire" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="prone_still, pistol" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
+	<animation state_key="stabbing" animation_key="pistol whip 3" /><!--半身动作，武器可设置脱手-->
+	<!--切换模式，本模式的切出动作衔接下一模式的切入动作，置空为秒切-->
+	<animation state_key="next_in_chain_in" animation_key="sheath bayonet part 2" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="mount bayonet part 1" /><!--半身动作，切换模式，本模式切入-->
+	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
+    <animation state_key="changing_weapon_in" animation_key="" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key=""/><!--半身动作，切换武器，本武器取出-->
+
+</weapon>
+<weapon 
+file="_hd_vehicle_mg.base"
+key="hd_vehicle_152mm_eject_td110.weapon">
+    <specification
+	retrigger_time="4" 
+    accuracy_factor="0.9" 
+    sustained_fire_grow_step="0.1" 
+    sustained_fire_diminish_rate="1.0" 
+    sight_range_modifier="1.0"
+    ai_sight_range_modifier="1" 
+    magazine_size="-1" 
+    class="0"
+    slot="0" 
+	projectile_speed="-16" 
+    projectiles_per_shot="1" 
+    sight_height_offset="1.0" 
+    suppressed="1"
+    barrel_offset="-8.5"
+    />
+
+    <!-- <ballistics curve_height="10" near_far_distance="0" speed_estimation_near="-16.0" 
+    speed_estimation_far="-16.0" max_speed="-16.0" tweak_factor="1.0" randomness="0.0" /> -->
+
+    <projectile file="hd_general_spawn_no_effect.projectile" pulldown_in_air="40" >
+     	<result class="spawn" activated="1" instance_class="projectile" instance_key="hd_vehicle_152mm_eject.projectile" 
+		min_amount="1" max_amount="1" offset="0 0.1 0" position_spread="0 0" direction_spread="0.1 0.03" />	
+		<trigger class="impact" time_to_live="30"/>
+        <rotation class="random" />
+		<model mesh_filename="152mm_shell.mesh" texture_filename="152mm_shell.jpg" />
+
+        <sound class="result" key="other" fileref="hd_bulletdrop_1.wav" pitch_variety="0.01" volume="0.35"/>
+        <sound class="result" key="other" fileref="hd_bulletdrop_2.wav" pitch_variety="0.01" volume="0.35"/>
+        <sound class="result" key="other" fileref="hd_bulletdrop_5.wav" pitch_variety="0.01" volume="0.35"/>
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+
+    </projectile>
+
+	<!--武器动作，必须指定recoil和reload动作-->
+    <animation key="recoil" animation_key="recoil1, big" /> <!--后坐力动作，半身动作-->
+    <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
+    <animation key="reload" animation_key="reloading" />	<!--换弹动作，半身动作-->
+    <animation key="reload" stance_key="crouching" animation_key="reloading" />	<!--不同姿态可以设置不同换弹动作-->
+    <animation key="reload" stance_key="prone" animation_key="reloading" />
+	<animation key="recoil" stance_key="over_wall" animation_key="recoil, pistol"/>	<!--不同姿态可以设置不同后坐力动作-->
+	<animation key="recoil" stance_key="crouching" animation_key="recoil1"/>
+	<animation key="recoil" stance_key="prone" animation_key="recoil1"/>
+    <animation state_key="hold" animation_key="" /><!--站姿静止动作，全身动作-->
+	<animation state_key="hold_on_wall"  animation_key="" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="hold, pistol" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="hold_casual, pistol" /><!--闲置动作，全身动作-->
+	<animation state_key="running" animation_key="running, pistol" /><!--全身动作-->
+	<animation state_key="walking" animation_key="" /><!--按shift时候的静步前进动作，全身动作-->
+    <animation state_key="walking_backwards" animation_key="walking backwards, pistol" /><!--全身动作-->
+    <animation state_key="crouching" animation_key="crouch, pistol" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="crouching backwards, hip fire" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="prone_still, pistol" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
+	<animation state_key="stabbing" animation_key="pistol whip 3" /><!--半身动作，武器可设置脱手-->
+	<!--切换模式，本模式的切出动作衔接下一模式的切入动作，置空为秒切-->
+	<animation state_key="next_in_chain_in" animation_key="sheath bayonet part 2" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="mount bayonet part 1" /><!--半身动作，切换模式，本模式切入-->
+	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
+    <animation state_key="changing_weapon_in" animation_key="" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key=""/><!--半身动作，切换武器，本武器取出-->
+
+</weapon>
+</weapons>

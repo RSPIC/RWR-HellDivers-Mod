@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapons> 
+<weapon 
+file="_rare_weapon_mk3.base" 
+key="acg_g41_universe.weapon" 
+>
+    <specification 
+    retrigger_time="0.08" 
+    accuracy_factor="0.99" 
+    spread_range="0.05"
+    sustained_fire_grow_step="0.25" 
+    sustained_fire_diminish_rate="2" 
+    magazine_size="-1" 
+    can_shoot_standing="1" 
+    suppressed="0" 
+    name="G41 [Universal Express]" 
+    sight_range_modifier="1.5" 
+    class="4" 
+    burst_shots="10"
+    projectile_speed="400.0" 
+    projectiles_per_shot="3" 
+    barrel_offset="0.5"
+    stab_enabled="1"
+    stab_range="2.5"
+    use_basic_muzzle_smoke_effect="0"
+    cooldown_start="0.999"
+    cooldown_end="0.0"
+    />
+
+    <animation key="recoil" ref="12" />
+    <animation key="recoil" ref="13" />
+    <animation key="recoil" ref="14" />
+    <animation state_key="reload" animation_key="T_reloading_1.25s" />
+	<animation state_key="hold" animation_key="still_muzzle_down" />  
+    <!-- <animation state_key="running" animation_key="running_muzzle_down" /> -->
+    <animation state_key="hold_casual" animation_key="still_gun_check" /> 
+    <animation state_key="hold_casual" animation_key="front_flip" />
+	<animation state_key="hold_casual" animation_key="rolling" /> 
+    <animation state_key="stabbing" animation_key="gunstock_melee" /> 
+    
+    
+    <sound key="fire" fileref="g41_bp_gunfire.wav" pitch_variety="0.05" volume="1.0" />
+    <sound key="magazine_out" fileref="ak545_clip_out.wav" />
+    <sound key="magazine_in" fileref="ak545_clip_in.wav" />
+    <sound key="cycle" fileref="ak545_chamber.wav" />
+    <sound class="impact" fileref="rifle_drop.wav" />
+    <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
+    <sound key="cooldown" fileref="SCIWeap_SHOT_Medium_Laser_Photon_Pulsar_B00M_CWDS_01.wav" volume="0.2"/>
+
+    <sound key="last_ammo" fileref="hd_lastammo_01.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_02.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_03.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_04.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <model filename="acgw_g41_7406.xml" />
+
+    <hud_icon filename="acg_g41_7406.png" />
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.375" radius="0.4" can_be_detected_by_driver="1" can_be_disarmed="0">
+
+        <result class="blast" radius="2.5" damage="3.01" push="0.2" decal="0" character_state="wound" 
+        faction_compare="not_equal" damage_origin_vehicle="0" />
+		
+        <effect class="result" key="terrain" ref="g41_laser_space_result" lighting="0"/>
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+        
+                <!--尾迹组-->
+		<trail probability="1" key=""/>	
+    </projectile>
+		<effect class="muzzle" ref="g41_laser_space_muzzle_blue"/>
+		<effect class="muzzle" ref="g41_laser_space_muzzle_white"/>
+		<effect class="muzzle" ref="g41_laser_space_muzzle_double_laser"/>
+		<effect class="muzzle" ref="g41_laser_space_muzzle_double_laser_ambient"/>
+		<effect class="muzzle" ref="g41_laser_space_muzzle_light"/>
+		<effect class="muzzle" ref="g41_laser_space_muzzle_double_laser_concentrate"/>
+		<effect class="muzzle" ref="g41_laser_space_muzzle_double_laser_dark_particle"/>
+
+	<!--姿态精度-->
+    <stance state_key="running" accuracy="1" /> 
+    <stance state_key="walking" accuracy="1" />
+	<stance state_key="standing" accuracy="1" />
+	<stance state_key="crouching" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1" />     
+</weapon>
+<weapon 
+file="_rare_weapon_mk3_re.base" 
+key="re_acg_g41_universe.weapon" 
+>
+    <specification 
+    retrigger_time="0.08" 
+    accuracy_factor="0.99" 
+    spread_range="0.05"
+    sustained_fire_grow_step="0.25" 
+    sustained_fire_diminish_rate="2" 
+    magazine_size="-1" 
+    can_shoot_standing="1" 
+    suppressed="0" 
+    name="G41 [Universal Express]" 
+    sight_range_modifier="1.5" 
+    class="4" 
+    burst_shots="10"
+    projectile_speed="400.0" 
+    projectiles_per_shot="3" 
+    barrel_offset="0.5"
+    stab_enabled="1"
+    stab_range="2.5"
+    use_basic_muzzle_smoke_effect="0"
+    cooldown_start="0.999"
+    cooldown_end="0.0"
+    />
+
+    <animation key="recoil" ref="12" />
+    <animation key="recoil" ref="13" />
+    <animation key="recoil" ref="14" />
+    <animation state_key="reload" animation_key="T_reloading_1.25s" />
+	<animation state_key="hold" animation_key="still_muzzle_down" />  
+    <!-- <animation state_key="running" animation_key="running_muzzle_down" /> -->
+    <animation state_key="hold_casual" animation_key="still_gun_check" /> 
+    <animation state_key="hold_casual" animation_key="front_flip" />
+	<animation state_key="hold_casual" animation_key="rolling" /> 
+    <animation state_key="stabbing" animation_key="gunstock_melee" /> 
+    
+    
+    <sound key="fire" fileref="g41_bp_gunfire.wav" pitch_variety="0.05" volume="1.0" />
+    <sound key="magazine_out" fileref="ak545_clip_out.wav" />
+    <sound key="magazine_in" fileref="ak545_clip_in.wav" />
+    <sound key="cycle" fileref="ak545_chamber.wav" />
+    <sound class="impact" fileref="rifle_drop.wav" />
+    <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
+    <sound key="cooldown" fileref="SCIWeap_SHOT_Medium_Laser_Photon_Pulsar_B00M_CWDS_01.wav" volume="0.2"/>
+
+    <sound key="last_ammo" fileref="hd_lastammo_01.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_02.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_03.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_04.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <model filename="acgw_g41_7406.xml" />
+
+    <hud_icon filename="acg_g41_7406.png" />
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.375" radius="0.4" can_be_detected_by_driver="1" can_be_disarmed="0">
+
+        <result class="blast" radius="2.5" damage="3.01" push="0.2" decal="0" character_state="wound" 
+        faction_compare="not_equal" damage_origin_vehicle="0" />
+		
+        <effect class="result" key="terrain" ref="g41_laser_space_result" lighting="0"/>
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+        
+                <!--尾迹组-->
+		<trail probability="1" key=""/>	
+    </projectile>
+		<effect class="muzzle" ref="g41_laser_space_muzzle_blue"/>
+		<effect class="muzzle" ref="g41_laser_space_muzzle_white"/>
+		<effect class="muzzle" ref="g41_laser_space_muzzle_double_laser"/>
+		<effect class="muzzle" ref="g41_laser_space_muzzle_double_laser_ambient"/>
+		<effect class="muzzle" ref="g41_laser_space_muzzle_light"/>
+		<effect class="muzzle" ref="g41_laser_space_muzzle_double_laser_concentrate"/>
+		<effect class="muzzle" ref="g41_laser_space_muzzle_double_laser_dark_particle"/>
+
+	<!--姿态精度-->
+    <stance state_key="running" accuracy="1" /> 
+    <stance state_key="walking" accuracy="1" />
+	<stance state_key="standing" accuracy="1" />
+	<stance state_key="crouching" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1" />     
+</weapon>
+
+</weapons>

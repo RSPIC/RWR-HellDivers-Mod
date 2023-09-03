@@ -121,13 +121,14 @@ particle_system car_slide_up_smoke
 	emitter Point
 	{
 		angle 50
-		colour 1 1 1 0
+		colour 0.7 0.7 0.7 0
 		direction 1 0 0
-		emission_rate 10
+		emission_rate 6
 		position 0 0 0
 		velocity_min 0.1
 		velocity_max 1
-		time_to_live 3
+		time_to_live_min 1.5
+		time_to_live_max 3
 		duration 0.1
 	}
 	affector Scaler
@@ -146,7 +147,7 @@ particle_system car_slide_up_smoke
 		time0 0
 		colour0 0.8 0.8 0.8 0.4
 		time1 0.7
-		colour1 0.8 0.8 0.8 0.05
+		colour1 0.6 0.6 0.622 0.05
 		time2 1
 		colour2 1 1 1 0
 	}
@@ -154,6 +155,54 @@ particle_system car_slide_up_smoke
 		force_vector 0 0.5 0
 		force_application add
 	}
+}
+particle_system car_slide_up_crash
+{
+	quota 5000
+	material splat_effect_dirt_car
+	particle_width 2.7
+	particle_height 2.7
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour_range_start 1 1 1 0.3
+		colour_range_end 0.5 0.5 0.5 0.3
+		direction 1 0 0
+		emission_rate 5
+		position 0 0.2 0
+		velocity_min 0.001
+		velocity_max 0.001
+		time_to_live 60
+		duration 0.1
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	-360
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		bule1 	0
+		alpha1 	0
+		red2 	-0
+		green2	-0
+		blue2	-0
+		alpha2	-3.3
+		state_change 0.3
+	}
+
 }
 
 particle_system car_health_front_light
@@ -756,3 +805,12 @@ material vehicle_recycle_working : alpha_blend_base
 		}
 	}
 }}
+material splat_effect_dirt_car : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture Particle_Cracks_09_ex.png 	
+			tex_address_mode wrap
+		}
+}}}

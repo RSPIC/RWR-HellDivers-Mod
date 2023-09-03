@@ -24,7 +24,7 @@ key="hd_arc_mgc_capacitor_mk3.weapon"
 	burst_shots="1" 
     projectiles_per_shot="1" 
     projectile_speed="200.0"
-	barrel_offset="1.2" 
+	barrel_offset="1.6" 
 	carry_in_two_hands="1" 
 	stab_enabled="0" 
 	stab_range="0" 
@@ -41,7 +41,7 @@ key="hd_arc_mgc_capacitor_mk3.weapon"
 	<animation state_key="walking" animation_key="walking, carrying load" />
 	<animation state_key="running" animation_key="running, carrying load" />  
 
-    <sound key="fire" fileref="hd_arc_mgc_capacitor_fire_01.wav" pitch_variety="0.1" volume="1" />
+    <sound key="fire" fileref="hd_arc_mgc_capacitor_fire_01.wav" pitch_variety="0.1" volume="0.7" />
     <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />
     <sound key="dry_fire" fileref="hd_mg94_dryfire_02.wav" pitch_variety="0.03" volume="1.0" />
     <sound key="magazine_out" fileref="hd_arc_mgc_capacitor_reload.wav" volume="2"/>
@@ -151,7 +151,7 @@ key="hd_arc_mgc_capacitor_dicker.weapon"
 	<animation state_key="walking" animation_key="walking, carrying load" />
 	<animation state_key="running" animation_key="running, carrying load" />  
 
-    <sound key="fire" fileref="hd_arc_mgc_capacitor_fire_01.wav" pitch_variety="0.1" volume="1" />
+    <sound key="fire" fileref="hd_arc_mgc_capacitor_fire_01.wav" pitch_variety="0.1" volume="0.7" />
     <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />
     <sound key="dry_fire" fileref="hd_mg94_dryfire_02.wav" pitch_variety="0.03" volume="1.0" />
     <sound key="magazine_out" fileref="hd_arc_mgc_capacitor_reload.wav" volume="2"/>

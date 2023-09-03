@@ -9,6 +9,7 @@ key="acg_hk416_starry_cocoon.weapon"
     slot="0" 	
     retrigger_time="0.075" 
     accuracy_factor="1.0" 
+	spread_range="0.15"
 	stance_accuracy_rate="1.0"
     sustained_fire_grow_step="0.3" 
     sustained_fire_diminish_rate="2.8" 
@@ -135,9 +136,6 @@ key="acg_hk416_starry_cocoon.weapon"
     <modifier class="hit_success_probability" value="0.0" />
     <modifier class="detectability" value="0.0" />
 
-    <shield offset="0 0 0" extent="0 0 0" />  
-
-
 </weapon>
 <weapon 
 file="_rare_weapon_mk3.base"
@@ -215,7 +213,7 @@ key="acg_hk416_starry_cocoon_gl.weapon"
 	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0"> 
 		<!-- 重榴弹 -->
 		<result class="spawn" instance_class="projectile" instance_key="hk416_starry_cocoon_gl.projectile" 
-		min_amount="25" max_amount="25" offset="0 1 0" position_spread="3 0" direction_spread="0.1 0" />	
+		min_amount="25" max_amount="35" offset="0 1 0" position_spread="3 0" direction_spread="0.1 0" />	
 
 		<trigger class="impact" time_to_live="1.5"  />
 		<rotation class="motion" />
@@ -267,9 +265,6 @@ key="acg_hk416_starry_cocoon_gl.weapon"
     <modifier class="hit_success_probability" value="0.0" />
     <modifier class="detectability" value="0.0" />
 
-    <shield offset="0 0 0" extent="0 0 0" />  
-
-
 </weapon>
 <weapon 
 file="_rare_weapon_mk3_re.base"
@@ -280,6 +275,7 @@ key="re_acg_hk416_starry_cocoon.weapon"
     slot="0" 	
     retrigger_time="0.075" 
     accuracy_factor="1.0" 
+	spread_range="0.15"
 	stance_accuracy_rate="1.0"
     sustained_fire_grow_step="0.3" 
     sustained_fire_diminish_rate="2.8" 
@@ -406,8 +402,6 @@ key="re_acg_hk416_starry_cocoon.weapon"
     <modifier class="hit_success_probability" value="0.0" />
     <modifier class="detectability" value="0.0" />
 
-    <shield offset="0 0 0" extent="0 0 0" />  
-
 
 </weapon>
 <weapon 
@@ -486,7 +480,7 @@ key="re_acg_hk416_starry_cocoon_gl.weapon"
 	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0"> 
 		<!-- 重榴弹 -->
 		<result class="spawn" instance_class="projectile" instance_key="hk416_starry_cocoon_gl.projectile" 
-		min_amount="25" max_amount="25" offset="0 1 0" position_spread="3 0" direction_spread="0.1 0" />	
+		min_amount="25" max_amount="35" offset="0 1 0" position_spread="3 0" direction_spread="0.1 0" />	
 
 		<trigger class="impact" time_to_live="1.5"  />
 		<rotation class="motion" />
@@ -537,8 +531,6 @@ key="re_acg_hk416_starry_cocoon_gl.weapon"
     <modifier class="speed" value="0.0" /> 
     <modifier class="hit_success_probability" value="0.0" />
     <modifier class="detectability" value="0.0" />
-
-    <shield offset="0 0 0" extent="0 0 0" />  
 
 
 </weapon>

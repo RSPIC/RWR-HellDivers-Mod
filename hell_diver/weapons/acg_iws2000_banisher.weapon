@@ -40,15 +40,15 @@ key="acg_iws2000_banisher.weapon"
 	<animation state_key="hold_on_wall"  animation_key="" /><!--架枪动作，全身动作-->
     <animation state_key="still_against_wall" animation_key="" /><!--靠墙动作，全身动作-->
     <animation state_key="hold_casual" animation_key="" /><!--闲置动作，全身动作-->
-	<animation state_key="running" animation_key="" /><!--全身动作-->
-	<animation state_key="walking" animation_key="" /><!--按shift时候的静步前进动作，全身动作-->
-    <animation state_key="walking_backwards" animation_key="" /><!--全身动作-->
+	<animation state_key="walking" animation_key="walking, carrying load" />
+	<animation state_key="running" animation_key="running, carrying load" />     <animation state_key="walking_backwards" animation_key="" /><!--全身动作-->
     <animation state_key="crouching" animation_key="IWS2000_sit_shoot" /><!--蹲姿静止动作，全身动作-->
 	<animation state_key="crouch_moving" animation_key="" /><!--全身动作-->
 	<animation state_key="crouch_moving_backwards" animation_key="" /><!--全身动作-->
     <animation state_key="prone_still" animation_key="" /><!--全身动作-->
 	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
 	<animation state_key="stabbing" animation_key="melee, bayonet" /><!--半身动作，武器可设置脱手-->
+
 
     <sound key="effect" fileref="" pitch_variety="0.03" volume="1.0" /> 
     <sound key="fire" fileref="acg_iws2000_fire.wav" pitch_variety="0.03" volume="1.2" />
@@ -177,9 +177,8 @@ key="re_acg_iws2000_banisher.weapon"
 	<animation state_key="hold_on_wall"  animation_key="" /><!--架枪动作，全身动作-->
     <animation state_key="still_against_wall" animation_key="" /><!--靠墙动作，全身动作-->
     <animation state_key="hold_casual" animation_key="" /><!--闲置动作，全身动作-->
-	<animation state_key="running" animation_key="" /><!--全身动作-->
-	<animation state_key="walking" animation_key="" /><!--按shift时候的静步前进动作，全身动作-->
-    <animation state_key="walking_backwards" animation_key="" /><!--全身动作-->
+	<animation state_key="walking" animation_key="walking, carrying load" />
+	<animation state_key="running" animation_key="running, carrying load" />     <animation state_key="walking_backwards" animation_key="" /><!--全身动作-->
     <animation state_key="crouching" animation_key="IWS2000_sit_shoot" /><!--蹲姿静止动作，全身动作-->
 	<animation state_key="crouch_moving" animation_key="" /><!--全身动作-->
 	<animation state_key="crouch_moving_backwards" animation_key="" /><!--全身动作-->

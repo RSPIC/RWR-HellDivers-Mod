@@ -408,7 +408,7 @@ class BasicCommandHandler : Tracker {
 			spawnInstanceNearPlayer(senderId, "Warlord", "soldier", 1);                               
 			spawnInstanceNearPlayer(senderId, "Hulk", "soldier", 1);                               
 			spawnInstanceNearPlayer(senderId, "Butcher", "soldier", 1);    
-		}
+		} 
 	}
 
 	// --------------------------------------------

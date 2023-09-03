@@ -203,6 +203,14 @@
 	</model>
 	<model filename="acg_m14.xml" > <!--M14--><requirement class="weapon" slot="0" key="re_acg_m14.weapon"/>
 	</model>
+	<model filename="acg_g41_7406.xml" > <!--G41 太空--><requirement class="weapon" slot="0" key="acg_g41_universe.weapon"/>
+	</model>
+	<model filename="acg_g41_7406.xml" > <!--G41 太空--><requirement class="weapon" slot="0" key="re_acg_g41_universe.weapon"/>
+	</model>
+	<model filename="acg_mg3.xml" > <!--MG3--><requirement class="weapon" slot="0" key="acg_mg3.weapon"/>
+	</model>
+	<model filename="acg_mg3.xml" > <!--MG3--><requirement class="weapon" slot="0" key="re_cg_mg3.weapon"/>
+	</model>
 <!-- 灰烬战线 -->
 	
 

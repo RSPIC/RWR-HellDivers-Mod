@@ -54,7 +54,7 @@ key="acg_miyu.weapon"
     <animation state_key="hold" animation_key="" /><!--站姿静止动作，全身动作-->
 	<animation state_key="hold_on_wall"  animation_key="" /><!--架枪动作，全身动作-->
     <animation state_key="still_against_wall" animation_key="" /><!--靠墙动作，全身动作-->
-    <animation state_key="hold_casual" animation_key="" /><!--闲置动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="acg_miyu_casual" /><!--闲置动作，全身动作-->
 	<animation state_key="running" animation_key="" /><!--全身动作-->
 	<animation state_key="walking" animation_key="" /><!--按shift时候的静步前进动作，全身动作-->
     <animation state_key="walking_backwards" animation_key="" /><!--全身动作-->
@@ -213,7 +213,7 @@ key="re_acg_miyu.weapon"
     <animation state_key="hold" animation_key="" /><!--站姿静止动作，全身动作-->
 	<animation state_key="hold_on_wall"  animation_key="" /><!--架枪动作，全身动作-->
     <animation state_key="still_against_wall" animation_key="" /><!--靠墙动作，全身动作-->
-    <animation state_key="hold_casual" animation_key="" /><!--闲置动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="acg_miyu_casual" /><!--闲置动作，全身动作-->
 	<animation state_key="running" animation_key="" /><!--全身动作-->
 	<animation state_key="walking" animation_key="" /><!--按shift时候的静步前进动作，全身动作-->
     <animation state_key="walking_backwards" animation_key="" /><!--全身动作-->

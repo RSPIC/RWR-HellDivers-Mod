@@ -22,8 +22,8 @@ key="hd_m5_apc_autocannon.weapon">
     projectiles_per_shot="1" />
 	<!-- 300 rpm  180 mag  -->
 
-    <sound class="operation" key="fire" fileref="hd_m5_apc_autocannon.wav" pitch_variety="0.0" volume="1.0"/>
-    <sound class="operation" key="fire" fileref="hd_m5_apc_autocannon.wav" pitch_variety="0.15" volume="1.0"/>
+    <sound class="operation" key="fire" fileref="hd_m5_apc_autocannon.wav" pitch_variety="0.0" volume="0.7"/>
+    <sound class="operation" key="fire" fileref="hd_m5_apc_autocannon.wav" pitch_variety="0.15" volume="0.7"/>
 	<model mesh_filename="" texture_filename="" />
     <hud_icon filename="hd_m5_apc_autocannon.png" />
 	

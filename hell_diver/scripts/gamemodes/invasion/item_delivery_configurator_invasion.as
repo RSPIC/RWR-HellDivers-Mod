@@ -234,6 +234,8 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			ScoredResource("token_shirasu_azusa.projectile","projectile",1.0f,4),
 			ScoredResource("token_laisha.projectile","projectile",1.0f,4),
 			ScoredResource("token_ba_iroha.projectile","projectile",1.0f,4),
+			ScoredResource("token_mg3.projectile","projectile",1.0f,4),
+			ScoredResource("token_g41_space.projectile","projectile",1.0f,4),
 
 			ScoredResource("token_amamiya_kokoro.projectile","projectile",1.0f,4)
 			},
@@ -345,6 +347,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_mari_sports_ver.weapon", "weapon", 1.0f),         
          	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f),
          	ScoredResource("ex_funnelnet.weapon", "weapon", 1.0f),
+         	ScoredResource("acg_mg3.weapon", "weapon", 1.0f),
          	ScoredResource("ex_izanagis_burden.weapon", "weapon", 1.0f)
 			},
 			{
@@ -511,6 +514,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_mari_sports_ver.weapon", "weapon", 1.0f),
         	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f),
          	ScoredResource("ex_funnelnet.weapon", "weapon", 1.0f),
+         	ScoredResource("acg_mg3.weapon", "weapon", 1.0f),
         	ScoredResource("ex_izanagis_burden.weapon", "weapon", 1.0f)
 			},
 			{
@@ -552,6 +556,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_mari_sports_ver.weapon", "weapon", 1.0f),
         	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f),
          	ScoredResource("ex_funnelnet.weapon", "weapon", 1.0f),
+         	ScoredResource("acg_mg3.weapon", "weapon", 1.0f),
         	ScoredResource("ex_izanagis_burden.weapon", "weapon", 1.0f)
 			},
 			{
@@ -607,6 +612,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 
         	ScoredResource("acg_sinteria_bow.weapon", "weapon", 1.0f),
         	ScoredResource("acg_hongxue.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_g41_universe.weapon", "weapon", 1.0f),
         	ScoredResource("acg_amamiya_kokoro.weapon", "weapon", 1.0f),
 
         	ScoredResource("acg_kemomimi.weapon", "weapon", 1.0f),
@@ -620,6 +626,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_mari_sports_ver.weapon", "weapon", 1.0f),
         	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f),
          	ScoredResource("ex_funnelnet.weapon", "weapon", 1.0f),
+         	ScoredResource("acg_mg3.weapon", "weapon", 1.0f),
         	ScoredResource("ex_izanagis_burden.weapon", "weapon", 1.0f)
 			},
 			{
@@ -649,6 +656,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_iws2000_banisher.weapon", "weapon", 1.0f),
         	ScoredResource("acg_g41_bp2077.weapon", "weapon", 1.0f),
         	ScoredResource("acg_hongxue.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_g41_universe.weapon", "weapon", 1.0f),
         	ScoredResource("acg_amamiya_kokoro.weapon", "weapon", 1.0f)
 			},
 			{
@@ -690,6 +698,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_mari_sports_ver.weapon", "weapon", 1.0f),
         	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f),
          	ScoredResource("ex_funnelnet.weapon", "weapon", 1.0f),
+         	ScoredResource("acg_mg3.weapon", "weapon", 1.0f),
         	ScoredResource("ex_izanagis_burden.weapon", "weapon", 1.0f)
 			},
 			{
@@ -730,6 +739,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_mari_sports_ver.weapon", "weapon", 1.0f),
         	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f),
          	ScoredResource("ex_funnelnet.weapon", "weapon", 1.0f),
+         	ScoredResource("acg_mg3.weapon", "weapon", 1.0f),
         	ScoredResource("ex_izanagis_burden.weapon", "weapon", 1.0f)
 			},
 			{
@@ -820,6 +830,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_iws2000_banisher.weapon", "weapon", 1.0f),
         	ScoredResource("acg_g41_bp2077.weapon", "weapon", 1.0f),
         	ScoredResource("acg_hongxue.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_g41_universe.weapon", "weapon", 1.0f),
         	ScoredResource("acg_amamiya_kokoro.weapon", "weapon", 1.0f),
 
         	ScoredResource("acg_kemomimi.weapon", "weapon", 1.0f),
@@ -834,6 +845,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_mari_sports_ver.weapon", "weapon", 1.0f),
         	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f),
          	ScoredResource("ex_funnelnet.weapon", "weapon", 1.0f),
+         	ScoredResource("acg_mg3.weapon", "weapon", 1.0f),
         	ScoredResource("ex_izanagis_burden.weapon", "weapon", 1.0f)
 			},
 			{
@@ -917,7 +929,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		ScoredResource("reward_box_weapon_pi.carry_item", "carry_item", 0.01f),
 
 		// mk1~mk3 非卖 期望＞30w
-		ScoredResource("reward_box_weapon_omega.carry_item", "carry_item", 0.1f),
+		ScoredResource("reward_box_weapon_omega.carry_item", "carry_item", 0.7f),
 
 		ScoredResource("reward_box_hdicker.carry_item", "carry_item", 0.2f)
 

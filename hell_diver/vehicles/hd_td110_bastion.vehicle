@@ -52,6 +52,9 @@ ai_driver_turns_to_target="1"
 	1<turret offset="0.085 -0.1 -1.2" weapon_key="auxiliary_car_fire_aim.weapon" weapon_offset="0.25 2.55 6.5" 
 	weapon_recoil="0" physics_recoil="0" max_rotation_step="0.00005" rotation_range="0.3" />
 	2<turret offset="0.2 1.5 2" weapon_key="hd_m5_apc_mg94.weapon" weapon_offset="0 0.2 0.7" weapon_recoil="0.01" max_rotation_step="0.00012"  rotation_range="0.38" />
+	3<turret offset="0.085 -0.1 -1.2" weapon_key="hd_vehicle_152mm_eject_td110.weapon" weapon_offset="0.25 2.55 6.5" 
+	weapon_recoil="0" physics_recoil="0" max_rotation_step="0.00005" rotation_range="0.3" />
+
 	<!-- 车体\炮台 -->
 	<visual class="chassis" mesh_filename="hd_td110_bastion.mesh" texture_filename="hd_td110_bastion_main.png" />
 	<visual class="turret" offset="0 0 1.0" turret_index="0" mesh_filename="hd_td110_bastion_at.mesh" texture_filename="hd_td110_bastion_at.png" />
@@ -71,7 +74,7 @@ ai_driver_turns_to_target="1"
 
 	<character_slot type="driver" enter_position="0 0.3 3" seat_position="0 0.3 2"  rotation="0" exit_rotation="0" hiding="1" />
 	<character_slot type="gunner" position="0 0.3 -3.5" rotation="0" exit_rotation="-3.14" hiding="1" >
-		<turret index="0"/>	<turret index="1"/> <turret index="2"/>
+		<turret index="0"/>	<turret index="1"/> <turret index="2"/><turret index="3"/>
 	</character_slot>
 
 
@@ -93,13 +96,9 @@ ai_driver_turns_to_target="1"
 	<effect event_key="slide" type="splat_map" surface_tag="road" size="1.0" atlas_index="5" layer="0" />
 	<effect event_key="slide_hard" type="splat_map" surface_tag="road" size="0.5" atlas_index="2" layer="0" />
 	<effect event_key="slide" type="splat_map" surface_tag="dirt" size="1.0" atlas_index="2" layer="1" />
-	<effect event_key="slide" type="particle" key="terrain" surface_tag="dirt" ref="car_slide_up_smoke" use_surface_color="1" />
-	<effect event_key="slide_hard" type="particle" key="terrain" surface_tag="dirt" ref="car_slide_up_smoke" use_surface_color="1" />
-  
-	<effect event_key="slide" type="particle" key="terrain" surface_tag="road" ref="car_slide_up_smoke" use_surface_color="1" />
-	<effect event_key="slide_hard" type="particle" key="terrain" surface_tag="road" ref="car_slide_up_smoke" use_surface_color="1" />
 
-  	<effect event_key="drive" type="particle" key="terrain" ref="car_slide_up_smoke" use_surface_color="1" />
+  	<!-- <effect event_key="drive" type="particle" key="terrain" ref="car_slide_up_smoke" use_surface_color="1" /> -->
+  	<effect event_key="drive" type="particle" key="terrain" ref="car_slide_up_crash" use_surface_color="1" />
  
 	<effect event_key="drive_chassis" ref="car_health_front_light" offset="-3 0 15" />
 	<effect event_key="drive_chassis" ref="car_health_front_light" offset="3 0 15" />

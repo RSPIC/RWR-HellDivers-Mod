@@ -40,58 +40,58 @@ character_leave_request_mode="friendly"
 	remove_collision_threshold="0.2"
 	visual_offset="0 0.6 0.0" /> 
 	
-turret
-	0<turret offset="0 0 -1.08" weapon_key="hd_vehicle_null.weapon" weapon_offset="0 0 0" weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.00005" />
 cannon
-	1<turret offset="0.0 0 -1.08" 	weapon_key="m61a5_at.weapon" 			weapon_offset="-0.55 2.3 7.0" 	weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.00005" />
+	0<turret offset="0 0 -1" 	weapon_key="m61a5_at.weapon" 			weapon_offset="-0.55 2.3 5.0" 	weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.00005"/>
 cannon2
-	2<turret offset="0.0 0 -1.08" 	weapon_key="m61a5_at.weapon" 			weapon_offset="0.55 2.3 7.0" 	weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.00005" />
+	1<turret offset="0 0 -1" 	weapon_key="m61a5_at.weapon" 			weapon_offset="0.55 2.3 5.0" 	weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.00005"/>
+turret
+	2<turret offset="0 0 -1.08" weapon_key="hd_vehicle_null.weapon" weapon_offset="0 0 0" weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.00005" />
 command
 	3<turret offset="0.0 0 -0.2" 	weapon_key="hd_vehicle_hmg.weapon" 			weapon_offset="0.0 4.5.0 0.5" 	weapon_recoil="0"  physics_recoil="0" max_rotation_step="0.0001" rotation_range="2.5" parent_turret_index="0"/>
 LMG	
 	4<turret offset="0.8 3.8 -3.2" 	weapon_key="hd_vehicle_lmg.weapon" 			weapon_offset="0.0 0.55 0.0" 	weapon_recoil="0" physics_recoil="0.1" rotation="-9.4" rotation_range="2.1" max_rotation_step="0.0001" parent_turret_index="0" />	
 coax
-	5<turret offset="0.0 3.35 -1.08" 	weapon_key="hd_vehicle_lmg.weapon" 			weapon_offset="-0.62 0.27 1.4" 	weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.00005" />
+	5<turret offset="0.0 3.35 -1.08" 	weapon_key="hd_vehicle_lmg.weapon" 			weapon_offset="-0.62 0.27 1.4" 	weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.00005" rotation_range="0.01" parent_turret_index="0"/>
 coax
-	6<turret offset="0.0 3.35 -1.08" 	weapon_key="hd_vehicle_lmg.weapon" 			weapon_offset="0.62 0.27  1.4" 	weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.00005" />
+	6<turret offset="0.0 3.35 -1.08" 	weapon_key="hd_vehicle_lmg.weapon" 			weapon_offset="0.62 0.27  1.4" 	weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.00005" rotation_range="0.01" parent_turret_index="0"/>
 	
-	<visual class="chassis"                                  mesh_filename="m61a5_body.mesh" texture_filename="m61a5_body.png" max_tilt="0.06" />
-	<visual class="turret" turret_index="0" 			 	 mesh_filename="m61a5_turret.mesh" texture_filename="m61a5_turret.png" />
-	<visual class="turret" turret_index="1" 			 	 mesh_filename="m61a5_gun.mesh" 					texture_filename="m61a5_turret.png" />
-	<visual class="turret" turret_index="2" 			 	 mesh_filename="40mm.mesh"					texture_filename="40mm.png" />
-	<visual class="turret" turret_index="3" 				 mesh_filename="m61a5_mg.mesh" 	texture_filename="m61a5_turret.png" />
+	<visual class="chassis"                                  mesh_filename="m61a5_body.mesh" texture_filename="m61a5_body.jpg" max_tilt="0.06" />
+	<visual class="turret" turret_index="0" 			 	 mesh_filename="m61a5_gun.mesh" 					texture_filename="m61a5_turret.jpg" />
+	<visual class="turret" turret_index="1" 			 	 mesh_filename="40mm.mesh"					texture_filename="40mm.png" />
+	<visual class="turret" turret_index="2" 			 	 mesh_filename="m61a5_turret.mesh" texture_filename="m61a5_turret.jpg" />
+	<visual class="turret" turret_index="3" 				 mesh_filename="m61a5_mg.mesh" 	texture_filename="m61a5_turret.jpg" />
 	<visual class="turret" turret_index="4" 				 mesh_filename=".mesh" 	texture_filename="" />
 	
-	<visual class="chassis" 				 key="broken"    mesh_filename="m61a5_body.mesh" texture_filename="m61a5_body.png" />
-	<visual class="turret" turret_index="0"  key="broken" 	 mesh_filename="m61a5_turret.mesh" texture_filename="m61a5_turret.png" />  
-	<visual class="turret" turret_index="1"  key="broken" 	 mesh_filename="m61a5_gun.mesh" 					texture_filename="m61a5_turret.png" />	
-	<visual class="turret" turret_index="2"  key="broken" 	 mesh_filename="40mm.mesh" 					texture_filename="40mm.png" />	
-	<visual class="turret" turret_index="3"  key="broken" 	 mesh_filename="m61a5_mg.mesh" 	texture_filename="m61a5_turret.png" />	
+	<visual class="chassis" 				 key="broken"    mesh_filename="m61a5_body.mesh" texture_filename="m61a5_body.jpg" />
+	<visual class="turret" turret_index="0"  key="broken" 	 mesh_filename="m61a5_gun.mesh" 					texture_filename="m61a5_turret.jpg" />	
+	<visual class="turret" turret_index="1"  key="broken" 	 mesh_filename="40mm.mesh" 					texture_filename="40mm.png" />	
+	<visual class="turret" turret_index="2"  key="broken" 	 mesh_filename="m61a5_turret.mesh" texture_filename="m61a5_turret.jpg" />  
+	<visual class="turret" turret_index="3"  key="broken" 	 mesh_filename="m61a5_mg.mesh" 	texture_filename="m61a5_turret.jpg" />	
 	<visual class="turret" turret_index="4"  key="broken" 	 mesh_filename=".mesh" 	texture_filename="" />	
 	
 	<visual class="track" mesh_filename="m61a5_tracks_left.mesh" offset="0 0 0" >
-		<part texture_filename="m61a5_tracks.png" texture_animation="translate" tire_binding="1" />
+		<part texture_filename="m61a5_tracks.jpg" texture_animation="translate" tire_binding="1" />
 	</visual>	
 	<visual class="track" mesh_filename="m61a5_tracks_right.mesh" offset="0 0 0" >
-		<part texture_filename="m61a5_tracks.png" texture_animation="translate" tire_binding="0" />
+		<part texture_filename="m61a5_tracks.jpg" texture_animation="translate" tire_binding="0" />
 	</visual>
 
 	<visual class="track" mesh_filename="m61a5_wheels_left.mesh" offset="0 0 0" >
-		<part texture_filename="m61a5_body.png" />
+		<part texture_filename="m61a5_body.jpg" />
 		<part texture_filename="m61a5_wheel_01.png" texture_animation="rotate" tire_binding="0" />
 		<part texture_filename="m61a5_wheel_02.png" texture_animation="rotate" tire_binding="0" />
 	</visual>	
 	<visual class="track" mesh_filename="m61a5_wheels_right.mesh" offset="0 0 0" >
-		<part texture_filename="m61a5_body.png" />
+		<part texture_filename="m61a5_body.jpg" />
 		<part texture_filename="m61a5_wheel_01.png" texture_animation="rotate" tire_binding="1" />
 		<part texture_filename="m61a5_wheel_02.png" texture_animation="rotate" tire_binding="1" />
 	</visual>
 
 	<character_slot type="driver" position="1.5 0.5 1.5" rotation="0" exit_rotation="1.57" hiding="1" animation_id="36" />
 	<character_slot type="gunner" position="-1.5 0.5 1.5" rotation="0" exit_rotation="-1.57" hiding="1" animation_id="37">
-		<turret index="1" /><turret index="0" /><turret index="2"/><turret index="5"/><turret index="6"/>
+		<turret index="0" /><turret index="1" /><turret index="2"/><turret index="5"/><turret index="6"/>
 	</character_slot>
-	<character_slot type="gunner" attached_on_turret="3" enter_position="-1.5 0.5 -0.5" seat_position="0 2.7 -1" rotation="0" exit_rotation="-1.57" hiding="0" animation_key="tank mg still" marker_offset="0 1.0 0">
+	<character_slot type="gunner" attached_on_turret="3" enter_position="-1.5 0.5 -0.5" seat_position="0 2.7 0" rotation="0" exit_rotation="-1.57" hiding="0" animation_key="tank mg still" marker_offset="0 1.0 0">
 		<turret index="3" />
 	</character_slot>
 	<character_slot type="gunner" attached_on_turret="4" enter_position="-1.5 0.5 -1" seat_position="0 -0.9 0" rotation="0" exit_rotation="-1.57" hiding="0" animation_key="hold, lmg" marker_offset="0 1.0 0">

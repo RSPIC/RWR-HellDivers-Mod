@@ -8,8 +8,8 @@ key="t90m3_2a46_125mm.weapon"
 	<specification 
     retrigger_time="9" 
     accuracy_factor="1.0" 
-    sustained_fire_grow_step="0.8" 
-    sustained_fire_diminish_rate="0.8" 
+    sustained_fire_grow_step="0.9" 
+    sustained_fire_diminish_rate="0.1" 
     magazine_size="-1" 
     can_shoot_standing="0" 
     can_shoot_crouching="0" 
@@ -20,7 +20,10 @@ key="t90m3_2a46_125mm.weapon"
     slot="2" 
     barrel_offset="2" 
     projectiles_per_shot="1" 
-    sight_height_offset="2.0" />
+    sight_height_offset="2.0" 
+	cooldown_start="0.9"
+	cooldown_end="0.0"
+	/>
     
     <model mesh_filename="t90m3_cannon.mesh" texture_filename="t90m3_body.png" />
     <hud_icon filename="hud_2a46_he.png" />

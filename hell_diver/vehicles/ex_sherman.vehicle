@@ -56,8 +56,8 @@ character_leave_request_mode="friendly"
 	weapon_recoil="0" physics_recoil="0" max_rotation_step="0.00005" />
 	
 	<!-- 车体\炮台 -->
-	<visual class="chassis" mesh_filename="sherman_body.mesh" texture_filename="sherman.png" max_tilt="0.02" />
-	<visual class="turret" turret_index="0" mesh_filename="sherman_turret.mesh" texture_filename="sherman.png"/>
+	<visual class="chassis" mesh_filename="sherman_body.mesh" texture_filename="sherman.jpg" max_tilt="0.02" />
+	<visual class="turret" turret_index="0" mesh_filename="sherman_turret.mesh" texture_filename="sherman.jpg"/>
 	<visual class="turret" turret_index="1" mesh_filename="sherman_gun.mesh" texture_filename="sherman_gun.png"/>
 	<visual class="turret" turret_index="2" mesh_filename=".mesh" texture_filename=""/>
 	<visual class="turret" turret_index="3" mesh_filename="m5apc_mg.mesh" texture_filename="hd_m5_body.png"/>
@@ -78,7 +78,7 @@ character_leave_request_mode="friendly"
 	</visual>
 
 	<!-- 破损车体\炮台 -->
-	<visual class="chassis" key="broken" mesh_filename="sherman_body.mesh" texture_filename="sherman_broken.png" />
+	<visual class="chassis" key="broken" mesh_filename="sherman_body.mesh" texture_filename="sherman_broken.jpg" />
 
 	<!-- 玩家 -->
 	<character_slot type="driver" position="1.4 0.6 1.5" rotation="0" exit_rotation="1.5" hiding="1" animation_id="36" />

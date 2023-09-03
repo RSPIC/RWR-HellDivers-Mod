@@ -60,7 +60,7 @@ key="hd_arc_as5_resistance_mk3.weapon"
 
 	<!--武器音频-->
     <sound key="effect" fileref="" pitch_variety="0" volume="1.0" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
-    <sound key="fire" fileref="hd_arc_as5_resistance_fire.wav" pitch_variety="0.05" volume="2.0" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
+    <sound key="fire" fileref="hd_arc_as5_resistance_fire.wav" pitch_variety="0.05" volume="1.0" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
     <sound key="dry_fire" fileref="" pitch_variety="0.03" volume="1.0" /><!--空弹射击扳机音效-->
 	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
 	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
@@ -88,7 +88,7 @@ key="hd_arc_as5_resistance_mk3.weapon"
     tweak_factor="20" />  
 
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
-    <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="0" 
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="0" 
 	time_to_live="0.088" radius="0.3" can_be_detected_by_driver="0" can_be_disarmed="0" name="AS-5 Resistance"> 
 
 		<result class="hit" kill_probability="2.0" 
@@ -203,7 +203,7 @@ key="hd_arc_as5_resistance_dicker.weapon"
 
 	<!--武器音频-->
     <sound key="effect" fileref="" pitch_variety="0" volume="1.0" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
-    <sound key="fire" fileref="hd_arc_as5_resistance_fire.wav" pitch_variety="0.05" volume="2.0" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
+    <sound key="fire" fileref="hd_arc_as5_resistance_fire.wav" pitch_variety="0.05" volume="1.0" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
     <sound key="dry_fire" fileref="" pitch_variety="0.03" volume="1.0" /><!--空弹射击扳机音效-->
 	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
 	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />

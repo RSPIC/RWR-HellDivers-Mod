@@ -146,7 +146,13 @@ class schedule_Manager : Tracker {
         if(g_debugMode) _report(m_metagame,"更新玩家PID为="+pid);
         @player = getPlayerInfo(m_metagame,pid);
         updateGlobalPlayerInfo(m_metagame,player);
-
+        if(player is null){
+            @player = getPlayerInfo(m_metagame,pid);
+            updateGlobalPlayerInfo(m_metagame,player);
+            if(player is null){
+                return;
+            }
+        }
         string name = player.getStringAttribute("name");
         string profile_hash = player.getStringAttribute("profile_hash");
         string sid = player.getStringAttribute("sid");

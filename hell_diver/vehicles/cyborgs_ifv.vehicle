@@ -102,7 +102,7 @@ character_leave_request_mode="friendly"
 	<effect event_key="slide" type="particle" key="terrain" surface_tag="road" ref="car_slide_up_smoke" use_surface_color="1" />
 	<effect event_key="slide_hard" type="particle" key="terrain" surface_tag="road" ref="car_slide_up_smoke" use_surface_color="1" />
 
-  	<effect event_key="drive" type="particle" key="terrain" ref="car_slide_up_smoke" use_surface_color="1" />
+  	<effect event_key="drive" type="particle" key="terrain" ref="car_slide_up_crash" use_surface_color="1" />
  
 	<effect event_key="drive_chassis" ref="car_health_front_light" offset="-3 0 15" />
 	<effect event_key="drive_chassis" ref="car_health_front_light" offset="3 0 15" />

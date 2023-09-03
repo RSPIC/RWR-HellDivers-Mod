@@ -1133,7 +1133,7 @@ class IO_data : Tracker {
 
             addListItemInBackpack(m_metagame,cid,resources);
 
-            GiveRP(m_metagame,cid,120000);
+            GiveRP(m_metagame,cid,1200000);
             dictionary a;
             a["%reward"] = "RP: 120w 、加成卡和战利品箱子";
             notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);

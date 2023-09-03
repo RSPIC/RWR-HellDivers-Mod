@@ -118,19 +118,19 @@ class GiftItemDeliveryRandomRewarder : ItemDeliveryRewarder {
 						for(int i1=0;i1<r.m_amount;i1++){
 							command.appendChild(k);
 						}
-						string name = getResourceName(m_metagame, r.m_key, r.m_type);
-						a["%item_name" + formatInt(i+1)] = name;
+						// string name = getResourceName(m_metagame, r.m_key, r.m_type);
+						// a["%item_name" + formatInt(i+1)] = name;
 					}
-					if (massage_num < 10)
-					{
-						sendPrivateMessageKey(m_metagame, playerId, "gift box delivery, reward", a);
-						massage_num++;
-					}
-					else if (!last_message)
-					{
-						sendPrivateMessageKey(m_metagame, playerId, "gift box delivery, max", a);
-						last_message = true;
-					}
+					// if (massage_num < 10)
+					// {
+					// 	sendPrivateMessageKey(m_metagame, playerId, "gift box delivery, reward", a);
+					// 	massage_num++;
+					// }
+					// else if (!last_message)
+					// {
+					// 	sendPrivateMessageKey(m_metagame, playerId, "gift box delivery, max", a);
+					// 	last_message = true;
+					// }
 				}
 				m_metagame.getComms().send(command);
 			}

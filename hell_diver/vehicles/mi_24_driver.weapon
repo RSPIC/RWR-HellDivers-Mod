@@ -125,7 +125,7 @@ key="mi_24_driver.weapon"
     <stance state_key="prone_moving" accuracy="0.5" />
     <stance state_key="over_wall" accuracy="1.8" />     
 
-    <model mesh_filename="mi_24_body.mesh" texture_filename="mi_24.png"/> 
+    <model mesh_filename="mi_24_body.mesh" texture_filename="mi_24.jpg"/> 
 	<shield offset="3 1 0" extent="15 3 7" usable_for_cover="0"/>  
 
 </weapon>
@@ -287,7 +287,7 @@ key="mi_24_model_wing1.weapon"
 		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
     </projectile>
 
-    <model mesh_filename="mi_24_wing1.mesh" texture_filename="mi_24.png"/> 
+    <model mesh_filename="mi_24_wing1.mesh" texture_filename="mi_24.jpg"/> 
 	<!-- <shield offset="3 1 0" extent="15 3 10" usable_for_cover="0"/>   -->
 
 </weapon>
@@ -359,7 +359,7 @@ key="mi_24_model_wing2.weapon"
 
     </projectile>
 
-    <model mesh_filename="mi_24_wing2.mesh" texture_filename="mi_24.png"/> 
+    <model mesh_filename="mi_24_wing2.mesh" texture_filename="mi_24.jpg"/> 
 	<!-- <shield offset="3 1 0" extent="15 3 10" usable_for_cover="0"/>   -->
 
 </weapon>

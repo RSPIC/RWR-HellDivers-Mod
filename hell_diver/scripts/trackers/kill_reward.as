@@ -99,8 +99,10 @@ dictionary recommend_kill_weapon_bonus = {
 //不计入结算击杀的伤害
 dictionary exclude_kill_target = {
 
-
         {"hd_offensive_shredder_missile_strike_mk3_damage_2.projectile",true},
+        {"wand_damage_04.projectile",true},
+        {"acg_patricia_FatalDrive_damage.projectile",true},
+        {"ex_hyper_mega_bazooka_launcher_skill_damage.projectile",true},
 
         {"",-1}
 
