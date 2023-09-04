@@ -19,7 +19,7 @@ key="hd_psc_rx1_railgun_full_upgrade.weapon"
 	reload_one_at_a_time="0" 
 	projectile_speed="300.0" 
 	barrel_offset="1.2" 
-	projectiles_per_shot="5" 
+	projectiles_per_shot="10" 
 	burst_shots="1"
 	use_basic_muzzle_smoke_effect="0"
 	/>
@@ -55,9 +55,7 @@ key="hd_psc_rx1_railgun_full_upgrade.weapon"
 
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="10" time_to_live="0.4" name="RX-1 Railgun">
 
-		<result class="hit" kill_probability="2.0" 
-		kill_probability_offset_on_successful_hit="20"
-		kill_decay_start_time="0.2" kill_decay_end_time="0.467" character_state="stun"/>
+		<result class="blast" radius="2.5" damage="15" push="0.5" decal="0" character_state="stun"  />
 		<!-- slower decay -->
 		<!-- 抵抗护甲抗致死衰减影响 -->
 		<!-- 50m max damage range -->

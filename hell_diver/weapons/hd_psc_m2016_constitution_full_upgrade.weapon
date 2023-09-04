@@ -26,7 +26,7 @@ key="hd_psc_m2016_constitution_full_upgrade.weapon"
 	barrel_offset="1.0" 
 	carry_in_two_hands="1" 
 	stab_enabled="1" 
-	stab_range="2.5" 
+	stab_range="2.8" 
 	/> 
 	<!--5/5 mag -->
 	<!--78/78 RPM 	0.55/0.55s per/reload 3.1s/2.2s ALL reload(tactical)	40M range-->
@@ -56,7 +56,7 @@ key="hd_psc_m2016_constitution_full_upgrade.weapon"
 	<animation state_key="crouch_moving_backwards" animation_key="" /><!--全身动作-->
     <animation state_key="prone_still" animation_key="" /><!--全身动作-->
 	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
-	<animation state_key="stabbing" animation_key="melee, bayonet" /><!--半身动作，武器可设置脱手-->
+	<animation state_key="stabbing" animation_key="hd_q_spin_meele" /><!--半身动作，武器可设置脱手-->
 
 	<!--武器音频-->
     <sound key="effect" fileref="" pitch_variety="0" volume="1.0" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
@@ -99,7 +99,7 @@ key="hd_psc_m2016_constitution_full_upgrade.weapon"
 		kill_decay_start_time="0.48" kill_decay_end_time="0.70" />
 		-->
 		<result class="hit" kill_probability="2.0" 
-		kill_probability_offset_on_successful_hit="100"
+		kill_probability_offset_on_successful_hit="420"
 		kill_decay_start_time="0.2" kill_decay_end_time="0.467" character_state="none"/>
 		<!-- slower decay -->
 		<!-- 40m max damage range -->
@@ -145,17 +145,8 @@ key="hd_psc_m2016_constitution_full_upgrade.weapon"
 	<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
 	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 
 	<effect class="muzzle" ref="general_weapon_muzzle_trail_smoke" lighting="0"/> 
-	
-	
-	<!--姿态精度-->
-    <!-- <stance state_key="running" accuracy="1" /> 
-    <stance state_key="walking" accuracy="1" />
-	<stance state_key="standing" accuracy="1" />
-	<stance state_key="crouching" accuracy="1" />
-    <stance state_key="crouch_moving" accuracy="1" />
-    <stance state_key="prone" accuracy="1" /> 
-    <stance state_key="prone_moving" accuracy="1" />
-    <stance state_key="over_wall" accuracy="1" />      -->
-     
+
+
+	<modifier class="speed" value="0.2" /> 
 	 
 </weapon>

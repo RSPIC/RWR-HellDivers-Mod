@@ -8,7 +8,7 @@ key="hd_pst_tox17_sourhound_mk3.weapon"
     <specification 
     slot="1" 
     retrigger_time="0.12" 
-	last_burst_retrigger_time="1.5"
+	last_burst_retrigger_time="0.75"
     accuracy_factor="1.0" 
     sustained_fire_grow_step="0.04" 
     sustained_fire_diminish_rate="0.12" 
@@ -65,7 +65,7 @@ key="hd_pst_tox17_sourhound_mk3.weapon"
     near_far_distance="0" 
     speed_estimation_near="0" 
     speed_estimation_far="58" 
-    max_speed="35" 
+    max_speed="37" 
     randomness="0" 
     tweak_factor="1.48" /> 
 
@@ -193,7 +193,7 @@ key="hd_pst_tox17_sourhound_dicker.weapon"
     near_far_distance="0" 
     speed_estimation_near="0" 
     speed_estimation_far="58" 
-    max_speed="35" 
+    max_speed="37" 
     randomness="0" 
     tweak_factor="1.48" /> 
 

@@ -25,7 +25,7 @@ key="hd_exp_eta17_mk3.weapon"
 	burst_shots="1" 
     projectiles_per_shot="1" 
     projectile_speed="100.0"
-	barrel_offset="1.75" 
+	barrel_offset="2.5" 
 	carry_in_two_hands="1" 
 	stab_enabled="0" 
 	stab_range="0" 
@@ -89,7 +89,7 @@ key="hd_exp_eta17_mk3.weapon"
 	time_to_live="1" can_be_detected_by_driver="1" can_be_disarmed="0" name="EAT-17 MK3" radius="0.6"> 
 	
         <result class="spawn" instance_class="projectile" instance_key="hd_exp_eta17_mk3_damage.projectile" 
-		min_amount="10" max_amount="10" offset="0 0.5 0" position_spread="2 0" direction_spread="0.1 0" />
+		min_amount="40" max_amount="50" offset="0 0.5 0" position_spread="2 0" direction_spread="0.1 0" />
 		<!-- damage 280 轰炸伤-->
        	<!-- 40x7 -->
 		

@@ -5,7 +5,7 @@
 	"contentfolder"		"W:\Software\SteamSDK\sdk\hd_mod\hell_diver"
 	"previewfile"		"W:\Software\SteamSDK\sdk\hd_mod\HD_Preview.png"
 	"visibility"		"0"
-	"title"				"Running with HellDivers [keep updating]"
+	"title"				"Running with HellDivers 地狱潜兵 [keep updating]"
 	"description"		"
 RWR的地狱潜兵mod，现在完成了超级地球、Cyborgs（生化人）、Bus（虫族）三个阵营
 
@@ -38,10 +38,10 @@ DILING
 
 主策划：RST
 美术：RST
-脚本：RST 冥府乌鸦 
+脚本：RST 冥府乌鸦
 动画：RST
 音效：RST
-地图：Diling 
+地图：Diling
 模型：RST
 粒子特效：RST
 载具：RST wangshan
@@ -83,13 +83,18 @@ Different strategems require different experience levels to use. All strategems 
 [Help - Dynamic Alert]
 Dynamic Difficulty: Depending on the server difficulty, enemy alert reinforcements and units will vary. When the total number of enemies is more than double that of the players, reinforcements will not appear.
 
-
-
-
-
-
-
-
+Single Player Cheat Codes
+/v test: Summons a test crate
+/warp number: jump map (no more than 13, otherwise it will overflow and report an error)
+/0_win: Our faction wins
+/grp number: get the specified number of rp
+/gxp number: get the specified amount of xp
+/v icecream: Spawn an ice cream van
+/v mh_60s: spawn the helicopter
+/god: Generate a god armor next to it
+/promote: Promote directly to the Earth Marshal and gain a lot of RP
+/squad: Brush 10 of your own default AIs
+/dead: Make yourself die
 "
 	"changenote"		"ver 1.0.0
 

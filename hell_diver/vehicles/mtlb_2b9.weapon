@@ -44,7 +44,7 @@ key="mtlb_2b9.weapon">
 	time_to_live="15" can_be_detected_by_driver="1" can_be_disarmed="0" name="MT-LB 2b9 Mortar" radius="0.6"> 
 	
         <result class="spawn" instance_class="projectile" instance_key="mtlb_2b9_damage.projectile" 
-		min_amount="20" max_amount="20" offset="0 1 0" position_spread="3 0" direction_spread="0.1 0" />
+		min_amount="25" max_amount="25" offset="0 1 0" position_spread="3 0" direction_spread="0.1 0" />
 
         <trigger class="impact" />
         <rotation class="motion" />

@@ -8,6 +8,7 @@ key="cyborgs_hound_main.weapon"
 on_ground_up="0 0 1" 
 radius="1"
 > 
+	<tag name="Hound" />
     <specification 	
     slot="0" 	
     retrigger_time="-1" 

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<projectiles>
 <projectile
 class="grenade" 
 name="AirDropped Stun Mine Mk3" 
@@ -12,7 +13,8 @@ can_be_detected_by_driver="0"
 can_be_disarmed="0"
 >
 
-	<result class="blast" radius="10" damage="0" push="0.3" decal="0" character_state="stun"  />
+	<result class="spawn" instance_class="projectile" instance_key="hd_airdropped_stun_mine_mk3_stun_damage.projectile" 
+			min_amount="100" max_amount="100" offset="0 1.8 0" position_spread="0 0" direction_spread="0 0" />	
     <trigger class="time" time_to_live="0.5" />
     <rotation class="motion" />
 	<collision class="sticky" />
@@ -35,7 +37,24 @@ can_be_disarmed="0"
     <effect class="result" key="static_object" copy="terrain" />
     <effect class="result" key="vehicle" copy="terrain" />
     <effect class="result" key="character" copy="terrain" />
-
-
-	
 </projectile>
+<projectile
+class="grenade" 
+name="AirDropped Stun Mine Mk3" 
+key="hd_airdropped_stun_mine_mk3_stun_damage.projectile" 
+slot="0"
+pulldown_in_air="-20"
+on_ground_up="0 -1 0"
+radius="0.3"
+can_be_detected_by_footmen="0"
+can_be_detected_by_driver="0"
+can_be_disarmed="0"
+>
+	<result class="blast" radius="10" damage="0.01" push="0.3" decal="0" character_state="stun"  />
+    <trigger class="time" time_to_live="0" />
+    <rotation class="motion" />
+	<collision class="sticky" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>	
+
+</projectile>
+</projectiles>

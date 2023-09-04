@@ -268,6 +268,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		 ScoredResource("ex_piano_unwelcome_school.weapon", "weapon", 1.0f,2), 
 		 ScoredResource("ex_piano_cradle_of_eternity.weapon", "weapon", 1.0f,2), 
          ScoredResource("ex_gramophone_steeltorrent.weapon", "weapon", 1.0f,2),
+         ScoredResource("ex_power_chair_call.projectile", "projectile", 1.0f,2),
          ScoredResource("ex_gramophone_space_elevator.weapon", "weapon", 1.0f,2)
 			},
 			{

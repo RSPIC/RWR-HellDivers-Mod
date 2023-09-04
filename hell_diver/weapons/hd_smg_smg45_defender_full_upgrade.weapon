@@ -92,8 +92,7 @@ key="hd_smg_smg45_defender_full_upgrade.weapon"
 		kill_probability_offset_on_successful_hit="15"
 		kill_decay_start_time="0.22" kill_decay_end_time="0.22" character_state="stun"/>
 		<!-- 25m max damage range / 最高1.5倍射界,且无衰减 -->
-		<!-- 0.3s stun time -->
-		<!-- damage 60hit/70ap stun  -->
+		<!-- 15x51=765 -->
 		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 

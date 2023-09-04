@@ -39,7 +39,7 @@ key="hd_hmg_mg255_melt_mk3.weapon"
 	<animation state_key="hold_on_wall" animation_key="hold, hip fire" />
 	<animation state_key="still_against_wall" 	animation_key="hold, hip fire" />
 	<animation state_key="walking" animation_key="walking, carrying load" />
-	<animation state_key="running" animation_key="running, carrying load" />  
+	<animation state_key="running" animation_key="running, line infantry" />  
 
     <sound key="fire" fileref="hd_hmg_mg255_fire_02.wav" pitch_variety="0.1" volume="1.75" />
     <sound key="fire" fileref="hd_hmg_mg255_fire_03.wav" pitch_variety="0.1" volume="1.75" />
@@ -153,7 +153,7 @@ key="hd_hmg_mg255_melt_dicker.weapon"
 	<animation state_key="hold_on_wall" animation_key="hold, hip fire" />
 	<animation state_key="still_against_wall" 	animation_key="hold, hip fire" />
 	<animation state_key="walking" animation_key="walking, carrying load" />
-	<animation state_key="running" animation_key="running, carrying load" />  
+	<animation state_key="running" animation_key="running, line infantry" />  
 
     <sound key="fire" fileref="hd_hmg_mg255_fire_02.wav" pitch_variety="0.1" volume="1.75" />
     <sound key="fire" fileref="hd_hmg_mg255_fire_03.wav" pitch_variety="0.1" volume="1.75" />
