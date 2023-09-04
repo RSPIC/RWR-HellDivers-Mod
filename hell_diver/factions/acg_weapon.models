@@ -75,6 +75,14 @@
 	</model>
 	<model filename="acg_hongxue.xml"><!--鸿雪--><requirement class="weapon" slot="0" key="re_acg_hongxue_skill.weapon"/>
 	</model>
+	<model filename="acg_ifrit.xml"><!--伊芙利特--><requirement class="weapon" slot="0" key="acg_arknight_ifrit.weapon"/>
+	</model>	
+	<model filename="acg_ifrit.xml"><!--伊芙利特--><requirement class="weapon" slot="0" key="acg_arknight_ifrit_skill.weapon"/>
+	</model>
+	<model filename="acg_ifrit.xml"><!--伊芙利特--><requirement class="weapon" slot="0" key="re_acg_arknight_ifrit.weapon"/>
+	</model>
+	<model filename="acg_ifrit.xml"><!--伊芙利特--><requirement class="weapon" slot="0" key="re_acg_arknight_ifrit_skill.weapon"/>
+	</model>
 <!-- 原神 -->
 	<model filename="acg_sangonomiya_kokomi.xml" > <!--珊瑚宫心海--><requirement class="weapon" slot="0" key="acg_kokomi_water_thrower.weapon"/>
 	</model>

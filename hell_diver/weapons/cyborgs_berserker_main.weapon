@@ -63,7 +63,7 @@ radius="1"
     <animation state_key="recoil" animation_key="cyborgs_berserker_stab_type1" /> <!--后坐力动作，半身动作-->
     <animation state_key="recoil" animation_key="cyborgs_berserker_stab_type2" /> <!--后坐力动作，半身动作-->
     <animation state_key="recoil" animation_key="cyborgs_berserker_stab_type3" /> <!--后坐力动作，半身动作-->
-    <animation state_key="cycle" animation_key="28" /> <!--拉栓动作，武器固定脱手-->
+    <animation state_key="cycle" animation_key="cycle pump action" /> <!--拉栓动作，武器固定脱手-->
     <animation key="reload" animation_key="cyborgs_berserker_stab_type1" />	<!--换弹动作，半身动作-->
     <animation key="reload" stance_key="crouching" animation_key="cyborgs_berserker_stab_type1" />	<!--不同姿态可以设置不同换弹动作-->
     <animation key="reload" stance_key="prone" animation_key="cyborgs_berserker_stab_type1" />
@@ -203,4 +203,3 @@ radius="1"
     <shield offset="0 0 0" extent="0 0 0" usable_for_cover="0"/>  
 	
 </weapon>
-
