@@ -33,7 +33,7 @@ key="acg_iws2000_banisher.weapon"
 	<!--0全自动 4半自动 2栓动 3特殊（需要额外动作）5近程特殊（如部署沙包）-->
 	
 
-	<animation key="recoil" animation_key="recoil1, big" /> <!--后坐力动作，半身动作-->
+	<animation key="recoil" animation_key="recoil1" /> <!--后坐力动作，半身动作-->
     <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
     <animation state_key="reload" animation_key="reloading_2.5s" />	<!--换弹动作，半身动作-->
     <animation state_key="hold" animation_key="" /><!--站姿静止动作，全身动作-->
@@ -170,7 +170,7 @@ key="re_acg_iws2000_banisher.weapon"
 	<!--0全自动 4半自动 2栓动 3特殊（需要额外动作）5近程特殊（如部署沙包）-->
 	
 
-	<animation key="recoil" animation_key="recoil1, big" /> <!--后坐力动作，半身动作-->
+	<animation key="recoil" animation_key="recoil1" /> <!--后坐力动作，半身动作-->
     <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
     <animation state_key="reload" animation_key="reloading_2.5s" />	<!--换弹动作，半身动作-->
     <animation state_key="hold" animation_key="" /><!--站姿静止动作，全身动作-->

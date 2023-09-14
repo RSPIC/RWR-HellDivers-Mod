@@ -23,7 +23,7 @@ player_death_drop_owner_lock_time="0"
      <collider class="vehicle" enabled="1" /> 
      <collider class="character" enabled="1" />
     </trigger> 
-    <result class="blast" radius="2.5" damage="5" push="0.1" decal="1" 
+    <result class="blast" radius="2.5" damage="5" push="0.2" decal="1" 
     character_state="wound" make_vehicle_hit_sound="0" 
     faction_compare="not_equal"
     damage_origin_vehicle="0"/>

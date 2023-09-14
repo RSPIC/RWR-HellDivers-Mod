@@ -680,6 +680,35 @@ class projectile_event : Tracker {
                 }
                 break;
             }
+            case 49:{//hd_sms_for_launcher 火箭发射平台
+                int characterId = event.getIntAttribute("character_id");
+                if (characterId == -1) {break;}
+                const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                if (character !is null) {
+                    Vector3 position = stringToVector3(event.getStringAttribute("position"));
+
+                    array<const XmlElement@>@ players = getPlayers(m_metagame);
+                    for (uint i = 0; i < players.size(); ++i) {
+                        const XmlElement@ t_player = players[i];
+                        if (t_player.hasAttribute("character_id")) {
+                            const XmlElement@ p_character = getCharacterInfo(m_metagame, t_player.getIntAttribute("character_id"));
+                            if (p_character !is null) {
+                                Vector3 p_position = stringToVector3(p_character.getStringAttribute("position"));
+                                float distance = get2DMAxAxisDistance(1.0,p_position,position);
+                                // _report(m_metagame,"distance="+distance);
+                                // _report(m_metagame,"p_position="+p_position.toString());
+                                // _report(m_metagame,"position="+position.toString());
+                                if(distance <= 15){
+                                    string name = t_player.getStringAttribute("name");
+                                    g_battleInfoBuck.addMission(name);
+                                    _report(m_metagame,"玩家："+name+"完成了'启动火箭发射平台'支线任务");
+                                }
+                            }
+                        }
+                    }
+                }
+                break;
+            }
 
             default:
                 break;            

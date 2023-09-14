@@ -36,7 +36,7 @@ key="acg_mg3.weapon"
 	<animation state_key="hold_on_wall" animation_key="hold, hip fire" />
 	<animation state_key="still_against_wall" 	animation_key="hold, hip fire" />
 	<animation state_key="walking" animation_key="walking, carrying load" />
-	<animation state_key="running" animation_key="running, carrying load" /> 
+	<animation state_key="running" animation_key="running, line infantry" /> 
 
     <sound key="fire" fileref="mg3_shot.wav" volume="0.2" />
     <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />
@@ -135,7 +135,7 @@ key="re_acg_mg3.weapon"
 	<animation state_key="hold_on_wall" animation_key="hold, hip fire" />
 	<animation state_key="still_against_wall" 	animation_key="hold, hip fire" />
 	<animation state_key="walking" animation_key="walking, carrying load" />
-	<animation state_key="running" animation_key="running, carrying load" /> 
+	<animation state_key="running" animation_key="running, line infantry" /> 
 
     <sound key="fire" fileref="mg3_shot.wav" volume="0.2" />
     <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />

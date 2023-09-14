@@ -159,7 +159,7 @@ class match_end : Tracker {
             _log("execute kill_reward");
             if(k_pid != -1 && t_pid != -1 && k_pid != t_pid){//玩家TK
                 GiveRP(m_metagame,killer_cid,-200000);
-                GiveXP(m_metagame,killer_cid,-20);
+                // GiveXP(m_metagame,killer_cid,-20);
                 notify(m_metagame, "TK during the battle end", dictionary(), "misc", k_pid, true, "Kicked from server", 1.0);
                 notify(m_metagame, "rules text", dictionary(), "misc", k_pid, true, "Rules", 1.0, 700.0);
                 kickPlayer(m_metagame, k_pid);

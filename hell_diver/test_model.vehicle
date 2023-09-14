@@ -40,8 +40,14 @@ allow_ai_to_use="0"
 
 	<sky_diving chute_offset="0 0 0" trigger_height="20" gravity="-80" mesh_filename="" texture_filename="" />
 
-	<visual class="chassis" mesh_filename="" texture_filename="" />
-	<!-- <turret offset="0 0 0.0" weapon_key="general_supply_openbox.weapon" weapon_offset="0.0 -0.7 0.0" weapon_recoil="0.02" physics_recoil="0.0"  max_rotation_step="0.00015" rotation="0" rotation_range="1.92" /> -->
+	<turret offset="0 0 2.3" weapon_key="hd_vehicle_null.weapon" weapon_offset="0 0 0" weapon_recoil="0.02" physics_recoil="0.0"  max_rotation_step="0.00015" rotation="0" rotation_range="1.92" />
+
+	<visual class="chassis" mesh_filename="hd_rocket_launch_platform.mesh" texture_filename="hd_rocket_launch_platform.jpg" />
+	<visual class="turret" turret_index="0" mesh_filename="hd_rocket_launch_shell.mesh" texture_filename="hd_rocket_launch_shell.jpg" /> 
+
+	<!-- 破损车体\炮台 -->
+	<visual class="chassis" key="broken" mesh_filename="hd_rocket_launch_platform.mesh" texture_filename="hd_rocket_launch_platform.jpg" />
+	<visual class="turret" key="broken" turret_index="0" mesh_filename=".mesh" texture_filename="" /> 
 
 	<rev_sound filename="" low_pitch="0.8" high_pitch="1.0" low_rev="0.0" high_rev="0.3" volume="0.8" />
 
@@ -61,9 +67,5 @@ allow_ai_to_use="0"
 
 	<!-- <effect event_key="health" value="1000" ref="car_pod_impact_leave_dirt2" offset="0.0 0 0" /> -->
 
-	<event>
-		<trigger class="destroy" />
-  	<result class="spawn" instance_class="visual_item" instance_key="hd_hellpod_vanish.visual_item" min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0 0" /><!--消失的时候烟雾特效-->
-	</event>
 
 </vehicle>

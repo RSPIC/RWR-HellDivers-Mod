@@ -49,7 +49,7 @@ key="hd_laser_las16_sickle_full_upgrade.weapon"
     <hud_icon filename="hd_las16_sickle_full_upgrade.png" /> <!--武器为130x260像素，投掷物为110x110-->
 	
 	<!--武器动作，必须指定recoil和reload动作，部分动作留空会默认调用常规双手武器动作或者无动作-->
-    <animation key="recoil" animation_key="recoil1, big" /> <!--后坐力动作，半身动作-->
+    <animation key="recoil" animation_key="recoil1" /> <!--后坐力动作，半身动作-->
     <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
     <animation key="reload" animation_key="reloading" />	<!--换弹动作，半身动作-->
     <animation state_key="hold" animation_key="" /><!--站姿静止动作，全身动作-->

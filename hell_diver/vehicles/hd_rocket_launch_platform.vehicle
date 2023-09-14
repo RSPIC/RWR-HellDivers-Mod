@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vehicles> 
+<vehicle 
+name="Rocket Launch Platform" 
+key="hd_rocket_launch_platform.vehicle" 
+map_view_atlas_index="-1" 
+time_to_live="7200.0" 
+time_to_live_unsteerable="7200.0" 
+respawn_time="7200"
+should_be_destroyed="0" 
+max_character_collision_speed_on_normal="60"
+simulated_damage="0"
+usable_for_cover="0"
+allow_ai_to_use="0"
+ >
+	<tag name="metal_thin" />
+
+	<tire_set offset="2 0.1 1.5" radius="0.3" />
+	<tire_set offset="3 0.1 0" radius="0.3" />
+	<tire_set offset="2 0.1 -1.5" radius="0.3" />
+
+	<control max_speed="1.0" acceleration="1" 
+	max_reverse_speed="1.0" max_rotation="1.0" 
+	max_water_depth="4" 
+	tracked="1" gears="0"
+	/>
+
+	<physics max_health="4004.0" 
+	mass="400.0" 
+	blast_push_threshold="1000"
+	blast_damage_threshold="1001"
+	extent="5 0.0 5" 
+	offset="0 0 0" 
+	top_offset="0 3.0 0" 
+	collision_model_pos="0 1 0" 
+	collision_model_extent="4 3 3" 
+	collision_response_factor="0"
+	visual_offset="0 0.2 0" 
+	remove_collision_threshold="10"
+	vehicle_collision_damage_factor="0"
+	friction_offset="10"
+	gravity="-10"
+	destroy_on_top_hit="0"
+	top_hit_tracking_time="0"
+	/> 
+	
+	<sky_diving chute_offset="0 0 0" trigger_height="20" gravity="-40" mesh_filename="" texture_filename="" />
+<!-- shell -->
+	0<turret offset="0 0 2.3" weapon_key="hd_vehicle_null.weapon" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="0"/>
+<!-- operater -->
+	1<turret offset="-2.3 0 0" weapon_key="hd_rocket_launch_platform.weapon" rotate="1.57" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="0" />
+<!-- operater -->
+	2<turret offset="2.3 0 0" weapon_key="hd_rocket_launch_platform.weapon" rotation="1.57" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="0" />
+<!-- Sound -->
+	3<turret offset="-2.3 0 0" weapon_key="hd_vehicle_sound_di.weapon" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="0.1" />
+<!-- Sound -->
+	4<turret offset="2.3 0 0" weapon_key="hd_vehicle_sound_di.weapon" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="0.1" />
+
+	<visual class="chassis" mesh_filename="hd_rocket_launch_platform.mesh" texture_filename="hd_rocket_launch_platform.jpg" />
+	<visual class="turret" turret_index="0" mesh_filename="hd_rocket_launch_shell.mesh" texture_filename="hd_rocket_launch_shell.jpg" /> 
+	<visual class="turret" turret_index="1" mesh_filename=".mesh" texture_filename="" /> 
+	<visual class="turret" turret_index="2" mesh_filename=".mesh" texture_filename="" /> 
+	<visual class="turret" turret_index="3" mesh_filename=".mesh" texture_filename="" /> 
+	<visual class="turret" turret_index="4" mesh_filename=".mesh" texture_filename="" /> 
+
+	<!-- 破损车体\炮台 -->
+	<visual class="chassis" key="broken" mesh_filename="hd_rocket_launch_platform.mesh" texture_filename="hd_rocket_launch_platform.jpg" />
+	<visual class="turret" key="broken" turret_index="0" mesh_filename=".mesh" texture_filename="" /> 
+
+	<rev_sound filename="" low_pitch="0.8" high_pitch="1.0" low_rev="0.0" high_rev="0.3" volume="0.8" />
+
+	<character_slot type="gunner" rotation="1.57" seat_position="-2.3 0 0" enter_position="-2.3 0 0" exit_rotation="-1.57" hiding="0" animation_key="hd_operation_right">
+		<turret index="1"/><turret index="3"/>
+	</character_slot>
+	<character_slot type="gunner" rotation="-1.57" seat_position="2.3 0 0" enter_position="2.3 0 0" exit_rotation="1.57" hiding="0" animation_key="hd_operation_left">
+		<turret index="2"/><turret index="4"/>
+	</character_slot>
+	
+	<effect event_key="health" value="4004" ref="ui_stage_1" offset="0 3 0" />
+
+	<effect event_key="health" value="3003" ref="ui_stage_2" offset="0 3 0" />
+
+	<effect event_key="health" value="2002" ref="ui_stage_3" offset="0 3 0" />
+
+	<effect event_key="health" value="1001" ref="ui_stage_4" offset="0 3 0" />
+	
+	<sound key="slide" filename="" />
+	<sound key="squeal" filename="" />
+	<sound key="ignition" filename="" />
+	<sound key="horn" filename="" />  
+	<sound key="hit" filename="" />
+	<sound key="hit" filename="" />
+	<sound key="hit" filename="" />
+	<sound key="destroy" filename="himars_missile_launch.wav" value="3"/>  
+
+	<event>
+		<trigger class="destroy" />
+  		<result class="spawn" instance_class="projectile" instance_key="hd_sms_for_launcher.projectile" min_amount="1" max_amount="1" offset="0 2 0" position_spread="0 0" direction_spread="0 0.01" />
+	</event>
+</vehicle>
+
+<vehicle 
+name="Rocket Launch Platform" 
+key="water_tower.vehicle" 
+map_view_atlas_index="-1" 
+time_to_live="7200.0" 
+time_to_live_unsteerable="7200.0" 
+respawn_time="7200"
+should_be_destroyed="0" 
+max_character_collision_speed_on_normal="60"
+simulated_damage="0"
+usable_for_cover="0"
+allow_ai_to_use="0"
+ >
+	<tag name="metal_thin" />
+
+	<tire_set offset="2 0.1 1.5" radius="0.3" />
+	<tire_set offset="3 0.1 0" radius="0.3" />
+	<tire_set offset="2 0.1 -1.5" radius="0.3" />
+
+	<control max_speed="1.0" acceleration="1" 
+	max_reverse_speed="1.0" max_rotation="1.0" 
+	max_water_depth="4" 
+	tracked="1" gears="0"
+	/>
+
+	<physics max_health="4004.0" 
+	mass="400.0" 
+	blast_push_threshold="1000"
+	blast_damage_threshold="1001"
+	extent="5 0.0 5" 
+	offset="0 0 0" 
+	top_offset="0 3.0 0" 
+	collision_model_pos="0 1 0" 
+	collision_model_extent="4 3 3" 
+	collision_response_factor="0"
+	visual_offset="0 0.2 0" 
+	remove_collision_threshold="10"
+	vehicle_collision_damage_factor="0"
+	friction_offset="10"
+	gravity="-10"
+	destroy_on_top_hit="0"
+	top_hit_tracking_time="0"
+	/> 
+	
+	<sky_diving chute_offset="0 0 0" trigger_height="20" gravity="-40" mesh_filename="" texture_filename="" />
+<!-- shell -->
+	0<turret offset="0 0 2.3" weapon_key="hd_vehicle_null.weapon" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="0"/>
+<!-- operater -->
+	1<turret offset="-2.3 0 0" weapon_key="hd_rocket_launch_platform.weapon" rotate="1.57" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="0" />
+<!-- operater -->
+	2<turret offset="2.3 0 0" weapon_key="hd_rocket_launch_platform.weapon" rotation="1.57" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="0" />
+<!-- Sound -->
+	3<turret offset="-2.3 0 0" weapon_key="hd_vehicle_sound_di.weapon" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="0.1" />
+<!-- Sound -->
+	4<turret offset="2.3 0 0" weapon_key="hd_vehicle_sound_di.weapon" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="0.1" />
+
+	<visual class="chassis" mesh_filename="hd_rocket_launch_platform.mesh" texture_filename="hd_rocket_launch_platform.jpg" />
+	<visual class="turret" turret_index="0" mesh_filename="hd_rocket_launch_shell.mesh" texture_filename="hd_rocket_launch_shell.jpg" /> 
+	<visual class="turret" turret_index="1" mesh_filename=".mesh" texture_filename="" /> 
+	<visual class="turret" turret_index="2" mesh_filename=".mesh" texture_filename="" /> 
+	<visual class="turret" turret_index="3" mesh_filename=".mesh" texture_filename="" /> 
+	<visual class="turret" turret_index="4" mesh_filename=".mesh" texture_filename="" /> 
+
+	<!-- 破损车体\炮台 -->
+	<visual class="chassis" key="broken" mesh_filename="hd_rocket_launch_platform.mesh" texture_filename="hd_rocket_launch_platform.jpg" />
+	<visual class="turret" key="broken" turret_index="0" mesh_filename=".mesh" texture_filename="" /> 
+
+	<rev_sound filename="" low_pitch="0.8" high_pitch="1.0" low_rev="0.0" high_rev="0.3" volume="0.8" />
+
+	<character_slot type="gunner" rotation="1.57" seat_position="-2.3 0 0" enter_position="-2.3 0 0" exit_rotation="-1.57" hiding="0" animation_key="hd_operation_right">
+		<turret index="1"/><turret index="3"/>
+	</character_slot>
+	<character_slot type="gunner" rotation="-1.57" seat_position="2.3 0 0" enter_position="2.3 0 0" exit_rotation="1.57" hiding="0" animation_key="hd_operation_left">
+		<turret index="2"/><turret index="4"/>
+	</character_slot>
+	
+	<effect event_key="health" value="4004" ref="ui_stage_1" offset="0 3 0" />
+
+	<effect event_key="health" value="3003" ref="ui_stage_2" offset="0 3 0" />
+
+	<effect event_key="health" value="2002" ref="ui_stage_3" offset="0 3 0" />
+
+	<effect event_key="health" value="1001" ref="ui_stage_4" offset="0 3 0" />
+	
+	<sound key="slide" filename="" />
+	<sound key="squeal" filename="" />
+	<sound key="ignition" filename="" />
+	<sound key="horn" filename="" />  
+	<sound key="hit" filename="" />
+	<sound key="hit" filename="" />
+	<sound key="hit" filename="" />
+	<sound key="destroy" filename="himars_missile_launch.wav" value="3"/>  
+
+	<event>
+		<trigger class="destroy" />
+  		<result class="spawn" instance_class="projectile" instance_key="hd_sms_for_launcher.projectile" min_amount="1" max_amount="1" offset="0 2 0" position_spread="0 0" direction_spread="0 0.01" />
+	</event>
+</vehicle>
+</vehicles>

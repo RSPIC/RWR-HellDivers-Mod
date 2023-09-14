@@ -41,7 +41,7 @@ key="acg_takanashi_hoshino.weapon"
 	<!--多模式-->
 
 	<!--武器动作，必须指定recoil和reload动作，部分动作留空会默认调用常规双手武器动作或者无动作-->
-	<animation key="recoil" animation_key="recoil1, big" /> <!--后坐力动作，半身动作-->
+	<animation key="recoil" animation_key="recoil1" /> <!--后坐力动作，半身动作-->
     <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
     <animation state_key="reload" animation_key="reloading_one_at_a_time_0.55s" />	<!--换弹动作，半身动作-->
 	<animation key="reload" stance_key="crouching" animation_key="T_reloading_one_at_a_time_0.4s" />	<!--换弹动作，半身动作-->
@@ -180,7 +180,7 @@ key="re_acg_takanashi_hoshino.weapon"
 	<!--多模式-->
 
 	<!--武器动作，必须指定recoil和reload动作，部分动作留空会默认调用常规双手武器动作或者无动作-->
-	<animation key="recoil" animation_key="recoil1, big" /> <!--后坐力动作，半身动作-->
+	<animation key="recoil" animation_key="recoil1" /> <!--后坐力动作，半身动作-->
     <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
     <animation state_key="reload" animation_key="reloading_one_at_a_time_0.55s" />	<!--换弹动作，半身动作-->
 	<animation key="reload" stance_key="crouching" animation_key="T_reloading_one_at_a_time_0.4s" />	<!--换弹动作，半身动作-->

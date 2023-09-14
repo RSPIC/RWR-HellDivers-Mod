@@ -39,7 +39,7 @@ on_ground_up="0 0 1"
     <addon_model filename="" /> <!--附加模型，固定绑骨到肩膀--> 
 	
 	<!--武器动作，必须指定recoil和reload动作-->
-    <animation key="recoil" animation_key="recoil1, big" /> <!--后坐力动作，半身动作-->
+    <animation key="recoil" animation_key="recoil1" /> <!--后坐力动作，半身动作-->
     <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
     <animation key="reload" animation_key="reloading" />	<!--换弹动作，半身动作-->
 	

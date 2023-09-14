@@ -88,6 +88,8 @@ dictionary projectile_eventkey = {
         {"hyper_mega_bazooka_launcher_skill",47},
 
         {"acg_laisha_southern_cross",48},
+        //火箭发射任务
+        {"hd_sms_for_launcher",49},
 
         // 占位的
         {"666",-1}

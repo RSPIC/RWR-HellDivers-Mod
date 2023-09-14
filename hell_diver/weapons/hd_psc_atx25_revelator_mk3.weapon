@@ -38,7 +38,7 @@ key="hd_psc_atx25_revelator_mk3.weapon"
     <hud_icon filename="hd_atx25_revelator.png" /> <!--武器为110x220像素，投掷物为110x110-->
 	
 	<!--武器动作，必须指定recoil和reload动作，部分动作留空会默认调用常规双手武器动作或者无动作-->
-    <animation key="recoil" animation_key="recoil1, big" /> <!--后坐力动作，半身动作-->
+    <animation key="recoil" animation_key="recoil1" /> <!--后坐力动作，半身动作-->
     <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
 	<animation state_key="reload" animation_key="T_reloading_1.25s" />	<!--换弹动作，半身动作-->
     <animation state_key="hold" animation_key="" /><!--站姿静止动作，全身动作-->
@@ -185,13 +185,13 @@ key="hd_psc_atx25_revelator_dicker.weapon"
     <hud_icon filename="hd_atx25_revelator.png" /> <!--武器为110x220像素，投掷物为110x110-->
 	
 	<!--武器动作，必须指定recoil和reload动作，部分动作留空会默认调用常规双手武器动作或者无动作-->
-    <animation key="recoil" animation_key="recoil1, big" /> <!--后坐力动作，半身动作-->
+    <animation key="recoil" animation_key="recoil1" /> <!--后坐力动作，半身动作-->
     <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
 	<animation state_key="reload" animation_key="T_reloading_1.25s" />	<!--换弹动作，半身动作-->
     <animation state_key="hold" animation_key="" /><!--站姿静止动作，全身动作-->
 	<animation state_key="hold_on_wall"  animation_key="" /><!--架枪动作，全身动作-->
     <animation state_key="still_against_wall" animation_key="" /><!--靠墙动作，全身动作-->
-    <animation state_key="hold_casual" animation_key="" /><!--闲置动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="hd_gun_salute" /><!--闲置动作，全身动作-->
 	<animation state_key="running" animation_key="" /><!--全身动作-->
 	<animation state_key="walking" animation_key="" /><!--按shift时候的静步前进动作，全身动作-->
     <animation state_key="walking_backwards" animation_key="" /><!--全身动作-->

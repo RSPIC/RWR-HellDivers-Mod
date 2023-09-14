@@ -117,14 +117,15 @@
 	<parameter class="can_use_vehicles" value="1" /> 
 
 	<!-- <animation key="stabbing" target_key="chicken tpose" /> -->
-	<!-- <animation key="going prone" target_key="chicken tpose" /> -->
+	<animation key="going prone" target_key="hd_tac_prone" />
 	<!-- <animation key="dive" target_key="chicken tpose" /> -->
 	<!-- <animation key="stunned" target_key="chicken stun" /> -->
-	<!-- <animation key="prone" target_key="chicken crouch" /> -->
+	<animation key="prone" target_key="hd_prone_still" />
 	<!-- <animation key="prone, without weapon, 63" target_key="chicken crouch" /> -->
 	<!-- <animation key="prone, moving forwards" target_key="chicken walking" /> -->
-	<!-- <animation key="leaving prone" target_key="chicken tpose" /> -->
-	<!-- <animation key="still" target_key="chicken idle" /> -->
+	<animation key="leaving prone" target_key="hd_leave_prone" />
+	<animation key="still" target_key="hd_still" />
+	<animation key="still" target_key="hd_still_2" add="1" />
 	<!-- <animation key="still" target_key="chicken idle wind" add="1" /> -->
 	<!-- <animation key="still" target_key="chicken idle" add="1" /> -->
 	<!-- <animation key="still" target_key="chicken idle wind" add="1" /> -->
@@ -135,12 +136,15 @@
 	<!-- <animation key="still, instructor" target_key="chicken idle" /> -->
 	<!-- <animation key="still, instructor" target_key="chicken idle wind" add="1" /> -->
 	<!-- <animation key="still, instructor" target_key="chicken idle peck" add="1" /> -->
-	<animation key="walking" target_key="running_slower" />
+	<animation key="walking" target_key="hd_running" />
 	<animation key="walking backwards" target_key="walking backwards" /><!--speed 1.0-->
-	<animation key="weaponless_walking" target_key="weaponless_walking" />
-	<animation key="running" target_key="running" />
-	<animation key="running, no weapon, 60" target_key="running, no weapon, 60" /><!--speed 1.6-->
-	<!-- <animation key="crouch still" target_key="chicken crouch" /> -->
+	<animation key="weaponless_walking" target_key="hd_running_no_weapon" />
+	<animation key="running" target_key="hd_spring" />
+	<animation key="running, no weapon, 60" target_key="hd_spring_no_weapon" /><!--speed 1.6-->
+	<animation key="crouch still" target_key="hd_crouching_1" />
+	<animation key="crouch still" target_key="hd_crouching_2" add="1"/>
+	<animation key="crouch still" target_key="hd_crouching_3" add="1"/>
+	<animation key="crouch still" target_key="hd_crouching_4" add="1"/>
 	<!-- <animation key="crouch still, no weapon, 62" target_key="chicken crouch" /> -->
 	<!-- <animation key="crouching forwards" target_key="chicken walking" /> -->
 	<!-- <animation key="crouching backwards" target_key="chicken walking" /> -->
@@ -162,7 +166,7 @@
 	<!-- <animation key="swimming forwards" target_key="chicken swimming" /> -->
 	<!-- <animation key="celebrating" target_key="chicken climbing" /> -->
 	<!-- <animation key="celebrating, shooting" target_key="chicken climbing" /> -->
-	<!-- <animation key="throwing, upside" target_key="chicken egg" /> -->
+	<animation key="throwing, upside" target_key="hd_throw_grenade" />
 	<!-- <animation key="surrender" target_key="chicken crouch" /> -->
 
 	<sound key="body_fall" fileref="static.wav" volume="0.0" />

@@ -37,8 +37,9 @@ key="hd_side_p2_peacemaker_full_upgrade.weapon"
     <animation state_key="reload"   animation_key="p2_peacemaker_reloading_upgraded" />
 	<animation state_key="hold" animation_key="still, pistol 2" />
     <animation state_key="hold_on_wall" animation_key="hold, overwall pistol" />
-    <!-- <animation state_key="hold_casual" animation_key="hold_casual, pistol" /> -->
-    <animation state_key="hold_casual" animation_key="California Gurls" />
+    <animation state_key="hold_casual" animation_key="hd_disco_1" /><!--闲置动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="hd_disco_2" /><!--闲置动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="hd_disco_3" /><!--闲置动作，全身动作-->
 	<animation state_key="running"  animation_key="running, pistol" />
     <animation state_key="walking"  animation_key="running_pistol_slower" />
     <animation state_key="walking_backwards" animation_key="walking backwards, pistol" />

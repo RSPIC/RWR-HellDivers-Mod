@@ -1391,7 +1391,7 @@ class IO_data : Tracker {
             notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
             return true;
         }
-        if(access_tag == "invited_reward"){//被邀请者奖励
+        if(access_tag == "  "){//被邀请者奖励
             @res = Resource("hd_bonusfactor_al_75","carry_item");
             res.addToResources(resources,10);
             @res = Resource("reward_box_weapon_omega.carry_item","carry_item");//MK1~MK3

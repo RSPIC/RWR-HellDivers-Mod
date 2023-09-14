@@ -174,7 +174,7 @@ apr
     <hud_icon filename="vnl_gm6_lynx.png" /> <!--武器为110x220像素，投掷物为110x110-->
 
 	<!--武器动作，必须指定recoil和reload动作，部分动作留空会默认调用常规双手武器动作或者无动作-->
-    <animation key="recoil" animation_key="recoil1, big" /> <!--后坐力动作，半身动作-->
+    <animation key="recoil" animation_key="recoil1" /> <!--后坐力动作，半身动作-->
     <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
 	<animation state_key="reload" animation_key="reloading, famasg1" />	<!--换弹动作，半身动作-->
     <animation state_key="hold" animation_key="" /><!--站姿静止动作，全身动作-->
@@ -435,7 +435,6 @@ apr
 	<model filename="portable_mortar.xml" />
 	<hud_icon filename="hud_portable_mortar.png" />
 	
-	<commonness value="0.0" in_stock="0" can_respawn_with="0" />
 	<inventory encumbrance="11.0" price="380.0" />
 	
 	<capacity value="0" source="rank" source_value="0.0" />
@@ -540,7 +539,6 @@ apr
     <model filename="paw20.xml" />
 
     <hud_icon filename="hud_paw20.png" />
-    <commonness value="0.00005" can_respawn_with="0" in_stock="0" />
     <inventory encumbrance="10.0" price="350.0" />
 
     <capacity value="0" source="rank" source_value="0.0" />
@@ -636,7 +634,6 @@ apr
     <capacity value="1" source="rank" source_value="0.4" />
 
     <hud_icon filename="hud_xm25.png" />
-    <commonness value="0.0" in_stock="1" can_respawn_with="0" />
     <inventory encumbrance="12.0" price="200.0" />
 	
 	<projectile file="hd_general_spawn.projectile" pulldown_in_air="8" > 
@@ -724,7 +721,6 @@ apr
     <capacity value="1" source="rank" source_value="0.3" />
 
     <hud_icon filename="hud_rgm40.png" />
-    <commonness value="0.002" can_respawn_with="0" />
     <inventory encumbrance="10.0" price="25.0" />
 
 	<projectile file="hd_general_spawn.projectile" pulldown_in_air="28" > 
@@ -812,7 +808,6 @@ apr
     <capacity value="1" source="rank" source_value="0.3" />
 
     <hud_icon filename="hud_gl06.png" />
-    <commonness value="0.002" can_respawn_with="0" />
     <inventory encumbrance="10.0" price="25.0" />
 
 	<projectile file="hd_general_spawn.projectile" pulldown_in_air="26" > 
@@ -901,7 +896,6 @@ apr
     <capacity value="1" source="rank" source_value="0.3" />
 
     <hud_icon filename="hud_m79.png" />
-    <commonness value="0.002" can_respawn_with="0" />
     <inventory encumbrance="10.0" price="25.0" />
 
 	<projectile file="hd_general_spawn.projectile" pulldown_in_air="28" > 
@@ -972,7 +966,7 @@ apr
 	projectiles_per_shot="1" />
 
     <animation key="recoil" ref="27" />
-	<animation key="recoil" stance_key="prone" animation_key="recoil1, big, prone" />
+	<animation key="recoil" stance_key="prone" animation_key="recoil1, prone" />
     <animation key="cycle" ref="30" />
 	<animation key="cycle" stance_key="prone" animation_key="bolt cycle, prone" />	
     <animation state_key="reload" animation_key="reloading, dragunov_svd" />
@@ -989,7 +983,6 @@ apr
     <model filename="golden_dragunov_svd.xml" />
     <hud_icon filename="hud_golden_dragunov_svd.png" />
     <inventory encumbrance="10.0" price="3100.0" />
-    <commonness value="0.0" can_respawn_with="0" in_stock="0" />
 
     <projectiles_per_shot value="1" />
     <weak_hand_hold offset="0.3" />
@@ -1066,7 +1059,6 @@ apr
 
     <model filename="fd338.xml" />
     <hud_icon filename="hud_fd338.png" />
-    <commonness value="0.0" can_respawn_with="0" in_stock="0" />
     <inventory encumbrance="10.0" price="338" />
   
     <weak_hand_hold offset="0.3" />
@@ -1155,7 +1147,6 @@ apr
 
     <model filename="fd338sd.xml" />
     <hud_icon filename="hud_fd338sd.png" />
-    <commonness value="0.0" can_respawn_with="0" in_stock="0" />
     <inventory encumbrance="10.0" price="338" />
 
     <weak_hand_hold offset="0.3" />
@@ -1240,7 +1231,6 @@ apr
 
     <model filename="m14k.xml" />
     <hud_icon filename="hud_m14k.png" />
-    <commonness value="0.0" can_respawn_with="0"  in_stock="0"/>
     <inventory encumbrance="10.0" price="390" />
 
     <projectiles_per_shot value="1" />
@@ -1331,7 +1321,6 @@ apr
 	<model filename="m14k.xml" />
 	<hud_icon filename="hud_m14k_carry.png" />
 	
-	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
 	<inventory encumbrance="5.0" price="390.0" />
 
 	<projectile file="m14k_stim.projectile" />
@@ -1363,7 +1352,7 @@ apr
   projectiles_per_shot="1" />
 
     <animation state_key="recoil" ref="27" />
-	<animation key="recoil" stance_key="prone" animation_key="recoil1, big, prone" />
+	<animation key="recoil" stance_key="prone" animation_key="recoil1, prone" />
     <animation state_key="cycle" animation_key="cycle, enforcer" />
 	<animation key="cycle" stance_key="prone" animation_key="bolt cycle, prone" />	
     <animation state_key="reload" ref="29" />
@@ -1375,7 +1364,6 @@ apr
     <model filename="enforcer.xml" />
 
     <hud_icon filename="hud_enforcer.png" />
-    <commonness value="0.0" can_respawn_with="0" in_stock="0" />
     
     <capacity value="0" source="rank" source_value="0.0" />
     <capacity value="1" source="rank" source_value="0.3" />
@@ -1454,7 +1442,6 @@ apr
 
     <model filename="apr.xml" />
     <hud_icon filename="hud_apr.png" />
-    <commonness value="0.00001" can_respawn_with="0" />
     <inventory encumbrance="10.0" price="25.0" />
 	
 	<capacity value="0" source="rank" source_value="0.0" />

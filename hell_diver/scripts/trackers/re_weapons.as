@@ -74,10 +74,12 @@ class re_weapons : Tracker {
                         addItemInBackpack(m_metagame,cid,"weapon",itemKey);
                         return;
                     }
-                    if(g_debugMode) notify(m_metagame, "计数+1", dictionary(), "misc", pid, false, "", 1.0);
-                    g_userCountInfoBuck.addCount(name,itemKey+"re");
                     int value;
-                    if(g_userCountInfoBuck.getCount(name,itemKey+"re",value) && value == 10){
+                    g_userCountInfoBuck.addCount(name,itemKey+"re");
+                    g_userCountInfoBuck.getCount(name,itemKey+"re",value);
+                    notify(m_metagame, "合成进度["+value+"/10]", dictionary(), "misc", pid, false, "", 1.0);
+                                        
+                    if(value == 10){
                         addItemInBackpack(m_metagame,cid,"weapon","re_"+itemKey);
                         addItemInBackpack(m_metagame,cid,"weapon","re_"+itemKey);
                         g_userCountInfoBuck.clearCount(name,itemKey+"re");
@@ -105,9 +107,11 @@ class re_weapons : Tracker {
                         addItemInBackpack(m_metagame,cid,"weapon",itemKey);
                         return;
                     }
-                    notify(m_metagame, "计数+1", dictionary(), "misc", pid, false, "", 1.0);
-                    g_userCountInfoBuck.addCount(name,itemKey+"re");
                     int value;
+                    g_userCountInfoBuck.addCount(name,itemKey+"re");
+                    g_userCountInfoBuck.getCount(name,itemKey+"re",value);
+                    notify(m_metagame, "合成进度["+value+"/10]", dictionary(), "misc", pid, false, "", 1.0);
+
                     if(g_userCountInfoBuck.getCount(name,itemKey+"re",value) && value == 10){
                         addItemInBackpack(m_metagame,cid,"weapon","re_"+itemKey);
                         addItemInBackpack(m_metagame,cid,"weapon","re_"+itemKey);

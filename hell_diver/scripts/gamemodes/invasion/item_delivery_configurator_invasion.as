@@ -236,6 +236,8 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			ScoredResource("token_ba_iroha.projectile","projectile",1.0f,4),
 			ScoredResource("token_mg3.projectile","projectile",1.0f,4),
 			ScoredResource("token_g41_space.projectile","projectile",1.0f,4),
+			ScoredResource("token_toki.projectile","projectile",1.0f,4),
+			ScoredResource("token_pmaru.projectile","projectile",1.0f,4),
 
 			ScoredResource("token_amamiya_kokoro.projectile","projectile",1.0f,4)
 			},

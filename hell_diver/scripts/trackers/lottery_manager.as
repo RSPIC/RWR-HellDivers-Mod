@@ -145,6 +145,8 @@ class lottery_manager : Tracker {
         handleGuaranteedLottery(event);
         handleGuaGuaLeLottery(event);
         handleGuaGuaLeIILottery(event);
+        handleLotteryX10(event);
+        handleLotteryX100(event);
     }
 
     // --------------------------------------------
@@ -247,6 +249,40 @@ class lottery_manager : Tracker {
         }
     }
     // --------------------------------------------
+    protected void handleLotteryX10(const XmlElement@ event) {
+        string itemKey = event.getStringAttribute("item_key");
+        if(itemKey != "lottery_x10.carry_item"){return;}
+        int containerId = event.getIntAttribute("target_container_type_id");
+        if(containerId != 2){return;}// 2(背包)
+        int cid = event.getIntAttribute("character_id");
+
+        array<Resource@> resources = array<Resource@>();
+        Resource@ res;
+        deleteItemInBackpack(m_metagame,cid,"carry_item",itemKey);
+        deleteItemInStash(m_metagame,cid,"carry_item",itemKey);
+
+        @res = Resource("lottery.carry_item","carry_item");
+        res.addToResources(resources,10);
+        addListItemInBackpack(m_metagame,cid,resources);
+    }
+    // --------------------------------------------
+    protected void handleLotteryX100(const XmlElement@ event) {
+        string itemKey = event.getStringAttribute("item_key");
+        if(itemKey != "lottery_x100.carry_item"){return;}
+        int containerId = event.getIntAttribute("target_container_type_id");
+        if(containerId != 2){return;}// 2(背包)
+        int cid = event.getIntAttribute("character_id");
+
+        array<Resource@> resources = array<Resource@>();
+        Resource@ res;
+        deleteItemInBackpack(m_metagame,cid,"carry_item",itemKey);
+        deleteItemInStash(m_metagame,cid,"carry_item",itemKey);
+
+        @res = Resource("lottery.carry_item","carry_item");
+        res.addToResources(resources,100);
+        addListItemInBackpack(m_metagame,cid,resources);
+    }
+    // --------------------------------------------
     protected void handleGuaranteedLottery(const XmlElement@ event) {
         string itemKey = event.getStringAttribute("item_key");
         if(itemKey != "lottery.carry_item"){return;}
@@ -259,6 +295,9 @@ class lottery_manager : Tracker {
         g_userCountInfoBuck.addCount(name,itemKey+"50");
         g_userCountInfoBuck.addCount(name,itemKey+"300");
         int value;
+        int temp_value;
+        g_userCountInfoBuck.getCount(name,itemKey+"300",temp_value);
+
         if(g_userCountInfoBuck.getCount(name,itemKey+"10",value) && value == 10){    //十次保底
             addItemInBackpack(m_metagame,cid,"carry_item","reward_box_skin.carry_item");
             notify(m_metagame,"Lottery Guaranteed Reward [10]", dictionary(), "misc", pid, false, "", 1.0);
@@ -267,6 +306,7 @@ class lottery_manager : Tracker {
         if(g_userCountInfoBuck.getCount(name,itemKey+"50",value) && value == 50){    //50次保底
             addItemInBackpack(m_metagame,cid,"carry_item","reward_box_vehicle.carry_item");
             notify(m_metagame,"五十抽保底已发放[载具箱]", dictionary(), "misc", pid, false, "", 1.0);
+            notify(m_metagame, "大保底进度["+temp_value+"/300]", dictionary(), "misc", pid, false, "", 1.0);
             g_userCountInfoBuck.clearCount(name,itemKey+"50");
         }
         if(g_userCountInfoBuck.getCount(name,itemKey+"300",value) && value == 300){    //300吃井

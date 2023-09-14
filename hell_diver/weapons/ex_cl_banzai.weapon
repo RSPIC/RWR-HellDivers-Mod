@@ -37,7 +37,7 @@ key="ex_cl_banzai.weapon">
     <capacity value="0" source="rank" source_value="0.0" />
     <capacity value="1" source="rank" source_value="0" />
 
-    <animation key="recoil" animation_key="recoil1, big" /> <!--后坐力动作，半身动作-->
+    <animation key="recoil" animation_key="recoil1" /> <!--后坐力动作，半身动作-->
     <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
     <animation state_key="reload" animation_key="T_reloading_1.25s" />	<!--换弹动作，半身动作-->
     <animation state_key="hold" animation_key="" /><!--站姿静止动作，全身动作-->

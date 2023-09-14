@@ -29,12 +29,12 @@ key="hd_psc_rx1_railgun_full_upgrade.weapon"
     <hud_icon filename="hd_rx1_railgun.png" />
 	<weak_hand_hold offset="0" />
 	
-	<animation key="recoil" animation_key="recoil1, big" /> <!--后坐力动作，半身动作-->
+	<animation key="recoil" animation_key="recoil1" /> <!--后坐力动作，半身动作-->
     <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
     <animation state_key="reload" animation_key="reloading_2.5s" />
     <animation state_key="next_in_chain_in" animation_key="sheath bayonet part 2" />
     <animation state_key="next_in_chain_out" animation_key="mount bayonet part 1" />
-	
+
 	
 	<sound key="fire" fileref="rx1_railgun_fire.wav" pitch_variety="0.00"  volume="0.3" />
     <sound key="cycle" fileref="rifle_chamber.wav" pitch_variety="0.00"  volume="0.7"/>

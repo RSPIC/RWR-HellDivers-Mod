@@ -9,7 +9,7 @@ on_ground_up="0 0 1"
 	<tag name="vanilla" />
 
 	<!--军械库相关-->
-    <commonness value="1" can_respawn_with="1" in_stock="0" /> 
+    <commonness value="0" can_respawn_with="1" in_stock="0" /> 
     <inventory encumbrance="10.0" price="328.0"  /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
     
     <stance state_key="running" accuracy="1" /> 

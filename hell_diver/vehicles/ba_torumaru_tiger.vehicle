@@ -22,8 +22,8 @@ character_leave_request_mode="friendly"
 	<tire_set offset="1.7 0.0 -2.7" radius="0.5" />
 
 	<control 
-	max_speed="7.0" 
-	acceleration="15" 
+	max_speed="8.0" 
+	acceleration="16" 
 	max_reverse_speed="5" 
 	min_health_to_steer="4.5"
 	max_rotation="0.0" 
@@ -39,9 +39,9 @@ character_leave_request_mode="friendly"
 	collision_model_extent="4.4 2.5 7" 
 	visual_offset="0 0.3 0"/>
 
-	<turret offset="0 0 0" weapon_key="ba_torumaru_cannon.weapon" weapon_offset="0 0.22 0" weapon_recoil="0.1" physics_recoil="0.2" max_rotation_step="0.00005" />
+	<turret offset="0 0 0" weapon_key="ba_torumaru_cannon.weapon" weapon_offset="0 0.22 0" weapon_recoil="0.1" physics_recoil="0.2" max_rotation_step="0.000065" />
 	<turret offset="-0.65 2.7 2.4" weapon_key="hd_vehicle_hmg.weapon" weapon_offset="0 0 1.6" weapon_recoil="0.0" physics_recoil="0.0" rotation="0" rotation_range="0.6" max_rotation_step="0.0005" />
-	<turret offset="0 0.3 0" weapon_key="hd_vehicle_lmg.weapon" weapon_offset="-0.5 2.7 1.7" weapon_recoil="0.0" max_rotation_step="0.00005" />
+	<turret offset="0 0.3 0" weapon_key="hd_vehicle_lmg.weapon" weapon_offset="-0.5 2.7 1.7" weapon_recoil="0.0" max_rotation_step="0.000065" />
 
 	<visual class="chassis" mesh_filename="ba_torumaru_body.mesh" texture_filename="ba_torumaru_01.jpg" max_tilt="0.02" />
 	

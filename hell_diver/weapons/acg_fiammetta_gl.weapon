@@ -35,7 +35,7 @@ key="acg_fiammetta_gl.weapon"
 	
     <next_in_chain key="acg_fiammetta_skill.weapon" share_ammo="0" /> 
 
-    <animation state_key="recoil" animation_key="recoil1, big" /> 
+    <animation state_key="recoil" animation_key="recoil1" /> 
     <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
     <animation key="reload" animation_key="reloading_obliterator_upgraded" />
     <animation state_key="hold" animation_key="" />
@@ -176,7 +176,7 @@ key="acg_fiammetta_skill.weapon"
 	
     <next_in_chain key="acg_fiammetta_gl.weapon" share_ammo="0" /> 
 
-    <animation state_key="recoil" animation_key="recoil1, big" /> 
+    <animation state_key="recoil" animation_key="recoil1" /> 
     <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
     <animation key="reload" animation_key="reloading_obliterator_upgraded" />
     <animation state_key="hold" animation_key="" />
@@ -307,7 +307,7 @@ key="re_acg_fiammetta_gl.weapon"
 	
     <next_in_chain key="re_acg_fiammetta_skill.weapon" share_ammo="0" /> 
 
-    <animation state_key="recoil" animation_key="recoil1, big" /> 
+    <animation state_key="recoil" animation_key="recoil1" /> 
     <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
     <animation key="reload" animation_key="reloading_obliterator_upgraded" />
     <animation state_key="hold" animation_key="" />
@@ -448,7 +448,7 @@ key="re_acg_fiammetta_skill.weapon"
 	
     <next_in_chain key="re_acg_fiammetta_gl.weapon" share_ammo="0" /> 
 
-    <animation state_key="recoil" animation_key="recoil1, big" /> 
+    <animation state_key="recoil" animation_key="recoil1" /> 
     <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
     <animation key="reload" animation_key="reloading_obliterator_upgraded" />
     <animation state_key="hold" animation_key="" />

@@ -62,6 +62,7 @@ class UAVdrone : Tracker {
 					UAVdroneTarget("hd_apb_mk3.vehicle", "Anti Person Barrier"),
 					UAVdroneTarget("jeep.vehicle", "Jeep"),
 					UAVdroneTarget("cyborgs_ifv.vehicle", "Infantry Fighting Vehicle"),
+					UAVdroneTarget("water_tower.vehicle", "Rocket Launch Platform"),
 					UAVdroneTarget("icecream.vehicle", "Icecream")
 				};
 				

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<vehicle name="Projection Console" 
+<vehicles>
+<vehicle 
+name="Projection Console" 
 key="hd_projection_console.vehicle" 
 map_view_atlas_index="25" 
 should_be_destroyed="0" 
@@ -81,3 +83,4 @@ allow_ai_to_use="0"
   </event>    
   
 </vehicle>
+</vehicles>

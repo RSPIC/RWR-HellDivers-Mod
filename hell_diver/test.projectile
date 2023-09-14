@@ -28,13 +28,8 @@
 		<effect class="result"  key="terrain" ref="DXE_muzzle_singing_spot_pre"/>
 		<effect class="result"  key="terrain" ref="DXE_muzzle_singing_randon_spot"/> -->
 
-		<effect class="result" key="terrain" ref="laisha_HGY_result_blast_firesmoke" lighting="0"/>
-		<effect class="result" key="terrain" ref="laisha_HGY_result_blast_AmbientLight" lighting="0"/>
-		<effect class="result" key="terrain" ref="laisha_HGY_result_blast_impact_center_light" lighting="0"/>
-		<effect class="result" key="terrain" ref="laisha_HGY_result_blast_impact_ring" lighting="0"/>
-		<effect class="result" key="terrain" ref="laisha_HGY_result_blast_impact_ring_2" lighting="0"/>
-		<effect class="result" key="terrain" ref="laisha_HGY_result_blast_impact_spark" lighting="0"/>
-		<effect class="result" key="terrain" ref="laisha_HGY_result_blast_impact_spark_2" lighting="0"/>
+		<effect class="result" key="terrain" ref="ui_stage_1" lighting="0"/>
+
 
 
 		<effect class="result" key="static_object" copy="terrain" />

@@ -40,14 +40,14 @@ key="hd_psc_m2016_constitution_full_upgrade.weapon"
     <hud_icon filename="hd_m2016_constitution_full_upgrade.png" /> <!--武器为110x220像素，投掷物为110x110-->
 	
 	<!--武器动作，必须指定recoil和reload动作，部分动作留空会默认调用常规双手武器动作或者无动作-->
-	<animation key="recoil" animation_key="recoil1, big" /> <!--后坐力动作，半身动作-->
+	<animation key="recoil" animation_key="recoil1" /> <!--后坐力动作，半身动作-->
     <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
     <animation key="reload" animation_key="reloading_one_at_a_time_0.55s" />	<!--换弹动作，半身动作-->
     <animation key="reload" stance_key="crouching" animation_key="T_reloading_one_at_a_time_0.4s" />	<!--换弹动作，半身动作-->
     <animation state_key="hold" animation_key="" /><!--站姿静止动作，全身动作-->
 	<animation state_key="hold_on_wall"  animation_key="" /><!--架枪动作，全身动作-->
     <animation state_key="still_against_wall" animation_key="" /><!--靠墙动作，全身动作-->
-    <animation state_key="hold_casual" animation_key="" /><!--闲置动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="hd_gun_salute" /><!--闲置动作，全身动作-->
 	<animation state_key="running" animation_key="" /><!--全身动作-->
 	<animation state_key="walking" animation_key="" /><!--按shift时候的静步前进动作，全身动作-->
     <animation state_key="walking_backwards" animation_key="" /><!--全身动作-->
@@ -76,12 +76,11 @@ key="hd_psc_m2016_constitution_full_upgrade.weapon"
 
 	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
 	<capacity value="0" source="rank" source_value="0.0" />
-	<capacity value="1" source="rank" source_value="251.773" />
+	<capacity value="1" source="rank" source_value="0.0" />
 	
 	<!--军械库相关-->
     <!-- <commonness value="0.1" can_respawn_with="1" in_stock="1" /> 
     <inventory encumbrance="10.0" price="0.0" /> 武器重量和价格，实际负重为两倍encumbrance值 -->
-    <commonness value="0.1"/>
 
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="6" can_be_detected_by_footmen="1" 
