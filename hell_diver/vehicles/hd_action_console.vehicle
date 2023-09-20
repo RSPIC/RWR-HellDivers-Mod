@@ -91,6 +91,8 @@ max_character_collision_speed_on_normal="40"
 simulated_damage="0.5"
 usable_for_cover="0"
 allow_ai_to_use="0"
+time_to_live="600"
+time_to_live_unsteerable="600"
  >
 	<tag name="metal_thin" />
 
@@ -103,8 +105,10 @@ allow_ai_to_use="0"
 	<control max_speed="1" acceleration="1" max_reverse_speed="1.0" max_rotation="1.0" max_water_depth="2" />
 
 	<physics 
-	max_health="200" 
-	mass="1000" 
+	max_health="1001.0" 
+	mass="400.0" 
+	blast_push_threshold="1000"
+	blast_damage_threshold="1001"
 	extent="0.5 0.0 0.5" 
 	offset="0 0.0 0" 
 	top_offset="0 0.1 0" 
@@ -112,14 +116,28 @@ allow_ai_to_use="0"
 	collision_model_extent="3.5 2.6 2" 
 	visual_offset="0 0.2 0" 
 	collision_response_factor="0" 
-	blast_push_threshold="10.0" 
 	vehicle_collision_damage_factor="0"
 	gravity="-40" 
 	/> 
-		<sky_diving chute_offset="0 0 0" trigger_height="20" gravity="-80" mesh_filename="" texture_filename="" />
+	<sky_diving chute_offset="0 0 0" trigger_height="20" gravity="-80" mesh_filename="" texture_filename="" />
+
+
+<!-- operater -->
+	0<turret offset="0 0 -1" weapon_key="hd_rocket_launch_platform.weapon" rotate="1.57" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="1" />
 
 	<!-- 车体 -->
 	<visual class="chassis" offset="0 0 0" mesh_filename="hd_action_console.mesh" texture_filename="hd_action_console.png" />
+	<visual class="turret" turret_index="1" mesh_filename=".mesh" texture_filename="" /> 
+
+	<!-- 破损车体\炮台 -->
+	<visual class="chassis" key="broken" mesh_filename="hd_action_console.mesh" texture_filename="hd_action_console.png" />
+	
+	<rev_sound filename="" low_pitch="0.8" high_pitch="1.0" low_rev="0.0" high_rev="0.3" volume="0.8" />
+
+	<character_slot type="gunner" rotation="1.57" seat_position="0 0 -1" enter_position="0 0 -1" exit_rotation="1.57" hiding="0" animation_key="hd_operation">
+		<turret index="0"/>
+	</character_slot>
+
 
 	<sound key="slide" filename="" />
 	<sound key="squeal" filename="" />
@@ -128,13 +146,16 @@ allow_ai_to_use="0"
 	<sound key="hit" filename="car_hit1.wav" />
 	<sound key="hit" filename="car_hit2.wav" />
 	<sound key="turret_rotation" filename="" />
-	<sound key="destroy" filename="hellpod_close_01.wav" />  
-	<sound key="destroy" filename="hellpod_close_02.wav" />  
+	<sound key="destroy" filename="hd_helldivers_coming_1.wav" pitch_variety="0"/>  
+	<sound key="destroy" filename="hd_helldivers_coming_2.wav" pitch_variety="0" />  
+	<sound key="destroy" filename="hd_helldivers_coming_3.wav" pitch_variety="0" />  
+	<sound key="destroy" filename="hd_helldivers_coming_4.wav" pitch_variety="0" />  
+	<sound key="destroy" filename="hd_helldivers_coming_5.wav" pitch_variety="0" />  
 
 	<event>
 		<trigger class="destroy" />
-  	<result class="spawn" instance_class="projectile" instance_key="hd_exo51_mk3.projectile" min_amount="1"
-	 max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" /><!--摧毁时的爆炸-->
+  	<result class="spawn" instance_class="projectile" instance_key="hd_hellpod_dropping_spawn_ai_normal.projectile" min_amount="8"
+	 max_amount="8" offset="0 40 0" position_spread="15 0" direction_spread="0 0" /><!--摧毁时的爆炸-->
 	</event>
 
 	<event>

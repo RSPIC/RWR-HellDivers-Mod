@@ -48,13 +48,17 @@ allow_ai_to_use="0"
 <!-- shell -->
 	0<turret offset="0 0 2.3" weapon_key="hd_vehicle_null.weapon" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="0"/>
 <!-- operater -->
-	1<turret offset="-2.3 0 0" weapon_key="hd_rocket_launch_platform.weapon" rotate="1.57" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="0" />
+	1<turret offset="-2.3 0 0" weapon_key="hd_rocket_launch_platform_null.weapon" rotate="1.57" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="0" />
 <!-- operater -->
-	2<turret offset="2.3 0 0" weapon_key="hd_rocket_launch_platform.weapon" rotation="1.57" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="0" />
+	2<turret offset="2.3 0 0" weapon_key="hd_rocket_launch_platform_null.weapon" rotation="1.57" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="0" />
+<!-- operater -->
+	3<turret offset="-2.3 0 0" weapon_key="hd_rocket_launch_platform.weapon" rotate="1.57" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="1" />
+<!-- operater -->
+	4<turret offset="2.3 0 0" weapon_key="hd_rocket_launch_platform.weapon" rotation="1.57" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="1" />
 <!-- Sound -->
-	3<turret offset="-2.3 0 0" weapon_key="hd_vehicle_sound_di.weapon" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="0.1" />
+	5<turret offset="-2.3 0 0" weapon_key="hd_vehicle_sound_di.weapon" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="1" />
 <!-- Sound -->
-	4<turret offset="2.3 0 0" weapon_key="hd_vehicle_sound_di.weapon" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="0.1" />
+	6<turret offset="2.3 0 0" weapon_key="hd_vehicle_sound_di.weapon" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="1" />
 
 	<visual class="chassis" mesh_filename="hd_rocket_launch_platform.mesh" texture_filename="hd_rocket_launch_platform.jpg" />
 	<visual class="turret" turret_index="0" mesh_filename="hd_rocket_launch_shell.mesh" texture_filename="hd_rocket_launch_shell.jpg" /> 
@@ -70,10 +74,10 @@ allow_ai_to_use="0"
 	<rev_sound filename="" low_pitch="0.8" high_pitch="1.0" low_rev="0.0" high_rev="0.3" volume="0.8" />
 
 	<character_slot type="gunner" rotation="1.57" seat_position="-2.3 0 0" enter_position="-2.3 0 0" exit_rotation="-1.57" hiding="0" animation_key="hd_operation_right">
-		<turret index="1"/><turret index="3"/>
+		<turret index="1"/><turret index="3"/><turret index="5"/>
 	</character_slot>
 	<character_slot type="gunner" rotation="-1.57" seat_position="2.3 0 0" enter_position="2.3 0 0" exit_rotation="1.57" hiding="0" animation_key="hd_operation_left">
-		<turret index="2"/><turret index="4"/>
+		<turret index="2"/><turret index="4"/><turret index="6"/>
 	</character_slot>
 	
 	<effect event_key="health" value="4004" ref="ui_stage_1" offset="0 3 0" />
@@ -98,7 +102,6 @@ allow_ai_to_use="0"
   		<result class="spawn" instance_class="projectile" instance_key="hd_sms_for_launcher.projectile" min_amount="1" max_amount="1" offset="0 2 0" position_spread="0 0" direction_spread="0 0.01" />
 	</event>
 </vehicle>
-
 <vehicle 
 name="Rocket Launch Platform" 
 key="water_tower.vehicle" 
@@ -147,13 +150,17 @@ allow_ai_to_use="0"
 <!-- shell -->
 	0<turret offset="0 0 2.3" weapon_key="hd_vehicle_null.weapon" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="0"/>
 <!-- operater -->
-	1<turret offset="-2.3 0 0" weapon_key="hd_rocket_launch_platform.weapon" rotate="1.57" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="0" />
+	1<turret offset="-2.3 0 0" weapon_key="hd_rocket_launch_platform_null.weapon" rotate="1.57" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="0" />
 <!-- operater -->
-	2<turret offset="2.3 0 0" weapon_key="hd_rocket_launch_platform.weapon" rotation="1.57" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="0" />
+	2<turret offset="2.3 0 0" weapon_key="hd_rocket_launch_platform_null.weapon" rotation="1.57" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="0" />
+<!-- operater -->
+	3<turret offset="-2.3 0 0" weapon_key="hd_rocket_launch_platform.weapon" rotate="1.57" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="1" />
+<!-- operater -->
+	4<turret offset="2.3 0 0" weapon_key="hd_rocket_launch_platform.weapon" rotation="1.57" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="1" />
 <!-- Sound -->
-	3<turret offset="-2.3 0 0" weapon_key="hd_vehicle_sound_di.weapon" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="0.1" />
+	5<turret offset="-2.3 0 0" weapon_key="hd_vehicle_sound_di.weapon" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="1" />
 <!-- Sound -->
-	4<turret offset="2.3 0 0" weapon_key="hd_vehicle_sound_di.weapon" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="0.1" />
+	6<turret offset="2.3 0 0" weapon_key="hd_vehicle_sound_di.weapon" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="1" />
 
 	<visual class="chassis" mesh_filename="hd_rocket_launch_platform.mesh" texture_filename="hd_rocket_launch_platform.jpg" />
 	<visual class="turret" turret_index="0" mesh_filename="hd_rocket_launch_shell.mesh" texture_filename="hd_rocket_launch_shell.jpg" /> 
@@ -169,10 +176,10 @@ allow_ai_to_use="0"
 	<rev_sound filename="" low_pitch="0.8" high_pitch="1.0" low_rev="0.0" high_rev="0.3" volume="0.8" />
 
 	<character_slot type="gunner" rotation="1.57" seat_position="-2.3 0 0" enter_position="-2.3 0 0" exit_rotation="-1.57" hiding="0" animation_key="hd_operation_right">
-		<turret index="1"/><turret index="3"/>
+		<turret index="1"/><turret index="3"/><turret index="5"/>
 	</character_slot>
 	<character_slot type="gunner" rotation="-1.57" seat_position="2.3 0 0" enter_position="2.3 0 0" exit_rotation="1.57" hiding="0" animation_key="hd_operation_left">
-		<turret index="2"/><turret index="4"/>
+		<turret index="2"/><turret index="4"/><turret index="6"/>
 	</character_slot>
 	
 	<effect event_key="health" value="4004" ref="ui_stage_1" offset="0 3 0" />
@@ -197,4 +204,5 @@ allow_ai_to_use="0"
   		<result class="spawn" instance_class="projectile" instance_key="hd_sms_for_launcher.projectile" min_amount="1" max_amount="1" offset="0 2 0" position_spread="0 0" direction_spread="0 0.01" />
 	</event>
 </vehicle>
+
 </vehicles>

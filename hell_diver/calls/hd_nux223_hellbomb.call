@@ -6,19 +6,12 @@ radio_view_text="NUX-223 Hellbomb Beacon"
       initiation_comment1="Divers request for NUX-223 Hellbomb!"
       acknowledge_comment="Copy, Hellbomb is in the air."
       launch_comment="Hellbomb on gound."
-	notify_metagame="0">
+	notify_metagame="1">
      
-     <round instances="1"
-           instance_class="projectile"
-           instance_key="hd_nux_223_hellbomb.projectile" 
-           instance_spread="0 0 0" 
-           common_spread="0 0 0" 
+     <round 
            launch_time="2"
            spawn_time="2.0"
-           horizontal_offset_at_spawn="0.0"
-           vertical_offset_at_spawn="45.0"
-           initial_speed_to_target="0.0"
-		   avoid_objects="0">
+      >
       <effect class="launch" ref="stratagems_tag_call_mark_1" />
       <effect class="launch" ref="stratagems_tag_call_mark_2" />
     </round>

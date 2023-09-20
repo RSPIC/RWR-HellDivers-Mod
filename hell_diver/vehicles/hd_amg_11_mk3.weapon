@@ -100,7 +100,7 @@ key="hd_amg_11_mk3.weapon"
 	time_to_live="0.5625" can_be_detected_by_driver="1" can_be_disarmed="0" name="A/MG-11 Minigun Turret" radius="0.7"> 
 		
 		<result class="spawn" instance_class="projectile" instance_key="hd_amg_11_mk3_damage.projectile" 
-		min_amount="3" max_amount="3" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+		min_amount="9" max_amount="9" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 		<!-- 1x10=10伤 -->
 	
 		<effect class="result" key="terrain" ref="hd_mg94_result_spray" lighting="0" />

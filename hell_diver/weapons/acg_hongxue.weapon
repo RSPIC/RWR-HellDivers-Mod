@@ -69,14 +69,15 @@ key="acg_hongxue.weapon"
 	
 		<result class="hit" kill_probability="2.0" 
 		kill_probability_offset_on_successful_hit="200"
-		kill_decay_start_time="0.2" kill_decay_end_time="0.4" character_state="none"/>		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		kill_decay_start_time="0.2" kill_decay_end_time="0.4" character_state="none"/>		
+    <trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
     <!-- <model mesh_filename="hongxue_arrow.xml" /> -->
 
-    <sound class="result" key="other" fileref="MAFDS_ZAP_Leviactus_01.wav" pitch_variety="0.03" volume="1.0" />
-		<sound class="result" key="other" fileref="MAFDS_ZAP_Leviactus_02.wav" pitch_variety="0.03" volume="1.0" />
-		<sound class="result" key="other" fileref="MAFDS_ZAP_Leviactus_03.wav" pitch_variety="0.03" volume="1.0" />
-		<sound class="result" key="other" fileref="MAFDS_ZAP_Leviactus_04.wav" pitch_variety="0.03" volume="1.0" />
+    <sound class="result" key="other" fileref="MAFDS_ZAP_Leviactus_01.wav" pitch_variety="0.03" volume="0.7" />
+		<sound class="result" key="other" fileref="MAFDS_ZAP_Leviactus_02.wav" pitch_variety="0.03" volume="0.7" />
+		<sound class="result" key="other" fileref="MAFDS_ZAP_Leviactus_03.wav" pitch_variety="0.03" volume="0.7" />
+		<sound class="result" key="other" fileref="MAFDS_ZAP_Leviactus_04.wav" pitch_variety="0.03" volume="0.7" />
 
 		<effect class="result" key="terrain" ref="hongxue_hit_ring_01" />
 		<effect class="result" key="terrain" ref="hongxue_hit_ring_02" />
@@ -185,15 +186,15 @@ key="acg_hongxue_skill.weapon"
   <projectile file="hd_general_spawn_no_effect.projectile" pulldown_in_air="10" can_be_detected_by_footmen="1" 
 	time_to_live="0.375" can_be_detected_by_driver="1" can_be_disarmed="0" name="HongXue"> 
 	
-    <result class="blast" radius="5.5" damage="20" push="0.3" decal="0" faction_compare="not_equal" />
+    <result class="blast" radius="5.5" damage="40" push="0.3" decal="0" faction_compare="not_equal" />
 		<trigger class="time" time_to_live="1.0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
     <model mesh_filename="hongxue_arrow.xml" />
 
-    <sound class="result" key="other" fileref="MAFDS_ZAP_Moonlight_Rush_01.wav" pitch_variety="0.03" volume="1.0" />
-    <sound class="result" key="other" fileref="MAFDS_ZAP_Moonlight_Rush_02.wav" pitch_variety="0.03" volume="1.0" />
-    <sound class="result" key="other" fileref="MAFDS_ZAP_Moonlight_Rush_03.wav" pitch_variety="0.03" volume="1.0" />
-    <sound class="result" key="other" fileref="MAFDS_ZAP_Moonlight_Rush_04.wav" pitch_variety="0.03" volume="1.0" />
+    <sound class="result" key="other" fileref="MAFDS_ZAP_Moonlight_Rush_01.wav" pitch_variety="0.03" volume="0.7" />
+    <sound class="result" key="other" fileref="MAFDS_ZAP_Moonlight_Rush_02.wav" pitch_variety="0.03" volume="0.7" />
+    <sound class="result" key="other" fileref="MAFDS_ZAP_Moonlight_Rush_03.wav" pitch_variety="0.03" volume="0.7" />
+    <sound class="result" key="other" fileref="MAFDS_ZAP_Moonlight_Rush_04.wav" pitch_variety="0.03" volume="0.7" />
 
     
 		<effect class="result" key="terrain" ref="hongxue_hit_ring_mod2_01" />
@@ -315,10 +316,10 @@ key="re_acg_hongxue.weapon"
 		<rotation class="motion" /><!--参数：motion、random-->
     <!-- <model mesh_filename="hongxue_arrow.xml" /> -->
 
-    <sound class="result" key="other" fileref="MAFDS_ZAP_Leviactus_01.wav" pitch_variety="0.03" volume="1.0" />
-		<sound class="result" key="other" fileref="MAFDS_ZAP_Leviactus_02.wav" pitch_variety="0.03" volume="1.0" />
-		<sound class="result" key="other" fileref="MAFDS_ZAP_Leviactus_03.wav" pitch_variety="0.03" volume="1.0" />
-		<sound class="result" key="other" fileref="MAFDS_ZAP_Leviactus_04.wav" pitch_variety="0.03" volume="1.0" />
+    <sound class="result" key="other" fileref="MAFDS_ZAP_Leviactus_01.wav" pitch_variety="0.03" volume="0.7" />
+		<sound class="result" key="other" fileref="MAFDS_ZAP_Leviactus_02.wav" pitch_variety="0.03" volume="0.7" />
+		<sound class="result" key="other" fileref="MAFDS_ZAP_Leviactus_03.wav" pitch_variety="0.03" volume="0.7" />
+		<sound class="result" key="other" fileref="MAFDS_ZAP_Leviactus_04.wav" pitch_variety="0.03" volume="0.7" />
 
 		<effect class="result" key="terrain" ref="hongxue_hit_ring_01" />
 		<effect class="result" key="terrain" ref="hongxue_hit_ring_02" />
@@ -427,15 +428,15 @@ key="re_acg_hongxue_skill.weapon"
   <projectile file="hd_general_spawn_no_effect.projectile" pulldown_in_air="10" can_be_detected_by_footmen="1" 
 	time_to_live="0.375" can_be_detected_by_driver="1" can_be_disarmed="0" name="HongXue"> 
 	
-    <result class="blast" radius="5.5" damage="20" push="0.3" decal="0" faction_compare="not_equal" />
+    <result class="blast" radius="5.5" damage="40" push="0.3" decal="0" faction_compare="not_equal" />
 		<trigger class="time" time_to_live="1.0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
     <model mesh_filename="hongxue_arrow.xml" />
 
-    <sound class="result" key="other" fileref="MAFDS_ZAP_Moonlight_Rush_01.wav" pitch_variety="0.03" volume="1.0" />
-    <sound class="result" key="other" fileref="MAFDS_ZAP_Moonlight_Rush_02.wav" pitch_variety="0.03" volume="1.0" />
-    <sound class="result" key="other" fileref="MAFDS_ZAP_Moonlight_Rush_03.wav" pitch_variety="0.03" volume="1.0" />
-    <sound class="result" key="other" fileref="MAFDS_ZAP_Moonlight_Rush_04.wav" pitch_variety="0.03" volume="1.0" />
+    <sound class="result" key="other" fileref="MAFDS_ZAP_Moonlight_Rush_01.wav" pitch_variety="0.03" volume="0.7" />
+    <sound class="result" key="other" fileref="MAFDS_ZAP_Moonlight_Rush_02.wav" pitch_variety="0.03" volume="0.7" />
+    <sound class="result" key="other" fileref="MAFDS_ZAP_Moonlight_Rush_03.wav" pitch_variety="0.03" volume="0.7" />
+    <sound class="result" key="other" fileref="MAFDS_ZAP_Moonlight_Rush_04.wav" pitch_variety="0.03" volume="0.7" />
 
     
 		<effect class="result" key="terrain" ref="hongxue_hit_ring_mod2_01" />

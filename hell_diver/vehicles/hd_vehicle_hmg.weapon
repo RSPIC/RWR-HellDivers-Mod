@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>	
 <weapon 
-file="_hd_lmg.base"
+file="_hd_vehicle_mg.base"
 key="hd_vehicle_hmg.weapon" 
 > 
 	<tag name="machine gun" />
@@ -73,8 +73,8 @@ key="hd_vehicle_hmg.weapon"
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
 	time_to_live="0.45" can_be_detected_by_driver="1" can_be_disarmed="0" name="MG-1024 Heavy Machine Gun"> 
 		
-		<result class="hit" kill_probability="1.0" 
-		kill_probability_offset_on_successful_hit="15"
+		<result class="hit" kill_probability="2.0" 
+		kill_probability_offset_on_successful_hit="25"
 		kill_decay_start_time="0.25" kill_decay_end_time="0.55" character_state="none"/>
 		<!-- slower decay -->
 		<!-- 30m max damage range -->
@@ -82,7 +82,7 @@ key="hd_vehicle_hmg.weapon"
 	
 		<effect class="result" key="terrain" ref="hd_mg94_result_spray" lighting="0" />
 		<effect class="result" key="terrain" ref="hd_mg94_result_bullet_light_center" lighting="0" />
-		<effect class="result" key="terrain" ref="hd_mg94_result_bullet_smoke" lighting="0" />
+		<!-- <effect class="result" key="terrain" ref="hd_mg94_result_bullet_smoke" lighting="0" /> -->
 		<effect class="result" key="terrain" ref="hd_mg94_hit_leave" lighting="0" />
 		<effect class="activated" ref="general_weapon_activated_bullet_light" lighting="0"/>
 		<effect class="activated" ref="general_weapon_activated_bullet_centerlight" lighting="0"/>

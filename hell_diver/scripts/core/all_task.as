@@ -329,7 +329,7 @@ class Event_call_helldiver_superearth_thunderer_barrage : event_call_task {
 		if(m_mode == "thunderer_barrage_mk3")
 		{
 			m_excute_Limit = 9;
-			m_time_internal = 2;
+			m_time_internal = 1.5;
 			m_airstrike_key = "hd_superearth_thunderer_barrage_mk3";
 		}
 	}
@@ -369,7 +369,7 @@ class Event_call_helldiver_superearth_laser_strike : event_call_task {
 		if(m_mode == "laser_strike_mk3")
 		{
 			m_excute_Limit = 60;
-			m_time_internal = 0.25;
+			m_time_internal = 0.20;
 			m_airstrike_key = "hd_superearth_laser_strike_mk3";
 		}
 	}
@@ -401,9 +401,9 @@ class Event_call_helldiver_superearth_laser_strike : event_call_task {
 					Vector3 aim_pos = stringToVector3(player.getStringAttribute("aim_target"));
 					Vector3 distance = aim_pos.subtract(m_pos2);
 					//distance = getMultiplicationVector(distance,Vector3(1,0,1));
-					Vector3 offset = distance.scale(1.0/5.0);
-					m_pos2 = m_pos2.add(offset);
-					m_pos1 = m_pos2.add(Vector3(0,40,0));
+					Vector3 offset = distance.scale(1.0/2.0);
+					m_pos2 = aim_pos;
+					m_pos1 = aim_pos.add(Vector3(0,40,0));
 				}
 			}
 		}else{m_end = true;return;}		

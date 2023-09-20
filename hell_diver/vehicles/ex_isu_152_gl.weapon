@@ -51,7 +51,12 @@ key="ex_isu_152_gl.weapon"
 		<!--命中音效-->
 		<sound class="result" key="other" fileref="at_hit_sfx_2.wav" pitch_variety="0.03" volume="1.0" />
 	
-		<trigger class="impact" time_to_live="0.4"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<trigger class="impact">
+			<collider class="terrain" enabled="1" />     
+			<collider class="static_object" enabled="1" /> 
+			<collider class="vehicle" enabled="1" faction_compare="not_equal"/> 
+			<collider class="character" enabled="1" />
+		</trigger> 
 		<rotation class="motion" /><!--参数：motion、random-->
 
 		<trail probability="1" key="nova_trail"/>	

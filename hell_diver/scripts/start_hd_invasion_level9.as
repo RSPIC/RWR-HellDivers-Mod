@@ -17,7 +17,7 @@ void main(dictionary@ inputData) {
 
         settings.m_fellowCapacityFactor = 1.5;
         settings.m_fellowAiAccuracyFactor = 1.0;
-        settings.m_enemyCapacityFactor = 2.0;
+        settings.m_enemyCapacityFactor = 3.0;
         settings.m_enemyAiAccuracyFactor = 0.94;
 
         settings.m_playerAiReduction = 0.0;            // didn't work before 1.76! (was 1.0)
@@ -39,14 +39,14 @@ void main(dictionary@ inputData) {
 
         settings.m_startServerCommand = """
 <command class='start_server'
-	server_name='[地狱潜兵] LEVEL 9 '
+	server_name='[地狱潜兵] 难度 9-普通 '
 	server_port='1242'
 	url='https://steamcommunity.com/sharedfiles/filedetails/?id=2910392031'
 	register_in_serverlist='1'
 	mode='HD'
         persistency='forever'
-	comment='Running with HellDivers Mod.  QQ：498520233 1.5倍xp'
-	max_players='16'>
+	comment='地狱潜兵模组  QQ：498520233 1.5倍xp'
+	max_players='12'>
 	<client_faction id='0' />
 </command>
 """;

@@ -38,7 +38,7 @@ key="hd_arc_mgc_capacitor_mk3.weapon"
 	<animation state_key="walking_backwards" animation_key="walking backwards, hip fire" />  
 	<animation state_key="hold_on_wall" animation_key="hold, hip fire" />
 	<animation state_key="still_against_wall" 	animation_key="hold, hip fire" />
-	<animation state_key="walking" animation_key="walking, carrying load" />
+	<animation state_key="walking" animation_key="" />
 	<animation state_key="running" animation_key="running, line infantry" />  
 
     <sound key="fire" fileref="hd_arc_mgc_capacitor_fire_01.wav" pitch_variety="0.1" volume="0.7" />
@@ -148,7 +148,7 @@ key="hd_arc_mgc_capacitor_dicker.weapon"
 	<animation state_key="walking_backwards" animation_key="walking backwards, hip fire" />  
 	<animation state_key="hold_on_wall" animation_key="hold, hip fire" />
 	<animation state_key="still_against_wall" 	animation_key="hold, hip fire" />
-	<animation state_key="walking" animation_key="walking, carrying load" />
+	<animation state_key="walking" animation_key="" />
 	<animation state_key="running" animation_key="running, line infantry" />  
 
     <sound key="fire" fileref="hd_arc_mgc_capacitor_fire_01.wav" pitch_variety="0.1" volume="0.7" />

@@ -159,13 +159,7 @@ class lottery_manager : Tracker {
         if(containerId != 1){return;}// 1(军械库)
         if(g_playerInfoBuck is null){return;}
         string name = g_playerInfoBuck.getNameByPid(pid);
-        // const XmlElement@ playerInfo = readGlobalPlayerInfo(m_metagame,"player_id",""+pid);
-        // if(playerInfo is null){
-        //     if(!reUpdateGlobalPlayerInfo(m_metagame,pid,playerInfo)){
-        //         return;
-        //     }
-        // }
-        // string name = playerInfo.getStringAttribute("player_name");
+
 
         array<string> targetKey = {"hd_bonusfactor_al_","hd_bonusfactor_xp_","hd_bonusfactor_rp_"};
         for(uint i = 0 ; i < targetKey.size() ; ++i){

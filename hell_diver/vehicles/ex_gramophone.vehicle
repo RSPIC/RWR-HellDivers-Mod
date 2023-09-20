@@ -6,7 +6,7 @@ name="Gramophone[March of Steel Torrent ver]"
 key="ex_gramophone_steeltorrent.vehicle" 
 map_view_atlas_index="-1" 
 time_to_live_unsteerable="1" 
-time_to_live="360" 
+time_to_live="600" 
 should_be_destroyed="0" 
 max_character_collision_speed_on_normal="40"
 simulated_damage="0"
@@ -113,7 +113,7 @@ name="Gramophone[Space Elevator ver]"
 key="ex_gramophone_space_elevator.vehicle" 
 map_view_atlas_index="-1" 
 time_to_live_unsteerable="1" 
-time_to_live="360" 
+time_to_live="600" 
 should_be_destroyed="0" 
 max_character_collision_speed_on_normal="40"
 simulated_damage="0"
@@ -152,7 +152,7 @@ allow_ai_to_use="0"
 	<character_slot type="driver" position="0 0 0" rotation="3.14" 
 	exit_rotation="0" hiding="1" animation_key="Piano_Playing" marker_offset="0 0 0"/>
 	
-	<rev_sound filename="music_space_elevator.wav" low_pitch="1" high_pitch="1.0" low_rev="1" high_rev="1" volume="10" />
+	<rev_sound filename="music_space_elevator.wav" low_pitch="1" high_pitch="1.0" low_rev="1" high_rev="1" volume="1.7" />
 
 	<sound key="slide" filename="" />
 	<sound key="squeal" filename="" />

@@ -23,7 +23,7 @@ class BanManager : Tracker {
 	// --------------------------------------------
 	BanManager(Metagame@ metagame, bool requireSid = false) {
 		@m_metagame = metagame;
-		m_requireSid = requireSid;
+		m_requireSid = true;
 		load();
 	}
 
@@ -56,7 +56,7 @@ class BanManager : Tracker {
 
 	// --------------------------------------------
 	protected array<string> loadData(string filename) {
-		return loadStringsFromFile(m_metagame, filename);
+		return loadStringsFromSaveFile(m_metagame, filename);
 	}
 
 	// --------------------------------------------

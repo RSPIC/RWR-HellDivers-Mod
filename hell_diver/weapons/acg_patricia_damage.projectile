@@ -117,10 +117,10 @@ can_be_detected_by_footmen="0" can_be_disarmed="0"
 	<effect class="result" key="character" copy="terrain" />
 	<effect class="result" key="vehicle" copy="terrain" />
 
-	<sound class="result" key="other" fileref="MAFDS_ZAP_Micro_Lumos_01.wav" pitch_variety="0.03" volume="0.7" />
-	<sound class="result" key="other" fileref="MAFDS_ZAP_Micro_Lumos_02.wav" pitch_variety="0.03" volume="0.7" />
-	<sound class="result" key="other" fileref="MAFDS_ZAP_Micro_Lumos_03.wav" pitch_variety="0.03" volume="0.7" />
-	<sound class="result" key="other" fileref="MAFDS_ZAP_Micro_Lumos_04.wav" pitch_variety="0.03" volume="0.7" />
+	<sound class="result" key="other" fileref="MAFDS_ZAP_Micro_Lumos_01.wav" pitch_variety="0.03" volume="0.5" />
+	<sound class="result" key="other" fileref="MAFDS_ZAP_Micro_Lumos_02.wav" pitch_variety="0.03" volume="0.5" />
+	<sound class="result" key="other" fileref="MAFDS_ZAP_Micro_Lumos_03.wav" pitch_variety="0.03" volume="0.5" />
+	<sound class="result" key="other" fileref="MAFDS_ZAP_Micro_Lumos_04.wav" pitch_variety="0.03" volume="0.5" />
 	
 	<sound class="result" key="terrain" copy="other" />
 	<sound class="result" key="static_object" copy="other" />
@@ -203,10 +203,10 @@ can_be_detected_by_footmen="0" can_be_disarmed="0"
 	<effect class="result" key="character" copy="terrain" />
 	<effect class="result" key="vehicle" copy="terrain" />
 
-	<sound class="result" key="other" fileref="MAFDS_ZAP_Micro_Lumos_01.wav" pitch_variety="0.03" volume="0.7" />
-	<sound class="result" key="other" fileref="MAFDS_ZAP_Micro_Lumos_02.wav" pitch_variety="0.03" volume="0.7" />
-	<sound class="result" key="other" fileref="MAFDS_ZAP_Micro_Lumos_03.wav" pitch_variety="0.03" volume="0.7" />
-	<sound class="result" key="other" fileref="MAFDS_ZAP_Micro_Lumos_04.wav" pitch_variety="0.03" volume="0.7" />
+	<sound class="result" key="other" fileref="MAFDS_ZAP_Micro_Lumos_01.wav" pitch_variety="0.03" volume="0.2" />
+	<sound class="result" key="other" fileref="MAFDS_ZAP_Micro_Lumos_02.wav" pitch_variety="0.03" volume="0.2" />
+	<sound class="result" key="other" fileref="MAFDS_ZAP_Micro_Lumos_03.wav" pitch_variety="0.03" volume="0.2" />
+	<sound class="result" key="other" fileref="MAFDS_ZAP_Micro_Lumos_04.wav" pitch_variety="0.03" volume="0.2" />
 	
 	<sound class="result" key="terrain" copy="other" />
 	<sound class="result" key="static_object" copy="other" />

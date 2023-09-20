@@ -531,11 +531,11 @@ void setWoundCharacter(const Metagame@ m_metagame,int characterId){
 	m_metagame.getComms().send(command);
 }
 
-bool isVectorInMap(Vector3&in position,int range = 32){
+bool isVectorInMap(Vector3&in position,int range = 64){
 	if(position.m_values[0] < range || position.m_values[0] > (1024-range) ){
 		return false;
 	}
-	if(position.m_values[1] < 0  ){
+	if(position.m_values[1] <= 0  ){
 		return false;
 	}
 	if(position.m_values[2] < range || position.m_values[2] > (1024-range) ){

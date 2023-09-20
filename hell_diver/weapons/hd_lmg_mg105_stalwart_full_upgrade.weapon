@@ -39,10 +39,10 @@ key="hd_lmg_mg105_stalwart_full_upgrade.weapon"
 	<animation state_key="crouching" animation_key="crouch, hold, hip fire" />
 	<animation state_key="crouch_moving" animation_key="crouching forwards, hip fire" />
 	<animation state_key="walking_backwards" animation_key="walking backwards, hip fire" />  
-	<animation state_key="hold_on_wall" animation_key="hold, hip fire" />
-	<animation state_key="still_against_wall" 	animation_key="hold, hip fire" />
+	<animation state_key="hold_on_wall" animation_key="" />
+	<animation state_key="still_against_wall" 	animation_key="" />
 	<animation state_key="walking" animation_key="" />
-	<animation state_key="running" animation_key="running_slower" />  
+	<animation state_key="running" animation_key="" />  
 
     <sound key="fire" fileref="mg105_fire.wav" pitch_variety="0.1" volume="0.3" />
     <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />

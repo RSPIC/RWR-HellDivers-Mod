@@ -686,7 +686,7 @@ class projectile_event : Tracker {
                 const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
                 if (character !is null) {
                     Vector3 position = stringToVector3(event.getStringAttribute("position"));
-
+                    int playerId = character.getIntAttribute("player_id");
                     array<const XmlElement@>@ players = getPlayers(m_metagame);
                     for (uint i = 0; i < players.size(); ++i) {
                         const XmlElement@ t_player = players[i];
@@ -702,6 +702,9 @@ class projectile_event : Tracker {
                                     string name = t_player.getStringAttribute("name");
                                     g_battleInfoBuck.addMission(name);
                                     _report(m_metagame,"玩家："+name+"完成了'启动火箭发射平台'支线任务");
+                                    notify(m_metagame, "地狱火呼叫次数 +1", dictionary(), "misc", playerId, false, "", 1.0);
+                                    string playerName = g_playerInfoBuck.getNameByPid(playerId);
+                                    g_userCountInfoBuck.addCount(playerName,"hd_nux223_hellbomb.call",-1);
                                 }
                             }
                         }

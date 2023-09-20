@@ -10,6 +10,7 @@ class XmlElement {
 	}
 	// --------------------------------------------
     XmlElement(const XmlElement@ original) {
+		if(original is null){return;}
 		m_data = original.m_data;
     }
 

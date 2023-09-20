@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapon 
+file="_hd_vehicle_mg.base"
+key="hd_vehicle_hmg_b.weapon" 
+> 
+	<tag name="machine gun" />
+    <specification 	
+    slot="0" 	
+    retrigger_time="0.05" 
+	last_burst_retrigger_time="0.04"
+    accuracy_factor="0.985" 
+	spread_range="0.2"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="0.068998" 
+    sustained_fire_diminish_rate="1" 
+	cooldown_start="0.9999"
+	cooldown_end="0.8999"
+    magazine_size="-1" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="1"	
+    suppressed="0" 
+	class="0" 
+    name="MG-1024 Heavy Machine Gun" 
+	burst_shots="1" 
+    projectiles_per_shot="1" 
+    projectile_speed="200.0"
+	barrel_offset="0" 
+	carry_in_two_hands="1" 
+	stab_enabled="0" 
+	stab_range="0" 
+	/> 
+	<!--780RPM 	3.5s/3s Reload(tactical)	30m range-->
+	<!-- 76/151 magazine (Extended Magazine upgrade C2) -->
+	<!-- 12'/12' max spread 3'/1' min spread (Recoil Absorber upgrade C1) -->
+	<!-- -0.9'/-1.1' Spread Increase per Shot 负后坐力 ((Recoil Absorber upgrade C1)) -->
+	
+	<animation key="recoil" animation_key="recoil, hip fire" />
+	<animation key="recoil" stance_key="prone" animation_key="recoil1" />
+	<animation state_key="hold" animation_key="hold, hip fire" />
+	<animation state_key="reload" animation_key="T_reloading_mg105"/>
+	<animation state_key="crouching" animation_key="crouch, hold, hip fire" />
+	<animation state_key="crouch_moving" animation_key="crouching forwards, hip fire" />
+	<animation state_key="walking_backwards" animation_key="walking backwards, hip fire" />  
+	<animation state_key="hold_on_wall" animation_key="hold, hip fire" />
+	<animation state_key="still_against_wall" 	animation_key="hold, hip fire" />
+	<animation state_key="walking" animation_key="" />
+	<animation state_key="running" animation_key="running_slower" />  
+
+    <sound key="fire" fileref="mg105_fire.wav" pitch_variety="0.1" volume="0.3" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_02.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="magazine_out" fileref="hd_mg94_mag_out.wav" />
+    <sound key="magazine_in" fileref="hd_mg94_mag_in.wav" />
+    <sound key="cycle" fileref="rifle_chamber.wav" />
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" />
+    <sound key="last_ammo" fileref="" />
+	<sound class="impact" fileref="rifle_drop.wav" />
+
+    <model filename="" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="hd_m5_apc_mg94.png" /> 
+
+  	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="1" source="rank" source_value="0.0" />
+	
+    <!-- <commonness value="1" can_respawn_with="1" in_stock="1" /> 
+    <inventory encumbrance="12.0" price="0.0" />  -->
+    <weak_hand_hold offset="0.3" /> 
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.45" can_be_detected_by_driver="1" can_be_disarmed="0" name="MG-2048 Heavy Machine Gun"> 
+		
+		<result class="blast" radius="3.0" damage="20" push="0" decal="0" character_state="wound" 
+		faction_compare="not_equal"
+		damage_origin_vehicle="0" />
+		<!-- slower decay -->
+		<!-- 30m max damage range -->
+		<!-- damage 75/100hit  -->
+	
+		<effect class="result" key="terrain" ref="hd_mg94_result_spray" lighting="0" />
+		<effect class="result" key="terrain" ref="hd_mg94_result_bullet_light_center" lighting="0" />
+		<effect class="result" key="terrain" ref="hd_mg94_result_bullet_smoke" lighting="0" />
+		<effect class="result" key="terrain" ref="hd_mg94_hit_leave" lighting="0" />
+		<effect class="activated" ref="general_weapon_activated_bullet_light" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_bullet_centerlight" lighting="0"/>
+			<effect class="result" key="terrain" ref="MG_hvy_hit_smoke" lighting="0"/>
+			<effect class="result" key="terrain" ref="MG_hvy_hit_leave" lighting="0" post_processing="1"/>
+			<effect class="result" key="terrain" ref="MG_heavy_up_dust_1" lighting="0"/>
+			<effect class="result" key="terrain" ref="MG_heavy_up_dust_2" lighting="0"/>
+			<effect class="result" key="terrain" ref="MG_heavy_up_dust_3" lighting="0"/>
+			<effect class="result" key="terrain" ref="MG_heavy_up_dust_4" lighting="0"/>
+			<effect class="result" key="terrain" ref="MG_hvy_spread_dust" lighting="0"/>
+			<effect class="result" key="terrain" ref="MG_hvy_hit_light" lighting="0" post_processing="1"/> 
+
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_01" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_02" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_03" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_04" />
+
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		<trail probability="1" key="normal_trail_long_red" lighting="0"/>	
+    </projectile>
+		<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+		<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 	
+	
+    <stance state_key="running" accuracy="0.5" /> 
+    <stance state_key="walking" accuracy="0.9" />
+	<stance state_key="standing" accuracy="0.955" />
+	<stance state_key="crouching" accuracy="0.99" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1.4" /> 
+    <stance state_key="prone_moving" accuracy="0.5" />
+    <stance state_key="over_wall" accuracy="1.8" />     
+     
+	 
+
+
+</weapon>

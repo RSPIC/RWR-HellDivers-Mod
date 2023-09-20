@@ -28,7 +28,9 @@ const XmlElement@ readXML(const Metagame@ metagame, string filename, string loca
 			dictionary = { {"TagName", "data"}, {"class", "saved_data"}, {"filename", filename}, {"location", location} } }));
 	const XmlElement@ xml = metagame.getComms().query(query);
     if(xml is null){
+        _log("readXml is null,create and reRead for filename="+filename+",in location="+location);
         writeXML(metagame,filename,XmlElement(filename),location);
+        @xml = readXML(metagame,filename,location);
     }
 	return xml;
 }
@@ -78,7 +80,6 @@ class IO_data : Tracker {
       }
     // -------------------------------------------
     void start(){
-        //addToPlayersInfo();
     }
     // -------------------------------------------
     protected void handlePlayerDisconnectEvent(const XmlElement@ event) {
@@ -113,7 +114,11 @@ class IO_data : Tracker {
             }
 
             array<const XmlElement@> infos = allInfo.getElementsByTagName("reward_key");
-            if(int(infos.size()) == 0){ _report(m_metagame,"密钥列表为空"); return;}
+            if(int(infos.size()) == 0){ 
+                _report(m_metagame,"密钥列表为空"); 
+                writeXML(m_metagame,m_reward_keys_FILENAME,XmlElement(m_reward_keys_FILENAME));
+                return;
+            }
             bool isValid = false;
             string access_tag = "";
             int pid = g_playerInfoBuck.getPidByName(p_name);
@@ -952,13 +957,14 @@ class IO_data : Tracker {
     }
 
     protected const XmlElement@ readFile(string filename){
-        const XmlElement@ root = readXML(m_metagame,filename).getFirstChild();
-        if(root is null){
+        const XmlElement@ root_base = readXML(m_metagame,filename);
+        if(root_base is null){
             _log("readFile is null,create"+filename+"是NULL，重新创建");
             _report(m_metagame,"文件名="+filename);
             writeXML(m_metagame,filename,XmlElement(filename));
-            @root = readXML(m_metagame,filename).getFirstChild();
+            @root_base = readXML(m_metagame,filename);
         }
+        const XmlElement@ root = root_base.getFirstChild();
         return root;
     }
     protected const XmlElement@ readPlayerInfo(string sid){
@@ -1391,7 +1397,7 @@ class IO_data : Tracker {
             notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
             return true;
         }
-        if(access_tag == "  "){//被邀请者奖励
+        if(access_tag == "invited_reward"){//被邀请者奖励
             @res = Resource("hd_bonusfactor_al_75","carry_item");
             res.addToResources(resources,10);
             @res = Resource("reward_box_weapon_omega.carry_item","carry_item");//MK1~MK3
@@ -1548,28 +1554,42 @@ class IO_data : Tracker {
 
 
 const XmlElement@ readFile(Metagame@ m_metagame, string filename,string location = "savegame"){
-    const XmlElement@ root = readXML(m_metagame,filename,location).getFirstChild();
-    if(root is null){
+    const XmlElement@ root_base = readXML(m_metagame,filename,location);
+    if(root_base is null){
         _log("readFile is null,create"+filename+"是NULL，重新创建");
         _report(m_metagame,"文件名="+filename);
         writeXML(m_metagame,filename,XmlElement(filename),location);
-        @root = readXML(m_metagame,filename,location).getFirstChild();
+        @root_base = readXML(m_metagame,filename,location);
     }
+    const XmlElement@ root = root_base.getFirstChild();
     return root;
 }
 
 // -------------------------------------------
 void updateGlobalPlayerInfo(Metagame@ m_metagame, const XmlElement@ newplayer = null,bool&in isOnline = true){
     array<const XmlElement@> players;
-    if(newplayer is null){
-        players = getPlayers(m_metagame);
-    }else{
-        players.insertLast(newplayer);
+    players = getPlayers(m_metagame);
+    if(players is null){return;}
+
+    // 读取存档玩家信息
+    XmlElement@ allInfo = XmlElement(readFile(m_metagame,"_globalPlayerInfo_"+g_server_difficulty_level+".xml","app_data"));
+    if(allInfo is null){
+        _log("allInfo is null, in updateGlobalPlayerInfo");
+        return;
     }
+
+    allInfo.removeAllChild();
+    //解决空子项问题
+    XmlElement a("player");
+    a.setBoolAttribute("onRemove",true);
+    allInfo.appendChild(a);
+
     //获取在线玩家信息
     for(uint i=0;i<players.size();++i){
         XmlElement@ player = XmlElement(players[i]);
-        if(player is null){continue;}
+        if(player is null){
+            _log("updateGlobalPlayerInfo player is null");
+            continue;}
         bool is_online = isOnline;
         string player_name = player.getStringAttribute("name");
         string profile_hash = player.getStringAttribute("profile_hash");
@@ -1577,73 +1597,29 @@ void updateGlobalPlayerInfo(Metagame@ m_metagame, const XmlElement@ newplayer = 
         int pid = player.getIntAttribute("player_id");
         int cid = player.getIntAttribute("character_id");
         int fid = player.getIntAttribute("faction_id");
-        
-        // 读取存档玩家信息
-        XmlElement@ allInfo = XmlElement(readFile(m_metagame,"_globalPlayerInfo_"+g_server_difficulty_level+".xml","app_data"));
-        if(allInfo is null){
-            _log("allInfo is null, in updateGlobalPlayerInfo");
-            return;
-        }
-        // 读取存档玩家账号信息
-        array<const XmlElement@> m_players = allInfo.getElementsByTagName("player");
 
-        allInfo.removeAllChild();
-        //解决空子项问题
-        XmlElement a("player");
-        a.setBoolAttribute("onRemove",true);
-        allInfo.appendChild(a);
-
-        bool isExist = false;
-        for(int j = 0 ; j < int(m_players.size()) ; ++j){
-            XmlElement@ m_player = XmlElement(m_players[j]);
-            string m_name = m_player.getStringAttribute("player_name");
-            //排除onRemove对象
-            if(m_player.hasAttribute("onRemove")){
-                bool isToRemove = m_player.getBoolAttribute("onRemove");
-                if(isToRemove){
-                    continue;
-                }
-            }
-            //玩家信息存在，则删除重写覆盖
-            if(m_name == player_name){
-                array<const XmlElement@> childs = m_player.getElementsByTagName("access_tag");
-                m_player.removeAllChild();
-
-                m_player.setBoolAttribute("is_online",is_online);
-
-                m_player.setStringAttribute("profile_hash",profile_hash);
-                m_player.setStringAttribute("sid",sid);
-
-                m_player.setIntAttribute("faction_id",fid);
-                m_player.setIntAttribute("character_id",cid);
-                m_player.setIntAttribute("player_id",pid);
-
-                m_player.appendChilds(childs);
-                allInfo.appendChild(m_player);
-
-                isExist = true;
-            }else{//其他玩家信息不修改存回去
-                allInfo.appendChild(m_player);
-            }
-        }
-        //不存在，新建信息
-        if(!isExist){
-            XmlElement playerinfo("player");
-            playerinfo.setBoolAttribute("is_online",is_online);
-            playerinfo.setStringAttribute("player_name",player_name);
-            playerinfo.setStringAttribute("profile_hash",profile_hash);
-            playerinfo.setStringAttribute("sid",sid);
-            playerinfo.setIntAttribute("faction_id",fid);
-            playerinfo.setIntAttribute("character_id",cid);
-            playerinfo.setIntAttribute("player_id",pid);
-
-            allInfo.appendChild(playerinfo);
-        }
-        allInfo.removeChild("player",0);
-        writeXML(m_metagame,"_globalPlayerInfo_"+g_server_difficulty_level+".xml",allInfo,"app_data");
-        
+        const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+        if(character is null){
+             _log("updateGlobalPlayerInfo character is null");
+            continue;}
+        int rp = character.getIntAttribute("rp");
+        float xp = character.getFloatAttribute("xp");
+ 
+        XmlElement playerinfo("player");
+        playerinfo.setBoolAttribute("is_online",is_online);
+        playerinfo.setStringAttribute("player_name",player_name);
+        playerinfo.setStringAttribute("profile_hash",profile_hash);
+        playerinfo.setStringAttribute("sid",sid);
+        playerinfo.setIntAttribute("faction_id",fid);
+        playerinfo.setIntAttribute("character_id",cid);
+        playerinfo.setIntAttribute("player_id",pid);
+        playerinfo.setIntAttribute("rp",rp);
+        playerinfo.setFloatAttribute("xp",xp);
+        allInfo.appendChild(playerinfo); 
     }
-    // writeXML(m_metagame,m_playerInfo_FILENAME,allInfo);
+    allInfo.removeChild("player",0);
+    writeXML(m_metagame,"_globalPlayerInfo_"+g_server_difficulty_level+".xml",allInfo,"app_data");
+
     if(g_debugMode){
         _report(m_metagame,"saveGlobalPlayerInfo");
     }

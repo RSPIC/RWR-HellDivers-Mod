@@ -19,6 +19,9 @@ dictionary callLaunchIndex = {
     //四人空投
     {"hd_sos_beacom.call",3},
 
+    //地狱火
+    {"hd_nux223_hellbomb.call",4},
+
     // 空空投
     {"",0}
 };
@@ -128,6 +131,32 @@ class call_event : Tracker {
                                 };
                             playRandomSoundArray(m_metagame,sound_files,factionId,c_pos);
                         }
+                        break;
+                    }
+                    case 4:{//地狱火
+                        const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                        if (character !is null) {
+                            Vector3 t_pos = stringToVector3(position);
+                            Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));
+                            float distance = getAimUnitDistance(1,c_pos,t_pos);
+                            if(distance >= 50){
+                                spawnStaticProjectile(m_metagame,"hd_effect_call_deny_distance.projectile",t_pos,characterId,factionId);
+                                return;
+                            }
+
+                            int value = -1;
+                            g_userCountInfoBuck.getCount(playerName,"hd_nux223_hellbomb.call",value);
+                            if(value != -1 && value <= 3){
+                                if(g_userCountInfoBuck.addCount(playerName,"hd_nux223_hellbomb.call")){
+                                    spawnStaticProjectile(m_metagame,"hd_nux_223_hellbomb.projectile",t_pos,characterId,factionId);
+                                    notify(m_metagame, "地狱火剩余呼叫次数："+(3-value), dictionary(), "misc", playerId, false, "", 1.0);
+                                    break;
+                                }
+                            }
+
+                            spawnStaticProjectile(m_metagame,"hd_effect_call_deny_useless.projectile",c_pos,characterId,factionId);
+                        }
+                        break;
                     }
                         
                     default:

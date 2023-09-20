@@ -90,10 +90,10 @@ const array<SpawnInfo> level_6 = {
     SpawnInfo("cyborgs_spawn_hulk_model.vehicle",0),
     SpawnInfo("cyborgs_spawn_immolator_model.vehicle",int(rand(2,4))),
     SpawnInfo("cyborgs_spawn_initiate_model.vehicle",int(rand(1,2))),
-    SpawnInfo("cyborgs_spawn_warlord_model.vehicle",0),
+    SpawnInfo("cyborgs_spawn_warlord_model.vehicle",int(rand(-12,1))),
 
-    SpawnInfo("bugs_Impaler",int(rand(-3,1))),
-    SpawnInfo("bugs_Tank",int(rand(-3,1))),
+    SpawnInfo("bugs_Impaler",int(rand(-6,1))),
+    SpawnInfo("bugs_Tank",int(rand(-6,1))),
     SpawnInfo("bugs_Behemoth",0),
     SpawnInfo("bugs_BroodCommander",0),
     SpawnInfo("bugs_Elite",int(rand(1,1))),
@@ -102,13 +102,13 @@ const array<SpawnInfo> level_6 = {
 };
 const array<SpawnInfo> level_9 = {
     SpawnInfo("cyborgs_spawn_berserker_model.vehicle",int(rand(1,2))),
-    SpawnInfo("cyborgs_spawn_butcher_model.vehicle",0),
+    SpawnInfo("cyborgs_spawn_butcher_model.vehicle",int(rand(-4,1))),
     SpawnInfo("cyborgs_spawn_comrade_model.vehicle",0),
     SpawnInfo("cyborgs_spawn_grotesque_model.vehicle",int(rand(3,5))),
     SpawnInfo("cyborgs_spawn_hulk_model.vehicle",0),
     SpawnInfo("cyborgs_spawn_immolator_model.vehicle",0),
     SpawnInfo("cyborgs_spawn_initiate_model.vehicle",0),
-    SpawnInfo("cyborgs_spawn_warlord_model.vehicle",0),
+    SpawnInfo("cyborgs_spawn_warlord_model.vehicle",int(rand(-8,1))),
 
     SpawnInfo("bugs_Impaler",int(rand(-4,1))),
     SpawnInfo("bugs_Tank",int(rand(-4,1))),
@@ -122,8 +122,8 @@ const array<SpawnInfo> level_12 = {
     SpawnInfo("cyborgs_spawn_berserker_model.vehicle",1),
     SpawnInfo("cyborgs_spawn_butcher_model.vehicle",int(rand(1,2))),
     SpawnInfo("cyborgs_spawn_comrade_model.vehicle",1),
-    SpawnInfo("cyborgs_spawn_grotesque_model.vehicle",1),
-    SpawnInfo("cyborgs_spawn_hulk_model.vehicle",int(rand(2,3))),
+    SpawnInfo("cyborgs_spawn_grotesque_model.vehicle",3),
+    SpawnInfo("cyborgs_spawn_hulk_model.vehicle",int(rand(3,5))),
     SpawnInfo("cyborgs_spawn_immolator_model.vehicle",int(rand(1,2))),
     SpawnInfo("cyborgs_spawn_initiate_model.vehicle",1),
     SpawnInfo("cyborgs_spawn_warlord_model.vehicle",int(rand(0,1))),
@@ -141,15 +141,15 @@ const array<SpawnInfo> level_15 = {
     SpawnInfo("cyborgs_spawn_butcher_model.vehicle",1),
     SpawnInfo("cyborgs_spawn_comrade_model.vehicle",1),
     SpawnInfo("cyborgs_spawn_grotesque_model.vehicle",int(rand(2,3))),
-    SpawnInfo("cyborgs_spawn_hulk_model.vehicle",int(rand(1,3))),
+    SpawnInfo("cyborgs_spawn_hulk_model.vehicle",int(rand(3,6))),
     SpawnInfo("cyborgs_spawn_immolator_model.vehicle",1),
     SpawnInfo("cyborgs_spawn_initiate_model.vehicle",1),
-    SpawnInfo("cyborgs_spawn_warlord_model.vehicle",int(rand(1,4))),
+    SpawnInfo("cyborgs_spawn_warlord_model.vehicle",int(rand(4,7))),
 
     SpawnInfo("bugs_Impaler",int(rand(0,1))),
     SpawnInfo("bugs_Tank",int(rand(0,1))),
     SpawnInfo("bugs_Behemoth",int(rand(1,1))),
-    SpawnInfo("bugs_BroodCommander",int(rand(1,5))),
+    SpawnInfo("bugs_BroodCommander",int(rand(3,5))),
     SpawnInfo("bugs_Elite",1),
     SpawnInfo("bugs_Warrior",1),
     SpawnInfo("bugs_Stalker",1)
@@ -236,8 +236,8 @@ void Alert_Spawn(Metagame@ metagame,int factionId, Vector3 position, array<Spawn
         if(spawnnum <= 0){continue;}
         if( caller_faction_name == "cyborgs" && g_factionInfoBuck.getFidByName("Cyborgs") == factionId){   //检测键值开头是否为生化人
             Orientation m_rotate = Orientation(0,1,0,0);
-            int uprate = 30;
-            float range = 10;
+            int uprate = 5;
+            float range = 15;
             for(int j=0;j<spawnnum;j++){
                 float rand_x = rand(-range,range);
                 float rand_y = rand(-range,range);
@@ -247,7 +247,7 @@ void Alert_Spawn(Metagame@ metagame,int factionId, Vector3 position, array<Spawn
             }
         }else if(caller_faction_name == "bugs" && g_factionInfoBuck.getFidByName("Bugs") == factionId){
             string groups_name = spawnkey.substr(pos+1);
-            float range = 10;
+            float range = 15;
             for(int j=0;j<spawnnum;j++){
                 float rand_x = rand(-range,range);
                 float rand_y = rand(-range,range);
@@ -333,6 +333,10 @@ class dynamic_alert : Tracker {
         dictionary NowSoldiers;
         for (uint i = 0 ; i < g_factionInfoBuck.size() ; ++i) {
             const XmlElement@ faction = getFactionInfo(m_metagame,i);
+            if(faction is null){
+                _log("faction is null in dynamic_alert,index="+i);
+                return;
+            }
             int max = faction.getIntAttribute("soldier_capacity");
             int min = faction.getIntAttribute("soldiers");
             MaxSoldiers.set(""+i,max);
@@ -355,7 +359,7 @@ class dynamic_alert : Tracker {
                 max_soldiers_cap = value;
             }
         }
-        if( my_faction_soldiers >= 2.0*max_soldiers_cap ){
+        if( my_faction_soldiers >= (server_difficulty_level/3)*max_soldiers_cap ){
             if(g_debugMode){
                 _report(m_metagame,"敌方AI上限="+max_soldiers_cap+" 己方AI="+my_faction_soldiers+ " 本次警报失效");
             }
@@ -416,22 +420,25 @@ class dynamic_alert : Tracker {
 
         if(rate <= 0.5 && rate >0.2){
             Alert_Spawn(m_metagame,m_fid,position,level_random);
-            m_cd_time = 20.0;
         }else if(rate < 0.20){
             Alert_Spawn(m_metagame,m_fid,position,level_all);
-            m_cd_time = 15.0;
-        }else if(rate > 0.5 && rate <= 0.8){
-            m_cd_time = 25.0;
-        }else{
-            m_cd_time = 30;
         }
 
         int player_num = players.size();
-        m_cd_time = m_cd_time - 0.8*player_num;
+        m_cd_time = 30 - (m_server_difficulty_level/3)/rate*(player_num/12);
+
+        if(g_debugMode){
+            _report(m_metagame,"现在的警报CD时间为="+m_cd_time+",rate="+rate);
+        }
+        
 
         m_cd_time = m_cd_time - m_server_difficulty_level + 9;
-        if(m_cd_time <= 0){
-            m_cd_time = 0;
+        if(m_cd_time <= 3){
+            m_cd_time = 8 - m_server_difficulty_level/3 ;
+        }
+        m_cd_time = m_cd_time - 0.8*player_num;
+        if(g_debugMode){
+            _report(m_metagame,"本次CD时间="+m_cd_time);
         }
 
         server_difficulty_level = m_server_difficulty_level;
@@ -477,6 +484,7 @@ class dynamic_alert : Tracker {
             if(word[0] == "s"){
                 int m_pid = event.getIntAttribute("player_id");
                 const XmlElement@ player = getPlayerInfo(m_metagame,m_pid);
+                if(player is null){return;}
                 string position = player.getStringAttribute("aim_target");
                 _log("p_position="+position);
                 float number = 1.0;

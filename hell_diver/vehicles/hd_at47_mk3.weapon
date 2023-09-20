@@ -63,7 +63,7 @@ key="hd_at47_mk3.weapon"
 		<trigger class="impact">
 			<collider class="terrain" enabled="1" />     
 			<collider class="static_object" enabled="1" /> 
-			<collider class="vehicle" enabled="1" /> 
+			<collider class="vehicle" enabled="1" faction_compare="not_equal"/> 
 			<collider class="character" enabled="1" faction_compare="not_equal"/>
 		</trigger> 
 

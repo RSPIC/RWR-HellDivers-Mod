@@ -14,6 +14,7 @@ allow_ai_to_use="0"
 ai_abandon_when_unsteerable="1"
 ai_handle_taxi_request_when_full="1"
 character_leave_request_mode="friendly"
+ai_driver_turns_to_target="1" 
 >
 	<tag name="tank" />
 	<tag name="any_tank" />

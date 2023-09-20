@@ -47,6 +47,8 @@ class schedule_Manager : Tracker {
         @g_IRQ = @_IRQ("",false); 
         @m_player = null;
         _log("schedule_Manager initiate");
+        //first run
+        removeAllGlobalPlayerInfo(m_metagame);
     }
     
     void start(){
@@ -101,12 +103,6 @@ class schedule_Manager : Tracker {
     }
     // --------------------------------------------
     protected void handlePlayerConnectEvent(const XmlElement@ event) {
-        if(!m_isStart){
-            g_IRQ.clearAll();
-            g_playerInfoBuck.clearAll();
-            removeAllGlobalPlayerInfo(m_metagame);
-            m_isStart = true;
-        }
     }
     // --------------------------------------------
     protected void handlePlayerSpawnEvent(const XmlElement@ event) {
@@ -145,13 +141,9 @@ class schedule_Manager : Tracker {
         int pid = player.getIntAttribute("player_id");
         if(g_debugMode) _report(m_metagame,"更新玩家PID为="+pid);
         @player = getPlayerInfo(m_metagame,pid);
-        updateGlobalPlayerInfo(m_metagame,player);
+        updateGlobalPlayerInfo(m_metagame);
         if(player is null){
-            @player = getPlayerInfo(m_metagame,pid);
-            updateGlobalPlayerInfo(m_metagame,player);
-            if(player is null){
-                return;
-            }
+            return;
         }
         string name = player.getStringAttribute("name");
         string profile_hash = player.getStringAttribute("profile_hash");
@@ -187,7 +179,7 @@ class schedule_Manager : Tracker {
     }
     // ----------------------------------------------------
 	protected void handleMatchEndEvent(const XmlElement@ event) {
-        g_IRQ.clearAll();
+        // g_IRQ.clearAll();
 		m_ended = true;
 	}
 

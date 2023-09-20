@@ -27,6 +27,7 @@ class match_end : Tracker {
     protected uint m_time_min;
     protected bool m_ended;
     protected bool m_ended_report;
+    protected bool reward;
 	// --------------------------------------------
 	match_end(Metagame@ metagame) {
 		@m_metagame = @metagame;
@@ -35,6 +36,7 @@ class match_end : Tracker {
         m_time_min = 0;
         m_ended = false;
         m_ended_report = false;
+        reward = false;
         m_end_timer = 30;
 	}
 
@@ -73,7 +75,11 @@ class match_end : Tracker {
         int win_fid = info.getIntAttribute("faction_id");
         PlayEndSound();
         HealAll();
-        BattleReword(win_fid);
+        if(!reward){
+            BattleReword(win_fid);
+            reward = true;
+        }
+
 	}	
     // ----------------------------------------------------
     protected void handlePlayerDieEvent(const XmlElement@ event) {
@@ -113,21 +119,28 @@ class match_end : Tracker {
     }
     // ----------------------------------------------------
     protected void BattleReword(int fid){
+        if(g_battleInfoBuck is null){return;}
+        if(g_server_difficulty_level <= 9){
+            g_battleInfoBuck.setServerBonusFactor(0.25);
+        }
+        if(fid != 0){
+            g_battleInfoBuck.setLoseBonusFactor();
+        }
+
         array<const XmlElement@> players = getPlayers(m_metagame);
         if(players is null){return;}
         for(uint i = 0 ; i < players.size() ; ++i ){
             const XmlElement@ player = players[i];
             if(player is null){return;}
             int cid = player.getIntAttribute("character_id");
-            if(g_battleInfoBuck is null){return;}
-            if(g_server_difficulty_level <= 9){
-                g_battleInfoBuck.setServerBonusFactor(0.25);
-            }
-            if(fid != 0){
-                g_battleInfoBuck.setLoseBonusFactor();
-            }
             float xp = g_battleInfoBuck.getXpReward(m_metagame,player);
             float rp = g_battleInfoBuck.getRpReward(m_metagame,player);
+            if(rp >= 648000){
+                rp = 648000;
+            }
+            if(xp >= 1000000){
+                xp = 1000000;
+            }
             GiveRP(m_metagame,cid,int(rp));
             GiveXP(m_metagame,cid,xp);
         }

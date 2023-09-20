@@ -182,7 +182,7 @@ key="ex_lancer_mk3_chainsaw.weapon"
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
 	time_to_live="0.375" can_be_detected_by_driver="1" can_be_disarmed="0" name="Lancer MK3"> 
 
-		<result class="blast" radius="2.4" damage="5" push="0.25" decal="0" character_state="wound" faction_compare="not_equal"  />
+		<result class="blast" radius="3.0" damage="5" push="0.25" decal="0" character_state="wound" faction_compare="not_equal"  />
 		<!-- damage 75hit/100hit -->
 		<!-- 30m max range -->
 		<trigger class="time" time_to_live="0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
@@ -402,7 +402,7 @@ key="re_ex_lancer_mk3_chainsaw.weapon"
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
 	time_to_live="0.375" can_be_detected_by_driver="1" can_be_disarmed="0" name="Lancer MK3"> 
 
-		<result class="blast" radius="2.4" damage="5" push="0.25" decal="0" character_state="wound" faction_compare="not_equal"  />
+		<result class="blast" radius="3.0" damage="5" push="0.25" decal="0" character_state="wound" faction_compare="not_equal"  />
 		<!-- damage 75hit/100hit -->
 		<!-- 30m max range -->
 		<trigger class="time" time_to_live="0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->

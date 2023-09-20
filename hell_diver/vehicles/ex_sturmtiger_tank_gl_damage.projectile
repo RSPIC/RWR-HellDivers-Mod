@@ -15,7 +15,7 @@ radius="0.3"
 time_to_live_out_in_the_open="0"
 player_death_drop_owner_lock_time="0"
 >
-	<result class="blast" radius="11.0" damage="25.0" push="2.0" decal="1" 
+	<result class="blast" radius="13.0" damage="25.0" push="2.0" decal="1" 
 	character_state="wound" damage_origin_vehicle="0" faction_compare="not_equal" />
 	<trigger class="time" time_to_live="0" />	
     <rotation class="random" />

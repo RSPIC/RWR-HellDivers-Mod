@@ -45,7 +45,7 @@ key="ex_m18_cannon.weapon"
     <weak_hand_hold offset="1" /> 
 
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="8" can_be_detected_by_footmen="1" 
-	time_to_live="1" can_be_detected_by_driver="1" can_be_disarmed="0" name="M18 Cannon [AT]" radius="0.7"> 
+	time_to_live="0.9" can_be_detected_by_driver="1" can_be_disarmed="0" name="M18 Cannon [AT]" radius="0.7"> 
 		
         <result class="spawn" instance_class="projectile" instance_key="ex_m18_cannon_damage.projectile" 
 		min_amount="25" max_amount="25" offset="0 0.5 0" position_spread="1.5 0" direction_spread="0.1 0" />
@@ -57,7 +57,12 @@ key="ex_m18_cannon.weapon"
 		<sound class="result" key="other" fileref="at_hit_EIFL_3.wav" pitch_variety="0.01" volume="10" />
 		<sound class="result" key="other" fileref="at_hit_EIFL_4.wav" pitch_variety="0.01" volume="10" />
 
-		<trigger class="impact" time_to_live="0.4"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<trigger class="impact">
+			<collider class="terrain" enabled="1" />     
+			<collider class="static_object" enabled="1" /> 
+			<collider class="vehicle" enabled="1" faction_compare="not_equal"/> 
+			<collider class="character" enabled="1" />
+		</trigger> 
 		<rotation class="motion" /><!--参数：motion、random-->
 
 		<trail probability="1" key="nova_trail"/>	

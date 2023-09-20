@@ -17,7 +17,7 @@ time_to_live_out_in_the_open="0"
 player_death_drop_owner_lock_time="0"
 >
     <collision class="sticky" />
-	<result class="blast" radius="3" damage="14" push="0.1" decal="0" character_state="wound"/>
+	<result class="blast" radius="4.5" damage="14" push="0.1" decal="0" character_state="stun"/>
 	<trigger class="time" time_to_live="0" />	
   	<rotation class="motion" />
 	<model mesh_filename="" />
@@ -120,7 +120,7 @@ player_death_drop_owner_lock_time="0"
 >
     <collision class="sticky" />
 	<result class="spawn" instance_class="projectile" instance_key="hd_offensive_heavy_strafing_run_mk3_mg_damage.projectile" 
-		min_amount="16" max_amount="20" offset="0 0 0" position_spread="4 0" direction_spread="0 0" />	
+		min_amount="30" max_amount="30" offset="0 0 0" position_spread="4 0" direction_spread="0 0" />	
 	<trigger class="impact" time_to_live="0" />	
   	<rotation class="motion" />
 	<model mesh_filename="" />

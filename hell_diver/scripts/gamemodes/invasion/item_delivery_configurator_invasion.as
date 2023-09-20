@@ -316,8 +316,9 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			ScoredResource("m61a5_call.projectile", "projectile", 1.0f),
 			ScoredResource("uragan_call.projectile", "projectile", 0.5f),
 			ScoredResource("borsig_call.projectile", "projectile", 1.0f),
-			// 3倍up 1.5.7Ver
-			ScoredResource("zbd09_call.projectile", "projectile", 3.0f),
+			ScoredResource("zbd09_call.projectile", "projectile", 1.0f),
+			ScoredResource("lav6_call.projectile", "projectile", 1.0f),
+			ScoredResource("wiesel_tow_call.projectile", "projectile", 1.0f),
 			ScoredResource("t90m3_call.projectile", "projectile", 1.0f)
 			
 			},

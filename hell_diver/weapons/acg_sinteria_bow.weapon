@@ -170,7 +170,7 @@ key="acg_sinteria_at.weapon"
     <projectile file="hd_general_spawn_no_effect.projectile"  pulldown_in_air="10">
 	
 		<result class="spawn" instance_class="projectile" instance_key="acg_sinteria_at_damage.projectile" 
-		min_amount="18" max_amount="18" offset="0 0 0" position_spread="1 1" direction_spread="0 0" />	
+		min_amount="12" max_amount="18" offset="0 0 0" position_spread="1 1" direction_spread="0 0" />	
 		
 		
         <collision class="sticky"/>    
@@ -402,7 +402,7 @@ key="re_acg_sinteria_at.weapon"
     <projectile file="hd_general_spawn_no_effect.projectile"  pulldown_in_air="10">
 	
 		<result class="spawn" instance_class="projectile" instance_key="acg_sinteria_at_damage.projectile" 
-		min_amount="18" max_amount="18" offset="0 0 0" position_spread="1 1" direction_spread="0 0" />	
+		min_amount="12" max_amount="18" offset="0 0 0" position_spread="1 1" direction_spread="0 0" />	
 		
 		
         <collision class="sticky"/>    

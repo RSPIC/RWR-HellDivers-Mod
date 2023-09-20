@@ -87,8 +87,8 @@ key="hd_arx_34_mk3.weapon"
     <inventory encumbrance="50.0" price="0.0" /> 
     <weak_hand_hold offset="0.3" /> 
 
-    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
-	time_to_live="0.5" radius="1" can_be_detected_by_driver="1" can_be_disarmed="0" name="A/RX-34 Railcannon Turret"> 
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="3" can_be_detected_by_footmen="1" 
+	time_to_live="0.3" radius="1" can_be_detected_by_driver="1" can_be_disarmed="0" name="A/RX-34 Railcannon Turret"> 
 		
 		<result class="spawn" instance_class="projectile" instance_key="hd_arx_34_mk3_damage.projectile" 
 		min_amount="30" max_amount="30" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
@@ -98,7 +98,12 @@ key="hd_arx_34_mk3.weapon"
 		<!-- 三枪解决warload 单轮射击100伤以上  -->
 		<!-- 12x10 = 120伤 -->
 
-		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<trigger class="impact">
+			<collider class="terrain" enabled="1" />     
+			<collider class="static_object" enabled="1" /> 
+			<collider class="vehicle" enabled="1" faction_compare="not_equal"/> 
+			<collider class="character" enabled="1" />
+		</trigger> 
 		<rotation class="motion" /><!--参数：motion、random-->
 
 		<model mesh_filename="rx1_bullet.xml" />

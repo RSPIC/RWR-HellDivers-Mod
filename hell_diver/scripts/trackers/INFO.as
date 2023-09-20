@@ -98,7 +98,9 @@ class factionInfo {
 class factionInfoBuck {
 	protected array<factionInfo@> m_factionInfo;	
 
-	factionInfoBuck(){}
+	factionInfoBuck(){
+		clearAll();
+	}
 
 	uint size(){
 		return m_factionInfo.size();
@@ -280,7 +282,9 @@ class playerInfo {
 class playerInfoBuck{
 	protected array<playerInfo@> m_playerInfo;
 
-	playerInfoBuck(){}
+	playerInfoBuck(){
+		clearAll();
+	}
 
 	uint size(){return m_playerInfo.size();}
 
@@ -592,6 +596,7 @@ class battleInfoBuck{
 	protected array<battleInfo@> m_battleInfos;
 
 	battleInfoBuck(){
+		clearAll();
 		battleInfo@ newInfo = battleInfo("",0);
 		m_battleInfos.insertLast(newInfo);
 	}
@@ -777,6 +782,9 @@ class battleInfoBuck{
 				if(bf > 3.4){
 					bf = 3.4;
 				}
+				if(bf <= 0){
+					bf = 0;
+				}
 				xp = 
 				  kc * 0.01 
 				+ oc * 0.015*NormalizedConcaveCurve(0.002*oc,0.5) 
@@ -827,6 +835,9 @@ class battleInfoBuck{
 				}
 				if(bf > 3.4){
 					bf = 3.4;
+				}
+				if(bf <= 0){
+					bf = 0;
 				}
 				rp = 
 				  kc * 50
@@ -964,6 +975,7 @@ class vestInfoBuck {
 	protected array<vestInfo@> m_vestInfos;
 
 	vestInfoBuck(){
+		clearAll();
 		vestInfo@ newinfo = vestInfo("");
 		m_vestInfos.insertLast(newinfo);
 	}
@@ -1143,6 +1155,7 @@ class firstUseInfoBuck {
 	protected array<first_use_info@> m_firstUseInfos;
 
 	firstUseInfoBuck(){
+		clearAll();
 		first_use_info@ newinfo = first_use_info("");
         m_firstUseInfos.insertLast(newinfo);
 	}
@@ -1249,6 +1262,7 @@ class userCountInfoBuck {
 	protected array<userCountInfo@> m_userCountInfos;
 
 	userCountInfoBuck(){
+		clearAll();
 		userCountInfo@ newinfo = userCountInfo("");
 		m_userCountInfos.insertLast(newinfo);
 	}
@@ -1322,8 +1336,6 @@ int g_server_difficulty_level = 0;
 class Initiate : Tracker {
 	protected GameModeInvasion@ m_metagame;
 	protected bool m_ended;
-	protected bool isStarted;
-	protected bool isStarted2;
 	protected bool m_debug_mode;
     protected int m_server_difficulty_level;
 
@@ -1337,8 +1349,6 @@ class Initiate : Tracker {
 		g_server_difficulty_level = m_server_difficulty_level;
 
 		m_ended = false;
-		isStarted = false;
-		isStarted2 = false;
 		@g_factionInfoBuck = factionInfoBuck();	
  		@g_playerInfoBuck = playerInfoBuck();
  		@g_battleInfoBuck = battleInfoBuck();
@@ -1346,6 +1356,8 @@ class Initiate : Tracker {
 		@g_IRQ = _IRQ("",false);
 		@g_firstUseInfoBuck = firstUseInfoBuck();
 		g_firstUseInfoBuck.addInfo("admin");
+		//First Run
+		initiateFactionInfo();
 	}
 	// --------------------------------------------
 	bool hasEnded() const {
@@ -1357,30 +1369,16 @@ class Initiate : Tracker {
 		// always on
 		return true;
 	}
-	void start(){
-	}
+
 	void update(float time){
 	}
 	// ----------------------------------------------------
 	protected void handlePlayerSpawnEvent(const XmlElement@ event) {
-		if(!isStarted){
-			initiateFactionInfo();
-			
-			g_battleInfoBuck.clearAll();
-			g_vestInfoBuck.clearAll();
-			isStarted = true;
-		}
 		initiateBattleInfo(event);
 		initiateVestInfo(event);
 	}
 	// ----------------------------------------------------
 	protected void handlePlayerConnectEvent(const XmlElement@ event) {
-		if(!isStarted2){
-			g_firstUseInfoBuck.clearAll();
-			g_userCountInfoBuck.clearAll();
-			//removeAllGlobalPlayerInfo(m_metagame);
-			isStarted2 = true;
-		}
 		const XmlElement@ player = event.getFirstElementByTagName("player");
         if(player is null){return;}
         string name = player.getStringAttribute("name");
@@ -1417,9 +1415,6 @@ class Initiate : Tracker {
 			g_vestInfoBuck.removeInfo(name);
 		}
 		g_vestInfoBuck.addInfo(name);
-		if(g_debugMode){
-			_report(m_metagame,"add initiateVestInfo");
-		}
 	}
 	protected void initiateFactionInfo(){
 		if(g_factionInfoBuck !is null){
@@ -1433,7 +1428,6 @@ class Initiate : Tracker {
 					array<const XmlElement@>@ SoldierGroups = getSoldierGroups(m_metagame,fid);
 					g_factionInfoBuck.addNewInfo(fid,name,SoldierGroups);
 				}
-				isStarted = true;  
 			}else{
 				_log("AllFactions is null");
 			}
