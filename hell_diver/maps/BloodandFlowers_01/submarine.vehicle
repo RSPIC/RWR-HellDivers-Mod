@@ -1,0 +1,57 @@
+<vehicle name="Submarine" key="submarine.vehicle" map_view_atlas_index="-1" respawn_time="86400" protectors="10" soldier_capacity_offset="10" reserves_spawn_point="1" existence="one_per_faction" usable_for_cover="0" >
+	<tag name="vehicle" />
+	<tire_set offset="3.0 0.0 1.55" radius="0.4" />
+	<tire_set offset="3.0 0.0 -1.55" radius="0.4" />
+	
+	<control max_speed="20.0" acceleration="15.0" max_reverse_speed="10.0" max_rotation="1.628" max_water_depth="-12.0" can_steer_in_water="1" can_steer_on_ground="0" gears="0" />
+
+	<modifier class="blast_damage" value="-0.9" />
+
+	<physics max_health="20" mass="10000.0" extent="3.6 0.0 35.0" offset="0 0 0" collision_model_pos="0 0 0" collision_model_extent="3.6 4.25 35" visual_offset="0 -1 0" /> 
+	
+	<visual class="chassis" mesh_filename="submarine_small.mesh" texture_filename="submarine.png" />
+	<visual class="chassis" key="broken" mesh_filename="submarine_small.mesh" texture_filename="submarine.png" />
+	
+	<!-- sound handling -->
+	<rev_sound filename="jeep2_rev0.wav" low_pitch="0.8" high_pitch="1.0" low_rev="0.0" high_rev="0.15" volume="0.6" />
+	<rev_sound filename="jeep2_rev3.wav" low_pitch="0.6" high_pitch="1.7" low_rev="0.08" high_rev="1.0" volume="0.6" />
+	<sound key="ignition" filename="jeep2_ignition.wav" />
+	
+	<effect event_key="destroyed" ref="SmallSmokeVehicle" offset="0 5 +1.5" />
+	<effect event_key="destroyed" ref="SmallSmokeVehicle" offset="0 5 0" />  
+	<effect event_key="destroyed" ref="SmallSmokeVehicle" offset="0 5 -1" />  
+	<effect event_key="destroyed" ref="MediumSmokeVehicle" offset="0 5 0" />  
+	<effect event_key="destroyed" ref="MediumSmokeVehicle" offset="0 7 4" />    
+	<effect event_key="destroyed" ref="SmallFireRepeat" offset="0 5 0" />
+
+	<event key="destroy_xp_reward">
+		<trigger class="destroy" />
+		<result class="reward" xp="0.0100" />
+	</event>
+	<event key="destroy_rp_reward">
+		<trigger class="destroy" />
+		<result class="reward" rp="100" />
+	</event>
+	<event key="receive_damage_xp_reward">
+		<trigger class="receive_damage" />
+		<result class="reward" xp="0.0100" />
+	</event>
+	<event key="receive_damage_rp_reward">
+		<trigger class="receive_damage" />
+		<result class="reward" rp="500" />
+	</event>
+	<event key="spot_rp_reward">
+		<trigger class="spot" />
+		<result class="reward" rp="100" />
+	</event>
+	
+	<event>
+		<trigger class="destroy" />		
+		<result class="spawn" instance_class="visual_item" instance_key="burning_piece_truck1.visual_item" min_amount="1" max_amount="2" offset="0 2.0 0" position_spread="1.5 1.5" direction_spread="0.1 0.2" /> 
+	</event>
+	<event>
+		<trigger class="destroy" />		
+		<result class="spawn" instance_class="visual_item" instance_key="burning_piece_jeep2.visual_item" min_amount="1" max_amount="1" offset="0 2.0 0" position_spread="1.5 1.5" direction_spread="0.05 0.2" /> 
+	</event>
+
+</vehicle>

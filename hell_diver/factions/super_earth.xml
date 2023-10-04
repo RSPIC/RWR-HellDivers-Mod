@@ -268,7 +268,7 @@
 
 		<item_class_existence_config>
 			<!-- main -->
-			<item_class_existence class="weapon" slot="0" probability="1" />
+			<item_class_existence class="weapon" slot="0" probability="0.9" />
 			<!-- secondaries -->
 			<item_class_existence class="weapon" slot="1" probability="1" />
 			<!-- wearables -->
@@ -497,5 +497,70 @@
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="_token.resources" />
 	</soldier> 
+	<soldier name="acg_toki_hd" spawn_score="0.0" >
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources>
+			<weapon key="acg_exo_toki.weapon" /><!---->
+			<weapon key="acg_exo_toki_doublefire.weapon" /><!---->
+			<weapon key="acg_exo_toki_railgun.weapon" /><!---->
+			<carry_item key="anti_melee_vest_300" /><!--300层护甲-->
+		</resources>
+		<ai filename="acg_toki.ai" >
+			<parameter class="accuracy_offset" value="1.0" />
+		</ai>
+		<character filename="acg_toki.character"/>
+		<model filename="toki_abi_eshuh.xml" />
+		<model filename="toki_abi_eshuh_ex.xml" />
 
+		<item_class_existence_config>
+			<!-- main -->
+			<item_class_existence class="weapon" slot="0" probability="0.6" />
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="1" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="1" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="0" />
+		</item_class_existence_config>
+
+		<attribute_config class="rp"><attribute weight="1" min="100.0" max="100.0" />
+		</attribute_config>
+
+		<attribute_config class="xp"><attribute weight="500.0" min="1" max="1" />
+		</attribute_config>
+	</soldier> 
+	<soldier name="jetpack_ai" spawn_score="0.0" >
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="hd_divers.resources" >
+			<weapon key="hd_side_jetpack_ai.weapon" />
+			<weapon key="hd_exp_obliterator_grenade_launcher_ai.weapon" enabled="0"/>
+			<weapon key="hd_exp_m25_rumbler_ai.weapon" enabled="0" />
+			<weapon key="hd_exp_ac22_dum_dum_ai.weapon" enabled="0"/>
+			<weapon key="hd_ai_eta17_mk3.weapon" enabled="0"/>
+			<weapon key="hd_ai_mls4x_commando_mk3.weapon" enabled="0"/>
+			<weapon key="hd_ai_rl112_recoilless_rifle_mk3.weapon" enabled="0"/>
+			<weapon key="hd_sup_md98_injector.weapon" enabled="0"/>
+		</resources>
+		<model filename="hdivers_black_ops.xml" />
+		<models file="hd_base.models" />
+		<character filename="helldivers_default_chat.character" />
+		<ai filename="default_super_earth.ai" />
+
+		<item_class_existence_config>
+			<!-- main -->
+			<item_class_existence class="weapon" slot="0" probability="1" />
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="1" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="1" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="0" />
+		</item_class_existence_config>
+
+		<attribute_config class="rp"><attribute weight="1" min="100.0" max="100.0" />
+		</attribute_config>
+
+		<attribute_config class="xp"><attribute weight="500.0" min="1" max="1" />
+		</attribute_config>
+	</soldier> 
 </faction>

@@ -1,0 +1,21 @@
+material Cherry
+  {
+    receive_shadows off
+    technique
+    {
+      pass
+      {
+        lighting on
+        depth_write off
+        
+        alpha_rejection greater 64
+        point_sprites on
+        point_size 1
+        
+        texture_unit {
+          texture img/particles/Cherry.png
+          tex_address_mode clamp
+        }
+      } 
+    }
+  }

@@ -329,7 +329,7 @@ class VoteManager : Tracker {
             bool isHandled = false;
             if(voteTypeIndex == 0){//踢出玩家需要过半数
                 _report(m_metagame,"赞成["+yesNum+"]"+"反对["+noNum+"]"+"总数["+m_nameList.size()+"]");
-                if(yesNum > noNum && int(yesNum+noNum) >= int(m_nameList.size()/2)+1 || int(yesNum) >= 4){
+                if(yesNum > noNum && int(yesNum+noNum) >= int(m_nameList.size()/2)+1 || int(yesNum) >= 3){
                     handlePlayerKick(m_targetIndex);
                     isHandled = true;
                 }

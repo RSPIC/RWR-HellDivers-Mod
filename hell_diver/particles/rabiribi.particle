@@ -1,0 +1,205 @@
+author: RST
+2023.10.3
+未经授权不可复用、修改使用、仅用于helldiver mod
+Rabi ribi 武器特效
+
+
+particle_system rabiribi_grenade_blast
+{
+	quota 150
+	material point_hard_edge_pass
+	particle_width 4
+	particle_height 4
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Box
+	{
+		angle 0
+		colour 0 0.3 1 0
+		direction 0 1 0
+		emission_rate 40
+		position 0 2 0
+		velocity 0.001
+		time_to_live 0.1
+		duration 1
+        depth 1
+        height 8
+        width 8
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.1 0.1t 1
+		time1 0.7
+		colour1 1 0.5 0 1
+		time2 1
+		colour2 1 0.8 0.6 1
+	}
+}
+particle_system rabiribi_normal_muzzle_trail
+{
+	quota 150
+	material rabiribi_efx1
+	particle_width 2
+	particle_height 2
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0.3 1 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity_min 120
+		velocity_max 120
+		time_to_live 0.35
+		duration 0.1
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.6 0.6 1
+		time1 0.7
+		colour1 1 0.6 0.6 1
+		time2 1
+		colour2 1 0.6 0.6 1
+	}
+    affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	-90
+		rotation_range_end	-90
+	}
+}
+particle_system rabiribi_normal_result_be_hit
+{
+	quota 150
+	material diamond_fill_normal_01
+	particle_width 2
+	particle_height 20
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 360
+		colour 0 0.3 1 0
+		direction 0 1 0
+		emission_rate 200
+		position 0 0 0
+		velocity_min 10
+		velocity_max 10
+		time_to_live 0.1
+		duration 0.01
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.4 1 1
+		time1 0.7
+		colour1 1 0.4 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+    affector Scaler
+	{
+		rate -20
+	}
+}
+particle_system rabiribi_activated_trail
+{
+	quota 150
+	material point_soft_edge_100
+	particle_width 3
+	particle_height 3
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 360
+		colour 1 0.4 1 1
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 0.1
+		time_to_live 0.05   
+		duration 0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.4 1 1
+		time1 0.7
+		colour1 1 0.4 1 1
+		time2 1
+		colour2 1 0.4 1 1
+	}
+    affector Scaler
+	{
+		rate -100
+	}
+}
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material rabiribi_efx1 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            anim_texture rabiribi_efx1.png 7 0.5 
+}}}}
+material diamond_fill_normal_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture diamond_fill_normal_01.png
+}}}}

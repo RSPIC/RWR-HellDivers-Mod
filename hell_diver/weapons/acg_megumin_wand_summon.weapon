@@ -127,11 +127,11 @@ key="acg_megumin_wand_float.weapon"
  >
     <tag name="sniper" />
     <specification 
-	retrigger_time="3"
+	retrigger_time="0.2"
 	accuracy_factor="1" 
 	sustained_fire_grow_step="0" 
 	sustained_fire_diminish_rate="3.0" 
-	magazine_size="1" 
+	magazine_size="12" 
 	can_shoot_standing="1" 
 	can_shoot_crouching="1"
     can_shoot_prone="0" 
@@ -141,9 +141,9 @@ key="acg_megumin_wand_float.weapon"
 	reload_one_at_a_time="0" 
 	sight_range_modifier="2" 
 	projectile_speed="50.0" 
-	barrel_offset_3d="0 0 1.6"
+	barrel_offset_3d="0 20 1.6"
 	projectiles_per_shot="1" 
-	burst_shots="1"
+	burst_shots="3"
     carry_in_two_hands="1"/>
     <weak_hand_hold offset="0" />
 
@@ -194,11 +194,8 @@ key="acg_megumin_wand_float.weapon"
     <hud_icon filename="wand_hh.png" />
 
 
-    <projectile file="hd_general_spawn.projectile" pulldown_in_air="0.1"> 
-        <!-- <result class="blast" radius="6" damage="20" decal="0" push="0.5" character_state="wound" faction_compare="not_equal"/> -->
-        <result class="notify_script" key="acg_megumin_wand_float" />
-        <trigger class="time" time_to_live="0.0" />
-        <!-- 爆炸伤害 4x3=12 -->
+    <projectile file="acg_megumin_wand_float_damage.projectile" > 
+
     </projectile>
     <effect class="muzzle" ref="wand_magic_circle_muzzle_float" />    
     <effect class="muzzle" ref="wand_magic_circle_expand_muzzle_float" /> 
@@ -347,11 +344,11 @@ key="re_acg_megumin_wand_float.weapon"
  >
     <tag name="sniper" />
     <specification 
-	retrigger_time="3"
+	retrigger_time="0.2"
 	accuracy_factor="1" 
 	sustained_fire_grow_step="0" 
 	sustained_fire_diminish_rate="3.0" 
-	magazine_size="1" 
+	magazine_size="15" 
 	can_shoot_standing="1" 
 	can_shoot_crouching="1"
     can_shoot_prone="0" 
@@ -361,9 +358,9 @@ key="re_acg_megumin_wand_float.weapon"
 	reload_one_at_a_time="0" 
 	sight_range_modifier="2" 
 	projectile_speed="50.0" 
-	barrel_offset_3d="0 0 1.6"
+	barrel_offset_3d="0 20 1.6"
 	projectiles_per_shot="1" 
-	burst_shots="1"
+	burst_shots="3"
     carry_in_two_hands="1"/>
     <weak_hand_hold offset="0" />
 
@@ -414,11 +411,8 @@ key="re_acg_megumin_wand_float.weapon"
     <hud_icon filename="wand_hh.png" />
 
 
-    <projectile file="hd_general_spawn.projectile" pulldown_in_air="0.1"> 
-        <!-- <result class="blast" radius="6" damage="20" decal="0" push="0.5" character_state="wound" faction_compare="not_equal"/> -->
-        <result class="notify_script" key="acg_megumin_wand_float" />
-        <trigger class="time" time_to_live="0.0" />
-        <!-- 爆炸伤害 4x3=12 -->
+    <projectile file="acg_megumin_wand_float_damage.projectile" > 
+
     </projectile>
     <effect class="muzzle" ref="wand_magic_circle_muzzle_float" />    
     <effect class="muzzle" ref="wand_magic_circle_expand_muzzle_float" /> 

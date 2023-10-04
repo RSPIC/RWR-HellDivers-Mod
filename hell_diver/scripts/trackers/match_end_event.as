@@ -123,6 +123,7 @@ class match_end : Tracker {
         if(g_server_difficulty_level <= 9){
             g_battleInfoBuck.setServerBonusFactor(0.25);
         }
+        g_battleInfoBuck.setServerBonusFactor(1.0);
         if(fid != 0){
             g_battleInfoBuck.setLoseBonusFactor();
         }
@@ -144,7 +145,7 @@ class match_end : Tracker {
             GiveRP(m_metagame,cid,int(rp));
             GiveXP(m_metagame,cid,xp);
         }
-        g_battleInfoBuck.clearAll();
+        // g_battleInfoBuck.clearAll();
     }
     // ----------------------------------------------------
     protected void gBattleInfoAddTime(){

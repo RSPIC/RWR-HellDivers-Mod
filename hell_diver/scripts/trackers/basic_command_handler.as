@@ -245,9 +245,19 @@ class BasicCommandHandler : Tracker {
 		
 		// it's a silent server command, check which one
 		if (checkCommand(message, "test")) {
-			dictionary dict = {{"TagName", "command"},{"class", "chat"},{"text", "testing yourself!"}};
-			m_metagame.getComms().send(XmlElement(dict));
-
+			const XmlElement@ info = getPlayerInfo(m_metagame, senderId);
+			if (info is null) {return;}
+			int cid = info.getIntAttribute("character_id");
+			const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+			if(character is null){return;}
+			int fid = 0;
+			Vector3 ePos = stringToVector3(info.getStringAttribute("aim_target"));
+			Vector3 sPos = ePos.add(Vector3(0,30,0));
+			string key1 = "acg_exo_toki_ai_spawn.projectile";
+			string key2 = "acg_exo_toki_falling.projectile";
+			float speed = 25;
+			CreateDirectProjectile(m_metagame,sPos,ePos,key1,cid,fid,speed);
+			CreateDirectProjectile(m_metagame,ePos,ePos,key2,cid,fid,0);
 		} else if (checkCommand(message, "defend")) {
 			// make ai defend only, both sides
 			for (int i = 0; i < 2; ++i) {

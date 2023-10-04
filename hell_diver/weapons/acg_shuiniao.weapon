@@ -8,14 +8,14 @@ key="acg_shuiniao.weapon"
     <tag name="cqb" />
     <specification 	
     accuracy_factor="1" 
-	retrigger_time="2" 
+	retrigger_time="2.5" 
 	spread_range="0.01"
     magazine_size="-1" 
     can_shoot_standing="1" 
     can_shoot_crouching="1" 
     carry_in_two_hands="0" 
 	sustained_fire_grow_step="1" 
-    sustained_fire_diminish_rate="0.4" 
+    sustained_fire_diminish_rate="0.33" 
     name="Shuiniao" 
     class="3" 
     consume="0" 
@@ -97,7 +97,7 @@ key="acg_shuiniao.weapon"
 			direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
 		<result class="notify_script" key="vehicle_recycle" />
 		-->
-		<result class="blast" radius="8.5" damage="300" push="0.7" decal="0" character_state="wound" faction_compare="not_equal"  />
+		<result class="blast" radius="7.5" damage="300" push="0.7" decal="0" character_state="wound" faction_compare="not_equal"  />
 		<trigger class="time" time_to_live="0.0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
@@ -246,7 +246,7 @@ key="acg_shuiniao_ii.weapon"
 			direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
 		<result class="notify_script" key="vehicle_recycle" />
 		-->
-		<result class="blast" radius="16.0" damage="1000" push="0.7" decal="0" character_state="wound" faction_compare="not_equal"  />
+		<result class="blast" radius="14.0" damage="1000" push="0.7" decal="0" character_state="wound" faction_compare="not_equal"  />
 		<trigger class="time" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
@@ -315,14 +315,14 @@ key="re_acg_shuiniao.weapon"
     <tag name="cqb" />
     <specification 	
     accuracy_factor="1" 
-	retrigger_time="2" 
+	retrigger_time="2.5" 
 	spread_range="0.01"
     magazine_size="-1" 
     can_shoot_standing="0" 
     can_shoot_crouching="1" 
     carry_in_two_hands="0" 
 	sustained_fire_grow_step="1" 
-    sustained_fire_diminish_rate="0.4" 
+    sustained_fire_diminish_rate="0.33" 
     name="Shuiniao" 
     class="3" 
     consume="0" 
@@ -402,7 +402,7 @@ key="re_acg_shuiniao.weapon"
 			direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
 		<result class="notify_script" key="vehicle_recycle" />
 		-->
-		<result class="blast" radius="10.0" damage="300" push="0.7" decal="0" character_state="wound" faction_compare="not_equal"  />
+		<result class="blast" radius="7.5" damage="300" push="0.7" decal="0" character_state="wound" faction_compare="not_equal"  />
 		<trigger class="time" time_to_live="0.0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
@@ -551,7 +551,7 @@ key="re_acg_shuiniao_ii.weapon"
 			direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
 		<result class="notify_script" key="vehicle_recycle" />
 		-->
-		<result class="blast" radius="16.0" damage="1000" push="0.7" decal="0" character_state="wound" faction_compare="not_equal"  />
+		<result class="blast" radius="14.0" damage="1000" push="0.7" decal="0" character_state="wound" faction_compare="not_equal"  />
 		<trigger class="time" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->

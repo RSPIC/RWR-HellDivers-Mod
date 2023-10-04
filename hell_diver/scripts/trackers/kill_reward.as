@@ -196,12 +196,12 @@ class kill_reward : Tracker {
 	// --------------------------------------------
 	kill_reward(Metagame@ metagame) {
 		@m_metagame = @metagame;
-
+		m_ended = false;
 		m_metagame.getComms().send("<command class='set_metagame_event' name='character_kill' enabled='1' />");
 	}
 	// --------------------------------------------
     bool hasEnded() const{
-		return m_ended;
+		return false;
     }
 	// --------------------------------------------
 	bool hasStarted() const {
@@ -234,7 +234,10 @@ class kill_reward : Tracker {
 		int k_pid = killer.getIntAttribute("player_id");
 		int t_pid = target.getIntAttribute("player_id");
 		if(k_pid == -1 && t_pid == -1){return;}//AI之间击杀，返回
-
+		if(k_pid == -1 && t_pid != -1){//AI TK玩家，单独处理
+			aiTkPlayer(event);
+			return;
+		}
 		string weaponKey = event.getStringAttribute("key");//击杀武器关键字
 		string soldier_group_name = target.getStringAttribute("soldier_group_name");//击杀兵种
 		int target_fid = target.getIntAttribute("faction_id");
@@ -297,6 +300,17 @@ class kill_reward : Tracker {
 			}
 			
 		}
+	}
+	protected void aiTkPlayer(const XmlElement@ event) {
+		const XmlElement@ killer = event.getFirstElementByTagName("killer");
+		if(killer is null){return;}
+		const XmlElement@ target = event.getFirstElementByTagName("target");
+		if(target is null){return;}
+		int target_fid = target.getIntAttribute("faction_id");
+		int killer_cid = killer.getIntAttribute("id");
+		int killer_fid = killer.getIntAttribute("faction_id");
+		if(killer_fid != target_fid){return;}//敌方AI击杀玩家
+		setWoundCharacter(m_metagame,killer_cid);
 	}
 }
 

@@ -11,7 +11,7 @@ class XmlElement {
 	// --------------------------------------------
     XmlElement(const XmlElement@ original) {
 		if(original is null){return;}
-		m_data = original.m_data;
+		m_data = original.toDictionary();
     }
 
 	// --------------------------------------------
@@ -214,7 +214,6 @@ class XmlElement {
 	void removeAllChild() {
 		array<dictionary> childrenData;
 		m_data.set("Children",childrenData);
-
 	}
 	// --------------------------------------------
 	array<const XmlElement@> getLowerChilds(int index) {

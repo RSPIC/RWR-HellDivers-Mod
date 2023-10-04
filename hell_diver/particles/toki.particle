@@ -1,0 +1,639 @@
+author: RST
+2023.10.1
+未经授权不可复用、修改使用、仅用于helldiver mod
+飞马鸟时武器特效
+
+particle_system toki_falling_fire
+{
+	quota 500
+	material point_soft_edge_100
+	particle_width 1.5
+	particle_height 1.5
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_origin center
+	billboard_type point
+	iteration_interval 0
+	emitter Point{
+		angle 0
+		colour 1 0.8 0.5 1
+		direction 0 -1 0
+		emission_rate 200
+		position 0 0 0
+		velocity_min 100
+		velocity_man 150
+		time_to_live 0.2
+		duration 0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.8 0.5 1
+		time1 0.6
+		colour1 1 0.3 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector Scaler{rate -8}
+}
+particle_system toki_falling_smoke
+{
+	quota 500
+	material wand_smoke
+	particle_width 8
+	particle_height 8
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_origin center
+	billboard_type oriented_common
+	iteration_interval 0
+
+	emitter Point{
+		angle 360
+		colour 1 1 1 0
+		direction 0 1 0
+		emission_rate 200
+		position 0 0 0
+		velocity_min 20
+		velocity_man 30
+		time_to_live_min 0.5
+		time_to_live_max 0.8
+		duration 2
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 0.05
+		time1 0.6
+		colour1 1 1 1 0.01
+		time2 1
+		colour2 0 0 0 0
+	}
+    affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector Scaler{rate 2}
+    affector LinearForce{
+		force_vector 0 -4 0
+		force_application add
+	}
+}
+-----------------------------------------------------
+particle_system toki_railgun_muzzle_ring_1
+{
+	quota 150
+	material Particle_Shockwave_01_bw_cull
+	particle_width 0.1
+	particle_height 0.1
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.3
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 16
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0.3 1 1
+		time1 0.5
+		colour1 0 0.3 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+
+particle_system toki_railgun_muzzle_ring_2
+{
+	quota 150
+	material Tex_Ring18A_cull
+	particle_width 6
+	particle_height 6
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 30
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.5
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 2
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	90
+		rotation_speed_range_end	180
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0.3 1 1
+		time1 0.5
+		colour1 0 0.3 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system toki_railgun_muzzle_laser
+{
+	quota 150
+	material muzzle_laser_pass
+	particle_width 1
+	particle_height 100
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.6
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate -1.5
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.5 0.7 1 1
+		time1 0.7
+		colour1 0.5 0.7 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system toki_railgun_muzzle_impact
+{
+	quota 150
+	material Particle_muzzleflash_02_bw
+	particle_width 8
+	particle_height 20
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin bottom_center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.1
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate -50
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.5 0.7 1 1
+		time1 0.7
+		colour1 0.5 0.7 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system toki_railgun_muzzle_impact_2 : toki_railgun_muzzle_impact
+{
+    material Particle_Projectiletip_06
+}
+particle_system toki_railgun_muzzle_impact_spark
+{
+	quota 150
+	material Tex_Spark17A_bw
+	particle_width 2
+	particle_height 4
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 50
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 70
+		position 0 0 0
+		velocity_min 20
+		velocity_max 30
+		time_to_live_min 0.2
+		time_to_live_max 0.3
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.5 0.7 1 1
+		time1 0.7
+		colour1 0.5 0.7 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+-------------------------------------------------------------------------------------
+particle_system toki_muzzle_skill_later_pre_line_center
+{
+	quota 50
+	material Particle_Trail_Fire02_anim_mega
+	particle_width 3
+	particle_height 50
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin bottom_center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 2.5
+		duration 0.1
+	}
+    affector Scaler
+	{
+		rate 0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.15
+		colour1 0 0 0 0
+		time2 0.16
+		colour2 1 1 1 1
+		time3 0.9
+		colour3 1 1 1 1
+		time4 1
+		colour4 0 0 0 0
+	}
+}
+particle_system toki_muzzle_skill_later_pre_line_center_2 : toki_muzzle_skill_later_pre_line_center
+{
+    material Particle_Trail_36_anim_mega
+    particle_width 7
+
+    emitter Point
+	{
+        emission_rate 30
+    }
+    affector Scaler
+	{}
+    affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.15
+		colour1 0 0 0 0
+		time2 0.16
+		colour2 0 0.3 1 1
+		time3 0.9
+		colour3 0 0.3 1 1
+		time4 1
+		colour4 0 0 0 0
+	}
+}
+particle_system toki_muzzle_skill_later_pre_line_center_3 : toki_muzzle_skill_later_pre_line_center
+{
+    material Particle_Trail_22_bw_mega
+    particle_width 10
+
+    emitter Point
+	{
+        emission_rate 10
+    }
+    affector Scaler
+	{}
+    affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.15
+		colour1 0 0 0 0
+		time2 0.16
+		colour2 0 0.3 1 1
+		time3 0.9
+		colour3 0 0.3 1 1
+		time4 1
+		colour4 0 0 0 0
+	}
+}
+particle_system toki_muzzle_skill_center_ball
+{
+	quota 150
+	material bow_flare_pass
+	particle_width 3
+	particle_height 3
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 2.5
+		duration 1.2
+	}
+	affector Scaler
+	{
+		rate 2
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	250
+		rotation_speed_range_end	-250
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.7
+		colour1 0 0.3 1 1  
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system toki_muzzle_skill_center_rorate_ring
+{
+	quota 150
+	material tuan_61_bw
+	particle_width 8
+	particle_height 8
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.4
+		duration 2
+	}
+	affector Scaler
+	{
+		rate -30
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	1600
+		rotation_speed_range_end	1600
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0 1 1
+		time1 0.7
+		colour1 0 0.3 1 1 
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system toki_muzzle_skill_center_rorate_ring_2 : toki_muzzle_skill_center_rorate_ring
+{
+    material Tex_C_Swirl_02
+    particle_width 12
+	particle_height 12
+    emitter Point
+	{
+	}
+	affector Scaler
+	{
+	}
+	affector Rotator
+	{
+        rotation_speed_range_start	-1600
+		rotation_speed_range_end	-1600
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+        time0 0
+		colour0 0.7 1 1 1
+		time1 0.7
+		colour1 0 0.3 1 1 
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system toki_muzzle_skill_shrink_line
+{
+	quota 150
+	material Particle_Impact_Line_03
+	particle_width 5
+	particle_height 5
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center_left
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 360
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity_min -0.0001
+		velocity_max 0.0001
+		time_to_live 0.2
+		duration 2
+	}
+	affector Scaler
+	{
+		rate -7.5
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	90
+		rotation_range_end	90
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0.3 1 1
+		time1 0.9
+		colour1 0 0.5 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material Particle_Shockwave_01_bw_cull : add_base
+{   
+    technique{
+    pass{
+        cull_hardware none
+        texture_unit{
+            texture Particle_Shockwave_01_bw.png 	
+}}}}
+material Tex_Ring18A_cull : add_base
+{   
+    technique{
+    pass{
+        cull_hardware none
+        texture_unit{
+            texture Tex_Ring18A.png 	
+}}}}
+material muzzle_laser_pass : add_base
+{   
+    technique{
+    pass{
+        depth_func always_pass
+        texture_unit{
+            texture muzzle_laser.png 	
+}}}}
+material Particle_Projectiletip_06 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture Particle_Projectiletip_06.png 	
+}}}}
+material Particle_muzzleflash_02_bw : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture Particle_muzzleflash_02_bw.png 	
+}}}}
+material Tex_Spark17A_bw : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture Tex_Spark17A_bw.png 	
+}}}}
+material tuan_61_bw : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture tuan_61_bw.png
+}}}}

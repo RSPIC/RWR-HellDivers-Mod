@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<projectiles>
 <projectile 
 class="grenade" 
-name="" 
 key="acg_arknight_ifrit_damage.projectile" 
 slot="0"
 pulldown_in_air="1.5"
@@ -23,14 +23,10 @@ player_death_drop_owner_lock_time="0"
      <collider class="vehicle" enabled="1" /> 
      <collider class="character" enabled="1" />
     </trigger> 
-    <result class="blast" radius="2.5" damage="5" push="0.2" decal="1" 
+    <result class="blast" radius="2.7" damage="2.5" push="0.2" decal="1" 
     character_state="wound" make_vehicle_hit_sound="0" 
     faction_compare="not_equal"
     damage_origin_vehicle="0"/>
-    	
-    <effect class="result" type="splat_map" surface_tag="" size="3.0" atlas_index="0" layer="1" />
-    <effect class="result" type="splat_map" surface_tag="" size="4.0" atlas_index="4" layer="0" />
-    <effect class="result" type="splat_map" surface_tag="" size="5.0" atlas_index="0" layer="2" additive="0" />
 
     <rotation class="random" />
 	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>		
@@ -38,20 +34,98 @@ player_death_drop_owner_lock_time="0"
 
     <inventory encumbrance="0.5" price="0.0" />
 
-	<sound class="result" key="other" fileref="burn.wav" />   
+
 	
+</projectile>
+<projectile 
+class="grenade" 
+key="acg_arknight_ifrit_skill_effect.projectile" 
+slot="0"
+pulldown_in_air="40"
+on_ground_up="0 1 0"
+use_time_to_live="1"
+time_to_live="6"
+can_be_disarmed="0"
+can_be_detected_by_footmen="0"
+can_be_detected_by_driver="0"
+radius="0.1"
+time_to_live_out_in_the_open="0"
+player_death_drop_owner_lock_time="0"
+>
+    <collision class="sticky" />
+    <trigger class="impact" time_to_live="0"/>
+    <result class="blast" radius="5" damage="50" push="0.2" decal="1" 
+    character_state="wound" make_vehicle_hit_sound="0" 
+    faction_compare="not_equal"
+    damage_origin_vehicle="0"/>
+    	
+    <effect class="result" key="terrain" ref="general_result_ground_fire" lighting="0"/>
+    <effect class="result" key="terrain" ref="general_result_ground_fire_2" lighting="0"/>
+    <effect class="result" key="terrain" ref="general_result_ground_fire_3" lighting="0"/>
+    <effect class="result" key="terrain" ref="general_result_ground_fire_4" lighting="0"/>
+    <effect class="result" key="terrain" ref="ifrit_result_ground_lava" lighting="0"/>
+
+    <rotation class="random" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>		
+    <capacity value="0" source="rank" source_value="0" />
+
+    <inventory encumbrance="0.5" price="0.0" />
+
     <sound class="result" key="terrain" copy="other" />
     <sound class="result" key="static_object" copy="other" />
     <sound class="result" key="vehicle" copy="other" />
     <sound class="result" key="character" copy="other" />
 
-	<effect class="activated" ref="cyborgs_activated_flamethrower_01" />
 	<effect class="result" key="other" copy="terrain" />
     <effect class="result" key="static_object" copy="terrain" />
     <effect class="result" key="vehicle" copy="terrain" />
     <effect class="result" key="character" copy="terrain" />
-
-
-
 	
 </projectile>
+<projectile 
+class="grenade" 
+name="water" 
+slot="0" 
+pulldown_in_air="40" 
+key="acg_arknight_ifrit_skill_damage.projectile">
+    <tag name="grenade"/>
+
+    <result class="blast" 
+    radius="5" 
+    damage="30.0" 
+    push="0" decal="1" 
+    character_state="wound" 
+    faction_compare="not_equal" 
+    damage_origin_vehicle="0" />
+
+    <trigger class="time" time_to_live="0"/>
+    <rotation class="motion" />
+    <model mesh_filename="" />
+    <commonness value="0" can_respawn_with="0" in_stock="0"/>	
+</projectile>
+<projectile 
+class="grenade" 
+slot="0" 
+pulldown_in_air="40" 
+key="acg_arknight_ifrit_burning_sound.projectile">
+    <tag name="grenade"/>
+
+    <result class="blast" 
+    radius="0" 
+    damage="0.0" 
+    push="0" decal="1" 
+    character_state="none"  />
+    <trigger class="time" time_to_live="0"/>
+    <rotation class="motion" />
+    <model mesh_filename="" />
+    <commonness value="0" can_respawn_with="0" in_stock="0"/>	
+
+    <sound class="result" key="other" fileref="acg_ifrit_burning_sound.wav" pitch_variety="0" volume="2.5" />
+
+    <sound class="result" key="terrain" copy="other" />
+    <sound class="result" key="static_object" copy="other" />
+    <sound class="result" key="vehicle" copy="other" />
+    <sound class="result" key="character" copy="other" />
+</projectile>
+
+</projectiles>

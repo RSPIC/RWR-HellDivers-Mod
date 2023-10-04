@@ -69,7 +69,7 @@ allow_ai_to_use="0"
 
 	<character_slot type="driver" position="-0.432 0.56 0.24" rotation="0" exit_rotation="-1.57" hiding="1" animation_id="36" />
 	<character_slot type="gunner" attached_on_turret="0" enter_position="1.352 0 -1.28" seat_position="0.32 -0.9 -0.72" rotation="1.0" exit_rotation="1.57" hiding="0" animation_id="36" marker_offset="0 0.6 0" >
-		<turret index="0" />
+		<turret index="0" /><turret index="1" />
 	</character_slot>
 
 	<character_slot type="gunner" attached_on_turret="1" enter_position="-1.352 0 -1.28" seat_position="0.08 -1.4 -0.64" rotation="0" exit_rotation="-1.57" hiding="0" animation_key="wiesel mg still" marker_offset="0 1.2 0" >

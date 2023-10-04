@@ -1,0 +1,61 @@
+particle_system AliceCarry
+{
+	quota	1
+	material	Alice_Carry2
+	particle_width	2.6
+	particle_height	3.6
+	renderer	billboard
+	billboard_type	point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.001
+
+	emitter Box
+	{
+		angle	0
+		colour 0 0 0 0
+		direction	0 1 0
+		emission_rate	10
+		position	0 -0.25 0
+    		width 0.0
+    		height 0.0
+    		depth 0.0
+		velocity	0.0001
+		time_to_live	0.2
+		duration	0.0
+	}
+
+	affector Scaler
+	{
+		rate	0
+	}
+
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+
+	affector ColourFader2
+	{
+		red1	0
+		green1	0
+		blue1	0
+		alpha1	0
+		state_change 0
+		red2	0
+		green2	0
+		blue2	0
+		alpha2	0
+	}
+
+	affector LinearForce
+	{
+		force_vector 0 0.5 0
+		force_application add
+	}
+}

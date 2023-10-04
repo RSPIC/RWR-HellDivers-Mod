@@ -23,7 +23,7 @@ class BanManager : Tracker {
 	// --------------------------------------------
 	BanManager(Metagame@ metagame, bool requireSid = false) {
 		@m_metagame = metagame;
-		m_requireSid = true;
+		m_requireSid = g_online_TestMode;
 		load();
 	}
 

@@ -359,12 +359,12 @@ particle_system cyborgs_activated_flamethrower_01
 		angle 90
 		colour 0 0 0 0
 		direction 0 1 0
-		emission_rate 20
+		emission_rate 10
 		position 0 0 0
 		velocity 0.0001
 		time_to_live_min 0.2
 		time_to_live_max 0.4
-		duration 8
+		duration 0
 		width 0.5
 		height 0.5
 		depth 0.5
@@ -396,12 +396,6 @@ particle_system cyborgs_activated_flamethrower_01
 	affector LinearForce{
 		force_vector 0 4 0
 		force_application add
-	}
-	affector DirectionRandomiser 
-	{
-		randomness 0
-		scope 0
-		keep_velocity false
 	}
 }
 

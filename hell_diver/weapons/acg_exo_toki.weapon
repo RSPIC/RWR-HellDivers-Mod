@@ -1,0 +1,1244 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapons> 
+<weapon 
+file="_rare_weapon_mk6.base"
+key="acg_exo_toki.weapon" 
+> 
+	<tag name="machine gun" />
+    <specification 	
+    slot="0" 	
+    retrigger_time="0.04" 
+    accuracy_factor="0.985" 
+	spread_range="0.2"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="-0.21" 
+    sustained_fire_diminish_rate="-1.8" 
+    magazine_size="80" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="0"	
+    suppressed="0" 
+	class="0" 
+    name="Toki Exo" 
+	sight_range_modifier="1.5" 
+	sight_height_offset="1.0" 
+	burst_shots="1" 
+    projectiles_per_shot="1" 
+    projectile_speed="160.0"
+	barrel_offset="0.2" 
+	carry_in_two_hands="0" 
+	stab_enabled="1" 
+	stab_range="3" 
+	/> 
+	<!--1500RPM 25m range-->
+	<!-- mk2 Increases the ammunition supply and stability of the minigun. -->
+	<!-- mk3 Upgrades the missiles to armor-piercing, anti-tank missiles. -->
+	<!-- Stratagem name changed to EXO-44 'Stomper' Exosuit. -->
+
+	<!--多模式-->
+    <next_in_chain key="acg_exo_toki_doublefire.weapon" share_ammo="1" /> 
+	<!-- 取消，因为从背包里刷新后，切模式会补满弹夹 -->
+
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_effect_drop_target.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0.0" />
+	
+	<animation key="recoil" animation_key="acg_toki_recoil" />
+	<animation state_key="reload" animation_key="acg_toki_reload"/>
+	<animation state_key="hold" animation_key="acg_toki_still" />
+	<animation state_key="hold_on_wall"  animation_key="acg_toki_still" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="acg_toki_still" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="acg_toki_still" /><!--闲置动作，全身动作-->
+	<animation state_key="running" animation_key="acg_toki_running" /><!--全身动作-->
+	<animation state_key="walking" animation_key="acg_toki_walking" /><!--按shift时候的静步前进动作，全身动作-->
+    <animation state_key="walking_backwards" animation_key="acg_toki_walkingback" /><!--全身动作-->
+    <animation state_key="crouching" animation_key="acg_toki_crounch" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="acg_toki_walking" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="acg_toki_walkingback" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="acg_toki_crounch" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="acg_toki_walking" /><!--全身动作-->
+	<animation state_key="stabbing" animation_key="acg_toki_melee" /><!--半身动作，武器可设置脱手-->
+	<!--切换模式，本模式的切出动作衔接下一模式的切入动作，置空为秒切-->
+	<animation state_key="next_in_chain_in" animation_key="" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="acg_toki_exchange" /><!--半身动作，切换模式，本模式切入-->
+	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
+    <animation state_key="changing_weapon_in" animation_key="" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key="acg_toki_exchange"/><!--半身动作，切换武器，本武器取出-->
+
+    <sound key="fire" fileref="acg_exo_toki_mg_fire_01.wav" pitch_variety="0.1" volume="1" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_02.wav" pitch_variety="0.03" volume="1.0" />
+
+	<sound key="cooldown" fileref="acg_toki_voice_clip_11.wav" pitch_variety="0" volume="2.0"/>
+	<sound key="cooldown" fileref="acg_toki_voice_clip_12.wav" pitch_variety="0" volume="2.0"/>
+	<sound key="cooldown" fileref="acg_toki_voice_clip_14.wav" pitch_variety="0" volume="2.0"/>
+	<sound key="cooldown" fileref="acg_toki_voice_clip_15.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="dry_fire" fileref="acg_toki_voice_clip_03.wav" pitch_variety="0.0" volume="1.0" />
+	<sound key="effect" fileref="acg_toki_voice_clip_10.wav" pitch_variety="0" volume="2.0" />
+	<sound key="effect" fileref="acg_toki_voice_clip_07.wav" pitch_variety="0" volume="2.0" />
+	<sound key="effect" fileref="acg_toki_voice_clip_08.wav" pitch_variety="0" volume="2.0" />
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_01.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_02.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_03.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_05.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_06.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_09.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_13.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_16.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_17.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_18.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_19.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_in" fileref="acg_exo_toki_mag_in.wav"  volume="2.0"/>
+    <sound key="cycle" fileref="rifle_chamber.wav" />
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" />
+    <sound key="last_ammo" fileref="hd_lastammo_01.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_02.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_03.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_04.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" />
+    <sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+
+
+
+
+    <model filename="" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="acgw_toki_hud.png" /> 
+
+  	<capacity value="1" source="rank" source_value="0.0" />
+	
+	
+    <!-- <commonness value="1" can_respawn_with="1" in_stock="1" /> 
+    <inventory encumbrance="50.0" price="0.0" />  -->
+    <weak_hand_hold offset="0.3" /> 
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.5625" can_be_detected_by_driver="1" can_be_disarmed="0" > 
+		
+		<result class="blast" radius="2.5" damage="10" push="0" decal="0" character_state="wound" 
+		faction_compare="not_equal"
+		damage_origin_vehicle="0" />
+		<!-- slower decay -->
+		<!-- 60m max damage range -->
+		<!-- damage 75/100hit  -->
+	
+		<effect class="result" key="terrain" ref="hd_mg94_result_spray" lighting="0" />
+		<effect class="result" key="terrain" ref="hd_mg94_result_bullet_light_center" lighting="0" />
+		<!-- <effect class="result" key="terrain" ref="hd_mg94_result_bullet_smoke" lighting="0" /> -->
+		<effect class="result" key="terrain" ref="hd_mg94_hit_leave" lighting="0" />
+		<effect class="activated" ref="general_weapon_activated_bullet_light" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_bullet_centerlight" lighting="0"/>
+			<!-- <effect class="result" key="terrain" ref="MG_hvy_hit_smoke" lighting="0"/> -->
+			<effect class="result" key="terrain" ref="MG_hvy_hit_leave" lighting="0" post_processing="1"/>
+			<effect class="result" key="terrain" ref="MG_heavy_up_dust_1" lighting="0"/>
+			<effect class="result" key="terrain" ref="MG_heavy_up_dust_2" lighting="0"/>
+			<effect class="result" key="terrain" ref="MG_heavy_up_dust_3" lighting="0"/>
+			<effect class="result" key="terrain" ref="MG_heavy_up_dust_4" lighting="0"/>
+			<effect class="result" key="terrain" ref="MG_hvy_spread_dust" lighting="0"/>
+			<effect class="result" key="terrain" ref="MG_hvy_hit_light" lighting="0" post_processing="1"/> 
+
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_01" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_02" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_03" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_04" />
+
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		<trail probability="1" key="normal_trail_long_red" lighting="0"/>	
+    </projectile>
+		<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+		<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 	
+
+	<modifier class="speed" value="0.3" /> 
+    
+    
+</weapon>
+<weapon 
+file="_rare_weapon_mk6.base"
+key="acg_exo_toki_doublefire.weapon" 
+> 
+	<tag name="machine gun" />
+    <specification 	
+    slot="0" 	
+    retrigger_time="0.02" 
+    accuracy_factor="0.985" 
+	spread_range="0.2"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="-0.21" 
+    sustained_fire_diminish_rate="-1.8" 
+    magazine_size="80" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="0"	
+    suppressed="0" 
+	class="0" 
+    name="Toki Exo" 
+	sight_range_modifier="1.5" 
+	sight_height_offset="1.0" 
+	burst_shots="1" 
+    projectiles_per_shot="1" 
+    projectile_speed="160.0"
+	barrel_offset="-17.6" 
+	carry_in_two_hands="1" 
+	stab_enabled="1" 
+	stab_range="3" 
+	/> 
+	<!--1500RPM 25m range-->
+	<!-- mk2 Increases the ammunition supply and stability of the minigun. -->
+	<!-- mk3 Upgrades the missiles to armor-piercing, anti-tank missiles. -->
+	<!-- Stratagem name changed to EXO-44 'Stomper' Exosuit. -->
+
+	<!--多模式-->
+    <next_in_chain key="acg_exo_toki.weapon" share_ammo="1" /> 
+	<!-- 取消，因为从背包里刷新后，切模式会补满弹夹 -->
+
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_effect_drop_target.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0.0" />
+	
+	<animation key="recoil" animation_key="acg_toki_recoil_double_right" />
+	<animation key="recoil" animation_key="acg_toki_recoil_double_left" />
+	<animation key="recoil" animation_key="acg_toki_recoil_double_right" />
+	<animation key="recoil" animation_key="acg_toki_recoil_double_left" />
+	<animation state_key="reload" animation_key="acg_toki_reload"/>
+	<animation state_key="hold" animation_key="acg_toki_recoil_double_left" />
+	<animation state_key="hold_on_wall"  animation_key="acg_toki_recoil_double_left" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="acg_toki_recoil_double_left" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="acg_toki_recoil_double_left" /><!--闲置动作，全身动作-->
+	<animation state_key="running" animation_key="acg_toki_running" /><!--全身动作-->
+	<animation state_key="walking" animation_key="acg_toki_walking2" /><!--按shift时候的静步前进动作，全身动作-->
+    <animation state_key="walking_backwards" animation_key="acg_toki_walkingback2" /><!--全身动作-->
+    <animation state_key="crouching" animation_key="acg_toki_recoil_double_left" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="acg_toki_walking2" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="acg_toki_walkingback2" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="acg_toki_recoil_double_left" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="acg_toki_walking2" /><!--全身动作-->
+	<animation state_key="stabbing" animation_key="acg_toki_melee" /><!--半身动作，武器可设置脱手-->
+	<!--切换模式，本模式的切出动作衔接下一模式的切入动作，置空为秒切-->
+	<animation state_key="next_in_chain_in" animation_key="" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="acg_toki_exchange" /><!--半身动作，切换模式，本模式切入-->
+	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
+    <animation state_key="changing_weapon_in" animation_key="" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key="acg_toki_exchange"/><!--半身动作，切换武器，本武器取出-->
+
+    <sound key="fire" fileref="acg_exo_toki_mg_fire_01.wav" pitch_variety="0.1" volume="1" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_02.wav" pitch_variety="0.03" volume="1.0" />
+
+	<sound key="cooldown" fileref="acg_toki_voice_clip_11.wav" pitch_variety="0" volume="2.0"/>
+	<sound key="cooldown" fileref="acg_toki_voice_clip_12.wav" pitch_variety="0" volume="2.0"/>
+	<sound key="cooldown" fileref="acg_toki_voice_clip_14.wav" pitch_variety="0" volume="2.0"/>
+	<sound key="cooldown" fileref="acg_toki_voice_clip_15.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="dry_fire" fileref="acg_toki_voice_clip_03.wav" pitch_variety="0.0" volume="1.0" />
+	<sound key="effect" fileref="acg_toki_voice_clip_10.wav" pitch_variety="0" volume="2.0" />
+	<sound key="effect" fileref="acg_toki_voice_clip_07.wav" pitch_variety="0" volume="2.0" />
+	<sound key="effect" fileref="acg_toki_voice_clip_08.wav" pitch_variety="0" volume="2.0" />
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_01.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_02.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_03.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_05.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_06.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_09.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_13.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_16.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_17.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_18.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_19.wav" pitch_variety="0" volume="2.0"/>
+
+    <sound key="magazine_in" fileref="acg_exo_toki_mag_in.wav"  volume="2.0"/>
+    <sound key="cycle" fileref="rifle_chamber.wav" />
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" />
+    <sound key="last_ammo" fileref="hd_lastammo_01.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_02.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_03.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_04.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" />
+    <sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+
+
+    <model filename="" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="acgw_toki_hud.png" /> 
+
+  	<capacity value="1" source="rank" source_value="0.0" />
+	
+	
+    <!-- <commonness value="1" can_respawn_with="1" in_stock="1" /> 
+    <inventory encumbrance="50.0" price="0.0" />  -->
+    <weak_hand_hold offset="0.3" /> 
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.5625" can_be_detected_by_driver="1" can_be_disarmed="0"> 
+		
+		<result class="hit" kill_probability="1.5" 
+		kill_probability_offset_on_successful_hit="20"
+		kill_decay_start_time="0.3750" kill_decay_end_time="0.5625" character_state="wound"/>
+		<!-- slower decay -->
+		<!-- 60m max damage range -->
+		<!-- damage 75/100hit  -->
+	
+		<effect class="result" key="terrain" ref="hd_mg94_result_spray" lighting="0" />
+		<effect class="result" key="terrain" ref="hd_mg94_result_bullet_light_center" lighting="0" />
+		<effect class="result" key="terrain" ref="hd_mg94_result_bullet_smoke" lighting="0" />
+		<effect class="result" key="terrain" ref="hd_mg94_hit_leave" lighting="0" />
+		<effect class="activated" ref="general_weapon_activated_bullet_light" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_bullet_centerlight" lighting="0"/>
+
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_01" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_02" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_03" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_04" />
+		
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+		<trail probability="1" key="normal_trail_long" lighting="0"/>	
+    </projectile>
+		<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+		<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 	
+
+	<modifier class="speed" value="0.3" /> 
+    
+    
+</weapon>
+<weapon 
+file="_rare_weapon_mk6.base"
+key="acg_exo_toki_railgun.weapon" 
+> 
+	<tag name="machine gun" />
+    <specification 	
+    slot="1" 	
+    retrigger_time="1" 
+    accuracy_factor="1" 
+	spread_range="0.01"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="0.10" 
+    sustained_fire_diminish_rate="1" 
+    magazine_size="4" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="0"	
+    suppressed="0" 
+	class="0" 
+    name="Toki Exo" 
+	sight_range_modifier="1.5" 
+	sight_height_offset="1.0" 
+	burst_shots="1" 
+    projectiles_per_shot="1" 
+    projectile_speed="400.0"
+	barrel_offset="0.2" 
+	carry_in_two_hands="0" 
+	stab_enabled="1" 
+	stab_range="3" 
+	/> 
+	<!--1500RPM 25m range-->
+	<!-- mk2 Increases the ammunition supply and stability of the minigun. -->
+	<!-- mk3 Upgrades the missiles to armor-piercing, anti-tank missiles. -->
+	<!-- Stratagem name changed to EXO-44 'Stomper' Exosuit. -->
+
+	<!--多模式-->
+    <next_in_chain key="acg_exo_toki_skill.weapon" share_ammo="0" /> 
+	<!-- 取消，因为从背包里刷新后，切模式会补满弹夹 -->
+
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_effect_drop_target.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0.0" />
+	
+	<animation key="recoil" animation_key="acg_toki_recoil" />
+	<animation state_key="reload" animation_key="acg_toki_reload"/>
+	<animation state_key="hold" animation_key="acg_toki_still" />
+	<animation state_key="hold_on_wall"  animation_key="acg_toki_still" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="acg_toki_still" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="acg_toki_still" /><!--闲置动作，全身动作-->
+	<animation state_key="running" animation_key="acg_toki_running" /><!--全身动作-->
+	<animation state_key="walking" animation_key="acg_toki_walking" /><!--按shift时候的静步前进动作，全身动作-->
+    <animation state_key="walking_backwards" animation_key="acg_toki_walkingback" /><!--全身动作-->
+    <animation state_key="crouching" animation_key="acg_toki_crounch" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="acg_toki_walking" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="acg_toki_walkingback" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="acg_toki_crounch" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="acg_toki_walking" /><!--全身动作-->
+	<animation state_key="stabbing" animation_key="acg_toki_melee" /><!--半身动作，武器可设置脱手-->
+	<!--切换模式，本模式的切出动作衔接下一模式的切入动作，置空为秒切-->
+	<animation state_key="next_in_chain_in" animation_key="" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="acg_toki_exchange" /><!--半身动作，切换模式，本模式切入-->
+	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
+    <animation state_key="changing_weapon_in" animation_key="" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key="acg_toki_exchange"/><!--半身动作，切换武器，本武器取出-->
+
+    <sound key="fire" fileref="acg_exo_toki_railgun_fire.wav" pitch_variety="0.1" volume="1" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_02.wav" pitch_variety="0.03" volume="1.0" />
+
+	<sound key="cooldown" fileref="acg_toki_voice_clip_11.wav" pitch_variety="0" volume="2.0"/>
+	<sound key="cooldown" fileref="acg_toki_voice_clip_12.wav" pitch_variety="0" volume="2.0"/>
+	<sound key="cooldown" fileref="acg_toki_voice_clip_14.wav" pitch_variety="0" volume="2.0"/>
+	<sound key="cooldown" fileref="acg_toki_voice_clip_15.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="dry_fire" fileref="acg_toki_voice_clip_03.wav" pitch_variety="0.0" volume="1.0" />
+	<sound key="effect" fileref="acg_toki_voice_clip_10.wav" pitch_variety="0" volume="2.0" />
+	<sound key="effect" fileref="acg_toki_voice_clip_07.wav" pitch_variety="0" volume="2.0" />
+	<sound key="effect" fileref="acg_toki_voice_clip_08.wav" pitch_variety="0" volume="2.0" />
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_01.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_02.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_03.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_05.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_06.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_09.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_13.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_16.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_17.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_18.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_19.wav" pitch_variety="0" volume="2.0"/>
+	
+    <sound key="magazine_in" fileref="acg_exo_toki_mag_in.wav"  volume="2.0"/>
+    <sound key="cycle" fileref="rifle_chamber.wav" />
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" />
+    <sound key="last_ammo" fileref="hd_lastammo_01.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_02.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_03.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_04.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" />
+    <sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+
+
+    <model filename="" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="acgw_toki_hud.png" /> 
+
+  	<capacity value="1" source="rank" source_value="0.0" />
+	
+	
+    <!-- <commonness value="1" can_respawn_with="1" in_stock="1" /> 
+    <inventory encumbrance="50.0" price="0.0" />  -->
+    <weak_hand_hold offset="0.3" /> 
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.5625" can_be_detected_by_driver="1" can_be_disarmed="0"> 
+		
+		<result class="blast" radius="4.5" damage="120" push="0.35" decal="0" character_state="stun"  />
+		<!-- slower decay -->
+		<!-- 60m max damage range -->
+		<!-- damage 75/100hit  -->
+	
+		<effect class="result" key="terrain" ref="toki_railgun_muzzle_impact" lighting="0" />
+		<effect class="result" key="terrain" ref="toki_railgun_muzzle_impact_2" lighting="0" />
+		<effect class="result" key="terrain" ref="toki_railgun_muzzle_impact_spark" lighting="0" />
+
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_01" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_02" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_03" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_04" />
+		
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+		<trail probability="1" key="" lighting="0"/>	
+    </projectile>
+	<effect class="muzzle" ref="toki_railgun_muzzle_ring_1" lighting="0"/> 
+	<effect class="muzzle" ref="toki_railgun_muzzle_ring_2" lighting="0"/> 	
+	<effect class="muzzle" ref="toki_railgun_muzzle_laser" lighting="0"/> 	
+	<effect class="muzzle" ref="toki_railgun_muzzle_impact" lighting="0"/> 	
+	<effect class="muzzle" ref="toki_railgun_muzzle_impact_2" lighting="0"/> 	
+	<effect class="muzzle" ref="toki_railgun_muzzle_impact_spark" lighting="0"/> 	
+
+	<modifier class="speed" value="0.3" /> 
+    
+    
+</weapon>
+<weapon 
+file="_rare_weapon_mk6.base"
+key="acg_exo_toki_skill.weapon" 
+> 
+	<tag name="machine gun" />
+    <specification 	
+    slot="1" 	
+    retrigger_time="6" 
+    accuracy_factor="1" 
+	spread_range="0.4"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="0.61" 
+    sustained_fire_diminish_rate="0.1" 
+    magazine_size="1" 
+    can_shoot_standing="0" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="0"	
+    suppressed="0" 
+	class="0" 
+    name="Toki Exo" 
+	sight_range_modifier="1.5" 
+	sight_height_offset="1.0" 
+	burst_shots="1" 
+    projectiles_per_shot="1" 
+    projectile_speed="800.0"
+	barrel_offset="0.2" 
+	carry_in_two_hands="0" 
+	stab_enabled="1" 
+	stab_range="3" 
+	cooldown_start="0.6"
+	cooldown_end="0.0"
+	/> 
+	<!--1500RPM 25m range-->
+	<!-- mk2 Increases the ammunition supply and stability of the minigun. -->
+	<!-- mk3 Upgrades the missiles to armor-piercing, anti-tank missiles. -->
+	<!-- Stratagem name changed to EXO-44 'Stomper' Exosuit. -->
+
+	<!--多模式-->
+    <next_in_chain key="acg_exo_toki_railgun.weapon" share_ammo="0" /> 
+	<!-- 取消，因为从背包里刷新后，切模式会补满弹夹 -->
+
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_effect_drop_target.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0.0" />
+	
+	<animation key="recoil" animation_key="acg_toki_recoil" />
+	<animation state_key="reload" animation_key="acg_toki_reload"/>
+	<animation state_key="hold" animation_key="acg_toki_still" />
+	<animation state_key="hold_on_wall"  animation_key="acg_toki_still" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="acg_toki_still" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="acg_toki_still" /><!--闲置动作，全身动作-->
+	<animation state_key="running" animation_key="acg_toki_running" /><!--全身动作-->
+	<animation state_key="walking" animation_key="acg_toki_walking" /><!--按shift时候的静步前进动作，全身动作-->
+    <animation state_key="walking_backwards" animation_key="acg_toki_walkingback" /><!--全身动作-->
+    <animation state_key="crouching" animation_key="acg_toki_crounch" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="acg_toki_walking" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="acg_toki_walkingback" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="acg_toki_crounch" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="acg_toki_walking" /><!--全身动作-->
+	<animation state_key="stabbing" animation_key="acg_toki_melee" /><!--半身动作，武器可设置脱手-->
+	<!--切换模式，本模式的切出动作衔接下一模式的切入动作，置空为秒切-->
+	<animation state_key="next_in_chain_in" animation_key="" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="acg_toki_exchange" /><!--半身动作，切换模式，本模式切入-->
+	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
+    <animation state_key="changing_weapon_in" animation_key="" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key="acg_toki_exchange"/><!--半身动作，切换武器，本武器取出-->
+
+    <sound key="fire" fileref="acg_exo_toki_skill_fire.wav" pitch_variety="0.1" volume="1" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_02.wav" pitch_variety="0.03" volume="1.0" />
+
+	<sound key="cooldown" fileref="acg_toki_voice_clip_11.wav" pitch_variety="0" volume="2.0"/>
+	<sound key="cooldown" fileref="acg_toki_voice_clip_12.wav" pitch_variety="0" volume="2.0"/>
+	<sound key="cooldown" fileref="acg_toki_voice_clip_14.wav" pitch_variety="0" volume="2.0"/>
+	<sound key="cooldown" fileref="acg_toki_voice_clip_15.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="dry_fire" fileref="acg_toki_voice_clip_03.wav" pitch_variety="0.0" volume="1.0" />
+	<sound key="effect" fileref="acg_toki_voice_clip_10.wav" pitch_variety="0" volume="2.0" />
+	<sound key="effect" fileref="acg_toki_voice_clip_07.wav" pitch_variety="0" volume="2.0" />
+	<sound key="effect" fileref="acg_toki_voice_clip_08.wav" pitch_variety="0" volume="2.0" />
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_01.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_02.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_03.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_05.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_06.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_09.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_13.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_16.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_17.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_18.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_19.wav" pitch_variety="0" volume="2.0"/>
+
+    <sound key="magazine_in" fileref="acg_exo_toki_mag_in.wav"  volume="2.0"/>
+    <sound key="cycle" fileref="rifle_chamber.wav" />
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" />
+    <sound key="last_ammo" fileref="acg_toki_voice_clip_15.wav" pitch_variety="0" volume="2.0" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" />
+    <sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+
+
+    <model filename="" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="acgw_toki_hud.png" /> 
+
+  	<capacity value="1" source="rank" source_value="0.0" />
+	
+	
+    <!-- <commonness value="1" can_respawn_with="1" in_stock="1" /> 
+    <inventory encumbrance="50.0" price="0.0" />  -->
+    <weak_hand_hold offset="0.3" /> 
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.5625" can_be_detected_by_driver="1" can_be_disarmed="0"> 
+		
+		<result class="notify_script" key="acg_exo_toki_skill" />
+		<trigger class="time" time_to_live="0" />
+		<!-- slower decay -->
+		<!-- 60m max damage range -->
+		<!-- damage 75/100hit  -->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+		<trail probability="1" key="" lighting="0"/>	
+    </projectile>
+	<effect class="muzzle" ref="toki_muzzle_skill_later_pre_line_center" lighting="0"/> 
+	<effect class="muzzle" ref="toki_muzzle_skill_later_pre_line_center_2" lighting="0"/> 	
+	<effect class="muzzle" ref="toki_muzzle_skill_later_pre_line_center_3" lighting="0"/> 	
+	<effect class="muzzle" ref="toki_muzzle_skill_center_ball" lighting="0"/> 	
+	<effect class="muzzle" ref="toki_muzzle_skill_center_rorate_ring" lighting="0"/> 	
+	<effect class="muzzle" ref="toki_muzzle_skill_center_rorate_ring_2" lighting="0"/> 	
+	<effect class="muzzle" ref="toki_muzzle_skill_shrink_line" lighting="0"/> 	
+
+	<modifier class="speed" value="0.3" /> 
+    
+    
+</weapon>
+
+<weapon 
+file="_rare_weapon_mk6_re.base"
+key="re_acg_exo_toki.weapon" 
+> 
+	<tag name="machine gun" />
+    <specification 	
+    slot="0" 	
+    retrigger_time="0.04" 
+    accuracy_factor="0.985" 
+	spread_range="0.2"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="-0.21" 
+    sustained_fire_diminish_rate="-1.8" 
+    magazine_size="80" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="0"	
+    suppressed="0" 
+	class="0" 
+    name="Toki Exo" 
+	sight_range_modifier="1.5" 
+	sight_height_offset="1.0" 
+	burst_shots="1" 
+    projectiles_per_shot="1" 
+    projectile_speed="160.0"
+	barrel_offset="0.2" 
+	carry_in_two_hands="0" 
+	stab_enabled="1" 
+	stab_range="3" 
+	/> 
+	<!--1500RPM 25m range-->
+	<!-- mk2 Increases the ammunition supply and stability of the minigun. -->
+	<!-- mk3 Upgrades the missiles to armor-piercing, anti-tank missiles. -->
+	<!-- Stratagem name changed to EXO-44 'Stomper' Exosuit. -->
+
+	<!--多模式-->
+    <next_in_chain key="re_acg_exo_toki_doublefire.weapon" share_ammo="1" /> 
+	<!-- 取消，因为从背包里刷新后，切模式会补满弹夹 -->
+
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_effect_drop_target.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0.0" />
+	
+	<animation key="recoil" animation_key="acg_toki_recoil" />
+	<animation state_key="reload" animation_key="acg_toki_reload"/>
+	<animation state_key="hold" animation_key="acg_toki_still" />
+	<animation state_key="hold_on_wall"  animation_key="acg_toki_still" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="acg_toki_still" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="acg_toki_still" /><!--闲置动作，全身动作-->
+	<animation state_key="running" animation_key="acg_toki_running" /><!--全身动作-->
+	<animation state_key="walking" animation_key="acg_toki_walking" /><!--按shift时候的静步前进动作，全身动作-->
+    <animation state_key="walking_backwards" animation_key="acg_toki_walkingback" /><!--全身动作-->
+    <animation state_key="crouching" animation_key="acg_toki_crounch" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="acg_toki_walking" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="acg_toki_walkingback" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="acg_toki_crounch" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="acg_toki_walking" /><!--全身动作-->
+	<animation state_key="stabbing" animation_key="acg_toki_melee" /><!--半身动作，武器可设置脱手-->
+	<!--切换模式，本模式的切出动作衔接下一模式的切入动作，置空为秒切-->
+	<animation state_key="next_in_chain_in" animation_key="" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="acg_toki_exchange" /><!--半身动作，切换模式，本模式切入-->
+	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
+    <animation state_key="changing_weapon_in" animation_key="" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key="acg_toki_exchange"/><!--半身动作，切换武器，本武器取出-->
+
+    <sound key="fire" fileref="acg_exo_toki_mg_fire_01.wav" pitch_variety="0.1" volume="1" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_02.wav" pitch_variety="0.03" volume="1.0" />
+
+	<sound key="cooldown" fileref="acg_toki_voice_clip_11.wav" pitch_variety="0" volume="2.0"/>
+	<sound key="cooldown" fileref="acg_toki_voice_clip_12.wav" pitch_variety="0" volume="2.0"/>
+	<sound key="cooldown" fileref="acg_toki_voice_clip_14.wav" pitch_variety="0" volume="2.0"/>
+	<sound key="cooldown" fileref="acg_toki_voice_clip_15.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="dry_fire" fileref="acg_toki_voice_clip_03.wav" pitch_variety="0.0" volume="1.0" />
+	<sound key="effect" fileref="acg_toki_voice_clip_10.wav" pitch_variety="0" volume="2.0" />
+	<sound key="effect" fileref="acg_toki_voice_clip_07.wav" pitch_variety="0" volume="2.0" />
+	<sound key="effect" fileref="acg_toki_voice_clip_08.wav" pitch_variety="0" volume="2.0" />
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_01.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_02.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_03.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_05.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_06.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_09.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_13.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_16.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_17.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_18.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_19.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_in" fileref="acg_exo_toki_mag_in.wav"  volume="2.0"/>
+    <sound key="cycle" fileref="rifle_chamber.wav" />
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" />
+    <sound key="last_ammo" fileref="hd_lastammo_01.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_02.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_03.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_04.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" />
+    <sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+
+
+
+
+    <model filename="" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="acgw_toki_hud.png" /> 
+
+  	<capacity value="1" source="rank" source_value="0.0" />
+	
+	
+    <!-- <commonness value="1" can_respawn_with="1" in_stock="1" /> 
+    <inventory encumbrance="50.0" price="0.0" />  -->
+    <weak_hand_hold offset="0.3" /> 
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.5625" can_be_detected_by_driver="1" can_be_disarmed="0" > 
+		
+		<result class="blast" radius="2.5" damage="10" push="0" decal="0" character_state="wound" 
+		faction_compare="not_equal"
+		damage_origin_vehicle="0" />
+		<!-- slower decay -->
+		<!-- 60m max damage range -->
+		<!-- damage 75/100hit  -->
+	
+		<effect class="result" key="terrain" ref="hd_mg94_result_spray" lighting="0" />
+		<effect class="result" key="terrain" ref="hd_mg94_result_bullet_light_center" lighting="0" />
+		<!-- <effect class="result" key="terrain" ref="hd_mg94_result_bullet_smoke" lighting="0" /> -->
+		<effect class="result" key="terrain" ref="hd_mg94_hit_leave" lighting="0" />
+		<effect class="activated" ref="general_weapon_activated_bullet_light" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_bullet_centerlight" lighting="0"/>
+			<!-- <effect class="result" key="terrain" ref="MG_hvy_hit_smoke" lighting="0"/> -->
+			<effect class="result" key="terrain" ref="MG_hvy_hit_leave" lighting="0" post_processing="1"/>
+			<effect class="result" key="terrain" ref="MG_heavy_up_dust_1" lighting="0"/>
+			<effect class="result" key="terrain" ref="MG_heavy_up_dust_2" lighting="0"/>
+			<effect class="result" key="terrain" ref="MG_heavy_up_dust_3" lighting="0"/>
+			<effect class="result" key="terrain" ref="MG_heavy_up_dust_4" lighting="0"/>
+			<effect class="result" key="terrain" ref="MG_hvy_spread_dust" lighting="0"/>
+			<effect class="result" key="terrain" ref="MG_hvy_hit_light" lighting="0" post_processing="1"/> 
+
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_01" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_02" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_03" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_04" />
+
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		<trail probability="1" key="normal_trail_long_red" lighting="0"/>	
+    </projectile>
+		<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+		<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 	
+
+	<modifier class="speed" value="0.3" /> 
+    
+    
+</weapon>
+<weapon 
+file="_rare_weapon_mk6_re.base"
+key="re_acg_exo_toki_doublefire.weapon" 
+> 
+	<tag name="machine gun" />
+    <specification 	
+    slot="0" 	
+    retrigger_time="0.02" 
+    accuracy_factor="0.985" 
+	spread_range="0.2"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="-0.21" 
+    sustained_fire_diminish_rate="-1.8" 
+    magazine_size="80" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="0"	
+    suppressed="0" 
+	class="0" 
+    name="Toki Exo" 
+	sight_range_modifier="1.5" 
+	sight_height_offset="1.0" 
+	burst_shots="1" 
+    projectiles_per_shot="1" 
+    projectile_speed="160.0"
+	barrel_offset="-17.6" 
+	carry_in_two_hands="1" 
+	stab_enabled="1" 
+	stab_range="3" 
+	/> 
+	<!--1500RPM 25m range-->
+	<!-- mk2 Increases the ammunition supply and stability of the minigun. -->
+	<!-- mk3 Upgrades the missiles to armor-piercing, anti-tank missiles. -->
+	<!-- Stratagem name changed to EXO-44 'Stomper' Exosuit. -->
+
+	<!--多模式-->
+    <next_in_chain key="re_acg_exo_toki.weapon" share_ammo="1" /> 
+	<!-- 取消，因为从背包里刷新后，切模式会补满弹夹 -->
+
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_effect_drop_target.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0.0" />
+	
+	<animation key="recoil" animation_key="acg_toki_recoil_double_right" />
+	<animation key="recoil" animation_key="acg_toki_recoil_double_left" />
+	<animation key="recoil" animation_key="acg_toki_recoil_double_right" />
+	<animation key="recoil" animation_key="acg_toki_recoil_double_left" />
+	<animation state_key="reload" animation_key="acg_toki_reload"/>
+	<animation state_key="hold" animation_key="acg_toki_recoil_double_left" />
+	<animation state_key="hold_on_wall"  animation_key="acg_toki_recoil_double_left" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="acg_toki_recoil_double_left" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="acg_toki_recoil_double_left" /><!--闲置动作，全身动作-->
+	<animation state_key="running" animation_key="acg_toki_running" /><!--全身动作-->
+	<animation state_key="walking" animation_key="acg_toki_walking2" /><!--按shift时候的静步前进动作，全身动作-->
+    <animation state_key="walking_backwards" animation_key="acg_toki_walkingback2" /><!--全身动作-->
+    <animation state_key="crouching" animation_key="acg_toki_recoil_double_left" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="acg_toki_walking2" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="acg_toki_walkingback2" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="acg_toki_recoil_double_left" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="acg_toki_walking2" /><!--全身动作-->
+	<animation state_key="stabbing" animation_key="acg_toki_melee" /><!--半身动作，武器可设置脱手-->
+	<!--切换模式，本模式的切出动作衔接下一模式的切入动作，置空为秒切-->
+	<animation state_key="next_in_chain_in" animation_key="" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="acg_toki_exchange" /><!--半身动作，切换模式，本模式切入-->
+	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
+    <animation state_key="changing_weapon_in" animation_key="" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key="acg_toki_exchange"/><!--半身动作，切换武器，本武器取出-->
+
+    <sound key="fire" fileref="acg_exo_toki_mg_fire_01.wav" pitch_variety="0.1" volume="1" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_02.wav" pitch_variety="0.03" volume="1.0" />
+
+	<sound key="cooldown" fileref="acg_toki_voice_clip_11.wav" pitch_variety="0" volume="2.0"/>
+	<sound key="cooldown" fileref="acg_toki_voice_clip_12.wav" pitch_variety="0" volume="2.0"/>
+	<sound key="cooldown" fileref="acg_toki_voice_clip_14.wav" pitch_variety="0" volume="2.0"/>
+	<sound key="cooldown" fileref="acg_toki_voice_clip_15.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="dry_fire" fileref="acg_toki_voice_clip_03.wav" pitch_variety="0.0" volume="1.0" />
+	<sound key="effect" fileref="acg_toki_voice_clip_10.wav" pitch_variety="0" volume="2.0" />
+	<sound key="effect" fileref="acg_toki_voice_clip_07.wav" pitch_variety="0" volume="2.0" />
+	<sound key="effect" fileref="acg_toki_voice_clip_08.wav" pitch_variety="0" volume="2.0" />
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_01.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_02.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_03.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_05.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_06.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_09.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_13.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_16.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_17.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_18.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_19.wav" pitch_variety="0" volume="2.0"/>
+
+    <sound key="magazine_in" fileref="acg_exo_toki_mag_in.wav"  volume="2.0"/>
+    <sound key="cycle" fileref="rifle_chamber.wav" />
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" />
+    <sound key="last_ammo" fileref="hd_lastammo_01.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_02.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_03.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_04.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" />
+    <sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+
+
+    <model filename="" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="acgw_toki_hud.png" /> 
+
+  	<capacity value="1" source="rank" source_value="0.0" />
+	
+	
+    <!-- <commonness value="1" can_respawn_with="1" in_stock="1" /> 
+    <inventory encumbrance="50.0" price="0.0" />  -->
+    <weak_hand_hold offset="0.3" /> 
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.5625" can_be_detected_by_driver="1" can_be_disarmed="0"> 
+		
+		<result class="hit" kill_probability="1.5" 
+		kill_probability_offset_on_successful_hit="20"
+		kill_decay_start_time="0.3750" kill_decay_end_time="0.5625" character_state="wound"/>
+		<!-- slower decay -->
+		<!-- 60m max damage range -->
+		<!-- damage 75/100hit  -->
+	
+		<effect class="result" key="terrain" ref="hd_mg94_result_spray" lighting="0" />
+		<effect class="result" key="terrain" ref="hd_mg94_result_bullet_light_center" lighting="0" />
+		<effect class="result" key="terrain" ref="hd_mg94_result_bullet_smoke" lighting="0" />
+		<effect class="result" key="terrain" ref="hd_mg94_hit_leave" lighting="0" />
+		<effect class="activated" ref="general_weapon_activated_bullet_light" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_bullet_centerlight" lighting="0"/>
+
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_01" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_02" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_03" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_04" />
+		
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+		<trail probability="1" key="normal_trail_long" lighting="0"/>	
+    </projectile>
+		<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+		<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 	
+
+	<modifier class="speed" value="0.3" /> 
+    
+    
+</weapon>
+<weapon 
+file="_rare_weapon_mk6_re.base"
+key="re_acg_exo_toki_railgun.weapon" 
+> 
+	<tag name="machine gun" />
+    <specification 	
+    slot="1" 	
+    retrigger_time="1" 
+    accuracy_factor="1" 
+	spread_range="0.01"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="0.10" 
+    sustained_fire_diminish_rate="1" 
+    magazine_size="4" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="0"	
+    suppressed="0" 
+	class="0" 
+    name="Toki Exo" 
+	sight_range_modifier="1.5" 
+	sight_height_offset="1.0" 
+	burst_shots="1" 
+    projectiles_per_shot="1" 
+    projectile_speed="400.0"
+	barrel_offset="0.2" 
+	carry_in_two_hands="0" 
+	stab_enabled="1" 
+	stab_range="3" 
+	/> 
+	<!--1500RPM 25m range-->
+	<!-- mk2 Increases the ammunition supply and stability of the minigun. -->
+	<!-- mk3 Upgrades the missiles to armor-piercing, anti-tank missiles. -->
+	<!-- Stratagem name changed to EXO-44 'Stomper' Exosuit. -->
+
+	<!--多模式-->
+    <next_in_chain key="re_acg_exo_toki_skill.weapon" share_ammo="0" /> 
+	<!-- 取消，因为从背包里刷新后，切模式会补满弹夹 -->
+
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_effect_drop_target.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0.0" />
+	
+	<animation key="recoil" animation_key="acg_toki_recoil" />
+	<animation state_key="reload" animation_key="acg_toki_reload"/>
+	<animation state_key="hold" animation_key="acg_toki_still" />
+	<animation state_key="hold_on_wall"  animation_key="acg_toki_still" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="acg_toki_still" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="acg_toki_still" /><!--闲置动作，全身动作-->
+	<animation state_key="running" animation_key="acg_toki_running" /><!--全身动作-->
+	<animation state_key="walking" animation_key="acg_toki_walking" /><!--按shift时候的静步前进动作，全身动作-->
+    <animation state_key="walking_backwards" animation_key="acg_toki_walkingback" /><!--全身动作-->
+    <animation state_key="crouching" animation_key="acg_toki_crounch" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="acg_toki_walking" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="acg_toki_walkingback" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="acg_toki_crounch" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="acg_toki_walking" /><!--全身动作-->
+	<animation state_key="stabbing" animation_key="acg_toki_melee" /><!--半身动作，武器可设置脱手-->
+	<!--切换模式，本模式的切出动作衔接下一模式的切入动作，置空为秒切-->
+	<animation state_key="next_in_chain_in" animation_key="" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="acg_toki_exchange" /><!--半身动作，切换模式，本模式切入-->
+	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
+    <animation state_key="changing_weapon_in" animation_key="" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key="acg_toki_exchange"/><!--半身动作，切换武器，本武器取出-->
+
+    <sound key="fire" fileref="acg_exo_toki_railgun_fire.wav" pitch_variety="0.1" volume="1" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_02.wav" pitch_variety="0.03" volume="1.0" />
+
+	<sound key="cooldown" fileref="acg_toki_voice_clip_11.wav" pitch_variety="0" volume="2.0"/>
+	<sound key="cooldown" fileref="acg_toki_voice_clip_12.wav" pitch_variety="0" volume="2.0"/>
+	<sound key="cooldown" fileref="acg_toki_voice_clip_14.wav" pitch_variety="0" volume="2.0"/>
+	<sound key="cooldown" fileref="acg_toki_voice_clip_15.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="dry_fire" fileref="acg_toki_voice_clip_03.wav" pitch_variety="0.0" volume="1.0" />
+	<sound key="effect" fileref="acg_toki_voice_clip_10.wav" pitch_variety="0" volume="2.0" />
+	<sound key="effect" fileref="acg_toki_voice_clip_07.wav" pitch_variety="0" volume="2.0" />
+	<sound key="effect" fileref="acg_toki_voice_clip_08.wav" pitch_variety="0" volume="2.0" />
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_01.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_02.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_03.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_05.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_06.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_09.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_13.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_16.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_17.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_18.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_19.wav" pitch_variety="0" volume="2.0"/>
+	
+    <sound key="magazine_in" fileref="acg_exo_toki_mag_in.wav"  volume="2.0"/>
+    <sound key="cycle" fileref="rifle_chamber.wav" />
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" />
+    <sound key="last_ammo" fileref="hd_lastammo_01.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_02.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_03.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_04.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" />
+    <sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+
+
+    <model filename="" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="acgw_toki_hud.png" /> 
+
+  	<capacity value="1" source="rank" source_value="0.0" />
+	
+	
+    <!-- <commonness value="1" can_respawn_with="1" in_stock="1" /> 
+    <inventory encumbrance="50.0" price="0.0" />  -->
+    <weak_hand_hold offset="0.3" /> 
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.5625" can_be_detected_by_driver="1" can_be_disarmed="0"> 
+		
+		<result class="blast" radius="4.5" damage="120" push="0.35" decal="0" character_state="stun"  />
+		<!-- slower decay -->
+		<!-- 60m max damage range -->
+		<!-- damage 75/100hit  -->
+	
+		<effect class="result" key="terrain" ref="toki_railgun_muzzle_impact" lighting="0" />
+		<effect class="result" key="terrain" ref="toki_railgun_muzzle_impact_2" lighting="0" />
+		<effect class="result" key="terrain" ref="toki_railgun_muzzle_impact_spark" lighting="0" />
+
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_01" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_02" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_03" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_04" />
+		
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+		<trail probability="1" key="" lighting="0"/>	
+    </projectile>
+	<effect class="muzzle" ref="toki_railgun_muzzle_ring_1" lighting="0"/> 
+	<effect class="muzzle" ref="toki_railgun_muzzle_ring_2" lighting="0"/> 	
+	<effect class="muzzle" ref="toki_railgun_muzzle_laser" lighting="0"/> 	
+	<effect class="muzzle" ref="toki_railgun_muzzle_impact" lighting="0"/> 	
+	<effect class="muzzle" ref="toki_railgun_muzzle_impact_2" lighting="0"/> 	
+	<effect class="muzzle" ref="toki_railgun_muzzle_impact_spark" lighting="0"/> 	
+
+	<modifier class="speed" value="0.3" /> 
+    
+    
+</weapon>
+<weapon 
+file="_rare_weapon_mk6_re.base"
+key="re_acg_exo_toki_skill.weapon" 
+> 
+	<tag name="machine gun" />
+    <specification 	
+    slot="1" 	
+    retrigger_time="6" 
+    accuracy_factor="1" 
+	spread_range="0.4"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="0.61" 
+    sustained_fire_diminish_rate="0.1" 
+    magazine_size="1" 
+    can_shoot_standing="0" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="0"	
+    suppressed="0" 
+	class="0" 
+    name="Toki Exo" 
+	sight_range_modifier="1.5" 
+	sight_height_offset="1.0" 
+	burst_shots="1" 
+    projectiles_per_shot="1" 
+    projectile_speed="800.0"
+	barrel_offset="0.2" 
+	carry_in_two_hands="0" 
+	stab_enabled="1" 
+	stab_range="3" 
+	cooldown_start="0.6"
+	cooldown_end="0.0"
+	/> 
+	<!--1500RPM 25m range-->
+	<!-- mk2 Increases the ammunition supply and stability of the minigun. -->
+	<!-- mk3 Upgrades the missiles to armor-piercing, anti-tank missiles. -->
+	<!-- Stratagem name changed to EXO-44 'Stomper' Exosuit. -->
+
+	<!--多模式-->
+    <next_in_chain key="re_acg_exo_toki_railgun.weapon" share_ammo="0" /> 
+	<!-- 取消，因为从背包里刷新后，切模式会补满弹夹 -->
+
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_effect_drop_target.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0.0" />
+	
+	<animation key="recoil" animation_key="acg_toki_recoil" />
+	<animation state_key="reload" animation_key="acg_toki_reload"/>
+	<animation state_key="hold" animation_key="acg_toki_still" />
+	<animation state_key="hold_on_wall"  animation_key="acg_toki_still" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="acg_toki_still" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="acg_toki_still" /><!--闲置动作，全身动作-->
+	<animation state_key="running" animation_key="acg_toki_running" /><!--全身动作-->
+	<animation state_key="walking" animation_key="acg_toki_walking" /><!--按shift时候的静步前进动作，全身动作-->
+    <animation state_key="walking_backwards" animation_key="acg_toki_walkingback" /><!--全身动作-->
+    <animation state_key="crouching" animation_key="acg_toki_crounch" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="acg_toki_walking" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="acg_toki_walkingback" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="acg_toki_crounch" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="acg_toki_walking" /><!--全身动作-->
+	<animation state_key="stabbing" animation_key="acg_toki_melee" /><!--半身动作，武器可设置脱手-->
+	<!--切换模式，本模式的切出动作衔接下一模式的切入动作，置空为秒切-->
+	<animation state_key="next_in_chain_in" animation_key="" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="acg_toki_exchange" /><!--半身动作，切换模式，本模式切入-->
+	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
+    <animation state_key="changing_weapon_in" animation_key="" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key="acg_toki_exchange"/><!--半身动作，切换武器，本武器取出-->
+
+    <sound key="fire" fileref="acg_exo_toki_skill_fire.wav" pitch_variety="0.1" volume="1" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_02.wav" pitch_variety="0.03" volume="1.0" />
+
+	<sound key="cooldown" fileref="acg_toki_voice_clip_11.wav" pitch_variety="0" volume="2.0"/>
+	<sound key="cooldown" fileref="acg_toki_voice_clip_12.wav" pitch_variety="0" volume="2.0"/>
+	<sound key="cooldown" fileref="acg_toki_voice_clip_14.wav" pitch_variety="0" volume="2.0"/>
+	<sound key="cooldown" fileref="acg_toki_voice_clip_15.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="dry_fire" fileref="acg_toki_voice_clip_03.wav" pitch_variety="0.0" volume="1.0" />
+	<sound key="effect" fileref="acg_toki_voice_clip_10.wav" pitch_variety="0" volume="2.0" />
+	<sound key="effect" fileref="acg_toki_voice_clip_07.wav" pitch_variety="0" volume="2.0" />
+	<sound key="effect" fileref="acg_toki_voice_clip_08.wav" pitch_variety="0" volume="2.0" />
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_01.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_02.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_03.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_05.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_06.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_09.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_13.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_16.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_17.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_18.wav" pitch_variety="0" volume="2.0"/>
+    <sound key="magazine_out" fileref="acg_toki_voice_clip_19.wav" pitch_variety="0" volume="2.0"/>
+
+    <sound key="magazine_in" fileref="acg_exo_toki_mag_in.wav"  volume="2.0"/>
+    <sound key="cycle" fileref="rifle_chamber.wav" />
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" />
+    <sound key="last_ammo" fileref="acg_toki_voice_clip_15.wav" pitch_variety="0" volume="2.0" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" />
+    <sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+
+
+    <model filename="" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="acgw_toki_hud.png" /> 
+
+  	<capacity value="1" source="rank" source_value="0.0" />
+	
+	
+    <!-- <commonness value="1" can_respawn_with="1" in_stock="1" /> 
+    <inventory encumbrance="50.0" price="0.0" />  -->
+    <weak_hand_hold offset="0.3" /> 
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.5625" can_be_detected_by_driver="1" can_be_disarmed="0"> 
+		
+		<result class="notify_script" key="acg_exo_toki_skill" />
+		<trigger class="time" time_to_live="0" />
+		<!-- slower decay -->
+		<!-- 60m max damage range -->
+		<!-- damage 75/100hit  -->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+		<trail probability="1" key="" lighting="0"/>	
+    </projectile>
+	<effect class="muzzle" ref="toki_muzzle_skill_later_pre_line_center" lighting="0"/> 
+	<effect class="muzzle" ref="toki_muzzle_skill_later_pre_line_center_2" lighting="0"/> 	
+	<effect class="muzzle" ref="toki_muzzle_skill_later_pre_line_center_3" lighting="0"/> 	
+	<effect class="muzzle" ref="toki_muzzle_skill_center_ball" lighting="0"/> 	
+	<effect class="muzzle" ref="toki_muzzle_skill_center_rorate_ring" lighting="0"/> 	
+	<effect class="muzzle" ref="toki_muzzle_skill_center_rorate_ring_2" lighting="0"/> 	
+	<effect class="muzzle" ref="toki_muzzle_skill_shrink_line" lighting="0"/> 	
+
+	<modifier class="speed" value="0.3" /> 
+    
+    
+</weapon>
+</weapons>

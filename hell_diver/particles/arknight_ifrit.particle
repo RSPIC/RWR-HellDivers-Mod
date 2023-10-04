@@ -1,0 +1,444 @@
+author: RST
+2023.10.2
+未经授权不可复用、修改使用、仅用于helldiver mod
+
+particle_system ifrit_muzzle_skill_later_pre_line_center
+{
+	quota 50
+	material Particle_Trail_Fire02_anim_mega
+	particle_width 8
+	particle_height 40
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin bottom_center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 1
+		duration 0.1
+	}
+    affector Scaler
+	{
+		rate 0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.7
+		colour1 0 0 0 0
+		time2 0.71
+		colour2 1 0.3 0 1
+		time3 0.9
+		colour3 1 0.3 0 1
+		time4 1
+		colour4 0 0 0 0
+	}
+}
+particle_system ifrit_muzzle_skill_shrink_line
+{
+	quota 150
+	material Particle_Impact_Line_03
+	particle_width 5
+	particle_height 5
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center_left
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 360
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity_min -0.0001
+		velocity_max 0.0001
+		time_to_live 0.2
+		duration 0.5
+	}
+	affector Scaler
+	{
+		rate -7.5
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	90
+		rotation_range_end	90
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0 1
+		time1 0.9
+		colour1 1 0.3 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system ifrit_muzzle_skill_center_rorate_ring
+{
+	quota 150
+	material Particle_Circle_05
+	particle_width 6
+	particle_height 6
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.4
+		duration 0.5
+	}
+	affector Scaler
+	{
+		rate -30
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	1600
+		rotation_speed_range_end	1600
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0 1
+		time1 0.7
+		colour1 1 0.3 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system ifrit_muzzle_skill_center_ball
+{
+	quota 150
+	material bow_flare_pass
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 1
+		duration 0.5
+	}
+	affector Scaler
+	{
+		rate 6
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	250
+		rotation_speed_range_end	-250
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.7
+		colour1 1 0.3 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system ifrit_muzzle_fire
+{
+	quota 100
+	material firestreak1
+	particle_width 3.5
+	particle_height 3.5
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 3
+		time_to_live 0.1
+		duration 0.01
+	}
+    affector Scaler
+	{
+		rate -30
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.5 0.5 0.5 1
+		time1 0.5
+		colour1 0.5 0.5 0.5 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system ifrit_muzzle_fire_drop
+{
+	quota 300
+	material flame_tex_bw_04
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 60
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 1
+		time_to_live 1
+		duration 0.1
+	}
+    affector Scaler
+	{
+		rate -0.6
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.5
+		colour1 1 0.3 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+    affector LinearForce{
+		force_vector 0 -4 0
+		force_application add
+	}
+}
+particle_system ifrit_result_ground_lava
+{
+	quota 150
+	material Tex_Decal08E_ifrit
+	particle_width 10
+	particle_height 10
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 6
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.5
+		duration 3
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.5
+		colour1 1 1 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+
+particle_system general_result_ground_fire
+{
+	quota 1500
+	material anim_fire_2
+	particle_width 2
+	particle_height 2
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Ring
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 3
+		duration 0.1
+        depth 0.1
+        height 7
+        width 7
+        inner_wideh 0
+        inner_depth 0
+        inner_height 0
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.7
+		colour1 1 1 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system general_result_ground_fire_2 : general_result_ground_fire
+{
+    material anim_fire_2_alt1
+}
+particle_system general_result_ground_fire_3 : general_result_ground_fire
+{
+    material anim_fire_2_alt2
+}
+particle_system general_result_ground_fire_4 : general_result_ground_fire
+{
+    material anim_fire_2_alt3
+}
+------------------material------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material firestreak1 : add_base
+{   technique{pass{texture_unit{
+				texture firestreak1.png 
+}}}}
+material Particle_Circle_05 : add_base
+{   technique{pass{texture_unit{
+				texture Particle_Circle_05.png 
+}}}}
+material flame_tex_bw_04 : add_base
+{   technique{pass{texture_unit{
+				texture flame_tex_bw_04.png 
+}}}}
+material anim_fire_2 : add_base
+{   technique{pass{texture_unit{
+				anim_texture anim_fire_2.png 16 1
+                tex_address_mode border
+                tex_border_colour 0 0 0 0
+}}}}
+material anim_fire_2_alt1 : add_base
+{   technique{pass{texture_unit{
+				anim_texture anim_fire_2.png 16 0.88
+                tex_address_mode border
+                tex_border_colour 0 0 0 0
+}}}}
+material anim_fire_2_alt2 : add_base
+{   technique{pass{texture_unit{
+				anim_texture anim_fire_2.png 16 1.22
+                tex_address_mode border
+                tex_border_colour 0 0 0 0
+}}}}
+material anim_fire_2_alt3 : add_base
+{   technique{pass{texture_unit{
+				anim_texture anim_fire_2.png 16 0.67
+                tex_address_mode border
+                tex_border_colour 0 0 0 0
+}}}}
+material Tex_Decal08E_ifrit : add_base
+{   technique{
+    pass{
+        depth_func always_pass
+		scene_blend add
+        texture_unit{
+            texture Tex_Decal08E.png 	
+			tex_address_mode wrap
+		}
+		texture_unit{
+            texture Tex_Fire05E.png 
+			colour_op modulate
+            scroll_anim 0 -0.15
+			tex_address_mode wrap
+		}
+		texture_unit{
+            texture point_soft_edge_100.png 
+			colour_op modulate
+			tex_address_mode wrap
+		}
+	}
+
+}}

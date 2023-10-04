@@ -28,7 +28,11 @@
 		<effect class="result"  key="terrain" ref="DXE_muzzle_singing_spot_pre"/>
 		<effect class="result"  key="terrain" ref="DXE_muzzle_singing_randon_spot"/> -->
 
-		<effect class="result" key="terrain" ref="ui_stage_1" lighting="0"/>
+		<effect class="result" key="terrain" ref="general_result_ground_fire" lighting="0"/>
+		<effect class="result" key="terrain" ref="general_result_ground_fire_2" lighting="0"/>
+		<effect class="result" key="terrain" ref="general_result_ground_fire_3" lighting="0"/>
+		<effect class="result" key="terrain" ref="general_result_ground_fire_4" lighting="0"/>
+		<effect class="result" key="terrain" ref="ifrit_result_ground_lava" lighting="0"/>
 
 
 

@@ -152,6 +152,12 @@ dictionary highlight_item_drop = {
         {"samples_bugs.carry_item","carry_item"},
         {"samples_cyborgs.carry_item","carry_item"},
         {"samples_illuminate.carry_item","carry_item"},
+        {"acg_shigure_127mm.weapon","weapon"},
+        {"acg_shigure_610mm_torpedo.weapon","weapon"},
+        {"acg_exo_toki.weapon","weapon"},
+        {"acg_exo_toki_doublefire.weapon","weapon"},
+        {"acg_exo_toki_railgun.weapon","weapon"},
+        {"acg_exo_toki_skill.weapon","weapon"},
 
 		// 占位的
         {"666",-1}

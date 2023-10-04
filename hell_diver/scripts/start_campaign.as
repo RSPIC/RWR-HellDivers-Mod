@@ -17,7 +17,7 @@ void main(dictionary@ inputData) {
 	settings.m_debug_mode = false;
 	settings.m_xpFactor = 3;
 	settings.m_rpFactor = 1;
-	settings.m_server_difficulty_level = 9;
+	settings.m_server_difficulty_level = 6;
 	settings.m_initialRp = 10000.0;
 	settings.m_initialXp = 0.0;
 	settings.m_server_test_mode = true;

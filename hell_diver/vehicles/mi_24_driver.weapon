@@ -71,7 +71,7 @@ key="mi_24_driver.weapon"
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
 	time_to_live="0.45" can_be_detected_by_driver="1" can_be_disarmed="0" name="MG-1024 Heavy Machine Gun"> 
 		
-		<result class="blast" radius="3" damage="9.5" push="0.1" decal="0" character_state="wound" />
+		<result class="blast" radius="3" damage="9.5" push="0.1" decal="0" character_state="stun" />
 		<!-- slower decay -->
 		<!-- 30m max damage range -->
 		<!-- damage 75/100hit  -->
@@ -461,7 +461,7 @@ key="mi_24_Missile.weapon"
     <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="10" can_be_detected_by_footmen="1" 
 	time_to_live="0.5625" can_be_detected_by_driver="1" can_be_disarmed="0" name="EXO-44 Stomper MK3"> 
 		
-        <result class="spawn" instance_class="projectile" instance_key="hd_exo44_walker_mk3_missile_damage.projectile" 
+        <result class="spawn" instance_class="projectile" instance_key="mi_24_missile_damage.projectile" 
 		min_amount="20" max_amount="20" offset="0 0.5 0" position_spread="1.5 0" direction_spread="0.1 0" />
 		<!-- damage 5x50=250 轰炸伤-->
        	<!-- 曲射 -->

@@ -100,6 +100,7 @@ class schedule_Check : Tracker {
                 checkBanzai(m_metagame,name,pid,equipList);
                 checkPatricia(m_metagame,name,pid,cid,equipList);
                 checkHyperMega(m_metagame,name,pid,cid,equipList);
+                checkVergil(m_metagame,name,pid,cid,equipList);
                 checkSkin(m_metagame,name,pid,cid,equipList);
             }
         }
@@ -178,6 +179,27 @@ class schedule_Check : Tracker {
                     Resource@ res;
                     @res = Resource("acg_patricia_fataldrive.weapon","weapon");
                     res.addToResources(resources,5);
+                    deleteListItemInBackpack(m_metagame,cid,resources);
+                    deleteListItemInStash(m_metagame,cid,resources);
+                    addListItemInBackpack(m_metagame,cid,resources);
+                }
+            }
+        }
+	}
+    // ----------------------------------------------------
+	protected void checkVergil(Metagame@ metagame,string&in name,int&in pid,int&in cid,dictionary&in equipList){
+        string equipKey;
+        if(equipList.get("0",equipKey)){//主武器
+        _log("now equipKey="+equipKey);
+            string targetKey = "ex_vergil_";
+            string targetKey2 = "re_ex_vergil_";
+            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+                if(m_firstUseInfoBuck.isFirst(name,targetKey)){
+                    notify(metagame, "Help - Vergil", dictionary(), "misc", pid, true, "Vergil Help", 1.0);
+                    array<Resource@> resources = array<Resource@>();
+                    Resource@ res;
+                    @res = Resource("ex_vergil_skill.weapon","weapon");
+                    res.addToResources(resources,4);
                     deleteListItemInBackpack(m_metagame,cid,resources);
                     deleteListItemInStash(m_metagame,cid,resources);
                     addListItemInBackpack(m_metagame,cid,resources);

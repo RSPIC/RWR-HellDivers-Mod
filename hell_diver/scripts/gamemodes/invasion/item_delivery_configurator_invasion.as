@@ -238,8 +238,15 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			ScoredResource("token_g41_space.projectile","projectile",1.0f,4),
 			ScoredResource("token_toki.projectile","projectile",1.0f,4),
 			ScoredResource("token_pmaru.projectile","projectile",1.0f,4),
+			ScoredResource("token_kisaki.projectile","projectile",1.0f,4),
+			ScoredResource("token_amamiya_kokoro.projectile","projectile",1.0f,4),
+			ScoredResource("token_erina.projectile","projectile",1.0f,4),
+			ScoredResource("token_ifrit.projectile","projectile",1.0f,4),
+			ScoredResource("token_vergil.projectile","projectile",1.0f,4),
 
-			ScoredResource("token_amamiya_kokoro.projectile","projectile",1.0f,4)
+			//AI类信物
+			ScoredResource("ai_token_asuma_toki.projectile","projectile",1.0f,2)
+
 			},
 			{
 			ScoredResource("lottery_cash.carry_item", "carry_item", 1.0f)
@@ -383,6 +390,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_mg4a3td.weapon", "weapon", 1.0f),
         	ScoredResource("acg_ruby_rose_scythe.weapon", "weapon", 1.0f),
         	ScoredResource("acg_reisenu_a.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_piko_hammer.weapon", "weapon", 1.0f),
         	ScoredResource("acg_kemomimi.weapon", "weapon", 1.0f)
 			},
 			{
@@ -429,6 +437,8 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		};
 		array<array<ScoredResource@>> rewardPasses = {
 			{
+        	ScoredResource("acg_exo_toki.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_exo_toki_railgun.weapon", "weapon", 1.0f),
         	ScoredResource("acg_shigure_127mm.weapon", "weapon", 1.0f)
 			},
 			{
@@ -452,8 +462,9 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			{
         	ScoredResource("ex_hyper_mega_bazooka_launcher.weapon", "weapon", 1.0f),
         	ScoredResource("acg_patricia_cumforce.weapon", "weapon", 1.0f),
-        	ScoredResource("acg_megumin_wand_float.weapon", "weapon", 1.0f),
+        	// ScoredResource("acg_megumin_wand_float.weapon", "weapon", 1.0f),
         	ScoredResource("acg_laisha_heliotrope.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_vergil_judgment_cut.weapon", "weapon", 1.0f),
         	ScoredResource("ex_trinity_ghoul.weapon", "weapon", 1.0f)
 			},
 			{
@@ -508,6 +519,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_sorasaki_hina.weapon", "weapon", 1.0f),
 
         	ScoredResource("acg_reisenu_a.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_piko_hammer.weapon", "weapon", 1.0f),
         	ScoredResource("acg_mg4a3td.weapon", "weapon", 1.0f),
         	ScoredResource("acg_mg4td_ke.weapon", "weapon", 1.0f),
         	ScoredResource("ex_lancer_mk3.weapon", "weapon", 1.0f),
@@ -588,6 +600,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_fiammetta_gl.weapon", "weapon", 1.0f),
         	ScoredResource("ex_disaster_railgun.weapon", "weapon", 1.0f),
         	ScoredResource("acg_texas_skill.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_arknight_ifrit.weapon", "weapon", 1.0f),
         	ScoredResource("acg_ba_alice_railgun_ex.weapon", "weapon", 1.0f)
 			},
 			{
@@ -621,6 +634,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 
         	ScoredResource("acg_kemomimi.weapon", "weapon", 1.0f),
         	ScoredResource("acg_reisenu_a.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_piko_hammer.weapon", "weapon", 1.0f),
         	ScoredResource("acg_mg4td_ke.weapon", "weapon", 1.0f),
         	ScoredResource("ex_lancer_mk3.weapon", "weapon", 1.0f),
         	ScoredResource("ex_soma_prime.weapon", "weapon", 1.0f),
@@ -693,6 +707,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 
         	ScoredResource("acg_kemomimi.weapon", "weapon", 1.0f),
         	ScoredResource("acg_reisenu_a.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_piko_hammer.weapon", "weapon", 1.0f),
         	ScoredResource("acg_mg4a3td.weapon", "weapon", 1.0f),
         	ScoredResource("ex_lancer_mk3.weapon", "weapon", 1.0f),
         	ScoredResource("ex_soma_prime.weapon", "weapon", 1.0f),
@@ -735,6 +750,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 
         	ScoredResource("acg_kemomimi.weapon", "weapon", 1.0f),
         	ScoredResource("acg_reisenu_a.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_piko_hammer.weapon", "weapon", 1.0f),
         	ScoredResource("acg_mg4a3td.weapon", "weapon", 1.0f),
         	ScoredResource("acg_mg4td_ke.weapon", "weapon", 1.0f),
 
@@ -839,6 +855,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 
         	ScoredResource("acg_kemomimi.weapon", "weapon", 1.0f),
         	ScoredResource("acg_reisenu_a.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_piko_hammer.weapon", "weapon", 1.0f),
         	ScoredResource("acg_mg4a3td.weapon", "weapon", 1.0f),
         	ScoredResource("acg_mg4td_ke.weapon", "weapon", 1.0f),
         	ScoredResource("ex_lancer_mk3.weapon", "weapon", 1.0f),

@@ -6,7 +6,7 @@ key="acg_sinteria_bow.weapon"
 >
 
     <specification 
-    retrigger_time="0.9" 
+    retrigger_time="0.7" 
     accuracy_factor="1.0" 
     sight_range_modifier="2"
     sustained_fire_grow_step="2" 
@@ -42,7 +42,7 @@ key="acg_sinteria_bow.weapon"
 	<animation state_key="next_in_chain_in" animation_key="exchange_bow" />
 	<animation state_key="next_in_chain_out" animation_key="" />
     
-    <sound key="fire" fileref="sinteria_shoot.wav" pitch_variety="0.05" volume="1.5" />
+    <sound key="fire" fileref="sinteria_shoot.wav" pitch_variety="0.05" volume="1.0" />
     <sound key="cycle" fileref="bow_reload.wav" volume="0.7" />
     <sound class="impact" fileref="rifle_drop.wav" />
 
@@ -150,7 +150,7 @@ key="acg_sinteria_at.weapon"
 	<animation state_key="next_in_chain_in" animation_key="exchange_bow" />
 	<animation state_key="next_in_chain_out" animation_key="" />
     
-    <sound key="fire" fileref="sinteria_shoot.wav" pitch_variety="0.05" volume="1.5" />
+    <sound key="fire" fileref="sinteria_shoot.wav" pitch_variety="0.05" volume="1.0" />
     <sound key="cycle" fileref="bow_reload.wav" volume="0.7" />
     <sound class="impact" fileref="rifle_drop.wav" />
 
@@ -238,7 +238,7 @@ key="re_acg_sinteria_bow.weapon"
 >
 
     <specification 
-    retrigger_time="0.9" 
+    retrigger_time="0.7" 
     accuracy_factor="1.0" 
     sight_range_modifier="2"
     sustained_fire_grow_step="2" 
@@ -274,7 +274,7 @@ key="re_acg_sinteria_bow.weapon"
 	<animation state_key="next_in_chain_in" animation_key="exchange_bow" />
 	<animation state_key="next_in_chain_out" animation_key="" />
     
-    <sound key="fire" fileref="sinteria_shoot.wav" pitch_variety="0.05" volume="1.5" />
+    <sound key="fire" fileref="sinteria_shoot.wav" pitch_variety="0.05" volume="1.0" />
     <sound key="cycle" fileref="bow_reload.wav" volume="0.7" />
     <sound class="impact" fileref="rifle_drop.wav" />
 
@@ -382,7 +382,7 @@ key="re_acg_sinteria_at.weapon"
 	<animation state_key="next_in_chain_in" animation_key="exchange_bow" />
 	<animation state_key="next_in_chain_out" animation_key="" />
     
-    <sound key="fire" fileref="sinteria_shoot.wav" pitch_variety="0.05" volume="1.5" />
+    <sound key="fire" fileref="sinteria_shoot.wav" pitch_variety="0.05" volume="1.0" />
     <sound key="cycle" fileref="bow_reload.wav" volume="0.7" />
     <sound class="impact" fileref="rifle_drop.wav" />
 

@@ -1,0 +1,29 @@
+material Alice_Carry
+  {
+    receive_shadows off
+    technique
+    {
+      pass
+      {
+        lighting on
+        fog_override true 
+        depth_write off
+        scene_blend add
+        depth_func always_pass 		       
+      } 
+    }
+  }
+material Alice_Carry2 : Alice_Carry
+  {
+      technique
+      {
+           pass
+           {
+              texture_unit 
+                {
+                texture img/pictures/ALICE-HLG.png
+                tex_address_mode border
+                }
+           }
+      }
+  }

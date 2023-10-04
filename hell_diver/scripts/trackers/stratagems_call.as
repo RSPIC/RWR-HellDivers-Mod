@@ -196,12 +196,12 @@ dictionary stratagems_CD = {
 	{"hd_airdropped_stun_mine_mk3",15},
 	{"hd_at47_mk3_call",90},
 	{"hd_amg_11_mk3_call",90},
-	{"hd_arx_34_mk3_call",60},
+	{"hd_arx_34_mk3_call",90},
 	{"hd_agl8_mk3_call",60},
 	{"hd_aac6_tesla_mk3_call",90},
 
 	// special 特殊支援
-	{"hd_nux_223_hellbomb",10},
+	{"hd_nux_223_hellbomb",600},
 	{"hd_hellpod",5},
 	{"hd_sup_mental_detector_call",30},
 

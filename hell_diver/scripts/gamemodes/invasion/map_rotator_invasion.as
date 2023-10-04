@@ -79,8 +79,18 @@ class MapRotatorInvasion : MapRotator {
 	// --------------------------------------------
 	void addStage(Stage@ stage) {
 		m_stages.insertLast(stage);
+		shuffleStages();
 	}
-
+	// --------------------------------------------
+	protected void shuffleStages() {
+		int count = int(m_stages.length());
+		for (int i = count - 1; i >= 1; --i) {
+			int j = rand(0, i);
+			Stage@ temp = m_stages[i];
+			@m_stages[i] = m_stages[j];
+			@m_stages[j] = temp;
+		}
+	}
 	// --------------------------------------------
 	void addFactionConfig(FactionConfig@ config) {
 		m_factionConfigs.push_back(config);

@@ -892,6 +892,14 @@
 	<text key="Alice [Railgun]"  text="天童爱丽丝 [光之剑：超新星][反中甲]" />
 	<text key="Eye of Horus"  text="荷鲁斯之眼 [反重甲]" />
 	<text key="G41 [Universal Express]"  text="G41 [太空漫步][反重甲]" />
+	<text key="Laisha [Heliotrope]"  text="莱莎 [回光仪]][反中甲]" />
+	<text key="Laisha [Moon Pulsar]"  text="莱莎 [月球脉冲]][反中甲]" />
+	<text key="Laisha [Southern Cross]"  text="莱莎 [南十字]][反中甲]" />
+	<text key="Laisha [Mulky Way]"  text="莱莎 [银河]][反中甲]" />
+	<text key="carrat bomb"  text="胡萝卜炸弹" />
+	<text key="cocoa bomb"  text="可可亚炸弹" />
+	<text key="Piko Hammer"  text="PIKO 槌子" />
+	<text key="Ribbon"  text="莉波" />
 
 <!-- 信物 -->
 	<text key="Asakaze [Skin]"  text="朝风 [信物]" />
@@ -970,9 +978,14 @@
 	<text key="Reisalin Stout [Skin]"  text="莱莎琳·斯托特 [信物]" />
 	<text key="NATSUME IROHA [Skin]"  text="伊吕波 [信物]" />
 	<text key="Pmaru [Skin]"  text="P丸様 [信物]" />
-	<text key="Toki [Bunny Girl][Skin]"  text="飞马鸟时 [兔女郎 Ver.] [信物]" />
+	<text key="Toki [Bunny Girl][Skin]"  text="飞鸟马时 [兔女郎 Ver.] [信物]" />
 	<text key="G41 [Universal][Skin]"  text="G41 [寰宇特急 Ver.] [信物]" />
-	<text key="MDR [Cocktail Observer]"  text="MDR [酒会观测者 Ver.] [信物]" />
+	<text key="MDR [Cocktail Observer] [Skin]"  text="MDR [酒会观测者 Ver.] [信物]" />
+	<text key="Kisaki [Skin]"  text="妃咲 [信物]" />
+	<text key="Asuma Toki [AI]"  text="飞鸟马时 [动力装甲][AI]" />
+	<text key="Erina [Skin]"  text="艾莉娜 [信物]" />
+	<text key="Ifrit [Skin]"  text="伊芙利特 [信物]" />
+	<text key="Vergil [Skin]"  text="维吉尔 [信物]" />
 
 <!-- ex武器 -->
 	<text key="Leviathan Breath"  text="利维坦之息 [反重甲]" />
@@ -992,6 +1005,10 @@
 	<text key="Hyper MEGA Bazooka Launcher [Skill]"  text="超绝米加粒子炮（Hi-v） [充能炮]" />
 	<text key="Izanagi's Burden"  text="伊邪那岐的重担 [反中甲]" />
 	<text key="Izanagi's Burden [Honed Edge]"  text="伊邪那岐的重担 [聚合] [反重甲]" />
+	<text key="Vergil [Dimensional Slash]"  text="维吉尔 [次元斩][反重甲]" />
+	<text key="Vergil [Voidknife Realm]"  text="维吉尔 [虚空刀界][反重甲hd_sound_elephant_multi]" />
+	<text key="Vergil [Getsuga Tenshou]"  text="维吉尔 [月牙冲天][反中甲]" />
+	<text key="Vergil [Dimensional Slash-EX]"  text="维吉尔 [次元斩-绝][反重甲]" />
 
 <!-- 其他 EX 载具-->
 	<text key="Resupply Box"  text="补给箱" />
@@ -1327,35 +1344,35 @@
 	<text key="ServerInfo" text="点我查看当前服务器信息" />
 	<text key="Help - Server3" text="#当前服务器难度 Level-3 适合新手游玩
 #服务器增益：25%战役结算加成
-#己方Ai倍率：1.0 / 敌方Ai倍率：1.0
-#基础警报CD：36s
+#己方Ai倍率：1.2 / 敌方Ai倍率：1.0
+#基础警报CD：48s
 #每增加一名玩家减少0.8s警报CD；敌方数量越少，CD越短
 #不同难度敌方增援兵种难度和数量均不等
 " />
 	<text key="Help - Server6" text="#当前服务器难度 Level-6 适合新手游玩
 #服务器增益：1.2倍率经验加成 25%战役结算加成
-#己方Ai倍率：1.0 / 敌方Ai倍率：2.0
-#基础警报CD：33s
+#己方Ai倍率：1.2 / 敌方Ai倍率：2.0
+#基础警报CD：42s
 #每增加一名玩家减少0.8s警报CD；敌方数量越少，CD越短
 #不同难度敌方增援兵种难度和数量均不等
 " />
 	<text key="Help - Server9" text="#当前服务器难度 Level-9 适合新手游玩
 #服务器增益：1.5倍率经验加成 25%战役结算加成
-#己方Ai倍率：1.0 / 敌方Ai倍率：3.0
-#基础警报CD：30s
+#己方Ai倍率：1.2 / 敌方Ai倍率：3.0
+#基础警报CD：36s
 #每增加一名玩家减少0.8s警报CD；敌方数量越少，CD越短
 #不同难度敌方增援兵种难度和数量均不等
 " />
 	<text key="Help - Server12" text="#当前服务器难度 Level-12 适合熟练玩家
 #服务器增益：1.2倍率经验加成
-#己方Ai倍率：1.0 / 敌方Ai倍率：4.0
-#基础警报CD：27s
+#己方Ai倍率：1.2 / 敌方Ai倍率：4.0
+#基础警报CD：30s
 #每增加一名玩家减少0.8s警报CD；敌方数量越少，CD越短
 #不同难度敌方增援兵种难度和数量均不等
 " />
 	<text key="Help - Server15" text="#当前服务器难度 Level-15 适合压力玩家
 #服务器增益：无
-#己方Ai倍率：1.0 / 敌方Ai倍率：5.0
+#己方Ai倍率：1.2 / 敌方Ai倍率：5.0
 #基础警报CD：24s
 #每增加一名玩家减少0.8s警报CD；敌方数量越少，CD越短
 #不同难度敌方增援兵种难度和数量均不等
@@ -1406,6 +1423,9 @@ TK其他玩家同样会造成倍率因子的下降" />
 	<text key="Help - Hyper Mega" text="每局首次持有本武器会发放特定技能武器，使用次数为3次。
 【注意】使用副手技能时必须保证主手武器为[超绝米加粒子炮（Hi-v）]的武器，否则会直接倒地" />
 	<text key="Hyper Mega Help" text="[超绝米加粒子炮（Hi-v） 特殊武器介绍]" />
+	<text key="Help - Vergil" text="每局首次持有本武器会发放特定技能武器，使用次数为4次。
+【注意】使用副手技能时必须保证主手武器为[维吉尔]的武器，否则会直接倒地" />
+	<text key="Vergil Help" text="[维吉尔 特殊武器介绍]" />
 
 	<text key="Stratagems Call" text="[教程]战略呼叫机制" />
 	<text key="Stratagems Useable" text="[Tips]常用呼叫指令,输入/call可再次查看本页。输入/call 1~4 查看不同类型支援代码" />

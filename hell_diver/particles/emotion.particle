@@ -1,0 +1,120 @@
+author: RST
+2023.10.1
+未经授权不可复用、修改使用、仅用于helldiver mod
+
+particle_system hd_emoticon_good
+{
+	quota 50
+	material ui_good
+	particle_width 1.5
+	particle_height 1.5
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 2 0
+		velocity 0.0001
+		time_to_live 1
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0.5
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.7
+		colour1 1 1 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system hd_emoticon_sorry : hd_emoticon_good
+{
+    particle_width 2
+	particle_height 2
+    material ui_sorry
+    emitter Point
+	{
+		position 0 4 0
+	}
+}
+particle_system hd_emoticon_le : hd_emoticon_good
+{
+    particle_width 2
+	particle_height 2
+    material ui_le
+    emitter Point
+	{
+		position 0 3 0
+	}
+}
+particle_system hd_emoticon_heart : hd_emoticon_good
+{
+    particle_width 1
+	particle_height 1
+    material ui_heart
+}
+------------------material------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material ui_good : alpha_blend_base
+{   technique{pass{texture_unit{
+				texture ui_good.png 	
+                wave_xform rotate triangle 0 2 0 0.05
+                tex_address_mode border
+                tex_border_colour 0 0 0 0
+}}}}
+material ui_heart : alpha_blend_base
+{   technique{pass{texture_unit{
+				texture ui_heart.png 	
+                wave_xform rotate triangle 0 2 0 0.05
+                tex_address_mode border
+                tex_border_colour 0 0 0 0
+}}}}
+material ui_le : alpha_blend_base
+{   technique{pass{texture_unit{
+				texture ui_emoji_le.png 	
+                wave_xform rotate triangle 0 2 0 0.05
+                tex_address_mode border
+                tex_border_colour 0 0 0 0
+}}}}
+material ui_sorry : alpha_blend_base
+{   technique{pass{texture_unit{
+				anim_texture ui_sorry_1.png ui_sorry_2.png 0.5
+                tex_address_mode border
+                tex_border_colour 0 0 0 0
+}}}}

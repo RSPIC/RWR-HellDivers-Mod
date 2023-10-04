@@ -202,31 +202,31 @@ class StageConfiguratorInvasion : StageConfigurator {
 
 	// ------------------------------------------------------------------------------------------------
 	protected void setupNormalStages() {
-
-    addStage(setupStage8());          // map8 #13 10 
-	addStage(setupStage10());         // map10 #7 4
- 	addStage(setupStage14());         // map6_2 #14 11
-    addStage(setupStage2());          // map4 #15 12
-	addStage(setupStage3());          // map3 #10 7
-    addStage(setupStage6());          // map5 #17 15
-	//addStage(setupFinalStage2());     // map12 #18 黑猫
-	addStage(setupStage19());         // map18 #19
-    addStage(setupStage11());         // map13 #20
-    addStage(setupStage7());          // map6 #0
-	addStage(setupStage5());          // map1 #16 14 
-	addStage(setupStage1());          // map2 #1
-    addStage(setupStage9());          // map9 #2
-    addStage(setupStage16());         // map8_2 #3 雪地威克岛
-	addStage(setupStage21());         // map20 #7 16 战壕小岛
-    addStage(setupStage4());          // map7 #4 3
-	//addStage(setupStage15());         // map1_2 #5 太大
-    //addStage(setupStage12());         // map14 #6 脚本不运行s
-    addStage(setupStage17());         // map17  #8 5
-    addStage(setupStage18());         // map13_2 #9 6
-    addStage(setupStage13());         // map16  #11  8
-	addStage(setupFinalStage1());     // map11 #12 潜行9
-    addStage(setupStageCasake_Bay());         // Casake_Bay #21
-	addStage(setupStage20());         // map19 #17	13 鹅城
+		//addStage(setupStageBloodandFlowers_01());         // BloodandFlowers_01 By asanonana ver1.5.11
+		addStage(setupStage8());          // map8 #13 10 
+		//addStage(setupStage10());         // map10 #7 4 疑似有bug ver1.5.10
+		addStage(setupStage14());         // map6_2 #14 11
+		addStage(setupStage2());          // map4 #15 12
+		addStage(setupStage3());          // map3 #10 7
+		addStage(setupStage6());          // map5 #17 15
+		//addStage(setupFinalStage2());     // map12 #18 黑猫
+		addStage(setupStage19());         // map18 #19
+		addStage(setupStage11());         // map13 #20
+		addStage(setupStage7());          // map6 #0
+		addStage(setupStage5());          // map1 #16 14 
+		addStage(setupStage1());          // map2 #1
+		addStage(setupStage9());          // map9 #2
+		addStage(setupStage16());         // map8_2 #3 雪地威克岛
+		addStage(setupStage21());         // map20 #7 16 战壕小岛
+		addStage(setupStage4());          // map7 #4 3
+		//addStage(setupStage15());         // map1_2 #5 太大
+		//addStage(setupStage12());         // map14 #6 脚本不运行s
+		addStage(setupStage17());         // map17  #8 5
+		addStage(setupStage18());         // map13_2 #9 6
+		addStage(setupStage13());         // map16  #11  8
+		addStage(setupFinalStage1());     // map11 #12 潜行9
+		addStage(setupStageCasake_Bay());         // Casake_Bay #21
+		addStage(setupStage20());         // map19 #17	13 鹅城
 	}
 
 	// --------------------------------------------
@@ -1905,6 +1905,53 @@ class StageConfiguratorInvasion : StageConfigurator {
 		{
 			Faction f(getFactionConfigs()[0], createFellowCommanderAiCommand(0, 0.5, 0.2));
 			f.m_overCapacity = 10;                                              // was 20
+			f.m_bases = 2;
+			f.m_capacityMultiplier = 1.0; 
+			stage.m_factions.insertLast(f);
+		}
+		{
+			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1, 0.5, 0.2));
+			f.m_overCapacity = 40;                                              // was 20 (test3)
+            f.m_capacityOffset = 20;                                            // was 10 (test3)
+			f.m_capacityMultiplier = 1.0; 
+			stage.m_factions.insertLast(f);
+		}
+		{
+			XmlElement command("command");
+			command.setStringAttribute("class", "faction_resources");
+			command.setIntAttribute("faction_id", 1);
+			addFactionResourceElements(command, "vehicle", array<string> = {"aa_emplacement.vehicle"}, true);
+
+			stage.m_extraCommands.insertLast(command);
+		}
+
+		// metadata
+		stage.m_primaryObjective = "capture";
+
+		setDefaultAttackBreakTimes(stage);
+		return stage;
+	}
+	protected Stage@ setupStageBloodandFlowers_01() {
+		Stage@ stage = createStage();
+		stage.m_mapInfo.m_name = "BloodandFlowers_01";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/BloodandFlowers_01";
+		stage.m_mapInfo.m_id = "BloodandFlowers_01";
+
+		stage.m_maxSoldiers = 90;
+		stage.m_playerAiCompensation = 0;                                       // 
+    	stage.m_playerAiReduction = 0.0;                                        // 
+
+		stage.m_soldierCapacityVariance = 1.0; 
+
+		stage.addTracker(PeacefulLastBase(m_metagame, 0));
+		stage.addTracker(CommsCapacityHandler(m_metagame));
+
+		stage.m_minRandomCrates = 1; 
+		stage.m_maxRandomCrates = 2;
+
+		{
+			Faction f(getFactionConfigs()[0], createFellowCommanderAiCommand(0, 0.5, 0.2));
+			f.m_overCapacity = 20;                                              // was 20
 			f.m_bases = 2;
 			f.m_capacityMultiplier = 1.0; 
 			stage.m_factions.insertLast(f);

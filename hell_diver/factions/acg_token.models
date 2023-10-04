@@ -26,7 +26,8 @@
 	<model filename="acg_patricia_abelheim.xml"  > <!--帕特莉夏·阿贝尔海姆--><requirement class="projectile" slot="0" key="token_patricia_abelheim.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_laisha.xml"  > <!--莱莎琳·斯托特--><requirement class="projectile" slot="0" key="token_laisha.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_pmaru.xml"  > <!--P丸様--><requirement class="projectile" slot="0" key="token_pmaru.projectile"/><requirement class="rank" range="0 999999"/></model>
-	
+	<model filename="acg_erina.xml"  > <!--艾莉娜--><requirement class="projectile" slot="0" key="token_erina.projectile"/><requirement class="rank" range="0 999999"/></model>
+
 <!-- 明日方舟 -->
 	<model filename="acg_skyfire.xml"  > <!--天火--><requirement class="projectile" slot="0" key="token_skyfire.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_fiammetta.xml"> <!--菲娅梅塔 by Gandaruvu807--><requirement class="projectile" slot="0" key="token_fiammetta.projectile"/><requirement class="rank" range="0 999999"/></model>
@@ -34,6 +35,7 @@
 	<model filename="acg_lappland_refined_horrormare.xml"><!--德克萨斯--><requirement class="projectile" slot="0" key="token_lappland_refined_horrormare.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_kal_tsit_m3.xml"><!--凯尔希--><requirement class="projectile" slot="0" key="token_kal_tsit_m3.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_kal_tsit.xml"><!--凯尔希--><requirement class="projectile" slot="0" key="token_kal_tsit.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_ifrit.xml"><!--伊芙利特--><requirement class="projectile" slot="0" key="token_ifrit.projectile"/><requirement class="rank" range="0 999999"/></model>
 
 <!-- 原神 -->
 	<model filename="acg_sangonomiya_kokomi.xml" > <!--珊瑚宫心海--><requirement class="projectile" slot="0" key="token_sangonomiya_kokomi.projectile"/><requirement class="rank" range="0 999999"/></model>
@@ -77,6 +79,7 @@
 	<model filename="acg_shirasu_azusa.xml" ><!--白洲梓 by Ena--><requirement class="projectile" slot="0" key="token_shirasu_azusa.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_ba_iroha.xml" ><!--伊吕波--><requirement class="projectile" slot="0" key="token_ba_iroha.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_toki.xml" ><!--飞马鸟时--><requirement class="projectile" slot="0" key="token_toki.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_kisaki.xml" ><!--妃咲--><requirement class="projectile" slot="0" key="token_kisaki.projectile"/><requirement class="rank" range="0 999999"/></model>
 <!-- 少女前线 -->
 	<model filename="acg_mg4_703.xml" ><!--MG4机枪--><requirement class="projectile" slot="0" key="token_mg4_703.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_mg4.xml" ><!--MG4机枪--><requirement class="projectile" slot="0" key="token_mg4.projectile"/><requirement class="rank" range="0 999999"/></model>
@@ -110,5 +113,6 @@
 
 <!-- 其他 -->
 	<model filename="ex_dark_excalibur.xml"  > <!--暗影圣装圣剑--><requirement class="projectile" slot="0" key="token_dark_excalibur.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="ex_vergil.xml"  > <!--维吉尔--><requirement class="projectile" slot="0" key="token_vergil.projectile"/><requirement class="rank" range="0 999999"/></model>
 
 </models>

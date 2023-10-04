@@ -58,6 +58,8 @@
 #include "lottery_manager.as"
 #include "vote_Manager.as"
 #include "re_weapons.as"
+#include "chat_icon.as"
+#include "vehicle_destroyed.as"
 
 
 
@@ -371,6 +373,8 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		addTracker(lottery_manager(this));  
 		addTracker(VoteManager(this));  
 		addTracker(re_weapons(this));  
+		addTracker(chat_icon(this));  
+		addTracker(vehicle_destroyed(this));  
 	}
 
 	protected void setupDisableRadioAtMatchOver() {

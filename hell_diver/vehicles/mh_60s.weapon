@@ -67,7 +67,7 @@ key="mh_60s_mg.weapon"
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
 	time_to_live="0.45" can_be_detected_by_driver="1" can_be_disarmed="0" name="MG-1024 Heavy Machine Gun"> 
 		
-		<result class="blast" radius="3" damage="9.5" push="0.1" decal="0" character_state="wound" />
+		<result class="blast" radius="3" damage="9.5" push="0.1" decal="0" character_state="stun" />
 		<!-- slower decay -->
 		<!-- 30m max damage range -->
 		<!-- damage 75/100hit  -->
@@ -193,7 +193,7 @@ key="mh_60s_mg_side.weapon"
     <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
 	time_to_live="0.45" can_be_detected_by_driver="1" can_be_disarmed="0" name="MG-1024 Heavy Machine Gun"> 
 		
-		<result class="blast" radius="3" damage="9.5" push="0.1" decal="0" character_state="wound" />
+		<result class="blast" radius="3" damage="9.5" push="0.1" decal="0" character_state="stun" />
 		<!-- slower decay -->
 		<!-- 30m max damage range -->
 		<!-- damage 75/100hit  -->
@@ -510,7 +510,7 @@ key="mh_60s_missiles.weapon"
 	speed_estimation_far="150.0" max_speed="150.0" randomness="0.0" tweak_factor="4.8"/>  -->
 
     <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="10" can_be_detected_by_footmen="1" 
-	time_to_live="2" can_be_detected_by_driver="1" can_be_disarmed="0" name="EXO-44 Stomper MK3"> 
+	time_to_live="2" can_be_detected_by_driver="1" can_be_disarmed="0" name="MH-60s"> 
 		
         <result class="spawn" instance_class="projectile" instance_key="mh_60s_missiles_damage.projectile" 
 		min_amount="5" max_amount="5" offset="0 0.5 0" position_spread="1.5 0" direction_spread="0.1 0" />

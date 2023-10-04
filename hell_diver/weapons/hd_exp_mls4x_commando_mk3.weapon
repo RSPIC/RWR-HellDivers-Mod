@@ -13,7 +13,7 @@ key="hd_exp_mls4x_commando_mk3.weapon"
 	stance_accuracy_rate="1.0"
     sustained_fire_grow_step="1" 
     sustained_fire_diminish_rate="3" 
-    magazine_size="1" 
+    magazine_size="2" 
     can_shoot_standing="1" 
     can_shoot_crouching="1" 
 	can_shoot_prone="1"	
@@ -21,7 +21,7 @@ key="hd_exp_mls4x_commando_mk3.weapon"
 	class="3" 
 	comsune="1"
     name="MLS-4X Commando" 
-	burst_shots="1" 
+	burst_shots="2" 
     projectiles_per_shot="1" 
     projectile_speed="100.0"
 	barrel_offset="1.65" 
@@ -57,7 +57,7 @@ key="hd_exp_mls4x_commando_mk3.weapon"
     <animation state_key="prone_still" animation_key="" /><!--全身动作-->
 	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
 	<animation state_key="stabbing" animation_key="pistol whip 3" /><!--半身动作，武器可设置脱手-->
- 	<animation state_key="changing_weapon_in" animation_key="mls4x_commando_reload_still" /><!--半身动作，切换武器，本武器收回-->
+ 	<animation state_key="changing_weapon_in" animation_key="still, with law" /><!--半身动作，切换武器，本武器收回-->
 	<animation state_key="changing_weapon_out" animation_key="still, with law"/><!--半身动作，切换武器，本武器取出-->
 	<!--武器音频-->
     <sound key="effect" fileref="pf98_effect.wav" pitch_variety="0" volume="0.25" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->

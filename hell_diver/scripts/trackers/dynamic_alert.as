@@ -270,8 +270,8 @@ class dynamic_alert : Tracker {
     protected float m_cd_timer;
     protected bool m_alertFlag = false;
 
-    protected float alert_distance_normal = 40; //超过此距离警报等级降低
-    protected float alert_distance_max = 80;    //超过此距离警报不触发
+    protected float alert_distance_normal = 30; //超过此距离警报等级降低
+    protected float alert_distance_max = 60;    //超过此距离警报不触发
     protected float alert_distance;    // 触发警报时的最近距离
 
 	// --------------------------------------------
@@ -366,7 +366,9 @@ class dynamic_alert : Tracker {
             return;
         }
         float rate = float(my_faction_soldiers)/float(now_max_soldiers);
-        
+        if(rate <= 0){
+            rate = 0.1;
+        }
         array<const XmlElement@> players = getPlayers(m_metagame);
         if(players is null){return;}
         alert_distance = 3*alert_distance_max;
@@ -425,18 +427,21 @@ class dynamic_alert : Tracker {
         }
 
         int player_num = players.size();
-        m_cd_time = 30 - (m_server_difficulty_level/3)/rate*(player_num/12);
+
+        m_cd_time = 60 - (m_server_difficulty_level/3)/rate; // 最多十倍
 
         if(g_debugMode){
             _report(m_metagame,"现在的警报CD时间为="+m_cd_time+",rate="+rate);
         }
         
 
-        m_cd_time = m_cd_time - m_server_difficulty_level + 9;
-        if(m_cd_time <= 3){
-            m_cd_time = 8 - m_server_difficulty_level/3 ;
-        }
+        m_cd_time = m_cd_time - 2*m_server_difficulty_level + 18;
         m_cd_time = m_cd_time - 0.8*player_num;
+
+        if(m_cd_time <= 30){
+            m_cd_time = 30 - 5*m_server_difficulty_level/3 ; // level15 = min 5s   level9 = min 15s
+        }
+        
         if(g_debugMode){
             _report(m_metagame,"本次CD时间="+m_cd_time);
         }
@@ -503,6 +508,24 @@ class dynamic_alert : Tracker {
                         }
                     }
                 }
+            }
+            if(message == "/callbugs"){
+                int m_pid = event.getIntAttribute("player_id");
+                const XmlElement@ player = getPlayerInfo(m_metagame,m_pid);
+                if(player is null){return;}
+                Vector3 position = stringToVector3(player.getStringAttribute("aim_target"));
+                int m_fid = g_factionInfoBuck.getFidByName("Bugs");
+                if(m_fid == -1){return;}
+                Alert_Spawn(m_metagame,m_fid,position,level_15);
+            }
+            if(message == "/callcyborgs"){
+                int m_pid = event.getIntAttribute("player_id");
+                const XmlElement@ player = getPlayerInfo(m_metagame,m_pid);
+                if(player is null){return;}
+                Vector3 position = stringToVector3(player.getStringAttribute("aim_target"));
+                int m_fid = g_factionInfoBuck.getFidByName("Cyborgs");
+                if(m_fid == -1){return;}
+                Alert_Spawn(m_metagame,m_fid,position,level_15);
             }
         }
     }

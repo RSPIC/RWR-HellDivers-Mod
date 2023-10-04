@@ -96,8 +96,7 @@ key="acg_shigure_127mm.weapon"
 		
         <result class="spawn" instance_class="projectile" instance_key="acg_shigure_127mm_damage.projectile" 
 			min_amount="15" max_amount="15" offset="0 0 0" position_spread="0 1" direction_spread="0.05 0" />	
-        <!-- 8x20=160轰炸伤 -->
-
+        <!-- 15x20=300轰炸伤 -->
 
 	    <trigger class="impact" time_to_live="0.9"  />
 		<rotation class="motion" />

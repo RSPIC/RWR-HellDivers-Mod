@@ -3,14 +3,26 @@
 <!--此处用于注册ACG玩家阵营军械库物品，需要确保物品代码中in_stock="1" -->
 <!-- 资源文件注册为KEY注册，不同于武器注册的key注册 -->
 <!-- 注册到CB5 -->
-
+<!-- 对于超级地球阵营是冰淇淋车资源文件 -->
 <!--武器-->
 
     <!-- MK6 Unavailable -->
     <weapon key="acg_shigure_127mm.weapon" enabled="0"/><!--时雨127mm双联主炮-->
     <weapon key="re_acg_shigure_127mm.weapon" /><!--时雨127mm双联主炮-->
     <weapon key="re_acg_shigure_610mm_torpedo.weapon" /><!--时雨127mm双联主炮-->
+
+    <weapon key="acg_exo_toki.weapon" enabled="0"/><!--飞鸟马时 动力装甲 主手-->
+    <weapon key="acg_exo_toki_railgun.weapon" enabled="0"/><!--飞鸟马时 动力装甲 副手-->
+    <weapon key="re_acg_exo_toki.weapon" /><!--飞鸟马时 动力装甲-->
+    <weapon key="re_acg_exo_toki_doublefire.weapon" /><!--飞鸟马时 动力装甲-->
+    <weapon key="re_acg_exo_toki_railgun.weapon" /><!--飞鸟马时 动力装甲-->
+    <weapon key="re_acg_exo_toki_skill.weapon" /><!--飞鸟马时 动力装甲-->
     <!-- MK5 Unsold-->
+    <weapon key="ex_vergil_judgment_cut.weapon" enabled="0"/> <!--维吉尔-->
+    <weapon key="re_ex_vergil_judgment_cut.weapon" /> <!--维吉尔 次元斩-->
+    <weapon key="re_ex_vergil_voidknife_realm.weapon" /> <!--维吉尔 虚空刀界-->
+    <weapon key="re_ex_vergil_getsuga_tenshou.weapon" /> <!--维吉尔 月牙冲天-->
+
     <weapon key="acg_patricia_cumforce.weapon" enabled="0"/> <!--帕蒂 致命驱动等-->
     <weapon key="re_acg_patricia_jihadslash.weapon" /> <!--帕蒂 致命驱动等-->
     <weapon key="re_acg_patricia_phantomfang.weapon" /> <!--帕蒂 致命驱动等-->
@@ -35,6 +47,10 @@
     <weapon key="re_acg_laisha_milky_way.weapon" /> <!--莱莎 法杖-->
 
     <!-- MK4 Unsold-->
+    <weapon key="acg_arknight_ifrit.weapon" enabled="0"/> <!--伊芙利特-->
+    <weapon key="re_acg_arknight_ifrit.weapon" /> <!--伊芙利特-->
+    <weapon key="re_acg_arknight_ifrit_skill.weapon" /> <!--伊芙利特-->
+
     <weapon key="acg_bronya.weapon" enabled="0"/> <!--布洛妮娅 狙-->
     <weapon key="re_acg_bronya.weapon" /> <!--布洛妮娅 狙-->
 
@@ -69,6 +85,9 @@
 
     <weapon key="acg_miyu.weapon" enabled="0"/> <!--霞泽美游-->
     <weapon key="re_acg_miyu.weapon" /> <!--霞泽美游-->
+
+    <weapon key="acg_g41_universe.weapon" enabled="0"/><!--G41 太空漫步-->
+    <weapon key="re_acg_g41_universe.weapon" /><!--G41 太空漫步-->
     <!-- MK3 12w-->
     <weapon key="acg_sinteria_bow.weapon" /> <!--白金 弓-->
     <weapon key="re_acg_sinteria_bow.weapon" /> <!--白金 弓-->
@@ -95,9 +114,6 @@
 
     <weapon key="acg_amamiya_kokoro.weapon" /><!--双持冲锋枪 by keilsama-->
     <weapon key="re_acg_amamiya_kokoro.weapon" /><!--双持冲锋枪 by keilsama-->
-
-    <weapon key="acg_g41_universe.weapon" /><!--G41 太空漫步-->
-    <weapon key="re_acg_g41_universe.weapon" /><!--G41 太空漫步-->
 
     <!-- MK2 5W-->
     <weapon key="acg_kemomimi.weapon" /><!--桃子酱（小狐狸）狐尾导弹-->
@@ -127,6 +143,10 @@
     <weapon key="ex_soma_prime.weapon" /><!--月神-->
     <weapon key="re_ex_soma_prime.weapon" /><!--月神-->
     <weapon key="re_ex_soma_prime_sword.weapon" /><!--月神-->
+
+    <weapon key="acg_piko_hammer.weapon" /><!--PIKO槌子-->
+    <weapon key="re_acg_piko_hammer.weapon" /><!--PIKO槌子-->
+    <weapon key="re_acg_ribbon.weapon" /><!--PIKO槌子-->
     <!-- MK1 2W-->
     <weapon key="acg_smg_strelka.weapon" /><!--冲锋枪 by kurumi-->
     <weapon key="re_acg_smg_strelka.weapon" /><!--冲锋枪 by kurumi-->

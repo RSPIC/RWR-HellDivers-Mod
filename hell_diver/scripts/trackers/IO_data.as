@@ -28,9 +28,8 @@ const XmlElement@ readXML(const Metagame@ metagame, string filename, string loca
 			dictionary = { {"TagName", "data"}, {"class", "saved_data"}, {"filename", filename}, {"location", location} } }));
 	const XmlElement@ xml = metagame.getComms().query(query);
     if(xml is null){
-        _log("readXml is null,create and reRead for filename="+filename+",in location="+location);
-        writeXML(metagame,filename,XmlElement(filename),location);
-        @xml = readXML(metagame,filename,location);
+        _log("readXml is null,filename="+filename+",in location="+location);
+        return null;
     }
 	return xml;
 }
@@ -894,7 +893,11 @@ class IO_data : Tracker {
             string player_name = player.getStringAttribute("name");
             string profile_hash = player.getStringAttribute("profile_hash");
             string sid = player.getStringAttribute("sid");
-            
+            string ip = "0.0.0.0";
+            if(player.hasAttribute("ip")){
+                ip = player.getStringAttribute("ip");
+            }
+
             // 读取存档玩家信息
             XmlElement@ allInfo = XmlElement(readPlayerInfo(sid));
             if(allInfo is null){
@@ -945,6 +948,7 @@ class IO_data : Tracker {
                 playerinfo.setStringAttribute("player_name",player_name);
                 playerinfo.setStringAttribute("profile_hash",profile_hash);
                 playerinfo.setStringAttribute("sid",sid);
+                playerinfo.setStringAttribute("ip",ip);
                 allInfo.appendChild(playerinfo);
             }
             allInfo.removeChild("player",0);
@@ -959,21 +963,23 @@ class IO_data : Tracker {
     protected const XmlElement@ readFile(string filename){
         const XmlElement@ root_base = readXML(m_metagame,filename);
         if(root_base is null){
-            _log("readFile is null,create"+filename+"是NULL，重新创建");
-            _report(m_metagame,"文件名="+filename);
-            writeXML(m_metagame,filename,XmlElement(filename));
-            @root_base = readXML(m_metagame,filename);
+            _log("readFile is null,create "+filename+"是NULL，重新创建");
+            return null;
         }
         const XmlElement@ root = root_base.getFirstChild();
         return root;
     }
     protected const XmlElement@ readPlayerInfo(string sid){
         sid = sid+".xml";
-        const XmlElement@ root = readXML(m_metagame,sid).getFirstChild();
+        const XmlElement@ root_base = readXML(m_metagame,sid);
+        if(root_base is null){
+            _log("readPlayerInfo is null,create "+sid+"是NULL，重新创建");
+            return null;
+        }
+        const XmlElement@ root = root_base.getFirstChild();
         if(root is null){
             _log("readPlayerInfo for sid="+sid+" is null,create");
-            writeXML(m_metagame,sid,XmlElement("players"));
-            @root = readXML(m_metagame,sid).getFirstChild();
+           return null;
         }
         return root;
     }
@@ -1424,6 +1430,8 @@ class IO_data : Tracker {
             res.addToResources(resources,3);
             @res = Resource("reward_box_vehicle.carry_item","carry_item");
             res.addToResources(resources,3);
+            @res = Resource("ai_token_asuma_toki.projectile","projectile");
+            res.addToResources(resources,2);
             addListItemInBackpack(m_metagame,cid,resources);
 
             dictionary a;
@@ -1556,10 +1564,9 @@ class IO_data : Tracker {
 const XmlElement@ readFile(Metagame@ m_metagame, string filename,string location = "savegame"){
     const XmlElement@ root_base = readXML(m_metagame,filename,location);
     if(root_base is null){
-        _log("readFile is null,create"+filename+"是NULL，重新创建");
+        _log("readFile is null,create"+filename+"是NULL");
         _report(m_metagame,"文件名="+filename);
-        writeXML(m_metagame,filename,XmlElement(filename),location);
-        @root_base = readXML(m_metagame,filename,location);
+        return null;
     }
     const XmlElement@ root = root_base.getFirstChild();
     return root;

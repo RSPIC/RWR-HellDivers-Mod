@@ -609,6 +609,7 @@ class CreateProjectile : Task{
 	protected Metagame@ m_metagame;
 	protected float m_time;
     protected int m_num;
+    protected int m_num_left;
     protected Vector3 m_startPos;
     protected Vector3 m_endPos;
     protected string m_key;
@@ -617,17 +618,24 @@ class CreateProjectile : Task{
     protected float m_speed;
 	protected Vector3 aim_unit_vector;
 	protected float m_distance;
+	protected float m_delaytime;
+	protected float m_delaytimer;
+	protected bool m_ended;
 
-	CreateProjectile(Metagame@ metagame,Vector3 sPos,Vector3 ePos,string key,int cid,int fid,float speed,float time,int num = 1){
+	CreateProjectile(Metagame@ metagame,Vector3 sPos,Vector3 ePos,string key,int cid,int fid,float speed,float time,int num = 1,float delaytime = 0){
 		@m_metagame = @metagame;
 		m_time = time;
 		m_num = num;
+		m_num_left = num;
 		m_startPos = sPos;
 		m_endPos = ePos;
 		m_key = key;
 		m_cid = cid;
 		m_fid = fid;
 		m_speed = speed; 	
+		m_delaytime = delaytime;
+		m_delaytimer = delaytime;
+		m_ended = false;
 		aim_unit_vector = getAimUnitVector(1,sPos,ePos);
 		m_distance = getAimUnitDistance(1,sPos,ePos);
 	}
@@ -637,24 +645,29 @@ class CreateProjectile : Task{
 
 	void update(float time){
 		m_time -= time;
-		if(m_time < 0 ){
-			create();
+		m_delaytimer -= time;
+
+		if(m_time < 0 ){ //delay ready
+			if(m_delaytimer <= 0){ // internal delay ready
+				m_delaytimer = m_delaytime;	//reset internal delay time
+				if(m_num_left > 0){
+					create();
+				}else{
+					m_ended = true;
+				}
+			}
 		}
+		
 	}
 
 	protected void create(){
-		
-		for(int i = m_num ; i>0 ; --i){
-			m_startPos = m_endPos.subtract(aim_unit_vector.scale((m_distance*i)/m_num));
-			CreateDirectProjectile(m_metagame,m_startPos,m_endPos,m_key,m_cid,m_fid,m_speed);
-		}
+		m_startPos = m_endPos.subtract(aim_unit_vector.scale((m_distance*(m_num_left))/m_num));
+		CreateDirectProjectile(m_metagame,m_startPos.add(Vector3(0,1,0)),m_startPos,m_key,m_cid,m_fid,m_speed);
+		m_num_left--;
 	}
 
 	bool hasEnded() const {
-		if(m_time < 0 ){
-			return true;
-		}
-		return false;
+		return m_ended;
 	}
 }
 

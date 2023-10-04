@@ -154,8 +154,8 @@ time_to_live_unsteerable="600"
 
 	<event>
 		<trigger class="destroy" />
-  	<result class="spawn" instance_class="projectile" instance_key="hd_hellpod_dropping_spawn_ai_normal.projectile" min_amount="8"
-	 max_amount="8" offset="0 40 0" position_spread="15 0" direction_spread="0 0" /><!--摧毁时的爆炸-->
+  	<result class="spawn" instance_class="projectile" instance_key="hd_hellpod_dropping_spawn_ai_jetpack_trigger.projectile" min_amount="8"
+	 max_amount="8" offset="0 40 0" position_spread="15 0" direction_spread="0.1 0.5" /><!--摧毁时的爆炸-->
 	</event>
 
 	<event>

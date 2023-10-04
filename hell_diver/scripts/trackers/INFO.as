@@ -596,7 +596,6 @@ class battleInfoBuck{
 	protected array<battleInfo@> m_battleInfos;
 
 	battleInfoBuck(){
-		clearAll();
 		battleInfo@ newInfo = battleInfo("",0);
 		m_battleInfos.insertLast(newInfo);
 	}

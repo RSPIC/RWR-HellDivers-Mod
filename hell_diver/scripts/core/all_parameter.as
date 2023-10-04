@@ -90,6 +90,18 @@ dictionary projectile_eventkey = {
         {"acg_laisha_southern_cross",48},
         //火箭发射任务
         {"hd_sms_for_launcher",49},
+        //维吉尔 月牙天冲
+        {"ex_vergil_getsuga_tenshou",50},
+        //维吉尔 次元斩-绝
+        {"ex_vergil_skill",51},
+        //飞马鸟时 Skill技能
+        {"acg_exo_toki_skill",52},
+        //飞马鸟时 AI 空降
+        {"acg_exo_toki_ai_spawn",53},
+        //伊芙利特 技能
+        {"acg_arknight_ifrit_skill",54},
+        //喷气包 AI 空降
+        {"hd_hellpod_dropping_spawn_ai_jetpack",55},
 
         // 占位的
         {"666",-1}

@@ -48,8 +48,8 @@ character_leave_request_mode="friendly"
 
 
 	0 <turret offset="0 0 0.0" weapon_key="t90m3_2a46_125mm.weapon" weapon_offset="0.0 2.2 4.5" weapon_recoil="0.15" physics_recoil="0.4" max_rotation_step="0.00005" />
-	1 <turret offset="-0.62 0 -0.95" weapon_key="nsvt_127.weapon" parent_turret_index="0" weapon_offset="0.2 +3.5 -0.8" rotation="0" weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.0001"/>
-	2 <turret offset="0 2.65 0.0" weapon_key="hd_vehicle_lmg.weapon" parent_turret_index="0" weapon_offset="-0.4 0.0 1.0" rotation="0" rotation_range="0.1" weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.00005"/>	
+	1 <turret offset="-0.62 0 -0.95" weapon_key="hd_vehicle_hmg.weapon" parent_turret_index="0" weapon_offset="0.2 +3.5 0.2" rotation="0" weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.0001"/>
+	2 <turret offset="0 2.65 0.0" weapon_key="nsvt_127.weapon" parent_turret_index="0" weapon_offset="-0.4 0.0 1.0" rotation="0" rotation_range="0.1" weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.00005"/>	
 	3 <turret offset="0 0 0" weapon_key="t90m3_shell_eject.weapon" weapon_offset="0.0 2.6 -2" weapon_recoil="0" physics_recoil="0" max_rotation_step="0.00005" />
 	4 <turret offset="0 0 0" weapon_key="auxiliary_car_fire_aim.weapon"  weapon_offset="0.0 2.2 4.5" weapon_recoil="0" physics_recoil="0" max_rotation_step="0.00005" />
 
@@ -79,7 +79,7 @@ character_leave_request_mode="friendly"
 
 	<character_slot type="driver" position="1.5 0.0 2" rotation="0" exit_rotation="1.57" hiding="1" animation_id="36" />
 	<character_slot type="gunner" position="-1.5 0.0 2" rotation="0" exit_rotation="-1.57" hiding="1" animation_id="37">
-		<turret index="0" /><turret index="3" /><turret index="4" />
+		<turret index="0" /><turret index="3" /><turret index="4" /><turret index="2" />
 	</character_slot>
 	
 	<character_slot type="gunner" position="-1.5 0.0 -2" rotation="0" exit_rotation="-1.57" hiding="1" animation_id="37">

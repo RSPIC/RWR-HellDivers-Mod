@@ -556,7 +556,7 @@ class projectile_event : Tracker {
                 }
                 break;
             }
-            case 45: { //acg_megumin_wand_float
+            case 45: { //acg_megumin_wand_float 弃用
                 int CID = event.getIntAttribute("character_id");
                 if (CID == -1) {break;}
                 const XmlElement@ character = getCharacterInfo(m_metagame, CID);
@@ -571,9 +571,9 @@ class projectile_event : Tracker {
                     Vector3 aim_pos = stringToVector3(player.getStringAttribute("aim_target"));
                     string key = "acg_megumin_wand_float_damage.projectile";
                     c_pos = c_pos.add(Vector3(0,30,0));
-                    float strike_rand = 2.5;
-                    float speed_internal = 3;
-                    for(int j=1;j<=5;j++)
+                    float strike_rand = 10;
+                    float speed_internal = 5;
+                    for(int j=1;j<=10;j++)
                     {
                         float rand_x = rand(-strike_rand,strike_rand);
                         float rand_y = rand(-strike_rand,strike_rand);
@@ -638,9 +638,8 @@ class projectile_event : Tracker {
                     return;
                 }
                 
-                const XmlElement@ player = getPlayerInfo(m_metagame,pid);
                 const XmlElement@ character = getCharacterInfo(m_metagame,cid);
-                if(player is null){return;}
+                if(character is null){return;}
                 int fid = 0;
                 Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
                 Vector3 sPos = stringToVector3(character.getStringAttribute("position"));
@@ -712,7 +711,149 @@ class projectile_event : Tracker {
                 }
                 break;
             }
+            case 50:{//ex_vergil_getsuga_tenshou 维吉尔 月牙天冲
+                int cid = event.getIntAttribute("character_id");
+                int pid = g_playerInfoBuck.getPidByCid(cid);
+                if(pid == -1){
+                    const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                    pid = character.getIntAttribute("player_id");
+                    notify(m_metagame, "未能获取到你的PID，已通过其他方法获取。请汇报此情况", dictionary(), "misc", pid, false, "", 1.0);
+                }
+                
+                const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                if(character is null){return;}
+                int fid = 0;
+                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+                Vector3 sPos = stringToVector3(character.getStringAttribute("position"));
+                Vector3 aim_unit_vector = getAimUnitVector(1,sPos,ePos);
+                ePos = ePos.add(aim_unit_vector.scale(30));
 
+                string key = "ex_vergil_getsuga_tenshou_damage.projectile";
+                float speed = 1;
+                float delaytime = 0.2;
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                CreateProjectile@ task1 = CreateProjectile(m_metagame,sPos,ePos,key,cid,fid,speed,0,10,delaytime);
+                tasker.add(task1);
+                break;
+            }
+            case 51:{//ex_vergil_skill 维吉尔 次元斩-绝
+                int cid = event.getIntAttribute("character_id");
+                int pid = g_playerInfoBuck.getPidByCid(cid);
+                if(pid == -1){
+                    const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                    pid = character.getIntAttribute("player_id");
+                    notify(m_metagame, "未能获取到你的PID，已通过其他方法获取。请汇报此情况", dictionary(), "misc", pid, false, "", 1.0);
+                }
+                //先过主手武器检测
+                string equipKey_main = getPlayerEquipmentKey(m_metagame,cid,0);//主武器
+                string targetKey = "ex_vergil_";
+                string targetKey2 = "re_ex_vergil_";
+                if(!startsWith(equipKey_main,targetKey) && !startsWith(equipKey_main,targetKey2)){
+                    setWoundCharacter(m_metagame,cid);
+                    notify(m_metagame, "你的主武器未为对应武器", dictionary(), "misc", pid, true, "倒地惩罚", 1.0);
+                    return;
+                }
+
+                int fid = 0;
+                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+                Vector3 sPos = ePos.add(Vector3(0,5,0));
+                string key1 = "ex_vergil_skill_damage.projectile";
+                string key2 = "ex_vergil_skill_damage_end.projectile";
+                float speed = 1;
+                float delaytime = 0.15;
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                CreateProjectile@ task1 = CreateProjectile(m_metagame,sPos,ePos,key1,cid,fid,speed,0,10,delaytime);
+                CreateProjectile@ task2 = CreateProjectile(m_metagame,sPos,ePos,key2,cid,fid,speed,0,1);
+                tasker.add(task1);
+                tasker.add(task2);
+                break;
+            }
+            case 52:{//acg_exo_toki_skill Toki SKill
+                int cid = event.getIntAttribute("character_id");
+                int pid = g_playerInfoBuck.getPidByCid(cid);
+                if(pid == -1){
+                    const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                    pid = character.getIntAttribute("player_id");
+                    notify(m_metagame, "未能获取到你的PID，已通过其他方法获取。请汇报此情况", dictionary(), "misc", pid, false, "", 1.0);
+                }
+
+                const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                if(character is null){return;}
+                int fid = 0;
+                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+                Vector3 sPos = stringToVector3(character.getStringAttribute("position"));
+                Vector3 aim_unit_vector = getAimUnitVector(1,sPos,ePos);
+                ePos = sPos.add(aim_unit_vector.scale(50));
+                string key1 = "acg_exo_toki_skill_damage.projectile";
+                float speed = 10;
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                CreateProjectile@ task1 = CreateProjectile(m_metagame,sPos,ePos,key1,cid,fid,speed,0,7);
+                CreateProjectile@ task2 = CreateProjectile(m_metagame,sPos,ePos,key1,cid,fid,speed,0.6,7);
+                CreateProjectile@ task3 = CreateProjectile(m_metagame,sPos,ePos,key1,cid,fid,speed,0.6,7);
+                tasker.add(task1);
+                tasker.add(task2);
+                tasker.add(task3);
+                break;
+            }
+            case 53:{//acg_exo_toki_ai_spawn
+                int cid = event.getIntAttribute("character_id");
+                int fid = 0;
+                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+                if(!isVectorInMap(ePos)){return;}
+                Vector3 sPos = ePos.add(Vector3(0,30,0));
+                string key1 = "acg_exo_toki_ai_spawn.projectile";
+                string key2 = "acg_exo_toki_falling.projectile";
+                float speed = 25;
+                CreateDirectProjectile(m_metagame,sPos,ePos,key1,cid,fid,speed);
+                CreateDirectProjectile(m_metagame,ePos,ePos,key2,cid,fid,0);
+                break;
+            }
+            case 54:{//acg_exo_toki_skill Toki SKill
+                int cid = event.getIntAttribute("character_id");
+                int pid = g_playerInfoBuck.getPidByCid(cid);
+                if(pid == -1){
+                    const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                    pid = character.getIntAttribute("player_id");
+                    notify(m_metagame, "未能获取到你的PID，已通过其他方法获取。请汇报此情况", dictionary(), "misc", pid, false, "", 1.0);
+                }
+                const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                if(character is null){return;}
+                int fid = 0;
+                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+                Vector3 sPos = stringToVector3(character.getStringAttribute("position"));
+                Vector3 aim_unit_vector = getAimUnitVector(1,sPos,ePos);
+                ePos = sPos.add(aim_unit_vector.scale(40));
+                string key1 = "acg_arknight_ifrit_skill_effect.projectile";
+                string key2 = "acg_arknight_ifrit_skill_damage.projectile";
+                string key3 = "acg_arknight_ifrit_burning_sound.projectile";
+                float speed = 100;
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                CreateProjectile@ task0 = CreateProjectile(m_metagame,sPos,ePos,key3,cid,fid,speed,0,1);
+                CreateProjectile@ task1 = CreateProjectile(m_metagame,sPos,ePos,key1,cid,fid,speed,0.3,10);
+                CreateProjectile@ task2 = CreateProjectile(m_metagame,sPos,ePos,key2,cid,fid,speed,0.8,10);
+                CreateProjectile@ task3 = CreateProjectile(m_metagame,sPos,ePos,key2,cid,fid,speed,0.8,10);
+                CreateProjectile@ task4 = CreateProjectile(m_metagame,sPos,ePos,key2,cid,fid,speed,0.8,10);
+                
+                tasker.add(task0);//SOUND and with selfdamage of 10
+                tasker.add(task1);//EFFECT
+                tasker.add(task2);//DAMAGE
+                tasker.add(task3);
+                tasker.add(task4);
+                break;
+            }
+            case 55:{//hd_hellpod_dropping_spawn_ai_jetpack
+                int cid = event.getIntAttribute("character_id");
+                int fid = 0;
+                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+                if(!isVectorInMap(ePos)){return;}
+                Vector3 sPos = ePos.add(Vector3(0,30,0));
+                string key1 = "hd_hellpod_dropping_spawn_ai_jetpack.projectile";
+                string key2 = "acg_exo_toki_falling.projectile";
+                float speed = 25;
+                CreateDirectProjectile(m_metagame,sPos,ePos,key1,cid,fid,speed);
+                CreateDirectProjectile(m_metagame,ePos,ePos,key2,cid,fid,0);
+                break;
+            }
             default:
                 break;            
         }

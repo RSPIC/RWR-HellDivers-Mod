@@ -434,6 +434,1296 @@ particle_system vergil_judgment_cut_result_ambient_light
 
 	}
 }
+---------------------------------------------------------------------------------------------------------
+particle_system vergil_voidknife_realm_muzzle_surface_wave
+{
+	quota 150
+	material Tex_Pattern60_vergil
+	particle_width 30
+	particle_height 30
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 1.4
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	50
+		rotation_speed_range_end	-50
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0.5 1 1
+		time1 0.7
+		colour1 0 0.5 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system vergil_voidknife_realm_muzzle_knife
+{
+	quota 150
+	material crescent_05_pass
+	particle_width 20
+	particle_height 20
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 60
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.05
+		duration 0.2
+	}
+	affector Scaler
+	{
+		rate 30
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	-100
+		rotation_speed_range_end	-100
+		rotation_range_start	90
+		rotation_range_end	270
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0.5 1 1
+		time1 0.9
+		colour1 0 0.5 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system vergil_voidknife_realm_muzzle_knife_ahead
+{
+	quota 150
+	material crescent_06_pass
+	particle_width 25
+	particle_height 25
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 2
+		time_to_live 1.1
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 1
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	-30
+		rotation_range_end	30
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0.5 1 1
+		time1 0.9
+		colour1 0 0.5 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system vergil_voidknife_realm_muzzle_knife_ahead_3 : particle_system vergil_voidknife_realm_muzzle_knife_ahead
+{
+	particle_width 19
+	particle_height 19
+}
+particle_system vergil_voidknife_realm_muzzle_knife_ahead_2
+{
+	quota 150
+	material crescent_03_pass
+	particle_width 21
+	particle_height 21
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity_min 1.5
+		velocity_max 4.5
+		time_to_live 0.6
+		duration 0.6
+	}
+	affector Scaler
+	{
+		rate 1
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	-60
+		rotation_range_end	30
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.5
+		colour1 0 0.5 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system vergil_voidknife_realm_muzzle_spark
+{
+	quota 500
+	material pump_flare_03_01
+	particle_width 0.2
+	particle_height 0.2
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Ring
+	{
+		angle 180
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 1500
+		position 0 0 0
+		velocity_min 0.1
+		velocity_max 0.2
+		time_to_live 1.5
+		duration 0.1
+		depth 20
+		height 1
+		width 20
+		inner_depth 0
+		inner_width 0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.6 0.8 1 1
+		time1 0.7
+		colour1 0.6 0.8 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 5
+		scope 100
+		keep_velocity false
+	}
+}
+particle_system vergil_voidknife_realm_muzzle_delay_spark
+{
+	quota 500
+	emit_emitter_quota 500
+	material pump_flare_03_01
+	particle_width 0.2
+	particle_height 0.2
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	emitter Point		
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity_min 0.00001
+		velocity_max 0.0001
+		time_to_live 2
+		duration 0.1
+		emit_emitter tag1
+	}
+	emitter Point		
+	{
+		name tag1
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 0.5
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 1
+		duration 2
+		emit_emitter tag2
+	}
+	emitter Ring
+	{
+		name tag2
+		angle 180
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 3000
+		position 0 3 0
+		velocity_min 1
+		velocity_max 1
+		time_to_live 1
+		duration 0.1
+		depth 5
+		height 20
+		width 20
+		inner_depth 0
+		inner_width 0
+
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.6 0.8 1 1
+		time1 0.5
+		colour1 0.6 0.8 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0.1
+		scope 100
+		keep_velocity false
+	}
+	affector LinearForce{
+		force_vector 10 -4 0
+		force_application add
+	}
+		affector DeflectorPlane 
+	{
+		plane_point 0 4 0
+		plane_normal 0 1 0 
+		bounce 0.4
+	}
+}
+
+particle_system vergil_voidknife_realm_muzzle_delay_impact
+{
+	quota 200
+	emit_emitter_quota 100
+	material Particle_Shockwave07_pass
+	particle_width 0.1
+	particle_height 0.1
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point		
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity_min 0.00001
+		velocity_max 0.0001
+		time_to_live 2
+		duration 0.1
+		emit_emitter tag1
+	}
+	emitter Point		
+	{
+		name tag1
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 0.5
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 1
+		duration 2
+		emit_emitter tag2
+	}
+	emitter Point
+	{
+		name tag2
+		angle 0
+		colour 0 0.3 1 1
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity_min 0.001
+		velocity_max 0.001
+		time_to_live 0.15
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 200
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		bule1 	0
+		alpha1 	0
+		red2 	-0
+		green2	-3
+		blue2	-10
+		alpha2	-1
+		state_change 0.1
+	}
+}
+--------------------------------------------------------------------------------------------------------------------
+particle_system vergil_getsuga_tenshou_muzzle_knife_ahead
+{
+	quota 150
+	material crescent_09_vergil
+	particle_width 30
+	particle_height 30
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 15
+		time_to_live 3
+		duration 0.1
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0.5 1 1
+		time1 0.9
+		colour1 0 0.5 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system vergil_getsuga_tenshou_muzzle_knife_ahead_2 : vergil_getsuga_tenshou_muzzle_knife_ahead
+{
+	material crescent_08_alpha_pass
+	emitter Point
+	{
+	}
+	affector Rotator
+	{
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.5 0.5 0.5 0.8
+		time1 0.9
+		colour1 0.3 0.3 0.3 0.8
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+
+particle_system vergil_getsuga_tenshou_muzzle_activated_spark
+{
+	quota 800
+	emit_emitter_quota 800
+	material randon_point
+	particle_width 0.2
+	particle_height 0.4
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point		
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 13
+		time_to_live 3
+		duration 0.1
+		emit_emitter tag1
+	}
+	emitter Box		
+	{
+		name tag1
+		angle 180
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 200
+		position 0 0 0
+		velocity 3
+		time_to_live_min 0.5
+		time_to_live_max 0.9
+		duration 0
+        width 20
+		height 20
+		depth 10
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	45
+		rotation_speed_range_end	-45
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0.3 1 1
+		time1 0.6
+		colour1 0 0.3 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 5
+		scope 100
+		keep_velocity false
+	}
+}
+------------------------------------------------------------------------------------
+particle_system vergil_skill_muzzle_expand_wind
+{
+	quota 50
+	material Tex_Pattern60_vergil
+	particle_width 3
+	particle_height 3
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 30
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.4
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 300
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.5 1 1 1 
+		time1 0.7
+		colour1 0.5 1 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system vergil_skill_muzzle_expand_wind_2
+{
+	quota 50
+	material Tex_Pattern60_vergil
+	particle_width 80
+	particle_height 80
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 2
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	60
+		rotation_speed_range_end	-60
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.25 0.5 0.5 1 
+		time1 0.7
+		colour1 0.25 0.5 0.5 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system vergil_skill_muzzle_reverse_color
+{
+	quota 50
+	material point_hard_edge_vergil
+	particle_width 160
+	particle_height 160
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.5
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0.7
+		time1 0.5
+		colour1 0 0 0 0.7
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system vergil_skill_muzzle_expand_wind_end_surround
+{
+	quota 400
+	material TEX_cloud_02_vergil
+	particle_width 10
+	particle_height 10
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Ring
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 1000
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 2
+		duration 0.1
+		width 60
+		height 60
+		depth 1
+		inner_width 0.7
+		inner_height 0.7
+	}
+	affector Scaler
+	{
+		rate 5s
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.02 0.04 0.05 1 
+		time1 0.7
+		colour1 0.02 0.03 0.05 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system vergil_skill_muzzle_lens_1
+{
+	quota 50
+	material lens_light_explosive
+	particle_width 50
+	particle_height 20
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.1
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate -200
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.5 1 1 1 
+		time1 0.7
+		colour1 0.5 1 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system vergil_skill_muzzle_lens_2
+{
+	quota 50
+	material Particle_Impact_Line_03
+	particle_width 30
+	particle_height 5
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 30
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.2
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	15
+		rotation_range_end	-15
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.5 0.75 1 1
+		time1 0.7
+		colour1 0.5 0.75 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system vergil_skill_muzzle_rush_dust
+{
+	quota 50
+	material rush_dust
+	particle_width 7
+	particle_height 7
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 5
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.5
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 10
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.2 0.2 0.2 0.2
+		time1 0.7
+		colour1 0.2 0.2 0.2 0.2
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system vergil_skill_muzzle_rush_fire
+{
+	quota 50
+	material add_smoke_1
+	particle_width 7
+	particle_height 7
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 30
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.3
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate -10
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.1 0.1 0.03 1
+		time1 0.7
+		colour1 0.1 0.1 0.03 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system vergil_skill_muzzle_rush_smoke
+{
+	quota 50
+	material Tex_Pattern60_vergil
+	particle_width 6
+	particle_height 6
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 60
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 200
+		position 0 0 0
+		velocity_min -5
+		velocity_max -15
+		time_to_live 1
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 10
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	45
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.04 0.14 0.2 1
+		time1 0.7
+		colour1 0.04 0.14 0.2 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system vergil_skill_muzzle_rush_thunder
+{
+	quota 50
+	material lightning_gun_flare_003
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.1
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 100
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.7
+		colour1 1 1 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system vergil_skill_result_space_cut_curve
+{
+	quota 50
+	material crescent_03_pass
+	particle_width 20
+	particle_height 20
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 60
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 100
+		time_to_live 0.05
+		duration 0.5
+		depth 15
+		height 15
+		width 15
+	}
+	affector Scaler
+	{
+		rate 20
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	1440
+		rotation_speed_range_end	1440
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.7
+		colour1 1 1 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system vergil_skill_result_space_cut_line
+{
+	quota 150
+	material Particle_Impact_Line_03
+	particle_width 100
+	particle_height 7
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 360
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity_min -0.0001
+		velocity_max 0.0001
+		time_to_live 1.0
+		duration 0.5
+		depth 25
+		height 25
+		width 25
+	}
+	affector Scaler
+	{
+		rate -7
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	90
+		rotation_range_end	90
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0.8 1 1
+		time1 0.9
+		colour1 0 0.3 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system vergil_skill_result_space_cut_line_red
+{
+	quota 150
+	material Particle_Impact_Line_03
+	particle_width 50
+	particle_height 7
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 360
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity_min -0.0001
+		velocity_max 0.0001
+		time_to_live 0.1
+		duration 0.4
+		depth 15
+		height 15
+		width 15
+	}
+	affector Scaler
+	{
+		rate -7
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	90
+		rotation_range_end	90
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0 0 1
+		time1 0.9
+		colour1 1 0 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system vergil_skill_result_space_cut_line_green : vergil_skill_result_space_cut_line_red
+{
+	emitter Box
+	{}
+	affector Scaler
+	{}
+	affector Rotator
+	{}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 1 0 1
+		time1 0.9
+		colour1 0 1 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system vergil_skill_result_space_cut_line_blue : vergil_skill_result_space_cut_line_red
+{
+	emitter Box
+	{}
+	affector Scaler
+	{}
+	affector Rotator
+	{}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 1 1
+		time1 0.9
+		colour1 0 0 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system vergil_skill_result_space_cut_space
+{
+	quota 150
+	material tex_square_1
+	particle_width 40
+	particle_height 100
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 360
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 80
+		position 0 0 0
+		velocity_min -0.0001
+		velocity_max 0.0001
+		time_to_live 4.0
+		duration 0.5
+		depth 25
+		height 5
+		width 25
+	}
+	affector Scaler
+	{
+		rate -5
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 0.1
+		time1 0.99
+		colour1 1 1 1 0.1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system vergil_skill_result_space_cut_drop_glass_1
+{
+	quota 300
+	material point_soft_edge_100
+	particle_width 0.3
+	particle_height 0.3
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+
+	emitter Box
+	{
+		name tag2
+		angle 360
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity_min -5
+		velocity_max 5
+		time_to_live 3.0
+		duration 0.5
+		depth 35
+		height 35
+		width 35
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	-45
+		rotation_speed_range_end	45
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.9
+		colour1 1 1 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 -4 0
+		force_application add
+	}
+}
+particle_system vergil_skill_result_space_cut_drop_glass_2 : vergil_skill_result_space_cut_drop_glass_1
+{
+	material point_soft_edge_100
+}
+particle_system vergil_skill_result_space_cut_drop_glass_3 : vergil_skill_result_space_cut_drop_glass_1
+{
+	material point_soft_edge_100
+}
+particle_system vergil_skill_result_space_cut_drop_glass_4 : vergil_skill_result_space_cut_drop_glass_1
+{
+	material point_soft_edge_100
+}
 
 --------------------------------------material-----------------------------------
 material alpha_blend_base{
@@ -474,6 +1764,105 @@ material muzzle_lens_01 : add_base
         texture_unit{
             texture muzzle_lens_01.png 	
 }}}}
+material crescent_04 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture crescent_04.png 	
+}}}}
+material crescent_04_pass : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture crescent_04.png 	
+}}}}
+material crescent_05_pass : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture crescent_05.png 	
+}}}}
+material crescent_06_pass : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture crescent_06.png 	
+}}}}
+material crescent_09_vergil : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+		scene_blend add
+        texture_unit{
+            texture TEX_cloud_02.png 	
+			scroll_anim 0.1 0
+			rotate_anim 0.1
+			tex_address_mode wrap
+		}
+		texture_unit{
+            texture crescent_09.png 
+			colour_op modulate
+			tex_address_mode wrap
+		}
+	}
+}}
+material crescent_08_alpha_pass : alpha_blend_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+		scene_blend alpha_blend
+        texture_unit{
+            texture TEX_cloud_02.png 	
+			scroll_anim 0.5 0
+			tex_address_mode wrap
+		}
+		texture_unit{
+            texture crescent_08_alpha.png 
+			alpha_op_ex modulate texture current
+			tex_address_mode wrap
+		}
+	}
+
+}}
+material crescent_03_pass : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture crescent_03.png 	
+}}}}
+
+material laisha_ring : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture laisha_ring.png 	
+}}}}
+material pump_flare_03_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture pump_flare_03_01.png 	
+}}}}
+material randon_point : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture randon_point.png 	
+}}}}
 material crescent_01_pass : add_base
 {   
     technique{
@@ -489,6 +1878,63 @@ material Particle_Impact_Circle_01_bw : add_base
         texture_unit{
             texture Particle_Impact_Circle_01_bw.png 	
 }}}}
+material Particle_Shockwave07_pass : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture Particle_Shockwave07.png 	
+}}}}
+material Particle_Impact_Line_03 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture Particle_Impact_Line_03.png 	
+}}}}
+material lightning_gun_flare_003 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture lightning_gun_flare_003.png 	
+}}}}
+material add_smoke_1 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture add_smoke_1.png 	
+}}}}
+material broken_particle_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture broken_particle_01.png 	
+}}}}
+material broken_particle_03 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture broken_particle_03.png 	
+}}}}
+material glass_1 : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture glass_1.png 	
+}}}}
+material glass_2 : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture glass_2.png 	
+}}}}
 material point_soft_edge_alpha_pass : alpha_blend_base
 {   
     technique{
@@ -496,6 +1942,14 @@ material point_soft_edge_alpha_pass : alpha_blend_base
         depth_func always_pass
         texture_unit{
             texture point_soft_edge_alpha.png 	
+}}}}
+material tex_square_1 : alpha_blend_base
+{   
+    technique{
+		
+    pass{
+        texture_unit{
+            texture tex_square_1.png 	
 }}}}
 material vergil_cut_space : alpha_blend_base
 {   
@@ -532,3 +1986,97 @@ material point_hard_edge_alpha_pass : alpha_blend_base
         texture_unit{
             texture point_hard_edge_alpha.png 	
 }}}}
+material rush_dust : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture rush_dust.png 	
+}}}}
+material point_hard_edge_vergil : alpha_blend_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture point_soft_edge_alpha.png 	
+}}}}
+material Tex_Pattern60_vergil : add_base
+{   
+    technique{
+
+    pass{
+		depth_func always_pass
+		scene_blend add
+        texture_unit{
+            texture Tex_Pattern60.png 	
+			wave_xform scale_x sine 0.5 0.1 0 3
+			wave_xform scale_y sine 0.5 0.22 0 3
+
+			tex_address_mode wrap
+		}
+		texture_unit{
+            texture point_soft_edge_100.png 
+			tex_address_mode wrap
+	}
+	}
+}
+}
+material Tex_Pattern60_vergil : add_base
+{   
+    technique{
+
+    pass{
+		depth_func always_pass
+		scene_blend add
+        texture_unit{
+            texture Tex_Pattern60.png 	
+			tex_address_mode wrap
+		}
+		texture_unit{
+            texture TEX_cloud_02.png 
+			tex_address_mode wrap
+	}
+	}
+}
+}
+material Tex_Pattern60_vergil : add_base
+{   
+    technique{
+
+    pass{
+		//depth_func always_pass
+		scene_blend add
+        texture_unit{
+            texture Tex_Pattern60.png 	
+			rotate_anim 0.1
+			scroll_anim 0.2 0
+			tex_address_mode wrap
+		}
+		texture_unit{
+            texture lens_circle_07.png 
+			tex_address_mode wrap
+	}
+	}
+}
+}
+material TEX_cloud_02_vergil : add_base
+{   
+    technique{
+
+    pass{
+		depth_func always_pass
+		scene_blend add
+        texture_unit{
+            texture TEX_cloud_02.png 	
+			rotate_anim 0.005
+			scroll_anim 0.007 0
+			tex_address_mode wrap
+		}
+		texture_unit{
+            texture add_smoke_2.png 
+			tex_address_mode wrap
+	}
+	}
+}
+}
