@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <vehicles>
     <vehicle file="all_vehicles.xml" />
-    <vehicle file="Nainet_chariot.vehicle" />
-    <vehicle file="Nainet01.vehicle" />
-    <vehicle file="plano01.vehicle" />
-    <vehicle file="plano02.vehicle" />
-    <vehicle file="prop01.vehicle" />
-    <vehicle file="tank2.vehicle" />
-    <vehicle file="submarine.vehicle" />
-    <vehicle file="target.vehicle" />
-    <vehicle file="transmit01.vehicle" />
-	
+    <vehicle file="vehicles/Nainet01.vehicle" />
+    <vehicle file="vehicles/npc01.vehicle" />
+    <vehicle file="vehicles/plano01.vehicle" />
+    <vehicle file="vehicles/plano02.vehicle" />
+    <vehicle file="vehicles/prop01.vehicle" />
+    <vehicle file="vehicles/submarine.vehicle" />
+    <vehicle file="vehicles/target.vehicle" />
+    <vehicle file="vehicles/transmit01.vehicle" />
+
 </vehicles>

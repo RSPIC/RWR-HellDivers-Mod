@@ -404,7 +404,7 @@ class projectile_event : Tracker {
                                                 if(vehicleHealth <= 0){continue;}     //排除空节点载具
                                                 if(count_recycle_time == 1){break;} //只回收一辆
                                                 //用伤害弹头方式摧毁
-                                                spawnStaticProjectile(m_metagame,"hd_vehicle_recycle_damage.projectile",vehiclePos,characterId,factionId);
+                                                spawnStaticProjectile(m_metagame,"hd_vehicle_recycle_damage.projectile",vehiclePos,-1,-1);
                                                 //退还奖励
                                                 GiveRP(m_metagame,characterId,int(vehicle_recycle_key[vehiclekey]));
                                                 string message = "Recycle Successed, return rp: "+int(vehicle_recycle_key[vehiclekey]);

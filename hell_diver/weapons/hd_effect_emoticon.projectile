@@ -17,7 +17,7 @@ can_be_disarmed="0"
     <rotation class="motion" />
 	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>	
 	
-	<sound class="result" key="other" fileref="hd_sound_star_1.wav" pitch_variety="0" volume="1" />
+	<sound class="result" key="other" fileref="hd_sound_star_1.wav" pitch_variety="0" volume="2" />
 
     <sound class="result" key="terrain" copy="other" />
     <sound class="result" key="static_object" copy="other" />
@@ -49,7 +49,7 @@ can_be_disarmed="0"
     <rotation class="motion" />
 	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>	
 	
-	<sound class="result" key="other" fileref="hd_sound_elephant_multi.wav" pitch_variety="0" volume="1" />
+	<sound class="result" key="other" fileref="hd_sound_elephant_multi.wav" pitch_variety="0" volume="2" />
 
     <sound class="result" key="terrain" copy="other" />
     <sound class="result" key="static_object" copy="other" />
@@ -81,7 +81,7 @@ can_be_disarmed="0"
     <rotation class="motion" />
 	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>	
 	
-	<sound class="result" key="other" fileref="hd_sound_bubble.wav" pitch_variety="0" volume="2.2" />
+	<sound class="result" key="other" fileref="hd_sound_bubble.wav" pitch_variety="0" volume="3.2" />
 
     <sound class="result" key="terrain" copy="other" />
     <sound class="result" key="static_object" copy="other" />
@@ -113,7 +113,7 @@ can_be_disarmed="0"
     <rotation class="motion" />
 	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>	
 	
-	<sound class="result" key="other" fileref="hd_sound_air_horn.wav" pitch_variety="0" volume="1" />
+	<sound class="result" key="other" fileref="hd_sound_air_horn.wav" pitch_variety="0" volume="3" />
 
     <sound class="result" key="terrain" copy="other" />
     <sound class="result" key="static_object" copy="other" />

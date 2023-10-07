@@ -848,7 +848,7 @@ class battleInfoBuck{
 				if(rp<=0){rp=0;}
 				dictionary a;
 				a["%kx"] = formatInt(int(kc*50));
-				a["%ox"] = formatInt(int(oc*70*NormalizedConcaveCurve(0.002*oc,0.5)));
+				a["%ox"] = formatInt(int(oc*55*NormalizedConcaveCurve(0.002*oc,0.5)));
 				a["%mx"] = formatInt(int(mc*3000));
 				a["%px"] = formatInt(int(pt*300));
 				a["%tx"] = formatInt(int(tc*500));

@@ -33,7 +33,7 @@ key="hd_lmg_mgx42_mk3.weapon"
 	/> 
 	<!--1300/1800RPM 	300/400 magazine 	one time use	30m range-->
 	
-	<animation key="recoil" animation_key="recoil, hip fire" />
+	<animation key="recoil" animation_key="hold, hip fire" />
 	<animation state_key="hold" animation_key="hold, hip fire" />
 	<animation state_key="reload" animation_key="reloading_mg94"/>
 	<animation state_key="crouching" animation_key="crouch, hold, hip fire" />

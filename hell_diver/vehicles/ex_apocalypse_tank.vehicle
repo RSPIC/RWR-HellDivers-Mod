@@ -52,7 +52,11 @@ character_leave_request_mode="friendly"
 	2<turret offset="0 0 1" weapon_key="ex_apocalypse_tank_sound.weapon" weapon_offset="0 2.0 5.5" 
 	weapon_recoil="0" physics_recoil="0" max_rotation_step="0.0002"  />
 	3<turret offset="0 0 0" weapon_key="auxiliary_car_fire_aim.weapon" weapon_offset="0 1.5 3" 
-	weapon_recoil="0" physics_recoil="0" max_rotation_step="0.00005"  />
+	weapon_recoil="0" physics_recoil="0" max_rotation_step="0.0002"  />
+	4<turret offset="0 0 1" weapon_key="ex_apocalypse_tank_missile.weapon" weapon_offset="1.2 3 -0.75" 
+	weapon_recoil="0" physics_recoil="0" max_rotation_step="0.0002"  />
+	5<turret offset="0 0 1" weapon_key="ex_apocalypse_tank_missile.weapon" weapon_offset="-1.2 3 -0.75" 
+	weapon_recoil="0" physics_recoil="0" max_rotation_step="0.0002"  />
 	<!-- 车体\炮台 -->
 	<visual class="chassis" mesh_filename="ex_apocalypse_tank.mesh" texture_filename="ex_apocalypse_tank.jpg" />
 	<visual class="turret" offset="0 0 -1" turret_index="0" mesh_filename="ex_apocalypse_tank_turrent.mesh" 
@@ -74,7 +78,7 @@ character_leave_request_mode="friendly"
 
 	<character_slot type="driver" position="1.5 0.3 +2" rotation="0" exit_rotation="1.57" hiding="1" />
 	<character_slot type="gunner" position="-1.5 0.3 +2" rotation="0" exit_rotation="-1.57" hiding="1" >
-		<turret index="0"/>	<turret index="1"/>  <turret index="2"/> <turret index="3"/>
+		<turret index="0"/>	<turret index="1"/>  <turret index="2"/> <turret index="3"/> <turret index="4"/> <turret index="5"/>
 	</character_slot>
 
 

@@ -1,0 +1,26 @@
+<vehicle name="钢琴" key="plano02.vehicle" map_view_atlas_index="" respawn_time="10.0" allow_ai_to_use="0">
+
+	<tire_set offset="1.0 0.0 1.0" radius="0.65" />
+	<tire_set offset="1.0 0.0 -1.0" radius="0.65" />
+
+	<control max_speed="40.0" acceleration="0" max_reverse_speed="0" max_rotation="0.0" max_water_depth="1.9" />
+
+	<physics max_health="30.0" mass="500.0" extent="2 0 2" offset="0 0.0 0" top_offset="0 3 0" collision_model_pos="0 0.2 0" collision_model_extent="3.0 1.5 3.0" visual_offset="0 0.0 0" /> 
+
+	<visual class="chassis" mesh_filename="models/piano.mesh" texture_filename="textures/piano_main.jpg" />
+
+                <character_slot type="driver" position="0 0 2" rotation="-3.14" exit_rotation="+1.55" hiding="0" animation_id="36" marker_offset="0 0.35 0.2" />
+                <rev_sound filename="audio/bgm/REUNION.wav" low_pitch="1.0" high_pitch="1.0" low_rev="0.0" high_rev="1.0" volume="10.0" />
+
+	<sound key="hit" filename="thin_metal_impact1.wav" />
+	<sound key="hit" filename="thin_metal_impact2.wav" />
+	<sound key="hit" filename="thin_metal_impact3.wav" />
+
+	<event>
+		<trigger class="receive_damage" />
+		<result class="reward" xp="0.0" />
+	</event>
+
+	<effect event_key="destroy" key="other" ref="SmokeMinor" post_processing="1" />
+	<effect event_key="destroy" key="other" ref="ShadowSmokeMinor" shadow="1" />
+</vehicle>

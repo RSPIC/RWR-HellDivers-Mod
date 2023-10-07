@@ -28,11 +28,15 @@ dictionary healable_weapon = {
 
         {"hd_exo44_walker_mk3_mg.weapon",2},
         {"hd_exo44_walker_mk3_missile.weapon",2},
+        {"hd_exo44_walker_mk3_missile_damage.projectile",2},
 
         {"hd_exo48_obsidian_mk3_cannon.weapon",2},
+        {"hd_exo48_obsidian_mk3_cannon_damage.projectile",2},
 
         {"hd_exo51_lumberer_mk3_cannon.weapon",2},
+        {"hd_exo51_lumberer_mk3_cannon_damage.projectile",2},
         {"hd_exo51_lumberer_mk3_flame.weapon",2},
+        {"hd_exo51_lumberer_mk3_flame_damage.projectile",2},
 
         // 占位的
         {"666",-1}

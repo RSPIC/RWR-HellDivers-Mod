@@ -133,6 +133,7 @@ dictionary banned_stash_item = {
 
 		{"acg_patricia_fataldrive.weapon","weapon"},
 		{"ex_hyper_mega_bazooka_launcher_skill.weapon","weapon"},
+		{"ex_vergil_skill.weapon","weapon"},
 
         // 占位的
         {"666",-1}

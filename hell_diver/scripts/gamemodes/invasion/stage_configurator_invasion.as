@@ -152,11 +152,21 @@ class StageConfiguratorInvasion : StageConfigurator {
 	
 	// ------------------------------------------------------------------------------------------------
 	protected void addLotteryVehicle(Stage@ stage) {
+		if(g_server_difficulty_level <= 9){
+			array<ScoredResource@> resources = {
+				// for testing: 0 score no spawn -> 100% chance for icecream
+				//ScoredResource("", "", 0.0f),          
+				ScoredResource("", "", 0.0f),
+				ScoredResource("icecream.vehicle", "vehicle", 100.0f)
+			};
+			stage.addTracker(SpawnAtNode(m_metagame, resources, "icecream", 1, 1));
+			return;
+		}
 		array<ScoredResource@> resources = {
 			// for testing: 0 score no spawn -> 100% chance for icecream
 			//ScoredResource("", "", 0.0f),          
 			ScoredResource("", "", 0.0f),
-			ScoredResource("icecream.vehicle", "vehicle", 100.0f)
+			ScoredResource("icecream.vehicle", "vehicle", 0.0f)
 		};
 		stage.addTracker(SpawnAtNode(m_metagame, resources, "icecream", 1, 1));
 	}
@@ -202,9 +212,9 @@ class StageConfiguratorInvasion : StageConfigurator {
 
 	// ------------------------------------------------------------------------------------------------
 	protected void setupNormalStages() {
-		//addStage(setupStageBloodandFlowers_01());         // BloodandFlowers_01 By asanonana ver1.5.11
+		addStage(setupStageBloodandFlowers_01());         // BloodandFlowers_01 By asanonana ver1.5.11
 		addStage(setupStage8());          // map8 #13 10 
-		//addStage(setupStage10());         // map10 #7 4 疑似有bug ver1.5.10
+		addStage(setupStage10());         // map10 #7 4 疑似有bug ver1.5.10
 		addStage(setupStage14());         // map6_2 #14 11
 		addStage(setupStage2());          // map4 #15 12
 		addStage(setupStage3());          // map3 #10 7
@@ -227,6 +237,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 		addStage(setupFinalStage1());     // map11 #12 潜行9
 		addStage(setupStageCasake_Bay());         // Casake_Bay #21
 		addStage(setupStage20());         // map19 #17	13 鹅城
+       
 	}
 
 	// --------------------------------------------
@@ -1978,4 +1989,5 @@ class StageConfiguratorInvasion : StageConfigurator {
 		setDefaultAttackBreakTimes(stage);
 		return stage;
 	}
+
 }

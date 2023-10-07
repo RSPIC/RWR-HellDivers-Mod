@@ -5,11 +5,12 @@
                 <material file="menusystem.material" />
                 <material file="splash.material" />
 	<include_layer name="bases.default" /> 
-                <include_layer name="layer1.default" />
+                <include_layer name="layer1.default" />                
 
 	<faction file="green.xml" />
 	<faction file="grey.xml" />
 	<weapon file="all_weapons.xml" />
+                <weapon file="invasion_all_weapons.xml" />
 	<projectile file="all_throwables.xml" />
 	<call file="all_calls.xml" />
 	<carry_item file="all_carry_items.xml" />
@@ -36,8 +37,6 @@
                 <vehicle file="plano02.vehicle" />
                 <vehicle file="submarine.vehicle" />
                 <vehicle file="Nainet_chariot.vehicle" />
-
-                <include "emoticons.as" />
 
                 
 </map_config>
