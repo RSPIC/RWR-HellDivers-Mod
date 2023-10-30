@@ -13,7 +13,7 @@
     <sound key="magazine_out" fileref="mg_clip_out.wav" />
     <sound key="magazine_in" fileref="mg_clip_in.wav" />
     <sound key="cycle" fileref="rifle_chamber.wav" />
-    <model filename="models/npc01.xml" />
+    <model mesh_filename="models/npc01.mesh" texture_filename="models/npc01.jpg" />
 
     <hud_icon filename="hud_tank_mg.png" />
     <commonness value="0.05" />

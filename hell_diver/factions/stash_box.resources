@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources clear_weapons="0" clear_vehicles="0" clear_calls="0">
+	<!-- always load common first; it"s the one that clears the initial weapon resources -->
+
+	<weapon key="stash_ui_open_close.weapon" /> 
+	<weapon key="stash_ui_page_down.weapon" /> 
+	<weapon key="stash_ui_page_up.weapon" /> 
+	<weapon key="stash_ui_pull_out.weapon" /> 
+	<weapon key="stash_ui_pull_out_1x.weapon" /> 
+	<weapon key="stash_ui_pull_out_10x.weapon" /> 
+	<weapon key="stash_ui_pull_out_100x.weapon" /> 
+	<weapon key="stash_ui_push_in.weapon" /> 
+	<weapon key="stash_ui_select_down.weapon" /> 
+	<weapon key="stash_ui_select_up.weapon" /> 
+	<weapon key="stash_ui_upgrade_1x.weapon" /> 
+	<weapon key="stash_ui_upgrade_10x.weapon" /> 
+
+<!-- 兑换物品 -->
+	<!-- fumo兑换 -->
+	<carry_item key="collect_fumo_reimu_exchange" />
+	<carry_item key="collect_fumo_cirno_exchange" />
+	<carry_item key="collect_fumo_flandre_scarlet_exchange" />
+	<carry_item key="collect_fumo_hong_meiling_exchange" />
+	<carry_item key="collect_fumo_inu_sakuya_exchange" />
+	<carry_item key="collect_fumo_junko_exchange" />
+	<carry_item key="collect_fumo_koishi_komeiji_exchange" />
+	<carry_item key="collect_fumo_mike_goutokuji_exchange" />
+	<carry_item key="collect_fumo_mokou_fujiwara_exchange" />
+	<carry_item key="collect_fumo_nitori_kawashiro_exchange" />
+	<carry_item key="collect_fumo_rumia_exchange" />
+	<carry_item key="collect_fumo_sanae_kochiya_exchange" />
+	<carry_item key="collect_fumo_shion_yorigami_exchange" />
+	<carry_item key="collect_fumo_suwako_moriya_exchange" />
+	<carry_item key="collect_fumo_youmu_konpaku_exchange" />
+	<carry_item key="collect_fumo_yuyuko_exchange" />
+	<!-- 玩偶兑换 -->
+	<!-- 箱子兑换 -->
+	<carry_item key="hud_reward_box_weapon_omega_exchange" />
+	<!-- 部署物兑换 -->
+	<carry_item key="hud_ra2_tesla_exchange" />
+	<carry_item key="hud_ra2_minigun_exchange" />
+	<carry_item key="hud_kirov_exchange" />
+	<carry_item key="hud_fire_turrent_exchange" />
+	<carry_item key="hud_edf_turrent_single_exchange" />
+	<carry_item key="hud_edf_turrent_double_exchange" />
+	<carry_item key="hud_edf_mortar_exchange" />
+	<carry_item key="hd_explosive_bunny_exchange" />
+	<carry_item key="hud_demolition_truck_exchange" />
+	<carry_item key="63type_107mm_rocket_launcher_exchange" />
+	<carry_item key="hd_ra2_ifv_hud_exchange" />
+	<carry_item key="hd_missile_launcher_mk1_exchange" />
+	<carry_item key="hd_missile_launcher_mk2_exchange" />
+	<carry_item key="hd_missile_launcher_mk3_exchange" />
+	<!-- 武器区 -->
+	<carry_item key="acgw_toki_hud_exchange" />
+	<!-- 代币区 -->
+	<carry_item key="hd_ticket_x1_exchange" />
+	<carry_item key="hd_ticket_x3_exchange" />
+	<carry_item key="hd_ticket_x10_exchange" />
+	<!-- 样本区 -->
+	<carry_item key="samples_illuminate_exchange" />
+	<carry_item key="samples_cyborgs_exchange" />
+	<carry_item key="samples_bugs_exchange" />
+	<carry_item key="samples_acg_exchange" />
+	<!-- 加成卡 -->
+	<!-- <carry_item key="hd_bonusfactor_al_20_exchange" />
+	<carry_item key="hd_bonusfactor_rp_20_exchange" />
+	<carry_item key="hd_bonusfactor_xp_20_exchange" />
+	<carry_item key="hd_bonusfactor_al_45_exchange" />
+	<carry_item key="hd_bonusfactor_rp_45_exchange" />
+	<carry_item key="hd_bonusfactor_xp_45_exchange" />
+	<carry_item key="hd_bonusfactor_al_75_exchange" />
+	<carry_item key="hd_bonusfactor_rp_75_exchange" />
+	<carry_item key="hd_bonusfactor_xp_75_exchange" />
+	<carry_item key="hd_bonusfactor_al_125_exchange" />
+	<carry_item key="hd_bonusfactor_rp_125_exchange" />
+	<carry_item key="hd_bonusfactor_xp_125_exchange" /> -->
+
+</resources>

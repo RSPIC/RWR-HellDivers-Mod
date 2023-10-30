@@ -117,7 +117,7 @@ class Stage {
 		m_soldierCapacityModel = "variable";
 		m_defenseWinTime = -1;
 		m_defenseWinTimeMode = "hold_bases";
-		m_playerAiCompensation = 8;
+		m_playerAiCompensation = 0;
 		m_playerAiReduction = 0;
 		m_primaryObjective = "capture";
 		m_kothTargetBase = "center base";
@@ -369,7 +369,7 @@ class Stage {
 				// friendly faction
 				faction.setFloatAttribute("ai_accuracy", m_userSettings.m_fellowAiAccuracyFactor);
 				faction.setIntAttribute("disable_enemy_spawnpoints_soldier_count_offset", m_userSettings.m_fellowDisableEnemySpawnpointsSoldierCountOffset);
-				faction.setBoolAttribute("lose_last_base_without_spawnpoints", true);
+				faction.setBoolAttribute("lose_last_base_without_spawnpoints", false);
 			} else {
 				// enemy
 				faction.setFloatAttribute("ai_accuracy", m_userSettings.m_enemyAiAccuracyFactor);

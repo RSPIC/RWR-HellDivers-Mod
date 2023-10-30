@@ -72,6 +72,13 @@ _log("  sending: " + message.toStringWithFloats(), 1);
 _log("  sending: " + message, 1);
 		commsWriteString(message);
 	}
+	// --------------------------------------------
+	void send(array<string> message) {
+		for(uint i = 0 ; i < message.size() ; ++i){
+			_log("  sending: " + message[i], 1);
+			commsWriteString(message[i]);
+		}
+	}
 
 	// --------------------------------------------
 	const XmlElement@ receive() {
@@ -123,12 +130,14 @@ _log("  received: " + event.toString());
 		}
 
 		_log("  sending query", 1);
-
+		
 		// create in-place Tracker for matching with the incoming data
 		QueryTracker@ tracker = QueryTracker();
 
 		// store query id in tracker for matching with the response
 		int queryId = queryElement.getIntAttribute("id");
+		string queryMessage = queryElement.toString();
+		_log("query content="+queryMessage);
 		tracker.init(queryId);
 
 		// send the query now
@@ -141,14 +150,15 @@ _log("  received: " + event.toString());
 		while (true) {
 			// using internal receiving call, bypass any queued messages
 			const XmlElement@ data = _receive();
-
 			// check if it's response to what we asked, and not empty and not dummy_event; no need to queue dummies
 			if (!data.empty() && (data.getName() != "dummy_event")) {
 				//_log("  verifying data");
 				if (data.getName() == "user_quit_event") {
 					// a bit messy, but go for it for now
 					_log("user quit signal detected, aborting query", -1);
-
+					// _log("user quit signal detected, force to return");
+					_log("event="+data.toString());
+					// break;
 					_quitSignalReceived = true;
 
 					// push it in to re-handle it on metagame level

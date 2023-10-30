@@ -274,7 +274,7 @@ key="acg_shigure_610mm_torpedo.weapon"
 	time_to_live="12" can_be_detected_by_driver="1" can_be_disarmed="0" name="4 x 610 mm quadruple torpedo tubes"> 
 		
         <result class="blast" radius="8" damage="250" 
-		push="0.5" decal="0" character_state="wound" damage_origin_vehicle="0"/>
+		push="0.5" decal="0" faction_compare="not_equal" character_state="wound" damage_origin_vehicle="0"/>
 
 		<trigger class="impact">
 		</trigger> 
@@ -621,7 +621,7 @@ key="re_acg_shigure_610mm_torpedo.weapon"
     <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="0.5" can_be_detected_by_footmen="1" 
 	time_to_live="12" can_be_detected_by_driver="1" can_be_disarmed="0" name="4 x 610 mm quadruple torpedo tubes"> 
 		
-        <result class="blast" radius="8" damage="250" 
+        <result class="blast" radius="8" damage="250" faction_compare="not_equal"
 		push="0.5" decal="0" character_state="wound" damage_origin_vehicle="0"/>
 
 		<trigger class="impact">

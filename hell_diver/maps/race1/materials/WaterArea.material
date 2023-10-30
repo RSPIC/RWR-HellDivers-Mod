@@ -1,0 +1,149 @@
+import NormalAndDepth from "normal_and_depth.material"
+
+material WaterAreaHigh : NormalAndDepth {
+/*
+	technique FakeNormalAndDepth {
+		scheme normal_and_depth
+
+		pass FakeNormalAndDepth { 
+			lighting off
+                        fog_override true
+
+			vertex_program_ref WaterAreaNormalDepthVP {
+			}
+
+			//fragment_program_ref WaterAreaNormalDepthFP {
+			//	texture_unit {
+			//		texture terrain5_heightmap.png 2d unlimited
+			//	}
+			//}
+
+			fragment_program_ref NormalAndDepthFP {
+			}
+		}
+	}
+*/
+
+	technique ShadersShadows {
+		pass {
+			lighting off
+			fog_override true none
+
+			vertex_program_ref WaterAreaVP {	
+			}
+
+			fragment_program_ref WaterAreaFP {
+			}
+
+			texture_unit {
+				texture FoamLayer
+			}
+
+			texture_unit {
+				texture terrain5_heightmap.png 2d unlimited
+			}
+
+			texture_unit {
+				texture wave.png
+			}
+
+		        ambient 0.20 0.4 0.51
+		        diffuse 0.30 0.5 0.6
+
+			scene_blend alpha_blend
+		}
+	}
+
+	// copy pasted below, any chance to use macros or something to avoid duplication?
+	technique NoShaders {	
+		pass {	
+			lighting on
+		        ambient 0.20 0.4 0.51
+		        diffuse 0.30 0.5 0.6
+
+			texture_unit {
+				colour_op_ex source1 src_current src_current
+				alpha_op_ex blend_manual src_manual src_manual 0.7 0.7 0.7
+			}
+
+			texture_unit {
+				texture FoamLayer
+				colour_op_ex add src_current src_texture
+				alpha_op_ex source1 src_current src_current
+				tex_coord_set 0
+			}
+			
+			scene_blend alpha_blend
+		
+		}
+	}
+}
+
+
+material WaterAreaLow {
+	technique NoShaders {	
+		pass {	
+			lighting on
+		        ambient 0.3 0.6 0.7
+		        diffuse 0.7 0.9 1.0
+
+			texture_unit {
+				colour_op_ex source1 src_current src_current
+				alpha_op_ex blend_manual src_manual src_manual 0.7 0.7 0.7
+			}
+
+			texture_unit {
+				texture FoamLayer
+				colour_op_ex add src_current src_texture
+				alpha_op_ex source1 src_current src_current
+				tex_coord_set 0
+			}
+			
+			scene_blend alpha_blend
+		
+		}
+	}
+}
+
+material Smoke : NormalAndDepth {
+	technique ShadersShadows {
+		pass {
+			lighting off
+			fog_override true none
+			depth_write off
+
+			vertex_program_ref SmokeAreaVP {	
+			}
+
+			fragment_program_ref SmokeAreaFP {
+			}
+
+			texture_unit {
+				texture wave_smoke.png
+			}
+
+		        ambient 0.3 0.3 0.3
+		        diffuse 0.4 0.4 0.4
+
+			scene_blend alpha_blend
+		}
+	}
+
+	// copy pasted below, any chance to use macros or something to avoid duplication?
+	technique NoShaders {	
+		pass {	
+			lighting on
+		        ambient 0.3 0.3 0.3
+		        diffuse 0.4 0.4 0.4
+
+			texture_unit {
+				colour_op_ex source1 src_current src_current
+				alpha_op_ex blend_manual src_manual src_manual 0.7 0.7 0.7
+			}
+
+			scene_blend alpha_blend
+		
+		}
+	}
+}
+

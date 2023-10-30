@@ -3,6 +3,9 @@
 	<!-- <model filename="hdivers_ceremonial.xml" /> -->
 	
 	<model filename="bugs_scout.xml">
+		<requirement class="weapon" slot="0" key="hd_scout_main.weapon"/>
+	</model>
+	<model filename="bugs_scout.xml">
 		<requirement class="weapon" slot="0" key="bugs_scout_main.weapon"/>
 	</model>
 	<model filename="bugs_vanguard.xml">
@@ -31,6 +34,15 @@
 	</model>
 	<model filename="bugs_tank.xml">
 		<requirement class="weapon" slot="0" key="bugs_tank_main.weapon"/>
+	</model>
+	<model filename="bugs_baneling.xml">
+		<requirement class="weapon" slot="0" key="bugs_baneling_main.weapon"/>
+	</model>
+	<model filename="bugs_zerg_baneling.xml">
+		<requirement class="weapon" slot="0" key="bugs_zerg_baneling_main.weapon"/>
+	</model>
+	<model filename="bugs_tunnel.xml">
+		<requirement class="weapon" slot="0" key="bugs_tunnel_main.weapon"/>
 	</model>
 
 </models>

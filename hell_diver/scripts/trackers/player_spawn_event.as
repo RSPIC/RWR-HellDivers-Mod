@@ -48,11 +48,33 @@ class player_spawn : Tracker {
 
 		const XmlElement@ character = getCharacterInfo(m_metagame, cid);
 		if(character is null){return;}
-		string c_position = character.getStringAttribute("position");
-		spawnStaticProjectile(m_metagame,"hd_effect_target_aim.projectile",c_position,cid,fid);
-		spawnStaticProjectile(m_metagame,"hd_sound_divers_coming_bgm.projectile",c_position,cid,fid);
-		spawnStaticProjectile(m_metagame,"hd_sound_divers_coming.projectile",c_position,cid,fid);
-		spawnStaticProjectile(m_metagame,"hd_effect_hellpod_dropping_smoke.projectile",c_position,cid,fid);
+		Vector3 c_position = stringToVector3(character.getStringAttribute("position"));
+		// spawnStaticProjectile(m_metagame,"hd_effect_target_aim.projectile",c_position,cid,fid);
+		// spawnStaticProjectile(m_metagame,"hd_sound_divers_coming_bgm.projectile",c_position,cid,fid);
+		// spawnStaticProjectile(m_metagame,"hd_sound_divers_coming.projectile",c_position,cid,fid);
+		// spawnStaticProjectile(m_metagame,"hd_effect_hellpod_dropping_smoke.projectile",c_position,cid,fid);
+
+		
+		array<ListDirectProjectile@> list;
+		ListDirectProjectile@ b = ListDirectProjectile(c_position,c_position,"hd_effect_target_aim.projectile",-1,fid,1);
+		ListDirectProjectile@ c = ListDirectProjectile(c_position,c_position,"hd_sound_divers_coming_bgm.projectile",-1,fid,1);
+		ListDirectProjectile@ d = ListDirectProjectile(c_position,c_position,"hd_sound_divers_coming.projectile",-1,fid,1);
+		ListDirectProjectile@ e = ListDirectProjectile(c_position,c_position,"hd_effect_hellpod_dropping_smoke.projectile",-1,fid,1);
+		float range = 5;
+		uint times = 4;
+		while(times > 0){
+			--times;
+			float rand_x = rand(-range,range);
+			float rand_y = rand(-range,range);
+			c_position = c_position.add(Vector3(rand_x,0,rand_y));
+			ListDirectProjectile@ a = ListDirectProjectile(c_position,c_position,"hd_hellpod_dropping_spawn_ai_jetpack_trigger.projectile",-1,fid,1);
+			list.insertLast(a);
+		}
+		list.insertLast(b);
+		list.insertLast(c);
+		list.insertLast(d);
+		list.insertLast(e);
+		CreateListDirectProjectile(m_metagame,list);
 		sendFactionMessage(m_metagame,fid,"潜兵 "+name+" 已部署战场");
 
 		//首次连接不会提示，二次复活才提示

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<character filename="bugs_default_chat.character">
+
+	<sound key="footstep" fileref="" volume="1.2" />
+	<sound key="death" fileref="bf1_kill.wav" volume="1" />
+
+	<parameter class="walking_steer_amount" value="0.55" />	
+	<parameter class="running_steer_amount" value="0.7" />	
+	
+	<parameter class="being_stunned_steer_amount" value="0.1" />
+
+	<parameter class="use_walk_animation_instead_of_run_speed_threshold" value="0.6" />
+	<parameter class="can_use_vehicles" value="1" /> 
+	<parameter class="throwing_self_over_initial_bounce" value="0.07" /><!--翻越时初始弹起高度-->
+	<parameter class="throwing_self_over_steer_amount" value="0.30" /><!--翻越中向前位移速度-->
+	<parameter class="throwing_self_over_lift_up" value="0.0" />
+	<parameter class="lifting_up_initial_bounce" value="0.07" />
+	<parameter class="jumping_up_bounce" value="0.05" />
+
+	<parameter class="climbing_ladder_stopping_oppositesteer_amount" value="30.0" />
+	<parameter class="ending_climbing_ladder_initial_bounce" value="0.03" />
+	<parameter class="ending_climbing_up_ladder_steer_amount" value="0.15" />
+	<parameter class="climbing_switch_initial_bounce" value="0.03" />
+
+	<parameter cleass="climbing_up_ladder" value="0.3" />
+	<parameter class="climbing_down_ladder" value="0.3" />
+	<parameter class="climbing_switch_steer" value="0.2" />
+e
+	<parameter class="diving_steer_amount" value="1.2" />
+	<parameter class="diving_steer_amount_sliding_with_friction" value="0.0" />
+	<parameter class="diving_steer_amount_push" value="0.05" />
+	<parameter class="diving_steer_amount_jump" value="0.05" />
+
+	<animation state_key="hold"  animation_key="bugs_baneling_still" />
+	<animation state_key="hold_on_wall"  animation_key="bugs_baneling_still" />
+	<animation state_key="hold_casual"  animation_key="bugs_baneling_casual" />
+	<animation key="still against wall" target_key="bugs_baneling_still" />
+	<animation key="stabbing" target_key="bugs_baneling_stab" />
+	<animation key="going prone" target_key="bugs_baneling_alert" />
+	<animation key="dive" target_key="Scout_jumping" />
+	<animation key="stunned" target_key="bugs_baneling_stun" />
+	<animation key="prone" target_key="bugs_baneling_still" />
+	<animation key="prone, without weapon, 63" target_key="bugs_baneling_still" />
+	<animation key="prone, moving forwards" target_key="bugs_baneling_walking" />
+	<animation key="leaving prone" target_key="bugs_baneling_still" />
+	<animation key="still" target_key="bugs_baneling_still" />
+	<animation key="still, heavy weapon" target_key="bugs_baneling_still" />
+	<animation key="still, instructor" target_key="bugs_baneling_still" />
+	<animation key="walking" target_key="bugs_baneling_walking" />
+	<animation key="walking backwards" target_key="bugs_baneling_walking_back" />
+	<animation key="weaponless_walking" target_key="bugs_baneling_walking" />
+	<animation key="running" target_key="bugs_baneling_walking" />
+	<animation key="running, no weapon, 60" target_key="bugs_baneling_walking" />
+	<animation key="crouch still" target_key="bugs_baneling_still" />
+	<animation key="crouch still, no weapon, 62" target_key="bugs_baneling_still" />
+	<animation key="crouching forwards" target_key="bugs_baneling_walking" />
+	<animation key="crouching backwards" target_key="bugs_baneling_walking_back" />
+	<animation key="crouching backwards, single hand carry" target_key="bugs_baneling_walking_back" />
+	<animation key="crouching forwards, no weapon, 61" target_key="bugs_baneling_walking" />
+	<animation key="throwing self over" target_key="bugs_baneling_throwing_self_over" />
+	<animation key="falling" target_key="bugs_baneling_walking" />
+	<animation key="arriving ground" target_key="bugs_baneling_arriving_ground" />
+	<animation key="jumping" target_key="bugs_baneling_still" />
+	<animation key="lifting up" target_key="bugs_baneling_lifting_up" />
+	<animation key="climbing ladder" target_key="bugs_baneling_upladder" />
+	<animation key="climbing ladder, still" target_key="bugs_baneling_upladder_still" />
+	<animation key="climbing ladder ending" target_key="bugs_baneling_upladder_end" />
+	<animation key="weaponless_ending_climbing_up_ladder" target_key="bugs_baneling_upladder_end" />
+	<animation key="wounded, still, 66" target_key="bugs_baneling_still" />
+	<animation key="wounded, moving forwards, 67" target_key="bugs_baneling_walking" />
+	<animation key="leaving_wounded" target_key="bugs_baneling_stab" />
+	<animation key="swimming still" target_key="bugs_baneling_still" />
+	<animation key="swimming forwards" target_key="bugs_baneling_walking" />
+	<animation key="celebrating" target_key="bugs_baneling_still" />
+	<animation key="celebrating, shooting" target_key="bugs_baneling_still" />
+	<animation key="throwing, upside" target_key="bugs_baneling_stab" />
+	<animation key="surrender" target_key="bugs_baneling_stab" />
+	<animation key="change weapon out" target_key="bugs_baneling_still" />
+	<animation key="change weapon in" target_key="bugs_baneling_still" />
+	<animation key="change weapon out, reversed" target_key="bugs_baneling_still" />
+	<animation key="change weapon in, reversed" target_key="bugs_baneling_still" />
+	<animation key="change weapon in, single hand carry" target_key="bugs_baneling_still" />
+	
+	<sound key="footstep" fileref="bugs_voice_scout_1.wav" volume="0.5" />
+	<sound key="footstep" fileref="bugs_voice_scout_2.wav" volume="0.5" />
+	<sound key="footstep" fileref="bugs_voice_scout_3.wav" volume="0.5" />
+	<sound key="footstep" fileref="bugs_voice_scout_4.wav" volume="0.5" />
+	<sound key="footstep" fileref="bugs_voice_scout_5.wav" volume="0.5" />
+	<sound key="footstep" fileref="bugs_voice_scout_6.wav" volume="0.5" />
+	<sound key="footstep" fileref="bugs_voice_scout_7.wav" volume="0.5" />
+	<sound key="footstep" fileref="bugs_voice_scout_8.wav" volume="0.5" />
+	<sound key="footstep" fileref="bugs_voice_scout_9.wav" volume="0.5" />
+	<sound key="footstep" fileref="bugs_voice_scout_10.wav" volume="0.5" />
+	<sound key="footstep" fileref="bugs_voice_scout_11.wav" volume="0.5" />
+	<sound key="footstep" fileref="bugs_voice_scout_12.wav" volume="0.5" />
+	<sound key="body_fall" fileref="bugs_voice_scout_1.wav" volume="0.5" />
+	<sound key="body_fall" fileref="bugs_voice_scout_2.wav" volume="0.5" />
+	<sound key="body_fall" fileref="bugs_voice_scout_3.wav" volume="0.5" />
+	<sound key="body_fall" fileref="bugs_voice_scout_4.wav" volume="0.5" />
+	<sound key="body_fall" fileref="bugs_voice_scout_5.wav" volume="0.5" />
+	<sound key="body_fall" fileref="bugs_voice_scout_6.wav" volume="0.5" />
+	<sound key="body_fall" fileref="bugs_voice_scout_7.wav" volume="0.5" />
+	<sound key="body_fall" fileref="bugs_voice_scout_8.wav" volume="0.5" />
+	<sound key="body_fall" fileref="bugs_voice_scout_9.wav" volume="0.5" />
+	<sound key="body_fall" fileref="bugs_voice_scout_10.wav" volume="0.5" />
+	<sound key="body_fall" fileref="bugs_voice_scout_11.wav" volume="0.5" />
+	<sound key="body_fall" fileref="bugs_voice_scout_12.wav" volume="0.5" />
+</character>

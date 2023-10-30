@@ -31,7 +31,7 @@ key="hd_exo48_obsidian_mk3_cannon.weapon"
 	barrel_offset="0.2" 
 	carry_in_two_hands="0" 
 	stab_enabled="1" 
-	stab_range="0" 
+	stab_range="3" 
 	use_basic_muzzle_smoke_effect="0"
 	/> 
 	<!--300RPM 100m range 250mag-->
@@ -71,7 +71,7 @@ key="hd_exo48_obsidian_mk3_cannon.weapon"
 	<animation state_key="crouch_moving_backwards" animation_key="exo_walking_back" /><!--全身动作-->
     <animation state_key="prone_still" animation_key="exo_still" /><!--全身动作-->
 	<animation state_key="prone_moving" animation_key="exo_walking" /><!--全身动作-->
-	<animation state_key="stabbing" animation_key="exo_no_stab" /><!--半身动作，武器可设置脱手-->
+	<animation state_key="stabbing" animation_key="exo_stab" /><!--半身动作，武器可设置脱手-->
 	<!--切换模式，本模式的切出动作衔接下一模式的切入动作，置空为秒切-->
 	<animation state_key="next_in_chain_in" animation_key="exo_recoil_righthand" /><!--半身动作，切换模式，本模式切出-->
 	<animation state_key="next_in_chain_out" animation_key="exo_recoil_righthand" /><!--半身动作，切换模式，本模式切入-->
@@ -179,7 +179,7 @@ key="hd_exo48_obsidian_mk3_cannon_main.weapon"
 	barrel_offset="0.2" 
 	carry_in_two_hands="0" 
 	stab_enabled="1" 
-	stab_range="0" 
+	stab_range="3" 
 	use_basic_muzzle_smoke_effect="0"
 	/> 
 	<!--300RPM 100m range 250mag-->
@@ -219,7 +219,7 @@ key="hd_exo48_obsidian_mk3_cannon_main.weapon"
 	<animation state_key="crouch_moving_backwards" animation_key="exo_walking_back" /><!--全身动作-->
     <animation state_key="prone_still" animation_key="exo_still" /><!--全身动作-->
 	<animation state_key="prone_moving" animation_key="exo_walking" /><!--全身动作-->
-	<animation state_key="stabbing" animation_key="exo_no_stab" /><!--半身动作，武器可设置脱手-->
+	<animation state_key="stabbing" animation_key="exo_stab" /><!--半身动作，武器可设置脱手-->
 	<!--切换模式，本模式的切出动作衔接下一模式的切入动作，置空为秒切-->
 	<animation state_key="next_in_chain_in" animation_key="exo_recoil_righthand" /><!--半身动作，切换模式，本模式切出-->
 	<animation state_key="next_in_chain_out" animation_key="exo_recoil_righthand" /><!--半身动作，切换模式，本模式切入-->

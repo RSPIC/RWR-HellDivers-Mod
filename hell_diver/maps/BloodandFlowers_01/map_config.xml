@@ -9,34 +9,27 @@
 
 	<faction file="green.xml" />
 	<faction file="grey.xml" />
-	<weapon file="all_weapons.xml" />
-                <weapon file="invasion_all_weapons.xml" />
-	<projectile file="all_throwables.xml" />
-	<call file="all_calls.xml" />
-	<carry_item file="all_carry_items.xml" />
-	<vehicle file="all_vehicles.xml" />
-                <vehicle file="invasion_all_vehicles.xml" />
+    
+    <weapon file="invasion_all_weapons.xml" />
+	<projectile file="invasion_all_throwables.xml" />
+	<call file="invasion_all_calls.xml" />
+	<carry_item file="invasion_all_carry_items.xml" />
+    <vehicle file="invasion_all_vehicles.xml" />
 
-                <vehicle file="tank2.vehicle" />
-                <weapon file="tank2_cannon.weapon" />
-	<weapon file="tank2_mg.weapon" />  
-	<weapon file="tank2_missile_launcher.weapon" />
-                <weapon file="Nainet01.weapon" />
-                <weapon file="npc01.weapon" />
-                <weapon file="target.weapon" />
+                <weapon file="weapons/Nainet01.weapon" />
+                <weapon file="weapons/npc01.weapon" />
+                <weapon file="weapons/target.weapon" />
                 
                 <vehicle file="aa_emplacement.vehicle" />
                 <vehicle file="repair_crane.vehicle" />
-                <vehicle file="racing_car1.vehicle" />
-                <vehicle file="Nainet01.vehicle" />
-                <vehicle file="npc01.vehicle" />
-                <vehicle file="prop01.vehicle" />
-                <vehicle file="target.vehicle" />
-                <vehicle file="transmit01.vehicle" />
-                <vehicle file="plano01.vehicle" />
-                <vehicle file="plano02.vehicle" />
-                <vehicle file="submarine.vehicle" />
-                <vehicle file="Nainet_chariot.vehicle" />
+                <vehicle file="vehicles/Nainet01.vehicle" />
+                <vehicle file="vehicles/npc01.vehicle" />
+                <vehicle file="vehicles/prop01.vehicle" />
+                <vehicle file="vehicles/target.vehicle" />
+                <vehicle file="vehicles/transmit01.vehicle" />
+                <vehicle file="vehicles/plano01.vehicle" />
+                <vehicle file="vehicles/plano02.vehicle" />
+                <vehicle file="vehicles/submarine.vehicle" />
 
                 
 </map_config>

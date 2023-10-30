@@ -29,6 +29,7 @@
 #include "call_marker_tracker.as"
 #include "idler_kicker.as"
 #include "supporter_command_handler.as"
+#include "ban_manager.as"
 
 // community trackers
 #include "rangefinder.as"
@@ -60,8 +61,8 @@
 #include "re_weapons.as"
 #include "chat_icon.as"
 #include "vehicle_destroyed.as"
-
-
+#include "extra_stash.as"
+#include "vehicle_recycle.as"
 
 
 // --------------------------------------------
@@ -94,15 +95,23 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 	// --------------------------------------------
 	void init() {
 		GameMode::init();
-
+		_log("gamemode invasion init");
 		setupMapRotator();
+		_log("gamemode invasion setupMapRotator");
 		setupUnlockManager();
+		_log("gamemode invasion setupUnlockManager");
 		setupSpecialCrateManager();
+		_log("gamemode invasion setupSpecialCrateManager");
 		setupSpecialCargoVehicleManager();
+		_log("gamemode invasion setupSpecialCargoVehicleManager");
 		setupItemDeliveryOrganizer();
+		_log("gamemode invasion setupItemDeliveryOrganizer");
 		setupPenaltyManager();
+		_log("gamemode invasion setupPenaltyManager");
 		setupLocalBanManager();
+		_log("gamemode invasion setupLocalBanManager");
 		setupTestingToolsTracker();
+		_log("gamemode invasion setupTestingToolsTracker");
 
 		if (m_userSettings.m_continue) {
 			_log("* restoring old game");
@@ -338,7 +347,7 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		
 		setupSpawnTimeHandler();
 		setupSideBaseAttackHandler();
-		//setupIdlerKicker();
+		setupIdlerKicker();
 
 		//addTracker(SupporterCommandHandler(this));
 	}
@@ -349,6 +358,7 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		if(!m_server_test_mode){
 			
 		}    
+		addTracker(BanManager(this));
 		addTracker(AirstrikeSystem(this));
 		addTracker(projectile_event(this));   
 		addTracker(itemdrop_event(this));    
@@ -375,6 +385,8 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		addTracker(re_weapons(this));  
 		addTracker(chat_icon(this));  
 		addTracker(vehicle_destroyed(this));  
+		addTracker(extra_stash(this));  
+		addTracker(vehicle_recycle(this));  
 	}
 
 	protected void setupDisableRadioAtMatchOver() {

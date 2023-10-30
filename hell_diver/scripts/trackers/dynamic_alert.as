@@ -52,19 +52,15 @@ dictionary strong_alert_key ={
 
 //------------------------------------------
 class SpawnInfo{
-    string spawnkey;
-    int spawnnum;
-    SpawnInfo(){
-        spawnkey = "null";
-        spawnnum = 0;
-    }
+    string spawnkey = "";
+    int spawnnum = 0;
     SpawnInfo(string in_key,int num){
         spawnkey=in_key;
         spawnnum=num;
     }
 };
 //------------------------------------------
-const array<SpawnInfo> level_3 = {
+const array<SpawnInfo@> level_3 = {
     SpawnInfo("cyborgs_spawn_berserker_model.vehicle",int(rand(1,1))),
     SpawnInfo("cyborgs_spawn_butcher_model.vehicle",0),
     SpawnInfo("cyborgs_spawn_comrade_model.vehicle",0),
@@ -82,7 +78,7 @@ const array<SpawnInfo> level_3 = {
     SpawnInfo("bugs_Warrior",int(rand(1,1))),
     SpawnInfo("bugs_Stalker",int(rand(3,4)))
 };
-const array<SpawnInfo> level_6 = {
+const array<SpawnInfo@> level_6 = {
     SpawnInfo("cyborgs_spawn_berserker_model.vehicle",0),
     SpawnInfo("cyborgs_spawn_butcher_model.vehicle",int(rand(1,1))),
     SpawnInfo("cyborgs_spawn_comrade_model.vehicle",0),
@@ -100,7 +96,7 @@ const array<SpawnInfo> level_6 = {
     SpawnInfo("bugs_Warrior",int(rand(1,2))),
     SpawnInfo("bugs_Stalker",int(rand(1,1)))
 };
-const array<SpawnInfo> level_9 = {
+const array<SpawnInfo@> level_9 = {
     SpawnInfo("cyborgs_spawn_berserker_model.vehicle",int(rand(1,2))),
     SpawnInfo("cyborgs_spawn_butcher_model.vehicle",int(rand(-4,1))),
     SpawnInfo("cyborgs_spawn_comrade_model.vehicle",0),
@@ -116,9 +112,11 @@ const array<SpawnInfo> level_9 = {
     SpawnInfo("bugs_BroodCommander",int(rand(1,1))),
     SpawnInfo("bugs_Elite",int(rand(1,4))),
     SpawnInfo("bugs_Warrior",0),
-    SpawnInfo("bugs_Stalker",0)
+    SpawnInfo("bugs_Stalker",0),
+    SpawnInfo("bugs_ZergBaneling",0),
+    SpawnInfo("bugs_Baneling",int(rand(-2,1)))
 };
-const array<SpawnInfo> level_12 = {
+const array<SpawnInfo@> level_12 = {
     SpawnInfo("cyborgs_spawn_berserker_model.vehicle",1),
     SpawnInfo("cyborgs_spawn_butcher_model.vehicle",int(rand(1,2))),
     SpawnInfo("cyborgs_spawn_comrade_model.vehicle",1),
@@ -128,15 +126,17 @@ const array<SpawnInfo> level_12 = {
     SpawnInfo("cyborgs_spawn_initiate_model.vehicle",1),
     SpawnInfo("cyborgs_spawn_warlord_model.vehicle",int(rand(0,1))),
 
-    SpawnInfo("bugs_Impaler",int(rand(0,1))),
-    SpawnInfo("bugs_Tank",int(rand(0,1))),
+    SpawnInfo("bugs_Impaler",int(rand(-1,1))),
+    SpawnInfo("bugs_Tank",int(rand(-1,1))),
     SpawnInfo("bugs_Behemoth",int(rand(-2,1))),
     SpawnInfo("bugs_BroodCommander",int(rand(1,3))),
     SpawnInfo("bugs_Elite",1),
     SpawnInfo("bugs_Warrior",1),
-    SpawnInfo("bugs_Stalker",1)
+    SpawnInfo("bugs_Stalker",1),
+    SpawnInfo("bugs_ZergBaneling",int(rand(-1,1))),
+    SpawnInfo("bugs_Baneling",int(rand(-1,1)))
 };
-const array<SpawnInfo> level_15 = {
+const array<SpawnInfo@> level_15 = {
     SpawnInfo("cyborgs_spawn_berserker_model.vehicle",1),
     SpawnInfo("cyborgs_spawn_butcher_model.vehicle",1),
     SpawnInfo("cyborgs_spawn_comrade_model.vehicle",1),
@@ -148,13 +148,15 @@ const array<SpawnInfo> level_15 = {
 
     SpawnInfo("bugs_Impaler",int(rand(0,1))),
     SpawnInfo("bugs_Tank",int(rand(0,1))),
-    SpawnInfo("bugs_Behemoth",int(rand(1,1))),
-    SpawnInfo("bugs_BroodCommander",int(rand(3,5))),
+    SpawnInfo("bugs_Behemoth",int(rand(2,3))),
+    SpawnInfo("bugs_BroodCommander",int(rand(2,5))),
     SpawnInfo("bugs_Elite",1),
     SpawnInfo("bugs_Warrior",1),
-    SpawnInfo("bugs_Stalker",1)
+    SpawnInfo("bugs_Stalker",1),
+    SpawnInfo("bugs_ZergBaneling",int(rand(0,1))),
+    SpawnInfo("bugs_Baneling",int(rand(0,1)))
 };
-const array<SpawnInfo> level_random = {
+const array<SpawnInfo@> level_random = {
     SpawnInfo("cyborgs_spawn_berserker_model.vehicle",int(rand(-2,2))),
     SpawnInfo("cyborgs_spawn_butcher_model.vehicle",int(rand(-3,1))),
     SpawnInfo("cyborgs_spawn_comrade_model.vehicle",int(rand(-1,1))),
@@ -172,7 +174,7 @@ const array<SpawnInfo> level_random = {
     SpawnInfo("bugs_Warrior",int(rand(-2,2))),
     SpawnInfo("bugs_Stalker",int(rand(-2,2)))
 };
-const array<SpawnInfo> level_all = {
+const array<SpawnInfo@> level_all = {
     SpawnInfo("cyborgs_spawn_berserker_model.vehicle",1),
     SpawnInfo("cyborgs_spawn_butcher_model.vehicle",1),
     SpawnInfo("cyborgs_spawn_comrade_model.vehicle",1),
@@ -188,9 +190,11 @@ const array<SpawnInfo> level_all = {
     SpawnInfo("bugs_BroodCommander",1),
     SpawnInfo("bugs_Elite",1),
     SpawnInfo("bugs_Warrior",1),
-    SpawnInfo("bugs_Stalker",1)
+    SpawnInfo("bugs_Stalker",1),
+    SpawnInfo("bugs_ZergBaneling",1),
+    SpawnInfo("bugs_Baneling",1)
 };
-const array<SpawnInfo> level_littlefish = {
+const array<SpawnInfo@> level_littlefish = {
     SpawnInfo("cyborgs_spawn_berserker_model.vehicle",0),
     SpawnInfo("cyborgs_spawn_butcher_model.vehicle",0),
     SpawnInfo("cyborgs_spawn_comrade_model.vehicle",1),
@@ -208,26 +212,33 @@ const array<SpawnInfo> level_littlefish = {
     SpawnInfo("bugs_Warrior",2),
     SpawnInfo("bugs_Stalker",2)
 };
-const array<SpawnInfo> debug = {
-    SpawnInfo("cyborgs_spawn_berserker_model.vehicle",10),
-    SpawnInfo("cyborgs_spawn_butcher_model.vehicle",10),
-    SpawnInfo("cyborgs_spawn_comrade_model.vehicle",10),
-    SpawnInfo("cyborgs_spawn_grotesque_model.vehicle",10),
-    SpawnInfo("cyborgs_spawn_hulk_model.vehicle",10),
-    SpawnInfo("cyborgs_spawn_immolator_model.vehicle",10),
-    SpawnInfo("cyborgs_spawn_initiate_model.vehicle",10),
-    SpawnInfo("cyborgs_spawn_warlord_model.vehicle",10)
+const array<SpawnInfo@> level_rokectLauncher = {
+    SpawnInfo("cyborgs_spawn_comrade_model.vehicle",2),
+    SpawnInfo("cyborgs_spawn_grotesque_model.vehicle",8),
+    SpawnInfo("cyborgs_spawn_hulk_model.vehicle",2),
+
+    SpawnInfo("bugs_BroodCommander",1),
+    SpawnInfo("bugs_Elite",2),
+    SpawnInfo("bugs_Warrior",8),
+    SpawnInfo("bugs_Stalker",2)
+};
+const array<SpawnInfo@> debug = {
+    SpawnInfo("bugs_ZergBaneling",1),
+    SpawnInfo("bugs_Baneling",1)
 };
 
 //-----------------------------------------
-void Alert_Spawn(Metagame@ metagame,int factionId, Vector3 position, array<SpawnInfo> spawn_list) {
+void Alert_Spawn(Metagame@ metagame,int factionId, Vector3 position,const array<SpawnInfo@> spawn_list) {
     //前期撰写考虑不全，无法区分生化人和其他阵容的level情况,懒得修改
     //考虑到虫族和光能不采用空降的增援方式,原地增援修改此处代码特地进行生化人增援的检测
     //即只有生化人需要通过载具模型来空降增援，其他阵营不用载具作为间接过程
     //代码封装性下降
-    
-    for(uint i=0 ; i < spawn_list.length() ; i++){
-        SpawnInfo info = spawn_list[i];
+
+    //ver1.6.0 磁暴步兵AI生成临时装进Hulk的载具摧毁事件里
+    array<ListDirectProjectile@> list;
+    for(uint i=0 ; i < spawn_list.size() ; ++i){
+        SpawnInfo@ info = spawn_list[i];
+        if(info is null){continue;}
         int pos = info.spawnkey.findFirst("_");
         if(pos<0){continue;}
         string caller_faction_name = info.spawnkey.substr(0,pos);
@@ -253,14 +264,17 @@ void Alert_Spawn(Metagame@ metagame,int factionId, Vector3 position, array<Spawn
                 float rand_y = rand(-range,range);
                 position = position.add(Vector3(rand_x,0,rand_y));
                 if(!isVectorInMap(position)){continue;}
-                CreateDirectProjectile(metagame,position.add(Vector3(0,10,0)),position,"hd_effect_bugs_spawn_smoke.projectile",-1,factionId,10);
-                CreateDirectProjectile(metagame,position.add(Vector3(0,10,0)),position,"bugs_spawn_"+groups_name+".projectile",-1,factionId,10);
+                ListDirectProjectile@ a = ListDirectProjectile(position.add(Vector3(0,10,0)),position,"hd_effect_bugs_spawn_smoke.projectile",-1,factionId,10);
+                ListDirectProjectile@ b = ListDirectProjectile(position.add(Vector3(0,10,0)),position,"bugs_spawn_"+groups_name+".projectile",-1,factionId,10);
+                list.insertLast(a);
+                list.insertLast(b);
             }
         }
-  
+    }
+    if(list.size() != 0){
+        CreateListDirectProjectile(metagame,list);
     }
 }
-
 //----------------------------------
 class dynamic_alert : Tracker {
 	protected GameModeInvasion@ m_metagame;
@@ -313,6 +327,7 @@ class dynamic_alert : Tracker {
     }
 
 	protected void handleResultEvent(const XmlElement@ event) {
+        handleVehicleAlert(event);
         if(m_alertFlag){return;}
 		string EventKeyGet = event.getStringAttribute("key");
         string dict_value;
@@ -456,11 +471,19 @@ class dynamic_alert : Tracker {
         array<string> a = s.split(" ");
         return a;
     }
+    protected void handleVehicleAlert(const XmlElement@ event){
+        string eventKey = event.getStringAttribute("key");
+        if(eventKey == "vehicle_call_alert"){
+            Vector3 position = stringToVector3(event.getStringAttribute("position"));
+            Alert_Spawn(m_metagame,1,position,level_all);
+            Alert_Spawn(m_metagame,1,position,level_rokectLauncher);
+        }
+    }
     protected void handleChatEvent(const XmlElement@ event){
         string sender = event.getStringAttribute("player_name");
         int senderId = event.getIntAttribute("player_id");
 
-        if(g_debugMode || m_metagame.getAdminManager().isAdmin(sender,senderId) ){
+        if(g_debugMode|| g_online_TestMode || m_metagame.getAdminManager().isAdmin(sender,senderId) ){
             string message = event.getStringAttribute("message");
             array<string> word = MassageBreakUp(message, " ", -1);
             int ws = word.size();
@@ -526,6 +549,15 @@ class dynamic_alert : Tracker {
                 int m_fid = g_factionInfoBuck.getFidByName("Cyborgs");
                 if(m_fid == -1){return;}
                 Alert_Spawn(m_metagame,m_fid,position,level_15);
+            }
+            if(message == "/calltest"){
+                int m_pid = event.getIntAttribute("player_id");
+                const XmlElement@ player = getPlayerInfo(m_metagame,m_pid);
+                if(player is null){return;}
+                Vector3 position = stringToVector3(player.getStringAttribute("aim_target"));
+                int m_fid = g_factionInfoBuck.getFidByName("Bugs");
+                if(m_fid == -1){return;}
+                Alert_Spawn(m_metagame,m_fid,position,debug);
             }
         }
     }

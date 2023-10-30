@@ -105,6 +105,14 @@ class AirstrikeSystem : Tracker {
                 remove_or_not = 1;
                 break;
             }
+            case 100:{   //acg_starwars_shipgirls_skill 舰队支援
+                float strike_rand = 9;
+                    float rand_x = rand(-strike_rand,strike_rand);
+                    float rand_y = rand(-strike_rand,strike_rand);
+                CreateDirectProjectile(m_metagame,start_pos.add(Vector3(rand_x,0,rand_y)),end_pos.add(Vector3(rand_x,0,rand_y)),"acg_starwars_shipgirls_skill_damage.projectile",cid,fid,25);
+                remove_or_not = 1;
+                break;
+            }
             default:
                 break;
         } 

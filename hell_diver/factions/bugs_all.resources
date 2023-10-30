@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources clear_weapons="0" clear_vehicles="0" clear_calls="0">
-	<!--军械库注册所有生化人阵营武器-->
+	<!--军械库注册所有虫族阵营武器-->
 
 	<!-- SquadLeader 基础兵种 -->
 	<weapon key="bugs_scout_main.weapon" /><!--主武器-->
@@ -13,12 +13,16 @@
 	<weapon key="bugs_behemoth_main.weapon" /><!--主武器-->
 	<weapon key="bugs_tank_main.weapon" /><!--主武器-->
 	<weapon key="bugs_impaler_main.weapon" /><!--主武器-->
+	<weapon key="bugs_baneling_main.weapon" /><!--主武器-->
+	<weapon key="bugs_zerg_baneling_main.weapon" /><!--主武器-->
 
 
 	<projectile key="bugs_vanguard_alert_spawn.projectile" />
 	<projectile key="bugs_stalker_grenade.projectile" />
 	<projectile key="bugs_shadow_grenade.projectile" />
 	<projectile key="bugs_general_grenade.projectile" />
+
+	<vehicle key="bugs_zerg_egg.vehicle" />
 
 
 

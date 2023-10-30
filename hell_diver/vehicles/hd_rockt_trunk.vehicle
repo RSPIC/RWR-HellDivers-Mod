@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vehicle 
+name="Rocket Truck" 
+key="hd_rocket_trunk.vehicle" 
+map_view_atlas_index="6" 
+minimum_fill_requirement="0.3" 
+max_character_collision_speed="15"
+allow_ai_to_use="0"
+character_leave_request_mode="friendly" 
+existence="one_per_faction"
+protectors="5"
+>
+
+	<tire_set offset="1.44 0.0 3.9" radius="0.6" />
+	<tire_set offset="1.44 0.0 2.3" radius="0.6" />
+	<tire_set offset="1.44 0.0 -4.9" radius="0.6" />
+
+	<control 
+	max_health="100" 
+	blast_damage_threshold="0" 
+	TODO_blast_damage_threshold="0" 
+	blast_push_threshold="1"
+	mass="20.0" 
+	broken_mass="10"
+	gravity="-200"
+	max_speed="18.0" 
+	acceleration="10.0" 
+	max_reverse_speed="12.0" 
+	TODO_min_health_to_steer="0.05" 
+	max_rotation="1.0" 
+	max_water_depth="4" 
+	steer_smoothening="0.7" />
+	
+	<physics 
+	max_health="100" 
+	mass="40" 
+	broken_mass="20"
+    remove_collision_threshold="0.2"	
+	extent="5 0.0 10" 
+	offset="0 0.0 0" 
+	top_offset="0 6 -2" 
+	collision_model_pos="0 1.5 -2" 
+	collision_model_extent="3.4 3.0 10" 
+	visual_offset="0 0.5 0" 
+	friction_offset="0.0" 
+	drag_offset="-1"
+	destroy_on_top_hit="1"
+	destroy_on_top_hit_time="0"
+	/> 
+
+	<visual class="chassis" mesh_filename="hd_rocket_trunk.mesh" texture_filename="medium_missile_launcher.jpg" />
+	<visual class="chassis" key="broken" mesh_filename="hd_rocket_trunk.mesh" texture_filename="medium_missile_launcher_broken.jpg" />
+	<visual class="tire" mesh_filename="hd_rocket_trunk_wheel.mesh" texture_filename="medium_missile_launcher.jpg" />
+
+	<character_slot type="driver" position="0.5 0.8 1.8" rotation="0" exit_rotation="1.57" hiding="1" />
+	<!-- sound handling -->
+	<rev_sound filename="truck_rev0.wav" low_pitch="0.95" high_pitch="1.05" low_rev="0.0" high_rev="0.2" volume="1.0" />
+	<rev_sound filename="truck_rev1.wav" low_pitch="0.8" high_pitch="1.1" low_rev="0.05" high_rev="0.7" volume="0.75" />
+	<rev_sound filename="truck_rev3.wav" low_pitch="0.8" high_pitch="1.1" low_rev="0.4" high_rev="1.0" volume="1.0" />
+
+	<sound key="slide" filename="slide_noise.wav" />
+	<sound key="squeal" filename="tire_squeal.wav" />
+	<sound key="ignition" filename="truck_ignition.wav" />
+	<sound key="horn" filename="horn_truck.wav" />   
+	<sound key="hit" filename="car_hit1.wav" />
+	<sound key="hit" filename="car_hit2.wav" />
+	<sound key="hit" filename="car_hit3.wav" />
+	<sound key="destroy" filename="vehicle_explosion_1.wav" />   
+	<sound key="cleanup" filename="vehicle_explosion_1.wav" />
+
+	<effect event_key="slide" type="splat_map" surface_tag="road" size="1.0" atlas_index="5" layer="0" />
+	<effect event_key="slide_hard" type="splat_map" surface_tag="road" size="0.5" atlas_index="2" layer="0" />
+	<effect event_key="slide" type="splat_map" surface_tag="dirt" size="1.0" atlas_index="2" layer="1" />
+	<effect event_key="slide" type="particle" key="terrain" surface_tag="dirt" ref="car_slide_up_smoke" use_surface_color="1" />
+	<effect event_key="slide_hard" type="particle" key="terrain" surface_tag="dirt" ref="car_slide_up_smoke" use_surface_color="1" />
+  
+	<effect event_key="slide" type="particle" key="terrain" surface_tag="road" ref="car_slide_up_smoke" use_surface_color="1" />
+	<effect event_key="slide_hard" type="particle" key="terrain" surface_tag="road" ref="car_slide_up_smoke" use_surface_color="1" />
+  
+	<effect event_key="drive_chassis" ref="car_health_front_light" offset="-3 0 10" />
+	<effect event_key="drive_chassis" ref="car_health_front_light" offset="3 0 10" />
+  
+	<effect event_key="health" value="75" ref="car_broken_spary_spark" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="50" ref="car_broken_spary_spark" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="50" ref="car_destroyed_up_smoke" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="25" ref="car_destroyed_fire" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="25" ref="car_destroyed_up_smoke" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="25" ref="car_broken_spary_spark" offset="-0.0 2.2 -0.5" />
+
+	<effect event_key="destroyed" ref="car_destroyed_fire" post_processing="1" offset="-0.5 2.2 -1.5" />
+	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="0" offset="-0.5 2.2 -1.5" />  
+	<effect event_key="destroyed" ref="car_broken_spary_spark" post_processing="0" offset="-0.5 2.2 -1.5" />  
+	<effect event_key="destroyed" ref="car_destroyed_fire" post_processing="1" offset="-0.5 1.8 0.8" />
+	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="0" offset="-0.5 1.8 0.8" />  
+	<effect event_key="destroyed" ref="car_broken_spary_spark" post_processing="0" offset="-0.5 1.8 0.8" /> 
+
+	<event>
+		<trigger class="destroy" />
+		<result class="notify_script" key="hd_rocket_trunk_destroy" />
+	</event>
+
+
+</vehicle>

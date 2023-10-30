@@ -101,12 +101,24 @@ dictionary recommend_kill_weapon_bonus = {
 
 };
 //不计入结算击杀的伤害
-dictionary exclude_kill_target = {
+dictionary include_kill_target = {
 
-        {"hd_offensive_shredder_missile_strike_mk3_damage_2.projectile",true},
-        {"wand_damage_04.projectile",true},
-        {"acg_patricia_FatalDrive_damage.projectile",true},
-        {"ex_hyper_mega_bazooka_launcher_skill_damage.projectile",true},
+        {"hd_general_spawn.projectile",false},
+        {"hd_general_spawn_no_effect.projectile",false},
+        {"hd_general_gl_spawn.projectile",false},
+        {"hd_offensive_shredder_missile_strike_mk3_damage_2.projectile",false},
+
+        {"ex_edf_turrent_single_damage.projectile",true},
+        {"ex_edf_turrent_double_damage.projectile",true},
+        {"ex_edf_mortar_damage.projectile",true},
+        {"hd_fire_turrent_damage.projectile",true},
+
+        {"ex_cl_banzai_damage.projectile",true},
+        {"ex_isu_152_gl_damage.projectile",true},
+        {"himars_damage.projectile",true},
+        {"ex_sturmtiger_tank_gl_damage.projectile",true},
+        {"mtlb_2b9_damage.projectile",true},
+        {"ex_sherman_cannon_damage.projectile",true},
 
         {"",-1}
 
@@ -243,6 +255,7 @@ class kill_reward : Tracker {
 			return;
 		}
 		string weaponKey = event.getStringAttribute("key");//击杀武器关键字
+		string method_hint = event.getStringAttribute("method_hint");//击杀方式
 		string soldier_group_name = target.getStringAttribute("soldier_group_name");//击杀兵种
 		int target_fid = target.getIntAttribute("faction_id");
 		int killer_xp = killer.getIntAttribute("xp");
@@ -255,8 +268,19 @@ class kill_reward : Tracker {
 		_log("execute kill_reward");
 		if (killer !is null && target !is null && killer_fid != target_fid) {
 			bool value;
-			if(!exclude_kill_target.get(weaponKey,value)){
-				g_battleInfoBuck.addKill(k_name);
+			if(include_kill_target.get(weaponKey,value)){
+				if(value){
+					g_battleInfoBuck.addKill(k_name);
+					//_debugReport(m_metagame,"武器"+weaponKey+"计入击杀次数");
+				}
+			}else{
+				if(startsWith(weaponKey,"hd_")){
+					g_battleInfoBuck.addKill(k_name);
+					//_debugReport(m_metagame,"武器"+weaponKey+"计入击杀次数");
+				}
+				if(method_hint == "stab"){
+					g_battleInfoBuck.addKill(k_name);
+				}
 			}
 			int healnum = 0;
 			if(healable_weapon.get(weaponKey,healnum)){//执行：可恢复护甲的击杀武器

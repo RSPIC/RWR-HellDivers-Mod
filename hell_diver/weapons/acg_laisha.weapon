@@ -5,10 +5,9 @@
 file="_rare_weapon_mk5.base" 
 key="acg_laisha_heliotrope.weapon" 
 > 
-    <tag name="cqb" />
     <specification 	
     accuracy_factor="1" 
-	retrigger_time="1.5" 
+	retrigger_time="1.75" 
 	spread_range="0.5"
     magazine_size="-1" 
     can_shoot_standing="1" 
@@ -19,7 +18,7 @@ key="acg_laisha_heliotrope.weapon"
     name="Laisha [Heliotrope]" 
     class="3" 
     consume="0" 
-    sight_range_modifier="2" 
+    sight_range_modifier="1" 
     slot="0" 
 	stab_enabled="1"
     stab_range="3.0"
@@ -155,7 +154,7 @@ key="acg_laisha_heliotrope.weapon"
     <stance state_key="over_wall" accuracy="1" />     
      
 	<!--附加属性-->
-    <modifier class="speed" value="0.3" /> 
+    <modifier class="speed" value="0.1" /> 
     <modifier class="hit_success_probability" value="0.0" /><!--负值减少玩家抗致死率-->
     <modifier class="detectability" value="0.35" />	
 </weapon>
@@ -311,7 +310,7 @@ key="acg_laisha_moon_pulsar.weapon"
     <stance state_key="over_wall" accuracy="1" />     
      
 	<!--附加属性-->
-    <modifier class="speed" value="0.3" /> 
+    <modifier class="speed" value="0.1" /> 
     <modifier class="hit_success_probability" value="0.0" /><!--负值减少玩家抗致死率-->
     <modifier class="detectability" value="0.35" />	
 </weapon>
@@ -457,7 +456,7 @@ key="acg_laisha_southern_cross.weapon"
     <stance state_key="over_wall" accuracy="1" />     
      
 	<!--附加属性-->
-    <modifier class="speed" value="0.3" /> 
+    <modifier class="speed" value="0.1" /> 
     <modifier class="hit_success_probability" value="0.0" /><!--负值减少玩家抗致死率-->
     <modifier class="detectability" value="0.35" />	
 </weapon>
@@ -465,7 +464,7 @@ key="acg_laisha_southern_cross.weapon"
 file="_rare_weapon_mk5.base" 
 key="acg_laisha_milky_way.weapon" 
 > 
-    <tag name="cqb" />
+
     <specification 	
     accuracy_factor="1" 
 	retrigger_time="2.0" 
@@ -561,7 +560,7 @@ key="acg_laisha_milky_way.weapon"
 			position_spread="水平面随机生成位置 竖直面随机生成位置" 
 			direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
 		-->
-		<result class="blast" radius="20" damage="100" push="1.0" decal="0" character_state="death" faction_compare="not_equal" />
+		<result class="blast" radius="15" damage="80" push="1.0" decal="0" character_state="death" faction_compare="not_equal" />
 
 		<trigger class="time" time_to_live="0.3"  />
 		<rotation class="motion" /><!--参数：motion、random-->
@@ -614,7 +613,7 @@ key="acg_laisha_milky_way.weapon"
     <stance state_key="over_wall" accuracy="1" />     
      
 	<!--附加属性-->
-    <modifier class="speed" value="0.3" /> 
+    <modifier class="speed" value="0.1" /> 
     <modifier class="hit_success_probability" value="0.0" /><!--负值减少玩家抗致死率-->
     <modifier class="detectability" value="0.35" />	
 </weapon>
@@ -624,10 +623,9 @@ key="acg_laisha_milky_way.weapon"
 file="_rare_weapon_mk5_re.base" 
 key="re_acg_laisha_heliotrope.weapon" 
 > 
-    <tag name="cqb" />
     <specification 	
     accuracy_factor="1" 
-	retrigger_time="1.5" 
+	retrigger_time="1.75" 
 	spread_range="0.5"
     magazine_size="-1" 
     can_shoot_standing="1" 
@@ -638,7 +636,7 @@ key="re_acg_laisha_heliotrope.weapon"
     name="Laisha [Heliotrope]" 
     class="3" 
     consume="0" 
-    sight_range_modifier="2" 
+    sight_range_modifier="1" 
     slot="0" 
 	stab_enabled="1"
     stab_range="3.0"
@@ -774,7 +772,7 @@ key="re_acg_laisha_heliotrope.weapon"
     <stance state_key="over_wall" accuracy="1" />     
      
 	<!--附加属性-->
-    <modifier class="speed" value="0.3" /> 
+    <modifier class="speed" value="0.1" /> 
     <modifier class="hit_success_probability" value="0.0" /><!--负值减少玩家抗致死率-->
     <modifier class="detectability" value="0.35" />	
 </weapon>
@@ -930,7 +928,7 @@ key="re_acg_laisha_moon_pulsar.weapon"
     <stance state_key="over_wall" accuracy="1" />     
      
 	<!--附加属性-->
-    <modifier class="speed" value="0.3" /> 
+    <modifier class="speed" value="0.1" /> 
     <modifier class="hit_success_probability" value="0.0" /><!--负值减少玩家抗致死率-->
     <modifier class="detectability" value="0.35" />	
 </weapon>
@@ -1076,7 +1074,7 @@ key="re_acg_laisha_southern_cross.weapon"
     <stance state_key="over_wall" accuracy="1" />     
      
 	<!--附加属性-->
-    <modifier class="speed" value="0.3" /> 
+    <modifier class="speed" value="0.1" /> 
     <modifier class="hit_success_probability" value="0.0" /><!--负值减少玩家抗致死率-->
     <modifier class="detectability" value="0.35" />	
 </weapon>
@@ -1084,7 +1082,7 @@ key="re_acg_laisha_southern_cross.weapon"
 file="_rare_weapon_mk5_re.base" 
 key="re_acg_laisha_milky_way.weapon" 
 > 
-    <tag name="cqb" />
+
     <specification 	
     accuracy_factor="1" 
 	retrigger_time="2.0" 
@@ -1180,7 +1178,7 @@ key="re_acg_laisha_milky_way.weapon"
 			position_spread="水平面随机生成位置 竖直面随机生成位置" 
 			direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
 		-->
-		<result class="blast" radius="20" damage="100" push="1.0" decal="0" character_state="death" faction_compare="not_equal" />
+		<result class="blast" radius="15" damage="80" push="1.0" decal="0" character_state="death" faction_compare="not_equal" />
 
 		<trigger class="time" time_to_live="0.3"  />
 		<rotation class="motion" /><!--参数：motion、random-->
@@ -1233,7 +1231,7 @@ key="re_acg_laisha_milky_way.weapon"
     <stance state_key="over_wall" accuracy="1" />     
      
 	<!--附加属性-->
-    <modifier class="speed" value="0.3" /> 
+    <modifier class="speed" value="0.1" /> 
     <modifier class="hit_success_probability" value="0.0" /><!--负值减少玩家抗致死率-->
     <modifier class="detectability" value="0.35" />	
 </weapon>

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<vehicle name="Resupply" key="hd_resupply_spawn.vehicle" map_view_atlas_index="-1" time_to_live="0" should_be_destroyed="0" max_character_collision_speed_on_normal="2.0" >
+<vehicle name="Resupply" key="hd_resupply_spawn.vehicle"
+ map_view_atlas_index="-1" time_to_live="0" should_be_destroyed="0" 
+ max_character_collision_speed_on_normal="999.0"
+ max_character_collision_speed="999"
+  >
 	<tag name="metal_thin" />
 	<tag name="hd_resupply_spawn" />
 
@@ -58,11 +62,6 @@
 	<event>
 		<trigger class="destroy" />  	
     <result class="spawn" instance_class="projectile" instance_key="hd_hellpod_dropping_sound.projectile" min_amount="1" max_amount="1" offset="0 -50 0" position_spread="0 0" direction_spread="0 0" />
-	</event>
-	
-  	<event>
-		<trigger class="destroy" />  	
-    <result class="spawn" instance_class="projectile" instance_key="hd_hellpod_dropping_damage.projectile" min_amount="1" max_amount="1" offset="0 -50 0" position_spread="0 0" direction_spread="0 0" />
 	</event>
   
   	<event>

@@ -134,6 +134,8 @@ dictionary banned_stash_item = {
 		{"acg_patricia_fataldrive.weapon","weapon"},
 		{"ex_hyper_mega_bazooka_launcher_skill.weapon","weapon"},
 		{"ex_vergil_skill.weapon","weapon"},
+		{"hd_resupply_pack_mk3.carry_item","carry_item"},
+		{"hd_resupply_pack_mk3_ex.carry_item","carry_item"},
 
         // 占位的
         {"666",-1}
@@ -362,7 +364,10 @@ class itemdrop_event : Tracker {
 				string itemtype = string(banned_backpack_item[itemKey]);
 				deleteItemInBackpack(m_metagame,characterId,itemtype,ExKey);
 				deleteItemInBackpack(m_metagame,characterId,itemtype,ExKey);
-				addItemInBackpack(m_metagame,characterId,itemtype,ExKey);
+				deleteItemInStash(m_metagame,characterId,itemtype,ExKey);
+				//addItemInBackpack(m_metagame,characterId,itemtype,ExKey);
+				@res = Resource(ExKey,"carry_item");
+				res.addToResources(resources,1);
 				ExKey="hd_ammo_supply_box_ex.projectile";//发4个特殊的子弹箱在背包(不会被检测删除)
 				string ExType="projectile";
 				@res = Resource(ExKey,ExType);
@@ -427,12 +432,13 @@ class itemdrop_event : Tracker {
 			if( containerId == 0 ) {//掉落
 				_log("samples_drop item drop, replace sample");
 				string itemtype = "carry_item";
-				const XmlElement@ fact_info = getFactionInfo(m_metagame,factionId);
-				if(fact_info is null){return;}
-				string fact_name = fact_info.getStringAttribute("name");
+				const XmlElement@ character = getCharacterInfo(m_metagame,characterId);
+				if(character is null){return;}
+				factionId = character.getIntAttribute("faction_id");
+				string fact_name = g_factionInfoBuck.getNameByFid(factionId);
 				_log("FactioName = " + fact_name);
 				_log("TargetNmae = " + string(samples_drop[itemKey]));
-				if(fact_name != string(samples_drop[itemKey])){//确认是否为同阵营样本
+				if(fact_name == string(samples_drop[itemKey])){//确认是否为同阵营样本
 					string ExKey = string(replace_drop[fact_name]);
 					_log("ExKey = " + ExKey);
 					Vector3 t_pos = stringToVector3(position);
@@ -444,8 +450,9 @@ class itemdrop_event : Tracker {
 	//-------------------------------------------------------
 	protected void banVest(const XmlElement@ event){
 		// 防止升级的护甲被存起来。
+		_log("delete banVest");
 		string itemKey = event.getStringAttribute("item_key");
-		string targetVestKey = "hd_v";
+		string targetVestKey = "hd_v_";
 		string tempKey = itemKey.substr(0,targetVestKey.size());
 		int characterId = event.getIntAttribute("character_id");
 		if(characterId == -1){return;}

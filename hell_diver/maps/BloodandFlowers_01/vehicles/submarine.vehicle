@@ -5,9 +5,9 @@
 	
 	<control max_speed="20.0" acceleration="15.0" max_reverse_speed="10.0" max_rotation="1.628" max_water_depth="-12.0" can_steer_in_water="1" can_steer_on_ground="0" gears="0" />
 
-	<modifier class="blast_damage" value="-0.9" />
+	<modifier class="blast_damage" value="-1000" />
 
-	<physics max_health="20" mass="10000.0" extent="3.6 0.0 35.0" offset="0 0 0" collision_model_pos="0 0 0" collision_model_extent="3.6 4.25 35" visual_offset="0 -1 0" /> 
+	<physics max_health="20" mass="1000.0" extent="3.6 0.0 35.0" offset="0 0 0" collision_model_pos="0 0 0" collision_model_extent="3.6 4.25 35" visual_offset="0 -1 0" /> 
 	
 	<visual class="chassis" mesh_filename="models/submarine_small.mesh" texture_filename="textures/submarine.png" />
 	<visual class="chassis" key="broken" mesh_filename="models/submarine_small.mesh" texture_filename="textures/submarine.png" />
@@ -23,27 +23,6 @@
 	<effect event_key="destroyed" ref="MediumSmokeVehicle" offset="0 5 0" />  
 	<effect event_key="destroyed" ref="MediumSmokeVehicle" offset="0 7 4" />    
 	<effect event_key="destroyed" ref="SmallFireRepeat" offset="0 5 0" />
-
-	<event key="destroy_xp_reward">
-		<trigger class="destroy" />
-		<result class="reward" xp="0.0100" />
-	</event>
-	<event key="destroy_rp_reward">
-		<trigger class="destroy" />
-		<result class="reward" rp="100" />
-	</event>
-	<event key="receive_damage_xp_reward">
-		<trigger class="receive_damage" />
-		<result class="reward" xp="0.0100" />
-	</event>
-	<event key="receive_damage_rp_reward">
-		<trigger class="receive_damage" />
-		<result class="reward" rp="500" />
-	</event>
-	<event key="spot_rp_reward">
-		<trigger class="spot" />
-		<result class="reward" rp="100" />
-	</event>
 	
 	<event>
 		<trigger class="destroy" />		

@@ -1,0 +1,99 @@
+<commands>
+  <!-- start_game command: new game menu picks up defaults from here and allows user to override certain settings -->
+  <command 
+	  class="start_game" 
+	  vehicles="1" 
+	  max_soldiers="140" 
+          soldier_capacity_model="constant"
+	  player_bot_compensation="4" 
+	  xp_multiplier="1.0"
+	  rp_multiplier="1.0"
+	  friendly_fire="0"
+	defense_win_time="400"
+	  base_capture_system="any"> 
+
+    <faction initial_over_capacity="0" ai_accuracy="0.94"  capacity_multiplier="0.65" />
+    <faction initial_over_capacity="35" ai_accuracy="0.94" />
+    <faction initial_over_capacity="0" ai_accuracy="0.94" capacity_multiplier="0.0" />
+  </command>
+  <command
+  class="faction_resources"
+  faction_id="1">
+  <vehicle key="mobile_armory.vehicle" enabled="0"/>
+  </command>  
+  <command 
+	  class="commander_ai" 
+	  faction="0"
+	  base_defense="0.1"
+	  border_defense="0.1">
+  </command>
+  <command 
+	  class="commander_ai" 
+	  faction="1"
+	  base_defense="0.1"
+	  border_defense="0.1"
+	  minimum_squad_size_to_send_to_side_base_attack='2' 
+	  side_base_attack_probability='0.7'>
+  </command>
+  <command 
+	  class="commander_ai" 
+	  faction="2"
+	  base_defense="0.2"
+	  border_defense="0.4">
+  </command>
+   <command 
+	class="create_instance" 
+	faction_id="1"
+	position="320 6 389"
+	offset="0 1 0"
+	character_id="0" 
+	instance_class="soldier"
+	instance_key="default" >
+</command>
+    <command 
+	class="create_instance" 
+	faction_id="1"
+	position="317 6 389"
+	offset="0 1 0"
+	character_id="0" 
+	instance_class="soldier"
+	instance_key="default" >
+</command>  
+ <command 
+	class="create_instance" 
+	faction_id="1"
+	position="309 6 389"
+	offset="0 1 0"
+	character_id="0" 
+	instance_class="soldier"
+	instance_key="default" >
+</command>   
+<command 
+	class="create_instance" 
+	faction_id="1"
+	position="312 6 389"
+	offset="0 1 0"
+	character_id="0" 
+	instance_class="soldier"
+	instance_key="default" >
+</command>
+<command 
+	class="create_instance" 
+	faction_id="1"
+	position="312 6 387"
+	offset="0 1 0"
+	character_id="0" 
+	instance_class="soldier"
+	instance_key="default" >
+</command>
+<command 
+	class="create_instance" 
+	faction_id="1"
+	position="312 6 386"
+	offset="0 1 0"
+	character_id="0" 
+	instance_class="soldier"
+	instance_key="default" >
+</command>
+  
+</commands>

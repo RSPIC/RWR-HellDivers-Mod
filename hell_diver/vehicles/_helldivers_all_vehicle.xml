@@ -45,4 +45,16 @@
 	<vehicle file="hd_projection_console.vehicle" />
 	<vehicle file="hd_rocket_launch_platform.vehicle" /><!--火箭发射平台-->
 	
+	<vehicle file="hd_ra2_minigun.vehicle" />
+	<vehicle file="hd_ra2_tesla.vehicle" />
+	<vehicle file="hd_fire_turrent.vehicle" />
+	<!-- 替换运货卡车 -->
+	<vehicle file="hd_rocket_trunk.vehicle" />
+	<!-- 自爆卡车 -->
+	<vehicle file="hd_demolition_truck.vehicle" />
+	<!-- 导弹发射器 -->
+	<vehicle file="hd_missile_launcher.vehicle" />
+	<!-- 多功能步兵车 -->
+	<vehicle file="hd_ra2_ifv.vehicle" />
+	
 </vehicles>

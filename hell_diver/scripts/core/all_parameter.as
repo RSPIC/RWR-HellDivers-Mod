@@ -30,6 +30,8 @@ dictionary airstrikeIndex = {
 
         {"hd_superearth_railcannon_strike_mk3",32},
 
+        {"acg_starwars_shipgirls_skill_damage",100},
+
         // 下面这行是用来占位的，在这之上添加新的即可
         {"666",-1}
 };
@@ -73,7 +75,7 @@ dictionary projectile_eventkey = {
         {"hd_ad289_angel_auto",38},
 
         //特殊功能
-        {"vehicle_recycle",41},
+        //{"vehicle_recycle",41}, 改为单独脚本控制
         {"upgrade",42},
 
         //技能
@@ -102,6 +104,8 @@ dictionary projectile_eventkey = {
         {"acg_arknight_ifrit_skill",54},
         //喷气包 AI 空降
         {"hd_hellpod_dropping_spawn_ai_jetpack",55},
+        //星舰少女 舰队支援技能
+        {"acg_starwars_shipgirls_skill",56},
 
         // 占位的
         {"666",-1}
@@ -113,32 +117,37 @@ dictionary vehicle_recycle_key = {
         // 空
         {"",-1},
 
-        {"noxe.vehicle",500},
+        {"noxe.vehicle",300},
         {"hd_td110_bastion.vehicle",500},
         {"hd_mc109_motor.vehicle",100},
         {"hd_m5_apc.vehicle",300},
-        {"ex_isu_152.vehicle",800},
+        {"ex_isu_152.vehicle",500},
         {"hd_m5_32_hav.vehicle",300},
         {"63type_107mm_rocket_launcher.vehicle",100},
         {"jeep.vehicle",100},
         {"cyborgs_ifv.vehicle",3000},
-        {"ex_sturmtiger_tank.vehicle",1000},
-        {"ex_apocalypse_tank.vehicle",1000},
-        {"ex_kv2_gup.vehicle",1000},
-        {"ex_sherman.vehicle",1000},
-        {"ba_crusader.vehicle",1000},
+        {"ex_sturmtiger_tank.vehicle",500},
+        {"ex_apocalypse_tank.vehicle",500},
+        {"ex_kv2_gup.vehicle",500},
+        {"ex_sherman.vehicle",500},
+        {"ba_crusader.vehicle",500},
         {"ex_m18.vehicle",500},
-        {"ba_torumaru_tiger.vehicle",1000},
-        {"is2_m1895.vehicle",1000},
-        {"himars.vehicle",1000},
-        {"mtlb_2b9.vehicle",1000},
-        {"m61a5.vehicle",1000},
-        {"borsig.vehicle",1000},
-        {"uragan.vehicle",1000},
-        {"mi_24.vehicle",1000},
-        {"bell_360.vehicle",1000},
-        {"mh_60s.vehicle",1000},
-        {"zbd09.vehicle",800},
+        {"ba_torumaru_tiger.vehicle",500},
+        {"is2_m1895.vehicle",500},
+        {"himars.vehicle",500},
+        {"mtlb_2b9.vehicle",500},
+        {"m61a5.vehicle",500},
+        {"borsig.vehicle",500},
+        {"uragan.vehicle",500},
+        {"mi_24.vehicle",500},
+        {"bell_360.vehicle",500},
+        {"mh_60s.vehicle",500},
+        {"zbd09.vehicle",500},
+        {"cargo_truck.vehicle",100},
+        {"t90m3.vehicle",500},
+        {"lav6.vehicle",500},
+        {"kirov.vehicle",500},
+        {"wiesel_tow.vehicle",300},
 
         // 占位的
         {"666",-1}
@@ -166,6 +175,10 @@ dictionary vehicle_repair_deny_key = {
         {"repair_crane.vehicle",1},
 
         {"hd_apb_mk3.vehicle",1},
+        {"kirov.vehicle",1},
+        {"mi_24.vehicle",1},
+        {"bell_360.vehicle",1},
+        {"mh_60s.vehicle",1},
 
         // 占位的
         {"666",-1}

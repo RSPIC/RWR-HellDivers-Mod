@@ -22,7 +22,7 @@ key="ex_vergil_judgment_cut.weapon"
     sight_range_modifier="1.5" 
     slot="0" 
 	stab_enabled="1"
-    stab_range="3.0"
+    stab_range="3.5"
 	use_basic_muzzle_smoke_effect="0"
 	projectile_speed="220.0"
 	cooldown_start="0.9"
@@ -183,7 +183,7 @@ key="ex_vergil_judgment_cut.weapon"
     <stance state_key="over_wall" accuracy="1" />     
      
 	<!--附加属性-->
-    <modifier class="speed" value="0.25" /> 
+    <modifier class="speed" value="0.2" /> 
     <modifier class="hit_success_probability" value="0.0" /><!--负值减少玩家抗致死率-->
     <modifier class="detectability" value="0.3" />	
 
@@ -209,7 +209,7 @@ key="ex_vergil_voidknife_realm.weapon"
     sight_range_modifier="1" 
     slot="0" 
 	stab_enabled="1"
-    stab_range="3.0"
+    stab_range="3.5"
 	use_basic_muzzle_smoke_effect="0"
 	projectile_speed="220.0"
 	cooldown_start="0.8"
@@ -391,7 +391,7 @@ key="ex_vergil_getsuga_tenshou.weapon"
     sight_range_modifier="2" 
     slot="0" 
 	stab_enabled="1"
-    stab_range="3.0"
+    stab_range="3.5"
 	use_basic_muzzle_smoke_effect="0"
 	projectile_speed="220.0"
 	cooldown_start="0.58"
@@ -540,7 +540,7 @@ key="ex_vergil_getsuga_tenshou.weapon"
     <stance state_key="over_wall" accuracy="1" />     
      
 	<!--附加属性-->
-    <modifier class="speed" value="0.25" /> 
+    <modifier class="speed" value="0.1" /> 
     <modifier class="hit_success_probability" value="0.0" /><!--负值减少玩家抗致死率-->
     <modifier class="detectability" value="0.3" />	
 
@@ -566,7 +566,7 @@ key="re_ex_vergil_judgment_cut.weapon"
     sight_range_modifier="1.5" 
     slot="0" 
 	stab_enabled="1"
-    stab_range="3.0"
+    stab_range="3.5"
 	use_basic_muzzle_smoke_effect="0"
 	projectile_speed="220.0"
 	cooldown_start="0.9"
@@ -727,7 +727,7 @@ key="re_ex_vergil_judgment_cut.weapon"
     <stance state_key="over_wall" accuracy="1" />     
      
 	<!--附加属性-->
-    <modifier class="speed" value="0.25" /> 
+    <modifier class="speed" value="0.2" /> 
     <modifier class="hit_success_probability" value="0.0" /><!--负值减少玩家抗致死率-->
     <modifier class="detectability" value="0.3" />	
 
@@ -753,7 +753,7 @@ key="re_ex_vergil_voidknife_realm.weapon"
     sight_range_modifier="1" 
     slot="0" 
 	stab_enabled="1"
-    stab_range="3.0"
+    stab_range="3.5"
 	use_basic_muzzle_smoke_effect="0"
 	projectile_speed="220.0"
 	cooldown_start="0.8"
@@ -935,7 +935,7 @@ key="re_ex_vergil_getsuga_tenshou.weapon"
     sight_range_modifier="2" 
     slot="0" 
 	stab_enabled="1"
-    stab_range="3.0"
+    stab_range="3.5"
 	use_basic_muzzle_smoke_effect="0"
 	projectile_speed="220.0"
 	cooldown_start="0.58"
@@ -1084,7 +1084,7 @@ key="re_ex_vergil_getsuga_tenshou.weapon"
     <stance state_key="over_wall" accuracy="1" />     
      
 	<!--附加属性-->
-    <modifier class="speed" value="0.25" /> 
+    <modifier class="speed" value="0.1" /> 
     <modifier class="hit_success_probability" value="0.0" /><!--负值减少玩家抗致死率-->
     <modifier class="detectability" value="0.3" />	
 
@@ -1115,7 +1115,7 @@ key="ex_vergil_skill.weapon"
     sight_range_modifier="2" 
     slot="1" 
 	stab_enabled="1"
-    stab_range="3.0"
+    stab_range="3.5"
 	use_basic_muzzle_smoke_effect="0"
 	projectile_speed="220.0"
 	cooldown_start="0.1"
@@ -1250,7 +1250,7 @@ key="ex_vergil_skill.weapon"
     <stance state_key="over_wall" accuracy="1" />     
      
 	<!--附加属性-->
-    <modifier class="speed" value="0.25" /> 
+    <modifier class="speed" value="0.1" /> 
     <modifier class="hit_success_probability" value="0.0" /><!--负值减少玩家抗致死率-->
     <modifier class="detectability" value="0.3" />	
 

@@ -24,7 +24,6 @@ class factionInfo {
 			m_soldier_groups[groupsName] = spawn_score;
 		}
 	}
-
 	bool get(string group_name){
 		float spawn_score;
 		if(m_soldier_groups.get(group_name,spawn_score)){
@@ -773,33 +772,58 @@ class battleInfoBuck{
 				uint pt = m_battleInfos[i].playingTime();
 				uint tc = m_battleInfos[i].tkCount();
 				uint dc = m_battleInfos[i].deadCount();
-				float bf = m_battleInfos[i].bonusFactor()*m_battleInfos[i].bonusFactorXp() - tc*0.02;
+				float bf = m_battleInfos[i].bonusFactor()*m_battleInfos[i].bonusFactorXp() - tc*0.04;
 				if(pt >= 30){
-					bf = bf*(1-(pt-30.0)/90.0);
+					bf = bf*(1-(pt-30.0)/60.0);
 					notify(m_metagame,"Battle Time Too Long,BonusFacto Decrease", dictionary(), "misc", pid, false, "", 1.0);
 				}
 				if(bf > 3.4){
 					bf = 3.4;
 				}
-				if(bf <= 0){
-					bf = 0;
+				float pt_bf = bf; //游玩时长的独立倍率因子
+				if(pt_bf <= 0.5){
+					pt_bf = 0.5;
 				}
+				if(bf <= 0){
+					bf = 0.01;
+				}
+				if(mc >= 8 ){	//防刷
+					mc = 8;
+				}
+				float ptRewardBase = 0.1; //游玩时长奖励 2000xp
+				float mcRewardBase = 0.75; //支线任务奖励 7500xp
+				float kcRewardBase = 0.01; //杀敌奖励 100xp
+				float ocRewardBase = 0.007; //连杀奖励 70xp
+				float dcRewardBase = 0.03; //死亡奖励 300xp
+				float tcPunishBase = 0.15; //TK惩罚 1500xp
+				if(g_server_difficulty_level == 3){ //挂机服降低收益
+					ptRewardBase = 0.05;
+				}
+				
+				uint maxKc = kc;
+				uint maxPt = pt;
+				if(maxKc >= 1000){maxKc = 1000;}//最高只记录1000杀
+				if(maxPt >= 30){maxPt = 30;} //最高只记录30分钟游玩时间
 				xp = 
-				  kc * 0.01 
-				+ oc * 0.015*NormalizedConcaveCurve(0.002*oc,0.5) 
-				+ mc * 0.5
-				+ pt * 0.03
-				- tc * 0.15
-				- dc * 0.03;
-				xp = xp*bf;
+				  maxKc * kcRewardBase 
+				+ oc * ocRewardBase*NormalizedConcaveCurve(0.002*oc,0.5) 
+				+ dc * dcRewardBase
+				- tc * tcPunishBase;
+				if(bf < 1){
+					xp = bf*(xp + mc*mcRewardBase)+pt_bf*maxPt*ptRewardBase; //游玩时长奖励和支线任务不参与乘算,超时除外
+				}else{
+					xp = xp*bf + maxPt*ptRewardBase + mc*mcRewardBase; //游玩时长奖励和支线任务不参与乘算
+				}
+				
 				if(xp<=0){xp=0;}
+				if(xp>=100){xp=100;}
 				dictionary a;
-				a["%kx"] = formatInt(int(kc*0.01*10000));
-				a["%ox"] = formatInt(int(oc*0.015*NormalizedConcaveCurve(0.002*oc,0.5)*10000));
-				a["%mx"] = formatInt(int(mc*0.5*10000));
-				a["%px"] = formatInt(int(pt*0.03*10000));
-				a["%tx"] = formatInt(int(tc*0.05*10000));
-				a["%dx"] = formatInt(int(dc*0.03*10000));
+				a["%kx"] = formatInt(int(maxKc*kcRewardBase*10000));
+				a["%ox"] = formatInt(int(oc*ocRewardBase*NormalizedConcaveCurve(0.002*oc,0.5)*10000));
+				a["%mx"] = formatInt(int(mc*mcRewardBase*10000));
+				a["%px"] = formatInt(int(maxPt*ptRewardBase*10000));
+				a["%tx"] = formatInt(int(tc*tcPunishBase*10000));
+				a["%dx"] = formatInt(int(dc*dcRewardBase*10000));
 				a["%kc"] = formatInt(kc);
 				a["%oc"] = formatInt(oc);
 				a["%mc"] = formatInt(mc);
@@ -822,36 +846,58 @@ class battleInfoBuck{
 			if(m_battleInfos[i].name() == name){ 	//1.0=1 rp
 				float rp;
 				uint kc = m_battleInfos[i].killCount();
-				uint oc = m_battleInfos[i].oneLifekillCount();//100连杀达到100rp，600时接近200rp，极限值200rp
+				uint oc = m_battleInfos[i].oneLifekillCount();
 				uint mc = m_battleInfos[i].missionCount(); 
 				uint pt = m_battleInfos[i].playingTime();
 				uint tc = m_battleInfos[i].tkCount();
 				uint dc = m_battleInfos[i].deadCount();
-				float bf = m_battleInfos[i].bonusFactor()*m_battleInfos[i].bonusFactorRp() - tc*0.02;
+				float bf = m_battleInfos[i].bonusFactor()*m_battleInfos[i].bonusFactorRp() - tc*0.04;
 				if(pt >= 30){
-					bf = bf*(1-(pt-30.0)/90.0);
+					bf = bf*(1-(pt-30.0)/60.0);
 					notify(m_metagame,"Battle Time Too Long,BonusFacto Decrease", dictionary(), "misc", pid, false, "", 1.0);
 				}
 				if(bf > 3.4){
 					bf = 3.4;
 				}
-				if(bf <= 0){
-					bf = 0;
+				float pt_bf = bf;
+				if(pt_bf <= 0.5){ //游玩时长的独立倍率因子
+					pt_bf = 0.5;
 				}
+				if(bf <= 0){
+					bf = 0.01;
+				}
+				if(mc >= 8 ){	//防刷
+					mc = 8;
+				}
+				int ptRewardBase = 3000; //游玩时长奖励
+				int mcRewardBase = 5000; //支线任务奖励
+				int kcRewardBase = 50; //杀敌奖励
+				int ocRewardBase = 15; //连杀奖励
+				int tcPunishBase = 700; //TK惩罚
+				if(g_server_difficulty_level == 3){ //挂机服降低收益
+					ptRewardBase = 1000;
+				}
+				uint maxKc = kc;
+				uint maxPt = pt;
+				if(maxKc >= 1000){maxKc = 1000;} //最高只记录1000杀
+				if(maxPt >= 30){maxPt = 30;} //最高只记录30分钟游玩时间
 				rp = 
-				  kc * 50
-				+ oc * 70*NormalizedConcaveCurve(0.002*oc,0.5)
-				+ mc * 3000
-				+ pt * 300
-				- tc * 700;
-				rp = rp*bf;
+				maxKc * kcRewardBase
+				+ oc * ocRewardBase*NormalizedConcaveCurve(0.002*oc,0.5)
+				- tc * tcPunishBase;
+				if(bf < 1){
+					rp = bf*(rp  + mc*mcRewardBase) + pt_bf*maxPt*ptRewardBase; //游玩时长奖励和支线任务不参与乘算,超时除外
+				}else{
+					rp = rp*bf + maxPt*ptRewardBase + mc*mcRewardBase; //游玩时长奖励和支线任务不参与乘算
+				}
 				if(rp<=0){rp=0;}
+				if(rp>=640000){rp=640000;} //上限
 				dictionary a;
-				a["%kx"] = formatInt(int(kc*50));
-				a["%ox"] = formatInt(int(oc*55*NormalizedConcaveCurve(0.002*oc,0.5)));
-				a["%mx"] = formatInt(int(mc*3000));
-				a["%px"] = formatInt(int(pt*300));
-				a["%tx"] = formatInt(int(tc*500));
+				a["%kx"] = formatInt(int(maxKc*kcRewardBase));
+				a["%ox"] = formatInt(int(oc*ocRewardBase*NormalizedConcaveCurve(0.002*oc,0.5)));
+				a["%mx"] = formatInt(int(mc*mcRewardBase));
+				a["%px"] = formatInt(int(maxPt*ptRewardBase));
+				a["%tx"] = formatInt(int(tc*tcPunishBase));
 				a["%kc"] = formatInt(kc);
 				a["%oc"] = formatInt(oc);
 				a["%mc"] = formatInt(mc);
@@ -870,12 +916,10 @@ class battleInfoBuck{
 		if(m_battleInfos is null){return false;}
 		for(uint i = 0 ; i < m_battleInfos.size() ; ++i){
 			if(m_battleInfos[i].name() == name){
-				if(m_battleInfos[i].playingTime() >= 10){
-					if(m_battleInfos[i].deadCount() == 0){
-						if(m_battleInfos[i].tkCount() == 0){
-							if(m_battleInfos[i].missionCount() != 0){
-								return true;
-							}
+				if(m_battleInfos[i].playingTime() >= 10 && m_battleInfos[i].playingTime() <= 30){
+					if(m_battleInfos[i].tkCount() <= 1){
+						if(m_battleInfos[i].missionCount() != 0){
+							return true;
 						}
 					}
 				}
@@ -1329,14 +1373,18 @@ firstUseInfoBuck@ g_firstUseInfoBuck = firstUseInfoBuck();
 userCountInfoBuck@ g_userCountInfoBuck = userCountInfoBuck();
 bool g_online_TestMode = false;
 bool g_debugMode = false;
+bool g_server_activity = false;
+bool g_server_activity_racing = false;
 int g_server_difficulty_level = 0;
 //----------------------------------------------------------
 //初始化用Tracker
 class Initiate : Tracker {
 	protected GameModeInvasion@ m_metagame;
-	protected bool m_ended;
+	protected bool m_ended = false;
 	protected bool m_debug_mode;
     protected int m_server_difficulty_level;
+    protected float m_time = 60;
+    protected float m_timer = 60;
 
 	Initiate(GameModeInvasion@ metagame) {
 		@m_metagame = @metagame;
@@ -1344,10 +1392,10 @@ class Initiate : Tracker {
 		m_debug_mode = settings.m_debug_mode;
 		g_debugMode = m_debug_mode;
 		g_online_TestMode = settings.m_server_test_mode;
+
 		m_server_difficulty_level = settings.m_server_difficulty_level;
 		g_server_difficulty_level = m_server_difficulty_level;
 
-		m_ended = false;
 		@g_factionInfoBuck = factionInfoBuck();	
  		@g_playerInfoBuck = playerInfoBuck();
  		@g_battleInfoBuck = battleInfoBuck();
@@ -1361,7 +1409,7 @@ class Initiate : Tracker {
 	// --------------------------------------------
 	bool hasEnded() const {
 		// always on
-		return m_ended;
+		return false;
 	}
 	// --------------------------------------------
 	bool hasStarted() const {
@@ -1370,6 +1418,11 @@ class Initiate : Tracker {
 	}
 
 	void update(float time){
+		m_timer -= time;
+        if(m_timer < 0){
+            m_timer = m_time;
+			updateGlobalPlayerInfoTimePlayed(m_metagame);
+        }
 	}
 	// ----------------------------------------------------
 	protected void handlePlayerSpawnEvent(const XmlElement@ event) {
@@ -1378,11 +1431,13 @@ class Initiate : Tracker {
 	}
 	// ----------------------------------------------------
 	protected void handlePlayerConnectEvent(const XmlElement@ event) {
-		const XmlElement@ player = event.getFirstElementByTagName("player");
-        if(player is null){return;}
-        string name = player.getStringAttribute("name");
-		g_firstUseInfoBuck.addInfo(name);
-		g_userCountInfoBuck.addInfo(name);
+		if(!m_ended){
+			const XmlElement@ player = event.getFirstElementByTagName("player");
+			if(player is null){return;}
+			string name = player.getStringAttribute("name");
+			g_firstUseInfoBuck.addInfo(name);
+			g_userCountInfoBuck.addInfo(name);
+		}
 	}
 	// ----------------------------------------------------
     protected void handlePlayerDisconnectEvent(const XmlElement@ event) {
@@ -1448,6 +1503,22 @@ class Initiate : Tracker {
 					_report(m_metagame,"Debug Mode is Off");
 				}
 			}
+			if(message == "/addkill"){
+				uint i = 1000;
+				while(i>0){
+					g_battleInfoBuck.addKill(p_name);
+					--i;
+				}
+				i = 30;
+				while(i>0){
+					g_battleInfoBuck.addTime();
+					--i;
+				}
+			}
+			if(message == "/endactivity"){
+				g_server_activity = false;
+				_report(m_metagame,"活动结束");
+			}
 		}
 		if(message == "/myfact"){
 			float bf = g_battleInfoBuck.bonusFactor(p_name);
@@ -1456,4 +1527,5 @@ class Initiate : Tracker {
 			notify(m_metagame,"你的全局倍率="+bf+"，xp倍率="+bfx+"，rp倍率="+bfr, dictionary(), "misc", pid, false, "", 1.0);
 		}
 	}
+		
 }

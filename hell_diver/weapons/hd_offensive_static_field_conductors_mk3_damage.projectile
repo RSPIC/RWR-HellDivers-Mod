@@ -16,7 +16,8 @@ time_to_live_out_in_the_open="0"
 player_death_drop_owner_lock_time="0"
 >
     <collision class="sticky" />
-    <result class="blast" radius="8.0" damage="100" push="0.1" decal="1" character_state="stun" faction_compare="not_equal"/>
+    <result class="blast" radius="8.0" damage="100" push="0.1" decal="1" character_state="stun"
+	make_vehicle_hit_sound="0" faction_compare="not_equal"/>
 	<trigger class="impact">
      <collider class="terrain" enabled="0" />     
      <collider class="static_object" enabled="0" /> 

@@ -373,6 +373,18 @@ class lottery_manager : Tracker {
             GiveRP(m_metagame,cid,rp);
         }
     }
+
+    //-------------------------------------------------------------
+    protected void handleChatEvent(const XmlElement@ event){
+		string message = event.getStringAttribute("message");
+		int pid = event.getIntAttribute("player_id");
+		if(message == "/getTestReward"){
+            const XmlElement@ player = getPlayerInfo(m_metagame,pid);
+            if(player !is null){
+                handleTesterReward(m_metagame,player,"serverTest");
+            }
+        }
+	}
 }
 
 class fate_coin_task : Task{

@@ -75,7 +75,6 @@
 	<weapon file="hd_arc_mgc_capacitor_mk3.weapon" /><!--MGC电容重机枪-->
 
 
-	
 	<!-- EXO 机甲 -->
 	<weapon file="hd_exo44_walker_mk3_mg.weapon" /><!--践踏者-->
 	<weapon file="hd_exo44_walker_mk3_missile.weapon" /><!--践踏者-->
@@ -95,6 +94,9 @@
 	<weapon file="hd_nux_223_hellbomb.weapon" /><!--地狱火-->
 	<weapon file="hd_driver_binoculars.weapon" /><!--驾驶员望远镜-->
 	<weapon file="hd_rocket_launch_platform.weapon" /><!--火箭发射平台-->
+	<weapon file="hd_ra2_tesla.weapon" /><!--特斯拉-->
+	<weapon file="hd_missile_launcher.weapon" /><!--导弹发射器-->
+	<weapon file="hd_ra2_ifv.weapon" /><!--多功能步兵车-->
 
 	<weapon file="hd_vehicle_eject.weapon" /><!--载具抛壳-->
 	
@@ -113,11 +115,16 @@
 
 	<!-- 部署物 -->
 	<weapon file="hd_apb_mk3.weapon" /><!--铁丝网-->
+	<weapon file="hd_deployable.weapon" />
 	
 
 	<!-- ai专用 -->
 	<weapon file="hd_ai_eta17_mk3.weapon" /><!--反坦克-->
 	<weapon file="hd_ai_mls4x_commando_mk3.weapon" /><!--反坦克-->
 	<weapon file="hd_ai_rl112_recoilless_rifle_mk3.weapon" /><!--反坦克-->
-	<weapon file="hd_ai_all_weapons.xml" /><!--集合-->
+
+	<!-- 特殊 -->
+	<weapon file="hd_explosive_bunny.weapon" /><!--爆炸兔-->
+	<weapon file="hd_special_reward.weapon" /><!--特殊奖励武器-->
+	
 </weapons>

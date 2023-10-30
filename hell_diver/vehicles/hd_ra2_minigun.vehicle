@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vehicle 
+name="Sentry Gun" 
+map_view_atlas_index="13" 
+usable_for_cover="0" 
+protectors="1" 
+soldier_capacity_offset="1"
+key="hd_ra2_minigun.vehicle"
+character_leave_request_mode="friendly"
+ai_abandon_when_unsteerable="1"
+>
+	<tag name="target" />
+	<tire_set offset="0.5 0.0 0.5" radius="0.65" />
+	<tire_set offset="0.5 0.0 -0.5" radius="0.65" />
+	
+	<control 
+	max_speed="3.0" acceleration="1.0" max_reverse_speed="1.0" max_rotation="0.8" max_water_depth="1.0" />
+
+	<physics 
+	max_health="300" 
+	mass="500" 
+	extent="1.2 0.0 1.2" 
+	offset="0 0.0 0" 
+	top_offset="0 2 0" 
+	collision_model_pos="0 0.2 0" 
+	collision_model_extent="2.5 0.4 2.5" 
+	visual_offset="0 0.0 0" 
+	collision_response_factor="0.2" 
+	blast_push_threshold="10.0" 
+	vehicle_collision_damage_factor="2.0" /> 
+
+	<turret offset="0 0 0.0" weapon_key="hd_vehicle_minigun.weapon" weapon_offset="0.35 1 1.2" weapon_recoil="0.02" physics_recoil="0.0"  max_rotation_step="0.001" rotation="0"  />
+	<turret offset="0 0 0.0" weapon_key="hd_vehicle_minigun.weapon" weapon_offset="-0.35 1 1.2" weapon_recoil="0.02" physics_recoil="0.0"  max_rotation_step="0.001" rotation="0"  />
+
+	<visual class="chassis" mesh_filename="hd_ra2_minigun_base.mesh" texture_filename="hd_ra2_minigun.jpg" />
+	<visual class="chassis" key="broken" mesh_filename="hd_ra2_minigun_base.mesh" texture_filename="hd_ra2_minigun_broken.jpg" />
+
+	<visual class="turret" turret_index="0" mesh_filename="hd_ra2_minigun_turrent.mesh" texture_filename="hd_ra2_minigun.jpg"/>
+	<visual class="turret" key="broken" turret_index="0" mesh_filename="hd_ra2_minigun_turrent.mesh" texture_filename="hd_ra2_minigun_broken.jpg"/>
+
+	<character_slot type="gunner" attached_on_turret="0" seat_position="0 0 0" enter_position="0 0 -2" rotation="0" exit_rotation="-1.57" hiding="1" animation_key="tank mg still">
+		<turret index="0" /><turret index="1" />
+		<state class="entering" animation_key="crouching forwards short, no weapon" position="0 0 -2" rotation="0" />
+		<state class="leaving" animation_key="crouching forwards short, no weapon" position="0 0 -2" rotation="3.14" />
+	</character_slot>
+
+	<!-- sound handling -->
+	<rev_sound filename="truck_rev0.wav" low_pitch="0.95" high_pitch="1.05" low_rev="0.0" high_rev="0.2" volume="1.0" />
+	<rev_sound filename="truck_rev3.wav" low_pitch="0.7" high_pitch="1.0" low_rev="0.05" high_rev="0.7" volume="1.0" />
+	<rev_sound filename="truck_rev4.wav" low_pitch="0.8" high_pitch="1.0" low_rev="0.4" high_rev="1.0" volume="1.0" />
+
+	<sound key="slide" filename="slide_noise.wav" />
+	<sound key="squeal" filename="tire_squeal.wav" />
+	<sound key="ignition" filename="truck_ignition.wav" />
+	<sound key="hit" filename="car_hit1.wav" />
+	<sound key="hit" filename="car_hit2.wav" />
+	<sound key="hit" filename="car_hit3.wav" />
+  
+	<effect event_key="destroyed" ref="car_destroyed_fire" post_processing="0" offset="0 0.5 0" />
+	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="1" offset="0 0.5 0" />  
+	<effect event_key="destroyed" ref="car_broken_spary_spark" post_processing="1" offset="0 0.5 0" /> 
+
+	<event key="spot_rp_reward">
+		<trigger class="spot" />
+		<result class="reward" rp="200.0" />
+	</event>
+
+	<event key="destroy_rp_reward">
+		<trigger class="destroy" />
+		<result class="reward" rp="600.0" />
+	</event>
+
+</vehicle>

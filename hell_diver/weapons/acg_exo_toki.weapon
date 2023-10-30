@@ -41,7 +41,7 @@ key="acg_exo_toki.weapon"
 
 	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_effect_drop_target.projectile" 
 	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0.0" />
-	
+
 	<animation key="recoil" animation_key="acg_toki_recoil" />
 	<animation state_key="reload" animation_key="acg_toki_reload"/>
 	<animation state_key="hold" animation_key="acg_toki_still" />

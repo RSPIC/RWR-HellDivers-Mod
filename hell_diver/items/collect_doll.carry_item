@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+	 <!-- <carry_item file="collect_doll_ba_peroro.carry_item" />佩洛洛 -->
+
+<carry_items>
+<carry_item 
+name="Peroro Doll" 
+key="collect_doll_ba_peroro.carry_item"
+file="_collect_rare.base"
+>
+    <hud_icon filename="collect_doll_ba_peroro.png" />
+    <inventory  price="250.0" />
+    <model filename="collect_doll_ba_peroro.xml" />
+</carry_item>
+</carry_items>

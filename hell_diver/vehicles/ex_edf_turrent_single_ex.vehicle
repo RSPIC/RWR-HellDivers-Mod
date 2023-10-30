@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vehicle 
+name="EDF Cannon" 
+key="ex_edf_turrent_single_ex.vehicle" 
+map_view_atlas_index="7" 
+time_to_live_unsteerable="1" 
+should_be_destroyed="1" 
+max_character_collision_speed_on_normal="40"
+simulated_damage="0.5"
+usable_for_cover="1"
+allow_ai_to_use="0"
+ >
+	<tag name="metal_thin" />
+	<tag name="defensive_at" />
+
+	<tire_set offset="1 0.0 1" radius="0.3" />
+	<tire_set offset="1 0.0 -1" radius="0.3" />
+
+	<modifier class="blast_range" value="-2.0" />
+	<modifier class="blast_damage" value="-3.0" />
+
+	<control max_speed="1" acceleration="1" max_reverse_speed="1.0" max_rotation="0.0" max_water_depth="2"
+	steer_smoothening="0" 
+	tracked="1" gears="0"
+	/>
+
+	<physics 
+	max_health="300" 
+	mass="500" 
+	extent="0.5 0.0 0.5" 
+	offset="0 0.0 0" 
+	top_offset="0 0.1 0" 
+	collision_model_pos="0 1 0" 
+	collision_model_extent="2 2 2" 
+	visual_offset="0 0.5 0" 
+	drag_offset="0"
+	blast_push_threshold="10.0" 
+	vehicle_collision_damage_factor="20"
+	gravity="-40" 
+	/> 
+		<sky_diving chute_offset="0 0 0" trigger_height="20" gravity="-80" mesh_filename="" texture_filename="" />
+
+	<!-- 主炮加激光指示器 -->
+	<turret offset="0 0 0" weapon_key="ex_edf_turrent_single_ex.weapon" weapon_offset="0.35 2.2 1.7" weapon_recoil="2" 
+	 max_rotation_step="0.00015" />
+	<turret offset="0 0 0" weapon_key="auxiliary_car_fire_aim.weapon" weapon_offset="0.35 2.2 1.7" weapon_recoil="0" 
+	 max_rotation_step="0.00015" />
+	<turret offset="0 0 0" weapon_key="hd_vehicle_weapon_laser.weapon" weapon_offset="0.35 2.2 0" 
+		weapon_recoil="0" max_rotation_step="0"  parent_turret_index="0" />
+	<turret offset="0 0 0" weapon_key="hd_vehicle_152mm_eject_m5_32.weapon" weapon_offset="0.35 2.2 0" weapon_recoil="0" 
+	 max_rotation_step="0.00015" />
+
+	<!-- 车体 -->
+	<visual class="chassis" offset="0 0 0" mesh_filename="edf_turrent_single_base.mesh" texture_filename="edf_turrent_single_base.jpg" />
+	<visual class="chassis" key="broken" offset="0 0 0" mesh_filename="edf_turrent_single_base.mesh" texture_filename="edf_turrent_single_cannon_broken.jpg" />
+	<!-- 炮台 -->
+	<visual class="turret" offset="0 0 0" turret_index="0" mesh_filename="edf_turrent_single_cannon.mesh" texture_filename="edf_turrent_single_base.jpg" />
+	<visual class="turret" key="broken" offset="0 0 0" turret_index="0" mesh_filename="edf_turrent_single_cannon_broken.mesh" texture_filename="edf_turrent_single_cannon_broken.jpg" />
+	<!-- 操控 -->
+	<character_slot type="gunner" attached_on_turret="0" seat_position="0 -0.6 0" exit_rotation="1.57" hiding="1" animation_key="driving car" enter_position="1 0 0" >
+		<turret index="0"/><turret index="1"/><turret index="2"/><turret index="3"/>
+	</character_slot>
+
+	<sound key="slide" filename="" />
+	<sound key="squeal" filename="" />
+	<sound key="ignition" filename="" />
+	<sound key="horn" filename="" />  
+	<sound key="hit" filename="car_hit1.wav" />
+	<sound key="hit" filename="car_hit2.wav" />
+	<sound key="turret_rotation" filename="turret_rotation1.wav" />
+	<sound key="destroy" filename="hellpod_close_01.wav" />  
+	<sound key="destroy" filename="hellpod_close_02.wav" />  
+
+	<effect event_key="health" value="40" ref="car_broken_spary_spark" offset="0 1 0" />
+	<effect event_key="health" value="40" ref="car_slide_up_smoke" offset="0 1 0" />
+
+	<effect event_key="destroyed" ref="car_destroyed_fire" post_processing="0" offset="0 1 0" />
+	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="1" offset="0 1 0" />  
+	<effect event_key="destroyed" ref="car_broken_spary_spark" post_processing="1" offset="0 1 0" />  
+
+	<event key="spot_rp_reward">
+		<trigger class="spot" />
+		<result class="reward" rp="200.0" />
+	</event>
+
+	<event key="destroy_rp_reward">
+		<trigger class="destroy" />
+		<result class="reward" rp="600" />
+	</event>
+
+	<event>
+		<trigger class="destroy" />
+  	<result class="spawn" instance_class="projectile" instance_key="hd_vehicle_destroy_damage.projectile" min_amount="1"
+	 max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" /><!--摧毁时的爆炸-->
+	</event>
+
+	<event>
+		<trigger class="destroy" />
+  	<result class="spawn" instance_class="visual_item" instance_key="hd_hellpod_vanish.visual_item" min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0 0" /><!--消失的时候烟雾特效-->
+	</event>
+		<event>
+		<trigger class="destroy" />
+  	<result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor1.visual_item" min_amount="1" max_amount="3" offset="0 2.5 0" position_spread="1.5 1.5" direction_spread="0.15 0.3" />
+	</event>
+	<event>
+		<trigger class="destroy" />  	
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor2.visual_item" min_amount="0" max_amount="1" offset="0 2.5 0" position_spread="1.5 1.5" direction_spread="0.10 0.25" />
+	</event>
+  <event>
+		<trigger class="destroy" />		
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor3.visual_item" min_amount="1" max_amount="2" offset="0 2.5 0" position_spread="1.5 1.5" direction_spread="0.12 0.20" />
+	</event>
+  <event>
+		<trigger class="destroy" />		
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor4.visual_item" min_amount="1" max_amount="2" offset="0 2.5 0" position_spread="1.5 1.5" direction_spread="0.2 0.25" />
+	</event>    
+
+  <event>
+		<trigger class="cleanup" />		
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_cleanup.visual_item" min_amount="20" max_amount="30" offset="0 2.0 0" position_spread="1.5 1.5" direction_spread="0.1 0.1" /> 
+  </event>    
+</vehicle>

@@ -408,17 +408,7 @@ class BasicCommandHandler : Tracker {
 			Event_call_helldiver_superearth_airstrike@ new_task = Event_call_helldiver_superearth_airstrike(m_metagame,2.0,playerInfo.getIntAttribute("character_id"),playerInfo.getIntAttribute("faction_id"),pos1,pos2,"hd_superearth_airstrike_1");
 			TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
 			tasker.add(new_task);
-		} else if (checkCommand(message, "cyborgs")) {
-			spawnInstanceNearPlayer(senderId, "Warlord", "soldier", 1);                               
-			spawnInstanceNearPlayer(senderId, "Hulk", "soldier", 1);                               
-			spawnInstanceNearPlayer(senderId, "Butcher", "soldier", 1);                               
-			spawnInstanceNearPlayer(senderId, "Warlord", "soldier", 1);                               
-			spawnInstanceNearPlayer(senderId, "Hulk", "soldier", 1);                               
-			spawnInstanceNearPlayer(senderId, "Butcher", "soldier", 1);                               
-			spawnInstanceNearPlayer(senderId, "Warlord", "soldier", 1);                               
-			spawnInstanceNearPlayer(senderId, "Hulk", "soldier", 1);                               
-			spawnInstanceNearPlayer(senderId, "Butcher", "soldier", 1);    
-		} 
+		}
 	}
 
 	// --------------------------------------------
@@ -484,6 +474,8 @@ class BasicCommandHandler : Tracker {
 	
 	// ----------------------------------------------------
 	protected void spawnInstanceNearPlayer(int senderId, string key, string type, int factionId = 0, bool skydive = false) {
+		_log("spawnInstanceNearPlayer");
+		_log("pid ="+senderId+" name="+g_playerInfoBuck.getNameByPid(senderId));
 		const XmlElement@ playerInfo = getPlayerInfo(m_metagame, senderId);
 		if (playerInfo !is null) {
 			const XmlElement@ characterInfo = getCharacterInfo(m_metagame, playerInfo.getIntAttribute("character_id"));

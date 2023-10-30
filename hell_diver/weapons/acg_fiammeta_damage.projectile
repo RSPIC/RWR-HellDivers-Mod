@@ -16,7 +16,8 @@ radius="1.0"
 >
     <collision class="sticky" />
     <trigger class="time" time_to_live="0" />
-    <result class="blast" radius="5" damage="4.5" push="0.3" decal="0" character_state="death"
+    <result class="blast" radius="5" damage="4.5" push="0.3" decal="0"
+    faction_compare="not_equal" character_state="death" make_vehicle_hit_sound="0"
      damage_origin_vehicle="0"/>
     	
     <rotation class="motion" />
@@ -91,7 +92,7 @@ radius="1.0"
     <collision class="sticky" />
     <trigger class="time" time_to_live="0" />
     <result class="blast" radius="5.0" damage="15" push="0.3" decal="0" character_state="wound"
-    faction_compare="not_equal" damage_origin_vehicle="0"/>
+    faction_compare="not_equal" damage_origin_vehicle="0" make_vehicle_hit_sound="0"/>
     	
     <rotation class="motion" />
 	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>		

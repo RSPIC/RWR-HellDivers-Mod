@@ -49,6 +49,10 @@ void normalizeScoredResources(array<ScoredResource@>@ resources) {
 
 	for (uint j = 0; j < resources.size(); ++j) {
 		ScoredResource@ r = resources[j];
+		if(sum == 0){
+			r.m_score = 0;
+			continue;
+		}
 		r.m_score = r.m_score / sum;
 	}
 }

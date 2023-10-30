@@ -2,7 +2,8 @@
 <resources clear_weapons="0" clear_vehicles="0" clear_calls="0">
 	<!-- always load common first; it"s the one that clears the initial weapon resources -->
 
-	<weapon key="63type_107mm_rocket_launcher_resource.weapon" /> <!--63式火箭炮-->
+	<!-- <weapon key="63type_107mm_rocket_launcher_resource.weapon" /> -->
+	 <!--63式火箭炮-->
 
 	<projectile key="ex_isu_152_call.projectile" /> <!--152-->
 	<projectile key="noxe_call.projectile" /> <!--noxe-->
@@ -15,5 +16,6 @@
 
 	<carry_item key="lottery_cash_II.carry_item" /><!-- -->
     <carry_item key="lottery_cash.carry_item" /><!-- -->
-
+	
+    <weapon key="stash_box.weapon" /><!--脚本仓库-->
 </resources>

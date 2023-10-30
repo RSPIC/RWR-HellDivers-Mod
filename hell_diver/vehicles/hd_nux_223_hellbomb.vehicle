@@ -78,8 +78,8 @@ character_leave_request_mode="friendly"
 	</event>
 	<event>
 	<trigger class="destroy" />
-  	<result class="spawn" instance_class="projectile" instance_key="hd_nux_223_hellbomb_damage_destroy.projectile" min_amount="1"
-	 max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" /><!--摧毁时的爆炸-->
+		<result class="spawn" instance_class="projectile" instance_key="hd_nux_223_hellbomb_damage_destroy.projectile" min_amount="1"
+		max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" /><!--摧毁时的爆炸-->
 	</event>
 
 </vehicle>

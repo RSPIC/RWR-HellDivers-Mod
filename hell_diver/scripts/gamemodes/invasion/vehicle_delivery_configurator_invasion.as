@@ -22,6 +22,7 @@ class VehicleDeliveryConfiguratorInvasion : VehicleDeliveryConfigurator {
 			_log("adding vehicle escort objective", 2);
 
 			string target = "cargo_truck.vehicle";
+			target = ""; // 取消原版脚本执行 
 			dictionary unlockList;
 			array<Resource@>@ list = getUnlockItemList();
 			unlockList.set(target, @list);

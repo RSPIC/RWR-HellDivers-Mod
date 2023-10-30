@@ -32,6 +32,9 @@ void main(dictionary@ inputData) {
         settings.m_server_difficulty_level = 9;
         settings.m_debug_mode = true;
 
+        settings.m_server_activity = false; //define whether skip the map when end.
+        settings.m_server_activity_racing = false;
+
         _setupLog("dev_verbose");
         array<string> overlays = {
                 "media/packages/hell_diver"

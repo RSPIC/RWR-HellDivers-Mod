@@ -115,7 +115,7 @@ class bgm_control : Tracker{
     }
     // --------------------------------------------
 	bool hasEnded() const {
-		return m_ended;
+		return false;
 	}
 	// --------------------------------------------
 	bool hasStarted() const {
@@ -124,33 +124,19 @@ class bgm_control : Tracker{
     //---------------------------------------------------------
     protected void PlayBgm(){
         array<string> cyborgs_bgmList_fight = {
-            "cyborgs_fighting_bgm_3.wav",
-            "cyborgs_fighting_bgm_4.wav",
-            "cyborgs_fighting_bgm_5.wav",
-            "cyborgs_fighting_bgm_6.wav",
-            "cyborgs_fighting_bgm_7.wav"
+            "cyborgs_fighting_bgm_3.wav"
         };
         array<string> cyborgs_bgmList_searching = {
-            "cyborgs_searching_bgm_1.wav",
-            "cyborgs_searching_bgm_2.wav",
-            "cyborgs_searching_bgm_4.wav",
             "cyborgs_searching_bgm_5.wav"
         };
         array<string> cyborgs_bgmList_boss = {
             "cyborgs_boss_bgm.wav"
         };
         array<string> bugs_bgmList_fight = {
-            "bugs_fighting_bgm_1.wav",
-            "bugs_fighting_bgm_2.wav",
-            "bugs_fighting_bgm_3.wav",
-            "bugs_fighting_bgm_4.wav",
-            "bugs_fighting_bgm_5.wav"
+            "bugs_fighting_bgm_1.wav"
         };
         array<string> bugs_bgmList_searching = {
-            "bugs_searching_bgm_1.wav",
-            "bugs_searching_bgm_2.wav",
-            "bugs_searching_bgm_3.wav",
-            "bugs_searching_bgm_4.wav"
+            "bugs_searching_bgm_2.wav"
         };
         array<string> bugs_bgmList_boss = {
             "bugs_boss_bgm_1.wav",

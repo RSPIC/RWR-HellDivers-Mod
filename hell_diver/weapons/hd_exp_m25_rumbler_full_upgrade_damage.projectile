@@ -7,7 +7,8 @@ blast_damage_threshold="50"
 >
 	 
 	<collision class="sticky" />
-	<result class="blast" radius="7.0" damage="15.0" push="1.2" decal="0" character_state="wound"/>
+	<result class="blast" radius="7.0" damage="15.0" push="1.2" decal="0"
+	damage_origin_vehicle="0" make_vehicle_hit_sound="0" character_state="wound"/>
 	<trigger class="time" time_to_live="0" />	
     <rotation class="motion" />
 	<model mesh_filename="" />
@@ -21,7 +22,8 @@ blast_damage_threshold="50"
 >
 	 
 	<collision class="sticky" />
-	<result class="blast" radius="7.0" damage="15.0" push="1.2" decal="0" character_state="wound" faction_compare="not_equal" damage_origin_vehicle="0"/>
+	<result class="blast" radius="7.0" damage="15.0" push="1.2" decal="0" character_state="wound"
+	make_vehicle_hit_sound="0" faction_compare="not_equal" damage_origin_vehicle="0"/>
 	<trigger class="time" time_to_live="0" />	
     <rotation class="motion" />
 	<model mesh_filename="" />

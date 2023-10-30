@@ -23,7 +23,7 @@
 	<character_slot type="driver" position="0.47 0.6 1.12" rotation="0" exit_rotation="1.57" hiding="1" animation_id="36" />
 <!--	<character_slot type="passenger" position="-0.47 0.6 1.12" rotation="0" exit_rotation="-1.57" hiding="1" animation_id="37" />   -->
 	
-		<item_container class="armory" offset="1.0 0.45 0.0" soldier_group="icecream" />
+	<item_container class="armory" offset="1.0 0.45 0.0" soldier_group="icecream" />
 	
 		<!-- sound handling -->
 	<rev_sound filename="orchid_grass.wav" low_pitch="1" high_pitch="1" low_rev="1.0" high_rev="1" volume="1.0" />

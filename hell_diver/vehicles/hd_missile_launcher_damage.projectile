@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectiles>
+<projectile  
+class="grenade" 
+key="hd_missile_launcher_mk1_damage.projectile" 
+slot="0"
+pulldown_in_air="15.0"
+on_ground_up="0 1 0"
+radius="0.3"
+>
+	<result class="blast" radius="3.8" damage="20" push="0.4" decal="0"
+	damage_origin_vehicle="0" make_vehicle_hit_sound="0" character_state="wound"/>
+	<trigger class="time" time_to_live="0" />	
+    <rotation class="random" />
+	<model mesh_filename="" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+</projectile>
+<projectile  
+class="grenade" 
+key="hd_missile_launcher_mk2_damage.projectile" 
+slot="0"
+pulldown_in_air="15.0"
+on_ground_up="0 1 0"
+radius="0.3"
+>
+	<result class="blast" radius="3.8" damage="2.5" push="0.4" decal="0"
+	damage_origin_vehicle="0" make_vehicle_hit_sound="0" faction_compare="not_equal" character_state="stun"/>
+	<trigger class="time" time_to_live="0" />	
+    <rotation class="random" />
+	<model mesh_filename="" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+</projectile>
+<projectile  
+class="grenade" 
+key="hd_missile_launcher_mk3_damage.projectile" 
+slot="0"
+pulldown_in_air="15.0"
+on_ground_up="0 1 0"
+radius="0.3"
+>
+	<result class="blast" radius="3.8" damage="2.5" push="0.4" decal="0"
+	damage_origin_vehicle="0" make_vehicle_hit_sound="0" character_state="blast"/>
+	<trigger class="time" time_to_live="0" />	
+    <rotation class="random" />
+	<model mesh_filename="" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+</projectile>
+</projectiles>

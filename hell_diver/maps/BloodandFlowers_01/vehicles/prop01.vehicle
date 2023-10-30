@@ -15,11 +15,6 @@
 	<sound key="hit" filename="thin_metal_impact2.wav" />
 	<sound key="hit" filename="thin_metal_impact3.wav" />
 
-	<event>
-		<trigger class="receive_damage" />
-		<result class="reward" xp="0.0" />
-	</event>
-
 	<effect event_key="destroy" key="other" ref="SmokeMinor" post_processing="1" />
 	<effect event_key="destroy" key="other" ref="ShadowSmokeMinor" shadow="1" />
 </vehicle>

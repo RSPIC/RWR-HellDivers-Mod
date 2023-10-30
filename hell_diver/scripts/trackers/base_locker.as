@@ -13,7 +13,7 @@
 #include "INFO.as"
 
 //Author： rst
-//战役超过一定时长，进入锁点占领模式，以加快玩家推进进程
+//TODO:战役超过一定时长，进入锁点占领模式，以加快玩家推进进程
 
 
 class base_locker : Tracker{

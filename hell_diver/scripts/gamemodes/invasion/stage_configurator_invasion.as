@@ -22,6 +22,16 @@ class StageConfiguratorInvasion : StageConfigurator {
 		@m_mapRotator = mapRotator;
 		mapRotator.setConfigurator(this);
 		m_stagesAdded = 0;
+		
+		const UserSettings@ settings = m_metagame.getUserSettings();
+		g_server_activity_racing = settings.m_server_activity_racing;
+		g_server_activity = settings.m_server_activity;
+		if(g_server_activity){
+			_log("g_server_activity is true");
+		}
+		if(g_server_activity_racing){
+			_log("g_server_activity_racing is true");
+		}
 	}
 
 	// ------------------------------------------------------------------------------------------------
@@ -152,34 +162,25 @@ class StageConfiguratorInvasion : StageConfigurator {
 	
 	// ------------------------------------------------------------------------------------------------
 	protected void addLotteryVehicle(Stage@ stage) {
-		if(g_server_difficulty_level <= 9){
-			array<ScoredResource@> resources = {
-				// for testing: 0 score no spawn -> 100% chance for icecream
-				//ScoredResource("", "", 0.0f),          
-				ScoredResource("", "", 0.0f),
-				ScoredResource("icecream.vehicle", "vehicle", 100.0f)
-			};
-			stage.addTracker(SpawnAtNode(m_metagame, resources, "icecream", 1, 1));
-			return;
-		}
 		array<ScoredResource@> resources = {
 			// for testing: 0 score no spawn -> 100% chance for icecream
 			//ScoredResource("", "", 0.0f),          
 			ScoredResource("", "", 0.0f),
-			ScoredResource("icecream.vehicle", "vehicle", 0.0f)
+			ScoredResource("icecream.vehicle", "vehicle", 100.0f)
 		};
 		stage.addTracker(SpawnAtNode(m_metagame, resources, "icecream", 1, 1));
+		return;
 	}
 	
 	// ------------------------------------------------------------------------------------------------
 	protected void addDarkcatVehicle(Stage@ stage) {
-		array<ScoredResource@> resources = {
-			// for testing: 0 score no spawn -> 100% chance for icecream
-			//ScoredResource("", "", 0.0f),          
-			ScoredResource("", "", 100.0f),
-			ScoredResource("darkcat.vehicle", "vehicle", 0.0f)
-		};
-		stage.addTracker(SpawnAtNode(m_metagame, resources, "darkcat", 1, 1));
+		// array<ScoredResource@> resources = {
+		// 	// for testing: 0 score no spawn -> 100% chance for icecream
+		// 	//ScoredResource("", "", 0.0f),          
+		// 	ScoredResource("", "", 100.0f),
+		// 	ScoredResource("darkcat.vehicle", "vehicle", 0.0f)
+		// };
+		// stage.addTracker(SpawnAtNode(m_metagame, resources, "darkcat", 1, 1));
 	}	
 	
 	// ------------------------------------------------------------------------------------------------
@@ -212,34 +213,49 @@ class StageConfiguratorInvasion : StageConfigurator {
 
 	// ------------------------------------------------------------------------------------------------
 	protected void setupNormalStages() {
-		addStage(setupStageBloodandFlowers_01());         // BloodandFlowers_01 By asanonana ver1.5.11
-		addStage(setupStage8());          // map8 #13 10 
-		addStage(setupStage10());         // map10 #7 4 疑似有bug ver1.5.10
-		addStage(setupStage14());         // map6_2 #14 11
-		addStage(setupStage2());          // map4 #15 12
-		addStage(setupStage3());          // map3 #10 7
-		addStage(setupStage6());          // map5 #17 15
-		//addStage(setupFinalStage2());     // map12 #18 黑猫
-		addStage(setupStage19());         // map18 #19
-		addStage(setupStage11());         // map13 #20
-		addStage(setupStage7());          // map6 #0
-		addStage(setupStage5());          // map1 #16 14 
-		addStage(setupStage1());          // map2 #1
-		addStage(setupStage9());          // map9 #2
-		addStage(setupStage16());         // map8_2 #3 雪地威克岛
-		addStage(setupStage21());         // map20 #7 16 战壕小岛
-		addStage(setupStage4());          // map7 #4 3
-		//addStage(setupStage15());         // map1_2 #5 太大
-		//addStage(setupStage12());         // map14 #6 脚本不运行s
-		addStage(setupStage17());         // map17  #8 5
-		addStage(setupStage18());         // map13_2 #9 6
-		addStage(setupStage13());         // map16  #11  8
-		addStage(setupFinalStage1());     // map11 #12 潜行9
-		addStage(setupStageCasake_Bay());         // Casake_Bay #21
-		addStage(setupStage20());         // map19 #17	13 鹅城
-       
+		if(g_server_activity){
+			setupActivityStages();
+			_log("setupNormalStages add g_server_activity");
+		}else{
+			_log("setupNormalStages add normal");
+			addStage(setupStageBloodandFlowers_01());         // BloodandFlowers_01 By asanonana ver1.5.11
+			addStage(setupStage8());          // map8 #13 10 
+			addStage(setupStage10());         // map10 #7 4 疑似有bug ver1.5.10
+			addStage(setupStage14());         // map6_2 #14 11
+			addStage(setupStage2());          // map4 #15 12
+			addStage(setupStage3());          // map3 #10 7
+			addStage(setupStage6());          // map5 #17 15
+			//addStage(setupFinalStage2());     // map12 #18 黑猫
+			addStage(setupStage19());         // map18 #19
+			addStage(setupStage11());         // map13 #20
+			addStage(setupStage7());          // map6 #0
+			addStage(setupStage5());          // map1 #16 14 
+			addStage(setupStage1());          // map2 #1
+			addStage(setupStage9());          // map9 #2
+			addStage(setupStage16());         // map8_2 #3 雪地威克岛
+			addStage(setupStage21());         // map20 #7 16 战壕小岛
+			addStage(setupStage4());          // map7 #4 3
+			addStage(setupStage15());         // map1_2 #5 太大
+			addStage(setupStage12());         // map14 #6
+			addStage(setupStage17());         // map17  #8 5
+			addStage(setupStage18());         // map13_2 #9 6
+			addStage(setupStage13());         // map16  #11  8
+			addStage(setupFinalStage1());     // map11 #12 潜行9
+			addStage(setupStageCasake_Bay());         // Casake_Bay #21
+			addStage(setupStage20());         // map19 #17	13 鹅城
+			addStage(setupRoberto());         // 创意工坊图 ver1.6.0
+			addStage(setupClairemont());      // 创意工坊图 ver1.6.0
+			addStage(setupViper());           // 创意工坊图 ver1.6.0
+			addStage(setupDef_lab_koth());    // 创意工坊图 ver1.6.0
+			addStage(setupEastport());        // 创意工坊图 ver1.6.0
+			addStage(setupWave_Town());       // 创意工坊图 ver1.6.0
+		}
 	}
-
+	protected void setupActivityStages() {
+		if(g_server_activity_racing){
+			addStage(setupRacing());         // 创意工坊图 ver1.6.0 赛车地图
+		}
+	}
 	// --------------------------------------------
 	protected Stage@ createStage() const {
 		Stage@ stage = Stage(m_metagame.getUserSettings());
@@ -465,13 +481,13 @@ class StageConfiguratorInvasion : StageConfigurator {
 		}
 		{
 			Faction f(getFactionConfigs()[2], createCommanderAiCommand(2, 0.38, 0.1));           // was 0.1, 0.1 in 1.65
-			f.m_overCapacity = 20;                                              // was 0 (test2)
+			f.m_overCapacity = 4;                                              // was 0 (test2)
       f.m_capacityOffset = 5;                                                             // was 0 in 1.65
 			stage.m_factions.insertLast(f);
 		}
 		{
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1, 0.38, 0.1));           // was 0.1, 0.1 in 1.65
-            f.m_overCapacity = 20;                                              // was 0 (test2)
+            f.m_overCapacity = 4;                                              // was 0 (test2)
       f.m_capacityOffset = 5;                                                             // was 0 in 1.65
 			stage.m_factions.insertLast(f);
 		}
@@ -1530,9 +1546,9 @@ class StageConfiguratorInvasion : StageConfigurator {
 		stage.m_includeLayers.insertLast("layer1.invasion");		
 
 
-		stage.m_maxSoldiers = 12 * 17;     // 194 units
-		stage.m_playerAiCompensation = 4;                                       
-        stage.m_playerAiReduction = 2.0;                                            
+		stage.m_maxSoldiers = 12 * 10;     // 194 units
+		stage.m_playerAiCompensation = 0;                                       
+        stage.m_playerAiReduction = 0.0;                                            
   
 		stage.m_soldierCapacityVariance = 0.6;    
 
@@ -1962,7 +1978,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 
 		{
 			Faction f(getFactionConfigs()[0], createFellowCommanderAiCommand(0, 0.5, 0.2));
-			f.m_overCapacity = 20;                                              // was 20
+			f.m_overCapacity = 4;                                              // was 20
 			f.m_bases = 2;
 			f.m_capacityMultiplier = 1.0; 
 			stage.m_factions.insertLast(f);
@@ -1989,5 +2005,359 @@ class StageConfiguratorInvasion : StageConfigurator {
 		setDefaultAttackBreakTimes(stage);
 		return stage;
 	}
+	protected Stage@ setupRoberto() {
+		Stage@ stage = createStage();
+		stage.m_mapInfo.m_name = "roberto";
+        stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/roberto";
+		stage.m_mapInfo.m_id = "roberto";
 
+		stage.m_maxSoldiers = 15 * 15;                                             // was 17*7 in 1.65
+		stage.m_playerAiCompensation = 0;                                         // was 7 (test4)
+        stage.m_playerAiReduction = 0;                                            // was 3 (test2)
+    
+	    stage.addTracker(Spawner(m_metagame, 1, Vector3(485,5,705), 10, "default_ai"));        // outpost filler (1.70)
+
+		stage.addTracker(PeacefulLastBase(m_metagame, 0));
+		stage.addTracker(CommsCapacityHandler(m_metagame));
+
+	    stage.m_minRandomCrates = 2; 
+	    stage.m_maxRandomCrates = 3;
+	
+		{
+			// greens will push a bit harder here
+			Faction f(getFactionConfigs()[0], createFellowCommanderAiCommand(0, 0.4, 0.15));   // was 0.3, 0.12 in 1.65
+			f.m_overCapacity = 10;
+			f.m_capacityOffset = 10; 
+			f.m_capacityMultiplier = 1.0;                                          // was 0.9 in 1.65
+			f.m_bases = 3;
+			stage.m_factions.insertLast(f);
+		}
+		{
+			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1, 0.45, 0.2));        // was not set (default) in 1.65
+			f.m_overCapacity = 80;                                              // was 60 (test2) 
+			f.m_capacityOffset = 15;                                               // was 10 in 1.65
+			stage.m_factions.insertLast(f);
+		}
+
+		// metadata
+		stage.m_primaryObjective = "capture";
+		stage.m_radioObjectivePresent = false;
+
+		{
+			XmlElement command("command");
+			command.setStringAttribute("class", "faction_resources");
+			command.setIntAttribute("faction_id", 1);
+			addFactionResourceElements(command, "vehicle", array<string> = {"aa_emplacement.vehicle"}, true);
+
+			stage.m_extraCommands.insertLast(command);
+		}
+
+		setDefaultAttackBreakTimes(stage);
+		return stage;
+	} 
+	
+	protected Stage@ setupClairemont() {
+		Stage@ stage = createStage();
+		stage.m_mapInfo.m_name = "clairemont";
+        stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/clairemont";
+		stage.m_mapInfo.m_id = "clairemont";
+
+		stage.m_maxSoldiers = 15 * 15;                                             // was 17*7 in 1.65
+		stage.m_playerAiCompensation = 0;                                         // was 7 (test4)
+        stage.m_playerAiReduction = 0;                                            // was 3 (test2)
+    
+		stage.addTracker(PeacefulLastBase(m_metagame, 0));
+		stage.addTracker(CommsCapacityHandler(m_metagame));
+
+	    stage.m_minRandomCrates = 2; 
+	    stage.m_maxRandomCrates = 3;
+
+		{
+			// greens will push a bit harder here
+			Faction f(getFactionConfigs()[0], createFellowCommanderAiCommand(0, 0.4, 0.15));   // was 0.3, 0.12 in 1.65
+			f.m_overCapacity = 0;
+			f.m_capacityOffset = 0; 
+			f.m_capacityMultiplier = 1.0;                                          // was 0.9 in 1.65
+			f.m_bases = 1;
+			stage.m_factions.insertLast(f);
+		}
+		{
+			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1, 0.45, 0.2));        // was not set (default) in 1.65
+			f.m_overCapacity = 80;                                              // was 60 (test2) 
+			f.m_capacityOffset = 15;                                               // was 10 in 1.65
+			stage.m_factions.insertLast(f);
+		}
+
+		// metadata
+		stage.m_primaryObjective = "capture";
+		stage.m_radioObjectivePresent = false;
+
+		{
+			XmlElement command("command");
+			command.setStringAttribute("class", "faction_resources");
+			command.setIntAttribute("faction_id", 1);
+			addFactionResourceElements(command, "vehicle", array<string> = {"aa_emplacement.vehicle"}, true);
+
+			stage.m_extraCommands.insertLast(command);
+		}
+
+		setDefaultAttackBreakTimes(stage);
+		return stage;
+	} 
+	protected Stage@ setupViper() {
+		Stage@ stage = createStage();
+		stage.m_mapInfo.m_name = "viper";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/viper";
+		stage.m_mapInfo.m_id = "viper";
+
+		stage.m_maxSoldiers = 150;
+		stage.m_playerAiCompensation = 0;                                       // 
+    	stage.m_playerAiReduction = 0.0;                                        // 
+
+		stage.m_soldierCapacityVariance = 1.0; 
+
+		stage.addTracker(PeacefulLastBase(m_metagame, 0));
+		stage.addTracker(CommsCapacityHandler(m_metagame));
+
+		stage.m_minRandomCrates = 1; 
+		stage.m_maxRandomCrates = 2;
+
+		{
+			Faction f(getFactionConfigs()[0], createFellowCommanderAiCommand(0, 0.5, 0.2));
+			f.m_overCapacity = 4;                                              // was 20
+			f.m_bases = 1;
+			f.m_capacityMultiplier = 1.0; 
+			stage.m_factions.insertLast(f);
+		}
+		{
+			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1, 0.5, 0.2));
+			f.m_overCapacity = 40;                                              // was 20 (test3)
+            f.m_capacityOffset = 20;                                            // was 10 (test3)
+			f.m_capacityMultiplier = 1.5; 
+			stage.m_factions.insertLast(f);
+		}
+		{
+			XmlElement command("command");
+			command.setStringAttribute("class", "faction_resources");
+			command.setIntAttribute("faction_id", 1);
+			addFactionResourceElements(command, "vehicle", array<string> = {"aa_emplacement.vehicle"}, true);
+
+			stage.m_extraCommands.insertLast(command);
+		}
+
+		// metadata
+		stage.m_primaryObjective = "capture";
+
+		setDefaultAttackBreakTimes(stage);
+		return stage;
+	}
+	protected Stage@ setupDef_lab_koth() {
+		Stage@ stage = createStage();
+		stage.m_mapInfo.m_name = "def_lab_koth";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/def_lab_koth";
+		stage.m_mapInfo.m_id = "def_lab_koth";
+
+		stage.m_maxSoldiers = 150;
+		stage.m_playerAiCompensation = 0;                                       // 
+    	stage.m_playerAiReduction = 0.0;                                        // 
+
+		stage.m_soldierCapacityVariance = 1.0; 
+
+		stage.addTracker(PeacefulLastBase(m_metagame, 0));
+		stage.addTracker(CommsCapacityHandler(m_metagame));
+
+		stage.m_minRandomCrates = 1; 
+		stage.m_maxRandomCrates = 2;
+
+		{
+			Faction f(getFactionConfigs()[0], createFellowCommanderAiCommand(0, 0.5, 0.2));
+			f.m_overCapacity = 4;                                              // was 20
+			f.m_bases = 1;
+			f.m_capacityMultiplier = 1.0; 
+			stage.m_factions.insertLast(f);
+		}
+		{
+			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1, 0.5, 0.2));
+			f.m_overCapacity = 40;                                              // was 20 (test3)
+            f.m_capacityOffset = 20;                                            // was 10 (test3)
+			f.m_capacityMultiplier = 1.5; 
+			stage.m_factions.insertLast(f);
+		}
+		{
+			XmlElement command("command");
+			command.setStringAttribute("class", "faction_resources");
+			command.setIntAttribute("faction_id", 1);
+			addFactionResourceElements(command, "vehicle", array<string> = {"aa_emplacement.vehicle"}, true);
+
+			stage.m_extraCommands.insertLast(command);
+		}
+
+		// metadata
+		stage.m_primaryObjective = "capture";
+
+		setDefaultAttackBreakTimes(stage);
+		return stage;
+	}
+	protected Stage@ setupEastport() {
+		Stage@ stage = createStage();
+		stage.m_mapInfo.m_name = "eastport";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/eastport";
+		stage.m_mapInfo.m_id = "eastport";
+
+		stage.m_maxSoldiers = 150;
+		stage.m_playerAiCompensation = 0;                                       // 
+    	stage.m_playerAiReduction = 0.0;                                        // 
+
+		stage.m_soldierCapacityVariance = 1.0; 
+
+		stage.addTracker(PeacefulLastBase(m_metagame, 0));
+		stage.addTracker(CommsCapacityHandler(m_metagame));
+
+		stage.m_minRandomCrates = 1; 
+		stage.m_maxRandomCrates = 2;
+
+		{
+			Faction f(getFactionConfigs()[0], createFellowCommanderAiCommand(0, 0.5, 0.2));
+			f.m_overCapacity = 4;                                              // was 20
+			f.m_bases = 1;
+			f.m_capacityMultiplier = 1.0; 
+			stage.m_factions.insertLast(f);
+		}
+		{
+			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1, 0.5, 0.2));
+			f.m_overCapacity = 40;                                              // was 20 (test3)
+            f.m_capacityOffset = 20;                                            // was 10 (test3)
+			f.m_capacityMultiplier = 1.5; 
+			stage.m_factions.insertLast(f);
+		}
+		{
+			XmlElement command("command");
+			command.setStringAttribute("class", "faction_resources");
+			command.setIntAttribute("faction_id", 1);
+			addFactionResourceElements(command, "vehicle", array<string> = {"aa_emplacement.vehicle"}, true);
+
+			stage.m_extraCommands.insertLast(command);
+		}
+
+		// metadata
+		stage.m_primaryObjective = "capture";
+
+		setDefaultAttackBreakTimes(stage);
+		return stage;
+	}
+	protected Stage@ setupWave_Town() {
+		Stage@ stage = createStage();
+		stage.m_mapInfo.m_name = "Wave_Town";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/Wave_Town";
+		stage.m_mapInfo.m_id = "Wave_Town";
+
+		stage.m_maxSoldiers = 150;
+		stage.m_playerAiCompensation = 0;                                       // 
+    	stage.m_playerAiReduction = 0.0;                                        // 
+
+		stage.m_soldierCapacityVariance = 1.0; 
+
+		stage.addTracker(PeacefulLastBase(m_metagame, 0));
+		stage.addTracker(CommsCapacityHandler(m_metagame));
+
+		stage.m_minRandomCrates = 1; 
+		stage.m_maxRandomCrates = 2;
+		{
+        XmlElement command("command");
+        command.setStringAttribute("class", "change_game_settings");
+        for (uint i = 0; i < m_metagame.getFactionCount(); ++i) {
+            XmlElement faction("faction");
+            if (int(i) == 3) {
+                faction.setFloatAttribute("capacity_multiplier", 0.00001);
+                faction.setBoolAttribute("lose_without_bases", false);
+            }
+            command.appendChild(faction);
+            }
+        m_metagame.getComms().send(command);
+        stage.addTracker(RunAtStart(m_metagame, command));
+        }
+
+		{
+			Faction f(getFactionConfigs()[0], createFellowCommanderAiCommand(0, 0.5, 0.2));
+			f.m_overCapacity = 4;                                              // was 20
+			f.m_bases = 1;
+			f.m_capacityMultiplier = 1.0; 
+			stage.m_factions.insertLast(f);
+		}
+		{
+			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1, 0.5, 0.2));
+			f.m_overCapacity = 40;                                              // was 20 (test3)
+            f.m_capacityOffset = 20;                                            // was 10 (test3)
+			f.m_capacityMultiplier = 1.5; 
+			stage.m_factions.insertLast(f);
+		}
+		{
+			XmlElement command("command");
+			command.setStringAttribute("class", "faction_resources");
+			command.setIntAttribute("faction_id", 1);
+			addFactionResourceElements(command, "vehicle", array<string> = {"aa_emplacement.vehicle"}, true);
+
+			stage.m_extraCommands.insertLast(command);
+		}
+
+		// metadata
+		stage.m_primaryObjective = "capture";
+
+		setDefaultAttackBreakTimes(stage);
+		return stage;
+	}
+	protected Stage@ setupRacing() {
+		Stage@ stage = createStage();
+		stage.m_mapInfo.m_name = "race1";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/race1";
+		stage.m_mapInfo.m_id = "race1";
+
+		stage.m_maxSoldiers = 1;
+		stage.m_playerAiCompensation = 0;                                       // 
+    	stage.m_playerAiReduction = 0.0;                                        // 
+
+		stage.m_soldierCapacityVariance = 1.0; 
+
+		stage.addTracker(PeacefulLastBase(m_metagame, 1));
+		stage.addTracker(CommsCapacityHandler(m_metagame));
+
+		stage.m_minRandomCrates = 1; 
+		stage.m_maxRandomCrates = 2;
+
+		{
+        XmlElement command("command");
+        command.setStringAttribute("class", "change_game_settings");
+        for (uint i = 0; i < m_metagame.getFactionCount(); ++i) {
+            XmlElement faction("faction");
+            if (int(i) == 3) {
+                faction.setFloatAttribute("capacity_multiplier", 0.00001);
+                faction.setBoolAttribute("lose_without_bases", false);
+            }
+            command.appendChild(faction);
+            }
+        m_metagame.getComms().send(command);
+        stage.addTracker(RunAtStart(m_metagame, command));
+        }
+
+		{
+			Faction f(getFactionConfigs()[0], createFellowCommanderAiCommand(0, 0.5, 0.2));
+			f.m_overCapacity = 4;                                              // was 20
+			f.m_bases = 1;
+			f.m_capacityMultiplier = 1.0; 
+			stage.m_factions.insertLast(f);
+		}
+		{
+			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1, 0.5, 0.2));
+			f.m_overCapacity = 40;                                              // was 20 (test3)
+            f.m_capacityOffset = 20;                                            // was 10 (test3)
+			f.m_capacityMultiplier = 1.5; 
+			stage.m_factions.insertLast(f);
+		}
+
+		// metadata
+		stage.m_primaryObjective = "capture";
+
+		setDefaultAttackBreakTimes(stage);
+		return stage;
+	}
 }

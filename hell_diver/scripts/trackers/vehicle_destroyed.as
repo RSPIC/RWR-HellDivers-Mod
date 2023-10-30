@@ -97,6 +97,17 @@ class vehicle_destroyed : Tracker{
         spawnVehicle(m_metagame,1,vehicle_owner_fid,position,Orientation(0,1,0,rorate_range),vehicle_name);
  
 	}
+
+    //--------------------------------------------------------
+    protected void handleVehicleSpawnEvent(const XmlElement@ event) {
+        if(g_server_difficulty_level >= 12 && !g_debugMode){ //12难禁止刷冰淇淋
+            string vehicle_key = event.getStringAttribute("vehicle_key");
+            int vehicle_id = event.getIntAttribute("vehicle_id");
+            if(vehicle_key == "icecream.vehicle"){
+                remove_vehicle(m_metagame,vehicle_id);
+            }
+        }
+    }
     //--------------------------------------------------------
 	float getOrientation(Vector3@ forward)
 	{
@@ -104,6 +115,9 @@ class vehicle_destroyed : Tracker{
         float x = forward.m_values[0];
         float y = forward.m_values[2];
 		float dis =sqrt((x*x)+(y*y));
+        if(dis == 0){
+            dis = 1;
+        }
 		float x_t = x*(1.0f/dis);
 		float y_t = y*(1.0f/dis);
 		float ac = acos(x_t);

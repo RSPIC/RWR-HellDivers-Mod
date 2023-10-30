@@ -3,7 +3,7 @@
 file="_vehicle_hvy.base"
 name="Infantry Fighting Vehicle" 
 key="cyborgs_ifv.vehicle" 
-time_to_live_unsteerable="5" 
+time_to_live_unsteerable="10" 
 map_view_atlas_index="38" 
 minimum_fill_requirement="0.25"
 max_character_collision_speed_on_normal="5"
@@ -12,7 +12,7 @@ usable_for_cover="1"
 reserves_spawn_point="1"
 allow_ai_to_use="1"
 ai_abandon_when_unsteerable="0"
-respawn_time="90"
+respawn_time="30"
 ai_pick_prevention_time="60"
 character_leave_request_mode="friendly"
 >
@@ -20,8 +20,6 @@ character_leave_request_mode="friendly"
 	<tag name="tank" />
 	<tag name="heavy_combat" />
 	<tag name="any_tank" />
-	<tag name="apc" />
-	<tag name="jeep" />
 
 	<tire_set offset="1.8 0.0 +3.0" radius="0.4" />
 	<tire_set offset="1.8 0.0 -3.0" radius="0.4" />

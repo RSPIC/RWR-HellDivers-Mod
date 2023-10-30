@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carry_items>
+<carry_item file="_usable_item.base" 
+name="Vote Ticket" 
+key="hd_vote_ticket"
+>
+    <hud_icon filename="hd_vote_ticket.png" />
+    <inventory encumbrance="0" price="0.0" />
+    <model mesh_filename="LIMITED_TKT_GACHA_10_2501.mesh" texture_filename="LIMITED_TKT_GACHA_10_2501.png" />
+    <commonness value="0" in_stock="1" />
+</carry_item>
+</carry_items>

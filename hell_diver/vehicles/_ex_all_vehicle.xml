@@ -2,6 +2,7 @@
 <vehicles>
 	<!--63式火箭炮-->
 	<vehicle file="63type_107mm_rocket_launcher.vehicle" />
+
 	<!-- 坦克 -->
 	<vehicle file="ex_isu_152.vehicle" />
 	<vehicle file="ex_sturmtiger_tank.vehicle" /><!-- 突击虎 -->
@@ -22,6 +23,7 @@
 	<vehicle file="zbd09.vehicle" /><!-- ZBD09-->
 	<vehicle file="ex_power_chair.vehicle" /><!--力量の椅-->
 	<vehicle file="lav6.vehicle" /><!--lav6-->
+	<vehicle file="kirov.vehicle" /><!--基洛夫-->
 
 	<!-- 原版 -->
 	<vehicle file="radar_tower.vehicle" />
@@ -37,6 +39,7 @@
 	<!-- 特殊 -->
 	<vehicle file="ex_piano.vehicle" /><!--主题钢琴-->
 	<vehicle file="ex_gramophone.vehicle" />	<!--唱片-->
+	<vehicle file="stash_box.vehicle" />	<!--脚本仓库-->
 
 	<!-- 飞机 -->
 	<vehicle file="mi_24.vehicle" />	<!--米 24 直升机-->
@@ -45,8 +48,28 @@
 
 	<!-- 部署物 -->
 	<vehicle file="ex_pak40.vehicle" />	<!--德国反坦克炮-->
-	<vehicle file="ex_replace_tow.vehicle" />	<!--pak40替换原版tow-->
-	<vehicle file="ex_replace_tow2.vehicle" />	<!--zis3替换原版tow-->
 	<vehicle file="ex_zis3.vehicle" />	<!--苏联反坦克炮-->
+	<!-- 替换黄蜂陶氏 -->
+	<vehicle file="ex_edf_turrent_single.vehicle" />
+	<vehicle file="ex_edf_turrent_double.vehicle" />
+	<vehicle file="ex_edf_turrent_single_ex.vehicle" />
+	<vehicle file="ex_edf_turrent_double_ex.vehicle" />
+	<!-- 替换迫击炮 -->
+	<vehicle file="ex_edf_mortar.vehicle" />
+	<vehicle file="ex_edf_mortar_ex.vehicle" />
+
+	<vehicle file="ex_vanilla_replace.vehicle" />
+	
+	<!-- 赛车 -->
+	<vehicle file="racing_car1.vehicle" />	
+	<vehicle file="racing_car1.vehicle" />	
+  	<vehicle file="racing_car2.vehicle" />
+	<vehicle file="racing_car3.vehicle" />
+	<vehicle file="racing_car4.vehicle" />
+	<vehicle file="racing_car5.vehicle" />
+	<vehicle file="racing_car6.vehicle" />
+	<vehicle file="racing_car7.vehicle" />
+	<vehicle file="racing_car8.vehicle" /> 
+	<vehicle file="straw_block.vehicle" />   
 
 </vehicles>

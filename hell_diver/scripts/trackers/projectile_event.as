@@ -13,12 +13,27 @@
 //1：轨道激光空袭
 //2；密集轰炸
 //3：导弹弹幕
+dictionary skill_CD = {
+	 // 空
+	{"",0},
+
+    {"acg_starwars_shipgirls_skill",90},
+
+    {"",0}
+
+};
 class projectile_event : Tracker {
 	protected Metagame@ m_metagame;
+    protected player_cd_bucket p_cd_lists;
+    protected float m_timer;
+	protected float m_time;
 
 	// --------------------------------------------
 	projectile_event(Metagame@ metagame) {
 		@m_metagame = @metagame;
+        p_cd_lists.clearAll();
+        m_time = 1.0;
+		m_timer = m_time;
         _log("projectile_event initiate.");
 	}
 
@@ -29,13 +44,37 @@ class projectile_event : Tracker {
 	bool hasStarted() const {
 		return true;
 	}
-
+    // --------------------------------------------
+	void update(float time) {
+		m_timer -= time;
+		if(m_timer <= 0){
+			m_timer = m_time;
+			//每秒更新一次
+			if(p_cd_lists !is null){
+				p_cd_lists.update(m_time,m_metagame);
+			}
+		}
+	}
 	protected void handleResultEvent(const XmlElement@ event) {
 		string EventKeyGet = event.getStringAttribute("key");
         _log("projectile event key= " + EventKeyGet);
-        _log("projectile event key index= " + int(projectile_eventkey[EventKeyGet]));
-
-        if (!(projectile_eventkey.exists(EventKeyGet))){return;}
+        
+        if(skill_CD.exists(EventKeyGet)){
+            int m_cid = event.getIntAttribute("character_id");
+            int m_pid = g_playerInfoBuck.getPidByCid(m_cid);
+            string m_name = g_playerInfoBuck.getNameByPid(m_pid);
+            if(!p_cd_lists.exists(m_name,EventKeyGet) ){
+                float cd = 300;
+                skill_CD.get(EventKeyGet,cd);
+                p_cd_lists.addNew(m_name,m_pid,EventKeyGet,cd);
+                handelCdResultEvent(event);
+            }
+            if(!p_cd_lists.hasReady(m_name,EventKeyGet)){
+                float leftCD = p_cd_lists.leftCD(m_name,EventKeyGet);
+                notify(m_metagame, "剩余CD = "+ int(leftCD) , dictionary(), "misc", m_pid, false, "", 1.0);
+                return;
+            }
+        }
 
 		switch(int(projectile_eventkey[EventKeyGet])) 
         {
@@ -340,135 +379,6 @@ class projectile_event : Tracker {
                     }
                 }
                 spawnStaticProjectile(m_metagame,"hd_md99_autoinjector.projectile",t_pos,characterId,factionId);
-                break;
-            }
-            case 41: { //载具回收&修复弹头
-                _log("handing projectile_event:case41 recycle vehicle");
-                int characterId = event.getIntAttribute("character_id");
-				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
-                if (character is null) {break;}
-                if (characterId == -1) {
-                    _log("characterId = -1,null occur");
-                    break;
-                }
-                    int playerId = character.getIntAttribute("player_id");
-                    int factionId = character.getIntAttribute("faction_id");
-                    const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
-                    if (player !is null) {
-                        _log("handing projectile_event:player exist");
-                        Vector3 aim_pos = stringToVector3(player.getStringAttribute("aim_target"));
-                        Vector3 c_position = stringToVector3(character.getStringAttribute("position"));
-                        Vector3 t_pos = stringToVector3(event.getStringAttribute("position"));
-                        //计算落点和玩家的相对距离
-                        float distance = get2DMAxAxisDistance(1,t_pos,c_position);
-                        //measure_square_area(m_metagame,t_pos,Vector3(8,0,8),"white");
-                        if(distance <= 8){
-                            //拉取所有载具信息
-                            array<const XmlElement@> AllFactions = getFactions(m_metagame);	
-                            int count_recycle_time = 0; //计算成功回收次数
-                            int count_recycle_failed_time = 0; //计算失败次数
-                            int count_repair_time = 0; //计算成功维修次数
-                            int count_repair_failed_time = 0; //计算失败维修次数
-                            bool include_self = false;
-                            for(uint fid = 0 ; fid <= AllFactions.size() ; fid++ ){
-                                array<const XmlElement@>@ vehicles = getAllVehicles(m_metagame, fid);
-                                if (vehicles is null) return;
-                                for (uint i = 0; i < vehicles.length(); ++i) {
-                                    //获取载具位置并计算与落点的相对距离
-                                    Vector3 vehiclePos = stringToVector3(vehicles[i].getStringAttribute("position"));
-                                    distance = get2DMAxAxisDistance(1,vehiclePos,t_pos);
-                                    //measure_square_area(m_metagame,t_pos,Vector3(2.0,0,2.0),"red");
-                                    if(distance <= 2.0){
-                                        //捕获附近存在载具，获取载具信息
-                                        int vehicleId = vehicles[i].getIntAttribute("id");
-                                        const XmlElement@ vehicleInfo = getVehicleInfo(m_metagame, vehicleId);
-                                        float vehicleHealth = vehicleInfo.getFloatAttribute("health");
-                                        float vehicleMaxHealth = vehicleInfo.getFloatAttribute("max_health");
-                                        string vehiclekey = vehicleInfo.getStringAttribute("key");
-
-                                        if(vehiclekey == "repair_crane.vehicle"){
-                                            include_self = true;
-                                            continue;
-                                        } //排除维修车本体
-
-                                        _log("handing projectile_recycle:vehiclekey: " + vehiclekey);
-                                        //判断载具在玩家左侧还是右侧，执行修复&回收
-                                        //判断x轴正负,正则在右侧，执行回收
-                                        _log("vehiclePos: " + vehicles[i].getStringAttribute("position"));
-                                        _log("character_position: " + character.getStringAttribute("position"));
-                                        _log("distance in z axis: " + (vehiclePos.m_values[2]-c_position.m_values[2]));
-                                        if(vehiclePos.m_values[0]-c_position.m_values[0] > 0){
-                                            //判断是否为可回收载具
-                                            _log("vehicle_recycle_key exists?: " + vehicle_recycle_key.exists(vehiclekey));
-                                            if(vehicle_recycle_key.exists(vehiclekey)){
-                                                if(vehicleHealth <= 0){continue;}     //排除空节点载具
-                                                if(count_recycle_time == 1){break;} //只回收一辆
-                                                //用伤害弹头方式摧毁
-                                                spawnStaticProjectile(m_metagame,"hd_vehicle_recycle_damage.projectile",vehiclePos,-1,-1);
-                                                //退还奖励
-                                                GiveRP(m_metagame,characterId,int(vehicle_recycle_key[vehiclekey]));
-                                                string message = "Recycle Successed, return rp: "+int(vehicle_recycle_key[vehiclekey]);
-                                                sendPrivateMessage(m_metagame,playerId,message);
-                                                count_recycle_time++;
-                                                _log("handing projectile_event:recycle_working");
-                                                _log("GiveRp: "+ int(vehicle_recycle_key[vehiclekey]));
-                                                    //获取载具生成朝向(删除，只回收不生成)
-                                                    //Vector3 aim_vector = getAimUnitVector(1,c_position,t_pos);
-                                                    //Orientation offset_rotate = Orientation(0,1,0,-1*getRotatedRad(Vector3(0,0,1),aim_vector)+1.57);
-                                                    //spawnVehicle(m_metagame,1,factionId,vehiclePos.add(Vector3(0,5,0)),offset_rotate,vehiclekey);
-                                                    //remove_vehicle(m_metagame,vehicleId);
-                                                    continue;  
-                                            }
-                                            count_recycle_failed_time++;
-                                            continue;
-                                        }
-                                        //否则在左侧，执行维修。检测是否为不可修复载具
-                                        _log("execute repair,is repairable?: "+ !(vehicle_repair_deny_key.exists(vehiclekey)));
-                                        if(!(vehicle_repair_deny_key.exists(vehiclekey))){
-                                            if(vehicleHealth <= 0){continue;}     //排除空节点载具
-                                            float rate = 0.5;  //最大默认超修比例
-                                            float health = vehicleHealth;
-                                            _log("repair_recycle: health= "+health);
-                                            _log("repair_recycle: vehicleMaxHealth= "+vehicleMaxHealth);
-                                            if(vehicleHealth>=vehicleMaxHealth){
-                                                if(vehicle_overhealth_key.exists(vehiclekey)){
-                                                    rate = float(vehicle_overhealth_key[vehiclekey]);
-                                                }
-                                                health = (1+rate)*vehicleMaxHealth;
-                                            }else{
-                                                health += rate*vehicleMaxHealth;
-                                            }
-                                            _log("repair_recycle: rate= "+rate);
-                                            _log("repair_recycle: health_after_set= "+health);
-                                            set_health_vehicle(m_metagame,vehicleId,float(health));
-                                            spawnStaticProjectile(m_metagame,"hd_vehicle_recycle_working.projectile",vehiclePos,characterId,factionId);
-                                            count_repair_time++;
-                                            continue;
-                                        }else{
-                                            //对象不可修复
-                                            if(vehicleHealth <= 0){continue;}     //排除空节点载具
-                                            spawnStaticProjectile(m_metagame,"hd_vehicle_repair_deny.projectile",vehiclePos,characterId,factionId);
-                                            count_repair_failed_time++;
-                                            continue;
-                                        }
-                                    }//在距离内
-                                    
-                                }
-                            }
-                            //结算
-                            if(count_recycle_time == 0 && count_recycle_failed_time == 0 && count_repair_time == 0 && count_repair_failed_time == 0 && !include_self){
-                                //spawnStaticProjectile(m_metagame,"hd_vehicle_deny_distance.projectile",aim_pos,characterId,factionId);
-                            }else if(count_recycle_time == 0 && count_recycle_failed_time != 0 && count_repair_time == 0 && count_repair_failed_time == 0){
-                                spawnStaticProjectile(m_metagame,"hd_effect_call_deny_target.projectile",aim_pos,characterId,factionId);
-                            }else if(count_recycle_time == 0 && count_recycle_failed_time == 0 && count_repair_time == 0 && count_repair_failed_time != 0){
-                                spawnStaticProjectile(m_metagame,"hd_vehicle_repair_deny.projectile",aim_pos,characterId,factionId);
-                            }
-                            
-                        }else{   //超出距离
-                            spawnStaticProjectile(m_metagame,"hd_vehicle_deny_distance.projectile",aim_pos,characterId,factionId);
-                            _log("handing projectile_event:recycle_deny_distance ");
-                        }
-                    }
                 break;
             }
             case 42: {   //升级
@@ -856,6 +766,44 @@ class projectile_event : Tracker {
             }
             default:
                 break;            
+        }
+    }
+
+    protected void handelCdResultEvent(const XmlElement@ event){
+        string EventKeyGet = event.getStringAttribute("key");
+        switch(int(projectile_eventkey[EventKeyGet])){
+            case 0:{break;}
+            case 56: { //acg_starwars_shipgirls_skill 舰队支援
+                int characterId = event.getIntAttribute("character_id");
+				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                if (character is null) {break;}
+                if (characterId == -1) {
+                    _log("characterId = -1,null occur");
+                    break;
+                }
+                int playerId = g_playerInfoBuck.getPidByCid(characterId);
+                const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
+                if (player is null) {break;}
+                Vector3 aimPosition = stringToVector3(player.getStringAttribute("aim_target"));
+
+                Vector3 pos1 = aimPosition;
+                Vector3 pos2 = stringToVector3(character.getStringAttribute("position"));
+                int factionid = character.getIntAttribute("faction_id");
+
+                string key1 = "hd_effect_lightshell.projectile";
+                CreateDirectProjectile(m_metagame,pos2.add(Vector3(0,3,0)),pos2.add(Vector3(0,3,0)),key1,characterId,factionid,1);
+                key1 = "hd_effect_starwars_alert.projectile";
+                CreateDirectProjectile(m_metagame,pos1,pos1,key1,characterId,factionid,1);
+
+                Event_call_hd_ex_missile_barrage_reinforce@ new_task = Event_call_hd_ex_missile_barrage_reinforce(m_metagame,5,characterId,factionid,pos2,pos1,"acg_starwars_shipgirls_skill");
+                //TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                TaskSequencer@ tasker = m_metagame.getHdTaskSequncerIndex(3);
+                if(tasker is null){break;}
+                tasker.add(new_task);
+                break;
+            }
+            default:
+                break;     
         }
     }
 }

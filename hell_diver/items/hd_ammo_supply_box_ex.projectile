@@ -12,6 +12,7 @@ time_to_live_out_in_the_open="0"
 player_death_drop_owner_lock_time="0"
 radius="0.8"
 >
+<!-- 放于背包中的掉落消失的补给箱 -->
     <trigger class="impact">
      <collider class="terrain" enabled="0" />     
      <collider class="static_object" enabled="0" /> 
@@ -31,7 +32,5 @@ radius="0.8"
 
 	<capacity value="0" source="rank" source_value="0" />
     <capacity value="1" source="rank" source_value="0" />
-    <inventory encumbrance="2.5" price="0.0" />
-    <animation key="throw" animation_key="medic1" />
-	
+    <inventory encumbrance="1.25" buy_price="100.0" sell_price="0"/>
 </projectile>

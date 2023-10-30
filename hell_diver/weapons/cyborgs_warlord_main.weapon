@@ -8,6 +8,7 @@ key="cyborgs_warlord_main.weapon"
 on_ground_up="0 0 1" 
 radius="1"
 > 
+	<tag name="warlord"/>
     <specification 	
     slot="0" 	
     retrigger_time="0.3" 
@@ -186,6 +187,21 @@ radius="1"
 	<modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="0" />
 	<modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="0" />
 	<modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="0" />
+
+	<target_factors tag="" distance="1.0" direction="0.0" squad_command="1.0" base_score="0.5" />
+    <target_factors tag="EXO" distance="1.0" direction="0.0" squad_command="1.0" base_score="10.0" />
+    <target_factors tag="ACG" distance="1.0" direction="0.0" squad_command="1.0" base_score="8.0" />
+    <target_factors tag="apc" distance="1.0" direction="0.0" squad_command="1.0" base_score="2.0" />
+    <target_factors tag="HeavyTank" distance="1.0" direction="0.0" squad_command="1.0" base_score="10.0" />
+    <target_factors tag="MidTank" distance="1.0" direction="0.0" squad_command="1.0" base_score="6.0" />
+    <target_factors tag="LightTank" distance="1.0" direction="0.0" squad_command="1.0" base_score="2.0" />
+    <target_factors tag="light_combat" distance="1.0" direction="0.0" squad_command="1.0" base_score="2.0" />   
+    <target_factors tag="defensive_at" distance="1.0" direction="0.0" squad_command="1.0" base_score="2.0" />
+    <target_factors tag="tactical" distance="1.0" direction="0.0" squad_command="1.0" base_score="8.0" />  <!-- important non combat player-only vehicles -->  
+    <target_factors tag="bazooka" distance="1.0" direction="0.0" squad_command="1.0" base_score="8.0" />
+    <target_factors tag="anti_tank" distance="1.0" direction="0.0" squad_command="1.0" base_score="8.0" />
+	
+
 </weapon>
 
 

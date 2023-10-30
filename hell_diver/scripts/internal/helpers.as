@@ -193,6 +193,22 @@ class XmlElement {
 			}
 		}
 	}
+	void appendChilds(array<XmlElement@> childs) {
+		for(uint i=0;i<childs.size();++i){
+			const XmlElement@ child = childs[i];
+			array<dictionary>@ childrenData;
+			if (!m_data.exists("Children")) {
+				@childrenData = array<dictionary>();
+				m_data.set("Children", @childrenData);
+			} else {
+				m_data.get("Children", @childrenData);
+			}
+
+			if (childrenData !is null) {
+				childrenData.insertLast(child.toDictionary());
+			}
+		}
+	}
 
 	// --------------------------------------------
 	void removeKey(string key){
@@ -319,6 +335,10 @@ class XmlElement {
 
 	// --------------------------------------------
 	bool equals(const XmlElement@ other) const {
+		return toString() == other.toString();
+	}
+	// --------------------------------------------
+	bool equals(XmlElement@ other){
 		return toString() == other.toString();
 	}
 

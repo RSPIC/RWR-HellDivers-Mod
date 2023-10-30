@@ -12,13 +12,15 @@ allow_ai_to_use="1"
  >
 	<tag name="metal_thin" />
 
-	<tire_set offset="1 0.0 1" radius="0.1" />
-	<tire_set offset="1 0.0 -1" radius="0.1" />
+	<tire_set offset="1 0.0 1" radius="0.3" />
+	<tire_set offset="1 0.0 -1" radius="0.3" />
 
 	<modifier class="blast_range" value="-2.0" />
 	<modifier class="blast_damage" value="-3.0" />
 
-	<control max_speed="1" acceleration="1" max_reverse_speed="1.0" max_rotation="1.0" max_water_depth="2" />
+	<control max_speed="1" acceleration="1" max_reverse_speed="1.0" max_rotation="1.0" max_water_depth="2" 
+	steer_smoothening="0" 
+	tracked="1" gears="0"/>
 
 	<physics 
 	max_health="200" 
@@ -31,7 +33,7 @@ allow_ai_to_use="1"
 	visual_offset="0 -1.4 0" 
 	collision_response_factor="0" 
 	blast_push_threshold="10.0" 
-	drag_offset="-1" 
+	drag_offset="0" 
 	friction_offset="0" 
 	vehicle_collision_damage_factor="20"
 	gravity="-40" 

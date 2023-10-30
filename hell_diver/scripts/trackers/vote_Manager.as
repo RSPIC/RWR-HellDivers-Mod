@@ -292,6 +292,15 @@ class VoteManager : Tracker {
             target = string(m_voteList[m_voteTypeIndex]) + string(m_nameList[m_targetIndex]);
         }
         if(voteTypeIndex == 1){//跳图
+            int cid = g_playerInfoBuck.getCidByPid(m_pid);
+            int rp = g_playerInfoBuck.getRpByCid(cid);
+            if(rp < 30000){
+                _notify(m_metagame,m_pid,"Rp不足");
+            }
+            uint playingTime = g_battleInfoBuck.playingTime(m_voterName);
+            if(playingTime <= 5){
+                GiveRP(m_metagame,cid,-30000);
+            }
             target = string(m_voteList[m_voteTypeIndex]);
         }
         if(voteTypeIndex == 2){//赞赏无需投票，直接进行结算
@@ -347,6 +356,11 @@ class VoteManager : Tracker {
                 }
                 if(noNum != 0 || m_timeOut){
                     _report(m_metagame,"有玩家反对/未投票 跳图失败");
+                    int cid = g_playerInfoBuck.getCidByPid(m_pid);
+                    uint playingTime = g_battleInfoBuck.playingTime(m_voterName);
+                    if(playingTime <= 5){
+                        GiveRP(m_metagame,cid,30000);
+                    }
                     resetVote();
                     return;
                 }
@@ -409,7 +423,7 @@ class VoteManager : Tracker {
         dic["%name"] = m_voterName;
         dic["%reason"] = string(m_reasonList[m_voteTypeIndex][m_reasonIndex]);
         if(g_firstUseInfoBuck.isFirst(name,"BeAppreciated")){
-            GiveRP(m_metagame,cid,3000);
+            GiveRP(m_metagame,cid,15000);
             GiveXP(m_metagame,cid,1.0);
             notify(m_metagame, "You are Appreciated and rewarded", dic, "misc", pid, true, "", 700.0);
         }else{

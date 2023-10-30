@@ -10,8 +10,13 @@
     <projectile file="bugs_impaler_main_damage.projectile" />
     <projectile file="bugs_tank_dead_damage.projectile" />
     <projectile file="bugs_tank_main_damage.projectile" />
+    <projectile file="bugs_zerg_baneling_dead_damage.projectile" />
+    <projectile file="bugs_baneling_dead_damage.projectile" />
 
     <!-- 生成弹头 -->
     <projectile file="bugs_spawn.projectile" />
+
+    <!-- 特效弹头 -->
+    <projectile file="bugs_zerg_egg_destroy_effect.projectile" />
 
 </projectiles>

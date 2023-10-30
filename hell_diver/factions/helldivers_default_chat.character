@@ -41,7 +41,7 @@
   <comment key="Gunner, there" text="炮手，朝目标开火" />
   <comment key="We surrender!" text="我们投降！" />
   <comment key="We surrender!" text="别开枪！" />
-  <comment key="We surrender!" text="" />
+  <comment key="We surrender!" text="这不可能..." />
   <comment key="We surrender!" text="" />
   <comment key="Medic!" text="按H键使用MD99自救针！" />
   <comment key="Medic!" text="萨尼铁塔！" />
@@ -77,10 +77,9 @@
   <comment key="Hmm.. not enough room here" text="嗯...这里没地方了" />
   <comment key="I'm outta here" text="我要出去了" />
   <comment key="I'm outta here" text="让我们离开这里吧" />
-  <comment key="Good job, soldiers" text="干得好，兄弟" />
-  <comment key="Good job, soldiers" text="做得好，兄弟" />
-  <comment key="Good job, soldiers" text="" />
-  <comment key="Good job, soldiers" text="" />
+  <comment key="Good job, soldiers" text="干得好，兄弟们" />
+  <comment key="Good job, soldiers" text="做得好，兄弟们" />
+  <comment key="Good job, soldiers" text="再接再厉，兄弟们" />
   <comment key="Open fire" text="开火！" />
   <comment key="Open fire" text="消灭他们！" />
   <comment key="Open fire" text="发现敌人！" />
@@ -127,13 +126,13 @@
   <comment key="Hold on!" text="挺住！" />
   <comment key="Hold on!" text="坚持住！" />
   <comment key="Hold on!" text="我马上就来！" />
-  <comment key="Hold on!" text="坚持下去！" />
+  <comment key="Hold on!" text="不要放弃！" />
   <comment key="Move out" text="出发" />
   <comment key="Move out" text="我们走" />
   <comment key="Move out" text="跟我来" />
   <comment key="Move out" text="前进！" />
   <comment key="Move out" text="冲啊，消灭他们！" />
-  <comment key="Move out" text="向前突进！" />
+  <comment key="Move out" text="检查弹药，准备出发" />
   <comment key="All quiet here" text="这里静悄悄的" />
   <comment key="All quiet here" text="这里一切正常" />
   <comment key="All quiet here" text="*打哈欠*" />
@@ -142,6 +141,12 @@
   <comment key="All quiet here" text="*打嗝*" />
   <comment key="All quiet here" text="但愿草丛里没有那些恶心的虫子" />
   <comment key="All quiet here" text="再有两个星期..." />
+  <comment key="All quiet here" text="不要相信任何人，任何人都有可能是叛徒" />
+  <comment key="All quiet here" text="我希望那些该死的政府官员来打这场仗" />
+  <comment key="All quiet here" text="Never gonna give you up~" />
+  <comment key="All quiet here" text="战争是一种上帝给无知的人认识地理的方式" />
+  <comment key="All quiet here" text="要是知道我会走这么远的路，我宁愿做个老师" />
+  <comment key="All quiet here" text="今天的伙食是什么？" />
   <comment key="Yes sir" text="是的队长" />
   <comment key="Yes sir" text="已上路" />
   <comment key="Yes sir" text="OK" />
@@ -196,6 +201,7 @@
   <comment key="celebrating" text="耶！" />
   <comment key="about to drive over a friendly" text="注意间距！" />
   <comment key="about to drive over a friendly" text="车轮不长眼！" />
+  <comment key="about to drive over a friendly" text="闪开！" />
   <comment key="about to drive over a friendly" text="我在尽力刹车了！" />
   <comment key="this is as close as i can get" text="我走得够近了" />
   <comment key="this is as close as i can get" text="不能再靠近了" />
@@ -205,20 +211,6 @@
   <comment key="enemy comms have been restored" text="敌军&#37;enemy_name通讯已完全恢复" />
   <comment key="comms have been destroyed" text="我方信号塔被破坏，通讯受到干扰" />
   <comment key="enemy comms have been destroyed, by us" text="做得好，敌军&#37;enemy_name的通讯被破坏！" />
-  <dialogue key="wander dialogue 2 men">
-    <comment text="瞧瞧这里" />
-    <comment text="太安静了" />
-    <comment text="我都想住这了" />
-  </dialogue>
-  <dialogue key="wander dialogue 2 men">
-    <comment text="好像我以前来过这里" />
-  </dialogue>
-  <dialogue key="wander dialogue 2 men">
-    <comment text="不要相信任何人，任何人都有可能是叛徒" />
-  </dialogue>
-  <dialogue key="wander dialogue 2 men">
-    <comment text="我希望那些该死的政府官员来打这场仗" />
-  </dialogue>
   <dialogue key="wander dialogue 2 men">
     <comment text="我想锻炼肌肉" />
 	<comment text="哑铃可是违禁品，小子" />
@@ -235,34 +227,38 @@
     <comment text="想看看很酷的东西吗?" />
     <comment text="去你妈的，我不会再上当了" />
   </dialogue>
-  <dialogue key="defense dialogue 2 men">
+  <dialogue key="wander dialogue 2 men">
     <comment text="你知道吗？我捡到了几个哑铃并藏了起来" />
     <comment text="嘘，小点声，你不应该留着它" />
   </dialogue>
-  <dialogue key="defense dialogue 2 men">
+  <dialogue key="wander dialogue 2 men">
     <comment text="我一直在想..." />
     <comment text="想什么？" />
     <comment text="额，突然忘了" />
   </dialogue>
-  <dialogue key="defense dialogue 2 men">
+  <dialogue key="wander dialogue 2 men">
     <comment text="长官？为什么我们什么事都不做？" />
     <comment text="不要质疑命令孩子，质疑命令会被杀的" />
     <comment text="是，长官！" />
   </dialogue>
-  <dialogue key="defense dialogue 2 men">
+  <dialogue key="wander dialogue 2 men">
     <comment text="你知道我最喜欢的运动是什么吗？" />
     <comment text="什么？" />
     <comment text="烫手山芋" />
     <comment text="这不是运动好吧" />
     <comment text="你把手榴弹的保险拉开后就是了" />
   </dialogue>
-  <dialogue key="defense dialogue 2 men">
+  <dialogue key="wander dialogue 2 men">
     <comment text="敌人没有偷袭我们真是太好了" />
     <comment text="是啊，我们可能还没准备好应对他们的偷袭" />
   </dialogue>
   <dialogue key="vehicle dialogue 2 men">
     <comment text="哎哟，你轧到我脚了！" />
     <comment text="就该轧你嘴！" />
+  </dialogue>
+  <dialogue key="vehicle dialogue 2 men">
+    <comment text="如果基地快要失守了我们该怎么办？" />
+    <comment text="战斗至最后一人，地狱潜兵决不投降" />
   </dialogue>
   <dialogue key="vehicle dialogue 2 men tag=any_tank">
     <comment text="哥们儿，你放屁了？" />
@@ -279,16 +275,75 @@
     <comment text="你在哪拿的驾照？" />
     <comment text="你妈给我的" />
   </dialogue>
-  <dialogue key="wander dialogue 2 men">
-    <comment text="Never gonna give you up~" />
-    <comment text="你从哪学来的？" />
-  </dialogue>
   <dialogue key="vehicle dialogue 2 men tag=any_tank">
     <comment text="我觉得在这里不安全" />
     <comment text="为什么？" />
     <comment text="看看车轮" />
     <comment text="有什么问题吗？" />
     <comment text="他们根本没有连在车轴上！" />
+  </dialogue>
+  <dialogue key="vehicle dialogue 2 men tag=any_tank">
+    <comment text="他们应该在这里多加一些棱角" />
+    <comment text="为什么？" />
+    <comment text="嗯...因为这座椅没开抗锯齿太硌屁股了" />
+  </dialogue>
+  <dialogue key="vehicle dialogue 2 men tag=any_tank">
+    <comment text="你可以往那边挪挪吗？" />
+    <comment text="不可以" />
+    <comment text="谢谢" />
+    <comment text="不客气" />
+  </dialogue>
+  <dialogue key="vehicle dialogue 2 men tag=any_tank">
+    <comment text="所以你最后一次开车是什么时候？" />
+    <comment text="啊？这是我第一次开车" />
+    <comment text="那特么开车的怎么是你?" />
+    <comment text="上一个开车的下车时被碾死了" />
+    <comment text="踏马的，还没上前线我就得被你弄死" />
+  </dialogue>
+  <dialogue key="vehicle dialogue 2 men tag=any_tank">
+    <comment text="最适合坦克的地形就是没有反坦克武器的地方" />
+	<comment text="以及没有友军火箭筒打不到的地方" />
+  </dialogue>
+  <dialogue key="vehicle dialogue 2 men tag=any_tank">
+    <comment text="没有什么事是一炮解决不了的，如果有，那就两炮" />
+	<comment text="但对面的装甲比我们的炮弹口径还要厚" />
+  </dialogue>
+  <dialogue key="vehicle dialogue 2 men tag=any_tank">
+    <comment text="你知道为什么我们叫虫子嘎嘣脆吗?" />
+    <comment text="不知道，为什么？" />
+    <comment text="因为我们从它们身上辗过去时会发出这样的声音" />
+	<comment text="所以这就是你去碾爆浆大虫子的理由？" />
+  </dialogue>
+  <dialogue key="vehicle dialogue 2 men tag=any_tank">
+    <comment text="这里面好热" />
+    <comment text="你把头伸出去，炮弹送过来的风特别凉快" />
+  </dialogue>
+  <dialogue key="vehicle dialogue 2 men tag=any_tank">
+    <comment text="额，这个红色的感叹号按钮是干什么用的？" />
+    <comment text="额... 没什么..." />
+  </dialogue>
+  <dialogue key="vehicle dialogue 2 men tag=any_tank">
+    <comment text="你最好带上你的战术耳机而不是耳塞" />
+    <comment text="你说得对，但耳机实在是太热了" />
+    <comment text="成员弃车的时候你就不会这么说了" />
+  </dialogue>
+  <dialogue key="vehicle dialogue 2 men tag=any_tank">
+    <comment text="车里闻起来就像鲱鱼罐头一样" />
+  </dialogue>
+  <dialogue key="vehicle dialogue 2 men tag=any_tank">
+    <comment text="你还记得有部电影里的坦克车长在最后逆转了战局吗？" />
+    <comment text="不记得" />
+    <comment text="耶，我也不记得。反正我们要死了。" />
+  </dialogue>
+  <dialogue key="vehicle dialogue 2 men tag=any_tank">
+    <comment text="对装甲车最好的防护是呆在敌军炮火射程之外" />
+    <comment text="你真特么机智" />
+  </dialogue>
+  <dialogue key="wander dialogue 2 men">
+    <comment text="今天是星期四！星期四！" />
+    <comment text="星期四又怎么了？" />
+    <comment text="今天可是疯狂星期四" />
+    <comment text="难怪今天撕裂者警报响了一整天，原来是打折了" />
   </dialogue>
   <dialogue key="wander dialogue 2 men">
     <comment text="总怕和你分到同一个小队里" />
@@ -306,23 +361,6 @@
     <comment text="那是什么意思？" />
     <comment text="那样就能有人给我们熨衣服、做饭和打扫卫生了..." />
 	<comment text="瞧你这点出息！" />
-  </dialogue>
-  <dialogue key="vehicle dialogue 2 men tag=any_tank">
-    <comment text="他们应该在这里多加一些棱角" />
-    <comment text="为什么？" />
-    <comment text="嗯...因为这座椅没开抗锯齿太硌屁股了" />
-  </dialogue>
-  <dialogue key="defense dialogue 2 men">
-    <comment text="今天是星期四！星期四！" />
-    <comment text="星期四又怎么了？" />
-    <comment text="今天可是疯狂星期四" />
-    <comment text="难怪今天撕裂者警报响了一整天，原来是打折了" />
-  </dialogue>
-  <dialogue key="vehicle dialogue 2 men tag=any_tank">
-    <comment text="你可以往那边挪挪吗？" />
-    <comment text="不可以" />
-    <comment text="谢谢" />
-    <comment text="不客气" />
   </dialogue>
   <dialogue key="wander dialogue 2 men">
     <comment text="一天要是没有阳光就像，你懂的...就像晚上" />
@@ -352,79 +390,29 @@
     <comment text="我认为这个计划真蠢" />
     <comment text="如果它蠢但是有用，那么它就不是蠢" />
   </dialogue>
-  <dialogue key="vehicle dialogue 2 men">
-    <comment text="如果基地快要失守了我们该怎么办？" />
-    <comment text="战斗至最后一人，地狱潜兵决不投降" />
-  </dialogue>
-  <dialogue key="vehicle dialogue 2 men tag=any_tank">
-    <comment text="所以你最后一次开车是什么时候？" />
-    <comment text="啊？这是我第一次开车" />
-    <comment text="那特么开车的怎么是你?" />
-    <comment text="上一个开车的下车时被碾死了" />
-    <comment text="踏马的，还没上前线我就得被你弄死" />
-  </dialogue>
-  <dialogue key="defense dialogue 2 men">
+  <dialogue key="wander dialogue 2 men">
     <comment text="军队中有两条铁律" />
     <comment text="哪两条？" />
     <comment text="第1条：指挥官永远是对的" />
     <comment text="第2条：如果指挥官不对，遵守第1条" />
   </dialogue>
-  <dialogue key="vehicle dialogue 2 men tag=any_tank">
-    <comment text="对装甲车最好的防护是呆在敌军炮火射程之外" />
-    <comment text="你真特么机智" />
-  </dialogue>
-  <dialogue key="vehicle dialogue 2 men tag=any_tank">
-    <comment text="最适合坦克的地形就是没有反坦克武器的地方" />
-	<comment text="以及没有友军火箭筒打不到的地方" />
-  </dialogue>
-  <dialogue key="vehicle dialogue 2 men tag=any_tank">
-    <comment text="没有什么事是一炮解决不了的，如果有，那就两炮" />
-	<comment text="但对面的装甲比我们的炮弹口径还要厚" />
-  </dialogue>
-  <dialogue key="vehicle dialogue 2 men tag=any_tank">
-    <comment text="你知道为什么我们叫虫子嘎嘣脆吗?" />
-    <comment text="不知道，为什么？" />
-    <comment text="因为我们从它们身上辗过去时会发出这样的声音" />
-	<comment text="所以这就是你去碾爆浆大虫子的理由？" />
-  </dialogue>
-  <dialogue key="vehicle dialogue 2 men tag=any_tank">
-    <comment text="这里面好热" />
-    <comment text="你把头伸出去，炮弹送过来的风特别凉快" />
-  </dialogue>
-  <dialogue key="vehicle dialogue 2 men tag=any_tank">
-    <comment text="额，这个红色的拉杆是干什么用的？" />
-    <comment text="额... 没什么..." />
-  </dialogue>
-  <dialogue key="vehicle dialogue 2 men tag=any_tank">
-    <comment text="你最好带上你的战术耳机而不是耳塞" />
-    <comment text="你说得对，但耳机实在是太热了" />
-    <comment text="成员弃车的时候你就不会这么说了" />
-  </dialogue>
-  <dialogue key="vehicle dialogue 2 men tag=any_tank">
-    <comment text="车里闻起来就像臭脚丫子一样" />
-  </dialogue>
-  <dialogue key="vehicle dialogue 2 men tag=any_tank">
-    <comment text="你还记得有部电影里的坦克车长在最后逆转了战局吗？" />
-    <comment text="不记得" />
-    <comment text="耶，我也不记得。反正我们要死了。" />
-  </dialogue>
-  <dialogue key="defense dialogue 2 men">
+  <dialogue key="wander dialogue 2 men">
     <comment text="我很确定我很快就要升级了" />
     <comment text="可别还没升级就挂了！" />
     <comment text="谢谢你，你真是个好人" />
   </dialogue>
-  <dialogue key="defense dialogue 2 men">
-    <comment text="我感觉好极了，伙计" />
+  <dialogue key="wander dialogue 2 men">
+    <comment text="今天真是美好的一天！" />
   </dialogue>
-  <dialogue key="defense dialogue 2 men">
-    <comment text="那天参加婚礼，老人们戳我并说“下一个就是你了”" />
+  <dialogue key="wander dialogue 2 men">
+    <comment text="那天参加婚礼，老人们戳我并说“下一个就轮到你了”" />
     <comment text="在葬礼上对他们做同样的事就是了" />
   </dialogue>
-  <dialogue key="defense dialogue 2 men">
+  <dialogue key="wander dialogue 2 men">
     <comment text="那些电话销售员可真够烦的！" />
     <comment text="把电话给你的3岁女儿并告诉她这是圣诞老人就好了" />
   </dialogue>
-  <dialogue key="defense dialogue 2 men">
+  <dialogue key="wander dialogue 2 men">
     <comment text="我的妻子说我丑，但我做事很漂亮" />
     <comment text="所以呢？" />
     <comment text="你觉得呢？" />
@@ -432,7 +420,7 @@
     <comment text="拜托，你能至少认真一次吗？" />
     <comment text="相信我，我是真心的" />
   </dialogue>
-  <dialogue key="defense dialogue 2 men">
+  <dialogue key="wander dialogue 2 men">
     <comment text="老兄，你真能侃" />
     <comment text="这是家族遗传" />
     <comment text="你这是什么意思？" />
@@ -440,7 +428,7 @@
     <comment text="你的妈妈呢？" />
     <comment text="她是个女人" />
   </dialogue>
-  <dialogue key="defense dialogue 2 men">
+  <dialogue key="wander dialogue 2 men">
     <comment text="我该如何向我父亲传达这个消息？" />
     <comment text="你指的什么？" />
     <comment text="我没能晋升" />
@@ -448,65 +436,61 @@
     <comment text="然后呢？" />
     <comment text="写上“和去年的表现一样”" />
   </dialogue>
-  <dialogue key="defense dialogue 2 men">
+  <dialogue key="wander dialogue 2 men">
     <comment text="专业潜兵是有预判意识的" />
     <comment text="但这个世界遍布着危险的新兵蛋子" />
   </dialogue>
-  <dialogue key="defense dialogue 2 men">
+  <dialogue key="wander dialogue 2 men">
     <comment text="他们总是谈论军事情报..." />
     <comment text="有什么问题吗？" />
     <comment text="军事情报里说的好矛盾啊" />
     <comment text="呸，管好你自己就好了！" />
   </dialogue>
-  <dialogue key="defense dialogue 2 men">
+  <dialogue key="wander dialogue 2 men">
     <comment text="如果你和你的上级发生了人格冲突" />
     <comment text="啥？" />
     <comment text="他有人格，你有冲突" />
   </dialogue>
-  <dialogue key="defense dialogue 2 men">
+  <dialogue key="wander dialogue 2 men">
     <comment text="领导越愚蠢，上头却越派给他更重要的任务" />
     <comment text="你说的没错" />
   </dialogue>
-  <dialogue key="defense dialogue 2 men">
+  <dialogue key="wander dialogue 2 men">
     <comment text="总会有办法的" />
     <comment text="然而并没有什么卵用" />
   </dialogue>
-  <dialogue key="defense dialogue 2 men">
+  <dialogue key="wander dialogue 2 men">
     <comment text="你见过指挥官的新老婆了吗?" />
     <comment text="你是说那个长鼻子的女人？" />
     <comment text="是的，有这么大的鼻子她都能在洗澡的时候抽烟了" />
   </dialogue>
-  <dialogue key="defense dialogue 2 men">
+  <dialogue key="wander dialogue 2 men">
     <comment text="人从猴子进化而来这是真的吗?" />
     <comment text="是的，列兵可能是那样，但中士不是" />
   </dialogue>
-  <dialogue key="defense dialogue 2 men">
+  <dialogue key="wander dialogue 2 men">
     <comment text="最近有个女孩伪装成男人加入了军队" />
     <comment text="她得和男人们一起穿衣一起洗澡，对吗？" />
     <comment text="当然" />
     <comment text="好吧，难道他们不会发现吗？" />
     <comment text="这事谁看见了会说出来？" />
   </dialogue>
-  <dialogue key="defense dialogue 2 men">
+  <dialogue key="wander dialogue 2 men">
     <comment text="为什么这几天我们的人在撤退？" />
     <comment text="他们没有撤退，他们只是战术转进" />
     <comment text="好吧好吧" />
   </dialogue>
-  <dialogue key="defense dialogue 2 men">
+  <dialogue key="wander dialogue 2 men">
     <comment text="你真没必要参军" />
     <comment text="谢谢你的支持，老兄" />
     <comment text="你只需要打准了就行" />
 	<comment text="以及别在人堆里掏火箭筒" />
   </dialogue>
-  <dialogue key="defense dialogue 2 men">
-    <comment text="战争是一种上帝给无知的人认识地理的方式" />
-    <comment text="很对" />
-  </dialogue>
-  <dialogue key="defense dialogue 2 men">
+  <dialogue key="wander dialogue 2 men">
     <comment text="当敌人犯错误时千万别打断他" />
     <comment text="有道理" />
   </dialogue>
-  <dialogue key="defense dialogue 2 men">
+  <dialogue key="wander dialogue 2 men">
     <comment text="嘿，我一直在想" />
     <comment text="想什么？" />
     <comment text="我们的援军到底从哪来的？" />
@@ -514,17 +498,20 @@
     <comment text="好吧，我没看到他们从运输工具或者别的东西里出来" />
     <comment text="你是想告诉我他们是从空气里蹦出来的吗？" />
   </dialogue>
-  <dialogue key="defense dialogue 2 men">
+  <dialogue key="wander dialogue 2 men">
     <comment text="我刚才放屁了吗？" />
     <comment text="是的长官！" />
     <comment text="你太让我恶心了" />
     <comment text="长官，是的长官！" />
   </dialogue>
-  <dialogue key="defense dialogue 2 men">
+  <dialogue key="wander dialogue 2 men">
     <comment text="他们没给我们足够的薪水，兄弟" />
-    <comment text="都不够你看自己的脸Drake" />
+    <comment text="都不够你看自己的脸" />
     <comment text="什么？这是个笑话吗？" />
     <comment text="哦，我倒希望它是个笑话" />
+  </dialogue>	
+  <dialogue key="defend dialogue 2 men">
+    <comment text="" />
   </dialogue>
   <!-- commander comments -->
   <comment key="player promotion" text="恭喜你士兵，你刚刚晋升到了&#37;rank_name！" />

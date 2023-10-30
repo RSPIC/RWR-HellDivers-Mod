@@ -900,6 +900,9 @@
 	<text key="cocoa bomb"  text="可可亚炸弹" />
 	<text key="Piko Hammer"  text="PIKO 槌子" />
 	<text key="Ribbon"  text="莉波" />
+	<text key="Explosive Bunny"  text="爆炸兔" />
+	<text key="Stylet AIM7F"  text="短剑 AIM7F导弹" />
+	<text key="Stylet M61A1"  text="短剑 M61A1重机枪" />
 
 <!-- 信物 -->
 	<text key="Asakaze [Skin]"  text="朝风 [信物]" />
@@ -981,11 +984,17 @@
 	<text key="Toki [Bunny Girl][Skin]"  text="飞鸟马时 [兔女郎 Ver.] [信物]" />
 	<text key="G41 [Universal][Skin]"  text="G41 [寰宇特急 Ver.] [信物]" />
 	<text key="MDR [Cocktail Observer] [Skin]"  text="MDR [酒会观测者 Ver.] [信物]" />
-	<text key="Kisaki [Skin]"  text="妃咲 [信物]" />
+	<text key="Kisaki [Skin]"  text="妃口关 [信物]" />
 	<text key="Asuma Toki [AI]"  text="飞鸟马时 [动力装甲][AI]" />
 	<text key="Erina [Skin]"  text="艾莉娜 [信物]" />
 	<text key="Ifrit [Skin]"  text="伊芙利特 [信物]" />
 	<text key="Vergil [Skin]"  text="维吉尔 [信物]" />
+	<text key="Elaina [Dress] [Skin]"  text="伊蕾娜 [礼服] [信物]" />
+	<text key="Sorasaki Hina [Swim] [Skin]"  text="空崎阳奈 [泳装] [信物]" />
+	<text key="StarWars ShipGirls [Skin]"  text="星舰少女 [信物]" />
+	<text key="Asaki Mutsuki [Skin]"  text="浅黄睦月 [信物]" />
+	<text key="Rikuhachima Aru [Skin]"  text="陆八魔 阿露 [信物]" />
+	<text key="Vepley [Skin]"  text="维普蕾 [信物]" />
 
 <!-- ex武器 -->
 	<text key="Leviathan Breath"  text="利维坦之息 [反重甲]" />
@@ -1049,6 +1058,7 @@
 	<text key="Anti-Personnel Barrier MK3"  text="反人员铁丝网 MK3" />
 	<text key="Action Console"  text="支援呼叫台" />
 	<text key="Projection Console"  text="控制台" />
+	<text key="Rocket Truck"  text="火箭运输车[易燃易爆][送至回收站]" />
 
 	<text key="acg_amg_11_mk3_spawn" text="A/MG-11 自动机枪" />
 	<text key="hd_amg_11_mk3_spawn" text="A/MG-11 自动机枪" />
@@ -1136,6 +1146,16 @@
 	<text key="BanZai Armor onload" text="板载护甲已装配" />
 
 	<text key="Vehicle Wrench" text="车载维修工具" />
+	<text key="Kirov" text="基洛夫空艇" />
+	<text key="Kirov Beacon" text="基洛夫空艇 部署信标" />
+	<text key="Demolition Truck" text="自爆卡车" />
+	<text key="Sentry Gun" text="哨戒炮" />
+	<text key="Tesla Coil" text="磁暴线圈" />
+	<text key="EDF Anti-Tank Emplacement" text="EDF 反坦克炮台" />
+	<text key="EDF Cannon" text="EDF-IR型 '鹰'式反坦克炮台" />
+	<text key="EDF Hornet" text="EDF-IR型 '棱镜'导弹发射器" />
+	<text key="EDF Mortar" text="EDF-IR型 '半波'迫击炮" />
+	<text key="Fire Turrent" text="'焦炎'火焰炮台" />
 	
 
 <!-- 生化人 -->
@@ -1172,16 +1192,20 @@
 	<text key="cyborgs_spawn_immolator_model"  text="生化兵" />
 	<text key="cyborgs_spawn_initiate_model"  text="初始者" />
 	<text key="cyborgs_spawn_warlord_model"  text="首领-精英" />
+	<text key="Tesla Trooper"  text="磁暴步兵[抗爆]" />
 
 <!-- 虫族 -->
 	<text key="Bugs"  text="虫族" />
 	<text key="Warrior Melee"  text="武斗虫" />
 	<text key="Vanguard Melee"  text="先驱虫" />
 	<text key="Tank Melee"  text="坦克虫" />
+	<text key="Tunnel Bugs"  text="隧道虫" />
 	<text key="Stalker Melee"  text="追踪虫" />
 	<text key="Shadow Melee"  text="黑暗影者" />
 	<text key="Shadow Alert"  text="黑暗影者" />
 	<text key="Scout Melee"  text="侦查虫" />
+	<text key="Baneling Melee"  text="毒爆虫" />
+	<text key="Zerg Baneling Melee"  text="电浆虫[可隐形]" />
 	<text key="Impaler Melee"  text="刺钉虫" />
 	<text key="Elite Melee"  text="精英部队" />
 	<text key="Brood Commander Melee"  text="虫族指挥官" />
@@ -1191,7 +1215,7 @@
 	<text key="Cirno Fumo"  text="琪露诺 Fumo [收藏品]" />
 	<text key="Flandre Scarlet Fumo"  text="芙兰朵露 Fumo [收藏品]" />
 	<text key="Hong Meiling Fumo"  text="红美铃 Fumo [收藏品]" />
-	<text key="Inu Sakuya Fumo"  text="十六夜 咲夜 Fumo [收藏品]" />
+	<text key="Inu Sakuya Fumo"  text="十六夜 口关夜 Fumo [收藏品]" />
 	<text key="Koishi Komeiji Fumo"  text="古明地恋 Fumo [收藏品]" />
 	<text key="Mike Goutokuji Fumo"  text="豪德寺三毛 Fumo [收藏品]" />
 	<text key="Mokou Fujiwara Fumo"  text="藤原妹红 Fumo [收藏品]" />
@@ -1204,6 +1228,7 @@
 	<text key="Yuyuko Fumo"  text="西行寺幽幽子 Fumo [收藏品]" />
 	<text key="Youmu Konpaku Fumo"  text="魂魄妖梦 Fumo [收藏品]" />
 	<text key="Junko Fumo"  text="纯狐 Fumo [收藏品]" />
+	<text key="Peroro Doll"  text="佩洛洛 Doll [收藏品]" />
 
 	<text key="Resource Point"  text="研究点 [功能性道具]" />
 	<text key="Samples Bugs"  text="虫族样本 [功能性物资]" />
@@ -1499,6 +1524,12 @@ TK其他玩家同样会造成倍率因子的下降" />
 /squad：刷10个己方默认ai
 /dead：使自己死亡
 "/>
+	<text key="Activity Help" text="[活动服须知]]" />
+	<text key="Help - Activity" text="#当前服务器：活动服务器
+！！本服务器不会自动换图！！
+！！严禁TK玩家，违者严惩！！
+赛车自带仓库/军械库/冰淇淋车，摧毁后会自动复活
+"/>
 
 <!-- 奖励箱子 -->
 	<text key="Reward Box [Collection]" text="奖励箱子 [收藏品]" />
@@ -1537,12 +1568,14 @@ TK其他玩家同样会造成倍率因子的下降" />
 最大连杀 = &#37;oc （+&#37;ox xp）
 支线任务 = &#37;mc （+&#37;mx xp） 
 游玩时长 = &#37;pt （+&#37;px xp） 
+阵亡次数 = &#37;dc （+&#37;dx xp）
 误伤玩家 = &#37;tc （-&#37;tx xp） 
-阵亡次数 = &#37;dc （-&#37;dx xp） 
 倍率因子 = &#37;bf （X&#37;bf 倍） 
 总计收益 = &#37;xp
 " />
 	<text key="Game OverTime,Force to Win" text="战役超时(2小时)，自动结算" />
+<!-- 支线任务 -->
+	<text key="Rocket Launch Platform" text="火箭发射平台[支线任务]" />
 
 <!-- 升级护甲 -->
 	<text key="AutoHeal Remove" text="自动回血 移除" />
@@ -1580,15 +1613,17 @@ TK其他玩家同样会造成倍率因子的下降" />
 	<text key="Money [1k]" text="交易用钞票 [一千]" />
 	<text key="Money [100]" text="交易用钞票 [一百]" />
 <!-- 加成道具 -->
-	<text key="Bonus card" text="全局加成卡" />
-	<text key="Bonus card [XP]" text="经验加成卡" />
-	<text key="Bonus card [RP]" text="资源加成卡" />
+	<text key="Bonus card" text="全局加成卡[掉落消失]" />
+	<text key="Bonus card [XP]" text="经验加成卡[掉落消失]" />
+	<text key="Bonus card [RP]" text="资源加成卡[掉落消失]" />
 
 	<text key="The bonus has taken effect" text="加成已生效" />
 	<text key="Now Factor" text="当前倍率:&#37;bf" />
 	<text key="The bonus can only be applied once" text="加成只能生效一次" />
 	<text key="Battle Time Too Long,BonusFacto Decrease" text="战斗时间过长,倍率因子将随时间下降" />
 	<text key="OverTime,You can only use this in first 5 min" text="使用失败,只能在加入战斗前五分钟内使用" />
+
+	<text key="Vote Ticket" text="民主选票[功能兑换券道具]" />
 
 <!-- 方舟战利品 -->
 	<text key="MTL_GOLD1" text="赤金碎片" />
@@ -1643,6 +1678,7 @@ TK其他玩家同样会造成倍率因子的下降" />
 	<text key="GuaGuaLeRewardTitle" text="刮刮乐百万大奖揭晓" />
 	<text key="Lottery ticket 10 Package" text="彩票[十张装]" />
 	<text key="Lottery ticket 100 Package" text="彩票[一百张装]" />
+	<text key="SuperEarth Lottery ticket" text="民本彩票" />
 
 <!-- 密钥 -->
 	<text key="Key Invalid" text="密钥不正确" />
@@ -1671,7 +1707,7 @@ TK其他玩家同样会造成倍率因子的下降" />
 输入/yes 或者/no 来进行投票" />
 	<text key="VoteTargetInvalid" text="选择对象无效，重新选择" />
 	<text key="VoteMenu - content" text="#1 - 投票踢出玩家
-#2 - 投票跳过当前地图（无结算收益）
+#2 - 投票跳过当前地图（无结算收益/3W RP花费）
 #3 - 赞赏玩家
 #0 - 输入/vote 0 退出投票
 " />
@@ -1684,7 +1720,35 @@ TK其他玩家同样会造成倍率因子的下降" />
 	<text key="Only One Player,faild to Vote" text="只有一名玩家，无法投票" />
 	<text key="Vote left time: 60s" text="投票剩余时间：60s" />
 	<text key="Vote successd" text="本次投票结束" />
-	<text key="You are kicked form server after vote" text="本次投票结束" />
+	<text key="You are kicked form server after vote" text="你被投票踢出服务器" />
+<!-- 脚本仓库 -->
+	<text key="stashPageObjectInfo" text="仓库容量[&#37;nowsize /&#37;maxsize]
+当前页数[&#37;nowpage /&#37;maxpage]
+物品=&#37;key0(&#37;value0个)
+物品=&#37;key1(&#37;value1个)
+物品=&#37;key2(&#37;value2个)
+物品=&#37;key3(&#37;value3个)
+物品=&#37;key4(&#37;value4个)
+物品=&#37;key5(&#37;value5个)
+物品=&#37;key6(&#37;value6个)
+物品=&#37;key7(&#37;value7个)
+物品=&#37;key8(&#37;value8个)
+物品=&#37;key9(&#37;value9个)
+" />
+	<text key="Stash Box" text="脚本仓库[部署以使用][请靠近仓库使用]" />
+	<text key="Stash Help" text="[教程] 如何使用脚本仓库" />
+	<text key="How To Use Stash" text="[教程] 如何使用脚本仓库
+*可存储的物品：无法存储武器，各类箱子。仅能存储信物、载具信标、收藏品、音乐盒、功能道具
+*警告：必须按操作流程执行，否则吞并物品不补。
+*重要：存取贵重物品时，有条件全程录像，没条件先存取价值低的物品。
+*如何知道某个物品是否能存储：打开脚本仓库，将想存的物品从仓库里取出到背包，若提示不能存储，则无法存储该物品。
+1、所有按钮的操作均通过购买完成
+2、打开仓库后，将需要存储的物品直接售卖至商店
+3、点购买'存入全部'按钮后即可存入
+4、取出物品前，需要通过上下页、上下选择中物品
+5、购买'取出X个'按钮即可取出
+6、取出完毕物品后，关闭仓库
+" />
 
 </translation>
 

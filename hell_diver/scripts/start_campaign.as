@@ -21,6 +21,7 @@ void main(dictionary@ inputData) {
 	settings.m_initialRp = 10000.0;
 	settings.m_initialXp = 0.0;
 	settings.m_server_test_mode = true;
+	settings.m_debug_mode = false;
 
 	// --------------------------------------------
 	// TODO: replace with your package's folder here

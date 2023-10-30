@@ -5,7 +5,7 @@
 
 	<control max_speed="20.0" acceleration="6.7" max_reverse_speed="6.0" max_rotation="0.8" max_water_depth="1.9" />
 
-	<physics max_health="10" mass="999999.0" extent="2.0 0.0 2" offset="0 0.0 0" top_offset="0 3 0" collision_model_pos="0 0.2 0" collision_model_extent="1.0 1.0 1.0" visual_offset="0 0.0 0" /> 
+	<physics max_health="20.0" mass="999999.0" extent="2.0 0.0 2" offset="0 0.0 0" top_offset="0 3 0" collision_model_pos="0 0.2 0" collision_model_extent="1.0 1.0 1.0" visual_offset="0 0.0 0" /> 
 
 	<turret offset="0 1.75 0.0" weapon_key="target.weapon" weapon_offset="0.0 -0.0 0.0" weapon_recoil="0.02" physics_recoil="0.0"  max_rotation_step="0.00015" rotation="0" rotation_range="1.92" />
 
@@ -14,11 +14,6 @@
 	<sound key="hit" filename="thin_metal_impact1.wav" />
 	<sound key="hit" filename="thin_metal_impact2.wav" />
 	<sound key="hit" filename="thin_metal_impact3.wav" />
-
-	<event>
-		<trigger class="receive_damage" />
-		<result class="reward" xp="100.0" />
-	</event>
 
 	<effect event_key="destroy" key="other" ref="SmokeMinor" post_processing="1" />
 	<effect event_key="destroy" key="other" ref="ShadowSmokeMinor" shadow="1" />

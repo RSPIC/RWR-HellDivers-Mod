@@ -1,0 +1,20 @@
+mkdir temp
+cd temp
+
+rem configure your zip application here:
+
+"c:\Program Files (x86)\7-Zip\7z.exe" e ..\map.zip
+cd..
+
+rem you need ImageMagick convert.exe
+
+rem splat files: extract alpha channel, 8-bit greyscale, apply some gaussian blur
+convert.exe temp\grass.png -alpha extract -depth 8 -gaussian-blur 3x3 terrain5_alpha_grass.png
+convert.exe temp\sand.png -alpha extract -depth 8 -gaussian-blur 3x3 terrain5_alpha_sand.png
+convert.exe temp\asphalt.png -alpha extract -depth 8 -gaussian-blur 3x3 terrain5_alpha_asphalt.png
+convert.exe temp\road.png -alpha extract -depth 8 -gaussian-blur 3x3 terrain5_alpha_road.png
+
+rem heightmap to 513x513, 8-bit greyscale
+convert.exe temp\height.png -type Grayscale -resize 513x513 -depth 8 terrain5_heightmap.png
+
+rmdir /s /q temp

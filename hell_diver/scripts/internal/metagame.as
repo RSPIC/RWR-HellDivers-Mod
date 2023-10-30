@@ -54,6 +54,7 @@ class Metagame {
 
 	// --------------------------------------------
 	void init() {
+		_log("metagame init");
 		clearTrackers();
 
 		@m_taskSequencer = TaskSequencer();
@@ -158,6 +159,7 @@ class Metagame {
 	void preBeginMatch() {		
 		m_taskSequencer.clear();
 		m_taskManager.clear();
+		_log("metagame preBeginMatch init");
 		for(uint i=0; i<m_hd_taskSequencerArray.size(); ++i){
 			m_hd_taskSequencerArray[i].clear();
 		}
@@ -170,7 +172,6 @@ class Metagame {
 			getAdminManager().loadFromFile();
 			getModeratorManager().loadFromFile();
 		}
-
 	}
 
 	// --------------------------------------------

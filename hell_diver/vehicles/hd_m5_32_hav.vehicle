@@ -45,12 +45,12 @@ character_leave_request_mode="friendly"
 	collision_model_pos="0 0.6 0" 
 	collision_model_extent="3.8 2.4 6.8" 
 	visual_offset="0.085 0.65 -0.3" 
-	friction_offset="0.0" 
-	drag_offset="-0.05" 
+	friction_offset="0.1" 
+	drag_offset="-0.35" 
 	destroy_on_top_hit="1"
 	destroy_on_top_hit_time="5"/> 
 
-	<turret offset="0.085 0.1 -1.4" weapon_key="hd_m5_32_hav_at_mk3.weapon" weapon_offset="0.25 2.85 2.05" weapon_recoil="0.1" physics_recoil="0.6" max_rotation_step="0.00005" />
+	<turret offset="0.085 0.1 -1.4" weapon_key="hd_m5_32_hav_at_mk3.weapon" weapon_offset="0.25 2.85 2.05" weapon_recoil="0.1" physics_recoil="0.2" max_rotation_step="0.00005" />
 	<turret offset="+1.35 1.5 0" weapon_key="hd_m5_apc_mg94.weapon" weapon_offset="0 0.8 0.7" weapon_recoil="0.01" max_rotation_step="0.0001" rotation="+1.57" rotation_range="2" />
 	<turret offset="-1.35 1.5 0" weapon_key="hd_m5_apc_mg94.weapon" weapon_offset="0 0.8 0.7" weapon_recoil="0.01" max_rotation_step="0.0001" rotation="-1.57" rotation_range="2" />
 	<turret offset="0.085 0.1 -1.4" weapon_key="auxiliary_car_fire_aim.weapon" weapon_offset="0.25 2.85 2.05" 
@@ -199,12 +199,12 @@ character_leave_request_mode="friendly"
 	collision_model_pos="0 0.6 0" 
 	collision_model_extent="3.8 2.4 6.8" 
 	visual_offset="0.085 0.65 -0.3" 
-	friction_offset="0.0" 
-	drag_offset="-0.05" 
+	friction_offset="0.1" 
+	drag_offset="-0.35" 
 	destroy_on_top_hit="1"
 	destroy_on_top_hit_time="5"/> 
 
-	<turret offset="0.085 0.1 -1.4" weapon_key="hd_m5_32_hav_at_mk3.weapon" weapon_offset="0.25 2.85 2.05" weapon_recoil="0.1" physics_recoil="0.6" max_rotation_step="0.00005" />
+	<turret offset="0.085 0.1 -1.4" weapon_key="hd_m5_32_hav_at_mk3.weapon" weapon_offset="0.25 2.85 2.05" weapon_recoil="0.1" physics_recoil="0.2" max_rotation_step="0.00005" />
 	<turret offset="+1.35 1.5 0" weapon_key="hd_m5_apc_mg94.weapon" weapon_offset="0 0.8 0.7" weapon_recoil="0.01" max_rotation_step="0.0001" rotation="+1.57" rotation_range="2" />
 	<turret offset="-1.35 1.5 0" weapon_key="hd_m5_apc_mg94.weapon" weapon_offset="0 0.8 0.7" weapon_recoil="0.01" max_rotation_step="0.0001" rotation="-1.57" rotation_range="2" />
 	<turret offset="0.085 0.1 -1.4" weapon_key="auxiliary_car_fire_aim.weapon" weapon_offset="0.25 2.85 2.05" 

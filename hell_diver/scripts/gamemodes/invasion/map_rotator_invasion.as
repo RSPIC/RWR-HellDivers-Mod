@@ -218,6 +218,7 @@ class MapRotatorInvasion : MapRotator {
 
 	// --------------------------------------------
 	protected void handleMatchEndEvent(const XmlElement@ event) {
+		_log("handleMatchEndEvent map_rotator_invasion");
 		// prepare for lost battle, grey won
 		int factionId = 1;
 
@@ -241,7 +242,7 @@ class MapRotatorInvasion : MapRotator {
 		if (factionId == 0) {
 			bool campaignCompleted = false;
 			// friendly faction won, advance to next map
-			_log("advance", 1);
+			_log("advance map_rotator_invasion");
 
 			// not real data to add about it, is there a "set" in php?
 			setStageCompleted(m_currentStageIndex);
@@ -254,6 +255,7 @@ class MapRotatorInvasion : MapRotator {
 			m_metagame.getTaskSequencer().add(Call(CALL(m_metagame.save)));
 
 			campaignCompleted = isCampaignCompleted();
+			_log("campaignCompleted map_rotator_invasion");
 			if (campaignCompleted) {
 				_log("campaign completed", 1);
 				if (m_loop) {
@@ -274,9 +276,10 @@ class MapRotatorInvasion : MapRotator {
 					// - do the regular map change countdown first
 					// - save
 					// - request restart
-
-					m_metagame.getTaskSequencer().add(TimeAnnouncerTask(m_metagame, 30, true));
-					m_metagame.getTaskSequencer().add(Call(CALL(m_metagame.requestRestart)));
+					if(!g_server_activity){ // when holding activity, do not skip map.
+						m_metagame.getTaskSequencer().add(TimeAnnouncerTask(m_metagame, 30, true));
+						m_metagame.getTaskSequencer().add(Call(CALL(m_metagame.requestRestart)));
+					}
 
 					// we aren't even calling ready to advance here; everything will be lost anyway!
 
@@ -289,8 +292,8 @@ class MapRotatorInvasion : MapRotator {
 			} else {
 				readyToAdvance();
 			}
-
 		} else {
+			_log("faction_lost restarted map_rotator_invasion");
 			// no need to do anything here, we should've received faction_lost event as well 
 			// and restarted the map because of that
 		}
@@ -698,6 +701,7 @@ class MapRotatorInvasion : MapRotator {
 					bool handled = false;
 					int baseId = event.getIntAttribute("base_id");
 					const XmlElement@ base = getBase(bases, baseId);
+					if(base is null){return;}
 					array<const XmlElement@>@ factions = base.getElementsByTagName("faction");
 					if (factions.size() > 0) {
 						float force = factions[0].getFloatAttribute("force"); 
@@ -820,7 +824,9 @@ class MapRotatorInvasion : MapRotator {
 			// only then announce map start
 			XmlElement@ query = XmlElement(makeQuery(m_metagame, array<dictionary> = {}));
 			const XmlElement@ doc = m_metagame.getComms().query(query);
-
+			if(doc is null){
+				_log("map_rotator_invasion startMap query is null");
+			}
 			m_metagame.resetTimer();
 		}
 		

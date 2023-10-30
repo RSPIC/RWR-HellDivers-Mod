@@ -39,7 +39,8 @@ can_be_detected_by_footmen="1"
 can_be_detected_by_driver="1"
 radius="0.3"
 >
-	<result class="blast" radius="4.2" damage="2.5" push="0.3" decal="0" character_state="wound"/>
+	<result class="blast" radius="4.2" damage="2.5" push="0.3" decal="0"
+    faction_compare="not_equal" damage_origin_vehicle="0" character_state="wound"/>
 	<trigger class="time" time_to_live="0" />	
     <rotation class="random" />
 	<model mesh_filename="" />

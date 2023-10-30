@@ -4,11 +4,8 @@ name="Samples Bugs"
 key="samples_bugs.carry_item"
 file="_samples.base"
 >
-
     <hud_icon filename="samples_bugs.png" />
     <inventory  price="0.0" />
-
     <model mesh_filename="samples_bugs.mesh" texture_filename="hd_samples_base.jpg" />
-
-    <commonness value="0"  />
+    <commonness value="0" in_stock="0" can_respawn_with="0" />
 </carry_item>

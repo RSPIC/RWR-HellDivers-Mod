@@ -3,7 +3,7 @@
 class="grenade" 
 name="Ammo Supply" 
 key="hd_ammo_supply_box_ex_2.projectile" 
-slot="2"
+slot="0"
 pulldown_in_air="10.0"
 on_ground_up="0 1 0"
 time_to_live="180"
@@ -12,6 +12,7 @@ time_to_live_out_in_the_open="180"
 player_death_drop_owner_lock_time="0"
 radius="0.8"
 >
+<!-- 掉落在地上的可拾取的子弹箱,拾取后触发的箱子 -->
     <trigger class="impact">
      <collider class="terrain" enabled="0" />     
      <collider class="static_object" enabled="0" /> 
@@ -27,11 +28,10 @@ radius="0.8"
     <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
 	speed_estimation_far="70.0" max_speed="0.0" randomness="0.0" tweak_factor="1.0" />
 
-	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	<commonness value="0.0" can_respawn_with="0" in_stock="1"/>
 
 	<capacity value="0" source="rank" source_value="0" />
-    <capacity value="1" source="rank" source_value="0" />
-    <inventory encumbrance="5" price="0.0" />
-    <animation key="throw" animation_key="medic1" />
+    <capacity value="0" source="rank" source_value="0" />
+    <inventory encumbrance="1.25" price="50.0" />
 	
 </projectile>

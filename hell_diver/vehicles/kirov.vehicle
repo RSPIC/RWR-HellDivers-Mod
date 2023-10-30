@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vehicles> 
+<vehicle 
+file="_vehicle_none.base" 
+name="Kirov" 
+key="kirov.vehicle" 
+respawn_time="300" 
+time_to_live_unsteerable="95" 
+map_view_atlas_index="34" 
+minimum_fill_requirement="1.0" 
+max_character_collision_speed_on_normal="8.0"
+allow_ai_to_use="0"
+>
+
+	<!-- <tire_set offset="0.01 0.0 +20.0" radius="0.5" />
+	<tire_set offset="40 0.0 0.0" radius="0.5" />
+	<tire_set offset="20 0.0 -20.0" radius="0.5" /> -->
+	<tire_set offset="7 0.0 +12" radius="0.45" />
+	<tire_set offset="25 0.0 0" radius="0.45" />
+	<tire_set offset="18 0.0 -7" radius="0.45" />
+
+	<control 
+	max_speed="7"
+	max_limiter_speed="3"
+	acceleration="30.0" 
+	max_reverse_speed="5" 
+	min_health_to_steer="0.10" 
+	max_rotation="10" 
+	max_water_depth="4.0" 
+	steer_smoothening="0" 
+	tracked="1" gears="0"
+	/>
+
+	<physics 
+	max_health="5000"
+	remove_collision_threshold="1.0"
+	extent="90 -4 90" 
+	offset="0 -4 0" 
+	top_offset="0 0 0" 
+	collision_model_pos="0 50 0" 
+	collision_model_extent="0 0 0" 
+	visual_offset="0 20 0" 
+	friction_offset="0.3" 
+	drag_offset="-1" 
+	mass="200"
+	gravity="-2000"
+	gravity_in_water="-20"
+	destroy_on_top_hit="0"
+	/> 
+
+	<sky_diving chute_offset="0 2.5 0.0" trigger_height="200.0" gravity="-10" 
+	mesh_filename="" texture_filename="" />
+
+	<visual class="chassis" mesh_filename="hd_kirov.mesh" texture_filename="UV_Kirov.jpg" />
+	<visual class="turret" turret_index="0" mesh_filename=".mesh" texture_filename=""/>
+	<visual class="turret" turret_index="1" mesh_filename=".mesh" texture_filename=""/>
+
+	<turret offset="0 1 0" weapon_key="kirov_missile.weapon" weapon_offset="0 0 0" weapon_recoil="0" max_rotation_step="0.1"/>
+	<turret offset="0 1 0" weapon_key="kirov_voice.weapon" weapon_offset="0 0 0" weapon_recoil="0" max_rotation_step="0.1"/>
+
+	<character_slot type="driver" attached_on_turret="0" enter_position="0 0.5 2" seat_position="2 20.800 0" 
+	rotation="0" exit_rotation="0" hiding="1" animation_id="36">
+	</character_slot>
+	<!-- 操控 -->
+	<character_slot type="gunner" enter_position="0 0 0" seat_position="-2 20 0" 
+	rotation="0" exit_rotation="-1.57" hiding="1" animation_id="36">
+		<turret index="0" /><turret index="1" />
+	</character_slot>
+
+	<rev_sound filename="" low_rev="0.0" high_rev="0.0" />
+	
+	<sound key="slide" filename="slide_noise.wav" />
+	<sound key="squeal" filename="tire_squeal.wav" />
+	<sound key="hit" filename="car_hit2.wav" />
+	<sound key="hit" filename="car_hit1.wav" />
+	<sound key="destroy" filename="kirov_voice_dead.wav" />  
+	<sound key="cleanup" filename="kirov_voice_dead.wav" />
+  	
+
+</vehicle>
+</vehicles>

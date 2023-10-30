@@ -5,7 +5,7 @@
 	  vehicles="1" 
 	  max_soldiers="300" 
     soldier_capacity_model="constant"
-	  player_bot_compensation="8" 
+	  player_bot_compensation="0" 
 	  xp_multiplier="1.0"
 	  rp_multiplier="1.0"
 	  friendly_fire="0"
@@ -109,21 +109,6 @@
   </command>
   <command
 	  class="faction_resources"
-	  faction_id="1">
-    <vehicle key="tank2.vehicle" enabled="1"/>
-  </command>
-  <command
-	  class="faction_resources"
-	  faction_id="2">
-    <vehicle key="tank2.vehicle" enabled="1"/>
-  </command>
-  <command
-	  class="faction_resources"
-	  faction_id="3">
-    <vehicle key="tank2.vehicle" enabled="1"/>
-  </command>
-  <command
-	  class="faction_resources"
 	  faction_id="0">
     <vehicle key="plano01.vehicle" enabled="1"/>
   </command>
@@ -157,11 +142,7 @@
 	  faction_id="0">
     <vehicle key="submarine.vehicle" enabled="1"/>
   </command>
-  <command
-	  class="faction_resources"
-	  faction_id="0">
-    <vehicle key="Nainet_chariot.vehicle" enabled="1"/>
-  </command>
+
 
 
 </commands>

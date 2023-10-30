@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<map_config min_factions="2" max_factions="2" custom_faction="2" custom_bases="0" custom_xp="0" custom_rp="0" custom_ai_accuracy="0" custom_max_soldiers="0">
+	<faction file="super_earth.xml" />
+	<weapon file="all_weapons.xml" />
+	<projectile file="all_throwables.xml" />
+	<call file="all_calls.xml" />
+	<carry_item file="all_carry_items.xml" />
+	<vehicle file="invasion_all_vehicles.xml" />
+</map_config>

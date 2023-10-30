@@ -32,6 +32,7 @@ dictionary EXO_Armor = {
         {"hd_exo44_walker_mk3_mg.weapon","hd_exo44_walker_mk3_missile.weapon"},
         {"hd_exo44_walker_mk3_missile.weapon","hd_exo44_walker_mk3_mg.weapon"},
         {"hd_exo48_obsidian_mk3_cannon.weapon","hd_exo48_obsidian_mk3_cannon_main.weapon"},
+        {"hd_exo48_obsidian_mk3_cannon_main.weapon","hd_exo48_obsidian_mk3_cannon.weapon"},
         {"hd_exo51_lumberer_mk3_cannon.weapon","hd_exo51_lumberer_mk3_flame.weapon"},
         {"hd_exo51_lumberer_mk3_flame.weapon","hd_exo51_lumberer_mk3_cannon.weapon"},
 
@@ -146,6 +147,10 @@ class schedule_Check : Tracker {
         if(player is null){return;}
         int pid = player.getIntAttribute("player_id");
         string name = player.getStringAttribute("name");
+        
+        if(g_server_activity){
+            activityHelp(m_metagame,pid);
+        }
         if(!g_debugMode && !g_online_TestMode){
 			gameHelpSimple(m_metagame,pid);
         }
@@ -391,6 +396,10 @@ class schedule_Check : Tracker {
 	}
 	protected void testHelp(Metagame@ m_metagame,int pid){
 		notify(m_metagame, "Help - TestServer", dictionary(), "misc", pid, true, "Testing Help", 1.0);
+	}
+    //---------------------------------------------------
+	protected void activityHelp(Metagame@ m_metagame,int pid){
+		notify(m_metagame, "Help - Activity", dictionary(), "misc", pid, true, "Activity Help", 1.0);
 	}
     //---------------------------------------------------
     protected void handleItemDropEvent(const XmlElement@ event){

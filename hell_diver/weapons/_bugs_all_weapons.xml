@@ -3,6 +3,7 @@
 	<!-- Scout 基础兵种 -->
 	<weapon file="bugs_scout_main.weapon" /><!--主武器-->
 	<weapon file="bugs_vanguard_main.weapon" /><!--主武器-->
+	<weapon file="bugs_tunnel_main.weapon" /><!--主武器-->
 	<weapon file="bugs_warrior_main.weapon" /><!--主武器-->
 	<weapon file="bugs_brood_commander_main.weapon" /><!--主武器-->
 	<weapon file="bugs_elite_main.weapon" /><!--主武器-->
@@ -11,5 +12,10 @@
 	<weapon file="bugs_behemoth_main.weapon" /><!--主武器-->
 	<weapon file="bugs_tank_main.weapon" /><!--主武器-->
 	<weapon file="bugs_impaler_main.weapon" /><!--主武器-->
+	<weapon file="bugs_baneling_main.weapon" /><!--主武器-->
+	<weapon file="bugs_zerg_baneling_main.weapon" /><!--主武器-->
+
+	<!-- 载具武器 -->
+	<weapon file="bugs_zerg_egg.weapon" /><!--虫蛋-->
 
 </weapons>

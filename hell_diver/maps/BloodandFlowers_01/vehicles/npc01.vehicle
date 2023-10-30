@@ -7,17 +7,11 @@
 
 	<physics max_health="999999.0" mass="999999.0" extent="2.0 0.0 2" offset="0 0.0 0" top_offset="0 3 0" collision_model_pos="0 0.2 0" collision_model_extent="4.0 1.0 4.0" visual_offset="0 0.0 0" /> 
 
-                <turret offset="1 0 1.5" weapon_key="npc01.weapon" weapon_offset="0 0 0" max_rotation_step="0.000010"/>
-	<visual class="chassis" mesh_filename="" texture_filename="" />
+	<visual class="chassis" mesh_filename="models/npc01.mesh" texture_filename="models/npc01.jpg" />
 
 	<sound key="hit" filename="thin_metal_impact1.wav" />
 	<sound key="hit" filename="thin_metal_impact2.wav" />
 	<sound key="hit" filename="thin_metal_impact3.wav" />
-
-	<event>
-		<trigger class="receive_damage" />
-		<result class="reward" xp="0.0" />
-	</event>
 
 	<effect event_key="destroy" key="other" ref="SmokeMinor" post_processing="1" />
 	<effect event_key="destroy" key="other" ref="ShadowSmokeMinor" shadow="1" />

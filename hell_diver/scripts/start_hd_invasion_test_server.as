@@ -32,7 +32,7 @@ void main(dictionary@ inputData) {
 
         settings.m_server_difficulty_level = 15;
         
-        settings.m_debug_mode = true;
+        settings.m_debug_mode = false;
         settings.m_server_test_mode = true;
 
 

@@ -30,7 +30,8 @@ key="noxe.weapon">
     <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="40.0" can_be_detected_by_footmen="1" 
 	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0" name="NOXE rocket"> 
 
-        <result class="blast" radius="6.2" damage="150" push="0.4" decal="0" character_state="wound" damage_origin_vehicle="0"/>
+        <result class="spawn" instance_class="projectile" instance_key="hd_noxe_damage.projectile" 
+		min_amount="1" max_amount="1" offset="0 0.5 0" position_spread="0 0" direction_spread="0 0" />
 
         <model mesh_filename="APFSDS.xml" />
 		<trigger class="impact" />

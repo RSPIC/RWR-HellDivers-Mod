@@ -166,6 +166,8 @@ dictionary stratagems_call_notify_key = {
 		{"hd_resupply_pack_mk3_call","hd_resupply_pack_mk3_spawn.projectile"},
 
 		{"hd_sup_mental_detector_call","hd_sup_mental_detector_spawn.projectile"},
+		
+		{"hd_hellpod_call","hd_hellpod_dropping_spawn_ai.projectile"},
 
 
         // 占位的
@@ -297,6 +299,9 @@ dictionary cd_translation = {
 	{"hd_sup_rep80_mk3","维修工具枪 [↓↓←→↓]"},
 	{"hd_exp_rec6_demolisher_mk3","REC-6 爆破手遥控炸弹 [↓←→↑↑]"},
 	{"hd_resupply_pack_mk3","补给背包 [↓↑↓↓→]"},
+
+	//其他
+	{"acg_starwars_shipgirls_skill","舰队增援"},
 
 	// 占位的
 	{"666",-1}

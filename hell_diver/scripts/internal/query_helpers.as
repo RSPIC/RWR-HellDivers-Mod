@@ -779,6 +779,7 @@ array<string>@ loadStringsFromFile(const Metagame@ metagame, string filename, st
 			array<const XmlElement@> items = root.getElementsByTagName(itemName);
 			for (uint i = 0; i < items.size(); ++i) {
 				const XmlElement@ item = items[i];
+				if(item is null){continue;}
 				result.insertLast(item.getStringAttribute(valueName));
 			}
 		}
@@ -799,6 +800,7 @@ array<string>@ loadStringsFromSaveFile(const Metagame@ metagame, string filename
 			array<const XmlElement@> items = root.getElementsByTagName(itemName);
 			for (uint i = 0; i < items.size(); ++i) {
 				const XmlElement@ item = items[i];
+				if(item is null){continue;}
 				result.insertLast(item.getStringAttribute(valueName));
 			}
 		}

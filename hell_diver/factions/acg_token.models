@@ -27,6 +27,7 @@
 	<model filename="acg_laisha.xml"  > <!--莱莎琳·斯托特--><requirement class="projectile" slot="0" key="token_laisha.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_pmaru.xml"  > <!--P丸様--><requirement class="projectile" slot="0" key="token_pmaru.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_erina.xml"  > <!--艾莉娜--><requirement class="projectile" slot="0" key="token_erina.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_starwars_shipgirls.xml"  > <!--星舰少女--><requirement class="projectile" slot="0" key="token_starwars_shipgirls.projectile"/><requirement class="rank" range="0 999999"/></model>
 
 <!-- 明日方舟 -->
 	<model filename="acg_skyfire.xml"  > <!--天火--><requirement class="projectile" slot="0" key="token_skyfire.projectile"/><requirement class="rank" range="0 999999"/></model>
@@ -69,6 +70,7 @@
 	<model filename="acg_kaname_madoka.xml"  > <!--魔法少女小圆--><requirement class="projectile" slot="0" key="token_kaname_madoka.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_shokuhou_misaki.xml"  > <!--食蜂操祈--><requirement class="projectile" slot="0" key="token_shokuhou_misaki.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_megumin.xml" ><!--慧慧--><requirement class="projectile" slot="0" key="token_megumin.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_elaina_dress.xml" ><!--伊蕾娜--><requirement class="projectile" slot="0" key="token_elaina_dress.projectile"/><requirement class="rank" range="0 999999"/></model>
 <!-- 碧蓝档案 -->
 	<model filename="acg_alice_tendou.xml"  > <!--天童爱丽丝--><requirement class="projectile" slot="0" key="token_alice_tendou.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_takanashi_hoshino.xml" > <!--小鸟游星野--><requirement class="projectile" slot="0" key="token_takanashi_hoshino.projectile"/><requirement class="rank" range="0 999999"/></model>
@@ -80,6 +82,9 @@
 	<model filename="acg_ba_iroha.xml" ><!--伊吕波--><requirement class="projectile" slot="0" key="token_ba_iroha.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_toki.xml" ><!--飞马鸟时--><requirement class="projectile" slot="0" key="token_toki.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_kisaki.xml" ><!--妃咲--><requirement class="projectile" slot="0" key="token_kisaki.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_sorasaki_hina_swim.xml" ><!--空崎阳奈 泳装--><requirement class="projectile" slot="0" key="token_sorasaki_hina_swim.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_asagi_mutsuki.xml" ><!--浅黄睦月--><requirement class="projectile" slot="0" key="token_asagi_mutsuki.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_rikuhachima_aru.xml" ><!--陆八魔 阿露--><requirement class="projectile" slot="0" key="token_rikuhachima_aru.projectile"/><requirement class="rank" range="0 999999"/></model>
 <!-- 少女前线 -->
 	<model filename="acg_mg4_703.xml" ><!--MG4机枪--><requirement class="projectile" slot="0" key="token_mg4_703.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_mg4.xml" ><!--MG4机枪--><requirement class="projectile" slot="0" key="token_mg4.projectile"/><requirement class="rank" range="0 999999"/></model>
@@ -96,6 +101,13 @@
 	<model filename="acg_m14.xml" > <!--M14--><requirement class="projectile" slot="0" key="token_m14.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_mg3.xml" > <!--MG3--><requirement class="projectile" slot="0" key="token_mg3.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_g41_7406.xml" > <!--M14--><requirement class="projectile" slot="0" key="token_g41_space.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_frieren.xml" > <!--Frieren--><requirement class="projectile" slot="0" key="token_frieren.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_hk416_china.xml" > <!--HK416--><requirement class="projectile" slot="0" key="token_hk416_china.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_sf_m950a.xml" > <!--M950A--><requirement class="projectile" slot="0" key="token_sf_m950a.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_tail_blue.xml" > <!--Trail Blue--><requirement class="projectile" slot="0" key="token_tail_blue.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_tail_red.xml" > <!--Trail Red--><requirement class="projectile" slot="0" key="token_tail_red.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_ump45_white.xml" > <!--Trail Red--><requirement class="projectile" slot="0" key="token_ump45_white.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_vepley.xml" > <!--维普蕾--><requirement class="projectile" slot="0" key="token_vepley.projectile"/><requirement class="rank" range="0 999999"/></model>
 <!-- 灰烬战线 -->
 	<model filename="acg_88mm_flak41.xml"  > <!--88炮--><requirement class="projectile" slot="0" key="token_88mm_flak41.projectile"/><requirement class="rank" range="0 999999"/></model>
 

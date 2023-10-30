@@ -34,6 +34,9 @@
 	<weapon file="cyborgs_butcher_sec_antitank.weapon" /><!--反坦克-->
 	<!-- Hound 基础兵种 -->
 	<weapon file="cyborgs_hound_main.weapon" /><!--主武器-->
+	<!-- Tesla 特殊兵种 -->
+	<weapon file="cyborgs_tesla_main.weapon" /><!--主武器-->
+
 
 	<!-- 生成用模型载体 -->
 	<weapon file="cyborgs_spawn_berserker_model.weapon" />
@@ -47,6 +50,7 @@
 
 	<!-- 载具武器 -->
 	<weapon file="cyborgs_ifv_at.weapon" />
+	<weapon file="cyborgs_fire_tank.weapon" />
 	
 
 </weapons>

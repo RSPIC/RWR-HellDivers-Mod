@@ -77,9 +77,6 @@ key="hd_lmg_mg94_mk3.weapon"
 		<result class="hit" kill_probability="2.0" 
 		kill_probability_offset_on_successful_hit="15"
 		kill_decay_start_time="0.15" kill_decay_end_time="0.55" character_state="wound"/>
-		<!-- slower decay -->
-		<!-- 30m max damage range -->
-		<!-- damage 75/110hit  -->
 	
 		<effect class="result" key="terrain" ref="hd_mg94_result_spray" lighting="0" />
 		<effect class="result" key="terrain" ref="hd_mg94_result_bullet_light_center" lighting="0" />

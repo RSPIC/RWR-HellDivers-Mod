@@ -119,17 +119,6 @@ key="hd_vehicle_hmg.weapon"
     </projectile>
 		<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
 		<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 	
-	
-    <stance state_key="running" accuracy="0.5" /> 
-    <stance state_key="walking" accuracy="0.9" />
-	<stance state_key="standing" accuracy="0.955" />
-	<stance state_key="crouching" accuracy="0.99" />
-    <stance state_key="crouch_moving" accuracy="1" />
-    <stance state_key="prone" accuracy="1.4" /> 
-    <stance state_key="prone_moving" accuracy="0.5" />
-    <stance state_key="over_wall" accuracy="1.8" />     
-     
-	 
 
 
 </weapon>

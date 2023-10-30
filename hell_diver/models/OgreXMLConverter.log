@@ -1,31 +1,16 @@
-14:58:05: Creating resource group General
-14:58:05: Creating resource group Internal
-14:58:05: Creating resource group Autodetect
-14:58:05: Registering ResourceManager for type Mesh
-14:58:05: Registering ResourceManager for type Material
-14:58:05: Registering ResourceManager for type Skeleton
-14:58:05: XMLMeshSerializer reading mesh data from W:\Game\steamapps\common\RunningWithRifles\media\packages\hell_diver\models\Cube.mesh.xml...
-14:58:05: Reading geometry...
-14:58:05: Geometry done...
-14:58:05: Reading submeshes...
-14:58:05: Submeshes done.
-14:58:05: Reading mesh names...
-14:58:05: Mesh names done.
-14:58:05: XMLMeshSerializer import successful.
-14:58:05: Reorganising vertex buffers to automatic layout..
-14:58:05: MeshSerializer writing mesh data to W:\Game\steamapps\common\RunningWithRifles\media\packages\hell_diver\models\Cube.mesh...
-14:58:05: File header written.
-14:58:05: Writing mesh data...
-14:58:05: Writing submesh...
-14:58:05: Exporting submesh texture aliases...
-14:58:05: Submesh texture aliases exported.
-14:58:05: Submesh exported.
-14:58:05: Exporting bounds information....
-14:58:05: Bounds information exported.
-14:58:05: Exporting submesh name table...
-14:58:05: Submesh name table exported.
-14:58:05: Mesh data exported.
-14:58:05: MeshSerializer export successful.
-14:58:05: Unregistering ResourceManager for type Skeleton
-14:58:05: Unregistering ResourceManager for type Material
-14:58:05: Unregistering ResourceManager for type Mesh
+20:14:46: Creating resource group General
+20:14:46: Creating resource group Internal
+20:14:46: Creating resource group Autodetect
+20:14:46: Registering ResourceManager for type Mesh
+20:14:46: Registering ResourceManager for type Material
+20:14:46: Registering ResourceManager for type Skeleton
+20:14:46: XMLMeshSerializer writing mesh data to W:\Game\steamapps\common\RunningWithRifles\media\packages\hell_diver\models\mk23a_body.mesh.xml...
+20:14:46: Populating DOM...
+20:14:47: Writing submesh...
+20:14:47: Dedicated geometry bone assignments exported.
+20:14:47: Submesh exported.
+20:14:47: DOM populated, writing XML file..
+20:14:47: XMLMeshSerializer export successful.
+20:14:47: Unregistering ResourceManager for type Skeleton
+20:14:47: Unregistering ResourceManager for type Material
+20:14:47: Unregistering ResourceManager for type Mesh

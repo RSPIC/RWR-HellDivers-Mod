@@ -83,7 +83,7 @@ key="hd_smg_tc171_cyclone_mk3.weapon"
 	time_to_live="0.12" can_be_detected_by_driver="1" can_be_disarmed="0" name="TC-171 Cyclone"> 
 	
 		<result class="hit" kill_probability="1.5" 
-		kill_probability_offset_on_successful_hit="8.5"
+		kill_probability_offset_on_successful_hit="14.5"
 		kill_decay_start_time="0.227" kill_decay_end_time="0.227" character_state="stun"/>
 		<!-- 25m max damage range / 最高1.67倍射界,且无衰减 -->
 		<!-- 10x76=760 -->
@@ -127,16 +127,8 @@ key="hd_smg_tc171_cyclone_mk3.weapon"
 	<!--枪口特效-->
 	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_5" lighting="0"/> 
 	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0" post_processing="1"/> 
-
-	<!--姿态精度-->
-    <!-- <stance state_key="running" accuracy="1" /> 
-    <stance state_key="walking" accuracy="1" />
-	<stance state_key="standing" accuracy="1" />
-	<stance state_key="crouching" accuracy="1" />
-    <stance state_key="crouch_moving" accuracy="1" />
-    <stance state_key="prone" accuracy="1" /> 
-    <stance state_key="prone_moving" accuracy="1" />
-    <stance state_key="over_wall" accuracy="1" />      -->
+    
+	<modifier class="speed" value="0.25" /> 
 	 
 </weapon>
 <weapon 
@@ -226,7 +218,7 @@ key="hd_smg_tc171_cyclone_dicker.weapon"
 	time_to_live="0.12" can_be_detected_by_driver="1" can_be_disarmed="0" name="TC-171 Cyclone"> 
 	
 		<result class="hit" kill_probability="1.5" 
-		kill_probability_offset_on_successful_hit="5.5"
+		kill_probability_offset_on_successful_hit="14.5"
 		kill_decay_start_time="0.227" kill_decay_end_time="0.227" character_state="stun"/>
 		<!-- 25m max damage range / 最高1.67倍射界,且无衰减 -->
 		<!-- 0.3s stun time -->
@@ -272,15 +264,7 @@ key="hd_smg_tc171_cyclone_dicker.weapon"
 	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_5" lighting="0"/> 
 	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0" post_processing="1"/> 
 
-	<!--姿态精度-->
-    <!-- <stance state_key="running" accuracy="1" /> 
-    <stance state_key="walking" accuracy="1" />
-	<stance state_key="standing" accuracy="1" />
-	<stance state_key="crouching" accuracy="1" />
-    <stance state_key="crouch_moving" accuracy="1" />
-    <stance state_key="prone" accuracy="1" /> 
-    <stance state_key="prone_moving" accuracy="1" />
-    <stance state_key="over_wall" accuracy="1" />      -->
+    <modifier class="speed" value="0.25" /> 
 	 
 </weapon>
 </weapons>

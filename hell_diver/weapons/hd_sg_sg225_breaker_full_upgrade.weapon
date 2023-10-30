@@ -89,7 +89,7 @@ key="hd_sg_sg225_breaker_full_upgrade.weapon"
 	time_to_live="0.12" can_be_detected_by_driver="1" can_be_disarmed="0" name="SG-225 Breaker"> 
 	
 		<result class="hit" kill_probability="2.0"
-		kill_probability_offset_on_successful_hit="9"
+		kill_probability_offset_on_successful_hit="12"
 		kill_decay_start_time="0.13" kill_decay_end_time="0.13" character_state="death"/>
 		<!-- damage 80hit/80hit balance+40damage-->
 		<!-- 13/18m max range | no decay-->

@@ -10,6 +10,7 @@ simulated_damage="0.5"
 usable_for_cover="1"
 allow_ai_to_use="1"
 character_leave_request_mode="friendly" 
+allow_player_to_use="0"
  >
 	<tag name="metal_thin" />
 
@@ -40,6 +41,8 @@ character_leave_request_mode="friendly"
 	<!-- 主炮 -->
 	<turret offset="0 3.2 0" weapon_key="hd_aac6_tesla_mk3.weapon" weapon_offset="0 0.5 0" weapon_recoil="0.001" 
 	 max_rotation_step="0.00095" />
+	<turret offset="0 3.2 0" weapon_key="hd_aac6_tesla_surround.weapon" weapon_offset="0 0.5 0" weapon_recoil="0.001" 
+	 max_rotation_step="0.00095" />
 	<!-- 车体 -->
 	<visual class="chassis" offset="0 -0.4 0" mesh_filename="hd_hellpod.mesh" texture_filename="hd_hellpod_main.png" />
 	<!-- 炮台 -->
@@ -48,7 +51,7 @@ character_leave_request_mode="friendly"
 	<!-- 操控 -->
 	<character_slot type="gunner" attached_on_turret="0" seat_position="0 -2 0" 
 	exit_rotation="1.57" hiding="1" animation_key="driving car" enter_position="-0.5 0 0" >
-		<turret index="0"/>
+		<turret index="0"/><turret index="1"/>
 	</character_slot>
 
 	<sound key="slide" filename="" />

@@ -17,20 +17,20 @@ allow_owner_to_use_only="1"
  
 	<control max_speed="1.0" acceleration="0.7" max_reverse_speed="1.0" max_rotation="0.8" max_water_depth="1.9" />
                                                                                                                                                        
-	<physics max_health="1000.0" 
-	mass="10000.0" 
+	<physics max_health="2000.0" 
+	mass="1000.0" 
 	extent="4.0 14 4.0" 
 	offset="0 0 0" 
 	top_offset="0 2 0" 
-	collision_model_pos="0 7.0 0" 
-	collision_model_extent="1.2 14.0 1.2" 
-	visual_offset="0 -1.0 0.0" 
+	collision_model_pos="0 2.5.0 0" 
+	collision_model_extent="2 5.0 2" 
+	visual_offset="0 0 0.0" 
 	blast_push_threshold="1000"
 	friction_offset="1"
 	/> 
 
-	<visual class="chassis" mesh_filename="radar_tower.mesh" texture_filename="radar_tower.png" />
-	<visual class="chassis" key="broken" mesh_filename="radar_tower_broken.mesh" texture_filename="radar_tower_broken.png" />
+	<visual class="chassis" mesh_filename="hd_radar.mesh" texture_filename="hd_radar.jpg" />
+	<visual class="chassis" key="broken" mesh_filename="hd_radar.mesh" texture_filename="hd_radar_broken.jpg" />
   
 <!--	<sound key="hit" filename="car_hit1.wav" />
 	<sound key="hit" filename="car_hit2.wav" />
@@ -43,12 +43,12 @@ allow_owner_to_use_only="1"
 	<effect event_key="health" value="250" ref="car_destroyed_up_smoke" offset="0 0.4 -0.3" />
 	<effect event_key="health" value="250" ref="car_broken_spary_spark" offset="0 0.4 -0.3" />
 
-   	<effect event_key="health" value="750" ref="car_broken_spary_spark" offset="0 14 0.3" />
-	<effect event_key="health" value="500" ref="car_broken_spary_spark" offset="0 14 0.3" />
-	<effect event_key="health" value="500" ref="car_destroyed_up_smoke" offset="0 14 0.3" />
-	<effect event_key="health" value="250" ref="car_destroyed_fire" offset="0 14 0.3" />
-	<effect event_key="health" value="250" ref="car_destroyed_up_smoke" offset="0 14 0.3" />
-	<effect event_key="health" value="250" ref="car_broken_spary_spark" offset="0 14 0.3" />
+   	<effect event_key="health" value="750" ref="car_broken_spary_spark" offset="0 3 0.3" />
+	<effect event_key="health" value="500" ref="car_broken_spary_spark" offset="0 3 0.3" />
+	<effect event_key="health" value="500" ref="car_destroyed_up_smoke" offset="0 3 0.3" />
+	<effect event_key="health" value="250" ref="car_destroyed_fire" offset="0 3 0.3" />
+	<effect event_key="health" value="250" ref="car_destroyed_up_smoke" offset="0 3 0.3" />
+	<effect event_key="health" value="250" ref="car_broken_spary_spark" offset="0 3 0.3" />
 
 	<effect event_key="destroyed" ref="car_destroyed_fire" post_processing="1" offset="0 0.4 -0.3" />
 	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="0" offset="0 0.4 -0.3" />  

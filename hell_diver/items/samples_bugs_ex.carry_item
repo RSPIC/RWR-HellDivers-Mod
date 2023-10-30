@@ -5,15 +5,16 @@ key="samples_bugs_ex.carry_item"
 file="samples_bugs.carry_item"
 time_to_live_out_in_the_open="0.0" 
 >
-<commonness value="0"  />
+    <commonness value="0" in_stock="0" can_respawn_with="0" />
 </carry_item>
 
+<!-- backpack为AI背包携带，_EX为掉落模型 -->
 <carry_item 
 key="samples_bugs_backpack.carry_item"
 file="samples_bugs.carry_item"
 time_to_live_out_in_the_open="0.0" 
 >
-<commonness value="1"  />
+    <commonness value="0.1" in_stock="0" can_respawn_with="0" />
 </carry_item>
 
 </carry_items>

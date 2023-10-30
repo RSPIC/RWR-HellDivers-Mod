@@ -7,6 +7,16 @@
 <weapon key="normal.weapon" />
 <weapon key="binoculars.weapon" />
 
+<!-- 部署载具 -->
+<weapon key="deploy_hd_demolition_truck.weapon" />
+<weapon key="deploy_hd_ra2_tesla.weapon" />
+<weapon key="deploy_hd_fire_turrent.weapon" />
+<weapon key="deploy_ex_edf_mortar.weapon" />
+<weapon key="deploy_ex_edf_turrent_double.weapon" />
+<weapon key="deploy_ex_edf_turrent_single.weapon" />
+<weapon key="deploy_hd_ra2_minigun.weapon" />
+<weapon key="deploy_ex_edf_turrent_single.weapon" />
+
 
 
 <!-- 特殊部署物 -->
@@ -81,6 +91,15 @@
 <projectile key="mh_60s_call.projectile" /><!--MH-60s 直升机 -->
 <projectile key="is2_m1895_call.projectile" /><!--IS-2 M[1895] 重型坦克 -->
 <projectile key="himars_call.projectile" /><!--海马斯火箭车 -->
+<projectile key="wiesel_tow_call.projectile" /><!--鼬鼠 -->
+<projectile key="lav6_call.projectile" />
+<projectile key="ex_power_chair_call.projectile" />
+<projectile key="zbd09_call.projectile" />
+<projectile key="t90m3_call.projectile" />
+<projectile key="uragan_call.projectile" />
+<projectile key="borsig_call.projectile" />
+<projectile key="m61a5_call.projectile" />
+<projectile key="mtlb_2b9_call.projectile" />
 
 <projectile key="acg_ex_box.projectile" /><!--Ex 补给箱-->
 
@@ -88,6 +107,7 @@
 <carry_item key="samples_bugs.carry_item" />
 <carry_item key="samples_cyborgs.carry_item" />
 <carry_item key="samples_illuminate.carry_item" />
+<carry_item key="lottery_superearth.carry_item" />
 
 <carry_item key="reward_box_collection.carry_item" />
 <carry_item key="reward_box_skin.carry_item" />

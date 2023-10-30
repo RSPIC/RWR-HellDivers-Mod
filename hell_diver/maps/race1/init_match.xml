@@ -1,0 +1,55 @@
+<commands>
+  <command 
+	  class="start_game" 
+	  vehicles="1" 
+	  max_soldiers="0" 
+	  player_bot_compensation="0" 
+	  xp_multiplier="1.0"
+	  rp_multiplier="1.0"
+	  friendly_fire="1" 
+	  initial_rp="0.0"
+	  initial_xp="0.3"
+	  base_capture_system="any">
+
+    <faction initial_over_capacity="0" ai_accuracy="0.94" lose_without_bases="0" />
+  </command>
+  
+<command 
+	class="create_instance" 
+	faction_id="0"
+	position="591 8 834"
+	offset="0 0 0"
+	character_id="0" 
+	instance_class="projectile"
+	instance_key="at_mine.projectile" >
+</command>  
+
+<command 
+	class="create_instance" 
+	faction_id="0"
+	position="599 9 838"
+	offset="0 0 0"
+	character_id="0" 
+	instance_class="projectile"
+	instance_key="at_mine.projectile" >
+</command>  
+
+<command 
+	class="create_instance" 
+	faction_id="0"
+	position="611 9 840"
+	offset="0 0 0"
+	character_id="0" 
+	instance_class="projectile"
+	instance_key="at_mine.projectile" >
+</command>  
+
+<command
+	class="faction_resources"
+	faction_id="0">
+<vehicle key="armory_truck.vehicle" enabled="1"/>
+</command>
+
+
+  
+</commands>

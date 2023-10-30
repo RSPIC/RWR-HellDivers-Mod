@@ -35,6 +35,7 @@ class Orientation{
 }
 
 void SpawnSoldier(Metagame@ metagame, uint count, uint factionId, Vector3 position, string instanceKey) {	//copy from GFLhelpers.as
+	_log("SpawnSoldier");
 	for (uint i = 0; i < count; ++i) {
 		metagame.getComms().send(
 		"<command " +
@@ -49,6 +50,7 @@ void SpawnSoldier(Metagame@ metagame, uint count, uint factionId, Vector3 positi
 }
 
 void SpawnSoldier(Metagame@ metagame, uint count, uint factionId, Vector3 position, string instanceKey,Vector3 offset) {
+	_log("SpawnSoldier");
 	for (uint i = 0; i < count; ++i) {
 		metagame.getComms().send(
 		"<command " +
@@ -195,6 +197,45 @@ void CreateDirectProjectile(Metagame@ m_metagame,Vector3 startPos,Vector3 endPos
 		" character_id='" + cId + "'" +
 		" offset='" + direction.toString() + "' />";
 	m_metagame.getComms().send(c);
+}
+class ListDirectProjectile{
+	int m_fid;
+	int m_cid;
+	string m_instance_key;
+	Vector3 m_startPos;
+	Vector3 m_endPos;
+	Vector3 m_direction;
+	float m_speed;
+	ListDirectProjectile(Vector3 startPos,Vector3 endPos,string key,int cId,int fId,float initspeed){
+		m_startPos = startPos.add(Vector3(0,1,0));
+		m_endPos = endPos;
+		m_instance_key = key;
+		m_cid = cId;
+		m_fid = fId;
+		m_speed = initspeed/60;
+
+		Vector3 direction = endPos.subtract(m_startPos);
+		float Vmod = sqrt(pow(direction.get_opIndex(0),2)  + pow(direction.get_opIndex(1),2) + pow(direction.get_opIndex(2),2));
+		if (Vmod< 0.00001f) Vmod= 0.00001f;
+		direction.set(direction.get_opIndex(0)/Vmod,direction.get_opIndex(1)/Vmod,direction.get_opIndex(2)/Vmod);
+		m_direction = direction.scale(m_speed);
+	}
+}
+void CreateListDirectProjectile(Metagame@ m_metagame,array<ListDirectProjectile@> list){
+	array<string> strList;
+	for(uint i=0;i<list.size();i++){
+		if(list[i] is null){continue;}
+		string c = 
+		"<command class='create_instance'" +
+		" faction_id='" + list[i].m_fid + "'" +
+		" instance_class='grenade'" +
+		" instance_key='" + list[i].m_instance_key + "'" +
+		" position='" + list[i].m_startPos.toString() + "'" +
+		" character_id='" + list[i].m_cid + "'" +
+		" offset='" + list[i].m_direction.toString() + "' />";
+		strList.insertLast(c);
+	}
+	m_metagame.getComms().send(strList);
 }
 
 Vector3 getRotatedVector(float angle, Vector3 c_pos) {
@@ -457,7 +498,6 @@ float getFlatPositionDistance(const Vector3@ pos1, const Vector3@ pos2) {
 	float result = sqrt(d.m_values[0] + d.m_values[2]);
 	return result;
 }
-
 void set_spotting(const Metagame@ metagame,int vehicleId,int factionId){
 	XmlElement command("command");
 	command.setStringAttribute("class", "set_spotting");

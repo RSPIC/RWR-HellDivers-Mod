@@ -45,7 +45,12 @@
 	<weapon file="borsig_cannon.weapon" /> <!-- Rhm.-Borsig Waffentrager-->
 	<weapon file="uragan.weapon" /> <!-- uragan 火箭车-->
 	<weapon file="t90m3.weapon" /> <!-- T90M3-->
-	<weapon file="zbd09.weapon" /> <!-- T90M3-->
+	<weapon file="zbd09.weapon" /> <!-- ZBD09-->
+	<weapon file="kirov.weapon" /> <!-- ZBD09-->
+
+	<weapon file="ex_edf_turrent.weapon" /> <!-- EDF 替换陶氏黄蜂-->
+	<weapon file="ex_edf_mortar.weapon" /> <!-- EDF 替换迫击炮-->
+	<weapon file="hd_fire_turrent.weapon" /> <!-- 喷火塔替换机枪-->
 
 	<weapon file="hd_vehicle_lmg.weapon" /> <!-- 车载通用机枪-->
 	<weapon file="hd_vehicle_null.weapon" /> <!-- 车载空武器-->
@@ -54,9 +59,11 @@
 	<weapon file="hd_vehicle_hmg_b.weapon" /> <!-- 车载重机枪 轰炸重伤-->
 	<weapon file="hd_vehicle_tow.weapon" /> <!-- 车载TOW-->
 	<weapon file="hd_vehicle_wrench.weapon" /> <!-- 车载维修-->
+	<weapon file="hd_vehicle_minigun.weapon" /> <!-- 车载加特林-->
 
 	<!-- 特殊功能 -->
 	<weapon file="auxiliary_car_fire_aim.weapon" /> <!--辅瞄设备-->
+	<weapon file="stash_ui.weapon" /> 	<!-- 脚本仓库功能按钮武器 -->
 	
 	<!-- 特殊部署物 -->
 	<weapon file="ex_gramophone.weapon" /> <!--留声机-->

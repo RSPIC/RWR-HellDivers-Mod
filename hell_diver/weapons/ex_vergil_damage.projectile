@@ -17,7 +17,7 @@ time_to_live_out_in_the_open="0"
 player_death_drop_owner_lock_time="0"
 >
     <collision class="sticky" />
-	<result class="blast" radius="6.5" damage="10" push="0.5" decal="0" character_state="wound" 
+	<result class="blast" radius="6.5" damage="15" push="0.5" decal="0" character_state="wound" 
 	faction_compare="not_equal" damage_origin_vehicle="0"/>
 	<trigger class="time" time_to_live="0" />	
     <rotation class="random" />
@@ -42,7 +42,7 @@ time_to_live_out_in_the_open="0"
 player_death_drop_owner_lock_time="0"
 >
     <collision class="sticky" />
-	<result class="blast" radius="9.0" damage="30" push="0.5" decal="0" character_state="death" 
+	<result class="blast" radius="9.0" damage="15" push="0.5" decal="0" character_state="death" 
 	faction_compare="not_equal" damage_origin_vehicle="0"/>
 	<trigger class="time" time_to_live="0" />	
     <rotation class="random" />
@@ -92,7 +92,7 @@ time_to_live_out_in_the_open="0"
 player_death_drop_owner_lock_time="0"
 >
     <collision class="sticky" />
-	<result class="blast" radius="35" damage="100" push="0.2" decal="0" character_state="wound" 
+	<result class="blast" radius="35" damage="300" push="0.2" decal="0" character_state="wound" 
 	faction_compare="not_equal" damage_origin_vehicle="0"/>
 	<trigger class="time" time_to_live="0" />	
     <rotation class="random" />
@@ -117,7 +117,7 @@ time_to_live_out_in_the_open="0"
 player_death_drop_owner_lock_time="0"
 >
     <collision class="sticky" />
-	<result class="blast" radius="50" damage="300" push="2" decal="0" character_state="wound" 
+	<result class="blast" radius="50" damage="500" push="2" decal="0" character_state="wound" 
 	faction_compare="not_equal" damage_origin_vehicle="0"/>
 	<trigger class="time" time_to_live="0" />	
     <rotation class="random" />
