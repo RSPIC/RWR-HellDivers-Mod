@@ -478,6 +478,13 @@ class dynamic_alert : Tracker {
             Alert_Spawn(m_metagame,1,position,level_all);
             Alert_Spawn(m_metagame,1,position,level_rokectLauncher);
         }
+        if(eventKey == "vehicle_call_alert_cyborgs"){
+            Vector3 position = stringToVector3(event.getStringAttribute("position"));
+            int fid = g_factionInfoBuck.getFidByName("Cyborgs");
+            if(fid == -1){return;}
+            Alert_Spawn(m_metagame,fid,position,level_all);
+            Alert_Spawn(m_metagame,fid,position,level_rokectLauncher);
+        }
     }
     protected void handleChatEvent(const XmlElement@ event){
         string sender = event.getStringAttribute("player_name");

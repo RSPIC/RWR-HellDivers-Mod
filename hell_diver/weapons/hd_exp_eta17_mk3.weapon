@@ -99,11 +99,7 @@ key="hd_exp_eta17_mk3.weapon"
 		<!--命中音效-->
 		<sound class="result" key="other" fileref="at_hit_sfx_1.wav" pitch_variety="0.03" volume="1.0" />
 	
-		<!--命中特效-->
-		<!--
-		<effect class="result" key="terrain" ref="" lighting="0"/>
-		<effect class="activated" ref="general_weapon_activated_bullet_light" />
-		-->
+
 		<trail probability="1" key="nova_trail"/>	
 		<model mesh_filename="APFSDS.xml" />
 		

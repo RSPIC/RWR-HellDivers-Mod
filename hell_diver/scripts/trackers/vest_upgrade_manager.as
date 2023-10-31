@@ -153,7 +153,7 @@ class vest_upgrade_manager : Tracker {
                             }
                         g_vestInfoBuck.setStratagemsFirst(name,priority);
                         notify(m_metagame,"StratagemsPriority Upgrade "+priority, dictionary(), "misc", pid, false,"", 1.0);
-                        GiveRP(m_metagame,characterId,-5000);
+                        GiveRP(m_metagame,characterId,-10000);
                     }else{
                         notify(m_metagame,"StratagemsPriority Upgrade to MAX", dictionary(), "misc", pid, false,"", 1.0);
                     }

@@ -255,7 +255,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			ScoredResource("token_sorasaki_hina_swim.projectile","projectile",1.0f,4),
 			ScoredResource("token_starwars_shipgirls.projectile","projectile",1.0f,4),
 			ScoredResource("token_asagi_mutsuki.projectile","projectile",1.0f,4),
-			ScoredResource("acg_rikuhachima_aru.projectile","projectile",1.0f,4),
+			ScoredResource("token_rikuhachima_aru.projectile","projectile",1.0f,4),
 
 			//AI类信物
 			ScoredResource("ai_token_asuma_toki.projectile","projectile",1.0f,2)
