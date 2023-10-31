@@ -198,6 +198,14 @@
 	</model>
 	<model filename="toki_abi_eshuh_ex.xml"><!--飞马鸟时 机甲--><requirement class="weapon" slot="1" key="acg_exo_toki_skill.weapon"/>
 	</model>
+	<model filename="toki_abi_eshuh_ex.xml"><!--飞马鸟时 机甲--><requirement class="weapon" slot="1" key="acg_exo_toki_railgun.weapon"/><requirement class="weapon" slot="0" key="acg_exo_toki.weapon"/>
+	</model>
+	<model filename="toki_abi_eshuh_ex.xml"><!--飞马鸟时 机甲--><requirement class="weapon" slot="1" key="acg_exo_toki_skill.weapon"/><requirement class="weapon" slot="0" key="acg_exo_toki_doublefire.weapon"/>
+	</model>
+	<model filename="toki_abi_eshuh_ex.xml"><!--飞马鸟时 机甲--><requirement class="weapon" slot="1" key="acg_exo_toki_railgun.weapon"/><requirement class="weapon" slot="0" key="acg_exo_toki_doublefire.weapon"/>
+	</model>
+	<model filename="toki_abi_eshuh_ex.xml"><!--飞马鸟时 机甲--><requirement class="weapon" slot="1" key="acg_exo_toki_skill.weapon"/><requirement class="weapon" slot="0" key="acg_exo_toki.weapon"/>
+	</model>
 	<model filename="toki_abi_eshuh.xml"><!--飞马鸟时 机甲--><requirement class="weapon" slot="0" key="re_acg_exo_toki.weapon"/>
 	</model>
 	<model filename="toki_abi_eshuh.xml"><!--飞马鸟时 机甲--><requirement class="weapon" slot="0" key="re_acg_exo_toki_doublefire.weapon"/>
@@ -205,6 +213,14 @@
 	<model filename="toki_abi_eshuh_ex.xml"><!--飞马鸟时 机甲--><requirement class="weapon" slot="1" key="re_acg_exo_toki_railgun.weapon"/>
 	</model>
 	<model filename="toki_abi_eshuh_ex.xml"><!--飞马鸟时 机甲--><requirement class="weapon" slot="1" key="re_acg_exo_toki_skill.weapon"/>
+	</model>
+	<model filename="toki_abi_eshuh_ex.xml"><!--飞马鸟时 机甲--><requirement class="weapon" slot="1" key="re_acg_exo_toki_railgun.weapon"/><requirement class="weapon" slot="0" key="acg_exo_toki.weapon"/>
+	</model>
+	<model filename="toki_abi_eshuh_ex.xml"><!--飞马鸟时 机甲--><requirement class="weapon" slot="1" key="re_acg_exo_toki_skill.weapon"/><requirement class="weapon" slot="0" key="acg_exo_toki_doublefire.weapon"/>
+	</model>
+	<model filename="toki_abi_eshuh_ex.xml"><!--飞马鸟时 机甲--><requirement class="weapon" slot="1" key="re_acg_exo_toki_railgun.weapon"/><requirement class="weapon" slot="0" key="acg_exo_toki_doublefire.weapon"/>
+	</model>
+	<model filename="toki_abi_eshuh_ex.xml"><!--飞马鸟时 机甲--><requirement class="weapon" slot="1" key="re_acg_exo_toki_skill.weapon"/><requirement class="weapon" slot="0" key="acg_exo_toki.weapon"/>
 	</model>
 <!-- 少女前线 -->
 	<model filename="acg_mg4_703.xml"><!--MG4机枪--><requirement class="weapon" slot="0" key="acg_mg4td_ap.weapon"/>

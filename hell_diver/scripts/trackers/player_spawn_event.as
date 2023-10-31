@@ -61,7 +61,7 @@ class player_spawn : Tracker {
 		ListDirectProjectile@ d = ListDirectProjectile(c_position,c_position,"hd_sound_divers_coming.projectile",-1,fid,1);
 		ListDirectProjectile@ e = ListDirectProjectile(c_position,c_position,"hd_effect_hellpod_dropping_smoke.projectile",-1,fid,1);
 		float range = 5;
-		uint times = 4;
+		uint times = 3;
 		while(times > 0){
 			--times;
 			float rand_x = rand(-range,range);

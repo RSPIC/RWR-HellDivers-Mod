@@ -82,7 +82,7 @@ key="acg_ruby_rose_sniper.weapon"
 	time_to_live="0.63" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.7" name="Crescent Rose [Sniper]"> 
 
 		<result class="spawn" instance_class="projectile" instance_key="acg_ruby_rose_sniper_damage.projectile" 
-		min_amount="8" max_amount="8" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+		min_amount="10" max_amount="10" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 		<!-- 4x7~8 轰炸伤 -->
 	
 		<trigger class="impact" time_to_live="1.5"  />
@@ -361,7 +361,7 @@ key="re_acg_ruby_rose_sniper.weapon"
 	time_to_live="0.63" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.7" name="Crescent Rose [Sniper]"> 
 
 		<result class="spawn" instance_class="projectile" instance_key="acg_ruby_rose_sniper_damage.projectile" 
-		min_amount="8" max_amount="8" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+		min_amount="10" max_amount="10" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 		<!-- 4x7~8 轰炸伤 -->
 	
 		<trigger class="impact" time_to_live="1.5"  />

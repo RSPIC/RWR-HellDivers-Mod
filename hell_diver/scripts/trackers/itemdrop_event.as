@@ -39,7 +39,7 @@ dictionary resupply_getitem_key = {
         {"hd_exp_mls4x_commando_mk3.weapon",8},
         {"hd_exp_eta17_mk3.weapon",8},
         {"hd_exp_rl112_recoilless_rifle_mk3.weapon",8},
-        {"hd_lmg_mgx42_mk3.weapon",16},
+        {"hd_lmg_mgx42_mk3.weapon",8},
 
         {"hd_grenade_molotov.projectile",8},
         {"hd_grenade_standard.projectile",10},

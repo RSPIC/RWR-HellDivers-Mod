@@ -922,6 +922,15 @@ class battleInfoBuck{
 							return true;
 						}
 					}
+					if(m_battleInfos[i].killCount() >= 750){
+						return true;
+					}
+					if(m_battleInfos[i].deadCount() >= 30){
+						return true;
+					}
+				}
+				if(m_battleInfos[i].playingTime() >= 75){
+					return true;
 				}
 			}
 		}

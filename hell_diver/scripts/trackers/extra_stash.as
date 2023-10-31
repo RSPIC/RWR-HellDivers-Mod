@@ -493,7 +493,7 @@ class playerStashInfo {
                 }
                 return selectObject();
             }
-            XmlElement@ object = m_stashObject[targetIndex];
+            XmlElement@ object = m_stashObject[targetIndex];//TODO: 这里的index不保险，必须添加强制不溢出的检测
             if(object !is null){
                 string itemName = object.getStringAttribute("AA_tag");
                 string itemType = object.getStringAttribute("A_tag");
@@ -855,19 +855,19 @@ class extra_stash : Tracker {
 
         if(itemKey.find("_exchange") != -1){
             deleteItemInBackpack(m_metagame,cid,"carry_item",itemKey);
-            stashExchangeList@ executeList = cast<stashExchangeList@>(stashExchangeDict[itemKey]);
-            if(executeList !is null){
-                executeList.handleExchange(@m_playerStashInfoBuck,sid); //执行删除和兑换新物品
-            }
-            // 没有新物品而是功能道具的，这里单独处理
-            if(itemKey == "collect_fumo_koishi_komeiji_exchange"){
-                //6 古明地恋Fumo[1] 换 脚本仓库容量[10]
-                if(!m_playerStashInfoBuck.isOpen(sid)){
-                    m_playerStashInfoBuck.openStash(sid);
-                }
-                m_playerStashInfoBuck.upgradeStash(sid,10,true);
-                m_playerStashInfoBuck.openStash(sid);
-            }
+            // stashExchangeList@ executeList = cast<stashExchangeList@>(stashExchangeDict[itemKey]);
+            // if(executeList !is null){
+            //     executeList.handleExchange(@m_playerStashInfoBuck,sid); //执行删除和兑换新物品
+            // }
+            // // 没有新物品而是功能道具的，这里单独处理
+            // if(itemKey == "collect_fumo_koishi_komeiji_exchange"){
+            //     //6 古明地恋Fumo[1] 换 脚本仓库容量[10]
+            //     if(!m_playerStashInfoBuck.isOpen(sid)){
+            //         m_playerStashInfoBuck.openStash(sid);
+            //     }
+            //     m_playerStashInfoBuck.upgradeStash(sid,10,true);
+            //     m_playerStashInfoBuck.openStash(sid);
+            // }
         }
     }
     // -------------------------------------------
@@ -880,100 +880,105 @@ class extra_stash : Tracker {
 		int playerId = event.getIntAttribute("player_id");
 		int containerId = event.getIntAttribute("target_container_type_id");
 		string item_class = event.getStringAttribute("item_class");
-
+        
+        handleExchangeEvent(event);
+        if(startsWith(itemKey,"stash_ui_")){
+            _notify(m_metagame,playerId,"脚本仓库未完善，暂时无法使用");
+            return;
+        }
         //containerId = 0(地面) 1(军械库) 2（背包） 3（仓库）
 		//itemClass = 0(主、副武器) 1（投掷物） 3（护甲、战利品）
         string name = g_playerInfoBuck.getNameByPid(playerId);
         string sid = g_playerInfoBuck.getSidByName(name);
         string translateName = "";
+        
         if(containerId == 2){//背包
-            handleExchangeEvent(event);
-            int cid = g_playerInfoBuck.getCidByName(name);
-            if(itemKey == "stash_ui_open_close.weapon"){
-                const XmlElement@ player = getPlayerInfo(m_metagame,playerId);
-                if(player is null){return;}
-                //m_playerStashInfoBuck.addInfo(m_metagame,player);
-                m_playerStashInfoBuck.openStash(sid);
-                deleteItemInBackpack(m_metagame,cid,"weapon",itemKey);
-                if(m_playerStashInfoBuck.isOpen(sid)){
-                    notify(m_metagame, "How To Use Stash", dictionary(), "misc", playerId, true, "Stash Help", 1.0);
-                }
-            }
-            if(itemKey == "stash_ui_page_down.weapon"){
-                m_playerStashInfoBuck.changePage(sid,1);
-                deleteItemInBackpack(m_metagame,cid,"weapon",itemKey);
-            }
-            if(itemKey == "stash_ui_page_up.weapon"){
-                m_playerStashInfoBuck.changePage(sid,-1);
-                deleteItemInBackpack(m_metagame,cid,"weapon",itemKey);
-            }
-            if(itemKey == "stash_ui_pull_out.weapon"){
-                m_playerStashInfoBuck.pullOutObjects(sid,255);
-                deleteItemInBackpack(m_metagame,cid,"weapon",itemKey);
-            }
-            if(itemKey == "stash_ui_pull_out_1x.weapon"){
-                m_playerStashInfoBuck.pullOutObjects(sid,1);
-                deleteItemInBackpack(m_metagame,cid,"weapon",itemKey);
-            }
-            if(itemKey == "stash_ui_pull_out_10x.weapon"){
-                m_playerStashInfoBuck.pullOutObjects(sid,10);
-                deleteItemInBackpack(m_metagame,cid,"weapon",itemKey);
-            }
-            if(itemKey == "stash_ui_pull_out_100x.weapon"){
-                m_playerStashInfoBuck.pullOutObjects(sid,100);
-                deleteItemInBackpack(m_metagame,cid,"weapon",itemKey);
-            }
-            if(itemKey == "stash_ui_push_in.weapon"){
-                m_playerStashInfoBuck.pushInObjects(sid);
-                deleteItemInBackpack(m_metagame,cid,"weapon",itemKey);
-            }
-            if(itemKey == "stash_ui_select_down.weapon"){
-                m_playerStashInfoBuck.selectObject(sid,1);
-                deleteItemInBackpack(m_metagame,cid,"weapon",itemKey);
-            }
-            if(itemKey == "stash_ui_select_up.weapon"){
-                m_playerStashInfoBuck.selectObject(sid,-1);
-                deleteItemInBackpack(m_metagame,cid,"weapon",itemKey);
-            }
-            if(itemKey == "stash_ui_upgrade_1x.weapon"){
-                m_playerStashInfoBuck.upgradeStash(sid,1);
-                deleteItemInBackpack(m_metagame,cid,"weapon",itemKey);
-            }
-            if(itemKey == "stash_ui_upgrade_10x.weapon"){
-                m_playerStashInfoBuck.upgradeStash(sid,10);
-                deleteItemInBackpack(m_metagame,cid,"weapon",itemKey);
-            }
+            // handleExchangeEvent(event);
+            // int cid = g_playerInfoBuck.getCidByName(name);
+            // if(itemKey == "stash_ui_open_close.weapon"){
+            //     const XmlElement@ player = getPlayerInfo(m_metagame,playerId);
+            //     if(player is null){return;}
+            //     //m_playerStashInfoBuck.addInfo(m_metagame,player);
+            //     m_playerStashInfoBuck.openStash(sid);
+            //     deleteItemInBackpack(m_metagame,cid,"weapon",itemKey);
+            //     if(m_playerStashInfoBuck.isOpen(sid)){
+            //         notify(m_metagame, "How To Use Stash", dictionary(), "misc", playerId, true, "Stash Help", 1.0);
+            //     }
+            // }
+            // if(itemKey == "stash_ui_page_down.weapon"){
+            //     m_playerStashInfoBuck.changePage(sid,1);
+            //     deleteItemInBackpack(m_metagame,cid,"weapon",itemKey);
+            // }
+            // if(itemKey == "stash_ui_page_up.weapon"){
+            //     m_playerStashInfoBuck.changePage(sid,-1);
+            //     deleteItemInBackpack(m_metagame,cid,"weapon",itemKey);
+            // }
+            // if(itemKey == "stash_ui_pull_out.weapon"){
+            //     m_playerStashInfoBuck.pullOutObjects(sid,255);
+            //     deleteItemInBackpack(m_metagame,cid,"weapon",itemKey);
+            // }
+            // if(itemKey == "stash_ui_pull_out_1x.weapon"){
+            //     m_playerStashInfoBuck.pullOutObjects(sid,1);
+            //     deleteItemInBackpack(m_metagame,cid,"weapon",itemKey);
+            // }
+            // if(itemKey == "stash_ui_pull_out_10x.weapon"){
+            //     m_playerStashInfoBuck.pullOutObjects(sid,10);
+            //     deleteItemInBackpack(m_metagame,cid,"weapon",itemKey);
+            // }
+            // if(itemKey == "stash_ui_pull_out_100x.weapon"){
+            //     m_playerStashInfoBuck.pullOutObjects(sid,100);
+            //     deleteItemInBackpack(m_metagame,cid,"weapon",itemKey);
+            // }
+            // if(itemKey == "stash_ui_push_in.weapon"){
+            //     m_playerStashInfoBuck.pushInObjects(sid);
+            //     deleteItemInBackpack(m_metagame,cid,"weapon",itemKey);
+            // }
+            // if(itemKey == "stash_ui_select_down.weapon"){
+            //     m_playerStashInfoBuck.selectObject(sid,1);
+            //     deleteItemInBackpack(m_metagame,cid,"weapon",itemKey);
+            // }
+            // if(itemKey == "stash_ui_select_up.weapon"){
+            //     m_playerStashInfoBuck.selectObject(sid,-1);
+            //     deleteItemInBackpack(m_metagame,cid,"weapon",itemKey);
+            // }
+            // if(itemKey == "stash_ui_upgrade_1x.weapon"){
+            //     m_playerStashInfoBuck.upgradeStash(sid,1);
+            //     deleteItemInBackpack(m_metagame,cid,"weapon",itemKey);
+            // }
+            // if(itemKey == "stash_ui_upgrade_10x.weapon"){
+            //     m_playerStashInfoBuck.upgradeStash(sid,10);
+            //     deleteItemInBackpack(m_metagame,cid,"weapon",itemKey);
+            // }
         }
         if(containerId == 1){
-            if(startsWith(itemKey,"stash_ui_")){return;}
-            if(m_playerStashInfoBuck.isOpen(sid)){
-                if(!canStoreItem.get(itemKey,translateName)){
-                    g_userCountInfoBuck.addCount(name,"pushInStashError");
-                    int errorTimes = 0; 
-                    g_userCountInfoBuck.getCount(name,"pushInStashError",errorTimes);
-                    if(errorTimes >= 3){
-                        g_userCountInfoBuck.clearCount(name,"pushInStashError");
-                        _notify(m_metagame,playerId,"失败次数过多，已自动关闭脚本仓库");
-                        m_playerStashInfoBuck.openStash(sid);
-                    }
-                    _notify(m_metagame,playerId,"该物品"+itemKey+"不能存入脚本仓库");
-                    return;
-                }
-                if(item_class == "0"){
-                    item_class = "weapon";
-                }
-                if(item_class == "1"){
-                    item_class = "projectile";
-                }
-                if(item_class == "3"){
-                    item_class = "carry_item";
-                }
-                XmlElement newXml("stash");
-                    newXml.setStringAttribute("AA_tag",itemKey);
-                    newXml.setStringAttribute("A_tag",item_class);
-                    newXml.setIntAttribute("value",1);
-                m_playerStashInfoBuck.addPushInObject(sid,newXml);
-            }
+            // if(m_playerStashInfoBuck.isOpen(sid)){
+            //     if(!canStoreItem.get(itemKey,translateName)){
+            //         g_userCountInfoBuck.addCount(name,"pushInStashError");
+            //         int errorTimes = 0; 
+            //         g_userCountInfoBuck.getCount(name,"pushInStashError",errorTimes);
+            //         if(errorTimes >= 3){
+            //             g_userCountInfoBuck.clearCount(name,"pushInStashError");
+            //             _notify(m_metagame,playerId,"失败次数过多，已自动关闭脚本仓库");
+            //             m_playerStashInfoBuck.openStash(sid);
+            //         }
+            //         _notify(m_metagame,playerId,"该物品"+itemKey+"不能存入脚本仓库");
+            //         return;
+            //     }
+            //     if(item_class == "0"){
+            //         item_class = "weapon";
+            //     }
+            //     if(item_class == "1"){
+            //         item_class = "projectile";
+            //     }
+            //     if(item_class == "3"){
+            //         item_class = "carry_item";
+            //     }
+            //     XmlElement newXml("stash");
+            //         newXml.setStringAttribute("AA_tag",itemKey);
+            //         newXml.setStringAttribute("A_tag",item_class);
+            //         newXml.setIntAttribute("value",1);
+            //     m_playerStashInfoBuck.addPushInObject(sid,newXml);
+            // }
         }
     }
 }

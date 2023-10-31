@@ -43,6 +43,12 @@ class re_weapons : Tracker {
         if(!startsWith(itemKey,"acg_") && !startsWith(itemKey,"ex_")){
             return;
         }
+        if(startsWith(itemKey,"ex_piano_") || startsWith(itemKey,"ex_gramophone_") || startsWith(itemKey,"ex_cl_")){
+            return;
+        }
+        if(itemKey.find("_call") != -1){
+            return;
+        }
         int cid = event.getIntAttribute("character_id");
         if(cid == -1){return;}
         int pid = event.getIntAttribute("player_id");

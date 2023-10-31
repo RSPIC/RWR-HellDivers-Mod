@@ -1852,6 +1852,6 @@ void handleTesterReward(Metagame@ m_metagame,const XmlElement@ player,string act
             writeXML(m_metagame,ACTIVITY_FILENAME,allInfo);
             return;
         }
-        _notify(m_metagame,p_cid,"你没有参加过测试，无法领取奖励");
+        _notify(m_metagame,p_pid,"你没有参加过测试，无法领取奖励");
     }
 }

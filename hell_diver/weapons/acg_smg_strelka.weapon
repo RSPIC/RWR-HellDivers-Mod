@@ -95,7 +95,7 @@ key="acg_smg_strelka.weapon"
 	time_to_live="0.20" can_be_detected_by_driver="1" can_be_disarmed="0" name="Kasm-23"> 
 	
 		<result class="spawn" instance_class="projectile" instance_key="acg_smg_strelka_damage.projectile" 
-		min_amount="8" max_amount="8" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+		min_amount="10" max_amount="10" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
 		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
@@ -244,7 +244,7 @@ key="re_acg_smg_strelka.weapon"
 	time_to_live="0.20" can_be_detected_by_driver="1" can_be_disarmed="0" name="Kasm-23"> 
 	
 		<result class="spawn" instance_class="projectile" instance_key="acg_smg_strelka_damage.projectile" 
-		min_amount="8" max_amount="8" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+		min_amount="10" max_amount="10" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
 		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->

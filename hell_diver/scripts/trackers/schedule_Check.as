@@ -103,6 +103,7 @@ class schedule_Check : Tracker {
                 checkHyperMega(m_metagame,name,pid,cid,equipList);
                 checkVergil(m_metagame,name,pid,cid,equipList);
                 checkSkin(m_metagame,name,pid,cid,equipList);
+                checkToki(m_metagame,name,pid,cid,equipList);
             }
         }
     }
@@ -192,10 +193,27 @@ class schedule_Check : Tracker {
         }
 	}
     // ----------------------------------------------------
+	protected void checkToki(Metagame@ metagame,string&in name,int&in pid,int&in cid,dictionary&in equipList){
+        string equipKey;
+        if(equipList.get("1",equipKey)){//副武器
+            string targetKey = "acg_exo_";
+            string targetKey2 = "re_acg_exo_";
+            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+                if(equipList.get("0",equipKey)){//主武器
+                    if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+                        return;
+                    }else{
+                        _notify(m_metagame,pid,"副武器必须搭配主手使用！");
+                        editPlayerVest(metagame,cid,"hd_v40",4);//替换为0层甲
+                    }
+                }
+            }
+        }
+	}
+    // ----------------------------------------------------
 	protected void checkVergil(Metagame@ metagame,string&in name,int&in pid,int&in cid,dictionary&in equipList){
         string equipKey;
         if(equipList.get("0",equipKey)){//主武器
-        _log("now equipKey="+equipKey);
             string targetKey = "ex_vergil_";
             string targetKey2 = "re_ex_vergil_";
             if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
@@ -216,7 +234,6 @@ class schedule_Check : Tracker {
 	protected void checkHyperMega(Metagame@ metagame,string&in name,int&in pid,int&in cid,dictionary&in equipList){
         string equipKey;
         if(equipList.get("0",equipKey)){//主武器
-        _log("now equipKey="+equipKey);
             string targetKey = "ex_hyper_mega_bazooka";
             string targetKey2 = "re_ex_hyper_mega_bazooka";
             if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
