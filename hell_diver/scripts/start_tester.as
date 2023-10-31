@@ -29,11 +29,11 @@ void main(dictionary@ inputData) {
         settings.m_journalEnabled = true;
         settings.m_fellowDisableEnemySpawnpointsSoldierCountOffset = 1;
 
-        settings.m_server_difficulty_level = 9;
-        settings.m_debug_mode = true;
+        settings.m_server_difficulty_level = 3;
+        settings.m_debug_mode = false;
 
-        settings.m_server_activity = false; //define whether skip the map when end.
-        settings.m_server_activity_racing = false;
+        settings.m_server_activity = true; //define whether skip the map when end.
+        settings.m_server_activity_racing = true;
 
         _setupLog("dev_verbose");
         array<string> overlays = {

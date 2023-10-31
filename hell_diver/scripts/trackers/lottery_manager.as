@@ -407,7 +407,7 @@ class fate_coin_task : Task{
 	}
 
 	bool hasEnded() const{
-		return m_ended;
+		return false;
     }
 
 	void start(){

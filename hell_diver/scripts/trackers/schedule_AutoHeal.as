@@ -43,7 +43,7 @@ class schedule_AutoHeal : Task {
     }
 
     bool hasEnded() const{
-		return m_ended;
+		return false;
     }
 
     protected void AutoHeal_Task(Metagame@ metagame,const XmlElement@&in player){

@@ -1417,7 +1417,6 @@ class Initiate : Tracker {
 	}
 	// --------------------------------------------
 	bool hasEnded() const {
-		// always on
 		return false;
 	}
 	// --------------------------------------------
@@ -1440,13 +1439,11 @@ class Initiate : Tracker {
 	}
 	// ----------------------------------------------------
 	protected void handlePlayerConnectEvent(const XmlElement@ event) {
-		if(!m_ended){
-			const XmlElement@ player = event.getFirstElementByTagName("player");
-			if(player is null){return;}
-			string name = player.getStringAttribute("name");
-			g_firstUseInfoBuck.addInfo(name);
-			g_userCountInfoBuck.addInfo(name);
-		}
+		const XmlElement@ player = event.getFirstElementByTagName("player");
+		if(player is null){return;}
+		string name = player.getStringAttribute("name");
+		g_firstUseInfoBuck.addInfo(name);
+		g_userCountInfoBuck.addInfo(name);
 	}
 	// ----------------------------------------------------
     protected void handlePlayerDisconnectEvent(const XmlElement@ event) {

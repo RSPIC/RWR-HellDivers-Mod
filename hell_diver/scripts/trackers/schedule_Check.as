@@ -71,7 +71,7 @@ class schedule_Check : Tracker {
 
     // --------------------------------------------
     bool hasEnded() const{
-		return m_ended;
+		return false;
     }
 	// --------------------------------------------
 	bool hasStarted() const {

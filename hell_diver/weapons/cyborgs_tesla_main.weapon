@@ -10,7 +10,7 @@ radius="1"
 > 
     <specification 	
     slot="0" 	
-    retrigger_time="2" 
+    retrigger_time="3.75" 
 	last_burst_retrigger_time="2"
     accuracy_factor="1.0" 
 	spread_range="0"
@@ -106,7 +106,7 @@ radius="1"
 
 		<result class="blast" radius="2.5" damage="20" push="0.2" decal="0"
 		faction_compare="not_equal" character_state="wound"  />
-		<trigger class="time" time_to_live="0.145"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<trigger class="time" time_to_live="0.14"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
 		<!--伤害 4~6x1.0=4~6 -->
@@ -158,7 +158,7 @@ radius="1"
     <stance state_key="over_wall" accuracy="1" />     
      
 	<!--附加属性-->
-    <modifier class="speed" value="0.0" /> 
+    <modifier class="speed" value="-0.1" /> 
     <modifier class="hit_success_probability" value="0.2" /><!--正值减少玩家抗致死率-->
     <modifier class="detectability" value="0.0" />	<!--正值减少玩家隐蔽-->
 	

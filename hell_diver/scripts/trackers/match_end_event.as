@@ -220,7 +220,7 @@ class sound_track : Task {
     }
 
     bool hasEnded() const{
-		return m_ended;
+		return false;
     }
 
 	void start(){

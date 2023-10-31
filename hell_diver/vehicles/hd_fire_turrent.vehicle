@@ -14,7 +14,7 @@ key="hd_fire_turrent.vehicle"
 	<control max_speed="3.0" acceleration="1.0" max_reverse_speed="1.0" max_rotation="0.8" max_water_depth="1.0" />
 
 	<physics 
-	max_health="300" 
+	max_health="150" 
 	mass="500" 
 	extent="1.2 0.0 1.2" 
 	offset="0 0.0 0" 
@@ -26,8 +26,8 @@ key="hd_fire_turrent.vehicle"
 	blast_push_threshold="10.0" 
 	vehicle_collision_damage_factor="2.0" /> 
 
-	<turret offset="0 0 0.0" weapon_key="hd_fire_turrent.weapon" weapon_offset="0.0 2.5 0.6" weapon_recoil="0.02" physics_recoil="0.0"  max_rotation_step="0.00015" rotation="0"  />
-	<turret offset="0 0 0.0" weapon_key="hd_fire_turrent_at.weapon" weapon_offset="0.0 2.5 0.6" weapon_recoil="0.02" physics_recoil="0.0"  max_rotation_step="0.00015" rotation="0"  />
+	<turret offset="0 0 0.0" weapon_key="hd_fire_turrent.weapon" weapon_offset="0.0 2.5 0.6" weapon_recoil="0.02" physics_recoil="0.0"  max_rotation_step="0.0001" rotation="0"  />
+	<turret offset="0 0 0.0" weapon_key="hd_fire_turrent_at.weapon" weapon_offset="0.0 2.5 0.6" weapon_recoil="0.02" physics_recoil="0.0"  max_rotation_step="0.0001" rotation="0"  />
 
 	<visual class="chassis" mesh_filename="hd_fire_turrent_base.mesh" texture_filename="hd_fire_turrent.jpg" />
 	<visual class="chassis" key="broken" mesh_filename="hd_fire_turrent_base.mesh" texture_filename="hd_fire_turrent_broken.jpg" />
