@@ -2312,7 +2312,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/race1";
 		stage.m_mapInfo.m_id = "race1";
 
-		stage.m_maxSoldiers = 1;
+		stage.m_maxSoldiers = 0;
 		stage.m_playerAiCompensation = 0;                                       // 
     	stage.m_playerAiReduction = 0.0;                                        // 
 
@@ -2320,9 +2320,6 @@ class StageConfiguratorInvasion : StageConfigurator {
 
 		stage.addTracker(PeacefulLastBase(m_metagame, 1));
 		stage.addTracker(CommsCapacityHandler(m_metagame));
-
-		stage.m_minRandomCrates = 1; 
-		stage.m_maxRandomCrates = 2;
 
 		{
         XmlElement command("command");
@@ -2340,17 +2337,17 @@ class StageConfiguratorInvasion : StageConfigurator {
         }
 
 		{
-			Faction f(getFactionConfigs()[0], createFellowCommanderAiCommand(0, 0.5, 0.2));
-			f.m_overCapacity = 4;                                              // was 20
-			f.m_bases = 1;
-			f.m_capacityMultiplier = 1.0; 
+			Faction f(getFactionConfigs()[0], createFellowCommanderAiCommand(0, 0, 0));
+			f.m_overCapacity = 0;                                              // was 20
+			f.m_bases = 0;
+			f.m_capacityMultiplier = 0; 
 			stage.m_factions.insertLast(f);
 		}
 		{
-			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1, 0.5, 0.2));
-			f.m_overCapacity = 40;                                              // was 20 (test3)
-            f.m_capacityOffset = 20;                                            // was 10 (test3)
-			f.m_capacityMultiplier = 1.5; 
+			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1, 0, 0));
+			f.m_overCapacity = 0;                                              // was 20 (test3)
+            f.m_capacityOffset = 0;                                            // was 10 (test3)
+			f.m_capacityMultiplier = 0; 
 			stage.m_factions.insertLast(f);
 		}
 

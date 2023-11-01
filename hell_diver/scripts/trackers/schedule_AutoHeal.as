@@ -22,7 +22,7 @@ class schedule_AutoHeal : Task {
     protected float m_timer;
     protected bool m_ended;
 
-    schedule_AutoHeal(Metagame@ metagame,const XmlElement@ player,float time = 0){
+    schedule_AutoHeal(Metagame@ metagame,const XmlElement@ player,float time = 10){
         @m_player = @player;
         @m_metagame = @metagame;
         m_time = time;
@@ -43,7 +43,7 @@ class schedule_AutoHeal : Task {
     }
 
     bool hasEnded() const{
-		return false;
+		return m_ended;
     }
 
     protected void AutoHeal_Task(Metagame@ metagame,const XmlElement@&in player){

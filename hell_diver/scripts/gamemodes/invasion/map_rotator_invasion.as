@@ -276,11 +276,8 @@ class MapRotatorInvasion : MapRotator {
 					// - do the regular map change countdown first
 					// - save
 					// - request restart
-					if(!g_server_activity){ // when holding activity, do not skip map.
 						m_metagame.getTaskSequencer().add(TimeAnnouncerTask(m_metagame, 30, true));
 						m_metagame.getTaskSequencer().add(Call(CALL(m_metagame.requestRestart)));
-					}
-
 					// we aren't even calling ready to advance here; everything will be lost anyway!
 
 				} else {

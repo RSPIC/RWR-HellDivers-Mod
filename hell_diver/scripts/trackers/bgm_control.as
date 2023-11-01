@@ -89,6 +89,7 @@ class bgm_control : Tracker{
                 m_timer = m_cdTime;
                 PlayBgm();
             }
+            m_timer = -1.0;
 		}
         if(m_bgm_timer < 0.0){
             PlayBgm();
@@ -123,6 +124,11 @@ class bgm_control : Tracker{
 	}
     //---------------------------------------------------------
     protected void PlayBgm(){
+        if(g_server_activity_racing){
+            playSoundtrack(m_metagame,"music_dejavu.wav");
+            m_bgm_timer = 105;
+            return;
+        }
         array<string> cyborgs_bgmList_fight = {
             "cyborgs_fighting_bgm_3.wav"
         };

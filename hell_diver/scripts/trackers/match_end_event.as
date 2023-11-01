@@ -176,25 +176,23 @@ class match_end : Tracker {
     }
     // 战役结束后禁止TK玩家 --------------------------------------------
 	protected void handleCharacterKillEvent(const XmlElement@ event) {
-        if(!g_server_activity){
-            if(m_ended && m_end_timer <= 15){
-                const XmlElement@ killer = event.getFirstElementByTagName("killer");
-                if(killer is null){return;}
-                const XmlElement@ target = event.getFirstElementByTagName("target");
-                if(target is null){return;}
-                int k_pid = killer.getIntAttribute("player_id");
-                int t_pid = target.getIntAttribute("player_id");
-                if(k_pid == -1 && t_pid == -1){return;}//AI之间击杀，返回
+        if(m_ended && m_end_timer <= 15){
+            const XmlElement@ killer = event.getFirstElementByTagName("killer");
+            if(killer is null){return;}
+            const XmlElement@ target = event.getFirstElementByTagName("target");
+            if(target is null){return;}
+            int k_pid = killer.getIntAttribute("player_id");
+            int t_pid = target.getIntAttribute("player_id");
+            if(k_pid == -1 && t_pid == -1){return;}//AI之间击杀，返回
 
-                int killer_cid = killer.getIntAttribute("id");
-                _log("execute kill_reward");
-                if(k_pid != -1 && t_pid != -1 && k_pid != t_pid){//玩家TK
-                    GiveRP(m_metagame,killer_cid,-200000);
-                    // GiveXP(m_metagame,killer_cid,-20); 无效操作
-                    notify(m_metagame, "TK during the battle end", dictionary(), "misc", k_pid, true, "Kicked from server", 1.0);
-                    notify(m_metagame, "rules text", dictionary(), "misc", k_pid, true, "Rules", 1.0, 700.0);
-                    kickPlayer(m_metagame, k_pid);
-                }
+            int killer_cid = killer.getIntAttribute("id");
+            _log("execute kill_reward");
+            if(k_pid != -1 && t_pid != -1 && k_pid != t_pid){//玩家TK
+                GiveRP(m_metagame,killer_cid,-200000);
+                // GiveXP(m_metagame,killer_cid,-20); 无效操作
+                notify(m_metagame, "TK during the battle end", dictionary(), "misc", k_pid, true, "Kicked from server", 1.0);
+                notify(m_metagame, "rules text", dictionary(), "misc", k_pid, true, "Rules", 1.0, 700.0);
+                kickPlayer(m_metagame, k_pid);
             }
         }
 	}
