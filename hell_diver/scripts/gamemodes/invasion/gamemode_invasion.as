@@ -35,7 +35,6 @@
 #include "rangefinder.as"
 
 // new trackers
-
 #include "spawn_ai.as"
 #include "stratagems_call.as"
 #include "all_airstrike.as"

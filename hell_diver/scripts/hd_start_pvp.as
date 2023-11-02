@@ -1,9 +1,10 @@
 #include "path://media/packages/vanilla/scripts"
-#include "path://media/packages/minimodes/scripts"
-#include "path://media/packages/classic/scripts"
+#include "path://media/packages/hell_diver/scripts/minimode"
 #include "gamemode_minimodes.as"
 
 #include "map_rotator_classic.as"
+
+// new trackers
 
 // --------------------------------------------
 class GameModeMiniModesClassic : GameModeMiniModes {
@@ -30,10 +31,13 @@ void main(dictionary@ inputData) {
 	s.m_quickmatchMaxTime = 1800.0;
 	s.m_kothMaxTime = 1800.0;
 
+	s.m_debug_mode = false;
+	s.m_server_test_mode = true;
+
 	s.m_startServerCommand = """
 <command class='start_server'
         server_name='[地狱潜兵] PVP服'
-        server_port='1247'
+        server_port='2333'
         comment='Running with HellDivers Mod.  QQ：498520233'
         url='https://steamcommunity.com/sharedfiles/filedetails/?id=1541806712'
         register_in_serverlist='1'

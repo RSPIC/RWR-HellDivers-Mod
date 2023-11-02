@@ -18,6 +18,7 @@ class BasicCommandHandler : Tracker {
 
 	// --------------------------------------------
 	BasicCommandHandler(Metagame@ metagame) {
+		_log("init basic_command_handler");
 		@m_metagame = @metagame;
 
 	}
