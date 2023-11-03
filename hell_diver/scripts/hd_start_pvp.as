@@ -25,7 +25,7 @@ void main(dictionary@ inputData) {
 
 	// override minimodes overlay with one specific to classic
 	s.m_overlayPaths = array<string>();
-	s.m_overlayPaths.insertLast("media/packages/hell_diver");
+	// s.m_overlayPaths.insertLast("media/packages/hell_diver");
 	
 	s.m_timeBetweenSubstages = 40.0;
 	s.m_quickmatchMaxTime = 1800.0;
@@ -36,7 +36,7 @@ void main(dictionary@ inputData) {
 
 	s.m_startServerCommand = """
 <command class='start_server'
-        server_name='[地狱潜兵] PVP服'
+        server_name='[地狱潜兵]PVP服 IP直连'
         server_port='2333'
         comment='Running with HellDivers Mod.  QQ：498520233'
         url='https://steamcommunity.com/sharedfiles/filedetails/?id=1541806712'

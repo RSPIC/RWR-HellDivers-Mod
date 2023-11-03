@@ -146,9 +146,9 @@ class MapRotatorMiniModesClassic : MapRotatorMiniModes {
 		array<FactionConfig@> availableFactionConfigs;
 		//此处决定多人游戏的玩家可选阵营
 		availableFactionConfigs.insertLast(FactionConfig(-1, "super_earth.xml", "SuperEarth A", "0.7 0.7 1"));
-		availableFactionConfigs.insertLast(FactionConfig(-1, "super_earth.xml", "SuperEarth B", "1 0.3 0"));
+		availableFactionConfigs.insertLast(FactionConfig(-1, "acg.xml", "SuperEarth B", "1 0.3 0"));
 		availableFactionConfigs.insertLast(FactionConfig(-1, "super_earth.xml", "SuperEarth C", "0 0.3 1"));
-		availableFactionConfigs.insertLast(FactionConfig(-1, "super_earth.xml", "SuperEarth D", "1 0 0"));
+		availableFactionConfigs.insertLast(FactionConfig(-1, "acg.xml", "SuperEarth D", "1 0 0"));
 		availableFactionConfigs.insertLast(FactionConfig(-1, "super_earth.xml", "SuperEarth E", "0 0 1"));
 
 		return availableFactionConfigs;
@@ -371,7 +371,7 @@ class MapRotatorMiniModesClassic : MapRotatorMiniModes {
 
 			Stage@ stage = createStage();
 			stage.m_mapInfo.m_name = "Keepsake Bay";
-			stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map2";
+			stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map2";
 			stage.m_mapIndex = 2;
 
 			stage.m_includeLayers.insertLast("layer1.dominance");
@@ -433,7 +433,7 @@ class MapRotatorMiniModesClassic : MapRotatorMiniModes {
 		{
 			Stage@ stage = createStage();
 			stage.m_mapInfo.m_name = "Power Junction";
-			stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map7";
+			stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map7";
 			stage.m_mapIndex = 7;
 
 //			stage.m_includeLayers.insertLast("layer1.default");
@@ -484,7 +484,7 @@ class MapRotatorMiniModesClassic : MapRotatorMiniModes {
 		{
 			Stage@ stage = createStage();
 			stage.m_mapInfo.m_name = "Vigil Island";
-			stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map8";
+			stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map8";
 			stage.m_mapIndex = 8;
 
 //			stage.m_includeLayers.insertLast("layer1.campaign_only");
@@ -532,7 +532,7 @@ class MapRotatorMiniModesClassic : MapRotatorMiniModes {
 		{
 			Stage@ stage = createStage();
 			stage.m_mapInfo.m_name = "Vigil Island";
-			stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map8";
+			stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map8";
 			stage.m_mapIndex = 8;
 
 			stage.m_includeLayers.insertLast("layer1.capture");
@@ -589,7 +589,7 @@ class MapRotatorMiniModesClassic : MapRotatorMiniModes {
 		{
 			Stage@ stage = createStage();
 			stage.m_mapInfo.m_name = "Vigil Island";
-			stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map8";
+			stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map8";
 			stage.m_mapIndex = 8;
 
 			stage.m_includeLayers.insertLast("layer2.capture");
@@ -646,7 +646,7 @@ class MapRotatorMiniModesClassic : MapRotatorMiniModes {
 
 			Stage@ stage = createStage();
 			stage.m_mapInfo.m_name = "Copehill Down";
-			stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map11";
+			stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map11";
 			stage.m_mapIndex = 11;
 
 			stage.m_includeLayers.insertLast("layer1.dominance");
@@ -707,7 +707,7 @@ class MapRotatorMiniModesClassic : MapRotatorMiniModes {
 		{
 			Stage@ stage = createStage();
 			stage.m_mapInfo.m_name = "Old Fort Creek";
-			stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map3";
+			stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map3";
 			stage.m_mapIndex = 3;
 
 			stage.m_includeLayers.insertLast("layer1.dominance");      
@@ -770,7 +770,7 @@ class MapRotatorMiniModesClassic : MapRotatorMiniModes {
 
 			Stage@ stage = createStage();
 			stage.m_mapInfo.m_name = "Frozen Canyon";
-			stage.m_mapInfo.m_path = "media/packages/vanilla.winter/maps/map12";
+			stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map12";
 			stage.m_mapIndex = 12;
 
 			stage.m_includeLayers.insertLast("bases.dominance");
@@ -831,7 +831,7 @@ class MapRotatorMiniModesClassic : MapRotatorMiniModes {
 		{
 			Stage@ stage = createStage();
 			stage.m_mapInfo.m_name = "Bootleg Islands";
-			stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map5";
+			stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map5";
 			stage.m_mapIndex = 5;
 
 			stage.m_includeLayers.insertLast("bases.default");
@@ -1132,7 +1132,7 @@ class MapRotatorMiniModesClassic : MapRotatorMiniModes {
 		{
 			Stage@ stage = createStage();
 			stage.m_mapInfo.m_name = "Iron Enclave";
-			stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map13";
+			stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map13";
 			stage.m_mapIndex = 13;
       
 			stage.m_includeLayers.insertLast("layer1.dominance");
@@ -1207,7 +1207,7 @@ class MapRotatorMiniModesClassic : MapRotatorMiniModes {
 		{
 			Stage@ stage = createStage();
 			stage.m_mapInfo.m_name = "Misty Heights";
-			stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map14";
+			stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map14";
 			stage.m_mapIndex = 14;
       
 			stage.m_includeLayers.insertLast("layer1_1.dominance");
@@ -1274,7 +1274,7 @@ class MapRotatorMiniModesClassic : MapRotatorMiniModes {
 
 			Stage@ stage = createStage();
 			stage.m_mapInfo.m_name = "Misty Heights";
-			stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map14";
+			stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map14";
 			stage.m_mapIndex = 14;
 
 			stage.m_includeLayers.insertLast("layer1_2.dominance");
@@ -1329,7 +1329,7 @@ class MapRotatorMiniModesClassic : MapRotatorMiniModes {
 		{
 			Stage@ stage = createStage();
 			stage.m_mapInfo.m_name = "Moorland Trenches";
-			stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map1_2";
+			stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map1_2";
 			stage.m_mapIndex = 1;
       
 			stage.m_includeLayers.insertLast("layer1_1.dominance");
@@ -1388,7 +1388,7 @@ class MapRotatorMiniModesClassic : MapRotatorMiniModes {
 		{
 			Stage@ stage = createStage();
 			stage.m_mapInfo.m_name = "Moorland Trenches";
-			stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map1_2";
+			stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map1_2";
 			stage.m_mapIndex = 1;
       
 			stage.m_includeLayers.insertLast("layer1_2.dominance");
@@ -1447,7 +1447,7 @@ class MapRotatorMiniModesClassic : MapRotatorMiniModes {
 		{
 			Stage@ stage = createStage();
 			stage.m_mapInfo.m_name = "Moorland Trenches";
-			stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map1_2";
+			stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map1_2";
 			stage.m_mapIndex = 1;
       
 			stage.m_includeLayers.insertLast("layer1_3.dominance");
@@ -1500,7 +1500,7 @@ class MapRotatorMiniModesClassic : MapRotatorMiniModes {
 		{
 			Stage@ stage = createStage();
 			stage.m_mapInfo.m_name = "Islet of Eflen";
-			stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map15";
+			stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map15";
 			stage.m_mapIndex = 15;
       
 			stage.m_includeLayers.insertLast("layer1.dominance");
@@ -1553,7 +1553,7 @@ class MapRotatorMiniModesClassic : MapRotatorMiniModes {
 		{
 			Stage@ stage = createStage();
 			stage.m_mapInfo.m_name = "Islet of Eflen";
-			stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map15";
+			stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map15";
 			stage.m_mapIndex = 15;
       
 			stage.m_includeLayers.insertLast("layer1.koth");
@@ -1610,7 +1610,7 @@ class MapRotatorMiniModesClassic : MapRotatorMiniModes {
 		{
 			Stage@ stage = createStage();
 			stage.m_mapInfo.m_name = "Green Coast";
-			stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map16";
+			stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map16";
 			stage.m_mapIndex = 16;
       
 			stage.m_includeLayers.insertLast("layer1.dominance");
@@ -1662,7 +1662,7 @@ class MapRotatorMiniModesClassic : MapRotatorMiniModes {
 		{
 			Stage@ stage = createStage();
 			stage.m_mapInfo.m_name = "Warsalt Legacy";
-			stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map18";
+			stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map18";
 			stage.m_mapIndex = 17;
       
 			stage.m_includeLayers.insertLast("layer1.dominance");
@@ -1715,7 +1715,7 @@ class MapRotatorMiniModesClassic : MapRotatorMiniModes {
 		{
 			Stage@ stage = createStage();
 			stage.m_mapInfo.m_name = "Warsalt Legacy";
-			stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map18";
+			stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map18";
 			stage.m_mapIndex = 18;
       
 			stage.m_includeLayers.insertLast("layer1.koth");
@@ -1772,7 +1772,7 @@ class MapRotatorMiniModesClassic : MapRotatorMiniModes {
 		{
 			Stage@ stage = createStage();
 			stage.m_mapInfo.m_name = "Swan River";
-			stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map19";
+			stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map19";
 			stage.m_mapIndex = 19;
       
 			stage.m_includeLayers.insertLast("layer1.dominance");
@@ -1835,7 +1835,7 @@ class MapRotatorMiniModesClassic : MapRotatorMiniModes {
 		{
 			Stage@ stage = createStage();
 			stage.m_mapInfo.m_name = "Swan River";
-			stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map19";
+			stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map19";
 			stage.m_mapIndex = 19;
       
 			stage.m_includeLayers.insertLast("layer1.dominance");
@@ -1900,7 +1900,7 @@ class MapRotatorMiniModesClassic : MapRotatorMiniModes {
 		{
 			Stage@ stage = createStage();
 			stage.m_mapInfo.m_name = "Swan River";
-			stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map19";
+			stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map19";
 			stage.m_mapIndex = 19;
       
 			stage.m_includeLayers.insertLast("layer2.dominance");
@@ -1955,7 +1955,7 @@ class MapRotatorMiniModesClassic : MapRotatorMiniModes {
 		{
 			Stage@ stage = createStage();
 			stage.m_mapInfo.m_name = "Route 666";
-			stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map21";
+			stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map21";
 			stage.m_mapIndex = 21;
       
 			stage.m_includeLayers.insertLast("layer1.dominance");
@@ -2014,7 +2014,7 @@ class MapRotatorMiniModesClassic : MapRotatorMiniModes {
 		{
 			Stage@ stage = createStage();
 			stage.m_mapInfo.m_name = "Route 666";
-			stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map21";
+			stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map21";
 			stage.m_mapIndex = 21;
       
 			stage.m_includeLayers.insertLast("layer1.koth");

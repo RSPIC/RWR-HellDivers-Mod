@@ -287,7 +287,7 @@ class MapRotatorMiniModesAll : MapRotatorMiniModes {
 		{
 			Stage@ stage = createStage();
 			stage.m_mapInfo.m_name = "Moorland Trenches";
-			stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map1";
+			stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map1";
 			stage.m_mapIndex = 1;
 
 			stage.m_includeLayers.insertLast("layer1.playlist1");
@@ -540,7 +540,7 @@ class MapRotatorMiniModesAll : MapRotatorMiniModes {
 		{
 			Stage@ stage = createStage();
 			stage.m_mapInfo.m_name = "Islet of Eflen";
-			stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map15";
+			stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map15";
 			stage.m_mapIndex = 13;
      
 			stage.m_includeLayers.insertLast("bases.default");
@@ -755,7 +755,7 @@ class MapRotatorMiniModesAll : MapRotatorMiniModes {
 		{
 			Stage@ stage = createStage();
 			stage.m_mapInfo.m_name = "Moorland Trenches";
-			stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map1";
+			stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map1";
 			stage.m_mapIndex = 1;
 
 			stage.m_includeLayers.insertLast("layer1.playlist2");
@@ -1228,7 +1228,7 @@ class MapRotatorMiniModesAll : MapRotatorMiniModes {
 		{
 			Stage@ stage = createStage();
 			stage.m_mapInfo.m_name = "Islet of Eflen";
-			stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map15";
+			stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map15";
 			stage.m_mapIndex = 13;
      
 			stage.m_includeLayers.insertLast("bases.default");
@@ -1690,7 +1690,7 @@ class MapRotatorMiniModesAll : MapRotatorMiniModes {
 		{
 			Stage@ stage = createStage();
 			stage.m_mapInfo.m_name = "Moorland Trenches";
-			stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map1";
+			stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map1";
 			stage.m_mapIndex = 1;
 
 			stage.m_includeLayers.insertLast("layer1.playlist3");
@@ -1906,7 +1906,7 @@ class MapRotatorMiniModesAll : MapRotatorMiniModes {
 		{
 			Stage@ stage = createStage();
 			stage.m_mapInfo.m_name = "Islet of Eflen";
-			stage.m_mapInfo.m_path = "media/packages/vanilla/maps/map15";
+			stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map15";
 			stage.m_mapIndex = 13;
      
 			stage.m_includeLayers.insertLast("bases.default");

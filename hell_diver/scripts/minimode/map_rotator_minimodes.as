@@ -59,9 +59,9 @@ class MapRotatorMiniModes : MapRotator {
 		array<FactionConfig@> availableFactionConfigs;
 		
 		availableFactionConfigs.insertLast(FactionConfig(-1, "super_earth.xml", "SpuerEarth AA", "0.1 0.5 0"));
-		availableFactionConfigs.insertLast(FactionConfig(-1, "super_earth.xml", "SpuerEarth BB", "0.5 0.5 0.5"));
+		availableFactionConfigs.insertLast(FactionConfig(-1, "acg.xml", "SpuerEarth BB", "0.5 0.5 0.5"));
 		availableFactionConfigs.insertLast(FactionConfig(-1, "super_earth.xml", "SpuerEarth CC", "1 0 0"));
-		availableFactionConfigs.insertLast(FactionConfig(-1, "super_earth.xml", "SpuerEarth DD", "0 1 1"));
+		availableFactionConfigs.insertLast(FactionConfig(-1, "acg.xml", "SpuerEarth DD", "0 1 1"));
 		availableFactionConfigs.insertLast(FactionConfig(-1, "super_earth.xml", "SpuerEarth DD", "0 0 1"));
 
 		return availableFactionConfigs;
