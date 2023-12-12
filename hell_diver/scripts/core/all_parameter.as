@@ -106,6 +106,8 @@ dictionary projectile_eventkey = {
         {"hd_hellpod_dropping_spawn_ai_jetpack",55},
         //星舰少女 舰队支援技能
         {"acg_starwars_shipgirls_skill",56},
+        //玛利亚 群体回复技能
+        {"acg_maria_schariac_skill",57},
 
         // 占位的
         {"666",-1}

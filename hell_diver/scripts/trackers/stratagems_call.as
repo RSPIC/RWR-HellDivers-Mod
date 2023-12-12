@@ -379,6 +379,9 @@ class player_cd_list {
 		if(cd_translation.get(m_key,target)){
 			notify(m_metagame, target+" 已就绪", dictionary(), "misc", p_id, false, "", 1.0);
 			m_ended = true;
+		}else{
+			notify(m_metagame, "已冷却", dictionary(), "misc", p_id, false, "", 1.0);
+			m_ended = true;
 		}
 	}
 

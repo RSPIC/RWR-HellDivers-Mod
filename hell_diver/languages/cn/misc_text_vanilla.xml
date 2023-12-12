@@ -746,6 +746,7 @@
 	<text key="MG-105 Stalwart Machine Gun" text="MG-105 盟友机枪" />
 	<text key="MGX-42 MK3 Machine Gun[Single-Use]" text="MGX-42 机枪[一次性]" />
 	<text key="MG-255 Melt Heavy Machine Gun" text="MG255 熔点重机枪[反重甲]" />
+	<text key="MG-107 Quenching Heavy Machine Gun" text="MG107 淬火重机枪[反重甲]" />
 	
 	<text key="Lava-17 Roger" text="Lava-17 游骑兵 充能激光 [反重甲]" />
 	<text key="Lava" text="熔岩" />
@@ -903,6 +904,12 @@
 	<text key="Explosive Bunny"  text="爆炸兔" />
 	<text key="Stylet AIM7F"  text="短剑 AIM7F导弹" />
 	<text key="Stylet M61A1"  text="短剑 M61A1重机枪" />
+	<text key="Trick or Trick"  text="浅黄睦月[Trick or Trick][反中甲]" />
+	<text key="Trick or Trick [Skill]"  text="爆裂咏叹调[Cost 技能][击杀充能][反重甲]" />
+	<text key="Shinano [Plane]"  text="信浓 [星夜之云][反重甲]" />
+	<text key="Shinano [Skill]"  text="信浓 [幽蝶之梦][反重甲]" />
+	<text key="Wine-red Admire [Skill]"  text="冷酷射击[Cost 技能][击杀充能][反重甲]" />
+	<text key="Wine-red Admire"  text="陆八魔阿露[Wine-red Admire][反重甲]" />
 
 <!-- 信物 -->
 	<text key="Asakaze [Skin]"  text="朝风 [信物]" />
@@ -995,6 +1002,7 @@
 	<text key="Asaki Mutsuki [Skin]"  text="浅黄睦月 [信物]" />
 	<text key="Rikuhachima Aru [Skin]"  text="陆八魔 阿露 [信物]" />
 	<text key="Vepley [Skin]"  text="维普蕾 [信物]" />
+	<text key="Maria Schariac[Skin]"  text="玛丽亚·沙尼亚特 [信物]" />
 
 <!-- ex武器 -->
 	<text key="Leviathan Breath"  text="利维坦之息 [反重甲]" />
@@ -1142,6 +1150,15 @@
 
 	<text key='Wiesel Tow Beacon' text="鼬鼠 [陶氏] 部署信标" />
 
+	<text key='Ferdinand[Modified]' text="费迪南 重型坦克" />
+	<text key='Ferdinand[Modified] Beacon' text="费迪南 重型坦克 部署信标" />
+
+	<text key='Panther A' text="豹式坦克A型 重型坦克" />
+	<text key='Panther A Beacon' text="豹式坦克A型 重型坦克 部署信标" />
+
+	<text key='Panzer III A' text="三号坦克A型 中型坦克" />
+	<text key='Panzer III A Beacon' text="三号坦克A型 中型坦克 部署信标" />
+
 	<text key="Kamikaze" text="民本超度" />
 	<text key="BanZai Armor onload" text="板载护甲已装配" />
 
@@ -1192,7 +1209,7 @@
 	<text key="cyborgs_spawn_immolator_model"  text="生化兵" />
 	<text key="cyborgs_spawn_initiate_model"  text="初始者" />
 	<text key="cyborgs_spawn_warlord_model"  text="首领-精英" />
-	<text key="Tesla Trooper"  text="磁暴步兵[抗爆]" />
+	<text key="Tesla Trooper"  text="磁暴步兵[抗轰炸/震荡]" />
 
 <!-- 虫族 -->
 	<text key="Bugs"  text="虫族" />
@@ -1212,23 +1229,23 @@
 	<text key="Behemoth Melee"  text="巨兽-精英 [中甲]" />
 
 <!-- 战利品 -->
-	<text key="Cirno Fumo"  text="琪露诺 Fumo [收藏品]" />
-	<text key="Flandre Scarlet Fumo"  text="芙兰朵露 Fumo [收藏品]" />
-	<text key="Hong Meiling Fumo"  text="红美铃 Fumo [收藏品]" />
-	<text key="Inu Sakuya Fumo"  text="十六夜 口关夜 Fumo [收藏品]" />
-	<text key="Koishi Komeiji Fumo"  text="古明地恋 Fumo [收藏品]" />
-	<text key="Mike Goutokuji Fumo"  text="豪德寺三毛 Fumo [收藏品]" />
-	<text key="Mokou Fujiwara Fumo"  text="藤原妹红 Fumo [收藏品]" />
-	<text key="Nitori Kawasiro Fumo"  text="河城荷取 Fumo [收藏品]" />
-	<text key="Reimu Fumo"  text="灵梦 Fumo [收藏品]" />
-	<text key="Rumia Fumo"  text="露米娅 Fumo [收藏品]" />
-	<text key="Sanae Kochiya Fumo"  text="东风谷早苗 Fumo [收藏品]" />
-	<text key="Shion Yorigami Fumo"  text="依神紫苑 Fumo [收藏品]" />
-	<text key="Suwako Moriya Fumo"  text="泄矢诹访子 Fumo [收藏品]" />
-	<text key="Yuyuko Fumo"  text="西行寺幽幽子 Fumo [收藏品]" />
-	<text key="Youmu Konpaku Fumo"  text="魂魄妖梦 Fumo [收藏品]" />
-	<text key="Junko Fumo"  text="纯狐 Fumo [收藏品]" />
-	<text key="Peroro Doll"  text="佩洛洛 Doll [收藏品]" />
+	<text key="Cirno Fumo"  text="琪露诺 Fumo [收藏品][脚本仓库使用][超稀有]" />
+	<text key="Flandre Scarlet Fumo"  text="芙兰朵露 Fumo [收藏品][脚本仓库使用][超稀有]" />
+	<text key="Hong Meiling Fumo"  text="红美铃 Fumo [收藏品][脚本仓库使用][超稀有]" />
+	<text key="Inu Sakuya Fumo"  text="十六夜 口关夜 Fumo [收藏品][脚本仓库使用][超稀有]" />
+	<text key="Koishi Komeiji Fumo"  text="古明地恋 Fumo [收藏品][脚本仓库使用][超稀有]" />
+	<text key="Mike Goutokuji Fumo"  text="豪德寺三毛 Fumo [收藏品][脚本仓库使用][超稀有]" />
+	<text key="Mokou Fujiwara Fumo"  text="藤原妹红 Fumo [收藏品][脚本仓库使用][超稀有]" />
+	<text key="Nitori Kawasiro Fumo"  text="河城荷取 Fumo [收藏品][脚本仓库使用][超稀有]" />
+	<text key="Reimu Fumo"  text="灵梦 Fumo [收藏品][脚本仓库使用][超稀有]" />
+	<text key="Rumia Fumo"  text="露米娅 Fumo [收藏品][脚本仓库使用][超稀有]" />
+	<text key="Sanae Kochiya Fumo"  text="东风谷早苗 Fumo [收藏品][脚本仓库使用][超稀有]" />
+	<text key="Shion Yorigami Fumo"  text="依神紫苑 Fumo [收藏品][脚本仓库使用][超稀有]" />
+	<text key="Suwako Moriya Fumo"  text="泄矢诹访子 Fumo [收藏品][脚本仓库使用][超稀有]" />
+	<text key="Yuyuko Fumo"  text="西行寺幽幽子 Fumo [收藏品][脚本仓库使用][超稀有]" />
+	<text key="Youmu Konpaku Fumo"  text="魂魄妖梦 Fumo [收藏品][脚本仓库使用][超稀有]" />
+	<text key="Junko Fumo"  text="纯狐 Fumo [收藏品][脚本仓库使用][超稀有]" />
+	<text key="Peroro Doll"  text="佩洛洛 Doll [收藏品][脚本仓库使用][超稀有]" />
 
 	<text key="Resource Point"  text="研究点 [功能性道具]" />
 	<text key="Samples Bugs"  text="虫族样本 [功能性物资]" />
@@ -1532,7 +1549,7 @@ TK其他玩家同样会造成倍率因子的下降" />
 "/>
 
 <!-- 奖励箱子 -->
-	<text key="Reward Box [Collection]" text="奖励箱子 [收藏品]" />
+	<text key="Reward Box [Collection]" text="奖励箱子 [收藏品][脚本仓库使用][超稀有]" />
 	<text key="Reward Box [Skin]" text="奖励箱子 [皮肤]" />
 	<text key="Reward Box [Music]" text="奖励箱子 [音乐盒]" />
 	<text key="Reward Box [Vehicle]" text="奖励箱子 [载具]" />
@@ -1738,7 +1755,7 @@ TK其他玩家同样会造成倍率因子的下降" />
 	<text key="Stash Box" text="脚本仓库[部署以使用][请靠近仓库使用]" />
 	<text key="Stash Help" text="[教程] 如何使用脚本仓库" />
 	<text key="How To Use Stash" text="[教程] 如何使用脚本仓库
-*可存储的物品：无法存储武器，各类箱子。仅能存储信物、载具信标、收藏品、音乐盒、功能道具
+*可存储的物品：无法存储武器，各类箱子，加成卡。仅能存储信物、载具信标、收藏品、音乐盒、功能道具(样本/研究点/选票)
 *警告：必须按操作流程执行，否则吞并物品不补。
 *重要：存取贵重物品时，有条件全程录像，没条件先存取价值低的物品。
 *如何知道某个物品是否能存储：打开脚本仓库，将想存的物品从仓库里取出到背包，若提示不能存储，则无法存储该物品。
@@ -1748,6 +1765,7 @@ TK其他玩家同样会造成倍率因子的下降" />
 4、取出物品前，需要通过上下页、上下选择中物品
 5、购买'取出X个'按钮即可取出
 6、取出完毕物品后，关闭仓库
+7、多次尝试存入不可存放物品后会自动关fumo
 " />
 
 </translation>

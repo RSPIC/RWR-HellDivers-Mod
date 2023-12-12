@@ -781,8 +781,8 @@ class battleInfoBuck{
 					bf = 3.4;
 				}
 				float pt_bf = bf; //游玩时长的独立倍率因子
-				if(pt_bf <= 0.5){
-					pt_bf = 0.5;
+				if(pt_bf <= 1){
+					pt_bf = 1;
 				}
 				if(bf <= 0){
 					bf = 0.01;
@@ -860,8 +860,8 @@ class battleInfoBuck{
 					bf = 3.4;
 				}
 				float pt_bf = bf;
-				if(pt_bf <= 0.5){ //游玩时长的独立倍率因子
-					pt_bf = 0.5;
+				if(pt_bf <= 1){ //游玩时长的独立倍率因子
+					pt_bf = 1;
 				}
 				if(bf <= 0){
 					bf = 0.01;
@@ -916,20 +916,20 @@ class battleInfoBuck{
 		if(m_battleInfos is null){return false;}
 		for(uint i = 0 ; i < m_battleInfos.size() ; ++i){
 			if(m_battleInfos[i].name() == name){
-				if(m_battleInfos[i].playingTime() >= 10 && m_battleInfos[i].playingTime() <= 30){
+				if(m_battleInfos[i].playingTime() >= 7 && m_battleInfos[i].playingTime() <= 30){
 					if(m_battleInfos[i].tkCount() <= 1){
 						if(m_battleInfos[i].missionCount() != 0){
 							return true;
 						}
 					}
-					if(m_battleInfos[i].killCount() >= 750){
-						return true;
-					}
-					if(m_battleInfos[i].deadCount() >= 30){
+					if(m_battleInfos[i].deadCount() >= 20){
 						return true;
 					}
 				}
-				if(m_battleInfos[i].playingTime() >= 75){
+				if(m_battleInfos[i].playingTime() >= 60){
+					return true;
+				}
+				if(m_battleInfos[i].killCount() >= 750){
 					return true;
 				}
 			}
@@ -1314,7 +1314,6 @@ class userCountInfoBuck {
 	protected array<userCountInfo@> m_userCountInfos;
 
 	userCountInfoBuck(){
-		clearAll();
 		userCountInfo@ newinfo = userCountInfo("");
 		m_userCountInfos.insertLast(newinfo);
 	}
@@ -1429,7 +1428,6 @@ class Initiate : Tracker {
 		m_timer -= time;
         if(m_timer < 0){
             m_timer = m_time;
-			updateGlobalPlayerInfoTimePlayed(m_metagame);
         }
 	}
 	// ----------------------------------------------------
@@ -1454,6 +1452,7 @@ class Initiate : Tracker {
     }
 	// ----------------------------------------------------
 	protected void handleMatchEndEvent(const XmlElement@ event) {
+		g_userCountInfoBuck.clearAll();
 		m_ended = true;
 	}
 	// ----------------------------------------------------

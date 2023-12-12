@@ -27,7 +27,7 @@
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
             <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.15" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
     </carry_item>
 	
@@ -55,7 +55,7 @@
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.15" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
 	
@@ -83,7 +83,7 @@
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.15" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
     </carry_item>
 	
@@ -111,7 +111,7 @@
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.15" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
 
@@ -139,7 +139,7 @@
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.15" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
 
@@ -167,7 +167,7 @@
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.15" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
 
@@ -195,7 +195,7 @@
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.15" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
 	<carry_item key="hd_ai_v7" name="13/20 HellDivers Ai Vest" slot="1" transform_on_consume="hd_ai_v8" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
@@ -222,7 +222,7 @@
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.15" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
 	
@@ -250,7 +250,7 @@
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.15" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
 	
@@ -278,7 +278,7 @@
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.15" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
 <!-- 轰炸伤害在半血前均能击倒 -->
@@ -306,7 +306,7 @@
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.15" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
 	<carry_item key="hd_ai_v11" name="9/20 HellDivers Ai Vest" slot="1" transform_on_consume="hd_ai_v12" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
@@ -333,7 +333,7 @@
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.15" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
 	<carry_item key="hd_ai_v12" name="8/20 HellDivers Ai Vest" slot="1" transform_on_consume="hd_ai_v13" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
@@ -360,7 +360,7 @@
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.15" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
 	<carry_item key="hd_ai_v13" name="7/20 HellDivers Ai Vest" slot="1" transform_on_consume="hd_ai_v14" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
@@ -387,7 +387,7 @@
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.15" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
   <!-- 击倒层 -->
@@ -416,7 +416,7 @@
         <modifier class="projectile_hit_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/><!--治疗-->
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.15" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
 	<carry_item key="hd_ai_v15" name="5/20 HellDivers Ai Vest" slot="1" transform_on_consume="hd_ai_v16" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
@@ -444,7 +444,7 @@
         <modifier class="projectile_hit_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/><!--治疗-->
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.15" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
 	<carry_item key="hd_ai_v16" name="4/20 HellDivers Ai Vest" slot="1" transform_on_consume="hd_ai_v17" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
@@ -472,7 +472,7 @@
         <modifier class="projectile_hit_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/><!--治疗-->
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.15" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
 	<carry_item key="hd_ai_v17" name="3/20 HellDivers Ai Vest" slot="1" transform_on_consume="hd_ai_v18" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
@@ -500,7 +500,7 @@
         <modifier class="projectile_hit_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/><!--治疗-->
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.15" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
 	<carry_item key="hd_ai_v18" name="2/20 HellDivers Ai Vest" slot="1" transform_on_consume="hd_ai_v19" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
@@ -528,7 +528,7 @@
         <modifier class="projectile_hit_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/><!--治疗-->
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.15" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
 	<carry_item key="hd_ai_v19" name="1/20 HellDivers Ai Vest" slot="1" transform_on_consume="hd_ai_v20" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
@@ -556,7 +556,7 @@
         <modifier class="projectile_hit_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/><!--治疗-->
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
          <modifier class="speed" value="0" /> 
-        <modifier class="hit_success_probability" value="-0.15" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
 	<carry_item key="hd_ai_v20" name="0/20 HellDivers Ai Vest" slot="1"  time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0">
@@ -582,7 +582,7 @@
       <modifier class="melee_hit_result" input_character_state="stun" output_character_state="death" consumes_item="0"/>
       <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="0"/>
         <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" />
-        <modifier class="hit_success_probability" value="-0.15" />
+        <modifier class="hit_success_probability" value="0" />
         <modifier class="detectability" value="0" />
   </carry_item>
 	

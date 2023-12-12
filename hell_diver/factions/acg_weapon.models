@@ -121,6 +121,14 @@
 	</model>
 	<model filename="acg_bronya_ex_1.xml" > <!--布洛妮娅--><requirement class="weapon" slot="0" key="re_acg_bronya.weapon"/>
 	</model>
+	<model filename="acg_maria_schariac.xml" > <!--玛利亚--><requirement class="weapon" slot="1" key="acg_maria_schariac.weapon"/>
+	</model>
+	<model filename="acg_maria_schariac.xml" > <!--玛利亚--><requirement class="weapon" slot="1" key="acg_maria_schariac_skill.weapon"/>
+	</model>
+	<model filename="acg_maria_schariac.xml" > <!--玛利亚--><requirement class="weapon" slot="1" key="re_acg_maria_schariac.weapon"/>
+	</model>
+	<model filename="acg_maria_schariac.xml" > <!--玛利亚--><requirement class="weapon" slot="1" key="re_acg_maria_schariac_skill.weapon"/>
+	</model>
 <!-- 东方project -->
 	<model filename="acg_reisenu.xml"><!--铃仙--><requirement class="weapon" slot="0" key="acg_reisenu_a.weapon"/>
 	</model>
@@ -152,6 +160,14 @@
 	<model filename="acg_shigure.xml" > <!--时雨改二--><requirement class="weapon" slot="0" key="re_acg_shigure_610mm_torpedo.weapon"/>
 	</model>
 <!-- 碧蓝航线 -->
+	<model filename="acg_shinano.xml" > <!--信浓--><requirement class="weapon" slot="0" key="acg_shinano.weapon"/>
+	</model>
+	<model filename="acg_shinano.xml" > <!--信浓--><requirement class="weapon" slot="0" key="acg_shinano_skill.weapon"/>
+	</model>
+	<model filename="acg_shinano.xml" > <!--信浓--><requirement class="weapon" slot="0" key="re_acg_shinano.weapon"/>
+	</model>
+	<model filename="acg_shinano.xml" > <!--信浓--><requirement class="weapon" slot="0" key="re_acg_shinano_skill.weapon"/>
+	</model>
 <!-- 动漫 -->
 	<model filename="acg_megumin.xml"><!--慧慧--><requirement class="weapon" slot="0" key="acg_megumin_wand_summon.weapon"/>
 	</model>
@@ -222,6 +238,23 @@
 	</model>
 	<model filename="toki_abi_eshuh_ex.xml"><!--飞马鸟时 机甲--><requirement class="weapon" slot="1" key="re_acg_exo_toki_skill.weapon"/><requirement class="weapon" slot="0" key="acg_exo_toki.weapon"/>
 	</model>
+	<model filename="acg_asagi_mutsuki.xml"><!--浅黄睦月--><requirement class="weapon" slot="0" key="acg_asagi_mutsuki.weapon"/>
+	</model>
+	<model filename="acg_asagi_mutsuki.xml"><!--浅黄睦月--><requirement class="weapon" slot="0" key="acg_asagi_mutsuki_skill.weapon"/>
+	</model>
+	<model filename="acg_asagi_mutsuki.xml"><!--浅黄睦月--><requirement class="weapon" slot="0" key="re_acg_asagi_mutsuki.weapon"/>
+	</model>
+	<model filename="acg_asagi_mutsuki.xml"><!--浅黄睦月--><requirement class="weapon" slot="0" key="re_acg_asagi_mutsuki_skill.weapon"/>
+	</model>
+	<model filename="acg_rikuhachima_aru.xml"><!--陆八魔阿露--><requirement class="weapon" slot="0" key="acg_rikuhachima_aru.weapon"/>
+	</model>
+	<model filename="acg_rikuhachima_aru.xml"><!--陆八魔阿露--><requirement class="weapon" slot="0" key="acg_rikuhachima_aru_skill.weapon"/>
+	</model>
+	<model filename="acg_rikuhachima_aru.xml"><!--陆八魔阿露--><requirement class="weapon" slot="0" key="re_acg_rikuhachima_aru.weapon"/>
+	</model>
+	<model filename="acg_rikuhachima_aru.xml"><!--陆八魔阿露--><requirement class="weapon" slot="0" key="re_acg_rikuhachima_aru_skill.weapon"/>
+	</model>
+
 <!-- 少女前线 -->
 	<model filename="acg_mg4_703.xml"><!--MG4机枪--><requirement class="weapon" slot="0" key="acg_mg4td_ap.weapon"/>
 	</model>
@@ -274,6 +307,12 @@
 	<model filename="acg_mg3.xml" > <!--MG3--><requirement class="weapon" slot="0" key="acg_mg3.weapon"/>
 	</model>
 	<model filename="acg_mg3.xml" > <!--MG3--><requirement class="weapon" slot="0" key="re_cg_mg3.weapon"/>
+	</model>
+	<model filename="exo_tareus.xml" > <!--塔亚柔斯 机甲--><requirement class="weapon" slot="0" key="acg_exo_tareus_right.weapon"/>
+	</model>
+	<model filename="exo_tareus_no_righthand.xml" > <!--塔亚柔斯 机甲--><requirement class="weapon" slot="0" key="acg_exo_tareus_skill.weapon"/>
+	</model>
+	<model filename="exo_tareus_nohand.xml" > <!--塔亚柔斯 机甲--><requirement class="weapon" slot="0" key="acg_exo_tareus_left.weapon"/>
 	</model>
 <!-- 灰烬战线 -->
 	

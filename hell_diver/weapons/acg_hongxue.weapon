@@ -18,7 +18,7 @@ key="acg_hongxue.weapon"
   name="HongXue" 
   class="4" 
   reload_one_at_a_time="0" 
-  sight_range_modifier="2.0" 
+  sight_range_modifier="3.0" 
   projectile_speed="200.0" 
   barrel_offset="0.65" 
   projectiles_per_shot="1" 
@@ -68,7 +68,7 @@ key="acg_hongxue.weapon"
 	time_to_live="0.375" can_be_detected_by_driver="1" can_be_disarmed="0" name="HongXue"> 
 	
 		<result class="hit" kill_probability="2.0" 
-		kill_probability_offset_on_successful_hit="200"
+		kill_probability_offset_on_successful_hit="300"
 		kill_decay_start_time="0.2" kill_decay_end_time="0.4" character_state="none"/>		
     <trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
@@ -261,7 +261,7 @@ key="re_acg_hongxue.weapon"
   name="HongXue" 
   class="4" 
   reload_one_at_a_time="0" 
-  sight_range_modifier="2.0" 
+  sight_range_modifier="3.0" 
   projectile_speed="200.0" 
   barrel_offset="0.65" 
   projectiles_per_shot="1" 
@@ -311,7 +311,7 @@ key="re_acg_hongxue.weapon"
 	time_to_live="0.375" can_be_detected_by_driver="1" can_be_disarmed="0" name="HongXue"> 
 	
 		<result class="hit" kill_probability="2.0" 
-		kill_probability_offset_on_successful_hit="200"
+		kill_probability_offset_on_successful_hit="300"
 		kill_decay_start_time="0.2" kill_decay_end_time="0.4" character_state="none"/>		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
     <!-- <model mesh_filename="hongxue_arrow.xml" /> -->

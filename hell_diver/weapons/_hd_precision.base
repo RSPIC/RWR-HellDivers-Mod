@@ -21,8 +21,8 @@ on_ground_up="0 0 1"
     <inventory encumbrance="10.0" price="0.0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
 
 	<!--姿态精度-->
-    <stance state_key="running" accuracy="1" /> 
-    <stance state_key="walking" accuracy="1" />
+    <stance state_key="running" accuracy="0.5" /> 
+    <stance state_key="walking" accuracy="0.95" />
 	<stance state_key="standing" accuracy="1" />
 	<stance state_key="crouching" accuracy="1" />
     <stance state_key="crouch_moving" accuracy="1" />

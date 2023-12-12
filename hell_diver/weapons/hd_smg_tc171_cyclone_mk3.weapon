@@ -177,7 +177,7 @@ key="hd_smg_tc171_cyclone_dicker.weapon"
 	<animation state_key="hold_on_wall"  animation_key="hold, overwall pistol" /><!--架枪动作，全身动作-->
     <animation state_key="still_against_wall" animation_key="hold, pistol" /><!--靠墙动作，全身动作-->
     <animation state_key="hold_casual" animation_key="hold_casual, pistol" /><!--闲置动作，全身动作-->
-	<animation state_key="running" animation_key="running, pistol" /><!--全身动作-->
+	<animation state_key="running" animation_key="hd_spring_single_hand" /><!--全身动作-->
 	<animation state_key="walking" animation_key="running_pistol_slower" /><!--按shift时候的静步前进动作，全身动作-->
     <animation state_key="walking_backwards" animation_key="walking backwards, pistol" /><!--全身动作-->
     <animation state_key="crouching" animation_key="crouch, pistol" /><!--蹲姿静止动作，全身动作-->

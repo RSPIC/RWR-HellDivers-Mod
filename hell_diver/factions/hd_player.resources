@@ -28,6 +28,7 @@
 	<weapon key="hd_lmg_mg105_stalwart_full_upgrade.weapon" /><!--MG105盟友机枪-->
 
 	<weapon key="hd_hmg_mg255_melt_mk3.weapon" /><!--MG255熔点重机枪-->
+	<weapon key="hd_hmg_mg107.weapon" /><!--MG107淬火重机枪-->
 
 	<weapon key="hd_exp_cr9_suppressor_full_upgrade.weapon" /><!--抑制者直射榴弹-->
 	<weapon key="hd_exp_plas1_scorcher_full_upgrade.weapon" /><!--焦土直射榴弹-->
@@ -112,6 +113,8 @@
     <call key="spawn_hd_resupply.call" />
     <!-- 进攻支援 -->
     <call key="spawn_hd_sms.call" />
+
+    <call key="laser_strike.call" />
 
     <!-- 载具 -->
 	<vehicle key="hd_m5_apc.vehicle" />

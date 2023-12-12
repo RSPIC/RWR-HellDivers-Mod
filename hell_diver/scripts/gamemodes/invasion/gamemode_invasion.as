@@ -346,7 +346,7 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		
 		setupSpawnTimeHandler();
 		setupSideBaseAttackHandler();
-		setupIdlerKicker();
+		//setupIdlerKicker();
 
 		//addTracker(SupporterCommandHandler(this));
 	}

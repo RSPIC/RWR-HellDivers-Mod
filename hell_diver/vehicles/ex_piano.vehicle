@@ -74,12 +74,6 @@ file="_vehicle_none.base"
 
 	<event>
 		<trigger class="destroy" />
-  	<result class="spawn" instance_class="projectile" instance_key="hd_vehicle_destroy_damage.projectile" min_amount="1"
-	 max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" /><!--摧毁时的爆炸-->
-	</event>
-
-	<event>
-		<trigger class="destroy" />
   	<result class="spawn" instance_class="visual_item" instance_key="hd_hellpod_vanish.visual_item" min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0 0" /><!--消失的时候烟雾特效-->
 	</event>
 		<event>
@@ -171,13 +165,6 @@ file="_vehicle_none.base"
 	<effect event_key="destroyed" ref="car_destroyed_fire" post_processing="0" offset="0 1 0" />
 	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="1" offset="0 1 0" />  
 	<effect event_key="destroyed" ref="car_broken_spary_spark" post_processing="1" offset="0 1 0" />  
-
-
-	<event>
-		<trigger class="destroy" />
-  	<result class="spawn" instance_class="projectile" instance_key="hd_vehicle_destroy_damage.projectile" min_amount="1"
-	 max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" /><!--摧毁时的爆炸-->
-	</event>
 
 	<event>
 		<trigger class="destroy" />
@@ -276,12 +263,6 @@ file="_vehicle_none.base"
 
 	<event>
 		<trigger class="destroy" />
-  	<result class="spawn" instance_class="projectile" instance_key="hd_vehicle_destroy_damage.projectile" min_amount="1"
-	 max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" /><!--摧毁时的爆炸-->
-	</event>
-
-	<event>
-		<trigger class="destroy" />
   	<result class="spawn" instance_class="visual_item" instance_key="hd_hellpod_vanish.visual_item" min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0 0" /><!--消失的时候烟雾特效-->
 	</event>
 		<event>
@@ -373,13 +354,6 @@ file="_vehicle_none.base"
 	<effect event_key="destroyed" ref="car_destroyed_fire" post_processing="0" offset="0 1 0" />
 	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="1" offset="0 1 0" />  
 	<effect event_key="destroyed" ref="car_broken_spary_spark" post_processing="1" offset="0 1 0" />  
-
-
-	<event>
-		<trigger class="destroy" />
-  	<result class="spawn" instance_class="projectile" instance_key="hd_vehicle_destroy_damage.projectile" min_amount="1"
-	 max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" /><!--摧毁时的爆炸-->
-	</event>
 
 	<event>
 		<trigger class="destroy" />

@@ -256,6 +256,10 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			ScoredResource("token_starwars_shipgirls.projectile","projectile",1.0f,4),
 			ScoredResource("token_asagi_mutsuki.projectile","projectile",1.0f,4),
 			ScoredResource("token_rikuhachima_aru.projectile","projectile",1.0f,4),
+			ScoredResource("token_lilies.projectile","projectile",1.0f,4),
+			ScoredResource("token_zero401_casual_wear.projectile","projectile",1.0f,4),
+			ScoredResource("token_maria_schariac.projectile","projectile",1.0f,4),
+			ScoredResource("token_shinano.projectile","projectile",1.0f,4),
 
 			//AI类信物
 			ScoredResource("ai_token_asuma_toki.projectile","projectile",1.0f,2)
@@ -339,6 +343,9 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			ScoredResource("zbd09_call.projectile", "projectile", 1.0f),
 			ScoredResource("lav6_call.projectile", "projectile", 1.0f),
 			ScoredResource("wiesel_tow_call.projectile", "projectile", 1.0f),
+			ScoredResource("panther_a_call.projectile", "projectile", 1.0f),
+			ScoredResource("panzer_3_a_call.projectile", "projectile", 1.0f),
+			ScoredResource("sdkfz184_call.projectile", "projectile", 1.0f),
 			ScoredResource("t90m3_call.projectile", "projectile", 1.0f)
 			
 			},
@@ -612,6 +619,9 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_texas_skill.weapon", "weapon", 1.0f),
         	//ScoredResource("acg_arknight_ifrit.weapon", "weapon", 1.0f),
         	ScoredResource("acg_starwars_shipgirls.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_asagi_mutsuki.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_rikuhachima_aru.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_shinano.weapon", "weapon", 1.0f),
         	ScoredResource("acg_ba_alice_railgun_ex.weapon", "weapon", 1.0f)
 			},
 			{
@@ -682,6 +692,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_g41_bp2077.weapon", "weapon", 1.0f),
         	ScoredResource("acg_hongxue.weapon", "weapon", 1.0f),
         	ScoredResource("acg_g41_universe.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_maria_schariac.weapon", "weapon", 1.0f),
         	ScoredResource("acg_amamiya_kokoro.weapon", "weapon", 1.0f)
 			},
 			{
@@ -1022,22 +1033,15 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		//total f = 13.7
 
 		// 待后续重置
-		ScoredResource("reward_box_weapon_beta.carry_item", "carry_item", 0.01f),
-		ScoredResource("reward_box_weapon_gama.carry_item", "carry_item", 0.01f),
-		ScoredResource("reward_box_weapon_theta.carry_item", "carry_item", 0.01f),
-		ScoredResource("reward_box_weapon_miu.carry_item", "carry_item", 0.01f),
-		ScoredResource("reward_box_weapon_pi.carry_item", "carry_item", 0.01f)
+		ScoredResource("reward_box_weapon_beta.carry_item", "carry_item", 0.1f),
+		ScoredResource("reward_box_weapon_gama.carry_item", "carry_item", 0.1f),
+		ScoredResource("reward_box_weapon_theta.carry_item", "carry_item", 0.1f),
+		ScoredResource("reward_box_weapon_miu.carry_item", "carry_item", 0.1f),
+		ScoredResource("reward_box_weapon_pi.carry_item", "carry_item", 0.1f)
 
 			},
 			{
-			ScoredResource("balloon.carry_item", "carry_item", 100.0f),
-
-			ScoredResource("hd_bonusfactor_xp_10", "carry_item", 3.0f),
-			ScoredResource("hd_bonusfactor_xp_20", "carry_item", 2.0f),
-			ScoredResource("hd_bonusfactor_xp_45", "carry_item", 1.0f),
-			ScoredResource("hd_bonusfactor_xp_75", "carry_item", 1.0f),
-			ScoredResource("hd_bonusfactor_xp_125", "carry_item", 1.0f),
-			ScoredResource("hd_bonusfactor_xp_240", "carry_item", 1.0f),
+			ScoredResource("balloon.carry_item", "carry_item", 50.0f),
 
 			ScoredResource("hd_bonusfactor_rp_10", "carry_item", 1.5f),
 			ScoredResource("hd_bonusfactor_rp_20", "carry_item", 1.0f),

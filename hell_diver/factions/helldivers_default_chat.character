@@ -57,9 +57,7 @@
   <comment key="initiate radio call" text="洞幺洞幺，听到请回答，听到请回答" />
   <comment key="commander radio response" text="我是洞幺，请指示" />
   <comment key="commander radio full" text="请求拒绝，所有支援已被动用，你们只能靠自己了"/>  
-  <comment key="no radio equipment" text="目前我还没有电台" />
-  <comment key="no radio equipment" text="&#37;rank_name还没有权限使用电台" />
-  <comment key="no radio equipment" text="我好像把电台忘在另一条裤子里了" />
+  <comment key="no radio equipment" text="信号干扰严重，无法使用电台" />
   <comment key="squad chat, not in squad" text="我不在玩家的小队中" />
   <comment key="Hey, wait up" text="嘿，你丫等会儿！" />
   <comment key="Hey, wait up" text="嘿，等会儿我！" />
@@ -84,6 +82,7 @@
   <comment key="Open fire" text="消灭他们！" />
   <comment key="Open fire" text="发现敌人！" />
   <comment key="Open fire" text="火力压制！" />
+  <comment key="Open fire" text="F-R-E-E-D-O-M-！" />
   <comment key="Open fire" text="为了超级地球！" />
   <comment key="Lone leader, open fire" text="" />
   <comment key="fire opened, weapon tag = sniper" text="有狙击！" />
@@ -92,7 +91,6 @@
   <comment key="grenade alert, grenade tag = grenade" text="手榴弹！" />
   <comment key="grenade alert, grenade tag = flashbang" text="小心！" />
   <comment key="grenade alert, grenade tag = flashbang" text="闪光弹！" />
-  <comment key="grenade alert, grenade tag = rocket" text="卧槽，火箭弹！" />
   <comment key="grenade alert, grenade tag = rocket" text="注意躲避！" />
   <comment key="grenade alert, grenade tag = rocket" text="火箭弹！" />
   <comment key="enemy not seen, area alerted" text="找掩护" />
@@ -559,7 +557,7 @@
   <comment key="map start with completed map" text="欢迎回来，士兵" />
   <comment key="map advance, held by enemy" text="情报部门报告&#37;map_name正在被&#37;faction_name控制" />
   <comment key="map advance, another enemy present" text="&#37;faction_name也被发现在这个地区有所活动" />
-  <comment key="map advance, new map" text="我们的部队已经建立了一个前哨站，但仍需要支援" />
+  <comment key="map advance, new map" text="我们的先头部队已经建立了一个据点，但仍需要支援" />
   <comment key="map advance, been there before" text="我们仍然控制着&#37;number_of_bases个基地" />
   <comment key="map advance, friendly map" text="&#37;map_name已被&#37;faction_name占领, 那里终于平静些了" />
   <!-- boss maps -->

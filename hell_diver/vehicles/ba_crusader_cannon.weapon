@@ -5,7 +5,7 @@ key="ba_crusader_cannon.weapon"
 > 
     <specification 	
     slot="1" 	
-    retrigger_time="3" 
+    retrigger_time="2.75" 
     accuracy_factor="1" 
 	spread_range="0.3"
 	stance_accuracy_rate="1.0"
@@ -50,7 +50,7 @@ key="ba_crusader_cannon.weapon"
 	time_to_live="1" can_be_detected_by_driver="1" can_be_disarmed="0" name="Crusader 165mm [AT]" radius="0.7"> 
 		
         <result class="spawn" instance_class="projectile" instance_key="ba_crusader_cannon_damage.projectile" 
-		min_amount="10" max_amount="10" offset="0 0.5 0" position_spread="1.5 0" direction_spread="0.1 0" />
+		min_amount="10" max_amount="12" offset="0 0.5 0" position_spread="1.5 0" direction_spread="0.1 0" />
 		<!-- damage 10x15=150 轰炸伤-->
 
 		<!--命中音效-->

@@ -7,6 +7,7 @@ file="_loot_normal.base"
 >
     <hud_icon filename="mc_iron.png" />
     <inventory  price="50.0" />
+    <inventory encumbrance="0.1" />
     <model mesh_filename="collect_mc_iron.mesh" texture_filename="collect_mc_iron.jpg" />
 </carry_item>
 <carry_item 
@@ -16,6 +17,7 @@ file="_loot_normal.base"
 >
     <hud_icon filename="mc_gold.png" />
     <inventory  price="100.0" />
+    <inventory encumbrance="0.2" />
     <model mesh_filename="collect_mc_gold.mesh" texture_filename="collect_mc_gold.jpg" />
 </carry_item>
 <carry_item 

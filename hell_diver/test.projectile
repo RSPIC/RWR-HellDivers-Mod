@@ -28,7 +28,12 @@
 		<effect class="result"  key="terrain" ref="DXE_muzzle_singing_spot_pre"/>
 		<effect class="result"  key="terrain" ref="DXE_muzzle_singing_randon_spot"/> -->
 
-		<effect class="result" key="terrain" ref="bugs_zerg_egg_blast" lighting="0"/>
+    <effect class="result" key="terrain" ref="shinano_cyclone_01"/>
+    <effect class="result" key="terrain" ref="shinano_result_ijn_icon_blast"/>
+    <effect class="result" key="terrain" ref="shinano_result_anim_butterfly"/>
+    <effect class="result" key="terrain" ref="shinano_result_anim_butterfly_02"/>
+    <effect class="result" key="terrain" ref="shinano_result_anim_butterfly_03"/>
+    <effect class="result" key="terrain" ref="shinano_result_anim_butterfly_04"/>
 
 		<effect class="result" key="static_object" copy="terrain" />
 		<effect class="result" key="character" copy="terrain" />

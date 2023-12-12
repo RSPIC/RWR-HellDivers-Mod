@@ -19,12 +19,10 @@ pulldown_in_air="0.1" key="acg_laisha_heliotrope_spawn.projectile">
 		<effect class="result" key="terrain" ref="laisha_HGY_result_blast_impact_spark" lighting="0"/>
 		<effect class="result" key="terrain" ref="laisha_HGY_result_blast_impact_spark_2" lighting="0"/>
 
-
 		<effect class="result" key="static_object" copy="terrain" />
 		<effect class="result" key="character" copy="terrain" />
 		<effect class="result" key="vehicle" copy="terrain" />
 		<effect class="result" key="other" copy="terrain" />
-
 
     <commonness value="0" can_respawn_with="0" in_stock="0"/>	
 </projectile>

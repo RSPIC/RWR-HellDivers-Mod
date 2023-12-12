@@ -48,7 +48,7 @@ allow_ai_to_use="0"
 	<!-- similarly, a controllable turret can only exist if it has a weapon -->
 	<!-- turrets may have sub-turrets, which may have more weapons, in the future -->
 	<turret offset="0 2.17099 -0.5544" weapon_key="hd_vehicle_tow.weapon" weapon_offset="0 0.0 0" weapon_recoil="0" physics_recoil="0.0" max_rotation_step="0.00005" rotation="0" rotation_range="1"/>
-	<turret offset="-0.7929 2.01161 -0.2357" weapon_key="hd_vehicle_hmg.weapon" weapon_offset="0 0.0 0" weapon_recoil="0.01" physics_recoil="0.0" max_rotation_step="0.0003" rotation="-0.2" rotation_range="1"/>
+	<turret offset="-0.7929 2.01161 -0.2357" weapon_key="hd_vehicle_hmg.weapon" weapon_offset="0 0.35 1" weapon_recoil="0.01" physics_recoil="0.0" max_rotation_step="0.0003" rotation="-0.2" rotation_range="1"/>
 
 	<visual class="chassis" mesh_filename="wiesel_body.mesh" texture_filename="wiesel_body.png" max_tilt="0.02" />
 	<visual class="chassis" key="broken" mesh_filename="wiesel_body_broken.mesh" texture_filename="wiesel_body_broken.png" />

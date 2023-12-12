@@ -24,6 +24,9 @@
 	<vehicle file="ex_power_chair.vehicle" /><!--力量の椅-->
 	<vehicle file="lav6.vehicle" /><!--lav6-->
 	<vehicle file="kirov.vehicle" /><!--基洛夫-->
+	<vehicle file="panzer_3_a.vehicle" /><!--三号坦克A型-->
+	<vehicle file="panther_a.vehicle" /><!--豹式坦克A型-->
+	<vehicle file="sdkfz184.vehicle" /><!--大象-->
 
 	<!-- 原版 -->
 	<vehicle file="radar_tower.vehicle" />
@@ -57,7 +60,10 @@
 	<!-- 替换迫击炮 -->
 	<vehicle file="ex_edf_mortar.vehicle" />
 	<vehicle file="ex_edf_mortar_ex.vehicle" />
-
+	<!-- 替换机枪 -->
+	<vehicle file="ex_edf_turrent_minigun.vehicle" />
+	<vehicle file="ex_edf_turrent_minigun_ex.vehicle" />
+	
 	<vehicle file="ex_vanilla_replace.vehicle" />
 	
 	<!-- 赛车 -->

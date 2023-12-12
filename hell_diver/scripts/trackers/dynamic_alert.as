@@ -79,13 +79,13 @@ const array<SpawnInfo@> level_3 = {
     SpawnInfo("bugs_Stalker",int(rand(3,4)))
 };
 const array<SpawnInfo@> level_6 = {
-    SpawnInfo("cyborgs_spawn_berserker_model.vehicle",0),
-    SpawnInfo("cyborgs_spawn_butcher_model.vehicle",int(rand(1,1))),
+    SpawnInfo("cyborgs_spawn_berserker_model.vehicle",1),
+    SpawnInfo("cyborgs_spawn_butcher_model.vehicle",int(rand(2,2))),
     SpawnInfo("cyborgs_spawn_comrade_model.vehicle",0),
     SpawnInfo("cyborgs_spawn_grotesque_model.vehicle",0),
     SpawnInfo("cyborgs_spawn_hulk_model.vehicle",0),
     SpawnInfo("cyborgs_spawn_immolator_model.vehicle",int(rand(2,4))),
-    SpawnInfo("cyborgs_spawn_initiate_model.vehicle",int(rand(1,2))),
+    SpawnInfo("cyborgs_spawn_initiate_model.vehicle",int(rand(7,7))),
     SpawnInfo("cyborgs_spawn_warlord_model.vehicle",int(rand(-12,1))),
 
     SpawnInfo("bugs_Impaler",int(rand(-6,1))),
@@ -93,26 +93,26 @@ const array<SpawnInfo@> level_6 = {
     SpawnInfo("bugs_Behemoth",0),
     SpawnInfo("bugs_BroodCommander",0),
     SpawnInfo("bugs_Elite",int(rand(1,1))),
-    SpawnInfo("bugs_Warrior",int(rand(1,2))),
+    SpawnInfo("bugs_Warrior",int(rand(5,5))),
     SpawnInfo("bugs_Stalker",int(rand(1,1)))
 };
 const array<SpawnInfo@> level_9 = {
-    SpawnInfo("cyborgs_spawn_berserker_model.vehicle",int(rand(1,2))),
-    SpawnInfo("cyborgs_spawn_butcher_model.vehicle",int(rand(-4,1))),
+    SpawnInfo("cyborgs_spawn_berserker_model.vehicle",int(rand(2,3))),
+    SpawnInfo("cyborgs_spawn_butcher_model.vehicle",int(rand(2,2))),
     SpawnInfo("cyborgs_spawn_comrade_model.vehicle",0),
-    SpawnInfo("cyborgs_spawn_grotesque_model.vehicle",int(rand(3,5))),
+    SpawnInfo("cyborgs_spawn_grotesque_model.vehicle",int(rand(6,8))),
     SpawnInfo("cyborgs_spawn_hulk_model.vehicle",0),
-    SpawnInfo("cyborgs_spawn_immolator_model.vehicle",0),
-    SpawnInfo("cyborgs_spawn_initiate_model.vehicle",0),
-    SpawnInfo("cyborgs_spawn_warlord_model.vehicle",int(rand(-8,1))),
+    SpawnInfo("cyborgs_spawn_immolator_model.vehicle",2),
+    SpawnInfo("cyborgs_spawn_initiate_model.vehicle",2),
+    SpawnInfo("cyborgs_spawn_warlord_model.vehicle",int(rand(-4,1))),
 
     SpawnInfo("bugs_Impaler",int(rand(-4,1))),
     SpawnInfo("bugs_Tank",int(rand(-4,1))),
     SpawnInfo("bugs_Behemoth",int(rand(-8,1))),
     SpawnInfo("bugs_BroodCommander",int(rand(1,1))),
-    SpawnInfo("bugs_Elite",int(rand(1,4))),
+    SpawnInfo("bugs_Elite",int(rand(2,3))),
     SpawnInfo("bugs_Warrior",0),
-    SpawnInfo("bugs_Stalker",0),
+    SpawnInfo("bugs_Stalker",4),
     SpawnInfo("bugs_ZergBaneling",0),
     SpawnInfo("bugs_Baneling",int(rand(-2,1)))
 };
@@ -130,7 +130,7 @@ const array<SpawnInfo@> level_12 = {
     SpawnInfo("bugs_Tank",int(rand(-1,1))),
     SpawnInfo("bugs_Behemoth",int(rand(-2,1))),
     SpawnInfo("bugs_BroodCommander",int(rand(1,3))),
-    SpawnInfo("bugs_Elite",1),
+    SpawnInfo("bugs_Elite",3),
     SpawnInfo("bugs_Warrior",1),
     SpawnInfo("bugs_Stalker",1),
     SpawnInfo("bugs_ZergBaneling",int(rand(-1,1))),
@@ -140,7 +140,7 @@ const array<SpawnInfo@> level_15 = {
     SpawnInfo("cyborgs_spawn_berserker_model.vehicle",1),
     SpawnInfo("cyborgs_spawn_butcher_model.vehicle",1),
     SpawnInfo("cyborgs_spawn_comrade_model.vehicle",1),
-    SpawnInfo("cyborgs_spawn_grotesque_model.vehicle",int(rand(2,3))),
+    SpawnInfo("cyborgs_spawn_grotesque_model.vehicle",int(rand(4,5))),
     SpawnInfo("cyborgs_spawn_hulk_model.vehicle",int(rand(3,6))),
     SpawnInfo("cyborgs_spawn_immolator_model.vehicle",1),
     SpawnInfo("cyborgs_spawn_initiate_model.vehicle",1),
@@ -150,9 +150,9 @@ const array<SpawnInfo@> level_15 = {
     SpawnInfo("bugs_Tank",int(rand(0,1))),
     SpawnInfo("bugs_Behemoth",int(rand(2,3))),
     SpawnInfo("bugs_BroodCommander",int(rand(2,5))),
-    SpawnInfo("bugs_Elite",1),
-    SpawnInfo("bugs_Warrior",1),
-    SpawnInfo("bugs_Stalker",1),
+    SpawnInfo("bugs_Elite",4),
+    SpawnInfo("bugs_Warrior",2),
+    SpawnInfo("bugs_Stalker",2),
     SpawnInfo("bugs_ZergBaneling",int(rand(0,1))),
     SpawnInfo("bugs_Baneling",int(rand(0,1)))
 };

@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <carry_items> 
 	<carry_item file="god_vest.carry_item" />
+	<!-- 生化人 -->
+	<carry_item file="vest_cyborgs_tesla.carry_item" /><!--磁暴步兵-->
+
+	<!-- 虫族 -->
+	<carry_item file="vest_bugs_zerg_baneling.carry_item" /><!--虫族 电浆虫护甲-->
+
 	<!-- 超级地球 -->
 		<!-- 护甲 -->
 	<carry_item file="helldivers_vest.carry_item" />
@@ -37,8 +43,6 @@
 	<carry_item file="stun_vest.carry_item" /><!--眩晕甲 无抵抗100层-->
 	<carry_item file="anti_all_blast_vest.carry_item" /><!--抗爆甲 300层-->
 
-	<!-- 制定护甲 -->
-	<carry_item file="vest_bugs_zerg_baneling.carry_item" /><!--虫族 电浆虫护甲-->
 
 	<!-- 战利品-收藏-MC -->
 	<carry_item file="collect_mc.carry_item" />

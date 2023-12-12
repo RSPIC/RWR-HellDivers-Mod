@@ -20,9 +20,9 @@ dictionary canStoreItem = {
     {"collect_doll_ba_peroro.carry_item","[佩洛洛]"},
 
     {"samples_acg.carry_item","[研究点]"},
-    {"samples_bugs.carry_item","[虫族样本]"},
-    {"samples_cyborgs.carry_item","[生化人样本]"},
-    {"samples_illuminate.carry_item","[光能样本]"},
+    {"samples_bugs_ex.carry_item","[虫族样本]"},
+    {"samples_cyborgs_ex.carry_item","[生化人样本]"},
+    {"samples_illuminate_ex.carry_item","[光能样本]"},
 
     // {"hd_bonusfactor_al_10","[全局加成卡 10%]"},
     // {"hd_bonusfactor_al_20","[全局加成卡 20%]"},
@@ -148,6 +148,7 @@ dictionary canStoreItem = {
     {"token_starwars_shipgirls.projectile","[星舰少女 [信物]]"},
     {"token_asagi_mutsuki.projectile","[浅黄睦月 [信物]]"},
     {"token_rikuhachima_aru.projectile","[陆八魔 阿露 [信物]]"},
+    {"token_lilies.projectile","[Lilies [信物]]"},
 
     {"wiesel_tow_call.projectile","[鼬鼠 [陶氏]]"},
     {"lav6_call.projectile","[LAV-6]"},
@@ -192,72 +193,76 @@ class stashExchangeList{
         @m_deleteObjects = @deleteObjects;
         @m_getObjects = @getObjects;
     }
-    void handleExchange(playerStashInfoBuck@ m_playerStashInfoBuck,string sid){
+    bool handleExchange(playerStashInfoBuck@ m_playerStashInfoBuck,string sid){
         if(!m_playerStashInfoBuck.isOpen(sid)){
             m_playerStashInfoBuck.openStash(sid);
         }
-        m_playerStashInfoBuck.exchangeItems(sid,m_deleteObjects,m_getObjects);
+        if(m_playerStashInfoBuck.exchangeItems(sid,m_deleteObjects,m_getObjects)){
+            m_playerStashInfoBuck.openStash(sid);
+            return true;
+        }
         m_playerStashInfoBuck.openStash(sid);
+        return false;
     }
 }
 ;
 
 array<stashExchangeList@> ExchangeLists ={
-        //0 灵梦Fumo[1] 换 彩票[200]
+        //0 灵梦Fumo[1] 换 RP[300w]
         stashExchangeList(
             array<XmlElement@>= {
                 getStashXmlElement("collect_fumo_reimu.carry_item","carry_item",1)
             }, 
             array<XmlElement@>= {
-                getStashXmlElement("lottery_x100.carry_item","carry_item",2)
+                getStashXmlElement("hd_money_10w","carry_item",30)
             }
         ),
-        //1 琪露诺Fumo[3] 换 MK5箱子[1]
+        //1 琪露诺Fumo[1] 换 MK5箱子[1]
         stashExchangeList(
             array<XmlElement@>= {
-                getStashXmlElement("collect_fumo_cirno.carry_item","carry_item",3)
+                getStashXmlElement("collect_fumo_cirno.carry_item","carry_item",1)
             }, 
             array<XmlElement@>= {
                 getStashXmlElement("reward_box_weapon_v.carry_item","carry_item",1)
             }
         ),
-        //2 芙兰朵露Fumo[1] 换 MK4箱子[1]
+        //2 芙兰朵露Fumo[1] 换 MK4箱子[3]
         stashExchangeList(
             array<XmlElement@>= {
                 getStashXmlElement("collect_fumo_flandre_scarlet.carry_item","carry_item",1)
             }, 
             array<XmlElement@>= {
-                getStashXmlElement("reward_box_weapon_delta.carry_item","carry_item",1)
+                getStashXmlElement("reward_box_weapon_delta.carry_item","carry_item",3)
             }
         ),
-        //3 红美铃Fumo[1] 换 MK3箱子[3]
+        //3 红美铃Fumo[1] 换 MK3箱子[12]
         stashExchangeList(
             array<XmlElement@>= {
                 getStashXmlElement("collect_fumo_hong_meiling.carry_item","carry_item",1)
             }, 
             array<XmlElement@>= {
-                getStashXmlElement("reward_box_weapon_lamda.carry_item","carry_item",3)
+                getStashXmlElement("reward_box_weapon_lamda.carry_item","carry_item",12)
             }
         ),
-        //4 十六夜 咲夜Fumo[1] 换 125%全局加成卡[4]
+        //4 十六夜 咲夜Fumo[1] 换 MK5箱子[1]
         stashExchangeList(
             array<XmlElement@>= {
                 getStashXmlElement("collect_fumo_inu_sakuya.carry_item","carry_item",1)
             }, 
             array<XmlElement@>= {
-                getStashXmlElement("hd_bonusfactor_al_125","carry_item",4)
+                getStashXmlElement("reward_box_weapon_v.carry_item","carry_item",1)
             }
         ),
-        //5 纯狐Fumo[1] 换 音乐盒[10]
+        //5 纯狐Fumo[1] 换 [MK4箱子]x3
         stashExchangeList(
             array<XmlElement@>= {
                 getStashXmlElement("collect_fumo_junko.carry_item","carry_item",1)
             }, 
             array<XmlElement@>= {
-                getStashXmlElement("reward_box_music.carry_item","carry_item",10)
+                getStashXmlElement("reward_box_weapon_delta.carry_item","carry_item",3)
             }
         ),
-        //6 古明地恋Fumo[1] 换 脚本仓库容量[10]
+        //6 古明地恋Fumo[1] 换 脚本仓库容量[100]
         stashExchangeList(
             array<XmlElement@>= {
                 getStashXmlElement("collect_fumo_koishi_komeiji.carry_item","carry_item",1)
@@ -266,94 +271,95 @@ array<stashExchangeList@> ExchangeLists ={
                 getStashXmlElement("","",0)
             }
         ),
-        //7 豪德寺三毛Fumo[1] 换 载具箱[30]
+        //7 豪德寺三毛Fumo[1] 换 [MK3箱子]x15
         stashExchangeList(
             array<XmlElement@>= {
                 getStashXmlElement("collect_fumo_mike_goutokuji.carry_item","carry_item",1)
             }, 
             array<XmlElement@>= {
-                getStashXmlElement("reward_box_vehicle.carry_item","carry_item",30)
+                getStashXmlElement("reward_box_weapon_lamda.carry_item","carry_item",15)
             }
         ),
-        //8 藤原妹红Fumo[1] 换 HK416星之茧[5]
+        //8 藤原妹红Fumo[1] 换 HK416星之茧[20]
         stashExchangeList(
             array<XmlElement@>= {
                 getStashXmlElement("collect_fumo_mokou_fujiwara.carry_item","carry_item",1)
             }, 
             array<XmlElement@>= {
-                getStashXmlElement("acg_hk416_starry_cocoon.weapon","weapon",5)
+                getStashXmlElement("acg_hk416_starry_cocoon.weapon","weapon",20)
             }
         ),
-        //9 河城荷取Fumo[1] 换 75%全局加成卡[7]
+        //9 河城荷取Fumo[1] 换 [陆八魔阿露 MK4]x4
         stashExchangeList(
             array<XmlElement@>= {
                 getStashXmlElement("collect_fumo_nitori_kawashiro.carry_item","carry_item",1)
             }, 
             array<XmlElement@>= {
-                getStashXmlElement("hd_bonusfactor_al_75","carry_item",7)
+                getStashXmlElement("acg_rikuhachima_aru.weapon","weapon",4)
             }
         ),
-        //10 露米娅Fumo[1] 换 45%全局加成卡[10]
+        //10 露米娅Fumo[1] 换 [浅黄睦月 MK4]x4
         stashExchangeList(
             array<XmlElement@>= {
                 getStashXmlElement("collect_fumo_rumia.carry_item","carry_item",1)
             }, 
             array<XmlElement@>= {
-                getStashXmlElement("hd_bonusfactor_al_45","carry_item",10)
+                getStashXmlElement("acg_asagi_mutsuki.weapon","weapon",4)
             }
         ),
-        //11 东风谷早苗Fumo[1] 换 240%全局加成卡[3]
+        //11 东风谷早苗Fumo[1] 换 240%全局加成卡[36]
         stashExchangeList(
             array<XmlElement@>= {
                 getStashXmlElement("collect_fumo_sanae_kochiya.carry_item","carry_item",1)
             }, 
             array<XmlElement@>= {
-                getStashXmlElement("hd_bonusfactor_al_240","carry_item",3)
+                getStashXmlElement("hd_bonusfactor_al_240","carry_item",36)
             }
         ),
-        //12 依神紫苑Fumo[1] 换 研究点[10]
+        //12 依神紫苑Fumo[1] 换 研究点[50]
         stashExchangeList(
             array<XmlElement@>= {
                 getStashXmlElement("collect_fumo_shion_yorigami.carry_item","carry_item",1)
             }, 
             array<XmlElement@>= {
-                getStashXmlElement("samples_acg.carry_item","carry_item",10)
+                getStashXmlElement("samples_acg.carry_item","carry_item",50)
             }
         ),
-        //13 依神紫苑Fumo[1] 换 RP[50w]
+        //13 泄矢诹访子Fumo[3] 换 RP[1000w]
         stashExchangeList(
             array<XmlElement@>= {
-                getStashXmlElement("collect_fumo_suwako_moriya.carry_item","carry_item",1)
+                getStashXmlElement("collect_fumo_suwako_moriya.carry_item","carry_item",3)
             }, 
             array<XmlElement@>= {
-                getStashXmlElement("hd_money_10w","carry_item",5)
+                getStashXmlElement("hd_money_10w","carry_item",100)
             }
         ),
-        //14 魂魄妖梦Fumo[1] 换 伊芙利特[1]
+        //14 魂魄妖梦Fumo[1] 换 伊芙利特[10]
         stashExchangeList(
             array<XmlElement@>= {
                 getStashXmlElement("collect_fumo_youmu_konpaku.carry_item","carry_item",1)
             }, 
             array<XmlElement@>= {
-                getStashXmlElement("acg_arknight_ifrit.weapon","weapon",1)
+                getStashXmlElement("acg_arknight_ifrit.weapon","weapon",10)
             }
         ),
-        //15 西行寺幽幽子Fumo[3] 换 慧慧[1]
+        //15 西行寺幽幽子Fumo[1] 换 慧慧[5]
         stashExchangeList(
             array<XmlElement@>= {
-                getStashXmlElement("collect_fumo_yuyuko.carry_item","carry_item",3)
+                getStashXmlElement("collect_fumo_yuyuko.carry_item","carry_item",1)
             }, 
             array<XmlElement@>= {
-                getStashXmlElement("acg_megumin_wand_float.weapon","weapon",1)
+                getStashXmlElement("acg_megumin_wand_float.weapon","weapon",5)
             }
         ),
-        //16 佩洛洛Doll[1] 换 碧蓝档案箱子[1] 未实装
+        //16 佩洛洛Doll[1] 换 [陆八魔阿露+浅黄睦月 MK4]x3
         stashExchangeList(
             array<XmlElement@>= {
-                getStashXmlElement("collect_doll_ba_peroro.carry_item","carry_item",3)
+                getStashXmlElement("collect_doll_ba_peroro.carry_item","carry_item",1)
             }, 
             array<XmlElement@>= {
-                getStashXmlElement("","",0)
+                getStashXmlElement("acg_rikuhachima_aru.weapon","weapon",3),
+                getStashXmlElement("acg_asagi_mutsuki.weapon","weapon",3)
             }
         ),
         //17 [1] 换 Alpha箱子[1] 未实装
@@ -536,22 +542,22 @@ array<stashExchangeList@> ExchangeLists ={
                 getStashXmlElement("deploy_ex_edf_mortar.weapon","weapon",1)
             }
         ),
-        //37 民主选票[3] 换 自爆兔[10]
+        //37 民主选票[3] 换 自爆兔[30]
         stashExchangeList(
             array<XmlElement@>= {
                 getStashXmlElement("hd_vote_ticket","carry_item",1)
             }, 
             array<XmlElement@>= {
-                getStashXmlElement("hd_explosive_bunny_spawn.projectile","projectile",10)
+                getStashXmlElement("hd_explosive_bunny_spawn.projectile","projectile",30)
             }
         ),
-        //38 民主选票[1] 换 自爆卡车[2]
+        //38 民主选票[1] 换 自爆卡车[8]
         stashExchangeList(
             array<XmlElement@>= {
                 getStashXmlElement("hd_vote_ticket","carry_item",1)
             }, 
             array<XmlElement@>= {
-                getStashXmlElement("deploy_hd_demolition_truck.weapon","weapon",2)
+                getStashXmlElement("deploy_hd_demolition_truck.weapon","weapon",8)
             }
         ),
         //39 16套Fumo各一个[1] 换 MK6-飞鸟马时[2]
@@ -621,7 +627,7 @@ array<stashExchangeList@> ExchangeLists ={
                 getStashXmlElement("lottery_superearth.carry_item","carry_item",3)
             }
         ),
-        //43 民主选票[10] 换 民本彩票[11]
+        //43 民主选票[10] 换 民本彩票[12]
         stashExchangeList(
             array<XmlElement@>= {
                 getStashXmlElement("hd_vote_ticket","carry_item",10)
@@ -633,7 +639,7 @@ array<stashExchangeList@> ExchangeLists ={
         //44 光能者样本[10] 换 研究点[1]
         stashExchangeList(
             array<XmlElement@>= {
-                getStashXmlElement("samples_illuminate.carry_item","carry_item",10)
+                getStashXmlElement("samples_illuminate_ex.carry_item","carry_item",10)
             }, 
             array<XmlElement@>= {
                 getStashXmlElement("samples_acg.carry_item","carry_item",1)
@@ -642,7 +648,7 @@ array<stashExchangeList@> ExchangeLists ={
         //45 生化人样本[10] 换 研究点[1]
         stashExchangeList(
             array<XmlElement@>= {
-                getStashXmlElement("samples_cyborgs.carry_item","carry_item",10)
+                getStashXmlElement("samples_cyborgs_ex.carry_item","carry_item",10)
             }, 
             array<XmlElement@>= {
                 getStashXmlElement("samples_acg.carry_item","carry_item",1)
@@ -651,7 +657,7 @@ array<stashExchangeList@> ExchangeLists ={
         //46 虫族样本[10] 换 研究点[1]
         stashExchangeList(
             array<XmlElement@>= {
-                getStashXmlElement("samples_bugs.carry_item","carry_item",10)
+                getStashXmlElement("samples_bugs_ex.carry_item","carry_item",10)
             }, 
             array<XmlElement@>= {
                 getStashXmlElement("samples_acg.carry_item","carry_item",1)
@@ -789,34 +795,43 @@ array<stashExchangeList@> ExchangeLists ={
                 getStashXmlElement("hd_vote_ticket","carry_item",7)
             }, 
             array<XmlElement@>= {
-                getStashXmlElement("63type_107mm_rocket_launcher_resource_ex.weapon","weapon",1)
+                getStashXmlElement("deploy_hd_ra2_ifv.weapon","weapon",1)
             }
         ),
-        //62 民主选票[5] 换 超级地球-导弹发射器MK1[1]
+        //62 民主选票[2] 换 超级地球-导弹发射器MK1[1]
         stashExchangeList(
             array<XmlElement@>= {
-                getStashXmlElement("hd_vote_ticket","carry_item",5)
+                getStashXmlElement("hd_vote_ticket","carry_item",2)
             }, 
             array<XmlElement@>= {
                 getStashXmlElement("deploy_hd_missile_launcher_mk1.weapon","weapon",1)
             }
         ),
-        //63 民主选票[5] 换 超级地球-导弹发射器MK2[1]
+        //63 民主选票[2] 换 超级地球-导弹发射器MK2[1]
         stashExchangeList(
             array<XmlElement@>= {
-                getStashXmlElement("hd_vote_ticket","carry_item",5)
+                getStashXmlElement("hd_vote_ticket","carry_item",2)
             }, 
             array<XmlElement@>= {
                 getStashXmlElement("deploy_hd_missile_launcher_mk2.weapon","weapon",1)
             }
         ),
-        //64 民主选票[5] 换 超级地球-导弹发射器MK3[1]
+        //64 民主选票[2] 换 超级地球-导弹发射器MK3[1]
         stashExchangeList(
             array<XmlElement@>= {
-                getStashXmlElement("hd_vote_ticket","carry_item",5)
+                getStashXmlElement("hd_vote_ticket","carry_item",2)
             }, 
             array<XmlElement@>= {
                 getStashXmlElement("deploy_hd_missile_launcher_mk3.weapon","weapon",1)
+            }
+        ),
+        //65 民主选票[7] 换 门弗雷双联机炮[1]
+        stashExchangeList(
+            array<XmlElement@>= {
+                getStashXmlElement("hd_vote_ticket","carry_item",7)
+            }, 
+            array<XmlElement@>= {
+                getStashXmlElement("deploy_edf_turrent_minigun.weapon","weapon",1)
             }
         )
 };
@@ -889,6 +904,7 @@ const dictionary stashExchangeDict = {
     {"hd_missile_launcher_mk1_exchange",@ExchangeLists[62]},
     {"hd_missile_launcher_mk2_exchange",@ExchangeLists[63]},
     {"hd_missile_launcher_mk3_exchange",@ExchangeLists[64]},
+    {"hud_edf_turrent_minigun_exchange",@ExchangeLists[65]},
 
     {"",""}
 };

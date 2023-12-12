@@ -33,7 +33,6 @@ dictionary callLaunchIndex = {
 
 class call_event : Tracker {
 	protected Metagame@ m_metagame;
-    protected int m_DummyCallID=0;
 
 	call_event(Metagame@ metagame) {
 		@m_metagame = @metagame;

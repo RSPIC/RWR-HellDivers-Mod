@@ -218,7 +218,7 @@ class sound_track : Task {
     }
 
     bool hasEnded() const{
-		return false;
+		return m_ended;
     }
 
 	void start(){

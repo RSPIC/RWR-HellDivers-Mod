@@ -282,7 +282,7 @@ particle_system texas_tilt_dropping_sword_guiding
 		duration 0.1
 		name tag1
 	}
-		affector Rotator
+	affector Rotator
 	{
 		rotation_speed_range_start	0
 		rotation_speed_range_end	0

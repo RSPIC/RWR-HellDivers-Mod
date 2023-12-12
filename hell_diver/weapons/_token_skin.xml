@@ -499,6 +499,26 @@
         <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
         <capacity value="12" source="rank" source_value="0" />
     </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Lilies [Skin]" key="token_lilies.projectile" >
+        <hud_icon filename="token_lilies.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="ZERO401 [Casual Wear][Skin]" key="token_zero401_casual_wear.projectile" >
+        <hud_icon filename="token_zero401_casual_wear.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Maria Schariac[Skin]" key="token_maria_schariac.projectile" >
+        <hud_icon filename="token_maria_schariac.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Shinano[Skin]" key="token_shinano.projectile" >
+        <hud_icon filename="token_shinano.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
 
 
     <!-- 其他 -->

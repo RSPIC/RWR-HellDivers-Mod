@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<models>
+	<!-- <model filename="hdivers_ceremonial.xml" /> -->
+	
+	<model filename="illum_observer.xml">
+		<requirement class="weapon" slot="0" key="illum_observer_main.weapon"/>
+	</model>
+	<model filename="illum_watcher.xml">
+		<requirement class="weapon" slot="0" key="illum_watcher_main.weapon"/>
+	</model>
+
+</models>

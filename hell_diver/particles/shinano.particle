@@ -1,0 +1,371 @@
+//author: RST
+//2023.12.8
+//未经授权不可复用、修改使用
+//信浓武器特效
+
+particle_system shinano_activated_anim_butterfly     //动态蝴蝶
+{
+	quota 500
+	material butterfly_shinano_colored_01
+	particle_width 0.8
+	particle_height 0.8
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_origin center
+	billboard_type oriented_self
+    common_direction -1 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	emitter Point
+	{
+		angle 90
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity_min 2
+		velocity_max 1
+		time_to_live_min 0.4
+		time_to_live_min 0.6
+		duration 0
+		name tag1
+	}
+	affector Scaler
+	{
+		rate -0.05
+	}
+}
+particle_system shinano_activated_anim_butterfly2 : shinano_activated_anim_butterfly
+{
+	material butterfly_shinano_colored_02
+}
+particle_system shinano_activated_anim_butterfly3 : shinano_activated_anim_butterfly
+{
+	material butterfly_shinano_colored_03
+}
+particle_system shinano_activated_anim_butterfly4 : shinano_activated_anim_butterfly
+{
+	material butterfly_shinano_colored_04
+}
+
+particle_system shinano_result_ijn_icon 
+{
+	quota 500
+	material ijn_icon_bw_anim
+	particle_width 3
+	particle_height 3
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_origin center
+	billboard_type point
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 1.7
+		duration 0.01
+	}
+	affector Scaler
+	{
+		rate 0.05
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	155
+		rotation_speed_range_end	155
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.95
+		colour1 1 1 1 1 
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+
+particle_system shinano_result_ijn_icon_blast
+{
+	quota 500
+	material ijn_icon_bw_anim
+	particle_width 3
+	particle_height 3
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_origin center
+	billboard_type point
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 100
+		position 0 1 0
+		velocity 0.0001
+		time_to_live 0.3
+		duration 0.01
+	}
+	affector Scaler
+	{
+		rate 30
+	}
+			affector Rotator
+	{
+		rotation_speed_range_start	155
+		rotation_speed_range_end	155
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.7
+		colour1 0 0.3 1 0.3
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+
+particle_system shinano_result_anim_butterfly     //动态蝴蝶
+{
+	quota 50
+	material butterfly_shinano_colored_01
+	particle_width 0.8
+	particle_height 0.8
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_origin center
+	billboard_type oriented_self
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+
+    emitter Ring
+    {
+        angle 90
+        colour 1 1 1222 1
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity_min 8
+        velocity_max 12
+		time_to_live_min 2
+		time_to_live_max 3
+		duration 0.1
+		depth 1
+		width 5
+		height 5
+		inner_width 0.5
+		inner_height 0.5
+    }
+    affector DirectionRandomiser
+	{
+		randomness 40
+		scope 100
+		keep_velocity false
+	}
+    affector LinearForce{
+		force_vector 0 10 0
+		force_application add
+	}
+}
+
+particle_system shinano_result_anim_butterfly_02  :  shinano_result_anim_butterfly
+{
+	quota 50
+	particle_width 0.7
+	particle_height 0.7
+	material butterfly_shinano_colored_02
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_origin center
+	billboard_type oriented_self
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+
+	emitter Ring{
+		velocity_min 2
+        velocity_max 4
+		time_to_live_min 2.5
+		time_to_live_max 3.5
+		duration 0.1
+	}
+	affector DirectionRandomiser
+	{
+		randomness 40
+		scope 100
+		keep_velocity true
+	}
+}
+
+particle_system shinano_result_anim_butterfly_03 : shinano_result_anim_butterfly_02 
+{
+	material butterfly_shinano_colored_03
+}
+
+particle_system shinano_result_anim_butterfly_04 : shinano_result_anim_butterfly_02 
+{
+	material butterfly_shinano_colored_04
+}
+
+particle_system shinano_cyclone_01  
+{
+	quota 50
+	material ring_cyclone_hollow_01
+	particle_width 8
+	particle_height 8
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_origin center
+	billboard_type perpendicular_common
+    common_up_vector 0 0 1
+	common_direction 0 1 0
+
+    emitter Point
+    {
+        angle 0
+        colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity_min 4
+        velocity_max 6
+		time_to_live 0.5
+		duration 0.1
+    }
+    affector Scaler
+	{
+		rate 5
+	}
+    affector LinearForce{
+		force_vector 0 10 0
+		force_application add
+	}
+    affector Rotator{
+		rotation_speed_range_start	180
+		rotation_speed_range_end	180
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 1 1
+		time1 0.7
+		colour1 0 0.3 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+
+
+
+
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+material butterfly_shinano_colored_01 : add_base
+{   
+    technique{
+    pass{
+		lighting on
+		emissive 0 0.1 1 1
+		ambient 0.1 0.1 0.1 1
+        texture_unit{
+            texture butterfly_01.png 	
+            wave_xform scale_x sine 0.2 4 0 0.3
+            tex_address_mode border
+            tex_border_colour 0 0 0 0
+}}}}
+material butterfly_shinano_colored_02 : add_base
+{   
+    technique{
+    pass{
+		lighting on
+		emissive 0 0.1 1 1
+		ambient 0.1 0.1 0.1 1
+        texture_unit{
+            texture butterfly_01.png 	
+            wave_xform scale_x sine 0.3 3.5 0 0.3
+            tex_address_mode border
+            tex_border_colour 0 0 0 0
+}}}}
+material butterfly_shinano_colored_03 : add_base
+{   
+    technique{
+    pass{
+		lighting on
+		emissive 0 0.1 1 1
+		ambient 0.1 0.1 0.1 1
+        texture_unit{
+            texture butterfly_01.png 	
+            wave_xform scale_x sine 0.22 3 0 0.3
+            tex_address_mode border
+            tex_border_colour 0 0 0 0
+}}}}
+material butterfly_shinano_colored_04 : add_base
+{   
+    technique{
+    pass{
+		lighting on
+		emissive 0 0.1 1 1
+		ambient 0.1 0.1 0.1 1
+        texture_unit{
+            texture butterfly_01.png 	
+            wave_xform scale_x sine 0.5 5 0 0.3
+            tex_address_mode border
+            tex_border_colour 0 0 0 0
+}}}}
+material ijn_icon_bw_anim : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture ijn_icon_bw.png 	
+            wave_xform rotate sine 0 0.5 0 0.25 
+            tex_address_mode border
+            tex_border_colour 0 0 0 0
+}}}}
+material ijn_icon_bw : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture ijn_icon_bw.png 	
+}}}}

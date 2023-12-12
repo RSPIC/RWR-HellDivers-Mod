@@ -1,0 +1,227 @@
+author: RST
+2023.12.7
+未经授权不可复用、修改使用、仅用于helldiver mod
+
+
+particle_system maria_chariac_muzzle_knife_light_01
+{
+	quota 150
+	material Particle_Slash_02_bw
+	particle_width 6.6
+	particle_height 6.6
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 1 1 0
+	common_up_vector 1 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.1
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 15
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	-2000
+		rotation_speed_range_end	-2000
+		rotation_range_start	180
+		rotation_range_end	180
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.7
+		colour1 1 0 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system maria_chariac_muzzle_knife_light_02 : maria_chariac_muzzle_knife_light_01
+{
+    material Particle_Slash_09
+}
+particle_system maria_chariac_muzzle_knife_light_03 : maria_chariac_muzzle_knife_light_01
+{
+    particle_width 7
+	particle_height 7
+    material Particle_ShockwaveSlow_alpha
+    emitter Point
+	{}
+	affector Scaler
+	{}
+	affector Rotator
+	{}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 1
+		time1 0.7
+		colour1 0 0 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system maria_chariac_muzzle_knife_light_04 : maria_chariac_muzzle_knife_light_03
+{
+    material Particle_Slash_11
+}
+
+particle_system maria_chariac_muzzle_laser
+{
+	quota 600
+	material laser_beam
+	particle_width 2
+	particle_height 100
+	renderer billboard
+	billboard_type oriented_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.3
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate -5
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 0.8 1
+		time1 0.8
+		colour1 1 0.5 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system maria_chariac_muzzle_flower
+{
+	quota 50
+	material maria_flower
+	particle_width 4
+	particle_height 4
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.8
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 10
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.6
+		colour1 1 1 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system maria_chariac_cyclone_01     //动态
+{
+	quota 50
+	material ring_cyclone_hollow_01
+	particle_width 2
+	particle_height 2
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_origin center
+	billboard_type perpendicular_common
+    common_up_vector 0 0 1
+	common_direction 0 1 0
+
+    emitter Point
+    {
+        angle 0
+        colour 1 0.3 0 1
+		direction 0 1 0
+		emission_rate 40
+		position 0 1 0
+		velocity_min 4
+        velocity_max 6
+		time_to_live 0.5
+		duration 0.2
+    }
+    affector Scaler
+	{
+		rate 3
+	}
+    affector LinearForce{
+		force_vector 0 10 0
+		force_application add
+	}
+    affector Rotator{
+		rotation_speed_range_start	180
+		rotation_speed_range_end	180
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 0 1
+		time1 0.8
+		colour1 1 0.3 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+
+------------------material------------------------
+
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+material maria_flower : alpha_blend_base
+{   technique{pass{
+	texture_unit{
+				texture maria_flower.png 	
+}}}}

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectiles>
+<projectile 
+class="grenade" 
+key="acg_shinano_spawn.projectile" 
+slot="0"
+pulldown_in_air="10"
+on_ground_up="0 1 0"
+use_time_to_live="1"
+time_to_live="60"
+can_be_disarmed="0"
+can_be_detected_by_footmen="1"
+can_be_detected_by_driver="1"
+radius="0.3"
+time_to_live_out_in_the_open="0"
+player_death_drop_owner_lock_time="0"
+>
+    <collision class="sticky" />
+	<trigger class="time" time_to_live="1.8" />	
+    <result class="spawn" instance_class="projectile" instance_key="acg_shinano_skill_damage.projectile" 
+    min_amount="20" max_amount="20" offset="0 0 0" position_spread="1 1" direction_spread="0 0" />	
+
+    <model mesh_filename="" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	
+    <inventory encumbrance="0.5" price="0.0" />
+
+	<sound class="result" key="other" fileref="" pitch_variety="0" volume="0" />
+
+    <effect class="result" key="terrain" ref="shinano_cyclone_01"/>
+    <effect class="result" key="terrain" ref="shinano_result_ijn_icon_blast"/>
+    <effect class="result" key="terrain" ref="shinano_result_anim_butterfly"/>
+    <effect class="result" key="terrain" ref="shinano_result_anim_butterfly_02"/>
+    <effect class="result" key="terrain" ref="shinano_result_anim_butterfly_03"/>
+    <effect class="result" key="terrain" ref="shinano_result_anim_butterfly_04"/>
+
+
+    <effect class="result" key="other" copy="terrain"/>
+    <effect class="result" key="static_object" copy="terrain" />
+    <effect class="result" key="character" copy="terrain" />
+    <effect class="result" key="shield" copy="terrain" />			
+    <effect class="result" key="vehicle" copy="terrain" />			
+    <effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+    <effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+    <effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+    <effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+    <effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+
+</projectile>
+<projectile 
+class="grenade" 
+key="acg_shinano_skill_damage.projectile" 
+slot="0"
+pulldown_in_air="10"
+on_ground_up="0 1 0"
+use_time_to_live="0"
+time_to_live="60"
+can_be_disarmed="0"
+can_be_detected_by_footmen="1"
+can_be_detected_by_driver="1"
+radius="0.3"
+time_to_live_out_in_the_open="0"
+player_death_drop_owner_lock_time="0"
+>
+    <collision class="sticky" />
+	<trigger class="time" time_to_live="0.0" />	
+	<result class="blast" radius="8" damage="15" push="0.2" decal="0" character_state="death" faction_compare="not_equal" damage_origin_vehicle="0" />
+
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	
+    <inventory encumbrance="0.5" price="0.0" />
+</projectile>
+<projectile  
+class="grenade" 
+key="acg_shinano_damage.projectile" 
+slot="0"
+pulldown_in_air="15.0"
+on_ground_up="0 1 0"
+use_time_to_live="1"
+time_to_live="60"
+can_be_disarmed="0"
+can_be_detected_by_footmen="1"
+can_be_detected_by_driver="1"
+radius="0.3"
+time_to_live_out_in_the_open="0"
+player_death_drop_owner_lock_time="0"
+>
+	<result class="blast" radius="4.5" damage="12" push="0.2" decal="0" 
+    damage_origin_vehicle="0" character_state="wound" faction_compare="not_equal"/>
+	<trigger class="time" time_to_live="0" />	
+    <rotation class="random" />
+	<model mesh_filename="" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+</projectile>
+</projectiles>

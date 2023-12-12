@@ -34,8 +34,13 @@ class repair_tools : Tracker {
 		float rate;
         if (repairtool_key.get(EventKeyGet,rate)){
 			int cid = event.getIntAttribute("character_id");
-			if (g_playerInfoBuck is null) {return;}
-			int fid = g_playerInfoBuck.getFidByCid(cid);
+			int fid = 0;
+			if (g_playerInfoBuck !is null) {
+				fid = g_playerInfoBuck.getFidByCid(cid);
+			}
+			if(fid == -1){
+				fid = 0;
+			}
 			Vector3 t_pos = stringToVector3(event.getStringAttribute("position"));
 			//生成医疗弹头
 			spawnStaticProjectile(m_metagame,"hd_md99_autoinjector.projectile",t_pos,cid,fid);
@@ -43,7 +48,7 @@ class repair_tools : Tracker {
 			array<const XmlElement@>@ vehicles = getAllVehicles(m_metagame, fid);
 			int count_repair_time = 0; //计算成功维修次数
 			int count_repair_failed_time = 0; //计算失败维修次数
-			for (uint i = 0; i < vehicles.length(); ++i) {
+			for (uint i = 0; i < vehicles.size(); ++i) {
 				//获取载具位置并计算与落点的相对距离
 				Vector3 vehiclePos = stringToVector3(vehicles[i].getStringAttribute("position"));
 				float distance = get2DMAxAxisDistance(1,vehiclePos,t_pos);

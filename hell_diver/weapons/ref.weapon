@@ -11,7 +11,7 @@ radius="1"
 <!-- 参考词条更多 -->
     <specification 	
     slot="0" 	
-    retrigger_time="0.15" 
+    retrigger_time="0.5" 
 	last_burst_retrigger_time="1"
     accuracy_factor="1.0" 
 	spread_range="0"
@@ -70,8 +70,11 @@ radius="1"
     <animation state_key="hold" animation_key="" /><!--站姿静止动作，全身动作-->
 	<animation state_key="hold_on_wall"  animation_key="" /><!--架枪动作，全身动作-->
     <animation state_key="still_against_wall" animation_key="hold, pistol" /><!--靠墙动作，全身动作-->
-    <animation state_key="hold_casual" animation_key="hold_casual, pistol" /><!--闲置动作，全身动作-->
-	<animation state_key="running" animation_key="running, pistol" /><!--全身动作-->
+    <animation state_key="hold_casual" animation_key="acg_infinite_rotation_toTheSky" /><!--闲置动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="acg_infinite_rotation" /><!--闲置动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="acg_lay_cross_legged" /><!--闲置动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="acg_lay_shake_da" /><!--闲置动作，全身动作-->
+	<animation state_key="running" animation_key="" /><!--全身动作-->
 	<animation state_key="walking" animation_key="" /><!--按shift时候的静步前进动作，全身动作-->
     <animation state_key="walking_backwards" animation_key="walking backwards, pistol" /><!--全身动作-->
     <animation state_key="crouching" animation_key="crouch, pistol" /><!--蹲姿静止动作，全身动作-->
@@ -124,9 +127,7 @@ radius="1"
 			position_spread="水平面随机生成位置 竖直面随机生成位置" 
 			direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
 		-->
-		<result class="hit" kill_probability="0.88" 
-		kill_probability_offset_on_successful_hit="0"
-		kill_decay_start_time="0.48" kill_decay_end_time="0.70" />
+		<result class="blast" radius="3" damage="20" push="0" decal="0" />
 		<trigger class="impact" time_to_live="15"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
@@ -139,9 +140,15 @@ radius="1"
 		<effect class="result" key="terrain" ref="" lighting="0"/>
 		<effect class="activated" ref="" />
 		-->
-		<effect class="result" key="terrain" ref="ba_alice_result_light" lighting="0" post_processing="1"/>
-		<effect class="result" key="terrain" ref="ba_alice_result_impact" lighting="0" post_processing="1"/>
-		<effect class="result" key="terrain" ref="ba_alice_result_smoke" lighting="0" post_processing="0"/>
+		<effect class="result" key="terrain" ref="ba_mutsuki_impact_circle" lighting="1"/>
+		<effect class="result" key="terrain" ref="ba_mutsuki_result_impact_flame_1" lighting="1"/>
+		<effect class="result" key="terrain" ref="ba_mutsuki_smoke_1" lighting="1" post_processing="1"/>
+		<effect class="result" key="terrain" ref="ba_mutsuki_smoke_2" lighting="1" post_processing="1"/>
+		<effect class="result" key="terrain" ref="ba_mutsuki_firesmoke_1" lighting="0" post_processing="0"/>
+		<effect class="result" key="terrain" ref="ba_mutsuki_firesmoke_2" lighting="0" post_processing="0"/>
+		<effect class="result" key="terrain" ref="ba_mutsuki_ground_crater" lighting="1" post_processing="1"/>
+		<effect class="result" key="terrain" ref="real_center_ambient_light" lighting="0" post_processing="0"/>
+		<effect class="result" key="terrain" ref="real_center_short_light" lighting="0" post_processing="0"/>
 		
 		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
 		<sound class="result" key="terrain" copy="other" />

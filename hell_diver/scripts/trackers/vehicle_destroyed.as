@@ -38,6 +38,17 @@ dictionary included_vehicle = {
         {"mi_24.vehicle",1},
         {"bell_360.vehicle",1},
         {"mh_60s.vehicle",1},
+        {"ex_edf_turrent_single_ex.vehicle",1},
+        {"ex_edf_turrent_minigun_ex.vehicle",1},
+        {"ex_edf_turrent_double_ex.vehicle",1},
+        {"ex_edf_mortar_ex.vehicle",1},
+        {"63type_107mm_rocket_launcher.vehicle",1},
+        {"kirov.vehicle",1},
+        {"hd_ra2_ifv.vehicle",1},
+        {"hd_ra2_minigun.vehicle",1},
+        {"panzer_3_a.vehicle",1},
+        {"panther_a.vehicle",1},
+        {"sdkfz184.vehicle",1},
         {"",-1}
 };
 

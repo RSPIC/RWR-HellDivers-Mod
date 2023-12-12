@@ -12,6 +12,7 @@ on_ground_up="0 0 1"
 	sight_range_modifier="1.0" 
 	ai_sight_range_modifier="0.9" 
 	use_basic_muzzle_smoke_effect="0"
+    can_shoot_running="1"
 	/> 
 	
 	<tag name="sidearms" />
@@ -23,7 +24,7 @@ on_ground_up="0 0 1"
     <animation state_key="hold_on_wall" animation_key="hold, overwall pistol" />
     <!-- <animation state_key="hold_casual" animation_key="hold_casual, pistol" /> -->
     <animation state_key="hold_casual" animation_key="California Gurls" />
-	<animation state_key="running"  animation_key="running, pistol" />
+	<animation state_key="running"  animation_key="hd_spring_single_hand" />
     <animation state_key="walking"  animation_key="running_pistol_slower" />
     <animation state_key="walking_backwards" animation_key="walking backwards, pistol" />
     <animation state_key="crouching" animation_key="crouch, pistol" />

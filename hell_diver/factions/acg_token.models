@@ -28,6 +28,8 @@
 	<model filename="acg_pmaru.xml"  > <!--P丸様--><requirement class="projectile" slot="0" key="token_pmaru.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_erina.xml"  > <!--艾莉娜--><requirement class="projectile" slot="0" key="token_erina.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_starwars_shipgirls.xml"  > <!--星舰少女--><requirement class="projectile" slot="0" key="token_starwars_shipgirls.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_lilies.xml"  > <!--lilies--><requirement class="projectile" slot="0" key="token_lilies.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_zero401_casual_wear.xml"  > <!--ZERO401--><requirement class="projectile" slot="0" key="token_zero401_casual_wear.projectile"/><requirement class="rank" range="0 999999"/></model>
 
 <!-- 明日方舟 -->
 	<model filename="acg_skyfire.xml"  > <!--天火--><requirement class="projectile" slot="0" key="token_skyfire.projectile"/><requirement class="rank" range="0 999999"/></model>
@@ -43,6 +45,7 @@
 <!-- 崩坏 -->
 	<model filename="acg_bronya_ex_1.xml" > <!--布洛妮娅常服--><requirement class="projectile" slot="0" key="token_bronya_ex_1.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_raiden_mei_ex_1.xml"  > <!--雷电芽衣常服--><requirement class="projectile" slot="0" key="token_raiden_mei_ex_1.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_maria_schariac.xml"  > <!--玛丽亚·沙尼亚特--><requirement class="projectile" slot="0" key="token_maria_schariac.projectile"/><requirement class="rank" range="0 999999"/></model>
 <!-- 东方project -->
 	<model filename="acg_reisenu.xml"><!--铃仙--><requirement class="projectile" slot="0" key="token_reisenu.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_reisenu_ex.xml"><!--铃仙--><requirement class="projectile" slot="0" key="token_reisenu_ex.projectile"/><requirement class="rank" range="0 999999"/></model>
@@ -61,6 +64,7 @@
 	<model filename="acg_yukikaze.xml"  > <!--雪风--><requirement class="projectile" slot="0" key="token_yukikaze.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_graf_spee_sweater_ver.xml"  > <!--斯佩伯爵 毛衣常服[平和的一天]--><requirement class="projectile" slot="0" key="token_graf_spee_sweater_ver.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_felix_schultz.xml"  > <!--菲利克斯舒尔茨--><requirement class="projectile" slot="0" key="token_felix_schultz.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_shinano.xml"  > <!--信浓--><requirement class="projectile" slot="0" key="token_shinano.projectile"/><requirement class="rank" range="0 999999"/></model>
 <!-- 动漫 -->
 	<model filename="acg_iruru.xml"  > <!--伊露露--><requirement class="projectile" slot="0" key="token_iruru.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_faputa.xml"  > <!--法仆塔--><requirement class="projectile" slot="0" key="token_faputa.projectile"/><requirement class="rank" range="0 999999"/></model>

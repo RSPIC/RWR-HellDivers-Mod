@@ -10,6 +10,7 @@ on_ground_up="0 0 1"
 	sight_range_modifier="1.0" 
 	ai_sight_range_modifier="0.75" 
 	use_basic_muzzle_smoke_effect="0"
+    can_shoot_running="1"
 	/> 
 	
 	<tag name="sg" />

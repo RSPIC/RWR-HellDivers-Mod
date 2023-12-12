@@ -153,18 +153,6 @@ key="hd_ai_eta17_mk3.weapon"
 	<effect class="muzzle" ref="nova_muzzle_ambient_ground"/>
 	<effect class="muzzle" ref="nova_muzzle_spark"/>
 	
-	<!--雷鸣弹道
-    <ballistics 
-    curve_height="16" 
-    near_far_distance="0" 
-    speed_estimation_near="0" 
-    speed_estimation_far="58" 
-    max_speed="58" 
-    randomness="0" 
-    tweak_factor="1.48" /> 
-	该弹道适配弹头参数：pulldon_in_air="48"
-	-->
-	
 	<!--姿态精度-->
     <stance state_key="running" accuracy="0.5" /> 
     <stance state_key="walking" accuracy="0.92" />

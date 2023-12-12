@@ -1,0 +1,446 @@
+author: RST
+2023.11.18
+未经授权不可复用、修改使用、仅用于helldiver mod
+
+睦月武器特效
+
+particle_system ba_general_muzzle_fire
+{
+	quota 150
+	material muzzle_crossfire_01
+	particle_width 3
+	particle_height 3
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.1
+		duration 0.01
+	}
+	affector Scaler
+	{
+		rate -20
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0 1
+		time1 0.7
+		colour1 1 0.3 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system ba_general_hit
+{
+	quota 150
+	material muzzle_crossfire_anim_a_1
+	particle_width 4.5
+	particle_height 4.5
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.1
+		duration 0.01
+	}
+	affector Scaler
+	{
+		rate -40
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0 1
+		time1 0.7
+		colour1 1 0.3 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+
+particle_system ba_mutsuki_impact_circle
+{
+	quota 50
+	material lens_circle_07_pass
+	particle_width 0.1
+	particle_height 0.1
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 90
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.45
+		duration 0.01
+	}
+	affector Scaler
+	{
+		rate 50
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 0.7 1
+		time1 0.6
+		colour1 1 0.3 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+
+particle_system ba_mutsuki_result_impact_flame_1
+{
+	quota 50
+	material eye_fxl_smkoe_005
+	particle_width 5
+	particle_height 5
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 60
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 600
+		position 0 0 0
+		velocity_min 25
+		velocity_max 50
+		time_to_live_min 0.15
+		time_to_live_max 0.25
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 5
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 0.7 1
+		time1 0.4
+		colour1 1 0.3 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+
+particle_system ba_mutsuki_firesmoke_1  //向上
+{
+	quota 350
+	material exposion_fire_type01_bw
+	particle_width 4
+	particle_height 6
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 0.3 1
+	common_up_vector 0 1 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 150
+		position 0 4 0
+		velocity_min 1
+		velocity_max 4
+		time_to_live 0.5
+		duration 0.1
+		width 1
+		height 1
+		depth 12
+	}
+	affector Scaler
+	{
+		rate 4
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.5
+		colour1 1 0.3 0 0
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 0.3 0
+		force_application add
+	}
+}
+particle_system ba_mutsuki_firesmoke_2 
+{
+	quota 350
+	material exposion_fire_type01_bw
+	particle_width 7
+	particle_height 9
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 0.3 1
+	common_up_vector 0 1 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 30
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 200
+		position 0 2 0
+		velocity_min 0.001
+		velocity_max 0.1
+		time_to_live 0.5
+		duration 0.1
+		width 6
+		height 6
+		depth 1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.5
+		colour1 1 0.3 0 0
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system ba_mutsuki_smoke_1
+{
+	quota 350
+	material exposion_fire_type01_alpha
+	particle_width 5
+	particle_height 7
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 0.3 1
+	common_up_vector 0 1 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 30
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 4 0
+		velocity_min 1
+		velocity_max 4
+		time_to_live 1
+		duration 0.1
+		width 1
+		height 1
+		depth 12
+	}
+	affector Scaler
+	{
+		rate 2
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	2
+		rotation_speed_range_end	-2
+		rotation_range_start	-15
+		rotation_range_end	-15
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.2 0.2 0.2 1
+		time1 0.5
+		colour1 0.1 0.1 0.1 1
+		time2 1
+		colour2 0.1 0.1 0.1 0
+	}
+	affector LinearForce{
+		force_vector 0 0.3 0
+		force_application add
+	}
+}
+particle_system ba_mutsuki_smoke_2 : ba_mutsuki_smoke_1
+{
+	emitter Box
+	{
+		angle 30
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 200
+		position 0 2 0
+		velocity_min 0.001
+		velocity_max 0.1
+		time_to_live 1
+		duration 0.1
+		width 6
+		height 6
+		depth 1
+	}
+}
+particle_system ba_mutsuki_ground_crater
+{
+	quota 350
+	material Tex_Decal07F_Diffuse_3
+	particle_width 10
+	particle_height 10
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+
+	emitter Point
+	{
+		angle 40
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0.3 0
+		velocity 0.0001
+		time_to_live 4
+		duration 0.1
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.5
+		colour1 1 1 1 1
+		time2 1
+		colour2 0.5 0.5 0.5 0
+	}
+}
+
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material muzzle_crossfire_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture muzzle_crossfire_01.png 	
+}}}}
+material muzzle_crossfire_anim_a_1 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture muzzle_crossfire_anim_a_1.png 	
+}}}}
+material eye_fxl_smkoe_005 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture eye_fxl_smkoe_005.png 	
+}}}}
+material exposion_fire_type01_bw : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture exposion_fire_type01_bw.png 	
+}}}}
+material exposion_fire_type01_alpha : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture exposion_fire_type01_alpha.png 	
+}}}}

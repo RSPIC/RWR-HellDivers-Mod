@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <models>
-	<!-- <model filename="hdivers_ceremonial.xml" /> -->
+	<!-- 测试 -->
+	<!-- <model filename="test.xml"><requirement class="weapon" slot="0" key="normal.weapon"/>
+	</model> -->
 
 	<model filename="ex_marcus_fenix.xml"><requirement class="weapon" slot="0" key="ex_lancer_mk3.weapon"/>
 	</model>
@@ -24,6 +26,10 @@
 	</model>
 	<model filename="ex_izanagis_burden.xml"><requirement class="weapon" slot="0" key="ex_izanagis_burden_skill.weapon"/>
 	</model>
+	<model filename="ex_izanagis_burden.xml"><requirement class="weapon" slot="0" key="re_ex_izanagis_burden.weapon"/>
+	</model>
+	<model filename="ex_izanagis_burden.xml"><requirement class="weapon" slot="0" key="re_ex_izanagis_burden_skill.weapon"/>
+	</model>
 	<!-- 漏斗网 -->
 	<model filename="ex_funnelnet.xml"><requirement class="weapon" slot="1" key="ex_funnelnet.weapon"/>
 	</model>
@@ -42,5 +48,7 @@
 	</model>
 	<model filename="ex_vergil.xml"><requirement class="weapon" slot="0" key="re_ex_vergil_getsuga_tenshou.weapon"/>
 	</model>
+
+
 	
 </models>

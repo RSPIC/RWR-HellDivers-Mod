@@ -8,6 +8,7 @@ soldier_capacity_offset="1"
 key="hd_ra2_minigun.vehicle"
 character_leave_request_mode="friendly"
 ai_abandon_when_unsteerable="1"
+allow_ai_to_use="0"
 >
 	<tag name="target" />
 	<tire_set offset="0.5 0.0 0.5" radius="0.65" />

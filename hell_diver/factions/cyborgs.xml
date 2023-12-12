@@ -77,7 +77,7 @@
 			<!-- wearables -->
 			<item_class_existence class="carry_item" slot="1" probability="1" />
 			<!-- backpack -->
-			<item_class_existence class="carry_item" slot="0" probability="0.1" />
+			<item_class_existence class="carry_item" slot="0" probability="0.2" />
 		</item_class_existence_config>
 
 		<attribute_config class="rp">
@@ -243,9 +243,6 @@
 			<weapon key="cyborgs_grotesque_main.weapon" />
 			<!-- <weapon key="cyborgs_grotesque_sec_antitank.weapon" /> -->
 			
-			<carry_item key="general_vest_100" />
-			<carry_item key="general_vest_120" />
-			<carry_item key="general_vest_140" />
 			<carry_item key="general_vest_160" />
 		</resources>
 
@@ -267,8 +264,7 @@
 		<resources>
 			<weapon key="cyborgs_tesla_main.weapon" />
 
-			<carry_item key="anti_all_blast_vest_75" /> 
-			<carry_item key="anti_all_blast_vest_100" /> 
+			<carry_item key="cyborgs_tesla_vest_100" /> 
 		</resources>
 		
 		<ai filename="cyborgs_hound.ai" /> <!-- initiate.ai 引用 default_cyborgs.ai -->

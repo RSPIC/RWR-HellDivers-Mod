@@ -6,23 +6,14 @@
   <comment key="Squad, follow the vehicle" text="" />
   <comment key="Squad, follow me" text="" />
   <comment key="Driver, stop the vehicle" text="" />
-  <comment key="Gunner, fire at will" text="随意开火" />
-  <comment key="Driver, stop the vehicle" text="司机，靠边停车" />
-  <comment key="Driver, stay close" text="司机，跟紧了" />
-  <comment key="Driver, stay close" text="司机，跟我来" />
-  <comment key="Driver, stay close" text="司机，上去支援" />
-  <comment key="Squad, move over there" text="队员们，去那里" />
-  <comment key="Squad, move over there" text="队员们，去那" />
-  <comment key="Squad, move over there" text="队员们，那里" />
-  <comment key="Squad, change position" text="队员们，移位" />
-  <comment key="Squad, change position" text="队员们，移动" />
-  <comment key="Squad, change position" text="队员们，冲啊" />
-  <comment key="Driver, take us there" text="司机，带我们去那" />
-  <comment key="Driver, over there" text="司机，那里" />
-  <comment key="Gunner, there" text="枪手，那里" />
-  <comment key="Gunner, there" text="注意那里" />
-  <comment key="Gunner, there" text="枪手，瞄准那里" />
-  <comment key="Gunner, there" text="枪手，朝目标开火" />
+  <comment key="Gunner, fire at will" text="" />
+  <comment key="Driver, stop the vehicle" text="" />
+  <comment key="Driver, stay close" text="" />
+  <comment key="Squad, move over there" text="" />
+  <comment key="Squad, change position" text="" />
+  <comment key="Driver, take us there" text="" />
+  <comment key="Driver, over there" text="" />
+  <comment key="Gunner, there" text="" />
   <comment key="We surrender!" text="*悲伤的嗡嗡声*" />
   <comment key="We surrender!" text="*低沉的咕噜声*" />
   <comment key="We surrender!" text="*哀怨的低吟声" />
@@ -39,7 +30,7 @@
   <comment key="initiate radio call" text="" />
   <comment key="commander radio response" text="" />
   <comment key="commander radio full" text=""/>  
-  <comment key="no radio equipment" text="" />
+  <comment key="no radio equipment" text="*困惑的吱吱声*" />
   <comment key="no radio equipment" text="" />
   <comment key="no radio equipment" text="" />
   <comment key="squad chat, not in squad" text="" />
@@ -63,6 +54,7 @@
   <comment key="Open fire" text="*酸液滋滋声*" />
   <comment key="Open fire" text="*钳肢咔咔声*" />
   <comment key="Open fire" text="*虫叫*" />
+  <comment key="Open fire" text="*钳肢挠地声*" />
   <comment key="Lone leader, open fire" text="*甲壳摩擦声*" />
   <comment key="fire opened, weapon tag = sniper" text="低沉的咕咕声" />
   <comment key="grenade alert, grenade tag = grenade" text="*惊恐的嘶鸣声*" />
@@ -71,7 +63,7 @@
   <comment key="grenade alert, grenade tag = flashbang" text="" />
   <comment key="grenade alert, grenade tag = rocket" text="*惊恐的嘶鸣声*" />
   <comment key="grenade alert, grenade tag = rocket" text="*急促的咔哒声*" />
-  <comment key="grenade alert, grenade tag = rocket" text="*!?!?*" />
+  <comment key="grenade alert, grenade tag = rocket" text="*刺耳的咆哮声*" />
   <comment key="enemy not seen, area alerted" text="*警惕的嘶嘶声*" />
   <comment key="Lone leader, enemy not seen, area alerted" text="*警惕的嘶嘶声*" />
   <comment key="leader, enemy not seen, taking suppressed fire" text="*低沉的嗡嗡声*" />
@@ -85,7 +77,6 @@
   <comment key="enemy seen, vehicle tag = any_tank" text="*酸液滋滋声*" />
   <comment key="enemy seen, vehicle tag = apc" text="*酸液滋滋声*" />
   <comment key="enemy seen, vehicle tag = truck" text="*酸液滋滋声*" />
-  <comment key="enemy not seen, taking suppressed fire" text="！？" />
   <comment key="enemy not seen, taking suppressed fire" text="*愤怒的咕咕声*" />
   <comment key="enemy not seen, taking suppressed fire" text="*警惕的嘶嘶声*" />
   <comment key="enemy not seen, taking suppressed fire" text="*困惑的吱吱声*" />
@@ -108,7 +99,7 @@
   <comment key="All quiet here" text="*无病呻吟声*" />
   <comment key="All quiet here" text="*钳肢摩擦声*" />
   <comment key="Yes sir" text="" />
-  <comment key="Uh, I can't drive this thing" text="*困惑的吱吱声**" />
+  <comment key="Uh, I can't drive this thing" text="*困惑的吱吱声*" />
   <comment key="Waiting for squad" text="" />
   <comment key="Waiting for squad" text="" />
   <comment key="Shield up" text="" />
@@ -129,10 +120,10 @@
   <comment key="this is as close as i can get" text="" />
   <comment key="enemy vehicle spotted, near base" text="在&#37;base_name附近发现敌军&#37;enemy_name的&#37;vehicle_name" />
   <comment key="enemy vehicle spotted, not near base" text="发现敌军&#37;enemy_name的&#37;vehicle_name" />
-  <comment key="comms have been restored" text="已恢复通讯" />
-  <comment key="enemy comms have been restored" text="敌军&#37;enemy_name通讯已完全恢复" />
-  <comment key="comms have been destroyed" text="我方通讯被敌军破坏" />
-  <comment key="enemy comms have been destroyed, by us" text="做得好，敌军&#37;enemy_name的通讯被破坏！" />
+  <comment key="comms have been restored" text="" />
+  <comment key="enemy comms have been restored" text="" />
+  <comment key="comms have been destroyed" text="" />
+  <comment key="enemy comms have been destroyed, by us" text="" />
   <dialogue key="wander dialogue 2 men">
     <comment text="*虫叫*" />
     <comment text="*虫叫*" />
@@ -153,7 +144,7 @@
     <comment text="*虫叫*" />
   </dialogue>
   <dialogue key="vehicle dialogue 2 men tag=campfire">
-    <comment text="我的脚着火了" />
+    <comment text="" />
   </dialogue>
   <dialogue key="vehicle dialogue 2 men tag=any_tank">
     <comment text="" />
@@ -166,9 +157,9 @@
     <comment text="*虫叫*" />
   </dialogue>
   <!-- commander comments -->
-  <comment key="player promotion" text="恭喜你士兵，你刚刚晋升到了&#37;rank_name！" />
-  <comment key="we captured a base" text="&#37;base_name现在被我们控制了" />
-  <comment key="we captured a base" text="我们已经占领了&#37;base_name" />
+  <comment key="player promotion" text="" />
+  <comment key="we captured a base" text="" />
+  <comment key="we captured a base" text="" />
   <comment key="enemy captured a base" text="&#37;base_name现在已经被&#37;faction_name控制了" />
   <comment key="enemy captured a base" text="&#37;faction_name攻占了&#37;base_name" />
   <comment key="neutral captured a base" text="" />
@@ -359,7 +350,7 @@
   
   <!-- 1.94 --> 
 
- <comment key="Turn back! Mine fields ahead!" text="前有雷区！立即返回！" />
+ <comment key="Turn back! Mine fields ahead!" text="" />
   
 	<!-- character specific animation override table -->
 	<!-- <animation key="running" target_key="walking" /> -->

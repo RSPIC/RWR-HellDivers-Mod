@@ -100,7 +100,7 @@ dictionary recommend_kill_weapon_bonus = {
         {"666",-1}
 
 };
-//不计入结算击杀的伤害
+//额外计入结算击杀的伤害
 dictionary include_kill_target = {
 
         {"hd_general_spawn.projectile",false},
@@ -122,6 +122,30 @@ dictionary include_kill_target = {
 
         {"",-1}
 
+};
+//自动Cost释放技能键值
+dictionary auto_cost_skill_key = {
+	{"acg_asagi_mutsuki.weapon",9},
+	{"re_acg_asagi_mutsuki.weapon",7},
+
+	{"acg_rikuhachima_aru.weapon",7},
+	{"re_acg_rikuhachima_aru.weapon",6},
+
+	{"",-1}
+};
+//Cost技能武器计数键值
+dictionary cost_skill_killer_key = {
+	{"acg_asagi_mutsuki.weapon","acg_asagi_mutsuki_skill"},
+	{"re_acg_asagi_mutsuki.weapon","re_acg_asagi_mutsuki_skill"},
+
+	{"acg_rikuhachima_aru.weapon","acg_rikuhachima_aru_skill"},
+	{"re_acg_rikuhachima_aru.weapon","re_acg_rikuhachima_aru_skill"},
+
+	{"",-1}
+};
+//单次击杀能累计多少Cost，默认1
+dictionary cost_skill_increase_rate = {
+	{"",-1}
 };
 // --------------------------------------------
 class tk_info{
@@ -176,13 +200,13 @@ class tk_info{
 					_report(m_metagame,"getAll Kill times="+key+" "+killTimes);
 				}
 			}
-			if(AllkillTimes >= 4){
+			if(AllkillTimes >= 3){
 				m_deadth = true;
 			}
 			if(AllkillTimes >= 5){
 				m_banned = true;
 			}
-			if(AllkillTimes >= 3){
+			if(AllkillTimes >= 2){
 				return true;
 			}
 		}
@@ -208,12 +232,16 @@ class kill_reward : Tracker {
 	protected Metagame@ m_metagame;
 	protected array<tk_info@> m_tkInfo;
 	protected bool m_ended;
+	protected string m_tk_watchdog_Filename = "tk_watchdog.xml"; 
+	protected array<string> m_tk_watchdog_list;
 
 	// --------------------------------------------
 	kill_reward(Metagame@ metagame) {
 		@m_metagame = @metagame;
 		m_ended = false;
 		m_metagame.getComms().send("<command class='set_metagame_event' name='character_kill' enabled='1' />");
+		_log("load tk_watchdog_list");
+		m_tk_watchdog_list = loadData(m_tk_watchdog_Filename);
 	}
 	// --------------------------------------------
     bool hasEnded() const{
@@ -266,9 +294,11 @@ class kill_reward : Tracker {
 		string k_name = g_playerInfoBuck.getNameByCid(killer_cid);
 		string t_name = g_playerInfoBuck.getNameByPid(t_pid);
 		_log("execute kill_reward");
-		if (killer !is null && target !is null && killer_fid != target_fid) {
+		if (killer !is null && target !is null && killer_fid != target_fid) {//普通击杀
+			//------------------击杀计数记录-------------------------------------
 			bool value;
-			if(include_kill_target.get(weaponKey,value)){
+			if(include_kill_target.exists(weaponKey)){
+				include_kill_target.get(weaponKey,value);
 				if(value){
 					g_battleInfoBuck.addKill(k_name);
 					//_debugReport(m_metagame,"武器"+weaponKey+"计入击杀次数");
@@ -282,6 +312,44 @@ class kill_reward : Tracker {
 					g_battleInfoBuck.addKill(k_name);
 				}
 			}
+			//--------------------自动Cost释放技能记录----------------------------------
+			int autoCostCount;
+			if(auto_cost_skill_key.exists(weaponKey)){
+				auto_cost_skill_key.get(weaponKey,autoCostCount);
+				g_userCountInfoBuck.addCount(k_name,weaponKey);
+				int nowCost = 0;
+				if(g_userCountInfoBuck.getCount(k_name,weaponKey,nowCost)){
+					if(nowCost == autoCostCount){
+						handelAutoCostResultEvent(event);
+						g_userCountInfoBuck.clearCount(k_name,weaponKey);
+					}
+				}
+			}
+			//--------------------击杀增加Cost记录----------------------------------
+			string targetCostKey;
+			if(cost_skill_killer_key.exists(weaponKey)){
+				cost_skill_killer_key.get(weaponKey,targetCostKey);
+				int get_cost = 1;
+				if(cost_skill_increase_rate.exists(weaponKey)){
+					cost_skill_increase_rate.get(weaponKey,get_cost);//默认1，不为1的单独设置
+				}
+
+				int nowCost = 0;
+				if(g_userCountInfoBuck.getCount(k_name,targetCostKey,nowCost)){
+					int cost = 0;
+            		if(skill_cost.get(targetCostKey,cost)){
+						if(nowCost == cost-1){
+							_notify(m_metagame,k_pid,"Cost已满"+cost+"/"+cost);
+						}
+						if(nowCost == cost){//Cost无法累计溢出，同时就绪提示只提示一次
+							return;
+						}
+					}
+				}
+				_debugReport(m_metagame,"当前增加Cost="+get_cost);
+				g_userCountInfoBuck.addCount(k_name,targetCostKey,get_cost);
+			}
+			//--------------------击杀回甲记录--------------------------------------
 			int healnum = 0;
 			if(healable_weapon.get(weaponKey,healnum)){//执行：可恢复护甲的击杀武器
 				healCharacter(m_metagame,killer_cid,healnum);
@@ -289,6 +357,7 @@ class kill_reward : Tracker {
 			if(healable_killtarget_bonus.get(soldier_group_name,healnum)){//执行：可额外恢复护甲的击杀对象
 				healCharacter(m_metagame,killer_cid,healnum);
 			}
+			//---------------------击杀增益记录--------------------------------------
 			float XpBonusFactor = 0;
 			if(recommend_kill_weapon_bonus.get(weaponKey,XpBonusFactor)){//执行：可获得经验/RP加成的击杀武器
 				if(XpBonusFactor <= 0){
@@ -305,6 +374,12 @@ class kill_reward : Tracker {
 			}
 		}
 		if(k_pid != -1 && t_pid != -1 && k_pid != t_pid){//玩家TK
+			string sid = g_playerInfoBuck.getSidByName(k_name);
+			if (checkBanBySid(sid)){
+				kickPlayer(m_metagame,k_pid);
+				_report(m_metagame,"玩家"+k_name+"因为TK过多而被临时踢出游戏");
+				return;
+			}
 			g_battleInfoBuck.addTk(k_name);
 			const XmlElement@ k_character = getCharacterInfo(m_metagame,killer_cid);
 			if(k_character is null){return;}
@@ -329,6 +404,18 @@ class kill_reward : Tracker {
 			
 		}
 	}
+	protected bool checkBanBySid(string t_sid){
+		// _report(m_metagame,"m_tk_watchdog_list.size="+m_tk_watchdog_list.size());
+		for (uint i = 0; i < m_tk_watchdog_list.size(); ++i) {
+			string sid = m_tk_watchdog_list[i];
+			// _report(m_metagame,"t_sid="+t_sid);
+			// _report(m_metagame,"sid="+sid);
+			if (t_sid == sid) {
+				return true;
+			}
+		}
+		return false;
+	}
 	protected void aiTkPlayer(const XmlElement@ event) {
 		const XmlElement@ killer = event.getFirstElementByTagName("killer");
 		if(killer is null){return;}
@@ -340,6 +427,53 @@ class kill_reward : Tracker {
 		if(killer_fid != target_fid){return;}//敌方AI击杀玩家
 		setWoundCharacter(m_metagame,killer_cid);
 	}
+	// --------------------------------------------
+	protected array<string> loadData(string filename) {
+		return loadStringsFromSaveFile(m_metagame, filename);
+	}
+	// -----------------------------------------------------------------
+	protected void handelAutoCostResultEvent(const XmlElement@ event){
+        string weaponKey = event.getStringAttribute("key");//击杀武器关键字
+		const XmlElement@ character = event.getFirstElementByTagName("killer");
+		if(character is null){return;}
+		const XmlElement@ target = event.getFirstElementByTagName("target");
+		if(target is null){return;}
+		Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));
+		Vector3 t_pos = stringToVector3(target.getStringAttribute("position"));
+		int cid = character.getIntAttribute("id");
+		int pid = g_playerInfoBuck.getPidByCid(cid);
+		int fid = g_playerInfoBuck.getFidByCid(cid);
+		string name = g_playerInfoBuck.getNameByPid(pid);
+
+		array<ListDirectProjectile@> list;
+        if(weaponKey == "acg_asagi_mutsuki.weapon" || weaponKey == "re_acg_asagi_mutsuki.weapon"){
+			Vector3 aim_unit_vector = getAimUnitVector(1,c_pos,t_pos);
+			t_pos = c_pos.add(aim_unit_vector.scale(10.0));
+			float separate_distance = 4;
+			Vector3 vertical_vector = getRotatedVector(1.57,aim_unit_vector).scale(separate_distance);
+			string tag_projectile_key = "acg_asagi_mutsuki_skill_mine_trigger.projectile";
+			ListDirectProjectile@ a = ListDirectProjectile(t_pos.add(vertical_vector),t_pos,tag_projectile_key,cid,fid,10);
+			ListDirectProjectile@ b = ListDirectProjectile(t_pos,t_pos,tag_projectile_key,cid,fid,10);
+			ListDirectProjectile@ c = ListDirectProjectile(t_pos.subtract(vertical_vector),t_pos,tag_projectile_key,cid,fid,10);
+			ListDirectProjectile@ d = ListDirectProjectile(t_pos,t_pos,"acg_asagi_mutsuki_skill_mine_sound.projectile",cid,fid,10);
+			list.insertLast(a);
+			list.insertLast(b);
+			list.insertLast(c);
+			list.insertLast(d);
+			CreateListDirectProjectile(m_metagame,list);
+			_notify(m_metagame,pid,"小技能'爆裂咏叹调'已释放");
+		}
+		if(weaponKey == "acg_rikuhachima_aru.weapon" || weaponKey == "re_acg_rikuhachima_aru.weapon"){
+			string tag_projectile_key = "acg_rikuhachima_aru_normal_skill_damage.projectile";
+			string tag_projectile_key2 = "acg_rikuhachima_aru_normal_skill_sound.projectile";
+			ListDirectProjectile@ a = ListDirectProjectile(t_pos,t_pos,tag_projectile_key,cid,fid,10);
+			ListDirectProjectile@ b = ListDirectProjectile(c_pos,c_pos,tag_projectile_key2,cid,fid,10);
+			list.insertLast(a);
+			list.insertLast(b);
+			CreateListDirectProjectile(m_metagame,list);
+			_notify(m_metagame,pid,"小技能'暗黑狙击'已释放");
+		}
+    }
 }
 
 

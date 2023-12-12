@@ -18,6 +18,20 @@ dictionary skill_CD = {
 	{"",0},
 
     {"acg_starwars_shipgirls_skill",90},
+    {"acg_maria_schariac_skill",20},
+
+    {"",0}
+
+};
+dictionary skill_cost = {
+	 // 空
+	{"",0},
+
+    {"acg_asagi_mutsuki_skill",12},
+    {"re_acg_asagi_mutsuki_skill",10},
+
+    {"acg_rikuhachima_aru_skill",7},
+    {"re_acg_rikuhachima_aru_skill",6},
 
     {"",0}
 
@@ -58,7 +72,7 @@ class projectile_event : Tracker {
 	protected void handleResultEvent(const XmlElement@ event) {
 		string EventKeyGet = event.getStringAttribute("key");
         _log("projectile event key= " + EventKeyGet);
-        
+        //处理CD事件
         if(skill_CD.exists(EventKeyGet)){
             int m_cid = event.getIntAttribute("character_id");
             int m_pid = g_playerInfoBuck.getPidByCid(m_cid);
@@ -75,7 +89,9 @@ class projectile_event : Tracker {
                 return;
             }
         }
-
+        //处理cost事件
+        handelCostResultEvent(event);
+        //处理普通事件
 		switch(int(projectile_eventkey[EventKeyGet])) 
         {
             case 0:{break;}
@@ -499,6 +515,7 @@ class projectile_event : Tracker {
                 int pid = g_playerInfoBuck.getPidByCid(cid);
                 if(pid == -1){
                     const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                    if(character is null){return;}
                     pid = character.getIntAttribute("player_id");
                     notify(m_metagame, "未能获取到你的PID，已通过其他方法获取。请汇报此情况", dictionary(), "misc", pid, false, "", 1.0);
                 }
@@ -535,6 +552,7 @@ class projectile_event : Tracker {
                 int pid = g_playerInfoBuck.getPidByCid(cid);
                 if(pid == -1){
                     const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                    if(character is null){return;}
                     pid = character.getIntAttribute("player_id");
                     notify(m_metagame, "未能获取到你的PID，已通过其他方法获取。请汇报此情况", dictionary(), "misc", pid, false, "", 1.0);
                 }
@@ -607,14 +625,14 @@ class projectile_event : Tracker {
                             // _report(m_metagame,"distance="+distance);
                             // _report(m_metagame,"p_position="+p_position.toString());
                             // _report(m_metagame,"position="+position.toString());
-                            if(distance <= 20){
+                            if(distance <= 30){
                                 count++;
                                 targetName.insertLast(name);
                             }
                         }
                     }
                 }
-                if(count >= 3){
+                if(count >= 1){
                     for(uint i = 0 ; i < targetName.size() ; ++i){
                         string name = targetName[i];
                         int pid = g_playerInfoBuck.getPidByName(name);
@@ -632,7 +650,7 @@ class projectile_event : Tracker {
                         notify(m_metagame, "地狱火呼叫次数 +1", dictionary(), "misc", pid, false, "", 1.0);
                     }
                 }else{
-                    _report(m_metagame,"'启动火箭发射平台'支线任务执行失败，操作玩家不足三人");
+                    _report(m_metagame,"'启动火箭发射平台'支线任务执行失败，操作玩家不足一人");
                 }
                 break;
             }
@@ -641,6 +659,7 @@ class projectile_event : Tracker {
                 int pid = g_playerInfoBuck.getPidByCid(cid);
                 if(pid == -1){
                     const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                    if(character is null){return;}
                     pid = character.getIntAttribute("player_id");
                     notify(m_metagame, "未能获取到你的PID，已通过其他方法获取。请汇报此情况", dictionary(), "misc", pid, false, "", 1.0);
                 }
@@ -666,6 +685,7 @@ class projectile_event : Tracker {
                 int pid = g_playerInfoBuck.getPidByCid(cid);
                 if(pid == -1){
                     const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                    if(character is null){return;}
                     pid = character.getIntAttribute("player_id");
                     notify(m_metagame, "未能获取到你的PID，已通过其他方法获取。请汇报此情况", dictionary(), "misc", pid, false, "", 1.0);
                 }
@@ -698,6 +718,7 @@ class projectile_event : Tracker {
                 int pid = g_playerInfoBuck.getPidByCid(cid);
                 if(pid == -1){
                     const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                    if(character is null){return;}
                     pid = character.getIntAttribute("player_id");
                     notify(m_metagame, "未能获取到你的PID，已通过其他方法获取。请汇报此情况", dictionary(), "misc", pid, false, "", 1.0);
                 }
@@ -738,6 +759,7 @@ class projectile_event : Tracker {
                 int pid = g_playerInfoBuck.getPidByCid(cid);
                 if(pid == -1){
                     const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                    if(character is null){return;}
                     pid = character.getIntAttribute("player_id");
                     notify(m_metagame, "未能获取到你的PID，已通过其他方法获取。请汇报此情况", dictionary(), "misc", pid, false, "", 1.0);
                 }
@@ -783,7 +805,6 @@ class projectile_event : Tracker {
                 break;            
         }
     }
-
     protected void handelCdResultEvent(const XmlElement@ event){
         string EventKeyGet = event.getStringAttribute("key");
         switch(int(projectile_eventkey[EventKeyGet])){
@@ -817,8 +838,94 @@ class projectile_event : Tracker {
                 tasker.add(new_task);
                 break;
             }
+            case 57:{//acg_maria_schariac_skill 玛利亚 群体回复
+                int m_cid = event.getIntAttribute("character_id");
+                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+                int m_fid = g_playerInfoBuck.getFidByCid(m_cid);
+                array<const XmlElement@> factions = getFactions(m_metagame);
+                for (uint f = 0; f < factions.size(); ++f){
+                    const XmlElement@ faction = factions[f];
+                    if(faction is null){continue;}
+                    int t_fid = faction.getIntAttribute("id");
+                    if (t_fid == m_fid){
+                        array<const XmlElement@>@ soldiers = getCharactersNearPosition(m_metagame, ePos, t_fid, 15.0f);				
+                        int s_size = soldiers.length();
+                        if (s_size == 0) continue;
+                        int healTimes = 8;
+                        while(healTimes > 0 && soldiers.length() > 0){
+                            healTimes--;
+                            int s_i = rand(0,soldiers.length()-1);
+                            int soldier_id = soldiers[s_i].getIntAttribute("id");
+                            soldiers.removeAt(s_i);
+                            Vector3 soldier_pos = stringToVector3(getCharacterInfo(m_metagame, soldier_id).getStringAttribute("position"));
+                            string m_key = "hd_effect_heal_character.projectile";
+                            string newVest = "helldivers_vest.carry_item";
+                            int m_pid = g_playerInfoBuck.getPidByCid(soldier_id);
+                            if(m_pid >= 0){
+                                healCharacter(m_metagame,soldier_id,40);
+                            }else{
+                                editPlayerVest(m_metagame,soldier_id,newVest,4);
+                            }
+                            CreateDirectProjectile(m_metagame,soldier_pos,soldier_pos,m_key,m_cid,m_fid,100);
+                        }
+                        string m_key = "hd_heal_02.wav";
+                        playSoundAtLocation(m_metagame,m_key,m_fid,ePos,2.0);
+                        break;
+                    }
+                }
+                break;
+            }
             default:
                 break;     
+        }
+    }
+    protected void handelCostResultEvent(const XmlElement@ event){
+        string EventKeyGet = event.getStringAttribute("key");
+        if(skill_cost.exists(EventKeyGet)){
+            int cost = 10;
+            if(skill_cost.get(EventKeyGet,cost)){
+                //基本信息
+                int cid = event.getIntAttribute("character_id");
+				const XmlElement@ character = getCharacterInfo(m_metagame, cid);
+                if (character is null) {return;}
+                int pid = g_playerInfoBuck.getPidByCid(cid);
+                int fid = g_playerInfoBuck.getFidByCid(cid);
+                string name = g_playerInfoBuck.getNameByPid(pid);
+                Vector3 t_pos = stringToVector3(event.getStringAttribute("position"));
+                Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));
+                //判断是否满足cost
+                int nowCost = 0;
+                g_userCountInfoBuck.getCount(name,EventKeyGet,nowCost);
+                if(nowCost < cost){
+                    _notify(m_metagame,pid,"Cost不足，当前Cost="+nowCost+"/"+cost);
+                    return;
+                }else{
+                    g_userCountInfoBuck.clearCount(name,EventKeyGet);
+                    _notify(m_metagame,pid,"技能已释放");
+                }
+                //执行代码
+                array<ListDirectProjectile@> list;
+                if(EventKeyGet == "acg_asagi_mutsuki_skill" || EventKeyGet == "re_acg_asagi_mutsuki_skill"){
+                    Vector3 aim_unit_vector = getAimUnitVector(1,c_pos,t_pos);
+                    float separate_distance = 8;
+                    Vector3 vertical_vector = getRotatedVector(1.57,aim_unit_vector).scale(separate_distance);
+                    string tag_projectile_key1 = "acg_asagi_mutsuki_skill_bag_damage.projectile";
+                    string tag_projectile_key2 = "acg_asagi_mutsuki_skill_bag_side_damage.projectile";
+                    ListDirectProjectile@ a = ListDirectProjectile(t_pos.add(vertical_vector),t_pos,tag_projectile_key2,cid,fid,10);
+                    ListDirectProjectile@ b = ListDirectProjectile(t_pos,t_pos,tag_projectile_key1,cid,fid,10);
+                    ListDirectProjectile@ c = ListDirectProjectile(t_pos.subtract(vertical_vector),t_pos,tag_projectile_key2,cid,fid,10);
+                    list.insertLast(a);
+                    list.insertLast(b);
+                    list.insertLast(c);
+                    CreateListDirectProjectile(m_metagame,list);
+                }
+                if(EventKeyGet == "acg_rikuhachima_aru_skill" || EventKeyGet == "re_acg_rikuhachima_aru_skill"){
+                    string tag_projectile_key = "acg_rikuhachima_aru_skill_waiting.projectile";
+                    ListDirectProjectile@ a = ListDirectProjectile(t_pos,t_pos,tag_projectile_key,cid,fid,10);
+                    list.insertLast(a);
+                    CreateListDirectProjectile(m_metagame,list);
+                }
+            }
         }
     }
 }
