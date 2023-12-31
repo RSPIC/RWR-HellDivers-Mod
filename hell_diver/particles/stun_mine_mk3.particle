@@ -231,11 +231,5 @@ material pump_flare_03_01 : add_base
         texture_unit{
             texture pump_flare_03_01.png 	
 }}}}
-material point_soft_edge_100 : add_base
-{   
-    technique{
-    pass{
-        texture_unit{
-            texture point_soft_edge_100.png 	
-}}}}
+
 

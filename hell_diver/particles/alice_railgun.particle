@@ -792,13 +792,7 @@ material hollow_blast_smoke_01 : add_base
         texture_unit{
             texture hollow_blast_smoke_01.png 	
 }}}}
-material point_soft_edge_100 : add_base
-{   
-    technique{
-    pass{
-        texture_unit{
-            texture point_soft_edge_100.png 	
-}}}}
+
 material square_hard_edge : add_base
 {   
     technique{

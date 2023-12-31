@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<carry_item key="vest_player.carry_item" enabled="1" /> 
+	<carry_item key="vest2.carry_item" enabled="0" />  
+  <carry_item key="vest3.carry_item" enabled="0" />
+  <carry_item key="camouflage_suit.carry_item" enabled="0" />
+  <carry_item key="eodvest.carry_item" enabled="0" />        
+  
+     <vehicle key="radio_jammer.vehicle" enabled="0" />
+     <vehicle key="prison_door.vehicle" enabled="0" /> 
+     <vehicle key="prison_bus.vehicle" enabled="0" />     
+     <vehicle key="radar_tower.vehicle" enabled="0" />        
+
+     <vehicle key="cargo_truck.vehicle" enabled="0" />        
+     <vehicle key="event_crate.vehicle" enabled="0" />        
+     <vehicle key="mobile_armory.vehicle" enabled="0" />        
+     <vehicle key="mortar_ammunition_crates.vehicle" enabled="0" />
+     <vehicle key="radar_truck.vehicle" enabled="0" />        
+     <vehicle key="water_tower.vehicle" enabled="0" />        
+
+     <vehicle key="aa_emplacement.vehicle" enabled="0" />
+     <vehicle key="heli_extraction.vehicle" enabled="0" />
+     <vehicle key="para_spawn.vehicle" enabled="0" />
+     <vehicle key="tank2.vehicle" enabled="0" />  
+     <vehicle key="mortar.vehicle" enabled="0" />
+     <vehicle key="deployable_mg.vehicle" enabled="0" />   
+     <vehicle key="deployable_minig.vehicle" enabled="0" />                       
+
+          <vehicle key="tow.vehicle" enabled="0" />
+
+     <vehicle key="jeep.vehicle" enabled="0" />                       
+     <vehicle key="jeep_1.vehicle" enabled="0" />                       
+     <vehicle key="jeep_2.vehicle" enabled="0" />    
+	 <vehicle key="atv_base.vehicle" enabled="1" />	 
+
+     <vehicle key="apc.vehicle" enabled="0" />                       
+     <vehicle key="apc_1.vehicle" enabled="0" />                       
+     <vehicle key="apc_2.vehicle" enabled="0" />                       
+
+     <vehicle key="tank.vehicle" enabled="0" />                       
+     <vehicle key="tank_1.vehicle" enabled="0" />                       
+     <vehicle key="tank_2.vehicle" enabled="0" />  
+     
+     <vehicle key="radio_jammer2.vehicle" enabled="0" />                         
+
+     <vehicle key="armored_truck.vehicle" enabled="0" /> 
+     <vehicle key="humvee.vehicle" enabled="0" />
+	   <vehicle key="humvee_gl.vehicle" enabled="0" /> 
+     
+	   <vehicle key="technical.vehicle" enabled="0" /> 
+	   <vehicle key="buggy.vehicle" enabled="0" />   
+     
+     <vehicle key="transport_truck.vehicle" enabled="0" />
+     <vehicle key="transport_truck_1.vehicle" enabled="0" />  
+     <vehicle key="transport_truck_2.vehicle" enabled="0" /> 
+     
+    <weapon key="dummy_primary.weapon" enabled="0" />  
+    <weapon key="dummy_secondary.weapon" enabled="0" />    
+	<projectile key="dummy_projectile.projectile" enabled="0" /> 
+
+    <projectile key="selfstun.projectile" enabled="0" />                                       
+
+
+  
+</resources>

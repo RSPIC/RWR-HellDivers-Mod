@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <vehicle name="Resupply" key="hd_resupply_spawn.vehicle"
  map_view_atlas_index="-1" time_to_live="0" should_be_destroyed="0" 
- max_character_collision_speed_on_normal="999.0"
- max_character_collision_speed="999"
+
   >
 	<tag name="metal_thin" />
 	<tag name="hd_resupply_spawn" />

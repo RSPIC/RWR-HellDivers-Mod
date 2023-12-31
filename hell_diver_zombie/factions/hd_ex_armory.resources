@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources >
+<!--此处用于注册HD军械库额外物品，需要确保物品代码中in_stock="1" -->
+<!-- 资源文件注册为KEY注册，不同于武器注册的key注册 -->
+
+<!--武器-->
+    <weapon key="hd_lava17_roger_full_upgrage.weapon" /><!--游骑兵 充能激光-->
+
+<!-- 副手  -->
+    <weapon key="ex_cl_banzai.weapon" /><!--刺雷-->
+
+
+<!--投掷物/信标-->
+    <projectile key="acg_ex_box.projectile" /><!-- Ex 补给箱 -->
+
+    <!-- <carry_item key="lottery.carry_item" />彩票 -->
+
+    <carry_item key="hd_v_upgrage_speed" /><!-- -->
+    <carry_item key="hd_v_upgrage_armor" /><!-- -->
+    <carry_item key="hd_v_upgrage_auto_recover" /><!-- -->
+    <carry_item key="hd_v_upgrage_stratagems_first" /><!-- -->
+    <carry_item key="hd_v_upgrage_auto_heal" /><!-- -->
+    <carry_item key="hd_v_upgrage_clear" /><!-- -->
+
+    <carry_item key="hd_money_10w" /><!-- -->
+    <carry_item key="hd_money_1w" /><!-- -->
+    <carry_item key="hd_money_1k" /><!-- -->
+    <carry_item key="hd_money_100" /><!-- -->
+
+ 
+</resources>

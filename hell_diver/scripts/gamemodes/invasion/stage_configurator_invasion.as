@@ -243,7 +243,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			addStage(setupFinalStage1());     // map11 #12 潜行9
 			addStage(setupStageCasake_Bay());         // Casake_Bay #21
 			addStage(setupStage20());         // map19 #17	13 鹅城
-			addStage(setupRoberto());         // 创意工坊图 ver1.6.0
+			//addStage(setupRoberto());         // 创意工坊图 ver1.6.0  难以修改，删除 12.31 HOTCAT建议
 			addStage(setupClairemont());      // 创意工坊图 ver1.6.0
 			addStage(setupViper());           // 创意工坊图 ver1.6.0
 			addStage(setupDef_lab_koth());    // 创意工坊图 ver1.6.0
@@ -2116,7 +2116,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/viper";
 		stage.m_mapInfo.m_id = "viper";
 
-		stage.m_maxSoldiers = 100;
+		stage.m_maxSoldiers = 160;
 		stage.m_playerAiCompensation = 0;                                       // 
     	stage.m_playerAiReduction = 0.0;                                        // 
 

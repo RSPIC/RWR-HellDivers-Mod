@@ -527,13 +527,7 @@ material add_base{
 	}
 }
 
-material point_soft_edge_100 : add_base
-{   
-    technique{
-    pass{
-        texture_unit{
-            texture point_soft_edge_100.png 	
-}}}}
+
 material laser_muzzle_tri : add_base
 {   
     technique{
@@ -548,13 +542,7 @@ material point_hard_edge : add_base
         texture_unit{
             texture point_hard_edge.png 	
 }}}}
-material point_soft_edge_alpha : alpha_blend_base
-{   
-    technique{
-    pass{
-        texture_unit{
-            texture point_soft_edge_alpha.png 	
-}}}}
+
 material laser_soft_edge_01 : add_base
 {   
     technique{

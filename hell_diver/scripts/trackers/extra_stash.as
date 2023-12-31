@@ -1035,6 +1035,28 @@ class extra_stash : Tracker {
                     newXml.setStringAttribute("A_tag",item_class);
                     newXml.setIntAttribute("value",1);
                 m_playerStashInfoBuck.addPushInObject(sid,newXml);
+            }else{  //未打开情况下，自动存入一些特殊道具
+                if(autoStoreItem.get(itemKey,translateName)){
+                    if(!m_playerStashInfoBuck.isOpen(sid)){
+                        m_playerStashInfoBuck.openStash(sid);
+                    }
+                    if(item_class == "0"){
+                        item_class = "weapon";
+                    }
+                    if(item_class == "1"){
+                        item_class = "projectile";
+                    }
+                    if(item_class == "3"){
+                        item_class = "carry_item";
+                    }
+                    XmlElement newXml("stash");
+                        newXml.setStringAttribute("AA_tag",itemKey);
+                        newXml.setStringAttribute("A_tag",item_class);
+                        newXml.setIntAttribute("value",1);
+                    m_playerStashInfoBuck.addPushInObject(sid,newXml);
+                    m_playerStashInfoBuck.pushInObjects(sid);
+                    m_playerStashInfoBuck.openStash(sid);
+                }
             }
         }
     }

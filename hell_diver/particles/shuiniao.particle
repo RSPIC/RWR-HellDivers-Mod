@@ -446,13 +446,7 @@ material shuiniao_flower_03 : add_base
 			tex_address_mode border
 			tex_border_colour 0 0 0 0
 }}}}
-material point_soft_edge_100 : add_base
-{   
-    technique{
-    pass{
-        texture_unit{
-            texture point_soft_edge_100.png 	
-}}}}
+
 material lens_circle_07_pass : add_base
 {   
     technique{

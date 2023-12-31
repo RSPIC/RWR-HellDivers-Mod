@@ -85,7 +85,7 @@ key="hd_exp_rl112_recoilless_rifle_mk3.weapon"
     
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
     <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="2" can_be_detected_by_footmen="1" 
-	time_to_live="1.5" can_be_detected_by_driver="1" can_be_disarmed="0" name="RL-112 Recoilless Rifle" radius="0.6"> 
+	time_to_live="1.5" can_be_detected_by_driver="1" can_be_disarmed="0" name="RL-112 Recoilless Rifle" radius="0.1"> 
 	
         <result class="spawn" instance_class="projectile" instance_key="hd_exp_rl112_recoilless_rifle_mk3_damage.projectile" 
 		min_amount="30" max_amount="30" offset="0 0.5 0" position_spread="2 0" direction_spread="0.1 0" />

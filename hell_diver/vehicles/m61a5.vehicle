@@ -5,7 +5,7 @@ key="m61a5.vehicle"
 time_to_live_unsteerable="12" 
 map_view_atlas_index="59" 
 minimum_fill_requirement="0.25"
-max_character_collision_speed_on_normal="5"
+
 simulated_damage="100"
 usable_for_cover="1"
 reserves_spawn_point="1"
@@ -41,19 +41,19 @@ character_leave_request_mode="friendly"
 	visual_offset="0 0.6 0.0" /> 
 	
 cannon
-	0<turret offset="0 0 -1" 	weapon_key="m61a5_at.weapon" 			weapon_offset="-0.55 2.3 5.0" 	weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.00005"/>
+	0<turret offset="0 0 -1" 	weapon_key="m61a5_at.weapon" 			weapon_offset="-0.55 2.3 8.0" 	weapon_recoil="0.0" physics_recoil="0.2" max_rotation_step="0.00005"/>
 cannon2
-	1<turret offset="0 0 -1" 	weapon_key="m61a5_at.weapon" 			weapon_offset="0.55 2.3 5.0" 	weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.00005"/>
+	1<turret parent_turret_index="0"  offset="0 0 0" 	weapon_key="m61a5_at.weapon" 			weapon_offset="0.55 2.3 8.0" 	weapon_recoil="0.0" physics_recoil="0.2" max_rotation_step="0"/>
 turret
-	2<turret offset="0 0 -1.08" weapon_key="hd_vehicle_null.weapon" weapon_offset="0 0 0" weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.00005" />
+	2<turret parent_turret_index="0" offset="0 0 -0.08" weapon_key="hd_vehicle_null.weapon" weapon_offset="0 0 0" weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0" />
 command
 	3<turret offset="0.0 0 -0.2" 	weapon_key="hd_vehicle_hmg.weapon" 			weapon_offset="0.0 4.5.0 0.5" 	weapon_recoil="0"  physics_recoil="0" max_rotation_step="0.0001" rotation_range="2.5" parent_turret_index="0"/>
 LMG	
 	4<turret offset="0.8 3.8 -3.2" 	weapon_key="hd_vehicle_lmg.weapon" 			weapon_offset="0.0 0.55 0.0" 	weapon_recoil="0" physics_recoil="0.1" rotation="-9.4" rotation_range="2.1" max_rotation_step="0.0001" parent_turret_index="0" />	
 coax
-	5<turret offset="0.0 3.35 -1.08" 	weapon_key="hd_vehicle_lmg.weapon" 			weapon_offset="-0.62 0.27 1.4" 	weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.00005" rotation_range="0.01" parent_turret_index="0"/>
+	5<turret offset="0.0 3.45 -1.08" 	weapon_key="hd_vehicle_lmg.weapon" 			weapon_offset="-0.72 0.27 1.4" 	weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.00005" rotation_range="0.01" parent_turret_index="0"/>
 coax
-	6<turret offset="0.0 3.35 -1.08" 	weapon_key="hd_vehicle_lmg.weapon" 			weapon_offset="0.62 0.27  1.4" 	weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.00005" rotation_range="0.01" parent_turret_index="0"/>
+	6<turret offset="0.0 3.45 -1.08" 	weapon_key="hd_vehicle_lmg.weapon" 			weapon_offset="0.72 0.27  1.4" 	weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.00005" rotation_range="0.01" parent_turret_index="0"/>
 	
 	<visual class="chassis"                                  mesh_filename="m61a5_body.mesh" texture_filename="m61a5_body.jpg" max_tilt="0.06" />
 	<visual class="turret" turret_index="0" 			 	 mesh_filename="m61a5_gun.mesh" 					texture_filename="m61a5_turret.jpg" />

@@ -1829,13 +1829,7 @@ material water_bobble_alpha : alpha_blend_base
         texture_unit{
             texture water_bobble_alpha.png 	
 }}}}
-material point_soft_edge_100 : add_base
-{   
-    technique{
-    pass{
-        texture_unit{
-            texture point_soft_edge_100.png 	
-}}}}
+
 material point_soft_edge_100_pass : add_base
 {   
     technique{

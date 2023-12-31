@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 某些弹头和字母弹头里注册的特效会出现失效的情况，主要发生在result特效下 -->
+<!-- 将接口切换为activated能正常触发 -->
+<!-- 或者在其他弹头里，类似本文件的弹头里重复注册一次后，能够生效 -->
+<!-- 本弹头用于修复未生效的特效 -->
+<projectile class="grenade" name="" key="test_particle.projectile" slot="0" radius="0.15" pulldown_in_air="15.0">
+    <!-- <result class="blast" radius="3" damage="0.0" push="0.0" decal="1" character_state="death" faction_compare="not_equal" damage_origin_vehicle="0"/> -->
+    <trigger class="time" time_to_live="0.2"/>
+    <rotation class="motion" />
+    <model mesh_filename="" />
+    <hud_icon filename="call_deny_right.png" />
+    <commonness value="0" />
+    <inventory encumbrance="1.0" price="300000.0" in_stock="0" />
+    <capacity value="1" source="rank" source_value="0.0" />
+ 	<throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
+	speed_estimation_far="70.0" max_speed="70.0" randomness="0.0" tweak_factor="1.0" />
+	<!-- <result class="notify_script" key="upgrade" /> -->
+	<result class="blast" radius="5" damage="0" push="0.5" decal="0" character_state="none" faction_compare="not_equal" />
+
+    <effect class="result" key="terrain" ref="shinano_cyclone_01"/>
+    <effect class="result" key="terrain" ref="shinano_result_ijn_icon_blast"/>
+    <effect class="result" key="terrain" ref="shinano_result_anim_butterfly"/>
+    <effect class="result" key="terrain" ref="shinano_result_anim_butterfly_02"/>
+    <effect class="result" key="terrain" ref="shinano_result_anim_butterfly_03"/>
+    <effect class="result" key="terrain" ref="shinano_result_anim_butterfly_04"/>
+	
+	<effect class="result" key="terrain" ref="laisha_HGY_result_blast_firesmoke" lighting="0"/>
+	<effect class="result" key="terrain" ref="laisha_HGY_result_blast_AmbientLight" lighting="0"/>
+	<effect class="result" key="terrain" ref="laisha_HGY_result_blast_impact_center_light" lighting="0"/>
+	<effect class="result" key="terrain" ref="laisha_HGY_result_blast_impact_ring" lighting="0"/>
+	<effect class="result" key="terrain" ref="laisha_HGY_result_blast_impact_ring_2" lighting="0"/>
+	<effect class="result" key="terrain" ref="laisha_HGY_result_blast_impact_spark" lighting="0"/>
+	<effect class="result" key="terrain" ref="laisha_HGY_result_blast_impact_spark_2" lighting="0"/>
+
+	<effect class="result" key="terrain" ref="laisha_SouthernCross_result_ring_01" lighting="0"/>
+	<effect class="result" key="terrain" ref="laisha_SouthernCross_result_impact_01" lighting="0"/>
+	<effect class="result" key="terrain" ref="laisha_SouthernCross_result_vertical_impact_1" lighting="0"/>
+	<effect class="result" key="terrain" ref="laisha_SouthernCross_result_vertical_impact_2" lighting="0" post_processing="1"/>
+	<effect class="result" key="terrain" ref="laisha_SouthernCross_result_center_light" lighting="0"/>
+	<effect class="result" key="terrain" ref="laisha_SouthernCross_result_center_ambient_light" lighting="0"/>
+
+    <effect class="result" key="terrain" ref="general_result_ground_fire" lighting="0"/>
+    <effect class="result" key="terrain" ref="general_result_ground_fire_2" lighting="0"/>
+    <effect class="result" key="terrain" ref="general_result_ground_fire_3" lighting="0"/>
+    <effect class="result" key="terrain" ref="general_result_ground_fire_4" lighting="0"/>
+    <effect class="result" key="terrain" ref="ifrit_result_ground_lava" lighting="0"/>
+
+	<effect class="result" key="terrain" ref="bugs_impaler_result_sharp_rock_up" lighting="0"/>  
+	<effect class="result" key="terrain" ref="bugs_impaler_result_sharp_rock_still" lighting="0"/> 
+    <effect class="result" key="terrain" ref="bugs_impaler_result_side_dust" lighting="1"/>
+	<effect class="result" key="terrain" ref="bugs_behemoth_result_impact_cracks_small" lighting="1"/>
+	<effect class="result" key="terrain" ref="bugs_behemoth_result_ambient_smoke_small" lighting="1"/>
+
+	<effect class="result" key="terrain" ref="bugs_behemoth_result_impact_cracks" lighting="0" post_processing="0"/>
+	<effect class="result" key="terrain" ref="bugs_behemoth_result_up_dust1" lighting="0" post_processing="0"/>
+	<effect class="result" key="terrain" ref="bugs_behemoth_result_up_dust2" lighting="0" post_processing="0"/>
+	<effect class="result" key="terrain" ref="bugs_behemoth_result_up_dust3" lighting="0" post_processing="0"/>
+	<effect class="result" key="terrain" ref="bugs_behemoth_result_up_dust4" lighting="0" post_processing="0"/>
+	<effect class="result" key="terrain" ref="bugs_behemoth_result_ambient_smoke" lighting="0" post_processing="0"/>
+	<effect class="activated" ref="bugs_behemoth_activated_forward_updust" />
+
+    <effect class="result" key="terrain" ref="g41_gl_impact_1" />
+	<effect class="result" key="terrain" ref="g41_gl_spray_impact" />
+	<effect class="result" key="terrain" ref="g41_gl_thunder_01" />
+	<effect class="result" key="terrain" ref="g41_gl_rising_flame_01" />
+	<effect class="result" key="terrain" ref="g41_gl_rising_flame_02" />
+	<effect class="result" key="terrain" ref="g41_gl_rising_particle_01" />
+	<effect class="result" key="terrain" ref="g41_gl_shining_particle_01" />
+	<effect class="result" key="terrain" ref="g41_gl_hit_ground_light_01" />
+	<effect class="result" key="terrain" ref="g41_gl_area_light_01" />
+	<!-- <effect class="activated" ref="alert_center_alerticon_hight_frequncy" lighting="0" /> -->
+	<!--高频率感叹号警告标识-->
+
+	<sound class="result" key="static_object" copy="terrain" />
+	<sound class="result" key="vehicle" copy="terrain" />
+	<sound class="result" key="character" copy="terrain" />
+	<sound class="result" key="shield" copy="terrain" />
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="shield" copy="terrain" />			
+	<effect class="result" key="vehicle" copy="terrain" />			
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+</projectile>

@@ -1384,6 +1384,9 @@ bool g_debugMode = false;
 bool g_server_activity = false;
 bool g_server_activity_racing = false;
 int g_server_difficulty_level = 0;
+string g_GameMode = "";
+
+float g_stratagems_call_factor = 1.0;
 //----------------------------------------------------------
 //初始化用Tracker
 class Initiate : Tracker {
@@ -1404,6 +1407,8 @@ class Initiate : Tracker {
 		m_server_difficulty_level = settings.m_server_difficulty_level;
 		g_server_difficulty_level = m_server_difficulty_level;
 
+		g_GameMode = settings.m_GameMode;
+
 		@g_factionInfoBuck = factionInfoBuck();	
  		@g_playerInfoBuck = playerInfoBuck();
  		@g_battleInfoBuck = battleInfoBuck();
@@ -1413,6 +1418,15 @@ class Initiate : Tracker {
 		g_firstUseInfoBuck.addInfo("admin");
 		//First Run
 		initiateFactionInfo();
+		GameModeInitiate();
+	}
+
+	protected void GameModeInitiate(){
+		if(g_GameMode != ""){
+			if(g_GameMode == "Zombie"){
+				g_stratagems_call_factor = 5.0;
+			}
+		}
 	}
 	// --------------------------------------------
 	bool hasEnded() const {

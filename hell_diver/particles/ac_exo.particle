@@ -1,0 +1,354 @@
+author: RST
+2023.12.29
+未经授权不可复用、修改使用
+AC系列武器特效
+
+--------------------------------------------------------------------------------------------------------------------
+particle_system ac_muzzle_knife_ahead
+{
+	quota 150
+	material crescent_01_alt1
+	particle_width 20
+	particle_height 20
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 15
+		time_to_live 3
+		duration 0.1
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0 1
+		time1 0.9
+		colour1 1 0.3 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system ac_muzzle_knife_ahead_2 : ac_muzzle_knife_ahead
+{
+	material crescent_01
+	emitter Point
+	{
+	}
+	affector Rotator
+	{
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.2 0 1
+		time1 0.9
+		colour1 1 0.2 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+
+particle_system ac_muzzle_activated_spark
+{
+	quota 800
+	emit_emitter_quota 800
+	material muzzle_lens_01
+	particle_width 0.3
+	particle_height 3
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.02
+	
+	emitter Point		
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 13
+		time_to_live 3
+		duration 0.1
+		emit_emitter tag1
+	}
+	emitter Box		
+	{
+		name tag1
+		angle 180
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity 0.1
+		time_to_live_min 0.1
+		time_to_live_max 0.2
+		duration 0
+        width 15
+		height 15
+		depth 7
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	90
+		rotation_range_end	90
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0 1
+		time1 0.6
+		colour1 1 0.3 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 5
+		scope 100
+		keep_velocity false
+	}
+}
+particle_system ac_result_cannon_blast_smoke
+{
+	quota 50
+	material add_smoke_2
+	particle_width 2.5
+	particle_height 2.5
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 90
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity_min 10
+		velocity_max 15
+		time_to_live_min 0.05
+		time_to_live_max 0.1
+		duration 0.1
+		depth 1.5
+		height 1.5
+		width 1.5
+	}
+	affector Scaler
+	{
+		rate -20
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	-45
+		rotation_speed_range_end	45
+		rotation_range_start	0
+		rotation_range_end	180
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.7
+		colour1 1 0.7 0.3 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system ac_result_cannon_blast_AmbientLight
+{
+	quota 50
+	material point_soft_edge_100
+	particle_width 6
+	particle_height 6
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.10
+		duration 0.01
+	}
+	affector Scaler
+	{
+		rate 30
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.2 0.2 0.14 1
+		time1 1
+		colour1 0 0 0 0
+	}
+}
+
+particle_system ac_result_spark
+{
+	quota 50
+	material point_soft_edge_100
+	particle_width 0.2
+	particle_height 0.8
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 90
+		colour 1 0.3 0 1
+		direction 0 1 0
+		emission_rate 250
+		position 0 0 0
+		velocity_min 25
+		velocity_max 50
+		time_to_live_min 0.05
+		time_to_live_max 0.1
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0 1
+		time1 0.7
+		colour1 1 0.3 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material crescent_01_alt1 : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+		scene_blend add
+        texture_unit{
+            texture TEX_cloud_02.png 	
+			scroll_anim 0.1 0
+			rotate_anim 0.1
+			tex_address_mode wrap
+		}
+		texture_unit{
+            texture crescent_01_alt1.png 
+			colour_op modulate
+			tex_address_mode wrap
+		}
+	}
+}}
+
+material muzzle_lens_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture muzzle_lens_01.png 	
+}}}}
+material crescent_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture crescent_01.png 	
+}}}}
+material ac_mg_trail : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture ac_mg_trail.png 	
+}}}}

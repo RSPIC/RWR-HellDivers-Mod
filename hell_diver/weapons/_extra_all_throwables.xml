@@ -39,5 +39,8 @@
     <!-- 投掷物 -->
     <projectile file="_ex_call.xml" /><!--所有呼叫信标-->
 
+    <!-- 特殊 -->
+    <projectile file="particle.projectile" /><!-- 修复特效 -->
+
 
 </projectiles>

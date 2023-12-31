@@ -51,6 +51,7 @@ class vehicle_recycle : Tracker {
             return;
         }
         int playerId = character.getIntAttribute("player_id");
+        string name = g_playerInfoBuck.getNameByPid(playerId);
         int factionId = character.getIntAttribute("faction_id");
         const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
         if (player !is null) {
@@ -100,6 +101,13 @@ class vehicle_recycle : Tracker {
                                 _log("vehicle_recycle_key exists?: " + vehicle_recycle_key.exists(vehiclekey));
                                 if(vehicle_recycle_key.exists(vehiclekey)){
                                     if(vehicleHealth <= 0){continue;}     //排除空节点载具
+                                    g_userCountInfoBuck.addCount(name,"vehicle_recycle_"+vehiclekey);
+                                    int m_count_recycle_time = 0;
+                                    g_userCountInfoBuck.getCount(name,"vehicle_recycle_"+vehiclekey,m_count_recycle_time);
+                                    if(m_count_recycle_time > 7){
+                                        _notify(m_metagame,playerId,"该载具当局回收次数达上限");
+                                        return;
+                                    }
                                     if(count_recycle_time == 1){return;} //只回收一辆
                                     //摧毁载具
                                     remove_vehicle(m_metagame,vehicleId);

@@ -260,6 +260,16 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			ScoredResource("token_zero401_casual_wear.projectile","projectile",1.0f,4),
 			ScoredResource("token_maria_schariac.projectile","projectile",1.0f,4),
 			ScoredResource("token_shinano.projectile","projectile",1.0f,4),
+			// 1.6.4
+			ScoredResource("token_irene.projectile","projectile",3.0f,4),
+			ScoredResource("token_aur.projectile","projectile",3.0f,4),
+			ScoredResource("token_ein.projectile","projectile",3.0f,4),
+			ScoredResource("token_soph.projectile","projectile",3.0f,4),
+			ScoredResource("token_florence_spring.projectile","projectile",3.0f,4),
+			ScoredResource("token_minami_rena.projectile","projectile",3.0f,4),
+			ScoredResource("token_racing_miku_2022.projectile","projectile",3.0f,4),
+			ScoredResource("token_tail_yellow.projectile","projectile",3.0f,4),
+			ScoredResource("token_togo_miomori.projectile","projectile",3.0f,4),
 
 			//AI类信物
 			ScoredResource("ai_token_asuma_toki.projectile","projectile",1.0f,2)

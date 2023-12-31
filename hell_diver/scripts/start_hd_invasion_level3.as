@@ -43,7 +43,7 @@ void main(dictionary@ inputData) {
 
         settings.m_startServerCommand = """
 <command class='start_server'
-	server_name='[地狱潜兵] 难度 3-挂机 '
+	server_name='[地狱潜兵] 挂机/抽卡/赛车服 '
 	server_port='1244'
 	url='https://steamcommunity.com/sharedfiles/filedetails/?id=2910392031'
 	register_in_serverlist='1'

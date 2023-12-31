@@ -749,13 +749,7 @@ material bronya_word_circle_04 : add_base
         texture_unit{
             texture bronya_word_circle_04.png 	
 }}}}
-material point_soft_edge_100 : add_base
-{   
-    technique{
-    pass{
-        texture_unit{
-            texture point_soft_edge_100.png 	
-}}}}
+
 material diamond_fill_normal_01 : add_base
 {   
     technique{

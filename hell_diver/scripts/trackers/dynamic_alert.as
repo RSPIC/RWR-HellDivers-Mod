@@ -227,6 +227,148 @@ const array<SpawnInfo@> debug = {
     SpawnInfo("bugs_Baneling",1)
 };
 
+//------------------------------------------
+dictionary score_level_3 = {
+    {"Scout",1.0},
+    {"Tunnel",0.5},
+    {"Vanguard",0.3},
+    {"Baneling",0.1},
+    {"ZergBaneling",0.1},
+    {"Shadow",1.2},
+    {"Warrior",2.0},
+    {"Elite",0.75},
+    {"Stalker",1.5},
+    {"BroodCommander",0.1},
+    {"Behemoth",0.00},
+    {"Tank",0.0},
+    {"Impaler",0.0},
+
+    {"Squadleader",1.5},
+    {"Legionnaire",0.8},
+    {"Initiate",0.5},
+    {"Berserker",0.2},
+    {"Comrade",1.0},
+    {"Grotesque",0.1},
+    {"Tesla",0.5},
+    {"Hound",0.5},
+    {"Butcher",0.5},
+    {"Immolator",1.0},
+    {"Hulk",0},
+    {"Warlord",0.02}
+};
+dictionary score_level_6 = {
+    {"Scout",1.0},
+    {"Tunnel",0.5},
+    {"Vanguard",0.3},
+    {"Baneling",0.1},
+    {"ZergBaneling",0.1},
+    {"Shadow",1.2},
+    {"Warrior",3.0},
+    {"Elite",0.75},
+    {"Stalker",1.5},
+    {"BroodCommander",0.2},
+    {"Behemoth",0.0},
+    {"Tank",0.0},
+    {"Impaler",0.08},
+
+    {"Squadleader",1.5},
+    {"Legionnaire",0.2},
+    {"Initiate",0.5},
+    {"Berserker",0.2},
+    {"Comrade",1.0},
+    {"Grotesque",0.1},
+    {"Tesla",0.2},
+    {"Hound",0.3},
+    {"Butcher",0.5},
+    {"Immolator",1.0},
+    {"Hulk",0},
+    {"Warlord",0.02}
+};
+dictionary score_level_9 = {
+    {"Scout",1.0},
+    {"Tunnel",0.5},
+    {"Vanguard",1.2},
+    {"Baneling",0.2},
+    {"ZergBaneling",0.2},
+    {"Shadow",1.2},
+    {"Warrior",2.0},
+    {"Elite",0.75},
+    {"Stalker",1.5},
+    {"BroodCommander",0.3},
+    {"Behemoth",0.01},
+    {"Tank",0.1},
+    {"Impaler",0.08},
+
+    {"Squadleader",1.5},
+    {"Legionnaire",0.8},
+    {"Initiate",0.5},
+    {"Berserker",0.2},
+    {"Comrade",1.0},
+    {"Grotesque",0.1},
+    {"Tesla",0.5},
+    {"Hound",0.5},
+    {"Butcher",0.5},
+    {"Immolator",1.0},
+    {"Hulk",0},
+    {"Warlord",0.02}
+};
+dictionary score_level_12 = {
+    {"Scout",1.0},
+    {"Tunnel",0.5},
+    {"Vanguard",1.2},
+    {"Baneling",0.2},
+    {"ZergBaneling",0.2},
+    {"Shadow",1.2},
+    {"Warrior",2.0},
+    {"Elite",0.75},
+    {"Stalker",1.5},
+    {"BroodCommander",0.3},
+    {"Behemoth",0.01},
+    {"Tank",0.1},
+    {"Impaler",0.08},
+
+    {"Squadleader",1.5},
+    {"Legionnaire",0.8},
+    {"Initiate",0.5},
+    {"Berserker",0.2},
+    {"Comrade",1.0},
+    {"Grotesque",0.1},
+    {"Tesla",0.5},
+    {"Hound",0.5},
+    {"Butcher",0.5},
+    {"Immolator",1.0},
+    {"Hulk",0},
+    {"Warlord",0.02}
+};
+dictionary score_level_15 = {
+    {"Scout",1.0},
+    {"Tunnel",0.5},
+    {"Vanguard",1.2},
+    {"Baneling",0.2},
+    {"ZergBaneling",0.2},
+    {"Shadow",1.2},
+    {"Warrior",2.0},
+    {"Elite",0.75},
+    {"Stalker",1.5},
+    {"BroodCommander",0.3},
+    {"Behemoth",0.01},
+    {"Tank",0.1},
+    {"Impaler",0.08},
+
+    {"Squadleader",1.5},
+    {"Legionnaire",0.8},
+    {"Initiate",0.5},
+    {"Berserker",0.2},
+    {"Comrade",1.0},
+    {"Grotesque",0.1},
+    {"Tesla",0.5},
+    {"Hound",0.5},
+    {"Butcher",0.5},
+    {"Immolator",1.0},
+    {"Hulk",0},
+    {"Warlord",0.02}
+};
+
 //-----------------------------------------
 void Alert_Spawn(Metagame@ metagame,int factionId, Vector3 position,const array<SpawnInfo@> spawn_list) {
     //前期撰写考虑不全，无法区分生化人和其他阵容的level情况,懒得修改
@@ -298,6 +440,8 @@ class dynamic_alert : Tracker {
 
         m_cd_timer = m_cd_time;
         _log("dynamic_alert initiate.");
+
+        setServerLevelFactionSpawnScore();
 	}
 
 	bool hasEnded() const {
@@ -566,6 +710,32 @@ class dynamic_alert : Tracker {
                 if(m_fid == -1){return;}
                 Alert_Spawn(m_metagame,m_fid,position,debug);
             }
+        }
+    }
+
+    protected void setServerLevelFactionSpawnScore(){
+        array<const XmlElement@> AllFactions = getFactions(m_metagame);	
+        for (uint i = 0; i < AllFactions.size(); ++i) {
+            const XmlElement@ Faction = AllFactions[i];
+            int fid = Faction.getIntAttribute("id");
+            string name = Faction.getStringAttribute("name");
+            array<const XmlElement@>@ groups = getSoldierGroups(m_metagame,fid);
+            for(uint j =0; j<groups.size(); ++j){
+                string groupsName = groups[j].getStringAttribute("name");
+                float spawn_score = groups[j].getIntAttribute("spawn_score");
+                if(g_server_difficulty_level == 15){
+                    score_level_15.get(groupsName,spawn_score);
+                }else if(g_server_difficulty_level == 12){
+                    score_level_12.get(groupsName,spawn_score);
+                }else if(g_server_difficulty_level == 9){
+                    score_level_9.get(groupsName,spawn_score);
+                }else if(g_server_difficulty_level == 6){
+                    score_level_6.get(groupsName,spawn_score);
+                }else if(g_server_difficulty_level == 3){
+                    score_level_3.get(groupsName,spawn_score);
+                }
+                //setSpawnScore(m_metagame,fid,groupsName,spawn_score);
+		    }
         }
     }
 }

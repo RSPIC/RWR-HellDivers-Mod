@@ -749,13 +749,7 @@ material R_point_01 : alpha_blend_base
         texture_unit{
             texture R_point_01.png 	
 }}}}
-material point_soft_edge_100 : add_base
-{   
-    technique{
-    pass{
-        texture_unit{
-            texture point_soft_edge_100.png 	
-}}}}
+
 material void_trail : add_base
 {   
     technique{

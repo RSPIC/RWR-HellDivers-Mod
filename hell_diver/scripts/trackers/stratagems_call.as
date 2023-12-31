@@ -578,11 +578,15 @@ class stratagems_call : Tracker {
 			if ( word_size == 1 ){
 				string stratagemsKey;
 				if(!code_stratagems.get(message,stratagemsKey)){return;}
+				if(g_stratagems_call_factor == 0){
+					_notify(m_metagame,pid,"当前游戏模式无法使用战略呼叫");
+					return;
+				}
 				if(!p_cd_lists.exists(p_name,stratagemsKey) ){
 					float cd = 12;
 					stratagems_CD.get(stratagemsKey,cd);
 					if(g_vestInfoBuck !is null){
-						cd = cd*(1-0.1*g_vestInfoBuck.getStratagemsFirst(p_name));
+						cd = cd*(1-0.1*g_vestInfoBuck.getStratagemsFirst(p_name))*g_stratagems_call_factor; 
 					}
 					p_cd_lists.addNew(p_name,pid,stratagemsKey,cd);
 					int cid = g_playerInfoBuck.getCidByPid(pid);

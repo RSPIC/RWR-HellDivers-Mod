@@ -85,6 +85,7 @@ class schedule_Manager : Tracker {
 			const XmlElement@ player = m_players[j];
 			if(player is null){return;}
             auto_heal(player);
+            //update_AllInfo();
         }
     }
     // --------------------------------------------
@@ -165,6 +166,32 @@ class schedule_Manager : Tracker {
             g_playerInfoBuck.setHash(name,profile_hash);
             g_playerInfoBuck.setSid(name,sid);
         }else{
+            g_playerInfoBuck.addNewInfo(name,pid,cid,fid,dead,wound,xp,rp,group);
+            g_playerInfoBuck.setHash(name,profile_hash);
+            g_playerInfoBuck.setSid(name,sid);
+        }
+    }
+    // --------------------------------------------
+    void update_AllInfo(){
+        array<const XmlElement@> players = getPlayers(m_metagame);
+        g_playerInfoBuck.clearAll();
+        for(uint i = 0 ; i < players.size() ; i++){
+            const XmlElement@ player = players[i];
+            if(player is null){continue;}
+            string name = player.getStringAttribute("name");
+            string profile_hash = player.getStringAttribute("profile_hash");
+            string sid = player.getStringAttribute("sid");
+            int cid = player.getIntAttribute("character_id");
+            int pid = player.getIntAttribute("player_id");
+            if(g_debugMode) _report(m_metagame,"更新玩家CID，玩家名为="+name+",CID为="+cid);
+            int fid = player.getIntAttribute("faction_id");
+            const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+            if(character is null){continue;}
+            int wound = character.getIntAttribute("wounded");
+            int dead = character.getIntAttribute("dead");
+            string group = character.getStringAttribute("soldier_group_name");
+            float xp = character.getFloatAttribute("xp");
+            float rp = character.getFloatAttribute("rp");
             g_playerInfoBuck.addNewInfo(name,pid,cid,fid,dead,wound,xp,rp,group);
             g_playerInfoBuck.setHash(name,profile_hash);
             g_playerInfoBuck.setSid(name,sid);

@@ -576,13 +576,7 @@ material linear_laser : add_base
         texture_unit{
             texture linear_laser.png 	
 }}}}
-material point_soft_edge_100 : add_base
-{   
-    technique{
-    pass{
-        texture_unit{
-            texture point_soft_edge_100.png 	
-}}}}
+
 material diamond_fill_soft_02 : add_base
 {   
     technique{

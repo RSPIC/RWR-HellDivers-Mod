@@ -4,7 +4,7 @@ name="Panther A"
 key="panther_a.vehicle" 
 map_view_atlas_index="56" 
 minimum_fill_requirement="0.5" 
-max_character_collision_speed_on_normal="3.5" 
+
 allow_ai_to_use="0" 
 ai_abandon_when_unsteerable="0" 
 character_leave_request_mode="friendly"
@@ -18,7 +18,7 @@ character_leave_request_mode="friendly"
 	<tire_set offset="1.76 0.0 +3.75" radius="0.52" />
 	<tire_set offset="1.76 0.0 -3.75" radius="0.52" />
 	<control max_limiter_speed="6.0" max_speed="11.6" acceleration="10.9" max_reverse_speed="8.6" min_health_to_steer="1.5" max_rotation="0.0" max_water_depth="1.8" steer_smoothening="0.8" tracked="1" gears="1" />
-	<physics remove_collision_threshold="45.6" extent="3.92 0.0 8.1" offset="0 0 0" top_offset="0 3 0" collision_model_pos="0 1 -0.05" collision_model_extent="4.02 2.6 8.2" visual_offset="0 0.3 0"/>
+	<physics remove_collision_threshold="45.6" extent="3.92 0.0 8.1" offset="0 0 0" top_offset="0 3 0" collision_model_pos="0 1.3 -0.05" collision_model_extent="4.02 2.6 7.4" visual_offset="0 0.3 0"/>
 	
 	0<turret offset="0.0 2.5 -0.33" weapon_key="panther_cannon.weapon" weapon_offset="0.0 0.72 2.08" weapon_recoil="0.2" max_rotation_step="0.00006" />
 	1<turret offset="0 0 0" weapon_key="hd_vehicle_null.weapon" weapon_offset="0 0 0" weapon_recoil="0.0" max_rotation_step="0"/>

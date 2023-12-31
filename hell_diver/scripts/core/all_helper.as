@@ -583,3 +583,13 @@ bool isVectorInMap(Vector3&in position,int range = 64){
 	}
 	return true;
 }
+
+void setSpawnScore(Metagame@ metagame,int fId,string name,float spawnScore)
+{
+	XmlElement command("command");
+	command.setStringAttribute("class", "faction");
+	command.setIntAttribute("faction_id", fId);
+	command.setStringAttribute("soldier_group_name", name);
+	command.setFloatAttribute("spawn_score", spawnScore);
+	metagame.getComms().send(command);
+}

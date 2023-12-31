@@ -177,7 +177,32 @@ dictionary canStoreItem = {
 
     {"ref.weapon","测试武器"}
 };
+dictionary autoStoreItem = {
+    {"collect_fumo_cirno.carry_item","[琪露诺]"},
+    {"collect_fumo_flandre_scarlet.carry_item","[芙兰朵露]"},
+    {"collect_fumo_hong_meiling.carry_item","[红美铃]"},
+    {"collect_fumo_inu_sakuya.carry_item","[十六夜 咲夜]"},
+    {"collect_fumo_junko.carry_item","[纯狐]"},
+    {"collect_fumo_koishi_komeiji.carry_item","[古明地恋]"},
+    {"collect_fumo_mike_goutokuji.carry_item","[豪德寺三毛]"},
+    {"collect_fumo_mokou_fujiwara.carry_item","[藤原妹红]"},
+    {"collect_fumo_nitori_kawashiro.carry_item","[河城荷取]"},
+    {"collect_fumo_reimu.carry_item","[灵梦]"},
+    {"collect_fumo_rumia.carry_item","[露米娅]"},
+    {"collect_fumo_sanae_kochiya.carry_item","[东风谷早苗]"},
+    {"collect_fumo_shion_yorigami.carry_item","[依神紫苑]"},
+    {"collect_fumo_suwako_moriya.carry_item","[泄矢诹访子]"},
+    {"collect_fumo_youmu_konpaku.carry_item","[魂魄妖梦]"},
+    {"collect_fumo_yuyuko.carry_item","[西行寺幽幽子]"},
+    {"collect_doll_ba_peroro.carry_item","[佩洛洛]"},
 
+    {"samples_acg.carry_item","[研究点]"},
+    {"samples_bugs_ex.carry_item","[虫族样本]"},
+    {"samples_cyborgs_ex.carry_item","[生化人样本]"},
+    {"samples_illuminate_ex.carry_item","[光能样本]"},
+
+    {"hd_vote_ticket","[民本选票]"}
+};
 XmlElement@ getStashXmlElement(string AA_tag,string A_tag,int value){
     XmlElement deleteXml("stash");
         deleteXml.setStringAttribute("AA_tag",AA_tag);
@@ -633,7 +658,7 @@ array<stashExchangeList@> ExchangeLists ={
                 getStashXmlElement("hd_vote_ticket","carry_item",10)
             }, 
             array<XmlElement@>= {
-                getStashXmlElement("lottery_superearth.carry_item","carry_item",11)
+                getStashXmlElement("lottery_superearth.carry_item","carry_item",12)
             }
         ),
         //44 光能者样本[10] 换 研究点[1]

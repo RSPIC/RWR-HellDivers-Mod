@@ -18,6 +18,7 @@
 //过图结算
 //过图时发医疗自起
 //战役结束后禁止TK玩家
+//暖服奖励
 
 class match_end : Tracker {
 	protected Metagame@ m_metagame;
@@ -29,6 +30,7 @@ class match_end : Tracker {
     protected bool m_ended;
     protected bool m_ended_report;
     protected bool reward;
+    protected array<string> m_wornup_reward_list;
 	// --------------------------------------------
 	match_end(Metagame@ metagame) {
 		@m_metagame = @metagame;
@@ -39,6 +41,7 @@ class match_end : Tracker {
         m_ended_report = false;
         reward = false;
         m_end_timer = 30;
+        m_wornup_reward_list.resize(0);
 	}
 
 	bool hasEnded() const {
@@ -90,6 +93,28 @@ class match_end : Tracker {
         g_battleInfoBuck.addDead(name);
     }
     // ----------------------------------------------------
+	protected void handlePlayerConnectEvent(const XmlElement@ event) {
+		const XmlElement@ player = event.getFirstElementByTagName("player");
+		if(player is null){return;}
+		string name = player.getStringAttribute("name");
+        int pid = player.getIntAttribute("player_id");
+        array<const XmlElement@> players = getPlayers(m_metagame);
+        if(players.size() <= 3){
+            if(g_server_activity){
+                return;
+            }
+            m_wornup_reward_list.resize(0);
+            m_wornup_reward_list.insertLast(name);
+            _notify(m_metagame,pid,"恭喜你获得暖服奖励资格，当局游戏结束时超过8人，你可获得两倍结算奖励");
+            for(uint i = 0 ; i < players.size() ; ++i ){
+                @player = players[i];
+                if(player is null){continue;}
+                name = player.getStringAttribute("name");
+                m_wornup_reward_list.insertLast(name);
+            }
+        }
+	}
+    // ----------------------------------------------------
     protected void PlayEndSound(){
         array<string> sound_list = {
             "hd_complete_mission_and_evacuation_1.wav",
@@ -133,9 +158,10 @@ class match_end : Tracker {
             const XmlElement@ player = players[i];
             if(player is null){return;}
             int cid = player.getIntAttribute("character_id");
+            int pid = player.getIntAttribute("player_id");
             string name = player.getStringAttribute("name");
-            float xp = g_battleInfoBuck.getXpReward(m_metagame,player);
             float rp = g_battleInfoBuck.getRpReward(m_metagame,player);
+            float xp = g_battleInfoBuck.getXpReward(m_metagame,player);
             if(rp >= 648000){
                 rp = 648000;
             }
@@ -144,6 +170,15 @@ class match_end : Tracker {
             }
             GiveRP(m_metagame,cid,int(rp));
             GiveXP(m_metagame,cid,xp);
+            if(players.size() >= 8){
+                for(uint j = 0 ; j < m_wornup_reward_list.size() ; j++){
+                    string r_name = m_wornup_reward_list[j];
+                    if(r_name == name){
+                        GiveRP(m_metagame,cid,int(rp));
+                        _notify(m_metagame,pid,"暖服奖励已发放，额外RP奖励："+int(rp));
+                    }
+                }
+            }
 
             bool isGetLootRewrd = g_battleInfoBuck.getLootReward(name);
             if(isGetLootRewrd || g_debugMode){
@@ -176,7 +211,7 @@ class match_end : Tracker {
     }
     // 战役结束后禁止TK玩家 --------------------------------------------
 	protected void handleCharacterKillEvent(const XmlElement@ event) {
-        if(m_ended && m_end_timer <= 15){
+        if(m_ended && m_end_timer <= 22){
             const XmlElement@ killer = event.getFirstElementByTagName("killer");
             if(killer is null){return;}
             const XmlElement@ target = event.getFirstElementByTagName("target");

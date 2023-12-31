@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <vehicle 
-max_character_collision_speed_on_normal="999"
-max_character_collision_speed="999"
+file="_vehicle_none.base" 
 name="仓库-赛车" key="racing_car6.vehicle" map_view_atlas_index="19" respawn_time="1" >
 	<tire_set offset="1.21 0.0 1.3" radius="0.636" />
 	<tire_set offset="1.21 0.0 -1.3" radius="0.636" />

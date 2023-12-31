@@ -61,6 +61,7 @@ class UserSettings {
 	bool m_server_test_mode = false;
 	bool m_server_activity = false;
 	bool m_server_activity_racing = false;
+	string m_GameMode = "";
 	array<string> m_overlayPaths;
 
 	// --------------------------------------------
@@ -151,6 +152,9 @@ class UserSettings {
 			if(settings.hasAttribute("server_activity_racing")){
 				m_server_activity_racing = settings.getBoolAttribute("server_activity_racing");
 			}
+			if(settings.hasAttribute("GameMode")){
+				m_GameMode = settings.getStringAttribute("GameMode");
+			}
 		}
 	}
 
@@ -187,6 +191,8 @@ class UserSettings {
 		settings.setBoolAttribute("server_test_mode", m_server_test_mode);
 		settings.setBoolAttribute("server_activity_racing", m_server_activity_racing);
 		settings.setBoolAttribute("server_activity", m_server_activity);
+
+		settings.setStringAttribute("GameMode", m_GameMode);
 
 		return settings;
 	}

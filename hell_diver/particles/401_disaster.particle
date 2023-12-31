@@ -353,13 +353,7 @@ material point_hard_edge : add_base
         texture_unit{
             texture point_hard_edge.png 	
 }}}}
-material point_soft_edge_100 : add_base
-{   
-    technique{
-    pass{
-        texture_unit{
-            texture point_soft_edge_100.png 	
-}}}}
+
 material square_soft_edge_401_disaster : add_base
 {   
     technique{

@@ -6,7 +6,7 @@ key="ex_apocalypse_tank.vehicle"
 time_to_live_unsteerable="12" 
 map_view_atlas_index="59" 
 minimum_fill_requirement="0.25"
-max_character_collision_speed_on_normal="5"
+
 simulated_damage="100"
 usable_for_cover="1"
 reserves_spawn_point="1"
@@ -47,8 +47,8 @@ character_leave_request_mode="friendly"
 
 	0<turret offset="0 0 1" weapon_key="ex_apocalypse_tank_gl.weapon" weapon_offset="-0.3 2.0 5.5" 
 	weapon_recoil="0" physics_recoil="0.1" max_rotation_step="0.0002"  />
-	1<turret offset="0 0 1" weapon_key="ex_apocalypse_tank_gl.weapon" weapon_offset="0.3 2.0 5.5" 
-	weapon_recoil="0" physics_recoil="0.1" max_rotation_step="0.0002"  />
+	1<turret offset="0 0 0" weapon_key="ex_apocalypse_tank_gl.weapon" weapon_offset="0.3 2.0 5.5" 
+	weapon_recoil="0" physics_recoil="0.1" max_rotation_step="0" parent_turret_index="0" />
 	2<turret offset="0 0 1" weapon_key="ex_apocalypse_tank_sound.weapon" weapon_offset="0 2.0 5.5" 
 	weapon_recoil="0" physics_recoil="0" max_rotation_step="0.0002"  />
 	3<turret offset="0 0 0" weapon_key="auxiliary_car_fire_aim.weapon" weapon_offset="0 1.5 3" 

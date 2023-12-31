@@ -293,9 +293,16 @@ class VoteManager : Tracker {
         }
         if(voteTypeIndex == 1){//跳图
             int cid = g_playerInfoBuck.getCidByPid(m_pid);
-            int rp = g_playerInfoBuck.getRpByCid(cid);
+            const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+            if(character is null){
+                clearStage();
+                return;
+            }
+            int rp = character.getIntAttribute("rp");
             if(rp < 30000){
                 _notify(m_metagame,m_pid,"Rp不足");
+                clearStage();
+                return;
             }
             uint playingTime = g_battleInfoBuck.playingTime(m_voterName);
             if(playingTime <= 5){
@@ -359,7 +366,7 @@ class VoteManager : Tracker {
                     int cid = g_playerInfoBuck.getCidByPid(m_pid);
                     uint playingTime = g_battleInfoBuck.playingTime(m_voterName);
                     if(playingTime <= 5){
-                        GiveRP(m_metagame,cid,30000);
+                        //GiveRP(m_metagame,cid,30000);
                     }
                     resetVote();
                     return;

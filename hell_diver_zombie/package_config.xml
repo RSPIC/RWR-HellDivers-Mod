@@ -1,0 +1,30 @@
+
+<package 
+	name="HELL DIVER Zombie"
+	description="Hell Diver Zombie Mode"
+	image="hd.png"
+	campaign_entry_script="hd_start_zombie.as"	show_in_campaigns="1"
+    show_in_quick_match_mods="1">
+
+	<campaign_options 
+		faction="1" 
+		presets="1"
+		friendly_capacity="1"
+		enemy_capacity="1"
+		friendly_accuracy="1"
+		enemy_accuracy="1"
+		xp_multiplier="1"
+		rp_multiplier="1"
+		allow_activate_server="1">
+		
+		<preset text="Kill them ALL" help="Help:Hard" id="hard"
+			friendly_capacity="1.0"
+			friendly_accuracy="1.0"
+			enemy_capacity="1.0"
+			enemy_accuracy="1.0"
+			xp_multiplier="1.0"
+			rp_multiplier="1.0"
+			player_damage_modifier="0"
+			/>
+	</campaign_options>
+</package>

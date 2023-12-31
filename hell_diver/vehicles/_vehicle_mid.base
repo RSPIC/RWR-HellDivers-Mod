@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>	
 <vehicle  
 character_leave_request_mode="friendly"
+max_character_collision_speed="999"
+max_character_collision_speed_on_normal="999"
 >
 	<tag name="metal_heavy" />
 	<tag name="heavy_combat" />

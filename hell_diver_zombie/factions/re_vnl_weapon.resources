@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources >
+<!--此处用于注册SE玩家阵营原版军械库物品，需要确保物品代码中in_stock="0" -->
+<!-- 资源文件注册为KEY注册，不同于武器注册的key注册 -->
+
+<!--武器-->
+
+    <weapon key="vnl_ar_ak47.weapon" />
+    <weapon key="vnl_rf_gm6_lynx.weapon" />
+    <weapon key="vnl_ar_m4a1.weapon" />
+
+</resources>

@@ -6,11 +6,12 @@ time_to_live_unsteerable="7200"
 time_to_live="7200"
 respawn_time="7200"
 should_be_destroyed="1" 
-max_character_collision_speed_on_normal="40"
+
 simulated_damage="5"
 usable_for_cover="0"
 allow_ai_to_use="1"
-max_character_collision_speed="999"
+allow_player_to_use="0"
+character_leave_request_mode="friendly" 
 >
 	<tag name="jeep" />
 	<tag name="apc" />
