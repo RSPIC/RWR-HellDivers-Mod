@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <vehicle 
 file="_vehicle_none.base" 
-name="军械库-赛车" key="racing_car1.vehicle" map_view_atlas_index="19" respawn_time="1" >
+name="军械库-赛车" key="racing_car1.vehicle" map_view_atlas_index="19" respawn_time="1" allow_ai_to_use="0">
 	<tire_set offset="1.21 0.0 1.3" radius="0.636" />
 	<tire_set offset="1.21 0.0 -1.3" radius="0.636" />
 
