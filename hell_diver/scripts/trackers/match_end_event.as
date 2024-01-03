@@ -99,6 +99,7 @@ class match_end : Tracker {
 		string name = player.getStringAttribute("name");
         int pid = player.getIntAttribute("player_id");
         array<const XmlElement@> players = getPlayers(m_metagame);
+        if(g_single_player){return;}
         if(players.size() <= 3){
             if(g_server_activity){
                 return;
@@ -145,9 +146,8 @@ class match_end : Tracker {
     // ----------------------------------------------------
     protected void BattleReword(int fid){
         if(g_battleInfoBuck is null){return;}
-        if(g_server_difficulty_level <= 9){
-            g_battleInfoBuck.setServerBonusFactor(0.25);
-        }
+
+        g_battleInfoBuck.setServerBonusFactor(g_server_added_bonus_factor);
         if(fid != 0){
             g_battleInfoBuck.setLoseBonusFactor();
         }

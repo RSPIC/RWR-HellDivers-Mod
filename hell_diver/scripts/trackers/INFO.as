@@ -1383,10 +1383,15 @@ bool g_online_TestMode = false;
 bool g_debugMode = false;
 bool g_server_activity = false;
 bool g_server_activity_racing = false;
+bool g_single_player = false; //开关一些进服提示
+bool g_auto_heal = true; // 开关自动回血
+bool g_spawn_with_ai = true; // 复活自带AI
+
 int g_server_difficulty_level = 0;
 string g_GameMode = "";
 
-float g_stratagems_call_factor = 1.0;
+float g_stratagems_call_factor = 1.0; //调整战略呼叫CD倍率，0为关闭
+float g_server_added_bonus_factor = 0.0; //战役结算额外的倍率
 //----------------------------------------------------------
 //初始化用Tracker
 class Initiate : Tracker {
@@ -1406,6 +1411,8 @@ class Initiate : Tracker {
 
 		m_server_difficulty_level = settings.m_server_difficulty_level;
 		g_server_difficulty_level = m_server_difficulty_level;
+		g_single_player = settings.m_single_player;;
+		g_server_added_bonus_factor = settings.m_server_added_bonus_factor;;
 
 		g_GameMode = settings.m_GameMode;
 
@@ -1425,6 +1432,8 @@ class Initiate : Tracker {
 		if(g_GameMode != ""){
 			if(g_GameMode == "Zombie"){
 				g_stratagems_call_factor = 5.0;
+				g_auto_heal = false;
+				g_spawn_with_ai = false;
 			}
 		}
 	}

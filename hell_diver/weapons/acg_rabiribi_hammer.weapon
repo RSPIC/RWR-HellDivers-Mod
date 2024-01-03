@@ -87,8 +87,7 @@ key="acg_piko_hammer.weapon"
     <sound key="last_ammo" fileref="" /><!--最后一发子弹射击的额外音效，不可多个混合随机播放-->
 
 	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
-	<capacity value="0" source="rank" source_value="0.0" />
-	<capacity value="1" source="rank" source_value="0.0" />
+
 	
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
@@ -226,8 +225,7 @@ key="acg_ribbon.weapon"
     <sound key="cooldown" fileref="" pitch_variety="0.0" volume="0.6" />
 
 	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
-	<capacity value="0" source="rank" source_value="0.0" />
-	<capacity value="1" source="rank" source_value="0.0" />
+
 	
 
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
@@ -372,8 +370,7 @@ key="re_acg_piko_hammer.weapon"
     <sound key="last_ammo" fileref="" /><!--最后一发子弹射击的额外音效，不可多个混合随机播放-->
 
 	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
-	<capacity value="0" source="rank" source_value="0.0" />
-	<capacity value="1" source="rank" source_value="0.0" />
+
 	
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
@@ -511,8 +508,7 @@ key="re_acg_ribbon.weapon"
     <sound key="cooldown" fileref="" pitch_variety="0.0" volume="0.6" />
 
 	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
-	<capacity value="0" source="rank" source_value="0.0" />
-	<capacity value="1" source="rank" source_value="0.0" />
+
 	
 
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->

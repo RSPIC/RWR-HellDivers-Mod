@@ -53,16 +53,17 @@ class player_spawn : Tracker {
 		// spawnStaticProjectile(m_metagame,"hd_sound_divers_coming_bgm.projectile",c_position,cid,fid);
 		// spawnStaticProjectile(m_metagame,"hd_sound_divers_coming.projectile",c_position,cid,fid);
 		// spawnStaticProjectile(m_metagame,"hd_effect_hellpod_dropping_smoke.projectile",c_position,cid,fid);
-
 		
 		array<ListDirectProjectile@> list;
-		ListDirectProjectile@ b = ListDirectProjectile(c_position,c_position,"hd_effect_target_aim.projectile",-1,fid,1);
-		ListDirectProjectile@ c = ListDirectProjectile(c_position,c_position,"hd_sound_divers_coming_bgm.projectile",-1,fid,1);
-		ListDirectProjectile@ d = ListDirectProjectile(c_position,c_position,"hd_sound_divers_coming.projectile",-1,fid,1);
-		ListDirectProjectile@ e = ListDirectProjectile(c_position,c_position,"hd_effect_hellpod_dropping_smoke.projectile",-1,fid,1);
+		ListDirectProjectile@ b = ListDirectProjectile(c_position,c_position,"hd_effect_target_aim.projectile",-1,fid,10);
+		ListDirectProjectile@ c = ListDirectProjectile(c_position,c_position,"hd_sound_divers_coming_bgm.projectile",-1,fid,10);
+		ListDirectProjectile@ d = ListDirectProjectile(c_position,c_position,"hd_sound_divers_coming.projectile",-1,fid,10);
+		ListDirectProjectile@ e = ListDirectProjectile(c_position,c_position,"hd_effect_hellpod_dropping_smoke.projectile",-1,fid,10);
 		float range = 5;
 		uint times = 3;
 		while(times > 0){
+			if(!g_spawn_with_ai){break;}
+			if(g_server_activity){break;}
 			--times;
 			float rand_x = rand(-range,range);
 			float rand_y = rand(-range,range);

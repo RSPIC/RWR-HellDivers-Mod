@@ -31,6 +31,7 @@ void main(dictionary@ inputData) {
         settings.m_fellowDisableEnemySpawnpointsSoldierCountOffset = 1;
 
         settings.m_server_difficulty_level = 6;
+        settings.m_server_added_bonus_factor = 0.25;
 
         array<string> overlays = {
                 "media/packages/hell_diver"

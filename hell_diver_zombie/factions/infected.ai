@@ -4,16 +4,16 @@
   <parameter class="in_trenches_fade_off_timer" value="4.0" />
   <parameter class="accuracy_penalty_wear_off_rate" value="0.333" /> 
   <parameter class="check_vehicles_interval" value="0.0" />
-  <parameter class="team_member_monitor_enemies_time" value="1.5" />
-  <parameter class="monitor_enemies_time" value="0.8" />
+  <parameter class="team_member_monitor_enemies_time" value="30" />
+  <parameter class="monitor_enemies_time" value="30" />
   <parameter class="check_supplies_time" value="5.0" />
   <parameter class="check_wounded_time" value="3.0" />
   <parameter class="team_check_time" value="3.0" />
-  <parameter class="check_alert_time" value="1.5" />
+  <parameter class="check_alert_time" value="0.5" />
   <parameter class="check_reinforcement_need_time" value="30.0" />
-  <parameter class="choose_enemy_time" value="1.0" />
+  <parameter class="choose_enemy_time" value="0" />
   <parameter class="check_need_help_time" value="1.0" />
-  <parameter class="fighting_time_fire_not_open" value="2.0" />
+  <parameter class="fighting_time_fire_not_open" value="30.0" />
   <parameter class="cover_status_recheck_time" value="1.5" />
   <parameter class="deploy_recheck_time" value="5.0" />
   <parameter class="monitor_enemies_to_stab_while_peace" value="2.0" />
@@ -53,7 +53,7 @@
   <parameter class="guard_wait_time_min" value="5.0" />
   <parameter class="guard_wait_time_max" value="15.0" />
   <parameter class="guard_steps" value="2" />
-  <parameter class="wait_time" value="0.5" />
+  <parameter class="wait_time" value="0" />
   <parameter class="wait_time_variance" value="0.6" />
   <parameter class="burst_time" value="0.3" />
   <parameter class="burst_time_variance" value="0.2" />
@@ -70,8 +70,8 @@
   <parameter class="max_active_shields_per_fellows" value="1.00" /> 
   <parameter class="fighting_against_vehicle_separation" value="2.0" />
   <parameter class="fighting_against_vehicle_move_radius" value="2.0" />
-  <parameter class="day_reaction_time_to_fight_min" value="1.2" />
-  <parameter class="day_reaction_time_to_fight_max" value="1.4" />
+  <parameter class="day_reaction_time_to_fight_min" value="0.5" />
+  <parameter class="day_reaction_time_to_fight_max" value="0.7" />
   <parameter class="night_reaction_time_to_fight_min" value="0.1" />
   <parameter class="night_reaction_time_to_fight_max" value="0.2" />
   <parameter class="willingness_to_guard" value="0.0" />
@@ -88,7 +88,7 @@
   <parameter class="choose_enemy_squad_target_score_range" value="10.0" />
   <parameter class="deployment_area_utilization_factor" value="0.0" />
   <parameter class="deployment_max_position_pick_attempts" value="2" />
-  <parameter class="fighting_approach_alarm_max_soldiers" value="12" /> 
+  <parameter class="fighting_approach_alarm_max_soldiers" value="50" /> 
   <parameter class="accuracy_offset" value="0.0" /> 
   <parameter class="grenade_throw_hold_time" value="0.5" />
   <parameter class="using_cover_min_time" value="0.0" />

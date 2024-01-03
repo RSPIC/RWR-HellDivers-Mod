@@ -69,8 +69,7 @@ key="acg_maria_schariac.weapon"
     <sound key="dry_fire" fileref="static.wav" />
 
 	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
-	<capacity value="0" source="rank" source_value="0.0" />
-	<capacity value="1" source="rank" source_value="0" />
+
 
     <projectile file="hd_general_spawn_no_effect.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
 	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0"> 
@@ -185,8 +184,7 @@ key="acg_maria_schariac_skill.weapon"
     <sound key="dry_fire" fileref="static.wav" />
 
 	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
-	<capacity value="0" source="rank" source_value="0.0" />
-	<capacity value="1" source="rank" source_value="0" />
+
 
     <projectile file="hd_general_spawn_no_effect.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
 	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0"> 
@@ -300,8 +298,7 @@ key="re_acg_maria_schariac.weapon"
     <sound key="dry_fire" fileref="static.wav" />
 
 	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
-	<capacity value="0" source="rank" source_value="0.0" />
-	<capacity value="1" source="rank" source_value="0" />
+
 
     <projectile file="hd_general_spawn_no_effect.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
 	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0"> 
@@ -416,8 +413,7 @@ key="re_acg_maria_schariac_skill.weapon"
     <sound key="dry_fire" fileref="static.wav" />
 
 	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
-	<capacity value="0" source="rank" source_value="0.0" />
-	<capacity value="1" source="rank" source_value="0" />
+
 
     <projectile file="hd_general_spawn_no_effect.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
 	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0"> 

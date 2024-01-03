@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_calls="1" clear_equipment="1">	
 
-  
+  <weapon key="claw_fast.weapon"/>
+  <weapon key="claw_fast_leap.weapon"/>
+  <carry_item key="infected_vest_150"  />
+
+  <projectile key="selfstun.projectile" />     
 
 </resources>

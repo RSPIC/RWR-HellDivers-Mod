@@ -84,7 +84,7 @@ key="acg_smg_strelka.weapon"
 	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
 
 	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
-	<capacity value="1" source="rank" source_value="0.0" />
+
 	
 	<!--军械库相关-->
     <!-- <commonness value="0" can_respawn_with="0" in_stock="1" /> 
@@ -233,7 +233,7 @@ key="re_acg_smg_strelka.weapon"
 	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
 
 	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
-	<capacity value="1" source="rank" source_value="0.0" />
+
 	
 	<!--军械库相关-->
     <!-- <commonness value="0" can_respawn_with="0" in_stock="1" /> 

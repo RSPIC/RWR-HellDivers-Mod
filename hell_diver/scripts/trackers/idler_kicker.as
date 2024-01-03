@@ -46,7 +46,7 @@ class IdlerKicker : Tracker {
 	// --------------------------------------------
 	bool hasEnded() const {
 		// always on
-		return false;
+		return g_single_player;
 	}
 
 	// --------------------------------------------

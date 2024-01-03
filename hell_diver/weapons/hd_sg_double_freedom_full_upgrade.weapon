@@ -77,7 +77,7 @@ key="hd_sg_double_freedom_full_upgrade.weapon"
             <!-- damage 85hit/per -->
             <!-- Fire Damage/sec 100/s 2s/duration -->
             <!-- 13m max range | no decay-->
-        <trigger class="time" time_to_live="0.086"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+        <trigger class="impact" time_to_live="0.086"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 
         <effect class="activated" ref="DoubleFreedom_activated_02" lighting="0"/>
         <effect class="activated" ref="DoubleFreedom_activated_01" lighting="0"/>

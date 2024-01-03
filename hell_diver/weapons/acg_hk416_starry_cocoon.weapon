@@ -72,7 +72,7 @@ key="acg_hk416_starry_cocoon.weapon"
     <addon_model filename="" /> 
     <hud_icon filename="acg_hk416_starry_cocoon.png" /> 
 	
-    <capacity value="1"  source="rank" source_value="0.0" />
+
     <weak_hand_hold offset="0.3" /> 
 
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
@@ -206,7 +206,7 @@ key="acg_hk416_starry_cocoon_gl.weapon"
     <addon_model filename="" /> 
     <hud_icon filename="acg_hk416_starry_cocoon_gl.png" /> 
 	
-    <capacity value="1"  source="rank" source_value="0.0" />
+
     <weak_hand_hold offset="0.3" /> 
 
     <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="26" can_be_detected_by_footmen="1" 
@@ -337,7 +337,7 @@ key="re_acg_hk416_starry_cocoon.weapon"
     <addon_model filename="" /> 
     <hud_icon filename="acg_hk416_starry_cocoon.png" /> 
 	
-    <capacity value="1"  source="rank" source_value="0.0" />
+
     <weak_hand_hold offset="0.3" /> 
 
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
@@ -472,7 +472,7 @@ key="re_acg_hk416_starry_cocoon_gl.weapon"
     <addon_model filename="" /> 
     <hud_icon filename="acg_hk416_starry_cocoon_gl.png" /> 
 	
-    <capacity value="1"  source="rank" source_value="0.0" />
+
     <weak_hand_hold offset="0.3" /> 
 
     <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="26" can_be_detected_by_footmen="1" 

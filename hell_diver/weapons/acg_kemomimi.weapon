@@ -82,8 +82,7 @@ key="acg_kemomimi.weapon"
 	<sound class="impact" fileref="acg_kemomimi_drop.wav" pitch_variety="0" volume="1" /><!--武器落地音效-->
 
 	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
-	<capacity value="0" source="rank" source_value="0.0" />
-	<capacity value="1" source="rank" source_value="0.0" />
+
 	
  
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
@@ -245,8 +244,7 @@ key="re_acg_kemomimi.weapon"
 	<sound class="impact" fileref="acg_kemomimi_drop.wav" pitch_variety="0" volume="1" /><!--武器落地音效-->
 
 	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
-	<capacity value="0" source="rank" source_value="0.0" />
-	<capacity value="1" source="rank" source_value="0.0" />
+
 	
  
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->

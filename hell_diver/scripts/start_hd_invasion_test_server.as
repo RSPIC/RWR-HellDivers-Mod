@@ -38,6 +38,8 @@ void main(dictionary@ inputData) {
         settings.m_server_activity = false; //define whether skip the map when end.
         settings.m_server_activity_racing = false;
 
+        settings.m_single_player = true;
+
         array<string> overlays = {
                 "media/packages/hell_diver"
         };

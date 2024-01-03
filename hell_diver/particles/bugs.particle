@@ -1239,6 +1239,13 @@ material disaster_smoke : alpha_blend_base
         texture_unit{
             texture disaster_smoke.png 	
 }}}}
+material disaster_smoke : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture disaster_smoke.png 	
+}}}}
 material Tex_Glow16A_pass : alpha_blend_base
 {   
     technique{

@@ -48,8 +48,7 @@ key="ex_disaster_railgun.weapon"
     <model filename="ex_disaster_railgun.xml" /> 
     <hud_icon filename="ex_disaster_railgun.png" /> 
 	
-    <capacity value="0"  source="rank" source_value="0.0" />
-    <capacity value="1"  source="rank" source_value="0.0" />
+
     <weak_hand_hold offset="0.3" /> 
 
     <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
@@ -157,8 +156,7 @@ key="re_ex_disaster_railgun.weapon"
     <model filename="ex_disaster_railgun.xml" /> 
     <hud_icon filename="ex_disaster_railgun.png" /> 
 	
-    <capacity value="0"  source="rank" source_value="0.0" />
-    <capacity value="1"  source="rank" source_value="0.0" />
+
     <weak_hand_hold offset="0.3" /> 
 
     <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 

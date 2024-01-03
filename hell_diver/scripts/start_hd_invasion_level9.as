@@ -24,13 +24,14 @@ void main(dictionary@ inputData) {
 
         settings.m_xpFactor = 1.5;
         settings.m_rpFactor = 1.0;
-
+        
         settings.m_teamKillPenaltyEnabled = true;
         settings.m_completionVarianceEnabled = false;
         settings.m_journalEnabled = true;
         settings.m_fellowDisableEnemySpawnpointsSoldierCountOffset = 1;
 
         settings.m_server_difficulty_level = 9;
+        settings.m_server_added_bonus_factor = 0.25;
 
         array<string> overlays = {
                 "media/packages/hell_diver"

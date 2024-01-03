@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon file="base_primary.weapon" key="claw_fast.weapon" time_to_live_out_in_the_open="0.0" drop_count_factor_on_death="0.0">
+
+    <specification 
+	magazine_size="1"
+      consume="0"  
+	can_shoot_standing="0" 
+	can_shoot_crouching="1" 
+	can_shoot_prone="1" 
+	carry_in_two_hands="0" 
+	name="Long Claws" 
+	class="5"
+  stab_enabled="1"
+  success_probability="0.5"
+ 
+  range="2.0"  
+  character_state="death" />
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="zombie_dead_damage.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0.0" />
+
+  
+    <animation state_key="recoil" 			animation_key="fast zombie attack" />
+    <animation state_key="hold" 			animation_key="fast zombie still" />
+    <animation state_key="hold_on_wall" 		animation_key="fast zombie still" />
+    <animation state_key="still_against_wall" 	animation_key="fast zombie still" />
+    <animation state_key="crouching" 		animation_key="fast zombie still" />
+    <animation state_key="running" 			animation_key="fast zombie running" />
+    <animation state_key="walking" 			animation_key="fast zombie running" />
+    <animation state_key="changing_weapon_in" 			animation_key="fast zombie still" />
+    <animation state_key="changing_weapon_out" 			animation_key="fast zombie still" />
+
+        <animation state_key="stabbing"	animation_key="fast zombie stab" />
+        
+<sound key="effect" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="0.5" />
+
+<control key="effect" value="1" />        
+
+     <model  />
+
+    <hud_icon filename="hud_claws.png" />
+    <commonness value="1.0" />
+    <inventory encumbrance="11.0" price="0.0" />
+    <modifier class="speed" value="-0.1" />    
+
+</weapon>

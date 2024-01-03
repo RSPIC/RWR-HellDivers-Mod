@@ -2065,12 +2065,12 @@ class StageConfiguratorInvasion : StageConfigurator {
 	protected Stage@ setupClairemont() {
 		Stage@ stage = createStage();
 		stage.m_mapInfo.m_name = "clairemont";
-        stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/clairemont";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/clairemont";
 		stage.m_mapInfo.m_id = "clairemont";
 
-		stage.m_maxSoldiers = 10 * 10;                                             // was 17*7 in 1.65
-		stage.m_playerAiCompensation = 0;                                         // was 7 (test4)
-        stage.m_playerAiReduction = 0;                                            // was 3 (test2)
+		stage.m_maxSoldiers = 21 * 7;                                             // was 17*7 in 1.65
+		stage.m_playerAiCompensation = 3;                                         // was 7 (test4)
+		stage.m_playerAiReduction = 3;                                            // was 3 (test2)
     
 		stage.addTracker(PeacefulLastBase(m_metagame, 0));
 		stage.addTracker(CommsCapacityHandler(m_metagame));
@@ -2079,37 +2079,34 @@ class StageConfiguratorInvasion : StageConfigurator {
 	    stage.m_maxRandomCrates = 3;
 
 		{
-			// greens will push a bit harder here
-			Faction f(getFactionConfigs()[0], createFellowCommanderAiCommand(0, 0.4, 0.15));   // was 0.3, 0.12 in 1.65
+			Faction f(getFactionConfigs()[0], createFellowCommanderAiCommand(0, 0.4, 0.15));   
 			f.m_overCapacity = 20;
 			f.m_capacityOffset = 0; 
-			f.m_capacityMultiplier = 1.0;                                          // was 0.9 in 1.65
+			f.m_capacityMultiplier = 1.0;                                          
 			f.m_bases = 1;
 			stage.m_factions.insertLast(f);
 		}
 		{
-			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1, 0.45, 0.2));        // was not set (default) in 1.65
-			f.m_overCapacity = 40;                                              // was 60 (test2) 
-			f.m_capacityOffset = 10;                                               // was 10 in 1.65
+			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1, 0.45, 0.2));        
+			f.m_overCapacity = 40;                                              
+			f.m_capacityOffset = 10;                                               
 			stage.m_factions.insertLast(f);
 		}
-
+		{
+			Faction f(getFactionConfigs()[2], createCommanderAiCommand(2, 0.45, 0.2));        
+			f.m_overCapacity = 40;                                               
+			f.m_capacityOffset = 10;                                               
+			stage.m_factions.insertLast(f);
+		}
+		
+		
 		// metadata
 		stage.m_primaryObjective = "capture";
 		stage.m_radioObjectivePresent = false;
 
-		{
-			XmlElement command("command");
-			command.setStringAttribute("class", "faction_resources");
-			command.setIntAttribute("faction_id", 1);
-			addFactionResourceElements(command, "vehicle", array<string> = {"aa_emplacement.vehicle"}, true);
-
-			stage.m_extraCommands.insertLast(command);
-		}
-
 		setDefaultAttackBreakTimes(stage);
 		return stage;
-	} 
+	}  
 	protected Stage@ setupViper() {
 		Stage@ stage = createStage();
 		stage.m_mapInfo.m_name = "viper";

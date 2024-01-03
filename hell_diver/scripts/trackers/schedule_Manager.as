@@ -84,7 +84,9 @@ class schedule_Manager : Tracker {
         for (uint j = 0; j < m_players.size(); ++j) {
 			const XmlElement@ player = m_players[j];
 			if(player is null){return;}
-            auto_heal(player);
+            if(g_auto_heal){
+                auto_heal(player);
+            }
             //update_AllInfo();
         }
     }

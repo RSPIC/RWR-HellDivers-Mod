@@ -38,6 +38,7 @@
  	<sound key="throw" fileref="vomit.wav" volume="1.0" />
  	<sound key="throw" fileref="vomit.wav" volume="1.0" />  
 
-	<animation key="stunned" target_key="stunned mid" />
+	<!-- <animation key="stunned" target_key="stunned mid" /> -->
+	<animation key="stunned" target_key="stun, zombie" />
 
 </character>

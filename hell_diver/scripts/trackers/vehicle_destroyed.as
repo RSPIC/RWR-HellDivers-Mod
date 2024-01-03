@@ -118,6 +118,16 @@ class vehicle_destroyed : Tracker{
                 remove_vehicle(m_metagame,vehicle_id);
             }
         }
+        if(g_server_activity_racing){ //挂机服禁止载具生成
+            if(g_debugMode){return;}
+            string vehicle_key = event.getStringAttribute("vehicle_key");
+            int vehicle_id = event.getIntAttribute("vehicle_id");
+            if(!startsWith(vehicle_key,"racing_car") && !startsWith(vehicle_key,"ex_piano_") 
+            && !startsWith(vehicle_key,"ex_gramophone_") && !startsWith(vehicle_key,"straw_block") 
+            ){
+                remove_vehicle(m_metagame,vehicle_id);
+            }
+        }
     }
     //--------------------------------------------------------
 	float getOrientation(Vector3@ forward)

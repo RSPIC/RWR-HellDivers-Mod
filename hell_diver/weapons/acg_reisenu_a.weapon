@@ -74,8 +74,7 @@ key="acg_reisenu_a.weapon"
     <addon_model filename="" /> 
     <hud_icon filename="acg_reisenu_a.png" /> 
 	
-	<capacity value="0" source="rank" source_value="0.0" />
-	<capacity value="1" source="rank" source_value="0.0" />
+
 	
      
     <weak_hand_hold offset="0.3" /> 
@@ -209,8 +208,7 @@ key="acg_reisenu_b.weapon"
     <addon_model filename="" /> 
     <hud_icon filename="acg_reisenu_b.png" /> 
 	
-	<capacity value="0" source="rank" source_value="0.0" />
-	<capacity value="1" source="rank" source_value="0.0" />
+
 	
 
     <weak_hand_hold offset="0.3" /> 
@@ -320,7 +318,7 @@ key="acg_reisenu_c.weapon"
 	<sound class="impact" fileref="rifle_drop.wav" />
 
     <model filename="" />
-    <capacity value="1" source="rank" source_value="0.0" />
+   
     <hud_icon filename="acg_reisenu_card.png" />
 		
 	<!--姿态精度-->
@@ -410,8 +408,7 @@ key="re_acg_reisenu_a.weapon"
     <addon_model filename="" /> 
     <hud_icon filename="acg_reisenu_a.png" /> 
 	
-	<capacity value="0" source="rank" source_value="0.0" />
-	<capacity value="1" source="rank" source_value="0.0" />
+
 	
      
     <weak_hand_hold offset="0.3" /> 
@@ -545,8 +542,7 @@ key="re_acg_reisenu_b.weapon"
     <addon_model filename="" /> 
     <hud_icon filename="acg_reisenu_b.png" /> 
 	
-	<capacity value="0" source="rank" source_value="0.0" />
-	<capacity value="1" source="rank" source_value="0.0" />
+
 	
 
     <weak_hand_hold offset="0.3" /> 
@@ -656,7 +652,7 @@ key="re_acg_reisenu_c.weapon"
 	<sound class="impact" fileref="rifle_drop.wav" />
 
     <model filename="" />
-    <capacity value="1" source="rank" source_value="0.0" />
+   
     <hud_icon filename="acg_reisenu_card.png" />
 		
 	<!--姿态精度-->

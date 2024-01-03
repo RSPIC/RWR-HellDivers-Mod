@@ -841,97 +841,152 @@ class MapRotatorCampaign : MapRotatorInvasion {
 	// --------------------------------------------
 	void load(const XmlElement@ root) {
 		MapRotatorInvasion::load(root);
+		_log("loading map rotator", 1);
+		resetStagesCompleted();
 
 		const XmlElement@ subroot = root.getFirstElementByTagName("map_rotator");
 		if (subroot !is null) {
 			{
-				array<const XmlElement@> list = subroot.getElementsByTagName("stage");
-				_log("stages: " + list.size(), 1);
+				// copy available configs array to work as a base list
+				const array<FactionConfig@>@ factions = m_configurator.getAvailableFactionConfigs();
+
+				// re-setup faction configs now
+				array<const XmlElement@> list = subroot.getElementsByTagName("faction_config");
 				for (uint i = 0; i < list.size(); ++i) {
 					const XmlElement@ e = list[i];
-					array<const XmlElement@> list2 = e.getElementsByTagName("faction");
-					_log("factions: " + list2.size(), 1);
-					for (uint j = 0; j < list2.size(); ++j) {
-						const XmlElement@ e2 = list2[j];
+					string file = e.getStringAttribute("file");
 
-						if (m_stages[i].m_factions.size() < j) {
-							// assuming here that the participants in a map do not change, yet
-							Faction@ f = m_stages[i].m_factions[j];
-							f.m_ownedBases = array<int>();
-
-							int factionIndex = e2.getIntAttribute("index");
-							array<const XmlElement@> list3 = e2.getElementsByTagName("base");
-							for (uint k = 0; k < list3.size(); ++k) {
-								const XmlElement@ e3 = list3[k];
-								int baseId = e3.getIntAttribute("id");
-								f.m_ownedBases.insertLast(baseId);
-								_log("base " + baseId + " owned by " + f.m_config.m_index, 1);
-							}
+					// find the config object that corresponds to given file
+					FactionConfig@ targetFaction;
+					for (uint j = 0; j < factions.size(); ++j) {
+						FactionConfig@ faction = factions[j];
+						if (faction.m_file == file) {
+							// this is the one
+							@targetFaction = @faction;
+							break;
+						}
+					}
+					if (targetFaction !is null) {
+						// reorder the current faction configs array
+						FactionConfig@ faction = m_factionConfigs[i];
+						// retain the old object, we already have stages pointing at it
+						faction.replaceData(targetFaction);
+						faction.m_index = i;
+						
+					} else {
+						if (file != "neutral.xml") {
+							_log("warning, config not found for " + file, -1);
 						}
 					}
 				}
 			}
 
 			{
-				// final stages
-				array<const XmlElement@> list = subroot.getElementsByTagName("final_battle");
+				array<const XmlElement@> list = subroot.getElementsByTagName("map_completed");
 				for (uint i = 0; i < list.size(); ++i) {
 					const XmlElement@ e = list[i];
-					int factionConfigIndex = e.getIntAttribute("enemy_faction_config_index");
-
-					// do same procedure as unlocking the final battle would, here, 
-					// it will set the stage settings accordingly
-					// 
-					// if the stage is completed, generic completed settings will be set after this
-
-					unlockFinalBattle(factionConfigIndex);
+					int index = e.getIntAttribute("index");
+					_log("index=" + index, 1);
+					setStageCompleted(index);
 				}
 			}
-
-			// in adventure mode, we can't determine current/next map from completed maps, 
-			// so we need to obtain it somewhere else
-			// general info has been retrieved from game by now, so determine it from there
-			{
-				string mapPath = m_metagame.m_gameMapPath;
-				int index = getStageIndexFromMapPath(mapPath);
-				if (index < 0) {
-					_log("ERROR, couldn't resolve stage index from map path, mapPath=" + mapPath);
-					index = 0;
-				}
-				m_nextStageIndex = index;
-				m_currentStageIndex = m_nextStageIndex;
-				_log("current/next stage at load: " + m_currentStageIndex);
-			}
-
-			// current stage might have something to load
-			if (m_currentStageIndex >= 0) {
-				Stage@ stage = m_stages[m_currentStageIndex];
-				stage.load(subroot);
-			}
-
 		} else {
 			_log("WARNING, map_rotator not found", -1);
 		}
-
-		// if maps have been completed, 
-		// we should modify the stages 
-		// to reflect that
-		for (uint i = 0; i < m_stagesCompleted.size(); ++i) {
-			int index = m_stagesCompleted[i];
-			if (m_currentStageIndex == index) {
-				// NOTE, take the factions from the game here, we don't know the actual amount of factions yet on the script side
-				// - could be what is initially set in the stages, or in completed stage if already transformed
-				if (getFactions(m_metagame).size() > 1) {
-					// not yet in complete state, don't setup as such then
-					continue;
-				}
-				// else we have just one faction, so setup the stage in complete state
-			}
-			setupStageComplete(index);
-		}
-
-		postProcessLoad();
 	}
+	// void load(const XmlElement@ root) {
+	// 	MapRotatorInvasion::load(root);
+
+	// 	const XmlElement@ subroot = root.getFirstElementByTagName("map_rotator");
+	// 	if (subroot !is null) {
+	// 		{
+	// 			array<const XmlElement@> list = subroot.getElementsByTagName("stage");
+	// 			_log("stages: " + list.size(), 1);
+	// 			for (uint i = 0; i < list.size(); ++i) {
+	// 				const XmlElement@ e = list[i];
+	// 				array<const XmlElement@> list2 = e.getElementsByTagName("faction");
+	// 				_log("factions: " + list2.size(), 1);
+	// 				for (uint j = 0; j < list2.size(); ++j) {
+	// 					const XmlElement@ e2 = list2[j];
+	// 					_log("e2 toString="+e2.toString());
+	// 					if (m_stages[i].m_factions.size() < j) {
+	// 						// assuming here that the participants in a map do not change, yet
+	// 						Faction@ f = m_stages[i].m_factions[j];
+	// 						f.m_ownedBases = array<int>();
+
+	// 						int factionIndex = e2.getIntAttribute("index");
+	// 						array<const XmlElement@> list3 = e2.getElementsByTagName("base");
+	// 						for (uint k = 0; k < list3.size(); ++k) {
+	// 							const XmlElement@ e3 = list3[k];
+	// 							int baseId = e3.getIntAttribute("id");
+	// 							f.m_ownedBases.insertLast(baseId);
+	// 							_log("base " + baseId + " owned by " + f.m_config.m_index, 1);
+	// 						}
+	// 					}
+	// 				}
+	// 			}
+	// 		}
+
+	// 		{
+	// 			// final stages
+	// 			array<const XmlElement@> list = subroot.getElementsByTagName("final_battle");
+	// 			for (uint i = 0; i < list.size(); ++i) {
+	// 				const XmlElement@ e = list[i];
+	// 				int factionConfigIndex = e.getIntAttribute("enemy_faction_config_index");
+
+	// 				// do same procedure as unlocking the final battle would, here, 
+	// 				// it will set the stage settings accordingly
+	// 				// 
+	// 				// if the stage is completed, generic completed settings will be set after this
+
+	// 				unlockFinalBattle(factionConfigIndex);
+	// 			}
+	// 		}
+
+	// 		// in adventure mode, we can't determine current/next map from completed maps, 
+	// 		// so we need to obtain it somewhere else
+	// 		// general info has been retrieved from game by now, so determine it from there
+	// 		{
+	// 			string mapPath = m_metagame.m_gameMapPath;
+	// 			int index = getStageIndexFromMapPath(mapPath);
+	// 			if (index < 0) {
+	// 				_log("ERROR, couldn't resolve stage index from map path, mapPath=" + mapPath);
+	// 				index = 0;
+	// 			}
+	// 			m_nextStageIndex = index;
+	// 			m_currentStageIndex = m_nextStageIndex;
+	// 			_log("current/next stage at load: " + m_currentStageIndex);
+	// 		}
+
+	// 		// current stage might have something to load
+	// 		if (m_currentStageIndex >= 0) {
+	// 			Stage@ stage = m_stages[m_currentStageIndex];
+	// 			stage.load(subroot);
+	// 		}
+
+	// 	} else {
+	// 		_log("WARNING, map_rotator not found", -1);
+	// 	}
+
+	// 	// if maps have been completed, 
+	// 	// we should modify the stages 
+	// 	// to reflect that
+	// 	for (uint i = 0; i < m_stagesCompleted.size(); ++i) {
+	// 		int index = m_stagesCompleted[i];
+	// 		if (m_currentStageIndex == index) {
+	// 			// NOTE, take the factions from the game here, we don't know the actual amount of factions yet on the script side
+	// 			// - could be what is initially set in the stages, or in completed stage if already transformed
+	// 			if (getFactions(m_metagame).size() > 1) {
+	// 				// not yet in complete state, don't setup as such then
+	// 				continue;
+	// 			}
+	// 			// else we have just one faction, so setup the stage in complete state
+	// 		}
+	// 		setupStageComplete(index);
+	// 	}
+
+	// 	postProcessLoad();
+	// }
 
 	// --------------------------------------------
 	void postProcessLoad() {

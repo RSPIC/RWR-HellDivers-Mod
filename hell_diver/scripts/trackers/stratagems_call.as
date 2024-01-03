@@ -126,7 +126,26 @@ dictionary code_stratagems = {
         // 占位的
         {"666",-1}
 };
+dictionary disable_zombie_mode = {
 
+	{"aswdds","hd_agl8_mk3_call"},
+	{"ASWDDS","hd_agl8_mk3_call"},
+	{"asswda","hd_aac6_tesla_mk3_call"},
+	{"ASSWDA","hd_aac6_tesla_mk3_call"},
+	{"aswda","hd_amg_11_mk3_call"},
+	{"ASWDA","hd_amg_11_mk3_call"},
+	{"aswad","hd_arx_34_mk3_call"},
+	{"ASWAD","hd_arx_34_mk3_call"},
+	{"sdwass","hd_exo44_mk3"},
+	{"SDWASS","hd_exo44_mk3"},
+	{"sdwasa","hd_exo48_mk3"},
+	{"SDWASA","hd_exo48_mk3"},
+	{"sdwasd","hd_exo51_mk3"},
+	{"SDWASD","hd_exo51_mk3"},
+
+	// 占位的
+	{"666",-1}
+};
 dictionary stratagems_call_notify_key = {
 
         // 空
@@ -577,8 +596,14 @@ class stratagems_call : Tracker {
 		if (!startsWith(message, "/")) {
 			if ( word_size == 1 ){
 				string stratagemsKey;
+				if(disable_zombie_mode.get(message,stratagemsKey)){
+					_notify(m_metagame,pid,"当前游戏模式禁用该战略呼叫");
+					return;
+				}
 				if(!code_stratagems.get(message,stratagemsKey)){return;}
-				if(g_stratagems_call_factor == 0){
+				if(g_stratagems_call_factor == 0 ||
+					g_server_activity
+				){
 					_notify(m_metagame,pid,"当前游戏模式无法使用战略呼叫");
 					return;
 				}

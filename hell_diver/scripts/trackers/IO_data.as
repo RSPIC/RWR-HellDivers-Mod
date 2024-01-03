@@ -21,7 +21,7 @@
 //子项的TagName将会变为主数据access_tag标签中的A_tag属性
 
 //密钥兑换系统
-
+int g_readCounter = 0;
 const XmlElement@ readXML(const Metagame@ metagame, string filename, string location = "savegame" ){
 	XmlElement@ query = XmlElement(
 		makeQuery(metagame, array<dictionary> = {
@@ -30,7 +30,15 @@ const XmlElement@ readXML(const Metagame@ metagame, string filename, string loca
     if(xml is null){
         _log("readXml is null,create and reRead for filename="+filename+",in location="+location);
         writeXML(metagame,filename,XmlElement(filename),location);
+
+        g_readCounter++;
+        _log("g_readCounter="+g_readCounter);
+        if(g_readCounter > 3){
+            g_readCounter = 0;
+            return null;
+        }
         @xml = readXML(metagame,filename,location);
+        g_readCounter = 0;
     }
 	return xml;
 }

@@ -61,7 +61,11 @@ class UserSettings {
 	bool m_server_test_mode = false;
 	bool m_server_activity = false;
 	bool m_server_activity_racing = false;
+	bool m_single_player = false;
 	string m_GameMode = "";
+
+	float m_server_added_bonus_factor = 0.0;
+
 	array<string> m_overlayPaths;
 
 	// --------------------------------------------
@@ -152,6 +156,9 @@ class UserSettings {
 			if(settings.hasAttribute("server_activity_racing")){
 				m_server_activity_racing = settings.getBoolAttribute("server_activity_racing");
 			}
+			if(settings.hasAttribute("single_player")){
+				m_single_player = settings.getBoolAttribute("single_player");
+			}
 			if(settings.hasAttribute("GameMode")){
 				m_GameMode = settings.getStringAttribute("GameMode");
 			}
@@ -191,6 +198,7 @@ class UserSettings {
 		settings.setBoolAttribute("server_test_mode", m_server_test_mode);
 		settings.setBoolAttribute("server_activity_racing", m_server_activity_racing);
 		settings.setBoolAttribute("server_activity", m_server_activity);
+		settings.setBoolAttribute("single_player", m_single_player);
 
 		settings.setStringAttribute("GameMode", m_GameMode);
 

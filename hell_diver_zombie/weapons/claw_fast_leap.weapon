@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon file="base_secondary.weapon" key="claw_fast_leap.weapon" time_to_live_out_in_the_open="0.0" drop_count_factor_on_death="0.0">
+
+    <specification 
+	magazine_size="1"
+    consume="1"  
+	can_shoot_standing="0" 
+	can_shoot_crouching="0" 
+	can_shoot_prone="1" 
+	carry_in_two_hands="0" 
+	name="Elastic Tendons" 
+	class="5"
+	slot="1"
+  stab_enabled="1"
+ 
+    spawn_instance_class="weapon" 
+  spawn_instance_key="claw_fast_leap.weapon"  />
+  	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="zombie_dead_damage.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0.0" />
+
+    <animation state_key="recoil" 			animation_key="fast zombie use" />
+    <animation state_key="hold" 			animation_key="fast zombie still" />
+    <animation state_key="hold_on_wall" 		animation_key="fast zombie still" />
+    <animation state_key="still_against_wall" 	animation_key="fast zombie still" />
+    <animation state_key="crouching" 		animation_key="fast zombie still" />
+    <animation state_key="running" 			animation_key="fast zombie running" />
+    <animation state_key="walking" 			animation_key="fast zombie running" />
+    <animation state_key="changing_weapon_in" 			animation_key="fast zombie still" />
+    <animation state_key="changing_weapon_out" 			animation_key="fast zombie still" />
+
+        <animation state_key="stabbing"	animation_key="fast zombie stab" />
+        
+<sound key="effect" fileref="zomb_stab1.wav" pitch_variety="0.03" volume="0.7" />
+<sound key="effect" fileref="zomb_stab2.wav" pitch_variety="0.03" volume="0.7" />
+<sound key="effect" fileref="zomb_stab3.wav" pitch_variety="0.03" volume="0.7" />
+<sound key="effect" fileref="zomb_stab4.wav" pitch_variety="0.03" volume="0.7" />
+<sound key="effect" fileref="zomb_stab5.wav" pitch_variety="0.03" volume="0.7" />
+<sound key="effect" fileref="zomb_stab6.wav" pitch_variety="0.03" volume="0.7" />
+
+<control key="effect" value="1" />        
+
+     <model  />
+
+    <capacity value="1" source="rank" source_value="0.0" /> 
+	
+    <shield offset="0.0 0.0 0" extent="0.0 0.0 0.0" />
+
+    <hud_icon filename="hud_claws.png" />
+    <commonness value="1.0" />
+    <inventory encumbrance="0.0" price="0.0" />
+    <modifier class="speed" value="-0.1" />    
+
+</weapon>

@@ -14,7 +14,6 @@ void main(dictionary@ inputData) {
 	settings.fromXmlElement(inputSettings);
 	_setupLog(inputSettings);
 	settings.print();
-	settings.m_debug_mode = false;
 	settings.m_xpFactor = 3;
 	settings.m_rpFactor = 1;
 	settings.m_server_difficulty_level = 6;
@@ -22,6 +21,7 @@ void main(dictionary@ inputData) {
 	settings.m_initialXp = 0.0;
 	settings.m_server_test_mode = true;
 	settings.m_debug_mode = false;
+	settings.m_single_player = true;
 
 	// --------------------------------------------
 	// TODO: replace with your package's folder here

@@ -44,7 +44,7 @@ character_leave_request_mode="friendly"
 
 	<rev_sound filename="" low_pitch="0.8" high_pitch="1.0" low_rev="0.0" high_rev="0.3" volume="0.8" />
 	
-	<spawn_point player_only="1" offset="0 0 0" />
+	<spawn_point offset="0 100 0" player_only="1" />  
 	
 	<sound key="slide" filename="" />
 	<sound key="squeal" filename="" />
