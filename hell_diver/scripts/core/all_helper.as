@@ -593,3 +593,4 @@ void setSpawnScore(Metagame@ metagame,int fId,string name,float spawnScore)
 	command.setFloatAttribute("spawn_score", spawnScore);
 	metagame.getComms().send(command);
 }
+

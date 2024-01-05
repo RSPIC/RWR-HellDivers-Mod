@@ -869,7 +869,7 @@ class battleInfoBuck{
 				if(mc >= 8 ){	//防刷
 					mc = 8;
 				}
-				int ptRewardBase = 3000; //游玩时长奖励
+				int ptRewardBase = g_rp_ptRewardBase; //游玩时长奖励
 				int mcRewardBase = 5000; //支线任务奖励
 				int kcRewardBase = 50; //杀敌奖励
 				int ocRewardBase = 15; //连杀奖励
@@ -1386,12 +1386,20 @@ bool g_server_activity_racing = false;
 bool g_single_player = false; //开关一些进服提示
 bool g_auto_heal = true; // 开关自动回血
 bool g_spawn_with_ai = true; // 复活自带AI
+bool g_heal_on_kill = true; // 击杀回甲
+bool g_exo_armor = true; // 机甲是否装配护甲
+bool g_disable_stratagems = false; //是否禁用战略呼叫
+bool g_top_down = true; //是否启用俯视角
 
 int g_server_difficulty_level = 0;
+
 string g_GameMode = "";
 
 float g_stratagems_call_factor = 1.0; //调整战略呼叫CD倍率，0为关闭
 float g_server_added_bonus_factor = 0.0; //战役结算额外的倍率
+
+int g_rp_ptRewardBase = 3000; //游玩时长奖励
+float g_xp_ptRewardBase = 0.1; //游玩时长奖励 2000xp
 //----------------------------------------------------------
 //初始化用Tracker
 class Initiate : Tracker {
@@ -1434,6 +1442,10 @@ class Initiate : Tracker {
 				g_stratagems_call_factor = 5.0;
 				g_auto_heal = false;
 				g_spawn_with_ai = false;
+				g_heal_on_kill = false;
+				g_exo_armor = false;
+				g_rp_ptRewardBase = 2000;
+				g_disable_stratagems = true;
 			}
 		}
 	}

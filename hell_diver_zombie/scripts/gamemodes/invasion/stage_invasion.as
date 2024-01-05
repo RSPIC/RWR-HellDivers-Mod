@@ -265,6 +265,16 @@ class Stage {
 
 	// --------------------------------------------
 	protected void appendCamera(XmlElement@ scene) const {
+		if(m_userSettings.m_top_down){
+			XmlElement camera("camera");
+			camera.setStringAttribute("direction", "0 -1 0.01");
+			camera.setFloatAttribute("distance", 25.0);
+			camera.setFloatAttribute("far_clip", 60.0);
+			camera.setFloatAttribute("shadow_far_clip", 50.0);
+			camera.setFloatAttribute("fov", 0.8);
+			scene.appendChild(camera);
+			return;
+		}
 		XmlElement camera("camera");
 		camera.setStringAttribute("direction", "-0.5 -0.5 0.7");
 		camera.setFloatAttribute("distance", 38.0);
@@ -334,7 +344,7 @@ class Stage {
 		command.setStringAttribute("class", "start_game");
 		command.setStringAttribute("savegame", m_userSettings.m_savegame);
 		command.setIntAttribute("vehicles", 1);
-		command.setIntAttribute("max_soldiers", m_maxSoldiers);
+		command.setIntAttribute("max_soldiers", 1);
 		command.setFloatAttribute("soldier_capacity_variance", m_soldierCapacityVariance);
 		command.setStringAttribute("soldier_capacity_model", m_soldierCapacityModel);
 		command.setFloatAttribute("player_ai_compensation", m_playerAiCompensation * m_userSettings.m_playerAiCompensationFactor);
@@ -370,14 +380,15 @@ class Stage {
 
 			if (i == 0) {
 				// friendly faction
+				
 				faction.setFloatAttribute("ai_accuracy", m_userSettings.m_fellowAiAccuracyFactor);
-				faction.setIntAttribute("disable_enemy_spawnpoints_soldier_count_offset", m_userSettings.m_fellowDisableEnemySpawnpointsSoldierCountOffset);
+				faction.setIntAttribute("disable_enemy_spawnpoints_soldier_count_offset", -100);
 				faction.setBoolAttribute("lose_last_base_without_spawnpoints", false);
 			} else {
 				// enemy
 				faction.setFloatAttribute("ai_accuracy", m_userSettings.m_enemyAiAccuracyFactor);
 				faction.setBoolAttribute("lose_last_base_without_spawnpoints", false);
-				faction.setIntAttribute("disable_enemy_spawnpoints_soldier_count_offset", -10);
+				faction.setIntAttribute("disable_enemy_spawnpoints_soldier_count_offset", -100);
 			}			
 
 			// if base amount has been declared for the faction, use it

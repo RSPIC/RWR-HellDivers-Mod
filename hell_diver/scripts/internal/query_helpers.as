@@ -221,6 +221,19 @@ const XmlElement@ getStartingBase(const Metagame@ metagame, int factionId) {
 
 	return null;
 }
+// --------------------------------------------------------
+array<const XmlElement@> getFactionBase(const Metagame@ metagame, int factionId) {
+	array<const XmlElement@> FactionBaseList;
+    array<const XmlElement@> baseList = getBases(metagame);
+	for (uint i = 0; i < baseList.size(); ++i) {
+		const XmlElement@ base = baseList[i];
+		int ownerId = base.getIntAttribute("owner_id");
+		if (ownerId == factionId) {
+			FactionBaseList.insertLast(base);
+		}
+	}
+	return FactionBaseList;
+}
 
 // --------------------------------------------------------
 const XmlElement@ getBase(array<const XmlElement@>@ baseList, int baseId) {

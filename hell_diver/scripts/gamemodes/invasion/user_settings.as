@@ -62,6 +62,7 @@ class UserSettings {
 	bool m_server_activity = false;
 	bool m_server_activity_racing = false;
 	bool m_single_player = false;
+	bool m_top_down = false;
 	string m_GameMode = "";
 
 	float m_server_added_bonus_factor = 0.0;

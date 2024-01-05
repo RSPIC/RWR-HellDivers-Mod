@@ -75,8 +75,8 @@ class kill_to_win : Tracker {
 			if(m_zombie_killed % 50 == 0){
 				array<const XmlElement@> players = getPlayers(m_metagame);
 				uint factor = 300;
-				if(!g_single_player){
-					factor = 600;
+				if(!g_single_player){ //多人游戏
+					factor = 300;
 				}
 				m_kill2win_num = 100 + factor*players.size();
 				for (uint j = 0; j < players.size(); ++j) {

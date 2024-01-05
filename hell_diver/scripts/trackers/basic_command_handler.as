@@ -281,7 +281,18 @@ class BasicCommandHandler : Tracker {
 				"	border_defense='0.0'>" +
 				"</command>";
 			m_metagame.getComms().send(command);
-			sendPrivateMessage(m_metagame, senderId, "attack green ai set");
+			sendPrivateMessage(m_metagame, senderId, "attack self ai set");
+
+		} else if (checkCommand(message, "1_attack")) {
+			// make ai attack only, both sides
+			string command =
+				"<command class='commander_ai'" +
+				"	faction='1'" +
+				"	base_defense='0.0'" +
+				"	border_defense='0.0'>" +
+				"</command>";
+			m_metagame.getComms().send(command);
+			sendPrivateMessage(m_metagame, senderId, "attack ai set");
 
 		} else if (checkCommand(message, "whereami")) {
 			_log("whereami received", 1);

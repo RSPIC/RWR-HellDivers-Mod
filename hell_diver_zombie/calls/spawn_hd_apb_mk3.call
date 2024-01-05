@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<call name="Spawn Anti-Personnel Barrier" 
+key="spawn_hd_apb_mk3.call"
+radio_view_text="Call Anti-Personnel Barrier" 
+           initiation_comment1="Divers report, We need Anti-Personnel Barrier right there!"
+           acknowledge_comment="Confirmed, Equipment is in the air."
+           launch_comment="Airdropping Equipment now."
+           notify_metagame="1"
+           match_skinpack="vanilla">
+
+    <round 
+           launch_time="2"
+           spawn_time="2">
+        <effect class="launch" ref="stratagems_tag_call_mark_1" />
+        <effect class="launch" ref="stratagems_tag_call_mark_2" />
+         <!-- 设备 -->
+        <sound class="launch" fileref="hd_equip_on_the_way.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="launch" fileref="hd_equip_on_the_way_1.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="launch" fileref="hd_equip_on_the_way_2.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="launch" fileref="hd_equip_on_the_way_3.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="launch" fileref="hd_equip_on_the_way_4.wav" pitch_variety="0.01" volume="1"/>
+        <!-- 通用确认 -->
+        <sound class="launch" fileref="hd_request_confirm.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="launch" fileref="hd_request_confirm_1.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="launch" fileref="hd_request_confirm_2.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="launch" fileref="hd_request_confirm_3.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="launch" fileref="hd_request_confirm_4.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="launch" fileref="hd_request_confirm_5.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="launch" fileref="hd_request_confirm_6.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="launch" fileref="hd_request_confirm_7.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="launch" fileref="hd_request_confirm_8.wav" pitch_variety="0.01" volume="1"/>
+    </round>
+    <!-- spawn_time要大于launch_time，launch_time决定round的启动时间，spawn_time决定生成时间，两个都是独立计时-->
+
+    <hud_icon filename="hd_apb_mk3.png" />
+    <capacity value="0" source="rank" source_value="0.0" />
+    <capacity value="1" source="rank" source_value="0.0" />
+    <inventory encumbrance="0.0" price="1500.0" />
+</call>

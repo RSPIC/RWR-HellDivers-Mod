@@ -351,12 +351,14 @@ class kill_reward : Tracker {
 				g_userCountInfoBuck.addCount(k_name,targetCostKey,get_cost);
 			}
 			//--------------------击杀回甲记录--------------------------------------
-			int healnum = 0;
-			if(healable_weapon.get(weaponKey,healnum)){//执行：可恢复护甲的击杀武器
-				healCharacter(m_metagame,killer_cid,healnum);
-			}
-			if(healable_killtarget_bonus.get(soldier_group_name,healnum)){//执行：可额外恢复护甲的击杀对象
-				healCharacter(m_metagame,killer_cid,healnum);
+			if(g_heal_on_kill){
+				int healnum = 0;
+				if(healable_weapon.get(weaponKey,healnum)){//执行：可恢复护甲的击杀武器
+					healCharacter(m_metagame,killer_cid,healnum);
+				}
+				if(healable_killtarget_bonus.get(soldier_group_name,healnum)){//执行：可额外恢复护甲的击杀对象
+					healCharacter(m_metagame,killer_cid,healnum);
+				}
 			}
 			//---------------------击杀增益记录--------------------------------------
 			float XpBonusFactor = 0;

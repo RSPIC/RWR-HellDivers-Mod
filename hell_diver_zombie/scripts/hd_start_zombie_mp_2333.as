@@ -32,10 +32,9 @@ void main(dictionary@ inputData) {
         settings.m_fellowDisableEnemySpawnpointsSoldierCountOffset = 1;
 
         settings.m_server_difficulty_level = 0;
-        settings.m_server_test_mode = true;
-        settings.m_top_down = false;
+        settings.m_server_test_mode = false;
 
-        settings.m_single_player = true;
+        //settings.m_single_player = true;
         settings.m_GameMode = "Zombie";
         settings.m_fov = true;
 
@@ -46,14 +45,14 @@ void main(dictionary@ inputData) {
 
         settings.m_startServerCommand = """
         <command class='start_server'
-                server_name='[地狱潜兵] 僵尸服/歼灭模式 '
-                server_port='1242'
+                server_name='[地狱潜兵] 僵尸服-4/报复打击 '
+                server_port='2333'
                 url='https://steamcommunity.com/sharedfiles/filedetails/?id=2910392031'
-                register_in_serverlist='0'
+                register_in_serverlist='1'
                 mode='HD'
                 persistency='forever'
                 comment='地狱潜兵模组  QQ：498520233 '
-                max_players='20'>
+                max_players='10'>
                 <client_faction id='0' />
         </command>
         """;

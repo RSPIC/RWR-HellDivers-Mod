@@ -127,6 +127,19 @@ dictionary code_stratagems = {
         {"666",-1}
 };
 dictionary disable_zombie_mode = {
+	{"ddw","hd_offensive_strafing_run_mk3"},
+	{"DDW","hd_offensive_strafing_run_mk3"},
+	{"ddsw","hd_offensive_heavy_strafing_run_mk3"},
+	{"DDSW","hd_offensive_heavy_strafing_run_mk3"},
+	{"dadassd","hd_offensive_shredder_missile_strike_mk3"},
+	{"DADASSD","hd_offensive_shredder_missile_strike_mk3"},
+	{"dswwas","hd_offensive_thunderer_barrage_mk3"},
+	{"DSWWAS","hd_offensive_thunderer_barrage_mk3"},
+
+	{"adsw","hd_at_mine_mk3"},
+	{"ADSW","hd_at_mine_mk3"},
+	{"adws","hd_airdropped_stun_mine_mk3"},
+	{"ADWS","hd_airdropped_stun_mine_mk3"},
 
 	{"aswdds","hd_agl8_mk3_call"},
 	{"ASWDDS","hd_agl8_mk3_call"},
@@ -596,7 +609,7 @@ class stratagems_call : Tracker {
 		if (!startsWith(message, "/")) {
 			if ( word_size == 1 ){
 				string stratagemsKey;
-				if(disable_zombie_mode.get(message,stratagemsKey)){
+				if(disable_zombie_mode.get(message,stratagemsKey) && g_disable_stratagems){
 					_notify(m_metagame,pid,"当前游戏模式禁用该战略呼叫");
 					return;
 				}

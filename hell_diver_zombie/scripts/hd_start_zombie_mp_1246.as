@@ -32,7 +32,7 @@ void main(dictionary@ inputData) {
         settings.m_fellowDisableEnemySpawnpointsSoldierCountOffset = 1;
 
         settings.m_server_difficulty_level = 0;
-        settings.m_server_test_mode = true;
+        settings.m_server_test_mode = false;
 
         //settings.m_single_player = true;
         settings.m_GameMode = "Zombie";
@@ -45,7 +45,7 @@ void main(dictionary@ inputData) {
 
         settings.m_startServerCommand = """
         <command class='start_server'
-                server_name='[地狱潜兵] 僵尸服/报复打击 '
+                server_name='[地狱潜兵] 僵尸服-2/报复打击 '
                 server_port='1246'
                 url='https://steamcommunity.com/sharedfiles/filedetails/?id=2910392031'
                 register_in_serverlist='1'

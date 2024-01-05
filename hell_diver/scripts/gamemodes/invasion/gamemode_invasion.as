@@ -385,7 +385,6 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		addTracker(chat_icon(this));  
 		addTracker(vehicle_destroyed(this));  
 		addTracker(extra_stash(this));  
-		addTracker(vehicle_recycle(this));  
 	}
 
 	protected void setupDisableRadioAtMatchOver() {

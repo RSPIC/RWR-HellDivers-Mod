@@ -315,6 +315,7 @@ class schedule_Check : Tracker {
 	protected void EXOArmorChange(Metagame@ metagame,string&in name,int&in pid,int&in cid,dictionary&in equipList){
 		//机甲检测
         if(m_ended){return;}
+        if(!g_exo_armor){return;}
         string equipKey;    
         uint amount;
 
