@@ -52,7 +52,7 @@ dictionary canStoreItem = {
 
     {"hd_vote_ticket","[民本选票]"},
 
-    {"token_asakaze.projectile","[江风 [信物]]"},
+    {"token_asakaze.projectile","[朝风 [信物]]"},
     {"token_88mm_flak41.projectile","[Flak41 88 [信物]]"},
     {"token_alice_tendou.projectile","[天童爱丽丝 [信物]]"},
     {"token_amatsukaze.projectile","[天津风 [信物]]"},

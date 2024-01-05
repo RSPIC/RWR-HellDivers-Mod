@@ -2,7 +2,7 @@
 <!-- 此处注册后，需要在_token.resources里注册，需要在acg_token.models里注册 -->
 <?xml version="1.0" encoding="utf-8"?>
 <projectiles>
-    <projectile file="hd_hellpod_call.projectile" name="Kawakaze [Skin]" key="token_asakaze.projectile" >
+    <projectile file="hd_hellpod_call.projectile" name="Asakaze [Skin]" key="token_asakaze.projectile" >
         <hud_icon filename="token_asakaze.png" />
         <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
         <capacity value="12" source="rank" source_value="0" />
