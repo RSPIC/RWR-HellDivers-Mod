@@ -60,19 +60,19 @@ class UAVdrone : Tracker {
 					UAVdroneTarget("hd_agl8_mk3.vehicle", "A-GL8 GL Launcher"),
 					UAVdroneTarget("hd_aac6_tesla_mk3.vehicle", "A-AC6 Tesla"),
 					UAVdroneTarget("hd_apb_mk3.vehicle", "Anti Person Barrier"),
-					UAVdroneTarget("jeep.vehicle", "Jeep"),
 					UAVdroneTarget("cyborgs_ifv.vehicle", "Infantry Fighting Vehicle"),
 					UAVdroneTarget("water_tower.vehicle", "Rocket Launch Platform"),
-					UAVdroneTarget("icecream.vehicle", "Icecream")
+					UAVdroneTarget("icecream.vehicle", "Icecream"),
+					UAVdroneTarget("hongbao.vehicle", "HongBao")
 				};
 				
 				//scanning all major enemy factions (neutral wasn't necessary this time)
 				bool anyFound = false;
 				for (uint f = 1; f < 3; ++f){
 					//scanning for all vehicles on the list
-					for (uint i = 0; i < UAVdroneTargets.length(); ++i){
+					for (uint i = 0; i < UAVdroneTargets.size(); ++i){
 						array<const XmlElement@>@ vehicles = getVehicles(m_metagame, f, UAVdroneTargets[i].m_key);
-						for (uint j = 0; j < vehicles.length(); ++j){
+						for (uint j = 0; j < vehicles.size(); ++j){
 							int vehicleId = vehicles[j].getIntAttribute("id");
 							const XmlElement@ vehicle = getVehicleInfo(m_metagame,vehicleId);
 							if (vehicle !is null) {

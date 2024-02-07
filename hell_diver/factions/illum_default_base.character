@@ -37,14 +37,14 @@
 
 	<parameter class="falling_steer_amount_heading" value="0.02" />
 
-	<parameter class="diving_steer_amount" value="0.9" />
+	<parameter class="diving_steer_amount" value="0" />
 	<parameter class="diving_steer_amount_sliding_with_friction" value="0.03" />
-	<parameter class="diving_steer_amount_push" value="0.05" />
-	<parameter class="diving_steer_amount_jump" value="0.05" />
+	<parameter class="diving_steer_amount_push" value="0" />
+	<parameter class="diving_steer_amount_jump" value="0" />
 
 	<parameter class="swimming_character_y_position_at_water_height" value="1.45" />
 	<parameter class="swimming_y_handling_factor" value="0.01" />
-	<parameter class="swimming_steer_amount" value="0.05" />
+	<parameter class="swimming_steer_amount" value="0.15" />
 	<parameter class="swimming_steer_amount_stroke" value="1.3" />
 
 	<parameter class="wounded_auto_death_time" value="60.0" />

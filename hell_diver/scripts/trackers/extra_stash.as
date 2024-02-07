@@ -45,6 +45,16 @@ class playerStashInfo {
         @m_selectObject = null;
         updatePlayersStash();
     }
+    playerStashInfo(Metagame@ metagame,string sid,string name){
+        @m_metagame = @metagame;
+        m_sid = sid;
+        m_name = name;
+        m_isStashOpen = false;
+        m_page = 0;
+        m_index = 0;
+        @m_selectObject = null;
+        updatePlayersStash();
+    }
     string getName(){
         return m_name;
     }
@@ -908,7 +918,7 @@ class extra_stash : Tracker {
                 // 没有新物品而是功能道具的，这里单独处理
                 if(!isValid){return false;}
                 if(itemKey == "collect_fumo_koishi_komeiji_exchange"){
-                    //6 古明地恋Fumo[1] 换 脚本仓库容量[10]
+                    //6 古明地恋Fumo[1] 换 脚本仓库容量[100]
                     if(!m_playerStashInfoBuck.isOpen(sid)){
                         m_playerStashInfoBuck.openStash(sid);
                     }

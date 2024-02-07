@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapons> 
+<weapon 
+file="hd_side_p6_gunslinger_base.weapon"
+key="hd_side_p6_gunslinger.weapon" 
+>
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.2" can_be_detected_by_driver="1" can_be_disarmed="0"> 
+		<!--
+			<result class="spawn" instance_class="projectile" instance_key="rx1_railgun_ap.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+				offset"x y z 生成位置偏差"
+				PS"水平面随机生成位置 竖直面随机生成位置"
+				DS"圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
+			<result class="blast" radius="6.8" damage="0.2" push="0" decal="0" character_state="death"  />
+		-->
+		<result class="hit" kill_probability="2.0" 
+		kill_probability_offset_on_successful_hit="120"
+		kill_decay_start_time="0.1" kill_decay_end_time="0.3" character_state="wound"/>
+		<!-- slower decay -->
+		<!-- 抵抗护甲抗致死衰减影响 -->
+		<!-- 20m max damage range -->
+		<!-- damage 400ap/500ap 重穿-->
+
+		<effect class="activated" ref="p6_gunslinger_activated_ambient_light" lighting="0"/>
+		<effect class="result" ref="p6_gunslinger_hit_spark" lighting="0"/>
+		<effect class="result" ref="p6_gunslinger_hit_leave" lighting="0"/>
+		<effect class="result" ref="p6_gunslinger_hit_light" lighting="0"/>
+		
+		<effect class="result" key="terrain" ref="p6_gunslinger_hit_01" />
+		<effect class="result" key="terrain" ref="p6_gunslinger_hit_02" />
+		<effect class="result" key="terrain" ref="p6_gunslinger_hit_03" />
+		<effect class="result" key="terrain" ref="p6_gunslinger_hit_04" />
+		
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+		<trail probability="1" key="p6_gunslinger_trail"/>	
+    </projectile>
+</weapon>
+</weapons>

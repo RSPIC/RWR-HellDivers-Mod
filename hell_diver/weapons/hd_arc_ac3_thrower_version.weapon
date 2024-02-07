@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapons> 
+<weapon 
+file="hd_arc_ac3_thrower_base.weapon"
+key="hd_arc_ac3_thrower_full_upgrade.weapon" 
+>
+	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.15" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.5" name="AC-3 Arc Thrower"> 
+
+		<result class="spawn" instance_class="grenade" instance_key="hd_arc_ac3_thrower_full_upgrade_damage.projectile" 
+		min_amount="40" max_amount="40" offset="0 0 0" position_spread="0 0" direction_spread="0.0 0.0" />
+		<trigger class="time" time_to_live="0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
+		<!-- 不受护甲抗致死衰减 -->
+		<!-- 30~40x1.01 = 60~80 轰炸伤 -->
+
+
+		<!--命中音效-->
+		<sound class="result" key="other" fileref="burn.wav" pitch_variety="0.03" volume="0.0" />
+		<!--命中特效-->
+		<!--
+		<effect class="result" key="terrain" ref="" lighting="0"/>
+		<effect class="activated" ref="" />
+		-->
+
+		<effect class="result" key="terrain" ref="Arc_result_strike_thunder_2" />
+   	 	<effect class="result" key="terrain" ref="Arc_result_strike_thunder" />
+   	 	<effect class="result" key="terrain" ref="401_thbow_spread_ring" />
+   	 	<effect class="result" key="terrain" ref="401_thbow_impact" />
+   	 	<effect class="result" key="terrain" ref="Arc_result_box_point" />
+
+		<effect class="result" type="splat_map" surface_tag="" size="2.0" atlas_index="4" layer="0" />
+
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<!--尾迹组-->
+		<trail probability="1" key="normal_trail_blue"/>	
+    </projectile>
+</weapon>
+</weapons>

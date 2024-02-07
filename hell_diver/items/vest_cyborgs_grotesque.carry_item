@@ -1,0 +1,923 @@
+<?xml version="1.0" ?>
+<carry_items>
+  <carry_item key="vest_cyborgs_grotesque_110" name="110/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_109">
+    <hud_icon filename="helldivers_vest_100.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_109" name="109/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_108">
+    <hud_icon filename="helldivers_vest_100.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_108" name="108/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_107">
+    <hud_icon filename="helldivers_vest_100.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_107" name="107/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_106">
+    <hud_icon filename="helldivers_vest_90.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_106" name="106/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_105">
+    <hud_icon filename="helldivers_vest_90.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_105" name="105/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_104">
+    <hud_icon filename="helldivers_vest_90.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_104" name="104/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_103">
+    <hud_icon filename="helldivers_vest_80.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_103" name="103/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_102">
+    <hud_icon filename="helldivers_vest_80.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_102" name="102/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_101">
+    <hud_icon filename="helldivers_vest_80.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_101" name="101/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_100">
+    <hud_icon filename="helldivers_vest_80.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_100" name="100/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_99">
+    <hud_icon filename="helldivers_vest_80.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_99" name="99/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_98">
+    <hud_icon filename="helldivers_vest_70.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_98" name="98/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_97">
+    <hud_icon filename="helldivers_vest_70.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_97" name="97/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_96">
+    <hud_icon filename="helldivers_vest_70.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_96" name="96/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_95">
+    <hud_icon filename="helldivers_vest_60.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_95" name="95/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_94">
+    <hud_icon filename="helldivers_vest_60.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_94" name="94/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_93">
+    <hud_icon filename="helldivers_vest_60.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_93" name="93/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_92">
+    <hud_icon filename="helldivers_vest_60.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_92" name="92/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_91">
+    <hud_icon filename="helldivers_vest_60.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_91" name="91/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_90">
+    <hud_icon filename="helldivers_vest_50.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_90" name="90/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_89">
+    <hud_icon filename="helldivers_vest_50.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_89" name="89/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_88">
+    <hud_icon filename="helldivers_vest_50.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_88" name="88/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_87">
+    <hud_icon filename="helldivers_vest_40.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_87" name="87/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_86">
+    <hud_icon filename="helldivers_vest_40.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_86" name="86/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_85">
+    <hud_icon filename="helldivers_vest_40.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_85" name="85/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_84">
+    <hud_icon filename="helldivers_vest_40.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_84" name="84/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_83">
+    <hud_icon filename="helldivers_vest_40.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_83" name="83/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_82">
+    <hud_icon filename="helldivers_vest_30.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_82" name="82/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_81">
+    <hud_icon filename="helldivers_vest_30.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_81" name="81/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_80">
+    <hud_icon filename="helldivers_vest_30.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_80" name="80/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_79">
+    <hud_icon filename="helldivers_vest_20.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_79" name="79/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_78">
+    <hud_icon filename="helldivers_vest_20.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_78" name="78/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_77">
+    <hud_icon filename="helldivers_vest_20.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_77" name="77/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_76">
+    <hud_icon filename="helldivers_vest_20.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_76" name="76/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_75">
+    <hud_icon filename="helldivers_vest_20.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_75" name="75/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_74">
+    <hud_icon filename="helldivers_vest_10.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_74" name="74/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_73">
+    <hud_icon filename="helldivers_vest_10.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_73" name="73/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_72">
+    <hud_icon filename="helldivers_vest_10.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_72" name="72/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_grotesque_71">
+    <hud_icon filename="helldivers_vest_broken.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_grotesque_71" name="71/110 Grotesque General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_fast_70">
+    <hud_icon filename="helldivers_vest_broken.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+</carry_items>

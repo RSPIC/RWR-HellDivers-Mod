@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapon 
+file="_hd_lmg.base"
+> 
+	<tag name="machine gun" />
+    <specification 	
+    slot="1" 	
+    retrigger_time="0.0333" 
+	last_burst_retrigger_time="0.0333"
+    accuracy_factor="1.0" 
+	spread_range="0.12"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="0.1" 
+    sustained_fire_diminish_rate="2.3" 
+    magazine_size="70" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="1"	
+    suppressed="0" 
+	class="3" 
+	comsune="1"
+    name="MGX-42 MK3 Machine Gun[Single-Use]" 
+	sight_height_offset="1.0" 
+	sight_range_modifier="1.0"
+	burst_shots="1" 
+    projectiles_per_shot="1" 
+    projectile_speed="200.0"
+	barrel_offset="1.2" 
+	carry_in_two_hands="1" 
+	stab_enabled="0" 
+	stab_range="0" 
+	use_basic_muzzle_smoke_effect="0"
+	/> 
+	<!--1300/1800RPM 	300/400 magazine 	one time use	30m range-->
+	
+	<animation key="recoil" animation_key="hold, hip fire" />
+	<animation state_key="hold" animation_key="hold, hip fire" />
+	<animation state_key="reload" animation_key="reloading_mg94"/>
+	<animation state_key="crouching" animation_key="crouch, hold, hip fire" />
+	<animation state_key="crouch_moving" animation_key="crouching forwards, hip fire" />
+	<animation state_key="walking_backwards" animation_key="walking backwards, hip fire" />  
+	<animation state_key="hold_on_wall" animation_key="" />
+	<animation state_key="still_against_wall" 	animation_key="" />
+	<animation state_key="walking" animation_key="" />
+	<animation state_key="running" animation_key="" />  
+	<animation state_key="changing_weapon_in" animation_key="hold, hip fire" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key="hold, hip fire"/><!--半身动作，切换武器，本武器取出-->
+
+    <sound key="fire" fileref="mg94_shot1.wav" pitch_variety="0.1" volume="0.8" />
+    <sound key="fire" fileref="mg94_shot2.wav" pitch_variety="0.1" volume="0.8" />
+    <sound key="fire" fileref="mg94_shot3.wav" pitch_variety="0.1" volume="0.8" />
+    <sound key="fire" fileref="mg94_shot4.wav" pitch_variety="0.1" volume="0.8" />
+    <sound key="fire" fileref="mg94_shot5.wav" pitch_variety="0.1" volume="0.8" />
+    <sound key="fire" fileref="mg94_shot6.wav" pitch_variety="0.1" volume="0.8" />
+    <sound key="fire" fileref="mg94_shot7.wav" pitch_variety="0.1" volume="0.8" />
+    <sound key="fire" fileref="mg94_shot8.wav" pitch_variety="0.1" volume="0.8" />
+    <sound key="fire" fileref="mg94_shot9.wav" pitch_variety="0.1" volume="0.8" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_02.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="magazine_out" fileref="hd_mg94_mag_out.wav" />
+    <sound key="magazine_in" fileref="hd_mg94_mag_in.wav" />
+    <sound key="cycle" fileref="rifle_chamber.wav" />
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" />
+    <sound key="last_ammo" fileref="" />
+	<sound class="impact" fileref="rifle_drop.wav" />
+
+    <model filename="hd_mgx42_machine_gun_full_upgrade.xml" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="hd_mgx42_machine_gun_mk3.png" /> 
+
+	
+    <commonness value="1" can_respawn_with="0" in_stock="1" /> 
+    <inventory encumbrance="12.0" price="0.0" /> 
+    <weak_hand_hold offset="0.3" /> 
+
+
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 
+	<effect class="muzzle" ref="hd_mg94_laser" lighting="0"/> 
+	
+	
+    <stance state_key="running" accuracy="0.5" /> 
+    <stance state_key="walking" accuracy="0.9" />
+	<stance state_key="standing" accuracy="1" />
+	<stance state_key="crouching" accuracy="0.8" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1.2" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1.4" />     
+     
+    <modifier class="speed" value="-0.1" /> 
+
+
+
+</weapon>

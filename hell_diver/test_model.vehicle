@@ -42,12 +42,12 @@ allow_ai_to_use="0"
 
 	<turret offset="0 0 2.3" weapon_key="hd_vehicle_null.weapon" weapon_offset="0 0 0" weapon_recoil="0.02" physics_recoil="0.0"  max_rotation_step="0.00015" rotation="0" rotation_range="1.92" />
 
-	<visual class="chassis" mesh_filename="hd_rocket_launch_platform.mesh" texture_filename="hd_rocket_launch_platform.jpg" />
-	<visual class="turret" turret_index="0" mesh_filename="hd_rocket_launch_shell.mesh" texture_filename="hd_rocket_launch_shell.jpg" /> 
+	<visual class="chassis" mesh_filename="hongbao.mesh" texture_filename="hongbao.jpg" />
+	<!-- <visual class="turret" turret_index="0" mesh_filename="hd_rocket_launch_shell.mesh" texture_filename="hd_rocket_launch_shell.jpg" />  -->
 
 	<!-- 破损车体\炮台 -->
 	<visual class="chassis" key="broken" mesh_filename="hd_rocket_launch_platform.mesh" texture_filename="hd_rocket_launch_platform.jpg" />
-	<visual class="turret" key="broken" turret_index="0" mesh_filename=".mesh" texture_filename="" /> 
+	<!-- <visual class="turret" key="broken" turret_index="0" mesh_filename=".mesh" texture_filename="" />  -->
 
 	<rev_sound filename="" low_pitch="0.8" high_pitch="1.0" low_rev="0.0" high_rev="0.3" volume="0.8" />
 

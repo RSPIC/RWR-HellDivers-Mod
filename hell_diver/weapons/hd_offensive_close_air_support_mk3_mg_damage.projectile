@@ -17,7 +17,8 @@ time_to_live_out_in_the_open="0"
 player_death_drop_owner_lock_time="0"
 >
     <collision class="sticky" />
-	<result class="blast" radius="3.0" damage="9" push="0.1" decal="0" make_vehicle_hit_sound="0" character_state="stun"/>
+	<result class="blast" radius="3.5" damage="12" push="0.1" decal="0" make_vehicle_hit_sound="0" 
+	character_state="stun" faction_compare="not_equal"/>
 	<trigger class="time" time_to_live="0" />	
   	<rotation class="motion" />
 	<model mesh_filename="" />
@@ -30,7 +31,7 @@ player_death_drop_owner_lock_time="0"
 	<effect class="result" key="terrain" ref="MG_heavy_up_dust_3" lighting="0"/>
 	<effect class="result" key="terrain" ref="MG_heavy_up_dust_4" lighting="0"/>
 	<effect class="result" key="terrain" ref="MG_hvy_spread_dust" lighting="0"/>
-	<effect class="result" key="terrain" ref="MG_hvy_hit_light" lighting="0" post_processing="1"/> -->
+	<effect class="result" key="terrain" ref="MG_hvy_hit_light" lighting="0" post_processing="1"/>
 	
 	<effect class="result" key="other" copy="terrain"/>
 	<effect class="result" key="static_object" copy="terrain" />

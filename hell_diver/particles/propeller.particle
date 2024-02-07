@@ -60,6 +60,19 @@ particle_system propeller_rotate_result_io_mh60s : propeller_rotate_drive_chassi
 		position 0 4 0
 	}
 }
+particle_system propeller_rotate_idle_io_mh60s : propeller_rotate_drive_chassis		//Rotator参数可以指定静止时的桨叶转角，两个参数填一样的数值
+{
+	quota 100
+	particle_width 21
+	particle_height 21
+	material mh60s_propeller_rotate
+	emitter Point{
+		emission_rate 100
+		duration 0
+		time_to_live 0.01
+		position 0 4 0
+	}
+}
 particle_system propeller_rotate_result_io_bell_360 : propeller_rotate_drive_chassis		//Rotator参数可以指定静止时的桨叶转角，两个参数填一样的数值
 {
 	quota 100

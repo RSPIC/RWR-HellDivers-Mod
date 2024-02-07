@@ -75,7 +75,7 @@ key="hd_vehicle_hmg.weapon"
 		
 		<result class="hit" kill_probability="2.0" 
 		kill_probability_offset_on_successful_hit="30"
-		kill_decay_start_time="0.25" kill_decay_end_time="0.55" character_state="none"/>
+		kill_decay_start_time="0.25" kill_decay_end_time="0.55" character_state="wound"/>
 		<!-- slower decay -->
 		<!-- 30m max damage range -->
 		<!-- damage 75/100hit  -->

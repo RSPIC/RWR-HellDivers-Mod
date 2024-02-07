@@ -82,10 +82,10 @@ on_ground_up="0 0 1"
 
 	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
 	<capacity value="0" source="rank" source_value="0.0" />
-	<capacity value="8" source="rank" source_value="229.750" />
+	<capacity value="8" source="rank" source_value="0" />
 	
 	<!--军械库相关-->
-    <commonness value="0.05" can_respawn_with="0" in_stock="1" /> 
+    <commonness value="1" can_respawn_with="0" in_stock="1" /> 
     <inventory encumbrance="3.0" price="0.0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
     
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->

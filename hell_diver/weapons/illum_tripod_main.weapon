@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapon 
+drop_count_factor_on_death="0" 
+drop_count_factor_on_player_death="0"
+time_to_live_out_in_the_open="0"
+player_death_drop_owner_lock_time="0"
+key="illum_tripod_main.weapon" 
+on_ground_up="0 0 1" 
+radius="1"
+force_as_shoots_blast_projectiles="0"
+> 
+    <specification 
+    slot="0" 	
+    retrigger_time="2" 
+	last_burst_retrigger_time="2"
+    accuracy_factor="0.1" 
+	spread_range="0.5"
+	stance_accuracy_rate="0.5"
+    sustained_fire_grow_step="1" 
+    sustained_fire_diminish_rate="1.0" 
+    magazine_size="8" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="0" 
+	can_shoot_prone="0"	
+    suppressed="0" 
+	class="0" 
+    name="Tripod" 
+	ai_sight_range_modifier="3.0"
+	sight_range_modifier="3.0" 
+	burst_shots="1" 
+    projectiles_per_shot="10" 
+    projectile_speed="100.0"
+	barrel_offset="0.0" 
+	carry_in_two_hands="0" 
+	stab_enabled="1" 
+	stab_range="3.0" 
+	use_basic_muzzle_smoke_effect="0"
+    /> 
+	<!--武器模型和HUD-->
+	<weak_hand_hold offset="0" /> <!--模型X轴偏移-->
+    <hud_icon filename="illuminate_chat_icon.png" /> <!--临时贴图-->
+
+	<!--武器动作，必须指定recoil和reload动作-->
+    <animation key="recoil" animation_key="illum_tripod_stab" /> <!--后坐力动作，半身动作-->
+    <animation key="cycle"  animation_key="illum_tripod_stab" /> <!--拉栓动作，武器固定脱手-->
+    <animation key="reload" animation_key="illum_tripod_bone" />	<!--换弹动作，半身动作-->
+    <animation key="reload" stance_key="crouching" animation_key="illum_tripod_bone" />	<!--不同姿态可以设置不同换弹动作-->
+    <animation key="reload" stance_key="prone" animation_key="illum_tripod_bone" />
+	<animation key="recoil" stance_key="over_wall" animation_key="illum_tripod_bone"/>	<!--不同姿态可以设置不同后坐力动作-->
+	<animation key="recoil" stance_key="crouching" animation_key="illum_tripod_bone"/>
+	<animation key="recoil" stance_key="prone" animation_key="illum_tripod_bone"/>
+    <animation state_key="hold" animation_key="illum_tripod_bone" /><!--站姿静止动作，全身动作-->
+	<animation state_key="hold_on_wall"  animation_key="illum_tripod_bone" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="illum_tripod_bone" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="illum_tripod_casual" /><!--闲置动作，全身动作-->
+	<animation state_key="running" animation_key="illum_tripod_running" /><!--全身动作-->
+	<animation state_key="walking" animation_key="illum_tripod_running" /><!--按shift时候的静步前进动作，全身动作-->
+    <animation state_key="walking_backwards" animation_key="illum_tripod_running" /><!--全身动作-->
+    <animation state_key="crouching" animation_key="illum_tripod_bone" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="illum_tripod_running" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="illum_tripod_running" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="illum_tripod_bone" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="illum_tripod_running" /><!--全身动作-->
+	<animation state_key="stabbing" animation_key="illum_tripod_stab" /><!-- 半身动作，武器可设置脱手 -->
+	<!--切换模式，本模式的切出动作衔接下一模式的切入动作，置空为秒切-->
+	<animation state_key="next_in_chain_in" animation_key="illum_tripod_bone" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="illum_tripod_bone" /><!--半身动作，切换模式，本模式切入-->
+	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
+    <animation state_key="changing_weapon_in" animation_key="illum_tripod_bone" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key="illum_tripod_bone"/><!--半身动作，切换武器，本武器取出-->
+
+	<!--武器音频-->
+    <sound key="effect" fileref="" pitch_variety="0" volume="1.0" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
+    <sound key="fire" fileref="arc_fire_01.wav" pitch_variety="0.05" volume="0.7" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
+    <sound key="dry_fire" fileref="" pitch_variety="0.03" volume="1.0" /><!--空弹射击扳机音效-->
+    <sound key="magazine_out" fileref="gl_open.wav" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="gl_insert.wav" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="rifle_chamber.wav" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" /><!--动作中in的value为1-->
+    <sound key="last_ammo" fileref="" /><!--最后一发子弹射击的额外音效，不可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+	<sound class="result" fileref="rifle_drop.wav" />
+	
+	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
+	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="1" source="rank" source_value="0.0" />
+	
+	<!--军械库相关-->
+    <commonness value="0.00001" can_respawn_with="1" in_stock="1" /> 
+    <inventory encumbrance="1.0" price="0.0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
+    
+	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
+    <projectile file="hd_general_spawn.projectile" time_to_live="0.05" > 
+        <trigger class="impact" time_to_live="0" />
+        <result class="blast" radius="3.0" damage="8" push="0.1" decal="0" character_state="wound" 
+        make_vehicle_hit_sound="0" faction_compare="not_equal"/>
+
+        <trail probability="1" key=""/>	
+    </projectile>
+	
+	<!--枪口特效-->
+	<effect class="muzzle" ref="illum_tripod_muzzle_thunder" lighting="0"/> 
+
+	
+	<!--姿态精度-->
+    <stance state_key="running" accuracy="1" /> 
+    <stance state_key="walking" accuracy="1" />
+	<stance state_key="standing" accuracy="1" />
+	<stance state_key="crouching" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1" />     
+     
+	<!--附加属性-->
+    <modifier class="speed" value="-0.4" /> 
+    <modifier class="hit_success_probability" value="-0.25" />
+    <modifier class="detectability" value="0.0" />	<!--正值减少玩家隐蔽-->
+	
+	<!--盾块，可设置多个，空盾块仍然生效击杀收益共享，需要删去该段代码-->
+    <shield offset="0.6 0 0" extent="0.15 1.5 1.5" usable_for_cover="0"/>  
+	
+</weapon>
+

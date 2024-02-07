@@ -18,7 +18,7 @@ player_death_drop_owner_lock_time="120"
 >
     <collision class="sticky" />
 	<result class="blast" radius="3.0" damage="50" push="0.3" decal="1"
-	damage_origin_vehicle="0" character_state="wound"/>
+	damage_origin_vehicle="0" character_state="wound" faction_compare="not_equal"/>
 	<trigger class="time" time_to_live="0" />	
     <rotation class="random" />
 	<model mesh_filename="" />

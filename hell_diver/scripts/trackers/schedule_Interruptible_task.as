@@ -133,7 +133,7 @@ class schedule_Interruptible_task : Task{
                     isStart = false;
                 }else{
                     string c_position = character.getStringAttribute("position");
-                    editPlayerVest(m_metagame,cid,"helldivers_vest.carry_item",4);
+                    editPlayerVest(m_metagame,cid,"helldivers_vest",4);
                     spawnStaticProjectile(m_metagame,"ex_cl_banzai_damage.projectile",c_position,cid,fid);
                     setDeadCharacter(m_metagame,cid);
                 }

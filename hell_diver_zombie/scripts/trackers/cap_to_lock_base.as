@@ -83,8 +83,8 @@ class cap_to_lock_base : Tracker {
 				}
 			}
 		}
-		return locked;
 		_log("locked Zombie bases");
+		return locked;
 	}
 	protected void setZombieAttack(){
 		string command =

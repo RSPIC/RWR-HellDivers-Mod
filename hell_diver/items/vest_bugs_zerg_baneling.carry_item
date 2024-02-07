@@ -8,19 +8,20 @@
     <model/>
     <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
     <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
-    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="stun" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="stun" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/>
-    <modifier class="melee_hit_result" input_character_state="none" output_character_state="stun" consumes_item="0"/>
-    <modifier class="hit_success_probability" value="0"/>
-    <modifier class="detectability" value="0"/>
-    <modifier class="speed" value="0"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="vest_bugs_zerg_baneling_9" name="9/10 Zerg Baneling Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_zerg_baneling_8">
     <hud_icon filename="helldivers_vest_90.png"/>
@@ -30,19 +31,20 @@
     <model/>
     <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
     <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
-    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="stun" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="stun" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/>
-    <modifier class="melee_hit_result" input_character_state="none" output_character_state="stun" consumes_item="0"/>
-    <modifier class="hit_success_probability" value="0"/>
-    <modifier class="detectability" value="0"/>
-    <modifier class="speed" value="0"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="vest_bugs_zerg_baneling_8" name="8/10 Zerg Baneling Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_zerg_baneling_7">
     <hud_icon filename="helldivers_vest_80.png"/>
@@ -52,19 +54,20 @@
     <model/>
     <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
     <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
-    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="stun" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="stun" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/>
-    <modifier class="melee_hit_result" input_character_state="none" output_character_state="stun" consumes_item="0"/>
-    <modifier class="hit_success_probability" value="0"/>
-    <modifier class="detectability" value="0"/>
-    <modifier class="speed" value="0"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="vest_bugs_zerg_baneling_7" name="7/10 Zerg Baneling Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_zerg_baneling_6">
     <hud_icon filename="helldivers_vest_70.png"/>
@@ -74,19 +77,20 @@
     <model/>
     <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
     <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
-    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="stun" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="stun" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/>
-    <modifier class="melee_hit_result" input_character_state="none" output_character_state="stun" consumes_item="0"/>
-    <modifier class="hit_success_probability" value="0"/>
-    <modifier class="detectability" value="0"/>
-    <modifier class="speed" value="0"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="vest_bugs_zerg_baneling_6" name="6/10 Zerg Baneling Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_zerg_baneling_5">
     <hud_icon filename="helldivers_vest_60.png"/>
@@ -96,19 +100,20 @@
     <model/>
     <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
     <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
-    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="stun" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="stun" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/>
-    <modifier class="melee_hit_result" input_character_state="none" output_character_state="stun" consumes_item="0"/>
-    <modifier class="hit_success_probability" value="0"/>
-    <modifier class="detectability" value="0"/>
-    <modifier class="speed" value="0"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="vest_bugs_zerg_baneling_5" name="5/10 Zerg Baneling Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_zerg_baneling_4">
     <hud_icon filename="helldivers_vest_50.png"/>
@@ -118,19 +123,20 @@
     <model/>
     <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
     <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
-    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="stun" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="stun" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/>
-    <modifier class="melee_hit_result" input_character_state="none" output_character_state="stun" consumes_item="0"/>
-    <modifier class="hit_success_probability" value="0"/>
-    <modifier class="detectability" value="0"/>
-    <modifier class="speed" value="0"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="vest_bugs_zerg_baneling_4" name="4/10 Zerg Baneling Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_zerg_baneling_3">
     <hud_icon filename="helldivers_vest_40.png"/>
@@ -140,19 +146,20 @@
     <model/>
     <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
     <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
-    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="stun" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="stun" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/>
-    <modifier class="melee_hit_result" input_character_state="none" output_character_state="stun" consumes_item="0"/>
-    <modifier class="hit_success_probability" value="0"/>
-    <modifier class="detectability" value="0"/>
-    <modifier class="speed" value="0"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="vest_bugs_zerg_baneling_3" name="3/10 Zerg Baneling Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_zerg_baneling_2">
     <hud_icon filename="helldivers_vest_30.png"/>
@@ -162,19 +169,20 @@
     <model/>
     <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
     <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
-    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="stun" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="stun" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/>
-    <modifier class="melee_hit_result" input_character_state="none" output_character_state="stun" consumes_item="0"/>
-    <modifier class="hit_success_probability" value="0"/>
-    <modifier class="detectability" value="0"/>
-    <modifier class="speed" value="0"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="vest_bugs_zerg_baneling_2" name="2/10 Zerg Baneling Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_zerg_baneling_1">
     <hud_icon filename="helldivers_vest_20.png"/>
@@ -184,19 +192,20 @@
     <model/>
     <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
     <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
-    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="stun" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="stun" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/>
-    <modifier class="melee_hit_result" input_character_state="none" output_character_state="stun" consumes_item="0"/>
-    <modifier class="hit_success_probability" value="0"/>
-    <modifier class="detectability" value="0"/>
-    <modifier class="speed" value="0"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="vest_bugs_zerg_baneling_1" name="1/10 Zerg Baneling Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0">
     <hud_icon filename="helldivers_vest_10.png"/>
@@ -206,6 +215,7 @@
     <model/>
     <modifier class="projectile_blast_result" input_character_state="death" output_character_state="death" consumes_item="0"/>
     <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="death" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="0"/>
     <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="death" consumes_item="0"/>
     <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="death" consumes_item="0"/>
@@ -216,8 +226,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="death" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="0"/>
-    <modifier class="hit_success_probability" value="0.0"/>
+    <modifier class="speed" value="0.0"/>
     <modifier class="detectability" value="0.0"/>
-    <modifier class="speed" value="0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
 </carry_items>

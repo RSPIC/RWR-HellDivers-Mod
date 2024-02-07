@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapon 
+file="_hd_precision.base"
+> 
+    <specification 	
+    slot="0" 	
+    retrigger_time="0.37" 
+	last_burst_retrigger_time="1"
+    accuracy_factor="1.0" 
+	spread_range="0.1"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="0.5" 
+    sustained_fire_diminish_rate="3" 
+    magazine_size="4" 
+    can_shoot_standing="0" 
+    can_shoot_crouching="0" 
+	can_shoot_prone="1"	
+	sight_range_modifier="3.0"
+    suppressed="0" 
+	class="4" 
+    name="ATX-25 Revelator" 
+	burst_shots="1" 
+    projectiles_per_shot="10" 
+    projectile_speed="250.0"
+	barrel_offset="1.0" 
+	carry_in_two_hands="1" 
+	stab_enabled="0" 
+	stab_range="0" 
+	/> 
+	
+	<!--武器模型和HUD-->
+	<weak_hand_hold offset="0.0" /> <!--模型X轴偏移-->
+	<model filename="hdw_atx25_revelator.xml" /> 
+    <model mesh_filename="" texture_filename="" /> <!--调用mesh模型-->
+    <addon_model filename="" /> <!--附加模型，固定绑骨到肩膀-->
+    <hud_icon filename="hd_atx25_revelator.png" /> <!--武器为110x220像素，投掷物为110x110-->
+	
+	<!--武器动作，必须指定recoil和reload动作，部分动作留空会默认调用常规双手武器动作或者无动作-->
+    <animation key="recoil" animation_key="recoil1" /> <!--后坐力动作，半身动作-->
+    <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
+	<animation state_key="reload" animation_key="T_reloading_1.25s" />	<!--换弹动作，半身动作-->
+    <animation state_key="hold" animation_key="" /><!--站姿静止动作，全身动作-->
+	<animation state_key="hold_on_wall"  animation_key="" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="" /><!--闲置动作，全身动作-->
+	<animation state_key="walking" animation_key="walking, carrying load" />
+	<animation state_key="running" animation_key="running, line infantry" />  
+    <animation state_key="walking_backwards" animation_key="" /><!--全身动作-->
+    <animation state_key="crouching" animation_key="" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
+	<animation state_key="stabbing" animation_key="pistol whip 3" /><!--半身动作，武器可设置脱手-->
+
+	<!--武器音频-->
+    <sound key="effect" fileref="" pitch_variety="0" volume="1.0" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
+    <sound key="fire" fileref="hd_psc_atx25_revelator_fire.wav" pitch_variety="0.04" volume="0.8" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
+    <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="hd_mag_out.wav" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="hd_mg94_mag_in.wav" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="rifle_chamber.wav" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="hd_cycle_in_01.wav" /><!--动作中in的value为1-->
+    <sound key="last_ammo" fileref="hd_lastammo_01.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_02.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_03.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_04.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+
+	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
+	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="1" source="rank" source_value="84.248" />
+	
+	<!--军械库相关-->
+    <!-- <commonness value="0.1" can_respawn_with="1" in_stock="1" /> 
+    <inventory encumbrance="10.0" price="0.0" /> 武器重量和价格，实际负重为两倍encumbrance值 -->
+    <commonness value="0.1"/>
+
+
+	
+	<!--枪口特效-->
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_trail_smoke_long" lighting="0"/> 
+
+	<!--姿态精度-->
+    <!-- <stance state_key="running" accuracy="1" /> 
+    <stance state_key="walking" accuracy="1" />
+	<stance state_key="standing" accuracy="1" />
+	<stance state_key="crouching" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1" />      -->
+     	 
+</weapon>

@@ -1,37 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<character filename="illum
-_default_base.character">
+<character filename="illum_default_base.character">
   <comment key="Driver, abandon vehicle" text="" />
   <comment key="Squad, abandon vehicle" text="" />
   <comment key="Squad, get out" text="" />
   <comment key="Squad, follow the vehicle" text="" />
   <comment key="Squad, follow me" text="" />
   <comment key="Driver, stop the vehicle" text="" />
-  <comment key="Gunner, fire at will" text="随意开火" />
-  <comment key="Driver, stop the vehicle" text="司机，靠边停车" />
-  <comment key="Driver, stay close" text="司机，跟紧了" />
-  <comment key="Driver, stay close" text="司机，跟我来" />
-  <comment key="Driver, stay close" text="司机，上去支援" />
-  <comment key="Squad, move over there" text="队员们，去那里" />
-  <comment key="Squad, move over there" text="队员们，去那" />
-  <comment key="Squad, move over there" text="队员们，那里" />
-  <comment key="Squad, change position" text="队员们，移位" />
-  <comment key="Squad, change position" text="队员们，移动" />
-  <comment key="Squad, change position" text="队员们，冲啊" />
-  <comment key="Driver, take us there" text="司机，带我们去那" />
-  <comment key="Driver, over there" text="司机，那里" />
-  <comment key="Gunner, there" text="枪手，那里" />
-  <comment key="Gunner, there" text="注意那里" />
-  <comment key="Gunner, there" text="枪手，瞄准那里" />
-  <comment key="Gunner, there" text="枪手，朝目标开火" />
-  <comment key="We surrender!" text="*悲伤的嗡嗡声*" />
-  <comment key="We surrender!" text="*低沉的咕噜声*" />
-  <comment key="We surrender!" text="*哀怨的低吟声" />
+  <comment key="Gunner, fire at will" text="" />
+  <comment key="Driver, stop the vehicle" text="" />
+  <comment key="Driver, stay close" text="" />
+  <comment key="Driver, stay close" text="" />
+  <comment key="Driver, stay close" text="" />
+  <comment key="Squad, move over there" text="" />
+  <comment key="Squad, move over there" text="" />
+  <comment key="Squad, move over there" text="" />
+  <comment key="Squad, change position" text="" />
+  <comment key="Squad, change position" text="" />
+  <comment key="Squad, change position" text="" />
+  <comment key="Driver, take us there" text="" />
+  <comment key="Driver, over there" text="" />
+  <comment key="Gunner, there" text="" />
+  <comment key="Gunner, there" text="" />
+  <comment key="Gunner, there" text="" />
+  <comment key="Gunner, there" text="" />
+  <comment key="We surrender!" text="（）" />
   <comment key="We surrender!" text="" />
-  <comment key="Medic!" text="*痛苦的虫叫声*" />
+  <comment key="We surrender!" text="" />
+  <comment key="We surrender!" text="" />
+  <comment key="Medic!" text="（机体受损，需要援助）" />
   <comment key="I feel good!" text="" />
   <comment key="I feel good!" text="" />
-  <comment key="Reloading" text="*钳肢挠地声*" />
+  <comment key="Reloading" text="（再充能中）" />
   <comment key="Reloading" text="" />
   <comment key="Reloading" text="" />
   <comment key="Reloading" text="" />
@@ -50,9 +49,9 @@ _default_base.character">
   <comment key="Hey, wait up" text="" />
   <comment key="Quickly!" text="" />
   <comment key="Quickly!" text="" />
-  <comment key="Buzz off" text="*虫叫*" />
-  <comment key="Step out, kid" text="*虫叫*" />
-  <comment key="hostile vehicle takeover" text="！？" />
+  <comment key="Buzz off" text="" />
+  <comment key="Step out, kid" text="" />
+  <comment key="hostile vehicle takeover" text="" />
   <comment key="hostile vehicle takeover" text="" />
   <comment key="hostile vehicle takeover" text="" />
   <comment key="Can't respawn - the last base is under attack" text="" />
@@ -60,56 +59,50 @@ _default_base.character">
   <comment key="Hmm.. not enough room here" text="" />
   <comment key="I'm outta here" text="" />
   <comment key="I'm outta here" text="" />
-  <comment key="Good job, soldiers" text="*兴奋地虫叫*" />
-  <comment key="Open fire" text="*酸液滋滋声*" />
-  <comment key="Open fire" text="*钳肢咔咔声*" />
-  <comment key="Open fire" text="*虫叫*" />
-  <comment key="Lone leader, open fire" text="*甲壳摩擦声*" />
-  <comment key="fire opened, weapon tag = sniper" text="低沉的咕咕声" />
-  <comment key="grenade alert, grenade tag = grenade" text="*惊恐的嘶鸣声*" />
-  <comment key="grenade alert, grenade tag = grenade" text="*急促的咔哒声*" />
-  <comment key="grenade alert, grenade tag = rocket" text="*!*" />
+  <comment key="Good job, soldiers" text="" />
+  <comment key="Open fire" text="（目标锁定）" />
+  <comment key="Open fire" text="（校准火控）" />
+  <comment key="Open fire" text="（启动歼灭模式）" />
+  <comment key="Lone leader, open fire" text="（启动猎杀模式）" />
+  <comment key="fire opened, weapon tag = sniper" text="（侦测到敌狙击手）" />
+  <comment key="grenade alert, grenade tag = grenade" text="（侦测到手雷）" />
+  <comment key="grenade alert, grenade tag = grenade" text="（手雷警报）" />
+  <comment key="grenade alert, grenade tag = rocket" text="（检测到导弹）" />
   <comment key="grenade alert, grenade tag = flashbang" text="" />
-  <comment key="grenade alert, grenade tag = rocket" text="*惊恐的嘶鸣声*" />
-  <comment key="grenade alert, grenade tag = rocket" text="*急促的咔哒声*" />
-  <comment key="grenade alert, grenade tag = rocket" text="*!?!?*" />
-  <comment key="enemy not seen, area alerted" text="*警惕的嘶嘶声*" />
-  <comment key="Lone leader, enemy not seen, area alerted" text="*警惕的嘶嘶声*" />
-  <comment key="leader, enemy not seen, taking suppressed fire" text="*低沉的嗡嗡声*" />
-  <comment key="leader, enemy not seen, taking suppressed fire" text="*嘶嘶嘶*" />
-  <comment key="Lone leader, enemy not seen, taking suppressed fire" text="*低沉的嗡嗡声*" />
-  <comment key="Lone leader, enemy not seen, taking suppressed fire" text="*尖锐的怒吼声*" />
-  <comment key="enemy seen" text="*嘶鸣声*" />
-  <comment key="enemy seen" text="*刺耳的咆哮声*" />
-  <comment key="enemy seen" text="*愤怒的嘶啸声*" />
-  <comment key="enemy seen" text="*嘁嘁嘁*" />
-  <comment key="enemy seen, vehicle tag = any_tank" text="*酸液滋滋声*" />
-  <comment key="enemy seen, vehicle tag = apc" text="*酸液滋滋声*" />
-  <comment key="enemy seen, vehicle tag = truck" text="*酸液滋滋声*" />
-  <comment key="enemy not seen, taking suppressed fire" text="！？" />
-  <comment key="enemy not seen, taking suppressed fire" text="*愤怒的咕咕声*" />
-  <comment key="enemy not seen, taking suppressed fire" text="*警惕的嘶嘶声*" />
-  <comment key="enemy not seen, taking suppressed fire" text="*困惑的吱吱声*" />
-  <comment key="Waiting for reinforcements" text="*警戒的嗡嗡声*"/>
-  <comment key="Waiting for reinforcements" text="*什么东西释放的声音 *" />
-  <comment key="Hold on!" text="*虫叫*" />
-  <comment key="Move out" text="*起伏的虫鸣声*" />
-  <comment key="Move out" text="*起伏的咆哮声*" />
-  <comment key="Move out" text="*翅膀煽动声*" />
-  <comment key="All quiet here" text="*轻柔的咔咔声*" />
-  <comment key="All quiet here" text="*意义不明的低鸣声*" />
-  <comment key="All quiet here" text="*口器咀嚼声*" />
-  <comment key="All quiet here" text="*微弱的虫叫*" />
-  <comment key="All quiet here" text="（阴暗的爬行）" />
-  <comment key="All quiet here" text="（光明的爬行）" />
-  <comment key="All quiet here" text="（扭曲的爬行）" />
-  <comment key="All quiet here" text="*柔和的咕咕声*" />
-  <comment key="All quiet here" text="*触角轻碰声*" />
-  <comment key="All quiet here" text="*类似耗子的声音*" />
-  <comment key="All quiet here" text="*无病呻吟声*" />
-  <comment key="All quiet here" text="*钳肢摩擦声*" />
-  <comment key="Yes sir" text="" />
-  <comment key="Uh, I can't drive this thing" text="*困惑的吱吱声**" />
+  <comment key="grenade alert, grenade tag = rocket" text="（敌导弹来袭）" />
+  <comment key="grenade alert, grenade tag = rocket" text="（正在规避）" />
+  <comment key="grenade alert, grenade tag = rocket" text="" />
+  <comment key="enemy not seen, area alerted" text="（切换警戒模式）" />
+  <comment key="Lone leader, enemy not seen, area alerted" text="（切换警戒模式）" />
+  <comment key="leader, enemy not seen, taking suppressed fire" text="（正在遭受未知攻击）" />
+  <comment key="leader, enemy not seen, taking suppressed fire" text="（正在寻找火力来源）" />
+  <comment key="Lone leader, enemy not seen, taking suppressed fire" text="（正在遭受未知攻击）" />
+  <comment key="Lone leader, enemy not seen, taking suppressed fire" text="（启动紧急模式）" />
+  <comment key="enemy seen" text="（发现敌人）" />
+  <comment key="enemy seen" text="（侦查到敌对目标）" />
+  <comment key="enemy seen" text="（正在发送敌方信息）" />
+  <comment key="enemy seen" text="（检测到敌方信号）" />
+  <comment key="enemy seen, vehicle tag = any_tank" text="（侦测到敌方载具）" />
+  <comment key="enemy seen, vehicle tag = apc" text="（切换反载具模式）" />
+  <comment key="enemy seen, vehicle tag = truck" text="（切换反载具模式）" />
+  <comment key="enemy not seen, taking suppressed fire" text="（正在遭受未知攻击）" />
+  <comment key="enemy not seen, taking suppressed fire" text="（正在寻找火力来源）" />
+  <comment key="enemy not seen, taking suppressed fire" text="" />
+  <comment key="enemy not seen, taking suppressed fire" text="" />
+  <comment key="Waiting for reinforcements" text="（正在发送增援请求）"/>
+  <comment key="Waiting for reinforcements" text="（发送友军识别信号）" />
+  <comment key="Hold on!" text="" />
+  <comment key="Move out" text="（正在移动）" />
+  <comment key="Move out" text="（传达作战指令）" />
+  <comment key="Move out" text="（前往目标点）" />
+  <comment key="Move out" text="（前进）" />  
+  <comment key="All quiet here" text="（未发现敌踪）" />
+  <comment key="All quiet here" text="（静默状态）" />
+  <comment key="All quiet here" text="（遥感信号正常）" />
+  <comment key="All quiet here" text="（姿态矫正）" />
+  <comment key="All quiet here" text="" />
+  <comment key="Yes sir" text="（收到指令）" />
+  <comment key="Uh, I can't drive this thing" text="" />
   <comment key="Waiting for squad" text="" />
   <comment key="Waiting for squad" text="" />
   <comment key="Shield up" text="" />
@@ -122,8 +115,8 @@ _default_base.character">
   <comment key="Where to, chief?" text="" />
   <comment key="Where to, chief?" text="" />
   <comment key="Where to, chief?" text="" />
-  <comment key="celebrating" text="*高兴地虫叫*" />
-  <comment key="celebrating" text="*甲壳抖动的声音*" />
+  <comment key="celebrating" text="（胜局已定）" />
+  <comment key="celebrating" text="（战斗胜利）" />
   <comment key="about to drive over a friendly" text="" />
   <comment key="about to drive over a friendly" text="" />
   <comment key="this is as close as i can get" text="" />
@@ -135,23 +128,18 @@ _default_base.character">
   <comment key="comms have been destroyed" text="我方通讯被敌军破坏" />
   <comment key="enemy comms have been destroyed, by us" text="做得好，敌军&#37;enemy_name的通讯被破坏！" />
   <dialogue key="wander dialogue 2 men">
-    <comment text="*虫叫*" />
-    <comment text="*虫叫*" />
+    <comment text="（过滤信号杂波）" />
+    <comment text="" />
   </dialogue>
   <dialogue key="wander dialogue 2 men">
-    <comment text="*虫叫*" />
+    <comment text="" />
   </dialogue> 
   <dialogue key="defense dialogue 2 men">
-    <comment text="*虫叫*" />
-    <comment text="*虫叫*" />
-  </dialogue>
-  <dialogue key="wander dialogue 2 men">
-    <comment text="*虫叫*" />
-    <comment text="*虫叫*" />
+    <comment text="" />
+    <comment text="" />
   </dialogue>
   <dialogue key="vehicle dialogue 2 men tag=truck">
-    <comment text="*虫叫*" />
-    <comment text="*虫叫*" />
+    <comment text="" />
   </dialogue>
   <dialogue key="vehicle dialogue 2 men tag=campfire">
     <comment text="我的脚着火了" />
@@ -163,8 +151,8 @@ _default_base.character">
     <comment text="" />
   </dialogue>
   <dialogue key="defense dialogue 2 men">
-    <comment text="*起伏的虫鸣声*" />
-    <comment text="*虫叫*" />
+    <comment text="" />
+    <comment text="" />
   </dialogue>
   <!-- commander comments -->
   <comment key="player promotion" text="恭喜你士兵，你刚刚晋升到了&#37;rank_name！" />

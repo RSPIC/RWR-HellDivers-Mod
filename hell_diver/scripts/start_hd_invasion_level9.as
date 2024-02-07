@@ -16,7 +16,7 @@ void main(dictionary@ inputData) {
         settings.m_playerAiCompensationFactor = 1.0;   // was 1.1  (1.75)
 
         settings.m_fellowCapacityFactor = 1.2;
-        settings.m_fellowAiAccuracyFactor = 1.0;
+        settings.m_fellowAiAccuracyFactor = 0.98;
         settings.m_enemyCapacityFactor = 2.0;
         settings.m_enemyAiAccuracyFactor = 0.94;
 

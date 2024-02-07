@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <carry_items>
-  <carry_item key="hd_v_armor+++_80" name="80/80 HellDivers Vest Armor+++" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_v_armor+++_79">
+  <carry_item key="hd_v_armor+++" name="80/80 HellDivers Vest Armor+++" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_v_armor+++_79">
     <hud_icon filename="helldivers_vest_100.png"/>
     <capacity value="1" source="rank" source_value="1"/>
     <commonness value="1" in_stock="1" can_respawn_with="1"/>
@@ -13,7 +13,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -35,7 +35,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -57,7 +57,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -79,7 +79,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -101,7 +101,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -123,7 +123,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -145,7 +145,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -167,7 +167,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -189,7 +189,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -211,7 +211,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -233,7 +233,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -255,7 +255,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -277,7 +277,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -299,7 +299,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -321,7 +321,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -343,7 +343,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -365,7 +365,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -387,7 +387,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -409,7 +409,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -431,7 +431,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -453,7 +453,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -475,7 +475,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -497,7 +497,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -519,7 +519,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -541,7 +541,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -563,7 +563,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -585,7 +585,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -607,7 +607,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -629,7 +629,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -651,7 +651,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -673,7 +673,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -695,7 +695,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -717,7 +717,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -739,7 +739,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -761,7 +761,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -783,7 +783,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -805,7 +805,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -827,7 +827,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -849,7 +849,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -871,7 +871,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -893,7 +893,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -915,7 +915,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -937,7 +937,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -959,7 +959,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -981,7 +981,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1003,7 +1003,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1025,7 +1025,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1047,7 +1047,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1069,7 +1069,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1091,7 +1091,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1113,7 +1113,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1135,7 +1135,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1157,7 +1157,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1179,7 +1179,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1201,7 +1201,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1223,7 +1223,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1245,7 +1245,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1267,7 +1267,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1289,7 +1289,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1311,7 +1311,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1333,7 +1333,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1375,7 +1375,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1397,7 +1397,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1419,7 +1419,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1441,7 +1441,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1463,7 +1463,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1485,7 +1485,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1507,7 +1507,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1529,7 +1529,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1551,7 +1551,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1573,7 +1573,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1595,7 +1595,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1617,7 +1617,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1639,7 +1639,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1661,7 +1661,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1683,7 +1683,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1705,7 +1705,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1727,7 +1727,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1749,7 +1749,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
-    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
@@ -1770,7 +1770,7 @@
     <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="death" consumes_item="0"/>
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="death" consumes_item="0"/>
-    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="death" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="0"/>
     <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="death" consumes_item="0"/>

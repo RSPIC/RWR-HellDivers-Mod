@@ -456,11 +456,16 @@ class itemdrop_event : Tracker {
 		string tempKey = itemKey.substr(0,targetVestKey.size());
 		int characterId = event.getIntAttribute("character_id");
 		if(characterId == -1){return;}
-		if(tempKey == targetVestKey){
+		if(tempKey == targetVestKey ){
+			deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
+			deleteItemInStash(m_metagame,characterId,"carry_item",itemKey);
+		}
+		targetVestKey = "hd_banzai_";
+		tempKey = itemKey.substr(0,targetVestKey.size());
+		if(tempKey == targetVestKey ){
 			deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
 			deleteItemInStash(m_metagame,characterId,"carry_item",itemKey);
 		}
 	}
-	
 
 }

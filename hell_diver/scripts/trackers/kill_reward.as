@@ -114,9 +114,7 @@ dictionary include_kill_target = {
         {"hd_fire_turrent_damage.projectile",true},
 
         {"ex_cl_banzai_damage.projectile",true},
-        {"ex_isu_152_gl_damage.projectile",true},
         {"himars_damage.projectile",true},
-        {"ex_sturmtiger_tank_gl_damage.projectile",true},
         {"mtlb_2b9_damage.projectile",true},
         {"ex_sherman_cannon_damage.projectile",true},
 
@@ -310,6 +308,9 @@ class kill_reward : Tracker {
 					//_debugReport(m_metagame,"武器"+weaponKey+"计入击杀次数");
 				}
 				if(method_hint == "stab"){
+					g_battleInfoBuck.addKill(k_name);
+				}
+				if(g_acg_weapon_count){
 					g_battleInfoBuck.addKill(k_name);
 				}
 			}

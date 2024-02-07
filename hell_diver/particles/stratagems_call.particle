@@ -625,3 +625,7 @@ emitter Point{duration 29}
 affector ColourInterpolator : yellow{}}
 
 
+
+particle_system stratagems_point_light_area_endless : stratagems_point_light_area_2s	 
+{
+emitter Point{duration 0}}

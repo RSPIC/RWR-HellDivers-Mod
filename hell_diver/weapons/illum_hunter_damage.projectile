@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectiles>
+<projectile 
+class="grenade" 
+key="illum_hunter_damage.projectile" 
+slot="0"
+pulldown_in_air="100"
+on_ground_up="0 1 0"
+use_time_to_live="1"
+time_to_live="60"
+radius="1.0"
+can_be_detected_by_footmen="0"
+>
+    <collision class="sticky" />
+    <trigger class="time" time_to_live="1.5" />
+    <result class="blast" radius="4.0" damage="39" push="0.3" decal="0" 
+    character_state="wound" faction_compare="not_equal"
+    damage_origin_vehicle="0"/>
+    	
+    <rotation class="motion" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>		
+    <capacity value="0" source="rank" source_value="0" />
+
+		<sound class="result" key="other" fileref="arc_fire_01.wav" pitch_variety="0.03" volume="1.7" />
+
+        <effect class="result" key="terrain" ref="401_thbow_spread_ring" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_impact" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_spray" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_impact_vertical" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_surrounding_thunder" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_surrounding_thunder_2" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_surrounding_thunder_3" lighting="0"/>
+		<effect class="result" key="terrain" ref="401_thbow_surrounding_thunder_4" lighting="0"/>
+        
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+        <effect class="result" key="other" copy=""/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+
+
+</projectile>
+</projectiles>

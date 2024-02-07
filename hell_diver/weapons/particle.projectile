@@ -68,6 +68,53 @@
 	<effect class="result" key="terrain" ref="g41_gl_shining_particle_01" />
 	<effect class="result" key="terrain" ref="g41_gl_hit_ground_light_01" />
 	<effect class="result" key="terrain" ref="g41_gl_area_light_01" />
+
+	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_circle" lighting="0"/> 
+	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_circle2" lighting="0"/> 
+	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_circle3" lighting="0"/> 
+	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_lens" lighting="0"/> 
+	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_spray" lighting="0"/> 
+	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_shrink_flare" lighting="0"/> 
+	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_shrink_line" lighting="0"/> 
+	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_springFire" lighting="0"/> 
+	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_flower" lighting="0"/> 
+	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_ambient" lighting="0"/>
+
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+
+	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_crescent" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_crescent2" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_lens" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_star" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_flower" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_centerlight" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_spray" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_spray2" lighting="0"/> 
+
+	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_crossline" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_star" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_spray" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_radiation" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_pre_flare" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_pre_ringwave2" lighting="0"/>
+
+	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_pre_lens" lighting="0"/>
+	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_pre_ringwave" lighting="0"/>
+
+	<effect class="result" key="terrain" ref="401_thbow_spread_ring" lighting="0"/>
+	<effect class="result" key="terrain" ref="401_thbow_impact" lighting="0"/>
+	<effect class="result" key="terrain" ref="401_thbow_spray" lighting="0"/>
+	<effect class="result" key="terrain" ref="401_thbow_impact_vertical" lighting="0"/>
+	<effect class="result" key="terrain" ref="401_thbow_surrounding_thunder" lighting="0"/>
+	<effect class="result" key="terrain" ref="401_thbow_surrounding_thunder_2" lighting="0"/>
+	<effect class="result" key="terrain" ref="401_thbow_surrounding_thunder_3" lighting="0"/>
+	<effect class="result" key="terrain" ref="401_thbow_surrounding_thunder_4" lighting="0"/>
+
+
 	<!-- <effect class="activated" ref="alert_center_alerticon_hight_frequncy" lighting="0" /> -->
 	<!--高频率感叹号警告标识-->
 

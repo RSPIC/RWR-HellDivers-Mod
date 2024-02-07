@@ -124,7 +124,7 @@ class schedule_Check : Tracker {
         for(uint i=0;i<banKey.length;i++){
             equipKey = equipKey.substr(0,banKey[i].length());//截取指定前缀并比对
             if(equipKey == banKey[i]){    
-                editPlayerVest(m_metagame,cid,"helldivers_vest.carry_item",4);//替换为默认甲
+                editPlayerVest(m_metagame,cid,"helldivers_vest",4);//替换为默认甲
             }
         }
         if(targetVestKey != equipKey){
@@ -132,7 +132,7 @@ class schedule_Check : Tracker {
         }
         // 开局首次复活会记录玩家护甲信息,因此这里读取不到玩家的对应护甲,需要再次替换
         if(targetVestKey == ""){    
-            editPlayerVest(m_metagame,cid,"helldivers_vest.carry_item",4);//替换为默认甲
+            editPlayerVest(m_metagame,cid,"helldivers_vest",4);//替换为默认甲
         }
 	}
     // ----------------------------------------------------
@@ -344,24 +344,24 @@ class schedule_Check : Tracker {
             //交叉检测，这样设计武器时不用考虑在主手还是在副手的问题
 			if( equipKey_main == targetKey_main ||  equipKey_sec == targetKey_sec){
                 //装载机甲护甲
-				string key = "EXO_vest_";
+				string key = "vest_EXO_";
 				string tempKey = equipKey_vest.substr(0,key.length());
 				if(tempKey != key){
 					notify(metagame, "EXO Armor onload", dictionary(), "misc", pid, false, "", 1.0);
-					editPlayerVest(metagame,cid,"EXO_vest_300",4);
+					editPlayerVest(metagame,cid,"vest_EXO_300",4);
 					return;
 				}
 			}else{
 				//非正常配装，发送警告
 				notify(metagame, "Warning - EXO", dictionary(), "misc", pid, false, "EXO Warning", 1.0);
-				editPlayerVest(metagame,cid,"hd_v40",4);//替换为0层甲
+				editPlayerVest(metagame,cid,"helldivers_vest_0",4);//替换为0层甲
 				return;
 			}
 		}else{ //卸下机甲
-			string key = "EXO_vest_";
+			string key = "vest_EXO_";
 			string tempKey = equipKey_vest.substr(0,key.length());
 			if(tempKey == key){
-				editPlayerVest(metagame,cid,"helldivers_vest.carry_item",4);
+				editPlayerVest(metagame,cid,"helldivers_vest",4);
 				notify(metagame, "EXO Armor offload", dictionary(), "misc", pid, false, "", 1.0);
 				return;
 			}

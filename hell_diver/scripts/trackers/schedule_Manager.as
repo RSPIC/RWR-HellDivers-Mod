@@ -80,6 +80,7 @@ class schedule_Manager : Tracker {
     void refresh(){
         _log("S_Manager refresh");
         array<const XmlElement@> m_players = getPlayers(m_metagame);
+        g_playerCount = int(m_players.size());
         if(m_players is null){return;}
         for (uint j = 0; j < m_players.size(); ++j) {
 			const XmlElement@ player = m_players[j];

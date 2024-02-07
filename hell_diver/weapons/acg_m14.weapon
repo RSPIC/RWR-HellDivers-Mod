@@ -70,11 +70,11 @@ key="acg_m14.weapon"
 
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
-	time_to_live="0.8" can_be_detected_by_driver="1" can_be_disarmed="0" name="M14"> 
+	time_to_live="0.6" can_be_detected_by_driver="1" can_be_disarmed="0" name="M14"> 
 
-		<result class="hit" kill_probability="2.0" 
+		<result class="hit" kill_probability="1.2" 
 		kill_probability_offset_on_successful_hit="75"
-		kill_decay_start_time="0.6" kill_decay_end_time="1.2" character_state="wound"/>
+		kill_decay_start_time="1" kill_decay_end_time="1.2" character_state="wound"/>
 
 		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
@@ -199,11 +199,11 @@ key="re_acg_m14.weapon"
 	
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
-	time_to_live="0.8" can_be_detected_by_driver="1" can_be_disarmed="0" name="M14"> 
+	time_to_live="0.6" can_be_detected_by_driver="1" can_be_disarmed="0" name="M14"> 
 
-		<result class="hit" kill_probability="2.0" 
+		<result class="hit" kill_probability="1.2" 
 		kill_probability_offset_on_successful_hit="75"
-		kill_decay_start_time="0.6" kill_decay_end_time="1.2" character_state="wound"/>
+		kill_decay_start_time="1" kill_decay_end_time="1.2" character_state="wound"/>
 
 		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->

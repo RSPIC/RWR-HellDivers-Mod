@@ -22,6 +22,7 @@ void main(dictionary@ inputData) {
 	settings.m_server_test_mode = true;
 	settings.m_debug_mode = false;
 	settings.m_single_player = true;
+	settings.m_fov = false;
 
 	// --------------------------------------------
 	// TODO: replace with your package's folder here

@@ -85,6 +85,7 @@ class vehicle_recycle : Tracker {
                             float vehicleHealth = vehicleInfo.getFloatAttribute("health");
                             float vehicleMaxHealth = vehicleInfo.getFloatAttribute("max_health");
                             string vehiclekey = vehicleInfo.getStringAttribute("key");
+                            string vehicleName = vehicleInfo.getStringAttribute("name");
                             if(vehiclekey == "repair_crane.vehicle"){
                                 include_self = true;
                                 continue;
@@ -99,7 +100,10 @@ class vehicle_recycle : Tracker {
                             if(vehiclePos.m_values[0]-c_position.m_values[0] > 0){
                                 //判断是否为可回收载具
                                 _log("vehicle_recycle_key exists?: " + vehicle_recycle_key.exists(vehiclekey));
-                                if(vehicle_recycle_key.exists(vehiclekey)){
+                                if(vehicleName.find("[Recyclable]") != -1){
+                                    _log("检测到可回收名字键值");
+                                }
+                                if(vehicle_recycle_key.exists(vehiclekey) || vehicleName.find("[Recyclable]") != -1){
                                     if(vehicleHealth <= 0){continue;}     //排除空节点载具
                                     g_userCountInfoBuck.addCount(name,"vehicle_recycle_"+vehiclekey);
                                     int m_count_recycle_time = 0;
@@ -116,8 +120,12 @@ class vehicle_recycle : Tracker {
                                     //是否执行特殊奖励
                                     handleSpecialReward(vehiclekey,characterId);
                                     //退还奖励
-                                    GiveRP(m_metagame,characterId,int(vehicle_recycle_key[vehiclekey]));
-                                    string message = "Recycle Successed, return rp: "+int(vehicle_recycle_key[vehiclekey]);
+                                    int returnRp = int(vehicle_recycle_key[vehiclekey]);
+                                    if(returnRp <= 0){
+                                        returnRp = 500;
+                                    }
+                                    GiveRP(m_metagame,characterId,returnRp);
+                                    string message = "Recycle Successed, return rp: " + returnRp;
                                     sendPrivateMessage(m_metagame,playerId,message);
                                     count_recycle_time++;
                                     _log("handing projectile_event:recycle_working");

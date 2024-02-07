@@ -3,9 +3,20 @@
 	<carry_item file="god_vest.carry_item" />
 	<!-- 生化人 -->
 	<carry_item file="vest_cyborgs_tesla.carry_item" /><!--磁暴步兵-->
+	<carry_item file="vest_cyborgs_butcher.carry_item" /><!--屠夫 转减速护甲-->
+	<carry_item file="vest_cyborgs_berserker.carry_item" /><!--狂暴者 转减速护甲-->
+	<carry_item file="vest_cyborgs_grotesque.carry_item" /><!--畸形人 转加速护甲-->
+	<!-- 光能 -->
+	<carry_item file="vest_illuminate_council_member.carry_item" /><!--光能 首次抗爆-->
+	<carry_item file="vest_illuminate_illusionist.carry_item" /><!--光能 首次抗爆-->
+	<carry_item file="vest_illuminate_observer.carry_item" /><!--光能 首次抗爆-->
+	<carry_item file="vest_illuminate_strider.carry_item" /><!--光能 首次抗爆-->
+	<carry_item file="vest_illuminate_tripod.carry_item" /><!--光能 首次抗爆-->
 
 	<!-- 虫族 -->
 	<carry_item file="vest_bugs_zerg_baneling.carry_item" /><!--虫族 电浆虫护甲-->
+	<carry_item file="vest_bugs_elite.carry_item" /><!--精英部队 转减速护甲-->
+	<carry_item file="vest_bugs_commander.carry_item" /><!--虫族指挥官 转加速护甲-->
 
 	<!-- 超级地球 -->
 		<!-- 护甲 -->
@@ -35,13 +46,11 @@
 	
 	<!-- 通用 -->
 	<carry_item file="general_vest_1000.carry_item" /><!--无抵抗1000层甲-->
-	<carry_item file="anti_blast_vest.carry_item" /><!--重甲防爆防子弹300层甲-->
-	<carry_item file="anti_melee_vest.carry_item" /><!--无抵抗防刺300层甲-->
-	<carry_item file="anti_mid_hit_vest.carry_item" /><!--中甲防穿300层甲-->
-	<carry_item file="anti_light_hit_vest.carry_item" /><!--轻甲防穿300层甲-->
-	<carry_item file="EXO_vest.carry_item" /><!--机甲护甲 防刀轻甲300层-->
-	<carry_item file="stun_vest.carry_item" /><!--眩晕甲 无抵抗100层-->
-	<carry_item file="anti_all_blast_vest.carry_item" /><!--抗爆甲 300层-->
+	<carry_item file="vest_EXO.carry_item" /><!--机甲护甲 防刀防眩晕普通弹300层-->
+	<carry_item file="vest_stun.carry_item" /><!--眩晕甲 无抵抗100层-->
+	<carry_item file="vest_hvy.carry_item" /><!--抗爆甲 300层-->
+	<carry_item file="vest_fast.carry_item" /><!--损伤加速甲-->
+	<carry_item file="vest_slow.carry_item" /><!--损伤减速甲-->
 
 
 	<!-- 战利品-收藏-MC -->
@@ -71,14 +80,9 @@
 
 	<carry_item file="lottery.carry_item" /> 
 	<carry_item file="balloon.carry_item" /> 
-
-	<!-- <carry_item file="gift_box_community_1.carry_item" /> 
-	<carry_item file="gift_box_community_2.carry_item" /> 
-	<carry_item file="gift_box_community_3.carry_item" /> 
-	<carry_item file="gift_box_community_4.carry_item" /> 
-	<carry_item file="gift_box_community_5.carry_item" />  -->
-	<!-- <carry_item file="gift_box_community_6.carry_item" />  -->
-	<!-- <carry_item file="gift_box_community_7.carry_item" />  -->
+	
+	<!-- 活动 -->
+	<carry_item file="act_hongbao.carry_item" /> 
 
 </carry_items>
 

@@ -1,0 +1,667 @@
+<animations><animation loop="0" end="0.0417" speed="1.0" comment="illum_illusionist_bone">
+	<frame time="0.0">
+		<position x="0.0000" y="85.3529" z="-0.1850" node_name="head" />
+		<position x="0.0000" y="84.4354" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="85.2924" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9571" y="85.2924" z="-6.3159" node_name="shoudler.L" />
+		<position x="-17.5795" y="72.0131" z="-6.4912" node_name="bow.R" />
+		<position x="17.5795" y="72.0131" z="-6.4912" node_name="bow.L" />
+		<position x="-21.0859" y="65.0748" z="11.0497" node_name="hand.R" />
+		<position x="21.0859" y="65.0748" z="11.0497" node_name="hand.L" />
+		<position x="0.0000" y="61.9065" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="44.0370" z="0.3715" node_name="thip.R" />
+		<position x="11.9531" y="44.0370" z="0.3715" node_name="thip.L" />
+		<position x="-11.9531" y="23.6736" z="-0.0569" node_name="knee.R" />
+		<position x="11.9531" y="23.6736" z="-0.0569" node_name="knee.L" />
+		<position x="-11.9531" y="0.1845" z="-0.0487" node_name="foot.R" />
+		<position x="11.9531" y="0.1845" z="-0.0487" node_name="foot.L" />
+	</frame>
+	<frame time="0.0417">
+		<position x="0.0000" y="85.3529" z="-0.1850" node_name="head" />
+		<position x="0.0000" y="84.4354" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="85.2924" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9571" y="85.2924" z="-6.3159" node_name="shoudler.L" />
+		<position x="-17.5795" y="72.0131" z="-6.4912" node_name="bow.R" />
+		<position x="17.5795" y="72.0131" z="-6.4912" node_name="bow.L" />
+		<position x="-21.0859" y="65.0748" z="11.0497" node_name="hand.R" />
+		<position x="21.0859" y="65.0748" z="11.0497" node_name="hand.L" />
+		<position x="0.0000" y="61.9065" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="44.0370" z="0.3715" node_name="thip.R" />
+		<position x="11.9531" y="44.0370" z="0.3715" node_name="thip.L" />
+		<position x="-11.9531" y="23.6736" z="-0.0569" node_name="knee.R" />
+		<position x="11.9531" y="23.6736" z="-0.0569" node_name="knee.L" />
+		<position x="-11.9531" y="0.1845" z="-0.0487" node_name="foot.R" />
+		<position x="11.9531" y="0.1845" z="-0.0487" node_name="foot.L" />
+	</frame>
+</animation><animation loop="0" end="1.2500" speed="1.0" comment="illum_illusionist_recoil">
+	<frame time="0.0">
+		<position x="0.1113" y="85.3766" z="-0.1905" node_name="head" />
+		<position x="-0.0000" y="84.4354" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="85.2924" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9570" y="85.2924" z="-6.3159" node_name="shoudler.L" />
+		<position x="-12.7669" y="76.3936" z="5.4214" node_name="bow.R" />
+		<position x="12.9591" y="75.8103" z="4.9229" node_name="bow.L" />
+		<position x="-6.1626" y="83.4064" z="22.0142" node_name="hand.R" />
+		<position x="6.2744" y="82.6232" z="21.5667" node_name="hand.L" />
+		<position x="-0.0000" y="61.9065" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="44.0370" z="0.3715" node_name="thip.R" />
+		<position x="11.9530" y="44.0370" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="23.6706" z="0.1364" node_name="knee.R" />
+		<position x="12.0215" y="23.6706" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="0.1824" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="0.1824" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="0.0833">
+		<position x="0.1113" y="85.3766" z="-0.1905" node_name="head" />
+		<position x="-0.0000" y="84.4354" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="85.2924" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9570" y="85.2924" z="-6.3159" node_name="shoudler.L" />
+		<position x="-13.0515" y="75.7382" z="4.8447" node_name="bow.R" />
+		<position x="13.2887" y="75.1828" z="4.2949" node_name="bow.L" />
+		<position x="-6.1044" y="83.4064" z="21.0019" node_name="hand.R" />
+		<position x="6.3326" y="82.6232" z="20.5544" node_name="hand.L" />
+		<position x="-0.0000" y="61.9065" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="44.0370" z="0.3715" node_name="thip.R" />
+		<position x="11.9530" y="44.0370" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="23.6706" z="0.1364" node_name="knee.R" />
+		<position x="12.0215" y="23.6706" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="0.1824" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="0.1824" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="0.1667">
+		<position x="0.1113" y="85.3766" z="-0.1905" node_name="head" />
+		<position x="-0.0000" y="84.4354" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="85.2924" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9570" y="85.2924" z="-6.3159" node_name="shoudler.L" />
+		<position x="-13.6003" y="74.4318" z="3.4457" node_name="bow.R" />
+		<position x="13.9504" y="73.9354" z="2.7553" node_name="bow.L" />
+		<position x="-5.9657" y="83.4064" z="18.5879" node_name="hand.R" />
+		<position x="6.4714" y="82.6232" z="18.1404" node_name="hand.L" />
+		<position x="-0.0000" y="61.9065" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="44.0370" z="0.3715" node_name="thip.R" />
+		<position x="11.9530" y="44.0370" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="23.6706" z="0.1364" node_name="knee.R" />
+		<position x="12.0215" y="23.6706" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="0.1824" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="0.1824" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="0.25">
+		<position x="0.1113" y="85.3766" z="-0.1905" node_name="head" />
+		<position x="-0.0000" y="84.4354" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="85.2924" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9570" y="85.2924" z="-6.3159" node_name="shoudler.L" />
+		<position x="-14.0831" y="73.2142" z="1.7200" node_name="bow.R" />
+		<position x="14.5806" y="72.7962" z="0.8216" node_name="bow.L" />
+		<position x="-5.8001" y="83.4064" z="15.7067" node_name="hand.R" />
+		<position x="6.6369" y="82.6232" z="15.2592" node_name="hand.L" />
+		<position x="-0.0000" y="61.9065" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="44.0370" z="0.3715" node_name="thip.R" />
+		<position x="11.9530" y="44.0370" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="23.6706" z="0.1364" node_name="knee.R" />
+		<position x="12.0215" y="23.6706" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="0.1824" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="0.1824" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="0.3333">
+		<position x="0.1113" y="85.3766" z="-0.1905" node_name="head" />
+		<position x="-0.0000" y="84.4354" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="85.2924" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9570" y="85.2924" z="-6.3159" node_name="shoudler.L" />
+		<position x="-14.3909" y="72.4152" z="0.2121" node_name="bow.R" />
+		<position x="15.0209" y="72.0849" z="-0.9053" node_name="bow.L" />
+		<position x="-5.6614" y="83.4064" z="13.2927" node_name="hand.R" />
+		<position x="6.7757" y="82.6232" z="12.8452" node_name="hand.L" />
+		<position x="-0.0000" y="61.9065" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="44.0370" z="0.3715" node_name="thip.R" />
+		<position x="11.9530" y="44.0370" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="23.6706" z="0.1364" node_name="knee.R" />
+		<position x="12.0215" y="23.6706" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="0.1824" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="0.1824" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="0.4167">
+		<position x="0.1113" y="85.3766" z="-0.1905" node_name="head" />
+		<position x="-0.0000" y="84.4354" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="85.2924" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9570" y="85.2924" z="-6.3159" node_name="shoudler.L" />
+		<position x="-14.4968" y="72.1314" z="-0.4433" node_name="bow.R" />
+		<position x="15.1849" y="71.8480" z="-1.6679" node_name="bow.L" />
+		<position x="-5.6032" y="83.4064" z="12.2804" node_name="hand.R" />
+		<position x="6.8339" y="82.6232" z="11.8329" node_name="hand.L" />
+		<position x="-0.0000" y="61.9065" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="44.0370" z="0.3715" node_name="thip.R" />
+		<position x="11.9530" y="44.0370" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="23.6706" z="0.1364" node_name="knee.R" />
+		<position x="12.0215" y="23.6706" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="0.1824" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="0.1824" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="0.5">
+		<position x="0.1113" y="85.3766" z="-0.1905" node_name="head" />
+		<position x="-0.0000" y="84.4354" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="85.2924" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9570" y="85.2924" z="-6.3159" node_name="shoudler.L" />
+		<position x="-11.0958" y="80.5641" z="7.7501" node_name="bow.R" />
+		<position x="10.5810" y="79.9281" z="7.5157" node_name="bow.L" />
+		<position x="-6.9458" y="83.4064" z="26.2654" node_name="hand.R" />
+		<position x="5.4914" y="82.6233" z="25.8173" node_name="hand.L" />
+		<position x="-0.0000" y="61.9065" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="44.0370" z="0.3715" node_name="thip.R" />
+		<position x="11.9530" y="44.0370" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="23.6706" z="0.1364" node_name="knee.R" />
+		<position x="12.0215" y="23.6706" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="0.1824" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="0.1824" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="0.5833">
+		<position x="0.1113" y="85.3766" z="-0.1905" node_name="head" />
+		<position x="-0.0000" y="84.4354" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="85.2924" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9570" y="85.2924" z="-6.3159" node_name="shoudler.L" />
+		<position x="-20.1835" y="79.5546" z="3.7926" node_name="bow.R" />
+		<position x="18.0599" y="84.0824" z="6.6577" node_name="bow.L" />
+		<position x="-27.1965" y="83.4064" z="21.2310" node_name="hand.R" />
+		<position x="27.1953" y="82.6234" z="23.4665" node_name="hand.L" />
+		<position x="-0.0000" y="61.9065" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="44.0370" z="0.3715" node_name="thip.R" />
+		<position x="11.9530" y="44.0370" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="23.6706" z="0.1364" node_name="knee.R" />
+		<position x="12.0215" y="23.6706" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="0.1824" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="0.1824" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="0.6667">
+		<position x="0.1113" y="85.3766" z="-0.1905" node_name="head" />
+		<position x="-0.0000" y="84.4354" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="85.2924" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9570" y="85.2924" z="-6.3159" node_name="shoudler.L" />
+		<position x="-20.9226" y="75.5940" z="-1.1334" node_name="bow.R" />
+		<position x="20.6601" y="77.0495" z="1.3088" node_name="bow.L" />
+		<position x="-25.1988" y="83.4064" z="15.8607" node_name="hand.R" />
+		<position x="26.3255" y="82.6232" z="18.7717" node_name="hand.L" />
+		<position x="-0.0000" y="61.9065" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="44.0370" z="0.3715" node_name="thip.R" />
+		<position x="11.9530" y="44.0370" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="23.6706" z="0.1364" node_name="knee.R" />
+		<position x="12.0215" y="23.6706" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="0.1824" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="0.1824" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="0.75">
+		<position x="0.1113" y="85.3766" z="-0.1905" node_name="head" />
+		<position x="-0.0000" y="84.4354" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="85.2924" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9570" y="85.2924" z="-6.3159" node_name="shoudler.L" />
+		<position x="-19.9273" y="73.7907" z="-3.5819" node_name="bow.R" />
+		<position x="20.6393" y="74.6039" z="-2.8176" node_name="bow.L" />
+		<position x="-20.5905" y="83.4064" z="13.0077" node_name="hand.R" />
+		<position x="24.0126" y="82.6232" z="14.2829" node_name="hand.L" />
+		<position x="-0.0000" y="61.9065" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="44.0370" z="0.3715" node_name="thip.R" />
+		<position x="11.9530" y="44.0370" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="23.6706" z="0.1364" node_name="knee.R" />
+		<position x="12.0215" y="23.6706" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="0.1824" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="0.1824" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="0.8333">
+		<position x="0.1113" y="85.3766" z="-0.1905" node_name="head" />
+		<position x="-0.0000" y="84.4354" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="85.2924" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9570" y="85.2924" z="-6.3159" node_name="shoudler.L" />
+		<position x="-18.5494" y="72.8457" z="-3.5469" node_name="bow.R" />
+		<position x="19.8050" y="73.5060" z="-4.5772" node_name="bow.L" />
+		<position x="-15.4489" y="83.4064" z="12.1685" node_name="hand.R" />
+		<position x="20.7073" y="82.6232" z="12.2804" node_name="hand.L" />
+		<position x="-0.0000" y="61.9065" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="44.0370" z="0.3715" node_name="thip.R" />
+		<position x="11.9530" y="44.0370" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="23.6706" z="0.1364" node_name="knee.R" />
+		<position x="12.0215" y="23.6706" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="0.1824" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="0.1824" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="0.9167">
+		<position x="0.1113" y="85.3766" z="-0.1905" node_name="head" />
+		<position x="-0.0000" y="84.4354" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="85.2924" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9570" y="85.2924" z="-6.3159" node_name="shoudler.L" />
+		<position x="-17.0848" y="72.6112" z="-1.6398" node_name="bow.R" />
+		<position x="18.7907" y="73.0604" z="-3.2759" node_name="bow.L" />
+		<position x="-11.4650" y="83.4064" z="13.1925" node_name="hand.R" />
+		<position x="16.8693" y="82.6232" z="13.2462" node_name="hand.L" />
+		<position x="-0.0000" y="61.9065" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="44.0370" z="0.3715" node_name="thip.R" />
+		<position x="11.9530" y="44.0370" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="23.6706" z="0.1364" node_name="knee.R" />
+		<position x="12.0215" y="23.6706" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="0.1824" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="0.1824" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="1.0">
+		<position x="0.1113" y="85.3766" z="-0.1905" node_name="head" />
+		<position x="-0.0000" y="84.4354" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="85.2924" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9570" y="85.2924" z="-6.3159" node_name="shoudler.L" />
+		<position x="-15.5710" y="73.1698" z="0.8940" node_name="bow.R" />
+		<position x="17.2965" y="73.1625" z="-0.5795" node_name="bow.L" />
+		<position x="-8.7847" y="83.4064" z="15.6342" node_name="hand.R" />
+		<position x="12.9978" y="82.6232" z="15.5492" node_name="hand.L" />
+		<position x="-0.0000" y="61.9065" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="44.0370" z="0.3715" node_name="thip.R" />
+		<position x="11.9530" y="44.0370" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="23.6706" z="0.1364" node_name="knee.R" />
+		<position x="12.0215" y="23.6706" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="0.1824" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="0.1824" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="1.0833">
+		<position x="0.1113" y="85.3766" z="-0.1905" node_name="head" />
+		<position x="-0.0000" y="84.4354" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="85.2924" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9570" y="85.2924" z="-6.3159" node_name="shoudler.L" />
+		<position x="-14.2220" y="74.3576" z="3.1709" node_name="bow.R" />
+		<position x="15.4050" y="73.9716" z="2.1861" node_name="bow.L" />
+		<position x="-7.1678" y="83.4064" z="18.5485" node_name="hand.R" />
+		<position x="9.6020" y="82.6232" z="18.2979" node_name="hand.L" />
+		<position x="-0.0000" y="61.9065" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="44.0370" z="0.3715" node_name="thip.R" />
+		<position x="11.9530" y="44.0370" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="23.6706" z="0.1364" node_name="knee.R" />
+		<position x="12.0215" y="23.6706" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="0.1824" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="0.1824" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="1.1667">
+		<position x="0.1113" y="85.3766" z="-0.1905" node_name="head" />
+		<position x="-0.0000" y="84.4354" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="85.2924" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9570" y="85.2924" z="-6.3159" node_name="shoudler.L" />
+		<position x="-13.1946" y="75.7101" z="4.7927" node_name="bow.R" />
+		<position x="13.7076" y="75.1590" z="4.1711" node_name="bow.L" />
+		<position x="-6.3739" y="83.4064" z="20.9903" node_name="hand.R" />
+		<position x="7.1912" y="82.6232" z="20.6009" node_name="hand.L" />
+		<position x="-0.0000" y="61.9065" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="44.0370" z="0.3715" node_name="thip.R" />
+		<position x="11.9530" y="44.0370" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="23.6706" z="0.1364" node_name="knee.R" />
+		<position x="12.0215" y="23.6706" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="0.1824" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="0.1824" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="1.25">
+		<position x="0.1113" y="85.3766" z="-0.1905" node_name="head" />
+		<position x="-0.0000" y="84.4354" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="85.2924" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9570" y="85.2924" z="-6.3159" node_name="shoudler.L" />
+		<position x="-12.7669" y="76.3936" z="5.4214" node_name="bow.R" />
+		<position x="12.9591" y="75.8103" z="4.9229" node_name="bow.L" />
+		<position x="-6.1626" y="83.4064" z="22.0142" node_name="hand.R" />
+		<position x="6.2744" y="82.6232" z="21.5667" node_name="hand.L" />
+		<position x="-0.0000" y="61.9065" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="44.0370" z="0.3715" node_name="thip.R" />
+		<position x="11.9530" y="44.0370" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="23.6706" z="0.1364" node_name="knee.R" />
+		<position x="12.0215" y="23.6706" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="0.1824" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="0.1824" z="-0.0485" node_name="foot.L" />
+	</frame>
+</animation><animation loop="0" end="1.6667" speed="1.0" comment="illum_illusionist_running">
+	<frame time="0.0">
+		<position x="0.1113" y="85.7174" z="-0.1905" node_name="head" />
+		<position x="0.0000" y="84.7763" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="85.6333" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9571" y="85.6333" z="-6.3159" node_name="shoudler.L" />
+		<position x="-17.5556" y="72.3415" z="-6.4484" node_name="bow.R" />
+		<position x="17.5556" y="72.3415" z="-6.4484" node_name="bow.L" />
+		<position x="-21.0429" y="65.2866" z="11.0497" node_name="hand.R" />
+		<position x="21.0429" y="65.2866" z="11.0497" node_name="hand.L" />
+		<position x="0.0000" y="62.2473" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="44.3779" z="0.3715" node_name="thip.R" />
+		<position x="11.9531" y="44.3779" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="24.0114" z="0.1364" node_name="knee.R" />
+		<position x="12.0216" y="24.0114" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="0.5232" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="0.5232" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="0.0833">
+		<position x="0.1113" y="87.1369" z="-0.1905" node_name="head" />
+		<position x="0.0000" y="86.1958" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="87.0528" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9571" y="87.0528" z="-6.3159" node_name="shoudler.L" />
+		<position x="-17.5556" y="73.7610" z="-6.4484" node_name="bow.R" />
+		<position x="17.5556" y="73.7610" z="-6.4484" node_name="bow.L" />
+		<position x="-21.0429" y="66.7062" z="11.0497" node_name="hand.R" />
+		<position x="21.0429" y="66.7062" z="11.0497" node_name="hand.L" />
+		<position x="0.0000" y="63.6669" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="45.7974" z="0.3715" node_name="thip.R" />
+		<position x="11.9531" y="45.7974" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="25.4309" z="0.1364" node_name="knee.R" />
+		<position x="12.0216" y="25.4309" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="1.9428" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="1.9428" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="0.1667">
+		<position x="0.1113" y="90.5220" z="-0.1905" node_name="head" />
+		<position x="0.0000" y="89.5808" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="90.4379" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9571" y="90.4379" z="-6.3159" node_name="shoudler.L" />
+		<position x="-17.5556" y="77.1461" z="-6.4484" node_name="bow.R" />
+		<position x="17.5556" y="77.1461" z="-6.4484" node_name="bow.L" />
+		<position x="-21.0429" y="70.0912" z="11.0497" node_name="hand.R" />
+		<position x="21.0429" y="70.0912" z="11.0497" node_name="hand.L" />
+		<position x="0.0000" y="67.0519" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="49.1825" z="0.3715" node_name="thip.R" />
+		<position x="11.9531" y="49.1825" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="28.8160" z="0.1364" node_name="knee.R" />
+		<position x="12.0216" y="28.8160" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="5.3278" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="5.3278" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="0.25">
+		<position x="0.1113" y="94.5622" z="-0.1905" node_name="head" />
+		<position x="0.0000" y="93.6211" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="94.4781" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9571" y="94.4781" z="-6.3159" node_name="shoudler.L" />
+		<position x="-17.5556" y="81.1863" z="-6.4484" node_name="bow.R" />
+		<position x="17.5556" y="81.1863" z="-6.4484" node_name="bow.L" />
+		<position x="-21.0429" y="74.1314" z="11.0497" node_name="hand.R" />
+		<position x="21.0429" y="74.1314" z="11.0497" node_name="hand.L" />
+		<position x="0.0000" y="71.0921" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="53.2227" z="0.3715" node_name="thip.R" />
+		<position x="11.9531" y="53.2227" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="32.8562" z="0.1364" node_name="knee.R" />
+		<position x="12.0216" y="32.8562" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="9.3680" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="9.3680" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="0.3333">
+		<position x="0.1113" y="97.9472" z="-0.1905" node_name="head" />
+		<position x="0.0000" y="97.0061" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="97.8631" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9571" y="97.8631" z="-6.3159" node_name="shoudler.L" />
+		<position x="-17.5556" y="84.5713" z="-6.4484" node_name="bow.R" />
+		<position x="17.5556" y="84.5713" z="-6.4484" node_name="bow.L" />
+		<position x="-21.0429" y="77.5164" z="11.0497" node_name="hand.R" />
+		<position x="21.0429" y="77.5164" z="11.0497" node_name="hand.L" />
+		<position x="0.0000" y="74.4772" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="56.6077" z="0.3715" node_name="thip.R" />
+		<position x="11.9531" y="56.6077" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="36.2412" z="0.1364" node_name="knee.R" />
+		<position x="12.0216" y="36.2412" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="12.7531" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="12.7531" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="0.4167">
+		<position x="0.1113" y="99.3668" z="-0.1905" node_name="head" />
+		<position x="0.0000" y="98.4256" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="99.2827" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9571" y="99.2827" z="-6.3159" node_name="shoudler.L" />
+		<position x="-17.5556" y="85.9909" z="-6.4484" node_name="bow.R" />
+		<position x="17.5556" y="85.9909" z="-6.4484" node_name="bow.L" />
+		<position x="-21.0429" y="78.9360" z="11.0497" node_name="hand.R" />
+		<position x="21.0429" y="78.9360" z="11.0497" node_name="hand.L" />
+		<position x="0.0000" y="75.8967" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="58.0273" z="0.3715" node_name="thip.R" />
+		<position x="11.9531" y="58.0273" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="37.6608" z="0.1364" node_name="knee.R" />
+		<position x="12.0216" y="37.6608" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="14.1726" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="14.1726" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="0.5">
+		<position x="0.1113" y="97.9472" z="-0.1905" node_name="head" />
+		<position x="0.0000" y="97.0061" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="97.8631" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9571" y="97.8631" z="-6.3159" node_name="shoudler.L" />
+		<position x="-17.5556" y="84.5713" z="-6.4484" node_name="bow.R" />
+		<position x="17.5556" y="84.5713" z="-6.4484" node_name="bow.L" />
+		<position x="-21.0429" y="77.5164" z="11.0497" node_name="hand.R" />
+		<position x="21.0429" y="77.5164" z="11.0497" node_name="hand.L" />
+		<position x="0.0000" y="74.4772" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="56.6077" z="0.3715" node_name="thip.R" />
+		<position x="11.9531" y="56.6077" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="36.2412" z="0.1364" node_name="knee.R" />
+		<position x="12.0216" y="36.2412" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="12.7531" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="12.7531" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="0.5833">
+		<position x="0.1113" y="94.5622" z="-0.1905" node_name="head" />
+		<position x="0.0000" y="93.6211" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="94.4781" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9571" y="94.4781" z="-6.3159" node_name="shoudler.L" />
+		<position x="-17.5556" y="81.1863" z="-6.4484" node_name="bow.R" />
+		<position x="17.5556" y="81.1863" z="-6.4484" node_name="bow.L" />
+		<position x="-21.0429" y="74.1314" z="11.0497" node_name="hand.R" />
+		<position x="21.0429" y="74.1314" z="11.0497" node_name="hand.L" />
+		<position x="0.0000" y="71.0921" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="53.2227" z="0.3715" node_name="thip.R" />
+		<position x="11.9531" y="53.2227" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="32.8562" z="0.1364" node_name="knee.R" />
+		<position x="12.0216" y="32.8562" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="9.3680" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="9.3680" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="0.6667">
+		<position x="0.1113" y="90.5220" z="-0.1905" node_name="head" />
+		<position x="0.0000" y="89.5808" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="90.4379" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9571" y="90.4379" z="-6.3159" node_name="shoudler.L" />
+		<position x="-17.5556" y="77.1461" z="-6.4484" node_name="bow.R" />
+		<position x="17.5556" y="77.1461" z="-6.4484" node_name="bow.L" />
+		<position x="-21.0429" y="70.0912" z="11.0497" node_name="hand.R" />
+		<position x="21.0429" y="70.0912" z="11.0497" node_name="hand.L" />
+		<position x="0.0000" y="67.0519" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="49.1825" z="0.3715" node_name="thip.R" />
+		<position x="11.9531" y="49.1825" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="28.8160" z="0.1364" node_name="knee.R" />
+		<position x="12.0216" y="28.8160" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="5.3278" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="5.3278" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="0.75">
+		<position x="0.1113" y="87.1369" z="-0.1905" node_name="head" />
+		<position x="0.0000" y="86.1958" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="87.0528" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9571" y="87.0528" z="-6.3159" node_name="shoudler.L" />
+		<position x="-17.5556" y="73.7610" z="-6.4484" node_name="bow.R" />
+		<position x="17.5556" y="73.7610" z="-6.4484" node_name="bow.L" />
+		<position x="-21.0429" y="66.7062" z="11.0497" node_name="hand.R" />
+		<position x="21.0429" y="66.7062" z="11.0497" node_name="hand.L" />
+		<position x="0.0000" y="63.6669" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="45.7974" z="0.3715" node_name="thip.R" />
+		<position x="11.9531" y="45.7974" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="25.4309" z="0.1364" node_name="knee.R" />
+		<position x="12.0216" y="25.4309" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="1.9428" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="1.9428" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="0.8333">
+		<position x="0.1113" y="85.7174" z="-0.1905" node_name="head" />
+		<position x="0.0000" y="84.7763" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="85.6333" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9571" y="85.6333" z="-6.3159" node_name="shoudler.L" />
+		<position x="-17.5556" y="72.3415" z="-6.4484" node_name="bow.R" />
+		<position x="17.5556" y="72.3415" z="-6.4484" node_name="bow.L" />
+		<position x="-21.0429" y="65.2866" z="11.0497" node_name="hand.R" />
+		<position x="21.0429" y="65.2866" z="11.0497" node_name="hand.L" />
+		<position x="0.0000" y="62.2473" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="44.3779" z="0.3715" node_name="thip.R" />
+		<position x="11.9531" y="44.3779" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="24.0114" z="0.1364" node_name="knee.R" />
+		<position x="12.0216" y="24.0114" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="0.5232" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="0.5232" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="0.9167">
+		<position x="0.1113" y="87.1369" z="-0.1905" node_name="head" />
+		<position x="0.0000" y="86.1958" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="87.0528" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9571" y="87.0528" z="-6.3159" node_name="shoudler.L" />
+		<position x="-17.5556" y="73.7610" z="-6.4484" node_name="bow.R" />
+		<position x="17.5556" y="73.7610" z="-6.4484" node_name="bow.L" />
+		<position x="-21.0429" y="66.7062" z="11.0497" node_name="hand.R" />
+		<position x="21.0429" y="66.7062" z="11.0497" node_name="hand.L" />
+		<position x="0.0000" y="63.6669" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="45.7974" z="0.3715" node_name="thip.R" />
+		<position x="11.9531" y="45.7974" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="25.4309" z="0.1364" node_name="knee.R" />
+		<position x="12.0216" y="25.4309" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="1.9428" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="1.9428" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="1.0">
+		<position x="0.1113" y="90.5220" z="-0.1905" node_name="head" />
+		<position x="0.0000" y="89.5808" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="90.4379" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9571" y="90.4379" z="-6.3159" node_name="shoudler.L" />
+		<position x="-17.5556" y="77.1461" z="-6.4484" node_name="bow.R" />
+		<position x="17.5556" y="77.1461" z="-6.4484" node_name="bow.L" />
+		<position x="-21.0429" y="70.0912" z="11.0497" node_name="hand.R" />
+		<position x="21.0429" y="70.0912" z="11.0497" node_name="hand.L" />
+		<position x="0.0000" y="67.0519" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="49.1825" z="0.3715" node_name="thip.R" />
+		<position x="11.9531" y="49.1825" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="28.8160" z="0.1364" node_name="knee.R" />
+		<position x="12.0216" y="28.8160" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="5.3278" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="5.3278" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="1.0833">
+		<position x="0.1113" y="94.5622" z="-0.1905" node_name="head" />
+		<position x="0.0000" y="93.6211" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="94.4781" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9571" y="94.4781" z="-6.3159" node_name="shoudler.L" />
+		<position x="-17.5556" y="81.1863" z="-6.4484" node_name="bow.R" />
+		<position x="17.5556" y="81.1863" z="-6.4484" node_name="bow.L" />
+		<position x="-21.0429" y="74.1314" z="11.0497" node_name="hand.R" />
+		<position x="21.0429" y="74.1314" z="11.0497" node_name="hand.L" />
+		<position x="0.0000" y="71.0921" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="53.2227" z="0.3715" node_name="thip.R" />
+		<position x="11.9531" y="53.2227" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="32.8562" z="0.1364" node_name="knee.R" />
+		<position x="12.0216" y="32.8562" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="9.3680" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="9.3680" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="1.1667">
+		<position x="0.1113" y="97.9473" z="-0.1905" node_name="head" />
+		<position x="0.0000" y="97.0061" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="97.8631" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9571" y="97.8631" z="-6.3159" node_name="shoudler.L" />
+		<position x="-17.5556" y="84.5713" z="-6.4484" node_name="bow.R" />
+		<position x="17.5556" y="84.5713" z="-6.4484" node_name="bow.L" />
+		<position x="-21.0429" y="77.5165" z="11.0497" node_name="hand.R" />
+		<position x="21.0429" y="77.5165" z="11.0497" node_name="hand.L" />
+		<position x="0.0000" y="74.4772" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="56.6077" z="0.3715" node_name="thip.R" />
+		<position x="11.9531" y="56.6077" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="36.2412" z="0.1364" node_name="knee.R" />
+		<position x="12.0216" y="36.2412" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="12.7531" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="12.7531" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="1.25">
+		<position x="0.1113" y="99.3668" z="-0.1905" node_name="head" />
+		<position x="0.0000" y="98.4256" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="99.2827" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9571" y="99.2827" z="-6.3159" node_name="shoudler.L" />
+		<position x="-17.5556" y="85.9909" z="-6.4484" node_name="bow.R" />
+		<position x="17.5556" y="85.9909" z="-6.4484" node_name="bow.L" />
+		<position x="-21.0429" y="78.9360" z="11.0497" node_name="hand.R" />
+		<position x="21.0429" y="78.9360" z="11.0497" node_name="hand.L" />
+		<position x="0.0000" y="75.8967" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="58.0273" z="0.3715" node_name="thip.R" />
+		<position x="11.9531" y="58.0273" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="37.6608" z="0.1364" node_name="knee.R" />
+		<position x="12.0216" y="37.6608" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="14.1726" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="14.1726" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="1.3333">
+		<position x="0.1113" y="97.9472" z="-0.1905" node_name="head" />
+		<position x="0.0000" y="97.0061" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="97.8631" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9571" y="97.8631" z="-6.3159" node_name="shoudler.L" />
+		<position x="-17.5556" y="84.5713" z="-6.4484" node_name="bow.R" />
+		<position x="17.5556" y="84.5713" z="-6.4484" node_name="bow.L" />
+		<position x="-21.0429" y="77.5164" z="11.0497" node_name="hand.R" />
+		<position x="21.0429" y="77.5164" z="11.0497" node_name="hand.L" />
+		<position x="0.0000" y="74.4772" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="56.6077" z="0.3715" node_name="thip.R" />
+		<position x="11.9531" y="56.6077" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="36.2412" z="0.1364" node_name="knee.R" />
+		<position x="12.0216" y="36.2412" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="12.7531" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="12.7531" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="1.4167">
+		<position x="0.1113" y="94.5622" z="-0.1905" node_name="head" />
+		<position x="0.0000" y="93.6211" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="94.4781" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9571" y="94.4781" z="-6.3159" node_name="shoudler.L" />
+		<position x="-17.5556" y="81.1863" z="-6.4484" node_name="bow.R" />
+		<position x="17.5556" y="81.1863" z="-6.4484" node_name="bow.L" />
+		<position x="-21.0429" y="74.1314" z="11.0497" node_name="hand.R" />
+		<position x="21.0429" y="74.1314" z="11.0497" node_name="hand.L" />
+		<position x="0.0000" y="71.0921" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="53.2227" z="0.3715" node_name="thip.R" />
+		<position x="11.9531" y="53.2227" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="32.8562" z="0.1364" node_name="knee.R" />
+		<position x="12.0216" y="32.8562" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="9.3680" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="9.3680" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="1.5">
+		<position x="0.1113" y="90.5220" z="-0.1905" node_name="head" />
+		<position x="0.0000" y="89.5808" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="90.4379" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9571" y="90.4379" z="-6.3159" node_name="shoudler.L" />
+		<position x="-17.5556" y="77.1461" z="-6.4484" node_name="bow.R" />
+		<position x="17.5556" y="77.1461" z="-6.4484" node_name="bow.L" />
+		<position x="-21.0429" y="70.0912" z="11.0497" node_name="hand.R" />
+		<position x="21.0429" y="70.0912" z="11.0497" node_name="hand.L" />
+		<position x="0.0000" y="67.0519" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="49.1825" z="0.3715" node_name="thip.R" />
+		<position x="11.9531" y="49.1825" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="28.8160" z="0.1364" node_name="knee.R" />
+		<position x="12.0216" y="28.8160" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="5.3278" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="5.3278" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="1.5833">
+		<position x="0.1113" y="87.1369" z="-0.1905" node_name="head" />
+		<position x="0.0000" y="86.1958" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="87.0528" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9571" y="87.0528" z="-6.3159" node_name="shoudler.L" />
+		<position x="-17.5556" y="73.7610" z="-6.4484" node_name="bow.R" />
+		<position x="17.5556" y="73.7610" z="-6.4484" node_name="bow.L" />
+		<position x="-21.0429" y="66.7062" z="11.0497" node_name="hand.R" />
+		<position x="21.0429" y="66.7062" z="11.0497" node_name="hand.L" />
+		<position x="0.0000" y="63.6669" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="45.7974" z="0.3715" node_name="thip.R" />
+		<position x="11.9531" y="45.7974" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="25.4309" z="0.1364" node_name="knee.R" />
+		<position x="12.0216" y="25.4309" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="1.9428" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="1.9428" z="-0.0485" node_name="foot.L" />
+	</frame>
+	<frame time="1.6667">
+		<position x="0.1113" y="85.7174" z="-0.1905" node_name="head" />
+		<position x="0.0000" y="84.7763" z="-5.3210" node_name="neck" />
+		<position x="-10.9571" y="85.6333" z="-6.3159" node_name="shoudler.R" />
+		<position x="10.9571" y="85.6333" z="-6.3159" node_name="shoudler.L" />
+		<position x="-17.5556" y="72.3415" z="-6.4484" node_name="bow.R" />
+		<position x="17.5556" y="72.3415" z="-6.4484" node_name="bow.L" />
+		<position x="-21.0429" y="65.2866" z="11.0497" node_name="hand.R" />
+		<position x="21.0429" y="65.2866" z="11.0497" node_name="hand.L" />
+		<position x="0.0000" y="62.2473" z="-6.2701" node_name="mid" />
+		<position x="-11.9531" y="44.3779" z="0.3715" node_name="thip.R" />
+		<position x="11.9531" y="44.3779" z="0.3715" node_name="thip.L" />
+		<position x="-12.0216" y="24.0114" z="0.1364" node_name="knee.R" />
+		<position x="12.0216" y="24.0114" z="0.1364" node_name="knee.L" />
+		<position x="-12.1078" y="0.5232" z="-0.0485" node_name="foot.R" />
+		<position x="12.1078" y="0.5232" z="-0.0485" node_name="foot.L" />
+	</frame>
+</animation></animations>

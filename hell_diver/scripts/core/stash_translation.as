@@ -149,6 +149,28 @@ dictionary canStoreItem = {
     {"token_asagi_mutsuki.projectile","[浅黄睦月 [信物]]"},
     {"token_rikuhachima_aru.projectile","[陆八魔 阿露 [信物]]"},
     {"token_lilies.projectile","[Lilies [信物]]"},
+    {"token_zero401_casual_wear.projectile","[Zero401 [信物]]"},
+    {"token_maria_schariac.projectile","[玛利亚 [信物]]"},
+    {"token_shinano.projectile","[信浓 [信物]]"},
+    {"token_irene.projectile","[艾丽妮 [信物]]"},
+    {"token_aur.projectile","[Aur [信物]]"},
+    {"token_ein.projectile","[Ein [信物]]"},
+    {"token_soph.projectile","[Soph [信物]]"},
+    {"token_florence_spring.projectile","[芙洛伦 [信物]]"},
+    {"token_minami_rena.projectile","[水波玲奈 [信物]]"},
+    {"token_racing_miku_2022.projectile","[Miku Racing 2022 [信物]]"},
+    {"token_tail_yellow.projectile","[神堂慧理那 [信物]]"},
+    {"token_togo_miomori.projectile","[东乡美森 [信物]]"},
+    // 1.7.0
+    {"token_kotori_itsuka.projectile","[五河琴里 [信物]]"},
+    {"token_exo_cat.projectile","[机甲喵喵 [信物]]"},
+    {"token_akane.projectile","[朱音 [信物]]"},
+    {"token_asuna.projectile","[明日奈 [信物]]"},
+    {"token_karin.projectile","[花凛 [信物]]"},
+    {"token_neru.projectile","[尼禄 [信物]]"},
+    {"token_latu.projectile","[拉图 [信物]]"},
+    {"token_amau_ako.projectile","[亚子 [信物]]"},
+    {"token_goto_hitori.projectile","[波奇 [兔女郎][信物]]"},
 
     {"wiesel_tow_call.projectile","[鼬鼠 [陶氏]]"},
     {"lav6_call.projectile","[LAV-6]"},
@@ -174,6 +196,12 @@ dictionary canStoreItem = {
     {"noxe_call.projectile","[Noxe 轮式导弹发射车]"},
     {"ex_sturmtiger_tank_call.projectile","[突击虎]"},
     {"ex_apocalypse_tank_call.projectile","[天启]"},
+    {"marder_call.projectile","[黄鼠狼]"},
+
+    // 碎片
+    {"reward_box_weapon_delta_clip.carry_item","[MK4箱 碎片]"},
+    {"reward_box_weapon_lamda_clip.carry_item","[MK3箱 碎片]"},
+    {"reward_box_weapon_v_clip.carry_item","[MK5箱 碎片]"},
 
     {"ref.weapon","测试武器"}
 };
@@ -200,6 +228,10 @@ dictionary autoStoreItem = {
     {"samples_bugs_ex.carry_item","[虫族样本]"},
     {"samples_cyborgs_ex.carry_item","[生化人样本]"},
     {"samples_illuminate_ex.carry_item","[光能样本]"},
+
+    {"reward_box_weapon_delta_clip.carry_item","[MK4箱 碎片]"},
+    {"reward_box_weapon_lamda_clip.carry_item","[MK3箱 碎片]"},
+    {"reward_box_weapon_v_clip.carry_item","[MK5箱 碎片]"},
 
     {"hd_vote_ticket","[民本选票]"}
 };
@@ -405,10 +437,10 @@ array<stashExchangeList@> ExchangeLists ={
                 getStashXmlElement("reward_box_weapon_beta.carry_item","carry_item",1)
             }
         ),
-        //19 [1] 换 Delta箱子[1] 未实装
+        //19 MK4碎片[10] 换 Delta箱子[1] 
         stashExchangeList(
             array<XmlElement@>= {
-                getStashXmlElement("","",0)
+                getStashXmlElement("reward_box_weapon_delta_clip.carry_item","carry_item",10)
             }, 
             array<XmlElement@>= {
                 getStashXmlElement("reward_box_weapon_delta.carry_item","carry_item",1)
@@ -423,10 +455,10 @@ array<stashExchangeList@> ExchangeLists ={
                 getStashXmlElement("reward_box_weapon_gama.carry_item","carry_item",1)
             }
         ),
-        //21 [1] 换 Lamda箱子[1] 未实装
+        //21 MK3碎片[10] 换 Lamda箱子[1]
         stashExchangeList(
             array<XmlElement@>= {
-                getStashXmlElement("","",0)
+                getStashXmlElement("reward_box_weapon_lamda_clip.carry_item","carry_item",10)
             }, 
             array<XmlElement@>= {
                 getStashXmlElement("reward_box_weapon_lamda.carry_item","carry_item",1)
@@ -486,10 +518,10 @@ array<stashExchangeList@> ExchangeLists ={
                 getStashXmlElement("reward_box_weapon_unknown.carry_item","carry_item",1)
             }
         ),
-        //28 [1] 换 V箱子[1] 未实装
+        //28 MK5碎片[10] 换 V箱子[1]
         stashExchangeList(
             array<XmlElement@>= {
-                getStashXmlElement("","",0)
+                getStashXmlElement("reward_box_weapon_v_clip.carry_item","carry_item",10)
             }, 
             array<XmlElement@>= {
                 getStashXmlElement("reward_box_weapon_v.carry_item","carry_item",1)
@@ -859,6 +891,7 @@ array<stashExchangeList@> ExchangeLists ={
                 getStashXmlElement("deploy_edf_turrent_minigun.weapon","weapon",1)
             }
         )
+
 };
 
 const dictionary stashExchangeDict = {

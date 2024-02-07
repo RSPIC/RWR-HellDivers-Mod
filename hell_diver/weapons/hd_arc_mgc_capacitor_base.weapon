@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapon 
+file="_hd_hmg.base"
+> 
+	<tag name="machine gun" />
+    <specification 	
+    slot="0" 	
+    retrigger_time="0.0769" 
+    accuracy_factor="0.985" 
+	spread_range="0.2"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="0.5" 
+    sustained_fire_diminish_rate="2.3" 
+    magazine_size="251" 
+    can_shoot_standing="0" 
+    can_shoot_crouching="0" 
+	can_shoot_prone="1"	
+    suppressed="0" 
+	class="0" 
+    name="MG-C Capacitor" 
+	sight_height_offset="1.0" 
+	burst_shots="1" 
+    projectiles_per_shot="1" 
+    projectile_speed="200.0"
+	barrel_offset="1.6" 
+	carry_in_two_hands="1" 
+	stab_enabled="0" 
+	stab_range="0" 
+	/> 
+	
+	<animation key="recoil" animation_key="recoil, hip fire" />
+	<animation state_key="hold" animation_key="hold, hip fire" />
+	<animation state_key="reload" animation_key="T_reloading_mg105"/>
+	<animation state_key="crouching" animation_key="crouch, hold, hip fire" />
+	<animation state_key="crouch_moving" animation_key="crouching forwards, hip fire" />
+	<animation state_key="walking_backwards" animation_key="walking backwards, hip fire" />  
+	<animation state_key="hold_on_wall" animation_key="hold, hip fire" />
+	<animation state_key="still_against_wall" 	animation_key="hold, hip fire" />
+	<animation state_key="walking" animation_key="" />
+	<animation state_key="running" animation_key="running, line infantry" />  
+
+    <sound key="fire" fileref="hd_arc_mgc_capacitor_fire_01.wav" pitch_variety="0.1" volume="0.7" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_02.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="magazine_out" fileref="hd_arc_mgc_capacitor_reload.wav" volume="2"/>
+    <sound key="last_ammo" fileref="" />
+	<sound class="impact" fileref="rifle_drop.wav" />
+
+    <model filename="hdw_mgc_capacitor.xml" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="hdw_mgc_capacitor.png" /> 
+
+  	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="1" source="rank" source_value="38.746" />
+	
+    <!-- <commonness value="1" can_respawn_with="1" in_stock="1" /> 
+    <inventory encumbrance="12.0" price="0.0" />  -->
+    <weak_hand_hold offset="0.3" /> 
+
+	<ballistics 
+    curve_height="0.001" 
+    near_far_distance="0" 
+    speed_estimation_near="0.0" 
+    speed_estimation_far="1000" 
+    max_speed="1000" 
+    randomness="0" 
+    tweak_factor="20" />  
+
+
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_lightblue" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 	
+	
+    <stance state_key="running" accuracy="0.5" /> 
+    <stance state_key="walking" accuracy="0.9" />
+	<stance state_key="standing" accuracy="0.955" />
+	<stance state_key="crouching" accuracy="0.99" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1.1" /> 
+    <stance state_key="prone_moving" accuracy="0.5" />
+    <stance state_key="over_wall" accuracy="1.1" />     
+     
+	 
+
+
+</weapon>
+

@@ -27,7 +27,7 @@ particle_system laser_strike_activated_laser
 		position 0 0 0
 		velocity 0.0001
 		time_to_live 0.15
-		duration 10
+		duration 0
 	}
 	affector Scaler
 	{

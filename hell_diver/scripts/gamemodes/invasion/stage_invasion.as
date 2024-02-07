@@ -347,7 +347,7 @@ class Stage {
 		command.setFloatAttribute("max_rp", m_userSettings.m_maxRp);
 		command.setFloatAttribute("player_damage_modifier", m_userSettings.m_playerDamageModifier);
 		command.setBoolAttribute("fov", m_userSettings.m_fov);
-		command.setBoolAttribute("show_map_at_start_if_dead", true);//地图复活自选
+		command.setBoolAttribute("show_map_at_start_if_dead", false);//地图复活自选
 
 		if (m_defenseWinTime >= 0) {
 			command.setFloatAttribute("defense_win_time", m_defenseWinTime);

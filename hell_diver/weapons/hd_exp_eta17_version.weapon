@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapons> 
+<weapon 
+file="hd_exp_eta17_base.weapon"
+key="hd_exp_eta17_mk3.weapon" 
+>
+	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
+	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="8" source="rank" source_value="3.264" />
+
+
+	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="10" can_be_detected_by_footmen="1" 
+	time_to_live="1" can_be_detected_by_driver="1" can_be_disarmed="0" name="EAT-17 MK3" radius="0.01"> 
+	
+        <result class="spawn" instance_class="projectile" instance_key="hd_exp_eta17_mk3_damage.projectile" 
+		min_amount="40" max_amount="50" offset="0 0.5 0" position_spread="2 0" direction_spread="0.1 0" />
+		<!-- damage 280 轰炸伤-->
+       	<!-- 40x7 -->
+		
+		<trigger class="time" time_to_live="0.4"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+	
+		<!--命中音效-->
+		<sound class="result" key="other" fileref="at_hit_sfx_1.wav" pitch_variety="0.03" volume="1.0" />
+	
+
+		<trail probability="1" key="nova_trail"/>	
+		<model mesh_filename="APFSDS.xml" />
+		
+		<effect class="result" key="terrain" ref="nova_result_impact_flame_1" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_result_impact_flame_2" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_result_impact_flame_3" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_result_impact_flame_4" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_result_blast_smoke_expanding" lighting="0" post_processing="1"/> 
+		<effect class="result" key="terrain" ref="nova_result_blast_smoke" lighting="0" post_processing="1"/> 
+		<effect class="result" key="terrain" ref="nova_result_impact_spark" lighting="0" post_processing="1"/> 
+		<effect class="result" key="terrain" ref="nova_result_impact_spark_2" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_result_ambient" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_result_ambient_ground" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_result_blast_ring" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_result_blast_ring_2" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_result_blast_fire" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_gl_hit_smoke_02" lighting="0" post_processing="1"/> 
+		<effect class="result" key="terrain" ref="nova_result_ground_smoke" lighting="0" post_processing="1"/>
+		
+		<effect class="activated" ref="general_activated_at_smoke_trail"/>
+
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+    </projectile>
+</weapon>
+</weapons>

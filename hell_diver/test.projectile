@@ -28,20 +28,8 @@
 		<effect class="result"  key="terrain" ref="DXE_muzzle_singing_spot_pre"/>
 		<effect class="result"  key="terrain" ref="DXE_muzzle_singing_randon_spot"/> -->
 
-    <effect class="result" key="terrain" ref="shinano_cyclone_01"/>
-    <effect class="result" key="terrain" ref="shinano_result_ijn_icon_blast"/>
-    <effect class="result" key="terrain" ref="shinano_result_anim_butterfly"/>
-    <effect class="result" key="terrain" ref="shinano_result_anim_butterfly_02"/>
-    <effect class="result" key="terrain" ref="shinano_result_anim_butterfly_03"/>
-    <effect class="result" key="terrain" ref="shinano_result_anim_butterfly_04"/>
-	
-		<effect class="result" key="terrain" ref="laisha_HGY_result_blast_firesmoke" lighting="0"/>
-		<effect class="result" key="terrain" ref="laisha_HGY_result_blast_AmbientLight" lighting="0"/>
-		<effect class="result" key="terrain" ref="laisha_HGY_result_blast_impact_center_light" lighting="0"/>
-		<effect class="result" key="terrain" ref="laisha_HGY_result_blast_impact_ring" lighting="0"/>
-		<effect class="result" key="terrain" ref="laisha_HGY_result_blast_impact_ring_2" lighting="0"/>
-		<effect class="result" key="terrain" ref="laisha_HGY_result_blast_impact_spark" lighting="0"/>
-		<effect class="result" key="terrain" ref="laisha_HGY_result_blast_impact_spark_2" lighting="0"/>
+    <effect class="result" key="terrain" ref="illum_spawn_ring"/>
+
 
 		<effect class="result" key="static_object" copy="terrain" />
 		<effect class="result" key="character" copy="terrain" />

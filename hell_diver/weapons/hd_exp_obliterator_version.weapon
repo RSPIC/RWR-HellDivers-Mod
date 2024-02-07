@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapons> 
+<weapon 
+file="hd_exp_obliterator_base.weapon"
+key="hd_exp_obliterator_grenade_launcher_full_upgrade.weapon" 
+>
+    <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="44.75" can_be_detected_by_footmen="1" 
+	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0" name="Obliterator"> 
+		<!--
+			<result class="spawn" instance_class="projectile" instance_key="rx1_railgun_ap.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+				offset"x y z 生成位置偏差"
+				PS"水平面随机生成位置 竖直面随机生成位置"
+				DS"圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
+			<result class="blast" radius="6.8" damage="0.2" push="0" decal="0" character_state="death"  />
+		-->
+		<result class="spawn" instance_class="projectile" instance_key="hd_exp_obliterator_grenade_launcher_full_upgrade_damage.projectile" 
+		min_amount="20" max_amount="20" offset="0 1 0" position_spread="1 0" direction_spread="0.1 0" />
+			
+		<!-- damage 250+600=850 爆轰混伤 death -->
+        <!-- 100/s 火伤 duration 2s -->
+		<!-- 总伤 1050 载具伤600 -->
+		<!-- 100x1.6=100层 载具（1.6-1）x100=60伤 -->
+        <!-- range 待定 -->
+
+		<trigger class="impact" />
+		<rotation class="motion" />
+		
+		<sound class="result" key="other" fileref="obliterator_grenade_launcher_blast.wav" pitch_variety="0.03" volume="1.0" />
+
+		<effect class="result" key="terrain" ref="at_mine_hit_firesmoke_01" lighting="0" post_processing="0"/>
+		<effect class="result" key="terrain" ref="at_mine_hit_firesmoke_02" lighting="0" post_processing="0"/>
+		<!-- <effect class="result" key="terrain" ref="obliterator_grenade_launcher_impact_smoke" lighting="0" post_processing="0"/> -->
+		<effect class="result" key="terrain" ref="obliterator_grenade_launcher_spray" lighting="0" post_processing="0"/>
+		<effect class="result" key="terrain" ref="nova_s_gl_hit_smoke_02" lighting="0" post_processing="1"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_impact_spark" lighting="0" post_processing="1"/>
+		<!-- <effect class="result" key="terrain" ref="real_firesmoke_1" lighting="0" post_processing="1"/> -->
+		<effect class="result" key="terrain" ref="real_up_impact_spark_2" lighting="0" post_processing="1"/>
+		<effect class="result" key="terrain" ref="real_up_impact_spark_1" lighting="0" post_processing="1"/>
+		<effect class="activated" ref="obliterator_grenade_launcher_trail" lighting="0"/>
+		
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		<trail probability="1" key="trail_rumbler"/>	
+		
+    </projectile>
+</weapon>
+<weapon 
+file="hd_exp_obliterator_base.weapon"
+key="hd_exp_obliterator_grenade_launcher_ai.weapon" 
+>
+    <specification 
+    slot="0" 
+	/>
+	<commonness value="1" can_respawn_with="1" in_stock="0" /> 
+    <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="44.75" can_be_detected_by_footmen="1" 
+	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0" name="Obliterator"> 
+		<!--
+			<result class="spawn" instance_class="projectile" instance_key="rx1_railgun_ap.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+				offset"x y z 生成位置偏差"
+				PS"水平面随机生成位置 竖直面随机生成位置"
+				DS"圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
+			<result class="blast" radius="6.8" damage="0.2" push="0" decal="0" character_state="death"  />
+		-->
+		<result class="spawn" instance_class="projectile" instance_key="hd_exp_obliterator_grenade_launcher_ai_damage.projectile" 
+		min_amount="20" max_amount="20" offset="0 1 0" position_spread="1 0" direction_spread="0.1 0" />
+			
+		<!-- damage 250+600=850 爆轰混伤 death -->
+        <!-- 100/s 火伤 duration 2s -->
+		<!-- 总伤 1050 载具伤600 -->
+		<!-- 100x1.6=100层 载具（1.6-1）x100=60伤 -->
+        <!-- range 待定 -->
+
+		<trigger class="impact" />
+		<rotation class="motion" />
+		
+		<sound class="result" key="other" fileref="obliterator_grenade_launcher_blast.wav" pitch_variety="0.03" volume="1.0" />
+
+		<effect class="result" key="terrain" ref="at_mine_hit_firesmoke_01" lighting="0" post_processing="0"/>
+		<effect class="result" key="terrain" ref="at_mine_hit_firesmoke_02" lighting="0" post_processing="0"/>
+		<!-- <effect class="result" key="terrain" ref="obliterator_grenade_launcher_impact_smoke" lighting="0" post_processing="0"/> -->
+		<effect class="result" key="terrain" ref="obliterator_grenade_launcher_spray" lighting="0" post_processing="0"/>
+		<effect class="result" key="terrain" ref="nova_s_gl_hit_smoke_02" lighting="0" post_processing="1"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_impact_spark" lighting="0" post_processing="1"/>
+		<!-- <effect class="result" key="terrain" ref="real_firesmoke_1" lighting="0" post_processing="1"/> -->
+		<effect class="result" key="terrain" ref="real_up_impact_spark_2" lighting="0" post_processing="1"/>
+		<effect class="result" key="terrain" ref="real_up_impact_spark_1" lighting="0" post_processing="1"/>
+		<effect class="activated" ref="obliterator_grenade_launcher_trail" lighting="0"/>
+		
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		<trail probability="1" key="trail_rumbler"/>	
+		
+    </projectile>
+</weapon>
+</weapons>

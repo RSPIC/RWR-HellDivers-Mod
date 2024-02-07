@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapons> 
+<weapon 
+file="hd_pst_tox13_avenger_base.weapon"
+key="hd_pst_tox13_avenger_mk3.weapon" 
+>
+	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
+	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="10" source="rank" source_value="108.974" />
+	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
+
+    <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="30" can_be_detected_by_footmen="1" 
+	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.3" name="TOX-13 Avenger"> 
+	
+		<!--
+		<result class="blast" radius="6.8" damage="0.2" push="0" decal="0" character_state="death"  />
+		<result class="spawn" instance_class="projectile" instance_key="rx1_railgun_ap.projectile" 
+		min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+			offset"x y z 生成位置偏差" 
+			position_spread="水平面随机生成位置 竖直面随机生成位置" 
+			direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
+		-->
+		<result class="spawn" instance_class="grenade" instance_key="hd_pst_tox13_avenger_mk3_damage.projectile"
+		 min_amount="20" max_amount="20" offset="0 0 0" position_spread="1 0" direction_spread="0.0 0.0" />
+		<trigger class="impact">
+			<collider class="terrain" enabled="1" />     
+			<collider class="static_object" enabled="1" /> 
+			<collider class="vehicle" enabled="0" /> 
+			<collider class="character" enabled="1" faction_compare="not_equal"/>
+		</trigger> 
+		<rotation class="motion" /><!--参数：motion、random-->
+		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
+		<!-- 不受护甲抗致死衰减 -->
+		<!-- 17.5m范围 -->
+	
+		<!--命中特效-->
+		<!--
+		<effect class="result" key="terrain" ref="tox_13_result_splash" lighting="0"/>
+		-->
+		<effect class="activated" ref="tox_13_muzzle_splash" />
+
+		<effect class="result" key="terrain" ref="tox_13_result_splash" lighting="0"/>
+		<effect class="result" type="splat_map" surface_tag="" size="1.5" atlas_index="4" layer="0" />
+
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<!--尾迹组-->
+		<trail probability="1" key=""/>	
+    </projectile>
+</weapon>
+</weapons>

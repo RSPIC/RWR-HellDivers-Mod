@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapon 
+file="_hd_exo.base"
+> 
+	<tag name="bazooka" />
+    <specification 	
+    slot="1" 	
+    retrigger_time="2" 
+    accuracy_factor="1" 
+	spread_range="0.3"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="0.125" 
+    sustained_fire_diminish_rate="0.2" 
+    magazine_size="10" 
+	reload_one_at_a_time="1"
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="0"	
+    suppressed="0" 
+	class="0" 
+    name="EXO-51 Lumberer [AT Canon]" 
+	sight_range_modifier="1.5" 
+	sight_height_offset="1.0" 
+	burst_shots="1" 
+    projectiles_per_shot="1" 
+    projectile_speed="100.0"
+	barrel_offset="0.2" 
+	carry_in_two_hands="0" 
+	stab_enabled="1" 
+	stab_range="0" 
+	use_basic_muzzle_smoke_effect="0"
+	force_as_shoots_blast_projectiles="1"
+	/> 
+	<!--30RPM 100m range 15mag-->
+	<!-- mk2 Increases the magazine size of the cannon from 10 to 15 rounds. -->
+	<!-- mk3 Increases the magazine size of the flamer from 200 to 300 units of fuel. -->
+
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_vehicle_destroy_damage.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0.0 0.0" />
+	
+	<animation key="recoil" animation_key="exo44_recoil_lefthand" />
+	<animation state_key="reload" animation_key="exo_no_reload"/>
+	<animation state_key="hold" animation_key="exo44_still_lefthand" />
+	<animation state_key="hold_on_wall"  animation_key="exo44_still_lefthand" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="exo44_still_lefthand" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="exo44_still_lefthand" /><!--闲置动作，全身动作-->
+	<animation state_key="running" animation_key="exo44_running_lefthand" /><!--全身动作-->
+	<animation state_key="walking" animation_key="exo44_walking_lefthand" /><!--按shift时候的静步前进动作，全身动作-->
+    <animation state_key="walking_backwards" animation_key="exo44_walking_back_lefthand" /><!--全身动作-->
+    <animation state_key="crouching" animation_key="exo44_still_lefthand" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="exo44_walking_lefthand" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="exo44_walking_back_lefthand" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="exo44_still_lefthand" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="exo44_walking_lefthand" /><!--全身动作-->
+	<animation state_key="stabbing" animation_key="exo_no_stab" /><!--半身动作，武器可设置脱手-->
+	<!--切换模式，本模式的切出动作衔接下一模式的切入动作，置空为秒切-->
+	<animation state_key="next_in_chain_in" animation_key="exo_recoil_righthand" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="exo_recoil_righthand" /><!--半身动作，切换模式，本模式切入-->
+	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
+    <animation state_key="changing_weapon_in" animation_key="exo_recoil_righthand" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key="exo_recoil_righthand"/><!--半身动作，切换武器，本武器取出-->
+ 
+ 	<sound key="fire" fileref="hd_at_turret_fire_1.wav" pitch_variety="0.08" volume="0.5" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_02.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="magazine_out" fileref="hd_mg94_mag_out.wav" />
+    <sound key="magazine_in" fileref="hd_mg94_mag_in.wav" />
+    <sound key="cycle" fileref="rifle_chamber.wav" />
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" />
+    <sound key="last_ammo" fileref="hd_lastammo_01.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_02.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_03.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_04.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" />
+
+    <model filename="" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="exo_90mm_cannon.png" /> 
+
+  	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="1" source="rank" source_value="137.832" />
+	
+    <!-- <commonness value="1" can_respawn_with="1" in_stock="1" /> 
+    <inventory encumbrance="50.0" price="0.0" />  -->
+    <weak_hand_hold offset="0.3" /> 
+
+
+	<!--枪口特效-->
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 		
+	<effect class="muzzle" ref="nova_muzzle_fire_smoke" post_processing="1"/>
+	<effect class="muzzle" ref="nova_muzzle_fire_smoke_2" post_processing="1"/>
+	<!-- <effect class="muzzle" ref="nova_muzzle_fireball" post_processing="1"/> -->
+	<!-- <effect class="muzzle" ref="nova_muzzle_fireball_side" /> -->
+	<!-- <effect class="muzzle" ref="nova_muzzle_fireball_side_2" /> -->
+	<!-- <effect class="muzzle" ref="nova_muzzle_fireball_side_3" post_processing="1"/> -->
+	<effect class="muzzle" ref="nova_muzzle_ambient"/>
+	<effect class="muzzle" ref="nova_muzzle_ambient_ground"/>
+	<effect class="muzzle" ref="nova_muzzle_spark"/>
+
+    <!-- <stance state_key="running" accuracy="0.5" /> 
+    <stance state_key="walking" accuracy="0.9" />
+	<stance state_key="standing" accuracy="0.955" />
+	<stance state_key="crouching" accuracy="0.99" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1.4" /> 
+    <stance state_key="prone_moving" accuracy="0.5" />
+    <stance state_key="over_wall" accuracy="1.8" />      -->
+     
+    
+</weapon>
+
+
+

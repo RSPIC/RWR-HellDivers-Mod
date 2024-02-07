@@ -3,7 +3,7 @@
   <parameter class="vehicle_stuck_short_time" value="10.0" />
   <parameter class="in_trenches_fade_off_timer" value="4.0" />
   <parameter class="accuracy_penalty_wear_off_rate" value="0.333" /> 
-  <parameter class="check_vehicles_interval" value="2.0" />
+  <parameter class="check_vehicles_interval" value="1.0" />
   <parameter class="team_member_monitor_enemies_time" value="1.5" />
   <parameter class="monitor_enemies_time" value="3" />
   <parameter class="check_supplies_time" value="5.0" />
@@ -11,7 +11,7 @@
   <parameter class="team_check_time" value="3.0" />
   <parameter class="check_alert_time" value="1.5" />
   <parameter class="check_reinforcement_need_time" value="30.0" />
-  <parameter class="choose_enemy_time" value="0.0" /><!--origin 1.0 转移索敌目标间隔时间？ -->
+  <parameter class="choose_enemy_time" value="0.3" /><!--origin 1.0 转移索敌目标间隔时间？ -->
   <parameter class="check_need_help_time" value="1.0" />
   <parameter class="fighting_time_fire_not_open" value="2.0" />
   <parameter class="cover_status_recheck_time" value="1.5" />
@@ -69,7 +69,7 @@
   <parameter class="guard_wait_time_min" value="5.0" />
   <parameter class="guard_wait_time_max" value="15.0" />
   <parameter class="guard_steps" value="2" />
-  <parameter class="wait_time" value="1.5" /><!--再次开火前的等待时间-->
+  <parameter class="wait_time" value="1.0" /><!--再次开火前的等待时间-->
   <parameter class="wait_time_variance" value="0" />
   <parameter class="burst_time" value="3" />
   <parameter class="burst_time_variance" value="3" />
@@ -89,8 +89,8 @@
   
   <parameter class="day_reaction_time_to_fight_min" value="0" /><!--拉满白天变木头人-->
   <parameter class="day_reaction_time_to_fight_max" value="0" />
-  <parameter class="night_reaction_time_to_fight_min" value="0" />
-  <parameter class="night_reaction_time_to_fight_max" value="0" />
+  <parameter class="night_reaction_time_to_fight_min" value="0.5" />
+  <parameter class="night_reaction_time_to_fight_max" value="0.5" />
 
 
   <parameter class="minimum_distance_to_consider_deploying_cover" value="18.0" />
@@ -132,7 +132,7 @@
 
   <parameter class="fighting_melee_move_radius" value="3" />
 	<!-- 采用近战的接触距离 -->
-  <parameter class="fighting_regular_move_radius" value="20.0" />
+  <parameter class="fighting_regular_move_radius" value="30.0" />
 	<!-- 与敌人保持的交战距离 -->
 
 </ai>

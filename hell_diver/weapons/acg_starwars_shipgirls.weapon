@@ -82,9 +82,9 @@ key="acg_starwars_shipgirls.weapon"
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
 	time_to_live="0.5" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.3" > 
 		
-		<result class="hit" kill_probability="2.0" 
-		kill_probability_offset_on_successful_hit="12.5"
-		kill_decay_start_time="0.3750" kill_decay_end_time="0.5625" character_state="none"/>
+		<result class="hit" kill_probability="1.0" 
+		kill_probability_offset_on_successful_hit="17"
+		kill_decay_start_time="1" kill_decay_end_time="1" character_state="wound"/>
 		
 	    <trigger class="impact" time_to_live="0.9"  />
 		<rotation class="motion" />
@@ -125,6 +125,9 @@ key="acg_starwars_shipgirls.weapon"
     <modifier class="hit_success_probability" value="0.0" />
     <modifier class="detectability" value="0.0" />
 
+	<!--盾块，可设置多个，空盾块仍然生效击杀收益共享，需要删去该段代码-->
+    <shield offset="0 0 0" extent="0.15 1.75 1.75" usable_for_cover="0"/>  
+	
 </weapon>
 <weapon 
 file="_rare_weapon_mk4.base"
@@ -327,9 +330,9 @@ key="re_acg_starwars_shipgirls.weapon"
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
 	time_to_live="0.5" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.3" > 
 		
-		<result class="hit" kill_probability="2.0" 
-		kill_probability_offset_on_successful_hit="12.5"
-		kill_decay_start_time="0.3750" kill_decay_end_time="0.5625" character_state="none"/>
+		<result class="hit" kill_probability="1.0" 
+		kill_probability_offset_on_successful_hit="17"
+		kill_decay_start_time="1" kill_decay_end_time="1" character_state="wound"/>
 		
 	    <trigger class="impact" time_to_live="0.9"  />
 		<rotation class="motion" />
@@ -369,6 +372,9 @@ key="re_acg_starwars_shipgirls.weapon"
     <modifier class="speed" value="0" /> 
     <modifier class="hit_success_probability" value="0.0" />
     <modifier class="detectability" value="0.0" />
+	
+	<!--盾块，可设置多个，空盾块仍然生效击杀收益共享，需要删去该段代码-->
+    <shield offset="0 0 0" extent="0.15 1.75 1.75" usable_for_cover="0"/>  
 
 </weapon>
 <weapon 

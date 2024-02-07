@@ -41,6 +41,10 @@ dictionary bgm_time = {
         {"bugs_searching_bgm_2.wav",252},
         {"bugs_searching_bgm_3.wav",196},
         {"bugs_searching_bgm_4.wav",140},
+        
+        {"illuminate_searching_bgm_1.wav",309},
+        {"illuminate_fighting_bgm_1.wav",225},
+        {"illuminate_fighting_bgm_2.wav",335},
 
         // 占位的
         {"666",-1}
@@ -54,6 +58,7 @@ dictionary ex_bgm = {
 
         {"music_march_of_steel_torrent.wav",186},
         {"music_space_elevator.wav",124},
+        {"music_made_of_earth.wav",203},
  
         // 占位的
         {"666",-1}
@@ -148,6 +153,15 @@ class bgm_control : Tracker{
             "bugs_boss_bgm_1.wav",
             "bugs_boss_bgm_2.wav"
         };
+        array<string> illuminate_bgmList_fight = {
+            "illuminate_fighting_bgm_1.wav"
+        };
+        array<string> illuminate_bgmList_searching = {
+            "illuminate_searching_bgm_1.wav"
+        };
+        array<string> illuminate_bgmList_boss = {
+            "illuminate_fighting_bgm_2.wav"
+        };
 
         array<string> @bgmList_searching = cyborgs_bgmList_searching;
         array<string> @bgmList_fight = cyborgs_bgmList_fight;
@@ -159,6 +173,13 @@ class bgm_control : Tracker{
                 }
                 bgmList_searching = bugs_bgmList_searching;
                 bgmList_fight = bugs_bgmList_fight;
+            }
+            if(f_name == "Illuminate"){
+                if(g_debugMode){
+                    _report(m_metagame,"Faction Illuminate BGM");
+                }
+                bgmList_searching = illuminate_bgmList_searching;
+                bgmList_fight = illuminate_bgmList_fight;
             }
         }
 
@@ -177,6 +198,9 @@ class bgm_control : Tracker{
             if(g_debugMode){
                 _report(m_metagame,"Fighting BGM,id="+soundrnd);
             }
+        }else{
+            int soundrnd= rand(0,bgmList_fight.length() - 1);
+            playSoundtrack(m_metagame,bgmList_fight[soundrnd]);
         }
         if(!bgm_time.get(bgmName,m_bgm_timer)){//记录bgm时间到计时器
             _report(m_metagame,"BGM Error,Report this question");
@@ -210,9 +234,7 @@ class bgm_control : Tracker{
     protected void handleChatEvent(const XmlElement@ event) {
 		string message = event.getStringAttribute("message");
 		if(message != "/bgm"){return;}
-        if(g_debugMode){
             PlayBgm();
-        }
 	}
 
 

@@ -58,7 +58,7 @@ class schedule_AutoHeal : Task {
         if(character is null){return;}
         int wounded = character.getIntAttribute("wounded");
         int dead = character.getIntAttribute("dead");
-        array<string> key = {"hd_v"}; //指定护甲才能自动恢复
+        array<string> key = {"hd_v_","helldivers_vest_"}; //指定护甲才能自动恢复
         array<string> key2 = {"hd_drone_ad289_angel"};
         if(dead !=1 && wounded != 1){
             dictionary equipList;
@@ -68,13 +68,13 @@ class schedule_AutoHeal : Task {
             string equipKey = "";
             equipList.get("4",equipKey);//护甲
             for(uint i=0; i<key.length(); ++i){
-                equipKey = equipKey.substr(0,key[i].length());//截取指定前缀并比对
+                string testEquipKey = equipKey.substr(0,key[i].length());//截取指定前缀并比对
                 string weapon2Key = "";
                 equipList.get("1",weapon2Key);//副手
                 for(uint j=0; j<key2.length(); ++j){
-                    weapon2Key = weapon2Key.substr(0,key2[j].length());
-                    if(equipKey == key[i]){    
-                        if(weapon2Key == key2[j] || g_vestInfoBuck.getAutoHeal(name)){
+                    string testWeapon2Key = weapon2Key.substr(0,key2[j].length());
+                    if(testEquipKey == key[i]){    
+                        if(testWeapon2Key == key2[j] || g_vestInfoBuck.getAutoHeal(name)){
                             healCharacter(metagame,cid,20);
                         }else{
                             healCharacter(metagame,cid,10);
@@ -90,8 +90,8 @@ class schedule_AutoHeal : Task {
         if(wounded == 1){
             string weapon2Key = getPlayerEquipmentKey(metagame,cid,1);//副手
             for(uint i=0; i<key2.length(); ++i){
-                weapon2Key = weapon2Key.substr(0,key2[i].length());
-                if(weapon2Key == key2[i] || g_vestInfoBuck.getAutoRecover(name)){
+                string testWeapon2Key = weapon2Key.substr(0,key2[i].length());
+                if(testWeapon2Key == key2[i] || g_vestInfoBuck.getAutoRecover(name)){
                     string pos = character.getStringAttribute("position");
                     spawnStaticProjectile(m_metagame,"hd_md99_autoinjector.projectile",pos,-1,-1);
                     return;

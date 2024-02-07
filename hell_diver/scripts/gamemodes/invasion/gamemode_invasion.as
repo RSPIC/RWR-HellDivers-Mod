@@ -62,6 +62,7 @@
 #include "vehicle_destroyed.as"
 #include "extra_stash.as"
 #include "vehicle_recycle.as"
+#include "activity_manager.as"
 
 
 // --------------------------------------------
@@ -385,6 +386,8 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		addTracker(chat_icon(this));  
 		addTracker(vehicle_destroyed(this));  
 		addTracker(extra_stash(this));  
+		addTracker(vehicle_recycle(this));  
+		addTracker(activity_manager(this));  
 	}
 
 	protected void setupDisableRadioAtMatchOver() {
@@ -438,7 +441,7 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 			if (faction.isNeutral()) continue;
 			
 			// interpolate players 1 -> 32, spawn time 3.0 -> 1.0
-			addTracker(SpawnTimeHandler(this, i, 1, 16, 2.2, 0.15));
+			addTracker(SpawnTimeHandler(this, i, 1, 16, 8, 0.2));
 		}
 	}
 	

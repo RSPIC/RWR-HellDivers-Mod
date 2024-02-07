@@ -614,7 +614,7 @@
 
 <!-- ++++++++++++++++++++++++++++++++++++++轰炸伤害在半血前均能击倒++++++++++++++++++++++++++++++++++++++-->
 
-	<carry_item key="hd_banzai_20" name="20/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_21" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
+<carry_item key="hd_banzai_20" name="20/40 Charge Vest" slot="1" transform_on_consume="hd_banzai_21" time_to_live_out_in_the_open="0.0" player_death_drop_owner_lock_time="0.0" draggable="0">
         <hud_icon filename="helldivers_vest_50.png" />
         <capacity value="0" source="rank" source_value="0.0" />
         <capacity value="1" source="rank" source_value="0.0" />

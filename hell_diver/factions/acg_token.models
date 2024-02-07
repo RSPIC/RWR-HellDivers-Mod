@@ -31,6 +31,8 @@
 	<model filename="acg_lilies.xml"  > <!--lilies--><requirement class="projectile" slot="0" key="token_lilies.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_zero401_casual_wear.xml"  > <!--ZERO401--><requirement class="projectile" slot="0" key="token_zero401_casual_wear.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_racing_miku_2022.xml"  > <!--Miku by DNTK--><requirement class="projectile" slot="0" key="token_racing_miku_2022.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_exo_cat.xml"  > <!--机甲喵喵--><requirement class="projectile" slot="0" key="token_exo_cat.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_latu.xml"  > <!--拉图 by DNTK--><requirement class="projectile" slot="0" key="token_latu.projectile"/><requirement class="rank" range="0 999999"/></model>
 
 <!-- 明日方舟 -->
 	<model filename="acg_skyfire.xml"  > <!--天火--><requirement class="projectile" slot="0" key="token_skyfire.projectile"/><requirement class="rank" range="0 999999"/></model>
@@ -80,6 +82,8 @@
 	<model filename="acg_minami_rena.xml" > <!--水波玲奈 by DNTK--><requirement class="projectile" slot="0" key="token_minami_rena.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_tail_yellow.xml" > <!--神堂慧理那 by DNTK--><requirement class="projectile" slot="0" key="token_tail_yellow.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_togo_miomori.xml" > <!--东乡美森 by DNTK--><requirement class="projectile" slot="0" key="token_togo_miomori.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_kotori_itsuka.xml" > <!--五河琴里--><requirement class="projectile" slot="0" key="token_kotori_itsuka.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_goto_hitori.xml" > <!--波奇 [兔女郎] by DNTK--><requirement class="projectile" slot="0" key="token_goto_hitori.projectile"/><requirement class="rank" range="0 999999"/></model>
 
 <!-- 碧蓝档案 -->
 	<model filename="acg_alice_tendou.xml"  > <!--天童爱丽丝--><requirement class="projectile" slot="0" key="token_alice_tendou.projectile"/><requirement class="rank" range="0 999999"/></model>
@@ -98,6 +102,11 @@
 	<model filename="acg_aur.xml" ><!--Aur 十字神明 by DNTK--><requirement class="projectile" slot="0" key="token_aur.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_ein.xml" ><!--Ein 十字神明 by DNTK--><requirement class="projectile" slot="0" key="token_ein.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_soph.xml" ><!--Soph 十字神明 by DNTK--><requirement class="projectile" slot="0" key="token_soph.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_akane.xml" ><!--朱音 by YYSY--><requirement class="projectile" slot="0" key="token_akane.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_asuna.xml" ><!--明日奈 by YYSY--><requirement class="projectile" slot="0" key="token_asuna.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_karin.xml" ><!--花凛 by YYSY--><requirement class="projectile" slot="0" key="token_karin.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_neru.xml" ><!--尼禄 by YYSY--><requirement class="projectile" slot="0" key="token_neru.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_amau_ako.xml" ><!--亚子 by DNTK--><requirement class="projectile" slot="0" key="token_amau_ako.projectile"/><requirement class="rank" range="0 999999"/></model>
 <!-- 少女前线 -->
 	<model filename="acg_mg4_703.xml" ><!--MG4机枪--><requirement class="projectile" slot="0" key="token_mg4_703.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_mg4.xml" ><!--MG4机枪--><requirement class="projectile" slot="0" key="token_mg4.projectile"/><requirement class="rank" range="0 999999"/></model>

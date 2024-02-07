@@ -1,0 +1,509 @@
+author: RST
+2024.1.15
+未经授权不可复用、修改使用、仅用于helldiver mod
+
+particle_system illum_illusionist_activated_fire
+{
+	quota 800
+	material explosion_smoke_04_bw
+	particle_width 7
+	particle_height 7
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.05
+		duration 0
+	}
+	affector Scaler
+	{
+		rate -40
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0.3 1 1
+		time1 0.7
+		colour1 0 0.3 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system illum_illusionist_activated_fire2 : illum_illusionist_activated_fire
+{
+	quota 800
+	material explosion_smoke_04_bw
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 360
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 0.0001
+		duration 0
+	}
+	affector Scaler
+	{
+		rate 50
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0.3 1 1
+		time1 0.7
+		colour1 1 1 1 1 
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+}
+particle_system illum_illusionist_result_blast_impact_ring
+{
+	quota 150
+	material Particle_Shockwave07
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.2
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 30
+	}
+    affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0.3 1 1
+		time1 0.5
+		colour1 0 0.3 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system illum_illusionist_result_area_lighting
+{
+	quota 100
+	material lightning_gun_flare_003
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 0.3 0.6 1 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.1
+		duration 0.3
+	}
+	affector Scaler{
+		rate 180
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+}
+particle_system illum_tripod_muzzle_thunder
+{
+	quota 50
+	material lightning_gun_bolt_7
+	particle_width 5
+	particle_height 1.5
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center_left
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.5
+		duration 0.1
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	-90
+		rotation_range_end	-90
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.5 0.5 0.5 0.5
+		time1 0.3
+		colour1 0.5 0.5 0.5 0.5
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system illum_hunter_muzzle_laser
+{
+	quota 500
+	material muzzle_laser
+	particle_width 0.3
+	particle_height 120
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 40
+		time_to_live 0.15
+		duration 0.01
+	}
+    affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.7
+		colour1 0 0.3 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system illum_observer_muzzle_alert
+{
+	quota 100
+	material area_warning_circle
+	particle_width 0.6
+	particle_height 0.6
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 3
+		duration 0.01
+	}
+    affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0 0 0
+		time1 0.7
+		colour1 1 0 0 0 
+		time2 1
+		colour2 0 0 0 0
+	}
+    affector Scaler{
+        rate 0.5
+    }
+    affector Rotator
+	{
+		rotation_speed_range_start	360
+		rotation_speed_range_end	360
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+}
+particle_system illum_observer_muzzle_alert_expand
+{
+	quota 100
+	material area_warning_circle_add_1
+	particle_width 0.1
+	particle_height 0.1
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 3
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 2
+		duration 1
+	}
+    affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0 0 0
+		time1 0.7
+		colour1 1 0 0 0 
+		time2 1
+		colour2 0 0 0 0
+	}
+    affector Scaler{
+        rate 5
+    }
+    affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	360
+		rotation_range_end	0
+	}
+}
+particle_system illum_hunter_fire_center_ball
+{
+	quota 150
+	material bow_flare_pass
+	particle_width 3
+	particle_height 3
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 1.0
+		duration 0.6
+	}
+	affector Scaler
+	{
+		rate 1
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	250
+		rotation_speed_range_end	-250
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.7
+		colour1 0 0.3 1 1  
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system illum_hunter_fire_shrink_line
+{
+	quota 150
+	material Particle_Impact_Line_03
+	particle_width 3
+	particle_height 3
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center_left
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 360
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity_min -0.0001
+		velocity_max 0.0001
+		time_to_live 0.2
+		duration 1
+	}
+	affector Scaler
+	{
+		rate -5
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	90
+		rotation_range_end	90
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0.3 1 1
+		time1 0.9
+		colour1 0 0.5 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system illum_spawn_ring 
+{
+	quota 500
+	material lightning_gun_flare_003
+	particle_width 6
+	particle_height 6
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_origin center
+	billboard_type perpendicular_common
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 10
+		time_to_live 0.5
+		duration 0.5
+	}
+	affector Scaler
+	{
+		rate 1
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.5
+		colour1 1 1 1 1 
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+
+
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material area_warning_circle_add_1 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture area_warning_circle_add_1.png 	
+}}}}

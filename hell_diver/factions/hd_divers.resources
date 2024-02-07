@@ -13,11 +13,13 @@
 	<weapon key="hd_smg_mp98_knight_smg_full_upgrade.weapon" /><!--骑士冲锋枪-->
 	<weapon key="hd_smg_smg45_defender_full_upgrade.weapon" /><!--防卫者冲锋枪-->
 	<weapon key="hd_smg_smg34_ninja_full_upgrade.weapon" /><!--忍者冲锋枪-->
+	<weapon key="hd_smg_tc171_cyclone_mk3.weapon" /><!--气旋冲锋枪-->
 	<weapon key="hd_psc_rx1_railgun_full_upgrade.weapon" /><!--轨道炮-->
 	<weapon key="hd_psc_m2016_constitution_full_upgrade.weapon" /><!--构建步枪-->
 	<weapon key="hd_psc_lho63_camper_full_upgrade.weapon" /><!--野营者狙击步枪-->
 	<weapon key="hd_lmg_mg94_mk3.weapon" /><!--MG94机枪-->
 	<weapon key="hd_lmg_mg105_stalwart_full_upgrade.weapon" /><!--MG105盟友机枪-->
+	<weapon key="hd_hmg_mg107.weapon" /><!--MG107淬火重机枪-->
 	<weapon key="hd_exp_obliterator_grenade_launcher_ai.weapon" /><!--消灭者榴弹发射器-->
 	<weapon key="hd_exp_m25_rumbler_ai.weapon" /><!--雷鸣者-->
 	<weapon key="hd_exp_cr9_suppressor_ai.weapon" /><!--抑制者直射榴弹-->
@@ -41,7 +43,7 @@
     <projectile key="hd_grenade_molotov_ai.projectile" /><!--燃烧瓶-->
     <projectile key="hd_grenade_standard.projectile" /><!--破片手雷-->
     <!--护甲-->
-    <carry_item key="helldivers_ai_vest.carry_item" />
+    <carry_item key="helldivers_ai_vest" />
 
 	<vehicle key="hd_m5_apc.vehicle" />
 	<vehicle key="hd_mc109_motor.vehicle" />

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon 
+file="_hd_exp.base"
+> 
+
+    <specification 
+    slot="1" 
+    retrigger_time="0.12" 
+	last_burst_retrigger_time="0.75"
+    accuracy_factor="1.0" 
+    sustained_fire_grow_step="0.04" 
+    sustained_fire_diminish_rate="0.12" 
+    magazine_size="10" 
+    can_shoot_standing="0" 
+    can_shoot_crouching="1"
+	can_shoot_prone="0"
+    carry_in_two_hands="1"
+    burst_shots="2" 
+    suppressed="0" 
+    name="TOX-17 SourHound" 
+    class="4" 
+    reload_one_at_a_time="0" 
+	barrel_offset_3d="0 -0.2 2.5" 
+    projectiles_per_shot="1" 
+    sight_height_offset="3.0" 
+    projectile_speed="60.0" 
+	/> 
+
+    <animation state_key="recoil" animation_key="fire_rumbler" /> 
+    <animation state_key="reload" animation_key="reloading_rumbler" />
+    <animation state_key="hold" animation_key="still_rumbler" />
+    <animation state_key="hold_casual" animation_key="still_rumbler" />
+    <animation state_key="hold_on_wall" animation_key="still_rumbler" />
+    <animation state_key="still_against_wall" animation_key="still_rumbler" />
+    <animation state_key="crouching" animation_key="still_rumbler" />
+	<animation state_key="crouch_moving" animation_key="crouching_forwards_rumbler" />
+	<animation state_key="crouch_moving_backwards" animation_key="crouching_backwards_rumbler" />
+    <animation state_key="running" animation_key="running" />
+	<animation state_key="walking" animation_key="running_rumbler" />
+	<animation state_key="walking_backwards" animation_key="walking backwards, pistol" />
+   
+    <sound key="fire" fileref="m25_rumbler_fire.wav" pitch_variety="0.01" volume="0.4" />
+    <sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.05" volume="0.5"/>
+    <sound key="magazine_in" fileref="m25_rumbler_magazine_in.wav"/>
+	<sound key="magazine_out" fileref="reload2_helldiver.wav" pitch_variety="0.00"  volume="0.7"/>
+	<sound key="magazine_out" fileref="reload3_helldiver.wav" pitch_variety="0.00"  volume="0.7"/>
+	<sound key="magazine_out" fileref="reload4_helldiver.wav" pitch_variety="0.00"  volume="0.7"/>
+	<sound key="magazine_out" fileref="rifle_chamber.wav" pitch_variety="0.00"  volume="0.7"/>
+	<sound key="magazine_out" fileref="rifle_chamber.wav" pitch_variety="0.00"  volume="0.7"/>
+	<sound key="magazine_out" fileref="rifle_chamber.wav" pitch_variety="0.00"  volume="0.7"/>
+	<sound key="magazine_out" fileref="rifle_chamber.wav" pitch_variety="0.00"  volume="0.7"/>
+	
+    <sound class="impact" fileref="rifle_drop.wav" />
+
+    <model filename="hdw_sourHound.xml" /> 
+    <hud_icon filename="hdw_sourHound.png" /> 
+    <commonness value="0.1" can_respawn_with="0" in_stock="1" /> 
+    <inventory encumbrance="15.0" price="0.0" /> 
+    <weak_hand_hold offset="0.3" /> 
+		
+    <ballistics 
+    curve_height="16" 
+    near_far_distance="0" 
+    speed_estimation_near="0" 
+    speed_estimation_far="58" 
+    max_speed="37" 
+    randomness="0" 
+    tweak_factor="1.48" /> 
+
+
+	
+	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="1" source="rank" source_value="54.324" />
+
+
+    <stance state_key="running" accuracy="0.7" /> 
+    <stance state_key="walking" accuracy="0.95" />
+    <stance state_key="crouch_moving" accuracy="0.8" />
+    <stance state_key="standing" accuracy="1" />
+    <stance state_key="crouching" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1" />     
+     
+	<effect class="muzzle" ref="BigMuzzle" /> 
+    <effect class="muzzle" ref="LawMuzzle" />
+    <effect class="muzzle" ref="UpDust" />
+	
+	
+	<!--附加属性-->
+    <modifier class="speed" value="-0.3" /> 
+    <modifier class="hit_success_probability" value="0.0" /><!--正值减少玩家抗致死率-->
+    <modifier class="detectability" value="0.0" />	<!--正值减少玩家隐蔽-->
+	 
+
+</weapon>

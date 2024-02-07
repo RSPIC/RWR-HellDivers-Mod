@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapons> 
+<weapon 
+file="hd_arc_mgc_capacitor_base.weapon"
+key="hd_arc_mgc_capacitor_mk3.weapon" 
+>
+    <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="5.5" can_be_detected_by_footmen="0" 
+	time_to_live="0.45" radius="0.3" can_be_detected_by_driver="0" can_be_disarmed="0" name="MG-C Capacitor"> 
+		
+		<result class="hit" kill_probability="2.0" 
+		kill_probability_offset_on_successful_hit="40"
+		kill_decay_start_time="0.15" kill_decay_end_time="0.55" character_state="wound"/>
+		<!-- slower decay -->
+		<!-- 30m max damage range -->
+		<!-- damage 75/100hit  -->
+	
+		<effect class="result" key="terrain" ref="general_weapon_result_hitspot" lighting="0"/>
+		<effect class="result" key="terrain" ref="Arc_ar_result_hit" lighting="0"/>
+		<effect class="result" key="terrain" ref="Arc_ar_result_box_point" lighting="0"/>
+		<effect class="activated" ref="Arc_ar_activated_thunder" />
+		
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+		<trail probability="1" key="normal_trail_as7_lightblue" lighting="0"/>	
+    </projectile>
+</weapon>
+<weapon 
+file="hd_arc_mgc_capacitor_base.weapon"
+key="hd_arc_mgc_capacitor_dicker.weapon" 
+>
+	<commonness value="0" can_respawn_with="1" in_stock="0" /> 
+    <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="5.5" can_be_detected_by_footmen="0" 
+	time_to_live="0.45" radius="0.3" can_be_detected_by_driver="0" can_be_disarmed="0" name="MG-C Capacitor"> 
+		
+		<result class="hit" kill_probability="2.0" 
+		kill_probability_offset_on_successful_hit="40"
+		kill_decay_start_time="0.15" kill_decay_end_time="0.55" character_state="wound"/>
+		<!-- slower decay -->
+		<!-- 30m max damage range -->
+		<!-- damage 75/100hit  -->
+	
+		<effect class="result" key="terrain" ref="general_weapon_result_hitspot" lighting="0"/>
+		<effect class="result" key="terrain" ref="Arc_ar_result_hit" lighting="0"/>
+		<effect class="result" key="terrain" ref="Arc_ar_result_box_point" lighting="0"/>
+		<effect class="activated" ref="Arc_ar_activated_thunder" />
+		
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+		<trail probability="1" key="normal_trail_as7_lightblue" lighting="0"/>	
+    </projectile>
+</weapon>
+</weapons>

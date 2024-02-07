@@ -406,7 +406,7 @@ class Stage {
 			faction.setBoolAttribute("lose_without_bases", f.m_loseWithoutBases);
 			faction.setBoolAttribute("win_with_all_bases", f.m_winWithAllBases);
 
-			if(i == 0){	//防止被占领后失败
+			if(i == 0){	//防止无法占领卡图
 				faction.setBoolAttribute("lose_without_bases", false);
 			}
 

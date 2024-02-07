@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<vehicle file="_vehicle_none.base" 
+<vehicle 
+file="_vehicle_none.base" 
 name="MH-60S Helicopter" 
 key="mh_60s.vehicle" 
 respawn_time="300" 
 time_to_live_unsteerable="95" 
 map_view_atlas_index="35" 
 minimum_fill_requirement="1.0" 
-
 allow_ai_to_use="0"
 >
 	<spawn_point offset="0 100 0" player_only="0" />  

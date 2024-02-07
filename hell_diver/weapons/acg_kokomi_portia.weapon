@@ -66,8 +66,8 @@ key="acg_kokomi_portia.weapon"
 	time_to_live="0.22" can_be_detected_by_driver="1" can_be_disarmed="0" name="Kokomi"> 
 	
 		<result class="hit" kill_probability="1.0" 
-		kill_probability_offset_on_successful_hit="9"
-		kill_decay_start_time="0.22" kill_decay_end_time="0.22" character_state="stun"/>
+		kill_probability_offset_on_successful_hit="12"
+		kill_decay_start_time="1" kill_decay_end_time="1" character_state="stun"/>
 
         <effect class="result" key="terrain" ref="general_weapon_result_hitspot" lighting="0"/>
         <effect class="result" key="other" copy="terrain"/>
@@ -279,8 +279,8 @@ key="re_acg_kokomi_portia.weapon"
 	time_to_live="0.22" can_be_detected_by_driver="1" can_be_disarmed="0" name="Kokomi"> 
 	
 		<result class="hit" kill_probability="1.0" 
-		kill_probability_offset_on_successful_hit="9"
-		kill_decay_start_time="0.22" kill_decay_end_time="0.22" character_state="stun"/>
+		kill_probability_offset_on_successful_hit="12"
+		kill_decay_start_time="1" kill_decay_end_time="1" character_state="stun"/>
 
         <effect class="result" key="terrain" ref="general_weapon_result_hitspot" lighting="0"/>
         <effect class="result" key="other" copy="terrain"/>

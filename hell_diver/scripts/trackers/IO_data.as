@@ -1007,6 +1007,26 @@ class IO_data : Tracker {
 
         array<Resource@> resources = array<Resource@>();
         Resource@ res;
+        if(access_tag == "HappyNewYear"){//新年奖励
+            if(xp >= 251.773){
+                @res = Resource("reward_box_collection.carry_item","carry_item");
+                res.addToResources(resources,1);
+                @res = Resource("reward_box_weapon_delta.carry_item","carry_item");//MK4
+                res.addToResources(resources,3);
+                @res = Resource("ex_firework.weapon","weapon");//窜天猴
+                res.addToResources(resources,1);
+                addListItemInBackpack(m_metagame,cid,resources);
+
+                GiveRP(m_metagame,cid,880000);
+                dictionary a;
+                a["%reward"] = "RP: 88w";
+                notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+                return true;
+            }else{
+                notify(m_metagame, "You didnt reach the required Rank!", dictionary(), "misc", pid, false, "", 1.0);
+                return false;
+            }
+        }
         if(access_tag == "ImAgreeWithPropose"){//和谐游戏倡议
             if(xp >= 251.773){
                 @res = Resource("reward_box_collection.carry_item","carry_item");
@@ -1573,6 +1593,9 @@ const XmlElement@ readFile(Metagame@ m_metagame, string filename,string location
         _report(m_metagame,"文件名="+filename);
         writeXML(m_metagame,filename,XmlElement(filename),location);
         @root_base = readXML(m_metagame,filename,location);
+    }
+    if(root_base is null){
+        return null;
     }
     const XmlElement@ root = root_base.getFirstChild();
     return root;

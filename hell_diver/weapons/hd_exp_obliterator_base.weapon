@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapon 
+file="_hd_exp.base"
+> 
+    <specification 	
+    slot="1" 	
+    retrigger_time="0.5" 
+	last_burst_retrigger_time="1"
+    accuracy_factor="1.0" 
+	spread_range="0.9"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="5.0" 
+    sustained_fire_diminish_rate="8.0" 
+    magazine_size="8" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="1"	
+    suppressed="1" 
+	class="0" 
+    name="Obliterator Grenade Launcher" 
+	sight_height_offset="1.0" 
+	burst_shots="1" 
+    projectiles_per_shot="1" 
+    projectile_speed="200.0"
+	barrel_offset="1.0" 
+	carry_in_two_hands="1" 
+	stab_enabled="0" 
+	stab_range="0" 
+	/> 
+	<!--8/8 mag		120 rpm		2.15s/3s reload	-->
+
+    <animation state_key="recoil" animation_key="recoil1" /> 
+    <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
+    <animation key="reload" animation_key="reloading_obliterator_upgraded" />
+    <animation state_key="hold" animation_key="" />
+	<animation state_key="hold_on_wall"  animation_key="" />
+    <animation state_key="still_against_wall" animation_key="" />
+    <animation state_key="hold_casual" animation_key="" />
+	<animation state_key="running" animation_key="" />
+	<animation state_key="walking" animation_key="" />
+    <animation state_key="walking_backwards" animation_key="" />
+    <animation state_key="crouching" animation_key="" />
+	<animation state_key="crouch_moving" animation_key="" />
+	<animation state_key="crouch_moving_backwards" animation_key="" />
+    <animation state_key="prone_still" animation_key="" />
+	<animation state_key="prone_moving" animation_key="" />
+	<animation state_key="stabbing" animation_key="pistol whip 3" />
+	<animation state_key="next_in_chain_in" animation_key="" />
+	<animation state_key="next_in_chain_out" animation_key="" />
+    <animation state_key="changing_weapon_in" animation_key="" />
+	<animation state_key="changing_weapon_out" animation_key=""/>
+
+    <sound key="effect" fileref="obliterator_grenade_launcher_cycle.wav" pitch_variety="0.03" volume="1.0" /> 
+    <sound key="fire" fileref="obliterator_grenade_launcher_fire.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.03" volume="1.0" />
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="0.5" />
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="0.9" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="0.8" />
+    <sound key="magazine_out" fileref="obliterator_grenade_launcher_mag_out.wav" />
+    <sound key="magazine_in" fileref="obliterator_grenade_launcher_mag_in.wav" />
+    <sound key="cycle" fileref="obliterator_grenade_launcher_cycle.wav" />
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" />
+    <sound key="last_ammo" fileref="hd_dryfire.wav" pitch_variety="0.03" volume="1.0"/>
+	<sound class="impact" fileref="rifle_drop.wav" />
+
+    <model filename="hd_obliterator_grenade_launcher.xml" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="hd_obliterator_grenade_launcher.png" /> 
+	
+	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="1" source="rank" source_value="26.329" />
+	
+    <commonness value="1" can_respawn_with="0" in_stock="1" /> 
+    <inventory encumbrance="10.0" price="0.0" /> 
+    <weak_hand_hold offset="0.3" /> 
+
+
+	
+
+    <ballistics 
+    curve_height="10" 
+    near_far_distance="0" 
+    speed_estimation_near="0.0" 
+    speed_estimation_far="65" 
+    max_speed="32" 
+    randomness="0" 
+    tweak_factor="1.86" />  
+
+	
+    <stance state_key="running" accuracy="1" /> 
+    <stance state_key="walking" accuracy="1" />
+	<stance state_key="standing" accuracy="1" />
+	<stance state_key="crouching" accuracy="1.1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1.2" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1.2" />     
+     
+    <modifier class="speed" value="0" /> 
+    <modifier class="hit_success_probability" value="0.0" />
+    <modifier class="detectability" value="0.0" />
+	 
+
+</weapon>
+
+
+

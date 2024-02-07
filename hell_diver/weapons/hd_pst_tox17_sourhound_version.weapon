@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapons> 
+<weapon 
+file="hd_pst_tox17_sourhound_base.weapon"
+key="hd_pst_tox17_sourhound_mk3.weapon"
+>
+    <projectile file="hd_general_gl_spawn.projectile"  pulldown_in_air="48.0" name="TOX-17 SourHound">  
+
+		<trigger class="impact"/>
+        <result class="spawn" instance_class="projectile" instance_key="hd_pst_tox17_sourhound_damage.projectile" 
+		min_amount="120" max_amount="120" offset="0 0.5 0" position_spread="1 0" direction_spread="0.1 0" />
+
+		<model mesh_filename="m25_rumbler_bullet.xml" />
+		<trail probability="1" key=""/>
+
+        <sound class="result" key="other" fileref="at_hit_EIFL_1.wav" pitch_variety="0.03" volume="1.5" />
+
+        <effect class="result" key="terrain" ref="bugs_spitter_splash_tox"/>
+        <effect class="result" key="terrain" ref="bugs_spitter_splash_expand"/>
+        <effect class="result" key="terrain" ref="bugs_spitter_splash_single_damage3"/>
+        <effect class="activated" ref="bugs_spitter_splash_single_activated2"/>
+        <effect class="activated" ref="bugs_spitter_splash_single_activated"/>
+
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+    </projectile>
+</weapon>
+<weapon 
+file="hd_pst_tox17_sourhound_base.weapon"
+key="hd_pst_tox17_sourhound_dicker.weapon"
+>
+	<commonness value="0" can_respawn_with="1" in_stock="0" /> 
+    <projectile file="hd_general_gl_spawn.projectile"  pulldown_in_air="48.0" name="TOX-17 SourHound">  
+
+		<trigger class="impact"/>
+        <result class="spawn" instance_class="projectile" instance_key="hd_pst_tox17_sourhound_damage.projectile" 
+		min_amount="120" max_amount="120" offset="0 0.5 0" position_spread="1 0" direction_spread="0.1 0" />
+
+		<model mesh_filename="m25_rumbler_bullet.xml" />
+		<trail probability="1" key=""/>
+
+        <sound class="result" key="other" fileref="at_hit_EIFL_1.wav" pitch_variety="0.03" volume="1.5" />
+
+        <effect class="result" key="terrain" ref="bugs_spitter_splash_tox"/>
+        <effect class="result" key="terrain" ref="bugs_spitter_splash_expand"/>
+        <effect class="result" key="terrain" ref="bugs_spitter_splash_single_damage3"/>
+        <effect class="activated" ref="bugs_spitter_splash_single_activated2"/>
+        <effect class="activated" ref="bugs_spitter_splash_single_activated"/>
+
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+    </projectile>
+</weapon>
+</weapons>

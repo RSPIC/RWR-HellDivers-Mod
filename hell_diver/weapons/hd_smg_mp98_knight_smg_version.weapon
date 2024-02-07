@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapons>
+<weapon 
+file="hd_smg_mp98_knight_smg_base.weapon"
+key="hd_smg_mp98_knight_smg_full_upgrade.weapon" 
+>
+	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.20" can_be_detected_by_driver="1" can_be_disarmed="0" name="MP-98 Knight"> 
+	
+		<result class="hit" kill_probability="1.0" 
+		kill_probability_offset_on_successful_hit="7"
+		kill_decay_start_time="0.22" kill_decay_end_time="0.22" character_state="stun"/>
+		<!-- 7x76=532 -->
+
+		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+	
+		<!--命中音效-->
+
+		<!--命中特效-->
+		<!--
+		<effect class="result" key="terrain" ref="" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_bullet_light" />
+		-->
+		<effect class="result" key="terrain" ref="general_weapon_result_hitspot" lighting="0"/>
+		<effect class="result" key="character" ref="general_result_smg_stun" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_bullet_light" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_flying_mars" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_bullet_centerlight" lighting="0"/>
+		
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<!--尾迹组-->
+		<trail probability="1" key="normal_trail_short"/>	
+    </projectile>
+</weapon>
+</weapons>

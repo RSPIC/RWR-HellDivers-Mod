@@ -1,0 +1,1843 @@
+<?xml version="1.0" ?>
+<carry_items>
+  <carry_item key="vest_cyborgs_butcher_180" name="180/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_179">
+    <hud_icon filename="helldivers_vest_100.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_179" name="179/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_178">
+    <hud_icon filename="helldivers_vest_100.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_178" name="178/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_177">
+    <hud_icon filename="helldivers_vest_100.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_177" name="177/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_176">
+    <hud_icon filename="helldivers_vest_100.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_176" name="176/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_175">
+    <hud_icon filename="helldivers_vest_100.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_175" name="175/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_174">
+    <hud_icon filename="helldivers_vest_90.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_174" name="174/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_173">
+    <hud_icon filename="helldivers_vest_90.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_173" name="173/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_172">
+    <hud_icon filename="helldivers_vest_90.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_172" name="172/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_171">
+    <hud_icon filename="helldivers_vest_90.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_171" name="171/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_170">
+    <hud_icon filename="helldivers_vest_90.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_170" name="170/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_169">
+    <hud_icon filename="helldivers_vest_90.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_169" name="169/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_168">
+    <hud_icon filename="helldivers_vest_90.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_168" name="168/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_167">
+    <hud_icon filename="helldivers_vest_80.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_167" name="167/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_166">
+    <hud_icon filename="helldivers_vest_80.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_166" name="166/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_165">
+    <hud_icon filename="helldivers_vest_80.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_165" name="165/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_164">
+    <hud_icon filename="helldivers_vest_80.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_164" name="164/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_163">
+    <hud_icon filename="helldivers_vest_80.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_163" name="163/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_162">
+    <hud_icon filename="helldivers_vest_80.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_162" name="162/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_161">
+    <hud_icon filename="helldivers_vest_80.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_161" name="161/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_160">
+    <hud_icon filename="helldivers_vest_80.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_160" name="160/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_159">
+    <hud_icon filename="helldivers_vest_80.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_159" name="159/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_158">
+    <hud_icon filename="helldivers_vest_70.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_158" name="158/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_157">
+    <hud_icon filename="helldivers_vest_70.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_157" name="157/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_156">
+    <hud_icon filename="helldivers_vest_70.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_156" name="156/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_155">
+    <hud_icon filename="helldivers_vest_70.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_155" name="155/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_154">
+    <hud_icon filename="helldivers_vest_70.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_154" name="154/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_153">
+    <hud_icon filename="helldivers_vest_70.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_153" name="153/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_152">
+    <hud_icon filename="helldivers_vest_70.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_152" name="152/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_151">
+    <hud_icon filename="helldivers_vest_60.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_151" name="151/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_150">
+    <hud_icon filename="helldivers_vest_60.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_150" name="150/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_149">
+    <hud_icon filename="helldivers_vest_60.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_149" name="149/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_148">
+    <hud_icon filename="helldivers_vest_60.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_148" name="148/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_147">
+    <hud_icon filename="helldivers_vest_60.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_147" name="147/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_146">
+    <hud_icon filename="helldivers_vest_60.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_146" name="146/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_145">
+    <hud_icon filename="helldivers_vest_60.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_145" name="145/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_144">
+    <hud_icon filename="helldivers_vest_60.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_144" name="144/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_143">
+    <hud_icon filename="helldivers_vest_60.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_143" name="143/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_142">
+    <hud_icon filename="helldivers_vest_50.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_142" name="142/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_141">
+    <hud_icon filename="helldivers_vest_50.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_141" name="141/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_140">
+    <hud_icon filename="helldivers_vest_50.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_140" name="140/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_139">
+    <hud_icon filename="helldivers_vest_50.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_139" name="139/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_138">
+    <hud_icon filename="helldivers_vest_50.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_138" name="138/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_137">
+    <hud_icon filename="helldivers_vest_50.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_137" name="137/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_136">
+    <hud_icon filename="helldivers_vest_50.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_136" name="136/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_135">
+    <hud_icon filename="helldivers_vest_40.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_135" name="135/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_134">
+    <hud_icon filename="helldivers_vest_40.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_134" name="134/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_133">
+    <hud_icon filename="helldivers_vest_40.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_133" name="133/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_132">
+    <hud_icon filename="helldivers_vest_40.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_132" name="132/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_131">
+    <hud_icon filename="helldivers_vest_40.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_131" name="131/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_130">
+    <hud_icon filename="helldivers_vest_40.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_130" name="130/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_129">
+    <hud_icon filename="helldivers_vest_40.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_129" name="129/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_128">
+    <hud_icon filename="helldivers_vest_40.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_128" name="128/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_127">
+    <hud_icon filename="helldivers_vest_40.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_127" name="127/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_126">
+    <hud_icon filename="helldivers_vest_30.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_126" name="126/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_125">
+    <hud_icon filename="helldivers_vest_30.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_125" name="125/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_124">
+    <hud_icon filename="helldivers_vest_30.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_124" name="124/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_123">
+    <hud_icon filename="helldivers_vest_30.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_123" name="123/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_122">
+    <hud_icon filename="helldivers_vest_30.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_122" name="122/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_121">
+    <hud_icon filename="helldivers_vest_30.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_121" name="121/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_120">
+    <hud_icon filename="helldivers_vest_30.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_120" name="120/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_119">
+    <hud_icon filename="helldivers_vest_20.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_119" name="119/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_118">
+    <hud_icon filename="helldivers_vest_20.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_118" name="118/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_117">
+    <hud_icon filename="helldivers_vest_20.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_117" name="117/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_116">
+    <hud_icon filename="helldivers_vest_20.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_116" name="116/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_115">
+    <hud_icon filename="helldivers_vest_20.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_115" name="115/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_114">
+    <hud_icon filename="helldivers_vest_20.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_114" name="114/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_113">
+    <hud_icon filename="helldivers_vest_20.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_113" name="113/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_112">
+    <hud_icon filename="helldivers_vest_20.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_112" name="112/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_111">
+    <hud_icon filename="helldivers_vest_20.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_111" name="111/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_110">
+    <hud_icon filename="helldivers_vest_10.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_110" name="110/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_109">
+    <hud_icon filename="helldivers_vest_10.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_109" name="109/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_108">
+    <hud_icon filename="helldivers_vest_10.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_108" name="108/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_107">
+    <hud_icon filename="helldivers_vest_10.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_107" name="107/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_106">
+    <hud_icon filename="helldivers_vest_10.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_106" name="106/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_105">
+    <hud_icon filename="helldivers_vest_10.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_105" name="105/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_104">
+    <hud_icon filename="helldivers_vest_10.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_104" name="104/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_103">
+    <hud_icon filename="helldivers_vest_broken.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_103" name="103/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_102">
+    <hud_icon filename="helldivers_vest_broken.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_102" name="102/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_cyborgs_butcher_101">
+    <hud_icon filename="helldivers_vest_broken.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_cyborgs_butcher_101" name="101/180 Butcher General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_slow_100">
+    <hud_icon filename="helldivers_vest_broken.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+        <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+</carry_items>

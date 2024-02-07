@@ -95,7 +95,16 @@ class MapRotatorInvasion : MapRotator {
 	void addFactionConfig(FactionConfig@ config) {
 		m_factionConfigs.push_back(config);
 	}
-
+	// --------------------------------------------
+	void setRandomEnemyFaction(){
+		int count = int(m_factionConfigs.length());
+		for (int i = count - 1; i >= 1; --i) {
+			int j = rand(1, i);
+			FactionConfig@ temp = m_factionConfigs[i];
+			@m_factionConfigs[i] = m_factionConfigs[j];
+			@m_factionConfigs[j] = temp;
+		}
+	}
 	// --------------------------------------------
 	void setWorld(World@ world) {
 		@m_world = @world;
@@ -757,6 +766,7 @@ class MapRotatorInvasion : MapRotator {
 		// in invasion, store the faction settings in gamemode
 		// so that we can juggle with them when the match is on
 		// and reset them back to defaults when needed
+
 		Stage@ stage = m_stages[index];
 		m_metagame.setFactions(stage.m_factions);
 		m_metagame.setMapInfo(stage.m_mapInfo);

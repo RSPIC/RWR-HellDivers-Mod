@@ -261,15 +261,25 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			ScoredResource("token_maria_schariac.projectile","projectile",1.0f,4),
 			ScoredResource("token_shinano.projectile","projectile",1.0f,4),
 			// 1.6.4
-			ScoredResource("token_irene.projectile","projectile",3.0f,4),
-			ScoredResource("token_aur.projectile","projectile",3.0f,4),
-			ScoredResource("token_ein.projectile","projectile",3.0f,4),
-			ScoredResource("token_soph.projectile","projectile",3.0f,4),
-			ScoredResource("token_florence_spring.projectile","projectile",3.0f,4),
-			ScoredResource("token_minami_rena.projectile","projectile",3.0f,4),
-			ScoredResource("token_racing_miku_2022.projectile","projectile",3.0f,4),
-			ScoredResource("token_tail_yellow.projectile","projectile",3.0f,4),
-			ScoredResource("token_togo_miomori.projectile","projectile",3.0f,4),
+			ScoredResource("token_irene.projectile","projectile",1.0f,4),
+			ScoredResource("token_aur.projectile","projectile",1.0f,4),
+			ScoredResource("token_ein.projectile","projectile",1.0f,4),
+			ScoredResource("token_soph.projectile","projectile",1.0f,4),
+			ScoredResource("token_florence_spring.projectile","projectile",1.0f,4),
+			ScoredResource("token_minami_rena.projectile","projectile",1.0f,4),
+			ScoredResource("token_racing_miku_2022.projectile","projectile",1.0f,4),
+			ScoredResource("token_tail_yellow.projectile","projectile",1.0f,4),
+			ScoredResource("token_togo_miomori.projectile","projectile",1.0f,4),
+			// 1.7.0
+			ScoredResource("token_kotori_itsuka.projectile","projectile",3.0f,4),
+			ScoredResource("token_exo_cat.projectile","projectile",3.0f,4),
+			ScoredResource("token_akane.projectile","projectile",3.0f,4),
+			ScoredResource("token_asuna.projectile","projectile",3.0f,4),
+			ScoredResource("token_karin.projectile","projectile",3.0f,4),
+			ScoredResource("token_neru.projectile","projectile",3.0f,4),
+			ScoredResource("token_latu.projectile","projectile",3.0f,4),
+			ScoredResource("token_amau_ako.projectile","projectile",3.0f,4),
+			ScoredResource("token_goto_hitori.projectile","projectile",3.0f,4),
 
 			//AI类信物
 			ScoredResource("ai_token_asuma_toki.projectile","projectile",1.0f,2)
@@ -305,7 +315,8 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		 ScoredResource("ex_piano_cradle_of_eternity.weapon", "weapon", 1.0f,2), 
          ScoredResource("ex_gramophone_steeltorrent.weapon", "weapon", 1.0f,2),
          ScoredResource("ex_power_chair_call.projectile", "projectile", 1.0f,2),
-         ScoredResource("ex_gramophone_space_elevator.weapon", "weapon", 1.0f,2)
+         ScoredResource("ex_gramophone_space_elevator.weapon", "weapon", 1.0f,2),
+         ScoredResource("ex_gramophone_made_of_earth.weapon", "weapon", 1.0f,2)
 			},
 			{
 			ScoredResource("lottery_cash_II.carry_item", "carry_item", 1.0f)
@@ -356,8 +367,8 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			ScoredResource("panther_a_call.projectile", "projectile", 1.0f),
 			ScoredResource("panzer_3_a_call.projectile", "projectile", 1.0f),
 			ScoredResource("sdkfz184_call.projectile", "projectile", 1.0f),
-			ScoredResource("t90m3_call.projectile", "projectile", 1.0f)
-			
+			ScoredResource("t90m3_call.projectile", "projectile", 1.0f),
+			ScoredResource("marder_call.projectile", "projectile", 1.0f)
 			},
 			{
 			ScoredResource("lottery_cash_II.carry_item", "carry_item", 1.0f)

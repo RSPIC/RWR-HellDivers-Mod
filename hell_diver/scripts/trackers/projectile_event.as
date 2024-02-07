@@ -859,7 +859,7 @@ class projectile_event : Tracker {
                             soldiers.removeAt(s_i);
                             Vector3 soldier_pos = stringToVector3(getCharacterInfo(m_metagame, soldier_id).getStringAttribute("position"));
                             string m_key = "hd_effect_heal_character.projectile";
-                            string newVest = "helldivers_vest.carry_item";
+                            string newVest = "helldivers_vest";
                             int m_pid = g_playerInfoBuck.getPidByCid(soldier_id);
                             if(m_pid >= 0){
                                 healCharacter(m_metagame,soldier_id,40);

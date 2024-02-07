@@ -21,19 +21,15 @@
 
 	<!-- player group -->
 	<soldier name="default" spawn_score="0.0">
-		<character filename="helldivers_default_chat.character">
-			<parameter class="default_squad_config_index" value="0" />
+		<character filename="illum_hunter_state.character">
 		</character>
-		<ai filename="default.ai" />
+		<ai filename="illum_hunter.ai" />
 
 		<model file="hdivers_ceremonial.xml" />
+		<models filename="illum_default.models" />
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="common.resources" />
-		<resources file="hd_player.resources" clear_weapons="0" clear_vehicles="0" clear_carry_items="0" clear_calls="0" clear_grenades="0"/>
-		<resources file="hd_divers.resources" >
-			<weapon key="normal.weapon" />
-		</resources>
-		
+		<resources file="illum_all.resources" />
 		
 		<item_class_existence_config>
 			<!-- secondaries -->
@@ -55,7 +51,7 @@
 	</soldier>
 	
 	<!-- default ai group -->
-	<soldier name="default_ai" spawn_score="1.0" copy_from="default">
+	<soldier name="default_ai" spawn_score="0" copy_from="default">
 			<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 			<resources file="hd_divers.resources" />
 	</soldier>
@@ -110,7 +106,7 @@
 
 <!-- Observer -->
 	<!-- 观测者 -->
-	<soldier name="Observer" spawn_score="1.0" copy_from="base" >
+	<soldier name="Observer" spawn_score="0.3" copy_from="base" >
 		<character filename="illum_observer_state.character">	
 			
 		</character>
@@ -118,14 +114,14 @@
 		<resources file="illum_common.resources" />
 		<resources>
 			<weapon key="illum_observer_main.weapon" />
-			<!-- <projectile key="bugs_scout_alert_spawn.projectile" /> -->
-			<carry_item key="general_vest_5" />
-			<carry_item key="general_vest_6" />
-			<carry_item key="general_vest_7" />
+			<carry_item key="vest_illuminate_observer_8" />
 		</resources>
 		
-		<ai filename="illum_observer.ai" /> 
-		
+		<ai filename="illum_observer.ai" > 
+			<parameter class="fighting_regular_move_radius" value="40.0" /> 
+			<parameter class="willingness_to_charge" value="0.1" />
+		</ai> 
+
 		<model filename="illum_observer.xml" />
 
 		<!-- low XP, likely to join player squad -->
@@ -136,4 +132,205 @@
 		</attribute_config>
 	</soldier> 
 
+	<soldier name="Watcher" spawn_score="0.3" copy_from="base" >
+		<character filename="illum_observer_state.character">	
+			
+		</character>
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="illum_common.resources" />
+		<resources>
+			<weapon key="illum_watcher_main.weapon" />
+			<carry_item key="general_vest_5" />
+			<carry_item key="general_vest_6" />
+			<carry_item key="general_vest_7" />
+		</resources>
+		
+		<ai filename="illum_observer.ai" /> 
+		
+		<model filename="illum_watcher.xml" />
+
+		<!-- low XP, likely to join player squad -->
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="2.0" max="2.0" />
+			<attribute weight="1.0" min="1.0" max="1.0" />
+			<attribute weight="1.0" min="3.0" max="3.0" />
+		</attribute_config>
+	</soldier> 
+	<!-- Infantry -->
+	<soldier name="Hunter" spawn_score="0.75" copy_from="base" >
+		<character filename="illum_hunter_state.character">	
+			
+		</character>
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="illum_common.resources" />
+		<resources>
+			<weapon key="illum_hunter_main.weapon" />
+			<weapon key="illum_hunter_main_2.weapon" />
+			<carry_item key="general_vest_15" />
+			<carry_item key="general_vest_20" />
+		</resources>
+		
+		<ai filename="illum_hunter.ai" > 
+			<parameter class="fighting_regular_move_radius" value="20.0" />
+			<parameter class="willingness_to_charge" value="0.3" />
+		</ai>
+		<model filename="illum_hunter.xml" />
+
+		<!-- low XP, likely to join player squad -->
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="2.0" max="2.0" />
+			<attribute weight="1.0" min="1.0" max="1.0" />
+			<attribute weight="1.0" min="3.0" max="3.0" />
+		</attribute_config>
+	</soldier> 
+	<soldier name="Apprentice" spawn_score="1" copy_from="base" >
+		<character filename="illum_hunter_state.character">	
+			
+		</character>
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="illum_common.resources" />
+		<resources>
+			<weapon key="illum_apprentice_main.weapon" />
+			<carry_item key="general_vest_25" />
+			<carry_item key="general_vest_30" />
+		</resources>
+		
+		<ai filename="illum_hunter.ai" /> 
+		
+		<model filename="illum_apprentice.xml" />
+
+		<!-- low XP, likely to join player squad -->
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="2.0" max="2.0" />
+			<attribute weight="1.0" min="1.0" max="1.0" />
+			<attribute weight="1.0" min="3.0" max="3.0" />
+		</attribute_config>
+	</soldier> 
+
+	<soldier name="Tripod" spawn_score="1" copy_from="base" >
+		<character filename="illum_tripod_state.character">	
+			
+		</character>
+		<resources clear_weapons="2" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="illum_common.resources" />
+		<resources>
+			<weapon key="illum_tripod_main.weapon" />
+			<carry_item key="vest_illuminate_tripod_36" />
+			<carry_item key="vest_illuminate_tripod_41" />
+		</resources>
+		
+		<ai filename="illum_hunter.ai" > 
+			<parameter class="willingness_to_charge" value="1" />
+		</ai>
+		<model filename="illum_tripod.xml" />
+
+		<!-- low XP, likely to join player squad -->
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="2.0" max="2.0" />
+			<attribute weight="1.0" min="1.0" max="1.0" />
+			<attribute weight="1.0" min="3.0" max="3.0" />
+		</attribute_config>
+	</soldier> 
+	<soldier name="Strider" spawn_score="0.5" copy_from="base" >
+		<character filename="illum_tripod_state.character">	
+			
+		</character>
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="illum_common.resources" />
+		<resources>
+			<weapon key="illum_strider_main.weapon" />
+			<carry_item key="vest_illuminate_strider_41" />
+			<carry_item key="vest_illuminate_strider_51" />
+		</resources>
+		
+		<ai filename="illum_hunter.ai" /> 
+		
+		<model filename="illum_strider.xml" />
+
+		<!-- low XP, likely to join player squad -->
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="2.0" max="2.0" />
+			<attribute weight="1.0" min="1.0" max="1.0" />
+			<attribute weight="1.0" min="3.0" max="3.0" />
+		</attribute_config>
+	</soldier> 
+
+	<!-- Tank -->
+	<soldier name="Obelisk" spawn_score="0.05" copy_from="base" >
+		<character filename="illum_obelisk_state.character">	
+			
+		</character>
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="illum_common.resources" />
+		<resources>
+			<weapon key="illum_obelisk_main.weapon" />
+			<carry_item key="general_vest_400" />
+		</resources>
+		
+		<ai filename="illum_hunter.ai" /> 
+		
+		<model filename="illum_obelisk.xml" />
+
+		<!-- low XP, likely to join player squad -->
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="2.0" max="2.0" />
+			<attribute weight="1.0" min="1.0" max="1.0" />
+			<attribute weight="1.0" min="3.0" max="3.0" />
+		</attribute_config>
+	</soldier> 
+
+	<!-- Elite -->
+	<soldier name="Illusionist" spawn_score="0.15" copy_from="base" >
+		<character filename="illum_illusionist_state.character">	
+			
+		</character>
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="illum_common.resources" />
+		<resources>
+			<weapon key="illum_illusionist_main.weapon" />
+			<!-- <projectile key="bugs_scout_alert_spawn.projectile" /> -->
+			<carry_item key="vest_illuminate_illusionist_106" />
+			<carry_item key="vest_illuminate_illusionist_121" />
+		</resources>
+		
+		<ai filename="illum_hunter.ai" > 
+			<parameter class="fighting_regular_move_radius" value="30.0" />
+			<parameter class="willingness_to_charge" value="0.3" />
+		</ai>
+		
+		<model filename="illum_illusionist.xml" />
+
+		<!-- low XP, likely to join player squad -->
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="2.0" max="2.0" />
+			<attribute weight="1.0" min="1.0" max="1.0" />
+			<attribute weight="1.0" min="3.0" max="3.0" />
+		</attribute_config>
+	</soldier> 
+	<soldier name="CouncilMember" spawn_score="0.05" copy_from="base" >
+		<character filename="illum_illusionist_state.character">	
+			
+		</character>
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="illum_common.resources" />
+		<resources>
+			<weapon key="illum_council_member_main.weapon" />
+			<carry_item key="vest_illuminate_council_member_131" />
+			<carry_item key="vest_illuminate_council_member_151" />
+		</resources>
+		
+		<ai filename="illum_hunter.ai" > 
+			<parameter class="fighting_regular_move_radius" value="30.0" />
+			<parameter class="willingness_to_charge" value="0.3" />
+		</ai>
+		
+		<model filename="illum_council_member.xml" />
+
+		<!-- low XP, likely to join player squad -->
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="2.0" max="2.0" />
+			<attribute weight="1.0" min="1.0" max="1.0" />
+			<attribute weight="1.0" min="3.0" max="3.0" />
+		</attribute_config>
+	</soldier> 
 </faction>

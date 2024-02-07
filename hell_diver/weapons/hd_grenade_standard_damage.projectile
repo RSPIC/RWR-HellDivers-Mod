@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <projectile 
 class="grenade" 
-name="Grenade" 
 key="hd_grenade_standard_damage.projectile" 
 slot="0"
 pulldown_in_air="0.7"
@@ -18,7 +17,9 @@ player_death_drop_owner_lock_time="120"
 >
     <collision class="sticky" />
     <trigger class="time" time_to_live="0" />
-    <result class="blast" radius="4.0" damage="8" push="0.8" decal="1" character_state="wound"  faction_compare="not_equal"/>
+    <result class="blast" radius="5.5" damage="0.2" push="0.8" decal="1" 
+    damage_origin_vehicle="0" make_vehicle_hit_sound="0"
+    character_state="wound"  faction_compare="not_equal"/>
     	
     <effect class="result" type="splat_map" surface_tag="" size="3.0" atlas_index="0" layer="1" />
     <effect class="result" type="splat_map" surface_tag="" size="4.0" atlas_index="4" layer="0" />

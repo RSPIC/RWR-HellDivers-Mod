@@ -27,12 +27,13 @@
 	<vehicle file="panzer_3_a.vehicle" /><!--三号坦克A型-->
 	<vehicle file="panther_a.vehicle" /><!--豹式坦克A型-->
 	<vehicle file="sdkfz184.vehicle" /><!--大象-->
+	<vehicle file="marder.vehicle" /><!--黄鼠狼战车-->
 
 	<!-- 原版 -->
 	<vehicle file="radar_tower.vehicle" />
 	<vehicle file="radio_jammer.vehicle" />
 	<vehicle file="radio_jammer2.vehicle" />
-	<vehicle file="icecream.vehicle" />
+	<!-- <vehicle file="icecream.vehicle" /> -->
 	<!-- <vehicle file="darkcat.vehicle" /> -->
 	<vehicle file="mobile_armory.vehicle" />
 	<vehicle file="noxe.vehicle" />
@@ -78,4 +79,8 @@
 	<vehicle file="racing_car8.vehicle" /> 
 	<vehicle file="straw_block.vehicle" />   
 
+
+	<!-- 活动载具 -->
+	<vehicle file="act_hongbao.vehicle" />   
+	
 </vehicles>

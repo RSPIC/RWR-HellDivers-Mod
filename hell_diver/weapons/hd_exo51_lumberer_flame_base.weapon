@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapon 
+file="_hd_exo.base"
+> 
+	<tag name="machine gun" />
+    <specification 	
+    slot="0" 	
+    retrigger_time="0.06" 
+    accuracy_factor="0.985" 
+	spread_range="0.1"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="-0.22" 
+    sustained_fire_diminish_rate="-1.8" 
+    magazine_size="750" 
+	reload_one_at_a_time="1"
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="0"	
+    suppressed="0" 
+	class="0" 
+    name="EXO-51 Lumberer [FlameThrower]" 
+	sight_range_modifier="1.5" 
+	sight_height_offset="1.0" 
+	burst_shots="1" 
+    projectiles_per_shot="2" 
+    projectile_speed="25.0"
+	barrel_offset="2.0" 
+	carry_in_two_hands="0" 
+	stab_enabled="1" 
+	stab_range="0" 
+	use_basic_muzzle_smoke_effect="0"
+	/> 
+	<!--600RPM 10m range-->
+	<!-- mk2 Increases the magazine size of the cannon from 10 to 15 rounds. -->
+	<!-- mk3 Increases the magazine size of the flamer from 200 to 300 units of fuel. -->
+
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_exo_dead_damage.projectile" 
+	min_amount="20" max_amount="20" offset="0 1 0" position_spread="2.0 1" direction_spread="0.005 0.0" />
+	
+	<animation key="recoil" animation_key="exo_recoil_righthand" />
+	<animation state_key="reload" animation_key="exo_no_reload"/>
+	<animation state_key="hold" animation_key="exo_still" />
+	<animation state_key="hold_on_wall"  animation_key="exo_still" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="exo_still" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="exo_still" /><!--闲置动作，全身动作-->
+	<animation state_key="running" animation_key="exo_running" /><!--全身动作-->
+	<animation state_key="walking" animation_key="exo_walking" /><!--按shift时候的静步前进动作，全身动作-->
+    <animation state_key="walking_backwards" animation_key="exo_walking_back" /><!--全身动作-->
+    <animation state_key="crouching" animation_key="exo_still" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="exo_walking" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="exo_walking_back" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="exo_still" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="exo_walking" /><!--全身动作-->
+	<animation state_key="stabbing" animation_key="exo_no_stab" /><!--半身动作，武器可设置脱手-->
+	<!--切换模式，本模式的切出动作衔接下一模式的切入动作，置空为秒切-->
+	<animation state_key="next_in_chain_in" animation_key="exo_recoil_righthand" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="exo_recoil_righthand" /><!--半身动作，切换模式，本模式切入-->
+	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
+    <animation state_key="changing_weapon_in" animation_key="exo_recoil_righthand" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key="exo_recoil_righthand"/><!--半身动作，切换武器，本武器取出-->
+
+	<sound key="fire" fileref="flamethrower.wav" pitch_variety="0.1" volume="2" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_02.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="magazine_out" fileref="hd_mg94_mag_out.wav" />
+    <sound key="magazine_in" fileref="hd_mg94_mag_in.wav" />
+    <sound key="cycle" fileref="rifle_chamber.wav" />
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" />
+    <sound key="last_ammo" fileref="hd_lastammo_01.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_02.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_03.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_04.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" />
+
+    <model filename="" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="exo_flamer.png" /> 
+
+  	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="1" source="rank" source_value="137.832" />
+	
+    <!-- <commonness value="1" can_respawn_with="1" in_stock="1" /> 
+    <inventory encumbrance="50.0" price="0.0" />  -->
+    <weak_hand_hold offset="0.3" /> 
+
+
+	<ballistics curve_height="3.0" 
+	near_far_distance="0.0" 
+	speed_estimation_near="30.0" 
+	speed_estimation_far="60.0" 
+	max_speed="45.0" 
+	randomness="0.05" 
+	tweak_factor="2.75"/> 
+
+    <stance state_key="running" accuracy="0.9" /> 
+    <stance state_key="walking" accuracy="0.9" />
+	<stance state_key="standing" accuracy="0.955" />
+	<stance state_key="crouching" accuracy="0.99" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1.4" /> 
+    <stance state_key="prone_moving" accuracy="0.5" />
+    <stance state_key="over_wall" accuracy="1.8" />     
+     
+   
+</weapon>
+
+
+

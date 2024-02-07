@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapons> 
+<weapon 
+file="hd_exo48_obsidian_cannon_base.weapon"
+key="hd_exo48_obsidian_mk3_cannon.weapon" 
+>
+	<specification 	
+    	slot="1" 	
+	/>
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="5" can_be_detected_by_footmen="1" 
+	time_to_live="1" can_be_detected_by_driver="1" can_be_disarmed="0" name="EXO-48 Obsidian MK3" radius="0.7"> 
+		
+        <result class="spawn" instance_class="projectile" instance_key="hd_exo48_obsidian_mk3_cannon_damage.projectile" 
+		min_amount="4" max_amount="4" offset="0 0.5 0" position_spread="1.5 0" direction_spread="0.1 0" />
+		<!-- damage 2~3x10=均伤25 轰炸伤-->
+       	<!-- 直射 -->
+
+		<!--命中音效-->
+		<!-- <sound class="result" key="other" fileref="at_hit_sfx_1.wav" pitch_variety="0.03" volume="1.0" /> -->
+	
+		<trigger class="impact" time_to_live="0.4"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+
+		<effect class="result" key="terrain" ref="cyborgs_result_cannon_blast_AmbientLight" lighting="0"/>
+		<effect class="result" key="terrain" ref="cyborgs_result_cannon_blast_smoke" lighting="0"/>
+		<effect class="activated" ref="cyborgs_activated_cannon_flysmoke" />
+
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+		<trail probability="1" key="normal_trail" lighting="0"/>	
+    </projectile>
+</weapon>
+<weapon 
+file="hd_exo48_obsidian_cannon_base.weapon"
+key="hd_exo48_obsidian_mk3_cannon_main.weapon" 
+>
+	<specification 	
+    	slot="0" 	
+	/>
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="5" can_be_detected_by_footmen="1" 
+	time_to_live="1" can_be_detected_by_driver="1" can_be_disarmed="0" name="EXO-48 Obsidian MK3" radius="0.7"> 
+		
+        <result class="spawn" instance_class="projectile" instance_key="hd_exo48_obsidian_mk3_cannon_damage.projectile" 
+		min_amount="4" max_amount="4" offset="0 0.5 0" position_spread="1.5 0" direction_spread="0.1 0" />
+		<!-- damage 2~3x10=均伤25 轰炸伤-->
+       	<!-- 直射 -->
+
+		<!--命中音效-->
+		<!-- <sound class="result" key="other" fileref="at_hit_sfx_1.wav" pitch_variety="0.03" volume="1.0" /> -->
+	
+		<trigger class="impact" time_to_live="0.4"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+
+		<effect class="result" key="terrain" ref="cyborgs_result_cannon_blast_AmbientLight" lighting="0"/>
+		<effect class="result" key="terrain" ref="cyborgs_result_cannon_blast_smoke" lighting="0"/>
+		<effect class="activated" ref="cyborgs_activated_cannon_flysmoke" />
+
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+		<trail probability="1" key="normal_trail" lighting="0"/>	
+    </projectile>
+</weapon>
+</weapons>

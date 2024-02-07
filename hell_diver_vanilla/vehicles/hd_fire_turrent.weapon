@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapons>
+<weapon 
+drop_count_factor_on_death="0" 
+drop_count_factor_on_player_death="0"
+time_to_live_out_in_the_open="0"
+player_death_drop_owner_lock_time="0"
+key="hd_fire_turrent.weapon" 
+on_ground_up="0 0 1" 
+radius="1"
+> 
+    <specification 	
+    slot="0" 	
+    retrigger_time="0.05" 
+    accuracy_factor="1" 
+	spread_range="0.025"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="0.0445" 
+    sustained_fire_diminish_rate="0.5" 
+	cooldown_start="0.6"
+	cooldown_end="0"
+    magazine_size="-1" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="1"	
+    suppressed="0" 
+	class="0" 
+    name="Flame Thrower" 
+	sight_height_offset="1" 
+	ai_sight_range_modifier="1.0"
+	burst_shots="1" 
+    projectiles_per_shot="3" 
+    projectile_speed="20.0"
+	barrel_offset="0.35" 
+	carry_in_two_hands="1" 
+	stab_enabled="0" 
+	stab_range="0" 
+	/> 
+	
+	<!--武器模型和HUD-->
+	<weak_hand_hold offset="0" /> <!--模型X轴偏移-->
+	<model filename="" /> 
+    <model mesh_filename="" texture_filename="" /> <!--调用mesh模型-->
+    <addon_model filename="" /> <!--附加模型，固定绑骨到肩膀-->
+    <hud_icon filename="hud_fire_turrent.png" /> <!--临时贴图-->
+
+	<!--武器音频-->
+    <sound key="effect" fileref="" pitch_variety="0" volume="1.0" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
+    <sound key="fire" fileref="flamethrower.wav" volume="2.0"/><!--pitch_variety为音调随机变化范围，自动武器常用-->
+    <sound key="dry_fire" fileref="" pitch_variety="0.03" volume="1.0" /><!--空弹射击扳机音效-->
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="gl_open.wav" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="gl_insert.wav" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="rifle_chamber.wav" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" /><!--动作中in的value为1-->
+    <sound key="last_ammo" fileref="" /><!--最后一发子弹射击的额外音效，不可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+	<sound class="result" fileref="rifle_drop.wav" />
+    <sound class="operation" key="fire" fileref="flamethrower.wav" volume="2" />  
+	
+	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
+	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="1" source="rank" source_value="0.0" />
+	
+	<!--军械库相关-->
+    <commonness value="0.00001" can_respawn_with="1" in_stock="1" /> 
+    <inventory encumbrance="1.0" price="0.0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
+    
+	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
+    <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="0.33" can_be_detected_by_footmen="1" 
+	time_to_live="3.0" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.6"> 
+
+		<result class="spawn" instance_class="grenade" instance_key="hd_fire_turrent_damage.projectile"
+		 min_amount="3" max_amount="3" offset="0 0 0" position_spread="2.0 0" direction_spread="0.01 0.0" />
+		<rotation class="motion" /><!--参数：motion、random-->
+		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
+		<!-- 1+0.5=1.5致死 0.5致死为护甲补正 -->
+		<trigger class="impact">
+		</trigger> 
+
+		<!--命中音效-->
+		<sound class="result" key="other" fileref="burn.wav" pitch_variety="0.03" volume="1.0" />
+
+		<effect class="activated" ref="cyborgs_activated_flamethrower_01" />
+		<effect class="activated" ref="CyborgsSmokePropulsion" lighting="0" />
+
+		<effect class="result" type="splat_map" surface_tag="" size="2.0" atlas_index="4" layer="0" />
+
+  		<sound class="result" key="other" fileref="burn.wav" />
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<!--尾迹组-->
+		<trail probability="1.0" key="" />
+    </projectile>
+</weapon>
+<weapon 
+drop_count_factor_on_death="0" 
+drop_count_factor_on_player_death="0"
+time_to_live_out_in_the_open="0"
+player_death_drop_owner_lock_time="0"
+key="hd_fire_turrent_at.weapon" 
+on_ground_up="0 0 1" 
+radius="1"
+> 
+    <specification 	
+    slot="0" 	
+    retrigger_time="3" 
+    accuracy_factor="1" 
+	spread_range="0.025"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="0.0445" 
+    sustained_fire_diminish_rate="0.5" 
+	cooldown_start="0.6"
+	cooldown_end="0"
+    magazine_size="-1" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="1"	
+    suppressed="0" 
+	class="0" 
+    name="Flame Thrower" 
+	sight_height_offset="1" 
+	ai_sight_range_modifier="2.0"
+	burst_shots="1" 
+    projectiles_per_shot="1" 
+    projectile_speed="20.0"
+	barrel_offset="0.35" 
+	carry_in_two_hands="1" 
+	stab_enabled="0" 
+	stab_range="0" 
+	/> 
+	
+	<!--武器模型和HUD-->
+	<weak_hand_hold offset="0" /> <!--模型X轴偏移-->
+	<model filename="" /> 
+    <model mesh_filename="" texture_filename="" /> <!--调用mesh模型-->
+    <addon_model filename="" /> <!--附加模型，固定绑骨到肩膀-->
+    <hud_icon filename="hud_fire_turrent.png" /> <!--临时贴图-->
+
+	<!--武器音频-->
+    <sound key="effect" fileref="" pitch_variety="0" volume="1.0" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
+    <sound key="fire" fileref="flamethrower.wav" volume="2.0"/><!--pitch_variety为音调随机变化范围，自动武器常用-->
+    <sound key="dry_fire" fileref="" pitch_variety="0.03" volume="1.0" /><!--空弹射击扳机音效-->
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="gl_open.wav" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="gl_insert.wav" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="rifle_chamber.wav" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" /><!--动作中in的value为1-->
+    <sound key="last_ammo" fileref="" /><!--最后一发子弹射击的额外音效，不可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+	<sound class="result" fileref="rifle_drop.wav" />
+    <sound class="operation" key="fire" fileref="flamethrower.wav" volume="2" />  
+	
+	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
+	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="1" source="rank" source_value="0.0" />
+	
+	<!--军械库相关-->
+    <commonness value="0.00001" can_respawn_with="1" in_stock="1" /> 
+    <inventory encumbrance="1.0" price="0.0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
+    
+	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
+    <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="0.33" can_be_detected_by_footmen="1" 
+	time_to_live="3.5" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.6"> 
+
+		<result class="blast" radius="2.5" damage="20" push="0.1" decal="1" 
+		character_state="wound" make_vehicle_hit_sound="0" 
+		faction_compare="not_equal"
+		damage_origin_vehicle="0"/>
+			<rotation class="motion" /><!--参数：motion、random-->
+		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
+		<!-- 1+0.5=1.5致死 0.5致死为护甲补正 -->
+		<trigger class="impact">
+			<collider class="terrain" enabled="0" />     
+			<collider class="static_object" enabled="0" /> 
+			<collider class="vehicle" enabled="1" /> 
+			<collider class="character" enabled="1" />
+		</trigger> 
+
+		<!--命中音效-->
+		<sound class="result" key="other" fileref="burn.wav" pitch_variety="0.03" volume="1.0" />
+
+		<effect class="activated" ref="cyborgs_activated_flamethrower_01" />
+		<effect class="activated" ref="CyborgsSmokePropulsion" lighting="0" />
+
+		<effect class="result" type="splat_map" surface_tag="" size="2.0" atlas_index="4" layer="0" />
+
+  		<sound class="result" key="other" fileref="burn.wav" />
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<!--尾迹组-->
+		<trail probability="1.0" key="" />
+    </projectile>
+	
+</weapon>
+</weapons>

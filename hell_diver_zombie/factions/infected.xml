@@ -122,7 +122,7 @@
 	</soldier>
 
 	<!-- low ranking infected which run faster but have very low health -->
-	<soldier name="zomberry" spawn_score="1.5" squad_size_xp_cap="0" copy_from="default_ai"> 
+	<soldier name="zomberry" spawn_score="100.5" squad_size_xp_cap="0" copy_from="default_ai"> 
 
 		<resources file="infected_zomberry.resources" />
 

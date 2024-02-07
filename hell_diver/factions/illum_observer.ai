@@ -65,8 +65,8 @@
   
   <parameter class="using_cover_min_time" value="0.0" />
   <parameter class="using_cover_max_time" value="0.0" />
-  <parameter class="fighting_melee_move_radius" value="2.5" />
-  <parameter class="fighting_regular_move_radius" value="0" />
+  <parameter class="fighting_melee_move_radius" value="10" />
+  <parameter class="fighting_regular_move_radius" value="15" />
   
   <parameter class="stab_range" value="3" />
   <parameter class="uses_ladders" value="1.0" />

@@ -53,7 +53,7 @@ void main(dictionary@ inputData) {
                 register_in_serverlist='1'
                 mode='HD'
                 persistency='forever'
-                comment='地狱潜兵模组  QQ：498520233 '
+                comment='僵尸模式，同步存档。 地狱潜兵模组  QQ：498520233 '
                 max_players='8'>
                 <client_faction id='0' />
         </command>

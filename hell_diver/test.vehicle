@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<vehicle name="Test Supply Box" 
+<vehicles>
+<vehicle
+ name="Test Supply Box" 
 key="test.vehicle" 
 map_view_atlas_index="-1" 
 time_to_live="60.0" 
@@ -66,3 +68,331 @@ allow_ai_to_use="0"
 	</event>
 
 </vehicle>
+<vehicle 
+file="_vehicle_none.base" 
+key="air.vehicle" 
+respawn_time="300" 
+time_to_live_unsteerable="95" 
+map_view_atlas_index="35" 
+minimum_fill_requirement="1.0" 
+allow_ai_to_use="0"
+>
+	<spawn_point offset="0 100 0" player_only="0" />  
+	<!-- <tire_set offset="0.01 0.0 +20.0" radius="0.5" />
+	<tire_set offset="40 0.0 0.0" radius="0.5" />
+	<tire_set offset="20 0.0 -20.0" radius="0.5" /> -->
+	<tire_set offset="7 0.0 +12" radius="0.45" />
+	<tire_set offset="27 0.0 0" radius="0.45" />
+	<tire_set offset="18 0.0 -7" radius="0.45" />
+
+	<control 
+	max_speed="35" 
+	acceleration="30.0" 
+	max_reverse_speed="10" 
+	min_health_to_steer="0.10" 
+	max_rotation="10" 
+	max_water_depth="4.0" 
+	steer_smoothening="0" 
+	tracked="1" gears="0"
+	/>
+
+	<physics 
+	remove_collision_threshold="1.0"
+	extent="90 -4 90" 
+	offset="0 -4 0" 
+	top_offset="0 0 0" 
+	collision_model_pos="0 20 0" 
+	collision_model_extent="0 0 0" 
+	visual_offset="0 26 0" 
+	friction_offset="-0.1" 
+	drag_offset="-1" 
+	mass="200"
+	gravity="-2000"
+	gravity_in_water="-20"
+	destroy_on_top_hit="0"
+	/> 
+
+	<sky_diving chute_offset="0 2.5 0.0" trigger_height="200.0" gravity="-10" 
+	mesh_filename="" texture_filename="" />
+
+
+	<visual class="chassis" mesh_filename="" texture_filename="" />
+
+	<character_slot type="driver" attached_on_turret="0" enter_position="0 0.5 2" seat_position="0 20.800 2" 
+	rotation="0" exit_rotation="0" hiding="1" animation_id="36">
+	</character_slot>
+	<character_slot type="passenger" attached_on_turret="0" enter_position="0 0.5 -2" seat_position="0 20.800 -2" 
+	rotation="0" exit_rotation="3.14" hiding="1" animation_id="36">
+	</character_slot>
+	<character_slot type="passenger" attached_on_turret="0" enter_position="0 0.5 -3" seat_position="0 20.800 -3" 
+	rotation="0" exit_rotation="3.14" hiding="1" animation_id="36">
+	</character_slot>
+
+
+	
+
+	<rev_sound filename="" low_rev="0.0" high_rev="0.0" />
+	
+	<sound key="slide" filename="" />
+	<sound key="squeal" filename="" />
+	<sound key="hit" filename="" />
+	<sound key="hit" filename="" />
+	<sound key="destroy" filename="" />  
+	<sound key="cleanup" filename="" />
+
+</vehicle>
+<vehicle 
+file="_vehicle_none.base" 
+name="MH-60S Helicopter" 
+key="mh_60s_ground.vehicle" 
+respawn_time="300" 
+time_to_live_unsteerable="95" 
+map_view_atlas_index="35" 
+minimum_fill_requirement="1.0" 
+allow_ai_to_use="0"
+ >
+	<tag name="metal_thin" />
+
+	<tire_set offset="0.2 0 +0.2" radius="0.1" />
+	<tire_set offset="0.2 0 -0.2" radius="0.1" />
+
+	<control max_speed="2.0" acceleration="1" max_reverse_speed="1.0" max_rotation="2.0" max_water_depth="4" />
+
+	<physics max_health="200.0" 
+	mass="10000.0" 
+	blast_push_threshold="1000"
+	blast_damage_threshold="10"
+	extent="10 0.0 10" 
+	offset="0 0 0" 
+	top_offset="0 2.0 0" 
+	collision_model_pos="0 1 0" 
+	collision_model_extent="2.0 0.1 2.0" 
+	collision_response_factor="0"
+	visual_offset="0 0 0" 
+	remove_collision_threshold="10"
+	vehicle_collision_damage_factor="0"
+	friction_offset="0"
+	gravity="-10"
+	destroy_on_top_hit="1"
+	destroy_on_top_hit_time="3"
+	top_hit_tracking_time="0"
+	/> 
+
+	<sky_diving chute_offset="0 0 0" trigger_height="20" gravity="-80" mesh_filename="" texture_filename="" />
+
+	<turret offset="0 0 0" weapon_key="hd_vehicle_null.weapon" weapon_offset="0 0 0" weapon_recoil="0.02" physics_recoil="0.0"  max_rotation_step="0.00015" rotation="0" rotation_range="1.92" />
+
+	<visual class="chassis" mesh_filename="mh_60s.mesh" texture_filename="mh_60s_main.jpg" />
+	<visual class="turret" turret_index="0" mesh_filename="mh_60s_wing.mesh" texture_filename="mh_60s_main.jpg" /> 
+
+	<!-- 破损车体\炮台 -->
+	<visual class="chassis" key="broken" mesh_filename="hd_rocket_launch_platform.mesh" texture_filename="hd_rocket_launch_platform.jpg" />
+	<visual class="turret" key="broken" turret_index="0" mesh_filename=".mesh" texture_filename="" /> 
+
+	<rev_sound filename="" low_pitch="0.8" high_pitch="1.0" low_rev="0.0" high_rev="0.3" volume="0.8" />
+
+	<!-- <character_slot type="driver" position="0 -1 0" enter_position="0 0 0"  rotation="0" exit_rotation="0" hiding="1" animation_key="lifting up" marker_offset="0 0 0"/> -->
+		<!-- 乘员 面向后 -->
+	<character_slot type="driver" attached_on_turret="0" enter_position="0.7 0.800 3.3"  seat_position="0.7 0.800 3.3" 
+	rotation="0" exit_rotation="+1.57" hiding="0" animation_id="36">
+	</character_slot>
+	<character_slot type="passenger" attached_on_turret="0" enter_position="-0.35 0.800 0.2" 	seat_position="-0.35 0.800 0.2" 
+	rotation="3.14" exit_rotation="-1.57" hiding="0" animation_id="36">
+	</character_slot>
+	<character_slot type="passenger" attached_on_turret="0" enter_position="-1.05 0.800 0.2" 	seat_position="-1.05 0.800 0.2" 
+	rotation="3.14" exit_rotation="-1.57" hiding="0" animation_id="36">
+	</character_slot>
+	<character_slot type="passenger" attached_on_turret="0" enter_position="0.35 0.800 0.2" 	seat_position="0.35 0.800 0.2" 
+	rotation="3.14" exit_rotation="-1.57" hiding="0" animation_id="36">
+	</character_slot>
+	<character_slot type="passenger" attached_on_turret="0" enter_position="1.05 0.800 0.2" 	seat_position="1.05 0.800 0.2" 
+	rotation="3.14" exit_rotation="-1.57" hiding="0" animation_id="36">
+	</character_slot>
+	<!-- 乘员 面向前 -->
+	<character_slot type="passenger" attached_on_turret="0" enter_position="-0.35 0.800 -1.5"  seat_position="-0.35 0.800 -1.5" 
+	rotation="0" exit_rotation="+1.57" hiding="0" animation_id="36">
+	</character_slot>
+	<character_slot type="passenger" attached_on_turret="0" enter_position="-1.05 0.800 -1.5"  seat_position="-1.05 0.800 -1.5" 
+	rotation="0" exit_rotation="+1.57" hiding="0" animation_id="36">
+	</character_slot>
+	<character_slot type="passenger" attached_on_turret="0" enter_position="0.35 0.800 -1.5" 	seat_position="0.35 0.800 -1.5" 
+	rotation="0" exit_rotation="+1.57" hiding="0" animation_id="36">
+	</character_slot>
+	<character_slot type="passenger" attached_on_turret="0" enter_position="1.05 0.800 -1.5" 	seat_position="1.05 0.800 -1.5" 
+	rotation="0" exit_rotation="+1.57" hiding="0" animation_id="36">
+	</character_slot>
+	<!-- <spawn_point player_only="1" offset="0 0 0" /> -->
+	
+	<sound key="slide" filename="" />
+	<sound key="squeal" filename="" />
+	<sound key="ignition" filename="" />
+	<sound key="horn" filename="" />  
+	<sound key="hit" filename="" />
+	<sound key="hit" filename="" />
+	<sound key="hit" filename="" />
+	<sound key="destroy" filename="" />  
+	<sound key="destroy" filename="" />  
+
+	<effect event_key="health" value="1000" ref="propeller_rotate_idle_io_mh60s" offset="0.0 0.5 0" />
+
+
+</vehicle>
+<vehicle 
+file="_vehicle_none.base" 
+name="MH-60S Helicopter" 
+key="mh_60s_no_man.vehicle" 
+respawn_time="300" 
+time_to_live_unsteerable="95" 
+map_view_atlas_index="35" 
+minimum_fill_requirement="1.0" 
+allow_ai_to_use="0"
+>
+	<spawn_point offset="0 100 0" player_only="0" />  
+
+	<!-- <tire_set offset="0.01 0.0 +20.0" radius="0.5" />
+	<tire_set offset="40 0.0 0.0" radius="0.5" />
+	<tire_set offset="20 0.0 -20.0" radius="0.5" /> -->
+	<tire_set offset="10 0.0 +15" radius="0.45" />
+	<tire_set offset="35 0.0 0" radius="0.45" />
+	<tire_set offset="20 0.0 -10" radius="0.45" />
+
+	<control 
+	max_speed="35" 
+	acceleration="30.0" 
+	max_reverse_speed="10" 
+	min_health_to_steer="0.10" 
+	max_rotation="10" 
+	max_water_depth="4.0" 
+	steer_smoothening="0" 
+	tracked="1" gears="0"
+	/>
+
+	<physics 
+	remove_collision_threshold="1.0"
+	extent="100 -4 100" 
+	offset="0 -4 0" 
+	top_offset="0 0 0" 
+	collision_model_pos="0 20 0" 
+	collision_model_extent="0 0 0" 
+	visual_offset="0 0 0" 
+	friction_offset="-0.1" 
+	drag_offset="-1" 
+	mass="200"
+	gravity="-2000"
+	gravity_in_water="-20"
+	destroy_on_top_hit="0"
+	/> 
+
+	<sky_diving chute_offset="0 2.5 0.0" trigger_height="200.0" gravity="-10" 
+	mesh_filename="" texture_filename="" />
+
+	0<turret offset="0 20 0" weapon_key="mh_60s_mg.weapon" weapon_offset="0 0 0" weapon_recoil="0" max_rotation_step="0.00002" rotation_range="1"/>
+	1<turret offset="0 1 0" weapon_key="mh_60s_model_dir.weapon" weapon_offset="0 0 0" weapon_recoil="0" max_rotation_step="0.00002" rotation_range="0"/>
+	2<turret offset="0 0 0" parent_turret_index="0" weapon_key="mh_60s_model_wing.weapon" weapon_offset="0 0 0" weapon_recoil="0" max_rotation_step="0.01" />
+	3<turret offset="2 0 0.5" parent_turret_index="0" weapon_key="mh_60s_missiles.weapon" weapon_offset="0 0 0" weapon_recoil="0" max_rotation_step="0.00002" rotation_range="0.5"/>
+	4<turret offset="-2 0 0.5" parent_turret_index="0" weapon_key="mh_60s_missiles.weapon" weapon_offset="0 0 0" weapon_recoil="0" max_rotation_step="0.00002" rotation_range="0.5"/>
+	5<turret offset="-1.8 0 1.9" parent_turret_index="0" weapon_key="mh_60s_mg_side.weapon" weapon_offset="0 0 0" weapon_recoil="0" rotation="-1" max_rotation_step="0.00002" rotation_range="0.5"/>
+	6<turret offset="1.8 0 1.9" parent_turret_index="0" weapon_key="mh_60s_mg_side.weapon" weapon_offset="0 0 0" weapon_recoil="0" rotation="1" max_rotation_step="0.00002" rotation_range="0.5"/>
+	
+	<visual class="chassis" mesh_filename=".mesh" texture_filename="" />
+
+	<!-- 司机 驾驶舱右侧 隐藏 -->
+	<character_slot type="driver" attached_on_turret="0" enter_position="0 0.5 3.5" seat_position="0.7 0.800 3.3" 
+	rotation="0" exit_rotation="+1.57" hiding="1" animation_id="36">
+	</character_slot>
+	<!-- 黑奴 摇螺旋桨特效 -->
+	<character_slot type="gunner" attached_on_turret="0" enter_position="0 0.5 2" seat_position="-0.7 0.800 3.3" 
+	rotation="0" exit_rotation="0" hiding="1" animation_id="36">
+		<turret index="2" />
+	</character_slot>
+	<!-- 机枪手 兼火箭巢发射 -->
+	<character_slot type="gunner" attached_on_turret="0" enter_position="-2 0.5 -1.5" seat_position="0.7 0.800 3.3" 
+	rotation="0" exit_rotation="-1.57" hiding="1" animation_id="36">
+		<turret index="0" /><turret index="1" />
+	</character_slot>
+	<!-- 机枪手  -->
+	<character_slot type="gunner" attached_on_turret="0" enter_position="3 0.5 0" seat_position="0.7 0.800 1.9" 
+	rotation="1.57" exit_rotation="3.14" hiding="1" animation_id="36">
+		<turret index="6" />
+	</character_slot>
+	<!-- 机枪手  -->
+	<character_slot type="gunner" attached_on_turret="0" enter_position="-3 0.5 0" seat_position="-0.7 0.800 1.9" 
+	rotation="-1.57" exit_rotation="0" hiding="1" animation_id="36" >
+		<turret index="5" />
+	</character_slot>
+	<!-- 火箭巢手 辅助火箭巢发射 -->
+	<character_slot type="gunner" attached_on_turret="0" enter_position="2 0.5 -1.5" seat_position="-0.7 0.800 3.3" 
+	rotation="0" exit_rotation="+1.57" hiding="1" animation_id="36">
+		<turret index="3" /><turret index="4" />
+	</character_slot>
+	<!-- 乘员 面向后 -->
+	<character_slot type="passenger" attached_on_turret="0" enter_position="-0.35 0.5 -3" seat_position="-0.35 0.800 0.2" 
+	rotation="3.14" exit_rotation="-1.57" hiding="1" animation_id="36">
+	</character_slot>
+	<character_slot type="passenger" attached_on_turret="0" enter_position="-1.05 0.5 -3" seat_position="-1.05 0.800 0.2" 
+	rotation="3.14" exit_rotation="-1.57" hiding="1" animation_id="36">
+	</character_slot>
+	<character_slot type="passenger" attached_on_turret="0" enter_position="0.35 0.5 -3" seat_position="0.35 0.800 0.2" 
+	rotation="3.14" exit_rotation="-1.57" hiding="1" animation_id="36">
+	</character_slot>
+	<character_slot type="passenger" attached_on_turret="0" enter_position="1.05 0.5 -3" seat_position="1.05 0.800 0.2" 
+	rotation="3.14" exit_rotation="-1.57" hiding="1" animation_id="36">
+	</character_slot>
+	<!-- 乘员 面向前 -->
+	<character_slot type="passenger" attached_on_turret="0" enter_position="-0.35 0.5 -4.5" seat_position="-0.35 0.800 -1.5" 
+	rotation="0" exit_rotation="+1.57" hiding="1" animation_id="36">
+	</character_slot>
+	<character_slot type="passenger" attached_on_turret="0" enter_position="-1.05 0.5 -4.5" seat_position="-1.05 0.800 -1.5" 
+	rotation="0" exit_rotation="+1.57" hiding="1" animation_id="36">
+	</character_slot>
+	<character_slot type="passenger" attached_on_turret="0" enter_position="0.35 0.5 -4.5" seat_position="0.35 0.800 -1.5" 
+	rotation="0" exit_rotation="+1.57" hiding="1" animation_id="36">
+	</character_slot>
+	<character_slot type="passenger" attached_on_turret="0" enter_position="1.05 0.5 -4.5" seat_position="1.05 0.800 -1.5" 
+	rotation="0" exit_rotation="+1.57" hiding="1" animation_id="36">
+	</character_slot>
+	
+
+	<rev_sound filename="helicopter_01.wav" low_rev="0.0" high_rev="1.0" />
+	
+	<sound key="slide" filename="slide_noise.wav" />
+	<sound key="squeal" filename="tire_squeal.wav" />
+	<sound key="hit" filename="car_hit2.wav" />
+	<sound key="hit" filename="car_hit1.wav" />
+	<sound key="destroy" filename="explosion4.wav" />  
+	<sound key="cleanup" filename="explosion3.wav" />
+  	
+
+
+	<event>
+		<trigger class="destroy" />
+  	<result class="spawn" instance_class="visual_item" instance_key="burning_piece_jeep1.visual_item" min_amount="1" max_amount="3" offset="0 1.6 0" position_spread="1.5 1.5" direction_spread="0.15 0.3" />
+	</event>
+	<event>
+		<trigger class="destroy" />  	
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_jeep2.visual_item" min_amount="0" max_amount="1" offset="0 1.6 0" position_spread="1.5 1.5" direction_spread="0.1 0.3" />
+	</event>
+  <event>
+		<trigger class="destroy" />		
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_jeep3.visual_item" min_amount="1" max_amount="2" offset="0 1.6 0" position_spread="1.5 1.5" direction_spread="0.1 0.25" />
+	</event>
+  <event>
+		<trigger class="destroy" />		
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_jeep4.visual_item" min_amount="1" max_amount="3" offset="0 1.6 0" position_spread="1.5 1.5" direction_spread="0.15 0.25" />
+	</event>
+  <event>
+		<trigger class="destroy" />		
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_jeep5.visual_item" min_amount="2" max_amount="3" offset="0 1.6 0" position_spread="1.5 1.5" direction_spread="0.1 0.3" />
+	</event>
+  <event>
+		<trigger class="destroy" />		
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_jeep6.visual_item" min_amount="2" max_amount="3" offset="0 1.6 0" position_spread="1.5 1.5" direction_spread="0.1 0.2" /> 
+  </event>
+  
+  <event>
+		<trigger class="cleanup" />		
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_cleanup.visual_item" min_amount="32" max_amount="30" offset="0 2.0 0" position_spread="1.5 1.5" direction_spread="0.1 0.1" /> 
+  </event>    
+
+</vehicle>
+</vehicles>

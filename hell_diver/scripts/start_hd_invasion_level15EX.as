@@ -17,7 +17,7 @@ void main(dictionary@ inputData) {
 
         settings.m_fellowCapacityFactor = 2.0;
         settings.m_fellowAiAccuracyFactor = 1.0;
-        settings.m_enemyCapacityFactor = 5.0;
+        settings.m_enemyCapacityFactor = 4.0;
         settings.m_enemyAiAccuracyFactor = 1.0;
 
         settings.m_playerAiReduction = 0.0;            // didn't work before 1.76! (was 1.0)

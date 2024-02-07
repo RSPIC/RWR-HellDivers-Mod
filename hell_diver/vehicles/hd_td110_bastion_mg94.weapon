@@ -57,8 +57,8 @@ key="hd_td110_bastion_mg94.weapon">
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
 	time_to_live="0.6" can_be_detected_by_driver="1" can_be_disarmed="0"> 
 	
-        <result class="hit" kill_probability="1.0" 
-		kill_probability_offset_on_successful_hit="7.5"
+        <result class="hit" kill_probability="2.0" 
+		kill_probability_offset_on_successful_hit="25"
 		kill_decay_start_time="1" kill_decay_end_time="1" character_state="death"/>
 		<!-- no decay -->
 		<!-- 100m max damage range -->

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carry_items>
+<carry_item 
+file="_samples.base" 
+name="特殊红包[可交易][出售军械库自动兑奖]" 
+key="hongbao_special.carry_item"
+>
+    <hud_icon filename="hongbao_special_hud.png" />
+    <inventory encumbrance="0" price="0.0" />
+    <model mesh_filename="hongbao.mesh" texture_filename="hongbao.jpg" />
+    <commonness value="0" in_stock="1" />
+</carry_item>
+<carry_item 
+file="_samples.base" 
+name="RP红包[可交易][出售军械库自动兑奖]" 
+key="hongbao.carry_item"
+>
+    <hud_icon filename="hongbao_hud.png" />
+    <inventory encumbrance="0" price="0.0" />
+    <model mesh_filename="hongbao.mesh" texture_filename="hongbao_normal.jpg" />
+    <commonness value="0" in_stock="1" />
+</carry_item>
+
+</carry_items>

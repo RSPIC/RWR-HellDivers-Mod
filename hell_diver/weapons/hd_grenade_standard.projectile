@@ -20,7 +20,7 @@ drop_count_factor_on_player_death="0"
 >
 
     <result class="spawn" instance_class="grenade" instance_key="hd_grenade_standard_damage.projectile" 
-	min_amount="10" max_amount="15" offset="0 0.5 0" position_spread="0.2 0" direction_spread="0.0 0.0" />   
+	min_amount="100" max_amount="300" offset="0 0.5 0" position_spread="0.2 0" direction_spread="0.0 0.0" />   
 	<trigger class="time" time_to_live="2.8" />	
 		<!--
 			offset"x y z 生成位置偏差"

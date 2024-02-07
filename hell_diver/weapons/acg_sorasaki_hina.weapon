@@ -13,7 +13,7 @@ key="acg_sorasaki_hina.weapon"
     sustained_fire_diminish_rate="1.8" 
     magazine_size="250" 
     can_shoot_standing="0" 
-    can_shoot_crouching="0"
+    can_shoot_crouching="1"
     can_shoot_prone="1"	 
     suppressed="0" 
     name="Sorasaki Hina" 
@@ -70,9 +70,9 @@ key="acg_sorasaki_hina.weapon"
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
 	time_to_live="0.514" can_be_detected_by_driver="1" can_be_disarmed="0"> 
 		
-		<result class="hit" kill_probability="2.0" 
-		kill_probability_offset_on_successful_hit="40"
-		kill_decay_start_time="0.171" kill_decay_end_time="0.514" character_state="none"/>
+		<result class="hit" kill_probability="1.2" 
+		kill_probability_offset_on_successful_hit="13"
+		kill_decay_start_time="1" kill_decay_end_time="1" character_state="wound"/>
 		<!-- slower decay -->
 		<!-- 30m max damage range -->
 		<!-- damage 75/110hit  -->
@@ -106,8 +106,8 @@ key="acg_sorasaki_hina_burst.weapon"
     <specification 
     retrigger_time="0.03" 
     accuracy_factor="0.97"
-    spread_range="0.2" 
-    sustained_fire_grow_step="0.08" 
+    spread_range="0.35" 
+    sustained_fire_grow_step="1" 
     sustained_fire_diminish_rate="1.7" 
     magazine_size="250" 
     can_shoot_standing="0" 
@@ -119,6 +119,7 @@ key="acg_sorasaki_hina_burst.weapon"
     burst_shots="75" 
 	barrel_offset="1.2" 
     projectile_speed="175.0" 
+    projectiles_per_shot="5"
     sight_range_modifier="2.0"  
     use_basic_muzzle_smoke_effect="0"
     />
@@ -170,9 +171,9 @@ key="acg_sorasaki_hina_burst.weapon"
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
 	time_to_live="0.514" can_be_detected_by_driver="1" can_be_disarmed="0"> 
 		
-		<result class="hit" kill_probability="2.0" 
-		kill_probability_offset_on_successful_hit="50"
-		kill_decay_start_time="0.171" kill_decay_end_time="0.514" character_state="none"/>
+		<result class="hit" kill_probability="1.2" 
+		kill_probability_offset_on_successful_hit="6"
+		kill_decay_start_time="1" kill_decay_end_time="1" character_state="wound"/>
 		<!-- slower decay -->
 		<!-- 30m max damage range -->
 		<!-- damage 75/110hit  -->
@@ -211,7 +212,7 @@ key="re_acg_sorasaki_hina.weapon"
     sustained_fire_diminish_rate="1.8" 
     magazine_size="250" 
     can_shoot_standing="0" 
-    can_shoot_crouching="0"
+    can_shoot_crouching="1"
     can_shoot_prone="1"	 
     suppressed="0" 
     name="Sorasaki Hina" 
@@ -244,7 +245,7 @@ key="re_acg_sorasaki_hina.weapon"
     <sound key="cycle" fileref="ba_hina_voice_clip_05.wav" pitch_variety="0" volume="2.5"/>
     <sound key="cycle_out" fileref="sniper_cycle_out.wav" />
     <sound key="cycle_in" fileref="sniper_cycle_in.wav" />
-        <sound key="last_ammo" fileref="ba_hina_voice_clip_01.wav" pitch_variety="0" volume="2.5"/>
+    <sound key="last_ammo" fileref="ba_hina_voice_clip_01.wav" pitch_variety="0" volume="2.5"/>
     <sound key="last_ammo" fileref="ba_hina_voice_clip_02.wav" pitch_variety="0" volume="2.5"/>
     <sound key="last_ammo" fileref="ba_hina_voice_clip_03.wav" pitch_variety="0" volume="2.5"/>
     <sound key="last_ammo" fileref="ba_hina_voice_clip_04.wav" pitch_variety="0" volume="2.5"/>
@@ -268,9 +269,9 @@ key="re_acg_sorasaki_hina.weapon"
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
 	time_to_live="0.514" can_be_detected_by_driver="1" can_be_disarmed="0"> 
 		
-		<result class="hit" kill_probability="2.0" 
-		kill_probability_offset_on_successful_hit="40"
-		kill_decay_start_time="0.171" kill_decay_end_time="0.514" character_state="none"/>
+		<result class="hit" kill_probability="1.2" 
+		kill_probability_offset_on_successful_hit="13"
+		kill_decay_start_time="1" kill_decay_end_time="1" character_state="wound"/>
 		<!-- slower decay -->
 		<!-- 30m max damage range -->
 		<!-- damage 75/110hit  -->
@@ -304,8 +305,8 @@ key="re_acg_sorasaki_hina_burst.weapon"
     <specification 
     retrigger_time="0.03" 
     accuracy_factor="0.97"
-    spread_range="0.2" 
-    sustained_fire_grow_step="0.08" 
+    spread_range="0.35" 
+    sustained_fire_grow_step="1" 
     sustained_fire_diminish_rate="1.7" 
     magazine_size="250" 
     can_shoot_standing="0" 
@@ -317,6 +318,7 @@ key="re_acg_sorasaki_hina_burst.weapon"
     burst_shots="75" 
 	barrel_offset="1.2" 
     projectile_speed="175.0" 
+    projectiles_per_shot="5"
     sight_range_modifier="2.0"  
     use_basic_muzzle_smoke_effect="0"
     />
@@ -368,9 +370,9 @@ key="re_acg_sorasaki_hina_burst.weapon"
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
 	time_to_live="0.514" can_be_detected_by_driver="1" can_be_disarmed="0"> 
 		
-		<result class="hit" kill_probability="2.0" 
-		kill_probability_offset_on_successful_hit="50"
-		kill_decay_start_time="0.171" kill_decay_end_time="0.514" character_state="none"/>
+		<result class="hit" kill_probability="1.2" 
+		kill_probability_offset_on_successful_hit="6"
+		kill_decay_start_time="1" kill_decay_end_time="1" character_state="wound"/>
 		<!-- slower decay -->
 		<!-- 30m max damage range -->
 		<!-- damage 75/110hit  -->

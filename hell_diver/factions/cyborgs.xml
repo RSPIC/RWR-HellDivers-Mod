@@ -194,10 +194,10 @@
 			<weapon key="cyborgs_berserker_main.weapon" />
 			<!-- <weapon key="cyborgs_berserker_sec_antitank.weapon" /> -->
 			
-			<carry_item key="general_vest_70" />
-			<carry_item key="general_vest_80" />
-			<carry_item key="general_vest_90" />
-			<carry_item key="general_vest_100" />
+			<carry_item key="vest_cyborgs_berserker_70" />
+			<carry_item key="vest_cyborgs_berserker_80" />
+			<carry_item key="vest_cyborgs_berserker_90" />
+			<carry_item key="vest_cyborgs_berserker_100" />
 		</resources>
 
 		<ai filename="cyborgs_berserker.ai" /> <!-- berserker.ai 引用 default_cyborgs.ai -->
@@ -243,7 +243,9 @@
 			<weapon key="cyborgs_grotesque_main.weapon" />
 			<!-- <weapon key="cyborgs_grotesque_sec_antitank.weapon" /> -->
 			
-			<carry_item key="general_vest_160" />
+			<carry_item key="vest_cyborgs_grotesque_90" />
+			<carry_item key="vest_cyborgs_grotesque_100" />
+			<carry_item key="vest_cyborgs_grotesque_110" />
 		</resources>
 
 		<ai filename="cyborgs_grotesque.ai" /> <!-- grotesque.ai 引用 default_cyborgs.ai -->
@@ -264,7 +266,7 @@
 		<resources>
 			<weapon key="cyborgs_tesla_main.weapon" />
 
-			<carry_item key="cyborgs_tesla_vest_100" /> 
+			<carry_item key="vest_cyborgs_tesla_100" /> 
 		</resources>
 		
 		<ai filename="cyborgs_hound.ai" /> <!-- initiate.ai 引用 default_cyborgs.ai -->
@@ -312,7 +314,10 @@
 			<weapon key="cyborgs_butcher_main.weapon" />
 			
 			<!-- 300层 -->
-			<carry_item key="general_vest_300" />
+			<carry_item key="vest_cyborgs_butcher_150" />
+			<carry_item key="vest_cyborgs_butcher_160" />
+			<carry_item key="vest_cyborgs_butcher_170" />
+			<carry_item key="vest_cyborgs_butcher_180" />
 		</resources>
 		
 		
@@ -389,8 +394,8 @@
 			<weapon key="cyborgs_hulk_main.weapon" />
 			<weapon key="cyborgs_hulk_sec_antitank.weapon" />
 			
-			<carry_item key="general_vest_240" />
-			<carry_item key="general_vest_260" />
+			<carry_item key="general_vest_200" />
+			<carry_item key="general_vest_220" />
 		</resources>
 		
 		<ai filename="cyborgs_hulk.ai" /> <!-- hulk.ai 引用 default_cyborgs.ai -->
@@ -427,7 +432,7 @@
 			<weapon key="cyborgs_warlord_main.weapon" />
 			<weapon key="cyborgs_warlord_sec_antitank.weapon" />
 
-			<carry_item key="anti_blast_vest_300" /> 
+			<carry_item key="vest_hvy_300" /> 
 		</resources>
 		
 		<ai filename="cyborgs_warlord.ai" /> <!-- warlord.ai 引用 default_cyborgs.ai -->

@@ -1,0 +1,923 @@
+<?xml version="1.0" ?>
+<carry_items>
+  <carry_item key="vest_bugs_elite_120" name="120/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_119">
+    <hud_icon filename="helldivers_vest_100.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_119" name="119/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_118">
+    <hud_icon filename="helldivers_vest_100.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_118" name="118/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_117">
+    <hud_icon filename="helldivers_vest_100.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_117" name="117/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_116">
+    <hud_icon filename="helldivers_vest_90.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_116" name="116/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_115">
+    <hud_icon filename="helldivers_vest_90.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_115" name="115/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_114">
+    <hud_icon filename="helldivers_vest_90.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_114" name="114/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_113">
+    <hud_icon filename="helldivers_vest_80.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_113" name="113/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_112">
+    <hud_icon filename="helldivers_vest_80.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_112" name="112/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_111">
+    <hud_icon filename="helldivers_vest_80.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_111" name="111/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_110">
+    <hud_icon filename="helldivers_vest_80.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_110" name="110/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_109">
+    <hud_icon filename="helldivers_vest_80.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_109" name="109/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_108">
+    <hud_icon filename="helldivers_vest_70.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_108" name="108/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_107">
+    <hud_icon filename="helldivers_vest_70.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_107" name="107/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_106">
+    <hud_icon filename="helldivers_vest_70.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_106" name="106/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_105">
+    <hud_icon filename="helldivers_vest_60.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_105" name="105/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_104">
+    <hud_icon filename="helldivers_vest_60.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_104" name="104/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_103">
+    <hud_icon filename="helldivers_vest_60.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_103" name="103/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_102">
+    <hud_icon filename="helldivers_vest_60.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_102" name="102/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_101">
+    <hud_icon filename="helldivers_vest_60.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_101" name="101/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_100">
+    <hud_icon filename="helldivers_vest_50.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_100" name="100/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_99">
+    <hud_icon filename="helldivers_vest_50.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_99" name="99/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_98">
+    <hud_icon filename="helldivers_vest_50.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_98" name="98/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_97">
+    <hud_icon filename="helldivers_vest_40.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_97" name="97/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_96">
+    <hud_icon filename="helldivers_vest_40.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_96" name="96/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_95">
+    <hud_icon filename="helldivers_vest_40.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_95" name="95/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_94">
+    <hud_icon filename="helldivers_vest_40.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_94" name="94/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_93">
+    <hud_icon filename="helldivers_vest_40.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_93" name="93/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_92">
+    <hud_icon filename="helldivers_vest_30.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_92" name="92/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_91">
+    <hud_icon filename="helldivers_vest_30.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_91" name="91/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_90">
+    <hud_icon filename="helldivers_vest_30.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_90" name="90/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_89">
+    <hud_icon filename="helldivers_vest_20.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_89" name="89/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_88">
+    <hud_icon filename="helldivers_vest_20.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_88" name="88/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_87">
+    <hud_icon filename="helldivers_vest_20.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_87" name="87/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_86">
+    <hud_icon filename="helldivers_vest_20.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_86" name="86/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_85">
+    <hud_icon filename="helldivers_vest_20.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_85" name="85/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_84">
+    <hud_icon filename="helldivers_vest_10.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_84" name="84/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_83">
+    <hud_icon filename="helldivers_vest_10.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_83" name="83/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_82">
+    <hud_icon filename="helldivers_vest_10.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_82" name="82/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_bugs_elite_81">
+    <hud_icon filename="helldivers_vest_broken.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="vest_bugs_elite_81" name="81/120 Elite General Vest" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="vest_slow_80">
+    <hud_icon filename="helldivers_vest_broken.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="death" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+</carry_items>

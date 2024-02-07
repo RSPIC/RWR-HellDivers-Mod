@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapon 
+file="_hd_hmg.base"
+> 
+	<tag name="machine gun" />
+    <specification 	
+    slot="0" 	
+    retrigger_time="0.06" 
+    accuracy_factor="0.985" 
+	spread_range="0.2"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="0.21" 
+    sustained_fire_diminish_rate="1.2" 
+    magazine_size="200" 
+    can_shoot_standing="0" 
+    can_shoot_crouching="0" 
+	can_shoot_prone="1"	
+    suppressed="0" 
+	class="0" 
+    name="MG-107 Quenching Heavy Machine Gun" 
+	sight_height_offset="1.0" 
+	burst_shots="1" 
+    projectiles_per_shot="1" 
+    projectile_speed="200.0"
+	barrel_offset="1.2" 
+	carry_in_two_hands="1" 
+	stab_enabled="0" 
+	stab_range="0" 
+	/> 
+	
+	<animation key="recoil" animation_key="recoil, hip fire" />
+	<animation state_key="hold" animation_key="hold, hip fire" />
+	<animation state_key="reload" animation_key="reloading_mg94"/>
+	<animation state_key="crouching" animation_key="crouch, hold, hip fire" />
+	<animation state_key="crouch_moving" animation_key="crouching forwards, hip fire" />
+	<animation state_key="walking_backwards" animation_key="walking backwards, hip fire" />  
+	<animation state_key="hold_on_wall" animation_key="hold, hip fire" />
+	<animation state_key="still_against_wall" 	animation_key="hold, hip fire" />
+	<animation state_key="walking" animation_key="walking, carrying load" />
+	<animation state_key="running" animation_key="running, line infantry" />  
+
+    <sound key="fire" fileref="hd_mg107_fire.wav" pitch_variety="0.1" volume="1" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_02.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="magazine_out" fileref="hd_mg94_mag_out.wav" />
+    <sound key="magazine_in" fileref="hd_mg94_mag_in.wav" />
+    <sound key="cycle" fileref="rifle_chamber.wav" />
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" />
+    <sound key="last_ammo" fileref="" />
+	<sound class="impact" fileref="rifle_drop.wav" />
+
+    <model filename="hdw_mg107_quenching.xml" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="hdw_mg107_quenching.png" /> 
+
+  	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="1" source="rank" source_value="38.746" />
+
+    <inventory encumbrance="12.0" price="0.0" />
+    <weak_hand_hold offset="0.3" /> 
+
+
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 	
+
+</weapon>

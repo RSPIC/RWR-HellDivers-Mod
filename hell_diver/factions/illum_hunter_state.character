@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<character filename="illum_default_chat.character">
+
+	<sound key="footstep" fileref="" volume="1.2" />
+	<sound key="death" fileref="bf1_kill.wav" volume="1" />
+
+	<parameter class="walking_steer_amount" value="0.7" />	
+	<parameter class="running_steer_amount" value="0.7" />	
+
+	<parameter class="use_walk_animation_instead_of_run_speed_threshold" value="0.6" />
+	<parameter class="can_use_vehicles" value="1" /> 
+	<parameter class="throwing_self_over_initial_bounce" value="0.07" /><!--翻越时初始弹起高度-->
+	<parameter class="throwing_self_over_steer_amount" value="0.30" /><!--翻越中向前位移速度-->
+	<parameter class="throwing_self_over_lift_up" value="0.0" />
+	<parameter class="lifting_up_initial_bounce" value="0.07" />
+	<parameter class="jumping_up_bounce" value="0.05" />
+
+	<parameter class="climbing_ladder_stopping_oppositesteer_amount" value="30.0" />
+	<parameter class="ending_climbing_ladder_initial_bounce" value="0.03" />
+	<parameter class="ending_climbing_up_ladder_steer_amount" value="0.15" />
+	<parameter class="climbing_switch_initial_bounce" value="0.03" />
+
+	<parameter cleass="climbing_up_ladder" value="0.3" />
+	<parameter class="climbing_down_ladder" value="0.3" />
+	<parameter class="climbing_switch_steer" value="0.2" />
+
+	<parameter class="diving_steer_amount" value="0" />
+	<parameter class="diving_steer_amount_sliding_with_friction" value="0.0" />
+	<parameter class="diving_steer_amount_push" value="0" />
+	<parameter class="diving_steer_amount_jump" value="0" />
+
+	<animation state_key="hold"  animation_key="illum_hunter_fire" />
+	<animation state_key="hold_on_wall"  animation_key="illum_hunter_fire" />
+	<animation state_key="hold_casual"  animation_key="illum_hunter_fire" />
+	<animation key="still against wall" target_key="illum_hunter_fire" />
+	<animation key="stabbing" target_key="illum_hunter_stab_spin" />
+	<animation key="going prone" target_key="illum_hunter_going_prone" />
+	<animation key="dive" target_key="illum_hunter_going_prone" />
+	<animation key="stunned" target_key="illum_hunter_bone" />
+	<animation key="prone" target_key="illum_hunter_fire" />
+	<animation key="prone, without weapon, 63" target_key="illum_hunter_bone" />
+	<animation key="prone, moving forwards" target_key="illum_hunter_running" />
+	<animation key="leaving prone" target_key="illum_hunter_bone" />
+	<animation key="still" target_key="illum_hunter_bone" />
+	<animation key="still, heavy weapon" target_key="illum_hunter_bone" />
+	<animation key="still, instructor" target_key="illum_hunter_bone" />
+	<animation key="walking" target_key="illum_hunter_running" />
+	<animation key="walking backwards" target_key="illum_hunter_running_back" />
+	<animation key="weaponless_walking" target_key="illum_hunter_running" />
+	<animation key="running" target_key="illum_hunter_running" />
+	<animation key="running, no weapon, 60" target_key="illum_hunter_running" />
+	<animation key="crouch still" target_key="illum_hunter_bone" />
+	<animation key="crouch still, no weapon, 62" target_key="illum_hunter_bone" />
+	<animation key="crouching forwards" target_key="illum_hunter_running" />
+	<animation key="crouching backwards" target_key="illum_hunter_running" />
+	<animation key="crouching backwards, single hand carry" target_key="illum_hunter_running_back" />
+	<animation key="crouching forwards, no weapon, 61" target_key="illum_hunter_running" />
+	<animation key="throwing self over" target_key="illum_hunter_overwall" />
+	<animation key="falling" target_key="illum_hunter_running" />
+	<animation key="arriving ground" target_key="illum_hunter_on_ground" />
+	<animation key="jumping" target_key="illum_hunter_bone" />
+	<animation key="lifting up" target_key="illum_hunter_up" />
+	<animation key="climbing ladder" target_key="illum_hunter_up" />
+	<animation key="climbing ladder, still" target_key="illum_hunter_bone" />
+	<animation key="climbing ladder ending" target_key="illum_hunter_overwall" />
+	<animation key="weaponless_ending_climbing_up_ladder" target_key="illum_hunter_up" />
+	<animation key="wounded, still, 66" target_key="illum_hunter_bone" />
+	<animation key="wounded, moving forwards, 67" target_key="illum_hunter_running" />
+	<animation key="leaving_wounded" target_key="illum_hunter_stab" />
+	<animation key="swimming still" target_key="illum_hunter_bone" />
+	<animation key="swimming forwards" target_key="illum_hunter_running" />
+	<animation key="celebrating" target_key="illum_hunter_bone" />
+	<animation key="celebrating, shooting" target_key="illum_hunter_bone" />
+	<animation key="throwing, upside" target_key="illum_hunter_stab" />
+	<animation key="surrender" target_key="illum_hunter_stab" />
+	<animation key="change weapon out" target_key="illum_hunter_bone" />
+	<animation key="change weapon in" target_key="illum_hunter_bone" />
+	<animation key="change weapon out, reversed" target_key="illum_hunter_bone" />
+	<animation key="change weapon in, reversed" target_key="illum_hunter_bone" />
+	<animation key="change weapon in, single hand carry" target_key="illum_hunter_bone" />
+	
+	<sound key="footstep" fileref="illum_hunter_moving_01.wav" volume="0.5" />
+	<sound key="footstep" fileref="illum_hunter_moving_02.wav" volume="0.5" />
+	<sound key="footstep" fileref="illum_hunter_moving_03.wav" volume="0.5" />
+	<sound key="footstep" fileref="illum_hunter_moving_04.wav" volume="0.5" />
+	<sound key="footstep" fileref="illum_hunter_moving_05.wav" volume="0.5" />
+	<sound key="footstep" fileref="illum_hunter_moving_06.wav" volume="0.5" />
+	<sound key="footstep" fileref="illum_hunter_moving_07.wav" volume="0.5" />
+	<sound key="body_fall" fileref="illum_hunter_moving_01.wav" volume="0.5" />
+	<sound key="body_fall" fileref="illum_hunter_moving_02.wav" volume="0.5" />
+	<sound key="body_fall" fileref="illum_hunter_moving_03.wav" volume="0.5" />
+	<sound key="body_fall" fileref="illum_hunter_moving_04.wav" volume="0.5" />
+	<sound key="body_fall" fileref="illum_hunter_moving_05.wav" volume="0.5" />
+	<sound key="body_fall" fileref="illum_hunter_moving_06.wav" volume="0.5" />
+	<sound key="body_fall" fileref="illum_hunter_moving_07.wav" volume="0.5" />
+</character>

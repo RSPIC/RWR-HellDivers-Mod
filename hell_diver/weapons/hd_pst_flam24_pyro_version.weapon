@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapons> 
+<weapon 
+file="hd_pst_flam24_pyro_base.weapon"
+key="hd_pst_flam24_pyro.weapon" 
+>
+	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="-1.5" can_be_detected_by_footmen="1" 
+	time_to_live="0.6" can_be_detected_by_driver="1" can_be_disarmed="0" radius="1.5" name="FLAM-40 Incinerator"> 
+	
+		<result class="spawn" instance_class="grenade" instance_key="hd_pst_flam40_incinerator_mk3_damage.projectile" 
+		min_amount="3" max_amount="3" offset="0 0 0" position_spread="1 0" direction_spread="0.0 0.0" />
+		<trigger class="time" time_to_live="0.6"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
+		<!-- 不受护甲抗致死衰减 -->
+		<!-- 15m范围 -->
+
+		<!--命中音效-->
+		<sound class="result" key="other" fileref="burn.wav" pitch_variety="0.03" volume="1.0" />
+		
+		<!--命中特效-->
+		<!--
+		<effect class="result" key="terrain" ref="" lighting="0"/>
+		<effect class="activated" ref="" />
+		-->
+		<effect class="activated" ref="cyborgs_activated_flamethrower_01" />
+
+		<effect class="result" type="splat_map" surface_tag="" size="2.0" atlas_index="4" layer="0" />
+
+  		<sound class="result" key="other" fileref="burn.wav" />
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<!--尾迹组-->
+		<trail probability="1" key=""/>	
+    </projectile>
+</weapon>
+</weapons>

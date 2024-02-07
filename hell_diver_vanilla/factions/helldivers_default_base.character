@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<character>
+	<parameter class="moving_inputsteer_threshold" value="0.1" />
+	<parameter class="stopping_velocity_threshold" value="0.01" />
+
+	<parameter class="walking_steer_amount" value="0.35" />	
+	<parameter class="running_steer_amount" value="0.6" />	
+	<parameter class="run_footstep_interval" value="0.5" />
+	<parameter class="walk_footstep_interval" value="1.0" />
+	<parameter class="crouch_walking_steer_amount" value="0.24" />
+	<parameter class="crouch_walking_doing_something_steer_amount" value="0.156" />
+	<parameter class="leaving_vehicle_jump_steer_amount" value="0.4" />
+
+	<parameter class="prone_moving_steer_amount" value="0.15" />
+	<parameter class="prone_moving_steer_amount_stroke" value="2.0" />
+	<parameter class="prone_moving_max_dot_to_move" value="0.3" />
+
+	<parameter class="stopping_oppositesteer_amount" value="5.0" /> 
+
+	<parameter class="throwing_self_over_initial_bounce" value="0.07" /><!--翻越时初始弹起高度-->
+	<parameter class="throwing_self_over_steer_amount" value="0.30" /><!--翻越中向前位移速度-->
+	<parameter class="throwing_self_over_lift_up" value="0.0" />
+	<parameter class="lifting_up_initial_bounce" value="0.07" />
+	<parameter class="jumping_up_bounce" value="0.05" />
+
+	<parameter class="climbing_ladder_stopping_oppositesteer_amount" value="30.0" />
+	<parameter class="ending_climbing_ladder_initial_bounce" value="0.03" />
+	<parameter class="ending_climbing_up_ladder_steer_amount" value="0.15" />
+	<parameter class="climbing_switch_initial_bounce" value="0.03" />
+
+	<parameter class="climbing_up_ladder" value="0.3" />
+	<parameter class="climbing_down_ladder" value="0.3" />
+	<parameter class="climbing_switch_steer" value="0.2" />
+
+	<parameter class="climbing_end_height_offset" value="-0.8" />
+	<parameter class="climbing_with_jump_end_height_offset" value="-0.3" />
+
+	<parameter class="falling_steer_amount_heading" value="0.02" />
+
+	<parameter class="diving_steer_amount" value="0.9" />
+	<parameter class="diving_steer_amount_sliding_with_friction" value="0.03" />
+	<parameter class="diving_steer_amount_push" value="0.05" />
+	<parameter class="diving_steer_amount_jump" value="0.05" />
+
+	<parameter class="swimming_character_y_position_at_water_height" value="1.45" />
+	<parameter class="swimming_y_handling_factor" value="0.01" />
+	<parameter class="swimming_steer_amount" value="0.05" />
+	<parameter class="swimming_steer_amount_stroke" value="1.3" />
+
+	<parameter class="wounded_auto_death_time" value="60.0" />
+	<parameter class="wounded_medic_call_time" value="5.0" />
+	<parameter class="wounded_max_dot_to_move" value="-0.5" />
+	<parameter class="wounded_moving_steer_amount" value="0.15" />
+	<parameter class="wounded_moving_steer_amount_stroke" value="3.5" />
+
+	<parameter class="being_stunned_steer_amount" value="0.1" />
+
+	<parameter class="request_strike_time" value="2.0" />
+	<parameter class="request_strike_no_signal_time" value="1.0" /> 
+
+	<parameter class="warn_about_grenades_time" value="5.0" />
+
+	<parameter class="willingness_to_chat" value="0.1" />
+
+	<parameter class="still_relax_min_time" value="2.0" />
+	<parameter class="still_relax_max_time" value="6.0" />
+
+	<parameter class="sight_range_as_dead" value="0.0" />
+
+	<parameter class="warn_about_overencumbered_time" value="4.0" />
+
+	<parameter class="detectability_prone" value="0.7" />
+	<parameter class="detectability_wounded" value="0.7" />
+	<parameter class="detectability_crouching" value="0.8" />
+	<parameter class="detectability_crouch_moving" value="0.85" />
+	<parameter class="detectability_walking" value="1.0" />
+	<parameter class="detectability_still" value="0.95" />
+	<parameter class="detectability_running" value="1.0" />
+
+<!-- <parameter class="default_squad_config_index" value="0" /> -->
+
+	<parameter class="gravity" value="-40.0" />
+	<parameter class="skydiving_gravity" value="-50.0" />
+	<parameter class="chute_y_offset" value="1000" />    
+	<parameter class="swimming_gravity" value="8.0" />
+
+	<parameter class="overpacked_speed_modifier" value="-0.2" />
+
+	<parameter class="experience_blasts_multiplied" value="1" />
+
+	<parameter class="player_fov_range" value="50.0" />
+	<parameter class="player_fov_muzzle_factor" value="1.7" />
+	<parameter class="player_fov_max_range_with_muzzle" value="100.0" />
+	<parameter class="player_fov_max_dot_range" value="1.9" />
+	<parameter class="player_fov_min_dot_range_offset" value="1.125" />
+
+	<parameter class="encumbrance" low="9.9" high="50.0" />
+	<parameter class="speed" value="1.0" />
+	<parameter class="speed_encumbered" low="0.7" high="0.4" />
+	<parameter class="accuracy" value="1.0" />
+	<parameter class="accuracy_encumbered" low="1.0" high="0.94" />
+	<parameter class="use_walk_animation_instead_of_run_speed_threshold" value="0.5" />
+	
+	<parameter class="spawn_y_offset" value="0.0" />
+
+	<animation key="celebrating" target_key="celebrating" /> 
+	<animation key="celebrating" target_key="celebrating2" add="1" /> 
+	<animation key="celebrating, shooting" target_key="celebrating, shooting" /> 
+	<animation key="celebrating, shooting" target_key="celebrating, shooting2" add="1" /> 
+	<!-- <animation key="throwing self over" target_key="rst_parkour_flying_arrow" /> -->
+
+    <effect class="blood" ref="BloodSplat" />
+    <effect class="blood" type="splat_map" size="2.0" atlas_index="3" layer="3" additive="1" apply_gore_factor="1" />
+	
+	<parameter class="taxi_request_time" value="20" />
+	<parameter class="can_use_inventory" value="1" />  
+	<parameter class="can_use_vehicles" value="1" /> 
+
+	<!-- <animation key="stabbing" target_key="chicken tpose" /> -->
+	<animation key="going prone" target_key="hd_tac_prone" />
+	<!-- <animation key="dive" target_key="chicken tpose" /> -->
+	<!-- <animation key="stunned" target_key="chicken stun" /> -->
+	<animation key="prone" target_key="hd_prone_still" />
+	<!-- <animation key="prone, without weapon, 63" target_key="chicken crouch" /> -->
+	<!-- <animation key="prone, moving forwards" target_key="chicken walking" /> -->
+	<animation key="leaving prone" target_key="hd_leave_prone" />
+	<animation key="still" target_key="hd_still" />
+	<animation key="still" target_key="hd_still_2" add="1" />
+	<!-- <animation key="still" target_key="chicken idle wind" add="1" /> -->
+	<!-- <animation key="still" target_key="chicken idle" add="1" /> -->
+	<!-- <animation key="still" target_key="chicken idle wind" add="1" /> -->
+	<!-- <animation key="still" target_key="chicken idle peck" add="1" /> -->
+	<!-- <animation key="still, heavy weapon" target_key="chicken idle" /> -->
+	<!-- <animation key="still, heavy weapon" target_key="chicken idle wind" add="1" /> -->
+	<!-- <animation key="still, heavy weapon" target_key="chicken idle peck" add="1" /> -->
+	<!-- <animation key="still, instructor" target_key="chicken idle" /> -->
+	<!-- <animation key="still, instructor" target_key="chicken idle wind" add="1" /> -->
+	<!-- <animation key="still, instructor" target_key="chicken idle peck" add="1" /> -->
+	<animation key="walking" target_key="hd_running" />
+	<animation key="walking backwards" target_key="walking backwards" /><!--speed 1.0-->
+	<animation key="weaponless_walking" target_key="hd_running_no_weapon" />
+	<animation key="running" target_key="hd_spring" />
+	<animation key="running, no weapon, 60" target_key="hd_spring_no_weapon" /><!--speed 1.6-->
+	<animation key="crouch still" target_key="hd_crouching_1" />
+	<animation key="crouch still" target_key="hd_crouching_2" add="1"/>
+	<animation key="crouch still" target_key="hd_crouching_3" add="1"/>
+	<animation key="crouch still" target_key="hd_crouching_4" add="1"/>
+	<!-- <animation key="crouch still, no weapon, 62" target_key="chicken crouch" /> -->
+	<!-- <animation key="crouching forwards" target_key="chicken walking" /> -->
+	<!-- <animation key="crouching backwards" target_key="chicken walking" /> -->
+	<!-- <animation key="crouching backwards, single hand carry" target_key="chicken walking" /> -->
+	<animation key="crouching forwards, no weapon, 61" target_key="crouching forwards, no weapon, 61" />
+	<!-- <animation key="throwing self over" target_key="chicken climbing" /> -->
+	<!-- <animation key="falling" target_key="chicken flying" /> -->
+	<!-- <animation key="arriving ground" target_key="chicken tpose" /> -->
+	<!-- <animation key="jumping" target_key="chicken jumping" /> -->
+	<!-- <animation key="lifting up" target_key="chicken lifting" /> -->
+	<!-- <animation key="climbing ladder" target_key="chicken flying" /> -->
+	<!-- <animation key="climbing ladder, still" target_key="chicken flying" /> -->
+	<!-- <animation key="climbing ladder ending" target_key="chicken climbing" /> -->
+	<!-- <animation key="weaponless_ending_climbing_up_ladder" target_key="chicken climbing" /> -->
+	<!-- <animation key="wounded, still, 66" target_key="chicken wounded" /> -->
+	<!-- <animation key="wounded, moving forwards, 67" target_key="chicken wounded" /> -->
+	<!-- <animation key="leaving_wounded" target_key="chicken unwounded" /> -->
+	<!-- <animation key="swimming still" target_key="chicken swim" /> -->
+	<!-- <animation key="swimming forwards" target_key="chicken swimming" /> -->
+	<!-- <animation key="celebrating" target_key="chicken climbing" /> -->
+	<!-- <animation key="celebrating, shooting" target_key="chicken climbing" /> -->
+	<animation key="throwing, upside" target_key="hd_throw_grenade" />
+	<!-- <animation key="surrender" target_key="chicken crouch" /> -->
+
+	<sound key="body_fall" fileref="static.wav" volume="0.0" />
+
+	<sound key="throw" fileref="hd_mag_out.wav" volume="0.35" />
+	<sound key="stab" fileref="hd_melee.wav" volume="0.35" />
+	<sound key="stab" fileref="hd_melee.wav" volume="0.35" />
+	<sound key="stab" fileref="hd_melee.wav" volume="0.35" />
+	<sound key="stab" fileref="hd_melee.wav" volume="0.35" />
+	<sound key="stab" fileref="hd_melee.wav" volume="0.35" />
+	<!-- <sound key="stab" fileref="hd_melee_hea_1.wav" volume="0.35" /> -->
+	<!-- <sound key="stab" fileref="hd_melee_hea_2.wav" volume="1.0" /> -->
+	<!-- <sound key="stab" fileref="hd_melee_hea_3.wav" volume="1.0" /> -->
+	<!-- <sound key="stab" fileref="hd_melee_hea_4.wav" volume="1.0" /> -->
+	<!-- <sound key="stab" fileref="hd_melee_hea_5.wav" volume="1.0" /> -->
+	<!-- <sound key="stab" fileref="hd_melee_hea_6.wav" volume="1.0" /> -->
+	<!-- <sound key="stab" fileref="hd_melee_hea_7.wav" volume="1.0" /> -->
+	<!-- <sound key="stab" fileref="hd_melee_hea_8.wav" volume="1.0" /> -->
+	<sound key="death" fileref="hd_dead_1.wav" volume="1.0" />
+	<sound key="death" fileref="hd_dead_2.wav" volume="1.0" />
+	<sound key="death" fileref="hd_dead_3.wav" volume="1.0" />
+	<sound key="death" fileref="hd_dead_4.wav" volume="1.0" />
+	<sound key="death" fileref="hd_dead_5.wav" volume="1.0" />
+	<sound key="death" fileref="hd_dead_6.wav" volume="1.0" />
+	<sound key="death" fileref="hd_dead_7.wav" volume="1.0" />
+	<sound key="death" fileref="hd_dead_8.wav" volume="1.0" />
+	<sound key="death" fileref="hd_dead_9.wav" volume="1.0" />
+	<sound key="death" fileref="hd_dead_1.wav" volume="1.0" />
+	<sound key="death" fileref="hd_dead_2.wav" volume="1.0" />
+	<sound key="death" fileref="hd_dead_3.wav" volume="1.0" />
+	<sound key="death" fileref="hd_dead_4.wav" volume="1.0" />
+	<sound key="death" fileref="hd_dead_5.wav" volume="1.0" />
+	<sound key="death" fileref="hd_dead_6.wav" volume="1.0" />
+	<sound key="death" fileref="hd_dead_7.wav" volume="1.0" />
+	<sound key="death" fileref="hd_dead_8.wav" volume="1.0" />
+	<sound key="death" fileref="hd_dead_9.wav" volume="1.0" />
+	<!-- <sound key="death" fileref="hd_dead_long_howl_1.wav" volume="0.5" />
+	<sound key="death" fileref="hd_dead_long_howl_2.wav" volume="0.5" /> -->
+	<sound key="footstep" fileref="walkstep1.wav" volume="0.3" />
+	<sound key="footstep" fileref="walkstep2.wav" volume="0.3" />
+	<sound key="footstep" fileref="walkstep3.wav" volume="0.3" />
+	<sound key="footstep" fileref="walkstep4.wav" volume="0.3" />
+	<sound key="footstep" fileref="walkstep5.wav" volume="0.3" />
+	<sound key="footstep" fileref="walkstep6.wav" volume="0.3" />
+	<sound key="footstep" fileref="walkstep7.wav" volume="0.3" />
+	<sound key="footstep" fileref="walkstep8.wav" volume="0.3" />
+	<sound key="footstep" fileref="walkstep9.wav" volume="0.3" />
+	<sound key="footstep" fileref="walkstep10.wav" volume="0.3" />
+	<sound key="footstep" fileref="walkstep11.wav" volume="0.3" />
+	<sound key="footstep" fileref="walkstep12.wav" volume="0.3" />
+
+	
+</character>

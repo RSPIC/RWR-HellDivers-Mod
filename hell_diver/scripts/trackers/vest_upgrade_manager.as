@@ -69,22 +69,22 @@ class vest_upgrade_manager : Tracker {
             "hd_v_upgrage_clear"};
         array<array<string>> vestListKey = {
             {
-                "helldivers_vest.carry_item",
-                "hd_v_speed+_40",
-                "hd_v_speed++_40",
-                "hd_v_speed+++_40"
+                "helldivers_vest",
+                "hd_v_speed+",
+                "hd_v_speed++",
+                "hd_v_speed+++"
             },
             {
-                "hd_v_armor+_50",
-                "hd_v_armor+speed+_50",
-                "hd_v_armor+speed++_50"
+                "hd_v_armor+",
+                "hd_v_armor+speed+",
+                "hd_v_armor+speed++"
             },
             {
-                "hd_v_armor++_60",
-                "hd_v_armor++speed+_60"
+                "hd_v_armor++",
+                "hd_v_armor++speed+"
             },
             {
-                "hd_v_armor+++_80"
+                "hd_v_armor+++"
             }
         };
         for(uint i=0; i<targetKey.length(); ++i){

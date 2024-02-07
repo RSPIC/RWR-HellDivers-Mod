@@ -568,7 +568,7 @@
     <text key="M528 Drop" text="M528火力支援车空投信标"/>
     <text key="M528 HMG" text="M528-重型机枪"/>
     <text key="M528 AP" text="M528-人员杀伤导弹"/>
-    <text key="NOXE Ghost" text="NOXE Ghost导弹发射车"/>
+    <text key="NOXE Ghost" text="NOXE Ghost导弹发射车[可回收]"/>
     <text key="NOXE Ghost Drop" text="NOXE Ghost导弹发射车空投信标"/>
     <text key="NOXE rocket" text="导弹发射车-导弹"/>
     <text key="SEV-90" text="SEV-90反战车坦克"/>
@@ -722,8 +722,8 @@
 
 <!--Helldivers-->
 	<text key="AR-19 Liberator" text="AR-19 解放者突击步枪" />
-	<text key="AR-20L Justice" text="AR-20L 正义突击步枪[反中甲]" />
-	<text key="AR-14D Paragon" text="AR-14D 典范突击步枪[反中甲]" />
+	<text key="AR-20L Justice" text="AR-20L 正义突击步枪" />
+	<text key="AR-14D Paragon" text="AR-14D 典范突击步枪" />
 	<text key="AR-22C Patriot" text="AR-22C 爱国者突击步枪" />
 	<text key="AR-77D Spade" text="AR-77D 黑桃突击步枪" />
 
@@ -736,7 +736,7 @@
 	<text key="SMG-45 Defender" text="SMG-45 防卫者冲锋枪[眩晕弹]" />
 	<text key="TC-171 Cyclone" text="TC-171 气旋冲锋枪[眩晕弹]" />
 
-	<text key="RX-1 Railgun" text="RX-1 轨道炮[眩晕弹][反重甲]" />
+	<text key="RX-1 Railgun" text="RX-1 轨道炮[眩晕弹][反重甲][友伤]" />
 	<text key="M2016 Constitution" text="M2016 构建步枪[反重甲]" />
 	<text key="LHO-63 Camper" text="LHO-63 野营者狙击步枪[反重甲]" />
 	<text key="ATX-25 Revelator" text="ATX-25 启示者反器材狙击步枪[反重甲]" />
@@ -753,39 +753,39 @@
 
 	<text key="Laser Sword" text="光剑" />
 	<text key="HG-871 WoodPecker" text="HG-871 啄木鸟[反重甲]" />
-	<text key="Digger Drill" text="掘进者钻机[反重甲]" />
+	<text key="Digger Drill" text="掘进者钻机[反重甲][载具友伤]" />
 
-	<text key="Obliterator Grenade Launcher" text="消灭者破片榴弹发射器[反轻甲]" />
-	<text key="M-25 Rumbler" text="M-25 雷鸣者穿甲榴弹抛射器[反重甲]" />
-	<text key="CR-9 Suppressor" text="CR-9 抑制者直射榴弹[反中甲]" />
-	<text key="PLAS-1 Scorcher" text="PLAS-1 焦土直射等离子榴弹[反重甲]" />
-	<text key="PLAS-3 Singe" text="PLAS-3 焦痕直射等离子榴弹[反重甲]" />
-	<text key="RL-112 Recoilless Rifle" text="RL-112 无后坐力重型反坦克火箭筒[反重甲]" />
-	<text key="EAT-17" text="EAT-17 抛弃式轻型反人员火箭筒[反重甲]" />
-	<text key="AC-22 Dum Dum" text="AC-22 达姆肩扛式重型机炮[反重甲]" />
-	<text key="MLS-4X Commando" text="MLS-4X 突击队攻顶导弹[反重甲]" />
-	<text key="REC-6 Demolisher" text="REC-6 爆破手遥控炸弹[反重甲]" />
-	<text key="TOX-17 SourHound" text="TOX-17 酸液犬毒液抛射器[反中甲]" />
+	<text key="Obliterator Grenade Launcher" text="消灭者破片榴弹发射器[友伤]" />
+	<text key="M-25 Rumbler" text="M-25 雷鸣者穿甲榴弹抛射器[反重甲][友伤]" />
+	<text key="CR-9 Suppressor" text="CR-9 抑制者直射榴弹[友伤]" />
+	<text key="PLAS-1 Scorcher" text="PLAS-1 焦土直射等离子榴弹[反重甲][友伤]" />
+	<text key="PLAS-3 Singe" text="PLAS-3 焦痕直射等离子榴弹[反重甲][友伤]" />
+	<text key="RL-112 Recoilless Rifle" text="RL-112 无后坐力重型反坦克火箭筒[反重甲][友伤]" />
+	<text key="EAT-17" text="EAT-17 抛弃式轻型反人员火箭筒[反重甲][友伤]" />
+	<text key="AC-22 Dum Dum" text="AC-22 达姆肩扛式重型机炮[反重甲][友伤]" />
+	<text key="MLS-4X Commando" text="MLS-4X 突击队攻顶导弹[反重甲][友伤]" />
+	<text key="REC-6 Demolisher" text="REC-6 爆破手遥控炸弹[反重甲][友伤]" />
+	<text key="TOX-17 SourHound" text="TOX-17 酸液犬毒液抛射器[友伤]" />
 
-	<text key="P-2 PeaceMaker" text="P-2 和平使者手枪[反中甲]" />
+	<text key="P-2 PeaceMaker" text="P-2 和平使者手枪" />
 	<text key="P-6 Gunslinger" text="P-6 神枪手重装左轮手枪[反重甲]" />
 
 	<text key="LAS-13 Trident" text="LAS-13 三叉戟激光霰弹枪" />
-	<text key="LAS-12 Tanto" text="LAS-12 短刀激光聚热枪[反中甲]" />
-	<text key="LAS-16 Sickle" text="LAS-16 镰刀激光枪[反中甲]" />
-	<text key="LAS-5 Scythe" text="LAS-5 长柄镰激光枪[反中甲]" />
+	<text key="LAS-12 Tanto" text="LAS-12 短刀激光聚热枪[反重甲]" />
+	<text key="LAS-16 Sickle" text="LAS-16 镰刀激光枪[反重甲]" />
+	<text key="LAS-5 Scythe" text="LAS-5 长柄镰激光枪[反重甲]" />
 	<text key="LAS-98 Laser Cannon" text="LAS-98 激光大炮重型激光枪[反重甲]" />
 
 	<text key="FLAM-40 Incinerator" text="FLAM-40 焚化炉火焰喷射器[反重甲]" />
 	<text key="FLAM-24 Pyro" text="FLAM-24 烈焰火焰喷射器[反重甲]" />
-	<text key="TOX-13 Avenger" text="TOX-13 复仇者毒液喷射器[反中甲]" />
+	<text key="TOX-13 Avenger" text="TOX-13 复仇者毒液喷射器[反中甲][友伤]" />
 
 	<text key="AD-334 Guard Dog [ON/Fire]" text="AD-334 护卫犬[飞行模式]" />
 	<text key="AD-334 Guard Dog [OFF/Reload]" text="AD-334 护卫犬[装载模式]" />
 	<text key="AD-289 Angle [ON/Fire]" text="AD-289 天使医疗无人机" />
 
 	<text key="AC-5 Arc Shotgun" text="AC-5 电弧霰弹枪[反重甲/无视护盾]" />
-	<text key="AC-3 Arc Thrower" text="AC-3 电弧发射器[反中甲/无视护盾]" />
+	<text key="AC-3 Arc Thrower" text="AC-3 电弧发射器[无视护盾]" />
 	<text key="AS-7 Semiconductor" text="AS-7 半导体突击步枪[反重甲/无视护盾]" />
 	<text key="AS-5 Resistance" text="AS-5 电阻霰弹枪[反重甲]" />
 	<text key="MG-C Capacitor" text="MG-C 电容重机枪[反重甲/无视护盾]" />
@@ -795,9 +795,9 @@
 	<text key="ME-1 Mental Detector" text="ME-1 金属地雷探测排障仪[V键自动扫雷 C键取消/左键部署排雷炸弹]" />
 
 	<text key="EXO-44 Stomper [MG]" text="EXO-44 践踏者[机枪]" />
-	<text key="EXO-44 Stomper [Missile]" text="EXO-44 践踏者[导弹]" />
-	<text key="EXO-48 Obsidian [AutoCannon]" text="EXO-48 黑曜石[自动机炮]" />
-	<text key="EXO-51 Lumberer [AT Canon]" text="EXO-51 重步者[反坦克炮]" />
+	<text key="EXO-44 Stomper [Missile]" text="EXO-44 践踏者[导弹][友伤]" />
+	<text key="EXO-48 Obsidian [AutoCannon]" text="EXO-48 黑曜石[自动机炮][友伤]" />
+	<text key="EXO-51 Lumberer [AT Canon]" text="EXO-51 重步者[反坦克炮][友伤]" />
 	<text key="EXO-51 Lumberer [FlameThrower]" text="EXO-51 重步者[火焰喷射器]" />
 	<text key="hd_exo44_mk3_spawn" text="EXO-44 践踏者" />
 	<text key="hd_exo44_mk3_model" text="EXO-44 践踏者机甲补给箱" />
@@ -1013,6 +1013,15 @@
 	<text key="Miku [Racing 2022] [Skin]"  text="MIKU [2022 赛车Ver.] [信物]" />
 	<text key="Tail Yellow [Skin]"  text="神堂慧理那 [信物]" />
 	<text key="Togo Miomori [Skin]"  text="东乡美森 [信物]" />
+	<!-- 1.7.0 -->
+	<text key="Kotori Itsuka [Skin]"  text="五河琴里 [信物]" />
+	<text key="Exo Cat [Skin]"  text="机甲喵喵 [信物]" />
+	<text key="Akane [Skin]"  text="朱音 [信物]" />
+	<text key="Asuna [Skin]"  text="明日奈 [信物]" />
+	<text key="Karin [Skin]"  text="花凛 [信物]" />
+	<text key="Latu [Skin]"  text="拉图 [信物]" />
+	<text key="token_amau_ako [Skin]"  text="亚子 [信物]" />
+	<text key="Goto Hitori [Bunny Girl][Skin]"  text="波奇 [兔女郎][信物]" />
 
 <!-- ex武器 -->
 	<text key="Leviathan Breath"  text="利维坦之息 [反重甲]" />
@@ -1041,17 +1050,17 @@
 	<text key="Resupply Box"  text="补给箱" />
 	<text key="Ex Supply Box"  text="EX 特殊补给箱" />
 	<text key="Ex SupplyBox"  text="EX 特殊补给箱" />
-	<text key="63type 107mm Rocket Launcher"  text="63式107毫米牵引式火箭炮" />
-	<text key="63type 107mm Rocket"  text="63式107毫米牵引式火箭炮" />
-	<text key="ISU-152"  text="ISU-152 重型坦克" />
-	<text key="Sturm Tiger"  text="突击虎 重型坦克" />
-	<text key="Apocalypse Tank"  text="天启 重型坦克" />
+	<text key="63type 107mm Rocket Launcher"  text="63式107毫米牵引式火箭炮[友伤][可回收]" />
+	<text key="63type 107mm Rocket"  text="63式107毫米牵引式火箭炮[友伤]" />
+	<text key="ISU-152"  text="ISU-152 重型坦克[可回收]" />
+	<text key="Sturm Tiger"  text="突击虎 重型坦克[可回收]" />
+	<text key="Apocalypse Tank"  text="天启 重型坦克[可回收]" />
 	<text key="Piano[Uzuki ver]"  text="卯月主题钢琴" />
 	<text key="Piano[Poi ver]"  text="夕立主题钢琴" />
 	<text key="Gramophone[March of Steel Torrent ver]"  text="钢铁洪流留声机" />
 	<text key="PAK-40 Anti Tank"  text="PAK-40 反坦克炮" />
 	<text key="Zis-3 Anti Tank"  text="Zis-3 反坦克炮" />
-	<text key="HellPod"  text="空投舱" />
+	<text key="HellPod"  text="空投舱[友伤]" />
 	<text key="NUX-223 Hellbomb"  text="NUX-223 地狱火炸弹 [空格键进入并长按引爆]" />
 	<text key="EXO-44 Stomper MK3 Supply"  text="EXO-44 践踏者-MK3 补给商店" />
 	<text key="EXO-44 Stomper Mk3 Beacon"  text="EXO-44 践踏者-MK3 呼叫信标" />
@@ -1059,16 +1068,16 @@
 	<text key="EXO-48 Obsidian MK3 Beacon"  text="EXO-48 黑曜石-MK3 呼叫信标" />
 	<text key="EXO-51 Lumberer MK3 Supply"  text="EXO-51 重步者-MK3 补给商店" />
 	<text key="EXO-51 Lumberer MK3 Beacon"  text="EXO-51 重步者-MK3 呼叫信标" />
-	<text key="M5 APC"  text="M5 APC 轻型反步兵轮式载具" />
-	<text key="M5 APC Beacon"  text="M5 APC 轻型反步兵轮式载具信标" />
+	<text key="M5 APC"  text="M5 APC 轻型反步兵轮式载具[友伤]" />
+	<text key="M5 APC Beacon"  text="M5 APC 轻型反步兵轮式载具信标[友伤]" />
 	<text key="MC-109 Hammer Motorcycle"  text="MC-109 神锤摩托" />
 	<text key="MC-109 Hammer Motorcycle Beacon"  text="MC-109 神锤摩托信标" />
-	<text key="M5-32 HAV"  text="M5-32 中型反坦克轮式载具" />
-	<text key="M5-32 HAV Beacon"  text="M5-32 中型反坦克轮式载具信标" />
-	<text key="TD-110 Bastion"  text="TD-110 堡垒重型坦克" />
-	<text key="TD-110 Bastion Beacon"  text="TD-110 堡垒重型坦克信标" />
-	<text key="AT-47 Anti-Tank Emplacement"  text="AT-47 反坦克炮台" />
-	<text key="A/GL-8 Launcher Turret"  text="A/GL-8 破片榴弹发射器" />
+	<text key="M5-32 HAV"  text="M5-32 中型反坦克轮式载具[友伤]" />
+	<text key="M5-32 HAV Beacon"  text="M5-32 中型反坦克轮式载具信标[友伤]" />
+	<text key="TD-110 Bastion"  text="TD-110 堡垒重型坦克[友伤]" />
+	<text key="TD-110 Bastion Beacon"  text="TD-110 堡垒重型坦克信标[友伤]" />
+	<text key="AT-47 Anti-Tank Emplacement"  text="AT-47 反坦克炮台[友伤]" />
+	<text key="A/GL-8 Launcher Turret"  text="A/GL-8 破片榴弹发射器[友伤]" />
 	<text key="A/AC-6 Tesla Tower"  text="A/AC-6 特斯拉电塔" />
 	<text key="A/MG-11 Minigun Turret"  text="A/MG-11 自动机枪炮台" />
 	<text key="A/RX-34 Railcannon Turret"  text="A/RX-34 自动轨道炮炮台" />
@@ -1111,71 +1120,77 @@
 	<text key="Repair Crane Beacon" text="维修站 空投信标" />
 
 	<text key="152mm GL" text="152毫米榴弹" />
-	<text key="KV-2 Gup" text="KV-2 [真理高中] 重型坦克" />
+	<text key="KV-2 Gup" text="KV-2 [真理高中] 重型坦克[可回收]" />
 	<text key="KV-2 Gup Beacon" text="KV-2 [真理高中] 重型坦克 部署信标" />
 
-	<text key="Sherman Tank [Modernization]" text="谢尔曼喷火坦克 [现代化] 中型坦克" />
+	<text key="Sherman Tank [Modernization]" text="谢尔曼喷火坦克 [现代化] 中型坦克[可回收]" />
 	<text key="Sherman Tank Beacon" text="谢尔曼喷火坦克 [现代化] 中型坦克 部署信标" />
 	<text key="Gun truck plus" text="运兵卡车-Plus" />
 	<text key="Gun truck plus Beacon" text="运兵卡车-Plus 部署信标" />
 	
-	<text key="Crusader chan[S.Hifumi]" text="十字军酱[泳装·日富美] 中型坦克" />
+	<text key="Crusader chan[S.Hifumi]" text="十字军酱[泳装·日富美] 中型坦克[可回收]" />
 	<text key="Crusader chan[S.Hifumi] Beacon" text="十字军酱[泳装·日富美] 中型坦克 部署信标" />
 
 	<text key="M18 Cannon [AT]" text="M18 地狱猫 主炮" />
-	<text key="M18 Hellcat" text="M18 地狱猫 轻型坦克" />
+	<text key="M18 Hellcat" text="M18 地狱猫 轻型坦克[可回收]" />
 	<text key="M18 Hellcat Beacon" text="M18 地狱猫 轻型坦克 部署信标" />
 
-	<text key="Torumaru Tiger" text="虎丸 [伊吕波] 重型坦克" />
-	<text key="Tiger[modernization]" text="虎丸 [伊吕波] 重型坦克" />
+	<text key="Torumaru Tiger" text="虎丸 [伊吕波] 重型坦克[可回收]" />
+	<text key="Tiger[modernization]" text="虎丸 [伊吕波] 重型坦克[可回收]" />
 	<text key="Torumaru Tiger Beacon" text="虎丸 [伊吕波] 重型坦克 部署信标" />
 	
 	<text key="VBL Fast Transit Vehicle" text="'破天'快速转运车辆" />
 
-	<text key="Mi-24 Helicopter Beacon" text="米-24 武装直升机 部署信标" />
-	<text key="Mi-24 Helicopter" text="米-24 武装直升机" />
+	<text key="Mi-24 Helicopter Beacon" text="米-24 武装直升机 部署信标[友伤]" />
+	<text key="Mi-24 Helicopter" text="米-24 武装直升机[友伤][可回收]" />
 
-	<text key="Bell 360 Helicopter Beacon" text="贝尔-360 运输直升机 部署信标" />
-	<text key="Bell 360 Helicopter" text="贝尔-360 运输直升机" />
+	<text key="Bell 360 Helicopter Beacon" text="贝尔-360 运输直升机 部署信标[无火力]" />
+	<text key="Bell 360 Helicopter" text="贝尔-360 运输直升机[无火力][可回收]" />
 
-	<text key="MH-60S Helicopter Beacon" text="MH-60S 武装直升机 部署信标" />
-	<text key="MH-60S Helicopter" text="MH-60S 武装直升机" />
+	<text key="MH-60S Helicopter Beacon" text="MH-60S 武装直升机 部署信标[友伤]" />
+	<text key="MH-60S Helicopter" text="MH-60S 武装直升机[友伤][可回收]" />
 
 	<text key="IS-2 M[1895] Beacon" text="IS-2 M[1895] 重型坦克 部署信标" />
-	<text key='IS-2 M[1895]"Babushka"' text="IS-2 M[1895] '巴巴季娜' 重型坦克" />
+	<text key='IS-2 M[1895]"Babushka"[Recyclable]' text="IS-2 M[1895] '巴巴季娜' 重型坦克[可回收]" />
 
-	<text key="Himars Beacon" text="海马斯 火箭车 部署信标" />
+	<text key="Himars Beacon" text="海马斯 火箭车 部署信标[友伤]" />
+	<text key="Himars[Recyclable]" text="海马斯 火箭车 轻型载具[友伤][可回收]" />
 
-	<text key="BM-27 Uragan Beacon" text="BM-27 Uragan 火箭车 部署信标" />
-	<text key="BM-27 Uragan" text="BM-27 Uragan 火箭车 轻型载具" />
+	<text key="BM-27 Uragan Beacon" text="BM-27 Uragan 火箭车 部署信标[友伤]" />
+	<text key="BM-27 Uragan[Recyclable]" text="BM-27 Uragan 火箭车 轻型载具[友伤][可回收]" />
 
-	<text key='MT-LB 2b9-Vasilek' text="矢车菊 自动迫击炮 轻型载具" />
+	<text key='MT-LB 2b9-Vasilek[Recyclable]' text="矢车菊 自动迫击炮 轻型载具[可回收]" />
 	<text key='MT-LB 2b9-Vasilek Beacon' text="矢车菊 自动迫击炮 轻型载具 部署信标" />
 
-	<text key='T90M3' text="T90M 突破3 重型坦克 " />
+	<text key='T90M3[Recyclable]' text="T90M 突破3 重型坦克[可回收]" />
 	<text key='T90M3 Beacon' text="T90M 突破3 重型坦克 部署信标" />
 
-	<text key='ZBD-09' text="ZBD-09 轻型载具" />
+	<text key='ZBD-09[Recyclable]' text="ZBD-09 轻型载具[可回收]" />
 	<text key='ZBD09 Beacon' text="ZBD-09 轻型载具 部署信标" />
 
-	<text key='Wiesel Tow Beacon' text="鼬鼠 [陶氏] 部署信标" />
+	<text key='Wiesel Tow Beacon' text="鼬鼠 [陶氏] 部署信标[友伤]" />
 
-	<text key='Ferdinand[Modified]' text="费迪南 重型坦克" />
+	<text key='Ferdinand[Modified][Recyclable]' text="费迪南 重型坦克" />
 	<text key='Ferdinand[Modified] Beacon' text="费迪南 重型坦克 部署信标" />
 
-	<text key='Panther A' text="豹式坦克A型 重型坦克" />
+	<text key='Panther A[Recyclable]' text="豹式坦克A型 重型坦克" />
 	<text key='Panther A Beacon' text="豹式坦克A型 重型坦克 部署信标" />
 
-	<text key='Panzer III A' text="三号坦克A型 中型坦克" />
+	<text key='Panzer III A[Recyclable]' text="三号坦克A型 中型坦克[可回收]" />
 	<text key='Panzer III A Beacon' text="三号坦克A型 中型坦克 部署信标" />
 
-	<text key="Kamikaze" text="民本超度" />
+	<text key='Marder I[Recyclable]' text="黄鼠狼战车 轻型坦克[友伤][可回收]" />
+	<text key='Marder I Beacon' text="黄鼠狼战车 部署信标[友伤]" />
+
+	<text key='LAV-6' text="LAV-6 轻型载具[可回收]" />
+
+	<text key="Kamikaze" text="民本超度[载具友伤]" />
 	<text key="BanZai Armor onload" text="板载护甲已装配" />
 
 	<text key="Vehicle Wrench" text="车载维修工具" />
-	<text key="Kirov" text="基洛夫空艇" />
+	<text key="Kirov" text="基洛夫空艇[可回收]" />
 	<text key="Kirov Beacon" text="基洛夫空艇 部署信标" />
-	<text key="Demolition Truck" text="自爆卡车" />
+	<text key="Demolition Truck" text="自爆卡车[友伤]" />
 	<text key="Sentry Gun" text="哨戒炮" />
 	<text key="Tesla Coil" text="磁暴线圈" />
 	<text key="EDF Anti-Tank Emplacement" text="EDF 反坦克炮台" />
@@ -1186,7 +1201,7 @@
 	
 
 <!-- 生化人 -->
-	<text key="Infantry Fighting Vehicle"  text="步兵战车" />
+	<text key="Infantry Fighting Vehicle"  text="步兵战车[可回收]" />
 	<text key="Berserker Melee"  text="狂暴者" />
 	<text key="Berserker Anti Tank"  text="狂暴者 [反坦克模式]" />
 	<text key="Butcher Melee"  text="屠夫" />
@@ -1403,28 +1418,28 @@
 " />
 	<text key="Help - Server6" text="#当前服务器难度 Level-6 适合新手游玩
 #服务器增益：1.2倍率经验加成 25%战役结算加成
-#己方Ai倍率：1.2 / 敌方Ai倍率：2.0
+#己方Ai倍率：1.2 / 敌方Ai倍率：1.0
 #基础警报CD：42s
 #每增加一名玩家减少0.8s警报CD；敌方数量越少，CD越短
 #不同难度敌方增援兵种难度和数量均不等
 " />
 	<text key="Help - Server9" text="#当前服务器难度 Level-9 适合新手游玩
 #服务器增益：1.5倍率经验加成 25%战役结算加成
-#己方Ai倍率：1.2 / 敌方Ai倍率：3.0
+#己方Ai倍率：1.2 / 敌方Ai倍率：2.0
 #基础警报CD：36s
 #每增加一名玩家减少0.8s警报CD；敌方数量越少，CD越短
 #不同难度敌方增援兵种难度和数量均不等
 " />
 	<text key="Help - Server12" text="#当前服务器难度 Level-12 适合熟练玩家
 #服务器增益：1.2倍率经验加成
-#己方Ai倍率：1.2 / 敌方Ai倍率：4.0
+#己方Ai倍率：1.2 / 敌方Ai倍率：3.0
 #基础警报CD：30s
 #每增加一名玩家减少0.8s警报CD；敌方数量越少，CD越短
 #不同难度敌方增援兵种难度和数量均不等
 " />
 	<text key="Help - Server15" text="#当前服务器难度 Level-15 适合压力玩家
 #服务器增益：无
-#己方Ai倍率：1.2 / 敌方Ai倍率：5.0
+#己方Ai倍率：1.2 / 敌方Ai倍率：4.0
 #基础警报CD：24s
 #每增加一名玩家减少0.8s警报CD；敌方数量越少，CD越短
 #不同难度敌方增援兵种难度和数量均不等
@@ -1775,7 +1790,7 @@ TK其他玩家同样会造成倍率因子的下降" />
 4、取出物品前，需要通过上下页、上下选择中物品
 5、购买'取出X个'按钮即可取出
 6、取出完毕物品后，关闭仓库
-7、多次尝试存入不可存放物品后会自动关fumo
+7、多次尝试存入不可存放物品后会自动关闭仓库
 " />
 <!-- 僵尸模式 -->
 <!-- 歼灭模式/报复打击 -->

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectiles>
+<projectile
+class="grenade" 
+name="Spawn Observer" 
+key="illum_spawn_Observer.projectile" 
+slot="0" 
+radius="0.15" 
+time_to_live_out_in_the_open="0.0" 
+drop_count_factor_on_death="0.0"
+pulldown_in_air="40.0"
+>
+	<result class="notify_script" key="Observer" />
+    <trigger class="impact" time_to_live="0.0"/>
+    <rotation class="random" />
+	<model mesh_filename="" />
+    <hud_icon filename="illuminate_icon.png" />
+    <throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
+    <capacity value="0" source="rank" source_value="0.0" /> 
+    <capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+</projectile>
+<projectile
+class="grenade" 
+name="Spawn Watcher" 
+key="illum_spawn_Watcher.projectile" 
+slot="0" 
+radius="0.15" 
+time_to_live_out_in_the_open="0.0" 
+drop_count_factor_on_death="0.0"
+pulldown_in_air="40.0"
+>
+	<result class="notify_script" key="Watcher" />
+    <trigger class="impact" time_to_live="0.0"/>
+    <rotation class="random" />
+	<model mesh_filename="" />
+    <hud_icon filename="illuminate_icon.png" />
+    <throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
+    <capacity value="0" source="rank" source_value="0.0" /> 
+    <capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+</projectile>
+<projectile
+class="grenade" 
+name="Spawn Hunter" 
+key="illum_spawn_Hunter.projectile" 
+slot="0" 
+radius="0.15" 
+time_to_live_out_in_the_open="0.0" 
+drop_count_factor_on_death="0.0"
+pulldown_in_air="40.0"
+>
+	<result class="notify_script" key="Hunter" />
+    <trigger class="impact" time_to_live="0.0"/>
+    <rotation class="random" />
+	<model mesh_filename="" />
+    <hud_icon filename="illuminate_icon.png" />
+    <throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
+    <capacity value="0" source="rank" source_value="0.0" /> 
+    <capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+</projectile>
+<projectile
+class="grenade" 
+name="Spawn Apprentice" 
+key="illum_spawn_Apprentice.projectile" 
+slot="0" 
+radius="0.15" 
+time_to_live_out_in_the_open="0.0" 
+drop_count_factor_on_death="0.0"
+pulldown_in_air="40.0"
+>
+	<result class="notify_script" key="Apprentice" />
+    <trigger class="impact" time_to_live="0.0"/>
+    <rotation class="random" />
+	<model mesh_filename="" />
+    <hud_icon filename="illuminate_icon.png" />
+    <throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
+    <capacity value="0" source="rank" source_value="0.0" /> 
+    <capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+</projectile>
+<projectile
+class="grenade" 
+name="Spawn Tripod" 
+key="illum_spawn_Tripod.projectile" 
+slot="0" 
+radius="0.15" 
+time_to_live_out_in_the_open="0.0" 
+drop_count_factor_on_death="0.0"
+pulldown_in_air="40.0"
+>
+	<result class="notify_script" key="Tripod" />
+    <trigger class="impact" time_to_live="0.0"/>
+    <rotation class="random" />
+	<model mesh_filename="" />
+    <hud_icon filename="illuminate_icon.png" />
+    <throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
+    <capacity value="0" source="rank" source_value="0.0" /> 
+    <capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+</projectile>
+<projectile
+class="grenade" 
+name="Spawn Strider" 
+key="illum_spawn_Strider.projectile" 
+slot="0" 
+radius="0.15" 
+time_to_live_out_in_the_open="0.0" 
+drop_count_factor_on_death="0.0"
+pulldown_in_air="40.0"
+>
+	<result class="notify_script" key="Strider" />
+    <trigger class="impact" time_to_live="0.0"/>
+    <rotation class="random" />
+	<model mesh_filename="" />
+    <hud_icon filename="illuminate_icon.png" />
+    <throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
+    <capacity value="0" source="rank" source_value="0.0" /> 
+    <capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+</projectile>
+<projectile
+class="grenade" 
+name="Spawn Obelisk" 
+key="illum_spawn_Obelisk.projectile" 
+slot="0" 
+radius="0.15" 
+time_to_live_out_in_the_open="0.0" 
+drop_count_factor_on_death="0.0"
+pulldown_in_air="40.0"
+>
+	<result class="notify_script" key="Obelisk" />
+    <trigger class="impact" time_to_live="0.0"/>
+    <rotation class="random" />
+	<model mesh_filename="" />
+    <hud_icon filename="illuminate_icon.png" />
+    <throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
+    <capacity value="0" source="rank" source_value="0.0" /> 
+    <capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+</projectile>
+<projectile
+class="grenade" 
+name="Spawn Illusionist" 
+key="illum_spawn_Illusionist.projectile" 
+slot="0" 
+radius="0.15" 
+time_to_live_out_in_the_open="0.0" 
+drop_count_factor_on_death="0.0"
+pulldown_in_air="40.0"
+>
+	<result class="notify_script" key="Illusionist" />
+    <trigger class="impact" time_to_live="0.0"/>
+    <rotation class="random" />
+	<model mesh_filename="" />
+    <hud_icon filename="illuminate_icon.png" />
+    <throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
+    <capacity value="0" source="rank" source_value="0.0" /> 
+    <capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+</projectile>
+<projectile
+class="grenade" 
+name="Spawn CouncilMember" 
+key="illum_spawn_CouncilMember.projectile" 
+slot="0" 
+radius="0.15" 
+time_to_live_out_in_the_open="0.0" 
+drop_count_factor_on_death="0.0"
+pulldown_in_air="40.0"
+>
+	<result class="notify_script" key="CouncilMember" />
+    <trigger class="impact" time_to_live="0.0"/>
+    <rotation class="random" />
+	<model mesh_filename="" />
+    <hud_icon filename="illuminate_icon.png" />
+    <throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
+    <capacity value="0" source="rank" source_value="0.0" /> 
+    <capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+</projectile>
+
+</projectiles>

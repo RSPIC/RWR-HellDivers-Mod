@@ -195,7 +195,7 @@ key="hud_reward_box_weapon_beta_exchange"
 <!-- Delta MK4 -->
 <carry_item 
 time_to_live_out_in_the_open="0" 
-name="[]x1 兑换 [Delta箱子]x1" 
+name="[MK4箱子 碎片]x10 兑换 [Delta箱子]x1" 
 key="hud_reward_box_weapon_delta_exchange"
 >
     <hud_icon filename="hud_reward_box_weapon_delta_exchange.png" />
@@ -215,7 +215,7 @@ key="hud_reward_box_weapon_gama_exchange"
 </carry_item>
 <carry_item 
 time_to_live_out_in_the_open="0" 
-name="[]x1 兑换 [Lamda箱子]x1" 
+name="[MK3箱子 碎片]x10 兑换 [Lamda箱子]x1" 
 key="hud_reward_box_weapon_lamda_exchange"
 >
     <hud_icon filename="hud_reward_box_weapon_lamda_exchange.png" />
@@ -285,7 +285,7 @@ key="hud_reward_box_weapon_unknown_exchange"
 </carry_item>
 <carry_item 
 time_to_live_out_in_the_open="0" 
-name="[]x1 兑换 [V箱子]x1" 
+name="[MK5箱子 碎片]x10 兑换 [V箱子]x1" 
 key="hud_reward_box_weapon_v_exchange"
 >
     <hud_icon filename="hud_reward_box_weapon_v_exchange.png" />

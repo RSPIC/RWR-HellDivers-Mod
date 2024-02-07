@@ -17,6 +17,7 @@ file="_collect_rare.base"
     <hud_icon filename="hud_reward_box_skin.png" />
     <inventory  price="648" />
     <model mesh_filename="mc_box.mesh" texture_filename="mc_box.png" />
+    <commonness value="0.1"/>
 </carry_item>
 <carry_item 
 name="Reward Box [Music]" 
@@ -88,6 +89,16 @@ file="_collect_rare.base"
     <commonness value="0.0"/>
 </carry_item>
 <carry_item 
+name="Reward Box [Weapon V][出售自动存储] 合成碎片 " 
+key="reward_box_weapon_v_clip.carry_item"
+file="_collect_rare.base"
+>
+    <hud_icon filename="hud_reward_box_weapon_v_clip.png" />
+    <inventory  price="0" />
+    <model mesh_filename="reward_box_clip.mesh" texture_filename="reward_box_weapon_v_clip.png" />
+    <commonness value="0.0"/>
+</carry_item>
+<carry_item 
 name="Reward Box [Weapon X]" 
 key="reward_box_weapon_x.carry_item"
 file="_collect_rare.base"
@@ -128,6 +139,16 @@ file="_collect_rare.base"
     <commonness value="0.0"/>
 </carry_item>
 <carry_item 
+name="Reward Box [Weapon λ][出售自动存储] 合成碎片" 
+key="reward_box_weapon_delta_clip.carry_item"
+file="_collect_rare.base"
+>
+    <hud_icon filename="hud_reward_box_weapon_delta_clip.png" />
+    <inventory  price="0" />
+    <model mesh_filename="reward_box_clip.mesh" texture_filename="reward_box_weapon_delta_clip.png" />
+    <commonness value="0.0"/>
+</carry_item>
+<carry_item 
 name="Reward Box [Weapon θ]" 
 key="reward_box_weapon_theta.carry_item"
 file="_collect_rare.base"
@@ -145,6 +166,16 @@ file="_collect_rare.base"
     <hud_icon filename="hud_reward_box_weapon_lamda.png" />
     <inventory  price="648" />
     <model mesh_filename="hd_case.mesh" texture_filename="hud_reward_box_weapon_lamda.jpg" />
+    <commonness value="0.0"/>
+</carry_item>
+<carry_item 
+name="Reward Box [Weapon λ][出售自动存储] 合成碎片" 
+key="reward_box_weapon_lamda_clip.carry_item"
+file="_collect_rare.base"
+>
+    <hud_icon filename="hud_reward_box_weapon_lamda_clip.png" />
+    <inventory  price="0" />
+    <model mesh_filename="reward_box_clip.mesh" texture_filename="reward_box_weapon_lamda_clip.png" />
     <commonness value="0.0"/>
 </carry_item>
 <carry_item 

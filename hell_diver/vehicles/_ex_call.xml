@@ -27,10 +27,72 @@
 	sdkfz184_call 费迪南
 	panzer_3_a_call 三号A型坦克
 	panther_a_call 豹式A型坦克
+	marder_call 黄鼠狼战车
 -->
 
 <projectiles>
 
+<projectile 
+class="grenade" 
+name="Marder I Beacon" 
+key="marder_call.projectile" 
+slot="0"
+pulldown_in_air="15.0"
+on_ground_up="0 1 0"
+time_to_live="60"
+can_be_disarmed="0"
+time_to_live_out_in_the_open="0"
+player_death_drop_owner_lock_time="0"
+>
+
+    <drop_on_death_result class="spawn" instance_class="projectile" instance_key="marder_call.projectile" 
+	min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0.05 0.03" />
+
+	<result class="spawn" instance_class="vehicle" instance_key="marder.vehicle" 
+			min_amount="1" max_amount="1" offset="0 30 0" position_spread="0 0" direction_spread="0 0" />	
+	<trigger class="time" time_to_live="3.5" />	
+    <rotation class="random" />
+	
+    <model mesh_filename="vindicator_beacon_blue.xml" />
+    <hud_icon filename="marder_hud.png" />
+	
+    <throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
+	speed_estimation_far="70.0" max_speed="21.0" randomness="0.0" tweak_factor="1.0" />
+
+	<commonness value="0.0" can_respawn_with="0" in_stock="1"/>
+
+	<capacity value="0" source="rank" source_value="0" />
+    <capacity value="1" source="rank" source_value="0" />
+    <inventory encumbrance="1" sell_price="0" buy_price="3200.0" />
+
+    <!-- 设备 -->
+	<sound class="result" key="other" fileref="hd_equip_on_the_way.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_equip_on_the_way_1.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_equip_on_the_way_2.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_equip_on_the_way_3.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_equip_on_the_way_4.wav" pitch_variety="0.01" volume="1"/>
+    <!-- 通用确认 -->
+	<sound class="result" key="other" fileref="hd_request_confirm.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_1.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_2.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_3.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_4.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_5.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_6.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_7.wav" pitch_variety="0.01" volume="1"/>
+	<sound class="result" key="other" fileref="hd_request_confirm_8.wav" pitch_variety="0.01" volume="1"/>
+    <sound class="result" key="terrain" copy="other" />
+    <sound class="result" key="static_object" copy="other" />
+    <sound class="result" key="vehicle" copy="other" />
+    <sound class="result" key="character" copy="other" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_blue_3s" lighting="0"/>
+	<effect class="result" key="terrain" ref="stratagems_point_light_area_blue_3s" lighting="0"/>
+	<effect class="result" key="other" copy="terrain" />
+    <effect class="result" key="static_object" copy="terrain" />
+    <effect class="result" key="vehicle" copy="terrain" />
+    <effect class="result" key="character" copy="terrain" />
+    <effect class="activated" ref="alert_center_bluelight" lighting="0" /><!--中心蓝光标识-->
+</projectile>
 <projectile 
 class="grenade" 
 name="Panther A Beacon" 
@@ -62,7 +124,7 @@ player_death_drop_owner_lock_time="0"
 
 	<capacity value="0" source="rank" source_value="0" />
     <capacity value="1" source="rank" source_value="0" />
-    <inventory encumbrance="1" sell_price="0" buy_price="3000.0" />
+    <inventory encumbrance="1" sell_price="0" buy_price="6000.0" />
 
 
     <!-- 设备 -->
@@ -125,7 +187,7 @@ player_death_drop_owner_lock_time="0"
 
 	<capacity value="0" source="rank" source_value="0" />
     <capacity value="1" source="rank" source_value="0" />
-    <inventory encumbrance="1" sell_price="0" buy_price="2500.0" />
+    <inventory encumbrance="1" sell_price="0" buy_price="1500.0" />
 
 
     <!-- 设备 -->
@@ -251,7 +313,7 @@ player_death_drop_owner_lock_time="0"
 
 	<capacity value="0" source="rank" source_value="0" />
     <capacity value="1" source="rank" source_value="0" />
-    <inventory encumbrance="1" sell_price="0" buy_price="3000.0" />
+    <inventory encumbrance="1" sell_price="0" buy_price="1000.0" />
 
 
     <!-- 设备 -->
@@ -503,7 +565,7 @@ player_death_drop_owner_lock_time="0"
 
 	<capacity value="0" source="rank" source_value="0" />
     <capacity value="1" source="rank" source_value="0" />
-    <inventory encumbrance="1" sell_price="0" buy_price="3000.0" />
+    <inventory encumbrance="1" sell_price="0" buy_price="6000.0" />
 
 
     <!-- 设备 -->
@@ -627,7 +689,7 @@ player_death_drop_owner_lock_time="0"
 
 	<capacity value="0" source="rank" source_value="0" />
     <capacity value="1" source="rank" source_value="0" />
-    <inventory encumbrance="1" sell_price="0" buy_price="3000.0" />
+    <inventory encumbrance="1" sell_price="0" buy_price="4500.0" />
 
 
     <!-- 设备 -->
@@ -689,7 +751,7 @@ player_death_drop_owner_lock_time="0"
 
 	<capacity value="0" source="rank" source_value="0" />
     <capacity value="1" source="rank" source_value="0" />
-    <inventory encumbrance="1" sell_price="0" buy_price="3000.0" />
+    <inventory encumbrance="1" sell_price="0" buy_price="6000.0" />
 
 
     <!-- 设备 -->
@@ -751,7 +813,7 @@ player_death_drop_owner_lock_time="0"
 
 	<capacity value="0" source="rank" source_value="0" />
     <capacity value="1" source="rank" source_value="0" />
-    <inventory encumbrance="1" sell_price="0" buy_price="3000.0" />
+    <inventory encumbrance="1" sell_price="0" buy_price="1000.0" />
 
 
     <!-- 设备 -->
@@ -875,7 +937,7 @@ player_death_drop_owner_lock_time="0"
 
 	<capacity value="0" source="rank" source_value="0" />
     <capacity value="1" source="rank" source_value="0" />
-    <inventory encumbrance="1" sell_price="0" buy_price="3000.0" />
+    <inventory encumbrance="1" sell_price="0" buy_price="5000.0" />
 
 
     <!-- 设备 -->
@@ -1185,7 +1247,7 @@ player_death_drop_owner_lock_time="0"
 
 	<capacity value="0" source="rank" source_value="0" />
     <capacity value="1" source="rank" source_value="0" />
-    <inventory encumbrance="1" sell_price="0" buy_price="3000.0" />
+    <inventory encumbrance="1" sell_price="0" buy_price="4500.0" />
 
 
     <!-- 设备 -->
@@ -1247,7 +1309,7 @@ player_death_drop_owner_lock_time="0"
 
 	<capacity value="0" source="rank" source_value="0" />
     <capacity value="1" source="rank" source_value="0" />
-    <inventory encumbrance="1" sell_price="0" buy_price="1500.0" />
+    <inventory encumbrance="1" sell_price="0" buy_price="1800.0" />
 
 
     <!-- 设备 -->
@@ -1309,7 +1371,7 @@ player_death_drop_owner_lock_time="0"
 
 	<capacity value="0" source="rank" source_value="0" />
     <capacity value="1" source="rank" source_value="0" />
-    <inventory encumbrance="1" sell_price="0" buy_price="3000.0" />
+    <inventory encumbrance="1" sell_price="0" buy_price="4000.0" />
 
 
     <!-- 设备 -->
@@ -1371,7 +1433,7 @@ player_death_drop_owner_lock_time="0"
 
 	<capacity value="0" source="rank" source_value="0" />
     <capacity value="1" source="rank" source_value="0" />
-    <inventory encumbrance="1" sell_price="0" buy_price="1000.0" />
+    <inventory encumbrance="1" sell_price="0" buy_price="600.0" />
 
 
     <!-- 设备 -->
@@ -1433,7 +1495,7 @@ player_death_drop_owner_lock_time="0"
 
 	<capacity value="0" source="rank" source_value="0" />
     <capacity value="1" source="rank" source_value="0" />
-    <inventory encumbrance="1" sell_price="0" buy_price="3000.0" />
+    <inventory encumbrance="1" sell_price="0" buy_price="1500.0" />
 
 
     <!-- 设备 -->
@@ -1495,7 +1557,7 @@ player_death_drop_owner_lock_time="0"
 
 	<capacity value="0" source="rank" source_value="0" />
     <capacity value="1" source="rank" source_value="0" />
-    <inventory encumbrance="1" sell_price="0" buy_price="3000.0" />
+    <inventory encumbrance="1" sell_price="0" buy_price="3500.0" />
 
 
     <!-- 设备 -->
@@ -1624,7 +1686,7 @@ player_death_drop_owner_lock_time="0"
 
 	<capacity value="0" source="rank" source_value="0" />
     <capacity value="1" source="rank" source_value="0" />
-    <inventory encumbrance="1" sell_price="0" buy_price="1500.0" />
+    <inventory encumbrance="1" sell_price="0" buy_price="1200.0" />
 
 
     <!-- 设备 -->
@@ -1759,7 +1821,7 @@ player_death_drop_owner_lock_time="0"
 
 	<capacity value="0" source="rank" source_value="0" />
     <capacity value="1" source="rank" source_value="0" />
-    <inventory encumbrance="1" sell_price="0" buy_price="3000.0" />
+    <inventory encumbrance="1" sell_price="0" buy_price="4000.0" />
 
 
     <!-- 设备 -->
@@ -1826,7 +1888,7 @@ player_death_drop_owner_lock_time="0"
 
 	<capacity value="0" source="rank" source_value="0" />
     <capacity value="1" source="rank" source_value="0" />
-    <inventory encumbrance="1" sell_price="0" buy_price="3000.0" />
+    <inventory encumbrance="1" sell_price="0" buy_price="6000.0" />
 
 
     <!-- 设备 -->

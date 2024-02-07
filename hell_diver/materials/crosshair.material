@@ -176,8 +176,16 @@ material LineOfSight {
 					texture los.png
 					tex_address_mode clamp
 				}
+				texture_unit{
+					texture los_mask.png 
+					colour_op add
+					scroll_anim 0 0.3
+					tex_address_mode wrap
+					rotate 0
+					scale 1 1
+				}
 			} 
   
 		} 
-	}
 }
+

@@ -1,79 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
 <models>
-<!-- 同人 -->
-	<model filename="acg_asakaze.xml"/> <!--朝风-->
-	<model filename="acg_lulu.xml" /> <!--璐璐-->
-	<model filename="acg_longdan.xml" /> <!--龙胆-->
-	<model filename="acg_scented.xml" /> <!--Scented-->
-	<model filename="acg_neco.xml" /> <!--Neco-->
-	<model filename="acg_api.xml" /> <!--API-->
-	<model filename="acg_fenrir_black.xml" /> <!--芬里尔 黑-->
-	<model filename="acg_fenrir_white.xml" /> <!--芬里尔 白-->
-	<model filename="acg_kemomimi.xml" /> <!--桃子酱（小狐狸）-->
-	<model filename="acg_natsuki_amagi.xml" /> <!--甘城なつき（猫）-->
-	<model filename="acg_maido1.xml" /> <!--女仆 by DNTK-->
-	<model filename="acg_maido2.xml" /> <!--女仆 by DNTK-->
-	<model filename="acg_maido3.xml" /> <!--女仆 by DNTK-->
-	<model filename="acg_maido4.xml" /> <!--女仆 by DNTK-->
-	<model filename="acg_rkgk.xml" /> <!--女仆 by DNTK-->
-	<model filename="acg_gawr_gura.xml" /> <!--噶呜·古拉 鲨鱼-->
-	<model filename="acg_kagamine_rin.xml" /> <!--镜音铃 by DNTK-->
-	<model filename="acg_heavy_equip_jk_ii.xml" /> <!--重装JK II by DNTK-->
-	<model filename="acg_incomparable.xml" /> <!--无比 by yaba-->
-	
-<!-- 明日方舟 -->
-	<model filename="acg_skyfire.xml" /> <!--天火-->
-	<model filename="acg_fiammetta.xml"/> <!--菲娅梅塔 by Gandaruvu807-->
-	<model filename="acg_texas.xml"/><!--德克萨斯-->
-<!-- 原神 -->
-	<model filename="acg_sangonomiya_kokomi.xml" /> <!--珊瑚宫心海-->
-<!-- 崩坏 -->
-	<model filename="acg_bronya_ex_1.xml" /> <!--布洛妮娅常服-->
-	<model filename="acg_raiden_mei_ex_1.xml" /> <!--雷电芽衣常服-->
-<!-- 东方project -->
-	<model filename="acg_reisenu.xml"/><!--铃仙-->
-	<model filename="acg_rubyrose.xml"/><!--RubyRose 新月玫瑰-->
-<!-- 舰队collection -->
-	<model filename="acg_yuudachi_halloween_ver.xml" /> <!--夕立万圣节装-->
-	<model filename="acg_shigure_summer_ver.xml" /> <!--时雨水着-->
-	<model filename="acg_uzuki.xml" /> <!--卯月噗噗个噗-->
-	<model filename="acg_shigure.xml"/ > <!--时雨改二-->
-	<model filename="acg_hibiki.xml" /> <!--响 by MelonDove-->
-	<model filename="acg_amatsukaze.xml" /> <!--天津风 by MelonDove-->
-<!-- 碧蓝航线 -->
-	<model filename="acg_yuudachi_azurlane_origin.xml" /> <!--夕立碧蓝航线原皮-->
-	<model filename="acg_perseus.xml" /> <!--英仙座-->
-	<model filename="acg_yukikaze.xml" /> <!--雪风-->
-	<model filename="acg_graf_spee_sweater_ver.xml" /> <!--斯佩伯爵 毛衣常服-->
-<!-- 动漫 -->
-	<model filename="acg_iruru.xml" /> <!--伊露露-->
-	<model filename="acg_faputa.xml" /> <!--法仆塔-->
-	<model filename="acg_nanachi.xml" /> <!--娜娜奇-->
-	<model filename="acg_rem.xml" /> <!--雷姆-->
-	<model filename="acg_tachibana_kanade.xml" /> <!--立华奏-->
-	<model filename="acg_kaname_madoka.xml" /> <!--魔法少女小圆-->
-	<model filename="acg_shokuhou_misaki.xml" /> <!--食蜂操祈-->
-	<model filename="acg_megumin.xml"/><!--慧慧-->
-<!-- 碧蓝档案 -->
-	<model filename="acg_alice_tendou.xml" /> <!--天童爱丽丝-->
-	<model filename="acg_takanashi_hoshino.xml" /> <!--小鸟游星野-->
-	<model filename="acg_sorasaki_hina.xml"/><!--Hina-->
-<!-- 少女前线 -->
-	<model filename="acg_mg4_703.xml"/><!--MG4机枪-->
-	<model filename="acg_mg4.xml"/><!--MG4机枪-->
-	<model filename="acg_cz75.xml" /> <!--cz75手枪-->
-	<model filename="acg_g41_2064.xml" /> <!--G41突击步枪-->
-	<model filename="acg_angelia.xml" /> <!--安洁莉娅-->
-	<model filename="acg_m37_summer_parader.xml" /> <!--M37盛夏巡礼者-->
-	<model filename="acg_tima.xml" /> <!--蒂玛-->
-	<model filename="acg_iws2000_sandcastle_terminator.xml" /> <!--iws2000沙堡终结者-->
-	<model filename="acg_iws2000_banisher.xml" /> <!--iws2000第七封印者-->
-	<model filename="acg_iws2000.xml" /> <!--iws2000原皮-->
-	<model filename="acg_hk416_starry_cocoon.xml" /> 
-<!-- 灰烬战线 -->
-	<model filename="acg_88mm_flak41.xml" /> <!--88炮-->
-	
-
-
-
+<model filename="acg_asakaze.xml" /> 
+<model filename="acg_lulu.xml" /> 
+<model filename="acg_longdan.xml" /> 
+<model filename="acg_scented.xml"  /> 
+<model filename="acg_neco.xml"  /> 
+<model filename="acg_api.xml"  /> 
+<model filename="acg_fenrir_black.xml"  /> 
+<model filename="acg_fenrir_white.xml"  /> 
+<model filename="acg_kemomimi.xml"/> 
+<model filename="acg_natsuki_amagi.xml"  /> 
+<model filename="acg_maido1.xml"  /> 
+<model filename="acg_maido2.xml"  /> 
+<model filename="acg_maido3.xml"  /> 
+<model filename="acg_maido4.xml"  /> 
+<model filename="acg_rkgk.xml"  /> 
+<model filename="acg_gawr_gura.xml"  /> 
+<model filename="acg_kagamine_rin.xml"  /> 
+<model filename="acg_heavy_equip_jk_ii.xml"  /> 
+<model filename="acg_incomparable.xml"  /> 
+<model filename="acg_alibina.xml"  /> 
+<model filename="acg_strelka.xml"  /> 
+<model filename="acg_amamiya_kokoro.xml"  /> 
+<model filename="acg_patricia_abelheim.xml"  /> 
+<model filename="acg_laisha.xml"  /> 
+<model filename="acg_pmaru.xml"  /> 
+<model filename="acg_erina.xml"  /> 
+<model filename="acg_starwars_shipgirls.xml"  /> 
+<model filename="acg_lilies.xml"  /> 
+<model filename="acg_zero401_casual_wear.xml"  /> 
+<model filename="acg_racing_miku_2022.xml"  /> 
+<model filename="acg_exo_cat.xml"  /> 
+<model filename="acg_latu.xml"  /> 
+<model filename="acg_skyfire.xml"  /> 
+<model filename="acg_fiammetta.xml"/> 
+<model filename="acg_texas.xml"/>
+<model filename="acg_lappland_refined_horrormare.xml"/>
+<model filename="acg_ifrit.xml"/>
+<model filename="acg_irene.xml"/>
+<model filename="acg_sangonomiya_kokomi.xml" /> 
+<model filename="acg_bronya_ex_1.xml" /> 
+<model filename="acg_raiden_mei_ex_1.xml"  /> 
+<model filename="acg_maria_schariac.xml"  /> 
+<model filename="acg_reisenu.xml"/>
+<model filename="acg_reisenu_ex.xml"/>
+<model filename="acg_rubyrose.xml"/>
+<model filename="acg_yuudachi_halloween_ver.xml"  /> 
+<model filename="acg_shigure_summer_ver.xml"  /> 
+<model filename="acg_shigure.xml" /> 
+<model filename="acg_hibiki.xml"  /> 
+<model filename="acg_amatsukaze.xml"  /> 
+<model filename="acg_tashkent_equipment.xml"  /> 
+<model filename="acg_yuudachi_azurlane_origin.xml" /> 
+<model filename="acg_perseus.xml"  /> 
+<model filename="acg_yukikaze.xml"  /> 
+<model filename="acg_graf_spee_sweater_ver.xml"  /> 
+<model filename="acg_felix_schultz.xml"  /> 
+<model filename="acg_shinano.xml"  /> 
+<model filename="acg_iruru.xml"  /> 
+<model filename="acg_faputa.xml"  /> 
+<model filename="acg_nanachi.xml" /> 
+<model filename="acg_rem.xml"  /> 
+<model filename="acg_tachibana_kanade.xml"  /> 
+<model filename="acg_kaname_madoka.xml"  /> 
+<model filename="acg_shokuhou_misaki.xml"  /> 
+<model filename="acg_megumin.xml" />
+<model filename="acg_elaina_dress.xml" />
+<model filename="acg_minami_rena.xml" /> 
+<model filename="acg_tail_yellow.xml" /> 
+<model filename="acg_togo_miomori.xml" /> 
+<model filename="acg_kotori_itsuka.xml" /> 
+<model filename="acg_goto_hitori.xml" /> 
+<model filename="acg_alice_tendou.xml"  /> 
+<model filename="acg_takanashi_hoshino.xml" /> 
+<model filename="acg_takanashi_hoshino_swim_ver.xml" /> 
+<model filename="acg_sorasaki_hina.xml" />
+<model filename="acg_miyu.xml" />
+<model filename="acg_mari_lochi_gymsuit_ver.xml" />
+<model filename="acg_shirasu_azusa.xml" />
+<model filename="acg_ba_iroha.xml" />
+<model filename="acg_toki.xml" />
+<model filename="acg_kisaki.xml" />
+<model filename="acg_sorasaki_hina_swim.xml" />
+<model filename="acg_asagi_mutsuki.xml" />
+<model filename="acg_rikuhachima_aru.xml" />
+<model filename="acg_aur.xml" />
+<model filename="acg_ein.xml" />
+<model filename="acg_soph.xml" />
+<model filename="acg_akane.xml" />
+<model filename="acg_asuna.xml" />
+<model filename="acg_karin.xml" />
+<model filename="acg_neru.xml" />
+<model filename="acg_amau_ako.xml" />
+<model filename="acg_mg4_703.xml" />
+<model filename="acg_mg4.xml" />
+<model filename="acg_cz75.xml"  /> 
+<model filename="acg_g41_2064.xml"  /> 
+<model filename="acg_g41_schoolsuit.xml"  /> 
+<model filename="acg_angelia.xml" /> 
+<model filename="acg_m37_summer_parader.xml" /> 
+<model filename="acg_tima.xml"  /> 
+<model filename="acg_iws2000_sandcastle_terminator.xml"  /> 
+<model filename="acg_iws2000_banisher.xml" /> 
+<model filename="acg_iws2000.xml"  /> 
+<model filename="acg_hk416_starry_cocoon.xml" /> 
+<model filename="acg_m14.xml" /> 
+<model filename="acg_mg3.xml" /> 
+<model filename="acg_g41_7406.xml" /> 
+<model filename="acg_frieren.xml" /> 
+<model filename="acg_hk416_china.xml" /> 
+<model filename="acg_sf_m950a.xml" /> 
+<model filename="acg_tail_blue.xml" /> 
+<model filename="acg_tail_red.xml" /> 
+<model filename="acg_ump45_white.xml" /> 
+<model filename="acg_vepley.xml" /> 
+<model filename="acg_florence_spring.xml" /> 
+<model filename="acg_88mm_flak41.xml"  /> 
 </models>

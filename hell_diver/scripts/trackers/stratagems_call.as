@@ -159,6 +159,16 @@ dictionary disable_zombie_mode = {
 	// 占位的
 	{"666",-1}
 };
+dictionary disable_vanilla_mode = {
+	
+	{"aswda","hd_amg_11_mk3_call"},
+	{"ASWDA","hd_amg_11_mk3_call"},
+	{"aswad","hd_arx_34_mk3_call"},
+	{"ASWAD","hd_arx_34_mk3_call"},
+
+	// 占位的
+	{"666",-1}
+};
 dictionary stratagems_call_notify_key = {
 
         // 空
@@ -609,7 +619,11 @@ class stratagems_call : Tracker {
 		if (!startsWith(message, "/")) {
 			if ( word_size == 1 ){
 				string stratagemsKey;
-				if(disable_zombie_mode.get(message,stratagemsKey) && g_disable_stratagems){
+				if(disable_zombie_mode.get(message,stratagemsKey) && g_disable_stratagems && g_GameMode == "Zombie"){
+					_notify(m_metagame,pid,"当前游戏模式禁用该战略呼叫");
+					return;
+				}
+				if(disable_vanilla_mode.get(message,stratagemsKey) && g_disable_stratagems && g_GameMode == "Vanilla"){
 					_notify(m_metagame,pid,"当前游戏模式禁用该战略呼叫");
 					return;
 				}

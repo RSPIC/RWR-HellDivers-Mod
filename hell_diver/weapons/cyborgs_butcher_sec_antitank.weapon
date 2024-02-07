@@ -186,7 +186,7 @@ radius="1"
      
 	<!--附加属性-->
     <modifier class="speed" value="0.2" /> 
-    <modifier class="hit_success_probability" value="-0.15" /><!--正值减少玩家抗致死率-->
+    <modifier class="hit_success_probability" value="-0.35" /><!--正值减少玩家抗致死率-->
     <modifier class="detectability" value="0.0" />	<!--正值减少玩家隐蔽-->
 	<!-- 在其武器上-0.15抗致死 等效352层 -->
 

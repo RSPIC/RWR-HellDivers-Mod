@@ -116,7 +116,7 @@
   <parameter class="willingness_to_charge" value="0.1" />
   <parameter class="willingness_to_guard" value="0.9" />
   <parameter class="stab_range" value="3.5" /><!--近战距离-->
-  <parameter class="check_vehicles_while_fire_open_interval" value="10.0" />  
+  <parameter class="check_vehicles_while_fire_open_interval" value="3.0" />  
   
   <parameter class="reaction_time_after_choosing_target" value="-1" /><!--索敌后的反应时间-->
   
@@ -127,7 +127,7 @@
 
   <parameter class="fighting_melee_move_radius" value="3" />
 	<!-- 采用近战的接触距离 -->
-  <parameter class="fighting_regular_move_radius" value="20.0" />
+  <parameter class="fighting_regular_move_radius" value="30.0" />
 	<!-- 与敌人保持的交战距离 -->
 
 </ai>

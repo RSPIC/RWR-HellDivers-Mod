@@ -8,5 +8,29 @@
 	<model filename="illum_watcher.xml">
 		<requirement class="weapon" slot="0" key="illum_watcher_main.weapon"/>
 	</model>
+	<model filename="illum_hunter.xml">
+		<requirement class="weapon" slot="0" key="illum_hunter_main.weapon"/>
+	</model>
+	<model filename="illum_hunter.xml">
+		<requirement class="weapon" slot="0" key="illum_hunter_main_2.weapon"/>
+	</model>
+	<model filename="illum_apprentice.xml">
+		<requirement class="weapon" slot="0" key="illum_apprentice_main.weapon"/>
+	</model>
+	<model filename="illum_tripod.xml">
+		<requirement class="weapon" slot="0" key="illum_tripod_main.weapon"/>
+	</model>
+	<model filename="illum_strider.xml">
+		<requirement class="weapon" slot="0" key="illum_strider_main.weapon"/>
+	</model>
+	<model filename="illum_obelisk.xml">
+		<requirement class="weapon" slot="0" key="illum_obelisk_main.weapon"/>
+	</model>
+	<model filename="illum_illusionist.xml">
+		<requirement class="weapon" slot="0" key="illum_illusionist_main.weapon"/>
+	</model>
+	<model filename="illum_council_member.xml">
+		<requirement class="weapon" slot="0" key="illum_council_member_main.weapon"/>
+	</model>
 
 </models>

@@ -192,7 +192,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			addStage(setupStage17());         // map17  #8 5
 			addStage(setupStage18());         // map13_2 #9 6
 			addStage(setupStage13());         // map16  #11  8
-			//addStage(setupFinalStage1());     // map11 #12 潜行9
+			addStage(setupCopehill_Down());     // map11 #12 原潜行图，ver1.7.0修改
 			addStage(setupStageCasake_Bay());         // Casake_Bay #21
 			addStage(setupStage20());         // map19 #17	13 鹅城
 			//addStage(setupRoberto());         // 创意工坊图 ver1.6.0  难以修改，删除 12.31 HOTCAT建议
@@ -1371,31 +1371,20 @@ class StageConfiguratorInvasion : StageConfigurator {
 	// ------------------------------------------------------------------------------------------------
 	// ------------------------------------------------------------------------------------------------
 	// --------------------------------------------
-	protected Stage@ setupFinalStage1() {
+	protected Stage@ setupCopehill_Down() {
 		Stage@ stage = createStage();
-		stage.m_mapInfo.m_name = "Final mission I"; // warning, default.character has reference to this name, careful if it needs to be changed
-		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map11";
-		stage.m_mapInfo.m_id = "map11";
+		stage.m_mapInfo.m_name = "Copehill Down"; // 原map11潜行
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/Copehill_Down";
+		stage.m_mapInfo.m_id = "Copehill_Down";
         
 		stage.m_includeLayers.insertLast("layer1.invasion");        
 
-		stage.m_finalBattle = true;
-		stage.m_hidden = true;
+		stage.m_fogOffset = 24.0;    
+		stage.m_fogRange = 50.0; 
 
-		stage.addTracker(DestroyVehicleToCaptureBase(m_metagame, "radio_jammer.vehicle", 2));
-		stage.addTracker(DestroyVehicleToCaptureBase(m_metagame, "radar_tower.vehicle", 2));     
-		
-		// make neutral instantly not alive to avoid any possibility to gain capacity, like via not losing all bases first 
-		// and then gaining bases which have vehicles that give capacity offset..
-		{
-			XmlElement command("command");
-			command.setStringAttribute("class", "set_match_status");
-			command.setIntAttribute("faction_id", 2);
-			command.setBoolAttribute("lose", true);
-			// can't use m_extraCommands, they happen before match start, using trackers instead then
-			stage.addTracker(RunAtStart(m_metagame, command));     
-		}
 
+		stage.addTracker(PeacefulLastBase(m_metagame, 0));    
+		stage.addTracker(CommsCapacityHandler(m_metagame));
 		stage.m_maxSoldiers = 1;                                             
 
 		stage.m_soldierCapacityVariance = 0;
@@ -1415,26 +1404,9 @@ class StageConfiguratorInvasion : StageConfigurator {
 			stage.m_factions.insertLast(f);
 		}
 
-		{
-			XmlElement command("command");
-			command.setStringAttribute("class", "faction_resources");
-			command.setIntAttribute("faction_id", 1);
-			addFactionResourceElements(command, "vehicle", array<string> = {"mobile_armory.vehicle"}, true);
-
-			stage.m_extraCommands.insertLast(command);
-		}
-		
-		// no calls for friendly faction in the last map
-		{
-			XmlElement command("command");
-			command.setStringAttribute("class", "faction_resources");
-			command.setIntAttribute("faction_id", 0);
-			command.setBoolAttribute("clear_calls", true);
-			stage.m_extraCommands.insertLast(command);
-		}
-
 		// metadata
-		stage.m_primaryObjective = "final1";
+		stage.m_primaryObjective = "capture";
+		stage.m_radioObjectivePresent = false;
 
 		return stage;
 	}

@@ -951,7 +951,7 @@ class vestInfo {
 	protected uint m_armorTime;
 	protected uint m_upgradeTime;
 
-	vestInfo(string&in name,string&in vest = "helldivers_vest.carry_item"){
+	vestInfo(string&in name,string&in vest = "helldivers_vest"){
 		m_name = name;
 		m_autoRecover = false;
 		m_autoHeal = false;
@@ -1032,7 +1032,7 @@ class vestInfoBuck {
 		m_vestInfos.insertLast(newinfo);
 	}
 
-	void addInfo(string&in name,string&in vest = "helldivers_vest.carry_item"){
+	void addInfo(string&in name,string&in vest = "helldivers_vest"){
 		if(m_vestInfos is null){_log("m_vestInfos is null");return;}
 		for(uint i=0;i<m_vestInfos.size();++i){
 			string m_name = m_vestInfos[i].name();
@@ -1386,12 +1386,16 @@ bool g_server_activity_racing = false;
 bool g_single_player = false; //开关一些进服提示
 bool g_auto_heal = true; // 开关自动回血
 bool g_spawn_with_ai = true; // 复活自带AI
+// bool g_spawn_with_ai = false; // 复活自带AI
+
 bool g_heal_on_kill = true; // 击杀回甲
 bool g_exo_armor = true; // 机甲是否装配护甲
 bool g_disable_stratagems = false; //是否禁用战略呼叫
 bool g_top_down = true; //是否启用俯视角
+bool g_acg_weapon_count = false; //是否启用ACG武器击杀计数
 
 int g_server_difficulty_level = 0;
+int g_playerCount = 0;
 
 string g_GameMode = "";
 
@@ -1445,6 +1449,13 @@ class Initiate : Tracker {
 				g_heal_on_kill = false;
 				g_exo_armor = false;
 				g_rp_ptRewardBase = 2000;
+				g_disable_stratagems = true;
+			}
+			if(g_GameMode == "Vanilla"){
+				g_stratagems_call_factor = 2.0;
+				g_heal_on_kill = false;
+				g_acg_weapon_count = true;
+				g_spawn_with_ai = false;
 				g_disable_stratagems = true;
 			}
 		}
@@ -1555,7 +1566,7 @@ class Initiate : Tracker {
 					--i;
 				}
 			}
-			if(message == "/endactivity"){
+			if(message == "/endserveractivity"){
 				g_server_activity = false;
 				_report(m_metagame,"活动结束");
 			}

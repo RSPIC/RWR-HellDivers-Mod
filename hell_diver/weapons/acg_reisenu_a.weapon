@@ -84,7 +84,7 @@ key="acg_reisenu_a.weapon"
 
 		<result class="hit" kill_probability="1.0" 
 		kill_probability_offset_on_successful_hit="75"
-		kill_decay_start_time="1" kill_decay_end_time="1" character_state="none" />
+		kill_decay_start_time="1" kill_decay_end_time="1" character_state="wound" />
 
 		<trigger class="impact" time_to_live="1.5"  />
 		<rotation class="motion" />
@@ -418,7 +418,7 @@ key="re_acg_reisenu_a.weapon"
 
 		<result class="hit" kill_probability="1.0" 
 		kill_probability_offset_on_successful_hit="75"
-		kill_decay_start_time="1" kill_decay_end_time="1" character_state="none" />
+		kill_decay_start_time="1" kill_decay_end_time="1" character_state="wound" />
 
 		<trigger class="impact" time_to_live="1.5"  />
 		<rotation class="motion" />

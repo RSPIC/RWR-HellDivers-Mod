@@ -33,7 +33,7 @@
 		<resources file="bugs_all.resources" />
 		<resources file="bugs_common.resources">
 			<carry_item key="general_vest_1000" />
-			<carry_item key="stun_vest_300" />
+			<carry_item key="vest_stun_300" />
 		</resources>
 		
 		<item_class_existence_config>
@@ -133,7 +133,6 @@
 		<resources file="bugs_common.resources" />
 		<resources>
 			<weapon key="bugs_scout_main.weapon" />
-			<!-- <projectile key="bugs_scout_alert_spawn.projectile" /> -->
 			<carry_item key="general_vest_5" />
 			<carry_item key="general_vest_6" />
 			<carry_item key="general_vest_7" />
@@ -159,7 +158,7 @@
 		<resources file="bugs_common.resources" />
 		<resources>
 			<weapon key="bugs_tunnel_main.weapon" />
-			<!-- <projectile key="bugs_scout_alert_spawn.projectile" /> -->
+			<projectile key="bugs_general_grenade.projectile" enabled="0" />
 			<carry_item key="general_vest_5" />
 			<carry_item key="general_vest_6" />
 			<carry_item key="general_vest_7" />
@@ -180,7 +179,9 @@
 	<soldier name="Vanguard" spawn_score="1.2" copy_from="base" >
 		<character filename="bugs_scout_state.character">	
 		</character>
-		<ai filename="bugs_scout.ai" /> 
+		<ai filename="bugs_scout.ai" >
+			<parameter class="fighting_regular_move_radius" value="20.0" />
+		</ai> 
 		<model filename="bugs_vanguard.xml" />
 
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
@@ -216,6 +217,7 @@
 		<resources  >
 			<weapon key="bugs_baneling_main.weapon" />
 			<carry_item key="vest_bugs_zerg_baneling_10" />
+			<projectile key="bugs_general_grenade.projectile" enabled="0" />
 		</resources>
 		<!-- low XP, likely to join player squad -->
 		<attribute_config class="xp">
@@ -239,6 +241,7 @@
 		<resources >
 			<weapon key="bugs_zerg_baneling_main.weapon" />
 			<carry_item key="vest_bugs_zerg_baneling_10" />
+			<projectile key="bugs_general_grenade.projectile" enabled="0" />
 		</resources>
 		<!-- low XP, likely to join player squad -->
 		<attribute_config class="xp">
@@ -261,7 +264,8 @@
 	<soldier name="Shadow" spawn_score="1.2" copy_from="base" >
 		<character filename="bugs_stalker_state.character">	
 		</character>
-		<ai filename="bugs_stalker.ai" />
+		<ai filename="bugs_stalker.ai" >
+		</ai> 
 		<model filename="bugs_shadow.xml" />
 
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
@@ -271,8 +275,8 @@
 			<projectile key="bugs_shadow_grenade.projectile" />
 			<projectile key="bugs_shadow_alert_spawn.projectile" />
 
-			<carry_item key="stun_vest_20" />
-			<carry_item key="stun_vest_30" />
+			<carry_item key="vest_stun_20" />
+			<carry_item key="vest_stun_30" />
 		</resources>
 
 		<!-- low XP, likely to join player squad -->
@@ -293,11 +297,9 @@
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="bugs_common.resources">
 			<weapon key="bugs_warrior_main.weapon" />
-
+			<projectile key="bugs_general_grenade.projectile" enabled="0" />
 			<carry_item key="general_vest_30" />
 			<carry_item key="general_vest_40" />
-			<carry_item key="general_vest_50" />
-			<carry_item key="general_vest_60" />
 		</resources>
 
 
@@ -318,10 +320,10 @@
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="bugs_common.resources">
 			<weapon key="bugs_elite_main.weapon" />
-
-			<carry_item key="general_vest_60" />
-			<carry_item key="general_vest_80" />
-			<carry_item key="general_vest_100" />
+			<projectile key="bugs_general_grenade.projectile" enabled="0" />
+			<carry_item key="vest_bugs_elite_80" />
+			<carry_item key="vest_bugs_elite_100" />
+			<carry_item key="vest_bugs_elite_120" />
 		</resources>
 
 
@@ -344,8 +346,8 @@
 			<weapon key="bugs_stalker_main.weapon" />
 			<projectile key="bugs_stalker_grenade.projectile" />
 
-			<carry_item key="stun_vest_40" />
-			<carry_item key="stun_vest_50" />
+			<carry_item key="vest_stun_40" />
+			<carry_item key="vest_stun_50" />
 		</resources>
 
 		<!-- low XP, likely to join player squad -->
@@ -360,17 +362,19 @@
 	<soldier name="BroodCommander" spawn_score="0.3" copy_from="base" >
 		<character filename="bugs_warrior_state.character">	
 		</character>
-		<ai filename="bugs_scout.ai" /> 
+		<ai filename="bugs_scout.ai" > 
+			<parameter class="run_limit_margin" value="15.0" />
+			<parameter class="run_limit" value="30.0" />
+		</ai>
 		<model filename="bugs_brood_commander.xml" />
 
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="bugs_common.resources">
 			<weapon key="bugs_brood_commander_main.weapon" />
-			<projectile key="bugs_stalker_grenade.projectile" />
-			<carry_item key="general_vest_230" />
-			<carry_item key="general_vest_250" />
-			<carry_item key="general_vest_270" />
-			<carry_item key="general_vest_290" />
+			<carry_item key="vest_bugs_commander_230" />
+			<carry_item key="vest_bugs_commander_250" />
+			<carry_item key="vest_bugs_commander_270" />
+			<carry_item key="vest_bugs_commander_290" />
 		</resources>
 
 		<item_class_existence_config>
@@ -397,8 +401,9 @@
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="bugs_common.resources">
 			<weapon key="bugs_behemoth_main.weapon" />
-			<carry_item key="anti_light_hit_vest_420" />
-			<carry_item key="anti_light_hit_vest_450" />
+			<projectile key="bugs_general_grenade.projectile" enabled="0" />
+			<carry_item key="general_vest_420" />
+			<carry_item key="general_vest_450" />
 		</resources>
 
 		<item_class_existence_config>
@@ -422,6 +427,7 @@
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="bugs_common.resources">
 			<weapon key="bugs_tank_main.weapon" />
+			<projectile key="bugs_general_grenade.projectile" enabled="0" />
 			<carry_item key="general_vest_280" />
 			<carry_item key="general_vest_320" />
 		</resources>
@@ -446,6 +452,7 @@
 
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="bugs_common.resources">
+			<projectile key="bugs_general_grenade.projectile" enabled="0" />
 			<weapon key="bugs_impaler_main.weapon" />
 			<carry_item key="general_vest_350" />
 			<carry_item key="general_vest_380" />

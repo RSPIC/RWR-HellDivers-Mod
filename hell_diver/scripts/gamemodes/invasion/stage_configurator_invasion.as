@@ -50,7 +50,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 		availableFactionConfigs.push_back(FactionConfig(-1, "super_earth.xml", "SuperEarth", "1 0.6 0", "super_earth.xml"));
 		availableFactionConfigs.push_back(FactionConfig(-1, "cyborgs.xml", "Cyborgs", "1 0.15 0.15", "cyborgs.xml"));
 
-		//availableFactionConfigs.push_back(FactionConfig(-1, "illuminate.xml", "Illuminate", "0 0.3 1", "illuminate.xml"));
+		availableFactionConfigs.push_back(FactionConfig(-1, "illuminate.xml", "Illuminate", "0 0.3 1", "illuminate.xml"));
 		availableFactionConfigs.push_back(FactionConfig(-1, "bugs.xml", "Bugs", "1 0.3 0", "bugs.xml"));
 		
 
@@ -91,10 +91,10 @@ class StageConfiguratorInvasion : StageConfigurator {
 		}
 
 		// - finally add neutral
-		{
-			int index = getFactionConfigs().size();
-			m_mapRotator.addFactionConfig(FactionConfig(index, "neutral.xml", "Neutral", "0 0 0"));
-		}
+		// {
+		// 	int index = getFactionConfigs().size();
+		// 	m_mapRotator.addFactionConfig(FactionConfig(index, "neutral.xml", "Neutral", "0 0 0"));
+		// }
 
 		_log("total faction configs " + getFactionConfigs().size(), 1);
 	}
@@ -245,7 +245,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			addStage(setupStage20());         // map19 #17	13 鹅城
 			//addStage(setupRoberto());         // 创意工坊图 ver1.6.0  难以修改，删除 12.31 HOTCAT建议
 			addStage(setupClairemont());      // 创意工坊图 ver1.6.0
-			addStage(setupViper());           // 创意工坊图 ver1.6.0
+			//addStage(setupViper());           // 创意工坊图 ver1.6.0
 			addStage(setupDef_lab_koth());    // 创意工坊图 ver1.6.0
 			addStage(setupEastport());        // 创意工坊图 ver1.6.0
 			addStage(setupWave_Town());       // 创意工坊图 ver1.6.0
@@ -259,9 +259,12 @@ class StageConfiguratorInvasion : StageConfigurator {
 	// --------------------------------------------
 	protected Stage@ createStage() const {
 		Stage@ stage = Stage(m_metagame.getUserSettings());
+		randomEnemyFaction();
 		return stage;
 	}
-
+	protected void randomEnemyFaction() {
+		m_mapRotator.setRandomEnemyFaction();
+	}
 	// --------------------------------------------
 	protected PhasedStage@ createPhasedStage() const {
 		return PhasedStage(m_metagame.getUserSettings());
@@ -2133,7 +2136,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			stage.m_factions.insertLast(f);
 		}
 		{
-			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1, 0.5, 0.2));
+			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1, 1, 0,	false));
 			f.m_overCapacity = 40;                                              // was 20 (test3)
             f.m_capacityOffset = 10;   
 			stage.m_factions.insertLast(f);
