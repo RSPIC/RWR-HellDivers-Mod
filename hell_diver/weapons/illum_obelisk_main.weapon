@@ -11,7 +11,7 @@ force_as_shoots_blast_projectiles="0"
 > 
     <specification 
     slot="0" 	
-    retrigger_time="5" 
+    retrigger_time="8" 
 	last_burst_retrigger_time="1"
     accuracy_factor="1.0" 
 	spread_range="0"
@@ -29,7 +29,7 @@ force_as_shoots_blast_projectiles="0"
 	sight_range_modifier="3.0" 
 	burst_shots="1" 
     projectiles_per_shot="1" 
-    projectile_speed="30.0"
+    projectile_speed="20.0"
 	barrel_offset="1.0" 
 	carry_in_two_hands="0" 
 	stab_enabled="1" 
@@ -98,7 +98,7 @@ force_as_shoots_blast_projectiles="0"
             <collider class="vehicle" enabled="1" /> 
             <collider class="character" enabled="1" faction_compare="not_equal"/>
         </trigger> 
-        <result class="blast" radius="3.0" damage="100" push="0.1" decal="0" character_state="wound" 
+        <result class="blast" radius="3.0" damage="30" push="0.1" decal="0" character_state="wound" 
         make_vehicle_hit_sound="0" faction_compare="not_equal"/>
 
         <effect class="activated" ref="laser_strike_activated_laser" />

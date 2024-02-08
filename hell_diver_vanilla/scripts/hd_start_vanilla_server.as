@@ -18,8 +18,8 @@ void main(dictionary@ inputData) {
 
         settings.m_fellowCapacityFactor = 1.0;
         settings.m_fellowAiAccuracyFactor = 0.97;
-        settings.m_enemyCapacityFactor = 1.5;
-        settings.m_enemyAiAccuracyFactor = 0.98;
+        settings.m_enemyCapacityFactor = 1.2;
+        settings.m_enemyAiAccuracyFactor = 0.967;
 
         settings.m_playerAiReduction = 0.0;            // didn't work before 1.76! (was 1.0)
 
@@ -47,9 +47,9 @@ void main(dictionary@ inputData) {
         settings.m_startServerCommand = """
         <command class='start_server'
                 server_name='[地狱潜兵] 香草模式'
-                server_port='1242'
+                server_port='30202'
                 url='https://steamcommunity.com/sharedfiles/filedetails/?id=2910392031'
-                register_in_serverlist='0'
+                register_in_serverlist='1'
                 mode='HD'
                 persistency='forever'
                 comment='人类 VS 人类模式，接近原版玩法。该模式同步存档。地狱潜兵模组  QQ：498520233 '

@@ -29,7 +29,7 @@ force_as_shoots_blast_projectiles="0"
 	sight_range_modifier="2.0" 
 	burst_shots="1" 
     projectiles_per_shot="1" 
-    projectile_speed="20.0"
+    projectile_speed="14.0"
 	barrel_offset="1.0" 
 	carry_in_two_hands="0" 
 	stab_enabled="1" 
@@ -101,7 +101,7 @@ force_as_shoots_blast_projectiles="0"
             <collider class="vehicle" enabled="1" /> 
             <collider class="character" enabled="1" faction_compare="not_equal"/>
         </trigger> 
-        <result class="blast" radius="5.0" damage="120" push="0.1" decal="0" character_state="stun" 
+        <result class="blast" radius="5.0" damage="20" push="0.1" decal="0" character_state="stun" 
         make_vehicle_hit_sound="0" faction_compare="not_equal"/>
 
 		<sound class="result" key="other" fileref="illum_illusionist_impact.wav" pitch_variety="0.00"  volume="3"/>

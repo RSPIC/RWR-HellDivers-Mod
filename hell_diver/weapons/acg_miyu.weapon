@@ -157,7 +157,7 @@ key="acg_miyu.weapon"
 	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 
 	<effect class="muzzle" ref="general_weapon_muzzle_trail_smoke" lighting="0"/> 
      
-	<modifier class="detectability" value="-0.4" />	<!--正值减少玩家隐蔽-->
+	<modifier class="detectability" value="-0.25" />	<!--正值减少玩家隐蔽-->
 </weapon>
 <weapon 
 file="_rare_weapon_mk3_re.base"
@@ -316,6 +316,6 @@ key="re_acg_miyu.weapon"
 	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 
 	<effect class="muzzle" ref="general_weapon_muzzle_trail_smoke" lighting="0"/> 
      
-	<modifier class="detectability" value="-0.4" />	<!--正值减少玩家隐蔽-->
+	<modifier class="detectability" value="-0.25" />	<!--正值减少玩家隐蔽-->
 </weapon>
 </weapons>

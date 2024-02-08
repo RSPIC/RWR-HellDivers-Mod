@@ -145,12 +145,12 @@ class activity_manager : Tracker{
                 m_playerStashInfo.openStash();
             }
             if(itemKey == "hongbao.carry_item"){
-                array<int> rpList = { 8888,16800,32800,64800,55555,12800,10086,11451,23333};
+                array<int> rpList = { 3280,6666,8888,16800,12800,10086,11451,23333};
                 int randIndex = rand(0,rpList.length() - 1);
                 int rp = rpList[randIndex];
                 playSoundAtLocation(m_metagame,"cash_in.wav",-1,position,1.0);
                 GiveRP(m_metagame,characterId,rp);
-                _notify(m_metagame,playerId,"红包奖金:"+rp);
+                _notify(m_metagame,playerId,"红包奖金[重复奖金不反复提示]:"+rp);
             }
         }
 
