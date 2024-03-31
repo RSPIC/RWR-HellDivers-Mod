@@ -1460,7 +1460,9 @@ class Initiate : Tracker {
 				g_heal_on_kill = false;
 				g_acg_weapon_count = true;
 				g_spawn_with_ai = false;
+				g_rp_ptRewardBase = 5000;
 				g_disable_stratagems = true;
+				g_server_added_bonus_factor = 0.2; //战役结算额外的倍率
 			}
 		}
 	}
