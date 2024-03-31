@@ -15,6 +15,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 	protected GameModeInvasion@ m_metagame;
 	protected MapRotatorInvasion@ m_mapRotator;
 	protected int m_stagesAdded;
+	protected const UserSettings@ settings;
 
 	// ------------------------------------------------------------------------------------------------
 	StageConfiguratorInvasion(GameModeInvasion@ metagame, MapRotatorInvasion@ mapRotator) {
@@ -23,7 +24,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 		mapRotator.setConfigurator(this);
 		m_stagesAdded = 0;
 		
-		const UserSettings@ settings = m_metagame.getUserSettings();
+		@settings = m_metagame.getUserSettings();
 		g_server_activity_racing = settings.m_server_activity_racing;
 		g_server_activity = settings.m_server_activity;
 		if(g_server_activity){
@@ -254,6 +255,9 @@ class StageConfiguratorInvasion : StageConfigurator {
 	protected void setupActivityStages() {
 		if(g_server_activity_racing){
 			addStage(setupRacing());         // 创意工坊图 ver1.6.0 赛车地图
+		}
+		if(settings.m_GameMode == "Moba"){
+			addStage(setupMoba());         // HOTCAT 1.7.1 LOL地图
 		}
 	}
 	// --------------------------------------------
@@ -2357,4 +2361,41 @@ class StageConfiguratorInvasion : StageConfigurator {
 		setDefaultAttackBreakTimes(stage);
 		return stage;
 	}
+	protected Stage@ setupMoba() {
+		Stage@ stage = createStage();
+		stage.m_mapInfo.m_name = "Moba";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/moba_map";
+		stage.m_mapInfo.m_id = "Moba";
+
+		stage.m_maxSoldiers = 100;
+		stage.m_playerAiCompensation = 0;                                       // 
+    	stage.m_playerAiReduction = 0.0;                                        // 
+
+		stage.m_soldierCapacityVariance = 1.0; 
+
+		stage.addTracker(PeacefulLastBase(m_metagame, 1));
+		stage.addTracker(CommsCapacityHandler(m_metagame));
+
+		{
+			Faction f(getFactionConfigs()[0], createFellowCommanderAiCommand(0, 1, 0));
+			f.m_overCapacity = 10;                                              // was 20
+			f.m_bases = 3;
+			f.m_capacityMultiplier = 1; 
+			stage.m_factions.insertLast(f);
+		}
+		{
+			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1, 1, 0));
+			f.m_overCapacity = 40;                                              // was 20 (test3)
+            f.m_capacityOffset = 10;                                            // was 10 (test3)
+			f.m_capacityMultiplier = 1; 
+			stage.m_factions.insertLast(f);
+		}
+
+		// metadata
+		stage.m_primaryObjective = "capture";
+
+		setDefaultAttackBreakTimes(stage);
+		return stage;
+	}
+	
 }

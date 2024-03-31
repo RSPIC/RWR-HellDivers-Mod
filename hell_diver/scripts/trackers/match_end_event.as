@@ -156,7 +156,7 @@ class match_end : Tracker {
         if(players is null){return;}
         for(uint i = 0 ; i < players.size() ; ++i ){
             const XmlElement@ player = players[i];
-            if(player is null){return;}
+            if(player is null){continue;}
             int cid = player.getIntAttribute("character_id");
             int pid = player.getIntAttribute("player_id");
             string name = player.getStringAttribute("name");

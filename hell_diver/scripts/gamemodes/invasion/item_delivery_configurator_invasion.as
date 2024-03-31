@@ -271,15 +271,23 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			ScoredResource("token_tail_yellow.projectile","projectile",1.0f,4),
 			ScoredResource("token_togo_miomori.projectile","projectile",1.0f,4),
 			// 1.7.0
-			ScoredResource("token_kotori_itsuka.projectile","projectile",3.0f,4),
-			ScoredResource("token_exo_cat.projectile","projectile",3.0f,4),
-			ScoredResource("token_akane.projectile","projectile",3.0f,4),
-			ScoredResource("token_asuna.projectile","projectile",3.0f,4),
-			ScoredResource("token_karin.projectile","projectile",3.0f,4),
-			ScoredResource("token_neru.projectile","projectile",3.0f,4),
-			ScoredResource("token_latu.projectile","projectile",3.0f,4),
-			ScoredResource("token_amau_ako.projectile","projectile",3.0f,4),
-			ScoredResource("token_goto_hitori.projectile","projectile",3.0f,4),
+			ScoredResource("token_kotori_itsuka.projectile","projectile",1.0f,4),
+			ScoredResource("token_exo_cat.projectile","projectile",1.0f,4),
+			ScoredResource("token_akane.projectile","projectile",1.0f,4),
+			ScoredResource("token_asuna.projectile","projectile",1.0f,4),
+			ScoredResource("token_karin.projectile","projectile",1.0f,4),
+			ScoredResource("token_neru.projectile","projectile",1.0f,4),
+			ScoredResource("token_latu.projectile","projectile",1.0f,4),
+			ScoredResource("token_amau_ako.projectile","projectile",1.0f,4),
+			ScoredResource("token_goto_hitori.projectile","projectile",1.0f,4),
+			// 1.7.1
+			ScoredResource("token_blaze.projectile","projectile",1.0f,4),
+			ScoredResource("token_goldenglow.projectile","projectile",1.0f,4),
+			ScoredResource("token_pamiat_merkuria.projectile","projectile",1.0f,4),
+			ScoredResource("token_pamiat_merkuria_alter.projectile","projectile",1.0f,4),
+			ScoredResource("token_skadi.projectile","projectile",1.0f,4),
+			ScoredResource("token_arona.projectile","projectile",1.0f,4),
+			ScoredResource("token_gehenna_member.projectile","projectile",1.0f,4),
 
 			//AI类信物
 			ScoredResource("ai_token_asuma_toki.projectile","projectile",1.0f,2)

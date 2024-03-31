@@ -383,11 +383,11 @@ class Stage {
 				
 				faction.setFloatAttribute("ai_accuracy", m_userSettings.m_fellowAiAccuracyFactor);
 				faction.setIntAttribute("disable_enemy_spawnpoints_soldier_count_offset", -100);
-				faction.setBoolAttribute("lose_last_base_without_spawnpoints", false);
+				faction.setBoolAttribute("lose_last_base_without_spawnpoints", true);
 			} else {
 				// enemy
 				faction.setFloatAttribute("ai_accuracy", m_userSettings.m_enemyAiAccuracyFactor);
-				faction.setBoolAttribute("lose_last_base_without_spawnpoints", false);
+				faction.setBoolAttribute("lose_last_base_without_spawnpoints", true);
 				faction.setIntAttribute("disable_enemy_spawnpoints_soldier_count_offset", -100);
 			}			
 
@@ -407,7 +407,7 @@ class Stage {
 			faction.setBoolAttribute("win_with_all_bases", f.m_winWithAllBases);
 
 			if(i == 0){	//防止无法占领卡图
-				faction.setBoolAttribute("lose_without_bases", false);
+				faction.setBoolAttribute("lose_without_bases", true);
 			}
 
 			command.appendChild(faction);

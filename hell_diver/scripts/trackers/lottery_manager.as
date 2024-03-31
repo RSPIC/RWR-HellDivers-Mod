@@ -176,18 +176,9 @@ class lottery_manager : Tracker {
                         return;
                     }
                     float bonusFactor = 0.01*parseFloat(num);
-                    //先过判断
-                    m_firstUseInfoBuck.addInfo(name);
-                    if(m_firstUseInfoBuck.isFirst(name,"hd_bonusfactor")){
-                        notify(m_metagame,"The bonus has taken effect", dictionary(), "misc", pid, false, "", 1.0);
-                        dictionary a;
-                        a["%bf"] = ""+bonusFactor;
-                        notify(m_metagame,"Now Factor", a, "misc", pid, false, "", 1.0);
-                    }else{
-                        notify(m_metagame,"The bonus can only be applied once", dictionary(), "misc", pid, false, "", 1.0);
-                        addItemInBackpack(m_metagame,cid,"carry_item",itemKey);
-                        return;
-                    }
+
+                    //准许多次使用加成卡 ver1.7.1
+                    notify(m_metagame,"The bonus has taken effect", dictionary(), "misc", pid, false, "", 1.0);
                     //再过加成
                     float m_factor = 0;
                     if(i == 0){
@@ -200,18 +191,22 @@ class lottery_manager : Tracker {
                         g_battleInfoBuck.addBonusFactorRp(name,bonusFactor);
                         m_factor = g_battleInfoBuck.bonusFactorRp(name);
                     }
+                    dictionary a;
+                    a["%bf"] = ""+bonusFactor;
+                    float bf = g_battleInfoBuck.bonusFactor(name);
+                    float bfx = g_battleInfoBuck.bonusFactorXp(name);
+                    float bfr = g_battleInfoBuck.bonusFactorRp(name);
+                    notify(m_metagame,"全局倍率="+bf+"，xp倍率="+bfx+"，rp倍率="+bfr, dictionary(), "misc", pid, false, "", 1.0);
 
                     if(m_factor <= 1){
                         notify(m_metagame,"加成卡使用失败，请尝试重新使用", dictionary(), "misc", pid, false, "", 1.0);
-                        addItemInBackpack(m_metagame,cid,"carry_item",itemKey);
-                        float bf = g_battleInfoBuck.bonusFactor(name);
-                        float bfx = g_battleInfoBuck.bonusFactorXp(name);
-                        float bfr = g_battleInfoBuck.bonusFactorRp(name);
+                        bf = g_battleInfoBuck.bonusFactor(name);
+                        bfx = g_battleInfoBuck.bonusFactorXp(name);
+                        bfr = g_battleInfoBuck.bonusFactorRp(name);
                         notify(m_metagame,"测试输出：全局倍率="+bf+"，xp倍率="+bfx+"，rp倍率="+bfr, dictionary(), "misc", pid, false, "", 1.0);
                         g_battleInfoBuck.setBonusFactor(name,1.0);
                         g_battleInfoBuck.setBonusFactorXp(name,1.0);
                         g_battleInfoBuck.setBonusFactorRp(name,1.0);
-                        m_firstUseInfoBuck.removeFirst(name,"hd_bonusfactor");
                     }
                     
                 }

@@ -759,7 +759,7 @@ class battleInfoBuck{
 		m_battleInfos.resize(0);
 	}
 
-	float getXpReward(Metagame@ m_metagame,const XmlElement@ player){
+	float getXpReward(Metagame@ m_metagame,const XmlElement@ player,bool report = true){
 		if(m_battleInfos is null || player is null){return 0;}
 		int pid = player.getIntAttribute("player_id");
 		string name = player.getStringAttribute("name");
@@ -772,10 +772,12 @@ class battleInfoBuck{
 				uint pt = m_battleInfos[i].playingTime();
 				uint tc = m_battleInfos[i].tkCount();
 				uint dc = m_battleInfos[i].deadCount();
-				float bf = m_battleInfos[i].bonusFactor()*m_battleInfos[i].bonusFactorXp() - tc*0.04;
+				float bf = m_battleInfos[i].bonusFactor() + m_battleInfos[i].bonusFactorXp() - 1 - tc*0.04;
 				if(pt >= 30){
 					bf = bf*(1-(pt-30.0)/60.0);
-					notify(m_metagame,"Battle Time Too Long,BonusFacto Decrease", dictionary(), "misc", pid, false, "", 1.0);
+					if(report){
+						notify(m_metagame,"Battle Time Too Long,BonusFacto Decrease", dictionary(), "misc", pid, false, "", 1.0);
+					}
 				}
 				if(bf > 3.4){
 					bf = 3.4;
@@ -790,7 +792,7 @@ class battleInfoBuck{
 				if(mc >= 8 ){	//防刷
 					mc = 8;
 				}
-				float ptRewardBase = 0.1; //游玩时长奖励 2000xp
+				float ptRewardBase = 0.1; //游玩时长奖励 1000xp
 				float mcRewardBase = 0.75; //支线任务奖励 7500xp
 				float kcRewardBase = 0.01; //杀敌奖励 100xp
 				float ocRewardBase = 0.007; //连杀奖励 70xp
@@ -832,7 +834,9 @@ class battleInfoBuck{
 				a["%dc"] = formatInt(dc);
 				a["%bf"] = ""+bf;
 				a["%xp"] = formatFloat(xp*10000);
-				notify(m_metagame,"BattleEndRewardXP", a, "misc", pid, true, "Battle End Reward XP", 1.0);
+				if(report){
+					notify(m_metagame,"BattleEndRewardXP", a, "misc", pid, true, "Battle End Reward XP", 1.0);
+				}
 				return xp;
 			}
 		}
@@ -851,10 +855,10 @@ class battleInfoBuck{
 				uint pt = m_battleInfos[i].playingTime();
 				uint tc = m_battleInfos[i].tkCount();
 				uint dc = m_battleInfos[i].deadCount();
-				float bf = m_battleInfos[i].bonusFactor()*m_battleInfos[i].bonusFactorRp() - tc*0.04;
+				float bf = m_battleInfos[i].bonusFactor() + m_battleInfos[i].bonusFactorRp() - 1 - tc*0.04;
 				if(pt >= 30){
 					bf = bf*(1-(pt-30.0)/60.0);
-					notify(m_metagame,"Battle Time Too Long,BonusFacto Decrease", dictionary(), "misc", pid, false, "", 1.0);
+					notify(m_metagame,"Battle Time Too Long,BonusFactor Decrease", dictionary(), "misc", pid, false, "", 1.0);
 				}
 				if(bf > 3.4){
 					bf = 3.4;

@@ -353,8 +353,8 @@ class itemdrop_event : Tracker {
 		}
 
 		//是否属于删除物品
+		if(g_debugMode){return;}
 		if(string(banned_backpack_item[itemKey]) != "" || string(banned_special_item[itemKey]) != "" || string(banned_stash_item[itemKey]) != ""){
-			//if(g_debugMode){return;}
 			if(playerId == -1){return;}//排除AI
 			array<Resource@> resources = array<Resource@>();
 			Resource@ res;
@@ -450,7 +450,8 @@ class itemdrop_event : Tracker {
 	//-------------------------------------------------------
 	protected void banVest(const XmlElement@ event){
 		// 防止升级的护甲被存起来。
-		_log("delete banVest");
+		_log("check delete banVest");
+		if(g_debugMode){return;}
 		string itemKey = event.getStringAttribute("item_key");
 		string targetVestKey = "hd_v_";
 		string tempKey = itemKey.substr(0,targetVestKey.size());
@@ -459,12 +460,14 @@ class itemdrop_event : Tracker {
 		if(tempKey == targetVestKey ){
 			deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
 			deleteItemInStash(m_metagame,characterId,"carry_item",itemKey);
+			_log("delete banVest hd_v_");
 		}
 		targetVestKey = "hd_banzai_";
 		tempKey = itemKey.substr(0,targetVestKey.size());
 		if(tempKey == targetVestKey ){
 			deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
 			deleteItemInStash(m_metagame,characterId,"carry_item",itemKey);
+			_log("delete banVest hd_banzai_");
 		}
 	}
 

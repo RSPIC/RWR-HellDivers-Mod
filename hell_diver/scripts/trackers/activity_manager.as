@@ -141,6 +141,7 @@ class activity_manager : Tracker{
                 if(!m_playerStashInfo.isOpen()){
                     m_playerStashInfo.openStash();
                 }
+                
                 m_playerStashInfo.upgradeStash(2,true);
                 m_playerStashInfo.openStash();
             }

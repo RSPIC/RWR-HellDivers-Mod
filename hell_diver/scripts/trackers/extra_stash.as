@@ -136,13 +136,15 @@ class playerStashInfo {
         array<const XmlElement@> m_stashs = allInfo.getChilds();
         for(int j = 0 ; j < int(m_stashs.size()) ; ++j){
             XmlElement@ m_stash = XmlElement(m_stashs[j]);
-            string sid = m_stash.getStringAttribute("sid");
-            m_stashSize = m_stash.getIntAttribute("stash_size");
-            if(m_sid == sid){
-                array<const XmlElement@> childs = m_stash.getChilds();
-                m_stashObject.resize(0);
-                for(uint i = 0 ; i < childs.size() ; ++i){
-                    m_stashObject.insertLast(XmlElement(childs[i]));
+            if(m_stash.getName() == "player"){
+                string sid = m_stash.getStringAttribute("sid");
+                m_stashSize = m_stash.getIntAttribute("stash_size");
+                if(m_sid == sid){
+                    array<const XmlElement@> childs = m_stash.getChilds();
+                    m_stashObject.resize(0);
+                    for(uint i = 0 ; i < childs.size() ; ++i){
+                        m_stashObject.insertLast(XmlElement(childs[i]));
+                    }
                 }
             }
         }

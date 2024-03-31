@@ -610,6 +610,42 @@
         <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
         <capacity value="12" source="rank" source_value="0" />
     </projectile>
+    <!-- 1.7.1 -->
+    <projectile file="hd_hellpod_call.projectile" name="Blaze [Skin]" key="token_blaze.projectile" >
+        <hud_icon filename="token_blaze.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Goldenglow [Skin]" key="token_goldenglow.projectile" >
+        <hud_icon filename="token_goldenglow.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Pamiat Merkuria [Skin]" key="token_pamiat_merkuria.projectile" >
+        <hud_icon filename="token_pamiat_merkuria.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Pamiat Merkuria Alter [Skin]" key="token_pamiat_merkuria_alter.projectile" >
+        <hud_icon filename="token_pamiat_merkuria_alter.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Skadi [Skin]" key="token_skadi.projectile" >
+        <hud_icon filename="token_skadi.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Arona [Skin]" key="token_arona.projectile" >
+        <hud_icon filename="token_arona.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Gehenna Member [Skin]" key="token_gehenna_member.projectile" >
+        <hud_icon filename="token_gehenna_member.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
 
 
     <!-- 其他 -->

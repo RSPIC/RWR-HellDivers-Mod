@@ -417,6 +417,30 @@
 
 		</attribute_config>
 	</soldier> 
+	<soldier name="BehemothM" spawn_score="0.2" copy_from="base" >
+		<character filename="bugs_behemoth_state.character">	
+		</character>
+		<ai filename="bugs_scout.ai" /> 
+		<model filename="bugs_behemoth.xml" />
+
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="bugs_common.resources">
+			<weapon key="bugs_behemoth_main_melee.weapon" />
+			<projectile key="bugs_general_grenade.projectile" enabled="0" />
+			<carry_item key="general_vest_1000" />
+		</resources>
+
+		<item_class_existence_config>
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="1" />
+		</item_class_existence_config>
+
+		<!-- low XP, likely to join player squad -->
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="10.0" max="10.0" />
+
+		</attribute_config>
+	</soldier> 
 	<!-- Tank -->
 	<soldier name="Tank" spawn_score="0.1" copy_from="base" >
 		<character filename="bugs_behemoth_state.character">	

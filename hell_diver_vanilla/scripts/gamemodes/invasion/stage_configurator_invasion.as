@@ -232,7 +232,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			addStage(setupStage4());          // map7 #4 3
 			addStage(setupStage15());         // map1_2 #5 太大
 			addStage(setupStage12());         // map14 #6
-			addStage(setupStage17());         // map17  #8 5
+			//addStage(setupStage17());         // map17  #8 5  ver1.7.1 3.24 不自动过图
 			addStage(setupStage18());         // map13_2 #9 6
 			addStage(setupStage13());         // map16  #11  8
 			//addStage(setupFinalStage1());     // map11 #12 潜行9

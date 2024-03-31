@@ -98,7 +98,7 @@ class schedule_Check : Tracker {
 
                 Tutor_63type_107mm(m_metagame,name,pid,equipList);
                 EXOArmorChange(m_metagame,name,pid,cid,equipList);
-                checkBanzai(m_metagame,name,pid,equipList);
+                checkBanzai(m_metagame,name,pid,cid,equipList);
                 checkPatricia(m_metagame,name,pid,cid,equipList);
                 checkHyperMega(m_metagame,name,pid,cid,equipList);
                 checkVergil(m_metagame,name,pid,cid,equipList);
@@ -161,12 +161,21 @@ class schedule_Check : Tracker {
         m_firstUseInfoBuck.addInfo(name);
     }
     // ----------------------------------------------------
-	protected void checkBanzai(Metagame@ metagame,string&in name,int&in pid,dictionary&in equipList){
+	protected void checkBanzai(Metagame@ metagame,string&in name,int&in pid,int&in cid,dictionary&in equipList){
 		string equipKey;
         if(equipList.get("1",equipKey)){//副手武器
             if(equipKey == "ex_cl_banzai.weapon" ){
                 if(m_firstUseInfoBuck.isFirst(name,equipKey)){
                     notify(metagame, "Help - Banzai", dictionary(), "misc", pid, true, "Banzai Help", 1.0);
+                }
+            }
+        }
+        string equipKey_vest = "";
+        if(equipList.get("4",equipKey_vest)){//护甲
+            if(equipKey_vest == "hd_banzai_0"){
+                string key = cid + name + "ex_cl_banzai";
+                if(!g_IRQ.isExist(key)){
+                    editPlayerVest(metagame,cid,"helldivers_vest",4);
                 }
             }
         }
@@ -373,6 +382,10 @@ class schedule_Check : Tracker {
 		if(message != "/help"){return;}
 		int pid = event.getIntAttribute("player_id");
 		gameHelp(m_metagame,pid);
+
+        if(message == "refreshCheck"){
+            refresh();
+        }
 	}
     protected void gameHelp(Metagame@ m_metagame,int pid){
 		notify(m_metagame, "Help - Content", dictionary(), "misc", pid, true, "Tutor Help", 1.0);

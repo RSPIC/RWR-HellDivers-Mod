@@ -385,6 +385,20 @@ class BasicCommandHandler : Tracker {
 					"</command>";
 				m_metagame.getComms().send(command);
 			
+		} else  if(checkCommand(message, "stun")) {
+			const XmlElement@ playerInfo = getPlayerInfo(m_metagame, senderId);
+			const XmlElement@ characterInfo = getCharacterInfo(m_metagame, playerInfo.getIntAttribute("character_id"));
+			Vector3 pos = stringToVector3(playerInfo.getStringAttribute("position"));	
+			pos=pos.add(Vector3(0,1,0));
+			string c = 
+				"<command class='create_instance'" +
+				" faction_id='" + 0 + "'" +
+				" instance_class='grenade'" +
+				" instance_key='" + "hd_airdropped_stun_mine_mk3_stun_damage.projectile" + "'" +
+				" position='" + pos.toString() + "'" +
+				" character_id='" + playerInfo.getIntAttribute("character_id") + "'/>";				
+			m_metagame.getComms().send(c);
+			
 		} else  if(checkCommand(message, "dead")) {
 			const XmlElement@ info = getPlayerInfo(m_metagame, senderId);
 			int characterId = info.getIntAttribute("character_id");

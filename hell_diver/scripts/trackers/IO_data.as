@@ -1197,6 +1197,31 @@ class IO_data : Tracker {
             notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
             return true;
         }
+        if(access_tag == "sponsor_mk5"){//赞助者 328
+            @res = Resource("hd_bonusfactor_al_240","carry_item");
+            res.addToResources(resources,10);
+            @res = Resource("reward_box_skin.carry_item","carry_item");
+            res.addToResources(resources,10);
+            @res = Resource("reward_box_vehicle.carry_item","carry_item");
+            res.addToResources(resources,10);
+            @res = Resource("reward_box_music.carry_item","carry_item");
+            res.addToResources(resources,3);
+            @res = Resource("reward_box_weapon_v.carry_item","carry_item");//MK5
+            res.addToResources(resources,3);
+            @res = Resource("reward_box_weapon_delta.carry_item","carry_item");//MK4
+            res.addToResources(resources,5);
+            @res = Resource("reward_box_weapon_lamda.carry_item","carry_item");//MK3
+            res.addToResources(resources,5);
+            @res = Resource("reward_box_collection.carry_item","carry_item");//fumo
+            res.addToResources(resources,2);
+
+            addListItemInBackpack(m_metagame,cid,resources);
+            GiveRP(m_metagame,cid,6480000);
+            dictionary a;
+            a["%reward"] = "RP: 648w、加成卡和战利品箱子";
+            notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+            return true;
+        }
         if(access_tag == "Gift_alpha_1"){//小礼品 alpha 系列 钱和加成卡
             @res = Resource("hd_bonusfactor_al_75","carry_item");
             res.addToResources(resources,1);

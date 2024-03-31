@@ -40,6 +40,8 @@ void main(dictionary@ inputData) {
 
         settings.m_single_player = true;
 
+        settings.m_GameMode = "";
+
         array<string> overlays = {
                 "media/packages/hell_diver"
         };

@@ -1022,6 +1022,15 @@
 	<text key="Latu [Skin]"  text="拉图 [信物]" />
 	<text key="token_amau_ako [Skin]"  text="亚子 [信物]" />
 	<text key="Goto Hitori [Bunny Girl][Skin]"  text="波奇 [兔女郎][信物]" />
+	<!-- 1.7.1 -->
+	<text key="Blaze [Skin]"  text="煌 [信物]" />
+	<text key="Goldenglow [Skin]"  text="澄闪 [信物]" />
+	<text key="Pamiat Merkuria [Skin]"  text="水星纪念 [信物]" />
+	<text key="Pamiat Merkuria Alter [Skin]"  text="水星纪念·改 [信物]" />
+	<text key="Skadi [Skin]"  text="水星纪念·改 [信物]" />
+	<text key="Arona [Skin]"  text="阿罗娜 [信物]" />
+	<text key="Gehenna Member [Skin]"  text="格黑娜杂鱼 [信物]" />
+
 
 <!-- ex武器 -->
 	<text key="Leviathan Breath"  text="利维坦之息 [反重甲]" />
@@ -1251,7 +1260,21 @@
 	<text key="Impaler Melee"  text="刺钉虫" />
 	<text key="Elite Melee"  text="精英部队" />
 	<text key="Brood Commander Melee"  text="虫族指挥官" />
-	<text key="Behemoth Melee"  text="巨兽-精英 [中甲]" />
+	<text key="Behemoth Melee"  text="巨兽-精英 [重甲]" />
+<!-- 光能 -->
+	<text key="Observer"  text="黑曜石观测者" />
+	<text key="Watcher"  text="光能观测者" />
+	<text key="Hunter"  text="光猎者" />
+	<text key="Apprentice"  text="光能学徒" />
+	<text key="Tripod"  text="三脚电械" />
+	<text key="Strider"  text="步行者" />
+	<text key="Obelisk"  text="奥贝利斯" />
+	<text key="Illusionist"  text="幻光大师" />
+	<text key="CouncilMember"  text="光能决策者" />
+	<text key="Council Member"  text="光能决策者" />
+	<text key="illuminate"  text="光能者" />
+	<text key="Illuminate"  text="光能者" />
+
 
 <!-- 战利品 -->
 	<text key="Cirno Fumo"  text="琪露诺 Fumo [收藏品][出售至军械库自动存储][脚本仓库兑换道具][超稀有]" />
@@ -1659,10 +1682,10 @@ TK其他玩家同样会造成倍率因子的下降" />
 	<text key="Bonus card [XP]" text="经验加成卡[掉落消失]" />
 	<text key="Bonus card [RP]" text="资源加成卡[掉落消失]" />
 
-	<text key="The bonus has taken effect" text="加成已生效" />
+	<text key="The bonus has taken effect" text="加成已生效,注意最大上限为3.4倍,溢出不返还" />
 	<text key="Now Factor" text="当前倍率:&#37;bf" />
 	<text key="The bonus can only be applied once" text="加成只能生效一次" />
-	<text key="Battle Time Too Long,BonusFacto Decrease" text="战斗时间过长,倍率因子将随时间下降" />
+	<text key="Battle Time Too Long,BonusFactor Decrease" text="战斗时间过长,倍率因子将随时间下降" />
 	<text key="OverTime,You can only use this in first 5 min" text="使用失败,只能在加入战斗前五分钟内使用" />
 
 	<text key="Vote Ticket" text="民主选票[功能兑换券道具][出售至军械库自动存储]" />

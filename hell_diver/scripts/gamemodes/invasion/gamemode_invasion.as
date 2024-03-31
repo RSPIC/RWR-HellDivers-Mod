@@ -63,6 +63,7 @@
 #include "extra_stash.as"
 #include "vehicle_recycle.as"
 #include "activity_manager.as"
+#include "KeYan.as"
 
 
 // --------------------------------------------
@@ -388,6 +389,7 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		addTracker(extra_stash(this));  
 		addTracker(vehicle_recycle(this));  
 		addTracker(activity_manager(this));  
+		addTracker(KeYan(this));  
 	}
 
 	protected void setupDisableRadioAtMatchOver() {

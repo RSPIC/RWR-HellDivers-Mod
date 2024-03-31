@@ -171,6 +171,14 @@ dictionary canStoreItem = {
     {"token_latu.projectile","[拉图 [信物]]"},
     {"token_amau_ako.projectile","[亚子 [信物]]"},
     {"token_goto_hitori.projectile","[波奇 [兔女郎][信物]]"},
+    // 1.7.1
+    {"token_blaze.projectile","[煌 [信物]]"},
+    {"token_goldenglow.projectile","[澄闪 [信物]]"},
+    {"token_pamiat_merkuria.projectile","[水星纪念 [信物]]"},
+    {"token_pamiat_merkuria_alter.projectile","[水星纪念·改 [信物]]"},
+    {"token_skadi.projectile","[斯卡蒂 [信物]]"},
+    {"token_arona.projectile","[阿罗娜 [信物]]"},
+    {"token_gehenna_member.projectile","[格黑娜杂鱼 [信物]]"},
 
     {"wiesel_tow_call.projectile","[鼬鼠 [陶氏]]"},
     {"lav6_call.projectile","[LAV-6]"},
