@@ -19,7 +19,7 @@
 	<model filename="acg_gawr_gura.xml"  > <!--噶呜·古拉 鲨鱼--><requirement class="projectile" slot="0" key="token_gawr_gura.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_kagamine_rin.xml"  > <!--镜音铃 by DNTK--><requirement class="projectile" slot="0" key="token_kagamine_rin.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_heavy_equip_jk_ii.xml"  > <!--重装JK II by DNTK--><requirement class="projectile" slot="0" key="token_heavy_equip_jk_ii.projectile"/><requirement class="rank" range="0 999999"/></model>
-	<model filename="acg_incomparable.xml"  > <!--无比 by yaba--><requirement class="projectile" slot="0" key="token_incomparable.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_incomparable_no_weapon.xml"  > <!--无比 by yaba--><requirement class="projectile" slot="0" key="token_incomparable.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_alibina.xml"  > <!--阿莉比娜  by Kurumi--><requirement class="projectile" slot="0" key="token_alibina.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_strelka.xml"  > <!--by Kurumi--><requirement class="projectile" slot="0" key="token_strelka.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_amamiya_kokoro.xml"  > <!--阿喵喵 by Keilsama--><requirement class="projectile" slot="0" key="token_amamiya_kokoro.projectile"/><requirement class="rank" range="0 999999"/></model>
@@ -33,6 +33,14 @@
 	<model filename="acg_racing_miku_2022.xml"  > <!--Miku by DNTK--><requirement class="projectile" slot="0" key="token_racing_miku_2022.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_exo_cat.xml"  > <!--机甲喵喵--><requirement class="projectile" slot="0" key="token_exo_cat.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_latu.xml"  > <!--拉图 by DNTK--><requirement class="projectile" slot="0" key="token_latu.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_dndn_porno.xml"  > <!--多娜多娜 帕诺尔 by DNTK--><requirement class="projectile" slot="0" key="token_dndn_porno.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_kirito.xml"  > <!--桐人 by Sinon--><requirement class="projectile" slot="0" key="token_kirito.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_lona.xml"  > <!--伊欧娜 by Sinon--><requirement class="projectile" slot="0" key="token_lona.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_misaka_10032_winter.xml"  > <!--御坂-10032 by Sinon--><requirement class="projectile" slot="0" key="token_misaka_10032_winter.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_misaka_mikoto_winter.xml"  > <!--御坂美琴 by Sinon--><requirement class="projectile" slot="0" key="token_misaka_mikoto_winter.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_sinon.xml"  > <!--诗乃 by Sinon--><requirement class="projectile" slot="0" key="token_sinon.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_sinon_black.xml"  > <!--诗乃 [黑] by Sinon--><requirement class="projectile" slot="0" key="token_sinon_black.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_yuuki_ggo.xml"  > <!--由纪 by Sinon--><requirement class="projectile" slot="0" key="token_yuuki_ggo.projectile"/><requirement class="rank" range="0 999999"/></model>
 
 <!-- 明日方舟 -->
 	<model filename="acg_skyfire.xml"  > <!--天火--><requirement class="projectile" slot="0" key="token_skyfire.projectile"/><requirement class="rank" range="0 999999"/></model>
@@ -72,7 +80,7 @@
 	<model filename="acg_graf_spee_sweater_ver.xml"  > <!--斯佩伯爵 毛衣常服[平和的一天]--><requirement class="projectile" slot="0" key="token_graf_spee_sweater_ver.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_felix_schultz.xml"  > <!--菲利克斯舒尔茨--><requirement class="projectile" slot="0" key="token_felix_schultz.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_shinano.xml"  > <!--信浓--><requirement class="projectile" slot="0" key="token_shinano.projectile"/><requirement class="rank" range="0 999999"/></model>
-	<model filename="acg_pamiat_merkuria.xml"  > <!--水星纪念--><requirement class="projectile" slot="0" key="toketoken_pamiat_merkurian_shinano.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_pamiat_merkuria.xml"  > <!--水星纪念--><requirement class="projectile" slot="0" key="token_pamiat_merkuria.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_pamiat_merkuria_alter.xml"  > <!--水星纪念 改造--><requirement class="projectile" slot="0" key="token_pamiat_merkuria_alter.projectile"/><requirement class="rank" range="0 999999"/></model>
 <!-- 动漫 -->
 	<model filename="acg_iruru.xml"  > <!--伊露露--><requirement class="projectile" slot="0" key="token_iruru.projectile"/><requirement class="rank" range="0 999999"/></model>
@@ -95,7 +103,7 @@
 	<model filename="acg_takanashi_hoshino.xml" > <!--小鸟游星野--><requirement class="projectile" slot="0" key="token_takanashi_hoshino.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_takanashi_hoshino_swim_ver.xml" > <!--小鸟游星野 水着ver--><requirement class="projectile" slot="0" key="token_takanashi_hoshino_swim_ver.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_sorasaki_hina.xml" ><!--空崎阳奈--><requirement class="projectile" slot="0" key="token_sorasaki_hina.projectile"/><requirement class="rank" range="0 999999"/></model>
-	<model filename="acg_miyu.xml" ><!--空崎阳奈--><requirement class="projectile" slot="0" key="token_miyu.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_miyu.xml" ><!--美游--><requirement class="projectile" slot="0" key="token_miyu.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_mari_lochi_gymsuit_ver.xml" ><!--玛丽 体操服Ver--><requirement class="projectile" slot="0" key="token_mari_lochi_gymsuit_ver.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_shirasu_azusa.xml" ><!--白洲梓 by Ena--><requirement class="projectile" slot="0" key="token_shirasu_azusa.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_ba_iroha.xml" ><!--伊吕波--><requirement class="projectile" slot="0" key="token_ba_iroha.projectile"/><requirement class="rank" range="0 999999"/></model>
@@ -138,6 +146,7 @@
 	<model filename="acg_ump45_white.xml" > <!--UMP 45--><requirement class="projectile" slot="0" key="token_ump45_white.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_vepley.xml" > <!--维普蕾--><requirement class="projectile" slot="0" key="token_vepley.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_florence_spring.xml" > <!--芙洛伦 by DNTK--><requirement class="projectile" slot="0" key="token_florence_spring.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_abandoned_isomer.xml"  > <!--失格异构体 by DNTK--><requirement class="projectile" slot="0" key="token_abandoned_isomer.projectile"/><requirement class="rank" range="0 999999"/></model>
 <!-- 灰烬战线 -->
 	<model filename="acg_88mm_flak41.xml"  > <!--88炮--><requirement class="projectile" slot="0" key="token_88mm_flak41.projectile"/><requirement class="rank" range="0 999999"/></model>
 

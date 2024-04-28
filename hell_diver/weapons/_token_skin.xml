@@ -646,6 +646,53 @@
         <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
         <capacity value="12" source="rank" source_value="0" />
     </projectile>
+    <!-- 1.7.1fix -->
+    <projectile file="hd_hellpod_call.projectile" name="Abandoned Isomer [Skin]" key="token_abandoned_isomer.projectile" >
+        <hud_icon filename="token_abandoned_isomer.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Porno [Skin]" key="token_dndn_porno.projectile" >
+        <hud_icon filename="token_dndn_porno.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <!-- 1.8.0 -->
+    <projectile file="hd_hellpod_call.projectile" name="Kirito [Skin]" key="token_kirito.projectile" >
+        <hud_icon filename="token_kirito.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Lona [Skin]" key="token_lona.projectile" >
+        <hud_icon filename="token_lona.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Misaka 10032 [Winter][Skin]" key="token_misaka_10032_winter.projectile" >
+        <hud_icon filename="token_misaka_10032_winter.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Misaka Mikoto [Winter][Skin]" key="token_misaka_mikoto_winter.projectile" >
+        <hud_icon filename="token_misaka_mikoto_winter.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Sinon [Skin]" key="token_sinon.projectile" >
+        <hud_icon filename="token_sinon.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Sinon [Black][Skin]" key="token_sinon_black.projectile" >
+        <hud_icon filename="token_sinon_black.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Yuuki [GGO][Skin]" key="token_yuuki_ggo.projectile" >
+        <hud_icon filename="token_yuuki_ggo.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
 
 
     <!-- 其他 -->

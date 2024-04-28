@@ -50,7 +50,7 @@ void main(dictionary@ inputData) {
 	mode='HD'
         persistency='forever'
 	comment='地狱潜兵模组  QQ：498520233 1倍xp'
-	max_players='12'>
+	max_players='16'>
 	<client_faction id='0' />
 </command>
 """;

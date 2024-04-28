@@ -13,7 +13,7 @@ void main(dictionary@ inputData) {
         settings.fromXmlElement(inputSettings);
         _setupLog("dev_verbose");
 
-        settings.m_factionChoice = 0;                  // 
+        //settings.m_factionChoice = 0;                  // 
         settings.m_playerAiCompensationFactor = 1.0;   // was 1.1  (1.75)
 
         settings.m_fellowCapacityFactor = 1.0;
@@ -54,7 +54,7 @@ void main(dictionary@ inputData) {
                 persistency='forever'
                 comment='地狱潜兵模组  QQ：498520233 '
                 max_players='20'>
-                <client_faction id='0' />
+                />
         </command>
         """;
 

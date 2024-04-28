@@ -22,7 +22,5 @@
   <event>
 		<trigger class="destroy" />		
     <result class="spawn" instance_class="visual_item" instance_key="burning_piece_barrier.visual_item" min_amount="3" max_amount="5" offset="0 1.0 0" position_spread="1.5 1.5" direction_spread="0.02 0.1" /> 
-  </event>
-    
-  
+  </event> 
 </vehicle>

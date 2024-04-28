@@ -222,7 +222,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			addStage(setupStage6());          // map5 #17 15
 			//addStage(setupFinalStage2());     // map12 #18 黑猫
 			addStage(setupStage19());         // map18 #19
-			addStage(setupStage11());         // map13 #20
+			//addStage(setupStage11());         // map13 #20 ver1.7.1 3.31 不自动过图
 			addStage(setupStage7());          // map6 #0
 			addStage(setupStage5());          // map1 #16 14 
 			addStage(setupStage1());          // map2 #1
@@ -237,13 +237,13 @@ class StageConfiguratorInvasion : StageConfigurator {
 			addStage(setupStage13());         // map16  #11  8
 			//addStage(setupFinalStage1());     // map11 #12 潜行9
 			addStage(setupStageCasake_Bay());         // Casake_Bay #21
-			addStage(setupStage20());         // map19 #17	13 鹅城
+			// addStage(setupStage20());         // map19 #17	13 鹅城
 			//addStage(setupRoberto());         // 创意工坊图 ver1.6.0  难以修改，删除 12.31 HOTCAT建议
 			//addStage(setupClairemont());      // 创意工坊图 ver1.6.0
 			//addStage(setupViper());           // 创意工坊图 ver1.6.0
-			addStage(setupDef_lab_koth());    // 创意工坊图 ver1.6.0
-			addStage(setupEastport());        // 创意工坊图 ver1.6.0
-			addStage(setupWave_Town());       // 创意工坊图 ver1.6.0
+			// addStage(setupDef_lab_koth());    // 创意工坊图 ver1.6.0
+			// addStage(setupEastport());        // 创意工坊图 ver1.6.0
+			// addStage(setupWave_Town());       // 创意工坊图 ver1.6.0
 		}
 	}
 	protected void setupActivityStages() {

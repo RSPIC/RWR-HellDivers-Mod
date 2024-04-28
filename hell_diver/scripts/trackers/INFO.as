@@ -175,17 +175,17 @@ class factionInfoBuck {
 }
 //----------------------------------------------------------
 class playerInfo {
-	protected string m_name;
-	protected string m_group;
-	protected int m_pid;
-	protected int m_cid;
-	protected int m_fid;
-	protected int m_dead;
-	protected int m_wound;
-	protected float m_xp;
-	protected float m_rp;
-	protected string m_hash;
-	protected string m_sid;
+	string m_name;
+	string m_group;
+	int m_pid;
+	int m_cid;
+	int m_fid;
+	int m_dead;
+	int m_wound;
+	float m_xp;
+	float m_rp;
+	string m_hash;
+	string m_sid;
 
 	playerInfo(const string&in name,const int&in pid,const int&in cid,const int&in fid,const int&in dead,const int&in wound,const float&in xp,const float&in rp,string group = "default"){
 		m_name = name;
@@ -209,6 +209,30 @@ class playerInfo {
 		m_wound = wound;
 		m_xp = xp;
 		m_rp = rp;
+	}
+
+	string output(){
+		string data = "debugOPT"+"name="+m_name+" "+
+		"pid="+m_pid+" "+
+		"cid="+m_cid+" "+
+		"sid="+m_sid+" "+
+		"fid="+m_fid+" "+
+		"hash="+m_hash+" ";
+		return data;
+	}
+	bool compare(playerInfo@ new){
+		if(m_name == new.m_name ||
+		m_pid == new.m_pid ||
+		m_cid == new.m_cid ||
+		m_hash == new.m_hash ||
+		m_sid == new.m_sid 
+		){
+			_log("compare the same data");
+			_log(output());
+			_log(new.output());
+			return true;
+		}
+		return false;
 	}
 
 	string getName(){return m_name;}
@@ -280,8 +304,65 @@ class playerInfo {
 
 class playerInfoBuck{
 	protected array<playerInfo@> m_playerInfo;
+	protected Metagame@ metagame;
+
+	string output(){
+		string data;
+		_log("m_playerInfo.size="+size());
+		for(uint i=0; i<size();++i){
+			string data0 = m_playerInfo[i].output();
+			_log("index="+i+" "+data0);
+			data = data + data0;
+		}
+		return data;
+	}
+	void refresh(){
+		for(uint i=0; i<size();++i){
+			playerInfo@ m_info = m_playerInfo[i];
+			for(uint j=0; j<size();++j){
+				if(j == i){continue;}
+				if(m_info.compare(m_playerInfo[j])){
+					_log("find same info in playerinfos,refresh");
+					updateAll();
+				}
+			}
+		}
+	}
+
+	void updateAll(){
+		_log("updateAll 301");
+		if(metagame is null){return;}
+		array<const XmlElement@> players = getPlayers(metagame);
+        clearAll();
+        for(uint i = 0 ; i < players.size() ; i++){
+            const XmlElement@ player = players[i];
+            if(player is null){continue;}
+            string name = player.getStringAttribute("name");
+            string profile_hash = player.getStringAttribute("profile_hash");
+            string sid = player.getStringAttribute("sid");
+            int cid = player.getIntAttribute("character_id");
+            int pid = player.getIntAttribute("player_id");
+            if(g_debugMode) _report(metagame,"更新玩家CID，玩家名为="+name+",CID为="+cid);
+            int fid = player.getIntAttribute("faction_id");
+            const XmlElement@ character = getCharacterInfo(metagame,cid);
+            if(character is null){continue;}
+            int wound = character.getIntAttribute("wounded");
+            int dead = character.getIntAttribute("dead");
+            string group = character.getStringAttribute("soldier_group_name");
+            float xp = character.getFloatAttribute("xp");
+            float rp = character.getFloatAttribute("rp");
+            addNewInfo(name,pid,cid,fid,dead,wound,xp,rp,group);
+            setHash(name,profile_hash);
+            setSid(name,sid);
+        }
+		output();
+	}
 
 	playerInfoBuck(){
+		clearAll();
+	}
+	playerInfoBuck(Metagame@ in_metagame){
+		@metagame = @in_metagame;
 		clearAll();
 	}
 
@@ -293,6 +374,9 @@ class playerInfoBuck{
 		}
 		playerInfo@ newInfo = playerInfo(name,pid,cid,fid,dead,wound,xp,rp,group);
 		m_playerInfo.insertLast(newInfo);
+		_log("addNewInfo");
+		output();
+		refresh();
 	}
 
 	void update(string&in name,int&in pid,int&in cid,int&in fid,int&in dead,int&in wound,float&in xp,float&in rp,string group = "default"){
@@ -301,6 +385,9 @@ class playerInfoBuck{
 				m_playerInfo[i].update(name,pid,cid,fid,dead,wound,xp,rp,group);
 			}
 		}
+		_log("update");
+		output();
+		refresh();
 	}
 
 	bool exists(string name){
@@ -329,11 +416,33 @@ class playerInfoBuck{
 		}
 		return -1;
 	}
+	int getCidByPid(Metagame@ m_metagame,int&in pid){
+		array<const XmlElement@> players = getPlayers(m_metagame);
+		for(uint j = 0; j < players.size() ; ++j){
+			const XmlElement@ player = players[j];
+			if(player is null){continue;}
+			if(pid == player.getIntAttribute("player_id")){
+				return player.getIntAttribute("character_id");
+			}
+		}
+		return -1;
+	}
 	int getCidByName(string&in name){
 		for(uint i=0; i<size();++i){
 			int cid = m_playerInfo[i].getCidByName(name);
 			if(cid != -1){
 				return cid;
+			}
+		}
+		return -1;
+	}
+	int getCidByName(Metagame@ m_metagame,string&in name){
+		array<const XmlElement@> players = getPlayers(m_metagame);
+		for(uint j = 0; j < players.size() ; ++j){
+			const XmlElement@ player = players[j];
+			if(player is null){continue;}
+			if(name == player.getStringAttribute("name")){
+				return player.getIntAttribute("character_id");
 			}
 		}
 		return -1;
@@ -347,11 +456,33 @@ class playerInfoBuck{
 		}
 		return -1;
 	}
+	int getFidByPid(Metagame@ m_metagame,int&in pid){
+		array<const XmlElement@> players = getPlayers(m_metagame);
+		for(uint j = 0; j < players.size() ; ++j){
+			const XmlElement@ player = players[j];
+			if(player is null){continue;}
+			if(pid == player.getIntAttribute("player_id")){
+				return player.getIntAttribute("faction_id");
+			}
+		}
+		return -1;
+	}
 	int getFidByCid(int&in cid){
 		for(uint i=0; i<size();++i){
 			int fid = m_playerInfo[i].getFidByCid(cid);
 			if(fid != -1){
 				return fid;
+			}
+		}
+		return -1;
+	}
+	int getFidByCid(Metagame@ m_metagame,int&in cid){
+		array<const XmlElement@> players = getPlayers(m_metagame);
+		for(uint j = 0; j < players.size() ; ++j){
+			const XmlElement@ player = players[j];
+			if(player is null){continue;}
+			if(cid == player.getIntAttribute("character_id")){
+				return player.getIntAttribute("faction_id");
 			}
 		}
 		return -1;
@@ -365,11 +496,33 @@ class playerInfoBuck{
 		}
 		return -1;
 	}
+	int getPidByCid(Metagame@ m_metagame,int&in cid){
+		array<const XmlElement@> players = getPlayers(m_metagame);
+		for(uint j = 0; j < players.size() ; ++j){
+			const XmlElement@ player = players[j];
+			if(player is null){continue;}
+			if(cid == player.getIntAttribute("character_id")){
+				return player.getIntAttribute("player_id");
+			}
+		}
+		return -1;
+	}
 	int getPidByName(string&in name){
 		for(uint i=0; i<size();++i){
 			int pid = m_playerInfo[i].getPidByName(name);
 			if(pid != -1){
 				return pid;
+			}
+		}
+		return -1;
+	}
+	int getPidByName(Metagame@ m_metagame,string&in name){
+		array<const XmlElement@> players = getPlayers(m_metagame);
+		for(uint j = 0; j < players.size() ; ++j){
+			const XmlElement@ player = players[j];
+			if(player is null){continue;}
+			if(name == player.getStringAttribute("name")){
+				return player.getIntAttribute("player_id");
 			}
 		}
 		return -1;
@@ -383,6 +536,17 @@ class playerInfoBuck{
 		}
 		return "";
 	}
+	string getNameByCid(Metagame@ m_metagame,int&in cid){
+		array<const XmlElement@> players = getPlayers(m_metagame);
+		for(uint j = 0; j < players.size() ; ++j){
+			const XmlElement@ player = players[j];
+			if(player is null){continue;}
+			if(cid == player.getIntAttribute("character_id")){
+				return player.getStringAttribute("name");
+			}
+		}
+		return "";
+	}
 	string getNameByPid(int&in pid){
 		for(uint i=0; i<size();++i){
 			string name = m_playerInfo[i].getNameByPid(pid);
@@ -392,7 +556,17 @@ class playerInfoBuck{
 		}
 		return "";
 	}
-
+	string getNameByPid(Metagame@ m_metagame,int&in pid){
+		array<const XmlElement@> players = getPlayers(m_metagame);
+		for(uint j = 0; j < players.size() ; ++j){
+			const XmlElement@ player = players[j];
+			if(player is null){continue;}
+			if(pid == player.getIntAttribute("player_id")){
+				return player.getStringAttribute("name");
+			}
+		}
+		return "";
+	}
 	void removeByName(string name){
 		for(uint i=0; i<size();++i){
 			string p_name = m_playerInfo[i].getName();
@@ -435,10 +609,32 @@ class playerInfoBuck{
 		}
 		return "";
 	}
+	string getHashByName(Metagame@ m_metagame,string&in name){
+		array<const XmlElement@> players = getPlayers(m_metagame);
+		for(uint j = 0; j < players.size() ; ++j){
+			const XmlElement@ player = players[j];
+			if(player is null){continue;}
+			if(name == player.getStringAttribute("name")){
+				return player.getStringAttribute("profile_hash");
+			}
+		}
+		return "";
+	}
 	string getHashBySid(string&in sid){
 		for(uint i=0; i<size();++i){
 			if(sid == m_playerInfo[i].getSid()){
 				return m_playerInfo[i].getHash();
+			}
+		}
+		return "";
+	}
+	string getHashBySid(Metagame@ m_metagame,string&in sid){
+		array<const XmlElement@> players = getPlayers(m_metagame);
+		for(uint j = 0; j < players.size() ; ++j){
+			const XmlElement@ player = players[j];
+			if(player is null){continue;}
+			if(sid == player.getStringAttribute("sid")){
+				return player.getStringAttribute("profile_hash");
 			}
 		}
 		return "";
@@ -451,10 +647,32 @@ class playerInfoBuck{
 		}
 		return "";
 	}
+	string getSidByHash(Metagame@ m_metagame,string&in hash){
+		array<const XmlElement@> players = getPlayers(m_metagame);
+		for(uint j = 0; j < players.size() ; ++j){
+			const XmlElement@ player = players[j];
+			if(player is null){continue;}
+			if(hash == player.getStringAttribute("profile_hash")){
+				return player.getStringAttribute("sid");
+			}
+		}
+		return "";
+	}
 	string getSidByName(string&in name){
 		for(uint i=0; i<size();++i){
 			if(name == m_playerInfo[i].getName()){
 				return m_playerInfo[i].getSid();
+			}
+		}
+		return "";
+	}
+	string getSidByName(Metagame@ m_metagame,string&in name){
+		array<const XmlElement@> players = getPlayers(m_metagame);
+		for(uint j = 0; j < players.size() ; ++j){
+			const XmlElement@ player = players[j];
+			if(player is null){continue;}
+			if(name == player.getStringAttribute("name")){
+				return player.getStringAttribute("sid");
 			}
 		}
 		return "";
@@ -501,6 +719,7 @@ class playerInfoBuck{
 	void clearAll(){
 		m_playerInfo.resize(0);
 	}
+
 }
 //----------------------------------------------------------
 class battleInfo {
@@ -950,6 +1169,8 @@ class vestInfo {
 	protected string m_vest;
 	protected bool m_autoRecover;
 	protected bool m_autoHeal;
+	protected bool m_impactGl;
+	protected bool m_healNeedle;
 	protected uint m_stratagemsFirst;
 	protected uint m_speedTime;
 	protected uint m_armorTime;
@@ -959,6 +1180,8 @@ class vestInfo {
 		m_name = name;
 		m_autoRecover = false;
 		m_autoHeal = false;
+		m_impactGl = false;
+		m_healNeedle = false;
 		m_stratagemsFirst = 0;
 		m_speedTime = 0;
 		m_armorTime = 0;
@@ -968,6 +1191,8 @@ class vestInfo {
 	string vest(){return m_vest;}
 	bool autoRecover(){return m_autoRecover;}
 	bool autoHeal(){return m_autoHeal;}
+	bool impactGl(){return m_impactGl;}
+	bool healNeedle(){return m_healNeedle;}
 	uint stratagemsFirst(){return m_stratagemsFirst;}
 	uint speedTime(){return m_speedTime;}
 	uint armorTime(){return m_armorTime;}
@@ -1003,6 +1228,20 @@ class vestInfo {
 		}
 		return false;
 	}
+	bool resetUpgrade(string&in name){
+		if(name == m_name){
+			m_autoRecover = false;
+			m_autoHeal = false;
+			m_impactGl = false;
+			m_healNeedle = false;
+			m_stratagemsFirst = 0;
+			m_speedTime = 0;
+			m_armorTime = 0;
+			m_upgradeTime = 0;
+			return true;
+		}
+		return false;
+	}
 	bool setAutoRecover(string&in name,bool&out state){
 		if(name == m_name){
 			m_autoRecover = !m_autoRecover;
@@ -1015,6 +1254,22 @@ class vestInfo {
 		if(name == m_name){
 			m_autoHeal = !m_autoHeal;
 			state = m_autoHeal;
+			return true;
+		}
+		return false;
+	}
+	bool setImpactGl(string&in name,bool&out state){
+		if(name == m_name){
+			m_impactGl = !m_impactGl;
+			state = m_impactGl;
+			return true;
+		}
+		return false;
+	}
+	bool setHealNeedle(string&in name,bool&out state){
+		if(name == m_name){
+			m_healNeedle = !m_healNeedle;
+			state = m_healNeedle;
 			return true;
 		}
 		return false;
@@ -1120,6 +1375,14 @@ class vestInfoBuck {
 		}
 		return false;
 	}
+	bool resetUpgrade(string&in name){
+		for(uint i = 0 ; i < m_vestInfos.size() ; ++i){
+			if(m_vestInfos[i].resetUpgrade(name)){
+				return true;
+			}	
+		}
+		return false;
+	}
 	bool setAutoRecover(string&in name,bool&out state){
 		for(uint i = 0 ; i < m_vestInfos.size() ; ++i){
 			if(m_vestInfos[i].setAutoRecover(name,state)){
@@ -1131,6 +1394,22 @@ class vestInfoBuck {
 	bool setAutoHeal(string&in name,bool&out state){
 		for(uint i = 0 ; i < m_vestInfos.size() ; ++i){
 			if(m_vestInfos[i].setAutoHeal(name,state)){
+				return true;
+			}
+		}
+		return false;
+	}
+	bool setImpactGl(string&in name,bool&out state){
+		for(uint i = 0 ; i < m_vestInfos.size() ; ++i){
+			if(m_vestInfos[i].setImpactGl(name,state)){
+				return true;
+			}
+		}
+		return false;
+	}
+	bool setHealNeedle(string&in name,bool&out state){
+		for(uint i = 0 ; i < m_vestInfos.size() ; ++i){
+			if(m_vestInfos[i].setHealNeedle(name,state)){
 				return true;
 			}
 		}
@@ -1148,6 +1427,22 @@ class vestInfoBuck {
 		for(uint i = 0 ; i < m_vestInfos.size() ; ++i){
 			if(m_vestInfos[i].name() == name){
 				return m_vestInfos[i].autoRecover();
+			}
+		}
+		return false;
+	}
+	bool getHealNeedle(string&in name){
+		for(uint i = 0 ; i < m_vestInfos.size() ; ++i){
+			if(m_vestInfos[i].name() == name){
+				return m_vestInfos[i].healNeedle();
+			}
+		}
+		return false;
+	}
+	bool getImpactGl(string&in name){
+		for(uint i = 0 ; i < m_vestInfos.size() ; ++i){
+			if(m_vestInfos[i].name() == name){
+				return m_vestInfos[i].impactGl();
 			}
 		}
 		return false;
@@ -1433,7 +1728,7 @@ class Initiate : Tracker {
 		g_GameMode = settings.m_GameMode;
 
 		@g_factionInfoBuck = factionInfoBuck();	
- 		@g_playerInfoBuck = playerInfoBuck();
+ 		@g_playerInfoBuck = playerInfoBuck(m_metagame);
  		@g_battleInfoBuck = battleInfoBuck();
  		@g_vestInfoBuck = vestInfoBuck();
 		@g_IRQ = _IRQ("",false);
@@ -1559,6 +1854,12 @@ class Initiate : Tracker {
 				}else{
 					_report(m_metagame,"Debug Mode is Off");
 				}
+			}
+			if(message == "/outputPinfodata"){
+				_report(m_metagame,"管理员测试输出："+g_playerInfoBuck.output());
+			}
+			if(message == "/refreshPinfodata"){
+				g_playerInfoBuck.updateAll();
 			}
 			if(message == "/addkill"){
 				uint i = 1000;

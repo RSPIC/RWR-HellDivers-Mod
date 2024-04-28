@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapons> 
+<weapon 
+file="_ui.weapon_base"
+key="ui_racing_start.weapon" 
+> 
+    <specification 	
+    slot="0" 	
+    name="右键以新建一场比赛" 
+	/> 
+    <hud_icon filename="ui_racing_start.png" /> 
+</weapon>
+<weapon 
+file="_ui.weapon_base"
+key="ui_racing_join.weapon" 
+> 
+    <specification 	
+    slot="0" 	
+    name="右键以加入本场比赛" 
+	/> 
+    <hud_icon filename="ui_racing_join.png" /> 
+</weapon>
+<weapon 
+file="_ui.weapon_base"
+key="ui_racing_quit.weapon" 
+> 
+    <specification 	
+    slot="0" 	
+    name="右键以退出本场比赛" 
+	/> 
+    <hud_icon filename="ui_racing_quit.png" /> 
+</weapon>
+<weapon 
+file="_ui.weapon_base"
+key="ui_racing_list.weapon" 
+> 
+    <specification 	
+    slot="0" 	
+    name="查看排行榜" 
+	/> 
+    <hud_icon filename="ui_racing_list.png" /> 
+</weapon>
+<weapon 
+file="_ui.weapon_base"
+key="ui_racing_end.weapon" 
+> 
+    <specification 	
+    slot="1" 	
+    name="强制结束当前游戏[有BUG时再用]" 
+	/> 
+    <hud_icon filename="ui_racing_end.png" /> 
+</weapon>
+<weapon 
+file="_ui.weapon_base"
+key="ui_racing_reward.weapon" 
+> 
+    <specification 	
+    slot="0" 	
+    name="兑换排名奖励" 
+	/> 
+    <hud_icon filename="ui_racing_reward.png" /> 
+</weapon>
+<weapon 
+file="_ui.weapon_base"
+key="ui_racing_rule.weapon" 
+> 
+    <specification 	
+    slot="0" 	
+    name="查看比赛规则" 
+	/> 
+    <hud_icon filename="ui_racing_rule.png" /> 
+</weapon>
+<weapon 
+file="_ui.weapon_base"
+key="ui_racing_playerinfo.weapon" 
+> 
+    <specification 	
+    slot="0" 	
+    name="查看未完赛选手信息" 
+	/> 
+    <hud_icon filename="ui_racing_playerinfo.png" /> 
+</weapon>
+<weapon 
+file="_ui.weapon_base"
+key="ui_racing_reset_car.weapon" 
+> 
+    <specification 	
+    slot="1" 	
+    name="重置所有赛车位置[占用资源较大，请等待]" 
+	/> 
+    <hud_icon filename="ui_racing_reset_car.png" /> 
+</weapon>
+</weapons>
+
+
+

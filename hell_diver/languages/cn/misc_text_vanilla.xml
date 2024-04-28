@@ -722,6 +722,7 @@
 
 <!--Helldivers-->
 	<text key="AR-19 Liberator" text="AR-19 解放者突击步枪" />
+	<text key="AR-23P Liberator" text="AR-23P 穿甲解放者突击步枪" />
 	<text key="AR-20L Justice" text="AR-20L 正义突击步枪" />
 	<text key="AR-14D Paragon" text="AR-14D 典范突击步枪" />
 	<text key="AR-22C Patriot" text="AR-22C 爱国者突击步枪" />
@@ -821,7 +822,9 @@
 	<text key="Incendiary Bombs" text="燃烧炸弹 [→↑←→]" />
 	<text key="Heavy Strafing Run" text="重机枪扫射 [→→↓↑]" />
 
-	<text key="Molotov" text="燃烧手雷[反重甲]" />
+	<text key="G-10 Incendiary" text="G-10 燃烧手雷[反重甲]" />
+	<text key="G-23 Stun Grenade" text="G-23 震撼手雷" />
+	<text key="G-16 Impact Grenade" text="G-16 冲击雷[反重甲][友伤]" />
 	<text key="Grenade" text="破片手雷[反重甲]" />
 
 	<text key="AT Mine MK3" text="反坦克地雷 MK3" />
@@ -1030,6 +1033,17 @@
 	<text key="Skadi [Skin]"  text="水星纪念·改 [信物]" />
 	<text key="Arona [Skin]"  text="阿罗娜 [信物]" />
 	<text key="Gehenna Member [Skin]"  text="格黑娜杂鱼 [信物]" />
+	<!-- 1.7.1fix -->
+	<text key="Abandoned Isomer [Skin]"  text="失格异构体 [信物]" />
+	<text key="Porno [Skin]"  text="多娜多娜 帕诺尔 [信物]" />
+	<!-- 1.8.0 -->
+	<text key="Kirito [Skin]"  text="桐人 [GGO][信物]" />
+	<text key="Lona [Skin]"  text="伊欧娜 [信物]" />
+	<text key="Misaka 10032 [Winter][Skin]"  text="御坂-10032 [冬季制服][信物]" />
+	<text key="Misaka Mikoto [Winter][Skin]"  text="御坂美琴 [冬季制服][信物]" />
+	<text key="Sinon [Skin]"  text="诗乃 [信物]" />
+	<text key="Sinon [Black][Skin]"  text="诗乃 [黑][信物]" />
+	<text key="Yuuki [GGO][Skin]"  text="由纪 [GGO][信物]" />
 
 
 <!-- ex武器 -->
@@ -1590,8 +1604,8 @@ TK其他玩家同样会造成倍率因子的下降" />
 /dead：使自己死亡
 "/>
 	<text key="Activity Help" text="[活动服须知]]" />
-	<text key="Help - Activity" text="#当前服务器：活动服务器
-！！本服务器不会自动换图！！
+    <text key="Help - Activity" text="#当前服务器：活动服务器
+！！本服务器每2小时自动结算并换图！！
 ！！严禁TK玩家，违者严惩！！
 赛车自带仓库/军械库/冰淇淋车，摧毁后会自动复活
 "/>
@@ -1817,5 +1831,26 @@ TK其他玩家同样会造成倍率因子的下降" />
 " />
 <!-- 僵尸模式 -->
 <!-- 歼灭模式/报复打击 -->
+
+<!-- 竞速 -->
+<text key="racingList" text="竞速排行榜[当前地图]
+用时：&#37;value0 玩家：&#37;key0(第1名)
+用时：&#37;value1 玩家：&#37;key1(第2名)
+用时：&#37;value2 玩家：&#37;key2(第3名)
+用时：&#37;value3 玩家：&#37;key3(第4名)
+用时：&#37;value4 玩家：&#37;key4(第5名)
+用时：&#37;value5 玩家：&#37;key5(第6名)
+用时：&#37;value6 玩家：&#37;key6(第7名)
+用时：&#37;value7 玩家：&#37;key7(第8名)
+用时：&#37;value8 玩家：&#37;key8(第9名)
+" />
+<text key="Racing Rule" text="本赛车比赛采用异步比赛模式，玩家并不是同时出发，而是间隔出发。
+1、经过开始点时才会开始计时。
+2、判定点在触发后会短暂消失一段时间，因此不能采用同步竞速模式。
+3、遗漏的判定点不会影响终点判定，会以罚时的形式进行补偿。
+4、玩家可以采用任何手段追求最短时间完成比赛。
+5、载具阵亡后玩家会同步阵亡。阵亡默认退出当前比赛。
+" />
+
 </translation>
 

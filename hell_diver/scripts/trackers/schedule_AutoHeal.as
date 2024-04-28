@@ -58,7 +58,7 @@ class schedule_AutoHeal : Task {
         if(character is null){return;}
         int wounded = character.getIntAttribute("wounded");
         int dead = character.getIntAttribute("dead");
-        array<string> key = {"hd_v_","helldivers_vest_"}; //指定护甲才能自动恢复
+        array<string> key = {"hd_v_","helldivers_vest_","hd_vest_"}; //指定护甲才能自动恢复
         array<string> key2 = {"hd_drone_ad289_angel"};
         if(dead !=1 && wounded != 1){
             dictionary equipList;

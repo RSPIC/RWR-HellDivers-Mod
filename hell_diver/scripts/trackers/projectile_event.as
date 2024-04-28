@@ -19,6 +19,7 @@ dictionary skill_CD = {
 
     {"acg_starwars_shipgirls_skill",90},
     {"acg_maria_schariac_skill",20},
+    {"acg_incomparable_skill",26},
 
     {"",0}
 
@@ -801,6 +802,21 @@ class projectile_event : Tracker {
                 CreateDirectProjectile(m_metagame,ePos,ePos,key2,cid,fid,0);
                 break;
             }
+            case 59: { //hd_md99_injector 治疗针投掷物
+                int characterId = event.getIntAttribute("character_id");
+                if (characterId == -1) {
+                    _log("characterId = -1,null occur");
+                    break;
+                }
+                string name = g_playerInfoBuck.getNameByCid(characterId);
+                if(g_vestInfoBuck.getHealNeedle(name)){
+                    healCharacter(m_metagame,characterId,120);//此处修改回复层数
+                }else{
+                    int pid = g_playerInfoBuck.getPidByCid(characterId);
+                    _notify(m_metagame,pid,"你的护甲不具备治疗针功能");
+                }
+                break;
+            }
             default:
                 break;            
         }
@@ -873,6 +889,50 @@ class projectile_event : Tracker {
                         break;
                     }
                 }
+                break;
+            }
+            case 58:{//acg_incomparable_skill 无比 舰炮打击
+                _debugReport(m_metagame,"舰炮打击开始");
+                int characterId = event.getIntAttribute("character_id");
+				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                if (character is null) {break;}
+                if (characterId == -1) {
+                    _log("characterId = -1,null occur");
+                    break;
+                }
+                int playerId = g_playerInfoBuck.getPidByCid(characterId);
+                const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
+                if (player is null) {break;}
+                Vector3 aimPosition = stringToVector3(player.getStringAttribute("aim_target"));
+
+                Vector3 pos1 = aimPosition;
+                Vector3 pos2 = stringToVector3(character.getStringAttribute("position"));
+                int factionid = character.getIntAttribute("faction_id");
+
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                if(tasker is null){break;}
+
+                float strike_rand = 12;
+                float rand_x = rand(-strike_rand,strike_rand);
+                float rand_y = rand(-strike_rand,strike_rand);
+                Vector3 r_pos = pos1.add(Vector3(rand_x,0,rand_y));
+
+                string key1 = "hd_effect_radar_scan.projectile";
+                CreateProjectile@ task0 = CreateProjectile(m_metagame,r_pos,r_pos,key1,characterId,factionid,1,0,1); // speed delay num
+                tasker.add(task0);
+
+                key1 = "acg_incomparable_skill_damage.projectile";
+                @task0 = CreateProjectile(m_metagame,pos1.add(Vector3(30,50,0)),r_pos.add(Vector3(-5,0,0)),key1,characterId,factionid,100,0.5,1,0,false); // speed delay num in_delay vertival
+                tasker.add(task0);
+
+                key1 = "hd_effect_radar_scan.projectile";
+                @task0 = CreateProjectile(m_metagame,pos1,pos1,key1,characterId,factionid,1,1,1); // speed delay num
+                tasker.add(task0);
+
+                key1 = "acg_incomparable_skill_damage.projectile";
+                @task0 = CreateProjectile(m_metagame,pos1.add(Vector3(30,50,0)),pos1.add(Vector3(-5,0,0)),key1,characterId,factionid,100,0,2,0.3,false); // speed delay num in_delay vertival
+                tasker.add(task0);
+
                 break;
             }
             default:

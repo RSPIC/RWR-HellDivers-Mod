@@ -22,16 +22,16 @@ particle_system cd_1s_0
 		angle 0
 		colour 0 0 0 0
 		direction 0 1 0
-		emission_rate 10
+		emission_rate 100
 		position 0 0 0
 		velocity 0.0001
 		time_to_live 1
-		duration 0.1
+		duration 0.01
 	}
 	affector ColourInterpolator
 	{
 		time0 0
-		colour0 1 1 1 1
+		colour0 0 0 0 0
 		time1 0.5
 		colour1 1 1 1 1
 		time2 1

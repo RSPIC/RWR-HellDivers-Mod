@@ -43,6 +43,7 @@ dictionary resupply_getitem_key = {
 
         {"hd_grenade_molotov.projectile",8},
         {"hd_grenade_standard.projectile",10},
+        {"hd_md99_injector.projectile",4},
 
         // 占位的
         {"666",-1}
@@ -168,9 +169,9 @@ dictionary highlight_item_drop = {
 //无法交易物品，丢至地面会返还
 dictionary protected_trade = {
 
-        {"samples_bugs_ex.carry_item","carry_item"},
-        {"samples_cyborgs_ex.carry_item","carry_item"},
-        {"samples_illuminate_ex.carry_item","carry_item"},
+        // {"samples_bugs_ex.carry_item","carry_item"},
+        // {"samples_cyborgs_ex.carry_item","carry_item"},
+        // {"samples_illuminate_ex.carry_item","carry_item"},
 
 		// 占位的
         {"666",-1}

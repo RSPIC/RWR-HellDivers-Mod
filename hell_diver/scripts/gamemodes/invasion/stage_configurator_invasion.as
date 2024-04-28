@@ -219,37 +219,38 @@ class StageConfiguratorInvasion : StageConfigurator {
 			_log("setupNormalStages add g_server_activity");
 		}else{
 			_log("setupNormalStages add normal");
-			addStage(setupStageBloodandFlowers_01());         // BloodandFlowers_01 By asanonana ver1.5.11
-			addStage(setupStage8());          // map8 #13 10 
-			addStage(setupStage10());         // map10 #7 4 疑似有bug ver1.5.10
-			addStage(setupStage14());         // map6_2 #14 11
-			addStage(setupStage2());          // map4 #15 12
-			addStage(setupStage3());          // map3 #10 7
-			addStage(setupStage6());          // map5 #17 15
-			//addStage(setupFinalStage2());     // map12 #18 黑猫
-			addStage(setupStage19());         // map18 #19
-			addStage(setupStage11());         // map13 #20
-			addStage(setupStage7());          // map6 #0
-			addStage(setupStage5());          // map1 #16 14 
-			addStage(setupStage1());          // map2 #1
-			addStage(setupStage9());          // map9 #2
-			addStage(setupStage16());         // map8_2 #3 雪地威克岛
-			addStage(setupStage21());         // map20 #7 16 战壕小岛
-			addStage(setupStage4());          // map7 #4 3
-			addStage(setupStage15());         // map1_2 #5 太大
-			addStage(setupStage12());         // map14 #6
-			addStage(setupStage17());         // map17  #8 5
-			addStage(setupStage18());         // map13_2 #9 6
-			addStage(setupStage13());         // map16  #11  8
-			addStage(setupFinalStage1());     // map11 #12 潜行9
-			addStage(setupStageCasake_Bay());         // Casake_Bay #21
-			addStage(setupStage20());         // map19 #17	13 鹅城
-			//addStage(setupRoberto());         // 创意工坊图 ver1.6.0  难以修改，删除 12.31 HOTCAT建议
-			addStage(setupClairemont());      // 创意工坊图 ver1.6.0
-			//addStage(setupViper());           // 创意工坊图 ver1.6.0
-			addStage(setupDef_lab_koth());    // 创意工坊图 ver1.6.0
-			addStage(setupEastport());        // 创意工坊图 ver1.6.0
-			addStage(setupWave_Town());       // 创意工坊图 ver1.6.0
+			// addStage(setupStageBloodandFlowers_01());         // BloodandFlowers_01 By asanonana ver1.5.11
+			// addStage(setupStage8());          // map8 #13 10 
+			// addStage(setupStage10());         // map10 #7 4 疑似有bug ver1.5.10
+			// addStage(setupStage14());         // map6_2 #14 11
+			// addStage(setupStage2());          // map4 #15 12
+			// addStage(setupStage3());          // map3 #10 7
+			// addStage(setupStage6());          // map5 #17 15
+			// //addStage(setupFinalStage2());     // map12 #18 黑猫
+			// addStage(setupStage19());         // map18 #19
+			// addStage(setupStage11());         // map13 #20
+			// addStage(setupStage7());          // map6 #0
+			// addStage(setupStage5());          // map1 #16 14 
+			// addStage(setupStage1());          // map2 #1
+			// addStage(setupStage9());          // map9 #2
+			// addStage(setupStage16());         // map8_2 #3 雪地威克岛
+			// addStage(setupStage21());         // map20 #7 16 战壕小岛
+			// addStage(setupStage4());          // map7 #4 3
+			// addStage(setupStage15());         // map1_2 #5 太大
+			// addStage(setupStage12());         // map14 #6
+			// addStage(setupStage17());         // map17  #8 5
+			// addStage(setupStage18());         // map13_2 #9 6
+			// addStage(setupStage13());         // map16  #11  8
+			// addStage(setupFinalStage1());     // map11 #12 潜行9
+			// addStage(setupStageCasake_Bay());         // Casake_Bay #21
+			// addStage(setupStage20());         // map19 #17	13 鹅城
+			// //addStage(setupRoberto());         // 创意工坊图 ver1.6.0  难以修改，删除 12.31 HOTCAT建议
+			// addStage(setupClairemont());      // 创意工坊图 ver1.6.0
+			// //addStage(setupViper());           // 创意工坊图 ver1.6.0
+			// addStage(setupDef_lab_koth());    // 创意工坊图 ver1.6.0
+			// addStage(setupEastport());        // 创意工坊图 ver1.6.0
+			// addStage(setupWave_Town());       // 创意工坊图 ver1.6.0
+			addStage(setupStage22());       // map21 地狱公路线性优化版 by HOTCAT
 		}
 	}
 	protected void setupActivityStages() {
@@ -2397,5 +2398,50 @@ class StageConfiguratorInvasion : StageConfigurator {
 		setDefaultAttackBreakTimes(stage);
 		return stage;
 	}
-	
+	protected Stage@ setupStage22() {
+		Stage@ stage = createStage();
+		stage.m_mapInfo.m_name = "Hell Road";
+		stage.m_mapInfo.m_path = "media/packages/hell_diver/maps/map21";
+		stage.m_mapInfo.m_id = "map21";
+		stage.m_mapInfo.m_size = 1536.0;
+		
+		stage.m_includeLayers.insertLast("layer1.invasion");		
+
+    stage.m_fogOffset = 24.0;    
+    stage.m_fogRange = 50.0; 
+
+		stage.m_maxSoldiers = 12 * 16;  // 16*15
+		stage.m_playerAiCompensation = 4;                                       
+        stage.m_playerAiReduction = 2.0;                                            
+  
+		stage.m_soldierCapacityVariance = 0.6;   
+
+		stage.addTracker(PeacefulLastBase(m_metagame, 0));    
+		stage.addTracker(CommsCapacityHandler(m_metagame));
+
+    stage.m_minRandomCrates = 1; 
+    stage.m_maxRandomCrates = 4;  
+
+		{ 				
+			Faction f(getFactionConfigs()[0], createFellowCommanderAiCommand(0, 0.40, 0.1));   // 0.42 0.1
+			f.m_overCapacity = 0;
+			f.m_capacityOffset = 15;                                             
+			f.m_capacityMultiplier = 1;                                               
+			f.m_bases = 1;
+			stage.m_factions.insertLast(f);
+		}
+		{
+			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1, 0.65, 0.15));  // 0.62 0.15
+			f.m_overCapacity = 120;                                          
+			f.m_capacityOffset = 10;      // was 0
+			stage.m_factions.insertLast(f);
+		}
+
+		// metadata
+		stage.m_primaryObjective = "capture";
+		stage.m_radioObjectivePresent = false;
+
+		setDefaultAttackBreakTimes(stage);
+		return stage;
+	}
 }

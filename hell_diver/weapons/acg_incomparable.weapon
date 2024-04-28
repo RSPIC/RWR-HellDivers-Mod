@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapons> 
+<weapon 
+file="_rare_weapon_mk4.base"
+key="acg_incomparable.weapon"
+>
+    <specification 	
+    slot="0" 	
+    retrigger_time="0.1" 
+    accuracy_factor="1" 
+	spread_range="0.15"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="2.0" 
+    sustained_fire_diminish_rate="0.5" 
+    magazine_size="11" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="1"	
+    suppressed="0" 
+	class="4" 
+    name="Incomparable" 
+	sight_range_modifier="1.4" 
+	sight_height_offset="1.0" 
+	burst_shots="11" 
+    projectiles_per_shot="2" 
+    projectile_speed="180.0"
+	barrel_offset="0.6" 
+	carry_in_two_hands="1" 
+	stab_enabled="0" 
+	stab_range="3" 
+	/> 
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_effect_drop_target.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
+
+	<!--0全自动 4半自动 2栓动 3特殊（需要额外动作）5近程特殊（如部署沙包）-->
+	<next_in_chain key="acg_incomparable_skill.weapon" share_ammo="0" /> 
+
+	<animation key="recoil" animation_key="hd_double_fire_right" />
+	<animation key="recoil" animation_key="hd_double_fire_left" />
+	<animation key="recoil" animation_key="hd_double_fire_right" />
+	<animation key="recoil" animation_key="hd_double_fire_left" />
+	<animation state_key="reload" animation_key="incomparable_reloading_2.25s"/>
+	<animation state_key="hold" animation_key="incomparable_base_still" />
+	<animation state_key="hold_on_wall"  animation_key="incomparable_still" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="incomparable_still" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="incomparable_still" /><!--闲置动作，全身动作-->
+    <animation state_key="running" animation_key="incomparable_running" />
+    <animation state_key="walking" animation_key="incomparable_running" />
+    <animation state_key="walking_backwards" animation_key="incomparable_running_back" />
+    <animation state_key="crouching" animation_key="hd_double_fire_left" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="acg_toki_walking2" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="acg_toki_walkingback2" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="hd_double_fire_left" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="acg_toki_walking2" /><!--全身动作-->
+	<animation state_key="stabbing"	animation_key="melee, ninjato whip" />
+	<animation state_key="stabbing"	animation_key="melee, ninjato slap" />
+	<animation state_key="stabbing"	animation_key="melee, ninjato slash" />
+	<!--切换模式，本模式的切出动作衔接下一模式的切入动作，置空为秒切-->
+	<animation state_key="next_in_chain_in" animation_key="" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="switch fire mode" /><!--半身动作，切换模式，本模式切入-->
+	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
+    <animation state_key="changing_weapon_in" animation_key="" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key="switch fire mode"/><!--半身动作，切换武器，本武器取出-->
+
+
+    <sound key="effect" fileref="acg_incomparable_switch.wav" pitch_variety="0.03" volume="3.0" /> 
+    <sound key="fire" fileref="acg_incomparable_fire.wav" pitch_variety="0.03" volume="1.5" />
+    <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="acg_incomparable_reload.wav" pitch_variety="0.03" volume="4.0" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="" /><!--动作中in的value为1-->
+    <sound key="last_ammo" fileref="hd_lastammo_01.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+
+    <model filename="" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="acg_incomparable.png" /> 
+	
+	<weak_hand_hold offset="0.4" /> 
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="9" can_be_detected_by_footmen="1" 
+	time_to_live="0.5" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.7" > 
+
+		<result class="spawn" instance_class="projectile" instance_key="acg_incomparable_damage.projectile" 
+		min_amount="2" max_amount="2" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+		<trigger class="impact" />
+		<rotation class="motion" />
+
+		<sound class="result" key="other" fileref="grenade_blast.wav" volume="1.0" />
+	
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+
+		<effect class="result" key="terrain" ref="MG_heavy_up_dust_1" lighting="0"/>
+		<effect class="result" key="terrain" ref="MG_heavy_up_dust_2" lighting="0"/>
+		<effect class="result" key="terrain" ref="MG_heavy_up_dust_3" lighting="0"/>
+		<effect class="result" key="terrain" ref="MG_heavy_up_dust_4" lighting="0"/>
+
+		<effect class="result" key="terrain" ref="cyborgs_result_cannon_blast_AmbientLight" lighting="0"/>
+		<effect class="result" key="terrain" ref="cyborgs_result_cannon_blast_smoke" lighting="0"/>
+
+		<effect class="result" type="splat_map" surface_tag="" size="2.0" atlas_index="0" layer="1" />
+		<effect class="result" type="splat_map" surface_tag="" size="2.5" atlas_index="4" layer="0" />
+		<effect class="result" type="splat_map" surface_tag="" size="3.0" atlas_index="0" layer="2" additive="0" /> <!-- remove top snow everywhere -->
+
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+
+		<trail probability="1" key="normal_trail_long_bold"/>	
+    </projectile>
+
+	<!--枪口特效-->
+	<effect class="muzzle" ref="cyborgs_muzzle_cannon_fire_smoke" lighting="0"/> 
+	<effect class="muzzle" ref="cyborgs_muzzle_cannon_fire_light" lighting="0"/> 
+	
+	
+	
+    <stance state_key="running" accuracy="0.5" /> 
+    <stance state_key="walking" accuracy="0.7" />
+	<stance state_key="standing" accuracy="0.9" />
+	<stance state_key="crouching" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1.2" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1.2" />     
+     
+    <modifier class="speed" value="0.05" />
+    <modifier class="hit_success_probability" value="-0.1" />
+    <modifier class="detectability" value="0.0" />
+
+</weapon>
+<weapon 
+file="_rare_weapon_mk4.base"
+key="acg_incomparable_skill.weapon"
+>
+    <specification 	
+    slot="0" 	
+    retrigger_time="0.1" 
+    accuracy_factor="1" 
+	spread_range="0.15"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="2.0" 
+    sustained_fire_diminish_rate="0.5" 
+    magazine_size="1" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="1"	
+    suppressed="0" 
+	class="4" 
+    name="Incomparable" 
+	sight_range_modifier="2.5" 
+	sight_height_offset="1.0" 
+	burst_shots="1" 
+    projectiles_per_shot="1" 
+    projectile_speed="180.0"
+	barrel_offset="0.6" 
+	carry_in_two_hands="0" 
+	stab_enabled="1" 
+	stab_range="3" 
+	/> 
+	<!--0全自动 4半自动 2栓动 3特殊（需要额外动作）5近程特殊（如部署沙包）-->
+	<next_in_chain key="acg_incomparable.weapon" share_ammo="0" /> 
+
+    <animation state_key="recoil" animation_key="melee_incomparable" /> <!--后坐力动作，半身动作-->
+    <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
+    <animation state_key="reload" animation_key="incomparable_reloading_2.25s" />	<!--换弹动作，半身动作-->
+    <animation state_key="hold" animation_key="incomparable_still" /><!--站姿静止动作，全身动作-->
+	<animation state_key="hold_on_wall"  animation_key="incomparable_still" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="incomparable_still" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="incomparable_still" /><!--闲置动作，全身动作-->
+    <animation state_key="running" animation_key="incomparable_running" />
+    <animation state_key="walking" animation_key="incomparable_running" />
+    <animation state_key="walking_backwards" animation_key="incomparable_running_back" />
+    <animation state_key="crouching" animation_key="crouch, pistol" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="crouching, pistol 2" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="crouching backwards, hip fire" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="prone_still, pistol" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
+	<animation state_key="stabbing"	animation_key="melee, ninjato whip 2" />
+	<animation state_key="stabbing"	animation_key="melee, ninjato slap 2" />
+	<animation state_key="stabbing"	animation_key="melee, ninjato slash 2" />
+	<animation state_key="next_in_chain_in" animation_key="" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="switch fire mode" /><!--半身动作，切换模式，本模式切入-->
+	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
+    <animation state_key="changing_weapon_in" animation_key="" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key="switch fire mode"/><!--半身动作，切换武器，本武器取出-->
+
+
+    <sound key="effect" fileref="acg_incomparable_switch.wav" pitch_variety="0.03" volume="3.0" /> 
+    <sound key="fire" fileref="acg_incomparable_skill_fire.wav" pitch_variety="0.03" volume="4.5" />
+    <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="acg_incomparable_reload.wav" pitch_variety="0.03" volume="4.0" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="" /><!--动作中in的value为1-->
+    <sound key="last_ammo" fileref="hd_lastammo_01.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+
+    <model filename="acg_incomparable_srowd.xml" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="acg_incomparable_skill.png" /> 
+	
+	<weak_hand_hold offset="0.4" /> 
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="9" can_be_detected_by_footmen="1" 
+	time_to_live="0" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.7" > 
+
+		<result class="notify_script" key="acg_incomparable_skill" />
+		<trigger class="time" />
+		<rotation class="motion" />
+
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+
+
+		<trail probability="1" key=""/>	
+    </projectile>
+
+	<!--枪口特效-->
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 		
+	<effect class="muzzle" ref="nova_muzzle_fire_smoke" post_processing="1"/>
+	<effect class="muzzle" ref="nova_muzzle_fire_smoke_2" post_processing="1"/>
+	<effect class="muzzle" ref="nova_muzzle_fireball" post_processing="1"/>
+	<!-- <effect class="muzzle" ref="nova_muzzle_fireball_side" />
+	<effect class="muzzle" ref="nova_muzzle_fireball_side_2" />
+	<effect class="muzzle" ref="nova_muzzle_fireball_side_3" post_processing="1"/> -->
+	<effect class="muzzle" ref="nova_muzzle_ambient"/>
+	<effect class="muzzle" ref="nova_muzzle_ambient_ground"/>
+	<effect class="muzzle" ref="nova_muzzle_spark"/>
+	
+	
+	
+    <stance state_key="running" accuracy="0.5" /> 
+    <stance state_key="walking" accuracy="0.7" />
+	<stance state_key="standing" accuracy="0.9" />
+	<stance state_key="crouching" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1.2" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1.2" />     
+     
+    <modifier class="speed" value="0.05" />
+    <modifier class="hit_success_probability" value="-0.1" />
+    <modifier class="detectability" value="0.0" />
+
+
+
+
+</weapon>
+<weapon 
+file="_rare_weapon_mk4_re.base"
+key="re_acg_incomparable.weapon"
+>
+    <specification 	
+    slot="0" 	
+    retrigger_time="0.1" 
+    accuracy_factor="1" 
+	spread_range="0.15"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="2.0" 
+    sustained_fire_diminish_rate="0.5" 
+    magazine_size="11" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="1"	
+    suppressed="0" 
+	class="4" 
+    name="Incomparable" 
+	sight_range_modifier="1.4" 
+	sight_height_offset="1.0" 
+	burst_shots="11" 
+    projectiles_per_shot="2" 
+    projectile_speed="180.0"
+	barrel_offset="0.6" 
+	carry_in_two_hands="1" 
+	stab_enabled="0" 
+	stab_range="3" 
+	/> 
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_effect_drop_target.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
+
+	<!--0全自动 4半自动 2栓动 3特殊（需要额外动作）5近程特殊（如部署沙包）-->
+	<next_in_chain key="re_acg_incomparable_skill.weapon" share_ammo="0" /> 
+
+
+	<animation key="recoil" animation_key="hd_double_fire_right" />
+	<animation key="recoil" animation_key="hd_double_fire_left" />
+	<animation key="recoil" animation_key="hd_double_fire_right" />
+	<animation key="recoil" animation_key="hd_double_fire_left" />
+	<animation state_key="reload" animation_key="incomparable_reloading_2.25s"/>
+	<animation state_key="hold" animation_key="incomparable_base_still" />
+	<animation state_key="hold_on_wall"  animation_key="incomparable_still" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="incomparable_still" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="incomparable_still" /><!--闲置动作，全身动作-->
+    <animation state_key="running" animation_key="incomparable_running" />
+    <animation state_key="walking" animation_key="incomparable_running" />
+    <animation state_key="walking_backwards" animation_key="incomparable_running_back" />
+    <animation state_key="crouching" animation_key="hd_double_fire_left" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="acg_toki_walking2" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="acg_toki_walkingback2" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="hd_double_fire_left" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="acg_toki_walking2" /><!--全身动作-->
+	<animation state_key="stabbing"	animation_key="melee, ninjato whip" />
+	<animation state_key="stabbing"	animation_key="melee, ninjato slap" />
+	<animation state_key="stabbing"	animation_key="melee, ninjato slash" />
+	<!--切换模式，本模式的切出动作衔接下一模式的切入动作，置空为秒切-->
+	<animation state_key="next_in_chain_in" animation_key="" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="switch fire mode" /><!--半身动作，切换模式，本模式切入-->
+	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
+    <animation state_key="changing_weapon_in" animation_key="" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key="switch fire mode"/><!--半身动作，切换武器，本武器取出-->
+
+
+    <sound key="effect" fileref="acg_incomparable_switch.wav" pitch_variety="0.03" volume="3.0" /> 
+    <sound key="fire" fileref="acg_incomparable_fire.wav" pitch_variety="0.03" volume="1.5" />
+    <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="acg_incomparable_reload.wav" pitch_variety="0.03" volume="4.0" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="" /><!--动作中in的value为1-->
+    <sound key="last_ammo" fileref="hd_lastammo_01.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+
+    <model filename="" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="acg_incomparable.png" /> 
+	
+	<weak_hand_hold offset="0.4" /> 
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="9" can_be_detected_by_footmen="1" 
+	time_to_live="0.5" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.7" > 
+
+		<result class="spawn" instance_class="projectile" instance_key="acg_incomparable_damage.projectile" 
+		min_amount="2" max_amount="2" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+		<trigger class="impact" />
+		<rotation class="motion" />
+
+		<sound class="result" key="other" fileref="grenade_blast.wav" volume="1.0" />
+	
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+
+		<effect class="result" key="terrain" ref="MG_heavy_up_dust_1" lighting="0"/>
+		<effect class="result" key="terrain" ref="MG_heavy_up_dust_2" lighting="0"/>
+		<effect class="result" key="terrain" ref="MG_heavy_up_dust_3" lighting="0"/>
+		<effect class="result" key="terrain" ref="MG_heavy_up_dust_4" lighting="0"/>
+
+		<effect class="result" key="terrain" ref="cyborgs_result_cannon_blast_AmbientLight" lighting="0"/>
+		<effect class="result" key="terrain" ref="cyborgs_result_cannon_blast_smoke" lighting="0"/>
+
+		<effect class="result" type="splat_map" surface_tag="" size="2.0" atlas_index="0" layer="1" />
+		<effect class="result" type="splat_map" surface_tag="" size="2.5" atlas_index="4" layer="0" />
+		<effect class="result" type="splat_map" surface_tag="" size="3.0" atlas_index="0" layer="2" additive="0" /> <!-- remove top snow everywhere -->
+
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+
+		<trail probability="1" key="normal_trail_long_bold"/>	
+    </projectile>
+
+	<!--枪口特效-->
+	<effect class="muzzle" ref="cyborgs_muzzle_cannon_fire_smoke" lighting="0"/> 
+	<effect class="muzzle" ref="cyborgs_muzzle_cannon_fire_light" lighting="0"/> 
+	
+	
+	
+    <stance state_key="running" accuracy="0.5" /> 
+    <stance state_key="walking" accuracy="0.7" />
+	<stance state_key="standing" accuracy="0.9" />
+	<stance state_key="crouching" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1.2" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1.2" />     
+     
+    <modifier class="speed" value="0.05" />
+    <modifier class="hit_success_probability" value="-0.1" />
+    <modifier class="detectability" value="0.0" />
+
+</weapon>
+<weapon 
+file="_rare_weapon_mk4_re.base"
+key="re_acg_incomparable_skill.weapon"
+>
+    <specification 	
+    slot="0" 	
+    retrigger_time="0.1" 
+    accuracy_factor="1" 
+	spread_range="0.15"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="2.0" 
+    sustained_fire_diminish_rate="0.5" 
+    magazine_size="1" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="1"	
+    suppressed="0" 
+	class="4" 
+    name="Incomparable" 
+	sight_range_modifier="2.5" 
+	sight_height_offset="1.0" 
+	burst_shots="1" 
+    projectiles_per_shot="1" 
+    projectile_speed="180.0"
+	barrel_offset="0.6" 
+	carry_in_two_hands="0" 
+	stab_enabled="1" 
+	stab_range="3" 
+	/> 
+	<!--0全自动 4半自动 2栓动 3特殊（需要额外动作）5近程特殊（如部署沙包）-->
+	<next_in_chain key="re_acg_incomparable.weapon" share_ammo="0" /> 
+
+
+    <animation state_key="recoil" animation_key="melee_incomparable" /> <!--后坐力动作，半身动作-->
+    <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
+    <animation state_key="reload" animation_key="incomparable_reloading_2.25s" />	<!--换弹动作，半身动作-->
+    <animation state_key="hold" animation_key="incomparable_still" /><!--站姿静止动作，全身动作-->
+	<animation state_key="hold_on_wall"  animation_key="incomparable_still" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="incomparable_still" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="incomparable_still" /><!--闲置动作，全身动作-->
+    <animation state_key="running" animation_key="incomparable_running" />
+    <animation state_key="walking" animation_key="incomparable_running" />
+    <animation state_key="walking_backwards" animation_key="incomparable_running_back" />
+    <animation state_key="crouching" animation_key="crouch, pistol" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="crouching, pistol 2" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="crouching backwards, hip fire" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="prone_still, pistol" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
+	<animation state_key="stabbing"	animation_key="melee, ninjato whip 2" />
+	<animation state_key="stabbing"	animation_key="melee, ninjato slap 2" />
+	<animation state_key="stabbing"	animation_key="melee, ninjato slash 2" />
+	<animation state_key="next_in_chain_in" animation_key="" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="switch fire mode" /><!--半身动作，切换模式，本模式切入-->
+	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
+    <animation state_key="changing_weapon_in" animation_key="" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key="switch fire mode"/><!--半身动作，切换武器，本武器取出-->
+
+
+    <sound key="effect" fileref="acg_incomparable_switch.wav" pitch_variety="0.03" volume="3.0" /> 
+    <sound key="fire" fileref="acg_incomparable_skill_fire.wav" pitch_variety="0.03" volume="4.5" />
+    <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="acg_incomparable_reload.wav" pitch_variety="0.03" volume="4.0" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="" /><!--动作中in的value为1-->
+    <sound key="last_ammo" fileref="hd_lastammo_01.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+
+    <model filename="acg_incomparable_srowd.xml" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="acg_incomparable_skill.png" /> 
+	
+	<weak_hand_hold offset="0.4" /> 
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="9" can_be_detected_by_footmen="1" 
+	time_to_live="0" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.7" > 
+
+		<result class="notify_script" key="acg_incomparable_skill" />
+		<trigger class="time" />
+		<rotation class="motion" />
+
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+
+
+		<trail probability="1" key=""/>	
+    </projectile>
+
+	<!--枪口特效-->
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 		
+	<effect class="muzzle" ref="nova_muzzle_fire_smoke" post_processing="1"/>
+	<effect class="muzzle" ref="nova_muzzle_fire_smoke_2" post_processing="1"/>
+	<effect class="muzzle" ref="nova_muzzle_fireball" post_processing="1"/>
+	<!-- <effect class="muzzle" ref="nova_muzzle_fireball_side" />
+	<effect class="muzzle" ref="nova_muzzle_fireball_side_2" />
+	<effect class="muzzle" ref="nova_muzzle_fireball_side_3" post_processing="1"/> -->
+	<effect class="muzzle" ref="nova_muzzle_ambient"/>
+	<effect class="muzzle" ref="nova_muzzle_ambient_ground"/>
+	<effect class="muzzle" ref="nova_muzzle_spark"/>
+	
+	
+	
+    <stance state_key="running" accuracy="0.5" /> 
+    <stance state_key="walking" accuracy="0.7" />
+	<stance state_key="standing" accuracy="0.9" />
+	<stance state_key="crouching" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1.2" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1.2" />     
+     
+    <modifier class="speed" value="0.05" />
+    <modifier class="hit_success_probability" value="-0.1" />
+    <modifier class="detectability" value="0.0" />
+
+
+
+
+</weapon>
+</weapons>
+
+

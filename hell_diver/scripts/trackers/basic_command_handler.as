@@ -72,7 +72,16 @@ class BasicCommandHandler : Tracker {
 		int senderId = event.getIntAttribute("player_id");
 	
 		// for the most part, chat events aren't commands, so check that first 
-	
+		if(checkCommand(message, "dead")) {
+			const XmlElement@ info = getPlayerInfo(m_metagame, senderId);
+			int characterId = info.getIntAttribute("character_id");
+				string command =
+					"<command class='update_character'" +
+					"	id='" + characterId + "'" +	
+					"   dead='1'>" + 
+					"</command>";
+				m_metagame.getComms().send(command);
+		} 
 		
 		// admin and moderator only from here on
 		if(!g_online_TestMode){
@@ -398,16 +407,6 @@ class BasicCommandHandler : Tracker {
 				" position='" + pos.toString() + "'" +
 				" character_id='" + playerInfo.getIntAttribute("character_id") + "'/>";				
 			m_metagame.getComms().send(c);
-			
-		} else  if(checkCommand(message, "dead")) {
-			const XmlElement@ info = getPlayerInfo(m_metagame, senderId);
-			int characterId = info.getIntAttribute("character_id");
-				string command =
-					"<command class='update_character'" +
-					"	id='" + characterId + "'" +	
-					"   dead='1'>" + 
-					"</command>";
-				m_metagame.getComms().send(command);
 			
 		} else if (checkCommand(message, "fill")) {
 			fillInventory(senderId);

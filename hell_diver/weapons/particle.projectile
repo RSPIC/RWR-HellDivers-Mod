@@ -114,6 +114,15 @@
 	<effect class="result" key="terrain" ref="401_thbow_surrounding_thunder_3" lighting="0"/>
 	<effect class="result" key="terrain" ref="401_thbow_surrounding_thunder_4" lighting="0"/>
 
+	<effect class="activated" ref="fiammetta_activated_trail_01"/>
+    <effect class="result" key="terrain" ref="fiammetta_hit_ground_phoenix"/>
+	<effect class="result" key="terrain" ref="fiammetta_hit_ground_spread_spot_light_01"/>
+	<effect class="result" key="terrain" ref="fiammetta_hit_ground_spread_linear_light_01"/>
+	<effect class="result" key="terrain" ref="fiammetta_hit_ground_anim_fire_01"/>
+	<effect class="result" key="terrain" ref="fiammetta_hit_ground_smoke_01"/>
+	<effect class="result" key="terrain" ref="fiammetta_hit_ground_ring_02"/>
+	<effect class="result" key="terrain" ref="fiammetta_hit_ground_ring_01"/>
+	<effect class="result" key="terrain" ref="fiammetta_hit_ground_ring_03"/>
 
 	<!-- <effect class="activated" ref="alert_center_alerticon_hight_frequncy" lighting="0" /> -->
 	<!--高频率感叹号警告标识-->

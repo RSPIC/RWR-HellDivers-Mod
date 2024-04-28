@@ -8,8 +8,8 @@ void _report(Metagame@ m_metagame,string input,string input_title = "Debug",bool
         notify(m_metagame, input, dictionary(), "misc", pid, isShow, input_title, 1.0);
     }
 }
-void _notify(Metagame@ m_metagame,int pid,string input){
-    notify(m_metagame, input, dictionary(), "misc", pid, false, "", 1.0);
+void _notify(Metagame@ m_metagame,int pid,string input,bool isShow = false){
+    notify(m_metagame, input, dictionary(), "misc", pid, isShow, "", 1.0);
 }
 void _debugReport(Metagame@ m_metagame,string input,string input_title = "Debug",bool isShow = false){
     if(g_debugMode){

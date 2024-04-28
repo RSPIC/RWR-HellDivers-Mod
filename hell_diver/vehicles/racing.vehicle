@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vehicles>
+<vehicle
+file="_vehicle_none.base"
+name="起点" 
+key="racing_start.vehicle" 
+map_view_atlas_index="53" 
+respawn_time="0.0"
+>
+
+	<tire_set offset="1.0 0.0 1.0" radius="0.65" />
+	<tire_set offset="1.0 0.0 -1.0" radius="0.65" />
+
+	<control 
+	max_speed="2.0" 
+	acceleration="0" 
+	max_reverse_speed="6.0" 
+	max_rotation="0.8" 
+	max_water_depth="1.9" />
+
+	<physics 
+	destroy_on_top_hit="0"
+	max_health="1000" mass="500.0" 
+	extent="5 0 5" offset="0 0.0 0" 
+	top_offset="0 2 0" 
+	collision_model_pos="0 5 0" 
+	collision_model_extent="0 0 0" 
+	vehicle_collision_damage_factor="0"
+	preserve_motion_on_impact_factor="0.0" 
+	collision_softness="0.0" 
+	collision_response_factor="0.0"
+	visual_offset="0 0.0 0" 
+	friction_offset="1"
+	/> 
+
+	<visual class="chassis" mesh_filename=".mesh" texture_filename="" />
+
+	<sound key="hit" filename="barrier_impact1.wav" />
+	<sound key="hit" filename="barrier_impact2.wav" />
+
+	<effect event_key="health" value="10000" ref="radar_scan_racing_start" offset="0 0 0" />
+  	
+</vehicle>
+<vehicle
+file="_vehicle_none.base"
+name="终点" 
+key="racing_end.vehicle" 
+ map_view_atlas_index="53" 
+respawn_time="0.0">
+
+	<tire_set offset="1.0 0.0 1.0" radius="0.65" />
+	<tire_set offset="1.0 0.0 -1.0" radius="0.65" />
+
+	<control 
+	max_speed="2.0" 
+	acceleration="0" 
+	max_reverse_speed="6.0" 
+	max_rotation="0.8" 
+	max_water_depth="1.9" />
+
+	<physics 
+	destroy_on_top_hit="0"
+	max_health="1000" mass="500.0" 
+	extent="5 0 5" offset="0 0.0 0" 
+	top_offset="0 2 0" 
+	collision_model_pos="0 5 0" 
+	collision_model_extent="0 0 0" 
+	vehicle_collision_damage_factor="0"
+	preserve_motion_on_impact_factor="0.0" 
+	collision_softness="0.0" 
+	collision_response_factor="0.0"
+	visual_offset="0 0.0 0" 
+	friction_offset="1"
+	/> 
+
+	<visual class="chassis" mesh_filename=".mesh" texture_filename="" />
+
+	<sound key="hit" filename="barrier_impact1.wav" />
+	<sound key="hit" filename="barrier_impact2.wav" />
+
+	<effect event_key="health" value="10000" ref="radar_scan_racing_end" offset="0 0 0" />
+</vehicle>
+<vehicle
+file="_vehicle_none.base"
+name="途径点" 
+key="racing_check.vehicle" 
+ map_view_atlas_index="33" 
+respawn_time="0.0">
+
+	<tire_set offset="1.0 0.0 1.0" radius="0.65" />
+	<tire_set offset="1.0 0.0 -1.0" radius="0.65" />
+
+	<control 
+	max_speed="2.0" 
+	acceleration="0" 
+	max_reverse_speed="6.0" 
+	max_rotation="0.8" 
+	max_water_depth="1.9" />
+
+	<physics 
+	destroy_on_top_hit="0"
+	max_health="1000" 
+	mass="500.0" 
+	extent="5 0 5" offset="0 0.0 0" 
+	top_offset="0 2 0" 
+	collision_model_pos="0 5 0" 
+	collision_model_extent="0 0 0" 
+	vehicle_collision_damage_factor="0"
+	preserve_motion_on_impact_factor="0.0" 
+	collision_softness="0.0" 
+	collision_response_factor="0.0"
+	visual_offset="0 0.0 0" 
+	friction_offset="1"
+	/> 
+
+	<visual class="chassis" mesh_filename=".mesh" texture_filename="" />
+
+	<sound key="hit" filename="barrier_impact1.wav" />
+	<sound key="hit" filename="barrier_impact2.wav" />
+
+	<effect event_key="health" value="10000" ref="radar_scan_racing" offset="0 0 0" />
+</vehicle>
+<vehicle 
+name="开始一场比赛（购买或者输入racing start以开始）" 
+key="racing_start_bottom.vehicle" 
+map_view_atlas_index="-1" 
+respawn_time="0.0">
+	<tire_set offset="1.0 0.0 1.0" radius="0.65" />
+	<tire_set offset="1.0 0.0 -1.0" radius="0.65" />
+	<item_container class="armory" offset="0 0.8 0" soldier_group="racing_box" />
+
+	<control max_speed="20.0" acceleration="6.7" max_reverse_speed="6.0" max_rotation="0.8" max_water_depth="1.9" />
+
+	<physics max_health="1000" mass="500.0" extent="1.5 0.0 2.0" offset="0 0.0 0" top_offset="0 2 0" collision_model_pos="0 0.2 0" collision_model_extent="1.0 1.0 2.0" visual_offset="0 0.0 0" /> 
+
+	<visual class="chassis" mesh_filename="straw_block.mesh" texture_filename="straw_block.png" />
+
+	<sound key="hit" filename="barrier_impact1.wav" />
+	<sound key="hit" filename="barrier_impact2.wav" />
+
+	<event>
+		<trigger class="receive_damage" />
+	</event>
+
+	<effect event_key="destroy" key="other" ref="SmokeMinor" post_processing="1" />
+	<effect event_key="destroy" key="other" ref="ShadowSmokeMinor" shadow="1" />
+  
+  <event>
+		<trigger class="destroy" />		
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_barrier.visual_item" min_amount="3" max_amount="5" offset="0 1.0 0" position_spread="1.5 1.5" direction_spread="0.02 0.1" /> 
+  </event> 
+</vehicle>
+<vehicle 
+name="加入一场比赛（购买或者输入join以开始）" 
+key="racing_join_bottom.vehicle" 
+map_view_atlas_index="-1" 
+respawn_time="0.0">
+	<tire_set offset="1.0 0.0 1.0" radius="0.65" />
+	<tire_set offset="1.0 0.0 -1.0" radius="0.65" />
+	<item_container class="armory" offset="0 0.8 0" soldier_group="racing_box" />
+
+	<control max_speed="20.0" acceleration="6.7" max_reverse_speed="6.0" max_rotation="0.8" max_water_depth="1.9" />
+
+	<physics max_health="1000" mass="500.0" extent="1.5 0.0 2.0" offset="0 0.0 0" top_offset="0 2 0" collision_model_pos="0 0.2 0" collision_model_extent="1.0 1.0 2.0" visual_offset="0 0.0 0" /> 
+
+	<visual class="chassis" mesh_filename="straw_block.mesh" texture_filename="straw_block.png" />
+
+	<sound key="hit" filename="barrier_impact1.wav" />
+	<sound key="hit" filename="barrier_impact2.wav" />
+
+	<event>
+		<trigger class="receive_damage" />
+	</event>
+
+	<effect event_key="destroy" key="other" ref="SmokeMinor" post_processing="1" />
+	<effect event_key="destroy" key="other" ref="ShadowSmokeMinor" shadow="1" />
+  
+  <event>
+		<trigger class="destroy" />		
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_barrier.visual_item" min_amount="3" max_amount="5" offset="0 1.0 0" position_spread="1.5 1.5" direction_spread="0.02 0.1" /> 
+  </event> 
+</vehicle>
+<vehicle 
+name="购买或者输入/racing来获取排名奖励！" 
+key="racing_reward_bottom.vehicle" 
+map_view_atlas_index="-1" 
+respawn_time="0.0">
+	<tire_set offset="1.0 0.0 1.0" radius="0.65" />
+	<tire_set offset="1.0 0.0 -1.0" radius="0.65" />
+	<item_container class="armory" offset="0 0.8 0" soldier_group="racing_box" />
+
+	<control max_speed="20.0" acceleration="6.7" max_reverse_speed="6.0" max_rotation="0.8" max_water_depth="1.9" />
+
+	<physics max_health="1000" mass="500.0" extent="1.5 0.0 2.0" offset="0 0.0 0" top_offset="0 2 0" collision_model_pos="0 0.2 0" collision_model_extent="1.0 1.0 2.0" visual_offset="0 0.0 0" /> 
+
+	<visual class="chassis" mesh_filename="straw_block.mesh" texture_filename="straw_block.png" />
+
+	<sound key="hit" filename="barrier_impact1.wav" />
+	<sound key="hit" filename="barrier_impact2.wav" />
+
+	<event>
+		<trigger class="receive_damage" />
+	</event>
+
+	<effect event_key="destroy" key="other" ref="SmokeMinor" post_processing="1" />
+	<effect event_key="destroy" key="other" ref="ShadowSmokeMinor" shadow="1" />
+  
+  <event>
+		<trigger class="destroy" />		
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_barrier.visual_item" min_amount="3" max_amount="5" offset="0 1.0 0" position_spread="1.5 1.5" direction_spread="0.02 0.1" /> 
+  </event> 
+</vehicle>
+</vehicles>

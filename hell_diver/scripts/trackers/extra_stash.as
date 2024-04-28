@@ -438,10 +438,9 @@ class playerStashInfo {
         bool isExist = false;
         for(int j = 0 ; j < int(m_stashs.size()) ; ++j){
             XmlElement@ m_stash = XmlElement(m_stashs[j]);
-            int stash_size = m_stash.getIntAttribute("stash_size");
-            string sid = m_stash.getStringAttribute("sid");
-            //玩家仓库存档文件存在
-            if(m_sid == sid){
+            if(m_stash.getName() == "player"){
+                isExist = true;
+                int stash_size = m_stash.getIntAttribute("stash_size");
                 array<const XmlElement@> childs = m_stash.getChilds();
                 m_stashObject.resize(0);
                 for(uint i = 0 ; i < childs.size() ; ++i){
@@ -453,11 +452,9 @@ class playerStashInfo {
                 getStashUsedSize();
                     m_stash.setIntAttribute("now_size",m_stashUsedSize);
                 m_stash.appendChilds(m_stashObject);
-                allInfo.appendChild(m_stash);
-                isExist = true;
-            }else{//其他玩家信息不修改存回去
-                allInfo.appendChild(m_stash);
             }
+            //保存修改的和未修改的信息
+            allInfo.appendChild(m_stash);
         }
         //不存在，新建信息
         if(!isExist){
@@ -598,8 +595,8 @@ class playerStashInfo {
             limits.removeChild("item",0);
             saveLimitationInfo(limits);
         }
-        int pid = g_playerInfoBuck.getPidByName(m_name);
-        int cid = g_playerInfoBuck.getCidByName(m_name);
+        int pid = g_playerInfoBuck.getPidByName(m_metagame,m_name);
+        int cid = g_playerInfoBuck.getCidByName(m_metagame,m_name);
         if(deleteObjects.size() > 0){
             _debugReport(m_metagame,"兑换物品：检测到删除对象");
             refreshStash();

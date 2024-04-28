@@ -73,6 +73,14 @@
 	</model>
 	<model filename="acg_starwars_shipgirls.xml"><!--星舰少女--><requirement class="weapon" slot="0" key="re_acg_starwars_shipgirls_skill.weapon"/>
 	</model>
+	<model filename="acg_incomparable_alt.xml"><!--无比--><requirement class="weapon" slot="0" key="acg_incomparable.weapon"/>
+	</model>
+	<model filename="acg_incomparable.xml"><!--无比--><requirement class="weapon" slot="0" key="acg_incomparable_skill.weapon"/>
+	</model>
+	<model filename="acg_incomparable_alt.xml"><!--无比--><requirement class="weapon" slot="0" key="re_acg_incomparable.weapon"/>
+	</model>
+	<model filename="acg_incomparable.xml"><!--无比--><requirement class="weapon" slot="0" key="re_acg_incomparable_skill.weapon"/>
+	</model>
 
 <!-- 明日方舟 -->
 	<model filename="acg_fiammetta.xml"> <!--菲娅梅塔 by Gandaruvu807--><requirement class="weapon" slot="0" key="acg_fiammetta_skill.weapon"/>

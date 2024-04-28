@@ -7,7 +7,7 @@
 	name="HELL DIVER"
 	description="Hell Diver"
 	image="hd.png"
-	campaign_entry_script="start_hd_invasion_test_server.as"	show_in_campaigns="1"
+	campaign_entry_script="start_campaign.as"	show_in_campaigns="1"
     show_in_quick_match_mods="1">
 
 	<campaign_options 
@@ -21,7 +21,7 @@
 		rp_multiplier="1"
 		allow_activate_server="1">
 		
-		<preset text="simple" help="Help:Easy" id="easy"
+		<preset text="Level 3" help="Help:Easy" id="easy"
 			friendly_capacity="2.0"
 			friendly_accuracy="1.0"
 			enemy_capacity="1.0"
@@ -30,7 +30,7 @@
 			rp_multiplier="1.0"
 			player_damage_modifier="0.4"
 			/>
-		<preset text="common" help="Help:Hard" id="hard"
+		<preset text="Level 9" help="Help:Hard" id="hard"
 			friendly_capacity="1.0"
 			friendly_accuracy="1.0"
 			enemy_capacity="2"
@@ -39,7 +39,7 @@
 			rp_multiplier="1.4"
 			player_damage_modifier="0.2"
 			/>
-		<preset text="difficult" help="Help:Veteran" id="veteran"
+		<preset text="Level 12" help="Help:Veteran" id="veteran"
 			friendly_capacity="1.0"
 			friendly_accuracy="1.0"
 			enemy_capacity="3"
@@ -48,7 +48,7 @@
 			rp_multiplier="1.8"
 			player_damage_modifier="0.0"
 			/>
-		<preset text="DIY" help="Help:Presets:Custom" id="custom"
+		<preset text="Level 15" help="Help:Presets:Custom" id="custom"
 			friendly_capacity="1.0"
 			friendly_accuracy="1.0"
 			enemy_capacity="5"

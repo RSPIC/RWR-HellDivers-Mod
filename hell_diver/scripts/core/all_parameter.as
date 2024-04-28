@@ -108,6 +108,10 @@ dictionary projectile_eventkey = {
         {"acg_starwars_shipgirls_skill",56},
         //玛利亚 群体回复技能
         {"acg_maria_schariac_skill",57},
+        //无比 舰炮打击
+        {"acg_incomparable_skill",58},
+        //治疗针投掷物
+        {"hd_md99_injector",59},
 
         // 占位的
         {"666",-1}

@@ -594,3 +594,24 @@ void setSpawnScore(Metagame@ metagame,int fId,string name,float spawnScore)
 	metagame.getComms().send(command);
 }
 
+float getOrientation(Vector3@ forward)
+{
+	if(forward is null){return 0;}
+	float x = forward.m_values[0];
+	float y = forward.m_values[2];
+	float dis =sqrt((x*x)+(y*y));
+	if(dis == 0){
+		dis = 1;
+	}
+	float x_t = x*(1.0f/dis);
+	float y_t = y*(1.0f/dis);
+	float ac = acos(x_t);
+	if(asin(y_t)>0)
+	{
+		return (ac-1.57)*(-1.0f);
+	}
+	else
+	{
+		return (ac*(-1.0f)-1.57f)*(-1.0f);
+	}
+}

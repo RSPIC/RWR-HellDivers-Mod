@@ -1,0 +1,463 @@
+<?xml version="1.0" ?>
+<carry_items>
+  <carry_item key="hd_vest_lgt_sc30_20" name="20/20 SC-30 TRAILBLAZER SCOUT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_lgt_sc30_19">
+    <hud_icon filename="helldivers_vest_100.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.075"/>
+    <modifier class="detectability" value="-0.12"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_lgt_sc30_19" name="19/20 SC-30 TRAILBLAZER SCOUT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_lgt_sc30_18">
+    <hud_icon filename="helldivers_vest_100.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.075"/>
+    <modifier class="detectability" value="-0.12"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_lgt_sc30_18" name="18/20 SC-30 TRAILBLAZER SCOUT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_lgt_sc30_17">
+    <hud_icon filename="helldivers_vest_90.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.075"/>
+    <modifier class="detectability" value="-0.12"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_lgt_sc30_17" name="17/20 SC-30 TRAILBLAZER SCOUT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_lgt_sc30_16">
+    <hud_icon filename="helldivers_vest_80.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.075"/>
+    <modifier class="detectability" value="-0.12"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_lgt_sc30_16" name="16/20 SC-30 TRAILBLAZER SCOUT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_lgt_sc30_15">
+    <hud_icon filename="helldivers_vest_80.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.075"/>
+    <modifier class="detectability" value="-0.12"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_lgt_sc30_15" name="15/20 SC-30 TRAILBLAZER SCOUT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_lgt_sc30_14">
+    <hud_icon filename="helldivers_vest_80.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.075"/>
+    <modifier class="detectability" value="-0.12"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_lgt_sc30_14" name="14/20 SC-30 TRAILBLAZER SCOUT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_lgt_sc30_13">
+    <hud_icon filename="helldivers_vest_70.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.075"/>
+    <modifier class="detectability" value="-0.12"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_lgt_sc30_13" name="13/20 SC-30 TRAILBLAZER SCOUT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_lgt_sc30_12">
+    <hud_icon filename="helldivers_vest_60.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.075"/>
+    <modifier class="detectability" value="-0.12"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_lgt_sc30_12" name="12/20 SC-30 TRAILBLAZER SCOUT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_lgt_sc30_11">
+    <hud_icon filename="helldivers_vest_60.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.075"/>
+    <modifier class="detectability" value="-0.12"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_lgt_sc30_11" name="11/20 SC-30 TRAILBLAZER SCOUT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_lgt_sc30_10">
+    <hud_icon filename="helldivers_vest_60.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.075"/>
+    <modifier class="detectability" value="-0.12"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_lgt_sc30_10" name="10/20 SC-30 TRAILBLAZER SCOUT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_lgt_sc30_9">
+    <hud_icon filename="helldivers_vest_50.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.075"/>
+    <modifier class="detectability" value="-0.12"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_lgt_sc30_9" name="9/20 SC-30 TRAILBLAZER SCOUT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_lgt_sc30_8">
+    <hud_icon filename="helldivers_vest_40.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.075"/>
+    <modifier class="detectability" value="-0.12"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_lgt_sc30_8" name="8/20 SC-30 TRAILBLAZER SCOUT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_lgt_sc30_7">
+    <hud_icon filename="helldivers_vest_40.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.075"/>
+    <modifier class="detectability" value="-0.12"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_lgt_sc30_7" name="7/20 SC-30 TRAILBLAZER SCOUT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_lgt_sc30_6">
+    <hud_icon filename="helldivers_vest_40.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.075"/>
+    <modifier class="detectability" value="-0.12"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_lgt_sc30_6" name="6/20 SC-30 TRAILBLAZER SCOUT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_lgt_sc30_5">
+    <hud_icon filename="helldivers_vest_30.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.075"/>
+    <modifier class="detectability" value="-0.12"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_lgt_sc30_5" name="5/20 SC-30 TRAILBLAZER SCOUT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_lgt_sc30_4">
+    <hud_icon filename="helldivers_vest_20.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.075"/>
+    <modifier class="detectability" value="-0.12"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_lgt_sc30_4" name="4/20 SC-30 TRAILBLAZER SCOUT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_lgt_sc30_3">
+    <hud_icon filename="helldivers_vest_20.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.075"/>
+    <modifier class="detectability" value="-0.12"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_lgt_sc30_3" name="3/20 SC-30 TRAILBLAZER SCOUT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_lgt_sc30_2">
+    <hud_icon filename="helldivers_vest_20.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.075"/>
+    <modifier class="detectability" value="-0.12"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_lgt_sc30_2" name="2/20 SC-30 TRAILBLAZER SCOUT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_lgt_sc30_1">
+    <hud_icon filename="helldivers_vest_10.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.075"/>
+    <modifier class="detectability" value="-0.12"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_lgt_sc30_1" name="1/20 SC-30 TRAILBLAZER SCOUT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0">
+    <hud_icon filename="helldivers_vest_broken.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="death" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="death" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="death" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="death" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="death" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="0"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" consumes_item="0"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="death" consumes_item="0"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="death" consumes_item="0"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="0"/>
+    <modifier class="speed" value="0.075"/>
+    <modifier class="detectability" value="-0.12"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+</carry_items>

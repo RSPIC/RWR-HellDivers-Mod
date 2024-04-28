@@ -288,6 +288,17 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			ScoredResource("token_skadi.projectile","projectile",1.0f,4),
 			ScoredResource("token_arona.projectile","projectile",1.0f,4),
 			ScoredResource("token_gehenna_member.projectile","projectile",1.0f,4),
+			// 1.7.1fix
+			ScoredResource("token_abandoned_isomer.projectile","projectile",1.0f,4),
+			ScoredResource("token_dndn_porno.projectile","projectile",1.0f,4),	
+			// 1.8.0
+			ScoredResource("token_kirito.projectile","projectile",1.0f,4),	
+			ScoredResource("token_lona.projectile","projectile",1.0f,4),	
+			ScoredResource("token_misaka_10032_winter.projectile","projectile",1.0f,4),	
+			ScoredResource("token_misaka_mikoto_winter.projectile","projectile",1.0f,4),	
+			ScoredResource("token_sinon.projectile","projectile",1.0f,4),	
+			ScoredResource("token_sinon_black.projectile","projectile",1.0f,4),	
+			ScoredResource("token_yuuki_ggo.projectile","projectile",1.0f,4),	
 
 			//AI类信物
 			ScoredResource("ai_token_asuma_toki.projectile","projectile",1.0f,2)
@@ -651,7 +662,9 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_asagi_mutsuki.weapon", "weapon", 1.0f),
         	ScoredResource("acg_rikuhachima_aru.weapon", "weapon", 1.0f),
         	ScoredResource("acg_shinano.weapon", "weapon", 1.0f),
-        	ScoredResource("acg_ba_alice_railgun_ex.weapon", "weapon", 1.0f)
+        	ScoredResource("acg_ba_alice_railgun_ex.weapon", "weapon", 1.0f),
+			// 1.7.2
+        	ScoredResource("acg_incomparable.weapon", "weapon", 1.0f)
 			},
 			{
 			ScoredResource("lottery_cash_II.carry_item", "carry_item", 1.0f)

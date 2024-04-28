@@ -657,8 +657,9 @@ class CreateProjectile : Task{
 	protected float m_delaytime;
 	protected float m_delaytimer;
 	protected bool m_ended;
+	protected bool m_isVertical;
 
-	CreateProjectile(Metagame@ metagame,Vector3 sPos,Vector3 ePos,string key,int cid,int fid,float speed,float time,int num = 1,float delaytime = 0){
+	CreateProjectile(Metagame@ metagame,Vector3 sPos,Vector3 ePos,string key,int cid,int fid,float speed,float time,int num = 1,float delaytime = 0,bool isVertical=true){
 		@m_metagame = @metagame;
 		m_time = time;
 		m_num = num;
@@ -674,6 +675,7 @@ class CreateProjectile : Task{
 		m_ended = false;
 		aim_unit_vector = getAimUnitVector(1,sPos,ePos);
 		m_distance = getAimUnitDistance(1,sPos,ePos);
+		m_isVertical = isVertical;
 	}
 
 	void start(){
@@ -697,8 +699,12 @@ class CreateProjectile : Task{
 	}
 
 	protected void create(){
-		m_startPos = m_endPos.subtract(aim_unit_vector.scale((m_distance*(m_num_left))/m_num));
-		CreateDirectProjectile(m_metagame,m_startPos.add(Vector3(0,1,0)),m_startPos,m_key,m_cid,m_fid,m_speed);
+		if(m_isVertical){
+			m_startPos = m_endPos.subtract(aim_unit_vector.scale((m_distance*(m_num_left))/m_num));
+			CreateDirectProjectile(m_metagame,m_startPos.add(Vector3(0,1,0)),m_startPos,m_key,m_cid,m_fid,m_speed);
+		}else{
+			CreateDirectProjectile(m_metagame,m_startPos,m_endPos,m_key,m_cid,m_fid,m_speed);
+		}
 		m_num_left--;
 	}
 

@@ -1,0 +1,923 @@
+<?xml version="1.0" ?>
+<carry_items>
+  <carry_item key="hd_vest_mid_dp53_40" name="40/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_39">
+    <hud_icon filename="helldivers_vest_100.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_39" name="39/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_38">
+    <hud_icon filename="helldivers_vest_100.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_38" name="38/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_37">
+    <hud_icon filename="helldivers_vest_100.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_37" name="37/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_36">
+    <hud_icon filename="helldivers_vest_90.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_36" name="36/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_35">
+    <hud_icon filename="helldivers_vest_90.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_35" name="35/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_34">
+    <hud_icon filename="helldivers_vest_90.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_34" name="34/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_33">
+    <hud_icon filename="helldivers_vest_80.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_33" name="33/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_32">
+    <hud_icon filename="helldivers_vest_80.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_32" name="32/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_31">
+    <hud_icon filename="helldivers_vest_80.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_31" name="31/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_30">
+    <hud_icon filename="helldivers_vest_80.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_30" name="30/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_29">
+    <hud_icon filename="helldivers_vest_80.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_29" name="29/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_28">
+    <hud_icon filename="helldivers_vest_70.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_28" name="28/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_27">
+    <hud_icon filename="helldivers_vest_70.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_27" name="27/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_26">
+    <hud_icon filename="helldivers_vest_70.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_26" name="26/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_25">
+    <hud_icon filename="helldivers_vest_60.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_25" name="25/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_24">
+    <hud_icon filename="helldivers_vest_60.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_24" name="24/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_23">
+    <hud_icon filename="helldivers_vest_60.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_23" name="23/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_22">
+    <hud_icon filename="helldivers_vest_60.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_22" name="22/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_21">
+    <hud_icon filename="helldivers_vest_60.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_21" name="21/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_20">
+    <hud_icon filename="helldivers_vest_50.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_20" name="20/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_19">
+    <hud_icon filename="helldivers_vest_50.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="wound" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="wound" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="wound" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="wound" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="wound" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="wound" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="wound" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_19" name="19/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_18">
+    <hud_icon filename="helldivers_vest_50.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_18" name="18/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_17">
+    <hud_icon filename="helldivers_vest_40.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_17" name="17/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_16">
+    <hud_icon filename="helldivers_vest_40.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_16" name="16/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_15">
+    <hud_icon filename="helldivers_vest_40.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_15" name="15/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_14">
+    <hud_icon filename="helldivers_vest_40.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_14" name="14/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_13">
+    <hud_icon filename="helldivers_vest_40.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_13" name="13/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_12">
+    <hud_icon filename="helldivers_vest_30.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_12" name="12/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_11">
+    <hud_icon filename="helldivers_vest_30.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_11" name="11/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_10">
+    <hud_icon filename="helldivers_vest_30.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_10" name="10/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_9">
+    <hud_icon filename="helldivers_vest_20.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_9" name="9/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_8">
+    <hud_icon filename="helldivers_vest_20.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_8" name="8/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_7">
+    <hud_icon filename="helldivers_vest_20.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_7" name="7/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_6">
+    <hud_icon filename="helldivers_vest_20.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_6" name="6/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_5">
+    <hud_icon filename="helldivers_vest_20.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_5" name="5/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_4">
+    <hud_icon filename="helldivers_vest_10.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_4" name="4/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_3">
+    <hud_icon filename="helldivers_vest_10.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_3" name="3/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_2">
+    <hud_icon filename="helldivers_vest_10.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_2" name="2/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_mid_dp53_1">
+    <hud_icon filename="helldivers_vest_broken.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+  <carry_item key="hd_vest_mid_dp53_1" name="1/40 DP-53 SAVIOR OF THE FREE" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0">
+    <hud_icon filename="helldivers_vest_broken.png"/>
+    <capacity value="1" source="rank" source_value="1"/>
+    <commonness value="1" in_stock="1" can_respawn_with="1"/>
+    <inventory encumbrance="100" price="0"/>
+    <model/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="wound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="wound" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="death" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="death" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="death" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="none" output_character_state="death" consumes_item="0"/>
+    <modifier class="melee_hit_result" input_character_state="death" output_character_state="death" consumes_item="0"/>
+    <modifier class="melee_hit_result" input_character_state="wound" output_character_state="death" consumes_item="0"/>
+    <modifier class="melee_hit_result" input_character_state="stun" output_character_state="death" consumes_item="0"/>
+    <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="0"/>
+    <modifier class="speed" value="0.0"/>
+    <modifier class="detectability" value="0.0"/>
+    <modifier class="hit_success_probability" value="0.0"/>
+  </carry_item>
+</carry_items>

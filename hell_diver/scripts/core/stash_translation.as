@@ -179,6 +179,17 @@ dictionary canStoreItem = {
     {"token_skadi.projectile","[斯卡蒂 [信物]]"},
     {"token_arona.projectile","[阿罗娜 [信物]]"},
     {"token_gehenna_member.projectile","[格黑娜杂鱼 [信物]]"},
+    // 1.7.1fix
+    {"token_abandoned_isomer.projectile","[失格异构体 [信物]]"},
+    {"token_dndn_porno.projectile","[多娜多娜 帕诺尔 [信物]]"},
+    // 1.8.0
+    {"token_kirito.projectile","[桐人 [信物]]"},
+    {"token_lona.projectile","[伊欧娜 [信物]]"},
+    {"token_misaka_10032_winter.projectile","[御坂-10032 [冬季制服][信物]]"},
+    {"token_misaka_mikoto_winter.projectile","[御坂美琴 [冬季制服][信物]]"},
+    {"token_sinon.projectile","[诗乃 [信物]]"},
+    {"token_sinon_black.projectile","[诗乃 [黑][信物]]"},
+    {"token_yuuki_ggo.projectile","[由纪 [信物]]"},
 
     {"wiesel_tow_call.projectile","[鼬鼠 [陶氏]]"},
     {"lav6_call.projectile","[LAV-6]"},

@@ -26,6 +26,346 @@ hd_effect_illum_spawn_light
 
 <projectile 
 class="grenade" 
+key="hd_effect_countdown_9.projectile" 
+slot="0"
+pulldown_in_air="100.0"
+on_ground_up="0 1 0"
+>
+	<result class="blast" radius="0" damage="0" push="0.5" decal="0" character_state="none" faction_compare="not_equal" />
+	<trigger class="time" time_to_live="0" />	
+	<collision class="sticky" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	
+	<!-- <sound class="result" key="other" fileref="hd_sound_star_2.wav" pitch_variety="0.03" volume="2.0" /> -->
+	<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
+	<sound class="result" key="shield" copy="other" />
+
+	<effect class="result" key="terrain" ref="cd_1s_9" lighting="0"/>
+	
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+
+</projectile>
+<projectile 
+class="grenade" 
+key="hd_effect_countdown_8.projectile" 
+slot="0"
+pulldown_in_air="100.0"
+on_ground_up="0 1 0"
+>
+	<result class="blast" radius="0" damage="0" push="0.5" decal="0" character_state="none" faction_compare="not_equal" />
+	<trigger class="time" time_to_live="0" />	
+	<collision class="sticky" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	
+	<!-- <sound class="result" key="other" fileref="hd_sound_star_2.wav" pitch_variety="0.03" volume="2.0" /> -->
+	<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
+	<sound class="result" key="shield" copy="other" />
+
+	<effect class="result" key="terrain" ref="cd_1s_8" lighting="0"/>
+	
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+
+</projectile>
+<projectile 
+class="grenade" 
+key="hd_effect_countdown_7.projectile" 
+slot="0"
+pulldown_in_air="100.0"
+on_ground_up="0 1 0"
+>
+	<result class="blast" radius="0" damage="0" push="0.5" decal="0" character_state="none" faction_compare="not_equal" />
+	<trigger class="time" time_to_live="0" />	
+	<collision class="sticky" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	
+	<!-- <sound class="result" key="other" fileref="hd_sound_star_2.wav" pitch_variety="0.03" volume="2.0" /> -->
+	<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
+	<sound class="result" key="shield" copy="other" />
+
+	<effect class="result" key="terrain" ref="cd_1s_7" lighting="0"/>
+	
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+
+</projectile>
+<projectile 
+class="grenade" 
+key="hd_effect_countdown_6.projectile" 
+slot="0"
+pulldown_in_air="100.0"
+on_ground_up="0 1 0"
+>
+	<result class="blast" radius="0" damage="0" push="0.5" decal="0" character_state="none" faction_compare="not_equal" />
+	<trigger class="time" time_to_live="0" />	
+	<collision class="sticky" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	
+	<!-- <sound class="result" key="other" fileref="hd_sound_star_2.wav" pitch_variety="0.03" volume="2.0" /> -->
+	<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
+	<sound class="result" key="shield" copy="other" />
+
+	<effect class="result" key="terrain" ref="cd_1s_6" lighting="0"/>
+	
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+
+</projectile>
+<projectile 
+class="grenade" 
+key="hd_effect_countdown_5.projectile" 
+slot="0"
+pulldown_in_air="100.0"
+on_ground_up="0 1 0"
+>
+	<result class="blast" radius="0" damage="0" push="0.5" decal="0" character_state="none" faction_compare="not_equal" />
+	<trigger class="time" time_to_live="0" />	
+	<collision class="sticky" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	
+	<!-- <sound class="result" key="other" fileref="hd_sound_star_2.wav" pitch_variety="0.03" volume="2.0" /> -->
+	<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
+	<sound class="result" key="shield" copy="other" />
+
+	<effect class="result" key="terrain" ref="cd_1s_5" lighting="0"/>
+	
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+
+</projectile>
+<projectile 
+class="grenade" 
+key="hd_effect_countdown_4.projectile" 
+slot="0"
+pulldown_in_air="100.0"
+on_ground_up="0 1 0"
+>
+	<result class="blast" radius="0" damage="0" push="0.5" decal="0" character_state="none" faction_compare="not_equal" />
+	<trigger class="time" time_to_live="0" />	
+	<collision class="sticky" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	
+	<!-- <sound class="result" key="other" fileref="hd_sound_star_2.wav" pitch_variety="0.03" volume="2.0" /> -->
+	<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
+	<sound class="result" key="shield" copy="other" />
+
+	<effect class="result" key="terrain" ref="cd_1s_4" lighting="0"/>
+	
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+
+</projectile>
+<projectile 
+class="grenade" 
+key="hd_effect_countdown_3.projectile" 
+slot="0"
+pulldown_in_air="100.0"
+on_ground_up="0 1 0"
+>
+	<result class="blast" radius="0" damage="0" push="0.5" decal="0" character_state="none" faction_compare="not_equal" />
+	<trigger class="time" time_to_live="0" />	
+	<collision class="sticky" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	
+	<!-- <sound class="result" key="other" fileref="hd_sound_star_2.wav" pitch_variety="0.03" volume="2.0" /> -->
+	<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
+	<sound class="result" key="shield" copy="other" />
+
+	<effect class="result" key="terrain" ref="cd_1s_3" lighting="0"/>
+	
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+
+</projectile>
+<projectile 
+class="grenade" 
+key="hd_effect_countdown_2.projectile" 
+slot="0"
+pulldown_in_air="100.0"
+on_ground_up="0 1 0"
+>
+	<result class="blast" radius="0" damage="0" push="0.5" decal="0" character_state="none" faction_compare="not_equal" />
+	<trigger class="time" time_to_live="0" />	
+	<collision class="sticky" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	
+	<!-- <sound class="result" key="other" fileref="hd_sound_star_2.wav" pitch_variety="0.03" volume="2.0" /> -->
+	<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
+	<sound class="result" key="shield" copy="other" />
+
+	<effect class="result" key="terrain" ref="cd_1s_2" lighting="0"/>
+	
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+
+</projectile>
+<projectile 
+class="grenade" 
+key="hd_effect_countdown_1.projectile" 
+slot="0"
+pulldown_in_air="100.0"
+on_ground_up="0 1 0"
+>
+	<result class="blast" radius="0" damage="0" push="0.5" decal="0" character_state="none" faction_compare="not_equal" />
+	<trigger class="time" time_to_live="0" />	
+	<collision class="sticky" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	
+	<!-- <sound class="result" key="other" fileref="hd_sound_star_2.wav" pitch_variety="0.03" volume="2.0" /> -->
+	<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
+	<sound class="result" key="shield" copy="other" />
+
+	<effect class="result" key="terrain" ref="cd_1s_1" lighting="0"/>
+	
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+
+</projectile>
+<projectile 
+class="grenade" 
+key="hd_effect_countdown_0.projectile" 
+slot="0"
+pulldown_in_air="100.0"
+on_ground_up="0 1 0"
+>
+	<result class="blast" radius="0" damage="0" push="0.5" decal="0" character_state="none" faction_compare="not_equal" />
+	<trigger class="time" time_to_live="0" />	
+	<collision class="sticky" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	
+	<!-- <sound class="result" key="other" fileref="hd_sound_air_horn.wav" pitch_variety="0.03" volume="2.0" /> -->
+	<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
+	<sound class="result" key="shield" copy="other" />
+
+	<effect class="result" key="terrain" ref="cd_1s_0" lighting="0"/>
+	
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+
+</projectile>
+<projectile 
+class="grenade" 
 name="hd_effect_illusionist_broken" 
 key="hd_effect_illusionist_broken.projectile" 
 slot="0"

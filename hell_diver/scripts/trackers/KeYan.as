@@ -26,7 +26,7 @@ dictionary research_list = {
     {"acg_laisha_heliotrope.weapon",450},
 
     // MK4
-    {"acg_arknight_ifrit.weapon",150},
+    {"acg_arknight_ifrit.weapon",450},// rare
     {"acg_bronya.weapon",150},
     {"acg_g41_lasercanno_diffusion.weapon",150},
     {"acg_shuiniao.weapon",150},

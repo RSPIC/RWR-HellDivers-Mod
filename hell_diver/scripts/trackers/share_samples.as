@@ -86,16 +86,25 @@ class share_samples : Tracker {
 				for(uint i = 0; i < allPlayer.length(); i++){
 					const XmlElement@ player = allPlayer[i];
 					if(player is null){return;}
+					string name = player.getStringAttribute("name");
+					string sid = player.getStringAttribute("sid");
 					int cid = player.getIntAttribute("character_id");
 					int pid = player.getIntAttribute("player_id");
 					int fid = player.getIntAttribute("faction_id");
-					const XmlElement@ p_character = getCharacterInfo(m_metagame,cid);
-					if(p_character is null){return;}
-					Vector3 p_pos =stringToVector3(p_character.getStringAttribute("position"));
-					
+
 					deleteItemInBackpack(m_metagame,cid,"carry_item",itemKey);
-					addItemInBackpack(m_metagame,cid,"carry_item",targetKey);
-					spawnStaticProjectile(m_metagame,"hd_effect_samples_pick.projectile",p_pos,cid,fid);
+
+					playerStashInfo@ thePlayer = playerStashInfo(m_metagame,sid,name);
+					if(!thePlayer.isOpen()){
+						thePlayer.openStash();
+					}
+					XmlElement newXml("stash");
+                        newXml.setStringAttribute("AA_tag",targetKey);
+                        newXml.setStringAttribute("A_tag",""+itemClass);
+                        newXml.setIntAttribute("value",1);
+                    thePlayer.addPushInObject(newXml);
+                    thePlayer.pushInObjects();
+                    thePlayer.openStash();
 				}
 			}
 		}

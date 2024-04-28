@@ -1480,6 +1480,8 @@ class IO_data : Tracker {
             res.addToResources(resources,3);
             @res = Resource("reward_box_vehicle.carry_item","carry_item");
             res.addToResources(resources,3);
+            @res = Resource("samples_acg.carry_item","carry_item"); // 研究点
+            res.addToResources(resources,1);
             addListItemInBackpack(m_metagame,cid,resources);
 
             dictionary a;

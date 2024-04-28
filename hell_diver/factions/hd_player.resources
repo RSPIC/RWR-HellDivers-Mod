@@ -4,6 +4,7 @@
 
 
 	<weapon key="hd_ar_ar19_liberator_full_upgrade.weapon" /><!--解放者突击步枪-->
+	    <weapon key="hd_ar_ar23p_liberator.weapon" /><!--穿甲解放者突击步枪-->
 	<weapon key="hd_ar_ar22c_patriot_full_upgrade.weapon" /><!--爱国者突击步枪-->
 	<weapon key="hd_ar_ar20l_justice_full_upgrade.weapon" /><!--正义突击步枪-->
 	<weapon key="hd_ar_ar14d_paragon_full_upgrade.weapon" /><!--典范突击步枪-->
@@ -80,12 +81,14 @@
     <weapon key="hd_apb_mk3.weapon" /><!--铁丝网-->
 
     <!--投掷物/信标-->
+    <projectile key="hd_grenade_molotov.projectile" /><!--燃烧瓶-->
+    <projectile key="hd_grenade_standard.projectile" /><!--破片手雷-->
+	<projectile key="hd_grenade_stun_g23.projectile" />	<!-- 闪光雷 -->	
+    
     <projectile key="hd_m5_apc_call.projectile" /><!--M5 ACP 载具-->
     <projectile key="hd_m5_32_hav_call.projectile" /><!--M5-32 反坦克步兵车-->
     <projectile key="hd_td110_bastion_call.projectile" /><!--堡垒 坦克-->
     <projectile key="hd_mc109_motor_call.projectile" /><!--重锤摩托-->
-    <projectile key="hd_grenade_molotov.projectile" /><!--燃烧瓶-->
-    <projectile key="hd_grenade_standard.projectile" /><!--破片手雷-->
     <projectile key="hd_at47_mk3_call.projectile" /><!--AT-47 反坦克平台-->
     <projectile key="hd_amg_11_mk3_call.projectile" /><!--自动机枪炮台-->
     <projectile key="hd_arx_34_mk3_call.projectile" /><!--自动轨道炮炮台-->
