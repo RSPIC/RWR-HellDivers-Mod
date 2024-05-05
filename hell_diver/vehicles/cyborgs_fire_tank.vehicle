@@ -13,7 +13,7 @@ usable_for_cover="1"
 reserves_spawn_point="1"
 allow_ai_to_use="1"
 ai_abandon_when_unsteerable="1"
-respawn_time="180"
+respawn_time="30"
 ai_pick_prevention_time="30"
 ai_handle_taxi_request_when_full="1"
 ai_stop_to_fight="1"
@@ -36,8 +36,9 @@ character_leave_request_mode="any"
 	steer_smoothening="0.1" 
 	tracked="1" gears="1"
 	/>
-
+	<!-- 1.8.1 血量 400增加至600 -->
 	<physics  
+	max_health="600" 
 	remove_collision_threshold="1.0"
 	extent="4.0 0 7" 
 	offset="0 0.0 0" 

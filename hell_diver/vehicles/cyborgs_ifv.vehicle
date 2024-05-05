@@ -12,7 +12,7 @@ usable_for_cover="1"
 reserves_spawn_point="1"
 allow_ai_to_use="1"
 ai_abandon_when_unsteerable="0"
-respawn_time="50"
+respawn_time="35"
 ai_pick_prevention_time="60"
 character_leave_request_mode="friendly"
 >
@@ -34,8 +34,9 @@ character_leave_request_mode="friendly"
 	steer_smoothening="0" 
 	tracked="1" gears="0"
 	/>
-
+	<!-- 1.8.1 血量550增加至750 -->
 	<physics 
+	max_health="750" 
 	remove_collision_threshold="1.0"
 	extent="6.0 -2 8" 
 	offset="0 0 0" 

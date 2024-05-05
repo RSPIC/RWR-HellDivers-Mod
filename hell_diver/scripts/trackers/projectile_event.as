@@ -19,7 +19,7 @@ dictionary skill_CD = {
 
     {"acg_starwars_shipgirls_skill",90},
     {"acg_maria_schariac_skill",20},
-    {"acg_incomparable_skill",26},
+    {"acg_incomparable_skill",24},
 
     {"",0}
 

@@ -103,6 +103,7 @@ class schedule_Check : Tracker {
                 checkHyperMega(m_metagame,name,pid,cid,equipList);
                 checkVergil(m_metagame,name,pid,cid,equipList);
                 checkNeedle(m_metagame,name,pid,cid,equipList); // 先于skin检测
+                checkImpactGl(m_metagame,name,pid,cid,equipList); // 先于skin检测
                 checkSkin(m_metagame,name,pid,cid,equipList);
                 checkToki(m_metagame,name,pid,cid,equipList);
             }
@@ -274,6 +275,26 @@ class schedule_Check : Tracker {
                             "</command>";
                         m_metagame.getComms().send(c);
                         notify(metagame, "治疗针已重新补给", dictionary(), "misc", pid, false, "", 1.0);
+                        return;
+                    }
+                }
+            }
+        }
+    }
+    // ----------------------------------------------------
+	protected void checkImpactGl(Metagame@ metagame,string&in name,int&in pid,int&in cid,dictionary&in equipList){
+        if(g_vestInfoBuck.getImpactGl(name)){
+            string equipKey;
+            if(equipList.get("2",equipKey)){//投掷物
+                int num;
+                if(equipList.get(equipKey,num)){
+                    if(num == 0){
+                        string c = 
+                            "<command class='update_inventory' character_id='" + cid + "' container_type_id='4' add='1'>" + 
+                                "<item class='" + "projectile" + "' key='" + "hd_grenade_impact_g16.projectile" +"' />" +
+                            "</command>";
+                        m_metagame.getComms().send(c);
+                        notify(metagame, "冲击雷已重新补给", dictionary(), "misc", pid, false, "", 1.0);
                         return;
                     }
                 }

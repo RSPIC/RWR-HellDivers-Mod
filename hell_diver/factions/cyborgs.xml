@@ -341,6 +341,40 @@
 		</item_class_existence_config>
 
 	</soldier>  
+	<soldier name="ButcherM" spawn_score="0.5" copy_from="default_ai"><!--血厚减速版本-->
+		<character filename="cyborgs_butcher_state.character">	<!-- cyborgs_butcher_state 引用 cyborgs_cyborgs_default_chat 引用 cyborgs_default_base-->
+			
+		</character>
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="cyborgs_common.resources" clear_carry_items="1"/>
+		<resources>
+			<weapon key="cyborgs_butcher_m_main.weapon" />
+			
+			<!-- 300层 -->
+			<carry_item key="general_vest_350" />
+		</resources>
+		
+		
+		<model file="cyborgs_butcher.xml" />
+
+		<ai filename="cyborgs_butcher.ai" /> <!-- butcher.ai 引用 default_cyborgs.ai -->
+
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="0.5" max="0.5" />
+		</attribute_config>
+
+		<item_class_existence_config>
+			<!-- main -->
+			<item_class_existence class="weapon" slot="0" probability="1" />
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="1" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="1" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="0.85" />
+		</item_class_existence_config>
+
+	</soldier>  
 	<!-- 生化兵 -->
 	<soldier name="Immolator" spawn_score="1.0" copy_from="default_ai">
 		<character filename="cyborgs_immolator_state.character">	<!-- cyborgs_immolator_state 引用 cyborgs_cyborgs_default_chat 引用 cyborgs_default_base-->

@@ -40,6 +40,22 @@ name="[中甲] TR-9民主骑兵 [右键购买以研发/装备][需求：5-研究
 > 
     <hud_icon filename="hd_vest_mid_tr9.png" /> 
 </carry_item>
+<carry_item 
+file="_ui.carry_base"
+slot="1" 
+key="upgrade_ui_sa12.vest.target:hd_vest_mid_sa12_40.cost:05." 
+name="[中甲] SA-12伺服辅助 [右键购买以研发/装备][需求：5-研究点][属性：40层][功能：+0.05移速]" 
+> 
+    <hud_icon filename="hd_vest_mid_sa12.png" /> 
+</carry_item>
+<carry_item 
+file="_ui.carry_base"
+slot="1" 
+key="upgrade_ui_ce35.vest.target:hd_vest_mid_ce35_40.cost:05.impactGl" 
+name="[中甲] CE-35战壕工程师 [右键购买以研发/装备][需求：5-研究点][属性：40层][功能：自动补给冲击雷]" 
+> 
+    <hud_icon filename="hd_vest_mid_ce35.png" /> 
+</carry_item>
 </carry_items>
 
 

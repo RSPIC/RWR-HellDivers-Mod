@@ -100,7 +100,7 @@ class share_samples : Tracker {
 					}
 					XmlElement newXml("stash");
                         newXml.setStringAttribute("AA_tag",targetKey);
-                        newXml.setStringAttribute("A_tag",""+itemClass);
+                        newXml.setStringAttribute("A_tag","carry_item");
                         newXml.setIntAttribute("value",1);
                     thePlayer.addPushInObject(newXml);
                     thePlayer.pushInObjects();

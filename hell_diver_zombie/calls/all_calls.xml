@@ -6,7 +6,9 @@
 	<call file="spawn_hd_mc109_motor.call" />      
 	<call file="hd_md99_autoinjector.call" />        
 	<call file="spawn_hd_resupply.call" />      
-  
+  	<call file="spawn_hd_apb_mk3.call" />      
+	<call file="hd_sos_beacom.call" />      
+	<call file="spawn_hd_sms.call" />      
 	
 	<!-- <call file="hd_sup_metal_detector.call" />       -->
 	

@@ -38,6 +38,7 @@ dictionary research_list = {
     {"acg_asagi_mutsuki.weapon",150},
     {"acg_rikuhachima_aru.weapon",150},
     {"acg_shinano.weapon",150},
+    {"acg_incomparable.weapon",150},
 
     //mk3 
     {"acg_takanashi_hoshino.weapon",50},

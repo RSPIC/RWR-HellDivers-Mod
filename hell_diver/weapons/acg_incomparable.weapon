@@ -6,7 +6,7 @@ key="acg_incomparable.weapon"
 >
     <specification 	
     slot="0" 	
-    retrigger_time="0.1" 
+    retrigger_time="0.33" 
     accuracy_factor="1" 
 	spread_range="0.15"
 	stance_accuracy_rate="1.0"
@@ -15,13 +15,13 @@ key="acg_incomparable.weapon"
     magazine_size="11" 
     can_shoot_standing="1" 
     can_shoot_crouching="1" 
-	can_shoot_prone="1"	
+	can_shoot_prone="0"	
     suppressed="0" 
-	class="4" 
+	class="0" 
     name="Incomparable" 
 	sight_range_modifier="1.4" 
 	sight_height_offset="1.0" 
-	burst_shots="11" 
+	burst_shots="1" 
     projectiles_per_shot="2" 
     projectile_speed="180.0"
 	barrel_offset="0.6" 
@@ -39,19 +39,19 @@ key="acg_incomparable.weapon"
 	<animation key="recoil" animation_key="hd_double_fire_left" />
 	<animation key="recoil" animation_key="hd_double_fire_right" />
 	<animation key="recoil" animation_key="hd_double_fire_left" />
-	<animation state_key="reload" animation_key="incomparable_reloading_2.25s"/>
+	<animation state_key="reload" animation_key="incomparable_reloading_1s"/>
 	<animation state_key="hold" animation_key="incomparable_base_still" />
-	<animation state_key="hold_on_wall"  animation_key="incomparable_still" /><!--架枪动作，全身动作-->
-    <animation state_key="still_against_wall" animation_key="incomparable_still" /><!--靠墙动作，全身动作-->
-    <animation state_key="hold_casual" animation_key="incomparable_still" /><!--闲置动作，全身动作-->
-    <animation state_key="running" animation_key="incomparable_running" />
-    <animation state_key="walking" animation_key="incomparable_running" />
-    <animation state_key="walking_backwards" animation_key="incomparable_running_back" />
+	<animation state_key="hold_on_wall"  animation_key="incomparable_base_still" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="incomparable_base_still" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="incomparable_base_still" /><!--闲置动作，全身动作-->
+    <animation state_key="running" animation_key="incomparable_running_dbfire" />
+    <animation state_key="walking" animation_key="incomparable_running_dbfire" />
+    <animation state_key="walking_backwards" animation_key="incomparable_running_back_dbfire" />
     <animation state_key="crouching" animation_key="hd_double_fire_left" /><!--蹲姿静止动作，全身动作-->
-	<animation state_key="crouch_moving" animation_key="acg_toki_walking2" /><!--全身动作-->
-	<animation state_key="crouch_moving_backwards" animation_key="acg_toki_walkingback2" /><!--全身动作-->
+	<animation state_key="crouch_moving" animation_key="incomparable_running" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="incomparable_running_back_dbfire" /><!--全身动作-->
     <animation state_key="prone_still" animation_key="hd_double_fire_left" /><!--全身动作-->
-	<animation state_key="prone_moving" animation_key="acg_toki_walking2" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="incomparable_running" /><!--全身动作-->
 	<animation state_key="stabbing"	animation_key="melee, ninjato whip" />
 	<animation state_key="stabbing"	animation_key="melee, ninjato slap" />
 	<animation state_key="stabbing"	animation_key="melee, ninjato slash" />
@@ -63,7 +63,7 @@ key="acg_incomparable.weapon"
 	<animation state_key="changing_weapon_out" animation_key="switch fire mode"/><!--半身动作，切换武器，本武器取出-->
 
 
-    <sound key="effect" fileref="acg_incomparable_switch.wav" pitch_variety="0.03" volume="3.0" /> 
+    <sound key="effect" fileref="acg_incomparable_switch_01.wav" pitch_variety="0.03" volume="1.0" /> 
     <sound key="fire" fileref="acg_incomparable_fire.wav" pitch_variety="0.03" volume="1.5" />
     <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
 	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
@@ -88,7 +88,7 @@ key="acg_incomparable.weapon"
 	time_to_live="0.5" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.7" > 
 
 		<result class="spawn" instance_class="projectile" instance_key="acg_incomparable_damage.projectile" 
-		min_amount="2" max_amount="2" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+		min_amount="4" max_amount="4" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 		<trigger class="impact" />
 		<rotation class="motion" />
 
@@ -160,10 +160,10 @@ key="acg_incomparable_skill.weapon"
     magazine_size="1" 
     can_shoot_standing="1" 
     can_shoot_crouching="1" 
-	can_shoot_prone="1"	
+	can_shoot_prone="0"	
     suppressed="0" 
-	class="4" 
-    name="Incomparable" 
+	class="3" 
+    name="Incomparable SKILL" 
 	sight_range_modifier="2.5" 
 	sight_height_offset="1.0" 
 	burst_shots="1" 
@@ -188,8 +188,8 @@ key="acg_incomparable_skill.weapon"
     <animation state_key="walking" animation_key="incomparable_running" />
     <animation state_key="walking_backwards" animation_key="incomparable_running_back" />
     <animation state_key="crouching" animation_key="crouch, pistol" /><!--蹲姿静止动作，全身动作-->
-	<animation state_key="crouch_moving" animation_key="crouching, pistol 2" /><!--全身动作-->
-	<animation state_key="crouch_moving_backwards" animation_key="crouching backwards, hip fire" /><!--全身动作-->
+	<animation state_key="crouch_moving" animation_key="incomparable_running" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="incomparable_running_back" /><!--全身动作-->
     <animation state_key="prone_still" animation_key="prone_still, pistol" /><!--全身动作-->
 	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
 	<animation state_key="stabbing"	animation_key="melee, ninjato whip 2" />
@@ -202,7 +202,7 @@ key="acg_incomparable_skill.weapon"
 	<animation state_key="changing_weapon_out" animation_key="switch fire mode"/><!--半身动作，切换武器，本武器取出-->
 
 
-    <sound key="effect" fileref="acg_incomparable_switch.wav" pitch_variety="0.03" volume="3.0" /> 
+    <sound key="effect" fileref="acg_incomparable_switch_02.wav" pitch_variety="0.03" volume="1.0" /> 
     <sound key="fire" fileref="acg_incomparable_skill_fire.wav" pitch_variety="0.03" volume="4.5" />
     <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
 	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
@@ -277,7 +277,7 @@ key="re_acg_incomparable.weapon"
 >
     <specification 	
     slot="0" 	
-    retrigger_time="0.1" 
+    retrigger_time="0.33" 
     accuracy_factor="1" 
 	spread_range="0.15"
 	stance_accuracy_rate="1.0"
@@ -286,13 +286,13 @@ key="re_acg_incomparable.weapon"
     magazine_size="11" 
     can_shoot_standing="1" 
     can_shoot_crouching="1" 
-	can_shoot_prone="1"	
+	can_shoot_prone="0"	
     suppressed="0" 
-	class="4" 
+	class="0" 
     name="Incomparable" 
 	sight_range_modifier="1.4" 
 	sight_height_offset="1.0" 
-	burst_shots="11" 
+	burst_shots="1" 
     projectiles_per_shot="2" 
     projectile_speed="180.0"
 	barrel_offset="0.6" 
@@ -306,24 +306,23 @@ key="re_acg_incomparable.weapon"
 	<!--0全自动 4半自动 2栓动 3特殊（需要额外动作）5近程特殊（如部署沙包）-->
 	<next_in_chain key="re_acg_incomparable_skill.weapon" share_ammo="0" /> 
 
-
 	<animation key="recoil" animation_key="hd_double_fire_right" />
 	<animation key="recoil" animation_key="hd_double_fire_left" />
 	<animation key="recoil" animation_key="hd_double_fire_right" />
 	<animation key="recoil" animation_key="hd_double_fire_left" />
-	<animation state_key="reload" animation_key="incomparable_reloading_2.25s"/>
+	<animation state_key="reload" animation_key="incomparable_reloading_1s"/>
 	<animation state_key="hold" animation_key="incomparable_base_still" />
-	<animation state_key="hold_on_wall"  animation_key="incomparable_still" /><!--架枪动作，全身动作-->
-    <animation state_key="still_against_wall" animation_key="incomparable_still" /><!--靠墙动作，全身动作-->
-    <animation state_key="hold_casual" animation_key="incomparable_still" /><!--闲置动作，全身动作-->
-    <animation state_key="running" animation_key="incomparable_running" />
-    <animation state_key="walking" animation_key="incomparable_running" />
-    <animation state_key="walking_backwards" animation_key="incomparable_running_back" />
+	<animation state_key="hold_on_wall"  animation_key="incomparable_base_still" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="incomparable_base_still" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="incomparable_base_still" /><!--闲置动作，全身动作-->
+    <animation state_key="running" animation_key="incomparable_running_dbfire" />
+    <animation state_key="walking" animation_key="incomparable_running_dbfire" />
+    <animation state_key="walking_backwards" animation_key="incomparable_running_back_dbfire" />
     <animation state_key="crouching" animation_key="hd_double_fire_left" /><!--蹲姿静止动作，全身动作-->
-	<animation state_key="crouch_moving" animation_key="acg_toki_walking2" /><!--全身动作-->
-	<animation state_key="crouch_moving_backwards" animation_key="acg_toki_walkingback2" /><!--全身动作-->
+	<animation state_key="crouch_moving" animation_key="incomparable_running" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="incomparable_running_back_dbfire" /><!--全身动作-->
     <animation state_key="prone_still" animation_key="hd_double_fire_left" /><!--全身动作-->
-	<animation state_key="prone_moving" animation_key="acg_toki_walking2" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="incomparable_running" /><!--全身动作-->
 	<animation state_key="stabbing"	animation_key="melee, ninjato whip" />
 	<animation state_key="stabbing"	animation_key="melee, ninjato slap" />
 	<animation state_key="stabbing"	animation_key="melee, ninjato slash" />
@@ -335,7 +334,7 @@ key="re_acg_incomparable.weapon"
 	<animation state_key="changing_weapon_out" animation_key="switch fire mode"/><!--半身动作，切换武器，本武器取出-->
 
 
-    <sound key="effect" fileref="acg_incomparable_switch.wav" pitch_variety="0.03" volume="3.0" /> 
+    <sound key="effect" fileref="acg_incomparable_switch_01.wav" pitch_variety="0.03" volume="1.0" /> 
     <sound key="fire" fileref="acg_incomparable_fire.wav" pitch_variety="0.03" volume="1.5" />
     <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
 	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
@@ -360,7 +359,7 @@ key="re_acg_incomparable.weapon"
 	time_to_live="0.5" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.7" > 
 
 		<result class="spawn" instance_class="projectile" instance_key="acg_incomparable_damage.projectile" 
-		min_amount="2" max_amount="2" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+		min_amount="4" max_amount="4" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 		<trigger class="impact" />
 		<rotation class="motion" />
 
@@ -432,10 +431,10 @@ key="re_acg_incomparable_skill.weapon"
     magazine_size="1" 
     can_shoot_standing="1" 
     can_shoot_crouching="1" 
-	can_shoot_prone="1"	
+	can_shoot_prone="0"	
     suppressed="0" 
-	class="4" 
-    name="Incomparable" 
+	class="3" 
+    name="Incomparable SKILL" 
 	sight_range_modifier="2.5" 
 	sight_height_offset="1.0" 
 	burst_shots="1" 
@@ -449,7 +448,6 @@ key="re_acg_incomparable_skill.weapon"
 	<!--0全自动 4半自动 2栓动 3特殊（需要额外动作）5近程特殊（如部署沙包）-->
 	<next_in_chain key="re_acg_incomparable.weapon" share_ammo="0" /> 
 
-
     <animation state_key="recoil" animation_key="melee_incomparable" /> <!--后坐力动作，半身动作-->
     <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
     <animation state_key="reload" animation_key="incomparable_reloading_2.25s" />	<!--换弹动作，半身动作-->
@@ -461,8 +459,8 @@ key="re_acg_incomparable_skill.weapon"
     <animation state_key="walking" animation_key="incomparable_running" />
     <animation state_key="walking_backwards" animation_key="incomparable_running_back" />
     <animation state_key="crouching" animation_key="crouch, pistol" /><!--蹲姿静止动作，全身动作-->
-	<animation state_key="crouch_moving" animation_key="crouching, pistol 2" /><!--全身动作-->
-	<animation state_key="crouch_moving_backwards" animation_key="crouching backwards, hip fire" /><!--全身动作-->
+	<animation state_key="crouch_moving" animation_key="incomparable_running" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="incomparable_running_back" /><!--全身动作-->
     <animation state_key="prone_still" animation_key="prone_still, pistol" /><!--全身动作-->
 	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
 	<animation state_key="stabbing"	animation_key="melee, ninjato whip 2" />
@@ -475,7 +473,7 @@ key="re_acg_incomparable_skill.weapon"
 	<animation state_key="changing_weapon_out" animation_key="switch fire mode"/><!--半身动作，切换武器，本武器取出-->
 
 
-    <sound key="effect" fileref="acg_incomparable_switch.wav" pitch_variety="0.03" volume="3.0" /> 
+    <sound key="effect" fileref="acg_incomparable_switch_02.wav" pitch_variety="0.03" volume="1.0" /> 
     <sound key="fire" fileref="acg_incomparable_skill_fire.wav" pitch_variety="0.03" volume="4.5" />
     <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
 	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->

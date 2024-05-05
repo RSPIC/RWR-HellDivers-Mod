@@ -5,7 +5,7 @@ name="MTL_GOLD1"
 key="MTL_GOLD1"
 >
     <hud_icon filename="MTL_GOLD1.png" />
-    <inventory encumbrance="0.5" price="100.0" />
+    <inventory encumbrance="0.5" price="225.0" />
     <model mesh_filename="MTL_GOLD1.mesh" texture_filename="MTL_GOLD1.jpg" />
     <commonness value="1.5" in_stock="1" />
 </carry_item>
@@ -14,7 +14,7 @@ name="MTL_GOLD2"
 key="MTL_GOLD2"
 >
     <hud_icon filename="MTL_GOLD2.png" />
-    <inventory encumbrance="0.5" price="300.0" />
+    <inventory encumbrance="0.5" price="425.0" />
     <model mesh_filename="MTL_GOLD2.mesh" texture_filename="MTL_GOLD2.jpg" />
     <commonness value="0.3" in_stock="1" />
 </carry_item>
@@ -32,7 +32,7 @@ name="MTL_BASE_SL1"
 key="MTL_BASE_SL1"
 >
     <hud_icon filename="MTL_BASE_SL1.png" />
-    <inventory encumbrance="0.5" price="100.0" />
+    <inventory encumbrance="0.5" price="225.0" />
     <model mesh_filename="MTL_BASE_SL1.mesh" texture_filename="MTL_BASE_SL1.jpg" />
     <commonness value="1.5" in_stock="1" />
 </carry_item>
@@ -41,7 +41,7 @@ name="MTL_BASE_SL2"
 key="MTL_BASE_SL2"
 >
     <hud_icon filename="MTL_BASE_SL2.png" />
-    <inventory encumbrance="0.5" price="300.0" />
+    <inventory encumbrance="0.5" price="425.0" />
     <model mesh_filename="MTL_BASE_SL2.mesh" texture_filename="MTL_BASE_SL2.jpg" />
     <commonness value="0.3" in_stock="1" />
 </carry_item>
@@ -59,7 +59,7 @@ name="MTL_BASE_SYNTH1"
 key="MTL_BASE_SYNTH1"
 >
     <hud_icon filename="MTL_BASE_SYNTH1.png" />
-    <inventory encumbrance="0.5" price="100.0" />
+    <inventory encumbrance="0.5" price="225.0" />
     <model mesh_filename="MTL_BASE_SYNTH1.mesh" texture_filename="MTL_BASE_SYNTH1.jpg" />
     <commonness value="1.0" in_stock="1" />
 </carry_item>
@@ -68,7 +68,7 @@ name="MTL_BASE_SYNTH2"
 key="MTL_BASE_SYNTH2"
 >
     <hud_icon filename="MTL_BASE_SYNTH2.png" />
-    <inventory encumbrance="0.5" price="300.0" />
+    <inventory encumbrance="0.5" price="375.0" />
     <model mesh_filename="MTL_BASE_SYNTH2.mesh" texture_filename="MTL_BASE_SYNTH2.jpg" />
     <commonness value="0.3" in_stock="1" />
 </carry_item>
@@ -86,7 +86,7 @@ name="MTL_SL_ALCOHOL1"
 key="MTL_SL_ALCOHOL1"
 >
     <hud_icon filename="MTL_SL_ALCOHOL1.png" />
-    <inventory encumbrance="0.5" price="100.0" />
+    <inventory encumbrance="0.5" price="225.0" />
     <model mesh_filename="MTL_SL_ALCOHOL1.mesh" texture_filename="MTL_SL_ALCOHOL1.jpg" />
     <commonness value="1.0" in_stock="1" />
 </carry_item>
@@ -104,7 +104,7 @@ name="MTL_SL_BOSS1"
 key="MTL_SL_BOSS1"
 >
     <hud_icon filename="MTL_SL_BOSS1.png" />
-    <inventory encumbrance="0.5" price="100.0" />
+    <inventory encumbrance="0.5" price="225.0" />
     <model mesh_filename="MTL_SL_BOSS1.mesh" texture_filename="MTL_SL_BOSS1.jpg" />
     <commonness value="1.0" in_stock="1" />
 </carry_item>
@@ -140,7 +140,7 @@ name="MTL_SL_G1"
 key="MTL_SL_G1"
 >
     <hud_icon filename="MTL_SL_G1.png" />
-    <inventory encumbrance="0.5" price="100.0" />
+    <inventory encumbrance="0.5" price="225.0" />
     <model mesh_filename="MTL_SL_G1.mesh" texture_filename="MTL_SL_G1.jpg" />
     <commonness value="1.0" in_stock="1" />
 </carry_item>
@@ -149,7 +149,7 @@ name="MTL_SL_G2"
 key="MTL_SL_G2"
 >
     <hud_icon filename="MTL_SL_G2.png" />
-    <inventory encumbrance="0.5" price="300.0" />
+    <inventory encumbrance="0.5" price="425.0" />
     <model mesh_filename="MTL_SL_G2.mesh" texture_filename="MTL_SL_G2.jpg" />
     <commonness value="0.3" in_stock="1" />
 </carry_item>
@@ -176,7 +176,7 @@ name="MTL_SL_IRON1"
 key="MTL_SL_IRON1"
 >
     <hud_icon filename="MTL_SL_IRON1.png" />
-    <inventory encumbrance="0.5" price="100.0" />
+    <inventory encumbrance="0.5" price="225.0" />
     <model mesh_filename="MTL_SL_IRON1.mesh" texture_filename="MTL_SL_IRON1.jpg" />
     <commonness value="1.5" in_stock="1" />
 </carry_item>
@@ -185,7 +185,7 @@ name="MTL_SL_IRON2"
 key="MTL_SL_IRON2"
 >
     <hud_icon filename="MTL_SL_IRON2.png" />
-    <inventory encumbrance="0.5" price="300.0" />
+    <inventory encumbrance="0.5" price="425.0" />
     <model mesh_filename="MTL_SL_IRON2.mesh" texture_filename="MTL_SL_IRON2.jpg" />
     <commonness value="0.3" in_stock="1" />
 </carry_item>
@@ -266,7 +266,7 @@ name="MTL_SL_RUSH1"
 key="MTL_SL_RUSH1"
 >
     <hud_icon filename="MTL_SL_RUSH1.png" />
-    <inventory encumbrance="0.5" price="100.0" />
+    <inventory encumbrance="0.5" price="225.0" />
     <model mesh_filename="MTL_SL_RUSH1.mesh" texture_filename="MTL_SL_RUSH1.jpg" />
     <commonness value="1.0" in_stock="1" />
 </carry_item>
@@ -275,7 +275,7 @@ name="MTL_SL_RUSH2"
 key="MTL_SL_RUSH2"
 >
     <hud_icon filename="MTL_SL_RUSH2.png" />
-    <inventory encumbrance="0.5" price="300.0" />
+    <inventory encumbrance="0.5" price="425.0" />
     <model mesh_filename="MTL_SL_RUSH2.mesh" texture_filename="MTL_SL_RUSH2.jpg" />
     <commonness value="0.3" in_stock="1" />
 </carry_item>
@@ -302,7 +302,7 @@ name="MTL_SL_STRG1"
 key="MTL_SL_STRG1"
 >
     <hud_icon filename="MTL_SL_STRG1.png" />
-    <inventory encumbrance="0.5" price="100.0" />
+    <inventory encumbrance="0.5" price="225.0" />
     <model mesh_filename="MTL_SL_STRG1.mesh" texture_filename="MTL_SL_STRG1.jpg" />
     <commonness value="1.0" in_stock="1" />
 </carry_item>
@@ -311,7 +311,7 @@ name="MTL_SL_STRG2"
 key="MTL_SL_STRG2"
 >
     <hud_icon filename="MTL_SL_STRG2.png" />
-    <inventory encumbrance="0.5" price="300.0" />
+    <inventory encumbrance="0.5" price="425.0" />
     <model mesh_filename="MTL_SL_STRG2.mesh" texture_filename="MTL_SL_STRG2.jpg" />
     <commonness value="0.3" in_stock="1" />
 </carry_item>

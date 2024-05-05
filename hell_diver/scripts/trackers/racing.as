@@ -553,10 +553,10 @@ class racing : Tracker {
     }
 
     protected void joinRacingGame(int senderId,string sender){
-        // if(m_lockRacing){
-        //     _notify(m_metagame,senderId,"当前赛车比赛未结束，无法中途加入");
-        //     return;
-        // }
+        if(m_lockRacing){
+            _notify(m_metagame,senderId,"当前赛车比赛未结束，无法中途加入");
+            return;
+        }
         if(m_start){
             for(uint i=0; i<m_tasks.size(); ++i){
                 if(sender == m_tasks[i].m_name){

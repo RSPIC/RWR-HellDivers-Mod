@@ -219,37 +219,37 @@ class StageConfiguratorInvasion : StageConfigurator {
 			_log("setupNormalStages add g_server_activity");
 		}else{
 			_log("setupNormalStages add normal");
-			// addStage(setupStageBloodandFlowers_01());         // BloodandFlowers_01 By asanonana ver1.5.11
-			// addStage(setupStage8());          // map8 #13 10 
-			// addStage(setupStage10());         // map10 #7 4 疑似有bug ver1.5.10
-			// addStage(setupStage14());         // map6_2 #14 11
-			// addStage(setupStage2());          // map4 #15 12
-			// addStage(setupStage3());          // map3 #10 7
-			// addStage(setupStage6());          // map5 #17 15
-			// //addStage(setupFinalStage2());     // map12 #18 黑猫
-			// addStage(setupStage19());         // map18 #19
-			// addStage(setupStage11());         // map13 #20
-			// addStage(setupStage7());          // map6 #0
-			// addStage(setupStage5());          // map1 #16 14 
-			// addStage(setupStage1());          // map2 #1
-			// addStage(setupStage9());          // map9 #2
-			// addStage(setupStage16());         // map8_2 #3 雪地威克岛
-			// addStage(setupStage21());         // map20 #7 16 战壕小岛
-			// addStage(setupStage4());          // map7 #4 3
-			// addStage(setupStage15());         // map1_2 #5 太大
-			// addStage(setupStage12());         // map14 #6
-			// addStage(setupStage17());         // map17  #8 5
-			// addStage(setupStage18());         // map13_2 #9 6
-			// addStage(setupStage13());         // map16  #11  8
-			// addStage(setupFinalStage1());     // map11 #12 潜行9
-			// addStage(setupStageCasake_Bay());         // Casake_Bay #21
-			// addStage(setupStage20());         // map19 #17	13 鹅城
-			// //addStage(setupRoberto());         // 创意工坊图 ver1.6.0  难以修改，删除 12.31 HOTCAT建议
-			// addStage(setupClairemont());      // 创意工坊图 ver1.6.0
-			// //addStage(setupViper());           // 创意工坊图 ver1.6.0
-			// addStage(setupDef_lab_koth());    // 创意工坊图 ver1.6.0
-			// addStage(setupEastport());        // 创意工坊图 ver1.6.0
-			// addStage(setupWave_Town());       // 创意工坊图 ver1.6.0
+			addStage(setupStageBloodandFlowers_01());         // BloodandFlowers_01 By asanonana ver1.5.11
+			addStage(setupStage8());          // map8 #13 10 
+			addStage(setupStage10());         // map10 #7 4 疑似有bug ver1.5.10
+			addStage(setupStage14());         // map6_2 #14 11
+			addStage(setupStage2());          // map4 #15 12
+			addStage(setupStage3());          // map3 #10 7
+			addStage(setupStage6());          // map5 #17 15
+			//addStage(setupFinalStage2());     // map12 #18 黑猫
+			addStage(setupStage19());         // map18 #19
+			addStage(setupStage11());         // map13 #20
+			addStage(setupStage7());          // map6 #0
+			addStage(setupStage5());          // map1 #16 14 
+			addStage(setupStage1());          // map2 #1
+			addStage(setupStage9());          // map9 #2
+			addStage(setupStage16());         // map8_2 #3 雪地威克岛
+			addStage(setupStage21());         // map20 #7 16 战壕小岛
+			addStage(setupStage4());          // map7 #4 3
+			addStage(setupStage15());         // map1_2 #5 太大
+			addStage(setupStage12());         // map14 #6
+			addStage(setupStage17());         // map17  #8 5
+			addStage(setupStage18());         // map13_2 #9 6
+			addStage(setupStage13());         // map16  #11  8
+			addStage(setupFinalStage1());     // map11 #12 潜行9
+			addStage(setupStageCasake_Bay());         // Casake_Bay #21
+			addStage(setupStage20());         // map19 #17	13 鹅城
+			//addStage(setupRoberto());         // 创意工坊图 ver1.6.0  难以修改，删除 12.31 HOTCAT建议
+			addStage(setupClairemont());      // 创意工坊图 ver1.6.0
+			//addStage(setupViper());           // 创意工坊图 ver1.6.0
+			addStage(setupDef_lab_koth());    // 创意工坊图 ver1.6.0
+			addStage(setupEastport());        // 创意工坊图 ver1.6.0
+			addStage(setupWave_Town());       // 创意工坊图 ver1.6.0
 			addStage(setupStage22());       // map21 地狱公路线性优化版 by HOTCAT
 		}
 	}

@@ -86,7 +86,8 @@ class playerStashInfo {
         refreshStash();
         int pid = g_playerInfoBuck.getPidByName(m_name);
         if(isPushIn()){
-            _notify(m_metagame,pid,"您有物品未存入，关闭仓库前请存入");
+            pushInObjects();
+            _notify(m_metagame,pid,"您有物品未存入，已自动帮你存入");
             return;
         }
         m_isStashOpen = !m_isStashOpen;
@@ -106,7 +107,8 @@ class playerStashInfo {
         if(!isOpen(true)){return;}
         int pid = g_playerInfoBuck.getPidByName(m_name);
         if(isPushIn()){
-            _notify(m_metagame,pid,"您有物品未存入，升级仓库前请存入");
+            pushInObjects();
+            _notify(m_metagame,pid,"您有物品未存入，已自动帮你存入");
             return;
         }
         int cid = g_playerInfoBuck.getCidByName(m_name);
@@ -165,6 +167,15 @@ class playerStashInfo {
             int backNum = m_object.getIntAttribute("value");
             backKey = m_object.getStringAttribute("AA_tag");
             backType = m_object.getStringAttribute("A_tag");
+            if(backType == "0"){
+                backType = "weapon";
+            }
+            if(backType == "1"){
+                backType = "projectile";
+            }
+            if(backType == "3"){
+                backType = "carry_item";
+            }
             @res = Resource(backKey,backType);
             res.addToResources(resources,backNum);
             m_overPushObject.removeAt(i);
@@ -182,7 +193,8 @@ class playerStashInfo {
         if(!isOpen(true)){return;}
         if(isPushIn()){
             int pid = g_playerInfoBuck.getPidByName(m_name);
-            _notify(m_metagame,pid,"您有物品未存入，请先全部存入");
+            pushInObjects();
+            _notify(m_metagame,pid,"您有物品未存入，已自动帮你存入");
             return;
         }
         int pid = g_playerInfoBuck.getPidByName(m_name);
@@ -552,7 +564,8 @@ class playerStashInfo {
         if(!isOpen(true)){return false;}
         if(isPushIn()){
             int pid = g_playerInfoBuck.getPidByName(m_name);
-            _notify(m_metagame,pid,"您有物品未存入，请先全部存入");
+            pushInObjects();
+            _notify(m_metagame,pid,"您有物品未存入，已自动帮你存入");
             return false;
         }
         // 检测限定兑换物品
