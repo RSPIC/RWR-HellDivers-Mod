@@ -1,0 +1,76 @@
+author: RST
+2024.5.28
+未经授权不可复用、修改使用、仅用于helldiver mod
+红警2谭雅C4效果
+
+particle_system ex_ra2_tanya_c4
+{
+	quota 50
+	material ex_ra2_tanya_c4
+	particle_width 3
+	particle_height 6
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.1
+		duration 0
+	}
+	affector Scaler
+	{
+		rate 0.2
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.5
+		colour1 1 1 1 1
+		time2 1
+		colour2 1 1 1 1
+	}
+}
+
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material ex_ra2_tanya_c4 : alpha_blend_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture ex_ra2_tanya_c4.png 	
+}}}}

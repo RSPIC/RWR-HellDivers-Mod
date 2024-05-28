@@ -790,7 +790,7 @@ material Particle_Trail_Fire02_anim_mega : add_base
         texture_unit{
             texture Particle_Trail_Fire02.png 	
             scroll_anim 0 -3.2
-            tex_address_mode warp
+            tex_address_mode wrap
             tex_border_colour 0 0 0 0
         }
         texture_unit{
@@ -809,7 +809,7 @@ material Particle_Trail_36_anim_mega : add_base
         texture_unit{
             texture Particle_Trail_36.png 	
             scroll_anim 0 -2.8
-            tex_address_mode warp
+            tex_address_mode wrap
             tex_border_colour 0 0 0 0
         }
         texture_unit{
@@ -828,7 +828,7 @@ material Particle_Trail_22_bw_mega : add_base
         texture_unit{
             texture Particle_Trail_22_bw.png	
             scroll_anim 0 -3
-            tex_address_mode warp
+            tex_address_mode wrap
             tex_border_colour 0 0 0 0
         }
         texture_unit{

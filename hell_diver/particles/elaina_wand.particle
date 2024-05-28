@@ -1,0 +1,917 @@
+author: RST
+2024.5.19
+未经授权不可复用、修改使用、仅用于helldiver mod
+
+particle_system elaina_wand_trail_leave
+{
+	quota 750
+	material explosion_smoke_04_bw
+	particle_width 0.55
+	particle_height 0.55
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	iteration_interval 0
+	emitter Box
+	{
+		angle 90
+		colour 1 0.3 0 1
+		direction 0 1 0
+		emission_rate 70
+		position 0 0 0
+		velocity_min 1
+		velocity_max 1.5
+		time_to_live 1.4
+		duration 0
+		depth 2
+		height 2
+		width 2
+	}
+	affector Scaler
+	{
+		rate -0.15
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0 1
+		time1 0.7
+		colour1 1 0.3 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 1
+		scope 0.5
+		keep_velocity false
+	}
+}
+particle_system elaina_wand_muzzle_magic_circle
+{
+	quota 70
+	material magic_explosion_ring_02
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 10
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.3
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 15
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	-360
+		rotation_speed_range_end	-360
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0 0 1
+		time1 0.5
+		colour1 1 0.8 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system elaina_wand_result_magic_circle
+{
+	quota 50
+	material plasma_beam_hit_red_pass
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 10
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.3
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 10
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	-360
+		rotation_speed_range_end	-360
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.5
+		colour1 1 1 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system elaina_wand_cyclone
+{
+	quota 1000
+	material laisha_ring
+	particle_width 0.1
+	particle_height 0.1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 40
+		position 0 0 0
+		velocity 20
+		time_to_live 0.55
+		duration 0
+	}
+	affector Scaler
+	{
+		rate 25
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	2400
+		rotation_speed_range_end	2800
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.5 0.5 0.5 1
+		time1 0.7
+		colour1 0.5 0.5 0.6 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 3 0
+		force_application add
+	}
+}
+particle_system elaina_wand_cyclone_base
+{
+	quota 1000
+	material laisha_ring
+	particle_width 5
+	particle_height 5
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.3
+		duration 0
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	360
+		rotation_speed_range_end	360
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.7
+		colour1 0.5 0.5 0.6 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system elaina_wand_cyclone_terrain
+{
+	quota 500
+	material add_smoke_2
+	particle_width 0.5
+	particle_height 0.5
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 360
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 40
+		position 0 0 0
+		velocity 1
+		time_to_live 1
+		duration 0
+	}
+	affector Scaler
+	{
+		rate 5
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.3 0.3 0.3 1
+		time1 0.7
+		colour1 0.3 0.3 0.4 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system elaina_wand_cyclone_up_smoke
+{
+	quota 500
+	material add_smoke_2
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 20
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 70
+		position 0 0 0
+		velocity 20
+		time_to_live 0.65
+		duration 0
+	}
+	affector Scaler
+	{
+		rate 10
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.5 0.0 0.0 1
+		time1 0.5
+		colour1 0.4 0.1 0.0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system elaina_wand_skill_thunder_guiding
+{
+	quota 1500
+	emit_emitter_quota 1200
+	material lightning_gun_bolt_7_bw
+	particle_width 8
+	particle_height 60
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction -1 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.1
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 0 0
+		emission_rate 10
+		position 10 30 0
+		velocity 0.001
+		time_to_live 0.1
+		duration 0.1
+		emit_emitter tag1
+	}
+	emitter Point
+	{
+		angle 0
+		colour 1 0.7 0 1
+		direction -0.33 -1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 320
+		time_to_live 1
+		duration 0.1
+		name tag1
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	180
+		rotation_range_end	180
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+}
+particle_system elaina_wand_skill_center_light
+{
+	quota 450
+	material explosion_smoke_04_bw
+	particle_width 4
+	particle_height 4
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 0.3 0.6 1 0
+		direction 0 1 0
+		emission_rate 50
+		position 0 0.5 0
+		velocity 0.0001
+		time_to_live 0.05
+		duration 0.3
+	}
+	affector Scaler
+	{
+		rate 100
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+}
+particle_system elaina_wand_skill_anim_lighting
+{
+	quota 450
+	material lightning_gun_bolt
+	particle_width 4
+	particle_height 1
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center_right
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 360
+		colour 0.3 0.6 1 0
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.07
+		duration 0.3
+	}
+	affector Scaler
+	{
+		rate 10
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	36
+		rotation_speed_range_end	36
+		rotation_range_start	90
+		rotation_range_end	90
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.1 0 0.5 1
+		time1 0.5
+		colour0 0.1 0 0.5 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system elaina_wand_skill_anim_lighting2 : elaina_wand_skill_anim_lighting
+{
+	particle_width 3
+	particle_height 3
+	material elec1_anim
+	billboard_origin top_center
+	emitter Point
+	{
+		colour 0 0 0 0
+	}
+	affector Scaler
+	{
+	}
+	affector Rotator
+	{
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 1 1
+		time1 0.7
+		colour0 0 0 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system elaina_wand_skill_anim_lighting3 : elaina_wand_skill_anim_lighting
+{
+	particle_width 3
+	particle_height 3
+	material elec2_anim
+	billboard_origin top_center
+	emitter Point
+	{
+		colour 0 0 0 0
+	}
+	affector Scaler
+	{
+	}
+	affector Rotator
+	{
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 1 1
+		time1 0.7
+		colour0 0 0 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system elaina_wand_skill_anim_lighting4 : elaina_wand_skill_anim_lighting
+{
+	material lightning_gun_bolt_from_3
+}
+particle_system elaina_wand_skill_anim_lighting5 : elaina_wand_skill_anim_lighting
+{
+	material lightning_gun_bolt_from_5
+}
+particle_system elaina_wand_shell_light
+{
+	quota 500
+	material point_soft_edge_100
+	particle_width 3.0
+	particle_height 3.0
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_origin center
+	billboard_type point
+	iteration_interval 0.01
+	emitter Point{
+		angle 0
+		colour 1 0.8 0.5 1
+		direction 0 1 0
+		emission_rate 200
+		position 0 0 0
+		velocity 0.00001
+		time_to_live 0.2
+		duration 4
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.8 0.5 1
+		time1 0.6
+		colour1 1 0.3 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector Scaler{rate -12}
+}
+
+particle_system elaina_wand_laser_center_ball
+{
+	quota 150
+	material bow_flare_pass
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 1
+		duration 0.5
+	}
+	affector Scaler
+	{
+		rate 6
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	250
+		rotation_speed_range_end	-250
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.7
+		colour1 1 0.3 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system elaina_wand_laser_center_rorate_ring
+{
+	quota 150
+	material Particle_Circle_05
+	particle_width 6
+	particle_height 6
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.4
+		duration 0.5
+	}
+	affector Scaler
+	{
+		rate -30
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	1600
+		rotation_speed_range_end	1600
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 1 1
+		time1 0.7
+		colour1 1 0.3 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system elaina_wand_laser_shrink_line
+{
+	quota 150
+	material Particle_Impact_Line_03
+	particle_width 5
+	particle_height 5
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center_left
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 360
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity_min -0.0001
+		velocity_max 0.0001
+		time_to_live 0.2
+		duration 0.5
+	}
+	affector Scaler
+	{
+		rate -7.5
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	90
+		rotation_range_end	90
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 1 1
+		time1 0.9
+		colour1 1 0.3 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system elaina_wand_laser_later_pre_line_side
+{
+	quota 50
+	material Particle_Trail24_bw_anim
+	particle_width 1.5
+	particle_height 40
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin bottom_center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 1
+		duration 0.1
+	}
+    affector Scaler
+	{
+		rate 4
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.5
+		colour1 0 0 0 0
+		time2 0.51
+		colour2 1 1 1 1
+		time3 0.7
+		colour3 1 1 1 1
+		time4 1
+		colour4 0 0 0 0
+	}
+}
+particle_system elaina_wand_laser_later_pre_line_mod2
+{
+	quota 200
+	material linear_laser
+	particle_width 11
+	particle_height 150
+	renderer billboard
+	billboard_type oriented_self
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.001
+		time_to_live 1.8
+		duration 0.1
+	}
+    affector Scaler
+	{
+		rate -10
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.3
+		colour1 0 0 0 0
+		time2 0.31
+		colour2 1 0.3 1 1
+		time3 0.86
+		colour3 1 0.3 1 1
+		time4 1
+		colour4 0 0 0 0
+	}
+}
+particle_system elaina_wand_laser_later_pre_line_mod2_addon
+{
+	quota 200
+	material linear_laser
+	particle_width 6
+	particle_height 150
+	renderer billboard
+	billboard_type oriented_self
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.001
+		time_to_live 1.3
+		duration 0.1
+	}
+    affector Scaler
+	{
+		rate -2
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.4
+		colour1 0 0 0 0
+		time2 0.51
+		colour2 1 0.3 1 1
+		time3 0.6
+		colour3 0.7 0.3 1 1
+		time4 1
+		colour4 0 0 0 0
+	}
+}
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material lightning_gun_bolt_7_bw : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture lightning_gun_bolt_7_bw.png 	
+			rotate 90
+}}}}
+material lightning_gun_bolt_6_bw : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture lightning_gun_bolt_6_bw.png 	
+			rotate 90
+}}}}
+material elec1_anim : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            anim_texture elec1_anim.png 3 0.2
+			rotate 90
+}}}}
+material elec2_anim : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            anim_texture elec2_anim.png 3 0.2
+			rotate 90
+}}}}
+material Particle_Trail24_bw_anim : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture Particle_Trail24_bw.png
+			scroll_anim 0 -2.8
+            tex_address_mode wrap
+            tex_border_colour 0 0 0 0
+		}
+}}}
+
+material lightning_gun_bolt_from_3 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            anim_texture lightning_gun_bolt_3.png lightning_gun_bolt_4.png lightning_gun_bolt_5.png lightning_gun_bolt_6.png lightning_gun_bolt_7.png lightning_gun_bolt_0.png lightning_gun_bolt_1.png lightning_gun_bolt_2.png  0.425
+}}}}
+
+material lightning_gun_bolt_from_5 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            anim_texture lightning_gun_bolt_5.png lightning_gun_bolt_6.png lightning_gun_bolt_7.png lightning_gun_bolt_0.png lightning_gun_bolt_1.png lightning_gun_bolt_2.png lightning_gun_bolt_3.png lightning_gun_bolt_4.png  0.425
+}}}}
+material plasma_beam_hit_red_pass : add_base
+{   
+    technique{
+    pass{
+		depth_func always_pass
+        texture_unit{
+            texture plasma_beam_hit_red.png 	
+}}}}

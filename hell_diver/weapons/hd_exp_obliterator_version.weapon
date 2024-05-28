@@ -62,7 +62,7 @@ key="hd_exp_obliterator_grenade_launcher_ai.weapon"
     <specification 
     slot="0" 
 	/>
-	<commonness value="1" can_respawn_with="1" in_stock="0" /> 
+	<commonness value="0.2" can_respawn_with="1" in_stock="0" /> 
     <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="44.75" can_be_detected_by_footmen="1" 
 	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0" name="Obliterator"> 
 		<!--

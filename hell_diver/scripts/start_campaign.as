@@ -31,6 +31,19 @@ void main(dictionary@ inputData) {
                 "media/packages/hell_diver"
         };
     //settings.m_overlayPaths = overlays;
+	settings.m_startServerCommand = """
+	<command class='start_server'
+		server_name='[地狱潜兵] 单人战役'
+		server_port='1245'
+		url='https://steamcommunity.com/sharedfiles/filedetails/?id=2910392031'
+		register_in_serverlist='0'
+		mode='HD'
+		persistency='forever'
+		comment='Helldiver SinglePlayer'
+		max_players='16'>
+		<client_faction id='0' />
+	</command>
+	""";
 
 	MyGameMode metagame(settings);
 

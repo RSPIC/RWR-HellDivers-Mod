@@ -32,7 +32,7 @@ radius="0.3"
     <animation state_key="hold_on_wall" 	animation_key="still, carrying load" />
     <animation state_key="hold_casual" 		animation_key="still, carrying load" />
     <animation state_key="still_against_wall"	animation_key="still, carrying load" />
-    <animation state_key="recoil" 		animation_key="deploy1" />
+    <animation state_key="recoil" 		animation_key="deploy_FAST" />
     <animation state_key="crouching" 		animation_key="crouch still, carrying load" />
     <animation state_key="crouch_moving" 	animation_key="crouching forwards, carrying load" />
     <animation state_key="changing_weapon_in" 	animation_key="change weapon in, single hand carry" />

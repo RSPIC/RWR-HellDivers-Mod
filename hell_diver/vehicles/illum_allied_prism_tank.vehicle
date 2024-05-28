@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vehicle 
+file="_vehicle_none.base"
+name="Prism Tank" 
+key="illum_allied_prism_tank.vehicle" 
+respawn_time="60" 
+time_to_live_unsteerable="60" 
+map_view_atlas_index="29" 
+minimum_fill_requirement="1.0" 
+reserves_spawn_point="1" 
+ai_driver_turns_to_target="1"
+allow_ai_to_use="1"
+>
+   	<tag name="Prism Tank" />
+	<tag name="apc" />
+
+	<tire_set offset="1 0.0 +1.4" radius="0.45" />
+	<tire_set offset="1 0.0 -0.6" radius="0.45" />
+	<tire_set offset="1 0.0 -1.12" radius="0.45" />
+
+	<control 
+	max_speed="8.0" 
+	acceleration="15.0" 
+	max_reverse_speed="8.0" 
+	min_health_to_steer="0.6" 
+	max_rotation="0.1" 
+	max_water_depth="1.08" 
+	steer_smoothening="0.4" 
+	tracked="1" 
+	gears="0" 
+	max_limiter_speed="10.0"/>
+
+	<physics 
+	max_health="500" 
+    remove_collision_threshold="0.2"	
+	extent="4 0 4.5" 
+	offset="0 0.0 0" 
+	top_offset="0 1.2 0" 
+	drag_offset="0" 
+	friction_offset="0.3"
+	collision_model_pos="0 0.85 0.0" 
+	collision_model_extent="3.2 1.7 3.8" 
+	visual_offset="0 0.4 0" /> 
+
+	<sky_diving chute_offset="0 2.1 0.0" trigger_height="20.0" gravity="-10" mesh_filename="chute_medium.mesh" texture_filename="chute.png" />
+
+	<!-- one weapon per turret so that only one soldier controls the turret orientation -->
+	<!-- similarly, a controllable turret can only exist if it has a weapon -->
+	<!-- turrets may have sub-turrets, which may have more weapons, in the future -->
+	<turret offset="0 2.5 0" weapon_key="illum_allied_prism_tank.weapon" weapon_offset="0 0.8 -0.2" weapon_recoil="0.1" physics_recoil="0.1" max_rotation_step="0.0015" rotation="0" />
+	<turret offset="0 0 0" weapon_key="illum_allied_prism_tank_sound.weapon" attached_on_turret="0" weapon_offset="0" weapon_recoil="0" physics_recoil="0.0" max_rotation_step="0.0015" rotation="0" />
+	<turret offset="0 0 0" weapon_key="illum_allied_prism_tank_to_player.weapon" attached_on_turret="0" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="0.0015" rotation="0" />
+	<turret offset="0 0 0" weapon_key="illum_allied_prism_tank_hit.weapon" attached_on_turret="0" weapon_offset="0 0 0" weapon_recoil="0" physics_recoil="0" max_rotation_step="0.0015" rotation="0" />
+
+	<visual class="chassis" mesh_filename="illum_allied_prism_tank_body.mesh" texture_filename="illum_allied_prism_tank.jpg" max_tilt="0.02" />
+	<visual class="chassis" key="broken" mesh_filename="illum_allied_prism_tank_body.mesh" texture_filename="illum_allied_prism_tank.jpg" />
+	<visual class="turret" turret_index="0" mesh_filename="illum_allied_prism_tank_turrent.mesh" texture_filename="illum_allied_prism_tank.jpg" />
+	<visual class="turret" turret_index="0" key="broken" mesh_filename="illum_allied_prism_tank_turrent.mesh" texture_filename="illum_allied_prism_tank.jpg" />
+	
+	<visual class="track" mesh_filename="illum_allied_prism_tank_track.mesh" offset="-1.5 0 -0.1" >
+		<part texture_filename="ba_crusader_tracks.jpg" texture_animation="translate" tire_binding="0" />
+	</visual>
+
+	<visual class="track" mesh_filename="illum_allied_prism_tank_track.mesh" offset="+1.5 0 -0.1" >
+		<part texture_filename="ba_crusader_tracks.jpg" texture_animation="translate" tire_binding="1" />
+	</visual>
+	<character_slot type="driver" position="0 0 2" rotation="0" exit_rotation="-1.57" hiding="1" animation_id="36" />
+	<character_slot type="gunner" attached_on_turret="0" enter_position="0 0 -2" seat_position="0 -0.9 0" rotation="1.0" exit_rotation="1.57" hiding="1" animation_id="36" marker_offset="0 0.6 0" >
+		<turret index="0" /><turret index="1" /><turret index="2" /><turret index="3" />
+	</character_slot>
+
+
+	<!-- sound handling -->
+	<rev_sound filename="truck_rev3.wav" low_pitch="0.7" high_pitch="1.0" low_rev="0.05" high_rev="0.7" volume="1.0" />
+	<rev_sound filename="truck_rev4.wav" low_pitch="0.8" high_pitch="1.0" low_rev="0.4" high_rev="1.0" volume="1.0" />
+
+	<sound key="squeal" filename="tire_squeal.wav" />
+	<sound key="ignition" filename="hd_ra2_ifv_change.wav" />
+	<sound key="horn" filename="hd_ra2_ifv_change.wav" />
+	<sound key="hit" filename="car_hit1.wav" />
+	<sound key="hit" filename="car_hit2.wav" />
+	<sound key="destroy" filename="vehicle_explosion_1.wav" />   
+	<sound key="cleanup" filename="vehicle_explosion_1.wav" />    
+
+	<sound key="turret_rotation" filename="turret_rotation1.wav" volume="1.8" />
+	<sound key="turret_rotation" filename="turret_rotation2.wav" volume="1.8"/>
+  
+	<effect event_key="slide" type="splat_map" surface_tag="road" size="1.0" atlas_index="5" layer="0" />
+	<effect event_key="slide_hard" type="splat_map" surface_tag="road" size="0.5" atlas_index="2" layer="0" />
+	<effect event_key="slide" type="splat_map" surface_tag="dirt" size="1.0" atlas_index="2" layer="1" />
+	<effect event_key="slide" type="particle" key="terrain" surface_tag="dirt" ref="car_slide_spary_spark" use_surface_color="0" />
+	<effect event_key="slide" type="particle" key="terrain" surface_tag="dirt" ref="car_slide_up_smoke" use_surface_color="1" />
+	<effect event_key="slide_hard" type="particle" key="terrain" surface_tag="dirt" ref="car_slide_spary_spark" use_surface_color="0" />
+	<effect event_key="slide_hard" type="particle" key="terrain" surface_tag="dirt" ref="car_slide_up_smoke" use_surface_color="1" />
+	<effect event_key="slide" type="particle" key="terrain" surface_tag="road" ref="car_slide_spary_spark" use_surface_color="0" />
+	<effect event_key="slide" type="particle" key="terrain" surface_tag="road" ref="car_slide_up_smoke" use_surface_color="1" />
+	<effect event_key="slide_hard" type="particle" key="terrain" surface_tag="road" ref="car_slide_spary_spark" use_surface_color="0" />
+	<effect event_key="slide_hard" type="particle" key="terrain" surface_tag="road" ref="car_slide_up_smoke" use_surface_color="1" />
+  
+	<effect event_key="drive" type="particle" key="terrain" ref="car_slide_spary_spark" use_surface_color="1" />
+
+	<effect event_key="slide" type="particle" key="terrain" surface_tag="road" ref="car_slide_up_smoke" use_surface_color="1" />
+	<effect event_key="slide_hard" type="particle" key="terrain" surface_tag="road" ref="car_slide_up_smoke" use_surface_color="1" />
+  
+  	<effect event_key="drive_chassis" ref="car_health_front_light" offset="0 0 10" />
+
+	<effect event_key="health" value="75" ref="car_broken_spary_spark" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="50" ref="car_broken_spary_spark" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="50" ref="car_destroyed_up_smoke" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="25" ref="car_destroyed_fire" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="25" ref="car_destroyed_up_smoke" offset="-0.0 2.2 -0.5" />
+	<effect event_key="health" value="25" ref="car_broken_spary_spark" offset="-0.0 2.2 -0.5" />
+
+	<effect event_key="destroyed" ref="car_destroyed_fire" post_processing="1" offset="-0.5 2.2 -1.5" />
+	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="0" offset="-0.5 2.2 -1.5" />  
+	<effect event_key="destroyed" ref="car_broken_spary_spark" post_processing="0" offset="-0.5 2.2 -1.5" />  
+	<effect event_key="destroyed" ref="car_destroyed_fire" post_processing="1" offset="-0.5 1.8 0.8" />
+	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="0" offset="-0.5 1.8 0.8" />  
+	<effect event_key="destroyed" ref="car_broken_spary_spark" post_processing="0" offset="-0.5 1.8 0.8" /> 
+
+	<effect event_key="destroyed" ref="IB_up_smoke" lighting="1" post_processing="1" offset="0 2 0"/> 
+	<effect event_key="destroyed" ref="IB_up_spark" lighting="1" post_processing="1" offset="0 2 0"/> 
+ 
+	<event>
+		<trigger class="destroy" />
+  	<result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor1.visual_item" min_amount="1" max_amount="3" offset="0 2.4 0" position_spread="1.5 1.5" direction_spread="0.15 0.3" />
+	</event>
+	<event>
+		<trigger class="destroy" />  	
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor2.visual_item" min_amount="0" max_amount="1" offset="0 2.4 0" position_spread="1.5 1.5" direction_spread="0.10 0.15" />
+	</event>
+  <event>
+		<trigger class="destroy" />		
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor3.visual_item" min_amount="1" max_amount="2" offset="0 2.4 0" position_spread="1.5 1.5" direction_spread="0.12 0.20" />
+	</event>
+  <event>
+		<trigger class="destroy" />		
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor4.visual_item" min_amount="1" max_amount="2" offset="0 2.4 0" position_spread="1.5 1.5" direction_spread="0.1 0.25" />
+	</event>    
+
+  <event>
+		<trigger class="cleanup" />		
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_cleanup.visual_item" min_amount="20" max_amount="30" offset="0 2.0 0" position_spread="1.5 1.5" direction_spread="0.1 0.1" /> 
+  </event>  
+
+	<event key="destroy_rp_reward">
+		<trigger class="destroy" />
+		<result class="reward" rp="1200.0" />
+	</event>
+
+</vehicle>

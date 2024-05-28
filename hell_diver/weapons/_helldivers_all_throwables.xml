@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <projectiles>
+	<!-- Effect -->
+	<projectile file="_hd_effect_projectile.xml" />
+	<projectile file="hd_players_dead_effect.projectile" />
+	<projectile file="hd_vindicator_effect.projectile" />
+	<projectile file="hd_sound_divers_coming.projectile" />
+	<projectile file="hd_sound_divers_coming_bgm.projectile" />
+	<projectile file="hd_vehicle_eject.projectile" />
+	<projectile file="hd_effect_emoticon.projectile" />
+
 	<!--武器弹头-->
     <projectile file="hd_general_spawn.projectile" />
     <projectile file="hd_general_gl_spawn.projectile" />
@@ -114,16 +123,6 @@
 	<projectile file="hd_exo48_mk3.projectile" /><!--黑曜石-->
 	<projectile file="hd_exo51_mk3.projectile" /><!--重步者-->
 	
-	
-	<!-- Effect -->
-	<projectile file="_hd_effect_projectile.xml" />
-	<projectile file="hd_players_dead_effect.projectile" />
-	<projectile file="hd_vindicator_effect.projectile" />
-	<projectile file="hd_sound_divers_coming.projectile" />
-	<projectile file="hd_sound_divers_coming_bgm.projectile" />
-	<projectile file="hd_vehicle_eject.projectile" />
-	<projectile file="hd_effect_emoticon.projectile" />
-
 
 	<!--载具回收-->
 	<projectile file="hd_vehicle_recycle_damage.projectile" />

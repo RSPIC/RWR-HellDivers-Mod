@@ -6,8 +6,8 @@ XmlElement@ createFellowCommanderAiCommand(int factionId, float base = 0.62, flo
 	XmlElement command("command");
 	command.setStringAttribute("class", "commander_ai");
 	command.setIntAttribute("faction", factionId);
-	command.setFloatAttribute("base_defense", 1);
-	command.setFloatAttribute("border_defense", 0);
+	command.setFloatAttribute("base_defense", 0.5);
+	command.setFloatAttribute("border_defense", 0.5);
 	command.setBoolAttribute("active", active);
 	return command;
 }
@@ -19,8 +19,8 @@ XmlElement@ createCommanderAiCommand(int factionId, float base = 0.70, float bor
 	XmlElement command("command");
 	command.setStringAttribute("class", "commander_ai");
 	command.setIntAttribute("faction", factionId);
-	command.setFloatAttribute("base_defense", 1);
-	command.setFloatAttribute("border_defense", 0);
+	command.setFloatAttribute("base_defense", 0.5);
+	command.setFloatAttribute("border_defense", 0.5);
 	command.setBoolAttribute("active", active);
 	return command;
 }

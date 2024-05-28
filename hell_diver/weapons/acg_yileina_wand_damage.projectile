@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectiles>
+<projectile 
+class="grenade" slot="0" pulldown_in_air="0.1" key="acg_yileina_wand_damage.projectile"
+can_be_detected_by_footmen="0" can_be_disarmed="0" >
+	<rotation class="motion" />	
+
+	<result class="blast" radius="4.0" damage="120" decal="0" push="0.15" character_state="wound"
+	damage_origin_vehicle="0" faction_compare="not_equal"/>
+    <trigger class="impact" time_to_live="3" />
+    <collision class="sticky" />
+
+    <commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	<effect class="activated" ref="acg_yileina_wand_rain_result_trail_light"/>
+	<effect class="activated" ref="acg_yileina_wand_trail_leave"/>
+	<effect class="result" key="terrain" ref="acg_yileina_wand_rain_result_water_impact"/>
+	<effect class="result" key="terrain" ref="acg_yileina_wand_rain_result_water_spray"/>
+
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="vehicle" copy="terrain" />		
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+
+	<sound class="result" key="other" fileref="acg_yileina_wand_rain_impact_01.wav" pitch_variety="0.03" volume="1" />
+
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
+
+	<trail probability="1" key="normal_trail_llong_purple_blue"/>	
+</projectile>
+<projectile 
+class="grenade" slot="0" pulldown_in_air="0.1" key="acg_yileina_wand_dead_damage.projectile"
+can_be_detected_by_footmen="0" can_be_disarmed="0" >
+	<rotation class="motion" />	
+
+	<result class="blast" radius="4.5" damage="0" decal="0" push="0.15" character_state="unwound"
+	damage_origin_vehicle="0" faction_compare="not_equal"/>
+    <trigger class="impact" time_to_live="3" />
+    <collision class="sticky" />
+
+    <commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	<effect class="activated" ref="acg_yileina_wand_rain_result_trail_light"/>
+	<effect class="activated" ref="acg_yileina_wand_trail_leave"/>
+	<effect class="result" key="terrain" ref="acg_yileina_wand_rain_result_water_impact"/>
+	<effect class="result" key="terrain" ref="acg_yileina_wand_rain_result_water_spray"/>
+
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="vehicle" copy="terrain" />		
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+
+	<sound class="result" key="other" fileref="acg_yileina_wand_rain_impact_01.wav" pitch_variety="0.03" volume="1" />
+
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
+
+	<trail probability="1" key="normal_trail_llong_purple_blue"/>	
+</projectile>
+<projectile 
+class="grenade" slot="0" pulldown_in_air="0.1" key="acg_yileina_wand_dead2_damage.projectile"
+can_be_detected_by_footmen="0" can_be_disarmed="0" >
+	<rotation class="motion" />	
+
+	<result class="blast" radius="5.5" damage="120" decal="0" push="0.5" character_state="unwound"
+	damage_origin_vehicle="0" faction_compare="not_equal"/>
+    <trigger class="time" time_to_live="0" />
+    <collision class="sticky" />
+
+    <commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+	<effect class="activated" ref="acg_yileina_wand_rain_result_trail_light"/>
+	<effect class="result" key="terrain" ref="acg_yileina_wand_rain_result_water_impact"/>
+	<effect class="result" key="terrain" ref="acg_yileina_wand_rain_result_water_spray"/>
+	<effect class="result" key="terrain" ref="acg_yileina_wand_result_impact_up"/>
+	<effect class="result" key="terrain" ref="hyper_mega_muzzle_fire_mod2" lighting="0" />
+	<effect class="result" key="terrain" ref="hyper_mega_muzzle_impact_circle" lighting="0" />
+
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="vehicle" copy="terrain" />		
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+
+	<sound class="result" key="other" fileref="acg_yileina_wand_rain_impact_01.wav" pitch_variety="0.03" volume="1" />
+
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
+
+	<trail probability="1" key="normal_trail_llong_purple_blue"/>	
+</projectile>
+
+</projectiles>

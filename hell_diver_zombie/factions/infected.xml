@@ -68,7 +68,7 @@
 
 	<!-- follower group -->
 
-	<soldier name="default_ai" spawn_score="0.6" squad_size_xp_cap="0">
+	<soldier name="default_ai" spawn_score="0" squad_size_xp_cap="0">
 		<character filename="infected.character" />
 		<ai filename="infected.ai" />
 		
@@ -122,7 +122,7 @@
 	</soldier>
 
 	<!-- low ranking infected which run faster but have very low health -->
-	<soldier name="zomberry" spawn_score="100.5" squad_size_xp_cap="0" copy_from="default_ai"> 
+	<soldier name="zomberry" spawn_score="20" squad_size_xp_cap="0" copy_from="default_ai"> 
 
 		<resources file="infected_zomberry.resources" />
 
@@ -137,6 +137,37 @@
       		<attribute weight="0.7" min="0.1" max="0.2" />
 		</attribute_config>
 
+	</soldier>
+	<soldier name="zomberryM" spawn_score="1" squad_size_xp_cap="0" copy_from="default_ai"> 
+		<resources>
+			<weapon key="claw_1.weapon"/>
+			<carry_item key="infected_vest_200" /> 
+		</resources>
+    	<item_class_existence_config>
+		<!-- backpack -->
+		<item_class_existence class="carry_item" slot="0" probability="0.0" />
+		</item_class_existence_config>
+		
+		<!-- low XP -->
+		<attribute_config class="xp">
+			<attribute weight="0.3" min="0.0" max="0.1" />
+      		<attribute weight="0.7" min="0.1" max="0.2" />
+		</attribute_config>
+	</soldier>
+	<soldier name="zomberryMM" spawn_score="0.8" squad_size_xp_cap="0" copy_from="default_ai"> 
+		<resources>
+			<weapon key="claw_1_slow.weapon"/>
+			<carry_item key="infected_vest_500" /> 
+		</resources>
+    	<item_class_existence_config>
+		<!-- backpack -->
+		<item_class_existence class="carry_item" slot="0" probability="0.0" />
+		</item_class_existence_config>
+		
+		<!-- low XP -->
+		<attribute_config class="xp">
+      		<attribute weight="1" min="2" max="2" />
+		</attribute_config>
 	</soldier>
 
 	<!-- Brute-->

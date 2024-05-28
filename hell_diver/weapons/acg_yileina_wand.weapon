@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapons> 
+<weapon 
+file="_rare_weapon_mk5.base"
+key="acg_yileina_wand.weapon"
+ >
+    <tag name="sniper" />
+    <specification 
+	retrigger_time="1"
+    last_burst_retrigger_time="1"
+	accuracy_factor="1" 
+    spread_range="0.22"
+	sustained_fire_grow_step="0.5" 
+	sustained_fire_diminish_rate="0.2" 
+	magazine_size="-1" 
+	can_shoot_standing="1" 
+	can_shoot_crouching="1"
+    can_shoot_prone="1" 
+	suppressed="0" 
+	name="Elaina Ex Wand" 
+	class="4" 
+	reload_one_at_a_time="0" 
+	sight_range_modifier="1.2" 
+	projectile_speed="40.0" 
+	barrel_offset_3d="0 0 1.6"
+	projectiles_per_shot="1" 
+	burst_shots="1"
+    carry_in_two_hands="0"
+    cooldown_start="0.55"
+    cooldown_end="0.0"
+    />
+    <weak_hand_hold offset="0" />
+
+	<next_in_chain key="acg_yileina_wand_rain.weapon" share_ammo="0" />
+  
+    <animation key="recoil" animation_key="pistol whip 3" />
+    <animation key="cycle" animation_key="pistol whip 3" />
+    <animation state_key="hold"	animation_key="incomparable_still" />
+	<animation state_key="hold_on_wall"	animation_key="incomparable_still" />
+	<animation state_key="still_against_wall"	animation_key="incomparable_still" />
+	<animation state_key="running"	animation_key="hd_running_single_hand_2" />
+	<animation state_key="walking"	animation_key="hd_running_single_hand_2" />
+	<animation state_key="crouching"	animation_key="crouch, pistol" />
+	<animation state_key="crouch_moving"	animation_key="crouching forwards, ninjato" />
+	<animation state_key="crouch_moving_backwards"	animation_key="crouching backwards, ninjato" />
+	<animation state_key="changing_weapon_in"	animation_key="change weapon in, ninjato" />
+	<animation state_key="changing_weapon_out"	animation_key="change weapon out, ninjato" />
+    <animation state_key="prone_still" animation_key="prone still, ninjato" />
+    <animation state_key="prone_moving" animation_key="prone moving, ninjato" />
+	<animation state_key="walking_backwards" animation_key="walking backwards, ninjato" />
+    <animation state_key="changing_weapon_in"	animation_key="change weapon in" />
+    <animation state_key="changing_weapon_out"	animation_key="" />
+    <animation state_key="next_in_chain_in" animation_key="change weapon in" /><!--半身动作，切换模式，本模式切出-->
+    <animation state_key="next_in_chain_out" animation_key="" />
+
+    <sound key="effect" fileref="" pitch_variety="0.00"  volume="1" />
+    <sound key="fire" fileref="acg_yileina_wand_rain_fire.wav" pitch_variety="0.00"  volume="1" />
+    <sound key="cycle" fileref="" pitch_variety="0.00"  volume="4"/>
+    <sound key="magazine_out" fileref="potion_open.wav" pitch_variety="0.00"  volume="4"/>
+    <sound key="magazine_in" fileref="sniper_clip_in_1.wav" />
+    <sound key="cycle_out" fileref="sniper_cycle_out_1.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in_1.wav" />
+
+    <sound class="impact" fileref="potion_drop.wav" pitch_variety="0.00"  volume="4" />
+
+    <model filename="wand_elaina.xml" />
+    <!-- <addon_model filename="wand_elaina_addon.xml" /> -->
+
+    <hud_icon filename="acg_elaina_wand_ex.png" />
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="0.25" can_be_detected_by_footmen="1" 
+	time_to_live="1.25" can_be_detected_by_driver="1" can_be_disarmed="0" > 
+
+        <result class="spawn" instance_class="grenade" instance_key="acg_yileina_wand_dead2_damage.projectile" 
+		min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
+
+		<trigger class="impact" time_to_live="0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+        
+        <effect class="activated" ref="acg_yileina_wand_trailRing" lighting="0" post_processing="0"/> 
+        <effect class="activated" ref="acg_yileina_wand_trail_centerRing" lighting="0" post_processing="1"/> 
+        <effect class="activated" ref="acg_yileina_wand_trail_dark" lighting="0" post_processing="0"/> 
+        <effect class="activated" ref="acg_yileina_wand_trail_head_angle_dark" lighting="0" post_processing="0"/> 
+        <effect class="activated" ref="acg_yileina_wand_trail_lightBlue" lighting="0" post_processing="1"/> 
+        <effect class="activated" ref="acg_yileina_wand_trail_head_angle" lighting="0" post_processing="1"/> 
+        <effect class="activated" ref="acg_yileina_wand_trail_leave" lighting="0" post_processing="1"/> 
+        <effect class="activated" ref="acg_yileina_wand_trail_leave" lighting="0" post_processing="1"/> 
+
+    </projectile>
+    <effect class="muzzle" ref="acg_yileina_wand_muzzle_lens" />    
+    <effect class="muzzle" ref="acg_yileina_wand_muzzle_light" />    
+    <effect class="muzzle" ref="acg_yileina_wand_muzzle_impact_smoke" />    
+    <effect class="muzzle" ref="acg_yileina_wand_muzzle_magic_circle" />    
+
+    <stance state_key="running" accuracy="1" />
+    <stance state_key="walking" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="standing" accuracy="1" />
+    <stance state_key="crouching" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1" />
+
+    <modifier class="speed" value="0.1" />    
+	 
+</weapon>
+<weapon 
+file="_rare_weapon_mk5.base"
+key="acg_yileina_wand_rain.weapon"
+ >
+    <tag name="sniper" />
+    <specification 
+	retrigger_time="0.6"
+    last_burst_retrigger_time="0.6"
+	accuracy_factor="1" 
+    spread_range="0.22"
+	sustained_fire_grow_step="0.25" 
+	sustained_fire_diminish_rate="1.0" 
+	magazine_size="-1" 
+	can_shoot_standing="1" 
+	can_shoot_crouching="1"
+    can_shoot_prone="0" 
+	suppressed="0" 
+	name="Elaina Ex Wand" 
+	class="4" 
+	reload_one_at_a_time="0" 
+	sight_range_modifier="1.55" 
+	projectile_speed="65.0" 
+	barrel_offset_3d="0 0 1.6"
+	projectiles_per_shot="1" 
+	burst_shots="1"
+    carry_in_two_hands="1"/>
+    <weak_hand_hold offset="0" />
+
+	<next_in_chain key="acg_yileina_wand.weapon" share_ammo="0" />
+  
+    <animation key="recoil" animation_key="wand_still" />
+    <animation key="cycle" animation_key="wand_still" />
+    <animation state_key="hold" animation_key="wand_still" />
+    <animation state_key="hold_casual" animation_key="acg_yileina_casual" />
+    <animation state_key="walking" animation_key="wand_running" />
+    <animation state_key="walking_backwards" animation_key="wand_running" />
+    <animation state_key="crouching" animation_key="wand_still" />
+    <animation state_key="crouch_moving" animation_key="wand_running" />
+    <animation state_key="crouch_moving_backwards" animation_key="wand_running" />
+    <animation state_key="running" animation_key="wand_running" />
+    <animation state_key="reload" animation_key="wand_reloading" />
+    <animation state_key="still_against_wall" animation_key="wand_still" />
+    <animation state_key="hold_on_wall" animation_key="wand_still" />
+    <animation state_key="changing_weapon_in"	animation_key="change weapon in" />
+    <animation state_key="changing_weapon_out"	animation_key="" />
+    <animation state_key="next_in_chain_in" animation_key="change weapon in" /><!--半身动作，切换模式，本模式切出-->
+    <animation state_key="next_in_chain_out" animation_key="" />
+
+    <sound key="effect" fileref="" pitch_variety="0.00"  volume="1" />
+    <sound key="fire" fileref="acg_yileina_wand_rain_fire.wav" pitch_variety="0.00"  volume="1" />
+    <sound key="cycle" fileref="potion_open.wav" pitch_variety="0.00"  volume="4"/>
+    <sound key="magazine_out" fileref="potion_open.wav" pitch_variety="0.00"  volume="4"/>
+    <sound key="magazine_in" fileref="sniper_clip_in_1.wav" />
+    <sound key="cycle_out" fileref="sniper_cycle_out_1.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in_1.wav" />
+
+    <sound class="impact" fileref="potion_drop.wav" pitch_variety="0.00"  volume="4" />
+
+    <model filename="wand_elaina2.xml" />
+    <addon_model filename="wand_elaina_addon.xml" />
+
+    <hud_icon filename="acg_elaina_wand_ex.png" />
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="6" can_be_detected_by_footmen="1" 
+	time_to_live="1" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.45" > 
+
+        <result class="notify_script" key="acg_yileina_wand_rain" />
+
+		<trigger class="time" time_to_live="0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+
+    </projectile>
+    <effect class="muzzle" ref="acg_yileina_wand_rain_muzzle_up" />    
+    <effect class="muzzle" ref="acg_yileina_wand_rain_muzzle_up_star" />    
+    <effect class="muzzle" ref="acg_yileina_wand_rain_muzzle_ring" />    
+    <effect class="muzzle" ref="acg_yileina_wand_rain_muzzle_impact_smoke" />    
+    <effect class="muzzle" ref="acg_yileina_wand_rain_muzzle_larger_smoke" />    
+
+    <stance state_key="running" accuracy="1" />
+    <stance state_key="walking" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="standing" accuracy="1" />
+    <stance state_key="crouching" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1" />
+
+    <modifier class="speed" value="0.1" />    
+	 
+</weapon>
+<weapon 
+file="_rare_weapon_mk5_re.base"
+key="re_acg_yileina_wand.weapon"
+ >
+    <tag name="sniper" />
+    <specification 
+	retrigger_time="1"
+    last_burst_retrigger_time="1"
+	accuracy_factor="1" 
+    spread_range="0.22"
+	sustained_fire_grow_step="0.5" 
+	sustained_fire_diminish_rate="0.2" 
+	magazine_size="-1" 
+	can_shoot_standing="1" 
+	can_shoot_crouching="1"
+    can_shoot_prone="1" 
+	suppressed="0" 
+	name="Elaina Ex Wand" 
+	class="4" 
+	reload_one_at_a_time="0" 
+	sight_range_modifier="1.2" 
+	projectile_speed="40.0" 
+	barrel_offset_3d="0 0 1.6"
+	projectiles_per_shot="1" 
+	burst_shots="1"
+    carry_in_two_hands="0"
+    cooldown_start="0.55"
+    cooldown_end="0.0"
+    />
+    <weak_hand_hold offset="0" />
+
+	<next_in_chain key="re_acg_yileina_wand_rain.weapon" share_ammo="0" />
+  
+    <animation key="recoil" animation_key="pistol whip 3" />
+    <animation key="cycle" animation_key="pistol whip 3" />
+    <animation state_key="hold"	animation_key="incomparable_still" />
+	<animation state_key="hold_on_wall"	animation_key="incomparable_still" />
+	<animation state_key="still_against_wall"	animation_key="incomparable_still" />
+	<animation state_key="running"	animation_key="hd_running_single_hand_2" />
+	<animation state_key="walking"	animation_key="hd_running_single_hand_2" />
+	<animation state_key="crouching"	animation_key="crouch, pistol" />
+	<animation state_key="crouch_moving"	animation_key="crouching forwards, ninjato" />
+	<animation state_key="crouch_moving_backwards"	animation_key="crouching backwards, ninjato" />
+	<animation state_key="changing_weapon_in"	animation_key="change weapon in, ninjato" />
+	<animation state_key="changing_weapon_out"	animation_key="change weapon out, ninjato" />
+    <animation state_key="prone_still" animation_key="prone still, ninjato" />
+    <animation state_key="prone_moving" animation_key="prone moving, ninjato" />
+	<animation state_key="walking_backwards" animation_key="walking backwards, ninjato" />
+    <animation state_key="changing_weapon_in"	animation_key="change weapon in" />
+    <animation state_key="changing_weapon_out"	animation_key="" />
+    <animation state_key="next_in_chain_in" animation_key="change weapon in" /><!--半身动作，切换模式，本模式切出-->
+    <animation state_key="next_in_chain_out" animation_key="" />
+
+    <sound key="effect" fileref="" pitch_variety="0.00"  volume="1" />
+    <sound key="fire" fileref="acg_yileina_wand_rain_fire.wav" pitch_variety="0.00"  volume="1" />
+    <sound key="cycle" fileref="" pitch_variety="0.00"  volume="4"/>
+    <sound key="magazine_out" fileref="potion_open.wav" pitch_variety="0.00"  volume="4"/>
+    <sound key="magazine_in" fileref="sniper_clip_in_1.wav" />
+    <sound key="cycle_out" fileref="sniper_cycle_out_1.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in_1.wav" />
+
+    <sound class="impact" fileref="potion_drop.wav" pitch_variety="0.00"  volume="4" />
+
+    <model filename="wand_elaina.xml" />
+    <!-- <addon_model filename="wand_elaina_addon.xml" /> -->
+
+    <hud_icon filename="acg_elaina_wand_ex.png" />
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="0.25" can_be_detected_by_footmen="1" 
+	time_to_live="1.25" can_be_detected_by_driver="1" can_be_disarmed="0" > 
+
+        <result class="spawn" instance_class="grenade" instance_key="acg_yileina_wand_dead2_damage.projectile" 
+		min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
+
+		<trigger class="impact" time_to_live="0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+        
+        <effect class="activated" ref="acg_yileina_wand_trailRing" lighting="0" post_processing="0"/> 
+        <effect class="activated" ref="acg_yileina_wand_trail_centerRing" lighting="0" post_processing="1"/> 
+        <effect class="activated" ref="acg_yileina_wand_trail_dark" lighting="0" post_processing="0"/> 
+        <effect class="activated" ref="acg_yileina_wand_trail_head_angle_dark" lighting="0" post_processing="0"/> 
+        <effect class="activated" ref="acg_yileina_wand_trail_lightBlue" lighting="0" post_processing="1"/> 
+        <effect class="activated" ref="acg_yileina_wand_trail_head_angle" lighting="0" post_processing="1"/> 
+        <effect class="activated" ref="acg_yileina_wand_trail_leave" lighting="0" post_processing="1"/> 
+        <effect class="activated" ref="acg_yileina_wand_trail_leave" lighting="0" post_processing="1"/> 
+
+    </projectile>
+    <effect class="muzzle" ref="acg_yileina_wand_muzzle_lens" />    
+    <effect class="muzzle" ref="acg_yileina_wand_muzzle_light" />    
+    <effect class="muzzle" ref="acg_yileina_wand_muzzle_impact_smoke" />    
+    <effect class="muzzle" ref="acg_yileina_wand_muzzle_magic_circle" />    
+
+    <stance state_key="running" accuracy="1" />
+    <stance state_key="walking" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="standing" accuracy="1" />
+    <stance state_key="crouching" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1" />
+
+    <modifier class="speed" value="0.1" />    
+	 
+</weapon>
+<weapon 
+file="_rare_weapon_mk5_re.base"
+key="re_acg_yileina_wand_rain.weapon"
+ >
+    <tag name="sniper" />
+    <specification 
+	retrigger_time="0.6"
+    last_burst_retrigger_time="0.6"
+	accuracy_factor="1" 
+    spread_range="0.22"
+	sustained_fire_grow_step="0.25" 
+	sustained_fire_diminish_rate="1.0" 
+	magazine_size="-1" 
+	can_shoot_standing="1" 
+	can_shoot_crouching="1"
+    can_shoot_prone="0" 
+	suppressed="0" 
+	name="Elaina Ex Wand" 
+	class="4" 
+	reload_one_at_a_time="0" 
+	sight_range_modifier="1.55" 
+	projectile_speed="65.0" 
+	barrel_offset_3d="0 0 1.6"
+	projectiles_per_shot="1" 
+	burst_shots="1"
+    carry_in_two_hands="1"/>
+    <weak_hand_hold offset="0" />
+
+	<next_in_chain key="re_acg_yileina_wand.weapon" share_ammo="0" />
+  
+    <animation key="recoil" animation_key="wand_still" />
+    <animation key="cycle" animation_key="wand_still" />
+    <animation state_key="hold" animation_key="wand_still" />
+    <animation state_key="hold_casual" animation_key="acg_yileina_casual" />
+    <animation state_key="walking" animation_key="wand_running" />
+    <animation state_key="walking_backwards" animation_key="wand_running" />
+    <animation state_key="crouching" animation_key="wand_still" />
+    <animation state_key="crouch_moving" animation_key="wand_running" />
+    <animation state_key="crouch_moving_backwards" animation_key="wand_running" />
+    <animation state_key="running" animation_key="wand_running" />
+    <animation state_key="reload" animation_key="wand_reloading" />
+    <animation state_key="still_against_wall" animation_key="wand_still" />
+    <animation state_key="hold_on_wall" animation_key="wand_still" />
+    <animation state_key="changing_weapon_in"	animation_key="change weapon in" />
+    <animation state_key="changing_weapon_out"	animation_key="" />
+    <animation state_key="next_in_chain_in" animation_key="change weapon in" /><!--半身动作，切换模式，本模式切出-->
+    <animation state_key="next_in_chain_out" animation_key="" />
+
+    <sound key="effect" fileref="" pitch_variety="0.00"  volume="1" />
+    <sound key="fire" fileref="acg_yileina_wand_rain_fire.wav" pitch_variety="0.00"  volume="1" />
+    <sound key="cycle" fileref="potion_open.wav" pitch_variety="0.00"  volume="4"/>
+    <sound key="magazine_out" fileref="potion_open.wav" pitch_variety="0.00"  volume="4"/>
+    <sound key="magazine_in" fileref="sniper_clip_in_1.wav" />
+    <sound key="cycle_out" fileref="sniper_cycle_out_1.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in_1.wav" />
+
+    <sound class="impact" fileref="potion_drop.wav" pitch_variety="0.00"  volume="4" />
+
+    <model filename="wand_elaina2.xml" />
+    <addon_model filename="wand_elaina_addon.xml" />
+
+    <hud_icon filename="acg_elaina_wand_ex.png" />
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="6" can_be_detected_by_footmen="1" 
+	time_to_live="1" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.45" > 
+
+        <result class="notify_script" key="acg_yileina_wand_rain" />
+
+		<trigger class="time" time_to_live="0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+
+    </projectile>
+    <effect class="muzzle" ref="acg_yileina_wand_rain_muzzle_up" />    
+    <effect class="muzzle" ref="acg_yileina_wand_rain_muzzle_up_star" />    
+    <effect class="muzzle" ref="acg_yileina_wand_rain_muzzle_ring" />    
+    <effect class="muzzle" ref="acg_yileina_wand_rain_muzzle_impact_smoke" />    
+    <effect class="muzzle" ref="acg_yileina_wand_rain_muzzle_larger_smoke" />    
+
+    <stance state_key="running" accuracy="1" />
+    <stance state_key="walking" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="standing" accuracy="1" />
+    <stance state_key="crouching" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1" />
+
+    <modifier class="speed" value="0.1" />    
+	 
+</weapon>
+</weapons>

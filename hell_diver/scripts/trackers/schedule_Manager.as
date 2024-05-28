@@ -29,7 +29,10 @@ dictionary INT_task = {
         {"666",false}
 
 };
-
+// Manager 管理了所有玩家基础信息的保存
+// TODO：脚本目前每隔指定时间会全体进行护甲回复，玩家多的时候会造成短时间内大量查询
+// 尝试分散指令执行时间，采用延时或均匀分布的方法来回复护甲，需要一个task类
+// 如果能建立一个通用的用于延时的方法会更好
 class schedule_Manager : Tracker {
     protected Metagame@ m_metagame;
     protected float m_time;

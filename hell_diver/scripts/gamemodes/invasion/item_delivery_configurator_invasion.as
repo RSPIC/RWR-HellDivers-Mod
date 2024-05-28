@@ -299,6 +299,10 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			ScoredResource("token_sinon.projectile","projectile",1.0f,4),	
 			ScoredResource("token_sinon_black.projectile","projectile",1.0f,4),	
 			ScoredResource("token_yuuki_ggo.projectile","projectile",1.0f,4),	
+			// 1.8.2
+			ScoredResource("token_yui_katagiri.projectile","projectile",1.0f,4),	
+			ScoredResource("token_odst.projectile","projectile",1.0f,4),	
+			ScoredResource("token_hanaoka_yuzu.projectile","projectile",1.0f,4),	
 
 			//AI类信物
 			ScoredResource("ai_token_asuma_toki.projectile","projectile",1.0f,2)
@@ -361,6 +365,9 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 
 		array<array<ScoredResource@>> rewardPasses = {
 			{
+			ScoredResource("deploy_ex_pak40.weapon", "weapon", 0.1f),
+			ScoredResource("deploy_ex_zis3.weapon", "weapon", 0.1f),
+
 			ScoredResource("ex_isu_152_call.projectile", "projectile", 1.0f),
 			ScoredResource("noxe_call.projectile", "projectile", 1.0f),
 			ScoredResource("ex_sturmtiger_tank_call.projectile", "projectile", 1.0f),
@@ -419,7 +426,12 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
          	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f),
          	ScoredResource("ex_funnelnet.weapon", "weapon", 1.0f),
          	ScoredResource("acg_mg3.weapon", "weapon", 1.0f),
-         	ScoredResource("ex_izanagis_burden.weapon", "weapon", 1.0f)
+         	ScoredResource("ex_izanagis_burden.weapon", "weapon", 1.0f),
+			// 1.8.2
+         	ScoredResource("ex_psc_srs99.weapon", "weapon", 1.0f),
+         	ScoredResource("ex_psc_arc920.weapon", "weapon", 1.0f),
+         	ScoredResource("ex_exp_m41_spnkr.weapon", "weapon", 1.0f),
+         	ScoredResource("ex_side_m6g_magnum.weapon", "weapon", 1.0f)
 			},
 			{
 			ScoredResource("lottery_cash_II.carry_item", "carry_item", 1.0f)
@@ -525,7 +537,9 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	// ScoredResource("acg_megumin_wand_float.weapon", "weapon", 1.0f),
         	ScoredResource("acg_laisha_heliotrope.weapon", "weapon", 1.0f),
         	ScoredResource("ex_vergil_judgment_cut.weapon", "weapon", 1.0f),
-        	ScoredResource("ex_trinity_ghoul.weapon", "weapon", 1.0f)
+        	ScoredResource("ex_trinity_ghoul.weapon", "weapon", 1.0f),
+			// 1.8.2
+        	ScoredResource("acg_elaina_wand.weapon", "weapon", 1.0f)
 			},
 			{
 			ScoredResource("lottery_cash_II.carry_item", "carry_item", 1.0f)
@@ -586,10 +600,10 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 
         	ScoredResource("acg_smg_strelka.weapon", "weapon", 1.0f),
         	ScoredResource("acg_m14.weapon", "weapon", 1.0f),
-        	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f),
-         	ScoredResource("ex_funnelnet.weapon", "weapon", 1.0f),
-         	ScoredResource("acg_mg3.weapon", "weapon", 1.0f),
-        	ScoredResource("ex_izanagis_burden.weapon", "weapon", 1.0f)
+        	ScoredResource("ex_psc_srs99.weapon", "weapon", 1.0f),
+         	ScoredResource("ex_psc_arc920.weapon", "weapon", 1.0f),
+         	ScoredResource("ex_exp_m41_spnkr.weapon", "weapon", 1.0f),
+         	ScoredResource("ex_side_m6g_magnum.weapon", "weapon", 1.0f)
 			},
 			{
 			ScoredResource("lottery_cash_II.carry_item", "carry_item", 1.0f)
@@ -664,7 +678,9 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_shinano.weapon", "weapon", 1.0f),
         	ScoredResource("acg_ba_alice_railgun_ex.weapon", "weapon", 1.0f),
 			// 1.7.2
-        	ScoredResource("acg_incomparable.weapon", "weapon", 1.0f)
+        	ScoredResource("acg_incomparable.weapon", "weapon", 1.0f),
+			// 1.8.2
+        	ScoredResource("acg_yileina_wand.weapon", "weapon", 1.0f)
 			},
 			{
 			ScoredResource("lottery_cash_II.carry_item", "carry_item", 1.0f)
@@ -923,7 +939,11 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("acg_ka_ar8.weapon", "weapon", 1.0f),
          	ScoredResource("ex_funnelnet.weapon", "weapon", 1.0f),
          	ScoredResource("acg_mg3.weapon", "weapon", 1.0f),
-        	ScoredResource("ex_izanagis_burden.weapon", "weapon", 1.0f)
+        	ScoredResource("ex_izanagis_burden.weapon", "weapon", 1.0f),
+			ScoredResource("ex_psc_srs99.weapon", "weapon", 1.0f),
+         	ScoredResource("ex_psc_arc920.weapon", "weapon", 1.0f),
+         	ScoredResource("ex_exp_m41_spnkr.weapon", "weapon", 1.0f),
+         	ScoredResource("ex_side_m6g_magnum.weapon", "weapon", 1.0f)
 			},
 			{
 			ScoredResource("lottery_cash_II.carry_item", "carry_item", 1.0f)

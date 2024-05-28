@@ -26,4 +26,17 @@ key="hd_psc_atx25_revelator_mk3_damage.projectile"
 	<model mesh_filename="" />
 	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
 </projectile>
+<projectile 
+class="grenade" 
+slot="1" pulldown_in_air="30.0" 
+key="hd_psc_r36_eruptor_damage.projectile"
+>
+	<collision class="sticky" />
+	<result class="blast" radius="4.5" damage="2.01" push="0.5" decal="0" character_state="death"
+	damage_origin_vehicle="0" make_vehicle_hit_sound="0"   />
+	<trigger class="time" time_to_live="0" />	
+    <rotation class="motion" />
+	<model mesh_filename="" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+</projectile>
 </projectiles>

@@ -277,6 +277,16 @@
 			<attribute weight="1.0" min="1.0" max="1.0" />
 			<attribute weight="1.0" min="3.0" max="3.0" />
 		</attribute_config>
+		<item_class_existence_config>
+			<!-- main -->
+			<item_class_existence class="weapon" slot="0" probability="1" />
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="1" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="1" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="0.5" />
+		</item_class_existence_config>
 	</soldier> 
 
 	<!-- Elite -->
@@ -306,6 +316,16 @@
 			<attribute weight="1.0" min="1.0" max="1.0" />
 			<attribute weight="1.0" min="3.0" max="3.0" />
 		</attribute_config>
+		<item_class_existence_config>
+			<!-- main -->
+			<item_class_existence class="weapon" slot="0" probability="1" />
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="1" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="1" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="0.5" />
+		</item_class_existence_config>
 	</soldier> 
 	<soldier name="CouncilMember" spawn_score="0.05" copy_from="base" >
 		<character filename="illum_illusionist_state.character">	
@@ -332,5 +352,15 @@
 			<attribute weight="1.0" min="1.0" max="1.0" />
 			<attribute weight="1.0" min="3.0" max="3.0" />
 		</attribute_config>
+		<item_class_existence_config>
+			<!-- main -->
+			<item_class_existence class="weapon" slot="0" probability="1" />
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="1" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="1" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="0.5" />
+		</item_class_existence_config>
 	</soldier> 
 </faction>

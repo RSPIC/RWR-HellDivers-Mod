@@ -693,6 +693,22 @@
         <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
         <capacity value="12" source="rank" source_value="0" />
     </projectile>
+    <!-- 1.8.2 -->
+    <projectile file="hd_hellpod_call.projectile" name="Yui Katagiri[Skin]" key="token_yui_katagiri.projectile" >
+        <hud_icon filename="token_yui_katagiri.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="ODST [Skin]" key="token_odst.projectile" >
+        <hud_icon filename="token_odst.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Hanaoka Yuzu [Skin]" key="token_hanaoka_yuzu.projectile" >
+        <hud_icon filename="token_hanaoka_yuzu.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
 
 
     <!-- 其他 -->

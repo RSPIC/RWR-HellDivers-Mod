@@ -44,7 +44,7 @@ file="_vehicle_none.base"
 	<character_slot type="driver" position="0 0.2 1.75" rotation="3.14" 
 	exit_rotation="0" hiding="0" animation_key="Piano_Playing" marker_offset="0 0 0"/>
 	
-	<rev_sound filename="music_uzuki.wav" low_pitch="1" high_pitch="1.0" low_rev="1" high_rev="1" volume="1" />
+	<rev_sound filename="music_uzuki.wav" low_pitch="1" high_pitch="1.0" low_rev="1" high_rev="1" volume="0.7" />
 
 	<sound key="slide" filename="" />
 	<sound key="squeal" filename="" />

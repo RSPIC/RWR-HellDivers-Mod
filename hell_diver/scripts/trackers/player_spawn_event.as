@@ -46,6 +46,8 @@ class player_spawn : Tracker {
 		int pid = element.getIntAttribute("player_id");
 		string name = element.getStringAttribute("name");
 
+		if(!g_factionInfoBuck.get("HellDiver",fid)){return;} //其他阵营不生成
+
 		const XmlElement@ character = getCharacterInfo(m_metagame, cid);
 		if(character is null){return;}
 		Vector3 c_position = stringToVector3(character.getStringAttribute("position"));
@@ -80,13 +82,16 @@ class player_spawn : Tracker {
 
 		//首次连接不会提示，二次复活才提示
         string value; //临时变量
+		int value_num = -1;
         if(playersInfo.get(name,value)){
-            callHelp(m_metagame,pid);
+			g_userCountInfoBuck.addCount(name,"callHelp");
+			g_userCountInfoBuck.getCount(name,"callHelp",value_num);
+			if(value_num < 2){
+            	callHelp(m_metagame,pid);
+			}
         }else{
             playersInfo.set(name,"true");
-        }
-
-        
+        }       
     }
     // ----------------------------------------------------
     protected void handlePlayerDieEvent(const XmlElement@ event) {

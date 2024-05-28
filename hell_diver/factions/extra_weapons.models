@@ -44,6 +44,36 @@
 	</model>
 	<model filename="ex_vergil.xml"><requirement class="weapon" slot="0" key="re_ex_vergil_getsuga_tenshou.weapon"/>
 	</model>
+	<!-- 光环5武器 -->
+	<model filename="ex_odst.xml"><requirement class="weapon" slot="0" key="ex_psc_srs99.weapon"/>
+	</model>
+	<model filename="ex_odst.xml"><requirement class="weapon" slot="0" key="re_ex_psc_srs99.weapon"/>
+	</model>
+	<model filename="ex_odst.xml"><requirement class="weapon" slot="0" key="ex_psc_arc920.weapon"/>
+	</model>
+	<model filename="ex_odst.xml"><requirement class="weapon" slot="0" key="re_ex_psc_arc920.weapon"/>
+	</model>
+	<model filename="ex_odst.xml"><requirement class="weapon" slot="1" key="ex_exp_m41_spnkr.weapon"/>
+	</model>
+	<model filename="ex_odst.xml"><requirement class="weapon" slot="1" key="re_ex_exp_m41_spnkr.weapon"/>
+	</model>
+	<model filename="ex_odst.xml"><requirement class="weapon" slot="1" key="ex_side_m6g_magnum.weapon"/>
+	</model>
+	<model filename="ex_odst.xml"><requirement class="weapon" slot="1" key="re_ex_side_m6g_magnum.weapon"/>
+	</model>
+	<model filename="ex_odst.xml"><requirement class="weapon" slot="1" key="ex_side_m6t_magnum.weapon"/>
+	</model>
+	<model filename="ex_odst.xml"><requirement class="weapon" slot="1" key="re_ex_side_m6t_magnum.weapon"/>
+	</model>
+	<!-- 谭雅 -->
+	<model filename="hd_ra2_tanya.xml"><requirement class="weapon" slot="0" key="ex_ra2_tanya.weapon"/>
+	</model>
+	<model filename="hd_ra2_tanya.xml"><requirement class="weapon" slot="0" key="ex_ra2_tanya_c4.weapon"/>
+	</model>
+	<model filename="hd_ra2_tanya.xml"><requirement class="weapon" slot="0" key="re_ex_ra2_tanya.weapon"/>
+	</model>
+	<model filename="hd_ra2_tanya.xml"><requirement class="weapon" slot="0" key="re_ex_ra2_tanya_c4.weapon"/>
+	</model>
 
 
 	

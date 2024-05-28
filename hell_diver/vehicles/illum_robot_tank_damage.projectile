@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectiles>
+<projectile 
+class="grenade" 
+slot="1" pulldown_in_air="30.0" 
+key="illum_robot_tank_damage.projectile"
+>
+	<collision class="sticky" />
+	<result class="blast" radius="3.0" damage="10" push="0.3" decal="0" character_state="stun"
+	damage_origin_vehicle="0" make_vehicle_hit_sound="0" faction_compare="not_equal"  />
+	<trigger class="time" time_to_live="0" />	
+    <rotation class="motion" />
+	<model mesh_filename="" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+</projectile>
+</projectiles>

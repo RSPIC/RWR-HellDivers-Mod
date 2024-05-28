@@ -13,21 +13,6 @@
 	<!-- <result class="notify_script" key="upgrade" /> -->
 	<result class="blast" radius="5" damage="0" push="0.5" decal="0" character_state="none" faction_compare="not_equal" />
 
-		<!-- <effect class="result"  key="terrain" ref="DXE_muzzle_wave"/>
-		<effect class="result"  key="terrain" ref="DXE_muzzle_clock"/>
-		<effect class="result"  key="terrain" ref="DXE_muzzle_clock_2"/>
-		<effect class="result"  key="terrain" ref="DXE_muzzle_clock_3"/>
-		<effect class="result"  key="terrain" ref="DXE_muzzle_clock_4"/>
-		<effect class="result"  key="terrain" ref="DXE_muzzle_clock_5"/>
-		<effect class="result"  key="terrain" ref="DXE_muzzle_clock_6"/>
-		<effect class="result"  key="terrain" ref="DXE_muzzle_singing_1"/>
-		<effect class="result"  key="terrain" ref="DXE_muzzle_singing_2"/>
-		<effect class="result"  key="terrain" ref="DXE_muzzle_singing_3"/>
-		<effect class="result"  key="terrain" ref="DXE_muzzle_singing_4"/>
-		<effect class="result"  key="terrain" ref="DXE_muzzle_singing_spot"/>
-		<effect class="result"  key="terrain" ref="DXE_muzzle_singing_spot_pre"/>
-		<effect class="result"  key="terrain" ref="DXE_muzzle_singing_randon_spot"/> -->
-
     <effect class="result" key="terrain" ref="illum_spawn_ring"/>
 
 

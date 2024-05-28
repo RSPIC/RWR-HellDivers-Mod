@@ -1,0 +1,976 @@
+author: RST
+2024.5.24
+未经授权不可复用、修改使用、仅用于helldiver mod
+
+particle_system acg_yileina_wand_rain_muzzle_up
+{
+	quota 400
+	material flaretrail_01
+	particle_width 0.3
+	particle_height 5
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 180
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 80
+		position 0 0 0
+		velocity_min 9
+		velocity_max -9
+		time_to_live_min 2
+		time_to_live_max 3
+		duration 0.5
+	}
+	affector Scaler
+	{
+		rate 0.8
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.31 0.20 0.87 1
+		time1 0.7
+		colour1 0.8 0.7 0.9 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 30 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 50
+		scope 0.3
+		keep_velocity false
+	}
+}
+particle_system acg_yileina_wand_result_impact_up
+{
+	quota 400
+	material flaretrail_01
+	particle_width 0.25
+	particle_height 5
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 180
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 550
+		position 0 0 0
+		velocity_min 25
+		velocity_max 30
+		time_to_live_min 0.5
+		time_to_live_max 1
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0.5
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.31 0.20 0.87 1
+		time1 0.7
+		colour1 0.8 0.7 0.9 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 45 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 50
+		scope 0.3
+		keep_velocity false
+	}
+}
+particle_system acg_yileina_wand_rain_muzzle_up_star
+{
+	quota 400
+	emit_emitter_quota 400
+	material muzzle_lens_01
+	particle_width 0.4
+	particle_height 0.4
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	accurate_facing 1
+	
+	emitter Point
+	{
+		angle 360
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity_min -9
+		velocity_max 9
+		time_to_live_min 2
+		time_to_live_max 3
+		duration 0.5
+		emit_emitter tag1
+	}
+	emitter Point		
+	{
+		name tag1
+		angle 90
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 5
+		position 0 0 0
+		velocity_min 0.1
+		velocity_max 0.5
+		time_to_live_min 0.3
+		time_to_live_max 0.5
+		duration 0
+	}
+	affector Scaler
+	{
+		rate 0.3
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.31 0.20 0.87 1
+		time1 0.5
+		colour1 0.8 0.7 0.9 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 20 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 30
+		scope 0.2
+		keep_velocity false
+	}
+}
+particle_system acg_yileina_wand_rain_muzzle_ring
+{
+	quota 50
+	material crescent_05
+	particle_width 3
+	particle_height 3
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 6
+		position 0 0 0
+		velocity 0.00001
+		time_to_live 1
+		duration 0.5
+	}
+	affector Scaler
+	{
+		rate 5
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.31 0.20 0.87 1
+		time1 0.7
+		colour1 0.8 0.7 0.9 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+}
+particle_system acg_yileina_wand_rain_muzzle_impact_smoke
+{
+	quota 50
+	material Tex_Aura02F
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 5
+		position 0 0 0
+		velocity 0.00001
+		time_to_live 0.6
+		duration 0.4
+	}
+	affector Scaler
+	{
+		rate 15
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.31 0.20 0.87 1
+		time1 0.7
+		colour1 0.8 0.7 0.9 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+}
+particle_system acg_yileina_wand_rain_muzzle_larger_smoke
+{
+	quota 50
+	material eye_lwy_t_mul_57_single
+	particle_width 3
+	particle_height 3
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.00001
+		time_to_live 2
+		duration 0.2
+	}
+	affector Scaler
+	{
+		rate 4
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.31 0.20 0.87 1
+		time1 0.3
+		colour1 0.8 0.7 0.9 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	-90
+		rotation_speed_range_end	90
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+}
+particle_system acg_yileina_wand_rain_result_trail_light
+{
+	quota 900
+	material point_soft_edge_100
+	particle_width 3
+	particle_height 3
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 30
+		position 0 0 0
+		velocity 0.00001
+		time_to_live 1
+		duration 0
+	}
+	affector Scaler
+	{
+		rate -1
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.03 0.04 0.17 1
+		time1 0.5
+		colour1 0.03 0.04 0.17 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system acg_yileina_wand_rain_result_water_impact
+{
+	quota 300
+	material eye_lwy_t_mul_57_single
+	particle_width 3
+	particle_height 3
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 15
+		position 0 0 0
+		velocity 0.00001
+		time_to_live 0.3
+		duration 0.2
+	}
+	affector Scaler
+	{
+		rate 15
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.3 0.3 0.9 1
+		time1 0.5
+		colour1 0.1 0.2 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system acg_yileina_wand_rain_result_water_spray
+{
+	quota 300
+	material Tex_Spark20
+	particle_width 1
+	particle_height 2
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 30
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 40
+		position 0 0 0
+		velocity 10
+		time_to_live 0.3
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 15
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.3 0.3 0.9 1
+		time1 0.5
+		colour1 0.1 0.2 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system acg_yileina_wand_muzzle_lens
+{
+	quota 300
+	material monlit
+	particle_width 20
+	particle_height 1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 30
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 40
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.3
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 6
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.0 0.3 1 1
+		time1 0.5
+		colour1 0.0 0.5 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system acg_yileina_wand_muzzle_light
+{
+	quota 300
+	material point_soft_edge_100
+	particle_width 10
+	particle_height 10
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 30
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.6
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 15
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.0 0.15 0.5 1
+		time1 0.5
+		colour1 0.0 0.25 0.5 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system acg_yileina_wand_muzzle_magic_circle
+{
+	quota 50
+	material bronya_fazhen_cull
+	particle_width 10
+	particle_height 10
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 30
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 30
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.3
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 15
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	90
+		rotation_speed_range_end	90
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.0 0.15 0.5 1
+		time1 0.5
+		colour1 0.0 0.25 0.5 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system acg_yileina_wand_trail_dark
+{
+	quota 500
+	material point_soft_edge_alpha
+	particle_width 2.5
+	particle_height 2.5
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 80
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.5
+		duration 0
+	}
+	affector Scaler
+	{
+		rate -3
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.15
+		colour1 0 0 0 0
+		time2 0.16
+		colour2 0.2 0.2 0.3 0.8
+		time3 0.7
+		colour3 0.3 0.3 0.4 0.3
+		time4 1
+		colour4 0 0 0 0
+	}
+}
+particle_system acg_yileina_wand_trail_head_angle_dark
+{
+	quota 500
+	material point_soft_edge_alpha
+	particle_width 0.2
+	particle_height 0.2
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 80
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.12
+		duration 0
+	}
+	affector Scaler
+	{
+		rate 25
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.15
+		colour1 0 0 0 0
+		time2 0.16
+		colour2 0.2 0.2 0.3 0.8
+		time3 0.99
+		colour3 0.3 0.3 0.4 0.3
+		time4 1
+		colour4 0 0 0 0
+	}
+}
+particle_system acg_yileina_wand_trail_lightBlue
+{
+	quota 500
+	material point_soft_edge_100
+	particle_width 8
+	particle_height 8
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 80
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.65
+		duration 0
+	}
+	affector Scaler
+	{
+		rate -9
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.2
+		colour1 0 0 0 0
+		time2 0.21
+		colour2 0.0 0.3 1 1
+		time3 0.8
+		colour3 0.0 0.5 1 1
+		time4 1
+		colour4 0 0 0 0
+	}
+}
+particle_system acg_yileina_wand_trail_head_angle
+{
+	quota 500
+	material point_soft_edge_100
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 80
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.15
+		duration 0
+	}
+	affector Scaler
+	{
+		rate 50
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.0 0.3 1 1
+		time1 0.5
+		colour1 0.0 0.5 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system acg_yileina_wand_trail_centerRing
+{
+	quota 300
+	material eye_lwy_t_mul_57_single
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 40
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.07
+		duration 0
+	}
+	affector Scaler
+	{
+		rate 80
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.7
+		colour1 0.0 0.5 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system acg_yileina_wand_trailRing
+{
+	quota 200
+	material Particle_ShockwaveSlow
+	particle_width 6
+	particle_height 6
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.5
+		duration 0
+	}
+	affector Scaler
+	{
+		rate -4
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	-1200
+		rotation_speed_range_end	-1200
+		rotation_range_start	90
+		rotation_range_end	90
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.0 0.3 1 1
+		time1 0.7
+		colour1 0.0 0.5 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system acg_yileina_wand_muzzle_impact_smoke
+{
+	quota 50
+	material eye_lwy_t_mul_57_single
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 40
+		position 0 0 0
+		velocity 0.00001
+		time_to_live 0.25
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 40
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.5
+		colour1 0.3 0 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+}
+particle_system acg_yileina_wand_trail_leave
+{
+	quota 750
+	material eye_fxl_ptc_0012_p
+	particle_width 0.42
+	particle_height 0.42
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	iteration_interval 0
+	emitter Box
+	{
+		angle 90
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity_min 1
+		velocity_max 1.5
+		time_to_live 1.8
+		duration 0
+		depth 3
+		height 3
+		width 3
+	}
+	affector Scaler
+	{
+		rate -0.15
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 1
+		scope 0.5
+		keep_velocity false
+	}
+}
+
+
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+
+material Particle_Frost_Shockwave_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture Particle_Frost_Shockwave_01.png 	
+}}}}
+material Tex_Aura02F : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture Tex_Aura02F.png 	
+}}}}
+material eye_lwy_t_mul_57_single : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture eye_lwy_t_mul_57_single.png 	
+}}}}
+material flaretrail_01 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture flaretrail_01.png 	
+}}}}
+material crescent_05 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture crescent_05.png 	
+}}}}
+material monlit : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture monlit.png 	
+}}}}

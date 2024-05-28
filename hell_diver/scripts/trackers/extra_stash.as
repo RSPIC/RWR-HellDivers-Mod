@@ -82,7 +82,7 @@ class playerStashInfo {
         m_page += direction;
         showNowPageObject();
     }
-    void openStash(){//打开仓库
+    void openStash(bool isNotify = true){//打开仓库
         refreshStash();
         int pid = g_playerInfoBuck.getPidByName(m_name);
         if(isPushIn()){
@@ -91,16 +91,18 @@ class playerStashInfo {
             return;
         }
         m_isStashOpen = !m_isStashOpen;
-        if(m_isStashOpen){
-            _notify(m_metagame,pid,"仓库已打开");
-        }else{
-            _notify(m_metagame,pid,"仓库已关闭");
-            returnOverPushObject();
-            clearInfos();
-        }
-        XmlElement@ object = selectObject(0,false);
-        if(object is null){
-            _notify(m_metagame,pid,"当前仓库容量 "+m_stashUsedSize+"/"+m_stashSize);
+        if(isNotify){
+            if(m_isStashOpen){
+                _notify(m_metagame,pid,"仓库已打开");
+            }else{
+                _notify(m_metagame,pid,"仓库已关闭");
+                returnOverPushObject();
+                clearInfos();
+            }
+            XmlElement@ object = selectObject(0,false);
+            if(object is null){
+                _notify(m_metagame,pid,"当前仓库容量 "+m_stashUsedSize+"/"+m_stashSize);
+            }
         }
     }
     void upgradeStash(int num,bool isFree = false){//仓库升级 预处理
@@ -560,8 +562,12 @@ class playerStashInfo {
         }
         return m_selectObject;
     }
-    bool exchangeItems(array<XmlElement@> deleteObjects,array<XmlElement@> getObjects){
-        if(!isOpen(true)){return false;}
+    bool exchangeItems(array<XmlElement@> deleteObjects,array<XmlElement@> getObjects,bool isNotify = true){
+        if(isNotify){
+            if(!isOpen(true)){return false;}
+        }else{
+            if(!isOpen(false)){return false;}
+        }
         if(isPushIn()){
             int pid = g_playerInfoBuck.getPidByName(m_name);
             pushInObjects();
@@ -591,7 +597,7 @@ class playerStashInfo {
                             int limitNum = items.getIntAttribute("value");
                             int pid = g_playerInfoBuck.getPidByName(m_name);
                             if(limitNum != 0){
-                                items.setIntAttribute("value",--limitNum);
+                                // items.setIntAttribute("value",--limitNum); //1.8.2临时取消
                                 _notify(m_metagame,pid,"该限量物品剩余兑换次数="+limitNum);
                                 limits.appendChild(items);
                                 isSaveLimit = true;
@@ -604,13 +610,9 @@ class playerStashInfo {
                 }
             }
         }
-        if(isSaveLimit){
-            limits.removeChild("item",0);
-            saveLimitationInfo(limits);
-        }
         int pid = g_playerInfoBuck.getPidByName(m_metagame,m_name);
         int cid = g_playerInfoBuck.getCidByName(m_metagame,m_name);
-        if(deleteObjects.size() > 0){
+        if(deleteObjects.size() >= 0){
             _debugReport(m_metagame,"兑换物品：检测到删除对象");
             refreshStash();
             string itemKey;
@@ -656,7 +658,7 @@ class playerStashInfo {
             if(deleteObjects.size() == 0){
                 isExchangeValid = true;
             }
-            if(isExchangeValid && !isEmpty){  //物品都满足需求
+            if(isExchangeValid ){  //物品都满足需求
             _debugReport(m_metagame,"全部通过，执行兑换");
                 uint removeTimes = 0;
                 for(uint i = 0 ; i < targetIndex.size() ; ++i){ //遍历要修改的序号列表
@@ -679,11 +681,19 @@ class playerStashInfo {
                     res.addToResources(resources,pullOutNum);
                 }
                 addListItemInBackpack(m_metagame,cid,resources);
-                _notify(m_metagame,pid,"物品已兑换，请查收");
+                if(isNotify){
+                    _notify(m_metagame,pid,"物品已兑换，请查收");
+                }
                 saveStashObject();
+                if(isSaveLimit){
+                    limits.removeChild("item",0);
+                    saveLimitationInfo(limits);
+                }
                 return true;
             }else{
-                _notify(m_metagame,pid,"该物品在仓库为空，无法兑换物品，请将兑换物存放至脚本仓库");
+                if(isNotify){
+                    _notify(m_metagame,pid,"该物品在仓库数量不足，无法兑换物品，请将兑换物存放至脚本仓库");
+                }
             }
         }
         return false;
@@ -870,17 +880,17 @@ class extra_stash : Tracker {
     void start(){
     }
     // -------------------------------------------
-    protected void handlePlayerDisconnectEvent(const XmlElement@ event) {
-        const XmlElement@ player = event.getFirstElementByTagName("player");
-        if(player is null){return;}
-        
-    }
-    // -------------------------------------------
 	protected void handlePlayerConnectEvent(const XmlElement@ event) {
 		const XmlElement@ player = event.getFirstElementByTagName("player");
         if(player is null){return;}
         m_playerStashInfoBuck.addInfo(m_metagame,player);
 	}
+    // ----------------------------------------------------
+	protected void handlePlayerSpawnEvent(const XmlElement@ event) {
+        const XmlElement@ player = event.getFirstElementByTagName("player");
+		string name = player.getStringAttribute("name");
+        m_playerStashInfoBuck.addInfo(m_metagame,player);
+    }
     // -------------------------------------------
     protected void handleChatEvent(const XmlElement@ event){
 		string message = event.getStringAttribute("message");

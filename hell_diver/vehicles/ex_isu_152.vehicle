@@ -6,7 +6,6 @@ key="ex_isu_152.vehicle"
 time_to_live_unsteerable="12" 
 map_view_atlas_index="59" 
 minimum_fill_requirement="0.25"
-
 simulated_damage="100"
 usable_for_cover="1"
 reserves_spawn_point="1"
@@ -23,9 +22,9 @@ ai_driver_turns_to_target="1"
 	<tire_set offset="1.8 0.0 -3.5" radius="0.4" />
 
 	<control 
-	max_speed="7" 
-	acceleration="10.0" 
-	max_reverse_speed="8" 
+	max_speed="15" 
+	acceleration="12.0" 
+	max_reverse_speed="16" 
 	min_health_to_steer="0.10" 
 	max_rotation="0.0" 
 	max_water_depth="2.0" 

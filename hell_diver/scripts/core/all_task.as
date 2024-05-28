@@ -658,6 +658,8 @@ class CreateProjectile : Task{
 	protected float m_delaytimer;
 	protected bool m_ended;
 	protected bool m_isVertical;
+	protected float m_random_range = 0;
+	protected bool m_isPathRandom = false;
 
 	CreateProjectile(Metagame@ metagame,Vector3 sPos,Vector3 ePos,string key,int cid,int fid,float speed,float time,int num = 1,float delaytime = 0,bool isVertical=true){
 		@m_metagame = @metagame;
@@ -677,7 +679,10 @@ class CreateProjectile : Task{
 		m_distance = getAimUnitDistance(1,sPos,ePos);
 		m_isVertical = isVertical;
 	}
-
+	void setRandomRange(float range, bool isPathRandom = false){
+		m_random_range = range;
+		m_isPathRandom = isPathRandom;
+	}
 	void start(){
 	}
 
@@ -699,6 +704,19 @@ class CreateProjectile : Task{
 	}
 
 	protected void create(){
+		if(m_random_range != 0){
+			float randx = rand(-m_random_range,m_random_range);
+			float randy = rand(-m_random_range,m_random_range);
+			Vector3 r_start = m_startPos.add(Vector3(randx,0,randy));
+			Vector3 r_end = m_endPos.add(Vector3(randx,0,randy));
+			if(m_isPathRandom){ //如果要求起始点都随机，则对目标点再次随机坐标偏移
+				randx = rand(-m_random_range,m_random_range);
+				r_end = m_endPos.add(Vector3(randx,0,randy));
+			}
+			CreateDirectProjectile(m_metagame,r_start,r_end,m_key,m_cid,m_fid,m_speed);
+			m_num_left--;
+			return;
+		}
 		if(m_isVertical){
 			m_startPos = m_endPos.subtract(aim_unit_vector.scale((m_distance*(m_num_left))/m_num));
 			CreateDirectProjectile(m_metagame,m_startPos.add(Vector3(0,1,0)),m_startPos,m_key,m_cid,m_fid,m_speed);

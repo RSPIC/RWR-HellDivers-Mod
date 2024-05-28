@@ -23,9 +23,9 @@ ai_driver_turns_to_target="1"
 	<tire_set offset="1.8 0.0 -3.5" radius="0.4" />
 
 	<control 
-	max_speed="10.5" 
-	acceleration="8.0" 
-	max_reverse_speed="7" 
+	max_speed="16" 
+	acceleration="10.0" 
+	max_reverse_speed="15" 
 	min_health_to_steer="0.10" 
 	max_rotation="0.0" 
 	max_water_depth="2.0" 

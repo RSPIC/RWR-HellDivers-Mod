@@ -159,6 +159,19 @@ radius="1"
 	<!--盾块，可设置多个，空盾块仍然生效击杀收益共享，需要删去该段代码-->
 	<shield offset="-0.3 0 3.3" extent="4 4 2" usable_for_cover="0"/>  
 
-	
+	<target_factors tag="" distance="1.0" direction="0.0" squad_command="1.0" base_score="0.5" />
+    <target_factors tag="EXO" distance="1.0" direction="0.0" squad_command="1.0" base_score="10.0" />
+    <target_factors tag="ACG" distance="1.0" direction="0.0" squad_command="1.0" base_score="8.0" />
+    <target_factors tag="apc" distance="1.0" direction="0.0" squad_command="1.0" base_score="2.0" />
+    <target_factors tag="hmg" distance="1.0" direction="0.0" squad_command="1.0" base_score="0.1" />
+    <target_factors tag="HeavyTank" distance="1.0" direction="0.0" squad_command="1.0" base_score="10.0" />
+    <target_factors tag="MidTank" distance="1.0" direction="0.0" squad_command="1.0" base_score="6.0" />
+    <target_factors tag="LightTank" distance="1.0" direction="0.0" squad_command="1.0" base_score="2.0" />
+    <target_factors tag="light_combat" distance="1.0" direction="0.0" squad_command="1.0" base_score="2.0" />   
+    <target_factors tag="defensive_at" distance="1.0" direction="0.0" squad_command="1.0" base_score="2.0" />
+    <target_factors tag="tactical" distance="1.0" direction="0.0" squad_command="1.0" base_score="8.0" />  <!-- important non combat player-only vehicles -->  
+    <target_factors tag="bazooka" distance="1.0" direction="0.0" squad_command="1.0" base_score="8.0" />
+    <target_factors tag="anti_tank" distance="1.0" direction="0.0" squad_command="1.0" base_score="8.0" />
+
 </weapon>
 

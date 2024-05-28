@@ -5,8 +5,8 @@ key="samples_acg.carry_item"
 file="_samples.base"
 >
     <hud_icon filename="samples_acg.png" />
-    <inventory  price="0.0" />
+    <inventory  buy_price="200000.0" sell_price="0" />
     <model mesh_filename="samples_acg.mesh" texture_filename="hd_samples_acg.jpg" />
-    <commonness value="0" in_stock="0" can_respawn_with="0" />
+    <commonness value="0" in_stock="1" can_respawn_with="0" />
 
 </carry_item>

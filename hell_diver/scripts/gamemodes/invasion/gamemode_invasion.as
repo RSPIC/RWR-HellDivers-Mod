@@ -66,6 +66,8 @@
 #include "KeYan.as"
 #include "upgrade.as"
 #include "racing.as"
+#include "hd_daily_mission.as"
+#include "server_status.as"
 
 
 // --------------------------------------------
@@ -394,6 +396,8 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		addTracker(KeYan(this));  
 		addTracker(upgrade(this));  
 		addTracker(racing(this));  
+		addTracker(hd_daily_mission(this));  
+		addTracker(server_status(this));  
 	}
 
 	protected void setupDisableRadioAtMatchOver() {

@@ -34,7 +34,7 @@ key="hd_ai_eta17_mk3.weapon"
 	/> 
 	<!-- MK1 A laser sight has been added to assist with aiming. -->
 	<!-- MK2 	Upgraded ammunition with significantly improved anti-armor capabilities, allowing the weapon to damage any target, no matter the angle it hits at. -->
-	
+
 	<!--武器模型和HUD-->
 	<weak_hand_hold offset="0.0" /> <!--模型X轴偏移-->
 	<model filename="hd_eta17.xml" /> 
@@ -77,7 +77,7 @@ key="hd_ai_eta17_mk3.weapon"
 
 	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
 	<capacity value="0" source="rank" source_value="0.0" />
-	<capacity value="4" source="rank" source_value="0" />
+	<capacity value="2" source="rank" source_value="0" />
 	
 	<!--军械库相关-->
     <commonness value="3" can_respawn_with="1" in_stock="1" /> 

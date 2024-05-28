@@ -659,6 +659,9 @@ class playerInfoBuck{
 		return "";
 	}
 	string getSidByName(string&in name){
+		if(g_single_player && g_playerCount <= 1){
+            return "ID0"; // 单机模式固定玩家的SID为0，防止变动
+        }
 		for(uint i=0; i<size();++i){
 			if(name == m_playerInfo[i].getName()){
 				return m_playerInfo[i].getSid();
@@ -1678,6 +1681,7 @@ battleInfoBuck@ g_battleInfoBuck = battleInfoBuck();
 vestInfoBuck@ g_vestInfoBuck = vestInfoBuck();
 firstUseInfoBuck@ g_firstUseInfoBuck = firstUseInfoBuck();
 userCountInfoBuck@ g_userCountInfoBuck = userCountInfoBuck();
+playerMissionInfoBuck@ g_playerMissionInfoBuck = playerMissionInfoBuck();
 bool g_online_TestMode = false;
 bool g_debugMode = false;
 bool g_server_activity = false;
@@ -1686,6 +1690,8 @@ bool g_single_player = false; //开关一些进服提示
 bool g_auto_heal = true; // 开关自动回血
 bool g_spawn_with_ai = true; // 复活自带AI
 // bool g_spawn_with_ai = false; // 复活自带AI
+
+bool g_fastScriptDebug = false; // 脚本快速测试
 
 bool g_heal_on_kill = true; // 击杀回甲
 bool g_exo_armor = true; // 机甲是否装配护甲
@@ -1733,6 +1739,8 @@ class Initiate : Tracker {
  		@g_vestInfoBuck = vestInfoBuck();
 		@g_IRQ = _IRQ("",false);
 		@g_firstUseInfoBuck = firstUseInfoBuck();
+		@g_playerMissionInfoBuck = playerMissionInfoBuck();
+		
 		g_firstUseInfoBuck.addInfo("admin");
 		//First Run
 		initiateFactionInfo();
@@ -1781,6 +1789,7 @@ class Initiate : Tracker {
 	protected void handlePlayerSpawnEvent(const XmlElement@ event) {
 		initiateBattleInfo(event);
 		initiateVestInfo(event);
+		initiateMissionInfo(event);
 	}
 	// ----------------------------------------------------
 	protected void handlePlayerConnectEvent(const XmlElement@ event) {
@@ -1821,6 +1830,12 @@ class Initiate : Tracker {
 			g_vestInfoBuck.removeInfo(name);
 		}
 		g_vestInfoBuck.addInfo(name);
+	}
+	// ----------------------------------------------------
+	protected void initiateMissionInfo(const XmlElement@ event){
+		const XmlElement@ player = event.getFirstElementByTagName("player");
+		string name = player.getStringAttribute("name");
+		g_playerMissionInfoBuck.addInfo(m_metagame,name);
 	}
 	protected void initiateFactionInfo(){
 		if(g_factionInfoBuck !is null){
@@ -1883,6 +1898,18 @@ class Initiate : Tracker {
 			float bfx = g_battleInfoBuck.bonusFactorXp(p_name);
 			float bfr = g_battleInfoBuck.bonusFactorRp(p_name);
 			notify(m_metagame,"你的全局倍率="+bf+"，xp倍率="+bfx+"，rp倍率="+bfr, dictionary(), "misc", pid, false, "", 1.0);
+		}
+		if(message == "/sid"){
+			string sid;
+			array<const XmlElement@> players = getPlayers(m_metagame);
+			for(uint j = 0; j < players.size() ; ++j){
+				const XmlElement@ player = players[j];
+				if(player is null){continue;}
+				if(p_name == player.getStringAttribute("name")){
+					sid = player.getStringAttribute("sid");
+				}
+			}
+			notify(m_metagame,"你的SID="+sid, dictionary(), "misc", pid, false, "", 1.0);
 		}
 	}
 		

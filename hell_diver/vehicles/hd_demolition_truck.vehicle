@@ -4,14 +4,12 @@ file="_vehicle_none.base"
 name="Demolition Truck" 
 key="hd_demolition_truck.vehicle" 
 respawn_time="60" 
-time_to_live_unsteerable="12" 
 map_view_atlas_index="48" 
-minimum_fill_requirement="0.25" 
 existence="one_per_faction" 
 character_leave_request_mode="friendly" 
 >
 	<tag name="metal_thin" />
-	<tag name="apc" />
+	<tag name="jeep" />
 
 	<tire_set offset="0.8 0.0 1.52" radius="0.35" />
 	<tire_set offset="0.8 0.0 -1.1" radius="0.35" />

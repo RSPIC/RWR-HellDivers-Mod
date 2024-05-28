@@ -161,7 +161,72 @@
 	<rank xp="1000.000" name="Admiral of Super Earth">
 		<hud_icon filename="50_-_Admiral_of_Super_Earth.png" />    
 	</rank>
-
+	<rank xp="1500.000" name="Cadet">
+		<hud_icon filename="hd2_rank_2.png" />    
+	</rank>
+	<rank xp="2000.000" name="Space Cadet">
+		<hud_icon filename="hd2_rank_3.png" />    
+	</rank>
+	<rank xp="2250.000" name="Sergeant">
+		<hud_icon filename="hd2_rank_4.png" />    
+	</rank>
+	<rank xp="2500.000" name="Master Sergeant">
+		<hud_icon filename="hd2_rank_5.png" />    
+	</rank>
+	<rank xp="3000.000" name="Chief">
+		<hud_icon filename="hd2_rank_6.png" />    
+	</rank>
+	<rank xp="3500.000" name="Space Chief Prime">
+		<hud_icon filename="hd2_rank_7.png" />    
+	</rank>
+	<rank xp="4000.000" name="Death Captain">
+		<hud_icon filename="hd2_rank_8.png" />    
+	</rank>
+	<rank xp="4500.000" name="Marshal">
+		<hud_icon filename="hd2_rank_9.png" />    
+	</rank>
+	<rank xp="5000.000" name="Star Marshal">
+		<hud_icon filename="hd2_rank_10.png" />    
+	</rank>
+	<rank xp="5500.000" name="Admiral">
+		<hud_icon filename="hd2_rank_11.png" />    
+	</rank>
+	<rank xp="6000.000" name="Skull Admiral">
+		<hud_icon filename="hd2_rank_12.png" />    
+	</rank>
+	<rank xp="6500.000" name="Fleet Admiral">
+		<hud_icon filename="hd2_rank_13.png" />    
+	</rank>
+	<rank xp="7000.000" name="Admirable Admiral">
+		<hud_icon filename="hd2_rank_14.png" />    
+	</rank>
+	<rank xp="7500.000" name="Commander">
+		<hud_icon filename="hd2_rank_15.png" />    
+	</rank>
+	<rank xp="8000.000" name="Galactic Commander">
+		<hud_icon filename="hd2_rank_16.png" />    
+	</rank>
+	<rank xp="8500.000" name="Hell Commander">
+		<hud_icon filename="hd2_rank_17.png" />    
+	</rank>
+	<rank xp="9000.000" name="General">
+		<hud_icon filename="hd2_rank_18.png" />    
+	</rank>
+	<rank xp="9500.000" name="3-Stat General">
+		<hud_icon filename="hd2_rank_19.png" />    
+	</rank>
+	<rank xp="10000.000" name="10-Stat General">
+		<hud_icon filename="hd2_rank_21.png" />    
+	</rank>
+	<rank xp="20000.000" name="Super Private">
+		<hud_icon filename="hd2_rank_23.png" />    
+	</rank>
+	<rank xp="30000.000" name="Super Citizen">
+		<hud_icon filename="hd2_rank_24.png" />    
+	</rank>
+	<rank xp="50000.000" name="Representative of SuperEarth">
+		<hud_icon filename="hd2_rank_1.png" />    
+	</rank>
 
 	<!-- player group -->
 	<soldier name="default" spawn_score="0.0">
@@ -289,7 +354,7 @@
 	</soldier>
 
 	<!-- 精英空投 -->
-	<soldier name="HellDiver" spawn_score="0.0" copy_from="base">
+	<soldier name="HellDiver" spawn_score="0.005" copy_from="base">
 		<model filename="ex_sc_ghost.xml" />
 		<ai filename="default_super_earth_elite.ai" />
 			<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
@@ -598,4 +663,25 @@
 		<attribute_config class="xp"><attribute weight="500.0" min="1" max="1" />
 		</attribute_config>
 	</soldier> 
+	<!-- 双足机甲  -->
+	<soldier name="88AT" spawn_score="0.15" copy_from="default_ai">
+		<character filename="cyborgs_88at_state.character">	
+		</character>
+		<models filename="cyborgs_default.models" />
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="cyborgs_common.resources" clear_carry_items="1"/>
+		<resources>
+			<weapon key="cyborgs_88at_main.weapon" />
+
+			<carry_item key="general_vest_500" />
+		</resources>
+		
+		<ai filename="cyborgs_butcher.ai" /> 
+
+		<model file="cyborgs_88at.xml" />
+		
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="0.0" max="0.05" />
+		</attribute_config>
+	</soldier>  
 </faction>

@@ -209,7 +209,6 @@ class XmlElement {
 			}
 		}
 	}
-
 	// --------------------------------------------
 	void removeKey(string key){
 		m_data.delete(key);
@@ -528,6 +527,15 @@ void merge(array<const XmlElement@>@ a1, const array<const XmlElement@>@ a2) {
 	for (uint i = 0; i < a2.size(); ++i) {
 		a1.insertLast(a2[i]);
 	}
+}
+
+array<XmlElement@> constXmlToXml(array<const XmlElement@> constXmls){
+	array<XmlElement@> tempChilds;
+	for(uint k = 0 ; k < constXmls.size() ; ++k){
+		XmlElement@ tagchild = XmlElement(constXmls[k]);
+		tempChilds.insertLast(tagchild);
+	}
+	return tempChilds;
 }
 
 

@@ -62,6 +62,11 @@
 #include "vehicle_destroyed.as"
 #include "extra_stash.as"
 #include "vehicle_recycle.as"
+#include "activity_manager.as"
+#include "upgrade.as"
+#include "hd_daily_mission.as"
+
+// 独有脚本
 #include "kill_to_win.as"
 #include "cap_to_lock_base.as"
 

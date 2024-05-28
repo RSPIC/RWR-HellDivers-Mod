@@ -24,6 +24,7 @@
 	<weapon key="hd_psc_lho63_camper_full_upgrade.weapon" /><!--野营者狙击步枪-->
 	<weapon key="hd_psc_atx25_revelator_mk3.weapon" /><!--启示者反器材狙击步枪-->
 	<weapon key="hd_psc_hho874_fraternity_mk3.weapon" /><!--博爱连狙-->
+	<weapon key="hd_psc_r36_eruptor.weapon" /><!--爆裂铳-->
 
 	<weapon key="hd_lmg_mg94_mk3.weapon" /><!--MG94机枪-->
 	<weapon key="hd_lmg_mg105_stalwart_full_upgrade.weapon" /><!--MG105盟友机枪-->
@@ -113,6 +114,7 @@
     <call key="humblebee_uav_drone.call" />
     <!-- 战略设备 -->
     <call key="spawn_hd_mc109_motor.call" />
+    <call key="spawn_ex_warthog.call" />
     <call key="spawn_hd_resupply.call" />
     <!-- 进攻支援 -->
     <call key="spawn_hd_sms.call" />

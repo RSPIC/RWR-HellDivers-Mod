@@ -207,7 +207,7 @@ particle_system MG_heavy_up_dust_2 : MG_heavy_up_dust_1
     material Tex_Spark18A
     emitter Point
 	{
-        rate 20
+        emission_rate 20
 		position 0 0 0
 		velocity 0.001
 		time_to_live 0.5
@@ -218,7 +218,7 @@ particle_system MG_heavy_up_dust_3 : MG_heavy_up_dust_1
     material Tex_Spark25
     emitter Point
 	{
-        rate 30
+        emission_rate 30
 		position 0 0 0
 		velocity 15
 		time_to_live 0.22
@@ -422,7 +422,7 @@ material Dust : alpha_blend_base
         }
         texture_unit{
             texture point_soft_edge_alpha.png 
-			alpha_op_ex modulate texture current
+			alpha_op_ex src_manual src_texture src_current
 			scroll_anim 0 0
 			tex_address_mode wrap
 	}

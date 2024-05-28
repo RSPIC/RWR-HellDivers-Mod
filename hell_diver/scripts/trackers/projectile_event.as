@@ -17,9 +17,11 @@ dictionary skill_CD = {
 	 // 空
 	{"",0},
 
-    {"acg_starwars_shipgirls_skill",90},
+    {"acg_starwars_shipgirls_skill",60},
     {"acg_maria_schariac_skill",20},
     {"acg_incomparable_skill",24},
+    {"acg_elaina_wand_cyclone",9},
+    {"acg_yileina_wand_rain",20},
 
     {"",0}
 
@@ -361,7 +363,7 @@ class projectile_event : Tracker {
                             t_pos = t_pos.add(Vector3(0,-1,0));
                             float distance = getFlatPositionDistance(p_position,t_pos);
                             if(distance <= 3){
-                                healCharacter(m_metagame,p_character_id,20);//此处修改回复层数
+                                healCharacter(m_metagame,p_character_id,30);//此处修改回复层数
                             }
                         }
                     }
@@ -390,7 +392,7 @@ class projectile_event : Tracker {
                             t_pos = t_pos.add(Vector3(0,-1,0));
                             float distance = getFlatPositionDistance(p_position,t_pos);
                             if(distance <= 4){
-                                healCharacter(m_metagame,p_character_id,3);//此处修改回复层数
+                                healCharacter(m_metagame,p_character_id,5);//此处修改回复层数
                             }
                         }
                     }
@@ -817,6 +819,100 @@ class projectile_event : Tracker {
                 }
                 break;
             }
+            case 60:{//acg_elaina_wand_laser 伊蕾娜 激光
+                int cid = event.getIntAttribute("character_id");
+                int pid = g_playerInfoBuck.getPidByCid(cid);
+                if(pid == -1){
+                    const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                    if(character is null){return;}
+                    pid = character.getIntAttribute("player_id");
+                    notify(m_metagame, "未能获取到你的PID，已通过其他方法获取。请汇报此情况", dictionary(), "misc", pid, false, "", 1.0);
+                }
+
+                const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                if(character is null){return;}
+                int fid = 0;
+                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+                Vector3 sPos = stringToVector3(character.getStringAttribute("position"));
+                Vector3 aim_unit_vector = getAimUnitVector(1,sPos,ePos);
+                ePos = sPos.add(aim_unit_vector.scale(50));
+                string key1 = "acg_elaina_wand_laser_damage.projectile";
+                float speed = 10;
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                CreateProjectile@ task1 = CreateProjectile(m_metagame,sPos,ePos,key1,cid,fid,speed,0.4,10);
+                CreateProjectile@ task2 = CreateProjectile(m_metagame,sPos,ePos,key1,cid,fid,speed,0.3,10);
+                tasker.add(task1);
+                tasker.add(task2);
+                break;
+            }
+            case 62:{//acg_elaina_wand_skill 伊蕾娜 skill
+                int cid = event.getIntAttribute("character_id");
+                int pid = g_playerInfoBuck.getPidByCid(cid);
+                if(pid == -1){
+                    const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                    if(character is null){return;}
+                    pid = character.getIntAttribute("player_id");
+                    notify(m_metagame, "未能获取到你的PID，已通过其他方法获取。请汇报此情况", dictionary(), "misc", pid, false, "", 1.0);
+                }
+                //先过主手武器检测
+                string equipKey_main = getPlayerEquipmentKey(m_metagame,cid,0);//主武器
+                string targetKey = "acg_elaina_wand";
+                string targetKey2 = "re_acg_elaina_wand";
+                if(!startsWith(equipKey_main,targetKey) && !startsWith(equipKey_main,targetKey2)){
+                    setWoundCharacter(m_metagame,cid);
+                    notify(m_metagame, "你的主武器未为对应武器", dictionary(), "misc", pid, true, "倒地惩罚", 1.0);
+                    return;
+                }
+
+                int fid = 0;
+                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+                Vector3 sPos = ePos.add(Vector3(0,5,0));
+                string key1 = "acg_elaina_wand_skill_spawn.projectile";
+                float speed = 1;
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                CreateProjectile@ task1 = CreateProjectile(m_metagame,sPos,ePos,key1,cid,fid,speed,0,1,0);
+                tasker.add(task1);
+                break;
+            }
+            case 63:{//hd_exp_mls4x_commando_track_mk3 突击队导弹跟踪
+                int m_cid = event.getIntAttribute("character_id");
+                int pid = g_playerInfoBuck.getPidByCid(m_cid);
+                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+                int m_fid = g_playerInfoBuck.getFidByCid(m_cid);
+                array<const XmlElement@> factions = getFactions(m_metagame);
+                int ATKTimes = 1;
+                const XmlElement@ player = getPlayerInfo(m_metagame, pid);
+                if (player is null) {return;}
+                Vector3 aimPosition = stringToVector3(player.getStringAttribute("aim_target"));
+                for (uint f = 1; f < factions.size(); ++f){ //跳过自身阵营查询
+                    if(ATKTimes <= 0){break;}
+                    const XmlElement@ faction = factions[f];
+                    if(faction is null){continue;}
+                    int t_fid = faction.getIntAttribute("id");
+                    array<const XmlElement@>@ soldiers = getCharactersNearPosition(m_metagame, aimPosition, t_fid, 20.0f);				
+                    int s_size = soldiers.length();
+                    if (s_size == 0) continue;
+                    while(ATKTimes > 0 && soldiers.length() > 0){
+                        ATKTimes--;
+                        int s_i = rand(0,soldiers.length()-1);
+                        int soldier_id = soldiers[s_i].getIntAttribute("id");
+                        soldiers.removeAt(s_i);
+                        Vector3 soldier_pos = stringToVector3(getCharacterInfo(m_metagame, soldier_id).getStringAttribute("position"));
+                        string key1 = "hd_exp_mls4x_commando_track_mk3_spawn.projectile";
+                        float speed = 50;
+                        float height = 16;
+                        CreateProjectile_H(m_metagame,ePos,soldier_pos,key1,m_cid,m_fid,speed,height);
+                    }
+                }
+                if(ATKTimes == 1){// 没有查到敌人
+                    string key1 = "hd_exp_mls4x_commando_track_mk3_spawn.projectile";
+                    float speed = 50;
+                    float height = 16;
+                    CreateProjectile_H(m_metagame,ePos,aimPosition,key1,m_cid,m_fid,speed,height);
+                }
+                GiveRP(m_metagame,m_cid,-100);
+                break;
+            }
             default:
                 break;            
         }
@@ -933,6 +1029,111 @@ class projectile_event : Tracker {
                 @task0 = CreateProjectile(m_metagame,pos1.add(Vector3(30,50,0)),pos1.add(Vector3(-5,0,0)),key1,characterId,factionid,100,0,2,0.3,false); // speed delay num in_delay vertival
                 tasker.add(task0);
 
+                break;
+            }
+            case 61:{//acg_elaina_wand_cyclone 伊蕾娜 龙卷风
+                int m_cid = event.getIntAttribute("character_id");
+                int pid = g_playerInfoBuck.getPidByCid(m_cid);
+                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+                int m_fid = g_playerInfoBuck.getFidByCid(m_cid);
+                array<const XmlElement@> factions = getFactions(m_metagame);
+                int ATKTimes = 3;
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                for (uint f = 1; f < factions.size(); ++f){ //跳过自身阵营查询
+                    if(ATKTimes <= 0){break;}
+                    const XmlElement@ faction = factions[f];
+                    if(faction is null){continue;}
+                    int t_fid = faction.getIntAttribute("id");
+                    array<const XmlElement@>@ soldiers = getCharactersNearPosition(m_metagame, ePos, t_fid, 50.0f);				
+                    int s_size = soldiers.length();
+                    if (s_size == 0) continue;
+                    while(ATKTimes > 0 && soldiers.length() > 0){
+                        ATKTimes--;
+                        int s_i = rand(0,soldiers.length()-1);
+                        int soldier_id = soldiers[s_i].getIntAttribute("id");
+                        soldiers.removeAt(s_i);
+                        Vector3 soldier_pos = stringToVector3(getCharacterInfo(m_metagame, soldier_id).getStringAttribute("position"));
+                        float time = 0;
+                        string key1 = "acg_elaina_wand_cyclone_damage.projectile";
+                        float speed = 20;
+                        int num = 1;
+                        float delaytime = 0;
+                        CreateProjectile@ task1 = CreateProjectile(m_metagame,ePos.add(Vector3(0,1,0)),soldier_pos,key1,m_cid,m_fid,speed,time,num,delaytime,false);
+                        tasker.add(task1);
+                    }
+                }
+                if(ATKTimes == 3){// 没有查到敌人
+                    const XmlElement@ player = getPlayerInfo(m_metagame, pid);
+                    if (player is null) {return;}
+                    Vector3 aimPosition = stringToVector3(player.getStringAttribute("aim_target"));
+                    float time = 0;
+                    string key1 = "acg_elaina_wand_cyclone_damage.projectile";
+                    float speed = 20;
+                    int num = 1;
+                    float delaytime = 0;
+                    CreateProjectile@ task1 = CreateProjectile(m_metagame,ePos.add(Vector3(0,1,0)),aimPosition,key1,m_cid,m_fid,speed,time,num,delaytime,false);
+                    CreateProjectile@ task2 = CreateProjectile(m_metagame,ePos.add(Vector3(3,1,3)),aimPosition,key1,m_cid,m_fid,speed,time,num,delaytime,false);
+                    CreateProjectile@ task3 = CreateProjectile(m_metagame,ePos.add(Vector3(-3,1,-3)),aimPosition,key1,m_cid,m_fid,speed,time,num,delaytime,false);
+                    tasker.add(task1);
+                    tasker.add(task2);
+                    tasker.add(task3);
+                }
+                break;
+            }
+            case 64:{//acg_yileina_wand_rain 伊蕾娜 星雨
+                int m_cid = event.getIntAttribute("character_id");
+                int pid = g_playerInfoBuck.getPidByCid(m_cid);
+                int m_fid = g_playerInfoBuck.getFidByCid(m_cid);
+                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+                const XmlElement@ player = getPlayerInfo(m_metagame, pid);
+                if (player is null) {return;}
+                Vector3 aimPosition = stringToVector3(player.getStringAttribute("aim_target"));
+
+                int ATKTimes = 4;
+                int trackATKTimes = 3;
+                Vector3 r_start = aimPosition.add(Vector3(0,20,0));
+                float speed = 70;
+                float startTime = 0.05;
+                int num = 7;
+                float delaytime = 0.1;
+                string key1;
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+
+                array<const XmlElement@> factions = getFactions(m_metagame);
+                for (uint f = 1; f < factions.size(); ++f){ //跳过自身阵营查询
+                    if(trackATKTimes <= 0){break;}
+                    const XmlElement@ faction = factions[f];
+                    if(faction is null){continue;}
+                    int t_fid = faction.getIntAttribute("id");
+                    array<const XmlElement@>@ soldiers = getCharactersNearPosition(m_metagame, aimPosition, t_fid, 20.0f);				
+                    int s_size = soldiers.length();
+                    if (s_size == 0) continue;
+                    while(trackATKTimes > 0 && soldiers.length() > 0){
+                        trackATKTimes--;
+                        int s_i = rand(0,soldiers.length()-1);
+                        int soldier_id = soldiers[s_i].getIntAttribute("id");
+                        soldiers.removeAt(s_i);
+                        Vector3 soldier_pos = stringToVector3(getCharacterInfo(m_metagame, soldier_id).getStringAttribute("position"));
+                        key1 = "acg_yileina_wand_dead_damage.projectile";
+                        CreateProjectile@ task1 = CreateProjectile(m_metagame,r_start,soldier_pos,key1,m_cid,m_fid,speed,startTime,num,delaytime);
+                        task1.setRandomRange(5.0);
+                        tasker.add(task1);
+                    }
+                }
+                float random_range = 6.0;
+                ATKTimes += trackATKTimes;
+                key1 = "acg_yileina_wand_damage.projectile";
+                while(ATKTimes >= 0){
+                    float randx = rand(-random_range,random_range);
+                    float randy = rand(-random_range,random_range);
+                    // randx = rand(-random_range,random_range);
+                    Vector3 r_end = aimPosition.add(Vector3(randx,0,randy));
+
+                    CreateProjectile@ task1 = CreateProjectile(m_metagame,r_start,r_end,key1,m_cid,m_fid,speed,startTime,num,delaytime);
+                    task1.setRandomRange(5.0);
+                    tasker.add(task1);
+                    ATKTimes--;
+                }
                 break;
             }
             default:

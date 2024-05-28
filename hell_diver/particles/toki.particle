@@ -21,7 +21,7 @@ particle_system toki_falling_fire
 		emission_rate 200
 		position 0 0 0
 		velocity_min 100
-		velocity_man 150
+		velocity_max 150
 		time_to_live 0.2
 		duration 0
 	}
@@ -55,7 +55,7 @@ particle_system toki_falling_smoke
 		emission_rate 200
 		position 0 0 0
 		velocity_min 20
-		velocity_man 30
+		velocity_max 30
 		time_to_live_min 0.5
 		time_to_live_max 0.8
 		duration 2

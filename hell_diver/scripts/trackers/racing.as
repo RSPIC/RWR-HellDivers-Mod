@@ -777,6 +777,9 @@ class start_racing : Task {
             }else{
                 _notify(m_metagame,pid,"你额外走过"+left_check_point+"检查点未，奖励时间:"+more_time);
             }
+            //----------------------------------------
+            g_playerMissionInfoBuck.playMode("Racing"); //每日任务 赛车比赛
+            //----------------------------------------
             return true;
         }
         return false;

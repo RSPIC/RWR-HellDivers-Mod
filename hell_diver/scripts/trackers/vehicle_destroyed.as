@@ -124,6 +124,8 @@ class vehicle_destroyed : Tracker{
             int vehicle_id = event.getIntAttribute("vehicle_id");
             if(!startsWith(vehicle_key,"racing_") && !startsWith(vehicle_key,"ex_piano_") 
             && !startsWith(vehicle_key,"ex_gramophone_") && !startsWith(vehicle_key,"straw_block") 
+            && !startsWith(vehicle_key,"hd_demolition_truck") && !startsWith(vehicle_key,"ex_power_chair") 
+
             ){
                 remove_vehicle(m_metagame,vehicle_id);
             }

@@ -102,6 +102,7 @@ class schedule_Check : Tracker {
                 checkPatricia(m_metagame,name,pid,cid,equipList);
                 checkHyperMega(m_metagame,name,pid,cid,equipList);
                 checkVergil(m_metagame,name,pid,cid,equipList);
+                checkElaina(m_metagame,name,pid,cid,equipList);
                 checkNeedle(m_metagame,name,pid,cid,equipList); // 先于skin检测
                 checkImpactGl(m_metagame,name,pid,cid,equipList); // 先于skin检测
                 checkSkin(m_metagame,name,pid,cid,equipList);
@@ -234,6 +235,26 @@ class schedule_Check : Tracker {
                     Resource@ res;
                     @res = Resource("ex_vergil_skill.weapon","weapon");
                     res.addToResources(resources,4);
+                    deleteListItemInBackpack(m_metagame,cid,resources);
+                    deleteListItemInStash(m_metagame,cid,resources);
+                    addListItemInBackpack(m_metagame,cid,resources);
+                }
+            }
+        }
+	}
+    // ----------------------------------------------------
+	protected void checkElaina(Metagame@ metagame,string&in name,int&in pid,int&in cid,dictionary&in equipList){
+        string equipKey;
+        if(equipList.get("0",equipKey)){//主武器
+            string targetKey = "acg_elaina_wand";
+            string targetKey2 = "re_acg_elaina_wand";
+            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+                if(m_firstUseInfoBuck.isFirst(name,targetKey)){
+                    notify(metagame, "Help - Elaina", dictionary(), "misc", pid, true, "Elaina Help", 1.0);
+                    array<Resource@> resources = array<Resource@>();
+                    Resource@ res;
+                    @res = Resource("acg_elaina_wand_skill.weapon","weapon");
+                    res.addToResources(resources,5);
                     deleteListItemInBackpack(m_metagame,cid,resources);
                     deleteListItemInStash(m_metagame,cid,resources);
                     addListItemInBackpack(m_metagame,cid,resources);

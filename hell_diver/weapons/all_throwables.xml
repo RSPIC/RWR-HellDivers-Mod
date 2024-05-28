@@ -2,6 +2,9 @@
 <projectiles>
 	<!--注册测试武器文件列表-->
 	<projectile file="test_projectile.xml" />
+	<projectile file="particle.projectile" />
+	<!-- <projectile file="_hd_effect_projectile.xml" /> -->
+
 
     <projectile file="_helldivers_all_throwables.xml" />
     <projectile file="_cyborgs_all_throwables.xml" />

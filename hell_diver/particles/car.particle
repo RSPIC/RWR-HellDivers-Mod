@@ -194,7 +194,7 @@ particle_system car_slide_up_crash
 	{
 		red1 	0
 		green1 	0
-		bule1 	0
+		blue1 	0
 		alpha1 	0
 		red2 	-0
 		green2	-0
@@ -290,7 +290,56 @@ particle_system car_slide_up_smoke_area
 		force_application add
 	}
 }
-
+particle_system car_prism_surrounding_thunder
+{
+	quota 200
+	material thunder_circle_tesla
+	particle_width 5
+	particle_height 5
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 3
+		position 0 8 0
+		velocity 0.0001
+		time_to_live 2.5
+		duration 0
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	45
+		rotation_speed_range_end	-45
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.7
+		colour1 1 1 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 -4 0
+		force_application add
+	}
+}
 particle_system car_tesla_surrounding_thunder
 {
 	quota 200
@@ -340,7 +389,6 @@ particle_system car_tesla_surrounding_thunder
 		force_vector 0 -4 0
 		force_application add
 	}
-
 }
 particle_system car_pod_impact_leave_dirt
 {

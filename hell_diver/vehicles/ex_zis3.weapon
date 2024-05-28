@@ -9,12 +9,12 @@ key="ex_zis3.weapon"
 
     <specification 	
     slot="1" 	
-    retrigger_time="6" 
+    retrigger_time="3" 
     accuracy_factor="0.97" 
 	spread_range="0.6"
 	stance_accuracy_rate="1.0"
     sustained_fire_grow_step="1" 
-    sustained_fire_diminish_rate="0.15" 
+    sustained_fire_diminish_rate="0.28" 
     magazine_size="-1" 
 	reload_one_at_a_time="1"
     can_shoot_standing="1" 
@@ -53,7 +53,7 @@ key="ex_zis3.weapon"
 	time_to_live="4" can_be_detected_by_driver="1" can_be_disarmed="0" name="Zis-3" radius="0.7"> 
 		
         <result class="spawn" instance_class="projectile" instance_key="ex_pak40_damage.projectile" 
-		min_amount="14" max_amount="14" offset="0 0.5 0" position_spread="1.5 0" direction_spread="0.1 0" />
+		min_amount="9" max_amount="9" offset="0 0.5 0" position_spread="1.5 0" direction_spread="0.1 0" />
 		<!-- damage 14x20=280 轰炸伤-->
 
 		<!--命中音效-->

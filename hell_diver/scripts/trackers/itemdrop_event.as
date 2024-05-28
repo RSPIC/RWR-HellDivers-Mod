@@ -223,7 +223,8 @@ class itemdrop_event : Tracker {
 
 	protected void handleItemDropEvent(const XmlElement@ event) {
 		string itemKey = event.getStringAttribute("item_key");
-		banVest(event);
+		_log("handleItemDropEvent itemKey="+itemKey);
+		// banVest(event);
 		//todo:在此处判断在字典里存在然后选择是否返回，减少下列查询消耗。
 		if(	string(resupply_key[itemKey]) == "" 			&&
 			string(resupply_getitem_key[itemKey]) == "" 	&&

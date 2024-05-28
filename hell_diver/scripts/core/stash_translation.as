@@ -190,6 +190,10 @@ dictionary canStoreItem = {
     {"token_sinon.projectile","[诗乃 [信物]]"},
     {"token_sinon_black.projectile","[诗乃 [黑][信物]]"},
     {"token_yuuki_ggo.projectile","[由纪 [信物]]"},
+    // 1.8.2
+    {"token_yui_katagiri.projectile","[片桐唯 [信物]]"},
+    {"token_odst.projectile","[地狱伞兵 [信物]]"},
+    {"token_hanaoka_yuzu.projectile","[花冈柚子 [信物]]"},
 
     {"wiesel_tow_call.projectile","[鼬鼠 [陶氏]]"},
     {"lav6_call.projectile","[LAV-6]"},
@@ -281,7 +285,6 @@ class stashExchangeList{
         return false;
     }
 }
-;
 
 array<stashExchangeList@> ExchangeLists ={
         //0 灵梦Fumo[1] 换 RP[300w]

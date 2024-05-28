@@ -32,7 +32,7 @@ file="_hd_sidearms.base"
     <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
     <animation state_key="recoil"   animation_key="recoil, pistol 2" />
 	<animation state_key="recoil" stance_key="prone"  animation_key="recoil, pistol 2" />
-    <animation state_key="reload"   animation_key="p2_peacemaker_reloading_1.5s" />
+    <animation state_key="reload"   animation_key="p2_peacemaker_reloading_1s" />
 	<animation state_key="hold" animation_key="still, pistol 2" />
     <animation state_key="hold_on_wall" animation_key="hold, overwall pistol" />
     <!-- <animation state_key="hold_casual" animation_key="hold_casual, pistol" /> -->

@@ -70,7 +70,7 @@ particle_system molotov_fire_01
 	}
 }
 
-particle_system molotov_fire_02  : particle_system molotov_fire_01 
+particle_system molotov_fire_02 : molotov_fire_01 
 {
 	material fire_02
 	particle_width 4

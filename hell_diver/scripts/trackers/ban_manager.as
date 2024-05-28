@@ -100,7 +100,9 @@ class BanManager : Tracker {
 		if (m_requireSid) {
 			if (sid == "" || sid == "0" || sid == "ID0") {
 				_log("BanManager: sid required, player banned");
-				kickPlayer(id, "Kicked - Steam ID not found; try playing in Steam", false /* don't show rules in this case */);
+				if(!g_single_player){
+					kickPlayer(id, "Kicked - Steam ID not found; try playing in Steam", false /* don't show rules in this case */);
+				}
 				return true;
 			}
 		}

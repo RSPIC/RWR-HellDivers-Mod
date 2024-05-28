@@ -13,7 +13,8 @@ void main(dictionary@ inputData) {
         _setupLog("dev_verbose");
 
         settings.m_factionChoice = 0;                  // 0(acg) 1(helldivers), 2(cyborgs), 3(illuminate), 4(bugs), 
-        settings.m_playerAiCompensationFactor = 1.0;   // was 1.1  (1.75)
+        settings.m_playerAiCompensationFactor = 10.0;   // was 1.1  (1.75)
+        settings.m_playerAiReduction = 4.0;   // was 1.1  (1.75)
 
         settings.m_fellowCapacityFactor = 1.2;
         settings.m_fellowAiAccuracyFactor = 1.0;

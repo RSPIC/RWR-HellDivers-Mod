@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<weapon file="base_primary.weapon" on_ground_up="0 0 1" key="claw_1.weapon" time_to_live_out_in_the_open="0.0">
+<weapons>
+<weapon 
+file="base_primary.weapon" on_ground_up="0 0 1" key="claw_1.weapon" time_to_live_out_in_the_open="0.0">
 
     <specification 
 	magazine_size="1"
@@ -46,6 +48,59 @@
     <commonness value="1.0" />
     <inventory encumbrance="11.0" price="0.0" />
 
-    <modifier class="hit_success_probability" value="-0.5" />
+    <modifier class="hit_success_probability" value="0" />
 
 </weapon>
+<weapon 
+file="base_primary.weapon" on_ground_up="0 0 1" key="claw_1_slow.weapon" time_to_live_out_in_the_open="0.0">
+
+    <specification 
+	magazine_size="1"
+      consume="0"  
+	can_shoot_standing="1" 
+	can_shoot_crouching="1" 
+	can_shoot_prone="0" 
+	carry_in_two_hands="0" 
+	name="Soft Claws" 
+	class="5"
+  stab_enabled="0"
+  success_probability="1.0"
+ 
+  range="2.5"  
+  character_state="death" />
+
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="zombie_dead_damage.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0.0" />
+
+  
+    <animation state_key="recoil" 			animation_key="claw_fast attack, zombie" />
+    <animation state_key="hold" 			animation_key="still, zombie" />
+    <animation state_key="hold_on_wall" 		animation_key="still, zombie" />
+    <animation state_key="still_against_wall" 	animation_key="still, zombie" />
+    <animation state_key="crouching" 		animation_key="crouch still, zombie" />
+    <animation state_key="running" 			animation_key="running, zombie" />
+    <animation state_key="walking" 			animation_key="walking, zombie" />
+
+        <animation state_key="stabbing"	animation_key="stabbing, zombie" />
+
+<sound key="effect" fileref="zomb_stab1.wav" pitch_variety="0.03" volume="0.7" />
+<sound key="effect" fileref="zomb_stab2.wav" pitch_variety="0.03" volume="0.7" />
+<sound key="effect" fileref="zomb_stab3.wav" pitch_variety="0.03" volume="0.7" />
+<sound key="effect" fileref="zomb_stab4.wav" pitch_variety="0.03" volume="0.7" />
+<sound key="effect" fileref="zomb_stab5.wav" pitch_variety="0.03" volume="0.7" />
+<sound key="effect" fileref="zomb_stab6.wav" pitch_variety="0.03" volume="0.7" />
+
+
+<control key="effect" value="1" />        
+
+     <model  />
+
+    <hud_icon filename="hud_claws.png" />
+    <commonness value="1.0" />
+    <inventory encumbrance="11.0" price="0.0" />
+
+    <modifier class="hit_success_probability" value="0" />
+    <modifier class="speed" value="-0.5" /> 
+
+</weapon>
+</weapons>

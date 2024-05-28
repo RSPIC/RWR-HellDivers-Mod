@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapons> 
+<weapon 
+file="_rare_weapon_mk1.base"
+key="ex_side_m6g_magnum.weapon" 
+> 
+    <specification 	
+    slot="1" 	
+    retrigger_time="0.12" 
+	last_burst_retrigger_time="0"
+	spread_range="0.25"
+    accuracy_factor="1.0" 
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="5.5" 
+    sustained_fire_diminish_rate="1.0" 
+    magazine_size="8" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="1"	
+	can_shoot_running="1"
+    suppressed="0" 
+	class="4" 
+    name="M6 Gunfighter Magnum" 
+	sight_range_modifier="1.0" 
+	sight_height_offset="1.0" 
+	burst_shots="1" 
+    projectiles_per_shot="1" 
+    projectile_speed="200.0"
+	barrel_offset="0.2" 
+	carry_in_two_hands="0" 
+	stab_enabled="1" 
+	stab_range="2.5" 
+	/> 
+	<!--504 RPM		2.5s reload		20m range		AP-->
+	<next_in_chain key="ex_side_m6t_magnum.weapon" share_ammo="1" /> 
+    <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
+    <animation state_key="recoil"   animation_key="recoil, pistol 2" />
+	<animation state_key="recoil" stance_key="prone"  animation_key="recoil, pistol 2" />
+    <animation state_key="reload"   animation_key="p2_peacemaker_reloading_base" />
+	<animation state_key="hold" animation_key="still, pistol 2" />
+    <animation state_key="hold_on_wall" animation_key="hold, overwall pistol" />
+    <animation state_key="hold_casual" animation_key="" />
+	<animation state_key="running"  animation_key="hd_spring_single_hand" />
+    <animation state_key="walking"  animation_key="running_pistol_slower" />
+    <animation state_key="walking_backwards" animation_key="walking backwards, pistol" />
+    <animation state_key="crouching" animation_key="crouch, pistol" />
+	<animation state_key="crouch_moving" animation_key="" />
+	<animation state_key="crouch_moving_backwards" animation_key="crouching backwards, hip fire" />
+    <animation state_key="prone_still" animation_key="prone_still, pistol" />
+	<animation state_key="prone_moving" animation_key="" />
+	<animation state_key="stabbing" animation_key="pistol whip 3" />
+	<animation state_key="next_in_chain_in" animation_key="" />
+	<animation state_key="next_in_chain_out" animation_key="" />
+    <animation state_key="changing_weapon_in" animation_key="" />
+	<animation state_key="changing_weapon_out" animation_key=""/>
+
+    <sound key="effect" fileref="p99_slide.wav" pitch_variety="0.03" volume="0.7" /> 
+    <sound key="fire" fileref="ex_m6g_magnum_fire_02.wav" pitch_variety="0.03" volume="0.7" />
+    <sound key="dry_fire" fileref="p99_dry_fire.wav" pitch_variety="0.03" volume="2.0" />
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="0.5" />
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="0.9" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="0.8" />
+    <sound key="magazine_out" fileref="ex_m6g_magnum_reload.wav" volume="1"/>
+    <sound key="magazine_out" fileref="" volume="1"/>
+    <sound key="magazine_in" fileref="" volume="1"/>
+    <sound key="magazine_in" fileref="" volume="1"/>
+    <sound key="cycle" fileref="p99_safe.wav" volume="1"/>
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" />
+	<sound class="impact" fileref="rifle_drop.wav" />
+
+    <model filename="exw_m6g_magnum.xml" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="exw_m6g_magnum.png" /> 
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.2" can_be_detected_by_driver="1" can_be_disarmed="0"> 
+		<result class="hit" kill_probability="2.0" 
+		kill_probability_offset_on_successful_hit="85"
+		kill_decay_start_time="0.1" kill_decay_end_time="0.3" character_state="wound"/>
+
+		<effect class="activated" ref="p6_gunslinger_activated_ambient_light" lighting="0"/>
+		<effect class="result" ref="p6_gunslinger_hit_spark" lighting="0"/>
+		<effect class="result" ref="p6_gunslinger_hit_leave" lighting="0"/>
+		<effect class="result" ref="p6_gunslinger_hit_light" lighting="0"/>
+		<effect class="result" ref="general_weapon_result_cartoon_spark" lighting="0"/>
+		
+		<effect class="result" key="terrain" ref="p6_gunslinger_hit_01" />
+		<effect class="result" key="terrain" ref="p6_gunslinger_hit_02" />
+		<effect class="result" key="terrain" ref="p6_gunslinger_hit_03" />
+		<effect class="result" key="terrain" ref="p6_gunslinger_hit_04" />
+		
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+		<trail probability="1" key="mari_trial"/>	
+    </projectile>
+	
+
+</weapon>
+<weapon 
+file="_rare_weapon_mk1.base"
+key="ex_side_m6t_magnum.weapon" 
+> 
+    <specification 	
+    slot="1" 	
+    retrigger_time="0.12" 
+	last_burst_retrigger_time="0"
+	spread_range="0.25"
+    accuracy_factor="1.0" 
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="5.5" 
+    sustained_fire_diminish_rate="1.0" 
+    magazine_size="8" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="1"	
+	can_shoot_running="1"
+    suppressed="1" 
+	class="4" 
+    name="M6 Tactical Magnum" 
+	sight_range_modifier="1.0" 
+	sight_height_offset="1.0" 
+	burst_shots="1" 
+    projectiles_per_shot="1" 
+    projectile_speed="175.0"
+	barrel_offset="0.2" 
+	carry_in_two_hands="0" 
+	stab_enabled="1" 
+	stab_range="2.5" 
+	/> 
+	<!--504 RPM		2.5s reload		20m range		AP-->
+	<next_in_chain key="ex_side_m6g_magnum.weapon" share_ammo="1" /> 
+    <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
+    <animation state_key="recoil"   animation_key="recoil, pistol 2" />
+	<animation state_key="recoil" stance_key="prone"  animation_key="recoil, pistol 2" />
+    <animation state_key="reload"   animation_key="p2_peacemaker_reloading_base" />
+	<animation state_key="hold" animation_key="still, pistol 2" />
+    <animation state_key="hold_on_wall" animation_key="hold, overwall pistol" />
+    <animation state_key="hold_casual" animation_key="" />
+	<animation state_key="running"  animation_key="hd_spring_single_hand" />
+    <animation state_key="walking"  animation_key="running_pistol_slower" />
+    <animation state_key="walking_backwards" animation_key="walking backwards, pistol" />
+    <animation state_key="crouching" animation_key="crouch, pistol" />
+	<animation state_key="crouch_moving" animation_key="" />
+	<animation state_key="crouch_moving_backwards" animation_key="crouching backwards, hip fire" />
+    <animation state_key="prone_still" animation_key="prone_still, pistol" />
+	<animation state_key="prone_moving" animation_key="" />
+	<animation state_key="stabbing" animation_key="pistol whip 3" />
+	<animation state_key="next_in_chain_in" animation_key="" />
+	<animation state_key="next_in_chain_out" animation_key="" />
+    <animation state_key="changing_weapon_in" animation_key="" />
+	<animation state_key="changing_weapon_out" animation_key=""/>
+
+    <sound key="effect" fileref="p99_slide.wav" pitch_variety="0.03" volume="0.7" /> 
+    <sound key="fire" fileref="ex_side_m6t_magnum_fire.wav" pitch_variety="0.03" volume="0.7" />
+    <sound key="dry_fire" fileref="p99_dry_fire.wav" pitch_variety="0.03" volume="2.0" />
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="0.5" />
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="0.9" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="0.8" />
+    <sound key="magazine_out" fileref="ex_m6g_magnum_reload.wav" volume="1"/>
+    <sound key="magazine_out" fileref="" volume="1"/>
+    <sound key="magazine_in" fileref="" volume="1"/>
+    <sound key="magazine_in" fileref="" volume="1"/>
+    <sound key="cycle" fileref="p99_safe.wav" volume="1"/>
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" />
+	<sound class="impact" fileref="rifle_drop.wav" />
+
+    <model filename="exw_m6t_magnum.xml" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="exw_m6t_magnum.png" /> 
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.2" can_be_detected_by_driver="1" can_be_disarmed="0"> 
+		<result class="hit" kill_probability="2.0" 
+		kill_probability_offset_on_successful_hit="75"
+		kill_decay_start_time="0.1" kill_decay_end_time="0.3" character_state="wound"/>
+
+		<effect class="activated" ref="p6_gunslinger_activated_ambient_light" lighting="0"/>
+		<effect class="result" ref="p6_gunslinger_hit_spark" lighting="0"/>
+		<effect class="result" ref="p6_gunslinger_hit_leave" lighting="0"/>
+		<effect class="result" ref="p6_gunslinger_hit_light" lighting="0"/>
+		<effect class="result" ref="general_weapon_result_cartoon_spark" lighting="0"/>
+		
+		<effect class="result" key="terrain" ref="p6_gunslinger_hit_01" />
+		<effect class="result" key="terrain" ref="p6_gunslinger_hit_02" />
+		<effect class="result" key="terrain" ref="p6_gunslinger_hit_03" />
+		<effect class="result" key="terrain" ref="p6_gunslinger_hit_04" />
+		
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+		<trail probability="1" key="mari_trial"/>	
+    </projectile>
+	
+
+</weapon>
+<weapon 
+file="_rare_weapon_mk1_re.base"
+key="re_ex_side_m6g_magnum.weapon" 
+> 
+    <specification 	
+    slot="1" 	
+    retrigger_time="0.12" 
+	last_burst_retrigger_time="0"
+	spread_range="0.25"
+    accuracy_factor="1.0" 
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="5.5" 
+    sustained_fire_diminish_rate="1.0" 
+    magazine_size="8" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="1"	
+	can_shoot_running="1"
+    suppressed="0" 
+	class="4" 
+    name="M6 Gunfighter Magnum" 
+	sight_range_modifier="1.0" 
+	sight_height_offset="1.0" 
+	burst_shots="1" 
+    projectiles_per_shot="1" 
+    projectile_speed="200.0"
+	barrel_offset="0.2" 
+	carry_in_two_hands="0" 
+	stab_enabled="1" 
+	stab_range="2.5" 
+	/> 
+	<!--504 RPM		2.5s reload		20m range		AP-->
+	<next_in_chain key="re_ex_side_m6t_magnum.weapon" share_ammo="1" /> 
+    <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
+    <animation state_key="recoil"   animation_key="recoil, pistol 2" />
+	<animation state_key="recoil" stance_key="prone"  animation_key="recoil, pistol 2" />
+    <animation state_key="reload"   animation_key="p2_peacemaker_reloading_base" />
+	<animation state_key="hold" animation_key="still, pistol 2" />
+    <animation state_key="hold_on_wall" animation_key="hold, overwall pistol" />
+    <animation state_key="hold_casual" animation_key="" />
+	<animation state_key="running"  animation_key="hd_spring_single_hand" />
+    <animation state_key="walking"  animation_key="running_pistol_slower" />
+    <animation state_key="walking_backwards" animation_key="walking backwards, pistol" />
+    <animation state_key="crouching" animation_key="crouch, pistol" />
+	<animation state_key="crouch_moving" animation_key="" />
+	<animation state_key="crouch_moving_backwards" animation_key="crouching backwards, hip fire" />
+    <animation state_key="prone_still" animation_key="prone_still, pistol" />
+	<animation state_key="prone_moving" animation_key="" />
+	<animation state_key="stabbing" animation_key="pistol whip 3" />
+	<animation state_key="next_in_chain_in" animation_key="" />
+	<animation state_key="next_in_chain_out" animation_key="" />
+    <animation state_key="changing_weapon_in" animation_key="" />
+	<animation state_key="changing_weapon_out" animation_key=""/>
+
+    <sound key="effect" fileref="p99_slide.wav" pitch_variety="0.03" volume="0.7" /> 
+    <sound key="fire" fileref="ex_m6g_magnum_fire_02.wav" pitch_variety="0.03" volume="0.7" />
+    <sound key="dry_fire" fileref="p99_dry_fire.wav" pitch_variety="0.03" volume="2.0" />
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="0.5" />
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="0.9" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="0.8" />
+    <sound key="magazine_out" fileref="ex_m6g_magnum_reload.wav" volume="1"/>
+    <sound key="magazine_out" fileref="" volume="1"/>
+    <sound key="magazine_in" fileref="" volume="1"/>
+    <sound key="magazine_in" fileref="" volume="1"/>
+    <sound key="cycle" fileref="p99_safe.wav" volume="1"/>
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" />
+	<sound class="impact" fileref="rifle_drop.wav" />
+
+    <model filename="exw_m6g_magnum.xml" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="exw_m6g_magnum.png" /> 
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.2" can_be_detected_by_driver="1" can_be_disarmed="0"> 
+		<result class="hit" kill_probability="2.0" 
+		kill_probability_offset_on_successful_hit="85"
+		kill_decay_start_time="0.1" kill_decay_end_time="0.3" character_state="wound"/>
+
+		<effect class="activated" ref="p6_gunslinger_activated_ambient_light" lighting="0"/>
+		<effect class="result" ref="p6_gunslinger_hit_spark" lighting="0"/>
+		<effect class="result" ref="p6_gunslinger_hit_leave" lighting="0"/>
+		<effect class="result" ref="p6_gunslinger_hit_light" lighting="0"/>
+		<effect class="result" ref="general_weapon_result_cartoon_spark" lighting="0"/>
+		
+		<effect class="result" key="terrain" ref="p6_gunslinger_hit_01" />
+		<effect class="result" key="terrain" ref="p6_gunslinger_hit_02" />
+		<effect class="result" key="terrain" ref="p6_gunslinger_hit_03" />
+		<effect class="result" key="terrain" ref="p6_gunslinger_hit_04" />
+		
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+		<trail probability="1" key="mari_trial"/>	
+    </projectile>
+	
+
+</weapon>
+<weapon 
+file="_rare_weapon_mk1_re.base"
+key="re_ex_side_m6t_magnum.weapon" 
+> 
+    <specification 	
+    slot="1" 	
+    retrigger_time="0.12" 
+	last_burst_retrigger_time="0"
+	spread_range="0.25"
+    accuracy_factor="1.0" 
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="5.5" 
+    sustained_fire_diminish_rate="1.0" 
+    magazine_size="8" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="1"	
+	can_shoot_running="1"
+    suppressed="1" 
+	class="4" 
+    name="M6 Tactical Magnum" 
+	sight_range_modifier="1.0" 
+	sight_height_offset="1.0" 
+	burst_shots="1" 
+    projectiles_per_shot="1" 
+    projectile_speed="175.0"
+	barrel_offset="0.2" 
+	carry_in_two_hands="0" 
+	stab_enabled="1" 
+	stab_range="2.5" 
+	/> 
+	<!--504 RPM		2.5s reload		20m range		AP-->
+	<next_in_chain key="re_ex_side_m6g_magnum.weapon" share_ammo="1" /> 
+    <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
+    <animation state_key="recoil"   animation_key="recoil, pistol 2" />
+	<animation state_key="recoil" stance_key="prone"  animation_key="recoil, pistol 2" />
+    <animation state_key="reload"   animation_key="p2_peacemaker_reloading_base" />
+	<animation state_key="hold" animation_key="still, pistol 2" />
+    <animation state_key="hold_on_wall" animation_key="hold, overwall pistol" />
+    <animation state_key="hold_casual" animation_key="" />
+	<animation state_key="running"  animation_key="hd_spring_single_hand" />
+    <animation state_key="walking"  animation_key="running_pistol_slower" />
+    <animation state_key="walking_backwards" animation_key="walking backwards, pistol" />
+    <animation state_key="crouching" animation_key="crouch, pistol" />
+	<animation state_key="crouch_moving" animation_key="" />
+	<animation state_key="crouch_moving_backwards" animation_key="crouching backwards, hip fire" />
+    <animation state_key="prone_still" animation_key="prone_still, pistol" />
+	<animation state_key="prone_moving" animation_key="" />
+	<animation state_key="stabbing" animation_key="pistol whip 3" />
+	<animation state_key="next_in_chain_in" animation_key="" />
+	<animation state_key="next_in_chain_out" animation_key="" />
+    <animation state_key="changing_weapon_in" animation_key="" />
+	<animation state_key="changing_weapon_out" animation_key=""/>
+
+    <sound key="effect" fileref="p99_slide.wav" pitch_variety="0.03" volume="0.7" /> 
+    <sound key="fire" fileref="ex_side_m6t_magnum_fire.wav" pitch_variety="0.03" volume="0.7" />
+    <sound key="dry_fire" fileref="p99_dry_fire.wav" pitch_variety="0.03" volume="2.0" />
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="0.5" />
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="0.9" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="0.8" />
+    <sound key="magazine_out" fileref="ex_m6g_magnum_reload.wav" volume="1"/>
+    <sound key="magazine_out" fileref="" volume="1"/>
+    <sound key="magazine_in" fileref="" volume="1"/>
+    <sound key="magazine_in" fileref="" volume="1"/>
+    <sound key="cycle" fileref="p99_safe.wav" volume="1"/>
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" />
+	<sound class="impact" fileref="rifle_drop.wav" />
+
+    <model filename="exw_m6t_magnum.xml" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="exw_m6t_magnum.png" /> 
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.2" can_be_detected_by_driver="1" can_be_disarmed="0"> 
+		<result class="hit" kill_probability="2.0" 
+		kill_probability_offset_on_successful_hit="75"
+		kill_decay_start_time="0.1" kill_decay_end_time="0.3" character_state="wound"/>
+
+		<effect class="activated" ref="p6_gunslinger_activated_ambient_light" lighting="0"/>
+		<effect class="result" ref="p6_gunslinger_hit_spark" lighting="0"/>
+		<effect class="result" ref="p6_gunslinger_hit_leave" lighting="0"/>
+		<effect class="result" ref="p6_gunslinger_hit_light" lighting="0"/>
+		<effect class="result" ref="general_weapon_result_cartoon_spark" lighting="0"/>
+		
+		<effect class="result" key="terrain" ref="p6_gunslinger_hit_01" />
+		<effect class="result" key="terrain" ref="p6_gunslinger_hit_02" />
+		<effect class="result" key="terrain" ref="p6_gunslinger_hit_03" />
+		<effect class="result" key="terrain" ref="p6_gunslinger_hit_04" />
+		
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+		<trail probability="1" key="mari_trial"/>	
+    </projectile>
+	
+
+</weapon>
+</weapons>
+
+

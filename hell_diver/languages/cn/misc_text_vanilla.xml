@@ -742,6 +742,7 @@
 	<text key="LHO-63 Camper" text="LHO-63 野营者狙击步枪[反重甲]" />
 	<text key="ATX-25 Revelator" text="ATX-25 启示者反器材狙击步枪[反重甲]" />
 	<text key="HHO-874 Fraternity" text="HHO-874 博爱 连狙[眩晕弹]" />
+	<text key="R-36 Eruptor" text="R-36 爆裂铳[反轻甲][友伤]" />
 
 	<text key="MG-94 Machine Gun" text="MG-94 机枪" />
 	<text key="MG-105 Stalwart Machine Gun" text="MG-105 盟友机枪" />
@@ -1046,6 +1047,10 @@
 	<text key="Sinon [Skin]"  text="诗乃 [信物]" />
 	<text key="Sinon [Black][Skin]"  text="诗乃 [黑][信物]" />
 	<text key="Yuuki [GGO][Skin]"  text="由纪 [GGO][信物]" />
+	<!-- 1.8.2 -->
+	<text key="Yui Katagiri[Skin]"  text="片桐唯 [信物]" />
+	<text key="ODST [Skin]"  text="地狱伞兵 [信物]" />
+	<text key="Hanaoka Yuzu [Skin]"  text="花冈柚子 [信物]" />
 
 
 <!-- ex武器 -->
@@ -1070,6 +1075,11 @@
 	<text key="Vergil [Voidknife Realm]"  text="维吉尔 [虚空刀界][反中甲]" />
 	<text key="Vergil [Getsuga Tenshou]"  text="维吉尔 [月牙冲天][反中甲]" />
 	<text key="Vergil [Dimensional Slash-EX]"  text="维吉尔 [次元斩-绝][反重甲]" />
+	<text key="Sniper Rifle System 99"  text="SRS99狙击步枪系统[反重甲]" />
+	<text key="ARC-920"  text="ARC-92磁轨炮[反重甲]" />
+	<text key="M41 SPNKER"  text="M41 SPNKER火箭发射器" />
+	<text key="Tanya"  text="谭雅" />
+	<text key="Tanya C4"  text="谭雅[C4炸弹]" />
 
 <!-- 其他 EX 载具-->
 	<text key="Resupply Box"  text="补给箱" />
@@ -1359,6 +1369,11 @@
 	<text key="Confirmed, Motor is in the air."  text="许可，摩托已准备继续" />
 	<text key="Airdropping Motor now."  text="已空投摩托" />
 
+	<text key="Call Warthop Jeep"  text="呼叫部署 疣猪重机枪吉普车" />
+	<text key="Divers report, We need Warthog Jeep right there!"  text="潜兵报告，我们需要疣猪重机枪吉普车" />
+	<text key="Confirmed, Jeep is in the air."  text="许可，吉普已准备继续" />
+	<text key="Airdropping Jeep now."  text="已空投吉普" />
+
 	<text key="Call Resupply"  text="呼叫部署 子弹补给箱" />
 	<text key="Divers report, We need Ammo Resupply!"  text="潜兵报告，我们需要子弹补给" />
 	<text key="Confirmed, Resupply is in the air."  text="收到，补给已准备就绪" />
@@ -1420,6 +1435,29 @@
 	<text key="Admiral" text="上将 V48" />
 	<text key="Fleet Admiral" text="舰队上将 V49" />
 	<text key="Admiral of Super Earth" text="超级地球元帅 V50" />
+
+	<text key="Cadet " text="军校生 V55" />
+	<text key="Space Cadet " text="太空军校生 V60" />
+	<text key="Sergeant " text="中士 V65" />
+	<text key="Master Sergeant " text="军士长 V70" />
+	<text key="Chief" text="执行官 V75" />
+	<text key="Space Chief Prime" text="太空首席执行官 V80" />
+	<text key="Death Captain" text="死神领袖 V85" />
+	<text key="Marshal " text="元帅 V90" />
+	<text key="Star Marshal" text="星球元帅 V95" />
+	<text key="Admiral " text="舰队司令 V100" />
+	<text key="Skull Admiral" text="骷髅上将 V105" />
+	<text key="Fleet Admiral" text="五星上将 V110" />
+	<text key="Admirable Admiral" text="无畏上将 V115" />
+	<text key="Commander " text="指挥官 V120" />
+	<text key="Galactic Commander" text="银河指挥官 V125" />
+	<text key="Hell Commander" text="地狱指挥官 V130" />
+	<text key="General " text="将军 V135" />
+	<text key="3-Stat General" text="三星将军 V140" />
+	<text key="10-Stat General" text="十星将军 V145" />
+	<text key="Super Private" text="超级列兵 V150" />
+	<text key="Super Citizen" text="超级公民 SP-A" />
+	<text key="Representative of SuperEarth" text="超级地球代表 SP-S" />
 
 	<text key="SuperEarth" text="超级地球" />
 	<text key="Super Earth" text="超级地球" />
@@ -1531,7 +1569,9 @@ TK其他玩家同样会造成倍率因子的下降" />
 	<text key="Hyper Mega Help" text="[超绝米加粒子炮（Hi-v） 特殊武器介绍]" />
 	<text key="Help - Vergil" text="每局首次持有本武器会发放特定技能武器，使用次数为4次。
 【注意】使用副手技能时必须保证主手武器为[维吉尔]的武器，否则会直接倒地" />
-	<text key="Vergil Help" text="[维吉尔 特殊武器介绍]" />
+	<text key="Help - Elaina" text="每局首次持有本武器会发放特定技能武器，使用次数为5次。
+【注意】使用副手技能时必须保证主手武器为[伊蕾娜]的武器，否则会直接倒地" />
+	<text key="Vergil Help" text="[伊蕾娜 特殊武器介绍]" />
 
 	<text key="Stratagems Call" text="[教程]战略呼叫机制" />
 	<text key="Stratagems Useable" text="[Tips]常用呼叫指令,输入/call可再次查看本页。输入/call 1~4 查看不同类型支援代码" />
@@ -1698,7 +1738,7 @@ TK其他玩家同样会造成倍率因子的下降" />
 	<text key="Bonus card [XP]" text="经验加成卡[掉落消失]" />
 	<text key="Bonus card [RP]" text="资源加成卡[掉落消失]" />
 
-	<text key="The bonus has taken effect" text="加成已生效,注意最大上限为3.4倍,溢出不返还" />
+	<text key="The bonus has taken effect" text="加成已生效" />
 	<text key="Now Factor" text="当前倍率:&#37;bf" />
 	<text key="The bonus can only be applied once" text="加成只能生效一次" />
 	<text key="Battle Time Too Long,BonusFactor Decrease" text="战斗时间过长,倍率因子将随时间下降" />
@@ -1853,6 +1893,18 @@ TK其他玩家同样会造成倍率因子的下降" />
 4、玩家可以采用任何手段追求最短时间完成比赛。
 5、载具阵亡后玩家会同步阵亡。阵亡默认退出当前比赛。
 " />
-
+<!-- 每日任务 -->
+<text key="DaylyMission" text="每日任务(输入/day 查看)
+&#37;value0
+&#37;value1
+&#37;value2
+&#37;value3
+&#37;value4
+&#37;value5
+&#37;value6
+&#37;value7
+&#37;value8
+&#37;value9
+" />
 </translation>
 

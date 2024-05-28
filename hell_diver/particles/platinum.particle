@@ -1122,7 +1122,7 @@ material point_hard_edge_anim_vert : add_base
         texture_unit{
             texture pump_flare_03_01.png
 			wave_xform scroll_y sawtooth 0 2.5 0 1
-			tex_address_mode warp
+			tex_address_mode wrap
 			tex_border_colour 0 0 0 0
 }}}}		
 material for_concentrate_line : add_base

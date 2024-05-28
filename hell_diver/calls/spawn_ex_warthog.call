@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<call name="Spawn Warthop Jeep" 
+key="spawn_ex_warthog.call"
+radio_view_text="Call Warthop Jeep" 
+           initiation_comment1="Divers report, We need Warthog Jeep right there!"
+           acknowledge_comment="Confirmed, Jeep is in the air."
+           launch_comment="Airdropping Jeeph now."
+           notify_metagame="0"
+           match_skinpack="vanilla">
+
+    <round instances="1"
+           instance_class="vehicle"
+           instance_tag="ex_warthog" 
+           instance_spread="0 0 0" 
+           common_spread="0 0 0" 
+           launch_time="2"
+           spawn_time="4.0"
+           horizontal_offset_at_spawn="0.0"
+           vertical_offset_at_spawn="40.0"
+           initial_speed_to_target="0.0"
+		   avoid_objects="1">
+        <effect class="launch" ref="stratagems_tag_call_mark_1" />
+        <effect class="launch" ref="stratagems_tag_call_mark_2" />
+         <!-- 设备 -->
+        <sound class="launch" fileref="hd_equip_on_the_way.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="launch" fileref="hd_equip_on_the_way_1.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="launch" fileref="hd_equip_on_the_way_2.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="launch" fileref="hd_equip_on_the_way_3.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="launch" fileref="hd_equip_on_the_way_4.wav" pitch_variety="0.01" volume="1"/>
+        <!-- 通用确认 -->
+        <sound class="launch" fileref="hd_request_confirm.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="launch" fileref="hd_request_confirm_1.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="launch" fileref="hd_request_confirm_2.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="launch" fileref="hd_request_confirm_3.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="launch" fileref="hd_request_confirm_4.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="launch" fileref="hd_request_confirm_5.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="launch" fileref="hd_request_confirm_6.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="launch" fileref="hd_request_confirm_7.wav" pitch_variety="0.01" volume="1"/>
+        <sound class="launch" fileref="hd_request_confirm_8.wav" pitch_variety="0.01" volume="1"/>
+    </round>
+    <!-- spawn_time要大于launch_time，launch_time决定round的启动时间，spawn_time决定生成时间，两个都是独立计时-->
+    <hud_icon filename="hud_ex_warthog.png" />
+    <capacity value="0" source="rank" source_value="0.0" />
+    <capacity value="1" source="rank" source_value="0.0" />
+    <inventory encumbrance="0.0" price="1998.0" />
+</call>

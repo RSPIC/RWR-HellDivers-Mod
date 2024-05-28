@@ -394,8 +394,8 @@ particle_system texas_tilt_dropping_triangle
 	common_direction 0 1 0
 	common_up_vector 0 0 1
 	iteration_interval 0.01
-	accutare_facing on
-		emitter Point
+	accurate_facing on
+	emitter Point
 	{
 		angle 0
 		colour 0 0 0 0

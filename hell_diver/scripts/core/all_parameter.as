@@ -112,6 +112,16 @@ dictionary projectile_eventkey = {
         {"acg_incomparable_skill",58},
         //治疗针投掷物
         {"hd_md99_injector",59},
+        //伊蕾娜 激光
+        {"acg_elaina_wand_laser",60},
+        //伊蕾娜 龙卷风
+        {"acg_elaina_wand_cyclone",61},
+        //伊蕾娜 skill
+        {"acg_elaina_wand_skill",62},
+        //突击队导弹跟踪
+        {"hd_exp_mls4x_commando_track_mk3",63},
+        // 伊蕾娜星雨技能
+        {"acg_yileina_wand_rain",64},
 
         // 占位的
         {"666",-1}

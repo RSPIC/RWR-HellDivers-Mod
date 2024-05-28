@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapons> 
+<weapon 
+file="_rare_weapon_mk1.base" 
+key="ex_ra2_tanya.weapon">
+
+    <specification 
+    retrigger_time="0.1" 
+    accuracy_factor="1.0" 
+    sustained_fire_grow_step="0.25" 
+    sustained_fire_diminish_rate="1.5" 
+    spread_range="0.05"
+    magazine_size="-1" 
+    can_shoot_standing="1" 
+    carry_in_two_hands="0" 
+    suppressed="0" 
+    name="Tanya" 
+    class="0"
+	reload_one_at_a_time="0"
+	sight_range_modifier="1.0"
+	projectile_speed="150.0"
+	projectiles_per_shot="2"
+	barrel_offset="0.3"
+    burst_shots="1" 
+    stab_enabled="0"
+    use_basic_muzzle_smoke_effect="0"
+    slot="0" 
+    cooldown_start="0.9"
+    cooldown_end="0.0"
+    />
+    <next_in_chain key="ex_ra2_tanya_c4.weapon" share_ammo="0" /> 
+    <animation state_key="recoil"  animation_key="hd_ra2_tanya_recoil_left" />
+    <animation state_key="recoil"   animation_key="hd_ra2_tanya_recoil_right" />
+    <animation state_key="recoil" stance_key="over_wall" animation_key="recoil, overwall dual" />
+    <animation state_key="reload"   animation_key="reloading, pistol dual" />
+    <animation state_key="hold" animation_key="hd_ra2_tanya_still" />
+    <animation state_key="hold_casual"  animation_key="hd_ra2_tanya_casual" />
+    <animation state_key="hold_on_wall" animation_key="hold, overwall dual" />
+    <animation state_key="still_against_wall"   animation_key="hold_casual, pistol dual" />
+    <animation state_key="running"  animation_key="hd_spring_single_hand" />
+    <animation state_key="walking"  animation_key="running_pistol_slower" />
+    <animation state_key="walking_backwards" animation_key="walking backwards, pistol" />
+    <animation state_key="crouching" animation_key="crouch, pistol" />
+    <animation state_key="crouch_moving" animation_key="" />
+    <animation state_key="changing_weapon_in"   animation_key="change weapon in, single hand carry" />
+    <animation state_key="prone_still" animation_key="prone_still, pistol dual" />
+    <animation state_key="stabbing" animation_key="pistol whip" />
+    <animation state_key="stabbing" animation_key="pistol whip 2" />
+    <animation state_key="stabbing" animation_key="pistol whip 3" />
+    <animation state_key="next_in_chain_in" animation_key="hd_ra2_tanya_casual_onece" />
+    <animation state_key="next_in_chain_out" animation_key="" />    
+
+    <sound key="fire" fileref="ex_ra2_tanya_fire_01.wav" volume="1.0" pitch_variety="0.05"/>
+    <sound key="fire" fileref="ex_ra2_tanya_fire_02.wav" volume="1.0" pitch_variety="0.05"/>
+
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_01.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_02.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_03.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_04.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_05.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_06.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_07.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_08.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_09.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_10.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_11.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_12.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_13.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_14.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_15.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_16.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_17.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_18.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_19.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_20.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_21.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_22.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_23.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_24.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_25.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_26.wav" pitch_variety="0" volume="3"/>
+
+    <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="hd_mag_out.wav" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="hd_mg94_mag_in.wav" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="rifle_chamber.wav" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="hd_cycle_in_01.wav" /><!--动作中in的value为1-->
+    <sound key="last_ammo" fileref="hd_lastammo_01.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_02.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_03.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_04.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+
+    <model filename="" />
+    <hud_icon filename="ex_ra2_tanya.png" />
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.115" can_be_detected_by_driver="1" can_be_disarmed="0" > 
+	
+		<result class="hit" kill_probability="0.9" 
+		kill_probability_offset_on_successful_hit="0.0"
+		kill_decay_start_time="0.07" kill_decay_end_time="0.16" character_state="none" faction_compare="not_equal"/>
+		<!-- 25m max damage range / 最高1.5倍射界,且无衰减 -->
+		<!-- 0.3s stun time -->
+		<!-- damage 60hit/70ap stun  -->
+		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+	
+		<!--命中音效-->
+
+		<effect class="result" key="terrain" ref="general_weapon_result_hitspot" lighting="0"/>
+		<effect class="result" ref="p6_gunslinger_hit_spark" lighting="0"/>
+		<effect class="result" ref="p6_gunslinger_hit_leave" lighting="0"/>
+		<effect class="result" ref="p6_gunslinger_hit_light" lighting="0"/>
+		
+		<effect class="result" key="terrain" ref="p6_gunslinger_hit_01" />
+		<effect class="result" key="terrain" ref="p6_gunslinger_hit_02" />
+		<effect class="result" key="terrain" ref="p6_gunslinger_hit_03" />
+		<effect class="result" key="terrain" ref="p6_gunslinger_hit_04" />
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<!--尾迹组-->
+		<trail probability="1" key="normal_trail_short"/>	
+    </projectile>
+	<!--枪口特效-->
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+    
+    <modifier class="speed" value="0.25" /> 
+    <modifier class="detectability" value="0.25" />	
+</weapon>
+<weapon 
+file="_rare_weapon_mk1.base" 
+key="ex_ra2_tanya_c4.weapon">
+
+    <specification 
+    retrigger_time="0.1" 
+    accuracy_factor="1.0" 
+    sustained_fire_grow_step="1.0" 
+    sustained_fire_diminish_rate="0.5" 
+    spread_range="0.05"
+    magazine_size="-1" 
+    can_shoot_standing="1" 
+    carry_in_two_hands="0" 
+    suppressed="0" 
+    name="Tanya C4" 
+    class="0"
+	reload_one_at_a_time="0"
+	sight_range_modifier="1.0"
+	projectile_speed="0.01"
+	projectiles_per_shot="2"
+	barrel_offset="0.3"
+    burst_shots="1" 
+    stab_enabled="0"
+    use_basic_muzzle_smoke_effect="0"
+    slot="0" 
+    cooldown_start="0.9"
+    cooldown_end="0.0"
+    />
+    <next_in_chain key="ex_ra2_tanya.weapon" share_ammo="0" /> 
+
+    <animation state_key="recoil"  animation_key="hd_ra2_tanya_recoil_left" />
+    <animation state_key="recoil"   animation_key="hd_ra2_tanya_recoil_right" />
+    <animation state_key="recoil" stance_key="over_wall" animation_key="recoil, overwall dual" />
+    <animation state_key="reload"   animation_key="reloading, pistol dual" />
+    <animation state_key="hold" animation_key="hd_ra2_tanya_still" />
+    <animation state_key="hold_casual"  animation_key="hd_ra2_tanya_casual" />
+    <animation state_key="hold_on_wall" animation_key="hold, overwall dual" />
+    <animation state_key="still_against_wall"   animation_key="hold_casual, pistol dual" />
+    <animation state_key="running"  animation_key="hd_spring_single_hand" />
+    <animation state_key="walking"  animation_key="running_pistol_slower" />
+    <animation state_key="walking_backwards" animation_key="walking backwards, pistol" />
+    <animation state_key="crouching" animation_key="crouch, pistol" />
+    <animation state_key="crouch_moving" animation_key="" />
+    <animation state_key="changing_weapon_in"   animation_key="change weapon in, single hand carry" />
+    <animation state_key="prone_still" animation_key="prone_still, pistol dual" />
+    <animation state_key="stabbing" animation_key="pistol whip" />
+    <animation state_key="stabbing" animation_key="pistol whip 2" />
+    <animation state_key="stabbing" animation_key="pistol whip 3" />
+    <animation state_key="next_in_chain_in" animation_key="hd_ra2_tanya_casual_onece" />
+    <animation state_key="next_in_chain_out" animation_key="" />    
+
+    <sound key="fire" fileref="ex_ra2_tanya_fire_01.wav" volume="1.0" pitch_variety="0.05"/>
+    <sound key="fire" fileref="ex_ra2_tanya_fire_02.wav" volume="1.0" pitch_variety="0.05"/>
+
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_01.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_02.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_03.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_04.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_05.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_06.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_07.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_08.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_09.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_10.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_11.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_12.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_13.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_14.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_15.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_16.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_17.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_18.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_19.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_20.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_21.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_22.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_23.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_24.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_25.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_26.wav" pitch_variety="0" volume="3"/>
+
+    <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="hd_mag_out.wav" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="hd_mg94_mag_in.wav" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="rifle_chamber.wav" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="hd_cycle_in_01.wav" /><!--动作中in的value为1-->
+    <sound key="last_ammo" fileref="hd_lastammo_01.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_02.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_03.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_04.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+
+    <model filename="" />
+    <hud_icon filename="ex_ra2_tanya_c4.png" />
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="1" can_be_detected_by_footmen="1" 
+	time_to_live="0.115" can_be_detected_by_driver="1" can_be_disarmed="0" > 
+	
+        <result class="spawn" instance_class="projectile" instance_key="ex_ra2_tanya_damage.projectile" 
+		min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
+		<!-- 25m max damage range / 最高1.5倍射界,且无衰减 -->
+		<!-- 0.3s stun time -->
+		<!-- damage 60hit/70ap stun  -->
+		<trigger class="time" time_to_live="1.0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+        <collision class="sticky" />
+
+		<!--命中音效-->
+		<effect class="activated" ref="ex_ra2_tanya_c4" lighting="0"/>
+		
+        <effect class="result" key="terrain" ref="real_up_dust_beam" lighting="1" post_processing="0"/>
+		<!-- <effect class="result" key="terrain" ref="real_up_dust_spread" lighting="1" post_processing="0"/> -->
+		<effect class="result" key="terrain" ref="real_up_dust_stone" lighting="1" post_processing="1"/>
+		<!-- <effect class="result" key="terrain" ref="real_up_smoke_1" lighting="1" post_processing="0"/> -->
+		<effect class="result" key="terrain" ref="real_up_smoke_beam" lighting="1" post_processing="0"/>
+		<!-- <effect class="result" key="terrain" ref="real_up_impact_spread" lighting="1" post_processing="0"/> -->
+		<!-- <effect class="result" key="terrain" ref="real_up_impact_spark" lighting="1" post_processing="0"/> -->
+		<!-- <effect class="result" key="terrain" ref="real_up_impact_spark_2" lighting="1" post_processing="0"/> -->
+		<!-- <effect class="result" key="terrain" ref="real_up_impact_spark_1" lighting="1" post_processing="0"/> -->
+		<effect class="result" key="terrain" ref="real_center_short_light" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="real_center_ambient_light" lighting="0" post_processing="0"/> 
+		<!-- <effect class="result" key="terrain" ref="nova_result_ground_smoke" lighting="0" post_processing="1"/> -->
+		<effect class="result" key="terrain" ref="nova_result_ambient" lighting="0" post_processing="0"/> 
+		<!-- <effect class="result" key="terrain" ref="nova_result_ambient_ground" lighting="0" post_processing="0"/>  -->
+		<sound class="result" key="other" fileref="blast1_rumbler.wav" pitch_variety="0.00"  volume="0.7"/>
+		<sound class="result" key="other" fileref="blast2_rumbler.wav" pitch_variety="0.00"  volume="0.7"/>
+
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<!--尾迹组-->
+		<trail probability="1" key=""/>	
+    </projectile>
+	<!--枪口特效-->
+	<effect class="muzzle" ref="" lighting="0"/> 
+    
+    <modifier class="speed" value="0.25" /> 
+    <modifier class="detectability" value="0.25" />	
+</weapon>
+<weapon 
+file="_rare_weapon_mk1_re.base" 
+key="re_ex_ra2_tanya.weapon">
+
+    <specification 
+    retrigger_time="0.1" 
+    accuracy_factor="1.0" 
+    sustained_fire_grow_step="0.25" 
+    sustained_fire_diminish_rate="1.5" 
+    spread_range="0.05"
+    magazine_size="-1" 
+    can_shoot_standing="1" 
+    carry_in_two_hands="0" 
+    suppressed="0" 
+    name="Tanya" 
+    class="0"
+	reload_one_at_a_time="0"
+	sight_range_modifier="1.0"
+	projectile_speed="150.0"
+	projectiles_per_shot="2"
+	barrel_offset="0.3"
+    burst_shots="1" 
+    stab_enabled="0"
+    use_basic_muzzle_smoke_effect="0"
+    slot="0" 
+    cooldown_start="0.9"
+    cooldown_end="0.0"
+    />
+    <next_in_chain key="re_ex_ra2_tanya_c4.weapon" share_ammo="0" /> 
+    <animation state_key="recoil"  animation_key="hd_ra2_tanya_recoil_left" />
+    <animation state_key="recoil"   animation_key="hd_ra2_tanya_recoil_right" />
+    <animation state_key="recoil" stance_key="over_wall" animation_key="recoil, overwall dual" />
+    <animation state_key="reload"   animation_key="reloading, pistol dual" />
+    <animation state_key="hold" animation_key="hd_ra2_tanya_still" />
+    <animation state_key="hold_casual"  animation_key="hd_ra2_tanya_casual" />
+    <animation state_key="hold_on_wall" animation_key="hold, overwall dual" />
+    <animation state_key="still_against_wall"   animation_key="hold_casual, pistol dual" />
+    <animation state_key="running"  animation_key="hd_spring_single_hand" />
+    <animation state_key="walking"  animation_key="running_pistol_slower" />
+    <animation state_key="walking_backwards" animation_key="walking backwards, pistol" />
+    <animation state_key="crouching" animation_key="crouch, pistol" />
+    <animation state_key="crouch_moving" animation_key="" />
+    <animation state_key="changing_weapon_in"   animation_key="change weapon in, single hand carry" />
+    <animation state_key="prone_still" animation_key="prone_still, pistol dual" />
+    <animation state_key="stabbing" animation_key="pistol whip" />
+    <animation state_key="stabbing" animation_key="pistol whip 2" />
+    <animation state_key="stabbing" animation_key="pistol whip 3" />
+    <animation state_key="next_in_chain_in" animation_key="hd_ra2_tanya_casual_onece" />
+    <animation state_key="next_in_chain_out" animation_key="" />    
+
+    <sound key="fire" fileref="ex_ra2_tanya_fire_01.wav" volume="1.0" pitch_variety="0.05"/>
+    <sound key="fire" fileref="ex_ra2_tanya_fire_02.wav" volume="1.0" pitch_variety="0.05"/>
+
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_01.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_02.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_03.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_04.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_05.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_06.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_07.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_08.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_09.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_10.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_11.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_12.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_13.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_14.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_15.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_16.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_17.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_18.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_19.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_20.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_21.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_22.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_23.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_24.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_25.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_26.wav" pitch_variety="0" volume="3"/>
+
+    <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="hd_mag_out.wav" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="hd_mg94_mag_in.wav" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="rifle_chamber.wav" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="hd_cycle_in_01.wav" /><!--动作中in的value为1-->
+    <sound key="last_ammo" fileref="hd_lastammo_01.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_02.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_03.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_04.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+
+    <model filename="" />
+    <hud_icon filename="ex_ra2_tanya.png" />
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.115" can_be_detected_by_driver="1" can_be_disarmed="0" > 
+	
+		<result class="hit" kill_probability="0.9" 
+		kill_probability_offset_on_successful_hit="0.0"
+		kill_decay_start_time="0.07" kill_decay_end_time="0.16" character_state="none" faction_compare="not_equal"/>
+		<!-- 25m max damage range / 最高1.5倍射界,且无衰减 -->
+		<!-- 0.3s stun time -->
+		<!-- damage 60hit/70ap stun  -->
+		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+	
+		<!--命中音效-->
+
+		<effect class="result" key="terrain" ref="general_weapon_result_hitspot" lighting="0"/>
+		<effect class="result" ref="p6_gunslinger_hit_spark" lighting="0"/>
+		<effect class="result" ref="p6_gunslinger_hit_leave" lighting="0"/>
+		<effect class="result" ref="p6_gunslinger_hit_light" lighting="0"/>
+		
+		<effect class="result" key="terrain" ref="p6_gunslinger_hit_01" />
+		<effect class="result" key="terrain" ref="p6_gunslinger_hit_02" />
+		<effect class="result" key="terrain" ref="p6_gunslinger_hit_03" />
+		<effect class="result" key="terrain" ref="p6_gunslinger_hit_04" />
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<!--尾迹组-->
+		<trail probability="1" key="normal_trail_short"/>	
+    </projectile>
+	<!--枪口特效-->
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+    
+    <modifier class="speed" value="0.25" /> 
+    <modifier class="detectability" value="0.25" />	
+</weapon>
+<weapon 
+file="_rare_weapon_mk1_re.base" 
+key="re_ex_ra2_tanya_c4.weapon">
+
+    <specification 
+    retrigger_time="0.1" 
+    accuracy_factor="1.0" 
+    sustained_fire_grow_step="1.0" 
+    sustained_fire_diminish_rate="0.5" 
+    spread_range="0.05"
+    magazine_size="-1" 
+    can_shoot_standing="1" 
+    carry_in_two_hands="0" 
+    suppressed="0" 
+    name="Tanya C4" 
+    class="0"
+	reload_one_at_a_time="0"
+	sight_range_modifier="1.0"
+	projectile_speed="0.01"
+	projectiles_per_shot="2"
+	barrel_offset="0.3"
+    burst_shots="1" 
+    stab_enabled="0"
+    use_basic_muzzle_smoke_effect="0"
+    slot="0" 
+    cooldown_start="0.9"
+    cooldown_end="0.0"
+    />
+    <next_in_chain key="re_ex_ra2_tanya.weapon" share_ammo="0" /> 
+
+    <animation state_key="recoil"  animation_key="hd_ra2_tanya_recoil_left" />
+    <animation state_key="recoil"   animation_key="hd_ra2_tanya_recoil_right" />
+    <animation state_key="recoil" stance_key="over_wall" animation_key="recoil, overwall dual" />
+    <animation state_key="reload"   animation_key="reloading, pistol dual" />
+    <animation state_key="hold" animation_key="hd_ra2_tanya_still" />
+    <animation state_key="hold_casual"  animation_key="hd_ra2_tanya_casual" />
+    <animation state_key="hold_on_wall" animation_key="hold, overwall dual" />
+    <animation state_key="still_against_wall"   animation_key="hold_casual, pistol dual" />
+    <animation state_key="running"  animation_key="hd_spring_single_hand" />
+    <animation state_key="walking"  animation_key="running_pistol_slower" />
+    <animation state_key="walking_backwards" animation_key="walking backwards, pistol" />
+    <animation state_key="crouching" animation_key="crouch, pistol" />
+    <animation state_key="crouch_moving" animation_key="" />
+    <animation state_key="changing_weapon_in"   animation_key="change weapon in, single hand carry" />
+    <animation state_key="prone_still" animation_key="prone_still, pistol dual" />
+    <animation state_key="stabbing" animation_key="pistol whip" />
+    <animation state_key="stabbing" animation_key="pistol whip 2" />
+    <animation state_key="stabbing" animation_key="pistol whip 3" />
+    <animation state_key="next_in_chain_in" animation_key="hd_ra2_tanya_casual_onece" />
+    <animation state_key="next_in_chain_out" animation_key="" />    
+
+    <sound key="fire" fileref="ex_ra2_tanya_fire_01.wav" volume="1.0" pitch_variety="0.05"/>
+    <sound key="fire" fileref="ex_ra2_tanya_fire_02.wav" volume="1.0" pitch_variety="0.05"/>
+
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_01.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_02.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_03.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_04.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_05.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_06.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_07.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_08.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_09.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_10.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_11.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_12.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_13.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_14.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_15.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_16.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_17.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_18.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_19.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_20.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_21.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_22.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_23.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_24.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_25.wav" pitch_variety="0" volume="3"/>
+    <sound key="cooldown" fileref="ex_ra2_tanya_voice_26.wav" pitch_variety="0" volume="3"/>
+
+    <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="hd_mag_out.wav" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="hd_mg94_mag_in.wav" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="rifle_chamber.wav" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="hd_cycle_in_01.wav" /><!--动作中in的value为1-->
+    <sound key="last_ammo" fileref="hd_lastammo_01.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_02.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_03.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+    <sound key="last_ammo" fileref="hd_lastammo_04.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+
+    <model filename="" />
+    <hud_icon filename="ex_ra2_tanya_c4.png" />
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="1" can_be_detected_by_footmen="1" 
+	time_to_live="0.115" can_be_detected_by_driver="1" can_be_disarmed="0" > 
+	
+        <result class="spawn" instance_class="projectile" instance_key="ex_ra2_tanya_damage.projectile" 
+		min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
+		<!-- 25m max damage range / 最高1.5倍射界,且无衰减 -->
+		<!-- 0.3s stun time -->
+		<!-- damage 60hit/70ap stun  -->
+		<trigger class="time" time_to_live="1.0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+        <collision class="sticky" />
+
+		<!--命中音效-->
+		<effect class="activated" ref="ex_ra2_tanya_c4" lighting="0"/>
+		
+        <effect class="result" key="terrain" ref="real_up_dust_beam" lighting="1" post_processing="0"/>
+		<!-- <effect class="result" key="terrain" ref="real_up_dust_spread" lighting="1" post_processing="0"/> -->
+		<effect class="result" key="terrain" ref="real_up_dust_stone" lighting="1" post_processing="1"/>
+		<!-- <effect class="result" key="terrain" ref="real_up_smoke_1" lighting="1" post_processing="0"/> -->
+		<effect class="result" key="terrain" ref="real_up_smoke_beam" lighting="1" post_processing="0"/>
+		<!-- <effect class="result" key="terrain" ref="real_up_impact_spread" lighting="1" post_processing="0"/> -->
+		<!-- <effect class="result" key="terrain" ref="real_up_impact_spark" lighting="1" post_processing="0"/> -->
+		<!-- <effect class="result" key="terrain" ref="real_up_impact_spark_2" lighting="1" post_processing="0"/> -->
+		<!-- <effect class="result" key="terrain" ref="real_up_impact_spark_1" lighting="1" post_processing="0"/> -->
+		<effect class="result" key="terrain" ref="real_center_short_light" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="real_center_ambient_light" lighting="0" post_processing="0"/> 
+		<!-- <effect class="result" key="terrain" ref="nova_result_ground_smoke" lighting="0" post_processing="1"/> -->
+		<effect class="result" key="terrain" ref="nova_result_ambient" lighting="0" post_processing="0"/> 
+		<!-- <effect class="result" key="terrain" ref="nova_result_ambient_ground" lighting="0" post_processing="0"/>  -->
+		<sound class="result" key="other" fileref="blast1_rumbler.wav" pitch_variety="0.00"  volume="0.7"/>
+		<sound class="result" key="other" fileref="blast2_rumbler.wav" pitch_variety="0.00"  volume="0.7"/>
+
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<!--尾迹组-->
+		<trail probability="1" key=""/>	
+    </projectile>
+	<!--枪口特效-->
+	<effect class="muzzle" ref="" lighting="0"/> 
+    
+    <modifier class="speed" value="0.25" /> 
+    <modifier class="detectability" value="0.25" />	
+</weapon>
+</weapons>

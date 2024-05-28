@@ -24,6 +24,7 @@ dictionary research_list = {
     {"acg_megumin_wand_float.weapon",750}, // rare
     {"ex_trinity_ghoul.weapon",450},
     {"acg_laisha_heliotrope.weapon",450},
+    {"acg_elaina_wand.weapon",450},
 
     // MK4
     {"acg_arknight_ifrit.weapon",450},// rare
@@ -39,6 +40,7 @@ dictionary research_list = {
     {"acg_rikuhachima_aru.weapon",150},
     {"acg_shinano.weapon",150},
     {"acg_incomparable.weapon",150},
+    {"acg_yileina_wand.weapon",150},
 
     //mk3 
     {"acg_takanashi_hoshino.weapon",50},
@@ -278,6 +280,7 @@ class KeYan : Tracker{
                             if(m_researchedXp < requiredXp){
                                 if(m_globalXp >= (requiredXp - m_researchedXp)){
                                     m_stash.setFloatAttribute("globalXp",(m_globalXp - (requiredXp - m_researchedXp)));
+                                    child.setFloatAttribute("researchedXp",0);
                                     _notify(m_metagame,pid,"已使用全局XP完成当前武器科研进度，剩余全局XP："+int(m_globalXp)+"w XP");
                                     isTrue = true;
                                 }else{

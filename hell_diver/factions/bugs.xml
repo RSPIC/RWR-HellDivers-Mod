@@ -428,7 +428,7 @@
 
 		<item_class_existence_config>
 			<!-- backpack -->
-			<item_class_existence class="carry_item" slot="0" probability="1" />
+			<item_class_existence class="carry_item" slot="0" probability="0.5" />
 		</item_class_existence_config>
 
 		<!-- low XP, likely to join player squad -->
@@ -478,7 +478,7 @@
 
 		<item_class_existence_config>
 			<!-- backpack -->
-			<item_class_existence class="carry_item" slot="0" probability="1" />
+			<item_class_existence class="carry_item" slot="0" probability="0.5" />
 		</item_class_existence_config>
 
 		<!-- low XP, likely to join player squad -->
@@ -504,7 +504,7 @@
 
 		<item_class_existence_config>
 			<!-- backpack -->
-			<item_class_existence class="carry_item" slot="0" probability="1" />
+			<item_class_existence class="carry_item" slot="0" probability="0.5" />
 		</item_class_existence_config>
 
 		<!-- low XP, likely to join player squad -->

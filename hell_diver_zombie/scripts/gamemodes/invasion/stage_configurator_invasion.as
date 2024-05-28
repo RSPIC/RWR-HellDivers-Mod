@@ -280,7 +280,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1));             
 			f.m_overCapacity = 0;
 			f.m_capacityMultiplier = 1;                                                 
-			f.m_capacityOffset = 200;
+			f.m_capacityOffset = 400;
 			stage.m_factions.insertLast(f);
 		}
 		
@@ -330,7 +330,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1));             
 			f.m_overCapacity = 0;
 			f.m_capacityMultiplier = 1;                                                 
-			f.m_capacityOffset = 200;
+			f.m_capacityOffset = 400;
 			stage.m_factions.insertLast(f);
 		}
 		{
@@ -374,7 +374,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1));             
 			f.m_overCapacity = 0;
 			f.m_capacityMultiplier = 1;                                                 
-			f.m_capacityOffset = 200;
+			f.m_capacityOffset = 400;
 			stage.m_factions.insertLast(f);
 		}
 		{
@@ -420,7 +420,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1));             
 			f.m_overCapacity = 0;
 			f.m_capacityMultiplier = 1;                                                 
-			f.m_capacityOffset = 200;
+			f.m_capacityOffset = 400;
 			stage.m_factions.insertLast(f);
 		}
 		{
@@ -461,7 +461,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1));             
 			f.m_overCapacity = 0;
 			f.m_capacityMultiplier = 1;                                                 
-			f.m_capacityOffset = 200;
+			f.m_capacityOffset = 400;
 			stage.m_factions.insertLast(f);
 		}
 
@@ -507,7 +507,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1));             
 			f.m_overCapacity = 0;
 			f.m_capacityMultiplier = 1;                                                 
-			f.m_capacityOffset = 200;
+			f.m_capacityOffset = 400;
 			stage.m_factions.insertLast(f);
 		}
 
@@ -540,7 +540,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1));             
 			f.m_overCapacity = 0;
 			f.m_capacityMultiplier = 1;                                                 
-			f.m_capacityOffset = 200;
+			f.m_capacityOffset = 400;
 			stage.m_factions.insertLast(f);
 		}
 
@@ -590,7 +590,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1));             // was 0.2 0.1 in 1.65
 			f.m_overCapacity = 0;
 			f.m_capacityMultiplier = 1;                                                      // was 1.32 in 1.65, now working with offset only
-			f.m_capacityOffset = 200;
+			f.m_capacityOffset = 400;
 			stage.m_factions.insertLast(f);
 		}
 		{
@@ -634,7 +634,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1));             
 			f.m_overCapacity = 0;
 			f.m_capacityMultiplier = 1;                                                 
-			f.m_capacityOffset = 200;
+			f.m_capacityOffset = 400;
 			stage.m_factions.insertLast(f);
 		}
 
@@ -687,7 +687,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1));             
 			f.m_overCapacity = 0;
 			f.m_capacityMultiplier = 1;                                                 
-			f.m_capacityOffset = 200;
+			f.m_capacityOffset = 400;
 			stage.m_factions.insertLast(f);
 		}
 
@@ -781,7 +781,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1));             
 			f.m_overCapacity = 0;
 			f.m_capacityMultiplier = 1;                                                 
-			f.m_capacityOffset = 200;
+			f.m_capacityOffset = 400;
 			stage.m_factions.insertLast(f);
 		}
 
@@ -838,7 +838,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1));             
 			f.m_overCapacity = 0;
 			f.m_capacityMultiplier = 1;                                                 
-			f.m_capacityOffset = 200;
+			f.m_capacityOffset = 400;
 			stage.m_factions.insertLast(f);
 		}
 		{
@@ -903,7 +903,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1));             
 			f.m_overCapacity = 0;
 			f.m_capacityMultiplier = 1;                                                 
-			f.m_capacityOffset = 200;
+			f.m_capacityOffset = 400;
 			stage.m_factions.insertLast(f);
 		}
 		// metadata
@@ -975,7 +975,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1));             
 			f.m_overCapacity = 0;
 			f.m_capacityMultiplier = 1;                                                 
-			f.m_capacityOffset = 200;
+			f.m_capacityOffset = 400;
 			stage.m_factions.insertLast(f);
 		}
 
@@ -1032,7 +1032,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1));             
 			f.m_overCapacity = 0;
 			f.m_capacityMultiplier = 1;                                                 
-			f.m_capacityOffset = 200;
+			f.m_capacityOffset = 400;
 			stage.m_factions.insertLast(f);
 		}
 
@@ -1084,7 +1084,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1));             
 			f.m_overCapacity = 0;
 			f.m_capacityMultiplier = 1;                                                 
-			f.m_capacityOffset = 200;
+			f.m_capacityOffset = 400;
 			stage.m_factions.insertLast(f);
 		}
 		{
@@ -1145,7 +1145,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1));             
 			f.m_overCapacity = 0;
 			f.m_capacityMultiplier = 1;                                                 
-			f.m_capacityOffset = 200;
+			f.m_capacityOffset = 400;
 			stage.m_factions.insertLast(f);
 		}
 		{
@@ -1216,7 +1216,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1));             
 			f.m_overCapacity = 0;
 			f.m_capacityMultiplier = 1;                                                 
-			f.m_capacityOffset = 200;
+			f.m_capacityOffset = 400;
 			stage.m_factions.insertLast(f);
 		}
 
@@ -1277,7 +1277,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1));             
 			f.m_overCapacity = 0;
 			f.m_capacityMultiplier = 1;                                                 
-			f.m_capacityOffset = 200;
+			f.m_capacityOffset = 400;
 			stage.m_factions.insertLast(f);
 		}
 
@@ -1335,7 +1335,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1));             
 			f.m_overCapacity = 0;
 			f.m_capacityMultiplier = 1;                                                 
-			f.m_capacityOffset = 200;
+			f.m_capacityOffset = 400;
 			stage.m_factions.insertLast(f);
 		}
 
@@ -1400,7 +1400,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1));             
 			f.m_overCapacity = 0;
 			f.m_capacityMultiplier = 1;                                                 
-			f.m_capacityOffset = 200;
+			f.m_capacityOffset = 400;
 			stage.m_factions.insertLast(f);
 		}
 
@@ -1442,7 +1442,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1));             
 			f.m_overCapacity = 0;
 			f.m_capacityMultiplier = 1;                                                 
-			f.m_capacityOffset = 200;
+			f.m_capacityOffset = 400;
 			stage.m_factions.insertLast(f);
 		}
 		// metadata
@@ -1656,7 +1656,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1));             
 			f.m_overCapacity = 0;
 			f.m_capacityMultiplier = 1;                                                 
-			f.m_capacityOffset = 200;
+			f.m_capacityOffset = 400;
 			stage.m_factions.insertLast(f);
 		}
 		{
@@ -1697,7 +1697,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1));             
 			f.m_overCapacity = 0;
 			f.m_capacityMultiplier = 1;                                                 
-			f.m_capacityOffset = 200;
+			f.m_capacityOffset = 400;
 			stage.m_factions.insertLast(f);
 		}
 		{
@@ -1740,7 +1740,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1));             
 			f.m_overCapacity = 0;
 			f.m_capacityMultiplier = 1;                                                 
-			f.m_capacityOffset = 200;
+			f.m_capacityOffset = 400;
 			stage.m_factions.insertLast(f);
 		}
 
@@ -1785,7 +1785,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1));             
 			f.m_overCapacity = 0;
 			f.m_capacityMultiplier = 1;                                                 
-			f.m_capacityOffset = 200;
+			f.m_capacityOffset = 400;
 			stage.m_factions.insertLast(f);
 		}
 
@@ -1828,7 +1828,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1));             
 			f.m_overCapacity = 0;
 			f.m_capacityMultiplier = 1;                                                 
-			f.m_capacityOffset = 200;
+			f.m_capacityOffset = 400;
 			stage.m_factions.insertLast(f);
 		}
 		{
@@ -1872,7 +1872,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1));             
 			f.m_overCapacity = 0;
 			f.m_capacityMultiplier = 1;                                                 
-			f.m_capacityOffset = 200;
+			f.m_capacityOffset = 400;
 			stage.m_factions.insertLast(f);
 		}
 
@@ -1907,7 +1907,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1));             
 			f.m_overCapacity = 0;
 			f.m_capacityMultiplier = 1;                                                 
-			f.m_capacityOffset = 200;
+			f.m_capacityOffset = 400;
 			stage.m_factions.insertLast(f);
 		}
 		{
@@ -1963,7 +1963,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1));             
 			f.m_overCapacity = 0;
 			f.m_capacityMultiplier = 1;                                                 
-			f.m_capacityOffset = 200;
+			f.m_capacityOffset = 400;
 			stage.m_factions.insertLast(f);
 		}
 		{
@@ -2019,7 +2019,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1));             
 			f.m_overCapacity = 0;
 			f.m_capacityMultiplier = 1;                                                 
-			f.m_capacityOffset = 200;
+			f.m_capacityOffset = 400;
 			stage.m_factions.insertLast(f);
 		}
 

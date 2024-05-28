@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapons> 
+<weapon 
+file="_rare_weapon_mk1.base"
+key="ex_psc_arc920.weapon"
+>
+    <tag name="sniper" />
+    <specification 
+	slot="0"
+	retrigger_time="2.5" 
+	last_burst_retrigger_time="2.5"
+	accuracy_factor="1.0" 
+	spread_range="0.3"
+	sustained_fire_grow_step="1.0" 
+	sustained_fire_diminish_rate="1.0" 
+	magazine_size="-1" 
+	can_shoot_standing="1" 
+	can_shoot_crouching="1" 
+	suppressed="0" 
+	name="ARC-920" 
+	class="2" 
+	sight_range_modifier="2.5"
+	reload_one_at_a_time="0" 
+	projectile_speed="300.0" 
+	barrel_offset="0.8" 
+	projectiles_per_shot="1" 
+	burst_shots="1"
+	use_basic_muzzle_smoke_effect="0"
+	/>
+	<!--66RPM	2.5s/2.25 reload	4/8 magazine_in 	50m range-->
+	
+	<model filename="exw_arc920.xml" />
+    <hud_icon filename="exw_arc920.png" />
+	<weak_hand_hold offset="0" />
+	
+	<animation key="recoil" animation_key="recoil1" /> <!--后坐力动作，半身动作-->
+    <animation key="cycle"  animation_key="cycle_1s" /> <!--拉栓动作，武器固定脱手-->
+    <animation state_key="reload" animation_key="T_reloading_1.0s" />
+    <animation state_key="next_in_chain_in" animation_key="change weapon in" />
+    <animation state_key="next_in_chain_out" animation_key="change weapon in" />
+
+	<sound key="effect" fileref="ex_psc_arc920_vocile_01.wav" pitch_variety="0" volume="5.0" />
+	<sound key="effect" fileref="ex_psc_arc920_vocile_02.wav" pitch_variety="0" volume="5.0"/>
+	
+	<sound key="fire" fileref="ex_psc_arc920_fire.wav" pitch_variety="0.03"  volume="3" />
+    <sound key="cycle" fileref="ex_psc_arc920_cycle_2.wav" pitch_variety="0.00"  volume="3.5"/>
+	<sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.03" volume="1.0" /><!--空弹射击扳机音效-->
+    <sound key="magazine_out" fileref="sniper_clip_out_1.wav" />
+    <sound key="magazine_in" fileref="sniper_clip_in_1.wav" />
+    <sound key="cycle_out" fileref="sniper_cycle_out_1.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in_1.wav" />
+    <sound class="impact" fileref="rifle_drop.wav" />
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="9" time_to_live="0.4" name="ARC-920">
+		
+		<result class="spawn" instance_class="projectile" instance_key="ex_psc_arc920_damage.projectile" 
+		min_amount="30" max_amount="30" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+		<!-- 即死 -->
+		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+
+		<model mesh_filename="rx1_bullet.xml" />
+		<effect class="activated" ref="general_weapon_activated_bullet_light" lighting="0"/>
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_01" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_02" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_03" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_04" />
+
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<effect class="activated" ref="rx1_smoke"/>
+		<trail probability="1" key="normal_trail_long_bold"/>	
+
+		<sound class="result" key="terrain" fileref="ricochet1.wav" />
+		<sound class="result" key="terrain" fileref="ricochet2.wav" />
+		<sound class="result" key="terrain" fileref="ricochet3.wav" />
+		<sound class="result" key="terrain" fileref="ricochet4.wav" />
+		<sound class="result" key="vehicle" copy="terrain" />
+		<sound class="result" key="vehicle" tag="metal_thin" file="metal_thin_01.wav" pitch_variety="0.3" volume="1.0" />
+		<sound class="result" key="vehicle" tag="metal_thin" file="metal_thin_02.wav" pitch_variety="0.3" volume="1.0" />
+		<sound class="result" key="vehicle" tag="metal_thin" file="metal_thin_03.wav" pitch_variety="0.3" volume="1.0" />
+		<sound class="result" key="vehicle" tag="metal_thin" file="metal_thin_04.wav" pitch_variety="0.3" volume="1.0" />
+		<sound class="result" key="vehicle" tag="metal_thin" file="metal_thin_05.wav" pitch_variety="0.3" volume="1.0" />  
+		<sound class="result" key="vehicle" tag="deco_car" file="metal_thin_06.wav" pitch_variety="0.3" volume="1.0" />    
+		<sound class="result" key="vehicle" tag="deco_car" file="metal_thin_07.wav" pitch_variety="0.3" volume="1.0" />
+		<sound class="result" key="vehicle" tag="deco_car" file="metal_thin_06.wav" pitch_variety="0.3" volume="1.0" />    
+		<sound class="result" key="vehicle" tag="deco_car" file="metal_thin_07.wav" pitch_variety="0.3" volume="1.0" />    
+		<sound class="result" key="vehicle" tag="deco_car" file="metal_thin_06.wav" pitch_variety="0.3" volume="1.0" />    
+		<sound class="result" key="vehicle" tag="deco_car" file="metal_thin_07.wav" pitch_variety="0.3" volume="1.0" />    
+		<sound class="result" key="vehicle" tag="deco_car" file="metal_thin_08.wav" pitch_variety="0.3" volume="1.0" />
+		<sound class="result" key="vehicle" tag="deco_car" file="metal_thin_08.wav" pitch_variety="0.3" volume="1.0" />
+		<sound class="result" key="vehicle" tag="metal_heavy" file="metal_heavy_01.wav" pitch_variety="0.3" volume="1.0" />
+		<sound class="result" key="vehicle" tag="metal_heavy" file="metal_heavy_02.wav" pitch_variety="0.3" volume="1.0" /> 
+		<sound class="result" key="vehicle" tag="metal_heavy" file="metal_heavy_03.wav" pitch_variety="0.3" volume="1.0" /> 
+		<sound class="result" key="vehicle" tag="sandbag" file="barrier_bullet_01.wav" pitch_variety="0.3" volume="1.0" />  
+		<sound class="result" key="vehicle" tag="sandbag" file="barrier_bullet_02.wav" pitch_variety="0.3" volume="1.0" /> 
+		<sound class="result" key="vehicle" tag="sandbag" file="barrier_bullet_03.wav" pitch_variety="0.3" volume="1.0" /> 
+		<sound class="result" key="vehicle" tag="metal_dumpster" file="dumpster_bullet_01.wav" pitch_variety="0.4" volume="1.0" />  
+		<sound class="result" key="vehicle" tag="metal_dumpster" file="dumpster_bullet_01.wav" pitch_variety="0.4" volume="1.0" />    
+		<sound class="result" key="vehicle" tag="metal_dumpster" file="dumpster_bullet_02.wav" pitch_variety="0.4" volume="1.0" />              
+		<sound class="result" key="static_object" copy="terrain" />
+
+    </projectile>
+
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 
+ 
+</weapon>
+<weapon 
+file="_rare_weapon_mk1_re.base"
+key="re_ex_psc_arc920.weapon"
+>
+    <tag name="sniper" />
+    <specification 
+	slot="0"
+	retrigger_time="2.5" 
+	last_burst_retrigger_time="2.5"
+	accuracy_factor="1.0" 
+	spread_range="0.3"
+	sustained_fire_grow_step="1.0" 
+	sustained_fire_diminish_rate="1.0" 
+	magazine_size="-1" 
+	can_shoot_standing="1" 
+	can_shoot_crouching="1" 
+	suppressed="0" 
+	name="ARC-920" 
+	class="2" 
+	sight_range_modifier="2.5"
+	reload_one_at_a_time="0" 
+	projectile_speed="300.0" 
+	barrel_offset="0.8" 
+	projectiles_per_shot="1" 
+	burst_shots="1"
+	use_basic_muzzle_smoke_effect="0"
+	/>
+	<!--66RPM	2.5s/2.25 reload	4/8 magazine_in 	50m range-->
+	
+	<model filename="exw_arc920.xml" />
+    <hud_icon filename="exw_arc920.png" />
+	<weak_hand_hold offset="0" />
+	
+	<animation key="recoil" animation_key="recoil1" /> <!--后坐力动作，半身动作-->
+    <animation key="cycle"  animation_key="cycle_1s" /> <!--拉栓动作，武器固定脱手-->
+    <animation state_key="reload" animation_key="T_reloading_1.0s" />
+    <animation state_key="next_in_chain_in" animation_key="change weapon in" />
+    <animation state_key="next_in_chain_out" animation_key="change weapon in" />
+
+	<sound key="effect" fileref="ex_psc_arc920_vocile_01.wav" pitch_variety="0" volume="5.0" />
+	<sound key="effect" fileref="ex_psc_arc920_vocile_02.wav" pitch_variety="0" volume="5.0"/>
+	
+	<sound key="fire" fileref="ex_psc_arc920_fire.wav" pitch_variety="0.03"  volume="3" />
+    <sound key="cycle" fileref="ex_psc_arc920_cycle_2.wav" pitch_variety="0.00"  volume="3.5"/>
+	<sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.03" volume="1.0" /><!--空弹射击扳机音效-->
+    <sound key="magazine_out" fileref="sniper_clip_out_1.wav" />
+    <sound key="magazine_in" fileref="sniper_clip_in_1.wav" />
+    <sound key="cycle_out" fileref="sniper_cycle_out_1.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in_1.wav" />
+    <sound class="impact" fileref="rifle_drop.wav" />
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="9" time_to_live="0.4" name="ARC-920">
+		
+		<result class="spawn" instance_class="projectile" instance_key="ex_psc_arc920_damage.projectile" 
+		min_amount="30" max_amount="30" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+		<!-- 即死 -->
+		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+
+		<model mesh_filename="rx1_bullet.xml" />
+		<effect class="activated" ref="general_weapon_activated_bullet_light" lighting="0"/>
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_01" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_02" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_03" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_04" />
+
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<effect class="activated" ref="rx1_smoke"/>
+		<trail probability="1" key="normal_trail_long_bold"/>	
+
+		<sound class="result" key="terrain" fileref="ricochet1.wav" />
+		<sound class="result" key="terrain" fileref="ricochet2.wav" />
+		<sound class="result" key="terrain" fileref="ricochet3.wav" />
+		<sound class="result" key="terrain" fileref="ricochet4.wav" />
+		<sound class="result" key="vehicle" copy="terrain" />
+		<sound class="result" key="vehicle" tag="metal_thin" file="metal_thin_01.wav" pitch_variety="0.3" volume="1.0" />
+		<sound class="result" key="vehicle" tag="metal_thin" file="metal_thin_02.wav" pitch_variety="0.3" volume="1.0" />
+		<sound class="result" key="vehicle" tag="metal_thin" file="metal_thin_03.wav" pitch_variety="0.3" volume="1.0" />
+		<sound class="result" key="vehicle" tag="metal_thin" file="metal_thin_04.wav" pitch_variety="0.3" volume="1.0" />
+		<sound class="result" key="vehicle" tag="metal_thin" file="metal_thin_05.wav" pitch_variety="0.3" volume="1.0" />  
+		<sound class="result" key="vehicle" tag="deco_car" file="metal_thin_06.wav" pitch_variety="0.3" volume="1.0" />    
+		<sound class="result" key="vehicle" tag="deco_car" file="metal_thin_07.wav" pitch_variety="0.3" volume="1.0" />
+		<sound class="result" key="vehicle" tag="deco_car" file="metal_thin_06.wav" pitch_variety="0.3" volume="1.0" />    
+		<sound class="result" key="vehicle" tag="deco_car" file="metal_thin_07.wav" pitch_variety="0.3" volume="1.0" />    
+		<sound class="result" key="vehicle" tag="deco_car" file="metal_thin_06.wav" pitch_variety="0.3" volume="1.0" />    
+		<sound class="result" key="vehicle" tag="deco_car" file="metal_thin_07.wav" pitch_variety="0.3" volume="1.0" />    
+		<sound class="result" key="vehicle" tag="deco_car" file="metal_thin_08.wav" pitch_variety="0.3" volume="1.0" />
+		<sound class="result" key="vehicle" tag="deco_car" file="metal_thin_08.wav" pitch_variety="0.3" volume="1.0" />
+		<sound class="result" key="vehicle" tag="metal_heavy" file="metal_heavy_01.wav" pitch_variety="0.3" volume="1.0" />
+		<sound class="result" key="vehicle" tag="metal_heavy" file="metal_heavy_02.wav" pitch_variety="0.3" volume="1.0" /> 
+		<sound class="result" key="vehicle" tag="metal_heavy" file="metal_heavy_03.wav" pitch_variety="0.3" volume="1.0" /> 
+		<sound class="result" key="vehicle" tag="sandbag" file="barrier_bullet_01.wav" pitch_variety="0.3" volume="1.0" />  
+		<sound class="result" key="vehicle" tag="sandbag" file="barrier_bullet_02.wav" pitch_variety="0.3" volume="1.0" /> 
+		<sound class="result" key="vehicle" tag="sandbag" file="barrier_bullet_03.wav" pitch_variety="0.3" volume="1.0" /> 
+		<sound class="result" key="vehicle" tag="metal_dumpster" file="dumpster_bullet_01.wav" pitch_variety="0.4" volume="1.0" />  
+		<sound class="result" key="vehicle" tag="metal_dumpster" file="dumpster_bullet_01.wav" pitch_variety="0.4" volume="1.0" />    
+		<sound class="result" key="vehicle" tag="metal_dumpster" file="dumpster_bullet_02.wav" pitch_variety="0.4" volume="1.0" />              
+		<sound class="result" key="static_object" copy="terrain" />
+
+    </projectile>
+
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 
+ 
+</weapon>
+
+</weapons>

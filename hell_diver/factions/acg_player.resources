@@ -46,6 +46,10 @@
     <weapon key="re_acg_laisha_southern_cross.weapon" /> <!--莱莎 法杖-->
     <weapon key="re_acg_laisha_milky_way.weapon" /> <!--莱莎 法杖-->
 
+    <weapon key="acg_elaina_wand.weapon" enabled="0"/> <!--伊蕾娜 法杖-->
+    <weapon key="re_acg_elaina_wand.weapon" /> <!--伊蕾娜 法杖-->
+    <weapon key="re_acg_elaina_wand_laser.weapon" /> <!--伊蕾娜 法杖-->
+    <weapon key="re_acg_elaina_wand_cyclone.weapon" /> <!--伊蕾娜 法杖-->
     <!-- MK4 Unsold-->
     <weapon key="acg_incomparable.weapon" enabled="0"/> <!--无比-->
     <weapon key="re_acg_incomparable.weapon" /> <!--无比-->
@@ -96,6 +100,10 @@
     <weapon key="acg_shinano.weapon" enabled="0"/><!--信浓-->
     <weapon key="re_acg_shinano.weapon" /><!--信浓-->
     <weapon key="re_acg_shinano_skill.weapon" /><!--信浓-->
+
+    <weapon key="acg_yileina_wand.weapon" enabled="0"/><!--伊蕾娜-->
+    <weapon key="re_acg_yileina_wand.weapon" /><!--伊蕾娜-->
+    <weapon key="re_acg_yileina_wand_rain.weapon" /><!--伊蕾娜-->
     <!-- MK3 Unsold-->
     <weapon key="acg_takanashi_hoshino.weapon" enabled="0"/> <!--小鸟游星野-->
     <weapon key="re_acg_takanashi_hoshino.weapon" /> <!--小鸟游星野-->
@@ -198,8 +206,25 @@
     <weapon key="acg_mg3.weapon" /><!--mg3-->
     <weapon key="re_acg_mg3.weapon" /><!--mg3-->
 
+    <weapon key="ex_psc_srs99.weapon" /><!--SRS99-->
+    <weapon key="re_ex_psc_srs99.weapon" /><!--SRS99-->
+
+    <weapon key="ex_psc_arc920.weapon" /><!--ARC920-->
+    <weapon key="re_ex_psc_arc920.weapon" /><!--ARC920-->
+
+    <weapon key="ex_exp_m41_spnkr.weapon"/><!--M41 火箭筒-->
+    <weapon key="re_ex_exp_m41_spnkr.weapon" /><!--M41 火箭筒-->
+
+    <weapon key="ex_side_m6g_magnum.weapon" /><!--M6系列 手枪-->
+    <weapon key="re_ex_side_m6g_magnum.weapon" /><!--M6系列 手枪-->
+    <weapon key="re_ex_side_m6t_magnum.weapon" /><!--M6系列 手枪-->
+
     <weapon key="ex_firework.weapon" enabled="0"/><!--窜天猴-->
     <weapon key="re_ex_firework.weapon" /><!--窜天猴-->
+
+    <weapon key="ex_ra2_tanya.weapon" enabled="0"/><!--谭雅-->
+    <weapon key="re_ex_ra2_tanya.weapon" /><!--谭雅-->
+    <weapon key="re_ex_ra2_tanya_c4.weapon" /><!--谭雅-->
 
 <!--投掷物/信标-->
     <projectile key="acg_ex_box.projectile" /><!--Ex 补给箱-->

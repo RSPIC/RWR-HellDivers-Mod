@@ -4,6 +4,7 @@
 file="hd_exp_mls4x_commando_base.weapon"
 key="hd_exp_mls4x_commando_mk3.weapon" 
 >
+
 	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
 	<capacity value="0" source="rank" source_value="0.0" />
 	<capacity value="8" source="rank" source_value="229.750" />
@@ -61,6 +62,33 @@ key="hd_exp_mls4x_commando_mk3.weapon"
 		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
 		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
 		
+    </projectile>
+</weapon>
+<weapon 
+file="hd_exp_mls4x_commando_base.weapon"
+key="hd_exp_mls4x_commando_track_mk3.weapon" 
+time_to_live_out_in_the_open="0"
+>
+	<specification 	
+	    retrigger_time="0.363" 
+		last_burst_retrigger_time="4.5"
+		name="MLS-4X Commando [Track]" 
+		class="4"
+		burst_shots="3"
+		magazine_size="-1"
+	/> 
+
+	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
+	<capacity value="1" source="rank" source_value="229.750" />
+
+	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
+    <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="48" can_be_detected_by_footmen="1" 
+	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0" name="MLS-4X Commando MK3" radius="0.6"> 
+	
+		<result class="notify_script" key="hd_exp_mls4x_commando_track_mk3" />
+   
+		<trigger class="time" time_to_live="0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
     </projectile>
 </weapon>
 </weapons>
