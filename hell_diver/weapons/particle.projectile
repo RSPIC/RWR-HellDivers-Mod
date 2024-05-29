@@ -19,6 +19,27 @@ class="grenade" name="" key="particle.projectile" slot="0" radius="0.15" pulldow
 	<!-- <result class="notify_script" key="upgrade" /> -->
 	<result class="blast" radius="5" damage="0" push="0.5" decal="0" character_state="none" faction_compare="not_equal" />
 	
+	<effect class="result" key="terrain" ref="elaina_wand_trail_leave" />
+    <effect class="result" key="terrain" ref="elaina_wand_result_magic_circle" />
+    <effect class="result" key="terrain" ref="elaina_wand_cyclone" />
+    <effect class="result" key="terrain" ref="elaina_wand_cyclone_base" />
+    <effect class="result" key="terrain" ref="elaina_wand_cyclone_terrain" />
+    <effect class="result" key="terrain" ref="elaina_wand_cyclone_up_smoke" />
+    <effect class="result" key="terrain" ref="elaina_wand_skill_thunder_guiding" />
+    <effect class="result" key="terrain" ref="elaina_wand_skill_center_light" />
+    <effect class="result" key="terrain" ref="elaina_wand_skill_anim_lighting" />
+    <effect class="result" key="terrain" ref="elaina_wand_skill_anim_lighting2" />
+    <effect class="result" key="terrain" ref="elaina_wand_skill_anim_lighting3" />
+    <effect class="result" key="terrain" ref="elaina_wand_skill_anim_lighting4" />
+    <effect class="result" key="terrain" ref="elaina_wand_skill_anim_lighting5" />
+    <effect class="result" key="terrain" ref="elaina_wand_shell_light" />
+    <effect class="result" key="terrain" ref="elaina_wand_laser_center_ball" />
+    <effect class="result" key="terrain" ref="elaina_wand_laser_center_rorate_ring" />
+    <effect class="result" key="terrain" ref="elaina_wand_laser_shrink_line" />
+    <effect class="result" key="terrain" ref="elaina_wand_laser_later_pre_line_side" />
+    <effect class="result" key="terrain" ref="elaina_wand_laser_later_pre_line_mod2" />
+    <effect class="result" key="terrain" ref="elaina_wand_laser_later_pre_line_mod2_addon" />
+
 	<effect class="result" key="terrain" ref="stun_mine_mk3_ring" lighting="0" post_processing="0"/>
 	<effect class="result" key="terrain" ref="stun_mine_mk3_center" lighting="0" post_processing="0"/>
 	<effect class="result" key="terrain" ref="stun_mine_mk3_ray" lighting="0" post_processing="0"/>
@@ -481,27 +502,6 @@ class="grenade" name="" key="particle.projectile" slot="0" radius="0.15" pulldow
         <effect class="result" key="terrain" ref="CyborgsSmokePropulsion" />
             
     <effect class="result" key="terrain" ref="DoubleFreedom_hit_ground_smoke" />
-    <effect class="result" key="terrain" ref="elaina_wand_trail_leave" />
-    
-    <effect class="result" key="terrain" ref="elaina_wand_result_magic_circle" />
-    <effect class="result" key="terrain" ref="elaina_wand_cyclone" />
-    <effect class="result" key="terrain" ref="elaina_wand_cyclone_base" />
-    <effect class="result" key="terrain" ref="elaina_wand_cyclone_terrain" />
-    <effect class="result" key="terrain" ref="elaina_wand_cyclone_up_smoke" />
-    <effect class="result" key="terrain" ref="elaina_wand_skill_thunder_guiding" />
-    <effect class="result" key="terrain" ref="elaina_wand_skill_center_light" />
-    <effect class="result" key="terrain" ref="elaina_wand_skill_anim_lighting" />
-    <effect class="result" key="terrain" ref="elaina_wand_skill_anim_lighting2" />
-    <effect class="result" key="terrain" ref="elaina_wand_skill_anim_lighting3" />
-    <effect class="result" key="terrain" ref="elaina_wand_skill_anim_lighting4" />
-    <effect class="result" key="terrain" ref="elaina_wand_skill_anim_lighting5" />
-    <effect class="result" key="terrain" ref="elaina_wand_shell_light" />
-    <effect class="result" key="terrain" ref="elaina_wand_laser_center_ball" />
-    <effect class="result" key="terrain" ref="elaina_wand_laser_center_rorate_ring" />
-    <effect class="result" key="terrain" ref="elaina_wand_laser_shrink_line" />
-    <effect class="result" key="terrain" ref="elaina_wand_laser_later_pre_line_side" />
-    <effect class="result" key="terrain" ref="elaina_wand_laser_later_pre_line_mod2" />
-    <effect class="result" key="terrain" ref="elaina_wand_laser_later_pre_line_mod2_addon" />
     <effect class="result" key="terrain" ref="fiammetta_hit_ground_anim_fire_01" />
     <effect class="result" key="terrain" ref="fiammetta_hit_ground_phoenix" />
     <effect class="result" key="terrain" ref="fiammetta_hit_ground_ring_01" />

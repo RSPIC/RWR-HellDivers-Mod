@@ -65,6 +65,7 @@
 #include "activity_manager.as"
 #include "upgrade.as"
 #include "hd_daily_mission.as"
+#include "server_status.as"
 
 // 独有脚本
 #include "kill_to_win.as"
