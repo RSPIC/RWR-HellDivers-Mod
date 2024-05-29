@@ -6,7 +6,7 @@ slot="1" pulldown_in_air="30.0"
 key="illum_robot_tank_damage.projectile"
 >
 	<collision class="sticky" />
-	<result class="blast" radius="3.0" damage="10" push="0.3" decal="0" character_state="stun"
+	<result class="blast" radius="3.0" damage="10" push="0.3" decal="0" character_state="wound"
 	damage_origin_vehicle="0" make_vehicle_hit_sound="0" faction_compare="not_equal"  />
 	<trigger class="time" time_to_live="0" />	
     <rotation class="motion" />

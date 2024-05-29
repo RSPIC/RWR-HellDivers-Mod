@@ -1,10 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <effects>
     <effect class="result" key="terrain" ref="22missile_trail" />
+    <effect class="result" key="terrain" ref="22missile_hit_smoke_ambient" />
+    <effect class="result" key="terrain" ref="22missile_hit_smoke_fire_smoke" />
     <effect class="result" key="terrain" ref="CIWS_updust" />
     <effect class="result" key="terrain" ref="401_disaster_hit_spread_partcile" />
     <effect class="result" key="terrain" ref="401_disaster_hit_center_light" />
     <effect class="result" key="terrain" ref="401_disaster_hit_firesmoke_01" />
+    <effect class="result" key="terrain" ref="401_disaster_hit_firesmoke_02" />
+    <effect class="result" key="terrain" ref="401_disaster_hit_firesmoke_03" />
     <effect class="result" key="terrain" ref="401_disaster_activated_trail" />
     <effect class="result" key="terrain" ref="rocket_launcher_mil" />
     <effect class="result" key="terrain" ref="rocket_launcher_muzzle_behind_smoke" />
@@ -16,6 +20,7 @@
     <effect class="result" key="terrain" ref="rocket_launcher_blast_smoke_03" />
     <effect class="result" key="terrain" ref="miyu_hit" />
     <effect class="result" key="terrain" ref="ac_muzzle_knife_ahead" />
+    <effect class="result" key="terrain" ref="ac_muzzle_knife_ahead_2" />
     <effect class="result" key="terrain" ref="ac_muzzle_activated_spark" />
     <effect class="result" key="terrain" ref="ac_result_cannon_blast_smoke" />
     <effect class="result" key="terrain" ref="ac_result_cannon_blast_AmbientLight" />
@@ -23,22 +28,48 @@
     <effect class="result" key="terrain" ref="alert_expand_ring" />
     <effect class="result" key="terrain" ref="alert_expand_ring_smallarea" />
     <effect class="result" key="terrain" ref="alert_center_alerticon_hight_frequncy" />
+    <effect class="result" key="terrain" ref="alert_center_alerticon_hight_frequncy_smaller" />
     <effect class="result" key="terrain" ref="alert_center_alerticon" />
     <effect class="result" key="terrain" ref="alert_center_redlight" />
+    <effect class="result" key="terrain" ref="alert_center_yellowlight" />
+    <effect class="result" key="terrain" ref="alert_center_bluelight" />
+    <effect class="result" key="terrain" ref="alert_center_purplelight" />
+    <effect class="result" key="terrain" ref="alert_center_greenlight" />
     <effect class="result" key="terrain" ref="ba_alice_activated_light" />
     <effect class="result" key="terrain" ref="ba_alice_muzzle_fire" />
     <effect class="result" key="terrain" ref="ba_alice_muzzle_smoke" />
     <effect class="result" key="terrain" ref="ba_alice_result_light" />
+    <effect class="result" key="terrain" ref="ba_alice_result_light2" />
     <effect class="result" key="terrain" ref="ba_alice_result_impact" />
+    <effect class="result" key="terrain" ref="ba_alice_result_impact2" />
     <effect class="result" key="terrain" ref="ba_alice_result_smoke" />
+    <effect class="result" key="terrain" ref="ba_alice_result_smoke2" />
+    <effect class="result" key="terrain" ref="ba_alice_muzzle_pre_red_laser" />
+    <effect class="result" key="terrain" ref="ba_alice_muzzle_environment_light" />
+    <effect class="result" key="terrain" ref="ba_alice_muzzle_ring_01" />
+    <effect class="result" key="terrain" ref="ba_alice_muzzle_ring_02" />
+    <effect class="result" key="terrain" ref="ba_alice_muzzle_ring_03" />
+    <effect class="result" key="terrain" ref="ba_alice_muzzle_ring_04" />
+    <effect class="result" key="terrain" ref="ba_alice_muzzle_ring_05" />
     <effect class="result" key="terrain" ref="ba_alice_muzzle_fire_anim" />
+    <effect class="result" key="terrain" ref="ba_alice_muzzle_yellow_light" />
+    <effect class="result" key="terrain" ref="ring_spread_smoke_apocalypse_tank" />
+    <effect class="result" key="terrain" ref="ring_spread_fog_apocalypse_tank" />
+    <effect class="result" key="terrain" ref="vertical_smoke_apocalypse_tank" />
+    <effect class="result" key="terrain" ref="flat_spark_thunder_apocalypse_tank_01" />
+    <effect class="result" key="terrain" ref="flat_spark_thunder_apocalypse_tank_02" />
+    <effect class="result" key="terrain" ref="flat_spark_thunder_apocalypse_tank_03" />
     <effect class="result" key="terrain" ref="Arc_result_strike_thunder" />
     <effect class="result" key="terrain" ref="Arc_result_strike_thunder_2" />
     <effect class="result" key="terrain" ref="Arc_activated_InArea_thunder" />
+    <effect class="result" key="terrain" ref="Arc_activated_InArea_thunder_2" />
     <effect class="result" key="terrain" ref="Arc_activated_center_light" />
     <effect class="result" key="terrain" ref="Arc_activated_box_point" />
+    <effect class="result" key="terrain" ref="Arc_result_box_point" />
+    <effect class="result" key="terrain" ref="Arc_ar_result_box_point" />
     <effect class="result" key="terrain" ref="Arc_muzzle_thunder_01" />
     <effect class="result" key="terrain" ref="Arc_muzzle_thunder_02" />
+    <effect class="result" key="terrain" ref="Tesla_muzzle_thunder_02" />
     <effect class="result" key="terrain" ref="Arc_ar_activated_thunder" />
     <effect class="result" key="terrain" ref="Arc_ar_result_hit" />
     <effect class="result" key="terrain" ref="Arc_tesla_result_area_lighting" />
@@ -51,14 +82,21 @@
     <effect class="result" key="terrain" ref="ifrit_muzzle_fire_drop" />
     <effect class="result" key="terrain" ref="ifrit_result_ground_lava" />
     <effect class="result" key="terrain" ref="general_result_ground_fire" />
+    <effect class="result" key="terrain" ref="general_result_ground_fire_2" />
+    <effect class="result" key="terrain" ref="general_result_ground_fire_3" />
+    <effect class="result" key="terrain" ref="general_result_ground_fire_4" />
     <effect class="result" key="terrain" ref="ba_general_muzzle_fire" />
     <effect class="result" key="terrain" ref="ba_general_hit" />
     <effect class="result" key="terrain" ref="ba_mutsuki_impact_circle" />
     <effect class="result" key="terrain" ref="ba_mutsuki_result_impact_flame_1" />
+    <effect class="result" key="terrain" ref="ba_mutsuki_firesmoke_1" />
     <effect class="result" key="terrain" ref="ba_mutsuki_firesmoke_2" />
     <effect class="result" key="terrain" ref="ba_mutsuki_smoke_1" />
+    <effect class="result" key="terrain" ref="ba_mutsuki_smoke_2" />
     <effect class="result" key="terrain" ref="ba_mutsuki_ground_crater" />
     <effect class="result" key="terrain" ref="at_mine_hit_firesmoke_01" />
+    <effect class="result" key="terrain" ref="at_mine_hit_firesmoke_02" />
+    <effect class="result" key="terrain" ref="at_mine_hit_firesmoke_03" />
     <effect class="result" key="terrain" ref="at_mine_ambient_red_light" />
     <effect class="result" key="terrain" ref="ba_crusader_muzzle_ring_center" />
     <effect class="result" key="terrain" ref="ba_crusader_muzzle_light" />
@@ -70,8 +108,10 @@
     <effect class="result" key="terrain" ref="ba_crusader_result_ground_ring" />
     <effect class="result" key="terrain" ref="ba_crusader_result_ground_ring_light" />
     <effect class="result" key="terrain" ref="ba_crusader_result_impact" />
+    <effect class="result" key="terrain" ref="ba_crusader_result_impact_light" />
     <effect class="result" key="terrain" ref="ba_crusader_result_impact_leave" />
     <effect class="result" key="terrain" ref="ba_crusader_result_impact_side_ring_1" />
+    <effect class="result" key="terrain" ref="ba_crusader_result_impact_side_ring_2" />
     <effect class="result" key="terrain" ref="ba_tiger_muzzle_ring_center" />
     <effect class="result" key="terrain" ref="ba_tiger_muzzle_light" />
     <effect class="result" key="terrain" ref="ba_tiger_muzzle_spark" />
@@ -82,14 +122,19 @@
     <effect class="result" key="terrain" ref="ba_tiger_result_ground_ring" />
     <effect class="result" key="terrain" ref="ba_tiger_result_ground_ring_light" />
     <effect class="result" key="terrain" ref="ba_tiger_result_impact" />
+    <effect class="result" key="terrain" ref="ba_tiger_result_impact_light" />
     <effect class="result" key="terrain" ref="ba_tiger_result_impact_leave" />
     <effect class="result" key="terrain" ref="ba_tiger_result_impact_side_ring_1" />
+    <effect class="result" key="terrain" ref="ba_tiger_result_impact_side_ring_2" />
     <effect class="result" key="terrain" ref="401_thbow_muzzle_smoke" />
     <effect class="result" key="terrain" ref="401_thbow_muzzle_ring" />
     <effect class="result" key="terrain" ref="401_thbow_activated_trail" />
     <effect class="result" key="terrain" ref="401_thbow_tracking_thunder" />
     <effect class="result" key="terrain" ref="401_thbow_tracking_line_inBox" />
     <effect class="result" key="terrain" ref="401_thbow_surrounding_thunder" />
+    <effect class="result" key="terrain" ref="401_thbow_surrounding_thunder_2" />
+    <effect class="result" key="terrain" ref="401_thbow_surrounding_thunder_3" />
+    <effect class="result" key="terrain" ref="401_thbow_surrounding_thunder_4" />
     <effect class="result" key="terrain" ref="401_thbow_spread_ring" />
     <effect class="result" key="terrain" ref="401_thbow_impact" />
     <effect class="result" key="terrain" ref="401_thbow_impact_vertical" />
@@ -97,6 +142,10 @@
     <effect class="result" key="terrain" ref="401_thbow_activated_thunder" />
     <effect class="result" key="terrain" ref="401_vabow_muzzle_smoke" />
     <effect class="result" key="terrain" ref="401_vabow_muzzle_ring" />
+    <effect class="result" key="terrain" ref="401_vabow_random_spot_01" />
+    <effect class="result" key="terrain" ref="401_vabow_random_spot_02" />
+    <effect class="result" key="terrain" ref="401_vabow_random_spot_03" />
+    <effect class="result" key="terrain" ref="401_vabow_random_spot_04" />
     <effect class="result" key="terrain" ref="401_vabow_ring_spread_spot" />
     <effect class="result" key="terrain" ref="401_vabow_hit_dark_tear" />
     <effect class="result" key="terrain" ref="401_vabow_hit_dark_ball" />
@@ -104,7 +153,15 @@
     <effect class="result" key="terrain" ref="401_vabow_hit_center_thudner" />
     <effect class="result" key="terrain" ref="401_vabow_hit_center_shrink" />
     <effect class="result" key="terrain" ref="401_vabow_activated_spot" />
+    <effect class="result" key="terrain" ref="bronya_01" />
+    <effect class="result" key="terrain" ref="bronya_02" />
+    <effect class="result" key="terrain" ref="bronya_center_emissive" />
+    <effect class="result" key="terrain" ref="bronya_surrounding_word_01" />
+    <effect class="result" key="terrain" ref="bronya_surrounding_word_02" />
+    <effect class="result" key="terrain" ref="bronya_surrounding_word_03" />
+    <effect class="result" key="terrain" ref="bronya_surrounding_word_04" />
     <effect class="result" key="terrain" ref="bronya_ambient_decoration_01" />
+    <effect class="result" key="terrain" ref="bronya_ambient_decoration_02" />
     <effect class="result" key="terrain" ref="bronya_linear_light" />
     <effect class="result" key="terrain" ref="bronya_impact_circle" />
     <effect class="result" key="terrain" ref="bronya_activated_trail" />
@@ -114,24 +171,44 @@
     <effect class="result" key="terrain" ref="bronya_activated_trailstar" />
     <effect class="result" key="terrain" ref="bronya_muzzle_trail" />
     <effect class="result" key="terrain" ref="bugs_spawn_at_ground_smoke" />
+    <effect class="result" key="terrain" ref="bugs_spawn_at_ground_smoke_leave" />
     <effect class="result" key="terrain" ref="bugs_spawn_at_ground_dust" />
     <effect class="result" key="terrain" ref="bugs_spawn_at_ground_up_dust_1" />
+    <effect class="result" key="terrain" ref="bugs_spawn_at_ground_up_dust_2" />
+    <effect class="result" key="terrain" ref="bugs_spawn_at_ground_up_dust_3" />
     <effect class="result" key="terrain" ref="bugs_spitter_splash" />
     <effect class="result" key="terrain" ref="bugs_spitter_splash_tox" />
+    <effect class="result" key="terrain" ref="bugs_spitter_splash_expand" />
     <effect class="result" key="terrain" ref="bugs_spitter_splash_single_damage" />
+    <effect class="result" key="terrain" ref="bugs_spitter_splash_single_damage2" />
+    <effect class="result" key="terrain" ref="bugs_spitter_splash_single_damage3" />
     <effect class="result" key="terrain" ref="bugs_spitter_splash_single_activated" />
+    <effect class="result" key="terrain" ref="bugs_spitter_splash_single_activated2" />
     <effect class="result" key="terrain" ref="bugs_behemoth_muzzle_side_dust" />
+    <effect class="result" key="terrain" ref="bugs_behemoth_muzzle_side_dust2" />
     <effect class="result" key="terrain" ref="bugs_behemoth_muzzle_forward_updust" />
     <effect class="result" key="terrain" ref="bugs_behemoth_activated_forward_updust" />
     <effect class="result" key="terrain" ref="bugs_behemoth_result_impact_cracks" />
+    <effect class="result" key="terrain" ref="bugs_behemoth_result_impact_cracks_small" />
     <effect class="result" key="terrain" ref="bugs_behemoth_result_up_dust1" />
+    <effect class="result" key="terrain" ref="bugs_behemoth_result_up_dust2" />
+    <effect class="result" key="terrain" ref="bugs_behemoth_result_up_dust3" />
+    <effect class="result" key="terrain" ref="bugs_behemoth_result_up_dust4" />
+    <effect class="result" key="terrain" ref="bugs_behemoth_result_ambient_smoke" />
+    <effect class="result" key="terrain" ref="bugs_behemoth_result_ambient_smoke_small" />
     <effect class="result" key="terrain" ref="bugs_impaler_result_sharp_rock_still" />
+    <effect class="result" key="terrain" ref="bugs_impaler_result_sharp_rock_up" />
     <effect class="result" key="terrain" ref="bugs_impaler_result_side_dust" />
     <effect class="result" key="terrain" ref="bugs_zerg_egg_blast" />
     <effect class="result" key="terrain" ref="bugs_zerg_egg_blast_pst" />
     <effect class="result" key="terrain" ref="zerg_baneling_dead_thunder" />
     <effect class="result" key="terrain" ref="zerg_baneling_impact" />
     <effect class="result" key="terrain" ref="zerg_baneling_spread_ring" />
+    <effect class="result" key="terrain" ref="call_deny_distance" />
+    <effect class="result" key="terrain" ref="call_deny_cooldown" />
+    <effect class="result" key="terrain" ref="call_deny_right" />
+    <effect class="result" key="terrain" ref="call_deny_target" />
+    <effect class="result" key="terrain" ref="call_deny_useless" />
     <effect class="result" key="terrain" ref="ui_stage_1" />
     <effect class="result" key="terrain" ref="ui_stage_2" />
     <effect class="result" key="terrain" ref="ui_stage_3" />
@@ -146,17 +223,40 @@
     <effect class="result" key="terrain" ref="car_prism_surrounding_thunder" />
     <effect class="result" key="terrain" ref="car_tesla_surrounding_thunder" />
     <effect class="result" key="terrain" ref="car_pod_impact_leave_dirt" />
+    <effect class="result" key="terrain" ref="car_pod_impact_leave_dirt2" />
+    <effect class="result" key="terrain" ref="car_pod_impact_leave_dirt3" />
     <effect class="result" key="terrain" ref="car_surrounding_ring_point" />
     <effect class="result" key="terrain" ref="car_destroyed_up_smoke" />
     <effect class="result" key="terrain" ref="car_destroyed_fire" />
     <effect class="result" key="terrain" ref="car_broken_spary_spark" />
     <effect class="result" key="terrain" ref="car_recycle_working" />
+    <effect class="result" key="terrain" ref="car_deny_distance" />
+    <effect class="result" key="terrain" ref="car_recycle_deny" />
+    <effect class="result" key="terrain" ref="car_repair_deny" />
+    <effect class="result" key="terrain" ref="car_recycle_failed" />
     <effect class="result" key="terrain" ref="missile_result_cannon_blast_fire" />
     <effect class="result" key="terrain" ref="missile_result_cannon_blast_AmbientLight" />
     <effect class="result" key="terrain" ref="missile_activated_cannon_flysmoke" />
+    <effect class="result" key="terrain" ref="missile_activated_cannon_flysmoke_larger" />
+    <effect class="result" key="terrain" ref="missile_activated_cannon_flysmoke_smaller" />
     <effect class="result" key="terrain" ref="missile_result_expanding_fire" />
     <effect class="result" key="terrain" ref="projection_console_table" />
     <effect class="result" key="terrain" ref="cd_1s_0" />
+    <effect class="result" key="terrain" ref="cd_1s_1" />
+    <effect class="result" key="terrain" ref="cd_1s_2" />
+    <effect class="result" key="terrain" ref="cd_1s_3" />
+    <effect class="result" key="terrain" ref="cd_1s_4" />
+    <effect class="result" key="terrain" ref="cd_1s_5" />
+    <effect class="result" key="terrain" ref="cd_1s_6" />
+    <effect class="result" key="terrain" ref="cd_1s_7" />
+    <effect class="result" key="terrain" ref="cd_1s_8" />
+    <effect class="result" key="terrain" ref="cd_1s_9" />
+    <effect class="result" key="terrain" ref="cyborgs_activated_alert_SignalBomb_center" />
+    <effect class="result" key="terrain" ref="cyborgs_result_alert_SignalBomb_center" />
+    <effect class="result" key="terrain" ref="cyborgs_activated_alert_SignalBomb_center_2" />
+    <effect class="result" key="terrain" ref="cyborgs_result_alert_SignalBomb_spray_spark" />
+    <effect class="result" key="terrain" ref="cyborgs_activated_gl_shining_center" />
+    <effect class="result" key="terrain" ref="cyborgs_activated_gl_shining_center_2" />
     <effect class="result" key="terrain" ref="cyborgs_activated_flamethrower_01" />
     <effect class="result" key="terrain" ref="cyborgs_result_cannon_blast_AmbientLight" />
     <effect class="result" key="terrain" ref="cyborgs_result_cannon_blast_smoke" />
@@ -165,6 +265,7 @@
     <effect class="result" key="terrain" ref="cyborgs_activated_cannon_flysmoke" />
     <effect class="result" key="terrain" ref="CyborgsSmokePropulsion" />
     <effect class="result" key="terrain" ref="DoubleFreedom_activated_01" />
+    <effect class="result" key="terrain" ref="DoubleFreedom_activated_02" />
     <effect class="result" key="terrain" ref="DoubleFreedom_muzzle" />
     <effect class="result" key="terrain" ref="DoubleFreedom_hit_ground_smoke" />
     <effect class="result" key="terrain" ref="elaina_wand_trail_leave" />
@@ -177,6 +278,10 @@
     <effect class="result" key="terrain" ref="elaina_wand_skill_thunder_guiding" />
     <effect class="result" key="terrain" ref="elaina_wand_skill_center_light" />
     <effect class="result" key="terrain" ref="elaina_wand_skill_anim_lighting" />
+    <effect class="result" key="terrain" ref="elaina_wand_skill_anim_lighting2" />
+    <effect class="result" key="terrain" ref="elaina_wand_skill_anim_lighting3" />
+    <effect class="result" key="terrain" ref="elaina_wand_skill_anim_lighting4" />
+    <effect class="result" key="terrain" ref="elaina_wand_skill_anim_lighting5" />
     <effect class="result" key="terrain" ref="elaina_wand_shell_light" />
     <effect class="result" key="terrain" ref="elaina_wand_laser_center_ball" />
     <effect class="result" key="terrain" ref="elaina_wand_laser_center_rorate_ring" />
@@ -185,20 +290,34 @@
     <effect class="result" key="terrain" ref="elaina_wand_laser_later_pre_line_mod2" />
     <effect class="result" key="terrain" ref="elaina_wand_laser_later_pre_line_mod2_addon" />
     <effect class="result" key="terrain" ref="hd_emoticon_good" />
+    <effect class="result" key="terrain" ref="hd_emoticon_sorry" />
+    <effect class="result" key="terrain" ref="hd_emoticon_le" />
+    <effect class="result" key="terrain" ref="hd_emoticon_heart" />
+    <effect class="result" key="terrain" ref="hd_emoticon_armor" />
     <effect class="result" key="terrain" ref="hd_emoticon_heal" />
     <effect class="result" key="terrain" ref="fiammetta_hit_ground_anim_fire_01" />
     <effect class="result" key="terrain" ref="fiammetta_hit_ground_phoenix" />
+    <effect class="result" key="terrain" ref="fiammetta_hit_ground_ring_01" />
+    <effect class="result" key="terrain" ref="fiammetta_hit_ground_ring_02" />
+    <effect class="result" key="terrain" ref="fiammetta_hit_ground_ring_03" />
     <effect class="result" key="terrain" ref="fiammetta_hit_ground_smoke_01" />
+    <effect class="result" key="terrain" ref="fiammetta_hit_ground_spread_linear_light_01" />
+    <effect class="result" key="terrain" ref="fiammetta_hit_ground_spread_spot_light_01" />
+    <effect class="result" key="terrain" ref="fiammetta_muzzle_ring" />
+    <effect class="result" key="terrain" ref="fiammetta_muzzle_anim_fire" />
+    <effect class="result" key="terrain" ref="fiammetta_activated_trail_01" />
     <effect class="result" key="terrain" ref="flak36_muzzle_behind_smoke" />
     <effect class="result" key="terrain" ref="flak36_muzzle_spread_smoke" />
     <effect class="result" key="terrain" ref="flak36_muzzle_front_smoke" />
     <effect class="result" key="terrain" ref="flak36_muzzle_fire_light_01" />
+    <effect class="result" key="terrain" ref="flak36_muzzle_fire_light_02" />
     <effect class="result" key="terrain" ref="flak36_hit_smoke_dark_smoke" />
     <effect class="result" key="terrain" ref="flak36_hit_smoke_explosion_smoke" />
     <effect class="result" key="terrain" ref="flak36_hit_linear_light" />
     <effect class="result" key="terrain" ref="flak36_hit_cross_blast" />
     <effect class="result" key="terrain" ref="flak36_activated_trail_smoke" />
     <effect class="result" key="terrain" ref="funnelnet_muzzle_01" />
+    <effect class="result" key="terrain" ref="funnelnet_muzzle_02" />
     <effect class="result" key="terrain" ref="funnelnet_muzzle_smoke" />
     <effect class="result" key="terrain" ref="funnelnet_muzzle_fire" />
     <effect class="result" key="terrain" ref="g41_gl_thunder_01" />
@@ -210,38 +329,87 @@
     <effect class="result" key="terrain" ref="g41_gl_area_light_01" />
     <effect class="result" key="terrain" ref="g41_gl_impact_1" />
     <effect class="result" key="terrain" ref="g41_gl_spray_impact" />
+    <effect class="result" key="terrain" ref="g41_transparent_center_point_light" />
+    <effect class="result" key="terrain" ref="g41_spray_square_01" />
+    <effect class="result" key="terrain" ref="g41_spray_square_02" />
+    <effect class="result" key="terrain" ref="g41_spray_square_03" />
+    <effect class="result" key="terrain" ref="g41_spray_square_04" />
+    <effect class="result" key="terrain" ref="g41_center_circle_01" />
+    <effect class="result" key="terrain" ref="g41_center_circle_02" />
+    <effect class="result" key="terrain" ref="g41_center_circle_03" />
+    <effect class="result" key="terrain" ref="g41_center_circle_04" />
+    <effect class="result" key="terrain" ref="g41_linear_rectangle_01" />
+    <effect class="result" key="terrain" ref="g41_linear_rectangle_02" />
+    <effect class="result" key="terrain" ref="g41_muzzle_pre_red_laser" />
+    <effect class="result" key="terrain" ref="g41_muzzle_environment_light" />
+    <effect class="result" key="terrain" ref="g41_muzzle_ring_01" />
+    <effect class="result" key="terrain" ref="g41_muzzle_ring_02" />
+    <effect class="result" key="terrain" ref="g41_muzzle_ring_03" />
+    <effect class="result" key="terrain" ref="g41_muzzle_ring_04" />
+    <effect class="result" key="terrain" ref="g41_muzzle_ring_05" />
+    <effect class="result" key="terrain" ref="g41_muzzle_square" />
+    <effect class="result" key="terrain" ref="g41_muzzle_yellow_light" />
     <effect class="result" key="terrain" ref="g41_laser_space_muzzle_white" />
     <effect class="result" key="terrain" ref="g41_laser_space_muzzle_blue" />
     <effect class="result" key="terrain" ref="g41_laser_space_muzzle_double_laser" />
+    <effect class="result" key="terrain" ref="g41_laser_space_muzzle_double_laser_s" />
     <effect class="result" key="terrain" ref="g41_laser_space_muzzle_double_laser_ambient" />
+    <effect class="result" key="terrain" ref="g41_laser_space_muzzle_double_laser_ambient_s" />
     <effect class="result" key="terrain" ref="g41_laser_space_muzzle_light" />
+    <effect class="result" key="terrain" ref="g41_laser_space_muzzle_light_s" />
     <effect class="result" key="terrain" ref="g41_laser_space_muzzle_double_laser_concentrate" />
+    <effect class="result" key="terrain" ref="g41_laser_space_muzzle_double_laser_concentrate_s" />
     <effect class="result" key="terrain" ref="g41_laser_space_muzzle_double_laser_dark_particle" />
     <effect class="result" key="terrain" ref="g41_laser_space_result" />
     <effect class="result" key="terrain" ref="general_weapon_muzzle_crossfire" />
     <effect class="result" key="terrain" ref="general_weapon_muzzle_crossfire_base" />
+    <effect class="result" key="terrain" ref="general_weapon_muzzle_crossfire_2" />
+    <effect class="result" key="terrain" ref="general_weapon_muzzle_crossfire_4" />
+    <effect class="result" key="terrain" ref="general_weapon_muzzle_crossfire_5" />
+    <effect class="result" key="terrain" ref="general_weapon_muzzle_crossfire_6" />
+    <effect class="result" key="terrain" ref="general_weapon_muzzle_crossfire_7" />
+    <effect class="result" key="terrain" ref="general_weapon_muzzle_crossfire_lightblue" />
+    <effect class="result" key="terrain" ref="general_weapon_muzzle_crossfire_lightpurple" />
+    <effect class="result" key="terrain" ref="general_weapon_muzzle_crossfire_smaller" />
+    <effect class="result" key="terrain" ref="general_weapon_muzzle_crossfire_smoke" />
+    <effect class="result" key="terrain" ref="general_weapon_muzzle_crossfire_smoke_sg" />
     <effect class="result" key="terrain" ref="general_weapon_result_hitspot" />
     <effect class="result" key="terrain" ref="general_weapon_result_cartoon_spark" />
     <effect class="result" key="terrain" ref="general_weapon_result_laser_burn" />
+    <effect class="result" key="terrain" ref="general_weapon_result_laser_burn_big" />
     <effect class="result" key="terrain" ref="general_weapon_muzzle_star" />
     <effect class="result" key="terrain" ref="general_weapon_muzzle_laser_short" />
+    <effect class="result" key="terrain" ref="general_weapon_muzzle_laser_long" />
+    <effect class="result" key="terrain" ref="general_weapon_muzzle_lava_long" />
     <effect class="result" key="terrain" ref="general_weapon_muzzle_laser_continuous" />
     <effect class="result" key="terrain" ref="general_weapon_muzzle_laser_release_pressure" />
     <effect class="result" key="terrain" ref="general_weapon_result_light" />
     <effect class="result" key="terrain" ref="general_weapon_result_smoke" />
     <effect class="result" key="terrain" ref="general_weapon_result_smoke_shorttime" />
     <effect class="result" key="terrain" ref="general_weapon_activated_bullet_light" />
+    <effect class="result" key="terrain" ref="general_weapon_activated_bullet_light_smaller" />
     <effect class="result" key="terrain" ref="general_weapon_muzzle_trail_smoke" />
     <effect class="result" key="terrain" ref="general_weapon_muzzle_trail_smoke_red" />
     <effect class="result" key="terrain" ref="general_weapon_muzzle_trail_smoke_long" />
     <effect class="result" key="terrain" ref="general_weapon_activated_bullet_centerlight" />
     <effect class="result" key="terrain" ref="general_weapon_muzzle_bullet_triangle_headon" />
     <effect class="result" key="terrain" ref="general_weapon_result_gl_firesmoke_01" />
+    <effect class="result" key="terrain" ref="general_weapon_result_gl_firesmoke_02" />
+    <effect class="result" key="terrain" ref="general_weapon_result_gl_firesmoke_03" />
     <effect class="result" key="terrain" ref="general_weapon_result_gl_red_light" />
     <effect class="result" key="terrain" ref="general_weapon_result_gl_spray" />
+    <effect class="result" key="terrain" ref="general_weapon_activated_flying_mars" />
+    <effect class="result" key="terrain" ref="general_weapon_activated_flying_mars_lightblue" />
+    <effect class="result" key="terrain" ref="general_weapon_activated_rotating_circle" />
+    <effect class="result" key="terrain" ref="general_weapon_activated_tri_point" />
+    <effect class="result" key="terrain" ref="general_weapon_activated_shrink_triangle" />
+    <effect class="result" key="terrain" ref="general_weapon_activated_ring_cyclone" />
+    <effect class="result" key="terrain" ref="general_weapon_result_blast_smoke_expanding" />
     <effect class="result" key="terrain" ref="general_weapon_result_blast_smoke" />
     <effect class="result" key="terrain" ref="general_weapon_result_blast_ring" />
+    <effect class="result" key="terrain" ref="general_weapon_result_blast_ring_2" />
     <effect class="result" key="terrain" ref="general_weapon_result_blast_spray_1" />
+    <effect class="result" key="terrain" ref="general_weapon_result_blast_spray_2" />
     <effect class="result" key="terrain" ref="general_weapon_result_blast_fire" />
     <effect class="result" key="terrain" ref="general_weapon_result_blast_fire_wave" />
     <effect class="result" key="terrain" ref="general_activated_at_smoke_trail" />
@@ -250,9 +418,22 @@
     <effect class="result" key="terrain" ref="general_muzzle_cannon_fire_light" />
     <effect class="result" key="terrain" ref="general_muzzle_cannon_fire_smoke" />
     <effect class="result" key="terrain" ref="general_result_smg_stun" />
+    <effect class="result" key="terrain" ref="general_helldiver_dead_1" />
+    <effect class="result" key="terrain" ref="general_helldiver_dead_2" />
+    <effect class="result" key="terrain" ref="general_hit_character_cross_2" />
+    <effect class="result" key="terrain" ref="general_hit_character_cross_1" />
     <effect class="result" key="terrain" ref="hd_vehicle_weapon_laser" />
     <effect class="result" key="terrain" ref="general_result_shield_hit_1" />
+    <effect class="result" key="terrain" ref="general_result_shield_hit_2" />
+    <effect class="result" key="terrain" ref="general_fire_aim_mark_1" />
+    <effect class="result" key="terrain" ref="general_fire_aim_mark_1B" />
+    <effect class="result" key="terrain" ref="general_fire_aim_mark_1_long" />
+    <effect class="result" key="terrain" ref="general_fire_aim_mark_2" />
+    <effect class="result" key="terrain" ref="general_fire_aim_mark_2B" />
+    <effect class="result" key="terrain" ref="general_fire_aim_mark_2_long" />
     <effect class="result" key="terrain" ref="position_measure_dot" />
+    <effect class="result" key="terrain" ref="position_measure_dotred" />
+    <effect class="result" key="terrain" ref="position_measure_dotyellow" />
     <effect class="result" key="terrain" ref="general_item_drop_mark" />
     <effect class="result" key="terrain" ref="general_muzzle_lava" />
     <effect class="result" key="terrain" ref="hk416_sc_hit_01" />
@@ -262,22 +443,41 @@
     <effect class="result" key="terrain" ref="hk416_sc_muzzle_flare" />
     <effect class="result" key="terrain" ref="hk416_sc_activated" />
     <effect class="result" key="terrain" ref="hk416_sc_gl_hit_smoke_01" />
+    <effect class="result" key="terrain" ref="hk416_sc_gl_hit_smoke_02" />
+    <effect class="result" key="terrain" ref="hk416_sc_gl_hit_smoke_03" />
+    <effect class="result" key="terrain" ref="hk416_sc_gl_hit_smoke_04" />
     <effect class="result" key="terrain" ref="hk416_sc_gl_hit_smoke_05" />
     <effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke" />
+    <effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_leave" />
     <effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_faster" />
+    <effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_leave_faster" />
     <effect class="result" key="terrain" ref="hd_mg94_activated_bullet_light" />
     <effect class="result" key="terrain" ref="hd_mg94_activated_bullet_light_center" />
+    <effect class="result" key="terrain" ref="hd_mg94_result_bullet_light_center" />
+    <effect class="result" key="terrain" ref="hd_mg94_result_bullet_smoke" />
     <effect class="result" key="terrain" ref="hd_mg94_hit_leave" />
     <effect class="result" key="terrain" ref="hd_mg94_activated_bullet_light_center_yellow" />
     <effect class="result" key="terrain" ref="hd_mg94_activated_bullet_ground_light" />
     <effect class="result" key="terrain" ref="hd_mg94_result_spray" />
     <effect class="result" key="terrain" ref="hd_mg94_laser" />
     <effect class="result" key="terrain" ref="hongxue_muzzle_ring" />
+    <effect class="result" key="terrain" ref="hongxue_hit_ring_01" />
+    <effect class="result" key="terrain" ref="hongxue_hit_ring_mod2_01" />
+    <effect class="result" key="terrain" ref="hongxue_hit_ring_02" />
+    <effect class="result" key="terrain" ref="hongxue_hit_ring_mod2_02" />
     <effect class="result" key="terrain" ref="hongxue_muzzle_center" />
+    <effect class="result" key="terrain" ref="hongxue_hit_center" />
+    <effect class="result" key="terrain" ref="hongxue_hit_center_mod2" />
+    <effect class="result" key="terrain" ref="hongxue_muzzle_center_red" />
+    <effect class="result" key="terrain" ref="hongxue_hit_center_red" />
+    <effect class="result" key="terrain" ref="hongxue_hit_center_red_mod2" />
     <effect class="result" key="terrain" ref="hongxue_muzzle_impact_01" />
     <effect class="result" key="terrain" ref="hongxue_muzzle_impact_02" />
     <effect class="result" key="terrain" ref="hongxue_muzzle_flower_01" />
+    <effect class="result" key="terrain" ref="hongxue_muzzle_flower_02" />
+    <effect class="result" key="terrain" ref="hongxue_muzzle_flower_03" />
     <effect class="result" key="terrain" ref="hongxue_hit_blast" />
+    <effect class="result" key="terrain" ref="hongxue_hit_blast_mod2" />
     <effect class="result" key="terrain" ref="hongxue_hit_blast_cross" />
     <effect class="result" key="terrain" ref="hyper_mega_activated_light" />
     <effect class="result" key="terrain" ref="hyper_mega_muzzle_fire" />
@@ -290,11 +490,15 @@
     <effect class="result" key="terrain" ref="hyper_mega_muzzle_pre_line_mod2_addon" />
     <effect class="result" key="terrain" ref="hyper_mega_muzzle_skill_rainbowwane" />
     <effect class="result" key="terrain" ref="hyper_mega_muzzle_skill_thunder" />
+    <effect class="result" key="terrain" ref="hyper_mega_muzzle_skill_thunder_2" />
     <effect class="result" key="terrain" ref="hyper_mega_muzzle_skill_ambient_light" />
     <effect class="result" key="terrain" ref="hyper_mega_muzzle_skill_later_impact_circle" />
     <effect class="result" key="terrain" ref="hyper_mega_muzzle_skill_later_pre_line_center" />
+    <effect class="result" key="terrain" ref="hyper_mega_muzzle_skill_later_pre_line_center_2" />
+    <effect class="result" key="terrain" ref="hyper_mega_muzzle_skill_later_pre_line_center_3" />
     <effect class="result" key="terrain" ref="hyper_mega_muzzle_skill_later_spark" />
     <effect class="result" key="terrain" ref="illum_illusionist_activated_fire" />
+    <effect class="result" key="terrain" ref="illum_illusionist_activated_fire2" />
     <effect class="result" key="terrain" ref="illum_illusionist_result_blast_impact_ring" />
     <effect class="result" key="terrain" ref="illum_illusionist_result_area_lighting" />
     <effect class="result" key="terrain" ref="illum_tripod_muzzle_thunder" />
@@ -307,6 +511,15 @@
     <effect class="result" key="terrain" ref="IB_fire" />
     <effect class="result" key="terrain" ref="IB_up_smoke" />
     <effect class="result" key="terrain" ref="IB_up_spark" />
+    <effect class="result" key="terrain" ref="iws2000_recoil_smoke" />
+    <effect class="result" key="terrain" ref="crescent_smoke_impact" />
+    <effect class="result" key="terrain" ref="lens_circle" />
+    <effect class="result" key="terrain" ref="lens_circle_enlarge" />
+    <effect class="result" key="terrain" ref="lens_flare_01" />
+    <effect class="result" key="terrain" ref="square_fill_20" />
+    <effect class="result" key="terrain" ref="point_penetrate_linear_light_iws2000" />
+    <effect class="result" key="terrain" ref="anti_U_type_point_penetrate_particle_iws2000" />
+    <effect class="result" key="terrain" ref="v_type_impact_flare" />
     <effect class="result" key="terrain" ref="center_area_lighting" />
     <effect class="result" key="terrain" ref="kokomi_activated_bobble" />
     <effect class="result" key="terrain" ref="kokomi_activated_dropping_water" />
@@ -319,20 +532,29 @@
     <effect class="result" key="terrain" ref="kokomi_muzzle_light" />
     <effect class="result" key="terrain" ref="kokomi_muzzle_ring" />
     <effect class="result" key="terrain" ref="kokomi_muzzle_concentrate_waterwave_01" />
+    <effect class="result" key="terrain" ref="kokomi_muzzle_concentrate_waterwave_02" />
+    <effect class="result" key="terrain" ref="kokomi_muzzle_concentrate_waterwave_03" />
     <effect class="result" key="terrain" ref="kokomi_muzzle_concentrate_waterwave_04" />
+    <effect class="result" key="terrain" ref="kokomi_muzzle_expand_waterwave_01" />
     <effect class="result" key="terrain" ref="kokomi_muzzle_expand_waterwave_02" />
     <effect class="result" key="terrain" ref="kokomi_muzzle_expand_particle_01" />
     <effect class="result" key="terrain" ref="kokomi_muzzle_expand_star_01" />
     <effect class="result" key="terrain" ref="kokomi_muzzle_shrink_star_01" />
+    <effect class="result" key="terrain" ref="kokomi_muzzle_shrink_star_02" />
     <effect class="result" key="terrain" ref="kokomi_muzzle_exposion_ambient" />
     <effect class="result" key="terrain" ref="kokomi_muzzle_exposion_splash" />
     <effect class="result" key="terrain" ref="kokomi_muzzle_exposion_splash_dropping" />
     <effect class="result" key="terrain" ref="kokomi_result_splash_01" />
     <effect class="result" key="terrain" ref="kokomi_result_splash_02" />
     <effect class="result" key="terrain" ref="kokomi_result_splash_03" />
+    <effect class="result" key="terrain" ref="kokomi_activated_shrink_wave" />
     <effect class="result" key="terrain" ref="laisha_HGY_muzzle_knife_thunder" />
     <effect class="result" key="terrain" ref="laisha_HGY_muzzle_knife_light_01" />
+    <effect class="result" key="terrain" ref="laisha_HGY_muzzle_knife_light_02" />
+    <effect class="result" key="terrain" ref="laisha_HGY_muzzle_knife_light_03" />
+    <effect class="result" key="terrain" ref="laisha_HGY_muzzle_knife_light_04" />
     <effect class="result" key="terrain" ref="laisha_HGY_muzzle_blast_ring_1" />
+    <effect class="result" key="terrain" ref="laisha_HGY_muzzle_blast_ring_2" />
     <effect class="result" key="terrain" ref="laisha_HGY_result_blast_firesmoke" />
     <effect class="result" key="terrain" ref="laisha_HGY_result_blast_AmbientLight" />
     <effect class="result" key="terrain" ref="laisha_HGY_result_blast_impact_center_light" />
@@ -341,6 +563,7 @@
     <effect class="result" key="terrain" ref="laisha_HGY_result_blast_impact_spark" />
     <effect class="result" key="terrain" ref="laisha_HGY_result_blast_impact_spark_2" />
     <effect class="result" key="terrain" ref="laisha_MoomPulsar_result_ring" />
+    <effect class="result" key="terrain" ref="laisha_MoomPulsar_result_ring_2" />
     <effect class="result" key="terrain" ref="laisha_MoomPulsar_result_ring_line" />
     <effect class="result" key="terrain" ref="laisha_MoomPulsar_result_spark" />
     <effect class="result" key="terrain" ref="laisha_MoomPulsar_result_cross_blast" />
@@ -348,12 +571,15 @@
     <effect class="result" key="terrain" ref="laisha_SouthernCross_result_ring_01" />
     <effect class="result" key="terrain" ref="laisha_SouthernCross_result_impact_01" />
     <effect class="result" key="terrain" ref="laisha_SouthernCross_result_vertical_impact_1" />
+    <effect class="result" key="terrain" ref="laisha_SouthernCross_result_vertical_impact_2" />
     <effect class="result" key="terrain" ref="laisha_SouthernCross_result_center_light" />
     <effect class="result" key="terrain" ref="laisha_SouthernCross_result_center_ambient_light" />
     <effect class="result" key="terrain" ref="laisha_MilkyWay_muzzle_impact" />
     <effect class="result" key="terrain" ref="laisha_MilkyWay_muzzle_impact_2" />
+    <effect class="result" key="terrain" ref="laisha_MilkyWay_result_smoke" />
     <effect class="result" key="terrain" ref="laisha_MilkyWay_result_blast_impact_spark" />
     <effect class="result" key="terrain" ref="laisha_MilkyWay_result_blast_impact_spark_2" />
+    <effect class="result" key="terrain" ref="laisha_MilkyWay_result_blast_impact_spark_3" />
     <effect class="result" key="terrain" ref="laisha_MilkyWay_result_impact_01" />
     <effect class="result" key="terrain" ref="laisha_MilkyWay_result_impact_02" />
     <effect class="result" key="terrain" ref="laser_strike_activated_laser" />
@@ -365,6 +591,8 @@
     <effect class="result" key="terrain" ref="laser_strike_result_ground_burn_spot" />
     <effect class="result" key="terrain" ref="LightShell_activated_01" />
     <effect class="result" key="terrain" ref="LightShell_activated_02" />
+    <effect class="result" key="terrain" ref="LightShell_activated_03" />
+    <effect class="result" key="terrain" ref="LightShell_activated_04" />
     <effect class="result" key="terrain" ref="LightShell_activated_smoke" />
     <effect class="result" key="terrain" ref="blast_smoke_rumbler" />
     <effect class="result" key="terrain" ref="spray_rumbler" />
@@ -373,49 +601,107 @@
     <effect class="result" key="terrain" ref="hd_m5_apc_activated_light" />
     <effect class="result" key="terrain" ref="hd_m5_apc_result_spray" />
     <effect class="result" key="terrain" ref="maria_chariac_muzzle_knife_light_01" />
+    <effect class="result" key="terrain" ref="maria_chariac_muzzle_knife_light_02" />
+    <effect class="result" key="terrain" ref="maria_chariac_muzzle_knife_light_03" />
+    <effect class="result" key="terrain" ref="maria_chariac_muzzle_knife_light_04" />
     <effect class="result" key="terrain" ref="maria_chariac_muzzle_laser" />
     <effect class="result" key="terrain" ref="maria_chariac_muzzle_flower" />
+    <effect class="result" key="terrain" ref="maria_chariac_cyclone_01" />
+    <effect class="result" key="terrain" ref="mg4_blast_shine_center_hollow" />
+    <effect class="result" key="terrain" ref="mg4_blast_shine_center" />
+    <effect class="result" key="terrain" ref="mg4_blast_linear_shine" />
+    <effect class="result" key="terrain" ref="mg4_blast_broken_particle_01" />
+    <effect class="result" key="terrain" ref="mg4_blast_broken_particle_02" />
+    <effect class="result" key="terrain" ref="mg4_blast_broken_particle_03" />
+    <effect class="result" key="terrain" ref="mg4k_blast_shine_center_hollow" />
+    <effect class="result" key="terrain" ref="mg4k_blast_shine_center" />
+    <effect class="result" key="terrain" ref="mg4k_blast_linear_shine" />
+    <effect class="result" key="terrain" ref="mg4k_blast_broken_particle_01" />
+    <effect class="result" key="terrain" ref="mg4k_blast_broken_particle_02" />
+    <effect class="result" key="terrain" ref="mg4k_blast_broken_particle_03" />
+    <effect class="result" key="terrain" ref="mg4a3_blast_shine_center_hollow" />
+    <effect class="result" key="terrain" ref="mg4a3_blast_shine_center" />
+    <effect class="result" key="terrain" ref="mg4a3_blast_linear_shine" />
+    <effect class="result" key="terrain" ref="mg4a3_blast_broken_particle_01" />
+    <effect class="result" key="terrain" ref="mg4a3_blast_broken_particle_02" />
+    <effect class="result" key="terrain" ref="mg4a3_blast_broken_particle_03" />
     <effect class="result" key="terrain" ref="MG_hvy_hit_smoke" />
     <effect class="result" key="terrain" ref="MG_hvy_hit_leave" />
     <effect class="result" key="terrain" ref="MG_hvy_hit_cross_blast" />
     <effect class="result" key="terrain" ref="MG_heavy_up_dust_1" />
+    <effect class="result" key="terrain" ref="MG_heavy_up_dust_2" />
+    <effect class="result" key="terrain" ref="MG_heavy_up_dust_3" />
+    <effect class="result" key="terrain" ref="MG_heavy_up_dust_4" />
     <effect class="result" key="terrain" ref="MG_hvy_spread_dust" />
     <effect class="result" key="terrain" ref="MG_hvy_hit_light" />
     <effect class="result" key="terrain" ref="molotov_fire_01" />
+    <effect class="result" key="terrain" ref="molotov_fire_02" />
     <effect class="result" key="terrain" ref="molotov_smoke" />
     <effect class="result" key="terrain" ref="music_musical_note_1" />
+    <effect class="result" key="terrain" ref="music_musical_note_2" />
+    <effect class="result" key="terrain" ref="music_musical_note_3" />
+    <effect class="result" key="terrain" ref="music_musical_note_4" />
+    <effect class="result" key="terrain" ref="music_musical_note_5" />
+    <effect class="result" key="terrain" ref="music_musical_note_6" />
+    <effect class="result" key="terrain" ref="music_musical_note_7" />
+    <effect class="result" key="terrain" ref="music_musical_note_8" />
+    <effect class="result" key="terrain" ref="music_musical_note_9" />
+    <effect class="result" key="terrain" ref="music_musical_note_10" />
+    <effect class="result" key="terrain" ref="music_musical_note_11" />
+    <effect class="result" key="terrain" ref="music_musical_note_anim_1" />
     <effect class="result" key="terrain" ref="nova_muzzle_fireball" />
     <effect class="result" key="terrain" ref="nova_muzzle_fireball_side" />
+    <effect class="result" key="terrain" ref="nova_muzzle_fireball_side_2" />
+    <effect class="result" key="terrain" ref="nova_muzzle_fireball_side_3" />
     <effect class="result" key="terrain" ref="nova_muzzle_fire_smoke" />
+    <effect class="result" key="terrain" ref="nova_muzzle_fire_smoke_2" />
+    <effect class="result" key="terrain" ref="nova_muzzle_fire_smoke_backward" />
     <effect class="result" key="terrain" ref="nova_muzzle_ambient" />
     <effect class="result" key="terrain" ref="nova_muzzle_ambient_ground" />
     <effect class="result" key="terrain" ref="nova_muzzle_spark" />
     <effect class="result" key="terrain" ref="nova_result_impact_flame_1" />
+    <effect class="result" key="terrain" ref="nova_result_impact_flame_2" />
+    <effect class="result" key="terrain" ref="nova_result_impact_flame_3" />
+    <effect class="result" key="terrain" ref="nova_result_impact_flame_4" />
     <effect class="result" key="terrain" ref="nova_result_impact_spark" />
+    <effect class="result" key="terrain" ref="nova_result_impact_spark_2" />
     <effect class="result" key="terrain" ref="nova_result_blast_smoke_expanding" />
     <effect class="result" key="terrain" ref="nova_result_blast_smoke" />
     <effect class="result" key="terrain" ref="nova_result_ambient" />
     <effect class="result" key="terrain" ref="nova_result_ambient_ground" />
     <effect class="result" key="terrain" ref="nova_result_blast_ring" />
+    <effect class="result" key="terrain" ref="nova_result_blast_ring_2" />
     <effect class="result" key="terrain" ref="nova_result_blast_fire" />
+    <effect class="result" key="terrain" ref="nova_gl_hit_smoke_02" />
     <effect class="result" key="terrain" ref="nova_result_ground_smoke" />
     <effect class="result" key="terrain" ref="nova_muzzle_APFS_out_r" />
+    <effect class="result" key="terrain" ref="nova_muzzle_APFS_out_l" />
     <effect class="result" key="terrain" ref="nova_s_muzzle_fireball" />
     <effect class="result" key="terrain" ref="nova_s_muzzle_fireball_side" />
+    <effect class="result" key="terrain" ref="nova_s_muzzle_fireball_side_2" />
+    <effect class="result" key="terrain" ref="nova_s_muzzle_fireball_side_3" />
     <effect class="result" key="terrain" ref="nova_s_muzzle_fire_smoke" />
+    <effect class="result" key="terrain" ref="nova_s_muzzle_fire_smoke_2" />
     <effect class="result" key="terrain" ref="nova_s_muzzle_ambient" />
     <effect class="result" key="terrain" ref="nova_s_muzzle_ambient_ground" />
     <effect class="result" key="terrain" ref="nova_s_muzzle_spark" />
     <effect class="result" key="terrain" ref="nova_s_result_impact_flame_1" />
+    <effect class="result" key="terrain" ref="nova_s_result_impact_flame_2" />
+    <effect class="result" key="terrain" ref="nova_s_result_impact_flame_3" />
+    <effect class="result" key="terrain" ref="nova_s_result_impact_flame_4" />
     <effect class="result" key="terrain" ref="nova_s_result_impact_spark" />
+    <effect class="result" key="terrain" ref="nova_s_result_impact_spark_2" />
     <effect class="result" key="terrain" ref="nova_s_result_blast_smoke_expanding" />
     <effect class="result" key="terrain" ref="nova_s_result_blast_smoke" />
     <effect class="result" key="terrain" ref="nova_s_result_ambient" />
     <effect class="result" key="terrain" ref="nova_s_result_ambient_ground" />
     <effect class="result" key="terrain" ref="nova_s_result_blast_ring" />
+    <effect class="result" key="terrain" ref="nova_s_result_blast_ring_2" />
     <effect class="result" key="terrain" ref="nova_s_result_blast_fire" />
+    <effect class="result" key="terrain" ref="nova_s_gl_hit_smoke_02" />
     <effect class="result" key="terrain" ref="nova_s_result_ground_smoke" />
     <effect class="result" key="terrain" ref="obliterator_grenade_launcher_trail" />
+    <effect class="result" key="terrain" ref="obliterator_grenade_launcher_impact_smoke" />
     <effect class="result" key="terrain" ref="obliterator_grenade_launcher_spray" />
     <effect class="result" key="terrain" ref="p2_peacemaker_hit_01" />
     <effect class="result" key="terrain" ref="p2_peacemaker_hit_02" />
@@ -434,16 +720,23 @@
     <effect class="result" key="terrain" ref="p6_gunslinger_hit_leave" />
     <effect class="result" key="terrain" ref="p6_gunslinger_hit_spark" />
     <effect class="result" key="terrain" ref="patricia_muzzle_flower" />
+    <effect class="result" key="terrain" ref="patricia_muzzle_flower_smaller" />
     <effect class="result" key="terrain" ref="patricia_CumForce_muzzle_knife_light_1" />
+    <effect class="result" key="terrain" ref="patricia_CumForce_muzzle_knife_light_2" />
+    <effect class="result" key="terrain" ref="patricia_CumForce_muzzle_knife_light_2_ex" />
+    <effect class="result" key="terrain" ref="patricia_CumForce_muzzle_knife_light_2_ex2" />
+    <effect class="result" key="terrain" ref="patricia_CumForce_muzzle_knife_light_ahead" />
     <effect class="result" key="terrain" ref="patricia_CumForce_muzzle_light" />
     <effect class="result" key="terrain" ref="patricia_CumForce_muzzle_delay_impact" />
     <effect class="result" key="terrain" ref="patricia_CumForce_muzzle_spray" />
     <effect class="result" key="terrain" ref="patricia_PhantomFang_result_crescent" />
+    <effect class="result" key="terrain" ref="patricia_PhantomFang_result_crescent2" />
     <effect class="result" key="terrain" ref="patricia_PhantomFang_result_lens" />
     <effect class="result" key="terrain" ref="patricia_PhantomFang_result_star" />
     <effect class="result" key="terrain" ref="patricia_PhantomFang_result_flower" />
     <effect class="result" key="terrain" ref="patricia_PhantomFang_result_centerlight" />
     <effect class="result" key="terrain" ref="patricia_PhantomFang_result_spray" />
+    <effect class="result" key="terrain" ref="patricia_PhantomFang_result_spray2" />
     <effect class="result" key="terrain" ref="patricia_PhantomFang_muzzle_flower" />
     <effect class="result" key="terrain" ref="patricia_PhantomFang_muzzle_impact" />
     <effect class="result" key="terrain" ref="patricia_PhantomFang_muzzle_flowerring" />
@@ -458,9 +751,14 @@
     <effect class="result" key="terrain" ref="patricia_JihadSlash_result_pre_lens" />
     <effect class="result" key="terrain" ref="patricia_JihadSlash_result_pre_flare" />
     <effect class="result" key="terrain" ref="patricia_JihadSlash_result_pre_ringwave" />
+    <effect class="result" key="terrain" ref="patricia_JihadSlash_result_pre_ringwave2" />
     <effect class="result" key="terrain" ref="patricia_FatalDrive_muzzle_fireRing" />
+    <effect class="result" key="terrain" ref="patricia_FatalDrive_muzzle_fireRing2" />
+    <effect class="result" key="terrain" ref="patricia_FatalDrive_muzzle_fireRing3" />
+    <effect class="result" key="terrain" ref="patricia_FatalDrive_muzzle_fireRing4" />
     <effect class="result" key="terrain" ref="patricia_FatalDrive_muzzle_firelight" />
     <effect class="result" key="terrain" ref="patricia_FatalDrive_muzzle_fireSpark" />
+    <effect class="result" key="terrain" ref="patricia_FatalDrive_muzzle_fireSpark2" />
     <effect class="result" key="terrain" ref="patricia_FatalDrive_muzzle_fireSpark_small" />
     <effect class="result" key="terrain" ref="patricia_FatalDrive_result_circle" />
     <effect class="result" key="terrain" ref="patricia_FatalDrive_result_circle2" />
@@ -479,36 +777,81 @@
     <effect class="result" key="terrain" ref="PLAS_activated_center_lens" />
     <effect class="result" key="terrain" ref="PLAS_activated_center_ambient_light" />
     <effect class="result" key="terrain" ref="plat_muzzle_shrink_1" />
+    <effect class="result" key="terrain" ref="plat_muzzle_shrink_2" />
     <effect class="result" key="terrain" ref="plat_muzzle_center" />
     <effect class="result" key="terrain" ref="plat_muzzle_back_blast" />
     <effect class="result" key="terrain" ref="plat_result_center" />
+    <effect class="result" key="terrain" ref="plat_result_center_2" />
+    <effect class="result" key="terrain" ref="plat_result_blast" />
     <effect class="result" key="terrain" ref="plat_result_bottom_black" />
     <effect class="result" key="terrain" ref="plat_muzzle_ambient" />
     <effect class="result" key="terrain" ref="plat_result_ambient" />
     <effect class="result" key="terrain" ref="plat_result_ambient_mod2" />
     <effect class="result" key="terrain" ref="plat_result_anim_lighting" />
+    <effect class="result" key="terrain" ref="plat_result_anim_lighting_1" />
+    <effect class="result" key="terrain" ref="plat_result_anim_lighting_2" />
+    <effect class="result" key="terrain" ref="plat_result_anim_lighting_3" />
     <effect class="result" key="terrain" ref="plat_activated_anim_lighting" />
+    <effect class="result" key="terrain" ref="plat_activated_anim_lighting_1" />
+    <effect class="result" key="terrain" ref="plat_activated_anim_lighting_2" />
+    <effect class="result" key="terrain" ref="plat_activated_anim_lighting_3" />
     <effect class="result" key="terrain" ref="plat_activated_ambient" />
+    <effect class="result" key="terrain" ref="plat_mod2_fire_hit_i" />
+    <effect class="result" key="terrain" ref="plat_mod2_fire_hit_ii" />
+    <effect class="result" key="terrain" ref="plat_mod2_fire_hit_laser_i" />
     <effect class="result" key="terrain" ref="plat_result_blast_fire_wave" />
+    <effect class="result" key="terrain" ref="plat_result_blast_fire_wave_mod2" />
+    <effect class="result" key="terrain" ref="propeller_rotate_drive_chassis" />
+    <effect class="result" key="terrain" ref="propeller_rotate_idle_chassis" />
+    <effect class="result" key="terrain" ref="propeller_rotate_result_io" />
+    <effect class="result" key="terrain" ref="propeller_rotate_result_io_mh60s" />
+    <effect class="result" key="terrain" ref="propeller_rotate_idle_io_mh60s" />
+    <effect class="result" key="terrain" ref="propeller_rotate_result_io_bell_360" />
+    <effect class="result" key="terrain" ref="propeller_rotate_idle_chassis_bell_360" />
     <effect class="result" key="terrain" ref="rabiribi_grenade_blast" />
     <effect class="result" key="terrain" ref="rabiribi_normal_muzzle_trail" />
     <effect class="result" key="terrain" ref="rabiribi_normal_result_be_hit" />
     <effect class="result" key="terrain" ref="rabiribi_activated_trail" />
+    <effect class="result" key="terrain" ref="radar_scan_main" />
+    <effect class="result" key="terrain" ref="radar_scan_short" />
+    <effect class="result" key="terrain" ref="radar_scan_racing" />
+    <effect class="result" key="terrain" ref="radar_scan_racing_start" />
+    <effect class="result" key="terrain" ref="radar_scan_racing_end" />
     <effect class="result" key="terrain" ref="real_smoke_1" />
     <effect class="result" key="terrain" ref="real_firesmoke_1" />
     <effect class="result" key="terrain" ref="real_firesmoke_2" />
     <effect class="result" key="terrain" ref="real_up_dust_beam" />
     <effect class="result" key="terrain" ref="real_up_dust_spread" />
     <effect class="result" key="terrain" ref="real_up_impact_spread" />
+    <effect class="result" key="terrain" ref="real_up_impact_spark" />
     <effect class="result" key="terrain" ref="real_up_impact_spark_1" />
+    <effect class="result" key="terrain" ref="real_up_impact_spark_2" />
     <effect class="result" key="terrain" ref="real_up_dust_stone" />
     <effect class="result" key="terrain" ref="real_ground_crater" />
     <effect class="result" key="terrain" ref="real_up_smoke_1" />
     <effect class="result" key="terrain" ref="real_up_smoke_beam" />
     <effect class="result" key="terrain" ref="real_center_short_light" />
     <effect class="result" key="terrain" ref="real_center_ambient_light" />
+    <effect class="result" key="terrain" ref="reisenu_fire_muzzle_i" />
+    <effect class="result" key="terrain" ref="reisenu_bullet_muzzle_i" />
+    <effect class="result" key="terrain" ref="reisenu_bullet_muzzle_ii" />
+    <effect class="result" key="terrain" ref="reisenu_fire_hit_i" />
+    <effect class="result" key="terrain" ref="reisenu_fire_hit_add_i" />
+    <effect class="result" key="terrain" ref="reisenu_fire_hit_laser_i" />
+    <effect class="result" key="terrain" ref="reisenu_bullet_activated_ring_ii" />
+    <effect class="result" key="terrain" ref="reisenu_bullet_activated_smoke_ii" />
+    <effect class="result" key="terrain" ref="reisenu_bullet_blase_type1_center_ii" />
+    <effect class="result" key="terrain" ref="reisenu_bullet_blase_type1_center_red_ii" />
+    <effect class="result" key="terrain" ref="reisenu_bullet_blase_type1_center_redring_ii" />
     <effect class="result" key="terrain" ref="reisenu_bullet_activated_bullet_type2_red_ii" />
+    <effect class="result" key="terrain" ref="reisenu_bullet_activated_bullet_type2_ii" />
+    <effect class="result" key="terrain" ref="reisenu_bullet_hit_type2_ii" />
+    <effect class="result" key="terrain" ref="reisenu_card_starring_expand" />
     <effect class="result" key="terrain" ref="reisenu_card_starring_rotate" />
+    <effect class="result" key="terrain" ref="reisenu_card_ring_expand" />
+    <effect class="result" key="terrain" ref="reisenu_card_particle" />
+    <effect class="result" key="terrain" ref="reisenu_card_particle_2" />
+    <effect class="result" key="terrain" ref="reisenu_card_particle_3" />
     <effect class="result" key="terrain" ref="reisenu_card_word_shrink" />
     <effect class="result" key="terrain" ref="reisenu_card_word_stay" />
     <effect class="result" key="terrain" ref="repair_muzzle_trail_1" />
@@ -516,7 +859,9 @@
     <effect class="result" key="terrain" ref="repair_activated_trail" />
     <effect class="result" key="terrain" ref="ba_aru_result_hit" />
     <effect class="result" key="terrain" ref="ba_aru_activated_star" />
+    <effect class="result" key="terrain" ref="ba_aru_activated_star2" />
     <effect class="result" key="terrain" ref="ba_aru_result_impact" />
+    <effect class="result" key="terrain" ref="ba_aru_result_impact2" />
     <effect class="result" key="terrain" ref="ba_aru_activated_result_spark" />
     <effect class="result" key="terrain" ref="ba_aru_result_waiting_light" />
     <effect class="result" key="terrain" ref="ba_aru_result_blast_star" />
@@ -524,6 +869,7 @@
     <effect class="result" key="terrain" ref="ba_aru_result_blast_ring" />
     <effect class="result" key="terrain" ref="ba_aru_muzzle_wind" />
     <effect class="result" key="terrain" ref="ba_aru_result_normal_skill_smoke" />
+    <effect class="result" key="terrain" ref="ba_aru_result_normal_skill_smoke_light" />
     <effect class="result" key="terrain" ref="rwby_flower" />
     <effect class="result" key="terrain" ref="rwby_flower_2" />
     <effect class="result" key="terrain" ref="rwby_muzzle_flower" />
@@ -532,20 +878,46 @@
     <effect class="result" key="terrain" ref="rx1_smoke" />
     <effect class="result" key="terrain" ref="samples_pick" />
     <effect class="result" key="terrain" ref="samples_cant_drop" />
+    <effect class="result" key="terrain" ref="shadow_real_up_smoke" />
+    <effect class="result" key="terrain" ref="shadow_real_up_smoke_leave" />
+    <effect class="result" key="terrain" ref="shadow_real_up_smoke_leave_2" />
+    <effect class="result" key="terrain" ref="shinano_activated_anim_butterfly" />
+    <effect class="result" key="terrain" ref="shinano_activated_anim_butterfly2" />
+    <effect class="result" key="terrain" ref="shinano_activated_anim_butterfly3" />
+    <effect class="result" key="terrain" ref="shinano_activated_anim_butterfly4" />
     <effect class="result" key="terrain" ref="shinano_result_ijn_icon" />
     <effect class="result" key="terrain" ref="shinano_result_ijn_icon_blast" />
+    <effect class="result" key="terrain" ref="shinano_result_anim_butterfly" />
+    <effect class="result" key="terrain" ref="shinano_result_anim_butterfly_02" />
+    <effect class="result" key="terrain" ref="shinano_result_anim_butterfly_03" />
+    <effect class="result" key="terrain" ref="shinano_result_anim_butterfly_04" />
     <effect class="result" key="terrain" ref="shinano_cyclone_01" />
     <effect class="result" key="terrain" ref="SMS_camera_light" />
     <effect class="result" key="terrain" ref="SMS_camera_light_colour_render" />
     <effect class="result" key="terrain" ref="shadow_SMS_1" />
+    <effect class="result" key="terrain" ref="shadow_SMS_2" />
+    <effect class="result" key="terrain" ref="shadow_SMS_3" />
     <effect class="result" key="terrain" ref="SMS_vertical_smoke" />
     <effect class="result" key="terrain" ref="SMS_Ring_smoke" />
     <effect class="result" key="terrain" ref="SMS_up_spark" />
     <effect class="result" key="terrain" ref="SMS_impact_leave_dirt" />
     <effect class="result" key="terrain" ref="SMS_impact_leave_smoke" />
+    <effect class="result" key="terrain" ref="SMS_impact_leave_smoke_shorttime" />
+    <effect class="result" key="terrain" ref="shuiniao_anim_butterfly" />
+    <effect class="result" key="terrain" ref="shuiniao_anim_butterfly_02" />
+    <effect class="result" key="terrain" ref="shuiniao_anim_butterfly_03" />
+    <effect class="result" key="terrain" ref="shuiniao_anim_butterfly_04" />
+    <effect class="result" key="terrain" ref="shuiniao_anim_butterfly_05" />
+    <effect class="result" key="terrain" ref="shuiniao_cyclone_01" />
+    <effect class="result" key="terrain" ref="shuiniao_cyclone_03" />
+    <effect class="result" key="terrain" ref="shuiniao_cyclone_02" />
+    <effect class="result" key="terrain" ref="shuiniao_cyclone_04" />
     <effect class="result" key="terrain" ref="shuiniao_center_flower" />
     <effect class="result" key="terrain" ref="shuiniao_center_flower_r" />
+    <effect class="result" key="terrain" ref="shuiniao_center_flower_l" />
     <effect class="result" key="terrain" ref="shuiniao_spread_petals_01" />
+    <effect class="result" key="terrain" ref="shuiniao_spread_petals_02" />
+    <effect class="result" key="terrain" ref="shuiniao_spread_petals_03" />
     <effect class="result" key="terrain" ref="shuiniao_ambient_light" />
     <effect class="result" key="terrain" ref="shuiniao_impact_circle" />
     <effect class="result" key="terrain" ref="shuiniao_center_ambient" />
@@ -554,6 +926,7 @@
     <effect class="result" key="terrain" ref="soma_prime_activated_sowrd_trail" />
     <effect class="result" key="terrain" ref="soma_prime_activated_sowrd_trail_2" />
     <effect class="result" key="terrain" ref="sorasaki_hina_mg42_muzzle_01" />
+    <effect class="result" key="terrain" ref="sorasaki_hina_mg42_muzzle_02" />
     <effect class="result" key="terrain" ref="sorasaki_hina_mg42_muzzle_03" />
     <effect class="result" key="terrain" ref="sorasaki_hina_mg42_muzzle_crossfire" />
     <effect class="result" key="terrain" ref="sorasaki_hina_mg42_activated_light" />
@@ -562,27 +935,180 @@
     <effect class="result" key="terrain" ref="SFC_dotarray" />
     <effect class="result" key="terrain" ref="SFC_arealight" />
     <effect class="result" key="terrain" ref="SFC_spark" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_2s" />
     <effect class="result" key="terrain" ref="stratagems_liner_light_2s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_3s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_3s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_4s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_4s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_5s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_5s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_6s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_6s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_7s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_7s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_8s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_8s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_9s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_9s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_10s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_10s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_11s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_11s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_12s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_12s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_13s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_13s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_14s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_14s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_15s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_15s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_20s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_20s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_25s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_25s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_30s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_30s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_2s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_blue_2s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_3s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_blue_3s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_4s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_blue_4s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_5s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_blue_5s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_6s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_blue_6s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_7s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_blue_7s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_8s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_blue_8s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_9s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_blue_9s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_10s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_blue_10s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_11s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_blue_11s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_12s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_blue_12s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_13s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_blue_13s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_14s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_blue_14s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_15s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_blue_15s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_20s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_blue_20s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_25s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_blue_25s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_blue_30s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_blue_30s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_green_2s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_green_2s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_green_3s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_green_3s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_green_4s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_green_4s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_green_5s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_green_5s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_green_6s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_green_6s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_green_7s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_green_7s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_green_8s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_green_8s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_green_9s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_green_9s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_green_10s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_green_10s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_green_11s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_green_11s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_green_12s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_green_12s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_green_13s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_green_13s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_green_14s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_green_14s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_green_15s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_green_15s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_green_20s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_green_20s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_green_25s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_green_25s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_green_30s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_green_30s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_yellow_2s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_yellow_2s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_yellow_3s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_yellow_3s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_yellow_4s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_yellow_4s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_yellow_5s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_yellow_5s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_yellow_6s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_yellow_6s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_yellow_7s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_yellow_7s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_yellow_8s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_yellow_8s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_yellow_9s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_yellow_9s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_yellow_10s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_yellow_10s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_yellow_11s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_yellow_11s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_yellow_12s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_yellow_12s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_yellow_13s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_yellow_13s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_yellow_14s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_yellow_14s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_yellow_15s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_yellow_15s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_yellow_20s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_yellow_20s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_yellow_25s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_yellow_25s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_yellow_30s" />
+    <effect class="result" key="terrain" ref="stratagems_liner_light_yellow_30s" />
+    <effect class="result" key="terrain" ref="stratagems_point_light_area_endless" />
+    <effect class="result" key="terrain" ref="stratagems_tag_call_mark_2" />
+    <effect class="result" key="terrain" ref="stratagems_tag_call_mark_1" />
     <effect class="result" key="terrain" ref="marker_repair_area" />
+    <effect class="result" key="terrain" ref="marker_repair_name" />
+    <effect class="result" key="terrain" ref="marker_repair_decorate" />
+    <effect class="result" key="terrain" ref="marker_repair_decorate2" />
+    <effect class="result" key="terrain" ref="marker_recycle_area" />
+    <effect class="result" key="terrain" ref="marker_recycle_name" />
+    <effect class="result" key="terrain" ref="marker_recycle_decorate" />
+    <effect class="result" key="terrain" ref="marker_recycle_decorate2" />
     <effect class="result" key="terrain" ref="marker_bombing_circle" />
     <effect class="result" key="terrain" ref="marker_bombing_rectangle" />
+    <effect class="result" key="terrain" ref="marker_bombing_circle_6s_sms" />
+    <effect class="result" key="terrain" ref="marker_bombing_circle_9s_nux" />
     <effect class="result" key="terrain" ref="stun_mine_mk3_ring" />
+    <effect class="result" key="terrain" ref="stun_mine_mk3_center" />
+    <effect class="result" key="terrain" ref="stun_mine_mk3_ray" />
     <effect class="result" key="terrain" ref="stun_mine_mk3_ambient_white" />
     <effect class="result" key="terrain" ref="hoshino_muzzle_shock_ring_1" />
     <effect class="result" key="terrain" ref="hoshino_muzzle_shock_ring_2" />
     <effect class="result" key="terrain" ref="hoshino_muzzle_shock_smoke_1" />
     <effect class="result" key="terrain" ref="hoshino_muzzle_shock_firelight" />
     <effect class="result" key="terrain" ref="hoshino_muzzle_spark" />
+    <effect class="result" key="terrain" ref="ex_ra2_tanya_c4" />
     <effect class="result" key="terrain" ref="texas_polygon_expand" />
     <effect class="result" key="terrain" ref="texas_polygon_fix" />
     <effect class="result" key="terrain" ref="texas_center_crossline_1" />
+    <effect class="result" key="terrain" ref="texas_center_crossline_2" />
     <effect class="result" key="terrain" ref="texas_tilt_dropping_sword_guiding" />
+    <effect class="result" key="terrain" ref="texas_tilt_dropping_sword" />
     <effect class="result" key="terrain" ref="texas_tilt_dropping_ring" />
     <effect class="result" key="terrain" ref="texas_tilt_dropping_triangle" />
     <effect class="result" key="terrain" ref="texas_hit_diamond" />
     <effect class="result" key="terrain" ref="texas_activated_center" />
     <effect class="result" key="terrain" ref="tt_muzzle_fire_smoke" />
     <effect class="result" key="terrain" ref="tt_muzzle_fire" />
+    <effect class="result" key="terrain" ref="tt_muzzle_fire_3" />
     <effect class="result" key="terrain" ref="tt_muzzle_fire_2" />
     <effect class="result" key="terrain" ref="tt_missile_trail_long" />
     <effect class="result" key="terrain" ref="tt_missile_trail_short" />
@@ -590,40 +1116,55 @@
     <effect class="result" key="terrain" ref="tt_result_blast_smoke_expanding" />
     <effect class="result" key="terrain" ref="tt_result_blast_smoke" />
     <effect class="result" key="terrain" ref="tt_result_blast_ring" />
+    <effect class="result" key="terrain" ref="tt_result_blast_ring_2" />
     <effect class="result" key="terrain" ref="tt_result_blast_spray_1" />
+    <effect class="result" key="terrain" ref="tt_result_blast_spray_2" />
     <effect class="result" key="terrain" ref="tt_result_blast_fire" />
     <effect class="result" key="terrain" ref="tt_result_blast_fire_wave" />
     <effect class="result" key="terrain" ref="tt_result_blast_fallen_p1" />
+    <effect class="result" key="terrain" ref="tt_result_blast_fallen_p2" />
+    <effect class="result" key="terrain" ref="tt_result_blast_fallen_p3" />
+    <effect class="result" key="terrain" ref="tt_result_blast_fallen_p4" />
     <effect class="result" key="terrain" ref="toki_falling_fire" />
     <effect class="result" key="terrain" ref="toki_falling_smoke" />
     <effect class="result" key="terrain" ref="toki_railgun_muzzle_ring_1" />
     <effect class="result" key="terrain" ref="toki_railgun_muzzle_ring_2" />
     <effect class="result" key="terrain" ref="toki_railgun_muzzle_laser" />
     <effect class="result" key="terrain" ref="toki_railgun_muzzle_impact" />
+    <effect class="result" key="terrain" ref="toki_railgun_muzzle_impact_2" />
     <effect class="result" key="terrain" ref="toki_railgun_muzzle_impact_spark" />
     <effect class="result" key="terrain" ref="toki_muzzle_skill_later_pre_line_center" />
+    <effect class="result" key="terrain" ref="toki_muzzle_skill_later_pre_line_center_2" />
+    <effect class="result" key="terrain" ref="toki_muzzle_skill_later_pre_line_center_3" />
     <effect class="result" key="terrain" ref="toki_muzzle_skill_center_ball" />
     <effect class="result" key="terrain" ref="toki_muzzle_skill_center_rorate_ring" />
+    <effect class="result" key="terrain" ref="toki_muzzle_skill_center_rorate_ring_2" />
     <effect class="result" key="terrain" ref="toki_muzzle_skill_shrink_line" />
     <effect class="result" key="terrain" ref="torpedo_tail_splash" />
+    <effect class="result" key="terrain" ref="torpedo_tail_splash_2" />
     <effect class="result" key="terrain" ref="torpedo_tail_bobble" />
     <effect class="result" key="terrain" ref="tox_13_muzzle_splash" />
     <effect class="result" key="terrain" ref="tox_13_result_splash" />
     <effect class="result" key="terrain" ref="vergil_judgment_cut_muzzle_random_spot" />
     <effect class="result" key="terrain" ref="vergil_judgment_cut_muzzle_01" />
+    <effect class="result" key="terrain" ref="vergil_judgment_cut_muzzle_02" />
     <effect class="result" key="terrain" ref="vergil_judgment_cut_muzzle_ambient_light" />
     <effect class="result" key="terrain" ref="vergil_judgment_cut_result_crescent" />
+    <effect class="result" key="terrain" ref="vergil_judgment_cut_result_crescent2" />
     <effect class="result" key="terrain" ref="vergil_judgment_cut_result_expand_black_space" />
+    <effect class="result" key="terrain" ref="vergil_judgment_cut_result_expand_black_space2" />
     <effect class="result" key="terrain" ref="vergil_judgment_cut_result_shrink_gray_space" />
     <effect class="result" key="terrain" ref="vergil_judgment_cut_result_ambient_light" />
     <effect class="result" key="terrain" ref="vergil_voidknife_realm_muzzle_surface_wave" />
     <effect class="result" key="terrain" ref="vergil_voidknife_realm_muzzle_knife" />
     <effect class="result" key="terrain" ref="vergil_voidknife_realm_muzzle_knife_ahead" />
+    <effect class="result" key="terrain" ref="vergil_voidknife_realm_muzzle_knife_ahead_3" />
     <effect class="result" key="terrain" ref="vergil_voidknife_realm_muzzle_knife_ahead_2" />
     <effect class="result" key="terrain" ref="vergil_voidknife_realm_muzzle_spark" />
     <effect class="result" key="terrain" ref="vergil_voidknife_realm_muzzle_delay_spark" />
     <effect class="result" key="terrain" ref="vergil_voidknife_realm_muzzle_delay_impact" />
     <effect class="result" key="terrain" ref="vergil_getsuga_tenshou_muzzle_knife_ahead" />
+    <effect class="result" key="terrain" ref="vergil_getsuga_tenshou_muzzle_knife_ahead_2" />
     <effect class="result" key="terrain" ref="vergil_getsuga_tenshou_muzzle_activated_spark" />
     <effect class="result" key="terrain" ref="vergil_skill_muzzle_expand_wind" />
     <effect class="result" key="terrain" ref="vergil_skill_muzzle_expand_wind_2" />
@@ -638,13 +1179,96 @@
     <effect class="result" key="terrain" ref="vergil_skill_result_space_cut_curve" />
     <effect class="result" key="terrain" ref="vergil_skill_result_space_cut_line" />
     <effect class="result" key="terrain" ref="vergil_skill_result_space_cut_line_red" />
+    <effect class="result" key="terrain" ref="vergil_skill_result_space_cut_line_green" />
+    <effect class="result" key="terrain" ref="vergil_skill_result_space_cut_line_blue" />
     <effect class="result" key="terrain" ref="vergil_skill_result_space_cut_space" />
     <effect class="result" key="terrain" ref="vergil_skill_result_space_cut_drop_glass_1" />
+    <effect class="result" key="terrain" ref="vergil_skill_result_space_cut_drop_glass_2" />
+    <effect class="result" key="terrain" ref="vergil_skill_result_space_cut_drop_glass_3" />
+    <effect class="result" key="terrain" ref="vergil_skill_result_space_cut_drop_glass_4" />
+    <effect class="result" key="terrain" ref="point_light_area" />
+    <effect class="result" key="terrain" ref="liner_light" />
+    <effect class="result" key="terrain" ref="vindicator_flash" />
+    <effect class="result" key="terrain" ref="blast_smoke_cross" />
+    <effect class="result" key="terrain" ref="blast_smoke_cross_short" />
+    <effect class="result" key="terrain" ref="blast_smoke_02" />
+    <effect class="result" key="terrain" ref="spread_line" />
+    <effect class="result" key="terrain" ref="blast_smoke_Vindicator" />
+    <effect class="result" key="terrain" ref="wand_gather_wave_01" />
+    <effect class="result" key="terrain" ref="wand_gather_wave_01_01" />
+    <effect class="result" key="terrain" ref="wand_gather_wave_01_02" />
+    <effect class="result" key="terrain" ref="wand_gather_wave_02" />
+    <effect class="result" key="terrain" ref="wand_gather_wave_02_01" />
+    <effect class="result" key="terrain" ref="wand_gather_wave_03" />
+    <effect class="result" key="terrain" ref="wand_gather_wave_03_01" />
+    <effect class="result" key="terrain" ref="wand_gather_wave_03_02" />
+    <effect class="result" key="terrain" ref="wand_gather_wave_04" />
+    <effect class="result" key="terrain" ref="wand_gather_wave_04_01" />
+    <effect class="result" key="terrain" ref="wand_gather_wave_05" />
+    <effect class="result" key="terrain" ref="wand_gather_wave_05_01" />
+    <effect class="result" key="terrain" ref="wand_gather_wave_05_02" />
+    <effect class="result" key="terrain" ref="wand_gather_wave_06" />
+    <effect class="result" key="terrain" ref="wand_gather_wave_06_01" />
     <effect class="result" key="terrain" ref="wand_gather_wave_center_light_01" />
+    <effect class="result" key="terrain" ref="wand_magic_circle" />
+    <effect class="result" key="terrain" ref="wand_magic_circle_expand" />
+    <effect class="result" key="terrain" ref="wand_magic_circle_warmup" />
+    <effect class="result" key="terrain" ref="wand_magic_circle_on_ground_circle" />
+    <effect class="result" key="terrain" ref="wand_magic_circle_on_ground_warmup" />
+    <effect class="result" key="terrain" ref="wand_magic_circle_on_ground_expand" />
+    <effect class="result" key="terrain" ref="wand_magic_circle_on_ground_expand_x2" />
+    <effect class="result" key="terrain" ref="wand_magic_circle_on_ground_circle_x2" />
+    <effect class="result" key="terrain" ref="wand_magic_center_preshoot_linear_light" />
+    <effect class="result" key="terrain" ref="wand_magic_center_shoot_laser" />
+    <effect class="result" key="terrain" ref="wand_magic_center_preshoot_away_circle" />
     <effect class="result" key="terrain" ref="wand_magic_area_smoke" />
+    <effect class="result" key="terrain" ref="wand_magic_area_spot" />
+    <effect class="result" key="terrain" ref="wand_hit_ground_center_light" />
+    <effect class="result" key="terrain" ref="wand_hit_ground_center_light_up" />
+    <effect class="result" key="terrain" ref="wand_hit_ground_radiation" />
+    <effect class="result" key="terrain" ref="wand_hit_ground_rainbowewave" />
+    <effect class="result" key="terrain" ref="wand_hit_ground_expand" />
+    <effect class="result" key="terrain" ref="wand_hit_ground_surrounding_line_01" />
+    <effect class="result" key="terrain" ref="wand_hit_ground_surrounding_line_02" />
+    <effect class="result" key="terrain" ref="wand_hit_ground_vertical_center_light" />
+    <effect class="result" key="terrain" ref="wand_hit_ground_area_spot" />
+    <effect class="result" key="terrain" ref="wand_hit_ground_area_stone_01" />
+    <effect class="result" key="terrain" ref="wand_hit_ground_area_stone_02" />
+    <effect class="result" key="terrain" ref="wand_hit_ground_area_stone_03" />
+    <effect class="result" key="terrain" ref="wand_hit_ground_area_stone_04" />
+    <effect class="result" key="terrain" ref="wand_hit_ground_area_stone_05" />
+    <effect class="result" key="terrain" ref="wand_hit_ground_area_stone_06" />
     <effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_01" />
+    <effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_02" />
+    <effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_03" />
+    <effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_04" />
+    <effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_05" />
+    <effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_06" />
+    <effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_07" />
+    <effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_08" />
+    <effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_09" />
+    <effect class="result" key="terrain" ref="wand_blast_center_laser" />
+    <effect class="result" key="terrain" ref="wand_blast_center_laser_pre" />
+    <effect class="result" key="terrain" ref="wand_blast_center_shrink_light" />
+    <effect class="result" key="terrain" ref="wand_blast_center_lens_flare" />
+    <effect class="result" key="terrain" ref="wand_blast_area_smoke" />
+    <effect class="result" key="terrain" ref="wand_blast_area_smoke_shadow" />
+    <effect class="result" key="terrain" ref="wand_blast_area_smoke_ring" />
+    <effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_01" />
+    <effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_02" />
+    <effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_03" />
+    <effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_04" />
+    <effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_05" />
+    <effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_06" />
+    <effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_07" />
+    <effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_08" />
+    <effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_09" />
     <effect class="result" key="terrain" ref="wand_activated_fire_smoke" />
+    <effect class="result" key="terrain" ref="wand_magic_circle_muzzle_float" />
+    <effect class="result" key="terrain" ref="wand_magic_circle_expand_muzzle_float" />
+    <effect class="result" key="terrain" ref="wand_magic_circle_warmup_muzzle_float" />
     <effect class="result" key="terrain" ref="wand_result_fire_blast" />
+    <effect class="result" key="terrain" ref="wand_result_fire_blast_ground" />
     <effect class="result" key="terrain" ref="acg_yileina_wand_rain_muzzle_up" />
     <effect class="result" key="terrain" ref="acg_yileina_wand_result_impact_up" />
     <effect class="result" key="terrain" ref="acg_yileina_wand_rain_muzzle_up_star" />

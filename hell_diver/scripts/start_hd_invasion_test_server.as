@@ -36,10 +36,10 @@ void main(dictionary@ inputData) {
         settings.m_debug_mode = false;
         settings.m_server_test_mode = true;
 
-        settings.m_server_activity = true; //define whether skip the map when end.
-        settings.m_server_activity_racing = true;
+        settings.m_server_activity = false; //define whether skip the map when end.
+        settings.m_server_activity_racing = false;
 
-        settings.m_single_player = true;
+        settings.m_single_player = false;
 
         settings.m_GameMode = "";
 
@@ -51,7 +51,7 @@ void main(dictionary@ inputData) {
         settings.m_startServerCommand = """
 <command class='start_server'
 	server_name='[地狱潜兵] 测试服 '
-	server_port='1250'
+	server_port='2333'
 	url='https://steamcommunity.com/sharedfiles/filedetails/?id=2910392031'
 	register_in_serverlist='1'
 	mode='COOP'

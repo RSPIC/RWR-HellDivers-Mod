@@ -92,7 +92,7 @@ can_be_detected_by_footmen="0" can_be_disarmed="0"
 >
 	<rotation class="motion" />	
 
-	<result class="blast" radius="6.0" damage="30" push="0.3" decal="1" character_state="wound" faction_compare="not_equal" />
+	<result class="blast" radius="6.0" damage="30" push="0.3" decal="1" character_state="unwound" faction_compare="not_equal" />
 	<trigger class="impact" time_to_live="0.05" />
     <collision class="sticky" />
 

@@ -1,75 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <projectiles>
-	<!-- Effect -->
-	<projectile file="_hd_effect_projectile.xml" />
-	<projectile file="hd_players_dead_effect.projectile" />
-	<projectile file="hd_vindicator_effect.projectile" />
-	<projectile file="hd_sound_divers_coming.projectile" />
-	<projectile file="hd_sound_divers_coming_bgm.projectile" />
-	<projectile file="hd_vehicle_eject.projectile" />
-	<projectile file="hd_effect_emoticon.projectile" />
-
-	<!--武器弹头-->
-    <projectile file="hd_general_spawn.projectile" />
-    <projectile file="hd_general_gl_spawn.projectile" />
-    <projectile file="hd_general_spawn_no_effect.projectile" />
-    <projectile file="hd_exp_obliterator_base_damage.projectile" />
-    <projectile file="hd_exp_plas1_scorcher_base_damage.projectile" />
-    <projectile file="hd_exp_m25_rumbler_base_damage.projectile" />
-    <projectile file="hd_exp_rl112_recoilless_rifle_base_damage.projectile" />
-    <projectile file="hd_exp_eta17_base_damage.projectile" />
-	<projectile file="hd_exp_mls4x_commando_base_damage.projectile" />
-    <projectile file="hd_exp_cr9_suppressor_base_damage.projectile" />
-    <projectile file="hd_exp_ac22_dum_dum_base_damage.projectile" />
-	<projectile file="hd_exp_rec6_demolisher_base_damage.projectile" /> 
-	<projectile file="hd_arc_ac5_shotgun_full_upgrade_damage.projectile" />
-    <projectile file="hd_pst_tox13_avenger_base_damage.projectile" />
-    <projectile file="hd_pst_flam40_incinerator_base_damage.projectile" />
-    <projectile file="hd_exo44_walker_missile_base_damage.projectile" />
-    <projectile file="hd_exo48_obsidian_cannon_base_damage.projectile" />
-    <projectile file="hd_exo_dead_damage.projectile" />
-    <projectile file="hd_exo51_lumberer_cannon_base_damage.projectile" />
-    <projectile file="hd_exo51_lumberer_mk3_flame_damage.projectile" />
-    <projectile file="hd_m5_32_hav_at_mk3_damage.projectile" />
-    <projectile file="hd_td110_bastion_at_mk3_damage.projectile" />
-    <projectile file="hd_at47_mk3_damage.projectile" />
-    <projectile file="hd_vehicle_destroy_damage.projectile" />
-    <projectile file="hd_amg_11_mk3_damage.projectile" />
-    <projectile file="hd_arx_34_mk3_damage.projectile" />
-    <projectile file="hd_aac6_tesla_mk3_damage.projectile" />
-    <projectile file="hd_agl8_mk3_damage.projectile" />
-    <projectile file="hd_offensive_airstrike_mk3_damage.projectile" />	<!--空袭-->
-    <projectile file="hd_offensive_laser_strike_mk3_damage.projectile" />	<!--轨道激光-->
-    <projectile file="hd_offensive_shredder_missile_strike_mk3_damage.projectile" />	<!--撕裂者-->
-    <projectile file="hd_offensive_close_air_support_mk3_damage.projectile" />		<!--近空支援炸弹-->
-    <projectile file="hd_offensive_close_air_support_mk3_mg_damage.projectile" /> 	<!--近空支援机枪-->
-    <projectile file="hd_nux_223_hellbomb_damage.projectile" />
-    <projectile file="hd_nux_223_hellbomb_damage_destroy.projectile" />
-    <projectile file="hd_offensive_heavy_strafing_run_mk3_mg_damage.projectile" />	<!--重机枪扫射-->
-	<projectile file="hd_vindicator_missile.projectile" />		<!--辩护者-->
-    <projectile file="hd_vindicator_shrapnel.projectile" />		<!--辩护者-->
-    <projectile file="hd_offensive_incendiary_bombs_mk3_damage.projectile" />		<!--燃烧炸弹-->
-    <projectile file="hd_offensive_thunderer_barrage_mk3_damage.projectile" />		<!--三重轰炸-->
-    <projectile file="hd_offensive_strafing_run_mk3_mg_damage.projectile" />		<!--机枪扫射-->
-    <projectile file="hd_offensive_missile_barrage_mk3_damage.projectile" />		<!--导弹弹幕-->
-    <projectile file="hd_offensive_railcannon_strike_mk3_damage.projectile" />		<!--轨道炮轰炸-->
-    <projectile file="hd_offensive_sledge_precision_artillery_mk3_damage.projectile" />		<!--大锤精确火炮-->
-    <projectile file="hd_offensive_static_field_conductors_mk3_damage.projectile" />		<!--静电力场-->
-    <projectile file="hd_md99_autoinjector.projectile" />		<!--急救针-->
-    <projectile file="hd_sg_double_freedom_base_damage.projectile" />		
-	<projectile file="hd_lava17_roger_damage.projectile" />
-	<projectile file="hd_hmg_mg255_melt_damage.projectile" />
-	<projectile file="hd_pst_tox17_sourhound_damage.projectile" />
-	<projectile file="hd_side_digger_drill_base_damage.projectile" />
-	<projectile file="hd_explosive_bunny_dead_damage.projectile" />
-	<projectile file="hd_fire_turrent_damage.projectile" />
-	<projectile file="hd_ra2_tesla_damage.projectile" />
-	<projectile file="hd_psc_damage.projectile" />
-	<projectile file="hd_m5_apc_autocannon_damage.projectile" />
-	<projectile file="noxe_damage.projectile" />
-	<projectile file="hd_demolition_truck_damage.projectile" />
-	<projectile file="hd_missile_launcher_damage.projectile" />
-	<projectile file="hd_ra2_ifv_damage.projectile" />
+	<projectile file="wand_damage_04.projectile" /><!--法杖-->
+    <projectile file="wand_waiting_03.projectile" />
+    <projectile file="wand_droping_02.projectile" />
+    <projectile file="wand_guiding_01.projectile" />
+	
 	<!--Offensive 攻击性支援-->
     <projectile file="hd_offensive_vindicator_dive_bomb_mk3.projectile" />	<!--辩护者-->
 	<projectile file="hd_offensive_airstrike_mk3.projectile" />	<!--空袭-->
@@ -147,8 +82,75 @@
 	<projectile file="hd_nux_223_hellbomb_waiting.projectile" />
 	<projectile file="hd_offensive_incendiary_bombs_mk3_spawn.projectile" /><!--燃烧炸弹-->
 
+	<!-- Effect -->
+	<projectile file="_hd_effect_projectile.xml" />
+	<projectile file="hd_players_dead_effect.projectile" />
+	<projectile file="hd_vindicator_effect.projectile" />
+	<projectile file="hd_sound_divers_coming.projectile" />
+	<projectile file="hd_sound_divers_coming_bgm.projectile" />
+	<projectile file="hd_vehicle_eject.projectile" />
+	<projectile file="hd_effect_emoticon.projectile" />
 
-
-
+	<!--武器弹头-->
+    <projectile file="hd_general_spawn.projectile" />
+    <projectile file="hd_general_gl_spawn.projectile" />
+    <projectile file="hd_general_spawn_no_effect.projectile" />
+    <projectile file="hd_exp_obliterator_base_damage.projectile" />
+    <projectile file="hd_exp_plas1_scorcher_base_damage.projectile" />
+    <projectile file="hd_exp_m25_rumbler_base_damage.projectile" />
+    <projectile file="hd_exp_rl112_recoilless_rifle_base_damage.projectile" />
+    <projectile file="hd_exp_eta17_base_damage.projectile" />
+	<projectile file="hd_exp_mls4x_commando_base_damage.projectile" />
+    <projectile file="hd_exp_cr9_suppressor_base_damage.projectile" />
+    <projectile file="hd_exp_ac22_dum_dum_base_damage.projectile" />
+	<projectile file="hd_exp_rec6_demolisher_base_damage.projectile" /> 
+	<projectile file="hd_arc_ac5_shotgun_full_upgrade_damage.projectile" />
+    <projectile file="hd_pst_tox13_avenger_base_damage.projectile" />
+    <projectile file="hd_pst_flam40_incinerator_base_damage.projectile" />
+    <projectile file="hd_exo44_walker_missile_base_damage.projectile" />
+    <projectile file="hd_exo48_obsidian_cannon_base_damage.projectile" />
+    <projectile file="hd_exo_dead_damage.projectile" />
+    <projectile file="hd_exo51_lumberer_cannon_base_damage.projectile" />
+    <projectile file="hd_exo51_lumberer_mk3_flame_damage.projectile" />
+    <projectile file="hd_m5_32_hav_at_mk3_damage.projectile" />
+    <projectile file="hd_td110_bastion_at_mk3_damage.projectile" />
+    <projectile file="hd_at47_mk3_damage.projectile" />
+    <projectile file="hd_vehicle_destroy_damage.projectile" />
+    <projectile file="hd_amg_11_mk3_damage.projectile" />
+    <projectile file="hd_arx_34_mk3_damage.projectile" />
+    <projectile file="hd_aac6_tesla_mk3_damage.projectile" />
+    <projectile file="hd_agl8_mk3_damage.projectile" />
+    <projectile file="hd_offensive_airstrike_mk3_damage.projectile" />	<!--空袭-->
+    <projectile file="hd_offensive_laser_strike_mk3_damage.projectile" />	<!--轨道激光-->
+    <projectile file="hd_offensive_shredder_missile_strike_mk3_damage.projectile" />	<!--撕裂者-->
+    <projectile file="hd_offensive_close_air_support_mk3_damage.projectile" />		<!--近空支援炸弹-->
+    <projectile file="hd_offensive_close_air_support_mk3_mg_damage.projectile" /> 	<!--近空支援机枪-->
+    <projectile file="hd_nux_223_hellbomb_damage.projectile" />
+    <projectile file="hd_nux_223_hellbomb_damage_destroy.projectile" />
+    <projectile file="hd_offensive_heavy_strafing_run_mk3_mg_damage.projectile" />	<!--重机枪扫射-->
+	<projectile file="hd_vindicator_missile.projectile" />		<!--辩护者-->
+    <projectile file="hd_vindicator_shrapnel.projectile" />		<!--辩护者-->
+    <projectile file="hd_offensive_incendiary_bombs_mk3_damage.projectile" />		<!--燃烧炸弹-->
+    <projectile file="hd_offensive_thunderer_barrage_mk3_damage.projectile" />		<!--三重轰炸-->
+    <projectile file="hd_offensive_strafing_run_mk3_mg_damage.projectile" />		<!--机枪扫射-->
+    <projectile file="hd_offensive_missile_barrage_mk3_damage.projectile" />		<!--导弹弹幕-->
+    <projectile file="hd_offensive_railcannon_strike_mk3_damage.projectile" />		<!--轨道炮轰炸-->
+    <projectile file="hd_offensive_sledge_precision_artillery_mk3_damage.projectile" />		<!--大锤精确火炮-->
+    <projectile file="hd_offensive_static_field_conductors_mk3_damage.projectile" />		<!--静电力场-->
+    <projectile file="hd_md99_autoinjector.projectile" />		<!--急救针-->
+    <projectile file="hd_sg_double_freedom_base_damage.projectile" />		
+	<projectile file="hd_lava17_roger_damage.projectile" />
+	<projectile file="hd_hmg_mg255_melt_damage.projectile" />
+	<projectile file="hd_pst_tox17_sourhound_damage.projectile" />
+	<projectile file="hd_side_digger_drill_base_damage.projectile" />
+	<projectile file="hd_explosive_bunny_dead_damage.projectile" />
+	<projectile file="hd_fire_turrent_damage.projectile" />
+	<projectile file="hd_ra2_tesla_damage.projectile" />
+	<projectile file="hd_psc_damage.projectile" />
+	<projectile file="hd_m5_apc_autocannon_damage.projectile" />
+	<projectile file="noxe_damage.projectile" />
+	<projectile file="hd_demolition_truck_damage.projectile" />
+	<projectile file="hd_missile_launcher_damage.projectile" />
+	<projectile file="hd_ra2_ifv_damage.projectile" />
 
 </projectiles>

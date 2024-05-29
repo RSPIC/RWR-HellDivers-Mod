@@ -27,11 +27,10 @@ player_death_drop_owner_lock_time="0"
 		<!--命中音效-->
 		<sound class="result" key="other" fileref="texas_skill_hit.wav" pitch_variety="0.03" volume="0.7" />
 
-
-		<effect class="result" key="terrain" ref="texas_polygon_expand" lighting="0" />
-  	  	<effect class="result" key="terrain" ref="texas_polygon_fix" lighting="0" />
-   	 	<effect class="result" key="terrain" ref="texas_center_crossline_1" lighting="0" />
-		<effect class="result" key="terrain" ref="texas_center_crossline_2" lighting="0" />
+		<effect class="result" ref="texas_polygon_expand" lighting="0" />
+  	  	<effect class="result" ref="texas_polygon_fix" lighting="0" />
+   	 	<effect class="result" ref="texas_center_crossline_1" lighting="0" />
+		<effect class="result" ref="texas_center_crossline_2" lighting="0" />
 		<effect class="activated" ref="texas_activated_center" lighting="0" />
 
 		<effect class="result" type="splat_map" surface_tag="" size="2.0" atlas_index="4" layer="0" />

@@ -81,33 +81,13 @@ class="grenade" slot="0" pulldown_in_air="8" key="acg_elaina_wand_skill_damage.p
 can_be_detected_by_footmen="0" can_be_disarmed="0" >
 	<rotation class="motion" />	
 
-	<result class="blast" radius="8.5" damage="50" decal="0" push="0.3" character_state="unwound"
-	damage_origin_vehicle="0" faction_compare="not_equal"/>
+	<result class="spawn" instance_class="grenade" instance_key="acg_elaina_wand_skill_damage2.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
     <trigger class="impact" time_to_live="0.1" />
     <collision class="sticky" />
 
     <commonness value="0.0" can_respawn_with="0" in_stock="0"/>
 
-	<effect class="result" key="terrain" ref="elaina_wand_skill_anim_lighting" lighting="0"/>
-	<effect class="result" key="terrain" ref="elaina_wand_skill_anim_lighting2" lighting="0"/>
-	<effect class="result" key="terrain" ref="elaina_wand_skill_anim_lighting3" lighting="0"/>
-	<effect class="result" key="terrain" ref="elaina_wand_skill_anim_lighting4" lighting="0"/>
-	<effect class="result" key="terrain" ref="elaina_wand_skill_anim_lighting5" lighting="0"/>
-	<effect class="result" key="terrain" ref="elaina_wand_skill_center_light" lighting="0"/>
-	<effect class="result" key="terrain" ref="illum_illusionist_result_area_lighting" lighting="0"/>
-
-	<effect class="result" key="terrain" ref="elaina_wand_skill_thunder_guiding" /> 
-
-	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
-	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
-	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
-	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
-	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
-	<effect class="result" key="other" copy="terrain"/>
-	<effect class="result" key="static_object" copy="terrain" />
-	<effect class="result" key="character" copy="terrain" />
-	<effect class="result" key="vehicle" copy="terrain" />
-		
 	<sound class="result" key="other" fileref="MPAIS_01.wav" pitch_variety="0.01" volume="1" />
 
 	<sound class="result" key="terrain" copy="other" />
@@ -116,6 +96,28 @@ can_be_detected_by_footmen="0" can_be_disarmed="0" >
 	<sound class="result" key="character" copy="other" />
 
     <model mesh_filename="" />
+
+</projectile>
+<projectile 
+class="grenade" slot="0" pulldown_in_air="8" key="acg_elaina_wand_skill_damage2.projectile"
+can_be_detected_by_footmen="0" can_be_disarmed="0" >
+	<rotation class="motion" />	
+
+	<result class="blast" radius="8.5" damage="50" decal="0" push="0.3" character_state="unwound"
+	damage_origin_vehicle="0" faction_compare="not_equal"/>
+    <trigger class="time" time_to_live="0" />
+    <collision class="sticky" />
+
+    <commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+
+	<effect class="result" ref="elaina_wand_skill_anim_lighting" />
+	<effect class="result" ref="elaina_wand_skill_anim_lighting2" />
+	<effect class="result" ref="elaina_wand_skill_anim_lighting3" />
+	<effect class="result" ref="elaina_wand_skill_anim_lighting4" />
+	<effect class="result" ref="elaina_wand_skill_anim_lighting5" />
+	<effect class="result" ref="elaina_wand_skill_center_light" />
+	<effect class="result" ref="illum_illusionist_result_area_lighting" />
+	<effect class="result" ref="elaina_wand_skill_thunder_guiding" /> 
 
 </projectile>
 <projectile 

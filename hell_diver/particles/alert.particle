@@ -166,17 +166,14 @@ particle_system alert_center_alerticon_hight_frequncy
 		rotation_range_start	0
 		rotation_range_end	0
 	}
-	affector ColourFader2
+	affector ColourInterpolator
 	{
-		red1 	0
-		green1 	0
-		blue1 	0
-		alpha1 	0
-		red2 	-0
-		green2	-0
-		blue2	-0
-		alpha2	-20
-		state_change 0.05
+		time0 0
+		colour0 1 1 1 1
+		time1 0.7
+		colour1 1 1 1 1
+		time2 1
+		colour2 0 0 0 0
 	}
 	affector LinearForce{
 		force_vector 0 0 0
@@ -230,17 +227,14 @@ particle_system alert_center_alerticon
 		rotation_range_start	0
 		rotation_range_end	0
 	}
-	affector ColourFader2
+	affector ColourInterpolator
 	{
-		red1 	0
-		green1 	0
-		blue1 	0
-		alpha1 	0
-		red2 	-3
-		green2	-3
-		blue2	-3
-		alpha2	-3
-		state_change 0.33
+		time0 0
+		colour0 1 1 1 1
+		time1 0.7
+		colour1 1 1 1 1
+		time2 1
+		colour2 0 0 0 0
 	}
 	affector LinearForce{
 		force_vector 0 0 0

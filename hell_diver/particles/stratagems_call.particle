@@ -109,54 +109,6 @@ emitter Point{duration 5}}
 particle_system stratagems_liner_light_6s : stratagems_liner_light_2s 
 {
 emitter Point{duration 5}}
-particle_system stratagems_point_light_area_7s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 6}}
-particle_system stratagems_liner_light_7s : stratagems_liner_light_2s 
-{
-emitter Point{duration 6}}
-particle_system stratagems_point_light_area_8s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 7}}
-particle_system stratagems_liner_light_8s : stratagems_liner_light_2s 
-{
-emitter Point{duration 7}}
-particle_system stratagems_point_light_area_9s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 8}}
-particle_system stratagems_liner_light_9s : stratagems_liner_light_2s 
-{
-emitter Point{duration 8}}
-particle_system stratagems_point_light_area_10s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 9}}
-particle_system stratagems_liner_light_10s : stratagems_liner_light_2s 
-{
-emitter Point{duration 9}}
-particle_system stratagems_point_light_area_11s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 10}}
-particle_system stratagems_liner_light_11s : stratagems_liner_light_2s 
-{
-emitter Point{duration 10}}
-particle_system stratagems_point_light_area_12s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 11}}
-particle_system stratagems_liner_light_12s : stratagems_liner_light_2s 
-{
-emitter Point{duration 11}}
-particle_system stratagems_point_light_area_13s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 12}}
-particle_system stratagems_liner_light_13s : stratagems_liner_light_2s 
-{
-emitter Point{duration 12}}
-particle_system stratagems_point_light_area_14s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 13}}
-particle_system stratagems_liner_light_14s : stratagems_liner_light_2s 
-{
-emitter Point{duration 13}}
 particle_system stratagems_point_light_area_15s : stratagems_point_light_area_2s	 
 {
 emitter Point{duration 14}}
@@ -164,24 +116,6 @@ particle_system stratagems_liner_light_15s : stratagems_liner_light_2s
 {
 emitter Point{duration 14}}
 
-particle_system stratagems_point_light_area_20s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 19}}
-particle_system stratagems_liner_light_20s : stratagems_liner_light_2s 
-{
-emitter Point{duration 19}}
-particle_system stratagems_point_light_area_25s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 24}}
-particle_system stratagems_liner_light_25s : stratagems_liner_light_2s 
-{
-emitter Point{duration 24}}
-particle_system stratagems_point_light_area_30s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 29}}
-particle_system stratagems_liner_light_30s : stratagems_liner_light_2s 
-{
-emitter Point{duration 29}}
 
 蓝色
 abstract affector blue{
@@ -232,70 +166,6 @@ particle_system stratagems_liner_light_blue_6s : stratagems_liner_light_2s
 {
 emitter Point{duration 5}
 affector ColourInterpolator : blue{}}
-particle_system stratagems_point_light_area_blue_7s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 6}
-affector ColourInterpolator : blue{}}
-particle_system stratagems_liner_light_blue_7s : stratagems_liner_light_2s 
-{
-emitter Point{duration 6}
-affector ColourInterpolator : blue{}}
-particle_system stratagems_point_light_area_blue_8s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 7}
-affector ColourInterpolator : blue{}}
-particle_system stratagems_liner_light_blue_8s : stratagems_liner_light_2s 
-{
-emitter Point{duration 7}
-affector ColourInterpolator : blue{}}
-particle_system stratagems_point_light_area_blue_9s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 8}
-affector ColourInterpolator : blue{}}
-particle_system stratagems_liner_light_blue_9s : stratagems_liner_light_2s 
-{
-emitter Point{duration 8}
-affector ColourInterpolator : blue{}}
-particle_system stratagems_point_light_area_blue_10s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 9}
-affector ColourInterpolator : blue{}}
-particle_system stratagems_liner_light_blue_10s : stratagems_liner_light_2s 
-{
-emitter Point{duration 9}
-affector ColourInterpolator : blue{}}
-particle_system stratagems_point_light_area_blue_11s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 10}
-affector ColourInterpolator : blue{}}
-particle_system stratagems_liner_light_blue_11s : stratagems_liner_light_2s 
-{
-emitter Point{duration 10}
-affector ColourInterpolator : blue{}}
-particle_system stratagems_point_light_area_blue_12s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 11}
-affector ColourInterpolator : blue{}}
-particle_system stratagems_liner_light_blue_12s : stratagems_liner_light_2s 
-{
-emitter Point{duration 11}
-affector ColourInterpolator : blue{}}
-particle_system stratagems_point_light_area_blue_13s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 12}
-affector ColourInterpolator : blue{}}
-particle_system stratagems_liner_light_blue_13s : stratagems_liner_light_2s 
-{
-emitter Point{duration 12}
-affector ColourInterpolator : blue{}}
-particle_system stratagems_point_light_area_blue_14s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 13}
-affector ColourInterpolator : blue{}}
-particle_system stratagems_liner_light_blue_14s : stratagems_liner_light_2s 
-{
-emitter Point{duration 13}
-affector ColourInterpolator : blue{}}
 particle_system stratagems_point_light_area_blue_15s : stratagems_point_light_area_2s	 
 {
 emitter Point{duration 14}
@@ -305,30 +175,6 @@ particle_system stratagems_liner_light_blue_15s : stratagems_liner_light_2s
 emitter Point{duration 14}
 affector ColourInterpolator : blue{}}
 
-particle_system stratagems_point_light_area_blue_20s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 19}
-affector ColourInterpolator : blue{}}
-particle_system stratagems_liner_light_blue_20s : stratagems_liner_light_2s 
-{
-emitter Point{duration 19}
-affector ColourInterpolator : blue{}}
-particle_system stratagems_point_light_area_blue_25s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 24}
-affector ColourInterpolator : blue{}}
-particle_system stratagems_liner_light_blue_25s : stratagems_liner_light_2s 
-{
-emitter Point{duration 24}
-affector ColourInterpolator : blue{}}
-particle_system stratagems_point_light_area_blue_30s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 29}
-affector ColourInterpolator : blue{}}
-particle_system stratagems_liner_light_blue_30s : stratagems_liner_light_2s 
-{
-emitter Point{duration 29}
-affector ColourInterpolator : blue{}}
 
 绿色
 abstract affector green{
@@ -379,70 +225,6 @@ particle_system stratagems_liner_light_green_6s : stratagems_liner_light_2s
 {
 emitter Point{duration 5}
 affector ColourInterpolator : green{}}
-particle_system stratagems_point_light_area_green_7s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 6}
-affector ColourInterpolator : green{}}
-particle_system stratagems_liner_light_green_7s : stratagems_liner_light_2s 
-{
-emitter Point{duration 6}
-affector ColourInterpolator : green{}}
-particle_system stratagems_point_light_area_green_8s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 7}
-affector ColourInterpolator : green{}}
-particle_system stratagems_liner_light_green_8s : stratagems_liner_light_2s 
-{
-emitter Point{duration 7}
-affector ColourInterpolator : green{}}
-particle_system stratagems_point_light_area_green_9s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 8}
-affector ColourInterpolator : green{}}
-particle_system stratagems_liner_light_green_9s : stratagems_liner_light_2s 
-{
-emitter Point{duration 8}
-affector ColourInterpolator : green{}}
-particle_system stratagems_point_light_area_green_10s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 9}
-affector ColourInterpolator : green{}}
-particle_system stratagems_liner_light_green_10s : stratagems_liner_light_2s 
-{
-emitter Point{duration 9}
-affector ColourInterpolator : green{}}
-particle_system stratagems_point_light_area_green_11s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 10}
-affector ColourInterpolator : green{}}
-particle_system stratagems_liner_light_green_11s : stratagems_liner_light_2s 
-{
-emitter Point{duration 10}
-affector ColourInterpolator : green{}}
-particle_system stratagems_point_light_area_green_12s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 11}
-affector ColourInterpolator : green{}}
-particle_system stratagems_liner_light_green_12s : stratagems_liner_light_2s 
-{
-emitter Point{duration 11}
-affector ColourInterpolator : green{}}
-particle_system stratagems_point_light_area_green_13s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 12}
-affector ColourInterpolator : green{}}
-particle_system stratagems_liner_light_green_13s : stratagems_liner_light_2s 
-{
-emitter Point{duration 12}
-affector ColourInterpolator : green{}}
-particle_system stratagems_point_light_area_green_14s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 13}
-affector ColourInterpolator : green{}}
-particle_system stratagems_liner_light_green_14s : stratagems_liner_light_2s 
-{
-emitter Point{duration 13}
-affector ColourInterpolator : green{}}
 particle_system stratagems_point_light_area_green_15s : stratagems_point_light_area_2s	 
 {
 emitter Point{duration 14}
@@ -452,30 +234,6 @@ particle_system stratagems_liner_light_green_15s : stratagems_liner_light_2s
 emitter Point{duration 14}
 affector ColourInterpolator : green{}}
 
-particle_system stratagems_point_light_area_green_20s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 19}
-affector ColourInterpolator : green{}}
-particle_system stratagems_liner_light_green_20s : stratagems_liner_light_2s 
-{
-emitter Point{duration 19}
-affector ColourInterpolator : green{}}
-particle_system stratagems_point_light_area_green_25s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 24}
-affector ColourInterpolator : green{}}
-particle_system stratagems_liner_light_green_25s : stratagems_liner_light_2s 
-{
-emitter Point{duration 24}
-affector ColourInterpolator : green{}}
-particle_system stratagems_point_light_area_green_30s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 29}
-affector ColourInterpolator : green{}}
-particle_system stratagems_liner_light_green_30s : stratagems_liner_light_2s 
-{
-emitter Point{duration 29}
-affector ColourInterpolator : green{}}
 
 黄色
 abstract affector yellow{
@@ -526,70 +284,6 @@ particle_system stratagems_liner_light_yellow_6s : stratagems_liner_light_2s
 {
 emitter Point{duration 5}
 affector ColourInterpolator : yellow{}}
-particle_system stratagems_point_light_area_yellow_7s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 6}
-affector ColourInterpolator : yellow{}}
-particle_system stratagems_liner_light_yellow_7s : stratagems_liner_light_2s 
-{
-emitter Point{duration 6}
-affector ColourInterpolator : yellow{}}
-particle_system stratagems_point_light_area_yellow_8s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 7}
-affector ColourInterpolator : yellow{}}
-particle_system stratagems_liner_light_yellow_8s : stratagems_liner_light_2s 
-{
-emitter Point{duration 7}
-affector ColourInterpolator : yellow{}}
-particle_system stratagems_point_light_area_yellow_9s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 8}
-affector ColourInterpolator : yellow{}}
-particle_system stratagems_liner_light_yellow_9s : stratagems_liner_light_2s 
-{
-emitter Point{duration 8}
-affector ColourInterpolator : yellow{}}
-particle_system stratagems_point_light_area_yellow_10s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 9}
-affector ColourInterpolator : yellow{}}
-particle_system stratagems_liner_light_yellow_10s : stratagems_liner_light_2s 
-{
-emitter Point{duration 9}
-affector ColourInterpolator : yellow{}}
-particle_system stratagems_point_light_area_yellow_11s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 10}
-affector ColourInterpolator : yellow{}}
-particle_system stratagems_liner_light_yellow_11s : stratagems_liner_light_2s 
-{
-emitter Point{duration 10}
-affector ColourInterpolator : yellow{}}
-particle_system stratagems_point_light_area_yellow_12s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 11}
-affector ColourInterpolator : yellow{}}
-particle_system stratagems_liner_light_yellow_12s : stratagems_liner_light_2s 
-{
-emitter Point{duration 11}
-affector ColourInterpolator : yellow{}}
-particle_system stratagems_point_light_area_yellow_13s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 12}
-affector ColourInterpolator : yellow{}}
-particle_system stratagems_liner_light_yellow_13s : stratagems_liner_light_2s 
-{
-emitter Point{duration 12}
-affector ColourInterpolator : yellow{}}
-particle_system stratagems_point_light_area_yellow_14s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 13}
-affector ColourInterpolator : yellow{}}
-particle_system stratagems_liner_light_yellow_14s : stratagems_liner_light_2s 
-{
-emitter Point{duration 13}
-affector ColourInterpolator : yellow{}}
 particle_system stratagems_point_light_area_yellow_15s : stratagems_point_light_area_2s	 
 {
 emitter Point{duration 14}
@@ -599,30 +293,7 @@ particle_system stratagems_liner_light_yellow_15s : stratagems_liner_light_2s
 emitter Point{duration 14}
 affector ColourInterpolator : yellow{}}
 
-particle_system stratagems_point_light_area_yellow_20s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 19}
-affector ColourInterpolator : yellow{}}
-particle_system stratagems_liner_light_yellow_20s : stratagems_liner_light_2s 
-{
-emitter Point{duration 19}
-affector ColourInterpolator : yellow{}}
-particle_system stratagems_point_light_area_yellow_25s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 24}
-affector ColourInterpolator : yellow{}}
-particle_system stratagems_liner_light_yellow_25s : stratagems_liner_light_2s 
-{
-emitter Point{duration 24}
-affector ColourInterpolator : yellow{}}
-particle_system stratagems_point_light_area_yellow_30s : stratagems_point_light_area_2s	 
-{
-emitter Point{duration 29}
-affector ColourInterpolator : yellow{}}
-particle_system stratagems_liner_light_yellow_30s : stratagems_liner_light_2s 
-{
-emitter Point{duration 29}
-affector ColourInterpolator : yellow{}}
+
 
 
 

@@ -73,13 +73,10 @@ key="illum_robot_tank.weapon"
 	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
 
 	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
-	<capacity value="0" source="rank" source_value="0.0" />
-	<capacity value="1" source="rank" source_value="84.248" />
 	
 	<!--军械库相关-->
     <!-- <commonness value="0.1" can_respawn_with="1" in_stock="1" /> 
     <inventory encumbrance="10.0" price="0.0" /> 武器重量和价格，实际负重为两倍encumbrance值 -->
-    <commonness value="0.1"/>
 
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="7" can_be_detected_by_footmen="1" 
 	time_to_live="0.48" can_be_detected_by_driver="1" can_be_disarmed="0" name="ATX-25 Revelator" radius="1.0"> 

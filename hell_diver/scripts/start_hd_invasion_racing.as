@@ -31,8 +31,11 @@ void main(dictionary@ inputData) {
         settings.m_journalEnabled = true;
         settings.m_fellowDisableEnemySpawnpointsSoldierCountOffset = 1;
 
-        settings.m_server_difficulty_level = 15;
-        settings.m_fov = true;
+        settings.m_server_difficulty_level = 3;
+        settings.m_fov = false;
+
+        settings.m_server_activity = true; //define whether skip the map when end.
+        settings.m_server_activity_racing = true;
 
         array<string> overlays = {
                 "media/packages/hell_diver"

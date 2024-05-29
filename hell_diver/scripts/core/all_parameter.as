@@ -189,6 +189,8 @@ dictionary vehicle_repair_deny_key = {
         {"mi_24.vehicle",1},
         {"bell_360.vehicle",1},
         {"mh_60s.vehicle",1},
+        {"illum_allied_prism_tank.vehicle",1},
+        {"illum_robot_tank.vehicle",1},
 
         // 占位的
         {"666",-1}

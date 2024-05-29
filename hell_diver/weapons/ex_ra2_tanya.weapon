@@ -101,9 +101,9 @@ key="ex_ra2_tanya.weapon">
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
 	time_to_live="0.115" can_be_detected_by_driver="1" can_be_disarmed="0" > 
 	
-		<result class="hit" kill_probability="0.9" 
+		<result class="hit" kill_probability="0.8" 
 		kill_probability_offset_on_successful_hit="0.0"
-		kill_decay_start_time="0.07" kill_decay_end_time="0.16" character_state="none" faction_compare="not_equal"/>
+		kill_decay_start_time="0.1" kill_decay_end_time="0.22" character_state="none" faction_compare="not_equal"/>
 		<!-- 25m max damage range / 最高1.5倍射界,且无衰减 -->
 		<!-- 0.3s stun time -->
 		<!-- damage 60hit/70ap stun  -->
@@ -145,7 +145,7 @@ key="ex_ra2_tanya.weapon">
 	<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
     
     <modifier class="speed" value="0.25" /> 
-    <modifier class="detectability" value="0.25" />	
+    <modifier class="detectability" value="0.5" />	
 </weapon>
 <weapon 
 file="_rare_weapon_mk1.base" 
@@ -302,7 +302,7 @@ key="ex_ra2_tanya_c4.weapon">
 	<effect class="muzzle" ref="" lighting="0"/> 
     
     <modifier class="speed" value="0.25" /> 
-    <modifier class="detectability" value="0.25" />	
+    <modifier class="detectability" value="0.5" />	
 </weapon>
 <weapon 
 file="_rare_weapon_mk1_re.base" 
@@ -405,9 +405,9 @@ key="re_ex_ra2_tanya.weapon">
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
 	time_to_live="0.115" can_be_detected_by_driver="1" can_be_disarmed="0" > 
 	
-		<result class="hit" kill_probability="0.9" 
+		<result class="hit" kill_probability="0.8" 
 		kill_probability_offset_on_successful_hit="0.0"
-		kill_decay_start_time="0.07" kill_decay_end_time="0.16" character_state="none" faction_compare="not_equal"/>
+		kill_decay_start_time="0.1" kill_decay_end_time="0.22" character_state="none" faction_compare="not_equal"/>
 		<!-- 25m max damage range / 最高1.5倍射界,且无衰减 -->
 		<!-- 0.3s stun time -->
 		<!-- damage 60hit/70ap stun  -->
@@ -449,7 +449,7 @@ key="re_ex_ra2_tanya.weapon">
 	<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
     
     <modifier class="speed" value="0.25" /> 
-    <modifier class="detectability" value="0.25" />	
+    <modifier class="detectability" value="0.5" />	
 </weapon>
 <weapon 
 file="_rare_weapon_mk1_re.base" 
@@ -606,6 +606,6 @@ key="re_ex_ra2_tanya_c4.weapon">
 	<effect class="muzzle" ref="" lighting="0"/> 
     
     <modifier class="speed" value="0.25" /> 
-    <modifier class="detectability" value="0.25" />	
+    <modifier class="detectability" value="0.5" />	
 </weapon>
 </weapons>

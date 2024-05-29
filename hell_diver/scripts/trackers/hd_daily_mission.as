@@ -173,7 +173,7 @@ array<missionExchangeList@> missionExchangeLists ={
         }
     ),
     missionExchangeList(
-        "SignInDays7",
+        "SignInDays10",
         array<XmlElement@>= {
         }, 
         array<XmlElement@>= {
@@ -268,6 +268,7 @@ class playerMissionInfo {
     // 使用立刻结算方法，不采用统一结算
     Metagame@ m_metagame;
     string m_name;
+    string m_sid;
     array<MissionCounter@> m_missions;
     bool m_finish_today = false;
     int m_nowDay;
@@ -285,7 +286,7 @@ class playerMissionInfo {
         dailyTasks.push_back(MissionCounter("kill_with_select_weapon", "指定武器击杀", kill_with_select_weapon));
 
         dailyTasks_hard.push_back(MissionCounter("kill_selected_enemy", "击杀指定敌人", kill_selected_enemy, "TaskHard"));
-        dailyTasks_hard.push_back(MissionCounter("timeplay_min_40", "游玩分钟", 40, "TaskHard"));
+        dailyTasks_hard.push_back(MissionCounter("timeplay_min_60", "游玩分钟", 60, "TaskHard"));
         dailyTasks_hard.push_back(MissionCounter("kill_with_melee", "近战击杀", 10, "TaskHard"));
         dailyTasks_hard.push_back(MissionCounter("finish_sidemission", "完成支线任务", 3, "TaskHard"));
         dailyTasks_hard.push_back(MissionCounter("collector", "收集战利品", collector, "TaskHard"));
@@ -296,6 +297,7 @@ class playerMissionInfo {
         buildMissions();
         @m_metagame = @metagame;
         m_name = name;
+        m_sid = g_playerInfoBuck.getSidByName(m_name);
         writeMissionInfo("",null);
         getPermission();
         getSignInReward();
@@ -308,6 +310,8 @@ class playerMissionInfo {
     }
     protected bool writeMissionInfo(string TagName,array<XmlElement@> newXmls,int syncTime = -1) {
         string sid = g_playerInfoBuck.getSidByName(m_name);
+        sid = m_sid;
+        if(sid == ""){return false;}
         // 单人战役情况下，复活事件首次不会产生，通常在脚本执行前
         // 因此玩家信息无法正常被读取，此时sid = ""，存储文件会在_stash.xml里面
         // 然而单机如果开启了服务器，玩家再次进入自己的存档时候，SID不再为ID0，而是正常SID
@@ -427,7 +431,8 @@ class playerMissionInfo {
         return isTrue;
     }
     const XmlElement@ readMissionInfo(string TagName = ""){
-        string sid = g_playerInfoBuck.getSidByName(m_name);   
+        string sid = g_playerInfoBuck.getSidByName(m_name);
+        if(sid == ""){return null;}   
         _log("read upgrade readMissionInfo for sid="+sid);
         const XmlElement@ allInfo = readPlayerStashInfo(sid);
         if(allInfo is null){
@@ -461,6 +466,7 @@ class playerMissionInfo {
     }
     void readMissions(){
         const XmlElement@ missions = readMissionInfo("DailyTask");
+        if(missions is null){return;}
         array<const XmlElement@> m_stashs = missions.getChilds();
         array<MissionCounter@> tasks = XmlToTask(m_stashs);
         for(uint i = 0 ; i < tasks.size() ; ++i){
@@ -633,7 +639,7 @@ class playerMissionInfo {
 
         string rewardKey = "";
         
-        if(continueSignInDays == 7){
+        if(continueSignInDays == 10){
             array<const XmlElement@> SignIns = SignInReward.getChilds();
             for(int j = 0 ; j < int(SignIns.size()) ; ++j){
                 XmlElement@ SignIn = XmlElement(SignIns[j]);
@@ -655,6 +661,7 @@ class playerMissionInfo {
                 string taskName = list.m_mission_name;
                 if(taskName == rewardKey){
                     string sid = g_playerInfoBuck.getSidByName(m_name);
+                    if(sid == ""){return;}
                     playerStashInfo@ thePlayer = playerStashInfo(m_metagame,sid,m_name);
                     if(!thePlayer.isOpen(false)){
                         thePlayer.openStash(false);
@@ -682,6 +689,7 @@ class playerMissionInfo {
                 string taskName = list.m_mission_name;
                 if(taskName == missionName || taskName == baseReward){ //固定奖励和额外奖励
                     string sid = g_playerInfoBuck.getSidByName(m_name);
+                    if(sid == ""){return;}
                     playerStashInfo@ thePlayer = playerStashInfo(m_metagame,sid,m_name);
                     if(!thePlayer.isOpen(false)){
                         thePlayer.openStash(false);
@@ -727,6 +735,7 @@ class playerMissionInfo {
                 }
             }
         }
+        showDayMission();
         return false;
     }
     void showDayMission(){
@@ -926,6 +935,7 @@ class hd_daily_mission : Tracker{
         
 		if (m_timer < 0.0) {
             m_timer = m_cdTime;
+            g_playerMissionInfoBuck.addPlayTime();
 		}
 
     }
@@ -943,11 +953,11 @@ class hd_daily_mission : Tracker{
 	}
     // ----------------------------------------------------
     protected void handlePlayerConnectEvent(const XmlElement@ event) {
-        const XmlElement@ player = event.getFirstElementByTagName("player");
-        if(player is null){return;}
-        int pid = player.getIntAttribute("player_id");
-        string name = player.getStringAttribute("name");
-        g_playerMissionInfoBuck.addInfo(m_metagame,name);
+        // const XmlElement@ player = event.getFirstElementByTagName("player");
+        // if(player is null){return;}
+        // int pid = player.getIntAttribute("player_id");
+        // string name = player.getStringAttribute("name");
+        // g_playerMissionInfoBuck.addInfo(m_metagame,name);
     }
     // --------------------------------------------
 	protected void handlePlayerDisconnectEvent(const XmlElement@ event) {
@@ -965,6 +975,7 @@ class hd_daily_mission : Tracker{
 		g_playerMissionInfoBuck.playMode(m_GameMode);
         g_playerMissionInfoBuck.saveAll();
         g_playerMissionInfoBuck.clearAll();
+        m_ended = true;
 	}
     // --------------------------------------------
 	protected void handleCharacterKillEvent(const XmlElement@ event) {
@@ -1048,8 +1059,7 @@ class hd_daily_mission : Tracker{
         int senderId = event.getIntAttribute("player_id");
         message = message.toLowerCase();
         if(message == "/day"){
-            g_playerMissionInfoBuck.showDayMission(p_name);
-            _report(m_metagame,"showDayMission");
+            g_playerMissionInfoBuck.getPermission(p_name);
         }
         if(g_debugMode|| g_online_TestMode || m_metagame.getAdminManager().isAdmin(p_name,senderId) ){
             if(message == "/newinfo"){
@@ -1065,7 +1075,7 @@ class hd_daily_mission : Tracker{
                 _report(m_metagame,"getPermission");
             }
             if(message == "/addk"){
-                g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"kill_100_enemy",45);
+                g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"kill_enemy_100",45);
                 _report(m_metagame,"addK");
             }
             if(message == "/addt"){
@@ -1077,13 +1087,13 @@ class hd_daily_mission : Tracker{
                 _report(m_metagame,"addK");
             }
             if(message == "/finish"){
-                g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"kill_100_enemy",100);
-                g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"timeplay_20_min",100);
-                g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"buy_10_lottery",100);
+                g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"kill_enemy_100",100);
+                g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"timeplay_min_20",100);
+                g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"buy_lottery_10",100);
                 g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"play_selected_mode",100);
                 g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"kill_with_select_weapon",100);
                 g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"kill_selected_enemy",100);
-                g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"timeplay_60_min",100);
+                g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"timeplay_min_60",100);
                 g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"kill_with_melee",100);
                 g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"finish_sidemission",100);
                 g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"collector",100);

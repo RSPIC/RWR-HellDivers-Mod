@@ -459,7 +459,7 @@ class projectile_event : Tracker {
                     Vector3 aimPosition = stringToVector3(player.getStringAttribute("aim_target"));
                 
                     float distance = getFlatPositionDistance(position,aimPosition);
-                    if (distance > 45.0f) {
+                    if (distance > 60.0f) {
                         spawnStaticProjectile(m_metagame,"hd_effect_call_deny_distance.projectile",aimPosition,characterId,factionId);
                     }else{
                         spawnStaticProjectile(m_metagame,"acg_texas_skill_spawn.projectile",aimPosition,characterId,factionId);

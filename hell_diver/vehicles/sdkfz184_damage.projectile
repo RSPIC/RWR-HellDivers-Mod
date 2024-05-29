@@ -14,7 +14,7 @@ can_be_detected_by_driver="1"
 radius="0.3"
 >
 	<result class="blast" radius="8.0" damage="50" push="1.5" decal="0" 
-	character_state="wound" damage_origin_vehicle="0" faction_compare="not_equal"/>
+	character_state="unwound" damage_origin_vehicle="0" faction_compare="not_equal"/>
 	<trigger class="time" time_to_live="0" />	
     <rotation class="random" />
 	<model mesh_filename="" />
