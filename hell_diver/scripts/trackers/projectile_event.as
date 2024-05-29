@@ -651,6 +651,7 @@ class projectile_event : Tracker {
                         g_userCountInfoBuck.addCount(name,"hd_sms_for_launcher",1);
                         _report(m_metagame,"玩家："+name+"完成了'启动火箭发射平台'支线任务");
                         notify(m_metagame, "地狱火呼叫次数 +1", dictionary(), "misc", pid, false, "", 1.0);
+                        g_playerMissionInfoBuck.addMissionFinishTimes(name,"finish_sidemission");
                     }
                 }else{
                     _report(m_metagame,"'启动火箭发射平台'支线任务执行失败，操作玩家不足一人");
