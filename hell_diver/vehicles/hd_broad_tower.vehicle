@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<vehicle 
+name="Broadcast Tower" 
+key="hd_broad_tower.vehicle" 
+map_view_atlas_index="24" 
+should_be_destroyed="0" 
+use_time_to_live="0"
+respawn_time="4800"
+time_to_live="4800"
+time_to_live_unsteerable="4800"
+protectors="12"
+simulated_damage="0"
+usable_for_cover="0"
+allow_ai_to_use="0"
+reserves_spawn_point="1"
+ >
+	<tag name="metal_thin" />
+	<tag name="broadcast" />
+
+	<tire_set offset="2 0.1 1.5" radius="0.3" />
+	<tire_set offset="2 0.1 -1.5" radius="0.3" />
+
+	<control max_speed="1.0" acceleration="1" 
+	max_reverse_speed="1.0" max_rotation="1.0" 
+	max_water_depth="4" 
+	tracked="1" gears="0"
+	/>
+
+	<physics max_health="1000.0" 
+	mass="1000.0" 
+	blast_push_threshold="1000"
+	blast_damage_threshold="1001"
+	extent="5 0.0 5" 
+	offset="0 0 0" 
+	top_offset="0 3.0 0" 
+	collision_model_pos="0 6.1 0" 
+	collision_model_extent="4 12 4" 
+	collision_response_factor="0"
+	visual_offset="0 -1 0" 
+	remove_collision_threshold="10"
+	vehicle_collision_damage_factor="0"
+	friction_offset="1"
+	gravity="-10"
+	destroy_on_top_hit="0"
+	top_hit_tracking_time="0"
+	/> 
+	
+	<sky_diving chute_offset="0 0 0" trigger_height="20" gravity="-40" mesh_filename="" texture_filename="" />
+
+	<visual class="chassis" mesh_filename="hd_broad_tower.mesh" texture_filename="hd_broad_tower.jpg" />
+
+	<!-- 破损车体\炮台 -->
+	<visual class="chassis" key="broken" mesh_filename="hd_broad_tower_broken.mesh" texture_filename="hd_broad_tower_broken.jpg" />
+
+	<rev_sound filename="hd_super_earth_bgm.wav" low_pitch="1" high_pitch="1.0" low_rev="1" high_rev="1" volume="1" />
+	
+	<effect event_key="health" value="9999" ref="mission_destroy_by_hellbomb" offset="0 3 0" />
+	<effect event_key="health" value="9999" ref="marker_bombing_circle_endles" offset="0 15 0" />
+	
+	<sound key="slide" filename="" />
+	<sound key="squeal" filename="" />
+	<sound key="ignition" filename="hd_super_earth_bgm.wav" />
+	<sound key="horn" filename="" />  
+	<sound key="hit" filename="" />
+	<sound key="hit" filename="" />
+	<sound key="hit" filename="" />
+	<sound key="destroy" filename="hd_complete_mission_01.wav" value="3"/>  
+	<sound key="destroy" filename="hd_complete_mission_02.wav" value="3"/>  
+
+</vehicle>

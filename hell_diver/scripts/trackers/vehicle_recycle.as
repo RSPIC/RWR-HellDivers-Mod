@@ -199,6 +199,14 @@ class vehicle_recycle : Tracker {
             res.addToResources(resources,3);
             addListItemInBackpack(m_metagame,cid,resources);
         }
+        if(vehiclekey == "illum_allied_prism_tank.vehicle"){
+            m_cargo_vehicle_receive = true;
+            array<Resource@> resources = array<Resource@>();
+            Resource@ res;
+            @res = Resource("illum_allied_prism_tank_call.projectile","projectile");
+            res.addToResources(resources,1);
+            addListItemInBackpack(m_metagame,cid,resources);
+        }
     }
     protected void handleSpecialEvent(const XmlElement@ event){
         if(!m_cargo_vehicle_receive){

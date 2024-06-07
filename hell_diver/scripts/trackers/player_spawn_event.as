@@ -168,7 +168,7 @@ class player_spawn : Tracker {
 		notify(m_metagame, "Special - NUX-223 Hellbomb", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
 		notify(m_metagame, "Special - Hellpod", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
 		notify(m_metagame, "Special - Mental Detector", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
-		notify(m_metagame, "Special - SOS", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
+		// notify(m_metagame, "Special - SOS", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);
 	}
 	protected void weaponHelp(Metagame@ m_metagame,int pid){
 		notify(m_metagame, "Stratagems Useable", dictionary(), "misc", pid, false, "Stratagems Call", 1.0);

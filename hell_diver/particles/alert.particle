@@ -249,7 +249,7 @@ particle_system alert_center_alerticon
 }
 particle_system alert_center_redlight
 {
-	quota 100
+	quota 1500
 	material point_soft_edge_100
 	particle_width 4
 	particle_height 4
@@ -266,7 +266,7 @@ particle_system alert_center_redlight
 		angle 0
 		colour 0 0 0 0
 		direction 0 1 0
-		emission_rate 40
+		emission_rate 30
 		position 0 0 0
 		velocity 0.0001
 		time_to_live 0.12

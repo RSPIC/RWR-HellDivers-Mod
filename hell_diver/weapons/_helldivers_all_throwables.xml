@@ -4,7 +4,7 @@
     <projectile file="wand_waiting_03.projectile" />
     <projectile file="wand_droping_02.projectile" />
     <projectile file="wand_guiding_01.projectile" />
-	
+
 	<!--Offensive 攻击性支援-->
     <projectile file="hd_offensive_vindicator_dive_bomb_mk3.projectile" />	<!--辩护者-->
 	<projectile file="hd_offensive_airstrike_mk3.projectile" />	<!--空袭-->
@@ -74,6 +74,8 @@
 	<projectile file="hd_stratagems_spawn.xml" />
 	<projectile file="hd_stratagems_call.xml" />
 	<projectile file="hd_sup_mental_detector.projectile" /><!--扫雷弹头-->
+
+	<projectile file="hd_at_mine_submission.projectile" /><!--扫雷任务-->
 
 	<!-- 间接生成弹头 -->
 	<projectile file="hd_amg_11_mk3_spawn.projectile" />

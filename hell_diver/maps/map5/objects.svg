@@ -15,7 +15,7 @@
    height="2048"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.5 r10040"
+   inkscape:version="0.91 r13725"
    sodipodi:docname="objects.svg"
    inkscape:export-xdpi="22.5"
    inkscape:export-ydpi="22.5"
@@ -29,15 +29,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.673883"
-     inkscape:cx="2669.3232"
-     inkscape:cy="649.72155"
+     inkscape:zoom="1.183614"
+     inkscape:cx="1183.1141"
+     inkscape:cy="754.51948"
      inkscape:document-units="px"
-     inkscape:current-layer="layer10"
+     inkscape:current-layer="layer47"
      showgrid="false"
-     inkscape:window-width="3072"
-     inkscape:window-height="1665"
-     inkscape:window-x="-8"
+     inkscape:window-width="1463"
+     inkscape:window-height="752"
+     inkscape:window-x="506"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      showguides="true"
@@ -21207,7 +21207,7 @@ collision_model_type = 1; collision_model_size = 4 3 22; collision_model_offset 
        sodipodi:cy="1020.8998"
        sodipodi:rx="16.55364"
        sodipodi:ry="16.55364"
-       d="m 852.65215,1020.8998 c 0,9.1423 -7.41132,16.5536 -16.55364,16.5536 -9.14232,0 -16.55364,-7.4113 -16.55364,-16.5536 0,-9.1423 7.41132,-16.5537 16.55364,-16.5537 9.01985,0 16.37946,7.2213 16.55066,16.2395"
+       d="m 852.65215,1020.8998 a 16.55364,16.55364 0 0 1 -16.47509,16.5534 16.55364,16.55364 0 0 1 -16.63144,-16.3963 16.55364,16.55364 0 0 1 16.31724,-16.7091 16.55364,16.55364 0 0 1 16.78631,16.2378"
        sodipodi:start="0"
        sodipodi:end="6.2642036"
        sodipodi:open="true"
@@ -21434,7 +21434,7 @@ collision_model_type = 1; collision_model_size = 4 3 22; collision_model_offset 
        sodipodi:cy="1020.8998"
        sodipodi:rx="15.849135"
        sodipodi:ry="15.849135"
-       d="m 851.94765,1020.8998 c 0,8.7532 -7.0959,15.8491 -15.84914,15.8491 -8.75324,0 -15.84913,-7.0959 -15.84913,-15.8491 0,-8.7533 7.09589,-15.8492 15.84913,-15.8492 8.63598,0 15.68237,6.9139 15.84628,15.5484"
+       d="m 851.94765,1020.8998 a 15.849135,15.849135 0 0 1 -15.77393,15.8489 15.849135,15.849135 0 0 1 -15.92363,-15.6985 15.849135,15.849135 0 0 1 15.6228,-15.9979 15.849135,15.849135 0 0 1 16.0719,15.5467"
        sodipodi:start="0"
        sodipodi:end="6.2642036"
        sodipodi:open="true"
@@ -60947,6 +60947,19 @@ key = deco_car3_sky.vehicle;</desc>
            id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-2-6-7-2-6-0-3-1">type = vehicle;
 key = deco_car1_blue.vehicle;</desc>
       </rect>
+      <rect
+         transform="matrix(-0.99926097,0.03843845,-0.03843845,-0.99926097,0,0)"
+         inkscape:label=""
+         y="-989.66656"
+         x="-1498.9077"
+         height="7.3961515"
+         width="3.982286"
+         id="spawn1-70-1-4-9-17-2-25-2-6-1-3-9-8"
+         style="display:inline;fill:#ffd5d5;fill-opacity:1;stroke:#ff00ff;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:12.00000017, 12.00000017;stroke-dashoffset:4.5999999;stroke-opacity:1;enable-background:new">
+        <desc
+           id="desc7082-9-7-0-4-4-3-3-9-2-1-8-8-5">type = vehicle; 
+tag = broadcast;</desc>
+      </rect>
     </g>
     <g
        style="display:inline"
@@ -71825,6 +71838,19 @@ key = atv_base.vehicle;</desc>
          style="fill:#ccff00;fill-opacity:1;stroke:#ff00ff;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:12.00000175, 12.00000175;stroke-dashoffset:4.6000009;display:inline;enable-background:new">
         <desc
            id="desc7082-7-0-45-7-94-7-1-7-1-22-61-3-1-2-7-5">tag = icecream;</desc>
+      </rect>
+      <rect
+         transform="matrix(-0.99926097,0.03843845,-0.03843845,-0.99926097,0,0)"
+         inkscape:label=""
+         y="-1421.1318"
+         x="-1140.4868"
+         height="7.3961515"
+         width="3.982286"
+         id="spawn1-70-1-4-9-17-2-25-2-6-1-3-9"
+         style="display:inline;fill:#ffd5d5;fill-opacity:1;stroke:#ff00ff;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:12.00000017, 12.00000017;stroke-dashoffset:4.5999999;stroke-opacity:1;enable-background:new">
+        <desc
+           id="desc7082-9-7-0-4-4-3-3-9-2-1-8-8">type = vehicle; 
+tag = broadcast;</desc>
       </rect>
     </g>
     <g

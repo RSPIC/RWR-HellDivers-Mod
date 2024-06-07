@@ -136,7 +136,20 @@ class lottery_manager : Tracker {
 	}
     // --------------------------------------------
     protected void handleResultEvent(const XmlElement@ event) {
-       
+       string EventKeyGet = event.getStringAttribute("key");
+       if(EventKeyGet == "auto_guaguale_i"){
+            string position = event.getStringAttribute("position");
+            int cid = event.getIntAttribute("character_id");
+            int pid = g_playerInfoBuck.getPidByCid(cid);
+            XmlElement@ m_event = XmlElement("ManualEvent");
+            m_event.setStringAttribute("item_key","lottery_cash.carry_item");
+            m_event.setStringAttribute("position",position);
+            m_event.setIntAttribute("player_id",pid);
+            m_event.setIntAttribute("character_id",cid);
+            m_event.setIntAttribute("target_container_type_id",1);
+            GiveRP(m_metagame,cid,-648);
+            handleGuaGuaLeLottery(m_event);
+       }
     }
     // --------------------------------------------
     protected void handleItemDropEvent(const XmlElement@ event) {

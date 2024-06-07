@@ -8,7 +8,7 @@ key="hd_hmg_mg255_melt_mk3.weapon"
 	time_to_live="1" can_be_detected_by_driver="1" can_be_disarmed="0" name="MG255 Melt"> 
 		
 		<result class="spawn" instance_class="projectile" instance_key="hd_hmg_mg255_melt_damage.projectile" 
-		min_amount="3" max_amount="4" offset="0 0 0" position_spread="0.3 0.3" direction_spread="0 0" />			<!-- slower decay -->
+		min_amount="4" max_amount="4" offset="0 0 0" position_spread="0.3 0.3" direction_spread="0 0" />			<!-- slower decay -->
 		<!-- 30m max damage range -->
 		<!-- damage 75/100hit  -->
 	
@@ -58,7 +58,7 @@ key="hd_hmg_mg255_melt_dicker.weapon"
 	time_to_live="1" can_be_detected_by_driver="1" can_be_disarmed="0" name="MG255 Melt"> 
 		
 		<result class="spawn" instance_class="projectile" instance_key="hd_hmg_mg255_melt_damage.projectile" 
-		min_amount="3" max_amount="4" offset="0 0 0" position_spread="0.3 0.3" direction_spread="0 0" />			<!-- slower decay -->
+		min_amount="4" max_amount="4" offset="0 0 0" position_spread="0.3 0.3" direction_spread="0 0" />			<!-- slower decay -->
 		<!-- 30m max damage range -->
 		<!-- damage 75/100hit  -->
 	

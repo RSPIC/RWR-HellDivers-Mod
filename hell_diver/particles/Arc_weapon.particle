@@ -171,7 +171,7 @@ particle_system Arc_activated_InArea_thunder_2 : Arc_activated_InArea_thunder
 }
 particle_system Arc_activated_center_light
 {
-	quota 2000
+	quota 300
 	material point_soft_edge_100
 	particle_width 10
 	particle_height 10

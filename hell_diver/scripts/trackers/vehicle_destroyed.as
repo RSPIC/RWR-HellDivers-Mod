@@ -14,6 +14,7 @@
 
 //Author： rst
 //友伤摧毁载具的惩罚和载具补偿
+//部分支线任务
 
 dictionary included_vehicle = {
         {"ex_isu_152.vehicle",1},
@@ -103,15 +104,15 @@ class vehicle_destroyed : Tracker{
         GiveRP(m_metagame,killer_cid,-3000);
         float vehicleMaxHealth = vehicleInfo.getFloatAttribute("max_health");
         remove_vehicle(m_metagame,vehicle_id);
-        Vector3 forward = stringToVector3(vehicleInfo.getStringAttribute("forward"));
+        Vector3 forward = stringToVector3(vehicleInfo.getStringAttribute("position"));
         float rorate_range = getOrientation(forward);
         spawnVehicle(m_metagame,1,vehicle_owner_fid,position,Orientation(0,1,0,rorate_range),vehicle_name);
- 
-	}
+ 	}
+
 
     //--------------------------------------------------------
     protected void handleVehicleSpawnEvent(const XmlElement@ event) {
-        if(g_server_difficulty_level >= 12 && !g_debugMode){ //12难禁止刷冰淇淋
+        if(g_server_difficulty_level >= 12 && !g_debugMode && !g_single_player){ //12难禁止刷冰淇淋
             string vehicle_key = event.getStringAttribute("vehicle_key");
             int vehicle_id = event.getIntAttribute("vehicle_id");
             if(vehicle_key == "icecream.vehicle"){
@@ -124,7 +125,7 @@ class vehicle_destroyed : Tracker{
             int vehicle_id = event.getIntAttribute("vehicle_id");
             if(!startsWith(vehicle_key,"racing_") && !startsWith(vehicle_key,"ex_piano_") 
             && !startsWith(vehicle_key,"ex_gramophone_") && !startsWith(vehicle_key,"straw_block") 
-            && !startsWith(vehicle_key,"hd_demolition_truck") && !startsWith(vehicle_key,"ex_power_chair") 
+            && !startsWith(vehicle_key,"ex_power_chair") 
 
             ){
                 remove_vehicle(m_metagame,vehicle_id);

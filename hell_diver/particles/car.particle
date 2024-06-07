@@ -6,7 +6,7 @@ author: RST
 
 particle_system car_slide_spary_spark
 {
-	quota 500
+	quota 50
 	material point_hard_edge
 	particle_width 0.1
 	particle_height 0.22
@@ -56,7 +56,7 @@ particle_system car_slide_spary_spark
 }
 particle_system car_behit_through_spark
 {
-	quota 500
+	quota 50
 	material point_hard_edge
 	particle_width 0.1
 	particle_height 0.22
@@ -106,7 +106,7 @@ particle_system car_behit_through_spark
 }
 particle_system car_slide_up_smoke
 {
-	quota 500
+	quota 50
 	material rx1_smoke
 	particle_width 0.3
 	particle_height 0.3
@@ -158,7 +158,7 @@ particle_system car_slide_up_smoke
 }
 particle_system car_slide_up_crash
 {
-	quota 5000
+	quota 50
 	material splat_effect_dirt_car
 	particle_width 2.7
 	particle_height 2.7
@@ -207,7 +207,7 @@ particle_system car_slide_up_crash
 
 particle_system car_health_front_light
 {
-	quota 5000
+	quota 50
 	material point_soft_edge_100_pass
 	particle_width 20
 	particle_height 20
@@ -236,7 +236,7 @@ particle_system car_health_front_light
 }
 particle_system car_slide_up_smoke_area
 {
-	quota 800
+	quota 300
 	material rx1_smoke
 	particle_width 0.3
 	particle_height 0.3
@@ -499,7 +499,7 @@ particle_system car_surrounding_ring_point
 
 particle_system car_destroyed_up_smoke
 {
-	quota 500
+	quota 50
 	material rx1_smoke
 	particle_width 0.3
 	particle_height 0.3
@@ -551,7 +551,7 @@ particle_system car_destroyed_up_smoke
 }
 particle_system car_destroyed_fire
 {
-	quota 1000
+	quota 50
 	material flame_tex_bw_01
 	particle_width 2
 	particle_height 2
@@ -610,7 +610,7 @@ particle_system car_destroyed_fire
 
 particle_system car_broken_spary_spark
 {
-	quota 1000
+	quota 50
 	material point_hard_edge
 	particle_width 0.1
 	particle_height 0.22

@@ -1,7 +1,7 @@
 //紫色标准
 particle_system mg4_blast_shine_center_hollow		//高射速枪中心中空爆炸辉光
 {
-	quota 1000
+	quota 100
 	material hollow_blast_smoke_01
 	particle_width 0.1
 	particle_height 0.1
@@ -47,7 +47,7 @@ particle_system mg4_blast_shine_center_hollow		//高射速枪中心中空爆炸�
 }
 particle_system mg4_blast_shine_center		//高射速枪中心爆炸辉光
 {
-	quota 1000
+	quota 100
 	material explosion_smoke_02
 	particle_width 0.1
 	particle_height 0.1
@@ -93,7 +93,7 @@ particle_system mg4_blast_shine_center		//高射速枪中心爆炸辉光
 }
 particle_system mg4_blast_linear_shine		//高射速枪中心爆炸线性光
 {
-	quota 1000
+	quota 100
 	material spread_line
 	particle_width 0.03
 	particle_height 2.5
@@ -133,7 +133,7 @@ particle_system mg4_blast_linear_shine		//高射速枪中心爆炸线性光
 
 particle_system mg4_blast_broken_particle_01		//破碎碎片飞溅特效
 {
-	quota 1000
+	quota 100
 	material broken_particle_01
 	particle_width 0.3
 	particle_height 0.3
@@ -170,7 +170,7 @@ particle_system mg4_blast_broken_particle_01		//破碎碎片飞溅特效
 }
 particle_system mg4_blast_broken_particle_02	//破碎碎片飞溅特效
 {
-	quota 1000
+	quota 100
 	material broken_particle_02
 	particle_width 0.3
 	particle_height 0.3
@@ -207,7 +207,7 @@ particle_system mg4_blast_broken_particle_02	//破碎碎片飞溅特效
 }
 particle_system mg4_blast_broken_particle_03		//破碎碎片飞溅特效
 {
-	quota 1000
+	quota 100
 	material broken_particle_03
 	particle_width 0.3
 	particle_height 0.3
@@ -250,7 +250,7 @@ particle_system mg4_blast_broken_particle_03		//破碎碎片飞溅特效
 //绿色MG4KE
 particle_system mg4k_blast_shine_center_hollow		//高射速枪中心中空爆炸辉光
 {
-	quota 1000
+	quota 100
 	material hollow_blast_smoke_01
 	particle_width 0.1
 	particle_height 0.1
@@ -296,7 +296,7 @@ particle_system mg4k_blast_shine_center_hollow		//高射速枪中心中空爆炸
 }
 particle_system mg4k_blast_shine_center		//高射速枪中心爆炸辉光
 {
-	quota 1000
+	quota 100
 	material explosion_smoke_02
 	particle_width 0.1
 	particle_height 0.1
@@ -342,7 +342,7 @@ particle_system mg4k_blast_shine_center		//高射速枪中心爆炸辉光
 }
 particle_system mg4k_blast_linear_shine		//高射速枪中心爆炸线性光
 {
-	quota 1000
+	quota 100
 	material spread_line
 	particle_width 0.03
 	particle_height 2.5
@@ -382,7 +382,7 @@ particle_system mg4k_blast_linear_shine		//高射速枪中心爆炸线性光
 
 particle_system mg4k_blast_broken_particle_01		//破碎碎片飞溅特效
 {
-	quota 1000
+	quota 100
 	material broken_particle_01
 	particle_width 0.3
 	particle_height 0.3
@@ -419,7 +419,7 @@ particle_system mg4k_blast_broken_particle_01		//破碎碎片飞溅特效
 }
 particle_system mg4k_blast_broken_particle_02	//破碎碎片飞溅特效
 {
-	quota 1000
+	quota 100
 	material broken_particle_02
 	particle_width 0.3
 	particle_height 0.3
@@ -456,7 +456,7 @@ particle_system mg4k_blast_broken_particle_02	//破碎碎片飞溅特效
 }
 particle_system mg4k_blast_broken_particle_03		//破碎碎片飞溅特效
 {
-	quota 1000
+	quota 100
 	material broken_particle_03
 	particle_width 0.3
 	particle_height 0.3
@@ -500,7 +500,7 @@ particle_system mg4k_blast_broken_particle_03		//破碎碎片飞溅特效
 //蓝色 MG4A3
 particle_system mg4a3_blast_shine_center_hollow		//高射速枪中心中空爆炸辉光
 {
-	quota 1000
+	quota 100
 	material hollow_blast_smoke_01
 	particle_width 0.1
 	particle_height 0.1
@@ -546,7 +546,7 @@ particle_system mg4a3_blast_shine_center_hollow		//高射速枪中心中空爆�
 }
 particle_system mg4a3_blast_shine_center		//高射速枪中心爆炸辉光
 {
-	quota 1000
+	quota 100
 	material explosion_smoke_02
 	particle_width 0.1
 	particle_height 0.1
@@ -592,7 +592,7 @@ particle_system mg4a3_blast_shine_center		//高射速枪中心爆炸辉光
 }
 particle_system mg4a3_blast_linear_shine		//高射速枪中心爆炸线性光
 {
-	quota 1000
+	quota 100
 	material spread_line
 	particle_width 0.03
 	particle_height 2.5
@@ -632,7 +632,7 @@ particle_system mg4a3_blast_linear_shine		//高射速枪中心爆炸线性光
 
 particle_system mg4a3_blast_broken_particle_01		//破碎碎片飞溅特效
 {
-	quota 1000
+	quota 100
 	material broken_particle_01
 	particle_width 0.3
 	particle_height 0.3
@@ -669,7 +669,7 @@ particle_system mg4a3_blast_broken_particle_01		//破碎碎片飞溅特效
 }
 particle_system mg4a3_blast_broken_particle_02	//破碎碎片飞溅特效
 {
-	quota 1000
+	quota 100
 	material broken_particle_02
 	particle_width 0.3
 	particle_height 0.3
@@ -706,7 +706,7 @@ particle_system mg4a3_blast_broken_particle_02	//破碎碎片飞溅特效
 }
 particle_system mg4a3_blast_broken_particle_03		//破碎碎片飞溅特效
 {
-	quota 1000
+	quota 100
 	material broken_particle_03
 	particle_width 0.3
 	particle_height 0.3

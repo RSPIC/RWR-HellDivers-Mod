@@ -1,7 +1,7 @@
 ------------------------------------------g41_laser_muzzle-------------------------
 particle_system g41_muzzle_pre_red_laser		//预警告红线
 {
-	quota 1000
+	quota 100
 	material g41_laser_01
 	particle_width 0.2
 	particle_height 250
@@ -34,7 +34,7 @@ particle_system g41_muzzle_pre_red_laser		//预警告红线
 }
 particle_system g41_muzzle_environment_light		//环境光
 {
-	quota 1000
+	quota 100
 	material g41_laser_01
 	particle_width  2
 	particle_height 250
@@ -70,7 +70,7 @@ particle_system g41_muzzle_environment_light		//环境光
 }
 particle_system g41_muzzle_ring_01	//光环
 {
-	quota 1000
+	quota 100
 	material g41_lens_circle_05
 	particle_width 3
 	particle_height 3
@@ -109,7 +109,7 @@ particle_system g41_muzzle_ring_01	//光环
 }
 particle_system g41_muzzle_ring_02	//光环
 {
-	quota 1000
+	quota 100
 	material g41_lens_circle_05
 	particle_width 4
 	particle_height 4
@@ -150,7 +150,7 @@ particle_system g41_muzzle_ring_02	//光环
 ------------------------------------g41_gun_muzzle-------------------------
 particle_system g41_muzzle_ring_03	//光环
 {
-	quota 1000
+	quota 100
 	material g41_lens_circle_01
 	particle_width 1.5
 	particle_height 1.5
@@ -190,7 +190,7 @@ particle_system g41_muzzle_ring_03	//光环
 }
 particle_system g41_muzzle_ring_04	//裂纹
 {
-	quota 1000
+	quota 100
 	material g41_hollow_blast_smoke_01
 	particle_width 2
 	particle_height 2
@@ -230,7 +230,7 @@ particle_system g41_muzzle_ring_04	//裂纹
 }
 particle_system g41_muzzle_ring_05	//中心圆
 {
-	quota 1000
+	quota 100
 	material g41_point_soft_edge_100
 	particle_width 0.5
 	particle_height 0.5
@@ -270,8 +270,8 @@ particle_system g41_muzzle_ring_05	//中心圆
 }
 particle_system g41_muzzle_square		//点扩散飞溅方块特效
 {
-	quota 1000
-	emit_emitter_quota 1000
+	quota 100
+	emit_emitter_quota 100
 	material g41_square_hard_edge
 	particle_width 0.3
 	particle_height 0.3
@@ -316,8 +316,8 @@ particle_system g41_muzzle_square		//点扩散飞溅方块特效
 }
 particle_system g41_muzzle_yellow_light		//激光中心黄色线光
 {
-	quota 10000
-	emit_emitter_quota 10000
+	quota 1000
+	emit_emitter_quota 1000
 	material g41_lens_flare_01
 	particle_width 3
 	particle_height 3

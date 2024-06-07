@@ -137,6 +137,7 @@ dictionary banned_stash_item = {
 		{"ex_vergil_skill.weapon","weapon"},
 		{"hd_resupply_pack_mk3.carry_item","carry_item"},
 		{"hd_resupply_pack_mk3_ex.carry_item","carry_item"},
+		{"hd_at_mine_submission_stay.projectile","projectile"},
 
         // 占位的
         {"666",-1}

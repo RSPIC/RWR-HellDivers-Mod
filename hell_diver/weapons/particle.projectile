@@ -18,7 +18,50 @@ class="grenade" name="" key="particle.projectile" slot="0" radius="0.15" pulldow
 	speed_estimation_far="70.0" max_speed="70.0" randomness="0.0" tweak_factor="1.0" />
 	<!-- <result class="notify_script" key="upgrade" /> -->
 	<result class="blast" radius="5" damage="0" push="0.5" decal="0" character_state="none" faction_compare="not_equal" />
-	
+
+	<effect class="result" key="terrain" ref="car_recycle_deny" lighting="0"/>
+	<effect class="result" key="terrain" ref="car_recycle_failed" lighting="0"/>
+	<effect class="result" key="terrain" ref="car_recycle_working" lighting="0"/>
+
+	<effect class="result" key="terrain" ref="radar_scan_short" lighting="0" post_processing="0"/> 
+
+	<effect class="result" key="terrain" ref="bugs_spitter_splash"/>
+	<effect class="result" key="terrain" ref="bugs_spitter_splash_expand"/>
+
+    <effect class="result" key="terrain" ref="bugs_behemoth_result_impact_cracks" lighting="0" post_processing="0"/>
+    <effect class="result" key="terrain" ref="bugs_behemoth_result_up_dust1" lighting="0" post_processing="0"/>
+    <effect class="result" key="terrain" ref="bugs_behemoth_result_up_dust2" lighting="0" post_processing="0"/>
+    <effect class="result" key="terrain" ref="bugs_behemoth_result_up_dust3" lighting="0" post_processing="0"/>
+    <effect class="result" key="terrain" ref="bugs_behemoth_result_up_dust4" lighting="0" post_processing="0"/>
+    <effect class="result" key="terrain" ref="bugs_behemoth_result_ambient_smoke" lighting="0" post_processing="0"/>
+
+	<effect class="result" key="terrain" ref="bugs_impaler_result_sharp_rock_up" lighting="0"/>  
+	<effect class="result" key="terrain" ref="bugs_impaler_result_sharp_rock_still" lighting="0"/> 
+    <effect class="result" key="terrain" ref="bugs_impaler_result_side_dust" lighting="1"/>
+	<effect class="result" key="terrain" ref="bugs_behemoth_result_impact_cracks_small" lighting="1"/>
+	<effect class="result" key="terrain" ref="bugs_behemoth_result_ambient_smoke_small" lighting="1"/>
+
+	<effect class="result" key="terrain" ref="laser_strike_result_center" lighting="0" post_processing="0"/>
+	<effect class="result" key="terrain" ref="laser_strike_result_smoke" lighting="0" post_processing="1"/>
+	<effect class="result" key="terrain" ref="laser_strike_result_laser" lighting="0" post_processing="0"/>
+	<effect class="result" key="terrain" ref="laser_strike_result_ground_burn_spot" lighting="0" post_processing="0"/>
+	<effect class="result" key="terrain" ref="laser_strike_result_ground_leave_light" lighting="0" post_processing="0"/>
+	<effect class="result" key="terrain" ref="laser_strike_result_ground_leave" lighting="0" post_processing="1"/>
+
+	<effect class="result" key="terrain" ref="illum_illusionist_result_blast_impact_ring" lighting="0" post_processing="0"/>
+	<effect class="result" key="terrain" ref="illum_illusionist_result_area_lighting" lighting="0" post_processing="0"/>
+
+	<effect class="result" key="terrain" ref="SMS_camera_light" lighting="0" /> 
+	<effect class="result" key="terrain" ref="SMS_camera_light_colour_render" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="shadow_SMS_1" lighting="0" post_processing="1"/> 
+	<effect class="result" key="terrain" ref="shadow_SMS_2" lighting="0" post_processing="1"/> 
+	<effect class="result" key="terrain" ref="shadow_SMS_3" lighting="0" post_processing="1"/> 
+	<effect class="result" key="terrain" ref="SMS_vertical_smoke" lighting="0" post_processing="1"/> 
+	<effect class="result" key="terrain" ref="SMS_Ring_smoke" lighting="0" post_processing="1"/> 
+	<effect class="result" key="terrain" ref="SMS_up_spark" lighting="0" post_processing="1"/> 
+	<effect class="result" key="terrain" ref="SMS_impact_leave_dirt" lighting="0" post_processing="1"/> 
+	<effect class="result" key="terrain" ref="SMS_impact_leave_smoke" lighting="0" post_processing="1"/> 
+
 	<effect class="result" key="terrain" ref="elaina_wand_trail_leave" />
     <effect class="result" key="terrain" ref="elaina_wand_result_magic_circle" />
     <effect class="result" key="terrain" ref="elaina_wand_cyclone" />
@@ -204,7 +247,6 @@ class="grenade" name="" key="particle.projectile" slot="0" radius="0.15" pulldow
 	<effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_08"/>
 	<effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_09"/>
 
-
     <effect class="result" key="terrain" ref="wand_hit_ground_center_light"/>
     <effect class="result" key="terrain" ref="wand_hit_ground_center_light_up" post_processing="0"/>
     <effect class="result" key="terrain" ref="wand_hit_ground_radiation" post_processing="0"/>
@@ -283,7 +325,6 @@ class="grenade" name="" key="particle.projectile" slot="0" radius="0.15" pulldow
     <effect class="result" key="terrain" ref="401_disaster_hit_firesmoke_02" />
     <effect class="result" key="terrain" ref="401_disaster_hit_firesmoke_03" />
         <effect class="result" key="terrain" ref="rocket_launcher_mil" />
-    
     
     <effect class="result" key="terrain" ref="rocket_launcher_shell_light" />
     <effect class="result" key="terrain" ref="rocket_launcher_trial_smoke" />

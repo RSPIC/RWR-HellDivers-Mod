@@ -55,7 +55,6 @@ file="_hd_precision.base"
 	<animation state_key="crouch_moving_backwards" animation_key="" /><!--全身动作-->
     <animation state_key="prone_still" animation_key="" /><!--全身动作-->
 	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
-	<animation state_key="stabbing" animation_key="hd_q_spin_meele" /><!--半身动作，武器可设置脱手-->
 
 	<!--武器音频-->
     <sound key="effect" fileref="" pitch_variety="0" volume="1.0" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->

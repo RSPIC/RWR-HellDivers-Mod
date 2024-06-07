@@ -794,7 +794,7 @@
 
 	<text key="REP-80" text="REP-80 维修工具枪[治疗/修车/回甲]" />
 	<text key="MD-98 Injector" text="MD-98 手动医疗注射器[医疗包]" />
-	<text key="ME-1 Mental Detector" text="ME-1 金属地雷探测排障仪[V键自动扫雷 C键取消/左键部署排雷炸弹]" />
+	<text key="ME-1 Mental Detector" text="ME-1 金属地雷探测排障仪[V键自动扫雷 C键取消/左键部署炸弹]" />
 
 	<text key="EXO-44 Stomper [MG]" text="EXO-44 践踏者[机枪]" />
 	<text key="EXO-44 Stomper [Missile]" text="EXO-44 践踏者[导弹][友伤]" />
@@ -830,6 +830,7 @@
 
 	<text key="AT Mine MK3" text="反坦克地雷 MK3" />
 	<text key="AT Mine MK3 Beacon" text="空投反坦克地雷 MK3" />
+	<text key="AT Mine [Mission][Use ME-1 Mental Detector and Send 5 Mines to Armory]" text="地雷[支线任务][使用扫雷器，运送5个样本至军械库]" />
 	<text key="AirDropped Stun Mine Mk3 Beacon" text="空投眩晕地雷 MK3" />
 	<text key="AirDropped Stun Mine Mk3" text="眩晕地雷 MK3" />
 	<text key="AT-47 Anti-Tank Emplacement Beacon" text="AT-47 反坦克平台信标" />
@@ -1033,7 +1034,7 @@
 	<text key="Goldenglow [Skin]"  text="澄闪 [信物]" />
 	<text key="Pamiat Merkuria [Skin]"  text="水星纪念 [信物]" />
 	<text key="Pamiat Merkuria Alter [Skin]"  text="水星纪念·改 [信物]" />
-	<text key="Skadi [Skin]"  text="水星纪念·改 [信物]" />
+	<text key="Skadi [Skin]"  text="斯卡蒂 [信物]" />
 	<text key="Arona [Skin]"  text="阿罗娜 [信物]" />
 	<text key="Gehenna Member [Skin]"  text="格黑娜杂鱼 [信物]" />
 	<!-- 1.7.1fix -->
@@ -1096,7 +1097,7 @@
 	<text key="PAK-40 Anti Tank"  text="PAK-40 反坦克炮" />
 	<text key="Zis-3 Anti Tank"  text="Zis-3 反坦克炮" />
 	<text key="HellPod"  text="空投舱[友伤]" />
-	<text key="NUX-223 Hellbomb"  text="NUX-223 地狱火炸弹 [空格键进入并长按引爆]" />
+	<text key="NUX-223 Hellbomb"  text="NUX-223 地狱火炸弹 [进入引爆并逃离][友伤]" />
 	<text key="EXO-44 Stomper MK3 Supply"  text="EXO-44 践踏者-MK3 补给商店" />
 	<text key="EXO-44 Stomper Mk3 Beacon"  text="EXO-44 践踏者-MK3 呼叫信标" />
 	<text key="EXO-48 Obsidian MK3 Supply"  text="EXO-48 黑曜石-MK3 补给商店" />
@@ -1121,6 +1122,8 @@
 	<text key="Action Console"  text="支援呼叫台" />
 	<text key="Projection Console"  text="控制台" />
 	<text key="Rocket Truck"  text="火箭运输车[易燃易爆][送至回收站]" />
+	<text key="Prism Tank[Recyclable]"  text="光棱坦克[可回收]" />
+	<text key="Prism Tank Beacon"  text="光棱坦克 部署信标" />
 
 	<text key="acg_amg_11_mk3_spawn" text="A/MG-11 自动机枪" />
 	<text key="hd_amg_11_mk3_spawn" text="A/MG-11 自动机枪" />
@@ -1220,6 +1223,7 @@
 	<text key='LAV-6' text="LAV-6 轻型载具[可回收]" />
 
 	<text key="Kamikaze" text="民本超度[刺雷][载具友伤][拆塔]" />
+	<text key="Kamikaze Senpai" text="民本超度[恶臭]" />
 	<text key="BanZai Armor onload" text="板载护甲已装配" />
 
 	<text key="Vehicle Wrench" text="车载维修工具" />
@@ -1527,7 +1531,7 @@
 	<text key="Help - Armor" text="[自动回血机制] 非死亡和非倒地状态下，每10秒回复10层护甲" />
 	<text key="Help - Samples" text="[样本机制] 未完成，样本用于以后升级武器，样本拾取会共享" />
 	<text key="Help - Alert" text="[警报机制] 敌对阵营会有巡逻兵，在其触发警报前优先击杀它们" />
-	<text key="Help - Repair" text="[维修机制] 维修台可以超额维修和回收部分载具 [yv39mydfsd]" />
+	<text key="Help - Repair" text="[维修机制] 维修台可以超额维修和回收部分载具" />
 	<text key="Help - EXO" text="[机甲机制] 部署机甲后，在机甲库里直接装备武器，有子弹限制，不可存取。卡弹按R键恢复。" />
 	<text key="Help - Cyborgs" text="[生化人] 首领-精英 为重甲单位，免疫普通子弹，尝试用爆炸物和燃烧武器击杀它们" />
 	<text key="Help - Bugs" text="[虫族] 虫族精英坦克在死亡时会爆炸，刺钉虫的正面和坦克虫的尾部均有弱点可以击穿" />
@@ -1564,14 +1568,18 @@ TK其他玩家同样会造成倍率因子的下降" />
 	<text key="Help - Patricia" text="本武器开火具有前摇，前摇状态无法移动并且隐形状态仍能够被攻击。每局首次持有本武器会发放致命驱动技能武器，使用次数为5次。
 【注意】使用副手技能时必须保证主手武器为[帕特莉夏·阿贝尔海姆]的武器，否则会直接倒地" />
 	<text key="Patricia Help" text="[帕特莉夏·阿贝尔海姆 特殊武器介绍]" />
+
 	<text key="Help - Hyper Mega" text="每局首次持有本武器会发放特定技能武器，使用次数为3次。
 【注意】使用副手技能时必须保证主手武器为[超绝米加粒子炮（Hi-v）]的武器，否则会直接倒地" />
 	<text key="Hyper Mega Help" text="[超绝米加粒子炮（Hi-v） 特殊武器介绍]" />
+
 	<text key="Help - Vergil" text="每局首次持有本武器会发放特定技能武器，使用次数为4次。
 【注意】使用副手技能时必须保证主手武器为[维吉尔]的武器，否则会直接倒地" />
+	<text key="Vergil Help" text="[维吉尔 特殊武器介绍]" />
+
 	<text key="Help - Elaina" text="每局首次持有本武器会发放特定技能武器，使用次数为5次。
 【注意】使用副手技能时必须保证主手武器为[伊蕾娜]的武器，否则会直接倒地" />
-	<text key="Vergil Help" text="[伊蕾娜 特殊武器介绍]" />
+	<text key="Elaina Help" text="[伊蕾娜 特殊武器介绍]" />
 
 	<text key="Stratagems Call" text="[教程]战略呼叫机制" />
 	<text key="Stratagems Useable" text="[Tips]常用呼叫指令,输入/call可再次查看本页。输入/call 1~4 查看不同类型支援代码" />
@@ -1733,6 +1741,7 @@ TK其他玩家同样会造成倍率因子的下降" />
 	<text key="Money [1W]" text="交易用钞票 [一万]" />
 	<text key="Money [1k]" text="交易用钞票 [一千]" />
 	<text key="Money [100]" text="交易用钞票 [一百]" />
+	<text key="Money [Fake]" text="假钞 [炫富用]" />
 <!-- 加成道具 -->
 	<text key="Bonus card" text="全局加成卡[掉落消失]" />
 	<text key="Bonus card [XP]" text="经验加成卡[掉落消失]" />
@@ -1855,6 +1864,26 @@ TK其他玩家同样会造成倍率因子的下降" />
 物品=&#37;key7(&#37;value7个)
 物品=&#37;key8(&#37;value8个)
 物品=&#37;key9(&#37;value9个)
+物品=&#37;a10(&#37;b10个)
+物品=&#37;a11(&#37;b11个)
+物品=&#37;a12(&#37;b12个)
+物品=&#37;a13(&#37;b13个)
+物品=&#37;a14(&#37;b14个)
+物品=&#37;a15(&#37;b15个)
+物品=&#37;a16(&#37;b16个)
+物品=&#37;a17(&#37;b17个)
+物品=&#37;a18(&#37;b18个)
+物品=&#37;a19(&#37;b19个)
+物品=&#37;c20(&#37;d20个)
+物品=&#37;c21(&#37;d21个)
+物品=&#37;c22(&#37;d22个)
+物品=&#37;c23(&#37;d23个)
+物品=&#37;c24(&#37;d24个)
+物品=&#37;c25(&#37;d25个)
+物品=&#37;c26(&#37;d26个)
+物品=&#37;c27(&#37;d27个)
+物品=&#37;c28(&#37;d28个)
+物品=&#37;c29(&#37;d29个)
 " />
 	<text key="Stash Box" text="脚本仓库[部署以使用][通过购买上面的物品至背包来使用][需要先购买'打开仓库'按钮]" />
 	<text key="Stash Help" text="[教程] 如何使用脚本仓库" />
@@ -1895,6 +1924,7 @@ TK其他玩家同样会造成倍率因子的下降" />
 " />
 <!-- 每日任务 -->
 <text key="DaylyMission" text="每日任务(输入/day 查看)
+&#37;day
 &#37;value0
 &#37;value1
 &#37;value2

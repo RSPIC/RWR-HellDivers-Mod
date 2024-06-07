@@ -394,7 +394,7 @@ particle_system ba_alice_muzzle_environment_light		//环境光
 }
 particle_system ba_alice_muzzle_ring_01	//光环
 {
-	quota 1000
+	quota 50
 	material quan_7_20_cull
 	particle_width 3
 	particle_height 3
@@ -440,7 +440,7 @@ particle_system ba_alice_muzzle_ring_01	//光环
 }
 particle_system ba_alice_muzzle_ring_02	//光环
 {
-	quota 1000
+	quota 50
 	material quan_7_20_cull
 	particle_width 4
 	particle_height 4
@@ -488,7 +488,7 @@ particle_system ba_alice_muzzle_ring_02	//光环
 ------------------------------------ba_alice_gun_muzzle-------------------------
 particle_system ba_alice_muzzle_ring_03	//光环
 {
-	quota 1000
+	quota 50
 	material lens_circle_01_cull
 	particle_width 1.5
 	particle_height 1.5
@@ -528,7 +528,7 @@ particle_system ba_alice_muzzle_ring_03	//光环
 }
 particle_system ba_alice_muzzle_ring_04	//裂纹
 {
-	quota 1000
+	quota 50
 	material hollow_blast_smoke_01
 	particle_width 2
 	particle_height 2
@@ -568,7 +568,7 @@ particle_system ba_alice_muzzle_ring_04	//裂纹
 }
 particle_system ba_alice_muzzle_ring_05	//中心圆
 {
-	quota 1000
+	quota 50
 	material point_soft_edge_100
 	particle_width 0.5
 	particle_height 0.5
@@ -608,7 +608,7 @@ particle_system ba_alice_muzzle_ring_05	//中心圆
 }
 particle_system ba_alice_muzzle_fire_anim		
 {
-	quota 1000
+	quota 50
 	material star_cross
 	particle_width 1
 	particle_height 1
@@ -649,8 +649,8 @@ particle_system ba_alice_muzzle_fire_anim
 }
 particle_system ba_alice_muzzle_yellow_light		//激光中心黄色线光
 {
-	quota 1000
-	emit_emitter_quota 1000
+	quota 50
+	emit_emitter_quota 50
 	material lens_flare_01
 	particle_width 3
 	particle_height 3

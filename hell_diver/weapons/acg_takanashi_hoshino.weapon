@@ -136,7 +136,7 @@ key="acg_takanashi_hoshino.weapon"
 	<effect class="muzzle" ref="hoshino_muzzle_shock_ring_1" lighting="0"/> 
 	<effect class="muzzle" ref="hoshino_muzzle_shock_firelight" lighting="0"/> 
 
- 
+	<modifier class="speed" value="0.05" /> 
  
 </weapon>
 <weapon 
@@ -275,7 +275,7 @@ key="re_acg_takanashi_hoshino.weapon"
 	<effect class="muzzle" ref="hoshino_muzzle_shock_ring_1" lighting="0"/> 
 	<effect class="muzzle" ref="hoshino_muzzle_shock_firelight" lighting="0"/> 
 
- 
+ 	<modifier class="speed" value="0.05" /> 
  
 </weapon>
 </weapons>

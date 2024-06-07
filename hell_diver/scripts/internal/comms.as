@@ -92,6 +92,7 @@ _log("  sending: " + message, 1);
 			
 
 			const XmlElement@ event = m_receivedMessages[0];
+			_log("  queue content " + event.toString(), 2);
 			m_receivedMessages.removeAt(0);
 			return event;
 		}

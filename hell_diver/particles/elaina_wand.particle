@@ -142,7 +142,7 @@ particle_system elaina_wand_result_magic_circle
 }
 particle_system elaina_wand_cyclone
 {
-	quota 1000
+	quota 500
 	material laisha_ring
 	particle_width 0.1
 	particle_height 0.1
@@ -192,7 +192,7 @@ particle_system elaina_wand_cyclone
 }
 particle_system elaina_wand_cyclone_base
 {
-	quota 1000
+	quota 500
 	material laisha_ring
 	particle_width 5
 	particle_height 5
@@ -330,8 +330,8 @@ particle_system elaina_wand_cyclone_up_smoke
 }
 particle_system elaina_wand_skill_thunder_guiding
 {
-	quota 1500
-	emit_emitter_quota 1200
+	quota 500
+	emit_emitter_quota 500
 	material lightning_gun_bolt_7_bw
 	particle_width 8
 	particle_height 60

@@ -211,8 +211,8 @@ particle_system 401_thbow_activated_trail
 }
 particle_system 401_thbow_tracking_thunder
 {
-	quota 1000
-	emit_emitter_quota 1000
+	quota 500
+	emit_emitter_quota 500
 	material point_hard_edge
 	particle_width 0.12
 	particle_height 0.12
@@ -306,8 +306,8 @@ particle_system 401_thbow_tracking_thunder
 
 particle_system 401_thbow_tracking_line_inBox
 {
-	quota 1000
-	emit_emitter_quota 1000
+	quota 500
+	emit_emitter_quota 500
 	material point_hard_edge
 	particle_width 0.2
 	particle_height 0.2

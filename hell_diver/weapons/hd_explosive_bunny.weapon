@@ -49,11 +49,6 @@ radius="1"
     <animation key="recoil" animation_key="hd_rabiit_still" /> <!--后坐力动作，半身动作-->
     <animation key="cycle"  animation_key="hd_rabiit_still" /> <!--拉栓动作，武器固定脱手-->
     <animation key="reload" animation_key="hd_rabiit_still" />	<!--换弹动作，半身动作-->
-    <animation key="reload" stance_key="crouching" animation_key="hd_rabiit_still" />	<!--不同姿态可以设置不同换弹动作-->
-    <animation key="reload" stance_key="prone" animation_key="hd_rabiit_still" />
-	<animation key="recoil" stance_key="over_wall" animation_key="hd_rabiit_still"/>	<!--不同姿态可以设置不同后坐力动作-->
-	<animation key="recoil" stance_key="crouching" animation_key="hd_rabiit_still"/>
-	<animation key="recoil" stance_key="prone" animation_key="hd_rabiit_still"/>
     <animation state_key="hold" animation_key="hd_rabiit_still" /><!--站姿静止动作，全身动作-->
 	<animation state_key="hold_on_wall"  animation_key="hd_rabiit_still" /><!--架枪动作，全身动作-->
     <animation state_key="still_against_wall" animation_key="hd_rabiit_still" /><!--靠墙动作，全身动作-->

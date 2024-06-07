@@ -9,6 +9,8 @@
 // --------------------------------------------
 class BanManager : Tracker {
 	protected Metagame@ m_metagame;
+    protected float m_cdTime = 180;
+	protected float m_timer;
 
 	protected string m_usernameFilename = "ban_list_username.xml"; 
 	protected string m_steamIdFilename = "ban_list_steamid.xml"; 
@@ -24,8 +26,20 @@ class BanManager : Tracker {
 	BanManager(Metagame@ metagame, bool requireSid = false) {
 		@m_metagame = metagame;
 		m_requireSid = g_online_TestMode;
+		m_timer = m_cdTime;
 		load();
 	}
+
+	// --------------------------------------------
+    void update(float time) {
+        m_timer -= time; 
+        
+		if (m_timer < 0.0) {
+            m_timer = m_cdTime;
+			load();
+		}
+
+    }
 
 	// ----------------------------------------------------
 	protected void handlePlayerConnectEvent(const XmlElement@ event) {

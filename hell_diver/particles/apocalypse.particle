@@ -3,7 +3,7 @@
 ——————————————————————————————————————天启坦克——————————————————————————————————————
 particle_system ring_spread_smoke_apocalypse_tank		//地面环形烟雾
 {
-	quota 500
+	quota 100
 	material explosion_smoke_03
 	particle_width 2
 	particle_height 2
@@ -57,7 +57,7 @@ particle_system ring_spread_smoke_apocalypse_tank		//地面环形烟雾
 }
 particle_system ring_spread_fog_apocalypse_tank		//环境烟雾
 {
-	quota 500
+	quota 100
 	material explosion_fog_01
 	particle_width 2
 	particle_height 2
@@ -111,7 +111,7 @@ particle_system ring_spread_fog_apocalypse_tank		//环境烟雾
 }
 particle_system vertical_smoke_apocalypse_tank		//柱状烟雾
 {
-	quota 500
+	quota 100
 	material explosion_smoke_03
 	particle_width 4
 	particle_height 4
@@ -153,7 +153,7 @@ particle_system vertical_smoke_apocalypse_tank		//柱状烟雾
 }
 particle_system flat_spark_thunder_apocalypse_tank_01		//地面环形闪电
 {
-	quota 500
+	quota 100
 	material spark_thunder_01
 	particle_width 4
 	particle_height 4
@@ -198,7 +198,7 @@ particle_system flat_spark_thunder_apocalypse_tank_01		//地面环形闪电
 }
 particle_system flat_spark_thunder_apocalypse_tank_02		//地面环形闪电
 {
-	quota 500
+	quota 100
 	material spark_thunder_02
 	particle_width 3
 	particle_height 3
@@ -243,7 +243,7 @@ particle_system flat_spark_thunder_apocalypse_tank_02		//地面环形闪电
 }
 particle_system flat_spark_thunder_apocalypse_tank_03		//地面环形闪电
 {
-	quota 500
+	quota 100
 	material spark_thunder_03
 	particle_width 4.5
 	particle_height 4.5

@@ -388,7 +388,7 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		addTracker(match_end(this));  
 		addTracker(vest_upgrade_manager(this));  
 		addTracker(lottery_manager(this));  
-		addTracker(VoteManager(this));  
+		addTracker(VoteManager(this));
 		addTracker(re_weapons(this));  
 		addTracker(chat_icon(this));  
 		addTracker(vehicle_destroyed(this));  
@@ -396,6 +396,9 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		addTracker(vehicle_recycle(this));  
 		addTracker(kill_to_win(this));  
 		addTracker(cap_to_lock_base(this));  
+		
+		addTracker(hd_daily_mission(this));  
+		addTracker(server_status(this));  
 	}
 
 	protected void setupDisableRadioAtMatchOver() {

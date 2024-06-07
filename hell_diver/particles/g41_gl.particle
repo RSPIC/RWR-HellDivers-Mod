@@ -1,6 +1,6 @@
 particle_system g41_gl_thunder_01	
 {
-	quota 1000
+	quota 300
 	material g41_gl_thunder_01
 	particle_width 4
 	particle_height 4
@@ -37,7 +37,7 @@ particle_system g41_gl_thunder_01
 
 particle_system g41_gl_rising_flame_01
 {
-	quota 1000
+	quota 300
 	material g41_point_soft_edge_100
 	particle_width 0.1
 	particle_height 4
@@ -75,7 +75,7 @@ particle_system g41_gl_rising_flame_01
 }
 particle_system g41_gl_rising_flame_02
 {
-	quota 1000
+	quota 300
 	material g41_point_soft_edge_100
 	particle_width 1.6
 	particle_height 18
@@ -107,8 +107,8 @@ particle_system g41_gl_rising_flame_02
 }
 particle_system g41_gl_rising_particle_01
 {
-	quota 1000
-	emit_emitter_quota 5000
+	quota 300
+	emit_emitter_quota 300
 	material g41_point_soft_edge_100
 	particle_width 0.1
 	particle_height 0.1
@@ -170,7 +170,7 @@ particle_system g41_gl_rising_particle_01
 }
 particle_system g41_gl_shining_particle_01
 {
-	quota 1000
+	quota 300
 	material g41_explosion_smoke_01
 	particle_width 3
 	particle_height 3
@@ -211,7 +211,7 @@ particle_system g41_gl_shining_particle_01
 }
 particle_system g41_gl_hit_ground_light_01
 {
-	quota 1000
+	quota 300
 	material g41_pump_flare_03
 	particle_width 2
 	particle_height 2
@@ -247,7 +247,7 @@ particle_system g41_gl_hit_ground_light_01
 }
 particle_system g41_gl_area_light_01
 {
-	quota 1000
+	quota 300
 	material g41_pump_flare_03
 	particle_width 2
 	particle_height 2
@@ -283,8 +283,8 @@ particle_system g41_gl_area_light_01
 }
 particle_system g41_gl_impact_1
 {
-	quota 2000
-	emit_emitter_quota 10000
+	quota 500
+	emit_emitter_quota 500
 	material g41_Flare2_3
 	particle_width 4
 	particle_height 4
@@ -350,7 +350,7 @@ particle_system g41_gl_impact_1
 }
 particle_system g41_gl_spray_impact
 {
-	quota 1000
+	quota 300
 	material g41_flame
 	particle_width 1.2
 	particle_height 1.2

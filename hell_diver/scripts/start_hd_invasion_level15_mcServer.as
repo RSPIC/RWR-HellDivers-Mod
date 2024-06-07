@@ -14,6 +14,7 @@ void main(dictionary@ inputData) {
 
         settings.m_factionChoice = 0;                  // 0(acg) 1(helldivers), 2(cyborgs), 3(illuminate), 4(bugs), 
         settings.m_playerAiCompensationFactor = 1.0;   // was 1.1  (1.75)
+        settings.m_playerAiReduction = 5.0;   // was 1.1  (1.75)
 
         settings.m_fellowCapacityFactor = 1.2;
         settings.m_fellowAiAccuracyFactor = 0.96;
@@ -46,7 +47,7 @@ void main(dictionary@ inputData) {
 	mode='HD'
         persistency='forever'
 	comment='地狱潜兵模组  QQ：498520233 1倍XP'
-	max_players='12'>
+	max_players='18'>
 	<client_faction id='0' />
 </command>
 """;

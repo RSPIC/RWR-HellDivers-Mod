@@ -158,6 +158,7 @@ dictionary vehicle_recycle_key = {
         {"lav6.vehicle",500},
         {"kirov.vehicle",500},
         {"wiesel_tow.vehicle",300},
+        {"illum_allied_prism_tank.vehicle",300},
 
         // 占位的
         {"666",-1}

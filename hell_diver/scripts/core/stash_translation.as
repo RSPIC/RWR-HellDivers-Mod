@@ -49,6 +49,7 @@ dictionary canStoreItem = {
     {"ex_piano_cradle_of_eternity.weapon","['永世的摇篮'钢琴]"},
     {"ex_gramophone_steeltorrent.weapon","['钢铁洪流'留声机]"},
     {"ex_gramophone_space_elevator.weapon","['太空电梯'留声机]"},
+    {"ex_gramophone_made_of_earth.weapon","['Made of Eeath'留声机]"},
 
     {"hd_vote_ticket","[民本选票]"},
 

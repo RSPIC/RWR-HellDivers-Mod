@@ -36,5 +36,14 @@ key="hd_money_100"
     <model mesh_filename="sprite_exp_card_stack_t4.mesh" texture_filename="sprite_exp_card_stack_t1.png" />
     <commonness value="0" in_stock="1" />
 </carry_item>
+<carry_item file="_usable_item.base" 
+name="Money [Fake]" 
+key="hd_money_1"
+>
+    <hud_icon filename="hd_money_100.png" />
+    <inventory encumbrance="0" price="1.0" />
+    <model mesh_filename="sprite_exp_card_stack_t4.mesh" texture_filename="sprite_exp_card_stack_t1.png" />
+    <commonness value="0" in_stock="1" />
+</carry_item>
 
 </carry_items>

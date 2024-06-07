@@ -1005,6 +1005,18 @@ class IO_data : Tracker {
         float xp = g_playerInfoBuck.getXpByName(p_name);
         // todo：检测id是否有效
 
+        // 权限兑换
+        if(access_tag == "DanceKey_v1"){
+            upgrade@ tempTack = upgrade(m_metagame);
+            XmlElement newXml("priority");
+                newXml.setStringAttribute("key","DanceKey_v1");
+                newXml.setStringAttribute("type","Dance");
+            tempTack.writeUpgradeFile(p_name,"prioritys",newXml);
+            _notify(m_metagame,pid,"You get Dance priority level-1");
+            return true;
+        }
+
+        // 常规兑换
         array<Resource@> resources = array<Resource@>();
         Resource@ res;
         if(access_tag == "HappyNewYear"){//新年奖励
@@ -1101,6 +1113,226 @@ class IO_data : Tracker {
                 GiveRP(m_metagame,cid,600000);
                 dictionary a;
                 a["%reward"] = "RP: 60w";
+                notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+                return true;
+            }else{
+                notify(m_metagame, "You didnt reach the required Rank!", dictionary(), "misc", pid, false, "", 1.0);
+                return false;
+            }
+        }
+        if(access_tag == "green_hand_level_60"){//60级礼包
+            if(xp >= 2000){
+                @res = Resource("hd_bonusfactor_al_240","carry_item");
+                res.addToResources(resources,1);
+                @res = Resource("samples_acg.carry_item","carry_item");
+                res.addToResources(resources,1);
+                addListItemInBackpack(m_metagame,cid,resources);
+
+                GiveRP(m_metagame,cid,1000000);
+                dictionary a;
+                a["%reward"] = "RP: 100w";
+                notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+                return true;
+            }else{
+                notify(m_metagame, "You didnt reach the required Rank!", dictionary(), "misc", pid, false, "", 1.0);
+                return false;
+            }
+        }
+        if(access_tag == "green_hand_level_75"){//75级礼包
+            if(xp >= 3000){
+                @res = Resource("hd_bonusfactor_al_240","carry_item");
+                res.addToResources(resources,1);
+                @res = Resource("samples_acg.carry_item","carry_item");
+                res.addToResources(resources,1);
+                addListItemInBackpack(m_metagame,cid,resources);
+
+                GiveRP(m_metagame,cid,1000000);
+                dictionary a;
+                a["%reward"] = "RP: 100w";
+                notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+                return true;
+            }else{
+                notify(m_metagame, "You didnt reach the required Rank!", dictionary(), "misc", pid, false, "", 1.0);
+                return false;
+            }
+        }
+        if(access_tag == "green_hand_level_90"){//90级礼包
+            if(xp >= 4500){
+                @res = Resource("hd_bonusfactor_al_240","carry_item");
+                res.addToResources(resources,1);
+                @res = Resource("samples_acg.carry_item","carry_item");
+                res.addToResources(resources,1);
+                addListItemInBackpack(m_metagame,cid,resources);
+
+                GiveRP(m_metagame,cid,1000000);
+                dictionary a;
+                a["%reward"] = "RP: 100w";
+                notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+                return true;
+            }else{
+                notify(m_metagame, "You didnt reach the required Rank!", dictionary(), "misc", pid, false, "", 1.0);
+                return false;
+            }
+        }
+        if(access_tag == "green_hand_level_100"){//100级礼包
+            if(xp >= 5500){
+                @res = Resource("hd_bonusfactor_al_240","carry_item");
+                res.addToResources(resources,1);
+                @res = Resource("samples_acg.carry_item","carry_item");
+                res.addToResources(resources,1);
+                addListItemInBackpack(m_metagame,cid,resources);
+
+                GiveRP(m_metagame,cid,1000000);
+                dictionary a;
+                a["%reward"] = "RP: 100w";
+                notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+                return true;
+            }else{
+                notify(m_metagame, "You didnt reach the required Rank!", dictionary(), "misc", pid, false, "", 1.0);
+                return false;
+            }
+        }
+        if(access_tag == "green_hand_level_110"){//110级礼包
+            if(xp >= 6500){
+                @res = Resource("hd_bonusfactor_al_240","carry_item");
+                res.addToResources(resources,1);
+                @res = Resource("samples_acg.carry_item","carry_item");
+                res.addToResources(resources,1);
+                addListItemInBackpack(m_metagame,cid,resources);
+
+                GiveRP(m_metagame,cid,1000000);
+                dictionary a;
+                a["%reward"] = "RP: 100w";
+                notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+                return true;
+            }else{
+                notify(m_metagame, "You didnt reach the required Rank!", dictionary(), "misc", pid, false, "", 1.0);
+                return false;
+            }
+        }
+        if(access_tag == "green_hand_level_120"){//120级礼包
+            if(xp >= 7500){
+                @res = Resource("hd_bonusfactor_al_240","carry_item");
+                res.addToResources(resources,1);
+                @res = Resource("samples_acg.carry_item","carry_item");
+                res.addToResources(resources,1);
+                addListItemInBackpack(m_metagame,cid,resources);
+
+                GiveRP(m_metagame,cid,1000000);
+                dictionary a;
+                a["%reward"] = "RP: 100w";
+                notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+                return true;
+            }else{
+                notify(m_metagame, "You didnt reach the required Rank!", dictionary(), "misc", pid, false, "", 1.0);
+                return false;
+            }
+        }
+        if(access_tag == "green_hand_level_130"){//130级礼包
+            if(xp >= 8500){
+                @res = Resource("hd_bonusfactor_al_240","carry_item");
+                res.addToResources(resources,1);
+                @res = Resource("samples_acg.carry_item","carry_item");
+                res.addToResources(resources,1);
+                addListItemInBackpack(m_metagame,cid,resources);
+
+                GiveRP(m_metagame,cid,1000000);
+                dictionary a;
+                a["%reward"] = "RP: 100w";
+                notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+                return true;
+            }else{
+                notify(m_metagame, "You didnt reach the required Rank!", dictionary(), "misc", pid, false, "", 1.0);
+                return false;
+            }
+        }
+        if(access_tag == "green_hand_level_140"){//140级礼包
+            if(xp >= 9500){
+                @res = Resource("hd_bonusfactor_al_240","carry_item");
+                res.addToResources(resources,1);
+                @res = Resource("samples_acg.carry_item","carry_item");
+                res.addToResources(resources,1);
+                addListItemInBackpack(m_metagame,cid,resources);
+
+                GiveRP(m_metagame,cid,1000000);
+                dictionary a;
+                a["%reward"] = "RP: 100w";
+                notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+                return true;
+            }else{
+                notify(m_metagame, "You didnt reach the required Rank!", dictionary(), "misc", pid, false, "", 1.0);
+                return false;
+            }
+        }
+        if(access_tag == "green_hand_level_145"){//145级礼包
+            if(xp >= 10000){
+                @res = Resource("hd_bonusfactor_al_240","carry_item");
+                res.addToResources(resources,1);
+                @res = Resource("samples_acg.carry_item","carry_item");
+                res.addToResources(resources,1);
+                addListItemInBackpack(m_metagame,cid,resources);
+
+                GiveRP(m_metagame,cid,1000000);
+                dictionary a;
+                a["%reward"] = "RP: 100w";
+                notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+                return true;
+            }else{
+                notify(m_metagame, "You didnt reach the required Rank!", dictionary(), "misc", pid, false, "", 1.0);
+                return false;
+            }
+        }
+        if(access_tag == "green_hand_level_150"){//150级礼包
+            if(xp >= 20000){
+                @res = Resource("hd_bonusfactor_al_240","carry_item");
+                res.addToResources(resources,1);
+                @res = Resource("samples_acg.carry_item","carry_item");
+                res.addToResources(resources,1);
+                addListItemInBackpack(m_metagame,cid,resources);
+
+                GiveRP(m_metagame,cid,1000000);
+                dictionary a;
+                a["%reward"] = "RP: 100w";
+                notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+                return true;
+            }else{
+                notify(m_metagame, "You didnt reach the required Rank!", dictionary(), "misc", pid, false, "", 1.0);
+                return false;
+            }
+        }
+        if(access_tag == "green_hand_level_spa"){//SPA级礼包
+            if(xp >= 30000){
+                @res = Resource("hd_bonusfactor_al_240","carry_item");
+                res.addToResources(resources,1);
+                @res = Resource("samples_acg.carry_item","carry_item");
+                res.addToResources(resources,1);
+                @res = Resource("reward_box_collection.carry_item","carry_item");
+                res.addToResources(resources,1);
+                addListItemInBackpack(m_metagame,cid,resources);
+
+                GiveRP(m_metagame,cid,1000000);
+                dictionary a;
+                a["%reward"] = "RP: 100w";
+                notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+                return true;
+            }else{
+                notify(m_metagame, "You didnt reach the required Rank!", dictionary(), "misc", pid, false, "", 1.0);
+                return false;
+            }
+        }
+        if(access_tag == "green_hand_level_sps"){//SPS级礼包
+            if(xp >= 50000){
+                @res = Resource("hd_bonusfactor_al_240","carry_item");
+                res.addToResources(resources,1);
+                @res = Resource("samples_acg.carry_item","carry_item");
+                res.addToResources(resources,1);
+                @res = Resource("reward_box_collection.carry_item","carry_item");
+                res.addToResources(resources,3);
+                addListItemInBackpack(m_metagame,cid,resources);
+
+                GiveRP(m_metagame,cid,1000000);
+                dictionary a;
+                a["%reward"] = "RP: 100w";
                 notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
                 return true;
             }else{
@@ -1214,6 +1446,13 @@ class IO_data : Tracker {
             res.addToResources(resources,5);
             @res = Resource("reward_box_collection.carry_item","carry_item");//fumo
             res.addToResources(resources,2);
+
+            upgrade@ tempTack = upgrade(m_metagame);
+            XmlElement newXml("priority");
+                newXml.setStringAttribute("key","DanceKey_v1");
+                newXml.setStringAttribute("type","Dance");
+            tempTack.writeUpgradeFile(p_name,"prioritys",newXml);
+            _notify(m_metagame,pid,"You get Dance priority level-1");
 
             addListItemInBackpack(m_metagame,cid,resources);
             GiveRP(m_metagame,cid,6480000);

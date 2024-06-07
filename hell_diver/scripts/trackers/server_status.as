@@ -105,7 +105,7 @@ class server_status : Tracker{
                 XmlElement info("Time");
                     info.setIntAttribute("server_running_time",0);
                     info.setIntAttribute("inGameDay",0);
-                    info.setIntAttribute("oneDayTime",60*12); //分钟
+                    info.setIntAttribute("oneDayTime",60*24); //分钟
                     // info.setIntAttribute("oneDayTime",15);
             actinfos.appendChild(info);
             writeXML(m_metagame,m_FILENAME,actinfos);
@@ -137,6 +137,26 @@ int getServerDay(Metagame@ m_metagame){
         if(m_stash.getName() == "Time"){
             int inGameDay = m_stash.getIntAttribute("inGameDay");
             return inGameDay;
+        }
+    }
+    return -1;
+}
+int getNextServerDayRate(Metagame@ m_metagame){
+    string m_FILENAME = "_server_manager.xml";
+    const XmlElement@ allInfo = readFile(m_metagame,m_FILENAME);
+    if(allInfo is null){
+        _log("allInfo is null, in server_status initiate");
+        return -1;
+    }
+    array<const XmlElement@> m_stashs = allInfo.getChilds();
+    for(int j = 0 ; j < int(m_stashs.size()) ; ++j){
+        const XmlElement@ m_stash = m_stashs[j];
+        if(m_stash.getName() == "Time"){
+            int oneDayTime = m_stash.getIntAttribute("oneDayTime");
+            int server_running_time = m_stash.getIntAttribute("server_running_time");
+            if(oneDayTime != 0){
+                return int(server_running_time/oneDayTime);
+            }
         }
     }
     return -1;

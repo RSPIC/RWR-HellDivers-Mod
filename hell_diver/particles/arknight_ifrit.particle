@@ -304,7 +304,7 @@ particle_system ifrit_result_ground_lava
 
 particle_system general_result_ground_fire
 {
-	quota 1500
+	quota 50
 	material anim_fire_2
 	particle_width 2
 	particle_height 2

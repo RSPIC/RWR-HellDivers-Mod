@@ -63,7 +63,9 @@ class UAVdrone : Tracker {
 					UAVdroneTarget("cyborgs_ifv.vehicle", "Infantry Fighting Vehicle"),
 					UAVdroneTarget("water_tower.vehicle", "Rocket Launch Platform"),
 					UAVdroneTarget("icecream.vehicle", "Icecream"),
-					UAVdroneTarget("hongbao.vehicle", "HongBao")
+					UAVdroneTarget("hongbao.vehicle", "HongBao"),
+					UAVdroneTarget("illum_allied_prism_tower.vehicle", "Allied Prism Tower"),
+					UAVdroneTarget("illum_allied_prism_tank.vehicle", "Prism Tank")
 				};
 				
 				//scanning all major enemy factions (neutral wasn't necessary this time)

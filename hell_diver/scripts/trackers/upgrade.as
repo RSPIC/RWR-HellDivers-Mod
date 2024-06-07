@@ -140,6 +140,28 @@ class upgrade : Tracker{
         _debugReport(m_metagame,"saveUpgradePlayersStash");
         return;
     }
+    bool checkAccess(string name,string TagName,string TagKey,string TagType = ""){
+        const XmlElement@ info = readUpgradeFile(name,TagName);
+        if(info is null){return false;}
+        array<const XmlElement@> bases = info.getChilds();
+        _log("PrintTest(checkAccess(name,'"+TagName+"')):"+info.toString());
+        for(uint i=0; i<bases.size(); ++i){
+            const XmlElement@ base = bases[i];
+            if(base is null){continue;}
+            string key = base.getStringAttribute("key");
+            if(key == TagKey){
+                if(TagType != ""){
+                    string type = base.getStringAttribute("type");
+                    if(type == TagType){
+                        return true;
+                    }
+                }else{
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
     // --------------------------------------------
     protected void handleUpgradeEvent(const XmlElement@ event) {
         int pid = event.getIntAttribute("player_id");

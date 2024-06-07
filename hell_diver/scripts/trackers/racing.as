@@ -872,6 +872,11 @@ class start_racing : Task {
             if(distance <= pointData.m_checkRange){ //玩家在判断区内
                 if(type == "check"){
                     //记录走过的点位置
+                    if(!m_start){
+                        int pid = g_playerInfoBuck.getPidByName(m_name);
+                        _notify(m_metagame,pid,"未经过起点");
+                        return false;
+                    }
                     bool isOld = false;
                     for(uint j=0; j<m_check_poiont; ++j){
                         string old_pos;
@@ -895,6 +900,11 @@ class start_racing : Task {
                     _notify(m_metagame,pid,"开始计时！剩余检查点:"+m_all_check_poiont);
                 }
                 if(type == "end"){
+                    if(!m_start){
+                        int pid = g_playerInfoBuck.getPidByName(m_name);
+                        _notify(m_metagame,pid,"未经过起点");
+                        return false;
+                    }
                     int pid = g_playerInfoBuck.getPidByName(m_name);
                     m_end = true;
                     if(m_check_poiont >= m_all_check_poiont){

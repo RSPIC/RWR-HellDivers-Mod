@@ -224,7 +224,7 @@ dictionary stratagems_CD = {
 	{"hd_offensive_vindicator_dive_bomb_mk3",5},
 	{"hd_offensive_airstrike_mk3",45},
 	{"hd_offensive_laser_strike_mk3",90},
-	{"hd_offensive_shredder_missile_strike_mk3",105},
+	{"hd_offensive_shredder_missile_strike_mk3",120},
 	{"hd_offensive_close_air_support_mk3",38},
 	{"hd_offensive_thunderer_barrage_mk3",90},
 	{"hd_offensive_strafing_run_mk3",5},
@@ -245,7 +245,7 @@ dictionary stratagems_CD = {
 	{"hd_aac6_tesla_mk3_call",90},
 
 	// special 特殊支援
-	{"hd_nux_223_hellbomb",600},
+	{"hd_nux_223_hellbomb",60},
 	{"hd_hellpod",5},
 	{"hd_sup_mental_detector_call",30},
 

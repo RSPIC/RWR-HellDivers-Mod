@@ -1,7 +1,7 @@
 -------------------------------扩散弹爆炸特效-----------------------
 particle_system g41_transparent_center_point_light		//深蓝中心环境&范围光
 {
-	quota 1000
+	quota 100
 	material g41_normal_point
 	particle_width 4.5
 	particle_height 4.5
@@ -35,7 +35,7 @@ particle_system g41_transparent_center_point_light		//深蓝中心环境&范围�
 }
 particle_system g41_spray_square_01		//散射蓝色方块特效
 {
-	quota 1000
+	quota 100
 	material g41_square_hard_edge
 	particle_width 0.4
 	particle_height 0.4
@@ -73,7 +73,7 @@ particle_system g41_spray_square_01		//散射蓝色方块特效
 }
 particle_system g41_spray_square_02		//散射蓝色方块特效
 {
-	quota 1000
+	quota 100
 	material g41_square_hard_edge
 	particle_width 0.2
 	particle_height 0.2
@@ -111,7 +111,7 @@ particle_system g41_spray_square_02		//散射蓝色方块特效
 }
 particle_system g41_spray_square_03		//散射蓝色方块特效
 {
-	quota 1000
+	quota 100
 	material g41_square_hard_edge
 	particle_width 0.8
 	particle_height 0.8
@@ -153,7 +153,7 @@ particle_system g41_spray_square_03		//散射蓝色方块特效
 }
 particle_system g41_spray_square_04		//散射蓝色方块特效
 {
-	quota 1000
+	quota 100
 	material g41_square_hard_edge
 	particle_width 0.7
 	particle_height 0.7
@@ -195,7 +195,7 @@ particle_system g41_spray_square_04		//散射蓝色方块特效
 }
 particle_system g41_center_circle_01		//中心光圈,放大
 {
-	quota 1000
+	quota 100
 	material g41_lens_circle_03
 	particle_width 1.5
 	particle_height 1.5
@@ -231,7 +231,7 @@ particle_system g41_center_circle_01		//中心光圈,放大
 }
 particle_system g41_center_circle_02		//中心光圈，固定
 {
-	quota 1000
+	quota 100
 	material g41_lens_circle_02
 	particle_width 2
 	particle_height 2
@@ -260,7 +260,7 @@ particle_system g41_center_circle_02		//中心光圈，固定
 }
 particle_system g41_center_circle_03		//中心光圈，实心，放大
 {
-	quota 1000
+	quota 100
 	material g41_point_hard_edge
 	particle_width 0.3
 	particle_height 0.3
@@ -296,7 +296,7 @@ particle_system g41_center_circle_03		//中心光圈，实心，放大
 }
 particle_system g41_center_circle_04		//中心中空光圈，实心，放大
 {
-	quota 1000
+	quota 100
 	material g41_lens_circle_03
 	particle_width 0.2
 	particle_height 0.2
@@ -332,7 +332,7 @@ particle_system g41_center_circle_04		//中心中空光圈，实心，放大
 }
 particle_system g41_linear_rectangle_01		//线性排列，长方形
 {
-	quota 1000
+	quota 100
 	material g41_square_hard_edge
 	particle_width 0.22
 	particle_height 1.2
@@ -370,7 +370,7 @@ particle_system g41_linear_rectangle_01		//线性排列，长方形
 }
 particle_system g41_linear_rectangle_02		//线性排列，长方形
 {
-	quota 1000
+	quota 100
 	material g41_square_hard_edge
 	particle_width 0.06
 	particle_height 0.4

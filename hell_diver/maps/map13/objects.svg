@@ -15,7 +15,7 @@
    height="2048"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.5 r10040"
+   inkscape:version="0.91 r13725"
    sodipodi:docname="objects.svg"
    inkscape:export-xdpi="22.5"
    inkscape:export-ydpi="22.5"
@@ -29,15 +29,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="7.8881548"
-     inkscape:cx="2754.7278"
-     inkscape:cy="1438.5858"
+     inkscape:zoom="3.9440774"
+     inkscape:cx="987.72734"
+     inkscape:cy="1417.9326"
      inkscape:document-units="px"
-     inkscape:current-layer="layer10"
+     inkscape:current-layer="layer54"
      showgrid="true"
-     inkscape:window-width="3072"
-     inkscape:window-height="1665"
-     inkscape:window-x="-8"
+     inkscape:window-width="1463"
+     inkscape:window-height="752"
+     inkscape:window-x="506"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      showguides="true"
@@ -8556,36 +8556,6 @@
          mode="multiply"
          in2="BackgroundImage"
          id="feBlend11086-63" />
-    </filter>
-    <filter
-       style="color-interpolation-filters:sRGB"
-       inkscape:collect="always"
-       id="filter11084-86-9">
-      <feBlend
-         inkscape:collect="always"
-         mode="multiply"
-         in2="BackgroundImage"
-         id="feBlend11086-509-3" />
-    </filter>
-    <filter
-       style="color-interpolation-filters:sRGB"
-       inkscape:collect="always"
-       id="filter11084-86-6">
-      <feBlend
-         inkscape:collect="always"
-         mode="multiply"
-         in2="BackgroundImage"
-         id="feBlend11086-509-1" />
-    </filter>
-    <filter
-       style="color-interpolation-filters:sRGB"
-       inkscape:collect="always"
-       id="filter11084-86">
-      <feBlend
-         inkscape:collect="always"
-         mode="multiply"
-         in2="BackgroundImage"
-         id="feBlend11086-509" />
     </filter>
     <filter
        style="color-interpolation-filters:sRGB"
@@ -20941,7 +20911,7 @@ visual_hitbox_size = 2 2 2;
        sodipodi:cy="20.3008"
        sodipodi:rx="35.967548"
        sodipodi:ry="28.125"
-       d="m -1178.4959,48.3146 c -19.7858,-1.379902 -34.3948,-15.040738 -32.6301,-30.512332 1.5423,-13.5220045 15.2168,-24.2526208 32.5039,-25.5062876"
+       d="m -1178.4959,48.3146 a 35.967548,28.125 0 0 1 -32.7723,-27.964239 35.967548,28.125 0 0 1 32.6461,-28.0543806"
        transform="scale(-1,-1)" />
     <path
        sodipodi:nodetypes="cc"
@@ -25931,6 +25901,18 @@ no_collision_start;</desc>
              id="desc7613-7-4">type = start;</desc>
         </path>
       </g>
+      <rect
+         transform="matrix(0.50928793,0.86059619,-0.86059619,0.50928793,0,0)"
+         inkscape:label=""
+         y="-508.39651"
+         x="1685.9902"
+         height="6.6684999"
+         width="5.7888808"
+         id="spawn5_6-4-2"
+         style="display:inline;fill:#a0892c;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999911, 3.99999911;stroke-dashoffset:6.99999857;stroke-opacity:1;enable-background:new">
+        <desc
+           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-2-6-7-2-3-2-9-84-5">type = vehicle; tag = broadcast;</desc>
+      </rect>
     </g>
     <g
        transform="translate(0,1024)"
@@ -41994,6 +41976,18 @@ key = atv_base.vehicle;</desc>
            id="title10504-38-5-5">gas_tank</title>
         <desc
            id="desc10500-7-7-4">type = vehicle; key = gas_tank.vehicle;</desc>
+      </rect>
+      <rect
+         transform="matrix(0.50928793,0.86059619,-0.86059619,0.50928793,0,0)"
+         inkscape:label=""
+         y="-558.07159"
+         x="1050.5774"
+         height="6.6684999"
+         width="5.7888808"
+         id="spawn5_6-4-8"
+         style="display:inline;fill:#a0892c;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999911, 3.99999911;stroke-dashoffset:6.99999857;stroke-opacity:1;enable-background:new">
+        <desc
+           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-2-6-7-2-3-2-9-84-54">type = vehicle; tag = broadcast;</desc>
       </rect>
     </g>
     <g

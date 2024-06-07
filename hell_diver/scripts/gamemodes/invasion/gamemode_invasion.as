@@ -56,7 +56,7 @@
 #include "IO_data.as"
 #include "vest_upgrade_manager.as"
 #include "lottery_manager.as"
-#include "vote_Manager.as"
+#include "vote_Manager.as" 
 #include "re_weapons.as"
 #include "chat_icon.as"
 #include "vehicle_destroyed.as"
@@ -68,6 +68,7 @@
 #include "racing.as"
 #include "hd_daily_mission.as"
 #include "server_status.as"
+#include "hd_side_mission.as"
 
 
 // --------------------------------------------
@@ -386,7 +387,7 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		addTracker(match_end(this));  
 		addTracker(vest_upgrade_manager(this));  
 		addTracker(lottery_manager(this));  
-		addTracker(VoteManager(this));  
+		addTracker(VoteManager(this)); 
 		addTracker(re_weapons(this));  
 		addTracker(chat_icon(this));  
 		addTracker(vehicle_destroyed(this));  
@@ -398,6 +399,7 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		addTracker(racing(this));  
 		addTracker(hd_daily_mission(this));  
 		addTracker(server_status(this));  
+		addTracker(hd_side_mission(this));  
 	}
 
 	protected void setupDisableRadioAtMatchOver() {

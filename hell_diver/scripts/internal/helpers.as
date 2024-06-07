@@ -533,7 +533,10 @@ array<XmlElement@> constXmlToXml(array<const XmlElement@> constXmls){
 	array<XmlElement@> tempChilds;
 	for(uint k = 0 ; k < constXmls.size() ; ++k){
 		XmlElement@ tagchild = XmlElement(constXmls[k]);
-		tempChilds.insertLast(tagchild);
+		if(tagchild is null){continue;}
+		if(tagchild.hasAttribute("TagName")){
+			tempChilds.insertLast(tagchild);
+		}
 	}
 	return tempChilds;
 }

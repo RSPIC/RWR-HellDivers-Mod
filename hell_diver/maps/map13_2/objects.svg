@@ -13,7 +13,7 @@
    height="2048"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.5 r10040"
+   inkscape:version="0.91 r13725"
    sodipodi:docname="objects.svg"
    inkscape:export-xdpi="22.5"
    inkscape:export-ydpi="22.5"
@@ -27,15 +27,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.41177617"
-     inkscape:cx="425.48587"
-     inkscape:cy="1691.1389"
+     inkscape:zoom="4.6587155"
+     inkscape:cx="792.59111"
+     inkscape:cy="1207.4436"
      inkscape:document-units="px"
-     inkscape:current-layer="layer10"
+     inkscape:current-layer="layer54"
      showgrid="true"
-     inkscape:window-width="3072"
-     inkscape:window-height="1665"
-     inkscape:window-x="-8"
+     inkscape:window-width="1463"
+     inkscape:window-height="752"
+     inkscape:window-x="506"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      showguides="true"
@@ -8519,36 +8519,6 @@
          mode="multiply"
          in2="BackgroundImage"
          id="feBlend11086-63" />
-    </filter>
-    <filter
-       style="color-interpolation-filters:sRGB"
-       inkscape:collect="always"
-       id="filter11084-86-9">
-      <feBlend
-         inkscape:collect="always"
-         mode="multiply"
-         in2="BackgroundImage"
-         id="feBlend11086-509-3" />
-    </filter>
-    <filter
-       style="color-interpolation-filters:sRGB"
-       inkscape:collect="always"
-       id="filter11084-86-6">
-      <feBlend
-         inkscape:collect="always"
-         mode="multiply"
-         in2="BackgroundImage"
-         id="feBlend11086-509-1" />
-    </filter>
-    <filter
-       style="color-interpolation-filters:sRGB"
-       inkscape:collect="always"
-       id="filter11084-86">
-      <feBlend
-         inkscape:collect="always"
-         mode="multiply"
-         in2="BackgroundImage"
-         id="feBlend11086-509" />
     </filter>
     <filter
        style="color-interpolation-filters:sRGB"
@@ -20842,7 +20812,7 @@ visual_hitbox_size = 2 2 2;
        sodipodi:cy="20.3008"
        sodipodi:rx="35.967548"
        sodipodi:ry="28.125"
-       d="m -1178.4959,48.3146 c -19.7858,-1.379902 -34.3948,-15.040738 -32.6301,-30.512332 1.5423,-13.5220045 15.2168,-24.2526208 32.5039,-25.5062876"
+       d="m -1178.4959,48.3146 a 35.967548,28.125 0 0 1 -32.7723,-27.964239 35.967548,28.125 0 0 1 32.6461,-28.0543806"
        transform="scale(-1)"
        sodipodi:arc-type="arc" />
     <path
@@ -42825,6 +42795,34 @@ key = noxe.vehicle;</desc>
            id="title10504-38-5-5">gas_tank</title>
         <desc
            id="desc10500-7-7-4">type = vehicle; key = gas_tank.vehicle;</desc>
+      </rect>
+      <rect
+         transform="matrix(-0.00976398,0.99995233,-0.99995233,-0.00976398,0,0)"
+         rx="4.1992183"
+         inkscape:label=""
+         ry="3.5156248"
+         y="-1374.5474"
+         x="909.55487"
+         height="8.4813709"
+         width="8.3984365"
+         id="spawn7200-1-1-2-7-1-4-67-9-8-2"
+         style="display:inline;fill:#ffff00;fill-opacity:1;fill-rule:nonzero;stroke:#1a1a1a;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:7;stroke-opacity:1;enable-background:new">
+        <desc
+           id="desc7204-7-7-2-6-7-67-1-9-9">type = vehicle; tag = broadcast;</desc>
+      </rect>
+      <rect
+         transform="matrix(-0.00976398,0.99995233,-0.99995233,-0.00976398,0,0)"
+         rx="4.1992183"
+         inkscape:label=""
+         ry="3.5156248"
+         y="-822.63696"
+         x="820.06354"
+         height="8.4813709"
+         width="8.3984365"
+         id="spawn7200-1-1-2-7-1-4-67-9-8-2-7"
+         style="display:inline;fill:#ffff00;fill-opacity:1;fill-rule:nonzero;stroke:#1a1a1a;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:7;stroke-opacity:1;enable-background:new">
+        <desc
+           id="desc7204-7-7-2-6-7-67-1-9-9-7">type = vehicle; tag = broadcast;</desc>
       </rect>
     </g>
     <g

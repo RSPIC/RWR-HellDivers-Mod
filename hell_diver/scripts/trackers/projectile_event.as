@@ -610,54 +610,6 @@ class projectile_event : Tracker {
                 }
                 break;
             }
-            case 49:{//hd_sms_for_launcher 火箭发射平台
-                Vector3 position = stringToVector3(event.getStringAttribute("position"));
-                
-                array<const XmlElement@>@ players = getPlayers(m_metagame);
-                int count = 0;
-                array<string> targetName;
-                for (uint i = 0; i < players.size(); ++i) {
-                    const XmlElement@ t_player = players[i];
-                    if(t_player is null){continue;}
-                    string name = t_player.getStringAttribute("name");
-                    if (t_player.hasAttribute("character_id")) {
-                        const XmlElement@ p_character = getCharacterInfo(m_metagame, t_player.getIntAttribute("character_id"));
-                        if (p_character !is null) {
-                            Vector3 p_position = stringToVector3(p_character.getStringAttribute("position"));
-                            float distance = get2DMAxAxisDistance(1.0,p_position,position);
-                            // _report(m_metagame,"distance="+distance);
-                            // _report(m_metagame,"p_position="+p_position.toString());
-                            // _report(m_metagame,"position="+position.toString());
-                            if(distance <= 30){
-                                count++;
-                                targetName.insertLast(name);
-                            }
-                        }
-                    }
-                }
-                if(count >= 1){
-                    for(uint i = 0 ; i < targetName.size() ; ++i){
-                        string name = targetName[i];
-                        int pid = g_playerInfoBuck.getPidByName(name);
-                        int times = 0;
-                        if(g_userCountInfoBuck.getCount(name,"hd_sms_for_launcher",times)){
-                            if(times >= 1){
-                                _notify(m_metagame,pid,"超过该支线任务执行上限，无奖励");
-                                continue;
-                            }
-                        }
-                        g_battleInfoBuck.addMission(name);
-                        g_userCountInfoBuck.addCount(name,"hd_nux223_hellbomb.call",-1);
-                        g_userCountInfoBuck.addCount(name,"hd_sms_for_launcher",1);
-                        _report(m_metagame,"玩家："+name+"完成了'启动火箭发射平台'支线任务");
-                        notify(m_metagame, "地狱火呼叫次数 +1", dictionary(), "misc", pid, false, "", 1.0);
-                        g_playerMissionInfoBuck.addMissionFinishTimes(name,"finish_sidemission");
-                    }
-                }else{
-                    _report(m_metagame,"'启动火箭发射平台'支线任务执行失败，操作玩家不足一人");
-                }
-                break;
-            }
             case 50:{//ex_vergil_getsuga_tenshou 维吉尔 月牙天冲
                 int cid = event.getIntAttribute("character_id");
                 int pid = g_playerInfoBuck.getPidByCid(cid);

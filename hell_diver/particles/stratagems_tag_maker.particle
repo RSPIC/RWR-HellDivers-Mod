@@ -189,7 +189,6 @@ particle_system marker_recycle_decorate2 : marker_recycle_name
 	material atk_marker_repair_mask
 }
 
-
 particle_system marker_bombing_circle
 {
 	quota 50
@@ -308,6 +307,22 @@ particle_system marker_bombing_circle_9s_nux : marker_bombing_circle
 		rate 1
 	}
 }
+particle_system marker_bombing_circle_endles : marker_bombing_circle
+{
+	material area_warning_circle_add_1
+	particle_width 0.1
+	particle_height 0.1
+	emitter Point
+	{
+		emission_rate 0.5
+		time_to_live 7
+		duration 0
+	}
+	affector Scaler
+	{
+		rate 10
+	}
+}
 
 --------------------------------------material-----------------------------------
 material alpha_blend_base{
@@ -382,6 +397,13 @@ material atk_marker_x_line : add_base
     pass{
         texture_unit{
             texture atk_marker_x_line.png 	
+}}}}
+material area_warning_circle_add_1 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture area_warning_circle_add_1.png 	
 }}}}
 material atk_marker_repair_mirror_angle : add_base
 {   

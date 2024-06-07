@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <weapons> 
 <weapon 
-file="_rare_weapon_mk5.base"
+file="_rare_weapon_mk4.base"
 key="acg_yileina_wand.weapon"
  >
     <tag name="sniper" />
@@ -9,9 +9,9 @@ key="acg_yileina_wand.weapon"
 	retrigger_time="1"
     last_burst_retrigger_time="1"
 	accuracy_factor="1" 
-    spread_range="0.22"
+    spread_range="0.0"
 	sustained_fire_grow_step="0.5" 
-	sustained_fire_diminish_rate="0.2" 
+	sustained_fire_diminish_rate="0.17" 
 	magazine_size="-1" 
 	can_shoot_standing="1" 
 	can_shoot_crouching="1"
@@ -22,7 +22,7 @@ key="acg_yileina_wand.weapon"
 	reload_one_at_a_time="0" 
 	sight_range_modifier="1.2" 
 	projectile_speed="40.0" 
-	barrel_offset_3d="0 0 1.6"
+	barrel_offset_3d="0 1 2.0"
 	projectiles_per_shot="1" 
 	burst_shots="1"
     carry_in_two_hands="0"
@@ -68,13 +68,16 @@ key="acg_yileina_wand.weapon"
 
     <hud_icon filename="acg_elaina_wand_ex.png" />
 
-    <projectile file="hd_general_spawn.projectile" pulldown_in_air="0.25" can_be_detected_by_footmen="1" 
-	time_to_live="1.25" can_be_detected_by_driver="1" can_be_disarmed="0" > 
+	<ballistics curve_height="1.0" near_far_distance="0.0" speed_estimation_near="100.0" 
+	speed_estimation_far="100.0" max_speed="100.0" randomness="0.0" tweak_factor="2.0"/> 
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="2" can_be_detected_by_footmen="1" 
+	time_to_live="1.25" can_be_detected_by_driver="1" can_be_disarmed="0" radius="1.0"> 
 
         <result class="spawn" instance_class="grenade" instance_key="acg_yileina_wand_dead2_damage.projectile" 
 		min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
 
-		<trigger class="impact" time_to_live="0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<trigger class="time" time_to_live="0.9"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
         
         <effect class="activated" ref="acg_yileina_wand_trailRing" lighting="0" post_processing="0"/> 
@@ -100,12 +103,11 @@ key="acg_yileina_wand.weapon"
     <stance state_key="prone" accuracy="1" /> 
     <stance state_key="prone_moving" accuracy="1" />
     <stance state_key="over_wall" accuracy="1" />
-
-    <modifier class="speed" value="0.1" />    
+   
 	 
 </weapon>
 <weapon 
-file="_rare_weapon_mk5.base"
+file="_rare_weapon_mk4.base"
 key="acg_yileina_wand_rain.weapon"
  >
     <tag name="sniper" />
@@ -195,7 +197,7 @@ key="acg_yileina_wand_rain.weapon"
 	 
 </weapon>
 <weapon 
-file="_rare_weapon_mk5_re.base"
+file="_rare_weapon_mk4_re.base"
 key="re_acg_yileina_wand.weapon"
  >
     <tag name="sniper" />
@@ -203,9 +205,9 @@ key="re_acg_yileina_wand.weapon"
 	retrigger_time="1"
     last_burst_retrigger_time="1"
 	accuracy_factor="1" 
-    spread_range="0.22"
+    spread_range="0.0"
 	sustained_fire_grow_step="0.5" 
-	sustained_fire_diminish_rate="0.2" 
+	sustained_fire_diminish_rate="0.17" 
 	magazine_size="-1" 
 	can_shoot_standing="1" 
 	can_shoot_crouching="1"
@@ -216,7 +218,7 @@ key="re_acg_yileina_wand.weapon"
 	reload_one_at_a_time="0" 
 	sight_range_modifier="1.2" 
 	projectile_speed="40.0" 
-	barrel_offset_3d="0 0 1.6"
+	barrel_offset_3d="0 1 2.0"
 	projectiles_per_shot="1" 
 	burst_shots="1"
     carry_in_two_hands="0"
@@ -262,13 +264,16 @@ key="re_acg_yileina_wand.weapon"
 
     <hud_icon filename="acg_elaina_wand_ex.png" />
 
-    <projectile file="hd_general_spawn.projectile" pulldown_in_air="0.25" can_be_detected_by_footmen="1" 
-	time_to_live="1.25" can_be_detected_by_driver="1" can_be_disarmed="0" > 
+	<ballistics curve_height="1.0" near_far_distance="0.0" speed_estimation_near="100.0" 
+	speed_estimation_far="100.0" max_speed="100.0" randomness="0.0" tweak_factor="2.0"/> 
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="2" can_be_detected_by_footmen="1" 
+	time_to_live="1.25" can_be_detected_by_driver="1" can_be_disarmed="0" radius="1.0"> 
 
         <result class="spawn" instance_class="grenade" instance_key="acg_yileina_wand_dead2_damage.projectile" 
 		min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
 
-		<trigger class="impact" time_to_live="0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<trigger class="time" time_to_live="0.9"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
         
         <effect class="activated" ref="acg_yileina_wand_trailRing" lighting="0" post_processing="0"/> 
@@ -294,12 +299,11 @@ key="re_acg_yileina_wand.weapon"
     <stance state_key="prone" accuracy="1" /> 
     <stance state_key="prone_moving" accuracy="1" />
     <stance state_key="over_wall" accuracy="1" />
-
-    <modifier class="speed" value="0.1" />    
+ 
 	 
 </weapon>
 <weapon 
-file="_rare_weapon_mk5_re.base"
+file="_rare_weapon_mk4_re.base"
 key="re_acg_yileina_wand_rain.weapon"
  >
     <tag name="sniper" />

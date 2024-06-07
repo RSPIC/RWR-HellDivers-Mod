@@ -596,7 +596,7 @@ class dynamic_alert : Tracker {
             _log("faction name="+f_name);
             if(g_GameMode == ""){   // 本家模式
                 if(f_name == "Super Earth"){ 
-                    spawnTime = 1.0 + count/5;
+                    spawnTime = 1.5 + count/5;
                     _log("setSpawnTime("+f_name+"):" + spawnTime);
                     faction.setFloatAttribute("spawn_interval", spawnTime);
                 }else{
@@ -604,8 +604,8 @@ class dynamic_alert : Tracker {
                         m_server_difficulty_level = 1;
                     }
                     spawnTime = 4.8 - count/2.5 + 0.1*m_time_played;
-                    if(spawnTime <= 1 - 0.04*m_server_difficulty_level){
-                        spawnTime == 1 - 0.04*m_server_difficulty_level; //min 0.4~1
+                    if(spawnTime <= 1 - 0.06*m_server_difficulty_level){
+                        spawnTime == 1 - 0.06*m_server_difficulty_level; //min 0.2~1
                     }
                     _log("setSpawnTime("+ f_name +"):" + spawnTime);
                     faction.setFloatAttribute("spawn_interval", spawnTime);
@@ -762,7 +762,7 @@ class dynamic_alert : Tracker {
         m_cd_time = m_cd_time - 2*m_server_difficulty_level + 18;
         m_cd_time = m_cd_time - 0.8*player_num;
 
-        if(m_cd_time <= 30){
+        if(m_cd_time <= 30 - 5*m_server_difficulty_level/3){
             m_cd_time = 30 - 5*m_server_difficulty_level/3 ; // level15 = min 5s   level9 = min 15s
         }
         

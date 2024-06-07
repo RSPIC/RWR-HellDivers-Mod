@@ -21,6 +21,16 @@ key="upgrade_ui_weapon.target:hd_psc_r36_eruptor.cost:01.weapon"
 	/> 
     <hud_icon filename="ui_hd_psc_r36_eruptor.png" /> 
 </weapon>
+<weapon 
+file="_ui.weapon_base"
+key="upgrade_ui_weapon.target:hd_side_p6_gunslinger_gamed.cost:01.weapon" 
+> 
+    <specification 	
+    slot="1" 	
+    name="[1研发点] P6-神枪手[眩晕][娱乐专用]" 
+	/> 
+    <hud_icon filename="ui_hd_side_p6_gunslinger_gamed.png" /> 
+</weapon>
 </weapons>
 
 

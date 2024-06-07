@@ -4,6 +4,8 @@
 file="hd_psc_m2016_constitution_base.weapon"
 key="hd_psc_m2016_constitution_full_upgrade.weapon" 
 >
+	<animation state_key="stabbing" animation_key="hd_q_spin_meele" /><!--半身动作，武器可设置脱手-->
+
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="6" can_be_detected_by_footmen="1" 
 	time_to_live="0.4" can_be_detected_by_driver="1" can_be_disarmed="0" name="M2016 Constitution"> 

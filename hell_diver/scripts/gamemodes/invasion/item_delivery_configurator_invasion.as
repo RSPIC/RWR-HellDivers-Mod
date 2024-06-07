@@ -28,7 +28,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		setupWeaponDelta(); // mk4
 		setupWeaponV(); // mk5
         setupWeaponUnknown(); // mk6
-        //setupWeaponAlpha(); // vanilla
+        setupWeaponAlpha(); // special
         //setupWeaponX(); // 复活自带系列
         setupWeaponBeta(); //mk1~mk5 系列数量限制 5/4/3/2/1
         setupWeaponGama(); //mk1~mk5 系列数量限制 5/4/3/2/1
@@ -486,9 +486,11 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		};
 		array<array<ScoredResource@>> rewardPasses = {
 			{
-        	ScoredResource("ex_piano_uzuki.weapon", "weapon", 1.0f),
+        	ScoredResource("hd_scout_main.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_money_gun.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_auto_guaguale_i_gun.weapon", "weapon", 1.0f),
+        	ScoredResource("deploy_rabbit.weapon", "weapon", 1.0f)
 
-        	ScoredResource("ex_piano_uzuki.weapon", "weapon", 1.0f)
 			},
 			{
 			ScoredResource("lottery_cash_II.carry_item", "carry_item", 1.0f)

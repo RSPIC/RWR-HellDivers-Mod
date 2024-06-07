@@ -15,7 +15,7 @@ abstract emitter spitter_duration {
 
 particle_system bugs_spawn_at_ground_smoke
 {
-	quota 800
+	quota 300
 	material disaster_smoke
 	particle_width 10
 	particle_height 10
@@ -353,7 +353,7 @@ particle_system bugs_spitter_splash_expand : bugs_spitter_splash
 }
 particle_system bugs_spitter_splash_single_damage
 {
-	quota 1000
+	quota 100
 	material Particle_Splash02
 	particle_width 1.5
 	particle_height 1.5

@@ -14,13 +14,13 @@ key="ex_exp_m41_spnkr.weapon"
 	stance_accuracy_rate="1.0"
     sustained_fire_grow_step="1" 
     sustained_fire_diminish_rate="3" 
-    magazine_size="-1" 
+    magazine_size="2" 
 	sight_range_modifier="2.5"
     can_shoot_standing="1" 
     can_shoot_crouching="1" 
 	can_shoot_prone="1"	
     suppressed="0" 
-	class="2" 
+	class="4" 
 	comsune="1"
     name="M41 SPNKR" 
 	burst_shots="1" 
@@ -30,6 +30,8 @@ key="ex_exp_m41_spnkr.weapon"
 	carry_in_two_hands="1" 
 	stab_enabled="0" 
 	stab_range="0" 
+	cooldown_start="0.5"
+	cooldown_end="0"
 	/> 
 	<!-- MK1 A laser sight has been added to assist with aiming. -->
 	<!-- MK2 	Upgraded ammunition with significantly improved anti-armor capabilities, allowing the weapon to damage any target, no matter the angle it hits at. -->
@@ -60,23 +62,26 @@ key="ex_exp_m41_spnkr.weapon"
 	<animation state_key="stabbing" animation_key="pistol whip 3" /><!--半身动作，武器可设置脱手-->
  	<animation state_key="changing_weapon_in" animation_key="reloading_hvy_3s" /><!--半身动作，切换武器，本武器收回-->
 	<animation state_key="changing_weapon_out" animation_key="still, with law"/><!--半身动作，切换武器，本武器取出-->
-	
+
 	<!--武器音频-->
-    <sound key="effect" fileref="ex_exp_m41_spnkr_voice_01.wav" pitch_variety="0" volume="3" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
+	<sound key="effect" fileref="" pitch_variety="0" volume="1.0" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
+    <sound key="cooldown" fileref="ex_exp_m41_spnkr_voice_01.wav" pitch_variety="0" volume="3" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
+    <sound key="cooldown" fileref="" pitch_variety="0" volume="3" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
     <sound key="fire" fileref="ex_exp_m41_spnkr_fire.wav" pitch_variety="0.08" volume="4.0" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
     <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
 	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
 	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
 	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
     <sound key="magazine_out" fileref="pf98_cycle_out.wav" volume="0.3"/><!--动作中out的value为0-->
-    <sound key="magazine_in" fileref="pf98_cycle_in.wav" volume="0.3"/><!--动作中in的value为1-->
+    <sound key="magazine_in" fileref="ex_exp_m41_spnkr_voice_02.wav" pitch_variety="0" volume="3"/><!--动作中in的value为1-->
+    <sound key="magazine_in" fileref="ex_exp_m41_spnkr_voice_03.wav" pitch_variety="0" volume="3"/><!--动作中in的value为1-->
     <sound key="cycle" fileref="ex_exp_m41_spnkr_reload.wav" volume="2"/><!--配合与cycle动作，固定播放-->
     <sound key="cycle" fileref="ex_exp_m41_spnkr_reload.wav" volume="2"/><!--配合与cycle动作，固定播放-->
-    <sound key="cycle" fileref="ex_exp_m41_spnkr_voice_01.wav" volume="2"/><!--配合与cycle动作，固定播放-->
+    <sound key="cycle" fileref="" volume="2"/><!--配合与cycle动作，固定播放-->
     <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
     <sound key="cycle_in" fileref="hd_cycle_in_01.wav" /><!--动作中in的value为1-->
 	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
-	
+
 	<!--枪口特效-->
 	<effect class="muzzle" ref="nova_muzzle_fire_smoke" post_processing="1"/>
 	<effect class="muzzle" ref="nova_muzzle_fire_smoke_2" post_processing="1"/>
@@ -103,7 +108,7 @@ key="ex_exp_m41_spnkr.weapon"
 	time_to_live="1.5" can_be_detected_by_driver="1" can_be_disarmed="0" name="RL-112 Recoilless Rifle" > 
 	
         <result class="spawn" instance_class="projectile" instance_key="ex_exp_m41_spnkr_damage.projectile" 
-		min_amount="15" max_amount="15" offset="0 0.5 0" position_spread="2 0" direction_spread="0.1 0" />
+		min_amount="12" max_amount="12" offset="0 0.5 0" position_spread="2 0" direction_spread="0.1 0" />
 		<!-- damage 300 轰炸伤-->
        	<!-- 20x25 -->
 		
@@ -178,13 +183,13 @@ key="re_ex_exp_m41_spnkr.weapon"
 	stance_accuracy_rate="1.0"
     sustained_fire_grow_step="1" 
     sustained_fire_diminish_rate="3" 
-    magazine_size="-1" 
+    magazine_size="2" 
 	sight_range_modifier="2.5"
     can_shoot_standing="1" 
     can_shoot_crouching="1" 
 	can_shoot_prone="1"	
     suppressed="0" 
-	class="2" 
+	class="4" 
 	comsune="1"
     name="M41 SPNKR" 
 	burst_shots="1" 
@@ -194,6 +199,8 @@ key="re_ex_exp_m41_spnkr.weapon"
 	carry_in_two_hands="1" 
 	stab_enabled="0" 
 	stab_range="0" 
+	cooldown_start="0.5"
+	cooldown_end="0"
 	/> 
 	<!-- MK1 A laser sight has been added to assist with aiming. -->
 	<!-- MK2 	Upgraded ammunition with significantly improved anti-armor capabilities, allowing the weapon to damage any target, no matter the angle it hits at. -->
@@ -224,23 +231,26 @@ key="re_ex_exp_m41_spnkr.weapon"
 	<animation state_key="stabbing" animation_key="pistol whip 3" /><!--半身动作，武器可设置脱手-->
  	<animation state_key="changing_weapon_in" animation_key="reloading_hvy_3s" /><!--半身动作，切换武器，本武器收回-->
 	<animation state_key="changing_weapon_out" animation_key="still, with law"/><!--半身动作，切换武器，本武器取出-->
-	
+
 	<!--武器音频-->
-    <sound key="effect" fileref="ex_exp_m41_spnkr_voice_01.wav" pitch_variety="0" volume="3" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
+	<sound key="effect" fileref="" pitch_variety="0" volume="1.0" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
+    <sound key="cooldown" fileref="ex_exp_m41_spnkr_voice_01.wav" pitch_variety="0" volume="3" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
+    <sound key="cooldown" fileref="" pitch_variety="0" volume="3" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
     <sound key="fire" fileref="ex_exp_m41_spnkr_fire.wav" pitch_variety="0.08" volume="4.0" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
     <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
 	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
 	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
 	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
     <sound key="magazine_out" fileref="pf98_cycle_out.wav" volume="0.3"/><!--动作中out的value为0-->
-    <sound key="magazine_in" fileref="pf98_cycle_in.wav" volume="0.3"/><!--动作中in的value为1-->
+    <sound key="magazine_in" fileref="ex_exp_m41_spnkr_voice_02.wav" pitch_variety="0" volume="3"/><!--动作中in的value为1-->
+    <sound key="magazine_in" fileref="ex_exp_m41_spnkr_voice_03.wav" pitch_variety="0" volume="3"/><!--动作中in的value为1-->
     <sound key="cycle" fileref="ex_exp_m41_spnkr_reload.wav" volume="2"/><!--配合与cycle动作，固定播放-->
     <sound key="cycle" fileref="ex_exp_m41_spnkr_reload.wav" volume="2"/><!--配合与cycle动作，固定播放-->
-    <sound key="cycle" fileref="ex_exp_m41_spnkr_voice_01.wav" volume="2"/><!--配合与cycle动作，固定播放-->
+    <sound key="cycle" fileref="" volume="2"/><!--配合与cycle动作，固定播放-->
     <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
     <sound key="cycle_in" fileref="hd_cycle_in_01.wav" /><!--动作中in的value为1-->
 	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
-	
+
 	<!--枪口特效-->
 	<effect class="muzzle" ref="nova_muzzle_fire_smoke" post_processing="1"/>
 	<effect class="muzzle" ref="nova_muzzle_fire_smoke_2" post_processing="1"/>
@@ -267,7 +277,7 @@ key="re_ex_exp_m41_spnkr.weapon"
 	time_to_live="1.5" can_be_detected_by_driver="1" can_be_disarmed="0" name="RL-112 Recoilless Rifle" > 
 	
         <result class="spawn" instance_class="projectile" instance_key="ex_exp_m41_spnkr_damage.projectile" 
-		min_amount="15" max_amount="15" offset="0 0.5 0" position_spread="2 0" direction_spread="0.1 0" />
+		min_amount="12" max_amount="12" offset="0 0.5 0" position_spread="2 0" direction_spread="0.1 0" />
 		<!-- damage 300 轰炸伤-->
        	<!-- 20x25 -->
 		

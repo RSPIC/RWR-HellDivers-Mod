@@ -27,7 +27,7 @@ class playerStashInfo {
     protected array<XmlElement@> m_overPushObject;
     protected array<XmlElement@> m_stashObject;
     protected int m_page;
-    protected int m_eachPageSize = 10;
+    protected int m_eachPageSize = 30;
     protected int m_index;
     protected int m_stashSize;
     protected int m_stashUsedSize;
@@ -383,8 +383,11 @@ class playerStashInfo {
                 string strkey;
                 string strvalue;
                 if(j >= 10 && j < 20){
-                    strkey = "%keyA"+j;
-                    strvalue = "%valueA"+j;
+                    strkey = "%a"+j;
+                    strvalue = "%b"+j;
+                }else if(j >= 20 && j < 30){
+                    strkey = "%c"+j;
+                    strvalue = "%d"+j;
                 }else{
                     strkey = "%key"+j;
                     strvalue = "%value"+j;
@@ -412,8 +415,11 @@ class playerStashInfo {
                 string strvalue ;
                 int index = startIndex % m_eachPageSize;
                 if(index >= 10 && index < 20){
-                    strkey = "%keyA"+index;
-                    strvalue = "%valueA"+index;
+                    strkey = "%a"+index;
+                    strvalue = "%b"+index;
+                }else if(index >= 20 && index < 30){
+                    strkey = "%c"+index;
+                    strvalue = "%d"+index;
                 }else{
                     strkey = "%key"+index;
                     strvalue = "%value"+index;
