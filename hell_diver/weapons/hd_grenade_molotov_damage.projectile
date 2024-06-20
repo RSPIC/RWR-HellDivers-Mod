@@ -20,7 +20,7 @@ player_death_drop_owner_lock_time="120"
     <collision class="sticky" />
     <trigger class="impact" />
     <result class="blast" radius="4.0" damage="1.01" push="0.1" decal="1"
-    make_vehicle_hit_sound="0" faction_compare="not_equal" character_state="unwound" damage_origin_vehicle="0"/>
+    make_vehicle_hit_sound="0" faction_compare="not_equal" character_state="wound" damage_origin_vehicle="0"/>
     	
     <effect class="result" type="splat_map" surface_tag="" size="3.0" atlas_index="0" layer="1" />
     <effect class="result" type="splat_map" surface_tag="" size="4.0" atlas_index="4" layer="0" />
@@ -72,7 +72,7 @@ player_death_drop_owner_lock_time="120"
     <collision class="sticky" />
     <trigger class="impact" />
     <result class="blast" radius="4.0" damage="0.01" push="0.1" decal="1"
-    make_vehicle_hit_sound="0" character_state="unwound" faction_compare="not_equal" damage_origin_vehicle="0"/>
+    make_vehicle_hit_sound="0" character_state="wound" faction_compare="not_equal" damage_origin_vehicle="0"/>
     	
     <effect class="result" type="splat_map" surface_tag="" size="3.0" atlas_index="0" layer="1" />
     <effect class="result" type="splat_map" surface_tag="" size="4.0" atlas_index="4" layer="0" />
@@ -100,8 +100,6 @@ player_death_drop_owner_lock_time="120"
     <effect class="result" key="static_object" copy="terrain" />
     <effect class="result" key="vehicle" copy="terrain" />
     <effect class="result" key="character" copy="terrain" />
-
-
 	
 </projectile>
 </projectiles>

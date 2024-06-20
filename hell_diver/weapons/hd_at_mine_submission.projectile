@@ -121,7 +121,7 @@ blast_damage_threshold="4.0"
 </projectile>
 <projectile
 class="grenade" 
-name="AT Mine [Mission][Use ME-1 Mental Detector and Send 5 Mines to Armory]" 
+name="AT Mine [Mission][Use ME-1 Mental Detector and Pick 3 Mines to Backpack]" 
 key="hd_at_mine_submission_stay.projectile" 
 slot="0"
 pulldown_in_air="15"
@@ -131,7 +131,7 @@ radius="1.5"
 can_be_disarmed="1"
 can_be_detected_by_footmen="1"
 can_be_detected_by_driver="0"
-time_to_live_out_in_the_open="30"
+time_to_live_out_in_the_open="60"
 >
 
 <!--逻辑：投出MK3落地在半空生成粘性trigger弹头落地，落地后生成非粘性stay弹头等待触发，最后生成粘性damage弹头-->	

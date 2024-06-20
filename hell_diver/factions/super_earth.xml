@@ -459,6 +459,13 @@
 			<attribute weight="1.0" min="0.0" max="0.05" />
 		</attribute_config>
 	</soldier>              
+	<!-- 路牌 -->
+	<soldier name="hd_banner" spawn_score="0.0">
+		<resources file="hd_banner.resources" />
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="0.0" max="0.05" />
+		</attribute_config>
+	</soldier> 
 	<!-- 比赛箱子 -->
 	<soldier name="racing_box" spawn_score="0.0">
 		<resources file="racing_box.resources" />

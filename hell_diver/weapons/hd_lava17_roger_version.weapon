@@ -2,7 +2,7 @@
 <weapons> 
 <weapon 
 file="hd_lava17_roger_base.weapon"
-key="hd_lava17_roger_full_upgrage.weapon" 
+key="hd_lava17_roger_full_upgrade.weapon" 
 >
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 

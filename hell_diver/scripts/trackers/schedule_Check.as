@@ -65,6 +65,7 @@ class schedule_Check : Tracker {
     void update(float time){
         m_timer -= time;
         if(m_timer >0){return;}
+        time = 7 + g_playerCount/2 ;
         refresh();
         m_timer = m_time;
     }
@@ -100,6 +101,7 @@ class schedule_Check : Tracker {
                 EXOArmorChange(m_metagame,name,pid,cid,equipList);
                 checkBanzai(m_metagame,name,pid,cid,equipList);
                 checkPatricia(m_metagame,name,pid,cid,equipList);
+                checkP6Gamed(m_metagame,name,pid,cid,equipList);
                 checkHyperMega(m_metagame,name,pid,cid,equipList);
                 checkVergil(m_metagame,name,pid,cid,equipList);
                 checkElaina(m_metagame,name,pid,cid,equipList);
@@ -281,6 +283,24 @@ class schedule_Check : Tracker {
                 }
             }
         }
+	}
+    // ----------------------------------------------------
+	protected void checkP6Gamed(Metagame@ metagame,string&in name,int&in pid,int&in cid,dictionary&in equipList){
+        string equipKey;
+        if(equipList.get("1",equipKey)){//副武器
+            string targetKey = "hd_side_p6_gunslinger_gamed";
+            if(startsWith(equipKey,targetKey)){
+                int num;
+                if(equipList.get(equipKey,num)){
+                    if(num == 0){return;}
+                    if(g_server_activity_racing){
+                        _notify(m_metagame,pid,"禁止使用P6娱乐模式射击其他玩家，必须对方同意才可以游玩，被举报会被罚");
+                    }else{
+                        _notify(m_metagame,pid,"非赛车服禁用P6娱乐模式");
+                    }
+                }
+            }
+        } 
 	}
     // ----------------------------------------------------
 	protected void checkNeedle(Metagame@ metagame,string&in name,int&in pid,int&in cid,dictionary&in equipList){

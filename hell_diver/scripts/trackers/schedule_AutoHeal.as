@@ -75,9 +75,9 @@ class schedule_AutoHeal : Task {
                     string testWeapon2Key = weapon2Key.substr(0,key2[j].length());
                     if(testEquipKey == key[i]){    
                         if(testWeapon2Key == key2[j] || g_vestInfoBuck.getAutoHeal(name)){
-                            healCharacter(metagame,cid,20);
+                            healCharacter(metagame,cid,2*int(m_time));
                         }else{
-                            healCharacter(metagame,cid,10);
+                            healCharacter(metagame,cid,int(m_time));
                         }
                         if(g_debugMode){
                             _report(m_metagame,"schedule_AutoHeal is Run");

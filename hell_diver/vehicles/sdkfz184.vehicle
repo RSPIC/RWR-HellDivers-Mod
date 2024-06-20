@@ -10,8 +10,8 @@ ai_driver_turns_to_target="1"
 character_leave_request_mode="friendly" 
 allow_ai_to_use="0" 
 ai_stop_to_fight="1"
-max_character_collision_speed="1"
-max_character_collision_speed_on_normal="1"
+max_character_collision_speed="3"
+max_character_collision_speed_on_normal="3"
 >
 	<tag name="crushes_hedgerows" />
    	<tag name="heavy_armour" />

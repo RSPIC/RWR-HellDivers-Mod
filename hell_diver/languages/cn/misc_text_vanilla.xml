@@ -729,6 +729,8 @@
 	<text key="AR-77D Spade" text="AR-77D 黑桃突击步枪" />
 
 	<text key="SG-225 Breaker" text="SG-225 破裂者霰弹" />
+	<text key="SG-225 Breaker Incendiary" text="SG-225 高燃破裂者" />
+	<text key="SG-225 Breaker Spray-Pray" text="SG-225 破裂者'弥漫与祷告'" />
 	<text key="SG-8 Punisher" text="SG-8 制裁者霰弹" />
 	<text key="DBS2-DoubleFreedom" text="DBS2 双重解放霰弹" />
 
@@ -765,16 +767,21 @@
 	<text key="RL-112 Recoilless Rifle" text="RL-112 无后坐力重型反坦克火箭筒[反重甲][友伤]" />
 	<text key="EAT-17" text="EAT-17 抛弃式轻型反人员火箭筒[反重甲][友伤]" />
 	<text key="AC-22 Dum Dum" text="AC-22 达姆肩扛式重型机炮[反重甲][友伤]" />
+	<text key="AC-8 AutoCannon" text="AC-8 自动机炮[反重甲][友伤]" />
 	<text key="MLS-4X Commando" text="MLS-4X 突击队攻顶导弹[反重甲][友伤]" />
 	<text key="REC-6 Demolisher" text="REC-6 爆破手遥控炸弹[反重甲][拆塔][友伤]" />
 	<text key="TOX-17 SourHound" text="TOX-17 酸液犬毒液抛射器[友伤]" />
 
 	<text key="P-2 PeaceMaker" text="P-2 和平使者手枪" />
 	<text key="P-6 Gunslinger" text="P-6 神枪手重装左轮手枪[反重甲]" />
+	<text key="P-19 Redeemer" text="P-19 救世主冲锋手枪" />
+	<text key="P-4 Senator" text="P-4 参议员坐牢[反重甲]" />
+	<text key="P-113 Verdict" text="P-113 裁决手枪" />
 
 	<text key="LAS-13 Trident" text="LAS-13 三叉戟激光霰弹枪" />
 	<text key="LAS-12 Tanto" text="LAS-12 短刀激光聚热枪[反重甲]" />
 	<text key="LAS-16 Sickle" text="LAS-16 镰刀激光枪[反重甲]" />
+	<text key="LAS-16 Sickle [Fast CoolDown]" text="LAS-16 镰刀激光枪[反重甲][快速冷却配件]" />
 	<text key="LAS-5 Scythe" text="LAS-5 长柄镰激光枪[反重甲]" />
 	<text key="LAS-98 Laser Cannon" text="LAS-98 激光大炮重型激光枪[反重甲]" />
 
@@ -825,12 +832,12 @@
 
 	<text key="G-10 Incendiary" text="G-10 燃烧手雷[反重甲]" />
 	<text key="G-23 Stun Grenade" text="G-23 震撼手雷" />
-	<text key="G-16 Impact Grenade" text="G-16 冲击雷[反重甲][友伤]" />
+	<text key="G-16 Impact Grenade" text="G-16 冲击雷[即死]" />
 	<text key="Grenade" text="破片手雷[反重甲]" />
 
 	<text key="AT Mine MK3" text="反坦克地雷 MK3" />
 	<text key="AT Mine MK3 Beacon" text="空投反坦克地雷 MK3" />
-	<text key="AT Mine [Mission][Use ME-1 Mental Detector and Send 5 Mines to Armory]" text="地雷[支线任务][使用扫雷器，运送5个样本至军械库]" />
+	<text key="AT Mine [Mission][Use ME-1 Mental Detector and Pick 3 Mines to Backpack]" text="地雷[支线任务][使用扫雷器，拾取3个地雷样本]" />
 	<text key="AirDropped Stun Mine Mk3 Beacon" text="空投眩晕地雷 MK3" />
 	<text key="AirDropped Stun Mine Mk3" text="眩晕地雷 MK3" />
 	<text key="AT-47 Anti-Tank Emplacement Beacon" text="AT-47 反坦克平台信标" />
@@ -1052,6 +1059,9 @@
 	<text key="Yui Katagiri[Skin]"  text="片桐唯 [信物]" />
 	<text key="ODST [Skin]"  text="地狱伞兵 [信物]" />
 	<text key="Hanaoka Yuzu [Skin]"  text="花冈柚子 [信物]" />
+	<!-- 1.9.1 -->
+	<text key="Shimokura Megu [Skin]"  text="下仓惠 [信物]" />
+	<text key="Otogi [Skin]"  text="音葵 [信物]" />
 
 
 <!-- ex武器 -->
@@ -1292,16 +1302,16 @@
 	<text key="Brood Commander Melee"  text="虫族指挥官" />
 	<text key="Behemoth Melee"  text="巨兽-精英 [重甲]" />
 <!-- 光能 -->
-	<text key="Observer"  text="黑曜石观测者" />
-	<text key="Watcher"  text="光能观测者" />
+	<text key="Observer"  text="黑曜石观测者[防爆]" />
+	<text key="Watcher"  text="光能观测者[防爆]" />
 	<text key="Hunter"  text="光猎者" />
 	<text key="Apprentice"  text="光能学徒" />
-	<text key="Tripod"  text="三脚电械" />
-	<text key="Strider"  text="步行者" />
+	<text key="Tripod"  text="三脚电械[防爆]" />
+	<text key="Strider"  text="步行者[防爆]" />
 	<text key="Obelisk"  text="奥贝利斯" />
-	<text key="Illusionist"  text="幻光大师" />
-	<text key="CouncilMember"  text="光能决策者" />
-	<text key="Council Member"  text="光能决策者" />
+	<text key="Illusionist"  text="幻光大师[防爆]" />
+	<text key="CouncilMember"  text="光能决策者[防爆]" />
+	<text key="Council Member"  text="光能决策者[防爆]" />
 	<text key="illuminate"  text="光能者" />
 	<text key="Illuminate"  text="光能者" />
 
@@ -1667,7 +1677,7 @@ TK其他玩家同样会造成倍率因子的下降" />
 	<text key="Reward Box [Vehicle]" text="奖励箱子 [载具]" />
 	<text key="Reward Box [Weapon I]" text="奖励箱子 [武器 I]" />
 	<text key="Reward Box [Weapon II]" text="奖励箱子 [武器 II]" />
-	<text key="Reward Box [Weapon α]" text="奖励箱子 [武器 Alpha]" />
+	<text key="Reward Box [Weapon α]" text="玩具箱子 [Alpha]" />
 	<text key="Reward Box [Weapon ?]" text="奖励箱子 [武器 未知]" />
 	<text key="Reward Box [Weapon V]" text="奖励箱子 [武器 V]" />
 	<text key="Reward Box [Weapon X]" text="奖励箱子 [武器 X]" />
@@ -1709,6 +1719,10 @@ TK其他玩家同样会造成倍率因子的下降" />
 <!-- 升级护甲 -->
 	<text key="AutoHeal Remove" text="自动回血 移除" />
 	<text key="AutoHeal Set" text="自动回血 启用" />
+	<text key="ImpactGl Set" text="冲击雷 已配置" />
+	<text key="ImpactGl Remove" text="冲击雷 已移除" />
+	<text key="Needle Set" text="治疗针 已配置" />
+	<text key="Needle Remove" text="治疗针 已移除" />
 	<text key="StratagemsPriority Upgrade to MAX" text="战略呼叫优先权 已达满级" />
 	<text key="StratagemsPriority Upgrade 1" text="战略呼叫优先权 已升级 I" />
 	<text key="StratagemsPriority Upgrade 2" text="战略呼叫优先权 已升级 II" />
@@ -1721,11 +1735,11 @@ TK其他玩家同样会造成倍率因子的下降" />
 	<text key="Vest OnLoad" text="护甲已装载" />
 	<text key="Up to Upgrade Limit" text="已达升级上限" />
 
-	<text key="Vest Speed Upgrade" text="护甲速度升级[本局有效][1w/3W/7W]" />
-	<text key="Vest Armor Upgrade" text="护甲层数升级[本局有效][1W/3W/7W]" />
-	<text key="Vest Auto Recover Upgrade" text="护甲倒地自起[本局有效] 开/关[1w Rp]" />
-	<text key="Vest Stratagems Priority Upgrade" text="战略呼叫优先权升级[本局有效][每级 -10%冷却][1w rp]" />
-	<text key="Vest Auto Heal Upgrade" text="护甲回血增强[本局有效] 开/关[3w Rp]" />
+	<text key="Vest Needle Upgrade [2W rp]" text="自动配置治疗针[本局有效][2w rp]" />
+	<text key="Vest Impact Grenade Upgrade [1W rp]" text="自动配置冲击雷[本局有效][1w rp]" />
+	<text key="Vest Auto Recover Upgrade [1w rp]" text="护甲倒地自起[本局有效] 开/关[1w Rp]" />
+	<text key="Vest Stratagems Priority Upgrade [1w rp][-10% Each]" text="战略呼叫优先权升级[本局有效][每级 -10%冷却][1w rp]" />
+	<text key="Vest Auto Heal Upgrade [1w rp]" text="护甲回血增强[本局有效] 开/关[1w Rp]" />
 	<text key="Vest Clear Upgrade" text="清空护甲增益" />
 	<text key="Vest Upgeade Clear" text="护甲增益已清除" />
 
@@ -1737,6 +1751,7 @@ TK其他玩家同样会造成倍率因子的下降" />
 	<text key="Battle Over" text="战役已结束，操作无效" />
 
 <!-- 钱 -->
+	<text key="Money [100W]" text="交易用钞票 [一百万]" />
 	<text key="Money [10W]" text="交易用钞票 [十万]" />
 	<text key="Money [1W]" text="交易用钞票 [一万]" />
 	<text key="Money [1k]" text="交易用钞票 [一千]" />
@@ -1900,6 +1915,8 @@ TK其他玩家同样会造成倍率因子的下降" />
 6、取出完毕物品后，关闭仓库
 7、多次尝试存入不可存放物品后会自动关闭仓库
 " />
+<text key="Add Stash Size x1 [20w rp]" text="升级容量1格[20w RP]" />
+<text key="Add Stash Size x10 [200w rp]" text="升级容量10格[200w RP]" />
 <!-- 僵尸模式 -->
 <!-- 歼灭模式/报复打击 -->
 
@@ -1925,6 +1942,7 @@ TK其他玩家同样会造成倍率因子的下降" />
 <!-- 每日任务 -->
 <text key="DaylyMission" text="每日任务(输入/day 查看)
 &#37;day
+&#37;sign
 &#37;value0
 &#37;value1
 &#37;value2
@@ -1936,5 +1954,16 @@ TK其他玩家同样会造成倍率因子的下降" />
 &#37;value8
 &#37;value9
 " />
+
+<!-- 武器合成 -->
+<text key="Now in ReWeapon phase, sell 10 same type weapons while having ONE in your hand, and you can get ReWeapon which can respawn with." text="已进入武器合成阶段，现在开始持续出售十件同类型武器即可获得复活自带版本" />
+<text key="Successed ReWeapon" text="已成功合成" />
+<text key="Synthesis progress" text="合成进度" />
+<text key="Risky operation: Your weapon has been returned. To synthesize a weapon, equip a weapon of the same mode in the weapon bar. If you need to sell weapons, keep the weapons bar empty" text="风险操作：已退还你的武器。若要合成武器，请在武器栏装备同样模式的武器。如果需要出售武器，请保持武器栏为空" />
+<text key="ReWeapon has copy to your backpack" text="复活自带武器已复制" />
+<text key="Can't copy your weapon" text="该武器无法复制" />
+
+<text key="You get Dance priority level-1" text="你获得了额外舞蹈动作，输入/dance随机播放" />
+
 </translation>
 

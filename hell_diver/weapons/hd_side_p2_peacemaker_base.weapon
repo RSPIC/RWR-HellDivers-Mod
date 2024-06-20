@@ -33,7 +33,7 @@ file="_hd_sidearms.base"
     <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
     <animation state_key="recoil"   animation_key="recoil, pistol 2" />
 	<animation state_key="recoil" stance_key="prone"  animation_key="recoil, pistol 2" />
-    <animation state_key="reload"   animation_key="p2_peacemaker_reloading_upgraded" />
+    
 	<animation state_key="hold" animation_key="still, pistol 2" />
     <animation state_key="hold_on_wall" animation_key="hold, overwall pistol" />
     <animation state_key="hold_casual" animation_key="hd_disco_1" /><!--闲置动作，全身动作-->
@@ -42,7 +42,7 @@ file="_hd_sidearms.base"
 	<animation state_key="running"  animation_key="hd_spring_single_hand" />
     <animation state_key="walking"  animation_key="running_pistol_slower" />
     <animation state_key="walking_backwards" animation_key="walking backwards, pistol" />
-    <animation state_key="crouching" animation_key="crouch, pistol" />
+    <animation state_key="crouching" animation_key="crouch, pistol 2" />
 	<animation state_key="crouch_moving" animation_key="" />
 	<animation state_key="crouch_moving_backwards" animation_key="crouching backwards, hip fire" />
     <animation state_key="prone_still" animation_key="prone_still, pistol" />
@@ -53,26 +53,20 @@ file="_hd_sidearms.base"
     <animation state_key="changing_weapon_in" animation_key="" />
 	<animation state_key="changing_weapon_out" animation_key=""/>
 
-    <sound key="effect" fileref="" pitch_variety="0.03" volume="0.7" /> 
-    <sound key="fire" fileref="hd_p2_peacemaker_fire.wav" pitch_variety="0.03" volume="0.7" />
+
     <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.03" volume="1.0" />
 	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="0.5" />
 	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="0.9" />
 	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="0.8" />
-    <sound key="magazine_out" fileref="hd_p2_peacemaker_mag_out.wav" volume="0.7"/>
-    <sound key="magazine_in" fileref="hd_p2_peacemaker_mag_in.wav" volume="0.7"/>
-    <sound key="cycle" fileref="rifle_chamber.wav" />
+    <sound key="cycle" fileref="" />
     <sound key="cycle_out" fileref="sniper_cycle_out.wav" />
     <sound key="cycle_in" fileref="sniper_cycle_in.wav" />
     <sound key="last_ammo" fileref="hd_dryfire.wav" pitch_variety="0.03" volume="1.0" />
 	<sound class="impact" fileref="rifle_drop.wav" />
 
-    <model filename="hd_p2_peacemaker.xml" /> 
     <model mesh_filename="" texture_filename="" /> 
     <addon_model filename="" /> 
-    <hud_icon filename="hd_p2_peacemaker.png" /> 
 
-    <commonness value="1" can_respawn_with="1" in_stock="1" /> 
     <inventory encumbrance="6.0" price="0.0" /> 
   	<capacity value="0" source="rank" source_value="0.0" />
 	<capacity value="1" source="rank" source_value="0.0" />

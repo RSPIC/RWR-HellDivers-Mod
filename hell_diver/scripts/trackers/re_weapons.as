@@ -43,7 +43,7 @@ class re_weapons : Tracker {
         if(!startsWith(itemKey,"acg_") && !startsWith(itemKey,"ex_")){
             return;
         }
-        if(startsWith(itemKey,"ex_piano_") || startsWith(itemKey,"ex_gramophone_") || startsWith(itemKey,"ex_cl_")){
+        if(startsWith(itemKey,"ex_piano_") || startsWith(itemKey,"ex_gramophone_") || startsWith(itemKey,"ex_cl_") || startsWith(itemKey,"acg_ex_box")){
             return;
         }
         if(itemKey.find("_call") != -1){
@@ -60,7 +60,7 @@ class re_weapons : Tracker {
         if(containerId == 1){
             dictionary equipList;
             if(!getPlayerEquipmentInfoArray(m_metagame,cid,equipList)){
-                _report(m_metagame,"未获取到玩家携带物品信息");
+                _report(m_metagame,"No information about what the player is carrying was obtained");
                 return;
             }
             string equipKey = "";
@@ -76,20 +76,22 @@ class re_weapons : Tracker {
 
                 if(itemKey == equipKey){
                     if(g_firstUseInfoBuck.isFirst(name,itemKey+"re")){
-                        notify(m_metagame, "已进入武器合成阶段，现在开始持续出售十件同类型武器即可获得复活自带版本", dictionary(), "misc", pid, false, "", 1.0);
+                        notify(m_metagame, "Now in ReWeapon phase, sell 10 same type weapons while having ONE in your hand, and you can get ReWeapon which can respawn with.", dictionary(), "misc", pid, false, "", 1.0);
                         addItemInBackpack(m_metagame,cid,"weapon",itemKey);
                         return;
                     }
                     int value;
                     g_userCountInfoBuck.addCount(name,itemKey+"re");
                     g_userCountInfoBuck.getCount(name,itemKey+"re",value);
-                    notify(m_metagame, "合成进度["+value+"/10]", dictionary(), "misc", pid, false, "", 1.0);
+                    dictionary a;
+                    a["%value"] = value;
+                    notify(m_metagame, "Synthesis progress["+value+"/10]", a, "misc", pid, false, "", 1.0);
                                         
                     if(value == 10){
                         addItemInBackpack(m_metagame,cid,"weapon","re_"+itemKey);
                         addItemInBackpack(m_metagame,cid,"weapon","re_"+itemKey);
                         g_userCountInfoBuck.clearCount(name,itemKey+"re");
-                        notify(m_metagame, "已成功合成", dictionary(), "misc", pid, false, "", 1.0);
+                        notify(m_metagame, "Successed ReWeapon", dictionary(), "misc", pid, false, "", 1.0);
                     }
                     return;
                 }else{
@@ -97,7 +99,7 @@ class re_weapons : Tracker {
                         string equipKey2;
                         equipList.get("1",equipKey2);
                         if(itemKey != equipKey2){// 主手为空 副手无法合成情况
-                            notify(m_metagame, "风险操作：已退还你的武器。若要合成武器，请在武器栏装备同样模式的武器。如果需要出售武器，请保持武器栏为空", dictionary(), "misc", pid, false, "", 1.0);
+                            notify(m_metagame, "Risky operation: Your weapon has been returned. To synthesize a weapon, equip a weapon of the same mode in the weapon bar. If you need to sell weapons, keep the weapons bar empty", dictionary(), "misc", pid, false, "", 1.0);
                             addItemInBackpack(m_metagame,cid,"weapon",itemKey);
                             return;
                         }
@@ -109,28 +111,64 @@ class re_weapons : Tracker {
 
                 if(itemKey == equipKey){
                     if(g_firstUseInfoBuck.isFirst(name,itemKey+"re")){
-                        notify(m_metagame, "已进入武器合成阶段，现在开始持续出售十件同类型武器即可获得复活自带版本", dictionary(), "misc", pid, false, "", 1.0);
+                        notify(m_metagame, "Now in ReWeapon phase, sell 10 same type weapons while having ONE in your hand, and you can get ReWeapon which can respawn with.", dictionary(), "misc", pid, false, "", 1.0);
                         addItemInBackpack(m_metagame,cid,"weapon",itemKey);
                         return;
                     }
                     int value;
                     g_userCountInfoBuck.addCount(name,itemKey+"re");
                     g_userCountInfoBuck.getCount(name,itemKey+"re",value);
-                    notify(m_metagame, "合成进度["+value+"/10]", dictionary(), "misc", pid, false, "", 1.0);
+                    notify(m_metagame, "Synthesis progress"+"["+value+"/10]", dictionary(), "misc", pid, false, "", 1.0);
 
                     if(g_userCountInfoBuck.getCount(name,itemKey+"re",value) && value == 10){
                         addItemInBackpack(m_metagame,cid,"weapon","re_"+itemKey);
                         addItemInBackpack(m_metagame,cid,"weapon","re_"+itemKey);
                         g_userCountInfoBuck.clearCount(name,itemKey+"re");
-                        notify(m_metagame, "已成功合成", dictionary(), "misc", pid, false, "", 1.0);
+                        notify(m_metagame, "Successed ReWeapon", dictionary(), "misc", pid, false, "", 1.0);
                     }
                     return;
                 }else{
-                    notify(m_metagame, "风险操作：已退还你的武器。若要合成武器，请在武器栏装备同样模式的武器。如果需要出售武器，请保持武器栏为空", dictionary(), "misc", pid, false, "", 1.0);
+                    notify(m_metagame, "Risky operation: Your weapon has been returned. To synthesize a weapon, equip a weapon of the same mode in the weapon bar. If you need to sell weapons, keep the weapons bar empty", dictionary(), "misc", pid, false, "", 1.0);
                     addItemInBackpack(m_metagame,cid,"weapon",itemKey);
                     return;
                 }
             }
         }
+    }
+
+    protected void handleChatEvent(const XmlElement@ event) {
+        string message = event.getStringAttribute("message");
+        message = message.toLowerCase();
+        int pid = event.getIntAttribute("player_id");
+        string name = event.getStringAttribute("player_name");
+        int cid = g_playerInfoBuck.getCidByPid(pid);
+
+        if(message == "/re"){
+            dictionary equipList;
+            if(!getPlayerEquipmentInfoArray(m_metagame,cid,equipList)){
+                _report(m_metagame,"No information about what the player is carrying was obtained");
+                return;
+            }
+            string equipKey = "";
+            int equipNum = 0;
+
+            if(equipList.get("0",equipKey) && equipList.get(equipKey,equipNum)){//主武器
+                if(startsWith(equipKey,"re_") && equipNum != 0){
+                    addItemInBackpack(m_metagame,cid,"weapon",equipKey); 
+                    _notify(m_metagame,pid,"ReWeapon has copy to your backpack");
+                }else{
+                    _notify(m_metagame,pid,"Can't copy your weapon");
+                }
+            }
+            if(equipList.get("1",equipKey) && equipList.get(equipKey,equipNum)){//副武器
+                if(startsWith(equipKey,"re_") && equipNum != 0){
+                    addItemInBackpack(m_metagame,cid,"weapon",equipKey); 
+                    _notify(m_metagame,pid,"ReWeapon has copy to your backpack");
+                }else{
+                    _notify(m_metagame,pid,"Can't copy your weapon");
+                }
+            }
+        }
+
     }
 }

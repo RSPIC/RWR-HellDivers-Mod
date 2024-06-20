@@ -284,6 +284,14 @@
 	</model>
 	<model filename="acg_rikuhachima_aru.xml"><!--陆八魔阿露--><requirement class="weapon" slot="0" key="re_acg_rikuhachima_aru_skill.weapon"/>
 	</model>
+	<model filename="acg_otogi.xml"><!--音葵--><requirement class="weapon" slot="0" key="acg_otogi_sniper.weapon"/>
+	</model>
+	<model filename="acg_otogi.xml"><!--音葵--><requirement class="weapon" slot="0" key="acg_otogi_handgun.weapon"/>
+	</model>
+	<model filename="acg_otogi.xml"><!--音葵--><requirement class="weapon" slot="0" key="re_acg_otogi_sniper.weapon"/>
+	</model>
+	<model filename="acg_otogi.xml"><!--音葵--><requirement class="weapon" slot="0" key="re_acg_otogi_handgun.weapon"/>
+	</model>
 
 <!-- 少女前线 -->
 	<model filename="acg_mg4_703.xml"><!--MG4机枪--><requirement class="weapon" slot="0" key="acg_mg4td_ap.weapon"/>

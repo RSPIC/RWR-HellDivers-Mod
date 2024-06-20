@@ -16,10 +16,10 @@ file="_ui.weapon_base"
 key="upgrade_ui_weapon.target:hd_psc_r36_eruptor.cost:01.weapon" 
 > 
     <specification 	
-    slot="1" 	
+    slot="0" 	
     name="[1研发点] R-36爆裂铳" 
 	/> 
-    <hud_icon filename="ui_hd_psc_r36_eruptor.png" /> 
+    <hud_icon filename="hd_psc_r36_eruptor.png" /> 
 </weapon>
 <weapon 
 file="_ui.weapon_base"
@@ -30,6 +30,106 @@ key="upgrade_ui_weapon.target:hd_side_p6_gunslinger_gamed.cost:01.weapon"
     name="[1研发点] P6-神枪手[眩晕][娱乐专用]" 
 	/> 
     <hud_icon filename="ui_hd_side_p6_gunslinger_gamed.png" /> 
+</weapon>
+<weapon 
+file="_ui.weapon_base"
+key="upgrade_ui_weapon.target:hd_side_hvy_shield_stun.cost:05.weapon" 
+> 
+    <specification 	
+    slot="1" 	
+    name="[5研发点] 闪光盾[眩晕]" 
+	/> 
+    <hud_icon filename="hd_hvy_shield.png" /> 
+</weapon>
+<weapon 
+file="_ui.weapon_base"
+key="upgrade_ui_weapon.target:hd_ar_ar61_tenderizer.cost:02.weapon" 
+> 
+    <specification 	
+    slot="0" 	
+    name="[2研发点] AR-61气锤突击步枪" 
+	/> 
+    <hud_icon filename="hd2w_ar61.png" /> 
+</weapon>
+<weapon 
+file="_ui.weapon_base"
+key="upgrade_ui_weapon.target:hd_laser_las16_sickle_ex.cost:02.weapon" 
+> 
+    <specification 	
+    slot="0" 	
+    name="[2研发点] LAS-16镰刀[快装冷却]" 
+	/> 
+    <hud_icon filename="hd2w_las16.png" /> 
+</weapon>
+<weapon 
+file="_ui.weapon_base"
+key="upgrade_ui_weapon.target:hd_smg_mp98_knight_ex.cost:01.weapon" 
+> 
+    <specification 	
+    slot="0" 	
+    name="[1研发点] MP-98骑士[消音化][实弹]" 
+	/> 
+    <hud_icon filename="hd2w_mp98.png" /> 
+</weapon>
+<weapon 
+file="_ui.weapon_base"
+key="upgrade_ui_weapon.target:hd_sg_sg225_breaker_spray_pray.cost:04.weapon" 
+> 
+    <specification 	
+    slot="0" 	
+    name="[4研发点] SG-225SP[弥漫与祷告]" 
+	/> 
+    <hud_icon filename="hd2w_sg225sp.png" /> 
+</weapon>
+<weapon 
+file="_ui.weapon_base"
+key="upgrade_ui_weapon.target:hd_sg_sg225_breaker_incendiary.cost:10.weapon" 
+> 
+    <specification 	
+    slot="0" 	
+    name="[10研发点] SG-225IE[燃烧弹头]" 
+	/> 
+    <hud_icon filename="hd2w_sg225ie.png" /> 
+</weapon>
+<weapon 
+file="_ui.weapon_base"
+key="upgrade_ui_weapon.target:hd_exp_ac8_autocannon.cost:07.weapon" 
+> 
+    <specification 	
+    slot="1" 	
+    name="[7研发点] AC-8 自动机炮[友伤]" 
+	/> 
+    <hud_icon filename="hd2w_ac8_autocannon.png" /> 
+</weapon>
+<weapon 
+file="_ui.weapon_base"
+key="upgrade_ui_weapon.target:hd_side_p113_verdict.cost:01.weapon" 
+> 
+    <specification 	
+    slot="1" 	
+    name="[1研发点] P-113判决 手枪" 
+	/> 
+    <hud_icon filename="hd2w_p113.png" /> 
+</weapon>
+<weapon 
+file="_ui.weapon_base"
+key="upgrade_ui_weapon.target:hd_side_p4_senator.cost:02.weapon" 
+> 
+    <specification 	
+    slot="1" 	
+    name="[2研发点] P-4参议员 左轮手枪" 
+	/> 
+    <hud_icon filename="hd2w_p4.png" /> 
+</weapon>
+<weapon 
+file="_ui.weapon_base"
+key="upgrade_ui_weapon.target:hd_side_p19_redeemer.cost:01.weapon" 
+> 
+    <specification 	
+    slot="1" 	
+    name="[1研发点] P-19救世主 冲锋手枪" 
+	/> 
+    <hud_icon filename="hd2w_p19.png" /> 
 </weapon>
 </weapons>
 

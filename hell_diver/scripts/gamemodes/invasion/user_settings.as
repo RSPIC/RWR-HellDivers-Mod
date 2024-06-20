@@ -59,6 +59,7 @@ class UserSettings {
 	int m_server_difficulty_level = 0;	//max 15
 	bool m_debug_mode = false;
 	bool m_server_test_mode = false;
+	bool m_use_merged_xml = false;
 	bool m_server_activity = false;
 	bool m_server_activity_racing = false;
 	bool m_single_player = false;
@@ -154,6 +155,9 @@ class UserSettings {
 			if(settings.hasAttribute("server_test_mode")){
 				m_server_test_mode = settings.getBoolAttribute("server_test_mode");
 			}
+			if(settings.hasAttribute("use_merged_xml")){
+				m_use_merged_xml = settings.getBoolAttribute("use_merged_xml");
+			}
 			if(settings.hasAttribute("server_activity_racing")){
 				m_server_activity_racing = settings.getBoolAttribute("server_activity_racing");
 			}
@@ -197,6 +201,7 @@ class UserSettings {
 		settings.setIntAttribute("server_difficulty_level", m_server_difficulty_level);
 		settings.setBoolAttribute("debug_mode", m_debug_mode);
 		settings.setBoolAttribute("server_test_mode", m_server_test_mode);
+		settings.setBoolAttribute("use_merged_xml", m_use_merged_xml);
 		settings.setBoolAttribute("server_activity_racing", m_server_activity_racing);
 		settings.setBoolAttribute("server_activity", m_server_activity);
 		settings.setBoolAttribute("single_player", m_single_player);

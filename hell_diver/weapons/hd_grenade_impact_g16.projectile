@@ -94,7 +94,7 @@ blast_damage_threshold="50"
     <trigger class="time" time_to_live="0" />
     <result class="blast" radius="6.0" damage="2.01" push="0.8" decal="1" 
     damage_origin_vehicle="0" make_vehicle_hit_sound="0"
-    character_state="wound" />
+    character_state="unwound" faction_compare="not_equal" />
     	
     <rotation class="random" />
 	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>		

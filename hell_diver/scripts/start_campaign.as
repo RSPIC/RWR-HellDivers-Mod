@@ -33,7 +33,7 @@ void main(dictionary@ inputData) {
     //settings.m_overlayPaths = overlays;
 	settings.m_startServerCommand = """
 	<command class='start_server'
-		server_name='[地狱潜兵] 单人战役'
+		server_name='[HellDicer] SinglePlayer Champion'
 		server_port='1245'
 		url='https://steamcommunity.com/sharedfiles/filedetails/?id=2910392031'
 		register_in_serverlist='0'

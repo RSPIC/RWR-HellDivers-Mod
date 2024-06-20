@@ -709,6 +709,16 @@
         <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
         <capacity value="12" source="rank" source_value="0" />
     </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Shimokura Megu [Skin]" key="token_shimokura_megu.projectile" >
+        <hud_icon filename="token_shimokura_megu.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Otogi [Skin]" key="token_otogi.projectile" >
+        <hud_icon filename="token_otogi.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
 
 
     <!-- 其他 -->

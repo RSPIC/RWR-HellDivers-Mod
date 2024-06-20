@@ -133,6 +133,7 @@ dictionary banned_backpack_item = {
 dictionary banned_stash_item = {
 
 		{"acg_patricia_fataldrive.weapon","weapon"},
+		{"acg_elaina_wand_skill.weapon","weapon"},
 		{"ex_hyper_mega_bazooka_launcher_skill.weapon","weapon"},
 		{"ex_vergil_skill.weapon","weapon"},
 		{"hd_resupply_pack_mk3.carry_item","carry_item"},
@@ -153,10 +154,6 @@ dictionary banned_special_item = {
 //高亮提示特殊掉落物
 dictionary highlight_item_drop = {
 
-        {"samples_acg.carry_item","carry_item"},
-        {"samples_bugs.carry_item","carry_item"},
-        {"samples_cyborgs.carry_item","carry_item"},
-        {"samples_illuminate.carry_item","carry_item"},
         {"acg_shigure_127mm.weapon","weapon"},
         {"acg_shigure_610mm_torpedo.weapon","weapon"},
         {"acg_exo_toki.weapon","weapon"},
@@ -416,7 +413,7 @@ class itemdrop_event : Tracker {
 		if(string(highlight_item_drop[itemKey]) != ""){//高亮特殊掉落物
 			if( containerId == 0 ) {//地面
 				_log("special item drop, highliting");
-				spawnStaticProjectile(m_metagame,"hd_effect_target_aim.projectile",position,characterId,factionId);
+				spawnStaticProjectile(m_metagame,"hd_effect_drop_target.projectile",position,characterId,factionId);
 			}
 		}
 

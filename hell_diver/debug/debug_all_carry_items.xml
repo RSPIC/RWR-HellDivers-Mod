@@ -52,21 +52,12 @@
 	<!-- 钱 -->
 	<carry_item file="hd_money.carry_item" />
 	<!-- 功能性物品 -->
-	<carry_item file="hd_upgrage.carry_item" />
+	<carry_item file="hd_upgrade.carry_item" />
 	<!-- ui -->
 	<carry_item file="upgrade_ui.carry_item" />
 	
 	<!-- 护甲升级 -->
-	<carry_item file="hd_v_upgrage.carry_item" />
-	<carry_item file="helldivers_vest_armor+.carry_item" />
-	<carry_item file="helldivers_vest_armor++.carry_item" />
-	<carry_item file="helldivers_vest_armor+++.carry_item" />
-	<carry_item file="helldivers_vest_speed+.carry_item" />
-	<carry_item file="helldivers_vest_speed++.carry_item" />
-	<carry_item file="helldivers_vest_speed+++.carry_item" />
-	<carry_item file="helldivers_vest_armor+speed+.carry_item" />
-	<carry_item file="helldivers_vest_armor++speed+.carry_item" />
-	<carry_item file="helldivers_vest_armor+speed++.carry_item" />
+	<carry_item file="hd_v_upgrade.carry_item" />
 	
 	<!-- 通用 -->
 	<carry_item file="general_vest_1000.carry_item" /><!--无抵抗1000层甲-->

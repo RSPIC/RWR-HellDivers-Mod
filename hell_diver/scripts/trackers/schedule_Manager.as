@@ -206,7 +206,7 @@ class schedule_Manager : Tracker {
     // --------------------------------------------
     void auto_heal(const XmlElement@ player){
         _log("S_Manager auto_heal");
-        schedule_AutoHeal@ new_task = schedule_AutoHeal(m_metagame,player);
+        schedule_AutoHeal@ new_task = schedule_AutoHeal(m_metagame,player,10+g_playerCount/3);
         TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
         tasker.add(new_task);
     }

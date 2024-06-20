@@ -4,7 +4,7 @@
 <!-- 资源文件注册为KEY注册，不同于武器注册的key注册 -->
 
 <!--武器-->
-    <weapon key="hd_lava17_roger_full_upgrage.weapon" /><!--游骑兵 充能激光-->
+    <weapon key="hd_lava17_roger_full_upgrade.weapon" /><!--游骑兵 充能激光-->
 
 <!-- 副手  -->
     <weapon key="ex_cl_banzai.weapon" /><!--刺雷-->
@@ -15,13 +15,14 @@
 
     <!-- <carry_item key="lottery.carry_item" />彩票 -->
 
-    <carry_item key="hd_v_upgrage_speed" /><!-- -->
-    <carry_item key="hd_v_upgrage_armor" /><!-- -->
-    <carry_item key="hd_v_upgrage_auto_recover" /><!-- -->
-    <carry_item key="hd_v_upgrage_stratagems_first" /><!-- -->
-    <carry_item key="hd_v_upgrage_auto_heal" /><!-- -->
-    <carry_item key="hd_v_upgrage_clear" /><!-- -->
+    <carry_item key="hd_v_upgrade_auto_recover" /><!-- -->
+    <carry_item key="hd_v_upgrade_stratagems_first" /><!-- -->
+    <carry_item key="hd_v_upgrade_auto_heal" /><!-- -->
+    <carry_item key="hd_v_upgrade_clear" /><!-- -->
+    <carry_item key="hd_v_upgrade_impactGl" /><!-- -->
+    <carry_item key="hd_v_upgrade_Needle" /><!-- -->
 
+    <carry_item key="hd_money_100w" /><!-- -->
     <carry_item key="hd_money_10w" /><!-- -->
     <carry_item key="hd_money_1w" /><!-- -->
     <carry_item key="hd_money_1k" /><!-- -->

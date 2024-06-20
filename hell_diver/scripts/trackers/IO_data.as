@@ -1448,16 +1448,39 @@ class IO_data : Tracker {
             res.addToResources(resources,2);
 
             upgrade@ tempTack = upgrade(m_metagame);
-            XmlElement newXml("priority");
-                newXml.setStringAttribute("key","DanceKey_v1");
-                newXml.setStringAttribute("type","Dance");
-            tempTack.writeUpgradeFile(p_name,"prioritys",newXml);
-            _notify(m_metagame,pid,"You get Dance priority level-1");
+            if(!tempTack.checkAccess(p_name,"prioritys","DanceKey_v1")){
+                XmlElement newXml("priority");
+                    newXml.setStringAttribute("key","DanceKey_v1");
+                    newXml.setStringAttribute("type","Dance");
+                tempTack.writeUpgradeFile(p_name,"prioritys",newXml);
+                _notify(m_metagame,pid,"You get Dance priority level-1");
+            }
+            string sid = g_playerInfoBuck.getSidByName(p_name);
+            playerStashInfo@ m_playerStashInfo = playerStashInfo(m_metagame,sid,p_name);
+            if(!m_playerStashInfo.isOpen(false)){
+                m_playerStashInfo.openStash(false);
+            }
+            m_playerStashInfo.upgradeStash(20,true);
+            m_playerStashInfo.openStash(false);
 
             addListItemInBackpack(m_metagame,cid,resources);
             GiveRP(m_metagame,cid,6480000);
             dictionary a;
             a["%reward"] = "RP: 648w、加成卡和战利品箱子";
+            notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+            return true;
+        }
+        if(access_tag == "upgradeStash"){//脚本仓库升级
+            string sid = g_playerInfoBuck.getSidByName(p_name);
+            playerStashInfo@ m_playerStashInfo = playerStashInfo(m_metagame,sid,p_name);
+            if(!m_playerStashInfo.isOpen(false)){
+                m_playerStashInfo.openStash(false);
+            }
+            m_playerStashInfo.upgradeStash(10,true);
+            m_playerStashInfo.openStash(false);
+
+            dictionary a;
+            a["%reward"] = "10格脚本仓库容量";
             notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
             return true;
         }
@@ -1722,6 +1745,14 @@ class IO_data : Tracker {
             @res = Resource("samples_acg.carry_item","carry_item"); // 研究点
             res.addToResources(resources,1);
             addListItemInBackpack(m_metagame,cid,resources);
+
+            string sid = g_playerInfoBuck.getSidByName(p_name);
+            playerStashInfo@ m_playerStashInfo = playerStashInfo(m_metagame,sid,p_name);
+            if(!m_playerStashInfo.isOpen(false)){
+                m_playerStashInfo.openStash(false);
+            }
+            m_playerStashInfo.upgradeStash(5,true);
+            m_playerStashInfo.openStash(false);
 
             dictionary a;
             a["%reward"] = "更新奖励已发送至背包";

@@ -141,7 +141,8 @@ int getServerDay(Metagame@ m_metagame){
     }
     return -1;
 }
-int getNextServerDayRate(Metagame@ m_metagame){
+
+float getNextServerDayRate(Metagame@ m_metagame){
     string m_FILENAME = "_server_manager.xml";
     const XmlElement@ allInfo = readFile(m_metagame,m_FILENAME);
     if(allInfo is null){
@@ -152,10 +153,10 @@ int getNextServerDayRate(Metagame@ m_metagame){
     for(int j = 0 ; j < int(m_stashs.size()) ; ++j){
         const XmlElement@ m_stash = m_stashs[j];
         if(m_stash.getName() == "Time"){
-            int oneDayTime = m_stash.getIntAttribute("oneDayTime");
-            int server_running_time = m_stash.getIntAttribute("server_running_time");
+            float oneDayTime = m_stash.getFloatAttribute("oneDayTime");
+            float server_running_time = m_stash.getFloatAttribute("server_running_time");
             if(oneDayTime != 0){
-                return int(server_running_time/oneDayTime);
+                return server_running_time/oneDayTime;
             }
         }
     }

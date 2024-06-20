@@ -10,7 +10,7 @@ on_ground_up="0 1 0" can_be_detected_by_footmen="0" can_be_disarmed="0" >
     <collision class="sticky" />
 	
     <commonness value="0.0" can_respawn_with="0" in_stock="0"/>
-    <effect class="result" key="terrain" ref="wand_hit_ground_center_light"/>
+    <!-- <effect class="result" key="terrain" ref="wand_hit_ground_center_light"/>
     <effect class="result" key="terrain" ref="wand_hit_ground_center_light_up" post_processing="0"/>
     <effect class="result" key="terrain" ref="wand_hit_ground_radiation" post_processing="0"/>
     <effect class="result" key="terrain" ref="wand_hit_ground_rainbowewave"/>
@@ -34,10 +34,7 @@ on_ground_up="0 1 0" can_be_detected_by_footmen="0" can_be_disarmed="0" >
     <effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_06" post_processing="0"/>
     <effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_07" post_processing="0"/>
     <effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_08" post_processing="0"/>
-    <effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_09" post_processing="0"/>
-
---
-
+    <effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_09" post_processing="0"/> -->
 
 	<sound class="result" key="other" fileref="wand_magic_circle_up9.wav" pitch_variety="0.00" volume="6" />
     <sound class="result" key="terrain" copy="other" />

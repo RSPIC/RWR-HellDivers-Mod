@@ -5,27 +5,37 @@ on_ground_up="0 1 0" can_be_detected_by_footmen="0" can_be_disarmed="0" >
     <trigger class="time" time_to_live="9.5" />
 	<collision class="sticky" />
 	<result class="spawn" instance_class="projectile" instance_key="wand_damage_04.projectile" 
-	min_amount="10" max_amount="10" offset="0 10 0" position_spread="5 0" direction_spread="0 0" />
+	min_amount="1" max_amount="1" offset="0 10 0" position_spread="5 0" direction_spread="0 0" />
 	<!-- 10x100 轰炸伤 -->
 
 	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
 
-	<effect class="result" key="terrain" ref="wand_blast_center_laser"/>
-	<effect class="result" key="terrain" ref="wand_blast_center_laser_pre"/>
-	<effect class="result" key="terrain" ref="wand_blast_center_shrink_light"/>
-	<effect class="result" key="terrain" ref="wand_blast_center_lens_flare"/>
-	<effect class="result" key="terrain" ref="wand_blast_area_smoke" use_surface_color="1" post_processing="1"/>
-	<effect class="result" key="terrain" ref="wand_blast_area_smoke_shadow" shadow="1"/>
-	<effect class="result" key="terrain" ref="wand_blast_area_smoke_ring" use_surface_color="1" post_processing="0"/>
-	<effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_01"/>
-	<effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_02"/>
-	<effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_03"/>
-	<effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_04"/>
-	<effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_05"/>
-	<effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_06"/>
-	<effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_07"/>
-	<effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_08"/>
-	<effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_09"/>
+    <effect class="activated" ref="wand_hit_ground_center_light"/>
+    <effect class="activated" ref="wand_hit_ground_center_light_up" post_processing="0"/>
+    <effect class="activated" ref="wand_hit_ground_radiation" post_processing="0"/>
+    <effect class="activated" ref="wand_hit_ground_rainbowewave"/>
+    <effect class="activated" ref="wand_hit_ground_expand"/>
+    <effect class="activated" ref="wand_hit_ground_surrounding_line_01"/>
+    <effect class="activated" ref="wand_hit_ground_surrounding_line_02"/>	
+    <effect class="activated" ref="wand_hit_ground_vertical_center_light"/>	
+    <effect class="activated" ref="wand_hit_ground_area_spot"/>	
+	<effect class="activated" ref="wand_hit_ground_area_stone_01" post_processing="1"/>
+    <effect class="activated" ref="wand_hit_ground_area_stone_02" post_processing="1"/>
+    <effect class="activated" ref="wand_hit_ground_area_stone_03" post_processing="1"/>
+    <effect class="activated" ref="wand_hit_ground_area_stone_04" post_processing="1"/>
+    <effect class="activated" ref="wand_hit_ground_area_stone_05" post_processing="1"/>
+    <effect class="activated" ref="wand_hit_ground_area_stone_06" post_processing="1"/>
+
+    <effect class="activated" ref="wand_hit_ground_magic_circle_01" post_processing="0"/>
+    <effect class="activated" ref="wand_hit_ground_magic_circle_02" post_processing="1"/>
+    <effect class="activated" ref="wand_hit_ground_magic_circle_03" post_processing="0"/>
+    <effect class="activated" ref="wand_hit_ground_magic_circle_04" post_processing="0"/>
+    <effect class="activated" ref="wand_hit_ground_magic_circle_05" post_processing="0"/>
+    <effect class="activated" ref="wand_hit_ground_magic_circle_06" post_processing="0"/>
+    <effect class="activated" ref="wand_hit_ground_magic_circle_07" post_processing="0"/>
+    <effect class="activated" ref="wand_hit_ground_magic_circle_08" post_processing="0"/>
+    <effect class="activated" ref="wand_hit_ground_magic_circle_09" post_processing="0"/>
+
 
 	<sound class="result" key="other" fileref="wand_after_blast_wind.wav" pitch_variety="0.00" volume="10" />
     <sound class="result" key="terrain" copy="other" />

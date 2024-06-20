@@ -66,7 +66,7 @@ array<MissionCounter@> kill_with_select_weapon = {
     (MissionCounter("hd_pst_tox17_sourhound_damage.projectile","TOX17酸液犬",80)), //blast
     (MissionCounter("hd_exp_m25_rumbler_full_upgrade_damage.projectile","M25雷鸣者",80)), //blast
     (MissionCounter("hd_exp_obliterator_grenade_launcher_full_upgrade_damage.projectile","消灭者榴弹",80)), //blast
-    (MissionCounter("hd_exp_rl112_recoilless_rifle_mk3_damage.projectile","Rl112无后坐力步枪",80)), //blast
+    (MissionCounter("hd_exp_rl112_recoilless_rifle_mk3_damage.projectile","Rl112无后坐力火箭筒",40)), //blast
     (MissionCounter("hd_exp_eta17_mk3_damage.projectile","ETA17抛弃式火箭",80)), //blast
     (MissionCounter("hd_exp_rec6_demolisher_mk3_damage.projectile","REC6爆破手",80)), //blast
     (MissionCounter("hd_exp_cr9_suppressor_full_upgrade_damage.projectile","CR9抑制者",80)), //blast
@@ -364,8 +364,8 @@ class playerMissionInfo {
                             if(lastDay < syncTime){ // 排除同一天的累计更新
                                 if(lastDay > syncTime - 3){ // 三个游戏日内算连续登陆
                                     int continueSignInDays = child.getIntAttribute("continueSignInDays");
-                                    if(continueSignInDays > 90){
-                                        continueSignInDays = 0;
+                                    if(continueSignInDays > lastDay){
+                                        continueSignInDays = lastDay;
                                     }
                                     child.setIntAttribute("continueSignInDays",++continueSignInDays);
                                 }
@@ -795,6 +795,10 @@ class playerMissionInfo {
             a["%value0"] = "已完成所有任务";
         }
         a["%day"] = "距离下次更新剩余进度:"+getNextServerDayRate(m_metagame)+"/100%";
+        const XmlElement@ DailyTask = readMissionInfo("DailyTask");
+        if(DailyTask is null){return;}
+        int continueSignInDays = DailyTask.getIntAttribute("continueSignInDays");
+        a["%sign"] = "累计签到:"+continueSignInDays+"天";
         notify(m_metagame, "DaylyMission", a, "misc", pid, true, "每日任务列表", 1.0);
     }
     bool checkDayUpdated(){

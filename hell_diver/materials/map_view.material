@@ -77,16 +77,9 @@ material MapViewFront {
 			depth_check off
 
 			texture_unit Decal {
-				anim_texture mapview_frame_add_code.png 4 40
+				texture mapview_frame_add_code_3.png
 				scale 1 1
 				tex_address_mode wrap
-				//wave_xform scroll_y sine 0 0.01 0 0.2
-				filtering trilinear
-			}
-			texture_unit Decal {
-				texture mapview_frame_add_code_mask.png
-				colour_op_ex source2 src_texture src_current
-				alpha_op_ex modulate src_texture src_current
 				filtering trilinear
 			}
 		} 

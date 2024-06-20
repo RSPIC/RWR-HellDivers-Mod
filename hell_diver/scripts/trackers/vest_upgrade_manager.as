@@ -61,12 +61,15 @@ class vest_upgrade_manager : Tracker {
         int containerId = event.getIntAttribute("target_container_type_id");
 
         array<string> targetKey = {
-            "hd_v_upgrage_speed",
-            "hd_v_upgrage_armor",
-            "hd_v_upgrage_auto_recover",
-            "hd_v_upgrage_stratagems_first",
-            "hd_v_upgrage_auto_heal",
-            "hd_v_upgrage_clear"};
+            "hd_v_upgrade_speed",
+            "hd_v_upgrade_armor",
+            "hd_v_upgrade_auto_recover",
+            "hd_v_upgrade_stratagems_first",
+            "hd_v_upgrade_auto_heal",
+            "hd_v_upgrade_clear",
+            "hd_v_upgrade_impactGl",
+            "hd_v_upgrade_Needle"
+        };
         array<array<string>> vestListKey = {
             {
                 "helldivers_vest",
@@ -132,7 +135,6 @@ class vest_upgrade_manager : Tracker {
                         if(state){
                             if(rp < 10000){
                                 notify(m_metagame,"Insufficient Rp", dictionary(), "misc", pid, false,"", 1.0);
-                                deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
                                 return;
                             }
                             notify(m_metagame,"AutoRecover Set", dictionary(), "misc", pid, false,"", 1.0);
@@ -140,9 +142,9 @@ class vest_upgrade_manager : Tracker {
                         }else{
                             notify(m_metagame,"AutoRecover Remove", dictionary(), "misc", pid, false,"", 1.0);
                         }
-                        deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
-                        return;
                     }
+                    deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
+                    return;
                 }else if(i==3){
                     uint priority;
                     if(g_vestInfoBuck.getStratagemsFirst(name) < 5){
@@ -173,13 +175,47 @@ class vest_upgrade_manager : Tracker {
                         }else{
                             notify(m_metagame,"AutoHeal Remove", dictionary(), "misc", pid, false,"", 1.0);
                         }
-                        deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
-                        return;
                     }
+                    deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
+                    return;
                 }else if(i==5){
                     if(g_vestInfoBuck.clearUpgrade(name)){
                         notify(m_metagame,"Vest Upgeade Clear", dictionary(), "misc", pid, false,"", 1.0);
                     }
+                }else if(i==6){
+                    bool state;
+                    if(g_vestInfoBuck.setImpactGl(name,state)){
+                        if(state){
+                            if(rp < 10000){
+                                notify(m_metagame,"Insufficient Rp", dictionary(), "misc", pid, false,"", 1.0);
+                                deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
+                                return;
+                            }
+                            notify(m_metagame,"ImpactGl Set", dictionary(), "misc", pid, false,"", 1.0);
+                            GiveRP(m_metagame,characterId,-10000);
+                        }else{
+                            notify(m_metagame,"ImpactGl Remove", dictionary(), "misc", pid, false,"", 1.0);
+                        }
+                    }
+                    deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
+                    return;
+                }else if(i==7){
+                    bool state;
+                    if(g_vestInfoBuck.setHealNeedle(name,state)){
+                        if(state){
+                            if(rp < 20000){
+                                notify(m_metagame,"Insufficient Rp", dictionary(), "misc", pid, false,"", 1.0);
+                                deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
+                                return;
+                            }
+                            notify(m_metagame,"Needle Set", dictionary(), "misc", pid, false,"", 1.0);
+                            GiveRP(m_metagame,characterId,-20000);
+                        }else{
+                            notify(m_metagame,"Needle Remove", dictionary(), "misc", pid, false,"", 1.0);
+                        }
+                    }
+                    deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
+                    return;
                 }
                 uint upgradeSpeedTimes = g_vestInfoBuck.upgradeSpeedTime(name);
                 uint upgradeArmorTimes = g_vestInfoBuck.upgradeArmorTime(name);

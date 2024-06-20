@@ -25,8 +25,8 @@ force_as_shoots_blast_projectiles="0"
     suppressed="0" 
 	class="0" 
     name="Tripod" 
-	ai_sight_range_modifier="3.0"
-	sight_range_modifier="3.0" 
+	ai_sight_range_modifier="1.0"
+	sight_range_modifier="1.5" 
 	burst_shots="1" 
     projectiles_per_shot="10" 
     projectile_speed="100.0"
@@ -93,7 +93,7 @@ force_as_shoots_blast_projectiles="0"
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
     <projectile file="hd_general_spawn.projectile" time_to_live="0.05" > 
         <trigger class="impact" time_to_live="0" />
-        <result class="blast" radius="3.0" damage="4" push="0.1" decal="0" character_state="wound" 
+        <result class="blast" radius="3.0" damage="2" push="0.1" decal="0" character_state="wound" 
         make_vehicle_hit_sound="0" faction_compare="not_equal"/>
 
         <trail probability="1" key=""/>	
@@ -101,7 +101,6 @@ force_as_shoots_blast_projectiles="0"
 	
 	<!--枪口特效-->
 	<effect class="muzzle" ref="illum_tripod_muzzle_thunder" lighting="0"/> 
-
 	
 	<!--姿态精度-->
     <stance state_key="running" accuracy="1" /> 

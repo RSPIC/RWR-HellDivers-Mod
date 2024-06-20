@@ -11,8 +11,8 @@ time_to_live_out_in_the_open="0"
 	time_to_live="1" can_be_detected_by_driver="1" can_be_disarmed="0" name="R-36 Eruptor"> 
 	
         <result class="spawn" instance_class="projectile" instance_key="hd_psc_r36_eruptor_damage.projectile" 
-		min_amount="100" max_amount="100" offset="0 0.5 0" position_spread="2 0" direction_spread="0.1 0" />
-		<!-- 2.01x100 = 3x100 = 300 -->
+		min_amount="150" max_amount="150" offset="0 0.5 0" position_spread="2 0" direction_spread="0.1 0" />
+		<!-- 2.01x150 = 3x150 = 450 -->
 		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 	

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapon 
+file="_hd_none.base"
+> 
+    <specification 	
+    slot="1" 	
+    retrigger_time="3" 
+	last_burst_retrigger_time="0"
+	spread_range="0"
+    accuracy_factor="1.0" 
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="1" 
+    sustained_fire_diminish_rate="1" 
+    magazine_size="-1" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="0"	
+    suppressed="0" 
+	class="0" 
+    name="Heavy Shield" 
+	sight_range_modifier="1.0" 
+	sight_height_offset="1.0" 
+	burst_shots="1" 
+    projectiles_per_shot="1" 
+    projectile_speed="30.0"
+	barrel_offset="0.8" 
+	carry_in_two_hands="0" 
+	stab_enabled="1" 
+	stab_range="2.5" 
+	/> 
+	<!--504 RPM		2.5s reload		20m range		AP-->
+	
+    <animation key="cycle"  animation_key="hd_hvy_shield_stab" /> <!--拉栓动作，武器固定脱手-->
+    <animation state_key="recoil"   animation_key="hd_hvy_shield_stab" />
+    <animation state_key="reload"   animation_key="p6_gunslinger_reloading" />
+	<animation state_key="hold" animation_key="hd_hvy_shield_still" />
+    <animation state_key="hold_on_wall" animation_key="hd_hvy_shield_still" />
+    <animation state_key="hold_casual" animation_key="hd_hvy_shield_still" />
+	<animation state_key="running"  animation_key="hd_hvy_shield_moving" />
+    <animation state_key="walking"  animation_key="hd_hvy_shield_moving" />
+    <animation state_key="walking_backwards" animation_key="hd_hvy_shield_moving_back" />
+    <animation state_key="crouching" animation_key="hd_hvy_shield_crouching" />
+	<animation state_key="crouch_moving" animation_key="hd_hvy_shield_crouching_moving" />
+	<animation state_key="crouch_moving_backwards" animation_key="hd_hvy_shield_crouching_moving_back" />
+    <animation state_key="prone_still" animation_key="hd_hvy_shield_crouching" />
+	<animation state_key="prone_moving" animation_key="" />
+	<animation state_key="stabbing" animation_key="hd_hvy_shield_stab" />
+	<animation state_key="next_in_chain_in" animation_key="" />
+	<animation state_key="next_in_chain_out" animation_key="" />
+    <animation state_key="changing_weapon_in" animation_key="" />
+	<animation state_key="changing_weapon_out" animation_key=""/>
+
+    <sound key="effect" fileref="hd_p6_gunslinger_cycle.wav" pitch_variety="0.03" volume="0.7" /> 
+    <sound key="fire" fileref="stun_grenade1.wav" pitch_variety="0.03" volume="0.7" />
+    <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.03" volume="1.0" />
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="0.5" />
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="0.9" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="0.8" />
+    <sound key="magazine_out" fileref="hd_p6_gunslinger_mag_out.wav" volume="0.7"/>
+    <sound key="magazine_in" fileref="hd_p6_gunslinger_mag_in.wav" volume="0.7"/>
+    <sound key="cycle" fileref="rifle_chamber.wav" />
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" />
+    <sound key="last_ammo" fileref="hd_dryfire.wav" pitch_variety="0.03" volume="1.0" />
+	<sound class="impact" fileref="rifle_drop.wav" />
+
+    <model filename="hd_hvy_shield.xml" /> 
+    <model mesh_filename="" texture_filename="" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="hd_hvy_shield.png" /> 
+	
+    <commonness value="0" can_respawn_with="1" in_stock="0" /> 
+    <inventory encumbrance="25.0" price="0.0" /> 
+  	<capacity value="1" source="rank" source_value="0.0" />
+    <weak_hand_hold offset="0.3" /> 
+
+    <shield offset="-0.2 -0.35 0" extent="0.5 1.8 1.4" />
+    <shield offset="0.25 -0.35 -0.8" extent="0.8 1.6 0.3" />
+    <shield offset="0.25 -0.35 0.8" extent="0.8 1.6 0.3" />
+    
+    <modifier class="speed" value="-0.325"/>
+    <modifier class="detectability" value="0.5" />
+
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="none" consumes_item="0"/>   
+
+
+</weapon>
+
+

@@ -3,9 +3,25 @@
 can_be_detected_by_footmen="0" can_be_disarmed="0" >
 	<rotation class="motion" />	
 
-	<result class="blast" radius="30" damage="1000" decal="1" push="8" character_state="wound" faction_compare="not_equal" />
-    <trigger class="time" time_to_live="0.05" />
+	<result class="blast" radius="30" damage="1000" decal="1" push="8" character_state="unwound" faction_compare="not_equal" />
+    <trigger class="time" time_to_live="0.1" />
 
+    <effect class="activated" ref="wand_blast_center_laser"/>
+	<effect class="activated" ref="wand_blast_center_laser_pre"/>
+	<effect class="activated" ref="wand_blast_center_shrink_light"/>
+	<effect class="activated" ref="wand_blast_center_lens_flare"/>
+	<effect class="activated" ref="wand_blast_area_smoke" use_surface_color="1" post_processing="1"/>
+	<effect class="activated" ref="wand_blast_area_smoke_shadow" shadow="1"/>
+	<effect class="activated" ref="wand_blast_area_smoke_ring" use_surface_color="1" post_processing="0"/>
+	<effect class="activated" ref="wand_hit_ground_magic_circle_shrink_01"/>
+	<effect class="activated" ref="wand_hit_ground_magic_circle_shrink_02"/>
+	<effect class="activated" ref="wand_hit_ground_magic_circle_shrink_03"/>
+	<effect class="activated" ref="wand_hit_ground_magic_circle_shrink_04"/>
+	<effect class="activated" ref="wand_hit_ground_magic_circle_shrink_05"/>
+	<effect class="activated" ref="wand_hit_ground_magic_circle_shrink_06"/>
+	<effect class="activated" ref="wand_hit_ground_magic_circle_shrink_07"/>
+	<effect class="activated" ref="wand_hit_ground_magic_circle_shrink_08"/>
+	<effect class="activated" ref="wand_hit_ground_magic_circle_shrink_09"/>
 
     <commonness value="0.0" can_respawn_with="0" in_stock="0"/>
     <sound class="result" key="terrain" copy="other" />

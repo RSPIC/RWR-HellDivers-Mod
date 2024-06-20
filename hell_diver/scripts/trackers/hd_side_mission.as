@@ -66,6 +66,7 @@ class hd_side_mission : Tracker{
     }
     // --------------------------------------------
     void initiateMineMission(){
+        if(g_server_activity){return;}
         uint count = 2;
 		while(count > 0 ) {
             Vector3@ basePosition = Vector3(512,0,512);
@@ -137,13 +138,13 @@ class hd_side_mission : Tracker{
         string itemKey = event.getStringAttribute("item_key");
         int containerId = event.getIntAttribute("target_container_type_id");
         int pid = event.getIntAttribute("player_id");
+        int cid = event.getIntAttribute("character_id");
         //containerId = 0(地面) 1(军械库) 2（背包） 3（仓库）
 		//itemClass = 0(主、副武器) 1（投掷物） 3（护甲、战利品）
 
         if(itemKey == "hd_at_mine_submission_stay.projectile"){ // 扫雷任务
-            if(containerId == 1){
-                int needTimes = 5;  //扫雷需要5个样本
-
+            if(containerId == 2 ){//装备进背包
+                int needTimes = 3;  //扫雷需要3个样本
                 string name = g_playerInfoBuck.getNameByPid(pid);
                 g_userCountInfoBuck.addCount(name,"hd_at_mine_submission_stay.projectile",1);
                 int times = 0;
@@ -155,6 +156,7 @@ class hd_side_mission : Tracker{
                 }else if(times < needTimes){
                     _notify(m_metagame,pid,"已运送地雷样本"+times+"/"+needTimes+"个");
                 }
+                deleteItemInBackpack(m_metagame,cid,"projectile",itemKey);
             }
         }
     }

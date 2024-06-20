@@ -186,7 +186,9 @@ key="acg_hongxue_skill.weapon"
   <projectile file="hd_general_spawn_no_effect.projectile" pulldown_in_air="10" can_be_detected_by_footmen="1" 
 	time_to_live="0.375" can_be_detected_by_driver="1" can_be_disarmed="0" name="HongXue"> 
 	
-    <result class="blast" radius="5.5" damage="80" push="0.3" decal="0" faction_compare="not_equal" />
+    <result class="spawn" instance_class="projectile" instance_key="acg_hongxue_skill_damage.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 1" direction_spread="0.05 0" />	
+
 		<trigger class="time" time_to_live="1.0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
     <model mesh_filename="hongxue_arrow.xml" />
@@ -428,7 +430,8 @@ key="re_acg_hongxue_skill.weapon"
   <projectile file="hd_general_spawn_no_effect.projectile" pulldown_in_air="10" can_be_detected_by_footmen="1" 
 	time_to_live="0.375" can_be_detected_by_driver="1" can_be_disarmed="0" name="HongXue"> 
 	
-    <result class="blast" radius="5.5" damage="80" push="0.3" decal="0" faction_compare="not_equal" />
+      <result class="spawn" instance_class="projectile" instance_key="acg_hongxue_skill_damage.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 1" direction_spread="0.05 0" />
 		<trigger class="time" time_to_live="1.0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
     <model mesh_filename="hongxue_arrow.xml" />

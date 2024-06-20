@@ -2,28 +2,28 @@
 <projectiles>
 <projectile 
 class="grenade" 
-name="Patricia FatalDrive" slot="0" pulldown_in_air="0.1" 
+name="Patricia FatalDrive" slot="0" pulldown_in_air="40" 
 key="acg_patricia_FatalDrive_spawn.projectile"
 can_be_detected_by_footmen="0" can_be_disarmed="0" 
 >
 	<rotation class="motion" />	
 
-	<result class="blast" radius="5" damage="500" push="0" decal="0" character_state="death" faction_compare="not_equal"  />
-	<trigger class="time" time_to_live="0" />
+	<result class="blast" radius="5" damage="500" push="0" decal="0" character_state="unwound" faction_compare="not_equal"  />
+	<trigger class="time" time_to_live="4.5" />
     <collision class="sticky" />
 
     <commonness value="0.0" can_respawn_with="0" in_stock="0"/>
 
-	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_circle" lighting="0"/> 
-	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_circle2" lighting="0"/> 
-	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_circle3" lighting="0"/> 
-	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_lens" lighting="0"/> 
-	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_spray" lighting="0"/> 
-	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_shrink_flare" lighting="0"/> 
-	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_shrink_line" lighting="0"/> 
-	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_springFire" lighting="0"/> 
-	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_flower" lighting="0"/> 
-	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_ambient" lighting="0"/>
+	<effect class="activated" ref="patricia_FatalDrive_result_circle" lighting="0"/> 
+	<effect class="activated" ref="patricia_FatalDrive_result_circle2" lighting="0"/> 
+	<effect class="activated" ref="patricia_FatalDrive_result_circle3" lighting="0"/> 
+	<effect class="activated" ref="patricia_FatalDrive_result_lens" lighting="0"/> 
+	<effect class="activated" ref="patricia_FatalDrive_result_spray" lighting="0"/> 
+	<effect class="activated" ref="patricia_FatalDrive_result_shrink_flare" lighting="0"/> 
+	<effect class="activated" ref="patricia_FatalDrive_result_shrink_line" lighting="0"/> 
+	<effect class="activated" ref="patricia_FatalDrive_result_springFire" lighting="0"/> 
+	<effect class="activated" ref="patricia_FatalDrive_result_flower" lighting="0"/> 
+	<effect class="activated" ref="patricia_FatalDrive_result_ambient" lighting="0"/>
 
 	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
 	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
@@ -93,19 +93,19 @@ can_be_detected_by_footmen="0" can_be_disarmed="0"
 	<rotation class="motion" />	
 
 	<result class="blast" radius="6.0" damage="30" push="0.3" decal="1" character_state="unwound" faction_compare="not_equal" />
-	<trigger class="impact" time_to_live="0.05" />
+	<trigger class="time" time_to_live="0.2" />
     <collision class="sticky" />
 
     <commonness value="0.0" can_respawn_with="0" in_stock="0"/>
 
-	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_crescent" lighting="0"/>
-	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_crescent2" lighting="0"/>
-	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_lens" lighting="0"/>
-	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_star" lighting="0"/>
-	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_flower" lighting="0"/>
-	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_centerlight" lighting="0"/>
-	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_spray" lighting="0"/>
-	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_spray2" lighting="0"/> 
+	<effect class="activated" ref="patricia_PhantomFang_result_crescent" lighting="0"/>
+	<effect class="activated" ref="patricia_PhantomFang_result_crescent2" lighting="0"/>
+	<effect class="activated" ref="patricia_PhantomFang_result_lens" lighting="0"/>
+	<effect class="activated" ref="patricia_PhantomFang_result_star" lighting="0"/>
+	<effect class="activated" ref="patricia_PhantomFang_result_flower" lighting="0"/>
+	<effect class="activated" ref="patricia_PhantomFang_result_centerlight" lighting="0"/>
+	<effect class="activated" ref="patricia_PhantomFang_result_spray" lighting="0"/>
+	<effect class="activated" ref="patricia_PhantomFang_result_spray2" lighting="0"/> 
 
 	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
 	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
@@ -142,20 +142,20 @@ can_be_detected_by_footmen="0" can_be_disarmed="0"
 	<rotation class="motion" />	
 
 	<result class="spawn" instance_class="projectile" instance_key="acg_patricia_jihadslash_damage.projectile" 
-		min_amount="30" max_amount="30" offset="0 0 0" position_spread="2 2" direction_spread="0 0" />	
-	<trigger class="time" time_to_live="0.9" />
+		min_amount="3" max_amount="3" offset="0 0 0" position_spread="2 2" direction_spread="0 0" />	
+	<trigger class="time" time_to_live="0.3" />
     <collision class="sticky" />
 
     <commonness value="0.0" can_respawn_with="0" in_stock="0"/>
-	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_crossline" lighting="0"/>
-	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_star" lighting="0"/>
-	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_spray" lighting="0"/>
-	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_radiation" lighting="0"/>
-	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_pre_flare" lighting="0"/>
-	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_pre_ringwave2" lighting="0"/>
+	<effect class="activated" ref="patricia_JihadSlash_result_crossline" lighting="0"/>
+	<effect class="activated" ref="patricia_JihadSlash_result_star" lighting="0"/>
+	<effect class="activated" ref="patricia_JihadSlash_result_spray" lighting="0"/>
+	<effect class="activated" ref="patricia_JihadSlash_result_radiation" lighting="0"/>
+	<effect class="activated" ref="patricia_JihadSlash_result_pre_flare" lighting="0"/>
+	<effect class="activated" ref="patricia_JihadSlash_result_pre_ringwave2" lighting="0"/>
 
-	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_pre_lens" lighting="0"/>
-	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_pre_ringwave" lighting="0"/>
+	<effect class="activated" ref="patricia_JihadSlash_result_pre_lens" lighting="0"/>
+	<effect class="activated" ref="patricia_JihadSlash_result_pre_ringwave" lighting="0"/>
 		
 	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
 	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
@@ -187,7 +187,7 @@ can_be_detected_by_footmen="0" can_be_disarmed="0"
 >
 	<rotation class="motion" />	
 
-	<result class="blast" radius="6.0" damage="20" push="0.1" decal="1" character_state="wound" faction_compare="not_equal" />
+	<result class="blast" radius="6.0" damage="300" push="0.1" decal="1" character_state="wound" faction_compare="not_equal" />
 	<trigger class="time" time_to_live="0" />
     <collision class="sticky" />
 

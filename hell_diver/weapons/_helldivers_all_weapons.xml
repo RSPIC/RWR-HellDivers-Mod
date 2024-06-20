@@ -3,10 +3,12 @@
 	<weapon file="hd_hellpod.weapon" /><!--轨道发射仓-->
 	<!-- Sidearms -->
 	<weapon file="hd_side_p2_peacemaker_version.weapon" /><!--和平使者手枪-->
+		<weapon file="hd_side_p19_redeemer_version.weapon" /><!--P19 冲锋手枪-->
 	<weapon file="hd_side_laser_sword_version.weapon" 		/><!--光剑-->
 	<weapon file="hd_side_digger_drill_version.weapon" 		/><!--掘进者电钻-->
 	<weapon file="hd_side_hg871_woodpecker_version.weapon" 	/><!--啄木鸟霰弹-->
 	<weapon file="hd_side_p6_gunslinger_version.weapon" 	/><!--神枪手重装左轮手枪 重穿-->
+	<weapon file="hd_side_hvy_shield_version.weapon" 	/><!--重型护盾-->
 	<!-- Support -->
 	<weapon file="hd_sup_rep80_mk3.weapon" 			/><!--维修工具枪-->
 	<weapon file="hd_sup_md98_injector.weapon" 		/><!--MD-98注射器-->
@@ -129,5 +131,8 @@
 	<!-- 特殊 -->
 	<weapon file="hd_explosive_bunny.weapon" /><!--爆炸兔-->
 	<weapon file="hd_special_reward.weapon" /><!--特殊奖励武器-->
+	<weapon file="hd_banner_roadflag_version.weapon" /><!--牌子-->
+	<weapon file="hd_banner_flag.weapon" /><!--牌子-->
+	<weapon file="hd_banner_billbroad.weapon" /><!--牌子-->
 	
 </weapons>

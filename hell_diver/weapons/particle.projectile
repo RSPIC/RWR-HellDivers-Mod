@@ -12,12 +12,14 @@ class="grenade" name="" key="particle.projectile" slot="0" radius="0.15" pulldow
     <model mesh_filename="" />
     <hud_icon filename="call_deny_right.png" />
     <commonness value="0" />
-    <inventory encumbrance="1.0" price="300000.0" in_stock="0" />
+    <inventory encumbrance="1.0" price="0.0" in_stock="0" />
     <capacity value="1" source="rank" source_value="0.0" />
  	<throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
 	speed_estimation_far="70.0" max_speed="70.0" randomness="0.0" tweak_factor="1.0" />
 	<!-- <result class="notify_script" key="upgrade" /> -->
 	<result class="blast" radius="5" damage="0" push="0.5" decal="0" character_state="none" faction_compare="not_equal" />
+
+	<effect class="result" key="terrain" ref="general_item_drop_mark" lighting="0" post_processing="1"/>
 
 	<effect class="result" key="terrain" ref="car_recycle_deny" lighting="0"/>
 	<effect class="result" key="terrain" ref="car_recycle_failed" lighting="0"/>
@@ -62,12 +64,7 @@ class="grenade" name="" key="particle.projectile" slot="0" radius="0.15" pulldow
 	<effect class="result" key="terrain" ref="SMS_impact_leave_dirt" lighting="0" post_processing="1"/> 
 	<effect class="result" key="terrain" ref="SMS_impact_leave_smoke" lighting="0" post_processing="1"/> 
 
-	<effect class="result" key="terrain" ref="elaina_wand_trail_leave" />
     <effect class="result" key="terrain" ref="elaina_wand_result_magic_circle" />
-    <effect class="result" key="terrain" ref="elaina_wand_cyclone" />
-    <effect class="result" key="terrain" ref="elaina_wand_cyclone_base" />
-    <effect class="result" key="terrain" ref="elaina_wand_cyclone_terrain" />
-    <effect class="result" key="terrain" ref="elaina_wand_cyclone_up_smoke" />
     <effect class="result" key="terrain" ref="elaina_wand_skill_thunder_guiding" />
     <effect class="result" key="terrain" ref="elaina_wand_skill_center_light" />
     <effect class="result" key="terrain" ref="elaina_wand_skill_anim_lighting" />
@@ -75,13 +72,6 @@ class="grenade" name="" key="particle.projectile" slot="0" radius="0.15" pulldow
     <effect class="result" key="terrain" ref="elaina_wand_skill_anim_lighting3" />
     <effect class="result" key="terrain" ref="elaina_wand_skill_anim_lighting4" />
     <effect class="result" key="terrain" ref="elaina_wand_skill_anim_lighting5" />
-    <effect class="result" key="terrain" ref="elaina_wand_shell_light" />
-    <effect class="result" key="terrain" ref="elaina_wand_laser_center_ball" />
-    <effect class="result" key="terrain" ref="elaina_wand_laser_center_rorate_ring" />
-    <effect class="result" key="terrain" ref="elaina_wand_laser_shrink_line" />
-    <effect class="result" key="terrain" ref="elaina_wand_laser_later_pre_line_side" />
-    <effect class="result" key="terrain" ref="elaina_wand_laser_later_pre_line_mod2" />
-    <effect class="result" key="terrain" ref="elaina_wand_laser_later_pre_line_mod2_addon" />
 
 	<effect class="result" key="terrain" ref="stun_mine_mk3_ring" lighting="0" post_processing="0"/>
 	<effect class="result" key="terrain" ref="stun_mine_mk3_center" lighting="0" post_processing="0"/>
@@ -237,71 +227,6 @@ class="grenade" name="" key="particle.projectile" slot="0" radius="0.15" pulldow
 	<effect class="result" key="terrain" ref="wand_blast_area_smoke" use_surface_color="1" post_processing="1"/>
 	<effect class="result" key="terrain" ref="wand_blast_area_smoke_shadow" shadow="1"/>
 	<effect class="result" key="terrain" ref="wand_blast_area_smoke_ring" use_surface_color="1" post_processing="0"/>
-	<effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_01"/>
-	<effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_02"/>
-	<effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_03"/>
-	<effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_04"/>
-	<effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_05"/>
-	<effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_06"/>
-	<effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_07"/>
-	<effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_08"/>
-	<effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_shrink_09"/>
-
-    <effect class="result" key="terrain" ref="wand_hit_ground_center_light"/>
-    <effect class="result" key="terrain" ref="wand_hit_ground_center_light_up" post_processing="0"/>
-    <effect class="result" key="terrain" ref="wand_hit_ground_radiation" post_processing="0"/>
-    <effect class="result" key="terrain" ref="wand_hit_ground_rainbowewave"/>
-    <effect class="result" key="terrain" ref="wand_hit_ground_expand"/>
-    <effect class="result" key="terrain" ref="wand_hit_ground_surrounding_line_01"/>
-    <effect class="result" key="terrain" ref="wand_hit_ground_surrounding_line_02"/>	
-    <effect class="result" key="terrain" ref="wand_hit_ground_vertical_center_light"/>	
-    <effect class="result" key="terrain" ref="wand_hit_ground_area_spot"/>	
-	<effect class="result" key="terrain" ref="wand_hit_ground_area_stone_01" post_processing="1"/>
-    <effect class="result" key="terrain" ref="wand_hit_ground_area_stone_02" post_processing="1"/>
-    <effect class="result" key="terrain" ref="wand_hit_ground_area_stone_03" post_processing="1"/>
-    <effect class="result" key="terrain" ref="wand_hit_ground_area_stone_04" post_processing="1"/>
-    <effect class="result" key="terrain" ref="wand_hit_ground_area_stone_05" post_processing="1"/>
-    <effect class="result" key="terrain" ref="wand_hit_ground_area_stone_06" post_processing="1"/>
-
-    <effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_01" post_processing="0"/>
-    <effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_02" post_processing="1"/>
-    <effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_03" post_processing="0"/>
-    <effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_04" post_processing="0"/>
-    <effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_05" post_processing="0"/>
-    <effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_06" post_processing="0"/>
-    <effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_07" post_processing="0"/>
-    <effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_08" post_processing="0"/>
-    <effect class="result" key="terrain" ref="wand_hit_ground_magic_circle_09" post_processing="0"/>
-
-	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_crossline" lighting="0"/>
-	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_star" lighting="0"/>
-	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_spray" lighting="0"/>
-	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_radiation" lighting="0"/>
-	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_pre_flare" lighting="0"/>
-	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_pre_ringwave2" lighting="0"/>
-
-	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_pre_lens" lighting="0"/>
-	<effect class="result" key="terrain" ref="patricia_JihadSlash_result_pre_ringwave" lighting="0"/>
-
-	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_crescent" lighting="0"/>
-	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_crescent2" lighting="0"/>
-	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_lens" lighting="0"/>
-	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_star" lighting="0"/>
-	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_flower" lighting="0"/>
-	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_centerlight" lighting="0"/>
-	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_spray" lighting="0"/>
-	<effect class="result" key="terrain" ref="patricia_PhantomFang_result_spray2" lighting="0"/> 
-
-	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_circle" lighting="0"/> 
-	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_circle2" lighting="0"/> 
-	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_circle3" lighting="0"/> 
-	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_lens" lighting="0"/> 
-	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_spray" lighting="0"/> 
-	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_shrink_flare" lighting="0"/> 
-	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_shrink_line" lighting="0"/> 
-	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_springFire" lighting="0"/> 
-	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_flower" lighting="0"/> 
-	<effect class="result" key="terrain" ref="patricia_FatalDrive_result_ambient" lighting="0"/>
 
 	<effect class="result" key="terrain" ref="texas_tilt_dropping_sword_guiding" lighting="0" />
 	<effect class="result" key="terrain" ref="texas_tilt_dropping_sword" lighting="0" />
@@ -777,16 +702,6 @@ class="grenade" name="" key="particle.projectile" slot="0" radius="0.15" pulldow
     <effect class="result" key="terrain" ref="molotov_fire_02" />
     <effect class="result" key="terrain" ref="molotov_smoke" />
     <effect class="result" key="terrain" ref="music_musical_note_1" />
-    <effect class="result" key="terrain" ref="music_musical_note_2" />
-    <effect class="result" key="terrain" ref="music_musical_note_3" />
-    <effect class="result" key="terrain" ref="music_musical_note_4" />
-    <effect class="result" key="terrain" ref="music_musical_note_5" />
-    <effect class="result" key="terrain" ref="music_musical_note_6" />
-    <effect class="result" key="terrain" ref="music_musical_note_7" />
-    <effect class="result" key="terrain" ref="music_musical_note_8" />
-    <effect class="result" key="terrain" ref="music_musical_note_9" />
-    <effect class="result" key="terrain" ref="music_musical_note_10" />
-    <effect class="result" key="terrain" ref="music_musical_note_11" />
     <effect class="result" key="terrain" ref="music_musical_note_anim_1" />
     
     

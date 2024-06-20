@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" >
+	<!-- always load common first; it"s the one that clears the initial weapon resources -->
+
+	<weapon key="hd_banner_roadflag_ni.weapon" /> 
+	<weapon key="hd_banner_roadflag_bai.weapon" /> 
+	<weapon key="hd_banner_roadflag_buhao.weapon" /> 
+	<weapon key="hd_banner_roadflag_bushi.weapon" /> 
+	<weapon key="hd_banner_roadflag_buzhunna.weapon" /> 
+	<weapon key="hd_banner_roadflag_da.weapon" /> 
+	<weapon key="hd_banner_roadflag_de.weapon" /> 
+	<weapon key="hd_banner_roadflag_guajizhong.weapon" /> 
+	<weapon key="hd_banner_roadflag_ma.weapon" /> 
+	<weapon key="hd_banner_roadflag_minben.weapon" /> 
+
+</resources>

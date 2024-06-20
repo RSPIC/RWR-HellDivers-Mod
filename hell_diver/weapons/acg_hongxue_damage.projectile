@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectiles> 
+<projectile  
+class="grenade" 
+name="HongXue" 
+key="acg_hongxue_skill_damage.projectile" 
+slot="0"
+pulldown_in_air="15.0"
+on_ground_up="0 1 0"
+>
+    <collision class="sticky" />
+	<result class="blast" radius="5.5" damage="80" push="0.3" decal="0" faction_compare="not_equal" />
+	<trigger class="time" time_to_live="0" />	
+    <rotation class="random" />
+	<model mesh_filename="" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+
+</projectile>
+</projectiles>

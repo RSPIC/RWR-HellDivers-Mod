@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapons> 
+<weapon 
+file="hd_banner_roadflag.weapon"
+key="hd_banner_roadflag_ni.weapon"
+>
+    <model filename="hd_roadflag.mesh"  texture_filename="hd_roadflag_ni.png" />
+	<hud_icon filename="hud_roadflag_ni.png" />
+    <!--多模式-->
+    <next_in_chain key="hd_banner_roadflag_wo.weapon" share_ammo="0" /> 
+</weapon>
+<weapon 
+file="hd_banner_roadflag.weapon"
+key="hd_banner_roadflag_wo.weapon"
+>
+    <model filename="hd_roadflag.mesh"  texture_filename="hd_roadflag_wo.png" />
+	<hud_icon filename="hud_roadflag_wo.png" />
+    <!--多模式-->
+    <next_in_chain key="hd_banner_roadflag_ta.weapon" share_ammo="0" /> 
+</weapon>
+<weapon 
+file="hd_banner_roadflag.weapon"
+key="hd_banner_roadflag_ta.weapon"
+>
+    <model filename="hd_roadflag.mesh"  texture_filename="hd_roadflag_ta.png" />
+	<hud_icon filename="hud_roadflag_ta.png" />
+    <!--多模式-->
+    <next_in_chain key="hd_banner_roadflag_ni.weapon" share_ammo="0" /> 
+</weapon>
+<!--  -->
+<weapon 
+file="hd_banner_roadflag.weapon"
+key="hd_banner_roadflag_bai.weapon"
+>
+    <model filename="hd_roadflag.mesh"  texture_filename="hd_roadflag_bai.png" />
+	<hud_icon filename="hud_roadflag_bai.png" />
+    <!--多模式-->
+    <next_in_chain key="hd_banner_roadflag_ji.weapon" share_ammo="0" /> 
+</weapon>
+<weapon 
+file="hd_banner_roadflag.weapon"
+key="hd_banner_roadflag_ji.weapon"
+>
+    <model filename="hd_roadflag.mesh"  texture_filename="hd_roadflag_ji.png" />
+	<hud_icon filename="hud_roadflag_ji.png" />
+    <!--多模式-->
+    <next_in_chain key="hd_banner_roadflag_bai.weapon" share_ammo="0" /> 
+</weapon>
+<!--  -->
+<weapon 
+file="hd_banner_roadflag.weapon"
+key="hd_banner_roadflag_ha.weapon"
+>
+    <model filename="hd_roadflag.mesh"  texture_filename="hd_roadflag_ha.png" />
+	<hud_icon filename="hud_roadflag_ha.png" />
+    <!--多模式-->
+    <next_in_chain key="hd_banner_roadflag_le.weapon" share_ammo="0" /> 
+</weapon>
+<weapon 
+file="hd_banner_roadflag.weapon"
+key="hd_banner_roadflag_le.weapon"
+>
+    <model filename="hd_roadflag.mesh"  texture_filename="hd_roadflag_le.png" />
+	<hud_icon filename="hud_roadflag_le.png" />
+    <!--多模式-->
+    <next_in_chain key="hd_banner_roadflag_ha.weapon" share_ammo="0" /> 
+</weapon>
+<!--  -->
+<weapon 
+file="hd_banner_roadflag.weapon"
+key="hd_banner_roadflag_buhao.weapon"
+>
+    <model filename="hd_roadflag.mesh"  texture_filename="hd_roadflag_buhao.png" />
+	<hud_icon filename="hud_roadflag_buhao.png" />
+    <!--多模式-->
+    <next_in_chain key="hd_banner_roadflag_hao.weapon" share_ammo="0" /> 
+</weapon>
+<weapon 
+file="hd_banner_roadflag.weapon"
+key="hd_banner_roadflag_hao.weapon"
+>
+    <model filename="hd_roadflag.mesh"  texture_filename="hd_roadflag_hao.png" />
+	<hud_icon filename="hud_roadflag_hao.png" />
+    <!--多模式-->
+    <next_in_chain key="hd_banner_roadflag_buhao.weapon" share_ammo="0" /> 
+</weapon>
+<!--  -->
+<weapon 
+file="hd_banner_roadflag.weapon"
+key="hd_banner_roadflag_bushi.weapon"
+>
+    <model filename="hd_roadflag.mesh"  texture_filename="hd_roadflag_bushi.png" />
+	<hud_icon filename="hud_roadflag_bushi.png" />
+    <!--多模式-->
+    <next_in_chain key="hd_banner_roadflag_shi.weapon" share_ammo="0" /> 
+</weapon>
+<weapon 
+file="hd_banner_roadflag.weapon"
+key="hd_banner_roadflag_shi.weapon"
+>
+    <model filename="hd_roadflag.mesh"  texture_filename="hd_roadflag_shi.png" />
+	<hud_icon filename="hud_roadflag_shi.png" />
+    <!--多模式-->
+    <next_in_chain key="hd_banner_roadflag_bushi.weapon" share_ammo="0" /> 
+</weapon>
+<!--  -->
+<weapon 
+file="hd_banner_roadflag.weapon"
+key="hd_banner_roadflag_buzhunna.weapon"
+>
+    <model filename="hd_roadflag.mesh"  texture_filename="hd_roadflag_buzhunna.png" />
+	<hud_icon filename="hud_roadflag_buzhunna.png" />
+    <!--多模式-->
+    <next_in_chain key="hd_banner_roadflag_mianfeina.weapon" share_ammo="0" /> 
+</weapon>
+<weapon 
+file="hd_banner_roadflag.weapon"
+key="hd_banner_roadflag_mianfeina.weapon"
+>
+    <model filename="hd_roadflag.mesh"  texture_filename="hd_roadflag_mianfeina.png" />
+	<hud_icon filename="hud_roadflag_mianfeina.png" />
+    <!--多模式-->
+    <next_in_chain key="hd_banner_roadflag_buzhunna.weapon" share_ammo="0" /> 
+</weapon>
+<!--  -->
+<weapon 
+file="hd_banner_roadflag.weapon"
+key="hd_banner_roadflag_da.weapon"
+>
+    <model filename="hd_roadflag.mesh"  texture_filename="hd_roadflag_da.png" />
+	<hud_icon filename="hud_roadflag_da.png" />
+    <!--多模式-->
+    <next_in_chain key="hd_banner_roadflag_xiao.weapon" share_ammo="0" /> 
+</weapon>
+<weapon 
+file="hd_banner_roadflag.weapon"
+key="hd_banner_roadflag_xiao.weapon"
+>
+    <model filename="hd_roadflag.mesh"  texture_filename="hd_roadflag_xiao.png" />
+	<hud_icon filename="hud_roadflag_xiao.png" />
+    <!--多模式-->
+    <next_in_chain key="hd_banner_roadflag_da.weapon" share_ammo="0" /> 
+</weapon>
+<!--  -->
+<weapon 
+file="hd_banner_roadflag.weapon"
+key="hd_banner_roadflag_de.weapon"
+>
+    <model filename="hd_roadflag.mesh"  texture_filename="hd_roadflag_de.png" />
+	<hud_icon filename="hud_roadflag_de.png" />
+    <!--多模式-->
+    <!-- <next_in_chain key=".weapon" share_ammo="0" />  -->
+</weapon>
+<weapon 
+file="hd_banner_roadflag.weapon"
+key="hd_banner_roadflag_gemen.weapon"
+>
+    <model filename="hd_roadflag.mesh"  texture_filename="hd_roadflag_gemen.png" />
+	<hud_icon filename="hud_roadflag_gemen.png" />
+    <!--多模式-->
+    <!-- <next_in_chain key=".weapon" share_ammo="0" />  -->
+</weapon>
+<!--  -->
+<weapon 
+file="hd_banner_roadflag.weapon"
+key="hd_banner_roadflag_guajizhong.weapon"
+>
+    <model filename="hd_roadflag.mesh"  texture_filename="hd_roadflag_guajizhong.png" />
+	<hud_icon filename="hud_roadflag_guajizhong.png" />
+    <!--多模式-->
+    <next_in_chain key="hd_banner_roadflag_jiaoyizhong.weapon" share_ammo="0" /> 
+</weapon>
+<weapon 
+file="hd_banner_roadflag.weapon"
+key="hd_banner_roadflag_jiaoyizhong.weapon"
+>
+    <model filename="hd_roadflag.mesh"  texture_filename="hd_roadflag_jiaoyizhong.png" />
+	<hud_icon filename="hud_roadflag_jiaoyizhong.png" />
+    <!--多模式-->
+    <next_in_chain key="hd_banner_roadflag_guajizhong.weapon" share_ammo="0" /> 
+</weapon>
+<!--  -->
+<weapon 
+file="hd_banner_roadflag.weapon"
+key="hd_banner_roadflag_ma.weapon"
+>
+    <model filename="hd_roadflag.mesh"  texture_filename="hd_roadflag_ma.png" />
+	<hud_icon filename="hud_roadflag_ma.png" />
+    <!--多模式-->
+    <next_in_chain key="hd_banner_roadflag_niu.weapon" share_ammo="0" /> 
+</weapon>
+<weapon 
+file="hd_banner_roadflag.weapon"
+key="hd_banner_roadflag_niu.weapon"
+>
+    <model filename="hd_roadflag.mesh"  texture_filename="hd_roadflag_niu.png" />
+	<hud_icon filename="hud_roadflag_niu.png" />
+    <!--多模式-->
+    <next_in_chain key="hd_banner_roadflag_zhu.weapon" share_ammo="0" /> 
+</weapon>
+<weapon 
+file="hd_banner_roadflag.weapon"
+key="hd_banner_roadflag_zhu.weapon"
+>
+    <model filename="hd_roadflag.mesh"  texture_filename="hd_roadflag_zhu.png" />
+	<hud_icon filename="hud_roadflag_zhu.png" />
+    <!--多模式-->
+    <next_in_chain key="hd_banner_roadflag_ma.weapon" share_ammo="0" /> 
+</weapon>
+<!--  -->
+<weapon 
+file="hd_banner_roadflag.weapon"
+key="hd_banner_roadflag_minben.weapon"
+>
+    <model filename="hd_roadflag.mesh"  texture_filename="hd_roadflag_minben.png" />
+	<hud_icon filename="hud_roadflag_minben.png" />
+    <!--多模式-->
+    <next_in_chain key="hd_banner_roadflag_shenghuaren.weapon" share_ammo="0" /> 
+</weapon>
+<weapon 
+file="hd_banner_roadflag.weapon"
+key="hd_banner_roadflag_shenghuaren.weapon"
+>
+    <model filename="hd_roadflag.mesh"  texture_filename="hd_roadflag_shenghuaren.png" />
+	<hud_icon filename="hud_roadflag_shenghuaren.png" />
+    <!--多模式-->
+    <next_in_chain key="hd_banner_roadflag_minben.weapon" share_ammo="0" /> 
+</weapon>
+</weapons>
+

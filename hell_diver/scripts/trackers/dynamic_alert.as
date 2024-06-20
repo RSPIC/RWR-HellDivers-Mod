@@ -141,8 +141,8 @@ const array<SpawnInfo@> level_9 = {
 
     SpawnInfo("illum_Hunter",int(rand(1,1))),
     SpawnInfo("illum_Apprentice",int(rand(1,2))),
-    SpawnInfo("illum_Tripod",int(rand(0,0))),
-    SpawnInfo("illum_Strider",int(rand(2,4))),
+    SpawnInfo("illum_Tripod",int(rand(3,4))),
+    SpawnInfo("illum_Strider",int(rand(0,1))),
     SpawnInfo("illum_Obelisk",int(rand(0,1))),
     SpawnInfo("illum_Illusionist",int(rand(1,1))),
     SpawnInfo("illum_CouncilMember",int(rand(0,0)))
@@ -169,7 +169,7 @@ const array<SpawnInfo@> level_12 = {
 
     SpawnInfo("illum_Hunter",int(rand(1,1))),
     SpawnInfo("illum_Apprentice",int(rand(0,0))),
-    SpawnInfo("illum_Tripod",int(rand(5,5))),
+    SpawnInfo("illum_Tripod",int(rand(2,3))),
     SpawnInfo("illum_Strider",int(rand(1,2))),
     SpawnInfo("illum_Obelisk",int(rand(1,1))),
     SpawnInfo("illum_Illusionist",int(rand(1,1))),
@@ -198,8 +198,8 @@ const array<SpawnInfo@> level_15 = {
 
     SpawnInfo("illum_Hunter",int(rand(1,1))),
     SpawnInfo("illum_Apprentice",int(rand(0,1))),
-    SpawnInfo("illum_Tripod",int(rand(0,0))),
-    SpawnInfo("illum_Strider",int(rand(5,5))),
+    SpawnInfo("illum_Tripod",int(rand(2,3))),
+    SpawnInfo("illum_Strider",int(rand(3,4))),
     SpawnInfo("illum_Obelisk",int(rand(1,2))),
     SpawnInfo("illum_Illusionist",int(rand(1,1))),
     SpawnInfo("illum_CouncilMember",int(rand(1,1)))
@@ -225,7 +225,7 @@ const array<SpawnInfo@> level_random = {
     SpawnInfo("illum_Hunter",int(rand(1,1))),
     SpawnInfo("illum_Apprentice",int(rand(-1,1))),
     SpawnInfo("illum_Tripod",int(rand(-1,1))),
-    SpawnInfo("illum_Strider",int(rand(-1,1))),
+    SpawnInfo("illum_Strider",int(rand(-3,1))),
     SpawnInfo("illum_Obelisk",int(rand(-3,1))),
     SpawnInfo("illum_Illusionist",int(rand(-4,1))),
     SpawnInfo("illum_CouncilMember",int(rand(-5,1)))
@@ -278,7 +278,7 @@ const array<SpawnInfo@> level_littlefish = {
 
     SpawnInfo("illum_Hunter",1),
     SpawnInfo("illum_Apprentice",3),
-    SpawnInfo("illum_Tripod",2),
+    SpawnInfo("illum_Tripod",1),
     SpawnInfo("illum_Strider",1),
     SpawnInfo("illum_Obelisk",0),
     SpawnInfo("illum_Illusionist",0),
@@ -604,8 +604,8 @@ class dynamic_alert : Tracker {
                         m_server_difficulty_level = 1;
                     }
                     spawnTime = 4.8 - count/2.5 + 0.1*m_time_played;
-                    if(spawnTime <= 1 - 0.06*m_server_difficulty_level){
-                        spawnTime == 1 - 0.06*m_server_difficulty_level; //min 0.2~1
+                    if(spawnTime <= 1 - 0.04*m_server_difficulty_level){
+                        spawnTime == 1 - 0.04*m_server_difficulty_level; //min 0.4~1
                     }
                     _log("setSpawnTime("+ f_name +"):" + spawnTime);
                     faction.setFloatAttribute("spawn_interval", spawnTime);

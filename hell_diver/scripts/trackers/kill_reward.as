@@ -405,6 +405,12 @@ class kill_reward : Tracker {
 					}
 				}
 			}
+			if(g_server_activity_racing){
+				setDeadCharacter(m_metagame,killer_cid);
+				_report(m_metagame,"玩家"+k_name+"因为在活动服TK玩家"+t_name+"而受到了死亡惩罚");
+			}else{
+				_notify(m_metagame,k_pid,"你TK了玩家"+t_name+"，请及时在聊天栏道歉");
+			}
 			
 		}
 	}

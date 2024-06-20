@@ -195,6 +195,9 @@ dictionary canStoreItem = {
     {"token_yui_katagiri.projectile","[片桐唯 [信物]]"},
     {"token_odst.projectile","[地狱伞兵 [信物]]"},
     {"token_hanaoka_yuzu.projectile","[花冈柚子 [信物]]"},
+    // 1.9.1
+    {"token_shimokura_megu.projectile","[下仓惠 [信物]]"},
+    {"token_otogi.projectile","[音葵 [信物]]"},
 
     {"wiesel_tow_call.projectile","[鼬鼠 [陶氏]]"},
     {"lav6_call.projectile","[LAV-6]"},
@@ -221,6 +224,7 @@ dictionary canStoreItem = {
     {"ex_sturmtiger_tank_call.projectile","[突击虎]"},
     {"ex_apocalypse_tank_call.projectile","[天启]"},
     {"marder_call.projectile","[黄鼠狼]"},
+    {"illum_allied_prism_tank_call.projectile","[光棱坦克]"},
 
     // 碎片
     {"reward_box_weapon_delta_clip.carry_item","[MK4箱 碎片]"},

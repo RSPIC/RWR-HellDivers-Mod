@@ -68,6 +68,7 @@ dictionary research_list = {
     {"ex_soma_prime.weapon",10},
     {"acg_piko_hammer.weapon",10},
     {"acg_stylet_m61a1.weapon",10},
+    {"acg_otogi_sniper.weapon",10},
 
     //mk1 sell
     {"acg_stylet_m61a1.weapon",5},

@@ -71,7 +71,7 @@ character_leave_request_mode="friendly"
 
 	<!-- 操控 -->
 	<character_slot type="gunner" attached_on_turret="0" seat_position="0 -0.6 0" 
-	exit_rotation="1.57" hiding="1" animation_key="driving car" enter_position="-1.2 0 0" >
+	exit_rotation="1.57" hiding="1" animation_key="driving car" enter_position="1.5 0 0" >
 		<turret index="0"/>
 	</character_slot>
 

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectiles>
+<projectile 
+class="grenade" 
+key="acg_otogi_damage.projectile" 
+slot="0"
+pulldown_in_air="10"
+>
+    <collision class="sticky" />
+    <trigger class="time" time_to_live="0" />
+
+    <result class="blast" radius="2.5" damage="10" push="0.2" decal="0" character_state="wound"
+    faction_compare="not_equal" damage_origin_vehicle="0" make_vehicle_hit_sound="0"/> 
+    
+    <rotation class="motion" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>		
+    <capacity value="0" source="rank" source_value="0" />
+
+</projectile>
+
+</projectiles>

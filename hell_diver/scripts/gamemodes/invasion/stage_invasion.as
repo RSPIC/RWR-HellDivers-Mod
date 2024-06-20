@@ -225,21 +225,30 @@ class Stage {
 		}
 		*/
 
-		if(!g_fastScriptDebug){
-			{ XmlElement e("weapon");		e.setStringAttribute("file", "invasion_all_weapons.xml"); mapConfig.appendChild(e); }
-			{ XmlElement e("projectile");	e.setStringAttribute("file", "invasion_all_throwables.xml"); mapConfig.appendChild(e); }
-			{ XmlElement e("carry_item");	e.setStringAttribute("file", "invasion_all_carry_items.xml"); mapConfig.appendChild(e); }
-			{ XmlElement e("call");			e.setStringAttribute("file", "invasion_all_calls.xml"); mapConfig.appendChild(e); }
-			{ XmlElement e("vehicle");		e.setStringAttribute("file", "invasion_all_vehicles.xml"); mapConfig.appendChild(e); }
-			{ XmlElement e("achievement");	e.setStringAttribute("file", "achievements.xml"); mapConfig.appendChild(e); }
-		}else{
+		if(g_fastScriptDebug){
 			{ XmlElement e("weapon");		e.setStringAttribute("file", "debug/debug_all_weapons.xml"); mapConfig.appendChild(e); }
 			{ XmlElement e("projectile");	e.setStringAttribute("file", "debug/debug_all_throwables.xml"); mapConfig.appendChild(e); }
 			{ XmlElement e("carry_item");	e.setStringAttribute("file", "debug/debug_all_carry_items.xml"); mapConfig.appendChild(e); }
 			{ XmlElement e("call");			e.setStringAttribute("file", "debug/debug_all_calls.xml"); mapConfig.appendChild(e); }
 			{ XmlElement e("vehicle");		e.setStringAttribute("file", "debug/debug_all_vehicles.xml"); mapConfig.appendChild(e); }
 			{ XmlElement e("achievement");	e.setStringAttribute("file", "achievements.xml"); mapConfig.appendChild(e); }
-
+			_log("use fastScript loading method");
+		}else if(g_useMergedXml){
+			{ XmlElement e("weapon");		e.setStringAttribute("file", "merged_weapon.weapon"); mapConfig.appendChild(e); }
+			{ XmlElement e("projectile");	e.setStringAttribute("file", "merged_projectile.projectile"); mapConfig.appendChild(e); }
+			{ XmlElement e("carry_item");	e.setStringAttribute("file", "invasion_all_carry_items.xml"); mapConfig.appendChild(e); }
+			{ XmlElement e("call");			e.setStringAttribute("file", "invasion_all_calls.xml"); mapConfig.appendChild(e); }
+			{ XmlElement e("vehicle");		e.setStringAttribute("file", "merged_vehicle.vehicle"); mapConfig.appendChild(e); }
+			{ XmlElement e("achievement");	e.setStringAttribute("file", "achievements.xml"); mapConfig.appendChild(e); }
+			_log("use Merged loading method");
+		}else{
+			{ XmlElement e("weapon");		e.setStringAttribute("file", "invasion_all_weapons.xml"); mapConfig.appendChild(e); }
+			{ XmlElement e("projectile");	e.setStringAttribute("file", "invasion_all_throwables.xml"); mapConfig.appendChild(e); }
+			{ XmlElement e("carry_item");	e.setStringAttribute("file", "invasion_all_carry_items.xml"); mapConfig.appendChild(e); }
+			{ XmlElement e("call");			e.setStringAttribute("file", "invasion_all_calls.xml"); mapConfig.appendChild(e); }
+			{ XmlElement e("vehicle");		e.setStringAttribute("file", "invasion_all_vehicles.xml"); mapConfig.appendChild(e); }
+			{ XmlElement e("achievement");	e.setStringAttribute("file", "achievements.xml"); mapConfig.appendChild(e); }
+			_log("use normal loading method");
 		}
 		if (m_userSettings.m_testingToolsEnabled) {
 			{ XmlElement e("carry_item");	e.setStringAttribute("file", "cheat_items.xml"); mapConfig.appendChild(e); }

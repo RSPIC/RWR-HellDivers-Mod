@@ -1190,6 +1190,7 @@ class vestInfo {
 		m_armorTime = 0;
 		m_upgradeTime = 0;
 	}
+
 	string name(){return m_name;}
 	string vest(){return m_vest;}
 	bool autoRecover(){return m_autoRecover;}
@@ -1263,6 +1264,9 @@ class vestInfo {
 	}
 	bool setImpactGl(string&in name,bool&out state){
 		if(name == m_name){
+			if(m_healNeedle){ // 同时只能存在一个手雷位检测
+				m_healNeedle = !m_healNeedle;
+			}
 			m_impactGl = !m_impactGl;
 			state = m_impactGl;
 			return true;
@@ -1271,6 +1275,9 @@ class vestInfo {
 	}
 	bool setHealNeedle(string&in name,bool&out state){
 		if(name == m_name){
+			if(m_impactGl){ // 同时只能存在一个手雷位检测
+				m_impactGl = !m_impactGl;
+			}
 			m_healNeedle = !m_healNeedle;
 			state = m_healNeedle;
 			return true;
@@ -1692,6 +1699,7 @@ bool g_spawn_with_ai = true; // 复活自带AI
 // bool g_spawn_with_ai = false; // 复活自带AI
 
 bool g_fastScriptDebug = false; // 脚本快速测试
+bool g_useMergedXml = false; // 采用快速打包加载文件
 
 bool g_heal_on_kill = true; // 击杀回甲
 bool g_exo_armor = true; // 机甲是否装配护甲

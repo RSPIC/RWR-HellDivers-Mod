@@ -1290,7 +1290,7 @@ particle_system general_weapon_result_gl_spray
 
 particle_system general_weapon_activated_flying_mars		//冲锋枪用
 {
-	quota 300
+	quota 500
 	material point_soft_edge_100
 	particle_width 0.3
 	particle_height 0.3
@@ -1313,7 +1313,7 @@ particle_system general_weapon_activated_flying_mars		//冲锋枪用
 		velocity_max 3
 		time_to_live_min 0.3
 		time_to_live_max 0.6
-		duration 1
+		duration 0
 	}
 	affector Scaler
 	{

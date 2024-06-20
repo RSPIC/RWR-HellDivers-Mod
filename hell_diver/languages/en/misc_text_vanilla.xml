@@ -1428,19 +1428,18 @@
 	<text key="Brood Commander Melee"  text="Brood Commander Melee" />
 	<text key="Behemoth Melee"  text="Behemoth Melee-Boss [Heary Armor]" />
 <!-- 光能 -->
-	<text key="Observer"  text="Observer" />
-	<text key="Watcher"  text="Watcher" />
+	<text key="Observer"  text="Observer[Anti Blast]" />
+	<text key="Watcher"  text="Watcher[Anti Blast]" />
 	<text key="Hunter"  text="Hunter" />
 	<text key="Apprentice"  text="Apprentice" />
-	<text key="Tripod"  text="Tripod" />
-	<text key="Strider"  text="Strider" />
+	<text key="Tripod"  text="Tripod[Anti Blast]" />
+	<text key="Strider"  text="Strider[Anti Blast]" />
 	<text key="Obelisk"  text="Obelisk" />
-	<text key="Illusionist"  text="Illusionist" />
-	<text key="CouncilMember"  text="CouncilMember" />
-	<text key="Council Member"  text="Council Membe" />
+	<text key="Illusionist"  text="Illusionist[Anti Blast]" />
+	<text key="CouncilMember"  text="CouncilMember[Anti Blast]" />
+	<text key="Council Member"  text="Council Member[Anti Blast]" />
 	<text key="illuminate"  text="Illuminate" />
 	<text key="Illuminate"  text="Illuminate" />
-
 
 <!-- 战利品 -->
 	<text key="Cirno Fumo"  text="Cirno Fumo [Collector][Sell to automatic storage][Extra Stash Exchange Item][SSR]" />
@@ -1663,7 +1662,7 @@
 " />
 	
 	<text key="Help - Ammo Supply" text="[Ammo Supply System] Ammo Supply can reload weapons and armors, drop it on the ground and hold V to open" />
-	<text key="Help - Stratagems" text="[Stratagems call System] open chat enter ddw[→→↑] or wsdaw[↑↓→←↑, hen can get stratagems beacon" />
+	<text key="Help - Stratagems" text="[Stratagems call System] open chat enter ddw or wsdaw, hen can get stratagems beacon" />
 	<text key="Help - Armor" text="[Health System] Before you dead, every 10 seconds,system will repaire your 10 armors" />
 	<text key="Help - Samples" text="[Resource System] In future, samples can upgrade weapons, samples pick up will share to other playersd" />
 	<text key="Help - Alert" text="[Alert System] Enemy members with Alert Launcher, you should shout them quickly before alerted" />
@@ -1773,7 +1772,7 @@ TK other player also reduce your factor of bouns." />
 	<text key="Weapons - REC-6 Demolisher" text="REC-6 Demolisher [↓←→↑↑]" />
 
 	<text key="Testing Help" text="[Cheat Tutor]" />
-	<text key="Help - TestServer" text="/v test： call out Testbox
+	<text key="Help - TestServer" text="/v test: call out Testbox
 /warp number: skip battle to which map (lower than thirteen)
 /0_win: skip this battle
 /grp number: get RP depend your number
@@ -2136,7 +2135,7 @@ Time used: &#37; value8 Player: &#37; key8(9th)
 <text key="map start with 1 base, part 1" text=" Attention, super Earth call "/>
 <text key="map start with 1 base, part 2" text=" Good! Our submarines have been deployed. map_name" />
 <text key="map start with 1 base, part 3" text=" Space strategic equipment transport ship has reached the target, the submarine is free to call strategic equipment "/>
-<text key="map start with 1 base, part 4" text=" Enter strategic call instructions such as wsdaw[↑↓→←↑] in the chat bar to get submarine reinforcements "/>
+<text key="map start with 1 base, part 4" text=" Enter strategic call instructions such as wsdaw in the chat bar to get submarine reinforcements "/>
 <text key="map start with 1 base, part 5" text=" Bullet supply box can supply consumables, weapons and armor, press V to disassemble supplies and manually put them in the backpack "/>
 <text key="map start with 1 base, part 6" text=" Join QQ: 498520233 to receive invitation code and reward, learn more about the mechanism "/>
 

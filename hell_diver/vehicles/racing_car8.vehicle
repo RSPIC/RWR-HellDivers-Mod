@@ -53,7 +53,6 @@ name="脚本仓库-赛车" key="racing_car8.vehicle" map_view_atlas_index="19" r
         <effect event_key="destroy" key="other" ref="woosh" post_processing="0" shadow="0" />   
         <effect event_key="cleanup" key="other" ref="woosh" post_processing="0" shadow="0" />         
 
-
 	<effect event_key="slide" type="splat_map" surface_tag="road" size="1.0" atlas_index="5" layer="0" />
 	<effect event_key="slide_hard" type="splat_map" surface_tag="road" size="0.5" atlas_index="2" layer="0" />
 	<effect event_key="slide" type="splat_map" surface_tag="dirt" size="1.0" atlas_index="2" layer="1" />
