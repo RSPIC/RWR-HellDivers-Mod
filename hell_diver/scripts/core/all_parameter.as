@@ -122,6 +122,8 @@ dictionary projectile_eventkey = {
         {"hd_exp_mls4x_commando_track_mk3",63},
         // 伊蕾娜星雨技能
         {"acg_yileina_wand_rain",64},
+        // nova坦克跟踪导弹
+        {"ex_nova_missile",65},
 
         // 占位的
         {"666",-1}
@@ -172,6 +174,9 @@ dictionary vehicle_overhealth_key = {
 
         {"noxe.vehicle",1.0},
         {"hd_mc109_motor.vehicle",2.0},
+        {"hd_ra2_ifv.vehicle",2.0},
+        {"ex_nova.vehicle",0.0},
+        {"ex_nova_2.vehicle",0.0},
 
         // 占位的
         {"666",-1}
@@ -214,3 +219,6 @@ dictionary repairtool_key = {
 
 };
 
+array<array<string>> randomVehicleSkin = {
+        {"ex_nova_callrandom","ex_nova.vehicle","ex_nova_2.vehicle"}
+};

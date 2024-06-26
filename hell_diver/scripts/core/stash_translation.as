@@ -917,6 +917,15 @@ array<stashExchangeList@> ExchangeLists ={
             array<XmlElement@>= {
                 getStashXmlElement("deploy_edf_turrent_minigun.weapon","weapon",1)
             }
+        ),
+        //65 民主选票[15] 换 NOVA[1]
+        stashExchangeList(
+            array<XmlElement@>= {
+                getStashXmlElement("hd_vote_ticket","carry_item",15)
+            }, 
+            array<XmlElement@>= {
+                getStashXmlElement("ex_nova_callrandom.projectile","projectile",1)
+            }
         )
 
 };
@@ -990,6 +999,7 @@ const dictionary stashExchangeDict = {
     {"hd_missile_launcher_mk2_exchange",@ExchangeLists[63]},
     {"hd_missile_launcher_mk3_exchange",@ExchangeLists[64]},
     {"hud_edf_turrent_minigun_exchange",@ExchangeLists[65]},
+    {"hud_ex_nova_exchange",@ExchangeLists[66]},
 
     {"",""}
 };

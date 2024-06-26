@@ -157,7 +157,7 @@ particle_system car_behit_through_spark
 particle_system car_slide_up_smoke
 {
 	quota 50
-	material rx1_smoke
+	material point_soft_edge_100
 	particle_width 0.3
 	particle_height 0.3
 	renderer billboard
@@ -593,6 +593,58 @@ particle_system car_destroyed_up_smoke
 		colour1 0.4 0.4 0.4 0.05
 		time2 1
 		colour2 0.1 0.1 0.1 0
+	}
+	affector LinearForce{
+		force_vector 0 0.5 0
+		force_application add
+	}
+}
+particle_system car_destroyed_up_fire_large
+{
+	quota 200
+	material add_smoke_1
+	particle_width 4
+	particle_height 4
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 7
+		colour 0 0 0 0
+		direction 1 0 0
+		emission_rate 40
+		position 0 0 0
+		velocity_min 0.1
+		velocity_max 15
+		time_to_live_min 1
+		time_to_live_max 0.5
+		duration 0
+	}
+	affector Scaler
+	{
+		rate -3
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	-45
+		rotation_speed_range_end	45
+		rotation_range_start	-30
+		rotation_range_end	30
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0 0 1
+		time1 0.6
+		colour1 1 0.3 0 1
+		time2 1
+		colour2 0 0 0 1
 	}
 	affector LinearForce{
 		force_vector 0 0.5 0

@@ -15,6 +15,7 @@
 //Author： rst
 //友伤摧毁载具的惩罚和载具补偿
 //部分支线任务
+//随机皮肤的载具
 
 dictionary included_vehicle = {
         {"ex_isu_152.vehicle",1},
@@ -50,6 +51,9 @@ dictionary included_vehicle = {
         {"panzer_3_a.vehicle",1},
         {"panther_a.vehicle",1},
         {"sdkfz184.vehicle",1},
+        {"marder.vehicle",1},
+        {"ex_nova.vehicle",1},
+        {"ex_nova_2.vehicle",1},
         {"",-1}
 };
 
@@ -109,7 +113,6 @@ class vehicle_destroyed : Tracker{
         spawnVehicle(m_metagame,1,vehicle_owner_fid,position,Orientation(0,1,0,rorate_range),vehicle_name);
  	}
 
-
     //--------------------------------------------------------
     protected void handleVehicleSpawnEvent(const XmlElement@ event) {
         if(g_server_difficulty_level >= 12 && !g_debugMode && !g_single_player){ //12难禁止刷冰淇淋
@@ -125,11 +128,23 @@ class vehicle_destroyed : Tracker{
             int vehicle_id = event.getIntAttribute("vehicle_id");
             if(!startsWith(vehicle_key,"racing_") && !startsWith(vehicle_key,"ex_piano_") 
             && !startsWith(vehicle_key,"ex_gramophone_") && !startsWith(vehicle_key,"straw_block") 
-            && !startsWith(vehicle_key,"ex_power_chair") 
+            && !startsWith(vehicle_key,"ex_power_chair") && !startsWith(vehicle_key,"stash_box") 
+            && !startsWith(vehicle_key,"wood_box") && !startsWith(vehicle_key,"work_table_box") 
+            && !startsWith(vehicle_key,"acg_ex_box") && !startsWith(vehicle_key,"icecream") 
+            && !startsWith(vehicle_key,"hd_banner") && !startsWith(vehicle_key,"hd_banner") 
 
             ){
                 remove_vehicle(m_metagame,vehicle_id);
             }
+        }
+    }
+    //--------------------------------------------------------
+    protected void handleResultEvent(const XmlElement@ event) {
+		string EventKeyGet = event.getStringAttribute("key");
+        if(EventKeyGet.find("callrandom") >= 0){
+            int m_cid = event.getIntAttribute("character_id");
+            Vector3 pos = stringToVector3(event.getStringAttribute("position"));
+            spawnRandomVehicle(m_metagame,1,0,pos,Orientation(0,1,0,0),EventKeyGet);
         }
     }
     //--------------------------------------------------------

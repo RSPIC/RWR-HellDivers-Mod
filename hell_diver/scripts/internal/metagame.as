@@ -116,7 +116,6 @@ class Metagame {
 					sleep(sleepTime);
 				}
 			}
-
 			processed = false;
 			const XmlElement@ event = m_comms.receive();
 			if (!event.empty() && event.getName() != "dummy_event") {

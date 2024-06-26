@@ -2883,16 +2883,37 @@
 	<result class="reward" rp="100.0"/>
 	</event>
 	</vehicle>
-	<vehicle name="Zerg Egg" key="bugs_zerg_egg.vehicle" map_view_atlas_index="-1" time_to_live_unsteerable="7200" time_to_live="7200" respawn_time="7200" should_be_destroyed="1" simulated_damage="5" usable_for_cover="0" allow_ai_to_use="1" allow_player_to_use="0" character_leave_request_mode="friendly">
+	<vehicle name="Banner Store" key="hd_banner.vehicle" map_view_atlas_index="-1" should_be_destroyed="0" simulated_damage="5" usable_for_cover="0" allow_ai_to_use="0" respawn_time="0">
+	<tag name="metal_thin"/>
+	<tire_set offset="0.2 0 +0.2" radius="0.1"/>
+	<tire_set offset="0.2 0 -0.2" radius="0.1"/>
+	<modifier class="blast_range" value="-50"/>
+	<modifier class="blast_damage" value="-1001.0"/>
+	<control max_speed="1.0" acceleration="1" max_reverse_speed="1.0" max_rotation="1.0" max_water_depth="4"/>
+	<physics max_health="10000.0" mass="10000.0" blast_push_threshold="1000" blast_damage_threshold="10" extent="10 0.0 10" offset="0 0 0" top_offset="0 2.0 0" collision_model_pos="0 0 0" collision_model_extent="2.0 0.1 2.0" collision_response_factor="0" visual_offset="0 0 0" remove_collision_threshold="10" vehicle_collision_damage_factor="0" friction_offset="10" gravity="-10" destroy_on_top_hit="1" destroy_on_top_hit_time="3" top_hit_tracking_time="0"/>
+	<item_container class="armory" offset="0 0 0" soldier_group="hd_banner"/>
+	<sky_diving chute_offset="0 0 0" trigger_height="20" gravity="-80" mesh_filename="" texture_filename=""/>
+	<visual class="chassis" mesh_filename="hd_roadflag_store.mesh" texture_filename="hd_roadflag.png"/>
+	<rev_sound filename="" low_pitch="0.8" high_pitch="1.0" low_rev="0.0" high_rev="0.3" volume="0.8"/>
+	<sound key="slide" filename=""/>
+	<sound key="squeal" filename=""/>
+	<sound key="ignition" filename=""/>
+	<sound key="horn" filename=""/>
+	<sound key="hit" filename=""/>
+	<sound key="hit" filename=""/>
+	<sound key="hit" filename=""/>
+	<sound key="destroy" filename=""/>
+	<sound key="destroy" filename=""/>
+	</vehicle>
+	<vehicle name="Zerg Egg" key="bugs_zerg_egg.vehicle" map_view_atlas_index="-1" respawn_time="300" should_be_destroyed="1" usable_for_cover="0" allow_ai_to_use="1" allow_player_to_use="0" character_leave_request_mode="friendly">
 	<tag name="jeep"/>
-	<tag name="apc"/>
 	<tag name="Zerg Egg"/>
 	<tire_set offset="1 0.0 1" radius="0.25"/>
 	<tire_set offset="1 0.0 -1" radius="0.25"/>
 	<modifier class="blast_range" value="0.0"/>
 	<modifier class="blast_damage" value="5.0"/>
 	<control max_speed="1" acceleration="1" max_reverse_speed="1.0" max_rotation="1.0" max_water_depth="2"/>
-	<physics max_health="100" mass="500" extent="2.5 0.0 2.5" offset="0 0.0 0" top_offset="0 2 0" collision_model_pos="0 1.5 0" collision_model_extent="2.5 3 2.5" visual_offset="0 0 0" collision_response_factor="0" blast_push_threshold="10.0" drag_offset="-1" friction_offset="0" vehicle_collision_damage_factor="20" gravity="-40"/>
+	<physics max_health="100" mass="500" extent="2.5 0.0 2.5" offset="0 0.0 0" top_offset="0 2 0" collision_model_pos="0 1.5 0" collision_model_extent="2.0 3 2.0" visual_offset="0 0 0" collision_response_factor="0" blast_push_threshold="10.0" drag_offset="-1" friction_offset="0" vehicle_collision_damage_factor="20" gravity="-40"/>
 	<sky_diving chute_offset="0 0 0" trigger_height="80" gravity="-80" mesh_filename="" texture_filename=""/>
 	<rev_sound filename="" low_pitch="0.8" high_pitch="1.0" low_rev="0.0" high_rev="0.3" volume="0.8"/>
 	<spawn_point player_only="1" offset="0 0 0"/>
@@ -2904,11 +2925,11 @@
 	<sound key="hit" filename=""/>
 	<sound key="hit" filename=""/>
 	<sound key="destroy" filename="molo_boom.wav" volume="1.0"/>
-	<turret offset="0 3 0" weapon_key="bugs_zerg_egg.weapon" weapon_offset="0 0 0" weapon_recoil="0.001" max_rotation_step="1"/>
+	<turret offset="0 1.5 0" weapon_key="bugs_zerg_egg.weapon" weapon_offset="0 0 0" weapon_recoil="0.001" max_rotation_step="1"/>
 	<visual class="chassis" offset="0 0 0" mesh_filename="bugs_zerg_egg.mesh" texture_filename="bugs_zerg_egg.jpg"/>
 	<visual class="chassis" key="broken" offset="0 0 0" mesh_filename="bugs_zerg_egg_broken.mesh" texture_filename="bugs_zerg_egg.jpg"/>
 	<visual class="turret" offset="0.61 -1 0.15" turret_index="0" mesh_filename=".mesh" texture_filename=""/>
-	<character_slot type="gunner" attached_on_turret="0" seat_position="0 -0.6 0" exit_rotation="1.57" hiding="1" animation_key="driving car" enter_position="-1.2 0 0">
+	<character_slot type="gunner" attached_on_turret="0" seat_position="0 -0.6 0" exit_rotation="1.57" hiding="1" animation_key="driving car" enter_position="1.5 0 0">
 	<turret index="0"/>
 	</character_slot>
 	<effect event_key="destroyed" ref="bugs_zerg_egg_blast_pst" lighting="0" post_processing="1" offset="0 2 0"/>
@@ -2925,10 +2946,84 @@
 	<result class="spawn" instance_class="projectile" instance_key="bugs_zerg_egg_destroy_effect.projectile" min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0"/>
 	</event>
 	</vehicle>
-	<vehicle name="Ex Supply Box" key="acg_ex_box.vehicle" map_view_atlas_index="25" time_to_live="180.0" should_be_destroyed="0" simulated_damage="5" usable_for_cover="0" allow_ai_to_use="0">
+	<vehicle name="Elite Egg" key="bugs_elite_egg.vehicle" map_view_atlas_index="-1" respawn_time="300" should_be_destroyed="1" usable_for_cover="0" allow_ai_to_use="1" allow_player_to_use="0" character_leave_request_mode="friendly">
+	<tag name="apc"/>
+	<tire_set offset="1 0.0 1" radius="0.25"/>
+	<tire_set offset="1 0.0 -1" radius="0.25"/>
+	<modifier class="blast_range" value="0.0"/>
+	<modifier class="blast_damage" value="0.0"/>
+	<control max_speed="1" acceleration="1" max_reverse_speed="1.0" max_rotation="1.0" max_water_depth="2"/>
+	<physics max_health="600" mass="500" extent="2.5 0.0 2.5" offset="0 0.0 0" top_offset="0 2 0" collision_model_pos="0 1.5 0" collision_model_extent="2.0 3 2.0" visual_offset="0 0 0" collision_response_factor="0" blast_push_threshold="10.0" drag_offset="-1" friction_offset="0" vehicle_collision_damage_factor="20" gravity="-40"/>
+	<sky_diving chute_offset="0 0 0" trigger_height="80" gravity="-80" mesh_filename="" texture_filename=""/>
+	<rev_sound filename="" low_pitch="0.8" high_pitch="1.0" low_rev="0.0" high_rev="0.3" volume="0.8"/>
+	<spawn_point player_only="1" offset="0 0 0"/>
+	<sound key="slide" filename=""/>
+	<sound key="squeal" filename=""/>
+	<sound key="ignition" filename=""/>
+	<sound key="horn" filename=""/>
+	<sound key="hit" filename=""/>
+	<sound key="hit" filename=""/>
+	<sound key="hit" filename=""/>
+	<sound key="destroy" filename="molo_boom.wav" volume="1.0"/>
+	<turret offset="0 1.5 0" weapon_key="bugs_elite_egg.weapon" weapon_offset="0 0 0" weapon_recoil="0.001" max_rotation_step="1"/>
+	<visual class="chassis" offset="0 0 0" mesh_filename="bugs_zerg_egg.mesh" texture_filename="bugs_zerg_egg.jpg"/>
+	<visual class="chassis" key="broken" offset="0 0 0" mesh_filename="bugs_zerg_egg_broken.mesh" texture_filename="bugs_zerg_egg.jpg"/>
+	<visual class="turret" offset="0.61 -1 0.15" turret_index="0" mesh_filename=".mesh" texture_filename=""/>
+	<character_slot type="gunner" attached_on_turret="0" seat_position="0 -0.6 0" exit_rotation="1.57" hiding="1" animation_key="driving car" enter_position="1.5 0 0">
+	<turret index="0"/>
+	</character_slot>
+	<effect event_key="destroyed" ref="bugs_zerg_egg_blast_pst" lighting="0" post_processing="1" offset="0 2 0"/>
+	<event>
+	<trigger class="destroy"/>
+	<result class="spawn" instance_class="projectile" instance_key="bugs_spawn_Elite.projectile" min_amount="5" max_amount="8" offset="0 0 0" position_spread="5 0" direction_spread="0 0"/>
+	</event>
+	<event>
+	<trigger class="destroy"/>
+	<result class="spawn" instance_class="projectile" instance_key="bugs_zerg_egg_destroy_effect.projectile" min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0"/>
+	</event>
+	</vehicle>
+	<vehicle name="BroodCommander Egg" key="bugs_broodCommander_egg.vehicle" map_view_atlas_index="-1" respawn_time="300" should_be_destroyed="1" usable_for_cover="0" allow_ai_to_use="1" allow_player_to_use="0" character_leave_request_mode="friendly">
+	<tag name="tank"/>
+	<tire_set offset="1 0.0 1" radius="0.25"/>
+	<tire_set offset="1 0.0 -1" radius="0.25"/>
+	<modifier class="blast_range" value="0.0"/>
+	<modifier class="blast_damage" value="0.0"/>
+	<control max_speed="1" acceleration="1" max_reverse_speed="1.0" max_rotation="1.0" max_water_depth="2"/>
+	<physics max_health="1000" mass="500" extent="2.5 0.0 2.5" offset="0 0.0 0" top_offset="0 2 0" collision_model_pos="0 1.5 0" collision_model_extent="2.0 3 2.0" visual_offset="0 0 0" collision_response_factor="0" blast_push_threshold="10.0" drag_offset="-1" friction_offset="0" vehicle_collision_damage_factor="20" gravity="-40"/>
+	<sky_diving chute_offset="0 0 0" trigger_height="80" gravity="-80" mesh_filename="" texture_filename=""/>
+	<rev_sound filename="" low_pitch="0.8" high_pitch="1.0" low_rev="0.0" high_rev="0.3" volume="0.8"/>
+	<spawn_point player_only="1" offset="0 0 0"/>
+	<sound key="slide" filename=""/>
+	<sound key="squeal" filename=""/>
+	<sound key="ignition" filename=""/>
+	<sound key="horn" filename=""/>
+	<sound key="hit" filename=""/>
+	<sound key="hit" filename=""/>
+	<sound key="hit" filename=""/>
+	<sound key="destroy" filename="molo_boom.wav" volume="1.0"/>
+	<turret offset="0 1.5 0" weapon_key="bugs_broodCommander_egg.weapon" weapon_offset="0 0 0" weapon_recoil="0.001" max_rotation_step="1"/>
+	<visual class="chassis" offset="0 0 0" mesh_filename="bugs_zerg_egg.mesh" texture_filename="bugs_zerg_egg.jpg"/>
+	<visual class="chassis" key="broken" offset="0 0 0" mesh_filename="bugs_zerg_egg_broken.mesh" texture_filename="bugs_zerg_egg.jpg"/>
+	<visual class="turret" offset="0.61 -1 0.15" turret_index="0" mesh_filename=".mesh" texture_filename=""/>
+	<character_slot type="gunner" attached_on_turret="0" seat_position="0 -0.6 0" exit_rotation="1.57" hiding="1" animation_key="driving car" enter_position="1.5 0 0">
+	<turret index="0"/>
+	</character_slot>
+	<effect event_key="destroyed" ref="bugs_zerg_egg_blast_pst" lighting="0" post_processing="1" offset="0 2 0"/>
+	<event>
+	<trigger class="destroy"/>
+	<result class="spawn" instance_class="projectile" instance_key="bugs_spawn_BroodCommander.projectile" min_amount="5" max_amount="8" offset="0 0 0" position_spread="5 0" direction_spread="0 0"/>
+	</event>
+	<event>
+	<trigger class="destroy"/>
+	<result class="spawn" instance_class="projectile" instance_key="bugs_zerg_egg_destroy_effect.projectile" min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0"/>
+	</event>
+	</vehicle>
+	<vehicle name="Ex Supply Box" key="acg_ex_box.vehicle" map_view_atlas_index="25" should_be_destroyed="0" simulated_damage="5" usable_for_cover="0" allow_ai_to_use="0" respawn_time="0">
 	<tag name="metal_thin"/>
 	<tire_set offset="0.2 0 +0.2" radius="0.1"/>
 	<tire_set offset="0.2 0 -0.2" radius="0.1"/>
+	<modifier class="blast_range" value="-50"/>
+	<modifier class="blast_damage" value="-1001.0"/>
 	<control max_speed="1.0" acceleration="1" max_reverse_speed="1.0" max_rotation="1.0" max_water_depth="4"/>
 	<physics max_health="200.0" mass="10000.0" blast_push_threshold="1000" blast_damage_threshold="10" extent="10 0.0 10" offset="0 0 0" top_offset="0 2.0 0" collision_model_pos="0 -1 0" collision_model_extent="2.0 0.1 2.0" collision_response_factor="0" visual_offset="0 0 0" remove_collision_threshold="10" vehicle_collision_damage_factor="0" friction_offset="10" gravity="-10" destroy_on_top_hit="1" destroy_on_top_hit_time="3" top_hit_tracking_time="0"/>
 	<item_container class="armory" offset="0 0 0" soldier_group="supply_ex_box"/>
@@ -4224,7 +4319,7 @@
 	</character_slot>
 	<character_slot type="passenger" attached_on_turret="0" position="1.4 0.6 0" seat_position="0.5 3.35 -0.7" rotation="0" exit_rotation="1.5" hiding="0" animation_key="still"/>
 	<character_slot type="passenger" attached_on_turret="0" position="1.4 0.6 -1.5" seat_position="-0.8 3.35 -0.45" rotation="0" exit_rotation="1.5" hiding="0" animation_key="still"/>
-	<rev_sound filename="ba_torumaru_tiger.wav" low_pitch="1" high_pitch="1" low_rev="1" high_rev="1" volume="3.5"/>
+	<rev_sound filename="ba_torumaru_tiger.wav" low_pitch="1" high_pitch="1" low_rev="1" high_rev="1" volume="2.0"/>
 	<sound key="squeal" filename="tire_squeal.wav"/>
 	<sound key="ignition" filename="jeep2_ignition.wav"/>
 	<sound key="hit" filename="car_hit1.wav"/>
@@ -6017,6 +6112,152 @@
 	<result class="reward" rp="600.0"/>
 	</event>
 	</vehicle>
+	<vehicle name="WarMind-140 Nova" key="ex_nova.vehicle" allow_ai_to_use="0" reserves_spawn_point="1" map_view_atlas_index="59" minimum_fill_requirement="1.0" character_leave_request_mode="friendly" max_character_collision_speed="999" max_character_collision_speed_on_normal="999">
+	<tag name="tank"/>
+	<tag name="any_tank"/>
+	<tire_set offset="2 0 +2.5" radius="0.36"/>
+	<tire_set offset="2 0 -2.5" radius="0.36"/>
+	<control max_speed="18" acceleration="22.0" max_reverse_speed="14.0" min_health_to_steer="0.6" max_rotation="0.1" max_water_depth="4" steer_smoothening="0.7" tracked="1" gears="1" max_limiter_speed="11.0"/>
+	<physics extent="5.9 0.0 8" offset="0 0 0" top_offset="0 6.0 0" collision_model_pos="0 0.6 0" collision_model_extent="4.0 1.5 8.0" visual_offset="0 0.6 0.0" max_health="550" blast_damage_threshold="0" blast_push_threshold="10" mass="200.0" broken_mass="180" gravity="-200"/>
+	0 <turret offset="0 2.8 -1.37" weapon_key="ex_nova_cannon.weapon" weapon_offset="0.56 0.15 0" weapon_recoil="0.25" physics_recoil="0.0" max_rotation_step="0.00065"/>
+	1 <turret offset="+1.1 0.72 -2.0" weapon_key="ex_nova_missile.weapon" weapon_offset="0 0.4 0" weapon_recoil="0.0" physics_recoil="0.0" rotation_range="0.3" parent_turret_index="0" max_rotation_step="1.0"/>
+	2 <turret offset="-0.9 0.72 1.0" weapon_key="ex_nova_mg.weapon" weapon_offset="-0.20 0.3 1" weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.001" parent_turret_index="0" rotation="0"/>
+	3 <turret offset="-0.9 0.72 1.0" weapon_key="ex_nova_mg.weapon" weapon_offset="+0.20 0.3 1" weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.001" parent_turret_index="0" rotation="0"/>
+	4 <turret offset="0 0 0" weapon_key="hd_vehicle_wrench.weapon" weapon_offset="0 0 0" weapon_recoil="0" max_rotation_step="0.00002"/>
+	<visual class="chassis" mesh_filename="ex_nova_body.mesh" texture_filename="ex_nova_main.png" max_tilt="0.06"/>
+	<visual class="turret" turret_index="0" mesh_filename="ex_nova_turrent_gun.mesh" texture_filename="ex_nova_turrent.png"/>
+	<visual class="turret" turret_index="1" mesh_filename=".mesh" texture_filename=""/>
+	<visual class="turret" turret_index="2" mesh_filename="ex_nova_minigun.mesh" texture_filename="ex_nova_minigun.png"/>
+	<visual class="turret" turret_index="3" mesh_filename="" texture_filename=""/>
+	<visual class="chassis" key="broken" mesh_filename="ex_nova_body.mesh" texture_filename="ex_nova_main_broken.png" max_tilt="0.06"/>
+	<visual class="track" mesh_filename="ex_nova_track.mesh" offset="-1.5 0 -0.2">
+	<part texture_filename="ex_nova_track.png" texture_animation="translate" tire_binding="0"/>
+	</visual>
+	<visual class="track" mesh_filename="ex_nova_track.mesh" offset="+1.5 0 -0.2">
+	<part texture_filename="ex_nova_track.png" texture_animation="translate" tire_binding="1"/>
+	</visual>
+	<item_container class="armory" offset="0 0.8 -4.8"/>
+	<character_slot type="driver" position="1.5 0.5 2" rotation="0" exit_rotation="1.57" hiding="1"/>
+	<character_slot type="gunner" position="1.5 0.7 0" rotation="0" exit_rotation="1.57" hiding="1">
+	<turret index="0"/>
+	<turret index="4"/>
+	</character_slot>
+	<character_slot type="gunner" enter_position="1.5 0.5 -2" exit_rotation="1.57" hiding="1">
+	<turret index="1"/>
+	</character_slot>
+	<character_slot type="gunner" enter_position="-1.5 0.5 0" exit_rotation="-1.57" hiding="1">
+	<turret index="2"/>
+	<turret index="3"/>
+	</character_slot>
+	<rev_sound filename="truck_rev0.wav" low_pitch="0.95" high_pitch="1.05" low_rev="0.0" high_rev="0.2" volume="1.0"/>
+	<rev_sound filename="truck_rev3.wav" low_pitch="0.7" high_pitch="1.0" low_rev="0.05" high_rev="0.7" volume="1.0"/>
+	<rev_sound filename="truck_rev4.wav" low_pitch="0.8" high_pitch="1.0" low_rev="0.4" high_rev="1.0" volume="1.0"/>
+	<sound key="slide" filename="slide_noise.wav"/>
+	<sound key="squeal" filename="tire_squeal.wav"/>
+	<sound key="ignition" filename="truck_ignition.wav"/>
+	<sound key="horn" filename="hd_gogogo_men_01.wav" volume="5"/>
+	<sound key="turret_rotation" filename="turret_rotation1.wav"/>
+	<sound key="hit" filename="car_hit1.wav"/>
+	<sound key="hit" filename="car_hit2.wav"/>
+	<sound key="destroy" filename="vehicle_explosion_1.wav"/>
+	<sound key="cleanup" filename="vehicle_explosion_1.wav"/>
+	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="1" offset="0 3 -0.8"/>
+	<effect event_key="destroyed" ref="car_broken_spary_spark" post_processing="0" offset="0 3 -0.8"/>
+	<effect event_key="destroyed" ref="car_destroyed_up_fire_large" post_processing="0" offset="0 2.5 -0.8"/>
+	<event>
+	<trigger class="destroy"/>
+	<result class="spawn" instance_class="visual_item" instance_key="ex_nova_turrent.visual_item" min_amount="1" max_amount="1" offset="0 2.4 0" position_spread="1.5 1.5" direction_spread="0.1 0.8"/>
+	</event>
+	<tag name="metal_heavy"/>
+	<tag name="heavy_combat"/>
+	<tag name="HeavyTank"/>
+	<modifier class="blast_range" value="0"/>
+	<modifier class="blast_damage" value="-8.0"/>
+	<event key="receive_damage_xp_reward">
+	<trigger class="receive_damage"/>
+	<result class="reward" xp="0.300"/>
+	</event>
+	<event key="spot_rp_reward">
+	<trigger class="spot"/>
+	<result class="reward" rp="200.0"/>
+	</event>
+	<event key="destroy_rp_reward">
+	<trigger class="destroy"/>
+	<result class="reward" rp="1000.0"/>
+	</event>
+	</vehicle>
+	<vehicle name="WarMind-140 Nova" key="ex_nova_2.vehicle" allow_ai_to_use="0" reserves_spawn_point="1" map_view_atlas_index="59" minimum_fill_requirement="1.0" character_leave_request_mode="friendly" max_character_collision_speed="999" max_character_collision_speed_on_normal="999">
+	<tag name="tank"/>
+	<tag name="any_tank"/>
+	<tire_set offset="2 0 +2.5" radius="0.36"/>
+	<tire_set offset="2 0 -2.5" radius="0.36"/>
+	<control max_speed="18" acceleration="22.0" max_reverse_speed="14.0" min_health_to_steer="0.6" max_rotation="0.1" max_water_depth="4" steer_smoothening="0.7" tracked="1" gears="1" max_limiter_speed="11.0"/>
+	<physics extent="5.9 0.0 8" offset="0 0 0" top_offset="0 6.0 0" collision_model_pos="0 0.6 0" collision_model_extent="4.0 1.5 8.0" visual_offset="0 0.6 0.0" max_health="550" blast_damage_threshold="0" blast_push_threshold="10" mass="200.0" broken_mass="180" gravity="-200"/>
+	0 <turret offset="0 2.8 -1.37" weapon_key="ex_nova_cannon_2.weapon" weapon_offset="0.56 0.15 0" weapon_recoil="0.25" physics_recoil="0.0" max_rotation_step="0.00065"/>
+	1 <turret offset="+1.1 0.72 -2.0" weapon_key="ex_nova_missile.weapon" weapon_offset="0 0.4 0" weapon_recoil="0.0" physics_recoil="0.0" rotation_range="0.3" parent_turret_index="0" max_rotation_step="1.0"/>
+	2 <turret offset="-0.9 0.72 1.0" weapon_key="ex_nova_mg.weapon" weapon_offset="-0.20 0.3 1" weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.001" parent_turret_index="0" rotation="0"/>
+	3 <turret offset="-0.9 0.72 1.0" weapon_key="ex_nova_mg.weapon" weapon_offset="+0.20 0.3 1" weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.001" parent_turret_index="0" rotation="0"/>
+	4 <turret offset="0 0 0" weapon_key="hd_vehicle_wrench.weapon" weapon_offset="0 0 0" weapon_recoil="0" max_rotation_step="0.00002"/>
+	<visual class="chassis" mesh_filename="ex_nova_body.mesh" texture_filename="ex_nova_main_2.png" max_tilt="0.06"/>
+	<visual class="turret" turret_index="0" mesh_filename="ex_nova_turrent_gun.mesh" texture_filename="ex_nova_turrent_2.png"/>
+	<visual class="turret" turret_index="1" mesh_filename=".mesh" texture_filename=""/>
+	<visual class="turret" turret_index="2" mesh_filename="ex_nova_minigun.mesh" texture_filename="ex_nova_minigun_2.png"/>
+	<visual class="turret" turret_index="3" mesh_filename="" texture_filename=""/>
+	<visual class="chassis" key="broken" mesh_filename="ex_nova_body.mesh" texture_filename="ex_nova_main_2_broken.png" max_tilt="0.06"/>
+	<visual class="track" mesh_filename="ex_nova_track.mesh" offset="-1.5 0 -0.2">
+	<part texture_filename="ex_nova_track.png" texture_animation="translate" tire_binding="0"/>
+	</visual>
+	<visual class="track" mesh_filename="ex_nova_track.mesh" offset="+1.5 0 -0.2">
+	<part texture_filename="ex_nova_track.png" texture_animation="translate" tire_binding="1"/>
+	</visual>
+	<item_container class="armory" offset="0 0.8 -4.8"/>
+	<character_slot type="driver" position="1.5 0.5 2" rotation="0" exit_rotation="1.57" hiding="1"/>
+	<character_slot type="gunner" position="1.5 0.7 0" rotation="0" exit_rotation="1.57" hiding="1">
+	<turret index="0"/>
+	<turret index="4"/>
+	</character_slot>
+	<character_slot type="gunner" enter_position="1.5 0.5 -2" exit_rotation="1.57" hiding="1">
+	<turret index="1"/>
+	</character_slot>
+	<character_slot type="gunner" enter_position="-1.5 0.5 0" exit_rotation="-1.57" hiding="1">
+	<turret index="2"/>
+	<turret index="3"/>
+	</character_slot>
+	<rev_sound filename="music_b_connected.wav" low_pitch="1" high_pitch="1" low_rev="1" high_rev="1" volume="0.3"/>
+	<sound key="slide" filename="slide_noise.wav"/>
+	<sound key="squeal" filename="tire_squeal.wav"/>
+	<sound key="ignition" filename="truck_ignition.wav"/>
+	<sound key="horn" filename="hd_gogogo_men_01.wav" volume="5"/>
+	<sound key="turret_rotation" filename="turret_rotation1.wav"/>
+	<sound key="hit" filename="car_hit1.wav"/>
+	<sound key="hit" filename="car_hit2.wav"/>
+	<sound key="destroy" filename="vehicle_explosion_1.wav"/>
+	<sound key="cleanup" filename="vehicle_explosion_1.wav"/>
+	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="1" offset="0 3 -0.8"/>
+	<effect event_key="destroyed" ref="car_broken_spary_spark" post_processing="0" offset="0 3 -0.8"/>
+	<effect event_key="destroyed" ref="car_destroyed_up_fire_large" post_processing="0" offset="0 2.5 -0.8"/>
+	<event>
+	<trigger class="destroy"/>
+	<result class="spawn" instance_class="visual_item" instance_key="ex_nova_turrent_2.visual_item" min_amount="1" max_amount="1" offset="0 2.4 0" position_spread="1.5 1.5" direction_spread="0.1 0.8"/>
+	</event>
+	<tag name="metal_heavy"/>
+	<tag name="heavy_combat"/>
+	<tag name="HeavyTank"/>
+	<modifier class="blast_range" value="0"/>
+	<modifier class="blast_damage" value="-8.0"/>
+	<event key="receive_damage_xp_reward">
+	<trigger class="receive_damage"/>
+	<result class="reward" xp="0.300"/>
+	</event>
+	<event key="spot_rp_reward">
+	<trigger class="spot"/>
+	<result class="reward" rp="200.0"/>
+	</event>
+	<event key="destroy_rp_reward">
+	<trigger class="destroy"/>
+	<result class="reward" rp="1000.0"/>
+	</event>
+	</vehicle>
 	<vehicle name="Radar Tower" key="radar_tower.vehicle" map_view_atlas_index="9" jams_enemy_radio="1" reserves_spawn_point="1" protectors="12" soldier_capacity_offset="16" respawn_time="180.0" usable_for_cover="0" character_leave_request_mode="friendly" allow_owner_to_use_only="1">
 	<tag name="target"/>
 	<tire_set offset="2.0 0.0 2.0" radius="0.65"/>
@@ -6959,6 +7200,69 @@
 	<result class="reward" rp="100.0"/>
 	</event>
 	</vehicle>
+	<vehicle name="Gramophone[SuperEarth BGM]" key="ex_gramophone_superearth_bgm.vehicle" map_view_atlas_index="-1" time_to_live_unsteerable="1" should_be_destroyed="0" simulated_damage="0" usable_for_cover="0" allow_ai_to_use="0" character_leave_request_mode="friendly" max_character_collision_speed="999" max_character_collision_speed_on_normal="999">
+	<tag name="piano"/>
+	<tire_set offset="1 0.0 1" radius="0.1"/>
+	<tire_set offset="1 0.0 -1" radius="0.1"/>
+	<control max_speed="1" acceleration="0.01" max_reverse_speed="1.0" max_rotation="1.0" max_water_depth="4"/>
+	<physics mass="30" extent="0.5 0.0 0.5" offset="0 0.0 0" top_offset="0 0.1 0" collision_model_pos="0 0.5 0" collision_model_extent="1 1 1" visual_offset="0 1.2 0" collision_response_factor="0" blast_push_threshold="10.0" drag_offset="-1.0" vehicle_collision_damage_factor="20" gravity="-40" max_health="100" blast_damage_threshold="0" TODO_blast_damage_threshold="0" broken_mass="10"/>
+	<sky_diving chute_offset="0 0 0" trigger_height="20" gravity="-20" mesh_filename="" texture_filename=""/>
+	<visual class="chassis" mesh_filename="gramophone.mesh" texture_filename="gramophone_main.jpg"/>
+	<character_slot type="driver" position="0 0 0" rotation="3.14" exit_rotation="0" hiding="1" animation_key="Piano_Playing" marker_offset="0 0 0"/>
+	<rev_sound filename="soundtrack2.wav" low_pitch="1" high_pitch="1.0" low_rev="1" high_rev="1" volume="3.0"/>
+	<sound key="slide" filename=""/>
+	<sound key="squeal" filename=""/>
+	<sound key="ignition" filename=""/>
+	<sound key="horn" filename=""/>
+	<sound key="hit" filename=""/>
+	<sound key="hit" filename=""/>
+	<sound key="turret_rotation" filename=""/>
+	<sound key="destroy" filename=""/>
+	<effect event_key="drive_chassis" ref="music_musical_note_1" offset="0 0.5 0"/>
+	<effect event_key="health" value="75" ref="car_broken_spary_spark" offset="0 0 0"/>
+	<effect event_key="health" value="50" ref="car_broken_spary_spark" offset="0 0 0"/>
+	<effect event_key="health" value="50" ref="car_slide_up_smoke" offset="0 0 0"/>
+	<effect event_key="health" value="30" ref="car_broken_spary_spark" offset="0 0 0"/>
+	<effect event_key="health" value="30" ref="car_slide_up_smoke" offset="0 0 0"/>
+	<effect event_key="health" value="30" ref="car_destroyed_fire" offset="0 0 0"/>
+	<effect event_key="destroyed" ref="car_destroyed_fire" post_processing="0" offset="0 0 0"/>
+	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="1" offset="0 0 0"/>
+	<effect event_key="destroyed" ref="car_broken_spary_spark" post_processing="1" offset="0 0 0"/>
+	<event>
+	<trigger class="destroy"/>
+	<result class="notify_script" key="music_made_of_earth.wav"/>
+	</event>
+	<event>
+	<trigger class="destroy"/>
+	<result class="spawn" instance_class="visual_item" instance_key="hd_hellpod_vanish.visual_item" min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0 0"/>
+	</event>
+	<event>
+	<trigger class="destroy"/>
+	<result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor1.visual_item" min_amount="1" max_amount="3" offset="0 2.5 0" position_spread="1.5 1.5" direction_spread="0.15 0.3"/>
+	</event>
+	<event>
+	<trigger class="destroy"/>
+	<result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor2.visual_item" min_amount="0" max_amount="1" offset="0 2.5 0" position_spread="1.5 1.5" direction_spread="0.10 0.25"/>
+	</event>
+	<event>
+	<trigger class="destroy"/>
+	<result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor3.visual_item" min_amount="1" max_amount="2" offset="0 2.5 0" position_spread="1.5 1.5" direction_spread="0.12 0.20"/>
+	</event>
+	<event>
+	<trigger class="destroy"/>
+	<result class="spawn" instance_class="visual_item" instance_key="burning_piece_armor4.visual_item" min_amount="1" max_amount="2" offset="0 2.5 0" position_spread="1.5 1.5" direction_spread="0.2 0.25"/>
+	</event>
+	<event>
+	<trigger class="cleanup"/>
+	<result class="spawn" instance_class="visual_item" instance_key="burning_piece_cleanup.visual_item" min_amount="20" max_amount="30" offset="0 2.0 0" position_spread="1.5 1.5" direction_spread="0.1 0.1"/>
+	</event>
+	<modifier class="blast_range" value="0.0"/>
+	<modifier class="blast_damage" value="0.0"/>
+	<event key="spot_rp_reward">
+	<trigger class="spot"/>
+	<result class="reward" rp="100.0"/>
+	</event>
+	</vehicle>
 	<vehicle name="Extra Stash" key="stash_box.vehicle" map_view_atlas_index="25" should_be_destroyed="0" simulated_damage="5" usable_for_cover="0" allow_ai_to_use="0">
 	<tag name="metal_thin"/>
 	<tire_set offset="0.2 0 +0.2" radius="0.1"/>
@@ -6970,6 +7274,58 @@
 	<item_container class="armory" offset="0 0 0" soldier_group="stash_box"/>
 	<sky_diving chute_offset="0 0 0" trigger_height="20" gravity="-80" mesh_filename="" texture_filename=""/>
 	<visual class="chassis" mesh_filename="ender_chest.mesh" texture_filename="ender_chest.jpg"/>
+	<rev_sound filename="" low_pitch="0.8" high_pitch="1.0" low_rev="0.0" high_rev="0.3" volume="0.8"/>
+	<sound key="slide" filename=""/>
+	<sound key="squeal" filename=""/>
+	<sound key="ignition" filename=""/>
+	<sound key="horn" filename=""/>
+	<sound key="hit" filename=""/>
+	<sound key="hit" filename=""/>
+	<sound key="hit" filename=""/>
+	<sound key="destroy" filename=""/>
+	<sound key="destroy" filename=""/>
+	<event>
+	<trigger class="destroy"/>
+	<result class="spawn" instance_class="visual_item" instance_key="hd_hellpod_vanish.visual_item" min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0 0"/>
+	</event>
+	</vehicle>
+	<vehicle name="Stash" key="work_table_box.vehicle" map_view_atlas_index="-1" should_be_destroyed="0" simulated_damage="5" usable_for_cover="0" allow_ai_to_use="0">
+	<tag name="metal_thin"/>
+	<tire_set offset="0.2 0 +0.2" radius="0.1"/>
+	<tire_set offset="0.2 0 -0.2" radius="0.1"/>
+	<modifier class="blast_range" value="-50"/>
+	<modifier class="blast_damage" value="-1001.0"/>
+	<control max_speed="1.0" acceleration="1" max_reverse_speed="1.0" max_rotation="1.0" max_water_depth="4"/>
+	<physics max_health="10000.0" mass="10000.0" blast_push_threshold="1000" blast_damage_threshold="10" extent="10 0.0 10" offset="0 0 0" top_offset="0 2.0 0" collision_model_pos="0 -1 0" collision_model_extent="2.0 0.1 2.0" collision_response_factor="0" visual_offset="0 0 0" remove_collision_threshold="10" vehicle_collision_damage_factor="0" friction_offset="10" gravity="-10" destroy_on_top_hit="1" destroy_on_top_hit_time="3" top_hit_tracking_time="0"/>
+	<item_container class="stash" offset="0 0 0"/>
+	<sky_diving chute_offset="0 0 0" trigger_height="20" gravity="-80" mesh_filename="" texture_filename=""/>
+	<visual class="chassis" mesh_filename="mc_worktable.mesh" texture_filename="mc_worktable.jpg"/>
+	<rev_sound filename="" low_pitch="0.8" high_pitch="1.0" low_rev="0.0" high_rev="0.3" volume="0.8"/>
+	<sound key="slide" filename=""/>
+	<sound key="squeal" filename=""/>
+	<sound key="ignition" filename=""/>
+	<sound key="horn" filename=""/>
+	<sound key="hit" filename=""/>
+	<sound key="hit" filename=""/>
+	<sound key="hit" filename=""/>
+	<sound key="destroy" filename=""/>
+	<sound key="destroy" filename=""/>
+	<event>
+	<trigger class="destroy"/>
+	<result class="spawn" instance_class="visual_item" instance_key="hd_hellpod_vanish.visual_item" min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0 0"/>
+	</event>
+	</vehicle>
+	<vehicle name="Stash" key="wood_box.vehicle" map_view_atlas_index="-1" should_be_destroyed="0" simulated_damage="5" usable_for_cover="0" allow_ai_to_use="0">
+	<tag name="metal_thin"/>
+	<tire_set offset="0.2 0 +0.2" radius="0.1"/>
+	<tire_set offset="0.2 0 -0.2" radius="0.1"/>
+	<modifier class="blast_range" value="-50"/>
+	<modifier class="blast_damage" value="-1001.0"/>
+	<control max_speed="1.0" acceleration="1" max_reverse_speed="1.0" max_rotation="1.0" max_water_depth="4"/>
+	<physics max_health="10000.0" mass="10000.0" blast_push_threshold="1000" blast_damage_threshold="10" extent="10 0.0 10" offset="0 0 0" top_offset="0 2.0 0" collision_model_pos="0 -1 0" collision_model_extent="2.0 0.1 2.0" collision_response_factor="0" visual_offset="0 0 0" remove_collision_threshold="10" vehicle_collision_damage_factor="0" friction_offset="10" gravity="-10" destroy_on_top_hit="1" destroy_on_top_hit_time="3" top_hit_tracking_time="0"/>
+	<item_container class="armory" offset="0 0 0"/>
+	<sky_diving chute_offset="0 0 0" trigger_height="20" gravity="-80" mesh_filename="" texture_filename=""/>
+	<visual class="chassis" mesh_filename="mc_wood_box.mesh" texture_filename="mc_wood_box.png"/>
 	<rev_sound filename="" low_pitch="0.8" high_pitch="1.0" low_rev="0.0" high_rev="0.3" volume="0.8"/>
 	<sound key="slide" filename=""/>
 	<sound key="squeal" filename=""/>
@@ -9715,6 +10071,29 @@
 	<sound key="destroy" filename=""/>
 	<effect event_key="health" value="10000" ref="car_health_front_light" offset="0.0 0 0"/>
 	</vehicle>
+	<vehicle name="Cirno Fumo" key="ex_model_fumo_cirno.vehicle" map_view_atlas_index="-1" should_be_destroyed="0" usable_for_cover="0" allow_ai_to_use="0" respawn_time="0">
+	<tire_set offset="0.2 0 +0.2" radius="0.1"/>
+	<tire_set offset="0.2 0 -0.2" radius="0.1"/>
+	<control max_speed="1.0" acceleration="1" max_reverse_speed="1.0" max_rotation="1.0" max_water_depth="4"/>
+	<physics max_health="1000.0" mass="1000.0" extent="10 0.0 10" offset="0 0 0" top_offset="0 2.0 0" collision_model_pos="0 -1 0" collision_model_extent="2.0 0.1 2.0" collision_response_factor="0" visual_offset="0 0 0" remove_collision_threshold="10" vehicle_collision_damage_factor="0" friction_offset="10" gravity="-10" destroy_on_top_hit="1" destroy_on_top_hit_time="3" top_hit_tracking_time="0"/>
+	<turret offset="0 0 0" weapon_key="ex_model_fumo_cirno.weapon" weapon_offset="0.0 0 0.0" weapon_recoil="0.02" physics_recoil="0.0" max_rotation_step="0.00015" rotation="0" rotation_range="1.92"/>
+	<item_container class="armory" offset="0 0 0"/>
+	<sky_diving chute_offset="0 0 0" trigger_height="20" gravity="-80" mesh_filename="" texture_filename=""/>
+	<rev_sound filename="" low_pitch="0.8" high_pitch="1.0" low_rev="0.0" high_rev="0.3" volume="0.8"/>
+	<sound key="slide" filename=""/>
+	<sound key="squeal" filename=""/>
+	<sound key="ignition" filename=""/>
+	<sound key="horn" filename=""/>
+	<sound key="hit" filename=""/>
+	<sound key="hit" filename=""/>
+	<sound key="hit" filename=""/>
+	<sound key="destroy" filename=""/>
+	<sound key="destroy" filename=""/>
+	<event>
+	<trigger class="destroy"/>
+	<result class="spawn" instance_class="visual_item" instance_key="hd_hellpod_vanish.visual_item" min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0 0"/>
+	</event>
+	</vehicle>
 	<vehicle name="Allied Prism Tower" map_view_atlas_index="49" usable_for_cover="0" protectors="1" soldier_capacity_offset="1" key="illum_allied_prism_tower.vehicle" character_leave_request_mode="friendly" respawn_time="60">
 	<tag name="target"/>
 	<tag name="jeep"/>
@@ -9861,7 +10240,7 @@
 	<tire_set offset="1 0.0 -0.6" radius="0.45"/>
 	<tire_set offset="1 0.0 -1.12" radius="0.45"/>
 	<control max_speed="10.0" acceleration="15.0" max_reverse_speed="10.0" min_health_to_steer="0.6" max_rotation="0.6" max_water_depth="4.5" steer_smoothening="0.2" tracked="0" gears="1" max_limiter_speed="10.0"/>
-	<physics max_health="320" remove_collision_threshold="0.2" extent="3.84 0 4.16" offset="0 0.0 0" top_offset="0 1.2 0" drag_offset="-1" friction_offset="0.5" collision_model_pos="0 0.86 0.0" collision_model_extent="2.64 1.928 3.84" visual_offset="0 0.4 0" blast_damage_threshold="0" TODO_blast_damage_threshold="0" blast_push_threshold="1" mass="20.0" broken_mass="10" gravity="-200"/>
+	<physics max_health="640" remove_collision_threshold="0.2" extent="3.84 0 4.16" offset="0 0.0 0" top_offset="0 1.2 0" drag_offset="-1" friction_offset="0.5" collision_model_pos="0 0.86 0.0" collision_model_extent="2.64 1.928 3.84" visual_offset="0 0.4 0" blast_damage_threshold="0" TODO_blast_damage_threshold="0" blast_push_threshold="1" mass="20.0" broken_mass="10" gravity="-200"/>
 	<sky_diving chute_offset="0 2.1 0.0" trigger_height="20.0" gravity="-10" mesh_filename="chute_medium.mesh" texture_filename="chute.png"/>
 	<turret offset="0 0 0" weapon_key="illum_robot_tank.weapon" weapon_offset="0 2.7 1.5" weapon_recoil="0" physics_recoil="0.0" max_rotation_step="0.001" rotation="0"/>
 	<visual class="chassis" mesh_filename="illum_robot_tank_body.mesh" texture_filename="illum_robot_tank.jpg" max_tilt="0.02"/>

@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapons>
+<weapon 
+file="_hd_vehicle_cannon.base"
+key="ex_nova_cannon.weapon">
+    <specification 
+    retrigger_time="4.6" 
+    accuracy_factor="0.7" 
+    sustained_fire_grow_step="0.8" 
+    sustained_fire_diminish_rate="0.8" 
+    magazine_size="-1" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+    carry_in_two_hands="0" 
+    suppressed="0" 
+    name="WarMind-140 Nova" 
+    class="0" 
+    projectile_speed="200.0" 
+    slot="0" 
+    barrel_offset_3d="0 0 8.5"
+    projectiles_per_shot="1" 
+    />
+    <model mesh_filename="ex_nova_turrent.mesh" texture_filename="ex_nova_turrent.png" />
+    <hud_icon filename="hd_m5_apc_autocannon.png" />
+    <commonness value="0.0" />
+    
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="20" can_be_detected_by_footmen="1" 
+	time_to_live="1" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.85"> 
+		
+        <result class="spawn" instance_class="projectile" instance_key="ex_nova_damage.projectile" 
+		min_amount="20" max_amount="20" offset="0 0.5 0" position_spread="3.0 0" direction_spread="0.1 0" />
+		<!-- damage 8x50=400 轰炸伤-->
+
+		<!--命中音效-->
+		<sound class="result" key="other" fileref="at_hit_sfx_5.wav" pitch_variety="0.03" volume="1.0" />
+		<sound class="result" key="other" fileref="at_hit_sfx_6.wav" pitch_variety="0.03" volume="1.0" />
+	
+		<trigger class="impact" time_to_live="0.4"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+
+		<trail probability="1" key="nova_trail"/>	
+		<model mesh_filename="APFSDS.xml" />
+		
+		<effect class="result" key="terrain" ref="real_ground_crater" lighting="1" post_processing="1"/>
+		<effect class="result" key="terrain" ref="real_up_dust_beam" lighting="1" post_processing="0"/>
+		<effect class="result" key="terrain" ref="real_up_dust_spread" lighting="1" post_processing="0"/>
+		<effect class="result" key="terrain" ref="real_up_dust_stone" lighting="1" post_processing="1"/>
+		<effect class="result" key="terrain" ref="real_up_smoke_1" lighting="1" post_processing="0"/>
+		<effect class="result" key="terrain" ref="shadow_real_up_smoke_leave" lighting="1" post_processing="1"/>
+		<effect class="result" key="terrain" ref="shadow_real_up_smoke_leave_2" lighting="1" post_processing="1"/>
+		<effect class="result" key="terrain" ref="real_up_smoke_beam" lighting="1" post_processing="0"/>
+		<effect class="result" key="terrain" ref="real_up_impact_spread" lighting="1" post_processing="0"/>
+		<effect class="result" key="terrain" ref="real_up_impact_spark" lighting="1" post_processing="0"/>
+		<effect class="result" key="terrain" ref="real_up_impact_spark_2" lighting="1" post_processing="0"/>
+		<effect class="result" key="terrain" ref="real_up_impact_spark_1" lighting="1" post_processing="0"/>
+		<effect class="result" key="terrain" ref="real_smoke_1" lighting="1" post_processing="1"/>
+		<effect class="result" key="terrain" ref="real_firesmoke_1" lighting="0" post_processing="0"/>
+		<effect class="result" key="terrain" ref="real_firesmoke_2" lighting="0" post_processing="0"/>
+		<effect class="result" key="terrain" ref="nova_s_result_blast_ring" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_blast_ring_2" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="real_center_short_light" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="real_center_ambient_light" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="hk416_sc_gl_hit_smoke_02" post_processing="0"/>
+		
+		<effect class="activated" ref="general_activated_at_smoke_trail"/>
+		<effect class="activated" ref="nova_activated_cyclone"/>
+
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+		<trail probability="1" key="normal_trail_long" lighting="0"/>	
+    </projectile>
+	<!--枪口特效-->
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 		
+	<effect class="muzzle" ref="nova_muzzle_fire_smoke" post_processing="1"/>
+	<effect class="muzzle" ref="nova_muzzle_fire_smoke_2" post_processing="1"/>
+	<effect class="muzzle" ref="nova_muzzle_fireball" post_processing="1"/>
+	<effect class="muzzle" ref="nova_muzzle_fireball_side" />
+	<effect class="muzzle" ref="nova_muzzle_fireball_side_2" />
+	<effect class="muzzle" ref="nova_muzzle_fireball_side_3" post_processing="1"/>
+	<effect class="muzzle" ref="nova_muzzle_ambient"/>
+	<effect class="muzzle" ref="nova_muzzle_ambient_ground"/>
+	<effect class="muzzle" ref="nova_muzzle_spark"/>
+
+	<effect class="muzzle" ref="general_weapon_muzzle_trail_smoke_long_bold"/>
+
+    <sound class="operation" key="fire" fileref="ex_nova_fire.wav" pitch_variety="0.0" volume="4.0"/>
+
+</weapon>
+<weapon 
+file="_hd_vehicle_cannon.base"
+key="ex_nova_cannon_2.weapon">
+    <specification 
+    retrigger_time="4.6" 
+    accuracy_factor="0.7" 
+    sustained_fire_grow_step="0.8" 
+    sustained_fire_diminish_rate="0.8" 
+    magazine_size="-1" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+    carry_in_two_hands="0" 
+    suppressed="0" 
+    name="WarMind-140 Nova" 
+    class="0" 
+    projectile_speed="200.0" 
+    slot="0" 
+    barrel_offset_3d="0 0 8.5"
+    projectiles_per_shot="1" 
+    />
+    <model mesh_filename="ex_nova_turrent.mesh" texture_filename="ex_nova_turrent_2.png" />
+    <hud_icon filename="hd_m5_apc_autocannon.png" />
+    <commonness value="0.0" />
+    
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="20" can_be_detected_by_footmen="1" 
+	time_to_live="1" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.85"> 
+		
+        <result class="spawn" instance_class="projectile" instance_key="ex_nova_damage.projectile" 
+		min_amount="20" max_amount="20" offset="0 0.5 0" position_spread="3.0 0" direction_spread="0.1 0" />
+		<!-- damage 8x50=400 轰炸伤-->
+
+		<!--命中音效-->
+		<sound class="result" key="other" fileref="at_hit_sfx_5.wav" pitch_variety="0.03" volume="1.0" />
+		<sound class="result" key="other" fileref="at_hit_sfx_6.wav" pitch_variety="0.03" volume="1.0" />
+	
+		<trigger class="impact" time_to_live="0.4"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+
+		<trail probability="1" key="nova_trail"/>	
+		<model mesh_filename="APFSDS.xml" />
+		
+		<effect class="result" key="terrain" ref="real_ground_crater" lighting="1" post_processing="1"/>
+		<effect class="result" key="terrain" ref="real_up_dust_beam" lighting="1" post_processing="0"/>
+		<effect class="result" key="terrain" ref="real_up_dust_spread" lighting="1" post_processing="0"/>
+		<effect class="result" key="terrain" ref="real_up_dust_stone" lighting="1" post_processing="1"/>
+		<effect class="result" key="terrain" ref="real_up_smoke_1" lighting="1" post_processing="0"/>
+		<effect class="result" key="terrain" ref="shadow_real_up_smoke_leave" lighting="1" post_processing="1"/>
+		<effect class="result" key="terrain" ref="shadow_real_up_smoke_leave_2" lighting="1" post_processing="1"/>
+		<effect class="result" key="terrain" ref="real_up_smoke_beam" lighting="1" post_processing="0"/>
+		<effect class="result" key="terrain" ref="real_up_impact_spread" lighting="1" post_processing="0"/>
+		<effect class="result" key="terrain" ref="real_up_impact_spark" lighting="1" post_processing="0"/>
+		<effect class="result" key="terrain" ref="real_up_impact_spark_2" lighting="1" post_processing="0"/>
+		<effect class="result" key="terrain" ref="real_up_impact_spark_1" lighting="1" post_processing="0"/>
+		<effect class="result" key="terrain" ref="real_smoke_1" lighting="1" post_processing="1"/>
+		<effect class="result" key="terrain" ref="real_firesmoke_1" lighting="0" post_processing="0"/>
+		<effect class="result" key="terrain" ref="real_firesmoke_2" lighting="0" post_processing="0"/>
+		<effect class="result" key="terrain" ref="nova_s_result_blast_ring" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_blast_ring_2" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="real_center_short_light" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="real_center_ambient_light" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="hk416_sc_gl_hit_smoke_02" post_processing="0"/>
+		
+		<effect class="activated" ref="general_activated_at_smoke_trail"/>
+		<effect class="activated" ref="nova_activated_cyclone"/>
+
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+		<trail probability="1" key="normal_trail_long" lighting="0"/>	
+    </projectile>
+	<!--枪口特效-->
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 		
+	<effect class="muzzle" ref="nova_muzzle_fire_smoke" post_processing="1"/>
+	<effect class="muzzle" ref="nova_muzzle_fire_smoke_2" post_processing="1"/>
+	<effect class="muzzle" ref="nova_muzzle_fireball" post_processing="1"/>
+	<effect class="muzzle" ref="nova_muzzle_fireball_side" />
+	<effect class="muzzle" ref="nova_muzzle_fireball_side_2" />
+	<effect class="muzzle" ref="nova_muzzle_fireball_side_3" post_processing="1"/>
+	<effect class="muzzle" ref="nova_muzzle_ambient"/>
+	<effect class="muzzle" ref="nova_muzzle_ambient_ground"/>
+	<effect class="muzzle" ref="nova_muzzle_spark"/>
+
+	<effect class="muzzle" ref="general_weapon_muzzle_trail_smoke_long_bold"/>
+
+    <sound class="operation" key="fire" fileref="ex_nova_fire.wav" pitch_variety="0.0" volume="4.0"/>
+
+</weapon>
+<weapon 
+file="_hd_vehicle_cannon.base"
+key="ex_nova_missile.weapon">
+    <specification 
+    retrigger_time="0.15" 
+    accuracy_factor="1.0" 
+    sustained_fire_grow_step="0.26" 
+    sustained_fire_diminish_rate="0.3" 
+    magazine_size="-1" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+    carry_in_two_hands="0" 
+    suppressed="0" 
+    name="WarMind-140 NOVA" 
+    class="0" 
+    projectile_speed="100.0" 
+    slot="0" 
+    barrel_offset_3d="0 0 0"
+    projectiles_per_shot="1" 
+	sight_range_modifier="2.0" 
+	cooldown_start="0.9"
+	cooldown_end="0"
+    />
+    <model mesh_filename="" texture_filename="" />
+    <hud_icon filename="hd_m5_apc_autocannon.png" />
+    <commonness value="0.0" />
+
+	<ballistics 
+    curve_height="16" 
+    near_far_distance="0" 
+    speed_estimation_near="0" 
+    speed_estimation_far="58" 
+    max_speed="120" 
+    randomness="0" 
+    tweak_factor="1.48" />
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="48" can_be_detected_by_footmen="1" 
+	time_to_live="4" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.85"> 
+		
+        <!-- <result class="spawn" instance_class="projectile" instance_key="borsig_cannon_damage.projectile" 
+		min_amount="20" max_amount="20" offset="0 0.5 0" position_spread="3.0 0" direction_spread="0.1 0" /> -->
+
+		<result class="notify_script" key="ex_nova_missile" />
+
+		<!--命中音效-->
+		<trigger class="time" time_to_live="0.0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+
+    </projectile>
+	<!--枪口特效-->
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 		
+	<effect class="muzzle" ref="nova_muzzle_fire_smoke" post_processing="1"/>
+	<effect class="muzzle" ref="nova_muzzle_fire_smoke_2" post_processing="1"/>
+	<effect class="muzzle" ref="nova_muzzle_fireball" post_processing="1"/>
+	<!-- <effect class="muzzle" ref="nova_muzzle_fireball_side" /> -->
+	<!-- <effect class="muzzle" ref="nova_muzzle_fireball_side_2" /> -->
+	<!-- <effect class="muzzle" ref="nova_muzzle_fireball_side_3" post_processing="1"/> -->
+	<effect class="muzzle" ref="nova_muzzle_ambient"/>
+	<effect class="muzzle" ref="nova_muzzle_ambient_ground"/>
+	<effect class="muzzle" ref="nova_muzzle_spark"/>
+
+    <sound class="operation" key="fire" fileref="uragan_shot.wav" pitch_variety="0.05" volume="0.9"/>
+
+</weapon>
+<weapon 
+file="_hd_vehicle_mg.base"
+key="ex_nova_mg.weapon">
+    <specification  
+    slot="2"    
+    retrigger_time="0.06" 
+    last_burst_retrigger_time="0.06"
+    accuracy_factor="1.0" 
+    spread_range="0.15"
+    stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="0.5" 
+    sustained_fire_diminish_rate="2.3" 
+    magazine_size="-1" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+    can_shoot_prone="1" 
+    suppressed="0" 
+    class="0" 
+    name="MG-94 MK3 Machine Gun" 
+    sight_height_offset="1.0" 
+    burst_shots="1" 
+    projectiles_per_shot="1" 
+    projectile_speed="175.0"
+    barrel_offset="0.2" 
+    carry_in_two_hands="1" 
+    stab_enabled="0" 
+    stab_range="0" 
+    use_basic_muzzle_smoke_effect="0"
+    /> 
+	<!-- 1500rpm 1000mag -->
+    <sound key="fire" fileref="mg94_shot1.wav" pitch_variety="0.1" volume="0.45" />
+    <sound key="fire" fileref="mg94_shot2.wav" pitch_variety="0.1" volume="0.45" />
+    <sound key="fire" fileref="mg94_shot3.wav" pitch_variety="0.1" volume="0.45" />
+    <sound key="fire" fileref="mg94_shot4.wav" pitch_variety="0.1" volume="0.45" />
+    <sound key="fire" fileref="mg94_shot5.wav" pitch_variety="0.1" volume="0.45" />
+    <sound key="fire" fileref="mg94_shot6.wav" pitch_variety="0.1" volume="0.45" />
+    <sound key="fire" fileref="mg94_shot7.wav" pitch_variety="0.1" volume="0.45" />
+    <sound key="fire" fileref="mg94_shot8.wav" pitch_variety="0.1" volume="0.45" />
+    <sound key="fire" fileref="mg94_shot9.wav" pitch_variety="0.1" volume="0.45" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_02.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="magazine_out" fileref="hd_mg94_mag_out.wav" />
+    <sound key="magazine_in" fileref="hd_mg94_mag_in.wav" />
+    <sound key="cycle" fileref="rifle_chamber.wav" />
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" />
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" />
+    <sound key="last_ammo" fileref="" />
+	<sound class="impact" fileref="rifle_drop.wav" />
+    <model filename="" />
+
+    <hud_icon filename="hd_m5_apc_mg94.png" />
+    <commonness value="0" can_respawn_with="0" in_stock="0" /> 
+    <inventory encumbrance="10.0" price="2.0" />
+
+    <weak_hand_hold offset="0.4" />
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.6" can_be_detected_by_driver="1" can_be_disarmed="0"> 
+	
+        <result class="hit" kill_probability="1.0" 
+		kill_probability_offset_on_successful_hit="30"
+		kill_decay_start_time="1" kill_decay_end_time="1" character_state="death"/>
+		<!-- no decay -->
+		<!-- 100m max damage range -->
+		<!-- damage 65hit  -->
+    
+        <effect class="result" key="terrain" ref="hd_mg94_result_spray" lighting="0" />
+        <effect class="result" key="terrain" ref="hd_mg94_result_bullet_light_center" lighting="0" />
+        <effect class="result" key="terrain" ref="hd_mg94_result_bullet_smoke" lighting="0" />
+        <effect class="result" key="terrain" ref="hd_mg94_hit_leave" lighting="0" />
+        <effect class="activated" ref="hd_mg94_activated_bullet_light" lighting="0"/>
+        <effect class="activated" ref="hd_mg94_activated_bullet_light_center" lighting="0"/>
+        <effect class="activated" ref="hd_mg94_activated_bullet_ground_light" lighting="0"/>
+        <effect class="activated" ref="hd_mg94_activated_bullet_light_center_yellow" lighting="0" post_processing="1"/>
+    
+        <sound class="result" key="terrain" copy="other" />
+        <sound class="result" key="static_object" copy="other" />
+        <sound class="result" key="vehicle" copy="other" />
+        <sound class="result" key="character" copy="other" />
+        <effect class="result" key="other" copy="terrain"/>
+        <effect class="result" key="static_object" copy="terrain" />
+        <effect class="result" key="character" copy="terrain" />
+        <effect class="result" key="vehicle" copy="terrain" />
+        <trail probability="1.0" key="hd_mg94_trail" lighting="0"/> 
+    </projectile>
+
+		<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+		<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 
+	    <effect class="muzzle" ref="hd_mg94_laser" lighting="0"/> 
+    
+    <!-- MG -->
+    <target_factors tag=""              distance="1.0" direction="0.0" squad_command="1.0" base_score="0.5" />
+    <target_factors tag="heavy_combat"  distance="1.0" direction="0.0" squad_command="1.0" base_score="0.01" />
+    <target_factors tag="apc"           distance="1.0" direction="0.0" squad_command="1.0" base_score="0.01" />
+    <target_factors tag="light_combat"  distance="1.0" direction="0.0" squad_command="1.0" base_score="0.01" />   
+    <target_factors tag="defensive_at"  distance="1.0" direction="0.0" squad_command="1.0" base_score="0.01" />
+    <target_factors tag="tactical"      distance="1.0" direction="0.0" squad_command="1.0" base_score="8.0" /> 
+    <target_factors tag="bazooka"       distance="1.0" direction="0.0" squad_command="1.0" base_score="9.9" />
+    <target_factors tag="gl"       distance="1.0" direction="0.0" squad_command="1.0" base_score="9.9" />
+    <target_factors tag="machine gun"       distance="1.0" direction="0.0" squad_command="1.0" base_score="9.9" /> 
+    
+
+</weapon>
+</weapons>

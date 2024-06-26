@@ -106,7 +106,12 @@ class match_end : Tracker {
             }
             m_wornup_reward_list.resize(0);
             m_wornup_reward_list.insertLast(name);
-            _notify(m_metagame,pid,"恭喜你获得暖服奖励资格，当局游戏结束时超过8人，你可获得两倍结算奖励");
+            if(!isEng(name)){
+                _notify(m_metagame,pid,"恭喜你获得暖服奖励资格，当局游戏结束时超过8人，你可获得两倍结算奖励");
+            }else{
+                _notify(m_metagame,pid,"Congratulations on earning the 'Warm Server' bonus! When the game ends with more than 8 players, you will receive double the reward for your participation in boosting the server's activity.");
+            }
+
             for(uint i = 0 ; i < players.size() ; ++i ){
                 @player = players[i];
                 if(player is null){continue;}
@@ -175,7 +180,11 @@ class match_end : Tracker {
                     string r_name = m_wornup_reward_list[j];
                     if(r_name == name){
                         GiveRP(m_metagame,cid,int(rp));
-                        _notify(m_metagame,pid,"暖服奖励已发放，额外RP奖励："+int(rp));
+                        if(isEng(name)){
+                            _notify(m_metagame,pid,"暖服奖励已发放，额外RP奖励："+int(rp));
+                        }else{
+                            _notify(m_metagame,pid,"'Warm Server' bonus has send, extra RP:"+int(rp));
+                        }
                     }
                 }
             }

@@ -1354,6 +1354,52 @@ particle_system nova_muzzle_APFS_out_l : nova_muzzle_APFS_out_r
 		rotation_range_end	10
 	}
 }
+particle_system nova_activated_cyclone
+{
+	quota 200
+	material crescent_05
+	particle_width 4.5
+	particle_height 4.5
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.25
+		duration 0
+	}
+	affector Scaler
+	{
+		rate -4
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	-3600
+		rotation_speed_range_end	-3600
+		rotation_range_start	90
+		rotation_range_end	90
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0 1
+		time1 0.7
+		colour1 1 0.3 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
 --------------------------------------material-----------------------------------
 material alpha_blend_base{
 	receive_shadows off
@@ -1518,4 +1564,11 @@ material lens_circle_07 : add_base
     pass{
         texture_unit{
             texture lens_circle_07.png 	
+}}}}
+material crescent_05 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture crescent_05.png 	
 }}}}

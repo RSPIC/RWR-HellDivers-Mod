@@ -68,6 +68,9 @@ class IO_data : Tracker {
         save_data = false;
         m_playerInfo_FILENAME = "_playerinfo.xml";
         m_reward_keys_FILENAME = "reward_keys.xml";
+        if(g_single_player){
+            updatePlayers();
+        }
     }
     // --------------------------------------------
 	bool hasEnded() const {
@@ -108,7 +111,7 @@ class IO_data : Tracker {
 		handleMyInviteKey(message,p_name);
 	}
     // -------------------------------------------
-    protected void handleRewardKeys(string&in message,string&in p_name){
+    void handleRewardKeys(string&in message,string&in p_name){
         if(startsWith(message,"/key")){
             XmlElement@ allInfo = XmlElement(readFile(m_reward_keys_FILENAME));
             if(allInfo is null){
@@ -657,12 +660,12 @@ class IO_data : Tracker {
     // -------------------------------------------
     // target_tags 传入格式如下：
     // <root>
-    //     <target_tag (可选)player_name="">
+    //     <target_tag  player_name=""(可选)>
     //         <access_tag  value="1"/>
     //         <access_tag2 />
     //     </target_tag>
     // </root>
-    protected bool checkTagsInPlayerInfo(string sid, const XmlElement@ root_target_tags){
+    bool checkTagsInPlayerInfo(string sid, const XmlElement@ root_target_tags){
         XmlElement@ allInfo = XmlElement(readPlayerInfo(sid));
         if(allInfo is null){
             _log("allInfo is null, in addToPlayersInfo");
@@ -774,7 +777,8 @@ class IO_data : Tracker {
         return isAllPlayerValid;
     }
     // -------------------------------------------
-    protected void addToPlayersInfo(array<const XmlElement@> xmls, string sid){
+    //  必须要有player_name
+    void addToPlayersInfo(array<const XmlElement@> xmls, string sid){
         XmlElement@ allInfo = XmlElement(readPlayerInfo(sid));
         if(allInfo is null){
             _log("allInfo is null, in addToPlayersInfo");
@@ -898,6 +902,14 @@ class IO_data : Tracker {
             string player_name = player.getStringAttribute("name");
             string profile_hash = player.getStringAttribute("profile_hash");
             string sid = player.getStringAttribute("sid");
+
+            // 针对单机二次载入存档时候的脚本加载问题处理
+            // 二次加载没有连接和复活事件，但是玩家信息可以提前查到
+            // 单机里主机玩家强制绑定ID0，主机玩家在二次载入存档时会正确识取到SID，这是不希望出现的
+            if(g_single_player && g_playerCount <= 1){
+                sid = "ID0";
+            }
+
             string ip = "0.0.0.0";
             if(player.hasAttribute("ip")){
                 ip = player.getStringAttribute("ip");
@@ -992,8 +1004,8 @@ class IO_data : Tracker {
         writeXML(m_metagame,sid,allInfo);
     }
 
-    protected bool handleReward(string&in p_name,string&in access_tag){
-        int pid = g_playerInfoBuck.getPidByName(p_name);
+    bool handleReward(string&in p_name,string&in access_tag){
+        int pid = g_playerInfoBuck.getPidByName(m_metagame,p_name);
         const XmlElement@ player = getPlayerInfo(m_metagame,pid);
         if(player is null){
             _log("handleReward player is null");
@@ -1008,17 +1020,67 @@ class IO_data : Tracker {
         // 权限兑换
         if(access_tag == "DanceKey_v1"){
             upgrade@ tempTack = upgrade(m_metagame);
-            XmlElement newXml("priority");
-                newXml.setStringAttribute("key","DanceKey_v1");
-                newXml.setStringAttribute("type","Dance");
-            tempTack.writeUpgradeFile(p_name,"prioritys",newXml);
-            _notify(m_metagame,pid,"You get Dance priority level-1");
-            return true;
+            if(!tempTack.checkAccess(p_name,"prioritys","DanceKey_v1")){
+                XmlElement newXml("priority");
+                    newXml.setStringAttribute("key","DanceKey_v1");
+                    newXml.setStringAttribute("type","Dance");
+                tempTack.writeUpgradeFile(p_name,"prioritys",newXml);
+                _notify(m_metagame,pid,"You get Dance priority level-1");
+                return true;
+            }else{
+                _notify(m_metagame,pid,"You get Dance priority level-1");
+            }
         }
 
         // 常规兑换
         array<Resource@> resources = array<Resource@>();
         Resource@ res;
+        if(access_tag == "AdminStash"){//管理员脚本仓库升级
+            string sid = g_playerInfoBuck.getSidByName(p_name);
+            playerStashInfo@ m_playerStashInfo = playerStashInfo(m_metagame,sid,p_name);
+            if(!m_playerStashInfo.isOpen(false)){
+                m_playerStashInfo.openStash(false);
+            }
+            m_playerStashInfo.upgradeStash(200,true);
+            m_playerStashInfo.openStash(false);
+
+            dictionary a;
+            a["%reward"] = "200格脚本仓库容量";
+            notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+            return true;
+        }
+        if(access_tag == "Mascot"){//管理奖励
+            @res = Resource("reward_box_collection.carry_item","carry_item");
+            res.addToResources(resources,1);
+            @res = Resource("reward_box_weapon_alpha.carry_item","carry_item"); //玩具箱子
+            res.addToResources(resources,1);
+            addListItemInBackpack(m_metagame,cid,resources);
+            GiveRP(m_metagame,cid,3000000);
+            dictionary a;
+            a["%reward"] = "RP: 300w";
+            notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+            return true;
+        }
+        if(access_tag == "Guide"){//管理奖励
+            @res = Resource("reward_box_collection.carry_item","carry_item");
+            res.addToResources(resources,1);
+            addListItemInBackpack(m_metagame,cid,resources);
+            GiveRP(m_metagame,cid,5000000);
+            dictionary a;
+            a["%reward"] = "RP: 500w";
+            notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+            return true;
+        }
+        if(access_tag == "Publisher"){//管理奖励
+            @res = Resource("reward_box_collection.carry_item","carry_item");
+            res.addToResources(resources,1);
+            addListItemInBackpack(m_metagame,cid,resources);
+            GiveRP(m_metagame,cid,5000000);
+            dictionary a;
+            a["%reward"] = "RP: 500w";
+            notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+            return true;
+        }
         if(access_tag == "HappyNewYear"){//新年奖励
             if(xp >= 251.773){
                 @res = Resource("reward_box_collection.carry_item","carry_item");

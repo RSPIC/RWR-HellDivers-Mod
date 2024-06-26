@@ -21,11 +21,11 @@ particle_system hd_emoticon_good
 		angle 0
 		colour 0 0 0 0
 		direction 0 1 0
-		emission_rate 10
+		emission_rate 100
 		position 0 2 0
 		velocity 0.0001
 		time_to_live 1
-		duration 0.1
+		duration 0.01
 	}
 	affector Scaler
 	{
@@ -53,9 +53,19 @@ particle_system hd_emoticon_sorry : hd_emoticon_good
 }
 particle_system hd_emoticon_le : hd_emoticon_good
 {
+    particle_width 4
+	particle_height 4
+    material ui_le
+    emitter Point
+	{
+		position 0 3 0
+	}
+}
+particle_system hd_emoticon_no : hd_emoticon_good
+{
     particle_width 2
 	particle_height 2
-    material ui_le
+    material ui_no
     emitter Point
 	{
 		position 0 3 0
@@ -165,6 +175,13 @@ material add_base{
 	}
 }
 
+material ui_no : alpha_blend_base
+{   technique{pass{texture_unit{
+				texture ui_no.png 	
+                wave_xform rotate triangle 0 2 0 0.05
+                tex_address_mode border
+                tex_border_colour 0 0 0 0
+}}}}
 material ui_good : alpha_blend_base
 {   technique{pass{texture_unit{
 				texture ui_good.png 	

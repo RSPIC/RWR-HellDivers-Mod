@@ -1620,43 +1620,43 @@
 	<text key="BattleReward Help" text="[Tutor]Battle Reward System" />
 
 	<text key="Help - Content" text="#Welcome to HellDivers Mod
-#Join us Discord：xxxxxxxx To get new diver kits.
+#Join us Discord:xxxxxxxx To get new diver kits.
 #Enter /help can get more tutor for this mod.
 #Open BGM to get best game
 	" />
 	<text key="ServerInfo" text="Click me to check server information" />
 	<text key="Help - Server3" text="#Difficulty: Level-3 LOL
-#Server Bouns：25% Battle Reward Bouns
-#Friendly Ai Rate：1.2 / Enemy Ai Rate：1.0
-#Base Alert CD：48s
+#Server Bouns:25% Battle Reward Bouns
+#Friendly Ai Rate:1.2 / Enemy Ai Rate:1.0
+#Base Alert CD:48s
 #Every player reduce Alert 0.8s CD；Enemies more lower, reduce Alert CD 
 #Enemies reinforcements numbers and creature depend server difficulty
 " />
 	<text key="Help - Server6" text="#Difficulty: Level-6 Easy
-#Server Bouns：20% XP Bouns, 25% Battle Reward Bouns
-#Friendly Ai Rate：1.2 / Enemy Ai Rate：1.0
-#Base Alert CD：42s
+#Server Bouns:20% XP Bouns, 25% Battle Reward Bouns
+#Friendly Ai Rate:1.2 / Enemy Ai Rate:1.0
+#Base Alert CD:42s
 #Every player reduce Alert 0.8s CD；Enemies more lower, reduce Alert CD 
 #Enemies reinforcements numbers and creature depend server difficulty
 " />
 	<text key="Help - Server9" text="#Difficulty: Level-9 Normal
-#Server Bouns：50% XP Bouns, 25% Battle Reward Bouns
-#Friendly Ai Rate：1.2 / Enemy Ai Rate：2.0
-#Base Alert CD：36s
+#Server Bouns:50% XP Bouns, 25% Battle Reward Bouns
+#Friendly Ai Rate:1.2 / Enemy Ai Rate:2.0
+#Base Alert CD:36s
 #Every player reduce Alert 0.8s CD；Enemies more lower, reduce Alert CD 
 #Enemies reinforcements numbers and creature depend server difficulty
 " />
 	<text key="Help - Server12" text="#Difficulty: Level-12 Hard
-#Server Bouns：20% XP Bouns
-#Friendly Ai Rate：1.2 / Enemy Ai Rate：3.0
-#Base Alert CD：30s
+#Server Bouns:20% XP Bouns
+#Friendly Ai Rate:1.2 / Enemy Ai Rate:3.0
+#Base Alert CD:30s
 #Every player reduce Alert 0.8s CD；Enemies more lower, reduce Alert CD 
 #Enemies reinforcements numbers and creature depend server difficulty
 " />
 	<text key="Help - Server15" text="#Difficulty: Level-15 Hell
-#Server Bouns：None
-#Friendly Ai Rate：1.2 / Enemy Ai Rate：4.0
-#Base Alert CD：24s
+#Server Bouns:None
+#Friendly Ai Rate:1.2 / Enemy Ai Rate:4.0
+#Base Alert CD:24s
 #Every player reduce Alert 0.8s CD；Enemies more lower, reduce Alert CD 
 #Enemies reinforcements numbers and creature depend server difficulty
 " />
@@ -1696,7 +1696,7 @@ TK other player also reduce your factor of bouns." />
 
 	<text key="EXO-Help" text="[Tutor]Welcome equipped EXO weapons" />
 	<text key="Help - EXO-2" text="[Tutor]EXO weapons were more powerful than other normal weapons, but run slower than normal. Your armors will change EXO armors, when you equipped right weapons." />
-	<text key="Help - EXO-3" text="Warning：EXO weapons ammo were limited, DO NOT equip different EXO weapons!" />
+	<text key="Help - EXO-3" text="Warning:EXO weapons ammo were limited, DO NOT equip different EXO weapons!" />
 	<text key="EXO Armor onload" text="EXO armor onload" />
 	<text key="EXO Armor offload" text="EXO armor offload" />
 
@@ -2191,5 +2191,68 @@ Time used: &#37; value8 Player: &#37; key8(9th)
 <comment key="Yes sir" text="" />
 <comment key="Uh, I can't drive this thing" text="* Confused squeak *" />
 
+<comment key="密钥不正确或已被使用完，注意大小写" text="The key is incorrect or has been used up. Pay attention to the case." />
+
+<text key="Divers Join the BattleFiled" text="Divers&#37;name Join the BattleFiled" />
+<text key="数字输入错误,示例:/login 10" text="Number input error, example: /login 10" />
+
+<text key="击杀敌人" text="Kill Enemy" />
+<text key="研发升级系统已注册" text="Upgrade System registed" />
+<text key="已拥有该护甲，现已装配" text="You owned this vest, now equited" />
+<text key="已拥有该武器，已送至背包" text="You owned this Weapon, now send to backpack" />
+<text key="已研发该武器，现已装配" text="You owned this Weapon, now send to backpack" />
+<text key="医疗针已配给" text="Medic Needel Has Resupply" />
+<text key="冲击雷已配给" text="Inpact Grenade Has Resupply" />
+<text key="自动回血已配置" text="AutoRecover has Setted" />
+<text key="自救针已配置" text="AutoHeal has Setted" />
+
+<text key="科研系统已注册" text="The Rresearch System has been registered" />
+<text key="未获取到你的装备信息" text="Your equipment information was not obtained" />
+<text key="物品已送至背包" text="The item has been sent to the backpack" />
+<text key="该武器（或模式）无法进行科研，尝试切换为一模式" text="This weapon (or mode) cannot be used for research. Try switching to a mode." />
+<text key="当前武器科研进度100%,已完成该科研" text="Your weapon Research progress is 100%. You finished The Research." />
+<text key="你因为击杀友军而被惩罚，倒地状态再次击杀将会死亡" text="You are punished for killing an ally, and you will die if you kill again when you are down." />
+<text key="TK惩罚" text="TK punishment" />
+<text key="小技能'爆裂咏叹调'已释放" text="The small skill 'Explosion Aria' has been released" />
+<text key="小技能'暗黑狙击'已释放" text="The small skill 'Dark Sniper' has been released" />
+
+<text key="[轻甲] CM-21战壕护理员 [右键购买以研发/装备][需求:5-研究点][属性:20层 +0.125移速][功能:自动补给医疗针/抗眩晕]" text="[Light] CM-21 [Needs: 5-Reserch Poiont][Info:20 Layer +0.125 Speed][Function: AutoGive MD-99Needel/Anti Stun]" />
+<text key="[轻甲] SC-30开路侦察兵 [右键购买以研发/装备][需求:5-研究点][属性:20层 +0.075移速][功能:+0.12隐蔽值]" text="[Light] SC-30 [Needs: 5-Reserch Poiont][Info:20 Layer +0.075 Speed][Function: +0.12 Invisibility]" />
+<text key="[中甲] DP-11人民捍卫者 [右键购买以研发/装备][需求:5-研究点][属性:40层][民主庇佑:爆炸/轰炸伤害无法杀死你 但你无法自救]" text="[Mid] DP-11 [Needs: 5-Reserch Poiont][Info:40 Layer][Function: You will get wouned instead get deaded when kill by blast damage, and you can't heal yourself]" />
+<text key="[中甲] DP-53自由救星 [右键购买以研发/装备][需求:5-研究点][属性:40层][民主庇佑:爆炸/轰炸伤害无法杀死你 但你无法自救]" text="[Mid] DP-53 [Needs: 5-Reserch Poiont][Info:40 Layer][Function: You will get wouned instead get deaded when kill by blast damage, and you can't heal yourself]" />
+<text key="[中甲] TR-9民主骑兵 [右键购买以研发/装备][需求:5-研究点][属性:40层][民主庇佑:爆炸/轰炸伤害无法杀死你 但你无法自救]" text="[Mid] TR-9 [Needs: 5-Reserch Poiont][Info:40 Layer][Function: You will get wouned instead get deaded when kill by blast damage, and you can't heal yourself]" />
+<text key="[中甲] SA-12伺服辅助 [右键购买以研发/装备][需求:5-研究点][属性:40层][功能:+0.05移速]" text="[Mid] SA-12 [Needs: 5-Reserch Poiont][Info:40 Layer][Function: +0.05 Speed]" />
+<text key="[中甲] CE-35战壕工程师 [右键购买以研发/装备][需求:5-研究点][属性:40层][功能:自动补给冲击雷]" text="[Mid] CE-35 [Needs: 5-Reserch Poiont][Info:40 Layer][Function: Auto Resupply Impact Grenade]" />
+
+
+ <!-- 管理 -->
+<text key="Admin Kick Player Guide" text="Kick player use/kick id
+PlayerID are below
+0: &#37;valuea0
+1: &#37;valuea1
+2: &#37;valuea2
+3: &#37;valuea3
+4: &#37;valuea4
+5: &#37;valuea5
+6: &#37;valuea6
+7: &#37;valuea7
+8: &#37;valuea8
+9: &#37;valuea9
+10: &#37;valueb10
+11: &#37;valueb11
+12: &#37;valueb12
+13: &#37;valueb13
+14: &#37;valueb14
+15: &#37;valueb15
+16: &#37;valueb16
+17: &#37;valueb17
+18: &#37;valueb18
+19: &#37;valueb19
+" />
+
+<text key="AdminHelp" text="Administrator command menu 
+1: /kick <id> Kick player
+2: /salary Receive administrator rewards
+" />
 </translation>
 

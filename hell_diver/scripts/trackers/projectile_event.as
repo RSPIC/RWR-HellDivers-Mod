@@ -765,7 +765,7 @@ class projectile_event : Tracker {
                 }
                 string name = g_playerInfoBuck.getNameByCid(characterId);
                 if(g_vestInfoBuck.getHealNeedle(name)){
-                    healCharacter(m_metagame,characterId,120);//此处修改回复层数
+                    healCharacter(m_metagame,characterId,30);//此处修改回复层数
                 }else{
                     int pid = g_playerInfoBuck.getPidByCid(characterId);
                     _notify(m_metagame,pid,"你的护甲不具备治疗针功能");
@@ -862,6 +862,45 @@ class projectile_event : Tracker {
                     float speed = 50;
                     float height = 16;
                     CreateProjectile_H(m_metagame,ePos,aimPosition,key1,m_cid,m_fid,speed,height);
+                }
+                GiveRP(m_metagame,m_cid,-100);
+                break;
+            }
+            case 65:{//ex_nova_missile nova坦克跟踪导弹
+                int m_cid = event.getIntAttribute("character_id");
+                int pid = g_playerInfoBuck.getPidByCid(m_cid);
+                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+                int m_fid = g_playerInfoBuck.getFidByCid(m_cid);
+                array<const XmlElement@> factions = getFactions(m_metagame);
+                int ATKTimes = 1;
+                for (uint f = 1; f < factions.size(); ++f){ //跳过自身阵营查询
+                    if(ATKTimes <= 0){break;}
+                    const XmlElement@ faction = factions[f];
+                    if(faction is null){continue;}
+                    int t_fid = faction.getIntAttribute("id");
+                    array<const XmlElement@>@ soldiers = getCharactersNearPosition(m_metagame, ePos, t_fid, 90.0f);				
+                    int s_size = soldiers.length();
+                    if (s_size == 0) continue;
+                    while(ATKTimes > 0 && soldiers.length() > 0){
+                        ATKTimes--;
+                        int s_i = rand(0,soldiers.length()-1);
+                        int soldier_id = soldiers[s_i].getIntAttribute("id");
+                        soldiers.removeAt(s_i);
+                        Vector3 soldier_pos = stringToVector3(getCharacterInfo(m_metagame, soldier_id).getStringAttribute("position"));
+                        string key1 = "ex_nova_missile_damage.projectile";
+                        float speed = 58;
+                        float height = 16;
+                        CreateProjectile_H(m_metagame,ePos,soldier_pos,key1,m_cid,m_fid,speed,height);
+                    }
+                }
+                if(ATKTimes == 1){// 没有查到敌人
+                    string m_name = g_playerInfoBuck.getNameByPid(pid);
+                    if(isEng(m_name)){
+                        _notify(m_metagame,pid,"No enemy in Detect Range");
+                    }else{
+                        _notify(m_metagame,pid,"范围内没有敌人");
+                    }
+                    return;
                 }
                 GiveRP(m_metagame,m_cid,-100);
                 break;

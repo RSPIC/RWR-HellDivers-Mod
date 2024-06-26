@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<visual_items> 
+<visual_item 
+key="ex_nova_turrent.visual_item" time_to_live="40">
+
+    <model mesh_filename="ex_nova_turrent_full.mesh" texture_filename="ex_nova_turrent_broken.png" />
+
+    <effect ref="BurningPieces" />
+    <effect ref="rocket_launcher_trial_smoke" post_processing="1"/>
+    <effect ref="rocket_launcher_shell_light" />
+</visual_item>
+<visual_item 
+key="ex_nova_turrent_2.visual_item" time_to_live="40">
+
+    <model mesh_filename="ex_nova_turrent_full.mesh" texture_filename="ex_nova_turrent_2_broken.png" />
+
+    <effect ref="BurningPieces" />
+    <effect ref="rocket_launcher_trial_smoke" post_processing="1"/>
+    <effect ref="rocket_launcher_shell_light" />
+</visual_item>
+</visual_items>

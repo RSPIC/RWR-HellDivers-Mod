@@ -78,7 +78,9 @@ class player_spawn : Tracker {
 		list.insertLast(d);
 		list.insertLast(e);
 		CreateListDirectProjectile(m_metagame,list);
-		sendFactionMessage(m_metagame,fid,"潜兵 "+name+" 已部署战场");
+		dictionary a;
+		a["%name"] = name;
+		sendFactionMessageKey(m_metagame,fid,"Divers Join the BattleFiled",a);
 
 		//首次连接不会提示，二次复活才提示
         string value; //临时变量

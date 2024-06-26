@@ -341,7 +341,7 @@ class kill_reward : Tracker {
 					int cost = 0;
             		if(skill_cost.get(targetCostKey,cost)){
 						if(nowCost == cost-1){
-							_notify(m_metagame,k_pid,"Cost已满"+cost+"/"+cost);
+							_notify(m_metagame,k_pid,"Cost Full"+cost+"/"+cost);
 						}
 						if(nowCost == cost){//Cost无法累计溢出，同时就绪提示只提示一次
 							return;
@@ -378,6 +378,7 @@ class kill_reward : Tracker {
 			}
 		}
 		if(k_pid != -1 && t_pid != -1 && k_pid != t_pid){//玩家TK
+			_log("PlayerKillEvent,killer:"+k_name+" ,target:"+t_name+", key="+weaponKey);
 			string sid = g_playerInfoBuck.getSidByName(k_name);
 			if (checkBanBySid(sid)){
 				kickPlayer(m_metagame,k_pid);
@@ -392,12 +393,21 @@ class kill_reward : Tracker {
 				if(m_tkInfo[i].isUpToTkLimit(k_name,t_name)){
 					if(wound == 0 && !m_tkInfo[i].isTodeadth(k_name)){
 						setWoundCharacter(m_metagame,killer_cid);
+						
 						notify(m_metagame, "你因为击杀友军而被惩罚，倒地状态再次击杀将会死亡", dictionary(), "misc", k_pid, false, "TK惩罚", 1.0);
-						notify(m_metagame, "伤害你的玩家"+k_name+"已被惩罚", dictionary(), "misc", t_pid, false, "TK惩罚", 1.0);
+						if(isEng(t_name)){
+							notify(m_metagame, "The player "+k_name+" who harmed you has been punished", dictionary(), "misc", t_pid, false, "TK惩罚", 1.0);
+						}else{
+							notify(m_metagame, "伤害你的玩家"+k_name+"已被惩罚", dictionary(), "misc", t_pid, false, "TK惩罚", 1.0);
+						}
 					}else if(wound == 1 || m_tkInfo[i].isTodeadth(k_name)){
 						setDeadCharacter(m_metagame,killer_cid);
 						_report(m_metagame,"玩家"+k_name+"因为TK玩家"+t_name+"而受到了惩罚");
-						notify(m_metagame, "伤害你的玩家"+k_name+"已受到死亡惩罚", dictionary(), "misc", t_pid, false, "TK惩罚", 1.0);
+						if(isEng(t_name)){
+							notify(m_metagame, "The player "+k_name+" who harmed you has been punished with death", dictionary(), "misc", t_pid, false, "TK惩罚", 1.0);
+						}else{
+							notify(m_metagame, "伤害你的玩家"+k_name+"已受到死亡惩罚", dictionary(), "misc", t_pid, false, "TK惩罚", 1.0);
+						}
 					}
 					if(m_tkInfo[i].isToBanned(k_name)){
 						kickPlayer(m_metagame,k_pid);
@@ -407,11 +417,15 @@ class kill_reward : Tracker {
 			}
 			if(g_server_activity_racing){
 				setDeadCharacter(m_metagame,killer_cid);
+				GiveRP(m_metagame,killer_cid,-10000);
 				_report(m_metagame,"玩家"+k_name+"因为在活动服TK玩家"+t_name+"而受到了死亡惩罚");
 			}else{
-				_notify(m_metagame,k_pid,"你TK了玩家"+t_name+"，请及时在聊天栏道歉");
+				if(isEng(t_name)){
+					_notify(m_metagame,k_pid,"You TKed the player "+t_name+", please apologize promptly in the chat.");
+				}else{
+					_notify(m_metagame,k_pid,"你TK了玩家"+t_name+"，请及时在聊天栏道歉");
+				}
 			}
-			
 		}
 	}
 	protected bool checkBanBySid(string t_sid){

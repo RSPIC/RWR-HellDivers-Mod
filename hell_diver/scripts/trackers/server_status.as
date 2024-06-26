@@ -105,7 +105,7 @@ class server_status : Tracker{
                 XmlElement info("Time");
                     info.setIntAttribute("server_running_time",0);
                     info.setIntAttribute("inGameDay",0);
-                    info.setIntAttribute("oneDayTime",60*24); //分钟
+                    info.setIntAttribute("oneDayTime",4000); //分钟
                     // info.setIntAttribute("oneDayTime",15);
             actinfos.appendChild(info);
             writeXML(m_metagame,m_FILENAME,actinfos);

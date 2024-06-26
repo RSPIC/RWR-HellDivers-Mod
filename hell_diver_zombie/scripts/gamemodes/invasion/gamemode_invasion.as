@@ -66,6 +66,7 @@
 #include "upgrade.as"
 #include "hd_daily_mission.as"
 #include "server_status.as"
+#include "server_admin_manager.as"
 
 // 独有脚本
 #include "kill_to_win.as"
@@ -379,7 +380,6 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		addTracker(call_event(this));    
 		addTracker(player_spawn(this));
 		addTracker(dynamic_alert(this));   
-		addTracker(schedule_Manager(this));  
 		addTracker(schedule_Check(this));  
 		addTracker(bgm_control(this));  
 		addTracker(Initiate(this));  
@@ -393,12 +393,14 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		addTracker(chat_icon(this));  
 		addTracker(vehicle_destroyed(this));  
 		addTracker(extra_stash(this));  
+		addTracker(schedule_Manager(this));  
 		addTracker(vehicle_recycle(this));  
 		addTracker(kill_to_win(this));  
 		addTracker(cap_to_lock_base(this));  
 		
 		addTracker(hd_daily_mission(this));  
 		addTracker(server_status(this));  
+		addTracker(server_admin_manager(this));
 	}
 
 	protected void setupDisableRadioAtMatchOver() {

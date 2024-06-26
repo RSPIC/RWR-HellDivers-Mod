@@ -102,6 +102,10 @@ class call_event : Tracker {
                         break;
                     }
                     case 3:{//四人空投
+                        if(g_server_activity_racing){
+                            _notify(m_metagame,playerId,"Can't use this in Racing");
+                            return;
+                        }
                         const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
                         if (character !is null) {
                             Vector3 t_pos = stringToVector3(position);
@@ -133,6 +137,10 @@ class call_event : Tracker {
                         break;
                     }
                     case 4:{//地狱火
+                        if(g_server_activity_racing){
+                            _notify(m_metagame,playerId,"Can use this in Racing");
+                            return;
+                        }
                         const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
                         if (character !is null) {
                             Vector3 t_pos = stringToVector3(position);

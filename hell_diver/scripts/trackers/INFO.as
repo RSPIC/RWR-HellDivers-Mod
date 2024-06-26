@@ -186,6 +186,7 @@ class playerInfo {
 	float m_rp;
 	string m_hash;
 	string m_sid;
+	bool m_english_player = false;
 
 	playerInfo(const string&in name,const int&in pid,const int&in cid,const int&in fid,const int&in dead,const int&in wound,const float&in xp,const float&in rp,string group = "default"){
 		m_name = name;
@@ -250,6 +251,13 @@ class playerInfo {
 	void updateWound(int wound){m_wound = wound;}
 	void setHash(string&in hash){m_hash = hash;}
 	void setSid(string&in sid){m_sid = sid;}
+	bool setEnglishPlayer(){
+		m_english_player = !m_english_player;
+		return m_english_player;
+	}
+	bool isEng(){
+		return m_english_player;
+	}
 
 	int getCidByPid(int&in pid){
 		if(m_pid == pid){
@@ -670,6 +678,9 @@ class playerInfoBuck{
 		return "";
 	}
 	string getSidByName(Metagame@ m_metagame,string&in name){
+		if(g_single_player && g_playerCount <= 1){
+            return "ID0"; // 单机模式固定玩家的SID为0，防止变动
+        }
 		array<const XmlElement@> players = getPlayers(m_metagame);
 		for(uint j = 0; j < players.size() ; ++j){
 			const XmlElement@ player = players[j];
@@ -717,6 +728,22 @@ class playerInfoBuck{
 				m_playerInfo[i].setSid(sid);
 			}
 		}
+	}
+	bool setEnglishPlayer(string name){
+		for(uint i=0; i<size();++i){
+			if(name == m_playerInfo[i].getName()){
+				return m_playerInfo[i].setEnglishPlayer();
+			}
+		}
+		return false;
+	}
+	bool isEng(string name){
+		for(uint i=0; i<size();++i){
+			if(name == m_playerInfo[i].getName()){
+				return m_playerInfo[i].isEng();
+			}
+		}
+		return false;
 	}
 
 	void clearAll(){
@@ -1699,7 +1726,8 @@ bool g_spawn_with_ai = true; // 复活自带AI
 // bool g_spawn_with_ai = false; // 复活自带AI
 
 bool g_fastScriptDebug = false; // 脚本快速测试
-bool g_useMergedXml = false; // 采用快速打包加载文件
+bool g_useMergedXml = true; // 采用快速打包加载文件
+bool g_English_version = false; // 采用英文
 
 bool g_heal_on_kill = true; // 击杀回甲
 bool g_exo_armor = true; // 机甲是否装配护甲
@@ -1869,6 +1897,21 @@ class Initiate : Tracker {
 		string message = event.getStringAttribute("message");
 		string p_name = event.getStringAttribute("player_name");
 		int pid = event.getIntAttribute("player_id");
+		if(message == "/english" || message == "/ENGLISH"){
+			if(g_playerInfoBuck.setEnglishPlayer(p_name)){
+				_notify(m_metagame,pid,"[Local] English Translation is On");
+			}else{
+				_notify(m_metagame,pid,"[Local] English Translation is OFF");
+			}
+			if(g_single_player){
+				g_English_version = !g_English_version;
+			}
+			if(g_English_version){
+				_notify(m_metagame,pid,"[Gloalbal] English Translation is On");
+			}else{
+				_notify(m_metagame,pid,"[Gloalbal] English Translation is On");
+			}
+		}
 		if(m_metagame.getAdminManager().isAdmin(p_name)){
 			if(message == "/debug"){
 				g_debugMode = !g_debugMode;
@@ -1921,4 +1964,9 @@ class Initiate : Tracker {
 		}
 	}
 		
+}
+
+// 方便英文检测的全局方法
+bool isEng(string name){
+	return g_playerInfoBuck.isEng(name);
 }

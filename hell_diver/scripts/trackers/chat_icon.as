@@ -71,6 +71,10 @@ class chat_icon : Tracker{
             string key = "hd_chat_effect_sorry.projectile";
             CreateDirectProjectile(m_metagame,ePos,ePos,key,cid,0,1);
         }
+		if(message == "no" ){
+            string key = "hd_chat_effect_no.projectile";
+            CreateDirectProjectile(m_metagame,ePos,ePos,key,cid,0,1);
+        }
 
         // 跳舞功能--------------------------------------------------
         if(message == "win" ){

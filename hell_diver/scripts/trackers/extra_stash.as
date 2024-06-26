@@ -766,6 +766,16 @@ class playerStashInfoBuck {
         playerStashInfo@ info = playerStashInfo(m_metagame,newplayer);
         m_playerStashInfos.insertLast(info);
     }
+    void addInfo(Metagame@ m_metagame,string name,string sid){
+        for(uint i = 0 ; i < m_playerStashInfos.size() ; ++i){
+            string m_name = m_playerStashInfos[i].getName();
+            if(m_name == name){
+                return;
+            }
+        }
+        playerStashInfo@ info = playerStashInfo(m_metagame,sid,name);
+        m_playerStashInfos.insertLast(info);
+    }
 
     void changePage(string sid,int direction){
         for(uint i = 0 ; i < m_playerStashInfos.size() ; ++i){
@@ -860,6 +870,19 @@ class extra_stash : Tracker {
         m_timer = m_time;
         save_data = false;
         m_playerStashInfoBuck.clearAll();
+        if(g_single_player){    
+            // 针对单机二次载入存档时候的脚本加载问题处理
+            // 二次加载没有连接和复活事件，但是玩家信息可以提前查到
+            // 单机里主机玩家强制绑定ID0，主机玩家在二次载入存档时会正确识取到SID，这是不希望出现的
+            array<const XmlElement@> players = getPlayers(m_metagame);
+            for(uint i=0;i<players.size();++i){
+                const XmlElement@ player = players[i];
+                if(player is null){continue;}
+                string name = player.getStringAttribute("name");
+                _log("extra_stash get playername="+name);
+                m_playerStashInfoBuck.addInfo(m_metagame,name,"ID0");
+            }
+        }
     }
     // --------------------------------------------
 	bool hasEnded() const {

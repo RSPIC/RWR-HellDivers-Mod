@@ -2,18 +2,20 @@
 <vehicle name="Ex Supply Box" 
 key="acg_ex_box.vehicle" 
 map_view_atlas_index="25" 
-time_to_live="180.0" 
 should_be_destroyed="0" 
-
 simulated_damage="5"
 usable_for_cover="0"
 allow_ai_to_use="0"
+respawn_time="0"
  >
 	<tag name="metal_thin" />
 
 	<tire_set offset="0.2 0 +0.2" radius="0.1" />
 	<tire_set offset="0.2 0 -0.2" radius="0.1" />
 
+	<modifier class="blast_range" value="-50" />
+	<modifier class="blast_damage" value="-1001.0" />
+	
 	<control max_speed="1.0" acceleration="1" max_reverse_speed="1.0" max_rotation="1.0" max_water_depth="4" />
 
 	<physics max_health="200.0" 

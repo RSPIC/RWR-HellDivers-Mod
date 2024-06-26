@@ -954,6 +954,66 @@ particle_system general_weapon_muzzle_trail_smoke_long
 		keep_velocity false
 	}
 }
+particle_system general_weapon_muzzle_trail_smoke_long_bold
+{
+	quota 50
+	material muzzle_trail_smoke
+	particle_width 6
+	particle_height 100
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin bottom_center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 0
+		colour 1 1 1 0.5
+		direction 0 1 0
+		emission_rate 30
+		position 0 0 0
+		velocity_min 0.1
+		velocity_max 0.2
+		time_to_live 1.0
+		duration 0.1
+		width 0.1
+		height 0.1
+		depth 3
+	}
+	affector Scaler
+	{
+		rate 1
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 0.1
+		time1 0.6
+		colour1 0.5 0.5 0.5 0.1
+		time2 1
+		colour2 0.4 0.4 0.4 0
+	}
+	affector LinearForce{
+		force_vector 0 0 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+}
 particle_system general_weapon_activated_bullet_centerlight
 {
 	quota 100
@@ -1290,7 +1350,7 @@ particle_system general_weapon_result_gl_spray
 
 particle_system general_weapon_activated_flying_mars		//冲锋枪用
 {
-	quota 500
+	quota 300
 	material point_soft_edge_100
 	particle_width 0.3
 	particle_height 0.3
@@ -1313,7 +1373,7 @@ particle_system general_weapon_activated_flying_mars		//冲锋枪用
 		velocity_max 3
 		time_to_live_min 0.3
 		time_to_live_max 0.6
-		duration 0
+		duration 1
 	}
 	affector Scaler
 	{
@@ -3352,3 +3412,10 @@ material lava_anim : alpha_blend_base
 			tex_address_mode wrap
 		}
 }}}
+material add_smoke_2 : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture add_smoke_2.png	
+}}}}

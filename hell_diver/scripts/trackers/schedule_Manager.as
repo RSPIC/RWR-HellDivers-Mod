@@ -52,6 +52,21 @@ class schedule_Manager : Tracker {
         _log("schedule_Manager initiate");
         //first run
         removeAllGlobalPlayerInfo(m_metagame);
+        
+        if(g_single_player){    
+            // 针对单机二次载入存档时候的脚本加载问题处理
+            // 二次加载没有连接和复活事件，但是玩家信息可以提前查到
+            // 单机里主机玩家强制绑定ID0，主机玩家在二次载入存档时会正确识取到SID，这是不希望出现的
+            // 注意，识取和脚本加载次序有关，后期加载的脚本可以识取，可能此时玩家信息已经加载
+            array<const XmlElement@> players = getPlayers(m_metagame);
+            for(uint i=0;i<players.size();++i){
+                const XmlElement@ player = players[i];
+                if(player is null){continue;}
+                string name = player.getStringAttribute("name");
+                _log("schedule_Manager get playername="+name);
+                update_info(player,"ID0");
+            }
+        }
     }
     
     void start(){
@@ -87,11 +102,11 @@ class schedule_Manager : Tracker {
         if(m_players is null){return;}
         for (uint j = 0; j < m_players.size(); ++j) {
 			const XmlElement@ player = m_players[j];
+            string name = player.getStringAttribute("name");
 			if(player is null){return;}
             if(g_auto_heal){
                 auto_heal(player);
             }
-            //update_AllInfo();
         }
     }
     // --------------------------------------------
@@ -143,18 +158,23 @@ class schedule_Manager : Tracker {
         }
     }
     // --------------------------------------------
-    void update_info(const XmlElement@ player){
+    void update_info(const XmlElement@ player,string s_sid = ""){
+        _log("updateinfo for s_sid="+s_sid);
         if(player is null){return;}
         int pid = player.getIntAttribute("player_id");
+        _log("updateinfo for pid="+pid);
         if(g_debugMode) _report(m_metagame,"更新玩家PID为="+pid);
-        @player = getPlayerInfo(m_metagame,pid);
+        // @player = getPlayerInfo(m_metagame,pid);
         updateGlobalPlayerInfo(m_metagame);
-        if(player is null){
-            return;
-        }
+        // if(player is null){
+        //     return;
+        // }
         string name = player.getStringAttribute("name");
         string profile_hash = player.getStringAttribute("profile_hash");
         string sid = player.getStringAttribute("sid");
+        if(s_sid != ""){
+            sid = s_sid;
+        }
         int cid = player.getIntAttribute("character_id");
         if(g_debugMode) _report(m_metagame,"更新玩家CID，玩家名为="+name+",CID为="+cid);
         int fid = player.getIntAttribute("faction_id");

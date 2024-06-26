@@ -29,6 +29,7 @@
 	<vehicle file="sdkfz184.vehicle" /><!--大象-->
 	<vehicle file="marder.vehicle" /><!--黄鼠狼战车-->
 	<vehicle file="ex_warthog.vehicle" /><!--疣猪号机枪吉普-->
+	<vehicle file="ex_nova.vehicle" /><!--NOVA-->
 
 	<!-- 原版 -->
 	<vehicle file="radar_tower.vehicle" />
@@ -45,6 +46,7 @@
 	<vehicle file="ex_piano.vehicle" /><!--主题钢琴-->
 	<vehicle file="ex_gramophone.vehicle" />	<!--唱片-->
 	<vehicle file="stash_box.vehicle" />	<!--脚本仓库-->
+	<vehicle file="work_table_box.vehicle" />   
 
 	<!-- 飞机 -->
 	<vehicle file="mi_24.vehicle" />	<!--米 24 直升机-->
@@ -82,8 +84,8 @@
 
 	<vehicle file="racing.vehicle" />   
 
-
 	<!-- 活动载具 -->
 	<vehicle file="act_hongbao.vehicle" />   
+	<vehicle file="hd_models.vehicle" />   
 	
 </vehicles>

@@ -1940,6 +1940,7 @@ TK其他玩家同样会造成倍率因子的下降" />
 5、载具阵亡后玩家会同步阵亡。阵亡默认退出当前比赛。
 " />
 <!-- 每日任务 -->
+<text key="Dayly Mission List" text="每日任务列表" />
 <text key="DaylyMission" text="每日任务(输入/day 查看)
 &#37;day
 &#37;sign
@@ -1954,6 +1955,34 @@ TK其他玩家同样会造成倍率因子的下降" />
 &#37;value8
 &#37;value9
 " />
+ <!-- 管理 -->
+<text key="Admin Kick Player Guide" text="踢出玩家使用/kick id
+当前玩家ID列表如下
+0: &#37;valuea0
+1: &#37;valuea1
+2: &#37;valuea2
+3: &#37;valuea3
+4: &#37;valuea4
+5: &#37;valuea5
+6: &#37;valuea6
+7: &#37;valuea7
+8: &#37;valuea8
+9: &#37;valuea9
+10: &#37;valueb10
+11: &#37;valueb11
+12: &#37;valueb12
+13: &#37;valueb13
+14: &#37;valueb14
+15: &#37;valueb15
+16: &#37;valueb16
+17: &#37;valueb17
+18: &#37;valueb18
+19: &#37;valueb19
+" />
+<text key="AdminHelp" text="管理员指令菜单
+1: /kick id 踢出玩家
+2: /salary 领取管理员奖励
+" />
 
 <!-- 武器合成 -->
 <text key="Now in ReWeapon phase, sell 10 same type weapons while having ONE in your hand, and you can get ReWeapon which can respawn with." text="已进入武器合成阶段，现在开始持续出售十件同类型武器即可获得复活自带版本" />
@@ -1964,6 +1993,8 @@ TK其他玩家同样会造成倍率因子的下降" />
 <text key="Can't copy your weapon" text="该武器无法复制" />
 
 <text key="You get Dance priority level-1" text="你获得了额外舞蹈动作，输入/dance随机播放" />
+
+<text key="Divers Join the BattleFiled" text="潜兵&#37;name 已部署战场" />
 
 </translation>
 

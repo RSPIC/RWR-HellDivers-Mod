@@ -354,6 +354,42 @@ key="deploy_rabbit.weapon"
 
     <modifier class="speed" value="-0.4" />    
 </weapon>
+<weapon 
+file="_rare_weapon_mk1.base"
+key="deploy_fake_fumo_cirno.weapon" 
+>
+    <tag name="defensive_equipment" />
+    <specification 
+    accuracy_factor="1" 
+	spread_range="0.1"
+    magazine_size="1" 
+    can_shoot_standing="0" 
+    can_shoot_crouching="1" 
+    carry_in_two_hands="1" 
+    name="Cirno Fumo[Deploy]" 
+    class="5" 
+    spawn_instance_class="vehicle" 
+    spawn_instance_key="ex_model_fumo_cirno.vehicle" 
+    consume="0" 
+    sight_range_modifier="1" 
+    slot="1" 
+    deployment="1"
+    />
+    <animation state_key="running" 		animation_key="walking, carrying load" />
+    <animation state_key="walking" 		animation_key="walking, carrying load" />
+    <animation state_key="hold" 		animation_key="still, carrying load" />
+    <animation state_key="hold_on_wall" 	animation_key="still, carrying load" />
+    <animation state_key="hold_casual" 		animation_key="still, carrying load" />
+    <animation state_key="still_against_wall"	animation_key="still, carrying load" />
+    <animation state_key="recoil" 		animation_key="deploy_SLOW" />
+    <animation state_key="crouching" 		animation_key="crouch still, carrying load" />
+    <animation state_key="crouch_moving" 	animation_key="crouching forwards, carrying load" />
+    <animation state_key="changing_weapon_in" 	animation_key="change weapon in, single hand carry" />
+    <model mesh_filename="collect_fumo_cirno.xml" />
+    <hud_icon filename="collect_fumo_cirno.png" />
+
+    <modifier class="speed" value="-0.4" />    
+</weapon>
 <weapon
 rop_count_factor_on_death="0" 
 drop_count_factor_on_player_death="0.0"

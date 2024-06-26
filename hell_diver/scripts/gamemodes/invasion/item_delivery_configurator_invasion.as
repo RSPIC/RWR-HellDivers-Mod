@@ -492,7 +492,8 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("hd_scout_main.weapon", "weapon", 1.0f),
         	ScoredResource("ex_money_gun.weapon", "weapon", 1.0f),
         	ScoredResource("ex_auto_guaguale_i_gun.weapon", "weapon", 1.0f),
-        	ScoredResource("deploy_rabbit.weapon", "weapon", 1.0f)
+        	ScoredResource("deploy_rabbit.weapon", "weapon", 1.0f),
+        	ScoredResource("deploy_fake_fumo_cirno.weapon", "weapon", 1.0f)
 
 			},
 			{

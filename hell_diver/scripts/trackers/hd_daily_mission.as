@@ -637,7 +637,7 @@ class playerMissionInfo {
         return tasks;
     }
 
-    void getSignInReward(){
+    void getSignInReward(int days = 0){
         string fatherTag = "SignInReward";
         const XmlElement@ info = readMissionInfo(fatherTag);
         if(info is null){
@@ -651,9 +651,19 @@ class playerMissionInfo {
         if(DailyTask is null){return;}
         int continueSignInDays = DailyTask.getIntAttribute("continueSignInDays");
 
+        int pid = g_playerInfoBuck.getPidByName(m_name);
         string rewardKey = "";
-        
-        if(continueSignInDays == 10 || continueSignInDays == 20){
+        if(days != 0){
+            if(continueSignInDays <  days){
+                if(isEng(m_name)){
+                    _notify(m_metagame,pid,"The number of consecutive days you signed in is: "+continueSignInDays+", which is less than "+days+" days");
+                }else{
+                    _notify(m_metagame,pid,"你连续签到天数为:"+continueSignInDays+",不足"+days+"天");
+                }
+                return;
+            }
+            rewardKey = "SignInDays"+days;
+        }else if(continueSignInDays == 10 || continueSignInDays == 20){
             array<const XmlElement@> SignIns = SignInReward.getChilds();
             for(int j = 0 ; j < int(SignIns.size()) ; ++j){
                 XmlElement@ SignIn = XmlElement(SignIns[j]);
@@ -682,11 +692,20 @@ class playerMissionInfo {
                     }
                     if(thePlayer.exchangeItems(list.m_deleteObjects,list.m_getObjects,false)){
                         thePlayer.openStash(false);
-                        int pid = g_playerInfoBuck.getPidByName(m_name);
-                        _notify(m_metagame,pid,"恭喜获得连续登陆"+continueSignInDays+"天奖励，已发送至背包");
+                        if(isEng(m_name)){
+                            _notify(m_metagame,pid,"Congratulations on getting the reward of "+days+" for consecutive login days, which has been sent to your backpack.");
+                        }else{
+                            _notify(m_metagame,pid,"恭喜获得连续登陆"+days+"天奖励，已发送至背包");
+                        }
+                        return;
                     }
                 }
             }
+        }
+        if(isEng(m_name)){
+            _notify(m_metagame,pid,"There is no "+days+" day login reward");
+        }else{
+            _notify(m_metagame,pid,"不存在"+days+"天登陆奖励");
         }
     }
     void getRewardOfMission(string missionName, string missionType = "any"){
@@ -783,9 +802,15 @@ class playerMissionInfo {
                     needTimes = task.m_subMission.m_need_times;
                     finishedTimes = task.m_subMission.m_finished_times;
                 }
+                if(isEng(m_name)){
+                    baseCnName = task.m_task_name;
+                    if(task.hasSubMission()){
+                        subBaseCnName = task.m_subMission.m_task_name;
+                    }
+                }
                 string strvalue;
                 strvalue = "%value"+j;
-                a[strvalue] = "Eeay "+baseCnName+":"+subBaseCnName+" "+finishedTimes+"/"+needTimes;
+                a[strvalue] = "Easy "+baseCnName+":"+subBaseCnName+" "+finishedTimes+"/"+needTimes;
                 if(taskType == "TaskHard"){
                     a[strvalue] = "Hard "+baseCnName+":"+subBaseCnName+" "+finishedTimes+"/"+needTimes;
                 }
@@ -793,13 +818,20 @@ class playerMissionInfo {
         }
         if(isAllFinished){
             a["%value0"] = "已完成所有任务";
+            if(isEng(m_name)){
+                a["%value0"] = "Finished All missions";
+            }
         }
         a["%day"] = "距离下次更新剩余进度:"+getNextServerDayRate(m_metagame)+"/100%";
         const XmlElement@ DailyTask = readMissionInfo("DailyTask");
         if(DailyTask is null){return;}
         int continueSignInDays = DailyTask.getIntAttribute("continueSignInDays");
         a["%sign"] = "累计签到:"+continueSignInDays+"天";
-        notify(m_metagame, "DaylyMission", a, "misc", pid, true, "每日任务列表", 1.0);
+        if(isEng(m_name)){
+            a["%day"] = "Next Day Left"+getNextServerDayRate(m_metagame)+"/100%";
+            a["%sign"] = "Continue Signed:"+continueSignInDays+"Days";
+        }
+        notify(m_metagame, "DaylyMission", a, "misc", pid, true, "Dayly Mission List", 1.0);
     }
     bool checkDayUpdated(){
         return m_nowDay < getDays();
@@ -908,6 +940,13 @@ class playerMissionInfoBuck {
         for(uint i = 0; i<size(); i++){
             if(name == m_playerMissionInfos[i].m_name){
                 m_playerMissionInfos[i].getPermission();
+            }
+        }
+    }
+    void getSignInReward(string name,int days){
+        for(uint i = 0; i<size(); i++){
+            if(name == m_playerMissionInfos[i].m_name){
+                m_playerMissionInfos[i].getSignInReward(days);
             }
         }
     }
@@ -1090,6 +1129,17 @@ class hd_daily_mission : Tracker{
         message = message.toLowerCase();
         if(message == "/day"){
             g_playerMissionInfoBuck.getPermission(p_name);
+        }
+        if(startsWith(message,"/login")){
+            string days = message.substr(message.findFirst(" ")+1);
+            int Days = 0;
+            if(isNumeric(days)){
+                Days = parseInt(days);
+            }else{
+                _notify(m_metagame,senderId,"数字输入错误,示例:/login 10");
+                return;
+            }
+            g_playerMissionInfoBuck.getSignInReward(p_name,Days);
         }
         if(g_debugMode|| g_online_TestMode || m_metagame.getAdminManager().isAdmin(p_name,senderId) ){
             if(message == "/newinfo"){

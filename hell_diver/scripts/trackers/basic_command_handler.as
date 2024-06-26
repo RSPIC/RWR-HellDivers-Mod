@@ -98,8 +98,6 @@ class BasicCommandHandler : Tracker {
 			handleSidInfo(message,senderId);
 		} else if (checkCommand(message, "kick_id")) {
 			handleKick(message, senderId, true);
-		} else if (checkCommand(message, "kick")) {
-			handleKick(message, senderId);
 		} else if (checkCommand(message, "0_win")) {
 			m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='1' />");
 			m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='2' />");

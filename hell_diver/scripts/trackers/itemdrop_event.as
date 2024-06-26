@@ -401,7 +401,7 @@ class itemdrop_event : Tracker {
 			if(containerId == 0 ){//地面
 				_log("containerId = gound");
 				if(itemKey == "hd_ammo_supply_box_ex.projectile"){//补给背包特殊机制
-					string ExKey="hd_ammo_supply_box_ex_2.projectile";//替换为特殊子弹箱（拾取后会补给并被删除)
+					string ExKey="hd_ammo_supply_box_ex_2.projectile";//替换为特殊子弹箱（识取后会补给并被删除)
 					Vector3 t_pos = stringToVector3(position);
 					if(isVectorInMap(t_pos)){
 						spawnStaticItem(m_metagame,ExKey,t_pos,characterId,factionId,"projectile");

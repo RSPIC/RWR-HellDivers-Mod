@@ -131,6 +131,7 @@ class KeYan : Tracker{
             _log("allInfo is null, in addReserchedXp");
             return;
         }
+        string name = g_playerInfoBuck.getNameByPid(pid);
         // 读取存档玩家账号信息
         array<const XmlElement@> m_stashs = allInfo.getChilds();
 
@@ -162,13 +163,24 @@ class KeYan : Tracker{
                         keyRegistered = true;
                         m_researchedXp += researchedXp;
                         child.setFloatAttribute("researchedXp",m_researchedXp);
-
-                        _notify(m_metagame,pid,"本局已获得"+researchedXp+"w XP研究经验（全局经验 10%）");
+                        if(isEng(name)){
+                            _notify(m_metagame,pid,"This Battle Get"+researchedXp+"w XP Research EXP (Global EXP +10%)");
+                        }else{
+                            _notify(m_metagame,pid,"本局已获得"+researchedXp+"w XP研究经验（全局经验 10%）");
+                        }
                         child.setBoolAttribute("OnResearch",true);
                         if(m_researchedXp >= m_requiredXp){ //没有用XML记录里的requiredXp，便于以后出台科研XP打折的活动
-                            _notify(m_metagame,pid,"当前武器科研进度100%,已完成该科研");
+                            if(isEng(name)){
+                                _notify(m_metagame,pid,"The progress rate of your researched weapon has reached 100%!");
+                            }else{
+                                _notify(m_metagame,pid,"当前武器科研进度100%,已完成该科研");
+                            }
                         }else{
-                            _notify(m_metagame,pid,"当前武器科研进度:"+m_researchedXp+"/"+m_requiredXp+"w XP");
+                            if(isEng(name)){
+                                _notify(m_metagame,pid,"The progress rate of your researched weapon:"+m_researchedXp+"/"+m_requiredXp+"w XP");
+                            }else{
+                                _notify(m_metagame,pid,"当前武器科研进度:"+m_researchedXp+"/"+m_requiredXp+"w XP");
+                            }
                         }
                     }
                     m_stash.appendChild(child);
@@ -228,7 +240,7 @@ class KeYan : Tracker{
                     }
                 }
             }else{
-                _notify(m_metagame,pid,"该武器无法进行科研");
+                _notify(m_metagame,pid,"该武器（或模式）无法进行科研，尝试切换为一模式");
             }
         }
     }
@@ -268,24 +280,40 @@ class KeYan : Tracker{
                     child.setBoolAttribute("OnResearch",false);
                     if(m_targetKey == targetKey){
                         keyRegistered = true;
-                        _notify(m_metagame,pid,"已选定该武器"+targetKey+"作为科研对象");
+                        if(isEng(name)){
+                            _notify(m_metagame,pid,"You selected weapon:"+targetKey+"for Research target");
+                        }else{
+                            _notify(m_metagame,pid,"已选定该武器"+targetKey+"作为科研对象");
+                        }
                         child.setBoolAttribute("OnResearch",true);
                         if(m_researchedXp >= requiredXp){ //没有用XML记录里的requiredXp，便于以后出台科研XP打折的活动
                             _notify(m_metagame,pid,"当前武器科研进度100%,已完成该科研");
                             child.setFloatAttribute("researchedXp",m_researchedXp-requiredXp);
                             isTrue = true;
                         }else{
-                            _notify(m_metagame,pid,"当前武器科研进度:"+m_researchedXp+"/"+requiredXp+"w XP");
+                            if(isEng(name)){
+                                _notify(m_metagame,pid,"The progress rate of your researched weapon:"+m_researchedXp+"/"+requiredXp+"w XP");
+                            }else{
+                                _notify(m_metagame,pid,"当前武器科研进度:"+m_researchedXp+"/"+requiredXp+"w XP");
+                            }
                         }
                         if(useGlobalXp){
                             if(m_researchedXp < requiredXp){
                                 if(m_globalXp >= (requiredXp - m_researchedXp)){
                                     m_stash.setFloatAttribute("globalXp",(m_globalXp - (requiredXp - m_researchedXp)));
                                     child.setFloatAttribute("researchedXp",0);
-                                    _notify(m_metagame,pid,"已使用全局XP完成当前武器科研进度，剩余全局XP："+int(m_globalXp)+"w XP");
+                                    if(isEng(name)){
+                                        _notify(m_metagame,pid,"Global XP has been used to complete the current weapon research progress, and the remaining global XP is:"+int(m_globalXp)+"w XP");
+                                    }else{
+                                        _notify(m_metagame,pid,"已使用全局XP完成当前武器科研进度，剩余全局XP："+int(m_globalXp)+"w XP");
+                                    }
                                     isTrue = true;
                                 }else{
-                                    _notify(m_metagame,pid,"全局XP不足,当前武器已研究"+m_researchedXp+"/"+requiredXp+"w XP，剩余全局XP："+int(m_globalXp)+"w XP");
+                                    if(isEng(name)){
+                                        _notify(m_metagame,pid,"Global XP is insufficient, the current weapon has been researched:"+m_researchedXp+"/"+requiredXp+"w XP, remaining global XP:"+int(m_globalXp)+"w XP");
+                                    }else{
+                                        _notify(m_metagame,pid,"全局XP不足,当前武器已研究"+m_researchedXp+"/"+requiredXp+"w XP，剩余全局XP："+int(m_globalXp)+"w XP");
+                                    }
                                 }
                             }else{
                                 _notify(m_metagame,pid,"当前武器科研进度100%,已完成该科研");
@@ -298,7 +326,11 @@ class KeYan : Tracker{
                 }
                 if(!keyRegistered){
                     _debugReport(m_metagame,"玩家未科研信息,新建");
-                    _notify(m_metagame,pid,"已开始当前武器的科研,需求经验:"+requiredXp+"w Xp");
+                    if(isEng(name)){
+                        _notify(m_metagame,pid,"Research on the current weapon has begun, and experience is required:"+requiredXp+"w Xp");
+                    }else{
+                        _notify(m_metagame,pid,"已开始当前武器的科研,需求经验:"+requiredXp+"w Xp");
+                    }
                     XmlElement info("research");
                         info.setStringAttribute("key", targetKey);
                         info.setFloatAttribute("researchedXp", 0);

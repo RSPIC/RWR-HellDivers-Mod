@@ -93,8 +93,9 @@ force_as_shoots_blast_projectiles="0"
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
     <projectile file="hd_general_spawn.projectile" time_to_live="0.05" > 
         <trigger class="impact" time_to_live="0" />
-        <result class="blast" radius="3.0" damage="2" push="0.1" decal="0" character_state="wound" 
-        make_vehicle_hit_sound="0" faction_compare="not_equal"/>
+        <result class="hit" kill_probability="2" 
+		kill_probability_offset_on_successful_hit="1"
+		kill_decay_start_time="0.1" kill_decay_end_time="0.1" character_state="wound"/>
 
         <trail probability="1" key=""/>	
     </projectile>

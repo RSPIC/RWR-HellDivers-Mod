@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<vehicles> 
 <vehicle 
 file="_vehicle_hvy.base"
 name="WarMind-140 Nova" 
-key="nova.vehicle" 
+key="ex_nova.vehicle" 
 allow_ai_to_use="0"
 reserves_spawn_point="1"
 map_view_atlas_index="59" 
@@ -13,77 +14,171 @@ character_leave_request_mode="friendly"
    	<tag name="tank" />
 	<tag name="any_tank" />
 
-	<tire_set offset="2 0 +2.5" radius="0.3" />
-	<tire_set offset="2 0 -2.5" radius="0.3" />
+	<tire_set offset="2 0 +2.5" radius="0.36" />
+	<tire_set offset="2 0 -2.5" radius="0.36" />
 
 	<control 
-	max_speed="14" acceleration="15.0" 
+	max_speed="18" acceleration="22.0" 
 	max_reverse_speed="14.0" min_health_to_steer="0.6" 
-	max_rotation="0.0" max_water_depth="3" 
-	steer_smoothening="0.98" tracked="1" 
-	gears="1" max_limiter_speed="6.0"/>
+	max_rotation="0.1" max_water_depth="4" 
+	steer_smoothening="0.7" tracked="1" 
+	gears="1" max_limiter_speed="11.0"/>
 
 	<physics 
-	extent="2.9 0.0 8" offset="0 0.0 -0.25"
+	extent="5.9 0.0 8" offset="0 0 0"
 	top_offset="0 6.0 0" 
 	collision_model_pos="0 0.6 0" 
 	collision_model_extent="4.0 1.5 8.0" 
 	visual_offset="0 0.6 0.0" 
 	/> 
 
-	0 <turret offset="0 2.29 -1.37" 	weapon_key="nova_laser.weapon" 	weapon_offset="0.0 0.6 6" 	weapon_recoil="0.1" physics_recoil="0.0"	max_rotation_step="0.00005" />
-	1 <turret offset="0 1 0.0" 			weapon_key="nova_coax.weapon" 		weapon_offset="-0.4 0.6 2" 		weapon_recoil="0.0" physics_recoil="0.0" rotation_range="0" parent_turret_index="0"/>
-	2 <turret offset="+0.4 1 -2.5" 	weapon_key="nova_msl.weapon" 		weapon_offset="0 +0.4 0.6" 		weapon_recoil="0.0" physics_recoil="0.0" rotation_range="1" parent_turret_index="0"/>
-	3 <turret offset="+1.2 1 -2.5" 	weapon_key="nova_msl.weapon" 		weapon_offset="0 +0.4 0.6" 		weapon_recoil="0.0" physics_recoil="0.0" rotation_range="1" parent_turret_index="0"/>
-	4 <turret offset="-0.9 1 0.5" weapon_key="nova_top.weapon" weapon_offset="-0.20 0.3 1" weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.0003" parent_turret_index="0" rotation="0" />
-	5 <turret offset="-0.9 1 0.5" weapon_key="nova_top.weapon" weapon_offset="+0.20 0.3 1" weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.0003" parent_turret_index="0" rotation="0" />
-	
-	<visual class="chassis" mesh_filename="nova_b0.mesh" 	texture_filename="nova_b0.png" max_tilt="0.06" />
-	<visual class="turret" turret_index="0" mesh_filename="nova_t0.mesh" 	texture_filename="nova_t0.png" />
-	<visual class="turret" turret_index="1" mesh_filename="40mm.mesh" 		texture_filename="40mm.png" />
-	<visual class="turret" turret_index="2" mesh_filename="40mm.mesh" 		texture_filename="40mm.png" />
-	<visual class="turret" turret_index="3" mesh_filename="40mm.mesh" 		texture_filename="40mm.png" />
-	<visual class="turret" turret_index="4" mesh_filename="nova_t1.mesh" 	texture_filename="nova_t1.png" />
-	<visual class="turret" turret_index="5" mesh_filename="40mm.mesh" 		texture_filename="nova_t0.png" />
+	0 <turret offset="0 2.8 -1.37" 	weapon_key="ex_nova_cannon.weapon" 	weapon_offset="0.56 0.15 0" 	weapon_recoil="0.25" physics_recoil="0.0"	max_rotation_step="0.00065" />
+	1 <turret offset="+1.1 0.72 -2.0" 	weapon_key="ex_nova_missile.weapon" 		weapon_offset="0 0.4 0" weapon_recoil="0.0" physics_recoil="0.0" rotation_range="0.3" parent_turret_index="0" max_rotation_step="1.0"/>
+	2 <turret offset="-0.9 0.72 1.0" weapon_key="ex_nova_mg.weapon" weapon_offset="-0.20 0.3 1" weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.001" parent_turret_index="0" rotation="0" />
+	3 <turret offset="-0.9 0.72 1.0" weapon_key="ex_nova_mg.weapon" weapon_offset="+0.20 0.3 1" weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.001" parent_turret_index="0" rotation="0" />
+	4 <turret offset="0 0 0" weapon_key="hd_vehicle_wrench.weapon"  weapon_offset="0 0 0" weapon_recoil="0" max_rotation_step="0.00002"/>
 
-	<visual class="chassis" 				key="broken"	mesh_filename="nova_b0.mesh" 	 	texture_filename="nova_b0.png" max_tilt="0.06" />
-	<visual class="turret" turret_index="0" key="broken"	mesh_filename="nova_t0.mesh" 		texture_filename="nova_t0.png" />
+	<visual class="chassis" mesh_filename="ex_nova_body.mesh" 	texture_filename="ex_nova_main.png" max_tilt="0.06" />
+	<visual class="turret" turret_index="0" mesh_filename="ex_nova_turrent_gun.mesh" 	texture_filename="ex_nova_turrent.png" />
+	<visual class="turret" turret_index="1" mesh_filename=".mesh" 	texture_filename="" />
+	<visual class="turret" turret_index="2" mesh_filename="ex_nova_minigun.mesh" 	texture_filename="ex_nova_minigun.png" />
+	<visual class="turret" turret_index="3" mesh_filename="" 	texture_filename="" />
 
-	<visual class="track" mesh_filename="tank_track.mesh" offset="-1.5 0.5 -0.2" >
-		<!-- <part texture_filename="tank.png" /> -->
-		<part texture_filename="tank_track.png" texture_animation="translate" tire_binding="0" />
-		<part texture_filename="tank_wheel.png" texture_animation="rotate" tire_binding="0" />
+	<visual class="chassis" 				key="broken" mesh_filename="ex_nova_body.mesh" texture_filename="ex_nova_main_broken.png" max_tilt="0.06" />
+
+	<visual class="track" mesh_filename="ex_nova_track.mesh" offset="-1.5 0 -0.2" >
+		<part texture_filename="ex_nova_track.png" texture_animation="translate" tire_binding="0" />
 	</visual>
 
-	<visual class="track" mesh_filename="tank_track.mesh" offset="+1.5 0.5 -0.2" >
-		<!-- <part texture_filename="tank.png" /> -->
-		<part texture_filename="tank_track.png" texture_animation="translate" tire_binding="1" />
-		<part texture_filename="tank_wheel.png" texture_animation="rotate" tire_binding="1" />
+	<visual class="track" mesh_filename="ex_nova_track.mesh" offset="+1.5 0 -0.2" >
+		<part texture_filename="ex_nova_track.png" texture_animation="translate" tire_binding="1" />
 	</visual>
 
 	<item_container class="armory" offset="0 0.8 -4.8" />
 	<character_slot type="driver" position="1.5 0.5 2" rotation="0" exit_rotation="1.57" hiding="1" />
 	<character_slot type="gunner" position="1.5 0.7 0" rotation="0" exit_rotation="1.57" hiding="1" >
-		<turret index="0" /><turret index="1" />
+		<turret index="0" /><turret index="4" />
 	</character_slot>
 	<character_slot type="gunner" enter_position="1.5 0.5 -2" exit_rotation="1.57"  hiding="1">
-		<turret index="2" /><turret index="3" />
+		<turret index="1" />
 	</character_slot>
 	<character_slot type="gunner" enter_position="-1.5 0.5 0"  exit_rotation="-1.57" hiding="1">
-		<turret index="4" /><turret index="5" />
+		<turret index="2" /><turret index="3" />
 	</character_slot>
 
 	<!-- sound handling -->
-	<rev_sound filename="nova_bgm.wav" low_pitch="1.0" high_pitch="1" low_rev="0.0" high_rev="1.0" volume="1.0" />
+	<rev_sound filename="truck_rev0.wav" low_pitch="0.95" high_pitch="1.05" low_rev="0.0" high_rev="0.2" volume="1.0" />
+	<rev_sound filename="truck_rev3.wav" low_pitch="0.7" high_pitch="1.0" low_rev="0.05" high_rev="0.7" volume="1.0" />
+	<rev_sound filename="truck_rev4.wav" low_pitch="0.8" high_pitch="1.0" low_rev="0.4" high_rev="1.0" volume="1.0" />
 
+	<sound key="slide" filename="slide_noise.wav" />
 	<sound key="squeal" filename="tire_squeal.wav" />
-	<sound key="ignition" filename="jeep2_ignition.wav" />
-	<sound key="hit" filename="car_hit2.wav" />
+	<sound key="ignition" filename="truck_ignition.wav" />
+	<sound key="horn" filename="hd_gogogo_men_01.wav" volume="5" />
+	<sound key="turret_rotation" filename="turret_rotation1.wav" />
 	<sound key="hit" filename="car_hit1.wav" />
-	<sound key="destroy" filename="explosion4.wav" />  
-	<sound key="cleanup" filename="explosion3.wav" /> 
+	<sound key="hit" filename="car_hit2.wav" />
+	<sound key="destroy" filename="vehicle_explosion_1.wav" />  
+	<sound key="cleanup" filename="vehicle_explosion_1.wav" />
 
-	<sound key="turret_rotation" filename="turret_rotation1.wav" volume="0.8" />
-	<sound key="turret_rotation" filename="turret_rotation2.wav" volume="0.8"/>
-  
+	<!-- <effect event_key="destroyed" ref="car_destroyed_fire" post_processing="0" offset="0 3 -0.8" /> -->
+	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="1" offset="0 3 -0.8" />  
+	<effect event_key="destroyed" ref="car_broken_spary_spark" post_processing="0" offset="0 3 -0.8" />  
+	<effect event_key="destroyed" ref="car_destroyed_up_fire_large" post_processing="0" offset="0 2.5 -0.8" />  
+
+
+	<event>
+		<trigger class="destroy" />
+  	<result class="spawn" instance_class="visual_item" instance_key="ex_nova_turrent.visual_item" min_amount="1" max_amount="1" offset="0 2.4 0" position_spread="1.5 1.5" direction_spread="0.1 0.8" />
+	</event>
 </vehicle>
+<vehicle 
+file="_vehicle_hvy.base"
+name="WarMind-140 Nova" 
+key="ex_nova_2.vehicle" 
+allow_ai_to_use="0"
+reserves_spawn_point="1"
+map_view_atlas_index="59" 
+minimum_fill_requirement="1.0" 
+character_leave_request_mode="friendly"
+>
+
+   	<tag name="tank" />
+	<tag name="any_tank" />
+
+	<tire_set offset="2 0 +2.5" radius="0.36" />
+	<tire_set offset="2 0 -2.5" radius="0.36" />
+
+	<control 
+	max_speed="18" acceleration="22.0" 
+	max_reverse_speed="14.0" min_health_to_steer="0.6" 
+	max_rotation="0.1" max_water_depth="4" 
+	steer_smoothening="0.7" tracked="1" 
+	gears="1" max_limiter_speed="11.0"/>
+
+	<physics 
+	extent="5.9 0.0 8" offset="0 0 0"
+	top_offset="0 6.0 0" 
+	collision_model_pos="0 0.6 0" 
+	collision_model_extent="4.0 1.5 8.0" 
+	visual_offset="0 0.6 0.0" 
+	/> 
+
+	0 <turret offset="0 2.8 -1.37" 	weapon_key="ex_nova_cannon_2.weapon" 	weapon_offset="0.56 0.15 0" 	weapon_recoil="0.25" physics_recoil="0.0"	max_rotation_step="0.00065" />
+	1 <turret offset="+1.1 0.72 -2.0" 	weapon_key="ex_nova_missile.weapon" 		weapon_offset="0 0.4 0" weapon_recoil="0.0" physics_recoil="0.0" rotation_range="0.3" parent_turret_index="0" max_rotation_step="1.0"/>
+	2 <turret offset="-0.9 0.72 1.0" weapon_key="ex_nova_mg.weapon" weapon_offset="-0.20 0.3 1" weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.001" parent_turret_index="0" rotation="0" />
+	3 <turret offset="-0.9 0.72 1.0" weapon_key="ex_nova_mg.weapon" weapon_offset="+0.20 0.3 1" weapon_recoil="0.0" physics_recoil="0.0" max_rotation_step="0.001" parent_turret_index="0" rotation="0" />
+	4 <turret offset="0 0 0" weapon_key="hd_vehicle_wrench.weapon"  weapon_offset="0 0 0" weapon_recoil="0" max_rotation_step="0.00002"/>
+
+	<visual class="chassis" mesh_filename="ex_nova_body.mesh" 	texture_filename="ex_nova_main_2.png" max_tilt="0.06" />
+	<visual class="turret" turret_index="0" mesh_filename="ex_nova_turrent_gun.mesh" 	texture_filename="ex_nova_turrent_2.png" />
+	<visual class="turret" turret_index="1" mesh_filename=".mesh" 	texture_filename="" />
+	<visual class="turret" turret_index="2" mesh_filename="ex_nova_minigun.mesh" 	texture_filename="ex_nova_minigun_2.png" />
+	<visual class="turret" turret_index="3" mesh_filename="" 	texture_filename="" />
+
+	<visual class="chassis" 				key="broken" mesh_filename="ex_nova_body.mesh" texture_filename="ex_nova_main_2_broken.png" max_tilt="0.06" />
+
+	<visual class="track" mesh_filename="ex_nova_track.mesh" offset="-1.5 0 -0.2" >
+		<part texture_filename="ex_nova_track.png" texture_animation="translate" tire_binding="0" />
+	</visual>
+
+	<visual class="track" mesh_filename="ex_nova_track.mesh" offset="+1.5 0 -0.2" >
+		<part texture_filename="ex_nova_track.png" texture_animation="translate" tire_binding="1" />
+	</visual>
+
+	<item_container class="armory" offset="0 0.8 -4.8" />
+	<character_slot type="driver" position="1.5 0.5 2" rotation="0" exit_rotation="1.57" hiding="1" />
+	<character_slot type="gunner" position="1.5 0.7 0" rotation="0" exit_rotation="1.57" hiding="1" >
+		<turret index="0" /><turret index="4" />
+	</character_slot>
+	<character_slot type="gunner" enter_position="1.5 0.5 -2" exit_rotation="1.57"  hiding="1">
+		<turret index="1" />
+	</character_slot>
+	<character_slot type="gunner" enter_position="-1.5 0.5 0"  exit_rotation="-1.57" hiding="1">
+		<turret index="2" /><turret index="3" />
+	</character_slot>
+
+	<!-- sound handling -->
+	<rev_sound filename="music_b_connected.wav" low_pitch="1" high_pitch="1" low_rev="1" high_rev="1" volume="0.3" />
+
+	<sound key="slide" filename="slide_noise.wav" />
+	<sound key="squeal" filename="tire_squeal.wav" />
+	<sound key="ignition" filename="truck_ignition.wav" />
+	<sound key="horn" filename="hd_gogogo_men_01.wav" volume="5" />
+	<sound key="turret_rotation" filename="turret_rotation1.wav" />
+	<sound key="hit" filename="car_hit1.wav" />
+	<sound key="hit" filename="car_hit2.wav" />
+	<sound key="destroy" filename="vehicle_explosion_1.wav" />  
+	<sound key="cleanup" filename="vehicle_explosion_1.wav" />
+	
+  	<!-- <effect event_key="destroyed" ref="car_destroyed_fire" post_processing="0" offset="0 3 -0.8" /> -->
+	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="1" offset="0 3 -0.8" />  
+	<effect event_key="destroyed" ref="car_broken_spary_spark" post_processing="0" offset="0 3 -0.8" />  
+	<effect event_key="destroyed" ref="car_destroyed_up_fire_large" post_processing="0" offset="0 2.5 -0.8" />  
+
+	<event>
+		<trigger class="destroy" />
+  	<result class="spawn" instance_class="visual_item" instance_key="ex_nova_turrent_2.visual_item" min_amount="1" max_amount="1" offset="0 2.4 0" position_spread="1.5 1.5" direction_spread="0.1 0.8" />
+	</event>
+</vehicle>
+</vehicles>

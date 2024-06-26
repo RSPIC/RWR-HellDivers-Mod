@@ -3,6 +3,25 @@
 
 //Credit: NetherCrow & Saiwa & RW/Helldiver Staff & Rst
 
+void spawnRandomVehicle(Metagame@ metagame, uint count, uint factionId, Vector3 position, Orientation@ dir, string instanceKey){
+	for(uint i = 0 ; i < randomVehicleSkin.size(); ++i){
+		array<string> list = randomVehicleSkin[i];
+		for(uint j = 0 ; j < list.size(); ++j){
+			string key = list[j];
+			if(key == instanceKey){
+				if(list.size() <= 1){
+					break;
+				}
+				int randIndex = int(rand(1,list.size()-1));
+				instanceKey = list[randIndex];
+				spawnVehicle(metagame,count,factionId,position,dir,instanceKey);
+				return;
+			}
+			break;
+		}
+	}
+}
+
 void spawnVehicle(Metagame@ metagame, uint count, uint factionId, Vector3 position, Orientation@ dir, string instanceKey) {
 	for (uint i = 0; i < count; ++i) {
 		metagame.getComms().send(

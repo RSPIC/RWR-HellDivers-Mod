@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapons> 
+<weapon 
+time_to_live_out_in_the_open="0"
+key="bugs_zerg_egg.weapon" 
+on_ground_up="0 0 1" 
+radius="1"
+> 
+    <specification 	
+	retrigger_time="10"
+    last_burst_retrigger_time="1" 
+	accuracy_factor="1.0" 
+	spread_range="0"
+	sustained_fire_grow_step="1" 
+	sustained_fire_diminish_rate="5.0" 
+	magazine_size="-1" 
+	can_shoot_standing="1" 
+	can_shoot_crouching="1" 
+	can_shoot_prone="1"
+	suppressed="0" 
+	name="Zerg Egg Spawn" 
+	class="0" 
+	sight_range_modifier="2" 
+	ai_sight_range_modifier="0.8" 
+	projectile_speed="1.0" 
+	barrel_offset_3d="0 0 0" 
+	projectiles_per_shot="1" 
+	burst_shots="1"
+    stab_enabled="0"
+	carry_in_two_hands="1"
+	use_basic_muzzle_smoke_effect="0"
+	/> 
+	
+	<!--武器模型和HUD-->
+	<weak_hand_hold offset="0" /> <!--模型X轴偏移-->
+	<model filename="" /> 
+    <model mesh_filename="" texture_filename="" /> <!--调用mesh模型-->
+    <addon_model filename="" /> <!--附加模型，固定绑骨到肩膀-->
+    <hud_icon filename="bugs_icon.png" /> 
+	
+	<!--武器动作，必须指定recoil和reload动作-->
+	<animation key="recoil" animation_key="hold, hip fire" />
+	<animation key="recoil" stance_key="prone" animation_key="recoil1" />
+	<animation state_key="hold" animation_key="hold, hip fire" />
+	<animation state_key="reload" animation_key="reloading_obliterator_base"/><!--3S-->
+	<animation state_key="crouching" animation_key="crouch, hold, hip fire" />
+	<animation state_key="crouch_moving" animation_key="crouching forwards, hip fire" />
+	<animation state_key="walking_backwards" animation_key="walking backwards, hip fire" />  
+	<animation state_key="hold_on_wall" animation_key="hold, hip fire" />
+	<animation state_key="still_against_wall" 	animation_key="hold, hip fire" />
+	<animation state_key="walking" animation_key="" />
+	<animation state_key="running" animation_key="" /> 
+
+	<!--武器音频-->
+    <sound key="effect" fileref="" pitch_variety="0" volume="1.0" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
+    <sound key="dry_fire" fileref="" pitch_variety="0.03" volume="1.0" /><!--空弹射击扳机音效-->
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="gl_open.wav" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="gl_insert.wav" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="rifle_chamber.wav" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" /><!--动作中in的value为1-->
+    <sound key="last_ammo" fileref="" /><!--最后一发子弹射击的额外音效，不可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+	<sound class="result" fileref="rifle_drop.wav" />
+	
+	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
+	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="1" source="rank" source_value="0.0" />
+	<!--军械库相关-->
+    <commonness value="0.0000" can_respawn_with="0" in_stock="0" /> 
+    <inventory encumbrance="100" price="0.0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
+
+	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
+    <projectile file="hd_general_spawn_no_effect.projectile"  > 
+		<result class="notify_script" key="Baneling" />
+		<trigger class="time" time_to_live="0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
+    </projectile>
+   	
+</weapon>
+<weapon 
+time_to_live_out_in_the_open="0"
+key="bugs_elite_egg.weapon" 
+on_ground_up="0 0 1" 
+radius="1"
+> 
+    <specification 	
+	retrigger_time="10"
+    last_burst_retrigger_time="1" 
+	accuracy_factor="1.0" 
+	spread_range="0"
+	sustained_fire_grow_step="1" 
+	sustained_fire_diminish_rate="5.0" 
+	magazine_size="-1" 
+	can_shoot_standing="1" 
+	can_shoot_crouching="1" 
+	can_shoot_prone="1"
+	suppressed="0" 
+	name="Zerg Egg Spawn" 
+	class="0" 
+	sight_range_modifier="2" 
+	ai_sight_range_modifier="0.8" 
+	projectile_speed="1.0" 
+	barrel_offset_3d="0 0 0" 
+	projectiles_per_shot="5" 
+	burst_shots="1"
+    stab_enabled="0"
+	carry_in_two_hands="1"
+	use_basic_muzzle_smoke_effect="0"
+	/> 
+	
+	<!--武器模型和HUD-->
+	<weak_hand_hold offset="0" /> <!--模型X轴偏移-->
+	<model filename="" /> 
+    <model mesh_filename="" texture_filename="" /> <!--调用mesh模型-->
+    <addon_model filename="" /> <!--附加模型，固定绑骨到肩膀-->
+    <hud_icon filename="bugs_icon.png" /> 
+	
+	<!--武器动作，必须指定recoil和reload动作-->
+	<animation key="recoil" animation_key="hold, hip fire" />
+	<animation key="recoil" stance_key="prone" animation_key="recoil1" />
+	<animation state_key="hold" animation_key="hold, hip fire" />
+	<animation state_key="reload" animation_key="reloading_obliterator_base"/><!--3S-->
+	<animation state_key="crouching" animation_key="crouch, hold, hip fire" />
+	<animation state_key="crouch_moving" animation_key="crouching forwards, hip fire" />
+	<animation state_key="walking_backwards" animation_key="walking backwards, hip fire" />  
+	<animation state_key="hold_on_wall" animation_key="hold, hip fire" />
+	<animation state_key="still_against_wall" 	animation_key="hold, hip fire" />
+	<animation state_key="walking" animation_key="" />
+	<animation state_key="running" animation_key="" /> 
+
+	<!--武器音频-->
+    <sound key="effect" fileref="" pitch_variety="0" volume="1.0" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
+    <sound key="dry_fire" fileref="" pitch_variety="0.03" volume="1.0" /><!--空弹射击扳机音效-->
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="gl_open.wav" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="gl_insert.wav" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="rifle_chamber.wav" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" /><!--动作中in的value为1-->
+    <sound key="last_ammo" fileref="" /><!--最后一发子弹射击的额外音效，不可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+	<sound class="result" fileref="rifle_drop.wav" />
+	
+	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
+	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="1" source="rank" source_value="0.0" />
+	<!--军械库相关-->
+    <commonness value="0.0000" can_respawn_with="0" in_stock="0" /> 
+    <inventory encumbrance="100" price="0.0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
+
+	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
+    <projectile file="hd_general_spawn_no_effect.projectile"  > 
+		<result class="notify_script" key="Elite" />
+		<trigger class="time" time_to_live="0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
+    </projectile>
+   	
+</weapon>
+<weapon 
+time_to_live_out_in_the_open="0"
+key="bugs_broodCommander_egg.weapon" 
+on_ground_up="0 0 1" 
+radius="1"
+> 
+    <specification 	
+	retrigger_time="10"
+    last_burst_retrigger_time="1" 
+	accuracy_factor="1.0" 
+	spread_range="0"
+	sustained_fire_grow_step="1" 
+	sustained_fire_diminish_rate="5.0" 
+	magazine_size="-1" 
+	can_shoot_standing="1" 
+	can_shoot_crouching="1" 
+	can_shoot_prone="1"
+	suppressed="0" 
+	name="Zerg Egg Spawn" 
+	class="0" 
+	sight_range_modifier="3" 
+	ai_sight_range_modifier="0.8" 
+	projectile_speed="1.0" 
+	barrel_offset_3d="0 0 0" 
+	projectiles_per_shot="3" 
+	burst_shots="1"
+    stab_enabled="0"
+	carry_in_two_hands="1"
+	use_basic_muzzle_smoke_effect="0"
+	/> 
+	
+	<!--武器模型和HUD-->
+	<weak_hand_hold offset="0" /> <!--模型X轴偏移-->
+	<model filename="" /> 
+    <model mesh_filename="" texture_filename="" /> <!--调用mesh模型-->
+    <addon_model filename="" /> <!--附加模型，固定绑骨到肩膀-->
+    <hud_icon filename="bugs_icon.png" /> 
+	
+	<!--武器动作，必须指定recoil和reload动作-->
+	<animation key="recoil" animation_key="hold, hip fire" />
+	<animation key="recoil" stance_key="prone" animation_key="recoil1" />
+	<animation state_key="hold" animation_key="hold, hip fire" />
+	<animation state_key="reload" animation_key="reloading_obliterator_base"/><!--3S-->
+	<animation state_key="crouching" animation_key="crouch, hold, hip fire" />
+	<animation state_key="crouch_moving" animation_key="crouching forwards, hip fire" />
+	<animation state_key="walking_backwards" animation_key="walking backwards, hip fire" />  
+	<animation state_key="hold_on_wall" animation_key="hold, hip fire" />
+	<animation state_key="still_against_wall" 	animation_key="hold, hip fire" />
+	<animation state_key="walking" animation_key="" />
+	<animation state_key="running" animation_key="" /> 
+
+	<!--武器音频-->
+    <sound key="effect" fileref="" pitch_variety="0" volume="1.0" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
+    <sound key="dry_fire" fileref="" pitch_variety="0.03" volume="1.0" /><!--空弹射击扳机音效-->
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="gl_open.wav" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="gl_insert.wav" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="rifle_chamber.wav" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" /><!--动作中in的value为1-->
+    <sound key="last_ammo" fileref="" /><!--最后一发子弹射击的额外音效，不可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+	<sound class="result" fileref="rifle_drop.wav" />
+	
+	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
+	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="1" source="rank" source_value="0.0" />
+	<!--军械库相关-->
+    <commonness value="0.0000" can_respawn_with="0" in_stock="0" /> 
+    <inventory encumbrance="100" price="0.0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
+
+	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
+    <projectile file="hd_general_spawn_no_effect.projectile"  > 
+		<result class="notify_script" key="BroodCommander" />
+		<trigger class="time" time_to_live="0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
+    </projectile>
+   	
+</weapon>
+</weapons>
+
