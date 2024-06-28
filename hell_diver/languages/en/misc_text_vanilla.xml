@@ -2191,7 +2191,10 @@ Time used: &#37; value8 Player: &#37; key8(9th)
 <comment key="Yes sir" text="" />
 <comment key="Uh, I can't drive this thing" text="* Confused squeak *" />
 
+<text key="R-36 Eruptor" text="R-36 Eruptor [Friendly fire]" />
+
 <comment key="密钥不正确或已被使用完，注意大小写" text="The key is incorrect or has been used up. Pay attention to the case." />
+<text key="不能重复领取该密钥" text="Can't double use this key!" />
 
 <text key="Divers Join the BattleFiled" text="Divers&#37;name Join the BattleFiled" />
 <text key="数字输入错误,示例:/login 10" text="Number input error, example: /login 10" />
@@ -2205,6 +2208,20 @@ Time used: &#37; value8 Player: &#37; key8(9th)
 <text key="冲击雷已配给" text="Inpact Grenade Has Resupply" />
 <text key="自动回血已配置" text="AutoRecover has Setted" />
 <text key="自救针已配置" text="AutoHeal has Setted" />
+
+<text key="失败次数过多，已自动关闭脚本仓库" text="Failed to store over times,now closed your Extra Stash" />
+<text key="您有物品未存入，已自动帮你存入" text="You have an item that has not been deposited, it has been automatically deposited for you" />
+<text key="该限量物品已兑换完" text="This limited edition item has been redeemed" />
+<text key="物品已兑换，请查收" text="The items have been exchanged, please check" />
+<text key="该物品在仓库数量不足，无法兑换物品，请将兑换物存放至脚本仓库" text="Items insufficient in Extra Stash,can not exchange. Please store the exchange item to the script warehouse" />
+<text key="仓库未打开" text="Warehouse not open" />
+<text key="仓库已打开" text="Warehouse open" />
+<text key="仓库已关闭" text="Warehouse close" />
+<text key="溢出物品已退还" text="Overflow items have been returned" />
+<text key="未选择物品" text="Unselected item" />
+<text key="存放数量已超过仓库容量上限，多余物品将在您存入物品后退还。" text="Storage quantity has exceeded the warehouse capacity limit, excess items will be returned after you deposit items." />
+<text key="已全部存入!" text="All saved!" />
+
 
 <text key="科研系统已注册" text="The Rresearch System has been registered" />
 <text key="未获取到你的装备信息" text="Your equipment information was not obtained" />
@@ -2223,6 +2240,19 @@ Time used: &#37; value8 Player: &#37; key8(9th)
 <text key="[中甲] TR-9民主骑兵 [右键购买以研发/装备][需求:5-研究点][属性:40层][民主庇佑:爆炸/轰炸伤害无法杀死你 但你无法自救]" text="[Mid] TR-9 [Needs: 5-Reserch Poiont][Info:40 Layer][Function: You will get wouned instead get deaded when kill by blast damage, and you can't heal yourself]" />
 <text key="[中甲] SA-12伺服辅助 [右键购买以研发/装备][需求:5-研究点][属性:40层][功能:+0.05移速]" text="[Mid] SA-12 [Needs: 5-Reserch Poiont][Info:40 Layer][Function: +0.05 Speed]" />
 <text key="[中甲] CE-35战壕工程师 [右键购买以研发/装备][需求:5-研究点][属性:40层][功能:自动补给冲击雷]" text="[Mid] CE-35 [Needs: 5-Reserch Poiont][Info:40 Layer][Function: Auto Resupply Impact Grenade]" />
+
+<text key="[1研发点] P-19救世主 冲锋手枪" text="[1 Reserch Poiont] P-19 Redeemer" />
+<text key="[2研发点] P-4参议员 左轮手枪" text="[2 Reserch Poiont] P-4 Senetor" />
+<text key="[7研发点] AC-8 自动机炮[友伤]" text="[7 Reserch Poiont] AC-8 Autocannon" />
+<text key="[10研发点] SG-225IE[燃烧弹头]" text="[10 Reserch Poiont] SG-225 Incendiary" />
+<text key="[4研发点] SG-225SP[弥漫与祷告]" text="[4 Reserch Poiont] SG-225 Spray and Pray" />
+<text key="[1研发点] MP-98骑士[消音化][实弹]" text="[1 Reserch Poiont] MP-98 Knight [Suppressed]" />
+<text key="[2研发点] LAS-16镰刀[快装冷却]" text="[2 Reserch Poiont] LAS-16 Sickle [Fast CoolDown]" />
+<text key="[2研发点] AR-61气锤突击步枪" text="[2 Reserch Poiont] AR-61 Tenderizer" />
+<text key="[5研发点] 闪光盾[眩晕]" text="[5 Reserch Poiont] Hvy Shield [Stun]" />
+<text key="[1研发点] P6-神枪手[眩晕][娱乐专用]" text="[1 Reserch Poiont] P-6 GunSlinger[Stun][Only For Fun]" />
+<text key="[1研发点] R-36爆裂铳" text="[1 Reserch Poiont] R-36 Eruptor" />
+<text key="[2研发点] MLS-4X突击队[跟踪金币弹]" text="[2 Reserch Poiont] MLS-4X Commando [Tracking Ammo][RP Cost]" />
 
 
  <!-- 管理 -->

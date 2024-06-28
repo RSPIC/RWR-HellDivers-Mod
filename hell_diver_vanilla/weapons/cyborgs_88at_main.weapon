@@ -113,7 +113,7 @@ radius="1"
 	<!--军械库相关-->
     <commonness value="0.00001" can_respawn_with="1" in_stock="1" /> 
     <inventory encumbrance="1.0" price="0.0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
-    
+
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="0.1" can_be_detected_by_footmen="1" 
 	time_to_live="0.8" can_be_detected_by_driver="1" can_be_disarmed="0"> 

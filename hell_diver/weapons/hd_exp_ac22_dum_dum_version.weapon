@@ -111,7 +111,10 @@ key="hd_exp_ac22_dum_dum_ai.weapon"
 <weapon 
 file="hd_exp_ac22_dum_dum_base.weapon"
 key="hd_exp_ac8_autocannon.weapon" 
+drop_count_factor_on_death="0" 
+drop_count_factor_on_player_death="0"
 time_to_live_out_in_the_open="0"
+player_death_drop_owner_lock_time="0"
 >
 	<specification 	
     slot="1" 	

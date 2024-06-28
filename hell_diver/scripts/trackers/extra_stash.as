@@ -101,7 +101,11 @@ class playerStashInfo {
             }
             XmlElement@ object = selectObject(0,false);
             if(object is null){
-                _notify(m_metagame,pid,"当前仓库容量 "+m_stashUsedSize+"/"+m_stashSize);
+                if(isEng(m_name)){
+                    _notify(m_metagame,pid,"Current warehouse capacity "+m_stashUsedSize+"/"+m_stashSize);
+                }else{
+                    _notify(m_metagame,pid,"当前仓库容量 "+m_stashUsedSize+"/"+m_stashSize);
+                }
             }
         }
     }
@@ -126,7 +130,11 @@ class playerStashInfo {
             GiveRP(m_metagame,cid,-basePrice*num);
         }
         updatePlayersStash(num);
-        _notify(m_metagame,pid,"当前仓库容量 "+m_stashUsedSize+"/"+m_stashSize);
+        if(isEng(m_name)){
+            _notify(m_metagame,pid,"Current warehouse capacity "+m_stashUsedSize+"/"+m_stashSize);
+        }else{
+            _notify(m_metagame,pid,"当前仓库容量 "+m_stashUsedSize+"/"+m_stashSize);
+        }
     }
     protected void refreshStash(){//重载仓库内容
         // 读取存档玩家信息
@@ -234,7 +242,12 @@ class playerStashInfo {
                 addListItemInBackpack(m_metagame,cid,resources);
                 string itemCnName = "";
                 canStoreItem.get(itemKey,itemCnName);
-                notify(m_metagame, "物品"+itemCnName+"已取出", dictionary(), "misc", pid, false, "", 1.0);
+                if(isEng(m_name)){
+                    itemCnName = itemKey;
+                    notify(m_metagame, "Item "+itemCnName+" is fetched", dictionary(), "misc", pid, false, "", 1.0);
+                }else{
+                    notify(m_metagame, "物品"+itemCnName+"已取出", dictionary(), "misc", pid, false, "", 1.0);
+                }
                 saveStashObject();
             }else{
                 notify(m_metagame, "未选定物品", dictionary(), "misc", pid, false, "", 1.0);
@@ -269,7 +282,12 @@ class playerStashInfo {
             string itemCnName = "";
             canStoreItem.get(o_itemKey,itemCnName);
             int pid = g_playerInfoBuck.getPidByName(m_name);
-            _notify(m_metagame,pid,"物品"+itemCnName+"已暂存，右键'全部存入'以存储至仓库");
+            if(isEng(m_name)){
+                itemCnName = o_itemKey;
+                _notify(m_metagame,pid,"Item "+itemCnName+" is temporarily stored, right click 'Save All' Items to store");
+            }else{
+                _notify(m_metagame,pid,"物品"+itemCnName+"已暂存，右键'全部存入'以存储至仓库");
+            }
         }
        
     }
@@ -426,16 +444,27 @@ class playerStashInfo {
                 }
                 string itemCnName = "";
                 canStoreItem.get(itemName,itemCnName);
+                if(isEng(m_name)){
+                    itemCnName = itemName;
+                }
                 a[strkey] = itemCnName;
                 a[strvalue] = ""+itemValue;
                 startIndex++;
                 leftNum--;
             }
             int pid = g_playerInfoBuck.getPidByName(m_name);
-            notify(m_metagame, "stashPageObjectInfo", a, "misc", pid, true, "当前第"+(m_page+1)+"页", 2.0);
+            if(isEng(m_name)){
+                notify(m_metagame, "stashPageObjectInfo", a, "misc", pid, true, "Currently on the "+(m_page+1)+" page", 2.0);
+            }else{
+                notify(m_metagame, "stashPageObjectInfo", a, "misc", pid, true, "当前第"+(m_page+1)+"页", 2.0);
+            }
         }else{
             int pid = g_playerInfoBuck.getPidByName(m_name);
-            notify(m_metagame, "仓库目前为空,容量 "+m_stashUsedSize+"/"+m_stashSize, dictionary(), "misc", pid, false, "", 1.0);
+            if(isEng(m_name)){
+                notify(m_metagame, "Warehouse is currently empty, capacity "+m_stashUsedSize+"/"+m_stashSize, dictionary(), "misc", pid, false, "", 1.0);
+            }else{
+                notify(m_metagame, "仓库目前为空,容量 "+m_stashUsedSize+"/"+m_stashSize, dictionary(), "misc", pid, false, "", 1.0);
+            }
         }
     }
     protected void updatePlayersStash(int add_stash = 0){ //仓库创建/刷新/升级
@@ -561,7 +590,12 @@ class playerStashInfo {
                 string itemCnName = "";
                 canStoreItem.get(itemName,itemCnName);
                 if(isNotify){
-                    notify(m_metagame, "当前选中的物品="+itemCnName+" 数量="+itemValue, dictionary(), "misc", pid, false, "", 1.0);
+                    if(isEng(m_name)){
+                        itemCnName = itemName;
+                        notify(m_metagame, "Currently selected item ="+itemCnName+" Quantity ="+itemValue, dictionary(), "misc", pid, false, "", 1.0);
+                    }else{
+                        notify(m_metagame, "当前选中的物品="+itemCnName+" 数量="+itemValue, dictionary(), "misc", pid, false, "", 1.0);
+                    }
                 }
             }
             @m_selectObject = object;
@@ -604,7 +638,11 @@ class playerStashInfo {
                             int pid = g_playerInfoBuck.getPidByName(m_name);
                             if(limitNum != 0){
                                 // items.setIntAttribute("value",--limitNum); //1.8.2临时取消
-                                _notify(m_metagame,pid,"该限量物品剩余兑换次数="+limitNum);
+                                if(isEng(m_name)){
+                                    _notify(m_metagame,pid,"The number of redeemable times for this limited item ="+limitNum);
+                                }else{
+                                    _notify(m_metagame,pid,"该限量物品剩余兑换次数="+limitNum);
+                                }
                                 limits.appendChild(items);
                                 isSaveLimit = true;
                             }else{
@@ -648,7 +686,12 @@ class playerStashInfo {
                         int deleteNum = d_object.getIntAttribute("value");
                         int mNum = m_object.getIntAttribute("value");
                         if(deleteNum > mNum){
-                            _notify(m_metagame,pid,"物品"+itemCnName+"数量不足，需要"+deleteNum+"个，你有"+mNum+"个");
+                            if(isEng(m_name)){
+                                itemCnName = itemKey;
+                                _notify(m_metagame,pid,"There are not enough items "+itemCnName+", you need "+deleteNum+", you have "+mNum);
+                            }else{
+                                _notify(m_metagame,pid,"物品"+itemCnName+"数量不足，需要"+deleteNum+"个，你有"+mNum+"个");
+                            }
                             continue;
                         }else{
                             int leftNum = mNum - deleteNum;
@@ -980,7 +1023,11 @@ class extra_stash : Tracker {
                 return true;
             }else if(!m_playerCds.hasReady(name,"exchangeItems")){
                 float leftCD = m_playerCds.leftCD(name,"exchangeItems");
-                _notify(m_metagame,playerId,"兑换冷却时间="+ int(leftCD));
+                if(isEng(name)){
+                    _notify(m_metagame,playerId,"Redemption cooldown ="+ int(leftCD));
+                }else{
+                    _notify(m_metagame,playerId,"兑换冷却时间="+ int(leftCD));
+                }
                 return false;
             }
         }
@@ -994,6 +1041,7 @@ class extra_stash : Tracker {
 		int characterId = event.getIntAttribute("character_id");
 		if(characterId == -1){return;}
 		int playerId = event.getIntAttribute("player_id");
+        if(playerId == -1){return;} // ban AI use
 		int containerId = event.getIntAttribute("target_container_type_id");
 		string item_class = event.getStringAttribute("item_class");
         
@@ -1079,7 +1127,11 @@ class extra_stash : Tracker {
                         _notify(m_metagame,playerId,"失败次数过多，已自动关闭脚本仓库");
                         m_playerStashInfoBuck.openStash(sid);
                     }
-                    _notify(m_metagame,playerId,"该物品"+itemKey+"不能存入脚本仓库");
+                    if(isEng(name)){
+                        _notify(m_metagame,playerId,"The item "+itemKey+" cannot be stored in the Extra Stash");
+                    }else{
+                        _notify(m_metagame,playerId,"该物品"+itemKey+"不能存入脚本仓库");
+                    }
                     return;
                 }
                 if(item_class == "0"){

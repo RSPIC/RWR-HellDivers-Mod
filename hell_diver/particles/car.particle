@@ -157,7 +157,7 @@ particle_system car_behit_through_spark
 particle_system car_slide_up_smoke
 {
 	quota 50
-	material point_soft_edge_100
+	material rx1_smoke
 	particle_width 0.3
 	particle_height 0.3
 	renderer billboard

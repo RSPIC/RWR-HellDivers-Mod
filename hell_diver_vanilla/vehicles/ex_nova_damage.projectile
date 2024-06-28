@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectiles>  
+<projectile  
+class="grenade" 
+key="ex_nova_damage.projectile" 
+slot="0"
+pulldown_in_air="15.0"
+>
+	<result class="blast" radius="8.0" damage="30.0" push="1.5" decal="1"
+	faction_compare="not_equal" character_state="wound" damage_origin_vehicle="0"/>
+	<trigger class="time" time_to_live="0" />	
+    <rotation class="motion" />
+	<model mesh_filename="" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+</projectile>
+<projectile  
+class="grenade" 
+key="ex_nova_missile_damage.projectile" 
+slot="0"
+pulldown_in_air="60.0"
+>
+	<result class="blast" radius="8.0" damage="50.0" push="1.5" decal="1"
+	faction_compare="not_equal" character_state="wound" damage_origin_vehicle="0"/>
+	<trigger class="impact" time_to_live="0" />	
+    <rotation class="motion" />
+	<model mesh_filename="" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+
+	<trail probability="1" key="trail_rocket"/>	
+	<model mesh_filename="APFSDS.xml" />
+
+	<sound class="result" key="other" fileref="blast1_rumbler.wav" pitch_variety="0.00"  volume="0.7"/>
+	<sound class="result" key="other" fileref="blast2_rumbler.wav" pitch_variety="0.00"  volume="0.7"/>
+		
+	<effect class="result" key="terrain" ref="real_up_dust_beam" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_dust_spread" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_dust_stone" lighting="1" post_processing="1"/>
+	<!-- <effect class="result" key="terrain" ref="real_up_smoke_1" lighting="1" post_processing="0"/> -->
+	<effect class="result" key="terrain" ref="real_up_smoke_beam" lighting="1" post_processing="0"/>
+	<!-- <effect class="result" key="terrain" ref="real_up_impact_spread" lighting="1" post_processing="0"/> -->
+	<effect class="result" key="terrain" ref="real_up_impact_spark" lighting="1" post_processing="0"/>
+	<!-- <effect class="result" key="terrain" ref="real_up_impact_spark_2" lighting="1" post_processing="0"/> -->
+	<!-- <effect class="result" key="terrain" ref="real_up_impact_spark_1" lighting="1" post_processing="0"/> -->
+	<effect class="result" key="terrain" ref="real_center_short_light" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="real_center_ambient_light" lighting="0" post_processing="0"/> 
+	<!-- <effect class="result" key="terrain" ref="nova_result_ground_smoke" lighting="0" post_processing="1"/> -->
+	<effect class="result" key="terrain" ref="nova_result_ambient" lighting="0" post_processing="0"/> 
+	<!-- <effect class="result" key="terrain" ref="nova_result_ambient_ground" lighting="0" post_processing="0"/>  -->
+
+	
+	<effect class="activated" ref="missile_activated_cannon_flysmoke" lighting="0"/>
+
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="vehicle" copy="terrain" />
+
+</projectile>
+</projectiles>

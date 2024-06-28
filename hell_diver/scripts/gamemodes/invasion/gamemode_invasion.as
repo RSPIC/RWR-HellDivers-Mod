@@ -365,6 +365,7 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		if(!m_server_test_mode){
 			
 		}    
+		addTracker(schedule_Manager(this));  // 决定了g_playerInfoBuck,需要提前设置
 		addTracker(BanManager(this));
 		addTracker(AirstrikeSystem(this));
 		addTracker(projectile_event(this));   
@@ -379,11 +380,11 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		addTracker(call_event(this));    
 		addTracker(player_spawn(this));
 		addTracker(dynamic_alert(this));   
+		addTracker(player_wound(this));  
 		addTracker(schedule_Check(this));  
 		addTracker(bgm_control(this));  
 		addTracker(Initiate(this));  
 		addTracker(IO_data(this));  
-		addTracker(player_wound(this));  
 		addTracker(match_end(this));  
 		addTracker(vest_upgrade_manager(this));  
 		addTracker(lottery_manager(this));  
@@ -392,7 +393,6 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 		addTracker(chat_icon(this));  
 		addTracker(vehicle_destroyed(this));  
 		addTracker(extra_stash(this));  
-		addTracker(schedule_Manager(this));  
 		addTracker(vehicle_recycle(this));  
 		addTracker(activity_manager(this));  
 		addTracker(KeYan(this));  

@@ -223,21 +223,21 @@ class server_admin_manager : Tracker{
                     a[strvalue] = "";
                 }
                 array<const XmlElement@> players = getPlayers(m_metagame);
-                for(int i = 0 ; i < players.size() ; ++i){
+                for(uint i = 0 ; i < players.size() ; ++i){
                     const XmlElement@ player = players[i];
                     if(player is null){continue;}
                     int k_pid = player.getIntAttribute("player_id");
                     string kick_name = player.getStringAttribute("name");
                     if(kick_pid == k_pid){
                         g_IRQ.set("tempban"+kick_name,true);
+                        _notify(m_metagame,kick_pid,"You are kicked form server after vote",true);
+                        _notify(m_metagame,pid,"You kick Player:"+kick_name,true);
                         kickPlayer(m_metagame,kick_pid);
-                        _notify(m_metagame,kick_pid,"You are kicked form server after vote");
-                        _notify(m_metagame,pid,"You kick Player:"+kick_name);
                     }
                     if(k_pid < 10){
-                        a["%valuea"+i] = kick_name;
+                        a["%valuea"+k_pid] = kick_name;
                     }else{
-                        a["%valueb"+i] = kick_name;
+                        a["%valueb"+k_pid] = kick_name;
                     }
                 }
                 notify(m_metagame, "Admin Kick Player Guide", a, "misc", pid, true, "Admin Kick Player", 1.0);

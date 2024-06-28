@@ -1958,7 +1958,6 @@ TK其他玩家同样会造成倍率因子的下降" />
  <!-- 管理 -->
 <text key="Admin Kick Player Guide" text="踢出玩家使用/kick id
 当前玩家ID列表如下
-0: &#37;valuea0
 1: &#37;valuea1
 2: &#37;valuea2
 3: &#37;valuea3
@@ -1990,7 +1989,8 @@ TK其他玩家同样会造成倍率因子的下降" />
 <text key="Synthesis progress" text="合成进度" />
 <text key="Risky operation: Your weapon has been returned. To synthesize a weapon, equip a weapon of the same mode in the weapon bar. If you need to sell weapons, keep the weapons bar empty" text="风险操作：已退还你的武器。若要合成武器，请在武器栏装备同样模式的武器。如果需要出售武器，请保持武器栏为空" />
 <text key="ReWeapon has copy to your backpack" text="复活自带武器已复制" />
-<text key="Can't copy your weapon" text="该武器无法复制" />
+<text key="Can't copy your weapon[Main Weapon]" text="主武器无法复制" />
+<text key="Can't copy your weapon[Secondary Weapon]" text="副武器无法复制" />
 
 <text key="You get Dance priority level-1" text="你获得了额外舞蹈动作，输入/dance随机播放" />
 

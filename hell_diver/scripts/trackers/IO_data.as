@@ -27,6 +27,13 @@ const XmlElement@ readXML(const Metagame@ metagame, string filename, string loca
 		makeQuery(metagame, array<dictionary> = {
 			dictionary = { {"TagName", "data"}, {"class", "saved_data"}, {"filename", filename}, {"location", location} } }));
 	const XmlElement@ xml = metagame.getComms().query(query);
+    
+    if(location == "_default.save"){
+        @query = XmlElement(
+		makeQuery(metagame, array<dictionary> = {
+			dictionary = { {"TagName", "data"}, {"class", "saved_data"}, {"filename", filename} } }));
+	    @xml = metagame.getComms().query(query);
+    }
     if(xml is null){
         _log("readXml is null,create and reRead for filename="+filename+",in location="+location);
         writeXML(metagame,filename,XmlElement(filename),location);
@@ -153,16 +160,9 @@ class IO_data : Tracker {
                                 xml2_1.setStringAttribute("value",targetKey);
                             xml2.appendChild(xml2_1);
 
-                            XmlElement xml3(access_tag);
-                                XmlElement xml3_1("only_one");
-                                xml3_1.setStringAttribute("value","1");
-                            xml3.appendChild(xml3_1);
-
                         checkXml.appendChild(xml2);
-                        checkXml.appendChild(xml3);
 
                         if(checkTagsInPlayerInfo(m_sid,checkXml)){
-                            notify(m_metagame, "不能重复领取该密钥", dictionary(), "misc", pid, true, "", 1.0);
                             double_use = true;
                         }
 
@@ -188,6 +188,13 @@ class IO_data : Tracker {
                             string compare_key = info.getStringAttribute("bond_target");
                             if(compare_key != p_name && compare_key != m_sid){
                                 double_use = true;
+                            }
+                        }
+                        //若为可重复使用密钥
+                        if(info.hasAttribute("only_one")){
+                            string only_one = info.getStringAttribute("only_one");
+                            if(only_one == "0"){
+                                double_use = false;
                             }
                         }
 
@@ -229,6 +236,8 @@ class IO_data : Tracker {
                                     isValid = false;
                                 }
                             }
+                        }else{
+                            notify(m_metagame, "不能重复领取该密钥", dictionary(), "misc", pid, false, "", 1.0);
                         }
 
                         if(!isValid || double_use){
@@ -260,9 +269,9 @@ class IO_data : Tracker {
                     xmls.insertLast(targetInfo);
                     addToPlayersInfo(xmls,m_sid);
 
-                    notify(m_metagame, "Successful exchange", dictionary(), "misc", pid, true, "", 1.0);
+                    notify(m_metagame, "Successful exchange", dictionary(), "misc", pid, false, "", 1.0);
                 }else{
-                    notify(m_metagame, "Not meet the condition", dictionary(), "misc", pid, true, "", 1.0);
+                    notify(m_metagame, "Not meet the condition", dictionary(), "misc", pid, false, "", 1.0);
                 }
                 
             }else{
@@ -584,13 +593,13 @@ class IO_data : Tracker {
                 if(root is null) _report(m_metagame,"player sid="+sid+"is null");
                 _report(m_metagame,"成功读取："+sid);
 			}
-			if(startsWith(message,"/read")){
-                string key = "/read ";
-                string sid = message.substr(key.length());
-				const XmlElement@ root = readPlayerInfo(sid);
-                if(root is null) _report(m_metagame,"player sid="+sid+"is null");
-                 _report(m_metagame,"成功读取："+sid);
-			}
+			// if(startsWith(message,"/read")){
+            //     string key = "/read ";
+            //     string sid = message.substr(key.length());
+			// 	const XmlElement@ root = readPlayerInfo(sid);
+            //     if(root is null) _report(m_metagame,"player sid="+sid+"is null");
+            //      _report(m_metagame,"成功读取："+sid);
+			// }
 			if(message == "/playerin"){
                 array<const XmlElement@> players = getPlayers(m_metagame);
                 const XmlElement@ player = null;
@@ -729,7 +738,7 @@ class IO_data : Tracker {
                             if(g_debugMode) _report(m_metagame,"检查的子标签"+sub_TagName+"值:"+sub_value);
                             if(m_access_tag.hasAttribute(sub_TagName)){
                                 string m_access_value = m_access_tag.getStringAttribute(sub_TagName);
-                                if(sub_value == "" || sub_value == m_access_value){
+                                if(sub_value == "" || sub_value == m_access_value){ //如果=="",则只是检查键而不检查值
                                     isFindTargetAccessTags = true;
                                     if(g_debugMode) _report(m_metagame,"找到匹配的标签"+sub_TagName+"值:"+sub_value);
                                     continue;
@@ -737,12 +746,12 @@ class IO_data : Tracker {
                                     // 有任意一次匹配不上，则退出
                                     if(g_debugMode) _report(m_metagame,"未找到匹配的标签"+sub_TagName+"值:"+sub_value);
                                     isFindTargetAccessTags = false;
-                                    continue;
+                                    break;
                                 }
                             }else{
                                 if(g_debugMode) _report(m_metagame,"该标签不存在"+sub_TagName+"值:"+sub_value);
                                 isFindTargetAccessTags = false;
-                                continue;
+                                break;
                             }
                         }
                         //全部通过
@@ -763,10 +772,10 @@ class IO_data : Tracker {
                 if(!isValid){
                     isAllPlayerValid = false;
                     if(g_debugMode) _report(m_metagame,"检查 "+target_TagName+" 失败，将isAllPlayerValid设置为false");
-                    continue;
+                    break;
                 }else{
                     isAllPlayerValid = true;
-                    break;
+                    continue;
                 }
 
             }
@@ -832,7 +841,7 @@ class IO_data : Tracker {
                     a.setBoolAttribute("onRemove",true);
                     m_player.appendChild(a);
 
-                    if(access_tags.size() != 0){
+                    if(access_tags.size() != 0){ //检测数据是否重复
                         for(int j = 0 ; j < int(access_tags.size()) ; ++j){
                             const XmlElement@ access_tag = access_tags[j];
                             string m_TagName = access_tag.getStringAttribute("AA_tag");
@@ -849,11 +858,11 @@ class IO_data : Tracker {
                                 if(xml.hasAttribute("override")){
                                     string isoverride = xml.getStringAttribute("override");
                                     if(isoverride == "0"){
-                                        m_player.appendChild(access_tag);
+                                        m_player.appendChild(access_tag); // 旧对象
                                         continue;
                                     }
                                 }
-                                m_player.appendChild(xml);
+                                m_player.appendChild(xml); //新对象
                                 isExist = true;
                             }else{//保留原对象
                                 m_player.appendChild(access_tag);
@@ -1483,6 +1492,8 @@ class IO_data : Tracker {
             res.addToResources(resources,1);
             @res = Resource("reward_box_weapon_delta.carry_item","carry_item");//MK4
             res.addToResources(resources,2);
+            @res = Resource("samples_acg.carry_item","carry_item");
+            res.addToResources(resources,2);
 
             addListItemInBackpack(m_metagame,cid,resources);
             GiveRP(m_metagame,cid,2000000);
@@ -1508,6 +1519,8 @@ class IO_data : Tracker {
             res.addToResources(resources,5);
             @res = Resource("reward_box_collection.carry_item","carry_item");//fumo
             res.addToResources(resources,2);
+            @res = Resource("samples_acg.carry_item","carry_item");
+            res.addToResources(resources,4);
 
             upgrade@ tempTack = upgrade(m_metagame);
             if(!tempTack.checkAccess(p_name,"prioritys","DanceKey_v1")){

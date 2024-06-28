@@ -300,7 +300,6 @@ class playerMissionInfo {
         dailyTasks_hard.push_back(MissionCounter("collector", "收集战利品", collector, "TaskHard"));
     }
 
-
     playerMissionInfo(Metagame@ metagame,string name){
         buildMissions();
         @m_metagame = @metagame;
@@ -898,6 +897,7 @@ class playerMissionInfoBuck {
         for(uint i = 0; i<size(); i++){
             string name = m_playerMissionInfos[i].m_name;
             string sid = g_playerInfoBuck.getSidByName(name);
+            _log("checkToSave sid="+sid+" m_sid="+m_playerMissionInfos[i].m_sid);
             if(sid != m_playerMissionInfos[i].m_sid){
                 m_playerMissionInfos[i].saveAndReload();
                 m_playerMissionInfos.removeAt(i);
@@ -1029,6 +1029,7 @@ class hd_daily_mission : Tracker{
         // int pid = player.getIntAttribute("player_id");
         // string name = player.getStringAttribute("name");
         // g_playerMissionInfoBuck.addInfo(m_metagame,name);
+        // 转入INFO.as里面添加玩家信息
     }
     // --------------------------------------------
 	protected void handlePlayerDisconnectEvent(const XmlElement@ event) {
@@ -1133,7 +1134,7 @@ class hd_daily_mission : Tracker{
         if(startsWith(message,"/login")){
             string days = message.substr(message.findFirst(" ")+1);
             int Days = 0;
-            if(isNumeric(days)){
+            if(isNumeric(days)){ 
                 Days = parseInt(days);
             }else{
                 _notify(m_metagame,senderId,"数字输入错误,示例:/login 10");

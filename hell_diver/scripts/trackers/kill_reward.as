@@ -239,6 +239,7 @@ class kill_reward : Tracker {
 		m_ended = false;
 		m_metagame.getComms().send("<command class='set_metagame_event' name='character_kill' enabled='1' />");
 		m_metagame.getComms().send("<command class='set_metagame_event' name='player_stun' enabled='0' />");
+		m_metagame.getComms().send("<command class='set_metagame_event' name='player_wound' enabled='0' />");
 		_log("load tk_watchdog_list");
 		m_tk_watchdog_list = loadData(m_tk_watchdog_Filename);
 	}

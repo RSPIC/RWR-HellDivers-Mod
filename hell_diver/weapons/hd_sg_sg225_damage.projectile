@@ -18,7 +18,7 @@ radius="0.6"
     </trigger> 
     <!-- 减少地面大量留存弹头 -->
     <result class="spawn" instance_class="projectile" instance_key="hd_sg_sg225_ie_damage.projectile" 
-    min_amount="10" max_amount="10" offset="0 0 0" position_spread="0.5 0" direction_spread="0 0" />
+    min_amount="8" max_amount="10" offset="0 0 0" position_spread="0.5 0" direction_spread="0 0" />
 
     <effect class="activated" ref="general_weapon_activated_flying_mars" lighting="0"/>
     <effect class="activated" ref="car_slide_spary_spark_activated" lighting="0"/>

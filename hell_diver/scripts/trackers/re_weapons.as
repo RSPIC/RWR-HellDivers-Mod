@@ -157,15 +157,15 @@ class re_weapons : Tracker {
                     addItemInBackpack(m_metagame,cid,"weapon",equipKey); 
                     _notify(m_metagame,pid,"ReWeapon has copy to your backpack");
                 }else{
-                    _notify(m_metagame,pid,"Can't copy your weapon");
+                    _notify(m_metagame,pid,"Can't copy your weapon[Main Weapon]");
                 }
             }
             if(equipList.get("1",equipKey) && equipList.get(equipKey,equipNum)){//副武器
                 if(startsWith(equipKey,"re_") && equipNum != 0){
                     addItemInBackpack(m_metagame,cid,"weapon",equipKey); 
-                    _notify(m_metagame,pid,"ReWeapon has copy to your backpack");
+                    _notify(m_metagame,pid,"ReWeapon has copy to your backpack ");
                 }else{
-                    _notify(m_metagame,pid,"Can't copy your weapon");
+                    _notify(m_metagame,pid,"Can't copy your weapon[Secondary Weapon]");
                 }
             }
         }

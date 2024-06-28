@@ -164,7 +164,7 @@ class schedule_Manager : Tracker {
         int pid = player.getIntAttribute("player_id");
         _log("updateinfo for pid="+pid);
         if(g_debugMode) _report(m_metagame,"更新玩家PID为="+pid);
-        // @player = getPlayerInfo(m_metagame,pid);
+        @player = getPlayerInfo(m_metagame,pid);
         updateGlobalPlayerInfo(m_metagame);
         // if(player is null){
         //     return;

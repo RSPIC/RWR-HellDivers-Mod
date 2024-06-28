@@ -1726,7 +1726,7 @@ bool g_spawn_with_ai = true; // 复活自带AI
 // bool g_spawn_with_ai = false; // 复活自带AI
 
 bool g_fastScriptDebug = false; // 脚本快速测试
-bool g_useMergedXml = true; // 采用快速打包加载文件
+bool g_useMergedXml = false; // 采用快速打包加载文件
 bool g_English_version = false; // 采用英文
 
 bool g_heal_on_kill = true; // 击杀回甲
