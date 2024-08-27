@@ -189,7 +189,7 @@ class MapRotatorInvasion : MapRotator {
 	}
 
 	// --------------------------------------------
-	protected void setStageCompleted(int index) {
+	void setStageCompleted(int index) {
 		if (!isStageCompleted(index)) {
 			m_stagesCompleted.insertLast(index);
 		}
@@ -255,6 +255,29 @@ class MapRotatorInvasion : MapRotator {
 
 			// not real data to add about it, is there a "set" in php?
 			setStageCompleted(m_currentStageIndex);
+			
+			if(m_metagame.isInServerMode())
+			{
+				string FILENAME =  "current_stage_index.xml";
+
+				int m_savedStageIndex = m_currentStageIndex + 1;
+
+				if (m_savedStageIndex == int(m_stages.size()))
+				{
+					m_savedStageIndex = 0;
+				}
+
+				XmlElement root("current_stage_index");
+				root.setIntAttribute("map_index", m_savedStageIndex);
+
+				XmlElement command("command");
+				command.setStringAttribute("class", "save_data");
+				command.setStringAttribute("filename", FILENAME);
+				command.setStringAttribute("location", "app_data");
+				command.appendChild(root);
+
+				m_metagame.getComms().send(command);
+			}
 
 			if (m_world !is null) {
 				// now, update world view, declare the area ours

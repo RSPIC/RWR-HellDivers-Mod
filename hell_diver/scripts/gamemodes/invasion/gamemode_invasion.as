@@ -122,7 +122,7 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 
 		if (m_userSettings.m_continue) {
 			_log("* restoring old game");
-
+			//do not use m_continue
 			// if loading, load metagame first
 			updateGeneralInfo();
 			load();
@@ -133,14 +133,38 @@ class GameModeInvasion : GameMode, UnlockRemoveListener, UnlockListener {
 			// starting the invasion for the first time now, 
 			// pick user settings from command line
 
+			int loading_map_index = 0;
+
+			if (isInServerMode()) {
+				string FILENAME = "current_stage_index.xml";
+
+				XmlElement@ query = XmlElement(
+					makeQuery(this, array<dictionary> = {
+						dictionary = { {"TagName", "data"}, {"class", "saved_data"}, {"filename", FILENAME},{"location", "app_data"}}}));
+				const XmlElement@ xml = this.getComms().query(query);
+				if(xml !is null){
+					const XmlElement@ root = xml.getFirstChild();
+					if(root !is null){
+						loading_map_index = root.getIntAttribute("map_index");
+					}
+				}
+
+				if (loading_map_index !=0)
+				{
+					for (int x1=0;x1<(loading_map_index);x1++){
+						m_mapRotator.setStageCompleted(x1);
+					}
+				}
+			}
+
 			m_unlockManager.init(0);
 
 			// - init sets up map rotator according to settings
 			// - settings are stored in metagame savegame data
 			m_mapRotator.init();
-
+			
 			// changes map, start the match, calls pre/post_begin_match
-			m_mapRotator.startRotation();
+			m_mapRotator.startRotation(false,loading_map_index);
 
 			// NOTE: the beginning is a bit messed up here;
 			// - we start from lobby, so we can't really query faction stuff

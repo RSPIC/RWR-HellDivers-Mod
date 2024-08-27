@@ -13,10 +13,9 @@ abstract class MapRotator : Tracker {
 	}
 
 	// --------------------------------------------
-	void startRotation(bool beginOnly = false) {
+	void startRotation(bool beginOnly = false,int map_index = 0) {
 		// pick first map, and change to it
-		int index = getNextStageIndex();
-
+		int index = map_index;
 		startMap(index, beginOnly);
 	}
 
