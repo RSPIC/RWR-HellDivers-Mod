@@ -15,14 +15,12 @@ void main(dictionary@ inputData) {
 
         settings.m_factionChoice = 0;                  // 
         settings.m_playerAiCompensationFactor = 5.0;   // was 1.1  (1.75)
-        settings.m_playerAiReduction = 4.0;   // was 1.1  (1.75)
+        settings.m_playerAiReduction = 5.0;   // was 1.1  (1.75)
 
         settings.m_fellowCapacityFactor = 1.0;
         settings.m_fellowAiAccuracyFactor = 0.93;
         settings.m_enemyCapacityFactor = 1.5;
         settings.m_enemyAiAccuracyFactor = 0.967;
-
-        settings.m_playerAiReduction = 0.0;            // didn't work before 1.76! (was 1.0)
 
         settings.m_xpFactor = 1.5;
         settings.m_rpFactor = 1.0;

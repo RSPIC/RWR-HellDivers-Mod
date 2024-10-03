@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<vehicle name="Ice cream van" key="icecream.vehicle" map_view_atlas_index="-1" respawn_time="10000.0" allow_ai_to_use="0">
+<vehicle name="Ice cream van" key="icecream.vehicle" 
+map_view_atlas_index="-1" 
+respawn_time="0.0" 
+allow_ai_to_use="0">
 	<tag name="metal_light" />	
  	<tire_set offset="0.86 0.0 1.141" radius="0.7" />
 	<tire_set offset="0.86 0.0 -1.374" radius="0.7" />
+
+	<modifier class="blast_range" value="0" />
+	<modifier class="blast_damage" value="-1000.0" />
 
 	<control 
 	max_speed="20.0" 
@@ -11,10 +17,14 @@
 	max_rotation="0.8" 
 	max_water_depth="1.9" />
                                                                                                                                                        
-	<physics max_health="3000.0" mass="10" 
+	<physics max_health="3000.0"
+	mass="10000" 
+	blast_push_threshold="1000"
 	extent="2.0 0.0 1.5" offset="0 0.0 0" 
 	top_offset="0 4 0" collision_model_pos="0 0.8 0" 
-	collision_model_extent="2.2 2.0 4.7" visual_offset="0 0.5 0.1" /> 
+	collision_model_extent="2.2 2.0 4.7" visual_offset="0 0.5 0.1" 
+	friction_offset="1.0"
+	/> 
 
 	<visual class="chassis" mesh_filename="conevan.mesh" texture_filename="conevan.png" />
 	<visual class="tire" mesh_filename="medivan_wheel.mesh" texture_filename="conevan.png" />

@@ -5,24 +5,11 @@
 	<!-- <weapon key="63type_107mm_rocket_launcher_resource.weapon" /> -->
 	 <!--63式火箭炮-->
 
-	<projectile key="ex_isu_152_call.projectile" /> <!--152-->
-	<projectile key="noxe_call.projectile" /> <!--noxe-->
-	<projectile key="repair_crane_call.projectile" /> 
-	<projectile key="ex_sturmtiger_tank_call.projectile" /><!--突击虎-->
-	<projectile key="ex_kv2_gup_call.projectile" /><!--KV2 真理高中-->
-	<projectile key="ex_guntruck_plus_call.projectile" /><!--灵位卡车-->
-	<projectile key="mtlb_2b9_call.projectile" /><!--MT-LB 迫击炮车 -->
-	<projectile key="wiesel_tow_call.projectile" /><!--鼬鼠/陶 -->
-	<projectile key="sdkfz184_call.projectile" /><!--费迪南重型坦克 -->
-	<projectile key="panzer_3_a_call.projectile" /><!--三号A型坦克 -->
-	<projectile key="panther_a_call.projectile" /><!--豹式A型坦克 -->
-	<projectile key="is2_m1895_call.projectile" /><!--IS2 -->
-
 	<carry_item key="lottery_cash_II.carry_item" /><!-- -->
     <carry_item key="lottery_cash.carry_item" /><!-- -->
 	
     <weapon key="stash_box.weapon" /><!--脚本仓库-->
-    <weapon key="deploy_hd_banner.weapon" /><!--旗帜-->
+    <!-- <weapon key="deploy_hd_banner.weapon" />旗帜 -->
 	<!-- 研发武器 -->
     <weapon key="upgrade_ui_weapon.target:hd_exp_mls4x_commando_track_mk3.cost:02.weapon" /><!--跟踪突击队-->
     <weapon key="upgrade_ui_weapon.target:hd_psc_r36_eruptor.cost:01.weapon" /><!--爆裂铳-->
@@ -37,5 +24,15 @@
     <weapon key="upgrade_ui_weapon.target:hd_side_p4_senator.cost:02.weapon" /><!--参议员 左轮-->
     <weapon key="upgrade_ui_weapon.target:hd_side_p19_redeemer.cost:01.weapon" /><!--救世主 冲锋手枪-->
     <weapon key="upgrade_ui_weapon.target:hd_exp_ac8_autocannon.cost:07.weapon" /><!--ac8 自动机炮-->
+    <weapon key="upgrade_ui_weapon.target:hd_exp_rl77_airburst_rocket_launcher.cost:07.weapon" /><!--RL-77 空爆火箭发射器-->
+    <weapon key="upgrade_ui_weapon.target:hd_exp_jar5_deminator.cost:02.weapon" /><!--JAR-5 主宰-->
+    <weapon key="upgrade_ui_weapon.target:hd_side_gp31_grenade_pistol.cost:02.weapon" /><!--GP-31 榴弹手枪-->
+    <weapon key="upgrade_ui_weapon.target:hd_exp_faf14_spear.cost:08.weapon" /><!--FAF-14 飞矛-->
+    <weapon key="upgrade_ui_weapon.target:hd_exp_las99_quasar_cannon.cost:04.weapon" /><!--LAS-99 类星体-->
+    <weapon key="upgrade_ui_weapon.target:hd_psc_cb9_exploding_crossbow.cost:02.weapon" /><!--CB-9 爆燃弩-->
+    <weapon key="upgrade_ui_weapon.target:hd_psc_rs422_railgun.cost:07.weapon" /><!--RS-422 轨道炮-->
+
+	<projectile key="upgrade_ui_stratagem.target:hd_offensive_orbital_120mm_he_barrage_call.cost:08.projectile"  /><!--120mm高爆弹幕 -->
+	<projectile key="upgrade_ui_stratagem.target:hd_offensive_orbital_380mm_he_barrage_call.cost:12.projectile"  /><!--380mm高爆弹幕 -->
 
 </resources>

@@ -292,6 +292,7 @@
 
 		<models file="extra_weapons.models" />
 		<models file="hd_weapons.models" />
+		<models file="hd_rare.models" />
 		<!-- <models file="hd_base.models" /> -->
 
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
@@ -354,11 +355,36 @@
 	</soldier>
 
 	<!-- 精英空投 -->
-	<soldier name="HellDiver" spawn_score="0.00" copy_from="base">
-		<model filename="ex_sc_ghost.xml" />
+	<soldier name="HellDiver" spawn_score="0.06" copy_from="base">
+		<model filename="hdivers_black_ops.xml" />
 		<ai filename="default_super_earth_elite.ai" />
 			<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
-			<resources file="hd_divers.resources" />
+		<resources>
+			<weapon key="hd_exp_jar5_deminator.weapon" /><!--主宰-->
+			<weapon key="hd_smg_mp98_knight_ex.weapon" /><!--骑士EX-->
+			<weapon key="hd_ar_ar23p_liberator.weapon" /><!--穿甲解放者突击步枪-->
+			<weapon key="hd_ar_ar61_tenderizer.weapon" /><!--气锤突击步枪-->
+			<weapon key="hd_sg_sg225_breaker_spray_pray.weapon" /><!--破裂者"弥漫与祷告"霰弹-->
+			<weapon key="hd_sg_sg225_breaker_incendiary.weapon" /><!--燃烧破裂者霰弹-->
+
+			<weapon key="hd_side_hvy_shield_stun.weapon" /><!--闪光盾-->
+			<weapon key="hd_side_gp31_grenade_pistol.weapon" /><!--GP-31榴弹手枪-->
+			<weapon key="hd_side_p4_senator.weapon" /><!--P-4 参议员左轮手枪 重穿-->
+			<weapon key="hd_side_p113_verdict.weapon" /><!--P113 判决 手枪-->
+
+			<carry_item key="hd_vest_lgt_cm21_20" />
+			<carry_item key="hd_vest_lgt_sc30_20" />
+			<carry_item key="hd_vest_mid_sa12_40" />
+			<carry_item key="hd_vest_mid_ce35_40" />
+			<carry_item key="hd_vest_mid_dp11_40" />
+			<carry_item key="hd_vest_mid_dp53_40" />
+			<carry_item key="hd_vest_mid_tr9_40" />
+			<carry_item key="hd_vest_hvy_sa32_80" />
+			<carry_item key="hd_vest_hvy_tr62_120" />
+
+			<projectile key="hd_grenade_stun_g23.projectile" />	<!--闪光雷-->
+			<projectile key="hd_offensive_vindicator_dive_bomb_mk3.projectile" />	
+		</resources>
 		<attribute_config class="rp">
 			<attribute weight="1" min="100.0" max="200.0" />
 		</attribute_config>
@@ -369,7 +395,7 @@
 
 		<item_class_existence_config>
 			<!-- main -->
-			<item_class_existence class="weapon" slot="0" probability="1" />
+			<item_class_existence class="weapon" slot="0" probability="0.8" />
 			<!-- secondaries -->
 			<item_class_existence class="weapon" slot="1" probability="1" />
 			<!-- wearables -->

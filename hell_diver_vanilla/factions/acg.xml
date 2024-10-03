@@ -232,13 +232,13 @@
 	<soldier name="default" spawn_score="0.0">
 		<character filename="helldivers_default_chat.character">
 
-			<parameter class="detectability_prone" value="0.18" />
+			<parameter class="detectability_prone" value="0.2" />
 			<parameter class="detectability_wounded" value="0.2" />
-			<parameter class="detectability_crouching" value="0.45" />
-			<parameter class="detectability_crouch_moving" value="0.3" />
+			<parameter class="detectability_crouching" value="0.55" />
+			<parameter class="detectability_crouch_moving" value="0.6" />
 			<parameter class="detectability_walking" value="1.05" />
-			<parameter class="detectability_still" value="0.95" />
-			<parameter class="detectability_running" value="0.55" />
+			<parameter class="detectability_still" value="1.0" />
+			<parameter class="detectability_running" value="0.75" />
 
 		</character>
 		<ai filename="default_super_earth.ai" />
@@ -250,7 +250,9 @@
 		<models file="hd_weapons.models" />
 		<models file="acg_token.models" />
 		<models file="acg_weapon.models" />
-	
+		<models filename="cyborgs_default.models" />
+		<models filename="bugs_default.models" />
+
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="common.resources" />
 		<resources file="hd_ex_armory.resources" />
@@ -396,7 +398,14 @@
 		<attribute_config class="xp">
 			<attribute weight="1.0" min="0.0" max="0.05" />
 		</attribute_config>
-	</soldier>              
+	</soldier>             
+	<!-- 美游垃圾桶 -->
+	<soldier name="MiyuHome" spawn_score="0.0">
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources>
+			<weapon key="acg_miyu.weapon" />
+		</resources>
+	</soldier>      
 	<!-- EX补给箱 -->
 	<soldier name="supply_ex_box" spawn_score="0.0" copy_from="default_ai">
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
@@ -598,4 +607,5 @@
 		<attribute_config class="xp"><attribute weight="500.0" min="1" max="1" />
 		</attribute_config>
 	</soldier> 
+	
 </faction>

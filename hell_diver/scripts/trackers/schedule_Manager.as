@@ -166,9 +166,9 @@ class schedule_Manager : Tracker {
         if(g_debugMode) _report(m_metagame,"更新玩家PID为="+pid);
         @player = getPlayerInfo(m_metagame,pid);
         updateGlobalPlayerInfo(m_metagame);
-        // if(player is null){
-        //     return;
-        // }
+        if(player is null){
+            return;
+        }
         string name = player.getStringAttribute("name");
         string profile_hash = player.getStringAttribute("profile_hash");
         string sid = player.getStringAttribute("sid");
@@ -176,7 +176,7 @@ class schedule_Manager : Tracker {
             sid = s_sid;
         }
         int cid = player.getIntAttribute("character_id");
-        if(g_debugMode) _report(m_metagame,"更新玩家CID，玩家名为="+name+",CID为="+cid);
+        _log("更新玩家CID，玩家名为="+name+",CID为="+cid);
         int fid = player.getIntAttribute("faction_id");
         const XmlElement@ character = getCharacterInfo(m_metagame,cid);
         if(character is null){return;}
@@ -187,7 +187,7 @@ class schedule_Manager : Tracker {
         float rp = character.getFloatAttribute("rp");
         if(g_playerInfoBuck is null){return;}
         if(g_playerInfoBuck.exists(name)){
-            if(g_debugMode) _report(m_metagame,"已有玩家信息，更新");
+            _log("已有玩家信息，更新");
             g_playerInfoBuck.update(name,pid,cid,fid,dead,wound,xp,rp,group);
             g_playerInfoBuck.setHash(name,profile_hash);
             g_playerInfoBuck.setSid(name,sid);

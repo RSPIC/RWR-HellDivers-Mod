@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapons> 
+<weapon 
+file="hd_exp_jar5_deminator_base.weapon"
+key="hd_exp_jar5_deminator.weapon" 
+drop_count_factor_on_death="0" 
+drop_count_factor_on_player_death="0"
+time_to_live_out_in_the_open="0"
+player_death_drop_owner_lock_time="0"
+> 
+    <specification 	
+    name="JAR-5 Dominator" 
+	/> 
+
+	<commonness value="0.00000001" can_respawn_with="1" in_stock="0" /> 
+
+	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.6" can_be_detected_by_driver="1" can_be_disarmed="0" name="JAR-5 Dominator" radius="0.7">
+
+		<result class="spawn" instance_class="projectile" instance_key="hd_exp_jar5_deminator_base_damage.projectile" 
+		min_amount="25" max_amount="25" offset="0 0.5 0" position_spread="0.5 0" direction_spread="0 0" />	
+		<trigger class="impact">
+			<collider class="terrain" enabled="1" />     
+			<collider class="static_object" enabled="1" /> 
+			<collider class="vehicle" enabled="1" /> 
+			<collider class="character" enabled="1" faction_compare="not_equal"/>
+		</trigger> 
+		<rotation class="motion" /><!--参数：motion、random-->
+		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
+
+		<!--命中音效-->
+		<sound class="result" key="other" fileref="rifle_drop.wav" pitch_variety="0.03" volume="0.0" />
+		
+		<!--命中特效-->
+		<!-- <effect class="result" ref="p6_gunslinger_hit_spark" lighting="0"/> -->
+		<effect class="result" ref="p6_gunslinger_hit_leave" lighting="0"/>
+		<effect class="result" ref="p6_gunslinger_hit_light" lighting="0"/>
+		<effect class="result" key="terrain" ref="p6_gunslinger_hit_01" />
+		<effect class="result" key="terrain" ref="p6_gunslinger_hit_02" />
+		<effect class="result" key="terrain" ref="p6_gunslinger_hit_03" />
+		<effect class="result" key="terrain" ref="p6_gunslinger_hit_04" />
+
+		
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<!--尾迹组-->
+		<trail probability="1" key="normal_trail"/>	
+    </projectile>
+
+</weapon>
+</weapons>

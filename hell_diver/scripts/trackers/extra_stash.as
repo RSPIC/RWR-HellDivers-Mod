@@ -654,8 +654,21 @@ class playerStashInfo {
                 }
             }
         }
-        int pid = g_playerInfoBuck.getPidByName(m_metagame,m_name);
-        int cid = g_playerInfoBuck.getCidByName(m_metagame,m_name);
+        int cid = -1;
+        int pid = -1;
+        array<const XmlElement@> players = getPlayers(m_metagame);
+		for(uint j = 0; j < players.size() ; ++j){
+			const XmlElement@ player = players[j];
+			if(player is null){continue;}
+			if(m_name == player.getStringAttribute("name")){
+				cid = player.getIntAttribute("character_id");
+                pid = player.getIntAttribute("player_id");
+			}
+		}
+        if(pid == -1 || cid == -1){
+            _log("stash exhangeItems bugs,cid="+cid+" pid="+pid+" player="+m_name);
+            return false;
+        }
         if(deleteObjects.size() >= 0){
             _debugReport(m_metagame,"兑换物品：检测到删除对象");
             refreshStash();

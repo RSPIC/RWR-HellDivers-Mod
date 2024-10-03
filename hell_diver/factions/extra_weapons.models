@@ -74,7 +74,46 @@
 	</model>
 	<model filename="hd_ra2_tanya.xml"><requirement class="weapon" slot="0" key="re_ex_ra2_tanya_c4.weapon"/>
 	</model>
+	<!-- 星际战士 -->
+	<model filename="ex_space_marines.xml"><requirement class="weapon" slot="0" key="ex_space_marines.weapon"/>
+	</model>
+	<model filename="ex_space_marines.xml"><requirement class="weapon" slot="0" key="ex_space_marines_chainsaw.weapon"/>
+	</model>
+	<model filename="ex_space_marines.xml"><requirement class="weapon" slot="0" key="ex_space_marines_shield.weapon"/>
+	</model>
+	<model filename="ex_space_marines.xml"><requirement class="weapon" slot="0" key="re_ex_space_marines.weapon"/>
+	</model>
+	<model filename="ex_space_marines.xml"><requirement class="weapon" slot="0" key="re_ex_space_marines_chainsaw.weapon"/>
+	</model>
+	<model filename="ex_space_marines.xml"><requirement class="weapon" slot="0" key="re_ex_space_marines_shield.weapon"/>
+	</model>
+	<!-- 重装战士 -->
+	<model filename="ex_heavy_infantry.xml"><requirement class="weapon" slot="0" key="ex_heavy_infantry_morita.weapon"/>
+	</model>
+	<model filename="ex_heavy_infantry.xml"><requirement class="weapon" slot="0" key="ex_heavy_infantry_morita_shield.weapon"/>
+	</model>
+	<model filename="ex_heavy_infantry.xml"><requirement class="weapon" slot="0" key="re_ex_heavy_infantry_morita.weapon"/>
+	</model>
+	<model filename="ex_heavy_infantry.xml"><requirement class="weapon" slot="0" key="re_ex_heavy_infantry_morita_shield.weapon"/>
+	</model>
+	<model filename="ex_heavy_infantry.xml"><requirement class="weapon" slot="0" key="ex_heavy_infantry_morita_mk1.weapon"/>
+	</model>
+	<model filename="ex_heavy_infantry.xml"><requirement class="weapon" slot="0" key="re_ex_heavy_infantry_morita_mk1.weapon"/>
+	</model>
 
-
-	
+	<!-- 无畏 -->
+	<model filename="ex_exo_dreadnought_mg.xml"><requirement class="weapon" slot="0" key="ex_exo_dreadnought_mg.weapon"/>
+	</model>
+	<model filename="ex_exo_dreadnought_mg.xml"><requirement class="weapon" slot="0" key="re_ex_exo_dreadnought_mg.weapon"/>
+	</model>
+	<model filename="ex_exo_dreadnought.xml"><requirement class="weapon" slot="0" key="ex_exo_dreadnought_plas.weapon"/>
+	</model>
+	<model filename="ex_exo_dreadnought.xml"><requirement class="weapon" slot="0" key="re_ex_exo_dreadnought_plas.weapon"/>
+	</model>
+	<model filename="ex_exo_dreadnought_fixarm.xml"><requirement class="weapon" slot="0" key="ex_exo_dreadnought_rocket.weapon"/>
+	</model>
+	<model filename="ex_exo_dreadnought_fixarm.xml"><requirement class="weapon" slot="0" key="re_ex_exo_dreadnought_rocket.weapon"/>
+	</model>
+	<model filename="ex_exo_dreadnought.xml"><requirement class="weapon" slot="1" key="ex_exo_dreadnought_null.weapon"/>
+	</model>
 </models>

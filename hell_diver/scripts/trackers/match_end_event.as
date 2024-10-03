@@ -181,9 +181,9 @@ class match_end : Tracker {
                     if(r_name == name){
                         GiveRP(m_metagame,cid,int(rp));
                         if(isEng(name)){
-                            _notify(m_metagame,pid,"暖服奖励已发放，额外RP奖励："+int(rp));
-                        }else{
                             _notify(m_metagame,pid,"'Warm Server' bonus has send, extra RP:"+int(rp));
+                        }else{
+                            _notify(m_metagame,pid,"暖服奖励已发放，额外RP奖励："+int(rp));
                         }
                     }
                 }

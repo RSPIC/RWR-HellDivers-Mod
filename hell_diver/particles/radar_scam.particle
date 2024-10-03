@@ -240,6 +240,44 @@ material radar_scan_mix : add_base
 	}
 	}
 }}
+material radar_scan_mix_red : add_base
+{   
+    technique{
+    pass{
+		scene_blend add
+        depth_func always_pass
+        texture_unit{
+            texture radar_scan_1_red.png 	
+			rotate_anim 0.05
+			tex_address_mode border
+            tex_border_colour 0 0 0 0
+            tex_border_colour 0 0 0 0
+		}
+        texture_unit{
+            texture radar_scan_4_red.png 	
+            colour_op add
+			rotate_anim -0.075
+			tex_address_mode border
+            tex_border_colour 0 0 0 0
+		}
+        texture_unit{
+            texture DF39_singing_2.png 	
+            colour_op add
+			wave_xform scale_x sine 0.5 2 0 0.2
+			wave_xform scale_y sine 0.5 2 0 0.2
+            rotate_anim -0.075
+			tex_address_mode border
+            tex_border_colour 0 0 0 0
+		}
+		texture_unit{
+            texture radar_scan_main_red.png 
+			colour_op modulate
+			rotate_anim 1.25
+			tex_address_mode border
+            tex_border_colour 0 0 0 0
+	}
+	}
+}}
 material radar_scan_racing : add_base
 {   
     technique{

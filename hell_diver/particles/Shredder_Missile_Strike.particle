@@ -44,6 +44,45 @@ particle_system SMS_camera_light
 		colour2 0 0 0 0
 	}
 }
+particle_system SMS_camera_light_faster
+{
+	quota 200
+	material point_soft_edge_100_pass
+	particle_width 120
+	particle_height 120
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.75
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.3
+		colour1 1 0.9 0.9 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
 particle_system SMS_camera_light_colour_render
 {
 	quota 200
@@ -67,6 +106,45 @@ particle_system SMS_camera_light_colour_render
 		position 0 5 0
 		velocity 0.0001
 		time_to_live 3
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0 1
+		time1 0.7
+		colour1 1 0.3 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system SMS_camera_light_colour_render_faster
+{
+	quota 200
+	material point_soft_edge_100_pass
+	particle_width 90
+	particle_height 90
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 5 0
+		velocity 0.0001
+		time_to_live 1.0
 		duration 0.1
 	}
 	affector Scaler
@@ -207,6 +285,59 @@ particle_system SMS_vertical_smoke
 		force_application add
 	}
 }
+particle_system SMS_vertical_smoke_faster
+{
+	quota 800
+	material Tex_Smoke17C_real
+	particle_width 5
+	particle_height 5
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 30
+		position 0 3 0
+		velocity 0.0001
+		time_to_live 2
+		duration 1.0
+        depth 20
+        width 10
+        height 10
+	}
+	affector Scaler
+	{
+		rate 1
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	30
+		rotation_speed_range_end	-30
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.4 0.4 0.4 0.6
+		time1 0.7
+		colour1 0.6 0.6 0.6 0.3
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 3.5 0
+		force_application add
+	}
+}
 particle_system SMS_Ring_smoke
 {
 	quota 800
@@ -231,6 +362,61 @@ particle_system SMS_Ring_smoke
 		velocity 0.0001
 		time_to_live 4
 		duration 3
+        depth 4
+        width 18
+        height 18
+        inner_height 0.6
+        inner_width 0.6
+	}
+	affector Scaler
+	{
+		rate 5
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	30
+		rotation_speed_range_end	-30
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.6 0.6 0.6 0.3
+		time1 0.7
+		colour1 0.7 0.7 0.7 0.1
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector LinearForce{
+		force_vector 0 -2 0
+		force_application add
+	}
+}
+particle_system SMS_Ring_smoke_faster
+{
+	quota 800
+	material Tex_Smoke17C_real
+	particle_width 5
+	particle_height 5
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Ring
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 30
+		position 0 20 0
+		velocity 0.0001
+		time_to_live 2
+		duration 1
         depth 4
         width 18
         height 18

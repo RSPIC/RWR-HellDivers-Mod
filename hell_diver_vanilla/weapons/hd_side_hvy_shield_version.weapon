@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapons> 
+<weapon 
+file="hd_side_hvy_shield_base.weapon"
+key="hd_side_hvy_shield_stun.weapon"
+drop_count_factor_on_death="0" 
+drop_count_factor_on_player_death="0"
+time_to_live_out_in_the_open="0"
+player_death_drop_owner_lock_time="0" 
+>
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.25" can_be_detected_by_driver="1" can_be_disarmed="0"> 
+
+		<result class="blast" radius="12.0" damage="40" push="0" decal="1" 
+			damage_origin_vehicle="0" make_vehicle_hit_sound="0" faction_compare="not_equal"
+			character_state="wound" />
+
+		<trigger class="time" time_to_live="0" />
+
+		<effect class="result" key="terrain" ref="stun_mine_mk3_ring" lighting="0" post_processing="0"/>
+		<effect class="result" key="terrain" ref="stun_mine_mk3_center" lighting="0" post_processing="0"/>
+		<effect class="result" key="terrain" ref="stun_mine_mk3_ray" lighting="0" post_processing="0"/>
+		<effect class="result" key="terrain" ref="stun_mine_mk3_ambient_white" lighting="0"/>
+		
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+    </projectile>
+	</weapon>
+</weapons>

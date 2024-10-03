@@ -20,11 +20,14 @@ dictionary healable_weapon = {
         // 空
         {"",-1},
 
-        {"hd_side_p2_peacemaker_full_upgrade.weapon",1},
-
-        {"hd_side_p6_gunslinger.weapon",3},
-
-        {"hd_pst_tox13_avenger_mk3.weapon",2},
+        {"hd_side_p19_redeemer.weapon",1},
+        {"hd_side_p113_verdict.weapon",2},
+        {"hd_side_p2_peacemaker_full_upgrade.weapon",2},
+        {"hd_side_p6_gunslinger.weapon",4},
+        {"hd_side_p4_senator.weapon",5},
+        {"hd_side_hg871_woodpecker.weapon",6},
+        {"hd_side_gp31_grenade_pistol_base_damage.weapon",3},
+        {"hd_exp_rl112_recoilless_rifle_mk3_damage.projectile",8},
 
         {"hd_exo44_walker_mk3_mg.weapon",2},
         {"hd_exo44_walker_mk3_missile.weapon",2},
@@ -38,16 +41,21 @@ dictionary healable_weapon = {
         {"hd_exo51_lumberer_mk3_flame.weapon",2},
         {"hd_exo51_lumberer_mk3_flame_damage.projectile",2},
 
+        {"acg_hayase_yuuka.weapon",1},
+        {"acg_rumi.weapon",1},
+
+        {"ex_exo_dreadnought_mg.weapon",3},
+        {"ex_exo_dreadnought_plas.weapon",2},
+        {"ex_exo_dreadnought_plas_damage.projectile",2},
+        {"ex_exo_dreadnought_rocket.weapon",2},
+        {"ex_exo_dreadnought_rokect_spawn_damage",2},
+
         // 占位的
         {"666",-1}
 
 };
 //可额外恢复护甲的击杀对象(soldier_group_name)
 dictionary healable_killtarget_bonus = {
-
-        {"Warlord",5},
-
-        {"Behemoth",5},
 
         // 占位的
         {"666",-1}
@@ -107,6 +115,8 @@ dictionary include_kill_target = {
         {"hd_general_spawn_no_effect.projectile",false},
         {"hd_general_gl_spawn.projectile",false},
         {"hd_offensive_shredder_missile_strike_mk3_damage_2.projectile",false},
+        {"hd_offensive_orbital_120mm_he_barrage.projectile",false},
+        {"hd_offensive_orbital_380mm_he_barrage.projectile",false},
 
         {"ex_edf_turrent_single_damage.projectile",true},
         {"ex_edf_turrent_double_damage.projectile",true},
@@ -117,6 +127,7 @@ dictionary include_kill_target = {
         {"himars_damage.projectile",true},
         {"mtlb_2b9_damage.projectile",true},
         {"ex_sherman_cannon_damage.projectile",true},
+        {"ex_pak40_damage.projectile",true},
 
         {"",-1}
 
@@ -131,6 +142,23 @@ dictionary auto_cost_skill_key = {
 
 	{"",-1}
 };
+//手动Cost释放技能键值
+dictionary manual_cost_skill_key = {
+	{"acg_hayase_yuuka.weapon",25},
+	{"re_acg_hayase_yuuka.weapon",20},
+
+    {"acg_izayoi_sakuya_skill",75}, // 需要和skill_cost字典计数一致
+
+	{"acg_takanashi_hoshino_battle_armor",12},
+	{"acg_takanashi_hoshino_battle_shb",9},
+	{"acg_takanashi_hoshino_battle_smoke",12},
+	{"acg_takanashi_hoshino_battle_charge",4},
+
+	{"acg_bf109_charge",7},
+
+
+	{"0",-1}
+};
 //Cost技能武器计数键值
 dictionary cost_skill_killer_key = {
 	{"acg_asagi_mutsuki.weapon","acg_asagi_mutsuki_skill"},
@@ -138,6 +166,30 @@ dictionary cost_skill_killer_key = {
 
 	{"acg_rikuhachima_aru.weapon","acg_rikuhachima_aru_skill"},
 	{"re_acg_rikuhachima_aru.weapon","re_acg_rikuhachima_aru_skill"},
+
+	{"acg_izayoi_sakuya_i.weapon","acg_izayoi_sakuya_skill"},
+	{"acg_izayoi_sakuya_ii.weapon","acg_izayoi_sakuya_skill"},
+	{"acg_izayoi_sakuya_road_roller.weapon","acg_izayoi_sakuya_skill"},
+	{"re_acg_izayoi_sakuya_i.weapon","acg_izayoi_sakuya_skill"},
+	{"re_acg_izayoi_sakuya_ii.weapon","acg_izayoi_sakuya_skill"},
+	{"re_acg_izayoi_sakuya_road_roller.weapon","acg_izayoi_sakuya_skill"},
+	{"acg_izayoi_sakuya_road_roller_damage.projectile","acg_izayoi_sakuya_skill"},
+
+	{"acg_takanashi_hoshino_battle.weapon","acg_takanashi_hoshino_battle_armor"},
+	{"re_acg_takanashi_hoshino_battle.weapon","acg_takanashi_hoshino_battle_armor"},
+
+	{"acg_takanashi_hoshino_battle_shb.weapon","acg_takanashi_hoshino_battle_smoke"},
+	{"re_acg_takanashi_hoshino_battle_shb.weapon","acg_takanashi_hoshino_battle_smoke"},
+
+	{"acg_takanashi_hoshino_battle_side_pistol.weapon","acg_takanashi_hoshino_battle_shb"},
+	{"re_acg_takanashi_hoshino_battle_side_pistol.weapon","acg_takanashi_hoshino_battle_shb"},
+
+	{"acg_takanashi_hoshino_battle_side_pistol_shield.weapon","acg_takanashi_hoshino_battle_charge"},
+	{"re_acg_takanashi_hoshino_battle_side_pistol_shield.weapon","acg_takanashi_hoshino_battle_charge"},
+
+	{"acg_bf109.weapon","acg_bf109_charge"},
+	{"re_acg_bf109.weapon","acg_bf109_charge"},
+
 
 	{"",-1}
 };
@@ -283,6 +335,7 @@ class kill_reward : Tracker {
 			return;
 		}
 		string weaponKey = event.getStringAttribute("key");//击杀武器关键字
+		_debugReport(m_metagame,"killer weaponKey="+weaponKey);
 		string method_hint = event.getStringAttribute("method_hint");//击杀方式
 		string soldier_group_name = target.getStringAttribute("soldier_group_name");//击杀兵种
 		int target_fid = target.getIntAttribute("faction_id");
@@ -328,6 +381,41 @@ class kill_reward : Tracker {
 					}
 				}
 			}
+			//--------------------手动Cost释放技能记录----------------------------------
+			int manualCostCount = 100;
+			if(manual_cost_skill_key.exists(weaponKey)){
+				manual_cost_skill_key.get(weaponKey,manualCostCount);
+				g_userCountInfoBuck.addCount(k_name,weaponKey);
+				int nowCost = 0;
+				if(g_userCountInfoBuck.getCount(k_name,weaponKey,nowCost)){
+					if(nowCost == manualCostCount){
+						_notify(m_metagame,k_pid,"Weapon Skill Ready, use /s to launch");
+						//g_userCountInfoBuck.clearCount(k_name,weaponKey);
+					}
+				}
+			}
+			if(method_hint == "stab"){
+				g_userCountInfoBuck.addCount(k_name,"stabKill");
+				int nowCost = 0;
+				if(g_userCountInfoBuck.getCount(k_name,"stabKill",nowCost)){
+					if(nowCost == 20){
+						dictionary equipList;
+						if(!getPlayerEquipmentInfoArray(m_metagame,killer_cid,equipList)){
+							return;
+						}
+						string equipKey;
+						if(equipList.get("0",equipKey)){//主武器
+							if(manual_cost_skill_key.exists(equipKey)){
+								manual_cost_skill_key.get(equipKey,manualCostCount);
+								g_userCountInfoBuck.addCount(k_name,equipKey,manualCostCount);
+								_notify(m_metagame,k_pid,"Weapon Skill Ready, use /s to launch");
+							}
+						}
+						g_userCountInfoBuck.clearCount(k_name,"stabKill");
+						//g_userCountInfoBuck.clearCount(k_name,weaponKey);
+					}
+				}
+			}
 			//--------------------击杀增加Cost记录----------------------------------
 			string targetCostKey;
 			if(cost_skill_killer_key.exists(weaponKey)){
@@ -342,14 +430,14 @@ class kill_reward : Tracker {
 					int cost = 0;
             		if(skill_cost.get(targetCostKey,cost)){
 						if(nowCost == cost-1){
-							_notify(m_metagame,k_pid,"Cost Full"+cost+"/"+cost);
+							_notify(m_metagame,k_pid,"Cost Full "+cost+"/"+cost);
 						}
 						if(nowCost == cost){//Cost无法累计溢出，同时就绪提示只提示一次
 							return;
 						}
 					}
 				}
-				_debugReport(m_metagame,"当前增加Cost="+get_cost);
+				_debugReport(m_metagame,"当前增加Cost="+get_cost+" 累计="+nowCost+" 对象:"+targetCostKey);
 				g_userCountInfoBuck.addCount(k_name,targetCostKey,get_cost);
 			}
 			//--------------------击杀回甲记录--------------------------------------
@@ -360,6 +448,9 @@ class kill_reward : Tracker {
 				}
 				if(healable_killtarget_bonus.get(soldier_group_name,healnum)){//执行：可额外恢复护甲的击杀对象
 					healCharacter(m_metagame,killer_cid,healnum);
+				}
+				if(method_hint == "stab"){// 近战默认回复
+					healCharacter(m_metagame,killer_cid,1);
 				}
 			}
 			//---------------------击杀增益记录--------------------------------------
@@ -498,7 +589,345 @@ class kill_reward : Tracker {
 			CreateListDirectProjectile(m_metagame,list);
 			_notify(m_metagame,pid,"小技能'暗黑狙击'已释放");
 		}
+
     }
+	// -----------------------------------------------------------------
+	protected void handleChatEvent(const XmlElement@ event){
+        string name = event.getStringAttribute("player_name");
+        int pid = event.getIntAttribute("player_id");
+		int cid = g_playerInfoBuck.getCidByName(m_metagame,name);
+        string message = event.getStringAttribute("message");
+
+        message = message.toLowerCase();
+		if(message == "/s"){
+			dictionary equipList;
+			if(!getPlayerEquipmentInfoArray(m_metagame,cid,equipList)){
+				return;
+			}
+			handelManualCostResultEvent(m_metagame,name,pid,cid,equipList);
+		}
+	}
+	// -----------------------------------------------------------------
+	protected void handelManualCostResultEvent(Metagame@ m_metagame,string&in name,int&in pid,int&in cid,dictionary&in equipList){
+		string equipKey;
+        if(equipList.get("0",equipKey)){//主武器
+        _log("now equipKey="+equipKey);
+		_debugReport(m_metagame,"手动技能：当前主武器="+equipKey);
+			string targetKey = "acg_hayase_yuuka";
+            string targetKey2 = "re_acg_hayase_yuuka";
+            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+				int nowCost = 0;
+				int manualCostCount = 100;
+				if(manual_cost_skill_key.exists(equipKey)){
+					manual_cost_skill_key.get(equipKey,manualCostCount);
+					if(g_userCountInfoBuck.getCount(name,equipKey,nowCost)){
+						if(nowCost >= manualCostCount){
+							_notify(m_metagame,pid,"Q.E.D Skill Releasing");
+							g_userCountInfoBuck.clearCount(name,equipKey);
+
+							editPlayerVest(m_metagame,cid,"helldivers_vest_barrier",4);//替换为60层技能甲
+							const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+							if(character is null){return;}
+							Vector3 ePos = stringToVector3(character.getStringAttribute("position"));
+							string m_key = "ba_effect_yuuka_skill.projectile";
+							CreateDirectProjectile(m_metagame,ePos,ePos,m_key,cid,0,100);
+
+							array<string> soundList = {"acg_hayase_yuuka_skill_01.wav","acg_hayase_yuuka_skill_02.wav","acg_hayase_yuuka_skill_03.wav"};
+							playRandomSoundArray(m_metagame,soundList,0,ePos,2.0);
+
+							string equipKey_vest = "";
+        					if(equipList.get("4",equipKey_vest)){//护甲
+								if(equipKey_vest == "helldivers_vest_barrier"){
+									equipKey_vest = "helldivers_vest";
+								}
+							}else{
+								equipKey_vest = "helldivers_vest";
+							}
+
+							editPlayerVestDelay@ new_task = editPlayerVestDelay(m_metagame,cid,pid,equipKey_vest,20);
+							TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+							tasker.add(new_task);
+						}else{
+							_notify(m_metagame,pid,"cost不足，当前cost="+nowCost+"/"+manualCostCount);
+						}
+					}
+				}
+			}
+			targetKey = "acg_izayoi_sakuya";
+            targetKey2 = "re_acg_izayoi_sakuya";
+            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+				int nowCost = 0;
+				int manualCostCount = 100;
+
+				string targetCostKey;
+				cost_skill_killer_key.get(equipKey,targetCostKey);
+
+				if(manual_cost_skill_key.exists(targetCostKey)){
+					manual_cost_skill_key.get(targetCostKey,manualCostCount);
+					if(g_userCountInfoBuck.getCount(name,targetCostKey,nowCost)){
+						if(nowCost >= manualCostCount){
+							_notify(m_metagame,pid,"Sakuya Skill Releasing");
+							g_userCountInfoBuck.clearCount(name,targetCostKey);
+
+							const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+							if(character is null){return;}
+							Vector3 ePos = stringToVector3(character.getStringAttribute("position"));
+
+							const XmlElement@ player = getPlayerInfo(m_metagame, pid);
+							if (player is null) {return;}
+							Vector3 aimPosition = stringToVector3(player.getStringAttribute("aim_target"));
+
+							int m_fid = g_playerInfoBuck.getFidByCid(cid);
+
+							string m_key = "reisenu_card_star.wav";
+							playSoundAtLocation(m_metagame,m_key,m_fid,ePos,0.35);
+
+							m_key = "acg_izayoi_sakuya_skill.projectile";
+							CreateDirectProjectile(m_metagame,ePos,ePos,m_key,cid,0,100);
+
+							m_key = "acg_izayoi_sakuya_skill_trick1.projectile";
+							CreateDirectProjectile(m_metagame,ePos,ePos,m_key,cid,0,100);
+
+							// array<string> soundList = {"acg_hayase_yuuka_skill_01.wav","acg_hayase_yuuka_skill_02.wav","acg_hayase_yuuka_skill_03.wav"};
+							// playRandomSoundArray(m_metagame,soundList,0,ePos,2.0);
+
+							TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+							string key1= "acg_izayoi_sakuya_skill_damage_stay.projectile";
+							CreateProjectile@ task1 = CreateProjectile(m_metagame,aimPosition,aimPosition,key1,cid,m_fid,1,0,1,0);
+							tasker.add(task1);
+							
+						}else{
+							_notify(m_metagame,pid,"cost不足，当前cost="+nowCost+"/"+manualCostCount);
+						}
+					}
+				}
+			}
+			targetKey = "acg_takanashi_hoshino_battle.weapon";
+            targetKey2 = "re_acg_takanashi_hoshino_battle.weapon";
+            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+				int nowCost = 0;
+				int manualCostCount = 100;
+
+				string targetCostKey;
+				cost_skill_killer_key.get(equipKey,targetCostKey);
+
+				if(manual_cost_skill_key.exists(targetCostKey)){
+					manual_cost_skill_key.get(targetCostKey,manualCostCount);
+					if(g_userCountInfoBuck.getCount(name,targetCostKey,nowCost)){
+						if(nowCost >= manualCostCount){
+							_notify(m_metagame,pid,"防弹插板技能释放");
+							g_userCountInfoBuck.addCount(name,targetCostKey,-manualCostCount);
+
+							const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+							if(character is null){return;}
+							Vector3 ePos = stringToVector3(character.getStringAttribute("position"));
+
+							string m_key = "ba_effect_yuuka_skill.projectile";
+							CreateDirectProjectile(m_metagame,ePos,ePos,m_key,cid,0,100);
+
+							healCharacter(m_metagame,cid,50);//此处修改回复层数
+
+							
+						}else{
+							_notify(m_metagame,pid,"防弹插板技能cost不足，当前cost="+nowCost+"/"+manualCostCount);
+						}
+					}
+				}
+			}
+			targetKey = "acg_takanashi_hoshino_battle_shb.weapon";
+            targetKey2 = "re_acg_takanashi_hoshino_battle_shb.weapon";
+            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+				int nowCost = 0;
+				int manualCostCount = 100;
+
+				string targetCostKey = "acg_takanashi_hoshino_battle_shb";
+
+				if(manual_cost_skill_key.exists(targetCostKey)){
+					manual_cost_skill_key.get(targetCostKey,manualCostCount);
+					if(g_userCountInfoBuck.getCount(name,targetCostKey,nowCost)){
+						if(nowCost >= manualCostCount){
+							_notify(m_metagame,pid,"穿甲榴弹技能释放");
+							g_userCountInfoBuck.clearCount(name,targetCostKey);
+
+							const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+							if(character is null){return;}
+							Vector3 sPos = stringToVector3(character.getStringAttribute("position"));
+
+							const XmlElement@ player = getPlayerInfo(m_metagame, pid);
+							if (player is null) {return;}
+							Vector3 aimPosition = stringToVector3(player.getStringAttribute("aim_target"));
+
+							string m_key = "ba_effect_yuuka_skill.projectile";
+							CreateDirectProjectile(m_metagame,sPos,sPos,m_key,cid,0,100);
+
+							playAnimationKey(m_metagame,cid, "hd_rotate_reload_at_a_time_skill", false, false);
+
+							string key2 ="acg_takanashi_hoshino_spawn.projectile";
+							float speed = 75;
+							TaskSequencer@ tasker = m_metagame.getVacantHdTaskSequncerIndex();
+							CreateProjectile@ task2 = CreateProjectile(m_metagame,sPos,aimPosition,key2,cid,0,speed,0.3,1,0,false);
+							tasker.add(task2);//damage
+							
+						}else{
+							_notify(m_metagame,pid,"穿甲榴弹技能cost不足，当前cost="+nowCost+"/"+manualCostCount);
+						}
+					}
+				}
+			}
+			targetKey = "acg_bf109.weapon";
+            targetKey2 = "re_acg_bf109.weapon";
+			if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+				int nowCost = 0;
+				int manualCostCount = 100;
+
+				string targetCostKey;
+				cost_skill_killer_key.get(equipKey,targetCostKey);
+
+				if(manual_cost_skill_key.exists(targetCostKey)){
+					manual_cost_skill_key.get(targetCostKey,manualCostCount);
+					if(g_userCountInfoBuck.getCount(name,targetCostKey,nowCost)){
+						if(nowCost >= manualCostCount){
+							_notify(m_metagame,pid,"动力引擎自启动");
+							g_userCountInfoBuck.addCount(name,targetCostKey,-manualCostCount);
+
+							const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+							if(character is null){return;}
+							Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));
+
+							editPlayerVest(m_metagame,cid,"helldivers_vest_charge_1",4);//替换为冲刺甲
+							string m_key = "ba_effect_yuuka_skill.projectile";
+							CreateDirectProjectile(m_metagame,c_pos,c_pos,m_key,cid,0,100);
+
+							editPlayerVestDelay@ new_task = editPlayerVestDelay(m_metagame,cid,pid,"helldivers_vest",0.4);
+							TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+							tasker.add(new_task);
+
+						}else{
+							_notify(m_metagame,pid,"动力引擎技能cost不足，当前cost="+nowCost+"/"+manualCostCount);
+						}
+					}
+				}
+			}
+			
+		}
+		if(equipList.get("1",equipKey)){//副武器
+		_log("now equipKey="+equipKey);
+		_debugReport(m_metagame,"手动技能：当前副武器="+equipKey);
+			string targetKey = "acg_takanashi_hoshino_battle_side_pistol.weapon";
+            string targetKey2 = "re_cg_takanashi_hoshino_battle_side_pistol.weapon";
+            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+				int nowCost = 0;
+				int manualCostCount = 100;
+
+				string targetCostKey = "acg_takanashi_hoshino_battle_smoke";
+
+				if(manual_cost_skill_key.exists(targetCostKey)){
+					manual_cost_skill_key.get(targetCostKey,manualCostCount);
+					if(g_userCountInfoBuck.getCount(name,targetCostKey,nowCost)){
+						if(nowCost >= manualCostCount){
+							_notify(m_metagame,pid,"烟雾弹技能释放");
+							g_userCountInfoBuck.clearCount(name,targetCostKey);
+
+							const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+							if(character is null){return;}
+							Vector3 sPos = stringToVector3(character.getStringAttribute("position"));
+
+							const XmlElement@ player = getPlayerInfo(m_metagame, pid);
+							if (player is null) {return;}
+							Vector3 aimPosition = stringToVector3(player.getStringAttribute("aim_target"));
+
+							string m_key = "ba_effect_yuuka_skill.projectile";
+							CreateDirectProjectile(m_metagame,sPos,sPos,m_key,cid,0,100);
+
+							playAnimationKey(m_metagame,cid, "hd_rotate_reload_at_a_time_skill", false, false);
+
+							string key1 = "acg_takanashi_hoshino_smoke_gl.projectile";
+							float speed = 20;
+							float height = 6;
+							CreateProjectile_H(m_metagame,sPos,aimPosition,key1,cid,0,speed,height);							
+						}else{
+							_notify(m_metagame,pid,"烟雾弹技能cost不足，当前cost="+nowCost+"/"+manualCostCount);
+						}
+					}
+				}
+			}
+			targetKey = "acg_takanashi_hoshino_battle_side_pistol_shield.weapon";
+            targetKey2 = "acg_takanashi_hoshino_battle_side_pistol_shield.weapon";
+            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+				int nowCost = 0;
+				int manualCostCount = 100;
+
+				string targetCostKey;
+				cost_skill_killer_key.get(equipKey,targetCostKey);
+
+				if(manual_cost_skill_key.exists(targetCostKey)){
+					manual_cost_skill_key.get(targetCostKey,manualCostCount);
+					if(g_userCountInfoBuck.getCount(name,targetCostKey,nowCost)){
+						if(nowCost >= manualCostCount){
+							_notify(m_metagame,pid,"盾牌突进技能释放");
+							g_userCountInfoBuck.addCount(name,targetCostKey,-manualCostCount);
+
+							const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+							if(character is null){return;}
+							Vector3 sPos = stringToVector3(character.getStringAttribute("position"));
+
+							const XmlElement@ player = getPlayerInfo(m_metagame, pid);
+							if (player is null) {return;}
+							Vector3 aimPosition = stringToVector3(player.getStringAttribute("aim_target"));
+
+							string m_key = "ba_effect_yuuka_skill.projectile";
+							CreateDirectProjectile(m_metagame,sPos,sPos,m_key,cid,0,100);
+
+							editPlayerVest(m_metagame,cid,"helldivers_vest_charge_1",4);//替换为冲刺甲
+
+							editPlayerVestDelay@ new_task = editPlayerVestDelay(m_metagame,cid,pid,"helldivers_vest",0.3);
+							TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+							tasker.add(new_task);						
+						}else{
+							_notify(m_metagame,pid,"盾牌突进技能cost不足，当前cost="+nowCost+"/"+manualCostCount);
+						}
+					}
+				}
+			}
+			
+		}
+	}
 }
 
+class editPlayerVestDelay : Task {
+    protected Metagame@ m_metagame;
+    protected float m_time;
+    protected float m_timer;
+    protected bool m_ended;
+    protected string m_oldVest;
+    protected int m_cid;
+    protected int m_pid;
 
+    editPlayerVestDelay(Metagame@ metagame,int cid,int pid,string oldVest,float time = 10){
+        @m_metagame = @metagame;
+        m_time = time;
+        m_timer = m_time;
+		m_oldVest = oldVest;
+		if(startsWith(m_oldVest,"hd_banzai_")){
+			m_oldVest = "helldivers_vest";
+		}
+		m_cid = cid;
+		m_pid = pid;
+    }
+
+    void start(){
+        m_ended = false;
+    }
+    
+    void update(float time){
+        m_timer -= time;
+        if(m_timer >0){return;}
+		editPlayerVest(m_metagame,m_cid,m_oldVest,4);//替换为原护甲
+		_notify(m_metagame,m_pid,"Skill end, vest return to old one");
+        m_ended = true;
+    }
+
+	bool hasEnded() const{
+		return m_ended;
+	}
+}

@@ -221,6 +221,68 @@ particle_system hoshino_muzzle_shock_firelight
 		colour2 0 0 0 0
 	}
 }
+particle_system hoshino_muzzle_shock_firelight2
+{
+	quota 200
+    emit_emitter_quota 200
+	material Tex_Smoke09A
+	particle_width 3
+	particle_height 3
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point		
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10 
+		position 0 0 0
+		velocity_min 100
+		velocity_max 100
+		time_to_live 0.25
+		duration 0.1
+		emit_emitter tag1
+	}
+	emitter Point
+	{
+        name tag1
+		angle 60
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 30
+		position 0 0 0
+		velocity_min 0.1
+		velocity_max 0.8
+		time_to_live 0.05
+		duration 0.4
+	}
+	affector Scaler
+	{
+		rate 10
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	40
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0 1
+		time1 0.8
+		colour1 1 0.3 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
 particle_system hoshino_muzzle_spark
 {
 	quota 500
@@ -240,6 +302,43 @@ particle_system hoshino_muzzle_spark
 		velocity_max 75
 		time_to_live_min 0.2
 		time_to_live_max 0.3
+		duration 0.1
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0 1
+		time1 0.4
+		colour1 1 0.6 0 1
+		time2 1
+		colour2 1 0 0 0
+	}
+	affector DirectionRandomiser  
+	{
+		randomness 100
+		scope 75
+		keep_velocity true
+	}
+}
+particle_system hoshino_muzzle_spark2
+{
+	quota 500
+	material point_hard_edge
+	particle_width 0.1
+	particle_height 0.5
+	renderer billboard	
+	billboard_origin bottom_center
+	billboard_type oriented_self
+	emitter Point{
+		angle 5
+        colour 1 0.3 0 1
+		direction 0 1 0
+		emission_rate 40
+		position 0 0 0
+		velocity_min 25
+		velocity_max 75
+		time_to_live_min 0.4
+		time_to_live_max 0.5
 		duration 0.1
 	}
 	affector ColourInterpolator

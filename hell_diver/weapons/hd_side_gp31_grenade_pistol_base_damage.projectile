@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectiles>
+<projectile class="grenade" name="GP-31 Grenade Pistol" 
+slot="1" pulldown_in_air="30.0" 
+key="hd_side_gp31_grenade_pistol_base_damage.projectile"
+>
+	 
+	<collision class="sticky" />
+	<result class="blast" radius="3.8" damage="2.01" push="0.3" decal="0" character_state="death" damage_origin_vehicle="0"/>
+	<trigger class="time" time_to_live="0" />	
+    <rotation class="motion" />
+	<model mesh_filename="" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+
+</projectile>
+
+</projectiles>

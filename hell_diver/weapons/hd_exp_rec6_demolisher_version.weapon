@@ -24,16 +24,26 @@ key="hd_exp_rec6_demolisher_mk3.weapon"
 		<trail probability="1" key="normal_trail"/>	
 		<model mesh_filename="hd_rec6_demolisher.xml" />
 		
-		<effect class="result" key="terrain" ref="missile_result_cannon_blast_fire" lighting="0"/>
-		<effect class="result" key="terrain" ref="missile_result_cannon_blast_AmbientLight" lighting="0"/>
-		<effect class="result" key="terrain" ref="nova_s_result_impact_flame_1" lighting="0"/>
-		<effect class="result" key="terrain" ref="nova_s_result_impact_flame_3" lighting="0"/>
-		<effect class="result" key="terrain" ref="nova_s_result_impact_spark" lighting="0" post_processing="1"/> 
-		<effect class="result" key="terrain" ref="nova_s_gl_hit_smoke_02" lighting="0" post_processing="1"/> 
-		<effect class="result" key="terrain" ref="nova_s_result_ground_smoke" lighting="0" post_processing="1"/>
-		<effect class="result" key="terrain" ref="nova_s_result_blast_smoke_expanding" lighting="0" post_processing="1"/> 
-		<effect class="result" key="terrain" ref="missile_result_expanding_fire" lighting="0" post_processing="1"/> 
-		
+	<effect class="result" key="terrain" ref="real_ground_crater" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="real_up_dust_beam" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_dust_spread" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_dust_stone" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="real_up_smoke_1" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="shadow_real_up_smoke_leave" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="shadow_real_up_smoke_leave_2" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="real_up_smoke_beam" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_impact_spread" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_impact_spark" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_impact_spark_2" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_impact_spark_1" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_smoke_1" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="real_firesmoke_1" lighting="0" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_firesmoke_2" lighting="0" post_processing="0"/>
+	<effect class="result" key="terrain" ref="nova_s_result_blast_ring" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="nova_s_result_blast_ring_2" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="real_center_short_light" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="real_center_ambient_light" lighting="0" post_processing="0"/> 
+
 		<effect class="activated" ref="alert_center_redlight"/>
 
 		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->

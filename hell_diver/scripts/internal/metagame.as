@@ -59,8 +59,9 @@ class Metagame {
 
 		@m_taskSequencer = TaskSequencer();
 		@m_taskManager = TaskManager();
-		for(uint i=5;i>0;--i){
+		for(uint i=20;i>0;--i){
 			m_hd_taskSequencerArray.insertLast(TaskSequencer());
+			//id 6 服务于marker
 		}
 		
 		resetTimer();
@@ -87,6 +88,15 @@ class Metagame {
 		}
 		return m_hd_taskSequencerArray[i];
 	}
+	// --------------------------------------------
+	TaskSequencer@ getVacantHdTaskSequncerIndex() const {
+		for(uint i = 7; i< m_hd_taskSequencerArray.size();++i){
+			if(m_hd_taskSequencerArray[i].isEmpty()){
+				return m_hd_taskSequencerArray[i];
+			}
+		}
+		return m_hd_taskSequencerArray[0];
+	}
 
 	// --------------------------------------------
 	void resetTimer() {
@@ -100,7 +110,8 @@ class Metagame {
 		float dummy = now();
 		bool processed = false;
 		m_gamePaused = false;
-		while (true) {
+		_log("start run()");
+		while (!g_restartMetagame) {
 			{
 				float elapsedTime = !m_gamePaused ? now() : 0.0f;
 				float sleepTime = MINIMUM_SLEEP_TIME;
@@ -146,7 +157,17 @@ class Metagame {
 				_log("restart had been requested, calling metagame init now", -1);
 				init();
 			}
+			// if(g_restartMetagame){
+			// 	//uninit();
+			// 	// startServer();
+			// 	g_restartMetagame = !g_restartMetagame;
+			// 	break;
+			// }
 		}
+		g_restartMetagame = !g_restartMetagame;
+		_log("break run()");
+		// init();
+		// run();
 	}
 
 	// --------------------------------------------

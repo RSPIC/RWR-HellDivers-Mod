@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <projectiles>
     <!-- 投掷物 -->
-    <projectile file="_ex_call.xml" /><!--所有呼叫信标-->
+    <projectile file="_ex_call.xml" />
 
     <projectile file="hd_general_spawn.projectile" />
     <projectile file="hd_general_gl_spawn.projectile" />
@@ -9,5 +9,57 @@
 
     <projectile file="test_projectile.xml" />
 	<projectile file="particle.projectile" />
+	<projectile file="hd_offensive_orbital_120mm_he_barrage.projectile" />
+	<projectile file="_hd_effect_projectile.xml" />
+
+	<projectile file="hd_upgrade_ui.projectile" />
+	<projectile file="acg_ex_box.projectile" />
+
+	<projectile file="acg_takanashi_hoshino_damage.projectile" />
+	<projectile file="acg_fade_red_damage.projectile" />
+	<projectile file="hd_exp_rl112_recoilless_rifle_base_damage.projectile" />
+	<projectile file="hd_psc_damage.projectile" />
+	<projectile file="acg_izayoi_sakuya_road_roller.projectile" />
     
+    <projectile file="hd_offensive_vindicator_dive_bomb_mk3.projectile" />	<!--辩护者-->
+	<projectile file="hd_offensive_airstrike_mk3.projectile" />	<!--空袭-->
+	<projectile file="hd_offensive_laser_strike_mk3.projectile" />	<!--激光空袭-->
+	<projectile file="hd_offensive_shredder_missile_strike_mk3.projectile" />	<!--撕裂者-->
+	<projectile file="hd_offensive_close_air_support_mk3.projectile" />	<!--近空支援-->
+	<projectile file="hd_offensive_thunderer_barrage_mk3.projectile" />	<!--三重轰炸-->
+	<projectile file="hd_offensive_strafing_run_mk3.projectile" />	<!--空中扫射-->
+	<projectile file="hd_offensive_static_field_conductors_mk3.projectile" />	<!--静电力场-->
+	<projectile file="hd_offensive_sledge_precision_artillery_mk3.projectile" />	<!--大锤精确火炮-->
+	<projectile file="hd_offensive_railcannon_strike_mk3.projectile" />	<!--轨道轰炸-->
+	<projectile file="hd_offensive_missile_barrage_mk3.projectile" />	<!--导弹弹幕-->
+	<projectile file="hd_offensive_incendiary_bombs_mk3.projectile" />	<!--燃烧炸弹-->
+	<projectile file="hd_offensive_heavy_strafing_run_mk3.projectile" />	<!--重机枪扫射-->
+	<projectile file="hd_offensive_orbital_120mm_he_barrage.projectile" />	<!--轨道120mm弹幕-->
+
+    <projectile file="hd_offensive_airstrike_mk3_damage.projectile" />	<!--空袭-->
+    <projectile file="hd_offensive_laser_strike_mk3_damage.projectile" />	<!--轨道激光-->
+    <projectile file="hd_offensive_shredder_missile_strike_mk3_damage.projectile" />	<!--撕裂者-->
+    <projectile file="hd_offensive_close_air_support_mk3_damage.projectile" />		<!--近空支援炸弹-->
+    <projectile file="hd_offensive_close_air_support_mk3_mg_damage.projectile" /> 	<!--近空支援机枪-->
+    <projectile file="hd_nux_223_hellbomb_damage.projectile" />
+    <projectile file="hd_nux_223_hellbomb_damage_destroy.projectile" />
+    <projectile file="hd_offensive_heavy_strafing_run_mk3_mg_damage.projectile" />	<!--重机枪扫射-->
+	<projectile file="hd_vindicator_missile.projectile" />		<!--辩护者-->
+    <projectile file="hd_vindicator_shrapnel.projectile" />		<!--辩护者-->
+    <projectile file="hd_offensive_incendiary_bombs_mk3_damage.projectile" />		<!--燃烧炸弹-->
+    <projectile file="hd_offensive_thunderer_barrage_mk3_damage.projectile" />		<!--三重轰炸-->
+    <projectile file="hd_offensive_strafing_run_mk3_mg_damage.projectile" />		<!--机枪扫射-->
+    <projectile file="hd_offensive_missile_barrage_mk3_damage.projectile" />		<!--导弹弹幕-->
+    <projectile file="hd_offensive_railcannon_strike_mk3_damage.projectile" />		<!--轨道炮轰炸-->
+    <projectile file="hd_offensive_sledge_precision_artillery_mk3_damage.projectile" />		<!--大锤精确火炮-->
+    <projectile file="hd_offensive_static_field_conductors_mk3_damage.projectile" />		<!--静电力场-->
+    <projectile file="hd_md99_autoinjector.projectile" />		<!--急救针-->
+
+	<projectile file="hd_amg_11_mk3_spawn.projectile" />
+	<projectile file="hd_arx_34_mk3_spawn.projectile" />
+	<projectile file="hd_offensive_shredder_missile_strike_mk3_spawn.projectile" />
+	<projectile file="hd_nux_223_hellbomb_waiting.projectile" />
+	<projectile file="hd_offensive_incendiary_bombs_mk3_spawn.projectile" /><!--燃烧炸弹-->
+
+
 </projectiles>

@@ -76,7 +76,7 @@ character_leave_request_mode="friendly"
 	<character_slot type="passenger" attached_on_turret="0" position="1.4 0.6 -1.5" seat_position="-0.8 3.35 -0.45" rotation="0" exit_rotation="1.5" hiding="0" animation_key="still" />
 
 	<!-- sound handling -->
-	<rev_sound filename="ba_torumaru_tiger.wav" low_pitch="1" high_pitch="1" low_rev="1" high_rev="1" volume="2.0" />
+	<rev_sound filename="ba_torumaru_tiger.wav" low_pitch="1" high_pitch="1" low_rev="1" high_rev="1" volume="1.0" />
 
 	<sound key="squeal" filename="tire_squeal.wav" />
 	<sound key="ignition" filename="jeep2_ignition.wav" />

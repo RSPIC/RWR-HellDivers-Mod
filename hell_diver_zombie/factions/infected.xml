@@ -37,7 +37,7 @@
     
 <!-- infected human players will spawn with special non_ai vests. The spawn_score is 0 to make sure it doesnt affect the AI but players only  -->
   
-	<soldier name="default" spawn_score="0.0" squad_size_xp_cap="0.6">
+	<soldier name="default" spawn_score="0.0" squad_size_xp_cap="0">
 		<character filename="infected.character" />
 		<ai filename="infected.ai" />
 		

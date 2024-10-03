@@ -1712,6 +1712,15 @@ TK other player also reduce your factor of bouns." />
 [Waring]Using skill must equipped [Elaina] weapon, or you will be blood" />
 	<text key="Vergil Help" text="[Elaina tutor]" />
 
+	<text key="Help - Dreadnought" text="The Dreadnought must be used with a deputy, who uses Overload mode and dies if he consumes 50 armor or runs out of armor. Can not automatically regenerate health, rely on kill back armor" />
+	<text key="Dreadnought Help" text="[Dreadnought introduction]" />
+
+	<text key="Help - Sakuya" text="After killing 25 people with this weapon, you can enter /s to release skills" />
+	<text key="Sakuya Help" text="[Yuuka introduction]" />
+
+	<text key="Help - Yuuka" text="使用该武器击杀25人后，可以输入/s释放技能" />
+	<text key="Yuuka Help" text="[优香 特殊武器介绍]" />
+
 	<text key="Stratagems Call" text="[Tutor]Stratagems System" />
 	<text key="Stratagems Useable" text="[Tips]Enter  /call  can check usully stratagems, enter  /call 1~4  to check difference stratagems" />
 	<text key="Stratagems - Vindicator Dive Bomb" text="Vindicator Dive Bomb 74wXp [→→→]" />
@@ -2233,13 +2242,15 @@ Time used: &#37; value8 Player: &#37; key8(9th)
 <text key="小技能'爆裂咏叹调'已释放" text="The small skill 'Explosion Aria' has been released" />
 <text key="小技能'暗黑狙击'已释放" text="The small skill 'Dark Sniper' has been released" />
 
-<text key="[轻甲] CM-21战壕护理员 [右键购买以研发/装备][需求:5-研究点][属性:20层 +0.125移速][功能:自动补给医疗针/抗眩晕]" text="[Light] CM-21 [Needs: 5-Reserch Poiont][Info:20 Layer +0.125 Speed][Function: AutoGive MD-99Needel/Anti Stun]" />
-<text key="[轻甲] SC-30开路侦察兵 [右键购买以研发/装备][需求:5-研究点][属性:20层 +0.075移速][功能:+0.12隐蔽值]" text="[Light] SC-30 [Needs: 5-Reserch Poiont][Info:20 Layer +0.075 Speed][Function: +0.12 Invisibility]" />
-<text key="[中甲] DP-11人民捍卫者 [右键购买以研发/装备][需求:5-研究点][属性:40层][民主庇佑:爆炸/轰炸伤害无法杀死你 但你无法自救]" text="[Mid] DP-11 [Needs: 5-Reserch Poiont][Info:40 Layer][Function: You will get wouned instead get deaded when kill by blast damage, and you can't heal yourself]" />
-<text key="[中甲] DP-53自由救星 [右键购买以研发/装备][需求:5-研究点][属性:40层][民主庇佑:爆炸/轰炸伤害无法杀死你 但你无法自救]" text="[Mid] DP-53 [Needs: 5-Reserch Poiont][Info:40 Layer][Function: You will get wouned instead get deaded when kill by blast damage, and you can't heal yourself]" />
-<text key="[中甲] TR-9民主骑兵 [右键购买以研发/装备][需求:5-研究点][属性:40层][民主庇佑:爆炸/轰炸伤害无法杀死你 但你无法自救]" text="[Mid] TR-9 [Needs: 5-Reserch Poiont][Info:40 Layer][Function: You will get wouned instead get deaded when kill by blast damage, and you can't heal yourself]" />
-<text key="[中甲] SA-12伺服辅助 [右键购买以研发/装备][需求:5-研究点][属性:40层][功能:+0.05移速]" text="[Mid] SA-12 [Needs: 5-Reserch Poiont][Info:40 Layer][Function: +0.05 Speed]" />
-<text key="[中甲] CE-35战壕工程师 [右键购买以研发/装备][需求:5-研究点][属性:40层][功能:自动补给冲击雷]" text="[Mid] CE-35 [Needs: 5-Reserch Poiont][Info:40 Layer][Function: Auto Resupply Impact Grenade]" />
+<text key="[轻甲]CM-21战壕护理员[5-研究点][20层 +0.2移速][自动补给医疗针/抗眩晕]" text="[Light] CM-21 [Needs: 5-Reserch Poiont][Info:20 Layer +0.125 Speed][Function: AutoGive MD-99Needel/Anti Stun]" />
+<text key="[轻甲]SC-30开路侦察兵[5-研究点][20层 +0.075移速][+0.12隐蔽值]" text="[Light] SC-30 [Needs: 5-Reserch Poiont][Info:20 Layer +0.075 Speed][Function: +0.12 Invisibility]" />
+<text key="[中甲]DP-11人民捍卫者[5-研究点][40层][民主庇佑：爆炸/轰炸伤害无法杀死你 但无法自救]" text="[Mid] DP-11 [Needs: 5-Reserch Poiont][Info:40 Layer][Function: You will get wouned instead get deaded when kill by blast damage, and you can't heal yourself]" />
+<text key="[中甲]DP-53自由救星[5-研究点][40层][民主庇佑：爆炸/轰炸伤害无法杀死你 但无法自救]" text="[Mid] DP-53 [Needs: 5-Reserch Poiont][Info:40 Layer][Function: You will get wouned instead get deaded when kill by blast damage, and you can't heal yourself]" />
+<text key="[中甲]TR-9民主骑兵[5-研究点][40层][民主庇佑：爆炸/轰炸伤害无法杀死你 但无法自救]" text="[Mid] TR-9 [Needs: 5-Reserch Poiont][Info:40 Layer][Function: You will get wouned instead get deaded when kill by blast damage, and you can't heal yourself]" />
+<text key="[中甲]SA-12伺服辅助[5-研究点][40层][+0.05移速]" text="[Mid] SA-12 [Needs: 5-Reserch Poiont][Info:40 Layer][Function: +0.05 Speed]" />
+<text key="[中甲]CE-35战壕工程师[5-研究点][40层][自动补给冲击雷]" text="[Mid] CE-35 [Needs: 5-Reserch Poiont][Info:40 Layer][Function: Auto Resupply Impact Grenade]" />
+<text key="[重甲]TR-62骑士[12-研究点][120层 +0.05嘲讽 -0.30移速][增强护甲材f料]" text="[Hvy] TR-62 [Needs: 12-Reserch Poiont][Info:120 Layer -0.3Speed]" />
+<text key="[重甲]SA-32发电机[8-研究点][80层 -0.25移速][战略优先权 -20%冷却]" text="[Hvy] SA-32 [Needs: 8-Reserch Poiont][Info:80 Layer -0.25Speed][Stratagems First -20% cooldown]" />
 
 <text key="[1研发点] P-19救世主 冲锋手枪" text="[1 Reserch Poiont] P-19 Redeemer" />
 <text key="[2研发点] P-4参议员 左轮手枪" text="[2 Reserch Poiont] P-4 Senetor" />
@@ -2253,8 +2264,13 @@ Time used: &#37; value8 Player: &#37; key8(9th)
 <text key="[1研发点] P6-神枪手[眩晕][娱乐专用]" text="[1 Reserch Poiont] P-6 GunSlinger[Stun][Only For Fun]" />
 <text key="[1研发点] R-36爆裂铳" text="[1 Reserch Poiont] R-36 Eruptor" />
 <text key="[2研发点] MLS-4X突击队[跟踪金币弹]" text="[2 Reserch Poiont] MLS-4X Commando [Tracking Ammo][RP Cost]" />
+<text key="[7研发点] RL-77 空爆火箭发射器" text="[7 Reserch Poiont] RL-77 Airburst Rocket Launcher [Friendly Fire]" />
+<text key="[2研发点] JAR-5 主宰" text="[2 Reserch Poiont] JAR-5 Deminator [Friendly Fire]" />
+<text key="[2研发点] GP-31 榴弹手枪" text="[2 Reserch Poiont] GP-31 Grenade Pistol [Friendly Fire]" />
+<text key="[8研发点] FAF-14 飞矛导弹" text="[8 Reserch Poiont] FAF-14 Spear [Friendly Fire]" />
 
-
+<text key="[8研发点] 120mm高爆弹幕战略呼叫权[代码：→→↓←→↓]" text="[8 Reserch Poiont] 120mm Orbital Barrage [code:ddsads]" />
+<text key="[12研发点] 380mm高爆弹幕战略呼叫权[代码：→↓↑↑←↓↓]" text="[12 Reserch Poiont] 380mm Orbital Barrage [code:dswwass]" />
  <!-- 管理 -->
 <text key="Admin Kick Player Guide" text="Kick player use/kick id
 PlayerID are below
@@ -2284,5 +2300,12 @@ PlayerID are below
 1: /kick <id> Kick player
 2: /salary Receive administrator rewards
 " />
+
+<text key="ImAgreeWithPropose" text="You have signed the 'Initiative' agreement, please be sure to read the agreement in detail, if the violation will be severely punished" />
+<text key="主武器必须搭配副手使用！武器已送至背包" text="The main weapon must be used with the deputy! Weapons have been delivered to the backpack" />
+<text key="副武器必须搭配主手使用！" text="Secondary weapons must be used with the main hand!" />
+<text key="你因为过载死亡" text="You died from overload" />
+<text key="你没有穿戴机甲护甲而过载死亡" text="You died of overload without your mech armor" />
+
 </translation>
 

@@ -6,15 +6,13 @@ key="ex_warthog.weapon"
 	<tag name="machine gun" />
     <specification 	
     slot="0" 	
-    retrigger_time="0.05" 
+    retrigger_time="0.1" 
 	last_burst_retrigger_time="0.04"
     accuracy_factor="0.8" 
 	spread_range="0.3"
 	stance_accuracy_rate="1.0"
-    sustained_fire_grow_step="0.045" 
+    sustained_fire_grow_step="0.1" 
     sustained_fire_diminish_rate="0.5" 
-	cooldown_start="0.9999"
-	cooldown_end="0"
     magazine_size="-1" 
     can_shoot_standing="1" 
     can_shoot_crouching="1" 
@@ -73,12 +71,9 @@ key="ex_warthog.weapon"
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
 	time_to_live="0.45" can_be_detected_by_driver="1" can_be_disarmed="0" name="MG-2048 Heavy Machine Gun"> 
 		
-		<result class="blast" radius="3.0" damage="7.01" push="0" decal="0" character_state="wound" 
-		faction_compare="not_equal"
-		damage_origin_vehicle="0" />
-		<!-- slower decay -->
-		<!-- 30m max damage range -->
-		<!-- damage 75/100hit  -->
+        <result class="spawn" instance_class="projectile" instance_key="ex_warthog_damage.projectile" 
+		min_amount="10" max_amount="10" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
+
 	
 		<effect class="result" key="terrain" ref="hd_mg94_result_spray" lighting="0" />
 		<effect class="result" key="terrain" ref="hd_mg94_result_bullet_light_center" lighting="0" />

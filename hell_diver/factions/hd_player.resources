@@ -24,11 +24,13 @@
 	<weapon key="hd_smg_tc171_cyclone_mk3.weapon" /><!--气旋冲锋枪-->
 
 	<weapon key="hd_psc_rx1_railgun_full_upgrade.weapon" /><!--轨道炮-->
+	    <weapon key="hd_psc_rs422_railgun.weapon" /><!--RS422轨道炮-->
 	<weapon key="hd_psc_m2016_constitution_full_upgrade.weapon" /><!--构建步枪-->
 	<weapon key="hd_psc_lho63_camper_full_upgrade.weapon" /><!--野营者狙击步枪-->
 	<weapon key="hd_psc_atx25_revelator_mk3.weapon" /><!--启示者反器材狙击步枪-->
 	<weapon key="hd_psc_hho874_fraternity_mk3.weapon" /><!--博爱连狙-->
 	<weapon key="hd_psc_r36_eruptor.weapon" /><!--爆裂铳-->
+	<weapon key="hd_psc_cb9_exploding_crossbow.weapon" /><!--爆燃弩-->
 
 	<weapon key="hd_lmg_mg94_mk3.weapon" /><!--MG94机枪-->
 	<weapon key="hd_lmg_mg105_stalwart_full_upgrade.weapon" /><!--MG105盟友机枪-->
@@ -39,7 +41,10 @@
 	<weapon key="hd_exp_cr9_suppressor_full_upgrade.weapon" /><!--抑制者直射榴弹-->
 	<weapon key="hd_exp_plas1_scorcher_full_upgrade.weapon" /><!--焦土直射榴弹-->
 	<weapon key="hd_exp_ac22_dum_dum_mk3.weapon" /><!--达姆机炮-->
-	`<weapon key="hd_exp_ac8_autocannon.weapon" /><!--ac8 自动机炮-->
+	<weapon key="hd_exp_ac8_autocannon.weapon" /><!--ac8 自动机炮-->
+	<weapon key="hd_exp_rl77_airburst_rocket_launcher.weapon" /><!--RL77空爆火箭筒-->
+	<weapon key="hd_exp_jar5_deminator.weapon" /><!--JAR5主宰-->
+	<weapon key="hd_exp_faf14_spear.weapon" /><!--FAF14飞矛-->
 
 	<weapon key="hd_laser_las13_trident_full_upgrade.weapon" /><!--三叉戟激光枪-->
 	<weapon key="hd_laser_las12_tanto_full_upgrade.weapon" /><!--短刀激光枪 中穿-->
@@ -73,11 +78,13 @@
     <weapon key="hd_side_p19_redeemer.weapon" /><!--P-19 救世主 冲锋手枪-->
     <weapon key="hd_pst_flam24_pyro.weapon" /><!--烈焰火焰喷射器 副手-->
     <weapon key="hd_exp_plas3_singe.weapon" /><!--焦痕副手直射榴弹-->
+    <weapon key="hd_side_gp31_grenade_pistol.weapon" /><!--GP-31榴弹手枪-->
 
     <weapon key="hd_sup_rep80_mk3.weapon" /><!--维修工具枪-->
     <weapon key="hd_exp_rec6_demolisher_mk3.weapon" /><!--爆破手-->
     <weapon key="hd_exp_eta17_mk3.weapon" /><!--抛弃式反战车火箭-->
     <weapon key="hd_exp_rl112_recoilless_rifle_mk3.weapon" /><!--无后坐力步枪-->
+        <weapon key="hd_exp_las99_quasar_cannon.weapon" /><!--类星体-->
     <weapon key="hd_pst_flam40_incinerator_mk3.weapon" /><!--焚化炉火焰喷射器-->
     
     <weapon key="hd_drone_ad289_angel_mk3.weapon" /><!--天使-->
@@ -85,6 +92,7 @@
 
     <weapon key="hd_lmg_mgx42_mk3.weapon" /><!--MGX42机枪-->
     <weapon key="hd_exp_mls4x_commando_mk3.weapon" /><!--突击队跟踪导弹-->
+        <weapon key="hd_exp_mls4x_commando_track_mk3.weapon" /><!--突击队跟踪导弹-->
     <weapon key="hd_pst_tox13_avenger_mk3.weapon" /><!--复仇者生化喷射器-->
     <weapon key="hd_exp_obliterator_grenade_launcher_full_upgrade.weapon" /><!--消灭者榴弹发射器-->
     <weapon key="hd_pst_tox17_sourhound_mk3.weapon" /><!--酸液犬毒液喷射器-->
@@ -113,7 +121,7 @@
     <projectile key="repair_crane_call.projectile" /><!--维修平台-->
 
     <!--护甲-->
-    <carry_item key="helldivers_vest" />
+    <!-- <carry_item key="helldivers_vest" /> -->
 
     <!-- 电台支援 -->
     <!-- 特殊支援 -->
@@ -124,12 +132,15 @@
     <!-- 防御支援 -->
     <call key="spawn_hd_apb_mk3.call" />
     <call key="humblebee_uav_drone.call" />
+    <call key="spawn_hd_smoke.call" />
     <!-- 战略设备 -->
     <call key="spawn_hd_mc109_motor.call" />
     <call key="spawn_ex_warthog.call" />
     <call key="spawn_hd_resupply.call" />
     <!-- 进攻支援 -->
     <call key="spawn_hd_sms.call" />
+    <call key="hd_orbital_120mm.call" />
+    <call key="hd_orbital_380mm.call" />
 
     <call key="laser_strike.call" />
 
@@ -168,6 +179,8 @@
 	<carry_item key="upgrade_ui_tr9.vest.target:hd_vest_mid_tr9_40.cost:05."    /><!--[中甲] TR-9民主骑兵-->
 	<carry_item key="upgrade_ui_sa12.vest.target:hd_vest_mid_sa12_40.cost:05."    /><!--[中甲] SA-12伺服辅助-->
 	<carry_item key="upgrade_ui_ce35.vest.target:hd_vest_mid_ce35_40.cost:05.impactGl"    /><!--[中甲] SA-35战壕工程师-->
+	<carry_item key="upgrade_ui_tr62.vest.target:hd_vest_hvy_tr62_120.cost:12"    /><!--[重甲] TR-62骑士-->
+	<carry_item key="upgrade_ui_sa32.vest.target:hd_vest_hvy_sa32_80.cost:8.SP:2"    /><!--[重甲] SA-32发电机-->
 
 
 </resources>

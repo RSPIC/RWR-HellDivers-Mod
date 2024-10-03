@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapons> 
+<weapon 
+file="hd_exp_faf14_spear_base.weapon"
+key="hd_exp_faf14_spear.weapon" 
+drop_count_factor_on_death="0" 
+drop_count_factor_on_player_death="0"
+time_to_live_out_in_the_open="0"
+player_death_drop_owner_lock_time="0"
+>
+
+	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
+	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="1" source="rank" source_value="229.750" />
+
+    <commonness value="0.00000001" can_respawn_with="1" in_stock="0" /> 
+
+	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
+    <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="24" can_be_detected_by_footmen="1" 
+	time_to_live="0.65" can_be_detected_by_driver="1" can_be_disarmed="0" name="FAF-14 Spear" radius="0.6"> 
+	
+        <result class="notify_script" key="hd_exp_faf14_spear_base_spawn" />
+		<!-- MK3 damage 17 轰炸伤-->
+   
+		<trigger class="time" time_to_live="0.6"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+	
+		<sound class="result" key="other" fileref="hd2_faf14_fire.wav" pitch_variety="0.03" volume="8.0" />
+	
+
+		<trail probability="1" key="nova_trail"/>	
+		<model mesh_filename="hd_mls4x_commando_missile.xml" />
+		
+		
+		<effect class="activated" ref="general_activated_at_smoke_trail"/>
+
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+    </projectile>
+</weapon>
+</weapons>

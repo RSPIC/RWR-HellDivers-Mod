@@ -129,7 +129,7 @@ key="hd_vehicle_minigun_ai.weapon"
     suppressed="0" 
 	class="0" 
     name="MG-999 Machine Gun" 
-	ai_sight_range_modifier="1"
+	ai_sight_range_modifier="1.4"
 	burst_shots="1" 
     projectiles_per_shot="1" 
     projectile_speed="60.0"
@@ -173,11 +173,11 @@ key="hd_vehicle_minigun_ai.weapon"
     <weak_hand_hold offset="0.3" /> 
 
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
-	time_to_live="0.7" can_be_detected_by_driver="1" can_be_disarmed="0" name="MG-999 Machine Gun"> 
+	time_to_live="1.2" can_be_detected_by_driver="1" can_be_disarmed="0" name="MG-999 Machine Gun"> 
 		
 		<result class="hit" kill_probability="1.0" 
 		kill_probability_offset_on_successful_hit="0"
-		kill_decay_start_time="0.25" kill_decay_end_time="0.55" character_state="wound"/>
+		kill_decay_start_time="1" kill_decay_end_time="1.6" character_state="wound"/>
 	
 		<effect class="result" key="terrain" ref="hd_mg94_result_spray" lighting="0" />
 		<effect class="result" key="terrain" ref="hd_mg94_result_bullet_light_center" lighting="0" />
@@ -236,7 +236,7 @@ key="hd_vehicle_minigun_ai_dead.weapon"
     suppressed="0" 
 	class="0" 
     name="MG-999 Machine Gun" 
-	ai_sight_range_modifier="1"
+	ai_sight_range_modifier="1.4"
 	burst_shots="1" 
     projectiles_per_shot="1" 
     projectile_speed="60.0"
@@ -280,11 +280,11 @@ key="hd_vehicle_minigun_ai_dead.weapon"
     <weak_hand_hold offset="0.3" /> 
 
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
-	time_to_live="0.7" can_be_detected_by_driver="1" can_be_disarmed="0" name="MG-999 Machine Gun"> 
+	time_to_live="1.2" can_be_detected_by_driver="1" can_be_disarmed="0" name="MG-999 Machine Gun"> 
 		
 		<result class="hit" kill_probability="1.0" 
 		kill_probability_offset_on_successful_hit="0"
-		kill_decay_start_time="0.25" kill_decay_end_time="0.55" character_state="unwound"/>
+		kill_decay_start_time="1.0" kill_decay_end_time="1.6" character_state="unwound"/>
 	
 		<effect class="result" key="terrain" ref="hd_mg94_result_spray" lighting="0" />
 		<effect class="result" key="terrain" ref="hd_mg94_result_bullet_light_center" lighting="0" />

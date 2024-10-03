@@ -183,7 +183,7 @@ key="acg_shigure_610mm_torpedo.weapon"
     <specification 	
     slot="0" 	
     retrigger_time="0.3" 
-	last_burst_retrigger_time="30"
+	last_burst_retrigger_time="1"
     accuracy_factor="1" 
 	spread_range="0.01"
 	stance_accuracy_rate="1.0"
@@ -217,7 +217,7 @@ key="acg_shigure_610mm_torpedo.weapon"
 	<animation key="cycle"  animation_key="kantai_aim" /> <!--拉栓动作，武器固定脱手-->
     <animation state_key="recoil"   animation_key="kantai_recoil" />
     <animation state_key="recoil" stance_key="over_wall" animation_key="kantai_recoil" />
-    <animation state_key="reload"   animation_key="T_reloading_tow_at_a_time_5s" />
+    <animation state_key="reload"   animation_key="T_reloading_tow_at_a_time_3s" />
     <animation state_key="hold" animation_key="hold_casual, pistol" />
 	<animation state_key="hold_on_wall"  animation_key="kantai_aim" />
     <animation state_key="still_against_wall" animation_key="kantai_aim" />
@@ -271,8 +271,8 @@ key="acg_shigure_610mm_torpedo.weapon"
     <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="0.5" can_be_detected_by_footmen="1" 
 	time_to_live="12" can_be_detected_by_driver="1" can_be_disarmed="0" name="4 x 610 mm quadruple torpedo tubes"> 
 		
-        <result class="blast" radius="8" damage="250" 
-		push="0.5" decal="0" faction_compare="not_equal" character_state="wound" damage_origin_vehicle="0"/>
+        <result class="spawn" instance_class="projectile" instance_key="acg_shigure_610mm_tropedo_damage.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 1" direction_spread="0.05 0" />	
 
 		<trigger class="impact">
 		</trigger> 
@@ -529,7 +529,7 @@ key="re_acg_shigure_610mm_torpedo.weapon"
     <specification 	
     slot="0" 	
     retrigger_time="0.3" 
-	last_burst_retrigger_time="30"
+	last_burst_retrigger_time="1"
     accuracy_factor="1" 
 	spread_range="0.01"
 	stance_accuracy_rate="1.0"
@@ -563,7 +563,7 @@ key="re_acg_shigure_610mm_torpedo.weapon"
 	<animation key="cycle"  animation_key="kantai_aim" /> <!--拉栓动作，武器固定脱手-->
     <animation state_key="recoil"   animation_key="kantai_recoil" />
     <animation state_key="recoil" stance_key="over_wall" animation_key="kantai_recoil" />
-    <animation state_key="reload"   animation_key="T_reloading_tow_at_a_time_5s" />
+    <animation state_key="reload"   animation_key="T_reloading_tow_at_a_time_3s" />
     <animation state_key="hold" animation_key="hold_casual, pistol" />
 	<animation state_key="hold_on_wall"  animation_key="kantai_aim" />
     <animation state_key="still_against_wall" animation_key="kantai_aim" />
@@ -617,8 +617,8 @@ key="re_acg_shigure_610mm_torpedo.weapon"
     <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="0.5" can_be_detected_by_footmen="1" 
 	time_to_live="12" can_be_detected_by_driver="1" can_be_disarmed="0" name="4 x 610 mm quadruple torpedo tubes"> 
 		
-        <result class="blast" radius="8" damage="250" faction_compare="not_equal"
-		push="0.5" decal="0" character_state="wound" damage_origin_vehicle="0"/>
+        <result class="spawn" instance_class="projectile" instance_key="acg_shigure_610mm_tropedo_damage.projectile" 
+			min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 1" direction_spread="0.05 0" />	
 
 		<trigger class="impact">
 		</trigger> 

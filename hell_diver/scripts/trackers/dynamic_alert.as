@@ -169,7 +169,7 @@ const array<SpawnInfo@> level_12 = {
 
     SpawnInfo("illum_Hunter",int(rand(1,1))),
     SpawnInfo("illum_Apprentice",int(rand(0,0))),
-    SpawnInfo("illum_Tripod",int(rand(2,3))),
+    SpawnInfo("illum_Tripod",int(rand(1,2))),
     SpawnInfo("illum_Strider",int(rand(1,2))),
     SpawnInfo("illum_Obelisk",int(rand(1,1))),
     SpawnInfo("illum_Illusionist",int(rand(1,1))),
@@ -198,9 +198,9 @@ const array<SpawnInfo@> level_15 = {
 
     SpawnInfo("illum_Hunter",int(rand(1,1))),
     SpawnInfo("illum_Apprentice",int(rand(0,1))),
-    SpawnInfo("illum_Tripod",int(rand(2,3))),
-    SpawnInfo("illum_Strider",int(rand(3,4))),
-    SpawnInfo("illum_Obelisk",int(rand(1,2))),
+    SpawnInfo("illum_Tripod",int(rand(1,2))),
+    SpawnInfo("illum_Strider",int(rand(1,2))),
+    SpawnInfo("illum_Obelisk",int(rand(3,3))),
     SpawnInfo("illum_Illusionist",int(rand(1,1))),
     SpawnInfo("illum_CouncilMember",int(rand(1,1)))
 };
@@ -297,11 +297,12 @@ const array<SpawnInfo@> level_rokectLauncher = {
     SpawnInfo("illum_Strider",6),
     SpawnInfo("illum_Obelisk",1),
     SpawnInfo("illum_Illusionist",1),
-    SpawnInfo("illum_CouncilMember",1)
+    SpawnInfo("illum_CouncilMember",1),
+
+    SpawnInfo("earth_default_ai",8)
 };
 const array<SpawnInfo@> debug = {
-    SpawnInfo("bugs_ZergBaneling",1),
-    SpawnInfo("bugs_Baneling",1)
+    SpawnInfo("earth_default_ai",8)
 };
 
 //------------------------------------------
@@ -511,6 +512,16 @@ void Alert_Spawn(Metagame@ metagame,int factionId, Vector3 position,const array<
                 list.insertLast(a);
                 list.insertLast(b);
             }
+        }else if(caller_faction_name == "earth" && g_factionInfoBuck.getFidByName("Super Earth") == factionId){
+            string groups_name = spawnkey.substr(pos+1);
+            float range = 15;
+            for(int j=0;j<spawnnum;j++){
+                float rand_x = rand(-range,range);
+                float rand_y = rand(-range,range);
+                position = position.add(Vector3(rand_x,40,rand_y));
+                if(!isVectorInMap(position)){continue;}
+                SpawnSoldier(metagame,1,factionId,position,groups_name);
+            }
         }
     }
     if(list.size() != 0){
@@ -581,7 +592,7 @@ class dynamic_alert : Tracker {
         setSpawnTime();
     }
 
-    protected void setSpawnTime(){
+    protected void setSpawnTime(float test_time = -1){
         int count = getPlayerCount(m_metagame);
         if(count <= 0){
             count = 1;
@@ -596,6 +607,7 @@ class dynamic_alert : Tracker {
             _log("faction name="+f_name);
             if(g_GameMode == ""){   // 本家模式
                 if(f_name == "Super Earth"){ 
+                    spawnTime = 0;
                     spawnTime = 1.5 + count/5;
                     _log("setSpawnTime("+f_name+"):" + spawnTime);
                     faction.setFloatAttribute("spawn_interval", spawnTime);
@@ -603,9 +615,29 @@ class dynamic_alert : Tracker {
                     if(m_server_difficulty_level == 0){
                         m_server_difficulty_level = 1;
                     }
-                    spawnTime = 4.8 - count/2.5 + 0.1*m_time_played;
-                    if(spawnTime <= 1 - 0.04*m_server_difficulty_level){
-                        spawnTime == 1 - 0.04*m_server_difficulty_level; //min 0.4~1
+                    spawnTime = 3.5;
+
+                    if(m_time_played >= 20){
+                        spawnTime = spawnTime + 0.08*(m_time_played-20);
+                    }
+
+                    spawnTime = spawnTime - server_difficulty_level*0.1; //start = 2.0(level-15)
+                    spawnTime = spawnTime - count/4;
+
+                    if(count >= 10 && m_time_played <= 15){
+                        spawnTime = 0.4;
+                    }
+                    
+                    if(m_time_played >= 15){
+                        spawnTime = 2;
+                    }
+
+                    if(count <= 4 && m_time_played >= 12){
+                        spawnTime = 2.0;
+                    }
+
+                    if(spawnTime <= 0.4){
+                        spawnTime = 0.4;
                     }
                     _log("setSpawnTime("+ f_name +"):" + spawnTime);
                     faction.setFloatAttribute("spawn_interval", spawnTime);
@@ -613,14 +645,19 @@ class dynamic_alert : Tracker {
             }
             if(g_GameMode == "Vanilla"){ //人打人 本家模式
                 if(f_name == "Super Earth"){ //越打刷新越慢
-                    spawnTime = 4.0 - count/4 + 0.1*m_time_played;
-                    if(spawnTime <= 0.3){
-                        spawnTime = 0.3;
+                    spawnTime = 0;
+                    spawnTime = 4.8 - count/4 + 0.05*(m_time_played-40);
+                    if(spawnTime <= 0.5){
+                        spawnTime = 2 - count/4;
+                        if(spawnTime <= 0.65){
+                            spawnTime = 0.65;
+                        }                    
                     }
                     _log("setSpawnTime("+f_name+"):" + spawnTime);
                     faction.setFloatAttribute("spawn_interval", spawnTime);
                 }
                 if(f_name == "ACG"){ //越打刷新越快
+                    spawnTime = 0;
                     spawnTime = 4.0 - 0.05*m_time_played;
                     if(spawnTime <= 1){
                         spawnTime = 1;
@@ -628,6 +665,9 @@ class dynamic_alert : Tracker {
                     _log("setSpawnTime("+f_name+"):" + spawnTime);
                     faction.setFloatAttribute("spawn_interval", spawnTime);
                 }
+            }
+            if(test_time != -1){
+                faction.setFloatAttribute("spawn_interval", 0.1);
             }
             
 			command.appendChild(faction);
@@ -786,6 +826,7 @@ class dynamic_alert : Tracker {
             Vector3 position = stringToVector3(event.getStringAttribute("position"));
             Alert_Spawn(m_metagame,1,position,level_all);
             Alert_Spawn(m_metagame,1,position,level_rokectLauncher);
+
         }
         if(eventKey == "vehicle_call_alert_cyborgs"){
             Vector3 position = stringToVector3(event.getStringAttribute("position"));
@@ -880,13 +921,34 @@ class dynamic_alert : Tracker {
                 const XmlElement@ player = getPlayerInfo(m_metagame,m_pid);
                 if(player is null){return;}
                 Vector3 position = stringToVector3(player.getStringAttribute("aim_target"));
-                int m_fid = g_factionInfoBuck.getFidByName("Bugs");
+                int m_fid = g_factionInfoBuck.getFidByName("Super Earth");
+                _report(m_metagame,"SuperEarth fid="+m_fid);
                 if(m_fid == -1){return;}
                 Alert_Spawn(m_metagame,m_fid,position,debug);
             }
             if(message == "/setspawntime"){
                 setSpawnTime();
                 _debugReport(m_metagame,"setting spawn time");
+            }
+            if(message == "/setspawntime 0.1"){
+                setSpawnTime(0.1);
+                _debugReport(m_metagame,"setting spawn time 0.1");
+            }
+            if(message == "/setspawntime 0.3"){
+                setSpawnTime(0.3);
+                _debugReport(m_metagame,"setting spawn time 0.3");
+            }
+            if(message == "/setspawntime 1"){
+                setSpawnTime(1);
+                _debugReport(m_metagame,"setting spawn time 1");
+            }
+            if(message == "/setspawntime 3"){
+                setSpawnTime(3);
+                _debugReport(m_metagame,"setting spawn time 3");
+            }
+            if(message == "/setspawntime 5"){
+                setSpawnTime(5);
+                _debugReport(m_metagame,"setting spawn time 5");
             }
         }
     }

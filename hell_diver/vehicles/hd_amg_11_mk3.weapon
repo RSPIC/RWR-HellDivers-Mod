@@ -99,27 +99,19 @@ key="hd_amg_11_mk3.weapon"
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
 	time_to_live="0.5625" can_be_detected_by_driver="1" can_be_disarmed="0" name="A/MG-11 Minigun Turret" radius="0.7"> 
 		
-		<result class="spawn" instance_class="projectile" instance_key="hd_amg_11_mk3_damage.projectile" 
-		min_amount="9" max_amount="9" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
-		<!-- 1x10=10伤 -->
+		<result class="hit" kill_probability="2.0" 
+		kill_probability_offset_on_successful_hit="20"
+		kill_decay_start_time="0.15" kill_decay_end_time="0.55" character_state="wound"/>
 	
 		<effect class="result" key="terrain" ref="hd_mg94_result_spray" lighting="0" />
 		<effect class="result" key="terrain" ref="hd_mg94_result_bullet_light_center" lighting="0" />
 		<effect class="result" key="terrain" ref="hd_mg94_result_bullet_smoke" lighting="0" />
 		<effect class="result" key="terrain" ref="hd_mg94_hit_leave" lighting="0" />
-		<effect class="activated" ref="general_weapon_activated_bullet_light" lighting="0"/>
-		<effect class="activated" ref="general_weapon_activated_bullet_centerlight" lighting="0"/>
-
-		<effect class="result" key="terrain" ref="p2_peacemaker_hit_01" />
-		<effect class="result" key="terrain" ref="p2_peacemaker_hit_02" />
-		<effect class="result" key="terrain" ref="p2_peacemaker_hit_03" />
-		<effect class="result" key="terrain" ref="p2_peacemaker_hit_04" />
-		<effect class="result" key="character" ref="BloodSplat50Cal" lighting="1" />
-		<effect class="result" key="character" ref="BurstShine50Cal" lighting="1" post_processing="0" />
-
-		<effect class="result" key="character" ref="general_hit_character_cross_2"  />
-		<effect class="result" key="character" ref="general_hit_character_cross_1"  />
-
+		<effect class="activated" ref="hd_mg94_activated_bullet_light" lighting="0"/>
+		<effect class="activated" ref="hd_mg94_activated_bullet_light_center" lighting="0"/>
+		<effect class="activated" ref="hd_mg94_activated_bullet_ground_light"/>
+		<effect class="activated" ref="hd_mg94_activated_bullet_light_center_yellow" lighting="0" post_processing="1"/>
+	
 		<sound class="result" key="terrain" copy="other" />
 		<sound class="result" key="static_object" copy="other" />
 		<sound class="result" key="vehicle" copy="other" />
@@ -128,7 +120,7 @@ key="hd_amg_11_mk3.weapon"
 		<effect class="result" key="static_object" copy="terrain" />
 		<effect class="result" key="character" copy="terrain" />
 		<effect class="result" key="vehicle" copy="terrain" />
-		<trail probability="1" key="normal_trail_long_red" lighting="0"/>	
+		<trail probability="1.0" key="hd_mg94_trail" lighting="0"/>	
     </projectile>
 		<effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
 		<effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 	

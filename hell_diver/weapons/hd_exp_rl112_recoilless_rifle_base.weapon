@@ -42,7 +42,6 @@ file="_hd_anti_tank.base"
     <hud_icon filename="hd_rl112_recoilless_rifle_mk3.png" /> <!--武器为110x220像素，投掷物为110x110-->
 	
 	<!--武器动作，必须指定recoil和reload动作，部分动作留空会默认调用常规双手武器动作或者无动作-->
-    <animation key="recoil" animation_key="recoil, law" /> <!--后坐力动作，半身动作-->
     <animation key="cycle"  animation_key="reloading_hvy_3s" /> <!--拉栓动作，武器固定脱手-->
     <animation state_key="reload" animation_key="reloading_hvy_3s" />	<!--换弹动作，半身动作-->
     <animation state_key="hold" animation_key="still, with law" /><!--站姿静止动作，全身动作-->
@@ -58,11 +57,9 @@ file="_hd_anti_tank.base"
     <animation state_key="prone_still" animation_key="" /><!--全身动作-->
 	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
 	<animation state_key="stabbing" animation_key="pistol whip 3" /><!--半身动作，武器可设置脱手-->
- 	<animation state_key="changing_weapon_in" animation_key="reloading_hvy_3s" /><!--半身动作，切换武器，本武器收回-->
-	<animation state_key="changing_weapon_out" animation_key="still, with law"/><!--半身动作，切换武器，本武器取出-->
+ 	<animation state_key="changing_weapon_in" animation_key="" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key="reloading_hvy_1s"/><!--半身动作，切换武器，本武器取出-->
 	<!--武器音频-->
-    <sound key="effect" fileref="pf98_effect.wav" pitch_variety="0" volume="0.25" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
-    <sound key="fire" fileref="hd_at_launch_1.wav" pitch_variety="0.08" volume="0.8" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
     <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
 	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
 	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
@@ -74,14 +71,6 @@ file="_hd_anti_tank.base"
     <sound key="cycle_in" fileref="hd_cycle_in_01.wav" /><!--动作中in的value为1-->
 	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
 
-	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
-	<capacity value="0" source="rank" source_value="0.0" />
-	<capacity value="8" source="rank" source_value="153.893" />
-	
-	<!--军械库相关-->
-    <commonness value="1" can_respawn_with="0" in_stock="1" /> 
-    <inventory encumbrance="3.0" price="0.0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
-    
 
 	
 	<!--枪口特效-->

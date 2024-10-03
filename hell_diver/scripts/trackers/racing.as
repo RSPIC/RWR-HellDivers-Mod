@@ -607,11 +607,16 @@ class racing : Tracker {
         for(uint i=0; i<m_nowMap_rankLists.size(); ++i){
             if(name == m_nowMap_rankLists[i].m_name){
                 int rank = m_nowMap_rankLists[i].m_rank;
+                float running_time = m_nowMap_rankLists[i].m_racing_time;
                 if(rank <= 100){
                     addItemInBackpack(m_metagame,cid,"weapon","hd_ar_ar23p_liberator.weapon");
                     _notify(m_metagame,pid,"你当前的排名是:第"+rank+"名！奖励已发放");
                 }else{
                     _notify(m_metagame,pid,"你当前的排名是:第"+rank+"名,没有排名奖励！");
+                }
+                if(running_time <= 130){
+                    addItemInBackpack(m_metagame,cid,"weapon","re_deploy_ex_yaluji.weapon");
+                    _notify(m_metagame,pid,"你当前用时是"+running_time+"！奖励已发放");
                 }
             }
         }

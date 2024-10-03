@@ -36,6 +36,10 @@ force_as_shoots_blast_projectiles="0"
 	stab_range="3.0" 
 	use_basic_muzzle_smoke_effect="0"
     /> 
+
+    <drop_on_death_result class="spawn" instance_class="projectile" instance_key="illum_obelisk_dead_damage.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0.0" />
+
 	<!--武器模型和HUD-->
 	<weak_hand_hold offset="0" /> <!--模型X轴偏移-->
     <hud_icon filename="illuminate_chat_icon.png" /> <!--临时贴图-->

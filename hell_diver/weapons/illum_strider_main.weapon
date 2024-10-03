@@ -25,8 +25,8 @@ force_as_shoots_blast_projectiles="0"
     suppressed="0" 
 	class="0" 
     name="Strider" 
-	ai_sight_range_modifier="3.0"
-	sight_range_modifier="3.0" 
+	ai_sight_range_modifier="1.0"
+	sight_range_modifier="2.2" 
 	burst_shots="1" 
     projectiles_per_shot="15" 
     projectile_speed="100.0"
@@ -115,7 +115,7 @@ force_as_shoots_blast_projectiles="0"
      
 	<!--附加属性-->
     <modifier class="speed" value="-0.45" /> 
-    <modifier class="hit_success_probability" value="-0.1" />
+    <modifier class="hit_success_probability" value="+0.1" />
     <modifier class="detectability" value="0.0" />	<!--正值减少玩家隐蔽-->
 	
 	<!--盾块，可设置多个，空盾块仍然生效击杀收益共享，需要删去该段代码-->

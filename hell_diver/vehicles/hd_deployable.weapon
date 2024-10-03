@@ -39,11 +39,11 @@ on_ground_up="1 0 0"
     <sound class="impact" fileref="sandbag_drop.wav" />    
     <model mesh_filename="barrier_item.mesh" texture_filename="barrier_item.png" />
     <capacity value="0" source="rank" source_value="0.0" />
-    <capacity value="2" source="rank" source_value="0.0" />
+    <capacity value="8" source="rank" source_value="0.0" />
     <hud_icon filename="hud_ender_chest.png" />
      
     <commonness value="0" can_respawn_with="0" in_stock="1" /> 
-    <inventory encumbrance="10" price="0.0" />
+    <inventory encumbrance="10" price="3000.0" />
     <modifier class="speed" value="-0.4" />    
 	 
 </weapon>
@@ -86,11 +86,11 @@ on_ground_up="1 0 0"
     <sound class="impact" fileref="sandbag_drop.wav" />    
     <model mesh_filename="barrier_item.mesh" texture_filename="barrier_item.png" />
     <capacity value="0" source="rank" source_value="0.0" />
-    <capacity value="2" source="rank" source_value="0.0" />
+    <capacity value="8" source="rank" source_value="0.0" />
     <hud_icon filename="hud_demolition_truck.png" />
      
     <commonness value="0" can_respawn_with="0" in_stock="1" /> 
-    <inventory encumbrance="10" price="0.0" />
+    <inventory encumbrance="0" price="0.0" />
     <modifier class="speed" value="-0.4" />    
 	 
 </weapon>
@@ -133,11 +133,11 @@ on_ground_up="1 0 0"
     <sound class="impact" fileref="sandbag_drop.wav" />    
     <model mesh_filename="barrier_item.mesh" texture_filename="barrier_item.png" />
     <capacity value="0" source="rank" source_value="0.0" />
-    <capacity value="2" source="rank" source_value="0.0" />
+    <capacity value="8" source="rank" source_value="0.0" />
     <hud_icon filename="hud_ra2_tesla.png" />
      
     <commonness value="0" can_respawn_with="0" in_stock="1" /> 
-    <inventory encumbrance="10" price="0.0" />
+    <inventory encumbrance="0" price="0.0" />
     <modifier class="speed" value="-0.4" />    
 	 
 </weapon>
@@ -180,11 +180,11 @@ on_ground_up="1 0 0"
     <sound class="impact" fileref="sandbag_drop.wav" />    
     <model mesh_filename="barrier_item.mesh" texture_filename="barrier_item.png" />
     <capacity value="0" source="rank" source_value="0.0" />
-    <capacity value="2" source="rank" source_value="0.0" />
+    <capacity value="8" source="rank" source_value="0.0" />
     <hud_icon filename="hud_fire_turrent.png" />
      
     <commonness value="0" can_respawn_with="0" in_stock="1" /> 
-    <inventory encumbrance="10" price="0.0" />
+    <inventory encumbrance="0" price="0.0" />
     <modifier class="speed" value="-0.4" />    
 	 
 </weapon>
@@ -227,11 +227,11 @@ on_ground_up="1 0 0"
     <sound class="impact" fileref="sandbag_drop.wav" />    
     <model mesh_filename="barrier_item.mesh" texture_filename="barrier_item.png" />
     <capacity value="0" source="rank" source_value="0.0" />
-    <capacity value="2" source="rank" source_value="0.0" />
+    <capacity value="8" source="rank" source_value="0.0" />
     <hud_icon filename="hud_edf_mortar.png" />
      
     <commonness value="0" can_respawn_with="0" in_stock="1" /> 
-    <inventory encumbrance="10" price="0.0" />
+    <inventory encumbrance="0" price="0.0" />
     <modifier class="speed" value="-0.4" />    
 	 
 </weapon>
@@ -274,11 +274,11 @@ on_ground_up="1 0 0"
     <sound class="impact" fileref="sandbag_drop.wav" />    
     <model mesh_filename="barrier_item.mesh" texture_filename="barrier_item.png" />
     <capacity value="0" source="rank" source_value="0.0" />
-    <capacity value="2" source="rank" source_value="0.0" />
+    <capacity value="8" source="rank" source_value="0.0" />
     <hud_icon filename="hud_edf_turrent_double.png" />
      
     <commonness value="0" can_respawn_with="0" in_stock="1" /> 
-    <inventory encumbrance="10" price="0.0" />
+    <inventory encumbrance="0" price="0.0" />
     <modifier class="speed" value="-0.4" />    
 	 
 </weapon>
@@ -321,11 +321,11 @@ on_ground_up="1 0 0"
     <sound class="impact" fileref="sandbag_drop.wav" />    
     <model mesh_filename="barrier_item.mesh" texture_filename="barrier_item.png" />
     <capacity value="0" source="rank" source_value="0.0" />
-    <capacity value="2" source="rank" source_value="0.0" />
+    <capacity value="8" source="rank" source_value="0.0" />
     <hud_icon filename="hud_fire_turrent.png" />
      
     <commonness value="0" can_respawn_with="0" in_stock="1" /> 
-    <inventory encumbrance="10" price="0.0" />
+    <inventory encumbrance="0" price="0.0" />
     <modifier class="speed" value="-0.4" />    
 	 
 </weapon>
@@ -368,11 +368,11 @@ on_ground_up="1 0 0"
     <sound class="impact" fileref="sandbag_drop.wav" />    
     <model mesh_filename="barrier_item.mesh" texture_filename="barrier_item.png" />
     <capacity value="0" source="rank" source_value="0.0" />
-    <capacity value="2" source="rank" source_value="0.0" />
+    <capacity value="8" source="rank" source_value="0.0" />
     <hud_icon filename="hud_ra2_minigun.png" />
      
     <commonness value="0" can_respawn_with="0" in_stock="1" /> 
-    <inventory encumbrance="10" price="0.0" />
+    <inventory encumbrance="0" price="0.0" />
     <modifier class="speed" value="-0.4" />    
 	 
 </weapon>
@@ -415,11 +415,11 @@ on_ground_up="1 0 0"
     <sound class="impact" fileref="sandbag_drop.wav" />    
     <model mesh_filename="barrier_item.mesh" texture_filename="barrier_item.png" />
     <capacity value="0" source="rank" source_value="0.0" />
-    <capacity value="2" source="rank" source_value="0.0" />
+    <capacity value="8" source="rank" source_value="0.0" />
     <hud_icon filename="hud_edf_turrent_single.png" />
      
     <commonness value="0" can_respawn_with="0" in_stock="1" /> 
-    <inventory encumbrance="10" price="0.0" />
+    <inventory encumbrance="0" price="0.0" />
     <modifier class="speed" value="-0.4" />    
 	 
 </weapon>
@@ -462,11 +462,11 @@ on_ground_up="1 0 0"
     <sound class="impact" fileref="sandbag_drop.wav" />    
     <model mesh_filename="barrier_item.mesh" texture_filename="barrier_item.png" />
     <capacity value="0" source="rank" source_value="0.0" />
-    <capacity value="2" source="rank" source_value="0.0" />
+    <capacity value="8" source="rank" source_value="0.0" />
     <hud_icon filename="hd_ra2_ifv_hud.png" />
      
     <commonness value="0" can_respawn_with="0" in_stock="1" /> 
-    <inventory encumbrance="10" price="0.0" />
+    <inventory encumbrance="0" price="0.0" />
     <modifier class="speed" value="-0.4" />    
 	 
 </weapon>
@@ -509,11 +509,11 @@ on_ground_up="1 0 0"
     <sound class="impact" fileref="sandbag_drop.wav" />    
     <model mesh_filename="barrier_item.mesh" texture_filename="barrier_item.png" />
     <capacity value="0" source="rank" source_value="0.0" />
-    <capacity value="2" source="rank" source_value="0.0" />
+    <capacity value="8" source="rank" source_value="0.0" />
     <hud_icon filename="hd_missile_launcher.png" />
      
     <commonness value="0" can_respawn_with="0" in_stock="1" /> 
-    <inventory encumbrance="10" price="0.0" />
+    <inventory encumbrance="0" price="0.0" />
     <modifier class="speed" value="-0.4" />    
 	 
 </weapon>
@@ -556,11 +556,11 @@ on_ground_up="1 0 0"
     <sound class="impact" fileref="sandbag_drop.wav" />    
     <model mesh_filename="barrier_item.mesh" texture_filename="barrier_item.png" />
     <capacity value="0" source="rank" source_value="0.0" />
-    <capacity value="2" source="rank" source_value="0.0" />
+    <capacity value="8" source="rank" source_value="0.0" />
     <hud_icon filename="hd_missile_launcher.png" />
      
     <commonness value="0" can_respawn_with="0" in_stock="1" /> 
-    <inventory encumbrance="10" price="0.0" />
+    <inventory encumbrance="0" price="0.0" />
     <modifier class="speed" value="-0.4" />    
 	 
 </weapon>
@@ -603,11 +603,11 @@ on_ground_up="1 0 0"
     <sound class="impact" fileref="sandbag_drop.wav" />    
     <model mesh_filename="barrier_item.mesh" texture_filename="barrier_item.png" />
     <capacity value="0" source="rank" source_value="0.0" />
-    <capacity value="2" source="rank" source_value="0.0" />
+    <capacity value="8" source="rank" source_value="0.0" />
     <hud_icon filename="hd_missile_launcher.png" />
      
     <commonness value="0" can_respawn_with="0" in_stock="1" /> 
-    <inventory encumbrance="10" price="0.0" />
+    <inventory encumbrance="0" price="0.0" />
     <modifier class="speed" value="-0.4" />    
 	 
 </weapon>
@@ -650,11 +650,11 @@ on_ground_up="1 0 0"
     <sound class="impact" fileref="sandbag_drop.wav" />    
     <model mesh_filename="barrier_item.mesh" texture_filename="barrier_item.png" />
     <capacity value="0" source="rank" source_value="0.0" />
-    <capacity value="2" source="rank" source_value="0.0" />
+    <capacity value="8" source="rank" source_value="0.0" />
     <hud_icon filename="hud_edf_turrent_minigun.png" />
      
     <commonness value="0" can_respawn_with="0" in_stock="1" /> 
-    <inventory encumbrance="10" price="0.0" />
+    <inventory encumbrance="0" price="0.0" />
     <modifier class="speed" value="-0.4" />    
 	 
 </weapon>
@@ -696,11 +696,11 @@ on_ground_up="1 0 0"
     <sound class="impact" fileref="sandbag_drop.wav" />    
     <model mesh_filename="barrier_item.mesh" texture_filename="barrier_item.png" />
     <capacity value="0" source="rank" source_value="0.0" />
-    <capacity value="2" source="rank" source_value="0.0" />
+    <capacity value="8" source="rank" source_value="0.0" />
     <hud_icon filename="hd_at47.png" />
      
     <commonness value="0" can_respawn_with="0" in_stock="1" /> 
-    <inventory encumbrance="10" price="0.0" />
+    <inventory encumbrance="0" price="0.0" />
     <modifier class="speed" value="-0.4" />    
 </weapon>
 <weapon 
@@ -741,11 +741,11 @@ on_ground_up="1 0 0"
     <sound class="impact" fileref="sandbag_drop.wav" />    
     <model mesh_filename="barrier_item.mesh" texture_filename="barrier_item.png" />
     <capacity value="0" source="rank" source_value="0.0" />
-    <capacity value="2" source="rank" source_value="0.0" />
+    <capacity value="8" source="rank" source_value="0.0" />
     <hud_icon filename="hd_at47.png" />
      
     <commonness value="0" can_respawn_with="0" in_stock="1" /> 
-    <inventory encumbrance="10" price="0.0" />
+    <inventory encumbrance="0" price="0.0" />
     <modifier class="speed" value="-0.4" />    
 </weapon>
 <weapon 
@@ -786,11 +786,11 @@ on_ground_up="1 0 0"
     <sound class="impact" fileref="sandbag_drop.wav" />    
     <model mesh_filename="barrier_item.mesh" texture_filename="barrier_item.png" />
     <capacity value="0" source="rank" source_value="0.0" />
-    <capacity value="2" source="rank" source_value="0.0" />
+    <capacity value="8" source="rank" source_value="0.0" />
     <hud_icon filename="hud_ex_warthog.png" />
      
     <commonness value="0" can_respawn_with="0" in_stock="1" /> 
-    <inventory encumbrance="10" price="0.0" />
+    <inventory encumbrance="0" price="0.0" />
     <modifier class="speed" value="-0.4" />    
 </weapon>
 <weapon 
@@ -831,11 +831,11 @@ on_ground_up="1 0 0"
     <sound class="impact" fileref="sandbag_drop.wav" />    
     <model mesh_filename="barrier_item.mesh" texture_filename="barrier_item.png" />
     <capacity value="0" source="rank" source_value="0.0" />
-    <capacity value="2" source="rank" source_value="0.0" />
+    <capacity value="8" source="rank" source_value="0.0" />
     <hud_icon filename="hud_roadflag.png" />
      
     <commonness value="0" can_respawn_with="0" in_stock="1" /> 
-    <inventory encumbrance="10" price="0.0" />
+    <inventory encumbrance="0" price="3000.0" />
     <modifier class="speed" value="-0.4" />    
 </weapon>
 </weapons>

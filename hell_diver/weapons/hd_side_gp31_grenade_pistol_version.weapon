@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapons> 
+<weapon 
+file="hd_side_gp31_grenade_pistol_base.weapon"
+key="hd_side_gp31_grenade_pistol.weapon" 
+drop_count_factor_on_death="0" 
+drop_count_factor_on_player_death="0"
+time_to_live_out_in_the_open="0"
+player_death_drop_owner_lock_time="0"
+>
+	
+	<animation state_key="reload"   animation_key="reloading_1.5s" />
+
+	<sound key="effect" fileref="" pitch_variety="0.03" volume="0.7" /> 
+    <sound key="fire" fileref="gl06_shot.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="magazine_out" fileref="hk416_gl_open.wav"  pitch_variety="0.08" volume="1.5"/>
+    <sound key="magazine_in" fileref="hk416_gl_insert.wav"  pitch_variety="0.08" volume="1.5"/>
+
+    <hud_icon filename="hd2w_gp31.png" /> 
+    <model filename="hd2w_gp31.xml" /> 
+
+    <commonness value="0.00000001" can_respawn_with="1" in_stock="0" /> 
+
+    <ballistics 
+    curve_height="5" 
+    near_far_distance="0" 
+    speed_estimation_near="0.0" 
+    speed_estimation_far="48" 
+    max_speed="31" 
+    randomness="0" 
+    tweak_factor="1.65" />  
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="23" can_be_detected_by_footmen="1" 
+	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0"> 
+
+		<result class="spawn" instance_class="projectile" instance_key="hd_side_gp31_grenade_pistol_base_damage.projectile" 
+		min_amount="30" max_amount="75" offset="0 1 0" position_spread="2 0" direction_spread="0.1 0" />	
+		<trigger class="impact" />
+
+		<!-- 3*30 = 90 ~ 225-->
+
+		<!--命中音效-->
+		<sound class="result" key="other" fileref="hk416_sc_gl_explosion.wav" pitch_variety="0.1" volume="12.0" />
+			
+		<effect class="result" key="terrain" ref="nova_s_result_impact_flame_1" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_impact_flame_2" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_impact_flame_3" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_impact_flame_4" lighting="0" post_processing="0"/> 
+		<!-- <effect class="result" key="terrain" ref="nova_s_result_blast_smoke_expanding" lighting="0" post_processing="1"/>  -->
+		<!-- <effect class="result" key="terrain" ref="nova_s_result_blast_smoke" lighting="0" post_processing="1"/>  -->
+		<!-- <effect class="result" key="terrain" ref="nova_s_result_impact_spark" lighting="0" post_processing="1"/>  -->
+		<!-- <effect class="result" key="terrain" ref="nova_s_result_impact_spark_2" lighting="0" post_processing="0"/>  -->
+		<effect class="result" key="terrain" ref="nova_s_result_ambient" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_s_result_ambient_ground" lighting="0" post_processing="0"/> 
+		<!-- <effect class="result" key="terrain" ref="nova_s_result_blast_ring" lighting="0" post_processing="0"/>  -->
+		<!-- <effect class="result" key="terrain" ref="nova_s_result_blast_ring_2" lighting="0" post_processing="0"/>  -->
+		<effect class="result" key="terrain" ref="nova_s_result_blast_fire" lighting="0" post_processing="0"/> 
+		<effect class="result" key="terrain" ref="nova_s_gl_hit_smoke_02" lighting="0" post_processing="1"/> 
+		<!-- <effect class="result" key="terrain" ref="nova_s_result_ground_smoke" lighting="0" post_processing="1"/> -->
+
+		
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+		<trail probability="1" key="p2_peacemaker_trail"/>	
+    </projectile>
+</weapon>
+</weapons>

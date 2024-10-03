@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<projectile class="grenade" key="acg_hecate_damage.projectile" slot="1">
+		<result class="blast" radius="3.0" damage="30" push="0.5" decal="0" 
+		faction_compare="not_equal" character_state="wound"  />
+
+		<trigger class="time" time_to_live="0"  />
+		<rotation class="motion" />
+		<model filename="" />
+   		<commonness value="0" can_respawn_with="0" in_stock="0"/>	
+</projectile>

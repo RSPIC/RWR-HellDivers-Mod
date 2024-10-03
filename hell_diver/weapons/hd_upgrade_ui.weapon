@@ -131,6 +131,76 @@ key="upgrade_ui_weapon.target:hd_side_p19_redeemer.cost:01.weapon"
 	/> 
     <hud_icon filename="hd2w_p19.png" /> 
 </weapon>
+<weapon 
+file="_ui.weapon_base"
+key="upgrade_ui_weapon.target:hd_exp_rl77_airburst_rocket_launcher.cost:07.weapon" 
+> 
+    <specification 	
+    slot="1" 	
+    name="[7研发点] RL-77 空爆火箭发射器" 
+	/> 
+    <hud_icon filename="hd_exp_rl77_airburst_rocket_launcher.png" /> 
+</weapon>
+<weapon 
+file="_ui.weapon_base"
+key="upgrade_ui_weapon.target:hd_exp_jar5_deminator.cost:02.weapon" 
+> 
+    <specification 	
+    slot="0" 	
+    name="[2研发点] JAR-5 主宰" 
+	/> 
+    <hud_icon filename="hd2w_jar5.png" /> 
+</weapon>
+<weapon 
+file="_ui.weapon_base"
+key="upgrade_ui_weapon.target:hd_side_gp31_grenade_pistol.cost:02.weapon" 
+> 
+    <specification 	
+    slot="1" 	
+    name="[2研发点] GP-31 榴弹手枪" 
+	/> 
+    <hud_icon filename="hd2w_gp31.png" /> 
+</weapon>
+<weapon 
+file="_ui.weapon_base"
+key="upgrade_ui_weapon.target:hd_exp_faf14_spear.cost:08.weapon" 
+> 
+    <specification 	
+    slot="1" 	
+    name="[8研发点] FAF-14 飞矛导弹" 
+	/> 
+    <hud_icon filename="hd2w_faf14.png" /> 
+</weapon>
+<weapon 
+file="_ui.weapon_base"
+key="upgrade_ui_weapon.target:hd_exp_las99_quasar_cannon.cost:04.weapon" 
+> 
+    <specification 	
+    slot="1" 	
+    name="[4研发点] LAS-99 类星体" 
+	/> 
+    <hud_icon filename="hd_exp_las99_quasar_cannon.png" /> 
+</weapon>
+<weapon 
+file="_ui.weapon_base"
+key="upgrade_ui_weapon.target:hd_psc_cb9_exploding_crossbow.cost:02.weapon" 
+> 
+    <specification 	
+    slot="0" 	
+    name="[2研发点] CB-9 爆燃弩" 
+	/> 
+    <hud_icon filename="hd_psc_cb9_exploding_crossbow.png" /> 
+</weapon>
+<weapon 
+file="_ui.weapon_base"
+key="upgrade_ui_weapon.target:hd_psc_rs422_railgun.cost:07.weapon" 
+> 
+    <specification 	
+    slot="0" 	
+    name="[7研发点] RS-422 轨道炮" 
+	/> 
+    <hud_icon filename="hd_rs422_railgun.png" /> 
+</weapon>
 </weapons>
 
 

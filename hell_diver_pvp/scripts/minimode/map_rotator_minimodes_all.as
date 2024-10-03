@@ -19,14 +19,14 @@ class MapRotatorMiniModesAll : MapRotatorMiniModes {
 	// ------------------------------------------------------------------------------------------------
 	protected void setupStages() {
 		setupPlaylist1();
-		setupPlaylist2();
-		setupPlaylist3();
-		setupPlaylist4();
-		setupPlaylist5();
-		setupPlaylist6();
-		setupPlaylist7();
-		setupPlaylist8();
-		setupPlaylist9();         
+		// setupPlaylist2();
+		// setupPlaylist3();
+		// setupPlaylist4();
+		// setupPlaylist5();
+		// setupPlaylist6();
+		// setupPlaylist7();
+		// setupPlaylist8();
+		// setupPlaylist9();         
 	}
 
 	// ------------------------------------------------------------------------------------------------

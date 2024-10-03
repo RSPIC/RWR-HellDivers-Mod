@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectiles>
+<projectile  
+class="grenade" 
+name="FAF-14 Spear"
+key="hd_exp_faf14_spear_base_spawn.projectile" 
+slot="0"
+pulldown_in_air="4.0"
+on_ground_up="0 1 0"
+use_time_to_live="1"
+time_to_live="60"
+>
+	<result class="spawn" instance_class="projectile" instance_key="hd_exp_faf14_spear_base_damage.projectile" 
+	min_amount="25" max_amount="40" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+	
+	<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_2.wav" pitch_variety="0.01" volume="5" />
+
+	<effect class="result" key="terrain" ref="nova_s_result_impact_flame_1" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="nova_s_result_impact_flame_2" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="nova_s_result_impact_flame_3" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="nova_s_result_impact_flame_4" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="nova_s_result_blast_smoke_expanding" lighting="0" post_processing="1"/> 
+	<effect class="result" key="terrain" ref="nova_s_result_blast_smoke" lighting="0" post_processing="1"/> 
+	<effect class="result" key="terrain" ref="nova_s_result_impact_spark" lighting="0" post_processing="1"/> 
+	<effect class="result" key="terrain" ref="nova_s_result_impact_spark_2" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="nova_s_result_ambient" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="nova_s_result_ambient_ground" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="nova_s_result_blast_ring" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="nova_s_result_blast_ring_2" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="nova_s_result_blast_fire" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="nova_s_gl_hit_smoke_02" lighting="0" post_processing="1"/> 
+	<effect class="result" key="terrain" ref="nova_s_result_ground_smoke" lighting="0" post_processing="1"/>
+	<effect class="activated" ref="general_activated_at_smoke_trail"/>
+	<model mesh_filename="hd_mls4x_commando_missile.xml" />
+
+	<trail probability="1" key="nova_trail"/>	
+
+
+	<trigger class="impact" time_to_live="0" />	
+    <rotation class="random" />
+	<model mesh_filename="" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
+	<sound class="result" key="shield" copy="other" />
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="shield" copy="terrain" />			
+	<effect class="result" key="vehicle" copy="terrain" />			
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+</projectile>
+<projectile  
+class="grenade" 
+name="FAF-14 Spear"
+key="hd_exp_faf14_spear_base_damage.projectile" 
+slot="0"
+pulldown_in_air="15.0"
+on_ground_up="0 1 0"
+use_time_to_live="1"
+time_to_live="60"
+>
+	<result class="blast" radius="6.8" damage="15" push="0.2" decal="0" character_state="wound" damage_origin_vehicle="0"/>
+	<trigger class="time" time_to_live="0" />	
+    <rotation class="random" />
+	<model mesh_filename="" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+</projectile>
+</projectiles>

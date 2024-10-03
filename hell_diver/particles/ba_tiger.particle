@@ -89,6 +89,44 @@ particle_system ba_tiger_muzzle_light
 		colour2 0 0 0 0
 	}
 }
+particle_system ba_tiger_muzzle_light_s
+{
+	quota 50
+	material point_soft_edge_100_cull
+	particle_width 4
+	particle_height 4
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.1
+		duration 0.1
+	}
+    affector Scaler{
+        rate 30
+    }
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0.5 1
+		time1 0.7
+		colour1 1 0.3 0.5 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
 particle_system ba_tiger_muzzle_spark
 {
 	quota 300
@@ -114,6 +152,43 @@ particle_system ba_tiger_muzzle_spark
 		velocity_max -50
 		time_to_live_min 0.07
 		time_to_live_max 0.14
+		duration 0.1
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0.5 1
+		time1 0.7
+		colour1 1 0.3 0.5 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system ba_tiger_muzzle_spark_s
+{
+	quota 300
+	material point_soft_edge_100_cull
+	particle_width 0.2
+	particle_height 2
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 90
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 200
+		position 0 0 0
+		velocity_min -30
+		velocity_max -50
+		time_to_live_min 0.03
+		time_to_live_max 0.05
 		duration 0.1
 	}
 	affector ColourInterpolator
@@ -301,6 +376,52 @@ particle_system ba_tiger_muzzle_smoke
 		colour0 0.4 0.4 0.4 1
 		time1 0.7
 		colour1 0.3 0.3 0.3 0.5
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system ba_tiger_muzzle_smoke_2
+{
+	quota 50
+	material Particle_Dissolve_Cloud_01
+	particle_width 3
+	particle_height 3
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.1
+		time_to_live 0.7
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 2
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.4 0.4 0.4 0.5
+		time1 0.7
+		colour1 0.3 0.3 0.3 0.3
 		time2 1
 		colour2 0 0 0 0
 	}

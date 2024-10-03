@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>	
+
+<weapons> 
+<weapon 
+file="_rare_weapon_mk3.base" 
+key="acg_rumi.weapon" 
+> 
+    <tag name="cqb" />
+
+    <specification
+    magazine_size="-1" 
+    can_shoot_crouching="1" 
+	can_shoot_standing="1"
+	can_shoot_running="1"
+	can_shoot_prone="0"
+    carry_in_two_hands="1" 
+    name="Rumi" 
+    class="5" 
+    consume="0" 
+    affect_characters="1"
+    affect_vehicles="0"
+    sight_range_modifier="1" 
+    damage="0.8"
+    slot="0" 
+    range="5.2"
+    success_probability="1.0"
+    stab_enabled="1"
+    stab_range="5.2"
+	character_state="stun" 
+	/>
+	<!--多模式-->
+    <!-- <next_in_chain key="acg_shuiniao_ii.weapon" share_ammo="0" />  -->
+
+	<!--武器模型和HUD-->
+	<weak_hand_hold offset="0" /> <!--模型X轴偏移-->
+	<model filename="acgw_rumi.xml" /> 
+    <hud_icon filename="acg_rumi.png" /> 
+
+
+	<!--武器动作，必须指定recoil和reload动作-->
+	<animation state_key="stabbing"	animation_key="hd_hvy_sword_atk_1" />
+	<animation state_key="stabbing"	animation_key="hd_hvy_sword_atk_2" />
+	<animation state_key="recoil"	animation_key="hd_hvy_sword_atk_continue" />
+    <animation state_key="reload"	animation_key="reloading, ninjato" />
+	<animation state_key="hold"	animation_key="hd_hvy_sword_still" />
+	<animation state_key="hold_on_wall"	animation_key="hd_hvy_sword_still" />
+	<animation state_key="still_against_wall"	animation_key="hd_hvy_sword_still" />
+	<animation state_key="hold_casual"	animation_key="hd_hvy_sword_still" />
+	<animation state_key="running"	animation_key="hd_hvy_sword_running" />
+	<animation state_key="walking"	animation_key="hd_hvy_sword_walking" />
+	<animation state_key="walking_backwards" animation_key="hd_hvy_sword_walking_back" />
+	<animation state_key="crouching"	animation_key="hd_hvy_sword_atk_continue" />
+	<animation state_key="crouch_moving"	animation_key="hd_hvy_sword_walking" />
+	<animation state_key="crouch_moving_backwards"	animation_key="hd_hvy_sword_walking_back" />
+	<animation state_key="changing_weapon_in"	animation_key="change weapon in, ninjato" />
+	<animation state_key="changing_weapon_out"	animation_key="change weapon out, ninjato" />
+    <animation state_key="prone_still" animation_key="prone still, ninjato" />
+    <animation state_key="prone_moving" animation_key="prone moving, ninjato" />
+	<animation state_key="next_in_chain_in" animation_key="" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="" /><!--半身动作，切换模式，本模式切入-->
+	<!--武器音频-->
+	<sound key="fire" fileref="laser_sword_atk_1.wav" pitch_variety="0.05" volume="1" />
+	<sound key="fire" fileref="laser_sword_atk_2.wav" pitch_variety="0.05" volume="1" />
+	<sound key="fire" fileref="laser_sword_atk_3.wav" pitch_variety="0.05" volume="1" />
+	<sound key="fire" fileref="laser_sword_atk_4.wav" pitch_variety="0.05" volume="1" />
+	<sound key="fire" fileref="laser_sword_atk_5.wav" pitch_variety="0.05" volume="1" />
+	<sound key="fire" fileref="laser_sword_atk_6.wav" pitch_variety="0.05" volume="1" />
+    <sound key="cycle" fileref="" />
+	<sound key="stab" fileref="laser_sword_atk_1.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab" fileref="laser_sword_atk_2.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab" fileref="laser_sword_atk_3.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab" fileref="laser_sword_atk_4.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab" fileref="laser_sword_atk_5.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab" fileref="laser_sword_atk_6.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit" fileref="ninjato_hit_fatal.wav" pitch_variety="0.05" volume="0.6" />
+	<sound key="stab_hit_any" fileref="ninjato_hit.wav" pitch_variety="0.05" volume="0.6" />
+    <sound key="dry_fire" fileref="static.wav" />
+	<sound key="effect" fileref="laser_sword_atk_4.wav" volume="1"/>
+
+	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
+
+	<!--姿态精度-->
+    <stance state_key="running" accuracy="1" /> 
+    <stance state_key="walking" accuracy="1" />
+	<stance state_key="standing" accuracy="1" />
+	<stance state_key="crouching" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1" />     
+     
+	<!--附加属性-->
+    <modifier class="speed" value="0.3" /> 
+    <modifier class="hit_success_probability" value="0.0" /><!--负值减少玩家抗致死率-->
+    <modifier class="detectability" value="-0.1" />	<!--正值减少玩家隐蔽-->
+</weapon>
+<weapon 
+file="_rare_weapon_mk3_re.base" 
+key="re_acg_rumi.weapon" 
+> 
+    <tag name="cqb" />
+
+    <specification
+    magazine_size="-1" 
+    can_shoot_crouching="1" 
+	can_shoot_standing="1"
+	can_shoot_running="1"
+	can_shoot_prone="0"
+    carry_in_two_hands="1" 
+    name="Rumi" 
+    class="5" 
+    consume="0" 
+    affect_characters="1"
+    affect_vehicles="0"
+    sight_range_modifier="1" 
+    damage="0.8"
+    slot="0" 
+    range="5.2"
+    success_probability="1.0"
+    stab_enabled="1"
+    stab_range="5.2"
+	character_state="stun" 
+	/>
+	<!--多模式-->
+    <!-- <next_in_chain key="acg_shuiniao_ii.weapon" share_ammo="0" />  -->
+
+	<!--武器模型和HUD-->
+	<weak_hand_hold offset="0" /> <!--模型X轴偏移-->
+	<model filename="acgw_rumi.xml" /> 
+    <hud_icon filename="acg_rumi.png" /> 
+
+
+	<!--武器动作，必须指定recoil和reload动作-->
+	<animation state_key="stabbing"	animation_key="hd_hvy_sword_atk_1" />
+	<animation state_key="stabbing"	animation_key="hd_hvy_sword_atk_2" />
+	<animation state_key="recoil"	animation_key="hd_hvy_sword_atk_continue" />
+    <animation state_key="reload"	animation_key="reloading, ninjato" />
+	<animation state_key="hold"	animation_key="hd_hvy_sword_still" />
+	<animation state_key="hold_on_wall"	animation_key="hd_hvy_sword_still" />
+	<animation state_key="still_against_wall"	animation_key="hd_hvy_sword_still" />
+	<animation state_key="hold_casual"	animation_key="hd_hvy_sword_still" />
+	<animation state_key="running"	animation_key="hd_hvy_sword_running" />
+	<animation state_key="walking"	animation_key="hd_hvy_sword_walking" />
+	<animation state_key="walking_backwards" animation_key="hd_hvy_sword_walking_back" />
+	<animation state_key="crouching"	animation_key="hd_hvy_sword_atk_continue" />
+	<animation state_key="crouch_moving"	animation_key="hd_hvy_sword_walking" />
+	<animation state_key="crouch_moving_backwards"	animation_key="hd_hvy_sword_walking_back" />
+	<animation state_key="changing_weapon_in"	animation_key="change weapon in, ninjato" />
+	<animation state_key="changing_weapon_out"	animation_key="change weapon out, ninjato" />
+    <animation state_key="prone_still" animation_key="prone still, ninjato" />
+    <animation state_key="prone_moving" animation_key="prone moving, ninjato" />
+	<animation state_key="next_in_chain_in" animation_key="" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="" /><!--半身动作，切换模式，本模式切入-->
+	<!--武器音频-->
+	<sound key="fire" fileref="laser_sword_atk_1.wav" pitch_variety="0.05" volume="1" />
+	<sound key="fire" fileref="laser_sword_atk_2.wav" pitch_variety="0.05" volume="1" />
+	<sound key="fire" fileref="laser_sword_atk_3.wav" pitch_variety="0.05" volume="1" />
+	<sound key="fire" fileref="laser_sword_atk_4.wav" pitch_variety="0.05" volume="1" />
+	<sound key="fire" fileref="laser_sword_atk_5.wav" pitch_variety="0.05" volume="1" />
+	<sound key="fire" fileref="laser_sword_atk_6.wav" pitch_variety="0.05" volume="1" />
+    <sound key="cycle" fileref="" />
+	<sound key="stab" fileref="laser_sword_atk_1.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab" fileref="laser_sword_atk_2.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab" fileref="laser_sword_atk_3.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab" fileref="laser_sword_atk_4.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab" fileref="laser_sword_atk_5.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab" fileref="laser_sword_atk_6.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit" fileref="ninjato_hit_fatal.wav" pitch_variety="0.05" volume="0.6" />
+	<sound key="stab_hit_any" fileref="ninjato_hit.wav" pitch_variety="0.05" volume="0.6" />
+    <sound key="dry_fire" fileref="static.wav" />
+	<sound key="effect" fileref="laser_sword_atk_4.wav" volume="1"/>
+
+	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
+
+	<!--姿态精度-->
+    <stance state_key="running" accuracy="1" /> 
+    <stance state_key="walking" accuracy="1" />
+	<stance state_key="standing" accuracy="1" />
+	<stance state_key="crouching" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1" />     
+     
+	<!--附加属性-->
+    <modifier class="speed" value="0.3" /> 
+    <modifier class="hit_success_probability" value="0.0" /><!--负值减少玩家抗致死率-->
+    <modifier class="detectability" value="-0.1" />	<!--正值减少玩家隐蔽-->
+</weapon>
+</weapons> 

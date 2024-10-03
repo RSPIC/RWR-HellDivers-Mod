@@ -22,6 +22,11 @@ dictionary callLaunchIndex = {
     //地狱火
     {"hd_nux223_hellbomb.call",4},
 
+    //轨道120mm高爆弹幕
+    {"hd_orbital_120mm.call",5},
+    //轨道380mm高爆弹幕
+    {"hd_orbital_380mm.call",6},
+
     // 空空投
     {"",0}
 };
@@ -138,7 +143,7 @@ class call_event : Tracker {
                     }
                     case 4:{//地狱火
                         if(g_server_activity_racing){
-                            _notify(m_metagame,playerId,"Can use this in Racing");
+                            _notify(m_metagame,playerId,"Can't use this in Racing");
                             return;
                         }
                         const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
@@ -162,6 +167,155 @@ class call_event : Tracker {
                             }
 
                             spawnStaticProjectile(m_metagame,"hd_effect_call_deny_useless.projectile",c_pos,characterId,factionId);
+                        }
+                        break;
+                    }
+                    case 5:{//轨道120mm高爆弹幕
+                        if(g_server_activity_racing){
+                            _notify(m_metagame,playerId,"Can't use this in Racing");
+                            return;
+                        }
+                        const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                        if (character !is null) {
+                            Vector3 t_pos = stringToVector3(position);
+                            Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));
+                            float distance = getAimUnitDistance(1,c_pos,t_pos);
+                            // if(distance >= 50){
+                            //     spawnStaticProjectile(m_metagame,"hd_effect_call_deny_distance.projectile",t_pos,characterId,factionId);
+                            //     return;
+                            // }
+                            array<string> sound_files = {
+                                "hd_request_confirm_1.wav",
+                                "hd_request_confirm_2.wav",
+                                "hd_request_confirm_3.wav",
+                                "hd_request_confirm_4.wav",
+                                "hd_request_confirm_5.wav",
+                                "hd_request_confirm_6.wav"
+                                };
+                            playRandomSoundArray(m_metagame,sound_files,factionId,c_pos);
+
+                            TaskSequencer@ tasker = m_metagame.getVacantHdTaskSequncerIndex();
+                            string key1 = "hd_offensive_orbital_120mm_he_barrage.projectile";
+                            float speed = 200;
+                            float startTime = 0.8;
+                            float launchSoundTime = 1;
+                            float dropSoundTime = 0.7;
+                            int num = 4;
+                            float delayTime = 0.5;
+                            string soundKey = "hd_effect_orbital_launch.projectile";
+                            string soundKey2 = "hd_effect_orbitial_dropping.projectile";
+                            CreateProjectile@ sound1 = CreateProjectile(m_metagame,t_pos,t_pos,soundKey,characterId,factionId,speed,launchSoundTime,1,0);
+                            CreateProjectile@ sound2 = CreateProjectile(m_metagame,t_pos,t_pos,soundKey,characterId,factionId,speed,launchSoundTime,1,0);
+                            CreateProjectile@ sound3 = CreateProjectile(m_metagame,t_pos,t_pos,soundKey,characterId,factionId,speed,launchSoundTime,1,0);
+                            CreateProjectile@ sound4 = CreateProjectile(m_metagame,t_pos,t_pos,soundKey,characterId,factionId,speed,launchSoundTime,1,0);
+
+                            CreateProjectile@ sound5 = CreateProjectile(m_metagame,t_pos,t_pos,soundKey2,characterId,factionId,speed,dropSoundTime,1,0);
+                            CreateProjectile@ sound6 = CreateProjectile(m_metagame,t_pos,t_pos,soundKey2,characterId,factionId,speed,dropSoundTime,1,0);
+                            CreateProjectile@ sound7 = CreateProjectile(m_metagame,t_pos,t_pos,soundKey2,characterId,factionId,speed,dropSoundTime,1,0);
+                            CreateProjectile@ sound8 = CreateProjectile(m_metagame,t_pos,t_pos,soundKey2,characterId,factionId,speed,dropSoundTime,1,0);
+
+                            CreateProjectile@ task1 = CreateProjectile(m_metagame,t_pos.add(Vector3(0,50,0)),t_pos,key1,characterId,factionId,speed,startTime,num,delayTime);
+                            CreateProjectile@ task2 = CreateProjectile(m_metagame,t_pos.add(Vector3(0,50,0)),t_pos,key1,characterId,factionId,speed,startTime,num,delayTime);
+                            CreateProjectile@ task3 = CreateProjectile(m_metagame,t_pos.add(Vector3(0,50,0)),t_pos,key1,characterId,factionId,speed,startTime,num,delayTime);
+                            CreateProjectile@ task4 = CreateProjectile(m_metagame,t_pos.add(Vector3(0,50,0)),t_pos,key1,characterId,factionId,speed,startTime,num,delayTime);
+                            task1.setRandomRange(25,false);
+                            task2.setRandomRange(25,false);
+                            task3.setRandomRange(25,false);
+                            task4.setRandomRange(25,false);
+                            tasker.add(sound1);
+                            tasker.add(sound5);
+                            tasker.add(task1);
+
+                            tasker.add(sound2);
+                            tasker.add(sound6);
+                            tasker.add(task2);
+
+                            tasker.add(sound3);
+                            tasker.add(sound7);
+                            tasker.add(task3);
+                            
+                            tasker.add(sound4);
+                            tasker.add(sound8);
+                            tasker.add(task4);
+
+                            autoSetMarker@ marker = autoSetMarker(m_metagame,2.5*4+delayTime*4*4+3,6,1,60,t_pos,"Orbital 120mm HE Barrage","orbital_120mm");
+                            TaskSequencer@ tasker2 = m_metagame.getVacantHdTaskSequncerIndex();
+                            tasker2.add(marker);
+                        }
+                        break;
+                    }
+                    case 6:{//轨道380mm高爆弹幕
+                        if(g_server_activity_racing){
+                            _notify(m_metagame,playerId,"Can't use this in Racing");
+                            return;
+                        }
+                        const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                        if (character !is null) {
+                            Vector3 t_pos = stringToVector3(position);
+                            Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));
+                            float distance = getAimUnitDistance(1,c_pos,t_pos);
+                            // if(distance >= 50){
+                            //     spawnStaticProjectile(m_metagame,"hd_effect_call_deny_distance.projectile",t_pos,characterId,factionId);
+                            //     return;
+                            // }
+                            array<string> sound_files = {
+                                "hd_request_confirm_1.wav",
+                                "hd_request_confirm_2.wav",
+                                "hd_request_confirm_3.wav",
+                                "hd_request_confirm_4.wav",
+                                "hd_request_confirm_5.wav",
+                                "hd_request_confirm_6.wav"
+                                };
+                            playRandomSoundArray(m_metagame,sound_files,factionId,c_pos);
+
+                            TaskSequencer@ tasker = m_metagame.getVacantHdTaskSequncerIndex();
+                            string key1 = "hd_offensive_orbital_380mm_he_barrage.projectile";
+                            float speed = 200;
+                            float startTime = 0.8;
+                            float launchSoundTime = 1;
+                            float dropSoundTime = 0.7;
+                            int num = 4;
+                            float delayTime = 0.5;
+                            string soundKey = "hd_effect_orbital_launch.projectile";
+                            string soundKey2 = "hd_effect_orbitial_dropping.projectile";
+                            CreateProjectile@ sound1 = CreateProjectile(m_metagame,t_pos,t_pos,soundKey,characterId,factionId,speed,launchSoundTime,1,0);
+                            CreateProjectile@ sound2 = CreateProjectile(m_metagame,t_pos,t_pos,soundKey,characterId,factionId,speed,launchSoundTime,1,0);
+                            CreateProjectile@ sound3 = CreateProjectile(m_metagame,t_pos,t_pos,soundKey,characterId,factionId,speed,launchSoundTime,1,0);
+                            CreateProjectile@ sound4 = CreateProjectile(m_metagame,t_pos,t_pos,soundKey,characterId,factionId,speed,launchSoundTime,1,0);
+
+                            CreateProjectile@ sound5 = CreateProjectile(m_metagame,t_pos,t_pos,soundKey2,characterId,factionId,speed,dropSoundTime,1,0);
+                            CreateProjectile@ sound6 = CreateProjectile(m_metagame,t_pos,t_pos,soundKey2,characterId,factionId,speed,dropSoundTime,1,0);
+                            CreateProjectile@ sound7 = CreateProjectile(m_metagame,t_pos,t_pos,soundKey2,characterId,factionId,speed,dropSoundTime,1,0);
+                            CreateProjectile@ sound8 = CreateProjectile(m_metagame,t_pos,t_pos,soundKey2,characterId,factionId,speed,dropSoundTime,1,0);
+
+                            CreateProjectile@ task1 = CreateProjectile(m_metagame,t_pos.add(Vector3(0,50,0)),t_pos,key1,characterId,factionId,speed,startTime,num,delayTime);
+                            CreateProjectile@ task2 = CreateProjectile(m_metagame,t_pos.add(Vector3(0,50,0)),t_pos,key1,characterId,factionId,speed,startTime,num,delayTime);
+                            CreateProjectile@ task3 = CreateProjectile(m_metagame,t_pos.add(Vector3(0,50,0)),t_pos,key1,characterId,factionId,speed,startTime,num,delayTime);
+                            CreateProjectile@ task4 = CreateProjectile(m_metagame,t_pos.add(Vector3(0,50,0)),t_pos,key1,characterId,factionId,speed,startTime,num,delayTime);
+                            task1.setRandomRange(50,false);
+                            task2.setRandomRange(50,false);
+                            task3.setRandomRange(50,false);
+                            task4.setRandomRange(50,false);
+                            tasker.add(sound1);
+                            tasker.add(sound5);
+                            tasker.add(task1);
+
+                            tasker.add(sound2);
+                            tasker.add(sound6);
+                            tasker.add(task2);
+
+                            tasker.add(sound3);
+                            tasker.add(sound7);
+                            tasker.add(task3);
+                            
+                            tasker.add(sound4);
+                            tasker.add(sound8);
+                            tasker.add(task4);
+
+                            autoSetMarker@ marker = autoSetMarker(m_metagame,2.5*4+delayTime*4*4+3,6,1,180,t_pos,"Orbital 380mm HE Barrage","orbital_380mm");
+                            TaskSequencer@ tasker2 = m_metagame.getVacantHdTaskSequncerIndex();
+                            tasker2.add(marker);
+
                         }
                         break;
                     }

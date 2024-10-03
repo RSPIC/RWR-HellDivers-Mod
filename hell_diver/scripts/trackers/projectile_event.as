@@ -17,11 +17,19 @@ dictionary skill_CD = {
 	 // 空
 	{"",0},
 
-    {"acg_starwars_shipgirls_skill",60},
+    {"acg_starwars_shipgirls_skill",45},
     {"acg_maria_schariac_skill",20},
     {"acg_incomparable_skill",24},
     {"acg_elaina_wand_cyclone",9},
     {"acg_yileina_wand_rain",20},
+
+    {"acg_izayoi_sakuya_road_roller",10},
+
+    {"acg_rumi.weapon",20},
+    {"re_acg_rumi.weapon",20},
+
+    {"ex_exo_dreadnought_rocket",20},
+
 
     {"",0}
 
@@ -35,6 +43,8 @@ dictionary skill_cost = {
 
     {"acg_rikuhachima_aru_skill",7},
     {"re_acg_rikuhachima_aru_skill",6},
+
+    {"acg_izayoi_sakuya_skill",75}, // 需要和manual_cost_skill_key字典计数一致
 
     {"",0}
 
@@ -904,7 +914,397 @@ class projectile_event : Tracker {
                 }
                 GiveRP(m_metagame,m_cid,-100);
                 break;
+            }            
+            case 67:{//hd_exp_faf14_spear_base_spawn 飞矛跟踪导弹
+                int m_cid = event.getIntAttribute("character_id");
+                int pid = g_playerInfoBuck.getPidByCid(m_cid);
+                int m_fid = g_playerInfoBuck.getFidByCid(m_cid);
+                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+                const XmlElement@ player = getPlayerInfo(m_metagame, pid);
+                if (player is null) {return;}
+                Vector3 aimPosition = stringToVector3(player.getStringAttribute("aim_target"));
+
+                float distance = getFlatPositionDistance(aimPosition, ePos);
+                if(distance <= 6){
+                    Vector3 aim_unit_vector = getAimUnitVector(1,ePos,aimPosition);
+                    aimPosition = aimPosition.add(aim_unit_vector.scale(6));
+                }
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                if(tasker is null){break;}
+
+                string m_key = "hd2_faf14_locked.wav";
+                playSoundAtLocation(m_metagame,m_key,m_fid,ePos,8);
+                
+                string key1 = "hd_exp_faf14_spear_base_spawn.projectile";
+                CreateProjectile@ task0 = CreateProjectile(m_metagame,ePos,aimPosition,key1,m_cid,m_fid,50,0,1,0,false); // speed delay num
+                tasker.add(task0);
+                break;
             }
+            case 68:{//hd_offensive_orbital_120mm_he_barrage_call 
+                // 查找并确认玩家存在
+                int characterId = event.getIntAttribute("character_id");
+				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                if (character !is null) {
+                    Vector3 t_pos = stringToVector3(event.getStringAttribute("position"));
+                    Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));
+                    int factionId = character.getIntAttribute("faction_id");
+
+                    // float distance = getAimUnitDistance(1,c_pos,t_pos);
+                    // if(distance >= 50){
+                    //     spawnStaticProjectile(m_metagame,"hd_effect_call_deny_distance.projectile",t_pos,characterId,factionId);
+                    //     return;
+                    // }
+                    array<string> sound_files = {
+                        "hd_request_confirm_1.wav",
+                        "hd_request_confirm_2.wav",
+                        "hd_request_confirm_3.wav",
+                        "hd_request_confirm_4.wav",
+                        "hd_request_confirm_5.wav",
+                        "hd_request_confirm_6.wav"
+                        };
+                    playRandomSoundArray(m_metagame,sound_files,factionId,c_pos);
+
+                    TaskSequencer@ tasker = m_metagame.getVacantHdTaskSequncerIndex();
+                    string key1 = "hd_offensive_orbital_120mm_he_barrage.projectile";
+                    float speed = 200;
+                    float startTime = 0.8;
+                    float launchSoundTime = 1;
+                    float dropSoundTime = 0.7;
+                    int num = 4;
+                    float delayTime = 0.5;
+                    string soundKey = "hd_effect_orbital_launch.projectile";
+                    string soundKey2 = "hd_effect_orbitial_dropping.projectile";
+                    CreateProjectile@ sound1 = CreateProjectile(m_metagame,t_pos,t_pos,soundKey,characterId,factionId,speed,launchSoundTime,1,0);
+                    CreateProjectile@ sound2 = CreateProjectile(m_metagame,t_pos,t_pos,soundKey,characterId,factionId,speed,launchSoundTime,1,0);
+                    CreateProjectile@ sound3 = CreateProjectile(m_metagame,t_pos,t_pos,soundKey,characterId,factionId,speed,launchSoundTime,1,0);
+                    CreateProjectile@ sound4 = CreateProjectile(m_metagame,t_pos,t_pos,soundKey,characterId,factionId,speed,launchSoundTime,1,0);
+
+                    CreateProjectile@ sound5 = CreateProjectile(m_metagame,t_pos,t_pos,soundKey2,characterId,factionId,speed,dropSoundTime,1,0);
+                    CreateProjectile@ sound6 = CreateProjectile(m_metagame,t_pos,t_pos,soundKey2,characterId,factionId,speed,dropSoundTime,1,0);
+                    CreateProjectile@ sound7 = CreateProjectile(m_metagame,t_pos,t_pos,soundKey2,characterId,factionId,speed,dropSoundTime,1,0);
+                    CreateProjectile@ sound8 = CreateProjectile(m_metagame,t_pos,t_pos,soundKey2,characterId,factionId,speed,dropSoundTime,1,0);
+
+                    CreateProjectile@ task1 = CreateProjectile(m_metagame,t_pos.add(Vector3(0,50,0)),t_pos,key1,characterId,factionId,speed,startTime,num,delayTime);
+                    CreateProjectile@ task2 = CreateProjectile(m_metagame,t_pos.add(Vector3(0,50,0)),t_pos,key1,characterId,factionId,speed,startTime,num,delayTime);
+                    CreateProjectile@ task3 = CreateProjectile(m_metagame,t_pos.add(Vector3(0,50,0)),t_pos,key1,characterId,factionId,speed,startTime,num,delayTime);
+                    CreateProjectile@ task4 = CreateProjectile(m_metagame,t_pos.add(Vector3(0,50,0)),t_pos,key1,characterId,factionId,speed,startTime,num,delayTime);
+                    task1.setRandomRange(25,false);
+                    task2.setRandomRange(25,false);
+                    task3.setRandomRange(25,false);
+                    task4.setRandomRange(25,false);
+                    tasker.add(sound1);
+                    tasker.add(sound5);
+                    tasker.add(task1);
+
+                    tasker.add(sound2);
+                    tasker.add(sound6);
+                    tasker.add(task2);
+
+                    tasker.add(sound3);
+                    tasker.add(sound7);
+                    tasker.add(task3);
+                    
+                    tasker.add(sound4);
+                    tasker.add(sound8);
+                    tasker.add(task4);
+
+                    autoSetMarker@ marker = autoSetMarker(m_metagame,2.5*4+delayTime*4*4+3,6,1,60,t_pos,"Orbital 120mm HE Barrage","orbital_120mm");
+                    TaskSequencer@ tasker2 = m_metagame.getVacantHdTaskSequncerIndex();
+                    tasker2.add(marker);
+                }
+                break;
+            }
+            case 69:{//hd_offensive_orbital_380mm_he_barrage_call 
+                int characterId = event.getIntAttribute("character_id");
+                const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                if (character !is null) {
+                    Vector3 t_pos = stringToVector3(event.getStringAttribute("position"));
+                    Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));
+                    int factionId = character.getIntAttribute("faction_id");
+                    // float distance = getAimUnitDistance(1,c_pos,t_pos);
+                    // if(distance >= 50){
+                    //     spawnStaticProjectile(m_metagame,"hd_effect_call_deny_distance.projectile",t_pos,characterId,factionId);
+                    //     return;
+                    // }
+                    array<string> sound_files = {
+                        "hd_request_confirm_1.wav",
+                        "hd_request_confirm_2.wav",
+                        "hd_request_confirm_3.wav",
+                        "hd_request_confirm_4.wav",
+                        "hd_request_confirm_5.wav",
+                        "hd_request_confirm_6.wav"
+                        };
+                    playRandomSoundArray(m_metagame,sound_files,factionId,c_pos);
+
+                    TaskSequencer@ tasker = m_metagame.getVacantHdTaskSequncerIndex();
+                    string key1 = "hd_offensive_orbital_380mm_he_barrage.projectile";
+                    float speed = 200;
+                    float startTime = 0.8;
+                    float launchSoundTime = 1;
+                    float dropSoundTime = 0.7;
+                    int num = 4;
+                    float delayTime = 0.5;
+                    string soundKey = "hd_effect_orbital_launch.projectile";
+                    string soundKey2 = "hd_effect_orbitial_dropping.projectile";
+                    CreateProjectile@ sound1 = CreateProjectile(m_metagame,t_pos,t_pos,soundKey,characterId,factionId,speed,launchSoundTime,1,0);
+                    CreateProjectile@ sound2 = CreateProjectile(m_metagame,t_pos,t_pos,soundKey,characterId,factionId,speed,launchSoundTime,1,0);
+                    CreateProjectile@ sound3 = CreateProjectile(m_metagame,t_pos,t_pos,soundKey,characterId,factionId,speed,launchSoundTime,1,0);
+                    CreateProjectile@ sound4 = CreateProjectile(m_metagame,t_pos,t_pos,soundKey,characterId,factionId,speed,launchSoundTime,1,0);
+
+                    CreateProjectile@ sound5 = CreateProjectile(m_metagame,t_pos,t_pos,soundKey2,characterId,factionId,speed,dropSoundTime,1,0);
+                    CreateProjectile@ sound6 = CreateProjectile(m_metagame,t_pos,t_pos,soundKey2,characterId,factionId,speed,dropSoundTime,1,0);
+                    CreateProjectile@ sound7 = CreateProjectile(m_metagame,t_pos,t_pos,soundKey2,characterId,factionId,speed,dropSoundTime,1,0);
+                    CreateProjectile@ sound8 = CreateProjectile(m_metagame,t_pos,t_pos,soundKey2,characterId,factionId,speed,dropSoundTime,1,0);
+
+                    CreateProjectile@ task1 = CreateProjectile(m_metagame,t_pos.add(Vector3(0,50,0)),t_pos,key1,characterId,factionId,speed,startTime,num,delayTime);
+                    CreateProjectile@ task2 = CreateProjectile(m_metagame,t_pos.add(Vector3(0,50,0)),t_pos,key1,characterId,factionId,speed,startTime,num,delayTime);
+                    CreateProjectile@ task3 = CreateProjectile(m_metagame,t_pos.add(Vector3(0,50,0)),t_pos,key1,characterId,factionId,speed,startTime,num,delayTime);
+                    CreateProjectile@ task4 = CreateProjectile(m_metagame,t_pos.add(Vector3(0,50,0)),t_pos,key1,characterId,factionId,speed,startTime,num,delayTime);
+                    task1.setRandomRange(50,false);
+                    task2.setRandomRange(50,false);
+                    task3.setRandomRange(50,false);
+                    task4.setRandomRange(50,false);
+                    tasker.add(sound1);
+                    tasker.add(sound5);
+                    tasker.add(task1);
+
+                    tasker.add(sound2);
+                    tasker.add(sound6);
+                    tasker.add(task2);
+
+                    tasker.add(sound3);
+                    tasker.add(sound7);
+                    tasker.add(task3);
+                    
+                    tasker.add(sound4);
+                    tasker.add(sound8);
+                    tasker.add(task4);
+
+                    autoSetMarker@ marker = autoSetMarker(m_metagame,2.5*4+delayTime*4*4+3,6,1,180,t_pos,"Orbital 380mm HE Barrage","orbital_380mm");
+                    TaskSequencer@ tasker2 = m_metagame.getVacantHdTaskSequncerIndex();
+                    tasker2.add(marker);
+
+                }
+                break;
+            }
+            case 71:{//无畏 空爆集束 过载 ex_exo_dreadnought_skill
+                int m_cid = event.getIntAttribute("character_id");
+                int pid = g_playerInfoBuck.getPidByCid(m_cid);
+                int m_fid = g_playerInfoBuck.getFidByCid(m_cid);
+                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+                const XmlElement@ player = getPlayerInfo(m_metagame, pid);
+                if (player is null) {return;}
+                Vector3 aimPosition = stringToVector3(player.getStringAttribute("aim_target"));
+                dictionary equipList;
+                if(!getPlayerEquipmentInfoArray(m_metagame,m_cid,equipList)){
+                    return;
+                }
+                string equipKey_vest = "";
+                equipList.get("4",equipKey_vest);//护甲
+                string keyWord = "vest_EXO_";
+                if(startsWith(equipKey_vest,keyWord)){
+                    string subStr = equipKey_vest.substr(keyWord.length());
+                    if(isNumeric(subStr)){
+                        int cost = parseInt(subStr);
+                        if(cost > 50){
+                            cost -= 50;
+                            equipKey_vest = keyWord + cost;
+                            editPlayerVest(m_metagame,m_cid,equipKey_vest,4);
+                        }else{
+                            setDeadCharacter(m_metagame,m_cid);
+                            _notify(m_metagame,pid,"你因为过载死亡");
+                        }
+                    }else{
+                        return;
+                    }
+                }else{
+                    setDeadCharacter(m_metagame,m_cid);
+                    _notify(m_metagame,pid,"你没有穿戴机甲护甲而过载死亡");
+                    return;
+                }
+
+                aimPosition = aimPosition.add(Vector3(0,15,0));
+
+                string m_key = "hd2_faf14_locked.wav";
+                playSoundAtLocation(m_metagame,m_key,m_fid,ePos,8);
+                
+                string key1 = "ex_exo_dreadnought_rokect_spawn.projectile";
+                float speed = 7;
+                float height = 0.1;
+                CreateProjectile_H(m_metagame,ePos,aimPosition,key1,m_cid,m_fid,speed,height);
+                break;
+            }            
+            case 72:{//acg_fade_red 贯穿
+                int cid = event.getIntAttribute("character_id");
+                int pid = g_playerInfoBuck.getPidByCid(cid);
+                if(pid == -1){
+                    const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                    if(character is null){return;}
+                    pid = character.getIntAttribute("player_id");
+                    notify(m_metagame, "未能获取到你的PID，已通过其他方法获取。请汇报此情况", dictionary(), "misc", pid, false, "", 1.0);
+                }
+                const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                if(character is null){return;}
+                int fid = 0;
+                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+                Vector3 sPos = stringToVector3(character.getStringAttribute("position"));
+                Vector3 aim_unit_vector = getAimUnitVector(1,sPos,ePos);
+                ePos = sPos.add(aim_unit_vector.scale(60));
+                string key1 = "acg_fade_red_damage.projectile";
+                string key2 = "acg_fade_red_selfdamage.projectile";
+                float speed = 150;
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                CreateProjectile@ task1 = CreateProjectile(m_metagame,sPos,ePos,key1,cid,fid,speed,0.3,15);
+                CreateProjectile@ task2 = CreateProjectile(m_metagame,sPos,sPos,key2,cid,fid,1,0,1);// 8damage
+                tasker.add(task1);//damage
+                tasker.add(task2);//damage
+                break;
+            }
+            case 73:{//hd_exp_las99_quasar_cannon 类星体 蓄力武器
+                int m_cid = event.getIntAttribute("character_id");
+                int pid = g_playerInfoBuck.getPidByCid(m_cid);
+                int m_fid = g_playerInfoBuck.getFidByCid(m_cid);
+                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+                const XmlElement@ player = getPlayerInfo(m_metagame, pid);
+                if (player is null) {return;}
+                Vector3 aimPosition = stringToVector3(player.getStringAttribute("aim_target"));
+                Vector3 aim_unit_vector = getAimUnitVector(1,ePos,aimPosition);
+                ePos = ePos.add(aim_unit_vector.scale(3)).add(Vector3(0,2,0));
+
+                aimPosition = aimPosition.add(Vector3(0,2,0));
+
+                string m_key = "hd_exp_las99_quasar_cannon_fire.wav";
+                playSoundAtLocation(m_metagame,m_key,m_fid,ePos,1.5);
+                
+                string key1 = "hd_exp_las99_quasar_cannon_spawn.projectile";
+                float speed = 70;
+                float height = 7;
+                CreateProjectile_H(m_metagame,ePos,aimPosition,key1,m_cid,m_fid,speed,height);
+                break;
+            }
+            case 74:{// RS-442 轨道炮 蓄力武器
+                int m_cid = event.getIntAttribute("character_id");
+                int pid = g_playerInfoBuck.getPidByCid(m_cid);
+                int m_fid = g_playerInfoBuck.getFidByCid(m_cid);
+                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+                const XmlElement@ player = getPlayerInfo(m_metagame, pid);
+                if (player is null) {return;}
+                Vector3 aimPosition = stringToVector3(player.getStringAttribute("aim_target"));
+                Vector3 aim_unit_vector = getAimUnitVector(1,ePos,aimPosition);
+                ePos = ePos.add(aim_unit_vector.scale(2)).add(Vector3(0,1,0));
+                aimPosition = aimPosition.add(Vector3(0,1,0));
+
+                string m_key = "hd_rs422_railgun_fire.wav";
+                playSoundAtLocation(m_metagame,m_key,m_fid,ePos,1.5);
+
+                string key1 = "hd_exp_rx422_railgun_damage.projectile";
+                string key2 = "hd_exp_rx422_railgun_spawn.projectile";
+                float speed = 150;
+                TaskSequencer@ tasker = m_metagame.getVacantHdTaskSequncerIndex();
+                CreateProjectile@ task2 = CreateProjectile(m_metagame,ePos,aimPosition,key2,m_cid,m_fid,speed,0,1,0,false);
+                tasker.add(task2);//damage
+                TaskSequencer@ tasker2 = m_metagame.getVacantHdTaskSequncerIndex();
+                CreateProjectile@ task1 = CreateProjectile(m_metagame,ePos,aimPosition,key1,m_cid,m_fid,10,0,10,0.01);
+                tasker2.add(task1);//damage
+                break;
+            }
+            case 76:{// 星野 烟雾手雷 hoshino_smoke_gl
+                int m_cid = event.getIntAttribute("character_id");
+                int pid = g_playerInfoBuck.getPidByCid(m_cid);
+                int m_fid = g_playerInfoBuck.getFidByCid(m_cid);
+                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+                const XmlElement@ character = getCharacterInfo(m_metagame, m_cid);
+                if (character is null) {return;}
+                Vector3 c_pos =  stringToVector3(character.getStringAttribute("position"));
+
+                string m_key = "hd_smoke_grenade_launching.wav";
+                playSoundAtLocation(m_metagame,m_key,m_fid,ePos,2);
+
+                Vector3 aim_vector = getAimUnitVector(1,c_pos,ePos);
+                Orientation offset_rotate = Orientation(0,1,0,-1*getRotatedRad(Vector3(0,0,1),aim_vector)+1.57);
+                spawnVehicle(m_metagame,1,m_fid,ePos,offset_rotate,"hide_box.vehicle");
+
+                break;
+            }          
+            case 77:{// 星野 烟雾手雷 榴弹技能 hoshino_smoke_gl_skill
+                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+                array<const XmlElement@> factions = getFactions(m_metagame);
+                for (uint f = 0; f < factions.size(); ++f){
+                    const XmlElement@ faction = factions[f];
+                    if(faction is null){continue;}
+                    int t_fid = faction.getIntAttribute("id");
+                    if (t_fid == 0){
+                        array<const XmlElement@>@ soldiers = getCharactersNearPosition(m_metagame, ePos, t_fid, 10.0f);				
+                        int s_size = soldiers.length();
+                        if (s_size == 0) continue;
+                        while(soldiers.length() > 0){
+                            int s_i = rand(0,soldiers.length()-1);
+                            int soldier_id = soldiers[s_i].getIntAttribute("id");
+                            soldiers.removeAt(s_i);
+                            if(g_playerInfoBuck.getPidByCid(soldier_id) == -1){ continue;}
+                            dictionary equipList;
+                            if(!getPlayerEquipmentInfoArray(m_metagame,soldier_id,equipList)){
+                                continue;
+                            }
+                            string equipKey;
+                            if(equipList.get("0",equipKey)){//主武器
+                                string targetKey = "acg_takanashi_hoshino_battle";
+                                string targetKey2 = "re_acg_takanashi_hoshino_battle";
+                                if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+                                    if(equipList.get("1",equipKey)){//副武器
+                                        if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+                                            int m_pid = g_playerInfoBuck.getPidByCid(soldier_id);
+                                            if(m_pid == -1){continue;}
+                                            const XmlElement@ player = getPlayerInfo(m_metagame, m_pid);
+                                            if (player is null) {continue;}
+                                            Vector3 aimPosition = stringToVector3(player.getStringAttribute("aim_target"));
+                                            const XmlElement@ character = getCharacterInfo(m_metagame, soldier_id);
+                                            if (character is null) {continue;}
+                                            Vector3 sPos = stringToVector3(character.getStringAttribute("position"));
+
+                                            Vector3 aim_unit_vector = getAimUnitVector(1,sPos,aimPosition);
+                                            sPos = sPos.add(aim_unit_vector.scale(2)).add(Vector3(0,1.5,0));
+                                            aimPosition = aimPosition.add(Vector3(0,1.5,0));
+
+                                            string m_key = "acg_hoshino_battle_skill_trigger.wav";
+                                            playSoundAtLocation(m_metagame,m_key,0,sPos,3);
+
+                                            playAnimationKey(m_metagame,soldier_id, "hd_rotate_reload_at_a_time_skill", false, false);
+
+                                            string key2 ="acg_takanashi_hoshino_spawn.projectile";
+                                            float speed = 75;
+                                            TaskSequencer@ tasker = m_metagame.getVacantHdTaskSequncerIndex();
+                                            CreateProjectile@ task2 = CreateProjectile(m_metagame,sPos,aimPosition,key2,soldier_id,0,speed,0.3,1,0,false);
+                                            tasker.add(task2);//damage
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        break;
+                    }
+                }
+                break;
+            }          
+            case 78:{// 烟雾手雷 smoke_gl
+                int m_cid = event.getIntAttribute("character_id");
+                int pid = g_playerInfoBuck.getPidByCid(m_cid);
+                int m_fid = g_playerInfoBuck.getFidByCid(m_cid);
+                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+                const XmlElement@ character = getCharacterInfo(m_metagame, m_cid);
+                if (character is null) {return;}
+                Vector3 c_pos =  stringToVector3(character.getStringAttribute("position"));
+
+                string m_key = "hd_smoke_grenade_launching.wav";
+                playSoundAtLocation(m_metagame,m_key,m_fid,ePos,2);
+
+                Vector3 aim_vector = getAimUnitVector(1,c_pos,ePos);
+                Orientation offset_rotate = Orientation(0,1,0,-1*getRotatedRad(Vector3(0,0,1),aim_vector)+1.57);
+                spawnVehicle(m_metagame,1,m_fid,ePos,offset_rotate,"hide_box_2.vehicle");
+
+                break;
+            } 
             default:
                 break;            
         }
@@ -1128,6 +1528,48 @@ class projectile_event : Tracker {
                 }
                 break;
             }
+            case 66:{//acg_izayoi_sakuya_road_roller 十六夜咲夜 压路机
+                int m_cid = event.getIntAttribute("character_id");
+                int pid = g_playerInfoBuck.getPidByCid(m_cid);
+                int m_fid = g_playerInfoBuck.getFidByCid(m_cid);
+                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+                const XmlElement@ player = getPlayerInfo(m_metagame, pid);
+                if (player is null) {return;}
+                Vector3 aimPosition = stringToVector3(player.getStringAttribute("aim_target"));
+
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                if(tasker is null){break;}
+
+                Vector3 r_pos = aimPosition.add(Vector3(0,20,0));
+
+                string m_key = "acg_izayoi_sakuya_road_roller.wav";
+                playSoundAtLocation(m_metagame,m_key,m_fid,ePos,5);
+                
+                string key1 = "acg_izayoi_sakuya_road_roller_damage.projectile";
+                CreateProjectile@ task0 = CreateProjectile(m_metagame,r_pos,aimPosition,key1,m_cid,m_fid,8,0,1,0,false); // speed delay num
+                tasker.add(task0);
+                break;
+            }
+            case 70:{//无畏 空爆集束 ex_exo_dreadnought_rocket
+                int m_cid = event.getIntAttribute("character_id");
+                int pid = g_playerInfoBuck.getPidByCid(m_cid);
+                int m_fid = g_playerInfoBuck.getFidByCid(m_cid);
+                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+                const XmlElement@ player = getPlayerInfo(m_metagame, pid);
+                if (player is null) {return;}
+                Vector3 aimPosition = stringToVector3(player.getStringAttribute("aim_target"));
+
+                aimPosition = aimPosition.add(Vector3(0,15,0));
+
+                string m_key = "hd2_faf14_locked.wav";
+                playSoundAtLocation(m_metagame,m_key,m_fid,ePos,8);
+                
+                string key1 = "ex_exo_dreadnought_rokect_spawn.projectile";
+                float speed = 7;
+                float height = 0.1;
+                CreateProjectile_H(m_metagame,ePos,aimPosition,key1,m_cid,m_fid,speed,height);
+                break;
+            }              
             default:
                 break;     
         }
@@ -1178,7 +1620,117 @@ class projectile_event : Tracker {
                     list.insertLast(a);
                     CreateListDirectProjectile(m_metagame,list);
                 }
+                if(EventKeyGet == "acg_izayoi_sakuya_skill" ){
+                    nowCost = 0;
+                    int manualCostCount = 100;
+
+                    string targetCostKey = EventKeyGet;
+
+                    if(manual_cost_skill_key.exists(targetCostKey)){
+                        manual_cost_skill_key.get(targetCostKey,manualCostCount);
+                        if(g_userCountInfoBuck.getCount(name,targetCostKey,nowCost)){
+                            if(nowCost >= manualCostCount){
+                                _notify(m_metagame,pid,"Sakuya Skill Releasing");
+                                g_userCountInfoBuck.clearCount(name,targetCostKey);
+
+                                Vector3 ePos = c_pos;
+
+                                const XmlElement@ player = getPlayerInfo(m_metagame, pid);
+                                if (player is null) {return;}
+                                Vector3 aimPosition = stringToVector3(player.getStringAttribute("aim_target"));
+
+                                int m_fid = g_playerInfoBuck.getFidByCid(cid);
+
+                                string m_key = "reisenu_card_star.wav";
+                                playSoundAtLocation(m_metagame,m_key,m_fid,ePos,0.35);
+
+                                m_key = "acg_izayoi_sakuya_skill.projectile";
+                                CreateDirectProjectile(m_metagame,ePos,ePos,m_key,cid,0,100);
+
+                                m_key = "acg_izayoi_sakuya_skill_trick1.projectile";
+                                CreateDirectProjectile(m_metagame,ePos,ePos,m_key,cid,0,100);
+
+                                // array<string> soundList = {"acg_hayase_yuuka_skill_01.wav","acg_hayase_yuuka_skill_02.wav","acg_hayase_yuuka_skill_03.wav"};
+                                // playRandomSoundArray(m_metagame,soundList,0,ePos,2.0);
+
+                                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                                string key1= "acg_izayoi_sakuya_skill_damage_stay.projectile";
+                                CreateProjectile@ task1 = CreateProjectile(m_metagame,aimPosition,aimPosition,key1,cid,m_fid,1,0,1,0);
+                                tasker.add(task1);
+                                
+                            }else{
+                                _notify(m_metagame,pid,"cost不足，当前cost="+nowCost+"/"+manualCostCount);
+                            }
+                        }
+                    }
+                }
             }
         }
     }
+    // -----------------------------------------------------------------
+	protected void handleChatEvent(const XmlElement@ event){
+        string name = event.getStringAttribute("player_name");
+        int pid = event.getIntAttribute("player_id");
+		int cid = g_playerInfoBuck.getCidByName(m_metagame,name);
+        string message = event.getStringAttribute("message");
+
+        message = message.toLowerCase();
+		if(message == "/s"){
+			dictionary equipList;
+			if(!getPlayerEquipmentInfoArray(m_metagame,cid,equipList)){
+				return;
+			}
+            string equipKey;
+            if(equipList.get("0",equipKey)){//主武器
+                if(skill_CD.exists(equipKey)){
+                    if(!p_cd_lists.exists(name,equipKey) ){
+                        float cd = 300;
+                        skill_CD.get(equipKey,cd);
+                        p_cd_lists.addNew(name,pid,equipKey,cd);
+                        handelManualCDResultEvent(m_metagame,name,pid,cid,equipList);
+                    }
+                    if(!p_cd_lists.hasReady(name,equipKey)){
+                        float leftCD = p_cd_lists.leftCD(name,equipKey);
+                        notify(m_metagame, "剩余CD = "+ int(leftCD) , dictionary(), "misc", pid, false, "", 1.0);
+                        return;
+                    }
+                }
+            }
+		}
+	}
+    	// -----------------------------------------------------------------
+	protected void handelManualCDResultEvent(Metagame@ m_metagame,string&in name,int&in pid,int&in cid,dictionary&in equipList){
+		string equipKey;
+        if(equipList.get("0",equipKey)){//主武器
+        _log("now equipKey="+equipKey);
+			string targetKey = "acg_rumi";
+            string targetKey2 = "re_acg_rumi";
+            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+                _notify(m_metagame,pid,"Skill Releasing");
+
+                editPlayerVest(m_metagame,cid,"helldivers_vest_barrier",4);//替换为60层技能甲
+                const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                if(character is null){return;}
+                Vector3 ePos = stringToVector3(character.getStringAttribute("position"));
+                string m_key = "ba_effect_yuuka_skill.projectile";
+                CreateDirectProjectile(m_metagame,ePos,ePos,m_key,cid,0,100);
+
+                // array<string> soundList = {"acg_hayase_yuuka_skill_01.wav","acg_hayase_yuuka_skill_02.wav","acg_hayase_yuuka_skill_03.wav"};
+                // playRandomSoundArray(m_metagame,soundList,0,ePos,2.0);
+
+                string equipKey_vest = "";
+                if(equipList.get("4",equipKey_vest)){//护甲
+                    if(equipKey_vest == "helldivers_vest_barrier"){
+                        equipKey_vest = "helldivers_vest";
+                    }
+                }else{
+                    equipKey_vest = "helldivers_vest";
+                }
+
+                editPlayerVestDelay@ new_task = editPlayerVestDelay(m_metagame,cid,pid,equipKey_vest,12);
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                tasker.add(new_task);
+			}
+		}
+	}
 }

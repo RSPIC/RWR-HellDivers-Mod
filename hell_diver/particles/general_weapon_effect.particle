@@ -176,7 +176,7 @@ particle_system general_weapon_muzzle_crossfire_smoke_sg : general_weapon_muzzle
 
 particle_system general_weapon_result_hitspot
 {
-	quota 200
+	quota 500
 	material point_soft_edge_alpha
 	particle_width 0.25
 	particle_height 0.25

@@ -4,7 +4,7 @@
 file="hd_ar_ar19_liberator_base.weapon"
 key="hd_ar_ar19_liberator_full_upgrade.weapon" 
 > 
-    <sound key="fire" fileref="hd_ar_fire_01.wav" pitch_variety="0.08" volume="0.1" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
+    <sound key="fire" fileref="hd_ar_fire_01.wav" pitch_variety="0.08" volume="0.2" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
     <sound key="magazine_out" fileref="hd_mag_out.wav" /><!--动作中out的value为0-->
     <sound key="magazine_in" fileref="hd_mg94_mag_in.wav" /><!--动作中in的value为1-->
     <sound key="cycle" fileref="rifle_chamber.wav" /><!--配合与cycle动作，固定播放-->
@@ -64,7 +64,7 @@ player_death_drop_owner_lock_time="0"
 	/> 
 	<model filename="hd_ar_ar23p.xml" /> 
     <hud_icon filename="hd_ar_ar23p.png" /> <!--武器为110x220像素，投掷物为110x110-->
-    <commonness value="0" can_respawn_with="1" in_stock="0" /> 
+    <commonness value="0.00000001" can_respawn_with="1" in_stock="0" /> 
 
     <sound key="fire" fileref="hd_ar23_fire.wav" pitch_variety="0.08" volume="3.0" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
     <sound key="magazine_out" fileref="hd_ar23_mag_out.wav" volume="3" /><!--动作中out的value为0-->
@@ -125,7 +125,7 @@ player_death_drop_owner_lock_time="0"
 	/> 
 	<model filename="hd2w_ar61.xml" /> 
     <hud_icon filename="hd2w_ar61.png" /> <!--武器为110x220像素，投掷物为110x110-->
-    <commonness value="0" can_respawn_with="1" in_stock="0" /> 
+    <commonness value="0.00000001" can_respawn_with="1" in_stock="0" /> 
 
     <sound key="fire" fileref="hd_ar61_fire.wav" pitch_variety="0.08" volume="4.0" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
     <sound key="magazine_out" fileref="hd_ar61_mag_out.wav" volume="3" /><!--动作中out的value为0-->

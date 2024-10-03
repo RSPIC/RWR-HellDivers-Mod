@@ -1728,6 +1728,7 @@ bool g_spawn_with_ai = true; // 复活自带AI
 bool g_fastScriptDebug = false; // 脚本快速测试
 bool g_useMergedXml = false; // 采用快速打包加载文件
 bool g_English_version = false; // 采用英文
+bool g_restartMetagame = false; // 结束后重启metagame
 
 bool g_heal_on_kill = true; // 击杀回甲
 bool g_exo_armor = true; // 机甲是否装配护甲
@@ -1801,7 +1802,7 @@ class Initiate : Tracker {
 				g_spawn_with_ai = false;
 				g_rp_ptRewardBase = 5000;
 				g_disable_stratagems = true;
-				g_server_added_bonus_factor = 0.2; //战役结算额外的倍率
+				g_server_added_bonus_factor = 0.0; //战役结算额外的倍率
 			}
 		}
 	}
@@ -1942,6 +1943,10 @@ class Initiate : Tracker {
 			if(message == "/endserveractivity"){
 				g_server_activity = false;
 				_report(m_metagame,"活动结束");
+			}
+			if(message == "/restartMetagame"){
+				g_restartMetagame = true;
+				_report(m_metagame,"重启Metagame");
 			}
 		}
 		if(message == "/myfact"){

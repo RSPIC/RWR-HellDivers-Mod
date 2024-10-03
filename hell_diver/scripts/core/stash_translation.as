@@ -198,6 +198,29 @@ dictionary canStoreItem = {
     // 1.9.1
     {"token_shimokura_megu.projectile","[下仓惠 [信物]]"},
     {"token_otogi.projectile","[音葵 [信物]]"},
+    // 1.9.2
+    {"token_rumi.projectile","[露米 [信物]]"},
+    // 1.9.3
+    {"token_yang.projectile","Yang [信物]"},
+    {"token_yaha.projectile","亚哈 [信物]"},
+    {"token_luna_child.projectile","LunaChild [信物]"},
+    {"token_star_sapphire.projectile","StarSapphire [信物]"},
+    {"token_sunny_mlik.projectile","SunnyMilk [信物]"},
+    {"token_final_chapter_i.projectile","终章 [信物]"},
+    {"token_nar_lf.projectile","诺艾尔 礼服 [信物]"},
+    {"token_rebellious_bunny_i.projectile","逆兔女郎I [信物]"},
+    {"token_rebellious_bunny_i_old.projectile","逆兔女郎 披风 [信物]"},
+    {"token_alice_tendou_maid.projectile","女仆爱丽丝 [信物]"},
+    {"token_heavy_infantry.projectile","重装战士 [信物]"},
+    {"token_misono_mika.projectile","圣园未花 [信物]"},
+    {"token_sabayon.projectile","辉火 [信物]"},
+    // 1.9.4
+    {"token_hinanawi_tenshi.projectile","比那名居天子 [信物]"},
+    {"token_tomoe_gozen.projectile","巴御前 [信物]"},
+    {"token_asashio.projectile","朝潮 [信物]"},
+    {"token_plana.projectile","普拉纳 [信物]"},
+    {"token_mizuha_mimori.projectile","水羽三森 [信物]"},
+
 
     {"wiesel_tow_call.projectile","[鼬鼠 [陶氏]]"},
     {"lav6_call.projectile","[LAV-6]"},
@@ -225,6 +248,8 @@ dictionary canStoreItem = {
     {"ex_apocalypse_tank_call.projectile","[天启]"},
     {"marder_call.projectile","[黄鼠狼]"},
     {"illum_allied_prism_tank_call.projectile","[光棱坦克]"},
+    {"ex_unsc_scion_call.projectile","[天蝎坦克]"},
+    {"ex_nova_callrandom.projectile","[NOVA坦克]"},
 
     // 碎片
     {"reward_box_weapon_delta_clip.carry_item","[MK4箱 碎片]"},
@@ -581,10 +606,10 @@ array<stashExchangeList@> ExchangeLists ={
                 getStashXmlElement("deploy_hd_ra2_minigun.weapon","weapon",1)
             }
         ),
-        //32 民主选票[10] 换 基洛夫空艇[1]
+        //32 民主选票[7] 换 基洛夫空艇[1]
         stashExchangeList(
             array<XmlElement@>= {
-                getStashXmlElement("hd_vote_ticket","carry_item",10)
+                getStashXmlElement("hd_vote_ticket","carry_item",7)
             }, 
             array<XmlElement@>= {
                 getStashXmlElement("kirov_call.projectile","projectile",1)
@@ -665,8 +690,8 @@ array<stashExchangeList@> ExchangeLists ={
                 getStashXmlElement("collect_fumo_yuyuko.carry_item","carry_item",1)
             }, 
             array<XmlElement@>= {
-                getStashXmlElement("acg_exo_toki.weapon","weapon",1),
-                getStashXmlElement("acg_exo_toki_railgun.weapon","weapon",1)
+                getStashXmlElement("re_acg_exo_toki.weapon","weapon",1),
+                getStashXmlElement("re_acg_exo_toki_railgun.weapon","weapon",1)
             }
         ),
         //40 16套Fumo各一个[1] 换 MK6-时雨[1]
@@ -690,7 +715,7 @@ array<stashExchangeList@> ExchangeLists ={
                 getStashXmlElement("collect_fumo_yuyuko.carry_item","carry_item",1)
             }, 
             array<XmlElement@>= {
-                getStashXmlElement("acg_shigure_127mm.weapon","weapon",1)
+                getStashXmlElement("re_acg_shigure_127mm.weapon","weapon",1)
             }
         ),
         //41 民主选票[1] 换 民本彩票[1]

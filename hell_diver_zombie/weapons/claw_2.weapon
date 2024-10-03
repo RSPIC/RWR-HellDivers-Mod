@@ -14,7 +14,8 @@
   success_probability="2.0"
   slot="0" 
   range="2.2"  
-  character_state="death" />
+  character_state="death" 
+  />
 	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="zombie_dead_damage.projectile" 
 	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0.0" />
 

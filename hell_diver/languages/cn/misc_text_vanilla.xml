@@ -771,11 +771,12 @@
 	<text key="MLS-4X Commando" text="MLS-4X 突击队攻顶导弹[反重甲][友伤]" />
 	<text key="REC-6 Demolisher" text="REC-6 爆破手遥控炸弹[反重甲][拆塔][友伤]" />
 	<text key="TOX-17 SourHound" text="TOX-17 酸液犬毒液抛射器[友伤]" />
+	<text key="RL-77 Airburst Rocket Launcher [Friendly Fire]" text="RL-77 空爆火箭发射器[友伤]" />
 
 	<text key="P-2 PeaceMaker" text="P-2 和平使者手枪" />
 	<text key="P-6 Gunslinger" text="P-6 神枪手重装左轮手枪[反重甲]" />
 	<text key="P-19 Redeemer" text="P-19 救世主冲锋手枪" />
-	<text key="P-4 Senator" text="P-4 参议员坐牢[反重甲]" />
+	<text key="P-4 Senator" text="P-4 参议员[反重甲]" />
 	<text key="P-113 Verdict" text="P-113 裁决手枪" />
 
 	<text key="LAS-13 Trident" text="LAS-13 三叉戟激光霰弹枪" />
@@ -796,7 +797,7 @@
 	<text key="AC-5 Arc Shotgun" text="AC-5 电弧霰弹枪[反重甲/无视护盾]" />
 	<text key="AC-3 Arc Thrower" text="AC-3 电弧发射器[无视护盾]" />
 	<text key="AS-7 Semiconductor" text="AS-7 半导体突击步枪[反重甲/无视护盾]" />
-	<text key="AS-5 Resistance" text="AS-5 电阻霰弹枪[反重甲]" />
+	<text key="AS-5 Resistance" text="AS-5 电阻霰弹枪" />
 	<text key="MG-C Capacitor" text="MG-C 电容重机枪[反重甲/无视护盾]" />
 
 	<text key="REP-80" text="REP-80 维修工具枪[治疗/修车/回甲]" />
@@ -924,6 +925,8 @@
 	<text key="Wine-red Admire"  text="陆八魔阿露[Wine-red Admire][反重甲]" />
 	<text key="Incomparable"  text="无比 [副炮]" />
 	<text key="Incomparable SKILL"  text="无比 [主炮]" />
+	<text key="Bolt Gun"  text="爆弹枪" />
+	<text key="Chain saw Sword"  text="链锯剑" />
 
 <!-- 信物 -->
 	<text key="Asakaze [Skin]"  text="朝风 [信物]" />
@@ -1062,6 +1065,25 @@
 	<!-- 1.9.1 -->
 	<text key="Shimokura Megu [Skin]"  text="下仓惠 [信物]" />
 	<text key="Otogi [Skin]"  text="音葵 [信物]" />
+	<!-- 1.9.2 -->
+	<text key="Rimu [Skin]"  text="露米 [信物]" />
+	<!-- 1.9.3 -->
+	<text key="Yang [Skin]"  text="Yang [信物]" />
+	<text key="Yaha [Skin]"  text="亚哈 [信物]" />
+	<text key="Final Chapter I [Skin]"  text="终章 [信物]" />
+	<text key="Nar [Dress][Skin]"  text="诺艾尔 [礼服][信物]" />
+	<text key="Rebellious Bunny I [Skin]"  text="逆兔女郎 I [信物]" />
+	<text key="Rebellious Bunny I [Old][Skin]"  text="逆兔女郎 I [披风改][信物]" />
+	<text key="Tendou Alice [Maid][Skin]"  text="天童爱丽丝 [女仆][信物]" />
+	<text key="Heavy Infantry [Skin]"  text="重装战士 [信物]" />
+	<text key="Misono Mika [Skin]"  text="圣园未花 [信物]" />
+	<text key="Sabayon [Skin]"  text="辉火 [信物]" />
+	<!-- 1.9.4 -->
+	<text key="Hinanawi Tenshi [Skin]"  text="比那名居天子 [信物]" />
+	<text key="Tomoe Gozen [Skin]"  text="巴御前 [信物]" />
+	<text key="Asashio [Skin]"  text="朝潮 [信物]" />
+	<text key="Plana [Skin]"  text="普拉纳 [信物]" />
+	<text key="Mizuha Mimori [Skin]"  text="水羽三森 [信物]" />
 
 
 <!-- ex武器 -->
@@ -1091,6 +1113,7 @@
 	<text key="M41 SPNKER"  text="M41 SPNKER火箭发射器" />
 	<text key="Tanya"  text="谭雅" />
 	<text key="Tanya C4"  text="谭雅[C4炸弹]" />
+	<text key="FADE RED"  text="褪红" />
 
 <!-- 其他 EX 载具-->
 	<text key="Resupply Box"  text="补给箱" />
@@ -1322,7 +1345,7 @@
 	<text key="Hong Meiling Fumo"  text="红美铃 Fumo [收藏品][出售至军械库自动存储][脚本仓库兑换道具][超稀有]" />
 	<text key="Inu Sakuya Fumo"  text="十六夜 口关夜 Fumo [收藏品][出售至军械库自动存储][脚本仓库兑换道具][超稀有]" />
 	<text key="Koishi Komeiji Fumo"  text="古明地恋 Fumo [收藏品][出售至军械库自动存储][脚本仓库兑换道具][超稀有]" />
-	<text key="Mike Goutokuji Fumo"  text="豪德寺三毛 Fumo [收藏品][出售至军械库自动存储][脚本仓库兑换道具][超稀有]" />
+	<text key="Mike Goutokuji Fumo"  text="豪德寺三花 Fumo [收藏品][出售至军械库自动存储][脚本仓库兑换道具][超稀有]" />
 	<text key="Mokou Fujiwara Fumo"  text="藤原妹红 Fumo [收藏品][出售至军械库自动存储][脚本仓库兑换道具][超稀有]" />
 	<text key="Nitori Kawasiro Fumo"  text="河城荷取 Fumo [收藏品][出售至军械库自动存储][脚本仓库兑换道具][超稀有]" />
 	<text key="Reimu Fumo"  text="灵梦 Fumo [收藏品][出售至军械库自动存储][脚本仓库兑换道具][超稀有]" />
@@ -1397,6 +1420,18 @@
 	<text key="Divers report, We need Shredder Missile Strike!"  text="潜兵报告，我们需要'撕裂者'导弹支援" />
 	<text key="Confirmed, keep away from the area."  text="收到，快速远离打击区域" />
 	<text key="Shredder Missile Strike Coming."  text="撕裂者导弹来袭" />
+
+	<text key="Orbital 120mm HE Barrage"  text="轨道120mm高爆弹幕" />
+	<text key="Calling Orbital 120mm HE Barrage!"  text="呼叫轨道120mm高爆弹幕！" />
+	<text key="Orbital 380mm HE Barrage"  text="轨道380mm高爆弹幕" />
+	<text key="Calling Orbital 380mm HE Barrage!"  text="呼叫轨道380mm高爆弹幕！" />
+	<text key="Copy, orbital strike is on the way."  text="收到，轨道打击就绪" />
+	<text key="(Launch sound)"  text="(炮弹出膛音效)" />
+
+	<text key="Call Orbital Smoke Strike"  text="呼叫轨道烟雾支援" />
+	<text key="Divers report, We need Orbital Smoke Strike!"  text="潜兵报告，我们需要轨道烟雾支援" />
+	<text key="Confirmed, Strike is on the way."  text="收到，轨道打击就绪" />
+	<text key="Striking Smoke."  text="烟雾来袭" />
 
 <!-- 军衔 -->
 	<text key="Private" text="列兵 V1" />
@@ -1590,6 +1625,15 @@ TK其他玩家同样会造成倍率因子的下降" />
 	<text key="Help - Elaina" text="每局首次持有本武器会发放特定技能武器，使用次数为5次。
 【注意】使用副手技能时必须保证主手武器为[伊蕾娜]的武器，否则会直接倒地" />
 	<text key="Elaina Help" text="[伊蕾娜 特殊武器介绍]" />
+
+	<text key="Help - Dreadnought" text="无畏机甲必须搭配副手使用，副手使用过载模式，消耗50护甲/护甲不足则死亡。无法自动回复生命，靠击杀回甲" />
+	<text key="Dreadnought Help" text="[无畏机甲 特殊武器介绍]" />
+
+	<text key="Help - Sakuya" text="使用该武器击杀75人后，可以输入/s或者使用副手来释放大招" />
+	<text key="Sakuya Help" text="[十六夜咲夜 特殊武器介绍]" />
+	
+	<text key="Help - Yuuka" text="使用该武器击杀25人后，可以输入/s释放技能" />
+	<text key="Yuuka Help" text="[优香 特殊武器介绍]" />
 
 	<text key="Stratagems Call" text="[教程]战略呼叫机制" />
 	<text key="Stratagems Useable" text="[Tips]常用呼叫指令,输入/call可再次查看本页。输入/call 1~4 查看不同类型支援代码" />
@@ -1808,6 +1852,10 @@ TK其他玩家同样会造成倍率因子的下降" />
 	<text key="MTL_SL_STRG2" text="糖" />
 	<text key="MTL_SL_STRG3" text="糖组" />
 	<text key="MTL_SL_STRG4" text="糖聚块" />
+	<text key="MTL_SL_KETONE1" text="双酮" />
+	<text key="MTL_SL_KETONE2" text="酮凝集" />
+	<text key="MTL_SL_KETONE3" text="酮凝集组" />
+	<text key="MTL_SL_KETONE4" text="酮阵列" />
 
 <!-- 彩票 -->
 	<text key="Fate Coin" text="命运硬币 [40%返一倍 10%返三倍 1%返十倍]" />
@@ -1981,6 +2029,7 @@ TK其他玩家同样会造成倍率因子的下降" />
 <text key="AdminHelp" text="管理员指令菜单
 1: /kick id 踢出玩家
 2: /salary 领取管理员奖励
+3: /jumpmap 无结算跳图（禁止滥用）
 " />
 
 <!-- 武器合成 -->
@@ -1995,6 +2044,13 @@ TK其他玩家同样会造成倍率因子的下降" />
 <text key="You get Dance priority level-1" text="你获得了额外舞蹈动作，输入/dance随机播放" />
 
 <text key="Divers Join the BattleFiled" text="潜兵&#37;name 已部署战场" />
+
+<text key="ImAgreeWithPropose" text="你已签署'倡议'协议书，请务必详细阅读协议内容，如违反将从重处罚" />
+
+<text key="Weapon Skill Ready, use /s to launch" text="武器技能已就绪，输入/s来使用技能" />
+<text key="Q.E.D Skill Releasing" text="Q.E.D 护盾技能已启用" />
+<text key="Skill end, vest return to old one" text="技能持续时间结束，护甲已还原最初状态" />
+
 
 </translation>
 

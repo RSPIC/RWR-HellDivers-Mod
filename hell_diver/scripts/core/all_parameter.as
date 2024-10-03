@@ -124,6 +124,35 @@ dictionary projectile_eventkey = {
         {"acg_yileina_wand_rain",64},
         // nova坦克跟踪导弹
         {"ex_nova_missile",65},
+        //acg_izayoi_sakuya_road_roller 十六夜咲夜 压路机
+        {"acg_izayoi_sakuya_road_roller",66},
+        //飞矛跟踪导弹
+        {"hd_exp_faf14_spear_base_spawn",67},
+        
+        {"hd_offensive_orbital_120mm_he_barrage_call",68},
+        {"hd_offensive_orbital_380mm_he_barrage_call",69},
+
+        //无畏 空爆集束 ex_exo_dreadnought_rocket
+        {"ex_exo_dreadnought_rocket",70},
+        //无畏 空爆集束 过载 ex_exo_dreadnought_skill
+        {"ex_exo_dreadnought_skill",71},
+
+        // 褪红 贯穿
+        {"acg_fade_red",72},
+
+        // 类星体 蓄力武器
+        {"hd_exp_las99_quasar_cannon",73},
+        // RS-442 轨道炮 蓄力武器
+        {"hd_exp_rx422_railgun",74},
+
+        // 咲夜手动触发
+        {"re_acg_izayoi_sakuya_trigger",75},
+
+        // 星野 烟雾手雷
+        {"hoshino_smoke_gl",76},
+        {"hoshino_smoke_gl_skill",77},
+        // 烟雾手雷
+        {"smoke_gl",78},
 
         // 占位的
         {"666",-1}

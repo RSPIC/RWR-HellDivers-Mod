@@ -39,6 +39,7 @@ radius="0.3">
     <sound class="impact" fileref="medikit_drop.wav" />     
     <sound key="effect" fileref="hd_syringe_squeeze_squirt.wav" pitch_variety="0.0" volume="1" />    
     <sound key="cycle_in" fileref="hd_syringe_plunger_back.wav" pitch_variety="0.0" volume="1"/>
+    <sound key="magazine_out" fileref="hd_syringe_plunger_back.wav" pitch_variety="0.0" volume="1"/>
 
     <model filename="morphine.xml" />
 

@@ -226,5 +226,15 @@ key="hd_banner_roadflag_shenghuaren.weapon"
     <!--多模式-->
     <next_in_chain key="hd_banner_roadflag_minben.weapon" share_ammo="0" /> 
 </weapon>
+<!--  -->
+<weapon 
+file="hd_banner_roadflag.weapon"
+key="hd_roadflag_zhumi.weapon"
+>
+    <model filename="hd_roadflag.mesh"  texture_filename="hd_roadflag_zhumi.png" />
+	<hud_icon filename="hud_roadflag_zhumi.png" />
+    <!--多模式-->
+    <!-- <next_in_chain key="hd_banner_roadflag_minben.weapon" share_ammo="0" />  -->
+</weapon>
 </weapons>
 

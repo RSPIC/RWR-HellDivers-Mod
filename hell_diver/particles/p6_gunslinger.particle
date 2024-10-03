@@ -458,7 +458,7 @@ particle_system p6_gunslinger_hit_leave
 }
 particle_system p6_gunslinger_hit_spark
 {
-	quota 50
+	quota 600
 	material point_soft_edge_100
 	particle_width 0.3
 	particle_height 0.3
@@ -473,6 +473,69 @@ particle_system p6_gunslinger_hit_spark
 		colour 1 0.3 0 1
 		direction 0 1 0
 		emission_rate 300
+		position 0 0 0
+		velocity_min 10
+		velocity_max 15
+		time_to_live 1.5
+		duration 0.02
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	0
+		state_change 0.3
+	}
+	affector LinearForce{
+		force_vector 0 -30 0
+		force_application add
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 0
+		scope 0
+		keep_velocity false
+	}
+		affector DeflectorPlane 
+	{
+		plane_point 0 4 0
+		plane_normal 0 1 0 
+		bounce 0.4
+	}
+}
+particle_system p6_gunslinger_hit_spark_less
+{
+	quota 600
+	material point_soft_edge_100
+	particle_width 0.3
+	particle_height 0.3
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	
+	emitter Point
+	{
+		angle 45
+		colour 1 0.3 0 1
+		direction 0 1 0
+		emission_rate 100
 		position 0 0 0
 		velocity_min 10
 		velocity_max 15

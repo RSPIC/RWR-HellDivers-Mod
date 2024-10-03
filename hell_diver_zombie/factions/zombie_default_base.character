@@ -3,8 +3,11 @@
 	<parameter class="moving_inputsteer_threshold" value="0.1" />
 	<parameter class="stopping_velocity_threshold" value="0.01" />
 
-	<parameter class="walking_steer_amount" value="0.63" />
-	<parameter class="running_steer_amount" value="0.63" />
+	<parameter class="walking_steer_amount" value="0.1" />	
+	<parameter class="running_steer_amount" value="0.8" />	
+
+	<parameter class="use_walk_animation_instead_of_run_speed_threshold" value="0.3" />
+
 	<parameter class="crouch_walking_steer_amount" value="0.26" />
 	<parameter class="crouch_walking_doing_something_steer_amount" value="0.156" />
 	<parameter class="leaving_vehicle_jump_steer_amount" value="0.4" />
@@ -96,7 +99,6 @@
 	<parameter class="speed_encumbered" low="0.9" high="0.4" />
 	<parameter class="accuracy" value="1.0" />
 	<parameter class="accuracy_encumbered" low="1.0" high="0.94" />
-	<parameter class="use_walk_animation_instead_of_run_speed_threshold" value="0.5" />
 
 	<sound key="body_fall" fileref="body_fall1.wav" volume="1.0" />
 

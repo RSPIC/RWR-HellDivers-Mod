@@ -19,8 +19,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_119" name="119/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_118">
@@ -42,8 +42,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_118" name="118/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_117">
@@ -65,8 +65,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_117" name="117/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_116">
@@ -88,8 +88,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_116" name="116/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_115">
@@ -111,8 +111,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_115" name="115/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_114">
@@ -134,8 +134,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_114" name="114/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_113">
@@ -157,8 +157,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_113" name="113/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_112">
@@ -180,8 +180,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_112" name="112/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_111">
@@ -203,8 +203,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_111" name="111/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_110">
@@ -226,8 +226,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_110" name="110/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_109">
@@ -249,8 +249,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_109" name="109/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_108">
@@ -272,8 +272,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_108" name="108/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_107">
@@ -295,8 +295,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_107" name="107/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_106">
@@ -318,8 +318,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_106" name="106/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_105">
@@ -341,8 +341,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_105" name="105/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_104">
@@ -364,8 +364,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_104" name="104/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_103">
@@ -387,8 +387,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_103" name="103/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_102">
@@ -410,8 +410,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_102" name="102/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_101">
@@ -433,8 +433,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_101" name="101/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_100">
@@ -456,8 +456,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_100" name="100/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_99">
@@ -479,8 +479,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_99" name="99/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_98">
@@ -502,8 +502,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_98" name="98/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_97">
@@ -525,8 +525,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_97" name="97/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_96">
@@ -548,8 +548,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_96" name="96/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_95">
@@ -571,8 +571,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_95" name="95/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_94">
@@ -594,8 +594,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_94" name="94/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_93">
@@ -617,8 +617,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_93" name="93/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_92">
@@ -640,8 +640,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_92" name="92/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_91">
@@ -663,8 +663,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_91" name="91/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_90">
@@ -686,8 +686,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_90" name="90/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_89">
@@ -709,8 +709,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_89" name="89/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_88">
@@ -732,8 +732,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_88" name="88/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_87">
@@ -755,8 +755,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_87" name="87/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_86">
@@ -778,8 +778,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_86" name="86/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_85">
@@ -801,8 +801,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_85" name="85/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_84">
@@ -824,8 +824,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_84" name="84/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_83">
@@ -847,8 +847,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_83" name="83/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_82">
@@ -870,8 +870,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_82" name="82/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_81">
@@ -893,8 +893,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_81" name="81/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_80">
@@ -916,8 +916,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_80" name="80/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_79">
@@ -939,8 +939,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_79" name="79/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_78">
@@ -962,8 +962,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_78" name="78/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_77">
@@ -985,8 +985,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_77" name="77/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_76">
@@ -1008,8 +1008,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_76" name="76/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_75">
@@ -1031,8 +1031,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_75" name="75/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_74">
@@ -1054,8 +1054,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_74" name="74/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_73">
@@ -1077,8 +1077,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_73" name="73/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_72">
@@ -1100,8 +1100,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_72" name="72/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_71">
@@ -1123,8 +1123,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_71" name="71/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_70">
@@ -1146,8 +1146,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_70" name="70/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_69">
@@ -1169,8 +1169,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_69" name="69/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_68">
@@ -1192,8 +1192,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_68" name="68/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_67">
@@ -1215,8 +1215,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_67" name="67/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_66">
@@ -1238,8 +1238,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_66" name="66/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_65">
@@ -1261,8 +1261,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_65" name="65/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_64">
@@ -1284,8 +1284,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_64" name="64/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_63">
@@ -1307,8 +1307,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_63" name="63/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_62">
@@ -1330,8 +1330,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_62" name="62/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_61">
@@ -1353,8 +1353,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_61" name="61/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_60">
@@ -1376,8 +1376,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_60" name="60/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_59">
@@ -1399,8 +1399,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_59" name="59/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_58">
@@ -1422,8 +1422,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_58" name="58/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_57">
@@ -1445,8 +1445,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_57" name="57/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_56">
@@ -1468,8 +1468,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_56" name="56/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_55">
@@ -1491,8 +1491,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_55" name="55/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_54">
@@ -1514,8 +1514,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_54" name="54/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_53">
@@ -1537,8 +1537,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_53" name="53/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_52">
@@ -1560,8 +1560,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_52" name="52/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_51">
@@ -1583,8 +1583,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_51" name="51/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_50">
@@ -1606,8 +1606,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_50" name="50/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_49">
@@ -1629,8 +1629,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_49" name="49/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_48">
@@ -1652,8 +1652,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_48" name="48/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_47">
@@ -1675,8 +1675,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_47" name="47/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_46">
@@ -1698,8 +1698,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_46" name="46/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_45">
@@ -1721,8 +1721,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_45" name="45/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_44">
@@ -1744,8 +1744,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_44" name="44/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_43">
@@ -1767,8 +1767,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_43" name="43/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_42">
@@ -1790,8 +1790,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_42" name="42/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_41">
@@ -1813,8 +1813,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_41" name="41/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_40">
@@ -1836,8 +1836,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_40" name="40/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_39">
@@ -1859,8 +1859,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_39" name="39/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_38">
@@ -1882,8 +1882,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_38" name="38/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_37">
@@ -1905,8 +1905,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_37" name="37/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_36">
@@ -1928,8 +1928,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_36" name="36/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_35">
@@ -1951,8 +1951,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_35" name="35/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_34">
@@ -1974,8 +1974,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_34" name="34/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_33">
@@ -1997,8 +1997,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_33" name="33/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_32">
@@ -2020,8 +2020,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_32" name="32/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_31">
@@ -2043,8 +2043,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_31" name="31/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_30">
@@ -2066,8 +2066,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_30" name="30/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_29">
@@ -2089,8 +2089,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_29" name="29/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_28">
@@ -2112,8 +2112,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_28" name="28/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_27">
@@ -2135,8 +2135,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_27" name="27/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_26">
@@ -2158,8 +2158,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_26" name="26/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_25">
@@ -2181,8 +2181,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_25" name="25/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_24">
@@ -2204,8 +2204,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_24" name="24/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_23">
@@ -2227,8 +2227,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_23" name="23/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_22">
@@ -2250,8 +2250,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_22" name="22/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_21">
@@ -2273,8 +2273,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_21" name="21/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_20">
@@ -2296,8 +2296,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_20" name="20/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_19">
@@ -2319,8 +2319,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_19" name="19/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_18">
@@ -2342,8 +2342,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_18" name="18/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_17">
@@ -2365,8 +2365,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_17" name="17/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_16">
@@ -2388,8 +2388,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_16" name="16/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_15">
@@ -2411,8 +2411,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_15" name="15/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_14">
@@ -2434,8 +2434,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_14" name="14/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_13">
@@ -2457,8 +2457,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_13" name="13/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_12">
@@ -2480,8 +2480,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_12" name="12/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_11">
@@ -2503,8 +2503,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_11" name="11/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_10">
@@ -2526,8 +2526,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_10" name="10/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_9">
@@ -2549,8 +2549,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_9" name="9/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_8">
@@ -2572,8 +2572,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_8" name="8/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_7">
@@ -2595,8 +2595,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_7" name="7/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_6">
@@ -2618,8 +2618,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_6" name="6/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_5">
@@ -2641,8 +2641,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_5" name="5/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_4">
@@ -2664,8 +2664,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_4" name="4/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_3">
@@ -2687,8 +2687,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_3" name="3/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_2">
@@ -2710,8 +2710,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_2" name="2/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0" transform_on_consume="hd_vest_hvy_tr62_1">
@@ -2733,8 +2733,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="none" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="1"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="1"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
   <carry_item key="hd_vest_hvy_tr62_1" name="1/120 TR-62 KNIGHT" time_to_live_out_in_the_open="0" drop_count_factor_on_death="0" drop_count_factor_on_player_death="0" slot="1" draggable="0">
@@ -2743,8 +2743,8 @@
     <commonness value="1" in_stock="1" can_respawn_with="1"/>
     <inventory encumbrance="100" price="0"/>
     <model/>
-    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="0"/>
-    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="none" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="death" output_character_state="death" consumes_item="0"/>
+    <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="death" consumes_item="0"/>
     <modifier class="projectile_blast_result" input_character_state="unwound" output_character_state="unwound" consumes_item="0"/>
     <modifier class="projectile_blast_result" input_character_state="stun" output_character_state="none" consumes_item="0"/>
     <modifier class="projectile_blast_result" input_character_state="none" output_character_state="none" consumes_item="0"/>
@@ -2756,8 +2756,8 @@
     <modifier class="melee_hit_result" input_character_state="wound" output_character_state="death" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="stun" output_character_state="death" consumes_item="0"/>
     <modifier class="melee_hit_result" input_character_state="none" output_character_state="death" consumes_item="0"/>
-    <modifier class="speed" value="-0.075"/>
-    <modifier class="detectability" value="0.0"/>
+    <modifier class="speed" value="-0.25"/>
+    <modifier class="detectability" value="0.05"/>
     <modifier class="hit_success_probability" value="0.0"/>
   </carry_item>
 </carry_items>

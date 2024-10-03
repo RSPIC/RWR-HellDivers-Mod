@@ -246,7 +246,7 @@ class hd_side_mission : Tracker{
                             if(g_userCountInfoBuck.getCount(name,"hd_broad_tower",times)){
                                 if(times >= 1){
                                     _notify(m_metagame,pid,"超过该支线任务执行上限，无奖励");
-                                    continue;
+                                    return;
                                 }
                             }
                             _report(m_metagame,"玩家："+name+"完成了'摧毁非法广播电台'支线任务");
@@ -260,4 +260,57 @@ class hd_side_mission : Tracker{
         }
         
     }
+}
+
+class autoSetMarker : Task {
+    protected Metagame@ m_metagame;
+    protected float m_time;
+    protected float m_timer;
+    protected bool m_ended;
+    protected int m_mid;
+    protected int m_fid;
+
+    autoSetMarker(Metagame@ metagame,float duration,int atlas_index, float size,float range,Vector3 position,string markerName,string type = "call_marker", string color = "#00b9ff",bool mapView = true,bool gameView = true,bool screenEdge = false,int fid = 0){
+        @m_metagame = @metagame;
+        m_mid = int(rand(10000,20000));
+        m_fid = fid;
+        m_time = duration;
+        m_timer = m_time;
+        XmlElement command("command");
+            command.setStringAttribute("class", "set_marker");
+            command.setIntAttribute("id", m_mid);
+            command.setIntAttribute("faction_id", m_fid);
+            command.setIntAttribute("atlas_index", atlas_index);
+            command.setFloatAttribute("size", size);
+            command.setFloatAttribute("range", range);
+            command.setIntAttribute("enabled", 1);
+            command.setStringAttribute("position", position.toString());
+            command.setStringAttribute("text", markerName);
+            command.setStringAttribute("color", "#00b9ff");
+            command.setStringAttribute("type_key", type);
+            command.setBoolAttribute("show_in_map_view", mapView);
+            command.setBoolAttribute("show_in_game_view", gameView);
+            command.setBoolAttribute("show_at_screen_edge", screenEdge);
+        m_metagame.getComms().send(command);
+    }
+
+    void start(){
+        m_ended = false;
+    }
+    
+    void update(float time){
+        m_timer -= time;
+        if(m_timer > 0){return;}
+		XmlElement command("command");
+            command.setStringAttribute("class", "set_marker");
+            command.setIntAttribute("id", m_mid);
+            command.setIntAttribute("enabled", 0);
+            command.setIntAttribute("faction_id", m_fid);
+        m_metagame.getComms().send(command);
+        m_ended = true;
+    }
+
+	bool hasEnded() const{
+		return m_ended;
+	}
 }

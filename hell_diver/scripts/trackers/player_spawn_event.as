@@ -78,9 +78,10 @@ class player_spawn : Tracker {
 		list.insertLast(d);
 		list.insertLast(e);
 		CreateListDirectProjectile(m_metagame,list);
+
 		dictionary a;
 		a["%name"] = name;
-		sendFactionMessageKey(m_metagame,fid,"Divers Join the BattleFiled",a);
+		sendFactionMessage(m_metagame,fid,"Divers "+ name +" Join the BattleFiled",1.0);
 
 		//首次连接不会提示，二次复活才提示
         string value; //临时变量

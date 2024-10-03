@@ -934,6 +934,22 @@ class MapRotatorInvasion : MapRotator {
 		string sender = event.getStringAttribute("player_name");
 		int senderId = event.getIntAttribute("player_id");
 		
+		if (checkCommand(message, "restart")) {
+			array<const XmlElement@> playerList = getPlayers(m_metagame);
+			for (uint i = 0; i < playerList.size(); ++i) {
+				const XmlElement@ player = playerList[i];
+				int cid = player.getIntAttribute("character_id");
+				const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+				if(character is null){continue;}
+				bool isDead = character.getBoolAttribute("dead");
+				if(!isDead){
+					return;
+				}
+			}
+			_report(m_metagame,"Player "+sender+" restart the map");
+			restartMap();
+		}
+
 		// admins and mods allowed from here on
 		if(!m_server_test_mode){
 			if (!m_metagame.getAdminManager().isAdmin(sender, senderId) && !m_metagame.getModeratorManager().isModerator(sender,senderId)) {
@@ -958,9 +974,6 @@ class MapRotatorInvasion : MapRotator {
 			}
 		}
 
-		if (checkCommand(message, "restart")) {
-			restartMap();
-		}
 	}
 
 	// --------------------------------------------

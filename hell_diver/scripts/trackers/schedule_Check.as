@@ -36,6 +36,13 @@ dictionary EXO_Armor = {
         {"hd_exo51_lumberer_mk3_cannon.weapon","hd_exo51_lumberer_mk3_flame.weapon"},
         {"hd_exo51_lumberer_mk3_flame.weapon","hd_exo51_lumberer_mk3_cannon.weapon"},
 
+        {"ex_exo_dreadnought_mg.weapon","ex_exo_dreadnought_null.weapon"},
+        {"ex_exo_dreadnought_plas.weapon","ex_exo_dreadnought_null.weapon"},
+        {"ex_exo_dreadnought_rocket.weapon","ex_exo_dreadnought_null.weapon"},
+        {"re_ex_exo_dreadnought_mg.weapon","ex_exo_dreadnought_null.weapon"},
+        {"re_ex_exo_dreadnought_plas.weapon","ex_exo_dreadnought_null.weapon"},
+        {"re_ex_exo_dreadnought_rocket.weapon","ex_exo_dreadnought_null.weapon"},
+
         // 占位的
         {"666",-1}
 
@@ -109,6 +116,9 @@ class schedule_Check : Tracker {
                 checkImpactGl(m_metagame,name,pid,cid,equipList); // 先于skin检测
                 checkSkin(m_metagame,name,pid,cid,equipList);
                 checkToki(m_metagame,name,pid,cid,equipList);
+                checkDreadnought(m_metagame,name,pid,cid,equipList);
+                checkSakuya(m_metagame,name,pid,cid,equipList);
+                checkYuuka(m_metagame,name,pid,cid,equipList);
             }
         }
     }
@@ -225,6 +235,53 @@ class schedule_Check : Tracker {
         }
 	}
     // ----------------------------------------------------
+	protected void checkDreadnought(Metagame@ metagame,string&in name,int&in pid,int&in cid,dictionary&in equipList){
+        string equipKey;
+        if(equipList.get("0",equipKey)){//主武器
+            string targetKey = "ex_exo_dreadnought";
+            string targetKey2 = "re_ex_exo_dreadnought";
+            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+                if(equipList.get("1",equipKey)){//副武器
+                    if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+                        return;
+                    }else{
+                        notify(metagame, "Help - Dreadnought", dictionary(), "misc", pid, true, "Dreadnought Help", 1.0);
+                        _notify(m_metagame,pid,"主武器必须搭配副手使用！武器已送至背包");
+                        addItemInBackpack(m_metagame,cid,"weapon","ex_exo_dreadnought_null.weapon");
+                        editPlayerVest(metagame,cid,"hd_v40",4);//替换为0层甲
+                    }
+                }
+            }
+        }
+	}
+    // ----------------------------------------------------
+	protected void checkSakuya(Metagame@ metagame,string&in name,int&in pid,int&in cid,dictionary&in equipList){
+        string equipKey;
+        if(equipList.get("0",equipKey)){//主武器
+            string targetKey = "acg_izayoi_sakuya";
+            string targetKey2 = "re_acg_izayoi_sakuya";
+            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+                if(m_firstUseInfoBuck.isFirst(name,equipKey)){
+                    notify(metagame, "Help - Sakuya", dictionary(), "misc", pid, true, "Sakuya Help", 1.0);
+                    addItemInBackpack(m_metagame,cid,"weapon","re_acg_izayoi_sakuya_trigger.weapon");
+                }
+            }
+        }
+	}
+    // ----------------------------------------------------
+	protected void checkYuuka(Metagame@ metagame,string&in name,int&in pid,int&in cid,dictionary&in equipList){
+        string equipKey;
+        if(equipList.get("0",equipKey)){//主武器
+            string targetKey = "acg_hayase_yuuka";
+            string targetKey2 = "re_acg_hayase_yuuka";
+            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+                if(m_firstUseInfoBuck.isFirst(name,equipKey)){
+                    notify(metagame, "Help - Yuuka", dictionary(), "misc", pid, true, "Yuuka Help", 1.0);
+                }
+            }
+        }
+	}
+    // ----------------------------------------------------
 	protected void checkVergil(Metagame@ metagame,string&in name,int&in pid,int&in cid,dictionary&in equipList){
         string equipKey;
         if(equipList.get("0",equipKey)){//主武器
@@ -315,6 +372,7 @@ class schedule_Check : Tracker {
                                 "<item class='" + "projectile" + "' key='" + "hd_md99_injector.projectile" +"' />" +
                             "</command>";
                         m_metagame.getComms().send(c);
+                        m_metagame.getComms().send(c);
                         notify(metagame, "治疗针已重新补给", dictionary(), "misc", pid, false, "", 1.0);
                         return;
                     }
@@ -334,6 +392,7 @@ class schedule_Check : Tracker {
                             "<command class='update_inventory' character_id='" + cid + "' container_type_id='4' add='1'>" + 
                                 "<item class='" + "projectile" + "' key='" + "hd_grenade_impact_g16.projectile" +"' />" +
                             "</command>";
+                        m_metagame.getComms().send(c);
                         m_metagame.getComms().send(c);
                         notify(metagame, "冲击雷已重新补给", dictionary(), "misc", pid, false, "", 1.0);
                         return;
@@ -446,7 +505,17 @@ class schedule_Check : Tracker {
 			}else{
 				//非正常配装，发送警告
 				notify(metagame, "Warning - EXO", dictionary(), "misc", pid, false, "EXO Warning", 1.0);
-				editPlayerVest(metagame,cid,"helldivers_vest_0",4);//替换为0层甲
+
+				editPlayerVest(metagame,cid,"helldivers_vest_1",4);//替换为0层甲
+                g_userCountInfoBuck.addCount(name,"EXOvestWrong");
+                int nowCost = 0;
+                g_userCountInfoBuck.getCount(name,"EXOvestWrong",nowCost);
+                _notify(m_metagame,pid,"过载死亡剩余警告次数"+(5-nowCost));
+                if(nowCost >= 5){
+                    setDeadCharacter(m_metagame,cid);
+                    g_userCountInfoBuck.clearCount(name,"EXOvestWrong");
+                }
+
 				return;
 			}
 		}else{ //卸下机甲

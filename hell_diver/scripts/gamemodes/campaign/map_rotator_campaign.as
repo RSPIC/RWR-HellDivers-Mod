@@ -479,7 +479,7 @@ class MapRotatorCampaign : MapRotatorInvasion {
 		spawnStaticProjectile(m_metagame,"hd_sound_divers_coming.projectile",c_position,characterId,factionId);
 		spawnStaticProjectile(m_metagame,"hd_effect_hellpod_dropping_smoke.projectile",c_position,characterId,factionId);
 		
-		sendFactionMessage(m_metagame,factionId,"Divers "+name+" Now on ground.");
+		// sendFactionMessage(m_metagame,factionId,"Divers "+name+" Now on ground.");
 
 		_log("player spawned: " + name + ", target username is " + m_metagame.getUserSettings().m_username, 1);
 		if (name == m_metagame.getUserSettings().m_username) {

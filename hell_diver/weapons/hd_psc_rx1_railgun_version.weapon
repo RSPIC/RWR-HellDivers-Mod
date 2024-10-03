@@ -4,6 +4,14 @@
 file="hd_psc_rx1_railgun_base.weapon"
 key="hd_psc_rx1_railgun_full_upgrade.weapon"
 >
+
+	<animation key="recoil" animation_key="recoil1" /> <!--后坐力动作，半身动作-->
+
+	<sound key="fire" fileref="rx1_railgun_fire.wav" pitch_variety="0.00"  volume="0.3" />
+
+	<model filename="hd_rx1_railgun.xml" />
+    <hud_icon filename="hd_rx1_railgun.png" />
+
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="10" time_to_live="0.4" name="RX-1 Railgun">
 		
 		<result class="spawn" instance_class="projectile" instance_key="hd_psc_rx1_railgun_full_upgrade_damage.projectile" 
@@ -69,5 +77,43 @@ key="hd_psc_rx1_railgun_full_upgrade.weapon"
 		<sound class="result" key="static_object" copy="terrain" />
 
     </projectile>
+</weapon>
+<weapon 
+file="hd_psc_rx1_railgun_base.weapon"
+key="hd_psc_rs422_railgun.weapon"
+drop_count_factor_on_death="0" 
+drop_count_factor_on_player_death="0"
+time_to_live_out_in_the_open="0"
+player_death_drop_owner_lock_time="0"
+>
+	<specification 	
+    slot="0" 	
+    sustained_fire_grow_step="1" 
+    sustained_fire_diminish_rate="0.2" 
+    magazine_size="1" 
+	sight_range_modifier="1.0"
+    can_shoot_standing="0" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="1"	
+	class="5" 
+	consume="0" 
+    name="RS-422 Railgun" 
+	projectiles_per_shot="1" 
+	spawn_instance_class="projectile" 
+    spawn_instance_key="hd_exp_rx422_railgun_call.projectile" 
+	/> 
+	<commonness value="0" can_respawn_with="1" in_stock="0"/>
+
+	<animation key="recoil" animation_key="rs442_recoil" /> <!--后坐力动作，半身动作-->
+	<animation key="recoil" stance_key="prone" animation_key="rs442_recoil" /> <!--后坐力动作，半身动作-->
+
+	<model filename="hd_rs422_railgun.xml" />
+    <hud_icon filename="hd_rs422_railgun.png" />
+
+	<sound key="effect" fileref="hd_rs422_railgun_start.wav" pitch_variety="0" volume="0.7" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
+    <sound key="fire" fileref="hd_rs422_railgun_fire.wav" pitch_variety="0.08" volume="1.5" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
+    
+	<modifier class="detectability" value="-0.1" />	<!--正值减少玩家隐蔽-->
+
 </weapon>
 </weapons>

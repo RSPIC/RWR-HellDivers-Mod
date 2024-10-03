@@ -165,13 +165,13 @@ class vest_upgrade_manager : Tracker {
                     bool state;
                     if(g_vestInfoBuck.setAutoHeal(name,state)){
                         if(state){
-                            if(rp < 30000){
+                            if(rp < 10000){
                                 notify(m_metagame,"Insufficient Rp", dictionary(), "misc", pid, false,"", 1.0);
                                 deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
                                 return;
                             }
                             notify(m_metagame,"AutoHeal Set", dictionary(), "misc", pid, false,"", 1.0);
-                            GiveRP(m_metagame,characterId,-30000);
+                            GiveRP(m_metagame,characterId,-10000);
                         }else{
                             notify(m_metagame,"AutoHeal Remove", dictionary(), "misc", pid, false,"", 1.0);
                         }
@@ -179,7 +179,7 @@ class vest_upgrade_manager : Tracker {
                     deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
                     return;
                 }else if(i==5){
-                    if(g_vestInfoBuck.clearUpgrade(name)){
+                    if(g_vestInfoBuck.resetUpgrade(name)){
                         notify(m_metagame,"Vest Upgeade Clear", dictionary(), "misc", pid, false,"", 1.0);
                     }
                 }else if(i==6){

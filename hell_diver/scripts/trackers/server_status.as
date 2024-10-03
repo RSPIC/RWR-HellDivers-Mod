@@ -35,8 +35,8 @@ class server_status : Tracker{
         }else{
             m_ended = true;
             _log("no tartget server,server_status ending");
+            return;
         }
-        m_ended = false;
         m_timer = m_time;
         initiate();
     }
@@ -83,6 +83,9 @@ class server_status : Tracker{
                 if(running_time > oneDayTime){
                     m_stash.setIntAttribute("inGameDay",++inGameDay);
                     m_stash.setIntAttribute("server_running_time",0);
+                }else{
+                    m_stash.setIntAttribute("inGameDay",inGameDay);
+                    m_stash.setIntAttribute("oneDayTime",oneDayTime);
                 }
             }
             allInfo.appendChild(m_stash);

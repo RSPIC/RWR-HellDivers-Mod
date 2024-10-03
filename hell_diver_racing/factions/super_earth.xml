@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="utf-8"?>
+<faction 
+	name="Super Earth" 
+	color="0.7 0.7 1" 
+	firstnames_file="superearth_firstnames.txt" 
+	lastnames_file="superearth_lastnames.txt" 
+	chat_icon_filename="superearth_chat_icon.png" 
+	chat_icon_filename_supporter="superearth_chat_icon.png" 
+	chat_icon_commander_filename="superearth_chat_icon_commander.png" 
+	campaign_completion_icon_filename="campaign_win_2.png" 
+	radio_queue_size="3"
+	supporter_high_skinpack_xp="100.0">
+	
+	<rank xp="0.026" name="Private">	<!--以w计-->
+		<hud_icon filename="01_-_Private.png" />
+	</rank>  
+	<rank xp="0.168" name="1st Private">
+		<hud_icon filename="02_-_1st_Private.png" />    
+	</rank>
+	<rank xp="0.502" name="Corporal">
+		<hud_icon filename="03_-_Corporal.png" />    
+	</rank>
+	<rank xp="1.092" name="Specialist">
+		<hud_icon filename="04_-_Specialist.png" />    
+	</rank>
+	<rank xp="1.995" name="Warrant">
+		<hud_icon filename="05_-_Warrant.png" />    
+	</rank>
+	<rank xp="3.264" name="Staff Sergeant">
+		<hud_icon filename="06_-_Staff_Sergeant.png" />    
+	</rank>
+	<rank xp="4.949" name="Sergeant">
+		<hud_icon filename="07_-_Sergeant.png" />    
+	</rank>
+	<rank xp="7.098" name="Cadet">
+		<hud_icon filename="08_-_Cadet.png" />    
+	</rank>
+	<rank xp="9.755" name="Ensign">
+		<hud_icon filename="09_-_Ensign.png" />    
+	</rank>
+	<rank xp="12.965" name="2nd Lieutenant">
+		<hud_icon filename="10_-_2nd_Lieutenant.png" />    
+	</rank>
+	<rank xp="16.770" name="Lieutenant">
+		<hud_icon filename="11_-_Lieutenant.png" />    
+	</rank>
+	<rank xp="21.211" name="Commander">
+		<hud_icon filename="12_-_Commander.png" />    
+	</rank>
+	<rank xp="26.329" name="Captain">
+		<hud_icon filename="13_-_Captain.png" />    
+	</rank>
+	<rank xp="32.161" name="Major">
+		<hud_icon filename="14_-_Major.png" />    
+	</rank>
+	<rank xp="38.746" name="Colonel">
+		<hud_icon filename="15_-_Colonel.png" />    
+	</rank>
+	<rank xp="46.122" name="Colonel Commandant">
+		<hud_icon filename="16_-_Colonel_Commandant.png" />    
+	</rank>
+	<rank xp="54.324" name="Commodore">
+		<hud_icon filename="17_-_Commodore.png" />    
+	</rank>
+	<rank xp="63.389" name="Brigadier">
+		<hud_icon filename="18_-_Brigadier.png" />    
+	</rank>
+	<rank xp="73.353" name="General">
+		<hud_icon filename="19_-_General.png" />    
+	</rank>
+	<rank xp="84.248" name="Field General">
+		<hud_icon filename="20_-_Field_General.png" />    
+	</rank>
+	<rank xp="96.111" name="Marshal">
+		<hud_icon filename="21_-_Marshal.png" />    
+	</rank>
+	<rank xp="108.974" name="Field Marshal">
+		<hud_icon filename="22_-_Field_Marshal.png" />    
+	</rank>
+	<rank xp="122.870" name="Lord Marshal">
+		<hud_icon filename="23_-_Lord_Marshal.png" />    
+	</rank>
+	<rank xp="137.832" name="Lord">
+		<hud_icon filename="24_-_Lord.png" />    
+	</rank>
+	<rank xp="153.893" name="Grand Lord">
+		<hud_icon filename="25_-_Grand_Lord.png" />    
+	</rank>
+	<rank xp="171.084" name="Unknown Hero">
+		<hud_icon filename="26_-_Unknown_Hero.png" />    
+	</rank>
+	<rank xp="189.436" name="Local Hero">
+		<hud_icon filename="27_-_Local_Hero.png" />    
+	</rank>
+	<rank xp="208.981" name="Regional Hero">
+		<hud_icon filename="28_-_Regional_Hero.png" />    
+	</rank>
+	<rank xp="229.750" name="Warfront Hero">
+		<hud_icon filename="29_-_Warfront_Hero.png" />    
+	</rank>
+	<rank xp="251.773" name="Hero of the Sector">
+		<hud_icon filename="30_-_Hero_of_the_Sector.png" />    
+	</rank>
+	<rank xp="275.079" name="Tactical Specialist">
+		<hud_icon filename="31_-_Tactical_Specialist.png" />    
+	</rank>
+	<rank xp="299.699" name="Lieutenant Tactical Specialist">
+		<hud_icon filename="32_-_Lieutenant_Tactical_Specialist.png" />    
+	</rank>
+	<rank xp="325.663" name="Major Tactical Specialist">
+		<hud_icon filename="33_-_Major_Tactical_Specialist.png" />    
+	</rank>
+	<rank xp="352.999" name="Tactical Specialist Commander">
+		<hud_icon filename="34_-_Tactical_Specialist_Commander.png" />    
+	</rank>
+	<rank xp="381.737" name="Squad Specialist">
+		<hud_icon filename="35_-_Squad_Specialist.png" />    
+	</rank>
+	<rank xp="411.906" name="Lieutenant Squad Specialist">
+		<hud_icon filename="36_-_Lieutenant_Squad_Specialist.png" />    
+	</rank>
+	<rank xp="443.533" name="Major Squad Specialist">
+		<hud_icon filename="37_-_Major_Squad_Specialist.png" />    
+	</rank>
+	<rank xp="476.647" name="Squad Specialist Commander">
+		<hud_icon filename="38_-_Squad_Specialist_Commander.png" />    
+	</rank>
+	<rank xp="511.276" name="Platoon Specialist">
+		<hud_icon filename="39_-_Platoon_Specialist.png" />    
+	</rank>
+	<rank xp="547.448" name="Lieutenant Platoon Specialist">
+		<hud_icon filename="40_-_Lieutenant_Platoon_Specialist.png" />    
+	</rank>
+	<rank xp="585.191" name="Major Platoon Specialist">
+		<hud_icon filename="41_-_Major_Platoon_Specialist.png" />    
+	</rank>
+	<rank xp="624.531" name="Expert of Operations">
+		<hud_icon filename="42_-_Expert_of_Operations.png" />    
+	</rank>
+	<rank xp="665.497" name="Lieutenant Expert of Operations">
+		<hud_icon filename="43_-_Lieutenant_Expert_of_Operations.png" />    
+	</rank>
+	<rank xp="708.114" name="Major Expert of Operations">
+		<hud_icon filename="44_-_Major_Expert_of_Operations.png" />    
+	</rank>
+	<rank xp="752.410" name="Commanding Expert of Operations">
+		<hud_icon filename="45_-_Commanding_Expert_of_Operations.png" />    
+	</rank>
+	<rank xp="798.412" name="Rear Admiral">
+		<hud_icon filename="46_-_Rear_Admiral.png" />    
+	</rank>
+	<rank xp="846.146" name="Vice Admiral">
+		<hud_icon filename="47_-_Vice_Admiral.png" />    
+	</rank>
+	<rank xp="895.638" name="Admiral">
+		<hud_icon filename="48_-_Admiral.png" />    
+	</rank>
+	<rank xp="946.914" name="Fleet Admiral">
+		<hud_icon filename="49_-_Fleet_Admiral.png" />    
+	</rank>
+	<rank xp="1000.000" name="Admiral of Super Earth">
+		<hud_icon filename="50_-_Admiral_of_Super_Earth.png" />    
+	</rank>
+	<rank xp="1500.000" name="Cadet ">
+		<hud_icon filename="hd2_rank_2.png" />    
+	</rank>
+	<rank xp="2000.000" name="Space Cadet ">
+		<hud_icon filename="hd2_rank_3.png" />    
+	</rank>
+	<rank xp="2250.000" name="Sergeant ">
+		<hud_icon filename="hd2_rank_4.png" />    
+	</rank>
+	<rank xp="2500.000" name="Master Sergeant ">
+		<hud_icon filename="hd2_rank_5.png" />    
+	</rank>
+	<rank xp="3000.000" name="Chief">
+		<hud_icon filename="hd2_rank_6.png" />    
+	</rank>
+	<rank xp="3500.000" name="Space Chief Prime">
+		<hud_icon filename="hd2_rank_7.png" />    
+	</rank>
+	<rank xp="4000.000" name="Death Captain">
+		<hud_icon filename="hd2_rank_8.png" />    
+	</rank>
+	<rank xp="4500.000" name="Marshal ">
+		<hud_icon filename="hd2_rank_9.png" />    
+	</rank>
+	<rank xp="5000.000" name="Star Marshal">
+		<hud_icon filename="hd2_rank_10.png" />    
+	</rank>
+	<rank xp="5500.000" name="Admiral ">
+		<hud_icon filename="hd2_rank_11.png" />    
+	</rank>
+	<rank xp="6000.000" name="Skull Admiral">
+		<hud_icon filename="hd2_rank_12.png" />    
+	</rank>
+	<rank xp="6500.000" name="Fleet Admiral">
+		<hud_icon filename="hd2_rank_13.png" />    
+	</rank>
+	<rank xp="7000.000" name="Admirable Admiral">
+		<hud_icon filename="hd2_rank_14.png" />    
+	</rank>
+	<rank xp="7500.000" name="Commander ">
+		<hud_icon filename="hd2_rank_15.png" />    
+	</rank>
+	<rank xp="8000.000" name="Galactic Commander">
+		<hud_icon filename="hd2_rank_16.png" />    
+	</rank>
+	<rank xp="8500.000" name="Hell Commander">
+		<hud_icon filename="hd2_rank_17.png" />    
+	</rank>
+	<rank xp="9000.000" name="General ">
+		<hud_icon filename="hd2_rank_18.png" />    
+	</rank>
+	<rank xp="9500.000" name="3-Stat General">
+		<hud_icon filename="hd2_rank_19.png" />    
+	</rank>
+	<rank xp="10000.000" name="10-Stat General">
+		<hud_icon filename="hd2_rank_21.png" />    
+	</rank>
+	<rank xp="20000.000" name="Super Private">
+		<hud_icon filename="hd2_rank_23.png" />    
+	</rank>
+	<rank xp="30000.000" name="Super Citizen">
+		<hud_icon filename="hd2_rank_24.png" />    
+	</rank>
+	<rank xp="50000.000" name="Representative of SuperEarth">
+		<hud_icon filename="hd2_rank_1.png" />    
+	</rank>
+
+
+	<!-- player group -->
+	<soldier name="default" spawn_score="0.0">
+		<character filename="helldivers_default_chat.character">
+
+			<parameter class="detectability_prone" value="0.2" />
+			<parameter class="detectability_wounded" value="0.2" />
+			<parameter class="detectability_crouching" value="0.55" />
+			<parameter class="detectability_crouch_moving" value="0.6" />
+			<parameter class="detectability_walking" value="0.95" />
+			<parameter class="detectability_still" value="0.8" />
+			<parameter class="detectability_running" value="1" />
+
+		</character>
+		<ai filename="default_super_earth.ai" />
+
+		<models file="test.models" />
+		<models file="extra_weapons.models" />
+		<models file="hd_weapons.models" />
+		<models file="hd_rare.models" />
+		<models file="acg_token.models" />
+		<models file="acg_weapon.models" />
+		<models filename="bugs_default.models" />
+		<models filename="cyborgs_default.models" />
+		
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="common.resources" />
+		<resources file="hd_ex_armory.resources" />
+		<resources file="hd_player.resources" >
+			<projectile key="acg_amg_11_mk3_call.projectile" enabled="0" /><!--自动机枪炮台-->
+			<projectile key="acg_arx_34_mk3_call.projectile" enabled="0" /><!--自动轨道炮炮台-->
+		</resources>
+		<resources file="_token.resources" />
+		<resources file="re_acg_weapon.resources" />
+		<resources file="re_vnl_weapon.resources" />
+
+		<item_class_existence_config>
+			<!-- main -->
+			<item_class_existence class="weapon" slot="0" probability="1" />
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="1" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="1" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="0" />
+		</item_class_existence_config>
+
+		<attribute_config class="rp">
+			<attribute weight="0.3" min="80.0" max="300.0" />
+			<attribute weight="0.7" min="0.0" max="0.0" />
+		</attribute_config>
+
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="0.0" max="0.45" />
+		</attribute_config>
+	</soldier>
+
+	<soldier name="base" spawn_score="0" >
+		<character filename="helldivers_default_chat.character">
+			<parameter class="default_squad_config_index" value="0" />
+		</character>
+		<ai filename="default_super_earth.ai" />
+
+		<models file="extra_weapons.models" />
+		<models file="hd_weapons.models" />
+		<!-- <models file="hd_base.models" /> -->
+
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+
+		<item_class_existence_config>
+			<!-- main -->
+			<item_class_existence class="weapon" slot="0" probability="1" />
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="1" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="1" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="0" />
+		</item_class_existence_config>
+
+		<attribute_config class="rp">
+			<attribute weight="1" min="1.0" max="1.0" />
+		</attribute_config>
+
+		<attribute_config class="xp">
+			<attribute weight="1" min="0.0" max="0.0" />
+		</attribute_config>
+	</soldier>
+
+	<!-- default ai group -->
+	<soldier name="default_ai" spawn_score="3.0" copy_from="base">
+		<model filename="hdivers_black_ops.xml" />
+		<models file="hd_base.models" />
+			<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+			<resources file="hd_divers.resources" />
+			<resources file="common_loot_rare.resources" />
+		<attribute_config class="rp">
+			<attribute weight="1" min="100.0" max="200.0" />
+		</attribute_config>
+
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="200.0" max="255" />
+			<attribute weight="2.0" min="100.0" max="200" />
+			<attribute weight="3.0" min="0.0" max="100" />
+		</attribute_config>
+
+		<item_class_existence_config>
+			<!-- main -->
+			<item_class_existence class="weapon" slot="0" probability="0.9" />
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="1" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="1" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="0.35" />
+		</item_class_existence_config>
+	</soldier>
+
+	<!-- 精英空投 -->
+	<soldier name="HellDiver" spawn_score="0.0" copy_from="base">
+		<model filename="ex_sc_ghost.xml" />
+		<ai filename="default_super_earth_elite.ai" />
+			<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+			<resources file="hd_divers.resources" />
+		<attribute_config class="rp">
+			<attribute weight="1" min="100.0" max="200.0" />
+		</attribute_config>
+
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="300.0" max="1000" />
+		</attribute_config>
+
+		<item_class_existence_config>
+			<!-- main -->
+			<item_class_existence class="weapon" slot="0" probability="1" />
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="1" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="1" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="0.1" />
+		</item_class_existence_config>
+	</soldier>
+  
+
+	<!-- 地球元帅 -->
+	<soldier name="Ceremonial" spawn_score="0.05" copy_from="base">
+		<model filename="hdivers_ceremonial.xml" />
+		<ai filename="default_super_earth_elite.ai" />
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources>
+			<weapon key="hd_arc_as7_semiconductor_mk3.weapon" /><!--半导体-->
+			<weapon key="hd_psc_atx25_revelator_mk3.weapon" /><!--启示者-->
+
+			<weapon key="hd_ai_mls4x_commando_mk3.weapon" /><!--反坦克-->
+
+			<carry_item key="general_vest_80" />
+
+			<projectile key="hd_airdropped_stun_mine_mk3.projectile" />	<!--眩晕雷-->
+			<projectile key="hd_grenade_molotov.projectile" /><!--燃烧瓶-->
+   			<projectile key="hd_grenade_standard.projectile" /><!--破片手雷-->
+		</resources>
+
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="1000.0" max="1200.0" />
+		</attribute_config>
+		<item_class_existence_config>
+			<!-- main -->
+			<item_class_existence class="weapon" slot="0" probability="1" />
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="1" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="1" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="1" />
+		</item_class_existence_config>
+	</soldier> 
+
+	<!-- 机枪手 -->
+	<soldier name="Volcanic" spawn_score="0.02" copy_from="base">
+		<model filename="hdivers_volcanic.xml" />
+		<ai filename="default_super_earth_elite.ai" />
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources>
+			<weapon key="hd_hmg_mg255_melt_mk3.weapon" /><!--MG255熔点重机枪-->
+			<weapon key="hd_arc_mgc_capacitor_mk3.weapon" /><!--MGC 电容重机枪-->
+
+			<weapon key="hd_ai_rl112_recoilless_rifle_mk3.weapon" /><!--无后坐力反坦克炮-->
+
+			<carry_item key="general_vest_80" />
+			
+			<projectile key="hd_airdropped_stun_mine_mk3.projectile" />	<!--眩晕雷-->
+			<projectile key="hd_grenade_molotov.projectile" /><!--燃烧瓶-->
+    		<projectile key="hd_grenade_standard.projectile" /><!--破片手雷-->
+		</resources>
+
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="1000.0" max="1200.0" />
+		</attribute_config>
+		<item_class_existence_config>
+			<!-- main -->
+			<item_class_existence class="weapon" slot="0" probability="1" />
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="1" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="1" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="1" />
+		</item_class_existence_config>
+	</soldier> 
+
+	<!-- supply box group -->
+	<soldier name="supply" spawn_score="0.0">
+		<resources file="supply_common.resources" />
+
+		<!-- low XP, likely to join player squad -->
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="0.0" max="0.05" />
+		</attribute_config>
+	</soldier>  
+    
+    
+	<!-- icecream group -->
+	<soldier name="icecream" spawn_score="0.0">
+		<resources file="icecream.resources" />
+		<resources file="acg_player.resources" />
+
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="0.0" max="0.05" />
+		</attribute_config>
+	</soldier>              
+	<!-- 路牌 -->
+	<soldier name="hd_banner" spawn_score="0.0">
+		<resources file="hd_banner.resources" />
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="0.0" max="0.05" />
+		</attribute_config>
+	</soldier> 
+	<!-- 比赛箱子 -->
+	<soldier name="racing_box" spawn_score="0.0">
+		<resources file="racing_box.resources" />
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="0.0" max="0.05" />
+		</attribute_config>
+	</soldier>              
+	<!-- EX补给箱 -->
+	<soldier name="supply_ex_box" spawn_score="0.0" copy_from="default_ai">
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="supply_ex_box.resources"/>
+	</soldier> 
+	<!-- 脚本仓库 -->
+	<soldier name="stash_box" spawn_score="0.0" copy_from="default_ai">
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="stash_box.resources"/>
+	</soldier> 
+	<!-- 机甲补给箱 -->
+	<soldier name="exo44_mk3" spawn_score="0.0" copy_from="default_ai">
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources>
+			<weapon key="hd_exo44_walker_mk3_mg.weapon" /><!--践踏者-->
+			<weapon key="hd_exo44_walker_mk3_missile.weapon" /><!--践踏者-->
+		</resources>
+	</soldier> 
+
+	<soldier name="exo48_mk3" spawn_score="0.0" copy_from="default_ai">
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources>
+			<weapon key="hd_exo48_obsidian_mk3_cannon.weapon" /><!--黑曜石-->
+			<weapon key="hd_exo48_obsidian_mk3_cannon_main.weapon" /><!--黑曜石-->
+		</resources>
+	</soldier> 
+
+	<soldier name="exo51_mk3" spawn_score="0.0" copy_from="default_ai">
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources>
+			<weapon key="hd_exo51_lumberer_mk3_flame.weapon" /><!--重步者-->
+			<weapon key="hd_exo51_lumberer_mk3_cannon.weapon" /><!--重步者-->
+		</resources>
+	</soldier> 
+	<!-- 自动炮塔 -->
+	<soldier name="amg_11_mk3_hd" spawn_score="0.0" >
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources>
+			<weapon key="hd_amg_11_mk3.weapon" /><!--机枪-->
+			<carry_item key="general_vest_300" /><!--护甲-->
+		</resources>
+		<ai filename="hd_amg11.ai" />
+		<!-- <character filename="hd_amg11.character"/> -->
+		<character filename="hd_amg11.character"/>
+		<model filename="null_body.xml" />
+
+		<item_class_existence_config>
+			<!-- main -->
+			<item_class_existence class="weapon" slot="0" probability="1" />
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="0" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="1" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="0" />
+		</item_class_existence_config>
+
+		<attribute_config class="rp"><attribute weight="1" min="100.0" max="100.0" />
+		</attribute_config>
+
+		<attribute_config class="xp"><attribute weight="1.0" min="1" max="1" />
+		</attribute_config>
+	</soldier> 
+	<soldier name="arx_34_mk3_hd" spawn_score="0.0" >
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources>
+			<weapon key="hd_arx_34_mk3.weapon" /><!--轨道炮-->
+			<carry_item key="general_vest_300" /><!--300层护甲-->
+		</resources>
+		<ai filename="hd_amg11.ai" >
+			<parameter class="accuracy_offset" value="1.0" />
+		</ai>
+		<!-- <character filename="hd_amg11.character"/> -->
+		<character filename="hd_amg11.character"/>
+		<model filename="null_body.xml" />
+
+		<item_class_existence_config>
+			<!-- main -->
+			<item_class_existence class="weapon" slot="0" probability="1" />
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="0" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="1" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="0" />
+		</item_class_existence_config>
+
+		<attribute_config class="rp"><attribute weight="1" min="100.0" max="100.0" />
+		</attribute_config>
+
+		<attribute_config class="xp"><attribute weight="1.0" min="1" max="1" />
+		</attribute_config>
+	</soldier> 
+
+	<soldier name="test" spawn_score="0.0" copy_from="base">
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="test.resources" />
+		<resources file="common_loot_rare.resources" />
+	</soldier> 
+
+	<soldier name="acg_weapon" spawn_score="0.0" copy_from="base">
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="acg_player.resources" >
+			<projectile key="acg_amg_11_mk3_call.projectile" enabled="0" /><!--自动机枪炮台-->
+			<projectile key="acg_arx_34_mk3_call.projectile" enabled="0" /><!--自动轨道炮炮台-->
+		</resources>
+	</soldier> 
+	<soldier name="token" spawn_score="0.0" copy_from="base">
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="_token.resources" />
+	</soldier> 
+	<soldier name="acg_toki_hd" spawn_score="0.0" >
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources>
+			<weapon key="acg_exo_toki.weapon" /><!---->
+			<weapon key="acg_exo_toki_doublefire.weapon" /><!---->
+			<weapon key="acg_exo_toki_railgun.weapon" /><!---->
+			<carry_item key="general_vest_300" /><!--300层护甲-->
+		</resources>
+		<ai filename="acg_toki.ai" >
+			<parameter class="accuracy_offset" value="1.0" />
+		</ai>
+		<character filename="acg_toki.character"/>
+		<model filename="toki_abi_eshuh.xml" />
+		<model filename="toki_abi_eshuh_ex.xml" />
+
+		<item_class_existence_config>
+			<!-- main -->
+			<item_class_existence class="weapon" slot="0" probability="0.6" />
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="1" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="1" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="0" />
+		</item_class_existence_config>
+
+		<attribute_config class="rp"><attribute weight="1" min="100.0" max="100.0" />
+		</attribute_config>
+
+		<attribute_config class="xp"><attribute weight="500.0" min="1" max="1" />
+		</attribute_config>
+	</soldier> 
+	<soldier name="jetpack_ai" spawn_score="0.0" >
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="hd_divers.resources" >
+			<weapon key="hd_side_jetpack_ai.weapon" />
+			<weapon key="hd_exp_obliterator_grenade_launcher_ai.weapon" enabled="0"/>
+			<weapon key="hd_exp_m25_rumbler_ai.weapon" enabled="0" />
+			<weapon key="hd_exp_ac22_dum_dum_ai.weapon" enabled="0"/>
+			<weapon key="hd_ai_eta17_mk3.weapon" enabled="0"/>
+			<weapon key="hd_ai_mls4x_commando_mk3.weapon" enabled="0"/>
+			<weapon key="hd_ai_rl112_recoilless_rifle_mk3.weapon" enabled="0"/>
+			<weapon key="hd_sup_md98_injector.weapon" enabled="0"/>
+		</resources>
+		<model filename="hdivers_black_ops.xml" />
+		<models file="hd_base.models" />
+		<character filename="helldivers_default_chat.character" />
+		<ai filename="default_super_earth.ai" />
+
+		<item_class_existence_config>
+			<!-- main -->
+			<item_class_existence class="weapon" slot="0" probability="1" />
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="1" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="1" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="0" />
+		</item_class_existence_config>
+
+		<attribute_config class="rp"><attribute weight="1" min="100.0" max="100.0" />
+		</attribute_config>
+
+		<attribute_config class="xp"><attribute weight="500.0" min="1" max="1" />
+		</attribute_config>
+	</soldier> 
+	<soldier name="rabbit" spawn_score="0.01" >
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources  >
+			<weapon key="hd_explosive_bunny.weapon" />
+			<carry_item key="general_vest_8" />
+		</resources>
+		<model filename="hd_explosive_bunny.xml" />
+		<character filename="hd_rabbit_state.character" />
+		<ai filename="cyborgs_hound.ai" />
+
+		<item_class_existence_config>
+			<!-- main -->
+			<item_class_existence class="weapon" slot="0" probability="1" />
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="1" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="1" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="0" />
+		</item_class_existence_config>
+
+		<attribute_config class="rp"><attribute weight="1" min="100.0" max="100.0" />
+		</attribute_config>
+
+		<attribute_config class="xp"><attribute weight="500.0" min="1" max="1" />
+		</attribute_config>
+	</soldier> 
+</faction>

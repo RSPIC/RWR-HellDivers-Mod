@@ -254,7 +254,61 @@ particle_system car_slide_up_crash
 	}
 
 }
-
+particle_system car_smoke
+{
+	quota 500
+	material rx1_smoke
+	particle_width 0.8
+	particle_height 0.8
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Box
+	{
+		angle 60
+		colour 0.7 0.7 0.7 0
+		direction 1 0 0
+		emission_rate 50
+		position 0 0 0
+		velocity_min 1
+		velocity_max 2
+		time_to_live_min 5
+		time_to_live_max 7
+		duration 0
+		depth 0.1
+		width 5
+		height 5
+	}
+	affector Scaler
+	{
+		rate 2.3
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	-45
+		rotation_speed_range_end	45
+		rotation_range_start	-30
+		rotation_range_end	30
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.8 0.8 0.8 0.4
+		time1 0.7
+		colour1 0.6 0.6 0.622 0.05
+		time2 1
+		colour2 1 1 1 0
+	}
+	affector LinearForce{
+		force_vector 1 0.5 -0.5
+		force_application add
+	}
+}
 particle_system car_health_front_light
 {
 	quota 50

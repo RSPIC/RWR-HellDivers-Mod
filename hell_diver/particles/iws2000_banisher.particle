@@ -84,35 +84,30 @@ particle_system crescent_smoke_impact		//月牙冲击烟雾
 
 	emitter Point 
 	{
-		angle 45
-		colour 0.5 0.5 0.5 0.5
+		angle 30
+		colour 0 0 0 0
 		direction 0 1 0
-		emission_rate 20
+		emission_rate 100
 		position 0 -0.2 0
 		velocity -3.5
 		velocity_min -2 
 		velocity_max -6
-		time_to_live 1.5
-		time_to_live_min 1
-		time_to_live_max 1.3
+		time_to_live_min 0.5
+		time_to_live_max 1.0
 		duration 0.1
 	}
-	
-	affector ColourFader2
+	affector ColourInterpolator
 	{
-		red1	 0.2
-		green1  0.2
-		blue1	0.2
-		alpha1	0
-		red2	 -5
-		green2  -5
-		blue2	-5
-		alpha2	-5
-		state_change 0.6
+		time0 0
+		colour0 1 1 1 0.5
+		time1 0.4
+		colour1 0.5 0.5 0.5 0.5
+		time2 1
+		colour2 0 0 0 0
 	}
 	affector Scaler
 	{
-		rate 0.7
+		rate 1
 	}
 	
 	affector LinearForce

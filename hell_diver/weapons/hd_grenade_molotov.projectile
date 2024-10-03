@@ -20,7 +20,7 @@ drop_count_factor_on_player_death="0"
 >
     <collision class="sticky" />
     <result class="spawn" instance_class="grenade" instance_key="hd_grenade_molotov_damage.projectile" 
-    min_amount="100" max_amount="100" offset="0 4.0 0" position_spread="2 -8" direction_spread="0.0 0.0" />   
+    min_amount="100" max_amount="100" offset="0 4.0 0" position_spread="5 -8" direction_spread="0.0 0.0" />   
 	<trigger class="impact" />	
 		<!--
 			offset"x y z 生成位置偏差"

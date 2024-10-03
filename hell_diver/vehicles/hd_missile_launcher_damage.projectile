@@ -9,7 +9,7 @@ on_ground_up="0 1 0"
 radius="0.3"
 >
 	<result class="blast" radius="3.8" damage="20" push="0.4" decal="0"
-	damage_origin_vehicle="0" make_vehicle_hit_sound="0" character_state="wound"/>
+	damage_origin_vehicle="0" make_vehicle_hit_sound="0" character_state="unwound" faction_compare="not_equal"/>
 	<trigger class="time" time_to_live="0" />	
     <rotation class="random" />
 	<model mesh_filename="" />

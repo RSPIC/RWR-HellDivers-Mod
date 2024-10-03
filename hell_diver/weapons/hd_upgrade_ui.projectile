@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<projectiles> 
+<!-- supply_ex_box.resources 文件注册补给箱军械库 -->
+<projectile 
+file="_ui.projectile_base"
+name="[8研发点] 120mm高爆弹幕战略呼叫权[代码：→→↓←→↓]" 
+key="upgrade_ui_stratagem.target:hd_offensive_orbital_120mm_he_barrage_call.cost:08.projectile" 
+> 
+    <hud_icon filename="hd_orbital_120mm.png" /> 
+</projectile>
+<projectile 
+file="_ui.projectile_base"
+name="[12研发点] 380mm高爆弹幕战略呼叫权[代码：→↓↑↑←↓↓]" 
+key="upgrade_ui_stratagem.target:hd_offensive_orbital_380mm_he_barrage_call.cost:12.projectile" 
+> 
+    <hud_icon filename="hd_orbital_380mm.png" /> 
+</projectile>
+</projectiles>
+
+
+

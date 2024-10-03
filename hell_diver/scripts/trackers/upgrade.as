@@ -67,7 +67,11 @@ class upgrade : Tracker{
 
     }
     void writeUpgradeFile(string name,string TagName,XmlElement@ newXml){
-        string sid = g_playerInfoBuck.getSidByName(name);
+        string sid = g_playerInfoBuck.getSidByName(m_metagame,name);
+        if(sid == ""){
+            _report(m_metagame,"兑换失败，请截图反馈此问题/ upgrade.as writeUpgradeFile()");
+            return;
+        }
         XmlElement@ allInfo = XmlElement(readPlayerStashInfo(sid));
         if(allInfo is null){
             _log("allInfo is null, in writeUpgradeFile");
@@ -184,6 +188,10 @@ class upgrade : Tracker{
             if(itemKey.find("_weapon") > 0 ){
                 handleHdWeaponUpgradeEvent(itemKey,name);
                 deleteItemInBackpack(m_metagame,characterId,"weapon",itemKey);
+            }
+            if(itemKey.find("_stratagem") > 0 ){
+                handleHdProjectileUpgradeEvent(itemKey,name);
+                deleteItemInBackpack(m_metagame,characterId,"projectile",itemKey);
             }
         }
     }
@@ -361,6 +369,74 @@ class upgrade : Tracker{
                         checkTime--;
                     }
                     writeUpgradeFile(name,"weapons",newXml);
+                    thePlayer.openStash();
+                    isOwn = true;
+                }
+            }
+            if(isOwn){
+                
+            }
+        }else{
+            _report(m_metagame,"cost 提取错误");
+            return;
+        }
+    }
+    // --------------------------------------------
+    protected void handleHdProjectileUpgradeEvent(string itemKey,string name) {
+        string subStr = getCutKey(itemKey,"cost:");
+        if(isNumeric(subStr)){
+            int cost = parseInt(subStr);
+            const XmlElement@ info = readUpgradeFile(name,"stratagems");
+            if(info is null){return;}
+            array<const XmlElement@> stratagems = info.getChilds();
+            _log("PrintTest(readUpgradeFile(name,'stratagems')):"+info.toString());
+            string stratagemKey = getCutKey(itemKey,"target:");
+            // stratagemKey = stratagemKey + ".projectile";
+            bool isBuy = false;
+            bool isOwn = false;
+            for(uint i=0; i<stratagems.size(); ++i){
+                const XmlElement@ stratagem = stratagems[i];
+                if(stratagem is null){continue;}
+                string key = stratagem.getStringAttribute("key");
+                if(key == stratagemKey){
+                    isBuy = true;
+                    int pid = g_playerInfoBuck.getPidByName(name);
+                    _notify(m_metagame,pid,"已拥有该战备");
+                    int cid = g_playerInfoBuck.getCidByName(name);
+                    // addItemInBackpack(m_metagame,cid,"projectile",key);
+                    isOwn = true;
+                }
+            }
+            if(!isBuy){
+                string sid = g_playerInfoBuck.getSidByName(name);
+                playerStashInfo@ thePlayer = playerStashInfo(m_metagame,sid,name);
+                array<XmlElement@> m_deleteObjects = {
+                    getStashXmlElement("samples_acg.carry_item","carry_item",cost)
+                };
+                array<XmlElement@> m_getObjects = {
+                    getStashXmlElement(stratagemKey,"projectile",1)
+                };
+                if(!thePlayer.isOpen()){
+                    thePlayer.openStash();
+                }
+                if(thePlayer.exchangeItems(m_deleteObjects,m_getObjects)){
+                    int pid = g_playerInfoBuck.getPidByName(name);
+                    _notify(m_metagame,pid,"已研发该战备");
+                    // int cid = g_playerInfoBuck.getCidByName(name);
+                    // addItemInBackpack(m_metagame,cid,"weapon",weaponKey);
+
+                    XmlElement newXml("stratagem");
+                        newXml.setStringAttribute("key",stratagemKey);
+                        newXml.setStringAttribute("type","projectile");
+                    int checkTime = 3;
+                    while(checkTime > 0){
+                        if(itemKey.find("preset"+checkTime) >= 0){
+                            string presetKey = getCutKey(itemKey,"preset"+checkTime+":");
+                            newXml.setStringAttribute("preset"+checkTime+":",presetKey);
+                        }                      
+                        checkTime--;
+                    }
+                    writeUpgradeFile(name,"stratagems",newXml);
                     thePlayer.openStash();
                     isOwn = true;
                 }

@@ -81,7 +81,22 @@
 	</model>
 	<model filename="acg_incomparable.xml"><!--无比--><requirement class="weapon" slot="0" key="re_acg_incomparable_skill.weapon"/>
 	</model>
-
+	<model filename="acg_sinon.xml"><!--诗乃--><requirement class="weapon" slot="0" key="acg_hecate.weapon"/>
+	</model>
+	<model filename="acg_sinon.xml"><!--诗乃--><requirement class="weapon" slot="0" key="re_acg_hecate.weapon"/>
+	</model>
+	<model filename="acg_rumi.xml"><!--露米--><requirement class="weapon" slot="0" key="acg_rumi.weapon"/>
+	</model>
+	<model filename="acg_rumi.xml"><!--露米--><requirement class="weapon" slot="0" key="re_acg_rumi.weapon"/>
+	</model>
+	<model filename="acg_rubyrose.xml"><!--RubyRose 新月玫瑰--><requirement class="weapon" slot="0" key="acg_ruby_rose_sniper.weapon"/>
+	</model>
+	<model filename="acg_rubyrose.xml"><!--RubyRose 新月玫瑰--><requirement class="weapon" slot="0" key="re_acg_ruby_rose_sniper.weapon"/>
+	</model>
+	<model filename="acg_rubyrose.xml"><!--RubyRose 新月玫瑰--><requirement class="weapon" slot="0" key="acg_ruby_rose_scythe.weapon"/>
+	</model>
+	<model filename="acg_rubyrose.xml"><!--RubyRose 新月玫瑰--><requirement class="weapon" slot="0" key="re_acg_ruby_rose_scythe.weapon"/>
+	</model>
 <!-- 明日方舟 -->
 	<model filename="acg_fiammetta.xml"> <!--菲娅梅塔 by Gandaruvu807--><requirement class="weapon" slot="0" key="acg_fiammetta_skill.weapon"/>
 	</model>
@@ -150,14 +165,19 @@
 	</model>
 	<model filename="acg_reisenu_ex.xml"><!--铃仙--><requirement class="weapon" slot="0" key="re_acg_reisenu_c.weapon"/>
 	</model>
-	<model filename="acg_rubyrose.xml"><!--RubyRose 新月玫瑰--><requirement class="weapon" slot="0" key="acg_ruby_rose_sniper.weapon"/>
+	<model filename="acg_izayoi_sakuya.xml"><!--十六夜咲夜--><requirement class="weapon" slot="0" key="acg_izayoi_sakuya_i.weapon"/>
 	</model>
-	<model filename="acg_rubyrose.xml"><!--RubyRose 新月玫瑰--><requirement class="weapon" slot="0" key="re_acg_ruby_rose_sniper.weapon"/>
+	<model filename="acg_izayoi_sakuya.xml"><!--十六夜咲夜--><requirement class="weapon" slot="0" key="acg_izayoi_sakuya_ii.weapon"/>
 	</model>
-	<model filename="acg_rubyrose.xml"><!--RubyRose 新月玫瑰--><requirement class="weapon" slot="0" key="acg_ruby_rose_scythe.weapon"/>
+	<model filename="acg_izayoi_sakuya.xml"><!--十六夜咲夜--><requirement class="weapon" slot="0" key="acg_izayoi_sakuya_road_roller.weapon"/>
 	</model>
-	<model filename="acg_rubyrose.xml"><!--RubyRose 新月玫瑰--><requirement class="weapon" slot="0" key="re_acg_ruby_rose_scythe.weapon"/>
+	<model filename="acg_izayoi_sakuya.xml"><!--十六夜咲夜--><requirement class="weapon" slot="0" key="re_acg_izayoi_sakuya_i.weapon"/>
 	</model>
+	<model filename="acg_izayoi_sakuya.xml"><!--十六夜咲夜--><requirement class="weapon" slot="0" key="re_acg_izayoi_sakuya_ii.weapon"/>
+	</model>
+	<model filename="acg_izayoi_sakuya.xml"><!--十六夜咲夜--><requirement class="weapon" slot="0" key="re_acg_izayoi_sakuya_road_roller.weapon"/>
+	</model>
+
 <!-- 舰队collection -->
 	<model filename="acg_shigure_expanding.xml" > <!--时雨改二--><requirement class="weapon" slot="0" key="acg_shigure_127mm.weapon"/>
 	</model>
@@ -228,6 +248,22 @@
 	</model>
 	<model filename="acg_takanashi_hoshino.xml"><!--小鸟游星野--><requirement class="weapon" slot="0" key="re_acg_takanashi_hoshino.weapon"/>
 	</model>
+	<model filename="acg_takanashi_hoshino_battle.xml"><!--小鸟游星野 临战--><requirement class="weapon" slot="0" key="acg_takanashi_hoshino_battle.weapon"/>
+	</model>
+	<model filename="acg_takanashi_hoshino_battle.xml"><!--小鸟游星野 临战--><requirement class="weapon" slot="0" key="re_acg_takanashi_hoshino_battle.weapon"/>
+	</model>
+	<model filename="acg_takanashi_hoshino_shield.xml"><!--小鸟游星野 临战--><requirement class="weapon" slot="0" key="acg_takanashi_hoshino_battle_shb.weapon"/>
+	</model>
+	<model filename="acg_takanashi_hoshino_shield.xml"><!--小鸟游星野 临战--><requirement class="weapon" slot="0" key="re_acg_takanashi_hoshino_battle_shb.weapon"/>
+	</model>
+	<model filename="acg_takanashi_hoshino_shield.xml"><!--小鸟游星野 临战--><requirement class="weapon" slot="1" key="acg_takanashi_hoshino_battle_side_pistol_shield.weapon"/>
+	</model>
+	<model filename="acg_takanashi_hoshino_shield.xml"><!--小鸟游星野 临战--><requirement class="weapon" slot="1" key="re_acg_takanashi_hoshino_battle_side_pistol_shield.weapon"/>
+	</model>
+	<model filename="acg_takanashi_hoshino_battle.xml"><!--小鸟游星野 临战--><requirement class="weapon" slot="1" key="acg_takanashi_hoshino_battle_side_pistol.weapon"/>
+	</model>
+	<model filename="acg_takanashi_hoshino_battle.xml"><!--小鸟游星野 临战--><requirement class="weapon" slot="1" key="re_acg_takanashi_hoshino_battle_side_pistol.weapon"/>
+	</model>
 	<model filename="acg_miyu.xml"><!--霞泽美游--><requirement class="weapon" slot="0" key="acg_miyu.weapon"/>
 	</model>
 	<model filename="acg_miyu.xml"><!--霞泽美游--><requirement class="weapon" slot="0" key="re_acg_miyu.weapon"/>
@@ -292,6 +328,14 @@
 	</model>
 	<model filename="acg_otogi.xml"><!--音葵--><requirement class="weapon" slot="0" key="re_acg_otogi_handgun.weapon"/>
 	</model>
+	<model filename="acg_hayase_yuuka_weaponed.xml"><!--优香--><requirement class="weapon" slot="0" key="acg_hayase_yuuka.weapon"/>
+	</model>
+	<model filename="acg_hayase_yuuka_weaponed.xml"><!--优香--><requirement class="weapon" slot="0" key="re_acg_hayase_yuuka.weapon"/>
+	</model>
+	<model filename="acg_ushio_noa.xml"><!--诺亚--><requirement class="weapon" slot="1" key="acg_ushio_noa.weapon"/>
+	</model>
+	<model filename="acg_ushio_noa.xml"><!--诺亚--><requirement class="weapon" slot="1" key="re_acg_ushio_noa.weapon"/>
+	</model>
 
 <!-- 少女前线 -->
 	<model filename="acg_mg4_703.xml"><!--MG4机枪--><requirement class="weapon" slot="0" key="acg_mg4td_ap.weapon"/>
@@ -353,7 +397,14 @@
 	<model filename="exo_tareus_nohand.xml" > <!--塔亚柔斯 机甲--><requirement class="weapon" slot="0" key="acg_exo_tareus_left.weapon"/>
 	</model>
 <!-- 灰烬战线 -->
-	
+	<model filename="acg_bf109e.xml" > <!--BF109E--><requirement class="weapon" slot="0" key="acg_bf109.weapon"/>
+	</model>
+	<model filename="acg_bf109e.xml" > <!--BF109E--><requirement class="weapon" slot="0" key="re_acg_bf109.weapon"/>
+	</model>
+	<model filename="acg_bf109e_normal.xml" > <!--BF109E--><requirement class="weapon" slot="0" key="acg_bf109_sword.weapon"/>
+	</model>
+	<model filename="acg_bf109e_normal.xml" > <!--BF109E--><requirement class="weapon" slot="0" key="re_acg_bf109_sword.weapon"/>
+	</model>
 
 
 

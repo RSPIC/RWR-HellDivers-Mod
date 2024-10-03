@@ -18,6 +18,11 @@
     <weapon key="re_acg_exo_toki_railgun.weapon" /><!--飞鸟马时 动力装甲-->
     <weapon key="re_acg_exo_toki_skill.weapon" /><!--飞鸟马时 动力装甲-->
     <!-- MK5 Unsold-->
+    <weapon key="acg_izayoi_sakuya_i.weapon" enabled="0"/> <!--十六夜咲夜-->
+    <weapon key="re_acg_izayoi_sakuya_i.weapon" /> <!--十六夜咲夜-->
+    <weapon key="re_acg_izayoi_sakuya_ii.weapon" /> <!--十六夜咲夜-->
+    <weapon key="re_acg_izayoi_sakuya_road_roller.weapon" /> <!--十六夜咲夜-->
+
     <weapon key="ex_vergil_judgment_cut.weapon" enabled="0"/> <!--维吉尔-->
     <weapon key="re_ex_vergil_judgment_cut.weapon" /> <!--维吉尔 次元斩-->
     <weapon key="re_ex_vergil_voidknife_realm.weapon" /> <!--维吉尔 虚空刀界-->
@@ -51,6 +56,9 @@
     <weapon key="re_acg_elaina_wand_laser.weapon" /> <!--伊蕾娜 法杖-->
     <weapon key="re_acg_elaina_wand_cyclone.weapon" /> <!--伊蕾娜 法杖-->
     <!-- MK4 Unsold-->
+    <weapon key="acg_hayase_yuuka.weapon" enabled="0"/> <!--优香-->
+    <weapon key="re_acg_hayase_yuuka.weapon" /> <!--优香-->
+
     <weapon key="acg_incomparable.weapon" enabled="0"/> <!--无比-->
     <weapon key="re_acg_incomparable.weapon" /> <!--无比-->
     <weapon key="re_acg_incomparable_skill.weapon" /> <!--无比-->
@@ -105,6 +113,22 @@
     <weapon key="re_acg_yileina_wand.weapon" /><!--伊蕾娜-->
     <weapon key="re_acg_yileina_wand_rain.weapon" /><!--伊蕾娜-->
     <!-- MK3 Unsold-->
+    <!-- MK3 Unsold-->
+    <weapon key="acg_bf109.weapon" enabled="0"/> <!--bf109-->
+    <weapon key="re_acg_bf109.weapon" /> <!--bf109-->
+    <weapon key="re_acg_bf109_sword.weapon" /> <!--bf109-->
+
+    <weapon key="acg_fade_red.weapon" enabled="0"/> <!--褪红-->
+    <weapon key="re_acg_fade_red.weapon" /> <!--褪红-->
+
+    <weapon key="acg_rumi.weapon" enabled="0"/> <!--露米-->
+    <weapon key="re_acg_rumi.weapon" /> <!--露米-->
+
+    <weapon key="ex_space_marines.weapon" enabled="0"/> <!--星际战士 爆矢枪-->
+    <weapon key="re_ex_space_marines.weapon" /> <!--星际战士 爆矢枪-->
+    <weapon key="re_ex_space_marines_shield.weapon" /> <!--星际战士 爆矢枪-->
+    <weapon key="re_ex_space_marines_chainsaw.weapon" /> <!--星际战士 -->
+
     <weapon key="acg_takanashi_hoshino.weapon" enabled="0"/> <!--小鸟游星野-->
     <weapon key="re_acg_takanashi_hoshino.weapon" /> <!--小鸟游星野-->
     
@@ -148,6 +172,10 @@
     <weapon key="re_acg_amamiya_kokoro.weapon" /><!--双持冲锋枪 by keilsama-->
 
     <!-- MK2 5W-->
+    <weapon key="ex_heavy_infantry_morita.weapon"/><!--重装战士-->
+    <weapon key="re_ex_heavy_infantry_morita.weapon" /><!--重装战士-->
+    <weapon key="re_ex_heavy_infantry_morita_shield.weapon" /><!--重装战士-->
+
     <weapon key="acg_kemomimi.weapon" /><!--桃子酱（小狐狸）狐尾导弹-->
     <weapon key="re_acg_kemomimi.weapon" /><!--桃子酱（小狐狸）狐尾导弹-->
 
@@ -188,6 +216,12 @@
     <weapon key="re_acg_otogi_sniper.weapon" /><!--音葵-->
     <weapon key="re_acg_otogi_handgun.weapon" /><!--音葵-->
     <!-- MK1 2W-->
+    <weapon key="ex_typhoon.weapon" /><!--飓风-->
+    <weapon key="re_ex_typhoon.weapon" /><!--飓风-->
+
+    <weapon key="ex_heavy_infantry_morita_mk1.weapon" /><!--重装战士 步枪-->
+    <weapon key="re_ex_heavy_infantry_morita_mk1.weapon" /><!--重装战士 步枪-->
+
     <weapon key="acg_smg_strelka.weapon" /><!--冲锋枪 by kurumi-->
     <weapon key="re_acg_smg_strelka.weapon" /><!--冲锋枪 by kurumi-->
 
@@ -229,6 +263,12 @@
     <weapon key="ex_ra2_tanya.weapon" enabled="0"/><!--谭雅-->
     <weapon key="re_ex_ra2_tanya.weapon" /><!--谭雅-->
     <weapon key="re_ex_ra2_tanya_c4.weapon" /><!--谭雅-->
+
+    <weapon key="acg_ushio_noa.weapon"/><!--诺亚-->
+    <weapon key="re_acg_ushio_noa.weapon" /><!--诺亚-->
+
+    <weapon key="acg_hecate.weapon" /><!--黑卡蒂-->
+    <weapon key="re_acg_hecate.weapon" /><!--黑卡蒂-->
 
 <!--投掷物/信标-->
     <projectile key="acg_ex_box.projectile" /><!--Ex 补给箱-->

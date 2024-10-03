@@ -204,6 +204,15 @@ particle_system flak36_hit_smoke_dark_smoke
 		rotation_range_end	360
 	}
     affector Scaler{rate 1.5}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.7 0.7 0.7 1
+		time1 0.5
+		colour1 0.7 0.7 0.7 0.5
+		time2 1
+		colour2 0.5 0.5 0.5 0
+	}
 }
 particle_system flak36_hit_smoke_explosion_smoke		
 {
@@ -293,16 +302,14 @@ particle_system flak36_hit_cross_blast
 		time_to_live 0.6
 		duration 0.1
     }
-        affector ColourFader2{
-		red1	-0.3
-		green1  -0.3
-		blue1	-0.3
-		alpha1	-0.3
-		red2	 0
-		green2  0
-		blue2	0
-		alpha2	0
-		state_change 0
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.7 0.7 0.7 1
+		time1 0.5
+		colour1 0.7 0.7 0.7 0.5
+		time2 1
+		colour2 0.5 0.5 0.5 0
 	}
 }
 particle_system flak36_activated_trail_smoke

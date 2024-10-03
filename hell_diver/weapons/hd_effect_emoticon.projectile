@@ -13,7 +13,7 @@ can_be_disarmed="0"
 >
 	<result class="hit" kill_probability="0" 
 		kill_decay_start_time="0" kill_decay_end_time="0" />
-    <trigger class="time" time_to_live="0" />
+    <trigger class="time" time_to_live="0.3" />
     <rotation class="motion" />
 	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>	
 	
@@ -45,7 +45,7 @@ can_be_disarmed="0"
 >
 	<result class="hit" kill_probability="0" 
 		kill_decay_start_time="0" kill_decay_end_time="0" />
-    <trigger class="time" time_to_live="0" />
+    <trigger class="time" time_to_live="0.3" />
     <rotation class="motion" />
 	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>	
 	
@@ -77,7 +77,7 @@ can_be_disarmed="0"
 >
 	<result class="hit" kill_probability="0" 
 		kill_decay_start_time="0" kill_decay_end_time="0" />
-    <trigger class="time" time_to_live="0" />
+    <trigger class="time" time_to_live="0.3" />
     <rotation class="motion" />
 	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>	
 	
@@ -109,7 +109,7 @@ can_be_disarmed="0"
 >
 	<result class="hit" kill_probability="0" 
 		kill_decay_start_time="0" kill_decay_end_time="0" />
-    <trigger class="time" time_to_live="0" />
+    <trigger class="time" time_to_live="0.3" />
     <rotation class="motion" />
 	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>	
 	
@@ -141,7 +141,7 @@ can_be_disarmed="0"
 >
 	<result class="hit" kill_probability="0" 
 		kill_decay_start_time="0" kill_decay_end_time="0" />
-    <trigger class="time" time_to_live="0" />
+    <trigger class="time" time_to_live="0.3" />
     <rotation class="motion" />
 	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>	
 	

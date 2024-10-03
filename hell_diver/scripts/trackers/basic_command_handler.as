@@ -74,6 +74,7 @@ class BasicCommandHandler : Tracker {
 		// for the most part, chat events aren't commands, so check that first 
 		if(checkCommand(message, "dead")) {
 			const XmlElement@ info = getPlayerInfo(m_metagame, senderId);
+			if(info is null){return;}
 			int characterId = info.getIntAttribute("character_id");
 				string command =
 					"<command class='update_character'" +

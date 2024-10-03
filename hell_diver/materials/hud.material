@@ -252,7 +252,8 @@ material ChatLogChannel {
 			fog_override true
 			scene_blend alpha_blend
 			texture_unit {
-				texture chatlog_channel.png
+				// texture chatlog_channel.png
+				texture chatbubbleborder.png
 				tex_address_mode clamp
 			}
 			texture_unit {

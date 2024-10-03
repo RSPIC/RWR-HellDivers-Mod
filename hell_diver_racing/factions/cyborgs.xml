@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="utf-8"?>
+<faction 
+	name="Cyborgs" 
+	color="1 0 0" 
+	firstnames_file="cyborgs_firstnames.txt" 
+	lastnames_file="cyborgs_lastnames.txt" 
+	chat_icon_filename="cyborgs_chat_icon.png"  
+	chat_icon_filename_supporter="cyborgs_chat_icon.png" 
+	chat_icon_commander_filename="cyborgs_chat_icon_commander.png" 
+	campaign_completion_icon_filename="campaign_win_2.png" 
+	radio_queue_size="3"
+	supporter_high_skinpack_xp="100.0">		<!--icon : 64X64-->
+	
+	<rank xp="0.0" name="Private">
+		<hud_icon filename="hud_rank0.png" />
+	</rank>  
+	<rank xp="0.05" name="Private 1st Class">
+		<hud_icon filename="hud_rank1.png" />    
+	</rank>
+
+
+	<!-- player group 玩家属性-->
+	<soldier name="default" spawn_score="0.0">
+		<character filename="cyborgs_squadleader_state.character"> <!-- cyborgs_default_chat 引用 cyborgs_default_base-->
+			<!-- <parameter class="walking_steer_amount" value="1.2" />	
+			<parameter class="running_steer_amount" value="1.2" />	 -->
+		</character>
+		<!-- <ai filename="default_cyborgs.ai" /> -->
+		<ai filename="cyborgs_squadleader.ai" />
+		
+		<models file="cyborgs_default.models" />
+		<model file="cyborgs_squadleader.xml" />
+		<!-- <model file="hdivers_ceremonial.xml" /> -->
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="common.resources" />
+		<resources file="cyborgs_common.resources" />
+		<resources file="cyborgs_all.resources" />
+		
+		
+		<item_class_existence_config>
+			<!-- main -->
+			<item_class_existence class="weapon" slot="0" probability="1" />
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="1" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="1" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="0" />
+		</item_class_existence_config>
+
+		<attribute_config class="rp">
+			<attribute weight="0.3" min="80.0" max="300.0" />
+			<attribute weight="0.7" min="0.0" max="0.0" />
+		</attribute_config>
+
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="0.0" max="0.45" />
+		</attribute_config>
+	</soldier>
+	
+	<!-- default ai group 基础AI组-->
+	<soldier name="default_ai" spawn_score="0.0" >
+		<character filename="cyborgs_default_chat.character"> <!-- cyborgs_default_chat 引用 cyborgs_default_base-->
+		</character>
+		<ai filename="default_cyborgs.ai" />
+
+		<models file="cyborgs_default.models" />		
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="cyborgs_common.resources" clear_carry_items="1"/>
+		<resources file="common.resources" />
+
+		<item_class_existence_config>
+			<!-- main -->
+			<item_class_existence class="weapon" slot="0" probability="1" />
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="1" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="1" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="0.15" />
+		</item_class_existence_config>
+
+		<attribute_config class="rp">
+			<attribute weight="0.3" min="10000.0" max="10000.0" />
+			<attribute weight="0.7" min="10000.0" max="10000.0" />
+		</attribute_config>
+
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="0.0" max="0.45" />
+		</attribute_config>
+	</soldier>
+  
+	<!-- supply box group -->
+<!-- Scout -->
+	<!-- “班长”战士 -->
+	<soldier name="Squadleader" spawn_score="1.5" copy_from="default_ai" >
+		<!--基础侦察兵 配置榴弹发射器 频次低 较少近战 发现敌人第一时间拉警报-->
+		<character filename="cyborgs_squadleader_state.character">	<!-- cyborgs_squadleader_state 引用 cyborgs_cyborgs_default_chat 引用 cyborgs_default_base-->
+			
+		</character>
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="cyborgs_common.resources" clear_carry_items="1" />
+		<resources>
+			<weapon key="cyborgs_squadleader_main_alert.weapon" />
+			<weapon key="cyborgs_squadleader_main_gl.weapon" />
+			<weapon key="cyborgs_squadleader_secondary_alert.weapon" />
+			
+			<projectile key="cyborgs_squadleader_alert_spawn.projectile"/>
+
+			<carry_item key="general_vest_25" /> 
+			<carry_item key="general_vest_30" /> 
+		</resources>
+		
+		<ai filename="cyborgs_squadleader.ai" /> <!-- squadleader.ai 引用 default_cyborgs.ai -->
+		
+		<model filename="cyborgs_squadleader.xml" />
+
+		<!-- low XP, likely to join player squad -->
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="2.0" max="2.0" />
+			<attribute weight="1.0" min="1.0" max="1.0" />
+			<attribute weight="1.0" min="3.0" max="3.0" />
+		</attribute_config>
+	</soldier> 
+	<!-- 军团士兵 -->
+	<soldier name="Legionnaire" spawn_score="0.8" copy_from="default_ai">
+		<character filename="cyborgs_legionnaire_state.character">	<!-- cyborgs_legionnaire_state 引用 cyborgs_cyborgs_default_chat 引用 cyborgs_default_base-->
+			
+		</character>
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="cyborgs_common.resources" clear_carry_items="1"/>
+		<resources>
+			<weapon key="cyborgs_legionnaire_main_alert.weapon" />
+			<weapon key="cyborgs_legionnaire_main_gl.weapon" />
+			<weapon key="cyborgs_legionnaire_secondary_alert.weapon" />
+			
+			<projectile key="cyborgs_legionnaire_alert_spawn.projectile"/>
+
+			<!-- 50~70层护甲 -->
+			<!-- 2~5层额外装甲 -->
+			<carry_item key="general_vest_50" /> 
+			<carry_item key="general_vest_60" /> 
+			<carry_item key="general_vest_70" /> 
+		</resources>
+		
+		<ai filename="cyborgs_legionnaire.ai" /> <!-- legionnaire.ai 引用 default_cyborgs.ai -->
+		
+		<model filename="cyborgs_legionnaire.xml" />
+		
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="2.0" max="2.0" />
+			<attribute weight="1.0" min="1.0" max="1.0" />
+			<attribute weight="1.0" min="3.0" max="3.0" />
+		</attribute_config>
+	</soldier>  
+	
+<!-- Infantry -->
+	<!-- 初始者 -->
+	<soldier name="Initiate" spawn_score="1.0" copy_from="default_ai">
+		<character filename="cyborgs_initiate_state.character">	<!-- cyborgs_initiate_state 引用 cyborgs_cyborgs_default_chat 引用 cyborgs_default_base-->
+			
+		</character>
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="cyborgs_common.resources" clear_carry_items="1"/>
+		<resources>
+			<weapon key="cyborgs_initiate_main.weapon" />
+			
+			<!-- 七层护甲 -->
+			<!-- 0-5层额外装甲 -->
+			<carry_item key="general_vest_7" /> 
+			<carry_item key="general_vest_8" /> 
+			<carry_item key="general_vest_9" /> 
+			<carry_item key="general_vest_10" /> 
+			<carry_item key="general_vest_11" /> 
+		</resources>
+		
+		<ai filename="cyborgs_hulk.ai" /> <!-- initiate.ai 引用 default_cyborgs.ai -->
+
+		<model file="cyborgs_initiate.xml" />
+		
+		<!-- low XP, likely to join player squad -->
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="0.0" max="0.05" />
+		</attribute_config>
+	</soldier> 	
+	<!-- 狂暴者 -->
+	<soldier name="Berserker" spawn_score="0.2" copy_from="default_ai">
+		<character filename="cyborgs_berserker_state.character">	<!-- cyborgs_berserker_state 引用 cyborgs_cyborgs_default_chat 引用 cyborgs_default_base-->
+			
+		</character>
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="cyborgs_common.resources" clear_carry_items="1" />
+		<resources>
+			<weapon key="cyborgs_berserker_main.weapon" />
+			<!-- <weapon key="cyborgs_berserker_sec_antitank.weapon" /> -->
+			
+			<carry_item key="vest_cyborgs_berserker_70" />
+			<carry_item key="vest_cyborgs_berserker_80" />
+			<carry_item key="vest_cyborgs_berserker_90" />
+			<carry_item key="vest_cyborgs_berserker_100" />
+		</resources>
+
+		<ai filename="cyborgs_berserker.ai" /> <!-- berserker.ai 引用 default_cyborgs.ai -->
+
+		<model file="cyborgs_berserker.xml" />
+		
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="0.0" max="0.05" />
+		</attribute_config>
+	</soldier>  
+	<!-- 复合人 -->
+	<soldier name="Comrade" spawn_score="1.0" copy_from="default_ai">
+		<character filename="cyborgs_comrade_state.character">	<!-- cyborgs_comrade_state 引用 cyborgs_cyborgs_default_chat 引用 cyborgs_default_base-->
+			
+		</character>
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="cyborgs_common.resources" clear_carry_items="1" />
+		<resources>
+				<weapon key="cyborgs_comrade_main.weapon" />
+				<weapon key="cyborgs_comrade_sec_antitank.weapon" />
+		
+				<carry_item key="general_vest_33" />
+				<carry_item key="general_vest_37" />
+				<carry_item key="general_vest_41" /> 
+		</resources>
+
+		<ai filename="cyborgs_comrade.ai" /> <!-- berserker.ai 引用 default_cyborgs.ai -->
+		
+		<model file="cyborgs_comrade.xml" />
+		
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="0.0" max="0.05" />
+		</attribute_config>
+	</soldier>  
+	<!-- 畸形人 -->
+	<soldier name="Grotesque" spawn_score="0.1" copy_from="default_ai">
+		<character filename="cyborgs_grotesque_state.character">	<!-- cyborgs_grotesque_state 引用 cyborgs_cyborgs_default_chat 引用 cyborgs_default_base-->
+			
+		</character>
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="cyborgs_common.resources" clear_carry_items="1" />
+		<resources>
+			<weapon key="cyborgs_grotesque_main.weapon" />
+			<!-- <weapon key="cyborgs_grotesque_sec_antitank.weapon" /> -->
+			
+			<carry_item key="vest_cyborgs_grotesque_90" />
+			<carry_item key="vest_cyborgs_grotesque_100" />
+			<carry_item key="vest_cyborgs_grotesque_110" />
+		</resources>
+
+		<ai filename="cyborgs_grotesque.ai" /> <!-- grotesque.ai 引用 default_cyborgs.ai -->
+		
+		<model file="cyborgs_grotesque.xml" />
+	
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="0.0" max="0.05" />
+		</attribute_config>
+	</soldier>
+	<!-- 磁暴步兵 -->
+	<soldier name="Tesla" spawn_score="0.5" copy_from="default_ai">
+		<character filename="cyborgs_tesla_state.character">	<!-- cyborgs_initiate_state 引用 cyborgs_cyborgs_default_chat 引用 cyborgs_default_base-->
+			
+		</character>
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="cyborgs_common.resources" clear_carry_items="1"/>
+		<resources>
+			<weapon key="cyborgs_tesla_main.weapon" />
+
+			<carry_item key="vest_cyborgs_tesla_100" /> 
+		</resources>
+		
+		<ai filename="cyborgs_hound.ai" /> <!-- initiate.ai 引用 default_cyborgs.ai -->
+
+		<model file="cyborgs_tesla.xml" />
+		
+		<!-- low XP, likely to join player squad -->
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="0.0" max="0.05" />
+		</attribute_config>
+	</soldier> 	   
+	<!-- 恐怖机器人 -->
+	<soldier name="TerrorDrone" spawn_score="0.2" copy_from="default_ai">
+		<character filename="cyborgs_terrordrone_state.character">	<!-- cyborgs_initiate_state 引用 cyborgs_cyborgs_default_chat 引用 cyborgs_default_base-->
+			
+		</character>
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="cyborgs_common.resources" clear_carry_items="1"/>
+		<resources>
+			<weapon key="cyborgs_terrordrone_main.weapon" />
+
+			<carry_item key="vest_stun_100" /> 
+		</resources>
+		
+		<ai filename="cyborgs_grotesque.ai" /> <!-- initiate.ai 引用 default_cyborgs.ai -->
+
+		<model file="cyborgs_terrordrone.xml" />
+		
+		<!-- low XP, likely to join player squad -->
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="0.0" max="0.05" />
+		</attribute_config>
+	</soldier> 	   
+   	<!-- 猎犬 -->
+	<soldier name="Hound" spawn_score="0.5" copy_from="default_ai">
+		<character filename="cyborgs_hound_state.character">	<!-- 独立文件 no chat -->
+		</character>
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="cyborgs_common.resources" clear_carry_items="1"/>
+		<resources>
+			<weapon key="cyborgs_hound_main.weapon" />
+			
+			<!-- 7层 -->
+			<!-- 0-3层额外装甲 -->
+			<carry_item key="general_vest_7" />
+			<carry_item key="general_vest_8" />
+			<carry_item key="general_vest_9" />
+			<carry_item key="general_vest_10" />
+		</resources>
+		
+		<ai filename="cyborgs_hound.ai" /> <!-- hound.ai 独立 -->
+
+		<model file="cyborgs_hound.xml" />
+		
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="0.0" max="0.05" />
+		</attribute_config>
+	</soldier>  
+   	<!-- 双足机甲  -->
+	<soldier name="88AT" spawn_score="0.15" copy_from="default_ai">
+		<character filename="cyborgs_88at_state.character">	
+		</character>
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="cyborgs_common.resources" clear_carry_items="1"/>
+		<resources>
+			<weapon key="cyborgs_88at_main.weapon" />
+
+			<carry_item key="general_vest_400" />
+		</resources>
+		
+		<ai filename="cyborgs_butcher.ai" /> 
+
+		<model file="cyborgs_88at.xml" />
+		
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="0.0" max="0.05" />
+		</attribute_config>
+		<item_class_existence_config>
+			<!-- main -->
+			<item_class_existence class="weapon" slot="0" probability="1" />
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="1" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="1" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="0.5" />
+		</item_class_existence_config>
+	</soldier>  
+	<!-- 屠夫 -->
+	<soldier name="Butcher" spawn_score="0.5" copy_from="default_ai">
+		<character filename="cyborgs_butcher_state.character">	<!-- cyborgs_butcher_state 引用 cyborgs_cyborgs_default_chat 引用 cyborgs_default_base-->
+			
+		</character>
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="cyborgs_common.resources" clear_carry_items="1"/>
+		<resources>
+			<weapon key="cyborgs_butcher_main.weapon" />
+			
+			<!-- 300层 -->
+			<carry_item key="vest_cyborgs_butcher_150" />
+			<carry_item key="vest_cyborgs_butcher_160" />
+			<carry_item key="vest_cyborgs_butcher_170" />
+			<carry_item key="vest_cyborgs_butcher_180" />
+		</resources>
+		
+		
+		<model file="cyborgs_butcher.xml" />
+
+		<ai filename="cyborgs_butcher.ai" /> <!-- butcher.ai 引用 default_cyborgs.ai -->
+
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="0.5" max="0.5" />
+		</attribute_config>
+
+		<item_class_existence_config>
+			<!-- main -->
+			<item_class_existence class="weapon" slot="0" probability="1" />
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="1" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="1" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="0.5" />
+		</item_class_existence_config>
+
+	</soldier>  
+	<soldier name="ButcherM" spawn_score="0.5" copy_from="default_ai"><!--血厚减速版本-->
+		<character filename="cyborgs_butcher_state.character">	<!-- cyborgs_butcher_state 引用 cyborgs_cyborgs_default_chat 引用 cyborgs_default_base-->
+			
+		</character>
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="cyborgs_common.resources" clear_carry_items="1"/>
+		<resources>
+			<weapon key="cyborgs_butcher_m_main.weapon" />
+			
+			<!-- 300层 -->
+			<carry_item key="general_vest_350" />
+		</resources>
+		
+		
+		<model file="cyborgs_butcher.xml" />
+
+		<ai filename="cyborgs_butcher.ai" /> <!-- butcher.ai 引用 default_cyborgs.ai -->
+
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="0.5" max="0.5" />
+		</attribute_config>
+
+		<item_class_existence_config>
+			<!-- main -->
+			<item_class_existence class="weapon" slot="0" probability="1" />
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="1" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="1" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="0.6" />
+		</item_class_existence_config>
+
+	</soldier>  
+	<!-- 生化兵 -->
+	<soldier name="Immolator" spawn_score="1.0" copy_from="default_ai">
+		<character filename="cyborgs_immolator_state.character">	<!-- cyborgs_immolator_state 引用 cyborgs_cyborgs_default_chat 引用 cyborgs_default_base-->
+			
+		</character>
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="cyborgs_common.resources" clear_carry_items="1" />
+		<resources>
+			<weapon key="cyborgs_immolator_main.weapon" />
+			
+			<!-- 25层护甲 -->
+			<!-- 0-15层额外装甲 -->
+			<carry_item key="general_vest_25" /> 
+			<carry_item key="general_vest_26" /> 
+			<carry_item key="general_vest_27" /> 
+			<carry_item key="general_vest_28" /> 
+			<carry_item key="general_vest_29" /> 
+			<carry_item key="general_vest_30" /> 
+			<carry_item key="general_vest_31" /> 
+			<carry_item key="general_vest_32" /> 
+			<carry_item key="general_vest_33" /> 
+			<carry_item key="general_vest_34" /> 
+			<carry_item key="general_vest_35" /> 
+			<carry_item key="general_vest_36" /> 
+			<carry_item key="general_vest_37" /> 
+			<carry_item key="general_vest_38" /> 
+			<carry_item key="general_vest_39" /> 
+			<carry_item key="general_vest_40" /> 
+		</resources>
+
+		<ai filename="cyborgs_immolator.ai" /> <!-- immolator.ai 引用 default_cyborgs.ai -->
+
+		<model file="cyborgs_immolator.xml" />
+		
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="0.0" max="0.05" />
+		</attribute_config>
+	</soldier>  
+    
+   
+<!-- Tank -->
+	<!-- 巨型者 -->
+	<!-- 300层无抗甲 -->
+	<soldier name="Hulk" spawn_score="0.1" copy_from="default_ai">
+		<character filename="cyborgs_hulk_state.character">	<!-- cyborgs_hulk_state 引用 cyborgs_cyborgs_default_chat 引用 cyborgs_default_base-->
+			
+		</character>
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="cyborgs_common.resources" clear_carry_items="1"  />
+		<resources>
+			<weapon key="cyborgs_hulk_main.weapon" />
+			<weapon key="cyborgs_hulk_sec_antitank.weapon" />
+			
+			<carry_item key="general_vest_200" />
+			<carry_item key="general_vest_220" />
+		</resources>
+		
+		<ai filename="cyborgs_hulk.ai" /> <!-- hulk.ai 引用 default_cyborgs.ai -->
+		
+		<model file="cyborgs_hulk.xml" />
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="2.0" max="2.0" />
+			<attribute weight="1.0" min="1.0" max="1.0" />
+			<attribute weight="1.0" min="3.0" max="3.0" />
+		</attribute_config>
+
+		<item_class_existence_config>
+			<!-- main -->
+			<item_class_existence class="weapon" slot="0" probability="1" />
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="1" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="1" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="0.5" />
+		</item_class_existence_config>
+	</soldier> 
+   
+<!-- Elite -->
+	<!-- 首领 -->
+	<soldier name="Warlord" spawn_score="0.05" copy_from="default_ai">
+		<character filename="cyborgs_hulk_state.character">	<!-- cyborgs_hulk_state 引用 cyborgs_cyborgs_default_chat 引用 cyborgs_default_base-->
+			
+		</character>
+
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources file="cyborgs_common.resources" clear_carry_items="1"/>
+		<resources>
+			<weapon key="cyborgs_warlord_main.weapon" />
+			<weapon key="cyborgs_warlord_sec_antitank.weapon" />
+
+			<carry_item key="vest_hvy_300" /> 
+		</resources>
+		
+		<ai filename="cyborgs_warlord.ai" /> <!-- warlord.ai 引用 default_cyborgs.ai -->
+		<model file="cyborgs_warlord.xml" />
+
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="2.0" max="2.0" />
+			<attribute weight="1.0" min="1.0" max="1.0" />
+			<attribute weight="1.0" min="3.0" max="3.0" />
+
+		</attribute_config>
+		<item_class_existence_config>
+			<!-- main -->
+			<item_class_existence class="weapon" slot="0" probability="1" />
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="1" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="1" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="0.5" />
+		</item_class_existence_config>
+	</soldier> 
+</faction>

@@ -823,6 +823,80 @@ particle_system elaina_wand_laser_later_pre_line_mod2_addon
 		colour4 0 0 0 0
 	}
 }
+particle_system laser_later_pre_line_mod2
+{
+	quota 200
+	material linear_laser
+	particle_width 11
+	particle_height 200
+	renderer billboard
+	billboard_type oriented_self
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.001
+		time_to_live 1.8
+		duration 0.1
+	}
+    affector Scaler
+	{
+		rate -10
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.3
+		colour1 0 0 0 0
+		time2 0.31
+		colour2 1 0.3 0 0
+		time3 0.86
+		colour3 1 0 0 0
+		time4 1
+		colour4 0 0 0 0
+	}
+}
+particle_system laser_later_pre_line_mod2_addon
+{
+	quota 200
+	material linear_laser
+	particle_width 6
+	particle_height 200
+	renderer billboard
+	billboard_type oriented_self
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.001
+		time_to_live 1.3
+		duration 0.1
+	}
+    affector Scaler
+	{
+		rate -5
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.3
+		colour1 0 0 0 0
+		time2 0.31
+		colour2 1 0.3 0 0
+		time3 0.86
+		colour3 1 0 0 0
+		time4 1
+		colour4 0 0 0 0
+	}
+}
 --------------------------------------material-----------------------------------
 material alpha_blend_base{
 	receive_shadows off

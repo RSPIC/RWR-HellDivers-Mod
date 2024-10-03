@@ -18,7 +18,7 @@ void main(dictionary@ inputData) {
 
         settings.m_fellowCapacityFactor = 2.0;
         settings.m_fellowAiAccuracyFactor = 1.0;
-        settings.m_enemyCapacityFactor = 4.0;
+        settings.m_enemyCapacityFactor = 5.0;
         settings.m_enemyAiAccuracyFactor = 1.0;
 
         settings.m_playerAiReduction = 0.0;            // didn't work before 1.76! (was 1.0)
@@ -51,7 +51,7 @@ void main(dictionary@ inputData) {
         settings.m_startServerCommand = """
 <command class='start_server'
 	server_name='[地狱潜兵] 测试服 '
-	server_port='1250'
+	server_port='5700'
 	url='https://steamcommunity.com/sharedfiles/filedetails/?id=2910392031'
 	register_in_serverlist='1'
 	mode='COOP'
@@ -63,11 +63,12 @@ void main(dictionary@ inputData) {
 """;
         settings.print();
 
-        GameModeInvasion metagame(settings);
 
+        GameModeInvasion metagame(settings);
         metagame.init();
         metagame.run();
         metagame.uninit();
+        
 
         _log("ending execution");
 }

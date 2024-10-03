@@ -33,7 +33,7 @@ character_leave_request_mode="any"
 	min_health_to_steer="0.36" 
 	max_rotation="0.25" 
 	max_water_depth="5" 
-	steer_smoothening="0.1" 
+	steer_smoothening="0.95" 
 	tracked="1" gears="1"
 	/>
 	<!-- 1.8.1 血量 400增加至600 -->
@@ -61,8 +61,8 @@ character_leave_request_mode="any"
 	<!-- 轮子 -->
 	<visual class="tire" mesh_filename="cyborgs_fire_tank_wheel.mesh" texture_filename="cyborgs_fire_tank_wheel.jpg" />
 	<!-- 玩家 -->
-	<character_slot type="driver" position="0 0.3 +3" rotation="0" exit_rotation="0" hiding="1" />
-	<character_slot type="gunner" position="0 0.3 -3.5" rotation="0" exit_rotation="-3.14" hiding="1" >
+	<character_slot type="driver" position="0 -2 +3" rotation="0" exit_rotation="0" hiding="1" />
+	<character_slot type="gunner" position="0 -2 -3.5" rotation="0" exit_rotation="-3.14" hiding="1" >
 		<turret index="0"/><turret index="1"/>
 	</character_slot>
 

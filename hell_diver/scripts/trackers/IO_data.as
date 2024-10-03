@@ -27,13 +27,7 @@ const XmlElement@ readXML(const Metagame@ metagame, string filename, string loca
 		makeQuery(metagame, array<dictionary> = {
 			dictionary = { {"TagName", "data"}, {"class", "saved_data"}, {"filename", filename}, {"location", location} } }));
 	const XmlElement@ xml = metagame.getComms().query(query);
-    
-    if(location == "_default.save"){
-        @query = XmlElement(
-		makeQuery(metagame, array<dictionary> = {
-			dictionary = { {"TagName", "data"}, {"class", "saved_data"}, {"filename", filename} } }));
-	    @xml = metagame.getComms().query(query);
-    }
+
     if(xml is null){
         _log("readXml is null,create and reRead for filename="+filename+",in location="+location);
         writeXML(metagame,filename,XmlElement(filename),location);
@@ -1119,7 +1113,7 @@ class IO_data : Tracker {
                 GiveRP(m_metagame,cid,120000);
                 dictionary a;
                 a["%reward"] = "RP: 12w";
-                notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+                notify(m_metagame, "ImAgreeWithPropose", a, "misc", pid, true, "ImAgreeWithPropose", 1.0);
                 return true;
             }else{
                 notify(m_metagame, "You didnt reach the required Rank!", dictionary(), "misc", pid, false, "", 1.0);
@@ -1520,7 +1514,7 @@ class IO_data : Tracker {
             @res = Resource("reward_box_collection.carry_item","carry_item");//fumo
             res.addToResources(resources,2);
             @res = Resource("samples_acg.carry_item","carry_item");
-            res.addToResources(resources,4);
+            res.addToResources(resources,8);
 
             upgrade@ tempTack = upgrade(m_metagame);
             if(!tempTack.checkAccess(p_name,"prioritys","DanceKey_v1")){

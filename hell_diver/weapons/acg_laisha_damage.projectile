@@ -49,7 +49,7 @@ key="acg_laisha_southern_cross_spawn.projectile">
     <tag name="grenade"/>
 
     <result class="spawn" instance_class="projectile" instance_key="acg_laisha_southern_cross_effect.projectile" 
-    min_amount="12" max_amount="12" offset="0 0 0" position_spread="5 5" direction_spread="-0.1 0" />	
+    min_amount="10" max_amount="10" offset="0 0 0" position_spread="5 5" direction_spread="-0.1 0" />	
 
     <trigger class="impact" time_to_live="0.2"/>
     <rotation class="motion" />
@@ -66,7 +66,7 @@ key="acg_laisha_southern_cross_effect.projectile">
     <tag name="grenade"/>
 
     <result class="spawn" instance_class="projectile" instance_key="acg_laisha_southern_cross_damage.projectile" 
-    min_amount="40" max_amount="40" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+    min_amount="10" max_amount="20" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 
     <!--命中音效-->
     <sound class="result" key="other" fileref="acg_laisha_southern_cross_sound.wav" pitch_variety="0.03" volume="2.0" />

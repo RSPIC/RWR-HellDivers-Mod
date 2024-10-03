@@ -298,7 +298,7 @@
 	<result class="spawn" instance_class="projectile" instance_key="cyborgs_spawn_tesla.projectile" min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0"/>
 	</event>
 	</vehicle>
-	<vehicle name="Infantry Fighting Vehicle" key="cyborgs_ifv.vehicle" time_to_live_unsteerable="10" map_view_atlas_index="38" minimum_fill_requirement="0.25" max_character_collision_speed="999" simulated_damage="130" usable_for_cover="1" reserves_spawn_point="1" allow_ai_to_use="1" ai_abandon_when_unsteerable="0" respawn_time="35" ai_pick_prevention_time="60" character_leave_request_mode="friendly" max_character_collision_speed_on_normal="999">
+	<vehicle name="Infantry Fighting Vehicle" key="cyborgs_ifv.vehicle" time_to_live_unsteerable="10" map_view_atlas_index="38" minimum_fill_requirement="0.25" max_character_collision_speed="5" simulated_damage="130" usable_for_cover="1" reserves_spawn_point="1" allow_ai_to_use="1" ai_abandon_when_unsteerable="0" respawn_time="35" ai_pick_prevention_time="60" character_leave_request_mode="friendly" max_character_collision_speed_on_normal="999">
 	<tag name="metal_heavy"/>
 	<tag name="tank"/>
 	<tag name="heavy_combat"/>
@@ -404,7 +404,7 @@
 	<result class="reward" rp="1000.0"/>
 	</event>
 	</vehicle>
-	<vehicle name="Fire Tank" key="cyborgs_fire_tank.vehicle" time_to_live_unsteerable="5" map_view_atlas_index="58" minimum_fill_requirement="1" simulated_damage="20" usable_for_cover="1" reserves_spawn_point="1" allow_ai_to_use="1" ai_abandon_when_unsteerable="1" respawn_time="30" ai_pick_prevention_time="30" ai_handle_taxi_request_when_full="1" ai_stop_to_fight="1" character_leave_request_mode="friendly" max_character_collision_speed="999" max_character_collision_speed_on_normal="999">
+	<vehicle name="Fire Tank" key="cyborgs_fire_tank.vehicle" time_to_live_unsteerable="5" map_view_atlas_index="58" minimum_fill_requirement="1" simulated_damage="20" usable_for_cover="1" reserves_spawn_point="1" allow_ai_to_use="1" ai_abandon_when_unsteerable="1" respawn_time="30" ai_pick_prevention_time="30" ai_handle_taxi_request_when_full="1" ai_stop_to_fight="1" character_leave_request_mode="any" max_character_collision_speed="999" max_character_collision_speed_on_normal="999">
 	<tag name="apc"/>
 	<tag name="any_tank"/>
 	<tire_set offset="1.5 0 2.5" radius="1.2"/>
@@ -5776,7 +5776,7 @@
 	<result class="reward" rp="1000.0"/>
 	</event>
 	</vehicle>
-	<vehicle name="Ferdinand[Modified][Recyclable]" key="sdkfz184.vehicle" map_view_atlas_index="56" minimum_fill_requirement="0.88" usable_for_cover="0" allow_owner_to_use_only="1" ai_driver_turns_to_target="1" character_leave_request_mode="friendly" allow_ai_to_use="0" ai_stop_to_fight="1" max_character_collision_speed="999" max_character_collision_speed_on_normal="999">
+	<vehicle name="Ferdinand[Modified][Recyclable]" key="sdkfz184.vehicle" map_view_atlas_index="56" minimum_fill_requirement="0.88" usable_for_cover="0" allow_owner_to_use_only="1" ai_driver_turns_to_target="1" character_leave_request_mode="friendly" allow_ai_to_use="0" ai_stop_to_fight="1" max_character_collision_speed="5" max_character_collision_speed_on_normal="5">
 	<tag name="crushes_hedgerows"/>
 	<tag name="heavy_armour"/>
 	<tag name="tank_treads"/>
@@ -5787,7 +5787,7 @@
 	<tire_set offset="2.32 0.0 +4.05" radius="0.52"/>
 	<tire_set offset="2.32 0.0 0.0" radius="0.52"/>
 	<tire_set offset="2.32 0.0 -4.05" radius="0.52"/>
-	<control max_limiter_speed="4.18" max_speed="6.7" acceleration="6.62" max_reverse_speed="6.0" min_health_to_steer="1.5" max_rotation="0.0" max_water_depth="1.7" steer_smoothening="0.99" tracked="1" gears="1" simulated_speed_factor="0.5"/>
+	<control max_limiter_speed="4.18" max_speed="7.7" acceleration="6.62" max_reverse_speed="6.0" min_health_to_steer="1.5" max_rotation="0.0" max_water_depth="1.7" steer_smoothening="0.99" tracked="1" gears="1" simulated_speed_factor="0.5"/>
 	<physics max_health="1200" remove_collision_threshold="67.2" extent="5.0 0.0 8.4" offset="0 0.0 0" top_offset="0 2.93 0" collision_model_pos="0 1.5 0.0" collision_model_extent="5.0 2.93 8.0" visual_offset="0 0.44 0.0" blast_damage_threshold="0" blast_push_threshold="10" mass="200.0" broken_mass="180" gravity="-200"/>
 	<turret offset="0.0 3.07 0.06" weapon_key="sdkfz184_cannon.weapon" weapon_offset="0.0 0.38 0.21" weapon_recoil="0.2" max_rotation_step="0.000072" rotation_range="0.84"/>
 	<turret offset="-0.72 2.09 3.53" weapon_key="borsig_mg34.weapon" weapon_offset="0.02 0.02 0.44" weapon_recoil="0.0" max_rotation_step="0.00042" rotation_range="1.15"/>
@@ -6117,7 +6117,7 @@
 	<tag name="any_tank"/>
 	<tire_set offset="2 0 +2.5" radius="0.36"/>
 	<tire_set offset="2 0 -2.5" radius="0.36"/>
-	<control max_speed="18" acceleration="22.0" max_reverse_speed="14.0" min_health_to_steer="0.6" max_rotation="0.1" max_water_depth="4" steer_smoothening="0.7" tracked="1" gears="1" max_limiter_speed="11.0"/>
+	<control max_speed="18" acceleration="22.0" max_reverse_speed="14.0" min_health_to_steer="0.6" max_rotation="0.1" max_water_depth="4" steer_smoothening="0.95" tracked="1" gears="0" max_limiter_speed="11.0"/>
 	<physics extent="5.9 0.0 8" offset="0 0 0" top_offset="0 6.0 0" collision_model_pos="0 0.6 0" collision_model_extent="4.0 1.5 8.0" visual_offset="0 0.6 0.0" max_health="550" blast_damage_threshold="0" blast_push_threshold="10" mass="200.0" broken_mass="180" gravity="-200"/>
 	0 <turret offset="0 2.8 -1.37" weapon_key="ex_nova_cannon.weapon" weapon_offset="0.56 0.15 0" weapon_recoil="0.25" physics_recoil="0.0" max_rotation_step="0.00065"/>
 	1 <turret offset="+1.1 0.72 -2.0" weapon_key="ex_nova_missile.weapon" weapon_offset="0 0.4 0" weapon_recoil="0.0" physics_recoil="0.0" rotation_range="0.3" parent_turret_index="0" max_rotation_step="1.0"/>
@@ -6136,7 +6136,6 @@
 	<visual class="track" mesh_filename="ex_nova_track.mesh" offset="+1.5 0 -0.2">
 	<part texture_filename="ex_nova_track.png" texture_animation="translate" tire_binding="1"/>
 	</visual>
-	<item_container class="armory" offset="0 0.8 -4.8"/>
 	<character_slot type="driver" position="1.5 0.5 2" rotation="0" exit_rotation="1.57" hiding="1"/>
 	<character_slot type="gunner" position="1.5 0.7 0" rotation="0" exit_rotation="1.57" hiding="1">
 	<turret index="0"/>
@@ -6149,6 +6148,10 @@
 	<turret index="2"/>
 	<turret index="3"/>
 	</character_slot>
+	<character_slot type="passenger" position="0.5 0.5 -4.5" rotation="0" exit_rotation="3.14" hiding="1"/>
+	<character_slot type="passenger" position="0.1 0.5 -4.5" rotation="0" exit_rotation="3.14" hiding="1"/>
+	<character_slot type="passenger" position="-0.1 0.5 -4.5" rotation="0" exit_rotation="3.14" hiding="1"/>
+	<character_slot type="passenger" position="-0.5 0.5 -4.5" rotation="0" exit_rotation="3.14" hiding="1"/>
 	<rev_sound filename="truck_rev0.wav" low_pitch="0.95" high_pitch="1.05" low_rev="0.0" high_rev="0.2" volume="1.0"/>
 	<rev_sound filename="truck_rev3.wav" low_pitch="0.7" high_pitch="1.0" low_rev="0.05" high_rev="0.7" volume="1.0"/>
 	<rev_sound filename="truck_rev4.wav" low_pitch="0.8" high_pitch="1.0" low_rev="0.4" high_rev="1.0" volume="1.0"/>
@@ -6191,7 +6194,7 @@
 	<tag name="any_tank"/>
 	<tire_set offset="2 0 +2.5" radius="0.36"/>
 	<tire_set offset="2 0 -2.5" radius="0.36"/>
-	<control max_speed="18" acceleration="22.0" max_reverse_speed="14.0" min_health_to_steer="0.6" max_rotation="0.1" max_water_depth="4" steer_smoothening="0.7" tracked="1" gears="1" max_limiter_speed="11.0"/>
+	<control max_speed="18" acceleration="22.0" max_reverse_speed="14.0" min_health_to_steer="0.6" max_rotation="0.1" max_water_depth="4" steer_smoothening="0.95" tracked="1" gears="0" max_limiter_speed="11.0"/>
 	<physics extent="5.9 0.0 8" offset="0 0 0" top_offset="0 6.0 0" collision_model_pos="0 0.6 0" collision_model_extent="4.0 1.5 8.0" visual_offset="0 0.6 0.0" max_health="550" blast_damage_threshold="0" blast_push_threshold="10" mass="200.0" broken_mass="180" gravity="-200"/>
 	0 <turret offset="0 2.8 -1.37" weapon_key="ex_nova_cannon_2.weapon" weapon_offset="0.56 0.15 0" weapon_recoil="0.25" physics_recoil="0.0" max_rotation_step="0.00065"/>
 	1 <turret offset="+1.1 0.72 -2.0" weapon_key="ex_nova_missile.weapon" weapon_offset="0 0.4 0" weapon_recoil="0.0" physics_recoil="0.0" rotation_range="0.3" parent_turret_index="0" max_rotation_step="1.0"/>
@@ -6210,7 +6213,6 @@
 	<visual class="track" mesh_filename="ex_nova_track.mesh" offset="+1.5 0 -0.2">
 	<part texture_filename="ex_nova_track.png" texture_animation="translate" tire_binding="1"/>
 	</visual>
-	<item_container class="armory" offset="0 0.8 -4.8"/>
 	<character_slot type="driver" position="1.5 0.5 2" rotation="0" exit_rotation="1.57" hiding="1"/>
 	<character_slot type="gunner" position="1.5 0.7 0" rotation="0" exit_rotation="1.57" hiding="1">
 	<turret index="0"/>
@@ -6223,6 +6225,10 @@
 	<turret index="2"/>
 	<turret index="3"/>
 	</character_slot>
+	<character_slot type="passenger" position="0.5 0.5 -4.5" rotation="0" exit_rotation="3.14" hiding="1"/>
+	<character_slot type="passenger" position="0.1 0.5 -4.5" rotation="0" exit_rotation="3.14" hiding="1"/>
+	<character_slot type="passenger" position="-0.1 0.5 -4.5" rotation="0" exit_rotation="3.14" hiding="1"/>
+	<character_slot type="passenger" position="-0.5 0.5 -4.5" rotation="0" exit_rotation="3.14" hiding="1"/>
 	<rev_sound filename="music_b_connected.wav" low_pitch="1" high_pitch="1" low_rev="1" high_rev="1" volume="0.3"/>
 	<sound key="slide" filename="slide_noise.wav"/>
 	<sound key="squeal" filename="tire_squeal.wav"/>
@@ -6351,7 +6357,7 @@
 	<result class="spawn" instance_class="visual_item" instance_key="burning_piece_radartower.visual_item" min_amount="10" max_amount="20" offset="0 4.0 0" position_spread="1.5 1.5" direction_spread="0.2 0.5"/>
 	</event>
 	</vehicle>
-	<vehicle key="radio_jammer2.vehicle" respawn_time="86400.0" name="Radio jammer" map_view_atlas_index="9" jams_enemy_radio="1" reserves_spawn_point="1" protectors="10" soldier_capacity_offset="10" usable_for_cover="0">
+	<vehicle key="radio_jammer2.vehicle" respawn_time="180" name="Radio jammer" map_view_atlas_index="9" jams_enemy_radio="1" reserves_spawn_point="1" protectors="10" soldier_capacity_offset="10" usable_for_cover="0">
 	<tag name="target"/>
 	<tire_set offset="1.0 0.0 1.0" radius="0.65"/>
 	<tire_set offset="1.0 0.0 -1.0" radius="0.65"/>
@@ -6381,12 +6387,14 @@
 	<result class="spawn" instance_class="visual_item" instance_key="burning_piece_radartower.visual_item" min_amount="10" max_amount="20" offset="0 4.0 0" position_spread="1.5 1.5" direction_spread="0.2 0.5"/>
 	</event>
 	</vehicle>
-	<vehicle name="Ice cream van" key="icecream.vehicle" map_view_atlas_index="-1" respawn_time="10000.0" allow_ai_to_use="0">
+	<vehicle name="Ice cream van" key="icecream.vehicle" map_view_atlas_index="-1" respawn_time="0.0" allow_ai_to_use="0">
 	<tag name="metal_light"/>
 	<tire_set offset="0.86 0.0 1.141" radius="0.7"/>
 	<tire_set offset="0.86 0.0 -1.374" radius="0.7"/>
+	<modifier class="blast_range" value="0"/>
+	<modifier class="blast_damage" value="-1000.0"/>
 	<control max_speed="20.0" acceleration="5.0" max_reverse_speed="6.0" max_rotation="0.8" max_water_depth="1.9"/>
-	<physics max_health="3000.0" mass="10" extent="2.0 0.0 1.5" offset="0 0.0 0" top_offset="0 4 0" collision_model_pos="0 0.8 0" collision_model_extent="2.2 2.0 4.7" visual_offset="0 0.5 0.1"/>
+	<physics max_health="3000.0" mass="10000" blast_push_threshold="1000" extent="2.0 0.0 1.5" offset="0 0.0 0" top_offset="0 4 0" collision_model_pos="0 0.8 0" collision_model_extent="2.2 2.0 4.7" visual_offset="0 0.5 0.1"/>
 	<visual class="chassis" mesh_filename="conevan.mesh" texture_filename="conevan.png"/>
 	<visual class="tire" mesh_filename="medivan_wheel.mesh" texture_filename="conevan.png"/>
 	<visual class="chassis" key="broken" mesh_filename="conevan_broken.mesh" texture_filename="conevan.png"/>
@@ -7289,7 +7297,7 @@
 	<result class="spawn" instance_class="visual_item" instance_key="hd_hellpod_vanish.visual_item" min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0 0"/>
 	</event>
 	</vehicle>
-	<vehicle name="Stash" key="work_table_box.vehicle" map_view_atlas_index="-1" should_be_destroyed="0" simulated_damage="5" usable_for_cover="0" allow_ai_to_use="0">
+	<vehicle name="armory" key="work_table_box.vehicle" map_view_atlas_index="-1" should_be_destroyed="0" simulated_damage="5" usable_for_cover="0" allow_ai_to_use="0">
 	<tag name="metal_thin"/>
 	<tire_set offset="0.2 0 +0.2" radius="0.1"/>
 	<tire_set offset="0.2 0 -0.2" radius="0.1"/>
@@ -7297,7 +7305,7 @@
 	<modifier class="blast_damage" value="-1001.0"/>
 	<control max_speed="1.0" acceleration="1" max_reverse_speed="1.0" max_rotation="1.0" max_water_depth="4"/>
 	<physics max_health="10000.0" mass="10000.0" blast_push_threshold="1000" blast_damage_threshold="10" extent="10 0.0 10" offset="0 0 0" top_offset="0 2.0 0" collision_model_pos="0 -1 0" collision_model_extent="2.0 0.1 2.0" collision_response_factor="0" visual_offset="0 0 0" remove_collision_threshold="10" vehicle_collision_damage_factor="0" friction_offset="10" gravity="-10" destroy_on_top_hit="1" destroy_on_top_hit_time="3" top_hit_tracking_time="0"/>
-	<item_container class="stash" offset="0 0 0"/>
+	<item_container class="armory" offset="0 0 0"/>
 	<sky_diving chute_offset="0 0 0" trigger_height="20" gravity="-80" mesh_filename="" texture_filename=""/>
 	<visual class="chassis" mesh_filename="mc_worktable.mesh" texture_filename="mc_worktable.jpg"/>
 	<rev_sound filename="" low_pitch="0.8" high_pitch="1.0" low_rev="0.0" high_rev="0.3" volume="0.8"/>
@@ -7315,7 +7323,7 @@
 	<result class="spawn" instance_class="visual_item" instance_key="hd_hellpod_vanish.visual_item" min_amount="1" max_amount="1" offset="0 1 0" position_spread="0 0" direction_spread="0 0"/>
 	</event>
 	</vehicle>
-	<vehicle name="Stash" key="wood_box.vehicle" map_view_atlas_index="-1" should_be_destroyed="0" simulated_damage="5" usable_for_cover="0" allow_ai_to_use="0">
+	<vehicle name="stash" key="wood_box.vehicle" map_view_atlas_index="-1" should_be_destroyed="0" simulated_damage="5" usable_for_cover="0" allow_ai_to_use="0">
 	<tag name="metal_thin"/>
 	<tire_set offset="0.2 0 +0.2" radius="0.1"/>
 	<tire_set offset="0.2 0 -0.2" radius="0.1"/>
@@ -7323,7 +7331,7 @@
 	<modifier class="blast_damage" value="-1001.0"/>
 	<control max_speed="1.0" acceleration="1" max_reverse_speed="1.0" max_rotation="1.0" max_water_depth="4"/>
 	<physics max_health="10000.0" mass="10000.0" blast_push_threshold="1000" blast_damage_threshold="10" extent="10 0.0 10" offset="0 0 0" top_offset="0 2.0 0" collision_model_pos="0 -1 0" collision_model_extent="2.0 0.1 2.0" collision_response_factor="0" visual_offset="0 0 0" remove_collision_threshold="10" vehicle_collision_damage_factor="0" friction_offset="10" gravity="-10" destroy_on_top_hit="1" destroy_on_top_hit_time="3" top_hit_tracking_time="0"/>
-	<item_container class="armory" offset="0 0 0"/>
+	<item_container class="stash" offset="0 0 0"/>
 	<sky_diving chute_offset="0 0 0" trigger_height="20" gravity="-80" mesh_filename="" texture_filename=""/>
 	<visual class="chassis" mesh_filename="mc_wood_box.mesh" texture_filename="mc_wood_box.png"/>
 	<rev_sound filename="" low_pitch="0.8" high_pitch="1.0" low_rev="0.0" high_rev="0.3" volume="0.8"/>
@@ -8266,7 +8274,7 @@
 	<result class="spawn" instance_class="visual_item" instance_key="burning_piece_cleanup.visual_item" min_amount="20" max_amount="30" offset="0 2.0 0" position_spread="1.5 1.5" direction_spread="0.1 0.1"/>
 	</event>
 	</vehicle>
-	<vehicle key="hd_rocket_launch_platform.vehicle" name="Rocket Launch Platform" map_view_atlas_index="44" should_be_destroyed="0" use_time_to_live="1" respawn_time="4800" simulated_damage="0" usable_for_cover="0" allow_ai_to_use="0">
+	<vehicle key="water_tower.vehicle" name="Rocket Launch Platform" map_view_atlas_index="44" should_be_destroyed="0" use_time_to_live="1" respawn_time="4800" simulated_damage="0" usable_for_cover="0" allow_ai_to_use="0">
 	<tag name="metal_thin"/>
 	<tire_set offset="2 0.1 1.5" radius="0.3"/>
 	<tire_set offset="3 0.1 0" radius="0.3"/>
@@ -8320,7 +8328,7 @@
 	<result class="spawn" instance_class="projectile" instance_key="hd_sms_for_launcher.projectile" min_amount="1" max_amount="1" offset="0 2 0" position_spread="0 0" direction_spread="0 0.01"/>
 	</event>
 	</vehicle>
-	<vehicle key="ex_edf_turrent_single.vehicle" respawn_time="300" name="EDF Cannon" map_view_atlas_index="7" time_to_live_unsteerable="1" should_be_destroyed="1" simulated_damage="0.5" usable_for_cover="1" allow_ai_to_use="1">
+	<vehicle key="tow.vehicle" respawn_time="240" name="EDF Cannon" map_view_atlas_index="7" time_to_live_unsteerable="1" should_be_destroyed="1" simulated_damage="0.5" usable_for_cover="1" allow_ai_to_use="1">
 	<tag name="metal_thin"/>
 	<tag name="defensive_at"/>
 	<tire_set offset="1 0.0 1" radius="0.3"/>
@@ -8395,7 +8403,7 @@
 	<result class="spawn" instance_class="visual_item" instance_key="burning_piece_cleanup.visual_item" min_amount="20" max_amount="30" offset="0 2.0 0" position_spread="1.5 1.5" direction_spread="0.1 0.1"/>
 	</event>
 	</vehicle>
-	<vehicle key="ex_edf_turrent_single.vehicle" respawn_time="300" name="EDF Cannon" map_view_atlas_index="7" time_to_live_unsteerable="1" should_be_destroyed="1" simulated_damage="0.5" usable_for_cover="1" allow_ai_to_use="1">
+	<vehicle key="tow_2.vehicle" respawn_time="900" name="EDF Cannon" map_view_atlas_index="7" time_to_live_unsteerable="1" should_be_destroyed="1" simulated_damage="0.5" usable_for_cover="1" allow_ai_to_use="1">
 	<tag name="metal_thin"/>
 	<tag name="defensive_at"/>
 	<tire_set offset="1 0.0 1" radius="0.3"/>
@@ -8470,7 +8478,7 @@
 	<result class="spawn" instance_class="visual_item" instance_key="burning_piece_cleanup.visual_item" min_amount="20" max_amount="30" offset="0 2.0 0" position_spread="1.5 1.5" direction_spread="0.1 0.1"/>
 	</event>
 	</vehicle>
-	<vehicle key="ex_edf_turrent_double.vehicle" respawn_time="300" name="EDF Hornet" map_view_atlas_index="36" time_to_live_unsteerable="1" should_be_destroyed="1" simulated_damage="0.5" usable_for_cover="1" allow_ai_to_use="1">
+	<vehicle key="hornet.vehicle" respawn_time="240" name="EDF Hornet" map_view_atlas_index="36" time_to_live_unsteerable="1" should_be_destroyed="1" simulated_damage="0.5" usable_for_cover="1" allow_ai_to_use="1">
 	<tag name="metal_thin"/>
 	<tag name="defensive_at"/>
 	<tire_set offset="1 0.0 1" radius="0.3"/>
@@ -8543,7 +8551,7 @@
 	<result class="spawn" instance_class="visual_item" instance_key="burning_piece_cleanup.visual_item" min_amount="20" max_amount="30" offset="0 2.0 0" position_spread="1.5 1.5" direction_spread="0.1 0.1"/>
 	</event>
 	</vehicle>
-	<vehicle key="ex_edf_turrent_double.vehicle" respawn_time="300" name="EDF Hornet" map_view_atlas_index="36" time_to_live_unsteerable="1" should_be_destroyed="1" simulated_damage="0.5" usable_for_cover="1" allow_ai_to_use="1">
+	<vehicle key="hornet_2.vehicle" respawn_time="900" name="EDF Hornet" map_view_atlas_index="36" time_to_live_unsteerable="1" should_be_destroyed="1" simulated_damage="0.5" usable_for_cover="1" allow_ai_to_use="1">
 	<tag name="metal_thin"/>
 	<tag name="defensive_at"/>
 	<tire_set offset="1 0.0 1" radius="0.3"/>
@@ -8616,7 +8624,7 @@
 	<result class="spawn" instance_class="visual_item" instance_key="burning_piece_cleanup.visual_item" min_amount="20" max_amount="30" offset="0 2.0 0" position_spread="1.5 1.5" direction_spread="0.1 0.1"/>
 	</event>
 	</vehicle>
-	<vehicle key="ex_edf_mortar.vehicle" respawn_time="300" name="EDF Mortar" map_view_atlas_index="16" time_to_live_unsteerable="1" should_be_destroyed="1" simulated_damage="0.5" usable_for_cover="1" allow_ai_to_use="1">
+	<vehicle key="mortar.vehicle" respawn_time="240" name="EDF Mortar" map_view_atlas_index="16" time_to_live_unsteerable="1" should_be_destroyed="1" simulated_damage="0.5" usable_for_cover="1" allow_ai_to_use="1">
 	<tag name="metal_thin"/>
 	<tag name="defensive_at"/>
 	<tire_set offset="1 0.0 1" radius="0.1"/>
@@ -8687,7 +8695,7 @@
 	<result class="spawn" instance_class="visual_item" instance_key="burning_piece_cleanup.visual_item" min_amount="20" max_amount="30" offset="0 2.0 0" position_spread="1.5 1.5" direction_spread="0.1 0.1"/>
 	</event>
 	</vehicle>
-	<vehicle key="ex_edf_mortar.vehicle" respawn_time="300" name="EDF Mortar" map_view_atlas_index="16" time_to_live_unsteerable="1" should_be_destroyed="1" simulated_damage="0.5" usable_for_cover="1" allow_ai_to_use="1">
+	<vehicle key="mortar_2.vehicle" respawn_time="900" name="EDF Mortar" map_view_atlas_index="16" time_to_live_unsteerable="1" should_be_destroyed="1" simulated_damage="0.5" usable_for_cover="1" allow_ai_to_use="1">
 	<tag name="metal_thin"/>
 	<tag name="defensive_at"/>
 	<tire_set offset="1 0.0 1" radius="0.1"/>
@@ -8758,7 +8766,7 @@
 	<result class="spawn" instance_class="visual_item" instance_key="burning_piece_cleanup.visual_item" min_amount="20" max_amount="30" offset="0 2.0 0" position_spread="1.5 1.5" direction_spread="0.1 0.1"/>
 	</event>
 	</vehicle>
-	<vehicle key="hd_rocket_trunk.vehicle" respawn_time="900" name="Rocket Truck" map_view_atlas_index="6" minimum_fill_requirement="0.3" allow_ai_to_use="0" character_leave_request_mode="friendly" existence="one_per_faction" protectors="5">
+	<vehicle key="cargo_truck.vehicle" respawn_time="900" name="Rocket Truck" map_view_atlas_index="6" minimum_fill_requirement="0.3" allow_ai_to_use="0" character_leave_request_mode="friendly" existence="one_per_faction" protectors="5">
 	<tire_set offset="1.44 0.0 3.9" radius="0.6"/>
 	<tire_set offset="1.44 0.0 2.3" radius="0.6"/>
 	<tire_set offset="1.44 0.0 -4.9" radius="0.6"/>
@@ -8806,7 +8814,7 @@
 	<result class="notify_script" key="hd_rocket_trunk_destroy"/>
 	</event>
 	</vehicle>
-	<vehicle key="hd_fire_turrent.vehicle" respawn_time="240.0" name="Fire Turrent" map_view_atlas_index="10" usable_for_cover="0" protectors="1" soldier_capacity_offset="1">
+	<vehicle key="deployable_mg.vehicle" respawn_time="240.0" name="Fire Turrent" map_view_atlas_index="10" usable_for_cover="0" protectors="1" soldier_capacity_offset="1">
 	<tag name="target"/>
 	<tire_set offset="0.5 0.0 0.5" radius="0.65"/>
 	<tire_set offset="0.5 0.0 -0.5" radius="0.65"/>
@@ -8835,7 +8843,7 @@
 	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="1" offset="0 0.5 0"/>
 	<effect event_key="destroyed" ref="car_broken_spary_spark" post_processing="1" offset="0 0.5 0"/>
 	</vehicle>
-	<vehicle key="hd_fire_turrent.vehicle" respawn_time="900.0" name="Fire Turrent" map_view_atlas_index="10" usable_for_cover="0" protectors="1" soldier_capacity_offset="1">
+	<vehicle key="deployable_mg_2.vehicle" respawn_time="900.0" name="Fire Turrent" map_view_atlas_index="10" usable_for_cover="0" protectors="1" soldier_capacity_offset="1">
 	<tag name="target"/>
 	<tire_set offset="0.5 0.0 0.5" radius="0.65"/>
 	<tire_set offset="0.5 0.0 -0.5" radius="0.65"/>
@@ -8864,7 +8872,7 @@
 	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="1" offset="0 0.5 0"/>
 	<effect event_key="destroyed" ref="car_broken_spary_spark" post_processing="1" offset="0 0.5 0"/>
 	</vehicle>
-	<vehicle key="hd_ra2_tesla.vehicle" respawn_time="900.0" name="Tesla Coil" map_view_atlas_index="49" usable_for_cover="0" protectors="1" soldier_capacity_offset="1" character_leave_request_mode="friendly">
+	<vehicle key="deployable_gl_2.vehicle" respawn_time="900.0" name="Tesla Coil" map_view_atlas_index="49" usable_for_cover="0" protectors="1" soldier_capacity_offset="1" character_leave_request_mode="friendly">
 	<tag name="target"/>
 	<tire_set offset="0.5 0.0 0.5" radius="0.65"/>
 	<tire_set offset="0.5 0.0 -0.5" radius="0.65"/>
@@ -8901,7 +8909,7 @@
 	<result class="reward" rp="600.0"/>
 	</event>
 	</vehicle>
-	<vehicle key="hd_ra2_tesla.vehicle" respawn_time="240.0" name="Tesla Coil" map_view_atlas_index="49" usable_for_cover="0" protectors="1" soldier_capacity_offset="1" character_leave_request_mode="friendly">
+	<vehicle key="deployable_gl.vehicle" respawn_time="240.0" name="Tesla Coil" map_view_atlas_index="49" usable_for_cover="0" protectors="1" soldier_capacity_offset="1" character_leave_request_mode="friendly">
 	<tag name="target"/>
 	<tire_set offset="0.5 0.0 0.5" radius="0.65"/>
 	<tire_set offset="0.5 0.0 -0.5" radius="0.65"/>
@@ -8938,7 +8946,7 @@
 	<result class="reward" rp="600.0"/>
 	</event>
 	</vehicle>
-	<vehicle key="ex_edf_turrent_minigun.vehicle" respawn_time="300" name="EDF Minigun [Menfrey]" map_view_atlas_index="36" time_to_live_unsteerable="1" should_be_destroyed="1" simulated_damage="0.5" usable_for_cover="1" allow_ai_to_use="1">
+	<vehicle key="deployable_minig.vehicle" respawn_time="240.0" name="EDF Minigun [Menfrey]" map_view_atlas_index="36" time_to_live_unsteerable="1" should_be_destroyed="1" simulated_damage="0.5" usable_for_cover="1" allow_ai_to_use="1">
 	<tag name="metal_thin"/>
 	<tire_set offset="1 0.0 1" radius="0.3"/>
 	<tire_set offset="1 0.0 -1" radius="0.3"/>
@@ -9012,7 +9020,7 @@
 	<result class="spawn" instance_class="visual_item" instance_key="burning_piece_cleanup.visual_item" min_amount="20" max_amount="30" offset="0 2.0 0" position_spread="1.5 1.5" direction_spread="0.1 0.1"/>
 	</event>
 	</vehicle>
-	<vehicle key="ex_edf_turrent_minigun.vehicle" respawn_time="300" name="EDF Minigun [Menfrey]" map_view_atlas_index="36" time_to_live_unsteerable="1" should_be_destroyed="1" simulated_damage="0.5" usable_for_cover="1" allow_ai_to_use="1">
+	<vehicle key="deployable_minig_2.vehicle" respawn_time="900.0" name="EDF Minigun [Menfrey]" map_view_atlas_index="36" time_to_live_unsteerable="1" should_be_destroyed="1" simulated_damage="0.5" usable_for_cover="1" allow_ai_to_use="1">
 	<tag name="metal_thin"/>
 	<tire_set offset="1 0.0 1" radius="0.3"/>
 	<tire_set offset="1 0.0 -1" radius="0.3"/>
@@ -9086,7 +9094,7 @@
 	<result class="spawn" instance_class="visual_item" instance_key="burning_piece_cleanup.visual_item" min_amount="20" max_amount="30" offset="0 2.0 0" position_spread="1.5 1.5" direction_spread="0.1 0.1"/>
 	</event>
 	</vehicle>
-	<vehicle key="hd_apb_mk3.vehicle" respawn_time="240.0" name="Anti-Personnel Barrier" map_view_atlas_index="-1" time_to_live_unsteerable="1" should_be_destroyed="0" simulated_damage="0.5" usable_for_cover="1" allow_ai_to_use="0">
+	<vehicle key="cover1.vehicle" respawn_time="240.0" name="Anti-Personnel Barrier" map_view_atlas_index="-1" time_to_live_unsteerable="1" should_be_destroyed="0" simulated_damage="0.5" usable_for_cover="1" allow_ai_to_use="0">
 	<tag name="metal_thin"/>
 	<tag name="hd_apb_mk3"/>
 	<tag name="defensive_equipment"/>

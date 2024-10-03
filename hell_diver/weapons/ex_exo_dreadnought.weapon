@@ -1,0 +1,914 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapons>
+<weapon 
+file="_rare_weapon_mk5.base"
+key="ex_exo_dreadnought_mg.weapon"
+>
+    <tag name="machine gun" />
+    <tag name="EXO" />
+    <specification 
+    retrigger_time="0.04" 
+    accuracy_factor="0.95"
+    spread_range="0.11" 
+    sustained_fire_grow_step="0.0249" 
+    sustained_fire_diminish_rate="0.4" 
+	cooldown_start="0.9"
+	cooldown_end="0.0"
+    magazine_size="300" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1"
+    can_shoot_prone="0"	 
+    suppressed="0" 
+    name="Dreadnought" 
+    class="0" 
+	barrel_offset="1.0" 
+    projectile_speed="180.0" 
+    sight_range_modifier="1.4"  
+    use_basic_muzzle_smoke_effect="0"
+    carry_in_two_hands="0" 
+    reload_one_at_a_time="1"
+    stab_enabled="1"
+    stab_range="3"
+    />
+	<!--多模式-->
+    <next_in_chain key="ex_exo_dreadnought_plas.weapon" share_ammo="0" /> 
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_effect_drop_target.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
+    <animation key="recoil" animation_key="ex_wuwei_recoil" />
+	<animation state_key="hold" animation_key="ex_wuwei_bone" />
+	<animation state_key="hold_casual" animation_key="ex_wuwei_bone" />
+	<animation state_key="reload" animation_key="ex_wuwei_reload"/>
+	<animation state_key="crouching" animation_key="ex_wuwei_bone" />
+	<animation state_key="crouch_moving" animation_key="ex_wuwei_walking" />
+	<animation state_key="walking_backwards" animation_key="ex_wuwei_walking_back" />  
+	<animation state_key="hold_on_wall" animation_key="ex_wuwei_bone" />
+	<animation state_key="still_against_wall" 	animation_key="ex_wuwei_bone" />
+	<animation state_key="walking" animation_key="ex_wuwei_walking" />
+	<animation state_key="running" animation_key="ex_wuwei_walking" /> 
+		<animation state_key="stabbing" animation_key="ex_wuwei_stab" /> 
+	<!--切换模式，本模式的切出动作衔接下一模式的切入动作，置空为秒切-->
+	<animation state_key="next_in_chain_in" animation_key="ex_wuwei_bone" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="ex_wuwei_bone" /><!--半身动作，切换模式，本模式切入-->
+	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
+    <animation state_key="changing_weapon_in" animation_key="ex_wuwei_bone" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key="ex_wuwei_bone"/><!--半身动作，切换武器，本武器取出-->
+ 
+
+    <sound key="fire" fileref="ex_exo_dreadnought_mg_fire.wav" volume="0.45" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_02.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="magazine_out" fileref="hd_mag_out.wav" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="hd_mg94_mag_in.wav" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="rifle_chamber.wav" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" /><!--动作中in的value为1-->
+    <sound class="impact" fileref="rifle_drop.wav" />
+	<sound key="reload_one" fileref="hd_p2_peacemaker_mag_out.wav" />
+	<sound key="cooldown" fileref="ex_exo_dreadnought_voice.wav" pitch_variety="0" volume="2.5"/>
+	<sound key="stab" fileref="cyborgs_hammer_hvy_hit_01.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit" fileref="cyborgs_hammer_hvy_hit_01.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="cyborgs_hammer_hvy_hit_01.wav" pitch_variety="0.05" volume="1" />
+
+    <model filename="" />
+    <hud_icon filename="ex_exo_dreadnought_mg.png" />
+
+    <weak_hand_hold offset="0.3" />
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.514" can_be_detected_by_driver="1" can_be_disarmed="0"> 
+		
+		<result class="hit" kill_probability="1.0" 
+		kill_probability_offset_on_successful_hit="30"
+		kill_decay_start_time="0.3" kill_decay_end_time="0.6" character_state="wound"/>
+
+
+		<effect class="result" key="terrain" ref="hd_mg94_result_spray" lighting="0" />
+		<effect class="result" key="terrain" ref="hd_mg94_result_bullet_light_center" lighting="0" />
+		<effect class="result" key="terrain" ref="hd_mg94_result_bullet_smoke" lighting="0" />
+		<effect class="result" key="terrain" ref="hd_mg94_hit_leave" lighting="0" />
+		<effect class="activated" ref="general_weapon_activated_bullet_light" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_bullet_centerlight" lighting="0"/>
+
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_01" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_02" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_03" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_04" />
+
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+		<trail probability="1.0" key="normal_trail_long" lighting="0"/>	
+    </projectile>
+
+    <effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+    <effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 
+
+    <stance state_key="running" accuracy="0.8" />
+    <stance state_key="walking" accuracy="0.9" />
+    <stance state_key="crouch_moving" accuracy="0.85" />
+    <stance state_key="standing" accuracy="0.95" />
+    <stance state_key="crouching" accuracy="1.02" />
+    <stance state_key="prone" accuracy="1.05" /> 
+    <stance state_key="prone_moving" accuracy="0.5" />
+    <stance state_key="over_wall" accuracy="1.1" />
+
+    <modifier class="speed" value="-0.4" />   
+    <modifier class="hit_success_probability" value="-0.5" />   
+
+    <shield offset="1 0 0.9" extent="1 3 2.7" usable_for_cover="0"/>  
+	<!-- x厚度，前后宽度,负向前；y高度，z宽度 -->
+	<modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="0" />
+	<modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="0" />
+	<modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="0" />
+	<!-- death and wound blast causes the item to be consumed, stun is ignored -->
+	<modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="0" />
+	<modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="0" />
+	<modifier class="projectile_blast_result" input_character_state="stun" output_character_state="none" consumes_item="0" />
+	<modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="0"/>
+
+</weapon>
+<weapon 
+file="_rare_weapon_mk5.base"
+key="ex_exo_dreadnought_plas.weapon"
+>
+    <tag name="machine gun" />
+    <tag name="EXO" />
+    <specification 
+    retrigger_time="0.5" 
+    accuracy_factor="0.95"
+    spread_range="0.11" 
+    sustained_fire_grow_step="0.5" 
+    sustained_fire_diminish_rate="0.5" 
+    cooldown_start="0.9"
+	cooldown_end="0.0"
+    magazine_size="8" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1"
+    can_shoot_prone="0"	 
+    suppressed="0" 
+    name="Dreadnought Plas" 
+    class="0" 
+	barrel_offset="1.0" 
+    projectile_speed="150.0" 
+    sight_range_modifier="1.0"  
+    use_basic_muzzle_smoke_effect="0"
+    carry_in_two_hands="0" 
+    stab_enabled="1"
+    stab_range="3"
+    />
+	<!--多模式-->
+    <next_in_chain key="ex_exo_dreadnought_rocket.weapon" share_ammo="0" /> 
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_effect_drop_target.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
+
+    <animation key="recoil" animation_key="ex_wuwei_recoil" />
+	<animation state_key="hold" animation_key="ex_wuwei_bone" />
+	<animation state_key="hold_casual" animation_key="ex_wuwei_bone" />
+	<animation state_key="reload" animation_key="ex_wuwei_reload_slower"/>
+	<animation state_key="crouching" animation_key="ex_wuwei_bone" />
+	<animation state_key="crouch_moving" animation_key="ex_wuwei_walking" />
+	<animation state_key="walking_backwards" animation_key="ex_wuwei_walking_back" />  
+	<animation state_key="hold_on_wall" animation_key="ex_wuwei_bone" />
+	<animation state_key="still_against_wall" 	animation_key="ex_wuwei_bone" />
+	<animation state_key="walking" animation_key="ex_wuwei_walking" />
+	<animation state_key="running" animation_key="ex_wuwei_walking" /> 
+		<animation state_key="stabbing" animation_key="ex_wuwei_stab" /> 
+	<!--切换模式，本模式的切出动作衔接下一模式的切入动作，置空为秒切-->
+	<animation state_key="next_in_chain_in" animation_key="ex_wuwei_bone" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="ex_wuwei_bone" /><!--半身动作，切换模式，本模式切入-->
+	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
+    <animation state_key="changing_weapon_in" animation_key="ex_wuwei_bone" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key="ex_wuwei_bone"/><!--半身动作，切换武器，本武器取出-->
+ 
+
+    <sound key="fire" fileref="ex_exo_dreadnought_plas_fire.wav" volume="3" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_02.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="magazine_out" fileref="ex_exo_dreadnought_plas_reload.wav" volume="5.0" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" /><!--动作中in的value为1-->
+    <sound class="impact" fileref="rifle_drop.wav" />
+	<sound key="reload_one" fileref="hd_p2_peacemaker_mag_out.wav" />
+	<sound key="stab" fileref="cyborgs_hammer_hvy_hit_01.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit" fileref="cyborgs_hammer_hvy_hit_01.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="cyborgs_hammer_hvy_hit_01.wav" pitch_variety="0.05" volume="1" />
+
+
+    <model filename="" />
+    <hud_icon filename="ex_exo_dreadnought_plas.png" />
+
+    <weak_hand_hold offset="0.3" />
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.3" can_be_detected_by_driver="1" can_be_disarmed="0"> 
+		
+        <result class="spawn" instance_class="projectile" instance_key="ex_exo_dreadnought_plas_damage.projectile" 
+		min_amount="4" max_amount="4" offset="0 0.5 0" position_spread="0.8 0" direction_spread="0.1 0" />
+
+		<effect class="result" key="terrain" ref="PLAS_result_spread_ring" lighting="0"/>
+		<effect class="result" key="terrain" ref="PLAS_result_light_ball" lighting="0"/>
+		<effect class="result" key="terrain" ref="PLAS_result_center_shrink" lighting="0"/>
+		<effect class="result" key="terrain" ref="PLAS_result_box_point" lighting="0"/>
+		<effect class="activated" ref="PLAS_activated_center_lens" lighting="0"/>
+		<effect class="activated" ref="PLAS_activated_center_ambient_light" lighting="0"/>
+		
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<!--尾迹组-->
+		<trail probability="1" key="plas1_scorcher.trail"/>	
+
+    </projectile>
+
+    <effect class="muzzle" ref="general_weapon_muzzle_crossfire_lightblue" lighting="0"/> 
+
+    <stance state_key="running" accuracy="0.8" />
+    <stance state_key="walking" accuracy="0.9" />
+    <stance state_key="crouch_moving" accuracy="0.85" />
+    <stance state_key="standing" accuracy="0.95" />
+    <stance state_key="crouching" accuracy="1.02" />
+    <stance state_key="prone" accuracy="1.05" /> 
+    <stance state_key="prone_moving" accuracy="0.5" />
+    <stance state_key="over_wall" accuracy="1.1" />
+
+    <modifier class="speed" value="-0.4" />   
+    <modifier class="hit_success_probability" value="-0.5" />   
+
+    <shield offset="1 0 0.9" extent="1 3 2.7" usable_for_cover="0"/>  
+	<!-- x厚度，前后宽度,负向前；y高度，z宽度 -->
+	<modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="0" />
+	<modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="0" />
+	<modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="0" />
+	<!-- death and wound blast causes the item to be consumed, stun is ignored -->
+	<modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="0" />
+	<modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="0" />
+	<modifier class="projectile_blast_result" input_character_state="stun" output_character_state="none" consumes_item="0" />
+	<modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="0"/>
+</weapon>
+<weapon 
+file="_rare_weapon_mk5.base"
+key="ex_exo_dreadnought_rocket.weapon"
+>
+    <tag name="machine gun" />
+    <tag name="EXO" />
+    <specification 
+    retrigger_time="2" 
+    last_burst_retrigger_time="3"
+    accuracy_factor="0.95"
+    spread_range="0.11" 
+    sustained_fire_grow_step="1" 
+    sustained_fire_diminish_rate="0.2" 
+    magazine_size="-1" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1"
+    can_shoot_prone="0"	 
+    suppressed="0" 
+    name="Dreadnought Missile" 
+    class="4" 
+    burst_shots="1"
+	barrel_offset_3d="0 1.0 -1" 
+    projectile_speed="150.0" 
+    sight_range_modifier="1.4"  
+    use_basic_muzzle_smoke_effect="0"
+    carry_in_two_hands="0" 
+    stab_enabled="1"
+    stab_range="3"
+    />
+	<!--多模式-->
+    <next_in_chain key="ex_exo_dreadnought_mg.weapon" share_ammo="0" /> 
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_effect_drop_target.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
+
+    <animation key="recoil" animation_key="ex_wuwei_recoil" />
+	<animation state_key="hold" animation_key="ex_wuwei_rocket_still" />
+	<animation state_key="hold_casual" animation_key="ex_wuwei_rocket_still" />
+	<animation state_key="reload" animation_key="ex_wuwei_reload_slower"/>
+	<animation state_key="crouching" animation_key="ex_wuwei_rocket_still" />
+	<animation state_key="crouch_moving" animation_key="ex_wuwei_walking" />
+	<animation state_key="walking_backwards" animation_key="ex_wuwei_walking_back" />  
+	<animation state_key="hold_on_wall" animation_key="ex_wuwei_rocket_still" />
+	<animation state_key="still_against_wall" 	animation_key="ex_wuwei_rocket_still" />
+	<animation state_key="walking" animation_key="ex_wuwei_walking" />
+	<animation state_key="running" animation_key="ex_wuwei_walking" /> 
+		<animation state_key="stabbing" animation_key="ex_wuwei_stab" /> 
+	<!--切换模式，本模式的切出动作衔接下一模式的切入动作，置空为秒切-->
+	<animation state_key="next_in_chain_in" animation_key="ex_wuwei_bone" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="ex_wuwei_bone" /><!--半身动作，切换模式，本模式切入-->
+	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
+    <animation state_key="changing_weapon_in" animation_key="ex_wuwei_bone" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key="ex_wuwei_bone"/><!--半身动作，切换武器，本武器取出-->
+ 
+
+ 	<sound key="fire" fileref="hd_at_launch_1.wav" pitch_variety="0.08" volume="0.3" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_02.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="magazine_out" fileref="hd_mag_out.wav" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="hd_mg94_mag_in.wav" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="rifle_chamber.wav" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" /><!--动作中in的value为1-->
+    <sound class="impact" fileref="rifle_drop.wav" />
+	<sound key="reload_one" fileref="hd_p2_peacemaker_mag_out.wav" />
+	<sound key="stab" fileref="cyborgs_hammer_hvy_hit_01.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit" fileref="cyborgs_hammer_hvy_hit_01.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="cyborgs_hammer_hvy_hit_01.wav" pitch_variety="0.05" volume="1" />
+
+    <model filename="" />
+    <hud_icon filename="ex_exo_dreadnought_rocket.png" />
+
+    <weak_hand_hold offset="0.3" />
+
+    <ballistics 
+    curve_height="16" 
+    near_far_distance="0" 
+    speed_estimation_near="0" 
+    speed_estimation_far="58" 
+    max_speed="60" 
+    randomness="0" 
+    tweak_factor="1.48" /> 
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="48" can_be_detected_by_footmen="1" 
+	time_to_live="0.3" can_be_detected_by_driver="1" can_be_disarmed="0"> 
+		
+        <result class="notify_script" key="ex_exo_dreadnought_rocket" />
+        <trigger class="time" time_to_live="0.2"  />
+
+		<trail probability="1" key="nova_trail"/>	
+		<model mesh_filename="APFSDS.xml" />
+		
+		<effect class="activated" ref="general_activated_at_smoke_trail"/>
+
+		
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+
+    </projectile>
+
+    <effect class="muzzle" ref="general_weapon_muzzle_crossfire_lightblue" lighting="0"/> 
+
+    <stance state_key="running" accuracy="0.8" />
+    <stance state_key="walking" accuracy="0.9" />
+    <stance state_key="crouch_moving" accuracy="0.85" />
+    <stance state_key="standing" accuracy="0.95" />
+    <stance state_key="crouching" accuracy="1.02" />
+    <stance state_key="prone" accuracy="1.05" /> 
+    <stance state_key="prone_moving" accuracy="0.5" />
+    <stance state_key="over_wall" accuracy="1.1" />
+
+    <modifier class="speed" value="-0.4" />   
+    <modifier class="hit_success_probability" value="-0.5" />   
+
+    <shield offset="1 0 0.9" extent="1 3 2.7" usable_for_cover="0"/>  
+	<!-- x厚度，前后宽度,负向前；y高度，z宽度 -->
+	<modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="0" />
+	<modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="0" />
+	<modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="0" />
+	<!-- death and wound blast causes the item to be consumed, stun is ignored -->
+	<modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="0" />
+	<modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="0" />
+	<modifier class="projectile_blast_result" input_character_state="stun" output_character_state="none" consumes_item="0" />
+	<modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="0"/>
+</weapon>
+<weapon 
+file="_rare_weapon_mk5_re.base"
+key="ex_exo_dreadnought_null.weapon"
+>
+    <tag name="machine gun" />
+    <tag name="EXO" />
+    <specification 
+    slot="1"
+    retrigger_time="2" 
+    last_burst_retrigger_time="1"
+    accuracy_factor="0.95"
+    spread_range="0.11" 
+    sustained_fire_grow_step="1" 
+    sustained_fire_diminish_rate="0.2" 
+    magazine_size="-1" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1"
+    can_shoot_prone="0"	 
+    suppressed="0" 
+    name="Dreadnought Overload" 
+    class="4" 
+    burst_shots="1"
+	barrel_offset_3d="0 1.0 -1" 
+    projectile_speed="150.0" 
+    sight_range_modifier="1.4"  
+    use_basic_muzzle_smoke_effect="0"
+    carry_in_two_hands="0" 
+    stab_enabled="1"
+    stab_range="3"
+    />
+
+
+    <animation key="recoil" animation_key="ex_wuwei_recoil" />
+	<animation state_key="hold" animation_key="ex_wuwei_rocket_still" />
+	<animation state_key="hold_casual" animation_key="ex_wuwei_rocket_still" />
+	<animation state_key="reload" animation_key="ex_wuwei_reload_slower"/>
+	<animation state_key="crouching" animation_key="ex_wuwei_rocket_still" />
+	<animation state_key="crouch_moving" animation_key="ex_wuwei_walking" />
+	<animation state_key="walking_backwards" animation_key="ex_wuwei_walking_back" />  
+	<animation state_key="hold_on_wall" animation_key="ex_wuwei_rocket_still" />
+	<animation state_key="still_against_wall" 	animation_key="ex_wuwei_rocket_still" />
+	<animation state_key="walking" animation_key="ex_wuwei_walking" />
+	<animation state_key="running" animation_key="ex_wuwei_walking" /> 
+		<animation state_key="stabbing" animation_key="ex_wuwei_stab" /> 
+	<!--切换模式，本模式的切出动作衔接下一模式的切入动作，置空为秒切-->
+	<animation state_key="next_in_chain_in" animation_key="ex_wuwei_bone" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="ex_wuwei_bone" /><!--半身动作，切换模式，本模式切入-->
+	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
+    <animation state_key="changing_weapon_in" animation_key="ex_wuwei_bone" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key="ex_wuwei_bone"/><!--半身动作，切换武器，本武器取出-->
+ 
+
+ 	<sound key="fire" fileref="hd_at_launch_1.wav" pitch_variety="0.08" volume="0.3" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_02.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="magazine_out" fileref="hd_mag_out.wav" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="hd_mg94_mag_in.wav" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="rifle_chamber.wav" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" /><!--动作中in的value为1-->
+    <sound class="impact" fileref="rifle_drop.wav" />
+	<sound key="reload_one" fileref="hd_p2_peacemaker_mag_out.wav" />
+	<sound key="stab" fileref="cyborgs_hammer_hvy_hit_01.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit" fileref="cyborgs_hammer_hvy_hit_01.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="cyborgs_hammer_hvy_hit_01.wav" pitch_variety="0.05" volume="1" />
+
+    <model filename="" />
+    <hud_icon filename="ex_exo_dreadnought_rocket.png" />
+
+    <weak_hand_hold offset="0.3" />
+
+    <ballistics 
+    curve_height="16" 
+    near_far_distance="0" 
+    speed_estimation_near="0" 
+    speed_estimation_far="58" 
+    max_speed="60" 
+    randomness="0" 
+    tweak_factor="1.48" /> 
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="48" can_be_detected_by_footmen="1" 
+	time_to_live="0.3" can_be_detected_by_driver="1" can_be_disarmed="0"> 
+		
+        <result class="notify_script" key="ex_exo_dreadnought_skill" />
+        <trigger class="time" time_to_live="0.2"  />
+
+		<trail probability="1" key="nova_trail"/>	
+		<model mesh_filename="APFSDS.xml" />
+		
+		<effect class="activated" ref="general_activated_at_smoke_trail"/>
+
+		
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+
+    </projectile>
+
+    <effect class="muzzle" ref="general_weapon_muzzle_crossfire_lightblue" lighting="0"/> 
+
+    <stance state_key="running" accuracy="0.8" />
+    <stance state_key="walking" accuracy="0.9" />
+    <stance state_key="crouch_moving" accuracy="0.85" />
+    <stance state_key="standing" accuracy="0.95" />
+    <stance state_key="crouching" accuracy="1.02" />
+    <stance state_key="prone" accuracy="1.05" /> 
+    <stance state_key="prone_moving" accuracy="0.5" />
+    <stance state_key="over_wall" accuracy="1.1" />
+
+    <modifier class="speed" value="-0.4" />   
+    <modifier class="hit_success_probability" value="-0.5" />   
+
+    <shield offset="1 0 0.9" extent="1 3 2.7" usable_for_cover="0"/>  
+	<!-- x厚度，前后宽度,负向前；y高度，z宽度 -->
+	<modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="0" />
+	<modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="0" />
+	<modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="0" />
+	<!-- death and wound blast causes the item to be consumed, stun is ignored -->
+	<modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="0" />
+	<modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="0" />
+	<modifier class="projectile_blast_result" input_character_state="stun" output_character_state="none" consumes_item="0" />
+	<modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="0"/>
+</weapon>
+<weapon 
+file="_rare_weapon_mk5_re.base"
+key="re_ex_exo_dreadnought_mg.weapon"
+>
+    <tag name="machine gun" />
+    <tag name="EXO" />
+    <specification 
+    retrigger_time="0.04" 
+    accuracy_factor="0.95"
+    spread_range="0.11" 
+    sustained_fire_grow_step="0.0249" 
+    sustained_fire_diminish_rate="0.4" 
+	cooldown_start="0.9"
+	cooldown_end="0.0"
+    magazine_size="300" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1"
+    can_shoot_prone="0"	 
+    suppressed="0" 
+    name="Dreadnought" 
+    class="0" 
+	barrel_offset="1.0" 
+    projectile_speed="180.0" 
+    sight_range_modifier="1.4"  
+    use_basic_muzzle_smoke_effect="0"
+    carry_in_two_hands="0" 
+    reload_one_at_a_time="1"
+    stab_enabled="1"
+    stab_range="3"
+    />
+	<!--多模式-->
+    <next_in_chain key="re_ex_exo_dreadnought_plas.weapon" share_ammo="0" /> 
+
+    <animation key="recoil" animation_key="ex_wuwei_recoil" />
+	<animation state_key="hold" animation_key="ex_wuwei_bone" />
+	<animation state_key="hold_casual" animation_key="ex_wuwei_bone" />
+	<animation state_key="reload" animation_key="ex_wuwei_reload"/>
+	<animation state_key="crouching" animation_key="ex_wuwei_bone" />
+	<animation state_key="crouch_moving" animation_key="ex_wuwei_walking" />
+	<animation state_key="walking_backwards" animation_key="ex_wuwei_walking_back" />  
+	<animation state_key="hold_on_wall" animation_key="ex_wuwei_bone" />
+	<animation state_key="still_against_wall" 	animation_key="ex_wuwei_bone" />
+	<animation state_key="walking" animation_key="ex_wuwei_walking" />
+	<animation state_key="running" animation_key="ex_wuwei_walking" /> 
+		<animation state_key="stabbing" animation_key="ex_wuwei_stab" /> 
+	<!--切换模式，本模式的切出动作衔接下一模式的切入动作，置空为秒切-->
+	<animation state_key="next_in_chain_in" animation_key="ex_wuwei_bone" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="ex_wuwei_bone" /><!--半身动作，切换模式，本模式切入-->
+	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
+    <animation state_key="changing_weapon_in" animation_key="ex_wuwei_bone" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key="ex_wuwei_bone"/><!--半身动作，切换武器，本武器取出-->
+ 
+
+    <sound key="fire" fileref="ex_exo_dreadnought_mg_fire.wav" volume="0.45" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_02.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="magazine_out" fileref="hd_mag_out.wav" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="hd_mg94_mag_in.wav" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="rifle_chamber.wav" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" /><!--动作中in的value为1-->
+    <sound class="impact" fileref="rifle_drop.wav" />
+	<sound key="reload_one" fileref="hd_p2_peacemaker_mag_out.wav" />
+	<sound key="cooldown" fileref="ex_exo_dreadnought_voice.wav" pitch_variety="0" volume="2.5"/>
+	<sound key="stab" fileref="cyborgs_hammer_hvy_hit_01.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit" fileref="cyborgs_hammer_hvy_hit_01.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="cyborgs_hammer_hvy_hit_01.wav" pitch_variety="0.05" volume="1" />
+
+    <model filename="" />
+    <hud_icon filename="ex_exo_dreadnought_mg.png" />
+
+    <weak_hand_hold offset="0.3" />
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.514" can_be_detected_by_driver="1" can_be_disarmed="0"> 
+		
+		<result class="hit" kill_probability="1.0" 
+		kill_probability_offset_on_successful_hit="30"
+		kill_decay_start_time="0.3" kill_decay_end_time="0.6" character_state="wound"/>
+
+
+		<effect class="result" key="terrain" ref="hd_mg94_result_spray" lighting="0" />
+		<effect class="result" key="terrain" ref="hd_mg94_result_bullet_light_center" lighting="0" />
+		<effect class="result" key="terrain" ref="hd_mg94_result_bullet_smoke" lighting="0" />
+		<effect class="result" key="terrain" ref="hd_mg94_hit_leave" lighting="0" />
+		<effect class="activated" ref="general_weapon_activated_bullet_light" lighting="0"/>
+		<effect class="activated" ref="general_weapon_activated_bullet_centerlight" lighting="0"/>
+
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_01" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_02" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_03" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_04" />
+
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="vehicle" copy="terrain" />
+		<trail probability="1.0" key="normal_trail_long" lighting="0"/>	
+    </projectile>
+
+    <effect class="muzzle" ref="general_weapon_muzzle_crossfire" lighting="0"/> 
+    <effect class="muzzle" ref="general_weapon_muzzle_crossfire_smoke" lighting="0"/> 
+
+    <stance state_key="running" accuracy="0.8" />
+    <stance state_key="walking" accuracy="0.9" />
+    <stance state_key="crouch_moving" accuracy="0.85" />
+    <stance state_key="standing" accuracy="0.95" />
+    <stance state_key="crouching" accuracy="1.02" />
+    <stance state_key="prone" accuracy="1.05" /> 
+    <stance state_key="prone_moving" accuracy="0.5" />
+    <stance state_key="over_wall" accuracy="1.1" />
+
+    <modifier class="speed" value="-0.4" />   
+    <modifier class="hit_success_probability" value="-0.5" />   
+
+    <shield offset="1 0 0.9" extent="1 3 2.7" usable_for_cover="0"/>  
+	<!-- x厚度，前后宽度,负向前；y高度，z宽度 -->
+	<modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="0" />
+	<modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="0" />
+	<modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="0" />
+	<!-- death and wound blast causes the item to be consumed, stun is ignored -->
+	<modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="0" />
+	<modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="0" />
+	<modifier class="projectile_blast_result" input_character_state="stun" output_character_state="none" consumes_item="0" />
+	<modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="0"/>
+
+</weapon>
+<weapon 
+file="_rare_weapon_mk5_re.base"
+key="re_ex_exo_dreadnought_plas.weapon"
+>
+    <tag name="machine gun" />
+    <tag name="EXO" />
+    <specification 
+    retrigger_time="0.5" 
+    accuracy_factor="0.95"
+    spread_range="0.11" 
+    sustained_fire_grow_step="0.5" 
+    sustained_fire_diminish_rate="0.5" 
+    cooldown_start="0.9"
+	cooldown_end="0.0"
+    magazine_size="8" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1"
+    can_shoot_prone="0"	 
+    suppressed="0" 
+    name="Dreadnought Plas" 
+    class="0" 
+	barrel_offset="1.0" 
+    projectile_speed="150.0" 
+    sight_range_modifier="1.0"  
+    use_basic_muzzle_smoke_effect="0"
+    carry_in_two_hands="0" 
+    stab_enabled="1"
+    stab_range="3"
+    />
+	<!--多模式-->
+    <next_in_chain key="re_ex_exo_dreadnought_rocket.weapon" share_ammo="0" /> 
+
+
+    <animation key="recoil" animation_key="ex_wuwei_recoil" />
+	<animation state_key="hold" animation_key="ex_wuwei_bone" />
+	<animation state_key="hold_casual" animation_key="ex_wuwei_bone" />
+	<animation state_key="reload" animation_key="ex_wuwei_reload_slower"/>
+	<animation state_key="crouching" animation_key="ex_wuwei_bone" />
+	<animation state_key="crouch_moving" animation_key="ex_wuwei_walking" />
+	<animation state_key="walking_backwards" animation_key="ex_wuwei_walking_back" />  
+	<animation state_key="hold_on_wall" animation_key="ex_wuwei_bone" />
+	<animation state_key="still_against_wall" 	animation_key="ex_wuwei_bone" />
+	<animation state_key="walking" animation_key="ex_wuwei_walking" />
+	<animation state_key="running" animation_key="ex_wuwei_walking" /> 
+		<animation state_key="stabbing" animation_key="ex_wuwei_stab" /> 
+	<!--切换模式，本模式的切出动作衔接下一模式的切入动作，置空为秒切-->
+	<animation state_key="next_in_chain_in" animation_key="ex_wuwei_bone" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="ex_wuwei_bone" /><!--半身动作，切换模式，本模式切入-->
+	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
+    <animation state_key="changing_weapon_in" animation_key="ex_wuwei_bone" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key="ex_wuwei_bone"/><!--半身动作，切换武器，本武器取出-->
+ 
+
+    <sound key="fire" fileref="ex_exo_dreadnought_plas_fire.wav" volume="3" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_02.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="magazine_out" fileref="ex_exo_dreadnought_plas_reload.wav" volume="5.0" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" /><!--动作中in的value为1-->
+    <sound class="impact" fileref="rifle_drop.wav" />
+	<sound key="reload_one" fileref="hd_p2_peacemaker_mag_out.wav" />
+	<sound key="stab" fileref="cyborgs_hammer_hvy_hit_01.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit" fileref="cyborgs_hammer_hvy_hit_01.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="cyborgs_hammer_hvy_hit_01.wav" pitch_variety="0.05" volume="1" />
+
+
+    <model filename="" />
+    <hud_icon filename="ex_exo_dreadnought_plas.png" />
+
+    <weak_hand_hold offset="0.3" />
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.3" can_be_detected_by_driver="1" can_be_disarmed="0"> 
+		
+        <result class="spawn" instance_class="projectile" instance_key="ex_exo_dreadnought_plas_damage.projectile" 
+		min_amount="4" max_amount="4" offset="0 0.5 0" position_spread="0.8 0" direction_spread="0.1 0" />
+
+		<effect class="result" key="terrain" ref="PLAS_result_spread_ring" lighting="0"/>
+		<effect class="result" key="terrain" ref="PLAS_result_light_ball" lighting="0"/>
+		<effect class="result" key="terrain" ref="PLAS_result_center_shrink" lighting="0"/>
+		<effect class="result" key="terrain" ref="PLAS_result_box_point" lighting="0"/>
+		<effect class="activated" ref="PLAS_activated_center_lens" lighting="0"/>
+		<effect class="activated" ref="PLAS_activated_center_ambient_light" lighting="0"/>
+		
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<!--尾迹组-->
+		<trail probability="1" key="plas1_scorcher.trail"/>	
+
+    </projectile>
+
+    <effect class="muzzle" ref="general_weapon_muzzle_crossfire_lightblue" lighting="0"/> 
+
+    <stance state_key="running" accuracy="0.8" />
+    <stance state_key="walking" accuracy="0.9" />
+    <stance state_key="crouch_moving" accuracy="0.85" />
+    <stance state_key="standing" accuracy="0.95" />
+    <stance state_key="crouching" accuracy="1.02" />
+    <stance state_key="prone" accuracy="1.05" /> 
+    <stance state_key="prone_moving" accuracy="0.5" />
+    <stance state_key="over_wall" accuracy="1.1" />
+
+    <modifier class="speed" value="-0.4" />   
+    <modifier class="hit_success_probability" value="-0.5" />   
+
+    <shield offset="1 0 0.9" extent="1 3 2.7" usable_for_cover="0"/>  
+	<!-- x厚度，前后宽度,负向前；y高度，z宽度 -->
+	<modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="0" />
+	<modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="0" />
+	<modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="0" />
+	<!-- death and wound blast causes the item to be consumed, stun is ignored -->
+	<modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="0" />
+	<modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="0" />
+	<modifier class="projectile_blast_result" input_character_state="stun" output_character_state="none" consumes_item="0" />
+	<modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="0"/>
+</weapon>
+<weapon 
+file="_rare_weapon_mk5_re.base"
+key="re_ex_exo_dreadnought_rocket.weapon"
+>
+    <tag name="machine gun" />
+    <tag name="EXO" />
+    <specification 
+    retrigger_time="2" 
+    last_burst_retrigger_time="3"
+    accuracy_factor="0.95"
+    spread_range="0.11" 
+    sustained_fire_grow_step="1" 
+    sustained_fire_diminish_rate="0.2" 
+    magazine_size="-1" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1"
+    can_shoot_prone="0"	 
+    suppressed="0" 
+    name="Dreadnought Missile" 
+    class="4" 
+    burst_shots="1"
+	barrel_offset_3d="0 1.0 -1" 
+    projectile_speed="150.0" 
+    sight_range_modifier="1.4"  
+    use_basic_muzzle_smoke_effect="0"
+    carry_in_two_hands="0" 
+    stab_enabled="1"
+    stab_range="3"
+    />
+	<!--多模式-->
+    <next_in_chain key="re_ex_exo_dreadnought_mg.weapon" share_ammo="0" /> 
+
+
+    <animation key="recoil" animation_key="ex_wuwei_recoil" />
+	<animation state_key="hold" animation_key="ex_wuwei_rocket_still" />
+	<animation state_key="hold_casual" animation_key="ex_wuwei_rocket_still" />
+	<animation state_key="reload" animation_key="ex_wuwei_reload_slower"/>
+	<animation state_key="crouching" animation_key="ex_wuwei_rocket_still" />
+	<animation state_key="crouch_moving" animation_key="ex_wuwei_walking" />
+	<animation state_key="walking_backwards" animation_key="ex_wuwei_walking_back" />  
+	<animation state_key="hold_on_wall" animation_key="ex_wuwei_rocket_still" />
+	<animation state_key="still_against_wall" 	animation_key="ex_wuwei_rocket_still" />
+	<animation state_key="walking" animation_key="ex_wuwei_walking" />
+	<animation state_key="running" animation_key="ex_wuwei_walking" /> 
+		<animation state_key="stabbing" animation_key="ex_wuwei_stab" /> 
+	<!--切换模式，本模式的切出动作衔接下一模式的切入动作，置空为秒切-->
+	<animation state_key="next_in_chain_in" animation_key="ex_wuwei_bone" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="ex_wuwei_bone" /><!--半身动作，切换模式，本模式切入-->
+	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
+    <animation state_key="changing_weapon_in" animation_key="ex_wuwei_bone" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key="ex_wuwei_bone"/><!--半身动作，切换武器，本武器取出-->
+ 
+
+ 	<sound key="fire" fileref="hd_at_launch_1.wav" pitch_variety="0.08" volume="0.3" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_01.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="dry_fire" fileref="hd_mg94_dryfire_02.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="magazine_out" fileref="hd_mag_out.wav" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="hd_mg94_mag_in.wav" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="rifle_chamber.wav" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="sniper_cycle_in.wav" /><!--动作中in的value为1-->
+    <sound class="impact" fileref="rifle_drop.wav" />
+	<sound key="reload_one" fileref="hd_p2_peacemaker_mag_out.wav" />
+	<sound key="stab" fileref="cyborgs_hammer_hvy_hit_01.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit" fileref="cyborgs_hammer_hvy_hit_01.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="cyborgs_hammer_hvy_hit_01.wav" pitch_variety="0.05" volume="1" />
+
+    <model filename="" />
+    <hud_icon filename="ex_exo_dreadnought_rocket.png" />
+
+    <weak_hand_hold offset="0.3" />
+
+    <ballistics 
+    curve_height="16" 
+    near_far_distance="0" 
+    speed_estimation_near="0" 
+    speed_estimation_far="58" 
+    max_speed="60" 
+    randomness="0" 
+    tweak_factor="1.48" /> 
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="48" can_be_detected_by_footmen="1" 
+	time_to_live="0.3" can_be_detected_by_driver="1" can_be_disarmed="0"> 
+		
+        <result class="notify_script" key="ex_exo_dreadnought_rocket" />
+        <trigger class="time" time_to_live="0.2"  />
+
+		<trail probability="1" key="nova_trail"/>	
+		<model mesh_filename="APFSDS.xml" />
+		
+		<effect class="activated" ref="general_activated_at_smoke_trail"/>
+
+		
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+
+    </projectile>
+
+    <effect class="muzzle" ref="general_weapon_muzzle_crossfire_lightblue" lighting="0"/> 
+
+    <stance state_key="running" accuracy="0.8" />
+    <stance state_key="walking" accuracy="0.9" />
+    <stance state_key="crouch_moving" accuracy="0.85" />
+    <stance state_key="standing" accuracy="0.95" />
+    <stance state_key="crouching" accuracy="1.02" />
+    <stance state_key="prone" accuracy="1.05" /> 
+    <stance state_key="prone_moving" accuracy="0.5" />
+    <stance state_key="over_wall" accuracy="1.1" />
+
+    <modifier class="speed" value="-0.4" />   
+    <modifier class="hit_success_probability" value="-0.5" />   
+
+    <shield offset="1 0 0.9" extent="1 3 2.7" usable_for_cover="0"/>  
+	<!-- x厚度，前后宽度,负向前；y高度，z宽度 -->
+	<modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="0" />
+	<modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="0" />
+	<modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="0" />
+	<!-- death and wound blast causes the item to be consumed, stun is ignored -->
+	<modifier class="projectile_blast_result" input_character_state="death" output_character_state="none" consumes_item="0" />
+	<modifier class="projectile_blast_result" input_character_state="wound" output_character_state="wound" consumes_item="0" />
+	<modifier class="projectile_blast_result" input_character_state="stun" output_character_state="none" consumes_item="0" />
+	<modifier class="melee_hit_result" input_character_state="death" output_character_state="none" consumes_item="0"/>
+</weapon>
+</weapons>

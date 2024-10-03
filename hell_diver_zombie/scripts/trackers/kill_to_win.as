@@ -47,7 +47,54 @@ class kill_to_win : Tracker {
         if(player is null){return;}
         int pid = player.getIntAttribute("player_id");
 		_notify(m_metagame,pid,"胜利条件:击杀"+m_kill2win_num+"数量僵尸[玩家越多指标越高]");
+
     }
+	// ----------------------------------------------------
+	protected void handlePlayerSpawnEvent(const XmlElement@ event) {
+		const XmlElement@ player = event.getFirstElementByTagName("player");
+		if(player is null){return;}
+		int pid = player.getIntAttribute("player_id");
+        int cid = player.getIntAttribute("character_id");
+        string name = player.getStringAttribute("name");
+
+		dictionary equipList;
+		if(!getPlayerEquipmentInfoArray(m_metagame,cid,equipList)){
+			return;
+		}
+		checkACG(m_metagame,name,pid,cid,equipList);
+	}
+	// ----------------------------------------------------
+	protected void checkACG(Metagame@ metagame,string&in name,int&in pid,int&in cid,dictionary&in equipList){
+        string equipKey;
+        if(equipList.get("1",equipKey)){//副武器
+            string targetKey = "acg_";
+            string targetKey2 = "re_acg_";
+            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+				kickPlayer(m_metagame,pid);
+				_notify(m_metagame,pid,"无法携带ACG武器进入僵尸服");
+            }
+			targetKey = "ex_";
+			targetKey2 = "re_ex_";
+            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+				kickPlayer(m_metagame,pid);
+				_notify(m_metagame,pid,"无法携带EX武器进入僵尸服");
+            }
+        }
+		if(equipList.get("0",equipKey)){//主武器
+			string targetKey = "acg_";
+            string targetKey2 = "re_acg_";
+			if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+				kickPlayer(m_metagame,pid);
+				_notify(m_metagame,pid,"无法携带ACG武器进入僵尸服");
+			}
+			targetKey = "ex_";
+			targetKey2 = "re_ex_";
+            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+				kickPlayer(m_metagame,pid);
+				_notify(m_metagame,pid,"无法携带EX武器进入僵尸服");
+            }
+		}
+	}
 	//SCRIPT:  received: TagName=character_kill key=hd_ar19_liberator_full_upgrade.weapon method_hint=hit     
 	//TagName=killer block=8 19 dead=0 faction_id=0 id=183 leader=1 name=Drumstick Dyuke player_id=0 
 	//position=282.881 3.46913 676.183 rp=0 soldier_group_name=default squad_size=0 wounded=0 xp=0     

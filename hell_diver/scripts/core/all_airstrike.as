@@ -55,6 +55,9 @@ class AirstrikeSystem : Tracker {
 
             case 11:{ //燃烧炸弹
                 CreateDirectProjectile(m_metagame,start_pos,end_pos,"hd_offensive_incendiary_bombs_mk3_spawn.projectile",cid,fid,60);
+                CreateDirectProjectile(m_metagame,start_pos.add(Vector3(0,-10,0)),end_pos,"hd_offensive_incendiary_bombs_mk3_damage.projectile",cid,fid,1);
+                CreateDirectProjectile(m_metagame,start_pos.add(Vector3(0,-20,0)),end_pos,"hd_offensive_incendiary_bombs_mk3_damage.projectile",cid,fid,1);
+                CreateDirectProjectile(m_metagame,start_pos.add(Vector3(0,-30,0)),end_pos,"hd_offensive_incendiary_bombs_mk3_damage.projectile",cid,fid,1);
                 remove_or_not = 1;
                 break;
             }

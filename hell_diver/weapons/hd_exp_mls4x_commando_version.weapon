@@ -83,6 +83,7 @@ player_death_drop_owner_lock_time="0"
 
 	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
 	<capacity value="1" source="rank" source_value="229.750" />
+    <commonness value="0" can_respawn_with="1" in_stock="0" /> 
 
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
     <projectile file="hd_general_gl_spawn.projectile" pulldown_in_air="48" can_be_detected_by_footmen="1" 

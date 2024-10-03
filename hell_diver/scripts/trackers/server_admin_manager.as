@@ -248,6 +248,12 @@ class server_admin_manager : Tracker{
             if(message == "/adminhelp"){ //管理员菜单
                 _notify(m_metagame,pid,"AdminHelp",true);
             }
+            if(message == "/jumpmap"){ //管理员菜单
+                g_battleInfoBuck.clearAll();
+                m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='1' />");
+                m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='2' />");
+                m_metagame.getComms().send("<command class='set_match_status' win='1' faction_id='0' />");
+            }
         }
         if(message == "/reloadadmin"){
             reload();

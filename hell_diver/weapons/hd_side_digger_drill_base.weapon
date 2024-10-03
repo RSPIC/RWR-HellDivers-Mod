@@ -19,7 +19,7 @@ on_ground_up="0 0 1"
     name="Digger Drill" 
     class="5" 
     spawn_instance_class="projectile" 
-    spawn_instance_key="hd_side_digger_drill_damage.projectile" 
+    spawn_instance_key="hd_exp_las99_quasar_cannon_call.projectile" 
     consume="0" 
     sight_range_modifier="1" 
     slot="1" 
@@ -32,7 +32,7 @@ on_ground_up="0 0 1"
 	<animation state_key="hold" animation_key="hold, hip fire" />
     <animation state_key="crouching" animation_key="hd_drill_recoil" />
 	<animation state_key="crouch_moving" animation_key="crouching forwards, hip fire" />
-    <animation state_key="reload" animation_key="reloading, microgun" volume="0.7" />
+    <animation state_key="reload" animation_key="reloading, microgun"/>
 	<animation state_key="hold_on_wall" animation_key="hold, line infantry" />
     <animation state_key="still_against_wall" 	animation_key="hold, hip fire" />
 	<animation state_key="hold_casual" animation_key="casual, groundsword" />  

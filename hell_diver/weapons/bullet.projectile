@@ -47,19 +47,6 @@
     <sound class="result" key="vehicle" tag="metal_dumpster" file="dumpster_bullet_02.wav" pitch_variety="0.4" volume="0.8" />              
 
     <sound class="result" key="static_object" copy="terrain" />
-    
-    <effect class="result" key="terrain" ref="Burst" use_surface_color="1" />
-	<effect class="result" key="vehicle" tag="sandbag" ref="Burst" use_surface_color="0" />
-    <effect class="result" key="vehicle" tag="metal_thin" ref="VehicleBurst" use_surface_color="0" />
-	<effect class="result" key="vehicle" tag="metal_thin" ref="VehicleSparkle" use_surface_color="0" />
-	<effect class="result" key="vehicle" tag="metal_dumpster" ref="VehicleBurst" use_surface_color="0" />
-	<effect class="result" key="vehicle" tag="metal_dumpster" ref="VehicleSparkle" use_surface_color="0" />
-	<effect class="result" key="vehicle" tag="metal_heavy" ref="VehicleBurst" use_surface_color="0" />
-	<effect class="result" key="vehicle" tag="metal_heavy" ref="VehicleSparkle" use_surface_color="0" />
-	<effect class="result" key="vehicle" tag="deco_car" ref="VehicleBurst" use_surface_color="0" />
-	<effect class="result" key="vehicle" tag="deco_car" ref="VehicleSparkle" use_surface_color="0" />
-    <effect class="result" key="static_object" ref="Burst" use_surface_color="1" />
-    <effect class="result" key="shield" ref="ShieldBurst" />
 	
     <!-- <trail probability="1.0" key="laser" /> -->
     <trail probability="1.0" />

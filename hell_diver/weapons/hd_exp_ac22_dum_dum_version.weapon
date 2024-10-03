@@ -142,13 +142,13 @@ player_death_drop_owner_lock_time="0"
 	use_basic_muzzle_smoke_effect="0"
 	/> 
 	<sound key="effect" fileref="hd2w_ac8_reload.wav" pitch_variety="0" volume="12.0" /><!--额外音频接口，在动作中调用，volume为音频大小倍率-->
-    <sound key="fire" fileref="hd2w_ac8_fire.wav" pitch_variety="0.1" volume="5.0" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
+    <sound key="fire" fileref="hd2w_ac8_fire.wav" pitch_variety="0.1" volume="9.0" /><!--pitch_variety为音调随机变化范围，自动武器常用-->
 
 	<model filename="hd2w_ac8_autocannon.xml" /> 
     <addon_model filename="hd2w_ac8_backpack.xml" /> <!--附加模型，固定绑骨到肩膀-->
     <hud_icon filename="hd2w_ac8_autocannon.png" /> <!--临时贴图-->
 
-	<commonness value="0" can_respawn_with="0" in_stock="0" /> 
+	<commonness value="0" can_respawn_with="1" in_stock="0" /> 
 
     <animation state_key="reload" animation_key="hd_ac8_reload_5_clip" />	<!--换弹动作，半身动作-->
 

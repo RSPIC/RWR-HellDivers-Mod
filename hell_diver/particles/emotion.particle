@@ -63,8 +63,8 @@ particle_system hd_emoticon_le : hd_emoticon_good
 }
 particle_system hd_emoticon_no : hd_emoticon_good
 {
-    particle_width 2
-	particle_height 2
+    particle_width 3
+	particle_height 3
     material ui_no
     emitter Point
 	{

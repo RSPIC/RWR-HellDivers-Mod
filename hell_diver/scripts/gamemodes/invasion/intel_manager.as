@@ -255,6 +255,7 @@ class IntelManager : Tracker {
 	
 	// ----------------------------------------------------
 	protected void checkProximityCompletion() {
+		_log("checkProximityCompletion");
 		array<const XmlElement@>@ players = getPlayers(m_metagame);
 		array<const XmlElement@>@ bases = getBases(m_metagame);
 		for (uint i = 0; i < bases.size(); ++i) {

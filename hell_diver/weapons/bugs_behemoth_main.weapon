@@ -106,7 +106,7 @@ radius="1"
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
     <projectile file="hd_general_spawn_no_effect.projectile" pulldown_in_air="8"  > 
         <trigger class="time" time_to_live="0.85" />
-        <result class="blast" radius="4.8" damage="120" push="0.5" decal="0" character_state="wound" 
+        <result class="blast" radius="4.8" damage="119" push="0.5" decal="0" character_state="wound" 
         make_vehicle_hit_sound="0" faction_compare="not_equal"/>
 
         <!--命中音效-->
@@ -286,7 +286,7 @@ radius="1"
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
     <projectile file="hd_general_spawn_no_effect.projectile" pulldown_in_air="8"  > 
         <trigger class="time" time_to_live="1" />
-        <result class="blast" radius="5.5" damage="120" push="0.5" decal="0" character_state="wound" 
+        <result class="blast" radius="5.5" damage="119" push="0.5" decal="0" character_state="wound" 
         make_vehicle_hit_sound="0" faction_compare="not_equal"/>
 
         <!--命中音效-->

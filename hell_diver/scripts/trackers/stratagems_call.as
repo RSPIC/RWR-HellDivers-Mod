@@ -126,11 +126,17 @@ dictionary code_stratagems = {
         // 占位的
         {"666",-1}
 };
+dictionary code_stratagems_upgrade = {
+        // Offensive 攻击性支援
+        {"ddsads","hd_offensive_orbital_120mm_he_barrage_call"},
+        {"DDSADS","hd_offensive_orbital_120mm_he_barrage_call"},
+        {"dswwass","hd_offensive_orbital_380mm_he_barrage_call"},
+        {"DSWWASS","hd_offensive_orbital_380mm_he_barrage_call"},
+
+		// 空
+        {"",-1}
+};
 dictionary disable_zombie_mode = {
-	{"ddw","hd_offensive_strafing_run_mk3"},
-	{"DDW","hd_offensive_strafing_run_mk3"},
-	{"ddsw","hd_offensive_heavy_strafing_run_mk3"},
-	{"DDSW","hd_offensive_heavy_strafing_run_mk3"},
 	{"dadassd","hd_offensive_shredder_missile_strike_mk3"},
 	{"DADASSD","hd_offensive_shredder_missile_strike_mk3"},
 	{"dswwas","hd_offensive_thunderer_barrage_mk3"},
@@ -141,14 +147,6 @@ dictionary disable_zombie_mode = {
 	{"adws","hd_airdropped_stun_mine_mk3"},
 	{"ADWS","hd_airdropped_stun_mine_mk3"},
 
-	{"aswdds","hd_agl8_mk3_call"},
-	{"ASWDDS","hd_agl8_mk3_call"},
-	{"asswda","hd_aac6_tesla_mk3_call"},
-	{"ASSWDA","hd_aac6_tesla_mk3_call"},
-	{"aswda","hd_amg_11_mk3_call"},
-	{"ASWDA","hd_amg_11_mk3_call"},
-	{"aswad","hd_arx_34_mk3_call"},
-	{"ASWAD","hd_arx_34_mk3_call"},
 	{"sdwass","hd_exo44_mk3"},
 	{"SDWASS","hd_exo44_mk3"},
 	{"sdwasa","hd_exo48_mk3"},
@@ -234,6 +232,9 @@ dictionary stratagems_CD = {
 	{"hd_offensive_missile_barrage_mk3",90},
 	{"hd_offensive_incendiary_bombs_mk3",22},
 	{"hd_offensive_heavy_strafing_run_mk3",15},
+
+	{"hd_offensive_orbital_120mm_he_barrage_call",480},
+	{"hd_offensive_orbital_380mm_he_barrage_call",600},
 
 	// defensive 防御性支援
 	{"hd_at_mine_mk3",30},
@@ -627,7 +628,32 @@ class stratagems_call : Tracker {
 					_notify(m_metagame,pid,"当前游戏模式禁用该战略呼叫");
 					return;
 				}
-				if(!code_stratagems.get(message,stratagemsKey)){return;}
+				string stratagemsKey2;
+				if(!code_stratagems.get(message,stratagemsKey) && !code_stratagems_upgrade.get(message,stratagemsKey2)){return;}
+
+				if(code_stratagems_upgrade.get(message,stratagemsKey2)){
+					upgrade@ upgrade_track = upgrade(m_metagame);
+					const XmlElement@ info = upgrade_track.readUpgradeFile(p_name,"stratagems");
+					if(info is null){return;}
+					array<const XmlElement@> stratagems = info.getChilds();
+					_log("PrintTest(readUpgradeFile(name,'stratagems')):"+info.toString());
+					string stratagemKey = stratagemsKey2;
+					bool isOwn = false;
+					for(uint i=0; i<stratagems.size(); ++i){
+						const XmlElement@ stratagem = stratagems[i];
+						if(stratagem is null){continue;}
+						string key = stratagem.getStringAttribute("key");
+						if(key == stratagemKey){
+							_notify(m_metagame,pid,"已拥有该战备");
+							isOwn = true;
+							stratagemsKey = stratagemsKey2;
+						}
+					}
+					if(!isOwn){
+						_notify(m_metagame,pid,"未拥有该战备");
+						return;
+					}
+				}
 				if(g_stratagems_call_factor == 0 ||
 					g_server_activity
 				){
@@ -635,7 +661,7 @@ class stratagems_call : Tracker {
 					return;
 				}
 				if(!p_cd_lists.exists(p_name,stratagemsKey) ){
-					float cd = 12;
+					float cd = 300;
 					stratagems_CD.get(stratagemsKey,cd);
 					if(g_vestInfoBuck !is null){
 						cd = cd*(1-0.1*g_vestInfoBuck.getStratagemsFirst(p_name))*g_stratagems_call_factor; 

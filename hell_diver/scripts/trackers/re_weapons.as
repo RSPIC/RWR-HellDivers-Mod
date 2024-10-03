@@ -134,6 +134,14 @@ class re_weapons : Tracker {
                 }
             }
         }
+        if(containerId == 2){ //特殊武器兑换
+            if(itemKey == "acg_scripts_hoshino_get.weapon"){
+                deleteItemInBackpack(m_metagame,cid,"weapon",itemKey);
+			    deleteItemInStash(m_metagame,cid,"weapon",itemKey);
+                addItemInBackpack(m_metagame,cid,"weapon","acg_takanashi_hoshino_battle.weapon");
+                addItemInBackpack(m_metagame,cid,"weapon","acg_takanashi_hoshino_battle_side_pistol.weapon");
+            }
+        }
     }
 
     protected void handleChatEvent(const XmlElement@ event) {

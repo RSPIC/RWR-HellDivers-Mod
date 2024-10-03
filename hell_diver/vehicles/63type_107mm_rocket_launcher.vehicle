@@ -21,6 +21,7 @@ designated_squad_as_driver_only="1"
       tracked="1" gears="0"  max_rotation="0.1"  max_water_depth="1.0" />
 
 	<physics 
+	max_health="3000" 
 	mass="64" 
 	extent="1.6 0 2.4" 
 	offset="0 0 0" 

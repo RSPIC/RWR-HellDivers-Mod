@@ -25,6 +25,7 @@ dictionary research_list = {
     {"ex_trinity_ghoul.weapon",450},
     {"acg_laisha_heliotrope.weapon",450},
     {"acg_elaina_wand.weapon",450},
+    {"acg_izayoi_sakuya_i.weapon",450},
 
     // MK4
     {"acg_arknight_ifrit.weapon",450},// rare
@@ -41,6 +42,7 @@ dictionary research_list = {
     {"acg_shinano.weapon",150},
     {"acg_incomparable.weapon",150},
     {"acg_yileina_wand.weapon",150},
+    {"acg_hayase_yuuka.weapon",150},
 
     //mk3 
     {"acg_takanashi_hoshino.weapon",50},
@@ -48,6 +50,8 @@ dictionary research_list = {
     {"acg_miyu.weapon",50},
     {"acg_g41_universe.weapon",50},
     {"acg_maria_schariac.weapon",50},
+    {"ex_space_marines.weapon",50},
+    {"acg_rumi.weapon",50},
 
     //mk3 sell
     {"acg_sinteria_bow.weapon",40},
@@ -69,6 +73,7 @@ dictionary research_list = {
     {"acg_piko_hammer.weapon",10},
     {"acg_stylet_m61a1.weapon",10},
     {"acg_otogi_sniper.weapon",10},
+    {"ex_heavy_infantry_morita.weapon",10},
 
     //mk1 sell
     {"acg_stylet_m61a1.weapon",5},
@@ -78,6 +83,9 @@ dictionary research_list = {
     {"ex_izanagis_burden.weapon",5},
     {"ex_funnelnet.weapon",5},
     {"acg_mg3.weapon",5},
+    {"acg_ushio_noa.weapon",5}, // unsell
+    {"ex_typhoon.weapon",5}, 
+    {"ex_heavy_infantry_morita_mk1.weapon",5}, 
 
     //EXTRA
     {"ex_firework.weapon",80},

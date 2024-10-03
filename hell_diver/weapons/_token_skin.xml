@@ -719,9 +719,103 @@
         <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
         <capacity value="12" source="rank" source_value="0" />
     </projectile>
-
+    <projectile file="hd_hellpod_call.projectile" name="Rumi [Skin]" key="token_rumi.projectile" >
+        <hud_icon filename="token_rumi.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <!-- 1.9.3 -->
+    <projectile file="hd_hellpod_call.projectile" name="Yang [Skin]" key="token_yang.projectile" >
+        <hud_icon filename="token_yang.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Yaha [Skin]" key="token_yaha.projectile" >
+        <hud_icon filename="token_yaha.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Luna Child [Skin]" key="token_luna_child.projectile" >
+        <hud_icon filename="token_luna_child.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Star Sapphire [Skin]" key="token_star_sapphire.projectile" >
+        <hud_icon filename="token_star_sapphire.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Sunny Milk [Skin]" key="token_sunny_mlik.projectile" >
+        <hud_icon filename="token_sunny_mlik.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Final Chapter I [Skin]" key="token_final_chapter_i.projectile" >
+        <hud_icon filename="token_final_chapter_i.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Nar [Dress][Skin]" key="token_nar_lf.projectile" >
+        <hud_icon filename="token_nar_lf.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Rebellious Bunny I [Skin]" key="token_rebellious_bunny_i.projectile" >
+        <hud_icon filename="token_rebellious_bunny_i.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Rebellious Bunny I [Old][Skin]" key="token_rebellious_bunny_i_old.projectile" >
+        <hud_icon filename="token_rebellious_bunny_i_old.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Sabayon [Skin]" key="token_sabayon.projectile" >
+        <hud_icon filename="token_sabayon.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <!-- 1.9.4 -->
+    <projectile file="hd_hellpod_call.projectile" name="Hinanawi Tenshi [Skin]" key="token_hinanawi_tenshi.projectile" >
+        <hud_icon filename="token_hinanawi_tenshi.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Tomoe Gozen [Skin]" key="token_tomoe_gozen.projectile" >
+        <hud_icon filename="token_tomoe_gozen.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Asashio [Skin]" key="token_asashio.projectile" >
+        <hud_icon filename="token_asashio.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Plana [Skin]" key="token_plana.projectile" >
+        <hud_icon filename="token_plana.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Mizuha Mimori [Skin]" key="token_mizuha_mimori.projectile" >
+        <hud_icon filename="token_mizuha_mimori.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
 
     <!-- 其他 -->
+    <projectile file="hd_hellpod_call.projectile" name="Misono Mika[Skin]" key="token_misono_mika.projectile" >
+        <hud_icon filename="token_misono_mika.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+        <sound class="result" key="other" fileref="acg_volice_clip_mika_02.wav" pitch_variety="0" volume="1.0"/>
+        <sound class="result" key="other" fileref="acg_volice_clip_mika_01.wav" pitch_variety="0" volume="1.0"/>
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Tendou Alice [Maid][Skin]" key="token_alice_tendou_maid.projectile" >
+        <hud_icon filename="token_alice_tendou_maid.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+        <sound class="result" key="other" fileref="acg_alice_bbkb_voice_01.wav" pitch_variety="0" volume="1.0"/>
+    </projectile>
     <projectile file="hd_hellpod_call.projectile" name="Dark Excalibur [Skin]" key="token_dark_excalibur.projectile" >
         <hud_icon filename="token_dark_excalibur.png" />
         <commonness value="0.0" can_respawn_with="1" in_stock="0"/>

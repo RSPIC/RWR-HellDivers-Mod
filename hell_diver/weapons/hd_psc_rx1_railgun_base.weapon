@@ -28,14 +28,12 @@ file="_hd_precision.base"
     <hud_icon filename="hd_rx1_railgun.png" />
 	<weak_hand_hold offset="0" />
 	
-	<animation key="recoil" animation_key="recoil1" /> <!--后坐力动作，半身动作-->
     <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
     <animation state_key="reload" animation_key="reloading_2.5s" />
     <animation state_key="next_in_chain_in" animation_key="sheath bayonet part 2" />
     <animation state_key="next_in_chain_out" animation_key="mount bayonet part 1" />
 
 	
-	<sound key="fire" fileref="rx1_railgun_fire.wav" pitch_variety="0.00"  volume="0.3" />
     <sound key="cycle" fileref="rifle_chamber.wav" pitch_variety="0.00"  volume="0.7"/>
 	<sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.03" volume="1.0" /><!--空弹射击扳机音效-->
     <sound key="magazine_out" fileref="sniper_clip_out_1.wav" />
@@ -46,7 +44,6 @@ file="_hd_precision.base"
 	
     <!-- <commonness value="0.1" can_respawn_with="1" in_stock="1"/>
     <inventory encumbrance="10" price="0.0" /> -->
-	<commonness value="0.1"/>
 
     <capacity value="0" source="rank" source_value="0.0" />
     <capacity value="1" source="rank" source_value="32.161" />

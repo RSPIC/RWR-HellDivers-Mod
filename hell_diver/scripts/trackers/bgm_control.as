@@ -43,8 +43,10 @@ dictionary bgm_time = {
         {"bugs_searching_bgm_4.wav",140},
         
         {"illuminate_searching_bgm_1.wav",309},
+        {"illuminate_searching_bgm_1_8bit.wav",309},
         {"illuminate_fighting_bgm_1.wav",225},
         {"illuminate_fighting_bgm_2.wav",335},
+        {"illuminate_fighting_bgm_2_8bit.wav",335},
 
         // 占位的
         {"666",-1}
@@ -154,13 +156,13 @@ class bgm_control : Tracker{
             "bugs_boss_bgm_2.wav"
         };
         array<string> illuminate_bgmList_fight = {
-            "illuminate_fighting_bgm_1.wav"
+            "illuminate_fighting_bgm_2_8bit.wav"
         };
         array<string> illuminate_bgmList_searching = {
-            "illuminate_searching_bgm_1.wav"
+            "illuminate_searching_bgm_1_8bit.wav"
         };
         array<string> illuminate_bgmList_boss = {
-            "illuminate_fighting_bgm_2.wav"
+            "illuminate_fighting_bgm_2_8bit.wav"
         };
 
         array<string> @bgmList_searching = cyborgs_bgmList_searching;
@@ -186,7 +188,7 @@ class bgm_control : Tracker{
         string bgmName;
         if(isFirst || !isFighting){
             int soundrnd= rand(0,bgmList_searching.length() - 1);
-            playSoundtrack(m_metagame,bgmList_searching[soundrnd]);
+            playSoundtrack(m_metagame,bgmList_searching[soundrnd]); 
             bgmName = bgmList_searching[soundrnd];
             if(g_debugMode){
                 _report(m_metagame,"Serching BGM,id="+soundrnd);
@@ -233,8 +235,12 @@ class bgm_control : Tracker{
     // ------------------------------------------------------
     protected void handleChatEvent(const XmlElement@ event) {
 		string message = event.getStringAttribute("message");
-		if(message != "/bgm"){return;}
+		if(message == "/bgm"){
             PlayBgm();
+        }
+		if(message == "/bgm test"){
+            playSoundtrack(m_metagame,"test.wav");
+        }
 	}
 
 
