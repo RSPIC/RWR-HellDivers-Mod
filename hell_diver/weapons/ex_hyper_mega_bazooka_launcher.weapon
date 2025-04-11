@@ -193,7 +193,7 @@ key="ex_hyper_mega_bazooka_launcher.weapon"
 	
 
 		<result class="spawn" instance_class="grenade" instance_key="ex_hyper_mega_bazooka_launcher_damage.projectile" 
-		min_amount="20" max_amount="25" offset="0 0 0" position_spread="1 1" direction_spread="0.0 0.0" />
+		min_amount="25" max_amount="30" offset="0 0 0" position_spread="1 1" direction_spread="0.0 0.0" />
 
 		<trigger class="impact" time_to_live="0.4"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
@@ -537,7 +537,7 @@ key="re_ex_hyper_mega_bazooka_launcher.weapon"
 	
 
 		<result class="spawn" instance_class="grenade" instance_key="ex_hyper_mega_bazooka_launcher_damage.projectile" 
-		min_amount="20" max_amount="25" offset="0 0 0" position_spread="1 1" direction_spread="0.0 0.0" />
+		min_amount="25" max_amount="30" offset="0 0 0" position_spread="1 1" direction_spread="0.0 0.0" />
 
 		<trigger class="impact" time_to_live="0.4"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->

@@ -729,6 +729,7 @@ material Tex_Smoke17C_real : alpha_blend_base_real
 		}
 	}
 }}
+
 material Tex_Spark06A : alpha_blend_base_real
 {   
     technique{
@@ -879,4 +880,28 @@ material Tex_FireSmoke_real_02 : add_base_real
 		}
 	}
 }}
+material Tex_Smoke17C_real_add : add_base_real
+{   
+    technique{
+    pass{
+		scene_blend add 
+        texture_unit{
+            texture Tex_Smoke17C.png 	
+			scroll_anim 0 -1
+			tex_address_mode wrap
+		}
+		texture_unit{
+            texture Tex_Smoke17C.png 
 
+			scroll_anim 1 -1
+			rotate 180
+			tex_address_mode wrap
+			tex_border_colour 0 0 0 0
+		}
+		texture_unit{
+			texture Tex_Smoke09A.png
+			colour_op modulate 
+			tex_address_mode wrap
+		}
+	}
+}}

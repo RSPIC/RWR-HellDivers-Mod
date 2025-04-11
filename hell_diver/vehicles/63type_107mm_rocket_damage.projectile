@@ -27,4 +27,7 @@ pulldown_in_air="30.0" key="63type_107mm_rocket_damage.projectile">
     <effect class="result" key="other" copy="terrain"/>
     <effect class="result" key="static_object" copy="terrain" />
     <effect class="result" key="character" copy="terrain" />
+
+    <trail probability="1" key="trail_rumbler"/>
+
 </projectile>

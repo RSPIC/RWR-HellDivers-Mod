@@ -33,6 +33,8 @@ dictionary airstrikeIndex = {
         {"acg_starwars_shipgirls_skill_damage",100},
         {"acg_sabayon_gun_skill_damage",101},
 
+        {"kisaki_skill",102},
+
         // 下面这行是用来占位的，在这之上添加新的即可
         {"666",-1}
 };
@@ -60,6 +62,7 @@ dictionary projectile_eventkey = {
         {"hd_offensive_thunderer_barrage_mk3",14},
 
         {"hd_offensive_laser_strike_mk3",17},
+        {"hd_offensive_radar_tower_laser",18},
 
         {"hd_offensive_strafing_run_mk3",20},
 
@@ -166,6 +169,23 @@ dictionary projectile_eventkey = {
         {"ex_exo_telemon_missile_damage",82},
         // 空输部队
         {"hd_call_cqc_30",83},
+        // 闪刀空投
+        {"acg_sky_striker_ace_orig_call_red",84},
+        {"acg_sky_striker_ace_orig_call_green",85},
+        {"acg_sky_striker_ace_orig_call_yellow",86},
+        {"acg_sky_striker_ace_orig_call_blue",87},
+        
+        {"acg_sky_striker_ace_hayate_green_mode3",88},
+        //  太空死灵 超时空立方体
+        {"ex_imotekh_cube",89},
+        //  太空死灵 跟踪
+        {"ex_imotekh_sec_call",90},
+        // 龙华妃咲
+        {"re_acg_kisaki",91},
+        {"re_acg_kisaki_s",92},
+
+        {"kisaki_drone",93},
+        {"acg_kisaki_doll",94},
 
         // 占位的
         {"666",-1}

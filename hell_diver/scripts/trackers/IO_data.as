@@ -23,6 +23,11 @@
 //密钥兑换系统
 int g_readCounter = 0;
 const XmlElement@ readXML(const Metagame@ metagame, string filename, string location = "savegame" ){
+    // XmlElement@ test = XmlElement("null");
+    // XmlElement@ test2 = XmlElement("null");
+    //     test.appendChild(test2);
+    // return XmlElement(test);
+    
 	XmlElement@ query = XmlElement(
 		makeQuery(metagame, array<dictionary> = {
 			dictionary = { {"TagName", "data"}, {"class", "saved_data"}, {"filename", filename}, {"location", location} } }));
@@ -108,12 +113,17 @@ class IO_data : Tracker {
 		debug(message,p_name);
         setMainAccount(message,p_name);
 		handleRewardKeys(message,p_name);
-		handleSoilderChangeKeys(message,p_name);
+		// handleSoilderChangeKeys(message,p_name);
 		handleMyInviteKey(message,p_name);
 	}
     // -------------------------------------------
     void handleRewardKeys(string&in message,string&in p_name){
         if(startsWith(message,"/key")){
+            int pid = g_playerInfoBuck.getPidByName(p_name);
+            if(g_GameMode != "Racing" && !g_single_player){
+                _notify(m_metagame,pid,"请在赛车服使用密钥兑换");
+                return;
+            }
             XmlElement@ allInfo = XmlElement(readFile(m_reward_keys_FILENAME));
             if(allInfo is null){
                 _log("allInfo is null, in handleRewardKeys");
@@ -129,7 +139,6 @@ class IO_data : Tracker {
             }
             bool isValid = false;
             string access_tag = "";
-            int pid = g_playerInfoBuck.getPidByName(p_name);
             string m_sid = g_playerInfoBuck.getSidByName(p_name);   
             //遍历密钥列表
             XmlElement@ targetInfo;
@@ -392,7 +401,11 @@ class IO_data : Tracker {
         //因此用户的任意账号可以多次邀请不同用户，而只能被邀请一次
 
         if(startsWith(message,"/mykey")){
-            
+            if( g_GameMode !="Racing" && !g_single_player){
+                int pid = g_playerInfoBuck.getPidByName(p_name);
+                _notify(m_metagame,pid,"请在赛车服使用");
+                return;
+            }
             string m_sid = g_playerInfoBuck.getSidByName(p_name);
             string m_hash = g_playerInfoBuck.getHashByName(p_name);
             int pid = g_playerInfoBuck.getPidByName(p_name);
@@ -1984,6 +1997,10 @@ void updateGlobalPlayerInfo(Metagame@ m_metagame, const XmlElement@ newplayer = 
     array<const XmlElement@> players;
     players = getPlayers(m_metagame);
     if(players is null){return;}
+
+    if(g_server_difficulty_level != 3){
+        return;
+    }
 
     string FILENAME = "_globalPlayerInfo_"+g_server_difficulty_level+".xml";
     string location = "app_data";

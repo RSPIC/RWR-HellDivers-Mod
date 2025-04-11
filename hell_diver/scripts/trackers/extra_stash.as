@@ -976,6 +976,7 @@ class extra_stash : Tracker {
 			if(m_playerCds !is null){
 				m_playerCds.update(m_time,m_metagame);
                 updateSuperCash();
+                updateAceClip();
 			}
 		}
 	}
@@ -1002,6 +1003,32 @@ class extra_stash : Tracker {
                     m_playerStashInfoBuck.pushInObjects(sid);
                     m_playerStashInfoBuck.openStash(sid);
                     g_userCountInfoBuck.clearCount(name,"SuperCash");
+                }else{
+                    continue;
+                }
+            }
+        }
+    }
+    // -------------------------------------------
+	protected void updateAceClip() {
+        for(uint i = 0; i < g_userCountInfoBuck.size(); ++i){
+            int SuperItem = 0;
+            string name = g_userCountInfoBuck.indexName(i);
+            // _report(m_metagame,"updateSuperCash ="+name);
+            if(g_userCountInfoBuck.getCount(name,"acg_sky_striker_ace_clips",SuperItem)){
+                if(SuperItem > 0){
+                    XmlElement newXml("stash");
+                        newXml.setStringAttribute("AA_tag","acg_sky_striker_ace_clips");
+                        newXml.setStringAttribute("A_tag","special");
+                        newXml.setIntAttribute("value",SuperItem);
+                    string sid = g_playerInfoBuck.getSidByName(name);
+                    if(!m_playerStashInfoBuck.isOpen(sid)){
+                        m_playerStashInfoBuck.openStash(sid);
+                    }
+                    m_playerStashInfoBuck.addPushInObject(sid,newXml);
+                    m_playerStashInfoBuck.pushInObjects(sid);
+                    m_playerStashInfoBuck.openStash(sid);
+                    g_userCountInfoBuck.clearCount(name,"acg_sky_striker_ace_clips");
                 }else{
                     continue;
                 }
@@ -1058,6 +1085,9 @@ class extra_stash : Tracker {
 
         if(itemKey.find("_exchange") != -1){
             deleteItemInBackpack(m_metagame,cid,"carry_item",itemKey);
+            if(itemKey.find("_weapon") != -1){
+                deleteItemInBackpack(m_metagame,cid,"weapon",itemKey);
+            }
             if(!m_playerCds.exists(name,"exchangeItems")){
                 m_playerCds.addNew(name,playerId,"exchangeItems",3.0);
                 
@@ -1237,6 +1267,15 @@ class extra_stash : Tracker {
             }
         }
         if(containerId == 1){
+            if(itemKey == "hd_super_cash_100"){
+                g_userCountInfoBuck.addCount(name,"SuperCash",100);
+            }
+            if(itemKey == "hd_super_cash_1000"){
+                g_userCountInfoBuck.addCount(name,"SuperCash",1000);
+            }
+            if(itemKey == "acg_sky_striker_ace_clips"){
+                g_userCountInfoBuck.addCount(name,"acg_sky_striker_ace_clips",1);
+            }
             if(m_playerStashInfoBuck.isOpen(sid)){
                 if(!canStoreItem.get(itemKey,translateName)){
                     g_userCountInfoBuck.addCount(name,"pushInStashError");

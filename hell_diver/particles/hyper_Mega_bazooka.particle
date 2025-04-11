@@ -486,6 +486,45 @@ particle_system hyper_mega_muzzle_skill_ambient_light
 		colour2 0 0 0 0
 	}
 }
+particle_system hyper_mega_muzzle_skill_ambient_light_red
+{
+	quota 50
+	material point_soft_edge_100
+	particle_width 25
+	particle_height 25
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 6
+		duration 0.1
+	}
+    affector Scaler
+	{
+		rate 3
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.3 0 1
+		time1 0.7
+		colour1 1 1 1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
 particle_system hyper_mega_muzzle_skill_later_impact_circle
 {
 	quota 50
@@ -523,6 +562,47 @@ particle_system hyper_mega_muzzle_skill_later_impact_circle
 		colour1 0 0 0 0
 		time2 0.805
 		colour2 1 0 0.3 1
+		time3 1
+		colour3 0 0 0 0
+	}
+}
+particle_system hyper_mega_muzzle_skill_later_impact_circle_red
+{
+	quota 50
+	material lens_circle_06_cull
+	particle_width 250
+	particle_height 250
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 30
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 3.0
+		duration 0.1
+	}
+    affector Scaler
+	{
+		rate -100
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.8
+		colour1 0 0 0 0
+		time2 0.805
+		colour2 1 0.3 0 1
 		time3 1
 		colour3 0 0 0 0
 	}
@@ -620,7 +700,56 @@ particle_system hyper_mega_muzzle_skill_later_pre_line_center_3 : hyper_mega_muz
 		colour4 0 0 0 0
 	}
 }
+particle_system hyper_mega_muzzle_skill_later_pre_line_center_4 : hyper_mega_muzzle_skill_later_pre_line_center
+{
+    material Particle_Trail_22_bw_mega
+    particle_width 70
 
+    emitter Point
+	{
+        emission_rate 10
+    }
+    affector Scaler
+	{}
+    affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.39
+		colour1 0 0 0 0
+		time2 0.40
+		colour2 1 0 0 1
+		time3 0.9
+		colour3 1 0 0 1
+		time4 1
+		colour4 0 0 0 0
+	}
+}
+particle_system hyper_mega_muzzle_skill_later_pre_line_center_5 : hyper_mega_muzzle_skill_later_pre_line_center
+{
+    material Particle_Trail_36_anim_mega
+    particle_width 30
+
+    emitter Point
+	{
+        emission_rate 30
+    }
+    affector Scaler
+	{}
+    affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.39
+		colour1 0 0 0 0
+		time2 0.40
+		colour2 1 0.3 0 1
+		time3 0.9
+		colour3 1 0.3 0 1
+		time4 1
+		colour4 0 0 0 0
+	}
+}
 particle_system hyper_mega_muzzle_skill_later_spark
 {
 	quota 200
@@ -675,6 +804,70 @@ particle_system hyper_mega_muzzle_skill_later_spark
 		colour0 1 0 0.3 0
 		time1 0.7
 		colour1 1 0 0.3 0
+		time2 1
+		colour2 0 0 0 0
+	}
+	affector DirectionRandomiser 
+	{
+		randomness 10
+		scope 10
+		keep_velocity false
+	}
+}
+particle_system hyper_mega_muzzle_skill_later_spark_red
+{
+	quota 200
+    emit_emitter_quota 200
+	material point_soft_edge_100
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point		
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 30
+		position 0 0 0
+		velocity_min 80
+		velocity_max 80
+		time_to_live 5
+		duration 0.1
+		emit_emitter tag1
+	}
+	emitter Box		
+	{
+		name tag1
+		angle 180
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 200
+		position 0 0 0
+		velocity 3
+		time_to_live_min 3
+		time_to_live_max 5
+		duration 5
+        width 20
+		height 20
+		depth 20
+	}
+	affector Scaler
+	{
+		rate -0.1
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.1 0 0
+		time1 0.7
+		colour1 1 0.1 0 0
 		time2 1
 		colour2 0 0 0 0
 	}

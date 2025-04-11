@@ -36,10 +36,10 @@ dictionary weaponLevel = {
     {"ex_space_marines.weapon","MK3"},
     {"acg_takanashi_hoshino.weapon","MK3"},
     {"acg_g41_bp2077.weapon","MK3"},
-    {"acg_miyu.weapon","MK3"},
     {"acg_g41_universe.weapon","MK3"},
     {"acg_maria_schariac.weapon","MK3"},
 
+    {"acg_miyu.weapon","MK2"},
     {"acg_sinteria_bow.weapon","MK2"},
     {"acg_kokomi_portia.weapon","MK2"},
     {"acg_sorasaki_hina.weapon","MK2"},
@@ -101,6 +101,9 @@ dictionary canStoreItem = {
     {"samples_bugs_ex.carry_item","[虫族样本]"},
     {"samples_cyborgs_ex.carry_item","[生化人样本]"},
     {"samples_illuminate_ex.carry_item","[光能样本]"},
+
+    {"collect_treasure_of_space_time.carry_item","[时空秘宝]"},
+    {"acg_sky_striker_ace_clips","[闪刀姬 卡片]"},
 
     // {"hd_bonusfactor_al_10","[全局加成卡 10%]"},
     // {"hd_bonusfactor_al_20","[全局加成卡 20%]"},
@@ -363,6 +366,8 @@ dictionary autoStoreItem = {
     {"reward_box_weapon_delta_clip.carry_item","[MK4箱 碎片]"},
     {"reward_box_weapon_lamda_clip.carry_item","[MK3箱 碎片]"},
     {"reward_box_weapon_v_clip.carry_item","[MK5箱 碎片]"},
+
+    {"collect_treasure_of_space_time.carry_item","[时空秘宝]"},
 
     {"hd_vote_ticket","[民本选票]"}
 };
@@ -1029,28 +1034,28 @@ array<stashExchangeList@> ExchangeLists ={
                 getStashXmlElement("ex_nova_callrandom.projectile","projectile",1)
             }
         ),
-        //67 超级货币[44] 换 [Lamda箱子]x1 MK3
+        //67 超级货币[23] 换 [Lamda箱子]x1 MK3
         stashExchangeList(
             array<XmlElement@>= {
-                getStashXmlElement("SuperCash","special",44)
+                getStashXmlElement("SuperCash","special",23)
             }, 
             array<XmlElement@>= {
                 getStashXmlElement("reward_box_weapon_lamda.carry_item","carry_item",1)
             }
         ),
-        //68 超级货币[396] 换 [V箱子]x1 MK5
+        //68 超级货币[220] 换 [V箱子]x1 MK5
         stashExchangeList(
             array<XmlElement@>= {
-                getStashXmlElement("SuperCash","special",396)
+                getStashXmlElement("SuperCash","special",220)
             }, 
             array<XmlElement@>= {
                 getStashXmlElement("reward_box_weapon_v.carry_item","carry_item",1)
             }
         ),
-        //69 超级货币[132] 换 [Delta箱子]x1 MK4
+        //69 超级货币[75] 换 [Delta箱子]x1 MK4
         stashExchangeList(
             array<XmlElement@>= {
-                getStashXmlElement("SuperCash","special",132)
+                getStashXmlElement("SuperCash","special",75)
             }, 
             array<XmlElement@>= {
                 getStashXmlElement("reward_box_weapon_delta.carry_item","carry_item",1)
@@ -1065,7 +1070,102 @@ array<stashExchangeList@> ExchangeLists ={
                 getStashXmlElement("","",0)
             }
         ),
-
+        //71  16套Fumo各一个[1] 换 MK6-龙华妃咲[2]
+        stashExchangeList(
+            array<XmlElement@>= {
+                getStashXmlElement("collect_fumo_cirno.carry_item","carry_item",1),
+                getStashXmlElement("collect_fumo_flandre_scarlet.carry_item","carry_item",1),
+                getStashXmlElement("collect_fumo_hong_meiling.carry_item","carry_item",1),
+                getStashXmlElement("collect_fumo_inu_sakuya.carry_item","carry_item",1),
+                getStashXmlElement("collect_fumo_junko.carry_item","carry_item",1),
+                getStashXmlElement("collect_fumo_koishi_komeiji.carry_item","carry_item",1),
+                getStashXmlElement("collect_fumo_mike_goutokuji.carry_item","carry_item",1),
+                getStashXmlElement("collect_fumo_mokou_fujiwara.carry_item","carry_item",1),
+                getStashXmlElement("collect_fumo_nitori_kawashiro.carry_item","carry_item",1),
+                getStashXmlElement("collect_fumo_reimu.carry_item","carry_item",1),
+                getStashXmlElement("collect_fumo_rumia.carry_item","carry_item",1),
+                getStashXmlElement("collect_fumo_sanae_kochiya.carry_item","carry_item",1),
+                getStashXmlElement("collect_fumo_shion_yorigami.carry_item","carry_item",1),
+                getStashXmlElement("collect_fumo_suwako_moriya.carry_item","carry_item",1),
+                getStashXmlElement("collect_fumo_youmu_konpaku.carry_item","carry_item",1),
+                getStashXmlElement("collect_fumo_yuyuko.carry_item","carry_item",1)
+            }, 
+            array<XmlElement@>= {
+                getStashXmlElement("re_acg_kisaki.weapon","weapon",1)
+            }
+        ),
+        //72  时空秘宝[6] 换 MK5-风暴领主[2]
+        stashExchangeList(
+            array<XmlElement@>= {
+                getStashXmlElement("collect_treasure_of_space_time.carry_item","carry_item",6)
+            }, 
+            array<XmlElement@>= {
+                getStashXmlElement("re_ex_imotekh.weapon","weapon",1)
+            }
+        ),
+        //73  [时空秘宝]x1 兑换 150w rp
+        stashExchangeList(
+            array<XmlElement@>= {
+                getStashXmlElement("collect_treasure_of_space_time.carry_item","carry_item",1)
+            }, 
+            array<XmlElement@>= {
+                getStashXmlElement("hd_money_10w","carry_item",15)
+            }
+        ),
+        //74  [研究点]x10 兑换 [时空秘宝]x1
+        stashExchangeList(
+            array<XmlElement@>= {
+                getStashXmlElement("samples_acg.carry_item","carry_item",10)
+            }, 
+            array<XmlElement@>= {
+                getStashXmlElement("collect_treasure_of_space_time.carry_item","carry_item",1)
+            }
+        ),
+        //75 超级货币[20] 换 [研究点]x1
+        stashExchangeList(
+            array<XmlElement@>= {
+                getStashXmlElement("SuperCash","special",20)
+            }, 
+            array<XmlElement@>= {
+                getStashXmlElement("samples_acg.carry_item","carry_item",1)
+            }
+        ),
+        //76 超级货币[20] 换 [研究点]x1
+        stashExchangeList(
+            array<XmlElement@>= {
+                getStashXmlElement("SuperCash","special",198)
+            }, 
+            array<XmlElement@>= {
+                getStashXmlElement("samples_acg.carry_item","carry_item",10)
+            }
+        ),
+        //77 超级货币[1000] 换 闪刀
+        stashExchangeList(
+            array<XmlElement@>= {
+                getStashXmlElement("SuperCash","special",1000)
+            }, 
+            array<XmlElement@>= {
+                getStashXmlElement("acg_sky_striker_ace_orig_call_green.weapon","weapon",1)
+            }
+        ),
+        //78 闪刀姬卡片[100] 换 闪刀
+        stashExchangeList(
+            array<XmlElement@>= {
+                getStashXmlElement("acg_sky_striker_ace_clips","special",100)
+            }, 
+            array<XmlElement@>= {
+                getStashXmlElement("acg_sky_striker_ace_orig_call_green.weapon","weapon",1)
+            }
+        ),
+        //79 超级货币[200] 换 核弹背包[1]
+        stashExchangeList(
+            array<XmlElement@>= {
+                getStashXmlElement("SuperCash","special",200)
+            }, 
+            array<XmlElement@>= {
+                getStashXmlElement("hd_side_b100_portable_hellbomb.weapon","weapon",1)
+            }
+        ),
 };
 
 const dictionary stashExchangeDict = {
@@ -1144,6 +1244,15 @@ const dictionary stashExchangeDict = {
     {"hd_supercash_rp_up_exchange",@ExchangeLists[70]},
     {"hd_supercash_xp_up_exchange",@ExchangeLists[70]},
     {"hd_supercash_rp_result_up_exchange",@ExchangeLists[70]},
+    {"re_acg_kisaki_exchange",@ExchangeLists[71]},
+    {"re_ex_imotekh_exchange",@ExchangeLists[72]},
+    {"spec_ring_to_money_exchange",@ExchangeLists[73]},
+    {"sample_to_spec_ring_exchange",@ExchangeLists[74]},
+    {"hud_supercash_to_sample_exchange",@ExchangeLists[75]},
+    {"hud_supercash_to_sample_10_exchange",@ExchangeLists[76]},
+    {"hud_supercash_to_sky_striker_ace_exchange",@ExchangeLists[77]},
+    {"ace_card_to_sky_striker_ace_exchange",@ExchangeLists[78]},
+    {"hd_side_b100_portable_hellbomb_exchange",@ExchangeLists[79]},
 
     {"",""}
 };

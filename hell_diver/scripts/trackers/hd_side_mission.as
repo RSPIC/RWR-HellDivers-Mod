@@ -19,7 +19,7 @@
 //摧毁广播塔任务
 //扫雷任务支线
 //回收火箭车支线
-
+//信号塔维修任务
 
 class hd_side_mission : Tracker{
     protected Metagame@ m_metagame;
@@ -88,6 +88,36 @@ class hd_side_mission : Tracker{
             _log("spawn MineMission at position："+basePosition.toString());
             _debugReport(m_metagame,"spawn MineMission at position："+basePosition.toString());
         }
+
+    }
+    void initiateRadarMission(){
+        if(g_server_activity){return;}
+        if(!g_firstUseInfoBuck.isFirst("admin","initiateRadarMission")){
+            return;
+        }
+        uint count = 7;
+		while(count > 0 ) {
+            Vector3@ basePosition = Vector3(512,0,512);
+            int randx = rand(-256,256);
+            int randy = rand(-256,256);
+            basePosition = basePosition.add(Vector3(randx,0,randy));
+
+            count--;
+            XmlElement command("command");
+            command.setStringAttribute("class", "create_instance");
+            command.setStringAttribute("instance_class", "carry_item");
+            command.setStringAttribute("instance_key", "mc_beacon.carry_item");
+            command.setStringAttribute("position", basePosition.toString());
+            command.setIntAttribute("faction_id", 1);
+            m_metagame.getComms().send(command);
+
+            TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+            autoSetMarker marker(m_metagame,1200,5,1.0,0,basePosition,"Beacon","call_marker","#00b9ff",false,false,true,0);
+            tasker.add(marker);
+
+            _log("spawn BeaconMission at position："+basePosition.toString());
+            _debugReport(m_metagame,"spawn BeaconMission at position："+basePosition.toString());
+        }
     }
     void setMarker(int markerId,Vector3@ position,int atlas_index,bool showInEdge = true){
         XmlElement command("command");
@@ -132,6 +162,13 @@ class hd_side_mission : Tracker{
 
             setMarker(vehicle_id + 8600,position,12);
         }
+        if(vehicle_key == "radar_tower.vehicle"){
+            const XmlElement@ vehicleInfo = getVehicleInfo(m_metagame, vehicle_id);
+            if(vehicleInfo is null){return;}
+            Vector3 position = stringToVector3(vehicleInfo.getStringAttribute("position"));
+            // setMarker(vehicle_id + 8400,position,14);
+            initiateRadarMission();
+        }
     }
     // --------------------------------------------
     protected void handleItemDropEvent(const XmlElement@ event) {
@@ -139,6 +176,7 @@ class hd_side_mission : Tracker{
         int containerId = event.getIntAttribute("target_container_type_id");
         int pid = event.getIntAttribute("player_id");
         int cid = event.getIntAttribute("character_id");
+        Vector3 position = stringToVector3(event.getStringAttribute("position"));
         //containerId = 0(地面) 1(军械库) 2（背包） 3（仓库）
 		//itemClass = 0(主、副武器) 1（投掷物） 3（护甲、战利品）
 
@@ -157,6 +195,74 @@ class hd_side_mission : Tracker{
                     _notify(m_metagame,pid,"已运送地雷样本"+times+"/"+needTimes+"个");
                 }
                 deleteItemInBackpack(m_metagame,cid,"projectile",itemKey);
+            }
+        }
+        if(itemKey == "mc_beacon.carry_item"){ //维修信号塔任务
+            if(containerId == 2){//装备进背包
+                addItemInBackpack(m_metagame,cid,"carry_item","mc_beacon_script.carry_item");
+                deleteItemInBackpack(m_metagame,cid,"carry_item",itemKey);
+            }
+        }
+        if(itemKey == "mc_beacon_script.carry_item"){ //维修信号塔任务
+            if(containerId == 1){   //装备进军械库
+                GiveRP(m_metagame,cid,3000);
+            }
+            if(containerId == 0){//地面
+                array<const XmlElement@> AllFactions = getFactions(m_metagame);	
+                for(uint fid = 0 ; fid <= AllFactions.size() ; fid++ ){
+                    array<const XmlElement@>@ vehicles = getAllVehicles(m_metagame, fid);
+                    for (uint i = 0; i < vehicles.length(); ++i) {
+                        //获取载具位置并计算与落点的相对距离
+                        Vector3 vehiclePos = stringToVector3(vehicles[i].getStringAttribute("position"));
+                        float distance = get2DMAxAxisDistance(1,vehiclePos,position);
+                        measure_square_area(m_metagame,position,Vector3(10.0,0,10.0),"red");
+                        if(distance <= 10.0){
+                            //捕获附近存在载具，获取载具信息
+                            int vehicleId = vehicles[i].getIntAttribute("id");
+                            const XmlElement@ vehicleInfo = getVehicleInfo(m_metagame, vehicleId);
+                            float vehicleHealth = vehicleInfo.getFloatAttribute("health");
+                            float vehicleMaxHealth = vehicleInfo.getFloatAttribute("max_health");
+                            string vehiclekey = vehicleInfo.getStringAttribute("key");
+                            string vehicleName = vehicleInfo.getStringAttribute("name");
+                            int owner_id = vehicleInfo.getIntAttribute("owner_id");
+                            if(vehiclekey == "radar_tower.vehicle"){
+                                _notify(m_metagame,pid,"信号塔维修成功，已修复");
+                                string name = g_playerInfoBuck.getNameByPid(pid);
+                                if(g_firstUseInfoBuck.isFirst("admin","fix_radar_tower")){
+                                    addItemInBackpack(m_metagame,cid,"projectile","hd_offensive_radar_tower_laser.projectile");
+                                }
+                                // 周围发闪刀碎片
+                                array<const XmlElement@> factions = getFactions(m_metagame);
+                                for (uint f = 0; f < factions.size() && f < 1; ++f){ //跳过自身阵营查询
+                                int ATKTimes = 1;
+                                if(ATKTimes <= 0){break;}
+                                    const XmlElement@ faction = factions[f];
+                                    if(faction is null){continue;}
+                                    int t_fid = faction.getIntAttribute("id");
+                                    array<const XmlElement@>@ soldiers = getCharactersNearPosition(m_metagame, position, t_fid, 40.0f);				
+                                    int s_size = soldiers.length();
+                                    if (s_size == 0) continue;
+                                    while(ATKTimes > 0 && soldiers.length() > 0){
+                                        ATKTimes--;
+                                        int s_i = rand(0,soldiers.length()-1);
+                                        int soldier_id = soldiers[s_i].getIntAttribute("id");
+                                        soldiers.removeAt(s_i);
+                                        int m_pid = g_playerInfoBuck.getPidByCid(soldier_id);
+                                        if(m_pid >= 0){
+                                            if(g_firstUseInfoBuck.isFirst(name,"fix_radar_tower")){
+                                                addItemInBackpack(m_metagame,cid,"carry_item","acg_sky_striker_ace_clips");
+                                            }
+                                        }
+                                    }
+                                }
+                                g_battleInfoBuck.addMission(name);
+                                g_playerMissionInfoBuck.addMissionFinishTimes(name,"finish_sidemission");
+                                return;
+                            }
+                        }
+                    }
+                }
+                spawnStaticItem(m_metagame,"mc_beacon.carry_item",position,0,0,"carry_item");
             }
         }
     }

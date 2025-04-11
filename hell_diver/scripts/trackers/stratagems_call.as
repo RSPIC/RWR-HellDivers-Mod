@@ -491,7 +491,25 @@ class player_cd_bucket {
 		player_cd_list@ newList = player_cd_list(name,pid,key,cd,ready);
 		cd_lists.insertLast(newList);
 	}
-	
+	void resetCD(const string&in name){	
+		if(cd_lists is null){
+			_log("cd_lists is null pointer");
+			return;
+		}
+		for(uint i = 0 ; i < cd_lists.size() ; ++i){
+			if(cd_lists[i].name() == name){
+				if(cd_lists[i].key() == "hd_offensive_orbital_120mm_he_barrage_call" || 
+				cd_lists[i].key() == "hd_offensive_orbital_380mm_he_barrage_call"	
+				){
+					continue;
+				}
+				cd_lists[i].setEnd();
+				cd_lists.removeAt(i);
+				break;
+			}
+		}
+		return;
+	}
 	void update(float time,const Metagame@ m_metagame){
 		if(cd_lists !is null){
 			for(uint i = 0 ; i < cd_lists.size() ; ++i){
@@ -728,6 +746,44 @@ class stratagems_call : Tracker {
 			spawnStaticProjectile(m_metagame,spawnkey,t_position,characterId,fid);
 			spawnStaticProjectile(m_metagame,"hd_hellpod_dropping_damage.projectile",t_position,characterId,fid);
 			spawnStaticProjectile(m_metagame,"hd_hellpod_dropping_sound.projectile",t_position,characterId,fid);
+		}
+		if(EventKeyGet=="acg_kisaki_doll"){
+			int cid = event.getIntAttribute("character_id");
+			const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+			if(character is null){return;}
+			int pid = character.getIntAttribute("player_id");
+			Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+
+			array<const XmlElement@> factions = getFactions(m_metagame);
+			int ATKTimes = 3;
+			for (uint f = 0; f < factions.size() && f < 1; ++f){ //自身阵营查询
+				if(ATKTimes <= 0){break;}
+				const XmlElement@ faction = factions[f];
+				if(faction is null){continue;}
+				int t_fid = faction.getIntAttribute("id");
+				array<const XmlElement@>@ soldiers = getCharactersNearPosition(m_metagame, ePos, t_fid, 8.0f);				
+				int s_size = soldiers.length();
+				if (s_size == 0) continue;
+				while(ATKTimes > 0 && soldiers.length() > 0){
+					ATKTimes--;
+					int s_i = rand(0,soldiers.length()-1);
+					int soldier_id = soldiers[s_i].getIntAttribute("id");
+					soldiers.removeAt(s_i);
+					Vector3 soldier_pos = stringToVector3(getCharacterInfo(m_metagame, soldier_id).getStringAttribute("position"));
+					
+					int m_pid = g_playerInfoBuck.getPidByCid(soldier_id);
+					if(m_pid >= 0){
+						const XmlElement@ player = getPlayerInfo(m_metagame, m_pid);
+						if (player is null) return;
+						string playerName = player.getStringAttribute("name");
+						p_cd_lists.resetCD(playerName);
+						notify(m_metagame, "战略CD已重置", dictionary(), "misc", m_pid, false, "", 1.0);
+						healCharacter(m_metagame,soldier_id,80);//此处修改回复层数
+					}
+					string m_key = "ba_effect_kisaki_skill.projectile";
+					spawnStaticProjectile(m_metagame,m_key,soldier_pos,0,0);
+				}
+			}
 		}
 	}
 

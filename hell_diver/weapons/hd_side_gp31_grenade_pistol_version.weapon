@@ -34,10 +34,10 @@ player_death_drop_owner_lock_time="0"
 	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0"> 
 
 		<result class="spawn" instance_class="projectile" instance_key="hd_side_gp31_grenade_pistol_base_damage.projectile" 
-		min_amount="30" max_amount="75" offset="0 1 0" position_spread="2 0" direction_spread="0.1 0" />	
+		min_amount="30" max_amount="125" offset="0 1 0" position_spread="2 0" direction_spread="0.1 0" />	
 		<trigger class="impact" />
 
-		<!-- 3*30 = 90 ~ 225-->
+		<!-- 3*30 = 90 ~ 375-->
 
 		<!--命中音效-->
 		<sound class="result" key="other" fileref="hk416_sc_gl_explosion.wav" pitch_variety="0.1" volume="12.0" />

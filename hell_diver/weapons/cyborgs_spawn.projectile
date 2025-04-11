@@ -8,14 +8,44 @@ slot="0"
 radius="0.15" 
 time_to_live_out_in_the_open="0.0" 
 drop_count_factor_on_death="0.0"
-pulldown_in_air="4.0"
+pulldown_in_air="0.0001"
+>
+	<result class="spawn" instance_class="projectile" instance_key="cyborgs_spawn_berserker_ai.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+    <trigger class="time" time_to_live="0.8"/>
+
+    <rotation class="motion" />
+
+	<model filename="cyborgs_berserker.xml" /> 
+
+    <hud_icon filename="cyborgs_icon.png" />
+
+    <throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+
+    <!-- projectile slot 0 is used for hand grenade items currently -->
+    <!-- bound to change -->
+    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
+    <capacity value="0" source="rank" source_value="0.0" /> 
+    <capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+</projectile>
+<projectile
+class="grenade" 
+name="Spawn Berserker" 
+key="cyborgs_spawn_berserker_ai.projectile" 
+slot="0" 
+radius="0.15" 
+time_to_live_out_in_the_open="0.0" 
+drop_count_factor_on_death="0.0"
+pulldown_in_air="8.0"
 >
 	<!--无论高度固定生成在弹头所在的地平面上-->
 	<result class="notify_script" key="Berserker" />
-    <trigger class="time" time_to_live="0.0"/>
-    <rotation class="random" />
+    <trigger class="impact" time_to_live="0.0"/>
 
-	<model mesh_filename="" />
+    <rotation class="motion" />
+
+	<model filename="cyborgs_berserker.xml" /> 
 
     <hud_icon filename="cyborgs_icon.png" />
 
@@ -48,7 +78,6 @@ pulldown_in_air="4.0"
 		<sound class="result" key="vehicle" copy="other" />
 		<sound class="result" key="character" copy="other" />
 </projectile>
-
 <projectile class="grenade" 
 name="Spawn Butcher" 
 key="cyborgs_spawn_butcher.projectile" 
@@ -56,15 +85,45 @@ slot="0"
 radius="0.15" 
 time_to_live_out_in_the_open="0.0" 
 drop_count_factor_on_death="0.0"
-pulldown_in_air="4.0"
+pulldown_in_air="0.0001"
+>
+	<!--无论高度固定生成在弹头所在的地平面上-->
+	<result class="spawn" instance_class="projectile" instance_key="cyborgs_spawn_butcher_ai.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+    <trigger class="time" time_to_live="0.8"/>
+
+    <rotation class="motion" />
+
+	<model filename="cyborgs_butcher.xml" /> 
+
+    <hud_icon filename="cyborgs_icon.png" />
+
+    <throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+
+    <!-- projectile slot 0 is used for hand grenade items currently -->
+    <!-- bound to change -->
+    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
+    <capacity value="0" source="rank" source_value="0.0" /> 
+    <capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+    
+</projectile>
+<projectile class="grenade" 
+name="Spawn Butcher" 
+key="cyborgs_spawn_butcher_ai.projectile" 
+slot="0" 
+radius="0.15" 
+time_to_live_out_in_the_open="0.0" 
+drop_count_factor_on_death="0.0"
+pulldown_in_air="8.0"
 >
 	<!--无论高度固定生成在弹头所在的地平面上-->
 	<result class="notify_script" key="Butcher" />
-    <trigger class="time" time_to_live="0.01"/>
+    <trigger class="impact" time_to_live="3"/>
 
-    <rotation class="random" />
+    <rotation class="motion" />
 
-	<model mesh_filename="" />
+	<model filename="cyborgs_butcher.xml" /> 
 
     <hud_icon filename="cyborgs_icon.png" />
 
@@ -97,7 +156,6 @@ pulldown_in_air="4.0"
 		<sound class="result" key="vehicle" copy="other" />
 		<sound class="result" key="character" copy="other" />	
 </projectile>
-
 <projectile class="grenade" 
 name="Spawn Comrade" 
 key="cyborgs_spawn_comrade.projectile" 
@@ -105,15 +163,15 @@ slot="0"
 radius="0.15" 
 time_to_live_out_in_the_open="0.0" 
 drop_count_factor_on_death="0.0"
-pulldown_in_air="4.0"
+pulldown_in_air="0.0001"
 >
 	<!--无论高度固定生成在弹头所在的地平面上-->
-	<result class="notify_script" key="Comrade" />
-    <trigger class="time" time_to_live="0.01"/>
+	<result class="spawn" instance_class="projectile" instance_key="cyborgs_spawn_comrade_ai.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+    <trigger class="time" time_to_live="0.8"/>
+    <rotation class="motion" />
 
-    <rotation class="random" />
-
-	<model mesh_filename="" />
+	<model filename="cyborgs_comrade.xml" /> 
 
     <hud_icon filename="cyborgs_icon.png" />
 
@@ -126,6 +184,33 @@ pulldown_in_air="4.0"
     <capacity value="9" source="rank" source_value="0.0" /> 
 	<inventory encumbrance="0.5" price="0.0" />
 	
+</projectile>
+<projectile class="grenade" 
+name="Spawn Comrade" 
+key="cyborgs_spawn_comrade_ai.projectile" 
+slot="0" 
+radius="0.15" 
+time_to_live_out_in_the_open="0.0" 
+drop_count_factor_on_death="0.0"
+pulldown_in_air="8.0"
+>
+	<!--无论高度固定生成在弹头所在的地平面上-->
+	<result class="notify_script" key="Butcher" />
+    <trigger class="impact" time_to_live="3"/>
+    <rotation class="motion" />
+	<model filename="cyborgs_comrade.xml" /> 
+
+    <hud_icon filename="cyborgs_icon.png" />
+
+    <throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+
+    <!-- projectile slot 0 is used for hand grenade items currently -->
+    <!-- bound to change -->
+    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
+    <capacity value="0" source="rank" source_value="0.0" /> 
+    <capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+    
 	<effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_faster" lighting="0"/>
 	<effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_leave_faster" lighting="0"/>
 		<effect class="result" key="other" copy="terrain"/>
@@ -144,9 +229,8 @@ pulldown_in_air="4.0"
 		<sound class="result" key="terrain" copy="other" />
 		<sound class="result" key="static_object" copy="other" />
 		<sound class="result" key="vehicle" copy="other" />
-		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="character" copy="other" />	
 </projectile>
-
 <projectile 
 class="grenade" 
 name="Spawn Grotesque" 
@@ -155,15 +239,15 @@ slot="0"
 radius="0.15" 
 time_to_live_out_in_the_open="0.0" 
 drop_count_factor_on_death="0.0"
-pulldown_in_air="4.0"
+pulldown_in_air="0.0001"
 >
 	<!--无论高度固定生成在弹头所在的地平面上-->
-	<result class="notify_script" key="Grotesque" />
-    <trigger class="time" time_to_live="0.0"/>
+	<result class="spawn" instance_class="projectile" instance_key="cyborgs_spawn_grotesque_ai.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+    <trigger class="time" time_to_live="0.8"/>
+    <rotation class="motion" />
 
-    <rotation class="random" />
-
-	<model mesh_filename="" />
+	<model filename="cyborgs_grotesque.xml" /> 
 
     <hud_icon filename="cyborgs_icon.png" />
 
@@ -175,76 +259,119 @@ pulldown_in_air="4.0"
     <capacity value="0" source="rank" source_value="0.0" /> 
     <capacity value="9" source="rank" source_value="0.0" /> 
 	<inventory encumbrance="0.5" price="0.0" />
-	
+</projectile>
+<projectile class="grenade" 
+name="Spawn Grotesque" 
+key="cyborgs_spawn_grotesque_ai.projectile" 
+slot="0" 
+radius="0.15" 
+time_to_live_out_in_the_open="0.0" 
+drop_count_factor_on_death="0.0"
+pulldown_in_air="8.0"
+>
+	<!--无论高度固定生成在弹头所在的地平面上-->
+	<result class="notify_script" key="Grotesque" />
+    <trigger class="impact" time_to_live="3"/>
+    <rotation class="motion" />
+	<model filename="cyborgs_grotesque.xml" /> 
+
+    <hud_icon filename="cyborgs_icon.png" />
+
+    <throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+
+    <!-- projectile slot 0 is used for hand grenade items currently -->
+    <!-- bound to change -->
+    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
+    <capacity value="0" source="rank" source_value="0.0" /> 
+    <capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+    
 	<effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_faster" lighting="0"/>
 	<effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_leave_faster" lighting="0"/>
-		<effect class="result" key="other" copy="terrain"/>
-		<effect class="result" key="static_object" copy="terrain" />
-		<effect class="result" key="character" copy="terrain" />
-		<effect class="result" key="shield" copy="terrain" />			
-		<effect class="result" key="vehicle" copy="terrain" />			
-		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="shield" copy="terrain" />			
+	<effect class="result" key="vehicle" copy="terrain" />			
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
 		
 		
-		<sound class="result" key="other" fileref="cyborgs_dropping.wav" volume="1" />
-		<sound class="result" key="terrain" copy="other" />
-		<sound class="result" key="static_object" copy="other" />
-		<sound class="result" key="vehicle" copy="other" />
-		<sound class="result" key="character" copy="other" />
-	
+	<sound class="result" key="other" fileref="cyborgs_dropping.wav" volume="1" />
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />	
 </projectile>
 
 <projectile class="grenade" 
 name="Spawn Hound" 
 key="cyborgs_spawn_hound.projectile" 
-slot="0" 
-radius="0.15" 
-time_to_live_out_in_the_open="0.0" 
+slot="0"
+radius="0.15"
+time_to_live_out_in_the_open="0.0"
 drop_count_factor_on_death="0.0"
-pulldown_in_air="4.0"
+pulldown_in_air="0.0001"
 >
 	<!--无论高度固定生成在弹头所在的地平面上-->
-	<result class="notify_script" key="Hound" />
-    <trigger class="time" time_to_live="0.01"/>
+	<result class="spawn" instance_class="projectile" instance_key="cyborgs_spawn_hound_ai.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+	<trigger class="time" time_to_live="0.8"/>
 
-    <rotation class="random" />
+	<rotation class="motion" />
 
-	<model mesh_filename="" />
+	<model filename="cyborgs_hound.xml" /> 
 
-    <hud_icon filename="cyborgs_icon.png" />
+	<hud_icon filename="cyborgs_icon.png" />
 
-    <throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+	<throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
 
-    <!-- projectile slot 0 is used for hand grenade items currently -->
-    <!-- bound to change -->
-    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
-    <capacity value="0" source="rank" source_value="0.0" /> 
-    <capacity value="9" source="rank" source_value="0.0" /> 
+	<!-- projectile slot 0 is used for hand grenade items currently -->
+	<!-- bound to change -->
+	<commonness value="0.0" can_respawn_with="1" in_stock="1" />
+	<capacity value="0" source="rank" source_value="0.0" /> 
+	<capacity value="9" source="rank" source_value="0.0" /> 
 	<inventory encumbrance="0.5" price="0.0" />
-	
-	<effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_faster" lighting="0"/>
-	<effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_leave_faster" lighting="0"/>
-		<effect class="result" key="other" copy="terrain"/>
-		<effect class="result" key="static_object" copy="terrain" />
-		<effect class="result" key="character" copy="terrain" />
-		<effect class="result" key="shield" copy="terrain" />			
-		<effect class="result" key="vehicle" copy="terrain" />			
-		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
-		
-		
-		<sound class="result" key="other" fileref="cyborgs_dropping.wav" volume="1" />
-		<sound class="result" key="terrain" copy="other" />
-		<sound class="result" key="static_object" copy="other" />
-		<sound class="result" key="vehicle" copy="other" />
-		<sound class="result" key="character" copy="other" />
+</projectile>
+<projectile class="grenade" 
+name="Spawn Hound"
+key="cyborgs_spawn_hound_ai.projectile"
+slot="0"
+radius="0.15"
+time_to_live_out_in_the_open="0.0"
+drop_count_factor_on_death="0.0"
+pulldown_in_air="8.0"
+>
+	<result class="notify_script" key="Hound" />
+	<trigger class="impact" time_to_live="3" />
+	<rotation class="motion" />
+	<model filename="cyborgs_hound.xml" />
+	<hud_icon filename="cyborgs_icon.png" />
+	<throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+	<commonness value="0.0" can_respawn_with="1" in_stock="1" />
+	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="9" source="rank" source_value="0.0" />
+	<inventory encumbrance="0.5" price="0.0" />
+	<effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_faster" lighting="0" />
+	<effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_leave_faster" lighting="0" />
+	<effect class="result" key="other" copy="terrain" />
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="shield" copy="terrain" />
+	<effect class="result" key="vehicle" copy="terrain" />
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+	<sound class="result" key="other" fileref="cyborgs_dropping.wav" volume="1" />
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
 </projectile>
 
 <projectile class="grenade" 
@@ -254,47 +381,67 @@ slot="0"
 radius="0.15" 
 time_to_live_out_in_the_open="0.0" 
 drop_count_factor_on_death="0.0"
-pulldown_in_air="4.0"
+pulldown_in_air="0.0001"
 >
 	<!--无论高度固定生成在弹头所在的地平面上-->
-	<result class="notify_script" key="Hulk" />
-    <trigger class="time" time_to_live="0.01"/>
+	<result class="spawn" instance_class="projectile" instance_key="cyborgs_spawn_hulk_ai.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+	<trigger class="time" time_to_live="0.8"/>
 
-    <rotation class="random" />
+	<rotation class="motion" />
 
-	<model mesh_filename="" />
+	<model filename="cyborgs_hulk.xml" /> 
 
-    <hud_icon filename="cyborgs_icon.png" />
+	<hud_icon filename="cyborgs_icon.png" />
 
-    <throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+	<throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
 
-    <!-- projectile slot 0 is used for hand grenade items currently -->
-    <!-- bound to change -->
-    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
-    <capacity value="0" source="rank" source_value="0.0" /> 
-    <capacity value="9" source="rank" source_value="0.0" /> 
+	<!-- projectile slot 0 is used for hand grenade items currently -->
+	<!-- bound to change -->
+	<commonness value="0.0" can_respawn_with="1" in_stock="1" />
+	<capacity value="0" source="rank" source_value="0.0" /> 
+	<capacity value="9" source="rank" source_value="0.0" /> 
 	<inventory encumbrance="0.5" price="0.0" />
-	
-	<effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_faster" lighting="0"/>
-	<effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_leave_faster" lighting="0"/>
-		<effect class="result" key="other" copy="terrain"/>
-		<effect class="result" key="static_object" copy="terrain" />
-		<effect class="result" key="character" copy="terrain" />
-		<effect class="result" key="shield" copy="terrain" />			
-		<effect class="result" key="vehicle" copy="terrain" />			
-		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
-		
-		
-		<sound class="result" key="other" fileref="cyborgs_dropping.wav" volume="1" />
-		<sound class="result" key="terrain" copy="other" />
-		<sound class="result" key="static_object" copy="other" />
-		<sound class="result" key="vehicle" copy="other" />
-		<sound class="result" key="character" copy="other" />
 </projectile>
+<projectile class="grenade" 
+name="Spawn Hulk"
+key="cyborgs_spawn_hulk_ai.projectile"
+slot="0"
+radius="0.15"
+time_to_live_out_in_the_open="0.0"
+drop_count_factor_on_death="0.0"
+pulldown_in_air="8.0"
+> 
+	<result class="notify_script" key="Hulk" />
+	<trigger class="impact" time_to_live="3" />
+	<rotation class="motion" />
+	<model filename="cyborgs_hulk.xml" />
+	<hud_icon filename="cyborgs_icon.png" />
+	<throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+	<commonness value="0.0" can_respawn_with="1" in_stock="1" />
+	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="9" source="rank" source_value="0.0" />
+	<inventory encumbrance="0.5" price="0.0" />
+	<effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_faster" lighting="0" />
+	<effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_leave_faster" lighting="0" />
+	<effect class="result" key="other" copy="terrain" />
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="shield" copy="terrain" />
+	<effect class="result" key="vehicle" copy="terrain" />
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+	<sound class="result" key="other" fileref="cyborgs_dropping.wav" volume="1" />
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
+</projectile>
+
+
 
 <projectile class="grenade" 
 name="Spawn Immolator" 
@@ -303,47 +450,64 @@ slot="0"
 radius="0.15" 
 time_to_live_out_in_the_open="0.0" 
 drop_count_factor_on_death="0.0"
-pulldown_in_air="4.0"
+pulldown_in_air="0.0001"
 >
 	<!--无论高度固定生成在弹头所在的地平面上-->
-	<result class="notify_script" key="Immolator" />
-    <trigger class="time" time_to_live="0.01"/>
+	<result class="spawn" instance_class="projectile" instance_key="cyborgs_spawn_immolator_ai.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+	<trigger class="time" time_to_live="0.8"/>
 
-    <rotation class="random" />
+	<rotation class="motion" />
 
-	<model mesh_filename="" />
+	<model filename="cyborgs_immolator.xml" /> 
 
-    <hud_icon filename="cyborgs_icon.png" />
+	<hud_icon filename="cyborgs_icon.png" />
 
-    <throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+	<throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
 
-    <!-- projectile slot 0 is used for hand grenade items currently -->
-    <!-- bound to change -->
-    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
-    <capacity value="0" source="rank" source_value="0.0" /> 
-    <capacity value="9" source="rank" source_value="0.0" /> 
+	<!-- projectile slot 0 is used for hand grenade items currently -->
+	<!-- bound to change -->
+	<commonness value="0.0" can_respawn_with="1" in_stock="1" />
+	<capacity value="0" source="rank" source_value="0.0" /> 
+	<capacity value="9" source="rank" source_value="0.0" /> 
 	<inventory encumbrance="0.5" price="0.0" />
-	
-	
-	<effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_faster" lighting="0"/>
-	<effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_leave_faster" lighting="0"/>
-		<effect class="result" key="other" copy="terrain"/>
-		<effect class="result" key="static_object" copy="terrain" />
-		<effect class="result" key="character" copy="terrain" />
-		<effect class="result" key="shield" copy="terrain" />			
-		<effect class="result" key="vehicle" copy="terrain" />			
-		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
-		
-		
-		<sound class="result" key="other" fileref="cyborgs_dropping.wav" volume="1" />
-		<sound class="result" key="terrain" copy="other" />
-		<sound class="result" key="static_object" copy="other" />
-		<sound class="result" key="vehicle" copy="other" />
-		<sound class="result" key="character" copy="other" />
+</projectile>
+<projectile class="grenade" 
+name="Spawn Immolator"
+key="cyborgs_spawn_immolator_ai.projectile"
+slot="0"
+radius="0.15"
+time_to_live_out_in_the_open="0.0"
+drop_count_factor_on_death="0.0"
+pulldown_in_air="8.0"
+> 
+	<result class="notify_script" key="Immolator" />
+	<trigger class="impact" time_to_live="3" />
+	<rotation class="motion" />
+	<model filename="cyborgs_immolator.xml" />
+	<hud_icon filename="cyborgs_icon.png" />
+	<throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+	<commonness value="0.0" can_respawn_with="1" in_stock="1" />
+	<capacity value="0" source="rank" source_value="0.0" />
+	<capacity value="9" source="rank" source_value="0.0" />
+	<inventory encumbrance="0.5" price="0.0" />
+	<effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_faster" lighting="0" />
+	<effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_leave_faster" lighting="0" />
+	<effect class="result" key="other" copy="terrain" />
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="shield" copy="terrain" />
+	<effect class="result" key="vehicle" copy="terrain" />
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+	<sound class="result" key="other" fileref="cyborgs_dropping.wav" volume="1" />
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
 </projectile>
 
 <projectile class="grenade" 
@@ -353,47 +517,75 @@ slot="0"
 radius="0.15" 
 time_to_live_out_in_the_open="0.0" 
 drop_count_factor_on_death="0.0"
-pulldown_in_air="4.0"
+pulldown_in_air="0.0001"
+>
+	<!--无论高度固定生成在弹头所在的地平面上-->
+	<result class="spawn" instance_class="projectile" instance_key="cyborgs_spawn_initiate_ai.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+	<trigger class="time" time_to_live="0.8"/>
+
+	<rotation class="motion" />
+
+	<model filename="cyborgs_initiate.xml" /> 
+
+	<hud_icon filename="cyborgs_icon.png" />
+
+	<throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+
+	<!-- projectile slot 0 is used for hand grenade items currently -->
+	<!-- bound to change -->
+	<commonness value="0.0" can_respawn_with="1" in_stock="1" />
+	<capacity value="0" source="rank" source_value="0.0" /> 
+	<capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+</projectile>
+<projectile class="grenade" 
+name="Spawn Initiate" 
+key="cyborgs_spawn_initiate_ai.projectile" 
+slot="0" 
+radius="0.15" 
+time_to_live_out_in_the_open="0.0" 
+drop_count_factor_on_death="0.0"
+pulldown_in_air="8.0"
 >
 	<!--无论高度固定生成在弹头所在的地平面上-->
 	<result class="notify_script" key="Initiate" />
-    <trigger class="time" time_to_live="0"/>
+	<trigger class="impact" time_to_live="3"/>
 
-    <rotation class="random" />
+	<rotation class="motion" />
 
-	<model mesh_filename="" />
+	<model filename="cyborgs_initiate.xml" /> 
 
-    <hud_icon filename="cyborgs_icon.png" />
+	<hud_icon filename="cyborgs_icon.png" />
 
-    <throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+	<throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
 
-    <!-- projectile slot 0 is used for hand grenade items currently -->
-    <!-- bound to change -->
-    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
-    <capacity value="0" source="rank" source_value="0.0" /> 
-    <capacity value="9" source="rank" source_value="0.0" /> 
+	<!-- projectile slot 0 is used for hand grenade items currently -->
+	<!-- bound to change -->
+	<commonness value="0.0" can_respawn_with="1" in_stock="1" />
+	<capacity value="0" source="rank" source_value="0.0" /> 
+	<capacity value="9" source="rank" source_value="0.0" /> 
 	<inventory encumbrance="0.5" price="0.0" />
-	
 	
 	<effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_faster" lighting="0"/>
 	<effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_leave_faster" lighting="0"/>
-		<effect class="result" key="other" copy="terrain"/>
-		<effect class="result" key="static_object" copy="terrain" />
-		<effect class="result" key="character" copy="terrain" />
-		<effect class="result" key="shield" copy="terrain" />			
-		<effect class="result" key="vehicle" copy="terrain" />			
-		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="shield" copy="terrain" />			
+	<effect class="result" key="vehicle" copy="terrain" />			
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
 		
 		
-		<sound class="result" key="other" fileref="cyborgs_dropping.wav" volume="1" />
-		<sound class="result" key="terrain" copy="other" />
-		<sound class="result" key="static_object" copy="other" />
-		<sound class="result" key="vehicle" copy="other" />
-		<sound class="result" key="character" copy="other" />
+	<sound class="result" key="other" fileref="cyborgs_dropping.wav" volume="1" />
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />	
 </projectile>
 
 <projectile class="grenade" 
@@ -403,46 +595,75 @@ slot="0"
 radius="0.15" 
 time_to_live_out_in_the_open="0.0" 
 drop_count_factor_on_death="0.0"
-pulldown_in_air="4.0"
+pulldown_in_air="0.0001"
+>
+	<!--无论高度固定生成在弹头所在的地平面上-->
+	<result class="spawn" instance_class="projectile" instance_key="cyborgs_spawn_legionnaire_ai.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+	<trigger class="time" time_to_live="0.8"/>
+
+	<rotation class="motion" />
+
+	<model filename="cyborgs_legionnaire.xml" /> 
+
+	<hud_icon filename="cyborgs_icon.png" />
+
+	<throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+
+	<!-- projectile slot 0 is used for hand grenade items currently -->
+	<!-- bound to change -->
+	<commonness value="0.0" can_respawn_with="1" in_stock="1" />
+	<capacity value="0" source="rank" source_value="0.0" /> 
+	<capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+</projectile>
+<projectile class="grenade" 
+name="Spawn Legionnaire" 
+key="cyborgs_spawn_legionnaire_ai.projectile" 
+slot="0" 
+radius="0.15" 
+time_to_live_out_in_the_open="0.0" 
+drop_count_factor_on_death="0.0"
+pulldown_in_air="8.0"
 >
 	<!--无论高度固定生成在弹头所在的地平面上-->
 	<result class="notify_script" key="Legionnaire" />
-    <trigger class="time" time_to_live="0.01"/>
+	<trigger class="impact" time_to_live="3"/>
 
-    <rotation class="random" />
+	<rotation class="motion" />
 
-	<model mesh_filename="" />
+	<model filename="cyborgs_legionnaire.xml" /> 
 
-    <hud_icon filename="cyborgs_icon.png" />
+	<hud_icon filename="cyborgs_icon.png" />
 
-    <throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+	<throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
 
-    <!-- projectile slot 0 is used for hand grenade items currently -->
-    <!-- bound to change -->
-    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
-    <capacity value="0" source="rank" source_value="0.0" /> 
-    <capacity value="9" source="rank" source_value="0.0" /> 
+	<!-- projectile slot 0 is used for hand grenade items currently -->
+	<!-- bound to change -->
+	<commonness value="0.0" can_respawn_with="1" in_stock="1" />
+	<capacity value="0" source="rank" source_value="0.0" /> 
+	<capacity value="9" source="rank" source_value="0.0" /> 
 	<inventory encumbrance="0.5" price="0.0" />
 	
 	<effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_faster" lighting="0"/>
 	<effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_leave_faster" lighting="0"/>
-		<effect class="result" key="other" copy="terrain"/>
-		<effect class="result" key="static_object" copy="terrain" />
-		<effect class="result" key="character" copy="terrain" />
-		<effect class="result" key="shield" copy="terrain" />			
-		<effect class="result" key="vehicle" copy="terrain" />			
-		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="shield" copy="terrain" />			
+	<effect class="result" key="vehicle" copy="terrain" />			
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
 		
 		
-		<sound class="result" key="other" fileref="cyborgs_dropping.wav" volume="1" />
-		<sound class="result" key="terrain" copy="other" />
-		<sound class="result" key="static_object" copy="other" />
-		<sound class="result" key="vehicle" copy="other" />
-		<sound class="result" key="character" copy="other" />
+	<sound class="result" key="other" fileref="cyborgs_dropping.wav" volume="1" />
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />	
 </projectile>
 
 <projectile class="grenade" 
@@ -452,46 +673,75 @@ slot="0"
 radius="0.15" 
 time_to_live_out_in_the_open="0.0" 
 drop_count_factor_on_death="0.0"
-pulldown_in_air="4.0"
+pulldown_in_air="0.0001"
+>
+	<!--无论高度固定生成在弹头所在的地平面上-->
+	<result class="spawn" instance_class="projectile" instance_key="cyborgs_spawn_squadleader_ai.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+	<trigger class="time" time_to_live="0.8"/>
+
+	<rotation class="motion" />
+
+	<model filename="cyborgs_squadleader.xml" /> 
+
+	<hud_icon filename="cyborgs_icon.png" />
+
+	<throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+
+	<!-- projectile slot 0 is used for hand grenade items currently -->
+	<!-- bound to change -->
+	<commonness value="0.0" can_respawn_with="1" in_stock="1" />
+	<capacity value="0" source="rank" source_value="0.0" /> 
+	<capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+</projectile>
+<projectile class="grenade" 
+name="Spawn Squadleader" 
+key="cyborgs_spawn_squadleader_ai.projectile" 
+slot="0" 
+radius="0.15" 
+time_to_live_out_in_the_open="0.0" 
+drop_count_factor_on_death="0.0"
+pulldown_in_air="8.0"
 >
 	<!--无论高度固定生成在弹头所在的地平面上-->
 	<result class="notify_script" key="Squadleader" />
-    <trigger class="time" time_to_live="0.01"/>
+	<trigger class="impact" time_to_live="3"/>
 
-    <rotation class="random" />
+	<rotation class="motion" />
 
-	<model mesh_filename="" />
+	<model filename="cyborgs_squadleader.xml" /> 
 
-    <hud_icon filename="cyborgs_icon.png" />
+	<hud_icon filename="cyborgs_icon.png" />
 
-    <throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+	<throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
 
-    <!-- projectile slot 0 is used for hand grenade items currently -->
-    <!-- bound to change -->
-    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
-    <capacity value="0" source="rank" source_value="0.0" /> 
-    <capacity value="9" source="rank" source_value="0.0" /> 
+	<!-- projectile slot 0 is used for hand grenade items currently -->
+	<!-- bound to change -->
+	<commonness value="0.0" can_respawn_with="1" in_stock="1" />
+	<capacity value="0" source="rank" source_value="0.0" /> 
+	<capacity value="9" source="rank" source_value="0.0" /> 
 	<inventory encumbrance="0.5" price="0.0" />
 	
 	<effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_faster" lighting="0"/>
 	<effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_leave_faster" lighting="0"/>
-		<effect class="result" key="other" copy="terrain"/>
-		<effect class="result" key="static_object" copy="terrain" />
-		<effect class="result" key="character" copy="terrain" />
-		<effect class="result" key="shield" copy="terrain" />			
-		<effect class="result" key="vehicle" copy="terrain" />			
-		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="shield" copy="terrain" />			
+	<effect class="result" key="vehicle" copy="terrain" />			
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
 		
 		
-		<sound class="result" key="other" fileref="cyborgs_dropping.wav" volume="1" />
-		<sound class="result" key="terrain" copy="other" />
-		<sound class="result" key="static_object" copy="other" />
-		<sound class="result" key="vehicle" copy="other" />
-		<sound class="result" key="character" copy="other" />
+	<sound class="result" key="other" fileref="cyborgs_dropping.wav" volume="1" />
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />	
 </projectile>
 
 <projectile class="grenade" 
@@ -501,46 +751,75 @@ slot="0"
 radius="0.15" 
 time_to_live_out_in_the_open="0.0" 
 drop_count_factor_on_death="0.0"
-pulldown_in_air="4.0"
+pulldown_in_air="0.0001"
+>
+	<!--无论高度固定生成在弹头所在的地平面上-->
+	<result class="spawn" instance_class="projectile" instance_key="cyborgs_spawn_warlord_ai.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+	<trigger class="time" time_to_live="0.8"/>
+
+	<rotation class="motion" />
+
+	<model filename="cyborgs_warlord.xml" /> 
+
+	<hud_icon filename="cyborgs_icon.png" />
+
+	<throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+
+	<!-- projectile slot 0 is used for hand grenade items currently -->
+	<!-- bound to change -->
+	<commonness value="0.0" can_respawn_with="1" in_stock="1" />
+	<capacity value="0" source="rank" source_value="0.0" /> 
+	<capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+</projectile>
+<projectile class="grenade" 
+name="Spawn Warlord" 
+key="cyborgs_spawn_warlord_ai.projectile" 
+slot="0" 
+radius="0.15" 
+time_to_live_out_in_the_open="0.0" 
+drop_count_factor_on_death="0.0"
+pulldown_in_air="8.0"
 >
 	<!--无论高度固定生成在弹头所在的地平面上-->
 	<result class="notify_script" key="Warlord" />
-    <trigger class="time" time_to_live="0.01"/>
+	<trigger class="impact" time_to_live="3"/>
 
-    <rotation class="random" />
+	<rotation class="motion" />
 
-	<model mesh_filename="" />
+	<model filename="cyborgs_warlord.xml" /> 
 
-    <hud_icon filename="cyborgs_icon.png" />
+	<hud_icon filename="cyborgs_icon.png" />
 
-    <throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+	<throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
 
-    <!-- projectile slot 0 is used for hand grenade items currently -->
-    <!-- bound to change -->
-    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
-    <capacity value="0" source="rank" source_value="0.0" /> 
-    <capacity value="9" source="rank" source_value="0.0" /> 
+	<!-- projectile slot 0 is used for hand grenade items currently -->
+	<!-- bound to change -->
+	<commonness value="0.0" can_respawn_with="1" in_stock="1" />
+	<capacity value="0" source="rank" source_value="0.0" /> 
+	<capacity value="9" source="rank" source_value="0.0" /> 
 	<inventory encumbrance="0.5" price="0.0" />
 	
 	<effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_faster" lighting="0"/>
 	<effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_leave_faster" lighting="0"/>
-		<effect class="result" key="other" copy="terrain"/>
-		<effect class="result" key="static_object" copy="terrain" />
-		<effect class="result" key="character" copy="terrain" />
-		<effect class="result" key="shield" copy="terrain" />			
-		<effect class="result" key="vehicle" copy="terrain" />			
-		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="shield" copy="terrain" />			
+	<effect class="result" key="vehicle" copy="terrain" />			
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
 		
 		
-		<sound class="result" key="other" fileref="cyborgs_dropping.wav" volume="1" />
-		<sound class="result" key="terrain" copy="other" />
-		<sound class="result" key="static_object" copy="other" />
-		<sound class="result" key="vehicle" copy="other" />
-		<sound class="result" key="character" copy="other" />
+	<sound class="result" key="other" fileref="cyborgs_dropping.wav" volume="1" />
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />	
 </projectile>
 
 <projectile class="grenade" 
@@ -553,43 +832,212 @@ drop_count_factor_on_death="0.0"
 pulldown_in_air="4.0"
 >
 	<!--无论高度固定生成在弹头所在的地平面上-->
+	<result class="spawn" instance_class="projectile" instance_key="cyborgs_spawn_tesla_ai.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+	<trigger class="time" time_to_live="0.8"/>
+
+	<rotation class="motion" />
+
+	<model filename="cyborgs_tesla.xml" />
+
+	<hud_icon filename="cyborgs_icon.png" />
+
+	<throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+
+	<!-- projectile slot 0 is used for hand grenade items currently -->
+	<!-- bound to change -->
+	<commonness value="0.0" can_respawn_with="1" in_stock="1" />
+	<capacity value="0" source="rank" source_value="0.0" /> 
+	<capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+
+</projectile>
+<projectile class="grenade" 
+name="Spawn Tesla" 
+key="cyborgs_spawn_tesla_ai.projectile" 
+slot="0" 
+radius="0.15" 
+time_to_live_out_in_the_open="0.0" 
+drop_count_factor_on_death="0.0"
+pulldown_in_air="8.0"
+>
+	<!--无论高度固定生成在弹头所在的地平面上-->
 	<result class="notify_script" key="Tesla" />
-    <trigger class="time" time_to_live="0.01"/>
+	<trigger class="impact" time_to_live="3"/>
 
-    <rotation class="random" />
+	<rotation class="motion" />
 
-	<model mesh_filename="" />
+	<model filename="cyborgs_tesla.xml" />
 
-    <hud_icon filename="cyborgs_icon.png" />
+	<hud_icon filename="cyborgs_icon.png" />
 
-    <throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+	<throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
 
-    <!-- projectile slot 0 is used for hand grenade items currently -->
-    <!-- bound to change -->
-    <commonness value="0.0" can_respawn_with="1" in_stock="1" />
-    <capacity value="0" source="rank" source_value="0.0" /> 
-    <capacity value="9" source="rank" source_value="0.0" /> 
+	<!-- projectile slot 0 is used for hand grenade items currently -->
+	<!-- bound to change -->
+	<commonness value="0.0" can_respawn_with="1" in_stock="1" />
+	<capacity value="0" source="rank" source_value="0.0" /> 
+	<capacity value="9" source="rank" source_value="0.0" /> 
 	<inventory encumbrance="0.5" price="0.0" />
 	
 	<effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_faster" lighting="0"/>
 	<effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_leave_faster" lighting="0"/>
-		<effect class="result" key="other" copy="terrain"/>
-		<effect class="result" key="static_object" copy="terrain" />
-		<effect class="result" key="character" copy="terrain" />
-		<effect class="result" key="shield" copy="terrain" />			
-		<effect class="result" key="vehicle" copy="terrain" />			
-		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="shield" copy="terrain" />			
+	<effect class="result" key="vehicle" copy="terrain" />			
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
 		
+	<sound class="result" key="other" fileref="cyborgs_dropping.wav" volume="1" />
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
+</projectile>
+<projectile class="grenade"
+name="Spawn TerrorDrone"
+key="cyborgs_spawn_terrordrone.projectile"
+slot="0"
+radius="0.15"
+time_to_live_out_in_the_open="0.0"
+drop_count_factor_on_death="0.0"
+pulldown_in_air="0.0001"
+>
+	<result class="spawn" instance_class="projectile" instance_key="cyborgs_spawn_terrordrone_ai.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+	<trigger class="time" time_to_live="0.8"/>
+
+	<rotation class="motion" />
+
+	<model filename="cyborgs_terrordrone.xml" /> 
+
+	<hud_icon filename="cyborgs_icon.png" />
+
+	<throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+
+	<commonness value="0.0" can_respawn_with="1" in_stock="1" />
+	<capacity value="0" source="rank" source_value="0.0" /> 
+	<capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+</projectile>
+<projectile class="grenade"
+name="Spawn TerrorDrone"
+key="cyborgs_spawn_terrordrone_ai.projectile"
+slot="0"
+radius="0.15"
+time_to_live_out_in_the_open="0.0"
+drop_count_factor_on_death="0.0"
+pulldown_in_air="8.0"
+>
+	<result class="notify_script" key="TerrorDrone" />
+	<trigger class="impact" time_to_live="3"/>
+
+	<rotation class="motion" />
+
+	<model filename="cyborgs_terrordrone.xml" /> 
+
+	<hud_icon filename="cyborgs_icon.png" />
+
+	<throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+
+	<commonness value="0.0" can_respawn_with="1" in_stock="1" />
+	<capacity value="0" source="rank" source_value="0.0" /> 
+	<capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+	
+	<effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_faster" lighting="0"/>
+	<effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_leave_faster" lighting="0"/>
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="shield" copy="terrain" />			
+	<effect class="result" key="vehicle" copy="terrain" />			
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
 		
-		<sound class="result" key="other" fileref="cyborgs_dropping.wav" volume="1" />
-		<sound class="result" key="terrain" copy="other" />
-		<sound class="result" key="static_object" copy="other" />
-		<sound class="result" key="vehicle" copy="other" />
-		<sound class="result" key="character" copy="other" />
+	<sound class="result" key="other" fileref="cyborgs_dropping.wav" volume="1" />
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
 </projectile>
 
+<projectile class="grenade"
+name="Spawn 88AT"
+key="cyborgs_spawn_88at.projectile"
+slot="0"
+radius="0.15"
+time_to_live_out_in_the_open="0.0"
+drop_count_factor_on_death="0.0"
+pulldown_in_air="0.0001"
+>
+	<result class="spawn" instance_class="projectile" instance_key="cyborgs_spawn_88at_ai.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+	<trigger class="time" time_to_live="0.8"/>
+
+	<rotation class="motion" />
+
+	<model filename="cyborgs_88at.xml" /> 
+
+	<hud_icon filename="cyborgs_icon.png" />
+
+	<throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+
+	<commonness value="0.0" can_respawn_with="1" in_stock="1" />
+	<capacity value="0" source="rank" source_value="0.0" /> 
+	<capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+</projectile>
+<projectile class="grenade"
+name="Spawn 88AT"
+key="cyborgs_spawn_88at_ai.projectile"
+slot="0"
+radius="0.15"
+time_to_live_out_in_the_open="0.0"
+drop_count_factor_on_death="0.0"
+pulldown_in_air="8.0"
+>
+	<result class="notify_script" key="88AT" />
+	<trigger class="impact" time_to_live="3"/>
+
+	<rotation class="motion" />
+
+	<model filename="cyborgs_88at.xml" /> 
+
+	<hud_icon filename="cyborgs_icon.png" />
+
+	<throwable near_far_distance="100.0" speed_estimation_near="10.0" speed_estimation_far="10.0" max_speed="10.0" randomness="0.0" />
+
+	<commonness value="0.0" can_respawn_with="1" in_stock="1" />
+	<capacity value="0" source="rank" source_value="0.0" /> 
+	<capacity value="9" source="rank" source_value="0.0" /> 
+	<inventory encumbrance="0.5" price="0.0" />
+	
+	<effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_faster" lighting="0"/>
+	<effect class="result" key="terrain" ref="hellpod_dropping_ground_smoke_leave_faster" lighting="0"/>
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="shield" copy="terrain" />			
+	<effect class="result" key="vehicle" copy="terrain" />			
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+	<sound class="result" key="other" fileref="cyborgs_dropping.wav" volume="1" />
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
+</projectile>
 </projectiles>

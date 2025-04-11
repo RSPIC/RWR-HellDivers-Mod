@@ -78,6 +78,17 @@ class player_spawn : Tracker {
 		list.insertLast(d);
 		list.insertLast(e);
 		CreateListDirectProjectile(m_metagame,list);
+		
+		array<string> sound_files = {
+			"hd_Voicy_Freedom_Never_Sleeps_01.wav",
+			"hd_Voicy_say_hello_to_democracy.wav",
+			"hd_Voicy_thats_call_democracy.wav",
+			"hd_Voicy_get_some.wav",
+			"hd_Voicy_for_superearth.wav"
+		};
+		playRandomSoundArray(m_metagame, sound_files, fid, c_position,3.0);
+
+		playAnimationKey(m_metagame,cid, "hd_spawn_leave", false, true);
 
 		dictionary a;
 		a["%name"] = name;

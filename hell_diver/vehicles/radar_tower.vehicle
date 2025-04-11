@@ -7,7 +7,6 @@ protectors="12"  soldier_capacity_offset="16"
 respawn_time="180.0" usable_for_cover="0"
 character_leave_request_mode="friendly" 
 allow_owner_to_use_only="1"
-
 >
 	<tag name="target" />
 	<tire_set offset="2.0 0.0 2.0" radius="0.65" />
@@ -15,13 +14,13 @@ allow_owner_to_use_only="1"
 
   	<modifier class="blast_range" value="+1.0" />
   	<modifier class="blast_damage" value="-1.0" />
- 
+
 	<control max_speed="1.0" acceleration="0.7" max_reverse_speed="1.0" max_rotation="0.8" max_water_depth="1.9" />
                                                                                                                                                        
 	<physics max_health="2000.0" 
 	mass="1000.0" 
 	blast_push_threshold="1000"
-	blast_damage_threshold="301"
+	blast_damage_threshold="1500"
 	extent="4.0 14 4.0" 
 	offset="0 0 0" 
 	top_offset="0 2 0" 
@@ -31,8 +30,8 @@ allow_owner_to_use_only="1"
 	friction_offset="1"
 	/> 
 
-	<visual class="chassis" mesh_filename="hd_radar.mesh" texture_filename="hd_radar.jpg" />
-	<visual class="chassis" key="broken" mesh_filename="hd_radar.mesh" texture_filename="hd_radar_broken.jpg" />
+	<visual class="chassis" mesh_filename="laser_radar.mesh" texture_filename="laser_radar.png" />
+	<visual class="chassis" key="broken" mesh_filename="laser_radar_done.mesh" texture_filename="laser_radar.png" />
   
 <!--	<sound key="hit" filename="car_hit1.wav" />
 	<sound key="hit" filename="car_hit2.wav" />
@@ -53,8 +52,6 @@ allow_owner_to_use_only="1"
 	<effect event_key="health" value="250" ref="car_broken_spary_spark" offset="0 3 0.3" />
 
 	<effect event_key="destroyed" ref="car_destroyed_fire" post_processing="1" offset="0 0.4 -0.3" />
-	<effect event_key="destroyed" ref="car_destroyed_up_smoke" post_processing="0" offset="0 0.4 -0.3" />  
-	<effect event_key="destroyed" ref="car_broken_spary_spark" post_processing="0" offset="0 0.4 -0.3" />  
 
 	<event>
 		<trigger class="destroy" />

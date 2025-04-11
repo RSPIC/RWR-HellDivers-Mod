@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapons> 
+<weapon 
+file="hd_side_b100_portable_hellbomb.weapon"
+key="hd_side_b100_portable_hellbomb.weapon" 
+drop_count_factor_on_death="0" 
+drop_count_factor_on_player_death="0"
+time_to_live_out_in_the_open="0"
+player_death_drop_owner_lock_time="0"
+>
+	<!-- <sound key="effect" fileref="hd_b100_portable_hellbomb_launch.wav" pitch_variety="0.03" volume="2" />  -->
+    <sound key="fire" fileref="hd_b100_portable_hellbomb_launch.wav" pitch_variety="0.03" volume="2" />
+
+    <hud_icon filename="hd_side_b100_portable_hellbomb.png" /> 
+
+    <commonness value="0" can_respawn_with="1" in_stock="0" /> 
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="0.2" can_be_detected_by_driver="1" can_be_disarmed="0"> 
+
+		<result class="notify_script" key="hd_b100_portable_hellbomb" />
+        <trigger class="time" time_to_live="0" />	
+    </projectile>
+</weapon>
+</weapons>

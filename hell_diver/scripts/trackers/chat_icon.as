@@ -105,6 +105,9 @@ class chat_icon : Tracker{
         if(message == "rolling"){
             playAnimationKey(m_metagame,cid, "rolling", true, true);
         }
+        if(message == "kisaki"){
+            playAnimationKey(m_metagame,cid, "acg_kisaki_casual", true, true);
+        }
         if(message == "dance"){
             message = message + int(rand(1,6));
             upgrade@ tempTrack = upgrade(m_metagame);

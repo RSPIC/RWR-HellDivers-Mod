@@ -14,8 +14,8 @@ player_death_drop_owner_lock_time="0"
 	time_to_live="2.5" can_be_detected_by_driver="1" can_be_disarmed="0" name="PLAS-39 Accelerator Rifle"> 
 	
         <result class="spawn" instance_class="projectile" instance_key="hd_psc_plas_39_accelerator_rifle_damage.projectile" 
-		min_amount="7" max_amount="9" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
-		<!-- 10x10 =100 -->
+		min_amount="15" max_amount="18" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
+		<!-- 12x10 =150~180-->
 		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 	

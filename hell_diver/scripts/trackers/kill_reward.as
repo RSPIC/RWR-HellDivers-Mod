@@ -55,6 +55,9 @@ dictionary healable_weapon = {
         {"re_ex_exo_telemon_mg.weapon",5},
         {"ex_exo_telemon_missile_damage.projectile",50},
 
+        {"re_acg_kisaki.weapon",3},
+        {"re_acg_kisaki_s.weapon",3},
+
         // 占位的
         {"666",-1}
 
@@ -171,6 +174,9 @@ dictionary auto_cost_skill_key = {
 	{"acg_sabayon_gun.weapon",20}, //密集空袭
 	{"re_acg_sabayon_gun.weapon",20}, //密集空袭
 
+	{"re_acg_kisaki.weapon",25}, 
+	{"re_acg_kisaki_s.weapon",25},
+
 	{"",-1}
 };
 //手动Cost释放技能键值
@@ -178,7 +184,7 @@ dictionary manual_cost_skill_key = {
 	{"acg_hayase_yuuka.weapon",25},
 	{"re_acg_hayase_yuuka.weapon",20},
 
-    {"acg_izayoi_sakuya_skill",45}, // 需要和skill_cost字典计数一致
+    {"acg_izayoi_sakuya_skill",40}, // 需要和skill_cost字典计数一致
 
 	{"acg_takanashi_hoshino_battle_armor",10},
 	{"acg_takanashi_hoshino_battle_shb",3},
@@ -189,9 +195,9 @@ dictionary manual_cost_skill_key = {
 
 	{"acg_sabayon_artillery_ExSkill",45}, //大锤
 
-	{"acg_sabayon_artillery_RailStraike",55}, //精确空袭
+	{"acg_sabayon_artillery_RailStraike",50}, //精确空袭
 
-
+	{"re_ex_imotekh_sec.weapon",25}, //治疗
 
 	{"0",-1}
 };
@@ -231,6 +237,9 @@ dictionary cost_skill_killer_key = {
 
 	{"acg_sabayon_gun.weapon","acg_sabayon_artillery_RailStraike"},
 	{"re_acg_sabayon_gun.weapon","acg_sabayon_artillery_RailStraike"},
+
+	{"ex_imotekh_damage.projectile","re_ex_imotekh_sec.weapon"},
+	{"ex_imotekh_sec_damage.projectile","re_ex_imotekh_sec.weapon"},
 
 
 	{"",-1}
@@ -657,7 +666,11 @@ class kill_reward : Tracker {
 			};
 			playRandomSoundArray(m_metagame,sound_files,0,c_pos,2);
 		}
-
+		if(weaponKey == "re_acg_kisaki.weapon" || weaponKey == "re_acg_kisaki_s.weapon" ){
+			string ExKey = "acg_kisaki_doll.projectile";
+			addItemInBackpack(m_metagame,cid,"projectile",ExKey);
+			_notify(m_metagame,pid,"妃妃球+1");
+		}
     }
 	// -----------------------------------------------------------------
 	protected void handleChatEvent(const XmlElement@ event){
@@ -1099,7 +1112,70 @@ class kill_reward : Tracker {
 					}
 				}
 			}
-			
+			targetKey = "re_ex_imotekh_sec.weapon";
+            targetKey2 = "re_ex_imotekh_sec.weapon";
+            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+				int nowCost = 0;
+				int manualCostCount = 100;
+
+				string targetCostKey;
+				targetCostKey = "re_ex_imotekh_sec.weapon";
+				// cost_skill_killer_key.get(equipKey,targetCostKey);
+
+				if(manual_cost_skill_key.exists(targetCostKey)){
+					manual_cost_skill_key.get(targetCostKey,manualCostCount);
+					if(g_userCountInfoBuck.getCount(name,targetCostKey,nowCost)){
+						if(nowCost >= manualCostCount){
+							_notify(m_metagame,pid,"Skill Releasing");
+							g_userCountInfoBuck.clearCount(name,targetCostKey);
+
+							const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+							int m_cid = cid;
+							if(character is null){return;}
+							Vector3 ePos = stringToVector3(character.getStringAttribute("position"));
+
+							const XmlElement@ player = getPlayerInfo(m_metagame, pid);
+							if (player is null) {return;}
+							Vector3 aimPosition = stringToVector3(player.getStringAttribute("aim_target"));
+							int m_fid = g_playerInfoBuck.getFidByCid(cid);
+
+							array<const XmlElement@> factions = getFactions(m_metagame);
+							for (uint f = 0; f < factions.size(); ++f){
+								const XmlElement@ faction = factions[f];
+								if(faction is null){continue;}
+								int t_fid = faction.getIntAttribute("id");
+								if (t_fid == m_fid){
+									array<const XmlElement@>@ soldiers = getCharactersNearPosition(m_metagame, ePos, t_fid, 20.0f);				
+									int s_size = soldiers.length();
+									if (s_size == 0) continue;
+									int healTimes = 10;
+									while(healTimes > 0 && soldiers.length() > 0){
+										healTimes--;
+										int s_i = rand(0,soldiers.length()-1);
+										int soldier_id = soldiers[s_i].getIntAttribute("id");
+										soldiers.removeAt(s_i);
+										Vector3 soldier_pos = stringToVector3(getCharacterInfo(m_metagame, soldier_id).getStringAttribute("position"));
+										string m_key = "hd_effect_heal_character.projectile";
+										string newVest = "helldivers_vest";
+										int m_pid = g_playerInfoBuck.getPidByCid(soldier_id);
+										if(m_pid >= 0){
+											healCharacter(m_metagame,soldier_id,60);
+										}else{
+											editPlayerVest(m_metagame,soldier_id,newVest,4);
+										}
+										CreateDirectProjectile(m_metagame,soldier_pos,soldier_pos,m_key,m_cid,m_fid,100);
+									}
+									string m_key = "hd_heal_02.wav";
+									playSoundAtLocation(m_metagame,m_key,m_fid,ePos,2.0);
+									CreateDirectProjectile(m_metagame,ePos,ePos,"ex_imotekh_sec_heal.projectile",m_cid,m_fid,0);
+								}
+							}
+						}else{
+							_notify(m_metagame,pid,"cost不足，当前cost="+nowCost+"/"+manualCostCount);
+						}
+					}
+				}
+			}
 		}
 	}
 }

@@ -270,6 +270,7 @@ particle_system fiammetta_muzzle_anim_fire 	: fiammetta_hit_ground_anim_fire_01
 -------------trail--------------
 particle_system fiammetta_activated_trail_01 	: fiammetta_hit_ground_anim_fire_01
 {
+	quota 500
 	material re_point_soft_edge_100
 	particle_width 1.3
 	particle_height 1.3

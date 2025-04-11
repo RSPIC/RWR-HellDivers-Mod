@@ -43,8 +43,8 @@
 	<!-- <animation key="jumping" target_key="jumping, large mecha" /> -->
 	<!-- <animation key="lifting up" target_key="jumping, large mecha" /> -->
 	<!-- <animation key="throwing self over" target_key="jumping, large mecha" /> -->
-	<!-- <animation key="falling" target_key="still_big_unit" /> -->
-	<!-- <animation key="arriving ground" target_key="arrive_ground_big_unit" /> -->
+	<animation key="falling" target_key="cyborgs_grotesque_still" />
+	<animation key="arriving ground" target_key="cyborgs_grotesque_still" />
 	<!-- <animation key="climbing ladder, still" target_key="climb_still_big_unit" /> -->
 	<!-- <animation key="climbing ladder" target_key="climb_moving_big_unit" /> -->
 	<!-- <animation key="climbing ladder ending" target_key="arrive_ground_big_unit" /> -->

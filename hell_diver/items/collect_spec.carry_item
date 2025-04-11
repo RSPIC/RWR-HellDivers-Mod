@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carry_items>
+<carry_item 
+name="Treasure of Space and Time" 
+key="collect_treasure_of_space_time.carry_item"
+file="_collect_rare.base"
+>
+    <hud_icon filename="hud_treasure_of_space_time.png" />
+    <inventory  price="0.0" />
+    <inventory encumbrance="0.1" />
+    <model mesh_filename="ex_treasure_of_space_time.mesh" texture_filename="ex_treasure_of_space_time.png" />
+    <commonness value="0.001" in_stock="1" />
+</carry_item>
+<carry_item 
+name="Sky Striker Ace [Card]" 
+key="acg_sky_striker_ace_clips"
+file="_collect_rare.base"
+>
+    <hud_icon filename="acg_sky_striker_ace_clips.png" />
+    <inventory  price="0.0" />
+    <inventory encumbrance="0.1" />
+    <model mesh_filename="acg_sky_striker_ace_clips.mesh" texture_filename="acg_sky_striker_ace_clips.png" />
+    <commonness value="0" in_stock="1" />
+</carry_item>
+</carry_items>

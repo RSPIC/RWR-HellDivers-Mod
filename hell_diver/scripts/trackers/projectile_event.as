@@ -37,6 +37,24 @@ dictionary skill_CD = {
     {"ex_vergil_skill",180},
     {"acg_patricia_fataldrive",180},
 
+    {"acg_sky_striker_ace_orig_call_green",5},
+    {"acg_sky_striker_ace_orig_call_red",5},
+    {"acg_sky_striker_ace_orig_call_yellow",5},
+    {"acg_sky_striker_ace_orig_call_blue",5},
+    
+    {"acg_sky_striker_ace_kagari_red.weapon",180},
+    {"acg_sky_striker_ace_kagari_red_mode2.weapon",180},
+
+    {"acg_sky_striker_ace_hayate_green_mode3",40},
+
+    {"acg_sky_striker_ace_kaina_yellow.weapon",150},
+    {"acg_sky_striker_ace_kaina_yellow_mode2.weapon",150},
+
+    {"ex_imotekh_cube",30},
+
+    {"re_acg_kisaki.weapon",50},
+    {"re_acg_kisaki_s.weapon",75},
+
     {"",0}
 
 };
@@ -59,7 +77,7 @@ dictionary skill_cost = {
     {"acg_rikuhachima_aru_skill",7},
     {"re_acg_rikuhachima_aru_skill",6},
 
-    {"acg_izayoi_sakuya_skill",45}, // 需要和manual_cost_skill_key字典计数一致
+    {"acg_izayoi_sakuya_skill",40}, // 需要和manual_cost_skill_key字典计数一致
 
     {"",0}
 
@@ -289,6 +307,37 @@ class projectile_event : Tracker {
                 TaskSequencer@ tasker = m_metagame.getHdTaskSequncerIndex(1);
                 if(tasker is null){break;}
                 tasker.add(new_task);
+                break;
+            }
+            case 18: {   //轨道激光轰炸 支线
+                // 查找并确认玩家存在
+                int characterId = event.getIntAttribute("character_id");
+				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                if (character is null) {break;}
+                if (characterId == -1) {
+                    _log("characterId = -1,null occur");
+                    break;
+                }
+                // 确定起始点与所属阵营
+                int playerId = character.getIntAttribute("player_id");
+                const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
+                if (player is null) {break;}
+                Vector3 aim_pos = stringToVector3(player.getStringAttribute("aim_target"));
+                Vector3 pos1 = aim_pos;
+                Vector3 pos2 = stringToVector3(character.getStringAttribute("position"));
+                Vector3 aim_unit_vector = getAimUnitVector(1,pos2,pos1);
+
+                int factionid = character.getIntAttribute("faction_id");
+                // 创建空袭事件
+                _log("execution Laser Strike"); // chara to event pos
+                Event_call_helldiver_superearth_laser_strike@ new_task = Event_call_helldiver_superearth_laser_strike(m_metagame,0,characterId,factionid,pos2,pos1,"radar_tower_laser");
+                //TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                TaskSequencer@ tasker = m_metagame.getHdTaskSequncerIndex(1);
+                if(tasker is null){break;}
+                tasker.add(new_task);
+
+                string m_key = "hd_offensive_laser_strike_expand_sound.wav";
+                playSoundAtLocation(m_metagame,m_key,0,pos2,3);
                 break;
             }
 
@@ -637,7 +686,7 @@ class projectile_event : Tracker {
                 CreateDirectProjectile(m_metagame,ePos,ePos,key2,cid,fid,0);
                 break;
             }
-            case 54:{//acg_exo_toki_skill Toki SKill
+            case 54:{//acg_arknight_ifrit_skill  伊芙利特 技能
                 int cid = event.getIntAttribute("character_id");
                 int pid = g_playerInfoBuck.getPidByCid(cid);
                 if(pid == -1){
@@ -1238,7 +1287,137 @@ class projectile_event : Tracker {
 
                 break;
             } 
-            
+            case 90:{// 太空死灵 跟踪
+                int m_cid = event.getIntAttribute("character_id");
+                int pid = g_playerInfoBuck.getPidByCid(m_cid);
+                int m_fid = g_playerInfoBuck.getFidByCid(m_cid);
+                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+                const XmlElement@ player = getPlayerInfo(m_metagame, pid);
+                if (player is null) {return;}
+                Vector3 aimPosition = stringToVector3(player.getStringAttribute("aim_target"));
+
+                dictionary equipList;
+                if(!getPlayerEquipmentInfoArray(m_metagame,m_cid,equipList)){
+                    return;
+                }
+                string equipKey;
+                if(equipList.get("0",equipKey)){//主武器
+                    string targetKey = "ex_imotekh";
+                    string targetKey2 = "re_ex_imotekh";
+                    int num;
+                    if(equipList.get(equipKey,num)){
+                        if(num != 0){
+                            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+                                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                                if(tasker is null){break;}
+                                
+                                string key1 = "ex_imotekh_sec_damage.projectile";
+                                CreateProjectile@ task0 = CreateProjectile(m_metagame,ePos,aimPosition,key1,m_cid,m_fid,50,0,1,0,false); // speed delay num
+                                tasker.add(task0);
+                            }else{
+                                _notify(m_metagame,pid,"你的主武器未为对应武器");
+                            }
+                        }else{
+                            _notify(m_metagame,pid,"你的主武器未为对应武器");
+                        }
+                    }
+                }
+                break;
+            }
+            case 93: { // kisaki_drone 跟踪无人机 龙华妃咲 
+                int cid = event.getIntAttribute("character_id");
+                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+
+                const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                if(character is null){return;}
+                int playerId = character.getIntAttribute("player_id");
+
+                const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
+                if (player is null) return;
+
+                int pid = g_playerInfoBuck.getPidByCid(cid);
+                int fid = g_playerInfoBuck.getFidByCid(cid);
+                array<const XmlElement@> factions = getFactions(m_metagame);
+                int ATKTimes = 3;
+                for (uint f = 1; f < factions.size(); ++f){ //跳过自身阵营查询
+                    if(ATKTimes <= 0){break;}
+                    const XmlElement@ faction = factions[f];
+                    if(faction is null){continue;}
+                    int t_fid = faction.getIntAttribute("id");
+                    array<const XmlElement@>@ soldiers = getCharactersNearPosition(m_metagame, ePos, t_fid, 45.0f);				
+                    int s_size = soldiers.length();
+                    if (s_size == 0) continue;
+                    while(ATKTimes > 0 && soldiers.length() > 0){
+                        ATKTimes--;
+                        int s_i = rand(0,soldiers.length()-1);
+                        int soldier_id = soldiers[s_i].getIntAttribute("id");
+                        soldiers.removeAt(s_i);
+                        Vector3 soldier_pos = stringToVector3(getCharacterInfo(m_metagame, soldier_id).getStringAttribute("position"));
+
+                        string key1 = "acg_kisaki_drone_bullet.projectile";
+                        TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                        CreateProjectile@ task1 = CreateProjectile(m_metagame,ePos,soldier_pos,key1,cid,fid,250,0,1,0,false);
+                        tasker.add(task1);
+
+                        string m_key = "hd_psc_atx25_revelator_fire.wav";
+                        playSoundAtLocation(m_metagame,m_key,fid,ePos,1);
+                    }
+                }
+                break;
+            }
+            case 94: { // acg_kisaki_doll 龙华妃咲 妃咲球 
+                int cid = event.getIntAttribute("character_id");
+                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+
+                const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                if(character is null){return;}
+                int playerId = character.getIntAttribute("player_id");
+
+                const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
+                if (player is null) return;
+                array<string> sound_files = {
+                    "acg_kisaki_voice_clip_01.wav",
+                    "acg_kisaki_voice_clip_02.wav",
+                    "acg_kisaki_voice_clip_03.wav",
+                    "acg_kisaki_voice_clip_04.wav",
+                    "acg_kisaki_voice_clip_05.wav",
+                    "acg_kisaki_voice_clip_06.wav",
+                    "acg_kisaki_voice_clip_07.wav",
+                    "acg_kisaki_voice_clip_08.wav",
+                    "acg_kisaki_voice_clip_09.wav"
+                };
+                playRandomSoundArray(m_metagame,sound_files,0,ePos);
+
+                int pid = g_playerInfoBuck.getPidByCid(cid);
+                int fid = g_playerInfoBuck.getFidByCid(cid);
+                array<const XmlElement@> factions = getFactions(m_metagame);
+                int ATKTimes = 3;
+                for (uint f = 1; f < factions.size(); ++f){ //跳过自身阵营查询
+                    if(ATKTimes <= 0){break;}
+                    const XmlElement@ faction = factions[f];
+                    if(faction is null){continue;}
+                    int t_fid = faction.getIntAttribute("id");
+                    array<const XmlElement@>@ soldiers = getCharactersNearPosition(m_metagame, ePos, t_fid, 45.0f);				
+                    int s_size = soldiers.length();
+                    if (s_size == 0) continue;
+                    while(ATKTimes > 0 && soldiers.length() > 0){
+                        ATKTimes--;
+                        int s_i = rand(0,soldiers.length()-1);
+                        int soldier_id = soldiers[s_i].getIntAttribute("id");
+                        soldiers.removeAt(s_i);
+                        Vector3 soldier_pos = stringToVector3(getCharacterInfo(m_metagame, soldier_id).getStringAttribute("position"));
+
+                        string key1 = "acg_kisaki_drone_bullet.projectile";
+                        TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                        CreateProjectile@ task1 = CreateProjectile(m_metagame,ePos,soldier_pos,key1,cid,fid,250,0,1,0,false);
+                        tasker.add(task1);
+
+                        string m_key = "hd_psc_atx25_revelator_fire.wav";
+                        playSoundAtLocation(m_metagame,m_key,fid,ePos,1);
+                    }
+                }
+                break;
+            }
             default:
                 break;            
         }
@@ -1731,6 +1910,177 @@ class projectile_event : Tracker {
 
                 break;
             } 
+            case 84: { // acg_sky_striker_ace_orig_call_red 闪刀空投 
+                int characterId = event.getIntAttribute("character_id");
+                const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                if (character is null) break;
+
+                // 获取玩家位置和阵营
+                Vector3 playerPos = stringToVector3(character.getStringAttribute("position"));
+                int factionId = character.getIntAttribute("faction_id");
+
+                // 获取玩家指针目标位置
+                int playerId = character.getIntAttribute("player_id");
+                const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
+                if (player is null) break;
+                Vector3 aimPos = stringToVector3(player.getStringAttribute("aim_target"));
+
+                // 计算后方位置：获取玩家朝向的反方向向量，向后偏移20米
+                Vector3 direction = getAimUnitVector(1, playerPos, aimPos);
+                Vector3 spawnPos = playerPos.subtract((direction.scale(10))).add(Vector3(0, 10, 0)); // Y+5 防止地面碰撞
+
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                if(tasker is null){break;}
+
+                string key1 = "airdrop_drone_sky_striker_ace.projectile";
+                string key2 = "acg_sky_striker_ace_kagari_red_change_model.projectile";
+                CreateProjectile_H(m_metagame,spawnPos,aimPos,key1,characterId,factionId,3,0);
+                CreateProjectile_H(m_metagame,spawnPos,aimPos,key2,characterId,factionId,3,0);
+                playSoundAtLocation(m_metagame,"airdrop_drone_sky_striker_ace.wav",factionId,spawnPos,1.0);
+                break;
+            }
+            case 85: { // acg_sky_striker_ace_orig_call_green 闪刀空投 
+                int characterId = event.getIntAttribute("character_id");
+                const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                if (character is null) break;
+
+                // 获取玩家位置和阵营
+                Vector3 playerPos = stringToVector3(character.getStringAttribute("position"));
+                int factionId = character.getIntAttribute("faction_id");
+
+                // 获取玩家指针目标位置
+                int playerId = character.getIntAttribute("player_id");
+                const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
+                if (player is null) break;
+                Vector3 aimPos = stringToVector3(player.getStringAttribute("aim_target"));
+
+                // 计算后方位置：获取玩家朝向的反方向向量，向后偏移20米
+                Vector3 direction = getAimUnitVector(1, playerPos, aimPos);
+                Vector3 spawnPos = playerPos.subtract((direction.scale(10))).add(Vector3(0, 10, 0)); // Y+5 防止地面碰撞
+
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                if(tasker is null){break;}
+
+                string key1 = "airdrop_drone_sky_striker_ace.projectile";
+                string key2 = "acg_sky_striker_ace_hayate_green_change_model.projectile";
+                CreateProjectile_H(m_metagame,spawnPos,aimPos,key1,characterId,factionId,3,0);
+                CreateProjectile_H(m_metagame,spawnPos,aimPos,key2,characterId,factionId,3,0);
+                playSoundAtLocation(m_metagame,"airdrop_drone_sky_striker_ace.wav",factionId,spawnPos,1.0);
+                break;
+            }
+            case 86: { // acg_sky_striker_ace_orig_call_yellow 闪刀空投 
+                int characterId = event.getIntAttribute("character_id");
+                const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                if (character is null) break;
+
+                // 获取玩家位置和阵营
+                Vector3 playerPos = stringToVector3(character.getStringAttribute("position"));
+                int factionId = character.getIntAttribute("faction_id");
+
+                // 获取玩家指针目标位置
+                int playerId = character.getIntAttribute("player_id");
+                const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
+                if (player is null) break;
+                Vector3 aimPos = stringToVector3(player.getStringAttribute("aim_target"));
+
+                // 计算后方位置：获取玩家朝向的反方向向量，向后偏移20米
+                Vector3 direction = getAimUnitVector(1, playerPos, aimPos);
+                Vector3 spawnPos = playerPos.subtract((direction.scale(10))).add(Vector3(0, 10, 0)); // Y+5 防止地面碰撞
+
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                if(tasker is null){break;}
+
+                string key1 = "airdrop_drone_sky_striker_ace.projectile";
+                string key2 = "acg_sky_striker_ace_kaina_yellow_change_model.projectile";
+                CreateProjectile_H(m_metagame,spawnPos,aimPos,key1,characterId,factionId,3,0);
+                CreateProjectile_H(m_metagame,spawnPos,aimPos,key2,characterId,factionId,3,0);
+                playSoundAtLocation(m_metagame,"airdrop_drone_sky_striker_ace.wav",factionId,spawnPos,1.0);
+                break;
+            }
+            case 87: { // acg_sky_striker_ace_orig_call_blue 闪刀空投 
+                int characterId = event.getIntAttribute("character_id");
+                const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                if (character is null) break;
+
+                // 获取玩家位置和阵营
+                Vector3 playerPos = stringToVector3(character.getStringAttribute("position"));
+                int factionId = character.getIntAttribute("faction_id");
+
+                // 获取玩家指针目标位置
+                int playerId = character.getIntAttribute("player_id");
+                const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
+                if (player is null) break;
+                Vector3 aimPos = stringToVector3(player.getStringAttribute("aim_target"));
+
+                // 计算后方位置：获取玩家朝向的反方向向量，向后偏移20米
+                Vector3 direction = getAimUnitVector(1, playerPos, aimPos);
+                Vector3 spawnPos = playerPos.subtract((direction.scale(10))).add(Vector3(0, 10, 0)); // Y+5 防止地面碰撞
+
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                if(tasker is null){break;}
+
+                string key1 = "airdrop_drone_sky_striker_ace.projectile";
+                string key2 = "acg_sky_striker_ace_shizuku_blue_change_model.projectile";
+                CreateProjectile_H(m_metagame,spawnPos,aimPos,key1,characterId,factionId,3,0);
+                CreateProjectile_H(m_metagame,spawnPos,aimPos,key2,characterId,factionId,3,0);
+                playSoundAtLocation(m_metagame,"airdrop_drone_sky_striker_ace.wav",factionId,spawnPos,1.0);
+                break;
+            }
+            case 88: { // acg_sky_striker_ace_hayate_green_mode3 闪刀技能 
+                int cid = event.getIntAttribute("character_id");
+
+                const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                if(character is null){return;}
+                int playerId = character.getIntAttribute("player_id");
+                const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
+                if (player is null) break;
+                Vector3 aimPos = stringToVector3(player.getStringAttribute("aim_target"));
+
+                int fid = 0;
+                Vector3 sPos = stringToVector3(character.getStringAttribute("position"));
+                Vector3 aim_unit_vector = getAimUnitVector(1,sPos,aimPos);
+                Vector3 ePos = sPos.add(aim_unit_vector.scale(100));
+
+                string key1 = "acg_sky_striker_ace_hayate_green_mode3_damage.projectile";
+                float speed = 10;
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                CreateProjectile@ task1 = CreateProjectile(m_metagame,sPos,ePos,key1,cid,fid,speed,1.4,30);
+                tasker.add(task1);
+                playAnimationKey(m_metagame,cid,"acg_sky_striker_ace_hayate_green_mode3",false);
+                break;
+            }
+            case 89: { // ex_imotekh_cube  太空死灵 超时空立方体
+                int m_cid = event.getIntAttribute("character_id");
+                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+                int m_fid = g_playerInfoBuck.getFidByCid(m_cid);
+                array<const XmlElement@> factions = getFactions(m_metagame);
+                for (uint f = 0; f < factions.size(); ++f){
+                    const XmlElement@ faction = factions[f];
+                    if(faction is null){continue;}
+                    int t_fid = faction.getIntAttribute("id");
+                    if (t_fid != m_fid){
+                        array<const XmlElement@>@ soldiers = getCharactersNearPosition(m_metagame, ePos, t_fid, 50.0f);				
+                        int s_size = soldiers.length();
+                        if (s_size == 0) continue;
+                        int healTimes = 30;
+                        while(healTimes > 0 && soldiers.length() > 0){
+                            healTimes--;
+                            int s_i = rand(0,soldiers.length()-1);
+                            int soldier_id = soldiers[s_i].getIntAttribute("id");
+                            soldiers.removeAt(s_i);
+                            Vector3 soldier_pos = stringToVector3(getCharacterInfo(m_metagame, soldier_id).getStringAttribute("position"));
+                            // string m_key = "hd_effect_heal_character.projectile";
+                            string newVest = "hd_skill_stop_vest_1";
+                            editPlayerVest(m_metagame,soldier_id,newVest,4);
+                            // CreateDirectProjectile(m_metagame,soldier_pos,soldier_pos,m_key,m_cid,m_fid,100);
+                        }
+                        // string m_key = "hd_heal_02.wav";
+                        // playSoundAtLocation(m_metagame,m_key,m_fid,ePos,2.0);
+                        break;
+                    }
+                }
+                break;
+            }
             default:
                 break;     
         }
@@ -1907,7 +2257,172 @@ class projectile_event : Tracker {
                 healCharacter(m_metagame,cid,25);
                 return;
 			}
+            targetKey = "acg_sky_striker_ace_kagari_red.weapon";
+            targetKey2 = "acg_sky_striker_ace_kagari_red_mode2.weapon";
+            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){ // acg_sky_striker_ace_kagari_red_skill 闪刀 技能 
+                float cd = 300;
+                skill_CD.get(equipKey,cd);
+                if(equipKey == "acg_sky_striker_ace_kagari_red.weapon"){
+                    p_cd_lists.addNew(name,pid,targetKey2,cd);
+                }else if(equipKey == "acg_sky_striker_ace_kagari_red_mode2.weapon"){
+                    p_cd_lists.addNew(name,pid,targetKey,cd);
+                }
 
+                const XmlElement@ character = getCharacterInfo(m_metagame, cid);
+                if (character is null) return;
+                // 获取玩家位置和阵营
+                Vector3 playerPos = stringToVector3(character.getStringAttribute("position"));
+                int fid = character.getIntAttribute("faction_id");
+                // 获取玩家指针目标位置
+                const XmlElement@ player = getPlayerInfo(m_metagame, pid);
+                if (player is null) return;
+                Vector3 aimPos = stringToVector3(player.getStringAttribute("aim_target"));
+
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                if(tasker is null){return;}
+                string key1= "acg_sky_striker_ace_kagari_red_skill.projectile";
+                string key2= "acg_sky_striker_ace_kagari_red_mode2_skill.projectile";
+                CreateProjectile@ task1 = CreateProjectile(m_metagame,aimPos,aimPos,key1,cid,fid,1,0,1,0);
+                CreateProjectile@ task5 = CreateProjectile(m_metagame,aimPos,aimPos,key2,cid,fid,1,1,1,0);
+                tasker.add(task1);
+                tasker.add(task5);
+
+                string key = "ex_hyper_mega_bazooka_launcher_skill_damage.projectile";
+                float speed = 1;
+                float delaytime = 0.2;
+                CreateProjectile@ task2 = CreateProjectile(m_metagame,aimPos,aimPos,key,cid,fid,speed,3.2,1);
+                CreateProjectile@ task3 = CreateProjectile(m_metagame,aimPos,aimPos,key,cid,fid,speed,1.4,1);
+                CreateProjectile@ task4 = CreateProjectile(m_metagame,aimPos,aimPos,key,cid,fid,speed,1.4,1);
+                tasker.add(task1);
+                tasker.add(task2);
+                tasker.add(task3);
+                tasker.add(task4);
+                playSoundAtLocation(m_metagame,"acg_sky_striker_ace_kagari_red_skill.wav",fid,aimPos,3.0);
+
+                string m_key = "ba_effect_yuuka_skill.projectile";
+                CreateDirectProjectile(m_metagame,playerPos,playerPos,m_key,cid,0,100);
+                playAnimationKey(m_metagame,cid,"acg_sky_striker_ace_kagari_red_mode2_skill",false);
+            }
+            targetKey = "acg_sky_striker_ace_kaina_yellow.weapon";
+            targetKey2 = "acg_sky_striker_ace_kaina_yellow_mode2.weapon";
+            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+                float cd = 300;
+                skill_CD.get(equipKey,cd);
+                if(equipKey == "acg_sky_striker_ace_kaina_yellow.weapon"){
+                    p_cd_lists.addNew(name,pid,targetKey2,cd);
+                }else if(equipKey == "acg_sky_striker_ace_kaina_yellow_mode2.weapon"){
+                    p_cd_lists.addNew(name,pid,targetKey,cd);
+                }
+
+                const XmlElement@ character = getCharacterInfo(m_metagame, cid);
+                if (character is null) return;
+                int fid = character.getIntAttribute("faction_id");
+                
+                // 获取玩家位置和阵营
+                Vector3 ePos = stringToVector3(character.getStringAttribute("position"));
+                playSoundAtLocation(m_metagame,"acg_sky_striker_ace_kaina_yellow_voice.wav",fid,ePos,2.0);
+                int m_fid = g_playerInfoBuck.getFidByCid(cid);
+                array<const XmlElement@> factions = getFactions(m_metagame);
+                for (uint f = 0; f < factions.size(); ++f){
+                    const XmlElement@ faction = factions[f];
+                    if(faction is null){continue;}
+                    int t_fid = faction.getIntAttribute("id");
+                    if (t_fid == m_fid){
+                        array<const XmlElement@>@ soldiers = getCharactersNearPosition(m_metagame, ePos, t_fid, 25.0f);				
+                        int s_size = soldiers.length();
+                        if (s_size == 0) continue;
+                        int healTimes = 12;
+                        while(healTimes > 0 && soldiers.length() > 0){
+                            healTimes--;
+                            int s_i = rand(0,soldiers.length()-1);
+                            int soldier_id = soldiers[s_i].getIntAttribute("id");
+                            soldiers.removeAt(s_i);
+                            Vector3 soldier_pos = stringToVector3(getCharacterInfo(m_metagame, soldier_id).getStringAttribute("position"));
+                            string m_key = "hd_effect_heal_character.projectile";
+                            string newVest = "helldivers_vest";
+                            int m_pid = g_playerInfoBuck.getPidByCid(soldier_id);
+                            if(m_pid >= 0){
+                                healCharacter(m_metagame,soldier_id,40);
+                            }else{
+                                editPlayerVest(m_metagame,soldier_id,newVest,4);
+                            }
+                            CreateDirectProjectile(m_metagame,soldier_pos,soldier_pos,m_key,cid,m_fid,100);
+                        }
+                        string m_key = "hd_heal_02.wav";
+                        playSoundAtLocation(m_metagame,m_key,m_fid,ePos,2.0);
+                        break;
+                    }
+                }
+            }
+            targetKey = "re_acg_kisaki.weapon";
+            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+                const XmlElement@ character = getCharacterInfo(m_metagame, cid);
+                if (character is null) return;
+                int fid = character.getIntAttribute("faction_id");
+                // 获取玩家指针目标位置
+                const XmlElement@ player = getPlayerInfo(m_metagame, pid);
+                if (player is null) return;
+                Vector3 aimPos = stringToVector3(player.getStringAttribute("aim_target"));
+                // 获取玩家位置和阵营
+                Vector3 ePos = stringToVector3(character.getStringAttribute("position"));
+
+                string m_key = "ba_effect_kisaki_skill.projectile";
+                spawnStaticProjectile(m_metagame,m_key,ePos,0,0);
+                array<string> sound_files = {
+                    "acg_kisaki_voice_clip_01.wav",
+                    "acg_kisaki_voice_clip_02.wav",
+                    "acg_kisaki_voice_clip_03.wav",
+                    "acg_kisaki_voice_clip_04.wav",
+                    "acg_kisaki_voice_clip_05.wav",
+                    "acg_kisaki_voice_clip_06.wav",
+                    "acg_kisaki_voice_clip_07.wav",
+                    "acg_kisaki_voice_clip_08.wav",
+                    "acg_kisaki_voice_clip_09.wav"
+                };
+                playRandomSoundArray(m_metagame,sound_files,0,ePos);
+
+                int m_fid = g_playerInfoBuck.getFidByCid(cid);
+                Event_call_helldiver_superearth_airstrike@ new_task = Event_call_helldiver_superearth_airstrike(m_metagame,0,cid,fid,ePos.add(Vector3(0,30,0)),aimPos,"kisaki_skill");
+                //TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                TaskSequencer@ tasker = m_metagame.getVacantHdTaskSequncerIndex();
+                tasker.add(new_task);
+            }
+            targetKey = "re_acg_kisaki_s.weapon";
+            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+                const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                if(character is null){return;}
+                int playerId = character.getIntAttribute("player_id");
+
+                int fid = 0;
+                Vector3 sPos = stringToVector3(character.getStringAttribute("position"));
+
+                const XmlElement@ player = getPlayerInfo(m_metagame, pid);
+                if (player is null) return;
+                Vector3 aimPos = stringToVector3(player.getStringAttribute("aim_target"));
+
+                string m_key = "ba_effect_kisaki_skill.projectile";
+                spawnStaticProjectile(m_metagame,m_key,aimPos,0,0);
+                array<string> sound_files = {
+                    "acg_kisaki_voice_clip_01.wav",
+                    "acg_kisaki_voice_clip_02.wav",
+                    "acg_kisaki_voice_clip_03.wav",
+                    "acg_kisaki_voice_clip_04.wav",
+                    "acg_kisaki_voice_clip_05.wav",
+                    "acg_kisaki_voice_clip_06.wav",
+                    "acg_kisaki_voice_clip_07.wav",
+                    "acg_kisaki_voice_clip_08.wav",
+                    "acg_kisaki_voice_clip_09.wav"
+                };
+                playRandomSoundArray(m_metagame,sound_files,0,sPos);
+                string key1 = "acg_kisaki_drone_model.projectile";
+                string key2 = "acg_kisaki_drone.projectile";
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                TaskSequencer@ tasker2 = m_metagame.getVacantHdTaskSequncerIndex();
+                CreateProjectile@ task1 = CreateProjectile(m_metagame,aimPos.add(Vector3(0,12,0)),aimPos.add(Vector3(0,12,0)),key1,cid,fid,0,0,1,0,true);
+                CreateProjectile@ task2 = CreateProjectile(m_metagame,aimPos.add(Vector3(0,12,0)),aimPos.add(Vector3(0,12,0)),key2,cid,fid,0,0,15,2,true);
+                tasker.add(task1);
+                tasker2.add(task2);
+            }
 		}
 	}
     protected void handleCharacterKillEvent(const XmlElement@ event) {

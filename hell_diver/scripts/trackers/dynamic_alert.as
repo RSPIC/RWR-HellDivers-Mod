@@ -58,253 +58,15 @@ dictionary strong_alert_key ={
 //------------------------------------------
 class SpawnInfo{
     string spawnkey = "";
-    int spawnnum = 0;
-    SpawnInfo(string in_key,int num){
+    float spawnnum = 0;
+    SpawnInfo(string in_key,float num){
         spawnkey=in_key;
         spawnnum=num;
     }
 };
-//------------------------------------------
-const array<SpawnInfo@> level_3 = {
-    SpawnInfo("cyborgs_spawn_berserker_model.vehicle",int(rand(1,1))),
-    SpawnInfo("cyborgs_spawn_butcher_model.vehicle",0),
-    SpawnInfo("cyborgs_spawn_comrade_model.vehicle",0),
-    SpawnInfo("cyborgs_spawn_grotesque_model.vehicle",0),
-    SpawnInfo("cyborgs_spawn_hulk_model.vehicle",0),
-    SpawnInfo("cyborgs_spawn_immolator_model.vehicle",int(rand(1,1))),
-    SpawnInfo("cyborgs_spawn_initiate_model.vehicle",int(rand(3,4))),
-    SpawnInfo("cyborgs_spawn_warlord_model.vehicle",0),
-
-    SpawnInfo("bugs_Impaler",0),
-    SpawnInfo("bugs_Tank",0),
-    SpawnInfo("bugs_Behemoth",0),
-    SpawnInfo("bugs_BroodCommander",0),
-    SpawnInfo("bugs_Elite",0),
-    SpawnInfo("bugs_Warrior",int(rand(1,1))),
-    SpawnInfo("bugs_Stalker",int(rand(3,4))),
-
-    SpawnInfo("illum_Hunter",int(rand(0,0))),
-    SpawnInfo("illum_Apprentice",int(rand(1,1))),
-    SpawnInfo("illum_Tripod",int(rand(3,4))),
-    SpawnInfo("illum_Strider",int(rand(0,0))),
-    SpawnInfo("illum_Obelisk",int(rand(0,0))),
-    SpawnInfo("illum_Illusionist",int(rand(0,0))),
-    SpawnInfo("illum_CouncilMember",int(rand(0,0)))
-};
-const array<SpawnInfo@> level_6 = {
-    SpawnInfo("cyborgs_spawn_berserker_model.vehicle",1),
-    SpawnInfo("cyborgs_spawn_butcher_model.vehicle",int(rand(2,2))),
-    SpawnInfo("cyborgs_spawn_comrade_model.vehicle",0),
-    SpawnInfo("cyborgs_spawn_grotesque_model.vehicle",0),
-    SpawnInfo("cyborgs_spawn_hulk_model.vehicle",0),
-    SpawnInfo("cyborgs_spawn_immolator_model.vehicle",int(rand(2,4))),
-    SpawnInfo("cyborgs_spawn_initiate_model.vehicle",int(rand(7,7))),
-    SpawnInfo("cyborgs_spawn_warlord_model.vehicle",int(rand(-12,1))),
-
-    SpawnInfo("bugs_Impaler",int(rand(-6,1))),
-    SpawnInfo("bugs_Tank",int(rand(-6,1))),
-    SpawnInfo("bugs_Behemoth",0),
-    SpawnInfo("bugs_BroodCommander",0),
-    SpawnInfo("bugs_Elite",int(rand(1,1))),
-    SpawnInfo("bugs_Warrior",int(rand(5,5))),
-    SpawnInfo("bugs_Stalker",int(rand(1,1))),
-
-    SpawnInfo("illum_Hunter",int(rand(2,3))),
-    SpawnInfo("illum_Apprentice",int(rand(1,1))),
-    SpawnInfo("illum_Tripod",int(rand(2,3))),
-    SpawnInfo("illum_Strider",int(rand(1,1))),
-    SpawnInfo("illum_Obelisk",int(rand(0,0))),
-    SpawnInfo("illum_Illusionist",int(rand(0,0))),
-    SpawnInfo("illum_CouncilMember",int(rand(0,0)))
-};
-const array<SpawnInfo@> level_9 = {
-    SpawnInfo("cyborgs_spawn_berserker_model.vehicle",int(rand(2,3))),
-    SpawnInfo("cyborgs_spawn_butcher_model.vehicle",int(rand(2,2))),
-    SpawnInfo("cyborgs_spawn_comrade_model.vehicle",0),
-    SpawnInfo("cyborgs_spawn_grotesque_model.vehicle",int(rand(6,8))),
-    SpawnInfo("cyborgs_spawn_hulk_model.vehicle",0),
-    SpawnInfo("cyborgs_spawn_immolator_model.vehicle",2),
-    SpawnInfo("cyborgs_spawn_initiate_model.vehicle",2),
-    SpawnInfo("cyborgs_spawn_warlord_model.vehicle",int(rand(-4,1))),
-
-    SpawnInfo("bugs_Impaler",int(rand(-4,1))),
-    SpawnInfo("bugs_Tank",int(rand(-4,1))),
-    SpawnInfo("bugs_Behemoth",int(rand(-8,1))),
-    SpawnInfo("bugs_BehemothM",1),
-    SpawnInfo("bugs_BroodCommander",int(rand(1,1))),
-    SpawnInfo("bugs_Elite",int(rand(2,3))),
-    SpawnInfo("bugs_EliteM",5),
-    SpawnInfo("bugs_Warrior",0),
-    SpawnInfo("bugs_Stalker",4),
-    SpawnInfo("bugs_ZergBaneling",0),
-    SpawnInfo("bugs_Baneling",int(rand(-2,1))),
-
-    SpawnInfo("illum_Hunter",int(rand(1,1))),
-    SpawnInfo("illum_Apprentice",int(rand(1,2))),
-    SpawnInfo("illum_Tripod",int(rand(3,4))),
-    SpawnInfo("illum_Strider",int(rand(0,1))),
-    SpawnInfo("illum_Obelisk",int(rand(0,1))),
-    SpawnInfo("illum_Illusionist",int(rand(1,1))),
-    SpawnInfo("illum_CouncilMember",int(rand(0,0)))
-};
-const array<SpawnInfo@> level_12 = {
-    SpawnInfo("cyborgs_spawn_berserker_model.vehicle",1),
-    SpawnInfo("cyborgs_spawn_butcher_model.vehicle",int(rand(1,2))),
-    SpawnInfo("cyborgs_spawn_comrade_model.vehicle",1),
-    SpawnInfo("cyborgs_spawn_grotesque_model.vehicle",3),
-    SpawnInfo("cyborgs_spawn_hulk_model.vehicle",int(rand(3,5))),
-    SpawnInfo("cyborgs_spawn_immolator_model.vehicle",int(rand(1,2))),
-    SpawnInfo("cyborgs_spawn_initiate_model.vehicle",1),
-    SpawnInfo("cyborgs_spawn_warlord_model.vehicle",int(rand(0,1))),
-
-    SpawnInfo("bugs_Impaler",int(rand(-1,1))),
-    SpawnInfo("bugs_Tank",int(rand(-1,1))),
-    SpawnInfo("bugs_Behemoth",int(rand(-2,1))),
-    SpawnInfo("bugs_BroodCommander",int(rand(1,3))),
-    SpawnInfo("bugs_Elite",3),
-    SpawnInfo("bugs_Warrior",1),
-    SpawnInfo("bugs_Stalker",1),
-    SpawnInfo("bugs_ZergBaneling",int(rand(-1,1))),
-    SpawnInfo("bugs_Baneling",int(rand(-1,1))),
-
-    SpawnInfo("illum_Hunter",int(rand(1,1))),
-    SpawnInfo("illum_Apprentice",int(rand(0,0))),
-    SpawnInfo("illum_Tripod",int(rand(1,2))),
-    SpawnInfo("illum_Strider",int(rand(1,2))),
-    SpawnInfo("illum_Obelisk",int(rand(1,1))),
-    SpawnInfo("illum_Illusionist",int(rand(1,1))),
-    SpawnInfo("illum_CouncilMember",int(rand(0,0)))
-};
-const array<SpawnInfo@> level_15 = {
-    SpawnInfo("cyborgs_spawn_berserker_model.vehicle",1),
-    SpawnInfo("cyborgs_spawn_butcher_model.vehicle",1),
-    SpawnInfo("cyborgs_spawn_comrade_model.vehicle",1),
-    SpawnInfo("cyborgs_spawn_grotesque_model.vehicle",int(rand(4,5))),
-    SpawnInfo("cyborgs_spawn_hulk_model.vehicle",int(rand(3,6))),
-    SpawnInfo("cyborgs_spawn_immolator_model.vehicle",1),
-    SpawnInfo("cyborgs_spawn_initiate_model.vehicle",1),
-    SpawnInfo("cyborgs_spawn_warlord_model.vehicle",int(rand(4,7))),
-
-    SpawnInfo("bugs_Impaler",int(rand(0,1))),
-    SpawnInfo("bugs_Tank",int(rand(0,1))),
-    SpawnInfo("bugs_Behemoth",int(rand(2,3))),
-    SpawnInfo("bugs_BehemothM",1),
-    SpawnInfo("bugs_BroodCommander",int(rand(2,5))),
-    SpawnInfo("bugs_EliteM",8),
-    SpawnInfo("bugs_Warrior",2),
-    SpawnInfo("bugs_Stalker",2),
-    SpawnInfo("bugs_ZergBaneling",int(rand(0,1))),
-    SpawnInfo("bugs_Baneling",int(rand(0,1))),
-
-    SpawnInfo("illum_Hunter",int(rand(1,1))),
-    SpawnInfo("illum_Apprentice",int(rand(0,1))),
-    SpawnInfo("illum_Tripod",int(rand(1,2))),
-    SpawnInfo("illum_Strider",int(rand(1,2))),
-    SpawnInfo("illum_Obelisk",int(rand(3,3))),
-    SpawnInfo("illum_Illusionist",int(rand(1,1))),
-    SpawnInfo("illum_CouncilMember",int(rand(1,1)))
-};
-const array<SpawnInfo@> level_random = {
-    SpawnInfo("cyborgs_spawn_berserker_model.vehicle",int(rand(-2,2))),
-    SpawnInfo("cyborgs_spawn_butcher_model.vehicle",int(rand(-3,1))),
-    SpawnInfo("cyborgs_spawn_comrade_model.vehicle",int(rand(-1,1))),
-    SpawnInfo("cyborgs_spawn_grotesque_model.vehicle",int(rand(-1,1))),
-    SpawnInfo("cyborgs_spawn_hulk_model.vehicle",int(rand(-4,1))),
-    SpawnInfo("cyborgs_spawn_immolator_model.vehicle",int(rand(-1,1))),
-    SpawnInfo("cyborgs_spawn_initiate_model.vehicle",int(rand(-1,1))),
-    SpawnInfo("cyborgs_spawn_warlord_model.vehicle",int(rand(-5,1))),
-
-    SpawnInfo("bugs_Impaler",int(rand(-4,1))),
-    SpawnInfo("bugs_Tank",int(rand(-3,1))),
-    SpawnInfo("bugs_Behemoth",int(rand(-5,1))),
-    SpawnInfo("bugs_BroodCommander",int(rand(-1,1))),
-    SpawnInfo("bugs_Elite",int(rand(-2,2))),
-    SpawnInfo("bugs_Warrior",int(rand(-2,2))),
-    SpawnInfo("bugs_Stalker",int(rand(-2,2))),
-
-    SpawnInfo("illum_Hunter",int(rand(1,1))),
-    SpawnInfo("illum_Apprentice",int(rand(-1,1))),
-    SpawnInfo("illum_Tripod",int(rand(-1,1))),
-    SpawnInfo("illum_Strider",int(rand(-3,1))),
-    SpawnInfo("illum_Obelisk",int(rand(-3,1))),
-    SpawnInfo("illum_Illusionist",int(rand(-4,1))),
-    SpawnInfo("illum_CouncilMember",int(rand(-5,1)))
-};
-const array<SpawnInfo@> level_all = {
-    SpawnInfo("cyborgs_spawn_berserker_model.vehicle",1),
-    SpawnInfo("cyborgs_spawn_butcher_model.vehicle",1),
-    SpawnInfo("cyborgs_spawn_comrade_model.vehicle",1),
-    SpawnInfo("cyborgs_spawn_grotesque_model.vehicle",1),
-    SpawnInfo("cyborgs_spawn_hulk_model.vehicle",1),
-    SpawnInfo("cyborgs_spawn_immolator_model.vehicle",1),
-    SpawnInfo("cyborgs_spawn_initiate_model.vehicle",1),
-    SpawnInfo("cyborgs_spawn_warlord_model.vehicle",1),
-
-    SpawnInfo("bugs_Impaler",1),
-    SpawnInfo("bugs_Tank",1),
-    SpawnInfo("bugs_Behemoth",1),
-    SpawnInfo("bugs_BroodCommander",1),
-    SpawnInfo("bugs_Elite",1),
-    SpawnInfo("bugs_Warrior",1),
-    SpawnInfo("bugs_Stalker",1),
-    SpawnInfo("bugs_ZergBaneling",1),
-    SpawnInfo("bugs_Baneling",1),
-
-    SpawnInfo("illum_Hunter",int(rand(1,1))),
-    SpawnInfo("illum_Apprentice",int(rand(1,1))),
-    SpawnInfo("illum_Tripod",int(rand(1,1))),
-    SpawnInfo("illum_Strider",int(rand(1,1))),
-    SpawnInfo("illum_Obelisk",int(rand(1,1))),
-    SpawnInfo("illum_Illusionist",int(rand(1,1))),
-    SpawnInfo("illum_CouncilMember",int(rand(1,1)))
-};
-const array<SpawnInfo@> level_littlefish = {
-    SpawnInfo("cyborgs_spawn_berserker_model.vehicle",0),
-    SpawnInfo("cyborgs_spawn_butcher_model.vehicle",0),
-    SpawnInfo("cyborgs_spawn_comrade_model.vehicle",1),
-    SpawnInfo("cyborgs_spawn_grotesque_model.vehicle",3),
-    SpawnInfo("cyborgs_spawn_hulk_model.vehicle",0),
-    SpawnInfo("cyborgs_spawn_immolator_model.vehicle",1),
-    SpawnInfo("cyborgs_spawn_initiate_model.vehicle",3),
-    SpawnInfo("cyborgs_spawn_warlord_model.vehicle",0),
-
-    SpawnInfo("bugs_Impaler",0),
-    SpawnInfo("bugs_Tank",0),
-    SpawnInfo("bugs_Behemoth",0),
-    SpawnInfo("bugs_BroodCommander",0),
-    SpawnInfo("bugs_Elite",2),
-    SpawnInfo("bugs_Warrior",2),
-    SpawnInfo("bugs_Stalker",2),
-
-    SpawnInfo("illum_Hunter",1),
-    SpawnInfo("illum_Apprentice",3),
-    SpawnInfo("illum_Tripod",1),
-    SpawnInfo("illum_Strider",1),
-    SpawnInfo("illum_Obelisk",0),
-    SpawnInfo("illum_Illusionist",0),
-    SpawnInfo("illum_CouncilMember",0)
-};
-const array<SpawnInfo@> level_rokectLauncher = {
-    SpawnInfo("cyborgs_spawn_comrade_model.vehicle",2),
-    SpawnInfo("cyborgs_spawn_grotesque_model.vehicle",8),
-    SpawnInfo("cyborgs_spawn_hulk_model.vehicle",2),
-
-    SpawnInfo("bugs_BroodCommander",1),
-    SpawnInfo("bugs_Elite",2),
-    SpawnInfo("bugs_Warrior",8),
-    SpawnInfo("bugs_Stalker",2),
-
-    SpawnInfo("illum_Strider",6),
-    SpawnInfo("illum_Obelisk",1),
-    SpawnInfo("illum_Illusionist",1),
-    SpawnInfo("illum_CouncilMember",1),
-
-    SpawnInfo("earth_default_ai",8)
-};
 const array<SpawnInfo@> debug = {
     SpawnInfo("earth_default_ai",8)
 };
-
 //------------------------------------------
 dictionary score_level_3 = {
     {"Scout",1.0},
@@ -344,189 +106,186 @@ dictionary score_level_3 = {
     {"Illusionist",0.05},
     {"CouncilMember",0.02}
 };
-dictionary score_level_6 = {
-    {"Scout",1.0},
-    {"Tunnel",0.5},
-    {"Vanguard",0.3},
-    {"Baneling",0.1},
-    {"ZergBaneling",0.1},
-    {"Shadow",1.2},
-    {"Warrior",3.0},
-    {"Elite",0.75},
-    {"Stalker",1.5},
-    {"BroodCommander",0.2},
-    {"Behemoth",0.0},
-    {"Tank",0.0},
-    {"Impaler",0.08},
-
-    {"Squadleader",1.5},
-    {"Legionnaire",0.2},
-    {"Initiate",0.5},
-    {"Berserker",0.2},
-    {"Comrade",1.0},
-    {"Grotesque",0.1},
-    {"Tesla",0.2},
-    {"Hound",0.3},
-    {"Butcher",0.5},
-    {"Immolator",1.0},
-    {"Hulk",0},
-    {"Warlord",0.02}
+//------------------------------------------
+const array<SpawnInfo@> all_soldier_cyborgs = {
+    SpawnInfo("cyborgs_berserker",1),
+    SpawnInfo("cyborgs_butcher",1),
+    SpawnInfo("cyborgs_comrade",1),
+    SpawnInfo("cyborgs_grotesque",1),
+    SpawnInfo("cyborgs_hulk",1),
+    SpawnInfo("cyborgs_immolator",2),
+    SpawnInfo("cyborgs_initiate",2),
+    SpawnInfo("cyborgs_warlord",1),
+    SpawnInfo("cyborgs_hound",1),
+    SpawnInfo("cyborgs_tesla",1),
+    SpawnInfo("cyborgs_terrordrone",1),
+    SpawnInfo("cyborgs_88at",0.6),
+    SpawnInfo("cyborgs_squadleader",1),
+    SpawnInfo("cyborgs_legionnaire",1)
 };
-dictionary score_level_9 = {
-    {"Scout",1.0},
-    {"Tunnel",0.5},
-    {"Vanguard",1.2},
-    {"Baneling",0.2},
-    {"ZergBaneling",0.2},
-    {"Shadow",1.2},
-    {"Warrior",2.0},
-    {"Elite",0.75},
-    {"Stalker",1.5},
-    {"BroodCommander",0.3},
-    {"Behemoth",0.01},
-    {"Tank",0.1},
-    {"Impaler",0.08},
-
-    {"Squadleader",1.5},
-    {"Legionnaire",0.8},
-    {"Initiate",0.5},
-    {"Berserker",0.2},
-    {"Comrade",1.0},
-    {"Grotesque",0.1},
-    {"Tesla",0.5},
-    {"Hound",0.5},
-    {"Butcher",0.5},
-    {"Immolator",1.0},
-    {"Hulk",0},
-    {"Warlord",0.02}
+const array<SpawnInfo@> all_soldier_bugs = {
+    SpawnInfo("bugs_Impaler",0.6),
+    SpawnInfo("bugs_Tank",0.6),
+    SpawnInfo("bugs_Behemoth",0.6),
+    SpawnInfo("bugs_BroodCommander",0.8),
+    SpawnInfo("bugs_Elite",2),
+    SpawnInfo("bugs_Warrior",3),
+    SpawnInfo("bugs_Stalker",2),
+    SpawnInfo("bugs_ZergBaneling",2),
+    SpawnInfo("bugs_Baneling",2),
+    SpawnInfo("bugs_Scout",2),
+    SpawnInfo("bugs_Tunnel",2),
+    SpawnInfo("bugs_Vanguard",2),
+    SpawnInfo("bugs_Shadow",2)
 };
-dictionary score_level_12 = {
-    {"Scout",1.0},
-    {"Tunnel",0.5},
-    {"Vanguard",1.2},
-    {"Baneling",0.2},
-    {"ZergBaneling",0.2},
-    {"Shadow",1.2},
-    {"Warrior",2.0},
-    {"Elite",0.75},
-    {"Stalker",1.5},
-    {"BroodCommander",0.3},
-    {"Behemoth",0.01},
-    {"Tank",0.1},
-    {"Impaler",0.08},
-
-    {"Squadleader",1.5},
-    {"Legionnaire",0.8},
-    {"Initiate",0.5},
-    {"Berserker",0.2},
-    {"Comrade",1.0},
-    {"Grotesque",0.1},
-    {"Tesla",0.5},
-    {"Hound",0.5},
-    {"Butcher",0.5},
-    {"Immolator",1.0},
-    {"Hulk",0},
-    {"Warlord",0.02}
+const array<SpawnInfo@> all_soldier_illums = {
+    SpawnInfo("illum_Watcher",1),
+    SpawnInfo("illum_Observer",1),
+    SpawnInfo("illum_Hunter",1),
+    SpawnInfo("illum_Apprentice",1),
+    SpawnInfo("illum_Tripod",1),
+    SpawnInfo("illum_Strider",1),
+    SpawnInfo("illum_Obelisk",1),
+    SpawnInfo("illum_Illusionist",1),
+    SpawnInfo("illum_CouncilMember",1)
 };
-dictionary score_level_15 = {
-    {"Scout",1.0},
-    {"Tunnel",0.5},
-    {"Vanguard",1.2},
-    {"Baneling",0.2},
-    {"ZergBaneling",0.2},
-    {"Shadow",1.2},
-    {"Warrior",2.0},
-    {"Elite",0.75},
-    {"Stalker",1.5},
-    {"BroodCommander",0.3},
-    {"Behemoth",0.01},
-    {"Tank",0.1},
-    {"Impaler",0.08},
+array<SpawnInfo@> uesed_spawn_list(Metagame@ metagame,int server_difficulty_level) {
+    array<SpawnInfo@> result;
 
-    {"Squadleader",1.5},
-    {"Legionnaire",0.8},
-    {"Initiate",0.5},
-    {"Berserker",0.2},
-    {"Comrade",1.0},
-    {"Grotesque",0.1},
-    {"Tesla",0.5},
-    {"Hound",0.5},
-    {"Butcher",0.5},
-    {"Immolator",1.0},
-    {"Hulk",0},
-    {"Warlord",0.02}
-};
+    // Base number of instances per faction
+    int base_count = 3;
 
-//-----------------------------------------
-void Alert_Spawn(Metagame@ metagame,int factionId, Vector3 position,const array<SpawnInfo@> spawn_list) {
-    //前期撰写考虑不全，无法区分生化人和其他阵容的level情况,懒得修改
-    //考虑到虫族和光能不采用空降的增援方式,原地增援修改此处代码特地进行生化人增援的检测
-    //即只有生化人需要通过载具模型来空降增援，其他阵营不用载具作为间接过程
-    //代码封装性下降
+    // Adjust count based on player count
+    int adjusted_count = base_count + g_playerCount;
 
-    //ver1.6.0 磁暴步兵AI生成临时装进Hulk的载具摧毁事件里
-    array<ListDirectProjectile@> list;
+    // Adjust spawn number based on server difficulty level
+    float spawn_multiplier = 1 * (server_difficulty_level / 3);
+
+    // Randomly select instances from all_soldier_cyborgs
+    for (int i = 0; i < adjusted_count; ++i) {
+        int random_index = int(rand(0, all_soldier_cyborgs.size() - 1));
+        SpawnInfo@ info = all_soldier_cyborgs[random_index];
+        result.insertLast(SpawnInfo(info.spawnkey, int(info.spawnnum * spawn_multiplier)));
+        _report(metagame,"Alert_Spawn key="+info.spawnkey+" num="+int(info.spawnnum * spawn_multiplier));
+    }
+
+    // Randomly select instances from all_soldier_bugs
+    for (int i = 0; i < adjusted_count; ++i) {
+        int random_index = int(rand(0, all_soldier_bugs.size() - 1));
+        SpawnInfo@ info = all_soldier_bugs[random_index];
+        result.insertLast(SpawnInfo(info.spawnkey, int(info.spawnnum * spawn_multiplier)));
+        _report(metagame,"Alert_Spawn key="+info.spawnkey+" num="+int(info.spawnnum * spawn_multiplier));
+    }
+
+    // Randomly select instances from all_soldier_illums
+    for (int i = 0; i < adjusted_count; ++i) {
+        int random_index = int(rand(0, all_soldier_illums.size() - 1));
+        SpawnInfo@ info = all_soldier_illums[random_index];
+        result.insertLast(SpawnInfo(info.spawnkey, int(info.spawnnum * spawn_multiplier)));
+        _report(metagame,"Alert_Spawn key="+info.spawnkey+" num="+int(info.spawnnum * spawn_multiplier));
+    }
+
+    return result;
+}
+
+void Alert_Spawn_new(Metagame@ metagame,int factionId, Vector3 position,int server_difficulty_level){
+    //仿照HD2的增援模式，逐步取消旧版本的增援模式
+    //逻辑：建立All兵种的list，脚本初始化时随机固定几个兵种，生成时根据难度增加生成数量
+    TaskSequencer@ tasker3 = metagame.getTaskManager().newTaskSequencer();
+    float mark_time = 8;
+    array<SpawnInfo@> spawn_list = uesed_spawn_list(metagame,server_difficulty_level);
+
+    if( g_factionInfoBuck.getFidByName("Cyborgs") == factionId){
+        array<string> sound_files = {
+            "hd_Voicy_drop_ships.wav",
+            "hd_Voicy_drop_ships_2.wav"
+        };
+        playRandomSoundArray(metagame, sound_files, 0, position,3.0);
+        playSoundAtLocation(metagame,"hd_cyborgs_drop_ships_leadsound.wav",0,position,4.5);
+    }
+    if( g_factionInfoBuck.getFidByName("Bugs") == factionId){
+        array<string> sound_files = {
+            "hd_Voicy_bug_tunnel_bridge.wav",
+            "hd_Voicy_bug_tunnel_bridge_2.wav"
+        };
+        playRandomSoundArray(metagame, sound_files, 0, position,3.0);
+    }
+    if( g_factionInfoBuck.getFidByName("Illuminate") == factionId){
+        array<string> sound_files = {
+            "hd_Voicy_illum_artifact.wav",
+            "hd_Voicy_illum_artifact_2.wav"
+        };
+        playRandomSoundArray(metagame, sound_files, 0, position,3.0);
+        playSoundAtLocation(metagame,"hd_illum_tele_leadsound.wav",0,position,2.0);
+    }
     for(uint i=0 ; i < spawn_list.size() ; ++i){
         SpawnInfo@ info = spawn_list[i];
         if(info is null){continue;}
-        int pos = info.spawnkey.findFirst("_");
-        if(pos<0){continue;}
-        string caller_faction_name = info.spawnkey.substr(0,pos);
-        int spawnnum = info.spawnnum;
+        int spos = info.spawnkey.findFirst("_");
+        if(spos<0){continue;}
+        string caller_faction_name = info.spawnkey.substr(0,spos);
+        int spawnnum = int(info.spawnnum);
         string spawnkey = info.spawnkey;
         if(spawnnum <= 0){continue;}
-        if( caller_faction_name == "cyborgs" && g_factionInfoBuck.getFidByName("Cyborgs") == factionId){   //检测键值开头是否为生化人
-            Orientation m_rotate = Orientation(0,1,0,0);
-            int uprate = 5;
-            float range = 15;
-            for(int j=0;j<spawnnum;j++){
-                float rand_x = rand(-range,range);
-                float rand_y = rand(-range,range);
-                position = position.add(Vector3(0,uprate,0));
-                if(!isVectorInMap(position)){continue;}
-                spawnVehicle(metagame,1,factionId,position.add(Vector3(rand_x,0,rand_y)),m_rotate,spawnkey);
-            }
-        }else if(caller_faction_name == "bugs" && g_factionInfoBuck.getFidByName("Bugs") == factionId){
-            string groups_name = spawnkey.substr(pos+1);
-            float range = 15;
-            for(int j=0;j<spawnnum;j++){
-                float rand_x = rand(-range,range);
-                float rand_y = rand(-range,range);
-                position = position.add(Vector3(rand_x,0,rand_y));
-                if(!isVectorInMap(position)){continue;}
-                ListDirectProjectile@ a = ListDirectProjectile(position.add(Vector3(0,10,0)),position,"hd_effect_bugs_spawn_smoke.projectile",-1,factionId,10);
-                ListDirectProjectile@ b = ListDirectProjectile(position.add(Vector3(0,10,0)),position,"bugs_spawn_"+groups_name+".projectile",-1,factionId,10);
-                list.insertLast(a);
-                list.insertLast(b);
-            }
-        }else if(caller_faction_name == "illum" && g_factionInfoBuck.getFidByName("Illuminate") == factionId){
-            string groups_name = spawnkey.substr(pos+1);
-            float range = 15;
-            for(int j=0;j<spawnnum;j++){
-                float rand_x = rand(-range,range);
-                float rand_y = rand(-range,range);
-                position = position.add(Vector3(rand_x,0,rand_y));
-                if(!isVectorInMap(position)){continue;}
-                ListDirectProjectile@ a = ListDirectProjectile(position.add(Vector3(0,10,0)),position,"hd_effect_illum_spawn_light.projectile",-1,factionId,10);
-                ListDirectProjectile@ b = ListDirectProjectile(position.add(Vector3(0,10,0)),position,"illum_spawn_"+groups_name+".projectile",-1,factionId,10);
-                list.insertLast(a);
-                list.insertLast(b);
-            }
-        }else if(caller_faction_name == "earth" && g_factionInfoBuck.getFidByName("Super Earth") == factionId){
-            string groups_name = spawnkey.substr(pos+1);
-            float range = 15;
-            for(int j=0;j<spawnnum;j++){
-                float rand_x = rand(-range,range);
-                float rand_y = rand(-range,range);
-                position = position.add(Vector3(rand_x,40,rand_y));
-                if(!isVectorInMap(position)){continue;}
-                SpawnSoldier(metagame,1,factionId,position,groups_name);
-            }
+        string groups_name = spawnkey.substr(spos+1);
+
+        if( caller_faction_name == "cyborgs" && g_factionInfoBuck.getFidByName("Cyborgs") == factionId){
+            string key1 = "hd_automatons_ship.projectile";
+            string key2 = "cyborgs_spawn_"+groups_name+".projectile";
+            Vector3 pos = position.add(Vector3(rand(-30,30),16,rand(-30,30)));
+
+            float shift_range = rand(60,70);
+            float rand_speed = rand(0.6,0.8);
+            TaskSequencer@ tasker = metagame.getHdTaskSequncerIndex(6);   
+            TaskSequencer@ tasker2 = metagame.getHdTaskSequncerIndex(7);   
+            CreateProjectile@ task1 = CreateProjectile(metagame,pos.add(Vector3(shift_range,0,0)),pos,key1,0,factionId,rand_speed,2,1,0,false); // speed delay num in_delay vertival
+            pos = pos.add(Vector3(0,-1.5,0));
+            CreateProjectile@ task2 = CreateProjectile(metagame,pos.add(Vector3(shift_range,0,0)),pos,key2,0,factionId,rand_speed,2,spawnnum,0,false); // speed delay num in_delay vertival
+            task1.setCurvePath(0.1);
+            task2.setCurvePath(0.1);
+            task2.setRandomRange(3,false);
+            tasker.add(task1);
+            tasker2.add(task2);
+            mark_time += 2;
+        }
+        if( caller_faction_name == "bugs" && g_factionInfoBuck.getFidByName("Bugs") == factionId){
+            string key1 = "hd_effect_bugs_spawn_smoke.projectile";
+            string key2 = "bugs_spawn_"+groups_name+".projectile";
+            Vector3 pos = position.add(Vector3(rand(-10,10),8,rand(-10,10)));
+
+            float shift_range = rand(0,0);
+            float rand_speed = 1;
+            TaskSequencer@ tasker = metagame.getHdTaskSequncerIndex(5);   
+            TaskSequencer@ tasker2 = metagame.getHdTaskSequncerIndex(5);   
+            CreateProjectile@ task1 = CreateProjectile(metagame,pos,pos,key1,0,factionId,rand_speed,2,1,0,true); // speed delay num in_delay vertival
+            CreateProjectile@ task2 = CreateProjectile(metagame,pos,pos,key2,2,factionId,rand_speed,2,spawnnum,10/spawnnum,true); // speed delay num in_delay vertival
+            task2.setRandomRange(3,false);
+            tasker.add(task1);
+            tasker2.add(task2);
+            mark_time += 10;
+        }
+        if( caller_faction_name == "illum" && g_factionInfoBuck.getFidByName("Illuminate") == factionId){
+            string key1 = "hd_effect_illum_spawn_call.projectile";
+            string key2 = "illum_spawn_"+groups_name+".projectile";
+            Vector3 pos = position.add(Vector3(rand(-50,50),8,rand(-50,50)));
+
+            float shift_range = rand(0,0);
+            float rand_speed = 1;
+            TaskSequencer@ tasker = metagame.getHdTaskSequncerIndex(4);   
+            TaskSequencer@ tasker2 = metagame.getHdTaskSequncerIndex(4);   
+            CreateProjectile@ task1 = CreateProjectile(metagame,pos,pos,key1,0,factionId,rand_speed,2,1,0,true); // speed delay num in_delay vertival
+            CreateProjectile@ task2 = CreateProjectile(metagame,pos,pos,key2,0,factionId,rand_speed,2,spawnnum,0,true); // speed delay num in_delay vertival
+            task2.setRandomRange(10,false);
+            tasker.add(task1);
+            tasker2.add(task2);
+            mark_time += 2.5;
+        }
+        if( caller_faction_name == "earth" && g_factionInfoBuck.getFidByName("Super Earth") == factionId){
+            string key1 = "earth_spawn_ship.projectile";
         }
     }
-    if(list.size() != 0){
-        CreateListDirectProjectile(metagame,list);
-    }
+    autoSetMarker marker(metagame,mark_time,2,1,3,position,g_factionInfoBuck.getNameByFid(factionId)+" Alert","call_marker","#ffffff",true,true,true,0);
+    tasker3.add(marker);
 }
 //----------------------------------
 class dynamic_alert : Tracker {
@@ -770,45 +529,22 @@ class dynamic_alert : Tracker {
             _report(m_metagame,"Alert Level = "+server_difficulty_level);
         }
 
-
-        if(server_difficulty_level > 12){
-            Alert_Spawn(m_metagame,m_fid,position,level_15);
-            Alert_Spawn(m_metagame,m_fid,position,level_3);
-        }else if(server_difficulty_level > 9 ){
-            Alert_Spawn(m_metagame,m_fid,position,level_12);
-        }else if(server_difficulty_level > 6){
-            Alert_Spawn(m_metagame,m_fid,position,level_9);
-        }else if(server_difficulty_level > 3){
-            Alert_Spawn(m_metagame,m_fid,position,level_6);
-        }else if(server_difficulty_level >= 0){
-            Alert_Spawn(m_metagame,m_fid,position,level_3);
-        }
-
-        if(rate <= 0.5 && rate >0.2){
-            Alert_Spawn(m_metagame,m_fid,position,level_random);
-        }else if(rate < 0.20){
-            Alert_Spawn(m_metagame,m_fid,position,level_all);
-        }
+        Alert_Spawn_new(m_metagame,m_fid,position,server_difficulty_level);
 
         int player_num = players.size();
 
-        m_cd_time = 60 - (m_server_difficulty_level/3)/rate; // 最多十倍
+        m_cd_time = 300; // 最多十倍
 
-        if(g_debugMode){
-            _report(m_metagame,"现在的警报CD时间为="+m_cd_time+",rate="+rate);
+
+
+        m_cd_time = m_cd_time - 3*m_server_difficulty_level;
+        m_cd_time = m_cd_time - 5*player_num;
+
+        if(m_cd_time <= 180 - 5*m_server_difficulty_level/3){
+            m_cd_time = 180 - 5*m_server_difficulty_level/3 ; // level15 = min 5s   level9 = min 15s
         }
         
-
-        m_cd_time = m_cd_time - 2*m_server_difficulty_level + 18;
-        m_cd_time = m_cd_time - 0.8*player_num;
-
-        if(m_cd_time <= 30 - 5*m_server_difficulty_level/3){
-            m_cd_time = 30 - 5*m_server_difficulty_level/3 ; // level15 = min 5s   level9 = min 15s
-        }
-        
-        if(g_debugMode){
-            _report(m_metagame,"本次CD时间="+m_cd_time);
-        }
+        _report(m_metagame,"触发敌方警报，增援正在到达。增援CD="+m_cd_time);
 
         server_difficulty_level = m_server_difficulty_level;
         m_alertFlag = true;
@@ -824,16 +560,14 @@ class dynamic_alert : Tracker {
         string eventKey = event.getStringAttribute("key");
         if(eventKey == "vehicle_call_alert"){
             Vector3 position = stringToVector3(event.getStringAttribute("position"));
-            Alert_Spawn(m_metagame,1,position,level_all);
-            Alert_Spawn(m_metagame,1,position,level_rokectLauncher);
+            Alert_Spawn_new(m_metagame,1,position,m_server_difficulty_level);
 
         }
         if(eventKey == "vehicle_call_alert_cyborgs"){
             Vector3 position = stringToVector3(event.getStringAttribute("position"));
             int fid = g_factionInfoBuck.getFidByName("Cyborgs");
             if(fid == -1){return;}
-            Alert_Spawn(m_metagame,fid,position,level_all);
-            Alert_Spawn(m_metagame,fid,position,level_rokectLauncher);
+            Alert_Spawn_new(m_metagame,fid,position,m_server_difficulty_level);
         }
     }
     protected void handleChatEvent(const XmlElement@ event){
@@ -896,7 +630,7 @@ class dynamic_alert : Tracker {
                 Vector3 position = stringToVector3(player.getStringAttribute("aim_target"));
                 int m_fid = g_factionInfoBuck.getFidByName("Bugs");
                 if(m_fid == -1){return;}
-                Alert_Spawn(m_metagame,m_fid,position,level_15);
+                Alert_Spawn_new(m_metagame,m_fid,position,15);
             }
             if(message == "/callcyborgs"){
                 int m_pid = event.getIntAttribute("player_id");
@@ -905,7 +639,7 @@ class dynamic_alert : Tracker {
                 Vector3 position = stringToVector3(player.getStringAttribute("aim_target"));
                 int m_fid = g_factionInfoBuck.getFidByName("Cyborgs");
                 if(m_fid == -1){return;}
-                Alert_Spawn(m_metagame,m_fid,position,level_15);
+                Alert_Spawn_new(m_metagame,m_fid,position,15);
             }
             if(message == "/callillum"){
                 int m_pid = event.getIntAttribute("player_id");
@@ -914,7 +648,7 @@ class dynamic_alert : Tracker {
                 Vector3 position = stringToVector3(player.getStringAttribute("aim_target"));
                 int m_fid = g_factionInfoBuck.getFidByName("Illuminate");
                 if(m_fid == -1){return;}
-                Alert_Spawn(m_metagame,m_fid,position,level_15);
+                Alert_Spawn_new(m_metagame,m_fid,position,15);
             }
             if(message == "/calltest"){
                 int m_pid = event.getIntAttribute("player_id");
@@ -924,7 +658,7 @@ class dynamic_alert : Tracker {
                 int m_fid = g_factionInfoBuck.getFidByName("Super Earth");
                 _report(m_metagame,"SuperEarth fid="+m_fid);
                 if(m_fid == -1){return;}
-                Alert_Spawn(m_metagame,m_fid,position,debug);
+                Alert_Spawn_new(m_metagame,m_fid,position,15);
             }
             if(message == "/setspawntime"){
                 setSpawnTime();
@@ -963,17 +697,6 @@ class dynamic_alert : Tracker {
             for(uint j =0; j<groups.size(); ++j){
                 string groupsName = groups[j].getStringAttribute("name");
                 float spawn_score = groups[j].getIntAttribute("spawn_score");
-                if(g_server_difficulty_level == 15){
-                    score_level_15.get(groupsName,spawn_score);
-                }else if(g_server_difficulty_level == 12){
-                    score_level_12.get(groupsName,spawn_score);
-                }else if(g_server_difficulty_level == 9){
-                    score_level_9.get(groupsName,spawn_score);
-                }else if(g_server_difficulty_level == 6){
-                    score_level_6.get(groupsName,spawn_score);
-                }else if(g_server_difficulty_level == 3){
-                    score_level_3.get(groupsName,spawn_score);
-                }
                 //setSpawnScore(m_metagame,fid,groupsName,spawn_score);
 		    }
         }

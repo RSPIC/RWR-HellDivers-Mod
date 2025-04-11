@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectiles>
+<projectile  
+class="grenade" 
+name="Kisaki Doll" 
+key="acg_kisaki_doll.projectile" 
+slot="0"
+pulldown_in_air="12"
+on_ground_up="0 1 0"
+time_to_live_out_in_the_open="0"
+>
+    <collision class="sticky" />
+	<result class="notify_script" key="acg_kisaki_doll" />
+
+
+	<trigger class="time" time_to_live="4" />	
+    <hud_icon filename="acg_kisaki_doll.png" /> <!--武器为110x220像素，投掷物为110x110-->
+
+    <rotation class="random" />
+	<model mesh_filename="ba_ball_kisaki.xml" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+
+    <effect class="result" type="splat_map" surface_tag="" size="5.0" atlas_index="0" layer="1" />
+    <effect class="result" type="splat_map" surface_tag="" size="6.0" atlas_index="4" layer="0" />
+    <effect class="result" type="splat_map" surface_tag="" size="7.0" atlas_index="0" layer="2" additive="0" />
+
+	<capacity value="10" source="rank" source_value="0" />
+	<inventory encumbrance="0" price="0.0" />
+
+	<!--手雷弹道-->
+    <throwable 
+	curve_height="6.0" 
+	near_far_distance="0" 
+	speed_estimation_near="5.0" 
+	speed_estimation_far="20.0" 
+	max_speed="20.0" 
+	randomness="0.07" 
+	tweak_factor="1.4"
+	/>
+</projectile>
+<projectile 
+class="grenade" 
+key="acg_kisaki_drone_model.projectile" 
+slot="0"
+pulldown_in_air="0.01"
+>
+    <collision class="sticky" />
+	<trigger class="time" time_to_live="33" />	
+
+	<result class="spawn" instance_class="projectile" instance_key="airdrop_drone_sky_striker_ace.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0.1" />	
+
+    <capacity value="1" source="rank" source_value="0" />
+
+    <model mesh_filename="airdrop_drone.mesh" texture_filename="airdrop_drone.png" />
+
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+    <inventory encumbrance="0" price="0.0" />
+
+	<!-- <sound class="result" key="other" fileref="airdrop_drone_sky_striker_ace.wav" pitch_variety="0.03" volume="1.0" /> -->
+    <sound class="result" key="terrain" copy="other" />
+    <sound class="result" key="static_object" copy="other" />
+    <sound class="result" key="vehicle" copy="other" />
+    <sound class="result" key="character" copy="other" />
+    <sound class="result" key="shield" copy="other" />
+
+    <effect class="activated" ref="toki_falling_fire" />
+	<effect class="result" key="terrain" ref="radar_scan_short" lighting="0" post_processing="0"/> 
+	
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="shield" copy="terrain" />			
+	<effect class="result" key="vehicle" copy="terrain" />	
+
+</projectile>
+<projectile 
+class="grenade" 
+key="acg_kisaki_drone.projectile" 
+slot="0"
+pulldown_in_air="0.05"
+>
+    <collision class="sticky" />
+	<trigger class="time" time_to_live="0" />	
+	<result class="notify_script" key="kisaki_drone" />
+
+    <capacity value="1" source="rank" source_value="0" />
+
+    <!-- <model mesh_filename="airdrop_drone.mesh" texture_filename="airdrop_drone.png" /> -->
+
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+    <inventory encumbrance="0" price="0.0" />
+
+	<!-- <sound class="result" key="other" fileref="airdrop_drone_sky_striker_ace.wav" pitch_variety="0.03" volume="1.0" /> -->
+    <sound class="result" key="terrain" copy="other" />
+    <sound class="result" key="static_object" copy="other" />
+    <sound class="result" key="vehicle" copy="other" />
+    <sound class="result" key="character" copy="other" />
+    <sound class="result" key="shield" copy="other" />
+
+    <!-- <effect class="activated" ref="toki_falling_fire" /> -->
+	<!-- <effect class="result" key="terrain" ref="radar_scan_short" lighting="0" post_processing="0"/>  -->
+	
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="shield" copy="terrain" />			
+	<effect class="result" key="vehicle" copy="terrain" />	
+
+</projectile>
+<projectile 
+class="grenade" 
+slot="1" pulldown_in_air="4.0" 
+key="acg_kisaki_drone_bullet.projectile"
+>
+		<result class="blast" radius="3.4" damage="35" push="0.2" decal="0" character_state="unwound" 
+		damage_origin_vehicle="0"  faction_compare="not_equal" />
+
+		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+
+		<model mesh_filename="rx1_bullet.xml" />
+		<effect class="activated" ref="general_weapon_activated_bullet_light" lighting="0"/>
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_01" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_02" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_03" />
+		<effect class="result" key="terrain" ref="p2_peacemaker_hit_04" />
+
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+
+		<effect class="activated" ref="rx1_smoke"/>
+		
+		<trail probability="1" key="normal_sniper_at"/>	
+</projectile>
+</projectiles>

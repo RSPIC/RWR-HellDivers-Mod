@@ -1,0 +1,118 @@
+author：rst
+2025.4.9
+未经授权禁止复用和二改
+
+particle_system kisaki_dragon_expand
+{
+	quota 100
+	material kisaki_dragon
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.2
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 40
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 0
+		time1 0.7
+		colour1 1 1 1 0
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system kisaki_dragon_fix
+{
+	quota 100
+	material kisaki_dragon
+	particle_width 9
+	particle_height 9
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.5
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.2
+		colour1 0 0 0 0
+		time2 0.21
+		colour2 1 1 1 1
+		time3 0.5
+		colour3 1 1 1 1
+		time4 1
+		colour4 0 0 0 0
+	}
+}
+
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+material kisaki_dragon : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture kisaki_dragon.png 	
+}}}}

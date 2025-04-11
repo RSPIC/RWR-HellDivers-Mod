@@ -184,6 +184,16 @@ class Event_call_helldiver_superearth_airstrike : event_call_task {
 			m_time_internal = 0.2;
 			m_airstrike_key = "acg_sabayon_gun_skill_damage";
 		}
+		if(m_mode == "kisaki_skill")
+		{
+			strike_vector = getAimUnitVector(1,c_pos,t_pos);
+			m_pos1 = c_pos;
+			m_pos2 = t_pos.add(getMultiplicationVector(strike_vector,Vector3(3,0,3)));
+			m_excute_Limit = 12;
+			strike_didis = 5;
+			m_time_internal = 0.5;
+			m_airstrike_key = "kisaki_skill";
+		}
 	}
 
 	Event_call_helldiver_superearth_airstrike(Metagame@ metagame, float time, int cId,int fId,Vector3 characterpos,Vector3 targetpos,string mode)
@@ -373,14 +383,20 @@ class Event_call_helldiver_superearth_laser_strike : event_call_task {
 		strike_vector = getAimUnitVector(1,c_pos,t_pos);
 		strike_vector = getRotatedVector(getIntSymbol()*1.57,strike_vector);
 		strike_didis = 0;
-		m_pos1 = t_pos;
-		m_pos2 = m_pos1;
-		m_pos1=m_pos1.add(Vector3(0,20,0));
+		m_pos1 = c_pos; //envent
+		m_pos2 = t_pos; //should be aimpos
 		if(m_mode == "laser_strike_mk3")
 		{
 			m_excute_Limit = 60;
 			m_time_internal = 0.20;
 			m_airstrike_key = "hd_superearth_laser_strike_mk3";
+		}
+		if(m_mode == "radar_tower_laser")
+		{
+			m_timeLeft = 2;
+			m_excute_Limit = 8;
+			m_time_internal = 1;
+			m_airstrike_key = "hd_superearth_radar_tower_laser";
 		}
 	}
 
@@ -395,28 +411,70 @@ class Event_call_helldiver_superearth_laser_strike : event_call_task {
 		if (m_excute_time >= m_excute_Limit){m_end = true;return;}
 		m_excute_time++;
 		m_timeLeft_internal = m_time_internal;
-
-		insertCommonStrike(m_character_id,m_faction_id,m_airstrike_key,m_pos1,m_pos2);
-
-		const XmlElement@ character = getCharacterInfo(m_metagame, m_character_id);
-		if (character !is null) {
-			int dead = character.getIntAttribute("dead");
-			if(dead == 1){m_end = true;return;}
-			int playerId = character.getIntAttribute("player_id");
-			const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
-			if (player !is null) {
-				if (player.hasAttribute("aim_target")) {
-					_log("execution laser offset");
-					_log("aim_target:"+ player.getStringAttribute("aim_target"));
-					Vector3 aim_pos = stringToVector3(player.getStringAttribute("aim_target"));
-					Vector3 distance = aim_pos.subtract(m_pos2);
-					//distance = getMultiplicationVector(distance,Vector3(1,0,1));
-					Vector3 offset = distance.scale(1.0/2.0);
-					m_pos2 = aim_pos;
-					m_pos1 = aim_pos.add(Vector3(0,40,0));
+		if(m_mode == "laser_strike_mk3"){
+			insertCommonStrike(m_character_id,m_faction_id,m_airstrike_key,m_pos1,m_pos2);
+			const XmlElement@ character = getCharacterInfo(m_metagame, m_character_id);
+			if (character !is null) {
+				int dead = character.getIntAttribute("dead");
+				if(dead == 1){m_end = true;return;}
+				int playerId = character.getIntAttribute("player_id");
+				const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
+				if (player !is null) {
+					if (player.hasAttribute("aim_target")) {
+						_log("execution laser offset");
+						_log("aim_target:"+ player.getStringAttribute("aim_target"));
+						Vector3 aim_pos = stringToVector3(player.getStringAttribute("aim_target"));
+						if(m_mode == "laser_strike_mk3")
+						{
+							Vector3 distance = aim_pos.subtract(m_pos2);
+							//distance = getMultiplicationVector(distance,Vector3(1,0,1));
+							Vector3 offset = distance.scale(1.0/2.0);
+							m_pos2 = aim_pos;
+							m_pos1 = aim_pos.add(Vector3(0,40,0));					
+						}
+					}
 				}
-			}
-		}else{m_end = true;return;}		
+			}else{m_end = true;return;}		
+		}
+		if(m_mode == "radar_tower_laser"){
+			const XmlElement@ character = getCharacterInfo(m_metagame, m_character_id);
+			if (character !is null) {
+				int dead = character.getIntAttribute("dead");
+				if(dead == 1){m_end = true;return;}
+
+				array<const XmlElement@> factions = getFactions(m_metagame);
+				int ATKTimes = 1;
+				bool isFind = false;
+                for (uint f = 1; f < factions.size(); ++f){ //跳过自身阵营查询
+                    if(ATKTimes <= 0){break;}
+                    const XmlElement@ faction = factions[f];
+                    if(faction is null){continue;}
+                    int t_fid = faction.getIntAttribute("id");
+                    array<const XmlElement@>@ soldiers = getCharactersNearPosition(m_metagame, m_pos1, t_fid, 60.0f);				
+                    int s_size = soldiers.length();
+                    if (s_size == 0) continue;
+                    while(ATKTimes > 0 && soldiers.length() > 0){
+                        ATKTimes--;
+                        int s_i = rand(0,soldiers.length()-1);
+                        int soldier_id = soldiers[s_i].getIntAttribute("id");
+                        soldiers.removeAt(s_i);
+                        Vector3 soldier_pos = stringToVector3(getCharacterInfo(m_metagame, soldier_id).getStringAttribute("position"));
+                        TaskSequencer@ tasker = m_metagame.getHdTaskSequncerIndex(2);
+                        CreateProjectile@ task1 = CreateProjectile(m_metagame,m_pos2,soldier_pos,"hd_offensive_laser_strike_expand_damage.projectile",m_character_id,m_faction_id,100,0,20,0.05,true);// speed delay num in_delay vertival
+                        tasker.add(task1);
+						m_pos2 = soldier_pos;
+						m_pos1 = stringToVector3(character.getStringAttribute("position"));
+						isFind = true;
+                    }
+                }
+				if(isFind == false){
+					TaskSequencer@ tasker = m_metagame.getHdTaskSequncerIndex(2);
+					CreateProjectile@ task1 = CreateProjectile(m_metagame,m_pos2,m_pos2,"hd_offensive_laser_strike_expand_damage.projectile",m_character_id,m_faction_id,100,0,5,0.2,true);// speed delay num in_delay vertival
+					tasker.add(task1);
+				}
+
+			}else{m_end = true;return;}		
+		}
 	}
 }
 class Event_call_helldiver_superearth_strafing_run : event_call_task {
@@ -670,6 +728,8 @@ class CreateProjectile : Task{
 	protected bool m_isVertical;
 	protected float m_random_range = 0;
 	protected bool m_isPathRandom = false;
+	protected bool m_use_curve_path = false;
+	protected float m_curve_height = 1.0;
 
 	CreateProjectile(Metagame@ metagame,Vector3 sPos,Vector3 ePos,string key,int cid,int fid,float speed,float time,int num = 1,float delaytime = 0,bool isVertical=true){
 		@m_metagame = @metagame;
@@ -692,6 +752,10 @@ class CreateProjectile : Task{
 	void setRandomRange(float range, bool isPathRandom = false){
 		m_random_range = range;
 		m_isPathRandom = isPathRandom;
+	}
+	void setCurvePath(float height){
+		m_use_curve_path = true;
+		m_curve_height = height;
 	}
 	void start(){
 	}
@@ -723,13 +787,19 @@ class CreateProjectile : Task{
 				randx = rand(-m_random_range,m_random_range);
 				r_end = m_endPos.add(Vector3(randx,0,randy));
 			}
-			CreateDirectProjectile(m_metagame,r_start,r_end,m_key,m_cid,m_fid,m_speed);
+			if(m_use_curve_path){
+				CreateProjectile_H(m_metagame,r_start,r_end,m_key,m_cid,m_fid,m_speed,m_curve_height);
+			}else{
+				CreateDirectProjectile(m_metagame,r_start,r_end,m_key,m_cid,m_fid,m_speed);
+			}
 			m_num_left--;
 			return;
 		}
-		if(m_isVertical){
+		if(m_isVertical && !m_use_curve_path){
 			m_startPos = m_endPos.subtract(aim_unit_vector.scale((m_distance*(m_num_left))/m_num));
 			CreateDirectProjectile(m_metagame,m_startPos.add(Vector3(0,1,0)),m_startPos,m_key,m_cid,m_fid,m_speed);
+		}else if(m_use_curve_path){
+			CreateProjectile_H(m_metagame,m_startPos,m_endPos,m_key,m_cid,m_fid,m_speed,m_curve_height);
 		}else{
 			CreateDirectProjectile(m_metagame,m_startPos,m_endPos,m_key,m_cid,m_fid,m_speed);
 		}

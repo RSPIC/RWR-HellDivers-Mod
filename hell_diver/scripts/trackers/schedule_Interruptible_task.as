@@ -112,6 +112,9 @@ class schedule_Interruptible_task : Task{
         if(target_key == "ex_cl_banzai"){
             banzai();
         }
+        if(target_key == "hd_b100_portable_hellbomb"){
+            Hellbomb();
+        }
     } 
 
     // --------------------------------------------------------------------
@@ -141,4 +144,29 @@ class schedule_Interruptible_task : Task{
         }
         
 	}
+    // --------------------------------------------------------------------
+    protected void Hellbomb(){
+        if(m_ended){return;}
+        const XmlElement@ player = @m_player;
+        int cid = player.getIntAttribute("character_id");
+        if(m_cid != cid){return;}   //玩家启动时死亡，新角色CID会变
+        int fid = player.getIntAttribute("faction_id");
+        const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+        if(character !is null){
+            int wounded = character.getIntAttribute("wounded");
+            int dead = character.getIntAttribute("dead");
+            int pid = character.getIntAttribute("player_id");
+            if(dead !=1 && wounded != 1){
+                if(isStart){    //启动时播放音乐
+                    Vector3 pos = stringToVector3(character.getStringAttribute("position"));
+                    // playSoundAtLocation(m_metagame,"hd_b100_portable_hellbomb_launch.wav",0,pos,2.0);
+                    isStart = false;
+                }else{
+                    string c_position = character.getStringAttribute("position");
+                    spawnStaticProjectile(m_metagame,"hd_offensive_shredder_missile_strike_mk3_spawn_call.projectile",c_position,cid,fid);
+                    setDeadCharacter(m_metagame,cid);
+                }
+            }
+        }
+    }
 }

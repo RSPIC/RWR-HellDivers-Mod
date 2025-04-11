@@ -200,7 +200,7 @@ class StageConfiguratorInvasion : StageConfigurator {
 		addFixedSpecialCrates(stage);
 		addRandomSpecialCrates(stage, stage.m_minRandomCrates, stage.m_maxRandomCrates);
 		addLotteryVehicle(stage);
-		addDarkcatVehicle(stage);
+		// addDarkcatVehicle(stage);
 		addArenaJammer(stage);
 		
 		if (stage.isCapture()) {

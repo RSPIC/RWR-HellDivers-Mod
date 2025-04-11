@@ -77,7 +77,7 @@ class schedule_Check : Tracker {
     void update(float time){
         m_timer -= time;
         if(m_timer >0){return;}
-        time = 10 + g_playerCount/2 ;
+        m_time = 3 + g_playerCount/3 ;
         refresh();
         m_timer = m_time;
     }
@@ -126,6 +126,8 @@ class schedule_Check : Tracker {
                 checkYuuka(m_metagame,name,pid,cid,equipList);
                 checkSabayon(m_metagame,name,pid,cid,equipList);
                 checkTelemon(m_metagame,name,pid,cid,equipList);
+                checkSkyStrikerAce(m_metagame,name,pid,cid,equipList);
+                checkImotekh(m_metagame,name,pid,cid,equipList);
 
             }
         }
@@ -384,12 +386,117 @@ class schedule_Check : Tracker {
                     }
                 }
             }else{
+                if(equipList.get("1",equipKey)){//副武器
+                    if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+                        int num;
+                        if(equipList.get(equipKey,num)){
+                            if(num != 0){
+                                g_userCountInfoBuck.addCount(name,"EXOvestWrong");
+                                int nowCost = 0;
+                                g_userCountInfoBuck.getCount(name,"EXOvestWrong",nowCost);
+                                _notify(m_metagame,pid,"过载死亡剩余警告次数"+(5-nowCost));
+                                if(nowCost >= 5){
+                                    setDeadCharacter(m_metagame,cid);
+                                    g_userCountInfoBuck.clearCount(name,"EXOvestWrong");
+                                }
+                            }
+                        }
+                    }
+                }
                 targetKey = "ex_exo_dreadnought_";
                 targetKey2 = "re_ex_exo_dreadnought_";
                 if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){return;}
                 string equipKey_vest = "";
                 equipList.get("4",equipKey_vest);//护甲
                 string key = "vest_EXO_";
+                string tempKey = equipKey_vest.substr(0,key.length());
+                if(tempKey == key){
+                    editPlayerVest(metagame,cid,"helldivers_vest_1",4);
+                    notify(metagame, "Armor offload", dictionary(), "misc", pid, false, "", 1.0);
+
+                    g_userCountInfoBuck.addCount(name,"EXOvestWrong");
+                    int nowCost = 0;
+                    g_userCountInfoBuck.getCount(name,"EXOvestWrong",nowCost);
+                    _notify(m_metagame,pid,"过载死亡剩余警告次数"+(5-nowCost));
+                    if(nowCost >= 5){
+                        setDeadCharacter(m_metagame,cid);
+                        g_userCountInfoBuck.clearCount(name,"EXOvestWrong");
+                    }
+                    return;
+                }
+            }
+        }
+	}
+    // ----------------------------------------------------
+	protected void checkImotekh(Metagame@ metagame,string&in name,int&in pid,int&in cid,dictionary&in equipList){
+        string equipKey;
+        string targetKey = "ex_imotekh";
+        string targetKey2 = "re_ex_imotekh";
+        if(equipList.get("0",equipKey)){//主武器
+            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+                int num;
+                if(equipList.get(equipKey,num)){
+                    if(num != 0){
+                        if(equipList.get("1",equipKey)){//副武器
+                            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+                                if(g_vestInfoBuck.getVestKey(name) != "vest_imotekh_100"){
+                                    editPlayerVest(metagame,cid,"vest_imotekh_100",4);//替换为100层甲
+                                    g_vestInfoBuck.changeVest(name,"vest_imotekh_100");
+                                    g_vestInfoBuck.resetUpgrade(name);
+                                    _notify(m_metagame,pid,"Vest On Load");
+                                }
+                                if(g_firstUseInfoBuck.isFirst(name,equipKey)){
+                                    string projectileKey = "ex_grenade_magic_cube.projectile";
+                                    addItemInBackpack(m_metagame,cid,"projectile",projectileKey);
+                                    addItemInBackpack(m_metagame,cid,"projectile",projectileKey);
+                                }
+                                return;
+                            }else{
+                                // notify(metagame, "Help - Sabayon", dictionary(), "misc", pid, true, "Sabayon Help", 1.0);
+                                _notify(m_metagame,pid,"主武器必须搭配副手使用！武器已送至背包");
+                                addItemInBackpack(m_metagame,cid,"weapon","ex_imotekh_sec.weapon");
+                                g_vestInfoBuck.resetUpgrade(name);
+                                g_vestInfoBuck.removeInfo(name);
+                                editPlayerVest(metagame,cid,"helldivers_vest_1",4);//替换为默认甲
+                                g_userCountInfoBuck.clearCount(name,"EXOvestWrong");
+                                return;
+                            }
+                        }
+                    }else{
+                        string equipKey_vest = "";
+                        equipList.get("4",equipKey_vest);//护甲
+                        string key = "vest_imotekh_";
+                        string tempKey = equipKey_vest.substr(0,key.length());
+                        if(tempKey == key){
+                            editPlayerVest(metagame,cid,"helldivers_vest_1",4);
+                            notify(metagame, "Armor offload", dictionary(), "misc", pid, false, "", 1.0);
+                            return;
+                        }
+                        if(equipList.get("1",equipKey)){//副武器
+                            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+                                if(equipList.get(equipKey,num)){
+                                    if(num != 0){
+                                        g_userCountInfoBuck.addCount(name,"EXOvestWrong");
+                                        int nowCost = 0;
+                                        g_userCountInfoBuck.getCount(name,"EXOvestWrong",nowCost);
+                                        _notify(m_metagame,pid,"过载死亡剩余警告次数"+(5-nowCost));
+                                        if(nowCost >= 5){
+                                            setDeadCharacter(m_metagame,cid);
+                                            g_userCountInfoBuck.clearCount(name,"EXOvestWrong");
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }else{
+                targetKey = "ex_imotekh";
+                targetKey2 = "re_ex_imotekh";
+                if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){return;}
+                string equipKey_vest = "";
+                equipList.get("4",equipKey_vest);//护甲
+                string key = "vest_imotekh_";
                 string tempKey = equipKey_vest.substr(0,key.length());
                 if(tempKey == key){
                     editPlayerVest(metagame,cid,"helldivers_vest_1",4);
@@ -436,6 +543,53 @@ class schedule_Check : Tracker {
             if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
                 if(m_firstUseInfoBuck.isFirst(name,equipKey)){
                     notify(metagame, "Help - Yuuka", dictionary(), "misc", pid, true, "Yuuka Help", 1.0);
+                }
+            }
+        }
+	}
+    // ----------------------------------------------------
+	protected void checkSkyStrikerAce(Metagame@ metagame,string&in name,int&in pid,int&in cid,dictionary&in equipList){
+        string equipKey;
+        if(equipList.get("0",equipKey)){//主武器
+            string targetKey = "acg_sky_striker_ace";
+            if(startsWith(equipKey,targetKey)){
+                int num;
+                if(equipList.get(equipKey,num)){
+                    const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                    if(character is null){return;}
+                    Vector3 ePos = stringToVector3(character.getStringAttribute("position")).add(Vector3(0,1.5,0));
+                    if(num != 0){
+                        int times;
+                        string key = equipKey;
+                        if(startsWith(equipKey,"acg_sky_striker_ace_hayate_green")){key = "acg_sky_striker_ace_hayate_green"; }
+                        if(startsWith(equipKey,"acg_sky_striker_ace_kagari_red")){key = "acg_sky_striker_ace_kagari_red"; }
+                        if(startsWith(equipKey,"acg_sky_striker_ace_kaina_yellow")){key = "acg_sky_striker_ace_kaina_yellow"; }
+                        if(startsWith(equipKey,"acg_sky_striker_ace_shizuku_blue")){key = "acg_sky_striker_ace_shizuku_blue"; }
+
+                        g_userCountInfoBuck.getCount(name,key,times);
+                        if(times == 0){
+                            g_userCountInfoBuck.clearCount(name,"acg_sky_striker_ace_kagari_red");
+                            g_userCountInfoBuck.clearCount(name,"acg_sky_striker_ace_hayate_green");
+                            g_userCountInfoBuck.clearCount(name,"acg_sky_striker_ace_kaina_yellow");
+                            g_userCountInfoBuck.clearCount(name,"acg_sky_striker_ace_shizuku_blue");
+                            g_userCountInfoBuck.clearCount(name,"acg_sky_striker_ace");
+
+                            g_userCountInfoBuck.addCount(name,key);
+
+                            playAnimationKey(m_metagame,cid,"acg_sky_striker_ace_droping",false);
+                            
+                            playSoundAtLocation(m_metagame,"acg_sky_striker_ace_droping.wav",-1,ePos,2.0);
+                            string m_key = "acg_sky_striker_ace_drop.projectile";
+							CreateDirectProjectile(m_metagame,ePos,ePos,m_key,cid,0,100);
+                        }
+                    }else{
+                        int times;
+                        g_userCountInfoBuck.getCount(name,"acg_sky_striker_ace",times);
+                        if(times == 0){
+                            g_userCountInfoBuck.addCount(name,"acg_sky_striker_ace");
+                            playSoundAtLocation(m_metagame,"acg_sky_striker_ace_change_00.wav",-1,ePos,2.0);
+                        }
+                    }
                 }
             }
         }

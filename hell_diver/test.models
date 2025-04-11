@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <models>
 	<!-- 测试 -->
-	<model filename="ex_exo_telemon.xml"><requirement class="weapon" slot="0" key="test.weapon"/>
+	<model filename="ex_emotekh.xml"><requirement class="weapon" slot="0" key="test.weapon"/>
+	</model>
+	<model filename="ex_emotekh.xml"><requirement class="weapon" slot="0" key="ex_imotekh.weapon"/>
+	</model>
+	<model filename="ex_emotekh.xml"><requirement class="weapon" slot="1" key="ex_imotekh_sec.weapon"/>
+	</model>
+	<model filename="ex_emotekh.xml"><requirement class="weapon" slot="0" key="ex_imotekh_cube.weapon"/>
 	</model>
 	<model filename="ex_exo_telemon.xml"><requirement class="weapon" slot="1" key="ex_exo_telemon_missile.weapon"/>
 	</model>

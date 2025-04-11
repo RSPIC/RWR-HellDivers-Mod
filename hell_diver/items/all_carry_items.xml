@@ -69,6 +69,7 @@
 	<!-- <carry_item file="hd_vest_mid_skill_laststun.carry_item" />通用技能甲 -->
 	<carry_item file="ex_skill_vest.carry_item" /><!--特殊技能甲-->
 	<carry_item file="ex_undead_vest.carry_item" /><!--特殊技能甲-->
+	<carry_item file="vest_imotekh.carry_item" /><!--特殊技能甲-->
 
 
 	<!-- 战利品-收藏-MC -->
@@ -83,6 +84,10 @@
 	<carry_item file="hd_special_loot.carry_item" />
 	<!-- 兑换道具按钮 -->
 	<carry_item file="hd_exchange_ui.carry_item" />
+
+	<!-- 特殊 -->
+	<carry_item file="sky_striker_ace.carry_item" />
+	<carry_item file="hd_skill_stop_vest.carry_item" />
 
 	<!-- 样本 -->
 	<carry_item file="samples_acg.carry_item" />
@@ -101,6 +106,8 @@
 	
 	<!-- 活动 -->
 	<carry_item file="act_hongbao.carry_item" /> 
+	<carry_item file="mc_beacon.carry_item" /> 
+	<carry_item file="collect_spec.carry_item" /> 
 
 </carry_items>
 

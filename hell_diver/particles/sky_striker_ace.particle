@@ -1,0 +1,449 @@
+author: RST
+2025.3.23
+未经授权不可复用、修改使用、仅用于helldiver mod
+闪刀武器特效
+
+particle_system acg_sky_striker_ace_kagari_red_fire_activated_01     //动态
+{
+	quota 50
+	material ring_cyclone_hollow_01
+	particle_width 2
+	particle_height 2
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_origin center
+	billboard_type perpendicular_common
+    common_up_vector 0 0 1
+	common_direction 0 1 0
+
+    emitter Point
+    {
+        angle 0
+        colour 1 0.3 0 1
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity_min 4
+        velocity_max 6
+		time_to_live 0.5
+		duration 0
+    }
+    affector Scaler
+	{
+		rate 5
+	}
+    affector LinearForce{
+		force_vector 0 10 0
+		force_application add
+	}
+    affector Rotator{
+		rotation_speed_range_start	180
+		rotation_speed_range_end	180
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+    affector ColourFader2{
+        red1	4
+		green1  2
+		blue1	0
+		alpha1	1
+		red2	 -4
+		green2  -3
+		blue2	-3
+		alpha2	-4
+		state_change 0.3
+    }
+}
+particle_system acg_sky_striker_ace_kagari_red_fire_activated_02 : acg_sky_striker_ace_kagari_red_fire_activated_01
+{
+	particle_height 5 
+	particle_width 5 
+	emitter Point{
+	velocity_min 8
+	velocity_max 12
+	time_to_live 0.4
+	duration 0
+	}
+}
+particle_system acg_sky_striker_ace_kagari_red_fire_activated_03   //动态
+{
+	quota 50
+	material ring_cyclone_02
+	billboard_rotation_type vertex
+	particle_width 5
+	particle_height 5
+	billboard_type perpendicular_common
+    common_up_vector 0 0 1
+	common_direction 0 1 0
+    emitter Point
+    {
+        angle 30
+        colour 1 0.6 0.3 1
+		direction 1 0 0
+		emission_rate 30
+		position 0 0 0
+		velocity_min 1
+        velocity_max 2
+		time_to_live 0.4
+		duration 0
+    }
+    affector Scaler
+	{
+		rate 15
+	}
+    affector LinearForce{
+		force_vector 0 3 0
+		force_application add
+	}
+    affector Rotator{
+		rotation_speed_range_start	180
+		rotation_speed_range_end	180
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+    affector ColourFader2{
+        red1	3
+		green1  3
+		blue1	3
+		alpha1	3
+		red2	 -3
+		green2  -3
+		blue2	-3
+		alpha2	-4
+		state_change 0.3
+    }
+}
+particle_system acg_sky_striker_ace_kagari_red_skill   //动态
+{
+	quota 50
+	material ring_cyclone_02
+	billboard_rotation_type vertex
+	particle_width 25
+	particle_height 25
+	billboard_type perpendicular_common
+    common_up_vector 0 0 1
+	common_direction 0 1 0
+    emitter Point
+    {
+        angle 30
+        colour 1 0.6 0.3 1
+		direction 1 0 0
+		emission_rate 30
+		position 0 0 0
+		velocity_min 1
+        velocity_max 2
+		time_to_live 0.4
+		duration 7.5
+    }
+    affector Scaler
+	{
+		rate -40
+	}
+    affector LinearForce{
+		force_vector 0 3 0
+		force_application add
+	}
+    affector Rotator{
+		rotation_speed_range_start	240
+		rotation_speed_range_end	240
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+    affector ColourFader2{
+        red1	0
+		green1  0
+		blue1	0
+		alpha1	0
+		red2	 -3
+		green2  -3
+		blue2	-3
+		alpha2	-4
+		state_change 0.3
+    }
+}
+
+-------------------------------------------------------------------------------------
+particle_system acg_sky_striker_ace_hayate_green_later_pre_line_center
+{
+	quota 50
+	material Particle_Trail_Fire02_anim_mega
+	particle_width 15.7
+	particle_height 200
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin bottom_center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 2.5
+		duration 0.1
+	}
+    affector Scaler
+	{
+		rate 0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.75
+		colour1 0 0 0 0
+		time2 0.76
+		colour2 1 1 1 1
+		time3 0.9
+		colour3 1 1 1 1
+		time4 1
+		colour4 0 0 0 0
+	}
+}
+particle_system acg_sky_striker_ace_hayate_green_later_pre_line_center_2 : acg_sky_striker_ace_hayate_green_later_pre_line_center
+{
+    material Particle_Trail_36_anim_mega
+    particle_width 17.5
+
+    emitter Point
+	{
+        emission_rate 30
+    }
+    affector Scaler
+	{}
+    affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.75
+		colour1 0 0 0 0
+		time2 0.76
+		colour2 0 1 0.3 1
+		time3 0.9
+		colour3 0 1 0.3 1
+		time4 1
+		colour4 0 0 0 0
+	}
+}
+particle_system acg_sky_striker_ace_hayate_green_later_pre_line_center_3 : acg_sky_striker_ace_hayate_green_later_pre_line_center
+{
+    material Particle_Trail_22_bw_mega
+    particle_width 20
+
+    emitter Point
+	{
+        emission_rate 10
+    }
+    affector Scaler
+	{}
+    affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.75
+		colour1 0 0 0 0
+		time2 0.76
+		colour2 0 1 0.3 1
+		time3 0.9
+		colour3 0 1 0.3 1
+		time4 1
+		colour4 0 0 0 0
+	}
+}
+particle_system acg_sky_striker_ace_hayate_green_center_ball
+{
+	quota 150
+	material bow_flare_pass
+	particle_width 1
+	particle_height 1
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 2.5
+		duration 1.2
+	}
+	affector Scaler
+	{
+		rate 2
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	250
+		rotation_speed_range_end	-250
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.7
+		colour1 0 1 0.3 1  
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system acg_sky_striker_ace_hayate_green_center_rorate_ring
+{
+	quota 150
+	material tuan_61_bw
+	particle_width 8
+	particle_height 8
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 5
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.4
+		duration 2
+	}
+	affector Scaler
+	{
+		rate -30
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	1600
+		rotation_speed_range_end	1600
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0 1 1
+		time1 0.7
+		colour1 0.3 1 0 1 
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system acg_sky_striker_ace_hayate_green_center_rorate_ring_2 : acg_sky_striker_ace_hayate_green_center_rorate_ring
+{
+    material Tex_C_Swirl_02
+    particle_width 12
+	particle_height 12
+    emitter Point
+	{
+	}
+	affector Scaler
+	{
+	}
+	affector Rotator
+	{
+        rotation_speed_range_start	-1600
+		rotation_speed_range_end	-1600
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+        time0 0
+		colour0 0.7 1 1 1
+		time1 0.7
+		colour1 0.3 1 0 1 
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system acg_sky_striker_ace_hayate_green_shrink_line
+{
+	quota 150
+	material Particle_Impact_Line_03
+	particle_width 4
+	particle_height 4
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center_left
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 360
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity_min -0.0001
+		velocity_max 0.0001
+		time_to_live 0.2
+		duration 2
+	}
+	affector Scaler
+	{
+		rate -6.5
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	90
+		rotation_range_end	90
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0.3 1 1
+		time1 0.9
+		colour1 0 1 0.3 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}

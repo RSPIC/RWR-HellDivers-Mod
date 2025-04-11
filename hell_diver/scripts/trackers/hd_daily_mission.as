@@ -29,65 +29,65 @@ array<MissionCounter@> collector = {
 };
 
 array<MissionCounter@> kill_with_select_weapon = {
-    (MissionCounter("hd_ar_ar19_liberator_full_upgrade.weapon","AR19解放者",80)),
-    (MissionCounter("hd_ar_ar14d_paragon_full_upgrade.weapon","AR14D典范",80)),
-    (MissionCounter("hd_ar_ar22c_patriot_full_upgrade.weapon","AR22C爱国者",80)),
-    (MissionCounter("hd_ar_ar20l_justice_full_upgrade.weapon","AR20L正义",80)),
-    (MissionCounter("hd_ar_ar77d_spade_mk3.weapon","AR77D黑桃",80)),
+    (MissionCounter("hd_ar_ar19_liberator_full_upgrade.weapon","AR19解放者",50)),
+    (MissionCounter("hd_ar_ar14d_paragon_full_upgrade.weapon","AR14D典范",50)),
+    (MissionCounter("hd_ar_ar22c_patriot_full_upgrade.weapon","AR22C爱国者",50)),
+    (MissionCounter("hd_ar_ar20l_justice_full_upgrade.weapon","AR20L正义",50)),
+    (MissionCounter("hd_ar_ar77d_spade_mk3.weapon","AR77D黑桃",50)),
 
-    (MissionCounter("hd_sg_sg225_breaker_full_upgrade.weapon","SG225破裂者",80)),
-    (MissionCounter("hd_sg_sg8_punisher_full_upgrade.weapon","SG8制裁者",80)),
-    (MissionCounter("hd_sg_double_freedom_full_upgrade_damage.projectile","DBS2双重解放",80)), //blast
+    (MissionCounter("hd_sg_sg225_breaker_full_upgrade.weapon","SG225破裂者",50)),
+    (MissionCounter("hd_sg_sg8_punisher_full_upgrade.weapon","SG8制裁者",50)),
+    (MissionCounter("hd_sg_double_freedom_full_upgrade_damage.projectile","DBS2双重解放",50)), //blast
 
-    (MissionCounter("hd_smg_smg45_defender_full_upgrade.weapon","SMG45防卫者",80)),
-    (MissionCounter("hd_smg_mp98_knight_smg_full_upgrade.weapon","MP98骑士",80)),
-    (MissionCounter("hd_smg_smg34_ninja_full_upgrade.weapon","SMG34忍者",80)),
-    (MissionCounter("hd_smg_tc171_cyclone_mk3.weapon","TC171气旋",80)),
+    (MissionCounter("hd_smg_smg45_defender_full_upgrade.weapon","SMG45防卫者",50)),
+    (MissionCounter("hd_smg_mp98_knight_smg_full_upgrade.weapon","MP98骑士",50)),
+    (MissionCounter("hd_smg_smg34_ninja_full_upgrade.weapon","SMG34忍者",50)),
+    (MissionCounter("hd_smg_tc171_cyclone_mk3.weapon","TC171气旋",50)),
 
-    (MissionCounter("hd_psc_lho63_camper_full_upgrade.weapon","LHO63野营者",60)),
+    (MissionCounter("hd_psc_lho63_camper_full_upgrade.weapon","LHO63野营者",20)),
     (MissionCounter("hd_psc_rx1_railgun_full_upgrade_damage.projectile","RX1轨道炮",20)), //blast
     (MissionCounter("hd_psc_m2016_constitution_full_upgrade.weapon","M2016构建",50)), 
     (MissionCounter("hd_psc_atx25_revelator_mk3_damage.projectile","ATX25启示者",30)), //blast
     (MissionCounter("hd_psc_hho874_fraternity_mk3.weapon","HHO874博爱",50)),
 
-    (MissionCounter("hd_hmg_mg107.weapon","MG107淬火",80)),
-    (MissionCounter("hd_lmg_mg94_mk3.weapon","MG94",80)),
-    (MissionCounter("hd_lmg_mgx42_mk3.weapon","MGX42",80)),
-    (MissionCounter("hd_lmg_mg105_stalwart_full_upgrade.weapon","MG105盟友",80)),
-    (MissionCounter("hd_hmg_mg255_melt_damage.projectile","MG255熔点",80)), //blast
+    (MissionCounter("hd_hmg_mg107.weapon","MG107淬火",50)),
+    (MissionCounter("hd_lmg_mg94_mk3.weapon","MG94",50)),
+    (MissionCounter("hd_lmg_mgx42_mk3.weapon","MGX42",50)),
+    (MissionCounter("hd_lmg_mg105_stalwart_full_upgrade.weapon","MG105盟友",50)),
+    (MissionCounter("hd_hmg_mg255_melt_damage.projectile","MG255熔点",50)), //blast
 
-    (MissionCounter("hd_laser_las13_trident_full_upgrade.weapon","LAS13三叉戟",80)),
-    (MissionCounter("hd_laser_las12_tanto_full_upgrade.weapon","LAS12短刀",80)),
-    (MissionCounter("hd_laser_las16_sickle_full_upgrade.weapon","LAS16镰刀",80)),
-    (MissionCounter("hd_laser_las5_scythe_full_upgrade.weapon","LAS5长柄镰",80)),
-    (MissionCounter("hd_laser_las98_laser_cannon_mk3.weapon","LAS98激光大炮",80)),
+    (MissionCounter("hd_laser_las13_trident_full_upgrade.weapon","LAS13三叉戟",50)),
+    (MissionCounter("hd_laser_las12_tanto_full_upgrade.weapon","LAS12短刀",50)),
+    (MissionCounter("hd_laser_las16_sickle_full_upgrade.weapon","LAS16镰刀",50)),
+    (MissionCounter("hd_laser_las5_scythe_full_upgrade.weapon","LAS5长柄镰",50)),
+    (MissionCounter("hd_laser_las98_laser_cannon_mk3.weapon","LAS98激光大炮",50)),
 
-    (MissionCounter("hd_pst_tox13_avenger_mk3_damage.projectile","TOX13复仇者",80)), //blast
-    (MissionCounter("hd_pst_tox17_sourhound_damage.projectile","TOX17酸液犬",80)), //blast
-    (MissionCounter("hd_exp_m25_rumbler_full_upgrade_damage.projectile","M25雷鸣者",80)), //blast
-    (MissionCounter("hd_exp_obliterator_grenade_launcher_full_upgrade_damage.projectile","消灭者榴弹",80)), //blast
+    (MissionCounter("hd_pst_tox13_avenger_mk3_damage.projectile","TOX13复仇者",50)), //blast
+    (MissionCounter("hd_pst_tox17_sourhound_damage.projectile","TOX17酸液犬",50)), //blast
+    (MissionCounter("hd_exp_m25_rumbler_full_upgrade_damage.projectile","M25雷鸣者",50)), //blast
+    (MissionCounter("hd_exp_obliterator_grenade_launcher_full_upgrade_damage.projectile","消灭者榴弹",50)), //blast
     (MissionCounter("hd_exp_rl112_recoilless_rifle_mk3_damage.projectile","Rl112无后坐力火箭筒",20)), //blast
-    (MissionCounter("hd_exp_eta17_mk3_damage.projectile","ETA17抛弃式火箭",80)), //blast
+    (MissionCounter("hd_exp_eta17_mk3_damage.projectile","ETA17抛弃式火箭",50)), //blast
     (MissionCounter("hd_exp_rec6_demolisher_mk3_damage.projectile","REC6爆破手",30)), //blast
-    (MissionCounter("hd_exp_cr9_suppressor_full_upgrade_damage.projectile","CR9抑制者",80)), //blast
-    (MissionCounter("hd_exp_plas1_scorcher_full_upgrade_damage.projectile","Plas1焦土",80)), //blast
-    (MissionCounter("hd_exp_plas1_scorcher_full_upgrade_damage.projectile","Plas3焦痕",80)), //blast
-    (MissionCounter("hd_exp_ac22_dum_dum_mk3_damage.projectile","AC22达姆",80)), //blast
+    (MissionCounter("hd_exp_cr9_suppressor_full_upgrade_damage.projectile","CR9抑制者",50)), //blast
+    (MissionCounter("hd_exp_plas1_scorcher_full_upgrade_damage.projectile","Plas1焦土",50)), //blast
+    (MissionCounter("hd_exp_plas1_scorcher_full_upgrade_damage.projectile","Plas3焦痕",50)), //blast
+    (MissionCounter("hd_exp_ac22_dum_dum_mk3_damage.projectile","AC22达姆",50)), //blast
     (MissionCounter("hd_exp_mls4x_commando_mk3_damage.projectile","MLS4X突击队",30)), //blast
-    (MissionCounter("hd_pst_flam40_incinerator_mk3_damage.projectile","Flam40焚化炉",80)), //blast
-    (MissionCounter("hd_pst_flam40_incinerator_mk3_damage.projectile","Flam24烈焰",80)), //blast
-    (MissionCounter("hd_lava17_roger_damage.projectile","Lava17游骑兵",80)), //blast
-    (MissionCounter("hd_arc_ac5_shotgun_full_upgrade_damage.projectile","AC5电弧霰弹枪",80)), //blast
-    (MissionCounter("hd_arc_ac3_thrower_full_upgrade_damage.projectile","AC3电弧发射器",80)), //blast
+    (MissionCounter("hd_pst_flam40_incinerator_mk3_damage.projectile","Flam40焚化炉",50)), //blast
+    (MissionCounter("hd_pst_flam40_incinerator_mk3_damage.projectile","Flam24烈焰",50)), //blast
+    (MissionCounter("hd_lava17_roger_damage.projectile","Lava17游骑兵",50)), //blast
+    (MissionCounter("hd_arc_ac5_shotgun_full_upgrade_damage.projectile","AC5电弧霰弹枪",50)), //blast
+    (MissionCounter("hd_arc_ac3_thrower_full_upgrade_damage.projectile","AC3电弧发射器",50)), //blast
 
     (MissionCounter("hd_arc_as7_semiconductor_mk3.weapon","AS7半导体",25)),
-    (MissionCounter("hd_arc_as5_resistance_mk3.weapon","AS5电阻",80)),
-    (MissionCounter("hd_arc_mgc_capacitor_mk3.weapon","MGC电容",80)),
+    (MissionCounter("hd_arc_as5_resistance_mk3.weapon","AS5电阻",50)),
+    (MissionCounter("hd_arc_mgc_capacitor_mk3.weapon","MGC电容",50)),
 
-    (MissionCounter("hd_side_hg871_woodpecker.weapon","HG871啄木鸟",80)),
-    (MissionCounter("hd_side_p2_peacemaker_full_upgrade.weapon","P2和平使者",80)),
-    (MissionCounter("hd_side_digger_drill_damage.projectile","掘进者电钻",80)), //blast
-    (MissionCounter("hd_side_p6_gunslinger.weapon","P6神枪手",80))
+    (MissionCounter("hd_side_hg871_woodpecker.weapon","HG871啄木鸟",50)),
+    (MissionCounter("hd_side_p2_peacemaker_full_upgrade.weapon","P2和平使者",50)),
+    (MissionCounter("hd_side_digger_drill_damage.projectile","掘进者电钻",50)), //blast
+    (MissionCounter("hd_side_p6_gunslinger.weapon","P6神枪手",50))
 
 };
 
@@ -102,8 +102,7 @@ array<MissionCounter@> play_selected_mode = {
 array<MissionCounter@> kill_selected_enemy = {
     (MissionCounter("EnemyElite","敌方精英",20)),
 
-    (MissionCounter("Zombie","僵尸",150)),
-    (MissionCounter("EXO","地狱潜兵机甲",2))
+    (MissionCounter("Zombie","僵尸",150))
 
 };
 
@@ -175,9 +174,9 @@ array<missionExchangeList@> missionExchangeLists ={
         array<XmlElement@>= {
         }, 
         array<XmlElement@>= {
-            getStashXmlElement("samples_bugs_ex.carry_item","carry_item",1),
-            getStashXmlElement("samples_cyborgs_ex.carry_item","carry_item",1),
-            getStashXmlElement("samples_illuminate_ex.carry_item","carry_item",1),
+            getStashXmlElement("samples_bugs_ex.carry_item","carry_item",2),
+            getStashXmlElement("samples_cyborgs_ex.carry_item","carry_item",2),
+            getStashXmlElement("samples_illuminate_ex.carry_item","carry_item",2),
             getStashXmlElement("hd_bonusfactor_xp_125","carry_item",1)
         }
     ),
@@ -408,7 +407,8 @@ class playerMissionInfo {
                             if(syncTime == -233){ //-233为特定code,由getPermission()传入，表示需要版本更新
                                 _log("版本变动，更新任务，玩家="+m_name);
                                 updateHonorFinishInfo=true;
-                            }else{ //不更新，saveAndReload
+                            }
+                            { //不更新，saveAndReload
                                 array<const XmlElement@> m_honors = child.getChilds();
                                 array<MissionCounter@> tasks = XmlToTask(m_honors);
                                 if(tasks.size() == 0){ //首次获得每月任务
@@ -416,7 +416,15 @@ class playerMissionInfo {
                                     initiateHonorMissions(child);
                                     _log("从未执行每月任务，初始化");
                                 }else{
-                                    //??????
+                                    for(uint aa = 0 ; aa < tasks.size() ; ++aa){
+                                        MissionCounter@ task = tasks[aa];
+                                        if(task is null){continue;}
+                                        if(!task.m_finished){
+                                            updateHonorFinishInfo = false; // 增加：未完成则不更新
+                                            child.setStringAttribute("lastVersion",lastVersion);
+                                            break;
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -1236,9 +1244,7 @@ class hd_daily_mission : Tracker{
             if(soldier_group_name == "zomberry" || soldier_group_name == "zomberryM" || soldier_group_name == "zomberryMM" ){
                 soldier_group_name = "Zombie";
             }
-            if(soldier_group_name == "exo44" || soldier_group_name == "exo48" || soldier_group_name == "exo51"){
-                soldier_group_name = "EXO";
-            }
+
 
             g_playerMissionInfoBuck.addMissionFinishTimes(k_name,"kill_enemy_100");
             g_playerMissionInfoBuck.addMissionFinishTimes(k_name,"kill_enemy_5w");

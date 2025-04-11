@@ -24,6 +24,7 @@ dictionary INT_task = {
         {"",false},
 
         {"ex_cl_banzai",true},
+        {"hd_b100_portable_hellbomb",true},
 
         // 占位的
         {"666",false}
@@ -325,9 +326,18 @@ class schedule_Manager : Tracker {
                 if(g_debugMode){
                     _report(m_metagame,"IRQ key="+key,"中断信号键值",false);
                 }
-                schedule_Interruptible_task@ new_task = schedule_Interruptible_task(m_metagame,player,5,key,cid);
-                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
-                tasker.add(new_task);
+
+                if(EventKeyGet == "ex_cl_banzai"){
+                    schedule_Interruptible_task@ new_task = schedule_Interruptible_task(m_metagame,player,5,key,cid);
+                    TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                    tasker.add(new_task);
+                }
+                if(EventKeyGet == "hd_b100_portable_hellbomb"){
+                    schedule_Interruptible_task@ new_task = schedule_Interruptible_task(m_metagame,player,9,key,cid);
+                    TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                    tasker.add(new_task);
+                }
+
             }
         }
     }

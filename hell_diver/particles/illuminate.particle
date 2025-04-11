@@ -473,6 +473,96 @@ particle_system illum_spawn_ring
 		colour2 0 0 0 0
 	}
 }
+particle_system illum_spawn_ring_call_expand 
+{
+	quota 80
+	material lightning_gun_flare_003
+	particle_width 3
+	particle_height 3
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_origin center
+	billboard_type perpendicular_common
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 1
+		position 0 0 0
+		velocity 0.00001
+		time_to_live 2
+		duration 1
+	}
+	affector Scaler
+	{
+		rate 10
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.9
+		colour1 1 1 1 1 
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system illum_spawn_ring_call_up
+{
+	quota 80
+	material lightning_gun_flare_003
+	particle_width 43
+	particle_height 43
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_origin center
+	billboard_type perpendicular_common
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 10
+		time_to_live 0.5
+		duration 2
+	}
+	affector Scaler
+	{
+		rate 1
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.5
+		colour1 1 1 1 1 
+		time2 1
+		colour2 0 0 0 0
+	}
+}
 
 
 --------------------------------------material-----------------------------------

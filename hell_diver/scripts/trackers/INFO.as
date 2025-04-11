@@ -1810,7 +1810,8 @@ class Initiate : Tracker {
 		@g_IRQ = _IRQ("",false);
 		@g_firstUseInfoBuck = firstUseInfoBuck();
 		@g_playerMissionInfoBuck = playerMissionInfoBuck();
-		
+
+		g_userCountInfoBuck.clearAll();
 		g_firstUseInfoBuck.addInfo("admin");
 		//First Run
 		initiateFactionInfo();
@@ -1878,7 +1879,7 @@ class Initiate : Tracker {
     }
 	// ----------------------------------------------------
 	protected void handleMatchEndEvent(const XmlElement@ event) {
-		g_userCountInfoBuck.clearAll();
+		// g_userCountInfoBuck.clearAll();
 		m_ended = true;
 	}
 	// ----------------------------------------------------

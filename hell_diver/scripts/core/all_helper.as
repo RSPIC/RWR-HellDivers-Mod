@@ -645,6 +645,7 @@ void CreateProjectile_H(Metagame@ m_metagame,Vector3 startPos,Vector3 endPos,str
 	float t1= sqrt(g2*d1);
 	float t2= sqrt(g2*d2);
 	float t=t1+t2;
+	if(t==0){t=0.05;}
 	float vX = (endPos.get_opIndex(0) - startPos.get_opIndex(0)) / t /6 ;
 	float vZ = (endPos.get_opIndex(2) - startPos.get_opIndex(2)) / t /6 ;
 	float vY = t1*-g1 / 6;

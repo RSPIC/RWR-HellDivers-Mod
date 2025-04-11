@@ -130,13 +130,14 @@ class vest_upgrade_manager : Tracker {
                     if(upgradeTime == 1){GiveRP(m_metagame,characterId,-30000);}
                     if(upgradeTime == 2){GiveRP(m_metagame,characterId,-70000);}
                 }else if(i==2){
+                    if(rp < 10000){
+                        notify(m_metagame,"Insufficient Rp", dictionary(), "misc", pid, false,"", 1.0);
+                        deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
+                        return;
+                    }
                     bool state;
                     if(g_vestInfoBuck.setAutoRecover(name,state)){
                         if(state){
-                            if(rp < 10000){
-                                notify(m_metagame,"Insufficient Rp", dictionary(), "misc", pid, false,"", 1.0);
-                                return;
-                            }
                             notify(m_metagame,"AutoRecover Set", dictionary(), "misc", pid, false,"", 1.0);
                             GiveRP(m_metagame,characterId,-10000);
                         }else{
@@ -146,13 +147,13 @@ class vest_upgrade_manager : Tracker {
                     deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
                     return;
                 }else if(i==3){
+                    if(rp < 5000){
+                        notify(m_metagame,"Insufficient Rp", dictionary(), "misc", pid, false,"", 1.0);
+                        deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
+                        return;
+                    }
                     uint priority;
                     if(g_vestInfoBuck.getStratagemsFirst(name) < 5){
-                        if(rp < 5000){
-                                notify(m_metagame,"Insufficient Rp", dictionary(), "misc", pid, false,"", 1.0);
-                                deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
-                                return;
-                            }
                         g_vestInfoBuck.setStratagemsFirst(name,priority);
                         notify(m_metagame,"StratagemsPriority Upgrade "+priority, dictionary(), "misc", pid, false,"", 1.0);
                         GiveRP(m_metagame,characterId,-10000);
@@ -162,14 +163,14 @@ class vest_upgrade_manager : Tracker {
                     deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
                     return;
                 }else if(i==4){
+                    if(rp < 10000){
+                        notify(m_metagame,"Insufficient Rp", dictionary(), "misc", pid, false,"", 1.0);
+                        deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
+                        return;
+                    }
                     bool state;
                     if(g_vestInfoBuck.setAutoHeal(name,state)){
                         if(state){
-                            if(rp < 10000){
-                                notify(m_metagame,"Insufficient Rp", dictionary(), "misc", pid, false,"", 1.0);
-                                deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
-                                return;
-                            }
                             notify(m_metagame,"AutoHeal Set", dictionary(), "misc", pid, false,"", 1.0);
                             GiveRP(m_metagame,characterId,-10000);
                         }else{
@@ -183,14 +184,14 @@ class vest_upgrade_manager : Tracker {
                         notify(m_metagame,"Vest Upgeade Clear", dictionary(), "misc", pid, false,"", 1.0);
                     }
                 }else if(i==6){
+                    if(rp < 10000){
+                        notify(m_metagame,"Insufficient Rp", dictionary(), "misc", pid, false,"", 1.0);
+                        deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
+                        return;
+                    }
                     bool state;
                     if(g_vestInfoBuck.setImpactGl(name,state)){
                         if(state){
-                            if(rp < 10000){
-                                notify(m_metagame,"Insufficient Rp", dictionary(), "misc", pid, false,"", 1.0);
-                                deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
-                                return;
-                            }
                             notify(m_metagame,"ImpactGl Set", dictionary(), "misc", pid, false,"", 1.0);
                             GiveRP(m_metagame,characterId,-10000);
                         }else{
@@ -200,14 +201,14 @@ class vest_upgrade_manager : Tracker {
                     deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
                     return;
                 }else if(i==7){
+                    if(rp < 20000){
+                            notify(m_metagame,"Insufficient Rp", dictionary(), "misc", pid, false,"", 1.0);
+                            deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
+                            return;
+                        }
                     bool state;
                     if(g_vestInfoBuck.setHealNeedle(name,state)){
                         if(state){
-                            if(rp < 20000){
-                                notify(m_metagame,"Insufficient Rp", dictionary(), "misc", pid, false,"", 1.0);
-                                deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
-                                return;
-                            }
                             notify(m_metagame,"Needle Set", dictionary(), "misc", pid, false,"", 1.0);
                             GiveRP(m_metagame,characterId,-20000);
                         }else{

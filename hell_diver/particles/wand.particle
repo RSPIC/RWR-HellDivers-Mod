@@ -860,6 +860,41 @@ particle_system wand_hit_ground_magic_circle_09 : wand_hit_ground_magic_circle_0
     affector ColourFader2{state_change 1}
 }
 --------------------------------------------------爆炸----------------------------------------------------
+particle_system laser_blast_center_laser     //中心爆炸激光
+{
+	quota 800
+	material wand_blast_laser
+	particle_width 20
+	particle_height 80
+	renderer billboard	
+	billboard_rotation_type vertex
+	billboard_origin bottom_center
+	billboard_type oriented_common
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+    emitter Point{
+        angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity 0.001
+		time_to_live 1
+		duration 0.2
+    }
+    affector Scaler{rate -20}
+    affector ColourFader2{
+		red1	0.3
+		green1  0.3
+		blue1	0.3
+		alpha1	0.3
+		red2	 0
+		green2  0
+		blue2	0
+		alpha2	0
+		state_change 0.5
+	}
+}
 particle_system wand_blast_center_laser     //中心爆炸激光
 {
 	quota 50
@@ -876,7 +911,7 @@ particle_system wand_blast_center_laser     //中心爆炸激光
         angle 0
 		colour 0 0 0 0
 		direction 0 1 0
-		emission_rate 100
+		emission_rate 50
 		position 0 0 0
 		velocity 0.001
 		time_to_live 3

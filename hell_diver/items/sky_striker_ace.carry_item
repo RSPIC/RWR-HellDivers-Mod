@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carry_items>
+<carry_item 
+name="sky_striker_ace_hayate_green" 
+key="acg_sky_striker_ace_hayate_green_change_model_drop.carry_item" 
+drop_count_factor_on_death="0.0" 
+drop_count_factor_on_player_death="0.0"
+on_ground_up="0 1 0"
+radius="0.5"
+>
+    <hud_icon filename="acg_sky_striker_ace_hayate_green_weapon.png" />
+    <inventory encumbrance="-1" price="1.0" />
+    <rotation class="motion" />
+    <model mesh_filename="acg_sky_striker_ace_hayate_green_change_model.xml"/>
+    <commonness value="0" in_stock="0" />
+</carry_item>
+<carry_item 
+name="sky_striker_ace_shizuku_blue" 
+key="acg_sky_striker_ace_shizuku_blue_change_model_drop.carry_item" 
+drop_count_factor_on_death="0.0" 
+drop_count_factor_on_player_death="0.0"
+on_ground_up="0 1 0"
+radius="0.5"
+>
+    <hud_icon filename="acg_sky_striker_ace_shizuku_blue_change_model.png" />
+    <inventory encumbrance="-1" price="1.0" />
+    <rotation class="motion" />
+    <model mesh_filename="acg_sky_striker_ace_shizuku_blue_change_model.xml"/>
+    <commonness value="0" in_stock="0" />
+</carry_item>
+<carry_item 
+name="sky_striker_ace_kagari_red" 
+key="acg_sky_striker_ace_kagari_red_change_model_drop.carry_item" 
+drop_count_factor_on_death="0.0" 
+drop_count_factor_on_player_death="0.0"
+on_ground_up="0 1 0"
+radius="0.5"
+>
+    <hud_icon filename="acg_sky_striker_ace_kagari_red_weapon.png" />
+    <inventory encumbrance="-1" price="1.0" />
+    <rotation class="motion" />
+    <model mesh_filename="acg_sky_striker_ace_kagari_red_change_model.xml"/>
+    <commonness value="0" in_stock="0" />
+</carry_item>
+<carry_item 
+name="sky_striker_ace_kaina_yellow" 
+key="acg_sky_striker_ace_kaina_yellow_change_model_drop.carry_item" 
+drop_count_factor_on_death="0.0" 
+drop_count_factor_on_player_death="0.0"
+on_ground_up="0 1 0"
+radius="0.5"
+>
+    <hud_icon filename="acg_sky_striker_ace_kaina_yellow_change_model.png" />
+    <inventory encumbrance="-1" price="1.0" />
+    <rotation class="motion" />
+    <model mesh_filename="acg_sky_striker_ace_kaina_yellow_change_model_drop.xml"/>
+    <commonness value="0" in_stock="0" />
+</carry_item>
+</carry_items>

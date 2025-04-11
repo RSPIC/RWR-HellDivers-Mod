@@ -675,7 +675,7 @@ particle_system shuiniao_spread_petals_03 : shuiniao_spread_petals_01
 
 particle_system shuiniao_ambient_light
 {
-	quota 50
+	quota 400
 	material point_soft_edge_100
 	particle_width 1.5
 	particle_height 10
@@ -791,7 +791,7 @@ particle_system shuiniao_impact_circle
 }
 particle_system shuiniao_center_ambient
 {
-	quota 10
+	quota 200
 	material point_soft_edge_100
 	particle_width 25
 	particle_height 25

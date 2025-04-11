@@ -16,7 +16,6 @@ class MyStageConfigurator : StageConfiguratorCampaign {
 		availableFactionConfigs.push_back(FactionConfig(-1, "illuminate.xml", "Illuminate", "0 0.3 1", "illuminate.xml"));
 		availableFactionConfigs.push_back(FactionConfig(-1, "bugs.xml", "Bugs", "1 0.3 0", "bugs.xml"));
 		
-		
 		return availableFactionConfigs;
 	}
 

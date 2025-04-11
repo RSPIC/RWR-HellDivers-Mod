@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectiles>
+
+<projectile 
+class="grenade" 
+key="hd_automatons_ship.projectile" 
+slot="0"
+pulldown_in_air="0.001"
+>
+    <collision class="sticky" />
+	<trigger class="time" time_to_live="0.8" />	
+
+	<result class="spawn" instance_class="projectile" instance_key="hd_automatons_ship_leave.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0.1" />	
+
+    <capacity value="1" source="rank" source_value="0" />
+
+    <model mesh_filename="hd_automatons_ship.mesh" texture_filename="hd_automatons_ship.jpg" />
+
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+    <inventory encumbrance="0" price="0.0" />
+
+    <sound class="result" key="other" fileref="hd_cyborgs_drop_ships_flyby.wav" pitch_variety="0.03" volume="6.0" />
+    <sound class="result" key="terrain" copy="other" />
+    <sound class="result" key="static_object" copy="other" />
+    <sound class="result" key="vehicle" copy="other" />
+    <sound class="result" key="character" copy="other" />
+    <sound class="result" key="shield" copy="other" />
+
+
+</projectile>
+<projectile 
+class="grenade" 
+key="hd_automatons_ship_leave.projectile" 
+slot="0"
+pulldown_in_air="-15"
+>
+    <collision class="sticky" />
+	<trigger class="time" time_to_live="3" />	
+	<result class="notify_script" key="" />
+
+    <capacity value="1" source="rank" source_value="0" />
+
+    <model mesh_filename="hd_automatons_ship_leave.mesh" texture_filename="hd_automatons_ship.jpg" />
+
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+    <inventory encumbrance="0" price="0.0" />
+
+    <!-- <effect class="activated" ref="toki_falling_fire" /> -->
+</projectile>
+</projectiles>

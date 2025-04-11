@@ -112,7 +112,6 @@ class vehicle_destroyed : Tracker{
         float rorate_range = getOrientation(forward);
         spawnVehicle(m_metagame,1,vehicle_owner_fid,position,Orientation(0,1,0,rorate_range),vehicle_name);
  	}
-
     //--------------------------------------------------------
     protected void handleVehicleSpawnEvent(const XmlElement@ event) {
         if(g_server_difficulty_level >= 12 && !g_debugMode && !g_single_player){ //12难禁止刷冰淇淋

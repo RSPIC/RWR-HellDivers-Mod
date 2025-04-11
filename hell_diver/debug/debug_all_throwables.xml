@@ -7,6 +7,8 @@
     <projectile file="hd_general_spawn.projectile" />
     <projectile file="hd_general_gl_spawn.projectile" />
     <projectile file="hd_general_spawn_no_effect.projectile" />
+    <projectile file="ex_grenade_magic_cube.projectile" />
+    <projectile file="acg_kisaki_damage.projectile" />
 
     <projectile file="ex_exo_telemon_damage.projectile" />
     <projectile file="ex_nova_damage.projectile" />
@@ -14,6 +16,7 @@
     <projectile file="hd_stratagems_call.xml" />
     <projectile file="hd_psc_damage.projectile" />
     <projectile file="hd_sg_double_freedom_base_damage.projectile" />
+    <projectile file="63type_107mm_rocket_damage.projectile" />
 
     <projectile file="test_projectile.xml" />
 	<projectile file="particle.projectile" />
@@ -22,6 +25,9 @@
 
 	<projectile file="hd_upgrade_ui.projectile" />
 	<projectile file="acg_ex_box.projectile" />
+	<projectile file="cyborgs_spawn.projectile" />
+	<projectile file="bugs_spawn.projectile" />
+	<projectile file="illum_spawn.projectile" />
 
 	<projectile file="acg_takanashi_hoshino_damage.projectile" />
 	<projectile file="acg_fade_red_damage.projectile" />
@@ -75,5 +81,13 @@
 	<projectile file="ex_vergil_damage.projectile" /><!--燃烧炸弹-->
 	<projectile file="acg_elaina_wand_damage.projectile" /><!--燃烧炸弹-->
 
+    <projectile file="acg_megumin_wand_float_damage.projectile" />
+    <projectile file="wand_damage_04.projectile" />
+    <projectile file="wand_droping_02.projectile" />
+    <projectile file="wand_guiding_01.projectile" />
+    <projectile file="wand_waiting_03.projectile" />
+    <projectile file="acg_sky_striker_ace_damage.projectile" />
+    <projectile file="ex_imotekh_damage.projectile" />
+    <projectile file="hd_automatons_ship.projectile" />
 
 </projectiles>

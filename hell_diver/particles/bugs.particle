@@ -15,7 +15,7 @@ abstract emitter spitter_duration {
 
 particle_system bugs_spawn_at_ground_smoke
 {
-	quota 130
+	quota 800
 	material disaster_smoke
 	particle_width 10
 	particle_height 10
@@ -30,14 +30,14 @@ particle_system bugs_spawn_at_ground_smoke
 	emitter Point
 	{
 		angle 90
-		colour 1 1 1 0.5
+		colour 0 0 0 0
 		direction 0 1 0
 		emission_rate 30
 		position 0 0 0
 		velocity_min 5
 		velocity_max 5
-		time_to_live 1.5
-		duration 1.5
+		time_to_live 4.5
+		duration 12.5
 	}
 	affector Scaler
 	{
@@ -53,14 +53,18 @@ particle_system bugs_spawn_at_ground_smoke
 	affector ColourInterpolator
 	{
 		time0 0
-		colour0 1 1 1 0.1
-		time1 0.7
-		colour1 0.6 0.6 0.6 0.1
-		time2 1
-		colour2 0 0 0 0
+		colour0 1 0.3 0 0.05
+		time1 0.3
+		colour1 1 0.6 0 0.15
+		time2 0.5
+		colour2 1 1 1 0.05
+		time3 0.8
+		colour3 1 1 1 0.05
+		time4 1
+		colour4 1 1 1 0
 	}
 	affector LinearForce{
-		force_vector 0 -10 0
+		force_vector 0 10 0
 		force_application add
 	}
 	affector DirectionRandomiser 
@@ -75,14 +79,14 @@ particle_system bugs_spawn_at_ground_smoke_leave : bugs_spawn_at_ground_smoke
     emitter Box
 	{
 		angle 90
-		colour 1 1 1 0.5
+		colour 1 0.8 0.5 0.1
 		direction 0 1 0
-		emission_rate 200
+		emission_rate 30
 		position 0 0 0
 		velocity_min 0.1
 		velocity_max 0.5
-		time_to_live 2.5
-		duration 0.1
+		time_to_live 3.5
+		duration 12
 		width 5
 		height 5
 		depth 2
@@ -97,7 +101,7 @@ particle_system bugs_spawn_at_ground_smoke_leave : bugs_spawn_at_ground_smoke
 	affector ColourInterpolator
 	{
 		time0 0
-		colour0 1 1 1 0.4
+		colour0 1 0.8 0.5 0.2
 		time1 0.7
 		colour1 0.6 0.6 0.6 0.1
 		time2 1
@@ -116,10 +120,10 @@ particle_system bugs_spawn_at_ground_smoke_leave : bugs_spawn_at_ground_smoke
 }
 particle_system bugs_spawn_at_ground_dust
 {
-	quota 140
+	quota 100
 	material Tex_Glow16A_pass
-	particle_width 4
-	particle_height 4
+	particle_width 7
+	particle_height 7
 	renderer billboard
 	billboard_type perpendicular_common
 	billboard_origin center
@@ -134,12 +138,12 @@ particle_system bugs_spawn_at_ground_dust
 		angle 0
 		colour 1 1 1 1
 		direction 0 1 0
-		emission_rate 10
+		emission_rate 2
 		position 0 0 0
 		velocity_min 2
 		velocity_min 3
 		time_to_live 2
-		duration 0.1
+		duration 4
 	}
 	affector Scaler
 	{
@@ -150,7 +154,7 @@ particle_system bugs_spawn_at_ground_dust
 		time0 0
 		colour0 0.5 0.5 0.5 1
 		time1 0.5
-		colour1 0.4 0.4 0.4 1
+		colour1 0.4 0.4 0.4 0.5
 		time2 1
 		colour2 0.3 0.3 0.3 0
 	}
@@ -175,7 +179,7 @@ particle_system bugs_spawn_at_ground_dust
 
 particle_system bugs_spawn_at_ground_up_dust_1
 {
-	quota 150
+	quota 800
 	material Tex_Spark17A
 	particle_width 4
 	particle_height 4
@@ -192,14 +196,14 @@ particle_system bugs_spawn_at_ground_up_dust_1
 		angle 5
 		colour 1 1 1 1
 		direction 0 1 0
-		emission_rate 7
+		emission_rate 15
 		position 0 0 0
 		velocity 1
 		time_to_live 0.5
-		duration 1.2
+		duration 10.2
         depth 1
-        width 5.5
-        height 5.5
+        width 9.5
+        height 9.5
         inner_height 1
         inner_width 1
 	}

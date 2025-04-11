@@ -7,6 +7,9 @@
 <!--武器-->
 
     <!-- MK6 Unavailable -->
+    <weapon key="re_acg_kisaki.weapon"/><!--龙华妃咲-->
+    <weapon key="re_acg_kisaki_s.weapon"/><!--龙华妃咲-->
+
     <weapon key="acg_shigure_127mm.weapon" enabled="0"/><!--时雨127mm双联主炮-->
     <weapon key="re_acg_shigure_127mm.weapon" /><!--时雨127mm双联主炮-->
     <weapon key="re_acg_shigure_610mm_torpedo.weapon" /><!--时雨127mm双联主炮-->
@@ -18,6 +21,15 @@
     <weapon key="re_acg_exo_toki_railgun.weapon" /><!--飞鸟马时 动力装甲-->
     <weapon key="re_acg_exo_toki_skill.weapon" /><!--飞鸟马时 动力装甲-->
     <!-- MK5 Unsold-->
+    <weapon key="acg_sky_striker_ace_orig_call_green.weapon" /> <!--闪刀姬-->
+    <weapon key="acg_sky_striker_ace_orig_call_red.weapon" /> <!--闪刀姬-->
+    <weapon key="acg_sky_striker_ace_orig_call_yellow.weapon" /> <!--闪刀姬-->
+    <weapon key="acg_sky_striker_ace_orig_call_blue.weapon" /> <!--闪刀姬-->
+
+    <weapon key="re_ex_imotekh.weapon" /> <!--风暴领主 伊莫特克-->
+    <weapon key="re_ex_imotekh_cube.weapon" /> <!--风暴领主 伊莫特克-->
+    <weapon key="re_ex_imotekh_sec.weapon" /> <!--风暴领主 伊莫特克-->
+
     <weapon key="ex_exo_telemon_cannon.weapon" enabled="0"/> <!--特拉蒙-->
     <weapon key="re_ex_exo_telemon_cannon.weapon" /> <!--特拉蒙-->
     <weapon key="re_ex_exo_telemon_bluefire.weapon" /> <!--特拉蒙-->

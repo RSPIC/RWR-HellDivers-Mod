@@ -1,16 +1,31 @@
-20:14:46: Creating resource group General
-20:14:46: Creating resource group Internal
-20:14:46: Creating resource group Autodetect
-20:14:46: Registering ResourceManager for type Mesh
-20:14:46: Registering ResourceManager for type Material
-20:14:46: Registering ResourceManager for type Skeleton
-20:14:46: XMLMeshSerializer writing mesh data to W:\Game\steamapps\common\RunningWithRifles\media\packages\hell_diver\models\mk23a_body.mesh.xml...
-20:14:46: Populating DOM...
-20:14:47: Writing submesh...
-20:14:47: Dedicated geometry bone assignments exported.
-20:14:47: Submesh exported.
-20:14:47: DOM populated, writing XML file..
-20:14:47: XMLMeshSerializer export successful.
-20:14:47: Unregistering ResourceManager for type Skeleton
-20:14:47: Unregistering ResourceManager for type Material
-20:14:47: Unregistering ResourceManager for type Mesh
+19:32:08: Creating resource group General
+19:32:08: Creating resource group Internal
+19:32:08: Creating resource group Autodetect
+19:32:08: Registering ResourceManager for type Mesh
+19:32:08: Registering ResourceManager for type Material
+19:32:08: Registering ResourceManager for type Skeleton
+19:32:08: XMLMeshSerializer reading mesh data from D:\Game\steamapps\common\RunningWithRifles\media\packages\hell_diver\models\hd_automatons_ship_leave.mesh.xml...
+19:32:08: Reading geometry...
+19:32:08: Geometry done...
+19:32:08: Reading submeshes...
+19:32:08: Submeshes done.
+19:32:08: Reading mesh names...
+19:32:08: Mesh names done.
+19:32:08: XMLMeshSerializer import successful.
+19:32:08: Reorganising vertex buffers to automatic layout..
+19:32:08: MeshSerializer writing mesh data to D:\Game\steamapps\common\RunningWithRifles\media\packages\hell_diver\models\hd_automatons_ship_leave.mesh...
+19:32:08: File header written.
+19:32:08: Writing mesh data...
+19:32:08: Writing submesh...
+19:32:08: Exporting submesh texture aliases...
+19:32:08: Submesh texture aliases exported.
+19:32:08: Submesh exported.
+19:32:08: Exporting bounds information....
+19:32:08: Bounds information exported.
+19:32:08: Exporting submesh name table...
+19:32:08: Submesh name table exported.
+19:32:08: Mesh data exported.
+19:32:08: MeshSerializer export successful.
+19:32:08: Unregistering ResourceManager for type Skeleton
+19:32:08: Unregistering ResourceManager for type Material
+19:32:08: Unregistering ResourceManager for type Mesh

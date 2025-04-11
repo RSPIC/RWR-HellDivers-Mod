@@ -26,7 +26,9 @@ author: RST
 		
 		<effect class="muzzle" ref="401_vabow_muzzle_ring"/>
 		<effect class="muzzle" ref="401_vabow_muzzle_smoke"/>
-		
+
+import Tex_FireSmoke_real_01 from "real_blast_effect.particle"
+
 particle_system 401_vabow_muzzle_smoke
 {
 	quota 50
@@ -686,6 +688,413 @@ particle_system 401_vabow_activated_spot
 	}
 }
 
+particle_system 401_imotekh_activated_gauss_smoke
+{
+	quota 50
+	material Tex_Smoke17C_real_add
+	particle_width 2
+	particle_height 2
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 180
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity 1
+		time_to_live_min 0.45
+		time_to_live_max 0.45
+		duration 0
+	}
+	affector Scaler
+	{
+		rate 4
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	60
+		rotation_speed_range_end	-60
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 1 0.3 1
+		time1 0.5
+		colour1 0 1 0.3 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system 401_imotekh_muzzle_ring
+{
+	quota 50
+	material semi_ring
+	particle_width 2
+	particle_height 2
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 5
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity -5
+		time_to_live 0.6
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 15
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	1800
+		rotation_speed_range_end	1800
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 1 0.3 1
+		time1 0.5
+		colour1 0 1 0.3 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system 401_imotekh_muzzle_smoke
+{
+	quota 50
+	material point_hard_edge
+	particle_width 0.2
+	particle_height 0.2
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin bottom_center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 45
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 80
+		position 0 0 0
+		velocity_min -5
+		velocity_max -10
+		time_to_live_min 0.7
+		time_to_live_max 1
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 0
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 1 0.3 1
+		time1 0.5
+		colour1 0 1 0.3 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system 401_imotekh_muzzle_impact_circle
+{
+	quota 150
+	material lens_circle_07_cull_pass
+	particle_width 0.1
+	particle_height 0.1
+	renderer billboard
+	billboard_type perpendicular_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.2
+		duration 0.01
+	}
+	affector Scaler
+	{
+		rate 50
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 1 0.3 1
+		time1 0.5
+		colour1 0 1 0.3 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system 401_imotekh_activated_gauss_random_spot 
+{
+	quota 4000
+	emit_emitter_quota 4000
+	material point_hard_edge_pass
+	particle_width 0.05
+	particle_height 0.4
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 360
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 100
+		position 0 0 0
+		velocity 10
+		time_to_live 0.3
+		duration 0
+		emit_emitter tag1
+	}
+	emitter Point
+	{
+		angle 360
+		colour 0 1 0.3 1
+		direction 0 1 0
+		emission_rate 80
+		position 0 0 0
+		velocity_min 5
+		velocity_max 6
+		time_to_live_min 0.2
+		time_to_live_max 0.3
+		duration 1
+		name tag1
+	}
+	
+	affector Scaler
+	{
+		rate -0.01
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+}
+particle_system 401_imotekh_hit_gauss_random_spot 
+{
+	quota 6000
+	emit_emitter_quota 8000
+	material point_hard_edge_pass
+	particle_width 0.05
+	particle_height 0.4
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 360
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 500
+		position 0 0 0
+		velocity 10
+		time_to_live 0.5
+		duration 0.1
+		emit_emitter tag1
+	}
+	emitter Point
+	{
+		angle 360
+		colour 0 1 0.3 1
+		direction 0 1 0
+		emission_rate 40
+		position 0 0 0
+		velocity_min 10
+		velocity_max 12
+		time_to_live_min 0.3
+		time_to_live_max 0.4
+		duration 1
+		name tag1
+	}
+	
+	affector Scaler
+	{
+		rate -0.01
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourFader2
+	{
+		red1 	0
+		green1 	0
+		blue1 	0
+		alpha1 	0
+		red2 	-3
+		green2	-3
+		blue2	-3
+		alpha2	-3
+		state_change 0.33
+	}
+}
+particle_system 401_imotekh_hit_gauss_smoke
+{
+	quota 2000
+	material Tex_Smoke17C_real_add
+	particle_width 6
+	particle_height 6
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 180
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity_min 5
+		velocity_max 7
+		time_to_live_min 0.25
+		time_to_live_max 0.45
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 20
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	60
+		rotation_speed_range_end	-60
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 1 0.3 1
+		time1 0.5
+		colour1 0 1 0.3 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system 401_imotekh_tesseract_activated_shrink_light
+{
+	quota 150
+	material explosion_smoke_04_bw
+	particle_width 10
+	particle_height 10
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live_min 0.1
+		time_to_live_max 0.1
+		duration 0
+	}
+	affector Scaler
+	{
+		rate -100
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0.5 1 1
+		time1 0.3
+		colour1 0 1 0.3 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
 --------------------------------------material-----------------------------------
 material alpha_blend_base{
 	receive_shadows off

@@ -19,7 +19,7 @@
 	<sound key="hit" filename="car_hit2.wav" />
 	<sound key="hit" filename="car_hit3.wav" />  -->
 
-  <effect event_key="destroyed" ref="SmallSmokeVehicle" offset="0.0 1.8 0.0" />
+  <effect event_key="destroyed" ref="stratagems_liner_light_yellow_30s" offset="0.0 1.8 0.0" />
 
 	<event key="destroy_xp_reward">
 		<trigger class="destroy" />

@@ -241,6 +241,17 @@ key="upgrade_ui_weapon.target:hd_sg_double_freedom_mk2.cost:03.weapon"
 	/> 
     <hud_icon filename="hd_double_freedom_mk2.png" /> 
 </weapon>
+<weapon 
+file="_ui.weapon_base"
+key="hd_side_b100_portable_hellbomb_weapon_exchange" 
+> 
+    <specification 	
+    slot="1" 	
+    name="[200超级货币] B100 核弹背包" 
+	/> 
+    <hud_icon filename="hd_side_b100_portable_hellbomb.png" /> 
+</weapon>
+
 </weapons>
 
 

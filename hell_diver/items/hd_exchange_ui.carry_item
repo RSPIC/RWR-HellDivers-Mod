@@ -485,6 +485,56 @@ key="127mm_twin_gun_exchange"
     <model filename="" />
     <commonness value="0" in_stock="1" />
 </carry_item>
+<carry_item 
+time_to_live_out_in_the_open="0" 
+name="[16套Fumo各一个]x1 兑换 [MK6-龙华妃咲]x1" 
+key="re_acg_kisaki_exchange"
+>
+    <hud_icon filename="acg_kisaki_doll.png" />
+    <inventory encumbrance="0" price="0.0" />
+    <model filename="" />
+    <commonness value="0" in_stock="1" />
+</carry_item>
+<carry_item 
+time_to_live_out_in_the_open="0" 
+name="[时空秘宝]x6 兑换 [Re MK5-风暴领主]x1" 
+key="re_ex_imotekh_exchange"
+>
+    <hud_icon filename="hud_treasure_of_space_time.png" />
+    <inventory encumbrance="0" price="0.0" />
+    <model filename="" />
+    <commonness value="0" in_stock="1" />
+</carry_item>
+<carry_item 
+time_to_live_out_in_the_open="0" 
+name="[时空秘宝]x1 兑换 150w rp" 
+key="spec_ring_to_money_exchange"
+>
+    <hud_icon filename="re_ex_imotekh_to_money_exchange.png" />
+    <inventory encumbrance="0" price="0.0" />
+    <model filename="" />
+    <commonness value="0" in_stock="1" />
+</carry_item>
+<carry_item 
+time_to_live_out_in_the_open="0" 
+name="[研究点]x10 兑换 [时空秘宝]x1" 
+key="sample_to_spec_ring_exchange"
+>
+    <hud_icon filename="sample_to_spec_ring_exchange.png" />
+    <inventory encumbrance="0" price="0.0" />
+    <model filename="" />
+    <commonness value="0" in_stock="1" />
+</carry_item>
+<carry_item 
+time_to_live_out_in_the_open="0" 
+name="[闪刀姬 卡片]x100 兑换 [Re MK5-闪刀姬]x1" 
+key="ace_card_to_sky_striker_ace_exchange"
+>
+    <hud_icon filename="ace_card_to_sky_striker_ace_exchange.png" />
+    <inventory encumbrance="0" price="0.0" />
+    <model filename="" />
+    <commonness value="0" in_stock="1" />
+</carry_item>
 <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  代币区 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 <carry_item 
 time_to_live_out_in_the_open="0" 
@@ -715,7 +765,7 @@ key="hd_supercash_rp_result_up_exchange"
 </carry_item>
 <carry_item 
 time_to_live_out_in_the_open="0" 
-name="[超级货币]x396 兑换 [V箱子]x1" 
+name="[超级货币]x220 兑换 [V箱子]x1" 
 key="hud_reward_box_weapon_v_2_exchange"
 >
     <hud_icon filename="hud_reward_box_weapon_v_exchange.png" />
@@ -725,7 +775,7 @@ key="hud_reward_box_weapon_v_2_exchange"
 </carry_item>
 <carry_item 
 time_to_live_out_in_the_open="0" 
-name="[超级货币]x132 兑换 [Delta箱子]x1" 
+name="[超级货币]x75 兑换 [Delta箱子]x1" 
 key="hud_reward_box_weapon_delta_2_exchange"
 >
     <hud_icon filename="hud_reward_box_weapon_delta_exchange.png" />
@@ -735,10 +785,40 @@ key="hud_reward_box_weapon_delta_2_exchange"
 </carry_item>
 <carry_item 
 time_to_live_out_in_the_open="0" 
-name="[超级货币]x44 兑换 [Lamda箱子]x1" 
+name="[超级货币]x23 兑换 [Lamda箱子]x1" 
 key="hud_reward_box_weapon_lamda_2_exchange"
 >
     <hud_icon filename="hud_reward_box_weapon_lamda_exchange.png" />
+    <inventory encumbrance="0" price="0.0" />
+    <model filename="" />
+    <commonness value="0" in_stock="1" />
+</carry_item>
+<carry_item 
+time_to_live_out_in_the_open="0" 
+name="[超级货币]x20 兑换 [研究点]x1" 
+key="hud_supercash_to_sample_exchange"
+>
+    <hud_icon filename="hud_supercash_to_sample_exchange.png" />
+    <inventory encumbrance="0" price="0.0" />
+    <model filename="" />
+    <commonness value="0" in_stock="1" />
+</carry_item>
+<carry_item 
+time_to_live_out_in_the_open="0" 
+name="[超级货币]x198 兑换 [研究点]x10" 
+key="hud_supercash_to_sample_10_exchange"
+>
+    <hud_icon filename="hud_supercash_to_sample_exchange.png" />
+    <inventory encumbrance="0" price="0.0" />
+    <model filename="" />
+    <commonness value="0" in_stock="1" />
+</carry_item>
+<carry_item 
+time_to_live_out_in_the_open="0" 
+name="[超级货币]x1000 兑换 [Re MK5-闪刀姬]x1" 
+key="hud_supercash_to_sky_striker_ace_exchange"
+>
+    <hud_icon filename="hud_supercash_to_sky_striker_ace_exchange.png" />
     <inventory encumbrance="0" price="0.0" />
     <model filename="" />
     <commonness value="0" in_stock="1" />
