@@ -49,7 +49,7 @@ void main(dictionary@ inputData) {
                 server_port='2333'
                 url='https://steamcommunity.com/sharedfiles/filedetails/?id=2910392031'
                 register_in_serverlist='1'
-                mode='HD'
+                mode='HD Zombie'
                 persistency='forever'
                 comment='地狱潜兵模组  QQ：498520233 '
                 max_players='10'>
@@ -61,9 +61,11 @@ void main(dictionary@ inputData) {
 
         GameModeInvasion metagame(settings);
 
-        metagame.init();
-        metagame.run();
-        metagame.uninit();
+	metagame.init();
+	while(metagame.run()){
+		metagame.init();
+	}
+	metagame.uninit();
 
         _log("ending execution");
 }

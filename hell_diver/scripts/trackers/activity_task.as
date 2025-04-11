@@ -140,9 +140,9 @@ class ACT_QiangHongBao : Tracker {
             _log("player "+name+" get HongBao, add 1 time to origin Count:"+count);
             //spawnHongBaoVehicleAtBase(1);
         }else{
-            GiveRP(m_metagame,killer_cid,-88888);
+            GiveRP(m_metagame,killer_cid,-18888);
             _notify(m_metagame,pid,"你已经获得过特殊红包奖励，不再获得任何奖励。");
-            _notify(m_metagame,pid,"你破坏了其他玩家获取红包的机会，扣除88888rp");
+            _notify(m_metagame,pid,"你破坏了其他玩家获取红包的机会，扣除18888rp");
             //spawnHongBaoVehicleAtBase(1);
         }
     }

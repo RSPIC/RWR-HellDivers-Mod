@@ -99,8 +99,8 @@ particle_system hoshino_muzzle_shock_ring_2
 }
 particle_system hoshino_muzzle_shock_smoke_1
 {
-	quota 400
-    emit_emitter_quota 400
+	quota 200
+    emit_emitter_quota 200
 	material Particle_Dissolve_Cloud_01_pass
 	particle_width 4
 	particle_height 4
@@ -285,7 +285,7 @@ particle_system hoshino_muzzle_shock_firelight2
 }
 particle_system hoshino_muzzle_spark
 {
-	quota 500
+	quota 200
 	material point_hard_edge
 	particle_width 0.1
 	particle_height 0.5
@@ -322,7 +322,7 @@ particle_system hoshino_muzzle_spark
 }
 particle_system hoshino_muzzle_spark2
 {
-	quota 500
+	quota 200
 	material point_hard_edge
 	particle_width 0.1
 	particle_height 0.5

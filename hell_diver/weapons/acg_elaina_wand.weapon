@@ -592,27 +592,22 @@ key="re_acg_elaina_wand_cyclone.weapon"
 	 
 </weapon>
 <weapon 
-file="_rare_weapon_mk5.base" 
-drop_count_factor_on_death="0" 
-drop_count_factor_on_player_death="0.0"
-time_to_live_out_in_the_open="0"
-player_death_drop_owner_lock_time="0"
-on_ground_up="0 0 1" 
+file="_rare_weapon_mk5_re.base" 
 key="acg_elaina_wand_skill.weapon"
 >
     <tag name="sniper" />
     <specification 
     accuracy_factor="1" 
-	retrigger_time="0.5" 
+	retrigger_time="10" 
 	spread_range="0"
-    magazine_size="1" 
+    magazine_size="-1" 
     can_shoot_standing="1" 
     can_shoot_crouching="1" 
     carry_in_two_hands="1" 
 	sustained_fire_grow_step="1" 
     sustained_fire_diminish_rate="1" 
     name="Elaina Wank [Skill]" 
-    class="3" 
+    class="0" 
     consume="1"
     sight_range_modifier="3.0" 
     slot="1" 
@@ -655,8 +650,6 @@ key="acg_elaina_wand_skill.weapon"
     <hud_icon filename="acg_elaina_wand.png" />
     
 	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
-	<capacity value="0" source="rank" source_value="0.0" />
-	<capacity value="5" source="rank" source_value="0.0" />
 
     <weak_hand_hold offset="0.3" />
     <!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
@@ -664,8 +657,6 @@ key="acg_elaina_wand_skill.weapon"
 	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0" name="Alice LaserCannon" radius="0.6"> 
 	
         <result class="notify_script" key="acg_elaina_wand_skill" />
-
-
 
 		<trigger class="time" time_to_live="0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->

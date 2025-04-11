@@ -466,8 +466,8 @@ particle_system hk416_sc_gl_hit_smoke_02		//环境烟雾
 }
 particle_system hk416_sc_gl_hit_smoke_03		//爆点烟雾
 {
-	quota 500
-	emit_emitter_quota 500
+	quota 220
+	emit_emitter_quota 220
 	material wand_smoke
 	particle_width 4
 	particle_height 4
@@ -542,8 +542,8 @@ particle_system hk416_sc_gl_hit_smoke_03		//爆点烟雾
 }
 particle_system hk416_sc_gl_hit_smoke_04		//飞溅粒子
 {
-	quota 1000
-	emit_emitter_quota 1000
+	quota 200
+	emit_emitter_quota 200
 	material wand_smoke
 	particle_width 0.35
 	particle_height 0.35

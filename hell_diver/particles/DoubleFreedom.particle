@@ -4,7 +4,7 @@ author: RST
 
 particle_system DoubleFreedom_activated_01
 {
-	quota 1000
+	quota 150
 	material point_soft_edge_100
 	particle_width 3
 	particle_height 3
@@ -49,7 +49,7 @@ particle_system DoubleFreedom_activated_02 : DoubleFreedom_activated_01
 
 particle_system DoubleFreedom_muzzle
 {
-	quota 500
+	quota 100
 	material point_hard_edge
 	particle_width 0.05
 	particle_height 0.25
@@ -90,7 +90,7 @@ particle_system DoubleFreedom_muzzle
 
 particle_system DoubleFreedom_hit_ground_smoke
 {
-	quota 500
+	quota 120
 	material wand_smoke
 	particle_width 1
 	particle_height 1

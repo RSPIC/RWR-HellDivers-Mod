@@ -235,7 +235,7 @@ particle_system ba_mutsuki_firesmoke_1  //向上
 }
 particle_system ba_mutsuki_firesmoke_2 
 {
-	quota 350
+	quota 200
 	material exposion_fire_type01_bw
 	particle_width 7
 	particle_height 9
@@ -278,7 +278,7 @@ particle_system ba_mutsuki_firesmoke_2
 }
 particle_system ba_mutsuki_smoke_1
 {
-	quota 350
+	quota 200
 	material exposion_fire_type01_alpha
 	particle_width 5
 	particle_height 7
@@ -350,7 +350,7 @@ particle_system ba_mutsuki_smoke_2 : ba_mutsuki_smoke_1
 }
 particle_system ba_mutsuki_ground_crater
 {
-	quota 350
+	quota 50
 	material Tex_Decal07F_Diffuse_3
 	particle_width 10
 	particle_height 10

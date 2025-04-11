@@ -15,7 +15,7 @@ player_death_drop_owner_lock_time="0"
 	
         <result class="spawn" instance_class="projectile" instance_key="hd_psc_cb9_exploding_crossbow_damage.projectile" 
 		min_amount="30" max_amount="30" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
-		<!-- 2.01x150 = 3x150 = 450 -->
+		<!-- 8.01x30 = 270 -->
 		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 	

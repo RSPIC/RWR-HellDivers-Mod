@@ -16,7 +16,7 @@ void main(dictionary@ inputData) {
         settings.m_playerAiCompensationFactor = 1.0;   // was 1.1  (1.75)
         settings.m_playerAiReduction = 5.0;   // was 1.1  (1.75)
 
-        settings.m_fellowCapacityFactor = 1.2;
+        settings.m_fellowCapacityFactor = 1.0;
         settings.m_fellowAiAccuracyFactor = 0.97;
         settings.m_enemyCapacityFactor = 2.5;
         settings.m_enemyAiAccuracyFactor = 1.0;
@@ -41,10 +41,10 @@ void main(dictionary@ inputData) {
         settings.m_startServerCommand = """
 <command class='start_server'
 	server_name='[地狱潜兵] 难度 12-困难 '
-	server_port='1241'
+	server_port='1243'
 	url='https://steamcommunity.com/sharedfiles/filedetails/?id=2910392031'
 	register_in_serverlist='1'
-	mode='HD'
+	mode='HD L12'
         persistency='forever'
 	comment='地狱潜兵模组  QQ：498520233 1.2倍xp'
 	max_players='16'>
@@ -55,9 +55,11 @@ void main(dictionary@ inputData) {
 
         GameModeInvasion metagame(settings);
 
-        metagame.init();
-        metagame.run();
-        metagame.uninit();
+	metagame.init();
+	while(metagame.run()){
+		metagame.init();
+	}
+	metagame.uninit();
 
         _log("ending execution");
 }

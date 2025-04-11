@@ -16,9 +16,9 @@ void main(dictionary@ inputData) {
         settings.m_playerAiCompensationFactor = 1.0;   // was 1.1  (1.75)
         settings.m_playerAiReduction = 5.0;   // was 1.1  (1.75)
 
-        settings.m_fellowCapacityFactor = 1.2;
+        settings.m_fellowCapacityFactor = 1.0;
         settings.m_fellowAiAccuracyFactor = 0.96;
-        settings.m_enemyCapacityFactor = 4.0;
+        settings.m_enemyCapacityFactor = 3.0;
         settings.m_enemyAiAccuracyFactor = 0.97;
 
         settings.m_playerAiReduction = 0.0;            // didn't work before 1.76! (was 1.0)
@@ -40,14 +40,14 @@ void main(dictionary@ inputData) {
 
         settings.m_startServerCommand = """
 <command class='start_server'
-	server_name='[地狱潜兵] 难度 15-地狱'
+	server_name='[地狱潜兵] 难度 15-地狱2服'
 	server_port='30202'
 	url='https://steamcommunity.com/sharedfiles/filedetails/?id=2910392031'
 	register_in_serverlist='1'
-	mode='HD'
+	mode='HD L15'
         persistency='forever'
 	comment='地狱潜兵模组  QQ：498520233 1倍XP'
-	max_players='15'>
+	max_players='20'>
 	<client_faction id='0' />
 </command>
 """;
@@ -55,9 +55,11 @@ void main(dictionary@ inputData) {
 
         GameModeInvasion metagame(settings);
 
-        metagame.init();
-        metagame.run();
-        metagame.uninit();
+	metagame.init();
+	while(metagame.run()){
+		metagame.init();
+	}
+	metagame.uninit();
 
         _log("ending execution");
 }

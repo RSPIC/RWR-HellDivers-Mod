@@ -235,7 +235,7 @@ key="hud_reward_box_weapon_miu_exchange"
 </carry_item>
 <carry_item 
 time_to_live_out_in_the_open="0" 
-name="[研究点]x3 兑换 [Omega箱子]x1" 
+name="[]x1 兑换 [Omega箱子]x1" 
 key="hud_reward_box_weapon_omega_exchange"
 >
     <hud_icon filename="hud_reward_box_weapon_omega_exchange.png" />
@@ -682,6 +682,67 @@ key="hd_bonusfactor_xp_125_exchange"
     <commonness value="0" in_stock="1" />
 </carry_item>
 
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  超级货币区  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<carry_item 
+time_to_live_out_in_the_open="0" 
+name="[超级货币]x1000 兑换 [永久全局RP倍率+12%]" 
+key="hd_supercash_rp_up_exchange"
+>
+    <hud_icon filename="hd_supercash_rp_up_exchange.png" />
+    <inventory encumbrance="0" price="0.0" />
+    <model filename="" />
+    <commonness value="0" in_stock="1" />
+</carry_item>
+<carry_item 
+time_to_live_out_in_the_open="0" 
+name="[超级货币]x1000 兑换 [永久科研XP收益+25%]" 
+key="hd_supercash_xp_up_exchange"
+>
+    <hud_icon filename="hd_supercash_xp_up_exchange.png" />
+    <inventory encumbrance="0" price="0.0" />
+    <model filename="" />
+    <commonness value="0" in_stock="1" />
+</carry_item>
+<carry_item 
+time_to_live_out_in_the_open="0" 
+name="[超级货币]x1000 兑换 [永久额外结算RP收益+5%]" 
+key="hd_supercash_rp_result_up_exchange"
+>
+    <hud_icon filename="hd_supercash_rp_result_up_exchange.png" />
+    <inventory encumbrance="0" price="0.0" />
+    <model filename="" />
+    <commonness value="0" in_stock="1" />
+</carry_item>
+<carry_item 
+time_to_live_out_in_the_open="0" 
+name="[超级货币]x396 兑换 [V箱子]x1" 
+key="hud_reward_box_weapon_v_2_exchange"
+>
+    <hud_icon filename="hud_reward_box_weapon_v_exchange.png" />
+    <inventory encumbrance="0" price="0.0" />
+    <model filename="" />
+    <commonness value="0" in_stock="1" />
+</carry_item>
+<carry_item 
+time_to_live_out_in_the_open="0" 
+name="[超级货币]x132 兑换 [Delta箱子]x1" 
+key="hud_reward_box_weapon_delta_2_exchange"
+>
+    <hud_icon filename="hud_reward_box_weapon_delta_exchange.png" />
+    <inventory encumbrance="0" price="0.0" />
+    <model filename="" />
+    <commonness value="0" in_stock="1" />
+</carry_item>
+<carry_item 
+time_to_live_out_in_the_open="0" 
+name="[超级货币]x44 兑换 [Lamda箱子]x1" 
+key="hud_reward_box_weapon_lamda_2_exchange"
+>
+    <hud_icon filename="hud_reward_box_weapon_lamda_exchange.png" />
+    <inventory encumbrance="0" price="0.0" />
+    <model filename="" />
+    <commonness value="0" in_stock="1" />
+</carry_item>
 <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 
 </carry_items>

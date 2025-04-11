@@ -42,10 +42,10 @@ void main(dictionary@ inputData) {
         settings.m_startServerCommand = """
 <command class='start_server'
 	server_name='[地狱潜兵] 难度 6-入门 '
-	server_port='1243'
+	server_port='1241'
 	url='https://steamcommunity.com/sharedfiles/filedetails/?id=2910392031'
 	register_in_serverlist='1'
-	mode='HD'
+	mode='HD L6'
         persistency='forever'
 	comment='地狱潜兵模组  QQ：498520233 1.2倍xp'
 	max_players='12'>
@@ -56,9 +56,13 @@ void main(dictionary@ inputData) {
 
         GameModeInvasion metagame(settings);
 
-        metagame.init();
-        metagame.run();
-        metagame.uninit();
+	metagame.init();
+	while(metagame.run()){
+		metagame.init();
+                _log("re running!!");
+	}
+	metagame.uninit();
+
 
         _log("ending execution");
 }

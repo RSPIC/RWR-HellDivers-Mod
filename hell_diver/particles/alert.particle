@@ -249,7 +249,7 @@ particle_system alert_center_alerticon
 }
 particle_system alert_center_redlight
 {
-	quota 1500
+	quota 250
 	material point_soft_edge_100
 	particle_width 4
 	particle_height 4

@@ -1,0 +1,626 @@
+
+author: RST
+2024.10.18
+未经授权不可复用、修改使用
+无色辉火特效
+particle_system sabayon_artillery_hit
+{
+	quota 100
+	material explosion_smoke_04_bw
+	particle_width 12.5
+	particle_height 12.5
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.2
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate -7.5
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.2 0.2 1
+		time1 0.5
+		colour1 1 0.1 0.1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system sabayon_activated_light
+{
+	quota 200
+	material explosion_smoke_04_bw
+	particle_width 5.5
+	particle_height 5.5
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.3
+		duration 0
+	}
+	affector Scaler
+	{
+		rate -10
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.2 0.2 1
+		time1 0.5
+		colour1 1 0.1 0.1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system sabayon_laser_muzzle_light
+{
+	quota 100
+	material explosion_smoke_04_bw
+	particle_width 3.5
+	particle_height 3.5
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.2
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate -7.5
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.2 0.2 1
+		time1 0.5
+		colour1 1 0.1 0.1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system sabayon_laser_muzzle
+{
+	quota 100
+	material Particle_Trail_22_bw_mega
+	particle_width 0.2
+	particle_height 50
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin bottom_center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.1
+		time_to_live 0.2
+		duration 0.1
+	}
+	affector Scaler
+	{
+		rate 2
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.2 0.2 1
+		time1 0.5
+		colour1 1 0.1 0.1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system sabayon_laser_muzzle2 : sabayon_laser_muzzle
+{
+	material Particle_Trail_36_anim_alpha
+	particle_width 1.3
+	emitter Point
+	{
+	}
+	affector Scaler
+	{
+		rate 0.5
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 0.3
+		time1 0.5
+		colour1 0.3 0 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+
+particle_system sabayon_laser_center_ball
+{
+	quota 150
+	material bow_flare_pass
+	particle_width 15
+	particle_height 15
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 1
+		duration 0.5
+	}
+	affector Scaler
+	{
+		rate 6
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	250
+		rotation_speed_range_end	-250
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 0.7
+		colour1 1 0.1 0.1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system sabayon_laser_center_rorate_ring
+{
+	quota 150
+	material Particle_Circle_05
+	particle_width 16
+	particle_height 16
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.4
+		duration 0.5
+	}
+	affector Scaler
+	{
+		rate -30
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	1600
+		rotation_speed_range_end	1600
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.1 0.1 1
+		time1 0.7
+		colour1 1 0.1 0.1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system sabayon_laser_shrink_line
+{
+	quota 150
+	material Particle_Impact_Line_03
+	particle_width 10
+	particle_height 10
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin center_left
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 360
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity_min -0.0001
+		velocity_max 0.0001
+		time_to_live 0.2
+		duration 0.5
+	}
+	affector Scaler
+	{
+		rate -7.5
+	}
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	90
+		rotation_range_end	90
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0.1 0.1 1
+		time1 0.9
+		colour1 1 0.1 0.1 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system sabayon_laser_later_pre_line_s3
+{
+	quota 50
+	material Particle_Trail_36_anim_mega
+	particle_width 4
+	particle_height 150
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin bottom_right
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 -4 0
+		velocity 0.0001
+		time_to_live 2.5
+		duration 0.5
+	}
+    affector Scaler
+	{
+		rate 0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.3
+		colour1 0 0 0 0
+		time2 0.31
+		colour2 1 0.3 0 1
+		time3 0.7
+		colour3 1 0.1 0 1
+		time4 1
+		colour4 0 0 0 0
+	}
+}
+particle_system sabayon_laser_later_pre_line_mod3
+{
+	quota 200
+	material Particle_Trail_22_bw_mega
+	particle_width 3
+	particle_height 150
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin bottom_right
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 -4 0
+		velocity 0.001
+		time_to_live 2.5
+		duration 0.5
+	}
+    affector Scaler
+	{
+		rate 0.15
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.3
+		colour1 0 0 0 0
+		time2 0.41
+		colour2 1 0.3 0.3 1
+		time3 0.75
+		colour3 1 0.06 0.06 1
+		time4 1
+		colour4 0 0 0 0
+	}
+}
+particle_system sabayon_laser_later_pre_line_mod3_addon
+{
+	quota 200
+	material Particle_Trail_36_anim_alpha
+	particle_width 3.5
+	particle_height 150
+	renderer billboard
+	billboard_type oriented_self
+	billboard_origin bottom_right
+
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 10
+		position 0 -4 0
+		velocity 0.001
+		time_to_live 2.5
+		duration 0.5
+	}
+    affector Scaler
+	{
+		rate -0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0 0 0 0
+		time1 0.3
+		colour1 0 0 0 0
+		time2 0.31
+		colour2 0.1 0.1 0.1 1
+		time3 0.75
+		colour3 0.1 0.1 0.1 1
+		time4 1
+		colour4 0 0 0 0
+	}
+}
+particle_system sabayon_laser_later_pre_line_s1 : sabayon_laser_later_pre_line_s3
+{
+	billboard_origin bottom_left
+}
+particle_system sabayon_laser_later_pre_line_mod1 : sabayon_laser_later_pre_line_mod3
+{
+	billboard_origin bottom_left
+}
+particle_system sabayon_laser_later_pre_line_mod1_addon : sabayon_laser_later_pre_line_mod3_addon
+{
+	billboard_origin bottom_left
+}
+
+particle_system sabayon_target_aim_01
+{
+	quota 50
+	material lens_circle_07_cull_pass
+	particle_width 15
+	particle_height 15
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0.01
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 10
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 2
+		duration 0.1
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0 0 1
+		time1 0.5
+		colour1 1 0 0 1
+		time1 1
+		colour1 0 0 0 1
+	}
+	affector Scaler
+	{
+		rate -3
+	}
+}
+particle_system sabayon_target_aim_02 : sabayon_target_aim_01
+{
+	particle_width 25
+	particle_height 25
+
+	emitter Point{}
+	affector ColourInterpolator{}
+	affector Scaler
+	{
+		rate -3
+	}
+}
+particle_system sabayon_target_aim_03 : sabayon_target_aim_01
+{
+	particle_width 35
+	particle_height 35
+
+	emitter Point{}
+	affector ColourInterpolator{}
+	affector Scaler
+	{
+		rate -3
+	}
+}
+particle_system sabayon_target_aim_04 : sabayon_target_aim_01
+{
+	particle_width 45
+	particle_height 45
+
+	emitter Point{}
+	affector ColourInterpolator{}
+	affector Scaler
+	{
+		rate -3
+	}
+}
+
+particle_system sabayon_camera_light_1
+{
+	quota 50
+	material point_soft_edge_100_pass
+	particle_width 20
+	particle_height 20
+	renderer billboard
+	billboard_type perpendicular_common
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 1 1 1
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.75
+		duration 0.1
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 0 0 1
+		time1 0.3
+		colour1 1 0.1 0 1
+		time2 1
+		colour2 0 0 0 0
+	}
+}
+particle_system sabayon_camera_light_2 : sabayon_camera_light_1
+{
+	particle_width 30
+	particle_height 30
+}
+particle_system sabayon_camera_light_3 : sabayon_camera_light_1
+{
+	particle_width 40
+	particle_height 40
+}
+particle_system sabayon_camera_light_4 : sabayon_camera_light_1
+{
+	particle_width 50
+	particle_height 50
+}
+--------------------------------------material-----------------------------------
+material alpha_blend_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend alpha_blend
+		}
+	}
+}
+material add_base{
+	receive_shadows off
+	technique{
+		pass{
+			lighting off
+			fog_override true
+			depth_write off
+			scene_blend add
+		}
+	}
+}
+

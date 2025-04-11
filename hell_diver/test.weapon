@@ -47,7 +47,7 @@ on_ground_up="0 0 1"
     <next_in_chain key="ref.weapon" share_ammo="0" /> 
 
 	<!--武器动作，必须指定recoil和reload动作，部分动作留空会默认调用常规双手武器动作或者无动作-->
-    <animation key="recoil" animation_key="" /> <!--后坐力动作，半身动作-->
+    <animation key="recoil" animation_key="hd_heavy_recoil" /> <!--后坐力动作，半身动作-->
     <animation key="cycle" ref="28" /> <!--拉栓动作，武器固定脱手-->
     <animation key="reload" ref="33" />	<!--换弹动作，半身动作-->
     <animation state_key="hold" animation_key="" /><!--站姿静止动作，全身动作-->
@@ -224,13 +224,13 @@ on_ground_up="0 0 1"
     <animation key="recoil" animation_key="illum_obelisk_bone" /> <!--后坐力动作，半身动作-->
     <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
     <animation key="reload" animation_key="" />	<!--换弹动作，半身动作-->
-    <animation state_key="hold" animation_key="illum_obelisk_rotate" /><!--站姿静止动作，全身动作-->
+    <animation state_key="hold" animation_key="ex_exo_telemon_bone" /><!--站姿静止动作，全身动作-->
 	<animation state_key="hold_on_wall"  animation_key="" /><!--架枪动作，全身动作-->
     <animation state_key="still_against_wall" animation_key="" /><!--靠墙动作，全身动作-->
-    <animation state_key="hold_casual" animation_key="illum_obelisk_rotate" /><!--闲置动作，全身动作-->
-	<animation state_key="running" animation_key="illum_obelisk_rotate" /><!--全身动作-->
-	<animation state_key="walking" animation_key="illum_obelisk_rotate" /><!--按shift时候的静步前进动作，全身动作-->
-    <animation state_key="walking_backwards" animation_key="illum_obelisk_rotate" /><!--全身动作-->
+    <animation state_key="hold_casual" animation_key="ex_exo_telemon_bone" /><!--闲置动作，全身动作-->
+	<animation state_key="running" animation_key="ex_exo_telemon_walk" /><!--全身动作-->
+	<animation state_key="walking" animation_key="ex_exo_telemon_walk" /><!--按shift时候的静步前进动作，全身动作-->
+    <animation state_key="walking_backwards" animation_key="ex_exo_telemon_walkback" /><!--全身动作-->
     <animation state_key="crouching" animation_key="" /><!--蹲姿静止动作，全身动作-->
 	<animation state_key="crouch_moving" animation_key="" /><!--全身动作-->
 	<animation state_key="crouch_moving_backwards" animation_key="" /><!--全身动作-->

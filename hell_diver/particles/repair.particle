@@ -99,7 +99,7 @@ particle_system repair_result_feedback
 }
 particle_system repair_activated_trail
 {
-	quota 300
+	quota 100
 	material eye_lwy_t_mul_05_single_pass
 	particle_width 1
 	particle_height 1

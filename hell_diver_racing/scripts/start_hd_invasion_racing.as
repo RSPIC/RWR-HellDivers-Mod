@@ -35,7 +35,9 @@ void main(dictionary@ inputData) {
 
         settings.m_server_activity = true; //define whether skip the map when end.
         settings.m_server_activity_racing = true;
-        
+
+        settings.m_GameMode = "Racing";
+
         array<string> overlays = {
                 "media/packages/hell_diver_racing"
         };
@@ -47,10 +49,10 @@ void main(dictionary@ inputData) {
 	server_port='1244'
 	url='https://steamcommunity.com/sharedfiles/filedetails/?id=2910392031'
 	register_in_serverlist='1'
-	mode='HD'
+	mode='HD Race'
         persistency='forever'
 	comment='地狱潜兵模组  QQ：498520233 1倍xp'
-	max_players='16'>
+	max_players='32'>
 	<client_faction id='0' />
 </command>
 """;
@@ -58,9 +60,11 @@ void main(dictionary@ inputData) {
 
         GameModeInvasion metagame(settings);
 
-        metagame.init();
-        metagame.run();
-        metagame.uninit();
+	metagame.init();
+	while(metagame.run()){
+		metagame.init();
+	}
+	metagame.uninit();
 
         _log("ending execution");
 }

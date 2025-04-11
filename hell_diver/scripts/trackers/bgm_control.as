@@ -59,7 +59,6 @@ dictionary ex_bgm = {
         {"",-1},
 
         {"music_march_of_steel_torrent.wav",186},
-        {"music_space_elevator.wav",124},
         {"music_made_of_earth.wav",203},
  
         // 占位的
@@ -132,8 +131,8 @@ class bgm_control : Tracker{
     //---------------------------------------------------------
     protected void PlayBgm(){
         if(g_server_activity_racing){
-            playSoundtrack(m_metagame,"music_dejavu.wav");
-            m_bgm_timer = 105;
+            playSoundtrack(m_metagame,"music_Connected_Sky.wav");
+            m_bgm_timer = 120;
             return;
         }
         array<string> cyborgs_bgmList_fight = {
@@ -238,9 +237,9 @@ class bgm_control : Tracker{
 		if(message == "/bgm"){
             PlayBgm();
         }
-		if(message == "/bgm test"){
-            playSoundtrack(m_metagame,"test.wav");
-        }
+		// if(message == "/bgm test"){
+        //     playSoundtrack(m_metagame,"test.wav");
+        // }
 	}
 
 

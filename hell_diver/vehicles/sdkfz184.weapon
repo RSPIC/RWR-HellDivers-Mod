@@ -28,10 +28,11 @@
 		<rotation class="motion" />
 		<trail probability="1" key="nova_trail"/>	
 		<model mesh_filename="APFSDS.xml" />
-		<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_1.wav" pitch_variety="0.01" volume="1" />
-		<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_2.wav" pitch_variety="0.01" volume="1" />
-		<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_3.wav" pitch_variety="0.01" volume="1" />
-		<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_4.wav" pitch_variety="0.01" volume="1" />
+		<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_1.wav" pitch_variety="0.01" volume="8" />
+		<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_2.wav" pitch_variety="0.01" volume="8" />
+
+		<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_3.wav" pitch_variety="0.01" volume="8" />
+		<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_4.wav" pitch_variety="0.01" volume="8" />
 		<effect class="result" key="terrain" ref="real_up_dust_beam" lighting="1" post_processing="0"/>
 		<effect class="result" key="terrain" ref="real_up_dust_stone" lighting="1" post_processing="1"/>
 		<effect class="result" key="terrain" ref="real_up_smoke_1" lighting="1" post_processing="0"/>

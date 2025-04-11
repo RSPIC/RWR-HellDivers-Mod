@@ -34,7 +34,7 @@ key="reward_box_vehicle.carry_item"
 file="_collect_rare.base"
 >
     <hud_icon filename="hud_reward_box_vehicle.png" />
-    <inventory  price="648" />
+    <inventory  buy_price="10000" sell_price="0" />
     <model mesh_filename="mc_box.mesh" texture_filename="mc_box.png" />
     <commonness value="0.1"/>
 </carry_item>
@@ -44,7 +44,7 @@ key="reward_box_weapon_1.carry_item"
 file="_collect_rare.base"
 >
     <hud_icon filename="hud_reward_box_weapon_1.png" />
-    <inventory  price="648" />
+    <inventory buy_price="30000" sell_price="0"/>
     <model mesh_filename="mc_box.mesh" texture_filename="mc_box.png" />
     <commonness value="0.0"/>
 </carry_item>
@@ -54,7 +54,7 @@ key="reward_box_weapon_2.carry_item"
 file="_collect_rare.base"
 >
     <hud_icon filename="hud_reward_box_weapon_2.png" />
-    <inventory  price="648" />
+    <inventory  buy_price="90000" sell_price="0" />
     <model mesh_filename="mc_box.mesh" texture_filename="mc_box.png" />
     <commonness value="0.0"/>
 </carry_item>
@@ -84,7 +84,7 @@ key="reward_box_weapon_v.carry_item"
 file="_collect_rare.base"
 >
     <hud_icon filename="hud_reward_box_weapon_v.png" />
-    <inventory  price="648" />
+    <inventory  buy_price="3280000" sell_price="0" />
     <model mesh_filename="hd_case.mesh" texture_filename="hud_reward_box_weapon_v.jpg" />
     <commonness value="0.0"/>
 </carry_item>
@@ -134,7 +134,7 @@ key="reward_box_weapon_delta.carry_item"
 file="_collect_rare.base"
 >
     <hud_icon filename="hud_reward_box_weapon_delta.png" />
-    <inventory  price="648" />
+    <inventory  buy_price="1120000" sell_price="0" />
     <model mesh_filename="hd_case.mesh" texture_filename="hud_reward_box_weapon_delta.jpg" />
     <commonness value="0.0"/>
 </carry_item>
@@ -164,7 +164,7 @@ key="reward_box_weapon_lamda.carry_item"
 file="_collect_rare.base"
 >
     <hud_icon filename="hud_reward_box_weapon_lamda.png" />
-    <inventory  price="648" />
+    <inventory  buy_price="360000" sell_price="0" />
     <model mesh_filename="hd_case.mesh" texture_filename="hud_reward_box_weapon_lamda.jpg" />
     <commonness value="0.0"/>
 </carry_item>

@@ -33,7 +33,7 @@ void main(dictionary@ inputData) {
 	s.m_startServerCommand = """
 <command class='start_server'
         server_name='[地狱潜兵]PVP服 IP直连'
-        server_port='2333'
+        server_port='1246'
         comment='Running with HellDivers Mod.  QQ：498520233'
         url='https://steamcommunity.com/sharedfiles/filedetails/?id=1541806712'
         register_in_serverlist='1'

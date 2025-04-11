@@ -56,7 +56,7 @@ particle_system car_slide_spary_spark
 }
 particle_system car_slide_spary_spark_activated
 {
-	quota 500
+	quota 250
 	material point_hard_edge
 	particle_width 0.1
 	particle_height 0.22
@@ -256,7 +256,7 @@ particle_system car_slide_up_crash
 }
 particle_system car_smoke
 {
-	quota 500
+	quota 200
 	material rx1_smoke
 	particle_width 0.8
 	particle_height 0.8
@@ -340,7 +340,7 @@ particle_system car_health_front_light
 }
 particle_system car_slide_up_smoke_area
 {
-	quota 300
+	quota 150
 	material rx1_smoke
 	particle_width 0.3
 	particle_height 0.3
@@ -396,7 +396,7 @@ particle_system car_slide_up_smoke_area
 }
 particle_system car_prism_surrounding_thunder
 {
-	quota 200
+	quota 80
 	material thunder_circle_tesla
 	particle_width 5
 	particle_height 5
@@ -446,7 +446,7 @@ particle_system car_prism_surrounding_thunder
 }
 particle_system car_tesla_surrounding_thunder
 {
-	quota 200
+	quota 60
 	material thunder_circle_tesla
 	particle_width 2
 	particle_height 2
@@ -496,7 +496,7 @@ particle_system car_tesla_surrounding_thunder
 }
 particle_system car_pod_impact_leave_dirt
 {
-	quota 200
+	quota 75
 	material Tex_0147_1
 	particle_width 3.75
 	particle_height 3.75
@@ -551,7 +551,7 @@ particle_system car_pod_impact_leave_dirt3 : car_pod_impact_leave_dirt
 
 particle_system car_surrounding_ring_point
 {
-	quota 200
+	quota 75
 	material point_soft_edge_100
 	particle_width 0.25
 	particle_height 0.25
@@ -655,7 +655,7 @@ particle_system car_destroyed_up_smoke
 }
 particle_system car_destroyed_up_fire_large
 {
-	quota 200
+	quota 75
 	material add_smoke_1
 	particle_width 4
 	particle_height 4

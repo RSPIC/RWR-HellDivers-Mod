@@ -38,7 +38,7 @@ file="_hd_precision.base"
 	<!--武器动作，必须指定recoil和reload动作，部分动作留空会默认调用常规双手武器动作或者无动作-->
     <animation key="recoil" animation_key="recoil1" /> <!--后坐力动作，半身动作-->
     <animation key="cycle"  animation_key="cycle_2s" /> <!--拉栓动作，武器固定脱手-->
-	<animation state_key="reload" animation_key="reloading_3s" />	<!--换弹动作，半身动作-->
+	<animation state_key="reload" animation_key="reloading_2.0s" />	<!--换弹动作，半身动作-->
     <animation state_key="hold" animation_key="" /><!--站姿静止动作，全身动作-->
 	<animation state_key="hold_on_wall"  animation_key="" /><!--架枪动作，全身动作-->
     <animation state_key="still_against_wall" animation_key="" /><!--靠墙动作，全身动作-->

@@ -36,6 +36,8 @@ void main(dictionary@ inputData) {
 
         settings.m_server_activity = true; //define whether skip the map when end.
         settings.m_server_activity_racing = true;
+        
+        settings.m_GameMode = "Racing";
 
         array<string> overlays = {
                 "media/packages/hell_diver"
@@ -59,9 +61,11 @@ void main(dictionary@ inputData) {
 
         GameModeInvasion metagame(settings);
 
-        metagame.init();
-        metagame.run();
-        metagame.uninit();
+	metagame.init();
+	while(metagame.run()){
+		metagame.init();
+	}
+	metagame.uninit();
 
         _log("ending execution");
 }

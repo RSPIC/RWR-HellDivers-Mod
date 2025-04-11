@@ -234,7 +234,7 @@ particle_system shadow_SMS_3 : shadow_SMS_1
 
 particle_system SMS_vertical_smoke
 {
-	quota 800
+	quota 200
 	material Tex_Smoke17C_real
 	particle_width 5
 	particle_height 5
@@ -287,7 +287,7 @@ particle_system SMS_vertical_smoke
 }
 particle_system SMS_vertical_smoke_faster
 {
-	quota 800
+	quota 100
 	material Tex_Smoke17C_real
 	particle_width 5
 	particle_height 5
@@ -340,7 +340,7 @@ particle_system SMS_vertical_smoke_faster
 }
 particle_system SMS_Ring_smoke
 {
-	quota 800
+	quota 150
 	material Tex_Smoke17C_real
 	particle_width 5
 	particle_height 5
@@ -395,7 +395,7 @@ particle_system SMS_Ring_smoke
 }
 particle_system SMS_Ring_smoke_faster
 {
-	quota 800
+	quota 100
 	material Tex_Smoke17C_real
 	particle_width 5
 	particle_height 5
@@ -453,7 +453,7 @@ particle_system SMS_Ring_smoke_faster
 
 particle_system SMS_up_spark
 {
-	quota 500
+	quota 150
 	material pump_flare_03_01_pass
 	particle_width 0.7
 	particle_height 0.7

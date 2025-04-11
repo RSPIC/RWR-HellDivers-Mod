@@ -3,7 +3,7 @@ author: RST
 
 particle_system 22missile_trail
 {
-	quota 400
+	quota 200
 	material 22missile_smoke_1
 	particle_width 3
 	particle_height 3
@@ -20,11 +20,11 @@ particle_system 22missile_trail
 		angle 0
 		colour 0 0 0 0
 		direction 0 1 0
-		emission_rate 100
+		emission_rate 50
 		position 0 0 0
 		velocity 0.0001
 		time_to_live 0.8
-		duration 5
+		duration 0
 	}
 	affector Scaler
 	{
@@ -63,7 +63,7 @@ particle_system 22missile_trail
 }
 particle_system 22missile_hit_smoke_ambient		//环境烟雾
 {
-	quota 300
+	quota 200
 	material 22missile_smoke_2_pass
 	particle_width 20
 	particle_height 20
@@ -127,7 +127,7 @@ particle_system 22missile_hit_smoke_ambient		//环境烟雾
 
 particle_system 22missile_hit_smoke_fire_smoke //爆炸火焰
 {
-	quota 200
+	quota 100
 	material explosion_fog_01_pass
 	particle_width 20
 	particle_height 20
@@ -186,7 +186,7 @@ particle_system 22missile_hit_smoke_fire_smoke //爆炸火焰
 }
 particle_system CIWS_updust
 {
-	quota 200
+	quota 100
 	material 22missile_smoke_2
 	particle_width 4
 	particle_height 4

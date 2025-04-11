@@ -4,7 +4,7 @@ author: RST
 
 particle_system illum_illusionist_activated_fire
 {
-	quota 800
+	quota 150
 	material explosion_smoke_04_bw
 	particle_width 7
 	particle_height 7
@@ -43,7 +43,7 @@ particle_system illum_illusionist_activated_fire
 }
 particle_system illum_illusionist_activated_fire2 : illum_illusionist_activated_fire
 {
-	quota 800
+	quota 150
 	material explosion_smoke_04_bw
 	particle_width 1
 	particle_height 1
@@ -212,7 +212,7 @@ particle_system illum_tripod_muzzle_thunder
 }
 particle_system illum_hunter_muzzle_laser
 {
-	quota 500
+	quota 50
 	material muzzle_laser
 	particle_width 0.3
 	particle_height 120
@@ -430,7 +430,7 @@ particle_system illum_hunter_fire_shrink_line
 }
 particle_system illum_spawn_ring 
 {
-	quota 500
+	quota 80
 	material lightning_gun_flare_003
 	particle_width 6
 	particle_height 6

@@ -9,7 +9,7 @@ author：RST
 
 particle_system LightShell_activated_01
 {
-	quota 300
+	quota 100
 	material pump_flare_03_01
 	particle_width 3
 	particle_height 3
@@ -64,7 +64,7 @@ particle_system LightShell_activated_01
 
 particle_system LightShell_activated_02
 {
-	quota 300
+	quota 150
 	material point_soft_edge_100_pass
 	particle_width 40
 	particle_height 40
@@ -118,7 +118,7 @@ particle_system LightShell_activated_02
 }
 particle_system LightShell_activated_03	//放射光
 {
-	quota 300
+	quota 150
 	material RainbowWave_pass
 	particle_width 30
 	particle_height 30
@@ -172,7 +172,7 @@ particle_system LightShell_activated_03	//放射光
 }
 particle_system LightShell_activated_04 	//镜头光晕
 {
-	quota 300
+	quota 150
 	material lens_35mm_pass
 	particle_width 40
 	particle_height 40
@@ -227,7 +227,7 @@ particle_system LightShell_activated_04 	//镜头光晕
 
 particle_system LightShell_activated_smoke
 {
-	quota 300
+	quota 100
 	material wand_smoke
 	particle_width 0.5
 	particle_height 0.5

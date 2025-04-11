@@ -14,7 +14,7 @@ abstract emitter time
     
 particle_system IB_fire
 {
-	quota 1000
+	quota 75
 	material IB_fire
 	particle_width 6
 	particle_height 9
@@ -59,7 +59,7 @@ particle_system IB_fire
 }
 particle_system IB_up_smoke
 {
-	quota 1000
+	quota 80
 	material wand_smoke
 	particle_width 4
 	particle_height 4
@@ -112,7 +112,7 @@ particle_system IB_up_smoke
 
 particle_system IB_up_spark
 {
-	quota 1000
+	quota 80
 	material pump_flare_03_01
 	particle_width 0.6
 	particle_height 0.6

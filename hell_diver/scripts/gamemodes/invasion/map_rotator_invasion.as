@@ -179,15 +179,27 @@ class MapRotatorInvasion : MapRotator {
 		if (previousStageIndex != index) {
 			// also save
 			m_metagame.getTaskSequencer().add(Call(CALL(m_metagame.save)));
-
+					
+			if(!g_single_player){
+				//单人不执行
+				_log("restartMetagame");
+				m_metagame.getTaskSequencer().add(Call(CALL(this.restartMetagame)));
+				// return;
+			}
 			// start new map
 			m_metagame.getTaskSequencer().add(CallInt(CALL_INT(this.startMapEx), index));
+
+
 		} else {
 			// restart same map
 			m_metagame.getTaskSequencer().add(Call(CALL(this.restartMap)));
 		}
 	}
+	// --------------------------------------------
+	void restartMetagame(){
 
+			g_restartMetagame = true;
+	}
 	// --------------------------------------------
 	protected void setStageCompleted(int index) {
 		if (!isStageCompleted(index)) {
@@ -763,6 +775,7 @@ class MapRotatorInvasion : MapRotator {
 	// --------------------------------------------
     void startMap(int index, bool beginOnly = false) {
 		_log("start_map, index=" + index + ", begin_only=" + beginOnly);
+
 		// in invasion, store the faction settings in gamemode
 		// so that we can juggle with them when the match is on
 		// and reset them back to defaults when needed
@@ -975,6 +988,7 @@ class MapRotatorInvasion : MapRotator {
 
 	// --------------------------------------------
 	void save(XmlElement@ root) {
+		_log("MapRotatorInvasion ChangeMap save");
 		XmlElement@ parent = root;
 
 		XmlElement subroot("map_rotator");

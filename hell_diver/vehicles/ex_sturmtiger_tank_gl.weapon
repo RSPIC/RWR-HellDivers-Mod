@@ -70,10 +70,11 @@ key="ex_sturmtiger_tank_gl.weapon"
 		<trail probability="1" key="nova_trail"/>	
 		<model mesh_filename="ex_sturmtiger_tank_shell.mesh" texture_filename="ex_sturmtiger_tank_shell.jpg" /> 
 
-		<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_1.wav" pitch_variety="0.01" volume="1" />
-		<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_2.wav" pitch_variety="0.01" volume="1" />
-		<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_3.wav" pitch_variety="0.01" volume="1" />
-		<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_4.wav" pitch_variety="0.01" volume="1" />
+		<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_1.wav" pitch_variety="0.01" volume="8" />
+		<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_2.wav" pitch_variety="0.01" volume="8" />
+
+		<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_3.wav" pitch_variety="0.01" volume="8" />
+		<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_4.wav" pitch_variety="0.01" volume="8" />
 	
 		<effect class="result" key="terrain" ref="real_ground_crater" lighting="1" post_processing="1"/>
 		<effect class="result" key="terrain" ref="real_up_dust_beam" lighting="1" post_processing="0"/>

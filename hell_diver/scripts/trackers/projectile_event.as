@@ -25,11 +25,26 @@ dictionary skill_CD = {
 
     {"acg_izayoi_sakuya_road_roller",10},
 
-    {"acg_rumi.weapon",20},
-    {"re_acg_rumi.weapon",20},
-
     {"ex_exo_dreadnought_rocket",20},
+    {"ex_exo_telemon_missile_damage",25},
 
+    {"acg_sabayon_artillery_skill",180}, //贯穿
+    {"acg_sabayon_gun.weapon",180}, //
+    {"re_acg_sabayon_gun.weapon",180}, //
+
+    {"hyper_mega_bazooka_launcher_skill",210},
+    {"acg_elaina_wand_skill",180},
+    {"ex_vergil_skill",180},
+    {"acg_patricia_fataldrive",180},
+
+    {"",0}
+
+};
+dictionary skill_CD_overtime = { //多次使用后进入CD的技能
+	 // 空
+	{"",0},
+
+    {"ex_exo_telemon_missile_damage",4},
 
     {"",0}
 
@@ -44,7 +59,7 @@ dictionary skill_cost = {
     {"acg_rikuhachima_aru_skill",7},
     {"re_acg_rikuhachima_aru_skill",6},
 
-    {"acg_izayoi_sakuya_skill",75}, // 需要和manual_cost_skill_key字典计数一致
+    {"acg_izayoi_sakuya_skill",45}, // 需要和manual_cost_skill_key字典计数一致
 
     {"",0}
 
@@ -90,11 +105,22 @@ class projectile_event : Tracker {
             int m_cid = event.getIntAttribute("character_id");
             int m_pid = g_playerInfoBuck.getPidByCid(m_cid);
             string m_name = g_playerInfoBuck.getNameByPid(m_pid);
-            if(!p_cd_lists.exists(m_name,EventKeyGet) ){
-                float cd = 300;
-                skill_CD.get(EventKeyGet,cd);
-                p_cd_lists.addNew(m_name,m_pid,EventKeyGet,cd);
-                handelCdResultEvent(event);
+            if(!p_cd_lists.exists(m_name,EventKeyGet) || g_fullcd){
+                int nowCost = -1;
+                int Cost = -1;
+                if(skill_CD_overtime.exists(EventKeyGet)){
+                    g_userCountInfoBuck.getCount(m_name,EventKeyGet,nowCost);
+                    skill_CD_overtime.get(EventKeyGet,Cost);
+                }
+                if(nowCost < (Cost-1) && nowCost >= 0){
+                    handelCdResultEvent(event);
+                    g_userCountInfoBuck.addCount(m_name,EventKeyGet,1);
+                }else{
+                    float cd = 300;
+                    skill_CD.get(EventKeyGet,cd);
+                    p_cd_lists.addNew(m_name,m_pid,EventKeyGet,cd);
+                    handelCdResultEvent(event);
+                }
             }
             if(!p_cd_lists.hasReady(m_name,EventKeyGet)){
                 float leftCD = p_cd_lists.leftCD(m_name,EventKeyGet);
@@ -523,82 +549,6 @@ class projectile_event : Tracker {
                 }
                 break;
             }
-            case 46:{//acg_patricia_fataldrive
-                int cid = event.getIntAttribute("character_id");
-                int pid = g_playerInfoBuck.getPidByCid(cid);
-                if(pid == -1){
-                    const XmlElement@ character = getCharacterInfo(m_metagame,cid);
-                    if(character is null){return;}
-                    pid = character.getIntAttribute("player_id");
-                    notify(m_metagame, "未能获取到你的PID，已通过其他方法获取。请汇报此情况", dictionary(), "misc", pid, false, "", 1.0);
-                }
-                //先过主手武器检测
-                string equipKey_main = getPlayerEquipmentKey(m_metagame,cid,0);//主武器
-                string targetKey = "acg_patricia";
-                string targetKey2 = "re_acg_patricia";
-
-                if(!startsWith(equipKey_main,targetKey) && !startsWith(equipKey_main,targetKey2)){
-                    setWoundCharacter(m_metagame,cid);
-                    notify(m_metagame, "你的主武器未为对应武器", dictionary(), "misc", pid, true, "倒地惩罚", 1.0);
-                    return;
-                }
-                const XmlElement@ player = getPlayerInfo(m_metagame,pid);
-                if(player is null){return;}
-                int fid = 0;
-                Vector3 ePos = stringToVector3(player.getStringAttribute("aim_target"));
-                Vector3 sPos = ePos;
-                string key = "acg_patricia_FatalDrive_damage.projectile";
-                float speed = 1;
-                float delaytime = 0;
-                CreateDirectProjectile(m_metagame,sPos,ePos,"acg_patricia_FatalDrive_spawn.projectile",cid,fid,1);
-                CreateProjectile@ first_task = CreateProjectile(m_metagame,sPos,ePos,key,cid,fid,speed,delaytime);
-                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
-                tasker.add(first_task);
-                for(uint i=7;i>0;--i){
-                    CreateProjectile@ task = CreateProjectile(m_metagame,sPos,ePos,key,cid,fid,speed,0.5);
-                    tasker.add(task);
-                }
-                break;
-            }
-            case 47:{//hyper_mega_bazooka_launcher_skill
-                int cid = event.getIntAttribute("character_id");
-                int pid = g_playerInfoBuck.getPidByCid(cid);
-                if(pid == -1){
-                    const XmlElement@ character = getCharacterInfo(m_metagame,cid);
-                    if(character is null){return;}
-                    pid = character.getIntAttribute("player_id");
-                    notify(m_metagame, "未能获取到你的PID，已通过其他方法获取。请汇报此情况", dictionary(), "misc", pid, false, "", 1.0);
-                }
-                //先过主手武器检测
-                string equipKey_main = getPlayerEquipmentKey(m_metagame,cid,0);//主武器
-                string targetKey = "ex_hyper_mega_bazooka";
-                string targetKey2 = "re_ex_hyper_mega_bazooka";
-                if(!startsWith(equipKey_main,targetKey) && !startsWith(equipKey_main,targetKey2)){
-                    setWoundCharacter(m_metagame,cid);
-                    notify(m_metagame, "你的主武器未为对应武器", dictionary(), "misc", pid, true, "倒地惩罚", 1.0);
-                    return;
-                }
-                
-                const XmlElement@ character = getCharacterInfo(m_metagame,cid);
-                if(character is null){return;}
-                int fid = 0;
-                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
-                Vector3 sPos = stringToVector3(character.getStringAttribute("position"));
-                Vector3 aim_unit_vector = getAimUnitVector(1,sPos,ePos);
-                ePos = ePos.add(aim_unit_vector.scale(200));
-
-                string key = "ex_hyper_mega_bazooka_launcher_skill_damage.projectile";
-                float speed = 1;
-                float delaytime = 0.2;
-                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
-                CreateProjectile@ task1 = CreateProjectile(m_metagame,sPos,ePos,key,cid,fid,speed,2.2,10);
-                CreateProjectile@ task2 = CreateProjectile(m_metagame,sPos,ePos,key,cid,fid,speed,1.5,10);
-                CreateProjectile@ task3 = CreateProjectile(m_metagame,sPos,ePos,key,cid,fid,speed,1.5,10);
-                tasker.add(task1);
-                tasker.add(task2);
-                tasker.add(task3);
-                break;
-            }
             case 48:{//acg_laisha_southern_cross
                 int characterId = event.getIntAttribute("character_id");
                 if (characterId == -1) {break;}
@@ -644,39 +594,6 @@ class projectile_event : Tracker {
                 TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
                 CreateProjectile@ task1 = CreateProjectile(m_metagame,sPos,ePos,key,cid,fid,speed,0,10,delaytime);
                 tasker.add(task1);
-                break;
-            }
-            case 51:{//ex_vergil_skill 维吉尔 次元斩-绝
-                int cid = event.getIntAttribute("character_id");
-                int pid = g_playerInfoBuck.getPidByCid(cid);
-                if(pid == -1){
-                    const XmlElement@ character = getCharacterInfo(m_metagame,cid);
-                    if(character is null){return;}
-                    pid = character.getIntAttribute("player_id");
-                    notify(m_metagame, "未能获取到你的PID，已通过其他方法获取。请汇报此情况", dictionary(), "misc", pid, false, "", 1.0);
-                }
-                //先过主手武器检测
-                string equipKey_main = getPlayerEquipmentKey(m_metagame,cid,0);//主武器
-                string targetKey = "ex_vergil_";
-                string targetKey2 = "re_ex_vergil_";
-                if(!startsWith(equipKey_main,targetKey) && !startsWith(equipKey_main,targetKey2)){
-                    setWoundCharacter(m_metagame,cid);
-                    notify(m_metagame, "你的主武器未为对应武器", dictionary(), "misc", pid, true, "倒地惩罚", 1.0);
-                    return;
-                }
-
-                int fid = 0;
-                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
-                Vector3 sPos = ePos.add(Vector3(0,5,0));
-                string key1 = "ex_vergil_skill_damage.projectile";
-                string key2 = "ex_vergil_skill_damage_end.projectile";
-                float speed = 1;
-                float delaytime = 0.15;
-                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
-                CreateProjectile@ task1 = CreateProjectile(m_metagame,sPos,ePos,key1,cid,fid,speed,0,10,delaytime);
-                CreateProjectile@ task2 = CreateProjectile(m_metagame,sPos,ePos,key2,cid,fid,speed,0,1);
-                tasker.add(task1);
-                tasker.add(task2);
                 break;
             }
             case 52:{//acg_exo_toki_skill Toki SKill
@@ -806,35 +723,6 @@ class projectile_event : Tracker {
                 CreateProjectile@ task2 = CreateProjectile(m_metagame,sPos,ePos,key1,cid,fid,speed,0.3,10);
                 tasker.add(task1);
                 tasker.add(task2);
-                break;
-            }
-            case 62:{//acg_elaina_wand_skill 伊蕾娜 skill
-                int cid = event.getIntAttribute("character_id");
-                int pid = g_playerInfoBuck.getPidByCid(cid);
-                if(pid == -1){
-                    const XmlElement@ character = getCharacterInfo(m_metagame,cid);
-                    if(character is null){return;}
-                    pid = character.getIntAttribute("player_id");
-                    notify(m_metagame, "未能获取到你的PID，已通过其他方法获取。请汇报此情况", dictionary(), "misc", pid, false, "", 1.0);
-                }
-                //先过主手武器检测
-                string equipKey_main = getPlayerEquipmentKey(m_metagame,cid,0);//主武器
-                string targetKey = "acg_elaina_wand";
-                string targetKey2 = "re_acg_elaina_wand";
-                if(!startsWith(equipKey_main,targetKey) && !startsWith(equipKey_main,targetKey2)){
-                    setWoundCharacter(m_metagame,cid);
-                    notify(m_metagame, "你的主武器未为对应武器", dictionary(), "misc", pid, true, "倒地惩罚", 1.0);
-                    return;
-                }
-
-                int fid = 0;
-                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
-                Vector3 sPos = ePos.add(Vector3(0,5,0));
-                string key1 = "acg_elaina_wand_skill_spawn.projectile";
-                float speed = 1;
-                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
-                CreateProjectile@ task1 = CreateProjectile(m_metagame,sPos,ePos,key1,cid,fid,speed,0,1,0);
-                tasker.add(task1);
                 break;
             }
             case 63:{//hd_exp_mls4x_commando_track_mk3 突击队导弹跟踪
@@ -1106,8 +994,8 @@ class projectile_event : Tracker {
                     string subStr = equipKey_vest.substr(keyWord.length());
                     if(isNumeric(subStr)){
                         int cost = parseInt(subStr);
-                        if(cost > 50){
-                            cost -= 50;
+                        if(cost > 40){
+                            cost -= 40;
                             equipKey_vest = keyWord + cost;
                             editPlayerVest(m_metagame,m_cid,equipKey_vest,4);
                         }else{
@@ -1178,7 +1066,7 @@ class projectile_event : Tracker {
                 
                 string key1 = "hd_exp_las99_quasar_cannon_spawn.projectile";
                 float speed = 70;
-                float height = 7;
+                float height = 10;
                 CreateProjectile_H(m_metagame,ePos,aimPosition,key1,m_cid,m_fid,speed,height);
                 break;
             }
@@ -1204,7 +1092,7 @@ class projectile_event : Tracker {
                 CreateProjectile@ task2 = CreateProjectile(m_metagame,ePos,aimPosition,key2,m_cid,m_fid,speed,0,1,0,false);
                 tasker.add(task2);//damage
                 TaskSequencer@ tasker2 = m_metagame.getVacantHdTaskSequncerIndex();
-                CreateProjectile@ task1 = CreateProjectile(m_metagame,ePos,aimPosition,key1,m_cid,m_fid,10,0,10,0.01);
+                CreateProjectile@ task1 = CreateProjectile(m_metagame,ePos,aimPosition,key1,m_cid,m_fid,10,0,20,0.01);
                 tasker2.add(task1);//damage
                 break;
             }
@@ -1272,11 +1160,9 @@ class projectile_event : Tracker {
                                             playAnimationKey(m_metagame,soldier_id, "hd_rotate_reload_at_a_time_skill", false, false);
 
                                             string key2 ="acg_takanashi_hoshino_spawn.projectile";
-                                            float speed = 75;
-                                            TaskSequencer@ tasker = m_metagame.getVacantHdTaskSequncerIndex();
-                                            CreateProjectile@ task2 = CreateProjectile(m_metagame,sPos,aimPosition,key2,soldier_id,0,speed,0.3,1,0,false);
-                                            tasker.add(task2);//damage
-                                            break;
+                                            float speed = 150;
+                                            float height = 0.5;
+                                            CreateProjectile_H(m_metagame,sPos,aimPosition.add(Vector3(0,1,0)),key2,soldier_id,0,speed,height);                                            break;
                                         }
                                     }
                                 }
@@ -1305,6 +1191,54 @@ class projectile_event : Tracker {
 
                 break;
             } 
+            case 81:{// 随机子弹 ex_random_gun
+                int m_cid = event.getIntAttribute("character_id");
+                int pid = g_playerInfoBuck.getPidByCid(m_cid);
+                int m_fid = g_playerInfoBuck.getFidByCid(m_cid);
+                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+
+                array<string> atkList ={
+                    "dooms_hammer_2.projectile",
+                    "hd_grenade_molotov.projectile",
+                    "hd_offensive_airstrike_mk3_damage.projectile",
+                    "hd_grenade_stun_g23.projectile",
+                    "hd_grenade_impact_g16.projectile",
+                    "acg_takanashi_hoshino_spawn.projectile",
+                    "hd_at_mine_mk3_stay.projectile",
+                    "hd_explosive_bunny_spawn.projectile",
+                    "hd_chat_effect_le.projectile",
+                    "hd_drone_ad289_angel_heal.projectile",
+                    "hd_resupply.projectile",
+                    "hd_grenade_standard.projectile",
+                    "hd_ammo_supply_box.projectile"
+                };
+                string atkProjectile = atkList[uint(rand(0,int(atkList.size()-1)))];
+                spawnStaticProjectile(m_metagame,atkProjectile,ePos,m_cid,m_fid);
+                break;
+            } 
+            case 83:{// hd_call_cqc_30 空输部队
+                int characterId = event.getIntAttribute("character_id");
+				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                if (character is null) {break;}
+                if (characterId == -1) {
+                    _log("characterId = -1,null occur");
+                    break;
+                }
+
+                Vector3 pos2 = stringToVector3(character.getStringAttribute("position"));
+                int factionid = character.getIntAttribute("faction_id");
+
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                if(tasker is null){break;}
+
+                string key1 = "hd_hellpod_dropping_spawn_ai_cqc30.projectile";
+                CreateProjectile@ task0 = CreateProjectile(m_metagame,pos2.add(Vector3(0,20,0)),pos2.add(Vector3(0,20,0)),key1,characterId,factionid,1,0,16,0.5); // speed delay num
+                tasker.add(task0);
+                playSoundtrack(m_metagame,"music_runman.wav");
+
+                break;
+            } 
+            
             default:
                 break;            
         }
@@ -1313,6 +1247,115 @@ class projectile_event : Tracker {
         string EventKeyGet = event.getStringAttribute("key");
         switch(int(projectile_eventkey[EventKeyGet])){
             case 0:{break;}
+            case 46:{//acg_patricia_fataldrive
+                int cid = event.getIntAttribute("character_id");
+                int pid = g_playerInfoBuck.getPidByCid(cid);
+                if(pid == -1){
+                    const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                    if(character is null){return;}
+                    pid = character.getIntAttribute("player_id");
+                    notify(m_metagame, "未能获取到你的PID，已通过其他方法获取。请汇报此情况", dictionary(), "misc", pid, false, "", 1.0);
+                }
+                //先过主手武器检测
+                string equipKey_main = getPlayerEquipmentKey(m_metagame,cid,0);//主武器
+                string targetKey = "acg_patricia";
+                string targetKey2 = "re_acg_patricia";
+
+                if(!startsWith(equipKey_main,targetKey) && !startsWith(equipKey_main,targetKey2)){
+                    setWoundCharacter(m_metagame,cid);
+                    notify(m_metagame, "你的主武器未为对应武器", dictionary(), "misc", pid, true, "倒地惩罚", 1.0);
+                    return;
+                }
+                const XmlElement@ player = getPlayerInfo(m_metagame,pid);
+                if(player is null){return;}
+                int fid = 0;
+                Vector3 ePos = stringToVector3(player.getStringAttribute("aim_target"));
+                Vector3 sPos = ePos;
+                string key = "acg_patricia_FatalDrive_damage.projectile";
+                float speed = 1;
+                float delaytime = 0;
+                CreateDirectProjectile(m_metagame,sPos,ePos,"acg_patricia_FatalDrive_spawn.projectile",cid,fid,1);
+                CreateProjectile@ first_task = CreateProjectile(m_metagame,sPos,ePos,key,cid,fid,speed,delaytime);
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                tasker.add(first_task);
+                for(uint i=7;i>0;--i){
+                    CreateProjectile@ task = CreateProjectile(m_metagame,sPos,ePos,key,cid,fid,speed,0.5);
+                    tasker.add(task);
+                }
+                break;
+            }
+            case 47:{//hyper_mega_bazooka_launcher_skill
+                int cid = event.getIntAttribute("character_id");
+                int pid = g_playerInfoBuck.getPidByCid(cid);
+                if(pid == -1){
+                    const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                    if(character is null){return;}
+                    pid = character.getIntAttribute("player_id");
+                    notify(m_metagame, "未能获取到你的PID，已通过其他方法获取。请汇报此情况", dictionary(), "misc", pid, false, "", 1.0);
+                }
+                //先过主手武器检测
+                string equipKey_main = getPlayerEquipmentKey(m_metagame,cid,0);//主武器
+                string targetKey = "ex_hyper_mega_bazooka";
+                string targetKey2 = "re_ex_hyper_mega_bazooka";
+                if(!startsWith(equipKey_main,targetKey) && !startsWith(equipKey_main,targetKey2)){
+                    setWoundCharacter(m_metagame,cid);
+                    notify(m_metagame, "你的主武器未为对应武器", dictionary(), "misc", pid, true, "倒地惩罚", 1.0);
+                    return;
+                }
+                
+                const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                if(character is null){return;}
+                int fid = 0;
+                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+                Vector3 sPos = stringToVector3(character.getStringAttribute("position"));
+                Vector3 aim_unit_vector = getAimUnitVector(1,sPos,ePos);
+                ePos = ePos.add(aim_unit_vector.scale(200));
+
+                string key = "ex_hyper_mega_bazooka_launcher_skill_damage.projectile";
+                float speed = 1;
+                float delaytime = 0.2;
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                CreateProjectile@ task1 = CreateProjectile(m_metagame,sPos,ePos,key,cid,fid,speed,2.2,10);
+                CreateProjectile@ task2 = CreateProjectile(m_metagame,sPos,ePos,key,cid,fid,speed,1.5,10);
+                CreateProjectile@ task3 = CreateProjectile(m_metagame,sPos,ePos,key,cid,fid,speed,1.5,10);
+                tasker.add(task1);
+                tasker.add(task2);
+                tasker.add(task3);
+                break;
+            }
+            case 51:{//ex_vergil_skill 维吉尔 次元斩-绝
+                int cid = event.getIntAttribute("character_id");
+                int pid = g_playerInfoBuck.getPidByCid(cid);
+                if(pid == -1){
+                    const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                    if(character is null){return;}
+                    pid = character.getIntAttribute("player_id");
+                    notify(m_metagame, "未能获取到你的PID，已通过其他方法获取。请汇报此情况", dictionary(), "misc", pid, false, "", 1.0);
+                }
+                //先过主手武器检测
+                string equipKey_main = getPlayerEquipmentKey(m_metagame,cid,0);//主武器
+                string targetKey = "ex_vergil_";
+                string targetKey2 = "re_ex_vergil_";
+                if(!startsWith(equipKey_main,targetKey) && !startsWith(equipKey_main,targetKey2)){
+                    setWoundCharacter(m_metagame,cid);
+                    notify(m_metagame, "你的主武器未为对应武器", dictionary(), "misc", pid, true, "倒地惩罚", 1.0);
+                    return;
+                }
+
+                int fid = 0;
+                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+                Vector3 sPos = ePos.add(Vector3(0,5,0));
+                string key1 = "ex_vergil_skill_damage.projectile";
+                string key2 = "ex_vergil_skill_damage_end.projectile";
+                float speed = 1;
+                float delaytime = 0.15;
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                CreateProjectile@ task1 = CreateProjectile(m_metagame,sPos,ePos,key1,cid,fid,speed,0,10,delaytime);
+                CreateProjectile@ task2 = CreateProjectile(m_metagame,sPos,ePos,key2,cid,fid,speed,0,1);
+                tasker.add(task1);
+                tasker.add(task2);
+                break;
+            }
             case 56: { //acg_starwars_shipgirls_skill 舰队支援
                 int characterId = event.getIntAttribute("character_id");
 				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
@@ -1472,6 +1515,35 @@ class projectile_event : Tracker {
                 }
                 break;
             }
+            case 62:{//acg_elaina_wand_skill 伊蕾娜 skill
+                int cid = event.getIntAttribute("character_id");
+                int pid = g_playerInfoBuck.getPidByCid(cid);
+                if(pid == -1){
+                    const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                    if(character is null){return;}
+                    pid = character.getIntAttribute("player_id");
+                    notify(m_metagame, "未能获取到你的PID，已通过其他方法获取。请汇报此情况", dictionary(), "misc", pid, false, "", 1.0);
+                }
+                //先过主手武器检测
+                string equipKey_main = getPlayerEquipmentKey(m_metagame,cid,0);//主武器
+                string targetKey = "acg_elaina_wand";
+                string targetKey2 = "re_acg_elaina_wand";
+                if(!startsWith(equipKey_main,targetKey) && !startsWith(equipKey_main,targetKey2)){
+                    setWoundCharacter(m_metagame,cid);
+                    notify(m_metagame, "你的主武器未为对应武器", dictionary(), "misc", pid, true, "倒地惩罚", 1.0);
+                    return;
+                }
+
+                int fid = 0;
+                Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
+                Vector3 sPos = ePos.add(Vector3(0,5,0));
+                string key1 = "acg_elaina_wand_skill_spawn.projectile";
+                float speed = 1;
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                CreateProjectile@ task1 = CreateProjectile(m_metagame,sPos,ePos,key1,cid,fid,speed,0,1,0);
+                tasker.add(task1);
+                break;
+            }
             case 64:{//acg_yileina_wand_rain 伊蕾娜 星雨
                 int m_cid = event.getIntAttribute("character_id");
                 int pid = g_playerInfoBuck.getPidByCid(m_cid);
@@ -1569,7 +1641,96 @@ class projectile_event : Tracker {
                 float height = 0.1;
                 CreateProjectile_H(m_metagame,ePos,aimPosition,key1,m_cid,m_fid,speed,height);
                 break;
-            }              
+            }     
+            case 79:{//acg_sabayon_artillery_skill 无色辉火
+                int cid = event.getIntAttribute("character_id");
+                int pid = g_playerInfoBuck.getPidByCid(cid);
+                if(pid == -1){
+                    const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                    if(character is null){return;}
+                    pid = character.getIntAttribute("player_id");
+                    notify(m_metagame, "未能获取到你的PID，已通过其他方法获取。请汇报此情况", dictionary(), "misc", pid, false, "", 1.0);
+                }
+                //先过主手武器检测
+                string equipKey_main = getPlayerEquipmentKey(m_metagame,cid,0);//主武器
+                string targetKey = "acg_sabayon_";
+                string targetKey2 = "re_acg_sabayon_";
+                if(!startsWith(equipKey_main,targetKey) && !startsWith(equipKey_main,targetKey2)){
+                    setWoundCharacter(m_metagame,cid);
+                    notify(m_metagame, "你的主武器未为对应武器", dictionary(), "misc", pid, true, "倒地惩罚", 1.0);
+                    return;
+                }
+                
+                const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                if(character is null){return;}
+                const XmlElement@ player = getPlayerInfo(m_metagame, pid);
+                if (player is null) {return;}
+                Vector3 ePos = stringToVector3(player.getStringAttribute("aim_target"));
+                int fid = 0;
+                Vector3 sPos = stringToVector3(character.getStringAttribute("position"));
+                Vector3 aim_unit_vector = getAimUnitVector(1,sPos,ePos);
+                ePos = ePos.add(aim_unit_vector.scale(160));
+                array<string> sound_files = {
+                    "acg_sabayon_voice_clip_01.wav",
+                    "acg_sabayon_voice_clip_02.wav",
+                    "acg_sabayon_voice_clip_03.wav",
+                    "acg_sabayon_voice_clip_04.wav",
+                    "acg_sabayon_voice_clip_05.wav", // charge
+                    "acg_sabayon_voice_clip_06.wav", // long
+                    "acg_sabayon_voice_clip_07.wav", // long
+                    "acg_sabayon_voice_clip_08.wav", // fight
+                    "acg_sabayon_voice_clip_09.wav", // long
+                    "acg_sabayon_voice_clip_10.wav", // long
+                    "acg_sabayon_voice_clip_11.wav", // long
+                    "acg_sabayon_voice_clip_12.wav", // fight
+                    "acg_sabayon_voice_clip_13.wav" // long
+                };
+                playRandomSoundArray(m_metagame,sound_files,0,sPos,2);
+
+                string key = "acg_sabayon_artillery_skill_damage.projectile";
+                float speed = 100;
+                float delaytime = 0.2;
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                CreateProjectile@ task1 = CreateProjectile(m_metagame,sPos,ePos,key,cid,fid,speed,0.7,18);
+                CreateProjectile@ task2 = CreateProjectile(m_metagame,sPos,ePos,key,cid,fid,speed,0.75,18);
+                CreateProjectile@ task3 = CreateProjectile(m_metagame,sPos,ePos,key,cid,fid,speed,0.75,18);
+                tasker.add(task1);
+                tasker.add(task2);
+                tasker.add(task3);
+                healCharacter(m_metagame,cid,25);
+                break;
+            }   
+            case 82:{//ex_exo_telemon_missile_damage 特拉蒙导弹
+                _debugReport(m_metagame,"导弹打击开始");
+                int characterId = event.getIntAttribute("character_id");
+				const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
+                if (character is null) {break;}
+                if (characterId == -1) {
+                    _log("characterId = -1,null occur");
+                    break;
+                }
+                int playerId = g_playerInfoBuck.getPidByCid(characterId);
+                const XmlElement@ player = getPlayerInfo(m_metagame, playerId);
+                if (player is null) {break;}
+                Vector3 aimPosition = stringToVector3(player.getStringAttribute("aim_target"));
+
+                Vector3 pos1 = aimPosition;
+                Vector3 pos2 = stringToVector3(character.getStringAttribute("position"));
+                int factionid = character.getIntAttribute("faction_id");
+
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                if(tasker is null){break;}
+
+                string key1 = "hd_effect_radar_scan.projectile";
+                CreateProjectile@ task0 = CreateProjectile(m_metagame,pos1,pos1,key1,characterId,factionid,1,0,1); // speed delay num
+                tasker.add(task0);
+
+                key1 = "ex_exo_telemon_missile_damage.projectile";
+                @task0 = CreateProjectile(m_metagame,pos1.add(Vector3(0,50,0)),pos1.add(Vector3(0,0,0)),key1,characterId,factionid,100,0,1,0,false); // speed delay num in_delay vertival
+                tasker.add(task0);
+
+                break;
+            } 
             default:
                 break;     
         }
@@ -1683,7 +1844,7 @@ class projectile_event : Tracker {
             string equipKey;
             if(equipList.get("0",equipKey)){//主武器
                 if(skill_CD.exists(equipKey)){
-                    if(!p_cd_lists.exists(name,equipKey) ){
+                    if(!p_cd_lists.exists(name,equipKey) || g_fullcd){
                         float cd = 300;
                         skill_CD.get(equipKey,cd);
                         p_cd_lists.addNew(name,pid,equipKey,cd);
@@ -1703,34 +1864,89 @@ class projectile_event : Tracker {
 		string equipKey;
         if(equipList.get("0",equipKey)){//主武器
         _log("now equipKey="+equipKey);
-			string targetKey = "acg_rumi";
-            string targetKey2 = "re_acg_rumi";
+            //-----------------------------------------------------------------------------------------------
+			string targetKey = "acg_sabayon_gun.weapon";
+            string targetKey2 = "re_acg_sabayon_gun.weapon";
             if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
                 _notify(m_metagame,pid,"Skill Releasing");
 
-                editPlayerVest(m_metagame,cid,"helldivers_vest_barrier",4);//替换为60层技能甲
                 const XmlElement@ character = getCharacterInfo(m_metagame,cid);
                 if(character is null){return;}
                 Vector3 ePos = stringToVector3(character.getStringAttribute("position"));
                 string m_key = "ba_effect_yuuka_skill.projectile";
                 CreateDirectProjectile(m_metagame,ePos,ePos,m_key,cid,0,100);
+                
+                array<string> sound_files = {
+                    "acg_sabayon_voice_clip_01.wav",
+                    "acg_sabayon_voice_clip_02.wav",
+                    "acg_sabayon_voice_clip_03.wav",
+                    "acg_sabayon_voice_clip_04.wav",
+                    "acg_sabayon_voice_clip_05.wav", // charge
+                    "acg_sabayon_voice_clip_06.wav", // long
+                    "acg_sabayon_voice_clip_07.wav", // long
+                    "acg_sabayon_voice_clip_08.wav", // fight
+                    "acg_sabayon_voice_clip_09.wav", // long
+                    "acg_sabayon_voice_clip_10.wav", // long
+                    "acg_sabayon_voice_clip_11.wav", // long
+                    "acg_sabayon_voice_clip_12.wav", // fight
+                    "acg_sabayon_voice_clip_13.wav" // long
+                };
+                playRandomSoundArray(m_metagame,sound_files,0,ePos,2);
 
-                // array<string> soundList = {"acg_hayase_yuuka_skill_01.wav","acg_hayase_yuuka_skill_02.wav","acg_hayase_yuuka_skill_03.wav"};
-                // playRandomSoundArray(m_metagame,soundList,0,ePos,2.0);
-
-                string equipKey_vest = "";
-                if(equipList.get("4",equipKey_vest)){//护甲
-                    if(equipKey_vest == "helldivers_vest_barrier"){
-                        equipKey_vest = "helldivers_vest";
-                    }
-                }else{
-                    equipKey_vest = "helldivers_vest";
-                }
-
-                editPlayerVestDelay@ new_task = editPlayerVestDelay(m_metagame,cid,pid,equipKey_vest,12);
+                int fid = 0;
+                Vector3 sPos = ePos.add(Vector3(0,5,0));
+                string key1 = "acg_sabayon_dead_spawn.projectile";
+                float speed = 1;
                 TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
-                tasker.add(new_task);
+                CreateProjectile@ task1 = CreateProjectile(m_metagame,sPos,ePos,key1,cid,fid,100,0,1,0);
+                CreateProjectile@ task2 = CreateProjectile(m_metagame,sPos,ePos,key1,cid,fid,100,1,1,0);
+                CreateProjectile@ task3 = CreateProjectile(m_metagame,sPos,ePos,key1,cid,fid,100,1,1,0);
+                tasker.add(task1);
+                tasker.add(task2);
+                tasker.add(task3);
+                healCharacter(m_metagame,cid,25);
+                return;
 			}
+
 		}
 	}
+    protected void handleCharacterKillEvent(const XmlElement@ event) {
+		const XmlElement@ killer = event.getFirstElementByTagName("killer");
+		if(killer is null){return;}
+		const XmlElement@ target = event.getFirstElementByTagName("target");
+		if(target is null){return;}
+		int k_pid = killer.getIntAttribute("player_id");
+		int t_pid = target.getIntAttribute("player_id");
+		if(k_pid == -1 && t_pid == -1){return;}//AI之间击杀，返回
+		string weaponKey = event.getStringAttribute("key");//击杀武器关键字
+		string method_hint = event.getStringAttribute("method_hint");//击杀方式
+		string soldier_group_name = target.getStringAttribute("soldier_group_name");//击杀兵种
+		int target_fid = target.getIntAttribute("faction_id");
+		int killer_xp = killer.getIntAttribute("xp");
+		int killer_cid = killer.getIntAttribute("id");
+		int killer_fid = killer.getIntAttribute("faction_id");
+		if(g_playerInfoBuck is null){return;}
+		if(g_battleInfoBuck is null){return;}
+		string k_name = g_playerInfoBuck.getNameByCid(killer_cid);
+		string t_name = g_playerInfoBuck.getNameByPid(t_pid);
+		_log("execute kill_reward");
+		if (killer !is null && target !is null && killer_fid != target_fid) {//普通击杀
+            //------------------击杀减少CD记录-------------------------------------
+			string value;
+			if(kill_cd_target.exists(weaponKey)){
+				kill_cd_target.get(weaponKey,value);
+                int addCds = 0;
+				if(kill_cd_num.exists(weaponKey)){
+                    kill_cd_num.get(weaponKey,addCds);
+				}else{
+                    addCds = 1;
+                }
+                _log("killweaponKey="+weaponKey+" addCds="+addCds+" skillKey="+value);
+                if(p_cd_lists.exists(k_name,value) ){
+                    p_cd_lists.update(addCds,m_metagame,k_name,value);
+                    _log("addCds success");
+                }
+			}
+        }
+    }
 }

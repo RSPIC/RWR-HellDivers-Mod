@@ -88,7 +88,7 @@ particle_system ba_crusader_muzzle_light
 }
 particle_system ba_crusader_muzzle_spark
 {
-	quota 300
+	quota 200
 	material point_soft_edge_100_cull
 	particle_width 0.2
 	particle_height 2
@@ -125,7 +125,7 @@ particle_system ba_crusader_muzzle_spark
 }
 particle_system ba_crusader_result_spark
 {
-	quota 300
+	quota 200
 	material point_soft_edge_100_cull
 	particle_width 0.5
 	particle_height 3
@@ -378,7 +378,7 @@ particle_system ba_crusader_result_ground_ring_light
 }
 particle_system ba_crusader_result_impact
 {
-	quota 250
+	quota 150
 	material Particle_Dissolve_Cloud_01
 	particle_width 4.5
 	particle_height 4.5
@@ -453,7 +453,7 @@ particle_system ba_crusader_result_impact_light : ba_crusader_result_impact
 }
 particle_system ba_crusader_result_impact_leave
 {
-	quota 200
+	quota 50
 	material Tex_0147_1_pass
 	particle_width 10
 	particle_height 10

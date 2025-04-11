@@ -1,0 +1,145 @@
+author: RST
+2025.1.1
+未经授权不可复用、修改使用、仅用于helldiver mod
+
+particle_system telemon_muzzle_blue_fire
+{
+	quota 500
+	material add_smoke_1
+	particle_width 1.2
+	particle_height 1.2
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 20
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.75
+		duration 0
+	}
+	affector Scaler
+	{
+		rate 1.5
+	}
+		affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	90
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 0.1 0.8 1 1
+		time1 0.3
+		colour1 0 0.3 1 1
+		time2 0.4
+		colour2 0 0.1 1 1
+		time3 1
+		colour3 0 0 0 0
+	}
+    affector LinearForce{
+		force_vector 0 4 0
+		force_application add
+	}
+}
+
+particle_system telemon_muzzle_blue_fire_smoke {
+	quota	500
+	material FlameSmoke
+	particle_width	0.6
+	particle_height	0.6
+	cull_each	false
+	renderer	billboard
+	billboard_type	point
+
+	emitter Point {
+		angle	20
+		//colour	1 1 1 0.4
+		colour_range_start	1 1 0 0.1
+		colour_range_end	1 1 0 1
+		direction	0 1 0
+		emission_rate	35
+		position	0 -1 0
+		//velocity	3.0
+		velocity_min	1.0
+		velocity_max	3.0
+		time_to_live	1.0
+		time_to_live_min	0.7
+		time_to_live_max	0.7
+		duration	1.3
+	}
+
+	affector Scaler {
+		rate	3.0
+	}
+
+	affector Rotator {
+		rotation_speed_range_start	-45
+		rotation_speed_range_end	45
+		rotation_range_start	0
+		rotation_range_end	360
+	}
+
+	affector LinearForce {
+		force_vector 0 2 0
+		force_application add
+	}
+
+	affector ColourInterpolator {
+		colour0	0 0.5 1 0.0
+		time0	0.1
+		colour1	0 0.3 1 0.1
+		time1	0.3
+		colour2	0 0 0 0.2
+		time2	0.5
+		colour3	0.3 0.3 0.3 0.1
+		time3	0.8
+	}
+}
+
+particle_system telemon_missile_trail_light
+{
+	quota 100
+	material explosion_smoke_04_bw
+	particle_width 3.5
+	particle_height 3.5
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Point
+	{
+		angle 0
+		colour 1 0.4 0.0 1
+		direction 0 1 0
+		emission_rate 50
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 0.07
+		duration 0
+	}
+
+	affector Rotator
+	{
+		rotation_speed_range_start	0
+		rotation_speed_range_end	0
+		rotation_range_start	0
+		rotation_range_end	180
+	}
+}

@@ -1,135 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <weapons> 
 <weapon 
-drop_count_factor_on_death="0.3" 
-drop_count_factor_on_player_death="0"
-time_to_live_out_in_the_open="600"
-player_death_drop_owner_lock_time="30"
-key="ex_piano_uzuki.weapon" 
-on_ground_up="1 0 0" 
-radius="0.3"
->
-
-    <specification 
-    accuracy_factor="1" 
-	spread_range="0.1"
-    magazine_size="1" 
-    can_shoot_standing="0" 
-    can_shoot_crouching="1" 
-    carry_in_two_hands="1" 
-    name="Piano[Uzuki ver]" 
-    class="5" 
-    spawn_instance_class="vehicle" 
-    spawn_instance_key="ex_piano_uzuki.vehicle" 
-    consume="1" 
-    sight_range_modifier="1" 
-    slot="1" 
-    deployment="1"
-    />
-
-    <animation state_key="running" 		animation_key="walking, carrying load" />
-    <animation state_key="walking" 		animation_key="walking, carrying load" />
-    <animation state_key="hold" 		animation_key="still, carrying load" />
-    <animation state_key="hold_on_wall" 	animation_key="still, carrying load" />
-    <animation state_key="hold_casual" 		animation_key="still, carrying load" />
-    <animation state_key="still_against_wall"	animation_key="still, carrying load" />
-    <animation state_key="recoil" 		animation_key="deploy1" />
-    <animation state_key="crouching" 		animation_key="crouch still, carrying load" />
-    <animation state_key="crouch_moving" 	animation_key="crouching forwards, carrying load" />
-    <animation state_key="changing_weapon_in" 	animation_key="change weapon in, single hand carry" />
-
-    <sound class="impact" fileref="sandbag_drop.wav" />    
-
-    <model mesh_filename="barrier_item.mesh" texture_filename="barrier_item.png" />
-
-    <capacity value="0" source="rank" source_value="0.0" />
-    <capacity value="2" source="rank" source_value="0.0" />
-
-    <hud_icon filename="piano.png" />
-    
-	<!--姿态精度-->
-    <stance state_key="running" accuracy="1" /> 
-    <stance state_key="walking" accuracy="1" />
-	<stance state_key="standing" accuracy="1" />
-	<stance state_key="crouching" accuracy="1" />
-    <stance state_key="crouch_moving" accuracy="1" />
-    <stance state_key="prone" accuracy="1" /> 
-    <stance state_key="prone_moving" accuracy="1" />
-    <stance state_key="over_wall" accuracy="1" />     
-     
-    <commonness value="0" can_respawn_with="0" in_stock="1" /> 
-    <inventory encumbrance="10" sell_price="0" buy_price="3000.0" />
-    <modifier class="speed" value="-0.5" />    
-</weapon>
-<weapon 
-drop_count_factor_on_death="0.3" 
-drop_count_factor_on_player_death="0"
-time_to_live_out_in_the_open="600"
-player_death_drop_owner_lock_time="30"
-key="ex_piano_yuudachi.weapon" 
-on_ground_up="1 0 0" 
-radius="0.3"
->
-
-    <specification 
-    accuracy_factor="1" 
-	spread_range="0.1"
-    magazine_size="1" 
-    can_shoot_standing="0" 
-    can_shoot_crouching="1" 
-    carry_in_two_hands="1" 
-    name="Piano[Poi ver]" 
-    class="5" 
-    spawn_instance_class="vehicle" 
-    spawn_instance_key="ex_piano_yuudachi.vehicle" 
-    consume="1" 
-    sight_range_modifier="1" 
-    slot="1" 
-    deployment="1"
-    />
-
-    <animation state_key="running" 		animation_key="walking, carrying load" />
-    <animation state_key="walking" 		animation_key="walking, carrying load" />
-    <animation state_key="hold" 		animation_key="still, carrying load" />
-    <animation state_key="hold_on_wall" 	animation_key="still, carrying load" />
-    <animation state_key="hold_casual" 		animation_key="still, carrying load" />
-    <animation state_key="still_against_wall"	animation_key="still, carrying load" />
-    <animation state_key="recoil" 		animation_key="deploy1" />
-    <animation state_key="crouching" 		animation_key="crouch still, carrying load" />
-    <animation state_key="crouch_moving" 	animation_key="crouching forwards, carrying load" />
-    <animation state_key="changing_weapon_in" 	animation_key="change weapon in, single hand carry" />
-
-    <sound class="impact" fileref="sandbag_drop.wav" />    
-
-    <model mesh_filename="barrier_item.mesh" texture_filename="barrier_item.png" />
-
-    <capacity value="0" source="rank" source_value="0.0" />
-    <capacity value="2" source="rank" source_value="0.0" />
-
-    <hud_icon filename="piano.png" />
-    
-	<!--姿态精度-->
-    <stance state_key="running" accuracy="1" /> 
-    <stance state_key="walking" accuracy="1" />
-	<stance state_key="standing" accuracy="1" />
-	<stance state_key="crouching" accuracy="1" />
-    <stance state_key="crouch_moving" accuracy="1" />
-    <stance state_key="prone" accuracy="1" /> 
-    <stance state_key="prone_moving" accuracy="1" />
-    <stance state_key="over_wall" accuracy="1" />     
-     
-    <commonness value="0" can_respawn_with="0" in_stock="1" /> 
-    <inventory encumbrance="10" sell_price="0" buy_price="3000.0" />
-    <modifier class="speed" value="-0.5" />    
-</weapon>
-<weapon 
-drop_count_factor_on_death="0.3" 
-drop_count_factor_on_player_death="0"
+drop_count_factor_on_player_death="1"
 time_to_live_out_in_the_open="600"
 player_death_drop_owner_lock_time="30"
 key="ex_piano_unwelcome_school.weapon" 
-on_ground_up="1 0 0" 
-radius="0.3"
 >
 
     <specification 
@@ -184,13 +59,10 @@ radius="0.3"
     <modifier class="speed" value="-0.5" />    
 </weapon>
 <weapon 
-drop_count_factor_on_death="0.3" 
-drop_count_factor_on_player_death="0"
+drop_count_factor_on_player_death="1"
 time_to_live_out_in_the_open="600"
 player_death_drop_owner_lock_time="30"
-key="ex_piano_cradle_of_eternity.weapon" 
-on_ground_up="1 0 0" 
-radius="0.3"
+key="ex_piano_uzuki.weapon" 
 >
 
     <specification 
@@ -200,10 +72,10 @@ radius="0.3"
     can_shoot_standing="0" 
     can_shoot_crouching="1" 
     carry_in_two_hands="1" 
-    name="Piano[Cradle of Eternity ver]" 
+    name="Piano[Unwelcome School ver]" 
     class="5" 
     spawn_instance_class="vehicle" 
-    spawn_instance_key="ex_piano_cradle_of_eternity.vehicle" 
+    spawn_instance_key="ex_piano_unwelcome_school.vehicle" 
     consume="1" 
     sight_range_modifier="1" 
     slot="1" 
@@ -244,5 +116,120 @@ radius="0.3"
     <inventory encumbrance="10" sell_price="0" buy_price="3000.0" />
     <modifier class="speed" value="-0.5" />    
 </weapon>
+<weapon 
+drop_count_factor_on_player_death="1"
+time_to_live_out_in_the_open="600"
+player_death_drop_owner_lock_time="30"
+key="ex_piano_yuudachi.weapon" 
+>
 
+    <specification 
+    accuracy_factor="1" 
+	spread_range="0.1"
+    magazine_size="1" 
+    can_shoot_standing="0" 
+    can_shoot_crouching="1" 
+    carry_in_two_hands="1" 
+    name="Piano[Unwelcome School ver]" 
+    class="5" 
+    spawn_instance_class="vehicle" 
+    spawn_instance_key="ex_piano_unwelcome_school.vehicle" 
+    consume="1" 
+    sight_range_modifier="1" 
+    slot="1" 
+    deployment="1"
+    />
+
+    <animation state_key="running" 		animation_key="walking, carrying load" />
+    <animation state_key="walking" 		animation_key="walking, carrying load" />
+    <animation state_key="hold" 		animation_key="still, carrying load" />
+    <animation state_key="hold_on_wall" 	animation_key="still, carrying load" />
+    <animation state_key="hold_casual" 		animation_key="still, carrying load" />
+    <animation state_key="still_against_wall"	animation_key="still, carrying load" />
+    <animation state_key="recoil" 		animation_key="deploy1" />
+    <animation state_key="crouching" 		animation_key="crouch still, carrying load" />
+    <animation state_key="crouch_moving" 	animation_key="crouching forwards, carrying load" />
+    <animation state_key="changing_weapon_in" 	animation_key="change weapon in, single hand carry" />
+
+    <sound class="impact" fileref="sandbag_drop.wav" />    
+
+    <model mesh_filename="barrier_item.mesh" texture_filename="barrier_item.png" />
+
+    <capacity value="0" source="rank" source_value="0.0" />
+    <capacity value="2" source="rank" source_value="0.0" />
+
+    <hud_icon filename="piano.png" />
+    
+	<!--姿态精度-->
+    <stance state_key="running" accuracy="1" /> 
+    <stance state_key="walking" accuracy="1" />
+	<stance state_key="standing" accuracy="1" />
+	<stance state_key="crouching" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1" />     
+     
+    <commonness value="0" can_respawn_with="0" in_stock="1" /> 
+    <inventory encumbrance="10" sell_price="0" buy_price="3000.0" />
+    <modifier class="speed" value="-0.5" />    
+</weapon>
+<weapon 
+drop_count_factor_on_player_death="1"
+time_to_live_out_in_the_open="600"
+player_death_drop_owner_lock_time="30"
+key="ex_piano_cradle_of_eternity.weapon" 
+>
+
+    <specification 
+    accuracy_factor="1" 
+	spread_range="0.1"
+    magazine_size="1" 
+    can_shoot_standing="0" 
+    can_shoot_crouching="1" 
+    carry_in_two_hands="1" 
+    name="Piano[Unwelcome School ver]" 
+    class="5" 
+    spawn_instance_class="vehicle" 
+    spawn_instance_key="ex_piano_unwelcome_school.vehicle" 
+    consume="1" 
+    sight_range_modifier="1" 
+    slot="1" 
+    deployment="1"
+    />
+
+    <animation state_key="running" 		animation_key="walking, carrying load" />
+    <animation state_key="walking" 		animation_key="walking, carrying load" />
+    <animation state_key="hold" 		animation_key="still, carrying load" />
+    <animation state_key="hold_on_wall" 	animation_key="still, carrying load" />
+    <animation state_key="hold_casual" 		animation_key="still, carrying load" />
+    <animation state_key="still_against_wall"	animation_key="still, carrying load" />
+    <animation state_key="recoil" 		animation_key="deploy1" />
+    <animation state_key="crouching" 		animation_key="crouch still, carrying load" />
+    <animation state_key="crouch_moving" 	animation_key="crouching forwards, carrying load" />
+    <animation state_key="changing_weapon_in" 	animation_key="change weapon in, single hand carry" />
+
+    <sound class="impact" fileref="sandbag_drop.wav" />    
+
+    <model mesh_filename="barrier_item.mesh" texture_filename="barrier_item.png" />
+
+    <capacity value="0" source="rank" source_value="0.0" />
+    <capacity value="2" source="rank" source_value="0.0" />
+
+    <hud_icon filename="piano.png" />
+    
+	<!--姿态精度-->
+    <stance state_key="running" accuracy="1" /> 
+    <stance state_key="walking" accuracy="1" />
+	<stance state_key="standing" accuracy="1" />
+	<stance state_key="crouching" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1" />     
+     
+    <commonness value="0" can_respawn_with="0" in_stock="1" /> 
+    <inventory encumbrance="10" sell_price="0" buy_price="3000.0" />
+    <modifier class="speed" value="-0.5" />    
+</weapon>
 </weapons>

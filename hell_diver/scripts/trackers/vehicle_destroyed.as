@@ -132,7 +132,7 @@ class vehicle_destroyed : Tracker{
             && !startsWith(vehicle_key,"wood_box") && !startsWith(vehicle_key,"work_table_box") 
             && !startsWith(vehicle_key,"acg_ex_box") && !startsWith(vehicle_key,"icecream") 
             && !startsWith(vehicle_key,"hd_banner") && !startsWith(vehicle_key,"ex_model_fumo_cirno") 
-
+            && !startsWith(vehicle_key,"hd_blackshop") 
             ){
                 remove_vehicle(m_metagame,vehicle_id);
             }

@@ -4,7 +4,7 @@ author: RST
 
 particle_system elaina_wand_trail_leave
 {
-	quota 750
+	quota 250
 	material explosion_smoke_04_bw
 	particle_width 0.55
 	particle_height 0.55
@@ -142,7 +142,7 @@ particle_system elaina_wand_result_magic_circle
 }
 particle_system elaina_wand_cyclone
 {
-	quota 500
+	quota 200
 	material laisha_ring
 	particle_width 0.1
 	particle_height 0.1
@@ -192,7 +192,7 @@ particle_system elaina_wand_cyclone
 }
 particle_system elaina_wand_cyclone_base
 {
-	quota 500
+	quota 200
 	material laisha_ring
 	particle_width 5
 	particle_height 5
@@ -238,7 +238,7 @@ particle_system elaina_wand_cyclone_base
 }
 particle_system elaina_wand_cyclone_terrain
 {
-	quota 500
+	quota 200
 	material add_smoke_2
 	particle_width 0.5
 	particle_height 0.5
@@ -284,7 +284,7 @@ particle_system elaina_wand_cyclone_terrain
 }
 particle_system elaina_wand_cyclone_up_smoke
 {
-	quota 500
+	quota 200
 	material add_smoke_2
 	particle_width 1
 	particle_height 1
@@ -330,8 +330,8 @@ particle_system elaina_wand_cyclone_up_smoke
 }
 particle_system elaina_wand_skill_thunder_guiding
 {
-	quota 500
-	emit_emitter_quota 500
+	quota 200
+	emit_emitter_quota 200
 	material lightning_gun_bolt_7_bw
 	particle_width 8
 	particle_height 60
@@ -388,7 +388,7 @@ particle_system elaina_wand_skill_thunder_guiding
 }
 particle_system elaina_wand_skill_center_light
 {
-	quota 450
+	quota 150
 	material explosion_smoke_04_bw
 	particle_width 4
 	particle_height 4
@@ -430,7 +430,7 @@ particle_system elaina_wand_skill_center_light
 }
 particle_system elaina_wand_skill_anim_lighting
 {
-	quota 450
+	quota 150
 	material lightning_gun_bolt
 	particle_width 4
 	particle_height 1
@@ -536,7 +536,7 @@ particle_system elaina_wand_skill_anim_lighting5 : elaina_wand_skill_anim_lighti
 }
 particle_system elaina_wand_shell_light
 {
-	quota 500
+	quota 150
 	material point_soft_edge_100
 	particle_width 3.0
 	particle_height 3.0

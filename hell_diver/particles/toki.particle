@@ -5,7 +5,7 @@ author: RST
 
 particle_system toki_falling_fire
 {
-	quota 500
+	quota 100
 	material point_soft_edge_100
 	particle_width 1.5
 	particle_height 1.5
@@ -38,7 +38,7 @@ particle_system toki_falling_fire
 }
 particle_system toki_falling_smoke
 {
-	quota 500
+	quota 100
 	material wand_smoke
 	particle_width 8
 	particle_height 8

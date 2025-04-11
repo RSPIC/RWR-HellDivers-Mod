@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<projectile class="grenade" name="" slot="0" pulldown_in_air="1" key="wand_waiting_03.projectile"
-on_ground_up="0 1 0" can_be_detected_by_footmen="0" can_be_disarmed="0" >
+<projectile class="grenade" name="" slot="0" pulldown_in_air="0.001" key="wand_waiting_03.projectile"
+on_ground_up="0 1 0" can_be_detected_by_footmen="0" time_to_live="15" can_be_disarmed="0" >
 	<rotation class="motion" />	
-    <trigger class="time" time_to_live="9.5" />
+    <trigger class="impact" time_to_live="9.5" />
 	<collision class="sticky" />
 	<result class="spawn" instance_class="projectile" instance_key="wand_damage_04.projectile" 
-	min_amount="1" max_amount="1" offset="0 10 0" position_spread="5 0" direction_spread="0 0" />
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
 	<!-- 10x100 轰炸伤 -->
 
 	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
 
-    <effect class="activated" ref="wand_hit_ground_center_light"/>
+    <!-- <effect class="activated" ref="wand_hit_ground_center_light"/>
     <effect class="activated" ref="wand_hit_ground_center_light_up" post_processing="0"/>
     <effect class="activated" ref="wand_hit_ground_radiation" post_processing="0"/>
     <effect class="activated" ref="wand_hit_ground_rainbowewave"/>
@@ -34,8 +34,9 @@ on_ground_up="0 1 0" can_be_detected_by_footmen="0" can_be_disarmed="0" >
     <effect class="activated" ref="wand_hit_ground_magic_circle_06" post_processing="0"/>
     <effect class="activated" ref="wand_hit_ground_magic_circle_07" post_processing="0"/>
     <effect class="activated" ref="wand_hit_ground_magic_circle_08" post_processing="0"/>
-    <effect class="activated" ref="wand_hit_ground_magic_circle_09" post_processing="0"/>
+    <effect class="activated" ref="wand_hit_ground_magic_circle_09" post_processing="0"/> -->
 
+    <effect class="activated" ref="wand_activated_fire_smoke" />   
 
 	<sound class="result" key="other" fileref="wand_after_blast_wind.wav" pitch_variety="0.00" volume="10" />
     <sound class="result" key="terrain" copy="other" />
@@ -50,5 +51,5 @@ on_ground_up="0 1 0" can_be_detected_by_footmen="0" can_be_disarmed="0" >
 	
 
     <model mesh_filename="" />
-	<trail probability="1" key="normal_trail_long"/>
+	<trail probability="1" key=""/>
 </projectile>

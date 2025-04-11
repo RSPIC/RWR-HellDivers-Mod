@@ -4,7 +4,6 @@
 	<!-- 生化人 -->
 	<carry_item file="vest_cyborgs_tesla.carry_item" /><!--磁暴步兵-->
 	<carry_item file="vest_cyborgs_butcher.carry_item" /><!--屠夫 转减速护甲-->
-	<carry_item file="vest_cyborgs_berserker.carry_item" /><!--狂暴者 转减速护甲-->
 	<carry_item file="vest_cyborgs_grotesque.carry_item" /><!--畸形人 转加速护甲-->
 	<!-- 光能 -->
 	<carry_item file="vest_illuminate_council_member.carry_item" /><!--光能 首次抗爆-->
@@ -15,7 +14,6 @@
 
 	<!-- 虫族 -->
 	<carry_item file="vest_bugs_zerg_baneling.carry_item" /><!--虫族 电浆虫护甲-->
-	<carry_item file="vest_bugs_elite.carry_item" /><!--精英部队 转减速护甲-->
 	<carry_item file="vest_bugs_commander.carry_item" /><!--虫族指挥官 转加速护甲-->
 
 	<!-- 超级地球 -->
@@ -26,25 +24,25 @@
 	<carry_item file="helldivers_vest_charge.carry_item" />
 		<!-- 升级护甲 -->
 		<!-- 轻甲 20层 +0.075移速 -->
-	<carry_item file="hd_vest_lgt_ce74.carry_item" /><!--冲击雷轻甲 破裂者-->
-	<carry_item file="hd_vest_lgt_ce07.carry_item" /><!--冲击雷轻甲 拆除专家-->
-	<carry_item file="hd_vest_lgt_sc37.carry_item" /><!--移速轻甲（+0.05） 军团士兵-->
+	<!-- <carry_item file="hd_vest_lgt_ce74.carry_item" />冲击雷轻甲 破裂者 -->
+	<!-- <carry_item file="hd_vest_lgt_ce07.carry_item" />冲击雷轻甲 拆除专家 -->
+	<!-- <carry_item file="hd_vest_lgt_sc37.carry_item" />移速轻甲（+0.05） 军团士兵 -->
 	<carry_item file="hd_vest_lgt_sc30.carry_item" /><!--隐蔽轻甲（-0.2） 开路侦察兵-->
 	<carry_item file="hd_vest_lgt_cm21.carry_item" /><!--治疗针轻甲 战壕护理员-->
 		<!-- 中甲 40层  -->
 	<carry_item file="hd_vest_mid_sa12.carry_item" /><!--移速中甲（+0.05） 伺服辅助-->
 	<carry_item file="hd_vest_mid_ce35.carry_item" /><!--冲击雷中甲 战壕工程师-->
-	<carry_item file="hd_vest_mid_ce27.carry_item" /><!--冲击雷中甲 裂地者-->
-	<carry_item file="hd_vest_mid_cm9.carry_item" /><!--治疗针中甲 碎骨者-->
-	<carry_item file="hd_vest_mid_sa04.carry_item" /><!--隐蔽中甲（-0.3） 技术兵-->
+	<!-- <carry_item file="hd_vest_mid_ce27.carry_item" />冲击雷中甲 裂地者 -->
+	<!-- <carry_item file="hd_vest_mid_cm9.carry_item" />治疗针中甲 碎骨者 -->
+	<!-- <carry_item file="hd_vest_mid_sa04.carry_item" />隐蔽中甲（-0.3） 技术兵 -->
 	<carry_item file="hd_vest_mid_dp11.carry_item" /><!--爆轰倒中甲(末层无法自救) 人民捍卫者-->
 	<carry_item file="hd_vest_mid_dp53.carry_item" /><!--爆轰倒中甲(末层无法自救) 自由救星-->
 	<carry_item file="hd_vest_mid_tr9.carry_item" /><!--爆轰倒中甲(末层无法自救) 民主骑兵-->
 		<!-- 重甲 80层 -0.075移速 无击倒层-->
 	<carry_item file="hd_vest_hvy_sa32.carry_item" /><!--抗致死重甲（-0.5） 精力充沛-->
 	<carry_item file="hd_vest_hvy_tr62.carry_item" /><!--加厚重甲（+40层） 骑士-->
-	<carry_item file="hd_vest_hvy_fs23.carry_item" /><!--抗刺重甲 战斗大师-->
-	<carry_item file="hd_vest_hvy_fs55.carry_item" /><!--抗动能重甲（免晕不免伤） 蹂躏者-->
+	<!-- <carry_item file="hd_vest_hvy_fs23.carry_item" />抗刺重甲 战斗大师 -->
+	<!-- <carry_item file="hd_vest_hvy_fs55.carry_item" />抗动能重甲（免晕不免伤） 蹂躏者 -->
 
 		<!-- 道具 -->
 	<carry_item file="hd_resupply_pack_mk3.carry_item" />
@@ -68,6 +66,9 @@
 	<carry_item file="vest_fast.carry_item" /><!--损伤加速甲-->
 	<carry_item file="vest_slow.carry_item" /><!--损伤减速甲-->
 	<carry_item file="helldivers_vest_barrier.carry_item" /><!--通用技能甲-->
+	<!-- <carry_item file="hd_vest_mid_skill_laststun.carry_item" />通用技能甲 -->
+	<carry_item file="ex_skill_vest.carry_item" /><!--特殊技能甲-->
+	<carry_item file="ex_undead_vest.carry_item" /><!--特殊技能甲-->
 
 
 	<!-- 战利品-收藏-MC -->

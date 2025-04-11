@@ -150,8 +150,8 @@ particle_system 401_vabow_muzzle_ring
 }
 particle_system 401_vabow_random_spot_01 //右后方
 {
-	quota 300
-	emit_emitter_quota 300
+	quota 200
+	emit_emitter_quota 200
 	material point_hard_edge_pass
 	particle_width 0.05
 	particle_height 0.6

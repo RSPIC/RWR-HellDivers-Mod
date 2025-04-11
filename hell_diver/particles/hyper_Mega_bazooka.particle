@@ -623,8 +623,8 @@ particle_system hyper_mega_muzzle_skill_later_pre_line_center_3 : hyper_mega_muz
 
 particle_system hyper_mega_muzzle_skill_later_spark
 {
-	quota 800
-    emit_emitter_quota 800
+	quota 200
+    emit_emitter_quota 200
 	material point_soft_edge_100
 	particle_width 1
 	particle_height 1
@@ -814,6 +814,25 @@ material Particle_Trail_36_anim_mega : add_base
         }
         texture_unit{
             texture laser_mask.png 
+			colour_op modulate
+			scroll_anim 0 0
+			tex_address_mode wrap
+	    }
+}}}
+material Particle_Trail_36_anim_alpha : alpha_blend_base
+{   
+    technique{
+    pass{
+        depth_func always_pass
+        cull_hardware none
+        texture_unit{
+            texture Particle_Trail_36_alpha.png 	
+            scroll_anim 0 -1.5
+            tex_address_mode wrap
+            tex_border_colour 0 0 0 0
+        }
+        texture_unit{
+            texture laser_alpha_mask.png 
 			colour_op modulate
 			scroll_anim 0 0
 			tex_address_mode wrap

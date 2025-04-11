@@ -282,6 +282,16 @@ class Stage {
 
 	// --------------------------------------------
 	protected void appendCamera(XmlElement@ scene) const {
+		if(m_userSettings.m_top_down){
+			XmlElement camera("camera");
+			camera.setStringAttribute("direction", "0 -1 0.01");
+			camera.setFloatAttribute("distance", 25.0);
+			camera.setFloatAttribute("far_clip", 60.0);
+			camera.setFloatAttribute("shadow_far_clip", 50.0);
+			camera.setFloatAttribute("fov", 0.8);
+			scene.appendChild(camera);
+			return;
+		}
 		XmlElement camera("camera");
 		camera.setStringAttribute("direction", "-0.2 -1 0.4");
 		camera.setFloatAttribute("distance", 40.0);

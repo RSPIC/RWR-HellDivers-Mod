@@ -1084,6 +1084,11 @@
 	<text key="Asashio [Skin]"  text="朝潮 [信物]" />
 	<text key="Plana [Skin]"  text="普拉纳 [信物]" />
 	<text key="Mizuha Mimori [Skin]"  text="水羽三森 [信物]" />
+	<!-- 1.9.5 -->
+	<text key="Tatara Kogasa [Skin]"  text="多多良小伞 [信物]" />
+	<text key="Zelda [Skin]"  text="赛尔达 [信物]" />
+	<text key="Ninym Ralei [Skin]"  text="妮妮姆 拉蕾 [信物]" />
+	<text key="Remilia Scarlet [Skin]"  text="蕾米莉亚 [信物]" />
 
 
 <!-- ex武器 -->
@@ -1496,7 +1501,7 @@
 	<text key="Star Marshal" text="星球元帅 V95" />
 	<text key="Admiral " text="舰队司令 V100" />
 	<text key="Skull Admiral" text="骷髅上将 V105" />
-	<text key="Fleet Admiral" text="五星上将 V110" />
+	<text key="Fleet Admiral " text="五星上将 V110" />
 	<text key="Admirable Admiral" text="无畏上将 V115" />
 	<text key="Commander " text="指挥官 V120" />
 	<text key="Galactic Commander" text="银河指挥官 V125" />
@@ -1632,8 +1637,11 @@ TK其他玩家同样会造成倍率因子的下降" />
 	<text key="Help - Sakuya" text="使用该武器击杀75人后，可以输入/s或者使用副手来释放大招" />
 	<text key="Sakuya Help" text="[十六夜咲夜 特殊武器介绍]" />
 	
-	<text key="Help - Yuuka" text="使用该武器击杀25人后，可以输入/s释放技能" />
+	<text key="Help - Yuuka" text="使用该武器击杀20人后，可以输入/s释放技能" />
 	<text key="Yuuka Help" text="[优香 特殊武器介绍]" />
+
+	<text key="Help - Sabayon" text="使用该武器一模式击杀20自动释放技能，输入/s释放大招(CD 180s)。二模式击杀45人，可以输入/s释放技能。累计击杀75人可以使用/s释放副手主动技能。武器自带护甲，不可自恢复，可靠技能回复部分血量" />
+	<text key="Sabayon Help" text="[辉火 特殊武器介绍]" />
 
 	<text key="Stratagems Call" text="[教程]战略呼叫机制" />
 	<text key="Stratagems Useable" text="[Tips]常用呼叫指令,输入/call可再次查看本页。输入/call 1~4 查看不同类型支援代码" />
@@ -1709,7 +1717,7 @@ TK其他玩家同样会造成倍率因子的下降" />
 "/>
 	<text key="Activity Help" text="[活动服须知]]" />
     <text key="Help - Activity" text="#当前服务器：活动服务器
-！！本服务器每2小时自动结算并换图！！
+！！本服务器每1小时自动结算并换图！！
 ！！严禁TK玩家，违者严惩！！
 赛车自带仓库/军械库/冰淇淋车，摧毁后会自动复活
 "/>
@@ -1732,7 +1740,7 @@ TK其他玩家同样会造成倍率因子的下降" />
 	<text key="Reward Box [Weapon λ]" text="奖励箱子 [武器 Lamda]" />
 	<text key="Reward Box [Weapon μ]" text="奖励箱子 [武器 Miu]" />
 	<text key="Reward Box [Weapon π]" text="奖励箱子 [武器 Pi]" />
-	<text key="Reward Box [Weapon φ]" text="奖励箱子 [武器 Phi]" />
+	<text key="Reward Box [Weapon φ]" text="道具箱子 [食物]" />
 	<text key="Reward Box [Weapon Ω]" text="奖励箱子 [武器 Omega]" />
 <!-- 结算 -->
 	<text key="Battle End Reward XP" text="战役结算-经验奖励" />
@@ -2002,6 +2010,8 @@ TK其他玩家同样会造成倍率因子的下降" />
 &#37;value7
 &#37;value8
 &#37;value9
+&#37;valuea1
+&#37;valuea2
 " />
  <!-- 管理 -->
 <text key="Admin Kick Player Guide" text="踢出玩家使用/kick id
@@ -2051,6 +2061,8 @@ TK其他玩家同样会造成倍率因子的下降" />
 <text key="Q.E.D Skill Releasing" text="Q.E.D 护盾技能已启用" />
 <text key="Skill end, vest return to old one" text="技能持续时间结束，护甲已还原最初状态" />
 
+<text key="Deleted Items" text="被删除的物品" />
+<text key="Special item can't be pull out" text="特殊物品无法取出" />
 
 </translation>
 

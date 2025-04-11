@@ -1197,7 +1197,7 @@ particle_system wand_activated_fire_smoke
 		position 0 0 0
 		velocity 0.001
 		time_to_live 0.15
-		duration 5
+		duration 0
 	}
 	affector Rotator{
 		rotation_speed_range_start	-180

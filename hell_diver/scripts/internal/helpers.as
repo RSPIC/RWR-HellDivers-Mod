@@ -3,6 +3,10 @@
 
 // --------------------------------------------
 class XmlElement {
+	
+	// --------------------------------------------
+	protected dictionary m_data;
+	
 	// --------------------------------------------
 	XmlElement(dictionary data) {
 		// COPY
@@ -341,8 +345,6 @@ class XmlElement {
 		return toString() == other.toString();
 	}
 
-	// --------------------------------------------
-	protected dictionary m_data;
 }
 
 // --------------------------------------------

@@ -458,7 +458,7 @@ particle_system p6_gunslinger_hit_leave
 }
 particle_system p6_gunslinger_hit_spark
 {
-	quota 600
+	quota 100
 	material point_soft_edge_100
 	particle_width 0.3
 	particle_height 0.3

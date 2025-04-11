@@ -50,7 +50,7 @@ void main(dictionary@ inputData) {
                 server_port='1242'
                 url='https://steamcommunity.com/sharedfiles/filedetails/?id=2910392031'
                 register_in_serverlist='0'
-                mode='HD'
+                mode='HD Vanilla'
                 persistency='forever'
                 comment='地狱潜兵模组  QQ：498520233 '
                 max_players='20'>
@@ -62,9 +62,9 @@ void main(dictionary@ inputData) {
 
         GameModeInvasion metagame(settings);
 
-        metagame.init();
-        metagame.run();
-        metagame.uninit();
+	metagame.init();
+	metagame.run();
+	metagame.uninit();
 
         _log("ending execution");
 }

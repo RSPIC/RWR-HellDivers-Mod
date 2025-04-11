@@ -4,7 +4,7 @@ author: RST
 
 particle_system general_weapon_muzzle_crossfire
 {
-	quota 200
+	quota 150
 	material general_muzzle_01
 	particle_width 4.5
 	particle_height 4.5
@@ -43,7 +43,7 @@ particle_system general_weapon_muzzle_crossfire
 }
 particle_system general_weapon_muzzle_crossfire_base
 {
-	quota 200
+	quota 100
 	material general_muzzle_01
 	particle_width 4.5
 	particle_height 4.5
@@ -176,7 +176,7 @@ particle_system general_weapon_muzzle_crossfire_smoke_sg : general_weapon_muzzle
 
 particle_system general_weapon_result_hitspot
 {
-	quota 500
+	quota 100
 	material point_soft_edge_alpha
 	particle_width 0.25
 	particle_height 0.25
@@ -215,7 +215,7 @@ particle_system general_weapon_result_hitspot
 }
 particle_system general_weapon_result_cartoon_spark
 {
-	quota 200
+	quota 100
 	material explosion_smoke_04
 	particle_width 0.25
 	particle_height 0.25
@@ -250,7 +250,7 @@ particle_system general_weapon_result_cartoon_spark
 }
 particle_system general_weapon_result_laser_burn
 {
-	quota 200
+	quota 120
 	material point_soft_edge_alpha
 	particle_width 0.32
 	particle_height 0.32
@@ -289,7 +289,7 @@ particle_system general_weapon_result_laser_burn
 }
 particle_system general_weapon_result_laser_burn_big : general_weapon_result_laser_burn
 {
-	quota 200
+	quota 120
 	particle_width 0.6
 	particle_height 0.6
 }
@@ -553,7 +553,7 @@ particle_system general_weapon_muzzle_laser_release_pressure
 
 particle_system general_weapon_result_light
 {
-	quota 300
+	quota 100
 	material point_soft_edge_100_pass
 	particle_width 9
 	particle_height 9
@@ -592,7 +592,7 @@ particle_system general_weapon_result_light
 
 particle_system general_weapon_result_smoke
 {
-	quota 300
+	quota 100
 	material disaster_smoke
 	particle_width 1.0
 	particle_height 1.0
@@ -651,7 +651,7 @@ particle_system general_weapon_result_smoke
 }
 particle_system general_weapon_result_smoke_shorttime
 {
-	quota 300
+	quota 100
 	material disaster_smoke_pass
 	particle_width 2.0
 	particle_height 2.0
@@ -1176,7 +1176,7 @@ particle_system general_weapon_result_gl_firesmoke_02 : general_weapon_result_gl
 }
 particle_system general_weapon_result_gl_firesmoke_03 : general_weapon_result_gl_firesmoke_01
 {
-	quota 200
+	quota 120
 	material at_mine_smoke
 	particle_width 7
 	particle_height 7
@@ -1350,7 +1350,7 @@ particle_system general_weapon_result_gl_spray
 
 particle_system general_weapon_activated_flying_mars		//冲锋枪用
 {
-	quota 300
+	quota 100
 	material point_soft_edge_100
 	particle_width 0.3
 	particle_height 0.3
@@ -1411,7 +1411,7 @@ particle_system general_weapon_activated_flying_mars		//冲锋枪用
 }
 particle_system general_weapon_activated_flying_mars_lightblue		//冲锋枪用
 {
-	quota 300
+	quota 100
 	material point_soft_edge_100
 	particle_width 0.3
 	particle_height 0.3
@@ -1473,7 +1473,7 @@ particle_system general_weapon_activated_flying_mars_lightblue		//冲锋枪用
 
 particle_system general_weapon_activated_rotating_circle		//冲锋枪用
 {
-	quota 300
+	quota 100
 	material laser_overheat
 	particle_width 2
 	particle_height 2
@@ -1533,7 +1533,7 @@ particle_system general_weapon_activated_rotating_circle		//冲锋枪用
 }
 particle_system general_weapon_activated_tri_point	//冲锋枪用
 {
-	quota 300
+	quota 100
 	material top_center_point_3_normal
 	particle_width 0.8
 	particle_height 0.8
@@ -1593,7 +1593,7 @@ particle_system general_weapon_activated_tri_point	//冲锋枪用
 }
 particle_system general_weapon_activated_shrink_triangle		//冲锋枪用
 {
-	quota 300
+	quota 100
 	material sank_circle_02
 	particle_width 2
 	particle_height 2
@@ -1653,7 +1653,7 @@ particle_system general_weapon_activated_shrink_triangle		//冲锋枪用
 }
 particle_system general_weapon_activated_ring_cyclone		//冲锋枪用
 {
-	quota 300
+	quota 100
 	material ring_cyclone_02
 	particle_width 2
 	particle_height 2
@@ -1790,7 +1790,7 @@ particle_system general_weapon_result_blast_smoke_expanding				//GL 项目
 }
 particle_system general_weapon_result_blast_smoke
 {
-	quota 400
+	quota 200
 	emit_emitter_quota 50
 	material wand_smoke
 	particle_width 6
@@ -1928,7 +1928,7 @@ material lens_circle_07
 
 particle_system general_weapon_result_blast_spray_1
 {
-	quota 200
+	quota 100
 	material point_hard_edge
 	particle_width 0.25
 	particle_height 1.5
@@ -2131,7 +2131,7 @@ particle_system general_weapon_result_blast_fire_wave
 
 particle_system general_activated_at_smoke_trail
 {
-	quota 500
+	quota 200
 	material rx1_smoke
 	particle_width 3
 	particle_height 3
@@ -2646,7 +2646,7 @@ particle_system general_hit_character_cross_1		//放大
 
 particle_system hd_vehicle_weapon_laser
 {
-	quota 300
+	quota 50
 	material linear_laser
 	particle_width 0.4
 	particle_height 200
@@ -2940,7 +2940,7 @@ particle_system general_item_drop_mark
 
 particle_system general_muzzle_lava
 {
-	quota 400
+	quota 75
 	material lava_anim
 	particle_width 1
 	particle_height 1

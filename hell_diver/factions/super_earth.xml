@@ -194,7 +194,7 @@
 	<rank xp="6000.000" name="Skull Admiral">
 		<hud_icon filename="hd2_rank_12.png" />    
 	</rank>
-	<rank xp="6500.000" name="Fleet Admiral">
+	<rank xp="6500.000" name="Fleet Admiral ">
 		<hud_icon filename="hd2_rank_13.png" />    
 	</rank>
 	<rank xp="7000.000" name="Admirable Admiral">
@@ -466,6 +466,13 @@
 			<attribute weight="1.0" min="0.0" max="0.05" />
 		</attribute_config>
 	</soldier> 
+	<!-- 黑市 -->
+	<soldier name="hd_blackshop" spawn_score="0.0">
+		<resources file="hd_blackshop.resources" />
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="0.0" max="0.05" />
+		</attribute_config>
+	</soldier> 
 	<!-- 比赛箱子 -->
 	<soldier name="racing_box" spawn_score="0.0">
 		<resources file="racing_box.resources" />
@@ -655,6 +662,46 @@
 		</attribute_config>
 
 		<attribute_config class="xp"><attribute weight="500.0" min="1" max="1" />
+		</attribute_config>
+	</soldier> 
+	<soldier name="hd_cqc30_ai" spawn_score="0.0" >
+		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
+		<resources >
+			<weapon key="hd_side_cqc_30_stun_baton_ai.weapon" />
+			<carry_item key="general_vest_300" /><!--300层护甲-->
+		</resources>
+		<model filename="hdivers_cqc_30.xml" />
+		<models file="extra_weapons.models" />
+		<character filename="helldivers_default_chat.character" >
+			<parameter class="skydiving_gravity" value="-10.0" />
+			<parameter class="chute_y_offset" value="3" />   
+		</character>
+		<ai filename="default_super_earth_elite.ai" >
+			<parameter class="melee_attack_wait_time" value="0" />
+			<parameter class="fighting_melee_move_radius" value="1.0" />
+			<!-- 采用近战的接触距离 -->
+			<parameter class="fighting_regular_move_radius" value="1.0" />
+			<!-- 与敌人保持的交战距离 -->
+			<parameter class="stab_range" value="3.0" />
+			<parameter class="willingness_to_charge" value="1" />
+			<parameter class="willingness_to_guard" value="0" />
+		</ai>
+
+		<item_class_existence_config>
+			<!-- main -->
+			<item_class_existence class="weapon" slot="0" probability="0" />
+			<!-- secondaries -->
+			<item_class_existence class="weapon" slot="1" probability="1" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="1" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="0" />
+		</item_class_existence_config>
+
+		<attribute_config class="rp"><attribute weight="1" min="100.0" max="100.0" />
+		</attribute_config>
+
+		<attribute_config class="xp"><attribute weight="500.0" min="100" max="100" />
 		</attribute_config>
 	</soldier> 
 	<soldier name="rabbit" spawn_score="0.01" >

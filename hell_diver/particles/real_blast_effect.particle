@@ -6,7 +6,7 @@ author: RST
 
 particle_system real_smoke_1
 {
-	quota 350
+	quota 150
 	material Tex_Smoke17C_real
 	particle_width 7
 	particle_height 10
@@ -57,7 +57,7 @@ particle_system real_smoke_1
 }
 particle_system real_firesmoke_1
 {
-	quota 350
+	quota 150
 	material Tex_FireSmoke_real_01
 	particle_width 9
 	particle_height 11
@@ -101,7 +101,7 @@ particle_system real_firesmoke_1
 }
 particle_system real_firesmoke_2
 {
-	quota 350
+	quota 150
 	material Tex_FireSmoke_real_02
 	particle_width 8
 	particle_height 9
@@ -184,7 +184,7 @@ particle_system real_up_dust_beam
 }
 particle_system real_up_dust_spread
 {
-	quota 500
+	quota 150
 	material Tex_Glow16A_pass
 	particle_width 5
 	particle_height 5
@@ -242,7 +242,7 @@ particle_system real_up_dust_spread
 }
 particle_system real_up_impact_spread
 {
-	quota 1000
+	quota 150
 	material Tex_Diffusion01A_real
 	particle_width 3
 	particle_height 3
@@ -288,7 +288,7 @@ particle_system real_up_impact_spread
 }
 particle_system real_up_impact_spark		//火花
 {
-	quota 1000
+	quota 150
 	material Tex_Spark05A_pass
 	particle_width 3
 	particle_height 3
@@ -334,7 +334,7 @@ particle_system real_up_impact_spark		//火花
 }
 particle_system real_up_impact_spark_1
 {
-	quota 1200
+	quota 150
 	material Tex_Spark17A
 	particle_width 2
 	particle_height 3
@@ -374,7 +374,7 @@ particle_system real_up_impact_spark_2 : real_up_impact_spark_1
 }
 particle_system real_up_dust_stone
 {
-	quota 1000
+	quota 150
 	material wand_stone_06_pass
 	particle_width 0.6
 	particle_height 0.6
@@ -432,7 +432,7 @@ particle_system real_up_dust_stone
 
 particle_system real_ground_crater
 {
-	quota 350
+	quota 150
 	material Tex_Decal07F_Diffuse_3
 	particle_width 10
 	particle_height 10
@@ -467,7 +467,7 @@ particle_system real_ground_crater
 }
 particle_system real_up_smoke_1
 {
-	quota 1000
+	quota 150
 	material Tex_Smoke09G_real
 	particle_width 8
 	particle_height 8
@@ -523,7 +523,7 @@ particle_system real_up_smoke_1
 }
 particle_system real_up_smoke_beam
 {
-	quota 1000
+	quota 150
 	material TEX_boomachi_02_real
 	particle_width 8
 	particle_height 10
@@ -566,7 +566,7 @@ particle_system real_up_smoke_beam
 }
 particle_system real_center_short_light
 {
-	quota 500
+	quota 150
 	material point_soft_edge_100_pass
 	particle_width 50
 	particle_height 50
@@ -606,7 +606,7 @@ particle_system real_center_short_light
 }
 particle_system real_center_ambient_light
 {
-	quota 500
+	quota 150
 	material point_soft_edge_100_pass
 	particle_width 20
 	particle_height 25

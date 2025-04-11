@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectiles>
+<projectile 
+class="grenade" slot="0" pulldown_in_air="0.1" key="acg_sabayon_artillery_damage.projectile"
+>
+	<rotation class="motion" />	
+
+	<result class="blast" radius="4.25" damage="120" decal="0" push="0.35" character_state="wound"
+	damage_origin_vehicle="0" faction_compare="not_equal"/>
+    <trigger class="time" time_to_live="0" />
+    <collision class="sticky" />
+
+    <commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+
+
+</projectile>
+<projectile 
+class="grenade" slot="0" pulldown_in_air="0.1" key="acg_sabayon_gun_skill_damage.projectile"
+>
+	<rotation class="motion" />	
+
+	<result class="blast" radius="9.0" damage="80" decal="0" push="0.45" character_state="unwound"
+	damage_origin_vehicle="0" faction_compare="not_equal"/>
+    <trigger class="impact" time_to_live="0" />
+    <collision class="sticky" />
+
+    <commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+
+    <trail probability="1" key="sabayon_trail"/>	
+
+	<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_1.wav" pitch_variety="0.01" volume="8" />
+
+	<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_2.wav" pitch_variety="0.01" volume="8" />
+	<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_3.wav" pitch_variety="0.01" volume="8" />
+
+	<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_4.wav" pitch_variety="0.01" volume="8" />
+	
+    <sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
+	<sound class="result" key="shield" copy="other" />
+
+    <effect class="activated" ref="sabayon_activated_light" lighting="0"/>
+
+	<effect class="result" key="terrain" ref="real_ground_crater" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="real_up_dust_beam" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_dust_spread" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_dust_stone" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="real_up_smoke_1" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="shadow_real_up_smoke_leave" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="shadow_real_up_smoke_leave_2" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="real_up_smoke_beam" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_impact_spread" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_impact_spark" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_impact_spark_2" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_impact_spark_1" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_smoke_1" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="real_firesmoke_1" lighting="0" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_firesmoke_2" lighting="0" post_processing="0"/>
+	<effect class="result" key="terrain" ref="nova_s_result_blast_ring" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="nova_s_result_blast_ring_2" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="real_center_short_light" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="real_center_ambient_light" lighting="0" post_processing="0"/> 
+	
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="shield" copy="terrain" />			
+	<effect class="result" key="vehicle" copy="terrain" />			
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+
+</projectile>
+<projectile 
+class="grenade" slot="0" pulldown_in_air="100" key="acg_sabayon_artillery_skill_damage.projectile"
+>
+	<rotation class="motion" />	
+
+	<result class="blast" radius="9.0" damage="50" push="0.5" decal="0" character_state="unwound"
+    faction_compare="not_equal" damage_origin_vehicle="0"/> 
+    <trigger class="impact" time_to_live="0" />
+    <collision class="sticky" />
+
+    <commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+
+
+</projectile>
+<projectile 
+class="grenade" slot="0" pulldown_in_air="10" key="acg_sabayon_dead_skill.projectile"
+>
+	<rotation class="motion" />	
+    <result class="notify_script" key="acg_sabayon_dead_skill" />
+
+    <trigger class="time" time_to_live="0" />
+    <collision class="sticky" />
+    <commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+
+</projectile>
+<projectile 
+class="grenade" slot="0" pulldown_in_air="80" key="acg_sabayon_dead_spawn.projectile"
+>
+	<rotation class="motion" />	
+
+	<result class="spawn" instance_class="grenade" instance_key="acg_sabayon_dead_damage.projectile" 
+	min_amount="10" max_amount="10" offset="0 0 0" position_spread="16 0" direction_spread="0 -1" />
+    <trigger class="impact" time_to_live="0" />
+    <collision class="sticky" />
+    <commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+
+	<sound class="result" key="other" fileref="hit_gl_impact_2.wav" pitch_variety="0.01" volume="2" />
+	
+    <sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
+	<sound class="result" key="shield" copy="other" />
+
+</projectile>
+<projectile 
+class="grenade" slot="0" pulldown_in_air="80" key="acg_sabayon_dead_damage.projectile"
+>
+	<rotation class="motion" />	
+
+	<result class="blast" radius="7.0" damage="1" push="0.5" decal="0" character_state="unwound"
+    faction_compare="not_equal" damage_origin_vehicle="0"/> 
+    <trigger class="impact" time_to_live="0" />
+    <collision class="sticky" />
+
+    <commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+
+    <effect class="result" key="terrain" ref="general_weapon_result_blast_smoke" lighting="0" post_processing="1"/> 
+    <effect class="result" key="terrain" ref="general_weapon_result_blast_smoke_expanding" lighting="0" post_processing="1"/> 
+    <effect class="result" key="terrain" ref="general_weapon_result_blast_ring" lighting="0"/> 
+    <effect class="result" key="terrain" ref="general_weapon_result_blast_ring_2" lighting="0"/> 
+    <effect class="result" key="terrain" ref="general_weapon_result_blast_spray_1" lighting="0"/> 
+    <effect class="result" key="terrain" ref="general_weapon_result_blast_spray_2" lighting="0"/> 
+    <effect class="result" key="terrain" ref="general_weapon_result_blast_fire" lighting="0"/> 
+    <effect class="result" key="terrain" ref="general_weapon_result_blast_fire_wave" lighting="0"/> 
+
+    <effect class="result" key="terrain" ref="tt_result_blast_ring" lighting="0"/> 
+    <effect class="result" key="terrain" ref="tt_result_blast_ring_2" lighting="0"/> 
+    <effect class="result" key="terrain" ref="tt_result_blast_spray_1" lighting="0"/> 
+    <effect class="result" key="terrain" ref="tt_result_blast_spray_2" lighting="0"/> 
+    <effect class="result" key="terrain" ref="tt_result_blast_fire" lighting="0"/> 
+    <effect class="result" key="terrain" ref="tt_result_blast_fire_wave" lighting="0"/> 
+    <effect class="result" key="terrain" ref="tt_result_blast_fallen_p1" /> 
+    <effect class="result" key="terrain" ref="tt_result_blast_fallen_p2" /> 
+    <effect class="result" key="terrain" ref="tt_result_blast_fallen_p3" /> 
+    <effect class="result" key="terrain" ref="tt_result_blast_fallen_p4" /> 
+
+    <effect class="result" key="other" copy="terrain" />
+    <effect class="result" key="static_object" copy="terrain" />
+    <effect class="result" key="vehicle" copy="terrain" />
+    <effect class="result" key="character" copy="terrain" />
+
+</projectile>
+<projectile 
+class="grenade" slot="0" pulldown_in_air="80" key="acg_sabayon_sledge_precision_artillery_spawn.projectile"
+>
+	<rotation class="motion" />	
+
+    <result class="spawn" instance_class="projectile" instance_key="acg_sabayon_sledge_precision_artillery_damage.projectile" 
+	min_amount="5" max_amount="5" offset="0 30 0" position_spread="15 20" direction_spread="0 0" />	
+
+    <trigger class="impact" time_to_live="0" />
+    <collision class="sticky" />
+
+    <commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+
+</projectile>
+
+<projectile  
+class="grenade" 
+name="Sledge Precision Artillery" 
+key="acg_sabayon_sledge_precision_artillery_damage.projectile" 
+slot="0"
+pulldown_in_air="150.0"
+>
+    <collision class="sticky" />
+	<result class="blast" radius="9.0" damage="100" push="0.3" decal="0" character_state="wound" faction_compare="not_equal"/>
+	<trigger class="impact" time_to_live="0" />	
+  	<rotation class="motion" />
+	<model mesh_filename="vindicator_bullet.xml" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+
+	<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_1.wav" pitch_variety="0.01" volume="8" />
+	<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_2.wav" pitch_variety="0.01" volume="8" />
+
+	<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_3.wav" pitch_variety="0.01" volume="8" />
+	<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_4.wav" pitch_variety="0.01" volume="8" />
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
+	<sound class="result" key="shield" copy="other" />
+
+
+	<effect class="result" key="terrain" ref="real_ground_crater" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="real_up_dust_beam" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_dust_spread" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_dust_stone" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="real_up_smoke_1" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="shadow_real_up_smoke_leave" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="shadow_real_up_smoke_leave_2" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="real_up_smoke_beam" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_impact_spread" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_impact_spark" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_impact_spark_2" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_impact_spark_1" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_smoke_1" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="real_firesmoke_1" lighting="0" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_firesmoke_2" lighting="0" post_processing="0"/>
+	<effect class="result" key="terrain" ref="nova_s_result_blast_ring" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="nova_s_result_blast_ring_2" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="real_center_short_light" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="real_center_ambient_light" lighting="0" post_processing="0"/> 
+	
+	<effect class="activated" ref="missile_activated_cannon_flysmoke" lighting="0"/>
+	
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="shield" copy="terrain" />			
+	<effect class="result" key="vehicle" copy="terrain" />			
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+	<trail probability="1" key="trail_CAS"/>	
+</projectile>
+<projectile  
+class="grenade" 
+key="acg_sabayon_railcannon_strike_damage1.projectile" 
+slot="0"
+pulldown_in_air="30.0"
+>
+    <collision class="sticky" />
+	<result class="blast" radius="7" damage="100" push="1.0" decal="0" character_state="wound" faction_compare="not_equal"/>
+	<trigger class="impact" time_to_live="0" />	
+  	<rotation class="motion" />
+	<model mesh_filename="" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+		<effect class="activated" ref="sabayon_activated_light" lighting="0"/>
+
+		<trail probability="1" key="sabayon_trail"/>	
+
+	<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_1.wav" pitch_variety="0.01" volume="8" />
+	<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_2.wav" pitch_variety="0.01" volume="8" />
+
+	<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_3.wav" pitch_variety="0.01" volume="8" />
+	<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_4.wav" pitch_variety="0.01" volume="8" />
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
+	<sound class="result" key="shield" copy="other" />
+
+	<effect class="result" key="terrain" ref="real_ground_crater" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="real_up_dust_beam" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_dust_spread" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_dust_stone" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="real_up_smoke_1" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="shadow_real_up_smoke_leave" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="shadow_real_up_smoke_leave_2" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="real_up_smoke_beam" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_impact_spread" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_impact_spark" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_impact_spark_2" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_impact_spark_1" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_smoke_1" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="real_firesmoke_1" lighting="0" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_firesmoke_2" lighting="0" post_processing="0"/>
+	<effect class="result" key="terrain" ref="nova_s_result_blast_ring" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="nova_s_result_blast_ring_2" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="real_center_short_light" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="real_center_ambient_light" lighting="0" post_processing="0"/> 
+
+	<effect class="result" key="terrain" ref="sabayon_camera_light_1" lighting="0" post_processing="0"/> 
+	
+	<effect class="activated" ref="rocket_launcher_trial_smoke" post_processing="1"/>
+	<effect class="activated" ref="rocket_launcher_shell_light" />
+	<trail probability="1" key="trail_rocket"/>
+
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="shield" copy="terrain" />			
+	<effect class="result" key="vehicle" copy="terrain" />			
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+</projectile>
+<projectile  
+class="grenade" 
+key="acg_sabayon_railcannon_strike_damage2.projectile" 
+slot="0"
+pulldown_in_air="30.0"
+>
+    <collision class="sticky" />
+	<result class="blast" radius="10" damage="300" push="1" decal="0" character_state="wound" faction_compare="not_equal"/>
+	<trigger class="impact" time_to_live="0" />	
+  	<rotation class="motion" />
+	<model mesh_filename="" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+		<effect class="activated" ref="sabayon_activated_light" lighting="0"/>
+
+		<trail probability="1" key="sabayon_trail"/>	
+
+	<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_1.wav" pitch_variety="0.01" volume="8" />
+	<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_2.wav" pitch_variety="0.01" volume="8" />
+
+	<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_3.wav" pitch_variety="0.01" volume="8" />
+	<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_4.wav" pitch_variety="0.01" volume="8" />
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
+	<sound class="result" key="shield" copy="other" />
+
+	<effect class="result" key="terrain" ref="real_ground_crater" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="real_up_dust_beam" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_dust_spread" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_dust_stone" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="real_up_smoke_1" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="shadow_real_up_smoke_leave" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="shadow_real_up_smoke_leave_2" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="real_up_smoke_beam" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_impact_spread" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_impact_spark" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_impact_spark_2" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_impact_spark_1" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_smoke_1" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="real_firesmoke_1" lighting="0" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_firesmoke_2" lighting="0" post_processing="0"/>
+	<effect class="result" key="terrain" ref="nova_s_result_blast_ring" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="nova_s_result_blast_ring_2" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="real_center_short_light" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="real_center_ambient_light" lighting="0" post_processing="0"/> 
+
+	<effect class="result" key="terrain" ref="sabayon_camera_light_2" lighting="0" post_processing="0"/> 
+	
+	<effect class="activated" ref="rocket_launcher_trial_smoke" post_processing="1"/>
+	<effect class="activated" ref="rocket_launcher_shell_light" />
+	<trail probability="1" key="trail_rocket"/>
+
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="shield" copy="terrain" />			
+	<effect class="result" key="vehicle" copy="terrain" />			
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+</projectile>
+<projectile  
+class="grenade" 
+key="acg_sabayon_railcannon_strike_damage3.projectile" 
+slot="0"
+pulldown_in_air="30.0"
+>
+    <collision class="sticky" />
+	<result class="blast" radius="14" damage="500" push="1.5" decal="0" character_state="wound" faction_compare="not_equal"/>
+	<trigger class="impact" time_to_live="0" />	
+  	<rotation class="motion" />
+	<model mesh_filename="" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+		<effect class="activated" ref="sabayon_activated_light" lighting="0"/>
+
+		<trail probability="1" key="sabayon_trail"/>	
+
+	<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_1.wav" pitch_variety="0.01" volume="8" />
+	<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_2.wav" pitch_variety="0.01" volume="8" />
+
+	<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_3.wav" pitch_variety="0.01" volume="8" />
+	<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_4.wav" pitch_variety="0.01" volume="8" />
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
+	<sound class="result" key="shield" copy="other" />
+
+	<effect class="result" key="terrain" ref="real_ground_crater" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="real_up_dust_beam" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_dust_spread" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_dust_stone" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="real_up_smoke_1" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="shadow_real_up_smoke_leave" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="shadow_real_up_smoke_leave_2" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="real_up_smoke_beam" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_impact_spread" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_impact_spark" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_impact_spark_2" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_impact_spark_1" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_smoke_1" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="real_firesmoke_1" lighting="0" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_firesmoke_2" lighting="0" post_processing="0"/>
+	<effect class="result" key="terrain" ref="nova_s_result_blast_ring" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="nova_s_result_blast_ring_2" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="real_center_short_light" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="real_center_ambient_light" lighting="0" post_processing="0"/> 
+	
+	<effect class="result" key="terrain" ref="sabayon_camera_light_3" lighting="0" post_processing="0"/> 
+	
+	<effect class="activated" ref="rocket_launcher_trial_smoke" post_processing="1"/>
+	<effect class="activated" ref="rocket_launcher_shell_light" />
+	<trail probability="1" key="trail_rocket"/>
+
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="shield" copy="terrain" />			
+	<effect class="result" key="vehicle" copy="terrain" />			
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+</projectile>
+<projectile  
+class="grenade" 
+key="acg_sabayon_railcannon_strike_damage4.projectile" 
+slot="0"
+pulldown_in_air="30.0"
+>
+    <collision class="sticky" />
+	<result class="blast" radius="18" damage="700" push="2" decal="0" character_state="wound" faction_compare="not_equal"/>
+	<trigger class="impact" time_to_live="0" />	
+  	<rotation class="motion" />
+	<model mesh_filename="" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+		<effect class="activated" ref="sabayon_activated_light" lighting="0"/>
+
+		<trail probability="1" key="sabayon_trail"/>	
+
+	<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_1.wav" pitch_variety="0.01" volume="8" />
+	<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_2.wav" pitch_variety="0.01" volume="8" />
+
+	<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_3.wav" pitch_variety="0.01" volume="8" />
+	<sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_4.wav" pitch_variety="0.01" volume="8" />
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
+	<sound class="result" key="shield" copy="other" />
+
+	<effect class="result" key="terrain" ref="real_ground_crater" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="real_up_dust_beam" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_dust_spread" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_dust_stone" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="real_up_smoke_1" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="shadow_real_up_smoke_leave" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="shadow_real_up_smoke_leave_2" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="real_up_smoke_beam" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_impact_spread" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_impact_spark" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_impact_spark_2" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_up_impact_spark_1" lighting="1" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_smoke_1" lighting="1" post_processing="1"/>
+	<effect class="result" key="terrain" ref="real_firesmoke_1" lighting="0" post_processing="0"/>
+	<effect class="result" key="terrain" ref="real_firesmoke_2" lighting="0" post_processing="0"/>
+	<effect class="result" key="terrain" ref="nova_s_result_blast_ring" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="nova_s_result_blast_ring_2" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="real_center_short_light" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="real_center_ambient_light" lighting="0" post_processing="0"/> 
+
+	<effect class="result" key="terrain" ref="sabayon_camera_light_4" lighting="0" post_processing="0"/> 
+	
+	<effect class="activated" ref="rocket_launcher_trial_smoke" post_processing="1"/>
+	<effect class="activated" ref="rocket_launcher_shell_light" />
+	<trail probability="1" key="trail_rocket"/>
+
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="shield" copy="terrain" />			
+	<effect class="result" key="vehicle" copy="terrain" />			
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+</projectile>
+<projectile  
+class="grenade" 
+key="sabayon_target_aim_01.projectile" 
+slot="0"
+>
+    <collision class="sticky" />
+	<result class="hit" kill_probability="0" 
+		kill_probability_offset_on_successful_hit="0"
+		kill_decay_start_time="0" kill_decay_end_time="0" />
+	<trigger class="impact" time_to_live="0" />	
+  	<rotation class="motion" />
+	<model mesh_filename="" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+
+	<effect class="result" key="terrain" ref="sabayon_target_aim_01" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="stratagems_point_light_area_11s" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="stratagems_liner_light_11s" lighting="0" post_processing="0"/> 
+
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="shield" copy="terrain" />			
+	<effect class="result" key="vehicle" copy="terrain" />			
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+</projectile>
+<projectile  
+class="grenade" 
+key="sabayon_target_aim_02.projectile" 
+slot="0"
+>
+    <collision class="sticky" />
+	<result class="hit" kill_probability="0" 
+		kill_probability_offset_on_successful_hit="0"
+		kill_decay_start_time="0" kill_decay_end_time="0" />
+	<trigger class="impact" time_to_live="0" />	
+  	<rotation class="motion" />
+	<model mesh_filename="" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+
+	<effect class="result" key="terrain" ref="sabayon_target_aim_02" lighting="0" post_processing="0"/> 
+
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="shield" copy="terrain" />			
+	<effect class="result" key="vehicle" copy="terrain" />			
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+</projectile>
+<projectile  
+class="grenade" 
+key="sabayon_target_aim_03.projectile" 
+slot="0"
+>
+    <collision class="sticky" />
+	<result class="hit" kill_probability="0" 
+		kill_probability_offset_on_successful_hit="0"
+		kill_decay_start_time="0" kill_decay_end_time="0" />
+	<trigger class="impact" time_to_live="0" />	
+  	<rotation class="motion" />
+	<model mesh_filename="" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+
+	<effect class="result" key="terrain" ref="sabayon_target_aim_03" lighting="0" post_processing="0"/> 
+
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="shield" copy="terrain" />			
+	<effect class="result" key="vehicle" copy="terrain" />			
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+</projectile>
+<projectile  
+class="grenade" 
+key="sabayon_target_aim_04.projectile" 
+slot="0"
+>
+    <collision class="sticky" />
+	<result class="hit" kill_probability="0" 
+		kill_probability_offset_on_successful_hit="0"
+		kill_decay_start_time="0" kill_decay_end_time="0" />
+	<trigger class="impact" time_to_live="0" />	
+  	<rotation class="motion" />
+	<model mesh_filename="" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+
+	<effect class="result" key="terrain" ref="sabayon_target_aim_04" lighting="0" post_processing="0"/> 
+
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="shield" copy="terrain" />			
+	<effect class="result" key="vehicle" copy="terrain" />			
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+</projectile>
+</projectiles>

@@ -68,8 +68,8 @@ particle_system ac_muzzle_knife_ahead_2 : ac_muzzle_knife_ahead
 
 particle_system ac_muzzle_activated_spark
 {
-	quota 800
-	emit_emitter_quota 800
+	quota 400
+	emit_emitter_quota 400
 	material muzzle_lens_01
 	particle_width 0.3
 	particle_height 3

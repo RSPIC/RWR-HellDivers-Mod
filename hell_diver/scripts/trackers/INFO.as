@@ -1028,8 +1028,8 @@ class battleInfoBuck{
 						notify(m_metagame,"Battle Time Too Long,BonusFacto Decrease", dictionary(), "misc", pid, false, "", 1.0);
 					}
 				}
-				if(bf > 3.4){
-					bf = 3.4;
+				if(bf > 10){
+					bf = 10;
 				}
 				float pt_bf = bf; //游玩时长的独立倍率因子
 				if(pt_bf <= 1){
@@ -1109,8 +1109,8 @@ class battleInfoBuck{
 					bf = bf*(1-(pt-30.0)/60.0);
 					notify(m_metagame,"Battle Time Too Long,BonusFactor Decrease", dictionary(), "misc", pid, false, "", 1.0);
 				}
-				if(bf > 3.4){
-					bf = 3.4;
+				if(bf > 10){
+					bf = 10;
 				}
 				float pt_bf = bf;
 				if(pt_bf <= 1){ //游玩时长的独立倍率因子
@@ -1229,10 +1229,12 @@ class vestInfo {
 	uint armorTime(){return m_armorTime;}
 	uint upgradeTime(){return m_upgradeTime;}
 
-	void changeVest(string&in name,string&in vest){
+	bool changeVest(string&in name,string&in vest){
 		if(name == m_name){
 			m_vest = vest;
+			return true;
 		}
+		return false;
 	}
 	bool upgradeSpeed(string&in name){
 		if(name == m_name){
@@ -1323,9 +1325,16 @@ class vestInfoBuck {
 	protected array<vestInfo@> m_vestInfos;
 
 	vestInfoBuck(){
-		clearAll();
 		vestInfo@ newinfo = vestInfo("");
 		m_vestInfos.insertLast(newinfo);
+	}
+
+	string printTest(){
+		string str;
+		for(uint i=0;i<m_vestInfos.size();++i){
+			str += " name="+m_vestInfos[i].name()+" vest="+ m_vestInfos[i].vest();
+		}
+		return str;
 	}
 
 	void addInfo(string&in name,string&in vest = "helldivers_vest"){
@@ -1361,8 +1370,11 @@ class vestInfoBuck {
 
 	void changeVest(string&in name,string&in vest){
 		for(uint i = 0 ; i < m_vestInfos.size() ; ++i){
-			m_vestInfos[i].changeVest(name,vest);
+			if(m_vestInfos[i].changeVest(name,vest)){
+				return;
+			}
 		}
+		addInfo(name,vest);
 	}
 	uint upgradeSpeed(string&in name){
 		for(uint i = 0 ; i < m_vestInfos.size() ; ++i){
@@ -1620,6 +1632,11 @@ class userCountInfo{
     bool addCount(string&in name,string&in key,int&in count){
 		if(m_name == name){
 			int value;
+			if(g_fullcost){
+				value = 9999;
+				countList.set(key,value);
+				return true;
+			}
 			if(countList.get(key,value)){
 				value += count;
 				countList.set(key,value);
@@ -1652,6 +1669,17 @@ class userCountInfoBuck {
 	userCountInfoBuck(){
 		userCountInfo@ newinfo = userCountInfo("");
 		m_userCountInfos.insertLast(newinfo);
+	}
+
+	uint size(){
+		return m_userCountInfos.size();
+	}
+
+	string indexName(uint index){
+		if(index < size()){
+			return m_userCountInfos[index].getName();
+		}
+		return "";
 	}
 
 	void addInfo(string&in name){
@@ -1717,7 +1745,7 @@ firstUseInfoBuck@ g_firstUseInfoBuck = firstUseInfoBuck();
 userCountInfoBuck@ g_userCountInfoBuck = userCountInfoBuck();
 playerMissionInfoBuck@ g_playerMissionInfoBuck = playerMissionInfoBuck();
 bool g_online_TestMode = false;
-bool g_debugMode = false;
+bool g_debugMode = true;
 bool g_server_activity = false;
 bool g_server_activity_racing = false;
 bool g_single_player = false; //开关一些进服提示
@@ -1729,12 +1757,15 @@ bool g_fastScriptDebug = false; // 脚本快速测试
 bool g_useMergedXml = false; // 采用快速打包加载文件
 bool g_English_version = false; // 采用英文
 bool g_restartMetagame = false; // 结束后重启metagame
+bool g_manualCrash = false; // 手动导致进程崩溃以重启
 
 bool g_heal_on_kill = true; // 击杀回甲
 bool g_exo_armor = true; // 机甲是否装配护甲
 bool g_disable_stratagems = false; //是否禁用战略呼叫
 bool g_top_down = true; //是否启用俯视角
 bool g_acg_weapon_count = false; //是否启用ACG武器击杀计数
+bool g_fullcost = false; //是否启用无限cost技能
+bool g_fullcd = false; //是否启用无限cd技能
 
 int g_server_difficulty_level = 0;
 int g_playerCount = 0;
@@ -1744,7 +1775,7 @@ string g_GameMode = "";
 float g_stratagems_call_factor = 1.0; //调整战略呼叫CD倍率，0为关闭
 float g_server_added_bonus_factor = 0.0; //战役结算额外的倍率
 
-int g_rp_ptRewardBase = 3000; //游玩时长奖励
+int g_rp_ptRewardBase = 3600; //游玩时长奖励
 float g_xp_ptRewardBase = 0.1; //游玩时长奖励 2000xp
 //----------------------------------------------------------
 //初始化用Tracker
@@ -1769,6 +1800,8 @@ class Initiate : Tracker {
 		g_server_added_bonus_factor = settings.m_server_added_bonus_factor;;
 
 		g_GameMode = settings.m_GameMode;
+		_log("g_GameMode="+g_GameMode);
+		_log("g_server_difficulty_level="+g_server_difficulty_level);
 
 		@g_factionInfoBuck = factionInfoBuck();	
  		@g_playerInfoBuck = playerInfoBuck(m_metagame);
@@ -1922,6 +1955,26 @@ class Initiate : Tracker {
 					_report(m_metagame,"Debug Mode is Off");
 				}
 			}
+			if(message == "/fullcost"){
+				g_fullcost = !g_fullcost;
+				if(g_debugMode){
+					if(g_fullcost){
+						_report(m_metagame,"FullCost Mode is On");
+					}else{
+						_report(m_metagame,"FullCost Mode is Off");
+					}
+				}
+			}
+			if(message == "/fullcd"){
+				g_fullcd = !g_fullcd;
+				if(g_debugMode){
+					if(g_fullcost){
+						_report(m_metagame,"FullCD Mode is On");
+					}else{
+						_report(m_metagame,"FullCD Mode is Off");
+					}
+				}
+			}
 			if(message == "/outputPinfodata"){
 				_report(m_metagame,"管理员测试输出："+g_playerInfoBuck.output());
 			}
@@ -1966,6 +2019,13 @@ class Initiate : Tracker {
 				}
 			}
 			notify(m_metagame,"你的SID="+sid, dictionary(), "misc", pid, false, "", 1.0);
+		}
+		if(message == "/vest"){
+			string vest = g_vestInfoBuck.getVestKey(p_name);
+			_notify(m_metagame,pid,"你注册的护甲="+vest);
+		}
+		if(message == "/vestinfo"){
+			_notify(m_metagame,pid,g_vestInfoBuck.printTest());
 		}
 	}
 		

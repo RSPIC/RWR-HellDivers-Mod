@@ -16,7 +16,7 @@ void main(dictionary@ inputData) {
 	settings.print();
 	settings.m_xpFactor = 2;
 	settings.m_rpFactor = 1;
-	settings.m_server_difficulty_level = 12;
+	settings.m_server_difficulty_level = 6;
 	settings.m_initialRp = 10000.0;
 	settings.m_initialXp = 0.0;
 	settings.m_server_test_mode = true;
@@ -44,7 +44,7 @@ void main(dictionary@ inputData) {
 		<client_faction id='0' />
 	</command>
 	""";
-
+	_log("init Metagame Start");
 	MyGameMode metagame(settings);
 
 	metagame.init();

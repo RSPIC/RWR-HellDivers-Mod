@@ -68,7 +68,7 @@ particle_system at_mine_hit_firesmoke_02 : at_mine_hit_firesmoke_01
 }
 particle_system at_mine_hit_firesmoke_03 : at_mine_hit_firesmoke_01
 {
-	quota 200
+	quota 120
 	material at_mine_smoke
 	particle_width 14
 	particle_height 14

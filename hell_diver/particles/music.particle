@@ -5,8 +5,8 @@ author: RST
 
 particle_system music_musical_note_1
 {
-	quota 2000
-	emit_emitter_quota 2000
+	quota 50
+	emit_emitter_quota 50
 	material musical_note_1
 	particle_width 2
 	particle_height 2

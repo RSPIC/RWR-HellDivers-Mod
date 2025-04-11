@@ -15,7 +15,7 @@ author: RST
 
 particle_system MG_hvy_hit_smoke
 {
-	quota 1500
+	quota 150
 	material wand_smoke
 	particle_width 2
 	particle_height 2
@@ -69,7 +69,7 @@ particle_system MG_hvy_hit_smoke
 }
 particle_system MG_hvy_hit_leave
 {
-	quota 1500
+	quota 300
 	material Tex_0147_1_pass
 	particle_width 0.7
 	particle_height 0.7
@@ -86,7 +86,7 @@ particle_system MG_hvy_hit_leave
 		angle 0
 		colour 1 1 1 1
 		direction 0 1 0
-		emission_rate 30
+		emission_rate 20
 		position 0 0 0
 		velocity 0.0001
 		time_to_live_min 3.5
@@ -116,8 +116,8 @@ particle_system MG_hvy_hit_leave
 
 particle_system MG_hvy_hit_cross_blast
 {
-	quota 1800
-    emit_emitter_quota 800
+	quota 200
+    emit_emitter_quota 200
 	material blast_smoke_cross_alpha
 	particle_width 1
 	particle_height 1
@@ -165,7 +165,7 @@ particle_system MG_hvy_hit_cross_blast
 
 particle_system MG_heavy_up_dust_1
 {
-	quota 800
+	quota 100
 	material Tex_Spark17A
 	particle_width 4
 	particle_height 4
@@ -238,7 +238,7 @@ particle_system MG_heavy_up_dust_4 : MG_heavy_up_dust_1
 
 particle_system MG_hvy_spread_dust
 {
-	quota 700
+	quota 100
 	material Dust2
 	particle_width 1
 	particle_height 1
@@ -285,7 +285,7 @@ particle_system MG_hvy_spread_dust
 
 particle_system MG_hvy_hit_light
 {
-	quota 600
+	quota 100
 	material point_soft_edge_100_pass
 	particle_width 10
 	particle_height 10

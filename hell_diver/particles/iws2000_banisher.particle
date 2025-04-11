@@ -6,8 +6,7 @@ iws2000的武器特效
 -----------------------------------------iws2000-------------------------------------
 particle_system iws2000_recoil_smoke		//后坐力扬尘
 {
-	quota 300
-	emit_emitter_quota 300
+	quota 200
 	material explosion_smoke_01
 	particle_width 1.5
 	particle_height 1.5
@@ -72,8 +71,7 @@ particle_system iws2000_recoil_smoke		//后坐力扬尘
 
 particle_system crescent_smoke_impact		//月牙冲击烟雾
 {
-	quota 300
-	emit_emitter_quota 300
+	quota 100
 	material crescent_smoke
 	particle_width 3
 	particle_height 3
@@ -120,8 +118,7 @@ particle_system crescent_smoke_impact		//月牙冲击烟雾
 
 particle_system lens_circle		//光圈
 {
-	quota 300
-	emit_emitter_quota 300
+	quota 100
 	material lens_circle
 	particle_width 3
 	particle_height 3
@@ -165,8 +162,7 @@ particle_system lens_circle		//光圈
 
 particle_system lens_circle_enlarge		//扩散光圈
 {
-	quota 300
-	emit_emitter_quota 300
+	quota 75
 	material lens_circle
 	particle_width 8
 	particle_height 8
@@ -210,8 +206,7 @@ particle_system lens_circle_enlarge		//扩散光圈
 
 particle_system lens_flare_01		//镜头光晕_长条椭圆状
 {
-	quota 300
-	emit_emitter_quota 300
+	quota 75
 	material lens_flare_01
 	particle_width 3.5
 	particle_height 3.5
@@ -262,8 +257,7 @@ particle_system lens_flare_01		//镜头光晕_长条椭圆状
 
 particle_system square_fill_20		//点扩散飞溅菱形方块特效
 {
-	quota 300
-	emit_emitter_quota 300
+	quota 75
 	material square_fill_20
 	particle_width 0.3
 	particle_height 0.3
@@ -321,7 +315,7 @@ particle_system square_fill_20		//点扩散飞溅菱形方块特效
 
 particle_system point_penetrate_linear_light_iws2000	//点扩散冲击线性光斑
 {
-	quota 300
+	quota 70
 	material R_point_01
 	particle_width 0.23
 	particle_height 1.2
@@ -363,7 +357,7 @@ particle_system point_penetrate_linear_light_iws2000	//点扩散冲击线性光�
 }
 particle_system anti_U_type_point_penetrate_particle_iws2000	//点扩散飞溅倒U粒子
 {
-	quota 300
+	quota 70
 	material anti_u_type_flare_02
 	particle_width 2
 	particle_height 2
@@ -406,7 +400,7 @@ particle_system anti_U_type_point_penetrate_particle_iws2000	//点扩散飞溅�
 
 particle_system v_type_impact_flare	//V形开合中心爆炸炫光
 {
-	quota 300
+	quota 80
 	material v_type_flare_01
 	particle_width 7
 	particle_height 7
@@ -447,7 +441,7 @@ particle_system v_type_impact_flare	//V形开合中心爆炸炫光
 
 particle_system center_area_lighting
 {
-	quota 300
+	quota 80
 	material high_transparent_point
 	particle_width 7
 	particle_height 7

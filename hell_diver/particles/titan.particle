@@ -238,7 +238,7 @@ particle_system tt_muzzle_fire_2
 
 particle_system tt_missile_trail_long
 {
-	quota 500
+	quota 100
 	material point_soft_edge_100
 	particle_width 1
 	particle_height 1
@@ -297,7 +297,7 @@ particle_system tt_missile_trail_long
 }
 particle_system tt_missile_trail_short
 {
-	quota 500
+	quota 100
 	material point_soft_edge_100
 	particle_width 2.3
 	particle_height 2.3
@@ -484,7 +484,7 @@ particle_system tt_result_blast_smoke_expanding
 }
 particle_system tt_result_blast_smoke
 {
-	quota 400
+	quota 200
 	emit_emitter_quota 50
 	material wand_smoke
 	particle_width 6

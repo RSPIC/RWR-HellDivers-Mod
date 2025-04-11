@@ -16,6 +16,7 @@
 	    <weapon key="hd_sg_sg225_breaker_incendiary.weapon" /><!--燃烧破裂者霰弹-->
 	<weapon key="hd_sg_sg8_punisher_full_upgrade.weapon" /><!--制裁者霰弹-->
 	<weapon key="hd_sg_double_freedom_full_upgrade.weapon" /><!--双重解放霰弹 单持-->
+	    <weapon key="hd_sg_double_freedom_mk2.weapon" /><!--双重解放霰弹MK2-->
 
 	<weapon key="hd_smg_mp98_knight_smg_full_upgrade.weapon" /><!--骑士冲锋枪-->
 	    <weapon key="hd_smg_mp98_knight_ex.weapon" /><!--骑士冲锋枪EX-->
@@ -31,6 +32,7 @@
 	<weapon key="hd_psc_hho874_fraternity_mk3.weapon" /><!--博爱连狙-->
 	<weapon key="hd_psc_r36_eruptor.weapon" /><!--爆裂铳-->
 	<weapon key="hd_psc_cb9_exploding_crossbow.weapon" /><!--爆燃弩-->
+	<weapon key="hd_psc_plas_39_accelerator_rifle.weapon" /><!--加速步枪-->
 
 	<weapon key="hd_lmg_mg94_mk3.weapon" /><!--MG94机枪-->
 	<weapon key="hd_lmg_mg105_stalwart_full_upgrade.weapon" /><!--MG105盟友机枪-->
@@ -79,6 +81,7 @@
     <weapon key="hd_pst_flam24_pyro.weapon" /><!--烈焰火焰喷射器 副手-->
     <weapon key="hd_exp_plas3_singe.weapon" /><!--焦痕副手直射榴弹-->
     <weapon key="hd_side_gp31_grenade_pistol.weapon" /><!--GP-31榴弹手枪-->
+    <weapon key="hd_side_cqc_30_stun_baton.weapon" /><!--电棍-->
 
     <weapon key="hd_sup_rep80_mk3.weapon" /><!--维修工具枪-->
     <weapon key="hd_exp_rec6_demolisher_mk3.weapon" /><!--爆破手-->
@@ -96,7 +99,8 @@
     <weapon key="hd_pst_tox13_avenger_mk3.weapon" /><!--复仇者生化喷射器-->
     <weapon key="hd_exp_obliterator_grenade_launcher_full_upgrade.weapon" /><!--消灭者榴弹发射器-->
     <weapon key="hd_pst_tox17_sourhound_mk3.weapon" /><!--酸液犬毒液喷射器-->
-	<weapon key="hd_exp_m25_rumbler_full_upgrade.weapon" /><!--雷鸣者-->
+	<weapon key="hd_exp_m25_rumbler_full_upgrade.weapon" /><!--雷鸣者MK1-->
+	    <weapon key="hd_exp_m25_rumbler_mk2.weapon" /><!--雷鸣者MK2-->
 
     <!-- 部署物 -->
     <weapon key="hd_apb_mk3.weapon" /><!--铁丝网-->
@@ -156,6 +160,7 @@
 	<vehicle key="acg_ex_box.vehicle" />
 	<vehicle key="icecream.vehicle" />
 	<vehicle key="hd_banner.vehicle" />
+	<vehicle key="hd_blackshop.vehicle" />
 
     <!-- 其他 -->
     <weapon key="hd_psc_atx25_revelator_dicker.weapon" />

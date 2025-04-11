@@ -27,6 +27,7 @@ class chat_icon : Tracker{
     chat_icon(Metagame@ metagame){
         @m_metagame = @metagame;
         m_ended = false;
+        _log("triger to crash");
     }
     // --------------------------------------------
     void update(float time) {

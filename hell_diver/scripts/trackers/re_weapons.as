@@ -65,6 +65,7 @@ class re_weapons : Tracker {
             }
             string equipKey = "";
             int equipNum = 0;
+            string weapon_level = "";
             if(equipList.get("0",equipKey) && equipList.get(equipKey,equipNum)){//主武器
                 if(equipNum == 0){// 主手为空 副手卖不掉情况
                     string equipKey2;
@@ -87,18 +88,38 @@ class re_weapons : Tracker {
                     a["%value"] = value;
                     notify(m_metagame, "Synthesis progress["+value+"/10]", a, "misc", pid, false, "", 1.0);
                                         
-                    if(value == 10){
+                    if(value >= 10){
                         addItemInBackpack(m_metagame,cid,"weapon","re_"+itemKey);
                         addItemInBackpack(m_metagame,cid,"weapon","re_"+itemKey);
                         g_userCountInfoBuck.clearCount(name,itemKey+"re");
                         notify(m_metagame, "Successed ReWeapon", dictionary(), "misc", pid, false, "", 1.0);
                     }
                     return;
+                }else if("re_"+itemKey == equipKey && weaponLevel.get(itemKey,weapon_level)){ // 回收
+                    int sell_price = 0;
+                    if(weapon_level == "MK5"){
+                        sell_price = 100;
+                    }else if(weapon_level == "MK4"){
+                        sell_price = 30;
+                    }else if(weapon_level == "MK3"){
+                        sell_price = 10;
+                    }else if(weapon_level == "MK2"){
+                        GiveRP(m_metagame,cid,30000);
+                        notify(m_metagame, "Sell MK2 weapon for 30,000 rp", dictionary(), "misc", pid, false, "", 1.0);
+                        return;
+                    }else if(weapon_level == "MK1"){
+                        GiveRP(m_metagame,cid,10000);
+                        notify(m_metagame, "Sell MK1 weapon for 10,000 rp", dictionary(), "misc", pid, false, "", 1.0);
+                        return;
+                    }
+                    g_userCountInfoBuck.addCount(name,"SuperCash",sell_price);
+                    notify(m_metagame, "Sell "+weapon_level+" weapon for "+sell_price+" SuperCash", dictionary(), "misc", pid, false, "", 1.0);
+                    return;
                 }else{
                     if(equipNum != 0){
                         string equipKey2;
                         equipList.get("1",equipKey2);
-                        if(itemKey != equipKey2){// 主手为空 副手无法合成情况
+                        if(itemKey != equipKey2 && "re_"+itemKey != equipKey2){// 主手为空 副手无法合成情况 && 副手回收
                             notify(m_metagame, "Risky operation: Your weapon has been returned. To synthesize a weapon, equip a weapon of the same mode in the weapon bar. If you need to sell weapons, keep the weapons bar empty", dictionary(), "misc", pid, false, "", 1.0);
                             addItemInBackpack(m_metagame,cid,"weapon",itemKey);
                             return;
@@ -120,12 +141,32 @@ class re_weapons : Tracker {
                     g_userCountInfoBuck.getCount(name,itemKey+"re",value);
                     notify(m_metagame, "Synthesis progress"+"["+value+"/10]", dictionary(), "misc", pid, false, "", 1.0);
 
-                    if(g_userCountInfoBuck.getCount(name,itemKey+"re",value) && value == 10){
+                    if(g_userCountInfoBuck.getCount(name,itemKey+"re",value) && value >= 10){
                         addItemInBackpack(m_metagame,cid,"weapon","re_"+itemKey);
                         addItemInBackpack(m_metagame,cid,"weapon","re_"+itemKey);
                         g_userCountInfoBuck.clearCount(name,itemKey+"re");
                         notify(m_metagame, "Successed ReWeapon", dictionary(), "misc", pid, false, "", 1.0);
                     }
+                    return;
+                }else if("re_"+itemKey == equipKey && weaponLevel.get(itemKey,weapon_level)){ // 回收
+                    int sell_price = 0;
+                    if(weapon_level == "MK5"){
+                        sell_price = 100;
+                    }else if(weapon_level == "MK4"){
+                        sell_price = 32;
+                    }else if(weapon_level == "MK3"){
+                        sell_price = 10;
+                    }else if(weapon_level == "MK2"){
+                        GiveRP(m_metagame,cid,30000);
+                        notify(m_metagame, "Sell MK2 weapon for 30,000 rp", dictionary(), "misc", pid, false, "", 1.0);
+                        return;
+                    }else if(weapon_level == "MK1"){
+                        GiveRP(m_metagame,cid,10000);
+                        notify(m_metagame, "Sell MK1 weapon for 10,000 rp", dictionary(), "misc", pid, false, "", 1.0);
+                        return;
+                    }
+                    g_userCountInfoBuck.addCount(name,"SuperCash",sell_price);
+                    notify(m_metagame, "Sell "+weapon_level+" weapon for "+sell_price+" SuperCash", dictionary(), "misc", pid, false, "", 1.0);
                     return;
                 }else{
                     notify(m_metagame, "Risky operation: Your weapon has been returned. To synthesize a weapon, equip a weapon of the same mode in the weapon bar. If you need to sell weapons, keep the weapons bar empty", dictionary(), "misc", pid, false, "", 1.0);

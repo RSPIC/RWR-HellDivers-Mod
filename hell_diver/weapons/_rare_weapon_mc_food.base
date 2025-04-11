@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapon 
+drop_count_factor_on_death="0" 
+drop_count_factor_on_player_death="1.0"
+time_to_live_out_in_the_open="600"
+player_death_drop_owner_lock_time="600"
+on_ground_up="0 1 0"
+> 
+	<tag name="rare" />
+    <tag name="ACG" />
+	<!--军械库相关-->
+    <commonness value="1" can_respawn_with="0" in_stock="1" /> 
+    <inventory encumbrance="10.0" buy_price="20000.0" sell_price="0" /> <!--武器重量和价格，实际负重为两倍encumbrance值-->
+    <stance state_key="running" accuracy="1" /> 
+    <stance state_key="walking" accuracy="1" />
+	<stance state_key="standing" accuracy="1" />
+	<stance state_key="crouching" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1" />
+
+    <animation state_key="hold" 		animation_key="still, single hand carry" />
+    <animation state_key="hold_on_wall" 	animation_key="still, single hand carry" />
+    <animation state_key="hold_casual" 		animation_key="still, single hand carry" />
+    <animation state_key="still_against_wall" 	animation_key="still, single hand carry" />
+    <animation state_key="crouching" 		animation_key="crouch, still, single hand carry" />
+    <animation state_key="running" 		animation_key="running, single hand carry" />
+    <animation state_key="walking" 		animation_key="walking, single hand carry" />
+    <animation state_key="walking_backwards" 	animation_key="walking backwards, single hand carry" />
+    <animation state_key="crouch_moving" 	animation_key="crouching forwards, single hand carry" />
+    <animation state_key="crouch_moving_backwards" 	animation_key="crouching backwards, single hand carry" />
+    <animation state_key="changing_weapon_in" 	animation_key="change weapon in, single hand carry" />
+
+    <sound key="effect" fileref="hd_eat_01.wav" pitch_variety="0.03" volume="3" /> 
+    <sound key="effect" fileref="hd_eat_02.wav" pitch_variety="0.03" volume="3" /> 
+    <sound key="effect" fileref="hd_eat_03.wav" pitch_variety="0.03" volume="3" /> 
+    <sound key="effect" fileref="hd_eat_04.wav" pitch_variety="0.03" volume="3" /> 
+    <sound key="effect" fileref="hd_eat_05.wav" pitch_variety="0.03" volume="3" /> 
+    <sound key="effect" fileref="hd_eat_06.wav" pitch_variety="0.03" volume="3" /> 
+	<sound class="impact" fileref="hd_dropitem.wav" volume="15"/>
+    
+</weapon>

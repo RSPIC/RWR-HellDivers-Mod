@@ -33,7 +33,6 @@
 		<resources file="bugs_all.resources" />
 		<resources file="bugs_common.resources">
 			<carry_item key="general_vest_1000" />
-			<carry_item key="vest_stun_300" />
 		</resources>
 		
 		<item_class_existence_config>
@@ -321,9 +320,9 @@
 		<resources file="bugs_common.resources">
 			<weapon key="bugs_elite_main.weapon" />
 			<projectile key="bugs_general_grenade.projectile" enabled="0" />
-			<carry_item key="vest_bugs_elite_80" />
-			<carry_item key="vest_bugs_elite_100" />
-			<carry_item key="vest_bugs_elite_120" />
+			<carry_item key="general_vest_80" />
+			<carry_item key="general_vest_100" />
+			<carry_item key="general_vest_120" />
 		</resources>
 
 

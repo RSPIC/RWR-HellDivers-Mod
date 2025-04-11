@@ -8,7 +8,7 @@ import real_up_smoke_1 from "real_blast_effect.particle"
 
 particle_system shadow_real_up_smoke : real_up_smoke_1  //舍弃
 {
-    quota 300
+    quota 100
     particle_width 10
 	particle_height 10
 	material Shadow_smoke

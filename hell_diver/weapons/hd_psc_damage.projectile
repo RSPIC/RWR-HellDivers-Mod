@@ -107,12 +107,25 @@ slot="1" pulldown_in_air="30.0"
 key="hd_exp_rx422_railgun_damage.projectile"
 >
 	<collision class="sticky" />
-	<result class="blast" radius="2.8" damage="15" push="0.5" decal="0"
+	<result class="blast" radius="4.0" damage="15" push="0.5" decal="0"
 	damage_origin_vehicle="0" make_vehicle_hit_sound="0" character_state="unwound" faction_compare="not_equal" />
 	<trigger class="time" time_to_live="0" />	
     <rotation class="motion" />
 	<model mesh_filename="" />
 	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
 
+</projectile>
+<projectile
+class="grenade" 
+slot="1" pulldown_in_air="30.0" 
+key="hd_psc_plas_39_accelerator_rifle_damage.projectile"
+>
+	<collision class="sticky" />
+	<result class="blast" radius="3.25" damage="10" push="0.5" decal="0"
+	damage_origin_vehicle="0" make_vehicle_hit_sound="0" character_state="wound"  />
+	<trigger class="time" time_to_live="0" />	
+    <rotation class="motion" />
+	<model mesh_filename="" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
 </projectile>
 </projectiles>

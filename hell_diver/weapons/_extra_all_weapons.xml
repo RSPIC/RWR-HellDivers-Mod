@@ -23,6 +23,7 @@
 	<weapon file="ex_heavy_infantry.weapon" /> <!--重装战士-->
 	<weapon file="ex_typhoon.weapon" /> <!--飓风-->
 	<weapon file="ex_exo_dreadnought.weapon" /> <!--无畏-->
+	<weapon file="ex_exo_telemon.weapon" /> <!--特拉蒙-->
 
 
 	<weapon file="63type_107mm_rocket_launcher_resource.weapon" /> <!--63式火箭炮部署武器-->
@@ -33,35 +34,29 @@
 	<weapon file="ex_cl_banzai.weapon" /> <!--刺雷-->
 
 	<!-- 载具武器 -->
-	<weapon file="ex_isu_152_gl.weapon" /> <!--152-->
 	<weapon file="repair_crane_0.weapon" /> <!--维修台-->
 	<weapon file="repair_crane_1.weapon" /> <!--维修台-->
 	<weapon file="ex_pak40.weapon" /> <!--pak40-->
 	<weapon file="ex_zis3.weapon" /> <!--zis3-->
 	<weapon file="ex_sturmtiger_tank_gl.weapon" /> <!-- 突击虎 -->
 	<weapon file="ex_apocalypse_tank_gl.weapon" /> <!-- 天启 -->
-	<weapon file="ex_kv2_gup_gl.weapon" /> <!-- KV-2 [真理高中]-->
-	<weapon file="ex_sherman_cannon.weapon" /> <!-- 谢尔曼喷火坦克-->
 	<weapon file="ba_crusader_cannon.weapon" /> <!-- 十字军主炮-->
 	<weapon file="ex_m18_cannon.weapon" /> <!-- M18地狱猫主炮-->
 	<weapon file="ba_torumaru_cannon.weapon" /> <!-- 虎丸 [伊吕波]主炮-->
 	<weapon file="mi_24_driver.weapon" /> <!-- 直升机-->
 	<weapon file="bell_360_dir.weapon" /> <!-- 直升机-->
 	<weapon file="mh_60s.weapon" /> <!-- 直升机-->
-	<weapon file="is2_m1895.weapon" /> <!-- IS2 M1895 重型坦克-->
 	<weapon file="himars.weapon" /> <!-- 海马斯火箭发射平台-->
-	<weapon file="mtlb_2b9.weapon" /> <!-- MT-LB 迫击炮-->
 	<weapon file="m61a5_at.weapon" /> <!-- M61A5 双炮台-->
 	<weapon file="borsig_cannon.weapon" /> <!-- Rhm.-Borsig Waffentrager-->
 	<weapon file="uragan.weapon" /> <!-- uragan 火箭车-->
-	<weapon file="t90m3.weapon" /> <!-- T90M3-->
 	<weapon file="zbd09.weapon" /> <!-- ZBD09-->
 	<weapon file="kirov.weapon" /> <!-- kirov-->
 	<weapon file="panther_a.weapon" />
-	<weapon file="panzer_3_a.weapon" />
 	<weapon file="sdkfz184.weapon" />
 	<weapon file="ex_warthog.weapon" />
 	<weapon file="ex_nova.weapon" />
+	<weapon file="is2_m1895.weapon" />
 
 	<weapon file="ex_edf_turrent.weapon" /> <!-- EDF 替换陶氏黄蜂-->
 	<weapon file="ex_edf_mortar.weapon" /> <!-- EDF 替换迫击炮-->
@@ -81,6 +76,7 @@
 	<weapon file="stash_ui.weapon" /> 	<!-- 脚本仓库功能按钮武器 -->
 	<weapon file="racing_ui.weapon" /> 	<!-- 竞速功能按钮武器 -->
 	<weapon file="hd_upgrade_ui.weapon" /> 	<!-- 研发升级功能按钮武器 -->
+	<weapon file="hd_foods.weapon" /> 	<!--吃的-->
 	
 	<!-- 特殊部署物 -->
 	<weapon file="ex_gramophone.weapon" /> <!--留声机-->

@@ -171,6 +171,13 @@ class MapRotatorInvasion : MapRotator {
 			// also save
 			m_metagame.getTaskSequencer().add(Call(CALL(m_metagame.save)));
 
+			if(!g_single_player){
+				//单人不执行
+				_log("restartMetagame");
+				m_metagame.getTaskSequencer().add(Call(CALL(this.restartMetagame)));
+				// return;
+			}
+
 			// start new map
 			m_metagame.getTaskSequencer().add(CallInt(CALL_INT(this.startMapEx), index));
 		} else {
@@ -178,7 +185,11 @@ class MapRotatorInvasion : MapRotator {
 			m_metagame.getTaskSequencer().add(Call(CALL(this.restartMap)));
 		}
 	}
+	// --------------------------------------------
+	void restartMetagame(){
 
+			g_restartMetagame = true;
+	}
 	// --------------------------------------------
 	protected void setStageCompleted(int index) {
 		if (!isStageCompleted(index)) {

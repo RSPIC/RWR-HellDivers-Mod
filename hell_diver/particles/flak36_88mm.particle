@@ -1,7 +1,7 @@
 particle_system flak36_muzzle_behind_smoke		
 {
-	quota 500
-    emit_emitter_quota 500
+	quota 300
+    emit_emitter_quota 300
 	material crescent_smoke_alpha
 	particle_width 0.5
 	particle_height 0.5
@@ -42,7 +42,7 @@ particle_system flak36_muzzle_behind_smoke
 
 particle_system flak36_muzzle_spread_smoke		
 {
-	quota 500
+	quota 200
 	material explosion_smoke_01_alpha
 	particle_width 0.7
 	particle_height 0.7
@@ -81,7 +81,7 @@ particle_system flak36_muzzle_spread_smoke
 
 particle_system flak36_muzzle_front_smoke		
 {
-	quota 500
+	quota 150
 	material explosion_smoke_01_alpha
 	particle_width 1
 	particle_height 1
@@ -128,7 +128,7 @@ particle_system flak36_muzzle_front_smoke
 }
 particle_system flak36_muzzle_fire_light_01		
 {
-	quota 500
+	quota 150
 	material impact_through_effect_01
 	particle_width 5
 	particle_height 5
@@ -175,7 +175,7 @@ particle_system flak36_muzzle_fire_light_02 : flak36_muzzle_fire_light_01
 
 particle_system flak36_hit_smoke_dark_smoke		
 {
-	quota 500
+	quota 150
 	material explosion_smoke_01_alpha
 	particle_width 1
 	particle_height 1
@@ -216,7 +216,7 @@ particle_system flak36_hit_smoke_dark_smoke
 }
 particle_system flak36_hit_smoke_explosion_smoke		
 {
-	quota 500
+	quota 150
 	material blast2_texture_rumbler
 	particle_width 8
 	particle_height 8
@@ -237,7 +237,7 @@ particle_system flak36_hit_smoke_explosion_smoke
 }
 particle_system flak36_hit_linear_light
 {
-	quota 500
+	quota 150
 	material point_hard_edge
 	particle_width 0.1
 	particle_height 2
@@ -268,8 +268,8 @@ particle_system flak36_hit_linear_light
 }
 particle_system flak36_hit_cross_blast
 {
-	quota 500
-    emit_emitter_quota 500
+	quota 250
+    emit_emitter_quota 250
 	material blast_smoke_cross_alpha
 	particle_width 1
 	particle_height 1
@@ -314,7 +314,7 @@ particle_system flak36_hit_cross_blast
 }
 particle_system flak36_activated_trail_smoke
 {
-	quota 500
+	quota 200
 	material trail_smoke
 	particle_width 0.5
 	particle_height 0.5

@@ -116,4 +116,22 @@
 	</model>
 	<model filename="ex_exo_dreadnought.xml"><requirement class="weapon" slot="1" key="ex_exo_dreadnought_null.weapon"/>
 	</model>
+	<!-- 特拉蒙 -->
+	<model filename="ex_exo_telemon.xml"><requirement class="weapon" slot="1" key="re_ex_exo_telemon_missile.weapon"/>
+		<requirement class="rank" range="0 999999"/>
+	</model>
+	<model filename="ex_exo_telemon.xml"><requirement class="weapon" slot="1" key="re_ex_exo_telemon_mg.weapon"/>
+		<requirement class="rank" range="0 999999"/>
+	</model>
+	<model filename="ex_exo_telemon.xml"><requirement class="weapon" slot="0" key="ex_exo_telemon_bluefire.weapon"/>
+	</model>
+	<model filename="ex_exo_telemon.xml"><requirement class="weapon" slot="0" key="ex_exo_telemon_cannon.weapon"/>
+	</model>
+	<model filename="ex_exo_telemon.xml"><requirement class="weapon" slot="0" key="re_ex_exo_telemon_bluefire.weapon"/>
+	</model>
+	<model filename="ex_exo_telemon.xml"><requirement class="weapon" slot="0" key="re_ex_exo_telemon_cannon.weapon"/>
+	</model>
+
+	<model filename="hdivers_cqc_30.xml"><requirement class="weapon" slot="1" key="hd_side_cqc_30_stun_baton.weapon"/>
+	</model>
 </models>

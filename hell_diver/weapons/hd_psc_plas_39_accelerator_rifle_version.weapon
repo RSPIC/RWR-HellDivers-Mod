@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapons> 
+<weapon 
+file="hd_psc_plas_39_accelerator_rifle_base.weapon"
+key="hd_psc_plas_39_accelerator_rifle.weapon" 
+drop_count_factor_on_death="0" 
+drop_count_factor_on_player_death="0"
+time_to_live_out_in_the_open="0"
+player_death_drop_owner_lock_time="0"
+>
+	<commonness value="0" can_respawn_with="1" in_stock="0" /> 
+	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="6" can_be_detected_by_footmen="1" 
+	time_to_live="2.5" can_be_detected_by_driver="1" can_be_disarmed="0" name="PLAS-39 Accelerator Rifle"> 
+	
+        <result class="spawn" instance_class="projectile" instance_key="hd_psc_plas_39_accelerator_rifle_damage.projectile" 
+		min_amount="7" max_amount="9" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
+		<!-- 10x10 =100 -->
+		<trigger class="impact" time_to_live="1.5"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+	
+		<!-- <effect class="result" key="terrain" ref="PLAS_result_spread_ring" lighting="0"/> -->
+		<effect class="result" key="terrain" ref="PLAS_result_light_ball" lighting="0"/>
+		<effect class="result" key="terrain" ref="PLAS_result_center_shrink" lighting="0"/>
+		<effect class="result" key="terrain" ref="PLAS_result_box_point" lighting="0"/>
+		<effect class="activated" ref="PLAS_activated_center_lens" lighting="0"/>
+		<effect class="activated" ref="PLAS_activated_center_ambient_light" lighting="0"/>
+		
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<!--尾迹组-->
+		<trail probability="1" key="plas1_scorcher.trail"/>	
+    </projectile>
+		<!--枪口特效-->
+	<effect class="muzzle" ref="general_weapon_muzzle_crossfire_lightblue" lighting="0"/> 
+
+</weapon>
+</weapons>

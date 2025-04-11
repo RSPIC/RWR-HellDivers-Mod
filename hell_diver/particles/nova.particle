@@ -802,7 +802,7 @@ particle_system nova_result_blast_smoke_expanding
 }
 particle_system nova_result_blast_smoke
 {
-	quota 400
+	quota 200
 	emit_emitter_quota 50
 	material 22missile_smoke_2
 	particle_width 6

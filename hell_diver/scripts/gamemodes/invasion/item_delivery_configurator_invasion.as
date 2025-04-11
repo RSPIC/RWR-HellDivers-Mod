@@ -35,7 +35,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		setupWeaponTheta(); //mk1~mk5 系列数量限制 5/4/3/2/1
 		setupWeaponMiu(); //mk1~mk5 系列数量限制 5/4/3/2/1
         setupWeaponPi(); //mk1~mk5 系列数量限制 5/4/3/2/1
-        setupWeaponPhi(); //当季限定，轮换
+        setupWeaponPhi(); //道具箱，食物
         setupWeaponOmega(); // mk1~mk3
         setupHDicker(); // mk1~mk3
 
@@ -328,6 +328,16 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			ScoredResource("token_asashio.projectile","projectile",1.0f,4),	
 			ScoredResource("token_plana.projectile","projectile",1.0f,4),	
 			ScoredResource("token_mizuha_mimori.projectile","projectile",1.0f,4),	
+			// 1.9.5
+			ScoredResource("token_tatara_kogasa.projectile","projectile",1.0f,4),	
+			ScoredResource("token_zelda.projectile","projectile",1.0f,4),	
+			ScoredResource("token_ninym_alei.projectile","projectile",1.0f,4),	
+			ScoredResource("token_remilia_scarlet.projectile","projectile",1.0f,4),	
+			// 1.9.7
+			ScoredResource("token_nishikigi_chisato.projectile","projectile",1.0f,4),	
+			ScoredResource("token_sakurakouji_runa.projectile","projectile",1.0f,4),	
+			ScoredResource("token_iron_maiden.projectile","projectile",1.0f,4),	
+			ScoredResource("token_goldenglow_swim.projectile","projectile",1.0f,4),	
 
 			//AI类信物
 			ScoredResource("ai_token_asuma_toki.projectile","projectile",1.0f,2)
@@ -392,13 +402,9 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			{
 			ScoredResource("deploy_ex_pak40.weapon", "weapon", 0.1f),
 			ScoredResource("deploy_ex_zis3.weapon", "weapon", 0.1f),
-
-			ScoredResource("ex_isu_152_call.projectile", "projectile", 1.0f),
 			ScoredResource("noxe_call.projectile", "projectile", 1.0f),
 			ScoredResource("ex_sturmtiger_tank_call.projectile", "projectile", 1.0f),
 			ScoredResource("ex_apocalypse_tank_call.projectile", "projectile", 1.0f),
-			ScoredResource("ex_kv2_gup_call.projectile", "projectile", 1.0f),
-			ScoredResource("ex_sherman_call.projectile", "projectile", 1.0f),
 			ScoredResource("ex_guntruck_plus_call.projectile", "projectile", 1.0f),
 			ScoredResource("ba_crusader_call.projectile", "projectile", 1.0f),
 			ScoredResource("ex_m18_call.projectile", "projectile", 1.0f),
@@ -406,20 +412,14 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			ScoredResource("mi_24_call.projectile", "projectile", 0.5f),
 			ScoredResource("bell_360_call.projectile", "projectile", 0.5f),
 			ScoredResource("mh_60s_call.projectile", "projectile", 0.5f),
-			ScoredResource("is2_m1895_call.projectile", "projectile", 1.0f),
 			ScoredResource("himars_call.projectile", "projectile", 0.5f),
-			ScoredResource("mtlb_2b9_call.projectile", "projectile", 1.0f),
 			ScoredResource("m61a5_call.projectile", "projectile", 1.0f),
 			ScoredResource("uragan_call.projectile", "projectile", 0.5f),
 			ScoredResource("borsig_call.projectile", "projectile", 1.0f),
 			ScoredResource("zbd09_call.projectile", "projectile", 1.0f),
 			ScoredResource("lav6_call.projectile", "projectile", 1.0f),
-			ScoredResource("wiesel_tow_call.projectile", "projectile", 1.0f),
 			ScoredResource("panther_a_call.projectile", "projectile", 1.0f),
-			ScoredResource("panzer_3_a_call.projectile", "projectile", 1.0f),
 			ScoredResource("sdkfz184_call.projectile", "projectile", 1.0f),
-			ScoredResource("t90m3_call.projectile", "projectile", 1.0f),
-			ScoredResource("marder_call.projectile", "projectile", 1.0f),
 			ScoredResource("ex_unsc_scion_call.projectile", "projectile", 1.0f)
 			},
 			{
@@ -579,8 +579,12 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			// 1.9.3
         	ScoredResource("acg_izayoi_sakuya_i.weapon", "weapon", 1.0f),
 			// 1.9.4
-        	ScoredResource("ex_exo_dreadnought_mg.weapon", "weapon", 2.5f),
-        	ScoredResource("acg_scripts_hoshino_get.weapon", "weapon", 2.5f)
+        	ScoredResource("ex_exo_dreadnought_mg.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_scripts_hoshino_get.weapon", "weapon", 1.0f),
+			// 1.9.5
+        	ScoredResource("acg_sabayon_gun.weapon", "weapon", 1.5f),
+			// 1.9.7
+        	ScoredResource("ex_exo_telemon_cannon.weapon", "weapon", 4.0f)
 			},
 			{
 			ScoredResource("lottery_cash_II.carry_item", "carry_item", 1.0f)
@@ -667,7 +671,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			{
         	ScoredResource("acg_megumin_wand_float.weapon", "weapon", 1.0f),
 
-        	ScoredResource("acg_shuiniao.weapon", "weapon", 1.0f),
+        	// ScoredResource("acg_shuiniao.weapon", "weapon", 1.0f),
         	ScoredResource("acg_fiammetta_gl.weapon", "weapon", 1.0f),
 
         	ScoredResource("acg_iws2000_banisher.weapon", "weapon", 1.0f),
@@ -708,7 +712,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			{
         	ScoredResource("acg_bronya.weapon", "weapon", 1.0f),
         	ScoredResource("acg_g41_lasercanno_diffusion.weapon", "weapon", 1.0f),
-        	ScoredResource("acg_shuiniao.weapon", "weapon", 1.0f),
+        	// ScoredResource("acg_shuiniao.weapon", "weapon", 1.0f),
         	ScoredResource("acg_fiammetta_gl.weapon", "weapon", 1.0f),
         	ScoredResource("ex_disaster_railgun.weapon", "weapon", 1.0f),
         	ScoredResource("acg_texas_skill.weapon", "weapon", 1.0f),
@@ -798,8 +802,8 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("ex_space_marines.weapon", "weapon", 1.0f),
         	ScoredResource("acg_rumi.weapon", "weapon", 1.0f),
 			// 1.9.4
-        	ScoredResource("acg_fade_red.weapon", "weapon", 2.0f),
-        	ScoredResource("acg_bf109.weapon", "weapon", 2.0f)
+        	ScoredResource("acg_fade_red.weapon", "weapon", 1.0f),
+        	ScoredResource("acg_bf109.weapon", "weapon", 1.0f)
 			},
 			{
 			ScoredResource("lottery_cash_II.carry_item", "carry_item", 1.0f)
@@ -862,7 +866,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			{
         	ScoredResource("acg_megumin_wand_float.weapon", "weapon", 1.0f),
 
-        	ScoredResource("acg_shuiniao.weapon", "weapon", 1.0f),
+        	// ScoredResource("acg_shuiniao.weapon", "weapon", 1.0f),
         	ScoredResource("acg_texas_skill.weapon", "weapon", 1.0f),
 
         	ScoredResource("acg_sorasaki_hina.weapon", "weapon", 1.0f),
@@ -901,9 +905,19 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		};
 		array<array<ScoredResource@>> rewardPasses = {
 			{
-        	ScoredResource("ex_piano_uzuki.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_mc_steak.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_mc_mutton.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_mc_chicken.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_mc_melon_slice.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_mc_porkchop.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_mc_apple.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_mc_cod.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_mc_potato.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_mc_cake.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_mc_golden_carrot.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_mc_rabbit_stew.weapon", "weapon", 1.0f),
 
-        	ScoredResource("ex_piano_uzuki.weapon", "weapon", 1.0f)
+        	ScoredResource("ex_mc_cookie.weapon", "weapon", 1.0f)
 			},
 			{
 			ScoredResource("lottery_cash_II.carry_item", "carry_item", 1.0f)
@@ -1055,17 +1069,17 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		ScoredResource("reward_box_collection.carry_item", "carry_item", 0.001f),
 		ScoredResource("reward_box_skin.carry_item", "carry_item", 20.0f),
 		ScoredResource("reward_box_music.carry_item", "carry_item", 1.0f), 
-		ScoredResource("reward_box_vehicle.carry_item", "carry_item", 5.0f), 
 		// mk1 2w标价 期望＞6w
 		ScoredResource("reward_box_weapon_1.carry_item", "carry_item", 7.1f),
 		// mk2 5w 期望＞(2+7)*3=27w
 		ScoredResource("reward_box_weapon_2.carry_item", "carry_item", 1.8f),
 		// mk3 12w标价 期望＞(12+5+2)*3=57w
-		ScoredResource("reward_box_weapon_lamda.carry_item", "carry_item", 0.72f),
+		ScoredResource("reward_box_weapon_lamda.carry_item", "carry_item", 1.32f),
 		// mk4 非卖 预期24w 期望＞(24+12+5+2)*3=129w
-		ScoredResource("reward_box_weapon_delta.carry_item", "carry_item", 0.30f),
+		ScoredResource("reward_box_weapon_delta.carry_item", "carry_item", 0.48f),
 		// mk5 非卖 预期48w 期望＞(48+24+12+5+2)*3=273w
-		ScoredResource("reward_box_weapon_v.carry_item", "carry_item", 0.10f),
+		ScoredResource("reward_box_weapon_v.carry_item", "carry_item", 0.16f),
+		//tt = 161.021
 		// 待后续重置
 		// ScoredResource("reward_box_weapon_beta.carry_item", "carry_item", 0.01f),
 		// ScoredResource("reward_box_weapon_gama.carry_item", "carry_item", 0.01f),

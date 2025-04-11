@@ -23,6 +23,7 @@ reserves_spawn_point="1">
 	<physics 
 	mass="25.0"
 	broken_mass="20"
+	max_health="300"
     remove_collision_threshold="0.2"		
 	extent="3.0 0.0 4.0" 
 	offset="0 0.0 0" 

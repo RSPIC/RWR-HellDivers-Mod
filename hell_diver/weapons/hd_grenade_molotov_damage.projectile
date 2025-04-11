@@ -39,10 +39,10 @@ player_death_drop_owner_lock_time="120"
     <sound class="result" key="vehicle" copy="other" />
     <sound class="result" key="character" copy="other" />
 
-	<effect class="result" key="terrain" ref="molotov_fire_01"/>
-    <effect class="result" key="terrain" ref="molotov_fire_02"/>
-    <effect class="result" key="terrain" ref="molotov_smoke"/>
-    <effect class="activated" ref="cyborgs_activated_flamethrower_01" />
+    <effect class="result" key="terrain" ref="general_result_ground_fire" lighting="0"/>
+    <effect class="result" key="terrain" ref="general_result_ground_fire_2" lighting="0"/>
+    <effect class="result" key="terrain" ref="general_result_ground_fire_3" lighting="0"/>
+    <effect class="result" key="terrain" ref="general_result_ground_fire_4" lighting="0"/>
 
 	<effect class="result" key="other" copy="terrain" />
     <effect class="result" key="static_object" copy="terrain" />

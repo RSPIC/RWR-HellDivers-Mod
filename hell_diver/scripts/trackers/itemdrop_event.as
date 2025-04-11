@@ -66,6 +66,8 @@ dictionary banned_backpack_item = {
         {"hd_offensive_missile_barrage_mk3.projectile","projectile"},
         {"hd_offensive_incendiary_bombs_mk3.projectile","projectile"},
         {"hd_offensive_heavy_strafing_run_mk3.projectile","projectile"},
+        {"hd_offensive_orbital_120mm_he_barrage_call.projectile","projectile"},
+        {"hd_offensive_orbital_380mm_he_barrage_call.projectile","projectile"},
 
         // defensive 防御性支援
         {"hd_at_mine_mk3.projectile","projectile"},
@@ -132,6 +134,9 @@ dictionary banned_backpack_item = {
 //禁止仓库携带物品
 dictionary banned_stash_item = {
 
+		{"re_ex_exo_telemon_mg.weapon","weapon"},
+		{"re_ex_exo_telemon_missile.weapon","weapon"},
+		{"re_acg_sabayon_artillery_skill.weapon","weapon"},
 		{"acg_patricia_fataldrive.weapon","weapon"},
 		{"acg_elaina_wand_skill.weapon","weapon"},
 		{"ex_hyper_mega_bazooka_launcher_skill.weapon","weapon"},
@@ -139,6 +144,15 @@ dictionary banned_stash_item = {
 		{"hd_resupply_pack_mk3.carry_item","carry_item"},
 		{"hd_resupply_pack_mk3_ex.carry_item","carry_item"},
 		{"hd_at_mine_submission_stay.projectile","projectile"},
+
+		{"marder_call.projectile","projectile"},
+		{"panzer_3_a_call.projectile","projectile"},
+		{"is2_m1895_call.projectile","projectile"},
+		{"ex_isu_152_call.projectile","projectile"},
+		{"ex_kv2_gup_call.projectile","projectile"},
+		{"t90m3_call.projectile","projectile"},
+		{"ex_sherman_call.projectile","projectile"},
+		{"mtlb_2b9_call.projectile","projectile"},
 
         // 占位的
         {"666",-1}
@@ -475,6 +489,13 @@ class itemdrop_event : Tracker {
 			deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
 			deleteItemInStash(m_metagame,characterId,"carry_item",itemKey);
 			_log("delete banVest helldivers_vest_barrier");
+		}
+		targetVestKey = "infected_vest_";
+		tempKey = itemKey.substr(0,targetVestKey.size());
+		if(tempKey == targetVestKey ){
+			deleteItemInBackpack(m_metagame,characterId,"carry_item",itemKey);
+			deleteItemInStash(m_metagame,characterId,"carry_item",itemKey);
+			_log("delete banVest infected_vest");
 		}
 	}
 

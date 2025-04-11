@@ -18,9 +18,9 @@ class GameModeCampaign : GameModeInvasion {
 	// --------------------------------------------
 	void init() {
 		setupDifficultyTracker();
-
+		_log("GameModeCampaign::GameModeInvasion init");
 		GameModeInvasion::init();
-
+		_log("GameModeCampaign init");
 		// add local player as admin for easy testing, hacks, etc
 		if (!getAdminManager().isAdmin(getUserSettings().m_username)) {
 			getAdminManager().addAdmin(getUserSettings().m_username);

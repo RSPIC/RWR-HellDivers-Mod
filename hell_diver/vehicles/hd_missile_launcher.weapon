@@ -233,7 +233,7 @@ key="hd_missile_launcher_mk3.weapon">
 	time_to_live="5" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.6"> 
 	
         <result class="spawn" instance_class="projectile" instance_key="hd_missile_launcher_mk3_damage.projectile" 
-		min_amount="30" max_amount="30" offset="0 1 0" position_spread="3 0" direction_spread="0.1 0" />
+		min_amount="50" max_amount="50" offset="0 1 0" position_spread="3 0" direction_spread="0.1 0" />
 
         <trigger class="impact" />
         <rotation class="motion" />

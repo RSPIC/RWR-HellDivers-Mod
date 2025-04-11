@@ -153,7 +153,7 @@ particle_system 401_thbow_muzzle_ring
 
 particle_system 401_thbow_activated_trail
 {
-	quota 300
+	quota 100
 	material point_soft_edge_100
 	particle_width 0.7
 	particle_height 0.7
@@ -211,8 +211,8 @@ particle_system 401_thbow_activated_trail
 }
 particle_system 401_thbow_tracking_thunder
 {
-	quota 500
-	emit_emitter_quota 500
+	quota 220
+	emit_emitter_quota 220
 	material point_hard_edge
 	particle_width 0.12
 	particle_height 0.12
@@ -306,8 +306,8 @@ particle_system 401_thbow_tracking_thunder
 
 particle_system 401_thbow_tracking_line_inBox
 {
-	quota 500
-	emit_emitter_quota 500
+	quota 220
+	emit_emitter_quota 220
 	material point_hard_edge
 	particle_width 0.2
 	particle_height 0.2
@@ -390,7 +390,7 @@ particle_system 401_thbow_tracking_line_inBox
 }
 particle_system 401_thbow_surrounding_thunder
 {
-	quota 200
+	quota 150
 	material bow_current_1
 	particle_width 2
 	particle_height 2

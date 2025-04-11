@@ -145,6 +145,22 @@ array<missionExchangeList@> missionExchangeLists ={
         }
     ),
     missionExchangeList(
+        "TaskHonorType",
+        array<XmlElement@>= {
+        }, 
+        array<XmlElement@>= {
+            getStashXmlElement("hd_money_10w","carry_item",10)
+        }
+    ),
+    missionExchangeList(
+        "TaskHonorSpecialType",
+        array<XmlElement@>= {
+        }, 
+        array<XmlElement@>= {
+            getStashXmlElement("reward_box_collection.carry_item","carry_item",1)
+        }
+    ),
+    missionExchangeList(
         "TaskFinish",
         array<XmlElement@>= {
         }, 
@@ -187,24 +203,27 @@ class MissionCounter {
     string m_task_name;
     string m_task_CNname = m_task_name;
     string m_task_type;
+    string m_task_version = "";
     int m_need_times;
     int m_finished_times;
     MissionCounter@ m_subMission;
     bool m_finished = false;
 
-    MissionCounter(string name,string CNname,int needs,string type = "Task"){
+    MissionCounter(string name,string CNname,int needs,string type = "Task",string version = ""){
         m_task_name = name;
         m_need_times = needs;
         m_finished_times = 0;
         m_task_type = type;
         m_task_CNname = CNname;
+        m_task_version = version;
     }
-    MissionCounter(string name,string CNname,array<MissionCounter@> subMissions,string type = "Task"){
+    MissionCounter(string name,string CNname,array<MissionCounter@> subMissions,string type = "Task",string version = ""){
         m_task_name = name;
         m_finished_times = -1;
         m_need_times = -1;
         m_task_type = type;
         m_task_CNname = CNname;
+        m_task_version = version;
         // 确保传入的数组不为空且有元素
         uint randomIndex = rand(0,subMissions.size()-1); 
         for(uint i = 0; i < subMissions.size() ; ++i){
@@ -270,13 +289,15 @@ class playerMissionInfo {
     Metagame@ m_metagame;
     string m_name;
     string m_sid;
-    array<MissionCounter@> m_missions;
+    array<MissionCounter@> m_missions; //DailyTask 固定内容
+    array<MissionCounter@> m_honor_missions; //HonorTask 固定内容
     bool m_finish_today = false;
     int m_nowDay;
     int m_testToday = 0;
 
     array<MissionCounter@> dailyTasks;
     array<MissionCounter@> dailyTasks_hard;
+    array<MissionCounter@> dailyTasks_honor;
 
     void buildMissions(){
         // 使用 push_back 方法添加元素
@@ -292,9 +313,15 @@ class playerMissionInfo {
         dailyTasks_hard.push_back(MissionCounter("finish_sidemission", "完成支线任务", 2, "TaskHard"));
         dailyTasks_hard.push_back(MissionCounter("collector", "收集战利品", collector, "TaskHard"));
     }
+    void buildHonorMissions(){
+        // 使用 push_back 方法添加元素
+        dailyTasks_honor.push_back(MissionCounter("kill_enemy_5w", "击杀敌人", 50000, "TaskHonorSpecial"));
+        dailyTasks_honor.push_back(MissionCounter("timeplay_min_6000", "游玩分钟", 6000, "TaskHonor"));
+    }
 
     playerMissionInfo(Metagame@ metagame,string name){
         buildMissions();
+        buildHonorMissions();
         @m_metagame = @metagame;
         m_name = name;
         m_sid = g_playerInfoBuck.getSidByName(m_name);
@@ -309,6 +336,7 @@ class playerMissionInfo {
         return writeMissionInfo(TagName,newXmls,syncTime);
     }
     protected bool writeMissionInfo(string TagName,array<XmlElement@> newXmls,int syncTime = -1) {
+        _log("writeMissionInfo="+TagName+" syncTime="+syncTime);
         string sid = g_playerInfoBuck.getSidByName(m_name);
         sid = m_sid;
         if(sid == ""){return false;}
@@ -334,7 +362,7 @@ class playerMissionInfo {
         bool findMission = false;
         bool isTrue = false;
         for(int j = 0 ; j < int(m_stashs.size()) ; ++j){
-            if(syncTime == -114514){ //重置玩家每日任务信息进度
+            if(syncTime == -114514){ //重置玩家任务信息进度,强制清空
                 break;
             }
             XmlElement@ m_stash = XmlElement(m_stashs[j]);
@@ -344,14 +372,15 @@ class playerMissionInfo {
                 _debugReport(m_metagame,"找到玩家任务信息");
                 array<const XmlElement@> childs = m_stash.getChilds();
                 m_stash.removeAllChild();
-                bool isFindSubTag = false; // 用于觉得是否新建同类项
+                bool isFindSubTag = false; // 用于觉得是否新建同类项，添加新任务时有用
                 for(uint i = 0 ; i < childs.size() ; ++i){
                     XmlElement@ child = XmlElement(childs[i]);
                     if(child is null){continue;}
-                    if(TagName == child.getName()){ // 子级比对
+                    if(TagName == child.getName()){ // 子级比对,DailyTask or HonorMission
                         isFindSubTag = true;
                         bool updateFinishInfo = false; // 决定是否重置玩家的每日任务
-                        if(syncTime != -1){ // 需要同步玩家登陆日期信息 此处应对于DailyTask项
+                        bool updateHonorFinishInfo = false; // 决定是否重置玩家的每月任务
+                        if(syncTime != -1 && syncTime >= 0){ // 需要同步玩家登陆日期信息 此处应对于DailyTask项
                             int lastDay = child.getIntAttribute("lastDay");
                             if(lastDay < syncTime){ // 排除同一天的累计更新
                                 if(lastDay > syncTime - 3){ // 三个游戏日内算连续登陆
@@ -370,11 +399,35 @@ class playerMissionInfo {
                                 _log("pass sync,oldDay="+lastDay+" toDay="+syncTime+", ready to refresh missionInfo for "+m_name);
                             }
                         }
-                        array<const XmlElement@> tagChilds = child.getChilds();
+                        if(TagName == "HonorMission"){  //月度任务检查
+                            string nowVersion = getServerVersion(m_metagame);
+                            string lastVersion = child.getStringAttribute("lastVersion");
+                            _log("lastVersion ="+lastVersion);
+                            _log("nowVersion ="+nowVersion);
+                            child.setStringAttribute("lastVersion",nowVersion);
+                            if(syncTime == -233){ //-233为特定code,由getPermission()传入，表示需要版本更新
+                                _log("版本变动，更新任务，玩家="+m_name);
+                                updateHonorFinishInfo=true;
+                            }else{ //不更新，saveAndReload
+                                array<const XmlElement@> m_honors = child.getChilds();
+                                array<MissionCounter@> tasks = XmlToTask(m_honors);
+                                if(tasks.size() == 0){ //首次获得每月任务
+                                    resetHonorMissions();
+                                    initiateHonorMissions(child);
+                                    _log("从未执行每月任务，初始化");
+                                }else{
+                                    //??????
+                                }
+                            }
+                        }
+                        array<const XmlElement@> tagChilds = child.getChilds(); //m_stash.chuilds.chuild.tagChilds = DailyTask.childs 
                         child.removeAllChild();
                         if(updateFinishInfo){ // 刷新任务列表
                             resetMissions();
                             initiateDayMissions(child);
+                        }else if(updateHonorFinishInfo){
+                            resetHonorMissions();
+                            initiateHonorMissions(child);
                         }else{
                             array<XmlElement@> tempChilds = constXmlToXml(tagChilds);
                             for(uint jj=0 ; jj < newXmls.size() ; ++jj){ //外来的信息
@@ -423,7 +476,7 @@ class playerMissionInfo {
             missionElement.appendChild(dailyTask);
 
             XmlElement honorMission("HonorMission");
-            honorMission.setIntAttribute("finishedTimes", 0);
+            honorMission.setStringAttribute("lastVersion", getServerVersion(m_metagame));
             missionElement.appendChild(honorMission);
 
             allInfo.appendChild(missionElement);
@@ -481,11 +534,26 @@ class playerMissionInfo {
             m_missions.insertLast(task);
         }
     }
+    void readHonorMissions(){
+        const XmlElement@ missions = readMissionInfo("HonorMission");
+        if(missions is null){return;}
+        array<const XmlElement@> m_stashs = missions.getChilds();
+        array<MissionCounter@> tasks = XmlToTask(m_stashs);
+        for(uint i = 0 ; i < tasks.size() ; ++i){
+            MissionCounter@ task = tasks[i];
+            if(task is null){continue;}
+            m_honor_missions.insertLast(task);
+        }
+    }
     void initiateDayMissions(XmlElement@ xml){
         _log("addDayMissions for dailyTasks");
         addDayMissions(dailyTasks,xml);
         _log("addDayMissions for dailyTasks_hard");
         addDayMissions(dailyTasks_hard,xml,"TaskHard");
+    }
+    void initiateHonorMissions(XmlElement@ xml){
+        _log("addDayMissions for dailyHonor");
+        addDayMissions(dailyTasks_honor,xml,"TaskHonor");
     }
 
     void addDayMissions(array<MissionCounter@> @dic,XmlElement@ xml,string TagName = "Task"){
@@ -493,7 +561,11 @@ class playerMissionInfo {
             // 由于基类不是const，需要拷贝
             MissionCounter@ cloned = dic[i].clone();
             if(cloned is null){continue;}
-            m_missions.insertLast(cloned);
+            if(TagName == "TaskHonor"){
+                m_honor_missions.insertLast(cloned);
+            }else{
+                m_missions.insertLast(cloned);
+            }
 
             XmlElement@ Task = XmlElement(TagName);
             Task.setStringAttribute("isFinish","0");
@@ -517,7 +589,6 @@ class playerMissionInfo {
             Task.setIntAttribute("needTimes",needsTime);
 
             xml.appendChild(Task);
-
   
             _log("mission insert="+Task.toString());
         }
@@ -534,7 +605,7 @@ class playerMissionInfo {
                 subTaskName = Mission.m_subMission.m_task_name;
             }
             if((taskName == missionName && subMissionName == subTaskName) || (taskName == missionName && subMissionName == "")){
-                if(Mission.addTimes(times)){
+                if(Mission.addTimes(times)){ //检测单项任务是否完成
                     getRewardOfMission(missionName,Mission.m_task_type);
                     // 检测是否同期所有任务完成
                     bool TasksFinish = true;
@@ -554,13 +625,48 @@ class playerMissionInfo {
                     }
                     saveAndReload();
                 }
-                return true;
+                // return true;
+            }
+        }
+        for(uint i = 0 ; i < m_honor_missions.size() ; ++i){
+            MissionCounter@ Mission = m_honor_missions[i];
+            if(Mission is null){continue;}
+            if(Mission.m_finished){continue;
+            }
+            string taskName = Mission.m_task_name;
+            string subTaskName = "";
+            if(Mission.hasSubMission()){
+                subTaskName = Mission.m_subMission.m_task_name;
+            }
+            if((taskName == missionName && subMissionName == subTaskName) || (taskName == missionName && subMissionName == "")){
+                if(Mission.addTimes(times)){
+                    getRewardOfMission(missionName,Mission.m_task_type);
+                    // 检测是否同期所有任务完成
+                    bool TasksFinish = true;
+                    string taskType = Mission.m_task_type;
+                    for(uint j = 0 ; j < m_honor_missions.size() ; ++j){
+                        @Mission = m_honor_missions[j];
+                        if(Mission.m_task_type == taskType){
+                            if(!Mission.m_finished){
+                                TasksFinish = false;
+                            }
+                        }
+                    }
+                    if(TasksFinish){
+                        getRewardOfMission(taskType+"Finish");
+                        int pid = g_playerInfoBuck.getPidByName(m_name);
+                        _notify(m_metagame,pid,"你完成了"+taskType+"难度所有任务，额外奖励已发放");
+                    }
+                    saveAndReload();
+                }
+                // return true;
             }
         }
         return false;
     }
     void saveAndReload(){
         writeMissionInfo("DailyTask",TaskToXml(m_missions));
+        writeMissionInfo("HonorMission",TaskToXml(m_honor_missions));
         _log("saveAndReload missions for "+m_name);
     }
     array<XmlElement@> TaskToXml(array<MissionCounter@> tasks) {
@@ -706,6 +812,10 @@ class playerMissionInfo {
             baseReward = "TaskType";
         }else if(missionType == "TaskHard"){
             baseReward = "TaskHardType";
+        }else if(missionType == "TaskHonor"){
+            baseReward = "TaskHonorType";
+        }else if(missionType == "TaskHonorSpecial"){
+            baseReward = "TaskHonorSpecialType";
         }
         bool isFinish = false;
         for(uint i = 0; i< missionExchangeLists.size() ; ++i){
@@ -736,10 +846,17 @@ class playerMissionInfo {
 
     void resetMissions(){
         // m_missions.resize(0);
+        _log("resetMissions for "+m_name+",m_missions.size()="+m_missions.size());
         while(m_missions.size()!=0){
             m_missions.removeAt(0);
         }
-        _log("resetMissions for "+m_name+",m_missions.size()="+m_missions.size());
+    }
+    void resetHonorMissions(){
+        // m_honor_missions.resize(0);
+        _log("resetMissions for "+m_name+",m_honor_missions.size()="+m_honor_missions.size());
+        while(m_honor_missions.size()!=0){
+            m_honor_missions.removeAt(0);
+        }
     }
     bool getPermission(){ //是否重置当天的每日任务
         const XmlElement@ DailyTask = readMissionInfo("DailyTask");
@@ -760,6 +877,21 @@ class playerMissionInfo {
                 }
             }
         }
+        const XmlElement@ HonorMission = readMissionInfo("HonorMission");
+        if(HonorMission !is null){
+            if(HonorMission.hasAttribute("lastVersion")){
+                string lastVersion = HonorMission.getStringAttribute("lastVersion");
+                string nowVersion = getServerVersion(m_metagame);
+                if(nowVersion != ""){
+                    if(lastVersion != nowVersion){ //版本变动，更新任务
+                        _log("pass getPermission for "+m_name+", now Version is "+nowVersion);
+                        writeMissionInfo("HonorMission",null,-233); //-233为特定code
+                    }
+                }else{
+                    _report(m_metagame,"faild to get Server Version data,SID="+m_sid);
+                }
+            }
+        }
         showDayMission();
         saveAndReload();
         return false;
@@ -768,19 +900,30 @@ class playerMissionInfo {
         if(m_missions.size() == 0){
             readMissions();
         }
+        if(m_honor_missions.size() == 0){
+            readHonorMissions();
+        }
+        array<MissionCounter@> temps = m_missions;
+        for(uint i = 0 ; i < m_honor_missions.size() ; ++i){ //合并日常任务和月任务显示
+            temps.insertLast(m_honor_missions[i]);
+        }
         int pid = g_playerInfoBuck.getPidByName(m_metagame,m_name);
         
         dictionary a;
         //初始化
-        for(int i = 0 ; i < 10 ; ++i){
+        for(int i = 0 ; i < 20 ; ++i){
             string strvalue;
-            strvalue = "%value"+i;
+            if(i < 10){
+                strvalue = "%value"+i;
+            }else{
+                strvalue = "%valuea"+(i-9);
+            }
             a[strvalue] = "";
         }
         bool isAllFinished = true;
-        for(uint j = 0 ; j < m_missions.size() ; ++j){
-            if(j < 10){
-                MissionCounter@ task = m_missions[j];
+        for(uint j = 0 ; j < temps.size() ; ++j){
+            if(j < 20){
+                MissionCounter@ task = temps[j];
                 if(task is null){continue;}
                 if(task.m_finished){continue;}
                 isAllFinished = false;
@@ -801,17 +944,28 @@ class playerMissionInfo {
                     }
                 }
                 string strvalue;
-                strvalue = "%value"+j;
+                if(j < 10){
+                    strvalue = "%value"+j;
+                }else{
+                    strvalue = "%valuea"+(j-9);
+                }
                 a[strvalue] = "Easy "+baseCnName+":"+subBaseCnName+" "+finishedTimes+"/"+needTimes;
+
                 if(taskType == "TaskHard"){
                     a[strvalue] = "Hard "+baseCnName+":"+subBaseCnName+" "+finishedTimes+"/"+needTimes;
+                }
+                if(taskType == "TaskHonor"){
+                    a[strvalue] = "Honor "+baseCnName+":"+subBaseCnName+" "+finishedTimes+"/"+needTimes;
+                }
+                if(taskType == "TaskHonorSpecial"){
+                    a[strvalue] = "Honor "+baseCnName+":"+subBaseCnName+" "+finishedTimes+"/"+needTimes;
                 }
             }
         }
         if(isAllFinished){
-            a["%value0"] = "已完成所有任务";
+            a["%value0"] = "已完成所有每日任务";
             if(isEng(m_name)){
-                a["%value0"] = "Finished All missions";
+                a["%value0"] = "Finished All Daily missions";
             }
         }
         a["%day"] = "距离下次更新剩余进度:"+getNextServerDayRate(m_metagame)+"/100%";
@@ -845,7 +999,9 @@ class playerMissionInfo {
     }
     protected const XmlElement@ readPlayerStashInfo(string sid){
         sid = sid+"_stash.xml";
-        const XmlElement@ root = readXML(m_metagame,sid).getFirstChild();
+        const XmlElement@ root1 = readXML(m_metagame,sid);
+        if(root1 is null){return null;}
+        const XmlElement@ root = root1.getFirstChild();
         if(root is null){
             _log("readPlayerStashInfo for sid="+sid+" is null,create");
             writeXML(m_metagame,sid,XmlElement("players"));
@@ -961,6 +1117,7 @@ class playerMissionInfoBuck {
         for(uint i = 0; i<size(); i++){
             m_playerMissionInfos[i].addMissionFinishTimes("timeplay_min_20",1);
             m_playerMissionInfos[i].addMissionFinishTimes("timeplay_min_60",1);
+            m_playerMissionInfos[i].addMissionFinishTimes("timeplay_min_6000",1);
         }
     }
     void playMode(string gameMode){
@@ -1084,6 +1241,7 @@ class hd_daily_mission : Tracker{
             }
 
             g_playerMissionInfoBuck.addMissionFinishTimes(k_name,"kill_enemy_100");
+            g_playerMissionInfoBuck.addMissionFinishTimes(k_name,"kill_enemy_5w");
             if(soldier_group_name != ""){
                 g_playerMissionInfoBuck.addMissionFinishTimes(k_name,"kill_selected_enemy",1,soldier_group_name);
             }
@@ -1174,6 +1332,8 @@ class hd_daily_mission : Tracker{
                 g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"kill_with_melee",100);
                 g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"finish_sidemission",100);
                 g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"collector",100);
+                g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"kill_enemy_5w",50000);
+                g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"timeplay_min_6000",6000);
                 _report(m_metagame,"addK");
             }
             if(message == "/saveandreload"){

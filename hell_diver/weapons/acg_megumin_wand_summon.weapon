@@ -7,7 +7,7 @@ key="acg_megumin_wand_summon.weapon"
     <tag name="sniper" />
     <specification 
 	retrigger_time="-1"
-    last_burst_retrigger_time="35"
+    last_burst_retrigger_time="8"
 	accuracy_factor="1" 
 	sustained_fire_grow_step="20" 
 	sustained_fire_diminish_rate="0.5" 
@@ -20,8 +20,8 @@ key="acg_megumin_wand_summon.weapon"
 	class="2" 
 	reload_one_at_a_time="0" 
 	sight_range_modifier="3" 
-	projectile_speed="40.0" 
-	barrel_offset_3d="0 1 2.4"
+	projectile_speed="5.0" 
+	barrel_offset_3d="0 30 0"
 	projectiles_per_shot="1" 
 	burst_shots="1"/>
     <weak_hand_hold offset="1" />
@@ -46,7 +46,7 @@ key="acg_megumin_wand_summon.weapon"
     <animation state_key="next_in_chain_in" animation_key="" />
     <animation state_key="next_in_chain_out" animation_key="" />
      
-    <sound key="fire" fileref="wand_hh_reload.wav" pitch_variety="0.00"  volume="2" />
+    <sound key="fire" fileref="wand_aa_fire.wav" pitch_variety="0.00"  volume="2" />
     <!-- <sound key="fire" fileref="" pitch_variety="0.00"  volume="0" /> -->
 
     <sound key="cycle" fileref="potion_open.wav" pitch_variety="0.00"  volume="4"/>
@@ -65,18 +65,21 @@ key="acg_megumin_wand_summon.weapon"
     <hud_icon filename="wand_hh.png" />
     
 
-    <projectile file="wand_guiding_01.projectile">
+    <projectile file="wand_waiting_03.projectile">
     	<!-- 10x100 轰炸伤 -->
         
     </projectile>
+    <effect class="muzzle" ref="wand_magic_circle_muzzle_float" />    
+    <effect class="muzzle" ref="wand_magic_circle_expand_muzzle_float" /> 
+    <effect class="muzzle" ref="wand_magic_circle_warmup_muzzle_float" /> 
 
-    <ballistics curve_height="30.0" near_far_distance="0.0" 
+    <!-- <ballistics curve_height="30.0" near_far_distance="0.0" 
     speed_estimation_near="0" speed_estimation_far="300"
-     max_speed="300.0" randomness="0.0" tweak_factor="2.5" /> 
+     max_speed="300.0" randomness="0.0" tweak_factor="2.5" />  -->
 
     <shield offset="-0.45 0 0" extent="2 0.1 0.1" />
 
-    <effect class="muzzle" ref="wand_gather_wave_01" />     
+    <!-- <effect class="muzzle" ref="wand_gather_wave_01" />     
     <effect class="muzzle" ref="wand_gather_wave_01_01"/>
     <effect class="muzzle" ref="wand_gather_wave_01_02"/>
     <effect class="muzzle" ref="wand_gather_wave_02" />     
@@ -93,9 +96,9 @@ key="acg_megumin_wand_summon.weapon"
     <effect class="muzzle" ref="wand_gather_wave_06_01"/>
     <effect class="muzzle" ref="wand_gather_wave_center_light_01"/>
 
-    <effect class="muzzle" ref="wand_magic_circle"/>    <!--主要3-->
-    <effect class="muzzle" ref="wand_magic_circle_expand"/><!--扩张2-->
-    <effect class="muzzle" ref="wand_magic_circle_warmup" /><!--内预热圆1-->
+    <effect class="muzzle" ref="wand_magic_circle"/>    
+    <effect class="muzzle" ref="wand_magic_circle_expand"/>
+    <effect class="muzzle" ref="wand_magic_circle_warmup" />
     <effect class="muzzle" ref="wand_magic_circle_on_ground_expand"/>2
     <effect class="muzzle" ref="wand_magic_circle_on_ground_warmup"/>1
     <effect class="muzzle" ref="wand_magic_circle_on_ground_circle"/>3
@@ -105,7 +108,7 @@ key="acg_megumin_wand_summon.weapon"
     <effect class="muzzle" ref="wand_magic_center_shoot_laser"/>7
     <effect class="muzzle" ref="wand_magic_center_preshoot_away_circle"/>7
     <effect class="muzzle" ref="wand_magic_area_smoke"/>
-    <effect class="muzzle" ref="wand_magic_area_spot"/>
+    <effect class="muzzle" ref="wand_magic_area_spot"/> -->
 
     <stance state_key="running" accuracy="1" />
     <stance state_key="walking" accuracy="1" />
@@ -223,7 +226,7 @@ key="re_acg_megumin_wand_summon.weapon"
     <tag name="sniper" />
     <specification 
 	retrigger_time="-1"
-    last_burst_retrigger_time="35"
+    last_burst_retrigger_time="8"
 	accuracy_factor="1" 
 	sustained_fire_grow_step="20" 
 	sustained_fire_diminish_rate="0.5" 
@@ -236,8 +239,8 @@ key="re_acg_megumin_wand_summon.weapon"
 	class="2" 
 	reload_one_at_a_time="0" 
 	sight_range_modifier="3" 
-	projectile_speed="40.0" 
-	barrel_offset_3d="0 1 2.4"
+	projectile_speed="5.0" 
+	barrel_offset_3d="0 30 0"
 	projectiles_per_shot="1" 
 	burst_shots="1"/>
     <weak_hand_hold offset="1" />
@@ -262,7 +265,7 @@ key="re_acg_megumin_wand_summon.weapon"
     <animation state_key="next_in_chain_in" animation_key="" />
     <animation state_key="next_in_chain_out" animation_key="" />
      
-    <sound key="fire" fileref="wand_hh_reload.wav" pitch_variety="0.00"  volume="2" />
+    <sound key="fire" fileref="wand_aa_fire.wav" pitch_variety="0.00"  volume="2" />
     <!-- <sound key="fire" fileref="" pitch_variety="0.00"  volume="0" /> -->
 
     <sound key="cycle" fileref="potion_open.wav" pitch_variety="0.00"  volume="4"/>
@@ -279,21 +282,23 @@ key="re_acg_megumin_wand_summon.weapon"
     <addon_model filename="wand_hh_addons.xml" />
 
     <hud_icon filename="wand_hh.png" />
-
     
 
-    <projectile file="wand_guiding_01.projectile">
+    <projectile file="wand_waiting_03.projectile">
     	<!-- 10x100 轰炸伤 -->
         
     </projectile>
+    <effect class="muzzle" ref="wand_magic_circle_muzzle_float" />    
+    <effect class="muzzle" ref="wand_magic_circle_expand_muzzle_float" /> 
+    <effect class="muzzle" ref="wand_magic_circle_warmup_muzzle_float" /> 
 
-    <ballistics curve_height="30.0" near_far_distance="0.0" 
+    <!-- <ballistics curve_height="30.0" near_far_distance="0.0" 
     speed_estimation_near="0" speed_estimation_far="300"
-     max_speed="300.0" randomness="0.0" tweak_factor="2.5" /> 
+     max_speed="300.0" randomness="0.0" tweak_factor="2.5" />  -->
 
     <shield offset="-0.45 0 0" extent="2 0.1 0.1" />
 
-    <effect class="muzzle" ref="wand_gather_wave_01" />     
+    <!-- <effect class="muzzle" ref="wand_gather_wave_01" />     
     <effect class="muzzle" ref="wand_gather_wave_01_01"/>
     <effect class="muzzle" ref="wand_gather_wave_01_02"/>
     <effect class="muzzle" ref="wand_gather_wave_02" />     
@@ -310,9 +315,9 @@ key="re_acg_megumin_wand_summon.weapon"
     <effect class="muzzle" ref="wand_gather_wave_06_01"/>
     <effect class="muzzle" ref="wand_gather_wave_center_light_01"/>
 
-    <effect class="muzzle" ref="wand_magic_circle"/>    <!--主要3-->
-    <effect class="muzzle" ref="wand_magic_circle_expand"/><!--扩张2-->
-    <effect class="muzzle" ref="wand_magic_circle_warmup" /><!--内预热圆1-->
+    <effect class="muzzle" ref="wand_magic_circle"/>    
+    <effect class="muzzle" ref="wand_magic_circle_expand"/>
+    <effect class="muzzle" ref="wand_magic_circle_warmup" />
     <effect class="muzzle" ref="wand_magic_circle_on_ground_expand"/>2
     <effect class="muzzle" ref="wand_magic_circle_on_ground_warmup"/>1
     <effect class="muzzle" ref="wand_magic_circle_on_ground_circle"/>3
@@ -322,7 +327,7 @@ key="re_acg_megumin_wand_summon.weapon"
     <effect class="muzzle" ref="wand_magic_center_shoot_laser"/>7
     <effect class="muzzle" ref="wand_magic_center_preshoot_away_circle"/>7
     <effect class="muzzle" ref="wand_magic_area_smoke"/>
-    <effect class="muzzle" ref="wand_magic_area_spot"/>
+    <effect class="muzzle" ref="wand_magic_area_spot"/> -->
 
     <stance state_key="running" accuracy="1" />
     <stance state_key="walking" accuracy="1" />

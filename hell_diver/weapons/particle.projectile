@@ -13,12 +13,25 @@ class="grenade" name="" key="particle.projectile" slot="0" radius="0.15" pulldow
     <hud_icon filename="call_deny_right.png" />
     <commonness value="0" />
     <inventory encumbrance="1.0" price="0.0" in_stock="0" />
-    <capacity value="1" source="rank" source_value="0.0" />
+    <capacity value="30" source="rank" source_value="0.0" />
  	<throwable curve_height="14.0" near_far_distance="0" speed_estimation_near="50" 
 	speed_estimation_far="70.0" max_speed="70.0" randomness="0.0" tweak_factor="1.0" />
 	<!-- <result class="notify_script" key="upgrade" /> -->
 	<result class="blast" radius="5" damage="0" push="0.5" decal="0" character_state="none" faction_compare="not_equal" />
 	
+    <effect class="result" key="terrain" ref="sabayon_target_aim_01" lighting="0" post_processing="0"/> 
+    <effect class="result" key="terrain" ref="sabayon_target_aim_02" lighting="0" post_processing="0"/> 
+    <effect class="result" key="terrain" ref="sabayon_target_aim_03" lighting="0" post_processing="0"/> 
+    <effect class="result" key="terrain" ref="sabayon_target_aim_04" lighting="0" post_processing="0"/> 
+    <effect class="result" key="terrain" ref="sabayon_camera_light_1" lighting="0" post_processing="0"/> 
+    <effect class="result" key="terrain" ref="sabayon_camera_light_2" lighting="0" post_processing="0"/> 
+    <effect class="result" key="terrain" ref="sabayon_camera_light_3" lighting="0" post_processing="0"/> 
+    <effect class="result" key="terrain" ref="sabayon_camera_light_4" lighting="0" post_processing="0"/> 
+
+	<effect class="result" key="terrain" ref="stratagems_point_light_area_11s" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="stratagems_liner_light_11s" lighting="0" post_processing="0"/> 
+
+
     <effect class="result" key="terrain" ref="SMS_camera_light_colour_render_faster" lighting="0" post_processing="0"/> 
 	<effect class="result" key="terrain" ref="SMS_vertical_smoke_faster" lighting="0" post_processing="1"/> 
 	<effect class="result" key="terrain" ref="SMS_Ring_smoke_faster" lighting="0" post_processing="1"/> 
@@ -240,6 +253,14 @@ class="grenade" name="" key="particle.projectile" slot="0" radius="0.15" pulldow
 	<effect class="result" ref="texas_center_crossline_1" lighting="0" />
 	<effect class="result" ref="texas_center_crossline_2" lighting="0" />
 	<effect class="activated" ref="texas_activated_center" lighting="0" />
+
+        
+    <effect class="result" key="terrain" ref="ifrit_result_ground_lava" />
+    <effect class="result" key="terrain" ref="general_result_ground_fire" />
+    <effect class="result" key="terrain" ref="general_result_ground_fire_2" />
+    <effect class="result" key="terrain" ref="general_result_ground_fire_3" />
+    <effect class="result" key="terrain" ref="general_result_ground_fire_4" />
+    
 <!--?????????????????????????????????????????????????????????????????????????????????????????????-->
 	<effect class="result" key="terrain" ref="22missile_trail" />
     <effect class="result" key="terrain" ref="22missile_hit_smoke_ambient" />
@@ -285,11 +306,6 @@ class="grenade" name="" key="particle.projectile" slot="0" radius="0.15" pulldow
     
     
     
-    
-    
-    
-    
-    
     <effect class="result" key="terrain" ref="ring_spread_smoke_apocalypse_tank" />
     <effect class="result" key="terrain" ref="ring_spread_fog_apocalypse_tank" />
     <effect class="result" key="terrain" ref="vertical_smoke_apocalypse_tank" />
@@ -303,7 +319,7 @@ class="grenade" name="" key="particle.projectile" slot="0" radius="0.15" pulldow
     
     
     
-        <effect class="result" key="terrain" ref="Arc_ar_result_hit" />
+    <effect class="result" key="terrain" ref="Arc_ar_result_hit" />
     <effect class="result" key="terrain" ref="Arc_tesla_result_area_lighting" />
     <effect class="result" key="terrain" ref="Arc_tesla_result_alert" />
     
@@ -311,12 +327,7 @@ class="grenade" name="" key="particle.projectile" slot="0" radius="0.15" pulldow
     
     
     
-    
-    <effect class="result" key="terrain" ref="ifrit_result_ground_lava" />
-    <effect class="result" key="terrain" ref="general_result_ground_fire" />
-    <effect class="result" key="terrain" ref="general_result_ground_fire_2" />
-    <effect class="result" key="terrain" ref="general_result_ground_fire_3" />
-    <effect class="result" key="terrain" ref="general_result_ground_fire_4" />
+
     
     <effect class="result" key="terrain" ref="ba_general_hit" />
     <effect class="result" key="terrain" ref="ba_mutsuki_impact_circle" />

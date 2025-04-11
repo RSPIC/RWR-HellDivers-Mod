@@ -44,10 +44,10 @@ void main(dictionary@ inputData) {
         settings.m_startServerCommand = """
 <command class='start_server'
 	server_name='[地狱潜兵] 挂机/抽卡/赛车服 '
-	server_port='1244'
+	server_port='1240'
 	url='https://steamcommunity.com/sharedfiles/filedetails/?id=2910392031'
 	register_in_serverlist='1'
-	mode='HD'
+	mode='HD Race'
         persistency='forever'
 	comment='地狱潜兵模组  QQ：498520233 1倍xp'
 	max_players='16'>
@@ -58,9 +58,11 @@ void main(dictionary@ inputData) {
 
         GameModeInvasion metagame(settings);
 
-        metagame.init();
-        metagame.run();
-        metagame.uninit();
+	metagame.init();
+	while(metagame.run()){
+		metagame.init();
+	}
+	metagame.uninit();
 
         _log("ending execution");
 }

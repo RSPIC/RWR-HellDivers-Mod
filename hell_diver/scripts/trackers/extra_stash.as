@@ -217,12 +217,20 @@ class playerStashInfo {
             string itemType;
             for(uint i = 0 ; i < m_stashObject.size() ; ++i){
                 XmlElement@ m_object = m_stashObject[i];
+                itemKey = m_object.getStringAttribute("AA_tag");
+                itemType = m_object.getStringAttribute("A_tag");
                 
                 XmlElement@ object = m_selectObject;
                 if(object is null){
                     _notify(m_metagame,pid,"未选择物品");
                     return;
                 }
+                string slect_itemType = object.getStringAttribute("A_tag");
+                if(slect_itemType == "special"){
+                    _notify(m_metagame,pid,"Special item can't be pull out");
+                    return;
+                }
+
                 if(m_object.equals(object)){ 
                     int inNum = m_object.getIntAttribute("value");
                     int pullOutNum = takeNum;
@@ -232,8 +240,6 @@ class playerStashInfo {
                         i--;
                     }
                     m_object.setIntAttribute("value",inNum-pullOutNum);
-                    itemKey = m_object.getStringAttribute("AA_tag");
-                    itemType = m_object.getStringAttribute("A_tag");
                     @res = Resource(itemKey,itemType);
                     res.addToResources(resources,pullOutNum);
                 }
@@ -257,15 +263,17 @@ class playerStashInfo {
     }
     void addPushInObject(XmlElement@ object){
         if(object !is null){
+            string o_itemKey = object.getStringAttribute("AA_tag");
+            string o_itemType = object.getStringAttribute("A_tag");
+
             int itemNum = object.getIntAttribute("value");
-            if(itemNum + getAfterPushStashUsedSize() > m_stashSize){
+            if(itemNum + getAfterPushStashUsedSize() > m_stashSize && o_itemType != "special"){
                 int pid = g_playerInfoBuck.getPidByName(m_name);
                 _notify(m_metagame,pid,"存放数量已超过仓库容量上限，多余物品将在您存入物品后退还。");
                 m_overPushObject.insertLast(object);
                 return;
             }
-            string o_itemKey = object.getStringAttribute("AA_tag");
-            string o_itemType = object.getStringAttribute("A_tag");
+
             if(m_pushInObject.size() > 0){ //堆叠同类物品
                 XmlElement@ t_Object = m_pushInObject[m_pushInObject.size()-1]; //取尾部开始，对于一次性的大量同类物品投入有压缩效果
                 string t_itemKey = t_Object.getStringAttribute("AA_tag");
@@ -523,6 +531,9 @@ class playerStashInfo {
         int allValue = 0;
         for(uint i = 0 ; i < m_stashObject.size() ; ++i){
             int value = m_stashObject[i].getIntAttribute("value");
+            if(m_stashObject[i].getStringAttribute("A_tag") == "special"){ //特殊物品不计入
+                return;
+            }
             allValue += value;
         }
         m_stashUsedSize = allValue;
@@ -813,10 +824,14 @@ class playerStashInfoBuck {
     void addInfo(Metagame@ m_metagame,const XmlElement@ newplayer){
         if(newplayer is null){return;}
         string name = newplayer.getStringAttribute("name");
+        string sid = newplayer.getStringAttribute("sid");
+        if(sid == ""){return;}
         for(uint i = 0 ; i < m_playerStashInfos.size() ; ++i){
             string m_name = m_playerStashInfos[i].getName();
-            if(m_name == name){
-                return;
+            string m_sid = m_playerStashInfos[i].getSid();
+            if(m_name == name || m_sid == sid){
+                m_playerStashInfos.removeAt(i);
+                i--;
             }
         }
         playerStashInfo@ info = playerStashInfo(m_metagame,newplayer);
@@ -825,14 +840,15 @@ class playerStashInfoBuck {
     void addInfo(Metagame@ m_metagame,string name,string sid){
         for(uint i = 0 ; i < m_playerStashInfos.size() ; ++i){
             string m_name = m_playerStashInfos[i].getName();
-            if(m_name == name){
-                return;
+            string m_sid = m_playerStashInfos[i].getSid();
+            if(m_name == name || m_sid == sid){
+                m_playerStashInfos.removeAt(i);
+                i--;
             }
         }
         playerStashInfo@ info = playerStashInfo(m_metagame,sid,name);
         m_playerStashInfos.insertLast(info);
     }
-
     void changePage(string sid,int direction){
         for(uint i = 0 ; i < m_playerStashInfos.size() ; ++i){
             string m_sid = m_playerStashInfos[i].getSid();
@@ -939,6 +955,7 @@ class extra_stash : Tracker {
                 m_playerStashInfoBuck.addInfo(m_metagame,name,"ID0");
             }
         }
+        _log("extra_stash initiate");
     }
     // --------------------------------------------
 	bool hasEnded() const {
@@ -958,11 +975,38 @@ class extra_stash : Tracker {
 			//每秒更新一次
 			if(m_playerCds !is null){
 				m_playerCds.update(m_time,m_metagame);
+                updateSuperCash();
 			}
 		}
 	}
     // -------------------------------------------
     void start(){
+    }
+    // -------------------------------------------
+	protected void updateSuperCash() {
+        for(uint i = 0; i < g_userCountInfoBuck.size(); ++i){
+            int SuperCash = 0;
+            string name = g_userCountInfoBuck.indexName(i);
+            // _report(m_metagame,"updateSuperCash ="+name);
+            if(g_userCountInfoBuck.getCount(name,"SuperCash",SuperCash)){
+                if(SuperCash > 0){
+                    XmlElement newXml("stash");
+                        newXml.setStringAttribute("AA_tag","SuperCash");
+                        newXml.setStringAttribute("A_tag","special");
+                        newXml.setIntAttribute("value",SuperCash);
+                    string sid = g_playerInfoBuck.getSidByName(name);
+                    if(!m_playerStashInfoBuck.isOpen(sid)){
+                        m_playerStashInfoBuck.openStash(sid);
+                    }
+                    m_playerStashInfoBuck.addPushInObject(sid,newXml);
+                    m_playerStashInfoBuck.pushInObjects(sid);
+                    m_playerStashInfoBuck.openStash(sid);
+                    g_userCountInfoBuck.clearCount(name,"SuperCash");
+                }else{
+                    continue;
+                }
+            }
+        }
     }
     // -------------------------------------------
 	protected void handlePlayerConnectEvent(const XmlElement@ event) {
@@ -1031,8 +1075,71 @@ class extra_stash : Tracker {
                     }
                     m_playerStashInfoBuck.upgradeStash(sid,100,true);
                     m_playerStashInfoBuck.openStash(sid);
+                    return true;
                 }
+                if(itemKey == "hd_supercash_rp_up_exchange"){
+                    //70 超级货币[1000] 换 [永久全局RP倍率+12%]
+                    upgrade@ m_upgrade = upgrade(m_metagame);
+                    string m_times = m_upgrade.getAccessValue(name,"prioritys","extra_rp_factor","times");
+                    int times = 0;
+                    if(isNumeric(m_times)){ 
+                        times = parseInt(m_times);
+                    }
+                    if(times >= 20){
+                        _notify(m_metagame,playerId,"兑换次数达最大限制，超级货币已返还");
+                        g_userCountInfoBuck.addCount(name,"SuperCash",1000);
+                        return false;
+                    }
+                    XmlElement newXml("priority");
+                        newXml.setStringAttribute("key","extra_rp_factor");
+                        newXml.setFloatAttribute("value",0.12);
+                        newXml.setIntAttribute("times",++times);
 
+                    m_upgrade.writeUpgradeFile(name,"prioritys",newXml);
+                    return true;
+                }
+                if(itemKey == "hd_supercash_xp_up_exchange"){
+                    //70 超级货币[1000] 换 [永久科研XP倍率+25%]
+                    upgrade@ m_upgrade = upgrade(m_metagame);
+                    string m_times = m_upgrade.getAccessValue(name,"prioritys","extra_xp_factor","times");
+                    int times = 0;
+                    if(isNumeric(m_times)){ 
+                        times = parseInt(m_times);
+                    }
+                    if(times >= 10){
+                        _notify(m_metagame,playerId,"兑换次数达最大限制，超级货币已返还");
+                        g_userCountInfoBuck.addCount(name,"SuperCash",1000);
+                        return false;
+                    }
+                    XmlElement newXml("priority");
+                        newXml.setStringAttribute("key","extra_xp_factor");
+                        newXml.setFloatAttribute("value",0.25);
+                        newXml.setIntAttribute("times",++times);
+
+                    m_upgrade.writeUpgradeFile(name,"prioritys",newXml);
+                    return true;
+                }
+                if(itemKey == "hd_supercash_rp_result_up_exchange"){
+                    //70 超级货币[1000] 换 [永久额外结算RP收益+5%]
+                    upgrade@ m_upgrade = upgrade(m_metagame);
+                    string m_times = m_upgrade.getAccessValue(name,"prioritys","extra_rp_result","times");
+                    int times = 0;
+                    if(isNumeric(m_times)){ 
+                        times = parseInt(m_times);
+                    }
+                    if(times >= 15){
+                        _notify(m_metagame,playerId,"兑换次数达最大限制，超级货币已返还");
+                        g_userCountInfoBuck.addCount(name,"SuperCash",1000);
+                        return false;
+                    }
+                    XmlElement newXml("priority");
+                        newXml.setStringAttribute("key","extra_rp_result");
+                        newXml.setFloatAttribute("value",0.05);
+                        newXml.setIntAttribute("times",++times);
+
+                    m_upgrade.writeUpgradeFile(name,"prioritys",newXml);
+                    return true;
+                }
                 return true;
             }else if(!m_playerCds.hasReady(name,"exchangeItems")){
                 float leftCD = m_playerCds.leftCD(name,"exchangeItems");

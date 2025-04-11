@@ -3,8 +3,8 @@ author: RST
 未经授权不可复用、修改使用、仅用于helldiver mod
 particle_system vergil_judgment_cut_muzzle_random_spot 
 {
-	quota 300
-	emit_emitter_quota 300
+	quota 200
+	emit_emitter_quota 200
 	material point_hard_edge_pass
 	particle_width 0.05
 	particle_height 0.6
@@ -627,7 +627,7 @@ particle_system vergil_voidknife_realm_muzzle_knife_ahead_2
 }
 particle_system vergil_voidknife_realm_muzzle_spark
 {
-	quota 500
+	quota 150
 	material pump_flare_03_01
 	particle_width 0.2
 	particle_height 0.2
@@ -674,8 +674,8 @@ particle_system vergil_voidknife_realm_muzzle_spark
 }
 particle_system vergil_voidknife_realm_muzzle_delay_spark
 {
-	quota 500
-	emit_emitter_quota 500
+	quota 150
+	emit_emitter_quota 150
 	material pump_flare_03_01
 	particle_width 0.2
 	particle_height 0.2
@@ -901,8 +901,8 @@ particle_system vergil_getsuga_tenshou_muzzle_knife_ahead_2 : vergil_getsuga_ten
 
 particle_system vergil_getsuga_tenshou_muzzle_activated_spark
 {
-	quota 800
-	emit_emitter_quota 800
+	quota 200
+	emit_emitter_quota 200
 	material randon_point
 	particle_width 0.2
 	particle_height 0.4
@@ -1110,7 +1110,7 @@ particle_system vergil_skill_muzzle_reverse_color
 }
 particle_system vergil_skill_muzzle_expand_wind_end_surround
 {
-	quota 400
+	quota 100
 	material TEX_cloud_02_vergil
 	particle_width 10
 	particle_height 10
@@ -1659,7 +1659,7 @@ particle_system vergil_skill_result_space_cut_space
 }
 particle_system vergil_skill_result_space_cut_drop_glass_1
 {
-	quota 300
+	quota 120
 	material point_soft_edge_100
 	particle_width 0.3
 	particle_height 0.3

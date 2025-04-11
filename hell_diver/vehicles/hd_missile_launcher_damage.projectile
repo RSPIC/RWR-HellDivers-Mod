@@ -39,7 +39,7 @@ on_ground_up="0 1 0"
 radius="0.3"
 >
 	<result class="blast" radius="3.8" damage="2.5" push="0.4" decal="0"
-	damage_origin_vehicle="0" make_vehicle_hit_sound="0" character_state="blast"/>
+	damage_origin_vehicle="0" make_vehicle_hit_sound="0"  faction_compare="not_equal"  character_state="blast"/>
 	<trigger class="time" time_to_live="0" />	
     <rotation class="random" />
 	<model mesh_filename="" />

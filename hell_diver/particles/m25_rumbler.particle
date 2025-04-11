@@ -44,7 +44,7 @@ particle_system blast_smoke_rumbler
 
 particle_system spray_rumbler
 {
-	quota 400
+	quota 100
 	material R_flame
 	particle_width 1.2
 	particle_height 1.2

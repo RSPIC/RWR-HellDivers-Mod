@@ -325,7 +325,7 @@ particle_system ba_alice_result_smoke2 : ba_alice_result_smoke
 ------------------------------------------alice_laser_muzzle-------------------------
 particle_system ba_alice_muzzle_pre_red_laser		//预警告红线
 {
-	quota 300
+	quota 50
 	material laser_soft_edge_01
 	particle_width 0.2
 	particle_height 250
@@ -358,7 +358,7 @@ particle_system ba_alice_muzzle_pre_red_laser		//预警告红线
 }
 particle_system ba_alice_muzzle_environment_light		//环境光
 {
-	quota 300
+	quota 50
 	material laser_soft_edge_01
 	particle_width  2
 	particle_height 250

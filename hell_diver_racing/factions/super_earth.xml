@@ -478,6 +478,13 @@
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />
 		<resources file="supply_ex_box.resources"/>
 	</soldier> 
+	<!-- 黑市 -->
+	<soldier name="hd_blackshop" spawn_score="0.0">
+		<resources file="hd_blackshop.resources" />
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="0.0" max="0.05" />
+		</attribute_config>
+	</soldier> 
 	<!-- 脚本仓库 -->
 	<soldier name="stash_box" spawn_score="0.0" copy_from="default_ai">
 		<resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" />

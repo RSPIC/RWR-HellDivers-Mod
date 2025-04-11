@@ -31,8 +31,15 @@
     <weapon key="upgrade_ui_weapon.target:hd_exp_las99_quasar_cannon.cost:04.weapon" /><!--LAS-99 类星体-->
     <weapon key="upgrade_ui_weapon.target:hd_psc_cb9_exploding_crossbow.cost:02.weapon" /><!--CB-9 爆燃弩-->
     <weapon key="upgrade_ui_weapon.target:hd_psc_rs422_railgun.cost:07.weapon" /><!--RS-422 轨道炮-->
+    <weapon key="upgrade_ui_weapon.target:hd_side_cqc_30_stun_baton.cost:04.weapon" /><!--CQC-30 电棍-->
+    <weapon key="upgrade_ui_weapon.target:hd_psc_plas_39_accelerator_rifle.cost:05.weapon" /><!--Plas-39 加速步枪 -->
+    
+    <!-- 升级配件 -->
+    <weapon key="upgrade_ui_weapon.target:hd_exp_m25_rumbler_mk2.cost:10.weapon" /><!--雷鸣 MK2-->
+    <weapon key="upgrade_ui_weapon.target:hd_sg_double_freedom_mk2.cost:03.weapon" /><!--双重解放DBS2 MK2-->
 
 	<projectile key="upgrade_ui_stratagem.target:hd_offensive_orbital_120mm_he_barrage_call.cost:08.projectile"  /><!--120mm高爆弹幕 -->
 	<projectile key="upgrade_ui_stratagem.target:hd_offensive_orbital_380mm_he_barrage_call.cost:12.projectile"  /><!--380mm高爆弹幕 -->
+	<projectile key="hd_call_cqc_30.projectile"  /><!--空输部队 -->
 
 </resources>

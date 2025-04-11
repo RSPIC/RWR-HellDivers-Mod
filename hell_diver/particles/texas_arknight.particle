@@ -33,7 +33,7 @@ author: RST
 		
 particle_system texas_polygon_expand
 {
-	quota 500
+	quota 100
 	emit_emitter_quota 50
 	material texas_polygon_1_pass
 	particle_width 2
@@ -106,7 +106,7 @@ particle_system texas_polygon_expand
 }
 particle_system texas_polygon_fix
 {
-	quota 500
+	quota 100
 	material texas_polygon_2_pass
 	particle_width 24.5
 	particle_height 24.5
@@ -165,7 +165,7 @@ particle_system texas_polygon_fix
 }
 particle_system texas_center_crossline_1
 {
-	quota 500
+	quota 100
 	material point_hard_edge
 	particle_width 0.05
 	particle_height 8
@@ -324,7 +324,7 @@ particle_system texas_tilt_dropping_sword : texas_tilt_dropping_sword_guiding
 }
 particle_system texas_tilt_dropping_ring
 {
-	quota 500
+	quota 100
 	material lens_circle_03
 	particle_width 0.4
 	particle_height 5
@@ -382,8 +382,8 @@ particle_system texas_tilt_dropping_ring
 }
 particle_system texas_tilt_dropping_triangle 
 {
-	quota 500
-	emit_emitter_quota 500
+	quota 100
+	emit_emitter_quota 100
 	material texas_triangle
 	particle_width 0.8
 	particle_height 0.8
@@ -469,7 +469,7 @@ particle_system texas_tilt_dropping_triangle
 }
 particle_system texas_hit_diamond
 {
-	quota 500
+	quota 100
 	material texas_diamond
 	particle_width 0.1
 	particle_height 0.1
@@ -529,7 +529,7 @@ particle_system texas_hit_diamond
 
 particle_system texas_activated_center
 {
-	quota 500
+	quota 100
 	material plasma_beam_hit_red
 	particle_width 3
 	particle_height 3

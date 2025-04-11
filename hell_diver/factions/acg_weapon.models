@@ -152,6 +152,20 @@
 	</model>
 	<model filename="acg_maria_schariac.xml" > <!--玛利亚--><requirement class="weapon" slot="1" key="re_acg_maria_schariac_skill.weapon"/>
 	</model>
+	<model filename="acg_sabayon_armor.xml" > <!--无色辉火--><requirement class="weapon" slot="0" key="acg_sabayon_artillery.weapon"/>
+	</model>
+	<model filename="acg_sabayon_armor.xml" > <!--无色辉火--><requirement class="weapon" slot="0" key="re_acg_sabayon_artillery.weapon"/>
+	</model>
+	<model filename="acg_sabayon.xml" > <!--无色辉火--><requirement class="weapon" slot="0" key="acg_sabayon_gun.weapon"/>
+	</model>
+	<model filename="acg_sabayon.xml" > <!--无色辉火--><requirement class="weapon" slot="0" key="re_acg_sabayon_gun.weapon"/>
+	</model>
+	<model filename="acg_sabayon.xml" > <!--无色辉火--><requirement class="weapon" slot="1" key="acg_sabayon_artillery_skill.weapon"/>
+	</model>
+	<model filename="acg_sabayon.xml" > <!--无色辉火--><requirement class="weapon" slot="0" key="acg_sabayon_sword.weapon"/>
+	</model>
+	<model filename="acg_sabayon.xml" > <!--无色辉火--><requirement class="weapon" slot="0" key="re_acg_sabayon_sword.weapon"/>
+	</model>
 <!-- 东方project -->
 	<model filename="acg_reisenu.xml"><!--铃仙--><requirement class="weapon" slot="0" key="acg_reisenu_a.weapon"/>
 	</model>
@@ -405,7 +419,16 @@
 	</model>
 	<model filename="acg_bf109e_normal.xml" > <!--BF109E--><requirement class="weapon" slot="0" key="re_acg_bf109_sword.weapon"/>
 	</model>
-
-
+<!-- 游戏王 -->
+	<model filename="acg_sky_striker_ace_raye.xml" > <!--闪刀姬--><requirement class="weapon" slot="0" key="acg_sky_striker_ace_orig.weapon"/>
+	</model>
+	<model filename="acg_sky_striker_ace_hayate_green.xml" > <!--闪刀姬--><requirement class="weapon" slot="0" key="acg_sky_striker_ace_hayate_green.weapon"/>
+	</model>
+	<model filename="acg_sky_striker_ace_kagari_red.xml" > <!--闪刀姬--><requirement class="weapon" slot="0" key="acg_sky_striker_ace_kagari_red.weapon"/>
+	</model>
+	<model filename="acg_sky_striker_ace_kaina_yellow.xml" > <!--闪刀姬--><requirement class="weapon" slot="0" key="acg_sky_striker_ace_kaina_yellow.weapon"/>
+	</model>
+	<model filename="acg_sky_striker_ace_shizuku_blue.xml" > <!--闪刀姬--><requirement class="weapon" slot="0" key="acg_sky_striker_ace_shizuku_blue.weapon"/>
+	</model>
 
 </models>

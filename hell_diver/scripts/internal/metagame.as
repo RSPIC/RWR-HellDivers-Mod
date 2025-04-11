@@ -104,14 +104,15 @@ class Metagame {
 	}
 
 	// --------------------------------------------
-	void run() {
-		const float TARGET_CYCLE_TIME = 0.005f;
-		const float MINIMUM_SLEEP_TIME = 0.005f;
+	bool run() {
+		const float TARGET_CYCLE_TIME = 0.001f;
+		const float MINIMUM_SLEEP_TIME = 0.001f;
 		float dummy = now();
 		bool processed = false;
 		m_gamePaused = false;
 		_log("start run()");
 		while (!g_restartMetagame) {
+
 			{
 				float elapsedTime = !m_gamePaused ? now() : 0.0f;
 				float sleepTime = MINIMUM_SLEEP_TIME;
@@ -157,17 +158,24 @@ class Metagame {
 				_log("restart had been requested, calling metagame init now", -1);
 				init();
 			}
-			// if(g_restartMetagame){
-			// 	//uninit();
-			// 	// startServer();
-			// 	g_restartMetagame = !g_restartMetagame;
-			// 	break;
-			// }
+			if(g_restartMetagame){
+				//uninit();
+				// startServer();
+				g_restartMetagame = !g_restartMetagame;
+				break;
+			}
 		}
-		g_restartMetagame = !g_restartMetagame;
+		// if(g_restartMetagame){
+		// 	g_restartMetagame = !g_restartMetagame;
+		// }
 		_log("break run()");
+		// preBeginMatch();
 		// init();
 		// run();
+		if(isInServerMode() && !g_single_player){
+			return true;
+		}
+		return false;
 	}
 
 	// --------------------------------------------
@@ -183,10 +191,12 @@ class Metagame {
 		for(uint i=0; i<m_hd_taskSequencerArray.size(); ++i){
 			m_hd_taskSequencerArray[i].clear();
 		}
+		_log("clearTrackers()");
 		clearTrackers();
 		m_gamePaused = false;
 
 		if (isInServerMode()) {
+			_log("isInServerMode()");
 			// recreated every match begin, it's fine
 			addTracker(BanManager(this));
 			getAdminManager().loadFromFile();

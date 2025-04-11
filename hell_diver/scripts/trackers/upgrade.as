@@ -103,7 +103,7 @@ class upgrade : Tracker{
                             XmlElement@ tagchild = XmlElement(tagChilds[k]);
                             if(tagchild is null){continue;}
                             if(newXml !is null){
-                                if(tagchild.getName() == newXml.getStringAttribute("key")){ //覆写文件
+                                if(tagchild.getStringAttribute("key") == newXml.getStringAttribute("key")){ //覆写文件
                                     child.appendChild(newXml);
                                     findSame = true;
                                     continue;
@@ -144,7 +144,7 @@ class upgrade : Tracker{
         _debugReport(m_metagame,"saveUpgradePlayersStash");
         return;
     }
-    bool checkAccess(string name,string TagName,string TagKey,string TagType = ""){
+    bool checkAccess(string name,string TagName,string TagKey,string TagValue = "",string TagSelectType = ""){
         const XmlElement@ info = readUpgradeFile(name,TagName);
         if(info is null){return false;}
         array<const XmlElement@> bases = info.getChilds();
@@ -154,9 +154,19 @@ class upgrade : Tracker{
             if(base is null){continue;}
             string key = base.getStringAttribute("key");
             if(key == TagKey){
-                if(TagType != ""){
-                    string type = base.getStringAttribute("type");
-                    if(type == TagType){
+                if(TagValue != ""){
+                    if(TagSelectType != ""){
+                        if(base.hasAttribute(TagSelectType)){
+                            string value = base.getStringAttribute(TagSelectType);
+                            if(TagValue == value){
+                                return true;
+                            }else{
+                                return false;
+                            }
+                        }
+                    }
+                    string typeValue = base.getStringAttribute("type");
+                    if(typeValue == TagValue){
                         return true;
                     }
                 }else{
@@ -165,6 +175,31 @@ class upgrade : Tracker{
             }
         }
         return false;
+    }
+    string getAccessValue(string name,string TagName,string TagKey,string TagType = ""){
+        const XmlElement@ info = readUpgradeFile(name,TagName);
+        if(info is null){return "";}
+        array<const XmlElement@> bases = info.getChilds();
+        _log("PrintTest(getAccessValue(name,'"+TagName+"')):"+info.toString()+" |check TagKey="+TagKey+" |TagType="+TagType);
+        for(uint i=0; i<bases.size(); ++i){
+            const XmlElement@ base = bases[i];
+            if(base is null){continue;}
+            string key = base.getStringAttribute("key");
+            if(key == TagKey){
+                if(TagType != ""){
+                    if(base.hasAttribute(TagType)){
+                        string value = base.getStringAttribute(TagType);
+                        return value;
+                    }
+                }else{
+                    if(base.hasAttribute("type")){
+                        string value = base.getStringAttribute("type");
+                        return value;
+                    }
+                }
+            }
+        }
+        return "";
     }
     // --------------------------------------------
     protected void handleUpgradeEvent(const XmlElement@ event) {

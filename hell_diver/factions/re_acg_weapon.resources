@@ -20,6 +20,24 @@
     <weapon key="re_acg_exo_toki_railgun.weapon" /><!--飞鸟马时 动力装甲-->
     <weapon key="re_acg_exo_toki_skill.weapon" /><!--飞鸟马时 动力装甲-->
     <!-- MK5 Unsold-->
+    <weapon key="ex_exo_telemon_cannon.weapon" enabled="0"/> <!--特拉蒙-->
+    <weapon key="re_ex_exo_telemon_cannon.weapon" /> <!--特拉蒙-->
+    <weapon key="re_ex_exo_telemon_bluefire.weapon" /> <!--特拉蒙-->
+    <weapon key="re_ex_exo_telemon_mg.weapon" /> <!--特拉蒙-->
+    <weapon key="re_ex_exo_telemon_missile.weapon" /> <!--特拉蒙-->
+
+    <weapon key="acg_sabayon_gun.weapon" enabled="0"/> <!--无色辉火-->
+    <weapon key="re_acg_sabayon_gun.weapon" /> <!--无色辉火-->
+    <weapon key="re_acg_sabayon_artillery.weapon" /> <!--无色辉火-->
+    <weapon key="re_acg_sabayon_sword.weapon" /> <!--无色辉火-->
+    <weapon key="re_acg_sabayon_artillery_skill.weapon" /> <!--无色辉火-->
+
+    <weapon key="acg_takanashi_hoshino_battle.weapon" enabled="0"/> <!--星野临战-->
+    <weapon key="re_acg_takanashi_hoshino_battle.weapon" /> <!--星野临战-->
+    <weapon key="re_acg_takanashi_hoshino_battle_shb.weapon" /> <!--星野临战-->
+    <weapon key="re_acg_takanashi_hoshino_battle_side_pistol.weapon" /> <!--星野临战-->
+    <weapon key="re_acg_takanashi_hoshino_battle_side_pistol_shield.weapon" /> <!--星野临战-->
+
     <weapon key="ex_exo_dreadnought_mg.weapon" enabled="0"/> <!--无畏-->
     <weapon key="re_ex_exo_dreadnought_mg.weapon" /> <!--无畏-->
     <weapon key="re_ex_exo_dreadnought_plas.weapon" /> <!--无畏-->
@@ -34,6 +52,7 @@
     <weapon key="re_ex_vergil_judgment_cut.weapon" /> <!--维吉尔 次元斩-->
     <weapon key="re_ex_vergil_voidknife_realm.weapon" /> <!--维吉尔 虚空刀界-->
     <weapon key="re_ex_vergil_getsuga_tenshou.weapon" /> <!--维吉尔 月牙冲天-->
+    <weapon key="ex_vergil_skill.weapon" /> <!--维吉尔 skill-->
 
     <weapon key="acg_patricia_cumforce.weapon" enabled="0"/> <!--帕蒂 致命驱动等-->
     <weapon key="re_acg_patricia_jihadslash.weapon" /> <!--帕蒂 致命驱动等-->
@@ -47,6 +66,7 @@
     <weapon key="ex_hyper_mega_bazooka_launcher_ex.weapon" enabled="0"/> <!--超绝米加粒子炮（Hi-v）-->
     <weapon key="re_ex_hyper_mega_bazooka_launcher_ex.weapon" /> <!--超绝米加粒子炮（Hi-v）-->
     <weapon key="re_ex_hyper_mega_bazooka_launcher.weapon" /> <!--超绝米加粒子炮（Hi-v）-->
+    <weapon key="ex_hyper_mega_bazooka_launcher_skill.weapon" /> <!--超绝米加粒子炮（Hi-v）-->
 
     <weapon key="ex_trinity_ghoul.weapon" enabled="0"/> <!--三体坐观者弓-->
     <weapon key="re_ex_trinity_ghoul.weapon" /> <!--三体坐观者弓-->
@@ -62,6 +82,7 @@
     <weapon key="re_acg_elaina_wand.weapon" /> <!--伊蕾娜 法杖-->
     <weapon key="re_acg_elaina_wand_laser.weapon" /> <!--伊蕾娜 法杖-->
     <weapon key="re_acg_elaina_wand_cyclone.weapon" /> <!--伊蕾娜 法杖-->
+    <weapon key="acg_elaina_wand_skill.weapon" /> <!--伊蕾娜 法杖-->
     <!-- MK4 Unsold-->
     <weapon key="acg_hayase_yuuka.weapon" enabled="0"/> <!--优香-->
     <weapon key="re_acg_hayase_yuuka.weapon" /> <!--优香-->
@@ -283,5 +304,6 @@
     <weapon key="re_deploy_ex_yaluji.weapon" /><!--压路机-->
     <weapon key="hd_initiate_main.weapon" /><!--生化人 初始者-->
     <weapon key="re_deploy_miyu_home.weapon" /><!--美游垃圾桶-->
+    <weapon key="re_ex_random_gun.weapon" /><!--随机发射器-->
 
 </resources>

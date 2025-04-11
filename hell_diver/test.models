@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <models>
 	<!-- 测试 -->
-	<!-- <model filename="illum_obelisk.xml"><requirement class="weapon" slot="0" key="test.weapon"/>
-	</model> -->
+	<model filename="ex_exo_telemon.xml"><requirement class="weapon" slot="0" key="test.weapon"/>
+	</model>
+	<model filename="ex_exo_telemon.xml"><requirement class="weapon" slot="1" key="ex_exo_telemon_missile.weapon"/>
+	</model>
+	<model filename="ex_exo_telemon.xml"><requirement class="weapon" slot="1" key="ex_exo_telemon_mg.weapon"/>
+	</model>
+	<model filename="ex_exo_telemon.xml"><requirement class="weapon" slot="0" key="ex_exo_telemon_bluefire.weapon"/>
+	</model>
+	<model filename="ex_exo_telemon.xml"><requirement class="weapon" slot="0" key="ex_exo_telemon_cannon.weapon"/>
+	</model>
 	<!-- <model filename="acg_sabayon.xml"><requirement class="weapon" slot="0" key="normal.weapon"/>
 	</model> -->
 	<!-- <model filename="a.xml"><requirement class="weapon" slot="0" key="normal.weapon"/>

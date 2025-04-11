@@ -7,24 +7,19 @@
     
     <projectile file="ex_disaster_railgun_damage.projectile" /><!-- 天灾电磁炮 -->
     <projectile file="63type_107mm_rocket_damage.projectile" /><!--63式火箭炮-->
-    <projectile file="ex_isu_152_gl_damage.projectile" /><!--152-->
     <projectile file="ex_pak40_damage.projectile" /><!--pak40-->
     <projectile file="ex_sturmtiger_tank_gl_damage.projectile" /><!--突击虎-->
     <projectile file="ex_apocalypse_tank_gl_damage.projectile" /><!--天启-->
-    <projectile file="ex_sherman_cannon_damage.projectile" /><!--谢尔曼-->
     <projectile file="ex_cl_banzai_damage.projectile" /><!--刺雷-->
     <projectile file="ba_crusader_cannon_damage.projectile" /><!--十字军-->
     <projectile file="ex_m18_cannon_damage.projectile" /><!--地狱猫-->
     <projectile file="ba_torumaru_cannon_damage.projectile" /><!--虎丸[伊吕波]-->
     <projectile file="mh_60s_missiles_damage.projectile" /><!--MH60s直升机-->
-    <projectile file="is2_m1895_gl_damage.projectile" /><!--IS2-->
     <projectile file="himars_damage.projectile" /><!--himars 火箭车-->
-    <projectile file="mtlb_2b9_damage.projectile" /><!--MTLB 迫击炮-->
     <projectile file="m61a5_at_damage.projectile" /><!--M61A5-->
     <projectile file="borsig_cannon_damage.projectile" /><!--Rhm.-Borsig Waffentrager-->
     <projectile file="ex_soma_prime_damage.projectile" /><!--月神-->
     <projectile file="ex_hyper_mega_bazooka_launcher_damage.projectile" /><!--MEGA-->
-    <projectile file="t90m3_damage.projectile" /><!--T90m3-->
     <projectile file="zbd09_cannon_damage.projectile" /><!--ZBD-->
     <projectile file="ex_vergil_damage.projectile" /><!--vergil-->
     <projectile file="ex_leviathan_breath_damage.projectile" /><!--三体弓-->
@@ -34,7 +29,6 @@
     <projectile file="kirov_damage.projectile" />
     <projectile file="sdkfz184_damage.projectile" />
     <projectile file="panther_a_damage.projectile" />
-    <projectile file="panzer_3_a_damage.projectile" />
     <projectile file="ex_psc_srs99_damage.projectile" />
     <projectile file="ex_psc_arc920_damage.projectile" />
     <projectile file="ex_exp_m41_spnkr_damage.projectile" />
@@ -43,6 +37,7 @@
     <projectile file="ex_warthog_damage.projectile" />
     <projectile file="ex_space_marines_damage.projectile" />
     <projectile file="ex_exo_dreadnought_damage.projectile" />
+    <projectile file="ex_exo_telemon_damage.projectile" />
 
     <!-- 投掷物 -->
     <projectile file="_ex_call.xml" /><!--所有呼叫信标-->

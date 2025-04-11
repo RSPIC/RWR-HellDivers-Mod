@@ -31,6 +31,7 @@ dictionary airstrikeIndex = {
         {"hd_superearth_railcannon_strike_mk3",32},
 
         {"acg_starwars_shipgirls_skill_damage",100},
+        {"acg_sabayon_gun_skill_damage",101},
 
         // 下面这行是用来占位的，在这之上添加新的即可
         {"666",-1}
@@ -153,6 +154,18 @@ dictionary projectile_eventkey = {
         {"hoshino_smoke_gl_skill",77},
         // 烟雾手雷
         {"smoke_gl",78},
+
+        // 无色辉火
+        {"acg_sabayon_artillery_skill",79},
+        // 无色辉火
+        {"acg_sabayon_dead_skill",80},
+
+        // 随机子弹
+        {"ex_random_gun",81},
+        // 特拉蒙导弹
+        {"ex_exo_telemon_missile_damage",82},
+        // 空输部队
+        {"hd_call_cqc_30",83},
 
         // 占位的
         {"666",-1}

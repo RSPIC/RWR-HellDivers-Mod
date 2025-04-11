@@ -51,6 +51,10 @@
 	<model filename="acg_rebellious_bunny_i.xml"><!--逆兔女郎 I by DNTK--><requirement class="projectile" slot="0" key="token_rebellious_bunny_i.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_rebellious_bunny_i_old.xml"><!--逆兔女郎 I [披风改] by DNTK--><requirement class="projectile" slot="0" key="token_rebellious_bunny_i_old.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_tomoe_gozen.xml"><!--巴御前 by pa15--><requirement class="projectile" slot="0" key="token_tomoe_gozen.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_zelda.xml"><!--赛尔达--><requirement class="projectile" slot="0" key="token_zelda.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_ninym_alei.xml"><!--妮妮姆 拉蕾--><requirement class="projectile" slot="0" key="token_ninym_alei.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_nishikigi_chisato.xml"><!--锦木千束--><requirement class="projectile" slot="0" key="token_nishikigi_chisato.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_sakurakouji_runa.xml"><!--樱小路露娜--><requirement class="projectile" slot="0" key="token_sakurakouji_runa.projectile"/><requirement class="rank" range="0 999999"/></model>
 
 
 <!-- 明日方舟 -->
@@ -65,6 +69,7 @@
 	<model filename="acg_blaze.xml"><!--煌 by 花--><requirement class="projectile" slot="0" key="token_blaze.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_goldenglow.xml"><!--澄闪 by 花--><requirement class="projectile" slot="0" key="token_goldenglow.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_skadi.xml"><!--斯卡蒂--><requirement class="projectile" slot="0" key="token_skadi.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_goldenglow_swim.xml"><!--澄闪 泳装--><requirement class="projectile" slot="0" key="token_goldenglow_swim.projectile"/><requirement class="rank" range="0 999999"/></model>
 
 <!-- 原神 -->
 	<model filename="acg_sangonomiya_kokomi.xml" > <!--珊瑚宫心海--><requirement class="projectile" slot="0" key="token_sangonomiya_kokomi.projectile"/><requirement class="rank" range="0 999999"/></model>
@@ -73,6 +78,7 @@
 	<model filename="acg_raiden_mei_ex_1.xml"  > <!--雷电芽衣常服--><requirement class="projectile" slot="0" key="token_raiden_mei_ex_1.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_maria_schariac.xml"  > <!--玛丽亚·沙尼亚特--><requirement class="projectile" slot="0" key="token_maria_schariac.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_sabayon.xml"  > <!--辉火--><requirement class="projectile" slot="0" key="token_sabayon.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_iron_maiden.xml"  > <!--艾恩梅德--><requirement class="projectile" slot="0" key="token_iron_maiden.projectile"/><requirement class="rank" range="0 999999"/></model>
 <!-- 东方project -->
 	<model filename="acg_reisenu.xml"><!--铃仙--><requirement class="projectile" slot="0" key="token_reisenu.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_reisenu_ex.xml"><!--铃仙--><requirement class="projectile" slot="0" key="token_reisenu_ex.projectile"/><requirement class="rank" range="0 999999"/></model>
@@ -80,6 +86,8 @@
 	<model filename="acg_star_sapphire.xml"><!--Star Sapphire by 六合--><requirement class="projectile" slot="0" key="token_star_sapphire.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_sunny_mlik.xml"><!--Sunny Milk by 六合--><requirement class="projectile" slot="0" key="token_sunny_mlik.projectile"/><requirement class="rank" range="0 999999"/></model>
 	<model filename="acg_hinanawi_tenshi.xml"><!--比那名居天子 by pa15--><requirement class="projectile" slot="0" key="token_hinanawi_tenshi.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_tatara_kogasa.xml"><!--多多良小伞 by 六合--><requirement class="projectile" slot="0" key="token_tatara_kogasa.projectile"/><requirement class="rank" range="0 999999"/></model>
+	<model filename="acg_remilia_scarlet.xml"><!--蕾米莉亚--><requirement class="projectile" slot="0" key="token_remilia_scarlet.projectile"/><requirement class="rank" range="0 999999"/></model>
 
 <!-- 舰队collection -->
 	<model filename="acg_yuudachi_halloween_ver.xml"  > <!--夕立万圣节装--><requirement class="projectile" slot="0" key="token_yuudachi_halloween_ver.projectile"/><requirement class="rank" range="0 999999"/></model>

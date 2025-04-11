@@ -4,7 +4,7 @@ author: RST
 
 particle_system acg_yileina_wand_rain_muzzle_up
 {
-	quota 400
+	quota 200
 	material flaretrail_01
 	particle_width 0.3
 	particle_height 5
@@ -55,7 +55,7 @@ particle_system acg_yileina_wand_rain_muzzle_up
 }
 particle_system acg_yileina_wand_result_impact_up
 {
-	quota 400
+	quota 200
 	material flaretrail_01
 	particle_width 0.25
 	particle_height 5
@@ -106,8 +106,8 @@ particle_system acg_yileina_wand_result_impact_up
 }
 particle_system acg_yileina_wand_rain_muzzle_up_star
 {
-	quota 400
-	emit_emitter_quota 400
+	quota 200
+	emit_emitter_quota 200
 	material muzzle_lens_01
 	particle_width 0.4
 	particle_height 0.4
@@ -312,7 +312,7 @@ particle_system acg_yileina_wand_rain_muzzle_larger_smoke
 }
 particle_system acg_yileina_wand_rain_result_trail_light
 {
-	quota 900
+	quota 200
 	material point_soft_edge_100
 	particle_width 3
 	particle_height 3
@@ -351,7 +351,7 @@ particle_system acg_yileina_wand_rain_result_trail_light
 }
 particle_system acg_yileina_wand_rain_result_water_impact
 {
-	quota 300
+	quota 100
 	material eye_lwy_t_mul_57_single
 	particle_width 3
 	particle_height 3
@@ -390,7 +390,7 @@ particle_system acg_yileina_wand_rain_result_water_impact
 }
 particle_system acg_yileina_wand_rain_result_water_spray
 {
-	quota 300
+	quota 100
 	material Tex_Spark20
 	particle_width 1
 	particle_height 2
@@ -429,7 +429,7 @@ particle_system acg_yileina_wand_rain_result_water_spray
 }
 particle_system acg_yileina_wand_muzzle_lens
 {
-	quota 300
+	quota 100
 	material monlit
 	particle_width 20
 	particle_height 1
@@ -468,7 +468,7 @@ particle_system acg_yileina_wand_muzzle_lens
 }
 particle_system acg_yileina_wand_muzzle_light
 {
-	quota 300
+	quota 100
 	material point_soft_edge_100
 	particle_width 10
 	particle_height 10
@@ -553,7 +553,7 @@ particle_system acg_yileina_wand_muzzle_magic_circle
 }
 particle_system acg_yileina_wand_trail_dark
 {
-	quota 500
+	quota 150
 	material point_soft_edge_alpha
 	particle_width 2.5
 	particle_height 2.5
@@ -596,7 +596,7 @@ particle_system acg_yileina_wand_trail_dark
 }
 particle_system acg_yileina_wand_trail_head_angle_dark
 {
-	quota 500
+	quota 150
 	material point_soft_edge_alpha
 	particle_width 0.2
 	particle_height 0.2
@@ -639,7 +639,7 @@ particle_system acg_yileina_wand_trail_head_angle_dark
 }
 particle_system acg_yileina_wand_trail_lightBlue
 {
-	quota 500
+	quota 150
 	material point_soft_edge_100
 	particle_width 8
 	particle_height 8
@@ -682,7 +682,7 @@ particle_system acg_yileina_wand_trail_lightBlue
 }
 particle_system acg_yileina_wand_trail_head_angle
 {
-	quota 500
+	quota 150
 	material point_soft_edge_100
 	particle_width 1
 	particle_height 1
@@ -721,7 +721,7 @@ particle_system acg_yileina_wand_trail_head_angle
 }
 particle_system acg_yileina_wand_trail_centerRing
 {
-	quota 300
+	quota 100
 	material eye_lwy_t_mul_57_single
 	particle_width 1
 	particle_height 1
@@ -859,7 +859,7 @@ particle_system acg_yileina_wand_muzzle_impact_smoke
 }
 particle_system acg_yileina_wand_trail_leave
 {
-	quota 750
+	quota 200
 	material eye_fxl_ptc_0012_p
 	particle_width 0.42
 	particle_height 0.42

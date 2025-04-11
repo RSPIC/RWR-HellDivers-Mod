@@ -1,0 +1,945 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapons> 
+<weapon 
+file="_rare_weapon_mk5.base"
+key="acg_sabayon_gun.weapon"
+>
+    <specification 	
+    slot="0" 	
+    retrigger_time="0.02" 
+	last_burst_retrigger_time="0.3"
+    accuracy_factor="1" 
+	spread_range="0.01"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="0.008" 
+    sustained_fire_diminish_rate="0.1" 
+	cooldown_start="0.2"
+	cooldown_end="0.0"
+    magazine_size="-1" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="0"
+    suppressed="0" 
+	class="4" 
+    name="Saba Laser Cannon" 
+	sight_range_modifier="1.3" 
+	burst_shots="20" 
+    projectiles_per_shot="1" 
+    projectile_speed="600.0"
+	barrel_offset="0.6" 
+	carry_in_two_hands="1"
+	stab_enabled="0" 
+	stab_range="0" 
+	/> 
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_effect_drop_target.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
+
+	<!--0全自动 4半自动 2栓动 3特殊（需要额外动作）5近程特殊（如部署沙包）-->
+	<next_in_chain key="acg_sabayon_artillery.weapon" share_ammo="0" /> 
+
+	<!--武器动作，必须指定recoil和reload动作，部分动作留空会默认调用常规双手武器动作或者无动作-->
+    <animation key="recoil" animation_key="recoil1" /> <!--后坐力动作，半身动作-->
+    <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
+    <animation state_key="reload" animation_key="T_reloading_1.25s" />	<!--换弹动作，半身动作-->
+    <animation state_key="hold" animation_key="" /><!--站姿静止动作，全身动作-->
+	<animation state_key="hold_on_wall"  animation_key="" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="" /><!--闲置动作，全身动作-->
+	<animation state_key="running" animation_key="" /><!--全身动作-->
+	<animation state_key="walking" animation_key="" /><!--按shift时候的静步前进动作，全身动作-->
+    <animation state_key="walking_backwards" animation_key="" /><!--全身动作-->
+    <animation state_key="crouching" animation_key="" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
+	<animation state_key="stabbing" animation_key="melee, bayonet" /><!--半身动作，武器可设置脱手-->
+	<animation state_key="next_in_chain_in" animation_key="" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="" /><!--半身动作，切换模式，本模式切入-->
+	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
+    <animation state_key="changing_weapon_in" animation_key="" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key=""/><!--半身动作，切换武器，本武器取出-->
+
+    <sound key="effect" fileref="" pitch_variety="0.03" volume="1.0" /> 
+    <sound key="fire" fileref="acg_sabayon_gun_fire.wav" pitch_variety="0.03" volume="0.3" />
+    <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="acg_incomparable_reload.wav" pitch_variety="0.03" volume="4.0" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="" /><!--动作中in的value为1-->
+    <sound key="last_ammo" fileref="hd_lastammo_01.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+
+    <model filename="acg_sabayon_gun.xml" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="acg_sabayon_gun.png" /> 
+	
+	<weak_hand_hold offset="0.4" /> 
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="2" can_be_detected_by_footmen="1" 
+	time_to_live="0.065" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.7" > 
+
+		<result class="hit" kill_probability="1.5" 
+		kill_probability_offset_on_successful_hit="32"
+		kill_decay_start_time="0.2" kill_decay_end_time="0.2" character_state="wound"/>
+
+		<trigger class="impact" />
+		<rotation class="motion" />
+	
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+
+		<effect class="result" key="terrain" ref="sabayon_laser_muzzle_light" lighting="0"/>
+
+		<effect class="result" type="splat_map" surface_tag="" size="2.0" atlas_index="0" layer="1" />
+		<effect class="result" type="splat_map" surface_tag="" size="2.5" atlas_index="4" layer="0" />
+		<effect class="result" type="splat_map" surface_tag="" size="3.0" atlas_index="0" layer="2" additive="0" /> <!-- remove top snow everywhere -->
+
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+
+		<trail probability="1" key=""/>	
+    </projectile>
+
+	<!--枪口特效-->
+	<effect class="muzzle" ref="sabayon_laser_muzzle_light" lighting="0"/> 
+	<effect class="muzzle" ref="sabayon_laser_muzzle" lighting="0"/> 
+	<effect class="muzzle" ref="sabayon_laser_muzzle2" lighting="0" post_processing="0"/> 
+	
+    <stance state_key="running" accuracy="0.5" /> 
+    <stance state_key="walking" accuracy="0.7" />
+	<stance state_key="standing" accuracy="0.9" />
+	<stance state_key="crouching" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1.2" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1.2" />     
+     
+    <modifier class="speed" value="0.0" />
+    <modifier class="hit_success_probability" value="0" />
+    <modifier class="detectability" value="0.0" />
+
+</weapon>
+<weapon 
+file="_rare_weapon_mk5.base"
+key="acg_sabayon_artillery.weapon"
+>
+    <specification 	
+    slot="0" 	
+    retrigger_time="0.15" 
+	last_burst_retrigger_time="2"
+    accuracy_factor="1" 
+	spread_range="0.05"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="2.0" 
+    sustained_fire_diminish_rate="0.5" 
+    magazine_size="-1" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="0"	
+    suppressed="0" 
+	class="4" 
+    name="Sabayon Artillery" 
+	sight_range_modifier="1.4" 
+	sight_height_offset="1.0" 
+	burst_shots="2" 
+    projectiles_per_shot="1" 
+    projectile_speed="180.0"
+	barrel_offset="0.6" 
+	carry_in_two_hands="1" 
+	stab_enabled="0" 
+	stab_range="3" 
+	/> 
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_effect_drop_target.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
+
+	<!--0全自动 4半自动 2栓动 3特殊（需要额外动作）5近程特殊（如部署沙包）-->
+	<next_in_chain key="acg_sabayon_sword.weapon" share_ammo="0" /> 
+
+	<animation key="recoil" animation_key="starwars_double_fire_right" />
+	<animation key="recoil" animation_key="starwars_double_fire_left" />
+    <animation state_key="recoil" stance_key="over_wall" animation_key="starwars_double_fire_right" />
+    <animation state_key="recoil" stance_key="over_wall" animation_key="starwars_double_fire_left" />
+    <animation state_key="reload"   animation_key="reloading, pistol dual" />
+    <animation state_key="hold" animation_key="starwars_double_fire_right" />
+	<animation state_key="hold_on_wall"  animation_key="starwars_double_fire_right" />
+    <animation state_key="still_against_wall" animation_key="starwars_double_fire_right" />
+    <animation state_key="hold_casual" animation_key="starwars_running" />
+	<animation state_key="running" animation_key="starwars_running" />
+    <animation state_key="walking"  animation_key="starwars_running" />
+    <animation state_key="walking_backwards" animation_key="starwars_walking_back" />
+    <animation state_key="crouching" animation_key="starwars_double_fire_right" />
+	<animation state_key="crouch_moving" animation_key="starwars_running" />
+	<animation state_key="crouch_moving_backwards" animation_key="starwars_walking_back" />
+    <animation state_key="prone_still" animation_key="prone_still, pistol" />
+	<animation state_key="prone_moving" animation_key="" />
+	<animation state_key="stabbing" animation_key="" />
+	<animation state_key="next_in_chain_in" animation_key="" />
+	<animation state_key="next_in_chain_out" animation_key="" />
+    <animation state_key="changing_weapon_in" animation_key="" />
+	<animation state_key="changing_weapon_out" animation_key=""/>
+
+    <sound key="effect" fileref="acg_incomparable_switch_01.wav" pitch_variety="0.03" volume="1.0" /> 
+    <sound key="fire" fileref="acg_sabayon_artillery_fire.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="acg_incomparable_reload.wav" pitch_variety="0.03" volume="4.0" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="" /><!--动作中in的value为1-->
+    <sound key="last_ammo" fileref="hd_lastammo_01.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+
+    <!-- <model filename="acg_sabayon_gun.xml" />  -->
+    <addon_model filename="" /> 
+    <hud_icon filename="acg_sabayon_artillery.png" /> 
+	
+	<weak_hand_hold offset="0.4" /> 
+
+	<ballistics curve_height="1.0" near_far_distance="0.0" speed_estimation_near="150.0" 
+	speed_estimation_far="150.0" max_speed="150.0" randomness="0.0" tweak_factor="3.0"/> 
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="2" can_be_detected_by_footmen="1" 
+	time_to_live="1.25" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.7" > 
+
+		<result class="spawn" instance_class="projectile" instance_key="acg_sabayon_artillery_damage.projectile" 
+		min_amount="1" max_amount="2" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+		<trigger class="time" time_to_live="0.65" />
+		<rotation class="motion" />
+
+		<sound class="result" key="other" fileref="grenade_blast.wav" volume="1.0" />
+	
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+
+		<effect class="activated" ref="sabayon_activated_light" lighting="0"/>
+
+		<effect class="result" key="terrain" ref="cyborgs_result_cannon_blast_AmbientLight" lighting="0"/>
+		<effect class="result" key="terrain" ref="cyborgs_result_cannon_blast_smoke" lighting="0"/>
+		<effect class="result" key="terrain" ref="sabayon_artillery_hit" lighting="0"/>
+
+		<effect class="result" type="splat_map" surface_tag="" size="2.0" atlas_index="0" layer="1" />
+		<effect class="result" type="splat_map" surface_tag="" size="2.5" atlas_index="4" layer="0" />
+		<effect class="result" type="splat_map" surface_tag="" size="3.0" atlas_index="0" layer="2" additive="0" /> <!-- remove top snow everywhere -->
+
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+
+		<trail probability="1" key="sabayon_trail"/>	
+    </projectile>
+
+	<!--枪口特效-->
+	<effect class="muzzle" ref="cyborgs_muzzle_cannon_fire_smoke" lighting="0"/> 
+	<effect class="muzzle" ref="cyborgs_muzzle_cannon_fire_light" lighting="0"/> 
+	
+	
+	
+    <stance state_key="running" accuracy="1" /> 
+    <stance state_key="walking" accuracy="1" />
+	<stance state_key="standing" accuracy="1" />
+	<stance state_key="crouching" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1.2" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1.2" />     
+     
+    <modifier class="speed" value="0.0" />
+    <modifier class="hit_success_probability" value="0" />
+    <modifier class="detectability" value="0.0" />
+
+</weapon>
+<weapon 
+file="_rare_weapon_mk5.base" 
+key="acg_sabayon_sword.weapon"
+>
+    <tag name="cqb" />
+    <specification 	
+	slot="0"
+    retrigger_time="0.7"
+	magazine_size="-1"
+	accuracy_factor="1"
+	sustained_fire_grow_step="0.0595"
+	sustained_fire_diminish_rate="1"
+	can_shoot_standing="1" 
+	can_shoot_crouching="1" 
+	can_shoot_prone="0" 
+	carry_in_two_hands="0" 
+	name="Maria Schariac" 
+	class="3"
+	suppressed="0"
+  	barrel_offset="0.6"
+	projectile_speed="8.0"
+	projectiles_per_shot="2"
+	stab_enabled="1"	
+    stab_range="3.0"
+	use_basic_muzzle_smoke_effect="0"
+	cooldown_start="0.99"
+	cooldown_end="0.0"
+	spread_range="0.01"
+	/>
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_effect_drop_target.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
+
+
+	<next_in_chain key="acg_sabayon_gun.weapon" share_ammo="0" /> 
+
+	<animation state_key="stabbing"	animation_key="melee, ninjato whip" />
+	<animation state_key="stabbing"	animation_key="melee, ninjato slap" />
+	<animation state_key="stabbing"	animation_key="melee, ninjato slash" />
+	<animation state_key="recoil"	animation_key="melee, ninjato whip" />
+	<animation state_key="recoil"	animation_key="melee, ninjato slap" />
+	<animation state_key="recoil"	animation_key="melee, ninjato slash" />
+	<animation state_key="reload"	animation_key="reloading, ninjato" />
+	<animation state_key="hold"	animation_key="still, ninjato" />
+	<animation state_key="hold_on_wall"	animation_key="still overwall, ninjato" />
+	<animation state_key="still_against_wall"	animation_key="still against wall, ninjato" />
+    <animation state_key="hold_casual" animation_key="California Gurls" />
+	<animation state_key="running"	animation_key="running, ninjato" />
+	<animation state_key="walking"	animation_key="walking, ninjato" />
+	<animation state_key="crouching"	animation_key="crouch, ninjato" />
+	<animation state_key="crouch_moving"	animation_key="crouching forwards, ninjato" />
+	<animation state_key="crouch_moving_backwards"	animation_key="crouching backwards, ninjato" />
+	<animation state_key="changing_weapon_in"	animation_key="change weapon in, ninjato" />
+	<animation state_key="changing_weapon_out"	animation_key="change weapon out, ninjato" />
+    <animation state_key="prone_still" animation_key="prone still, ninjato" />
+    <animation state_key="prone_moving" animation_key="prone moving, ninjato" />
+	<animation state_key="walking_backwards" animation_key="walking backwards, ninjato" />
+	<animation state_key="next_in_chain_in" animation_key="" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="" /><!--半身动作，切换模式，本模式切入-->
+	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
+
+	<sound key="fire" fileref="laser_sword_atk_1.wav" pitch_variety="0.05" volume="1" />
+	<sound key="fire" fileref="laser_sword_atk_2.wav" pitch_variety="0.05" volume="1" />
+	<sound key="fire" fileref="laser_sword_atk_3.wav" pitch_variety="0.05" volume="1" />
+	<sound key="fire" fileref="laser_sword_atk_4.wav" pitch_variety="0.05" volume="1" />
+	<sound key="fire" fileref="laser_sword_atk_5.wav" pitch_variety="0.05" volume="1" />
+	<sound key="fire" fileref="laser_sword_atk_6.wav" pitch_variety="0.05" volume="1" />
+	<sound key="cycle" fileref="" />
+	<sound key="stab" fileref="laser_sword_atk_1.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab" fileref="laser_sword_atk_2.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab" fileref="laser_sword_atk_3.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab" fileref="laser_sword_atk_4.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab" fileref="laser_sword_atk_5.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab" fileref="laser_sword_atk_6.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit" fileref="ninjato_hit_fatal.wav" pitch_variety="0.05" volume="0.6" />
+	<sound key="stab_hit_any" fileref="ninjato_hit.wav" pitch_variety="0.05" volume="0.6" />
+    <sound key="dry_fire" fileref="static.wav" />
+	<sound key="effect" fileref="laser_sword_atk_4.wav" volume="1"/>
+
+
+    <weak_hand_hold offset="0.0" />
+
+	<!--军械库相关-->
+    <projectile file="hd_general_spawn_no_effect.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0"> 
+	
+		<result class="blast" radius="4.2" damage="40.0" push="0.4" decal="1" 
+		character_state="death" faction_compare="not_equal" damage_origin_vehicle="0" />
+
+		<trigger class="time" time_to_live="0.05"  />
+		<rotation class="motion" /><!--参数：motion、random-->
+		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
+
+		<!--命中特效-->
+		<!--
+		<effect class="result" key="terrain" ref="" lighting="0" post_processing="0"/>
+		<effect class="activated" ref="" />
+		-->
+
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<!--尾迹组-->
+		<trail probability="1" key=""/>	
+    </projectile>
+
+	<model filename="acg_sabayon_gun.xml" />
+	<hud_icon filename="acg_sabayon_sword.png" />
+	
+	<!--枪口特效-->
+	<effect class="muzzle" ref="maria_chariac_muzzle_knife_light_01" lighting="0"/> 
+	<effect class="muzzle" ref="maria_chariac_muzzle_knife_light_02" lighting="0"/> 
+	<effect class="muzzle" ref="maria_chariac_muzzle_knife_light_03" lighting="0"/> 
+	<effect class="muzzle" ref="maria_chariac_muzzle_knife_light_04" lighting="0"/> 
+
+	<stance state_key="running" accuracy="1.0" />
+	<stance state_key="walking" accuracy="1.0" />
+	<stance state_key="crouch_moving" accuracy="1.0" />
+	<stance state_key="prone_moving" accuracy="1.0" />
+	<stance state_key="standing" accuracy="1.0" />
+	<stance state_key="crouching" accuracy="1.0" />
+	<stance state_key="prone" accuracy="1.0" />
+	
+	<modifier class="speed" value="+0.25" />
+    <shield offset="-0.3 0.0 0" extent="0.6 1.6 0.4" />
+	
+</weapon>
+<weapon 
+file="_rare_weapon_mk5_re.base"
+key="re_acg_sabayon_gun.weapon"
+>
+    <specification 	
+    slot="0" 	
+    retrigger_time="0.02" 
+	last_burst_retrigger_time="0.3"
+    accuracy_factor="1" 
+	spread_range="0.01"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="0.008" 
+    sustained_fire_diminish_rate="0.1" 
+	cooldown_start="0.2"
+	cooldown_end="0.0"
+    magazine_size="-1" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="0"
+    suppressed="0" 
+	class="4" 
+    name="Saba Laser Cannon" 
+	sight_range_modifier="1.3" 
+	burst_shots="20" 
+    projectiles_per_shot="1" 
+    projectile_speed="600.0"
+	barrel_offset="0.6" 
+	carry_in_two_hands="1"
+	stab_enabled="0" 
+	stab_range="0" 
+	/> 
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_effect_drop_target.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
+
+	<!--0全自动 4半自动 2栓动 3特殊（需要额外动作）5近程特殊（如部署沙包）-->
+	<next_in_chain key="re_acg_sabayon_artillery.weapon" share_ammo="0" /> 
+
+	<!--武器动作，必须指定recoil和reload动作，部分动作留空会默认调用常规双手武器动作或者无动作-->
+	<!--武器动作，必须指定recoil和reload动作，部分动作留空会默认调用常规双手武器动作或者无动作-->
+    <animation key="recoil" animation_key="recoil1" /> <!--后坐力动作，半身动作-->
+    <animation key="cycle"  animation_key="cycle, bolt action" /> <!--拉栓动作，武器固定脱手-->
+    <animation state_key="reload" animation_key="T_reloading_1.25s" />	<!--换弹动作，半身动作-->
+    <animation state_key="hold" animation_key="" /><!--站姿静止动作，全身动作-->
+	<animation state_key="hold_on_wall"  animation_key="" /><!--架枪动作，全身动作-->
+    <animation state_key="still_against_wall" animation_key="" /><!--靠墙动作，全身动作-->
+    <animation state_key="hold_casual" animation_key="" /><!--闲置动作，全身动作-->
+	<animation state_key="running" animation_key="" /><!--全身动作-->
+	<animation state_key="walking" animation_key="" /><!--按shift时候的静步前进动作，全身动作-->
+    <animation state_key="walking_backwards" animation_key="" /><!--全身动作-->
+    <animation state_key="crouching" animation_key="" /><!--蹲姿静止动作，全身动作-->
+	<animation state_key="crouch_moving" animation_key="" /><!--全身动作-->
+	<animation state_key="crouch_moving_backwards" animation_key="" /><!--全身动作-->
+    <animation state_key="prone_still" animation_key="" /><!--全身动作-->
+	<animation state_key="prone_moving" animation_key="" /><!--全身动作-->
+	<animation state_key="stabbing" animation_key="melee, bayonet" /><!--半身动作，武器可设置脱手-->
+	<animation state_key="next_in_chain_in" animation_key="" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="" /><!--半身动作，切换模式，本模式切入-->
+	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
+    <animation state_key="changing_weapon_in" animation_key="" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key=""/><!--半身动作，切换武器，本武器取出-->
+
+    <sound key="effect" fileref="" pitch_variety="0.03" volume="1.0" /> 
+    <sound key="fire" fileref="acg_sabayon_gun_fire.wav" pitch_variety="0.03" volume="0.3" />
+    <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="acg_incomparable_reload.wav" pitch_variety="0.03" volume="4.0" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="" /><!--动作中in的value为1-->
+    <sound key="last_ammo" fileref="hd_lastammo_01.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+
+    <model filename="acg_sabayon_gun.xml" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="acg_sabayon_gun.png" /> 
+	
+	<weak_hand_hold offset="0.4" /> 
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="2" can_be_detected_by_footmen="1" 
+	time_to_live="0.065" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.7" > 
+
+		<result class="hit" kill_probability="1.5" 
+		kill_probability_offset_on_successful_hit="32"
+		kill_decay_start_time="0.2" kill_decay_end_time="0.2" character_state="wound"/>
+
+		<trigger class="impact" />
+		<rotation class="motion" />
+	
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+
+		<effect class="result" key="terrain" ref="sabayon_laser_muzzle_light" lighting="0"/>
+
+		<effect class="result" type="splat_map" surface_tag="" size="2.0" atlas_index="0" layer="1" />
+		<effect class="result" type="splat_map" surface_tag="" size="2.5" atlas_index="4" layer="0" />
+		<effect class="result" type="splat_map" surface_tag="" size="3.0" atlas_index="0" layer="2" additive="0" /> <!-- remove top snow everywhere -->
+
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+
+		<trail probability="1" key=""/>	
+    </projectile>
+
+	<!--枪口特效-->
+	<effect class="muzzle" ref="sabayon_laser_muzzle_light" lighting="0"/> 
+	<effect class="muzzle" ref="sabayon_laser_muzzle" lighting="0"/> 
+	<effect class="muzzle" ref="sabayon_laser_muzzle2" lighting="0" post_processing="0"/> 
+	
+    <stance state_key="running" accuracy="0.5" /> 
+    <stance state_key="walking" accuracy="0.7" />
+	<stance state_key="standing" accuracy="0.9" />
+	<stance state_key="crouching" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1.2" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1.2" />     
+     
+    <modifier class="speed" value="0.0" />
+    <modifier class="hit_success_probability" value="0" />
+    <modifier class="detectability" value="0.0" />
+
+</weapon>
+<weapon 
+file="_rare_weapon_mk5_re.base"
+key="re_acg_sabayon_artillery.weapon"
+>
+    <specification 	
+    slot="0" 	
+    retrigger_time="0.15" 
+	last_burst_retrigger_time="2"
+    accuracy_factor="1" 
+	spread_range="0.05"
+	stance_accuracy_rate="1.0"
+    sustained_fire_grow_step="2.0" 
+    sustained_fire_diminish_rate="0.5" 
+    magazine_size="-1" 
+    can_shoot_standing="1" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="0"	
+    suppressed="0" 
+	class="4" 
+    name="Sabayon Artillery" 
+	sight_range_modifier="1.4" 
+	sight_height_offset="1.0" 
+	burst_shots="2" 
+    projectiles_per_shot="1" 
+    projectile_speed="180.0"
+	barrel_offset="0.6" 
+	carry_in_two_hands="1" 
+	stab_enabled="0" 
+	stab_range="3" 
+	/> 
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_effect_drop_target.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
+
+	<!--0全自动 4半自动 2栓动 3特殊（需要额外动作）5近程特殊（如部署沙包）-->
+	<next_in_chain key="re_acg_sabayon_sword.weapon" share_ammo="0" /> 
+
+	<animation key="recoil" animation_key="starwars_double_fire_right" />
+	<animation key="recoil" animation_key="starwars_double_fire_left" />
+    <animation state_key="recoil" stance_key="over_wall" animation_key="starwars_double_fire_right" />
+    <animation state_key="recoil" stance_key="over_wall" animation_key="starwars_double_fire_left" />
+    <animation state_key="reload"   animation_key="reloading, pistol dual" />
+    <animation state_key="hold" animation_key="starwars_double_fire_right" />
+	<animation state_key="hold_on_wall"  animation_key="starwars_double_fire_right" />
+    <animation state_key="still_against_wall" animation_key="starwars_double_fire_right" />
+    <animation state_key="hold_casual" animation_key="starwars_running" />
+	<animation state_key="running" animation_key="starwars_running" />
+    <animation state_key="walking"  animation_key="starwars_running" />
+    <animation state_key="walking_backwards" animation_key="starwars_walking_back" />
+    <animation state_key="crouching" animation_key="starwars_double_fire_right" />
+	<animation state_key="crouch_moving" animation_key="starwars_running" />
+	<animation state_key="crouch_moving_backwards" animation_key="starwars_walking_back" />
+    <animation state_key="prone_still" animation_key="prone_still, pistol" />
+	<animation state_key="prone_moving" animation_key="" />
+	<animation state_key="stabbing" animation_key="" />
+	<animation state_key="next_in_chain_in" animation_key="" />
+	<animation state_key="next_in_chain_out" animation_key="" />
+    <animation state_key="changing_weapon_in" animation_key="" />
+	<animation state_key="changing_weapon_out" animation_key=""/>
+	<animation state_key="next_in_chain_in" animation_key="" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="" /><!--半身动作，切换模式，本模式切入-->
+	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
+    <animation state_key="changing_weapon_in" animation_key="" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key=""/><!--半身动作，切换武器，本武器取出-->
+
+    <sound key="effect" fileref="acg_incomparable_switch_01.wav" pitch_variety="0.03" volume="1.0" /> 
+    <sound key="fire" fileref="acg_sabayon_artillery_fire.wav" pitch_variety="0.03" volume="1.0" />
+    <sound key="dry_fire" fileref="hd_dryfire.wav" pitch_variety="0.05" volume="1.0" /><!--空弹射击扳机音效-->
+	<sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="acg_incomparable_reload.wav" pitch_variety="0.03" volume="4.0" /><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="" /><!--动作中in的value为1-->
+    <sound key="cycle" fileref="" /><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="" /><!--动作中in的value为1-->
+    <sound key="last_ammo" fileref="hd_lastammo_01.wav" /><!--最后一发子弹射击的额外音效，可多个混合随机播放-->
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+
+    <!-- <model filename="acg_sabayon_gun.xml" />  -->
+    <addon_model filename="" /> 
+    <hud_icon filename="acg_sabayon_artillery.png" /> 
+	
+	<weak_hand_hold offset="0.4" /> 
+
+	<ballistics curve_height="1.0" near_far_distance="0.0" speed_estimation_near="150.0" 
+	speed_estimation_far="150.0" max_speed="150.0" randomness="0.0" tweak_factor="3.0"/> 
+
+    <projectile file="hd_general_spawn.projectile" pulldown_in_air="2" can_be_detected_by_footmen="1" 
+	time_to_live="1.25" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.7" > 
+
+		<result class="spawn" instance_class="projectile" instance_key="acg_sabayon_artillery_damage.projectile" 
+		min_amount="1" max_amount="2" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+		<trigger class="time" time_to_live="0.65" />
+		<rotation class="motion" />
+
+		<sound class="result" key="other" fileref="grenade_blast.wav" volume="1.0" />
+	
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+
+		<effect class="activated" ref="sabayon_activated_light" lighting="0"/>
+
+		<effect class="result" key="terrain" ref="cyborgs_result_cannon_blast_AmbientLight" lighting="0"/>
+		<effect class="result" key="terrain" ref="cyborgs_result_cannon_blast_smoke" lighting="0"/>
+		<effect class="result" key="terrain" ref="sabayon_artillery_hit" lighting="0"/>
+
+		<effect class="result" type="splat_map" surface_tag="" size="2.0" atlas_index="0" layer="1" />
+		<effect class="result" type="splat_map" surface_tag="" size="2.5" atlas_index="4" layer="0" />
+		<effect class="result" type="splat_map" surface_tag="" size="3.0" atlas_index="0" layer="2" additive="0" /> <!-- remove top snow everywhere -->
+
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+
+		<trail probability="1" key="sabayon_trail"/>	
+    </projectile>
+
+	<!--枪口特效-->
+	<effect class="muzzle" ref="cyborgs_muzzle_cannon_fire_smoke" lighting="0"/> 
+	<effect class="muzzle" ref="cyborgs_muzzle_cannon_fire_light" lighting="0"/> 
+	
+	
+	
+    <stance state_key="running" accuracy="1" /> 
+    <stance state_key="walking" accuracy="1" />
+	<stance state_key="standing" accuracy="1" />
+	<stance state_key="crouching" accuracy="1" />
+    <stance state_key="crouch_moving" accuracy="1" />
+    <stance state_key="prone" accuracy="1.2" /> 
+    <stance state_key="prone_moving" accuracy="1" />
+    <stance state_key="over_wall" accuracy="1.2" />     
+     
+    <modifier class="speed" value="0.0" />
+    <modifier class="hit_success_probability" value="0" />
+    <modifier class="detectability" value="0.0" />
+
+</weapon>
+<weapon 
+file="_rare_weapon_mk5_re.base" 
+key="re_acg_sabayon_sword.weapon"
+>
+    <tag name="cqb" />
+    <specification 	
+	slot="0"
+    retrigger_time="0.7"
+	magazine_size="-1"
+	accuracy_factor="1"
+	sustained_fire_grow_step="0.0595"
+	sustained_fire_diminish_rate="1"
+	can_shoot_standing="1" 
+	can_shoot_crouching="1" 
+	can_shoot_prone="0" 
+	carry_in_two_hands="0" 
+	name="Maria Schariac" 
+	class="3"
+	suppressed="0"
+  	barrel_offset="0.6"
+	projectile_speed="8.0"
+	projectiles_per_shot="2"
+	stab_enabled="1"	
+    stab_range="3.0"
+	use_basic_muzzle_smoke_effect="0"
+	cooldown_start="0.99"
+	cooldown_end="0.0"
+	spread_range="0.01"
+	/>
+	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_effect_drop_target.projectile" 
+	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
+
+
+	<next_in_chain key="re_acg_sabayon_gun.weapon" share_ammo="0" /> 
+
+	<animation state_key="stabbing"	animation_key="melee, ninjato whip" />
+	<animation state_key="stabbing"	animation_key="melee, ninjato slap" />
+	<animation state_key="stabbing"	animation_key="melee, ninjato slash" />
+	<animation state_key="recoil"	animation_key="melee, ninjato whip" />
+	<animation state_key="recoil"	animation_key="melee, ninjato slap" />
+	<animation state_key="recoil"	animation_key="melee, ninjato slash" />
+	<animation state_key="reload"	animation_key="reloading, ninjato" />
+	<animation state_key="hold"	animation_key="still, ninjato" />
+	<animation state_key="hold_on_wall"	animation_key="still overwall, ninjato" />
+	<animation state_key="still_against_wall"	animation_key="still against wall, ninjato" />
+    <animation state_key="hold_casual" animation_key="California Gurls" />
+	<animation state_key="running"	animation_key="running, ninjato" />
+	<animation state_key="walking"	animation_key="walking, ninjato" />
+	<animation state_key="crouching"	animation_key="crouch, ninjato" />
+	<animation state_key="crouch_moving"	animation_key="crouching forwards, ninjato" />
+	<animation state_key="crouch_moving_backwards"	animation_key="crouching backwards, ninjato" />
+	<animation state_key="changing_weapon_in"	animation_key="change weapon in, ninjato" />
+	<animation state_key="changing_weapon_out"	animation_key="change weapon out, ninjato" />
+    <animation state_key="prone_still" animation_key="prone still, ninjato" />
+    <animation state_key="prone_moving" animation_key="prone moving, ninjato" />
+	<animation state_key="walking_backwards" animation_key="walking backwards, ninjato" />
+	<animation state_key="next_in_chain_in" animation_key="melee, ninjato whip" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="melee, ninjato whip" /><!--半身动作，切换模式，本模式切入-->
+	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
+
+	<sound key="fire" fileref="acg_maria_schariac_skill.wav" pitch_variety="0.05" volume="1" />
+    <sound key="cycle" fileref="" />
+	<sound key="stab" fileref="laser_sword_atk_1.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab" fileref="laser_sword_atk_2.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab" fileref="laser_sword_atk_3.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab" fileref="laser_sword_atk_4.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab" fileref="laser_sword_atk_5.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab" fileref="laser_sword_atk_6.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit" fileref="ninjato_hit_fatal.wav" pitch_variety="0.05" volume="0.6" />
+	<sound key="stab_hit_any" fileref="ninjato_hit.wav" pitch_variety="0.05" volume="0.6" />
+    <sound key="dry_fire" fileref="static.wav" />
+	<sound key="effect" fileref="laser_sword_atk_4.wav" volume="1"/>
+
+
+    <weak_hand_hold offset="0.0" />
+
+	<!--军械库相关-->
+    <projectile file="hd_general_spawn_no_effect.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0"> 
+	
+		<result class="blast" radius="4.2" damage="40.0" push="0.4" decal="1" 
+		character_state="death" faction_compare="not_equal" damage_origin_vehicle="0" />
+
+		<trigger class="time" time_to_live="0.05"  />
+		<rotation class="motion" /><!--参数：motion、random-->
+		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
+
+		<!--命中特效-->
+		<!--
+		<effect class="result" key="terrain" ref="" lighting="0" post_processing="0"/>
+		<effect class="activated" ref="" />
+		-->
+
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+		<!--尾迹组-->
+		<trail probability="1" key=""/>	
+    </projectile>
+
+	<model filename="acg_sabayon_gun.xml" />
+	<hud_icon filename="acg_sabayon_sword.png" />
+	
+	<!--枪口特效-->
+	<effect class="muzzle" ref="maria_chariac_muzzle_knife_light_01" lighting="0"/> 
+	<effect class="muzzle" ref="maria_chariac_muzzle_knife_light_02" lighting="0"/> 
+	<effect class="muzzle" ref="maria_chariac_muzzle_knife_light_03" lighting="0"/> 
+	<effect class="muzzle" ref="maria_chariac_muzzle_knife_light_04" lighting="0"/> 
+
+	<stance state_key="running" accuracy="1.0" />
+	<stance state_key="walking" accuracy="1.0" />
+	<stance state_key="crouch_moving" accuracy="1.0" />
+	<stance state_key="prone_moving" accuracy="1.0" />
+	<stance state_key="standing" accuracy="1.0" />
+	<stance state_key="crouching" accuracy="1.0" />
+	<stance state_key="prone" accuracy="1.0" />
+	
+	<modifier class="speed" value="+0.25" />
+    <shield offset="-0.3 0.0 0" extent="0.6 1.6 0.4" />
+	
+</weapon>
+<weapon 
+file="_rare_weapon_mk5_re.base" 
+key="re_acg_sabayon_artillery_skill.weapon"
+>
+    <specification 
+    accuracy_factor="1" 
+	retrigger_time="8" 
+	spread_range="0"
+    magazine_size="-1" 
+    can_shoot_standing="0" 
+    can_shoot_crouching="1" 
+	can_shoot_prone="0"
+    carry_in_two_hands="0" 
+	sustained_fire_grow_step="1" 
+    sustained_fire_diminish_rate="1" 
+    name="Sabayon [Skill]" 
+    class="0" 
+    consume="0"
+    sight_range_modifier="5.0" 
+    slot="1" 
+	burst_shots="1"
+	barrel_offset_3d="0 -0.4 2.4"
+	use_basic_muzzle_smoke_effect="0"
+	projectile_speed="200.0"
+    cooldown_start="0.1"
+	cooldown_end="0"
+	/>
+
+    <animation state_key="recoil"  animation_key="acg_sabayon_yaosai_still" />
+    <animation key="cycle" animation_key="acg_sabayon_yaosai_cycle" />
+    <animation state_key="reload" animation_key="acg_sabayon_yaosai_still" />
+	<animation state_key="next_in_chain_in" animation_key="acg_sabayon_yaosai_still" />
+	<animation state_key="hold" animation_key="acg_sabayon_yaosai_still" />
+    <animation state_key="hold_casual"  animation_key="acg_sabayon_yaosai_still" />
+    <animation state_key="hold_on_wall" animation_key="acg_sabayon_yaosai_still" />
+    <animation state_key="still_against_wall"   animation_key="acg_sabayon_yaosai_still" />
+    <animation state_key="crouching"    animation_key="acg_sabayon_yaosai_still" />
+    <animation state_key="crouch_moving"    animation_key="acg_sabayon_yaosai_still" />
+    <animation state_key="crouch_moving_backwards"  animation_key="acg_sabayon_yaosai_still" />
+    <animation state_key="running" animation_key="acg_sabayon_yaosai_still" />
+    <animation state_key="walking"  animation_key="acg_sabayon_yaosai_still" />
+    <animation state_key="walking_backwards" animation_key="acg_sabayon_yaosai_still" />
+	<animation state_key="next_in_chain_in" animation_key="acg_sabayon_yaosai_still" /><!--半身动作，切换模式，本模式切出-->
+	<animation state_key="next_in_chain_out" animation_key="acg_sabayon_yaosai_still" /><!--半身动作，切换模式，本模式切入-->
+	<!--切换武器，本武器的切出动作衔接下一武器的切入动作，置空为秒切-->
+    <animation state_key="changing_weapon_in" animation_key="acg_sabayon_yaosai_still" /><!--半身动作，切换武器，本武器收回-->
+	<animation state_key="changing_weapon_out" animation_key="acg_sabayon_yaosai_still"/><!--半身动作，切换武器，本武器取出-->
+
+
+    <sound key="fire" fileref="acg_sabayon_artillery_skill_fire.wav" pitch_variety="0.00"  volume="2" />
+    <sound key="stab" fileref="grenade_throw1.wav" pitch_variety="0.03" volume="1" /><!--stab_enabled为1时生效该三个接口-->
+	<sound key="stab_hit" fileref="impact_whip.wav" pitch_variety="0.05" volume="1" />
+	<sound key="stab_hit_any" fileref="whip_hit.wav" pitch_variety="0.05" volume="1" />
+    <sound key="magazine_out" fileref="SCIWeap_RELOAD_Large_Blaster_Heavy_Metal_B00M_CWDS_02.wav" volume="1"/><!--动作中out的value为0-->
+    <sound key="magazine_in" fileref="pf98_cycle_in.wav" volume="0.3"/><!--动作中in的value为1-->
+    <sound key="cycle" fileref="m79_cycle.wav" volume="0.3"/><!--配合与cycle动作，固定播放-->
+    <sound key="cycle_out" fileref="sniper_cycle_out.wav" /><!--动作中out的value为0-->
+    <sound key="cycle_in" fileref="hd_cycle_in_01.wav" /><!--动作中in的value为1-->
+    <sound key="last_ammo" fileref="" pitch_variety="0" volume="2.5"/>
+
+    <sound key="cooldown" fileref="hyper_mega_skill_cooldown.wav" pitch_variety="0.00"  volume="3" />
+	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
+
+	<model filename="acg_sabayon_yaosai.xml" /> 
+    <addon_model filename="" /> 
+    <hud_icon filename="acg_sabayon_artillery_skill.png" />
+    
+	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
+
+    <weak_hand_hold offset="0.3" />
+    <!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
+    <projectile file="hd_general_spawn_no_effect.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
+	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0" radius="0.6"> 
+	
+        <result class="notify_script" key="acg_sabayon_artillery_skill" />
+
+		<trigger class="time" time_to_live="0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
+		<rotation class="motion" /><!--参数：motion、random-->
+	
+		<trail probability="1" key=""/>	
+
+		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+		<sound class="result" key="terrain" copy="other" />
+		<sound class="result" key="static_object" copy="other" />
+		<sound class="result" key="vehicle" copy="other" />
+		<sound class="result" key="character" copy="other" />
+		<sound class="result" key="shield" copy="other" />
+		<effect class="result" key="other" copy="terrain"/>
+		<effect class="result" key="static_object" copy="terrain" />
+		<effect class="result" key="character" copy="terrain" />
+		<effect class="result" key="shield" copy="terrain" />			
+		<effect class="result" key="vehicle" copy="terrain" />			
+		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+		
+    </projectile>
+    <effect class="muzzle" ref="sabayon_laser_center_ball" lighting="0"/> 
+    <effect class="muzzle" ref="sabayon_laser_center_rorate_ring" lighting="0"/> 
+    <effect class="muzzle" ref="sabayon_laser_shrink_line" lighting="0"/> 
+    <effect class="muzzle" ref="sabayon_laser_later_pre_line_s3" lighting="0"/> 
+    <effect class="muzzle" ref="sabayon_laser_later_pre_line_mod3" lighting="0"/> 
+    <effect class="muzzle" ref="sabayon_laser_later_pre_line_mod3_addon" lighting="0"/> 
+
+    <effect class="muzzle" ref="sabayon_laser_later_pre_line_s1" lighting="0"/> 
+    <effect class="muzzle" ref="sabayon_laser_later_pre_line_mod1" lighting="0"/> 
+    <effect class="muzzle" ref="sabayon_laser_later_pre_line_mod1_addon" lighting="0"/> 
+
+    <modifier class="speed" value="0" />
+
+</weapon>
+</weapons>
+
+

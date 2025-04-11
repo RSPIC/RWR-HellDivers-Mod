@@ -316,8 +316,7 @@ particle_system g41_muzzle_square		//点扩散飞溅方块特效
 }
 particle_system g41_muzzle_yellow_light		//激光中心黄色线光
 {
-	quota 1000
-	emit_emitter_quota 1000
+	quota 50
 	material g41_lens_flare_01
 	particle_width 3
 	particle_height 3

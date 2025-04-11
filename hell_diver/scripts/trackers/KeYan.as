@@ -26,12 +26,16 @@ dictionary research_list = {
     {"acg_laisha_heliotrope.weapon",450},
     {"acg_elaina_wand.weapon",450},
     {"acg_izayoi_sakuya_i.weapon",450},
+    {"ex_exo_dreadnought_mg.weapon",450},
+    {"acg_takanashi_hoshino_battle.weapon",225},
+    {"acg_takanashi_hoshino_battle_side_pistol.weapon",225},
+    {"acg_sabayon_gun.weapon",450},
 
     // MK4
     {"acg_arknight_ifrit.weapon",450},// rare
     {"acg_bronya.weapon",150},
     {"acg_g41_lasercanno_diffusion.weapon",150},
-    {"acg_shuiniao.weapon",150},
+    // {"acg_shuiniao.weapon",150},
     {"acg_fiammetta_gl.weapon",150},
     {"ex_disaster_railgun.weapon",150},
     {"acg_texas_skill.weapon",150},
@@ -52,6 +56,8 @@ dictionary research_list = {
     {"acg_maria_schariac.weapon",50},
     {"ex_space_marines.weapon",50},
     {"acg_rumi.weapon",50},
+    {"acg_bf109.weapon",50},
+    {"acg_fade_red.weapon",50},
 
     //mk3 sell
     {"acg_sinteria_bow.weapon",40},
@@ -89,6 +95,7 @@ dictionary research_list = {
 
     //EXTRA
     {"ex_firework.weapon",80},
+    {"hd_fire_bunny.weapon",5},
 
 
     {"",0}

@@ -42,10 +42,11 @@ key="uragan_cannon.weapon">
         <model mesh_filename="SMS_missile.mesh" texture_filename="SMS_missile.png" />
         <effect class="activated" ref="missile_activated_cannon_flysmoke_larger" lighting="0"/>
 
-        <!-- <sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_1.wav" pitch_variety="0.01" volume="1" />
-        <sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_2.wav" pitch_variety="0.01" volume="1" />
-        <sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_3.wav" pitch_variety="0.01" volume="1" />
-        <sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_4.wav" pitch_variety="0.01" volume="1" /> -->
+        <!-- <sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_1.wav" pitch_variety="0.01" volume="8" />
+        <sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_2.wav" pitch_variety="0.01" volume="8" />
+
+        <sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_3.wav" pitch_variety="0.01" volume="8" />
+        <sound class="result" key="other" fileref="hd_airstrike_missile_fast_med_distance_m_4.wav" pitch_variety="0.01" volume="8" /> -->
         <sound class="result" key="other" fileref="at_hit_sfx_12.wav" pitch_variety="0.01" volume="10" />
         <sound class="result" key="other" fileref="at_hit_sfx_11.wav" pitch_variety="0.01" volume="10" />
         <sound class="result" key="terrain" copy="other" />

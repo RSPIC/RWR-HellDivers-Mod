@@ -83,8 +83,8 @@ author: RST
 
 particle_system patricia_muzzle_flower
 {
-	quota 4000
-    emit_emitter_quota 3500
+	quota 200
+    emit_emitter_quota 200
 	material flower_purple
 	particle_width 1.0
 	particle_height 0.85
@@ -455,8 +455,8 @@ particle_system patricia_CumForce_muzzle_delay_impact
 
 particle_system patricia_CumForce_muzzle_spray
 {
-	quota 500
-	emit_emitter_quota 500
+	quota 200
+	emit_emitter_quota 200
 	material point_soft_edge_100
 	particle_width 0.75
 	particle_height 2
@@ -630,7 +630,7 @@ particle_system patricia_PhantomFang_result_lens
 }
 particle_system patricia_PhantomFang_result_star
 {
-	quota 300
+	quota 100
 	material eye_fxl_ptc_0012_p
 	particle_width 3
 	particle_height 3
@@ -678,7 +678,7 @@ particle_system patricia_PhantomFang_result_star
 }
 particle_system patricia_PhantomFang_result_flower
 {
-	quota 500
+	quota 100
 	material flower_purple
 	particle_width 1.2
 	particle_height 0.9
@@ -782,7 +782,7 @@ particle_system patricia_PhantomFang_result_centerlight
 }
 particle_system patricia_PhantomFang_result_spray
 {
-	quota 500
+	quota 80
 	material SF4_dds_0359
 	particle_width 0.56
 	particle_height 2
@@ -827,7 +827,7 @@ particle_system patricia_PhantomFang_result_spray2 : patricia_PhantomFang_result
 
 particle_system patricia_PhantomFang_muzzle_flower
 {
-	quota 500
+	quota 70
 	material flower_purple
 	particle_width 1.5
 	particle_height 1.5
@@ -883,7 +883,7 @@ particle_system patricia_PhantomFang_muzzle_flower
 }
 particle_system patricia_PhantomFang_muzzle_impact
 {
-	quota 500
+	quota 50
 	material Tex_C_Swirl_02
 	particle_width 1
 	particle_height 1
@@ -929,8 +929,8 @@ particle_system patricia_PhantomFang_muzzle_impact
 }
 particle_system patricia_PhantomFang_muzzle_flowerring
 {
-	quota 4000
-    emit_emitter_quota 3500
+	quota 150
+    emit_emitter_quota 150
 	material flower_purple
 	particle_width 1.0
 	particle_height 0.85
@@ -1230,7 +1230,7 @@ particle_system patricia_JihadSlash_result_crossline
 }
 particle_system patricia_JihadSlash_result_star
 {
-	quota 300
+	quota 120
 	material eye_fxl_ptc_0012_p
 	particle_width 1
 	particle_height 1
@@ -1281,7 +1281,7 @@ particle_system patricia_JihadSlash_result_star
 }
 particle_system patricia_JihadSlash_result_spray
 {
-	quota 300
+	quota 120
 	material point_hard_edge
 	particle_width 0.2
 	particle_height 4
@@ -1322,7 +1322,7 @@ particle_system patricia_JihadSlash_result_spray
 }
 particle_system patricia_JihadSlash_result_radiation
 {
-	quota 300
+	quota 120
 	material radiation
 	particle_width 1
 	particle_height 1
@@ -1467,7 +1467,7 @@ particle_system patricia_JihadSlash_result_pre_flare
 
 particle_system patricia_JihadSlash_result_pre_ringwave
 {
-	quota 200
+	quota 100
 	material Particle_ShockwaveKunju02_p_cull
 	particle_width 8
 	particle_height 8
@@ -1525,7 +1525,7 @@ particle_system patricia_JihadSlash_result_pre_ringwave2 : patricia_JihadSlash_r
 
 particle_system patricia_FatalDrive_muzzle_fireRing
 {
-	quota 300
+	quota 200
 	material Particle_ShockwaveSlow
 	particle_width 8
 	particle_height 8
@@ -1756,8 +1756,8 @@ particle_system patricia_FatalDrive_muzzle_firelight
 }
 particle_system patricia_FatalDrive_muzzle_fireSpark
 {
-	quota 800
-	emit_emitter_quota 600
+	quota 200
+	emit_emitter_quota 200
 	material flame_tex_bw_01
 	particle_width 2
 	particle_height 2
@@ -1833,8 +1833,8 @@ particle_system patricia_FatalDrive_muzzle_fireSpark2 : patricia_FatalDrive_muzz
 }
 particle_system patricia_FatalDrive_muzzle_fireSpark_small
 {
-	quota 800
-	emit_emitter_quota 600
+	quota 200
+	emit_emitter_quota 200
 	material bow_flare
 	particle_width 0.7
 	particle_height 0.7
@@ -2102,7 +2102,7 @@ particle_system patricia_FatalDrive_result_lens
 
 particle_system patricia_FatalDrive_result_spray
 {
-	quota 450
+	quota 200
 	material point_hard_edge
 	particle_width 0.3
 	particle_height 0.7s
@@ -2261,8 +2261,8 @@ particle_system patricia_FatalDrive_result_shrink_line
 
 particle_system patricia_FatalDrive_result_springFire
 {
-	quota 2000
-	emit_emitter_quota 1500
+	quota 200
+	emit_emitter_quota 200
 	material flame_tex_bw_01
 	particle_width 2.2
 	particle_height 2.2
@@ -2339,7 +2339,7 @@ particle_system patricia_FatalDrive_result_springFire
 
 particle_system patricia_FatalDrive_result_flower
 {
-	quota 500
+	quota 200
 	material shuiniao_flower_02
 	particle_width 2.5
 	particle_height 1.2

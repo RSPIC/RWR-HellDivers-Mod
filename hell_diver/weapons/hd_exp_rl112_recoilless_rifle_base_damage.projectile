@@ -50,7 +50,7 @@ can_be_detected_by_driver="1"
 radius="0.3"
 >
         <result class="spawn" instance_class="projectile" instance_key="hd_exp_las99_quasar_cannon_damage.projectile" 
-		min_amount="15" max_amount="15" offset="0 0.5 0" position_spread="2 0" direction_spread="0.1 0" />
+		min_amount="30" max_amount="30" offset="0 0.5 0" position_spread="2 0" direction_spread="0.1 0" />
 	<trigger class="impact">
 		<collider class="terrain" enabled="1" />     
 		<collider class="static_object" enabled="1" /> 

@@ -165,7 +165,7 @@ character_leave_request_mode="friendly"
 	<character_slot type="passenger" position="-0.5 0.5 -4.5" rotation="0" exit_rotation="3.14" hiding="1" />
 
 	<!-- sound handling -->
-	<rev_sound filename="music_b_connected.wav" low_pitch="1" high_pitch="1" low_rev="1" high_rev="1" volume="0.3" />
+	<rev_sound filename="music_lost_children.wav" low_pitch="1" high_pitch="1" low_rev="1" high_rev="1" volume="2.5" />
 
 	<sound key="slide" filename="slide_noise.wav" />
 	<sound key="squeal" filename="tire_squeal.wav" />

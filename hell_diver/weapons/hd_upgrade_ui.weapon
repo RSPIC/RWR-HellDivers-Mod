@@ -201,6 +201,46 @@ key="upgrade_ui_weapon.target:hd_psc_rs422_railgun.cost:07.weapon"
 	/> 
     <hud_icon filename="hd_rs422_railgun.png" /> 
 </weapon>
+<weapon 
+file="_ui.weapon_base"
+key="upgrade_ui_weapon.target:hd_side_cqc_30_stun_baton.cost:04.weapon" 
+> 
+    <specification 	
+    slot="1" 	
+    name="[4研发点] CQC-30 电棍" 
+	/> 
+    <hud_icon filename="hd_side_cqc_30_stun_baton.png" /> 
+</weapon>
+<weapon 
+file="_ui.weapon_base"
+key="upgrade_ui_weapon.target:hd_psc_plas_39_accelerator_rifle.cost:05.weapon" 
+> 
+    <specification 	
+    slot="0" 	
+    name="[5研发点] PLAS-39 加速步枪" 
+	/> 
+    <hud_icon filename="hd_psc_plas_39_accelerator_rifle.png" /> 
+</weapon>
+<weapon 
+file="_ui.weapon_base"
+key="upgrade_ui_weapon.target:hd_exp_m25_rumbler_mk2.cost:10.weapon" 
+> 
+    <specification 	
+    slot="1" 	
+    name="[10研发点] M-25 雷鸣者 MK2[膛压强化]" 
+	/> 
+    <hud_icon filename="hd_m25_rumbler_mk2.png" /> 
+</weapon>
+<weapon 
+file="_ui.weapon_base"
+key="upgrade_ui_weapon.target:hd_sg_double_freedom_mk2.cost:03.weapon" 
+> 
+    <specification 	
+    slot="0" 	
+    name="[3研发点] DBS2 MK2[收束枪口]" 
+	/> 
+    <hud_icon filename="hd_double_freedom_mk2.png" /> 
+</weapon>
 </weapons>
 
 

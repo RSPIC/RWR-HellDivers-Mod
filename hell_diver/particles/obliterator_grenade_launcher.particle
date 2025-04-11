@@ -4,7 +4,7 @@ author: RST
 
 particle_system obliterator_grenade_launcher_trail
 {
-	quota 300
+	quota 70
 	material wand_smoke
 	particle_width 1
 	particle_height 1
@@ -65,8 +65,8 @@ particle_system obliterator_grenade_launcher_trail
 
 particle_system obliterator_grenade_launcher_impact_smoke		//爆点烟雾 取消
 {
-	quota 1000
-	emit_emitter_quota 1000
+	quota 50
+	emit_emitter_quota 30
 	material obliterator_smoke
 	particle_width 1.5
 	particle_height 1.5

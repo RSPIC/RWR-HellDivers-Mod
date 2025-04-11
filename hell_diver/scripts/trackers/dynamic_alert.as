@@ -625,7 +625,7 @@ class dynamic_alert : Tracker {
                     spawnTime = spawnTime - count/4;
 
                     if(count >= 10 && m_time_played <= 15){
-                        spawnTime = 0.4;
+                        spawnTime = 0.5;
                     }
                     
                     if(m_time_played >= 15){
@@ -636,8 +636,8 @@ class dynamic_alert : Tracker {
                         spawnTime = 2.0;
                     }
 
-                    if(spawnTime <= 0.4){
-                        spawnTime = 0.4;
+                    if(spawnTime <= 0.5){
+                        spawnTime = 0.5;
                     }
                     _log("setSpawnTime("+ f_name +"):" + spawnTime);
                     faction.setFloatAttribute("spawn_interval", spawnTime);
@@ -649,8 +649,8 @@ class dynamic_alert : Tracker {
                     spawnTime = 4.8 - count/4 + 0.05*(m_time_played-40);
                     if(spawnTime <= 0.5){
                         spawnTime = 2 - count/4;
-                        if(spawnTime <= 0.65){
-                            spawnTime = 0.65;
+                        if(spawnTime <= 1){
+                            spawnTime = 1;
                         }                    
                     }
                     _log("setSpawnTime("+f_name+"):" + spawnTime);

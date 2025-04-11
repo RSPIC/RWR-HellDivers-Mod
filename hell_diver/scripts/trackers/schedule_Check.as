@@ -43,6 +43,11 @@ dictionary EXO_Armor = {
         {"re_ex_exo_dreadnought_plas.weapon","ex_exo_dreadnought_null.weapon"},
         {"re_ex_exo_dreadnought_rocket.weapon","ex_exo_dreadnought_null.weapon"},
 
+        {"ex_exo_telemon_cannon.weapon","re_ex_exo_telemon_mg.weapon"},
+        {"ex_exo_telemon_bluefire.weapon","re_ex_exo_telemon_mg.weapon"},
+        {"re_ex_exo_telemon_cannon.weapon","re_ex_exo_telemon_mg.weapon"},
+        {"re_ex_exo_telemon_bluefire.weapon","re_ex_exo_telemon_mg.weapon"},
+
         // 占位的
         {"666",-1}
 
@@ -51,13 +56,13 @@ dictionary EXO_Armor = {
 
 class schedule_Check : Tracker {
     protected Metagame@ m_metagame;
-    protected float m_time;
+    protected float m_time; //刷新间隔
     protected float m_timer;
     protected bool m_ended;
     protected firstUseInfoBuck@ m_firstUseInfoBuck;
     protected dictionary m_skin_info;
 
-    schedule_Check(Metagame@ metagame,float time = 7){
+    schedule_Check(Metagame@ metagame,float time = 1){
         @m_metagame = @metagame;
         m_time = time;
         m_timer = m_time;
@@ -72,7 +77,7 @@ class schedule_Check : Tracker {
     void update(float time){
         m_timer -= time;
         if(m_timer >0){return;}
-        time = 7 + g_playerCount/2 ;
+        time = 10 + g_playerCount/2 ;
         refresh();
         m_timer = m_time;
     }
@@ -119,6 +124,9 @@ class schedule_Check : Tracker {
                 checkDreadnought(m_metagame,name,pid,cid,equipList);
                 checkSakuya(m_metagame,name,pid,cid,equipList);
                 checkYuuka(m_metagame,name,pid,cid,equipList);
+                checkSabayon(m_metagame,name,pid,cid,equipList);
+                checkTelemon(m_metagame,name,pid,cid,equipList);
+
             }
         }
     }
@@ -208,7 +216,7 @@ class schedule_Check : Tracker {
                     array<Resource@> resources = array<Resource@>();
                     Resource@ res;
                     @res = Resource("acg_patricia_fataldrive.weapon","weapon");
-                    res.addToResources(resources,5);
+                    res.addToResources(resources,1);
                     deleteListItemInBackpack(m_metagame,cid,resources);
                     deleteListItemInStash(m_metagame,cid,resources);
                     addListItemInBackpack(m_metagame,cid,resources);
@@ -241,15 +249,161 @@ class schedule_Check : Tracker {
             string targetKey = "ex_exo_dreadnought";
             string targetKey2 = "re_ex_exo_dreadnought";
             if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
-                if(equipList.get("1",equipKey)){//副武器
-                    if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
-                        return;
-                    }else{
-                        notify(metagame, "Help - Dreadnought", dictionary(), "misc", pid, true, "Dreadnought Help", 1.0);
-                        _notify(m_metagame,pid,"主武器必须搭配副手使用！武器已送至背包");
-                        addItemInBackpack(m_metagame,cid,"weapon","ex_exo_dreadnought_null.weapon");
-                        editPlayerVest(metagame,cid,"hd_v40",4);//替换为0层甲
+                int num;
+                if(equipList.get(equipKey,num)){
+                    if(num != 0){
+                        if(equipList.get("1",equipKey)){//副武器
+                            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+                                return;
+                            }else{
+                                notify(metagame, "Help - Dreadnought", dictionary(), "misc", pid, true, "Dreadnought Help", 1.0);
+                                _notify(m_metagame,pid,"主武器必须搭配副手使用！武器已送至背包");
+                                addItemInBackpack(m_metagame,cid,"weapon","ex_exo_dreadnought_null.weapon");
+                                editPlayerVest(metagame,cid,"hd_v40",4);//替换为0层甲
+                            }
+                        }
                     }
+                }
+            }
+        }
+	}
+    // ----------------------------------------------------
+	protected void checkSabayon(Metagame@ metagame,string&in name,int&in pid,int&in cid,dictionary&in equipList){
+        string equipKey;
+        if(equipList.get("0",equipKey)){//主武器
+            string targetKey = "acg_sabayon";
+            string targetKey2 = "re_acg_sabayon";
+            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+                int num;
+                if(equipList.get(equipKey,num)){
+                    if(num != 0){
+                        if(equipList.get("1",equipKey)){//副武器
+                            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+                                if(g_GameMode == "Vanilla"){
+                                    if(g_vestInfoBuck.getVestKey(name) != "ex_skill_vest_300"){
+                                        editPlayerVest(metagame,cid,"ex_skill_vest_300",4);//替换为80层甲
+                                        g_vestInfoBuck.changeVest(name,"ex_skill_vest_300");
+                                        g_vestInfoBuck.resetUpgrade(name);
+                                        _notify(m_metagame,pid,"Vest On Load");
+                                    }
+                                    return;
+                                }
+                                if(g_vestInfoBuck.getVestKey(name) != "ex_skill_vest_80"){
+                                    editPlayerVest(metagame,cid,"ex_skill_vest_80",4);//替换为80层甲
+                                    g_vestInfoBuck.changeVest(name,"ex_skill_vest_80");
+                                    g_vestInfoBuck.resetUpgrade(name);
+                                    _notify(m_metagame,pid,"Vest On Load");
+                                }
+                                return;
+                            }else{
+                                notify(metagame, "Help - Sabayon", dictionary(), "misc", pid, true, "Sabayon Help", 1.0);
+                                _notify(m_metagame,pid,"主武器必须搭配副手使用！武器已送至背包");
+                                addItemInBackpack(m_metagame,cid,"weapon","re_acg_sabayon_artillery_skill.weapon");
+                                g_vestInfoBuck.resetUpgrade(name);
+                                g_vestInfoBuck.removeInfo(name);
+                                editPlayerVest(metagame,cid,"helldivers_vest_1",4);//替换为默认甲
+                            }
+                        }
+                    }else{
+                        string equipKey_vest = "";
+                        equipList.get("4",equipKey_vest);//护甲
+                        string key = "ex_skill_vest_";
+                        string tempKey = equipKey_vest.substr(0,key.length());
+                        if(tempKey == key){
+                            editPlayerVest(metagame,cid,"helldivers_vest",4);
+                            g_vestInfoBuck.resetUpgrade(name);
+                            g_vestInfoBuck.removeInfo(name);
+                            notify(metagame, "Armor offload", dictionary(), "misc", pid, false, "", 1.0);
+                            return;
+                        }
+                    }
+                }
+            }else{
+                string equipKey_vest = "";
+                equipList.get("4",equipKey_vest);//护甲
+                string key = "ex_skill_vest_";
+                string tempKey = equipKey_vest.substr(0,key.length());
+                if(tempKey == key){
+                    editPlayerVest(metagame,cid,"helldivers_vest",4);
+                    notify(metagame, "Armor offload", dictionary(), "misc", pid, false, "", 1.0);
+                    return;
+                }
+            }
+        }
+	}
+    // ----------------------------------------------------
+	protected void checkTelemon(Metagame@ metagame,string&in name,int&in pid,int&in cid,dictionary&in equipList){
+        string equipKey;
+        string targetKey = "ex_exo_telemon_";
+        string targetKey2 = "re_ex_exo_telemon_";
+        if(equipList.get("0",equipKey)){//主武器
+            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+                int num;
+                if(equipList.get(equipKey,num)){
+                    if(num != 0){
+                        if(equipList.get("1",equipKey)){//副武器
+                            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+                                return;
+                            }else{
+                                // notify(metagame, "Help - Sabayon", dictionary(), "misc", pid, true, "Sabayon Help", 1.0);
+                                _notify(m_metagame,pid,"主武器必须搭配副手使用！武器已送至背包");
+                                addItemInBackpack(m_metagame,cid,"weapon","re_ex_exo_telemon_mg.weapon");
+                                g_vestInfoBuck.resetUpgrade(name);
+                                g_vestInfoBuck.removeInfo(name);
+                                editPlayerVest(metagame,cid,"helldivers_vest_1",4);//替换为默认甲
+                                g_userCountInfoBuck.clearCount(name,"EXOvestWrong");
+                                return;
+                            }
+                        }
+                    }else{
+                        string equipKey_vest = "";
+                        equipList.get("4",equipKey_vest);//护甲
+                        string key = "vest_EXO_";
+                        string tempKey = equipKey_vest.substr(0,key.length());
+                        if(tempKey == key){
+                            editPlayerVest(metagame,cid,"helldivers_vest_1",4);
+                            notify(metagame, "Armor offload", dictionary(), "misc", pid, false, "", 1.0);
+                            return;
+                        }
+                        if(equipList.get("1",equipKey)){//副武器
+                            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+                                if(equipList.get(equipKey,num)){
+                                    if(num != 0){
+                                        g_userCountInfoBuck.addCount(name,"EXOvestWrong");
+                                        int nowCost = 0;
+                                        g_userCountInfoBuck.getCount(name,"EXOvestWrong",nowCost);
+                                        _notify(m_metagame,pid,"过载死亡剩余警告次数"+(5-nowCost));
+                                        if(nowCost >= 5){
+                                            setDeadCharacter(m_metagame,cid);
+                                            g_userCountInfoBuck.clearCount(name,"EXOvestWrong");
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }else{
+                targetKey = "ex_exo_dreadnought_";
+                targetKey2 = "re_ex_exo_dreadnought_";
+                if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){return;}
+                string equipKey_vest = "";
+                equipList.get("4",equipKey_vest);//护甲
+                string key = "vest_EXO_";
+                string tempKey = equipKey_vest.substr(0,key.length());
+                if(tempKey == key){
+                    editPlayerVest(metagame,cid,"helldivers_vest_1",4);
+                    notify(metagame, "Armor offload", dictionary(), "misc", pid, false, "", 1.0);
+
+                    g_userCountInfoBuck.addCount(name,"EXOvestWrong");
+                    int nowCost = 0;
+                    g_userCountInfoBuck.getCount(name,"EXOvestWrong",nowCost);
+                    _notify(m_metagame,pid,"过载死亡剩余警告次数"+(5-nowCost));
+                    if(nowCost >= 5){
+                        setDeadCharacter(m_metagame,cid);
+                        g_userCountInfoBuck.clearCount(name,"EXOvestWrong");
+                    }
+                    return;
                 }
             }
         }
@@ -261,9 +415,14 @@ class schedule_Check : Tracker {
             string targetKey = "acg_izayoi_sakuya";
             string targetKey2 = "re_acg_izayoi_sakuya";
             if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
-                if(m_firstUseInfoBuck.isFirst(name,equipKey)){
-                    notify(metagame, "Help - Sakuya", dictionary(), "misc", pid, true, "Sakuya Help", 1.0);
-                    addItemInBackpack(m_metagame,cid,"weapon","re_acg_izayoi_sakuya_trigger.weapon");
+                int num;
+                if(equipList.get(equipKey,num)){
+                    if(num != 0){
+                        if(m_firstUseInfoBuck.isFirst(name,equipKey)){
+                            notify(metagame, "Help - Sakuya", dictionary(), "misc", pid, true, "Sakuya Help", 1.0);
+                            addItemInBackpack(m_metagame,cid,"weapon","re_acg_izayoi_sakuya_trigger.weapon");
+                        }
+                    }
                 }
             }
         }
@@ -293,7 +452,7 @@ class schedule_Check : Tracker {
                     array<Resource@> resources = array<Resource@>();
                     Resource@ res;
                     @res = Resource("ex_vergil_skill.weapon","weapon");
-                    res.addToResources(resources,4);
+                    res.addToResources(resources,1);
                     deleteListItemInBackpack(m_metagame,cid,resources);
                     deleteListItemInStash(m_metagame,cid,resources);
                     addListItemInBackpack(m_metagame,cid,resources);
@@ -313,7 +472,7 @@ class schedule_Check : Tracker {
                     array<Resource@> resources = array<Resource@>();
                     Resource@ res;
                     @res = Resource("acg_elaina_wand_skill.weapon","weapon");
-                    res.addToResources(resources,5);
+                    res.addToResources(resources,1);
                     deleteListItemInBackpack(m_metagame,cid,resources);
                     deleteListItemInStash(m_metagame,cid,resources);
                     addListItemInBackpack(m_metagame,cid,resources);
@@ -333,7 +492,7 @@ class schedule_Check : Tracker {
                     array<Resource@> resources = array<Resource@>();
                     Resource@ res;
                     @res = Resource("ex_hyper_mega_bazooka_launcher_skill.weapon","weapon");
-                    res.addToResources(resources,3);
+                    res.addToResources(resources,1);
                     deleteListItemInBackpack(m_metagame,cid,resources);
                     deleteListItemInStash(m_metagame,cid,resources);
                     addListItemInBackpack(m_metagame,cid,resources);
@@ -481,6 +640,9 @@ class schedule_Check : Tracker {
         if(!equipList.get(equipKey_sec,amount) || amount == 0){
             equipKey_sec = "";
         }
+        if(equipKey_sec == "re_ex_exo_telemon_missile.weapon"){
+            equipKey_sec = "re_ex_exo_telemon_mg.weapon";
+        }
        
         string equipKey_vest = "";
         equipList.get("4",equipKey_vest);//护甲
@@ -502,6 +664,7 @@ class schedule_Check : Tracker {
 					editPlayerVest(metagame,cid,"vest_EXO_300",4);
 					return;
 				}
+                g_userCountInfoBuck.clearCount(name,"EXOvestWrong");
 			}else{
 				//非正常配装，发送警告
 				notify(metagame, "Warning - EXO", dictionary(), "misc", pid, false, "EXO Warning", 1.0);

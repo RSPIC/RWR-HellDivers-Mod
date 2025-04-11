@@ -63,11 +63,16 @@ void main(dictionary@ inputData) {
 """;
         settings.print();
 
-
+	_log("init Metagame Start");
         GameModeInvasion metagame(settings);
-        metagame.init();
-        metagame.run();
-        metagame.uninit();
+        
+	metagame.init();
+        _log("manual crash");
+
+	while(metagame.run()){
+		metagame.init();
+	}
+	metagame.uninit();
         
 
         _log("ending execution");

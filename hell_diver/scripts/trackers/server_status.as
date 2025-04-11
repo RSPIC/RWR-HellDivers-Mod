@@ -17,6 +17,8 @@
 
 class server_status : Tracker{
     protected Metagame@ m_metagame;
+	protected float m_test_timer = 1.0;
+	protected uint m_test_counter = 1;
 	protected float m_timer;
 	protected float m_time = 300; //多少秒记录一次
 	protected float m_time_min;
@@ -43,10 +45,18 @@ class server_status : Tracker{
     // --------------------------------------------
     void update(float time) {
         m_timer -= time;
+        m_test_timer -= time;
         if(m_timer <= 0.0){
             m_timer = m_time;
             m_time_min += m_time/60;
             saveTime();
+        }
+        if(m_test_timer <= 0){
+            m_test_timer = 1.0;
+            if(g_debugMode){
+                _report(m_metagame,"<ServerTimeCounter> time="+m_test_counter++);
+            }
+            _log("  <ServerTimeCounter> = "+m_test_counter);
         }
     }
     // --------------------------------------------
@@ -124,7 +134,93 @@ class server_status : Tracker{
         if(g_debugMode|| g_online_TestMode || m_metagame.getAdminManager().isAdmin(sender,senderId) ){
             string message = event.getStringAttribute("message");
         }
+
+        _log("Tracker Counter handleChatEvent = "+m_times_10++);
 	}
+
+    protected uint m_times_1 = 0;
+	protected uint m_times_2 = 0;
+	protected uint m_times_3 = 0;
+	protected uint m_times_4 = 0;
+	protected uint m_times_5 = 0;
+	protected uint m_times_6 = 0;
+	protected uint m_times_7 = 0;
+	protected uint m_times_8 = 0;
+	protected uint m_times_9 = 0;
+	protected uint m_times_10 = 0;
+	protected uint m_times_11 = 0;
+	protected uint m_times_12 = 0;
+	protected uint m_times_13 = 0;
+	protected uint m_times_14 = 0;
+	protected uint m_times_15 = 0;
+	protected uint m_times_16 = 0;
+	protected uint m_times_17 = 0;
+	protected uint m_times_18 = 0;
+	protected uint m_times_19 = 0;
+	protected uint m_times_20 = 0;
+	protected uint m_times_21 = 0;
+	protected uint m_times_22 = 0;
+	protected uint m_times_23 = 0;
+	protected uint m_times_24 = 0;
+	protected uint m_times_25 = 0;
+	protected uint m_times_26 = 0;
+	protected uint m_times_27 = 0;
+
+	protected void handleMatchEndEvent(const XmlElement@ event){
+        _log("Tracker Counter handleMatchEndEvent = "+m_times_1++);
+        _log("Tracker Counter all handleMatchEndEvent = "+m_times_1);
+		_log("Tracker Counter all handleQueryResultEvent = "+m_times_2);
+		_log("Tracker Counter all handleCommsChangeEvent = "+m_times_3);
+		_log("Tracker Counter all handleAttackChangeEvent = "+m_times_4);
+		_log("Tracker Counter all handleVehicleSpawnEvent = "+m_times_5);
+		_log("Tracker Counter all handleVehicleHolderChangeEvent = "+m_times_6);
+		_log("Tracker Counter all handleVehicleDestroyEvent = "+m_times_7);
+		_log("Tracker Counter all handleVehicleSpotEvent = "+m_times_8);
+		_log("Tracker Counter all handleBaseOwnerChangeEvent = "+m_times_9);
+		_log("Tracker Counter all handleChatEvent = "+m_times_10);
+		_log("Tracker Counter all handlePlayerConnectEvent = "+m_times_11);
+		_log("Tracker Counter all handlePlayerDisconnectEvent = "+m_times_12);
+		_log("Tracker Counter all handlePlayerSpawnEvent = "+m_times_13);
+		_log("Tracker Counter all handleMhandlePlayerKillEventatchEndEvent = "+m_times_14);
+		_log("Tracker Counter all handlePlayerDieEvent = "+m_times_15);
+		_log("Tracker Counter all handlePlayerStunEvent = "+m_times_16);
+		_log("Tracker Counter all handlePlayerWoundEvent = "+m_times_17);
+		_log("Tracker Counter all handleHitboxEvent = "+m_times_18);
+		_log("Tracker Counter all handleFactionLoseEvent = "+m_times_19);
+		_log("Tracker Counter all handleItemDropEvent = "+m_times_20);
+		_log("Tracker Counter all handleCharacterSpawnEvent = "+m_times_21);
+		_log("Tracker Counter all handleCharacterDieEvent = "+m_times_22);
+		_log("Tracker Counter all handleCharacterKillEvent = "+m_times_23);
+		_log("Tracker Counter all handleCallRequestEvent = "+m_times_24);
+		_log("Tracker Counter all handleCallEvent = "+m_times_25);
+		_log("Tracker Counter all handleResultEvent = "+m_times_26);
+		_log("Tracker Counter all handleSettingsChangeEvent = "+m_times_27);
+    }
+	protected void handleQueryResultEvent(const XmlElement@ event){_log("Tracker Counter handleQueryResultEvent = "+m_times_2++);}
+	protected void handleCommsChangeEvent(const XmlElement@ event){_log("Tracker Counter handleCommsChangeEvent = "+m_times_3++);}
+	protected void handleAttackChangeEvent(const XmlElement@ event){_log("Tracker Counter handleAttackChangeEvent = "+m_times_4++);}
+	protected void handleVehicleSpawnEvent(const XmlElement@ event){_log("Tracker Counter handleVehicleSpawnEvent = "+m_times_5++);}
+	protected void handleVehicleHolderChangeEvent(const XmlElement@ event){_log("Tracker Counter handleVehicleHolderChangeEvent = "+m_times_6++);}
+	protected void handleVehicleDestroyEvent(const XmlElement@ event){_log("Tracker Counter handleVehicleDestroyEvent = "+m_times_7++);}
+	protected void handleVehicleSpotEvent(const XmlElement@ event){_log("Tracker Counter handleVehicleSpotEvent = "+m_times_8++);}
+	protected void handleBaseOwnerChangeEvent(const XmlElement@ event){_log("Tracker Counter handleBaseOwnerChangeEvent = "+m_times_9++);}
+	protected void handlePlayerConnectEvent(const XmlElement@ event){_log("Tracker Counter handlePlayerConnectEvent = "+m_times_11++);}
+	protected void handlePlayerDisconnectEvent(const XmlElement@ event){_log("Tracker Counter handlePlayerDisconnectEvent = "+m_times_12++);}
+	protected void handlePlayerSpawnEvent(const XmlElement@ event){_log("Tracker Counter handlePlayerSpawnEvent = "+m_times_13++);}
+	protected void handlePlayerKillEvent(const XmlElement@ event){_log("Tracker Counter handleMhandlePlayerKillEventatchEndEvent = "+m_times_14++);}
+	protected void handlePlayerDieEvent(const XmlElement@ event){_log("Tracker Counter handlePlayerDieEvent = "+m_times_15++);}
+	protected void handlePlayerStunEvent(const XmlElement@ event){_log("Tracker Counter handlePlayerStunEvent = "+m_times_16++);}
+	protected void handlePlayerWoundEvent(const XmlElement@ event){_log("Tracker Counter handlePlayerWoundEvent = "+m_times_17++);}
+	protected void handleHitboxEvent(const XmlElement@ event){_log("Tracker Counter handleHitboxEvent = "+m_times_18++);}
+	protected void handleFactionLoseEvent(const XmlElement@ event){_log("Tracker Counter handleFactionLoseEvent = "+m_times_19++);}
+	protected void handleItemDropEvent(const XmlElement@ event){_log("Tracker Counter handleItemDropEvent = "+m_times_20++);}
+	protected void handleCharacterSpawnEvent(const XmlElement@ event){_log("Tracker Counter handleCharacterSpawnEvent = "+m_times_21++);}
+	protected void handleCharacterDieEvent(const XmlElement@ event){_log("Tracker Counter handleCharacterDieEvent = "+m_times_22++);}
+	protected void handleCharacterKillEvent(const XmlElement@ event){_log("Tracker Counter handleCharacterKillEvent = "+m_times_23++);}
+	protected void handleCallRequestEvent(const XmlElement@ event){_log("Tracker Counter handleCallRequestEvent = "+m_times_24++);}
+	protected void handleCallEvent(const XmlElement@ event){_log("Tracker Counter handleCallEvent = "+m_times_25++);}
+	protected void handleResultEvent(const XmlElement@ event){_log("Tracker Counter handleResultEvent = "+m_times_26++);}
+	protected void handleSettingsChangeEvent(const XmlElement@ event){_log("Tracker Counter handleSettingsChangeEvent = "+m_times_27++);}
 }
 
 int getServerDay(Metagame@ m_metagame){
@@ -144,6 +240,23 @@ int getServerDay(Metagame@ m_metagame){
     }
     return -1;
 }
+string getServerVersion(Metagame@ m_metagame){
+    string m_FILENAME = "_manager.xml";
+    const XmlElement@ allInfo = readFile(m_metagame,m_FILENAME);
+    if(allInfo is null){
+        _log("allInfo is null, in server_status initiate");
+        return "";
+    }
+    array<const XmlElement@> m_stashs = allInfo.getChilds();
+    for(int j = 0 ; j < int(m_stashs.size()) ; ++j){
+        const XmlElement@ m_stash = m_stashs[j];
+        if(m_stash.getName() == "Manager"){
+            string inGameVersion = m_stash.getStringAttribute("version");
+            return inGameVersion;
+        }
+    }
+    return "";
+}
 
 float getNextServerDayRate(Metagame@ m_metagame){
     string m_FILENAME = "_server_manager.xml";
@@ -159,7 +272,7 @@ float getNextServerDayRate(Metagame@ m_metagame){
             float oneDayTime = m_stash.getFloatAttribute("oneDayTime");
             float server_running_time = m_stash.getFloatAttribute("server_running_time");
             if(oneDayTime != 0){
-                return server_running_time/oneDayTime;
+                return 100*server_running_time/oneDayTime;
             }
         }
     }

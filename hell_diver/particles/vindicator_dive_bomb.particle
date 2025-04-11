@@ -4,7 +4,7 @@ author: RST
 
 particle_system point_light_area	//地面点光源
 {
-	quota 1000
+	quota 100
 	material point_light_area
 	particle_width 4
 	particle_height 4
@@ -44,7 +44,7 @@ particle_system point_light_area	//地面点光源
 
 particle_system liner_light //竖直光
 {
-	quota 1000
+	quota 100
 	material point_light_area
 	particle_width 0.3
 	particle_height 99
@@ -117,7 +117,7 @@ particle_system liner_light //竖直光
 }
 particle_system blast_smoke_cross	//十字爆炸烟雾
 {
-	quota 1000
+	quota 100
 	material blast_smoke_cross
 	particle_width 4
 	particle_height 4
@@ -165,7 +165,7 @@ particle_system blast_smoke_cross	//十字爆炸烟雾
 
 particle_system blast_smoke_cross_short		//十字爆炸烟雾 短范围
 {
-	quota 1000
+	quota 100
 	material blast_smoke_cross
 	particle_width 4
 	particle_height 4
@@ -213,7 +213,7 @@ particle_system blast_smoke_cross_short		//十字爆炸烟雾 短范围
 
 particle_system blast_smoke_02	//普通扩散烟雾
 {
-	quota 1000
+	quota 100
 	material blast_smoke_02
 	particle_width 4
 	particle_height 4
@@ -308,7 +308,7 @@ particle_system spread_line	//点扩散冲击线性光
 
 particle_system blast_smoke_Vindicator	//普通扩散烟雾
 {
-	quota 3000
+	quota 100
 	material spread_smoke
 	particle_width 1.5
 	particle_height 1.5

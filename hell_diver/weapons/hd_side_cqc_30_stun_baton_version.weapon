@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapons> 
+<weapon 
+file="hd_side_cqc_30_stun_baton_base.weapon"
+key="hd_side_cqc_30_stun_baton.weapon" 
+>
+    <animation key="recoil" animation_key="hd_cqc_stab" /> <!--后坐力动作，半身动作-->
+	<animation state_key="stabbing" animation_key="hd_cqc_stab" /><!--半身动作，武器可设置脱手-->
+
+</weapon>
+<weapon 
+file="hd_side_cqc_30_stun_baton_base.weapon"
+key="hd_side_cqc_30_stun_baton_ai.weapon" 
+>
+<specification 	
+    magazine_size="-1" 
+    can_shoot_prone="1" 
+    can_shoot_crouching="1" 
+	can_shoot_standing="1"
+	can_shoot_running="1"
+    carry_in_two_hands="0" 
+    name="CQC-30 Stun Baton" 
+    class="5" 
+    consume="0" 
+    affect_characters="1"
+    affect_vehicles="0"
+    sight_range_modifier="1" 
+    damage="80"
+    slot="0" 
+    range="3.0"
+    success_probability="1.0"
+    stab_enabled="1"
+    stab_range="2.6"
+	character_state="stun" 
+/>
+    <animation key="recoil" animation_key="hd_cqc_stab_ai" /> <!--后坐力动作，半身动作-->
+	<animation state_key="stabbing" animation_key="hd_cqc_stab_ai" /><!--半身动作，武器可设置脱手-->
+
+</weapon>
+
+</weapons>

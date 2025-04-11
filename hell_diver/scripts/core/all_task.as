@@ -165,14 +165,24 @@ class Event_call_helldiver_superearth_airstrike : event_call_task {
 		strike_vector = getAimUnitVector(1,c_pos,t_pos);
 		strike_vector = getRotatedVector(getIntSymbol()*1.57,strike_vector);
 		strike_didis = 4;
-		m_pos1 = t_pos.add(getMultiplicationVector(strike_vector,Vector3(-16,0,-16)));
-		m_pos2 = m_pos1;
-		m_pos1 = m_pos1.add(Vector3(0,40,0));
+		m_pos2 = t_pos.add(getMultiplicationVector(strike_vector,Vector3(-16,0,-16))); // 打击坐标
+		m_pos1 = m_pos2;
 		if(m_mode == "airstrike_mk3")
 		{
+			m_pos1 = m_pos1.add(Vector3(0,40,0));
 			m_excute_Limit = 8;
 			m_time_internal = 0.1;
 			m_airstrike_key = "hd_superearth_airstrike_mk3";
+		}
+		if(m_mode == "sabayon_skill")
+		{
+			strike_vector = getAimUnitVector(1,c_pos,t_pos);
+			m_pos1 = c_pos;
+			m_pos2 = t_pos.add(getMultiplicationVector(strike_vector,Vector3(-12,0,-12)));
+			m_excute_Limit = 4;
+			strike_didis = 8;
+			m_time_internal = 0.2;
+			m_airstrike_key = "acg_sabayon_gun_skill_damage";
 		}
 	}
 

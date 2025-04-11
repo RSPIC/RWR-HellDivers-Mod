@@ -4,7 +4,7 @@ name="Rocket Truck"
 key="hd_rocket_trunk.vehicle" 
 map_view_atlas_index="6" 
 minimum_fill_requirement="0.3" 
-
+respawn_time="99999"
 allow_ai_to_use="0"
 character_leave_request_mode="friendly" 
 existence="one_per_faction"

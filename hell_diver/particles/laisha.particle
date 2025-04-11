@@ -268,7 +268,7 @@ particle_system laisha_HGY_result_blast_AmbientLight
 }
 particle_system laisha_HGY_result_blast_impact_center_light
 {
-	quota 250
+	quota 100
 	material Tex_Flare20
 	particle_width 14
 	particle_height 14
@@ -406,7 +406,7 @@ particle_system laisha_HGY_result_blast_impact_ring_2
 }
 particle_system laisha_HGY_result_blast_impact_spark
 {
-	quota 250
+	quota 100
 	material point_hard_edge
 	particle_width 0.3
 	particle_height 1
@@ -443,7 +443,7 @@ particle_system laisha_HGY_result_blast_impact_spark
 }
 particle_system laisha_HGY_result_blast_impact_spark_2
 {
-	quota 250
+	quota 100
 	material point_soft_edge_100
 	particle_width 0.3
 	particle_height 0.3
@@ -666,8 +666,8 @@ particle_system laisha_MoomPulsar_result_spark
 }
 particle_system laisha_MoomPulsar_result_cross_blast
 {
-	quota 1000
-    emit_emitter_quota 1000
+	quota 200
+    emit_emitter_quota 20
 	material Particle_Impact07
 	particle_width 2.5
 	particle_height 2.5
@@ -1129,7 +1129,7 @@ particle_system laisha_MilkyWay_result_smoke	//环境烟雾
 }
 particle_system laisha_MilkyWay_result_blast_impact_spark
 {
-	quota 250
+	quota 100
 	material point_hard_edge
 	particle_width 0.2
 	particle_height 2
@@ -1166,7 +1166,7 @@ particle_system laisha_MilkyWay_result_blast_impact_spark
 }
 particle_system laisha_MilkyWay_result_blast_impact_spark_2
 {
-	quota 500
+	quota 100
 	material point_soft_edge_100
 	particle_width 0.3
 	particle_height 0.3

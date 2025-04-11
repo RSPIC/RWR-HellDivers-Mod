@@ -4,7 +4,7 @@ author: RST
 
 particle_system hd_m5_apc_tail_smoke
 {
-	quota 1000
+	quota 100
 	material disaster_smoke
 	particle_width 2.5
 	particle_height 2.5
@@ -54,7 +54,7 @@ particle_system hd_m5_apc_tail_smoke
 }
 particle_system hd_m5_apc_result_smoke
 {
-	quota 400
+	quota 100
 	material disaster_smoke
 	particle_width 5
 	particle_height 5
@@ -113,7 +113,7 @@ particle_system hd_m5_apc_result_smoke
 }
 particle_system hd_m5_apc_activated_light
 {
-	quota 400
+	quota 100
 	material point_soft_edge_100
 	particle_width 10
 	particle_height 10

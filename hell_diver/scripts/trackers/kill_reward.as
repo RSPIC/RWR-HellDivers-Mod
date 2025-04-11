@@ -42,13 +42,18 @@ dictionary healable_weapon = {
         {"hd_exo51_lumberer_mk3_flame_damage.projectile",2},
 
         {"acg_hayase_yuuka.weapon",1},
-        {"acg_rumi.weapon",1},
 
-        {"ex_exo_dreadnought_mg.weapon",3},
-        {"ex_exo_dreadnought_plas.weapon",2},
-        {"ex_exo_dreadnought_plas_damage.projectile",2},
-        {"ex_exo_dreadnought_rocket.weapon",2},
-        {"ex_exo_dreadnought_rokect_spawn_damage",2},
+        {"ex_exo_dreadnought_mg.weapon",5},
+        {"re_ex_exo_dreadnought_mg.weapon",5},
+        {"ex_exo_dreadnought_plas.weapon",5},
+        {"re_ex_exo_dreadnought_plas.weapon",5},
+        {"ex_exo_dreadnought_plas_damage.projectile",5},
+        {"ex_exo_dreadnought_rocket.weapon",5},
+        {"re_ex_exo_dreadnought_rocket.weapon",5},
+        {"ex_exo_dreadnought_rokect_spawn_damage.projectile",5},
+
+        {"re_ex_exo_telemon_mg.weapon",5},
+        {"ex_exo_telemon_missile_damage.projectile",50},
 
         // 占位的
         {"666",-1}
@@ -132,6 +137,29 @@ dictionary include_kill_target = {
         {"",-1}
 
 };
+// 击杀减少CD的武器
+dictionary kill_cd_target = {
+
+        {"ex_exo_dreadnought_mg.weapon","ex_exo_dreadnought_rocket"},
+        {"re_ex_exo_dreadnought_mg.weapon","ex_exo_dreadnought_rocket"},
+        {"ex_exo_dreadnought_plas_damage.projectile","ex_exo_dreadnought_rocket"},
+
+        {"acg_starwars_shipgirls.weapon","acg_starwars_shipgirls_skill"},
+        {"re_acg_starwars_shipgirls.weapon","acg_starwars_shipgirls_skill"},
+
+        {"acg_izayoi_sakuya_i.weapon","acg_starwars_shipgirls_skill"},
+        {"re_acg_izayoi_sakuya_i.weapon","acg_starwars_shipgirls_skill"},
+
+        {"0",-1}
+};
+// 击杀减少CD的武器 回复数量
+dictionary kill_cd_num = {
+
+        {"acg_izayoi_sakuya_i.weapon",2},
+        {"re_acg_izayoi_sakuya_i.weapon",2},
+
+        {"0",-1}
+};
 //自动Cost释放技能键值
 dictionary auto_cost_skill_key = {
 	{"acg_asagi_mutsuki.weapon",9},
@@ -140,6 +168,9 @@ dictionary auto_cost_skill_key = {
 	{"acg_rikuhachima_aru.weapon",7},
 	{"re_acg_rikuhachima_aru.weapon",6},
 
+	{"acg_sabayon_gun.weapon",20}, //密集空袭
+	{"re_acg_sabayon_gun.weapon",20}, //密集空袭
+
 	{"",-1}
 };
 //手动Cost释放技能键值
@@ -147,14 +178,19 @@ dictionary manual_cost_skill_key = {
 	{"acg_hayase_yuuka.weapon",25},
 	{"re_acg_hayase_yuuka.weapon",20},
 
-    {"acg_izayoi_sakuya_skill",75}, // 需要和skill_cost字典计数一致
+    {"acg_izayoi_sakuya_skill",45}, // 需要和skill_cost字典计数一致
 
-	{"acg_takanashi_hoshino_battle_armor",12},
-	{"acg_takanashi_hoshino_battle_shb",9},
-	{"acg_takanashi_hoshino_battle_smoke",12},
-	{"acg_takanashi_hoshino_battle_charge",4},
+	{"acg_takanashi_hoshino_battle_armor",10},
+	{"acg_takanashi_hoshino_battle_shb",3},
+	{"acg_takanashi_hoshino_battle_smoke",5},
+	{"acg_takanashi_hoshino_battle_charge",3},
 
-	{"acg_bf109_charge",7},
+	{"acg_bf109_charge",5},
+
+	{"acg_sabayon_artillery_ExSkill",45}, //大锤
+
+	{"acg_sabayon_artillery_RailStraike",55}, //精确空袭
+
 
 
 	{"0",-1}
@@ -178,8 +214,7 @@ dictionary cost_skill_killer_key = {
 	{"acg_takanashi_hoshino_battle.weapon","acg_takanashi_hoshino_battle_armor"},
 	{"re_acg_takanashi_hoshino_battle.weapon","acg_takanashi_hoshino_battle_armor"},
 
-	{"acg_takanashi_hoshino_battle_shb.weapon","acg_takanashi_hoshino_battle_smoke"},
-	{"re_acg_takanashi_hoshino_battle_shb.weapon","acg_takanashi_hoshino_battle_smoke"},
+	{"acg_takanashi_hoshino_battle_shb_damage.projectile","acg_takanashi_hoshino_battle_smoke"},
 
 	{"acg_takanashi_hoshino_battle_side_pistol.weapon","acg_takanashi_hoshino_battle_shb"},
 	{"re_acg_takanashi_hoshino_battle_side_pistol.weapon","acg_takanashi_hoshino_battle_shb"},
@@ -189,6 +224,13 @@ dictionary cost_skill_killer_key = {
 
 	{"acg_bf109.weapon","acg_bf109_charge"},
 	{"re_acg_bf109.weapon","acg_bf109_charge"},
+
+	{"acg_sabayon_artillery_damage.projectile","acg_sabayon_artillery_ExSkill"},
+	{"acg_sabayon_artillery.weapon","acg_sabayon_artillery_ExSkill"},
+	{"re_acg_sabayon_artillery.weapon","acg_sabayon_artillery_ExSkill"},
+
+	{"acg_sabayon_gun.weapon","acg_sabayon_artillery_RailStraike"},
+	{"re_acg_sabayon_gun.weapon","acg_sabayon_artillery_RailStraike"},
 
 
 	{"",-1}
@@ -361,9 +403,9 @@ class kill_reward : Tracker {
 					g_battleInfoBuck.addKill(k_name);
 					//_debugReport(m_metagame,"武器"+weaponKey+"计入击杀次数");
 				}
-				if(method_hint == "stab"){
-					g_battleInfoBuck.addKill(k_name);
-				}
+				// if(method_hint == "stab"){
+				// 	g_battleInfoBuck.addKill(k_name);
+				// }
 				if(g_acg_weapon_count){
 					g_battleInfoBuck.addKill(k_name);
 				}
@@ -375,7 +417,7 @@ class kill_reward : Tracker {
 				g_userCountInfoBuck.addCount(k_name,weaponKey);
 				int nowCost = 0;
 				if(g_userCountInfoBuck.getCount(k_name,weaponKey,nowCost)){
-					if(nowCost == autoCostCount){
+					if(nowCost >= autoCostCount){
 						handelAutoCostResultEvent(event);
 						g_userCountInfoBuck.clearCount(k_name,weaponKey);
 					}
@@ -394,28 +436,28 @@ class kill_reward : Tracker {
 					}
 				}
 			}
-			if(method_hint == "stab"){
-				g_userCountInfoBuck.addCount(k_name,"stabKill");
-				int nowCost = 0;
-				if(g_userCountInfoBuck.getCount(k_name,"stabKill",nowCost)){
-					if(nowCost == 20){
-						dictionary equipList;
-						if(!getPlayerEquipmentInfoArray(m_metagame,killer_cid,equipList)){
-							return;
-						}
-						string equipKey;
-						if(equipList.get("0",equipKey)){//主武器
-							if(manual_cost_skill_key.exists(equipKey)){
-								manual_cost_skill_key.get(equipKey,manualCostCount);
-								g_userCountInfoBuck.addCount(k_name,equipKey,manualCostCount);
-								_notify(m_metagame,k_pid,"Weapon Skill Ready, use /s to launch");
-							}
-						}
-						g_userCountInfoBuck.clearCount(k_name,"stabKill");
-						//g_userCountInfoBuck.clearCount(k_name,weaponKey);
-					}
-				}
-			}
+			// if(method_hint == "stab"){
+			// 	g_userCountInfoBuck.addCount(k_name,"stabKill");
+			// 	int nowCost = 0;
+			// 	if(g_userCountInfoBuck.getCount(k_name,"stabKill",nowCost)){
+			// 		if(nowCost == 20){
+			// 			dictionary equipList;
+			// 			if(!getPlayerEquipmentInfoArray(m_metagame,killer_cid,equipList)){
+			// 				return;
+			// 			}
+			// 			string equipKey;
+			// 			if(equipList.get("0",equipKey)){//主武器
+			// 				if(manual_cost_skill_key.exists(equipKey)){
+			// 					manual_cost_skill_key.get(equipKey,manualCostCount);
+			// 					g_userCountInfoBuck.addCount(k_name,equipKey,manualCostCount);
+			// 					_notify(m_metagame,k_pid,"Weapon Skill Ready, use /s to launch");
+			// 				}
+			// 			}
+			// 			g_userCountInfoBuck.clearCount(k_name,"stabKill");
+			// 			//g_userCountInfoBuck.clearCount(k_name,weaponKey);
+			// 		}
+			// 	}
+			// }
 			//--------------------击杀增加Cost记录----------------------------------
 			string targetCostKey;
 			if(cost_skill_killer_key.exists(weaponKey)){
@@ -448,9 +490,6 @@ class kill_reward : Tracker {
 				}
 				if(healable_killtarget_bonus.get(soldier_group_name,healnum)){//执行：可额外恢复护甲的击杀对象
 					healCharacter(m_metagame,killer_cid,healnum);
-				}
-				if(method_hint == "stab"){// 近战默认回复
-					healCharacter(m_metagame,killer_cid,1);
 				}
 			}
 			//---------------------击杀增益记录--------------------------------------
@@ -588,6 +627,35 @@ class kill_reward : Tracker {
 			list.insertLast(b);
 			CreateListDirectProjectile(m_metagame,list);
 			_notify(m_metagame,pid,"小技能'暗黑狙击'已释放");
+		}
+		if(weaponKey == "acg_sabayon_gun.weapon" || weaponKey == "re_acg_sabayon_gun.weapon"){
+			string tag_projectile_key2 = "ba_effect_yuuka_skill.projectile";
+			ListDirectProjectile@ b = ListDirectProjectile(c_pos,c_pos,tag_projectile_key2,cid,fid,10);
+			list.insertLast(b);
+			CreateListDirectProjectile(m_metagame,list);
+			_notify(m_metagame,pid,"小技能已释放");
+			// 创建空袭事件
+			Event_call_helldiver_superearth_airstrike@ new_task = Event_call_helldiver_superearth_airstrike(m_metagame,0,cid,fid,c_pos.add(Vector3(0,10,0)),t_pos,"sabayon_skill");
+			//TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+			TaskSequencer@ tasker = m_metagame.getVacantHdTaskSequncerIndex();
+			tasker.add(new_task);
+			healCharacter(m_metagame,cid,25);//此处修改回复层数
+			array<string> sound_files = {
+				"acg_sabayon_voice_clip_01.wav",
+				"acg_sabayon_voice_clip_02.wav",
+				"acg_sabayon_voice_clip_03.wav",
+				"acg_sabayon_voice_clip_04.wav",
+				"acg_sabayon_voice_clip_05.wav", // charge
+				"acg_sabayon_voice_clip_06.wav", // long
+				"acg_sabayon_voice_clip_07.wav", // long
+				"acg_sabayon_voice_clip_08.wav", // fight
+				"acg_sabayon_voice_clip_09.wav", // long
+				"acg_sabayon_voice_clip_10.wav", // long
+				"acg_sabayon_voice_clip_11.wav", // long
+				"acg_sabayon_voice_clip_12.wav", // fight
+				"acg_sabayon_voice_clip_13.wav" // long
+			};
+			playRandomSoundArray(m_metagame,sound_files,0,c_pos,2);
 		}
 
     }
@@ -763,10 +831,9 @@ class kill_reward : Tracker {
 							playAnimationKey(m_metagame,cid, "hd_rotate_reload_at_a_time_skill", false, false);
 
 							string key2 ="acg_takanashi_hoshino_spawn.projectile";
-							float speed = 75;
-							TaskSequencer@ tasker = m_metagame.getVacantHdTaskSequncerIndex();
-							CreateProjectile@ task2 = CreateProjectile(m_metagame,sPos,aimPosition,key2,cid,0,speed,0.3,1,0,false);
-							tasker.add(task2);//damage
+							float speed = 150;
+							float height = 0.5;
+							CreateProjectile_H(m_metagame,sPos,aimPosition.add(Vector3(0,1,0)),key2,cid,0,speed,height);
 							
 						}else{
 							_notify(m_metagame,pid,"穿甲榴弹技能cost不足，当前cost="+nowCost+"/"+manualCostCount);
@@ -808,13 +875,156 @@ class kill_reward : Tracker {
 					}
 				}
 			}
-			
+			if(equipList.get("1",equipKey)){//副武器
+				// 辉火，增加优先级，首个技能判断成功则直接返回
+				targetKey = "acg_sabayon_artillery_skill";
+				targetKey2 = "re_acg_sabayon_artillery_skill";
+				if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+					int nowCost = 0;
+					int manualCostCount = 100;
+
+					string targetCostKey = "acg_sabayon_artillery_RailStraike";
+					// cost_skill_killer_key.get(equipKey,targetCostKey);
+
+					if(manual_cost_skill_key.exists(targetCostKey)){
+						manual_cost_skill_key.get(targetCostKey,manualCostCount);
+						if(g_userCountInfoBuck.getCount(name,targetCostKey,nowCost)){
+							if(nowCost >= manualCostCount){
+								_notify(m_metagame,pid,"Sabayon精确打击已释放");
+								g_userCountInfoBuck.clearCount(name,targetCostKey);
+
+								const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+								if(character is null){return;}
+								Vector3 sPos = stringToVector3(character.getStringAttribute("position"));
+
+								string m_key = "ba_effect_yuuka_skill.projectile";
+								CreateDirectProjectile(m_metagame,sPos,sPos,m_key,cid,0,100);
+
+								array<string> sound_files = {
+									"acg_sabayon_voice_clip_01.wav",
+									"acg_sabayon_voice_clip_02.wav",
+									"acg_sabayon_voice_clip_03.wav",
+									"acg_sabayon_voice_clip_04.wav",
+									"acg_sabayon_voice_clip_05.wav", // charge
+									"acg_sabayon_voice_clip_06.wav", // long
+									"acg_sabayon_voice_clip_07.wav", // long
+									"acg_sabayon_voice_clip_08.wav", // fight
+									"acg_sabayon_voice_clip_09.wav", // long
+									"acg_sabayon_voice_clip_10.wav", // long
+									"acg_sabayon_voice_clip_11.wav", // long
+									"acg_sabayon_voice_clip_12.wav", // fight
+									"acg_sabayon_voice_clip_13.wav" // long
+                                };
+                            	playRandomSoundArray(m_metagame,sound_files,0,sPos,2);
+
+								const XmlElement@ player = getPlayerInfo(m_metagame, pid);
+								if (player is null) {return;}
+								Vector3 ePos = stringToVector3(player.getStringAttribute("aim_target"));
+								int m_fid = g_playerInfoBuck.getFidByCid(cid);
+								
+								string key1 = "sabayon_target_aim_01.projectile";
+								string key2 = "acg_sabayon_railcannon_strike_damage1.projectile";
+
+								string key3 = "sabayon_target_aim_02.projectile";
+								string key4 = "acg_sabayon_railcannon_strike_damage2.projectile";
+
+								string key5 = "sabayon_target_aim_03.projectile";
+								string key6 = "acg_sabayon_railcannon_strike_damage3.projectile";
+								
+								string key7 = "sabayon_target_aim_04.projectile";
+								string key8 = "acg_sabayon_railcannon_strike_damage4.projectile";
+								float speed = 100;
+								int fid = 0;
+								TaskSequencer@ tasker = m_metagame.getVacantHdTaskSequncerIndex();
+								CreateProjectile@ task1 = CreateProjectile(m_metagame,ePos,ePos,key1,cid,fid,speed,0,1); //delay_time,num
+								CreateProjectile@ task2 = CreateProjectile(m_metagame,ePos.add(Vector3(0,30,0)),ePos,key2,cid,fid,speed,1,1,0,false); //delay_time,num
+
+								CreateProjectile@ task3 = CreateProjectile(m_metagame,ePos,ePos,key3,cid,fid,speed,2,1); //delay_time,num
+								CreateProjectile@ task4 = CreateProjectile(m_metagame,ePos.add(Vector3(0,30,0)),ePos,key4,cid,fid,speed,1,1,0,false); //delay_time,num
+
+								CreateProjectile@ task5 = CreateProjectile(m_metagame,ePos,ePos,key5,cid,fid,speed,2,1); //delay_time,num
+								CreateProjectile@ task6 = CreateProjectile(m_metagame,ePos.add(Vector3(0,30,0)),ePos,key6,cid,fid,speed,1,1,0,false); //delay_time,num
+
+								CreateProjectile@ task7 = CreateProjectile(m_metagame,ePos,ePos,key7,cid,fid,speed,2,1); //delay_time,num
+								CreateProjectile@ task8 = CreateProjectile(m_metagame,ePos.add(Vector3(0,30,0)),ePos,key8,cid,fid,speed,1,1,0,false); //delay_time,num
+								
+								tasker.add(task1);
+								tasker.add(task2);
+								tasker.add(task3);
+								tasker.add(task4);
+								tasker.add(task5);
+								tasker.add(task6);
+								tasker.add(task7);
+								tasker.add(task8);
+
+								healCharacter(m_metagame,cid,25);//此处修改回复层数
+								return;
+							}else{
+								_notify(m_metagame,pid,"精确打击技能cost不足，当前cost="+nowCost+"/"+manualCostCount);
+							}
+						}
+					}
+				}
+			}equipList.get("0",equipKey); // 主武器
+			targetKey = "acg_sabayon_artillery.weapon";
+            targetKey2 = "re_acg_sabayon_artillery.weapon";
+            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+				int nowCost = 0;
+				int manualCostCount = 100;
+
+				string targetCostKey = "acg_sabayon_artillery_ExSkill";
+				// cost_skill_killer_key.get(equipKey,targetCostKey);
+
+				if(manual_cost_skill_key.exists(targetCostKey)){
+					manual_cost_skill_key.get(targetCostKey,manualCostCount);
+					if(g_userCountInfoBuck.getCount(name,targetCostKey,nowCost)){
+						if(nowCost >= manualCostCount){
+							_notify(m_metagame,pid,"Sabayon炮火打击已释放");
+							g_userCountInfoBuck.clearCount(name,targetCostKey);
+
+							const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+							if(character is null){return;}
+							Vector3 sPos = stringToVector3(character.getStringAttribute("position"));
+
+							string m_key = "ba_effect_yuuka_skill.projectile";
+							CreateDirectProjectile(m_metagame,sPos,sPos,m_key,cid,0,100);
+
+							const XmlElement@ player = getPlayerInfo(m_metagame, pid);
+							if (player is null) {return;}
+							Vector3 aimPosition = stringToVector3(player.getStringAttribute("aim_target"));
+
+							string m_key2 = "acg_sabayon_sledge_precision_artillery_spawn.projectile";
+							CreateDirectProjectile(m_metagame,aimPosition,aimPosition,m_key2,cid,0,100);
+							healCharacter(m_metagame,cid,25);//此处修改回复层数
+
+							array<string> sound_files = {
+								"acg_sabayon_voice_clip_01.wav",
+								"acg_sabayon_voice_clip_02.wav",
+								"acg_sabayon_voice_clip_03.wav",
+								"acg_sabayon_voice_clip_04.wav",
+								"acg_sabayon_voice_clip_05.wav", // charge
+								"acg_sabayon_voice_clip_06.wav", // long
+								"acg_sabayon_voice_clip_07.wav", // long
+								"acg_sabayon_voice_clip_08.wav", // fight
+								"acg_sabayon_voice_clip_09.wav", // long
+								"acg_sabayon_voice_clip_10.wav", // long
+								"acg_sabayon_voice_clip_11.wav", // long
+								"acg_sabayon_voice_clip_12.wav", // fight
+								"acg_sabayon_voice_clip_13.wav" // long
+							};
+							playRandomSoundArray(m_metagame,sound_files,0,sPos,2);
+						}else{
+							_notify(m_metagame,pid,"炮火打击技能cost不足，当前cost="+nowCost+"/"+manualCostCount);
+						}
+					}
+				}
+			}
 		}
 		if(equipList.get("1",equipKey)){//副武器
 		_log("now equipKey="+equipKey);
 		_debugReport(m_metagame,"手动技能：当前副武器="+equipKey);
 			string targetKey = "acg_takanashi_hoshino_battle_side_pistol.weapon";
-            string targetKey2 = "re_cg_takanashi_hoshino_battle_side_pistol.weapon";
+            string targetKey2 = "re_acg_takanashi_hoshino_battle_side_pistol.weapon";
             if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
 				int nowCost = 0;
 				int manualCostCount = 100;
@@ -852,7 +1062,7 @@ class kill_reward : Tracker {
 				}
 			}
 			targetKey = "acg_takanashi_hoshino_battle_side_pistol_shield.weapon";
-            targetKey2 = "acg_takanashi_hoshino_battle_side_pistol_shield.weapon";
+            targetKey2 = "re_acg_takanashi_hoshino_battle_side_pistol_shield.weapon";
             if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
 				int nowCost = 0;
 				int manualCostCount = 100;

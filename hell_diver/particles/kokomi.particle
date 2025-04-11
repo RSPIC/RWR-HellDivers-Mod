@@ -12,7 +12,7 @@ abstract emitter delay_time
 
 particle_system kokomi_activated_bobble
 {
-	quota 200
+	quota 100
 	material water_bobble
 	particle_width 1.2
 	particle_height 1.2
@@ -72,7 +72,7 @@ particle_system kokomi_activated_bobble
 }
 particle_system kokomi_activated_dropping_water
 {
-	quota 200
+	quota 100
 	material point_soft_edge_100
 	particle_width 0.4
 	particle_height 0.4
@@ -130,7 +130,7 @@ particle_system kokomi_activated_dropping_water
 }
 particle_system kokomi_activated_light
 {
-	quota 200
+	quota 100
 	material point_soft_edge_100
 	particle_width 3
 	particle_height 3
@@ -192,7 +192,7 @@ particle_system kokomi_activated_light
 }
 particle_system kokomi_activated_light_2
 {
-	quota 200
+	quota 100
 	material point_soft_edge_100
 	particle_width 1
 	particle_height 1
@@ -252,7 +252,7 @@ particle_system kokomi_activated_light_2
 
 particle_system kokomi_result_ring
 {
-	quota 200
+	quota 100
 	material muzzle_crossring_a_pass
 	particle_width 0.1
 	particle_height 0.1
@@ -311,7 +311,7 @@ particle_system kokomi_result_ring
 }
 particle_system kokomi_result_bobble
 {
-	quota 200
+	quota 100
 	material water_bobble
 	particle_width 1
 	particle_height 1
@@ -608,7 +608,7 @@ particle_system kokomi_muzzle_ring
 
 particle_system kokomi_muzzle_concentrate_waterwave_01
 {
-	quota 500
+	quota 100
 	material kokomi_concentrate_wave
 	particle_width 10
 	particle_height 10
@@ -738,7 +738,7 @@ particle_system kokomi_muzzle_concentrate_waterwave_03 : kokomi_muzzle_concentra
 }
 particle_system kokomi_muzzle_concentrate_waterwave_04
 {
-	quota 500
+	quota 100
 	material water_wave_01
 	particle_width 10
 	particle_height 10
@@ -801,8 +801,8 @@ particle_system kokomi_muzzle_concentrate_waterwave_04
 
 particle_system kokomi_muzzle_expand_waterwave_01  		//气泡
 {
-	quota 300
-	emit_emitter_quota 300
+	quota 120
+	emit_emitter_quota 120
 	material water_bobble_colored
 	particle_width 1.2
 	particle_height 1.2
@@ -889,8 +889,8 @@ particle_system kokomi_muzzle_expand_waterwave_01  		//气泡
 }
 particle_system kokomi_muzzle_expand_waterwave_02
 {
-	quota 300
-	emit_emitter_quota 300
+	quota 120
+	emit_emitter_quota 120
 	material ink_splash_1
 	particle_width 1.5
 	particle_height 1.5
@@ -980,8 +980,8 @@ particle_system kokomi_muzzle_expand_waterwave_02
 }
 particle_system kokomi_muzzle_expand_particle_01
 {
-	quota 300
-	emit_emitter_quota 300
+	quota 120
+	emit_emitter_quota 120
 	material point_soft_edge_100
 	particle_width 0.3
 	particle_height 0.6
@@ -1071,8 +1071,8 @@ particle_system kokomi_muzzle_expand_particle_01
 }
 particle_system kokomi_muzzle_expand_star_01
 {
-	quota 300
-	emit_emitter_quota 300
+	quota 120
+	emit_emitter_quota 120
 	material star_cross
 	particle_width 0.5
 	particle_height 0.5
@@ -1161,8 +1161,8 @@ particle_system kokomi_muzzle_expand_star_01
 }
 particle_system kokomi_muzzle_shrink_star_01
 {
-	quota 300
-	emit_emitter_quota 300
+	quota 120
+	emit_emitter_quota 120
 	material kokomi_star_cross
 	particle_width 0.1
 	particle_height 0.1
@@ -1285,8 +1285,8 @@ particle_system kokomi_muzzle_shrink_star_02 : kokomi_muzzle_shrink_star_01
 }
 particle_system kokomi_muzzle_exposion_ambient
 {
-	quota 300
-	emit_emitter_quota 300
+	quota 120
+	emit_emitter_quota 120
 	material point_soft_edge_100
 	particle_width 10
 	particle_height 10
@@ -1371,8 +1371,8 @@ particle_system kokomi_muzzle_exposion_ambient
 }
 particle_system kokomi_muzzle_exposion_splash
 {
-	quota 300
-	emit_emitter_quota 300
+	quota 120
+	emit_emitter_quota 120
 	material kokomi_fish
 	particle_width 1.6
 	particle_height 1.6
@@ -1459,8 +1459,8 @@ particle_system kokomi_muzzle_exposion_splash
 }
 particle_system kokomi_muzzle_exposion_splash_dropping
 {
-	quota 300
-	emit_emitter_quota 300
+	quota 120
+	emit_emitter_quota 120
 	material point_hard_edge
 	particle_width 0.1
 	particle_height 0.1
@@ -1734,7 +1734,7 @@ particle_system kokomi_result_splash_03
 
 particle_system kokomi_activated_shrink_wave	//冲锋枪用
 {
-	quota 300
+	quota 100
 	material thunder_circle
 	particle_width 4
 	particle_height 4

@@ -55,9 +55,7 @@ class AirstrikeSystem : Tracker {
 
             case 11:{ //燃烧炸弹
                 CreateDirectProjectile(m_metagame,start_pos,end_pos,"hd_offensive_incendiary_bombs_mk3_spawn.projectile",cid,fid,60);
-                CreateDirectProjectile(m_metagame,start_pos.add(Vector3(0,-10,0)),end_pos,"hd_offensive_incendiary_bombs_mk3_damage.projectile",cid,fid,1);
-                CreateDirectProjectile(m_metagame,start_pos.add(Vector3(0,-20,0)),end_pos,"hd_offensive_incendiary_bombs_mk3_damage.projectile",cid,fid,1);
-                CreateDirectProjectile(m_metagame,start_pos.add(Vector3(0,-30,0)),end_pos,"hd_offensive_incendiary_bombs_mk3_damage.projectile",cid,fid,1);
+                CreateDirectProjectile(m_metagame,start_pos,end_pos,"hd_offensive_incendiary_bombs_mk3_spawn_friendly_damage.projectile",cid,fid,60);
                 remove_or_not = 1;
                 break;
             }
@@ -113,6 +111,11 @@ class AirstrikeSystem : Tracker {
                     float rand_x = rand(-strike_rand,strike_rand);
                     float rand_y = rand(-strike_rand,strike_rand);
                 CreateDirectProjectile(m_metagame,start_pos.add(Vector3(rand_x,0,rand_y)),end_pos.add(Vector3(rand_x,0,rand_y)),"acg_starwars_shipgirls_skill_damage.projectile",cid,fid,25);
+                remove_or_not = 1;
+                break;
+            }
+            case 101:{   //acg_sabayon_gun_skill_damage 辉火一模式技能
+                CreateDirectProjectile(m_metagame,start_pos,end_pos,"acg_sabayon_gun_skill_damage.projectile",cid,fid,75);
                 remove_or_not = 1;
                 break;
             }

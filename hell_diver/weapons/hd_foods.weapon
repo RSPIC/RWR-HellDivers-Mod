@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>	
+<weapons>
+<weapon 
+file="_rare_weapon_mc_food.base"
+key="ex_mc_cookie.weapon" 
+> 
+    <specification 	
+    slot="1" 
+    consume="0"	
+    accuracy_factor="1.0" 
+    magazine_size="-1" 
+	can_shoot_running="1"
+    name="Cookie" 
+	carry_in_two_hands="0" 
+    class="5" 
+    untransform_equipment_class="vest"
+    untransform_count="3"  
+	/> 
+    <animation state_key="recoil"   animation_key="hd_eat_0.8s" />
+
+    <model filename="mc_food_cookie.xml" /> 
+    <hud_icon filename="mc_food_cookie.png" /> 
+
+</weapon>
+<weapon 
+file="_rare_weapon_mc_food.base"
+key="ex_mc_steak.weapon" 
+> 
+    <specification 	
+    slot="1" 
+    consume="0"	
+    accuracy_factor="1.0" 
+    magazine_size="-1" 
+	can_shoot_running="1"
+    name="Steak" 
+	carry_in_two_hands="0" 
+    class="5" 
+    untransform_equipment_class="vest"
+    untransform_count="15"  
+	/> 
+    <animation state_key="recoil"   animation_key="hd_eat_3.3s" />
+
+    <model filename="mc_food_steak.xml" /> 
+    <hud_icon filename="mc_food_steak.png" /> 
+
+</weapon>
+<weapon 
+file="_rare_weapon_mc_food.base"
+key="ex_mc_mutton.weapon" 
+> 
+    <specification 	
+    slot="1" 
+    consume="0"	
+    accuracy_factor="1.0" 
+    magazine_size="-1" 
+	can_shoot_running="1"
+    name="Cooked Mutton" 
+	carry_in_two_hands="0" 
+    class="5" 
+    untransform_equipment_class="vest"
+    untransform_count="14"  
+	/> 
+    <animation state_key="recoil"   animation_key="hd_eat_3.3s" />
+
+    <model filename="mc_food_mutton.xml" /> 
+    <hud_icon filename="mc_food_mutton.png" /> 
+
+</weapon>
+<weapon 
+file="_rare_weapon_mc_food.base"
+key="ex_mc_chicken.weapon" 
+> 
+    <specification 	
+    slot="1" 
+    consume="0"	
+    accuracy_factor="1.0" 
+    magazine_size="-1" 
+	can_shoot_running="1"
+    name="Cooked Chicken" 
+	carry_in_two_hands="0" 
+    class="5" 
+    untransform_equipment_class="vest"
+    untransform_count="13"  
+	/> 
+    <animation state_key="recoil"   animation_key="hd_eat_3.3s" />
+
+    <model filename="mc_food_chicken.xml" /> 
+    <hud_icon filename="mc_food_chicken.png" /> 
+
+</weapon>
+<weapon 
+file="_rare_weapon_mc_food.base"
+key="ex_mc_melon_slice.weapon" 
+> 
+    <specification 	
+    slot="1" 
+    consume="0"	
+    accuracy_factor="1.0" 
+    magazine_size="-1" 
+	can_shoot_running="1"
+    name="Melon slice" 
+	carry_in_two_hands="0" 
+    class="5" 
+    untransform_equipment_class="vest"
+    untransform_count="3"  
+	/> 
+    <animation state_key="recoil"   animation_key="hd_eat_0.8s" />
+
+    <model filename="mc_food_melon_slice.xml" /> 
+    <hud_icon filename="mc_food_melon_slice.png" /> 
+
+</weapon>
+<weapon 
+file="_rare_weapon_mc_food.base"
+key="ex_mc_porkchop.weapon" 
+> 
+    <specification 	
+    slot="1" 
+    consume="0"	
+    accuracy_factor="1.0" 
+    magazine_size="-1" 
+	can_shoot_running="1"
+    name="Cooked Porkchop" 
+	carry_in_two_hands="0" 
+    class="5" 
+    untransform_equipment_class="vest"
+    untransform_count="15"  
+	/> 
+    <animation state_key="recoil"   animation_key="hd_eat_3.3s" />
+
+    <model filename="mc_food_porkchop.xml" /> 
+    <hud_icon filename="mc_food_porkchop.png" /> 
+
+</weapon>
+<weapon 
+file="_rare_weapon_mc_food.base"
+key="ex_mc_apple.weapon" 
+> 
+    <specification 	
+    slot="1" 
+    consume="0"	
+    accuracy_factor="1.0" 
+    magazine_size="-1" 
+	can_shoot_running="1"
+    name="Apple" 
+	carry_in_two_hands="0" 
+    class="5" 
+    untransform_equipment_class="vest"
+    untransform_count="8"  
+	/> 
+    <animation state_key="recoil"   animation_key="hd_eat_1.6s" />
+
+    <model filename="mc_food_apple.xml" /> 
+    <hud_icon filename="mc_food_apple.png" /> 
+
+</weapon>
+<weapon 
+file="_rare_weapon_mc_food.base"
+key="ex_mc_cod.weapon" 
+> 
+    <specification 	
+    slot="1" 
+    consume="0"	
+    accuracy_factor="1.0" 
+    magazine_size="-1" 
+	can_shoot_running="1"
+    name="Cooked Cod" 
+	carry_in_two_hands="0" 
+    class="5" 
+    untransform_equipment_class="vest"
+    untransform_count="9"  
+	/> 
+    <animation state_key="recoil"   animation_key="hd_eat_1.6s" />
+
+    <model filename="mc_food_cod.xml" /> 
+    <hud_icon filename="mc_food_cod.png" /> 
+
+</weapon>
+<weapon 
+file="_rare_weapon_mc_food.base"
+key="ex_mc_potato.weapon" 
+> 
+    <specification 	
+    slot="1" 
+    consume="0"	
+    accuracy_factor="1.0" 
+    magazine_size="-1" 
+	can_shoot_running="1"
+    name="Baked Potato" 
+	carry_in_two_hands="0" 
+    class="5" 
+    untransform_equipment_class="vest"
+    untransform_count="10"  
+	/> 
+    <animation state_key="recoil"   animation_key="hd_eat_1.6s" />
+
+    <model filename="mc_food_potato.xml" /> 
+    <hud_icon filename="mc_food_potato.png" /> 
+
+</weapon>
+<weapon 
+file="_rare_weapon_mc_food.base"
+key="ex_mc_cake.weapon" 
+> 
+    <specification 	
+    slot="1" 
+    consume="0"	
+    accuracy_factor="1.0" 
+    magazine_size="-1" 
+	can_shoot_running="1"
+    name="Cake" 
+	carry_in_two_hands="0" 
+    class="5" 
+    untransform_equipment_class="vest"
+    untransform_count="20"  
+	/> 
+    <animation state_key="recoil"   animation_key="hd_eat_3.3s" />
+
+    <model filename="mc_food_cake.xml" /> 
+    <hud_icon filename="mc_food_cake.png" /> 
+
+</weapon>
+<weapon 
+file="_rare_weapon_mc_food.base"
+key="ex_mc_golden_carrot.weapon" 
+> 
+    <specification 	
+    slot="1" 
+    consume="0"	
+    accuracy_factor="1.0" 
+    magazine_size="-1" 
+	can_shoot_running="1"
+    name="Golden carrot" 
+	carry_in_two_hands="0" 
+    class="5" 
+    untransform_equipment_class="vest"
+    untransform_count="5"  
+	/> 
+    <animation state_key="recoil"   animation_key="hd_eat_1.6s" />
+
+    <model filename="mc_food_golden_carrot.xml" /> 
+    <hud_icon filename="mc_food_golden_carrot.png" /> 
+
+</weapon>
+<weapon 
+file="_rare_weapon_mc_food.base"
+key="ex_mc_rabbit_stew.weapon" 
+> 
+    <specification 	
+    slot="1" 
+    consume="0"	
+    accuracy_factor="1.0" 
+    magazine_size="-1" 
+	can_shoot_running="1"
+    name="Rabbit Stew" 
+	carry_in_two_hands="0" 
+    class="5" 
+    untransform_equipment_class="vest"
+    untransform_count="40"  
+	/> 
+    <animation state_key="recoil"   animation_key="hd_eat_3.3s" />
+
+    <model filename="mc_food_rabbit_stew.xml" /> 
+    <hud_icon filename="mc_food_rabbit_stew.png" /> 
+
+</weapon>
+</weapons>
+

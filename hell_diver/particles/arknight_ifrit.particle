@@ -225,7 +225,7 @@ particle_system ifrit_muzzle_fire
 }
 particle_system ifrit_muzzle_fire_drop
 {
-	quota 300
+	quota 200
 	material flame_tex_bw_04
 	particle_width 1
 	particle_height 1
@@ -304,7 +304,7 @@ particle_system ifrit_result_ground_lava
 
 particle_system general_result_ground_fire
 {
-	quota 50
+	quota 500
 	material anim_fire_2
 	particle_width 2
 	particle_height 2
@@ -356,6 +356,57 @@ particle_system general_result_ground_fire_3 : general_result_ground_fire
     material anim_fire_2_alt2
 }
 particle_system general_result_ground_fire_4 : general_result_ground_fire
+{
+    material anim_fire_2_alt3
+}
+particle_system general_result_ground_fire_activated
+{
+	quota 650
+	material anim_fire_2
+	particle_width 2
+	particle_height 2
+	renderer billboard
+	billboard_type point
+	billboard_origin center
+	billboard_rotation_type vertex
+	common_direction 0 1 0
+	common_up_vector 0 0 1
+	iteration_interval 0
+	
+	emitter Ring
+	{
+		angle 0
+		colour 0 0 0 0
+		direction 0 1 0
+		emission_rate 5
+		position 0 0 0
+		velocity 0.0001
+		time_to_live 3
+		duration 0
+        depth 0.1
+        height 7
+        width 7
+        inner_width 0
+        inner_depth 0
+        inner_height 0
+	}
+	affector ColourInterpolator
+	{
+		time0 0
+		colour0 1 1 1 1
+		time1 1
+		colour1 1 1 1 1
+	}
+}
+particle_system general_result_ground_fire_2_activated : general_result_ground_fire_activated
+{
+    material anim_fire_2_alt1
+}
+particle_system general_result_ground_fire_3_activated : general_result_ground_fire_activated
+{
+    material anim_fire_2_alt2
+}
+particle_system general_result_ground_fire_4_activated : general_result_ground_fire_activated
 {
     material anim_fire_2_alt3
 }

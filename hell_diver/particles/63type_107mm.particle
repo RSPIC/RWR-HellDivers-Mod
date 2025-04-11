@@ -45,8 +45,8 @@ particle_system rocket_launcher_mil
 
 particle_system rocket_launcher_muzzle_behind_smoke		
 {
-	quota 500
-    emit_emitter_quota 500
+	quota 200
+    emit_emitter_quota 200
 	material crescent_smoke_alpha
 	particle_width 0.5
 	particle_height 0.5
@@ -87,7 +87,7 @@ particle_system rocket_launcher_muzzle_behind_smoke
 
 particle_system rocket_launcher_muzzle_spread_smoke		
 {
-	quota 500
+	quota 200
 	material explosion_smoke_01_alpha
 	particle_width 0.7
 	particle_height 0.7
@@ -125,7 +125,7 @@ particle_system rocket_launcher_muzzle_spread_smoke
 }
 particle_system rocket_launcher_shell_light
 {
-	quota 500
+	quota 200
 	material point_soft_edge_100
 	particle_width 1.5
 	particle_height 1.5
@@ -158,7 +158,7 @@ particle_system rocket_launcher_shell_light
 
 particle_system rocket_launcher_trial_smoke
 {
-	quota 500
+	quota 200
 	material trial_smoke_01
 	particle_width 2
 	particle_height 2
@@ -197,7 +197,7 @@ particle_system rocket_launcher_trial_smoke
 
 particle_system rocket_launcher_blast_smoke_01
 {
-	quota 500
+	quota 200
 	material blast_texture_rumbler
 	particle_width 8
 	particle_height 8
@@ -248,7 +248,7 @@ particle_system rocket_launcher_blast_smoke_01
 
 particle_system rocket_launcher_blast_smoke_02
 {
-	quota 500
+	quota 200
 	material blast2_texture_rumbler
 	particle_width 6
 	particle_height 6
@@ -289,7 +289,7 @@ particle_system rocket_launcher_blast_smoke_02
 
 particle_system rocket_launcher_blast_smoke_03		
 {
-	quota 500
+	quota 200
 	material R_flaretrail
 	particle_width 1.2
 	particle_height 1.2

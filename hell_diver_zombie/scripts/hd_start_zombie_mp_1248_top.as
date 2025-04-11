@@ -48,10 +48,10 @@ void main(dictionary@ inputData) {
         settings.m_startServerCommand = """
         <command class='start_server'
                 server_name='[地狱潜兵]僵尸服-5/俯视角'
-                server_port='1247'
+                server_port='1248'
                 url='https://steamcommunity.com/sharedfiles/filedetails/?id=2910392031'
                 register_in_serverlist='1'
-                mode='HD'
+                mode='HD Zombie'
                 persistency='forever'
                 comment='僵尸模式，同步存档。 地狱潜兵模组  QQ：498520233 '
                 max_players='8'>
@@ -63,9 +63,11 @@ void main(dictionary@ inputData) {
 
         GameModeInvasion metagame(settings);
 
-        metagame.init();
-        metagame.run();
-        metagame.uninit();
+	metagame.init();
+	while(metagame.run()){
+		metagame.init();
+	}
+	metagame.uninit();
 
         _log("ending execution");
 }

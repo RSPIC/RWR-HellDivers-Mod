@@ -4,7 +4,7 @@ author: RST
 
 particle_system hellpod_dropping_ground_smoke
 {
-	quota 500
+	quota 100
 	material disaster_smoke
 	particle_width 8
 	particle_height 8
@@ -114,7 +114,7 @@ particle_system hellpod_dropping_ground_smoke_leave : hellpod_dropping_ground_sm
 
 particle_system hellpod_dropping_ground_smoke_faster
 {
-	quota 1000
+	quota 80
 	material disaster_smoke
 	particle_width 8
 	particle_height 8

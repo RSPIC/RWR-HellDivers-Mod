@@ -801,6 +801,48 @@
         <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
         <capacity value="12" source="rank" source_value="0" />
     </projectile>
+    <!-- 1.9.5 -->
+    <projectile file="hd_hellpod_call.projectile" name="Tatara Kogasa [Skin]" key="token_tatara_kogasa.projectile" >
+        <hud_icon filename="token_tatara_kogasa.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Zelda [Skin]" key="token_zelda.projectile" >
+        <hud_icon filename="token_zelda.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Ninym Ralei [Skin]" key="token_ninym_alei.projectile" >
+        <hud_icon filename="token_ninym_alei.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Remilia Scarlet [Skin]" key="token_remilia_scarlet.projectile" >
+        <hud_icon filename="token_remilia_scarlet.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <!-- 1.9.7 -->
+    <projectile file="hd_hellpod_call.projectile" name="Lycoris Recoil [Skin]" key="token_nishikigi_chisato.projectile" >
+        <hud_icon filename="token_nishikigi_chisato.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Sakurakouji Runa [Skin]" key="token_sakurakouji_runa.projectile" >
+        <hud_icon filename="token_sakurakouji_runa.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Iron Maiden [Skin]" key="token_iron_maiden.projectile" >
+        <hud_icon filename="token_iron_maiden.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Goldenglow [Swim Ver][Skin]" key="token_goldenglow_swim.projectile" >
+        <hud_icon filename="token_goldenglow_swim.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
 
     <!-- 其他 -->
     <projectile file="hd_hellpod_call.projectile" name="Misono Mika[Skin]" key="token_misono_mika.projectile" >

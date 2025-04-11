@@ -6,8 +6,8 @@ author: RST
 
 particle_system 401_disaster_hit_spread_partcile
 {
-	quota 600
-	emit_emitter_quota 600
+	quota 200
+	emit_emitter_quota 200
 	material square_soft_edge_401_disaster
 	particle_width 0.4
 	particle_height 1.2

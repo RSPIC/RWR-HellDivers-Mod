@@ -23,7 +23,7 @@ key="ex_exo_dreadnought_mg.weapon"
     class="0" 
 	barrel_offset="1.0" 
     projectile_speed="180.0" 
-    sight_range_modifier="1.4"  
+    sight_range_modifier="1.55"  
     use_basic_muzzle_smoke_effect="0"
     carry_in_two_hands="0" 
     reload_one_at_a_time="1"
@@ -120,7 +120,7 @@ key="ex_exo_dreadnought_mg.weapon"
     <modifier class="speed" value="-0.4" />   
     <modifier class="hit_success_probability" value="-0.5" />   
 
-    <shield offset="1 0 0.9" extent="1 3 2.7" usable_for_cover="0"/>  
+    <shield offset="0.5 0 0.9" extent="1 5.5 2.7" usable_for_cover="0"/>  
 	<!-- x厚度，前后宽度,负向前；y高度，z宽度 -->
 	<modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="0" />
 	<modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="0" />
@@ -255,7 +255,8 @@ key="ex_exo_dreadnought_plas.weapon"
     <modifier class="speed" value="-0.4" />   
     <modifier class="hit_success_probability" value="-0.5" />   
 
-    <shield offset="1 0 0.9" extent="1 3 2.7" usable_for_cover="0"/>  
+    <shield offset="0.5 0 0.9" extent="1 5.5 2.7" usable_for_cover="0"/>  
+
 	<!-- x厚度，前后宽度,负向前；y高度，z宽度 -->
 	<modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="0" />
 	<modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="0" />
@@ -289,7 +290,7 @@ key="ex_exo_dreadnought_rocket.weapon"
     burst_shots="1"
 	barrel_offset_3d="0 1.0 -1" 
     projectile_speed="150.0" 
-    sight_range_modifier="1.4"  
+    sight_range_modifier="1.55"  
     use_basic_muzzle_smoke_effect="0"
     carry_in_two_hands="0" 
     stab_enabled="1"
@@ -383,7 +384,8 @@ key="ex_exo_dreadnought_rocket.weapon"
     <modifier class="speed" value="-0.4" />   
     <modifier class="hit_success_probability" value="-0.5" />   
 
-    <shield offset="1 0 0.9" extent="1 3 2.7" usable_for_cover="0"/>  
+    <shield offset="0.5 0 0.9" extent="1 5.5 2.7" usable_for_cover="0"/>  
+
 	<!-- x厚度，前后宽度,负向前；y高度，z宽度 -->
 	<modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="0" />
 	<modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="0" />
@@ -418,7 +420,7 @@ key="ex_exo_dreadnought_null.weapon"
     burst_shots="1"
 	barrel_offset_3d="0 1.0 -1" 
     projectile_speed="150.0" 
-    sight_range_modifier="1.4"  
+    sight_range_modifier="1.55"  
     use_basic_muzzle_smoke_effect="0"
     carry_in_two_hands="0" 
     stab_enabled="1"
@@ -427,14 +429,14 @@ key="ex_exo_dreadnought_null.weapon"
 
 
     <animation key="recoil" animation_key="ex_wuwei_recoil" />
-	<animation state_key="hold" animation_key="ex_wuwei_rocket_still" />
-	<animation state_key="hold_casual" animation_key="ex_wuwei_rocket_still" />
+	<animation state_key="hold" animation_key="ex_wuwei_bone" />
+	<animation state_key="hold_casual" animation_key="ex_wuwei_bone" />
 	<animation state_key="reload" animation_key="ex_wuwei_reload_slower"/>
-	<animation state_key="crouching" animation_key="ex_wuwei_rocket_still" />
+	<animation state_key="crouching" animation_key="ex_wuwei_bone" />
 	<animation state_key="crouch_moving" animation_key="ex_wuwei_walking" />
 	<animation state_key="walking_backwards" animation_key="ex_wuwei_walking_back" />  
-	<animation state_key="hold_on_wall" animation_key="ex_wuwei_rocket_still" />
-	<animation state_key="still_against_wall" 	animation_key="ex_wuwei_rocket_still" />
+	<animation state_key="hold_on_wall" animation_key="ex_wuwei_bone" />
+	<animation state_key="still_against_wall" 	animation_key="ex_wuwei_bone" />
 	<animation state_key="walking" animation_key="ex_wuwei_walking" />
 	<animation state_key="running" animation_key="ex_wuwei_walking" /> 
 		<animation state_key="stabbing" animation_key="ex_wuwei_stab" /> 
@@ -509,7 +511,8 @@ key="ex_exo_dreadnought_null.weapon"
     <modifier class="speed" value="-0.4" />   
     <modifier class="hit_success_probability" value="-0.5" />   
 
-    <shield offset="1 0 0.9" extent="1 3 2.7" usable_for_cover="0"/>  
+    <shield offset="0.5 0 0.9" extent="1 5.5 2.7" usable_for_cover="0"/>  
+
 	<!-- x厚度，前后宽度,负向前；y高度，z宽度 -->
 	<modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="0" />
 	<modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="0" />
@@ -543,7 +546,7 @@ key="re_ex_exo_dreadnought_mg.weapon"
     class="0" 
 	barrel_offset="1.0" 
     projectile_speed="180.0" 
-    sight_range_modifier="1.4"  
+    sight_range_modifier="1.55"  
     use_basic_muzzle_smoke_effect="0"
     carry_in_two_hands="0" 
     reload_one_at_a_time="1"
@@ -639,7 +642,8 @@ key="re_ex_exo_dreadnought_mg.weapon"
     <modifier class="speed" value="-0.4" />   
     <modifier class="hit_success_probability" value="-0.5" />   
 
-    <shield offset="1 0 0.9" extent="1 3 2.7" usable_for_cover="0"/>  
+    <shield offset="0.5 0 0.9" extent="1 5.5 2.7" usable_for_cover="0"/>  
+
 	<!-- x厚度，前后宽度,负向前；y高度，z宽度 -->
 	<modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="0" />
 	<modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="0" />
@@ -773,7 +777,8 @@ key="re_ex_exo_dreadnought_plas.weapon"
     <modifier class="speed" value="-0.4" />   
     <modifier class="hit_success_probability" value="-0.5" />   
 
-    <shield offset="1 0 0.9" extent="1 3 2.7" usable_for_cover="0"/>  
+    <shield offset="0.5 0 0.9" extent="1 5.5 2.7" usable_for_cover="0"/>  
+
 	<!-- x厚度，前后宽度,负向前；y高度，z宽度 -->
 	<modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="0" />
 	<modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="0" />
@@ -807,7 +812,7 @@ key="re_ex_exo_dreadnought_rocket.weapon"
     burst_shots="1"
 	barrel_offset_3d="0 1.0 -1" 
     projectile_speed="150.0" 
-    sight_range_modifier="1.4"  
+    sight_range_modifier="1.55"  
     use_basic_muzzle_smoke_effect="0"
     carry_in_two_hands="0" 
     stab_enabled="1"
@@ -900,7 +905,8 @@ key="re_ex_exo_dreadnought_rocket.weapon"
     <modifier class="speed" value="-0.4" />   
     <modifier class="hit_success_probability" value="-0.5" />   
 
-    <shield offset="1 0 0.9" extent="1 3 2.7" usable_for_cover="0"/>  
+    <shield offset="0.5 0 0.9" extent="1 5.5 2.7" usable_for_cover="0"/>  
+
 	<!-- x厚度，前后宽度,负向前；y高度，z宽度 -->
 	<modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="0" />
 	<modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="0" />

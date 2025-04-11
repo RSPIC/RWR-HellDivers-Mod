@@ -19,7 +19,7 @@ void main(dictionary@ inputData) {
 
         settings.m_fellowCapacityFactor = 1.0;
         settings.m_fellowAiAccuracyFactor = 0.93;
-        settings.m_enemyCapacityFactor = 1.5;
+        settings.m_enemyCapacityFactor = 1.2;
         settings.m_enemyAiAccuracyFactor = 0.967;
 
         settings.m_xpFactor = 1.5;
@@ -36,7 +36,7 @@ void main(dictionary@ inputData) {
 
         settings.m_single_player = false;
         settings.m_GameMode = "Vanilla";
-        settings.m_fov = true;
+        settings.m_fov = false;
 
         array<string> overlays = {
                 "media/packages/hell_diver_vanilla"
@@ -46,10 +46,10 @@ void main(dictionary@ inputData) {
         settings.m_startServerCommand = """
         <command class='start_server'
                 server_name='[地狱潜兵] 香草模式'
-                server_port='30202'
+                server_port='1250'
                 url='https://steamcommunity.com/sharedfiles/filedetails/?id=2910392031'
                 register_in_serverlist='1'
-                mode='HD'
+                mode='HD Vanilla'
                 persistency='forever'
                 comment='人类 VS 人类模式，接近原版玩法。该模式同步存档。地狱潜兵模组  QQ：498520233 '
                 max_players='16'>
@@ -61,9 +61,11 @@ void main(dictionary@ inputData) {
 
         GameModeInvasion metagame(settings);
 
-        metagame.init();
-        metagame.run();
-        metagame.uninit();
+	metagame.init();
+	while(metagame.run()){
+		metagame.init();
+	}
+	metagame.uninit();
 
         _log("ending execution");
 }

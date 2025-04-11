@@ -58,6 +58,13 @@ class match_end : Tracker {
             gBattleInfoAddTime();
             m_time_min++;
             m_timer = m_time;
+            if(g_GameMode == "Racing"){
+                _report(m_metagame,"距离换图还有"+(60-m_time_min)+"分钟");
+            }
+        }
+        if(m_time_min > 60 && g_GameMode == "Racing"){
+            declareWinner();
+            m_ended = true;
         }
         if(m_time_min > 120 && !m_ended){
             declareWinner();
@@ -93,12 +100,40 @@ class match_end : Tracker {
         g_battleInfoBuck.addDead(name);
     }
     // ----------------------------------------------------
+	protected void handlePlayerSpawnEvent(const XmlElement@ event) {
+		const XmlElement@ element = event.getFirstElementByTagName("player");
+		if(element is null){return;}
+        string name = element.getStringAttribute("name");
+        if(g_firstUseInfoBuck.isFirst(name,"SetInitiateFactor")){
+            int pid = element.getIntAttribute("player_id");
+            // 处理额外倍率
+            upgrade@ m_upgrade = upgrade(m_metagame);
+            string m_rp_times = m_upgrade.getAccessValue(name,"prioritys","extra_rp_factor","times");
+            string m_xp_times = m_upgrade.getAccessValue(name,"prioritys","extra_xp_factor","times");
+            if(isNumeric(m_rp_times)){ 
+                float m_rp_factor = parseInt(m_rp_times)*0.12;
+                g_battleInfoBuck.addBonusFactorRp(name,m_rp_factor);
+                if(m_rp_factor != 0){
+                    _notify(m_metagame,pid,"额外RP倍率已增加"+m_rp_factor*100+"%");
+                }
+            }
+            if(isNumeric(m_xp_times)){ 
+                float m_xp_factor = parseInt(m_xp_times)*0.25;
+                g_battleInfoBuck.addBonusFactorXp(name,m_xp_factor);
+                if(m_xp_factor != 0){
+                    _notify(m_metagame,pid,"额外XP倍率已增加"+m_xp_factor*100+"%");
+                }
+            }
+        }
+    }
+    // ----------------------------------------------------
 	protected void handlePlayerConnectEvent(const XmlElement@ event) {
 		const XmlElement@ player = event.getFirstElementByTagName("player");
 		if(player is null){return;}
 		string name = player.getStringAttribute("name");
         int pid = player.getIntAttribute("player_id");
         array<const XmlElement@> players = getPlayers(m_metagame);
+        // 处理多人游戏的暖服奖励
         if(g_single_player){return;}
         if(players.size() <= 3){
             if(g_server_activity){
@@ -173,7 +208,18 @@ class match_end : Tracker {
             if(xp >= 1000){
                 xp = 1000;
             }
-            GiveRP(m_metagame,cid,int(rp));
+            upgrade@ m_upgrade = upgrade(m_metagame);
+            string m_rp_times = m_upgrade.getAccessValue(name,"prioritys","extra_rp_result","times");
+            float ex_result = 0;
+            if(isNumeric(m_rp_times) && m_rp_times != "0"){ 
+                ex_result = parseInt(m_rp_times)*0.05;
+                if(isEng(name)){
+                    _notify(m_metagame,pid,"Extra result reward(+"+ ex_result*100 +"%):"+int(rp*ex_result)+"rp");
+                }else{
+                    _notify(m_metagame,pid,"额外结算奖励(+"+ ex_result*100 +"%):"+int(rp*ex_result)+"rp");
+                }
+            }
+            GiveRP(m_metagame,cid,int(rp*(1+ex_result)));
             GiveXP(m_metagame,cid,xp);
             if(players.size() >= 8){
                 for(uint j = 0 ; j < m_wornup_reward_list.size() ; j++){

@@ -587,6 +587,16 @@ class IO_data : Tracker {
                 if(root is null) _report(m_metagame,"player sid="+sid+"is null");
                 _report(m_metagame,"成功读取："+sid);
 			}
+			if(message == "/IOtest"){
+                string sid = g_playerInfoBuck.getSidByName(p_name);
+                int times = 1000;
+                _report(m_metagame,"开始IO测试"+sid);
+                while(times!=0){
+                    times--;
+				    updatePlayers();
+                }
+                _report(m_metagame,"成功读取："+sid);
+			}
 			// if(startsWith(message,"/read")){
             //     string key = "/read ";
             //     string sid = message.substr(key.length());
@@ -1515,6 +1525,8 @@ class IO_data : Tracker {
             res.addToResources(resources,2);
             @res = Resource("samples_acg.carry_item","carry_item");
             res.addToResources(resources,8);
+            @res = Resource("reward_box_weapon_phi.carry_item","carry_item");//道具箱子，食物
+            res.addToResources(resources,2);
 
             upgrade@ tempTack = upgrade(m_metagame);
             if(!tempTack.checkAccess(p_name,"prioritys","DanceKey_v1")){

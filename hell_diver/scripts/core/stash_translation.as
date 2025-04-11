@@ -1,4 +1,82 @@
 
+
+dictionary weaponLevel = {
+    {"ex_exo_telemon_cannon.weapon","MK5"},
+    {"acg_sabayon_gun.weapon","MK5"},
+    {"acg_takanashi_hoshino_battle.weapon","MK5"},
+    {"ex_exo_dreadnought_mg.weapon","MK5"},
+    {"acg_izayoi_sakuya_i.weapon","MK5"},
+    {"ex_vergil_judgment_cut.weapon","MK5"},
+    {"acg_patricia_cumforce.weapon","MK5"},
+    {"ex_hyper_mega_bazooka_launcher_ex.weapon","MK5"},
+    {"acg_megumin_wand_float.weapon","MK5"},
+    {"ex_trinity_ghoul.weapon","MK5"},
+    {"acg_laisha_heliotrope.weapon","MK5"},
+    {"acg_elaina_wand.weapon","MK5"},
+
+    {"acg_hayase_yuuka.weapon","MK4"},
+    {"acg_incomparable.weapon","MK4"},
+    {"acg_arknight_ifrit.weapon","MK4"},
+    {"acg_bronya.weapon","MK4"},
+    {"acg_g41_lasercanno_diffusion.weapon","MK4"},
+    {"acg_shuiniao.weapon","MK4"},
+    {"acg_fiammetta_gl.weapon","MK4"},
+    {"ex_disaster_railgun.weapon","MK4"},
+    {"acg_texas_skill.weapon","MK4"},
+    {"acg_ba_alice_railgun_ex.weapon","MK4"},
+    {"acg_starwars_shipgirls.weapon","MK4"},
+    {"acg_asagi_mutsuki.weapon","MK4"},
+    {"acg_rikuhachima_aru.weapon","MK4"},
+    {"acg_shinano.weapon","MK4"},
+    {"acg_yileina_wand.weapon","MK4"},
+
+    {"acg_bf109.weapon","MK3"},
+    {"acg_fade_red.weapon","MK3"},
+    {"acg_rumi.weapon","MK3"},
+    {"ex_space_marines.weapon","MK3"},
+    {"acg_takanashi_hoshino.weapon","MK3"},
+    {"acg_g41_bp2077.weapon","MK3"},
+    {"acg_miyu.weapon","MK3"},
+    {"acg_g41_universe.weapon","MK3"},
+    {"acg_maria_schariac.weapon","MK3"},
+
+    {"acg_sinteria_bow.weapon","MK2"},
+    {"acg_kokomi_portia.weapon","MK2"},
+    {"acg_sorasaki_hina.weapon","MK2"},
+    {"acg_hk416_starry_cocoon.weapon","MK2"},
+    {"acg_iws2000_banisher.weapon","MK2"},
+    {"acg_hongxue.weapon","MK2"},
+    {"acg_amamiya_kokoro.weapon","MK2"},
+    {"ex_heavy_infantry_morita.weapon","MK2"},
+    {"acg_kemomimi.weapon","MK2"},
+    {"acg_reisenu_a.weapon","MK2"},
+    {"acg_ruby_rose_scythe.weapon","MK2"},
+    {"acg_mg4a3td.weapon","MK2"},
+    {"acg_mg4td_ke.weapon","MK2"},
+    {"ex_lancer_mk3.weapon","MK2"},
+    {"ex_soma_prime.weapon","MK2"},
+    {"acg_piko_hammer.weapon","MK2"},
+    {"acg_stylet_m61a1.weapon","MK2"},
+    {"acg_otogi_sniper.weapon","MK2"},
+
+    {"ex_typhoon.weapon","MK1"},
+    {"ex_heavy_infantry_morita_mk1.weapon","MK1"},
+    {"acg_smg_strelka.weapon","MK1"},
+    {"acg_ka_ar8.weapon","MK1"},
+    {"acg_m14.weapon","MK1"},
+    {"acg_mari_sports_ver.weapon","MK1"},
+    {"ex_izanagis_burden.weapon","MK1"},
+    {"ex_funnelnet.weapon","MK1"},
+    {"acg_mg3.weapon","MK1"},
+    {"ex_psc_srs99.weapon","MK1"},
+    {"ex_psc_arc920.weapon","MK1"},
+    {"ex_exp_m41_spnkr.weapon","MK1"},
+    {"ex_side_m6g_magnum.weapon","MK1"},
+    {"acg_ushio_noa.weapon","MK1"},
+    {"acg_hecate.weapon","MK1"},
+
+    {"",""}
+};
 dictionary canStoreItem = {
 
     {"collect_fumo_cirno.carry_item","[琪露诺]"},
@@ -43,12 +121,8 @@ dictionary canStoreItem = {
     // {"hd_bonusfactor_xp_125","[经验加成卡 125%]"},
     // {"hd_bonusfactor_xp_240","[经验加成卡 240%]"},
 
-    {"ex_piano_uzuki.weapon","[卯月主题钢琴]"},
-    {"ex_piano_yuudachi.weapon","[夕立主题钢琴]"},
     {"ex_piano_unwelcome_school.weapon","['银行不妙曲'钢琴]"},
-    {"ex_piano_cradle_of_eternity.weapon","['永世的摇篮'钢琴]"},
     {"ex_gramophone_steeltorrent.weapon","['钢铁洪流'留声机]"},
-    {"ex_gramophone_space_elevator.weapon","['太空电梯'留声机]"},
     {"ex_gramophone_made_of_earth.weapon","['Made of Eeath'留声机]"},
 
     {"hd_vote_ticket","[民本选票]"},
@@ -220,19 +294,26 @@ dictionary canStoreItem = {
     {"token_asashio.projectile","朝潮 [信物]"},
     {"token_plana.projectile","普拉纳 [信物]"},
     {"token_mizuha_mimori.projectile","水羽三森 [信物]"},
+    // 1.9.5
+    {"token_tatara_kogasa.projectile","多多良小伞 [信物]"},
+    {"token_zelda.projectile","赛尔达 [信物]"},
+    {"token_ninym_alei.projectile","妮妮姆 拉蕾 [信物]"},
+    {"token_remilia_scarlet.projectile","蕾米莉亚 [信物]"},
+    // 1.9.7
+    {"token_nishikigi_chisato.projectile","锦木千束 [信物]"},
+    {"token_sakurakouji_runa.projectile","樱小路露娜 [信物]"},
+    {"token_iron_maiden.projectile","艾恩梅德 [信物]"},
+    {"token_goldenglow_swim.projectile","澄闪 泳装[信物]"},
 
 
     {"wiesel_tow_call.projectile","[鼬鼠 [陶氏]]"},
     {"lav6_call.projectile","[LAV-6]"},
     {"ex_power_chair_call.projectile","[力量之椅]"},
     {"zbd09_call.projectile","[ZBD-09]"},
-    {"t90m3_call.projectile","[T90M 突破3]"},
     {"uragan_call.projectile","[BM-27 Uragan 火箭车]"},
     {"borsig_call.projectile","[莱茵金属]"},
     {"m61a5_call.projectile","[M61A5]"},
-    {"mtlb_2b9_call.projectile","[矢车菊 自动迫击炮]"},
     {"himars_call.projectile","[海马斯]"},
-    {"is2_m1895_call.projectile","[IS-2 M[1895]]"},
     {"mh_60s_call.projectile","[MH-60S 武装直升机]"},
     {"bell_360_call.projectile","[贝尔-360 运输直升机]"},
     {"mi_24_call.projectile","[米-24 武装直升机]"},
@@ -240,13 +321,9 @@ dictionary canStoreItem = {
     {"ex_m18_call.projectile","[M18 地狱猫]"},
     {"ba_crusader_call.projectile","[十字军酱[泳装·日富美]]"},
     {"ex_guntruck_plus_call.projectile","[运兵卡车-Plus]"},
-    {"ex_sherman_call.projectile","[谢尔曼喷火坦克[现代化]]"},
-    {"ex_kv2_gup_call.projectile","[KV-2 [真理高中]]"},
-    {"ex_isu_152_call.projectile","[ISU-152]"},
     {"noxe_call.projectile","[Noxe 轮式导弹发射车]"},
     {"ex_sturmtiger_tank_call.projectile","[突击虎]"},
     {"ex_apocalypse_tank_call.projectile","[天启]"},
-    {"marder_call.projectile","[黄鼠狼]"},
     {"illum_allied_prism_tank_call.projectile","[光棱坦克]"},
     {"ex_unsc_scion_call.projectile","[天蝎坦克]"},
     {"ex_nova_callrandom.projectile","[NOVA坦克]"},
@@ -256,7 +333,8 @@ dictionary canStoreItem = {
     {"reward_box_weapon_lamda_clip.carry_item","[MK3箱 碎片]"},
     {"reward_box_weapon_v_clip.carry_item","[MK5箱 碎片]"},
 
-    {"ref.weapon","测试武器"}
+    {"ref.weapon","测试武器"},
+    {"SuperCash","[超级货币]"}
 };
 dictionary autoStoreItem = {
     {"collect_fumo_cirno.carry_item","[琪露诺]"},
@@ -315,7 +393,6 @@ class stashExchangeList{
         return false;
     }
 }
-
 array<stashExchangeList@> ExchangeLists ={
         //0 灵梦Fumo[1] 换 RP[300w]
         stashExchangeList(
@@ -525,10 +602,10 @@ array<stashExchangeList@> ExchangeLists ={
                 getStashXmlElement("reward_box_weapon_miu.carry_item","carry_item",1)
             }
         ),
-        //23 研究点[3] 换 Omega箱子[1]
+        //23 研究点[1] 换 Omega箱子[1]
         stashExchangeList(
             array<XmlElement@>= {
-                getStashXmlElement("samples_acg.carry_item","carry_item",3)
+                getStashXmlElement("samples_acg.carry_item","carry_item",1)
             }, 
             array<XmlElement@>= {
                 getStashXmlElement("reward_box_weapon_omega.carry_item","carry_item",1)
@@ -943,7 +1020,7 @@ array<stashExchangeList@> ExchangeLists ={
                 getStashXmlElement("deploy_edf_turrent_minigun.weapon","weapon",1)
             }
         ),
-        //65 民主选票[15] 换 NOVA[1]
+        //66 民主选票[15] 换 NOVA[1]
         stashExchangeList(
             array<XmlElement@>= {
                 getStashXmlElement("hd_vote_ticket","carry_item",15)
@@ -951,7 +1028,43 @@ array<stashExchangeList@> ExchangeLists ={
             array<XmlElement@>= {
                 getStashXmlElement("ex_nova_callrandom.projectile","projectile",1)
             }
-        )
+        ),
+        //67 超级货币[44] 换 [Lamda箱子]x1 MK3
+        stashExchangeList(
+            array<XmlElement@>= {
+                getStashXmlElement("SuperCash","special",44)
+            }, 
+            array<XmlElement@>= {
+                getStashXmlElement("reward_box_weapon_lamda.carry_item","carry_item",1)
+            }
+        ),
+        //68 超级货币[396] 换 [V箱子]x1 MK5
+        stashExchangeList(
+            array<XmlElement@>= {
+                getStashXmlElement("SuperCash","special",396)
+            }, 
+            array<XmlElement@>= {
+                getStashXmlElement("reward_box_weapon_v.carry_item","carry_item",1)
+            }
+        ),
+        //69 超级货币[132] 换 [Delta箱子]x1 MK4
+        stashExchangeList(
+            array<XmlElement@>= {
+                getStashXmlElement("SuperCash","special",132)
+            }, 
+            array<XmlElement@>= {
+                getStashXmlElement("reward_box_weapon_delta.carry_item","carry_item",1)
+            }
+        ),
+        //70 超级货币[1000] 换 RP增益提升
+        stashExchangeList(
+            array<XmlElement@>= {
+                getStashXmlElement("SuperCash","special",1000)
+            }, 
+            array<XmlElement@>= {
+                getStashXmlElement("","",0)
+            }
+        ),
 
 };
 
@@ -1025,6 +1138,12 @@ const dictionary stashExchangeDict = {
     {"hd_missile_launcher_mk3_exchange",@ExchangeLists[64]},
     {"hud_edf_turrent_minigun_exchange",@ExchangeLists[65]},
     {"hud_ex_nova_exchange",@ExchangeLists[66]},
+    {"hud_reward_box_weapon_lamda_2_exchange",@ExchangeLists[67]},
+    {"hud_reward_box_weapon_v_2_exchange",@ExchangeLists[68]},
+    {"hud_reward_box_weapon_delta_2_exchange",@ExchangeLists[69]},
+    {"hd_supercash_rp_up_exchange",@ExchangeLists[70]},
+    {"hd_supercash_xp_up_exchange",@ExchangeLists[70]},
+    {"hd_supercash_rp_result_up_exchange",@ExchangeLists[70]},
 
     {"",""}
 };

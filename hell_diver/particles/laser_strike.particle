@@ -6,7 +6,7 @@ laser strike 支援特效
 
 particle_system laser_strike_activated_laser
 {
-	quota 600
+	quota 100
 	material laser_beam
 	particle_width 3
 	particle_height 100
@@ -52,7 +52,7 @@ particle_system laser_strike_activated_laser
 }
 particle_system laser_strike_result_laser
 {
-	quota 600
+	quota 100
 	material laser_beam
 	particle_width 3
 	particle_height 100
@@ -98,7 +98,7 @@ particle_system laser_strike_result_laser
 }
 particle_system laser_strike_result_center
 {
-	quota 500
+	quota 100
 	material explosion_smoke_04_bw_laser
 	particle_width 7
 	particle_height 7
@@ -137,7 +137,7 @@ particle_system laser_strike_result_center
 }
 particle_system laser_strike_result_smoke
 {
-	quota 1000
+	quota 100
 	material wand_smoke
 	particle_width 2.5
 	particle_height 2.5
@@ -187,7 +187,7 @@ particle_system laser_strike_result_smoke
 
 particle_system laser_strike_result_ground_leave
 {
-	quota 500
+	quota 50
 	material Particle_AE_Shockwave_01
 	particle_width 4
 	particle_height 4
@@ -232,7 +232,7 @@ particle_system laser_strike_result_ground_leave
 }
 particle_system laser_strike_result_ground_leave_light
 {
-	quota 500
+	quota 100
 	material Particle_AE_Shockwave_12_bw
 	particle_width 3.5
 	particle_height 3.5
@@ -278,7 +278,7 @@ particle_system laser_strike_result_ground_leave_light
 }
 particle_system laser_strike_result_ground_burn_spot
 {
-	quota 500
+	quota 100
 	material point_soft_edge_100
 	particle_width 7
 	particle_height 7

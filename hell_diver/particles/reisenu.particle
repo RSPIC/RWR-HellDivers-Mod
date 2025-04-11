@@ -371,7 +371,7 @@ particle_system reisenu_bullet_activated_smoke_ii		//二模式尾迹烟
 }
 particle_system reisenu_bullet_blase_type1_center_ii		//二模式一段弹头爆炸
 {
-	quota 500
+	quota 100
 	material point_soft_edge_100
 	particle_width 3
 	particle_height 3
@@ -434,7 +434,7 @@ particle_system reisenu_bullet_blase_type1_center_redring_ii : reisenu_bullet_bl
 }
 particle_system reisenu_bullet_activated_bullet_type2_red_ii
 {
-	quota 500
+	quota 100
 	material point_soft_edge_100
 	particle_width 1
 	particle_height 3
@@ -476,7 +476,7 @@ particle_system reisenu_bullet_activated_bullet_type2_ii : reisenu_bullet_activa
 }
 particle_system reisenu_bullet_hit_type2_ii		//二模式落地弹命中中心
 {
-	quota 500
+	quota 100
 	material point_soft_edge_100
 	particle_width 3
 	particle_height 3

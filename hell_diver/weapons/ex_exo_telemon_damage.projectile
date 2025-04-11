@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectiles>
+<projectile  
+class="grenade" 
+key="ex_exo_telemon_missile_up.projectile" 
+slot="0"
+pulldown_in_air="-30.0"
+time_to_live="5"
+radius="0.3"
+>
+	<result class="notify_script" key="ex_exo_telemon_missile_damage" />
+	<effect class="activated" ref="general_activated_at_smoke_trail"/>
+	<effect class="activated" ref="telemon_missile_trail_light"/>
+
+	<trail probability="1" key="tlm_missile_trail"/>	
+	<model mesh_filename="APFSDS.xml" />
+	
+	<trigger class="time" time_to_live="2" />	
+    <rotation class="motion" />
+	<model mesh_filename="" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+</projectile>
+<projectile  
+class="grenade" 
+key="ex_exo_telemon_missile_damage.projectile" 
+slot="0"
+pulldown_in_air="-15.0"
+time_to_live="5"
+radius="0.3"
+>
+	<result class="blast" radius="7" damage="100" push="0.4" decal="0" 
+	faction_compare="not_equal" character_state="unwound"  />
+
+	<effect class="activated" ref="telemon_missile_trail_light"/>
+	<effect class="result" key="terrain" ref="blast_smoke_rumbler" />
+	<effect class="result" key="terrain" ref="spray_rumbler" />
+
+	<effect class="result" key="terrain" ref="general_weapon_result_blast_smoke" lighting="0" post_processing="1"/> 
+	<effect class="result" key="terrain" ref="general_weapon_result_blast_smoke_expanding" lighting="0" post_processing="1"/> 
+	<effect class="result" key="terrain" ref="general_weapon_result_blast_ring" lighting="0"/> 
+	<effect class="result" key="terrain" ref="general_weapon_result_blast_ring_2" lighting="0"/> 
+	<effect class="result" key="terrain" ref="general_weapon_result_blast_spray_1" lighting="0"/> 
+	<effect class="result" key="terrain" ref="general_weapon_result_blast_spray_2" lighting="0"/> 
+	<effect class="result" key="terrain" ref="general_weapon_result_blast_fire" lighting="0"/> 
+	<effect class="result" key="terrain" ref="general_weapon_result_blast_fire_wave" lighting="0"/> 
+
+	<effect class="result" key="terrain" ref="real_up_dust_beam" lighting="1" post_processing="0"/>
+	<!-- <effect class="result" key="terrain" ref="real_up_dust_spread" lighting="1" post_processing="0"/> -->
+	<effect class="result" key="terrain" ref="real_up_dust_stone" lighting="1" post_processing="1"/>
+	<!-- <effect class="result" key="terrain" ref="real_up_smoke_1" lighting="1" post_processing="0"/> -->
+	<effect class="result" key="terrain" ref="real_up_smoke_beam" lighting="1" post_processing="0"/>
+	<!-- <effect class="result" key="terrain" ref="real_up_impact_spread" lighting="1" post_processing="0"/> -->
+	<!-- <effect class="result" key="terrain" ref="real_up_impact_spark" lighting="1" post_processing="0"/> -->
+	<!-- <effect class="result" key="terrain" ref="real_up_impact_spark_2" lighting="1" post_processing="0"/> -->
+	<!-- <effect class="result" key="terrain" ref="real_up_impact_spark_1" lighting="1" post_processing="0"/> -->
+	<effect class="result" key="terrain" ref="real_center_short_light" lighting="0" post_processing="0"/> 
+	<effect class="result" key="terrain" ref="real_center_ambient_light" lighting="0" post_processing="0"/> 
+	<!-- <effect class="result" key="terrain" ref="nova_result_ground_smoke" lighting="0" post_processing="1"/> -->
+	<effect class="result" key="terrain" ref="nova_result_ambient" lighting="0" post_processing="0"/> 
+	<!-- <effect class="result" key="terrain" ref="nova_result_ambient_ground" lighting="0" post_processing="0"/>  -->
+
+	<effect class="result" key="terrain" ref="Godray" lighting="0" />
+	<effect class="result" key="terrain" ref="BurstShine" lighting="0" />
+	
+	<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
+	<sound class="result" key="other" fileref="blast1_rumbler.wav" pitch_variety="0.00"  volume="2"/>
+	<sound class="result" key="other" fileref="blast2_rumbler.wav" pitch_variety="0.00"  volume="2"/>
+	<sound class="result" key="terrain" copy="other" />
+	<sound class="result" key="static_object" copy="other" />
+	<sound class="result" key="vehicle" copy="other" />
+	<sound class="result" key="character" copy="other" />
+	<sound class="result" key="shield" copy="other" />
+	<effect class="result" key="other" copy="terrain"/>
+	<effect class="result" key="static_object" copy="terrain" />
+	<effect class="result" key="character" copy="terrain" />
+	<effect class="result" key="shield" copy="terrain" />			
+	<effect class="result" key="vehicle" copy="terrain" />			
+	<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
+	<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
+
+
+	<trail probability="1" key="tlm_missile_trail"/>	
+	<model mesh_filename="APFSDS.xml" />
+		
+	<trigger class="impact" time_to_live="0" />	
+    <rotation class="motion" />
+	<model mesh_filename="" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+</projectile>
+<projectile  
+class="grenade" 
+key="ex_exo_telemon_bluefire_damage.projectile" 
+slot="0"
+pulldown_in_air="4.0"
+>
+	<result class="blast" radius="3" damage="2.01" push="0.1" decal="0" 
+		faction_compare="not_equal" character_state="wound"  />
+
+	<trigger class="time" time_to_live="0" />	
+    <rotation class="motion" />
+	<model mesh_filename="" />
+	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
+</projectile>
+</projectiles>

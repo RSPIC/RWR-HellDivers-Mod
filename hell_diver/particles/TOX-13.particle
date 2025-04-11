@@ -4,7 +4,7 @@ author: RST
 
 particle_system tox_13_muzzle_splash
 {
-	quota 2000
+	quota 200
 	material Particle_Splash02
 	particle_width 1
 	particle_height 1
@@ -60,7 +60,7 @@ particle_system tox_13_muzzle_splash
 }
 particle_system tox_13_result_splash
 {
-	quota 500
+	quota 100
 	material Particle_Splash02
 	particle_width 1
 	particle_height 1

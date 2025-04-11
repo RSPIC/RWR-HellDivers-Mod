@@ -226,11 +226,11 @@ dictionary stratagems_CD = {
 	{"hd_offensive_close_air_support_mk3",38},
 	{"hd_offensive_thunderer_barrage_mk3",90},
 	{"hd_offensive_strafing_run_mk3",5},
-	{"hd_offensive_static_field_conductors_mk3",22},
+	{"hd_offensive_static_field_conductors_mk3",30},
 	{"hd_offensive_sledge_precision_artillery_mk3",60},
 	{"hd_offensive_railcannon_strike_mk3",30},
 	{"hd_offensive_missile_barrage_mk3",90},
-	{"hd_offensive_incendiary_bombs_mk3",22},
+	{"hd_offensive_incendiary_bombs_mk3",30},
 	{"hd_offensive_heavy_strafing_run_mk3",15},
 
 	{"hd_offensive_orbital_120mm_he_barrage_call",480},
@@ -349,6 +349,7 @@ dictionary cd_translation = {
 	// 占位的
 	{"666",-1}
 };
+
 //------------------------------------------------
 array<string> splitString(const string input, const string delimiter = " ") {
     array<string> result;
@@ -412,6 +413,7 @@ class player_cd_list {
 			m_cd_timer -= time;
 			if(m_cd_timer <= 0 ){
 				m_ready = true;
+				g_userCountInfoBuck.clearCount(p_name,m_key);
 				setNotify(m_metagame);
 			}
 		}
@@ -497,6 +499,20 @@ class player_cd_bucket {
 				if(cd_lists[i].hasEnded()){
 					cd_lists.removeAt(i);
 					--i;
+				}
+			}
+		}
+		return;
+	}
+	void update(float time,const Metagame@ m_metagame,string name,string key){
+		if(cd_lists !is null){
+			for(uint i = 0 ; i < cd_lists.size() ; ++i){
+				if(cd_lists[i].exists(name,key)){
+					cd_lists[i].update(time,m_metagame);
+					if(cd_lists[i].hasEnded()){
+						cd_lists.removeAt(i);
+						--i;
+					}
 				}
 			}
 		}

@@ -3,7 +3,7 @@
 <vehicle  
 file="_vehicle_mid.base"
 name="压路机" 
-key="ex_yaluji.vehicle" 
+key="ex_ex_yaluji.vehicle" 
 time_to_live_unsteerable="12" 
 map_view_atlas_index="57" 
 minimum_fill_requirement="1"
@@ -28,8 +28,8 @@ character_leave_request_mode="friendly"
 
 	<control 
 	max_limiter_speed="8.0"
-	max_speed="14.5" 
-	acceleration="20.0" 
+	max_speed="18.5" 
+	acceleration="8.0" 
 	max_reverse_speed="8.0" 
 	min_health_to_steer="0.36" 
 	max_rotation="0.5" 
@@ -42,11 +42,11 @@ character_leave_request_mode="friendly"
 	extent="6.6 1 8.6" 
 	offset="0 2.7 0" 
 	top_offset="0 10 0" 
-	collision_model_pos="0 1.2 0" 
+	collision_model_pos="0 0.6 0" 
 	collision_model_extent="3.8 2.4 6.8" 
 	visual_offset="0.085 2.05 -0.3" 
-	friction_offset="0.3" 
-	drag_offset="-1" 
+	friction_offset="0.1" 
+	drag_offset="-0.35" 
 	destroy_on_top_hit="1"
 	destroy_on_top_hit_time="0.6"/> 
 
@@ -58,7 +58,7 @@ character_leave_request_mode="friendly"
 	<visual class="front_tire" mesh_filename="ex_yaluji_chelun2.mesh" texture_filename="ex_yaluji.png" />
 	<visual class="rear_tire" mesh_filename="ex_yaluji_chelun.mesh" texture_filename="ex_yaluji.png" />
 	<visual class="track" mesh_filename="ex_yaluji_chetou.mesh" offset="0.0 0.75 2.87" >
-		<part texture_filename="ex_yaluji_chetou.png" texture_animation="translate" factor="-0.5" tire_binding="0" />
+		<part texture_filename="ex_yaluji_chetou.png" texture_animation="translate" tire_binding="0" />
 	</visual>
 	<!-- 破损车体\炮台 -->
 	<visual class="chassis" mesh_filename="ex_yaluji_cheti.mesh" texture_filename="ex_yaluji.png" />
