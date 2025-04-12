@@ -16,13 +16,13 @@ player_death_drop_owner_lock_time="0"
 >
 	<result class="spawn" instance_class="projectile" instance_key="bugs_general_grenade.projectile" min_amount="1"
 	max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
-	<trigger class="time" time_to_live="0" />	
+	<trigger class="time" time_to_live="0.1" />	
     <rotation class="random" />
 	<model mesh_filename="" />
 	<commonness value="0.0" can_respawn_with="0" in_stock="0"/>
 
 	<sound class="result" key="other" fileref="molo_boom.wav" pitch_variety="0.03" volume="0.0" />
-	<effect class="result" key="terrain" ref="bugs_zerg_egg_blast"/>
+	<effect class="activated" ref="bugs_zerg_egg_blast"/>
 	<effect class="activated" ref="bugs_spitter_splash_single_activated2"/>
 	<effect class="activated" ref="bugs_spitter_splash_single_activated"/>
 		

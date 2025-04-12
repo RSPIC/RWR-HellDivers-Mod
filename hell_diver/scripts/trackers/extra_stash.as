@@ -977,6 +977,7 @@ class extra_stash : Tracker {
 				m_playerCds.update(m_time,m_metagame);
                 updateSuperCash();
                 updateAceClip();
+                // updateSample(); 存在取出来刷的bug，暂时不启用
 			}
 		}
 	}
@@ -1029,6 +1030,32 @@ class extra_stash : Tracker {
                     m_playerStashInfoBuck.pushInObjects(sid);
                     m_playerStashInfoBuck.openStash(sid);
                     g_userCountInfoBuck.clearCount(name,"acg_sky_striker_ace_clips");
+                }else{
+                    continue;
+                }
+            }
+        }
+    }
+    // -------------------------------------------
+	protected void updateSample() {
+        for(uint i = 0; i < g_userCountInfoBuck.size(); ++i){
+            int SuperItem = 0;
+            string name = g_userCountInfoBuck.indexName(i);
+            // _report(m_metagame,"updateSuperCash ="+name);
+            if(g_userCountInfoBuck.getCount(name,"samples_acg.carry_item",SuperItem)){
+                if(SuperItem > 0){
+                    XmlElement newXml("stash");
+                        newXml.setStringAttribute("AA_tag","samples_acg.carry_item");
+                        newXml.setStringAttribute("A_tag","carry_item");
+                        newXml.setIntAttribute("value",SuperItem);
+                    string sid = g_playerInfoBuck.getSidByName(name);
+                    if(!m_playerStashInfoBuck.isOpen(sid)){
+                        m_playerStashInfoBuck.openStash(sid);
+                    }
+                    m_playerStashInfoBuck.addPushInObject(sid,newXml);
+                    m_playerStashInfoBuck.pushInObjects(sid);
+                    m_playerStashInfoBuck.openStash(sid);
+                    g_userCountInfoBuck.clearCount(name,"samples_acg.carry_item");
                 }else{
                     continue;
                 }

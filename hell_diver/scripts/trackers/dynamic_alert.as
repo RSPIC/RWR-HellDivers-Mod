@@ -141,10 +141,10 @@ const array<SpawnInfo@> all_soldier_bugs = {
 const array<SpawnInfo@> all_soldier_illums = {
     SpawnInfo("illum_Watcher",1),
     SpawnInfo("illum_Observer",1),
-    SpawnInfo("illum_Hunter",1),
+    SpawnInfo("illum_Hunter",2),
     SpawnInfo("illum_Apprentice",1),
-    SpawnInfo("illum_Tripod",1),
-    SpawnInfo("illum_Strider",1),
+    SpawnInfo("illum_Tripod",2),
+    SpawnInfo("illum_Strider",2),
     SpawnInfo("illum_Obelisk",1),
     SpawnInfo("illum_Illusionist",1),
     SpawnInfo("illum_CouncilMember",1)
@@ -166,7 +166,7 @@ array<SpawnInfo@> uesed_spawn_list(Metagame@ metagame,int server_difficulty_leve
         int random_index = int(rand(0, all_soldier_cyborgs.size() - 1));
         SpawnInfo@ info = all_soldier_cyborgs[random_index];
         result.insertLast(SpawnInfo(info.spawnkey, int(info.spawnnum * spawn_multiplier)));
-        _report(metagame,"Alert_Spawn key="+info.spawnkey+" num="+int(info.spawnnum * spawn_multiplier));
+        _log("Alert_Spawn key="+info.spawnkey+" num="+int(info.spawnnum * spawn_multiplier));
     }
 
     // Randomly select instances from all_soldier_bugs
@@ -174,7 +174,7 @@ array<SpawnInfo@> uesed_spawn_list(Metagame@ metagame,int server_difficulty_leve
         int random_index = int(rand(0, all_soldier_bugs.size() - 1));
         SpawnInfo@ info = all_soldier_bugs[random_index];
         result.insertLast(SpawnInfo(info.spawnkey, int(info.spawnnum * spawn_multiplier)));
-        _report(metagame,"Alert_Spawn key="+info.spawnkey+" num="+int(info.spawnnum * spawn_multiplier));
+        _log("Alert_Spawn key="+info.spawnkey+" num="+int(info.spawnnum * spawn_multiplier));
     }
 
     // Randomly select instances from all_soldier_illums
@@ -182,13 +182,13 @@ array<SpawnInfo@> uesed_spawn_list(Metagame@ metagame,int server_difficulty_leve
         int random_index = int(rand(0, all_soldier_illums.size() - 1));
         SpawnInfo@ info = all_soldier_illums[random_index];
         result.insertLast(SpawnInfo(info.spawnkey, int(info.spawnnum * spawn_multiplier)));
-        _report(metagame,"Alert_Spawn key="+info.spawnkey+" num="+int(info.spawnnum * spawn_multiplier));
+        _log("Alert_Spawn key="+info.spawnkey+" num="+int(info.spawnnum * spawn_multiplier));
     }
 
     return result;
 }
 
-void Alert_Spawn_new(Metagame@ metagame,int factionId, Vector3 position,int server_difficulty_level){
+void Alert_Spawn_new(Metagame@ metagame,int factionId, Vector3 position,int server_difficulty_level,bool isForce = false){
     //仿照HD2的增援模式，逐步取消旧版本的增援模式
     //逻辑：建立All兵种的list，脚本初始化时随机固定几个兵种，生成时根据难度增加生成数量
     TaskSequencer@ tasker3 = metagame.getTaskManager().newTaskSequencer();
@@ -236,8 +236,12 @@ void Alert_Spawn_new(Metagame@ metagame,int factionId, Vector3 position,int serv
 
             float shift_range = rand(60,70);
             float rand_speed = rand(0.6,0.8);
-            TaskSequencer@ tasker = metagame.getHdTaskSequncerIndex(6);   
-            TaskSequencer@ tasker2 = metagame.getHdTaskSequncerIndex(7);   
+            TaskSequencer@ tasker = metagame.getHdTaskSequncerIndex(11);   
+            TaskSequencer@ tasker2 = metagame.getHdTaskSequncerIndex(12);
+            if(isForce){
+                tasker = metagame.getVacantHdTaskSequncerIndex();   
+                tasker2 = metagame.getVacantHdTaskSequncerIndex();
+            }   
             CreateProjectile@ task1 = CreateProjectile(metagame,pos.add(Vector3(shift_range,0,0)),pos,key1,0,factionId,rand_speed,2,1,0,false); // speed delay num in_delay vertival
             pos = pos.add(Vector3(0,-1.5,0));
             CreateProjectile@ task2 = CreateProjectile(metagame,pos.add(Vector3(shift_range,0,0)),pos,key2,0,factionId,rand_speed,2,spawnnum,0,false); // speed delay num in_delay vertival
@@ -255,13 +259,16 @@ void Alert_Spawn_new(Metagame@ metagame,int factionId, Vector3 position,int serv
 
             float shift_range = rand(0,0);
             float rand_speed = 1;
-            TaskSequencer@ tasker = metagame.getHdTaskSequncerIndex(5);   
-            TaskSequencer@ tasker2 = metagame.getHdTaskSequncerIndex(5);   
+            int taskIndex = int(rand(8,9));
+            if(g_playerCount > 8){
+                taskIndex = int(rand(7,9));
+            }
+            TaskSequencer@ tasker = metagame.getHdTaskSequncerIndex(taskIndex);     
             CreateProjectile@ task1 = CreateProjectile(metagame,pos,pos,key1,0,factionId,rand_speed,2,1,0,true); // speed delay num in_delay vertival
-            CreateProjectile@ task2 = CreateProjectile(metagame,pos,pos,key2,2,factionId,rand_speed,2,spawnnum,10/spawnnum,true); // speed delay num in_delay vertival
+            CreateProjectile@ task2 = CreateProjectile(metagame,pos,pos,key2,2,factionId,rand_speed,2,spawnnum,8/spawnnum,true); // speed delay num in_delay vertival
             task2.setRandomRange(3,false);
             tasker.add(task1);
-            tasker2.add(task2);
+            tasker.add(task2);
             mark_time += 10;
         }
         if( caller_faction_name == "illum" && g_factionInfoBuck.getFidByName("Illuminate") == factionId){
@@ -271,13 +278,15 @@ void Alert_Spawn_new(Metagame@ metagame,int factionId, Vector3 position,int serv
 
             float shift_range = rand(0,0);
             float rand_speed = 1;
-            TaskSequencer@ tasker = metagame.getHdTaskSequncerIndex(4);   
-            TaskSequencer@ tasker2 = metagame.getHdTaskSequncerIndex(4);   
+            TaskSequencer@ tasker = metagame.getHdTaskSequncerIndex(10);    
+            if(isForce){
+                tasker = metagame.getVacantHdTaskSequncerIndex();   
+            }
             CreateProjectile@ task1 = CreateProjectile(metagame,pos,pos,key1,0,factionId,rand_speed,2,1,0,true); // speed delay num in_delay vertival
             CreateProjectile@ task2 = CreateProjectile(metagame,pos,pos,key2,0,factionId,rand_speed,2,spawnnum,0,true); // speed delay num in_delay vertival
             task2.setRandomRange(10,false);
             tasker.add(task1);
-            tasker2.add(task2);
+            tasker.add(task2);
             mark_time += 2.5;
         }
         if( caller_faction_name == "earth" && g_factionInfoBuck.getFidByName("Super Earth") == factionId){
@@ -537,11 +546,11 @@ class dynamic_alert : Tracker {
 
 
 
-        m_cd_time = m_cd_time - 3*m_server_difficulty_level;
-        m_cd_time = m_cd_time - 5*player_num;
+        m_cd_time = m_cd_time - 5*m_server_difficulty_level;
+        m_cd_time = m_cd_time - 30*player_num;
 
-        if(m_cd_time <= 180 - 5*m_server_difficulty_level/3){
-            m_cd_time = 180 - 5*m_server_difficulty_level/3 ; // level15 = min 5s   level9 = min 15s
+        if(m_cd_time <= 60 ){
+            m_cd_time = 60 ; // level15 = min 5s   level9 = min 15s
         }
         
         _report(m_metagame,"触发敌方警报，增援正在到达。增援CD="+m_cd_time);
@@ -630,7 +639,7 @@ class dynamic_alert : Tracker {
                 Vector3 position = stringToVector3(player.getStringAttribute("aim_target"));
                 int m_fid = g_factionInfoBuck.getFidByName("Bugs");
                 if(m_fid == -1){return;}
-                Alert_Spawn_new(m_metagame,m_fid,position,15);
+                Alert_Spawn_new(m_metagame,m_fid,position,g_server_difficulty_level,true);
             }
             if(message == "/callcyborgs"){
                 int m_pid = event.getIntAttribute("player_id");
@@ -639,7 +648,7 @@ class dynamic_alert : Tracker {
                 Vector3 position = stringToVector3(player.getStringAttribute("aim_target"));
                 int m_fid = g_factionInfoBuck.getFidByName("Cyborgs");
                 if(m_fid == -1){return;}
-                Alert_Spawn_new(m_metagame,m_fid,position,15);
+                Alert_Spawn_new(m_metagame,m_fid,position,g_server_difficulty_level,true);
             }
             if(message == "/callillum"){
                 int m_pid = event.getIntAttribute("player_id");
@@ -648,7 +657,7 @@ class dynamic_alert : Tracker {
                 Vector3 position = stringToVector3(player.getStringAttribute("aim_target"));
                 int m_fid = g_factionInfoBuck.getFidByName("Illuminate");
                 if(m_fid == -1){return;}
-                Alert_Spawn_new(m_metagame,m_fid,position,15);
+                Alert_Spawn_new(m_metagame,m_fid,position,g_server_difficulty_level,true);
             }
             if(message == "/calltest"){
                 int m_pid = event.getIntAttribute("player_id");
@@ -658,7 +667,7 @@ class dynamic_alert : Tracker {
                 int m_fid = g_factionInfoBuck.getFidByName("Super Earth");
                 _report(m_metagame,"SuperEarth fid="+m_fid);
                 if(m_fid == -1){return;}
-                Alert_Spawn_new(m_metagame,m_fid,position,15);
+                Alert_Spawn_new(m_metagame,m_fid,position,g_server_difficulty_level,true);
             }
             if(message == "/setspawntime"){
                 setSpawnTime();

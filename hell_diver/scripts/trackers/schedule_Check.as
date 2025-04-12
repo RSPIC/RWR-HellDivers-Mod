@@ -454,7 +454,7 @@ class schedule_Check : Tracker {
                             }else{
                                 // notify(metagame, "Help - Sabayon", dictionary(), "misc", pid, true, "Sabayon Help", 1.0);
                                 _notify(m_metagame,pid,"主武器必须搭配副手使用！武器已送至背包");
-                                addItemInBackpack(m_metagame,cid,"weapon","ex_imotekh_sec.weapon");
+                                addItemInBackpack(m_metagame,cid,"weapon","re_ex_imotekh_sec.weapon");
                                 g_vestInfoBuck.resetUpgrade(name);
                                 g_vestInfoBuck.removeInfo(name);
                                 editPlayerVest(metagame,cid,"helldivers_vest_1",4);//替换为默认甲

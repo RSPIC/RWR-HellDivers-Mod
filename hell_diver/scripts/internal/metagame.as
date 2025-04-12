@@ -62,6 +62,9 @@ class Metagame {
 		for(uint i=20;i>0;--i){
 			m_hd_taskSequencerArray.insertLast(TaskSequencer());
 			//id 6 服务于marker
+			//ID 7-9 服务虫族增援
+			//ID 10 服务于光能增援
+			//ID 11-12 服务于生化人增援
 		}
 		
 		resetTimer();

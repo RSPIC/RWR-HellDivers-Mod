@@ -843,6 +843,28 @@
         <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
         <capacity value="12" source="rank" source_value="0" />
     </projectile>
+    <!-- 1.10.1 -->
+    <projectile file="hd_hellpod_call.projectile" name="Kroos [Skin]" key="token_kroos.projectile" >
+        <hud_icon filename="token_kroos.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+        <sound class="result" key="other" fileref="acg_voice_clip_kroos.wav" pitch_variety="0" volume="1.0"/>
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="TEVI [Skin]" key="token_tevi.projectile" >
+        <hud_icon filename="token_tevi.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="AWP [Skin]" key="token_awp.projectile" >
+        <hud_icon filename="token_awp.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Fleet Commander [Skin]" key="token_fleet_commander.projectile" >
+        <hud_icon filename="token_fleet_commander.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
 
     <!-- 其他 -->
     <projectile file="hd_hellpod_call.projectile" name="Misono Mika[Skin]" key="token_misono_mika.projectile" >

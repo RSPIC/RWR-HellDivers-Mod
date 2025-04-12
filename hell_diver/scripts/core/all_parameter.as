@@ -170,10 +170,10 @@ dictionary projectile_eventkey = {
         // 空输部队
         {"hd_call_cqc_30",83},
         // 闪刀空投
-        {"acg_sky_striker_ace_orig_call_red",84},
-        {"acg_sky_striker_ace_orig_call_green",85},
-        {"acg_sky_striker_ace_orig_call_yellow",86},
-        {"acg_sky_striker_ace_orig_call_blue",87},
+        {"re_acg_sky_striker_ace_orig_call_red",84},
+        {"re_acg_sky_striker_ace_orig_call_green",85},
+        {"re_acg_sky_striker_ace_orig_call_yellow",86},
+        {"re_acg_sky_striker_ace_orig_call_blue",87},
         
         {"acg_sky_striker_ace_hayate_green_mode3",88},
         //  太空死灵 超时空立方体

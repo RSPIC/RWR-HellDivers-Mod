@@ -11,7 +11,7 @@ drop_count_factor_on_death="0.0"
 pulldown_in_air="40.0"
 >
 	<result class="notify_script" key="Observer" />
-    <trigger class="impact" time_to_live="0.1"/>
+    <trigger class="time" time_to_live="0.1"/>
     <rotation class="random" />
 	<model mesh_filename="" />
     <hud_icon filename="illuminate_icon.png" />
@@ -20,9 +20,9 @@ pulldown_in_air="40.0"
     <capacity value="0" source="rank" source_value="0.0" /> 
     <capacity value="9" source="rank" source_value="0.0" /> 
 	<inventory encumbrance="0.5" price="0.0" />
-    <effect class="result" key="terrain" ref="illum_spawn_ring" lighting="0"/>
-    <effect class="result" key="terrain" ref="yuuka_skill_pre_line_mod2" lighting="0"/>
-    <effect class="result" key="terrain" ref="yuuka_skill_pre_line_mod2_addon" lighting="0"/>
+    <effect class="activated" ref="illum_spawn_ring" lighting="0"/>
+    <effect class="activated" ref="yuuka_skill_pre_line_mod2" lighting="0"/>
+    <effect class="activated" ref="yuuka_skill_pre_line_mod2_addon" lighting="0"/>
         
 	<effect class="result" key="other" copy="terrain"/>
 	<effect class="result" key="static_object" copy="terrain" />
@@ -41,7 +41,7 @@ drop_count_factor_on_death="0.0"
 pulldown_in_air="40.0"
 >
 	<result class="notify_script" key="Watcher" />
-    <trigger class="impact" time_to_live="0.1"/>
+    <trigger class="time" time_to_live="0.1"/>
     <rotation class="random" />
 	<model mesh_filename="" />
     <hud_icon filename="illuminate_icon.png" />
@@ -50,9 +50,9 @@ pulldown_in_air="40.0"
     <capacity value="0" source="rank" source_value="0.0" /> 
     <capacity value="9" source="rank" source_value="0.0" /> 
 	<inventory encumbrance="0.5" price="0.0" />
-        <effect class="result" key="terrain" ref="illum_spawn_ring" lighting="0"/>
-<effect class="result" key="terrain" ref="yuuka_skill_pre_line_mod2" lighting="0"/>
-<effect class="result" key="terrain" ref="yuuka_skill_pre_line_mod2_addon" lighting="0"/>
+        <effect class="activated" ref="illum_spawn_ring" lighting="0"/>
+<effect class="activated" ref="yuuka_skill_pre_line_mod2" lighting="0"/>
+<effect class="activated" ref="yuuka_skill_pre_line_mod2_addon" lighting="0"/>
 	
 	<effect class="result" key="other" copy="terrain"/>
 	<effect class="result" key="static_object" copy="terrain" />
@@ -71,7 +71,7 @@ drop_count_factor_on_death="0.0"
 pulldown_in_air="40.0"
 >
 	<result class="notify_script" key="Hunter" />
-    <trigger class="impact" time_to_live="0.1"/>
+    <trigger class="time" time_to_live="0.1"/>
     <rotation class="random" />
 	<model mesh_filename="" />
     <hud_icon filename="illuminate_icon.png" />
@@ -80,9 +80,9 @@ pulldown_in_air="40.0"
     <capacity value="0" source="rank" source_value="0.0" /> 
     <capacity value="9" source="rank" source_value="0.0" /> 
 	<inventory encumbrance="0.5" price="0.0" />
-        <effect class="result" key="terrain" ref="illum_spawn_ring" lighting="0"/>
-<effect class="result" key="terrain" ref="yuuka_skill_pre_line_mod2" lighting="0"/>
-<effect class="result" key="terrain" ref="yuuka_skill_pre_line_mod2_addon" lighting="0"/>
+        <effect class="activated" ref="illum_spawn_ring" lighting="0"/>
+<effect class="activated" ref="yuuka_skill_pre_line_mod2" lighting="0"/>
+<effect class="activated" ref="yuuka_skill_pre_line_mod2_addon" lighting="0"/>
 	
 	<effect class="result" key="other" copy="terrain"/>
 	<effect class="result" key="static_object" copy="terrain" />
@@ -101,7 +101,7 @@ drop_count_factor_on_death="0.0"
 pulldown_in_air="40.0"
 >
 	<result class="notify_script" key="Apprentice" />
-    <trigger class="impact" time_to_live="0.1"/>
+    <trigger class="time" time_to_live="0.1"/>
     <rotation class="random" />
 	<model mesh_filename="" />
     <hud_icon filename="illuminate_icon.png" />
@@ -110,9 +110,9 @@ pulldown_in_air="40.0"
     <capacity value="0" source="rank" source_value="0.0" /> 
     <capacity value="9" source="rank" source_value="0.0" /> 
 	<inventory encumbrance="0.5" price="0.0" />
-        <effect class="result" key="terrain" ref="illum_spawn_ring" lighting="0"/>
-<effect class="result" key="terrain" ref="yuuka_skill_pre_line_mod2" lighting="0"/>
-<effect class="result" key="terrain" ref="yuuka_skill_pre_line_mod2_addon" lighting="0"/>
+        <effect class="activated" ref="illum_spawn_ring" lighting="0"/>
+<effect class="activated" ref="yuuka_skill_pre_line_mod2" lighting="0"/>
+<effect class="activated" ref="yuuka_skill_pre_line_mod2_addon" lighting="0"/>
 	
 	<effect class="result" key="other" copy="terrain"/>
 	<effect class="result" key="static_object" copy="terrain" />
@@ -131,7 +131,7 @@ drop_count_factor_on_death="0.0"
 pulldown_in_air="40.0"
 >
 	<result class="notify_script" key="Tripod" />
-    <trigger class="impact" time_to_live="0.1"/>
+    <trigger class="time" time_to_live="0.1"/>
     <rotation class="random" />
 	<model mesh_filename="" />
     <hud_icon filename="illuminate_icon.png" />
@@ -140,9 +140,9 @@ pulldown_in_air="40.0"
     <capacity value="0" source="rank" source_value="0.0" /> 
     <capacity value="9" source="rank" source_value="0.0" /> 
 	<inventory encumbrance="0.5" price="0.0" />
-        <effect class="result" key="terrain" ref="illum_spawn_ring" lighting="0"/>
-<effect class="result" key="terrain" ref="yuuka_skill_pre_line_mod2" lighting="0"/>
-<effect class="result" key="terrain" ref="yuuka_skill_pre_line_mod2_addon" lighting="0"/>
+        <effect class="activated" ref="illum_spawn_ring" lighting="0"/>
+<effect class="activated" ref="yuuka_skill_pre_line_mod2" lighting="0"/>
+<effect class="activated" ref="yuuka_skill_pre_line_mod2_addon" lighting="0"/>
 	
 	<effect class="result" key="other" copy="terrain"/>
 	<effect class="result" key="static_object" copy="terrain" />
@@ -161,7 +161,7 @@ drop_count_factor_on_death="0.0"
 pulldown_in_air="40.0"
 >
 	<result class="notify_script" key="Strider" />
-    <trigger class="impact" time_to_live="0.1"/>
+    <trigger class="time" time_to_live="0.1"/>
     <rotation class="random" />
 	<model mesh_filename="" />
     <hud_icon filename="illuminate_icon.png" />
@@ -170,9 +170,9 @@ pulldown_in_air="40.0"
     <capacity value="0" source="rank" source_value="0.0" /> 
     <capacity value="9" source="rank" source_value="0.0" /> 
 	<inventory encumbrance="0.5" price="0.0" />
-        <effect class="result" key="terrain" ref="illum_spawn_ring" lighting="0"/>
-<effect class="result" key="terrain" ref="yuuka_skill_pre_line_mod2" lighting="0"/>
-<effect class="result" key="terrain" ref="yuuka_skill_pre_line_mod2_addon" lighting="0"/>
+        <effect class="activated" ref="illum_spawn_ring" lighting="0"/>
+<effect class="activated" ref="yuuka_skill_pre_line_mod2" lighting="0"/>
+<effect class="activated" ref="yuuka_skill_pre_line_mod2_addon" lighting="0"/>
 	
 	<effect class="result" key="other" copy="terrain"/>
 	<effect class="result" key="static_object" copy="terrain" />
@@ -191,7 +191,7 @@ drop_count_factor_on_death="0.0"
 pulldown_in_air="40.0"
 >
 	<result class="notify_script" key="Obelisk" />
-    <trigger class="impact" time_to_live="0.1"/>
+    <trigger class="time" time_to_live="0.1"/>
     <rotation class="random" />
 	<model mesh_filename="" />
     <hud_icon filename="illuminate_icon.png" />
@@ -200,9 +200,9 @@ pulldown_in_air="40.0"
     <capacity value="0" source="rank" source_value="0.0" /> 
     <capacity value="9" source="rank" source_value="0.0" /> 
 	<inventory encumbrance="0.5" price="0.0" />
-        <effect class="result" key="terrain" ref="illum_spawn_ring" lighting="0"/>
-<effect class="result" key="terrain" ref="yuuka_skill_pre_line_mod2" lighting="0"/>
-<effect class="result" key="terrain" ref="yuuka_skill_pre_line_mod2_addon" lighting="0"/>
+        <effect class="activated" ref="illum_spawn_ring" lighting="0"/>
+<effect class="activated" ref="yuuka_skill_pre_line_mod2" lighting="0"/>
+<effect class="activated" ref="yuuka_skill_pre_line_mod2_addon" lighting="0"/>
 	
 	<effect class="result" key="other" copy="terrain"/>
 	<effect class="result" key="static_object" copy="terrain" />
@@ -221,7 +221,7 @@ drop_count_factor_on_death="0.0"
 pulldown_in_air="40.0"
 >
 	<result class="notify_script" key="Illusionist" />
-    <trigger class="impact" time_to_live="0.1"/>
+    <trigger class="time" time_to_live="0.1"/>
     <rotation class="random" />
 	<model mesh_filename="" />
     <hud_icon filename="illuminate_icon.png" />
@@ -230,9 +230,9 @@ pulldown_in_air="40.0"
     <capacity value="0" source="rank" source_value="0.0" /> 
     <capacity value="9" source="rank" source_value="0.0" /> 
 	<inventory encumbrance="0.5" price="0.0" />
-        <effect class="result" key="terrain" ref="illum_spawn_ring" lighting="0"/>
-<effect class="result" key="terrain" ref="yuuka_skill_pre_line_mod2" lighting="0"/>
-<effect class="result" key="terrain" ref="yuuka_skill_pre_line_mod2_addon" lighting="0"/>
+        <effect class="activated" ref="illum_spawn_ring" lighting="0"/>
+<effect class="activated" ref="yuuka_skill_pre_line_mod2" lighting="0"/>
+<effect class="activated" ref="yuuka_skill_pre_line_mod2_addon" lighting="0"/>
 	
 	<effect class="result" key="other" copy="terrain"/>
 	<effect class="result" key="static_object" copy="terrain" />
@@ -251,7 +251,7 @@ drop_count_factor_on_death="0.0"
 pulldown_in_air="40.0"
 >
 	<result class="notify_script" key="CouncilMember" />
-    <trigger class="impact" time_to_live="0.1"/>
+    <trigger class="time" time_to_live="0.1"/>
     <rotation class="random" />
 	<model mesh_filename="" />
     <hud_icon filename="illuminate_icon.png" />
@@ -260,9 +260,9 @@ pulldown_in_air="40.0"
     <capacity value="0" source="rank" source_value="0.0" /> 
     <capacity value="9" source="rank" source_value="0.0" /> 
 	<inventory encumbrance="0.5" price="0.0" />
-        <effect class="result" key="terrain" ref="illum_spawn_ring" lighting="0"/>
-<effect class="result" key="terrain" ref="yuuka_skill_pre_line_mod2" lighting="0"/>
-<effect class="result" key="terrain" ref="yuuka_skill_pre_line_mod2_addon" lighting="0"/>
+        <effect class="activated" ref="illum_spawn_ring" lighting="0"/>
+<effect class="activated" ref="yuuka_skill_pre_line_mod2" lighting="0"/>
+<effect class="activated" ref="yuuka_skill_pre_line_mod2_addon" lighting="0"/>
 	
 	<effect class="result" key="other" copy="terrain"/>
 	<effect class="result" key="static_object" copy="terrain" />

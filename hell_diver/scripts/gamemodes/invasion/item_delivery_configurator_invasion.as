@@ -338,6 +338,11 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			ScoredResource("token_sakurakouji_runa.projectile","projectile",1.0f,4),	
 			ScoredResource("token_iron_maiden.projectile","projectile",1.0f,4),	
 			ScoredResource("token_goldenglow_swim.projectile","projectile",1.0f,4),	
+			// 1.10.1
+			ScoredResource("token_kroos.projectile","projectile",1.0f,4),
+			ScoredResource("token_tevi.projectile","projectile",1.0f,4),
+			ScoredResource("token_awp.projectile","projectile",1.0f,4),
+			ScoredResource("token_fleet_commander.projectile","projectile",1.0f,4),
 
 			//AI类信物
 			ScoredResource("ai_token_asuma_toki.projectile","projectile",1.0f,2)

@@ -233,7 +233,7 @@ class hd_side_mission : Tracker{
                                 }
                                 // 周围发闪刀碎片
                                 array<const XmlElement@> factions = getFactions(m_metagame);
-                                for (uint f = 0; f < factions.size() && f < 1; ++f){ //跳过自身阵营查询
+                                for (uint f = 0; f < factions.size() && f < 1; ++f){ //自身阵营查询
                                 int ATKTimes = 1;
                                 if(ATKTimes <= 0){break;}
                                     const XmlElement@ faction = factions[f];
@@ -242,14 +242,14 @@ class hd_side_mission : Tracker{
                                     array<const XmlElement@>@ soldiers = getCharactersNearPosition(m_metagame, position, t_fid, 40.0f);				
                                     int s_size = soldiers.length();
                                     if (s_size == 0) continue;
-                                    while(ATKTimes > 0 && soldiers.length() > 0){
-                                        ATKTimes--;
+                                    while(soldiers.length() > 0){
                                         int s_i = rand(0,soldiers.length()-1);
                                         int soldier_id = soldiers[s_i].getIntAttribute("id");
                                         soldiers.removeAt(s_i);
                                         int m_pid = g_playerInfoBuck.getPidByCid(soldier_id);
                                         if(m_pid >= 0){
-                                            if(g_firstUseInfoBuck.isFirst(name,"fix_radar_tower")){
+                                            string name2 = g_playerInfoBuck.getNameByCid(soldier_id);
+                                            if(g_firstUseInfoBuck.isFirst(name2,"fix_radar_tower")){
                                                 addItemInBackpack(m_metagame,cid,"carry_item","acg_sky_striker_ace_clips");
                                             }
                                         }

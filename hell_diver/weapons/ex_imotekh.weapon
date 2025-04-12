@@ -34,7 +34,7 @@ key="re_ex_imotekh.weapon"
 	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_effect_drop_target.projectile" 
 	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
 
-	<next_in_chain key="ex_imotekh_cube.weapon" share_ammo="0" /> 
+	<next_in_chain key="re_ex_imotekh_cube.weapon" share_ammo="0" /> 
 
 	<!--武器模型和HUD-->
 	<weak_hand_hold offset="0.0" /> <!--模型X轴偏移-->
@@ -94,21 +94,10 @@ key="re_ex_imotekh.weapon"
 
 		<trigger class="time" time_to_live="0.4"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
-	
-		<!--命中音效-->
 
-		<!--命中特效-->
-		<!--
-		<effect class="result" key="terrain" ref="" lighting="0"/>
-		<effect class="activated" ref="general_weapon_activated_bullet_light" />
-		-->
-		<effect class="result" key="terrain" ref="general_weapon_result_hitspot" lighting="0"/>
 		<effect class="activated" ref="401_imotekh_activated_gauss_smoke" lighting="0"/>
 		<effect class="activated" ref="401_imotekh_activated_gauss_random_spot" lighting="0"/>
 
-		<effect class="result" key="terrain" ref="401_imotekh_hit_gauss_random_spot" lighting="0"/>
-		<effect class="result" key="terrain" ref="401_imotekh_hit_gauss_smoke" lighting="0"/>
-		<effect class="result" key="terrain" ref="401_vabow_hit_dark_ball" lighting="0" post_processing="1"/>
 
 		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
 		<sound class="result" key="terrain" copy="other" />
@@ -116,17 +105,6 @@ key="re_ex_imotekh.weapon"
 		<sound class="result" key="vehicle" copy="other" />
 		<sound class="result" key="character" copy="other" />
 		<sound class="result" key="shield" copy="other" />
-		<effect class="result" key="other" copy="terrain"/>
-		<effect class="result" key="static_object" copy="terrain" />
-		<effect class="result" key="character" copy="terrain" />
-		<effect class="result" key="shield" copy="terrain" />			
-		<effect class="result" key="vehicle" copy="terrain" />			
-		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
-		
 		<!--尾迹组-->
 		<trail probability="1" key="ex_imotekh_trail"/>	
     </projectile>
@@ -181,7 +159,7 @@ key="re_ex_imotekh_cube.weapon"
 	stab_enabled="1" 
 	stab_range="3.6" 
 	/> 
-	<next_in_chain key="ex_imotekh.weapon" share_ammo="0" /> 
+	<next_in_chain key="re_ex_imotekh.weapon" share_ammo="0" /> 
 
 	<drop_on_death_result class="spawn" instance_class="projectile" instance_key="hd_effect_drop_target.projectile" 
 	min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
@@ -229,7 +207,6 @@ key="re_ex_imotekh_cube.weapon"
 	<sound class="impact" fileref="rifle_drop.wav" /><!--武器落地音效-->
 
 	<!--武器携带量，必须从value=0开始设置，value单位为万xp-->
-
 	<ballistics 
     curve_height="16" 
     near_far_distance="0" 
@@ -256,9 +233,9 @@ key="re_ex_imotekh_cube.weapon"
 		<effect class="activated" ref="401_imotekh_tesseract_activated_shrink_light" lighting="0"/>
 		<effect class="activated" ref="401_imotekh_activated_gauss_random_spot" lighting="0"/>
 
-		<effect class="result" key="terrain" ref="401_imotekh_hit_gauss_random_spot" lighting="0"/>
+		<!-- <effect class="result" key="terrain" ref="401_imotekh_hit_gauss_random_spot" lighting="0"/>
 		<effect class="result" key="terrain" ref="401_imotekh_hit_gauss_smoke" lighting="0"/>
-		<effect class="result" key="terrain" ref="401_vabow_hit_dark_ball" lighting="0" post_processing="1"/>
+		<effect class="result" key="terrain" ref="401_vabow_hit_dark_ball" lighting="0" post_processing="1"/> -->
 
 		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
 		<sound class="result" key="other" fileref="ex_magic_cube_blast.wav" pitch_variety="0.1" volume="10.0"/>
@@ -396,10 +373,6 @@ key="re_ex_imotekh_sec.weapon"
 		<effect class="activated" ref="401_imotekh_activated_gauss_smoke" lighting="0"/>
 		<effect class="activated" ref="401_imotekh_activated_gauss_random_spot" lighting="0"/>
 
-		<!-- <effect class="result" key="terrain" ref="401_imotekh_hit_gauss_random_spot" lighting="0"/>
-		<effect class="result" key="terrain" ref="401_imotekh_hit_gauss_smoke" lighting="0"/>
-		<effect class="result" key="terrain" ref="401_vabow_hit_dark_ball" lighting="0" post_processing="1"/> -->
-
 		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
 		<sound class="result" key="terrain" copy="other" />
 		<sound class="result" key="static_object" copy="other" />
@@ -528,7 +501,7 @@ key="ex_deathMark.weapon"
     <projectile file="hd_general_spawn.projectile" pulldown_in_air="6" can_be_detected_by_footmen="1" 
 	time_to_live="0.6" can_be_detected_by_driver="1" can_be_disarmed="0" > 
 
-		<result class="blast" radius="3" damage="3" push="1" decal="0" character_state="unwound" faction_compare="not_equal"/>
+		<result class="blast" radius="3" damage="3" push="0.5" decal="0" character_state="unwound" faction_compare="not_equal"/>
 
 		<trigger class="impact" time_to_live="0.4"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
@@ -542,7 +515,6 @@ key="ex_deathMark.weapon"
 		-->
 		<effect class="result" key="terrain" ref="general_weapon_result_hitspot" lighting="0"/>
 		<effect class="activated" ref="401_imotekh_activated_gauss_random_spot" lighting="0"/>
-
 
 		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
 		<sound class="result" key="terrain" copy="other" />

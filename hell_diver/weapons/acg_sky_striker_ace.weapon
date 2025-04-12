@@ -4,7 +4,7 @@
 
 <weapon 
 file="_rare_weapon_mk5_re.base" 
-key="acg_sky_striker_ace_orig_call_green.weapon" 
+key="re_acg_sky_striker_ace_orig_call_green.weapon" 
 > 
     <specification 	
     accuracy_factor="1" 
@@ -29,7 +29,7 @@ key="acg_sky_striker_ace_orig_call_green.weapon"
 	cooldown_end="0.0"
 	/> 
 	<!--多模式-->
-    <next_in_chain key="acg_sky_striker_ace_orig_call_red.weapon" share_ammo="0" /> 
+    <next_in_chain key="re_acg_sky_striker_ace_orig_call_red.weapon" share_ammo="0" /> 
 
 	<!--武器模型和HUD-->
 	<inventory encumbrance="5.0" buy_price="0.0" sell_price="0" />
@@ -94,19 +94,10 @@ key="acg_sky_striker_ace_orig_call_green.weapon"
 			direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
 		<result class="notify_script" key="vehicle_recycle" />
 		-->
-		<result class="notify_script" key="acg_sky_striker_ace_orig_call_green" />
+		<result class="notify_script" key="re_acg_sky_striker_ace_orig_call_green" />
 		<trigger class="time" time_to_live="0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
-		
-		<!--命中音效-->
-		<sound class="result" key="other" fileref="rifle_drop.wav" pitch_variety="0.03" volume="0.0" />
-		
-		<!--命中特效-->
-		<!--
-		<effect class="result" key="terrain" ref="" lighting="0" post_processing="0"/>
-		<effect class="activated" ref="" />
-		-->
 
 		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
 		<sound class="result" key="terrain" copy="other" />
@@ -114,17 +105,7 @@ key="acg_sky_striker_ace_orig_call_green.weapon"
 		<sound class="result" key="vehicle" copy="other" />
 		<sound class="result" key="character" copy="other" />
 		<sound class="result" key="shield" copy="other" />
-		<effect class="result" key="other" copy="terrain"/>
-		<effect class="result" key="static_object" copy="terrain" />
-		<effect class="result" key="character" copy="terrain" />
-		<effect class="result" key="shield" copy="terrain" />			
-		<effect class="result" key="vehicle" copy="terrain" />			
-		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
-		
+
 		<!--尾迹组-->
 		<trail probability="1" key=""/>	
     </projectile>
@@ -150,7 +131,7 @@ key="acg_sky_striker_ace_orig_call_green.weapon"
 </weapon>
 <weapon 
 file="_rare_weapon_mk5_re.base" 
-key="acg_sky_striker_ace_orig_call_red.weapon" 
+key="re_acg_sky_striker_ace_orig_call_red.weapon" 
 > 
     <specification 	
     accuracy_factor="1" 
@@ -175,7 +156,7 @@ key="acg_sky_striker_ace_orig_call_red.weapon"
 	cooldown_end="0.0"
 	/> 
 	<!--多模式-->
-    <next_in_chain key="acg_sky_striker_ace_orig_call_yellow.weapon" share_ammo="0" /> 
+    <next_in_chain key="re_acg_sky_striker_ace_orig_call_yellow.weapon" share_ammo="0" /> 
 
 	<!--武器模型和HUD-->
 	<inventory encumbrance="5.0" buy_price="0.0" sell_price="0" />
@@ -239,37 +220,11 @@ key="acg_sky_striker_ace_orig_call_red.weapon"
 			direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
 		<result class="notify_script" key="vehicle_recycle" />
 		-->
-		<result class="notify_script" key="acg_sky_striker_ace_orig_call_red" />
+		<result class="notify_script" key="re_acg_sky_striker_ace_orig_call_red" />
 		<trigger class="time" time_to_live="0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
-		
-		<!--命中音效-->
-		<sound class="result" key="other" fileref="rifle_drop.wav" pitch_variety="0.03" volume="0.0" />
-		
-		<!--命中特效-->
-		<!--
-		<effect class="result" key="terrain" ref="" lighting="0" post_processing="0"/>
-		<effect class="activated" ref="" />
-		-->
 
-		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
-		<sound class="result" key="terrain" copy="other" />
-		<sound class="result" key="static_object" copy="other" />
-		<sound class="result" key="vehicle" copy="other" />
-		<sound class="result" key="character" copy="other" />
-		<sound class="result" key="shield" copy="other" />
-		<effect class="result" key="other" copy="terrain"/>
-		<effect class="result" key="static_object" copy="terrain" />
-		<effect class="result" key="character" copy="terrain" />
-		<effect class="result" key="shield" copy="terrain" />			
-		<effect class="result" key="vehicle" copy="terrain" />			
-		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
-		
 		<!--尾迹组-->
 		<trail probability="1" key=""/>	
     </projectile>
@@ -295,7 +250,7 @@ key="acg_sky_striker_ace_orig_call_red.weapon"
 </weapon>
 <weapon 
 file="_rare_weapon_mk5_re.base" 
-key="acg_sky_striker_ace_orig_call_yellow.weapon" 
+key="re_acg_sky_striker_ace_orig_call_yellow.weapon" 
 > 
     <specification 	
     accuracy_factor="1" 
@@ -320,7 +275,7 @@ key="acg_sky_striker_ace_orig_call_yellow.weapon"
 	cooldown_end="0.0"
 	/> 
 	<!--多模式-->
-    <next_in_chain key="acg_sky_striker_ace_orig_call_blue.weapon" share_ammo="0" /> 
+    <next_in_chain key="re_acg_sky_striker_ace_orig_call_blue.weapon" share_ammo="0" /> 
 
 	<!--武器模型和HUD-->
 	<inventory encumbrance="5.0" buy_price="0.0" sell_price="0" />
@@ -384,36 +339,13 @@ key="acg_sky_striker_ace_orig_call_yellow.weapon"
 			direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
 		<result class="notify_script" key="vehicle_recycle" />
 		-->
-		<result class="notify_script" key="acg_sky_striker_ace_orig_call_yellow" />
+		<result class="notify_script" key="re_acg_sky_striker_ace_orig_call_yellow" />
 		<trigger class="time" time_to_live="0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
 		
 		<!--命中音效-->
 		<sound class="result" key="other" fileref="rifle_drop.wav" pitch_variety="0.03" volume="0.0" />
-		
-		<!--命中特效-->
-		<!--
-		<effect class="result" key="terrain" ref="" lighting="0" post_processing="0"/>
-		<effect class="activated" ref="" />
-		-->
-
-		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
-		<sound class="result" key="terrain" copy="other" />
-		<sound class="result" key="static_object" copy="other" />
-		<sound class="result" key="vehicle" copy="other" />
-		<sound class="result" key="character" copy="other" />
-		<sound class="result" key="shield" copy="other" />
-		<effect class="result" key="other" copy="terrain"/>
-		<effect class="result" key="static_object" copy="terrain" />
-		<effect class="result" key="character" copy="terrain" />
-		<effect class="result" key="shield" copy="terrain" />			
-		<effect class="result" key="vehicle" copy="terrain" />			
-		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
 		
 		<!--尾迹组-->
 		<trail probability="1" key=""/>	
@@ -440,7 +372,7 @@ key="acg_sky_striker_ace_orig_call_yellow.weapon"
 </weapon>
 <weapon 
 file="_rare_weapon_mk5_re.base" 
-key="acg_sky_striker_ace_orig_call_blue.weapon" 
+key="re_acg_sky_striker_ace_orig_call_blue.weapon" 
 > 
     <specification 	
     accuracy_factor="1" 
@@ -465,7 +397,7 @@ key="acg_sky_striker_ace_orig_call_blue.weapon"
 	cooldown_end="0.0"
 	/> 
 	<!--多模式-->
-    <next_in_chain key="acg_sky_striker_ace_orig_call_green.weapon" share_ammo="0" /> 
+    <next_in_chain key="re_acg_sky_striker_ace_orig_call_green.weapon" share_ammo="0" /> 
 
 	<!--武器模型和HUD-->
 	<inventory encumbrance="5.0" buy_price="0.0" sell_price="0" />
@@ -529,37 +461,11 @@ key="acg_sky_striker_ace_orig_call_blue.weapon"
 			direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
 		<result class="notify_script" key="vehicle_recycle" />
 		-->
-		<result class="notify_script" key="acg_sky_striker_ace_orig_call_blue" />
+		<result class="notify_script" key="re_acg_sky_striker_ace_orig_call_blue" />
 		<trigger class="time" time_to_live="0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
-		
-		<!--命中音效-->
-		<sound class="result" key="other" fileref="rifle_drop.wav" pitch_variety="0.03" volume="0.0" />
-		
-		<!--命中特效-->
-		<!--
-		<effect class="result" key="terrain" ref="" lighting="0" post_processing="0"/>
-		<effect class="activated" ref="" />
-		-->
 
-		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
-		<sound class="result" key="terrain" copy="other" />
-		<sound class="result" key="static_object" copy="other" />
-		<sound class="result" key="vehicle" copy="other" />
-		<sound class="result" key="character" copy="other" />
-		<sound class="result" key="shield" copy="other" />
-		<effect class="result" key="other" copy="terrain"/>
-		<effect class="result" key="static_object" copy="terrain" />
-		<effect class="result" key="character" copy="terrain" />
-		<effect class="result" key="shield" copy="terrain" />			
-		<effect class="result" key="vehicle" copy="terrain" />			
-		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
-		
 		<!--尾迹组-->
 		<trail probability="1" key=""/>	
     </projectile>
@@ -982,23 +888,6 @@ key="acg_sky_striker_ace_hayate_green_mode3.weapon"
 		<rotation class="motion" /><!--参数：motion、random-->
 	
 
-		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
-		<sound class="result" key="terrain" copy="other" />
-		<sound class="result" key="static_object" copy="other" />
-		<sound class="result" key="vehicle" copy="other" />
-		<sound class="result" key="character" copy="other" />
-		<sound class="result" key="shield" copy="other" />
-		<effect class="result" key="other" copy="terrain"/>
-		<effect class="result" key="static_object" copy="terrain" />
-		<effect class="result" key="character" copy="terrain" />
-		<effect class="result" key="shield" copy="terrain" />			
-		<effect class="result" key="vehicle" copy="terrain" />			
-		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
-		
 		<!--尾迹组-->
 		<trail probability="1" key=""/>	
     </projectile>
@@ -1268,51 +1157,17 @@ key="acg_sky_striker_ace_kagari_red_mode2.weapon"
 	<!--弹头相关，此处代码优先级高，会覆写file指定的文件-->
     <projectile file="hd_general_spawn_no_effect.projectile" pulldown_in_air="0.1" can_be_detected_by_footmen="1" 
 	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0"> 
-	
-		<!--
-		<result class="blast" radius="6.8" damage="0.2" push="0" decal="0" character_state="death"  />
-		<result class="spawn" instance_class="projectile" instance_key="rx1_railgun_ap.projectile" 
-		min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
-			offset"x y z 生成位置偏差" 
-			position_spread="水平面随机生成位置 竖直面随机生成位置" 
-			direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
-		<result class="notify_script" key="vehicle_recycle" />
-		-->
+
 		<result class="spawn" instance_class="projectile" instance_key="acg_sky_striker_ace_kagari_red_damage_mode2.projectile" 
-		min_amount="5" max_amount="6" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
+		min_amount="5" max_amount="5" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
 		<trigger class="impact" time_to_live="1.15"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
 		
-		<!--命中音效-->
-		<sound class="result" key="other" fileref="burn.wav" pitch_variety="0.03" volume="0.0" />
-
 		<effect class="activated" ref="fiammetta_activated_trail_01"/>
 		<effect class="activated" ref="acg_sky_striker_ace_kagari_red_fire_activated_01"/>
 
-		<!--命中特效-->
-		<!--
-		<effect class="result" key="terrain" ref="" lighting="0" post_processing="0"/>
-		<effect class="activated" ref="" />
-		-->
 
-		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
-		<sound class="result" key="terrain" copy="other" />
-		<sound class="result" key="static_object" copy="other" />
-		<sound class="result" key="vehicle" copy="other" />
-		<sound class="result" key="character" copy="other" />
-		<sound class="result" key="shield" copy="other" />
-		<effect class="result" key="other" copy="terrain"/>
-		<effect class="result" key="static_object" copy="terrain" />
-		<effect class="result" key="character" copy="terrain" />
-		<effect class="result" key="shield" copy="terrain" />			
-		<effect class="result" key="vehicle" copy="terrain" />			
-		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
-		
 		<!--尾迹组-->
 		<trail probability="1" key=""/>	
     </projectile>
@@ -1421,46 +1276,11 @@ key="acg_sky_striker_ace_kaina_yellow.weapon"
     <projectile file="hd_general_spawn_no_effect.projectile" pulldown_in_air="4" can_be_detected_by_footmen="1" 
 	time_to_live="3" can_be_detected_by_driver="1" can_be_disarmed="0"> 
 	
-		<!--
-		<result class="blast" radius="6.8" damage="0.2" push="0" decal="0" character_state="death"  />
-		<result class="spawn" instance_class="projectile" instance_key="rx1_railgun_ap.projectile" 
-		min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />	
-			offset"x y z 生成位置偏差" 
-			position_spread="水平面随机生成位置 竖直面随机生成位置" 
-			direction_spread="圆环方向随机散射速度（正负不影响） 垂直方向随机速度（正向上）数值大小敏感"
-		<result class="notify_script" key="vehicle_recycle" />
-		-->
-		<result class="blast" radius="9.0" damage="1000" push="0.7" decal="0" character_state="wound" faction_compare="not_equal"  />
+		<result class="blast" radius="0.0" damage="0" push="0.7" decal="0" character_state="wound" faction_compare="not_equal"  />
 		<trigger class="time" time_to_live="0.9"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 		<collision class="sticky" /><!--是否设置粘性，否就删去该段-->
-		
-		<!--命中音效-->
-		<sound class="result" key="other" fileref="rifle_drop.wav" pitch_variety="0.03" volume="0.0" />
-		
-		<!--命中特效-->
-		<!--
-		<effect class="result" key="terrain" ref="" lighting="0" post_processing="0"/>
-		<effect class="activated" ref="" />
-		-->
-
-		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
-		<sound class="result" key="terrain" copy="other" />
-		<sound class="result" key="static_object" copy="other" />
-		<sound class="result" key="vehicle" copy="other" />
-		<sound class="result" key="character" copy="other" />
-		<sound class="result" key="shield" copy="other" />
-		<effect class="result" key="other" copy="terrain"/>
-		<effect class="result" key="static_object" copy="terrain" />
-		<effect class="result" key="character" copy="terrain" />
-		<effect class="result" key="shield" copy="terrain" />			
-		<effect class="result" key="vehicle" copy="terrain" />			
-		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
-		
+	
 		<!--尾迹组-->
 		<trail probability="1" key=""/>	
     </projectile>
@@ -1821,31 +1641,11 @@ key="acg_sky_striker_ace_shizuku_blue_mode2.weapon"
 		<result class="hit" kill_probability="1.0" 
 		kill_probability_offset_on_successful_hit="8"
 		kill_decay_start_time="0" kill_decay_end_time="0.2" character_state="wound"/>
-		<!-- damage 400/900center use average 650-->
-		<!-- 30m max range, use 36m / 600speed-->
-		<!-- 0.05 RT time | 20 projectile/per s -->
-		<!-- 重穿 dps=120/s -->
 		<trigger class="time" time_to_live="0"  /><!--class为time时，ttl生效；遥控为remote_detonate-->
 		<rotation class="motion" /><!--参数：motion、random-->
 	
 	
-		<!--copy组，需要命中不同对象产生不同音效或特效可修改这里-->
-		<sound class="result" key="terrain" copy="other" />
-		<sound class="result" key="static_object" copy="other" />
-		<sound class="result" key="vehicle" copy="other" />
-		<sound class="result" key="character" copy="other" />
-		<sound class="result" key="shield" copy="other" />
-		<effect class="result" key="other" copy=""/>
-		<effect class="result" key="static_object" copy="terrain" />
-		<effect class="result" key="character" copy="" />
-		<effect class="result" key="shield" copy="terrain" />			
-		<effect class="result" key="vehicle" copy="terrain" />			
-		<effect class="result" key="vehicle" tag="sandbag" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="deco_car" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_thin" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_heavy" copy="terrain" use_surface_color="0" />
-		<effect class="result" key="vehicle" tag="metal_dumpster" copy="terrain" use_surface_color="0" />
-		
+
 		<!--尾迹组-->
 		<trail probability="1" key=""/>	
     </projectile>

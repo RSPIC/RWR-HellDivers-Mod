@@ -153,6 +153,9 @@ dictionary banned_stash_item = {
 		{"t90m3_call.projectile","projectile"},
 		{"ex_sherman_call.projectile","projectile"},
 		{"mtlb_2b9_call.projectile","projectile"},
+		{"ex_grenade_magic_cube.projectile","projectile"},
+		{"mc_beacon_script.carry_item","carry_item"},
+		{"hd_offensive_radar_tower_laser.projectile","projectile"},
 
         // 占位的
         {"666",-1}

@@ -131,6 +131,13 @@
 	</model>
 	<model filename="ex_exo_telemon.xml"><requirement class="weapon" slot="0" key="re_ex_exo_telemon_cannon.weapon"/>
 	</model>
+	<!-- 伊莫特克 -->
+	<model filename="ex_emotekh.xml"><requirement class="weapon" slot="0" key="re_ex_imotekh.weapon"/>
+	</model>
+	<model filename="ex_emotekh.xml"><requirement class="weapon" slot="0" key="re_ex_imotekh_sec.weapon"/>
+	</model>
+	<model filename="ex_emotekh.xml"><requirement class="weapon" slot="0" key="re_ex_imotekh_cube.weapon"/>
+	</model>
 
 	<model filename="hdivers_cqc_30.xml"><requirement class="weapon" slot="1" key="hd_side_cqc_30_stun_baton.weapon"/>
 	</model>

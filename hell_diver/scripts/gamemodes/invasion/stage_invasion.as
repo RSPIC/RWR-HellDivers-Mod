@@ -215,16 +215,16 @@ class Stage {
 
 	// --------------------------------------------
 	protected void appendResources(XmlElement@ mapConfig) const {
-		int time = 0;
-		g_userCountInfoBuck.getCount("admin","ServerRestartTime",time);
-		if(time >= 2){
-			_log("ServerRestart Ready, load error resource");
-			{ XmlElement e("weapon");		e.setStringAttribute("file", "debug/null.xml"); mapConfig.appendChild(e); }
-			return;
-		}else{
-			g_userCountInfoBuck.addCount("admin","ServerRestartTime",1);
-			_log("ServerRestartTime="+time);
-		}
+		// int time = 0;
+		// g_userCountInfoBuck.getCount("admin","ServerRestartTime",time);
+		// if(time >= 2){
+		// 	_log("ServerRestart Ready, load error resource");
+		// 	{ XmlElement e("weapon");		e.setStringAttribute("file", "debug/null.xml"); mapConfig.appendChild(e); }
+		// 	return;
+		// }else{
+		// 	g_userCountInfoBuck.addCount("admin","ServerRestartTime",1);
+		// 	_log("ServerRestartTime="+time);
+		// }
 		if(g_fastScriptDebug){
 			{ XmlElement e("weapon");		e.setStringAttribute("file", "debug/debug_all_weapons.xml"); mapConfig.appendChild(e); }
 			{ XmlElement e("projectile");	e.setStringAttribute("file", "debug/debug_all_throwables.xml"); mapConfig.appendChild(e); }

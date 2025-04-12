@@ -307,7 +307,11 @@ dictionary canStoreItem = {
     {"token_sakurakouji_runa.projectile","樱小路露娜 [信物]"},
     {"token_iron_maiden.projectile","艾恩梅德 [信物]"},
     {"token_goldenglow_swim.projectile","澄闪 泳装[信物]"},
-
+    // 1.10.1
+    {"token_kroos.projectile","Kroos [信物]"},
+    {"token_tevi.projectile","TEVI 采薇[信物]"},
+    {"token_awp.projectile","AWP [信物]"},
+    {"token_fleet_commander.projectile","舰队司令[信物]"},
 
     {"wiesel_tow_call.projectile","[鼬鼠 [陶氏]]"},
     {"lav6_call.projectile","[LAV-6]"},
@@ -1121,19 +1125,19 @@ array<stashExchangeList@> ExchangeLists ={
                 getStashXmlElement("collect_treasure_of_space_time.carry_item","carry_item",1)
             }
         ),
-        //75 超级货币[20] 换 [研究点]x1
+        //75 超级货币[30] 换 [研究点]x1
         stashExchangeList(
             array<XmlElement@>= {
-                getStashXmlElement("SuperCash","special",20)
+                getStashXmlElement("SuperCash","special",30)
             }, 
             array<XmlElement@>= {
                 getStashXmlElement("samples_acg.carry_item","carry_item",1)
             }
         ),
-        //76 超级货币[20] 换 [研究点]x1
+        //76 超级货币[300] 换 [研究点]x1
         stashExchangeList(
             array<XmlElement@>= {
-                getStashXmlElement("SuperCash","special",198)
+                getStashXmlElement("SuperCash","special",300)
             }, 
             array<XmlElement@>= {
                 getStashXmlElement("samples_acg.carry_item","carry_item",10)
@@ -1145,7 +1149,7 @@ array<stashExchangeList@> ExchangeLists ={
                 getStashXmlElement("SuperCash","special",1000)
             }, 
             array<XmlElement@>= {
-                getStashXmlElement("acg_sky_striker_ace_orig_call_green.weapon","weapon",1)
+                getStashXmlElement("re_acg_sky_striker_ace_orig_call_green.weapon","weapon",1)
             }
         ),
         //78 闪刀姬卡片[100] 换 闪刀
@@ -1154,7 +1158,7 @@ array<stashExchangeList@> ExchangeLists ={
                 getStashXmlElement("acg_sky_striker_ace_clips","special",100)
             }, 
             array<XmlElement@>= {
-                getStashXmlElement("acg_sky_striker_ace_orig_call_green.weapon","weapon",1)
+                getStashXmlElement("re_acg_sky_striker_ace_orig_call_green.weapon","weapon",1)
             }
         ),
         //79 超级货币[200] 换 核弹背包[1]
@@ -1252,7 +1256,7 @@ const dictionary stashExchangeDict = {
     {"hud_supercash_to_sample_10_exchange",@ExchangeLists[76]},
     {"hud_supercash_to_sky_striker_ace_exchange",@ExchangeLists[77]},
     {"ace_card_to_sky_striker_ace_exchange",@ExchangeLists[78]},
-    {"hd_side_b100_portable_hellbomb_exchange",@ExchangeLists[79]},
+    {"hd_side_b100_portable_hellbomb_weapon_exchange",@ExchangeLists[79]},
 
     {"",""}
 };

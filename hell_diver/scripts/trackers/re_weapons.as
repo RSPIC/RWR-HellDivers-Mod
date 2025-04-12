@@ -182,22 +182,42 @@ class re_weapons : Tracker {
                 addItemInBackpack(m_metagame,cid,"weapon","acg_takanashi_hoshino_battle.weapon");
                 addItemInBackpack(m_metagame,cid,"weapon","acg_takanashi_hoshino_battle_side_pistol.weapon");
             }
-            if(itemKey == "acg_sky_striker_ace_hayate_green_change_model_drop.carry_item"){
-                deleteItemInBackpack(m_metagame,cid,"carry_item",itemKey);
-                addItemInBackpack(m_metagame,cid,"weapon","acg_sky_striker_ace_hayate_green.weapon");
+            if(startsWith(itemKey,"acg_sky_striker_ace_")){
+                dictionary equipList;
+                if(!getPlayerEquipmentInfoArray(m_metagame,cid,equipList)){
+                    return;
+                }
+                string equipKey;
+                if(equipList.get("1",equipKey)){//副武器
+                    string targetKey = "re_acg_sky_striker_ace_orig_call";
+                    if(startsWith(equipKey,targetKey)){
+                        int num;
+                        if(equipList.get(equipKey,num)){
+                            if(num == 0){
+                                deleteItemInBackpack(m_metagame,cid,"carry_item",itemKey);
+                                return;
+                            }
+                        }
+                    }
+                }
+                if(itemKey == "acg_sky_striker_ace_hayate_green_change_model_drop.carry_item"){
+                    deleteItemInBackpack(m_metagame,cid,"carry_item",itemKey);
+                    addItemInBackpack(m_metagame,cid,"weapon","acg_sky_striker_ace_hayate_green.weapon");
+                }
+                if(itemKey == "acg_sky_striker_ace_kagari_red_change_model_drop.carry_item"){
+                    deleteItemInBackpack(m_metagame,cid,"carry_item",itemKey);
+                    addItemInBackpack(m_metagame,cid,"weapon","acg_sky_striker_ace_kagari_red.weapon");
+                }
+                if(itemKey == "acg_sky_striker_ace_kaina_yellow_change_model_drop.carry_item"){
+                    deleteItemInBackpack(m_metagame,cid,"carry_item",itemKey);
+                    addItemInBackpack(m_metagame,cid,"weapon","acg_sky_striker_ace_kaina_yellow.weapon");
+                }
+                if(itemKey == "acg_sky_striker_ace_shizuku_blue_change_model_drop.carry_item"){
+                    deleteItemInBackpack(m_metagame,cid,"carry_item",itemKey);
+                    addItemInBackpack(m_metagame,cid,"weapon","acg_sky_striker_ace_shizuku_blue.weapon");
+                } 
             }
-            if(itemKey == "acg_sky_striker_ace_kagari_red_change_model_drop.carry_item"){
-                deleteItemInBackpack(m_metagame,cid,"carry_item",itemKey);
-                addItemInBackpack(m_metagame,cid,"weapon","acg_sky_striker_ace_kagari_red.weapon");
-            }
-            if(itemKey == "acg_sky_striker_ace_kaina_yellow_change_model_drop.carry_item"){
-                deleteItemInBackpack(m_metagame,cid,"carry_item",itemKey);
-                addItemInBackpack(m_metagame,cid,"weapon","acg_sky_striker_ace_kaina_yellow.weapon");
-            }
-            if(itemKey == "acg_sky_striker_ace_shizuku_blue_change_model_drop.carry_item"){
-                deleteItemInBackpack(m_metagame,cid,"carry_item",itemKey);
-                addItemInBackpack(m_metagame,cid,"weapon","acg_sky_striker_ace_shizuku_blue.weapon");
-            }
+
         }
     }
 

@@ -31,7 +31,7 @@ void main(dictionary@ inputData) {
         settings.m_journalEnabled = true;
         settings.m_fellowDisableEnemySpawnpointsSoldierCountOffset = 1;
 
-        settings.m_server_difficulty_level = 9;
+        settings.m_server_difficulty_level = 12;
         
         settings.m_debug_mode = false;
         settings.m_server_test_mode = true;
@@ -51,7 +51,7 @@ void main(dictionary@ inputData) {
         settings.m_startServerCommand = """
 <command class='start_server'
 	server_name='[地狱潜兵] 测试服 '
-	server_port='5700'
+	server_port='1244'
 	url='https://steamcommunity.com/sharedfiles/filedetails/?id=2910392031'
 	register_in_serverlist='1'
 	mode='COOP'

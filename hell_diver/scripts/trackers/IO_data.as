@@ -1564,6 +1564,33 @@ class IO_data : Tracker {
             notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
             return true;
         }
+        if(access_tag == "sponsor_mk6"){//赞助者 648
+            @res = Resource("hd_bonusfactor_al_240","carry_item");
+            res.addToResources(resources,12);
+            @res = Resource("reward_box_weapon_v.carry_item","carry_item");//MK5
+            res.addToResources(resources,5);
+            @res = Resource("reward_box_collection.carry_item","carry_item");//fumo
+            res.addToResources(resources,3);
+            @res = Resource("samples_acg.carry_item","carry_item");//研究点
+            res.addToResources(resources,25);
+            @res = Resource("hd_super_cash_100","carry_item");//超级货币
+            res.addToResources(resources,5);
+
+            string sid = g_playerInfoBuck.getSidByName(p_name);
+            playerStashInfo@ m_playerStashInfo = playerStashInfo(m_metagame,sid,p_name);
+            if(!m_playerStashInfo.isOpen(false)){
+                m_playerStashInfo.openStash(false);
+            }
+            m_playerStashInfo.upgradeStash(20,true);
+            m_playerStashInfo.openStash(false);
+
+            addListItemInBackpack(m_metagame,cid,resources);
+            GiveRP(m_metagame,cid,6480000);
+            dictionary a;
+            a["%reward"] = "RP: 648w、加成卡和战利品箱子";
+            notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+            return true;
+        }
         if(access_tag == "upgradeStash"){//脚本仓库升级
             string sid = g_playerInfoBuck.getSidByName(p_name);
             playerStashInfo@ m_playerStashInfo = playerStashInfo(m_metagame,sid,p_name);

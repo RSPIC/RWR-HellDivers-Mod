@@ -37,18 +37,18 @@ dictionary skill_CD = {
     {"ex_vergil_skill",180},
     {"acg_patricia_fataldrive",180},
 
-    {"acg_sky_striker_ace_orig_call_green",5},
-    {"acg_sky_striker_ace_orig_call_red",5},
-    {"acg_sky_striker_ace_orig_call_yellow",5},
-    {"acg_sky_striker_ace_orig_call_blue",5},
+    {"re_acg_sky_striker_ace_orig_call_green",5},
+    {"re_acg_sky_striker_ace_orig_call_red",5},
+    {"re_acg_sky_striker_ace_orig_call_yellow",5},
+    {"re_acg_sky_striker_ace_orig_call_blue",5},
     
     {"acg_sky_striker_ace_kagari_red.weapon",180},
     {"acg_sky_striker_ace_kagari_red_mode2.weapon",180},
 
     {"acg_sky_striker_ace_hayate_green_mode3",40},
 
-    {"acg_sky_striker_ace_kaina_yellow.weapon",150},
-    {"acg_sky_striker_ace_kaina_yellow_mode2.weapon",150},
+    {"acg_sky_striker_ace_kaina_yellow.weapon",20},
+    {"acg_sky_striker_ace_kaina_yellow_mode2.weapon",20},
 
     {"ex_imotekh_cube",30},
 
@@ -1910,7 +1910,7 @@ class projectile_event : Tracker {
 
                 break;
             } 
-            case 84: { // acg_sky_striker_ace_orig_call_red 闪刀空投 
+            case 84: { // re_acg_sky_striker_ace_orig_call_red 闪刀空投 
                 int characterId = event.getIntAttribute("character_id");
                 const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
                 if (character is null) break;
@@ -1939,7 +1939,7 @@ class projectile_event : Tracker {
                 playSoundAtLocation(m_metagame,"airdrop_drone_sky_striker_ace.wav",factionId,spawnPos,1.0);
                 break;
             }
-            case 85: { // acg_sky_striker_ace_orig_call_green 闪刀空投 
+            case 85: { // re_acg_sky_striker_ace_orig_call_green 闪刀空投 
                 int characterId = event.getIntAttribute("character_id");
                 const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
                 if (character is null) break;
@@ -1968,7 +1968,7 @@ class projectile_event : Tracker {
                 playSoundAtLocation(m_metagame,"airdrop_drone_sky_striker_ace.wav",factionId,spawnPos,1.0);
                 break;
             }
-            case 86: { // acg_sky_striker_ace_orig_call_yellow 闪刀空投 
+            case 86: { // re_acg_sky_striker_ace_orig_call_yellow 闪刀空投 
                 int characterId = event.getIntAttribute("character_id");
                 const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
                 if (character is null) break;
@@ -1997,7 +1997,7 @@ class projectile_event : Tracker {
                 playSoundAtLocation(m_metagame,"airdrop_drone_sky_striker_ace.wav",factionId,spawnPos,1.0);
                 break;
             }
-            case 87: { // acg_sky_striker_ace_orig_call_blue 闪刀空投 
+            case 87: { // re_acg_sky_striker_ace_orig_call_blue 闪刀空投 
                 int characterId = event.getIntAttribute("character_id");
                 const XmlElement@ character = getCharacterInfo(m_metagame, characterId);
                 if (character is null) break;
@@ -2053,6 +2053,7 @@ class projectile_event : Tracker {
                 int m_cid = event.getIntAttribute("character_id");
                 Vector3 ePos = stringToVector3(event.getStringAttribute("position"));
                 int m_fid = g_playerInfoBuck.getFidByCid(m_cid);
+                CreateDirectProjectile(m_metagame,ePos,ePos,"ex_imotekh_damage.projectile",m_cid,m_fid,1);
                 array<const XmlElement@> factions = getFactions(m_metagame);
                 for (uint f = 0; f < factions.size(); ++f){
                     const XmlElement@ faction = factions[f];
@@ -2279,12 +2280,13 @@ class projectile_event : Tracker {
                 Vector3 aimPos = stringToVector3(player.getStringAttribute("aim_target"));
 
                 TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                TaskSequencer@ tasker2 = m_metagame.getVacantHdTaskSequncerIndex();
                 if(tasker is null){return;}
                 string key1= "acg_sky_striker_ace_kagari_red_skill.projectile";
                 string key2= "acg_sky_striker_ace_kagari_red_mode2_skill.projectile";
-                CreateProjectile@ task1 = CreateProjectile(m_metagame,aimPos,aimPos,key1,cid,fid,1,0,1,0);
+                CreateProjectile@ task1 = CreateProjectile(m_metagame,aimPos,aimPos,key1,cid,fid,1,2,1,0);
                 CreateProjectile@ task5 = CreateProjectile(m_metagame,aimPos,aimPos,key2,cid,fid,1,1,1,0);
-                tasker.add(task1);
+                tasker2.add(task1);
                 tasker.add(task5);
 
                 string key = "ex_hyper_mega_bazooka_launcher_skill_damage.projectile";
@@ -2297,11 +2299,12 @@ class projectile_event : Tracker {
                 tasker.add(task2);
                 tasker.add(task3);
                 tasker.add(task4);
-                playSoundAtLocation(m_metagame,"acg_sky_striker_ace_kagari_red_skill.wav",fid,aimPos,3.0);
+                playSoundAtLocation(m_metagame,"acg_sky_striker_ace_kagari_red_skill.wav",fid,aimPos,3.5);
 
                 string m_key = "ba_effect_yuuka_skill.projectile";
                 CreateDirectProjectile(m_metagame,playerPos,playerPos,m_key,cid,0,100);
                 playAnimationKey(m_metagame,cid,"acg_sky_striker_ace_kagari_red_mode2_skill",false);
+                return;
             }
             targetKey = "acg_sky_striker_ace_kaina_yellow.weapon";
             targetKey2 = "acg_sky_striker_ace_kaina_yellow_mode2.weapon";
@@ -2353,8 +2356,10 @@ class projectile_event : Tracker {
                         break;
                     }
                 }
+                return;
             }
             targetKey = "re_acg_kisaki.weapon";
+            targetKey2 = "re_acg_kisaki.weapon";
             if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
                 const XmlElement@ character = getCharacterInfo(m_metagame, cid);
                 if (character is null) return;
@@ -2386,8 +2391,10 @@ class projectile_event : Tracker {
                 //TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
                 TaskSequencer@ tasker = m_metagame.getVacantHdTaskSequncerIndex();
                 tasker.add(new_task);
+                return;
             }
             targetKey = "re_acg_kisaki_s.weapon";
+            targetKey2 = "re_acg_kisaki_s.weapon";
             if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
                 const XmlElement@ character = getCharacterInfo(m_metagame,cid);
                 if(character is null){return;}
@@ -2422,6 +2429,7 @@ class projectile_event : Tracker {
                 CreateProjectile@ task2 = CreateProjectile(m_metagame,aimPos.add(Vector3(0,12,0)),aimPos.add(Vector3(0,12,0)),key2,cid,fid,0,0,15,2,true);
                 tasker.add(task1);
                 tasker2.add(task2);
+                return;
             }
 		}
 	}
