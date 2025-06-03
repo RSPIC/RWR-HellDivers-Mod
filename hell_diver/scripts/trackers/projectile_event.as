@@ -53,7 +53,10 @@ dictionary skill_CD = {
     {"ex_imotekh_cube",30},
 
     {"re_acg_kisaki.weapon",50},
-    {"re_acg_kisaki_s.weapon",75},
+    {"re_acg_kisaki_s.weapon",120},
+
+    {"acg_kuda_izuna_skill.weapon",10},// 泉奈 玩偶
+    {"re_acg_kuda_izuna_skill.weapon",10},// 泉奈 玩偶
 
     {"",0}
 
@@ -142,7 +145,9 @@ class projectile_event : Tracker {
             }
             if(!p_cd_lists.hasReady(m_name,EventKeyGet)){
                 float leftCD = p_cd_lists.leftCD(m_name,EventKeyGet);
-                notify(m_metagame, "剩余CD = "+ int(leftCD) , dictionary(), "misc", m_pid, false, "", 1.0);
+                if(m_pid >=0 ){
+                    notify(m_metagame, "剩余CD = "+ int(leftCD) , dictionary(), "misc", m_pid, false, "", 1.0);
+                }
                 return;
             }
         }
@@ -302,7 +307,7 @@ class projectile_event : Tracker {
                 int factionid = character.getIntAttribute("faction_id");
                 // 创建空袭事件
                 _log("execution Laser Strike");
-                Event_call_helldiver_superearth_laser_strike@ new_task = Event_call_helldiver_superearth_laser_strike(m_metagame,0,characterId,factionid,pos2,pos1,"laser_strike_mk3");
+                Event_call_helldiver_superearth_laser_strike@ new_task = Event_call_helldiver_superearth_laser_strike(m_metagame,0,characterId,factionid,pos1,pos1,"laser_strike_mk3");
                 //TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
                 TaskSequencer@ tasker = m_metagame.getHdTaskSequncerIndex(1);
                 if(tasker is null){break;}
@@ -2202,6 +2207,9 @@ class projectile_event : Tracker {
                         handelManualCDResultEvent(m_metagame,name,pid,cid,equipList);
                     }
                     if(!p_cd_lists.hasReady(name,equipKey)){
+                        if(pid == -1){
+                            return;
+                        }
                         float leftCD = p_cd_lists.leftCD(name,equipKey);
                         notify(m_metagame, "剩余CD = "+ int(leftCD) , dictionary(), "misc", pid, false, "", 1.0);
                         return;
@@ -2429,6 +2437,36 @@ class projectile_event : Tracker {
                 CreateProjectile@ task2 = CreateProjectile(m_metagame,aimPos.add(Vector3(0,12,0)),aimPos.add(Vector3(0,12,0)),key2,cid,fid,0,0,15,2,true);
                 tasker.add(task1);
                 tasker2.add(task2);
+                return;
+            }
+            targetKey = "acg_kuda_izuna_skill.weapon";
+            targetKey2 = "re_acg_kuda_izuna_skill.weapon";
+            if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+                const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+                if(character is null){return;}
+                int playerId = character.getIntAttribute("player_id");
+
+                int fid = 0;
+                Vector3 sPos = stringToVector3(character.getStringAttribute("position"));
+
+                const XmlElement@ player = getPlayerInfo(m_metagame, pid);
+                if (player is null) return;
+                Vector3 aimPos = stringToVector3(player.getStringAttribute("aim_target"));
+
+                string m_key = "ba_effect_yuuka_skill.projectile";
+                spawnStaticProjectile(m_metagame,m_key,sPos,0,0);
+                array<string> sound_files = {
+                    "acg_kuda_izuna_skill_doll.wav",
+                    "acg_kuda_izuna_skill_doll_02.wav",
+                    "acg_kuda_izuna_skill_doll_03.wav",
+                    "acg_kuda_izuna_skill_doll_03.wav"
+                };
+                playRandomSoundArray(m_metagame,sound_files,0,sPos);
+                TaskSequencer@ tasker = m_metagame.getTaskManager().newTaskSequencer();
+                m_key = "acg_kuda_izuna_stun_doll_spawn.projectile";
+                playAnimationKey(m_metagame,cid, "acg_kuda_izuna_doll_skill", false, false);
+                CreateProjectile@ task1 = CreateProjectile(m_metagame,aimPos.add(Vector3(0,6,0)),aimPos,m_key,cid,fid,30,0.65,1,0,false); //delay_time,num,inner delay,isVertical
+                tasker.add(task1);
                 return;
             }
 		}

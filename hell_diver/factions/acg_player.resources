@@ -21,10 +21,10 @@
     <weapon key="re_acg_exo_toki_railgun.weapon" /><!--飞鸟马时 动力装甲-->
     <weapon key="re_acg_exo_toki_skill.weapon" /><!--飞鸟马时 动力装甲-->
     <!-- MK5 Unsold-->
-    <weapon key="acg_sky_striker_ace_orig_call_green.weapon" /> <!--闪刀姬-->
-    <weapon key="acg_sky_striker_ace_orig_call_red.weapon" /> <!--闪刀姬-->
-    <weapon key="acg_sky_striker_ace_orig_call_yellow.weapon" /> <!--闪刀姬-->
-    <weapon key="acg_sky_striker_ace_orig_call_blue.weapon" /> <!--闪刀姬-->
+    <weapon key="re_acg_sky_striker_ace_orig_call_green.weapon" /> <!--闪刀姬-->
+    <weapon key="re_acg_sky_striker_ace_orig_call_red.weapon" /> <!--闪刀姬-->
+    <weapon key="re_acg_sky_striker_ace_orig_call_yellow.weapon" /> <!--闪刀姬-->
+    <weapon key="re_acg_sky_striker_ace_orig_call_blue.weapon" /> <!--闪刀姬-->
 
     <weapon key="re_ex_imotekh.weapon" /> <!--风暴领主 伊莫特克-->
     <weapon key="re_ex_imotekh_cube.weapon" /> <!--风暴领主 伊莫特克-->
@@ -91,6 +91,10 @@
     <weapon key="re_acg_elaina_wand_laser.weapon" /> <!--伊蕾娜 法杖-->
     <weapon key="re_acg_elaina_wand_cyclone.weapon" /> <!--伊蕾娜 法杖-->
     <!-- MK4 Unsold-->
+    <weapon key="acg_kuda_izuna.weapon" enabled="0"/> <!--久田泉奈-->
+    <weapon key="re_acg_kuda_izuna.weapon" /> <!--久田泉奈-->
+    <weapon key="re_acg_kuda_izuna_skill.weapon" /> <!--久田泉奈-->
+
     <weapon key="acg_hayase_yuuka.weapon" enabled="0"/> <!--优香-->
     <weapon key="re_acg_hayase_yuuka.weapon" /> <!--优香-->
 
@@ -303,6 +307,8 @@
 
     <weapon key="acg_hecate.weapon" /><!--黑卡蒂-->
     <weapon key="re_acg_hecate.weapon" /><!--黑卡蒂-->
+
+    <weapon key="ex_cl_banzai_rainbowcat.weapon" /><!--彩虹猫刺雷-->
 
 <!--投掷物/信标-->
     <projectile key="acg_ex_box.projectile" /><!--Ex 补给箱-->

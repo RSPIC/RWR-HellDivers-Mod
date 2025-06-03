@@ -425,7 +425,9 @@ class player_cd_list {
 			notify(m_metagame, target+" 已就绪", dictionary(), "misc", p_id, false, "", 1.0);
 			m_ended = true;
 		}else{
-			notify(m_metagame, "已冷却", dictionary(), "misc", p_id, false, "", 1.0);
+			if(p_id >=0 ){
+				notify(m_metagame, "已冷却", dictionary(), "misc", p_id , false, "", 1.0);
+			}
 			m_ended = true;
 		}
 	}
@@ -719,6 +721,9 @@ class stratagems_call : Tracker {
 					return;
 				}
 				if(!p_cd_lists.hasReady(p_name,stratagemsKey)){
+					if(pid == -1){
+						return;
+					}
 					float leftCD = p_cd_lists.leftCD(p_name,stratagemsKey);
 					notify(m_metagame, "剩余CD = "+ int(leftCD) , dictionary(), "misc", pid, false, "", 1.0);
 				}

@@ -21,11 +21,98 @@
 
 
 array<MissionCounter@> collector = {
-    (MissionCounter("collect_mc_iron.carry_item","铁锭",30)),
-    (MissionCounter("collect_mc_gold.carry_item","金锭",30)),
-    (MissionCounter("collect_mc_emerald.carry_item","绿宝石",20)),
-    (MissionCounter("collect_mc_diamond.carry_item","钻石",30))
+    (MissionCounter("collect_mc_iron.carry_item","铁锭",20)),
+    (MissionCounter("collect_mc_gold.carry_item","金锭",20)),
+    (MissionCounter("collect_mc_emerald.carry_item","绿宝石",10)),
+    (MissionCounter("collect_mc_diamond.carry_item","钻石",20))
 
+};
+array<MissionCounter@> collector_hard = {
+    (MissionCounter("MTL_GOLD1","赤金碎片",15)),
+    (MissionCounter("MTL_GOLD2","赤金矿",10)),
+    (MissionCounter("MTL_GOLD3","赤金矿",5)),
+    (MissionCounter("MTL_BASE_SL1","碳",15)),
+    (MissionCounter("MTL_BASE_SL2","碳素",10)),
+    (MissionCounter("MTL_BASE_SL3","碳素组",5)),
+    (MissionCounter("MTL_BASE_SYNTH1","基础加固建材",15)),
+    (MissionCounter("MTL_BASE_SYNTH2","进阶加固建材",10)),
+    (MissionCounter("MTL_BASE_SYNTH3","高级加固建材",5)),
+    (MissionCounter("MTL_SL_ALCOHOL1","扭转醇",5)),
+    (MissionCounter("MTL_SL_ALCOHOL2","白马醇",3)),
+    (MissionCounter("MTL_SL_BOSS1","破损装置",15)),
+    (MissionCounter("MTL_SL_BOSS2","装置",10)),
+    (MissionCounter("MTL_SL_BOSS3","全新装置",5)),
+    (MissionCounter("MTL_SL_BOSS4","改良装置",3)),
+    (MissionCounter("MTL_SL_G1","源岩",15)),
+    (MissionCounter("MTL_SL_G2","固源岩",10)),
+    (MissionCounter("MTL_SL_G3","固源岩组",5)),
+    (MissionCounter("MTL_SL_G4","提纯源岩",3)),
+    (MissionCounter("MTL_SL_IRON1","异铁碎片",15)),
+    (MissionCounter("MTL_SL_IRON2","异铁",10)),
+    (MissionCounter("MTL_SL_IRON3","异铁组",5)),
+    (MissionCounter("MTL_SL_IRON4","异铁块",3)),
+    (MissionCounter("MTL_SL_MANGANESE1","轻锰矿",5)),
+    (MissionCounter("MTL_SL_MANGANESE2","三水锰矿",3)),
+    (MissionCounter("MTL_SL_PG1","研磨石",5)),
+    (MissionCounter("MTL_SL_PG2","五水研磨石",3)),
+    (MissionCounter("MTL_SL_RMA7012","RMA70-12",5)),
+    (MissionCounter("MTL_SL_RMA7024","RMA70-24",3)),
+    (MissionCounter("MTL_SL_RUSH1","酯原料",15)),
+    (MissionCounter("MTL_SL_RUSH2","聚酸酯",10)),
+    (MissionCounter("MTL_SL_RUSH3","聚酸酯组",5)),
+    (MissionCounter("MTL_SL_RUSH4","聚酸酯块",3)),
+    (MissionCounter("MTL_SL_STRG1","代糖",15)),
+    (MissionCounter("MTL_SL_STRG2","糖",10)),
+    (MissionCounter("MTL_SL_STRG3","糖组",5)),
+    (MissionCounter("MTL_SL_STRG4","糖聚块",3)),
+    (MissionCounter("MTL_SL_KETONE1","双酮",15)),
+    (MissionCounter("MTL_SL_KETONE2","酮凝集",10)),
+    (MissionCounter("MTL_SL_KETONE3","酮凝集组",5)),
+    (MissionCounter("MTL_SL_KETONE4","酮阵列",3))
+
+};
+array<MissionCounter@> collector_honor = {
+    (MissionCounter("MTL_GOLD1","赤金碎片",450)),
+    (MissionCounter("MTL_GOLD2","赤金矿",300)),
+    (MissionCounter("MTL_GOLD3","赤金矿",150)),
+    (MissionCounter("MTL_BASE_SL1","碳",450)),
+    (MissionCounter("MTL_BASE_SL2","碳素",300)),
+    (MissionCounter("MTL_BASE_SL3","碳素组",150)),
+    (MissionCounter("MTL_BASE_SYNTH1","基础加固建材",450)),
+    (MissionCounter("MTL_BASE_SYNTH2","进阶加固建材",300)),
+    (MissionCounter("MTL_BASE_SYNTH3","高级加固建材",150)),
+    (MissionCounter("MTL_SL_ALCOHOL1","扭转醇",150)),
+    (MissionCounter("MTL_SL_ALCOHOL2","白马醇",90)),
+    (MissionCounter("MTL_SL_BOSS1","破损装置",450)),
+    (MissionCounter("MTL_SL_BOSS2","装置",300)),
+    (MissionCounter("MTL_SL_BOSS3","全新装置",150)),
+    (MissionCounter("MTL_SL_BOSS4","改良装置",90)),
+    (MissionCounter("MTL_SL_G1","源岩",450)),
+    (MissionCounter("MTL_SL_G2","固源岩",300)),
+    (MissionCounter("MTL_SL_G3","固源岩组",150)),
+    (MissionCounter("MTL_SL_G4","提纯源岩",90)),
+    (MissionCounter("MTL_SL_IRON1","异铁碎片",450)),
+    (MissionCounter("MTL_SL_IRON2","异铁",300)),
+    (MissionCounter("MTL_SL_IRON3","异铁组",150)),
+    (MissionCounter("MTL_SL_IRON4","异铁块",90)),
+    (MissionCounter("MTL_SL_MANGANESE1","轻锰矿",150)),
+    (MissionCounter("MTL_SL_MANGANESE2","三水锰矿",90)),
+    (MissionCounter("MTL_SL_PG1","研磨石",150)),
+    (MissionCounter("MTL_SL_PG2","五水研磨石",90)),
+    (MissionCounter("MTL_SL_RMA7012","RMA70-12",150)),
+    (MissionCounter("MTL_SL_RMA7024","RMA70-24",90)),
+    (MissionCounter("MTL_SL_RUSH1","酯原料",450)),
+    (MissionCounter("MTL_SL_RUSH2","聚酸酯",300)),
+    (MissionCounter("MTL_SL_RUSH3","聚酸酯组",150)),
+    (MissionCounter("MTL_SL_RUSH4","聚酸酯块",90)),
+    (MissionCounter("MTL_SL_STRG1","代糖",450)),
+    (MissionCounter("MTL_SL_STRG2","糖",300)),
+    (MissionCounter("MTL_SL_STRG3","糖组",150)),
+    (MissionCounter("MTL_SL_STRG4","糖聚块",90)),
+    (MissionCounter("MTL_SL_KETONE1","双酮",450)),
+    (MissionCounter("MTL_SL_KETONE2","酮凝集",300)),
+    (MissionCounter("MTL_SL_KETONE3","酮凝集组",150)),
+    (MissionCounter("MTL_SL_KETONE4","酮阵列",90))
 };
 
 array<MissionCounter@> kill_with_select_weapon = {
@@ -132,7 +219,7 @@ array<missionExchangeList@> missionExchangeLists ={
         array<XmlElement@>= {
         }, 
         array<XmlElement@>= {
-            getStashXmlElement("hd_money_1w","carry_item",1)
+            getStashXmlElement("hd_money_1w","carry_item",3)
         }
     ),
     missionExchangeList(
@@ -140,7 +227,7 @@ array<missionExchangeList@> missionExchangeLists ={
         array<XmlElement@>= {
         }, 
         array<XmlElement@>= {
-            getStashXmlElement("hd_money_1w","carry_item",2)
+            getStashXmlElement("hd_money_1w","carry_item",12)
         }
     ),
     missionExchangeList(
@@ -300,22 +387,25 @@ class playerMissionInfo {
 
     void buildMissions(){
         // 使用 push_back 方法添加元素
-        dailyTasks.push_back(MissionCounter("kill_enemy_100", "击杀敌人", 100));
-        dailyTasks.push_back(MissionCounter("timeplay_min_20", "游玩分钟", 20));
+        // dailyTasks.push_back(MissionCounter("kill_enemy_100", "击杀敌人", 100));
+        dailyTasks.push_back(MissionCounter("collector", "收集战利品", collector));
         dailyTasks.push_back(MissionCounter("buy_lottery_10", "买彩票", 10));
-        dailyTasks.push_back(MissionCounter("play_selected_mode", "游玩指定模式", play_selected_mode));
-        dailyTasks.push_back(MissionCounter("kill_with_select_weapon", "指定武器击杀", kill_with_select_weapon));
+        // dailyTasks.push_back(MissionCounter("play_selected_mode", "游玩指定模式", play_selected_mode));
+        // dailyTasks.push_back(MissionCounter("kill_with_select_weapon", "指定武器击杀", kill_with_select_weapon));
 
-        dailyTasks_hard.push_back(MissionCounter("kill_selected_enemy", "击杀指定敌人", kill_selected_enemy, "TaskHard"));
-        dailyTasks_hard.push_back(MissionCounter("timeplay_min_60", "游玩分钟", 60, "TaskHard"));
-        dailyTasks_hard.push_back(MissionCounter("kill_with_melee", "近战击杀", 10, "TaskHard"));
-        dailyTasks_hard.push_back(MissionCounter("finish_sidemission", "完成支线任务", 2, "TaskHard"));
-        dailyTasks_hard.push_back(MissionCounter("collector", "收集战利品", collector, "TaskHard"));
+        // dailyTasks_hard.push_back(MissionCounter("kill_selected_enemy", "击杀指定敌人", kill_selected_enemy, "TaskHard"));
+        // dailyTasks_hard.push_back(MissionCounter("timeplay_min_60", "游玩分钟", 60, "TaskHard"));
+        // dailyTasks_hard.push_back(MissionCounter("kill_with_melee", "近战击杀", 10, "TaskHard"));
+        // dailyTasks_hard.push_back(MissionCounter("finish_sidemission", "完成支线任务", 2, "TaskHard"));
+        dailyTasks_hard.push_back(MissionCounter("collector_hard", "收集战利品?", collector_hard, "TaskHard"));
+        dailyTasks_hard.push_back(MissionCounter("buy_lottery_100", "买彩票?", 100, "TaskHard"));
     }
     void buildHonorMissions(){
         // 使用 push_back 方法添加元素
-        dailyTasks_honor.push_back(MissionCounter("kill_enemy_5w", "击杀敌人", 50000, "TaskHonorSpecial"));
-        dailyTasks_honor.push_back(MissionCounter("timeplay_min_6000", "游玩分钟", 6000, "TaskHonor"));
+        dailyTasks_honor.push_back(MissionCounter("collector_honor1", "收集战利品!", collector_honor, "TaskHonor"));
+        dailyTasks_honor.push_back(MissionCounter("collector_honor2", "收集战利品!", collector_honor, "TaskHonor"));
+        dailyTasks_honor.push_back(MissionCounter("collector_honor3", "收集战利品!", collector_honor, "TaskHonor"));
+        dailyTasks_honor.push_back(MissionCounter("buy_lottery_5000", "买彩票!", 5000, "TaskHonorSpecial"));
     }
 
     playerMissionInfo(Metagame@ metagame,string name){
@@ -1129,9 +1219,9 @@ class playerMissionInfoBuck {
         }
     }
     void playMode(string gameMode){
-        for(uint i = 0; i<size(); i++){
-            m_playerMissionInfos[i].addMissionFinishTimes("play_selected_mode",1,gameMode);
-        }
+        // for(uint i = 0; i<size(); i++){
+        //     m_playerMissionInfos[i].addMissionFinishTimes("play_selected_mode",1,gameMode);
+        // }
     }
     void saveAll(){
         for(uint i = 0; i<size(); i++){
@@ -1157,6 +1247,10 @@ class hd_daily_mission : Tracker{
         @m_metagame = @metagame;
         m_cdTime = time;
 		m_timer = m_cdTime;
+        if(!g_server_activity_racing){ //仅在赛车服启用每日任务
+            m_ended = true;
+            return;
+        }
     }
     // --------------------------------------------
     void update(float time) {
@@ -1199,14 +1293,15 @@ class hd_daily_mission : Tracker{
     }
     // ----------------------------------------------------
 	protected void handleMatchEndEvent(const XmlElement@ event) {
-        string m_GameMode = g_GameMode;
-        if(m_GameMode == ""){
-            m_GameMode = "Helldiver";
-        }
-		g_playerMissionInfoBuck.playMode(m_GameMode);
-		g_playerMissionInfoBuck.checkToSave();
-        g_playerMissionInfoBuck.saveAll();
-        g_playerMissionInfoBuck.clearAll();
+        // 1.10.2 版本后取消
+        // string m_GameMode = g_GameMode;
+        // if(m_GameMode == ""){
+        //     m_GameMode = "Helldiver";
+        // }
+		// g_playerMissionInfoBuck.playMode(m_GameMode);
+		// g_playerMissionInfoBuck.checkToSave();
+        // g_playerMissionInfoBuck.saveAll();
+        // g_playerMissionInfoBuck.clearAll();
 	}
     // --------------------------------------------
 	protected void handleCharacterKillEvent(const XmlElement@ event) {
@@ -1246,17 +1341,18 @@ class hd_daily_mission : Tracker{
             }
 
 
-            g_playerMissionInfoBuck.addMissionFinishTimes(k_name,"kill_enemy_100");
+            // g_playerMissionInfoBuck.addMissionFinishTimes(k_name,"kill_enemy_100");
+            g_playerMissionInfoBuck.addMissionFinishTimes(k_name,"kill_enemy_5w");
             g_playerMissionInfoBuck.addMissionFinishTimes(k_name,"kill_enemy_5w");
             if(soldier_group_name != ""){
-                g_playerMissionInfoBuck.addMissionFinishTimes(k_name,"kill_selected_enemy",1,soldier_group_name);
+                // g_playerMissionInfoBuck.addMissionFinishTimes(k_name,"kill_selected_enemy",1,soldier_group_name);
             }
             if(weaponKey != ""){
-                g_playerMissionInfoBuck.addMissionFinishTimes(k_name,"kill_with_select_weapon",1,weaponKey);
+                // g_playerMissionInfoBuck.addMissionFinishTimes(k_name,"kill_with_select_weapon",1,weaponKey);
             }
             _log("killInfo,weaponKey="+weaponKey+" method_hint="+method_hint);
             if(method_hint == "stab"){
-                g_playerMissionInfoBuck.addMissionFinishTimes(k_name,"kill_with_melee");
+                // g_playerMissionInfoBuck.addMissionFinishTimes(k_name,"kill_with_melee");
                 
             }
         }
@@ -1270,11 +1366,17 @@ class hd_daily_mission : Tracker{
             int pid = event.getIntAttribute("player_id");
             string name = g_playerInfoBuck.getNameByPid(pid);
             g_playerMissionInfoBuck.addMissionFinishTimes(name,"buy_lottery_10");
+            g_playerMissionInfoBuck.addMissionFinishTimes(name,"buy_lottery_100");
+            g_playerMissionInfoBuck.addMissionFinishTimes(name,"buy_lottery_5000");
         }
-        if(itemKey.find("collect_mc_") >= 0){
+        if(itemKey.find("collect_mc_") >= 0 || itemKey.find("MTL_") >= 0){
             int pid = event.getIntAttribute("player_id");
             string name = g_playerInfoBuck.getNameByPid(pid);
             g_playerMissionInfoBuck.addMissionFinishTimes(name,"collector",1,itemKey);
+            g_playerMissionInfoBuck.addMissionFinishTimes(name,"collector_hard",1,itemKey);
+            g_playerMissionInfoBuck.addMissionFinishTimes(name,"collector_honor1",1,itemKey);
+            g_playerMissionInfoBuck.addMissionFinishTimes(name,"collector_honor2",1,itemKey);
+            g_playerMissionInfoBuck.addMissionFinishTimes(name,"collector_honor3",1,itemKey);
         }
     }
     // ----------------------------------------------------
@@ -1289,9 +1391,17 @@ class hd_daily_mission : Tracker{
         int senderId = event.getIntAttribute("player_id");
         message = message.toLowerCase();
         if(message == "/day"){
+            if(!g_server_activity_racing){
+                _notify(m_metagame,senderId,"仅在赛车服可以查看每日任务");
+                return;
+            }
             g_playerMissionInfoBuck.getPermission(p_name);
         }
         if(startsWith(message,"/login")){
+            if(!g_server_activity_racing){
+                _notify(m_metagame,senderId,"仅在赛车服可以查看签到");
+                return;
+            }
             string days = message.substr(message.findFirst(" ")+1);
             int Days = 0;
             if(isNumeric(days)){ 
@@ -1301,6 +1411,15 @@ class hd_daily_mission : Tracker{
                 return;
             }
             g_playerMissionInfoBuck.getSignInReward(p_name,Days);
+        }
+        if(startsWith(message,"/reset")){
+            if(!g_server_activity_racing){
+                _notify(m_metagame,senderId,"仅在赛车服可以重置每日任务");
+                return;
+            }
+            g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"timeplay_min_6000",6000);
+            g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"kill_enemy_5w",50000);
+            _report(m_metagame,"重置玩家数据"+p_name);
         }
         if(g_debugMode|| g_online_TestMode || m_metagame.getAdminManager().isAdmin(p_name,senderId) ){
             if(message == "/newinfo"){
@@ -1328,18 +1447,7 @@ class hd_daily_mission : Tracker{
                 _report(m_metagame,"addK");
             }
             if(message == "/finish"){
-                g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"kill_enemy_100",100);
-                g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"timeplay_min_20",100);
-                g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"buy_lottery_10",100);
-                g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"play_selected_mode",100);
-                g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"kill_with_select_weapon",100);
-                g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"kill_selected_enemy",100);
-                g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"timeplay_min_60",100);
-                g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"kill_with_melee",100);
-                g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"finish_sidemission",100);
-                g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"collector",100);
-                g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"kill_enemy_5w",50000);
-                g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"timeplay_min_6000",6000);
+                g_playerMissionInfoBuck.addMissionFinishTimes(p_name,"buy_lottery_5000",5000);
                 _report(m_metagame,"addK");
             }
             if(message == "/saveandreload"){

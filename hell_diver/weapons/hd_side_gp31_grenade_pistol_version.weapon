@@ -9,7 +9,7 @@ time_to_live_out_in_the_open="0"
 player_death_drop_owner_lock_time="0"
 >
 	
-	<animation state_key="reload"   animation_key="reloading_1.5s" />
+	<animation state_key="reload"   animation_key="T_reloading_1.0s" />
 
 	<sound key="effect" fileref="" pitch_variety="0.03" volume="0.7" /> 
     <sound key="fire" fileref="gl06_shot.wav" pitch_variety="0.03" volume="1.0" />
@@ -26,7 +26,7 @@ player_death_drop_owner_lock_time="0"
     near_far_distance="0" 
     speed_estimation_near="0.0" 
     speed_estimation_far="48" 
-    max_speed="31" 
+    max_speed="38" 
     randomness="0" 
     tweak_factor="1.65" />  
 

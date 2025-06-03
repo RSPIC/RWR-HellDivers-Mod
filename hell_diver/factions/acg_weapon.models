@@ -358,6 +358,14 @@
     </model>
     <model filename="acg_kisaki_rabbit.xml"><!--龙华妃咲--><requirement class="weapon" slot="0" key="re_acg_kisaki_s.weapon"/><requirement class="projectile" slot="0" key="acg_kisaki_doll.projectile"/>
     </model>
+    <model filename="acg_kuda_izuna.xml"><!--泉奈--><requirement class="weapon" slot="0" key="acg_kuda_izuna.weapon"/>
+    </model>
+    <model filename="acg_kuda_izuna.xml"><!--泉奈--><requirement class="weapon" slot="0" key="acg_kuda_izuna_skill.weapon"/>
+    </model>
+    <model filename="acg_kuda_izuna.xml"><!--泉奈--><requirement class="weapon" slot="0" key="re_acg_kuda_izuna.weapon"/>
+    </model>
+    <model filename="acg_kuda_izuna.xml"><!--泉奈--><requirement class="weapon" slot="0" key="re_acg_kuda_izuna_skill.weapon"/>
+    </model>
 
 <!-- 少女前线 -->
 	<model filename="acg_mg4_703.xml"><!--MG4机枪--><requirement class="weapon" slot="0" key="acg_mg4td_ap.weapon"/>
@@ -428,13 +436,13 @@
 	<model filename="acg_bf109e_normal.xml" > <!--BF109E--><requirement class="weapon" slot="0" key="re_acg_bf109_sword.weapon"/>
 	</model>
 <!-- 游戏王 -->
-	<model filename="acg_sky_striker_ace_raye.xml" > <!--闪刀姬--><requirement class="weapon" slot="1" key="acg_sky_striker_ace_orig_call_green.weapon"/>
+	<model filename="acg_sky_striker_ace_raye.xml" > <!--闪刀姬--><requirement class="weapon" slot="1" key="re_acg_sky_striker_ace_orig_call_green.weapon"/>
 	</model>
-	<model filename="acg_sky_striker_ace_raye.xml" > <!--闪刀姬--><requirement class="weapon" slot="1" key="acg_sky_striker_ace_orig_call_red.weapon"/>
+	<model filename="acg_sky_striker_ace_raye.xml" > <!--闪刀姬--><requirement class="weapon" slot="1" key="re_acg_sky_striker_ace_orig_call_red.weapon"/>
 	</model>
-	<model filename="acg_sky_striker_ace_raye.xml" > <!--闪刀姬--><requirement class="weapon" slot="1" key="acg_sky_striker_ace_orig_call_yellow.weapon"/>
+	<model filename="acg_sky_striker_ace_raye.xml" > <!--闪刀姬--><requirement class="weapon" slot="1" key="re_acg_sky_striker_ace_orig_call_yellow.weapon"/>
 	</model>
-	<model filename="acg_sky_striker_ace_raye.xml" > <!--闪刀姬--><requirement class="weapon" slot="1" key="acg_sky_striker_ace_orig_call_blue.weapon"/>
+	<model filename="acg_sky_striker_ace_raye.xml" > <!--闪刀姬--><requirement class="weapon" slot="1" key="re_acg_sky_striker_ace_orig_call_blue.weapon"/>
 	</model>
 	<model filename="acg_sky_striker_ace_hayate_green.xml" > <!--闪刀姬--><requirement class="weapon" slot="0" key="acg_sky_striker_ace_hayate_green.weapon"/><requirement class="rank" range="0 999999"/>
 	</model>

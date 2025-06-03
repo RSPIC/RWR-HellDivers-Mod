@@ -343,6 +343,9 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			ScoredResource("token_tevi.projectile","projectile",1.0f,4),
 			ScoredResource("token_awp.projectile","projectile",1.0f,4),
 			ScoredResource("token_fleet_commander.projectile","projectile",1.0f,4),
+			ScoredResource("token_ba_niyaniya.projectile","projectile",1.0f,4),
+			// 1.10.4
+			ScoredResource("token_kuda_izuna.projectile","projectile",1.0f,4),
 
 			//AI类信物
 			ScoredResource("ai_token_asuma_toki.projectile","projectile",1.0f,2)
@@ -465,7 +468,9 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
          	ScoredResource("ex_side_m6g_magnum.weapon", "weapon", 1.0f),
 			// 1.9.3
          	ScoredResource("ex_heavy_infantry_morita_mk1.weapon", "weapon", 1.0f),
-         	ScoredResource("ex_typhoon.weapon", "weapon", 1.0f)
+         	ScoredResource("ex_typhoon.weapon", "weapon", 1.0f),
+			// 1.10.4
+			ScoredResource("ex_cl_banzai_rainbowcat.weapon", "weapon", 0.1f)
 
 			},
 			{
@@ -587,9 +592,9 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
         	ScoredResource("ex_exo_dreadnought_mg.weapon", "weapon", 1.0f),
         	ScoredResource("acg_scripts_hoshino_get.weapon", "weapon", 1.0f),
 			// 1.9.5
-        	ScoredResource("acg_sabayon_gun.weapon", "weapon", 1.5f),
+        	ScoredResource("acg_sabayon_gun.weapon", "weapon", 1.0f)
 			// 1.9.7
-        	ScoredResource("ex_exo_telemon_cannon.weapon", "weapon", 4.0f)
+        	// ScoredResource("ex_exo_telemon_cannon.weapon", "weapon", 1.0f)
 			},
 			{
 			ScoredResource("lottery_cash_II.carry_item", "carry_item", 1.0f)
@@ -732,7 +737,9 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 			// 1.8.2
         	ScoredResource("acg_yileina_wand.weapon", "weapon", 1.0f),
 			// 1.9.2
-        	ScoredResource("acg_hayase_yuuka.weapon", "weapon", 1.0f)
+        	ScoredResource("acg_hayase_yuuka.weapon", "weapon", 1.0f),
+			// 1.10.4
+        	ScoredResource("acg_kuda_izuna.weapon", "weapon", 4.0f)
 			},
 			{
 			ScoredResource("lottery_cash_II.carry_item", "carry_item", 1.0f)
@@ -753,7 +760,7 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		};
 		array<array<ScoredResource@>> rewardPasses = {
 			{
-        	ScoredResource("ex_trinity_ghoul.weapon", "weapon", 1.0f),
+        	ScoredResource("ex_exo_telemon_cannon.weapon", "weapon", 1.0f),
 
         	ScoredResource("ex_disaster_railgun.weapon", "weapon", 1.0f),
         	ScoredResource("acg_texas_skill.weapon", "weapon", 1.0f),
@@ -1069,6 +1076,10 @@ class ItemDeliveryConfiguratorInvasion : ItemDeliveryConfigurator {
 		ScoredResource("MTL_SL_STRG2", "carry_item", 3.0f),     
 		ScoredResource("MTL_SL_STRG3", "carry_item", 1.0f),     
 		ScoredResource("MTL_SL_STRG4", "carry_item", 0.3f),     
+		ScoredResource("MTL_SL_KETONE1", "carry_item", 10.0f),     
+		ScoredResource("MTL_SL_KETONE2", "carry_item", 3.0f),     
+		ScoredResource("MTL_SL_KETONE3", "carry_item", 1.0f),     
+		ScoredResource("MTL_SL_KETONE4", "carry_item", 0.3f),     
 		//total f = 130 左右 3280一张
 
 		ScoredResource("reward_box_collection.carry_item", "carry_item", 0.001f),

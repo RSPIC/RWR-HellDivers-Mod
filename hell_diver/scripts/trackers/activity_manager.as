@@ -108,6 +108,18 @@ class activity_manager : Tracker{
                 m_metagame.addTracker(QiangHongBao);
                 m_is_running_activity = true;
             }
+            // 活动赛车服默认开
+            // if(startActivityName == "PlayingCard"){
+            //     if(info.hasAttribute("min_player_to_start")){
+            //         int num = info.getIntAttribute("min_player_to_start");
+            //         if(g_playerCount < num){
+            //             return;
+            //         }
+            //     }
+            //     Tracker@ PlayingCard = ACT_PlayingCard(m_metagame);
+            //     m_metagame.addTracker(PlayingCard);
+            //     m_is_running_activity = true;
+            // }
         }
     }
     // ----------------------------------------------------
@@ -133,17 +145,17 @@ class activity_manager : Tracker{
                 int randIndex = rand(0,clipList.length() - 1);
                 string clipKey = clipList[randIndex];
                 addItemInBackpack(m_metagame,characterId,"carry_item",clipKey);
-                _notify(m_metagame,playerId,"新年快乐,你的奖励是随机MK3~MK5箱子碎片x1 脚本仓库扩容x2");
+                _notify(m_metagame,playerId,"新年快乐,你的奖励是随机MK3~MK5箱子碎片x1");
 
                 string name = g_playerInfoBuck.getNameByCid(characterId);
                 string sid = g_playerInfoBuck.getSidByName(name);
-                playerStashInfo@ m_playerStashInfo = playerStashInfo(m_metagame,sid,name);
-                if(!m_playerStashInfo.isOpen()){
-                    m_playerStashInfo.openStash();
-                }
+                // playerStashInfo@ m_playerStashInfo = playerStashInfo(m_metagame,sid,name);
+                // if(!m_playerStashInfo.isOpen()){
+                //     m_playerStashInfo.openStash();
+                // }
                 
-                m_playerStashInfo.upgradeStash(2,true);
-                m_playerStashInfo.openStash();
+                // m_playerStashInfo.upgradeStash(2,true);
+                // m_playerStashInfo.openStash();
             }
             if(itemKey == "hongbao.carry_item"){
                 array<int> rpList = { 3280,6666,8888,16800,12800,10086,11451,23333};
@@ -154,7 +166,6 @@ class activity_manager : Tracker{
                 _notify(m_metagame,playerId,"红包奖金[重复奖金不反复提示]:"+rp);
             }
         }
-
     }
     // --------------------------------------------
     protected void handlePlayerConnectEvent(const XmlElement@ event) {
@@ -164,7 +175,6 @@ class activity_manager : Tracker{
             }
         }
     }
-    
     // ------------------------------------------------------
     protected void handleChatEvent(const XmlElement@ event) {
         string sender = event.getStringAttribute("player_name");
@@ -186,6 +196,12 @@ class activity_manager : Tracker{
                 m_metagame.addTracker(QiangHongBao);
                 m_is_running_activity = true;
                 _report(m_metagame,"红包活动已开始");
+            }
+            if(message == "/actPlayingCard"){
+                Tracker@ PlayingCard = ACT_PlayingCard(m_metagame);
+                m_metagame.addTracker(PlayingCard);
+                m_is_running_activity = true;
+                _report(m_metagame,"打牌活动已开始");
             }
         }
 	}

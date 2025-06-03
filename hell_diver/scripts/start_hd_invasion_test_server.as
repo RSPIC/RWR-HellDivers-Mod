@@ -69,6 +69,7 @@ void main(dictionary@ inputData) {
 	metagame.init();
         _log("manual crash");
 
+	metagame.init();
 	while(metagame.run()){
 		metagame.init();
 	}

@@ -21,12 +21,25 @@
 //子项的TagName将会变为主数据access_tag标签中的A_tag属性
 
 //密钥兑换系统
+class playerStash{
+    string m_filename;
+    const XmlElement@ m_stashInfo;
+    playerStash(string filename,const XmlElement@ stashInfo){
+        m_filename = filename;
+        @m_stashInfo = @stashInfo;
+    }
+}
+array<playerStash@> g_playerStashs;
+
 int g_readCounter = 0;
 const XmlElement@ readXML(const Metagame@ metagame, string filename, string location = "savegame" ){
-    // XmlElement@ test = XmlElement("null");
-    // XmlElement@ test2 = XmlElement("null");
-    //     test.appendChild(test2);
-    // return XmlElement(test);
+
+    for(uint i=0;i<g_playerStashs.size();++i){
+        if(g_playerStashs[i].m_filename == filename ){
+            _log("readXML: "+filename+" is null,create and reRead for filename="+filename+",in location="+location);
+            return g_playerStashs[i].m_stashInfo;
+        }
+    }
     
 	XmlElement@ query = XmlElement(
 		makeQuery(metagame, array<dictionary> = {
@@ -46,6 +59,9 @@ const XmlElement@ readXML(const Metagame@ metagame, string filename, string loca
         @xml = readXML(metagame,filename,location);
         g_readCounter = 0;
     }
+    g_playerStashs.insertLast(playerStash(filename,xml));
+    _log("readXML: "+filename+" create for filename="+filename+",in location="+location);
+
 	return xml;
 }
 
@@ -56,6 +72,13 @@ void writeXML(const Metagame@ metagame, string filename, XmlElement@ xml, string
 		command.setStringAttribute("location", location);
 		command.appendChild(xml);
 	metagame.getComms().send(command);
+    for(uint i=0;i<g_playerStashs.size();++i){
+        if(g_playerStashs[i].m_filename == filename ){
+            g_playerStashs.removeAt(i);
+            _log("writeXML: "+filename+" remove for filename="+filename+",in location="+location);
+            break;
+        }
+    }
 }
 
 class IO_data : Tracker {
@@ -77,6 +100,7 @@ class IO_data : Tracker {
         if(g_single_player){
             updatePlayers();
         }
+        g_playerStashs.resize(0);
     }
     // --------------------------------------------
 	bool hasEnded() const {
@@ -1568,7 +1592,7 @@ class IO_data : Tracker {
             @res = Resource("hd_bonusfactor_al_240","carry_item");
             res.addToResources(resources,12);
             @res = Resource("reward_box_weapon_v.carry_item","carry_item");//MK5
-            res.addToResources(resources,5);
+            res.addToResources(resources,7);
             @res = Resource("reward_box_collection.carry_item","carry_item");//fumo
             res.addToResources(resources,3);
             @res = Resource("samples_acg.carry_item","carry_item");//研究点
@@ -1588,6 +1612,47 @@ class IO_data : Tracker {
             GiveRP(m_metagame,cid,6480000);
             dictionary a;
             a["%reward"] = "RP: 648w、加成卡和战利品箱子";
+            notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
+            return true;
+        }
+        if(access_tag == "AllFumo"){//整套fumo
+            @res = Resource("collect_fumo_cirno.carry_item","carry_item");//fumo
+            res.addToResources(resources,1);
+            @res = Resource("collect_fumo_flandre_scarlet.carry_item","carry_item");//fumo
+            res.addToResources(resources,1);
+            @res = Resource("collect_fumo_hong_meiling.carry_item","carry_item");//fumo
+            res.addToResources(resources,1);
+            @res = Resource("collect_fumo_inu_sakuya.carry_item","carry_item");//fumo
+            res.addToResources(resources,1);
+            @res = Resource("collect_fumo_junko.carry_item","carry_item");//fumo
+            res.addToResources(resources,1);
+            @res = Resource("collect_fumo_koishi_komeiji.carry_item","carry_item");//fumo
+            res.addToResources(resources,1);
+            @res = Resource("collect_fumo_mike_goutokuji.carry_item","carry_item");//fumo
+            res.addToResources(resources,1);
+            @res = Resource("collect_fumo_mokou_fujiwara.carry_item","carry_item");//fumo
+            res.addToResources(resources,1);
+            @res = Resource("collect_fumo_nitori_kawashiro.carry_item","carry_item");//fumo
+            res.addToResources(resources,1);
+            @res = Resource("collect_fumo_reimu.carry_item","carry_item");//fumo
+            res.addToResources(resources,1);
+            @res = Resource("collect_fumo_rumia.carry_item","carry_item");//fumo
+            res.addToResources(resources,1);
+            @res = Resource("collect_fumo_sanae_kochiya.carry_item","carry_item");//fumo
+            res.addToResources(resources,1);
+            @res = Resource("collect_fumo_shion_yorigami.carry_item","carry_item");//fumo
+            res.addToResources(resources,1);
+            @res = Resource("collect_fumo_suwako_moriya.carry_item","carry_item");//fumo
+            res.addToResources(resources,1);
+            @res = Resource("collect_fumo_youmu_konpaku.carry_item","carry_item");//fumo
+            res.addToResources(resources,1);
+            @res = Resource("collect_fumo_yuyuko.carry_item","carry_item");//fumo
+            res.addToResources(resources,1);
+
+            addListItemInBackpack(m_metagame,cid,resources);
+
+            dictionary a;
+            a["%reward"] = "Fumo x16";
             notify(m_metagame, "Your Reward has sended", a, "misc", pid, false, "", 1.0);
             return true;
         }

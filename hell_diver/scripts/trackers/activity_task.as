@@ -159,3 +159,125 @@ class ACT_QiangHongBao : Tracker {
         }
 	}
 }
+class ACT_PlayingCard : Tracker {
+    protected const XmlElement@ m_player;
+    protected Metagame@ m_metagame;
+    protected float m_time = 30;
+    protected float m_timer = m_time;
+    protected bool m_ended;
+    protected array<array<string>> m_cardPools; // 用于存储五个卡池
+    protected userCountInfoBuck m_userCountInfoBuck;
+
+    ACT_PlayingCard(Metagame@ metagame){
+        @m_metagame = @metagame;
+        _log("ACT_PlayingCard executing");
+        initializeCardPools();
+    }
+
+    void start(){
+        m_ended = false;
+    }
+    bool hasEnded() const{
+        return m_ended;
+    }
+
+    void update(float time){
+        m_timer -= time;
+        if(m_timer < 0 ){
+            m_timer = m_time;
+        }
+    }
+
+    void endActivity(){
+        _report(m_metagame,"扑克牌活动结束");
+        m_ended = true;
+    }
+
+    protected void handleMatchEndEvent(const XmlElement@ event) {
+        endActivity();
+    }
+
+    protected void handleItemDropEvent(const XmlElement@ event) {
+        string itemKey = event.getStringAttribute("item_key");
+        int characterId = event.getIntAttribute("character_id");
+        if(characterId == -1){return;}
+        int playerId = event.getIntAttribute("player_id");
+        int containerId = event.getIntAttribute("target_container_type_id");
+
+        if(containerId == 0 && startsWith(itemKey, "collect_playing_card_radom")) { // 地面掉落随机牌
+            processCardDraw(itemKey, characterId, playerId);
+        }
+    }
+
+    protected void handleChatEvent(const XmlElement@ event) {
+        string sender = event.getStringAttribute("player_name");
+        int senderId = event.getIntAttribute("player_id");
+
+        if(g_debugMode || g_online_TestMode || m_metagame.getAdminManager().isAdmin(sender, senderId)) {
+            string message = event.getStringAttribute("message");
+            if(message == "/resetCardPools") {
+                initializeCardPools();
+                _report(m_metagame, "扑克牌所有卡池已重置！");
+            }
+        }
+    }
+
+    protected void initializeCardPools() {
+        array<string> allCards = getAllCards();
+        m_cardPools.resize(5);
+        for(int i = 0; i < 5; ++i) {
+            m_cardPools[i] = allCards;
+        }
+        _log("All card pools initialized.");
+    }
+
+    protected void resetCardPool(int poolIndex) {
+        if(poolIndex >= 0 && poolIndex < int(m_cardPools.size())) {
+            array<string> allCards = getAllCards();
+            m_cardPools[poolIndex] = allCards;
+            _report(m_metagame,"扑克牌卡组:"+ poolIndex + "已重置！");
+        }
+    }
+
+    protected array<string> getAllCards() const {
+        return array<string> = {
+            "collect_playing_card_clubs_a", "collect_playing_card_clubs_2", "collect_playing_card_clubs_3", "collect_playing_card_clubs_4",
+            "collect_playing_card_clubs_5", "collect_playing_card_clubs_6", "collect_playing_card_clubs_7", "collect_playing_card_clubs_8",
+            "collect_playing_card_clubs_9", "collect_playing_card_clubs_10", "collect_playing_card_clubs_j", "collect_playing_card_clubs_q",
+            "collect_playing_card_clubs_k",
+            "collect_playing_card_diamonds_a", "collect_playing_card_diamonds_2", "collect_playing_card_diamonds_3", "collect_playing_card_diamonds_4",
+            "collect_playing_card_diamonds_5", "collect_playing_card_diamonds_6", "collect_playing_card_diamonds_7", "collect_playing_card_diamonds_8",
+            "collect_playing_card_diamonds_9", "collect_playing_card_diamonds_10", "collect_playing_card_diamonds_j", "collect_playing_card_diamonds_q",
+            "collect_playing_card_diamonds_k",
+            "collect_playing_card_hearts_a", "collect_playing_card_hearts_2", "collect_playing_card_hearts_3", "collect_playing_card_hearts_4",
+            "collect_playing_card_hearts_5", "collect_playing_card_hearts_6", "collect_playing_card_hearts_7", "collect_playing_card_hearts_8",
+            "collect_playing_card_hearts_9", "collect_playing_card_hearts_10", "collect_playing_card_hearts_j", "collect_playing_card_hearts_q",
+            "collect_playing_card_hearts_k",
+            "collect_playing_card_spades_a", "collect_playing_card_spades_2", "collect_playing_card_spades_3", "collect_playing_card_spades_4",
+            "collect_playing_card_spades_5", "collect_playing_card_spades_6", "collect_playing_card_spades_7", "collect_playing_card_spades_8",
+            "collect_playing_card_spades_9", "collect_playing_card_spades_10", "collect_playing_card_spades_j", "collect_playing_card_spades_q",
+            "collect_playing_card_spades_k",
+            "collect_playing_card_joker_diver", "collect_playing_card_joker_pig"
+        };
+    }
+
+    protected void processCardDraw(const string &in itemKey, int characterId, int playerId) {
+        int poolIndex = parseInt(itemKey.substr(itemKey.length() - 1)) - 1;
+        if(poolIndex < 0 || poolIndex >= int(m_cardPools.size())) {
+            _log("Invalid card pool index: " + poolIndex);
+            return;
+        }
+
+        array<string>@ cardPool = m_cardPools[poolIndex];
+        if(cardPool.size() == 0) {
+            resetCardPool(poolIndex);
+        }
+
+        int randIndex = rand(0, cardPool.size() - 1);
+        string selectedCard = cardPool[randIndex];
+        cardPool.removeAt(randIndex);
+
+        addItemInBackpack(m_metagame, characterId, "carry_item", selectedCard);
+        _notify(m_metagame, playerId, "扑克牌卡组:"+ poolIndex + "还剩下" + cardPool.size() + "张牌");
+    }
+}

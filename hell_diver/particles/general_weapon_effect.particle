@@ -3322,6 +3322,13 @@ material red_trail : add_base
         texture_unit{
             texture red_trail.png 	
 }}}}
+material rainbow_trail : add_base
+{   
+    technique{
+    pass{
+        texture_unit{
+            texture rainbow_trail.png 	
+}}}}
 material ring_cyclone_02 : add_base
 {   
     technique{

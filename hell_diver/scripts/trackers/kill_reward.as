@@ -199,6 +199,8 @@ dictionary manual_cost_skill_key = {
 
 	{"re_ex_imotekh_sec.weapon",25}, //治疗
 
+	{"acg_kuda_izuna_skill",3}, // 泉奈 飞镖
+
 	{"0",-1}
 };
 //Cost技能武器计数键值
@@ -240,6 +242,9 @@ dictionary cost_skill_killer_key = {
 
 	{"ex_imotekh_damage.projectile","re_ex_imotekh_sec.weapon"},
 	{"ex_imotekh_sec_damage.projectile","re_ex_imotekh_sec.weapon"},
+
+	{"acg_kuda_izuna.weapon","acg_kuda_izuna_skill"},
+	{"re_acg_kuda_izuna.weapon","acg_kuda_izuna_skill"},
 
 
 	{"",-1}
@@ -411,6 +416,12 @@ class kill_reward : Tracker {
 				if(startsWith(weaponKey,"hd_")){
 					g_battleInfoBuck.addKill(k_name);
 					//_debugReport(m_metagame,"武器"+weaponKey+"计入击杀次数");
+				}else{
+					int value2 = 0;
+					g_userCountInfoBuck.getCount(k_name,"killCount",value2);
+					if(value2 >= 1){
+						g_battleInfoBuck.addKill(k_name);
+					}
 				}
 				// if(method_hint == "stab"){
 				// 	g_battleInfoBuck.addKill(k_name);
@@ -418,6 +429,7 @@ class kill_reward : Tracker {
 				if(g_acg_weapon_count){
 					g_battleInfoBuck.addKill(k_name);
 				}
+				
 			}
 			//--------------------自动Cost释放技能记录----------------------------------
 			int autoCostCount;
@@ -686,6 +698,13 @@ class kill_reward : Tracker {
 				return;
 			}
 			handelManualCostResultEvent(m_metagame,name,pid,cid,equipList);
+		}
+		if(message == "/mykill"){
+			int killCount = 0;
+			killCount = g_battleInfoBuck.getKilled(name);
+			if(killCount > 0){
+				_notify(m_metagame,pid,"你当前的击杀次数为："+killCount);
+			}
 		}
 	}
 	// -----------------------------------------------------------------
@@ -978,7 +997,8 @@ class kill_reward : Tracker {
 						}
 					}
 				}
-			}equipList.get("0",equipKey); // 主武器
+			}
+			equipList.get("0",equipKey); // 主武器
 			targetKey = "acg_sabayon_artillery.weapon";
             targetKey2 = "re_acg_sabayon_artillery.weapon";
             if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
@@ -1028,6 +1048,51 @@ class kill_reward : Tracker {
 							playRandomSoundArray(m_metagame,sound_files,0,sPos,2);
 						}else{
 							_notify(m_metagame,pid,"炮火打击技能cost不足，当前cost="+nowCost+"/"+manualCostCount);
+						}
+					}
+				}
+			}
+			targetKey = "acg_kuda_izuna.weapon";
+            targetKey2 = "re_acg_kuda_izuna.weapon";
+			if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){
+				int nowCost = 0;
+				int manualCostCount = 100;
+
+				string targetCostKey;
+				cost_skill_killer_key.get(equipKey,targetCostKey);
+
+				if(manual_cost_skill_key.exists(targetCostKey)){
+					manual_cost_skill_key.get(targetCostKey,manualCostCount);
+					if(g_userCountInfoBuck.getCount(name,targetCostKey,nowCost)){
+						if(nowCost >= manualCostCount){
+							_notify(m_metagame,pid,"CQC! Skill Releasing");
+							g_userCountInfoBuck.addCount(name,targetCostKey,-manualCostCount);
+
+							const XmlElement@ character = getCharacterInfo(m_metagame,cid);
+							if(character is null){return;}
+							Vector3 c_pos = stringToVector3(character.getStringAttribute("position"));
+							const XmlElement@ player = getPlayerInfo(m_metagame, pid);
+							if (player is null) {return;}
+							Vector3 aimPosition = stringToVector3(player.getStringAttribute("aim_target"));
+							int m_fid = g_playerInfoBuck.getFidByCid(cid);
+							string m_key = "acg_kuda_izuna_damage.projectile";
+							TaskSequencer@ tasker = m_metagame.getVacantHdTaskSequncerIndex();
+							playAnimationKey(m_metagame,cid, "acg_kuda_izuna_jumping", false, false);
+
+							array<string> sound_files = {
+								"acg_kuda_izuna_skill.wav",
+								"acg_kuda_izuna_skill_03.wav",
+								"acg_kuda_izuna_skill_04.wav",
+								"acg_kuda_izuna_skill_02.wav"
+							};
+							playRandomSoundArray(m_metagame,sound_files,0,c_pos,1);
+
+							CreateProjectile@ task1 = CreateProjectile(m_metagame,c_pos.add(Vector3(0,6,0)),aimPosition,m_key,cid,m_fid,50,0.5,1,0,false); //delay_time,num,inner delay,isVertical
+
+							tasker.add(task1);
+
+						}else{
+							_notify(m_metagame,pid,"技能cost不足，当前cost="+nowCost+"/"+manualCostCount);
 						}
 					}
 				}

@@ -28,7 +28,6 @@ dictionary INT_task = {
 
         // 占位的
         {"666",false}
-
 };
 // Manager 管理了所有玩家基础信息的保存
 // TODO：脚本目前每隔指定时间会全体进行护甲回复，玩家多的时候会造成短时间内大量查询
@@ -137,7 +136,6 @@ class schedule_Manager : Tracker {
         if(g_debugMode){
             _report(m_metagame,"Update PlayerInfo");
         }
-
     }
     // --------------------------------------------
     protected void handlePlayerDieEvent(const XmlElement@ event) {

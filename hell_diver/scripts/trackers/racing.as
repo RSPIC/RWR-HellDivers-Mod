@@ -63,6 +63,12 @@ class racing : Tracker {
 		m_timer = m_time;
         readFromFile();
         _log("racing initiate.");
+        if(g_server_activity_racing){
+            //赛车服默认开启该活动
+            Tracker@ PlayingCard = ACT_PlayingCard(m_metagame);
+            m_metagame.addTracker(PlayingCard);
+            _log("racing activity PlayingCard start.");
+        }
 	}
 
 	bool hasEnded() const {

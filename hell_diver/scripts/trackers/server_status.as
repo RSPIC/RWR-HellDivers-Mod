@@ -20,7 +20,7 @@ class server_status : Tracker{
 	protected float m_test_timer = 1.0;
 	protected uint m_test_counter = 1;
 	protected float m_timer;
-	protected float m_time = 300; //多少秒记录一次
+	protected float m_time = 480; //多少秒记录一次
 	protected float m_time_min;
     protected bool m_ended;
     protected string m_FILENAME = "_server_manager.xml";

@@ -140,7 +140,7 @@ key="hd_rocket_launch_platform.weapon"
 
     <projectile file="hd_general_spawn_no_effect.projectile" pulldown_in_air="4" can_be_detected_by_footmen="0" 
 	time_to_live="0" can_be_detected_by_driver="0" can_be_disarmed="0" name="Null"> 
-		<result class="blast" radius="1.5" damage="1001" push="0" decal="0" character_state="stun" />
+		<result class="blast" radius="1.5" damage="1003" push="0" decal="0" character_state="stun" />
 		<trigger class="time" time_to_live="0"  />
     </projectile>
 </weapon>

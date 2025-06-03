@@ -7,6 +7,8 @@ existence="one_per_faction"
 character_leave_request_mode="friendly" 
 usable_for_cover="0"
 allow_ai_to_use="0"
+max_character_collision_speed="999"
+max_character_collision_speed_on_normal="999"
 >
 	
   <tire_set offset="1.0 0.0 1" radius="0.65" />

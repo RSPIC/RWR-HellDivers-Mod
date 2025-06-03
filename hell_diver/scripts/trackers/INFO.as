@@ -851,6 +851,15 @@ class battleInfoBuck{
 	uint size(){
 		return m_battleInfos.size();
 	}
+	int getKilled(string&in name){
+		for(uint i=0;i<m_battleInfos.size();++i){
+			string m_name = m_battleInfos[i].name();
+			if(name == m_name){
+				return m_battleInfos[i].killCount();
+			}
+		}
+		return -1;
+	}
 
 	uint playingTime(string&in name){
 		for(uint i=0;i<m_battleInfos.size();++i){

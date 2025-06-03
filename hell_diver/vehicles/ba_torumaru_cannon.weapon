@@ -63,7 +63,7 @@ key="ba_torumaru_cannon.weapon"
 		<trail probability="1" key="ba_tiger_trail"/>	
 		<model mesh_filename="APFSDS.xml" />
 		
-		<effect class="result" key="terrain" ref="ba_tiger_result_impact_leave" lighting="0" post_processing="1"/>
+		<!-- <effect class="result" key="terrain" ref="ba_tiger_result_impact_leave" lighting="0" post_processing="1"/> -->
 		<effect class="result" key="terrain" ref="ba_tiger_result_impact" lighting="0" post_processing="0"/>
 		<effect class="result" key="terrain" ref="ba_tiger_result_impact_light" lighting="0" post_processing="0"/>
 		<effect class="result" key="terrain" ref="ba_tiger_result_ground_ring" lighting="0" post_processing="0"/>

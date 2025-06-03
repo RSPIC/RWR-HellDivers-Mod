@@ -865,6 +865,16 @@
         <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
         <capacity value="12" source="rank" source_value="0" />
     </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Niyaniya [Skin]" key="token_ba_niyaniya.projectile" >
+        <hud_icon filename="token_ba_niyaniya.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
+    <projectile file="hd_hellpod_call.projectile" name="Kuda Izuna [Skin]" key="token_kuda_izuna.projectile" >
+        <hud_icon filename="token_kuda_izuna.png" />
+        <commonness value="0.0" can_respawn_with="1" in_stock="0"/>
+        <capacity value="12" source="rank" source_value="0" />
+    </projectile>
 
     <!-- 其他 -->
     <projectile file="hd_hellpod_call.projectile" name="Misono Mika[Skin]" key="token_misono_mika.projectile" >

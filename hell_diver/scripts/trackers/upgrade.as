@@ -15,8 +15,11 @@
 //Author： rst
 //升级、研发系统脚本
 
+// ----------------------------------------------------
+
 class upgrade : Tracker{
     protected Metagame@ m_metagame;
+    array<playerStash@> m_playerStashs;
 
     upgrade(Metagame@ metagame){
         @m_metagame = @metagame;
@@ -35,8 +38,9 @@ class upgrade : Tracker{
     }
     const XmlElement@ readUpgradeFile(string name,string TagName = ""){
         string sid = g_playerInfoBuck.getSidByName(name);   
-        _log("read upgrade PlayerStashInfo for sid="+sid);
+
         const XmlElement@ allInfo = readPlayerStashInfo(sid);
+
         if(allInfo is null){
             _log("allInfo is null, in readUpgradeFile");
             return null;
@@ -257,6 +261,10 @@ class upgrade : Tracker{
                 }
             }
             if(!isBuy){
+                if(!g_server_activity_racing){
+                    _report(m_metagame,"购买武器请在赛车服进行操作");
+                    return;
+                }
                 string sid = g_playerInfoBuck.getSidByName(name);
                 playerStashInfo@ thePlayer = playerStashInfo(m_metagame,sid,name);
                 array<XmlElement@> m_deleteObjects = {
@@ -375,6 +383,10 @@ class upgrade : Tracker{
                 }
             }
             if(!isBuy){
+                if(!g_server_activity_racing){
+                    _report(m_metagame,"购买武器请在赛车服进行操作");
+                    return;
+                }
                 string sid = g_playerInfoBuck.getSidByName(name);
                 playerStashInfo@ thePlayer = playerStashInfo(m_metagame,sid,name);
                 array<XmlElement@> m_deleteObjects = {
@@ -443,6 +455,10 @@ class upgrade : Tracker{
                 }
             }
             if(!isBuy){
+                if(!g_server_activity_racing){
+                    _report(m_metagame,"购买武器请在赛车服进行操作");
+                    return;
+                }
                 string sid = g_playerInfoBuck.getSidByName(name);
                 playerStashInfo@ thePlayer = playerStashInfo(m_metagame,sid,name);
                 array<XmlElement@> m_deleteObjects = {

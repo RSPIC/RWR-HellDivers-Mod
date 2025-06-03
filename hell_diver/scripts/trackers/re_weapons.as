@@ -181,8 +181,12 @@ class re_weapons : Tracker {
 			    deleteItemInStash(m_metagame,cid,"weapon",itemKey);
                 addItemInBackpack(m_metagame,cid,"weapon","acg_takanashi_hoshino_battle.weapon");
                 addItemInBackpack(m_metagame,cid,"weapon","acg_takanashi_hoshino_battle_side_pistol.weapon");
+                return;
             }
             if(startsWith(itemKey,"acg_sky_striker_ace_")){
+                if(itemKey == "acg_sky_striker_ace_clips"){
+                    return;
+                }
                 dictionary equipList;
                 if(!getPlayerEquipmentInfoArray(m_metagame,cid,equipList)){
                     return;
@@ -198,6 +202,10 @@ class re_weapons : Tracker {
                                 return;
                             }
                         }
+                    }else{
+                        deleteItemInBackpack(m_metagame,cid,"weapon",itemKey);
+                        deleteItemInBackpack(m_metagame,cid,"carry_item",itemKey);
+                        return;
                     }
                 }
                 if(itemKey == "acg_sky_striker_ace_hayate_green_change_model_drop.carry_item"){

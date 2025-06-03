@@ -2,6 +2,12 @@
 <resources clear_weapons="1" clear_vehicles="1" clear_grenades="1" clear_carry_items="1" clear_calls="1" >
 	<!-- always load common first; it"s the one that clears the initial weapon resources -->
 
+	<carry_item key="collect_playing_card_radom1" />
+	<carry_item key="collect_playing_card_radom2" />
+	<carry_item key="collect_playing_card_radom3" />
+	<!-- <carry_item key="collect_playing_card_radom4" /> -->
+	<!-- <carry_item key="collect_playing_card_radom5" /> -->
+
 	<carry_item key="reward_box_weapon_1.carry_item" />
 	<carry_item key="reward_box_weapon_2.carry_item" />
 	<carry_item key="reward_box_weapon_lamda.carry_item" />
@@ -19,6 +25,6 @@
 
 	<carry_item key="hud_supercash_to_sky_striker_ace_exchange" />
 
-    <weapon key="hd_side_b100_portable_hellbomb_weapon_exchange" /><!--核弹背包 -->
+    <weapon key="hd_side_b100_portable_hellbomb_weapon_exchange" /><!--核弹背包-->
 
 </resources>

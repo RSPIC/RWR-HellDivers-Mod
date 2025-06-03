@@ -78,6 +78,79 @@ dictionary weaponLevel = {
     {"",""}
 };
 dictionary canStoreItem = {
+    {"re_ex_exo_telemon_cannon.weapon","特拉蒙 MK5"},
+    {"re_acg_sabayon_gun.weapon","辉火 MK5"},
+    {"re_acg_takanashi_hoshino_battle.weapon","野战星野 MK5"},
+    {"re_ex_exo_dreadnought_mg.weapon","无畏 MK5"},
+    {"re_acg_izayoi_sakuya_i.weapon","十六夜咲夜 MK5"},
+    {"re_ex_vergil_judgment_cut.weapon","维吉尔 MK5"},
+    {"re_acg_patricia_cumforce.weapon","帕蒂 MK5"},
+    {"re_ex_hyper_mega_bazooka_launcher_ex.weapon","米加粒子炮 MK5"},
+    {"re_acg_megumin_wand_float.weapon","慧慧 MK5"},
+    {"re_ex_trinity_ghoul.weapon","三体 MK5"},
+    {"re_acg_laisha_heliotrope.weapon","莱莎 MK5"},
+    {"re_acg_elaina_wand.weapon","伊蕾娜 MK5"},
+
+    {"re_acg_hayase_yuuka.weapon","优香 MK4"},
+    {"re_acg_incomparable.weapon","无比 MK4"},
+    {"re_acg_arknight_ifrit.weapon","伊芙利特 MK4"},
+    {"re_acg_bronya.weapon","布洛妮娅 MK4"},
+    {"re_acg_g41_lasercanno_diffusion.weapon","G41巫女 MK4"},
+    {"re_acg_shuiniao.weapon","水鸟 MK4"},
+    {"re_acg_fiammetta_gl.weapon","菲亚梅塔 MK4"},
+    {"re_ex_disaster_railgun.weapon","天灾 MK4"},
+    {"re_acg_texas_skill.weapon","德克萨斯 MK4"},
+    {"re_acg_ba_alice_railgun_ex.weapon","爱丽丝 MK4"},
+    {"re_acg_starwars_shipgirls.weapon","星舰少女 MK4"},
+    {"re_acg_asagi_mutsuki.weapon","浅黄睦月 MK4"},
+    {"re_acg_rikuhachima_aru.weapon","陆八魔阿露 MK4"},
+    {"re_acg_shinano.weapon","信浓 MK4"},
+    {"re_acg_yileina_wand.weapon","伊蕾娜 MK4"},
+
+    {"re_acg_bf109.weapon","BF109 MK3"},
+    {"re_acg_fade_red.weapon","褪红MK3"},
+    {"re_acg_rumi.weapon","露米 MK3"},
+    {"re_ex_space_marines.weapon","星际战士 MK3"},
+    {"re_acg_takanashi_hoshino.weapon","小鸟游星野 MK3"},
+    {"re_acg_g41_bp2077.weapon","G41 2077 MK3"},
+    {"re_acg_g41_universe.weapon","G41 Universe MK3"},
+    {"re_acg_maria_schariac.weapon","玛丽亚·沙尼亚特 MK3"},
+
+    {"re_acg_miyu.weapon","美游 MK3"},
+    {"re_acg_sinteria_bow.weapon","白金 MK3"},
+    {"re_acg_kokomi_portia.weapon","珊瑚宫心海 MK3"},
+    {"re_acg_sorasaki_hina.weapon","空崎阳奈 MK3"},
+    {"re_acg_hk416_starry_cocoon.weapon","HK416 星之茧 MK3"},
+    {"re_acg_iws2000_banisher.weapon","第七封印者 MK3"},
+    {"re_acg_hongxue.weapon","鸿雪 MK3"},
+    {"re_acg_amamiya_kokoro.weapon","阿喵喵 MK3"},
+    {"re_ex_heavy_infantry_morita.weapon","重装战士 MK3"},
+    {"re_acg_kemomimi.weapon","狐尾导弹 MK3"},
+    {"re_acg_reisenu_a.weapon","铃仙 MK3"},
+    {"re_acg_ruby_rose_scythe.weapon","RubyRose MK3"},
+    {"re_acg_mg4a3td.weapon","mg4a3td MK3"},
+    {"re_acg_mg4td_ke.weapon","mg4td MK3"},
+    {"re_ex_lancer_mk3.weapon","骑兵 MK3"},
+    {"re_ex_soma_prime.weapon","月神 Prime MK3"},
+    {"re_acg_piko_hammer.weapon","PIKO 槌子 MK3"},
+    {"re_acg_stylet_m61a1.weapon","短剑 MK3"},
+    {"re_acg_otogi_sniper.weapon","音葵 MK3"},
+
+    {"re_ex_typhoon.weapon","台风 MK1"},
+    {"re_ex_heavy_infantry_morita_mk1.weapon","重装战士 MK1"},
+    {"re_acg_smg_strelka.weapon","Strelka MK1"},
+    {"re_acg_ka_ar8.weapon","KA AR8 MK1"},
+    {"re_acg_m14.weapon","M14 MK1"},
+    {"re_acg_mari_sports_ver.weapon","伊洛玛丽 运动服 MK1"},
+    {"re_ex_izanagis_burden.weapon","伊邪那岐的重担 MK1"},
+    {"re_ex_funnelnet.weapon","漏斗网 MK1"},
+    {"re_acg_mg3.weapon","MG3 MK1"},
+    {"re_ex_psc_srs99.weapon","SRS99狙击步枪系统 MK1"},
+    {"re_ex_psc_arc920.weapon","ARC-920 MK1"},
+    {"re_ex_exp_m41_spnkr.weapon","M41 SPNKER火箭发射器 MK1"},
+    {"re_ex_side_m6g_magnum.weapon","M6G 马格南 MK1"},
+    {"re_acg_ushio_noa.weapon","诺亚 MK1"},
+    {"re_acg_hecate.weapon","黑卡蒂 MK1"},
 
     {"collect_fumo_cirno.carry_item","[琪露诺]"},
     {"collect_fumo_flandre_scarlet.carry_item","[芙兰朵露]"},
@@ -312,6 +385,7 @@ dictionary canStoreItem = {
     {"token_tevi.projectile","TEVI 采薇[信物]"},
     {"token_awp.projectile","AWP [信物]"},
     {"token_fleet_commander.projectile","舰队司令[信物]"},
+    {"token_ba_niyaniya.projectile","笑面教授[信物]"},
 
     {"wiesel_tow_call.projectile","[鼬鼠 [陶氏]]"},
     {"lav6_call.projectile","[LAV-6]"},
@@ -335,13 +409,18 @@ dictionary canStoreItem = {
     {"ex_unsc_scion_call.projectile","[天蝎坦克]"},
     {"ex_nova_callrandom.projectile","[NOVA坦克]"},
 
+    //武器
+
+
     // 碎片
     {"reward_box_weapon_delta_clip.carry_item","[MK4箱 碎片]"},
     {"reward_box_weapon_lamda_clip.carry_item","[MK3箱 碎片]"},
     {"reward_box_weapon_v_clip.carry_item","[MK5箱 碎片]"},
 
     {"ref.weapon","测试武器"},
-    {"SuperCash","[超级货币]"}
+    {"SuperCash","[超级货币]"},
+
+    {,""}
 };
 dictionary autoStoreItem = {
     {"collect_fumo_cirno.carry_item","[琪露诺]"},
@@ -374,6 +453,12 @@ dictionary autoStoreItem = {
     {"collect_treasure_of_space_time.carry_item","[时空秘宝]"},
 
     {"hd_vote_ticket","[民本选票]"}
+};
+dictionary specialTypeStoreItem = {
+    {"acg_sky_striker_ace_clips","special"}
+};
+dictionary banTypeStoreItem = {
+    {"acg_sky_striker_ace_clips","carry_item"}
 };
 XmlElement@ getStashXmlElement(string AA_tag,string A_tag,int value){
     XmlElement deleteXml("stash");
@@ -1167,7 +1252,7 @@ array<stashExchangeList@> ExchangeLists ={
                 getStashXmlElement("SuperCash","special",200)
             }, 
             array<XmlElement@>= {
-                getStashXmlElement("hd_side_b100_portable_hellbomb.weapon","weapon",1)
+                getStashXmlElement("hd_side_b100_portable_hellbomb.weapon","weapon",3)
             }
         ),
 };

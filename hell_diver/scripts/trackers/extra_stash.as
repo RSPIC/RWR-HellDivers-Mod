@@ -226,23 +226,43 @@ class playerStashInfo {
                     return;
                 }
                 string slect_itemType = object.getStringAttribute("A_tag");
+                string temp = "";
+                if(banTypeStoreItem.get(itemKey,temp)){
+                    if(temp != ""){
+                        if(itemType == temp){
+                            m_stashObject.removeAt(i);
+                            i--;
+                            saveStashObject();
+                            continue;
+                        }
+                    }
+                }
                 if(slect_itemType == "special"){
                     _notify(m_metagame,pid,"Special item can't be pull out");
                     return;
                 }
-
                 if(m_object.equals(object)){ 
                     int inNum = m_object.getIntAttribute("value");
                     int pullOutNum = takeNum;
                     if(pullOutNum >= inNum){ //取出数量超过已有数量，取出全部
                         pullOutNum = inNum;
-                        m_stashObject.removeAt(i);
-                        i--;
+                        if(slect_itemType == "weapon"){ // re的weapon物品特殊处理，保证永久有一把在仓库不会被取出
+                            if(startsWith(itemKey,"re_")){
+                                inNum++;
+                            }else{
+                                m_stashObject.removeAt(i);
+                                i--;
+                            }
+                        }else{
+                            m_stashObject.removeAt(i);    
+                            i--;
+                        }
                     }
                     m_object.setIntAttribute("value",inNum-pullOutNum);
                     @res = Resource(itemKey,itemType);
                     res.addToResources(resources,pullOutNum);
                 }
+
             }
             if(resources.size() != 0){
                 addListItemInBackpack(m_metagame,cid,resources);
@@ -532,7 +552,7 @@ class playerStashInfo {
         for(uint i = 0 ; i < m_stashObject.size() ; ++i){
             int value = m_stashObject[i].getIntAttribute("value");
             if(m_stashObject[i].getStringAttribute("A_tag") == "special"){ //特殊物品不计入
-                return;
+                continue;
             }
             allValue += value;
         }
@@ -938,7 +958,7 @@ class extra_stash : Tracker {
 
     extra_stash(Metagame@ metagame){
         @m_metagame = @metagame;
-        m_time = 1;
+        m_time = 2.0;
         m_timer = m_time;
         save_data = false;
         m_playerStashInfoBuck.clearAll();
@@ -1115,6 +1135,10 @@ class extra_stash : Tracker {
             if(itemKey.find("_weapon") != -1){
                 deleteItemInBackpack(m_metagame,cid,"weapon",itemKey);
             }
+            if(!g_server_activity_racing){
+                _report(m_metagame,"兑换操作请在赛车服进行操作");
+                return true;
+            }
             if(!m_playerCds.exists(name,"exchangeItems")){
                 m_playerCds.addNew(name,playerId,"exchangeItems",3.0);
                 
@@ -1130,7 +1154,7 @@ class extra_stash : Tracker {
                     if(!m_playerStashInfoBuck.isOpen(sid)){
                         m_playerStashInfoBuck.openStash(sid);
                     }
-                    m_playerStashInfoBuck.upgradeStash(sid,100,true);
+                    m_playerStashInfoBuck.upgradeStash(sid,5000,true);
                     m_playerStashInfoBuck.openStash(sid);
                     return true;
                 }
@@ -1234,10 +1258,15 @@ class extra_stash : Tracker {
         string translateName = "";
         
         if(containerId == 2){//背包
+            int cid = g_playerInfoBuck.getCidByName(name);
+            if(startsWith(itemKey,"stash_ui_") && !g_server_activity_racing){
+                _report(m_metagame,"仓库操作请在赛车服进行操作");
+                deleteItemInBackpack(m_metagame,cid,"weapon",itemKey);
+                return;
+            }
             if(handleExchangeEvent(event)){
                 return;
             }
-            int cid = g_playerInfoBuck.getCidByName(name);
             if(itemKey == "stash_ui_open_close.weapon"){
                 const XmlElement@ player = getPlayerInfo(m_metagame,playerId);
                 if(player is null){return;}
@@ -1285,15 +1314,27 @@ class extra_stash : Tracker {
                 deleteItemInBackpack(m_metagame,cid,"weapon",itemKey);
             }
             if(itemKey == "stash_ui_upgrade_1x.weapon"){
-                m_playerStashInfoBuck.upgradeStash(sid,1);
+                if(!m_playerStashInfoBuck.isOpen(sid)){
+                    m_playerStashInfoBuck.openStash(sid);
+                }
+                const XmlElement@ character = getCharacterInfo(m_metagame,characterId);
+                if(character is null){return;}
+                int rp = character.getIntAttribute("rp");
+                if(rp < 10000000){
+                    if(isEng(name)){
+                        _notify(m_metagame,playerId,"You need 1000w RP to upgrade the Extra Stash");
+                    }else{
+                        _notify(m_metagame,playerId,"升级永久脚本仓库需要1000wRP");
+                    }
+                }else{
+                    GiveRP(m_metagame,characterId,-10000000);
+                    m_playerStashInfoBuck.upgradeStash(sid,9999,true);
+                }
                 deleteItemInBackpack(m_metagame,cid,"weapon",itemKey);
-            }
-            if(itemKey == "stash_ui_upgrade_10x.weapon"){
-                m_playerStashInfoBuck.upgradeStash(sid,10);
-                deleteItemInBackpack(m_metagame,cid,"weapon",itemKey);
+                m_playerStashInfoBuck.openStash(sid);
             }
         }
-        if(containerId == 1){
+        if(containerId == 1){ // 商店
             if(itemKey == "hd_super_cash_100"){
                 g_userCountInfoBuck.addCount(name,"SuperCash",100);
             }
@@ -1328,6 +1369,12 @@ class extra_stash : Tracker {
                 }
                 if(item_class == "3"){
                     item_class = "carry_item";
+                }
+                string temp = "";
+                if(specialTypeStoreItem.get(itemKey,temp)){
+                    if(temp != ""){
+                        return;
+                    }
                 }
                 XmlElement newXml("stash");
                     newXml.setStringAttribute("AA_tag",itemKey);

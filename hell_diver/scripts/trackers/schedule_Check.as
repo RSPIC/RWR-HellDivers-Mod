@@ -128,7 +128,6 @@ class schedule_Check : Tracker {
                 checkTelemon(m_metagame,name,pid,cid,equipList);
                 checkSkyStrikerAce(m_metagame,name,pid,cid,equipList);
                 checkImotekh(m_metagame,name,pid,cid,equipList);
-
             }
         }
     }
@@ -405,6 +404,9 @@ class schedule_Check : Tracker {
                 }
                 targetKey = "ex_exo_dreadnought_";
                 targetKey2 = "re_ex_exo_dreadnought_";
+                if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){return;}
+                targetKey = "hd_exo";
+                targetKey2 = "hd_exo";
                 if(startsWith(equipKey,targetKey) || startsWith(equipKey,targetKey2)){return;}
                 string equipKey_vest = "";
                 equipList.get("4",equipKey_vest);//护甲

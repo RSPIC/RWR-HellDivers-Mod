@@ -30,6 +30,7 @@ dictionary research_list = {
     {"acg_takanashi_hoshino_battle.weapon",225},
     {"acg_takanashi_hoshino_battle_side_pistol.weapon",225},
     {"acg_sabayon_gun.weapon",450},
+    {"ex_exo_telemon_cannon.weapon",450},
 
     // MK4
     {"acg_arknight_ifrit.weapon",450},// rare
@@ -220,6 +221,10 @@ class KeYan : Tracker{
 		string p_name = event.getStringAttribute("player_name");
 		int pid = event.getIntAttribute("player_id");
         if(startsWith(message,"/research") || startsWith(message,"/rsc")){
+            if(!g_server_activity_racing){
+                _notify(m_metagame,pid,"科研系统查询仅在赛车服开启，请前往赛车服");
+                return;
+            }
             dictionary equipList;
             int cid = g_playerInfoBuck.getCidByPid(pid);
             if(!getPlayerEquipmentInfoArray(m_metagame,cid,equipList)){

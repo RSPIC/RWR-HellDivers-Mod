@@ -124,17 +124,17 @@ const array<SpawnInfo@> all_soldier_cyborgs = {
     SpawnInfo("cyborgs_legionnaire",1)
 };
 const array<SpawnInfo@> all_soldier_bugs = {
-    SpawnInfo("bugs_Impaler",0.6),
-    SpawnInfo("bugs_Tank",0.6),
-    SpawnInfo("bugs_Behemoth",0.6),
-    SpawnInfo("bugs_BroodCommander",0.8),
+    SpawnInfo("bugs_Impaler",1),
+    SpawnInfo("bugs_Tank",1),
+    SpawnInfo("bugs_Behemoth",1),
+    SpawnInfo("bugs_BroodCommander",1.5),
     SpawnInfo("bugs_Elite",2),
     SpawnInfo("bugs_Warrior",3),
     SpawnInfo("bugs_Stalker",2),
-    SpawnInfo("bugs_ZergBaneling",2),
+    SpawnInfo("bugs_ZergBaneling",3),
     SpawnInfo("bugs_Baneling",2),
     SpawnInfo("bugs_Scout",2),
-    SpawnInfo("bugs_Tunnel",2),
+    SpawnInfo("bugs_Tunnel",3),
     SpawnInfo("bugs_Vanguard",2),
     SpawnInfo("bugs_Shadow",2)
 };
@@ -239,8 +239,8 @@ void Alert_Spawn_new(Metagame@ metagame,int factionId, Vector3 position,int serv
             TaskSequencer@ tasker = metagame.getHdTaskSequncerIndex(11);   
             TaskSequencer@ tasker2 = metagame.getHdTaskSequncerIndex(12);
             if(isForce){
-                tasker = metagame.getVacantHdTaskSequncerIndex();   
-                tasker2 = metagame.getVacantHdTaskSequncerIndex();
+                @tasker = metagame.getHdTaskSequncerIndex(15);   
+                @tasker2 = metagame.getHdTaskSequncerIndex(16);   
             }   
             CreateProjectile@ task1 = CreateProjectile(metagame,pos.add(Vector3(shift_range,0,0)),pos,key1,0,factionId,rand_speed,2,1,0,false); // speed delay num in_delay vertival
             pos = pos.add(Vector3(0,-1.5,0));
@@ -255,7 +255,7 @@ void Alert_Spawn_new(Metagame@ metagame,int factionId, Vector3 position,int serv
         if( caller_faction_name == "bugs" && g_factionInfoBuck.getFidByName("Bugs") == factionId){
             string key1 = "hd_effect_bugs_spawn_smoke.projectile";
             string key2 = "bugs_spawn_"+groups_name+".projectile";
-            Vector3 pos = position.add(Vector3(rand(-10,10),8,rand(-10,10)));
+            Vector3 pos = position.add(Vector3(rand(-20,20),8,rand(-20,20)));
 
             float shift_range = rand(0,0);
             float rand_speed = 1;
@@ -264,12 +264,15 @@ void Alert_Spawn_new(Metagame@ metagame,int factionId, Vector3 position,int serv
                 taskIndex = int(rand(7,9));
             }
             TaskSequencer@ tasker = metagame.getHdTaskSequncerIndex(taskIndex);     
+            if(isForce){
+                @tasker = metagame.getHdTaskSequncerIndex(int(rand(10,12)));      
+            } 
             CreateProjectile@ task1 = CreateProjectile(metagame,pos,pos,key1,0,factionId,rand_speed,2,1,0,true); // speed delay num in_delay vertival
             CreateProjectile@ task2 = CreateProjectile(metagame,pos,pos,key2,2,factionId,rand_speed,2,spawnnum,8/spawnnum,true); // speed delay num in_delay vertival
-            task2.setRandomRange(3,false);
+            task2.setRandomRange(3.5,false);
             tasker.add(task1);
             tasker.add(task2);
-            mark_time += 10;
+            mark_time += 4;
         }
         if( caller_faction_name == "illum" && g_factionInfoBuck.getFidByName("Illuminate") == factionId){
             string key1 = "hd_effect_illum_spawn_call.projectile";
@@ -278,9 +281,9 @@ void Alert_Spawn_new(Metagame@ metagame,int factionId, Vector3 position,int serv
 
             float shift_range = rand(0,0);
             float rand_speed = 1;
-            TaskSequencer@ tasker = metagame.getHdTaskSequncerIndex(10);    
+            TaskSequencer@ tasker = metagame.getHdTaskSequncerIndex(13);    
             if(isForce){
-                tasker = metagame.getVacantHdTaskSequncerIndex();   
+                @tasker = metagame.getHdTaskSequncerIndex(14); 
             }
             CreateProjectile@ task1 = CreateProjectile(metagame,pos,pos,key1,0,factionId,rand_speed,2,1,0,true); // speed delay num in_delay vertival
             CreateProjectile@ task2 = CreateProjectile(metagame,pos,pos,key2,0,factionId,rand_speed,2,spawnnum,0,true); // speed delay num in_delay vertival
@@ -547,7 +550,7 @@ class dynamic_alert : Tracker {
 
 
         m_cd_time = m_cd_time - 5*m_server_difficulty_level;
-        m_cd_time = m_cd_time - 30*player_num;
+        m_cd_time = m_cd_time - 15*player_num;
 
         if(m_cd_time <= 60 ){
             m_cd_time = 60 ; // level15 = min 5s   level9 = min 15s
@@ -569,14 +572,13 @@ class dynamic_alert : Tracker {
         string eventKey = event.getStringAttribute("key");
         if(eventKey == "vehicle_call_alert"){
             Vector3 position = stringToVector3(event.getStringAttribute("position"));
-            Alert_Spawn_new(m_metagame,1,position,m_server_difficulty_level);
-
+            Alert_Spawn_new(m_metagame,1,position,m_server_difficulty_level,true);
         }
         if(eventKey == "vehicle_call_alert_cyborgs"){
             Vector3 position = stringToVector3(event.getStringAttribute("position"));
             int fid = g_factionInfoBuck.getFidByName("Cyborgs");
             if(fid == -1){return;}
-            Alert_Spawn_new(m_metagame,fid,position,m_server_difficulty_level);
+            Alert_Spawn_new(m_metagame,fid,position,m_server_difficulty_level,true);
         }
     }
     protected void handleChatEvent(const XmlElement@ event){

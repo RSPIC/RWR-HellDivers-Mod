@@ -187,6 +187,9 @@ dictionary projectile_eventkey = {
         {"kisaki_drone",93},
         {"acg_kisaki_doll",94},
 
+        // 泉奈
+        {"acg_kuda_izuna_skill",95},
+
         // 占位的
         {"666",-1}
 };

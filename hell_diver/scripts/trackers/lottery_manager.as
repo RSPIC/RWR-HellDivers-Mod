@@ -204,12 +204,17 @@ class lottery_manager : Tracker {
                         g_battleInfoBuck.addBonusFactorRp(name,bonusFactor);
                         m_factor = g_battleInfoBuck.bonusFactorRp(name);
                     }
+
+                    if(itemKey == "hd_bonusfactor_al_240"){ // 全局240卡计入击杀结算
+                        g_userCountInfoBuck.addCount(name,"killCount");
+                        _notify(m_metagame,pid,"你使用了全局240倍加成卡，奖励计入所有武器击杀结算");
+                    }
                     dictionary a;
                     a["%bf"] = ""+bonusFactor;
                     float bf = g_battleInfoBuck.bonusFactor(name);
                     float bfx = g_battleInfoBuck.bonusFactorXp(name);
                     float bfr = g_battleInfoBuck.bonusFactorRp(name);
-                    notify(m_metagame,"全局倍率="+bf+"，xp倍率="+bfx+"，rp倍率="+bfr, dictionary(), "misc", pid, false, "", 1.0);
+                    notify(m_metagame,"[最高10.0]全局倍率="+bf+"，xp倍率="+bfx+"，rp倍率="+bfr, dictionary(), "misc", pid, false, "", 1.0);
 
                     if(m_factor <= 1){
                         notify(m_metagame,"加成卡使用失败，请尝试重新使用", dictionary(), "misc", pid, false, "", 1.0);

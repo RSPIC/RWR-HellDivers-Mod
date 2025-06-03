@@ -190,7 +190,7 @@ class hd_side_mission : Tracker{
                 if(times == needTimes){
                     _report(m_metagame,"玩家"+name+"完成了扫雷支线任务");
                     g_battleInfoBuck.addMission(name);
-                    g_playerMissionInfoBuck.addMissionFinishTimes(name,"finish_sidemission");
+                    // g_playerMissionInfoBuck.addMissionFinishTimes(name,"finish_sidemission");
                 }else if(times < needTimes){
                     _notify(m_metagame,pid,"已运送地雷样本"+times+"/"+needTimes+"个");
                 }
@@ -250,13 +250,13 @@ class hd_side_mission : Tracker{
                                         if(m_pid >= 0){
                                             string name2 = g_playerInfoBuck.getNameByCid(soldier_id);
                                             if(g_firstUseInfoBuck.isFirst(name2,"fix_radar_tower")){
-                                                addItemInBackpack(m_metagame,cid,"carry_item","acg_sky_striker_ace_clips");
+                                                addItemInBackpack(m_metagame,soldier_id,"carry_item","acg_sky_striker_ace_clips");
                                             }
                                         }
                                     }
                                 }
                                 g_battleInfoBuck.addMission(name);
-                                g_playerMissionInfoBuck.addMissionFinishTimes(name,"finish_sidemission");
+                                // g_playerMissionInfoBuck.addMissionFinishTimes(name,"finish_sidemission");
                                 return;
                             }
                         }
@@ -310,7 +310,7 @@ class hd_side_mission : Tracker{
                         _report(m_metagame,"玩家："+name+"完成了'启动火箭发射平台'支线任务");
                         notify(m_metagame, "地狱火呼叫次数 +1", dictionary(), "misc", pid, false, "", 1.0);
                         g_battleInfoBuck.addMission(name);
-                        g_playerMissionInfoBuck.addMissionFinishTimes(name,"finish_sidemission");
+                        // g_playerMissionInfoBuck.addMissionFinishTimes(name,"finish_sidemission");
                     }
                 }else{
                     _report(m_metagame,"'启动火箭发射平台'支线任务执行失败，操作玩家不足一人");
@@ -358,7 +358,7 @@ class hd_side_mission : Tracker{
                             _report(m_metagame,"玩家："+name+"完成了'摧毁非法广播电台'支线任务");
                             notify(m_metagame, "地狱火呼叫次数 +1", dictionary(), "misc", pid, false, "", 1.0);
                             g_battleInfoBuck.addMission(name);
-                            g_playerMissionInfoBuck.addMissionFinishTimes(name,"finish_sidemission");
+                            // g_playerMissionInfoBuck.addMissionFinishTimes(name,"finish_sidemission");
                         }
                     }
                 }

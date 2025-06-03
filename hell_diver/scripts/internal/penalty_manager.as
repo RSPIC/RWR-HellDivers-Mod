@@ -198,7 +198,7 @@ class PenaltyManager : Tracker {
 			_log("m_server_test_mode is on ");
 		}
 		
-		m_teamKillsToStartPenalty = teamKillsToStartPenalty;
+		m_teamKillsToStartPenalty = 8;
 		m_penaltyTime = penaltyTime;
 		m_forgiveTeamKillTime = forgiveTeamKillTime;
 
