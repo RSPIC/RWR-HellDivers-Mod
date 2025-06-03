@@ -3,6 +3,9 @@
 	<!-- <model filename="hdivers_ceremonial.xml" /> -->
 	
 	<model filename="illum_observer.xml">
+		<requirement class="weapon" slot="0" key="hd_observer_main.weapon"/>
+	</model>
+	<model filename="illum_observer.xml">
 		<requirement class="weapon" slot="0" key="illum_observer_main.weapon"/>
 	</model>
 	<model filename="illum_watcher.xml">
